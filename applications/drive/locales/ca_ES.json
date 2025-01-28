@@ -1143,34 +1143,9 @@
         "Historial de versions"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } Plus no té preu de renovació, és un pagament únic per a l'accés de per vida a Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Els descomptes es basen en els preus mensuals estàndard."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compreu Pass Family o Unlimited, la vostra subscripció es renovarà automàticament a la tarifa amb descompte i la durada estàndard al final del vostre cicle de facturació."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "La vostra subscripció es renovarà automàticament a la tarifa amb descompte i durada predeterminades al final del cicle de facturació."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Més populars"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
-      ],
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
-      ],
-      "forever": [
-        "per sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
@@ -1216,9 +1191,6 @@
       ],
       "12 months": [
         "12 mesos"
-      ],
-      "24 months": [
-        "24 mesos"
       ],
       "Annually": [
         "Cada any"
@@ -1323,7 +1295,7 @@
         "Continueu amb la vostra subscripció"
       ],
       "Create label": [
-        "Creu una etiqueta"
+        "Crea una etiqueta"
       ],
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
@@ -2414,11 +2386,6 @@
         "Factura vençuda"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2450,6 +2417,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "Manteníeu els fitxers, fotos i documents segurs amb el xifratge d’extrem a extrem."
+      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
@@ -2472,7 +2442,7 @@
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
       ],
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Milloreu a ${ BRAND_NAME } ${ planName } per seguir compartint arxius amb accés per editar."
+        "Milloreu el pla a ${ BRAND_NAME } ${ planName } per a seguir compartint arxius amb accés per editar."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
@@ -2497,6 +2467,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2689,6 +2664,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències> Missatges i redacció > Domini curt (pm.me)"
       ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
@@ -2916,6 +2894,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Un dels grups no té contactes: ${ noContactGroupList }",
         "Alguns grups no tenen contactes: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "La clau de l'organització no està desxifrada"
       ],
       "Password is required": [
         "La contrasenya és obligatòria"
@@ -3289,7 +3270,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "Alguna cosa ha anat malament."
+        "S'ha produït un error."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Per utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
@@ -3509,6 +3490,20 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
+      ]
+    },
+    "Feature": {
+      "Access on mobile and desktop": [
+        "Accés des del mòbil i l'escriptori"
+      ],
+      "Free 5 GB storage": [
+        "5 GB d'emmagatzematge gratuït"
+      ],
+      "Save files for later access": [
+        "Desa fitxers per a un posterior accés"
+      ],
+      "Share privately and securely": [
+        "Comparteix de manera privada i segura"
       ]
     },
     "fido2: Error": {
@@ -3835,7 +3830,7 @@
         "El vostre compte de correu electrònic en requereix una per exportar les dades."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. No utilitzeu la contrasenya normal."
+        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. No utilitzeu la contrasenya habitual."
       ],
       "Your email address and password are correct.": [
         "La vostra adreça de correu electrònic i contrasenya són correctes."
@@ -4011,7 +4006,7 @@
         "${ contactsLength } contactes"
       ],
       "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Els fitxers ${ DOCS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta descàrrega. Podeu descarregar els altres fitxers fent clic a Continua la descàrrega."
+        "Els fitxers ${ DOCS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta descàrrega. Podeu descarregar els altres fitxers fent clic a ‘Continua la descàrrega’."
       ],
       "${ doneCount } finished": [
         "${ doneCount } finalitzat",
@@ -4074,8 +4069,8 @@
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
       ],
       "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } error d'escaneig",
-        "${ scanErrorCount } errors d'escaneig"
+        "Ha fallat ${ scanErrorCount } escaneig",
+        "Han fallat ${ scanErrorCount } escanejos"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
@@ -4691,6 +4686,9 @@
       "Key fingerprint": [
         "Clau d'empremta digital"
       ],
+      "Keys created": [
+        "S'han creat les claus."
+      ],
       "Label all imported messages as": [
         "Etiqueta tots els missatges importats com a"
       ],
@@ -5178,7 +5176,7 @@
         "Aquesta acció suprimirà el fitxer que heu carregat permanentment."
       ],
       "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Aquesta acció suprimirà la carpeta que heu carregat permanentment. No podeu suprimir una carpeta que contingui un fitxer que no és el vostre."
+        "Aquesta acció suprimirà la carpeta que heu carregat permanentment. No podeu suprimir una carpeta que contingui un fitxer del qual no sou propietari."
       ],
       "This action will delete the link and revoke access for all users.": [
         "Aquesta acció eliminarà l'enllaç i revocarà l'accés per a tots els usuaris."
@@ -5350,6 +5348,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilitzeu aquest formulari per a notificar-nos de fitxers compartits inapropiats, il·legals o maliciosos. Esteu a punt d'informar:"
+      ],
+      "User activated": [
+        "S'ha activat l'usuari."
       ],
       "username": [
         "nom d'usuari"
@@ -7133,7 +7134,7 @@
         "Suport prioritari i xat en directe"
       ],
       "Private photo backup": [
-        "Còpia de seguretat de fotos privades"
+        "Còpia de seguretat de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Corregiu i refineu els vostres correus electrònics"
@@ -7215,7 +7216,7 @@
         "TOR sobre VPN"
       ],
       "Two-factor authentication": [
-        "Autenticació de dos factors"
+        "Autenticació de doble factor"
       ],
       "Unlimited devices": [
         "Nombre il·limitat de dispositius"
@@ -7410,10 +7411,10 @@
     },
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "new_plans: title": {
@@ -7583,7 +7584,7 @@
         "Requereix un codi enviat a un telèfon mòbil per iniciar la sessió. Això assegura que, fins i tot si una contrasenya està compromesa, el compte roman segur."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
+        "Restableix les contrasenyes i l'autenticació de doble factor dels usuaris."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Dirigiu el trànsit d'internet a través de la xarxa Tor amb un sol clic"
@@ -7760,8 +7761,8 @@
         "No s'han pogut desxifrar ${ count } elements."
       ],
       "${ numberOfItems } item deleted": [
-        "${ numberOfItems } element eliminat",
-        "${ numberOfItems } elements eliminats"
+        "S'ha eliminat ${ numberOfItems } element",
+        "S'han eliminat ${ numberOfItems } elements"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "S'ha eliminat ${ numberOfItems } element permanentment de la paperera",
@@ -7936,7 +7937,7 @@
         "No s'ha pogut carregar la subcarpeta."
       ],
       "The document failed to be created": [
-        "No s'ha creat el document."
+        "No s'ha pogut crear el document."
       ],
       "The item was not added to your drive": [
         "No s'ha afegit l'element al drive."
@@ -7952,11 +7953,11 @@
       ],
       "This item was not removed from your list": [
         "Aquest element no s'ha eliminat de la llista.",
-        "Alguns elements no s'han eliminat de la vostra llista."
+        "Alguns elements no s'han eliminat de la llista."
       ],
       "This item was successfully removed from your list": [
-        "Aquest element s'ha eliminat de la vostra llista.",
-        "Aquests elements s'han eliminat de la vostra llista."
+        "S'ha eliminat aquest element de la llista.",
+        "S'han eliminat aquests elements de la llista."
       ],
       "Trash failed to be emptied": [
         "No s'ha pogut buidar la paperera."
@@ -7991,7 +7992,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
-        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
+        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzar els vostres missatges de correu electrònic i la vostra configuració, visualitzar i descarregar els vostres contactes, visualitzar i descarregar totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
     "Offer": {
@@ -8008,7 +8009,7 @@
         "Aconseguiu l'oferta"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Última oportunitat d'aconseguir un 80% de descompte al primer mes de ${ plan } Plus."
+        "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan } Plus."
       ],
       "Limited-time offer": [
         "Oferta per temps limitat"
@@ -8027,7 +8028,7 @@
       "Custom email domain": [
         "Domini de correu electrònic personalitzat"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Adreces de correu electrònic"
       ],
       "Free": [
@@ -8178,7 +8179,7 @@
         "Sincronitzeu i accediu als vostres fitxers des de qualsevol lloc"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "El propietari ha de confirmar l'accés per compartir. Rebreu un correu electrònic un cop estigui fet."
+        "El propietari ha de confirmar l'accés per a compartir. Rebreu un correu electrònic un cop estigui fet."
       ],
       "Upload your first file": [
         "Carregueu el vostre primer fitxer"
@@ -8391,7 +8392,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a ordenar al vostre banc que debiti el vostre compte i que faci el càrrec al vostre compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes a partir de la data de dèbit, segons les condicions del vostre acord amb el vostre banc."
+        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a instruir el vostre banc perquè debiti el vostre compte, i el banc a debitar el compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes des de la data del dèbit d'acord amb les condicions del vostre acord amb el banc."
       ],
       "Street address, postal code, and city": [
         "Adreça, codi postal i ciutat"
@@ -8968,6 +8969,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "La teva subscripció es renovarà al mateix preu cada any."
       ]
     },
     "specialoffer: Link": {
@@ -8978,7 +8982,7 @@
         "Millora"
       ],
       "Upgrade for ${ pricingTitle }": [
-        "Milloreu per ${ pricingTitle }"
+        "Milloreu el pla per ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9741,7 +9745,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Creeu detalls d'inici de sessió segurs en tots els vostres dispositius. Inclou, entre d'altres, àlies il·limitats, 20 caixes fortes, autenticació de dos factors (2FA) i inserció automàtica de targetes de crèdit."
+        "Creeu detalls d'inici de sessió segurs en tots els vostres dispositius. Inclou, entre d'altres, àlies il·limitats, 20 caixes fortes, autenticació de doble factor (2FA) i inserció automàtica de targetes de crèdit."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclou, entre d'altres, més de 2950 servidors en més de 65 països, connexió fins a 10 dispositius, accés a serveis de transmissió en línia de tot el món i bloqueig de programari maliciós i d'anuncis."
@@ -9917,8 +9921,8 @@
         "Segur que voleu tancar la previsualització?"
       ],
       "Are you sure you want to remove this item from your list?": [
-        "Esteu segur que voleu esborrar aquest element de la vostra llista?",
-        "Esteu segur que voleu esborrar aquests elements de la vostra llista?"
+        "Segur que voleu esborrar aquest element de la llista?",
+        "Segur que voleu esborrar aquests elements de la llista?"
       ],
       "Are you sure?": [
         "N'esteu segur?"
@@ -10323,8 +10327,11 @@
       "Restore your files": [
         "Restaureu els vostres fitxers"
       ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "Desa-ho per a més tard a ${ DRIVE_APP_NAME }"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
-        "Deseu-lo per a més tard a ${ DRIVE_APP_NAME }"
+        "Desa-ho per a més tard a ${ DRIVE_APP_NAME }"
       ],
       "Search results": [
         "Resultats de la cerca"
@@ -10512,11 +10519,6 @@
         "Avui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Afegiu aquest fitxer compartit al vostre ${ DRIVE_APP_NAME } per accedir-hi fàcilment més endavant."
@@ -10600,6 +10602,11 @@
         "Els hem enviat una invitació per accedir a l'element."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
@@ -10648,6 +10655,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Després se us facturarà cada 12 mesos a ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos.",
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "El vostre pla programat comença el ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "La vostra subscripció es renovarà automàticament en ${ cycle } mes.",
