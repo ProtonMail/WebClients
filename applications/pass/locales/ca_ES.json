@@ -28,6 +28,9 @@
       "Accept": [
         "Accepta"
       ],
+      "Accept and view the item": [
+        "Accepta i mostra l'element"
+      ],
       "Add": [
         "Afegeix"
       ],
@@ -133,11 +136,11 @@
       "Continue offline": [
         "Continuar fora de línia"
       ],
-      "Copy alias address": [
-        "Copia l'adreça de l'àlies"
-      ],
       "Copy and close": [
         "Copia i tanca"
+      ],
+      "Copy forwarding address": [
+        "Copia l'adreça de reenviament"
       ],
       "Copy link": [
         "Copia l'enllaç"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "Crea una caixa forta nova"
-      ],
-      "Create a new vault to share": [
-        "Crea una caixa forta per compartir"
       ],
       "Create alias": [
         "Crea un àlies"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "Secció personalitzada"
-      ],
-      "Customize": [
-        "Personalitza"
       ],
       "Delete": [
         "Elimina"
@@ -249,9 +246,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Activeu aquest àlies per rebre correus electrònics enviats a aquest àlies"
-      ],
-      "Entire vault": [
-        "Caixa forta sencera"
       ],
       "Exclude from monitoring": [
         "Exclou del monitoratge"
@@ -316,6 +310,9 @@
       "Install extension": [
         "Instal·la l'extensió"
       ],
+      "Invite more...": [
+        "Convideu més persones..."
+      ],
       "Invite others": [
         "Convida altres persones"
       ],
@@ -355,9 +352,6 @@
       "Manage access": [
         "Gestiona l'accés"
       ],
-      "Manage vault access": [
-        "Gestiona l'accés a la caixa forta"
-      ],
       "Manually sync your data": [
         "Sincronitzeu les vostres dades manualment"
       ],
@@ -381,9 +375,6 @@
       ],
       "Move all items": [
         "Mou tots els elements"
-      ],
-      "Move to a shared vault": [
-        "Mou a una caixa forta compartida"
       ],
       "Move to another vault": [
         "Mou a una altra caixa forta"
@@ -535,11 +526,11 @@
       "Share": [
         "Compartir"
       ],
+      "Share item": [
+        "Comparteix un element"
+      ],
       "Share secure link": [
         "Comparteix un enllaç segur"
-      ],
-      "Share this vault": [
-        "Comparteix aquesta caixa forta"
       ],
       "Share vault": [
         "Comparteix la caixa forta"
@@ -612,9 +603,6 @@
       "Update": [
         "Actualitza"
       ],
-      "Update vault": [
-        "Actualitza la caixa forta"
-      ],
       "Upgrade": [
         "Millora"
       ],
@@ -644,6 +632,9 @@
       ],
       "View older history": [
         "Mostra l'historial més antic"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Amb altres usuaris de ${ BRAND_NAME }"
       ],
       "Write us on Reddit": [
         "Escriviu-nos a Reddit"
@@ -739,7 +730,7 @@
         "La norma SPF ${ WIKIPEDIA_LINK_SPF } és un mètode d'autenticació de correu electrònic dissenyat per detectar adreces de remitents falsificades durant l'enviament del correu electrònic. Es recomana configurar SPF per reduir la possibilitat que els vostres correus electrònics acabin a la carpeta de correu brossa del destinatari."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "Comenceu a monitoritzar les filtracions de dades relacionades amb els comptes creats amb la vostra adreça de correu electrònic i amb els vostres àlies de hide-my-email."
+        "Comenceu a monitorar les filtracions de dades relacionades amb els comptes creats amb la vostra adreça de correu electrònic i amb els vostres àlies de hide-my-email."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "El web fosc és una part amagada d'internet on es pot comprar i vendre informació personal robada, com ara les identitats."
@@ -808,6 +799,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "No s'ha pogut confirmar aquesta invitació en aquest moment"
+      ],
+      "Could not leave item.": [
+        "No s'ha pogut deixar l'element."
       ],
       "Could not leave vault.": [
         "No s'ha pogut deixar la cassa forta."
@@ -1167,7 +1161,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "Alguna cosa ha anat malament."
+        "S'ha produït un error."
       ]
     },
     "Feature": {
@@ -1257,10 +1251,6 @@
         "${ blockedEmailsCount } bloquejat",
         "${ blockedEmailsCount } bloquejats"
       ],
-      "${ count } invite successfully sent": [
-        "S'ha enviat ${ count } invitació.",
-        "S'han enviat ${ count } invitacions."
-      ],
       "${ count } time": [
         "${ count } vegada",
         "${ count } vegades"
@@ -1275,6 +1265,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } reenviat",
         "${ forwardedEmailsCount } reenviats"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } vol compartir un element amb vosaltres."
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1301,6 +1294,10 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } us demanarà la contrasenya ${ BRAND_NAME } per a accedir a les dades fora de línia."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "S'ha enviat ${ payload.count } invitació.",
+        "S'han enviat ${ payload.count } invitacions."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "S'ha desactivat ${ PROTON_SENTINEL_NAME }."
@@ -1433,8 +1430,17 @@
       "Can be viewed": [
         "Es pot veure"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Permet crear, editar, suprimir i exportar elements en aquesta caixa forta."
+      "Can create, edit, and delete items in this vault.": [
+        "Permet crear, editar e eliminar els elements en aquesta caixa forta."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Pot crear, editar i eliminar aquest element."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Permet concedir i revocar accés a aquest element i eliminar-lo."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Pot concedir i revocar l'accés a aquest element."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Permet concedir i revocar accés a aquesta caixa forta i eliminarla."
@@ -1444,6 +1450,9 @@
       ],
       "Can view items in this vault.": [
         "Permet veure els elements d'aquesta caixa forte."
+      ],
+      "Can view this item.": [
+        "Pot veure aquest element."
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
@@ -1467,7 +1476,7 @@
         "Creat el ${ time }."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV ofereix un format còmode per visualitzar les vostres dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus de pas...). Per a una exportació completa, recomanem utilitzar un format diferent."
+        "CSV ofereix un format còmode per visualitzar les vostres dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus d'accés...). Per a una exportació completa, us recomanem que utilitzeu un format diferent."
       ],
       "Current version": [
         "Versió actual"
@@ -1602,6 +1611,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Per motius de seguretat, cal confirmar l'accés"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "L'adreça de reenviament s'ha copiat al porta-retalls. Envieu un correu electrònic a aquesta adreça i ${ Email } el rebrà."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Les contrasenyes generades s'emmagatzemaran durant un període d'${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana.",
         "Les contrasenyes generades s'emmagatzemaran durant un període de: ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes."
@@ -1689,6 +1701,10 @@
       "Item restored": [
         "S'ha restaurat l'element"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Elements compartits: ${ itemAccessCount } usuari",
+        "Elements compartits: ${ itemAccessCount } usuaris"
+      ],
       "Item successfully excluded from monitoring": [
         "S'ha exclòs l'element del monitoratge."
       ],
@@ -1709,6 +1725,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Més informació sobre com ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "S'està deixant l'element..."
       ],
       "Leaving vault...": [
         "Deixant la caixa forta..."
@@ -1951,9 +1970,6 @@
       "Restoring trashed items...": [
         "S'estan restaurant els elements de la paperera..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "L'adreça d'àlies inversa s'ha copiat al porta-retalls. Envieu un correu electrònic a aquesta adreça i ${ Email } el rebrà."
-      ],
       "Secure links": [
         "Enllaços segurs"
       ],
@@ -1993,6 +2009,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Compartiu els inicis de sessió i notes segures amb un màxim de 10 persones"
       ],
+      "Shared item invitation": [
+        "Invitació a un element compartit"
+      ],
       "Sign in to your account": [
         "Inicieu sessió al compte"
       ],
@@ -2007,6 +2026,9 @@
       ],
       "Successfully exported all your items": [
         "S'han exportat tots els elements"
+      ],
+      "Successfully left the item": [
+        "Heu deixat l'element.."
       ],
       "Successfully left the vault": [
         "Heu deixat la caixa forta."
@@ -2056,6 +2078,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Aquest element no està compartit actualment amb ningú. Inviteu persones a compartir-la amb altres."
       ],
       "This operation is irreversible.": [
         "Aquesta operació és irreversible."
@@ -2132,9 +2157,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Milloreu a un pla de pagament per crear diverses caixes fortes."
       ],
-      "Use vaults to share this item with others.": [
-        "Utilitzeu les caixes fortes per a compartir aquest element amb altres."
-      ],
       "User's access removed": [
         "S'ha esborrat l'accés de l'usuari."
       ],
@@ -2155,6 +2177,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "S'ha esborrat la caixa forta \"${ share.content.name }\"."
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Caixes fortes compartides: ${ vaultMembersCount } membre",
+        "Caixes fortes compartides: ${ vaultMembersCount } membres"
       ],
       "Verification code sent.": [
         "Codi de verificació enviat."
@@ -2220,7 +2246,7 @@
         "Podreu personalitzar la configuració del vostre domini (àlies de correu electrònic catch-all, nom a mostrar per defecte per als àlies, etc.) després de verificar el vostre domini."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
-        "Se us tancarà la sessió i haureu de tornar a iniciar sessió en tots els vostres altres dispositius."
+        "Se us tancarà la sessió i haureu de tornar a iniciar-la en tots els altres dispositius."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "Rebreu notificacions sobre les infraccions de dades d'aquestes adreces de correu electrònic."
@@ -2244,7 +2270,7 @@
         "Esteu convidat a una caixa forta."
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "El vostre compte està restringit perquè la vostra organització ha forçat l'autenticació de dos factors. Activeu l'autenticació de dos factors a la configuració del vostre compte o contacteu amb el vostre administrador."
+        "El vostre compte està restringit perquè la vostra organització ha forçat l'autenticació de doble factor. Activeu l'autenticació de doble factor a la configuració del vostre compte o contacteu amb el vostre administrador."
       ],
       "your domain": [
         "el vostre domini"
@@ -2392,8 +2418,8 @@
       "All": [
         "Tot"
       ],
-      "All vaults": [
-        "Totes les caixes fortes"
+      "All items": [
+        "Tots els elements"
       ],
       "Alphabetical": [
         "Alfabètic"
@@ -2581,6 +2607,9 @@
       "Floor, apartment, building": [
         "Planta, apartament, edifici"
       ],
+      "For a one-off sharing": [
+        "Per a un ús únic"
+      ],
       "Forwards to": [
         "Reenvia a"
       ],
@@ -2595,9 +2624,6 @@
       ],
       "General": [
         "General"
-      ],
-      "Generate a secure link for this item": [
-        "Genera un enllaç segur a aquest element"
       ],
       "Generic CSV": [
         "CSV genèric"
@@ -2746,6 +2772,9 @@
       "Need help?": [
         "Necessiteu ajuda?"
       ],
+      "New": [
+        "Nou"
+      ],
       "New vault": [
         "Nova caixa forta"
       ],
@@ -2792,7 +2821,7 @@
         "Organització"
       ],
       "Passkey": [
-        "Contrasenya"
+        "Clau d'accés"
       ],
       "Passphrase": [
         "Frase de pas"
@@ -2872,6 +2901,9 @@
       "Security code": [
         "Codi de seguretat"
       ],
+      "See member and permission overview": [
+        "Consulteu tots els membres i els permisos"
+      ],
       "Select a domain": [
         "Selecciona un domini"
       ],
@@ -2893,11 +2925,17 @@
       "Share": [
         "Comparteix"
       ],
-      "Share this vault or create a new vault": [
-        "Comparteix aquesta caixa forte o crea una nova"
+      "Shared": [
+        "Compartit"
+      ],
+      "Shared by me": [
+        "Compartit per mi"
       ],
       "Shared link": [
         "Enllaç compartit"
+      ],
+      "Shared with me": [
+        "Compartit amb mi"
       ],
       "Show website favicons": [
         "Mostra els favicons dels llocs web"
@@ -2943,10 +2981,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "La caixa forta de l'element es comparteix actualment amb ${ targetMembers } persona.",
-        "La caixa forta de l'element es comparteix actualment amb ${ targetMembers } persones."
       ],
       "The URL has been copied to the clipboard": [
         "S'ha copiat l'URL al porta-retalls."
@@ -3007,6 +3041,9 @@
       ],
       "Used in": [
         "Utilitzat en"
+      ],
+      "Useful for permanent sharing": [
+        "Útil per compartir permanentment"
       ],
       "Username": [
         "Nom d'usuari"
@@ -3204,23 +3241,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Cerca ${ pluralItemType } a ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Cerca ${ pluralItemType } en totes les caixes fortes"
+      "Search ${ pluralItemType } in all items": [
+        "Cerca ${ pluralItemType } en tots els elements"
       ],
       "Search in ${ vaultName }": [
         "Cerca en ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Cerca en totes les caixes fortes"
+      "Search in all items": [
+        "Cerca a tots els elements"
       ],
       "Search in Trash": [
         "Cerca a la paperera"
       ],
       "Select a suffix": [
         "Seleccioneu un sufix"
-      ],
-      "Shared vault": [
-        "Caixa forta compartida"
       ],
       "Unknown origin": [
         "Origen desconegut"
@@ -3251,7 +3285,7 @@
     },
     "sso": {
       "Approve or deny it now": [
-        "Aprova o nega-ho ara"
+        "Aprova-ho o denega-ho ara"
       ],
       "Enter the confirmation code we sent on your other device.": [
         "Introduïu el codi de confirmació enviat a l'altre dispositiu."
@@ -3278,7 +3312,7 @@
         "No s'ha pogut rebutjar l'inic de sessió."
       ],
       "Sign-in requested on another device. Was it you?": [
-        "S'ha sol·licitat una connexió en un altre dispositiu. Heu estat vosaltres?"
+        "S'ha sol·licitat un inici de sessió en un altre dispositiu. Heu estat vosaltres?"
       ],
       "Sign-in requested on another device. Was it you? ": [
         "S'ha sol·licitat una connexió en un altre dispositiu. Heu estat vosaltres? "
@@ -3298,7 +3332,7 @@
         "Activació pendent"
       ],
       "Pending admin activation": [
-        "Activació de l'administrador pendent"
+        "L'activació de l'administrador està pendent"
       ],
       "Rejected": [
         "Rebutjat"
@@ -3350,6 +3384,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "S'ha verificat el domini. El vostre domini pot començar a rebre correus electrònics i crear àlies."
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Els elements no poden contenir més d'${ share.targetMaxMembers } usuari.",
+        "Els elements no poden contenir més d'${ share.targetMaxMembers } usuaris."
+      ],
       "Mailbox successfully deleted": [
         "S'ha eliminat la bústia de correu."
       ],
@@ -3365,9 +3403,9 @@
       "Random prefix generation successfully enabled": [
         "S'ha activat la generació aleatòria de prefixos."
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Les caixes fortes no poden contenir més d'${ vault.targetMaxMembers } usuari.",
-        "Les caixes fortes no poden contenir més de ${ vault.targetMaxMembers } usuaris."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Les caixes fortes no poden contenir més d'${ targetMaxMembers } usuari.",
+        "Les caixes fortes no poden contenir més de ${ targetMaxMembers } usuaris."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "S'ha enviat un correu electrònic de verificació. Comproveu la vostra safata d'entrada per verificar la vostra bústia de correu"
@@ -3554,11 +3592,17 @@
       "Install extension": [
         "Instal·la l'extensió"
       ],
+      "Item": [
+        "Element"
+      ],
       "Last autofill": [
         "Darrer emplenament automàtic"
       ],
       "Last modified": [
         "Última modificació"
+      ],
+      "Leave this item?": [
+        "Voleu deixar aquest element?"
       ],
       "Leave vault?": [
         "Voleu deixar la caixa forta?"
@@ -3615,6 +3659,9 @@
       ],
       "No reused passwords": [
         "No hi ha contrasenyes reutilitzades"
+      ],
+      "No shared items": [
+        "Sense element compartit"
       ],
       "No shared secure links": [
         "Sense enllaços segurs compartits"
@@ -3710,6 +3757,12 @@
       ],
       "Share with": [
         "Comparteix amb"
+      ],
+      "Shared item invitation": [
+        "Invitació a un element compartit"
+      ],
+      "Shared via": [
+        "Compartit mitjançant"
       ],
       "SPF (Optional)": [
         "SPF (opcional)"
@@ -3826,6 +3879,9 @@
       ],
       "A description of the problem is required": [
         "Es requereix una descripció del problema"
+      ],
+      "Addresses already invited.": [
+        "Les adreces ja han estat invitades."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Els àlies a la paperera continuaran redirigint els correus electrònics."
@@ -3947,6 +4003,9 @@
       "No secure links matching": [
         "No hi ha cap enllaç segur que coincideixi."
       ],
+      "No shared items matching": [
+        "No hi ha elements compartits que coincideixin."
+      ],
       "Offline": [
         "Fora de línia"
       ],
@@ -3986,6 +4045,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Alguns elements estan actualment compartits. Eliminar-ho eliminarà l'accés per a tots els altres usuaris."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Alguns elements estan actualment compartits. Moure'ls a una altra caixa forta suposarà la supressió de l'accés per a la resta d'usuaris.\""
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Alguna cosa ha anat malament en iniciar ${ PASS_APP_NAME }. Proveu de refrescar o tornar a carregar l'extensió"
       ],
@@ -3997,6 +4062,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Aquesta adreça de correu electrònic ja no es controlarà per detectar infraccions de dades."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Aquest element està compartit actualment. Eliminar-ho eliminarà l'accés per a tots els altres usuaris."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Aquest element està compartit actualment. Moure-ho a una altra caixa forta suposarà la supressió de l'accés per a la resta d'usuaris."
       ],
       "Title is required": [
         "El títol és obligatori"
@@ -4019,8 +4090,14 @@
       "Verification code is required": [
         "Cal un codi de verificació"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Heu arribat al límit de membres que poden accedir a aquest element."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Heu arribat al límit de membres que poden accedir a aquesta caixa forta."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Heu assolit el límit d'usuaris en aquest element. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Heu assolit el límit d'usuaris en aquesta caixa forta. ${ upgradeLink }"
@@ -4033,6 +4110,9 @@
       ],
       "You must select at least one mailbox": [
         "Heu de seleccionar almenys una bústia de correu"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Perdéreu l'accés a aquest element i als seus detalls. Voleu continuar?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ja no tindreu accés a aquesta caixa forta. Per tornar-hi a entrar, necessitareu una nova invitació."

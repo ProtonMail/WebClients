@@ -112,9 +112,6 @@
       "Continue": [
         "Nadaljuj"
       ],
-      "Copy alias address": [
-        "Kopiraj vzdevek naslova"
-      ],
       "Copy and close": [
         "Kopiraj in zapri"
       ],
@@ -132,9 +129,6 @@
       ],
       "Create a new vault": [
         "Ustvari nov trezor"
-      ],
-      "Create a new vault to share": [
-        "Ustvarite nov trezor za skupno rabo"
       ],
       "Create alias": [
         "Ustvari vzdevek"
@@ -165,9 +159,6 @@
       ],
       "Custom section": [
         "Razdelek po meri"
-      ],
-      "Customize": [
-        "Prilagodi"
       ],
       "Delete": [
         "Izbriši"
@@ -307,9 +298,6 @@
       "Manage access": [
         "Upravljanje dostopa"
       ],
-      "Manage vault access": [
-        "Upravljajte dostop do trezorja"
-      ],
       "Manually sync your data": [
         "Ročno sinhroniziraj vaše podatke"
       ],
@@ -333,9 +321,6 @@
       ],
       "Move all items": [
         "Premakni vse predmete"
-      ],
-      "Move to a shared vault": [
-        "Premakni v skupni trezor"
       ],
       "Move to another vault": [
         "Premakni v drug trezor"
@@ -475,8 +460,8 @@
       "Share": [
         "Deli"
       ],
-      "Share this vault": [
-        "Delite ta trezor"
+      "Share item": [
+        "Daj predmet v skupno rabo"
       ],
       "Share vault": [
         "Skupni trezor"
@@ -522,9 +507,6 @@
       ],
       "Update": [
         "Posodobi"
-      ],
-      "Update vault": [
-        "Posodobi trezor"
       ],
       "Upgrade": [
         "Nadgradi"
@@ -1129,9 +1111,6 @@
       "Can be viewed": [
         "Lahko se ogleda"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Lahko ustvarja, ureja, briše in izvaža predmete v tem trezorju."
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Lahko odobri in prekliče dostop do tega trezorja ter ga izbriše."
       ],
@@ -1603,9 +1582,6 @@
       "Upgrade Now to Unlock Premium Features": [
         "Nadgradite zdaj, da odklenete premijske funkcije"
       ],
-      "Use vaults to share this item with others.": [
-        "Uporabite trezorje za skupno rabo predmetov z drugimi."
-      ],
       "User's access removed": [
         "Uporabnikov dostop odstranjen"
       ],
@@ -1805,9 +1781,6 @@
       ],
       "All": [
         "Vse"
-      ],
-      "All vaults": [
-        "Vsi trezorji"
       ],
       "Alphabetical": [
         "Po abecednem redu"
@@ -2492,23 +2465,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Iskanje ${ pluralItemType } v ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Išči ${ pluralItemType } v vseh trezorjih"
-      ],
       "Search in ${ vaultName }": [
         "Iskanje ${ vaultName }"
-      ],
-      "Search in all vaults": [
-        "Iskanje v vseh trezorjih"
       ],
       "Search in Trash": [
         "Iskanje v smetnjaku"
       ],
       "Select a suffix": [
         "Izberite pripono"
-      ],
-      "Shared vault": [
-        "Skupni trezor"
       ],
       "Unknown origin": [
         "Neznanega izvora"
@@ -2557,14 +2521,6 @@
       ],
       "Unknown": [
         "Neznan"
-      ]
-    },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
-        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
-        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov.",
-        "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnikov."
       ]
     },
     "Theme": {

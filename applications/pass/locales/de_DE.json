@@ -28,6 +28,9 @@
       "Accept": [
         "Annehmen"
       ],
+      "Accept and view the item": [
+        "Annehmen und das Element anzeigen"
+      ],
       "Add": [
         "Hinzufügen"
       ],
@@ -133,9 +136,6 @@
       "Continue offline": [
         "Offline fortsetzen"
       ],
-      "Copy alias address": [
-        "Alias-Adresse kopieren"
-      ],
       "Copy and close": [
         "Kopieren und schließen"
       ],
@@ -153,9 +153,6 @@
       ],
       "Create a new vault": [
         "Neuen Tresor erstellen"
-      ],
-      "Create a new vault to share": [
-        "Erstelle einen neuen geteilten Tresor"
       ],
       "Create alias": [
         "Alias erstellen"
@@ -189,9 +186,6 @@
       ],
       "Custom section": [
         "Benutzerdefinierter Abschnitt"
-      ],
-      "Customize": [
-        "Anpassen"
       ],
       "Delete": [
         "Löschen"
@@ -246,9 +240,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktiviere diesen Alias, um E-Mails zu empfangen, die an diesen Alias gesendet werden"
-      ],
-      "Entire vault": [
-        "Gesamter Tresor"
       ],
       "Exclude from monitoring": [
         "Von der Überwachung ausschließen"
@@ -313,6 +304,9 @@
       "Install extension": [
         "Erweiterung installieren"
       ],
+      "Invite more...": [
+        "Weitere einladen..."
+      ],
       "Invite others": [
         "Jemanden einladen"
       ],
@@ -352,9 +346,6 @@
       "Manage access": [
         "Zugriff verwalten"
       ],
-      "Manage vault access": [
-        "Tresorzugriff verwalten"
-      ],
       "Manually sync your data": [
         "Daten manuell synchronisieren"
       ],
@@ -378,9 +369,6 @@
       ],
       "Move all items": [
         "Alle Einträge verschieben"
-      ],
-      "Move to a shared vault": [
-        "In einen geteilten Tresor verschieben"
       ],
       "Move to another vault": [
         "In einen anderen Tresor verschieben"
@@ -532,11 +520,11 @@
       "Share": [
         "Teilen"
       ],
+      "Share item": [
+        "Element teilen"
+      ],
       "Share secure link": [
         "Sicheren Link teilen"
-      ],
-      "Share this vault": [
-        "Diesen Tresor teilen"
       ],
       "Share vault": [
         "Tresor teilen"
@@ -609,9 +597,6 @@
       "Update": [
         "Aktualisieren"
       ],
-      "Update vault": [
-        "Tresor aktualisieren"
-      ],
       "Upgrade": [
         "Wechseln"
       ],
@@ -641,6 +626,9 @@
       ],
       "View older history": [
         "Älteren Verlauf anzeigen"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Mit anderen ${ BRAND_NAME }-Benutzern"
       ],
       "Write us on Reddit": [
         "Schreibe uns auf Reddit"
@@ -817,6 +805,9 @@
       ],
       "Could not resolve share members": [
         "Mitglieder der Freigabe können nicht festgelegt werden"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Fehler beim Abrufen der Benutzereinladungen für den Tresor \"${ vaultName }\"."
       ],
       "Could not validate addresses at the moment.": [
         "Die Adressen können zurzeit nicht überprüft werden."
@@ -1238,10 +1229,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
       ],
-      "${ count } invite successfully sent": [
-        "${ count } Einladung gesendet",
-        "${ count } Einladungen gesendet"
-      ],
       "${ count } time": [
         "${ count } Mal",
         "${ count } Mal"
@@ -1275,6 +1262,10 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } benötigt dein ${ BRAND_NAME }-Passwort, um offline auf Daten zugreifen zu können."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } Einladung erfolgreich gesendet",
+        "${ payload.count } Einladungen erfolgreich gesendet"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } erfolgreich deaktiviert."
@@ -1391,8 +1382,17 @@
       "Can be viewed": [
         "Kann angezeigt werden"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Darf Einträge in diesem Tresor erstellen, bearbeiten, löschen und exportieren."
+      "Can create, edit, and delete items in this vault.": [
+        "Darf Elemente in diesem Tresor erstellen, bearbeiten und löschen."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Darf dieses Element erstellen, bearbeiten und löschen."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Darf Zugriff auf dieses Element gewähren oder widerrufen, und es löschen."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Darf Zugriff auf dieses Element gewähren oder widerrufen."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Darf Zugriff auf diesen Tresor gewähren oder widerrufen und den Tresor löschen."
@@ -1402,6 +1402,9 @@
       ],
       "Can view items in this vault.": [
         "Darf Einträge in diesem Tresor anzeigen."
+      ],
+      "Can view this item.": [
+        "Darf dieses Element anzeigen."
       ],
       "Change your password": [
         "Passwort ändern"
@@ -1531,6 +1534,10 @@
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Befolge diese Schritte, um deine Daten mit einer generischen CSV zu importieren:"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Aus Sicherheitsgründen musst du den Zugriff auf diesen geteilten Tresor bestätigen.",
+        "Aus Sicherheitsgründen musst du den Zugriff auf diese geteilten Tresore bestätigen."
       ],
       "For security reasons, your access needs to be confirmed": [
         "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
@@ -1989,6 +1996,9 @@
       "This version will be added to the history as the newest version.": [
         "Diese Version wird als neueste Version in den Verlauf aufgenommen."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Dadurch wird das Gerät **${ name }**, das versuchte, sich am **${ date }** bei deinem ${ BRAND_NAME }-Konto anzumelden, abgelehnt."
+      ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Um deine persönliche E-Mail-Adresse zu verbergen, kannst du einen Alias-Kontakt erstellen, der deine Adresse verschleiert."
       ],
@@ -2030,9 +2040,6 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Upgrade auf ein kostenpflichtiges Abonnement, um mehrere Tresore zu erstellen."
-      ],
-      "Use vaults to share this item with others.": [
-        "Verwende Tresore, um diesen Eintrag mit anderen zu teilen."
       ],
       "User's access removed": [
         "Benutzerzugriff entfernt"
@@ -2274,8 +2281,8 @@
       "All": [
         "Alle"
       ],
-      "All vaults": [
-        "Alle Tresore"
+      "All items": [
+        "Alle Elemente"
       ],
       "Alphabetical": [
         "Alphabetisch"
@@ -2463,6 +2470,9 @@
       "Floor, apartment, building": [
         "Etage, Wohnung, Gebäude"
       ],
+      "For a one-off sharing": [
+        "Für einmaliges Teilen"
+      ],
       "Forwards to": [
         "Leitet weiter an"
       ],
@@ -2477,9 +2487,6 @@
       ],
       "General": [
         "Allgemein"
-      ],
-      "Generate a secure link for this item": [
-        "Einen sicheren Link für diesen Eintrag generieren"
       ],
       "Generic CSV": [
         "Generische CSV"
@@ -2625,6 +2632,9 @@
       "Need help?": [
         "Benötigst du Hilfe?"
       ],
+      "New": [
+        "Neu"
+      ],
       "New vault": [
         "Neuer Tresor"
       ],
@@ -2751,6 +2761,9 @@
       "Security code": [
         "Sicherheitscode"
       ],
+      "See member and permission overview": [
+        "Übersicht über Mitglieder und Berechtigungen anzeigen"
+      ],
       "Select a domain": [
         "Domain auswählen"
       ],
@@ -2772,11 +2785,17 @@
       "Share": [
         "Teilen"
       ],
-      "Share this vault or create a new vault": [
-        "Teilen diesen Tresor oder erstelle einen neuen"
+      "Shared": [
+        "Geteilt"
+      ],
+      "Shared by me": [
+        "Von mir geteilt"
       ],
       "Shared link": [
         "Geteilter Link"
+      ],
+      "Shared with me": [
+        "Mit mir geteilt"
       ],
       "Show website favicons": [
         "Website-Symbole anzeigen"
@@ -2822,10 +2841,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Der Tresor dieses Eintrags ist derzeit mit ${ targetMembers } Person geteilt.",
-        "Der Tresor dieses Eintrags ist derzeit mit ${ targetMembers } Personen geteilt."
       ],
       "The URL has been copied to the clipboard": [
         "Der Link wurde in die Zwischenablage kopiert."
@@ -2886,6 +2901,9 @@
       ],
       "Used in": [
         "Verwendet in"
+      ],
+      "Useful for permanent sharing": [
+        "Nützlich für permanentes Teilen"
       ],
       "Username": [
         "Benutzername"
@@ -3083,23 +3101,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ pluralItemType } in ${ vaultName } suchen"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "In allen Tresoren nach ${ pluralItemType } suchen"
-      ],
       "Search in ${ vaultName }": [
         "In ${ vaultName } suchen"
-      ],
-      "Search in all vaults": [
-        "In allen Tresoren suchen"
       ],
       "Search in Trash": [
         "Im Papierkorb suchen"
       ],
       "Select a suffix": [
         "Suffix auswählen"
-      ],
-      "Shared vault": [
-        "Geteilter Tresor"
       ],
       "Unknown origin": [
         "Ursprung unbekannt"
@@ -3152,6 +3161,9 @@
       ],
       "Sign-in rejected": [
         "Anmeldung verweigert"
+      ],
+      "Sign-in rejection failure": [
+        "Fehler beim Ablehnen der Anmeldeanfrage."
       ],
       "Sign-in requested on another device. Was it you?": [
         "Anmeldung auf einem anderen Gerät angefragt. Warst du das?"
@@ -3235,9 +3247,9 @@
       "Mailboxes successfully updated": [
         "Postfächer erfolgreich aktualisiert."
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten.",
-        "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Tresore können nicht mehr als ${ targetMaxMembers } Benutzer beinhalten.",
+        "Tresore können nicht mehr als ${ targetMaxMembers } Benutzer beinhalten."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Verifizierungs-E-Mail versendet. Bitte überprüfe deinen Posteingang, um dein Postfach zu verifizieren."
@@ -3418,6 +3430,9 @@
       "Install extension": [
         "Erweiterung installieren"
       ],
+      "Item": [
+        "Element"
+      ],
       "Last autofill": [
         "Letztes Auto-Ausfüllen"
       ],
@@ -3476,6 +3491,9 @@
       ],
       "No reused passwords": [
         "Keine wiederverwendeten Passwörter"
+      ],
+      "No shared items": [
+        "Keine geteilten Elemente"
       ],
       "No shared secure links": [
         "Keine geteilten sicheren Links"
@@ -3565,6 +3583,9 @@
       ],
       "Share with": [
         "Teilen mit"
+      ],
+      "Shared via": [
+        "Geteilt über"
       ],
       "SPF (Optional)": [
         "SPF (optional)"
