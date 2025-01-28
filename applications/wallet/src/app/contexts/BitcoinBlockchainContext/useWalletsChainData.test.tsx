@@ -4,7 +4,7 @@ import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import type { MockedFunction } from 'vitest';
 
-import type { WasmBlockchainClient } from '@proton/andromeda';
+import type { WasmAccountSyncer} from '@proton/andromeda';
 import { WasmAccount, WasmWallet } from '@proton/andromeda';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { MINUTE } from '@proton/shared/lib/constants';
@@ -12,7 +12,7 @@ import { mockUseNotifications } from '@proton/testing/lib/vitest';
 import { setupStore } from '@proton/wallet/store';
 import { apiWalletsData, mockUseFlag, mockUseGetBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet/tests';
 
-import { mockUseBlockchainClient } from '../../tests';
+import { mockUseBlockchainClient, mockWasmAccountSyncer } from '../../tests';
 import { mockIsFullSyncDone } from '../../tests/mocks/useCache';
 import { mockUseDebounceEffect } from '../../tests/mocks/useDebounceEffect';
 import { useWalletsChainData } from './useWalletsChainData';
@@ -76,7 +76,7 @@ const accounts = {
 };
 
 describe('useWalletsChainData', () => {
-    let mockedFullSync: MockedFunction<WasmBlockchainClient['fullSync']>;
+    let mockedFullSync: MockedFunction<WasmAccountSyncer['fullSync']>;
 
     beforeEach(() => {
         mockUseGetBitcoinNetwork();
@@ -86,7 +86,8 @@ describe('useWalletsChainData', () => {
         mockIsFullSyncDone(true);
 
         mockedFullSync = vi.fn();
-        mockUseBlockchainClient({ fullSync: mockedFullSync, shouldSync: vi.fn().mockResolvedValue(true) });
+        mockWasmAccountSyncer({ fullSync: mockedFullSync });
+        mockUseBlockchainClient({});
         mockUseWalletApiClients();
         mockUseDebounceEffect();
 
@@ -110,7 +111,7 @@ describe('useWalletsChainData', () => {
 
         // one for each account
         await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
-        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
+        expect(mockedFullSync).toHaveBeenLastCalledWith(53);
         expect(result.current.walletsChainData).toStrictEqual(accounts);
 
         // After 10 minutes, it should run a new sync loop
@@ -118,7 +119,7 @@ describe('useWalletsChainData', () => {
         vitest.advanceTimersByTime(10 * MINUTE);
 
         await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
-        expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
+        expect(mockedFullSync).toHaveBeenLastCalledWith(53);
         vi.clearAllMocks();
     });
 
@@ -147,7 +148,7 @@ describe('useWalletsChainData', () => {
             await result.current.syncSingleWalletAccount({ walletId: '0', accountId: '8' });
 
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(1));
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
+            expect(mockedFullSync).toHaveBeenLastCalledWith(53);
 
             // Now it shouldn't run any sync anymore
             vi.clearAllMocks();
@@ -175,7 +176,7 @@ describe('useWalletsChainData', () => {
             await result.current.syncSingleWallet({ walletId: '0', manual: true });
 
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(2));
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
+            expect(mockedFullSync).toHaveBeenLastCalledWith(53);
 
             // Now it shouldn't run any sync anymore
             vi.clearAllMocks();
@@ -200,7 +201,7 @@ describe('useWalletsChainData', () => {
 
             // one for each account
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
+            expect(mockedFullSync).toHaveBeenLastCalledWith(53);
 
             // After 10 minutes, it should run a new sync loop
             vi.clearAllMocks();
@@ -208,7 +209,7 @@ describe('useWalletsChainData', () => {
 
             await waitForNextUpdate();
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
-            expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
+            expect(mockedFullSync).toHaveBeenLastCalledWith(53);
 
             vi.clearAllMocks();
             unmount();
