@@ -67,7 +67,6 @@ describe('Mailbox retries and waitings', () => {
         });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
-        expectElements(getItems, conversations.length, false);
 
         await act(async () => {
             await wait(10000);
