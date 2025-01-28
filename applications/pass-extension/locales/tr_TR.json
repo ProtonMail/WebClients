@@ -8,6 +8,9 @@
       "Accept": [
         "Kabul et"
       ],
+      "Accept and view the item": [
+        "Kabul et ve ögeyi görüntüle"
+      ],
       "Account": [
         "Hesap"
       ],
@@ -122,11 +125,11 @@
       "Continue without pinning": [
         "Sabitlemeden ilerle"
       ],
-      "Copy alias address": [
-        "Takma ad adresini kopyala"
-      ],
       "Copy and close": [
         "Kopyala ve kapat"
+      ],
+      "Copy forwarding address": [
+        "İletme adresini kopyala"
       ],
       "Copy link": [
         "Bağlantıyı kopyala"
@@ -142,9 +145,6 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
-      ],
-      "Create a new vault to share": [
-        "Paylaşılacak yeni bir kasa oluştur"
       ],
       "Create alias": [
         "Takma ad oluştur"
@@ -181,9 +181,6 @@
       ],
       "Custom section": [
         "Özel bölüm"
-      ],
-      "Customize": [
-        "Özelleştir"
       ],
       "Delete": [
         "Sil"
@@ -251,9 +248,6 @@
       "Enable this alias to receive emails sent to this alias": [
         "Bu takma adı kullanıma alarak bu takma ada gönderilen e-postaları alın"
       ],
-      "Entire vault": [
-        "Tüm kasa"
-      ],
       "Exclude from monitoring": [
         "İzlemeye katma"
       ],
@@ -317,6 +311,9 @@
       "Include in monitoring": [
         "İzlemeye kat"
       ],
+      "Invite more...": [
+        "Başkalarını davet et..."
+      ],
       "Invite others": [
         "Başkalarını davet edin"
       ],
@@ -356,9 +353,6 @@
       "Manage access": [
         "Erişim yönetimi"
       ],
-      "Manage vault access": [
-        "Kasa erişimi yönetimi"
-      ],
       "Manually sync your data": [
         "Verilerinizi el ile eşitleyin"
       ],
@@ -379,9 +373,6 @@
       ],
       "Move all items": [
         "Tüm ögeleri taşı"
-      ],
-      "Move to a shared vault": [
-        "Paylaşılan bir kasaya taşı"
       ],
       "Move to another vault": [
         "Başka bir kasaya taşı"
@@ -536,11 +527,11 @@
       "Share": [
         "Paylaş"
       ],
+      "Share item": [
+        "Ögeyi paylaş"
+      ],
       "Share secure link": [
         "Güvenli bağlantıyı paylaş"
-      ],
-      "Share this vault": [
-        "Bu kasayı paylaş"
       ],
       "Share vault": [
         "Kasayı paylaş"
@@ -619,9 +610,6 @@
       "Update this login": [
         "Bu oturum açma kaydını güncelle"
       ],
-      "Update vault": [
-        "Kasayı güncelle"
-      ],
       "Updating": [
         "Güncelleniyor"
       ],
@@ -654,6 +642,9 @@
       ],
       "View older history": [
         "Daha eski geçmişi görüntüle"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Diğer ${ BRAND_NAME } kullanıcılarıyla"
       ],
       "Write us on Reddit": [
         "Bize Reddit üzerinden yazın"
@@ -785,6 +776,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Bu davet şu anda onaylanamıyor"
+      ],
+      "Could not leave item.": [
+        "Öge bırakılamadı."
       ],
       "Could not leave vault.": [
         "Kasa bırakılamadı."
@@ -1238,10 +1232,6 @@
         "${ blockedEmailsCount } engellendi",
         "${ blockedEmailsCount } engellendi"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } davet gönderildi",
-        "${ count } davet gönderildi"
-      ],
       "${ count } time": [
         "${ count } kez",
         "${ count } kez"
@@ -1256,6 +1246,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } iletildi",
         "${ forwardedEmailsCount } iletildi"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } sizinle bir öge paylaşmak istiyor."
       ],
       "${ memberCount } member": [
         "${ memberCount } üye",
@@ -1297,6 +1290,10 @@
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } geçiş anahtarlarını kaydetmeyi önerecek."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } davet gönderildi",
+        "${ payload.count } davet gönderildi"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } kullanımdan kaldırıldı"
@@ -1426,8 +1423,17 @@
       "Can be viewed": [
         "Görüntülenebilir"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
+      "Can create, edit, and delete items in this vault.": [
+        "Bu kasada öge oluşturabilir, düzenleyebilir ve silebilir."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Bu ögeyi oluşturabilir, düzenleyebilir ve silebilir."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Bu ögeye erişme izni verebilir, geri alabilir ya da silebilir."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Bu ögeye erişme izni verebilir ya da geri alabilir."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Bu kasaya erişme izni verebilir, geri alabilir ya da silebilir."
@@ -1437,6 +1443,9 @@
       ],
       "Can view items in this vault.": [
         "Bu kasadaki ögeleri görüntüleyebilir."
+      ],
+      "Can view this item.": [
+        "Bu ögeyi görüntüleyebilir."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain } oturumu açmak için kaydedilmiş bir geçiş anahtarı seçin"
@@ -1613,6 +1622,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "İletme adresi panoya kopyalandı. Bu adrese gönderilen e-postaları ${ Email } adresi alır."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak.",
         "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak."
@@ -1688,6 +1700,10 @@
       "Item restored": [
         "Öge geri yüklendi"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Öge paylaşımı: ${ itemAccessCount } kullanıcı",
+        "Öge paylaşımı: ${ itemAccessCount } kullanıcı"
+      ],
       "Item successfully excluded from monitoring": [
         "Öge izlemeye katılmayacak"
       ],
@@ -1702,6 +1718,9 @@
       ],
       "Item successfully unpinned": [
         "Ögenin sabitlemesi kaldırıldı"
+      ],
+      "Leaving item...": [
+        "Öge bırakılıyor…"
       ],
       "Leaving vault...": [
         "Kasa bırakılıyor..."
@@ -1941,9 +1960,6 @@
       "Restoring trashed items...": [
         "Çöpe atılmış ögeler geri yükleniyor..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Ters takma ad adresi panoya kopyalandı. Bu adrese bir e-posta gönderildiğinde ${ Email } bunu alır."
-      ],
       "Save login": [
         "Oturum açmayı kaydet"
       ],
@@ -1989,6 +2005,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
       ],
+      "Shared item invitation": [
+        "Öge paylaşma daveti"
+      ],
       "Sign in or create an account to continue.": [
         "İlerlemek için oturum ya da hesap açın."
       ],
@@ -2006,6 +2025,9 @@
       ],
       "Successfully exported all your items": [
         "Tüm ögeleriniz dışa aktarıldı"
+      ],
+      "Successfully left the item": [
+        "Öge bırakıldı"
       ],
       "Successfully left the vault": [
         "Kasa bırakıldı"
@@ -2049,6 +2071,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Bu öge şu anda kimseyle paylaşılmıyor. Paylaşmak istediğiniz kişileri davet edin."
       ],
       "This operation is irreversible.": [
         "Bu işlem geri alınamaz."
@@ -2140,9 +2165,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Birden çok kasa oluşturabilmek için ücretli bir tarifeye geçin."
       ],
-      "Use vaults to share this item with others.": [
-        "Bu ögeyi başkaları ile paylaşmak için kasaları kullanın."
-      ],
       "User's access removed": [
         "Kullanıcının erişimi kaldırıldı"
       ],
@@ -2160,6 +2182,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "\"${ share.content.name }\" kasası kaldırıldı"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Kasa paylaşımı: ${ vaultMembersCount } kullanıcı",
+        "Kasa paylaşımı: ${ vaultMembersCount } kullanıcı"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -2390,8 +2416,8 @@
       "All": [
         "Tümü"
       ],
-      "All vaults": [
-        "Tüm kasalar"
+      "All items": [
+        "Tüm ögeler"
       ],
       "Alphabetical": [
         "Alfabetik"
@@ -2591,6 +2617,9 @@
       "Floor, apartment, building": [
         "Site, bina, kat"
       ],
+      "For a one-off sharing": [
+        "Bir kerelik paylaşım için"
+      ],
       "Forwards to": [
         "Şuraya iletiyor"
       ],
@@ -2602,9 +2631,6 @@
       ],
       "General": [
         "Genel"
-      ],
-      "Generate a secure link for this item": [
-        "Bu öge için bir güvenli bağlantı oluşturun"
       ],
       "Generic CSV": [
         "CSV dosyası"
@@ -2753,6 +2779,9 @@
       "Need help?": [
         "Yardım mı gerekiyor?"
       ],
+      "New": [
+        "Yeni"
+      ],
       "New vault": [
         "Yeni kasa"
       ],
@@ -2888,6 +2917,9 @@
       "Security code": [
         "Güvenlik kodu"
       ],
+      "See member and permission overview": [
+        "Üye ve izin özetini görüntüleyin"
+      ],
       "Select a domain": [
         "Bir etki alanı seçin"
       ],
@@ -2912,11 +2944,17 @@
       "Share": [
         "Paylaş"
       ],
-      "Share this vault or create a new vault": [
-        "Bu kasayı paylaşın ya da yeni bir kasa oluşturun"
+      "Shared": [
+        "Paylaşılmış"
+      ],
+      "Shared by me": [
+        "Benim paylaştıklarım"
       ],
       "Shared link": [
         "Paylaşılan bağlantı"
+      ],
+      "Shared with me": [
+        "Benimle paylaşılanlar"
       ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"
@@ -2959,10 +2997,6 @@
       ],
       "Text": [
         "Metin"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Ögenin kasası ${ targetMembers } kişiyle paylaşılıyor",
-        "Ögenin kasası ${ targetMembers } kişiyle paylaşılıyor"
       ],
       "The URL has been copied to the clipboard": [
         "Adres panoya kopyalandı"
@@ -3023,6 +3057,9 @@
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Tarayıcınızın varsayılan parola yöneticisi olarak ${ PASS_APP_NAME } kullanın"
+      ],
+      "Useful for permanent sharing": [
+        "Kalıcı paylaşım için uygundur"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -3201,23 +3238,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ vaultName } içinde ${ pluralItemType } ara"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Tüm kasalarda ${ pluralItemType } ara"
+      "Search ${ pluralItemType } in all items": [
+        "Tüm ögelerde ${ pluralItemType } ara"
       ],
       "Search in ${ vaultName }": [
         "${ vaultName } içinde ara"
       ],
-      "Search in all vaults": [
-        "Tüm kasalarda ara"
+      "Search in all items": [
+        "Tüm ögelerde ara"
       ],
       "Search in Trash": [
         "Çöp kutusunda ara"
       ],
       "Select a suffix": [
         "Bir son ek yazın"
-      ],
-      "Shared vault": [
-        "Paylaşılan kasa"
       ],
       "Unknown origin": [
         "Kaynak bilinmiyor"
@@ -3333,6 +3367,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Etki alanı doğrulandı. Etki alanınızla e-posta almaya ve takma adlar oluşturmaya başlayabilirsiniz"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Ögelerde ${ share.targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
+        "Ögelerde ${ share.targetMaxMembers } taneden fazla kullanıcı bulunamaz."
+      ],
       "Mailbox successfully deleted": [
         "E-posta kutusu silindi"
       ],
@@ -3348,9 +3386,9 @@
       "Random prefix generation successfully enabled": [
         "Rastgele ön ek oluşturma özelliği açıldı"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz.",
-        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
+        "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz"
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Doğrulama e-postası gönderildi. Lütfen e-posta kutusunu doğrulamak için gelen kutunuza bakın"
@@ -3516,14 +3554,20 @@
       "Import to vault(s)": [
         "Kasaların içine aktar"
       ],
+      "Item": [
+        "Öge"
+      ],
       "Last autofill": [
         "Son otomatik doldurma"
       ],
       "Last modified": [
         "Son değiştirilme"
       ],
+      "Leave this item?": [
+        "Bu ögeyi bırakmak istiyor musunuz?"
+      ],
       "Leave vault?": [
-        "Kasadan ayrılmak istiyor musunuz?"
+        "Kasayı bırakmak istiyor musunuz?"
       ],
       "Log in as...": [
         "Şu olarak oturum aç..."
@@ -3562,6 +3606,9 @@
       ],
       "No items selected": [
         "Herhangi bir öge seçilmemiş"
+      ],
+      "No shared items": [
+        "Herhangi bir öge paylaşılmamış"
       ],
       "No shared secure links": [
         "Paylaşılan bir güvenli bağlantı yok"
@@ -3629,6 +3676,12 @@
       ],
       "Share with": [
         "Şununla paylaş"
+      ],
+      "Shared item invitation": [
+        "Öge paylaşma daveti"
+      ],
+      "Shared via": [
+        "Şununla paylaşıldı"
       ],
       "SPF (Optional)": [
         "SPF (isteğe bağlı)"
@@ -3742,6 +3795,9 @@
       ],
       "A description of the problem is required": [
         "Sorunun açıklamasının yazılması zorunludur"
+      ],
+      "Addresses already invited.": [
+        "Adresler zaten davet edilmiş."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Çöp kutusundaki takma adlar e-postaları iletmeyi sürdürür."
@@ -3860,6 +3916,9 @@
       "No secure links matching": [
         "Herhangi bir güvenli bağlantı eşleşmesi yok"
       ],
+      "No shared items matching": [
+        "Eşleşen bir paylaşılmış öge bulunamadı"
+      ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Eşitleme tamamlandıktan sonra, ${ PASS_SHORT_APP_NAME } içindeki takma adları silmek, bunların SimpleLogin üzerinden de silinmesine neden olur."
       ],
@@ -3890,6 +3949,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Bazı ögeler şu anda paylaşılıyor. Silerseniz diğer kullanıcıların erişimi kaldırılacak."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Bazı ögeler şu anda paylaşılıyor. Başka bir kasaya taşırsanız diğer kullanıcıların erişimi kaldırılacak."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "${ PASS_APP_NAME } başlatılırken bir sorun çıktı. Lütfen eklentiyi yenilemeyi ya da yeniden yüklemeyi deneyin"
       ],
@@ -3898,6 +3963,12 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "\"${ aliasEmail }\" takma adı şu anda \"${ relatedLoginName }\" oturumu açmak için kullanılıyor."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Bu öge şu anda paylaşılıyor. Silerseniz diğer kullanıcıların erişimi kaldırılacak."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Bu öge şu anda paylaşılıyor. Başka bir kasaya taşırsanız diğer kullanıcıların erişimi kaldırılacak."
       ],
       "Title is required": [
         "Başlığın yazılması zorunludur"
@@ -3920,8 +3991,14 @@
       "Verification code is required": [
         "Doğrulama kodunun yazılması zorunludur"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Bu ögeye erişebilecek üye sayısı sınırına ulaştınız."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Bu kasaya erişebilecek en fazla üye sayısı sınırına ulaştınız."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Bu öge için kullanıcı sayısı sınırına ulaştınız. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Bu kasada olabilecek en fazla kullanıcı sayısı sınırına ulaştınız. ${ upgradeLink }"
@@ -3934,6 +4011,9 @@
       ],
       "You must select at least one mailbox": [
         "En az bir e-posta kutusu seçmelisiniz"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Bu ögeye ve ayrıntılarına erişiminizi kaybedeceksiniz. İlerlemek istiyor musunuz?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Bu kasaya artık erişemeyeceksiniz. Yeniden katılabilmek için yeni bir davet almanız gerekecek."
