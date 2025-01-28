@@ -9,14 +9,11 @@ import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing';
 
 import { PaymentsNoApi } from './Payment';
 
-let apiMock: jest.Mock;
+const apiMock = jest.fn();
 jest.mock('../../hooks/useApi', () => {
-    let api = jest.fn();
-    apiMock = api;
-
     return {
         __esModule: true,
-        default: () => api,
+        default: () => apiMock,
     };
 });
 
@@ -48,6 +45,8 @@ let allMethods: ViewPaymentMethod[];
 const PaymentContext = applyHOCs(withApi(), withConfig(), withCache())(PaymentsNoApi);
 
 beforeEach(() => {
+    jest.clearAllMocks();
+
     paymentMethods = [
         {
             ID: 'methodid1',

@@ -9,6 +9,11 @@ import { mockNotifications } from '@proton/testing';
 import PassAliases from './PassAliases';
 import * as passAliasesProvider from './PassAliasesProvider';
 
+jest.mock('./PassAliasesProvider', () => ({
+    __esModule: true,
+    ...jest.requireActual('./PassAliasesProvider'),
+}));
+
 jest.mock('@proton/pass/lib/bridge/PassBridgeProvider', () => ({
     __esModule: true,
     PassBridgeProvider: ({ children }: { children: ReactNode }) => children,

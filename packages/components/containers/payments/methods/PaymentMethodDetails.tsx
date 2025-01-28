@@ -6,16 +6,16 @@ import { SepaAuthorizationText } from '@proton/components/payments/chargebee/Sep
 import { formattedShortSavedSepaDetails } from '@proton/components/payments/client-extensions';
 import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, isPaypalDetails, isSavedCardDetails, isSepaDetails } from '@proton/payments';
-import { getBankSvg } from '@proton/payments/ui';
+import { type CreditCardType, getBankSvg } from '@proton/payments/ui';
 
 import Bordered from '../../../components/container/Bordered';
 import useSvgGraphicsBbox from '../../../hooks/useSvgGraphicsBbox';
 
 import './PaymentMethodDetails.scss';
 
-const getCreditCardTypeByBrand = (brand: string): string => {
+const getCreditCardTypeByBrand = (brand: string): CreditCardType => {
     const CREDIT_CARD_TYPES: {
-        [brand: string]: string;
+        [brand: string]: CreditCardType;
     } = {
         'American Express': 'american-express',
         'Diners Club': 'diners-club',
@@ -78,6 +78,7 @@ const PaymentMethodDetailsPaypal = ({ details }: { details: PayPalDetails }) => 
     const { Payer } = details;
 
     const bankIcon = getBankSvg('paypal');
+
     return (
         <Bordered className="p-7 rounded" data-testid="existing-paypal">
             <div>

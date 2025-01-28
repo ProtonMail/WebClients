@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
-import { applyHOCs, withConfig, withPaymentContext } from '@proton/testing';
+import { applyHOCs, withConfig, withPaymentContext, withReduxStore } from '@proton/testing';
 
 import InvoicesSection from './InvoicesSection';
 
@@ -13,45 +13,19 @@ jest.mock('../../hooks/useHandler', () => {
     };
 });
 
-let requestMock: jest.Mock;
-jest.mock('../../hooks/useApiResult', () => {
-    let request = jest.fn();
-    requestMock = request;
+const requestMock = jest.fn();
 
+jest.mock('../../hooks/useApiResult', () => {
     return {
         __esModule: true,
         ...jest.requireActual('../../hooks/useApiResult'),
         default: jest.fn().mockReturnValue({
-            request,
+            request: () => requestMock(),
         }),
     };
 });
 
-jest.mock('@proton/account/user/hooks', () => ({
-    __esModule: true,
-    useUser: jest.fn(() => [{ isPaid: false, Flags: {} }, false]),
-    useGetUser: jest.fn(() => [{ isPaid: false, Flags: {} }, false]),
-}));
-
-jest.mock('@proton/account/subscription/hooks', () => {
-    return {
-        __esModule: true,
-        useSubscription: jest.fn().mockReturnValue([]),
-    };
-});
-
-jest.mock('../../hooks/useModals', () => {
-    return {
-        __esModule: true,
-        default: jest.fn().mockReturnValue({
-            createModal: jest.fn(),
-        }),
-    };
-});
-
-jest.mock('@proton/components/payments/client-extensions/useChargebeeContext');
-
-const InvoicesSectionContext = applyHOCs(withConfig(), withPaymentContext())(InvoicesSection);
+const InvoicesSectionContext = applyHOCs(withConfig(), withPaymentContext(), withReduxStore())(InvoicesSection);
 
 describe('InvoicesSection', () => {
     let useSubscribeEventManagerMock: jest.Mock;
@@ -61,8 +35,7 @@ describe('InvoicesSection', () => {
     });
 
     beforeEach(() => {
-        requestMock.mockReset();
-        useSubscribeEventManagerMock.mockReset();
+        jest.clearAllMocks();
     });
 
     it('should request the list of invoices again when there is an Invoices event', () => {
