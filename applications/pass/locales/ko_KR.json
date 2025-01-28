@@ -28,6 +28,9 @@
       "Accept": [
         "수락"
       ],
+      "Accept and view the item": [
+        "항목 공유 수락 및 확인"
+      ],
       "Add": [
         "추가"
       ],
@@ -133,11 +136,11 @@
       "Continue offline": [
         "오프라인으로 계속하기"
       ],
-      "Copy alias address": [
-        "별칭 주소 복사"
-      ],
       "Copy and close": [
         "복사 및 닫기"
+      ],
+      "Copy forwarding address": [
+        "포워딩 주소 복사"
       ],
       "Copy link": [
         "링크 복사"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "새 금고 생성"
-      ],
-      "Create a new vault to share": [
-        "공유할 새 금고 생성"
       ],
       "Create alias": [
         "별칭 생성"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "사용자 지정 섹션"
-      ],
-      "Customize": [
-        "맞춤화"
       ],
       "Delete": [
         "삭제"
@@ -249,9 +246,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "이 이메일 주소로 수신하려면 이 별칭을 활성화하십시오."
-      ],
-      "Entire vault": [
-        "전체 금고 공유"
       ],
       "Exclude from monitoring": [
         "모니터링에서 제외"
@@ -316,6 +310,9 @@
       "Install extension": [
         "확장 설치"
       ],
+      "Invite more...": [
+        "추가로 초대하기…"
+      ],
       "Invite others": [
         "다른 사용자 초대"
       ],
@@ -355,9 +352,6 @@
       "Manage access": [
         "접근 관리"
       ],
-      "Manage vault access": [
-        "금고 접근 관리"
-      ],
       "Manually sync your data": [
         "수동으로 데이터 동기화"
       ],
@@ -381,9 +375,6 @@
       ],
       "Move all items": [
         "모든 항목 이동"
-      ],
-      "Move to a shared vault": [
-        "공유된 금고로 이동"
       ],
       "Move to another vault": [
         "다른 금고로 이동"
@@ -535,11 +526,11 @@
       "Share": [
         "공유"
       ],
+      "Share item": [
+        "항목 공유"
+      ],
       "Share secure link": [
         "안전한 링크로 공유하기"
-      ],
-      "Share this vault": [
-        "이 금고 공유"
       ],
       "Share vault": [
         "금고 공유"
@@ -610,9 +601,6 @@
       "Update": [
         "업데이트"
       ],
-      "Update vault": [
-        "금고 업데이트"
-      ],
       "Upgrade": [
         "업그레이드"
       ],
@@ -642,6 +630,9 @@
       ],
       "View older history": [
         "이전 기록 보기"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "다른 ${ BRAND_NAME }명 사용자 포함"
       ],
       "Write us on Reddit": [
         "Reddit에서 작성"
@@ -804,6 +795,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "현재 초대를 수락할 수 없습니다."
+      ],
+      "Could not leave item.": [
+        "항목에서 떠날 수 없습니다."
       ],
       "Could not leave vault.": [
         "금고를 떠날 수 없습니다."
@@ -1245,9 +1239,6 @@
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount }개 차단됨"
       ],
-      "${ count } invite successfully sent": [
-        "초대 ${ count }개를 성공적으로 보냈습니다."
-      ],
       "${ count } time": [
         "${ count }번"
       ],
@@ -1259,6 +1250,9 @@
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount }건 전달됨"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail }님이 나와 항목을 공유하고자 합니다."
       ],
       "${ memberCount } member": [
         "${ memberCount }명 회원"
@@ -1283,6 +1277,9 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME }에서 오프라인 데이터 접근을 위해 ${ BRAND_NAME } 비밀번호를 필요로 합니다."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "초대 ${ payload.count }개를 성공적으로 보냈습니다."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME }이 성공적으로 비활성화되었습니다"
@@ -1413,8 +1410,17 @@
       "Can be viewed": [
         "확인 가능 횟수"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
+      "Can create, edit, and delete items in this vault.": [
+        "이 금고에서 항목을 생성, 편집, 삭제할 수 있습니다."
+      ],
+      "Can create, edit, and delete this item.": [
+        "이 항목을 생성, 편집하거나 삭제할 수 있습니다."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "이 항목의 접근을 허용 및 삭제할 수 있습니다."
+      ],
+      "Can grant and revoke access to this item.": [
+        "이 항목에 접근 권한을 부여하고 회수할 수 있습니다."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "이 금고의 접근을 허용 및 삭제할 수 있습니다."
@@ -1424,6 +1430,9 @@
       ],
       "Can view items in this vault.": [
         "이 금고에서 항목을 확인 가능합니다."
+      ],
+      "Can view this item.": [
+        "이 항목을 볼 수 있습니다."
       ],
       "Change your password": [
         "비밀번호를 변경하십시오"
@@ -1581,6 +1590,9 @@
       "For security reasons, your access needs to be confirmed": [
         "보안 상의 이유로, 접근이 수락되어야 합니다."
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "포워딩 주소를 클립보드에 복사했습니다. 이 주소로 이메일을 전송하면 ${ Email } 주소가 수신받습니다."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "생성된 비밀번호가 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주의 기간 동안 저장됩니다."
       ],
@@ -1665,6 +1677,9 @@
       "Item restored": [
         "항목이 복구되었습니다"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "항목 공유: ${ itemAccessCount }명 사용자"
+      ],
       "Item successfully excluded from monitoring": [
         "항목이 모니터링에서 제외되었습니다"
       ],
@@ -1685,6 +1700,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "${ staySaferOnlineLink }하는 법 알아보기"
+      ],
+      "Leaving item...": [
+        "항목에서 떠나는 중..."
       ],
       "Leaving vault...": [
         "금고 나가는 중..."
@@ -1923,9 +1941,6 @@
       "Restoring trashed items...": [
         "휴지통 내 항목 복구 중..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "역별칭 주소를 클립보드에 복사했습니다. 이 주소로 이메일을 전송하면 ${ Email } 주소가 수신받습니다."
-      ],
       "Secure links": [
         "안전한 링크"
       ],
@@ -1965,6 +1980,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "최대 10명까지 로그인과 안전한 메모를 공유하세요"
       ],
+      "Shared item invitation": [
+        "공유된 항목 초대"
+      ],
       "Sign in to your account": [
         "계정에 로그인하세요"
       ],
@@ -1979,6 +1997,9 @@
       ],
       "Successfully exported all your items": [
         "모든 항목을 성공적으로 내보냈습니다."
+      ],
+      "Successfully left the item": [
+        "항목에서 성공적으로 떠났습니다."
       ],
       "Successfully left the vault": [
         "금고를 성공적으로 나갔습니다."
@@ -2027,6 +2048,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "이 내보내기는 암호화되지 않으며 내보낸 파일에 액세스할 수 있는 사람은 누구나 비밀번호를 볼 수 있습니다. 보안을 위해, 사용을 마친 뒤에 삭제해 주세요."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "이 항목은 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
       ],
       "This operation is irreversible.": [
         "이 작업은 되돌릴 수 없습니다."
@@ -2103,9 +2127,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "유료 플랜으로 업그레이드하여 여러개의 금고를 생성하세요."
       ],
-      "Use vaults to share this item with others.": [
-        "다른 사람과 이 항목을 공유하려면 금고를 사용하세요."
-      ],
       "User's access removed": [
         "사용자 접근 삭제됨"
       ],
@@ -2126,6 +2147,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "금고 \"${ share.content.name }\" 이(가) 삭제 되었습니다."
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "금고 공유: ${ vaultMembersCount }명 구성원"
       ],
       "Verification code sent.": [
         "인증 코드가 전송되었습니다."
@@ -2348,8 +2372,8 @@
       "All": [
         "전체"
       ],
-      "All vaults": [
-        "모든 금고"
+      "All items": [
+        "모든 항목"
       ],
       "Alphabetical": [
         "알파벳 순"
@@ -2537,6 +2561,9 @@
       "Floor, apartment, building": [
         "층, 아파트, 빌딩"
       ],
+      "For a one-off sharing": [
+        "일회성 공유에 유용합니다"
+      ],
       "Forwards to": [
         "다음으로 전달:"
       ],
@@ -2551,9 +2578,6 @@
       ],
       "General": [
         "일반"
-      ],
-      "Generate a secure link for this item": [
-        "이 항목에 대한 안전한 링크를 생성하세요"
       ],
       "Generic CSV": [
         "일반 CSV"
@@ -2702,6 +2726,9 @@
       "Need help?": [
         "도움이 필요한가요?"
       ],
+      "New": [
+        "신규"
+      ],
       "New vault": [
         "새 금고"
       ],
@@ -2828,6 +2855,9 @@
       "Security code": [
         "보안 코드"
       ],
+      "See member and permission overview": [
+        "구성원과 부여된 권한을 확인해보세요"
+      ],
       "Select a domain": [
         "도메인 선택"
       ],
@@ -2849,11 +2879,17 @@
       "Share": [
         "공유"
       ],
-      "Share this vault or create a new vault": [
-        "이 금고를 공유하거나 새 금고를 생성하세요."
+      "Shared": [
+        "공유"
+      ],
+      "Shared by me": [
+        "내가 공유함"
       ],
       "Shared link": [
         "공유된 링크"
+      ],
+      "Shared with me": [
+        "나와 공유됨"
       ],
       "Show website favicons": [
         "웹사이트 아이콘 표시"
@@ -2899,9 +2935,6 @@
       ],
       "Text": [
         "텍스트"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "이 금고의 항목이 ${ targetMembers }명과 공유 중입니다."
       ],
       "The URL has been copied to the clipboard": [
         "URL이 클립보드로 복사되었습니다."
@@ -2962,6 +2995,9 @@
       ],
       "Used in": [
         "다음에서 사용됨:"
+      ],
+      "Useful for permanent sharing": [
+        "기간 제한 없이 공유할 때 유용합니다"
       ],
       "Username": [
         "사용자 이름"
@@ -3157,23 +3193,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ vaultName } 에서 ${ pluralItemType } 검색"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "모든 금고에서 ${ pluralItemType } 검색"
+      "Search ${ pluralItemType } in all items": [
+        "전체 금고 내에서 ${ pluralItemType } 검색"
       ],
       "Search in ${ vaultName }": [
         "${ vaultName }에서 검색"
       ],
-      "Search in all vaults": [
-        "모든 금고에서 검색"
+      "Search in all items": [
+        "전체 금고 내에서 검색"
       ],
       "Search in Trash": [
         "휴지통 검색"
       ],
       "Select a suffix": [
         "접미사 선택"
-      ],
-      "Shared vault": [
-        "공유된 금고"
       ],
       "Unknown origin": [
         "알 수 없는 출처"
@@ -3303,6 +3336,9 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "도메인을 성공적으로 인증했습니다. 도메인으로 이메일 수신과 별칭 생성이 가능합니다"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "항목에 ${ share.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
+      ],
       "Mailbox successfully deleted": [
         "메일함을 성공적으로 삭제했습니다."
       ],
@@ -3318,8 +3354,8 @@
       "Random prefix generation successfully enabled": [
         "무작위 접두사 생성이 성공적으로 활성화되었습니다"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "금고에 ${ vault.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "금고에 ${ targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "인증 이메일이 전송되었습니다. 메일함 인증을 위해 받은 편지함을 확인해 주세요."
@@ -3505,11 +3541,17 @@
       "Install extension": [
         "확장 프로그램 설치"
       ],
+      "Item": [
+        "항목"
+      ],
       "Last autofill": [
         "마지막 자동 완성"
       ],
       "Last modified": [
         "마지막 수정"
+      ],
+      "Leave this item?": [
+        "이 항목에서 나갈까요?"
       ],
       "Leave vault?": [
         "금고를 떠날까요?"
@@ -3564,6 +3606,9 @@
       ],
       "No reused passwords": [
         "재사용된 비밀번호 없음"
+      ],
+      "No shared items": [
+        "공유된 항목 없음"
       ],
       "No shared secure links": [
         "안전한 링크로 공유된 항목이 없습니다."
@@ -3657,6 +3702,12 @@
       ],
       "Share with": [
         "공유 대상:"
+      ],
+      "Shared item invitation": [
+        "공유된 항목 초대"
+      ],
+      "Shared via": [
+        "다음으로 공유됨:"
       ],
       "SPF (Optional)": [
         "SPF (선택 사항)"
@@ -3772,6 +3823,9 @@
       ],
       "A description of the problem is required": [
         "문제의 셜명이 필요합니다."
+      ],
+      "Addresses already invited.": [
+        "주소를 성공적으로 초대했습니다."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "휴지통 내 별칭이 계속 이메일 가져오기를 진행합니다."
@@ -3890,6 +3944,9 @@
       "No secure links matching": [
         "일치하는 안전한 링크 없음"
       ],
+      "No shared items matching": [
+        "일치하는 공유 중인 금고가 없습니다."
+      ],
       "Offline": [
         "오프라인"
       ],
@@ -3929,6 +3986,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "일부 항목이 현재 공유 중입니다. 휴지통에 항목을 이동하면 다른 사용자들과의 접근 권한도 상실됩니다."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "일부 항목이 현재 공유 중입니다. 다른 금고로 이동하면 다른 사용자들과의 접근 권한도 상실됩니다."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "${ PASS_APP_NAME }를 시작하는데 문제가 발생했습니다. 새로고침 하거나 확장 프로그램을 다시 로드해 보세요."
       ],
@@ -3940,6 +4003,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "데이터 침해에 대한 이 이메일 주소가 더 이상 모니터링되지 않습니다."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "이 항목이 현재 공유 중입니다. 휴지통에 항목을 이동하면 다른 사용자들과의 접근 권한도 상실됩니다."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "이 항목은 현재 공유되는 중 입니다. 다른 금고로 이동하면 모든 다른 사용자의 접근 권한이 없어집니다."
       ],
       "Title is required": [
         "필수 필드"
@@ -3962,8 +4031,14 @@
       "Verification code is required": [
         "인증 코드는 필수입니다"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "이 항목을 접근할 수 있는 최대 구성원 수에 도달했습니다."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "이 금고를 접근할 수 있는 최대 사용자 수에 도달했습니다."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "이 항목의 최대 사용자 수에 도달했습니다. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "이 금고의 최대 사용자 수에 도달했습니다. ${ upgradeLink }"
@@ -3976,6 +4051,9 @@
       ],
       "You must select at least one mailbox": [
         "최소 하나 이상의 메일함을 선택해야 합니다."
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "이 항목과 상세 정보에 대한 접근 권한을 잃게 됩니다. 정말 계속하시겠어요?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "이 금고에 대한 접근 권한이 더 이상 없습니다. 다시 확인하려면, 새 초대가 필요합니다."
