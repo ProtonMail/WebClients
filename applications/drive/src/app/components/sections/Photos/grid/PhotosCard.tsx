@@ -152,6 +152,7 @@ export const PhotosCard: FC<Props> = ({
                             {photo.signatureIssues && (
                                 <SignatureIcon
                                     isFile
+                                    mimeType={photo.mimeType}
                                     signatureIssues={photo.signatureIssues}
                                     className="color-danger"
                                 />

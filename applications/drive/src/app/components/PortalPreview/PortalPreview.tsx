@@ -53,6 +53,7 @@ const PortalPreview = (
         return (
             <SignatureIcon
                 isFile={link.isFile}
+                mimeType={link.mimeType}
                 signatureIssues={link.signatureIssues}
                 isAnonymous={link.isAnonymous}
                 className="ml-2 color-danger"
