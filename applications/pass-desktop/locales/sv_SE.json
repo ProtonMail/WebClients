@@ -15,7 +15,7 @@
         "En potentiell läcka på ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
@@ -27,6 +27,9 @@
     "Action": {
       "Accept": [
         "Acceptera"
+      ],
+      "Accept and view the item": [
+        "Acceptera och visa objektet"
       ],
       "Add": [
         "Lägg till"
@@ -133,11 +136,11 @@
       "Continue offline": [
         "Fortsätt offline"
       ],
-      "Copy alias address": [
-        "Kopiera alias-adress"
-      ],
       "Copy and close": [
         "Kopiera och stäng"
+      ],
+      "Copy forwarding address": [
+        "Kopiera vidarebefordringsadress"
       ],
       "Copy link": [
         "Kopiera länk"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "Skapa ett nytt valv"
-      ],
-      "Create a new vault to share": [
-        "Skapa ett nytt valv att dela"
       ],
       "Create alias": [
         "Skapa alias"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "Anpassad sektion"
-      ],
-      "Customize": [
-        "Anpassa"
       ],
       "Delete": [
         "Ta bort"
@@ -249,9 +246,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktivera detta alias för att ta emot e-post skickat till detta alias"
-      ],
-      "Entire vault": [
-        "Hela valvet"
       ],
       "Exclude from monitoring": [
         "Exkludera från övervakning"
@@ -319,6 +313,9 @@
       "Install extension": [
         "Installera utökning"
       ],
+      "Invite more...": [
+        "Bjud in fler …"
+      ],
       "Invite others": [
         "Bjud in andra"
       ],
@@ -358,9 +355,6 @@
       "Manage access": [
         "Hantera åtkomst"
       ],
-      "Manage vault access": [
-        "Hantera valvåtkomst"
-      ],
       "Manually sync your data": [
         "Synkronisera dina data manuellt"
       ],
@@ -384,9 +378,6 @@
       ],
       "Move all items": [
         "Flytta alla objekt"
-      ],
-      "Move to a shared vault": [
-        "Flytta till ett delat valv"
       ],
       "Move to another vault": [
         "Flytta till annat valv"
@@ -541,11 +532,11 @@
       "Share": [
         "Dela"
       ],
+      "Share item": [
+        "Dela objekt"
+      ],
       "Share secure link": [
         "Dela säker länk"
-      ],
-      "Share this vault": [
-        "Dela detta valv"
       ],
       "Share vault": [
         "Dela valv"
@@ -621,9 +612,6 @@
       "Update": [
         "Uppdatera"
       ],
-      "Update vault": [
-        "Uppdatera valv"
-      ],
       "Upgrade": [
         "Uppgradera"
       ],
@@ -653,6 +641,9 @@
       ],
       "View older history": [
         "Visa äldre historik"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Med andra ${ BRAND_NAME }-användare"
       ],
       "Write us on Reddit": [
         "Skriv till oss på Reddit"
@@ -843,6 +834,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Kunde inte bekräfta denna inbjudan just nu"
+      ],
+      "Could not leave item.": [
+        "Kunde inte lämna objekt."
       ],
       "Could not leave vault.": [
         "Kunde inte lämna valv."
@@ -1292,10 +1286,6 @@
         "${ blockedEmailsCount } blockerat",
         "${ blockedEmailsCount } blockerade"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } inbjudan skickad",
-        "${ count } inbjudningar skickat"
-      ],
       "${ count } time": [
         "${ count } gång",
         "${ count } gånger"
@@ -1310,6 +1300,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } vidarebefordrat",
         "${ forwardedEmailsCount } vidarebefordrade"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } vill dela ett objekt med dig."
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1336,6 +1329,10 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } kommer att kräva ditt ${ BRAND_NAME }-lösenord för att komma åt data offline."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } inbjudan skickad",
+        "${ payload.count } inbjudningar skickat"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } inaktiverades"
@@ -1468,8 +1465,17 @@
       "Can be viewed": [
         "Kan visas"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
+      "Can create, edit, and delete items in this vault.": [
+        "Kan skapa, redigera och ta bort objekt i detta valv."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Kan skapa, redigera och ta bort detta objekt."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Kan bevilja och återkalla åtkomst till detta objekt, och ta bort det."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Kan bevilja och återkalla åtkomst till detta objekt."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Kan bevilja och återkalla åtkomst till detta valv, och ta bort det."
@@ -1479,6 +1485,9 @@
       ],
       "Can view items in this vault.": [
         "Kan visa objekt i detta valv."
+      ],
+      "Can view this item.": [
+        "Kan visa detta objekt."
       ],
       "Change your password": [
         "Ändra ditt lösenord"
@@ -1634,6 +1643,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Av säkerhetsskäl måste din åtkomst bekräftas"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Vidarebefordringsadress kopierat till urklipp. Skicka ett e-postmeddelande till denna adress så kommer ${ Email } ta emot den."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka.",
         "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor."
@@ -1724,6 +1736,10 @@
       "Item restored": [
         "Objekt återställt"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Objektdelning: ${ itemAccessCount } användare",
+        "Objektdelning: ${ itemAccessCount } användare"
+      ],
       "Item successfully excluded from monitoring": [
         "Objekt exkluderat från övervakning"
       ],
@@ -1744,6 +1760,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Lär dig hur man ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Lämnar objekt …"
       ],
       "Leaving vault...": [
         "Lämnar valv..."
@@ -1986,9 +2005,6 @@
       "Restoring trashed items...": [
         "Återställer kastade objekt..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Omvänd aliasadress kopierat till urklipp. Skicka ett e-postmeddelande till denna adress och ${ Email } kommer ta emot det."
-      ],
       "Secure links": [
         "Säkra länkar"
       ],
@@ -2028,6 +2044,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Dela dina inloggningar och säkra anteckningar med upp till 10 personer"
       ],
+      "Shared item invitation": [
+        "Inbjudan till delat objekt"
+      ],
       "Sign in to your account": [
         "Logga in på ditt konto"
       ],
@@ -2042,6 +2061,9 @@
       ],
       "Successfully exported all your items": [
         "Alla dina objekt har exporterats"
+      ],
+      "Successfully left the item": [
+        "Objekt har lämnats"
       ],
       "Successfully left the vault": [
         "Valv har lämnats"
@@ -2094,6 +2116,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Detta objekt delas för närvarande inte med någon. Bjud in människor att dela det med andra."
       ],
       "This operation is irreversible.": [
         "Åtgärden går ej att ångra."
@@ -2170,9 +2195,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Uppgradera till ett betalt paket för att skapa flera valv."
       ],
-      "Use vaults to share this item with others.": [
-        "Använd valv för att dela detta objekt med andra."
-      ],
       "User's access removed": [
         "Användaråtkomst borttagen"
       ],
@@ -2193,6 +2215,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Valv “${ share.content.name }“ togs bort"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Valvdelning: ${ vaultMembersCount } medlem",
+        "Valvdelning: ${ vaultMembersCount } medlemmar"
       ],
       "Verification code sent.": [
         "Verifieringskod skickad."
@@ -2436,8 +2462,8 @@
       "All": [
         "Alla"
       ],
-      "All vaults": [
-        "Alla valv"
+      "All items": [
+        "Alla objekt"
       ],
       "Alphabetical": [
         "Alfabetiskt"
@@ -2643,6 +2669,9 @@
       "Floor, apartment, building": [
         "Våning, lägenhet, byggnad"
       ],
+      "For a one-off sharing": [
+        "För en engångsdelning"
+      ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Av säkerhetsskäl låser ${ PASS_SHORT_APP_NAME } sig själv automatiskt efter 10 minuters inaktivitet."
       ],
@@ -2663,9 +2692,6 @@
       ],
       "General": [
         "Allmänt"
-      ],
-      "Generate a secure link for this item": [
-        "Generera en säker länk för detta objekt"
       ],
       "Generic CSV": [
         "Generisk CSV"
@@ -2841,6 +2867,9 @@
       "Never": [
         "Aldrig"
       ],
+      "New": [
+        "Nytt"
+      ],
       "New vault": [
         "Nytt valv"
       ],
@@ -2985,6 +3014,9 @@
       "Security code": [
         "Säkerhetskod"
       ],
+      "See member and permission overview": [
+        "Se översikt över medlemmar och behörigheter"
+      ],
       "Select a domain": [
         "Välj en domän"
       ],
@@ -3012,11 +3044,17 @@
       "Share": [
         "Dela"
       ],
-      "Share this vault or create a new vault": [
-        "Dela detta valv eller skapa ett nytt valv"
+      "Shared": [
+        "Delat"
+      ],
+      "Shared by me": [
+        "Delat av mig"
       ],
       "Shared link": [
         "Delad länk"
+      ],
+      "Shared with me": [
+        "Delat med mig"
       ],
       "Show website favicons": [
         "Visa webbplatsens favicon"
@@ -3065,10 +3103,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Objektets valv delas för närvarande med ${ targetMembers } person",
-        "Objektets valv delas för närvarande med ${ targetMembers } personer"
       ],
       "The URL has been copied to the clipboard": [
         "URL:en har kopierats till urklipp"
@@ -3132,6 +3166,9 @@
       ],
       "Used in": [
         "Används i"
+      ],
+      "Useful for permanent sharing": [
+        "Användbart för permanent delning"
       ],
       "Username": [
         "Användarnamn"
@@ -3349,23 +3386,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Sök ${ pluralItemType } i ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Sök ${ pluralItemType } i alla valv"
+      "Search ${ pluralItemType } in all items": [
+        "Sök ${ pluralItemType } i alla objekten"
       ],
       "Search in ${ vaultName }": [
         "Sök i ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Sök i alla valv"
+      "Search in all items": [
+        "Sök i alla objekt"
       ],
       "Search in Trash": [
         "Sök i papperskorg"
       ],
       "Select a suffix": [
         "Välj ett suffix"
-      ],
-      "Shared vault": [
-        "Delat valv"
       ],
       "Unknown origin": [
         "Okänt ursprung"
@@ -3495,6 +3529,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domän verifierad. Din domän kan börja ta emot e-post och skapa alias"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Objekt kan inte innehålla fler än ${ share.targetMaxMembers } användare.",
+        "Objekten kan inte innehålla fler än ${ share.targetMaxMembers } användare."
+      ],
       "Mailbox successfully deleted": [
         "Brevlåda borttagen"
       ],
@@ -3510,9 +3548,9 @@
       "Random prefix generation successfully enabled": [
         "Slumpmässig prefixgenerering aktiverad"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare.",
-        "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Valv kan inte innehålla fler än ${ targetMaxMembers } användare.",
+        "Valv kan inte innehålla fler än ${ targetMaxMembers } användare."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "E-postverifiering skickat. Kontrollera din inkorg för att verifiera din brevlåda"
@@ -3699,11 +3737,17 @@
       "Install extension": [
         "Installera utökning"
       ],
+      "Item": [
+        "Objekt"
+      ],
       "Last autofill": [
         "Senast autofylld"
       ],
       "Last modified": [
         "Senast ändrad"
+      ],
+      "Leave this item?": [
+        "Lämna detta objekt?"
       ],
       "Leave vault?": [
         "Lämna valv?"
@@ -3760,6 +3804,9 @@
       ],
       "No reused passwords": [
         "Inga återanvända lösenord"
+      ],
+      "No shared items": [
+        "Inga delade objekt"
       ],
       "No shared secure links": [
         "Inga delade säkra länkar"
@@ -3855,6 +3902,12 @@
       ],
       "Share with": [
         "Dela med"
+      ],
+      "Shared item invitation": [
+        "Inbjudan till delat objekt"
+      ],
+      "Shared via": [
+        "Delad via"
       ],
       "SPF (Optional)": [
         "SPF (valfritt)"
@@ -3971,6 +4024,9 @@
       ],
       "A description of the problem is required": [
         "En beskrivning av problemet är obligatoriskt"
+      ],
+      "Addresses already invited.": [
+        "Adresser är redan inbjudna."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Alias ​​i papperskorgen kommer fortsätta vidarebefordra e-post."
@@ -4092,6 +4148,9 @@
       "No secure links matching": [
         "Inga säkra länkar matchande"
       ],
+      "No shared items matching": [
+        "Inga delade objekt matchade"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4131,6 +4190,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Några objekt delas för närvarande. Att ta bort dem kommer ta bort åtkomst för alla andra användare."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Några objekt delas för närvarande. Att flytta dem till annat valv kommer ta bort åtkomst för alla andra användare."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Något gick fel när ${ PASS_APP_NAME } startades. Prova att uppdatera eller ladda om tillägget"
       ],
@@ -4142,6 +4207,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Denna e-postadress kommer inte längre att övervakas för dataintrång."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Detta objekt delas för närvarande. Att ta bort det kommer ta bort åtkomst för alla andra användare."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Detta objekt delas för närvarande. Att flytta det till annat valv kommer ta bort åtkomst för alla andra användare."
       ],
       "Title is required": [
         "Rubrik är obligatoriskt"
@@ -4164,8 +4235,14 @@
       "Verification code is required": [
         "Verifieringskod är obligatoriskt"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Du har nått gränsen av medlemmar som kan komma åt detta objekt."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nått gränsen för medlemmar som kan komma åt detta valv."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Du har nått gränsen av användare för detta objekt. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Du har nått gränsen för användare i detta valv. ${ upgradeLink }"
@@ -4178,6 +4255,9 @@
       ],
       "You must select at least one mailbox": [
         "Du måste välja minst en brevlåda"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Du kommer att förlora åtkomst till detta objekt och dess detaljer. Vill du fortsätta?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du kommer inte längre att ha åtkomst till detta valv. För att gå med igen behöver du en ny inbjudan."

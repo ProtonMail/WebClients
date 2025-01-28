@@ -28,6 +28,9 @@
       "Accept": [
         "Accepteren"
       ],
+      "Accept and view the item": [
+        "Accepteer en bekijk item"
+      ],
       "Add": [
         "Voeg toe"
       ],
@@ -133,11 +136,11 @@
       "Continue offline": [
         "Offline doorgaan"
       ],
-      "Copy alias address": [
-        "Kopieer aliasadressen"
-      ],
       "Copy and close": [
         "Kopiëren en sluiten"
+      ],
+      "Copy forwarding address": [
+        "Kopieer doorschakeladres"
       ],
       "Copy link": [
         "Link kopiëren"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "Nieuwe kluis aanmaken"
-      ],
-      "Create a new vault to share": [
-        "Maak een nieuwe kluis aan om te delen"
       ],
       "Create alias": [
         "Alias aanmaken"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "Aangepaste sectie"
-      ],
-      "Customize": [
-        "Personaliseer"
       ],
       "Delete": [
         "Verwijderen"
@@ -250,9 +247,6 @@
       "Enable this alias to receive emails sent to this alias": [
         "Schakel deze alias in om e-mails te ontvangen die naar deze alias verzonden worden"
       ],
-      "Entire vault": [
-        "Volledige kluis"
-      ],
       "Exclude from monitoring": [
         "Uitsluiten van controle"
       ],
@@ -305,7 +299,7 @@
         "Hoe exporteer ik mijn gegevens van ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "How to update ${ PASS_APP_NAME } on Linux": [
-        "Hoe ${ PASS_APP_NAME } updaten op Linux"
+        "Hoe ${ PASS_APP_NAME } bij te werken op Linux"
       ],
       "Import": [
         "Importeren"
@@ -318,6 +312,9 @@
       ],
       "Install extension": [
         "Extensie installeren"
+      ],
+      "Invite more...": [
+        "Meer uitnodigen..."
       ],
       "Invite others": [
         "Nodig anderen uit"
@@ -358,9 +355,6 @@
       "Manage access": [
         "Beheer toegang"
       ],
-      "Manage vault access": [
-        "Toegang kluis beheren"
-      ],
       "Manually sync your data": [
         "Synchroniseer uw data manueel"
       ],
@@ -384,9 +378,6 @@
       ],
       "Move all items": [
         "Alle items verplaatsen"
-      ],
-      "Move to a shared vault": [
-        "Verplaatsen naar een gedeelde kluis"
       ],
       "Move to another vault": [
         "Verplaatsen naar andere kluis"
@@ -541,11 +532,11 @@
       "Share": [
         "Delen"
       ],
+      "Share item": [
+        "Deel item"
+      ],
       "Share secure link": [
         "Beveiligde link delen"
-      ],
-      "Share this vault": [
-        "Deel deze kluis"
       ],
       "Share vault": [
         "Kluis delen"
@@ -619,10 +610,7 @@
         "Item losmaken"
       ],
       "Update": [
-        "Updaten"
-      ],
-      "Update vault": [
-        "Kluis bijwerken"
+        "Bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -653,6 +641,9 @@
       ],
       "View older history": [
         "Oudere geschiedenis bekijken"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Met ${ BRAND_NAME } gebruikers"
       ],
       "Write us on Reddit": [
         "Schrijf ons op Reddit"
@@ -844,6 +835,9 @@
       "Could not confirm this invite at the moment": [
         "Kon de uitnodiging niet bevestigen op dit moment"
       ],
+      "Could not leave item.": [
+        "Kon de kluis niet verlaten."
+      ],
       "Could not leave vault.": [
         "Kon de kluis niet verlaten."
       ],
@@ -996,7 +990,7 @@
         "Kan item niet losmaken"
       ],
       "Failed to update catch-all setting.": [
-        "Update van catch-all-instelling mislukt."
+        "Bijwerken van catch-all-instelling mislukt."
       ],
       "Failed to update default domain": [
         "Fout bij het bijwerken van het standaarddomein"
@@ -1292,10 +1286,6 @@
         "${ blockedEmailsCount } geblokkeerd",
         "${ blockedEmailsCount } geblokkeerd"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } uitnodiging succesvol verzonden",
-        "${ count } uitnodigingen succesvol verzonden"
-      ],
       "${ count } time": [
         "${ count } keer",
         "${ count } keren"
@@ -1310,6 +1300,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } doorgestuurd",
         "${ forwardedEmailsCount } doorgestuurd"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } wil een kluis delen met u."
       ],
       "${ memberCount } member": [
         "${ memberCount } lid",
@@ -1336,6 +1329,10 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } heeft uw ${ BRAND_NAME }-wachtwoord nodig om offline toegang te krijgen tot gegevens."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } uitnodiging succesvol verzonden",
+        "${ payload.count } uitnodigingen succesvol verzonden"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } succesvol uitgeschakeld"
@@ -1468,8 +1465,17 @@
       "Can be viewed": [
         "Kan worden bekeken"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
+      "Can create, edit, and delete items in this vault.": [
         "Kan items aanmaken, bewerken, verwijderen en exporteren in deze kluis."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Kan dit item aanmaken, bewerken en verwijderen."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Kan toegang tot deze kluis verlenen en intrekken en verwijderen."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Kan toegang tot dit item verlenen en intrekken."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Kan toegang tot deze kluis verlenen en intrekken en verwijderen."
@@ -1479,6 +1485,9 @@
       ],
       "Can view items in this vault.": [
         "Kan items bekijken in deze kluis."
+      ],
+      "Can view this item.": [
+        "Kan dit item bekijken"
       ],
       "Change your password": [
         "Wijzig uw wachtwoord"
@@ -1634,6 +1643,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Voor veiligheidsredenen dient uw toegang bevestigd te worden"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Doorstuuradres naar klembord gekopieerd. Verstuur een e-mail naar dit adres en ${ Email } zal het ontvangen."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Gegenereerde wachtwoorden worden opgeslagen voor een periode van ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.",
         "Gegenereerde wachtwoorden worden opgeslagen voor een periode van ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken."
@@ -1724,6 +1736,10 @@
       "Item restored": [
         "Item hersteld"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Item delen: ${ itemAccessCount } gebruiker",
+        "Item delen: ${ itemAccessCount } gebruikers"
+      ],
       "Item successfully excluded from monitoring": [
         "Item succesvol uitgesloten van monitoring"
       ],
@@ -1744,6 +1760,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Leer ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Item verlaten..."
       ],
       "Leaving vault...": [
         "Kluis verlaten..."
@@ -1986,9 +2005,6 @@
       "Restoring trashed items...": [
         "Verwijderde items herstellen..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Omgekeerd alias adres gekopieerd naar klembord. Verstuur een e-mail naar dit adres en ${ Email } zal het ontvangen."
-      ],
       "Secure links": [
         "Beveiligde links"
       ],
@@ -2028,6 +2044,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Deel uw aanmeldingen en beveiligde notities, met maximaal 10 personen"
       ],
+      "Shared item invitation": [
+        "Uitnodiging gedeeld item"
+      ],
       "Sign in to your account": [
         "Inloggen bij uw account"
       ],
@@ -2042,6 +2061,9 @@
       ],
       "Successfully exported all your items": [
         "Alle items succesvol geëxporteerd"
+      ],
+      "Successfully left the item": [
+        "Het item is succesvol verlaten"
       ],
       "Successfully left the vault": [
         "Succesvol de kluis verlaten"
@@ -2094,6 +2116,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Deze export wordt niet versleuteld en iedereen met toegang tot uw geëxporteerde bestand kan uw wachtwoorden zien. Verwijder het voor de veiligheid nadat u klaar bent met het gebruik ervan."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Dit item wordt momenteel niet met iemand gedeeld. Nodig mensen uit om het met anderen te delen."
       ],
       "This operation is irreversible.": [
         "Deze actie is onomkeerbaar."
@@ -2170,9 +2195,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Upgrade naar een betalend abonnement om meerdere kluizen aan te maken."
       ],
-      "Use vaults to share this item with others.": [
-        "Gebruik kluizen om dit item met anderen te delen."
-      ],
       "User's access removed": [
         "Toegang van verbruiker verwijderd"
       ],
@@ -2193,6 +2215,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Kluis \"${ share.content.name }\" werd verwijderd"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Kluis delen: ${ vaultMembersCount } lid",
+        "Kluis delen: ${ vaultMembersCount } leden"
       ],
       "Verification code sent.": [
         "Verificatiecode verzonden"
@@ -2436,8 +2462,8 @@
       "All": [
         "Alle"
       ],
-      "All vaults": [
-        "Alle kluizen"
+      "All items": [
+        "Alle items"
       ],
       "Alphabetical": [
         "Alfabetisch"
@@ -2643,6 +2669,9 @@
       "Floor, apartment, building": [
         "Vloer, appartement, gebouw"
       ],
+      "For a one-off sharing": [
+        "Voor eenmalig delen"
+      ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Om veiligheidsredenen vergrendelt ${ PASS_SHORT_APP_NAME } zichzelf automatisch na 10 minuten inactiviteit."
       ],
@@ -2663,9 +2692,6 @@
       ],
       "General": [
         "Algemeen"
-      ],
-      "Generate a secure link for this item": [
-        "Genereer een beveiligde link voor dit item"
       ],
       "Generic CSV": [
         "Generieke CSV"
@@ -2838,6 +2864,9 @@
       "Never": [
         "Nooit"
       ],
+      "New": [
+        "Nieuw"
+      ],
       "New vault": [
         "Nieuwe kluis"
       ],
@@ -2982,6 +3011,9 @@
       "Security code": [
         "Beveiligingscode"
       ],
+      "See member and permission overview": [
+        "Zie leden en overzicht toelatingen"
+      ],
       "Select a domain": [
         "Domein selecteren"
       ],
@@ -3009,11 +3041,17 @@
       "Share": [
         "Delen"
       ],
-      "Share this vault or create a new vault": [
-        "Deze kluis delen of een nieuwe kluis aanmaken"
+      "Shared": [
+        "Gedeeld"
+      ],
+      "Shared by me": [
+        "Gedeeld door mij"
       ],
       "Shared link": [
         "Gedeelde koppeling"
+      ],
+      "Shared with me": [
+        "Gedeeld met mij"
       ],
       "Show website favicons": [
         "Websitepictogrammen weergeven"
@@ -3062,10 +3100,6 @@
       ],
       "Text": [
         "Tekst"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "De kluis van het item wordt momenteel gedeeld met ${ targetMembers } persoon",
-        "De kluis van het item wordt momenteel gedeeld met ${ targetMembers } personen"
       ],
       "The URL has been copied to the clipboard": [
         "De URL is naar het klembord gekopieerd."
@@ -3129,6 +3163,9 @@
       ],
       "Used in": [
         "Gebruikt in"
+      ],
+      "Useful for permanent sharing": [
+        "Nuttig voor permanent delen"
       ],
       "Username": [
         "Gebruikersnaam"
@@ -3346,23 +3383,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Zoek ${ pluralItemType } in ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Zoek ${ pluralItemType } in alle kluizen"
+      "Search ${ pluralItemType } in all items": [
+        "Zoek ${ pluralItemType } in alle items"
       ],
       "Search in ${ vaultName }": [
         "Zoeken in ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Zoeken in alle kluizen"
+      "Search in all items": [
+        "Zoeken in alle items"
       ],
       "Search in Trash": [
         "Zoeken in prullenbak"
       ],
       "Select a suffix": [
         "Selecteer een achtervoegsel"
-      ],
-      "Shared vault": [
-        "Geelde kluis"
       ],
       "Unknown origin": [
         "Onbekende oorsprong"
@@ -3492,6 +3526,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domein met succes geverifieerd. Uw domein kan e-mails ontvangen en aliassen aanmaken"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruiker bevatten.",
+        "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruikers bevatten."
+      ],
       "Mailbox successfully deleted": [
         "Mailbox verwijderd"
       ],
@@ -3507,9 +3545,9 @@
       "Random prefix generation successfully enabled": [
         "Willekeurige prefix genereren succesvol ingeschakeld"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruiker bevatten.",
-        "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruikers bevatten."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Kluizen kunnen niet meer dan ${ targetMaxMembers } gebruiker bevatten.",
+        "Kluizen kunnen niet meer dan ${ targetMaxMembers } gebruikers bevatten."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "E-mail met verificatie is verzonden. Controleer uw inbox om uw mailbox te verifiëren"
@@ -3696,11 +3734,17 @@
       "Install extension": [
         "Extensie installeren"
       ],
+      "Item": [
+        "Item"
+      ],
       "Last autofill": [
         "Laatste automatische aanvulling"
       ],
       "Last modified": [
         "Laatst gewijzigd"
+      ],
+      "Leave this item?": [
+        "Dit item verlaten?"
       ],
       "Leave vault?": [
         "Kluis verlaten?"
@@ -3757,6 +3801,9 @@
       ],
       "No reused passwords": [
         "Geen hergebruikte wachtwoorden"
+      ],
+      "No shared items": [
+        "Geen gedeelde items gevonden"
       ],
       "No shared secure links": [
         "Geen gedeelde beveiligde links"
@@ -3852,6 +3899,12 @@
       ],
       "Share with": [
         "Deel met"
+      ],
+      "Shared item invitation": [
+        "Uitnodiging gedeeld item"
+      ],
+      "Shared via": [
+        "Gedeeld via"
       ],
       "SPF (Optional)": [
         "SPF (optioneel)"
@@ -3968,6 +4021,9 @@
       ],
       "A description of the problem is required": [
         "Een beschrijving van het probleem is vereist"
+      ],
+      "Addresses already invited.": [
+        "Adressen reeds uitgenodigd."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Aliassen in de prullenbak worden doorgestuurd naar e-mails."
@@ -4089,6 +4145,9 @@
       "No secure links matching": [
         "Geen beveiligde links gevonden"
       ],
+      "No shared items matching": [
+        "Geen overeenkomende gedeelde items gevonden"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4128,6 +4187,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Sommige items worden momenteel gedeeld. Als u deze verwijdert, wordt de toegang voor alle andere gebruikers verwijderd."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Sommige items worden momenteel gedeeld. Als u deze naar de prullenbak verplaatst, wordt de toegang voor alle andere gebruikers verwijderd."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Er is iets misgegaan bij het starten van ${ PASS_APP_NAME }. Probeer de extensie te vernieuwen of opnieuw te laden"
       ],
@@ -4139,6 +4204,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Dit e-mailadres zal niet langer worden gemonitord op datalekken."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Dit item wordt momenteel gedeeld. Als u het verwijdert, wordt de toegang voor alle andere gebruikers uitgeschakeld."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Dit item wordt momenteel gedeeld. Als u het naar een andere kluis verplaatst, wordt de toegang voor alle andere gebruikers verwijderd."
       ],
       "Title is required": [
         "Titel is vereist"
@@ -4161,8 +4232,14 @@
       "Verification code is required": [
         "Verificatiecode is vereist"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "U heeft de limiet voor gebruikers die toegang hebben tot dit item bereikt."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "U heeft de limiet voor gebruikers die toegang hebben tot deze kluis bereikt."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "U heeft de limiet voor gebruikers van dit item bereikt. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "U heeft de limiet voor gebruikers van deze kluis bereikt. ${ upgradeLink }"
@@ -4175,6 +4252,9 @@
       ],
       "You must select at least one mailbox": [
         "U moet ten minste één mailbox selecteren"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "U zult toegang tot dit item en de bijbehorende gegevens verliezen. Wilt u doorgaan?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "U zult geen toegang meer hebben tot deze kluis. Om opnieuw deel te nemen, heeft u een nieuwe uitnodiging nodig."
