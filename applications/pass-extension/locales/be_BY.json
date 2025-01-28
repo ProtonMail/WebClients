@@ -122,9 +122,6 @@
       "Continue without pinning": [
         "Працягнуць без замацавання"
       ],
-      "Copy alias address": [
-        "Скапіяваць адрас псеўданіма"
-      ],
       "Copy and close": [
         "Скапіяваць і закрыць"
       ],
@@ -142,9 +139,6 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
-      ],
-      "Create a new vault to share": [
-        "Стварыць новае сховішча для абагулення"
       ],
       "Create alias": [
         "Стварыць псеўданім"
@@ -181,9 +175,6 @@
       ],
       "Custom section": [
         "Карыстальніцкі раздзел"
-      ],
-      "Customize": [
-        "Наладзіць"
       ],
       "Delete": [
         "Выдаліць"
@@ -250,9 +241,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Уключыць гэты псеўданім і зноў пачаць атрымліваць лісты, якія адпраўляюцца на яго"
-      ],
-      "Entire vault": [
-        "Усё сховішча"
       ],
       "Exclude from monitoring": [
         "Выключыць з назірання"
@@ -356,9 +344,6 @@
       "Manage access": [
         "Кіраваць доступам"
       ],
-      "Manage vault access": [
-        "Кіраванне доступам да сховішча"
-      ],
       "Manually sync your data": [
         "Сінхранізацыя даных уручную"
       ],
@@ -379,9 +364,6 @@
       ],
       "Move all items": [
         "Перамяшчэнне ўсіх элементаў"
-      ],
-      "Move to a shared vault": [
-        "Перамясціць абагуленае сховішча"
       ],
       "Move to another vault": [
         "Перамясціць у іншае сховішча"
@@ -536,11 +518,11 @@
       "Share": [
         "Абагуліць"
       ],
+      "Share item": [
+        "Абагуліць элемент"
+      ],
       "Share secure link": [
         "Абагуліць бяспечную спасылку"
-      ],
-      "Share this vault": [
-        "Абагуліць гэта сховішча"
       ],
       "Share vault": [
         "Абагуліць сховішча"
@@ -622,9 +604,6 @@
       ],
       "Update this login": [
         "Абнавіць гэты запіс уваходу"
-      ],
-      "Update vault": [
-        "Абнавіць сховішча"
       ],
       "Updating": [
         "Абнаўленне"
@@ -1259,12 +1238,6 @@
         "${ blockedEmailsCount } заблакіравана",
         "${ blockedEmailsCount } заблакіравана"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } запрашэнне паспяхова адпраўлена",
-        "${ count } запрашэнні паспяхова адпраўлены",
-        "${ count } запрашэнняў паспяхова адпраўлены",
-        "${ count } запрашэнняў паспяхова адпраўлены"
-      ],
       "${ count } time": [
         "${ count } раз",
         "${ count } разы",
@@ -1462,9 +1435,6 @@
       ],
       "Can be viewed": [
         "Могуць праглядаць"
-      ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Можа ствараць, рэдагаваць, выдаляць і экспартаваць элементы ў гэтым сховішчы."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча, а таксама выдаляць яго."
@@ -1994,9 +1964,6 @@
       "Restoring trashed items...": [
         "Аднаўленне выдаленых элементаў..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Зваротны адрас псеўданіма скапіяваны ў буфер абмену. Адпраўце ліст на гэты адрас і ${ Email } атрымае яго."
-      ],
       "Save login": [
         "Захаваць запіс уваходу"
       ],
@@ -2194,9 +2161,6 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Перайдзіце на платны тарыфны план, каб стварыць некалькі сховішчаў."
-      ],
-      "Use vaults to share this item with others.": [
-        "Выкарыстанне сховішча для абагулення элементаў з іншымі."
       ],
       "User's access removed": [
         "Доступ карыстальніка выдалены"
@@ -2473,9 +2437,6 @@
       "All": [
         "Усе"
       ],
-      "All vaults": [
-        "Усе сховішчы"
-      ],
       "Alphabetical": [
         "Па алфавіце"
       ],
@@ -2685,9 +2646,6 @@
       ],
       "General": [
         "Агульныя"
-      ],
-      "Generate a secure link for this item": [
-        "Згенерыраваць бяспечную спасылку для гэтага элемента"
       ],
       "Generic CSV": [
         "Агульны CSV"
@@ -2995,9 +2953,6 @@
       "Share": [
         "Абагуліць"
       ],
-      "Share this vault or create a new vault": [
-        "Абагуліць гэтае сховішча або стварыць новае сховішча"
-      ],
       "Shared link": [
         "Абагуленая спасылка"
       ],
@@ -3042,12 +2997,6 @@
       ],
       "Text": [
         "Тэкст"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобай",
-        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобамі",
-        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобамі",
-        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобамі"
       ],
       "The URL has been copied to the clipboard": [
         "URL-адрас скапіяваны ў буфер абмену"
@@ -3290,23 +3239,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Пошук ${ pluralItemType } у ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Пошук ${ pluralItemType } ва ўсіх сховішчах"
-      ],
       "Search in ${ vaultName }": [
         "Пошук у ${ vaultName }"
-      ],
-      "Search in all vaults": [
-        "Пошук ва ўсіх сховішчах"
       ],
       "Search in Trash": [
         "Пошук у Сметніцы"
       ],
       "Select a suffix": [
         "Выберыце суфікс"
-      ],
-      "Shared vault": [
-        "Абагуленыя сховішчы"
       ],
       "Unknown origin": [
         "Невядомае паходжанне"
@@ -3436,12 +3376,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Адвольная генерацыя прэфіксу паспяхова ўключана"
-      ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальніка.",
-        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў.",
-        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў.",
-        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Праверачны ліст адпраўлены. Праверце папку з уваходнымі лістамі для праверкі сваёй паштовай скрыні."
