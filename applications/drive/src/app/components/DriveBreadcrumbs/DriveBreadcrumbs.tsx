@@ -62,6 +62,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                             <span className="flex items-center flex-nowrap flex-1">
                                 <SignatureIcon
                                     isFile={link.isFile}
+                                    mimeType={link.mimeType}
                                     signatureIssues={link.signatureIssues}
                                     isAnonymous={link.isAnonymous}
                                     className="mr-1"

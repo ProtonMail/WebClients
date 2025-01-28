@@ -47,6 +47,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
             SignatureIconComponent={
                 <SignatureIcon
                     isFile={item.isFile}
+                    mimeType={item.mimeType}
                     signatureIssues={item.signatureIssues}
                     isAnonymous={item.isAnonymous}
                     className="file-browser-grid-view--signature-icon"
