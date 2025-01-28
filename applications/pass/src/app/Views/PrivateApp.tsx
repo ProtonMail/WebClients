@@ -23,10 +23,10 @@ import { InAppNotificationProvider } from '@proton/pass/components/Notifications
 import { InAppNotifications } from '@proton/pass/components/Notifications/InAppNotifications';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
-import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
@@ -96,9 +96,9 @@ const Main: FC = () => {
                             <PrivateRouter />
                             {!DESKTOP_BUILD && <ThemeOnboardingModal />}
                             {isSSO && (
-                                <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
+                                <WithSpotlight type={SpotlightMessage.SSO_CHANGE_LOCK}>
                                     {(props) => <OnboardingSSO {...props} />}
-                                </WithSpotlightModal>
+                                </WithSpotlight>
                             )}
                             <InAppNotifications />
                         </div>
