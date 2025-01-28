@@ -184,6 +184,9 @@
       "Authenticating": [
         "Authentifiziere"
       ],
+      "Auto-delete spam and trash": [
+        "Spam und Papierkorb automatisch löschen"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -511,6 +514,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable ${ darkWebMonitoring }": [
+        "${ darkWebMonitoring } aktivieren"
+      ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
       ],
@@ -568,6 +574,12 @@
       "Generate token": [
         "Token generieren"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Hol dir ${ planName } für ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } holen"
+      ],
       "Get a new encrypted email address": [
         "Erhalte eine neue verschlüsselte E-Mail-Adresse"
       ],
@@ -597,6 +609,9 @@
       ],
       "Get more servers": [
         "Hol dir mehr Server"
+      ],
+      "Get the browser extension": [
+        "Hol dir die Browsererweiterung"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
@@ -666,6 +681,9 @@
       ],
       "Invite": [
         "Einladen"
+      ],
+      "Invite members": [
+        "Mitglieder einladen"
       ],
       "Invite user": [
         "Benutzer einladen"
@@ -1143,6 +1161,9 @@
       ],
       "Switch or add account": [
         "Konto wechseln oder hinzufügen"
+      ],
+      "Take a tour": [
+        "Rundgang"
       ],
       "Test": [
         "Testen"
@@ -1693,11 +1714,6 @@
         "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
@@ -1790,34 +1806,9 @@
         "Versionsverlauf"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Beim lebenslangen ${ PASS_SHORT_APP_NAME } Plus-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Wenn du Pass Family oder Unlimited kaufst, verlängert sich dein Abonnement am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Am beliebtesten"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Zum Preis von einmalig ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "für ${ durationDeal }"
-      ],
-      "forever": [
-        "dauerhaft"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlängert sich nach 1 Monat zum ${ regularAmount }."
@@ -1869,9 +1860,6 @@
       ],
       "12 months": [
         "12 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
       ],
       "Annually": [
         "Jährlich"
@@ -2008,6 +1996,9 @@
       ],
       "Send": [
         "Senden"
+      ],
+      "Take a tour": [
+        "Rundgang"
       ],
       "Tweet": [
         "Tweeten"
@@ -4678,6 +4669,9 @@
       "Please select a country": [
         "Bitte wähle ein Land"
       ],
+      "Please select a state": [
+        "Bitte wähle ein Bundesland."
+      ],
       "Please set a recovery email first": [
         "Bitte lege zunächst eine Wiederherstellungs-E-Mail-Adresse fest."
       ],
@@ -4915,6 +4909,9 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "ZIP code is required": [
+        "Eine Postleitzahl ist erforderlich"
       ]
     },
     "error": {
@@ -6669,6 +6666,9 @@
         "${ calendarsToBeMergedCount } zusammengeführter Kalender",
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
+      "${ checkout.discountPercent }% discount": [
+        "${ checkout.discountPercent }% Rabatt"
+      ],
       "${ current } of ${ total }": [
         "${ current } von ${ total }"
       ],
@@ -6869,6 +6869,9 @@
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiviere mindestens eine Datenwiederherstellungsmethode, um sicherzustellen, dass du weiterhin auf den Inhalt deines ${ BRAND_NAME }-Kontos zugreifen kannst, wenn du dein Passwort verlierst."
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "active": [
         "aktiv"
@@ -7083,6 +7086,9 @@
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Das automatische Antworten ist immer an den ausgewählten Wochentagen zwischen den ausgewählten Stunden aktiv."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatisches Löschen von E-Mails, die vor mehr als 30 Tagen in den Papierkorb und in den Spam verschoben wurden."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Verfügbar für macOS, Windows und Linux."
@@ -7473,6 +7479,9 @@
       "Enhance your network security": [
         "Erhöhe die Sicherheit deines Netzwerks"
       ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Genieße ein schnelleres, konzentriertes E-Mail-Erlebnis mit der Desktop-App."
+      ],
       "Enter key manually instead": [
         "Schlüssel stattdessen manuell eingeben"
       ],
@@ -7592,6 +7601,9 @@
       ],
       "Get it on Google Play": [
         "Auf Google Play holen"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Lass dich benachrichtigen, wenn dein Passwort oder andere persönliche Daten bekannt geworden sind. ${ learnMoreLinkNoBreach }"
@@ -7776,6 +7788,9 @@
       ],
       "Invite deleted": [
         "Einladung gelöscht"
+      ],
+      "Invite family members and get everything up and running.": [
+        "Lade Familienmitglieder ein und bringe alles zum Laufen."
       ],
       "Invite for new user deleted": [
         "Einladung für neuen Benutzer gelöscht"
@@ -8348,6 +8363,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Registering your subscription…": [
+        "Dein Abonnement wird registriert…"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
       ],
@@ -8455,6 +8473,12 @@
       ],
       "Setting successfully saved": [
         "Einstellungen erfolgreich gespeichert"
+      ],
+      "Setting up ${ feature }…": [
+        "${ feature } wird eingerichtet…"
+      ],
+      "Setting up your new address…": [
+        "Deine neue E-Mail-Adresse wird eingerichtet…"
       ],
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
@@ -8730,6 +8754,9 @@
       "This will delete all previous versions of your files.": [
         "Dadurch werden alle früheren Versionen deiner Dateien gelöscht."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Dadurch wird der Zugriff auf **${ email }** verweigert. Möchtest du wirklich fortfahren?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Dadurch wird die Zwei-Faktor-Authentifizierung deaktiviert, einschließlich der Authenticator-App und der Sicherheitsschlüssel-Methode."
       ],
@@ -8751,6 +8778,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dadurch wird dein Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Dadurch wird das Gerät **${ name }**, das versuchte, sich am **${ date }** bei deinem ${ BRAND_NAME }-Konto anzumelden, abgelehnt."
+      ],
       "This will remove any enabled 2FA methods.": [
         "Dadurch werden alle aktivierten 2FA-Methoden entfernt."
       ],
@@ -8768,6 +8798,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dadurch wirst du von allen aktiven Sitzungen abgemeldet und die 2-Faktor-Authentifizierung wird deaktiviert."
+      ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Dadurch wird das Gerät **${ name } (erstellt am ${ date })** aus deinem ${ BRAND_NAME }-Konto entfernt."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Dieser Wizard wird die Zwei-Faktor-Authentifizierung (2FA) auf deinem ${ BRAND_NAME }-Konto aktivieren. Zwei-Faktor-Authentifizierung macht dein ${ BRAND_NAME_TWO }-Konto sicherer, wir empfehlen deshalb, sie zu aktivieren."
@@ -9214,8 +9247,14 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du verwendest mehr Speicherplatz, als in einem ${ downgradedPlanName }-Abonnement enthalten sind. Bitte lösche einige Daten, um zu downgraden."
       ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Du kannst deine eigene Domain zu ${ MAIL_APP_NAME } hinzufügen."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kannst importierte Kalender auch mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Dies kann jederzeit in den ${ settingsLink } geändert werden."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kannst den Fortschritt hier ${ importProgressLink } überprüfen."
@@ -9365,6 +9404,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Verschlüsselte Daten können mit den heruntergeladenen Wiederherstellungsdateien nicht wiederhergestellt werden. Dadurch wird auch die gerätebasierte Wiederherstellung deaktiviert."
+      ],
+      "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
+        "Deine ${ boldDiscountPercent } auf ${ boldPlanTitle } wurden angewendet."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Dein ${ BRAND_NAME }-Konto ist mit ${ externalEmailAddress } verknüpft."
@@ -10900,7 +10942,7 @@
         "Dann"
       ],
       "Thomas": [
-        "Thomas"
+        "Max"
       ],
       "Time format": [
         "Zeitformat"
@@ -11012,6 +11054,9 @@
       ],
       "Your referral link": [
         "Dein Empfehlungslink"
+      ],
+      "ZIP code": [
+        "Postleitzahl"
       ]
     },
     "label": {
@@ -11279,6 +11324,9 @@
       ],
       "Set email address": [
         "E-Mail-Adresse festlegen"
+      ],
+      "settings": [
+        "Einstellungen"
       ],
       "Sign in": [
         "Anmelden"
@@ -12249,6 +12297,9 @@
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
       ],
+      "Private photo backup": [
+        "Private Fotosicherung"
+      ],
       "Proofread and refine your emails": [
         "Korrigiere und verfeinere deine E-Mails"
       ],
@@ -12446,6 +12497,17 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -12556,17 +12618,6 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
@@ -12607,6 +12658,11 @@
       ],
       "Your selected plan: ${ planName }": [
         "Das von dir ausgewählte Abonnement: ${ planName }"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "new_plans: Title": {
@@ -13163,19 +13219,49 @@
       ]
     },
     "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } Angebot läuft heute ab!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Hol dir Drive Plus für nur ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Hol dir Mail Plus für nur ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Letzte Chance auf 80% Rabatt auf den ersten Monat von ${ plan } Plus."
+      ],
       "Limited-time offer": [
         "Zeitlich begrenztes Angebot"
       ],
       "Maybe later": [
         "Vielleicht später"
+      ],
+      "Save 80% on your first month.": [
+        "Spare 80% im ersten Monat."
       ]
     },
     "Offer feature": {
+      "+10 more premium features": [
+        "+10 weitere Premium-Funktionen"
+      ],
       "Custom email domain": [
         "Eigene E-Mail-Domain"
       ],
-      "Email Addresses": [
-        "E-Mail-Adressen"
+      "Email addresses": [
+        "E‐Mail‐Adressen"
+      ],
+      "Free": [
+        "Kostenlos"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Speicherplatz"
       ]
     },
     "Onboarding": {
@@ -13336,6 +13422,9 @@
       ],
       "No permission": [
         "Keine Berechtigung"
+      ],
+      "None": [
+        "Keine"
       ],
       "Normal": [
         "Standard"
@@ -14227,6 +14316,12 @@
       "Address": [
         "Adresse"
       ],
+      "Anderson": [
+        "Mustermann"
+      ],
+      "Anytown": [
+        "Berlin"
+      ],
       "Choose a name": [
         "Namen auswählen"
       ],
@@ -14339,7 +14434,7 @@
         "Text"
       ],
       "Thomas": [
-        "Thomas"
+        "Max"
       ],
       "Type text or keyword": [
         "Text oder Schlüsselwort eingeben"
@@ -17109,6 +17204,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
+      "${ feature } is now active": [
+        "${ feature } ist jetzt aktiv."
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -17274,6 +17372,9 @@
       ],
       "Authentication security": [
         "Sicherheit der Authentifizierung"
+      ],
+      "Auto-deletion is active": [
+        "Automatisches Löschen ist aktiv."
       ],
       "Auto-reply": [
         "Automatische Antworten"
@@ -19107,6 +19208,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Dein neues Abonnement wird in ${ cycle } Monat automatisch verlängert.",
+        "Dein neues Abonnement wird in ${ cycle } Monaten automatisch verlängert."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dein Abonnement wird in ${ cycle } Monat automatisch verlängert.",

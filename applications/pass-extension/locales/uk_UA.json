@@ -122,9 +122,6 @@
       "Continue without pinning": [
         "Продовжити без закріплення"
       ],
-      "Copy alias address": [
-        "Копіювати адресу псевдоніма"
-      ],
       "Copy and close": [
         "Скопіювати та закрити"
       ],
@@ -142,9 +139,6 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
-      ],
-      "Create a new vault to share": [
-        "Створити нове сховище, щоб поділитися"
       ],
       "Create alias": [
         "Створити псевдонім"
@@ -181,9 +175,6 @@
       ],
       "Custom section": [
         "Власний розділ"
-      ],
-      "Customize": [
-        "Налаштувати"
       ],
       "Delete": [
         "Видалити"
@@ -250,9 +241,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Увімкнути цей псевдонім для отримання електронних листів, надісланих на цей псевдонім"
-      ],
-      "Entire vault": [
-        "Все сховище"
       ],
       "Exclude from monitoring": [
         "Виключити з моніторингу"
@@ -356,9 +344,6 @@
       "Manage access": [
         "Керувати доступом"
       ],
-      "Manage vault access": [
-        "Керування доступом до сховища"
-      ],
       "Manually sync your data": [
         "Синхронізація даних вручну"
       ],
@@ -379,9 +364,6 @@
       ],
       "Move all items": [
         "Перемістити всі елементи"
-      ],
-      "Move to a shared vault": [
-        "Перемістити в спільне сховище"
       ],
       "Move to another vault": [
         "Перемістити в інше сховище"
@@ -536,11 +518,11 @@
       "Share": [
         "Поділитися"
       ],
+      "Share item": [
+        "Спільний доступ до елемента"
+      ],
       "Share secure link": [
         "Поділитися безпечним посиланням"
-      ],
-      "Share this vault": [
-        "Поділитися цим сховищем"
       ],
       "Share vault": [
         "Поділитися сховищем"
@@ -622,9 +604,6 @@
       ],
       "Update this login": [
         "Оновити цей вхід"
-      ],
-      "Update vault": [
-        "Оновити сховище"
       ],
       "Updating": [
         "Оновлення"
@@ -1259,12 +1238,6 @@
         "${ blockedEmailsCount } заблоковано",
         "${ blockedEmailsCount } заблоковано"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } запрошення успішно відправлено",
-        "${ count } запрошень успішно відправлено",
-        "${ count } запрошень успішно відправлено",
-        "${ count } запрошень успішно відправлено"
-      ],
       "${ count } time": [
         "${ count } раз",
         "${ count } разів",
@@ -1462,9 +1435,6 @@
       ],
       "Can be viewed": [
         "Можна переглянути"
-      ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Може створювати, редагувати, видаляти й експортувати елементи в цьому сховищі."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Може надавати та відкликати доступ до цього сховища, та видалити його."
@@ -1994,9 +1964,6 @@
       "Restoring trashed items...": [
         "Відновлення елементів..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Адреса зворотного псевдоніма скопійована в буфер обміну. Надішліть листа на цю адресу, і ${ Email } отримає його."
-      ],
       "Save login": [
         "Зберегти дані для входу"
       ],
@@ -2194,9 +2161,6 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Перейдіть на платний тарифний план, щоб створити кілька сховищ."
-      ],
-      "Use vaults to share this item with others.": [
-        "Використовуйте сховища, щоб поділитися цим елементам з іншими."
       ],
       "User's access removed": [
         "Доступ користувача вилучено"
@@ -2473,9 +2437,6 @@
       "All": [
         "Усі"
       ],
-      "All vaults": [
-        "Усі сховища"
-      ],
       "Alphabetical": [
         "За абеткою"
       ],
@@ -2685,9 +2646,6 @@
       ],
       "General": [
         "Загальні"
-      ],
-      "Generate a secure link for this item": [
-        "Створити безпечне посилання на цей елемент"
       ],
       "Generic CSV": [
         "Загальний CSV"
@@ -2995,9 +2953,6 @@
       "Share": [
         "Поділитися"
       ],
-      "Share this vault or create a new vault": [
-        "Поділіться цим сховищем або створіть нове"
-      ],
       "Shared link": [
         "Поширене посилання"
       ],
@@ -3042,12 +2997,6 @@
       ],
       "Text": [
         "Текст"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особою",
-        "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами",
-        "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами",
-        "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами"
       ],
       "The URL has been copied to the clipboard": [
         "URL-адресу скопійовано до буфера обміну"
@@ -3290,23 +3239,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Шукати ${ pluralItemType } в ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Шукати ${ pluralItemType } у всіх сховищах"
-      ],
       "Search in ${ vaultName }": [
         "Пошук у ${ vaultName }"
-      ],
-      "Search in all vaults": [
-        "Пошук у всіх сховищах"
       ],
       "Search in Trash": [
         "Пошук у Смітнику"
       ],
       "Select a suffix": [
         "Виберіть суфікс"
-      ],
-      "Shared vault": [
-        "Спільне сховище"
       ],
       "Unknown origin": [
         "Невідоме походження"
@@ -3436,12 +3376,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Генерацію випадкових префіксів успішно увімкнено"
-      ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувача.",
-        "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів.",
-        "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів.",
-        "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Підтверджувальний лист надіслано. Будь ласка, перевірте свою поштову скриньку, щоб підтвердити свою поштову скриньку"

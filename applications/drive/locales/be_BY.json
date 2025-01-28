@@ -1147,34 +1147,9 @@
         "Гісторыя версій"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } Plus не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты, калі вы купіце Pass Family або Unlimited."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Найбольш папулярны"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
-      ],
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ],
-      "forever": [
-        "назаўсёды"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
@@ -1221,9 +1196,6 @@
       ],
       "12 months": [
         "12 месяцаў"
-      ],
-      "24 months": [
-        "24 месяцы"
       ],
       "Annually": [
         "Штогод"
@@ -2408,11 +2380,6 @@
         "Пратэрмінаваны рахунак"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -2488,6 +2455,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2680,6 +2652,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } ваша імя карыстальніка. Каб стварыць ${ emailAddress }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
       ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
@@ -2917,6 +2892,9 @@
         "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
         "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
         "У некаторых групах няма кантактаў: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "Ключ арганізацыі не расшыфраваны"
       ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
@@ -4782,6 +4760,9 @@
       "Key fingerprint": [
         "Адбітак ключа"
       ],
+      "Keys created": [
+        "Ключы створаны"
+      ],
       "Label all imported messages as": [
         "Пазначыць усе імпартаваныя паведамленні як"
       ],
@@ -5423,6 +5404,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Выкарыстоўвайце гэту форму, каб апавясціць нас пра непрымальны, недапушчальны або іншы падазроны абагулены файл. Вы збіраецеся паскардзіцца:"
+      ],
+      "User activated": [
+        "Карыстальнік актываваны"
       ],
       "username": [
         "імя карыстальніка"
@@ -10746,11 +10730,6 @@
         "Сёння"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Дадаць гэты абагулены файл у свой ${ DRIVE_APP_NAME } для лёгкага доступу да яго ў будучыні."
@@ -10832,6 +10811,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы адправілі ім запрашэнне на доступ да элемента."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
     },
     "Validation": {

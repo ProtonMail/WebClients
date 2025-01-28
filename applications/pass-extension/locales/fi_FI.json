@@ -8,6 +8,9 @@
       "Accept": [
         "Hyväksy"
       ],
+      "Accept and view the item": [
+        "Hyväksy ja tarkastele kohdetta"
+      ],
       "Account": [
         "Tili"
       ],
@@ -122,11 +125,11 @@
       "Continue without pinning": [
         "Jatka kiinnittämättä"
       ],
-      "Copy alias address": [
-        "Kopioi aliasosoite"
-      ],
       "Copy and close": [
         "Kopioi ja sulje"
+      ],
+      "Copy forwarding address": [
+        "Kopioi välitysosoite"
       ],
       "Copy link": [
         "Kopioi linkki"
@@ -142,9 +145,6 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
-      ],
-      "Create a new vault to share": [
-        "Luo uusi jaettu holvi"
       ],
       "Create alias": [
         "Luo alias"
@@ -181,9 +181,6 @@
       ],
       "Custom section": [
         "Mukautettu osio"
-      ],
-      "Customize": [
-        "Mukauta"
       ],
       "Delete": [
         "Poista"
@@ -251,9 +248,6 @@
       "Enable this alias to receive emails sent to this alias": [
         "Ota alias käyttöön, jotta voit vastaanottaa sille lähetetyt sähköpostit."
       ],
-      "Entire vault": [
-        "Koko holvi"
-      ],
       "Exclude from monitoring": [
         "Poissulje valvonnasta"
       ],
@@ -317,6 +311,9 @@
       "Include in monitoring": [
         "Sisällytä valvontaan"
       ],
+      "Invite more...": [
+        "Kutsu lisää..."
+      ],
       "Invite others": [
         "Kutsu muita"
       ],
@@ -356,9 +353,6 @@
       "Manage access": [
         "Hallitse käyttöoikeuksia"
       ],
-      "Manage vault access": [
-        "Hallitse holvin käyttöoikeuksia"
-      ],
       "Manually sync your data": [
         "Synkronoi tietosi"
       ],
@@ -379,9 +373,6 @@
       ],
       "Move all items": [
         "Siirrä kaikki kohteet"
-      ],
-      "Move to a shared vault": [
-        "Siirrä jaettuun holviin"
       ],
       "Move to another vault": [
         "Siirrä toiseen holviin"
@@ -536,11 +527,11 @@
       "Share": [
         "Jaa"
       ],
+      "Share item": [
+        "Jaa kohde"
+      ],
       "Share secure link": [
         "Jaa suojattu linkki"
-      ],
-      "Share this vault": [
-        "Jaa tämä holvi"
       ],
       "Share vault": [
         "Jaa holvi"
@@ -618,9 +609,6 @@
       ],
       "Update this login": [
         "Päivitä tämä kirjautumistieto"
-      ],
-      "Update vault": [
-        "Päivitä holvi"
       ],
       "Updating": [
         "Päivitetään"
@@ -764,6 +752,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Kutsun vahvistus ei nyt onnistunut"
+      ],
+      "Could not leave item.": [
+        "Kohteesta ei voitu poistua."
       ],
       "Could not leave vault.": [
         "Holvista ei voitu poistua."
@@ -1217,10 +1208,6 @@
         "${ blockedEmailsCount } estetty",
         "${ blockedEmailsCount } estetty"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } kutsu lähetettiin",
-        "${ count } kutsua lähetettiin"
-      ],
       "${ count } time": [
         "${ count } kerran",
         "${ count } kertaa"
@@ -1235,6 +1222,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } välitetty",
         "${ forwardedEmailsCount } välitetty"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } haluaa jakaa kohteen kanssasi."
       ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
@@ -1276,6 +1266,10 @@
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } tarjoaa pääsyavaimen tallennusta."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } kutsu lähetettiin",
+        "${ payload.count } kutsua lähetettiin"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
@@ -1402,8 +1396,17 @@
       "Can be viewed": [
         "Avattavissa:"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
+      "Can create, edit, and delete items in this vault.": [
+        "Voi luoda, muokata ja poistaa tämän holvin kohteita."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Voi luoda, muokata ja poistaa tämän kohteen."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Voi myöntää ja mitätöidä tämän kohteen käyttöoikeuksia, ja poistaa sen."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Voi myöntää ja mitätöidä tämän kohteen käyttöoikeuksia."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Voi myöntää ja mitätöidä holvin käyttöoikeuksia, ja poistaa holvin."
@@ -1413,6 +1416,9 @@
       ],
       "Can view items in this vault.": [
         "Voi tarkastella holvin kohteita."
+      ],
+      "Can view this item.": [
+        "Voi tarkastella tätä kohdetta."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Valitse tallennettu pääsyavain, jolla kirjaudutaan osoitteeseen ${ domain }"
@@ -1664,6 +1670,10 @@
       "Item restored": [
         "Kohde palautettiin"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Kohteen jakaminen: ${ itemAccessCount } käyttäjä",
+        "Kohteen jakaminen: ${ itemAccessCount } käyttäjää"
+      ],
       "Item successfully excluded from monitoring": [
         "Kohde poissuljettiin valvonnasta"
       ],
@@ -1678,6 +1688,9 @@
       ],
       "Item successfully unpinned": [
         "Kohde irrotettiin"
+      ],
+      "Leaving item...": [
+        "Poistutaan kohteesta..."
       ],
       "Leaving vault...": [
         "Poistutaan holvista..."
@@ -1917,9 +1930,6 @@
       "Restoring trashed items...": [
         "Palautetaan kohteita roskakorista..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Käänteinen alias kopioitiin leikepöydälle. Lähetä sähköposti tähän osoitteeseen, ja ${ Email } vastaanottaa sen."
-      ],
       "Save login": [
         "Tallenna kirjautumistieto"
       ],
@@ -1965,6 +1975,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Jaa kirjautumistietosi ja suojatut muistiinpanosi jopa 10 henkilölle"
       ],
+      "Shared item invitation": [
+        "Kutsu jaettuun kohteeseen"
+      ],
       "Sign in or create an account to continue.": [
         "Jatka kirjautumalla tai luomalla tili."
       ],
@@ -1983,8 +1996,11 @@
       "Successfully exported all your items": [
         "Kaikki kohteesi vietiin"
       ],
+      "Successfully left the item": [
+        "Kohteesta poistuttiin"
+      ],
       "Successfully left the vault": [
-        "Poistuttiin holvista"
+        "Holvista poistuttiin"
       ],
       "Successfully synced all vaults": [
         "Kaikki holvit synkronoitiin"
@@ -2116,9 +2132,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Päivitä maksulliseen tilaukseen luodaksesi useita holveja."
       ],
-      "Use vaults to share this item with others.": [
-        "Jaa kohde muille holvien avulla."
-      ],
       "User's access removed": [
         "Käyttäjän käyttöoikeus mitätöitiin"
       ],
@@ -2136,6 +2149,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Holvi \"${ share.content.name }\" poistettiin"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Holvin jakaminen: ${ vaultMembersCount } jäsen",
+        "Holvin jakaminen: ${ vaultMembersCount } jäsentä"
       ],
       "Verification code": [
         "Vahvistuskoodi"
@@ -2366,8 +2383,8 @@
       "All": [
         "Kaikki"
       ],
-      "All vaults": [
-        "Kaikki holvit"
+      "All items": [
+        "Kaikki kohteet"
       ],
       "Alphabetical": [
         "Aakkosellisesti"
@@ -2567,6 +2584,9 @@
       "Floor, apartment, building": [
         "Kerros, asunto, rakennus"
       ],
+      "For a one-off sharing": [
+        "Kertaluonteista jakamista varten"
+      ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
       ],
@@ -2578,9 +2598,6 @@
       ],
       "General": [
         "Yleiset"
-      ],
-      "Generate a secure link for this item": [
-        "Luo suojattu linkki tähän kohteeseen"
       ],
       "Generic CSV": [
         "Geneerinen CSV"
@@ -2728,6 +2745,9 @@
       ],
       "Need help?": [
         "Tarvitsetko apua?"
+      ],
+      "New": [
+        "Uusi"
       ],
       "New vault": [
         "Uusi holvi"
@@ -2888,11 +2908,14 @@
       "Share": [
         "Jaa"
       ],
-      "Share this vault or create a new vault": [
-        "Jaa tämä holvi tai luo uusi"
+      "Shared by me": [
+        "Minun jakamani"
       ],
       "Shared link": [
         "Jaettu linkki"
+      ],
+      "Shared with me": [
+        "Jaettu minulle"
       ],
       "Show website favicons": [
         "Näytä sivustokuvakkeet"
@@ -2935,10 +2958,6 @@
       ],
       "Text": [
         "Teksti"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Kohteen holvi on tällä hetkellä jaettu ${ targetMembers } henkilölle",
-        "Kohteen holvi on tällä hetkellä jaettu ${ targetMembers } henkilölle"
       ],
       "The URL has been copied to the clipboard": [
         "URL-osoite kopioitiin leikepöydälle"
@@ -3177,23 +3196,17 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Etsi ${ pluralItemType } holvista ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Etsi ${ pluralItemType } kaikista holveista"
-      ],
       "Search in ${ vaultName }": [
         "Etsi holvista ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Etsi kaikista holveista"
+      "Search in all items": [
+        "Etsi kaikista kohteista"
       ],
       "Search in Trash": [
         "Etsi roskakorista"
       ],
       "Select a suffix": [
         "Valitse jälkiliite"
-      ],
-      "Shared vault": [
-        "Jaettu holvi"
       ],
       "Unknown origin": [
         "Tuntematon alkuperä"
@@ -3323,10 +3336,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Satunnaisen etuliitteen luominen on otettu käyttöön"
-      ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsenen.",
-        "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsentä."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Vahvistussähköposti lähetettiin. Tarkista saapuneet vahvistaaksesi postilaatikkosi"
@@ -3492,11 +3501,17 @@
       "Import to vault(s)": [
         "Tuo holviin/holveihin"
       ],
+      "Item": [
+        "Kohde"
+      ],
       "Last autofill": [
         "Automaattitäytetty viimeksi"
       ],
       "Last modified": [
         "Muokattu viimeksi"
+      ],
+      "Leave this item?": [
+        "Poistutaanko tästä kohteesta?"
       ],
       "Leave vault?": [
         "Poistutaanko holvista?"
@@ -3538,6 +3553,9 @@
       ],
       "No items selected": [
         "Kohteita ei ole valittu"
+      ],
+      "No shared items": [
+        "Ei jaettuja kohteita"
       ],
       "No shared secure links": [
         "Jaettuja suojattuja linkkejä ei ole"
@@ -3605,6 +3623,12 @@
       ],
       "Share with": [
         "Jaa henkilöille"
+      ],
+      "Shared item invitation": [
+        "Kutsu jaettuun kohteeseen"
+      ],
+      "Shared via": [
+        "Jaettu käyttäen"
       ],
       "SPF (Optional)": [
         "SPF (valinnainen)"
@@ -3910,6 +3934,9 @@
       ],
       "You must select at least one mailbox": [
         "Sinun on valittava valita ainakin yksi postilaatikko"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Menetät pääsyn tähän kohteeseen ja sen tietoihin. Haluatko jatkaa?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Sinulla ei ole enää tämän holvin käyttöoikeutta. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
