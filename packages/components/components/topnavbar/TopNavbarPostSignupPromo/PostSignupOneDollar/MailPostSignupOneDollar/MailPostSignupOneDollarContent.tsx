@@ -9,7 +9,7 @@ import mailOfferSpotlight from '@proton/styles/assets/img/permanent-offer/mail_o
 import { OfferContent } from '../components/OfferContent';
 import { OfferLastReminderSpotlight } from '../components/OfferLastReminderSpotlight';
 import { PostSignupOneDollarCheck } from '../components/PostSignupOneDollarCheck';
-import { LAST_REMINDER_DAY } from '../components/interface';
+import { LAST_REMINDER_DAY } from '../interface';
 
 interface Props {
     pricingTitle: ReactNode;

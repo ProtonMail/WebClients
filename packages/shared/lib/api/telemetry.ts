@@ -34,6 +34,7 @@ export enum TelemetryMeasurementGroups {
     /** Drive Web */
     driveWebFeaturePerformance = 'drive.web.feature_performance_unauth',
     driveWebActions = 'drive.web.actions_unauth',
+    drivePostSignupOneDollar = 'drive.web.post_signup_one_dollar',
     /** Shared */
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
     smartBanner = 'any.web.smart_banner',
@@ -70,7 +71,7 @@ export enum TelemetryMailTrial2024UpsellModal {
     upsell = 'upsell',
 }
 
-export enum TelemetryMailPostSignupOneDollar {
+export enum TelemetryMailDrivePostSignupOneDollar {
     automaticModalOpen = 'automatic_modal_open',
     clickUpsellButton = 'click_upsell_button',
     clickTopNavbar = 'click_top_navbar',
@@ -287,7 +288,7 @@ export type TelemetryEvents =
     | TelemetryMailSelectAllEvents
     | TelemetryMailComposerAssistantEvents
     | TelemetryMailOnboardingEvents
-    | TelemetryMailPostSignupOneDollar
+    | TelemetryMailDrivePostSignupOneDollar
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
     | TelemetryPaymentsEvents
