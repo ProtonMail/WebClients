@@ -137,7 +137,7 @@
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
-        "Adjuntar captura(s) de pantalla"
+        "Adjuntar una o varias capturas de pantalla"
       ],
       "Attachment": [
         "Archivo adjunto"
@@ -749,7 +749,7 @@
         "Marcar como legítimo"
       ],
       "Maximize composer": [
-        "Maximizar el editor"
+        "Ampliar el editor"
       ],
       "Maybe": [
         "Quizás"
@@ -770,7 +770,7 @@
         "Mensajes a este destinatario"
       ],
       "Minimize composer": [
-        "Minimizar el editor"
+        "Reducir el editor"
       ],
       "Modify": [
         "Modificar"
@@ -1124,7 +1124,7 @@
         "Destruir automaticamente el mensaje"
       ],
       "Self-destruct on ...": [
-        "Destrucción automática el ..."
+        "Destrucción automática el..."
       ],
       "Send": [
         "Enviar"
@@ -1322,7 +1322,7 @@
         "Desmarcar para eliminar"
       ],
       "Unordered list": [
-        "Lista con viñetas"
+        "Lista desordenada"
       ],
       "Unsnooze": [
         "Desactivar la pausa"
@@ -1686,11 +1686,6 @@
         "Incluye soporte para 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación para ordenador ${ MAIL_APP_NAME }"
@@ -1783,34 +1778,9 @@
         "Historial de versiones"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Los descuentos se basan en la cuota estándar mensual."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compras Pass Family o Unlimited, tu suscripción se renovará automáticamente al final del ciclo de facturación con el precio reducido y la duración normales."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Más popular"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "forever": [
-        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -1856,9 +1826,6 @@
       ],
       "12 months": [
         "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ],
       "Annually": [
         "Anual"
@@ -4011,6 +3978,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Configuración > Mensajes y redacción > Dominio corto (pm.me)."
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
       ],
@@ -4280,6 +4250,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
         "Algunos grupos no tienen contactos: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "La clave de la organización no está descifrada."
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -5475,7 +5448,7 @@
         "El formato de la hora inicial no es válido."
       ],
       "Only the Gregorian calendar scale is allowed": [
-        "Sólo se permite la escala del calendario gregoriano."
+        "Solo se permite la escala del calendario gregoriano."
       ],
       "Recurring event has no occurrences": [
         "El evento recurrente no tiene ocurrencias."
@@ -6018,7 +5991,7 @@
         "Un usuario es una cuenta asociada a un único nombre de usuario, bandeja de entrada y persona"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
-        "Accede a más de 6,500 servidores de alta velocidad en hasta 10 dispositivos para mantener tus datos de navegación seguros. Disponible en ${ ios }, ${ android }, ${ appleTV } y ${ desktop }."
+        "Accede a más de 6.500 servidores de alta velocidad en hasta 10 dispositivos para mantener tus datos de navegación seguros. Disponible en ${ ios }, ${ android }, ${ appleTV } y ${ desktop }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
@@ -6360,7 +6333,7 @@
         "Al cambiar por un plan con menos funciones se terminarán las conexiones a los servidores de pago de ${ VPN_APP_NAME }."
       ],
       "Download on the App Store": [
-        "Descárgalo en la App Store"
+        "Descárgala en la App Store"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo donde quieras que vayas."
@@ -6531,7 +6504,7 @@
         "Generar texto"
       ],
       "Get it on Google Play": [
-        "Descárgalo en Google Play"
+        "Descárgala en Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -6553,7 +6526,7 @@
         "Prioridad alta"
       ],
       "How hide-my-email aliases works": [
-        "Funcionamiento de los alias de Hide-my-email"
+        "Funcionamiento de los alias de hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estoy enviando este mensaje a un usuario fuera de ${ MAIL_APP_NAME }."
@@ -6669,6 +6642,9 @@
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
+      ],
+      "Keys created": [
+        "Se han creado las claves."
       ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
@@ -7521,6 +7497,9 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utiliza los atajos del teclado para administrar tus correos rápidamente."
+      ],
+      "User activated": [
+        "Se ha activado el usuario."
       ],
       "username": [
         "nombre de usuario"
@@ -9692,7 +9671,7 @@
         "Soporte prioritario y chat en vivo"
       ],
       "Private photo backup": [
-        "Copia de seguridad de fotos privadas"
+        "Copia de seguridad de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Revisa y mejora tus correos electrónicos"
@@ -10365,7 +10344,7 @@
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Direcciones de correo electrónico"
       ],
       "Free": [
@@ -11640,6 +11619,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Tu suscripción se renovará a la misma tarifa cada año."
       ]
     },
     "specialoffer: Link": {
@@ -12518,7 +12500,7 @@
         "Huella digital copiada al portapapeles"
       ],
       "Import record deleted": [
-        "Se ha eliminado el registro importación."
+        "Se ha eliminado el registro de importación."
       ],
       "Invitation rejected": [
         "Se ha rechazado la invitación."
@@ -13789,6 +13771,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se te facturará cada 12 meses por ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Tu nueva suscripción se renovará automáticamente en ${ cycle } meses.",
+        "Tu nueva suscripción se renovará automáticamente en ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Tu plan programado comienza el ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Tu suscripción se renovará automáticamente en ${ cycle } mes.",

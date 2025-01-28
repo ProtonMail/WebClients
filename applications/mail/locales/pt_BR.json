@@ -79,7 +79,7 @@
         "Adicionar grupo"
       ],
       "Add new group": [
-        "Adicionar novo grupo"
+        "Adicionar um grupo"
       ],
       "Add note": [
         "Adicionar nota"
@@ -299,7 +299,7 @@
         "Copiar número da versão para a área de transferência"
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contato"
+        "Criar um grupo de contatos"
       ],
       "Create a new folder": [
         "Criar uma pasta"
@@ -320,10 +320,10 @@
         "Criar marcador"
       ],
       "Create new contact": [
-        "Criar novo contato"
+        "Criar um contato"
       ],
       "Create new message": [
-        "Criar nova mensagem"
+        "Criar uma mensagem"
       ],
       "Current plan": [
         "Plano atual"
@@ -1689,11 +1689,6 @@
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
@@ -1786,34 +1781,9 @@
         "Histórico de versões"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } Plus não tem preço de renovação, ou seja, é um pagamento único para acesso vitalício ao Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Os descontos são baseados no preço mensal padrão."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Se você adquirir o Pass Family ou Unlimited, sua assinatura será renovada automaticamente pela taxa com desconto e duração padrão ao final de seu ciclo de faturamento."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Mais popular"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Com o preço único de ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "forever": [
-        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
@@ -1859,9 +1829,6 @@
       ],
       "12 months": [
         "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ],
       "Annually": [
         "Anualmente"
@@ -4017,6 +3984,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Mensagens e composição > Domínio curto (pm.me)"
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -4287,6 +4257,9 @@
         "Um dos grupos não tem contatos: ${ noContactGroupList }",
         "Alguns dos grupos não tem contatos: ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "A chave de organização não está descriptografada"
+      ],
       "Password is required": [
         "A senha é obrigatória"
       ],
@@ -4316,7 +4289,7 @@
         "Informe o primeiro nome, o sobrenome ou nome de exibição"
       ],
       "Please select a category and what went wrong with the generated text": [
-        "Por favor, selecione uma categoria e o que deu errado com o texto gerado"
+        "Selecione uma categoria e o que deu errado com o texto gerado."
       ],
       "Please select a country": [
         "Selecione um país"
@@ -4551,7 +4524,7 @@
         "Você deve especificar um nome"
       ],
       "You've reached the maximum character number. Please shorten your message.": [
-        "Você atingiu o número máximo de caracteres. Por favor, encurte sua mensagem."
+        "Você atingiu o número máximo de caracteres. Encurte sua mensagem."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Suas mensagens não podem ser descriptografadas devido a uma recente redefinição de senha. Caso lembre-se de sua senha anterior, você pode ${ reActivateKeyLink } para acessar suas mensagens. ${ learnMoreLink }"
@@ -4912,7 +4885,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
-        "Você entrou com sucesso no grupo familiar"
+        "Você entrou no grupo familiar"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Você tem faturas não pagas. Você deve pagá-las antes de aderir a um plano familiar."
@@ -6270,8 +6243,8 @@
         "Código do país"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Criar ${ calendarsToBeCreatedCount } novo calendário",
-        "Criar ${ calendarsToBeCreatedCount } novos calendários"
+        "Criar ${ calendarsToBeCreatedCount } calendário",
+        "Criar ${ calendarsToBeCreatedCount } calendários"
       ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Crie uma pasta como “${ suggestedFolderName }” para manter todos os seus comprovantes on-line em um só lugar."
@@ -6283,7 +6256,7 @@
         "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contato"
+        "Criar um grupo de contatos"
       ],
       "Create a secure cloud for ${ value } member": [
         "Criar uma nuvem segura para ${ value } membro",
@@ -6546,7 +6519,7 @@
         "Gerar texto"
       ],
       "Get it on Google Play": [
-        "Baixar no Google Play"
+        "Baixe no Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
@@ -6577,7 +6550,7 @@
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
-        "Se você acredita que cometemos um erro, por favor ${ contactLink }."
+        "Se você acredita que cometemos um erro, ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se você cancelar sua assinatura do ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
@@ -6684,6 +6657,9 @@
       ],
       "Key fingerprint": [
         "Chave de impressão digital"
+      ],
+      "Keys created": [
+        "Chave criada"
       ],
       "Label all imported messages as": [
         "Marcar todas as mensagens importadas como"
@@ -6961,7 +6937,7 @@
         "Compartilhe o que você esperava"
       ],
       "Please try again in a few moments": [
-        "Por favor, tente novamente em alguns instantes"
+        "Tente novamente em alguns instantes"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
@@ -7124,7 +7100,7 @@
         "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Os pagamentos SEPA não estão disponíveis no momento. Por favor, tente novamente mais tarde."
+        "Os pagamentos SEPA não estão disponíveis no momento. Tente novamente mais tarde."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -7537,6 +7513,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Use os atalhos do teclado para gerenciar seu e-mail com mais rapidez."
       ],
+      "User activated": [
+        "Usuário ativado"
+      ],
       "username": [
         "Nome de usuário"
       ],
@@ -7553,7 +7532,7 @@
         "Versão ${ appVersion }"
       ],
       "Version number successfully copied to clipboard": [
-        "Número da versão copiada com sucesso para a área de transferência"
+        "O número da versão foi copiado para a área de transferência."
       ],
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
@@ -7865,7 +7844,7 @@
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "A data da sua próxima renovação será em ${ renewalTime }. Favor entrar em contato com o suporte se você precisa de uma mudança de plano imediata."
+        "A data da sua próxima renovação será em ${ renewalTime }.Entre em contato com o suporte se você precisa de uma mudança de plano imediata."
       ],
       "Your password was leaked:": [
         "Sua senha foi vazada:"
@@ -8806,7 +8785,7 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para adicionar um novo calendário, remova um existente."
+        "Para adicionar um calendário, remova um existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
         "Para adicionar um calendário, remova outro calendário ou atualize seu plano da ${ BRAND_NAME } para um plano ${ MAIL_SHORT_APP_NAME } pago."
@@ -8838,13 +8817,13 @@
         "Crie um calendário vinculado a um endereço de e-mail ativo."
       ],
       "Create a new calendar to add this event": [
-        "Criar um novo calendário para adicionar este evento"
+        "Criar um calendário para adicionar este evento"
       ],
       "Create a new calendar to answer this invitation": [
-        "Criar um novo calendário para responder a este convite"
+        "Criar um calendário para responder a este convite"
       ],
       "Create a new calendar to manage your invitations": [
-        "Crie um novo calendário para gerenciar seus convites"
+        "Crie um calendário para gerenciar seus convites"
       ],
       "Drafts": [
         "Rascunhos"
@@ -10388,7 +10367,7 @@
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Endereços de e-mail"
       ],
       "Free": [
@@ -10605,7 +10584,7 @@
         "Automático (${ value })"
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Ignore group": [
         "Ignorar grupo"
@@ -10627,7 +10606,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Criar novo calendário"
+        "Criar um calendário"
       ],
       "Merge with calendar": [
         "Mesclar com o calendário"
@@ -10754,7 +10733,7 @@
         "Processando pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Por favor, reative sua assinatura primeiro para diminuir o número de complementos."
+        "Reative sua assinatura primeiro para diminuir o número de complementos."
       ],
       "Please select billing country": [
         "Selecione o país de cobrança"
@@ -10807,7 +10786,7 @@
         "Ocorreu um erro. Tente novamente mais tarde."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Não conseguimos autenticar seu método de pagamento. Por favor, escolha um método de pagamento diferente ou tente novamente."
+        "Não conseguimos autenticar seu método de pagamento. Escolha um método de pagamento diferente ou tente novamente."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
@@ -10919,7 +10898,7 @@
         "Insira o link primeiro"
       ],
       "Please share what you expected": [
-        "Por favor, compartilhe o que você esperava"
+        "Compartilhe o que você esperava"
       ],
       "Search date, name, email address, or subject line": [
         "Pesquise data, nome, endereço de e-mail ou assunto"
@@ -11669,6 +11648,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Sua assinatura será renovada pelo mesmo preço todos os anos."
       ]
     },
     "specialoffer: Link": {
@@ -12125,7 +12107,7 @@
         "2 usuários"
       ],
       "Add any new files": [
-        "Adicionar qualquer novo arquivo"
+        "Adicionar qualquer arquivo"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura ${ planName } expirar, você fará o downgrade para o ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Você também perderá todos os bônus de armazenamento concedidos anteriormente."
@@ -12657,7 +12639,7 @@
         "Desfazer em andamento"
       ],
       "Verification successful": [
-        "Verificado com sucesso"
+        "A verificação é terminada."
       ],
       "Writing assistant disabled": [
         "Assistente de escrita desativado"
@@ -12669,7 +12651,7 @@
         "Configurações do assistente de escritas atualizadas"
       ],
       "You have successfully canceled your subscription.": [
-        "Você cancelou sua assinatura com sucesso."
+        "Você cancelou sua assinatura."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
@@ -12826,7 +12808,7 @@
         "Criar o marcador “${ suggestedLabelName }“"
       ],
       "Create new email address": [
-        "Criar endereço de e-mail"
+        "Criar um endereço de e-mail"
       ],
       "Create “${ suggestedFolderName }“ folder": [
         "Criar pasta “${ suggestedFolderName }“"
@@ -13032,7 +13014,7 @@
         "Criar marcador \"${ search }\""
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Credits": [
         "Créditos"
@@ -13818,6 +13800,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Sua nova assinatura será renovada automaticamente em ${ cycle } mês.",
+        "Sua nova assinatura será renovada automaticamente em ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Seu plano agendado começa em ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Sua assinatura será renovada automaticamente em ${ cycle } mês.",

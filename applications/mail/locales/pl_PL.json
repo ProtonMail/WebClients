@@ -150,6 +150,9 @@
       "Authenticate": [
         "Uwierzytelnij"
       ],
+      "Auto-delete spam and trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -414,6 +417,9 @@
       "Download now": [
         "Pobierz"
       ],
+      "Download the desktop app": [
+        "Pobierz aplikację desktopową"
+      ],
       "Downloading": [
         "Pobieranie"
       ],
@@ -455,6 +461,9 @@
       ],
       "Enable": [
         "Włącz"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Włącz ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
@@ -542,6 +551,9 @@
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Przejdź do ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Przejdź do etykiety"
@@ -1242,6 +1254,9 @@
       "Switch or add account": [
         "Przełącz lub dodaj konto"
       ],
+      "Take a tour": [
+        "Otwórz przewodnik"
+      ],
       "This message contains embedded images.": [
         "Ta wiadomość zawiera osadzone obrazy."
       ],
@@ -1674,11 +1689,6 @@
         "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
@@ -1771,34 +1781,9 @@
         "Historia wersji"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do planu Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Jeśli zakupisz plan Pass Family lub Unlimited, Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie, na standardowy okres na koniec cyklu rozliczeniowego."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Najpopularniejsze"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Płatne ${ amount } jednorazowo"
-      ],
-      "for ${ durationDeal }": [
-        "za ${ durationDeal }"
-      ],
-      "forever": [
-        "na zawsze"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Odnawia się po 1 miesiącu za ${ regularAmount }."
@@ -1845,9 +1830,6 @@
       ],
       "12 months": [
         "12 miesięcy"
-      ],
-      "24 months": [
-        "24 miesiące"
       ],
       "Annually": [
         "Rocznie"
@@ -1950,6 +1932,24 @@
       ],
       "Continue your subscription": [
         "Kontynuuj subskrypcję"
+      ],
+      "Create label": [
+        "Utwórz etykietę"
+      ],
+      "Maybe later": [
+        "Może później"
+      ],
+      "Next": [
+        "Dalej"
+      ],
+      "Remind me later": [
+        "Przypomnij mi później"
+      ],
+      "Set up other features": [
+        "Skonfiguruj inne funkcje"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3997,6 +3997,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
+      ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
@@ -4279,6 +4282,9 @@
         "Niektóre grupy nie posiadają kontaktów: ${ noContactGroupList } ",
         "Niektóre grupy nie posiadają kontaktów: ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "Klucz organizacji nie został odszyfrowany"
+      ],
       "Password is required": [
         "Hasło jest wymagane"
       ],
@@ -4311,6 +4317,9 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Wybierz kategorię i napisz co poszło nie tak z wygenerowanym tekstem"
+      ],
+      "Please select a country": [
+        "Wybierz kraj"
       ],
       "Please try again or refresh the page.": [
         "Spróbuj ponownie lub odśwież stronę."
@@ -5480,6 +5489,9 @@
       "Event validation failed": [
         "Weryfikacja wydarzenia nie powiodła się"
       ],
+      "Malformed all-day event": [
+        "Czas wydarzenia całodniowego posiada nieprawidłowy format"
+      ],
       "Malformed end time": [
         "Czas zakończenia posiada nieprawidłowy format"
       ],
@@ -5488,6 +5500,9 @@
       ],
       "Malformed start time": [
         "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
+      "Recurring rule not supported": [
+        "Reguła powtórzeń nie jest obsługiwana"
       ],
       "Start time out of bounds": [
         "Czas rozpoczęcia jest poza zakresem"
@@ -6260,6 +6275,9 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatyczne usuwanie wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
+      ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
       ],
@@ -6458,6 +6476,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
       ],
+      "Download on the App Store": [
+        "Pobierz z App Store"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
       ],
@@ -6532,6 +6553,9 @@
         "osadzone obrazy",
         "osadzonych obrazów",
         "osadzonych obrazów"
+      ],
+      "Enabling auto-deletion…": [
+        "Włącz automatyczne usuwanie..."
       ],
       "Encrypt message": [
         "Zaszyfruj wiadomość"
@@ -6622,6 +6646,9 @@
       ],
       "Generate text": [
         "Generuj tekst"
+      ],
+      "Get it on Google Play": [
+        "Pobierz z Google Play"
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Zastosuj kolorowe etykiety do rachunków, np. “${ suggestedLabelName }“. Po ich opłaceniu zmień etykietę na “${ suggestedPaidLabelName }“."
@@ -6754,6 +6781,9 @@
       ],
       "Key fingerprint": [
         "Odcisk klucza"
+      ],
+      "Keys created": [
+        "Klucze zostały utworzone"
       ],
       "Label all imported messages as": [
         "Oznacz wszystkie zaimportowane wiadomości etykietą"
@@ -7091,6 +7121,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Pamiętaj, aby zaktualizować adres w menedżerze haseł lub miejscu, gdzie przechowujesz swoje konto i dane logowania."
       ],
@@ -7198,6 +7231,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
+      ],
+      "Setting up your new address…": [
+        "Konfiguracja nowego adresu..."
       ],
       "Shorten selection": [
         "Skróć zaznaczenie"
@@ -7585,6 +7621,9 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Użyj skrótów klawiszowych, aby szybciej zarządzać swoimi wiadomościami."
+      ],
+      "User activated": [
+        "Użytkownik został aktywowany"
       ],
       "username": [
         "nazwa użytkownika"
@@ -8988,6 +9027,9 @@
       "Sent": [
         "Wysłane"
       ],
+      "settings": [
+        "ustawienia"
+      ],
       "Sign up for free": [
         "Załóż darmowe konto"
       ],
@@ -9434,11 +9476,17 @@
       "Get started for ${ priceCoupon }": [
         "Od ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
       "Upgrade": [
         "Ulepsz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -9614,6 +9662,9 @@
       ],
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB of storage": [
+        "200 GB przestrzeni dyskowej"
       ],
       "24/7 account management support": [
         "Wsparcie zarządzania kontem 24/7"
@@ -9809,6 +9860,9 @@
       ],
       "Priority support & live chat": [
         "Priorytetowe wsparcie i czat"
+      ],
+      "Private photo backup": [
+        "Prywatna kopia zapasowa zdjęć"
       ],
       "Proofread and refine your emails": [
         "Sprawdzaj i poprawiaj teksty"
@@ -10453,6 +10507,31 @@
         "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
       ]
     },
+    "Offer": {
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Limited-time offer": [
+        "Oferta ograniczona czasowo"
+      ],
+      "Maybe later": [
+        "Może później"
+      ]
+    },
+    "Offer feature": {
+      "Custom email domain": [
+        "Niestandardowa domena"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Przestrzeń dyskowa"
+      ]
+    },
     "Onboarding List Placeholder": {
       "Finance": [
         "Finanse"
@@ -10481,10 +10560,10 @@
         "${ industryLeadingSpamProtectionTitle } zapobiega przedostawaniu się wyłudzających wiadomości do skrzynki odbiorczej."
       ],
       "${ MAIL_APP_NAME } on App Store": [
-        "${ MAIL_APP_NAME } na App Store"
+        "${ MAIL_APP_NAME } w App Store"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
-        "${ MAIL_APP_NAME } na Google Play"
+        "${ MAIL_APP_NAME } w Google Play"
       ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } zapewnia koniec śledzenia w Internecie."
@@ -10501,8 +10580,20 @@
       "Auto-delete spam and trash": [
         "Automatyczne usuwanie Spamu i Kosza"
       ],
+      "browser": [
+        "przeglądarka"
+      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
+      "Desktop": [
+        "Komputer"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Poznaj ${ MAIL_APP_NAME }"
       ],
       "Download the desktop app": [
         "Pobierz aplikację desktopową"
@@ -10531,6 +10622,9 @@
       "Replay introduction": [
         "Powtórz samouczek"
       ],
+      "Set a display name": [
+        "Ustaw nazwę wyświetlaną"
+      ],
       "Start using ${ BRAND_NAME }": [
         "Zacznij korzystać z ${ BRAND_NAME }"
       ],
@@ -10542,6 +10636,9 @@
       ],
       "Where privacy is default.": [
         "Gdzie prywatność jest domyślna."
+      ],
+      "You are all set!": [
+        "Wszystko gotowe!"
       ]
     },
     "Onboarding Proton": {
@@ -13021,6 +13118,9 @@
       "Account recovery": [
         "Odzyskiwanie konta"
       ],
+      "Account restricted": [
+        "Konto ograniczone"
+      ],
       "Account security": [
         "Bezpieczeństwo konta"
       ],
@@ -13080,6 +13180,9 @@
       ],
       "Attachments": [
         "Załączniki"
+      ],
+      "Auto-deletion is active": [
+        "Automatyczne usuwanie jest aktywne"
       ],
       "Bad time for this email?": [
         "To nie jest dobry czas na wiadomość?"
@@ -13176,6 +13279,9 @@
       ],
       "Currency": [
         "Waluta"
+      ],
+      "Custom domains:": [
+        "Niestandardowe domeny:"
       ],
       "Customize and confirm": [
         "Dostosuj i potwierdź"
@@ -13555,6 +13661,9 @@
       "Previous message": [
         "Poprzednia wiadomość"
       ],
+      "Priority support:": [
+        "Priorytetowe wsparcie:"
+      ],
       "Processing...": [
         "Przetwarzanie..."
       ],
@@ -13612,6 +13721,9 @@
       "Schedule send": [
         "Zaplanuj wysyłanie"
       ],
+      "Schedule send:": [
+        "Zaplanuj wysłanie:"
+      ],
       "Security center": [
         "Centrum zabezpieczeń"
       ],
@@ -13660,6 +13772,9 @@
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
       ],
+      "Set up your family account": [
+        "Skonfiguruj konto rodzinne"
+      ],
       "Set your own schedule": [
         "Ustaw własny harmonogram"
       ],
@@ -13677,6 +13792,9 @@
       ],
       "Snooze message": [
         "Odłóż wiadomość"
+      ],
+      "Snooze:": [
+        "Odłóż:"
       ],
       "Sort conversations": [
         "Sortuj wątki"
