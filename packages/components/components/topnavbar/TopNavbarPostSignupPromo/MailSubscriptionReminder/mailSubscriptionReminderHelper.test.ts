@@ -3,7 +3,7 @@ import { subDays } from 'date-fns';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-import { AUTOMATIC_OFFER_STATE } from '../PostSignupOneDollar/components/interface';
+import { AUTOMATIC_OFFER_STATE } from '../PostSignupOneDollar/interface';
 import { getIsUserEligibleForSubscriptionReminder } from './mailSubscriptionReminderHelper';
 
 const now = new Date();

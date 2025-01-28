@@ -22,13 +22,9 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import clsx from '@proton/utils/clsx';
 
-import {
-    EXTENDED_REMINDER_DAY,
-    LAST_REMINDER_DAY,
-    type PostSubscriptionOneDollarOfferState,
-} from '../components/interface';
-import { updatePostSignupOpenOfferState } from '../components/postSignupOffersHelpers';
 import { usePostSignupOneDollarPromotionPrice } from '../components/usePostSignupOneDollarPromotionPrice';
+import { EXTENDED_REMINDER_DAY, LAST_REMINDER_DAY, type PostSubscriptionOneDollarOfferState } from '../interface';
+import { isStateTheSame, updatePostSignupOpenOfferState } from '../postSignupOffersHelpers';
 import { MailPostSignupDollarContent } from './MailPostSignupOneDollarContent';
 import { useMailPostSignupOneDollar } from './useMailPostSignupOneDollar';
 import { useMailPostSignupOneDollarTelemetry } from './useMailPostSignupOneDollarTelemetry';
@@ -88,10 +84,7 @@ export const MailPostSignupOneDollar = () => {
         setSpotlightState(false);
 
         const newState = updatePostSignupOpenOfferState(mailOfferState?.Value);
-        if (
-            newState.automaticOfferReminders === mailOfferState?.Value?.automaticOfferReminders &&
-            newState.offerStartDate === mailOfferState?.Value?.offerStartDate
-        ) {
+        if (isStateTheSame(newState, mailOfferState?.Value)) {
             return;
         }
 
@@ -125,10 +118,13 @@ export const MailPostSignupOneDollar = () => {
         });
     };
 
+    const isLastReminderDay = daysSinceOffer >= LAST_REMINDER_DAY;
+
     return (
         <Spotlight
             anchorRef={buttonRef}
-            innerClassName={clsx(daysSinceOffer >= LAST_REMINDER_DAY ? undefined : 'p-0')}
+            className={clsx(!isLastReminderDay && 'rounded-xl')}
+            innerClassName={clsx(isLastReminderDay ? undefined : 'p-0')}
             show={show || spotlightState}
             onClose={() => {
                 handleClose();
@@ -151,7 +147,7 @@ export const MailPostSignupOneDollar = () => {
                     as={ButtonLike}
                     className="flex items-center gap-2"
                     onClick={() => {
-                        if (daysSinceOffer >= LAST_REMINDER_DAY) {
+                        if (isLastReminderDay) {
                             handleUpsellClick();
                         } else {
                             sendReportClickTopNavbar(daysSinceOffer);
