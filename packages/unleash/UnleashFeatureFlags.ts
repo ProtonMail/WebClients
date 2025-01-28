@@ -148,6 +148,10 @@ enum AdminFeatureFlag {
     UserSecurityModal = 'UserSecurityModal',
 }
 
+enum WalletFlag {
+    ImportPaperWallet = 'ImportPaperWallet',
+}
+
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
@@ -156,4 +160,5 @@ export type FeatureFlag =
     | `${DriveFeatureFlag}`
     | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
-    | `${AdminFeatureFlag}`;
+    | `${AdminFeatureFlag}`
+    | `${WalletFlag}`;
