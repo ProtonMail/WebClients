@@ -54,16 +54,10 @@ jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
  * - Fix pull request: https://github.com/jsdom/jsdom/pull/3403
  */
 jest.mock('./components/dialog/Dialog.tsx', () => {
-    const { forwardRef } = jest.requireActual('react');
+    const { forwardRef, createElement } = jest.requireActual('react');
     return {
         __esModule: true,
-        default: forwardRef(({ children, ...rest }, ref) => {
-            return (
-                <div {...rest} ref={ref}>
-                    {children}
-                </div>
-            );
-        }),
+        default: forwardRef(({ children, ...rest }, ref) => createElement('div', { ...rest, ref }, children)),
     };
 });
 
@@ -79,3 +73,11 @@ window.SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
 // could fail seconds later when the metrics batch is sent via fetch.
 // The metrics package has its own test coverage, so we don't need to test it here.
 jest.mock('@proton/metrics');
+
+jest.mock('@proton/components/containers/vpn/flag', () => ({
+    getFlagSvg: jest.fn().mockImplementation((it) => it),
+}));
+
+jest.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
+    getFlagSvg: jest.fn().mockImplementation((it) => it),
+}));

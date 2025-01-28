@@ -3,16 +3,13 @@ import userEvent from '@testing-library/user-event';
 
 import { FeatureCode } from '@proton/features';
 import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import {
-    mockUseApi,
-    mockUseEventManager,
-    mockUseFeature,
-    mockUseFlag,
-    mockUseMailSettings,
-    mockUseNotifications,
-    mockUseUser,
-    renderWithProviders,
-} from '@proton/testing';
+import { mockUseFlag, renderWithProviders } from '@proton/testing';
+import { mockUseApi } from '@proton/testing/lib/mockUseApi';
+import { mockUseEventManager } from '@proton/testing/lib/mockUseEventManager';
+import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
+import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
+import { mockUseNotifications } from '@proton/testing/lib/mockUseNotifications';
+import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import MessagesSection from './MessagesSection';
 
@@ -42,7 +39,7 @@ describe('MessagesSection', () => {
     describe('AlmostAllMail', () => {
         describe('when AlmostAllMail is not enabled', () => {
             it('should not render AlmostAllMail toggle', () => {
-                mockUseFeature().mockImplementation((code) => {
+                mockUseFeatureBarrel().mockImplementation((code) => {
                     if (code === FeatureCode.AlmostAllMail) {
                         return { feature: { Value: false } } as any;
                     }
@@ -58,7 +55,7 @@ describe('MessagesSection', () => {
 
         describe('when AlmostAllMail is  enabled', () => {
             beforeEach(() => {
-                mockUseFeature({ feature: { Value: true } });
+                mockUseFeatureBarrel({ feature: { Value: true } });
             });
 
             it('should render AlmostAllMail toggle', () => {
@@ -98,7 +95,7 @@ describe('MessagesSection', () => {
 
     describe('PageSize', () => {
         beforeEach(() => {
-            mockUseFeature({ feature: { Value: true } });
+            mockUseFeatureBarrel({ feature: { Value: true } });
             mockUseMailSettings([{ ViewMode: VIEW_MODE.SINGLE }]);
         });
 

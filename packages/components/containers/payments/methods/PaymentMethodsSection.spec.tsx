@@ -4,15 +4,12 @@ import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { FREE_SUBSCRIPTION, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { applyHOCs, mockUseUser, withEventManager } from '@proton/testing';
+import { applyHOCs, defaultProtonConfig, withConfig, withEventManager } from '@proton/testing';
+import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import useModals from '../../../hooks/__mocks__/useModals';
 import PaymentMethodsSection from './PaymentMethodsSection';
 import PaymentMethodsTable from './PaymentMethodsTable';
-
-jest.mock('../../../hooks/useConfig', () => () => ({
-    APP_NAME: 'proton-vpn-settings',
-}));
 
 jest.mock('@proton/account/paymentMethods/hooks');
 jest.mock('@proton/account/subscription/hooks');
@@ -21,7 +18,13 @@ jest.mock('../../../hooks/useModals');
 jest.mock('../../../components/loader/Loader');
 jest.mock('./PaymentMethodsTable');
 
-const PaymentMethodsSectionContext = applyHOCs(withEventManager())(PaymentMethodsSection);
+const PaymentMethodsSectionContext = applyHOCs(
+    withEventManager(),
+    withConfig({
+        ...defaultProtonConfig,
+        APP_NAME: 'proton-vpn-settings',
+    })
+)(PaymentMethodsSection);
 
 describe('PaymentMethodsSection', () => {
     beforeEach(() => {
