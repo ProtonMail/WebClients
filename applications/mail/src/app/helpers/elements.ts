@@ -4,11 +4,15 @@ import type { Location } from 'history';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getSender, hasAttachments as messageHasAttachments, getRecipients as messageGetRecipients, } from '@proton/shared/lib/mail/messages';
+import {
+    getSender,
+    getRecipients as messageGetRecipients,
+    hasAttachments as messageHasAttachments,
+} from '@proton/shared/lib/mail/messages';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
@@ -256,4 +260,73 @@ export const matchEnd = (element: Element, labelID: string, end: number) => {
 
 export const matchEmailAddress = (element: Element, emailAddress: string) => {
     return matchFrom(element, emailAddress) || matchTo(element, emailAddress);
+};
+
+export const filterElementsInState = ({
+    elements,
+    addresses,
+    bypassFilter,
+    labelID,
+    filter,
+    conversationMode,
+    search,
+}: {
+    elements: Element[];
+    addresses?: Address[];
+    bypassFilter: string[];
+    labelID: string;
+    filter: Filter;
+    conversationMode: boolean;
+    search: SearchParameters;
+}) => {
+    const bypassFilterSet = new Set(bypassFilter);
+    const address = search.address ? addresses?.find((address) => address.ID === search.address) : undefined;
+    return elements.filter((element) => {
+        // Check ID and label first (cheapest operations)
+
+        // If unread status is correct OR the element can bypass filters, continue
+        // Else, we can filter out the item
+        const elementUnread = isUnread(element, labelID);
+        const elementCorrectUnreadStatus =
+            filter.Unread === undefined || (filter.Unread === 1 ? elementUnread : !elementUnread);
+        const elementCanBypassFilter = bypassFilterSet.has(element.ID || '');
+        if (!(elementCorrectUnreadStatus || elementCanBypassFilter)) {
+            return false;
+        }
+
+        if (!hasLabel(element, labelID)) {
+            return false;
+        }
+
+        // Check element type (cheap operation)
+        if (conversationMode ? !isConversation(element) : !isMessage(element)) {
+            return false;
+        }
+
+        // Check simple filters
+        if (filter.Attachments === 1 && !hasAttachments(element)) {
+            return false;
+        }
+
+        // More expensive email address checks
+        if (search.from && !matchFrom(element, search.from)) {
+            return false;
+        }
+        if (search.to && !matchTo(element, search.to)) {
+            return false;
+        }
+        if (address && !matchEmailAddress(element, address.Email)) {
+            return false;
+        }
+
+        // Date checks last (usually most expensive due to date operations)
+        if (search.end && !matchEnd(element, labelID, search.end)) {
+            return false;
+        }
+        if (search.begin && !matchBegin(element, labelID, search.begin)) {
+            return false;
+        }
+
+        return true;
+    });
 };

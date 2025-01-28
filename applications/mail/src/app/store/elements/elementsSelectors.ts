@@ -10,19 +10,11 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_PLACEHOLDERS_COUNT, MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
 import {
-    hasAttachments,
+    filterElementsInState,
     hasAttachmentsFilter,
-    hasLabel,
-    isConversation,
     isEmpty,
-    isMessage,
     isSearch,
     isUnread,
-    matchBegin,
-    matchEmailAddress,
-    matchEnd,
-    matchFrom,
-    matchTo,
     sort as sortElements,
 } from '../../helpers/elements';
 import { expectedPageLength, isPageConsecutive } from '../../helpers/paging';
@@ -89,55 +81,14 @@ export const elements = createSelector(
          *
          * Since the cache is only a little subset of user's messages, it is not very costly.
          */
-        const bypassFilterSet = new Set(bypassFilter);
-        const address = search.address ? addresses.value?.find((address) => address.ID === search.address) : undefined;
-        const filtered = elementsArray.filter((element) => {
-            // Check ID and label first (cheapest operations)
-
-            // If unread status is correct OR the element can bypass filters, continue
-            // Else, we can filter out the item
-            const elementUnread = isUnread(element, labelID);
-            const elementCorrectUnreadStatus =
-                filter.Unread === undefined || (filter.Unread === 1 ? elementUnread : !elementUnread);
-            const elementCanBypassFilter = bypassFilterSet.has(element.ID || '');
-            if (!(elementCorrectUnreadStatus || elementCanBypassFilter)) {
-                return false;
-            }
-
-            if (!hasLabel(element, labelID)) {
-                return false;
-            }
-
-            // Check element type (cheap operation)
-            if (conversationMode ? !isConversation(element) : !isMessage(element)) {
-                return false;
-            }
-
-            // Check simple filters
-            if (filter.Attachments === 1 && !hasAttachments(element)) {
-                return false;
-            }
-
-            // More expensive email address checks
-            if (search.from && !matchFrom(element, search.from)) {
-                return false;
-            }
-            if (search.to && !matchTo(element, search.to)) {
-                return false;
-            }
-            if (address && !matchEmailAddress(element, address.Email)) {
-                return false;
-            }
-
-            // Date checks last (usually most expensive due to date operations)
-            if (search.end && !matchEnd(element, labelID, search.end)) {
-                return false;
-            }
-            if (search.begin && !matchBegin(element, labelID, search.begin)) {
-                return false;
-            }
-
-            return true;
+        const filtered = filterElementsInState({
+            elements: elementsArray,
+            addresses: addresses?.value,
+            bypassFilter,
+            labelID,
+            filter,
+            conversationMode,
+            search,
         });
 
         const sorted = sortElements(filtered, finalSort, labelID);
@@ -151,10 +102,9 @@ export const elementIDs = createSelector(elements, (elements): string[] =>
     elements.map((element) => element.ID).filter(isTruthy)
 );
 
-export const elementsLength = createSelector([params, elements], (params, elements) => {
-    return elements.filter((element) => {
-        return hasLabel(element, params.labelID);
-    }).length;
+export const elementsLength = createSelector([elements], (elements) => {
+    // no need for additional filters since elements selector is already applying filters
+    return elements.length;
 });
 
 export const elementsAreUnread = createSelector([params, elements], (params, elements) => {
