@@ -953,11 +953,6 @@
         "${ discountedPrice } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ nextPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } डेस्कटॉप ऐप"
@@ -1047,23 +1042,7 @@
         "संस्करण इतिहास"
       ]
     },
-    "BF2024: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "छूट मानक मासिक मूल्य निर्धारण पर आधारित हैं।"
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी।"
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "सबसे लोकप्रिय"
-      ]
-    },
     "BF2024: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } के लिए"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "आपकी सदस्यता ${ regularAmount } पर 1 महीने बाद स्वचालित रूप से नवीनीकृत होगी।"
       ]
@@ -1101,9 +1080,6 @@
       ],
       "12 months": [
         "12 महीने"
-      ],
-      "24 months": [
-        "24 महीने"
       ],
       "Annually": [
         "वार्षिक"
@@ -2320,6 +2296,9 @@
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } को अपडेट किया गया है। कृपया पृष्ठ को पुनश्चर्या करें।"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } यूजर नाम है। ${ emailAddress } बनाने के लिए, कृपया सेटिंग्स > संदेश और रचना > लघु डोमेन (pm.me) पर जाएं"
+      ],
       "A group with this name already exists": [
         "इस नाम का एक समूह पहले से मौजूद है"
       ],
@@ -2516,6 +2495,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "समूह में से एक का कोई संपर्क नहीं है: ${ noContactGroupList }",
         "किसी एक समूह का कोई संपर्क नहीं है: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ],
       "Password is required": [
         "पासवर्ड चाहिए"
@@ -4034,6 +4016,9 @@
       "Key fingerprint": [
         "कुंजी फ़िंगरप्रिंट"
       ],
+      "Keys created": [
+        "कुंजी बनाई गई"
+      ],
       "Label all imported messages as": [
         "सभी आयातित संदेशों को लेबल करें"
       ],
@@ -4596,6 +4581,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "ये फॉर्म इस्तेमाल करें हमें अनुचित, गैर-कानूनी, या फिर खतरनाक शेयर किए गए फाइलों के बारे में सूचित करने के लिए। आप अभी रिपोर्ट करने जा रहे हैं:"
+      ],
+      "User activated": [
+        "उपयोगकर्ता सक्रिय किया गया"
       ],
       "username": [
         "यूज़रनेम"
