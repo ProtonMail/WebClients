@@ -1,3 +1,5 @@
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { PROTON_DOC_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
 import type { SignatureIssues } from '../store';
@@ -21,7 +23,7 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues)).toBe(true);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(true);
     });
 
     it('should return false when thumbnail is signed', () => {
@@ -32,7 +34,7 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues)).toBe(false);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(false);
         expect(console.warn).toHaveBeenCalledWith(
             'thumbnail signature should not be signed in case of anonymous upload'
         );
@@ -46,7 +48,7 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues)).toBe(false);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(false);
         expect(console.warn).toHaveBeenCalledWith('blocks signature should not be signed in case of anonymous upload');
     });
 
@@ -58,7 +60,7 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues)).toBe(false);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(false);
     });
 
     it('should return false when non-thumbnail/blocks signatures are not signed', () => {
@@ -69,12 +71,19 @@ describe('hasValidAnonymousSignature', () => {
             passphrase: VERIFICATION_STATUS.SIGNED_AND_VALID,
         };
 
-        expect(hasValidAnonymousSignature(signatureIssues)).toBe(false);
+        expect(hasValidAnonymousSignature(signatureIssues, { isFile: true })).toBe(false);
     });
 
-    it('should handle empty signature issues object', () => {
-        const signatureIssues: SignatureIssues = {};
+    it('should return true for Proton document without signature issues', () => {
+        expect(hasValidAnonymousSignature(undefined, { mimeType: PROTON_DOC_MIMETYPE, isFile: true })).toBe(true);
+    });
 
-        expect(hasValidAnonymousSignature(signatureIssues)).toBe(true);
+    it('should return true for non-file without signature issues', () => {
+        expect(hasValidAnonymousSignature(undefined, { isFile: false })).toBe(true);
+    });
+
+    it('should return false for regular file without signature issues', () => {
+        expect(hasValidAnonymousSignature(undefined, { mimeType: SupportedMimeTypes.jpg, isFile: true })).toBe(false);
+        expect(console.warn).toHaveBeenCalledWith('Anonymous uploaded files should have thumbnail and blocks unsigned');
     });
 });
