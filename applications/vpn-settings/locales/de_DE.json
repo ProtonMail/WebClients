@@ -313,6 +313,12 @@
       "Forgot recovery method?": [
         "Wiederherstellungsmethode vergessen?"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Hol dir ${ planName } für ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } holen"
+      ],
       "Get a new encrypted email address": [
         "Erhalte eine neue verschlüsselte E-Mail-Adresse"
       ],
@@ -661,6 +667,9 @@
       "Switch or add account": [
         "Konto wechseln oder hinzufügen"
       ],
+      "Take a tour": [
+        "Rundgang"
+      ],
       "Test": [
         "Testen"
       ],
@@ -960,11 +969,6 @@
         "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
@@ -1057,34 +1061,9 @@
         "Versionsverlauf"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Beim lebenslangen ${ PASS_SHORT_APP_NAME } Plus-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Wenn du Pass Family oder Unlimited kaufst, verlängert sich dein Abonnement am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Am beliebtesten"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Zum Preis von einmalig ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "für ${ durationDeal }"
-      ],
-      "forever": [
-        "dauerhaft"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlängert sich nach 1 Monat zum ${ regularAmount }."
@@ -1136,9 +1115,6 @@
       ],
       "12 months": [
         "12 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
       ],
       "Annually": [
         "Jährlich"
@@ -1247,6 +1223,9 @@
       ],
       "Remind me later": [
         "Später erneut fragen"
+      ],
+      "Take a tour": [
+        "Rundgang"
       ]
     },
     "Cancellation upsell": {
@@ -2651,6 +2630,9 @@
       "Please select a country": [
         "Bitte wähle ein Land"
       ],
+      "Please select a state": [
+        "Bitte wähle ein Bundesland."
+      ],
       "Please set a recovery email first": [
         "Bitte lege zunächst eine Wiederherstellungs-E-Mail-Adresse fest."
       ],
@@ -2764,6 +2746,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Dein Konto oder deine Organisation enthält derzeit eine überfällige Rechnung. Bitte begleiche alle unbezahlten Rechnungen."
+      ],
+      "ZIP code is required": [
+        "Eine Postleitzahl ist erforderlich"
       ]
     },
     "error": {
@@ -3878,11 +3863,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -4557,6 +4542,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Registering your subscription…": [
+        "Dein Abonnement wird registriert…"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
       ],
@@ -4634,6 +4622,12 @@
       ],
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
+      ],
+      "Setting up ${ feature }…": [
+        "${ feature } wird eingerichtet…"
+      ],
+      "Setting up your new address…": [
+        "Deine neue E-Mail-Adresse wird eingerichtet…"
       ],
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
@@ -4782,6 +4776,9 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Diese Verifizierung kann bis zu einer Stunde dauern. Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
+      ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Dadurch wird der Zugriff auf **${ email }** verweigert. Möchtest du wirklich fortfahren?"
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Dadurch wird die Zwei-Faktor-Authentifizierung deaktiviert, einschließlich der Authenticator-App und der Sicherheitsschlüssel-Methode."
@@ -5116,6 +5113,9 @@
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du verwendest mehr Speicherplatz, als in einem ${ downgradedPlanName }-Abonnement enthalten sind. Bitte lösche einige Daten, um zu downgraden."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Dies kann jederzeit in den ${ settingsLink } geändert werden."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kannst dies einmal bearbeiten, um sicherzustellen, dass die richtige E-Mail-Adresse für die Verifizierung verwendet wird."
@@ -5882,7 +5882,7 @@
         "Systeminformationen"
       ],
       "Thomas": [
-        "Thomas"
+        "Max"
       ],
       "Two-password mode": [
         "Zwei-Passwort-Modus"
@@ -5943,6 +5943,9 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ],
+      "ZIP code": [
+        "Postleitzahl"
       ]
     },
     "label": {
@@ -6095,6 +6098,9 @@
       ],
       "Request an invite": [
         "Einladung anfordern"
+      ],
+      "settings": [
+        "Einstellungen"
       ],
       "Sign in": [
         "Anmelden"
@@ -6713,6 +6719,9 @@
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
       ],
+      "Private photo backup": [
+        "Private Fotosicherung"
+      ],
       "Proofread and refine your emails": [
         "Korrigiere und verfeinere deine E-Mails"
       ],
@@ -6907,6 +6916,17 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -6996,17 +7016,6 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
@@ -7023,6 +7032,11 @@
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "new_plans: Title": {
@@ -7458,19 +7472,49 @@
       ]
     },
     "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } Angebot läuft heute ab!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Hol dir Drive Plus für nur ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Hol dir Mail Plus für nur ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Letzte Chance auf 80% Rabatt auf den ersten Monat von ${ plan } Plus."
+      ],
       "Limited-time offer": [
         "Zeitlich begrenztes Angebot"
       ],
       "Maybe later": [
         "Vielleicht später"
+      ],
+      "Save 80% on your first month.": [
+        "Spare 80% im ersten Monat."
       ]
     },
     "Offer feature": {
+      "+10 more premium features": [
+        "+10 weitere Premium-Funktionen"
+      ],
       "Custom email domain": [
         "Eigene E-Mail-Domain"
       ],
-      "Email Addresses": [
-        "E-Mail-Adressen"
+      "Email addresses": [
+        "E‐Mail‐Adressen"
+      ],
+      "Free": [
+        "Kostenlos"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Speicherplatz"
       ]
     },
     "Onboarding": {
@@ -7943,6 +7987,12 @@
       "Address": [
         "Adresse"
       ],
+      "Anderson": [
+        "Mustermann"
+      ],
+      "Anytown": [
+        "Berlin"
+      ],
       "Choose a name": [
         "Namen auswählen"
       ],
@@ -8031,7 +8081,7 @@
         "Startdatum"
       ],
       "Thomas": [
-        "Thomas"
+        "Max"
       ],
       "yourdomain.com": [
         "ihredomain.com"
@@ -9960,6 +10010,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
+      "${ feature } is now active": [
+        "${ feature } ist jetzt aktiv."
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } Geräte"
       ],
@@ -10074,6 +10127,9 @@
       ],
       "Authentication security": [
         "Sicherheit der Authentifizierung"
+      ],
+      "Auto-deletion is active": [
+        "Automatisches Löschen ist aktiv."
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
@@ -10713,6 +10769,23 @@
         "Heute"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ],
+      "Group membership paused": [
+        "Gruppenmitgliedschaft pausiert"
+      ],
+      "Sending member invitation": [
+        "Mitgliedseinladung wird versendet"
+      ],
+      "User declined invitation": [
+        "Der Benutzer hat die Einladung abgelehnt"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Warten auf die Annahme der Einladung durch den Benutzer"
+      ]
+    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Admins können Benutzerkonten verwalten und anderen Benutzern Administratorrechte erteilen. Nur der Hauptadministrator kann das Abonnement der Organisation bearbeiten."
@@ -10797,23 +10870,6 @@
       ],
       "Your DKIM signing is working.": [
         "Deine DKIM-Signatur funktioniert."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
-      ],
-      "Group membership paused": [
-        "Gruppenmitgliedschaft pausiert"
-      ],
-      "Sending member invitation": [
-        "Mitgliedseinladung wird versendet"
-      ],
-      "User declined invitation": [
-        "Der Benutzer hat die Einladung abgelehnt"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Warten auf die Annahme der Einladung durch den Benutzer"
       ]
     },
     "Tor out of date": {
@@ -11114,6 +11170,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Dein neues Abonnement wird in ${ cycle } Monat automatisch verlängert.",
+        "Dein neues Abonnement wird in ${ cycle } Monaten automatisch verlängert."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dein Abonnement wird in ${ cycle } Monat automatisch verlängert.",

@@ -122,9 +122,6 @@
       "Continue without pinning": [
         "Continuare fără fixare"
       ],
-      "Copy alias address": [
-        "Copiere alias adresă"
-      ],
       "Copy and close": [
         "Copiere și închidere"
       ],
@@ -142,9 +139,6 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Creare cont ${ BRAND_NAME }"
-      ],
-      "Create a new vault to share": [
-        "Creați un seif nou pentru partajare"
       ],
       "Create alias": [
         "Creare alias"
@@ -181,9 +175,6 @@
       ],
       "Custom section": [
         "Secțiune personală"
-      ],
-      "Customize": [
-        "Personalizare"
       ],
       "Delete": [
         "Ștergere"
@@ -250,9 +241,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Activare acest alias pentru a primi mesajele trimise către acesta"
-      ],
-      "Entire vault": [
-        "Întreg seiful"
       ],
       "Exclude from monitoring": [
         "Excludere de la monitorizare"
@@ -356,9 +344,6 @@
       "Manage access": [
         "Gestionare acces"
       ],
-      "Manage vault access": [
-        "Gestionare acces la seif"
-      ],
       "Manually sync your data": [
         "Sincronizare manuală date"
       ],
@@ -379,9 +364,6 @@
       ],
       "Move all items": [
         "Mutare toate articolele"
-      ],
-      "Move to a shared vault": [
-        "Mutare într-un seif partajat"
       ],
       "Move to another vault": [
         "Mutare în alt seif"
@@ -536,11 +518,11 @@
       "Share": [
         "Partajare"
       ],
+      "Share item": [
+        "Partajare articol"
+      ],
       "Share secure link": [
         "Partajare legătură web sigură"
-      ],
-      "Share this vault": [
-        "Partajare acest seif"
       ],
       "Share vault": [
         "Partajare seif"
@@ -621,9 +603,6 @@
       "Update this login": [
         "Actualizare această autentificare"
       ],
-      "Update vault": [
-        "Actualizare seif"
-      ],
       "Updating": [
         "Se actualizează"
       ],
@@ -686,6 +665,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } este disponibilă cu un plan plătit. Îmbunătățiți-vă planul pentru a avea acces imediat."
+      ],
       "${ total } other login uses the same password": [
         "Alte autentificări care folosesc aceeași parolă: ${ total }",
         "Alte autentificări care folosesc aceeași parolă: ${ total }",
@@ -1247,11 +1229,6 @@
         "Blocate: ${ blockedEmailsCount }",
         "Blocate: ${ blockedEmailsCount }"
       ],
-      "${ count } invite successfully sent": [
-        "Invitații trimise: ${ count }",
-        "Invitații trimise: ${ count }",
-        "Invitații trimise: ${ count }"
-      ],
       "${ count } time": [
         "${ count } dată",
         "de ${ count } ori",
@@ -1442,9 +1419,6 @@
       ],
       "Can be viewed": [
         "Se poate accesa"
-      ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Poate crea, edita, șterge și exporta articole din acest seif."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Poate acorda și revoca accesul la acest seif și îl poate șterge."
@@ -1966,9 +1940,6 @@
       "Restoring trashed items...": [
         "Se restaurează articolele din gunoi..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Adresa alias inversă a fost copiată în memorie. Trimiteți un mesaj la această adresă și ${ Email } îl va primi."
-      ],
       "Save login": [
         "Salvare autentificare"
       ],
@@ -2165,9 +2136,6 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Treceți la un plan cu plată pentru a putea crea seifuri multiple."
-      ],
-      "Use vaults to share this item with others.": [
-        "Folosiți seifurile pentru a partaja acest articol cu alții."
       ],
       "User's access removed": [
         "Accesul utilizatorului a fot eliminat."
@@ -2430,9 +2398,6 @@
       "All": [
         "Toate"
       ],
-      "All vaults": [
-        "Toate seifurile"
-      ],
       "Alphabetical": [
         "Alfabetic"
       ],
@@ -2642,9 +2607,6 @@
       ],
       "General": [
         "Generale"
-      ],
-      "Generate a secure link for this item": [
-        "Generare legătură web sigură pentru acest articol"
       ],
       "Generic CSV": [
         "CSV generic"
@@ -2952,9 +2914,6 @@
       "Share": [
         "Partajare"
       ],
-      "Share this vault or create a new vault": [
-        "Partajare acest seif sau creare seif"
-      ],
       "Shared link": [
         "Legătură web partajată"
       ],
@@ -2999,11 +2958,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Articolele seifului sunt partajate cu ${ targetMembers } persoană.",
-        "Articolele seifului sunt partajate cu ${ targetMembers } persoane.",
-        "Articolele seifului sunt partajate cu ${ targetMembers } de persoane."
       ],
       "The URL has been copied to the clipboard": [
         "Legătura web a fost copiată în memorie"
@@ -3244,23 +3198,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Căutare ${ pluralItemType } în ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Căutare ${ pluralItemType } în toate seifurile"
-      ],
       "Search in ${ vaultName }": [
         "Căutare în ${ vaultName }"
-      ],
-      "Search in all vaults": [
-        "Căutare în toate seifurile"
       ],
       "Search in Trash": [
         "Căutare în gunoi"
       ],
       "Select a suffix": [
         "Selectați un sufix"
-      ],
-      "Shared vault": [
-        "Seif partajat"
       ],
       "Unknown origin": [
         "Origine necunoscută"
@@ -3390,11 +3335,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Generarea aleatorie a prefixelor a fost activată."
-      ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizator.",
-        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizatori.",
-        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } de utilizatori."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Mesajul de verificare a fost trimis. Accesați-vă contul de e-mail pentru a citi mesajul primit și confirma verificarea."

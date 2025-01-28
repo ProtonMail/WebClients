@@ -97,7 +97,7 @@
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
-        "Adjuntar captura(s)"
+        "Adjuntar una o varias capturas de pantalla"
       ],
       "Attention required": [
         "Atención requerida"
@@ -995,11 +995,6 @@
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación de escritorio ${ MAIL_APP_NAME }"
@@ -1092,34 +1087,9 @@
         "Historial de versiones"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Los descuentos se basan en los precios mensuales estándar."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compra Pass Family o Unlimited, su suscripción se renovará automáticamente con el precio reducido y la duración estándar al final del ciclo de facturación."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Más popular"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "durante ${ durationDeal }"
-      ],
-      "forever": [
-        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -1166,9 +1136,6 @@
       "12 months": [
         "12 meses"
       ],
-      "24 months": [
-        "24 meses"
-      ],
       "Annually": [
         "Cada año"
       ],
@@ -1186,7 +1153,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Problema de la aplicación"
+        "Problema con la aplicación"
       ],
       "Bridge problem": [
         "Problema de Bridge"
@@ -2962,6 +2929,9 @@
         "${ list } no tiene contactos",
         "Algunos grupos no tienen contactos: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } es su usuario. Para crear ${ emailAddress }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -3224,6 +3194,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
+      ],
+      "Organization key is not decrypted": [
+        "La clave de la organización no está descifrada"
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -4824,6 +4797,9 @@
       "Key fingerprint": [
         "Huella digital de la clave"
       ],
+      "Keys created": [
+        "Las claves fueron creadas."
+      ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
       ],
@@ -5186,6 +5162,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
+      ],
+      "User activated": [
+        "El usuario fue activado."
       ],
       "username": [
         "nombre de usuario"
@@ -6878,7 +6857,7 @@
         "Soporte prioritario y chat en vivo"
       ],
       "Private photo backup": [
-        "Copia de seguridad de fotos privadas"
+        "Copia de seguridad de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Revise y refine sus correos electrónicos"
@@ -7650,7 +7629,7 @@
         "Obtenga Mail Plus por solo ${ pricingTitle }"
       ],
       "Get the deal": [
-        "Aprovéchese de la oferta"
+        "Obtener la oferta"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidad para obtener un 80 % de descuento en su primer mes de ${ plan } Plus."
@@ -7672,7 +7651,7 @@
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Direcciones de correo electrónico"
       ],
       "Free": [
@@ -8432,7 +8411,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Restablecimiento de contraseña solicitado"
+        "Se solicitó el restablecimiento de contraseña."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -8620,6 +8599,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Su suscripción se renovará a la misma tarifa cada año."
       ]
     },
     "specialoffer: Link": {
@@ -9595,7 +9577,7 @@
         "${ emailsCount } direcciones de correo"
       ],
       "${ feature } is now active": [
-        "La funcionalidad ${ feature } ya está activada."
+        "La función ${ feature } ya está activada"
       ],
       "Account recovery": [
         "Recuperación de cuenta"
@@ -10263,6 +10245,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se le facturará cada 12 meses por ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Su nueva suscripción se renovará automáticamente en ${ cycle } mes.",
+        "Su nueva suscripción se renovará automáticamente en ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Su plan programado comienza el ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "La suscripción se renovará automáticamente en ${ cycle } mes.",

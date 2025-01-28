@@ -321,7 +321,7 @@
         "Profitez de ${ planName } pour ${ priceCoupon }"
       ],
       "Get ${ planOrAppName }": [
-        "Je choisis ${ planOrAppName }"
+        "Essayez ${ planOrAppName }"
       ],
       "Get in touch": [
         "Nous contacter"
@@ -696,7 +696,7 @@
         "Basculer vers ou ajouter un compte"
       ],
       "Take a tour": [
-        "Laissez-vous guider"
+        "Visite guidée"
       ],
       "Today": [
         "Aujourd'hui"
@@ -995,11 +995,6 @@
         "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Application de bureau ${ MAIL_APP_NAME }"
@@ -1092,34 +1087,9 @@
         "Historique des versions"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "L'offre à vie de ${ PASS_SHORT_APP_NAME } Plus n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Les réductions sont calculées sur les prix mensuels habituels."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si vous achetez Pass Family ou Unlimited, votre abonnement sera automatiquement renouvelé au tarif et à la durée standard à la fin de votre cycle de facturation."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Le plus populaire"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturé ${ amount } en une fois"
-      ],
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
-      ],
-      "forever": [
-        "pour toujours"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renouvellement après 1 mois à ${ regularAmount }"
@@ -1133,7 +1103,7 @@
         "Accédez aux contenus des services de streaming, dont Netflix, Disney+, Prime Video et plus encore, où que vous soyez."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
+        "Connexions sécurisées sur tous vos appareils. Comprends un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
@@ -1165,9 +1135,6 @@
       ],
       "12 months": [
         "12 mois"
-      ],
-      "24 months": [
-        "24 mois"
       ],
       "Annually": [
         "Annuel"
@@ -1284,7 +1251,7 @@
         "Configurez d'autres fonctionnalités"
       ],
       "Take a tour": [
-        "Laissez-vous guider"
+        "Visite guidée"
       ]
     },
     "Calendar access select label": {
@@ -2962,6 +2929,9 @@
         "${ list } n'a aucun contact",
         "Certains groupes n'ont aucun contact : ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
+      ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
@@ -3225,6 +3195,9 @@
         "L'un des groupes n'a aucun contact : ${ noContactGroupList }",
         "Certains groupes n'ont aucun contact : ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "La clé de l'organisation n'est pas déchiffrée."
+      ],
       "Password is required": [
         "Le mot de passe est nécessaire."
       ],
@@ -3260,7 +3233,7 @@
         "Sélectionnez un pays"
       ],
       "Please select a state": [
-        "Selectionnez un état"
+        "Sélectionnez une région"
       ],
       "Port is required": [
         "Le port est nécessaire."
@@ -4652,7 +4625,7 @@
         "Abandonner les modifications ?"
       ],
       "Discover new features unlocked and start using them right away!": [
-        "Découvrez les nouvelles fonctionnalités auxquelles vous avez accès et utilisez-les dès maintenant !"
+        "Découvrez les nouvelles fonctionnalités disponibles et utilisez-les dès maintenant !"
       ],
       "Discover new features unlocked with ${ planTitle } and start using them right away!": [
         "Découvrez les nouvelles fonctionnalités incluses dans ${ planTitle } et utilisez-les dès maintenant !"
@@ -4823,6 +4796,9 @@
       ],
       "Key fingerprint": [
         "Empreinte de la clé"
+      ],
+      "Keys created": [
+        "Les clés ont été créées."
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
@@ -5186,6 +5162,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
+      ],
+      "User activated": [
+        "L'utilisateur a été activé."
       ],
       "username": [
         "nom d'utilisateur"
@@ -7669,7 +7648,7 @@
       "Custom email domain": [
         "Domaine de messagerie personnalisé"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Adresses e-mail"
       ],
       "Free": [
@@ -8617,6 +8596,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Votre abonnement sera renouvelé au même tarif chaque année."
       ]
     },
     "specialoffer: Link": {
@@ -10260,6 +10242,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vous serez ensuite facturé ${ renewPrice } tous les 12 mois."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Votre abonnement prévu commence le ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois.",

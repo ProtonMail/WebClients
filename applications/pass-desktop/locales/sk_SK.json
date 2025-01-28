@@ -28,6 +28,9 @@
       "Accept": [
         "Prijať"
       ],
+      "Accept and view the item": [
+        "Prijať a zobraziť novú položku"
+      ],
       "Add": [
         "Pridať"
       ],
@@ -133,11 +136,11 @@
       "Continue offline": [
         "Pokračovať offline"
       ],
-      "Copy alias address": [
-        "Kopírovať adresu aliasu"
-      ],
       "Copy and close": [
         "Kopírovať a zatvoriť"
+      ],
+      "Copy forwarding address": [
+        "Kopírovať adresu pre preposielanie"
       ],
       "Copy link": [
         "Kopírovať odkaz"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "Vytvoriť nový trezor"
-      ],
-      "Create a new vault to share": [
-        "Vytvoriť nový trezor na zdieľanie"
       ],
       "Create alias": [
         "Vytvoriť alias"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "Vlastná sekcia"
-      ],
-      "Customize": [
-        "Prispôsobiť"
       ],
       "Delete": [
         "Odstrániť"
@@ -249,9 +246,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Zapnite tento alias, ak chcete prijímať emaily zasielané na tento alias"
-      ],
-      "Entire vault": [
-        "Celý trezor"
       ],
       "Exclude from monitoring": [
         "Vylúčiť z monitorovania"
@@ -319,6 +313,9 @@
       "Install extension": [
         "Inštalovať rozšírenie"
       ],
+      "Invite more...": [
+        "Pozvať ďalších…"
+      ],
       "Invite others": [
         "Pozvať iných"
       ],
@@ -358,9 +355,6 @@
       "Manage access": [
         "Spravovať prístup"
       ],
-      "Manage vault access": [
-        "Spravovať prístup k trezoru"
-      ],
       "Manually sync your data": [
         "Synchronizovať údaje manuálne"
       ],
@@ -384,9 +378,6 @@
       ],
       "Move all items": [
         "Presunúť všetky položky"
-      ],
-      "Move to a shared vault": [
-        "Presunúť do zdieľaného trezora"
       ],
       "Move to another vault": [
         "Presunúť do iného trezoru"
@@ -541,11 +532,11 @@
       "Share": [
         "Zdieľať"
       ],
+      "Share item": [
+        "Zdieľať položku"
+      ],
       "Share secure link": [
         "Zdieľať bezpečný odkaz"
-      ],
-      "Share this vault": [
-        "Zdieľať tento trezor"
       ],
       "Share vault": [
         "Zdielať trezor"
@@ -625,9 +616,6 @@
       "Update": [
         "Aktualizovať"
       ],
-      "Update vault": [
-        "Aktualizovať trezor"
-      ],
       "Upgrade": [
         "Prejsť na platený plán"
       ],
@@ -657,6 +645,9 @@
       ],
       "View older history": [
         "Zobraziť staršiu históriu"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "S ostatnými ${ BRAND_NAME } používateľmi"
       ],
       "Write us on Reddit": [
         "Napíšte nám na Reddite"
@@ -851,6 +842,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "V súčasnosti nie je možné túto pozvánku potvrdiť"
+      ],
+      "Could not leave item.": [
+        "Položku sa nepodarilo opustiť."
       ],
       "Could not leave vault.": [
         "Trezor sa nepodarilo opustiť."
@@ -1316,12 +1310,6 @@
         "${ blockedEmailsCount } zablokovaných",
         "${ blockedEmailsCount } zablokovaných"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } pozvánka úspešne odoslaná",
-        "${ count } pozvánky úspešne odoslané",
-        "${ count } pozvánok úspešne odoslaných",
-        "${ count } pozvánok úspešne odoslaných"
-      ],
       "${ count } time": [
         "${ count } krát",
         "${ count } krát",
@@ -1342,6 +1330,9 @@
         "${ forwardedEmailsCount } preposlané",
         "${ forwardedEmailsCount } preposlaných",
         "${ forwardedEmailsCount } preposlaných"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } chce s vami zdieľať položku."
       ],
       "${ memberCount } member": [
         "${ memberCount } člen",
@@ -1372,6 +1363,12 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } bude vyžadovať vaše ${ BRAND_NAME } heslo na prístup k údajom offline."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } pozvánka úspešne odoslaná",
+        "${ payload.count } pozvánky úspešne odoslané",
+        "${ payload.count } pozvánok úspešne odoslaných",
+        "${ payload.count } pozvánok úspešne odoslaných"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } úspešne vypnutý"
@@ -1508,8 +1505,17 @@
       "Can be viewed": [
         "Môže byť zobrazené"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Môžete vytvárať, upravovať, mazať a exportovať položky v tomto trezore."
+      "Can create, edit, and delete items in this vault.": [
+        "Môžete vytvárať, upravovať a mazať položky v tomto trezore."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Môže vytvárať, upravovať a mazať túto položku."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Môže udeliť alebo zrušiť prístup k tejto položke a vymazať ho."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Môže udeliť alebo zrušiť prístup k tejto položke."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Môže udeliť alebo zrušiť prístup k tomuto trezoru a vymazať ho."
@@ -1519,6 +1525,9 @@
       ],
       "Can view items in this vault.": [
         "Môže zobraziť položky v tomto trezore"
+      ],
+      "Can view this item.": [
+        "Môže zobraziť túto položku."
       ],
       "Change your password": [
         "Zmeňte si heslo"
@@ -1676,6 +1685,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostných dôvodov musí byť váš prístup potvrdený"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Adresa preposlania skopírovaná do schránky. Odošlite email na túto adresu a ${ Email } ho dostane."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňa.",
         "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov.",
@@ -1772,6 +1784,12 @@
       "Item restored": [
         "Položka bola obnovená"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Zdieľanie položky: ${ itemAccessCount } používateľ",
+        "Zdieľanie položky: ${ itemAccessCount } používatelia",
+        "Zdieľanie položky: ${ itemAccessCount } používateľov",
+        "Zdieľanie položky: ${ itemAccessCount } používateľov"
+      ],
       "Item successfully excluded from monitoring": [
         "Položka bola úspešne vylúčená z monitorovania"
       ],
@@ -1792,6 +1810,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Zistite, ako ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Opúšťanie položky..."
       ],
       "Leaving vault...": [
         "Opustenie trezoru..."
@@ -2042,9 +2063,6 @@
       "Restoring trashed items...": [
         "Obnovovanie položiek z koša..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Adresa reverzného aliasu skopírovaná do schránky. Odošlite email na túto adresu a ${ Email } ho prijme."
-      ],
       "Secure links": [
         "Bezpečné odkazy"
       ],
@@ -2084,6 +2102,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Zdieľajte vaše prihlasovacie údaje a zabezpečené poznámky až s 10 ľuďmi"
       ],
+      "Shared item invitation": [
+        "Pozvánka ku zdieľanej položke"
+      ],
       "Sign in to your account": [
         "Prihláste sa do svojho účtu"
       ],
@@ -2098,6 +2119,9 @@
       ],
       "Successfully exported all your items": [
         "Všetky položky boli úspešne exportované"
+      ],
+      "Successfully left the item": [
+        "Položka bola úspešne opustená"
       ],
       "Successfully left the vault": [
         "Úspešne ste opustili trezor"
@@ -2152,6 +2176,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nezašifrovaný a ktokoľvek s prístupom k vášmu exportovanému súboru uvidí vaše heslá. Z bezpečnostných dôvodov ho po skončení používania vymažte."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Táto položka zatiaľ nie je s nikým zdieľaná. Pozvite ľudí, s ktorými ju chcete zdieľať."
       ],
       "This operation is irreversible.": [
         "Táto operácia je nezvratná."
@@ -2228,9 +2255,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Pre vytvorenie viacerých trezorov prejdite na platený plán."
       ],
-      "Use vaults to share this item with others.": [
-        "Pomocou trezorov môžete túto položku zdieľať s ostatnými."
-      ],
       "User's access removed": [
         "Prístup používateľa bol odstránený"
       ],
@@ -2251,6 +2275,12 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Trezor \"${ share.content.name }\" bol odstránený"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Zdieľanie trezora: ${ vaultMembersCount } člen",
+        "Zdieľanie trezora: ${ vaultMembersCount } členovia",
+        "Zdieľanie trezora: ${ vaultMembersCount } členov",
+        "Zdieľanie trezora: ${ vaultMembersCount } členov"
       ],
       "Verification code sent.": [
         "Overovací kód bol odoslaný."
@@ -2524,8 +2554,8 @@
       "All": [
         "Všetko"
       ],
-      "All vaults": [
-        "Všetky trezory"
+      "All items": [
+        "Všetky položky"
       ],
       "Alphabetical": [
         "Abecedne"
@@ -2731,6 +2761,9 @@
       "Floor, apartment, building": [
         "Poschodie, byt, budova"
       ],
+      "For a one-off sharing": [
+        "Na jednorazové zdieľanie"
+      ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Z bezpečnostných dôvodov sa ${ PASS_SHORT_APP_NAME } po 10 minútach nečinnosti automaticky uzamkne."
       ],
@@ -2751,9 +2784,6 @@
       ],
       "General": [
         "Všeobecné"
-      ],
-      "Generate a secure link for this item": [
-        "Vygenerovať bezpečný odkaz na túto položku"
       ],
       "Generic CSV": [
         "Všeobecné CSV"
@@ -2926,6 +2956,9 @@
       "Never": [
         "Nikdy"
       ],
+      "New": [
+        "Nová"
+      ],
       "New vault": [
         "Nový trezor"
       ],
@@ -3070,6 +3103,9 @@
       "Security code": [
         "Bezpečnostný kód"
       ],
+      "See member and permission overview": [
+        "Prehľad členov a oprávnení"
+      ],
       "Select a domain": [
         "Vyberte doménu"
       ],
@@ -3097,11 +3133,17 @@
       "Share": [
         "Zdieľať"
       ],
-      "Share this vault or create a new vault": [
-        "Zdieľajte tento trezor alebo vytvorte nový trezor"
+      "Shared": [
+        "Zdieľané"
+      ],
+      "Shared by me": [
+        "Mnou zdieľané"
       ],
       "Shared link": [
         "Zdieľaný odkaz"
+      ],
+      "Shared with me": [
+        "Zdieľané so mnou"
       ],
       "Show website favicons": [
         "Zobraziť ikony webových stránok"
@@ -3150,12 +3192,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Trezor položky je momentálne zdieľaný s ${ targetMembers } osobou",
-        "Trezor položky je momentálne zdieľaný s ${ targetMembers } osobami",
-        "Trezor položky je momentálne zdieľaný s ${ targetMembers } osobami",
-        "Trezor položky je momentálne zdieľaný s ${ targetMembers } osobami"
       ],
       "The URL has been copied to the clipboard": [
         "URL adresa bola skopírovaná do schránky"
@@ -3219,6 +3255,9 @@
       ],
       "Used in": [
         "Použité v"
+      ],
+      "Useful for permanent sharing": [
+        "Užitočné na trvalé zdieľanie"
       ],
       "Username": [
         "Používateľské meno"
@@ -3440,23 +3479,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Hľadať ${ pluralItemType } v ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Hľadať ${ pluralItemType } vo všetkých trezoroch"
+      "Search ${ pluralItemType } in all items": [
+        "Hľadať ${ pluralItemType } vo všetkých položkách"
       ],
       "Search in ${ vaultName }": [
         "Hľadať v ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Hľadať vo všetkých trezoroch"
+      "Search in all items": [
+        "Hľadať vo všetkých položkách"
       ],
       "Search in Trash": [
         "Hľadať v koši"
       ],
       "Select a suffix": [
         "Vyberte príponu"
-      ],
-      "Shared vault": [
-        "Zdieľaný trezor"
       ],
       "Unknown origin": [
         "Neznámy pôvod"
@@ -3586,6 +3622,12 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Doména bola úspešne overená. Vaša doména môže začať prijímať emaily a vytvárať aliasy"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľa.",
+        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov.",
+        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov.",
+        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov."
+      ],
       "Mailbox successfully deleted": [
         "Poštová schránka bola úspešne vymazaná"
       ],
@@ -3601,11 +3643,11 @@
       "Random prefix generation successfully enabled": [
         "Generovanie náhodnej predpony bolo úspešne povolené"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Trezory nemôžu obsahovať viac než ${ vault.targetMaxMembers } používateľa.",
-        "Trezory nemôžu obsahovať viac než ${ vault.targetMaxMembers } používateľov.",
-        "Trezory nemôžu obsahovať viac než ${ vault.targetMaxMembers } používateľov.",
-        "Trezory nemôžu obsahovať viac než ${ vault.targetMaxMembers } používateľov."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľa.",
+        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov.",
+        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov.",
+        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Overovací email bol odoslaný. Skontrolujte si, prosím, doručenú poštu a overte svoju poštovú schránku"
@@ -3794,11 +3836,17 @@
       "Install extension": [
         "Inštalovať rozšírenie"
       ],
+      "Item": [
+        "Položka"
+      ],
       "Last autofill": [
         "Posledné automatické vyplnenie"
       ],
       "Last modified": [
         "Posledná zmena"
+      ],
+      "Leave this item?": [
+        "Opustiť túto položku?"
       ],
       "Leave vault?": [
         "Opustiť trezor?"
@@ -3859,6 +3907,9 @@
       ],
       "No reused passwords": [
         "Žiadne opakovane použité heslá"
+      ],
+      "No shared items": [
+        "Žiadne zdieľané položky"
       ],
       "No shared secure links": [
         "Žiadne zdieľané bezpečné odkazy"
@@ -3958,6 +4009,12 @@
       ],
       "Share with": [
         "Zdieľať s"
+      ],
+      "Shared item invitation": [
+        "Pozvánka ku zdieľanej položke"
+      ],
+      "Shared via": [
+        "Zdieľané cez"
       ],
       "SPF (Optional)": [
         "SPF (nepovinné)"
@@ -4076,6 +4133,9 @@
       ],
       "A description of the problem is required": [
         "Vyžaduje sa opis problému"
+      ],
+      "Addresses already invited.": [
+        "Adresy už boli pozvané."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Aliasy v koši budú naďalej preposielať emaily."
@@ -4203,6 +4263,9 @@
       "No secure links matching": [
         "Žiadne zodpovedajúce bezpečné odkazy"
       ],
+      "No shared items matching": [
+        "Žiadne spoločné položky sa nezhodujú"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4242,6 +4305,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Niektoré položky sú v súčasnosti spoločné. Ich odstránením sa zruší prístup pre všetkých ostatných používateľov."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Niektoré položky sú v súčasnosti zdieľané. Ich presunutím do iného trezora sa zruší prístup pre všetkých ostatných používateľov."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Pri spúšťaní ${ PASS_APP_NAME } sa niečo pokazilo. Skúste, prosím, obnoviť alebo znova načítať rozšírenie."
       ],
@@ -4253,6 +4322,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Táto emailová adresa už nebude monitorovaná na úniky údajov"
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Táto položka je v súčasnosti zdieľaná. Jej odstránením sa zruší prístup pre všetkých ostatných používateľov."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Táto položka je v súčasnosti zdieľaná. Jej presunutím do iného trezora sa zruší prístup pre všetkých ostatných používateľov."
       ],
       "Title is required": [
         "Názov je povinný"
@@ -4275,8 +4350,14 @@
       "Verification code is required": [
         "Vyžaduje sa overovací kód"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Dosiahli ste limit členov, ktorí majú prístup k tejto položke."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Dosiahli ste limit členov, ktorí majú prístup k tomuto trezoru."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Dosiahli ste limit používateľov pre túto položku. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Dosiahli ste limit používateľov v tomto trezore. ${ upgradeLink }"
@@ -4289,6 +4370,9 @@
       ],
       "You must select at least one mailbox": [
         "Musíte vybrať aspoň jednu poštovú schránku"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Stratíte prístup k tejto položke a jej údajom. Chcete pokračovať?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "K tomuto trezoru už nebudete mať prístup. Ak sa do neho chcete opäť pripojiť, budete potrebovať novú pozvánku."

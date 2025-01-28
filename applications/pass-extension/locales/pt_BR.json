@@ -8,6 +8,9 @@
       "Accept": [
         "Aceitar"
       ],
+      "Accept and view the item": [
+        "Aceitar e ver esse item"
+      ],
       "Account": [
         "Conta"
       ],
@@ -33,7 +36,7 @@
         "Adicionar mais"
       ],
       "Add new item": [
-        "Adicionar novo item"
+        "Adicionar um item"
       ],
       "Add section": [
         "Adicionar seção"
@@ -122,11 +125,11 @@
       "Continue without pinning": [
         "Continuar sem fixar"
       ],
-      "Copy alias address": [
-        "Copiar endereço do alias"
-      ],
       "Copy and close": [
         "Copiar e fechar"
+      ],
+      "Copy forwarding address": [
+        "Copiar o endereço de encaminhamento"
       ],
       "Copy link": [
         "Copiar link"
@@ -142,9 +145,6 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta no ${ BRAND_NAME }"
-      ],
-      "Create a new vault to share": [
-        "Criar um cofre para compartilhar"
       ],
       "Create alias": [
         "Criar alias"
@@ -181,9 +181,6 @@
       ],
       "Custom section": [
         "Seção personalizada"
-      ],
-      "Customize": [
-        "Personalizar"
       ],
       "Delete": [
         "Excluir"
@@ -251,9 +248,6 @@
       "Enable this alias to receive emails sent to this alias": [
         "Ativar esse alias para receber e-mails enviados a ele"
       ],
-      "Entire vault": [
-        "Cofre completo"
-      ],
       "Exclude from monitoring": [
         "Excluir do monitoramento"
       ],
@@ -317,6 +311,9 @@
       "Include in monitoring": [
         "Incluir no monitoramento"
       ],
+      "Invite more...": [
+        "Convide mais pessoas…"
+      ],
       "Invite others": [
         "Convidar outras pessoas"
       ],
@@ -356,9 +353,6 @@
       "Manage access": [
         "Gerenciar acesso"
       ],
-      "Manage vault access": [
-        "Gerenciar acesso ao cofre"
-      ],
       "Manually sync your data": [
         "Sincronizar seus dados manualmente"
       ],
@@ -379,9 +373,6 @@
       ],
       "Move all items": [
         "Mover todos os itens"
-      ],
-      "Move to a shared vault": [
-        "Mover para cofre compartilhado"
       ],
       "Move to another vault": [
         "Mover para outro cofre"
@@ -536,11 +527,11 @@
       "Share": [
         "Compartilhar"
       ],
+      "Share item": [
+        "Compartilhar item"
+      ],
       "Share secure link": [
         "Compartilhar link seguro"
-      ],
-      "Share this vault": [
-        "Compartilhar esse cofre"
       ],
       "Share vault": [
         "Compartilhar cofre"
@@ -619,9 +610,6 @@
       "Update this login": [
         "Atualizar esse início de sessão"
       ],
-      "Update vault": [
-        "Atualizar cofre"
-      ],
       "Updating": [
         "Atualizando"
       ],
@@ -654,6 +642,9 @@
       ],
       "View older history": [
         "Ver histórico mais antigo"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Com outros usuários da ${ BRAND_NAME }"
       ],
       "Write us on Reddit": [
         "Escreva-nos no Reddit"
@@ -759,7 +750,7 @@
         "A propriedade de um domínio deve ser verificada primeiro."
       ],
       "Alias could not be updated at the moment. Please try again later": [
-        "O alias não pôde ser atualizado no momento. Por favor, tente novamente mais tarde"
+        "O alias não pôde ser atualizado no momento. Tente novamente mais tarde."
       ],
       "Alias options could not be resolved": [
         "Não foi possível resolver as opções de alias."
@@ -785,6 +776,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Não foi possível confirmar esse convite no momento."
+      ],
+      "Could not leave item.": [
+        "Não foi possível deixar o item."
       ],
       "Could not leave vault.": [
         "Não foi possível deixar o cofre."
@@ -1238,10 +1232,6 @@
         "${ blockedEmailsCount } bloqueado",
         "${ blockedEmailsCount } bloqueados"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } convite enviado com sucesso",
-        "${ count } convites enviados com sucesso"
-      ],
       "${ count } time": [
         "${ count } vez",
         "${ count } vezes"
@@ -1256,6 +1246,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } encaminhado",
         "${ forwardedEmailsCount } encaminhados"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } deseja compartilhar um item com você."
       ],
       "${ memberCount } member": [
         "${ memberCount } membro",
@@ -1298,6 +1291,10 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } irá sugerir salvar chaves de acesso."
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } convite enviado",
+        "${ payload.count } convites enviados"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } desativado"
       ],
@@ -1305,7 +1302,7 @@
         "${ PROTON_SENTINEL_NAME } ativado"
       ],
       "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } enviados",
+        "${ repliedEmailsCount } enviado",
         "${ repliedEmailsCount } enviados"
       ],
       "${ trialDaysLeft } day left": [
@@ -1328,7 +1325,7 @@
         "Uma chave de acesso para \"${ username }\" será salva e estará disponível em dispositivos onde ${ PASS_APP_NAME } estiver instalado."
       ],
       "Access successfully confirmed": [
-        "Acesso confirmado com sucesso"
+        "O acesso foi confirmado."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha da ${ BRAND_NAME }"
@@ -1343,16 +1340,16 @@
         "Administrador"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Após importar seus dados com sucesso, você pode excluir o arquivo CSV que contém suas senhas por segurança."
+        "Após importar seus dados, você pode excluir o arquivo CSV que contém suas senhas por segurança."
       ],
       "Alias management features from SimpleLogin are coming soon!": [
         "Os recursos de gerenciamento de alias do SimpleLogin serão lançados em breve!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "O alias foi desativado com sucesso. Você não mais receberá e-mails enviados para ${ item.aliasEmail }"
+        "O alias foi desativado. Você não mais receberá e-mails enviados para ${ item.aliasEmail }."
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "O alias foi ativado com sucesso. Agora você pode receber e-mails enviados para ${ item.aliasEmail }"
+        "O alias foi ativado. Agora você pode receber e-mails enviados para ${ item.aliasEmail }."
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "A sincronização de alíases entre suas contas ${ BRAND_NAME } e SimpleLogin está ativa."
@@ -1373,10 +1370,10 @@
         "Todos os links seguros inativos foram removidos"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
-        "Todos os itens de \"${ payload.content.name }\" movidos com sucesso"
+        "Todos os itens de \"${ payload.content.name }\" foram movidos."
       ],
       "All items successfully moved": [
-        "Todos os itens movidos com sucesso"
+        "Todos os itens foram movidos."
       ],
       "All trashed items permanently deleted": [
         "Todos os itens da lixeira foram excluídos permanentemente"
@@ -1426,8 +1423,17 @@
       "Can be viewed": [
         "Pode ser visualizado"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Pode criar, editar, excluir, e exportar itens para esse cofre."
+      "Can create, edit, and delete items in this vault.": [
+        "Pode criar, editar e excluir itens para esse cofre."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Pode criar, editar e excluir esse item."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Pode conceder ou revogar acesso para esse item e excluí-lo."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Pode conceder ou revogar acesso para esse item."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Pode conceder ou revogar acesso para esse cofre e excluí-lo."
@@ -1437,6 +1443,9 @@
       ],
       "Can view items in this vault.": [
         "Pode ver itens para esse cofre."
+      ],
+      "Can view this item.": [
+        "Pode vere esse item."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Escolha uma chave de acesso salva para iniciar sessão em ${ domain }"
@@ -1526,13 +1535,13 @@
         "Editor"
       ],
       "Email address successfully deleted from monitoring": [
-        "Endereço de e-mail excluído com sucesso do monitoramento"
+        "O endereço de e-mail foi excluído do monitoramento."
       ],
       "Email address successfully excluded from monitoring": [
-        "Endereço de e-mail excluído com sucesso do monitoramento"
+        "O endereço de e-mail foi excluído do monitoramento."
       ],
       "Email address successfully included in monitoring": [
-        "Endereço de e-mail incluído com sucesso no monitoramento"
+        "O endereço de e-mail foi incluído no monitoramento."
       ],
       "Email headers illustration": [
         "Ilustração de cabeçalhos de e-mail"
@@ -1589,10 +1598,10 @@
         "Expira em ${ remainingTime }"
       ],
       "Extra password successfully created": [
-        "Senha adicional criada com sucesso"
+        "A senha adicional foi criada."
       ],
       "Extra password successfully removed": [
-        "Senha adicional removida com sucesso"
+        "A senha adicional foi removida."
       ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
@@ -1612,6 +1621,9 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "Por motivos de segurança, é necessário confirmar seu acesso"
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "O endereço de encaminhamento foi copiado para a área de transferência. Envie um e-mail para esse endereço e ${ Email } o receberá."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "As senhas geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas.",
@@ -1658,10 +1670,10 @@
         "Convite enviado"
       ],
       "Invite successfully removed": [
-        "Convite removido com sucesso"
+        "O convite foi removido."
       ],
       "Invite successfully resent": [
-        "Convite enviado com sucesso"
+        "O convite foi enviado."
       ],
       "invites you to access items in": [
         "convida você a acessar itens em"
@@ -1688,20 +1700,27 @@
       "Item restored": [
         "Item restaurado"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Itens compartilhados: ${ itemAccessCount } usuário",
+        "Itens compartilhados: ${ itemAccessCount } usuários"
+      ],
       "Item successfully excluded from monitoring": [
-        "Item excluído com sucesso do monitoramento."
+        "O item foi excluído do monitoramento."
       ],
       "Item successfully included in monitoring": [
-        "Item incluído com sucesso no monitoramento"
+        "O item foi incluído no monitoramento."
       ],
       "Item successfully moved": [
         "Item movido"
       ],
       "Item successfully pinned": [
-        "Item fixado com sucesso"
+        "O item foi fixado."
       ],
       "Item successfully unpinned": [
-        "Item desafixado com sucesso"
+        "O item foi desafixado."
+      ],
+      "Leaving item...": [
+        "Deixando o item..."
       ],
       "Leaving vault...": [
         "Saindo do cofre..."
@@ -1725,7 +1744,7 @@
         "eu"
       ],
       "Monitoring settings successfully updated": [
-        "Configurações de monitoramento atualizadas com sucesso"
+        "As configurações de monitoramento foram atualizadas."
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
@@ -1782,7 +1801,7 @@
         "O modo off-line não pôde ser ativado no momento"
       ],
       "Offline support successfully disabled": [
-        "Modo off-line desativado com sucesso"
+        "O modo off-line foi desativado."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
@@ -1794,7 +1813,7 @@
         "Proprietário"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Propriedade transferida com sucesso. Você não possui mais a propriedade deste cofre."
+        "A propriedade foi transferida. Você não possui mais a propriedade deste cofre."
       ],
       "Pass Plus trial": [
         "Avaliação do Proton Pass Plus"
@@ -1828,7 +1847,7 @@
         "Fixando item..."
       ],
       "Please check your spam folder or try resending the code.": [
-        "Por favor, verifique sua pasta de spam ou tente reenviar o código."
+        "Verifique sua pasta de spam ou tente reenviar o código."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
@@ -1888,10 +1907,10 @@
         "Siga as etapas abaixo para configurar seu domínio."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
-        "Por favor, note que, uma vez excluído, o alias não pode ser restaurado. Talvez você queira desabilitar o alias em vez disso?"
+        "Uma vez excluído, o alias não pode ser restaurado. Talvez você queira desabilitar o alias em vez disso?"
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
-        "Por favor, note que, uma vez excluído, o alias não pode ser restaurado. O alias já está desativado e não encaminhará e-mails para sua caixa de entrada"
+        "Uma vez excluído, o alias não pode ser restaurado. O alias já está desativado e não encaminhará e-mails para sua caixa de entrada"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Use o caminho completo do domínio, por exemplo, my-domain.com ou my-subdomain.my-domain.com se estiver usando um subdomínio."
@@ -1941,9 +1960,6 @@
       "Restoring trashed items...": [
         "Restaurando os itens da lixeira..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Endereço de alias reverso copiado para a área de transferência. Envie um e-mail para esse endereço e ${ Email } o receberá."
-      ],
       "Save login": [
         "Salvar início de sessão"
       ],
@@ -1969,10 +1985,10 @@
         "Itens selecionados excluídos permanentemente"
       ],
       "Selected items successfully moved to trash": [
-        "Itens selecionados movidos com sucesso para a lixeira"
+        "Os itens selecionados foram movidos para a lixeira"
       ],
       "Selected items successfully restored from trash": [
-        "Itens selecionados restaurados da lixeira com sucesso"
+        "Os itens selecionados foram restaurados da lixeira."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -1988,6 +2004,9 @@
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Compartilhe seus inícios de sessão e notas seguras, com até 10 pessoas"
+      ],
+      "Shared item invitation": [
+        "Convite de item compartilhado"
       ],
       "Sign in or create an account to continue.": [
         "Inicie sessão ou crie uma conta para continuar."
@@ -2007,8 +2026,11 @@
       "Successfully exported all your items": [
         "Todos os seus itens foram exportados"
       ],
+      "Successfully left the item": [
+        "Saiu do item."
+      ],
       "Successfully left the vault": [
-        "Saiu do cofre com sucesso"
+        "Saiu do cofre"
       ],
       "Successfully synced all vaults": [
         "Todos os cofres foram sincronizados"
@@ -2049,6 +2071,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Este item não está atualmente compartilhado com ninguém. Convide as pessoas a compartilhá-lo com outras pessoas."
       ],
       "This operation is irreversible.": [
         "Esta operação é irreversível."
@@ -2140,14 +2165,11 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Faça upgrade para um plano pago para criar múltiplos cofres."
       ],
-      "Use vaults to share this item with others.": [
-        "Use cofres para compartilhar este item com outros."
-      ],
       "User's access removed": [
         "Acesso do usuário removido"
       ],
       "User's access successfully updated": [
-        "Acesso do usuário atualizado com sucesso"
+        "O acesso do usuário foi atualizado."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Cofre \"${ payload.content.name }\" excluído"
@@ -2160,6 +2182,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "O cofre \"${ share.content.name }\" foi removido"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Cofres compartilhados: ${ vaultMembersCount } membro",
+        "Cofres compartilhados: ${ vaultMembersCount } membros"
       ],
       "Verification code": [
         "Código de verificação"
@@ -2175,7 +2201,7 @@
         "Detectamos que você tem ${ aliasCount } aliases que estão presentes no SimpleLogin, mas ausentes no ${ PASS_APP_NAME }. Gostaria de importá-los?"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
-        "Enviamos um código de verificação para ${ email }. Por favor, insira-o abaixo:"
+        "Enviamos um código de verificação para ${ email }. Insira-o abaixo:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Ao criar/editar um Início de Sessão no ${ PASS_APP_NAME }, a entrada “nome de usuário” estará sempre visível."
@@ -2361,7 +2387,7 @@
         "Conta"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
-        "Adicione um prefixo aleatório para esse domínio ao criar um novo alias."
+        "Adicione um prefixo aleatório para esse domínio ao criar um alias."
       ],
       "Add section": [
         "Adicionar seção"
@@ -2390,8 +2416,8 @@
       "All": [
         "Todos"
       ],
-      "All vaults": [
-        "Todos os cofres"
+      "All items": [
+        "Todos os itens"
       ],
       "Alphabetical": [
         "Em ordem alfabética"
@@ -2499,7 +2525,7 @@
         "Criar bloqueio"
       ],
       "Create new vault": [
-        "Criar novo cofre"
+        "Criar um cofre"
       ],
       "Created": [
         "Criado"
@@ -2591,6 +2617,9 @@
       "Floor, apartment, building": [
         "Andar, apartamento, prédio"
       ],
+      "For a one-off sharing": [
+        "Para uso único"
+      ],
       "Forwards to": [
         "Encaminhar para"
       ],
@@ -2602,9 +2631,6 @@
       ],
       "General": [
         "Geral"
-      ],
-      "Generate a secure link for this item": [
-        "Gerar um link seguro para este item"
       ],
       "Generic CSV": [
         "CSV genérico"
@@ -2756,6 +2782,9 @@
       "Need help?": [
         "Precisa de ajuda?"
       ],
+      "New": [
+        "Novo"
+      ],
       "New vault": [
         "Novo cofre"
       ],
@@ -2891,6 +2920,9 @@
       "Security code": [
         "Código de segurança"
       ],
+      "See member and permission overview": [
+        "Ver todos os membros e permissões"
+      ],
       "Select a domain": [
         "Selecionar um domínio"
       ],
@@ -2915,11 +2947,17 @@
       "Share": [
         "Compartilhar"
       ],
-      "Share this vault or create a new vault": [
-        "Compartilhe esse cofre ou crie um novo cofre"
+      "Shared": [
+        "Compartilhado"
+      ],
+      "Shared by me": [
+        "Compartilhado por mim"
       ],
       "Shared link": [
         "Link compartilhado"
+      ],
+      "Shared with me": [
+        "Compartilhado comigo"
       ],
       "Show website favicons": [
         "Mostrar favicons do site"
@@ -2962,10 +3000,6 @@
       ],
       "Text": [
         "Texto"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "O item do cofre está atualmente compartilhado com ${ targetMembers } pessoa",
-        "O item do cofre está atualmente compartilhado com ${ targetMembers } pessoas"
       ],
       "The URL has been copied to the clipboard": [
         "O link foi copiado para a área de transferência"
@@ -3026,6 +3060,9 @@
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Use o ${ PASS_APP_NAME } como seu gerenciador de senhas padrão do seu navegador"
+      ],
+      "Useful for permanent sharing": [
+        "Útil para compartilhar permanentemente"
       ],
       "Username": [
         "Nome de usuário"
@@ -3204,23 +3241,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Procurar ${ pluralItemType } em ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Procurar ${ pluralItemType } em todos os cofres"
+      "Search ${ pluralItemType } in all items": [
+        "Pesquisar ${ pluralItemType } em todos os itens"
       ],
       "Search in ${ vaultName }": [
         "Pesquisar em ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Procurar em todos os cofres"
+      "Search in all items": [
+        "Pesquisar em todos os itens"
       ],
       "Search in Trash": [
         "Pesquisar na Lixeira"
       ],
       "Select a suffix": [
         "Selecionar um sufixo"
-      ],
-      "Shared vault": [
-        "Cofre compartilhado"
       ],
       "Unknown origin": [
         "Origem desconhecida"
@@ -3298,62 +3332,66 @@
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "A sincronização de aliases foi realizada com sucesso. Os aliases do SimpleLogin podem levar algum tempo para serem sincronizados"
+        "A sincronização de aliases foi realizada. Os aliases do SimpleLogin podem levar algum tempo para serem sincronizados."
       ],
       "Catch-all setting successfully disabled": [
-        "Configurações catch-all desativadas com sucesso"
+        "As configurações catch-all foram desativadas."
       ],
       "Catch-all setting successfully enabled": [
-        "Configurações catch-all ativadas com sucesso"
+        "As configurações catch-all foram ativadas."
       ],
       "Contact successfully blocked": [
-        "Contato bloqueado com sucesso"
+        "O contato foi bloqueado."
       ],
       "Contact successfully created": [
-        "Contato criado com sucesso"
+        "O contato foi criado."
       ],
       "Contact successfully deleted": [
-        "Contato excluído com sucesso"
+        "O contato foi excluído."
       ],
       "Contact successfully unblocked": [
-        "Contato desbloqueado com sucesso"
+        "O contato foi desbloqueado."
       ],
       "Default domain successfully updated": [
-        "Domínio padrão atualizado com sucesso"
+        "O domínio padrão foi atualizado."
       ],
       "Default mailbox successfully updated": [
-        "Caixa de correio padrão atualizada com sucesso"
+        "A caixa de correio padrão foi atualizada."
       ],
       "Display name successfully updated": [
-        "Nome de exibição atualizado com sucesso"
+        "O nome de exibição foi atualizado."
       ],
       "Domain ownership verified. You can now set up MX record.": [
         "A propriedade do domínio foi verificada. Agora você pode configurar o registro MX."
       ],
       "Domain successfully deleted": [
-        "Domínio excluído com sucesso"
+        "O domínio foi excluído."
       ],
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "O domínio foi verificado. Seu domínio pode começar a receber e-mails e criar aliases."
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Os itens não podem conter mais de ${ share.targetMaxMembers } usuário.",
+        "Os itens não podem conter mais de ${ share.targetMaxMembers } usuários."
+      ],
       "Mailbox successfully deleted": [
-        "Caixa de correio excluída com sucesso"
+        "A caixa de correio foi excluída."
       ],
       "Mailbox successfully verified": [
-        "Caixa de correio verificada com sucesso"
+        "A caixa de correio foi verificada."
       ],
       "Mailboxes successfully updated": [
-        "Caixa de correio atualizadas com sucesso"
+        "As caixas de correio foram atualizadas."
       ],
       "Random prefix generation successfully disabled": [
-        "Geração de prefixo aleatório desativada com sucesso"
+        "A geração de prefixo aleatório foi desativada."
       ],
       "Random prefix generation successfully enabled": [
-        "Geração de prefixo aleatório ativada com sucesso"
+        "A geração de prefixo aleatório foi ativada."
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários.",
-        "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Os cofres não podem conter mais do que ${ targetMaxMembers } usuário.",
+        "Os cofres não podem conter mais do que ${ targetMaxMembers } usuários."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "O e-mail de verificação foi enviado. Verifique sua caixa de entrada para confirmar sua caixa de correio."
@@ -3519,11 +3557,17 @@
       "Import to vault(s)": [
         "Importar para cofre(s)"
       ],
+      "Item": [
+        "Item"
+      ],
       "Last autofill": [
         "Último preenchimento automático"
       ],
       "Last modified": [
         "Última modificação"
+      ],
+      "Leave this item?": [
+        "Deixar este item?"
       ],
       "Leave vault?": [
         "Deixar cofre?"
@@ -3566,6 +3610,9 @@
       "No items selected": [
         "Nenhum item selecionado"
       ],
+      "No shared items": [
+        "Nenhum item compartilhado"
+      ],
       "No shared secure links": [
         "Nenhum link seguro compartilhado"
       ],
@@ -3594,8 +3641,8 @@
         "Fixado(${ items.length })"
       ],
       "Please note that once deleted, the alias can't be restored.": [
-        "Por favor, note que, uma vez excluído, o alias não pode ser restaurado.",
-        "Por favor, note que, uma vez excluídos, os aliases não podem ser restaurados."
+        "Uma vez excluído, o alias não pode ser restaurado.",
+        "Uma vez excluídos, os aliases não podem ser restaurados."
       ],
       "Random Prefix Generation": [
         "Geração de prefixos aleatórios"
@@ -3632,6 +3679,12 @@
       ],
       "Share with": [
         "Compartilhar com"
+      ],
+      "Shared item invitation": [
+        "Convite de item compartilhado"
+      ],
+      "Shared via": [
+        "Compartilhar via"
       ],
       "SPF (Optional)": [
         "SPF (Opcional)"
@@ -3745,6 +3798,9 @@
       ],
       "A description of the problem is required": [
         "Uma descrição do problema é necessária"
+      ],
+      "Addresses already invited.": [
+        "Os endereços já foram convidados."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Os aliases na lixeira continuarão encaminhando e-mails."
@@ -3863,6 +3919,9 @@
       "No secure links matching": [
         "Nenhum link seguro correspondente"
       ],
+      "No shared items matching": [
+        "Nenhum item compartilhado corresponde."
+      ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Após a sincronização, a exclusão de aliases no ${ PASS_SHORT_APP_NAME } também os excluirá no SimpleLogin."
       ],
@@ -3893,6 +3952,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Alguns itens estão atualmente compartilhados. Eliminá-los removerá o acesso de todos os outros usuários."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Alguns itens são atualmente compartilhados. Movê-los para outro cofre removerá o acesso de todos os outros usuários."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Ocorreu um erro ao iniciar o ${ PASS_APP_NAME }. Tente atualizar ou recarregar a extensão"
       ],
@@ -3901,6 +3966,12 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Este alias \"${ aliasEmail }\" é atualmente utilizado no login \"${ relatedLoginName }\""
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Esse item está atualmente compartilhado. Eliminá-lo removerá o acesso de todos os outros usuários."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Este item está compartilhado no momento. Movê-lo para outro cofre removerá o acesso de todos os outros usuários."
       ],
       "Title is required": [
         "O título é obrigatório"
@@ -3923,8 +3994,14 @@
       "Verification code is required": [
         "O código de verificação é necessário."
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Você atingiu o limite de membros que podem acessar este item."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Você atingiu o limite de membros que podem acessar este cofre."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Você atingiu o limite de usuários para esse item. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Você atingiu o limite de usuários neste cofre. ${ upgradeLink }"
@@ -3937,6 +4014,9 @@
       ],
       "You must select at least one mailbox": [
         "Você deve selecionar pelo menos uma caixa de correio"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Você perderá o acesso para esse item e os seus detalhes. Você deseja continuar?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Você não terá mais acesso a este cofre. Para participar novamente, você precisará de um novo convite."

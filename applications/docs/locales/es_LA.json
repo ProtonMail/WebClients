@@ -92,7 +92,7 @@
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
-        "Adjuntar captura(s)"
+        "Adjuntar una o varias capturas de pantalla"
       ],
       "Attention required": [
         "Atención requerida"
@@ -854,11 +854,6 @@
         "Incluye compatibilidad con 1 dominio de correo personalizado, 10 direcciones de correo, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación de escritorio ${ MAIL_APP_NAME }"
@@ -951,34 +946,9 @@
         "Historial de versiones"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Los descuentos se basan en los precios mensuales estándar."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compra Pass Family o Unlimited, su suscripción se renovará automáticamente con el precio reducido y la duración estándar al final del ciclo de facturación."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Más popular"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "durante ${ durationDeal }"
-      ],
-      "forever": [
-        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -1025,9 +995,6 @@
       "12 months": [
         "12 meses"
       ],
-      "24 months": [
-        "24 meses"
-      ],
       "Annually": [
         "Cada año"
       ],
@@ -1045,7 +1012,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Problema de la aplicación"
+        "Problema con la aplicación"
       ],
       "Bridge problem": [
         "Problema de Bridge"
@@ -2211,6 +2178,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2289,11 +2261,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2478,6 +2445,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } es su usuario. Para crear ${ emailAddress }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -2708,6 +2678,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
+      ],
+      "Organization key is not decrypted": [
+        "La clave de la organización no está descifrada"
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -4284,6 +4257,9 @@
       "Key fingerprint": [
         "Huella digital de la clave"
       ],
+      "Keys created": [
+        "Las claves fueron creadas."
+      ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
       ],
@@ -4659,6 +4635,9 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Este documento tiene mucha actividad. Algunas funciones pueden no estar disponibles temporalmente."
       ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "Este documento no existe o no tiene los permisos para verlo. Intente recargar la página para ver si persiste el problema o contactar el propietario para obtener acceso."
+      ],
       "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Es posible que este documento no exista o que no tenga los permisos necesarios para verlo con la cuenta seleccionada. Intente con otra cuenta o contacte al propietario para obtener acceso."
       ],
@@ -4680,9 +4659,6 @@
       "This message will be presented again later": [
         "Este mensaje se mostrará de nuevo más tarde"
       ],
-      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "Este documento público no existe o no tiene los permisos para verlo. Intente recargar la página para ver si persiste el problema."
-      ],
       "This will replace the existing file with the folder": [
         "Esto reemplazará el archivo existente con la carpeta"
       ],
@@ -4702,7 +4678,7 @@
         "Para completar el pago, envíe ${ btcAmountBold } a la dirección de abajo."
       ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
-        "Para descargar los archivos ${ DOCS_APP_NAME }, ábralos en ${ DOCS_APP_NAME } y expórtelos."
+        "Para descargar los archivos de ${ DOCS_APP_NAME }, ábralos en ${ DOCS_APP_NAME } y expórtelos."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
@@ -4757,6 +4733,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Cargar cientos de archivos a la vez puede tener un impacto en el rendimiento."
+      ],
+      "User activated": [
+        "El usuario fue activado."
       ],
       "username": [
         "nombre de usuario"
@@ -4971,7 +4950,7 @@
         "La dirección de correo electrónico fue expuesta:"
       ],
       "Your email address will be visible as the link's owner on the share page": [
-        "Tu dirección de correo electrónico será visible como la del propietario del enlace en la página para compartir."
+        "Su dirección de correo será visible como la del propietario del enlace en la página para compartir."
       ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
@@ -6395,7 +6374,7 @@
         "Soporte prioritario y chat en vivo"
       ],
       "Private photo backup": [
-        "Copia de seguridad de fotos privadas"
+        "Copia de seguridad de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Revise y refine sus correos electrónicos"
@@ -7208,7 +7187,7 @@
         "Obtenga Mail Plus por solo ${ pricingTitle }"
       ],
       "Get the deal": [
-        "Aprovéchese de la oferta"
+        "Obtener la oferta"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidad para obtener un 80 % de descuento en su primer mes de ${ plan } Plus."
@@ -7230,7 +7209,7 @@
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Direcciones de correo electrónico"
       ],
       "Free": [
@@ -7870,7 +7849,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Restablecimiento de contraseña solicitado"
+        "Se solicitó el restablecimiento de contraseña."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -8006,6 +7985,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Su suscripción se renovará a la misma tarifa cada año."
       ]
     },
     "specialoffer: Link": {
@@ -8324,6 +8306,25 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo personalizado",
+        "${ planNumberOfDomains } dominios de correo personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo",
+        "${ planNumberOfEmails } direcciones de correo"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetas, etiquetas y filtros personalizados"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -8363,25 +8364,6 @@
       ],
       "Your privacy is our mission": [
         "Su privacidad es nuestra misión"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de almacenamiento por usuario"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio de correo personalizado",
-        "${ planNumberOfDomains } dominios de correo personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } dirección de correo",
-        "${ planNumberOfEmails } direcciones de correo"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetas, etiquetas y filtros personalizados"
       ]
     },
     "Subscription renewal state": {
@@ -8634,7 +8616,7 @@
         "${ emailsCount } direcciones de correo"
       ],
       "${ feature } is now active": [
-        "La funcionalidad ${ feature } ya está activada."
+        "La función ${ feature } ya está activada"
       ],
       "Account recovery": [
         "Recuperación de cuenta"
@@ -9111,6 +9093,11 @@
         "Hoy"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Añada este archivo compartido a su ${ DRIVE_APP_NAME } para un acceso fácil después."
@@ -9188,11 +9175,6 @@
         "Hemos enviado una invitación para acceder al elemento."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracter",
@@ -9241,6 +9223,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se le facturará cada 12 meses por ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Su nueva suscripción se renovará automáticamente en ${ cycle } mes.",
+        "Su nueva suscripción se renovará automáticamente en ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Su plan programado comienza el ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "La suscripción se renovará automáticamente en ${ cycle } mes.",

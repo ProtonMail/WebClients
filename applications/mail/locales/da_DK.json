@@ -1647,11 +1647,6 @@
         "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop app"
@@ -1741,29 +1736,7 @@
         "Versionshistorik"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Rabatter er baseret på månedlig standardpris."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris og varighed ved slutningen af din faktureringscyklus."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Mest populær"
-      ]
-    },
     "BF2024: Offers": {
-      "for ${ durationDeal }": [
-        "til ${ durationDeal }"
-      ],
-      "forever": [
-        "for evigt"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornys automatisk efter 1 måned til ${ regularAmount }."
       ]
@@ -1805,9 +1778,6 @@
       ],
       "12 months": [
         "12 måneder"
-      ],
-      "24 months": [
-        "24 måneder"
       ],
       "Annually": [
         "Årlig"
@@ -1910,6 +1880,9 @@
       ],
       "Continue your subscription": [
         "Fortsæt dit abonnement"
+      ],
+      "Next": [
+        "Næste"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3935,6 +3908,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -4205,6 +4181,9 @@
         "En af grupperne har ingen kontakter: ${ noContactGroupList }",
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "Organisationsnøgle er ikke dekrypteret"
+      ],
       "Password is required": [
         "Adgangskode er påkrævet."
       ],
@@ -4235,6 +4214,9 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Vælg en kategori, og fortæl, hvad der gik galt med den genererede tekst."
+      ],
+      "Please select a country": [
+        "Vælg venligst et land"
       ],
       "Please try again or refresh the page.": [
         "Prøv venligst igen eller opdater siden."
@@ -5787,6 +5769,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } beskytter din konto med dedikeret overvågning af mistænkelig aktivitet."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe fundet",
         "${ providerFoldersNumLocalized } mapper fundet"
@@ -6004,6 +5989,9 @@
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Fjern automatisk e-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Slet automatisk beskeder, der har været i papirkurven og spam i mere end 30 dage."
@@ -6259,6 +6247,9 @@
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden, slettes automatisk."
+      ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-mails mærket med denne etiket ${ nameDeleted } slettes ikke og kan stadig findes i den respektive mappe."
       ],
@@ -6345,6 +6336,9 @@
       ],
       "Generate text": [
         "Generer tekst"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Tildel indgående regninger en farvekodet etiket, f.eks. \"${ suggestedLabelName }\". Efter betaling ændrer du etiketten til \"${ suggestedPaidLabelName }\"."
@@ -6470,6 +6464,9 @@
       ],
       "Key fingerprint": [
         "Nøglefingeraftryk"
+      ],
+      "Keys created": [
+        "Nøgler oprettet"
       ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
@@ -6803,6 +6800,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
+      "Registering your subscription…": [
+        "Registrerer dit abonnement…"
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Husk at opdatere dette i din adgangskodeadministrator, eller hvor du opbevarer dine konto- og loginoplysninger."
       ],
@@ -6903,8 +6903,14 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Indstil ${ MAIL_APP_NAME } som din standard e-mailløsning for denne browser. ${ MAIL_APP_NAME } åbnes automatisk, når du klikker på et e-mail-link."
       ],
+      "Setting up ${ feature }…": [
+        "Konfigurerer ${ feature }…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved at indstille PGP kan du sende end-to-end-krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
+      ],
+      "Setting up your new address…": [
+        "Konfigurerer din nye adresse…"
       ],
       "Shorten selection": [
         "Forkort udvælgelse"
@@ -7287,6 +7293,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Brug tastaturgenveje for at håndtere dine e-mails hurtigere."
       ],
+      "User activated": [
+        "Bruger aktiveret"
+      ],
       "username": [
         "brugernavn"
       ],
@@ -7416,6 +7425,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan også flette importerede kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Du kan ændre dette når som helst i ${ settingsLink }."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
@@ -7453,6 +7465,9 @@
       ],
       "You do not have any messages here": [
         "Du har ingen beskeder her"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
       "You have ${ unread } in your inbox.": [
         "Du har ${ unread } i din indbakke."
@@ -7616,6 +7631,9 @@
       ],
       "Your private writing assistant": [
         "Din private skriveassistent"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
       ]
     },
     "info": {
@@ -10018,6 +10036,14 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Calendar."
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Gratis"
+      ],
+      "Plus": [
+        "Plus"
       ]
     },
     "Onboarding List Placeholder": {

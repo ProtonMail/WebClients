@@ -8,6 +8,9 @@
       "Accept": [
         "Akceptuj"
       ],
+      "Accept and view the item": [
+        "Zaakceptuj i zobacz element"
+      ],
       "Account": [
         "Konto"
       ],
@@ -122,9 +125,6 @@
       "Continue without pinning": [
         "Kontynuuj bez przypinania"
       ],
-      "Copy alias address": [
-        "Kopiuj alias"
-      ],
       "Copy and close": [
         "Kopiuj i zamknij"
       ],
@@ -142,9 +142,6 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
-      ],
-      "Create a new vault to share": [
-        "Utwórz nowy sejf do udostępnienia"
       ],
       "Create alias": [
         "Utwórz alias"
@@ -181,9 +178,6 @@
       ],
       "Custom section": [
         "Niestandardowa sekcja"
-      ],
-      "Customize": [
-        "Dostosuj"
       ],
       "Delete": [
         "Usuń"
@@ -250,9 +244,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Włącz alias, aby otrzymywać wiadomości wysłane na ten adres"
-      ],
-      "Entire vault": [
-        "Cały sejf"
       ],
       "Exclude from monitoring": [
         "Wyklucz z monitoringu"
@@ -353,9 +344,6 @@
       "Manage access": [
         "Zarządzaj dostępem"
       ],
-      "Manage vault access": [
-        "Zarządzaj dostępem do sejfu"
-      ],
       "Manually sync your data": [
         "Synchronizuj dane"
       ],
@@ -376,9 +364,6 @@
       ],
       "Move all items": [
         "Przenieś wszystkie elementy"
-      ],
-      "Move to a shared vault": [
-        "Przenieś do udostępnionego sejfu"
       ],
       "Move to another vault": [
         "Przenieś do innego sejfu"
@@ -533,11 +518,11 @@
       "Share": [
         "Udostępnij"
       ],
+      "Share item": [
+        "Udostępnij element"
+      ],
       "Share secure link": [
         "Udostępnij link"
-      ],
-      "Share this vault": [
-        "Udostępnij sejf"
       ],
       "Share vault": [
         "Udostępnij sejf"
@@ -619,9 +604,6 @@
       ],
       "Update this login": [
         "Zaktualizuj dane logowania"
-      ],
-      "Update vault": [
-        "Zaktualizuj sejf"
       ],
       "Updating": [
         "Aktualizowanie"
@@ -1211,12 +1193,6 @@
         "zablokowano ${ blockedEmailsCount }",
         "zablokowano ${ blockedEmailsCount }"
       ],
-      "${ count } invite successfully sent": [
-        "Wysłano ${ count } zaproszenie",
-        "Wysłano ${ count } zaproszenia",
-        "Wysłano ${ count } zaproszeń",
-        "Wysłano ${ count } zaproszeń"
-      ],
       "${ count } time": [
         "${ count } raz",
         "${ count } razy",
@@ -1400,9 +1376,6 @@
       "Can be viewed": [
         "Maksymalna liczba dostępów"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Może edytować i eksportować elementy w sejfie."
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Zarządza dostępem do sejfu."
       ],
@@ -1411,6 +1384,9 @@
       ],
       "Can view items in this vault.": [
         "Widzi elementy w sejfie."
+      ],
+      "Can view this item.": [
+        "Odczyt elementu."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Wybierz zapisany klucz dostępu, aby zalogować się do ${ domain }"
@@ -2108,9 +2084,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Ulepsz do płatnego planu, aby utworzyć wiele sejfów."
       ],
-      "Use vaults to share this item with others.": [
-        "Aby udostępnić element, udostępnij cały sejf."
-      ],
       "User's access removed": [
         "Uprawienia użytkownika zostały usunięte"
       ],
@@ -2377,8 +2350,8 @@
       "All": [
         "Wszystko"
       ],
-      "All vaults": [
-        "Wszystkie sejfy"
+      "All items": [
+        "Wszystkie elementy"
       ],
       "Alphabetical": [
         "Alfabetycznie"
@@ -2578,6 +2551,9 @@
       "Floor, apartment, building": [
         "Piętro, mieszkanie, budynek"
       ],
+      "For a one-off sharing": [
+        "Do jednorazowego udostępnienia"
+      ],
       "Forwards to": [
         "Przekaż do"
       ],
@@ -2589,9 +2565,6 @@
       ],
       "General": [
         "Ogólne"
-      ],
-      "Generate a secure link for this item": [
-        "Utwórz link do elementu"
       ],
       "Generic CSV": [
         "Ogólny plik CSV"
@@ -2758,6 +2731,9 @@
       "None": [
         "Brak"
       ],
+      "Not selected": [
+        "Nie wybrano"
+      ],
       "Note": [
         "Notatka"
       ],
@@ -2896,8 +2872,8 @@
       "Share": [
         "Udostępnij"
       ],
-      "Share this vault or create a new vault": [
-        "Udostępnij sejf lub utwórz nowy"
+      "Shared by me": [
+        "Udostępnione przez Ciebie"
       ],
       "Shared link": [
         "Udostępniony link"
@@ -2943,12 +2919,6 @@
       ],
       "Text": [
         "Tekst"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikowi",
-        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom",
-        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom",
-        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom"
       ],
       "The URL has been copied to the clipboard": [
         "Link został skopiowany do schowka"
@@ -3188,23 +3158,17 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Przeszukaj ${ pluralItemType } w sejfie ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Przeszukaj ${ pluralItemType } we wszystkich sejfach"
-      ],
       "Search in ${ vaultName }": [
         "Przeszukaj sejf ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Przeszukaj wszystkie sejfy"
+      "Search in all items": [
+        "Przeszukaj wszystkie elementy"
       ],
       "Search in Trash": [
         "Przeszukaj Kosz"
       ],
       "Select a suffix": [
         "Wybierz przyrostek"
-      ],
-      "Shared vault": [
-        "Udostępniony sejf"
       ],
       "Unknown origin": [
         "Nieznana strona"
@@ -3328,12 +3292,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Generowanie losowego przedrostka zostało włączone"
-      ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkownika.",
-        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
-        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
-        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników."
       ]
     },
     "Theme": {
@@ -3489,11 +3447,17 @@
       "Import to vault(s)": [
         "Importuj do sejfów"
       ],
+      "Item": [
+        "Element"
+      ],
       "Last autofill": [
         "Ostatnie autouzupełnianie"
       ],
       "Last modified": [
         "Zmodyfikowano"
+      ],
+      "Leave this item?": [
+        "Opuścić element?"
       ],
       "Leave vault?": [
         "Opuścić sejf?"
@@ -3608,6 +3572,9 @@
       ],
       "Share with": [
         "Udostępnij"
+      ],
+      "Shared via": [
+        "Udostępniono przez"
       ],
       "SPF (Optional)": [
         "SPF (opcjonalnie)"
