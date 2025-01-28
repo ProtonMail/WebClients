@@ -86,6 +86,8 @@ export type PassCoreContextValue = {
     writeToClipboard: (text: string) => Promise<void>;
     /** Gets the unlock key via biometrics */
     getBiometricsKey?: (authStore: AuthStore) => Promise<MaybeNull<string>>;
+    /** Generates the unlock key for biometrics */
+    generateBiometricsKey?: () => Promise<CryptoKey>;
     /** Checks if this is the first time Pass is being launched */
     isFirstLaunch?: () => boolean;
 };

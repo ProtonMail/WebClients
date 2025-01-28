@@ -39,10 +39,11 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
-import { inferBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
+import { getBiometricsStorageKey, inferBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import { type AuthStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
@@ -98,6 +99,13 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
         } catch {
             return null;
         }
+    },
+
+    generateBiometricsKey: async () => {
+        const keyBytes = generateKey();
+        const biometricsStorageKey = getBiometricsStorageKey(authStore.getLocalID()!);
+        await window.ctxBridge!.setSecret(biometricsStorageKey, keyBytes);
+        return importSymmetricKey(keyBytes);
     },
 
     getDomainImage: async (domain, signal) => {

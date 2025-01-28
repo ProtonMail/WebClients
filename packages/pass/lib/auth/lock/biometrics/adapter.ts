@@ -1,20 +1,15 @@
 import { c } from 'ttag';
 
+import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     fromBiometricsEncryptedOfflineKD,
-    getBiometricsStorageKey,
     intoBiometricsEncryptedOfflineKD,
 } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
 import { getOfflineComponents } from '@proton/pass/lib/cache/crypto';
-import {
-    decryptData,
-    encryptData,
-    generateKey,
-    importSymmetricKey,
-} from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import { PassEncryptionTag } from '@proton/pass/types';
@@ -23,16 +18,10 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
-export const generateBiometricsKey = async (localID: number, offlineKD: string): Promise<string> => {
-    const keyBytes = generateKey();
-    const biometricsStorageKey = getBiometricsStorageKey(localID);
-    await window.ctxBridge?.setSecret(biometricsStorageKey, keyBytes);
-
-    const key = await importSymmetricKey(keyBytes);
-
+export const generateBiometricsKey = async (core: PassCoreContextValue, offlineKD: string): Promise<string> => {
+    const key = await core.generateBiometricsKey!();
     const rawOfflineKD = stringToUint8Array(offlineKD);
     const rawEncryptedOfflineKD = await encryptData(key, rawOfflineKD, PassEncryptionTag.BiometricOfflineKD);
-
     return intoBiometricsEncryptedOfflineKD(uint8ArrayToString(rawEncryptedOfflineKD));
 };
 
@@ -40,7 +29,7 @@ export const generateBiometricsKey = async (localID: number, offlineKD: string):
  * we can only password lock if we have a valid offline config in
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
-export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => {
+export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreContextValue): LockAdapter => {
     const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
 
     /** Persist the `unlockRetryCount` without re-encrypting
@@ -77,7 +66,6 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
          * blob. As such creating a biometrics lock is online-only. */
         create: async ({ secret, ttl }, onBeforeCreate) => {
             logger.info(`[BiometricLock] creating biometrics lock`);
-            if (!window.ctxBridge) throw new Error('Biometrics unsupported');
 
             const verified = await auth.confirmPassword(secret);
             if (!verified) throw new Error(getInvalidPasswordString(authStore));
@@ -94,7 +82,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
             const offlineKD = authStore.getOfflineKD();
             if (!offlineKD) throw new Error('Missing offline KD');
 
-            const encryptedOfflineKD = await generateBiometricsKey(authStore.getLocalID()!, offlineKD);
+            const encryptedOfflineKD = await generateBiometricsKey(core, offlineKD);
 
             authStore.setEncryptedOfflineKD(encryptedOfflineKD);
             authStore.setLockMode(adapter.type);
