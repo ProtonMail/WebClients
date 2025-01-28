@@ -61,7 +61,8 @@ const GetMobileAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
                 titleBlockClassName="mb-8"
             >
                 <img
-                    className={clsx('w-full', viewportWidth['<=small'] && 'self-start')}
+                    className={clsx('max-w-full w-custom', viewportWidth['<=small'] && 'self-start')}
+                    style={{ '--w-custom': '24rem' }}
                     srcSet={`${mobileAppImg1x} 1x, ${mobileAppImg2x} 2x`}
                     alt=""
                 />
