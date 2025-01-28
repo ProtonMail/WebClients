@@ -13,16 +13,16 @@
         "pretty": "prettier --write  cli bin"
     },
     "dependencies": {
-        "@babel/core": "^7.26.0",
+        "@babel/core": "^7.26.7",
         "@babel/plugin-transform-class-properties": "^7.25.9",
         "@babel/plugin-transform-runtime": "^7.25.9",
-        "@babel/preset-env": "^7.26.0",
+        "@babel/preset-env": "^7.26.7",
         "@babel/preset-react": "^7.26.3",
         "@babel/preset-typescript": "^7.26.0",
-        "@babel/runtime": "^7.26.0",
+        "@babel/runtime": "^7.26.7",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
         "@sentry/webpack-plugin": "^1.21.0",
-        "@swc/core": "^1.10.8",
+        "@swc/core": "^1.10.11",
         "@types/webpack": "^5.28.5",
         "autoprefixer": "^10.4.20",
         "babel-loader": "^9.2.1",
@@ -67,6 +67,6 @@
         "webpack-bundle-analyzer": "^4.10.2"
     },
     "engines": {
-        "node": ">= 22.13.0"
+        "node": ">= 22.13.1"
     }
 }
