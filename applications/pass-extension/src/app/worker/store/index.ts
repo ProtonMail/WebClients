@@ -10,6 +10,7 @@ import createSagaMiddleware from 'redux-saga';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
+import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import { cacheGuard } from '@proton/pass/store/migrate';
 import reducer from '@proton/pass/store/reducers';
@@ -123,8 +124,18 @@ const options: RootSagaOptions = {
             })
         ),
 
-    /* Update the extension's badge count on every item state change */
-    onItemsUpdated: withContext((ctx) => ctx.service.autofill.sync()),
+    onItemsUpdated: withContext(async (ctx) => {
+        /* Update the extension's badge count on every item state change */
+        ctx.service.autofill.sync();
+
+        if (ctx.service.b2bEvents) {
+            await createMonitorReport({
+                state: store.getState(),
+                monitor: ctx.service.monitor,
+                dispatch: ctx.service.b2bEvents.push,
+            });
+        }
+    }),
 
     onLocaleUpdated: withContext(async (ctx, locale) => ctx.service.i18n.setLocale(locale)),
 

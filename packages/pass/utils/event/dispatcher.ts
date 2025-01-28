@@ -35,8 +35,9 @@ export type EventDispatcherOptions<Event, StorageKey extends string> = {
     prepare?: (event: Event) => Event;
 };
 
+type EventPushOptions<Event> = { dedupeKey?: keyof Event };
 export interface EventDispatcher<Event> {
-    push: (event: Event) => Promise<boolean>;
+    push: (event: Event, options?: EventPushOptions<Event>) => Promise<boolean>;
     send: () => Promise<void>;
     start: () => Promise<void>;
     stop: () => void;
@@ -138,11 +139,17 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
         } catch {}
     };
 
-    const push = async (event: Event): Promise<boolean> => {
+    const push = async (event: Event, options?: EventPushOptions<Event>): Promise<boolean> => {
         try {
             if (!getEnabled()) return false;
 
             const bundle = await resolveBundle();
+
+            if (options?.dedupeKey) {
+                const key = options.dedupeKey;
+                bundle.events = bundle.events.filter((evt) => evt[key] !== event[key]);
+            }
+
             bundle.events.push(prepare(event));
             await saveBundle(bundle);
 

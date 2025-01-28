@@ -1,7 +1,7 @@
-import type { ItemType, UnsafeItemRevision, VaultShareContent } from '@proton/pass/types';
+import type { DeobfuscatedItemRevision, ItemType, VaultShareContent } from '@proton/pass/types';
 
 export type ExportedItem<T extends ItemType = ItemType> = Omit<
-    UnsafeItemRevision<T>,
+    DeobfuscatedItemRevision<T>,
     'revision' | 'revisionTime' | 'lastUseTime' | 'flags'
 >;
 

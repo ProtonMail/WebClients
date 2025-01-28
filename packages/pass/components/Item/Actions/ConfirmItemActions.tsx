@@ -44,7 +44,7 @@ export const ConfirmDeleteItem: FC<ConfirmationPromptHandles & { item: ItemRevis
 export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = ({
     itemId,
     shareId,
-    destinationShareId,
+    targetShareId,
     onCancel,
     onConfirm,
 }) => {
@@ -53,7 +53,7 @@ export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = (
     const shared = useSelector(selectItemShared(shareId, itemId));
 
     return (
-        <WithVault shareId={destinationShareId} onFallback={onCancel}>
+        <WithVault shareId={targetShareId} onFallback={onCancel}>
             {({ content: { name: vaultName } }) => (
                 <ConfirmationPrompt
                     onConfirm={onConfirm}

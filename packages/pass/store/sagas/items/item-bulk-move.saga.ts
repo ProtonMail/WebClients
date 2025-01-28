@@ -16,12 +16,12 @@ import noop from '@proton/utils/noop';
 
 export type BulkMoveItemsChannel = RequestProgress<
     ItemRevision[],
-    BatchItemRevisions & { movedItems: ItemRevision[]; destinationShareId: string }
+    BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }
 >;
 
-export const bulkMoveChannel = (items: ItemRevision[], destinationShareId: string) =>
+export const bulkMoveChannel = (items: ItemRevision[], targetShareId: string) =>
     eventChannel<BulkMoveItemsChannel>((emitter) => {
-        moveItems(items, destinationShareId, (data, progress) => emitter({ type: 'progress', progress, data }))
+        moveItems(items, targetShareId, (data, progress) => emitter({ type: 'progress', progress, data }))
             .then((result) => emitter({ type: 'done', result }))
             .catch((error) => emitter({ type: 'error', error }))
             .finally(() => emitter(END));

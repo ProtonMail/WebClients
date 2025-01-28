@@ -10,14 +10,14 @@ import { WithVault } from '@proton/pass/components/Vault/WithVault';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { selectSecureLinksByShareId } from '@proton/pass/store/selectors';
 
-type Props = ConfirmationPromptHandles & { destinationShareId: string; shareId: string };
+type Props = ConfirmationPromptHandles & { targetShareId: string; shareId: string };
 
-export const ConfirmVaultMove: FC<Props> = ({ destinationShareId, shareId, onCancel, onConfirm }) => {
+export const ConfirmVaultMove: FC<Props> = ({ targetShareId, shareId, onCancel, onConfirm }) => {
     const secureLinks = useMemoSelector(selectSecureLinksByShareId, [shareId]);
     const hasLinks = Boolean(secureLinks.length);
 
     return (
-        <WithVault shareId={destinationShareId} onFallback={onCancel}>
+        <WithVault shareId={targetShareId} onFallback={onCancel}>
             {({ content: { name: vaultName } }) => (
                 <ConfirmationPrompt
                     onCancel={onCancel}

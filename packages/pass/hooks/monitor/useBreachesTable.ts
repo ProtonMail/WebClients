@@ -6,13 +6,14 @@ import { c } from 'ttag';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
-import { filterItemsByUserIdentifier, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
+import { filterItemsByUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
 import type { LoginItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { sortOn } from '@proton/pass/utils/fp/sort';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { toLowerCase } from '@proton/pass/utils/string/to-lower-case';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
@@ -25,15 +26,15 @@ export type MonitorTable<T extends AddressType = AddressType> = {
 };
 
 /** Given a list of login items candidates and already monitored
- * emails - returns a suggestion list of the top 5 most used logins */
+ * emails - returns a suggestion list of logins sorted by usage count */
 const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): MonitorTableRow<AddressType.CUSTOM>[] => {
     const monitored = new Set<string>(data.map(pipe(prop('email'), toLowerCase)));
 
     const suggestions = items.reduce<Map<string, number>>((acc, item) => {
-        if (!item.data.content.itemEmail.v && !item.data.content.itemUsername.v) return acc;
-        const userIdentifier = toLowerCase(intoUserIdentifier(item));
-        if (monitored.has(userIdentifier)) return acc;
-        if (PassCoreUI.is_email_valid(userIdentifier)) acc.set(userIdentifier, (acc.get(userIdentifier) ?? 0) + 1);
+        if (!item.data.content.itemEmail.v) return acc;
+        const email = toLowerCase(deobfuscate(item.data.content.itemEmail));
+        if (monitored.has(email)) return acc;
+        if (PassCoreUI.is_email_valid(email)) acc.set(email, (acc.get(email) ?? 0) + 1);
 
         return acc;
     }, new Map());

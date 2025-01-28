@@ -30,57 +30,16 @@ describe('Import LastPass csv', () => {
         const [source] = sourceFiles;
         const [primary, secondary] = payloads[source].vaults;
         expect(payloads[source].vaults.length).toEqual(2);
-        expect(primary.name).toEqual('Import - 27 Apr 2023');
-        expect(secondary.name).toEqual('company services');
+        expect(primary.name).toEqual('company services');
+        expect(secondary.name).toEqual('Import - 27 Apr 2023');
     });
 
-    it('parses primary `LastPass import` vault items correctly', () => {
+    it('parses primary vault items correctly', async () => {
         const [source] = sourceFiles;
         const [primary] = payloads[source].vaults;
         expect(primary.items.length).toEqual(4);
-
         /* Login */
-        const loginItem1 = deobfuscateItem(primary.items[0]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItem1.type).toEqual('login');
-        expect(loginItem1.metadata.name).toEqual('nobody');
-        expect(loginItem1.metadata.note).toEqual('Secure note');
-        expect(loginItem1.content.itemEmail).toEqual('nobody@proton.me');
-        expect(loginItem1.content.itemUsername).toEqual('');
-        expect(loginItem1.content.password).toEqual('proton123');
-        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/');
-
-        /* Note */
-        const noteItem1 = deobfuscateItem(primary.items[1]) as unknown as ItemImportIntent<'login'>;
-        expect(noteItem1.type).toEqual('note');
-        expect(noteItem1.metadata.name).toEqual('Secure note');
-        expect(noteItem1.metadata.note).toEqual('This is a secure note');
-
-        /* Credit Card */
-        const identityItem = deobfuscateItem(primary.items[2]) as unknown as ItemImportIntent<'identity'>;
-        expect(identityItem.type).toEqual('identity');
-        expect(identityItem.metadata.name).toEqual('TestID');
-        expect(identityItem.metadata.note).toEqual('');
-        expect(identityItem.content.firstName).toEqual('Test');
-        expect(identityItem.content.middleName).toEqual('Joe');
-
-        /* Credit Card */
-        const creditCardItem1 = deobfuscateItem(primary.items[3]) as unknown as ItemImportIntent<'creditCard'>;
-        expect(creditCardItem1.type).toEqual('creditCard');
-        expect(creditCardItem1.metadata.name).toEqual('Credit Card Item with note');
-        expect(creditCardItem1.metadata.note).toEqual('this is a note for the credit card');
-        expect(creditCardItem1.content.cardholderName).toEqual('A B');
-        expect(creditCardItem1.content.number).toEqual('4242424242424242');
-        expect(creditCardItem1.content.expirationDate).toEqual('012025');
-        expect(creditCardItem1.content.verificationNumber).toEqual('123');
-        expect(creditCardItem1.content.pin).toEqual('');
-    });
-
-    it('parses secondary vault items correctly', async () => {
-        const [source] = sourceFiles;
-        const [, secondary] = payloads[source].vaults;
-        expect(secondary.items.length).toEqual(4);
-        /* Login */
-        const loginItem2 = deobfuscateItem(secondary.items[0]) as unknown as ItemImportIntent<'login'>;
+        const loginItem2 = deobfuscateItem(primary.items[0]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('Admin');
         expect(loginItem2.metadata.note).toEqual('');
@@ -90,7 +49,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem2.content.urls[0]).toEqual('https://proton.me/');
 
         /* Login */
-        const loginItem3 = deobfuscateItem(secondary.items[1]) as unknown as ItemImportIntent<'login'>;
+        const loginItem3 = deobfuscateItem(primary.items[1]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem3.type).toEqual('login');
         expect(loginItem3.metadata.name).toEqual('Twitter');
         expect(loginItem3.metadata.note).toEqual('This is a twitter note');
@@ -103,7 +62,7 @@ describe('Import LastPass csv', () => {
         );
 
         /* Login */
-        const loginItem4 = deobfuscateItem(secondary.items[2]) as unknown as ItemImportIntent<'login'>;
+        const loginItem4 = deobfuscateItem(primary.items[2]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem4.type).toEqual('login');
         expect(loginItem4.metadata.name).toEqual('fb.com');
         expect(loginItem4.metadata.note).toEqual('');
@@ -116,7 +75,7 @@ describe('Import LastPass csv', () => {
         );
 
         /* Login broken url */
-        const loginItem5 = deobfuscateItem(secondary.items[3]) as unknown as ItemImportIntent<'login'>;
+        const loginItem5 = deobfuscateItem(primary.items[3]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem5.type).toEqual('login');
         expect(loginItem5.metadata.name).toEqual('Unnamed item');
         expect(loginItem5.metadata.note).toEqual('');
@@ -124,6 +83,47 @@ describe('Import LastPass csv', () => {
         expect(loginItem5.content.itemUsername).toEqual('');
         expect(loginItem5.content.password).toEqual('');
         expect(loginItem5.content.urls).toEqual([]);
+    });
+
+    it('parses secondary vault items correctly', () => {
+        const [source] = sourceFiles;
+        const [, secondary] = payloads[source].vaults;
+        expect(secondary.items.length).toEqual(4);
+
+        /* Login */
+        const loginItem1 = deobfuscateItem(secondary.items[0]) as unknown as ItemImportIntent<'login'>;
+        expect(loginItem1.type).toEqual('login');
+        expect(loginItem1.metadata.name).toEqual('nobody');
+        expect(loginItem1.metadata.note).toEqual('Secure note');
+        expect(loginItem1.content.itemEmail).toEqual('nobody@proton.me');
+        expect(loginItem1.content.itemUsername).toEqual('');
+        expect(loginItem1.content.password).toEqual('proton123');
+        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/');
+
+        /* Note */
+        const noteItem1 = deobfuscateItem(secondary.items[1]) as unknown as ItemImportIntent<'login'>;
+        expect(noteItem1.type).toEqual('note');
+        expect(noteItem1.metadata.name).toEqual('Secure note');
+        expect(noteItem1.metadata.note).toEqual('This is a secure note');
+
+        /* Credit Card */
+        const identityItem = deobfuscateItem(secondary.items[2]) as unknown as ItemImportIntent<'identity'>;
+        expect(identityItem.type).toEqual('identity');
+        expect(identityItem.metadata.name).toEqual('TestID');
+        expect(identityItem.metadata.note).toEqual('');
+        expect(identityItem.content.firstName).toEqual('Test');
+        expect(identityItem.content.middleName).toEqual('Joe');
+
+        /* Credit Card */
+        const creditCardItem1 = deobfuscateItem(secondary.items[3]) as unknown as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem1.type).toEqual('creditCard');
+        expect(creditCardItem1.metadata.name).toEqual('Credit Card Item with note');
+        expect(creditCardItem1.metadata.note).toEqual('this is a note for the credit card');
+        expect(creditCardItem1.content.cardholderName).toEqual('A B');
+        expect(creditCardItem1.content.number).toEqual('4242424242424242');
+        expect(creditCardItem1.content.expirationDate).toEqual('012025');
+        expect(creditCardItem1.content.verificationNumber).toEqual('123');
+        expect(creditCardItem1.content.pin).toEqual('');
     });
 
     test('correctly keeps a reference to ignored items', () => {

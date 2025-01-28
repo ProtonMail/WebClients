@@ -186,11 +186,11 @@ export type ItemMoveSingleToShareRequest = {
     /* Encrypted ID of the destination share */
     ShareID: string;
     /* Data to create the new item */
-    Item: ItemCreateRequest;
+    Item?: ItemCreateRequest | null;
     /* Previous revisions of this item */
-    History: ItemHistoryRequest[];
+    History?: ItemHistoryRequest[];
     /* Item keys encrypted with the target vault key */
-    ItemKeys?: EncodedItemKeyRotation[];
+    ItemKeys: EncodedItemKeyRotation[];
 };
 export type LinkFileToItemInput = {
     /* Last itemRevision */
@@ -695,6 +695,8 @@ export type ItemFileOutput = {
     RevisionAdded: number;
     /* Item revision when the file was removed. If null, the file is still present */
     RevisionRemoved?: number | null;
+    /* Randomly BE generated UID of the file that is persisted across restores. Same file should have the same UID */
+    PersistentFileUID: string;
     /* Timestamp of when the file was created */
     CreateTime: number;
     /* Timestamp of when the file was last modified */
@@ -939,9 +941,9 @@ export type ItemMoveIndividualToShareRequest = {
     /* Data to create the new item in the destination vault */
     Item?: ItemCreateRequest | null;
     /* Previous revisions of this item */
-    History: ItemHistoryRequest[];
+    History?: ItemHistoryRequest[];
     /* Item keys encrypted with the target vault key */
-    ItemKeys?: EncodedItemKeyRotation[];
+    ItemKeys: EncodedItemKeyRotation[];
 };
 export type KeyRotationKeyPair = {
     /* Key rotation */
