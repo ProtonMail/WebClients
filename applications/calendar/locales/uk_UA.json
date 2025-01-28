@@ -1002,11 +1002,6 @@
         "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
@@ -1099,34 +1094,9 @@
         "Історія версій"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Довічна угода Plus не має ціни поновлення, це одноразовий платіж за довічний доступ до Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Знижки відносно стандартної місячної ціни."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Якщо ви придбаєте Pass Family або Unlimited, ваша підписка буде автоматично продовжена за стандартною зниженою ціною та тривалістю в кінці розрахункового циклу."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша передплата автоматично поновиться за стандартною зниженою ставкою та тривалістю в кінці платіжного циклу."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Найпопулярніший"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Рахунок виставлено раз в ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "для ${ durationDeal }"
-      ],
-      "forever": [
-        "назавжди"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Автоматично продовжується через 1 місяць за ${ regularAmount }."
@@ -1173,9 +1143,6 @@
       ],
       "12 months": [
         "12 місяців"
-      ],
-      "24 months": [
-        "24 місяці"
       ],
       "Annually": [
         "Щороку"
@@ -2983,6 +2950,9 @@
         "У деяких групах немає контактів: ${ list }",
         "У деяких групах немає контактів: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } – ваше ім'я користувача. Щоб створити ${ emailAddress }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
+      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -3255,6 +3225,9 @@
         "В деяких групах немає контактів: ${ noContactGroupList }",
         "В деяких групах немає контактів: ${ noContactGroupList }",
         "В деяких групах немає контактів: ${ noContactGroupList }"
+      ],
+      "Organization key is not decrypted": [
+        "Ключ організації не розшифровано"
       ],
       "Password is required": [
         "Пароль обов'язковий"
@@ -4924,6 +4897,9 @@
       "Key fingerprint": [
         "Цифровий відбиток ключа"
       ],
+      "Keys created": [
+        "Ключі створено"
+      ],
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
       ],
@@ -5280,6 +5256,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
+      ],
+      "User activated": [
+        "Користувач активований"
       ],
       "username": [
         "ім'я користувача"

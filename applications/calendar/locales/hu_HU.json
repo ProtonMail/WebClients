@@ -936,11 +936,6 @@
         "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
@@ -1030,23 +1025,7 @@
         "Verziótörténet"
       ]
     },
-    "BF2024: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "A kedvezmények a standard havi árazás alapján kerülnek kiszámításra."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Az előfizetése automatikusan megújul a kedvezményes előfizetési áron és időtartamon a számlázási ciklus végén."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Legnépszerűbb"
-      ]
-    },
     "BF2024: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } áron"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Megújul 1 hónap elteltével a ${ regularAmount } áron."
       ]
@@ -1084,9 +1063,6 @@
       ],
       "12 months": [
         "12 hónap"
-      ],
-      "24 months": [
-        "24 hónap"
       ],
       "Annually": [
         "Évente"
@@ -2746,6 +2722,9 @@
         "${ list } nem tartalmaz névjegyeket",
         "Néhány csoportban nincsenek névjegyek: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Az Ön felhasználóneve ${ user.Name }. A ${ emailAddress } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
+      ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
@@ -3008,6 +2987,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Az egyik csoportban nincsenek névjegyek: ${ noContactGroupList }",
         "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "A szervezeti kulcs nincs visszafejtve"
       ],
       "Password is required": [
         "Jelszó megadása szükséges"
@@ -4472,6 +4454,9 @@
       "Key fingerprint": [
         "Kulcs ujjlenyomat"
       ],
+      "Keys created": [
+        "Kulcsok létrehozva"
+      ],
       "Label all imported messages as": [
         "Az importált üzenetek megjelölése mint"
       ],
@@ -4806,6 +4791,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
+      ],
+      "User activated": [
+        "Felhasználó aktiválva"
       ],
       "username": [
         "felhasználónév"
