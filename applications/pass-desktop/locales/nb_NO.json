@@ -28,6 +28,9 @@
       "Accept": [
         "Aksepter"
       ],
+      "Accept and view the item": [
+        "Aksepter og se elementet"
+      ],
       "Add": [
         "Legg til"
       ],
@@ -133,11 +136,11 @@
       "Continue offline": [
         "Fortsett i frakoblet modus"
       ],
-      "Copy alias address": [
-        "Kopier aliasadressen"
-      ],
       "Copy and close": [
         "Kopier og lukk"
+      ],
+      "Copy forwarding address": [
+        "Kopier videresendingsadresse"
       ],
       "Copy link": [
         "Kopier kobling"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "Opprett et nytt hvelv"
-      ],
-      "Create a new vault to share": [
-        "Opprett et nytt hvelv du vil dele"
       ],
       "Create alias": [
         "Opprett alias"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "Tilpasset seksjon"
-      ],
-      "Customize": [
-        "Tilpass"
       ],
       "Delete": [
         "Slett"
@@ -249,9 +246,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktiver dette aliaset for å motta e-poster sendt til dette aliaset"
-      ],
-      "Entire vault": [
-        "Hele hvelvet"
       ],
       "Exclude from monitoring": [
         "Ekskluder fra overvåking"
@@ -319,6 +313,9 @@
       "Install extension": [
         "Installer utvidelse"
       ],
+      "Invite more...": [
+        "Inviter flere..."
+      ],
       "Invite others": [
         "Inviter andre"
       ],
@@ -358,9 +355,6 @@
       "Manage access": [
         "Administrer tilgang"
       ],
-      "Manage vault access": [
-        "Administrer hvelvtilgang"
-      ],
       "Manually sync your data": [
         "Synkroniser dine data manuelt"
       ],
@@ -384,9 +378,6 @@
       ],
       "Move all items": [
         "Flytt alle elementer"
-      ],
-      "Move to a shared vault": [
-        "Flytt til et delt hvelv"
       ],
       "Move to another vault": [
         "Flytt til annet hvelv"
@@ -541,11 +532,11 @@
       "Share": [
         "Del"
       ],
+      "Share item": [
+        "Del element"
+      ],
       "Share secure link": [
         "Del sikker kobling"
-      ],
-      "Share this vault": [
-        "Del dette hvelvet"
       ],
       "Share vault": [
         "Del hvelv"
@@ -621,9 +612,6 @@
       "Update": [
         "Oppdater"
       ],
-      "Update vault": [
-        "Oppdater hvelv"
-      ],
       "Upgrade": [
         "Oppgrader"
       ],
@@ -653,6 +641,9 @@
       ],
       "View older history": [
         "Vis eldre historikk"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Med andre ${ BRAND_NAME }-brukere"
       ],
       "Write us on Reddit": [
         "Skriv til oss på Reddit"
@@ -843,6 +834,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Kunne ikke bekrefte denne invitasjonen for øyeblikket."
+      ],
+      "Could not leave item.": [
+        "Kunne ikke forlate elementet."
       ],
       "Could not leave vault.": [
         "Kunne ikke forlate hvelvet."
@@ -1149,7 +1143,7 @@
         "Ukjent element"
       ],
       "Unlock failure": [
-        "Lås opp feil"
+        "Opplåsningsfeil"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Ikke støttet ${ PASS_APP_NAME }-filformat"
@@ -1292,10 +1286,6 @@
         "${ blockedEmailsCount } blokkert",
         "${ blockedEmailsCount } blokkerte"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } invitasjon sendt",
-        "${ count } invitasjoner sendt"
-      ],
       "${ count } time": [
         "${ count } gang",
         "${ count } ganger"
@@ -1310,6 +1300,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } videresendt",
         "${ forwardedEmailsCount } videresendte"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } ønsker å dele et element med deg."
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1336,6 +1329,10 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } krever passordet ditt for ${ BRAND_NAME } for å få frakoblet tilgang til data."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } invitasjon sendt",
+        "${ payload.count } invitasjoner sendt"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } deaktivert"
@@ -1468,8 +1465,17 @@
       "Can be viewed": [
         "Kan sees"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Kan opprette, redigere, slette og eksportere elementer i dette hvelvet."
+      "Can create, edit, and delete items in this vault.": [
+        "Kan opprette, redigere og slette elementer i dette hvelvet."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Kan opprette, redigere og slette dette elementet."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Kan innvilge og oppheve tilgang til dette elementet, og slette det."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Kan innvilge og oppheve tilgang til dette elementet."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Kan innvilge og oppheve tilgang til dette hvelvet, og slette det."
@@ -1479,6 +1485,9 @@
       ],
       "Can view items in this vault.": [
         "Kan se elementer i dette hvelvet."
+      ],
+      "Can view this item.": [
+        "Kan lese dette elementet."
       ],
       "Change your password": [
         "Endre passordet ditt"
@@ -1568,7 +1577,7 @@
         "E-poster som sendes til aliasene dine, videresendes til postkassene dine. Et alias kan ha mer enn én postboks: nyttig for å dele et alias mellom deg og vennene dine."
       ],
       "Emptying trash...": [
-        "Tømming av papirkurven..."
+        "Tømmer papirkurven..."
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "Aktiver ${ PASS_SHORT_APP_NAME }-testversjon"
@@ -1633,6 +1642,9 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "Av sikkerhetsgrunner må tilgangen din bekreftes"
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Adressen for videresending kopiert til utklippstavlen. Send en e-post til denne adressen, og ${ Email } vil motta den."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke.",
@@ -1724,6 +1736,10 @@
       "Item restored": [
         "Element gjenopprettet"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Elementdeling: ${ itemAccessCount } bruker",
+        "Elementdeling: ${ itemAccessCount } brukere"
+      ],
       "Item successfully excluded from monitoring": [
         "Element ekskludert fra overvåking"
       ],
@@ -1744,6 +1760,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Lær hvordan du ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Forlater element..."
       ],
       "Leaving vault...": [
         "Forlater hvelv..."
@@ -1986,9 +2005,6 @@
       "Restoring trashed items...": [
         "Gjenoppretter elementer fra papirkurven..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Omvendt aliasadresse kopiert til utklippstavlen. Send en e-post til denne adressen, og ${ Email } vil motta den."
-      ],
       "Secure links": [
         "Sikre koblinger"
       ],
@@ -2028,6 +2044,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Del pålogginger og sikre notater med opptil 10 personer"
       ],
+      "Shared item invitation": [
+        "Delt elementinvitasjon"
+      ],
       "Sign in to your account": [
         "Logg på kontoen din"
       ],
@@ -2042,6 +2061,9 @@
       ],
       "Successfully exported all your items": [
         "Eksporterte alle elementene dine"
+      ],
+      "Successfully left the item": [
+        "Forlot elementet"
       ],
       "Successfully left the vault": [
         "Forlot hvelvet"
@@ -2094,6 +2116,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksporten vil være ukryptert, og alle med tilgang til den eksporterte filen vil kunne se passordene dine. For sikkerhets skyld, slett den etter at du er ferdig med å bruke den."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Dette elementet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
       ],
       "This operation is irreversible.": [
         "Denne operasjonen er irreversibel."
@@ -2170,9 +2195,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Oppgrader til en betalt plan for å opprette flere hvelv."
       ],
-      "Use vaults to share this item with others.": [
-        "Bruk hvelv for å dele dette elementet med andre."
-      ],
       "User's access removed": [
         "Brukerens tilgang fjernet"
       ],
@@ -2193,6 +2215,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Hvelv \"${ share.content.name }\" ble fjernet."
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Hvelvdeling: ${ vaultMembersCount } medlem",
+        "Hvelvdeling: ${ vaultMembersCount } medlemmer"
       ],
       "Verification code sent.": [
         "Verifiseringskode sendt."
@@ -2436,8 +2462,8 @@
       "All": [
         "Alle"
       ],
-      "All vaults": [
-        "Alle hvelv"
+      "All items": [
+        "Alle elementer"
       ],
       "Alphabetical": [
         "Alfabetisk"
@@ -2643,6 +2669,9 @@
       "Floor, apartment, building": [
         "Etasje, leilighet, bygning"
       ],
+      "For a one-off sharing": [
+        "For en engangsdeling"
+      ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Av sikkerhetsgrunner låser ${ PASS_SHORT_APP_NAME } seg automatisk etter 10 minutter med inaktivitet."
       ],
@@ -2663,9 +2692,6 @@
       ],
       "General": [
         "Generelt"
-      ],
-      "Generate a secure link for this item": [
-        "Generer en sikker kobling til dette elementet"
       ],
       "Generic CSV": [
         "Generisk CSV"
@@ -2838,6 +2864,9 @@
       "Never": [
         "Aldri"
       ],
+      "New": [
+        "Ny"
+      ],
       "New vault": [
         "Nytt hvelv"
       ],
@@ -2982,6 +3011,9 @@
       "Security code": [
         "Sikkerhetskode"
       ],
+      "See member and permission overview": [
+        "Se oversikt over medlemmer og tillatelser"
+      ],
       "Select a domain": [
         "Velg et domene"
       ],
@@ -3009,11 +3041,17 @@
       "Share": [
         "Del"
       ],
-      "Share this vault or create a new vault": [
-        "Del dette hvelvet eller opprett et nytt hvelv"
+      "Shared": [
+        "Delt"
+      ],
+      "Shared by me": [
+        "Delt av meg"
       ],
       "Shared link": [
         "Delt kobling"
+      ],
+      "Shared with me": [
+        "Delt med meg"
       ],
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
@@ -3062,10 +3100,6 @@
       ],
       "Text": [
         "Tekst"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Elementets hvelv er for øyeblikket delt med ${ targetMembers } person.",
-        "Elementets hvelv er for øyeblikket delt med ${ targetMembers } personer."
       ],
       "The URL has been copied to the clipboard": [
         "Nettadressen er kopiert til utklippstavlen"
@@ -3129,6 +3163,9 @@
       ],
       "Used in": [
         "Brukt i"
+      ],
+      "Useful for permanent sharing": [
+        "Nyttig for permanent deling"
       ],
       "Username": [
         "Brukernavn"
@@ -3346,23 +3383,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Søk ${ pluralItemType } i ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Søk ${ pluralItemType } i alle hvelv"
+      "Search ${ pluralItemType } in all items": [
+        "Søk ${ pluralItemType } i alle elementer"
       ],
       "Search in ${ vaultName }": [
         "Søk i ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Søk i alle hvelv"
+      "Search in all items": [
+        "Søk i alle elementer"
       ],
       "Search in Trash": [
         "Søk i papirkurven…"
       ],
       "Select a suffix": [
         "Velg et prefiks"
-      ],
-      "Shared vault": [
-        "Delt hvelv"
       ],
       "Unknown origin": [
         "Ukjent opprinnelse"
@@ -3492,6 +3526,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domenet er bekreftet. Domenet ditt kan begynne å motta e-poster og opprette aliaser"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } bruker.",
+        "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } brukere."
+      ],
       "Mailbox successfully deleted": [
         "Postboks ble slettet"
       ],
@@ -3507,9 +3545,9 @@
       "Random prefix generation successfully enabled": [
         "Generering av tilfeldige prefikser er aktivert"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } bruker.",
-        "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } brukere."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } bruker.",
+        "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } brukere."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Bekreftelses-e-post sendt. Sjekk innboksen din for å bekrefte postkassen din"
@@ -3696,11 +3734,17 @@
       "Install extension": [
         "Installer utvidelse"
       ],
+      "Item": [
+        "Element"
+      ],
       "Last autofill": [
         "Siste autofyll"
       ],
       "Last modified": [
         "Sist endret"
+      ],
+      "Leave this item?": [
+        "Forlate dette elementet?"
       ],
       "Leave vault?": [
         "Forlate hvelv?"
@@ -3757,6 +3801,9 @@
       ],
       "No reused passwords": [
         "Ingen gjenbrukte passord"
+      ],
+      "No shared items": [
+        "Ingen delte elementer"
       ],
       "No shared secure links": [
         "Ingen delte sikre koblinger"
@@ -3852,6 +3899,12 @@
       ],
       "Share with": [
         "Del med"
+      ],
+      "Shared item invitation": [
+        "Delt elementinvitasjon"
+      ],
+      "Shared via": [
+        "Delt via"
       ],
       "SPF (Optional)": [
         "SPF (valgfritt)"
@@ -3968,6 +4021,9 @@
       ],
       "A description of the problem is required": [
         "En beskrivelse av problemet er nødvendig"
+      ],
+      "Addresses already invited.": [
+        "Adresser allerede invitert."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Aliaser i papirkurven fortsetter å videresende e-poster."
@@ -4089,6 +4145,9 @@
       "No secure links matching": [
         "Ingen sikre koblinger som samsvarer"
       ],
+      "No shared items matching": [
+        "Ingen delte elementer samsvarer"
+      ],
       "Offline": [
         "Frakoblet"
       ],
@@ -4128,6 +4187,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Noen elementer er for øyeblikket delt. Hvis du sletter dem, fjernes tilgangen for alle andre brukere."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Noen elementer er for øyeblikket delt. Hvis du flytter dem til et annet hvelv, fjernes tilgangen for alle andre brukere."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Noe gikk galt under oppstart av ${ PASS_APP_NAME }. Prøv å oppdatere eller laste inn utvidelsen på nytt."
       ],
@@ -4139,6 +4204,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Denne e-postadressen vil ikke lenger overvåkes for datainnbrudd."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Dette elementet er for øyeblikket delt. Hvis du sletter det, fjernes tilgangen for alle andre brukere."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Dette elementet er for øyeblikket delt. Hvis du flytter det til et annet hvelv, fjernes tilgangen for alle andre brukere."
       ],
       "Title is required": [
         "Tittel kreves"
@@ -4161,8 +4232,14 @@
       "Verification code is required": [
         "Bekreftelseskode er påkrevd"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Du har nådd grensen for medlemmer som kan ha tilgang til dette elementet."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nådd grensen for medlemmer som kan ha tilgang til dette hvelvet."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Du har nådd grensen for antall brukere for dette elementet. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Du har nådd grensen for brukere i dette hvelvet. ${ upgradeLink }"
@@ -4175,6 +4252,9 @@
       ],
       "You must select at least one mailbox": [
         "Du må velge minst en postboks"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Du mister tilgangen til dette elementet og dets detaljer. Vil du fortsette?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke lenger ha tilgang til dette hvelvet. For å bli med i det igjen, trenger du en ny invitasjon."
