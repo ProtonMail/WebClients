@@ -36,6 +36,11 @@ jest.mock('./constants', () => ({
     },
 }));
 
+jest.mock('@proton/account/featuresTour/actions', () => ({
+    __esModule: true,
+    ...jest.requireActual('@proton/account/featuresTour/actions'),
+}));
+
 describe('FeatureTourSteps', () => {
     const mockOnClose = jest.fn();
     const stepsList: FeatureTourStepId[] = ['short-domain', 'auto-delete'];

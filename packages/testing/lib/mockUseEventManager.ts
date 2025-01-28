@@ -1,5 +1,10 @@
 import * as useEventManagerModule from '@proton/components/hooks/useEventManager';
 
+jest.mock('@proton/components/hooks/useEventManager', () => ({
+    __esModule: true,
+    ...jest.requireActual('@proton/components/hooks/useEventManager'),
+}));
+
 export const mockUseEventManager = (value?: Partial<ReturnType<typeof useEventManagerModule.default>>) => {
     const mockedUseEventManager = jest.spyOn(useEventManagerModule, 'default');
 

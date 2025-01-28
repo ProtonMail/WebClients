@@ -8,7 +8,9 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import type { SavedPaymentMethod } from '@proton/payments';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
-import { mockOnSessionMigration, mockUseSubscription, mockUseUser } from '@proton/testing';
+import { mockOnSessionMigration } from '@proton/testing/lib/mockOnSessionMigration';
+import { mockUseSubscription } from '@proton/testing/lib/mockUseSubscription';
+import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import PaymentMethodActions from './PaymentMethodActions';
 
