@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Alert, TextLoader } from '@proton/components';
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Banner } from '@proton/atoms/index';
+import { TextLoader } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -17,6 +19,7 @@ type Props = {
     name: string;
     isAnonymous?: boolean;
     corruptedLink?: boolean;
+    mimeType?: string;
     className?: string;
 };
 
@@ -27,45 +30,52 @@ export default function SignatureAlert({
     signatureNetworkError,
     isAnonymous,
     corruptedLink,
+    mimeType,
+    isFile,
     className,
     ...props
 }: Props) {
     if (loading) {
         return (
-            <Alert type="info" className={className}>
+            <Banner variant={BannerVariants.INFO} className={className} data-testid="drive:signature-alert">
                 <TextLoader className="m-0">{c('Info').t`Checking signatures`}</TextLoader>
-            </Alert>
+            </Banner>
         );
     }
 
     if (corruptedLink) {
         return (
-            <Alert type="warning" className={className}>
+            <Banner variant={BannerVariants.WARNING} className={className} data-testid="drive:signature-alert">
                 <span>{c('Info')
                     .t`Unfortunately, it appears that the file or some of its data cannot be decrypted.`}</span>
-            </Alert>
+            </Banner>
         );
     }
 
     if (signatureNetworkError) {
         return (
-            <Alert type="warning" className={className}>
+            <Banner variant={BannerVariants.WARNING} className={className} data-testid="drive:signature-alert">
                 <span>{c('Info').t`Signature cannot be validated due to network error, please try again later.`}</span>
-            </Alert>
+            </Banner>
         );
     }
 
-    const validAnonymousSignature = !!signatureIssues && isAnonymous && hasValidAnonymousSignature(signatureIssues);
+    const validAnonymousSignature = isAnonymous && hasValidAnonymousSignature(signatureIssues, { mimeType, isFile });
 
     return (
-        <Alert type={signatureIssues && !validAnonymousSignature ? 'error' : 'success'} className={className}>
+        <Banner
+            variant={signatureIssues && !validAnonymousSignature ? BannerVariants.DANGER : BannerVariants.SUCCESS}
+            className={className}
+            data-testid="drive:signature-alert"
+        >
             <SignatureAlertBody
                 signatureIssues={signatureIssues}
                 signatureEmail={signatureEmail}
                 validAnonymousSignature={validAnonymousSignature}
+                isFile={isFile}
                 {...props}
             />
-        </Alert>
+        </Banner>
     );
 }
 
@@ -96,20 +106,7 @@ export function SignatureAlertBody({
         </strong>
     );
 
-    if (!signatureIssues) {
-        return (
-            <>
-                {isFile
-                    ? c('Info').jt`Digital signature verified. This file was securely uploaded by ${emailAddress}.`
-                    : c('Info').jt`Digital signature verified. This folder was securely uploaded by ${emailAddress}.`}
-            </>
-        );
-    }
-
-    if (
-        !signatureEmail &&
-        (validAnonymousSignature === undefined ? hasValidAnonymousSignature(signatureIssues) : validAnonymousSignature)
-    ) {
+    if (validAnonymousSignature) {
         return (
             <>
                 {isFile
@@ -117,6 +114,16 @@ export function SignatureAlertBody({
                           .jt`The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${BRAND_NAME} account, so their identity cannot be verified.`
                     : c('Info')
                           .jt`The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${BRAND_NAME} account, so their identity cannot be verified.`}
+            </>
+        );
+    }
+
+    if (!signatureIssues) {
+        return (
+            <>
+                {isFile
+                    ? c('Info').jt`Digital signature verified. This file was securely uploaded by ${emailAddress}.`
+                    : c('Info').jt`Digital signature verified. This folder was securely uploaded by ${emailAddress}.`}
             </>
         );
     }

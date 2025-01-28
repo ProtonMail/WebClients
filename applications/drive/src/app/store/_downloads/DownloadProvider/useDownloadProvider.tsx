@@ -156,7 +156,15 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                 ) => {
                     // If we are in viewOnly mode on public page we ignore signature as we can't check
                     // Disable signature error if anonymous view of the public page
-                    if (!user || viewOnly || (link.isAnonymous && hasValidAnonymousSignature(signatureIssues))) {
+                    if (
+                        !user ||
+                        viewOnly ||
+                        (link.isAnonymous &&
+                            hasValidAnonymousSignature(signatureIssues, {
+                                mimeType: link.mimeType,
+                                isFile: link.isFile,
+                            }))
+                    ) {
                         return;
                     }
                     log(nextDownload.id, `signature issue: ${JSON.stringify(signatureIssues)}`);
