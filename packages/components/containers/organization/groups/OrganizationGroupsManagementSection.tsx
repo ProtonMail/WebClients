@@ -43,7 +43,9 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
         MemberCount: undefined,
     };
 
-    const linkToDomainPage = <SettingsLink path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>;
+    const linkToDomainPage = (
+        <SettingsLink key="link-to-domain-page" path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>
+    );
 
     const canOnlyDelete = !canUseGroups(organization?.PlanName) && (groups?.length ?? 0) > 0;
 
