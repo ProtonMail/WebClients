@@ -113,22 +113,26 @@ export class FileSaver {
     // difference between web and service worker) to reduce data exchanges.
     private async saveViaDownload(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
         if (!this.isSWReady) {
-            // Always wait for Service Worker initialization to complete
-            try {
-                await promiseWithTimeout({
-                    timeoutMs: DOWNLOAD_SW_INIT_TIMEOUT,
-                    promise: initDownloadSW(),
-                });
-            } catch (error: unknown) {
+            if (isServiceWorkersUnsupported()) {
                 this.useBlobFallback = true;
-                if (error instanceof Error) {
-                    console.warn('Saving file will fallback to in-memory downloads:', error.message);
-                    log(`Service worker fail reason: ${error.message}`);
-                } else {
-                    log(`Service worker throw not an Error: ${typeof error} ${String(error)}`);
+            } else {
+                // Always wait for Service Worker initialization to complete
+                try {
+                    await promiseWithTimeout({
+                        timeoutMs: DOWNLOAD_SW_INIT_TIMEOUT,
+                        promise: initDownloadSW(),
+                    });
+                } catch (error: unknown) {
+                    this.useBlobFallback = true;
+                    if (error instanceof Error) {
+                        console.warn('Saving file will fallback to in-memory downloads:', error.message);
+                        log(`Service worker fail reason: ${error.message}`);
+                    } else {
+                        log(`Service worker throw not an Error: ${typeof error} ${String(error)}`);
+                    }
+                } finally {
+                    this.isSWReady = true;
                 }
-            } finally {
-                this.isSWReady = true;
             }
         }
 
