@@ -8,12 +8,14 @@ import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
+import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayOtherFeaturesTourStep: ShouldDisplayTourStep = async (dispatch) => {
     const [organization] = await Promise.all([dispatch(organizationThunk())]);
-
-    return [PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY].includes(organization.PlanName);
+    return {
+        canDisplay: [PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY].includes(organization.PlanName),
+    };
 };
 
 const OtherFeaturesTourStep = (props: FeatureTourStepProps) => {
@@ -42,30 +44,26 @@ const OtherFeaturesTourStep = (props: FeatureTourStepProps) => {
 
     return (
         <FeatureTourStepsContent
+            bullets={props.bullets}
             title={c('Title').t`Other features included in your plan`}
-            description={undefined}
-            illustrationSize={undefined}
-            illustration={undefined}
-            titleClassName="pt-12"
-            ctaText={c('Action').t`Got it`}
-            {...props}
+            mainCTA={
+                <FeatureTourStepCTA type="primary" onClick={props.onNext}>
+                    {c('Button').t`Got it`}
+                </FeatureTourStepCTA>
+            }
         >
-            {features.map(({ icon, title, content }, index) => (
-                <div
-                    key={title}
-                    className={clsx(
-                        'flex flex-nowrap items-start justify-left',
-                        index === features.length - 1 && 'mb-12 pb-4'
-                    )}
-                >
-                    <div className="rounded-full bg-weak shrink-0 flex items-center justify-center p-2 mr-3">
-                        <Icon name={icon} />
+            <div className="mt-4">
+                {features.map(({ icon, title, content }, index) => (
+                    <div key={title} className="text-left flex flex-nowrap items-start justify-left">
+                        <div className="rounded-full bg-weak shrink-0 flex items-center justify-center p-2 mr-3">
+                            <Icon name={icon} />
+                        </div>
+                        <p className={clsx(index === features.length - 1 ? 'm-0' : 'mt-0 mb-4')}>
+                            {title} {content}
+                        </p>
                     </div>
-                    <p className="mt-0 mb-4">
-                        {title} {content}
-                    </p>
-                </div>
-            ))}
+                ))}
+            </div>
         </FeatureTourStepsContent>
     );
 };

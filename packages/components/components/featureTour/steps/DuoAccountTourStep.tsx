@@ -8,11 +8,15 @@ import { PLANS, PLAN_NAMES } from '@proton/payments';
 import duoPlanBackground from '@proton/styles/assets/img/onboarding/duoPlan.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
+import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayDuoAccountTourStep: ShouldDisplayTourStep = async (dispatch) => {
     const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
-    return user.isAdmin && organization.PlanName === PLANS.DUO && organization.UsedMembers <= 1;
+    return {
+        canDisplay: user.isAdmin && organization.PlanName === PLANS.DUO && organization.UsedMembers <= 1,
+        preloadUrls: [duoPlanBackground],
+    };
 };
 
 const DuoAccountTourStep = (props: FeatureTourStepProps) => {
@@ -20,13 +24,11 @@ const DuoAccountTourStep = (props: FeatureTourStepProps) => {
 
     return (
         <FeatureTourStepsContent
+            bullets={props.bullets}
             title={c('Title').t`Set up ${protonDuoPlanName}`}
-            description={c('Info')
-                .t`Invite your partner, a friend, or whoever you're sharing your ${protonDuoPlanName} plan with.`}
             illustration={duoPlanBackground}
             illustrationSize="medium"
-            descriptionClassName="mb-16"
-            primaryButton={
+            mainCTA={
                 <ButtonLike
                     as={SettingsLink}
                     path="/multi-user-support"
@@ -34,11 +36,19 @@ const DuoAccountTourStep = (props: FeatureTourStepProps) => {
                     target="_blank"
                     color="norm"
                     fullWidth
-                    className="mb-2"
                 >{c('Action').t`Invite members`}</ButtonLike>
             }
-            {...props}
-        />
+            extraCTA={
+                <FeatureTourStepCTA type="secondary" onClick={props.onNext}>
+                    {c('Button').t`Maybe later`}
+                </FeatureTourStepCTA>
+            }
+        >
+            <p className="m-0">
+                {c('Info')
+                    .t`Invite your partner, a friend, or whoever you're sharing your ${protonDuoPlanName} plan with.`}
+            </p>
+        </FeatureTourStepsContent>
     );
 };
 
