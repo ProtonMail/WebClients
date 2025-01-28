@@ -12,10 +12,14 @@ import { DARK_WEB_MONITORING_STATE, type UserSettings } from '@proton/shared/lib
 import darkWebMonitoringIllustration from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
+import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 import FeatureTourToggle from './components/FeatureTourToggle';
 
-export const shouldDisplayDarkWebMonitoringTourStep: ShouldDisplayTourStep = async () => true;
+export const shouldDisplayDarkWebMonitoringTourStep: ShouldDisplayTourStep = async () => ({
+    canDisplay: true,
+    preloadUrls: [darkWebMonitoringIllustration],
+});
 
 const DarkWebMonitoringTourStep = (props: FeatureTourStepProps) => {
     const api = useApi();
@@ -40,17 +44,25 @@ const DarkWebMonitoringTourStep = (props: FeatureTourStepProps) => {
 
     return (
         <FeatureTourStepsContent
+            bullets={props.bullets}
             illustrationSize="small"
             illustration={darkWebMonitoringIllustration}
             title={DARK_WEB_MONITORING_NAME}
-            description={c('Info')
-                .t`Get notified if your password or other data was leaked from a third-party service.`}
-            {...props}
-            onNext={() => {
-                void handleEnableFeature();
-                props.onNext();
-            }}
+            mainCTA={
+                <FeatureTourStepCTA
+                    type="primary"
+                    onClick={() => {
+                        void handleEnableFeature();
+                        props.onNext();
+                    }}
+                >
+                    {c('Button').t`Next`}
+                </FeatureTourStepCTA>
+            }
         >
+            <p className="mt-0 mb-4">
+                {c('Info').t`Get notified if your password or other data was leaked from a third-party service.`}
+            </p>
             <FeatureTourToggle
                 isFeatureEnabled={isFeatureEnabled}
                 checked={isToggleChecked}
