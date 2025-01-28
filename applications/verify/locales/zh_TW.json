@@ -1079,6 +1079,9 @@
       "Country code": [
         "國家代碼"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "根據我們的${ termsLink }不允許創建多重免費帳號。"
+      ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
       ],
@@ -1096,6 +1099,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "請於${ mailLink }登入以取得更多資訊或移除限制。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -1275,6 +1281,9 @@
       "15 GB storage": [
         "15 GB 儲存空間"
       ],
+      "200 GB of storage": [
+        "200 GB的儲存空間"
+      ],
       "Advanced account protection": [
         "進階的帳號保護"
       ],
@@ -1359,6 +1368,9 @@
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
+      "Private photo backup": [
+        "私人照片備份"
+      ],
       "Proofread and refine your emails": [
         "校閱與修飾你的電子郵件"
       ],
@@ -1379,6 +1391,9 @@
       ],
       "Search message content": [
         "搜尋郵件內容"
+      ],
+      "Secure file storage and sharing": [
+        "安全地儲存和共享檔案"
       ],
       "See team's availability": [
         "查看團隊可用程度"
@@ -1578,6 +1593,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "帳號已受限制"
+      ],
       "Enter 2FA code": [
         "輸入雙重驗證碼"
       ],
