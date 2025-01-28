@@ -75,7 +75,8 @@ const GetDesktopAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
             >
                 <div>
                     <img
-                        className={clsx('w-full mb-1', viewportWidth['<=small'] && 'self-start')}
+                        className={clsx('max-w-full mb-1 w-custom', viewportWidth['<=small'] && 'self-start')}
+                        style={{ '--w-custom': '24rem' }}
                         srcSet={getIllustration()}
                         alt=""
                     />
