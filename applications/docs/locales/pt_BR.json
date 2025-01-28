@@ -67,7 +67,7 @@
         "Adicionar grupo"
       ],
       "Add new group": [
-        "Adicionar novo grupo"
+        "Adicionar um grupo"
       ],
       "Add note": [
         "Adicionar nota"
@@ -194,7 +194,7 @@
         "Criar uma cópia"
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contato"
+        "Criar um grupo de contatos"
       ],
       "Create and copy alias": [
         "Criar e copiar alias"
@@ -854,11 +854,6 @@
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
@@ -951,34 +946,9 @@
         "Histórico de versões"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } Plus não tem preço de renovação, ou seja, é um pagamento único para acesso vitalício ao Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Os descontos são baseados no preço mensal padrão."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Se você adquirir o Pass Family ou Unlimited, sua assinatura será renovada automaticamente pela taxa com desconto e duração padrão ao final de seu ciclo de faturamento."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Mais popular"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Com o preço único de ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "forever": [
-        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
@@ -1024,9 +994,6 @@
       ],
       "12 months": [
         "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ],
       "Annually": [
         "Anualmente"
@@ -2214,6 +2181,11 @@
         "Fatura vencida"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
@@ -2292,11 +2264,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2482,6 +2449,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Mensagens e composição > Domínio curto (pm.me)"
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -2599,7 +2569,7 @@
         "Convites externos estão indisponíveis temporariamente."
       ],
       "External invitations are temporarily disabled. Please try again later": [
-        "Convites externos estão temporariamente desabilitados. Por favor, tente novamente mais tarde"
+        "Os convites externos estão temporariamente desabilitados. Tente novamente mais tarde."
       ],
       "Failed to rename document. Please try again later.": [
         "A renomeação do documento falhou, tente novamente mais tarde"
@@ -2712,6 +2682,9 @@
         "Um dos grupos não tem contatos: ${ noContactGroupList }",
         "Alguns dos grupos não tem contatos: ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "A chave de organização não está descriptografada"
+      ],
       "Password is required": [
         "A senha é obrigatória"
       ],
@@ -2820,7 +2793,7 @@
         "O nome da pasta é muito longo. Escolha um nome diferente."
       ],
       "The invitation cannot be completed yet. Please try again later.": [
-        "Ainda não é possível completar o convite. Por favor, tente novamente mais tarde."
+        "Ainda não é possível completar o convite. Tente novamente mais tarde."
       ],
       "The invitation doesn't exist anymore": [
         "O convite não existe mais"
@@ -3235,7 +3208,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
-        "Você entrou com sucesso no grupo familiar"
+        "Você entrou no grupo familiar"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Você tem faturas não pagas. Você deve pagá-las antes de aderir a um plano familiar."
@@ -3994,8 +3967,8 @@
         "Código do país"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Criar ${ calendarsToBeCreatedCount } novo calendário",
-        "Criar ${ calendarsToBeCreatedCount } novos calendários"
+        "Criar ${ calendarsToBeCreatedCount } calendário",
+        "Criar ${ calendarsToBeCreatedCount } calendários"
       ],
       "Create a copy to edit": [
         "Criar uma cópia para editar"
@@ -4007,7 +3980,7 @@
         "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contato"
+        "Criar um grupo de contatos"
       ],
       "Create a secure cloud for ${ value } member": [
         "Criar uma nuvem segura para ${ value } membro",
@@ -4296,6 +4269,9 @@
       "Key fingerprint": [
         "Chave de impressão digital"
       ],
+      "Keys created": [
+        "Chave criada"
+      ],
       "Label all imported messages as": [
         "Marcar todas as mensagens importadas como"
       ],
@@ -4501,7 +4477,7 @@
         "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please try again in a few moments": [
-        "Por favor, tente novamente em alguns instantes"
+        "Tente novamente em alguns instantes"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
@@ -4567,7 +4543,7 @@
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Os pagamentos SEPA não estão disponíveis no momento. Por favor, tente novamente mais tarde."
+        "Os pagamentos SEPA não estão disponíveis no momento. Tente novamente mais tarde."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -4671,6 +4647,9 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Este documento tem muitas atividades. Alguns recursos podem estar temporariamente indisponíveis."
       ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "É possível que esse documento não exista ou que você não tenha permissão para visualizá-lo. Você pode tentar recarregar a página para ver se o problema persiste ou entre em contato com o proprietário para ter acesso."
+      ],
       "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Este documento pode não existir ou você pode não ter as permissões necessárias para visualizá-lo com sua conta selecionada. Tente uma conta diferente ou entre em contato com o proprietário para obter acesso."
       ],
@@ -4691,9 +4670,6 @@
       ],
       "This message will be presented again later": [
         "Esta mensagem será mostrada novamente mais tarde"
-      ],
-      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "É possível que esse documento público não exista ou que você não tenha permissão para visualizá-lo. Você pode tentar recarregar a página para ver se o problema persiste."
       ],
       "This will replace the existing file with the folder": [
         "Isso substituirá o arquivo existente pela pasta"
@@ -4759,7 +4735,7 @@
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
       ],
       "Undo successful": [
-        "Desfeito com sucesso"
+        "A ação foi desfeita."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Infelizmente, parece que o arquivo ou alguns de seus dados não podem ser descriptografados."
@@ -4769,6 +4745,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Enviar centenas de arquivos de uma só vez pode ter impacto no desempenho."
+      ],
+      "User activated": [
+        "Usuário ativado"
       ],
       "username": [
         "Nome de usuário"
@@ -5001,7 +4980,7 @@
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "A data da sua próxima renovação será em ${ renewalTime }. Favor entrar em contato com o suporte se você precisa de uma mudança de plano imediata."
+        "A data da sua próxima renovação será em ${ renewalTime }.Entre em contato com o suporte se você precisa de uma mudança de plano imediata."
       ],
       "Your password was leaked:": [
         "Sua senha foi vazada:"
@@ -5586,7 +5565,7 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para adicionar um novo calendário, remova um existente."
+        "Para adicionar um calendário, remova um existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
         "Para adicionar um calendário, remova outro calendário ou atualize seu plano da ${ BRAND_NAME } para um plano ${ MAIL_SHORT_APP_NAME } pago."
@@ -6693,11 +6672,6 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceMailPlus }. Cancele a qualquer momento."
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -6710,6 +6684,11 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7170,7 +7149,7 @@
         "Falha no acesso à atualização do link público "
       ],
       "Share invitation accepted successfully": [
-        "Convite de compartilhamento aceito com sucesso"
+        "O convite de compartilhamento foi aceite."
       ],
       "Share invitation declined": [
         "Convite para compartilhamento recusado"
@@ -7250,7 +7229,7 @@
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Endereços de e-mail"
       ],
       "Free": [
@@ -7271,7 +7250,7 @@
         "Automático (${ value })"
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Ignore group": [
         "Ignorar grupo"
@@ -7282,7 +7261,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Criar novo calendário"
+        "Criar um calendário"
       ],
       "Merge with calendar": [
         "Mesclar com o calendário"
@@ -7409,7 +7388,7 @@
         "Processando pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Por favor, reative sua assinatura primeiro para diminuir o número de complementos."
+        "Reative sua assinatura primeiro para diminuir o número de complementos."
       ],
       "Please select billing country": [
         "Selecione o país de cobrança"
@@ -7462,7 +7441,7 @@
         "Ocorreu um erro. Tente novamente mais tarde."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Não conseguimos autenticar seu método de pagamento. Por favor, escolha um método de pagamento diferente ou tente novamente."
+        "Não conseguimos autenticar seu método de pagamento. Escolha um método de pagamento diferente ou tente novamente."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
@@ -8032,6 +8011,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Sua assinatura será renovada pelo mesmo preço todos os anos."
       ]
     },
     "specialoffer: Link": {
@@ -8350,6 +8332,25 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por usuário"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domínio de e-mail personalizado",
+        "${ planNumberOfDomains } domínios de e-mail personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } endereço de e-mail",
+        "${ planNumberOfEmails } endereços de e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Pastas, marcadores e filtros personalizados"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "Armazenamento de 15 GB"
@@ -8389,25 +8390,6 @@
       ],
       "Your privacy is our mission": [
         "Sua privacidade é a nossa missão"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de armazenamento por usuário"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domínio de e-mail personalizado",
-        "${ planNumberOfDomains } domínios de e-mail personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } endereço de e-mail",
-        "${ planNumberOfEmails } endereços de e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Pastas, marcadores e filtros personalizados"
       ]
     },
     "Subscription renewal state": {
@@ -8518,10 +8500,10 @@
         "Desfazer em andamento"
       ],
       "Verification successful": [
-        "Verificado com sucesso"
+        "A verificação é terminada."
       ],
       "You have successfully canceled your subscription.": [
-        "Você cancelou sua assinatura com sucesso."
+        "Você cancelou sua assinatura."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
@@ -8754,7 +8736,7 @@
         "Criar contato"
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Credits": [
         "Créditos"
@@ -9137,6 +9119,11 @@
         "Hoje"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adicione este arquivo compartilhado ao seu ${ DRIVE_APP_NAME } para fácil acesso mais tarde."
@@ -9214,11 +9201,6 @@
         "Enviamos um convite para acessar o item."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
@@ -9267,6 +9249,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Sua nova assinatura será renovada automaticamente em ${ cycle } mês.",
+        "Sua nova assinatura será renovada automaticamente em ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Seu plano agendado começa em ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Sua assinatura será renovada automaticamente em ${ cycle } mês.",
