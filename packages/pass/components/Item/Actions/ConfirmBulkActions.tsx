@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -13,6 +13,7 @@ import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
 import { selectBulkHasSecureLinks, selectBulkHasSharedItems } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO } from '@proton/pass/types';
+import noop from '@proton/utils/noop';
 
 export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: BulkSelectionDTO }> = ({
     selected,
@@ -61,6 +62,11 @@ export const ConfirmMoveManyItems: FC<
     const hasSharedItems = useMemoSelector(selectBulkHasSharedItems, [selected]);
     const count = getBulkSelectionCount(selected);
 
+    /** Auto-confirm on mount if no warnings should
+     * be shown in the confirmation prompt */
+    const autoConfirm = !(hasSecureLinks || hasSharedItems);
+    useEffect(autoConfirm ? onConfirm : noop, []);
+
     return (
         <WithVault shareId={shareId} onFallback={onCancel}>
             {({ content: { name: vaultName } }) => (
@@ -81,17 +87,12 @@ export const ConfirmMoveManyItems: FC<
                                 </Alert>
                             )}
 
-                            {hasSecureLinks
-                                ? c('Info').ngettext(
-                                      msgid`Moving an item to another vault will erase its history and all secure links.`,
-                                      `Moving items to another vault will erase their history and all secure links.`,
-                                      count
-                                  )
-                                : c('Info').ngettext(
-                                      msgid`Moving an item to another vault will erase its history.`,
-                                      `Moving items to another vault will erase their history.`,
-                                      count
-                                  )}
+                            {hasSecureLinks &&
+                                c('Info').ngettext(
+                                    msgid`Moving an item to another vault will erase its secure links.`,
+                                    `Moving items to another vault will erase their secure links.`,
+                                    count
+                                )}
                         </div>
                     }
                 />

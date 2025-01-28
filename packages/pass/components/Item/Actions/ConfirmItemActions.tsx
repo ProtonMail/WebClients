@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -14,6 +14,7 @@ import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { selectItemSecureLinks, selectItemShared } from '@proton/pass/store/selectors';
 import type { ItemMoveIntent, ItemRevision } from '@proton/pass/types';
+import noop from '@proton/utils/noop';
 
 export const ConfirmDeleteItem: FC<ConfirmationPromptHandles & { item: ItemRevision }> = (props) => {
     const { shareId, itemId } = props.item;
@@ -52,7 +53,12 @@ export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = (
     const hasLinks = Boolean(secureLinks.length);
     const shared = useSelector(selectItemShared(shareId, itemId));
 
-    return (
+    /** Auto-confirm on mount if no warnings should
+     * be shown in the confirmation prompt */
+    const autoConfirm = !(hasLinks || shared);
+    useEffect(autoConfirm ? onConfirm : noop, []);
+
+    return autoConfirm ? null : (
         <WithVault shareId={targetShareId} onFallback={onCancel}>
             {({ content: { name: vaultName } }) => (
                 <ConfirmationPrompt
@@ -68,12 +74,7 @@ export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = (
                                 </Alert>
                             )}
 
-                            <span>
-                                {hasLinks
-                                    ? c('Info')
-                                          .t`Moving an item to another vault will erase its history and all secure links.`
-                                    : c('Info').t`Moving an item to another vault will erase its history.`}
-                            </span>
+                            {hasLinks && c('Info').t`Moving an item to another vault will erase its secure links.`}
                         </div>
                     }
                 />
