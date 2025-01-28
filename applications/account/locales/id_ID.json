@@ -187,6 +187,9 @@
       "Authenticating": [
         "Mengautentikasi"
       ],
+      "Auto-delete spam and trash": [
+        "Kosongkan spam dan sampah secara otomatis"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -460,6 +463,9 @@
       "Download the ${ MAIL_APP_NAME } Export Tool": [
         "Unduh ${ MAIL_APP_NAME } Export Tool"
       ],
+      "Download the desktop app": [
+        "Unduh aplikasi desktop"
+      ],
       "Edit": [
         "Sunting"
       ],
@@ -516,6 +522,9 @@
       ],
       "Emoji": [
         "Emoji"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Aktfkan ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
@@ -574,6 +583,12 @@
       "Generate token": [
         "Hasilkan token"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Dapatkan ${ planName } dengan harga ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Dapatkan ${ planOrAppName }"
+      ],
       "Get a new encrypted email address": [
         "Dapatkan alamat email terenkripsi baru"
       ],
@@ -604,11 +619,17 @@
       "Get more servers": [
         "Dapatkan lebih banyak server"
       ],
+      "Get the browser extension": [
+        "Dapatkan ekstensi browser"
+      ],
       "Get the deal": [
         "Dapatkan penawaran ini"
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Tuju ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Tuju label"
@@ -669,6 +690,9 @@
       ],
       "Invite": [
         "Undang"
+      ],
+      "Invite members": [
+        "Undang anggota"
       ],
       "Invite user": [
         "Undang pengguna"
@@ -1146,6 +1170,9 @@
       ],
       "Switch or add account": [
         "Ubah atau tambah akun"
+      ],
+      "Take a tour": [
+        "Ikuti tur kami"
       ],
       "Test": [
         "Uji"
@@ -1694,11 +1721,6 @@
         "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan masih banyak lagi."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Jumat Hitam"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
@@ -1791,34 +1813,9 @@
         "Riwayat versi"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Penawaran ${ PASS_SHORT_APP_NAME } Plus seumur hidup tidak memiliki biaya pembaruan. Cukup satu kali pembayaran untuk akses selama-lamanya ke Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Diskon didasarkan pada harga bulanan standar."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Apabila Anda membeli Pass Family atau Unlimited, langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir siklus tagihan Anda."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir masa tagihan Anda."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Terpopuler"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Tertagih dengan harga ${ amount } untuk satu kali pembayaran"
-      ],
-      "for ${ durationDeal }": [
-        "untuk ${ durationDeal }"
-      ],
-      "forever": [
-        "selamanya"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Diperbarui setelah 1 bulan dengan harga ${ regularAmount }."
@@ -1830,6 +1827,9 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, ${ DARK_WEB_MONITORING_NAME }, dan masih banyak lagi."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
@@ -1867,9 +1867,6 @@
       ],
       "12 months": [
         "12 bulan"
-      ],
-      "24 months": [
-        "24 bulan"
       ],
       "Annually": [
         "Tahunan"
@@ -1989,11 +1986,32 @@
       "Copy": [
         "Salin"
       ],
+      "Create label": [
+        "Buat label"
+      ],
+      "Discover and set up features": [
+        "Telusuri dan siapkan berbagai fitur"
+      ],
       "Invite": [
         "Undang"
       ],
+      "Maybe later": [
+        "Mungkin nanti"
+      ],
+      "Next": [
+        "Berikutnya"
+      ],
+      "Remind me later": [
+        "Ingatkan saya nanti"
+      ],
       "Send": [
         "Kirim"
+      ],
+      "Set up other features": [
+        "Siapkan fitur lainnya"
+      ],
+      "Take a tour": [
+        "Ikuti tur kami"
       ],
       "Tweet": [
         "Tweet"
@@ -3615,7 +3633,7 @@
         "Semua orang dalam organisasi Anda dapat menghubungkan ke server terbagi dalam semua negara."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
-        "Dapatkan pemberitahuan jika kata sandi atau data lain Anda bocor dari layanan pihak ketiga."
+        "Dapatkan pemberitahuan apabila kata sandi atau data lain Anda terbocorkan dari layanan pihak ketiga."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Dapatkan saldo hingga ${ credits } dengan mengundang teman ke ${ BRAND_NAME }."
@@ -4660,6 +4678,12 @@
       ],
       "Please generate keys before you try to change your password": [
         "Silakan buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
+      ],
+      "Please select a country": [
+        "Silakan pilih negara"
+      ],
+      "Please select a state": [
+        "Silakan pilih negara bagian/provinsi"
       ],
       "Please set a recovery email first": [
         "Harap tentukan alamat email pemulihan terlebih dahulu"
@@ -6244,7 +6268,7 @@
         "Waktu desimal tidak didukung"
       ],
       "Malformed all-day event": [
-        "Acara seharian tidak terformat dengan benar"
+        "Acara sepanjang hari tidak terformat dengan benar"
       ],
       "Malformed end time": [
         "Waktu akhir tidak terformat dengan benar"
@@ -6627,6 +6651,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
       ],
+      "${ checkout.discountPercent }% discount": [
+        "Diskon ${ checkout.discountPercent }%"
+      ],
       "${ current } of ${ total }": [
         "${ current } dari ${ total }"
       ],
@@ -6663,6 +6690,9 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } berkas yang diunggah bukan merupakan kunci privat yang valid. Silakan verifikasi keabsahan kunci dan coba lagi."
       ],
+      "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
+        "${ PASS_APP_NAME } memungkinkan Anda untuk menyimpan kata sandi, catatan, dan informasi sensitif lainnya dengan enkripsi end-to-end. Tersedia pada ${ ios }, ${ android }, dan ${ browser } Anda."
+      ],
       "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
         "${ PASS_APP_NAME } merupakan pengelola kata sandi generasi mendatang yang dirancang untuk kemudahan penggunaan dan produktivitas. Open-source, dikembangkan bersama oleh SimpleLogin dan ${ BRAND_NAME }."
       ],
@@ -6677,6 +6707,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } merupakan program perlindungan akun tingkat lanjut yang diberdayakan oleh sistem AI canggih dan para ahli yang bekerja tanpa henti untuk melindungi Anda dari pelaku tindak kejahatan dan ancaman keamanan."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pengawasan yang telaten terhadap aktivitas yang mencurigakan."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
@@ -6798,6 +6831,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
       ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Akses 6500+ server berkecepatan tinggi pada hingga 10 perangkat untuk menjaga agar data penjelajahan internet Anda aman. Tersedia di ${ ios }, ${ android }, ${ appleTV }, dan ${ desktop }."
+      ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Akses kata sandi Anda dan lindungi identitas online Anda pada seluruh perangkat Anda secara terpadu. Unduh dan pasang aplikasi dan ekstensi ${ PASS_APP_NAME } yang sesuai dengan kebutuhan Anda."
       ],
@@ -6815,6 +6851,9 @@
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
+      ],
+      "Active": [
+        "Aktif"
       ],
       "active": [
         "aktif"
@@ -7025,6 +7064,9 @@
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Pesan balasan otomatis akan selalu aktif pada setiap hari yang Anda pilih, di antara rentang jam yang Anda tentukan."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Hapus email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu secara otomatis."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Tersedia pada macOS, Windows, dan Linux."
@@ -7275,6 +7317,12 @@
       "Discount": [
         "Diskon"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Telusuri berbagai fitur yang terbuka dan gunakan fitur-fitur ini sekarang juga!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Telusuri berbagai fitur yang terbuka dengan ${ planTitle } dan gunakan fitur-fitur ini sekarang juga!"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -7319,6 +7367,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
+      ],
+      "Download on the App Store": [
+        "Unduh di App Store"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Unduh template CSV kami, lengkapi rincian pengguna yang terkait, lalu unggah berkas CSV yang telah diisi untuk membuat akun bagi para pengguna ini."
@@ -7371,6 +7422,9 @@
       "Emailing preference saved": [
         "Preferensi pengiriman email disimpan"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu akan dihapus secara otomatis."
+      ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Email yang ditandai dengan label ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
       ],
@@ -7388,6 +7442,9 @@
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Diaktifkan pada ${ formattedDateAndTime }"
+      ],
+      "Enabling auto-deletion…": [
+        "Mengaktifkan penghapusan otomatis…"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Mengaktifkan ulang frasa pemulihan akan membuat frasa pemulihan baru."
@@ -7409,6 +7466,9 @@
       ],
       "Enhance your network security": [
         "Tingkatkan keamanan jaringan Anda"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Nikmati pengalaman berkirim email yang lebih cepat dan terfokus dengan aplikasi desktop."
       ],
       "Enter key manually instead": [
         "Masukkan kunci secara manual"
@@ -7491,6 +7551,9 @@
       "For a 10-year version history, please contact our sales team.": [
         "Untuk riwayat versi 10 tahun, silakan hubungi tim pemasaran kami."
       ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Untuk akses kapan saja dan pengalaman mobile yang lebih optimal, unduh aplikasi ${ androidAppLink } atau ${ iosAppLink } kami."
+      ],
       "for choosing ${ product }": [
         "telah memilih ${ product }"
       ],
@@ -7526,6 +7589,12 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Dapatkan akses dengan membuat akun ${ BRAND_NAME } dan menerima undangan ini."
+      ],
+      "Get it on Google Play": [
+        "Dapatkan di Google Play"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Dapatkan pemberitahuan apabila kata sandi atau data lain Anda terbocorkan dari layanan pihak ketiga."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Dapatkan notifikasi apabila kata sandi atau data pribadi Anda lainnya dibocorkan. ${ learnMoreLinkNoBreach }"
@@ -7710,6 +7779,9 @@
       "Invite deleted": [
         "Undangan dihapus"
       ],
+      "Invite family members and get everything up and running.": [
+        "Undang anggota keluarga dan atur agar segala sesuatunya berjalan sesuai kebutuhan."
+      ],
       "Invite for new user deleted": [
         "Undangan untuk pengguna baru dihapus"
       ],
@@ -7724,6 +7796,9 @@
       ],
       "Invite successfully sent": [
         "Undangan berhasil dikirim"
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Undang pasangan, sahabat, atau siapa pun itu yang ingin Anda ajak untuk berbagi paket ${ protonDuoPlanName } bersama Anda."
       ],
       "It appears some of your data is encrypted and locked.": [
         "Sepertinya sebagian data Anda terenkripsi dan terkunci."
@@ -8046,6 +8121,9 @@
       "or assign to any country in ${ availableAgainAfterHours } hour": [
         "atau tetapkan ke negara mana pun dalam ${ availableAgainAfterHours } jam"
       ],
+      "or discover other features:": [
+        "atau telusuri berbagai fitur lainnya:"
+      ],
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
       ],
@@ -8235,6 +8313,9 @@
       "purchase additional storage": [
         "membeli ruang penyimpanan tambahan"
       ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Hubungi kami untuk bantuan seputar segala sesuatunya yang berhubungan dengan ${ BRAND_NAME }."
+      ],
       "read our two-factor authentication guide first": [
         "baca panduan autentikasi dua faktor kami terlebih dahulu"
       ],
@@ -8276,6 +8357,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
+      ],
+      "Registering your subscription…": [
+        "Mendaftarkan langganan Anda…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Jangan lupa untuk membagikan rincian masuk ini kepada masing-masing pengguna."
@@ -8361,6 +8445,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Kirim email pengingat agar anggota organisasi Anda terdorong untuk melindungi akun mereka dengan 2FA."
       ],
+      "Send messages at just the right now": [
+        "Kirim pesan di waktu yang tepat"
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -8384,6 +8471,12 @@
       ],
       "Setting successfully saved": [
         "Pengaturan berhasil disimpan"
+      ],
+      "Setting up ${ feature }…": [
+        "Menyiapkan ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Menyiapkan alamat baru Anda…"
       ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
@@ -8433,6 +8526,9 @@
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } bagi alamat domain khusus milik Anda. Untuk menggunakan fitur ini, mulailah dengan menghasilkan token baru."
       ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Tunda pesan ke kemudian waktu sehingga pesan ini dapat muncul pada kotak masuk di waktu yang Anda inginkan"
+      ],
       "Some keys successfully reactivated": [
         "Sebagian kunci berhasil diaktifkan ulang"
       ],
@@ -8444,6 +8540,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Mulai gunakan versi singkat dari alamat email Anda yang lebih ringkas dan menarik."
       ],
       "Stay tuned for future promotions.": [
         "Jangan lewatkan promosi lainnya yang akan datang."
@@ -8498,6 +8597,9 @@
       ],
       "Switch to": [
         "Beralih ke"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Sinkronkan dan kelola berkas dengan aplikasi ${ DRIVE_APP_NAME }. Buat dan bagikan dokumen di ${ DOCS_APP_NAME }, dan simpan dokumen ini secara aman. Semuanya tersedia di ${ ios }, ${ android }, dan ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
@@ -9147,8 +9249,14 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Anda menggunakan ruang penyimpanan lebih dari yang terliput pada paket ${ downgradedPlanName }. Silakan hapus sebagian data untuk dapat menurunkan paket."
       ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Anda dapat menambahkan domain khusus milik Anda ke ${ MAIL_APP_NAME }"
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Anda juga dapat menggabungkan kalender yang diimpor dengan kalender ${ BRAND_NAME } yang telah ada."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Anda dapat mengubah hal ini kapan saja di ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
@@ -9212,6 +9320,9 @@
       ],
       "You do not have permission to perform this action": [
         "Anda tidak memiliki izin untuk melakukan tindakan ini"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
       ],
       "You have ${ availableCount } new server available.": [
         "Anda memiliki ${ availableCount } server baru yang tersedia."
@@ -9293,6 +9404,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Anda tidak akan dapat memulihkan data yang terkunci dengan menggunakan berkas pemulihan yang Anda unduh. Tindakan ini juga akan menonaktifkan pemulihan berbasis perangkat."
+      ],
+      "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
+        "${ boldDiscountPercent } Anda untuk ${ boldPlanTitle } telah diterapkan"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Akun ${ BRAND_NAME } Anda terhubung dengan ${ externalEmailAddress }."
@@ -10794,6 +10908,9 @@
       "Start weekday": [
         "Awal pekan kerja"
       ],
+      "State": [
+        "Keadaan"
+      ],
       "Statement": [
         "Pernyataan"
       ],
@@ -10884,6 +11001,9 @@
       "VAT": [
         "PPN"
       ],
+      "VAT identification number": [
+        "Nomor identifikasi PPN"
+      ],
       "Verification code": [
         "Kode verifikasi"
       ],
@@ -10937,6 +11057,9 @@
       ],
       "Your referral link": [
         "Tautan rujukan Anda"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "label": {
@@ -11201,6 +11324,9 @@
       ],
       "Set email address": [
         "Tentukan alamat email"
+      ],
+      "settings": [
+        "pengaturan"
       ],
       "Sign in": [
         "Masuk"
@@ -11796,11 +11922,17 @@
       "Get started for ${ priceCoupon }": [
         "Mulai dengan harga ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Mulai dari ${ pricing }"
+      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -11931,6 +12063,9 @@
       ],
       "15 GB storage": [
         "Ruang penyimpanan 15 GB"
+      ],
+      "200 GB of storage": [
+        "Ruang penyimpanan 200 GB"
       ],
       "24/7 account management support": [
         "Layanan pengelolaan akun 24/7"
@@ -12148,6 +12283,9 @@
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
       ],
+      "Private photo backup": [
+        "Pencadangan foto pribadi"
+      ],
       "Proofread and refine your emails": [
         "Periksa dan sempurnakan email Anda"
       ],
@@ -12183,6 +12321,9 @@
       ],
       "Secure Core servers": [
         "Server Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Penyimpanan dan pembagian berkas yang aman"
       ],
       "Secure link sharing": [
         "Pembagian tautan aman"
@@ -12338,6 +12479,17 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -12448,17 +12600,6 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
@@ -12499,6 +12640,14 @@
       ],
       "Your selected plan: ${ planName }": [
         "Paket yang Anda pilih: ${ planName }"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Harga diskon ${ priceCoupon } ini valid untuk bulan pertama. Setelahnya, paket Anda akan diperbarui secara otomatis dengan harga ${ priceMailPlus }. Anda dapat membatalkan langganan ini kapan saja."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } hanya dengan harga ${ priceMailPlus }. Batalkan kapan saja."
       ]
     },
     "new_plans: Title": {
@@ -13053,9 +13202,60 @@
         "Tentukan apa-apa saja yang dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, melihat dan mengunduh seluruh agenda yang Anda akses dari Google Calender."
       ]
     },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Penawaran ${ pricingTitle } berakhir hari ini!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Dapatkan Mail Plus hanya seharga ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Plus Anda."
+      ],
+      "Limited-time offer": [
+        "Penawaran waktu terbatas"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
+      ],
+      "Save 80% on your first month.": [
+        "Hemat 80% pada bulan pertama Anda."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 fitur premium lainnya"
+      ],
+      "Custom email domain": [
+        "Domain email khusus"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Ruang penyimpanan"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Selamat datang di ${ appName }"
+      ]
+    },
+    "Onboarding modal": {
+      "browser": [
+        "browser"
+      ],
+      "Desktop": [
+        "Desktop"
       ]
     },
     "Option": {
@@ -13211,6 +13411,9 @@
       ],
       "No permission": [
         "Tidak ada izin"
+      ],
+      "None": [
+        "Tidak ada"
       ],
       "Normal": [
         "Normal"
@@ -14105,11 +14308,20 @@
       "Address": [
         "Alamat"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Kota A"
+      ],
       "Choose a name": [
         "Tentukan nama"
       ],
       "Choose display name": [
         "Pilih nama tampilan"
+      ],
+      "Company name": [
+        "Nama perusahaan"
       ],
       "Confirm": [
         "Konfirmasi"
@@ -14149,6 +14361,9 @@
       ],
       "Link": [
         "Tautan"
+      ],
+      "Main street 12": [
+        "Jalan Utama No. 12"
       ],
       "Name": [
         "Nama"
@@ -14210,8 +14425,14 @@
       "Text": [
         "Teks"
       ],
+      "Thomas": [
+        "Thomas"
+      ],
       "Type text or keyword": [
         "Ketik teks atau kata kunci"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ],
       "yourdomain.com": [
         "domainanda.com"
@@ -15505,6 +15726,9 @@
       ],
       "Upgrade": [
         "Tingkatkan akun"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Tingkatkan dengan harga ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -16955,6 +17179,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
       ],
+      "${ feature } is now active": [
+        "${ feature } kini telah aktif"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -17096,6 +17323,9 @@
       "An address for each role": [
         "Alamat untuk masing-masing jabatan"
       ],
+      "Anytime, anywhere access": [
+        "Akses kapan saja dan di mana saja"
+      ],
       "App": [
         "Aplikasi"
       ],
@@ -17119,6 +17349,9 @@
       ],
       "Authentication security": [
         "Keamanan autentikasi"
+      ],
+      "Auto-deletion is active": [
+        "Penghapusan otomatis aktif"
       ],
       "Auto-reply": [
         "Pesan balasan otomatis"
@@ -17276,6 +17509,9 @@
       "Currency": [
         "Mata uang"
       ],
+      "Custom domains:": [
+        "Domain khusus:"
+      ],
       "Custom filters": [
         "Filter khusus"
       ],
@@ -17383,6 +17619,9 @@
       ],
       "Display name and signature": [
         "Nama tampilan dan tanda tangan"
+      ],
+      "Distraction-free emailing": [
+        "Email bebas gangguan"
       ],
       "Domain names": [
         "Nama domain"
@@ -17762,6 +18001,9 @@
       "Other calendars": [
         "Kalender lainnya"
       ],
+      "Other features included in your plan": [
+        "Fitur lainnya yang terliput dalam paket Anda"
+      ],
       "Other preferences": [
         "Preferensi lainnya"
       ],
@@ -17812,6 +18054,9 @@
       ],
       "Previous": [
         "Sebelumnya"
+      ],
+      "Priority support:": [
+        "Dukungan prioritas:"
       ],
       "Privacy and data collection": [
         "Privasi dan pengumpulan data"
@@ -17909,6 +18154,9 @@
       "Save time with email filters": [
         "Hemat waktu dengan filter email"
       ],
+      "Schedule send:": [
+        "Jadwalkan pengiriman:"
+      ],
       "Secure email based in Switzerland": [
         "Email aman berbasis di Swiss"
       ],
@@ -17960,6 +18208,9 @@
       "Set organization name": [
         "Tentukan nama organisasi"
       ],
+      "Set up ${ protonDuoPlanName }": [
+        "Siapkan ${ protonDuoPlanName }"
+      ],
       "Set up a recovery method": [
         "Siapkan metode pemulihan"
       ],
@@ -17968,6 +18219,9 @@
       ],
       "Set up two-factor authentication": [
         "Atur autentikasi dua faktor"
+      ],
+      "Set up your family account": [
+        "Siapkan akun keluarga Anda"
       ],
       "Set your password": [
         "Tetapkan kata sandi Anda"
@@ -18007,6 +18261,9 @@
       ],
       "SMTP submission": [
         "Submisi SMTP"
+      ],
+      "Snooze:": [
+        "Tunda:"
       ],
       "Sort folders alphabetically": [
         "Urut folder sesuai abjad"
@@ -18163,6 +18420,9 @@
       ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Anda kini dapat membuat folder dan label tanpa batasan jumlah"
       ],
       "You have no open alerts": [
         "Anda tidak memiliki peringatan yang terbuka"

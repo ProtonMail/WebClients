@@ -131,7 +131,7 @@
         "Afegeix una etiqueta"
       ],
       "Add more ${ BRAND_NAME } Scribe seats": [
-        "Afegeix més llicències per a ${ BRAND_NAME } Scribe"
+        "Afegeix més llicències de ${ BRAND_NAME } Scribe"
       ],
       "Add notification": [
         "Afegeix una notificació"
@@ -1818,34 +1818,9 @@
         "Historial de versions"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } Plus no té preu de renovació, és un pagament únic per a l'accés de per vida a Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Els descomptes es basen en els preus mensuals estàndard."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compreu Pass Family o Unlimited, la vostra subscripció es renovarà automàticament a la tarifa amb descompte i la durada estàndard al final del vostre cicle de facturació."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "La vostra subscripció es renovarà automàticament a la tarifa amb descompte i durada predeterminades al final del cicle de facturació."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Més populars"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
-      ],
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
-      ],
-      "forever": [
-        "per sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
@@ -1900,9 +1875,6 @@
       ],
       "12 months": [
         "12 mesos"
-      ],
-      "24 months": [
-        "24 mesos"
       ],
       "Annually": [
         "Cada any"
@@ -2023,7 +1995,7 @@
         "Copia"
       ],
       "Create label": [
-        "Creu una etiqueta"
+        "Crea una etiqueta"
       ],
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
@@ -4717,7 +4689,7 @@
         "Habiliteu el suport multiusuari abans d'afegir usuaris a la vostra organització."
       ],
       "Please enter a valid Entity ID URL": [
-        "Introduïu un URL d'identificació d'entitat vàlid."
+        "Introduïu un URL vàlid per a l'ID de l'entitat."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
@@ -5145,7 +5117,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "Alguna cosa ha anat malament."
+        "S'ha produït un error."
       ],
       "Support ticket does not exist.": [
         "El tiquet de suport no existeix."
@@ -5466,7 +5438,7 @@
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "Heu arribat al límit de ${ n } invitació acceptada en 6 mesos.",
+        "Heu arribat al límit d'${ n } invitació acceptada en 6 mesos.",
         "Heu arribat al límit de ${ n } invitacions acceptades en 6 mesos."
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
@@ -5681,7 +5653,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "S'ha desactivat l'autenticació de dos factors amb clau de seguretat"
+        "S'ha desactivat l'autenticació de doble factor amb clau de seguretat"
       ],
       "Add a name to identify your security key with.": [
         "Afegiu un nom per identificar la vostra clau de seguretat."
@@ -5721,10 +5693,10 @@
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
         "Heu assolit el màxim d'${ maxSecurityKeyLength } clau de seguretat.",
-        "Heu assolit el màxim d'${ maxSecurityKeyLength } claus de seguretat."
+        "Heu assolit el màxim de ${ maxSecurityKeyLength } claus de seguretat."
       ],
       "Your two-factor authentication key is ready to use.": [
-        "La vostra clau d'autenticació de dos factors està llesta."
+        "La vostra clau d'autenticació de doble factor està llesta."
       ]
     },
     "fido2: Label": {
@@ -6507,7 +6479,7 @@
         "El vostre compte de correu electrònic en requereix una per exportar les dades."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. No utilitzeu la contrasenya normal."
+        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. No utilitzeu la contrasenya habitual."
       ],
       "Your email address and password are correct.": [
         "La vostra adreça de correu electrònic i contrasenya són correctes."
@@ -6685,8 +6657,8 @@
     },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } usuari actualment ten accés als servidors compartits.",
-        "${ amountUsers }/${ totalUsers } usuari actualment tenen accés als servidors compartits."
+        "${ amountUsers }/${ totalUsers } usuaris tenen actualment accés als servidors compartits.",
+        "${ amountUsers }/${ totalUsers } usuaris tenen actualment accés als servidors compartits."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -6725,6 +6697,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendari combinat",
         "${ calendarsToBeMergedCount } calendaris combinats"
+      ],
+      "${ checkout.discountPercent }% discount": [
+        "${ checkout.discountPercent }% de descompte"
       ],
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
@@ -6767,7 +6742,7 @@
         "${ numberOfNonPrivateKeys } fitxers carregats no són claus privades vàlides. Verifiqueu-ho i torneu-ho a provar."
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
-        "${ PASS_APP_NAME } us permet emmagatzemar contrasenyes, notes i altres informacions sensibles amb xifratge de punta a punta. Disponible a ${ ios }, ${ android } i al vostre ${ browser }."
+        "${ PASS_APP_NAME } us permet emmagatzemar contrasenyes, notes i altres informacions confidencials amb xifratge d'extrem a extrem. Disponible a ${ ios }, ${ android } i al vostre ${ browser }."
       ],
       "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
         "${ PASS_APP_NAME } és el gestor de contrasenyes de nova generació dissenyat per a la facilitat d'ús i la productivitat. Amb codi obert i desenvolupat conjuntament per SimpleLogin i ${ BRAND_NAME }."
@@ -6958,7 +6933,7 @@
         "Afegeix un número de telèfon de recuperació"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Afegiu una capa de seguretat addicional al vostre compte. Haureu de verificar-vos amb l'autenticació de dos factors (A2F) cada vegada que inicieu la sessió."
+        "Afegiu una capa de seguretat addicional al vostre compte. Haureu de verificar-vos amb l'autenticació de doble factor (2FA) cada vegada que inicieu la sessió."
       ],
       "Add domain": [
         "Afegeix un domini"
@@ -7124,7 +7099,7 @@
         "Esteu segur que voleu atorgar privilegis administratius a aquest usuari?"
       ],
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
-        "Esteu segur que voleu abandonar aquest grup? Si marxeu, l'administrador del grup us haurà de convidar de nou per unir-vos-hi."
+        "Segur que voleu abandonar aquest grup? Si marxeu, l'administrador del grup us haurà de convidar de nou per unir-vos-hi."
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Estàs segur que vols eliminar tots els teus registres de forma permanent?"
@@ -7217,7 +7192,7 @@
         "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
-        "En crear un compte ${ PASS_APP_NAME } amb el vostre correu electrònic SimpleLogin, podeu gestionar els vostres àlies directament des de ${ PASS_APP_NAME }."
+        "En crear un compte ${ PASS_APP_NAME } amb el vostre correu electrònic de SimpleLogin, podeu gestionar els vostres àlies directament des de ${ PASS_APP_NAME }."
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Per defecte, els membres de l'organització només poden exportar caixes fortes de les quals són propietaris. Si s'activa aquesta opció, no podran exportar cap dada"
@@ -7385,7 +7360,7 @@
         "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
-        "Servidors dedicats amb adreces IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat."
+        "Es poden afegir servidors dedicats amb adreces IP dedicades a portes d'enllaç privades per a activar un control d'accés més optimitzat."
       ],
       "default email address": [
         "adreça de correu electrònic per defecte"
@@ -7410,7 +7385,7 @@
         "Desactivació el ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Si desactiveu l'autenticació de dos factors, el vostre compte serà menys segur. Només procediu si és absolutament necessari."
+        "Si desactiveu l'autenticació de doble factor, el vostre compte serà menys segur. Només procediu si és absolutament necessari."
       ],
       "Discount": [
         "Descompte"
@@ -7468,7 +7443,7 @@
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
       ],
       "Download on the App Store": [
-        "Descarregau-lo a l'App Store"
+        "Descarregueu-la a l'App Store"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Descarregueu la nostra plantilla CSV, empleneu els detalls dels usuaris i després carregueu el fitxer CSV complet per a crear comptes per a aquests usuaris."
@@ -7567,7 +7542,7 @@
         "Milloreu la seguretat de la vostra xarxa"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "Gaudiu d'una experiència de correu electrònic més ràpida i centrada en l'aplicació d'escriptori."
+        "Gaudiu d'una experiència de correu electrònic més ràpida i centrada amb l'aplicació d'escriptori."
       ],
       "Enter key manually instead": [
         "Introduir clau manualment"
@@ -7675,10 +7650,10 @@
         "Passarel·les"
       ],
       "Gateways monitoring is disabled.": [
-        "El monitoratge de passarel·les està desactivat."
+        "La supervisió de passarel·les està desactivada."
       ],
       "Gateways monitoring is enabled.": [
-        "El monitor de passarel·les està activat."
+        "La supervisió de passarel·les està activada."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generació d’una nova frase de recuperació desactivarà l'antiga."
@@ -7690,7 +7665,7 @@
         "Accedeix creant un compte ${ BRAND_NAME } i acceptant la invitació."
       ],
       "Get it on Google Play": [
-        "Obteniu-lo a Google Play"
+        "Obteniu-la a Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
@@ -7759,7 +7734,7 @@
         "Si teniu un codi regal, introduïu-lo a sota per aplicar el vostre descompte."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Si mai no heu utilitzat l'autenticació de dos factors abans, us recomanem que us en feu ${ guideButton }."
+        "Si mai no heu utilitzat l'autenticació de doble factor abans, us recomanem ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si perdeu la contrasenya i necessiteu recuperar el compte, ${ boldImperative } que teniu un ${ boldAccountRecovery } al seu lloc."
@@ -7768,7 +7743,7 @@
         "Si perdeu la contrasenya i necessiteu recuperar el compte, ${ boldImperative } que teniu un ${ boldAccountAndRecovery } al seu lloc. En cas contrari, és possible que no pugueu accedir a cap dels vostres correus electrònics, contactes o fitxers."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Si perdeu el dispositiu activat per a l'autenticació de dos factors, es poden utilitzar aquests codis en lloc del codi d’autenticació de dos factors de 6 dígits per iniciar la sessió al vostre compte. Cada codi només es pot utilitzar una vegada."
+        "Si perdeu el dispositiu activat per a l'autenticació de doble factor, es poden utilitzar aquests codis en lloc del codi d’autenticació de doble factor de 6 dígits per a iniciar la sessió al vostre compte. Cada codi només es pot fer servir una vegada."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si passeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ MAIL_APP_NAME } i ${ VPN_APP_NAME }."
@@ -7820,7 +7795,7 @@
         "IMPORTANT: Si la vostra consola DNS no permet que els valors de CNAME acabin amb un punt, podeu esborrar el darrer punt dels valors de CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Important: assegureu-vos de desar els codis de recuperació. En cas contrari, podeu perdre l'accés al vostre compte permanentment si perdeu el dispositiu d'autenticació de dos factors."
+        "Important: assegureu-vos de desar els codis de recuperació. En cas contrari, podeu perdre l'accés al vostre compte permanentment si perdeu el dispositiu d'autenticació de doble factor."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -7880,7 +7855,7 @@
         "S'ha eliminat la invitació."
       ],
       "Invite family members and get everything up and running.": [
-        "Convideu a altres membres de la vostra família i comenceu de manera immediata."
+        "Convideu els membres de la família i poseu-ho tot en marxa."
       ],
       "Invite for new user deleted": [
         "S'ha eliminat la invitació per al nou usuari."
@@ -7899,13 +7874,13 @@
         "S'han enviat les invitacions."
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
-        "Convideu la vostra parella, amics o qui sigui amb qui estiguis compartint el vostre pla ${ protonDuoPlanName }."
+        "Convideu la vostra parella, un amic o qui sigui amb qui estigueu compartint el vostre pla ${ protonDuoPlanName }."
       ],
       "It appears some of your data is encrypted and locked.": [
         "Sembla que algunes de les vostres dades estan xifrades i bloquejades."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
-        "Es triguen 10 dies a canviar el país d'un servidor. Assegureu-vos que la vostra selecció sigui correcta."
+        "Es triga 10 dies a canviar el país d'un servidor. Assegureu-vos que la vostra selecció sigui correcta."
       ],
       "Item autofilled in ${ vaultLink }": [
         "S'ha emplenat automàticament l'element a ${ vaultLink }"
@@ -8049,7 +8024,7 @@
         "S'estan carregant les dades d'eduGAIN..."
       ],
       "Loading gateways monitoring current status.": [
-        "Carregant les portes d'enllaç que monitoritzen l'estat actual"
+        "S'està carregant l'estat actual de la supervisió de les passarel·les."
       ],
       "Loading preview": [
         "S'està carregant la previsualització"
@@ -8073,7 +8048,7 @@
         "Gestioneu les vostres preferències de notificació per correu electrònic per a ${ DOCS_APP_NAME }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduïu manualment aquesta informació al vostre dispositiu d'autenticació de dos factors per configurar el vostre compte. ${ switchButton }."
+        "Introduïu manualment aquesta informació al vostre dispositiu d'autenticació de doble factor per a configurar el compte. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -8166,7 +8141,7 @@
         "No s'ha seleccionat cap etiqueta"
       ],
       "No location filters are currently assigned.": [
-        "Actualment no hi ha cap filtre d'ubicació assignat."
+        "Actualment, no hi ha cap filtre d'ubicació assignat."
       ],
       "No logs yet.": [
         "Encara no hi ha registres."
@@ -8178,7 +8153,7 @@
         "No s'ha trobat cap resultat."
       ],
       "No Shared Servers Found": [
-        "No s'han trobat cap servidor compartit."
+        "No s'ha trobat cap servidor compartit."
       ],
       "Not a valid URL": [
         "No és un URL vàlid."
@@ -8217,12 +8192,12 @@
         "o ${ selectFileButton }"
       ],
       "or assign to any country in ${ availableAgainAfterDays } day": [
-        "o assignar a qualsevol país en ${ availableAgainAfterDays } dia.",
-        "o assignar a qualsevol país en ${ availableAgainAfterDays } dies."
+        "o assignar-lo a qualsevol país en ${ availableAgainAfterDays } dia.",
+        "o assignar-los a qualsevol país en ${ availableAgainAfterDays } dies."
       ],
       "or assign to any country in ${ availableAgainAfterHours } hour": [
-        "o assignar a qualsevol país en ${ availableAgainAfterHours } hora.",
-        "o assignar a qualsevol país en ${ availableAgainAfterHours } hores."
+        "o assignar-lo a qualsevol país en ${ availableAgainAfterHours } hora.",
+        "o assignar-los a qualsevol país en ${ availableAgainAfterHours } hores."
       ],
       "or discover other features:": [
         "o descobriu altres característiques:"
@@ -8424,7 +8399,7 @@
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
       ],
       "read our two-factor authentication guide first": [
-        "llegir primer la nostra guia d’autenticació de dos factors"
+        "llegir primer la nostra guia d’autenticació de doble factor"
       ],
       "Recently used servers:": [
         "Servidors utilitzats recentment:"
@@ -8707,7 +8682,7 @@
         "Canvia a"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
-        "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creu i compartiu documents a ${ DOCS_APP_NAME } i deseu'ls de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
+        "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creeu i compartiu documents a ${ DOCS_APP_NAME } i deseu-los de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
@@ -8767,7 +8742,7 @@
         "Les següents adreces no s'han creat."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Els següents membres rebran un correu electrònic que els demanarà activar l'autenticació de dos factors tan aviat com sigui possible."
+        "Els següents membres rebran un correu electrònic que els demanarà activar l'autenticació de doble factor tan aviat com sigui possible."
       ],
       "The format of your CSV file is incorrect.": [
         "El format del fitxer CSV és incorrecte."
@@ -8872,10 +8847,10 @@
         "Això eliminarà totes les versions anteriors dels vostres fitxers."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
-        "Això denegarà l'accés a **${ email }**. Esteu segur que voleu continuar?"
+        "Això denegarà l'accés a **${ email }**. Segur que voleu continuar?"
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
-        "Això desactivarà l'autenticació de dos factors, tant l'aplicació d'autenticació com els mètodes de clau de seguretat."
+        "Això desactivarà l'autenticació de doble factor, tant l'aplicació d'autenticació com els mètodes de clau de seguretat."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Això desactivarà la vostra frase de recuperació actual. No podreu utilitzar-la per a accedir al vostre compte ni desxifrar les vostres dades."
@@ -8914,13 +8889,13 @@
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Això tancarà qualsevol sessió activa i desactivarà l'autenticació de dos factors."
+        "Això tancarà qualsevol sessió activa i desactivarà l'autenticació de doble factor."
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
-        "Això desenllaçarà el dispositiu **${ name } (creat a ${ date })** del vostre compte ${ BRAND_NAME }."
+        "Això desenllaçarà el dispositiu **${ name } (creat el ${ date })** del vostre compte ${ BRAND_NAME }."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Aquest assistent activarà l'autenticació de dos factors (A2F) al vostre compte de ${ BRAND_NAME }. L’autenticació de dos factors farà que el vostre compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
+        "Aquest assistent activarà l'autenticació de doble factor (2FA) al vostre compte de ${ BRAND_NAME }. L’autenticació de doble factor farà que el compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
       ],
       "to ${ product } Business": [
         "a ${ product } Business"
@@ -9004,10 +8979,10 @@
         "Connexions VPN totals"
       ],
       "Two-factor authentication disabled": [
-        "Autenticació de dos factors desactivada"
+        "S'ha desactivat l'autenticació de doble factor"
       ],
       "Two-factor authentication enabled": [
-        "S'ha activat l'autenticació de dos factors"
+        "S'ha activat l'autenticació de doble factor"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al compte i una altra per a desxifrar les dades. (Avançat)"
@@ -9016,7 +8991,7 @@
         "El mode de doble contrasenya empra contrasenyes separades per a l'inici de sessió i el desxifratge de les dades. Això proporciona un petit benefici de seguretat en algunes situacions, però recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per a canviar al mode de doble contrasenya, primer establiu una contrasenya d'inici de sessió i després una segona contrasenya."
       ],
       "Unable to check gateways monitoring current status.": [
-        "No es pot comprovar l'estat actual de les passarel·les."
+        "No es pot comprovar l'estat actual de la supervisió de les passarel·les."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No es pot verificar la signatura del fitxer de recuperació. Poseu-vos en contacte amb atenció al client."
@@ -9091,7 +9066,7 @@
         "Utilitzeu un gestor de contrasenyes per a generar i emmagatzemar de forma segura les vostres contrasenyes, assegurant contrasenyes fortes i inicis de sessió més senzills."
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
-        "Utilitzeu un mètode de recuperació per desactivar els mètodes d'autenticació de dos factors.."
+        "Utilitzeu un mètode de recuperació per desactivar els mètodes d'autenticació de doble factor."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilitzeu el millor servidor segons la càrrega i la ubicació actuals: ${ formattedBestServerName }"
@@ -9214,10 +9189,10 @@
         "Recomanem tenir múltiples servidors en diferents ubicacions per a proporcionar redundància."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "Recomanem que notifiqueu als membres de la família i els demaneu que estableixin l'autenticació de dos factors (A2F) per als seus comptes abans de fer-ne complir l'ús."
+        "Recomanem que notifiqueu als membres de la família i els demaneu que estableixin l'autenticació de doble factor (2FA) per als seus comptes abans de fer-ne complir l'ús."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "Recomanem que notifiqueu als membres de l'organització i els demaneu que estableixin l'autenticació de dos factors (A2F) per als seus comptes abans de fer-ne complir l'ús."
+        "Recomanem que notifiqueu als membres de l'organització i els demaneu que estableixin l'autenticació de doble factor (2FA) per als seus comptes abans de fer-ne complir l'ús."
       ],
       "We recommend using your recovery phrase instead.": [
         "Recomanem utilitzar la frase de recuperació."
@@ -9444,7 +9419,7 @@
       ],
       "You have ${ availableCount } new server available.": [
         "Teniu ${ availableCount } nou servidor disponible.",
-        "Teniu ${ availableCount } nous servidores disponibles."
+        "Teniu ${ availableCount } nous servidors disponibles."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
         "Teniu ${ unassignedAvailableCount } servidor disponible utilitzat recentment. Per assignar aquest servidor a un altre país, haureu d'esperar fins que es completi la desactivació.",
@@ -9524,6 +9499,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "No podreu recuperar dades bloquejades utilitzant els fitxers de recuperació descarregats. També es desactivarà la recuperació basada en dispositiu."
+      ],
+      "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
+        "S'ha aplicat el vostre ${ boldDiscountPercent } a ${ boldPlanTitle }."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "El vostre compte de ${ BRAND_NAME } està associat amb ${ externalEmailAddress }."
@@ -11500,8 +11478,8 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length } membre de ${ members.length } de la vostra organització usa l'autenticació de dos factors.",
-        "${ twoFAMembers.length } membres de ${ members.length } de la vostra organització usen l'autenticació de dos factors."
+        "${ twoFAMembers.length } membre de ${ members.length } de la vostra organització usa l'autenticació de doble factor.",
+        "${ twoFAMembers.length } membres de ${ members.length } de la vostra organització usen l'autenticació de doble factor."
       ],
       "Almost there": [
         "Ja gairebé està"
@@ -12441,7 +12419,7 @@
         "Suport prioritari i xat en directe"
       ],
       "Private photo backup": [
-        "Còpia de seguretat de fotos privades"
+        "Còpia de seguretat de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Corregiu i refineu els vostres correus electrònics"
@@ -12536,7 +12514,7 @@
         "TOR sobre VPN"
       ],
       "Two-factor authentication": [
-        "Autenticació de dos factors"
+        "Autenticació de doble factor"
       ],
       "Unlimited devices": [
         "Nombre il·limitat de dispositius"
@@ -12641,6 +12619,17 @@
       ],
       "Team management": [
         "Gestió d'equips"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: info": {
@@ -12753,17 +12742,6 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -12808,10 +12786,10 @@
     },
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "new_plans: Title": {
@@ -12995,7 +12973,7 @@
         "Requereix un codi enviat a un telèfon mòbil per iniciar la sessió. Això assegura que, fins i tot si una contrasenya està compromesa, el compte roman segur."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
+        "Restableix les contrasenyes i l'autenticació de doble factor dels usuaris."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Dirigiu el trànsit d'internet a través de la xarxa Tor amb un sol clic"
@@ -13265,13 +13243,13 @@
         "S'ha iniciat la prova."
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "S'ha imposat l'autenticació de dos factors per als administradors"
+        "S'ha imposat l'autenticació de doble factor per als administradors"
       ],
       "Two-factor authentication has been enforced for all members": [
-        "S'ha imposat l'autenticació de dos factors per a tots els membres"
+        "S'ha imposat l'autenticació de doble factor per a tots els membres"
       ],
       "Two-factor authentication is not required anymore": [
-        "L'autenticació de dos factors ja no és necessària"
+        "L'autenticació de doble factor ja no és necessària"
       ],
       "Video conferencing settings have been updated": [
         "S'han actualitzat les preferències de la videoconferència."
@@ -13370,7 +13348,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
-        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
+        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzar els vostres missatges de correu electrònic i la vostra configuració, visualitzar i descarregar els vostres contactes, visualitzar i descarregar totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
     "Offer": {
@@ -13387,7 +13365,7 @@
         "Aconseguiu l'oferta"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Última oportunitat d'aconseguir un 80% de descompte al primer mes de ${ plan } Plus."
+        "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan } Plus."
       ],
       "Limited-time offer": [
         "Oferta per temps limitat"
@@ -13406,7 +13384,7 @@
       "Custom email domain": [
         "Domini de correu electrònic personalitzat"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Adreces de correu electrònic"
       ],
       "Free": [
@@ -13585,6 +13563,9 @@
       ],
       "No permission": [
         "Sense permís"
+      ],
+      "None": [
+        "Cap"
       ],
       "Normal": [
         "Normal"
@@ -14436,7 +14417,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a ordenar al vostre banc que debiti el vostre compte i que faci el càrrec al vostre compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes a partir de la data de dèbit, segons les condicions del vostre acord amb el vostre banc."
+        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a instruir el vostre banc perquè debiti el vostre compte, i el banc a debitar el compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes des de la data del dèbit d'acord amb les condicions del vostre acord amb el banc."
       ],
       "Street address, postal code, and city": [
         "Adreça, codi postal i ciutat"
@@ -14886,7 +14867,7 @@
         "Entenc que no podré recuperar les dades bloquejades actualment amb aquest kit de recuperació."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
-        "Si oblideu la vostra contrasenya de ${ BRAND_NAME } i necessiteu restablir-la, la pròxima vegada que inicieu sessió en aquest dispositiu amb la vostra nova contrasenya, es restaurarà l'accés total al vostre compte de ${ BRAND_NAME }."
+        "Si oblideu la contrasenya de ${ BRAND_NAME } i necessiteu restablir-la, la pròxima vegada que inicieu sessió en aquest dispositiu amb la nova contrasenya, es restaurarà l'accés total al vostre compte de ${ BRAND_NAME }."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Si oblideu la vostra contrasenya de ${ BRAND_NAME } i necessiteu restablir-la, la pròxima vegada que inicieu sessió en aquest dispositiu amb la vostra nova contrasenya, es restaurarà l'accés total al vostre compte de ${ BRAND_NAME }."
@@ -15018,7 +14999,7 @@
         "El vostre compte i les vostres dades es poden recuperar. Heu recomanat accions per protegir encara més el vostre compte."
       ],
       "Your account and data can be recovered. You have recommended actions.": [
-        "El vostre compte i les vostres dades es poden recuperar. Heu recomanat accions."
+        "El vostre compte i les dades es poden recuperar. Teniu accions recomanades."
       ],
       "Your account is fully secure.": [
         "El vostre compte és totalment segur."
@@ -15057,7 +15038,7 @@
         "El vostre telèfon de recuperació"
       ],
       "Your recovery phone can **only recover access to your account**.": [
-        "El vostre telèfon de recuperació **només pot recuperar l'accés al vostre compte**."
+        "El telèfon de recuperació **només pot recuperar l'accés al compte**."
       ],
       "Your recovery phone has been enabled": [
         "S'ha activat el vostre telèfon de recuperació."
@@ -15918,6 +15899,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "La teva subscripció es renovarà al mateix preu cada any."
       ]
     },
     "specialoffer: Link": {
@@ -15928,7 +15912,7 @@
         "Millora"
       ],
       "Upgrade for ${ pricingTitle }": [
-        "Milloreu per ${ pricingTitle }"
+        "Milloreu el pla per ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -16058,14 +16042,14 @@
         "${ n } usuaris estan inactius. Podeu eliminar-los de la vostra organització amb seguretat."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ n } usuari demana la vostra ajuda per iniciar la sessió al seu compte ${ BRAND_NAME } amb un inici de sessió únic.",
-        "${ n } usuaris demanen la vostra ajuda per iniciar la sessió al seu compte ${ BRAND_NAME } amb un inici de sessió únic."
+        "${ n } usuari demana la vostra ajuda per a iniciar la sessió al seu compte de ${ BRAND_NAME } amb un inici de sessió únic.",
+        "${ n } usuaris demanen la vostra ajuda per a iniciar la sessió al seu compte de ${ BRAND_NAME } amb un inici de sessió únic."
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
-        "**Els usuaris amb Inici de sessió únic (SSO) - proporcionats pel vostre proveïdor d'identitat - se suprimiran** i els haureu de crear manualment per tornar-los a afegir a la vostra organització."
+        "**Els usuaris amb inici de sessió únic (SSO) - proporcionats pel vostre proveïdor d'identitat - se suprimiran** i els haureu de crear manualment per tornar-los a afegir a la vostra organització."
       ],
       "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
-        "**Els usuaris amb 'inici de sessió únic (SSO) es desvincularan del vostre proveïdor d'identitat** i es convertiran en usuaris sense inici de sessió únic (SSO)."
+        "**Els usuaris amb inici de sessió únic (SSO) es desvincularan del vostre proveïdor d'identitat** i es convertiran en usuaris sense SSO."
       ],
       "Access denied": [
         "S'ha denegat l'accés."
@@ -16080,7 +16064,7 @@
         "Aprova"
       ],
       "Approve or deny it now": [
-        "Aprova o nega-ho ara"
+        "Aprova-ho o denega-ho ara"
       ],
       "Approve the sign-in from another device": [
         "Aprova l'inici de sessió des d'un altre dispositiu"
@@ -16142,13 +16126,13 @@
         "Introduïu el codi de confirmació enviat a l'altre dispositiu."
       ],
       "Enter the confirmation code we sent to this user.": [
-        "Introduïu el codi de confirmació que enviem a aquest usuari."
+        "Introduïu el codi de confirmació que li hem enviat a aquest usuari."
       ],
       "Enter your backup password": [
         "Introduïu la vostra contrasenya de recuperació"
       ],
       "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Perquè aquest usuari pugui iniciar la sessió, assegureu-vos que existeixen al vostre proveïdor d'identitat."
+        "Perquè aquest usuari pugui iniciar la sessió, assegureu-vos que existeix al vostre proveïdor d'identitat."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Per la vostra seguretat, heu tancat la sessió de tots els vostres dispositius actius. Abans d'accedir al vostre compte, haureu d'introduir una nova contrasenya de recuperació."
@@ -16163,7 +16147,7 @@
         "Voleu donar accés a l'usuari?"
       ],
       "Grant access to users?": [
-        "Donar accés als usuaris?"
+        "Voleu atorgar accés als usuaris?"
       ],
       "If you didn't make this request, cancel it now.": [
         "Si no heu fet aquesta sol·licitud, cancel·leu-la ara."
@@ -16190,7 +16174,7 @@
         "No, no era jo."
       ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
-        "Els usuaris que no utilitzen un Inici de sessió únic (SSO) - creats manualment, no proporcionats pel vostre proveïdor d'identitat - encara poden iniciar sessió a la vostra organització."
+        "Els usuaris que no utilitzen un inici de sessió únic (SSO) - creats manualment, no proporcionats pel vostre proveïdor d'identitat - encara poden iniciar sessió a la vostra organització."
       ],
       "Once single sign-on is disabled for your organization:": [
         "Un cop desactivat l'inici de sessió únic per a la vostra organització:"
@@ -16208,10 +16192,10 @@
         "Elimina l'inici de sessió únic"
       ],
       "Remove single sign-on for your organization?": [
-        "Voleu esborrar l'inici de sessió únic de la vostra organització?"
+        "Voleu eliminar l'inici de sessió únic de la vostra organització?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
-        "Establiu una contrasenya de seguretat per afegir una capa addicional de protecció. Us permetrà iniciar la sessió si us bloquegeu, així que assegureu-vos de mantenir-lo en un lloc segur."
+        "Establiu una contrasenya de seguretat per a afegir una capa addicional de protecció. Us permetrà iniciar la sessió en cas de ser bloquejats, així que assegureu-vos de mantenir-la en un lloc segur."
       ],
       "Set your backup password": [
         "Configureu la vostra contrasenya de recuperació"
@@ -16226,7 +16210,7 @@
         "Inicieu la sessió a la vostra organització"
       ],
       "Sign out and in again to change your backup password": [
-        "Tanqueu la sessió i torneu a iniciar-la per canviar la vostra contrasenya de recuperació."
+        "Tanqueu la sessió i torneu a iniciar-la per canviar la contrasenya de seguretat."
       ],
       "Sign-in confirmed": [
         "S'ha confirmat l'inici de sessió."
@@ -16235,7 +16219,7 @@
         "S'ha rebutjat l'inici de sessió."
       ],
       "Sign-in requested on another device. Was it you?": [
-        "S'ha sol·licitat una connexió en un altre dispositiu. Heu estat vosaltres?"
+        "S'ha sol·licitat un inici de sessió en un altre dispositiu. Heu estat vosaltres?"
       ],
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
@@ -16247,7 +16231,7 @@
         "Això tancarà la sessió de l'usuari dels seus altres dispositius i haurà de crear una nova contrasenya de recuperació."
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
-        "Això us tancarà la sessió dels vostres altres dispositius i haureu de crear una nova contrasenya de recuperació."
+        "Això us tancarà la sessió dels altres dispositius i haureu de crear una nova contrasenya de seguretat."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "Per assegurar-vos que realment intenteu iniciar la sessió a **${ email }**, reviseu el codi de confirmació i aproveu la sol·licitud des d'un altre dispositiu."
@@ -16256,13 +16240,13 @@
         "Per assegurar-vos que realment esteu intentant iniciar la sessió, introduïu la vostra contrasenya de recuperació."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
-        "Per assegurar-vos que realment esteu intentant iniciar la sessió, compartiu el codi de confirmació amb el vostre administrador **${ adminEmail }** perquè pugui aprovar la sol·licitud de **${ email }**."
+        "Per assegurar-nos que l'intent d'inici de sessió és realment vostre, compartiu el codi de confirmació amb el vostre administrador **${ adminEmail }** perquè pugui aprovar la sol·licitud de **${ email }**."
       ],
       "Tried to sign in at": [
         "S'ha provat d'iniciar sessió a"
       ],
       "Use backup password instead": [
-        "Utilitza la contrasenya de recuperació en lloc"
+        "Utilitza la contrasenya de seguretat"
       ],
       "User details:": [
         "Detalls de l'usuari:"
@@ -16277,7 +16261,7 @@
         "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ],
       "Your SSO configuration will be deleted.": [
-        "La vostra configuració de SSO serà eliminada."
+        "S'eliminarà la vostra configuració de SSO."
       ]
     },
     "sso: auth device state": {
@@ -16291,7 +16275,7 @@
         "Activació pendent"
       ],
       "Pending admin activation": [
-        "Activació de l'administrador pendent"
+        "L'activació de l'administrador està pendent"
       ],
       "Rejected": [
         "Rebutjat"
@@ -17269,7 +17253,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Creeu detalls d'inici de sessió segurs en tots els vostres dispositius. Inclou, entre d'altres, àlies il·limitats, 20 caixes fortes, autenticació de dos factors (2FA) i inserció automàtica de targetes de crèdit."
+        "Creeu detalls d'inici de sessió segurs en tots els vostres dispositius. Inclou, entre d'altres, àlies il·limitats, 20 caixes fortes, autenticació de doble factor (2FA) i inserció automàtica de targetes de crèdit."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclou, entre d'altres, més de 2950 servidors en més de 65 països, connexió fins a 10 dispositius, accés a serveis de transmissió en línia de tot el món i bloqueig de programari maliciós i d'anuncis."
@@ -18459,7 +18443,7 @@
         "Configura el reenviament"
       ],
       "Set up two-factor authentication": [
-        "Configura l'autenticació de dos factors"
+        "Configura l'autenticació de doble factor"
       ],
       "Set up your family account": [
         "Configureu el vostre compte familiar"
@@ -18580,13 +18564,13 @@
         "Inici de sessió al TV"
       ],
       "Two-factor authentication": [
-        "Autenticació de dos factors"
+        "Autenticació de doble factor"
       ],
       "Two-factor authentication enforcement": [
-        "Aplicació de l'autenticació de dos factors"
+        "Aplicació obligatòria de l'autenticació de doble factor"
       ],
       "Two-factor authentication reminders": [
-        "Recordatoris de l'autenticació de dos factors"
+        "Recordatoris de l'autenticació de doble factor"
       ],
       "Type": [
         "Tipus"
@@ -19191,8 +19175,8 @@
         "Confirma-ho tot"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "No s'ha pogut activar automàticament l'accés d'administrador per ${ n } usuari perquè les seves claus de xifratge s'han actualitzat mentrestant:",
-        "No s'ha pogut activar automàticament l'accés d'administrador per ${ n } usuaris perquè les seves claus de xifratge s'han actualitzat mentrestant:"
+        "No s'ha pogut activar automàticament l'accés d'administrador per a ${ n } usuari perquè les seves claus de xifratge s'han actualitzat recentment:",
+        "No s'ha pogut activar automàticament l'accés d'administrador per a ${ n } usuaris perquè les seves claus de xifratge s'han actualitzat recentment:"
       ],
       "Could not enable administrator access: ${ error }": [
         "S'ha produït un error en activar l'accés de l'administrador: ${ error }"
@@ -19464,6 +19448,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Després se us facturarà cada 12 mesos a ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos.",
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "El vostre pla programat comença el ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "La vostra subscripció es renovarà automàticament en ${ cycle } mes.",
