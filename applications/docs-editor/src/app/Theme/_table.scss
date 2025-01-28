@@ -1,11 +1,11 @@
 .Lexical__table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	max-inline-size: none;
+	border-style: unset;
 	overflow-y: scroll;
 	table-layout: fixed;
 	margin: 0;
-	min-inline-size: max-content;
+	inline-size: fit-content;
 }
 
 .Lexical__tableWrapper {
@@ -57,17 +57,6 @@
 
 .Lexical__tableCellSelected {
 	background-color: #c9dbf0 !important;
-}
-
-.Lexical__tableCellPrimarySelected {
-	border: 2px solid rgb(60 132 244);
-	display: block;
-	block-size: calc(100% - 2px);
-	position: absolute;
-	inline-size: calc(100% - 2px);
-	inset-inline-start: -1px;
-	inset-block-start: -1px;
-	z-index: 2;
 }
 
 .Lexical__tableCellEditing {
