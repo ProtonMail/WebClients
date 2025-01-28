@@ -8,7 +8,7 @@ import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 
-import { renderWithProviders } from '../contacts/tests/render';
+import { clearAll, renderWithProviders } from '../contacts/tests/render';
 import { OffersTestProvider } from './Offers.test.helpers';
 import type { OfferConfig } from './interface';
 
@@ -83,6 +83,10 @@ const getUser = ({ isFree }: { isFree: boolean }) => {
 };
 
 describe('Offers', () => {
+    beforeEach(() => {
+        clearAll();
+    });
+
     describe('Offers display', () => {
         it('Should display upgrade button for free users', async () => {
             renderWithProviders(<TopNavbarComponent />, {
