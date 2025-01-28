@@ -52,6 +52,7 @@ import itemSetFlags from './items/item.set-flags.saga';
 import notificationSagas from './notifications/notifications.sagas';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import secureLinkSagas from './secure-links/secure-links.sagas';
+import coupon from './user/coupon.saga';
 import featureFlags from './user/feature-flags.saga';
 import userAccess from './user/user-access.saga';
 import userSettings from './user/user-settings.saga';
@@ -79,6 +80,7 @@ const COMMON_SAGAS = [
     aliasOptionsRequest,
     boot,
     cache,
+    coupon,
     events,
     featureFlags,
     getOrganizationSettings,

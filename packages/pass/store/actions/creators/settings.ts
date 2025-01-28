@@ -85,3 +85,21 @@ export const offlineToggle = requestActionsFactory<OfflineModeDTO, boolean, bool
             })({ payload: null }),
     },
 });
+
+export const redeemCoupon = requestActionsFactory<string, boolean>('coupon::redeem')({
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                text: c('Info').t`Coupon successfully applied!`,
+                type: 'info',
+            })({ payload }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Warning').t`Coupon could not be applied.`,
+                type: 'error',
+                error,
+            })({ payload: null }),
+    },
+});
