@@ -31,6 +31,7 @@ import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constan
 import { useSignupFlowModal } from '../SignupFlowModal/SignupFlowModal'
 import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
 import { DocumentActiveUsers } from '../../../Components/DocumentActiveUsers'
+import { CommentsButton } from '../../../Components/DocsHeader/CommentsButton'
 
 export const HeaderPublicOptions = ({
   editorController,
@@ -184,6 +185,8 @@ export const HeaderPublicOptions = ({
           data-testid="public-view-sign-up-link"
         >{c('Action').t`Sign up`}</ButtonLike>
       )}
+
+      {documentState.getProperty('userRole').canComment() && <CommentsButton editorController={editorController} />}
 
       {user && (
         <>

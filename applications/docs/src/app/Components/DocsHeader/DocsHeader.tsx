@@ -158,14 +158,12 @@ const DocsHeaderForDocument = ({
           </>
         )}
 
-        {publicContext && <div className="w-2" />}
-
-        {documentState.getProperty('userRole').canComment() && <CommentsButton editorController={editorController} />}
-
         {!publicContext && (
           <>
+            {documentState.getProperty('userRole').canComment() && (
+              <CommentsButton editorController={editorController} />
+            )}
             <div className="w-2" />
-
             <UserDropdown
               app={APPS.PROTONDOCS}
               sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
