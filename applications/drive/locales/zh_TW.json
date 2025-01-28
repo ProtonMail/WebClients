@@ -183,6 +183,9 @@
       "Continue": [
         "繼續"
       ],
+      "Continue downloading": [
+        "繼續下載"
+      ],
       "Continue import": [
         "繼續匯入"
       ],
@@ -365,6 +368,12 @@
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "盡快為${ priceCoupon }取得${ planName }。"
+      ],
+      "Get ${ planOrAppName }": [
+        "選用 ${ planOrAppName }"
       ],
       "Get in touch": [
         "保持聯絡"
@@ -798,6 +807,9 @@
       "Switch or add account": [
         "切換或是添加帳號"
       ],
+      "Take a tour": [
+        "瀏覽"
+      ],
       "Toggle Calendar app": [
         "切換行事曆應用程式"
       ],
@@ -1028,11 +1040,6 @@
         "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
@@ -1125,34 +1132,9 @@
         "版本歷史紀錄"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus 終身方案無續約費，他是單次付費終身存取Pass Plus。"
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "折扣是以每月標準價格為基礎。"
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "若您訂閱Pass Family或Unlimited，您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "您的訂閱將在您的繳款單週期結束時以標準折扣費率及期限自動續訂。"
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "最熱門"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "單次收費 ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "為期 ${ durationDeal }"
-      ],
-      "forever": [
-        "永久"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "首月免費，之後每月續訂 ${ regularAmount }。"
@@ -1164,6 +1146,9 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "在世界各地暢享串流服務的影音內容，包含Netflix、Disney+、Prime Video等平台。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "於全部裝置安全登入。包和無限hide-my-email別名，共享，整合雙重驗證，${ DARK_WEB_MONITORING_NAME }及更多。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護您的電子郵件。包含 ${ addresses } 電子郵件位址、支援自訂電子郵件網域、${ BRAND_NAME } Scribe 寫作助手、無限的 hide-my-email 別名等更多功能。"
@@ -1190,9 +1175,6 @@
       ],
       "12 months": [
         "12 個月"
-      ],
-      "24 months": [
-        "24 個月"
       ],
       "Annually": [
         "每年"
@@ -1295,6 +1277,21 @@
       ],
       "Continue your subscription": [
         "繼續您的訂閱"
+      ],
+      "Create label": [
+        "創建標籤"
+      ],
+      "Discover and set up features": [
+        "探索及設定功能"
+      ],
+      "Remind me later": [
+        "稍後提醒我"
+      ],
+      "Set up other features": [
+        "設置其他功能"
+      ],
+      "Take a tour": [
+        "瀏覽"
       ]
     },
     "Cancellation reminder": {
@@ -2371,11 +2368,6 @@
         "逾期帳單"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }24/7保護您的帳號包含躲避安全專家的可疑活動。"
@@ -2428,6 +2420,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "升級至${ BRAND_NAME }${ planName }以保持共享有編輯權限的檔案"
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "升級您的帳號以啟動 ${ PROTON_SENTINEL_NAME }，我們最新的 AI 安全方案，包含24小時的專家支援服務。"
       ],
@@ -2451,6 +2446,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2640,6 +2640,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「撰寫郵件」>「短網域名稱 (pm.me)」裡面去設定。"
       ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
@@ -2863,6 +2866,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "部份群組無聯絡人：${ noContactGroupList }"
       ],
+      "Organization key is not decrypted": [
+        "組織金鑰未解密"
+      ],
       "Password is required": [
         "密碼為必填"
       ],
@@ -2892,6 +2898,12 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "請提供名字、姓氏或顯示名稱"
+      ],
+      "Please select a country": [
+        "請選擇一個國家"
+      ],
+      "Please select a state": [
+        "請選擇一個州"
       ],
       "Port is required": [
         "通訊埠為必填"
@@ -3446,6 +3458,20 @@
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
       ]
     },
+    "Feature": {
+      "Access on mobile and desktop": [
+        "於移動端或桌面存取"
+      ],
+      "Free 5 GB storage": [
+        "免費 5 GB 的儲存空間"
+      ],
+      "Save files for later access": [
+        "儲存檔案以稍後存取"
+      ],
+      "Share privately and securely": [
+        "隱私,安全地共享"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
@@ -3962,6 +3988,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME }透過監控可疑活動以保護您的帳戶。"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
       ],
@@ -4268,6 +4297,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此資料夾由 ${ emailAddress } 安全上載。"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "探索解鎖的新功能並立即使用!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "探索${ planTitle }解鎖的新功能並立即使用!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
       ],
@@ -4340,8 +4375,14 @@
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "電子郵件移至垃圾桶和垃圾郵件將於30天後自動刪除。"
+      ],
       "Empty folder": [
         "空的文件夾"
+      ],
+      "Enabling auto-deletion…": [
+        "啟用自動刪除…"
       ],
       "Enabling drive search": [
         "正在啟用硬碟搜尋"
@@ -4556,6 +4597,9 @@
       "Key fingerprint": [
         "金鑰指紋"
       ],
+      "Keys created": [
+        "金鑰已更新"
+      ],
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
       ],
@@ -4705,6 +4749,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
+      ],
+      "or discover other features:": [
+        "或探索其他功能:"
       ],
       "Or use the \"+ New\" button": [
         "或使用\"+\"按鈕"
@@ -4859,6 +4906,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
       ],
+      "Registering your subscription…": [
+        "正在註冊您的訂閱…"
+      ],
       "Report has been sent": [
         "回報已傳送"
       ],
@@ -4925,14 +4975,23 @@
       "Session timed out": [
         "工作階段已逾時"
       ],
+      "Setting up ${ feature }…": [
+        "設定${ feature }…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
+      ],
+      "Setting up your new address…": [
+        "正在設定您的新地址…"
       ],
       "Share files with links": [
         "透過連結分享檔案"
       ],
       "Share via link settings": [
         "請用連結設定共享"
+      ],
+      "Shared by ${ rootLink.signatureEmail }": [
+        "由 ${ rootLink.signatureEmail } 分享"
       ],
       "Shared link not found": [
         "找不到分享的連結"
@@ -5183,6 +5242,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用此表格通知我們不適當、非法，或其它惡意分享的檔案。您即將報告："
       ],
+      "User activated": [
+        "使用者已啟用"
+      ],
       "username": [
         "使用者名稱"
       ],
@@ -5309,6 +5371,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "你也可以將匯入的行事曆與現有的 ${ BRAND_NAME } 行事曆合併。"
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "您隨時都可以在${ settingsLink }中變更。"
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
@@ -5332,6 +5397,9 @@
       ],
       "You cannot undo this action.": [
         "此操作無法復原。"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "您還有${ expiresInDays }天的時間領取您的 3 GB 歡迎獎勵，以及 "
@@ -5404,6 +5472,9 @@
       ],
       "Your email address was exposed:": [
         "您的電子郵件地址外洩:"
+      ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "您的電子郵件地址將於連結擁有者的共享頁面為可見。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -5564,6 +5635,9 @@
       ],
       "Anderson": [
         "安德松"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "網路上的任何人只要知道連結都可以編輯"
       ],
       "Anyone on the Internet with the link can view": [
         "網路上的任何人只要知道連結都可以檢視"
@@ -6003,6 +6077,9 @@
       "Start date": [
         "開始日期"
       ],
+      "State": [
+        "州"
+      ],
       "Stolen data": [
         "失竊資料"
       ],
@@ -6189,6 +6266,9 @@
       "Sent": [
         "寄件備份"
       ],
+      "settings": [
+        "設定"
+      ],
       "Shared": [
         "已分享"
       ],
@@ -6212,6 +6292,11 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "並包含:"
       ]
     },
     "Loading info": {
@@ -6574,11 +6659,20 @@
       "Get started for ${ priceCoupon }": [
         "使用${ priceCoupon }取得"
       ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "方案從${ priceDrivePlus }起"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
       "Upgrade": [
         "升級"
       ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6703,6 +6797,9 @@
       ],
       "15 GB storage": [
         "15 GB 儲存空間"
+      ],
+      "200 GB of storage": [
+        "200 GB的儲存空間"
       ],
       "24/7 account management support": [
         "24/7 帳戶管理支援"
@@ -6896,6 +6993,9 @@
       "Priority support & live chat": [
         "優先支援與即時真人對話"
       ],
+      "Private photo backup": [
+        "私人照片備份"
+      ],
       "Proofread and refine your emails": [
         "校閱與修飾你的電子郵件"
       ],
@@ -6931,6 +7031,9 @@
       ],
       "Secure Core servers": [
         "Secure Core 伺服器"
+      ],
+      "Secure file storage and sharing": [
+        "安全地儲存和共享檔案"
       ],
       "Secure link sharing": [
         "安全連結分享"
@@ -7154,6 +7257,14 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceMailPlus } 月的價格自動續約。您可以於任何時候取消訂閱。"
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "只要${ priceMailPlus }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -7258,6 +7369,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "此選項可視作使用者般檢視非私人使用者的收件匣，包括完整郵件和聯絡人詳細資料"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "組織管理工具可讓管理員新增使用者、管理他們存取${ BRAND_NAME }服務，以及進行其他工作"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "我們穩固的基礎架構用在一時，確保您在需要時均能存取到您的帳號"
@@ -7629,6 +7743,9 @@
       "Subfolder failed to be loaded": [
         "子資料夾載入失敗"
       ],
+      "The document failed to be created": [
+        "創建檔案失敗"
+      ],
       "The item was not added to your drive": [
         "此項目未被加入您的雲端磁碟"
       ],
@@ -7681,6 +7798,52 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "選取 ${ BRAND_NAME } 可以存取的內容：檢視您的電子郵件與設定、檢視與下載您的聯絡人、檢視與下載來自 Google 日曆您可存取的所有議程。"
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle }優惠今日過期!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "使用只要${ pricingTitle }取得Drive Plus"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "使用只要${ pricingTitle }取得Mail Plus"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "最後獲得${ plan }進階首月80%折價"
+      ],
+      "Limited-time offer": [
+        "限時優惠"
+      ],
+      "Maybe later": [
+        "稍後再說"
+      ],
+      "Save 80% on your first month.": [
+        "首月省下80%"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10多項的頂級功能"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域名稱電郵網域名稱"
+      ],
+      "Email addresses": [
+        "電子郵件地址"
+      ],
+      "Free": [
+        "免費"
+      ],
+      "Plus": [
+        "進階"
+      ],
+      "Storage": [
+        "雲端儲存"
       ]
     },
     "Onboarding": {
@@ -7796,6 +7959,9 @@
       "Organize files right from your desktop": [
         "從桌面整理檔案"
       ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "透過端對端加密保護您的財務文件，身分證，專案檔案，照片，及更多。"
+      ],
       "Scan the QR code to install the mobile app": [
         "掃描QR代碼以安裝移動裝置應用程式。"
       ],
@@ -7810,6 +7976,9 @@
       ],
       "Sync and access your files from anywhere": [
         "於任何地方同步及存取您的檔案"
+      ],
+      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
+        "此擁有者須確認共享存取權。您將於完成時收到電子郵件。"
       ],
       "Upload your first file": [
         "上傳您的第一個檔案"
@@ -8568,6 +8737,9 @@
       ],
       "Upgrade": [
         "升級"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "升級至${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -8664,6 +8836,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "一個至此項目的連結已儲存至您的雲端磁碟。您可於\"與共享的區域\"存區它。"
+      ],
       "Encrypted search is here": [
         "經加密搜尋功能現已推出"
       ],
@@ -9366,6 +9541,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
       ],
+      "${ feature } is now active": [
+        "${ feature }現在為起用狀態"
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } 個檔案下載失敗"
       ],
@@ -9422,6 +9600,9 @@
       ],
       "Are you sure?": [
         "您確定嗎？"
+      ],
+      "Auto-deletion is active": [
+        "自動刪除為起用狀態"
       ],
       "Billing cycle": [
         "繳款單週期"
@@ -9714,6 +9895,9 @@
       "Need more aliases?": [
         "需要更多別名?"
       ],
+      "Need to share more files with edit access?": [
+        "需要共享更多有編輯權限的檔案嗎?"
+      ],
       "Network error": [
         "網路錯誤"
       ],
@@ -9957,6 +10141,9 @@
       "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
         "您將拒絕共享項目的邀請。您將無法存取直到擁有者在此與您共享。"
       ],
+      "You can now create unlimited folders and labels": [
+        "您現在可創建無上限標籤和資料夾"
+      ],
       "You have inaccessible files": [
         "您有部份檔案無法存取"
       ],
@@ -9978,6 +10165,9 @@
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "您下載包含${ DOCS_APP_NAME }檔案"
+      ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"
       ],
@@ -9994,11 +10184,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今天"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ]
     },
     "Tooltip": {
@@ -10081,6 +10266,11 @@
         "您已寄送他們存取項目的邀請。"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
@@ -10120,6 +10310,12 @@
       ]
     },
     "vpn_2024: renew": {
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "您的新訂閱將以每 ${ cycle }月自動更新。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "您的計劃的行程將於${ renewalTime }開始"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的訂閱將每 ${ cycle }月自動更新。"
       ]

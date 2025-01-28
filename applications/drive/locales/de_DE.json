@@ -187,6 +187,9 @@
       "Continue": [
         "Weiter"
       ],
+      "Continue downloading": [
+        "Download fortsetzen"
+      ],
       "Continue import": [
         "Importvorgang fortsetzen"
       ],
@@ -371,6 +374,12 @@
       ],
       "Forward as attachment": [
         "Als Anhang weiterleiten"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Hol dir ${ planName } für ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } holen"
       ],
       "Get in touch": [
         "Kontakt aufnehmen"
@@ -804,6 +813,9 @@
       "Switch or add account": [
         "Konto wechseln oder hinzufügen"
       ],
+      "Take a tour": [
+        "Rundgang"
+      ],
       "Toggle Calendar app": [
         "Kalender-App umschalten"
       ],
@@ -1036,11 +1048,6 @@
         "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
@@ -1133,34 +1140,9 @@
         "Versionsverlauf"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Beim lebenslangen ${ PASS_SHORT_APP_NAME } Plus-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Wenn du Pass Family oder Unlimited kaufst, verlängert sich dein Abonnement am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Am beliebtesten"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Zum Preis von einmalig ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "für ${ durationDeal }"
-      ],
-      "forever": [
-        "dauerhaft"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlängert sich nach 1 Monat zum ${ regularAmount }."
@@ -1203,9 +1185,6 @@
       ],
       "12 months": [
         "12 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
       ],
       "Annually": [
         "Jährlich"
@@ -1314,6 +1293,9 @@
       ],
       "Remind me later": [
         "Später erneut fragen"
+      ],
+      "Take a tour": [
+        "Rundgang"
       ]
     },
     "Cancellation reminder": {
@@ -2392,11 +2374,6 @@
         "Überfällige Rechnung"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2427,6 +2404,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
+      ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "Sichere deine Dateien, Fotos und Dokumente mit einer End-to-End-Verschlüsselung."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
@@ -2472,6 +2452,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2664,6 +2649,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
       ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
@@ -2892,6 +2880,9 @@
         "Eine der Gruppen enthält keine Kontakte: ${ noContactGroupList }",
         "Einige Gruppen enthalten keine Kontakte: ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "Organisationsschlüssel ist nicht entschlüsselt"
+      ],
       "Password is required": [
         "Passwort ist erforderlich"
       ],
@@ -2925,6 +2916,9 @@
       ],
       "Please select a country": [
         "Bitte wähle ein Land"
+      ],
+      "Please select a state": [
+        "Bitte wähle ein Bundesland."
       ],
       "Port is required": [
         "Port ist erforderlich"
@@ -3481,6 +3475,20 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
+      ]
+    },
+    "Feature": {
+      "Access on mobile and desktop": [
+        "Zugriff über Mobile und Desktop"
+      ],
+      "Free 5 GB storage": [
+        "5 GB kostenloser Speicherplatz"
+      ],
+      "Save files for later access": [
+        "Dateien für späteren Zugriff speichern"
+      ],
+      "Share privately and securely": [
+        "Privates und sicheres Teilen"
       ]
     },
     "fido2: Error": {
@@ -4645,6 +4653,9 @@
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
       ],
+      "Keys created": [
+        "Schlüssel erstellt"
+      ],
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
       ],
@@ -4951,6 +4962,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Registering your subscription…": [
+        "Dein Abonnement wird registriert…"
+      ],
       "Report has been sent": [
         "Bericht wurde gesendet"
       ],
@@ -5017,8 +5031,14 @@
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
+      "Setting up ${ feature }…": [
+        "${ feature } wird eingerichtet…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
+      ],
+      "Setting up your new address…": [
+        "Deine neue E-Mail-Adresse wird eingerichtet…"
       ],
       "Share files with links": [
         "Dateien mit Links teilen"
@@ -5281,6 +5301,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Benutze dieses Formular, um uns unangebrachte, illegale, oder anderweitig schädliche geteilte Dateien zu melden. Du bist dabei, Folgendes zu melden:"
       ],
+      "User activated": [
+        "Benutzer aktiviert"
+      ],
       "username": [
         "Benutzername"
       ],
@@ -5406,6 +5429,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kannst importierte Kalender auch mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Dies kann jederzeit in den ${ settingsLink } geändert werden."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kannst den Fortschritt hier ${ importProgressLink } überprüfen."
@@ -6136,7 +6162,7 @@
         "Dadurch werden alle Dateien auf dem gesperrten Laufwerk dauerhaft gelöscht."
       ],
       "Thomas": [
-        "Thomas"
+        "Max"
       ],
       "Title": [
         "Titel"
@@ -6296,6 +6322,9 @@
       ],
       "Sent": [
         "Gesendet"
+      ],
+      "settings": [
+        "Einstellungen"
       ],
       "Shared": [
         "Geteilt"
@@ -7086,6 +7115,9 @@
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
       ],
+      "Private photo backup": [
+        "Private Fotosicherung"
+      ],
       "Proofread and refine your emails": [
         "Korrigiere und verfeinere deine E-Mails"
       ],
@@ -7354,6 +7386,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "new_plans: title": {
@@ -7872,6 +7909,9 @@
       "Subfolder failed to be loaded": [
         "Unterordner konnte nicht geladen werden"
       ],
+      "The document failed to be created": [
+        "Fehler beim Erstellen des Dokuments."
+      ],
       "The item was not added to your drive": [
         "Das Element wurde nicht zu deinem Laufwerk hinzugefügt"
       ],
@@ -7929,19 +7969,49 @@
       ]
     },
     "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } Angebot läuft heute ab!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Hol dir Drive Plus für nur ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Hol dir Mail Plus für nur ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Letzte Chance auf 80% Rabatt auf den ersten Monat von ${ plan } Plus."
+      ],
       "Limited-time offer": [
         "Zeitlich begrenztes Angebot"
       ],
       "Maybe later": [
         "Vielleicht später"
+      ],
+      "Save 80% on your first month.": [
+        "Spare 80% im ersten Monat."
       ]
     },
     "Offer feature": {
+      "+10 more premium features": [
+        "+10 weitere Premium-Funktionen"
+      ],
       "Custom email domain": [
         "Eigene E-Mail-Domain"
       ],
-      "Email Addresses": [
-        "E-Mail-Adressen"
+      "Email addresses": [
+        "E‐Mail‐Adressen"
+      ],
+      "Free": [
+        "Kostenlos"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Speicherplatz"
       ]
     },
     "Onboarding": {
@@ -9750,6 +9820,9 @@
         "${ emailsCount } E-Mail-Adresse",
         "${ emailsCount } E-Mail-Adressen"
       ],
+      "${ feature } is now active": [
+        "${ feature } ist jetzt aktiv."
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } fehlgeschlagener Download",
         "${ numberOfFailedTransfer.total } fehlgeschlagene Downloads"
@@ -9811,6 +9884,9 @@
       ],
       "Are you sure?": [
         "Bist du sicher?"
+      ],
+      "Auto-deletion is active": [
+        "Automatisches Löschen ist aktiv."
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
@@ -10206,6 +10282,9 @@
       "Restore your files": [
         "Dateien wiederherstellen"
       ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "Für später speichern in ${ DRIVE_APP_NAME }"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Für später speichern in ${ DRIVE_APP_NAME }"
       ],
@@ -10392,11 +10471,6 @@
         "Heute"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Füge diese gemeinsame Datei zu deinem ${ DRIVE_APP_NAME } hinzu, damit du später leicht darauf zugreifen kannst."
@@ -10480,6 +10554,11 @@
         "Wir haben der Person eine Einladung zum Zugreifen auf den Eintrag gesendet."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
@@ -10528,6 +10607,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du erhältst dann alle 12 Monate eine Rechnung über ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Dein neues Abonnement wird in ${ cycle } Monat automatisch verlängert.",
+        "Dein neues Abonnement wird in ${ cycle } Monaten automatisch verlängert."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dein Abonnement wird in ${ cycle } Monat automatisch verlängert.",
