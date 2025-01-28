@@ -1,13 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 
 import { getSepaAuthorizationText } from '@proton/components/payments/chargebee/SepaAuthorizationText';
 import { PAYMENT_METHOD_TYPES, type PayPalDetails, type SavedCardDetails, type SepaDetails } from '@proton/payments';
 
 import PaymentMethodDetails from './PaymentMethodDetails';
-
-jest.mock('@proton/payments/ui/helpers/credit-card-icons', () => ({
-    getBankSvg: jest.fn(() => 'MockedBankSvg'),
-}));
 
 describe('PaymentMethodDetails', () => {
     const mockCardDetails: SavedCardDetails = {
@@ -17,7 +13,7 @@ describe('PaymentMethodDetails', () => {
         ZIP: '12345',
         Country: 'US',
         Last4: '1234',
-        Brand: 'visa',
+        Brand: 'Visa',
     };
 
     const mockPayPalDetails: PayPalDetails = {
@@ -32,10 +28,12 @@ describe('PaymentMethodDetails', () => {
         Last4: '1234',
     };
 
-    it('renders card details correctly', () => {
+    it('renders card details correctly', async () => {
         render(<PaymentMethodDetails type={PAYMENT_METHOD_TYPES.CARD} details={mockCardDetails} />);
 
-        expect(screen.getByAltText('visa')).toBeInTheDocument();
+        await waitFor(() => {
+            expect(screen.getByAltText('Visa')).toBeInTheDocument();
+        });
         expect(screen.getByText('•••• •••• •••• 1234')).toBeInTheDocument();
         expect(screen.getByText('12/2025')).toBeInTheDocument();
     });

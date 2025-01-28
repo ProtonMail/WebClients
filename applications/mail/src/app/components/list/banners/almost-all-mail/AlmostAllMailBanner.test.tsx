@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { getHumanLabelID } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { mockUseHistory } from '@proton/testing';
+import { mockUseHistory } from '@proton/testing/lib/mockUseHistory';
 
 import AlmostAllMailBanner from './AlmostAllMailBanner';
 
