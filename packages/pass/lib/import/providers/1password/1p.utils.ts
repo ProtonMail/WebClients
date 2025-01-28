@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { type ItemBuilder, itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { IdentityFieldName, ItemContent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, Maybe, MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { objectKeys } from '@proton/pass/utils/object/generic';
 import { epochToDate } from '@proton/pass/utils/time/format';
@@ -151,7 +151,7 @@ export const extract1PasswordLegacyURLs = (item: OnePassLegacyItem): string[] =>
     return item.secureContents.URLs.map(({ url }: OnePassLegacyURL) => url);
 };
 
-export const extract1PasswordExtraFields = (item: OnePassItem): UnsafeItemExtraField[] => {
+export const extract1PasswordExtraFields = (item: OnePassItem): DeobfuscatedItemExtraField[] => {
     const { sections } = item.details;
     if (!sections) return [];
 
@@ -161,7 +161,7 @@ export const extract1PasswordExtraFields = (item: OnePassItem): UnsafeItemExtraF
             .flatMap(({ fields }) =>
                 fields.filter((field) => is1PasswordSupportedField(field) && !is1PasswordCCField(field))
             )
-            .map<MaybeNull<UnsafeItemExtraField>>(({ title, value }) => {
+            .map<MaybeNull<DeobfuscatedItemExtraField>>(({ title, value }) => {
                 const [fieldKey] = objectKeys(value);
                 const data = value[fieldKey];
                 if (!data) return null;
@@ -203,7 +203,7 @@ export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem) => {
         .flatMap(({ fields }) =>
             (fields as OnePassLegacySectionField[])
                 .filter(({ k }) => Object.values(OnePassLegacySectionFieldKey).includes(k))
-                .map<MaybeNull<UnsafeItemExtraField>>((field) => {
+                .map<MaybeNull<DeobfuscatedItemExtraField>>((field) => {
                     switch (field.k) {
                         case OnePassLegacySectionFieldKey.STRING:
                         case OnePassLegacySectionFieldKey.URL:

@@ -33,6 +33,7 @@ import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientOffline, clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { cacheGuard } from '@proton/pass/store/migrate';
@@ -160,6 +161,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                     createNotification(enhance(notification));
                 },
+
+                onItemsUpdated: () =>
+                    createMonitorReport({
+                        state: store.getState(),
+                        monitor: core.monitor,
+                        dispatch: core.onB2BEvent,
+                    }),
 
                 onFeatureFlags: (features) => {
                     /** Account switch feature flag cannot be account specific - first

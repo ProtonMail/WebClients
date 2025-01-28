@@ -1,0 +1,223 @@
+{
+    "shared_folders": [],
+    "records": [
+        {
+            "uid": 1,
+            "title": "a card",
+            "$type": "bankCard",
+            "custom_fields": {
+                "$paymentCard::1": {
+                    "cardNumber": "4242424242424242",
+                    "cardExpirationDate": "03/2027",
+                    "cardSecurityCode": "123"
+                },
+                "$text:cardholderName:1": "First last",
+                "$pinCode::1": "1234"
+            },
+            "references": {
+                "$addressRef::1": [4]
+            }
+        },
+        {
+            "uid": 2,
+            "title": "a file",
+            "$type": "file"
+        },
+        {
+            "uid": 3,
+            "title": "a note",
+            "notes": "custom note",
+            "$type": "encryptedNotes",
+            "custom_fields": {
+                "$note::1": "note content\nline 2",
+                "$text::1": "custom field name"
+            }
+        },
+        {
+            "uid": 4,
+            "title": "Address for bank card",
+            "$type": "address",
+            "custom_fields": {
+                "$address::1": {
+                    "country": "US",
+                    "street1": "line 1",
+                    "street2": "line 2",
+                    "city": "City",
+                    "state": "State",
+                    "zip": "00000"
+                }
+            }
+        },
+        {
+            "uid": 5,
+            "title": "contact item",
+            "$type": "contact",
+            "custom_fields": {
+                "$name::1": {
+                    "first": "first",
+                    "last": "last"
+                },
+                "$text:company:1": "company",
+                "$email::1": "email@example.com",
+                "$phone::1": [
+                    {
+                        "number": "5555555555",
+                        "ext": "Ext"
+                    },
+                    {
+                        "number": "5555555556",
+                        "ext": "Ext2"
+                    }
+                ],
+                "$text::1": "custom field"
+            }
+        },
+        {
+            "uid": 6,
+            "title": "general item"
+        },
+        {
+            "uid": 7,
+            "title": "id item",
+            "notes": "notes",
+            "$type": "ssnCard",
+            "custom_fields": {
+                "$accountNumber:identityNumber:1": "123",
+                "$name::1": {
+                    "first": "John",
+                    "middle": "Middle",
+                    "last": "Doe"
+                },
+                "$email::1": "email@custom-field.value"
+            },
+            "folders": [
+                {
+                    "folder": "folder2"
+                }
+            ]
+        },
+        {
+            "uid": 8,
+            "title": "login of folder1",
+            "$type": "login",
+            "login": "john",
+            "folders": [
+                {
+                    "folder": "folder1"
+                }
+            ]
+        },
+        {
+            "uid": 9,
+            "title": "login of subfolder1",
+            "$type": "login",
+            "login": "john",
+            "folders": [
+                {
+                    "folder": "folder1\\subfolder1"
+                }
+            ]
+        },
+        {
+            "uid": 10,
+            "title": "login with 2fa",
+            "$type": "login",
+            "custom_fields": {
+                "$oneTimeCode::1": "otpauth://totp/account.proton.me:2fa-manually-entered-string@example.com?secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&issuer=account.proton.me&algorithm=SHA1&digits=6&period=30"
+            },
+            "login": "2fa@example.com",
+            "password": "pass",
+            "login_url": "https://example.com"
+        },
+        {
+            "uid": 11,
+            "title": "login with broken url",
+            "$type": "login",
+            "login": "john",
+            "password": "pass",
+            "login_url": "https://ex:ample.com/"
+        },
+        {
+            "uid": 12,
+            "title": "login with comma, quotes \"",
+            "notes": "notes with commas, quotes \"",
+            "$type": "login",
+            "login": "username with comma, quotes \"",
+            "password": "password with comma, quotes \"",
+            "login_url": "https://example.com/"
+        },
+        {
+            "uid": 13,
+            "title": "login with custom fields",
+            "$type": "login",
+            "custom_fields": {
+                "$text:Security Question & Answer:1": "this is custom field: security question? this is custom field: security answer",
+                "$text:Website Address:1": "https://this-is-custom-field-url.example.com",
+                "$text:Phone:1": "Mobile US (+1) (555) 555-5555 Ex",
+                "$multiline::1": "custom field with\nmultiple\nlines",
+                "$name:custom Name fields:1": {
+                    "first": "custom field--first name",
+                    "middle": "custom field--middle name",
+                    "last": "custom field--last name"
+                },
+                "$phone:custom Phone Number:1": {
+                    "number": "5555555555",
+                    "ext": "ext",
+                    "type": "Mobile",
+                    "region": "US"
+                },
+                "$secret:custom Hidden Field:1": "hidden vlue",
+                "$secret:second custom hidden field:1": "hidden value"
+            },
+            "login": "john",
+            "password": "pass",
+            "login_url": "https://example.com"
+        },
+        {
+            "uid": 14,
+            "title": "login with multiple lines",
+            "notes": "notes with\nmultiple\nlines",
+            "$type": "login",
+            "login": "john",
+            "password": "pass",
+            "login_url": "https://example.com"
+        },
+        {
+            "uid": 15,
+            "title": "login with multiple urls",
+            "$type": "login",
+            "custom_fields": {
+                "$text:Website Address:1": "https://second.example.com",
+                "$text:Website Address with edited label:1": "https://edited-label.example.com"
+            },
+            "login_url": "https://example.com"
+        },
+        {
+            "uid": 16,
+            "title": "secure note item",
+            "notes": "foo",
+            "$type": "encryptedNotes",
+            "custom_fields": {
+                "$note::1": "secured note"
+            }
+        },
+        {
+            "uid": 17,
+            "title": "ssh key item",
+            "notes": "foo",
+            "$type": "sshKeys",
+            "login": "john",
+            "custom_fields": {
+                "$keyPair::1": {
+                    "publicKey": "pub",
+                    "privateKey": "pri"
+                },
+                "$host::1": {
+                    "hostName": "example.com",
+                    "port": "1111"
+                }
+            },
+            "password": "abc"
+        }
+    ]
+}

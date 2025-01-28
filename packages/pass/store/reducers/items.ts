@@ -278,10 +278,10 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         }
 
         if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match)(action)) {
-            const { shareId, batch, destinationShareId, movedItems } = action.payload;
+            const { shareId, batch, targetShareId, movedItems } = action.payload;
             return fullMerge(
                 { ...state, [shareId]: objectFilter(state[shareId], notIn(batch.map(prop('itemId')))) },
-                { [destinationShareId]: toMap(movedItems, 'itemId') }
+                { [targetShareId]: toMap(movedItems, 'itemId') }
             );
         }
 

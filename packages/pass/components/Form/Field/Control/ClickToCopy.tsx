@@ -7,15 +7,16 @@ import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { SelectionManager } from '@proton/pass/utils/dom/selection';
 import clsx from '@proton/utils/clsx';
 
-export type ClickToCopyProps = { className?: string; value?: string };
+export type ClickToCopyProps = { className?: string; value?: string | (() => string) };
 
 export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className, children, value = '' }) => {
     const ref = useRef<HTMLDivElement>(null);
     const copyToClipboard = useCopyToClipboard();
+    const getValue = () => (value instanceof Function ? value() : value);
 
     const handleClick = (evt: MouseEvent) => {
         if (SelectionManager.selection) evt.preventDefault();
-        else if (value) void copyToClipboard(value);
+        else if (value) void copyToClipboard(getValue());
     };
 
     return (
@@ -26,7 +27,7 @@ export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className
         <div
             ref={ref}
             className={clsx('cursor-pointer overflow-hidden', className)}
-            onKeyDown={(evt) => evt.key === 'Enter' && copyToClipboard(value)}
+            onKeyDown={(evt) => evt.key === 'Enter' && copyToClipboard(getValue())}
             onClick={handleClick}
             tabIndex={0}
             role="button"

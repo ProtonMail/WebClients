@@ -6,7 +6,7 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { UpsellRef } from '@proton/pass/constants';
 import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
-import type { UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 import { OTPValueControl } from './OTPValueControl';
@@ -14,7 +14,7 @@ import { UpgradeControl } from './UpgradeControl';
 import { ValueControl } from './ValueControl';
 
 type ExtraFieldsControlProps = {
-    extraFields: UnsafeItemExtraField[];
+    extraFields: DeobfuscatedItemExtraField[];
     itemId: string;
     shareId: string;
 };
@@ -23,7 +23,7 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     const getControlByType = useCallback(
-        ({ fieldName, type, data }: UnsafeItemExtraField, index: number) => {
+        ({ fieldName, type, data }: DeobfuscatedItemExtraField, index: number) => {
             const { icon } = getExtraFieldOption(type);
             const key = `${index}-${fieldName}`;
 

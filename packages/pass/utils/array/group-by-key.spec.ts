@@ -38,6 +38,38 @@ describe('groupByKey function', () => {
         ]);
     });
 
+    it('should group objects by a specified key [function]', () => {
+        const result = groupByKey(data, (item) => item.name);
+        expect(result).toEqual([
+            [
+                { id: 1, name: 'Alice', age: 30 },
+                { id: 3, name: 'Alice', age: 42 },
+            ],
+            [{ id: 2, name: 'Bob', age: 42 }],
+        ]);
+
+        const data2: TestItem[] = [
+            { id: 1, name: 'Alice', age: 30 },
+            { id: 2, name: 'Bob', age: 42 },
+            { id: 3, name: 'Alice', age: 42 },
+            { id: 4, name: '', age: 41 },
+            { id: 5, name: '', age: 42 },
+        ];
+
+        const result2 = groupByKey(data2, (item) => item.name);
+        expect(result2).toEqual([
+            [
+                { id: 1, name: 'Alice', age: 30 },
+                { id: 3, name: 'Alice', age: 42 },
+            ],
+            [{ id: 2, name: 'Bob', age: 42 }],
+            [
+                { id: 4, name: '', age: 41 },
+                { id: 5, name: '', age: 42 },
+            ],
+        ]);
+    });
+
     it('should handle objects with missing keys if options.splitEmpty = true', () => {
         const dataWithMissingKey: TestItem[] = [...data, { id: 4, name: 'Robert' }, { id: 5, name: 'Alex' }];
         const result = groupByKey(dataWithMissingKey, 'age', { splitEmpty: true });

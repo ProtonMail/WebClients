@@ -31,3 +31,23 @@ export const deobfuscate = (obfuscation: XorObfuscation): string => {
 
     return utf8ArrayToString(data);
 };
+
+/** For credit card numbers, each digit should be represented by a single
+ * byte in UTF-8. We deobfuscate only the first and last 4 digits, masking
+ * everything in between with asterisks. If input length is less than 12 bytes
+ * (shortest valid CC length), returns a masked string. */
+export const deobfuscatePartialCreditCard = (obfuscation: XorObfuscation): string => {
+    const data = base64StringToUint8Array(obfuscation.v);
+    const xor = base64StringToUint8Array(obfuscation.m);
+    const valid = data.length >= 12;
+
+    for (let i = 0; i < data.length; i++) {
+        if (valid && (i < 4 || i >= data.length - 4)) data[i] ^= xor[i % xor.length];
+        else data[i] = 0x2a; /* ASCII single byte for '*' */
+    }
+
+    return utf8ArrayToString(data);
+};
+
+export const deobfuscateCreditCard = (obfuscation: XorObfuscation, partial: boolean): string =>
+    (partial ? deobfuscatePartialCreditCard : deobfuscate)(obfuscation);
