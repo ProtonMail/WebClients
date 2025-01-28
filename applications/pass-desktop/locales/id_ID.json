@@ -28,6 +28,9 @@
       "Accept": [
         "Terima"
       ],
+      "Accept and view the item": [
+        "Terima dan lihat item"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -133,11 +136,11 @@
       "Continue offline": [
         "Lanjut secara offline"
       ],
-      "Copy alias address": [
-        "Salin alamat alias"
-      ],
       "Copy and close": [
         "Salin dan tutup"
+      ],
+      "Copy forwarding address": [
+        "Salin alamat penerusan"
       ],
       "Copy link": [
         "Salin tautan"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "Buat brankas baru"
-      ],
-      "Create a new vault to share": [
-        "Buat brankas baru untuk dibagikan"
       ],
       "Create alias": [
         "Buat alias"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "Bagian khusus"
-      ],
-      "Customize": [
-        "Atur"
       ],
       "Delete": [
         "Hapus"
@@ -249,9 +246,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktifkan alias ini untuk menerima email yang terkirim ke alias ini"
-      ],
-      "Entire vault": [
-        "Seluruh brankas"
       ],
       "Exclude from monitoring": [
         "Kecualikan dari pemantauan"
@@ -319,6 +313,9 @@
       "Install extension": [
         "Pasang ekstensi"
       ],
+      "Invite more...": [
+        "Undang lebih banyak pengguna..."
+      ],
       "Invite others": [
         "Undang yang lain"
       ],
@@ -358,9 +355,6 @@
       "Manage access": [
         "Kelola akses"
       ],
-      "Manage vault access": [
-        "Kelola akses brankas"
-      ],
       "Manually sync your data": [
         "Sinkronkan data"
       ],
@@ -384,9 +378,6 @@
       ],
       "Move all items": [
         "Pindahkan semua item"
-      ],
-      "Move to a shared vault": [
-        "Pindahkan ke brankas bersama"
       ],
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
@@ -541,11 +532,11 @@
       "Share": [
         "Bagikan"
       ],
+      "Share item": [
+        "Bagikan item"
+      ],
       "Share secure link": [
         "Bagikan tautan aman"
-      ],
-      "Share this vault": [
-        "Bagikan brankas ini"
       ],
       "Share vault": [
         "Bagikan brankas"
@@ -619,9 +610,6 @@
       "Update": [
         "Perbarui"
       ],
-      "Update vault": [
-        "Perbarui brankas"
-      ],
       "Upgrade": [
         "Tingkatkan"
       ],
@@ -651,6 +639,9 @@
       ],
       "View older history": [
         "Tampilkan riwayat lebih lama"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Dengan pengguna ${ BRAND_NAME } lainnya"
       ],
       "Write us on Reddit": [
         "Tulis tentang kami di Reddit"
@@ -839,6 +830,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Undangan ini tidak dapat dikonfirmasi untuk saat ini"
+      ],
+      "Could not leave item.": [
+        "Item tidak dapat ditinggalkan."
       ],
       "Could not leave vault.": [
         "Brankas tidak dapat ditinggalkan."
@@ -1280,9 +1274,6 @@
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } diblokir"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } undangan berhasil terkirim"
-      ],
       "${ count } time": [
         "${ count } kali"
       ],
@@ -1294,6 +1285,9 @@
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } diteruskan"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } ingin membagikan suatu item dengan Anda."
       ],
       "${ memberCount } member": [
         "${ memberCount } anggota"
@@ -1318,6 +1312,9 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } akan memerlukan kata sandi ${ BRAND_NAME } Anda untuk dapat mengakses data secara offline."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } undangan berhasil dikirim"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } berhasil dinonaktifkan"
@@ -1448,8 +1445,17 @@
       "Can be viewed": [
         "Dapat dilihat"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Dapat membuat, menyunting, menghapus, dan mengekspor item dalam brankas ini."
+      "Can create, edit, and delete items in this vault.": [
+        "Dapat membuat, menyunting, dan menghapus item dalam brankas ini."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Dapat membuat, menyunting, dan menghapus item ini."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Dapat memberikan dan mencabut izin akses ke item ini serta menghapus item."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Dapat memberikan dan mencabut izin akses ke item ini."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Dapat memberikan dan mencabut izin akses ke brankas ini serta menghapus brankas."
@@ -1459,6 +1465,9 @@
       ],
       "Can view items in this vault.": [
         "Dapat melihat item yang terkandung dalam brankas ini."
+      ],
+      "Can view this item.": [
+        "Dapat melihat item ini."
       ],
       "Change your password": [
         "Ubah kata sandi Anda"
@@ -1613,6 +1622,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Alamat penerusan disalin ke papan klip. Kirimlah email ke alamat ini, dan ${ Email } akan menerima email ini."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Kata sandi yang dihasilkan akan disimpan selama ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu."
       ],
@@ -1700,6 +1712,9 @@
       "Item restored": [
         "Item dipulihkan"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Pembagian item: ${ itemAccessCount } pengguna"
+      ],
       "Item successfully excluded from monitoring": [
         "Item berhasil dikecualikan dari pemantauan"
       ],
@@ -1720,6 +1735,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Pelajari cara untuk ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Meninggalkan item..."
       ],
       "Leaving vault...": [
         "Meninggalkan brankas..."
@@ -1958,9 +1976,6 @@
       "Restoring trashed items...": [
         "Memulihkan item yang dibuang..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Alamat alias terbalik disalin ke papan klip. Kirimkan email ke alamat ini dan ${ Email } akan menerima email yang bersangkutan."
-      ],
       "Secure links": [
         "Tautan aman"
       ],
@@ -2000,6 +2015,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Bagikan entri masuk dan catatan aman Anda, sampai dengan 10 pengguna"
       ],
+      "Shared item invitation": [
+        "Undangan item yang dibagikan"
+      ],
       "Sign in to your account": [
         "Masuk ke akun Anda"
       ],
@@ -2014,6 +2032,9 @@
       ],
       "Successfully exported all your items": [
         "Seluruh item Anda berhasil diekspor"
+      ],
+      "Successfully left the item": [
+        "Item berhasil ditinggalkan"
       ],
       "Successfully left the vault": [
         "Brankas berhasil ditinggalkan"
@@ -2065,6 +2086,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor yang dihasilkan akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Item ini tidak sedang dibagikan dengan siapa pun. Undang pengguna lain ke item ini untuk saling berbagi item bersama."
       ],
       "This operation is irreversible.": [
         "Tindakan ini tidak dapat diurungkan."
@@ -2141,9 +2165,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Tingkatkan ke paket berbayar untuk membuat lebih dari satu brankas."
       ],
-      "Use vaults to share this item with others.": [
-        "Gunakan brankas untuk membagikan item ini dengan yang lainnya."
-      ],
       "User's access removed": [
         "Akses pengguna dihapus"
       ],
@@ -2164,6 +2185,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Brankas \"${ share.content.name }\" telah dihapus"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Pembagian brankas: ${ vaultMembersCount } anggota"
       ],
       "Verification code sent.": [
         "Kode verifikasi telah dikirim."
@@ -2392,8 +2416,8 @@
       "All": [
         "Semua"
       ],
-      "All vaults": [
-        "Seluruh brankas"
+      "All items": [
+        "Semua item"
       ],
       "Alphabetical": [
         "Menurut abjad"
@@ -2599,6 +2623,9 @@
       "Floor, apartment, building": [
         "Lantai, apartemen, gedung"
       ],
+      "For a one-off sharing": [
+        "Untuk pembagian yang hanya satu kali"
+      ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Demi alasan keamanan, ${ PASS_SHORT_APP_NAME } akan mengunci dirinya sendiri secara otomatis setelah 10 menit tidak aktif."
       ],
@@ -2619,9 +2646,6 @@
       ],
       "General": [
         "Umum"
-      ],
-      "Generate a secure link for this item": [
-        "Hasilkan tautan aman untuk item ini"
       ],
       "Generic CSV": [
         "Berkas CSV umum"
@@ -2794,6 +2818,9 @@
       "Never": [
         "Tidak pernah"
       ],
+      "New": [
+        "Baru"
+      ],
       "New vault": [
         "Brankas baru"
       ],
@@ -2938,6 +2965,9 @@
       "Security code": [
         "Kode keamanan"
       ],
+      "See member and permission overview": [
+        "Lihat ikhtisar anggota dan perizinan"
+      ],
       "Select a domain": [
         "Pilih domain"
       ],
@@ -2965,11 +2995,17 @@
       "Share": [
         "Bagikan"
       ],
-      "Share this vault or create a new vault": [
-        "Bagikan brankas ini atau buat brankas baru"
+      "Shared": [
+        "Dibagikan"
+      ],
+      "Shared by me": [
+        "Dibagikan oleh saya"
       ],
       "Shared link": [
         "Tautan terbagi"
+      ],
+      "Shared with me": [
+        "Dibagikan dengan saya"
       ],
       "Show website favicons": [
         "Tampilkan favicon situs web"
@@ -3018,9 +3054,6 @@
       ],
       "Text": [
         "Teks"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Brankas milik item ini sedang dibagikan dengan ${ targetMembers } pengguna"
       ],
       "The URL has been copied to the clipboard": [
         "URL telah disalin ke papan klip"
@@ -3084,6 +3117,9 @@
       ],
       "Used in": [
         "Digunakan pada"
+      ],
+      "Useful for permanent sharing": [
+        "Berguna untuk pembagian yang bersifat permanen"
       ],
       "Username": [
         "Nama pengguna"
@@ -3299,23 +3335,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Cari ${ pluralItemType } di ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Cari ${ pluralItemType } di seluruh brankas"
+      "Search ${ pluralItemType } in all items": [
+        "Cari ${ pluralItemType } di seluruh item"
       ],
       "Search in ${ vaultName }": [
         "Cari di ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Cari di seluruh brankas"
+      "Search in all items": [
+        "Cari di semua item"
       ],
       "Search in Trash": [
         "Cari di Sampah"
       ],
       "Select a suffix": [
         "Pilih akhiran"
-      ],
-      "Shared vault": [
-        "Brankas bersama"
       ],
       "Unknown origin": [
         "Asal tidak diketahui"
@@ -3445,6 +3478,9 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domain berhasil diverifikasi. Domain Anda kini dapat mulai menerima email dan membuat alias"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Item tidak dapat mengandung lebih dari ${ share.targetMaxMembers } pengguna."
+      ],
       "Mailbox successfully deleted": [
         "Kotak surat berhasil dihapus"
       ],
@@ -3460,8 +3496,8 @@
       "Random prefix generation successfully enabled": [
         "Pembuatan awalan acak berhasil diaktifkan"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Brankas tidak dapat mengandung lebih dari ${ vault.targetMaxMembers } pengguna."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Brankas tidak dapat mengandung lebih dari ${ targetMaxMembers } pengguna."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Email verifikasi dikirim. Silakan periksa kotak masuk Anda untuk memverifikasi kotak surat Anda"
@@ -3647,11 +3683,17 @@
       "Install extension": [
         "Pasang ekstensi"
       ],
+      "Item": [
+        "Item"
+      ],
       "Last autofill": [
         "Pengisian otomatis terakhir"
       ],
       "Last modified": [
         "Terakhir diubah"
+      ],
+      "Leave this item?": [
+        "Tinggalkan item ini?"
       ],
       "Leave vault?": [
         "Tinggalkan brankas?"
@@ -3706,6 +3748,9 @@
       ],
       "No reused passwords": [
         "Tidak ada kata sandi yang digunakan ulang"
+      ],
+      "No shared items": [
+        "Tidak ada item yang dibagikan"
       ],
       "No shared secure links": [
         "Tidak ada tautan aman terbagi"
@@ -3799,6 +3844,12 @@
       ],
       "Share with": [
         "Bagikan dengan"
+      ],
+      "Shared item invitation": [
+        "Undangan item yang dibagikan"
+      ],
+      "Shared via": [
+        "Dibagikan via"
       ],
       "SPF (Optional)": [
         "SPF (Opsional)"
@@ -3914,6 +3965,9 @@
       ],
       "A description of the problem is required": [
         "Penjelasan masalah diperlukan"
+      ],
+      "Addresses already invited.": [
+        "Alamat telah diundang."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Alias yang berada di sampah akan tetap meneruskan email."
@@ -4032,6 +4086,9 @@
       "No secure links matching": [
         "Tidak ada tautan aman yang cocok"
       ],
+      "No shared items matching": [
+        "Tidak ada item yang dibagikan yang cocok"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4071,6 +4128,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Sebagian item saat ini sedang dibagikan. Dengan menghapus item ini, izin akses bagi seluruh pengguna lainnya akan dihapus."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Sebagian item saat ini sedang dibagikan. Dengan memindahkan item ini ke brankas lain, izin akses bagi seluruh pengguna lainnya akan dihapus."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Terjadi masalah saat memulai ${ PASS_APP_NAME }. Silakan coba segarkan atau muat ulang ekstensi."
       ],
@@ -4082,6 +4145,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Alamat email ini tidak akan lagi dipantau untuk kebocoran data."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Item ini saat ini sedang dibagikan. Dengan menghapus item ini, izin akses bagi seluruh pengguna lainnya akan dihapus."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Item ini saat ini sedang dibagikan. Dengan memindahkan item ini ke brankas lain, izin akses bagi seluruh pengguna lainnya akan dihapus."
       ],
       "Title is required": [
         "Judul dibutuhkan"
@@ -4104,8 +4173,14 @@
       "Verification code is required": [
         "Kode verifikasi diperlukan"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Anda telah mencapai batas jumlah anggota yang dapat mengakses item ini."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Anda telah mencapai batas jumlah anggota yang dapat mengakses brankas ini."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Anda telah mencapai batas jumlah pengguna untuk item ini. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Anda telah mencapai batas pengguna pada brankas ini. ${ upgradeLink }"
@@ -4118,6 +4193,9 @@
       ],
       "You must select at least one mailbox": [
         "Anda harus memilih setidaknya satu kotak surat"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Anda akan kehilangan akses ke item ini beserta dengan seluruh rinciannya. Apakah Anda yakin ingin melanjutkan?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Anda tidak akan lagi memiliki akses ke brankas ini. Untuk dapat kembali bergabung dengan brankas ini, Anda akan memerlukan undangan baru."

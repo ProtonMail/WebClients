@@ -106,9 +106,6 @@
       "Create a new vault": [
         "新建加密檔案庫"
       ],
-      "Create a new vault to share": [
-        "新增一個共享保管庫"
-      ],
       "Create alias": [
         "創建別名"
       ],
@@ -129,9 +126,6 @@
       ],
       "Creating vault": [
         "新建保管庫"
-      ],
-      "Customize": [
-        "自訂"
       ],
       "Delete": [
         "刪除"
@@ -283,9 +277,6 @@
       "Move all items": [
         "移動所有物品"
       ],
-      "Move to a shared vault": [
-        "移至共享保管庫"
-      ],
       "Move to another vault": [
         "移動到另一個保管庫"
       ],
@@ -409,8 +400,8 @@
       "Share": [
         "分享"
       ],
-      "Share this vault": [
-        "共享此保管庫"
+      "Share item": [
+        "分享項目"
       ],
       "Share vault": [
         "分享保險庫"
@@ -462,9 +453,6 @@
       ],
       "Update": [
         "更新"
-      ],
-      "Update vault": [
-        "更新保管庫"
       ],
       "Upgrade": [
         "升級"
@@ -927,9 +915,6 @@
       "Built in 2FA authenticator": [
         "內建雙重驗證機制"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "可於此保管庫新增、編輯、刪除與匯出項目。"
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "可取得及撤銷此保管庫，及刪除。"
       ],
@@ -1290,9 +1275,6 @@
       "Unverified": [
         "未驗證"
       ],
-      "Use vaults to share this item with others.": [
-        "使用保管庫以與他人共享此項目。"
-      ],
       "User's access removed": [
         "使用者存取權已撤銷"
       ],
@@ -1432,9 +1414,6 @@
       ],
       "All": [
         "全部"
-      ],
-      "All vaults": [
-        "全部的保管庫"
       ],
       "Alphabetical": [
         "拼音字母"
@@ -1642,6 +1621,9 @@
       ],
       "Include numbers (0-9)": [
         "包含數字(0~9)"
+      ],
+      "Info": [
+        "資訊"
       ],
       "Install and continue": [
         "安裝並繼續"
@@ -2091,23 +2073,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "於${ vaultName }搜尋${ pluralItemType }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "於保管庫中${ pluralItemType }"
-      ],
       "Search in ${ vaultName }": [
         "於 ${ vaultName } 中搜尋"
-      ],
-      "Search in all vaults": [
-        "搜尋所有層級"
       ],
       "Search in Trash": [
         "搜尋垃圾桶"
       ],
       "Select a suffix": [
         "選取後綴"
-      ],
-      "Shared vault": [
-        "分享保險庫"
       ],
       "Unknown origin": [
         "來源不明"
@@ -2136,9 +2109,9 @@
         "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
       ]
     },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "保管庫不能包含超過 ${ vault.targetMaxMembers } 位使用者。"
+    "Theme": {
+      "Dark": [
+        "深色"
       ]
     },
     "Title": {
@@ -2243,6 +2216,9 @@
       ],
       "Install extension": [
         "安裝擴充套件"
+      ],
+      "Item": [
+        "項目"
       ],
       "Last autofill": [
         "上次自動填滿"

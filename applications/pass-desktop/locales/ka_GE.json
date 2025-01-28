@@ -28,6 +28,9 @@
       "Accept": [
         "დასტური"
       ],
+      "Accept and view the item": [
+        "მიღება და ელემენტის ნახვა"
+      ],
       "Add": [
         "დამატება"
       ],
@@ -133,11 +136,11 @@
       "Continue offline": [
         "გაგრძელება ქსელის გარეშე"
       ],
-      "Copy alias address": [
-        "ფსევდონიმის მისამართის კოპირება"
-      ],
       "Copy and close": [
         "კოპირება და დახურვა"
+      ],
+      "Copy forwarding address": [
+        "გადაგზავნის მისამართის კოპირება"
       ],
       "Copy link": [
         "ბმულის კოპირება"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "ახალი საცავის შექმნა"
-      ],
-      "Create a new vault to share": [
-        "შექმენით ახალი საცავი გასაზიარებლად"
       ],
       "Create alias": [
         "ფსევდონიმის შექმნა"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "მორგებული განყოფილება"
-      ],
-      "Customize": [
-        "მორგება"
       ],
       "Delete": [
         "წაშლა"
@@ -249,9 +246,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "ჩართეთ ეს ფსევდონიმი, რომ მიიღოთ მისთვის გაგზავნილი ელფოსტები"
-      ],
-      "Entire vault": [
-        "მთელი საცავი"
       ],
       "Exclude from monitoring": [
         "მონიტორინგიდან ამოღება"
@@ -319,6 +313,9 @@
       "Install extension": [
         "გაფართოების დაყენება"
       ],
+      "Invite more...": [
+        "მეტის მოწვევა.."
+      ],
       "Invite others": [
         "სხვების მოწვევა"
       ],
@@ -358,9 +355,6 @@
       "Manage access": [
         "წვდომის მართვა"
       ],
-      "Manage vault access": [
-        "საცავის წვდომის მართვა"
-      ],
       "Manually sync your data": [
         "თქვენი მონაცემების ხელით სინქრონიზაცია"
       ],
@@ -384,9 +378,6 @@
       ],
       "Move all items": [
         "ყველა ელემენტის გადატანა"
-      ],
-      "Move to a shared vault": [
-        "გადატანა გაზიარებულ საცავში"
       ],
       "Move to another vault": [
         "სხვა საცავში გადატანა"
@@ -541,11 +532,11 @@
       "Share": [
         "გაზიარება"
       ],
+      "Share item": [
+        "ელემენტის გაზიარება"
+      ],
       "Share secure link": [
         "დაცული ბმულის გაზიარება"
-      ],
-      "Share this vault": [
-        "ამ საცავის გაზიარება"
       ],
       "Share vault": [
         "საცავის გაზიარება"
@@ -621,9 +612,6 @@
       "Update": [
         "განახლება"
       ],
-      "Update vault": [
-        "საცავის განახლება"
-      ],
       "Upgrade": [
         "ტარიფის აწევა"
       ],
@@ -653,6 +641,9 @@
       ],
       "View older history": [
         "ძველი ისტორიის ნახვა"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "სხვა ${ BRAND_NAME }-ის მომხმარებლებთან ერთად"
       ],
       "Write us on Reddit": [
         "მოგვწერეთ Reddit-ზე"
@@ -825,6 +816,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "ამჯამად ამ მოსაწვევის დადასტურება შეუძლებელია"
+      ],
+      "Could not leave item.": [
+        "ელემენტის დატოვების შეცდომა."
       ],
       "Could not leave vault.": [
         "საცავის დატოვების შეცდომა."
@@ -1274,10 +1268,6 @@
         "${ blockedEmailsCount } დაბლოკილი",
         "${ blockedEmailsCount } დაბლოკილი"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } მოსაწვევი წარმატებით გაიგზავნა",
-        "${ count } მოსაწვევი წარმატებით გაიგზავნა"
-      ],
       "${ count } time": [
         "${ count }-ჯერ",
         "${ count }-ჯერ"
@@ -1292,6 +1282,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } გადაგზავნილია",
         "${ forwardedEmailsCount } გადაგზავნილია"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } უნდა, ელემენტი გაგიზიაროთ."
       ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
@@ -1318,6 +1311,10 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME }-ს თქვენი ${ BRAND_NAME }-ის პაროლი დასჭირდება, რომ მონაცემებთან წვდომა ქსელის გარეშეც გქონდეთ."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა",
+        "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } წარმატებით გაითიშა"
@@ -1450,8 +1447,17 @@
       "Can be viewed": [
         "შეიძლება, ნახონ"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "შეუძლია ამ საცავის ელემენტების ჩასწორება, წაშლა და გატანა."
+      "Can create, edit, and delete items in this vault.": [
+        "შეიძლია შექნსა, ჩაასწოროს და წაშალოს ელემენტები ამ საცავში."
+      ],
+      "Can create, edit, and delete this item.": [
+        "შეუძლია შექმნას, ჩაასწოროს და წაშალოს ეს ელემენტი."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "შეუძლია ამ ელემენტზე წვდომების მინიჭება, ჩამორთმევა და წაშლა."
+      ],
+      "Can grant and revoke access to this item.": [
+        "შეუძლია ამ ელემენტზე წვდომების მინიჭება და ჩამორთმევა."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "შეუძლია ამ საცავზე წვდომების მინიჭება, ჩამორთმევა და წაშლა."
@@ -1461,6 +1467,9 @@
       ],
       "Can view items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების დათვალიერება."
+      ],
+      "Can view this item.": [
+        "შეუძლია ან ელემენტის დათვალიერება"
       ],
       "Change your password": [
         "შეცვალეთ თქვენი პაროლი"
@@ -1613,6 +1622,9 @@
       "For security reasons, your access needs to be confirmed": [
         "უსაფრთხოებისთვის თქვენს წვდომას დადასტურება სჭირდება"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "გადაგზავნის მისამართი დაკოპირდა ბუფერში. გააგზავნეთ ელფოსტა ამ მისამართზე და მას ${ Email } მიიღებს."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული.",
         "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული."
@@ -1700,6 +1712,10 @@
       "Item restored": [
         "ელემენტი აღდგენილია"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "ელემენტის გაზიარება: ${ itemAccessCount } მომხმარებელი",
+        "ელემენტის გაზიარება: ${ itemAccessCount } მომხმარებელი"
+      ],
       "Item successfully excluded from monitoring": [
         "ელემენტის მონიტორინგიდან ამოღება წარმატებულია"
       ],
@@ -1720,6 +1736,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "გაიგეთ, როგორ ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "ელემენტიდან გასვლა..."
       ],
       "Leaving vault...": [
         "საცავიდან გასლვა..."
@@ -1962,9 +1981,6 @@
       "Restoring trashed items...": [
         "ნაგვის ყუთში ჩაყრილი ელემენტების აღდგენა..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "უკუფსევდონიმის მისამართი დაკოპირდა ბუფერში. გააგზავნეთ ელფოსტა ამ მისამართზე და მას ${ Email } მიიღებს."
-      ],
       "Secure links": [
         "დაცული ბმულები"
       ],
@@ -2004,6 +2020,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "გაუზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები 10 პიროვნებამდე"
       ],
+      "Shared item invitation": [
+        "გაზიარებული ელემენტის მოსაწვევი"
+      ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
       ],
@@ -2012,6 +2031,9 @@
       ],
       "Successfully exported all your items": [
         "ყველა თქვენი ელემენტის გატანა წარმატებულია"
+      ],
+      "Successfully left the item": [
+        "ელემენტიდან გასვლა წარმატებულია"
       ],
       "Successfully left the vault": [
         "საცავიდან გასვლა წარმატებულია"
@@ -2064,6 +2086,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "ეს გატანა დაუშიფრავი იქნება და ყველას, ვისაც გატანილ ფაილზე წვდომა ექნება, შეეძლება, პაროლები დაინახოს. უსაფრთხოებისთვის, სჯობს, წაშალოთ ის, როცა მის გამოყენებას მორჩებით."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "ეს ელემენტი, ამჟამად, გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
       ],
       "This operation is irreversible.": [
         "ეს ოპერაცია შეუქცევადია."
@@ -2137,9 +2162,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "ერთზე მეტი საცავის შესაქმნელად ფასიან ტარიფზე უნდა გადახვიდეთ."
       ],
-      "Use vaults to share this item with others.": [
-        "ამ ელემენტის სხვებთან გასაზიარებლად, საცავები გამოიყენეთ."
-      ],
       "User's access removed": [
         "მომხმარებლის წვდომა წაიშალა"
       ],
@@ -2160,6 +2182,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "საცავი \"${ share.content.name }\" წაიშალა"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "საცავის გაზიარება: ${ vaultMembersCount } წევრი",
+        "საცავის გაზიარება: ${ vaultMembersCount } წევრი"
       ],
       "Verification code sent.": [
         "გადამოწმების კოდი გაიგზავნა."
@@ -2400,8 +2426,8 @@
       "All": [
         "ყველა"
       ],
-      "All vaults": [
-        "ყველა საცავი"
+      "All items": [
+        "ყველა ელემენტი"
       ],
       "Alphabetical": [
         "ანბანით"
@@ -2601,6 +2627,9 @@
       "Floor, apartment, building": [
         "სართული, ბინა, შენობა"
       ],
+      "For a one-off sharing": [
+        "ერთჯერადი გაზიარებისთვის"
+      ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "უსაფრთხოებისთვის, ${ PASS_SHORT_APP_NAME } ავტომატურად დაიბლოკება უქმეობის 10 წუთში."
       ],
@@ -2621,9 +2650,6 @@
       ],
       "General": [
         "ზოგადი"
-      ],
-      "Generate a secure link for this item": [
-        "დაცული ბმულის შექმნა ამ ელემენტისთვის"
       ],
       "Generic CSV": [
         "ზოგადი CSV"
@@ -2796,6 +2822,9 @@
       "Never": [
         "არასოდეს"
       ],
+      "New": [
+        "ახალი"
+      ],
       "New vault": [
         "ახალი საცავი"
       ],
@@ -2934,6 +2963,9 @@
       "Security code": [
         "უსაფრთხოების კოდი"
       ],
+      "See member and permission overview": [
+        "წევრებისა და წვდომების გადახედვა"
+      ],
       "Select a domain": [
         "აირჩიეთ დომენი"
       ],
@@ -2961,11 +2993,17 @@
       "Share": [
         "გაზიარება"
       ],
-      "Share this vault or create a new vault": [
-        "ამ საცავის გაზიარება ან ახლის შექმნა"
+      "Shared": [
+        "გაზიარებული"
+      ],
+      "Shared by me": [
+        "ჩემი გაზიარებული"
       ],
       "Shared link": [
         "გაზიარებული ბმული"
+      ],
+      "Shared with me": [
+        "ჩემთვის გაზიარებული"
       ],
       "Show website favicons": [
         "ვებგვერდის favicon-ების ჩვენება"
@@ -3014,10 +3052,6 @@
       ],
       "Text": [
         "ტექსტი"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "ელემენტის საცავი ამჟამად ${ targetMembers } მომხმარებელთანაა გაზიარებული",
-        "ელემენტის საცავი ამჟამად ${ targetMembers } მომხმარებელთანაა გაზიარებული"
       ],
       "The URL has been copied to the clipboard": [
         "ბმული დაკოპირდა ბუფერში"
@@ -3078,6 +3112,9 @@
       ],
       "Used in": [
         "გამოყენებულია სად"
+      ],
+      "Useful for permanent sharing": [
+        "სასარგებლოა მუდმივი გაზიარებისთვის"
       ],
       "Username": [
         "მომხმარებლის სახელი"
@@ -3295,23 +3332,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ pluralItemType }-ის ძებნა ${ vaultName }-ში"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "${ pluralItemType }-ის ყველა საცავში ძებნა"
+      "Search ${ pluralItemType } in all items": [
+        "${ pluralItemType }-ის ყველა ელემენტში ძებნა"
       ],
       "Search in ${ vaultName }": [
         "${ vaultName }-ში ძებნა"
       ],
-      "Search in all vaults": [
-        "ყველა საცავში ძებნა"
+      "Search in all items": [
+        "ძებნა ყველა ელემენტში"
       ],
       "Search in Trash": [
         "ნაგვის ყუთში ძებნა"
       ],
       "Select a suffix": [
         "აირჩიეთ სუფიქსი"
-      ],
-      "Shared vault": [
-        "გაზიარებული საცავი"
       ],
       "Unknown origin": [
         "უცნობი წყარო"
@@ -3441,6 +3475,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "დომენი წარმატებით გადამოწმდა. თქვენს დომენს შეუძლია დაიწყოს ელფოსტების მიღება და ფსევდონიმების შექმნა"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
+        "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
+      ],
       "Mailbox successfully deleted": [
         "საფოსტო ყუთი წარმატებით წაიშალა"
       ],
@@ -3456,9 +3494,9 @@
       "Random prefix generation successfully enabled": [
         "შემთხვევითი პრეფიქსის შექმნა წარმატებით ჩაირთო"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
-        "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "საცავი, არ შეიძლება, ${ targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
+        "საცავი, არ შეიძლება, ${ targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "გადამოწმების ელფოსტა გაიგზავნა. შეამოწმეთ თქვენი საფოსტო ყუთი ელფოსტის დასადასტურებლად"
@@ -3645,11 +3683,17 @@
       "Install extension": [
         "გაფართოების დაყენება"
       ],
+      "Item": [
+        "ელემენტი"
+      ],
       "Last autofill": [
         "უკანასკნელი ავტომატური შევსება"
       ],
       "Last modified": [
         "ბოლო ცვლილება"
+      ],
+      "Leave this item?": [
+        "დავტოვო ეს ელემენტი?"
       ],
       "Leave vault?": [
         "გავიდე საცავიდან?"
@@ -3706,6 +3750,9 @@
       ],
       "No reused passwords": [
         "განმეორებით გამოყენებული პაროლების გარეშე"
+      ],
+      "No shared items": [
+        "გაზიარებული ელემენტების გარეშე"
       ],
       "No shared secure links": [
         "გაზიარებული დაცული ბმულების გარეშე"
@@ -3801,6 +3848,12 @@
       ],
       "Share with": [
         "გაზიარება"
+      ],
+      "Shared item invitation": [
+        "გაზიარებული ელემენტის მოსაწვევი"
+      ],
+      "Shared via": [
+        "გაზიარებულია საიდან"
       ],
       "SPF (Optional)": [
         "SPF (არასავალდებულო)"
@@ -3917,6 +3970,9 @@
       ],
       "A description of the problem is required": [
         "პრობლემის აღწერა აუცილებელია"
+      ],
+      "Addresses already invited.": [
+        "მისამართები უკვე მოწვეულია."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "ფსევდონიმები ნაგვის ყუთში გააგრძელებენ ელფოსტების გადაგზავნას."
@@ -4038,6 +4094,9 @@
       "No secure links matching": [
         "დაცული ბმულები არ ემთხვევა"
       ],
+      "No shared items matching": [
+        "გაზიარებული ელემენტები არ ემთხვევა"
+      ],
       "Offline": [
         "გათიშულია"
       ],
@@ -4077,6 +4136,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "ზოგიერთი ელემენტი ამჟამად გაზიარებულია. მათი წაშლა სხვა მომხმარებლებს მათზე წვდომას დაუკარგავს."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "ამჟამად გაზიარებულია ზოგიერთი ელემენტი. მისი სხვა საცავში გადატანა სხვა მომხმარებლებს მასზე წვდომას დაუკავრავს."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "${ PASS_APP_NAME }-ის გაშვებისას რაღაც არასწორად წავიდა. სცადეთ, თავიდან ჩატვირთოთ, ან განაახლოთ გაფართოება"
       ],
@@ -4088,6 +4153,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "ეს ელფოსტის მისამართი მონაცემების გაჟონვებში მოხსენიებული აღარ იქნება."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "ეს ელემენტი ამჟამად გაზიარებულია. მისი წაშლა სხვა მომხმარებლებს მასზე წვდომას დაუკავრავს."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "ეს ელემენტი ამჟამად გაზიარებულია. მისი სხვა საცავში გადატანა სხვა მომხმარებლებს მასზე წვდომას დაუკავრავს."
       ],
       "Title is required": [
         "სათაური აუცილებელია"
@@ -4110,8 +4181,14 @@
       "Verification code is required": [
         "აუცილებელია გადამოწმების კოდი"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "მიაღწიეთ მომხმარებლების რაოდენობის ზღვარს, რომლებსაც ამ ელემენტთან წვდომა შეიძლება, ჰქონდეთ."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "მიაღწიეთ მომხმარებლების რაოდენობის ზღვარს, რომლებსაც ამ საცავთან წვდომა შეიძლება, ჰქონდეთ."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "მიაღწიეთ მომხმარებლების ზღვარს ამ ელემენტში. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "მიაღწიეთ მომხმარებლების ზღვარს ამ საცავში. ${ upgradeLink }"
@@ -4124,6 +4201,9 @@
       ],
       "You must select at least one mailbox": [
         "უნდა მიუთითოთ ერთი საფოსტო ყუთი მაინც"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "დაკარგავთ წვდომას ამ ელემენტთან და მის დეტალებთან. გნებავთ გააგრძელოთ?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "საცავთან წვდომა აღარ გექნებათ. თავიდან მისაერთებლად, ახალი მოსაწვევი დაგჭირდებათ."
