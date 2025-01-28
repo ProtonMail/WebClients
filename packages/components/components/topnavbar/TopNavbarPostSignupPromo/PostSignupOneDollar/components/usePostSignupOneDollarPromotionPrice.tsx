@@ -9,7 +9,7 @@ import { type Currency, PLANS, getPlanByName } from '@proton/payments';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import type { SUPPORTED_PRODUCTS } from './interface';
+import type { SUPPORTED_PRODUCTS } from '../interface';
 
 interface Props {
     offerProduct: SUPPORTED_PRODUCTS;
