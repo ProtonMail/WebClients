@@ -85,7 +85,7 @@ export const loadFulfilled = (
 ) => {
     const { page, params, refetch } = action.meta.arg;
     const {
-        result: { Total },
+        result: { Total, Stale },
         taskRunning,
     } = action.payload;
 
@@ -93,11 +93,18 @@ export const loadFulfilled = (
         Object.assign(state, {
             beforeFirstLoad: false,
             invalidated: false,
-            pendingRequest: refetch ? state.pendingRequest : false,
             page: refetch ? state.page : page,
-            total: Total,
             retry: newRetry(state.retry, params, undefined),
         });
+
+        // If the request in "on stale", do not update the total and pending request status.
+        // Otherwise, we would run into a scenario where part of the state is updated,
+        // E.g. total is updated but not elements
+        // This inconsistency would trigger another load action.
+        if (Stale !== 1) {
+            state.pendingRequest = refetch ? state.pendingRequest : false;
+            state.total = Total;
+        }
 
         state.taskRunning = taskRunning;
     }
