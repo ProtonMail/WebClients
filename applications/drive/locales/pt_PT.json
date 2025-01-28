@@ -67,7 +67,7 @@
         "Adicionar grupo"
       ],
       "Add new group": [
-        "Adicionar novo grupo"
+        "Adicionar um grupo"
       ],
       "Add note": [
         "Adicionar uma nota"
@@ -221,7 +221,7 @@
         "Criar"
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contactos"
+        "Criar um grupo de contactos"
       ],
       "Create and copy alias": [
         "Criar e colar alias"
@@ -233,7 +233,7 @@
         "Criar uma conta gratuita"
       ],
       "Create new folder": [
-        "Criar nova pasta"
+        "Criar uma pasta"
       ],
       "Create new text file": [
         "Criar um ficheiro de texto"
@@ -1051,11 +1051,6 @@
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
@@ -1148,34 +1143,9 @@
         "Histórico de versões"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } Plus não tem preço de renovação. É um pagamento único para acesso vitalício ao Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Os descontos baseiam-se no preço mensal padrão."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Se adquirir o Pass Family ou Unlimited, a sua subscrição será renovada automaticamente à taxa de desconto padrão e à duração no final do seu ciclo de faturação."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "A sua subscrição será renovada automaticamente à tarifa e duração normal com desconto no final do seu ciclo de faturação."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Mais populares"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Faturação de ${ amount } uma vez"
-      ],
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "forever": [
-        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }. "
@@ -1221,9 +1191,6 @@
       ],
       "12 months": [
         "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ],
       "Annually": [
         "Anualmente"
@@ -2419,11 +2386,6 @@
         "Fatura em dívida"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilize o assistente de importação Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege a sua conta com monitorização dedicada 24/7 de atividades suspeitas — incluindo a intervenção de especialistas em segurança."
@@ -2454,6 +2416,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
+      ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "Mantenha os seus ficheiros, fotos e documentos seguros com encriptação de ponta a ponta."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A unir contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
@@ -2502,6 +2467,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com o ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilize o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2694,6 +2664,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Mensagens e composição > Domínio curto (pm.me)."
       ],
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
@@ -2921,6 +2894,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Um dos grupos não tem contactos: ${ noContactGroupList }",
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "A chave da organização não está encriptada."
       ],
       "Password is required": [
         "A palavra-passe é obrigatória."
@@ -3514,6 +3490,20 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
+      ]
+    },
+    "Feature": {
+      "Access on mobile and desktop": [
+        "Acesso no telemóvel e computador"
+      ],
+      "Free 5 GB storage": [
+        "5 GB de armazenamento gratuito"
+      ],
+      "Save files for later access": [
+        "Guarde os seus ficheiros para acesso posterior"
+      ],
+      "Share privately and securely": [
+        "Partilhar de forma privada e segura"
       ]
     },
     "fido2: Error": {
@@ -4336,7 +4326,7 @@
         "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contactos"
+        "Criar um grupo de contactos"
       ],
       "Create a secure cloud for ${ value } member": [
         "Criar uma nuvem segura para ${ value } membro",
@@ -4695,6 +4685,9 @@
       ],
       "Key fingerprint": [
         "Impressão digital da chave"
+      ],
+      "Keys created": [
+        "Chaves criadas"
       ],
       "Label all imported messages as": [
         "Etiquetar todas as mensagens importadas como"
@@ -5355,6 +5348,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilize este formulário para nos notificar de ficheiros partilhados inadequados, ilegais,\nou ficheiros partilhados maliciosos. Está prestes a denunciar:"
+      ],
+      "User activated": [
+        "O utilizador foi ativado."
       ],
       "username": [
         "nome de utilizador"
@@ -7138,7 +7134,7 @@
         "Apoio prioritário e chat em direto"
       ],
       "Private photo backup": [
-        "Cópia de segurança de fotos privadas"
+        "Cópia de segurança de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Revise e refine os seus e-mails"
@@ -8032,7 +8028,7 @@
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Endereços de e-mail"
       ],
       "Free": [
@@ -8203,7 +8199,7 @@
         "Automático (${ value })"
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Ignore group": [
         "Ignorar grupo"
@@ -8973,6 +8969,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "A sua subscrição será renovada pelo mesmo preço todos os anos."
       ]
     },
     "specialoffer: Link": {
@@ -10007,7 +10006,7 @@
         "Criar contacto"
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Credits": [
         "Créditos"
@@ -10328,6 +10327,9 @@
       "Restore your files": [
         "Restaurar os seus ficheiros"
       ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "Guarde-o para mais tarde no ${ DRIVE_APP_NAME }"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Guarde-o para mais tarde no ${ DRIVE_APP_NAME }"
       ],
@@ -10517,11 +10519,6 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adicione este ficheiro partilhado ao seu ${ DRIVE_APP_NAME } para acesso fácil mais tarde."
@@ -10572,7 +10569,7 @@
         "Carregar a imagem"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
-        "A mensagem e o nome do ficheiro são armazenados com encriptação de acesso zero quando incluídos no e-mail."
+        "A mensagem e o nome do ficheiro são armazenados com encriptação de \"acesso zero\" quando incluídos no e-mail."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a utilizar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
@@ -10603,6 +10600,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviámos-lhes um convite para aceder ao item."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
     },
     "Validation": {
@@ -10653,6 +10655,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Será faturado a cada 12 meses no valor de ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "A sua nova subscrição será renovada automaticamente dentro de ${ cycle } mês.",
+        "A sua nova subscrição será renovada automaticamente em ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "O seu plano agendado começa em ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "A sua subscrição será renovada automaticamente dentro de ${ cycle } mês.",
