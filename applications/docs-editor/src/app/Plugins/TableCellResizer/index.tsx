@@ -1,4 +1,5 @@
-import type { TableDOMCell, TableCellNode } from '@lexical/table'
+import type { TableDOMCell } from '@lexical/table'
+import { TableCellNode } from '@lexical/table'
 import type { LexicalEditor } from 'lexical'
 
 import './index.css'
@@ -28,8 +29,8 @@ type MousePosition = {
 
 type MouseDraggingDirection = 'right' | 'bottom'
 
-const MIN_ROW_HEIGHT = 33
-const MIN_COLUMN_WIDTH = 50
+const MIN_ROW_HEIGHT = 35
+const MIN_COLUMN_WIDTH = 75
 
 function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
   const targetRef = useRef<HTMLElement | null>(null)
@@ -55,6 +56,15 @@ function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
   const isMouseDownOnEvent = (event: MouseEvent) => {
     return (event.buttons & 1) === 1
   }
+
+  useEffect(() => {
+    return editor.registerNodeTransform(TableCellNode, (node) => {
+      if (node.getWidth() !== undefined) {
+        return
+      }
+      node.setWidth(MIN_COLUMN_WIDTH)
+    })
+  }, [editor])
 
   useEffect(() => {
     const onMouseMove = (event: MouseEvent) => {
