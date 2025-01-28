@@ -885,11 +885,6 @@
         "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
@@ -979,23 +974,7 @@
         "Verziótörténet"
       ]
     },
-    "BF2024: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "A kedvezmények a standard havi árazás alapján kerülnek kiszámításra."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Az előfizetése automatikusan megújul a kedvezményes előfizetési áron és időtartamon a számlázási ciklus végén."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Legnépszerűbb"
-      ]
-    },
     "BF2024: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } áron"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Megújul 1 hónap elteltével a ${ regularAmount } áron."
       ]
@@ -1042,9 +1021,6 @@
       ],
       "12 months": [
         "12 hónap"
-      ],
-      "24 months": [
-        "24 hónap"
       ],
       "Annually": [
         "Évente"
@@ -3493,11 +3469,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Állítsa be igényei szerint a ${ BRAND_NAME } alkalmazások megjelenését."
       ],
-      "dedicated servers": [
-        "dedikált szerverek"
-      ],
       "Dedicated servers": [
         "Dedikált szerverek"
+      ],
+      "dedicated servers": [
+        "dedikált szerverek"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
@@ -6085,6 +6061,17 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -6169,17 +6156,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -9104,6 +9080,17 @@
         "Ma"
       ]
     },
+    "tooltip": {
+      "Group membership paused": [
+        "Csoport tagság felfüggesztve"
+      ],
+      "User declined invitation": [
+        "A felhasználó elutasította a meghívást"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Várakozás a meghívás elfogadására"
+      ]
+    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Az adminisztrátorok kezelhetik a felhasználói fiókokat, és adminisztrátori jogosultságokat adhatnak más felhasználóknak. Csak az elsődleges adminisztrátor szerkesztheti a szervezet előfizetését."
@@ -9161,17 +9148,6 @@
       ],
       "Your DKIM signing is working.": [
         "A DKIM aláírás megfelelően működik."
-      ]
-    },
-    "tooltip": {
-      "Group membership paused": [
-        "Csoport tagság felfüggesztve"
-      ],
-      "User declined invitation": [
-        "A felhasználó elutasította a meghívást"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Várakozás a meghívás elfogadására"
       ]
     },
     "Tor out of date": {
