@@ -76,7 +76,7 @@ export const getExploreApps = ({
             name: APPS.PROTONWALLET,
             bit: PRODUCT_BIT.WALLET,
             description: () => {
-                return c('wallet_signup_2024:app-switcher').t`A safer/easier way to hold & send Bitcoin`;
+                return c('wallet_signup_2024:app-switcher').t`A safer way to hold Bitcoin`;
             },
             isNew: isWalletAppSwitcherNewBadgeEnabled,
         },
