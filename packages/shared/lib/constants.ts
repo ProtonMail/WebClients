@@ -641,6 +641,11 @@ export enum CALENDAR_UPSELL_PATHS {
 
 export enum DRIVE_UPSELL_PATHS {
     SIDEBAR = 'sidebar',
+
+    // One dollar post-signup promotion
+    ONE_DOLLAR_INITIAL_REMINDER = 'one-dollar-initial-reminder',
+    ONE_DOLLAR_SECOND_REMINDER = 'one-dollar-second-reminder',
+    ONE_DOLLAR_LAST_REMINDER = 'one-dollar-last-reminder',
 }
 
 export enum SHARED_UPSELL_PATHS {

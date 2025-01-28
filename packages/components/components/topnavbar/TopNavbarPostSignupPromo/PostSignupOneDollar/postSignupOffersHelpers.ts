@@ -81,3 +81,32 @@ export const updatePostSignupOpenOfferState = (
 
     return offerState;
 };
+
+export const isStateTheSame = (
+    after: PostSubscriptionOneDollarOfferState,
+    before?: PostSubscriptionOneDollarOfferState
+) => {
+    return (
+        before?.offerStartDate === after.offerStartDate &&
+        before?.automaticOfferReminders === after.automaticOfferReminders
+    );
+};
+
+export const getOfferAgeTelemetryCategory = (day: number) => {
+    if (day >= 0 && day <= 4) {
+        return '0-4';
+    }
+    if (day >= 5 && day <= 9) {
+        return '5-9';
+    }
+    if (day >= 10 && day <= 14) {
+        return '10-14';
+    }
+    if (day >= 15 && day <= 19) {
+        return '15-19';
+    }
+    if (day >= 20 && day <= 24) {
+        return '20-24';
+    }
+    return '25-30';
+};

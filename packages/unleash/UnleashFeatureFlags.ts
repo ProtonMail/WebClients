@@ -99,6 +99,8 @@ enum DriveFeatureFlag {
     // Albums
     DriveAlbums = 'DriveAlbums',
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
+    // One-dollar offer
+    DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',
 }
 
 enum DocsFeatureFlag {
