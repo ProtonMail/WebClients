@@ -22,7 +22,6 @@ export const usePostSubscriptionTourTelemetry = () => {
             measurementGroup: TelemetryMeasurementGroups.postSubscriptionTourEvents,
             event: options.event,
             dimensions: 'dimensions' in options ? options.dimensions : undefined,
-            delay: false,
         });
 };
 
