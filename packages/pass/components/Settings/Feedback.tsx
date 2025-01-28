@@ -2,11 +2,12 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PASS_HOWTO_URL, PASS_REDDIT_URL, PASS_REQUEST_URL, PASS_X_URL } from '@proton/pass/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { usePassCore } from '../Core/PassCoreProvider';
 import { SettingsPanel } from './SettingsPanel';
 
 export const Feedback: FC = () => {
@@ -38,15 +39,18 @@ export const Feedback: FC = () => {
     return (
         <SettingsPanel title={c('Label').t`Feedback`}>
             {feedback.map(({ url, label, icon }) => (
-                <DropdownMenuButton
+                <Button
                     onClick={() => onLink(url)}
-                    parentClassName="w-full pass-submenu--item text-lg"
+                    className="w-full flex items-center gap-2 shrink-0 flex-nowrap"
                     size="small"
+                    shape="ghost"
                     key={label}
-                    label={label}
                     title={label}
-                    icon={icon}
-                />
+                    icon
+                >
+                    <Icon name={icon} />
+                    {label}
+                </Button>
             ))}
         </SettingsPanel>
     );
