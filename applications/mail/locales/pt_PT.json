@@ -79,7 +79,7 @@
         "Adicionar grupo"
       ],
       "Add new group": [
-        "Adicionar novo grupo"
+        "Adicionar um grupo"
       ],
       "Add note": [
         "Adicionar uma nota"
@@ -299,7 +299,7 @@
         "Copiar o número da versão para a área de transferência"
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contactos"
+        "Criar um grupo de contactos"
       ],
       "Create a new folder": [
         "Criar uma pasta"
@@ -320,10 +320,10 @@
         "Criar etiqueta"
       ],
       "Create new contact": [
-        "Criar novo contacto"
+        "Criar um contacto"
       ],
       "Create new message": [
-        "Criar nova mensagem"
+        "Criar uma mensagem"
       ],
       "Current plan": [
         "Plano atual"
@@ -1686,11 +1686,6 @@
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
@@ -1783,34 +1778,9 @@
         "Histórico de versões"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } Plus não tem preço de renovação. É um pagamento único para acesso vitalício ao Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Os descontos baseiam-se no preço mensal padrão."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Se adquirir o Pass Family ou Unlimited, a sua subscrição será renovada automaticamente à taxa de desconto padrão e à duração no final do seu ciclo de faturação."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "A sua subscrição será renovada automaticamente à tarifa e duração normal com desconto no final do seu ciclo de faturação."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Mais populares"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Faturação de ${ amount } uma vez"
-      ],
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "forever": [
-        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }. "
@@ -1856,9 +1826,6 @@
       ],
       "12 months": [
         "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ],
       "Annually": [
         "Anualmente"
@@ -4011,6 +3978,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Mensagens e composição > Domínio curto (pm.me)."
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
@@ -4280,6 +4250,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Um dos grupos não tem contactos: ${ noContactGroupList }",
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "A chave da organização não está encriptada."
       ],
       "Password is required": [
         "A palavra-passe é obrigatória."
@@ -6268,7 +6241,7 @@
         "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contactos"
+        "Criar um grupo de contactos"
       ],
       "Create a secure cloud for ${ value } member": [
         "Criar uma nuvem segura para ${ value } membro",
@@ -6360,7 +6333,7 @@
         "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
       ],
       "Download on the App Store": [
-        "Descarregue-o na App Store"
+        "Descarregue-a na App Store"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
@@ -6531,7 +6504,7 @@
         "Gerar texto"
       ],
       "Get it on Google Play": [
-        "Obtenha-o no Google Play"
+        "Obtenha-a no Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado se a sua palavra-passe ou outros dados tiverem sido divulgados por um serviço de terceiros."
@@ -6669,6 +6642,9 @@
       ],
       "Key fingerprint": [
         "Impressão digital da chave"
+      ],
+      "Keys created": [
+        "Chaves criadas"
       ],
       "Label all imported messages as": [
         "Etiquetar todas as mensagens importadas como"
@@ -7521,6 +7497,9 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilize os atalhos de teclado para gerir o seu e-mail mais rapidamente."
+      ],
+      "User activated": [
+        "O utilizador foi ativado."
       ],
       "username": [
         "nome de utilizador"
@@ -9689,7 +9668,7 @@
         "Apoio prioritário e chat em direto"
       ],
       "Private photo backup": [
-        "Cópia de segurança de fotos privadas"
+        "Cópia de segurança de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Revise e refine os seus e-mails"
@@ -10362,7 +10341,7 @@
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Endereços de e-mail"
       ],
       "Free": [
@@ -10579,7 +10558,7 @@
         "Automático (${ value })"
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Ignore group": [
         "Ignorar grupo"
@@ -11637,6 +11616,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "A sua subscrição será renovada pelo mesmo preço todos os anos."
       ]
     },
     "specialoffer: Link": {
@@ -13000,7 +12982,7 @@
         "Criar etiqueta \"${ search }\""
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Credits": [
         "Créditos"
@@ -13786,6 +13768,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Será faturado a cada 12 meses no valor de ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "A sua nova subscrição será renovada automaticamente dentro de ${ cycle } mês.",
+        "A sua nova subscrição será renovada automaticamente em ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "O seu plano agendado começa em ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "A sua subscrição será renovada automaticamente dentro de ${ cycle } mês.",
