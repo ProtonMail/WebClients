@@ -152,12 +152,12 @@ export type InviteAcceptRequest = {
 };
 export type AliasAndItemCreateRequest = { Alias: CustomAliasCreateRequest; Item: ItemCreateRequest };
 export type ItemsToTrashRequest = {
-    /* Pairs of item IDs with their latest revision. At most 100. */
+    /* Pairs of item IDs with the latest revision. At most 100. */
     Items: ItemIDRevision[];
 };
 export type ItemsToSoftDeleteRequest = {
     /* ItemIDs with their current revision. At most 100 items. */
-    Items: ItemIDRevision2[];
+    Items: ItemIDRevision[];
     /* Skip checking that the items are in the trash. Allows to delete directly */
     SkipTrash?: boolean | null;
 };
@@ -208,6 +208,12 @@ export type FileRestoreInput = {
     /* FileKey encrypted with the ItemKey, encoded in Base64 */
     FileKey: string;
     /* ItemKeyRotation used to encrypt the file key */
+    ItemKeyRotation: number;
+};
+export type FileRestoreBatchInput = {
+    /* Files to restore */
+    FilesToRestore: FileRestoreSingleInput[];
+    /* ItemKeyRotation used to encrypt the files keys */
     ItemKeyRotation: number;
 };
 export type KeyRotationRequest = {
@@ -274,7 +280,7 @@ export type PublicLinkCreateRequest = {
     Revision: number;
     /* Expiration time for the link in seconds. Minimum 3600 (1h), at maximum 30 days in the future */
     ExpirationTime: number;
-    /* Maximum amount of times that the item can be read. Unlimited reads if omitted */
+    /* Maximum amount of times that the item can be read. Unlimited reads if null */
     MaxReadCount?: number;
     /* Encrypted item key encoded in base64 */
     EncryptedItemKey: string;
@@ -282,6 +288,8 @@ export type PublicLinkCreateRequest = {
     EncryptedLinkKey: string;
     /* ShareKey rotation used for encrypting the encryptedLinkKey */
     LinkKeyShareKeyRotation: number;
+    /* If the link key is being encrypted with the item key */
+    LinkKeyEncryptedWithItemKey?: unknown;
 };
 export type UserSessionLockRequest = {
     /* Lock code to attach to this session */
@@ -362,6 +370,10 @@ export type SRPAuthRequest = {
 export type UpdateInAppNotificationsDisabledRequest = {
     /* Enable or disable the "InApp notifications disabled" setting */
     InAppNotificationsDisabled: boolean;
+};
+export type UserRedeemCouponInput = {
+    /* Coupon to redeem */
+    Coupon: string;
 };
 export type VaultCreateRequest = {
     /* AddressID that should be displayed as the owner */
@@ -703,6 +715,7 @@ export type ItemFileOutput = {
     ModifyTime: number;
 };
 export type ItemFileRestoreResponse = { Item: ItemRevisionContentsResponse; File: ItemFileOutput };
+export type ItemFileRestoreBatchResponse = { Item: ItemRevisionContentsResponse; Files: ItemFileOutput };
 export type ShareKeysResponse = {
     /* Keys */
     Keys: ShareKeyResponse[];
@@ -739,7 +752,8 @@ export type OrganizationGetResponse = {
 export type MemberMonitorReportList = {
     /* User monitor report for an organization member */
     MemberReports: MemberMonitorReport[];
-    LastID: Id;
+    /* Last ID for getting the next batch */
+    TotalMemberCount: number;
 };
 export type EventIDGetResponse = {
     /* Last event ID for this share */
@@ -785,6 +799,8 @@ export type PublicLinkGetContentResponse = {
     MaxReadCount: number;
     /* Timestamp in seconds of the expiration time for the link */
     ExpirationTime: number;
+    /* If the link key is being encrypted with the item key */
+    LinkKeyEncryptedWithItemKey?: unknown;
 };
 export type PublicLinkGetResponse = {
     /* ID of the public link */
@@ -807,6 +823,8 @@ export type PublicLinkGetResponse = {
     LinkKeyShareKeyRotation: number;
     /* Whether the link is active or already expired/beyond read count */
     Active: boolean;
+    /* If the link key is being encrypted with the item key */
+    LinkKeyEncryptedWithItemKey?: unknown;
 };
 export type SessionLockStorageTokenResponse = {
     /* Storage token to encrypt the local storage */
@@ -964,8 +982,7 @@ export type ImportItemRequest = {
     /* When was this item modified. By default it will be now */
     ModifyTime?: number | null;
 };
-export type ItemIDRevision = ItemIDRevision2;
-export type ItemIDRevision2 = {
+export type ItemIDRevision = {
     /* ItemID */
     ItemID: string;
     /* Current revision for the item */
@@ -989,6 +1006,11 @@ export type LinkFileToItemFileData = {
     FileKey: string;
 };
 export type Id = string;
+export type FileRestoreSingleInput = {
+    FileID: Id;
+    /* FileKey encrypted with the ItemKey, encoded in Base64 */
+    FileKey: string;
+};
 export type EncodedKeyRotationItemKey = {
     /* ItemID for this encrypted key */
     ItemID: string;
@@ -1022,6 +1044,8 @@ export type AliasSuffixResponse = {
     SignedSuffix: string;
     /* Whether this is a user domain or a public SL domain */
     IsCustom: boolean;
+    /* Whether this is a premium domain or a free SL domain */
+    IsPremium: boolean;
     /* Domain that this suffix uses */
     Domain: string;
 };
@@ -1192,18 +1216,13 @@ export type OrganizationSettingsGetResponse = {
 export type MemberMonitorReport = {
     /* Primary email for this member */
     PrimaryEmail: string;
-    /* Number of reused passwords */
-    ReusedPasswords: number;
-    /* Number of inactive 2FA */
-    Inactive2FA: number;
-    /* Number of excluded items */
-    ExcludedItems: number;
-    /* Number of weak passwords */
-    WeakPasswords: number;
-    /* Time of the last report */
-    ReportTime: number;
     CustomEmailBreachCount: BreachMonitorCounter;
     AddressBreachCount: BreachMonitorCounter;
+    ItemsReport: OrgMemberVaultItemReport;
+    /* Pass Monitor report. Will be null if there is no report stored. */
+    MonitorReport?: UserMonitorReport | null;
+    /* Last activity from the member. Null if the user has not actively done anything */
+    LastActivityTime?: number | null;
 };
 export type ItemIDLastUseTime = {
     /* Item ID */
@@ -1383,6 +1402,22 @@ export type BreachMonitorCounter = {
     /* Number of breaches for all the emails monitored */
     TotalBreachCount: number;
 };
+export type OrgMemberVaultItemReport = {
+    OwnedVaultCount?: number;
+    OwnedItemCount?: number;
+    AccessibleItemCount?: number;
+    AccessibleVaultCount?: number;
+};
+export type UserMonitorReport = {
+    UserID: string;
+    OrganizationID: number;
+    ReusedPasswords: number;
+    Inactive2FA: number;
+    ExcludedItems: number;
+    WeakPasswords: number;
+    ReportTime: number;
+    ClientVersion: string;
+};
 export enum PlanType {
     FREE = 'free',
     PLUS = 'plus',
@@ -1459,6 +1494,10 @@ export type ApiResponse<Path extends string, Method extends string> =
     : Path extends `pass/v1/share/${string}/alias/${string}/breaches/resolved` ?
         Method extends `post` ?
             { Code: ResponseCodeSuccess }
+        :   never
+    : Path extends `pass/v1/share/${string}/item/${string}/file/restore` ?
+        Method extends `post` ?
+            { Code: ResponseCodeSuccess; Result: ItemFileRestoreBatchResponse }
         :   never
     : Path extends `pass/v1/share/${string}/item/${string}/key/latest` ?
         Method extends `get` ?
@@ -1742,6 +1781,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `get` ?
             { Code: ResponseCodeSuccess; Settings?: UserAliasSettingsGetOutput | null }
         :   never
+    : Path extends `pass/v1/user/coupon/redeem` ?
+        Method extends `post` ?
+            { Code: ResponseCodeSuccess }
+        :   never
     : Path extends `pass/v1/user/session/lock` ?
         Method extends `post` ? { Code: ResponseCodeSuccess; LockData: SessionLockStorageTokenResponse }
         : Method extends `delete` ? { Code: ResponseCodeSuccess; LockData: SessionLockStorageTokenResponse }
@@ -1941,6 +1984,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         Method extends `post` ?
             NewUserInvitePromoteRequest
         :   never
+    : Path extends `pass/v1/share/${string}/item/${string}/file/restore` ?
+        Method extends `post` ?
+            FileRestoreBatchInput
+        :   never
     : Path extends `pass/v1/user/alias/mailbox/${string}/verify` ?
         Method extends `post` ?
             UserMailboxVerifyRequest
@@ -2092,6 +2139,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
     : Path extends `pass/v1/user/alias/mailbox` ?
         Method extends `post` ?
             UserMailboxCreateRequest
+        :   never
+    : Path extends `pass/v1/user/coupon/redeem` ?
+        Method extends `post` ?
+            UserRedeemCouponInput
         :   never
     : Path extends `pass/v1/user/session/lock` ?
         Method extends `post` ? UserSessionLockRequest
