@@ -75,7 +75,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                           ]
                         : []),
 
-                    ...(DESKTOP_BUILD && password.enabled
+                    ...(!EXTENSION_BUILD && password.enabled
                         ? [
                               {
                                   label: (
