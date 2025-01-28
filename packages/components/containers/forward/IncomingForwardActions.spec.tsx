@@ -9,15 +9,8 @@ import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import { rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingState } from '@proton/shared/lib/interfaces';
-import {
-    applyHOCs,
-    mockUseAddresses,
-    withApi,
-    withAuthentication,
-    withCache,
-    withConfig,
-    withEventManager,
-} from '@proton/testing';
+import { applyHOCs, withApi, withAuthentication, withCache, withConfig, withEventManager } from '@proton/testing';
+import { mockUseAddresses } from '@proton/testing/lib/mockUseAddresses';
 
 import IncomingForwardActions from './IncomingForwardActions';
 

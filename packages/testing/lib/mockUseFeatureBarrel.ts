@@ -1,26 +1,26 @@
-import * as useFeatureModule from '@proton/features/useFeature';
+import * as useFeatureModule from '@proton/features';
 import type { DeepPartial } from '@proton/shared/lib/interfaces';
 
-jest.mock('@proton/features/useFeature', () => ({
+jest.mock('@proton/features', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/features/useFeature'),
+    ...jest.requireActual('@proton/features'),
 }));
 
-type HookReturnType = ReturnType<typeof useFeatureModule.default>;
+type HookReturnType = ReturnType<typeof useFeatureModule.useFeature>;
 
 /**
- * Basic and raw useFeature mock. Use this mock if the original file has @proton/features/useFeature import.
+ * Basic and raw useFeature mock. Use this mock if the original file has @proton/features import.
  *
  * Example:
  * ```
- * const mockedUseFeature = mockUseFeature({ feature: { Value: true } });
+ * const mockedUseFeature = mockUseFeatureBarrel({ feature: { Value: true } });
  * expect(mockedUseFeature.code).toBe('FeatureCode');
  * ```
  *
  * More advanced mocks will be needed in case of components with multiple calls to useFeature
  */
-export const mockUseFeature = (value?: DeepPartial<ReturnType<typeof useFeatureModule.default>>) => {
-    const mockedUseFeature = jest.spyOn(useFeatureModule, 'default');
+export const mockUseFeatureBarrel = (value?: DeepPartial<ReturnType<typeof useFeatureModule.useFeature>>) => {
+    const mockedUseFeature = jest.spyOn(useFeatureModule, 'useFeature');
 
     mockedUseFeature.mockImplementation(
         (code) =>

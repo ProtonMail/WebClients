@@ -1,5 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
-import { FeatureCode, useFeature } from '@proton/features';
+import { FeatureCode } from '@proton/features';
+import useFeature from '@proton/features/useFeature';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
