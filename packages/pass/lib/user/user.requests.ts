@@ -85,3 +85,10 @@ export const getUserData = async (): Promise<HydratedUserState> => {
         },
     };
 };
+
+export const redeemCouponApi = async (Coupon: string) =>
+    api({
+        url: `pass/v1/user/coupon/redeem`,
+        method: 'post',
+        data: { Coupon },
+    });
