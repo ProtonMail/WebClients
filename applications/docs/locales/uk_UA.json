@@ -852,11 +852,6 @@
         "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
@@ -949,34 +944,9 @@
         "Історія версій"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Довічна угода Plus не має ціни поновлення, це одноразовий платіж за довічний доступ до Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Знижки відносно стандартної місячної ціни."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Якщо ви придбаєте Pass Family або Unlimited, ваша підписка буде автоматично продовжена за стандартною зниженою ціною та тривалістю в кінці розрахункового циклу."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша передплата автоматично поновиться за стандартною зниженою ставкою та тривалістю в кінці платіжного циклу."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Найпопулярніший"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Рахунок виставлено раз в ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "для ${ durationDeal }"
-      ],
-      "forever": [
-        "назавжди"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Автоматично продовжується через 1 місяць за ${ regularAmount }."
@@ -1023,9 +993,6 @@
       ],
       "12 months": [
         "12 місяців"
-      ],
-      "24 months": [
-        "24 місяці"
       ],
       "Annually": [
         "Щороку"
@@ -2199,6 +2166,11 @@
         "Протермінований рахунок"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скористайтеся помічником з імпортування Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
@@ -2274,11 +2246,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скористайтеся помічником з імпортування Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2463,6 +2430,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } – ваше ім'я користувача. Щоб створити ${ emailAddress }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
       ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
@@ -2703,6 +2673,9 @@
         "В деяких групах немає контактів: ${ noContactGroupList }",
         "В деяких групах немає контактів: ${ noContactGroupList }",
         "В деяких групах немає контактів: ${ noContactGroupList }"
+      ],
+      "Organization key is not decrypted": [
+        "Ключ організації не розшифровано"
       ],
       "Password is required": [
         "Пароль обов'язковий"
@@ -4339,6 +4312,9 @@
       "Key fingerprint": [
         "Цифровий відбиток ключа"
       ],
+      "Keys created": [
+        "Ключі створено"
+      ],
       "Label all imported messages as": [
         "Позначити всі імпортовані повідомлення"
       ],
@@ -4720,9 +4696,6 @@
       "This message will be presented again later": [
         "Це повідомлення буде представлено пізніше"
       ],
-      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "Можливо, цей публічний документ не існує, або ви не маєте дозволу на перегляд. Спробуйте перезавантажити сторінку, щоб перевірити, чи проблема існує."
-      ],
       "This will replace the existing file with the folder": [
         "Це призведе до заміни наявного файлу текою"
       ],
@@ -4794,6 +4767,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
+      ],
+      "User activated": [
+        "Користувач активований"
       ],
       "username": [
         "ім'я користувача"
@@ -8362,6 +8338,29 @@
         "За ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } сховища на користувача"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } власний поштовий домен",
+        "${ planNumberOfDomains } власні поштові домени",
+        "${ planNumberOfDomains } власних поштових доменів",
+        "${ planNumberOfDomains } власних поштових доменів"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } поштова адреса",
+        "${ planNumberOfEmails } поштові адреси",
+        "${ planNumberOfEmails } поштових адрес",
+        "${ planNumberOfEmails } поштових адрес"
+      ],
+      "Folders, labels, and custom filters": [
+        "Теки, мітки та користувацькі фільтри"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховища"
@@ -8401,29 +8400,6 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватність є нашою місією"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } сховища на користувача"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } власний поштовий домен",
-        "${ planNumberOfDomains } власні поштові домени",
-        "${ planNumberOfDomains } власних поштових доменів",
-        "${ planNumberOfDomains } власних поштових доменів"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } поштова адреса",
-        "${ planNumberOfEmails } поштові адреси",
-        "${ planNumberOfEmails } поштових адрес",
-        "${ planNumberOfEmails } поштових адрес"
-      ],
-      "Folders, labels, and custom filters": [
-        "Теки, мітки та користувацькі фільтри"
       ]
     },
     "Subscription renewal state": {
@@ -9163,6 +9139,11 @@
         "Сьогодні"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Додайте цей спільний файл до вашого ${ DRIVE_APP_NAME } для легкого доступу пізніше."
@@ -9238,11 +9219,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Ми надіслали їм запрошення, щоб отримати доступ до цього елементу."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
       ]
     },
     "Validation": {

@@ -120,9 +120,6 @@
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
-      "characters": [
-        "znaków"
-      ],
       "Chat with us": [
         "Czat z nami"
       ],
@@ -627,6 +624,9 @@
       "Switch or add account": [
         "Przełącz lub dodaj konto"
       ],
+      "Take a tour": [
+        "Otwórz przewodnik"
+      ],
       "Take out of trash": [
         "Przywróć z Kosza"
       ],
@@ -713,9 +713,6 @@
       ],
       "Word count": [
         "Licznik słów"
-      ],
-      "words": [
-        "słowa"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt",
@@ -843,11 +840,6 @@
         "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
@@ -940,34 +932,9 @@
         "Historia wersji"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do planu Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Jeśli zakupisz plan Pass Family lub Unlimited, Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie, na standardowy okres na koniec cyklu rozliczeniowego."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Najpopularniejsze"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Płatne ${ amount } jednorazowo"
-      ],
-      "for ${ durationDeal }": [
-        "za ${ durationDeal }"
-      ],
-      "forever": [
-        "na zawsze"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Odnawia się po 1 miesiącu za ${ regularAmount }."
@@ -1014,9 +981,6 @@
       ],
       "12 months": [
         "12 miesięcy"
-      ],
-      "24 months": [
-        "24 miesiące"
       ],
       "Annually": [
         "Rocznie"
@@ -1119,6 +1083,18 @@
       ],
       "Continue your subscription": [
         "Kontynuuj subskrypcję"
+      ],
+      "Create label": [
+        "Utwórz etykietę"
+      ],
+      "Remind me later": [
+        "Przypomnij mi później"
+      ],
+      "Set up other features": [
+        "Skonfiguruj inne funkcje"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
       ]
     },
     "Cancellation upsell": {
@@ -2190,6 +2166,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2265,11 +2246,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2454,6 +2430,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
       ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
@@ -2695,6 +2674,9 @@
         "Niektóre grupy nie posiadają kontaktów: ${ noContactGroupList } ",
         "Niektóre grupy nie posiadają kontaktów: ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "Klucz organizacji nie został odszyfrowany"
+      ],
       "Password is required": [
         "Hasło jest wymagane"
       ],
@@ -2724,6 +2706,9 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "Wpisz imię, nazwisko lub nazwę wyświetlaną"
+      ],
+      "Please select a country": [
+        "Wybierz kraj"
       ],
       "Port is required": [
         "Port jest wymagany"
@@ -3419,6 +3404,9 @@
       "Event validation failed": [
         "Weryfikacja wydarzenia nie powiodła się"
       ],
+      "Malformed all-day event": [
+        "Czas wydarzenia całodniowego posiada nieprawidłowy format"
+      ],
       "Malformed end time": [
         "Czas zakończenia posiada nieprawidłowy format"
       ],
@@ -3427,6 +3415,9 @@
       ],
       "Malformed start time": [
         "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
+      "Recurring rule not supported": [
+        "Reguła powtórzeń nie jest obsługiwana"
       ],
       "Start time out of bounds": [
         "Czas rozpoczęcia jest poza zakresem"
@@ -3979,9 +3970,6 @@
       "Change your password": [
         "Zmień hasło"
       ],
-      "characters": [
-        "znaków"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
       ],
@@ -4131,6 +4119,9 @@
       ],
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
+      ],
+      "Enabling auto-deletion…": [
+        "Włącz automatyczne usuwanie..."
       ],
       "End-to-end encrypted": [
         "Zaszyfrowane end-to-end"
@@ -4305,6 +4296,9 @@
       ],
       "Key fingerprint": [
         "Odcisk klucza"
+      ],
+      "Keys created": [
+        "Klucze zostały utworzone"
       ],
       "Label all imported messages as": [
         "Oznacz wszystkie zaimportowane wiadomości etykietą"
@@ -4552,6 +4546,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji..."
+      ],
       "Restored version to": [
         "Przywrócono wersję do"
       ],
@@ -4587,6 +4584,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
+      ],
+      "Setting up your new address…": [
+        "Konfiguracja nowego adresu..."
       ],
       "Settings update failed": [
         "Aktualizacja ustawień nie powiodła się"
@@ -4687,9 +4687,6 @@
       "This message will be presented again later": [
         "Wiadomość zostanie pokazana później"
       ],
-      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "Ten publiczny dokument może nie istnieć lub możesz nie mieć uprawnień do jego wyświetlenia. Spróbuj odświeżyć stronę, aby sprawdzić, czy problem nadal występuje."
-      ],
       "This will replace the existing file with the folder": [
         "Spowoduje to zastąpienie obecnego pliku folderem"
       ],
@@ -4762,6 +4759,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Przesyłanie dużej liczby plików na raz może wpłynąć na wydajność."
       ],
+      "User activated": [
+        "Użytkownik został aktywowany"
+      ],
       "username": [
         "nazwa użytkownika"
       ],
@@ -4821,9 +4821,6 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
-      ],
-      "words": [
-        "słowa"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
@@ -5580,6 +5577,9 @@
       "Request an invite": [
         "Poproś o zaproszenie"
       ],
+      "settings": [
+        "ustawienia"
+      ],
       "stay safer online": [
         "zachować bezpieczeństwo online"
       ],
@@ -6019,11 +6019,17 @@
       "Get started for ${ priceCoupon }": [
         "Od ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
       "Upgrade": [
         "Ulepsz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6199,6 +6205,9 @@
       ],
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB of storage": [
+        "200 GB przestrzeni dyskowej"
       ],
       "24/7 account management support": [
         "Wsparcie zarządzania kontem 24/7"
@@ -6394,6 +6403,9 @@
       ],
       "Priority support & live chat": [
         "Priorytetowe wsparcie i czat"
+      ],
+      "Private photo backup": [
+        "Prywatna kopia zapasowa zdjęć"
       ],
       "Proofread and refine your emails": [
         "Sprawdzaj i poprawiaj teksty"
@@ -7222,6 +7234,31 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
+      ]
+    },
+    "Offer": {
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Limited-time offer": [
+        "Oferta ograniczona czasowo"
+      ],
+      "Maybe later": [
+        "Może później"
+      ]
+    },
+    "Offer feature": {
+      "Custom email domain": [
+        "Niestandardowa domena"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Przestrzeń dyskowa"
       ]
     },
     "Option": {
@@ -8360,6 +8397,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } niestandardowa domena",
+        "${ planNumberOfDomains } niestandardowe domeny",
+        "${ planNumberOfDomains } niestandardowych domen",
+        "${ planNumberOfDomains } niestandardowych domen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adres e-mail",
+        "${ planNumberOfEmails } adresy e-mail",
+        "${ planNumberOfEmails } adresów e-mail",
+        "${ planNumberOfEmails } adresów e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Foldery, etykiety i filtry niestandardowe"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
@@ -8399,29 +8459,6 @@
       ],
       "Your privacy is our mission": [
         "Prywatność to nasza misja"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } niestandardowa domena",
-        "${ planNumberOfDomains } niestandardowe domeny",
-        "${ planNumberOfDomains } niestandardowych domen",
-        "${ planNumberOfDomains } niestandardowych domen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adres e-mail",
-        "${ planNumberOfEmails } adresy e-mail",
-        "${ planNumberOfEmails } adresów e-mail",
-        "${ planNumberOfEmails } adresów e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Foldery, etykiety i filtry niestandardowe"
       ]
     },
     "Subscription renewal state": {
@@ -8729,6 +8766,9 @@
       "Are you sure?": [
         "Czy na pewno?"
       ],
+      "Auto-deletion is active": [
+        "Automatyczne usuwanie jest aktywne"
+      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -8893,6 +8933,9 @@
       ],
       "Enable 2FA": [
         "Włącz uwierzytelnianie dwustopniowe"
+      ],
+      "End-to-end encrypted": [
+        "Zaszyfrowane end-to-end"
       ],
       "Enter 2FA code": [
         "Wpisz kod uwierzytelniający"
@@ -9161,6 +9204,11 @@
         "Dzisiaj"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Dodaj udostępniony plik do ${ DRIVE_APP_NAME }, aby mieć do niego łatwy dostęp."
@@ -9236,11 +9284,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wysłaliśmy zaproszenie do elementu."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Validation": {
