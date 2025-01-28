@@ -11,6 +11,8 @@ export const clearOPFS = async () => {
             }
         }
     } catch (e) {
-        sendErrorReport(e);
+        sendErrorReport(e, {
+            level: 'info',
+        });
     }
 };

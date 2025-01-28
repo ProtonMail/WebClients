@@ -447,7 +447,7 @@ export class UploadWorkerController {
 
     onCancel: () => void;
 
-    heartbeatTimeout?: NodeJS.Timeout;
+    heartbeatTimeout?: ReturnType<typeof setTimeout>;
 
     /**
      * On Chrome, there is no way to know if a worker fails to load.
@@ -457,7 +457,7 @@ export class UploadWorkerController {
      * it's not particularly great UX. So instead we run a localized timeout, with a
      * quicker turn-around time in case of failure.
      */
-    workerTimeout?: NodeJS.Timeout;
+    workerTimeout?: ReturnType<typeof setTimeout>;
 
     constructor(
         worker: Worker,
@@ -484,10 +484,10 @@ export class UploadWorkerController {
         }, WORKER_INIT_WAIT_TIME);
 
         worker.addEventListener('message', ({ data }: WorkerEvent) => {
+            clearTimeout(this.workerTimeout);
             switch (data.command) {
                 case 'alive':
                     log('Worker alive');
-                    clearTimeout(this.workerTimeout);
                     break;
                 case 'keys_generated':
                     log('File keys generated');
