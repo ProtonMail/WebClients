@@ -15,9 +15,9 @@ function* moveAllItemsWorker(
     { onItemsUpdated }: RootSagaOptions,
     { payload, meta }: ReturnType<typeof vaultMoveAllItemsIntent>
 ) {
-    const { shareId, content, destinationShareId } = payload;
+    const { shareId, content, targetShareId } = payload;
     const itemsToMove: ItemRevision[] = yield select(selectItemsByShareId(shareId));
-    const channel = bulkMoveChannel(itemsToMove, destinationShareId);
+    const channel = bulkMoveChannel(itemsToMove, targetShareId);
 
     while (true) {
         const action: BulkMoveItemsChannel = yield take(channel);
@@ -26,7 +26,7 @@ function* moveAllItemsWorker(
             yield put(
                 vaultMoveAllItemsProgress(meta.request.id, action.progress, {
                     ...action.data,
-                    destinationShareId,
+                    targetShareId,
                 })
             );
             onItemsUpdated?.();

@@ -97,7 +97,6 @@ const matchesAliasItem: ItemMatch<'alias'> = combineMatchers<'alias'>(
 const matchesCreditCardItem: ItemMatch<'creditCard'> = combineMatchers<'creditCard'>(
     matchField((item) => item.data.metadata.name),
     matchField((item) => item.data.content.cardholderName),
-    matchField((item) => memoDeobfuscate(item.data.content.number)),
     matchField((item) => memoDeobfuscate(item.data.metadata.note))
 );
 

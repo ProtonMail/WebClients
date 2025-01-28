@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { MaskedValueControl } from '@proton/pass/components/Form/Field/Control/MaskedValueControl';
+import { ObfuscatedValueControl } from '@proton/pass/components/Form/Field/Control/ObfuscatedValueControl';
 import { UpgradeControl } from '@proton/pass/components/Form/Field/Control/UpgradeControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -15,10 +16,11 @@ import {
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
-import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
+import { usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { formatExpirationDateMMYY } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { deobfuscate, deobfuscateCreditCard } from '@proton/pass/utils/obfuscate/xor';
 
 export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLinkItem, revision }) => {
     const { data: item } = revision;
@@ -26,7 +28,7 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
     const {
         metadata: { note },
         content: { cardholderName, expirationDate, number, verificationNumber, pin },
-    } = useDeobfuscatedItem(item);
+    } = usePartialDeobfuscatedItem(item);
 
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
     const upsell = isFreePlan && !secureLinkItem;
@@ -42,17 +44,18 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                         upsellRef={UpsellRef.LIMIT_CC}
                     />
                 ) : (
-                    <MaskedValueControl
+                    <ObfuscatedValueControl
                         clickToCopy
                         hidden
-                        hiddenValue={cardNumberHiddenValue(number)}
+                        hiddenValue={cardNumberHiddenValue}
                         icon="credit-card"
                         label={c('Label').t`Card number`}
-                        mask={cardNumberMask(number)}
+                        mask={cardNumberMask}
                         value={number}
-                        clipboardValue={number}
+                        deobfuscate={deobfuscateCreditCard}
                     />
                 )}
+
                 <MaskedValueControl
                     clickToCopy
                     icon="calendar-today"
@@ -60,15 +63,25 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                     mask={expDateMask}
                     value={formatExpirationDateMMYY(expirationDate)}
                 />
-                <ValueControl
+
+                <ObfuscatedValueControl
                     clickToCopy
                     hidden
                     hiddenValue="••••"
                     icon="shield"
                     label={c('Label').t`Security code`}
                     value={verificationNumber}
+                    deobfuscate={deobfuscate}
                 />
-                <ValueControl hidden hiddenValue="••••" icon="grid-3" label={c('Label').t`PIN`} value={pin} />
+
+                <ObfuscatedValueControl
+                    hidden
+                    hiddenValue="••••"
+                    icon="grid-3"
+                    label={c('Label').t`PIN`}
+                    value={pin}
+                    deobfuscate={deobfuscate}
+                />
             </FieldsetCluster>
 
             {note && (

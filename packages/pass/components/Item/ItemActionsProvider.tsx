@@ -112,8 +112,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 openVaultSelect({
                     mode,
                     shareId: item.shareId,
-                    onSubmit: (destinationShareId) => {
-                        moveItem.prompt({ itemId: item.itemId, shareId: item.shareId, destinationShareId });
+                    onSubmit: (targetShareId) => {
+                        moveItem.prompt({ itemId: item.itemId, shareId: item.shareId, targetShareId });
                         closeVaultSelect();
                     },
                 }),

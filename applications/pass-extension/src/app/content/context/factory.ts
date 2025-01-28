@@ -48,7 +48,7 @@ export const createContentScriptContext = (options: {
                 onDetection: (forms) => {
                     /* attach or detach dropdown based on the detection results */
                     const didDetect = forms.length > 0;
-                    if (didDetect) context.service.iframe.attachDropdown();
+                    if (didDetect) context.service.iframe.attachDropdown(document.body);
                     else context.service.iframe.dropdown?.destroy();
                 },
             }),

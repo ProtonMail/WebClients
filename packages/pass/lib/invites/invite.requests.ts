@@ -89,7 +89,7 @@ export const createUserInvites = async (
             case ShareType.Item:
                 return manager.getItemShareKeys();
             case ShareType.Vault:
-                const encryptedItemKeys = (await getItemKeys(shareId, itemId))?.Keys || [];
+                const encryptedItemKeys = (await getItemKeys(shareId, itemId)) || [];
                 return Promise.all(
                     encryptedItemKeys.map((key) =>
                         PassCrypto.openItemKey({
