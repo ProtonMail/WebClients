@@ -317,6 +317,12 @@
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Λάβετε το ${ planName } για ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Αποκτήστε το ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Επικοινωνήστε"
       ],
@@ -689,6 +695,9 @@
       "Switch or add account": [
         "Εναλλαγή ή προσθήκη λογαριασμού"
       ],
+      "Take a tour": [
+        "Κάντε μια περιήγηση"
+      ],
       "Today": [
         "Σήμερα"
       ],
@@ -986,11 +995,6 @@
         "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
@@ -1083,34 +1087,9 @@
         "Ιστορικό εκδόσεων"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Η προσφορά διάρκειας ζωής ${ PASS_SHORT_APP_NAME } Plus δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Αν αγοράσετε Pass Family ή Unlimited, η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή και διάρκεια στο τέλος του κύκλου χρέωσης."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή και διάρκεια στο τέλος του κύκλου χρέωσης."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Δημοφιλέστερα"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Χρεώνεται σε ${ amount } μία φορά"
-      ],
-      "for ${ durationDeal }": [
-        "για ${ durationDeal }"
-      ],
-      "forever": [
-        "για πάντα"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Ανανεώνεται μετά από 1 μήνα στα ${ regularAmount }."
@@ -1122,6 +1101,9 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+, Prime Video και άλλων, από οπουδήποτε."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα hide-my-email, κοινή χρήση, ενσωματωμένο 2FA, ${ DARK_WEB_MONITORING_NAME } και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονική διεύθυνση, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
@@ -1153,9 +1135,6 @@
       ],
       "12 months": [
         "12 μήνες"
-      ],
-      "24 months": [
-        "24 μήνες"
       ],
       "Annually": [
         "Ετησίως"
@@ -1258,6 +1237,21 @@
       ],
       "Continue your subscription": [
         "Συνεχίστε τη συνδρομή σας"
+      ],
+      "Create label": [
+        "Δημιουργία ετικέτας"
+      ],
+      "Discover and set up features": [
+        "Ανακαλύψτε και ρυθμίστε λειτουργίες"
+      ],
+      "Remind me later": [
+        "Υπενθύμιση αργότερα"
+      ],
+      "Set up other features": [
+        "Ρύθμιση άλλων δυνατοτήτων"
+      ],
+      "Take a tour": [
+        "Κάντε μια περιήγηση"
       ]
     },
     "Calendar access select label": {
@@ -2935,6 +2929,9 @@
         "Ο ${ list } δεν έχει επαφές",
         "Κάποιες ομάδες δεν έχουν επαφές: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Μηνύματα και σύνθεση > Σύντομος τομέας (pm.me)"
+      ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
@@ -3198,6 +3195,9 @@
         "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
         "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
+      ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
       ],
@@ -3228,6 +3228,12 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "Παρακαλούμε καταχωρήστε είτε όνομα, επώνυμο ή εμφανιζόμενο όνομα"
+      ],
+      "Please select a country": [
+        "Παρακαλούμε επιλέξτε μια χώρα"
+      ],
+      "Please select a state": [
+        "Παρακαλώ διαλέξτε πολιτεία"
       ],
       "Port is required": [
         "Απαιτείται θύρα"
@@ -4354,6 +4360,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "Το ${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική παρακολούθηση ύποπτης δραστηριότητας."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
         "${ providerFoldersNumLocalized } φάκελοι βρέθηκαν"
@@ -4615,6 +4624,12 @@
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Ανακαλύψτε νέες δυνατότητες που ξεκλειδώθηκαν και αρχίστε να τις χρησιμοποιείτε αμέσως!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Ανακαλύψτε νέες δυνατότητες που ξεκλειδώνονται με το ${ planTitle } και αρχίστε να τις χρησιμοποιείτε αμέσως!"
+      ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
       ],
@@ -4656,6 +4671,12 @@
       ],
       "Emails are automatically signed": [
         "Τα μηνύματα υπογράφονται αυτόματα"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που μεταφέρθηκαν στον Κάδο απορριμμάτων και στα Ανεπιθύμητα πριν από περισσότερες από 30 ημέρες θα διαγραφούν αυτόματα."
+      ],
+      "Enabling auto-deletion…": [
+        "Ενεργοποίηση αυτόματης διαγραφής…"
       ],
       "Enter the code from your authenticator app": [
         "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
@@ -4776,6 +4797,9 @@
       "Key fingerprint": [
         "Κλειδί δακτυλικού αποτυπώματος"
       ],
+      "Keys created": [
+        "Τα κλειδιά δημιουργήθηκαν"
+      ],
       "Label all imported messages as": [
         "Επισήμανση όλων των εισαγόμενων μηνυμάτων ως"
       ],
@@ -4884,6 +4908,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
       ],
+      "or discover other features:": [
+        "ή ανακαλύψτε άλλα χαρακτηριστικά:"
+      ],
       "Organization size": [
         "Μέγεθος οργανισμού"
       ],
@@ -4970,6 +4997,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
+      "Registering your subscription…": [
+        "Εγγραφή της συνδρομής σας…"
+      ],
       "Removed participants will be notified.": [
         "Οι συμμετέχοντες που αφαιρέθηκαν θα ειδοποιηθούν."
       ],
@@ -4998,8 +5028,14 @@
       "Session timed out": [
         "Η συνεδρία έληξε"
       ],
+      "Setting up ${ feature }…": [
+        "Ρύθμιση ${ feature }…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
+      ],
+      "Setting up your new address…": [
+        "Ρύθμιση της νέας διεύθυνσής σας…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
@@ -5127,6 +5163,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
       ],
+      "User activated": [
+        "Ο χρήστης ενεργοποιήθηκε"
+      ],
       "username": [
         "όνομα χρήστη"
       ],
@@ -5241,6 +5280,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ${ settingsLink }."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
@@ -5266,6 +5308,9 @@
       ],
       "You cannot undo this action.": [
         "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Λαμβάνετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτων."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Αν θέλετε να συνεχίσετε τη συνδρομή σας μετά τη δοκιμαστική περίοδο, προσθέστε έναν τρόπο πληρωμής."
@@ -5881,6 +5926,9 @@
       "Start date": [
         "Ημερομηνία Έναρξης"
       ],
+      "State": [
+        "Πολιτεία"
+      ],
       "Street address": [
         "Οδός"
       ],
@@ -6051,6 +6099,9 @@
       ],
       "Sent": [
         "Απεσταλμένα"
+      ],
+      "settings": [
+        "ρυθμίσεις"
       ],
       "Snooze": [
         "Αναβολή"
@@ -6453,11 +6504,17 @@
       "Get started for ${ priceCoupon }": [
         "Ξεκινήστε με ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
       "Upgrade": [
         "Αναβάθμιση"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6599,6 +6656,9 @@
       ],
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
+      ],
+      "200 GB of storage": [
+        "200 GB αποθηκευτικού χώρου"
       ],
       "24/7 account management support": [
         "24/7 υποστήριξη διαχείρισης λογαριασμού"
@@ -6793,6 +6853,9 @@
       "Priority support & live chat": [
         "Υποστήριξη προτεραιότητας & ζωντανή συνομιλία"
       ],
+      "Private photo backup": [
+        "Ιδιωτικό αντίγραφο ασφαλείας φωτογραφιών"
+      ],
       "Proofread and refine your emails": [
         "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
       ],
@@ -6829,6 +6892,9 @@
       ],
       "Secure Core servers": [
         "Διακομιστές Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Ασφαλής αποθήκευση και κοινή χρήση αρχείων"
       ],
       "Secure link sharing": [
         "Ασφαλής κοινή χρήση συνδέσμων"
@@ -7061,6 +7127,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Ξεκλειδώστε όλα τα ${ BRAND_NAME } premium προϊόντα και δυνατότητες με μόλις ${ priceMailPlus }. Ακυρώστε ανά πάσα στιγμή."
       ]
     },
     "new_plans: title": {
@@ -7539,6 +7613,52 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Επιλέξτε σε τι μπορεί να έχει πρόσβαση το ${ BRAND_NAME }: δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου και τις ρυθμίσεις σας, προβάλετε και κατεβάστε τις επαφές σας, προβάλετε και κατεβάστε όλες τις ατζέντες στις οποίες έχετε πρόσβαση από το Google Calendar."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Αποκτήστε το Drive Plus για μόνο ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Αποκτήστε το Mail Plus για μόνο ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
+      ],
+      "Save 80% on your first month.": [
+        "Εξοικονομήστε 80% τον πρώτο μήνα σας."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Custom email domain": [
+        "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Free": [
+        "Δωρεάν"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
       ]
     },
     "Onboarding": {
@@ -8476,6 +8596,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Η συνδρομή σας θα ανανεώνεται με την ίδια τιμή κάθε χρόνο."
       ]
     },
     "specialoffer: Link": {
@@ -8484,6 +8607,9 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Αναβάθμιση για ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9447,6 +9573,9 @@
         "${ emailsCount } διεύθυνση email",
         "${ emailsCount } διευθύνσεις email"
       ],
+      "${ feature } is now active": [
+        "Το ${ feature } είναι πλέον ενεργό"
+      ],
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
       ],
@@ -9501,6 +9630,9 @@
       ],
       "Are you sure?": [
         "Είστε σίγουρος/η;"
+      ],
+      "Auto-deletion is active": [
+        "Η αυτόματη διαγραφή είναι ενεργή"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -9934,6 +10066,9 @@
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
       ],
+      "You can now create unlimited folders and labels": [
+        "Τώρα μπορείτε να δημιουργήσετε απεριόριστους φακέλους και ετικέτες"
+      ],
       "You have invited participants with equivalent emails": [
         "Έχετε προσκαλέσει συμμετέχοντες με ισοδύναμα μηνύματα ηλεκτρονικού ταχυδρομείου"
       ],
@@ -10107,6 +10242,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε 12 μήνες με ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Η νέα συνδρομή σας θα ανανεωθεί αυτόματα σε ${ cycle } μήνα.",
+        "Η νέα συνδρομή σας θα ανανεωθεί αυτόματα σε ${ cycle } μήνες."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα σε ${ cycle } μήνα.",
