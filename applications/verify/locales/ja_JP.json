@@ -1079,6 +1079,9 @@
       "Country code": [
         "国コード"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "${ termsLink } では、複数の無料アカウントを作成することはできません。"
+      ],
       "Each code can only be used once": [
         "各コードは 1 回のみ使用可能です"
       ],
@@ -1096,6 +1099,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "自分(組織管理者として)のパスワードを入力してください。"
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "追加情報や制限を解除するには、 ${ mailLink } にログインしてください。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -1275,6 +1281,9 @@
       "15 GB storage": [
         "15 GB のストレージ"
       ],
+      "200 GB of storage": [
+        "200 GBストレージ"
+      ],
       "Advanced account protection": [
         "高度なアカウント保護"
       ],
@@ -1359,6 +1368,9 @@
       "Password-protected Emails": [
         "パスワードで保護されたメール"
       ],
+      "Private photo backup": [
+        "プライベート写真のバックアップ"
+      ],
       "Proofread and refine your emails": [
         "メールを校正し、洗練させる"
       ],
@@ -1379,6 +1391,9 @@
       ],
       "Search message content": [
         "メッセージ内容の検索"
+      ],
+      "Secure file storage and sharing": [
+        "安全なファイルストレージと共有"
       ],
       "See team's availability": [
         "チームの空き状況を確認"
@@ -1604,6 +1619,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "アカウントが制限されました"
+      ],
       "Enter 2FA code": [
         "2要素認証コードを入力"
       ],
