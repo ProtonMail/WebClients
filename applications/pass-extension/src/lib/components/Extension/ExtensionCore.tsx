@@ -191,7 +191,9 @@ const getPassCoreProviderProps = (
             ).catch(noop),
 
         onB2BEvent: (event) =>
-            sendMessage(messageFactory({ type: WorkerMessageType.B2B_EVENT, payload: { event } })).catch(noop),
+            sendMessage(messageFactory({ type: WorkerMessageType.B2B_EVENT, payload: { event } }))
+                .then((res) => res.type === 'success')
+                .catch(() => false),
 
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
     };
