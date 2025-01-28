@@ -4,8 +4,10 @@ import { domIsBusy } from '@proton/shared/lib/busy';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-import { POST_SIGNUP_ONE_DOLLAR_DURATION } from '../PostSignupOneDollar/MailPostSignupOneDollar/mailPostSignupOneDollarHelper';
-import { type PostSubscriptionOneDollarOfferState } from '../PostSignupOneDollar/components/interface';
+import {
+    POST_SIGNUP_ONE_DOLLAR_DURATION,
+    type PostSubscriptionOneDollarOfferState,
+} from '../PostSignupOneDollar/interface';
 
 interface Props {
     user: UserModel;

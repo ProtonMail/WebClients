@@ -1,15 +1,18 @@
 import { c } from 'ttag';
 
-import type { SUPPORTED_PRODUCTS } from './interface';
+import clsx from '@proton/utils/clsx';
+
+import type { SUPPORTED_PRODUCTS } from '../interface';
 import { usePostSignupOneDollarPromotionPrice } from './usePostSignupOneDollarPromotionPrice';
 
 import './PostSignupOneDollarTitle.scss';
 
 interface Props {
     product: SUPPORTED_PRODUCTS;
+    expanded?: boolean;
 }
 
-export const PostSignupOneDollarTitle = ({ product }: Props) => {
+export const PostSignupOneDollarTitle = ({ product, expanded }: Props) => {
     const { pricingTitle } = usePostSignupOneDollarPromotionPrice({
         offerProduct: 'mail',
         priceWithGradient: true,
@@ -23,7 +26,7 @@ export const PostSignupOneDollarTitle = ({ product }: Props) => {
     return (
         <header className="text-center mb-2">
             <h2 className="text-xl text-bold mb-2">{title}</h2>
-            <p className="m-0 color-weak">{c('Offer').t`Limited-time offer`}</p>
+            <p className={clsx('m-0 color-weak', expanded && 'mb-4')}>{c('Offer').t`Limited-time offer`}</p>
         </header>
     );
 };
