@@ -28,6 +28,9 @@
       "Accept": [
         "Aceptar"
       ],
+      "Accept and view the item": [
+        "Aceptar y ver el elemento"
+      ],
       "Add": [
         "Añadir"
       ],
@@ -133,11 +136,11 @@
       "Continue offline": [
         "Continuar sin conexión"
       ],
-      "Copy alias address": [
-        "Copiar la dirección del alias"
-      ],
       "Copy and close": [
         "Copiar y cerrar"
+      ],
+      "Copy forwarding address": [
+        "Copiar la dirección de reenvío"
       ],
       "Copy link": [
         "Copiar enlace"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "Crear una bóveda"
-      ],
-      "Create a new vault to share": [
-        "Crear una bóveda para compartir"
       ],
       "Create alias": [
         "Crear alias"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "Sección personalizada"
-      ],
-      "Customize": [
-        "Personalizar"
       ],
       "Delete": [
         "Eliminar"
@@ -249,9 +246,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Activar este alias para recibir correos enviados al mismo"
-      ],
-      "Entire vault": [
-        "Bóveda completa"
       ],
       "Exclude from monitoring": [
         "Excluir del monitoreo"
@@ -316,6 +310,9 @@
       "Install extension": [
         "Instalar la extensión"
       ],
+      "Invite more...": [
+        "Invite a más personas…"
+      ],
       "Invite others": [
         "Invitar a otros"
       ],
@@ -355,9 +352,6 @@
       "Manage access": [
         "Gestionar acceso"
       ],
-      "Manage vault access": [
-        "Gestionar el acceso a la bóveda"
-      ],
       "Manually sync your data": [
         "Sincronizar los datos manualmente"
       ],
@@ -381,9 +375,6 @@
       ],
       "Move all items": [
         "Mover todos los elementos"
-      ],
-      "Move to a shared vault": [
-        "Mover a una bóveda compartida"
       ],
       "Move to another vault": [
         "Mover a otra bóveda"
@@ -535,11 +526,11 @@
       "Share": [
         "Compartir"
       ],
+      "Share item": [
+        "Compartir elemento"
+      ],
       "Share secure link": [
         "Compartir enlace seguro"
-      ],
-      "Share this vault": [
-        "Compartir esta bóveda"
       ],
       "Share vault": [
         "Compartir bóveda"
@@ -612,9 +603,6 @@
       "Update": [
         "Actualizar"
       ],
-      "Update vault": [
-        "Actualizar la bóveda"
-      ],
       "Upgrade": [
         "Actualizar"
       ],
@@ -644,6 +632,9 @@
       ],
       "View older history": [
         "Mostrar historial más antiguo"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Con otros usuarios de ${ BRAND_NAME }"
       ],
       "Write us on Reddit": [
         "Escríbanos en Reddit"
@@ -808,6 +799,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "No se pudo confirmar esta invitación por el momento"
+      ],
+      "Could not leave item.": [
+        "No se pudo dejar el elemento."
       ],
       "Could not leave vault.": [
         "No se pudo dejar la bóveda."
@@ -1257,10 +1251,6 @@
         "${ blockedEmailsCount } bloqueos",
         "${ blockedEmailsCount } bloqueos"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } invitación enviada",
-        "${ count } invitaciones enviadas"
-      ],
       "${ count } time": [
         "${ count } vez",
         "${ count } veces"
@@ -1275,6 +1265,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } reenvío",
         "${ forwardedEmailsCount } reenvíos"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } desea compartir un elemento con usted."
       ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
@@ -1301,6 +1294,10 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } requerirá la contraseña de ${ BRAND_NAME } para acceder a datos sin conexión."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } invitación enviada",
+        "${ payload.count } invitaciones enviadas"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } desactivado"
@@ -1433,8 +1430,17 @@
       "Can be viewed": [
         "Puede ser visto"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Permite crear, editar, eliminar y exportar los elementos en esta bóveda."
+      "Can create, edit, and delete items in this vault.": [
+        "Puede crear, editar y eliminar los elementos en esta bóveda."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Puede crear, editar y eliminar este elemento."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Puede conceder y revocar acceso a este elemento y eliminarlo."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Puede conceder y revocar acceso a este elemento."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Puede conceder y revocar acceso a esta bóveda y eliminarla."
@@ -1444,6 +1450,9 @@
       ],
       "Can view items in this vault.": [
         "Permite ver los elementos en esta bóveda."
+      ],
+      "Can view this item.": [
+        "Puede ver este elemento."
       ],
       "Change your password": [
         "Cambie la contraseña"
@@ -1602,6 +1611,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Por razones de seguridad, es necesario confirmar su acceso"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Se copió la dirección de reenvío al portapapeles. Envíe un correo electrónico a esta dirección y ${ Email } lo recibirá."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Las contraseñas generadas se almacenarán por un periodo de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana.",
         "Las contraseñas generadas se almacenarán por un periodo de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas."
@@ -1689,6 +1701,10 @@
       "Item restored": [
         "Elemento restaurado"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Elementos compartidos: ${ itemAccessCount } usuario",
+        "Elementos compartidos: ${ itemAccessCount } usuarios"
+      ],
       "Item successfully excluded from monitoring": [
         "Elemento excluido del monitoreo."
       ],
@@ -1709,6 +1725,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Aprenda cómo ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Abandonando el elemento..."
       ],
       "Leaving vault...": [
         "Dejando la bóveda..."
@@ -1951,9 +1970,6 @@
       "Restoring trashed items...": [
         "Restaurando elementos de la papelera..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Se copió la dirección de alias inversa al portapapeles. Envíe un correo electrónico a esta dirección y ${ Email } lo recibirá."
-      ],
       "Secure links": [
         "Enlaces seguros"
       ],
@@ -1993,6 +2009,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Comparta sus inicios de sesión y notas con hasta 10 personas"
       ],
+      "Shared item invitation": [
+        "Invitación a un elemento compartido"
+      ],
       "Sign in to your account": [
         "Iniciar sesión en su cuenta"
       ],
@@ -2007,6 +2026,9 @@
       ],
       "Successfully exported all your items": [
         "Todos sus elementos exportados con éxito."
+      ],
+      "Successfully left the item": [
+        "Elemento abandonado"
       ],
       "Successfully left the vault": [
         "Ha dejado la bóveda."
@@ -2056,6 +2078,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso al archivo exportado podrá ver sus contraseñas. Por seguridad, elimínelo una vez que haya terminado de usarlo."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Este elemento no está compartido con nadie en este momento. Invite a otras personas a compartirlo con otros."
       ],
       "This operation is irreversible.": [
         "Esta operación es irreversible."
@@ -2132,9 +2157,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Mejore a un plan de pago para crear varias bóvedas."
       ],
-      "Use vaults to share this item with others.": [
-        "Use las bóvedas para compartir este elemento con otras personas."
-      ],
       "User's access removed": [
         "El acceso del usuario fue borrado."
       ],
@@ -2155,6 +2177,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "La bóveda \"${ share.content.name }\" fue borrada."
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Bóveda compartida: ${ vaultMembersCount } miembro",
+        "Bóveda compartida: ${ vaultMembersCount } miembros"
       ],
       "Verification code sent.": [
         "Se envió el código de verificación."
@@ -2392,8 +2418,8 @@
       "All": [
         "Todos"
       ],
-      "All vaults": [
-        "Todas las bóvedas"
+      "All items": [
+        "Todos los elementos"
       ],
       "Alphabetical": [
         "Por orden alfabético"
@@ -2581,6 +2607,9 @@
       "Floor, apartment, building": [
         "Piso, apartamento, edificio"
       ],
+      "For a one-off sharing": [
+        "Para un uso único"
+      ],
       "Forwards to": [
         "Reenvía a"
       ],
@@ -2595,9 +2624,6 @@
       ],
       "General": [
         "General"
-      ],
-      "Generate a secure link for this item": [
-        "Genere un enlace seguro para este elemento"
       ],
       "Generic CSV": [
         "CSV genérico"
@@ -2746,6 +2772,9 @@
       "Need help?": [
         "¿Necesita ayuda?"
       ],
+      "New": [
+        "Nuevo"
+      ],
       "New vault": [
         "Bóveda nueva"
       ],
@@ -2872,6 +2901,9 @@
       "Security code": [
         "Código de seguridad"
       ],
+      "See member and permission overview": [
+        "Consulte todos los miembros y permisos"
+      ],
       "Select a domain": [
         "Seleccionar un dominio"
       ],
@@ -2893,11 +2925,17 @@
       "Share": [
         "Compartir"
       ],
-      "Share this vault or create a new vault": [
-        "Comparta esta bóveda o cree una"
+      "Shared": [
+        "Compartido"
+      ],
+      "Shared by me": [
+        "Compartido por mí"
       ],
       "Shared link": [
         "Enlace compartido"
+      ],
+      "Shared with me": [
+        "Compartido conmigo"
       ],
       "Show website favicons": [
         "Mostrar faviconos de sitios web"
@@ -2943,10 +2981,6 @@
       ],
       "Text": [
         "Texto"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "La bóveda del elemento se comparte con ${ targetMembers } persona",
-        "La bóveda del elemento se comparte con ${ targetMembers } personas"
       ],
       "The URL has been copied to the clipboard": [
         "URL copiada al portapapeles"
@@ -3007,6 +3041,9 @@
       ],
       "Used in": [
         "Usada en"
+      ],
+      "Useful for permanent sharing": [
+        "Útil para compartir permanentemente"
       ],
       "Username": [
         "Nombre de usuario"
@@ -3204,23 +3241,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Buscar ${ pluralItemType } en ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Buscar ${ pluralItemType } en todas las bóvedas"
+      "Search ${ pluralItemType } in all items": [
+        "Buscar ${ pluralItemType } en todos los elementos"
       ],
       "Search in ${ vaultName }": [
         "Buscar en ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Buscar en todas las bóvedas"
+      "Search in all items": [
+        "Buscar en todos los elementos"
       ],
       "Search in Trash": [
         "Buscar en la papelera"
       ],
       "Select a suffix": [
         "Seleccionar un sufijo"
-      ],
-      "Shared vault": [
-        "Bóveda compartida"
       ],
       "Unknown origin": [
         "Origen desconocido"
@@ -3350,6 +3384,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Se verificó el dominio. Su dominio puede comenzar a recibir correos electrónicos y crear alias."
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Los elementos no pueden contener más de ${ share.targetMaxMembers } usuario.",
+        "Los elementos no pueden contener más de ${ share.targetMaxMembers } usuarios."
+      ],
       "Mailbox successfully deleted": [
         "Se eliminó el buzón."
       ],
@@ -3365,9 +3403,9 @@
       "Random prefix generation successfully enabled": [
         "Se activó la generación aleatoria de prefijos."
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuario.",
-        "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuarios."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Las bóvedas no pueden contener más de ${ targetMaxMembers } usuario.",
+        "Las bóvedas no pueden contener más de ${ targetMaxMembers } usuarios."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Se envió un correo electrónico de verificación. Revise su bandeja de entrada para verificar su buzón de correo."
@@ -3554,11 +3592,17 @@
       "Install extension": [
         "Instalar la extensión"
       ],
+      "Item": [
+        "Elemento"
+      ],
       "Last autofill": [
         "Último completado automático"
       ],
       "Last modified": [
         "Última modificación"
+      ],
+      "Leave this item?": [
+        "¿Desea abandonar este elemento?"
       ],
       "Leave vault?": [
         "¿Abandonar la bóveda?"
@@ -3615,6 +3659,9 @@
       ],
       "No reused passwords": [
         "No hay contraseñas reusadas."
+      ],
+      "No shared items": [
+        "Ningún elemento compartido"
       ],
       "No shared secure links": [
         "No hay enlaces seguros compartidos"
@@ -3710,6 +3757,12 @@
       ],
       "Share with": [
         "Compartir con"
+      ],
+      "Shared item invitation": [
+        "Invitación a un elemento compartido"
+      ],
+      "Shared via": [
+        "Compartido por"
       ],
       "SPF (Optional)": [
         "SPF (opcional)"
@@ -3826,6 +3879,9 @@
       ],
       "A description of the problem is required": [
         "Se requiere una descripción del problema"
+      ],
+      "Addresses already invited.": [
+        "Ya se enviaron las direcciones."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Los alias en la papelera seguirán reenviando correos electrónicos."
@@ -3947,6 +4003,9 @@
       "No secure links matching": [
         "No hay enlaces seguros que coincidan."
       ],
+      "No shared items matching": [
+        "No hay elementos compartidos que coincidan."
+      ],
       "Offline": [
         "Sin conexión"
       ],
@@ -3986,6 +4045,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Algunos elementos están compartidos actualmente. Si los elimina, se eliminará el acceso para todos los demás usuarios."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Algunos elementos están compartidos actualmente. Si los mueve a otra bóveda, se eliminará el acceso para todos los demás usuarios."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Ocurrió un error al iniciar ${ PASS_APP_NAME }. Intente refrescar o recargar la extensión."
       ],
@@ -3997,6 +4062,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Esta dirección de correo ya no será monitoreada para vulneraciones de datos."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Este elemento está compartido actualmente. Si lo elimina, se eliminará el acceso para todos los demás usuarios."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Este elemento está compartido actualmente. Si lo mueve a otra bóveda, se eliminará el acceso para todos los demás usuarios."
       ],
       "Title is required": [
         "El título es requerido"
@@ -4019,8 +4090,14 @@
       "Verification code is required": [
         "El código de verificación es obligatorio"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Alcanzó el límite de miembros que pueden acceder a este elemento."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Ha alcanzado el límite de miembros que pueden acceder a esta bóveda."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Alcanzó el límite de usuarios para este elemento. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Ha alcanzado el límite de usuarios en esta bóveda. ${ upgradeLink }"
@@ -4033,6 +4110,9 @@
       ],
       "You must select at least one mailbox": [
         "Debe seleccionar al menos un buzón"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Perderá el acceso a este artículo y a sus detalles. ¿Desea continuar?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ya no tendrá acceso a esta bóveda. Para unirse de nuevo necesitará una invitación."
