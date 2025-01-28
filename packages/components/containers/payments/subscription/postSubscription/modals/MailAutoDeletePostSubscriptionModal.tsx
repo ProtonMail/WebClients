@@ -3,11 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import useApi from '@proton/components/hooks/useApi';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
@@ -21,7 +19,7 @@ import {
 
 const MailAutoDeletePostSubscriptionModal = (props: PostSubscriptionModalComponentProps) => {
     const { modalProps, step, onDisplayFeatureTour, onRemindMeLater } = props;
-    const dispatch = useDispatch();
+    const { call } = useEventManager();
     const [displayLoadingModal, setDisplayLoadingModal] = useState(true);
     const api = useApi();
     const [mailSettings] = useMailSettings();
@@ -33,10 +31,8 @@ const MailAutoDeletePostSubscriptionModal = (props: PostSubscriptionModalCompone
         if (step === SUBSCRIPTION_STEPS.THANKS && !isSetupActionDoneRef.current) {
             const setupAction = async () => {
                 if (!isPremiumFeatureEnabled) {
-                    const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-                        updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)
-                    );
-                    dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+                    await api(updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE));
+                    void call();
                 } else {
                     return Promise.resolve();
                 }

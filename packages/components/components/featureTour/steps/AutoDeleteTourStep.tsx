@@ -2,13 +2,12 @@ import { c } from 'ttag';
 
 import { featureTourActions } from '@proton/account/featuresTour';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useToggle from '@proton/components/hooks/useToggle';
-import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import autoDeleteIllustration from '@proton/styles/assets/img/illustrations/new-upsells-img/auto-delete.svg';
 
@@ -25,6 +24,7 @@ export const shouldDisplayAutoDeleteTourStep: ShouldDisplayTourStep = async () =
 const AutoDeleteTourStep = (props: FeatureTourStepProps) => {
     const api = useApi();
     const dispatch = useDispatch();
+    const { call } = useEventManager();
     const [mailSettings] = useMailSettings();
     const { state: isToggleChecked, toggle } = useToggle(true);
     const isFeatureEnabled = mailSettings?.AutoDeleteSpamAndTrashDays === AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE;
@@ -32,11 +32,9 @@ const AutoDeleteTourStep = (props: FeatureTourStepProps) => {
     const handleEnableFeature = async () => {
         if (isToggleChecked && !isFeatureEnabled) {
             try {
-                const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-                    updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)
-                );
-                dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+                await api(updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE));
                 dispatch(featureTourActions.activateFeature({ feature: 'auto-delete' }));
+                void call();
             } catch (error) {
                 traceError(error, { tags: { initiative: SentryMailInitiatives.MAIL_ONBOARDING } });
             }
