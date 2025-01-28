@@ -323,7 +323,7 @@ const useSearchTelemetry = () => {
             measurementGroup: TelemetryMeasurementGroups.clientSearch,
             event: TelemetryEncryptedSearchEvents.es_search_complete,
             values: {
-                search_time: searchTime,
+                searchTime,
             },
             dimensions: {
                 app: APP_NAME,
