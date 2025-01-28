@@ -42,6 +42,7 @@ import {
     getSignedInvitationData,
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
+import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
@@ -156,6 +157,9 @@ export const requestUnprivatization = ({
             throw new MemberCreationValidationError(
                 c('unprivatization').t`The user must have an address to request data access`
             );
+        }
+        if (!getIsMemberSetup(member)) {
+            throw new MemberCreationValidationError(c('unprivatization').t`Member activation incomplete`);
         }
         const invitationData = await getInvitationData({
             api,
