@@ -15,6 +15,11 @@ jest.mock('@proton/features/useFeature', () => ({
     default: jest.fn(() => ({ feature: { Value: null } })),
 }));
 
+jest.mock('@proton/account/featuresTour/actions', () => ({
+    __esModule: true,
+    ...jest.requireActual('@proton/account/featuresTour/actions'),
+}));
+
 describe('FeatureTour', () => {
     let useFlagSpy: jest.SpyInstance;
 

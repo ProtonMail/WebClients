@@ -18,12 +18,11 @@ const withGaps = (value = '', gaps: number[] = []) => {
 export const formatCreditCardNumber = (value: string) => {
     const [firstCreditCardType] = creditCardType(value);
     const { type = '', niceType = '', gaps = [], code } = firstCreditCardType || {};
-    const bankIcon = getBankSvg(type);
     const valueWithGaps = gaps.length ? withGaps(value, gaps) : value;
 
     return {
         valueWithGaps,
-        bankIcon,
+        bankIcon: getBankSvg(type as any),
         niceType,
         codeName: code?.name ?? 'CVV',
     };

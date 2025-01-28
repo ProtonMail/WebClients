@@ -11,7 +11,7 @@ beforeEach(() => {
 });
 
 jest.mock('../../helpers/credit-card-icons', () => ({
-    getBankSvg: jest.fn().mockImplementation((type) => `./cc-${type}.svg`),
+    getBankSvg: jest.fn().mockResolvedValue((type: any) => `./cc-${type}.svg`),
 }));
 
 const TestComponent = (rest?: Partial<Props>) => {
