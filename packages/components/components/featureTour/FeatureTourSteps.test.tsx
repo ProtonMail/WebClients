@@ -12,24 +12,26 @@ import type { FeatureTourStepId } from './interface';
 jest.mock('./constants', () => ({
     FEATURE_TOUR_STEPS_MAP: {
         'short-domain': {
-            component: ({ onNext, isActive, bullets }: any) =>
-                isActive ? (
-                    <div data-testid="step-short-domain">
-                        Step 1 {bullets}
-                        <button onClick={onNext}>Next</button>
-                    </div>
-                ) : null,
-            shouldDisplay: jest.fn().mockResolvedValue(true),
+            component: ({ onNext, bullets }: any) => (
+                <div data-testid="step-short-domain">
+                    Step 1 {bullets}
+                    <button onClick={onNext}>Next</button>
+                </div>
+            ),
+            shouldDisplay: jest
+                .fn()
+                .mockResolvedValue({ canDisplay: true, preloadIllustration: () => Promise.resolve() }),
         },
         'auto-delete': {
-            component: ({ onNext, isActive, bullets }: any) =>
-                isActive ? (
-                    <div data-testid="step-auto-delete">
-                        Step 2 {bullets}
-                        <button onClick={onNext}>Next</button>
-                    </div>
-                ) : null,
-            shouldDisplay: jest.fn().mockResolvedValue(true),
+            component: ({ onNext, bullets }: any) => (
+                <div data-testid="step-auto-delete">
+                    Step 2 {bullets}
+                    <button onClick={onNext}>Next</button>
+                </div>
+            ),
+            shouldDisplay: jest
+                .fn()
+                .mockResolvedValue({ canDisplay: true, preloadIllustration: () => Promise.resolve() }),
         },
     },
 }));
@@ -105,7 +107,10 @@ describe('FeatureTourSteps', () => {
         jest.spyOn(featureTourActions, 'completedFeatureTourAction').mockReturnValue(completedFeatureTourActionMock);
 
         // Mock one step to not be displayed
-        jest.mocked(FEATURE_TOUR_STEPS_MAP['auto-delete'].shouldDisplay).mockResolvedValue(false);
+        jest.mocked(FEATURE_TOUR_STEPS_MAP['auto-delete'].shouldDisplay).mockResolvedValue({
+            canDisplay: false,
+            preloadUrls: [],
+        });
 
         renderComponent();
 
