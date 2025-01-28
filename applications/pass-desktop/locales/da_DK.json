@@ -28,6 +28,9 @@
       "Accept": [
         "Accepter"
       ],
+      "Accept and view the item": [
+        "Accepter og se elementet"
+      ],
       "Add": [
         "Tilføj"
       ],
@@ -133,11 +136,11 @@
       "Continue offline": [
         "Fortsæt offline"
       ],
-      "Copy alias address": [
-        "Kopiér alias-adresse"
-      ],
       "Copy and close": [
         "Kopiér og luk"
+      ],
+      "Copy forwarding address": [
+        "Kopier videresendelsesadresse"
       ],
       "Copy link": [
         "Kopiér link"
@@ -153,9 +156,6 @@
       ],
       "Create a new vault": [
         "Opret en ny boks"
-      ],
-      "Create a new vault to share": [
-        "Opret en ny boks til deling"
       ],
       "Create alias": [
         "Opret alias"
@@ -189,9 +189,6 @@
       ],
       "Custom section": [
         "Tilpas sektion"
-      ],
-      "Customize": [
-        "Tilpas"
       ],
       "Delete": [
         "Slet"
@@ -249,9 +246,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktiver dette alias for at modtage mails sendt til dette alias"
-      ],
-      "Entire vault": [
-        "Hele boksen"
       ],
       "Exclude from monitoring": [
         "Undtag fra monitorering"
@@ -319,6 +313,9 @@
       "Install extension": [
         "Installér udvidelse"
       ],
+      "Invite more...": [
+        "Inviter flere…..."
+      ],
       "Invite others": [
         "Invitér andre"
       ],
@@ -358,9 +355,6 @@
       "Manage access": [
         "Administrer adgang"
       ],
-      "Manage vault access": [
-        "Håndter adgang til boksen"
-      ],
       "Manually sync your data": [
         "Synkronisér data manuelt"
       ],
@@ -384,9 +378,6 @@
       ],
       "Move all items": [
         "Flyt alle elementer"
-      ],
-      "Move to a shared vault": [
-        "Flyt til en delt boks"
       ],
       "Move to another vault": [
         "Flyt til en anden boks"
@@ -541,11 +532,11 @@
       "Share": [
         "Del"
       ],
+      "Share item": [
+        "Del element"
+      ],
       "Share secure link": [
         "Del sikkert link"
-      ],
-      "Share this vault": [
-        "Del denne boks"
       ],
       "Share vault": [
         "Del boks"
@@ -621,9 +612,6 @@
       "Update": [
         "Opdatér"
       ],
-      "Update vault": [
-        "Opdatér boks"
-      ],
       "Upgrade": [
         "Opgradér"
       ],
@@ -653,6 +641,9 @@
       ],
       "View older history": [
         "Se ældre historik"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Med andre brugere af ${ BRAND_NAME }"
       ],
       "Write us on Reddit": [
         "Skriv til os på Reddit"
@@ -843,6 +834,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Kunne ikke bekræfte denne invitation i øjeblikket"
+      ],
+      "Could not leave item.": [
+        "Kunne ikke forlade element."
       ],
       "Could not leave vault.": [
         "Kunne ikke forlade boks."
@@ -1292,10 +1286,6 @@
         "${ blockedEmailsCount } blokeret",
         "${ blockedEmailsCount } blokerede"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } invitation sendt",
-        "${ count } invitationer sendt"
-      ],
       "${ count } time": [
         "${ count } gang",
         "${ count } gange"
@@ -1310,6 +1300,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } videresendt",
         "${ forwardedEmailsCount } videresendte"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } ønsker at dele et element med dig."
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1336,6 +1329,10 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } kræver din ${ BRAND_NAME }-adgangskode for at tilgå data offline."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } invitation sendt",
+        "${ payload.count } invitationer sendt"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } deaktiveret"
@@ -1468,8 +1465,17 @@
       "Can be viewed": [
         "Kan blive set"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Kan oprette, redigere, slette og eksportere elementer i denne boks."
+      "Can create, edit, and delete items in this vault.": [
+        "Kan oprette, redigere og slette elementer i denne boks."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Kan oprette, redigere og slette dette element."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Kan give og tilbagekalde adgang til dette element, og slette det."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Kan give og tilbagekalde adgang til dette element."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Kan give og tilbagekalde adgang til denne boks, og slette den."
@@ -1479,6 +1485,9 @@
       ],
       "Can view items in this vault.": [
         "Kan se elementer i denne boks."
+      ],
+      "Can view this item.": [
+        "Kan se dette element."
       ],
       "Change your password": [
         "Skift din adgangskode"
@@ -1634,6 +1643,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Af sikkerhedsmæssige årsager skal din adgang bekræftes."
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Videresendelsesadresse kopieret til udklipsholder. Sender du en e-mail til denne adresse, vil ${ Email } modtage den."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Genererede adgangskoder gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge.",
         "Genererede adgangskoder gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger."
@@ -1724,6 +1736,10 @@
       "Item restored": [
         "Element gendannet"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Element-deling: ${ itemAccessCount } bruger",
+        "Element-deling: ${ itemAccessCount } brugere"
+      ],
       "Item successfully excluded from monitoring": [
         "Element undtaget fra monitorering"
       ],
@@ -1744,6 +1760,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Lær, hvordan du ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Forlader element..."
       ],
       "Leaving vault...": [
         "Forlader boks..."
@@ -1986,9 +2005,6 @@
       "Restoring trashed items...": [
         "Gendanner elementer i papirkurven..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Omvendt alias-adresse kopieret til udklipsholder. Sender du en e-mail til denne adresse, vil ${ Email } modtage den."
-      ],
       "Secure links": [
         "Sikre links"
       ],
@@ -2028,6 +2044,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Del dine logins og sikre noter med op til 10 personer"
       ],
+      "Shared item invitation": [
+        "Delte element-invitation"
+      ],
       "Sign in to your account": [
         "Log ind på din konto"
       ],
@@ -2042,6 +2061,9 @@
       ],
       "Successfully exported all your items": [
         "Eksporterede alle dine elementer"
+      ],
+      "Successfully left the item": [
+        "Det lykkedes at forlade elementet"
       ],
       "Successfully left the vault": [
         "Det lykkedes at forlade boksen"
@@ -2094,6 +2116,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksport vil ikke være krypteret, og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den, når du er færdig med at bruge den."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Dette element deles i øjeblikket ikke med nogen. Inviter folk for at dele det med andre."
       ],
       "This operation is irreversible.": [
         "Denne handling er irreversibel."
@@ -2167,9 +2192,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Opgrader til et betalt abonnement for at oprette flere bokse."
       ],
-      "Use vaults to share this item with others.": [
-        "Brug bokse til at dele dette element med andre."
-      ],
       "User's access removed": [
         "Brugers adgang fjernet"
       ],
@@ -2190,6 +2212,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Boksen \"${ share.content.name }\" blev fjernet"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Boksdeling: ${ vaultMembersCount } medlem",
+        "Boksdeling: ${ vaultMembersCount } medlemmer"
       ],
       "Verification code sent.": [
         "Bekræftelseskode sendt."
@@ -2433,8 +2459,8 @@
       "All": [
         "Alle"
       ],
-      "All vaults": [
-        "Alle bokse"
+      "All items": [
+        "Alle elementer"
       ],
       "Alphabetical": [
         "Alfabetisk"
@@ -2640,6 +2666,9 @@
       "Floor, apartment, building": [
         "Etage, lejlighed, bygning"
       ],
+      "For a one-off sharing": [
+        "Til engangsdeling"
+      ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Af sikkerhedsmæssige årsager låser ${ PASS_SHORT_APP_NAME } automatisk sig selv efter 10 minutters inaktivitet."
       ],
@@ -2660,9 +2689,6 @@
       ],
       "General": [
         "Generelt"
-      ],
-      "Generate a secure link for this item": [
-        "Generer et sikkert link til dette element"
       ],
       "Generic CSV": [
         "Generisk CSV"
@@ -2835,6 +2861,9 @@
       "Never": [
         "Aldrig"
       ],
+      "New": [
+        "Ny"
+      ],
       "New vault": [
         "Ny boks"
       ],
@@ -2979,6 +3008,9 @@
       "Security code": [
         "Sikkerhedskode"
       ],
+      "See member and permission overview": [
+        "Se oversigt over medlemmer og tilladelser"
+      ],
       "Select a domain": [
         "Vælg et domæne"
       ],
@@ -3006,11 +3038,17 @@
       "Share": [
         "Del"
       ],
-      "Share this vault or create a new vault": [
-        "Del denne boks, eller opret en ny boks"
+      "Shared": [
+        "Delt"
+      ],
+      "Shared by me": [
+        "Delt af mig"
       ],
       "Shared link": [
         "Delt link"
+      ],
+      "Shared with me": [
+        "Delt med mig"
       ],
       "Show website favicons": [
         "Vis websteders favicon"
@@ -3059,10 +3097,6 @@
       ],
       "Text": [
         "Tekst"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Elementets boks er i øjeblikket delt med ${ targetMembers } brugere.",
-        "Elementets boks er i øjeblikket delt med ${ targetMembers } brugere."
       ],
       "The URL has been copied to the clipboard": [
         "URL'en blev kopieret til udklipsholderen"
@@ -3126,6 +3160,9 @@
       ],
       "Used in": [
         "Anvendt i"
+      ],
+      "Useful for permanent sharing": [
+        "Nyttig til permanent deling"
       ],
       "Username": [
         "Brugernavn"
@@ -3343,23 +3380,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Søg ${ pluralItemType } i ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Søg ${ pluralItemType } i alle bokse"
+      "Search ${ pluralItemType } in all items": [
+        "Søg ${ pluralItemType } i alle elementer"
       ],
       "Search in ${ vaultName }": [
         "Søg i ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Søg i alle bokse"
+      "Search in all items": [
+        "Søg i alle elementer"
       ],
       "Search in Trash": [
         "Søg i papirkurv"
       ],
       "Select a suffix": [
         "Vælg et suffiks"
-      ],
-      "Shared vault": [
-        "Delt boks"
       ],
       "Unknown origin": [
         "Ukendt oprindelse"
@@ -3477,6 +3511,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domænet er blevet verificeret. Dit domæne kan begynde at modtage e-mails og oprette aliasser"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Elementer kan ikke indeholder mere end ${ share.targetMaxMembers } bruger.",
+        "Elementer kan ikke indeholder mere end ${ share.targetMaxMembers } brugere."
+      ],
       "Mailbox successfully deleted": [
         "Postkasse slettet"
       ],
@@ -3492,9 +3530,9 @@
       "Random prefix generation successfully enabled": [
         "Tilfældig præfiksgenerering aktiveret"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } bruger.",
-        "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } brugere."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Bokse kan ikke indeholder mere end ${ targetMaxMembers } bruger.",
+        "Bokse kan ikke indeholder mere end ${ targetMaxMembers } brugere."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Bekræftelsesmail sendt. Tjek din indbakke for at bekræfte din postkasse."
@@ -3681,11 +3719,17 @@
       "Install extension": [
         "Installér udvidelse"
       ],
+      "Item": [
+        "Element"
+      ],
       "Last autofill": [
         "Seneste autofyld"
       ],
       "Last modified": [
         "Sidst ændret"
+      ],
+      "Leave this item?": [
+        "Forlad dette element?"
       ],
       "Leave vault?": [
         "Forlad boks?"
@@ -3742,6 +3786,9 @@
       ],
       "No reused passwords": [
         "Ingen genbrugte adgangskoder"
+      ],
+      "No shared items": [
+        "Ingen delte elementer"
       ],
       "No shared secure links": [
         "Ingen sikre links delt"
@@ -3834,6 +3881,12 @@
       ],
       "Share with": [
         "Del med"
+      ],
+      "Shared item invitation": [
+        "Delte element-invitation"
+      ],
+      "Shared via": [
+        "Delt via"
       ],
       "SPF (Optional)": [
         "SPF (Valgfri)"
@@ -3950,6 +4003,9 @@
       ],
       "A description of the problem is required": [
         "En beskrivelse af problemet er påkrævet"
+      ],
+      "Addresses already invited.": [
+        "Adresser allerede inviteret."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Aliasser i papirkurven fortsætter med at videresende e-mails."
@@ -4071,6 +4127,9 @@
       "No secure links matching": [
         "Ingen sikre links, der matcher"
       ],
+      "No shared items matching": [
+        "Ingen delte elementer matcher"
+      ],
       "Offline": [
         "Offline"
       ],
@@ -4110,6 +4169,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Nogle elementer er i øjeblikket delt. Hvis du sletter dem, fjernes adgangen for alle andre brugere."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Nogle elementer er i øjeblikket delt. Hvis du flytter dem til en anden boks, fjernes adgangen for alle andre brugere."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Noget gik galt under opstarten af ${ PASS_APP_NAME }. Prøv at genopfriske eller genindlæse udvidelsen"
       ],
@@ -4121,6 +4186,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Denne e-mailadresse vil ikke længere blive monitoreret for databrud."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Dette element er i øjeblikket delt. Hvis du sletter det, fjernes adgangen for alle andre brugere."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Dette element er i øjeblikket delt. Hvis du flytter det til en anden boks, fjernes adgangen for alle andre brugere."
       ],
       "Title is required": [
         "Titel er påkrævet"
@@ -4143,8 +4214,14 @@
       "Verification code is required": [
         "Bekræftelseskode er påkrævet."
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Du har nået grænsen for medlemmer, der kan få adgang til dette element."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nået grænsen for medlemmer, der kan få adgang til denne boks."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Du har nået dette elements grænse for antal brugere. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Du har nået grænsen for brugere i denne boks. ${ upgradeLink }"
@@ -4157,6 +4234,9 @@
       ],
       "You must select at least one mailbox": [
         "Du skal vælge mindst en postkasse"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Du vil miste adgang til dette element og dets detaljer. Ønsker du at fortsætte?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke længere have adgang til denne boks. Hvis du vil være med igen, skal du have en ny invitation."

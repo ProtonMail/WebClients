@@ -1769,34 +1769,9 @@
         "Гісторыя версій"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } Plus не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты, калі вы купіце Pass Family або Unlimited."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Найбольш папулярны"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
-      ],
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ],
-      "forever": [
-        "назаўсёды"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
@@ -1843,9 +1818,6 @@
       ],
       "12 months": [
         "12 месяцаў"
-      ],
-      "24 months": [
-        "24 месяцы"
       ],
       "Annually": [
         "Штогод"
@@ -3995,6 +3967,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } ваша імя карыстальніка. Каб стварыць ${ emailAddress }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
+      ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
@@ -4276,6 +4251,9 @@
         "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
         "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
         "У некаторых групах няма кантактаў: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "Ключ арганізацыі не расшыфраваны"
       ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
@@ -6774,6 +6752,9 @@
       "Key fingerprint": [
         "Адбітак ключа"
       ],
+      "Keys created": [
+        "Ключы створаны"
+      ],
       "Label all imported messages as": [
         "Пазначыць усе імпартаваныя паведамленні як"
       ],
@@ -7610,6 +7591,9 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Выкарыстоўваць спалучэнні клавіш для больш хуткага кіравання вашымі лістамі."
+      ],
+      "User activated": [
+        "Карыстальнік актываваны"
       ],
       "username": [
         "імя карыстальніка"

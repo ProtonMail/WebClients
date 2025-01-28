@@ -1600,11 +1600,6 @@
         "Vključuje podporo za eno e-poštno domeno po meri, 10 e-poštnih naslovov, 10 vzdevkov hide-my-email, deljenje koledarjev in še več."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
@@ -1694,23 +1689,7 @@
         "Zgodovina različic"
       ]
     },
-    "BF2024: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Popusti temeljijo na standardni mesečni ceni."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Vaša naročnina se bo samodejno obnovila po standardni znižani ceni in trajanju ob koncu vašega obračunskega cikla."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Najbolj priljubljeno"
-      ]
-    },
     "BF2024: Offers": {
-      "for ${ durationDeal }": [
-        "za ${ durationDeal }"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovitev po enem mesecu za ${ regularAmount }."
       ]
@@ -1750,9 +1729,6 @@
       ],
       "12 months": [
         "12 mesecev"
-      ],
-      "24 months": [
-        "24 mesecev"
       ],
       "Annually": [
         "Letno"
@@ -3822,6 +3798,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lahko tudi preverite stanje na ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Sporočila in sestavljanje > Kratka domena (pm.me)"
+      ],
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
       ],
@@ -4103,6 +4082,9 @@
         "V nekaterih skupinah ni stikov: ${ noContactGroupList } ",
         "V nekaterih skupinah ni stikov: ${ noContactGroupList } ",
         "V nekaterih skupinah ni stikov: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "Ključ organizacije ni dešifriran."
       ],
       "Password is required": [
         "Zahtevano je geslo"
@@ -6473,6 +6455,9 @@
       "Key fingerprint": [
         "Ključ prstnega odtisa naprave"
       ],
+      "Keys created": [
+        "Ključi so bili ustvarjeni."
+      ],
       "Label all imported messages as": [
         "Označi vsa uvožena sporočila kot"
       ],
@@ -7252,6 +7237,9 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Uporabite bližnjice na tipkovnici za hitrejše upravljanje z vašo e-pošto."
+      ],
+      "User activated": [
+        "Uporabnik je aktiviran."
       ],
       "username": [
         "uporabniško ime"

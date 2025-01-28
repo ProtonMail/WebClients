@@ -831,11 +831,6 @@
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
@@ -928,34 +923,9 @@
         "История версий"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus пожизненное предложение не имеет цены за продление, это единовременная оплата за пожизненный доступ к Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Скидки рассчитываются исходя из стандартной платы за месяц."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Если вы приобретете Pass Family или Unlimited, ваша подписка будет автоматически продлена по стандартной цене со скидкой и сроку в конце вашего платежного цикла."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша подписка будет автоматически продлена по стандартной цене со скидкой и сроку в конце вашего платежного цикла."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Самые популярные"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Оплата ${ amount } единовременно"
-      ],
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ],
-      "forever": [
-        "навсегда"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Продлится через 1 месяц по цене ${ regularAmount }."
@@ -1002,9 +972,6 @@
       ],
       "12 months": [
         "12 месяцев"
-      ],
-      "24 months": [
-        "24 месяца"
       ],
       "Annually": [
         "Ежегодно"
@@ -2178,6 +2145,11 @@
         "Просроченный счёт"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2253,11 +2225,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2442,6 +2409,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
       ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
@@ -2683,6 +2653,9 @@
         "В ${ noContactGroupList } группах нет контактов ",
         "В ${ noContactGroupList } группы нет контактов "
       ],
+      "Organization key is not decrypted": [
+        "Ключ организации не расшифрован"
+      ],
       "Password is required": [
         "Нужно ввести пароль"
       ],
@@ -2712,6 +2685,12 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "Пожалуйста, укажите имя, фамилию или отображаемое имя"
+      ],
+      "Please select a country": [
+        "Пожалуйста, выберите страну"
+      ],
+      "Please select a state": [
+        "Пожалуйста, выберите штат"
       ],
       "Port is required": [
         "Нужно указать порт"
@@ -4120,6 +4099,9 @@
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
       ],
+      "Enabling auto-deletion…": [
+        "Включение автоудаления…"
+      ],
       "End-to-end encrypted": [
         "Зашифровано сквозным методом"
       ],
@@ -4284,6 +4266,9 @@
       ],
       "Key fingerprint": [
         "Отпечаток ключа"
+      ],
+      "Keys created": [
+        "Ключи созданы"
       ],
       "Label all imported messages as": [
         "Назначить всем импортированным сообщениям ярлык"
@@ -4519,6 +4504,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Registering your subscription…": [
+        "Регистрация вашей подписки…"
+      ],
       "Saving": [
         "Сохранение"
       ],
@@ -4548,6 +4536,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
+      ],
+      "Setting up your new address…": [
+        "Настройка вашего нового адреса…"
       ],
       "Settings update failed": [
         "Ошибка при обновлении настроек"
@@ -4639,9 +4630,6 @@
       "This message will be presented again later": [
         "Это сообщение будет представлено снова позже"
       ],
-      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "Возможно, єтот публичный документ не существует или у вас нет разрешения на его просмотр. Вы можете попробовать перезагрузить страницу, чтобы увидеть, устранена ли проблема."
-      ],
       "This will replace the existing file with the folder": [
         "Это заменит существующий файл на папку"
       ],
@@ -4710,6 +4698,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Одновременная загрузка сотен файлов может повлиять на производительность."
+      ],
+      "User activated": [
+        "Пользователь активирован"
       ],
       "username": [
         "имя пользователя"
@@ -8231,6 +8222,29 @@
         "За ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Объем хранилища на пользователя: ${ planMaxSpace }"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "Folders, labels, and custom filters": [
+        "Папки, ярлыки и пользовательские фильтры"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ хранилища"
@@ -8270,29 +8284,6 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватность является нашей задачей"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Объем хранилища на пользователя: ${ planMaxSpace }"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } пользовательский домен электронной почты",
-        "${ planNumberOfDomains } пользовательских домена электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адрес электронной почты",
-        "${ planNumberOfEmails } адреса электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты"
-      ],
-      "Folders, labels, and custom filters": [
-        "Папки, ярлыки и пользовательские фильтры"
       ]
     },
     "Subscription renewal state": {
@@ -9023,6 +9014,11 @@
         "Сегодня"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Добавьте этот общий файл к вашему ${ DRIVE_APP_NAME } для легкого доступа к нему в дальнейшем."
@@ -9095,11 +9091,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы отправили им приглашение получить доступ к этому элементу."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Validation": {

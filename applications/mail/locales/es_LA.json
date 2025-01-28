@@ -61,7 +61,7 @@
         "Añadir cumpleaños"
       ],
       "Add Cc recipients": [
-        "Añadir destinatarios CC"
+        "Añadir destinatarios en copia"
       ],
       "Add condition": [
         "Añadir condición"
@@ -137,7 +137,7 @@
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
-        "Adjuntar captura(s)"
+        "Adjuntar una o varias capturas de pantalla"
       ],
       "Attachment": [
         "Adjunta"
@@ -457,7 +457,7 @@
         "Activar"
       ],
       "Enable ${ darkWebMonitoring }": [
-        "Active ${ darkWebMonitoring }"
+        "Activar ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
@@ -749,7 +749,7 @@
         "Marcar como legítimo"
       ],
       "Maximize composer": [
-        "Maximizar el editor"
+        "Ampliar el editor"
       ],
       "Maybe": [
         "Quizás"
@@ -770,7 +770,7 @@
         "Mensajes a este destinatario"
       ],
       "Minimize composer": [
-        "Minimizar el editor"
+        "Reducir el editor"
       ],
       "Modify": [
         "Modificar"
@@ -797,7 +797,7 @@
         "Más opciones"
       ],
       "More refine actions": [
-        "Acciones más refinadas"
+        "Acciones más optimizadas"
       ],
       "More search options": [
         "Más opciones de búsqueda"
@@ -1124,7 +1124,7 @@
         "Autodestruir mensaje"
       ],
       "Self-destruct on ...": [
-        "Autodestruir el..."
+        "Destrucción automática el..."
       ],
       "Send": [
         "Enviar"
@@ -1274,7 +1274,7 @@
         "Para buscar los correos electrónicos de manera segura, necesitamos descargar una copia de los mensajes en el navegador. La descarga inicial puede tardar un momento."
       ],
       "Toggle Calendar app": [
-        "Alternar aplicación de Calendario"
+        "Cambiar a la aplicación Calendar"
       ],
       "Toggle Contacts app": [
         "Alternar la aplicación de Contactos"
@@ -1686,11 +1686,6 @@
         "Incluye compatibilidad con 1 dominio de correo personalizado, 10 direcciones de correo, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación de escritorio ${ MAIL_APP_NAME }"
@@ -1783,34 +1778,9 @@
         "Historial de versiones"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Los descuentos se basan en los precios mensuales estándar."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compra Pass Family o Unlimited, su suscripción se renovará automáticamente con el precio reducido y la duración estándar al final del ciclo de facturación."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Más popular"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "durante ${ durationDeal }"
-      ],
-      "forever": [
-        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -1857,9 +1827,6 @@
       "12 months": [
         "12 meses"
       ],
-      "24 months": [
-        "24 meses"
-      ],
       "Annually": [
         "Cada año"
       ],
@@ -1877,7 +1844,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Problema de la aplicación"
+        "Problema con la aplicación"
       ],
       "Bridge problem": [
         "Problema de Bridge"
@@ -4011,6 +3978,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } es su usuario. Para crear ${ emailAddress }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -4280,6 +4250,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
+      ],
+      "Organization key is not decrypted": [
+        "La clave de la organización no está descifrada"
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -6360,7 +6333,7 @@
         "Al darse de baja finalizará cualquier conexión a servidores de pago de ${ VPN_APP_NAME }."
       ],
       "Download on the App Store": [
-        "Descárguelo en la App Store"
+        "Descárguela en la App Store"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descargue hoy la aplicación favorita y lleve la privacidad con usted dondequiera que vaya."
@@ -6509,7 +6482,7 @@
         "Carpeta"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Para obtener información adicional y eliminar restricciones, inicia sesión en ${ mailLink }."
+        "Para obtener información adicional y eliminar restricciones, inicie sesión en ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acceder a su correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descargue nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
@@ -6531,7 +6504,7 @@
         "Generar texto"
       ],
       "Get it on Google Play": [
-        "Descárguelo en Google Play"
+        "Obténgala en Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Reciba notificaciones si la contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -6647,10 +6620,10 @@
         "Conexión a internet restaurada."
       ],
       "Invite family members and get everything up and running.": [
-        "Invite a otros miembros de tu familia y comienze de inmediato."
+        "Invite a otros miembros de su familia y comience de inmediato."
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
-        "Invite a su pareja, amigos o a quien sea con quien estés compartiendo su plan de ${ protonDuoPlanName }."
+        "Invite a su pareja, amistad o a quien sea que esté compartiendo su plan de ${ protonDuoPlanName }."
       ],
       "JCB logo": [
         "Logo de JCB"
@@ -6669,6 +6642,9 @@
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
+      ],
+      "Keys created": [
+        "Las claves fueron creadas."
       ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
@@ -7196,7 +7172,7 @@
         "Cambiar a"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
-        "Sincronize y gestione archivos con la aplicación ${ DRIVE_APP_NAME }. Cree y comparta documentos en ${ DOCS_APP_NAME } y guárdelos de forma segura. Todo en ${ ios }, ${ android } y ${ desktop }."
+        "Sincronice y gestione archivos con la aplicación ${ DRIVE_APP_NAME }. Cree y comparta documentos en ${ DOCS_APP_NAME } y guárdelos de forma segura. Todo en ${ ios }, ${ android } y ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalmente. Compruebe más tarde."
@@ -7522,6 +7498,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Use atajos de teclado para gestionar el correo más rápido."
       ],
+      "User activated": [
+        "El usuario fue activado."
+      ],
       "username": [
         "nombre de usuario"
       ],
@@ -7649,7 +7628,7 @@
         "Puede añadirla como archivo adjunto o mostrarla incrustada en el cuerpo del correo."
       ],
       "You can add your own custom domain to ${ MAIL_APP_NAME }": [
-        "Puede añadir tu propio dominio personalizado a ${ MAIL_APP_NAME }."
+        "Puede añadir su propio dominio personalizado a ${ MAIL_APP_NAME }."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "También puede fusionar calendarios importados con calendarios existentes de ${ BRAND_NAME }."
@@ -9692,7 +9671,7 @@
         "Soporte prioritario y chat en vivo"
       ],
       "Private photo backup": [
-        "Copia de seguridad de fotos privadas"
+        "Copia de seguridad de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Revise y refine sus correos electrónicos"
@@ -10343,7 +10322,7 @@
         "Obtenga Mail Plus por solo ${ pricingTitle }"
       ],
       "Get the deal": [
-        "Aprovéchese de la oferta"
+        "Obtener la oferta"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidad para obtener un 80 % de descuento en su primer mes de ${ plan } Plus."
@@ -10365,7 +10344,7 @@
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Direcciones de correo electrónico"
       ],
       "Free": [
@@ -10481,7 +10460,7 @@
         "Repetir la introducción"
       ],
       "Set a display name": [
-        "Establecer un nombre para mostrar"
+        "Establezca un nombre para mostrar"
       ],
       "Start using ${ BRAND_NAME }": [
         "Comience a usar ${ BRAND_NAME }"
@@ -11449,7 +11428,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Restablecimiento de contraseña solicitado"
+        "Se solicitó el restablecimiento de contraseña."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11640,6 +11619,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Su suscripción se renovará a la misma tarifa cada año."
       ]
     },
     "specialoffer: Link": {
@@ -12610,7 +12592,7 @@
         "Se notificó el problema."
       ],
       "Public key trusted": [
-        "Clave pública confiada"
+        "Clave pública de confianza"
       ],
       "Read receipt sent": [
         "Acuse de recibo enviado"
@@ -12809,7 +12791,7 @@
         "Descargar la aplicación de escritorio"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
-        "Active ${ DARK_WEB_MONITORING_NAME }"
+        "Activar ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Obtener mi dirección «@${ PM_DOMAIN }»"
@@ -12827,7 +12809,7 @@
         "${ emailsCount } direcciones de correo"
       ],
       "${ feature } is now active": [
-        "La funcionalidad ${ feature } ya está activada."
+        "La función ${ feature } ya está activada"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atajos de teclado de ${ MAIL_APP_NAME }"
@@ -13789,6 +13771,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se le facturará cada 12 meses por ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Su nueva suscripción se renovará automáticamente en ${ cycle } mes.",
+        "Su nueva suscripción se renovará automáticamente en ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Su plan programado comienza el ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "La suscripción se renovará automáticamente en ${ cycle } mes.",

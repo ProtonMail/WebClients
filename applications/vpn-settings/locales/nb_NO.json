@@ -272,7 +272,7 @@
         "Rediger gruppe"
       ],
       "Edit invoice note": [
-        "Rediger fakturanota"
+        "Rediger fakturamerknad"
       ],
       "Edit name": [
         "Rediger navn"
@@ -321,6 +321,12 @@
       ],
       "Forgot recovery method?": [
         "Glemt gjenopprettingsmetode?"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Skaff deg ${ planName } for ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Skaff deg ${ planOrAppName }"
       ],
       "Get a new encrypted email address": [
         "Få en ny kryptert e-postadresse"
@@ -670,6 +676,9 @@
       "Switch or add account": [
         "Bytt eller legg til konto"
       ],
+      "Take a tour": [
+        "Få en omvisning"
+      ],
       "Test": [
         "Test"
       ],
@@ -972,11 +981,6 @@
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivebordsapp"
@@ -1069,34 +1073,9 @@
         "Versjonshistorikk"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Livsvarig tilbud for ${ PASS_SHORT_APP_NAME } Plus har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Rabatter er basert på standard månedspris."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Hvis du kjøper Pass Family eller Unlimited, blir abonnementet ditt fornyet automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Abonnementet ditt fornyes automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Mest populær"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Faktureres til ${ amount } én gang"
-      ],
-      "for ${ durationDeal }": [
-        "for ${ durationDeal }"
-      ],
-      "forever": [
-        "for alltid"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
@@ -1108,6 +1087,9 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få tilgang til innhold på strømmetjenester inkludert Netflix, Disney+, Prime Video og mer fra hvor som helst."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
@@ -1148,9 +1130,6 @@
       ],
       "12 months": [
         "12 måneder"
-      ],
-      "24 months": [
-        "24 måneder"
       ],
       "Annually": [
         "Årlig"
@@ -1253,6 +1232,21 @@
       ],
       "Continue your subscription": [
         "Fortsett abonnementet"
+      ],
+      "Create label": [
+        "Opprett etikett"
+      ],
+      "Discover and set up features": [
+        "Oppdag og konfigurer funksjoner"
+      ],
+      "Remind me later": [
+        "Påminn meg senere"
+      ],
+      "Set up other features": [
+        "Konfigurer andre funksjoner"
+      ],
+      "Take a tour": [
+        "Få en omvisning"
       ]
     },
     "Cancellation upsell": {
@@ -2662,6 +2656,12 @@
       "Please generate keys before you try to change your password": [
         "Generer nøkler før du prøver å endre passordet."
       ],
+      "Please select a country": [
+        "Velg et land"
+      ],
+      "Please select a state": [
+        "Velg en stat"
+      ],
       "Please set a recovery email first": [
         "Angi en gjenopprettings-e-post først"
       ],
@@ -3565,6 +3565,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert overvåking av mistenkelig aktivitet."
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } tjener er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }.",
         "${ provisioningCounter } tjenere er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }."
@@ -3892,11 +3895,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpass utseendet og følelsen av ${ BRAND_NAME }-applikasjonene."
       ],
-      "dedicated servers": [
-        "dedikerte tjenere"
-      ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "dedicated servers": [
+        "dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -3916,6 +3919,12 @@
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Deaktivering av tofaktorautentisering vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Oppdag nye opplåste funksjoner og begynn å bruke dem med en gang!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Oppdag nye funksjoner låst opp med ${ planTitle } og begynn å bruke dem med en gang!"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -3993,11 +4002,17 @@
       "Emailing preference saved": [
         "Preferanse for sending av e-post lagret"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-poster flyttet til papirkurv og søppelpost for mer enn 30 dager siden, blir slettet automatisk."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiver enkel pålogging for å holde organisasjonen din trygg"
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Aktivert den ${ formattedDateAndTime }"
+      ],
+      "Enabling auto-deletion…": [
+        "Aktiverer automatisk sletting…"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Ende-til-ende-kryptering av e-post er deaktivert for denne gruppen på grunn av eksterne adresser."
@@ -4430,6 +4445,9 @@
         "eller tilordne til et hvilket som helst land om ${ availableAgainAfterHours } time",
         "eller tilordne til et hvilket som helst land om ${ availableAgainAfterHours } timer"
       ],
+      "or discover other features:": [
+        "eller oppdag andre funksjoner:"
+      ],
       "Or select a particular server:": [
         "Eller velg en spesiell tjener:"
       ],
@@ -4574,6 +4592,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
       ],
+      "Registering your subscription…": [
+        "Registrerer abonnementet ditt…"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Husk å dele brukerens påloggingsinformasjon med dem."
       ],
@@ -4651,6 +4672,12 @@
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
+      ],
+      "Setting up ${ feature }…": [
+        "Konfigurerer ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Konfigurerer den nye adressen din…"
       ],
       "Setting up your organization": [
         "Setter opp organisasjonen din"
@@ -5140,6 +5167,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruker mer lagringsplass enn det som er inkludert i en ${ downgradedPlanName }-plan. Slett eller fjern data for å nedgradere."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Du kan endre dette når som helst i ${ settingsLink }."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere den en gang for å sikre riktig e-postadresse for bekreftelse."
       ],
@@ -5165,6 +5195,9 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruke følgende påloggingsinformasjon for å koble til en ${ VPN_APP_NAME }-tjener ved å bruke en tredje-part, åpen kilde VPN-app, som Tunnelblick for macOS eller OpenVPN for GNU/Linux."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
       ],
       "You have ${ availableCount } new server available.": [
         "Du har ${ availableCount } ny tjener tilgjengelig.",
@@ -5894,6 +5927,9 @@
       "Start date": [
         "Startdato"
       ],
+      "State": [
+        "Stat"
+      ],
       "Street address": [
         "Gateadresse"
       ],
@@ -6132,6 +6168,9 @@
       ],
       "Request an invite": [
         "Be om en invitasjon"
+      ],
+      "settings": [
+        "innstillinger"
       ],
       "Sign in": [
         "Logg på"
@@ -6398,11 +6437,17 @@
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
       "Upgrade": [
         "Oppgrader"
       ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6544,6 +6589,9 @@
       ],
       "15 GB storage": [
         "15 GB lagring"
+      ],
+      "200 GB of storage": [
+        "200 GB lagringsplass"
       ],
       "24/7 account management support": [
         "24/7 støtte for kontoadministrasjon"
@@ -6756,6 +6804,9 @@
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
       ],
+      "Private photo backup": [
+        "Privat sikkerhetskopiering av bilder"
+      ],
       "Proofread and refine your emails": [
         "Korrekturles og finjuster e-postene dine"
       ],
@@ -6792,6 +6843,9 @@
       ],
       "Secure Core servers": [
         "Secure Core-tjenere"
+      ],
+      "Secure file storage and sharing": [
+        "Sikker fillagring og -deling"
       ],
       "Secure link sharing": [
         "Sikker deling av koblinger"
@@ -6950,6 +7004,17 @@
         "Teamledelse"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "For å fortsette å bruke ${ trialPlanName } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter på ${ last4 }"
@@ -7039,17 +7104,6 @@
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "For å fortsette å bruke ${ trialPlanName } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } av ${ humanMaxSpace }"
@@ -7066,6 +7120,14 @@
       ],
       "terms and conditions": [
         "vilkår og betingelser"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceMailPlus }. Avslutt når som helst."
       ]
     },
     "new_plans: Title": {
@@ -7504,6 +7566,52 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Noen bilder ble ikke lastet opp på grunn av dupliserte filnavn i gjeldende utvalg."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle }-tilbud utløper i dag!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Skaff deg Drive Plus for kun ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Skaff deg Mail Plus for kun ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Skaff deg avtalen"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Tidsbegrenset tilbud"
+      ],
+      "Maybe later": [
+        "Kanskje senere"
+      ],
+      "Save 80% on your first month.": [
+        "Spar 80% på den første måneden."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 flere premiumfunksjoner"
+      ],
+      "Custom email domain": [
+        "Egendefinert e-postdomene"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Lagringsplass"
       ]
     },
     "Onboarding": {
@@ -8818,6 +8926,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dette abonnementet fornyes automatisk hvert 2. år med samme pris til det kanselleres."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Abonnementet ditt fornyes med samme pris hvert år."
       ]
     },
     "specialoffer: Link": {
@@ -8826,6 +8937,9 @@
       ],
       "Upgrade": [
         "Oppgrader"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Oppgrader for ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -10062,6 +10176,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ feature } is now active": [
+        "${ feature } er nå aktiv"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME }-klienter"
       ],
@@ -10176,6 +10293,9 @@
       ],
       "Authentication security": [
         "Sikkerhet for autentisering"
+      ],
+      "Auto-deletion is active": [
+        "Auto-sletting er aktiv"
       ],
       "Billing cycle": [
         "Faktureringssyklus"
@@ -10739,6 +10859,9 @@
       "WireGuard configuration": [
         "WireGuard-konfigurering"
       ],
+      "You can now create unlimited folders and labels": [
+        "Du kan nå opprette ubegrenset antall mapper og etiketter"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
       ],
@@ -10819,6 +10942,29 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Ekstern adresse – deaktiverer ende-til-ende-kryptering av e-post for denne gruppen"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Ekstern adresse – deaktiverer ende-til-ende-e-postkryptering for denne gruppen, og ingen krypterte ressurser deles med denne brukeren."
+      ],
+      "Group membership paused": [
+        "Gruppemedlemskap satt på pause"
+      ],
+      "Sending member invitation": [
+        "Sender medlemsinvitasjon"
+      ],
+      "User declined invitation": [
+        "Brukeren avslo invitasjonen"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Venter på at brukeren godtar invitasjonen"
       ]
     },
     "Tooltip": {
@@ -10905,29 +11051,6 @@
       ],
       "Your DKIM signing is working.": [
         "Din DKIM-signering virker."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Ekstern adresse – deaktiverer ende-til-ende-kryptering av e-post for denne gruppen"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Ekstern adresse – deaktiverer ende-til-ende-e-postkryptering for denne gruppen, og ingen krypterte ressurser deles med denne brukeren."
-      ],
-      "Group membership paused": [
-        "Gruppemedlemskap satt på pause"
-      ],
-      "Sending member invitation": [
-        "Sender medlemsinvitasjon"
-      ],
-      "User declined invitation": [
-        "Brukeren avslo invitasjonen"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Venter på at brukeren godtar invitasjonen"
       ]
     },
     "Tor out of date": {
@@ -11237,6 +11360,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du blir deretter fakturert hver 12. måned til ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Det nye abonnementet ditt fornyes automatisk om ${ cycle } måned.",
+        "Det nye abonnementet ditt fornyes automatisk om ${ cycle } måneder."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Din planlagte plan begynner den ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Abonnementet ditt fornyes automatisk om ${ cycle } måned.",
