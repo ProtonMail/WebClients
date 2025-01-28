@@ -109,7 +109,6 @@ describe('process', () => {
             translations,
             delayListening
         );
-        jest.runAllTimers();
 
         tab.closed = true;
 

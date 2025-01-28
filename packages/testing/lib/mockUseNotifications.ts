@@ -1,5 +1,10 @@
 import * as useNotificationsModule from '@proton/components/hooks/useNotifications';
 
+jest.mock('@proton/components/hooks/useNotifications', () => ({
+    __esModule: true,
+    ...jest.requireActual('@proton/components/hooks/useNotifications'),
+}));
+
 export const mockUseNotifications = (value?: Partial<ReturnType<typeof useNotificationsModule.default>>) => {
     const mockedUseNotifications = jest.spyOn(useNotificationsModule, 'default');
 

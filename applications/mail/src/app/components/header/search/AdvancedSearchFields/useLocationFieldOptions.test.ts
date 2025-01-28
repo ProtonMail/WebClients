@@ -1,5 +1,6 @@
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseFolders, mockUseLabels, mockUseMailSettings } from '@proton/testing';
+import { mockUseFolders, mockUseLabels } from '@proton/testing';
+import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { mockUseScheduleSendFeature } from 'proton-mail/helpers/test/mockUseScheduleSendFeature';
 

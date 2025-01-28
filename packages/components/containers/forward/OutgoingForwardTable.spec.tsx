@@ -5,7 +5,6 @@ import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import {
     applyHOCs,
-    mockUseUser,
     withApi,
     withAuthentication,
     withCache,
@@ -13,6 +12,7 @@ import {
     withEventManager,
     withNotifications,
 } from '@proton/testing';
+import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import OutgoingForwardTable from './OutgoingForwardTable';
 
