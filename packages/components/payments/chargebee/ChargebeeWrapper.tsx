@@ -11,7 +11,9 @@ import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoint
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargeableV5PaymentToken, NonChargeableV5PaymentToken, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { CountriesDropdown } from '@proton/payments/ui';
+// Circular dependency. Can get rid of it by moving ChargebeeWrapper to payments/ui
+// eslint-disable-next-line
+import { CountriesDropdown } from '@proton/payments/ui/components/CountriesDropdown';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 

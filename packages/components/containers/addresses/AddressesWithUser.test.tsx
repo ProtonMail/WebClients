@@ -12,7 +12,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { mockUseFeature } from '@proton/testing/lib/mockUseFeature';
+import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
 import useFlag from '@proton/unleash/useFlag';
 
 import useKTVerifier from '../keyTransparency/useKTVerifier';
@@ -124,7 +124,7 @@ describe('addresses with user', () => {
     mockedUseKTVerifier.mockReturnValue({} as any);
     mockedUseOrganizationKey.mockReturnValue([{}] as any);
     mockedUseFlag.mockReturnValue(true);
-    mockUseFeature({ feature: { Value: true } as any });
+    mockUseFeatureBarrel({ feature: { Value: true } as any });
 
     const getFirstAddress = (container: HTMLElement) => {
         return container.querySelector('[data-testid^="users-and-addresses-table"]');

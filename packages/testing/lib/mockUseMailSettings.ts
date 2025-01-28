@@ -16,6 +16,11 @@ const defaultMailSettings: MailSettings = {
     AutoDeleteSpamAndTrashDays: 0,
 };
 
+jest.mock('@proton/mail/mailSettings/hooks', () => ({
+    __esModule: true,
+    ...jest.requireActual('@proton/mail/mailSettings/hooks'),
+}));
+
 export const mockUseMailSettings = (params?: [Partial<MailSettings>?, boolean?, (() => void)?]) => {
     const [value, isMissed = false] = params ?? [];
 

@@ -14,24 +14,24 @@ import type { OfferConfig } from './interface';
 
 const OFFER_CONTENT = 'deal deal deal deal deal';
 
-const offerConfig: OfferConfig = {
-    deals: [],
-    featureCode: 'testOffer2022' as FeatureCode,
-    layout: () => <div>{OFFER_CONTENT}</div>,
-    ID: 'test-offer-2022' as OfferConfig['ID'],
-    canBeDisabled: true,
-};
-
-const offerConfigAutopopup: OfferConfig = {
-    deals: [],
-    featureCode: 'testOffer2022' as FeatureCode,
-    layout: () => <div>{OFFER_CONTENT}</div>,
-    ID: 'test-offer-2022' as OfferConfig['ID'],
-    canBeDisabled: true,
-    autoPopUp: 'one-time',
-};
-
 jest.mock('./hooks/useOfferConfig', function () {
+    const offerConfig: OfferConfig = {
+        deals: [],
+        featureCode: 'testOffer2022' as FeatureCode,
+        layout: () => <div>{OFFER_CONTENT}</div>,
+        ID: 'test-offer-2022' as OfferConfig['ID'],
+        canBeDisabled: true,
+    };
+
+    const offerConfigAutopopup: OfferConfig = {
+        deals: [],
+        featureCode: 'testOffer2022' as FeatureCode,
+        layout: () => <div>{OFFER_CONTENT}</div>,
+        ID: 'test-offer-2022' as OfferConfig['ID'],
+        canBeDisabled: true,
+        autoPopUp: 'one-time',
+    };
+
     return {
         __esModule: true,
         default: jest
