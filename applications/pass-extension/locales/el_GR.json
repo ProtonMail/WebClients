@@ -8,6 +8,9 @@
       "Accept": [
         "Αποδοχή"
       ],
+      "Accept and view the item": [
+        "Αποδοχή και προβολή αντικειμένου"
+      ],
       "Account": [
         "Λογαριασμός"
       ],
@@ -122,11 +125,11 @@
       "Continue without pinning": [
         "Συνέχεια χωρίς καρφίτσωμα"
       ],
-      "Copy alias address": [
-        "Αντιγραφή διεύθυνσης ψευδωνύμου"
-      ],
       "Copy and close": [
         "Αντιγραφή και κλείσιμο"
+      ],
+      "Copy forwarding address": [
+        "Αντιγραφή διεύθυνσης προώθησης"
       ],
       "Copy link": [
         "Αντιγραφή συνδέσμου"
@@ -142,9 +145,6 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
-      ],
-      "Create a new vault to share": [
-        "Δημιουργία νέας κρύπτης για κοινή χρήση"
       ],
       "Create alias": [
         "Δημιουργία ψευδώνυμου"
@@ -181,9 +181,6 @@
       ],
       "Custom section": [
         "Προσαρμοσμένη ενότητα"
-      ],
-      "Customize": [
-        "Προσαρμογή"
       ],
       "Delete": [
         "Διαγραφή"
@@ -251,9 +248,6 @@
       "Enable this alias to receive emails sent to this alias": [
         "Ενεργοποιήστε αυτό το ψευδώνυμο για να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται σε αυτό το ψευδώνυμο"
       ],
-      "Entire vault": [
-        "Ολόκληρη κρύπτη"
-      ],
       "Exclude from monitoring": [
         "Εξαίρεση από την παρακολούθηση"
       ],
@@ -317,6 +311,9 @@
       "Include in monitoring": [
         "Συμπερίληψη στην παρακολούθηση"
       ],
+      "Invite more...": [
+        "Προσκαλέστε περισσότερους..."
+      ],
       "Invite others": [
         "Πρόσκληση άλλων"
       ],
@@ -356,9 +353,6 @@
       "Manage access": [
         "Διαχείριση πρόσβασης"
       ],
-      "Manage vault access": [
-        "Διαχείριση πρόσβασης κρύπτης"
-      ],
       "Manually sync your data": [
         "Μη αυτόματος συγχρονισμός των δεδομένων σας"
       ],
@@ -379,9 +373,6 @@
       ],
       "Move all items": [
         "Μετακίνηση όλων των στοιχείων"
-      ],
-      "Move to a shared vault": [
-        "Μετακίνηση σε κοινόχρηστη κρύπτη"
       ],
       "Move to another vault": [
         "Μετακίνηση σε άλλη κρύπτη"
@@ -536,11 +527,11 @@
       "Share": [
         "Κοινοποίηση"
       ],
+      "Share item": [
+        "Κοινοποίηση αντικειμένου"
+      ],
       "Share secure link": [
         "Κοινή χρήση ασφαλούς συνδέσμου"
-      ],
-      "Share this vault": [
-        "Κοινή χρήση αυτής της κρύπτης"
       ],
       "Share vault": [
         "Κοινή χρήση κρύπτης"
@@ -619,9 +610,6 @@
       "Update this login": [
         "Ενημέρωση αυτής της σύνδεσης"
       ],
-      "Update vault": [
-        "Ενημέρωση κρύπτης"
-      ],
       "Updating": [
         "Γίνεται ενημέρωση"
       ],
@@ -654,6 +642,9 @@
       ],
       "View older history": [
         "Προβολή παλαιότερου ιστορικού"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Με άλλους ${ BRAND_NAME } χρήστες"
       ],
       "Write us on Reddit": [
         "Γράψτε μας στο Reddit"
@@ -785,6 +776,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Δεν ήταν δυνατή η επιβεβαίωση αυτής της πρόσκλησης αυτή τη στιγμή"
+      ],
+      "Could not leave item.": [
+        "Δεν ήταν δυνατή η αποχώρηση από το στοιχείο."
       ],
       "Could not leave vault.": [
         "Δεν ήταν δυνατή η αποχώρηση από την κρύπτη."
@@ -1238,10 +1232,6 @@
         "${ blockedEmailsCount } αποκλείστηκε",
         "${ blockedEmailsCount } αποκλείστηκαν"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } πρόσκληση στάλθηκε με επιτυχία",
-        "${ count } προσκλήσεις στάλθηκαν με επιτυχία"
-      ],
       "${ count } time": [
         "${ count } φορά",
         "${ count } φορές"
@@ -1256,6 +1246,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } προωθήθηκε",
         "${ forwardedEmailsCount } προωθήθηκαν"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "Ο ${ inviterEmail } θέλει να μοιραστεί μαζί σας ένα αντικείμενο."
       ],
       "${ memberCount } member": [
         "${ memberCount } μέλος",
@@ -1297,6 +1290,10 @@
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } θα προτείνει την αποθήκευση κλειδιών πρόσβασης."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } πρόσκληση στάλθηκε με επιτυχία",
+        "${ payload.count } προσκλήσεις στάλθηκαν με επιτυχία"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "Το ${ PROTON_SENTINEL_NAME } απενεργοποιήθηκε επιτυχώς"
@@ -1426,8 +1423,17 @@
       "Can be viewed": [
         "Μπορεί να προβληθεί"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Μπορεί να δημιουργήσει, επεξεργαστεί, διαγράψει και εξάγει στοιχεία σε αυτήν την κρύπτη."
+      "Can create, edit, and delete items in this vault.": [
+        "Μπορεί να δημιουργήσει, επεξεργαστεί και διαγράψει στοιχεία σε αυτήν την κρύπτη."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Μπορεί να δημιουργήσει, επεξεργαστεί και διαγράψει αυτό το στοιχείο."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Μπορεί να παραχωρήσει και να ανακαλέσει την πρόσβαση σε αυτό το στοιχείο, και να το διαγράψει."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Μπορεί να παραχωρήσει και να ανακαλέσει την πρόσβαση σε αυτό το στοιχείο."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Μπορεί να παραχωρήσει και να ανακαλέσει την πρόσβαση σε αυτή την κρύπτη και να το διαγράψει."
@@ -1437,6 +1443,9 @@
       ],
       "Can view items in this vault.": [
         "Μπορεί να προβάλει στοιχεία σε αυτή την κρύπτη."
+      ],
+      "Can view this item.": [
+        "Μπορεί να προβάλλει αυτό το στοιχείο."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Επιλέξτε ένα αποθηκευμένο κλειδί πρόσβασης για είσοδο στο ${ domain }"
@@ -1613,6 +1622,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Η διεύθυνση προώθησης αντιγράφηκε στο πρόχειρο. Στείλτε ένα μήνυμα σε αυτήν τη διεύθυνση και το ${ Email } θα το λάβει."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Οι κωδικοί πρόσβασης που δημιουργούνται αυτόματα θα αποθηκεύονται για περίοδο ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδας.",
         "Οι κωδικοί πρόσβασης που δημιουργούνται αυτόματα θα αποθηκεύονται για περίοδο ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδων"
@@ -1688,6 +1700,10 @@
       "Item restored": [
         "Έγινε επαναφορά στοιχείου"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Κοινή χρήση στοιχείων: ${ itemAccessCount } χρήστης",
+        "Κοινή χρήση στοιχείων: ${ itemAccessCount } χρήστες"
+      ],
       "Item successfully excluded from monitoring": [
         "Το στοιχείο εξαιρέθηκε επιτυχώς από την παρακολούθηση"
       ],
@@ -1702,6 +1718,9 @@
       ],
       "Item successfully unpinned": [
         "Το στοιχείο ξεκαρφιτσώθηκε επιτυχώς"
+      ],
+      "Leaving item...": [
+        "Αποχώρηση από το στοιχείο..."
       ],
       "Leaving vault...": [
         "Αποχώρηση από την κρύπτη..."
@@ -1941,9 +1960,6 @@
       "Restoring trashed items...": [
         "Επαναφορά διαγραμμένων στοιχείων..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Η αντίστροφη ψευδώνυμη διεύθυνση αντιγράφηκε στο πρόχειρο. Στείλτε ένα μήνυμα σε αυτήν τη διεύθυνση και το ${ Email } θα το λάβει."
-      ],
       "Save login": [
         "Αποθήκευση διαπιστευτηρίων"
       ],
@@ -1989,6 +2005,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Μοιραστείτε στοιχεία σύνδεσης και ασφαλείς σημειώσεις, με έως και 10 άτομα"
       ],
+      "Shared item invitation": [
+        "Πρόσκληση για κοινόχρηστο στοιχείο"
+      ],
       "Sign in or create an account to continue.": [
         "Για να συνεχίσετε, εισέλθετε ή δημιουργήστε λογαριασμό."
       ],
@@ -2006,6 +2025,9 @@
       ],
       "Successfully exported all your items": [
         "Επιτυχής εξαγωγή όλων των στοιχείων σας"
+      ],
+      "Successfully left the item": [
+        "Αποχωρήσατε με επιτυχία από το στοιχείο"
       ],
       "Successfully left the vault": [
         "Αποχωρήσατε με επιτυχία από την κρύπτη"
@@ -2049,6 +2071,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Αυτή η εξαγωγή θα είναι μην κρυπτογραφημένη και οποιοσδήποτε έχει πρόσβαση στο εξαγόμενο αρχείο σας θα μπορεί να δει τους κωδικούς πρόσβασής σας. Για λόγους ασφαλείας, διαγράψτε το αφού ολοκληρώσετε τη χρήση του."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Αυτό το στοιχείο δεν είναι προς το παρόν κοινόχρηστο με κανέναν. Προσκαλέστε άτομα να το μοιράστε με άλλους."
       ],
       "This operation is irreversible.": [
         "Αυτή η λειτουργία είναι μην αναστρέψιμη."
@@ -2140,9 +2165,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Κάντε αναβάθμιση σε πλάνο επί πληρωμή για να δημιουργήσετε πολλαπλές κρύπτες."
       ],
-      "Use vaults to share this item with others.": [
-        "Χρησιμοποιήστε κρύπτες για να μοιραστείτε αυτό το στοιχείο με άλλους."
-      ],
       "User's access removed": [
         "Η πρόσβαση του χρήστη καταργήθηκε"
       ],
@@ -2160,6 +2182,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Η κρύπτη \"${ share.content.name }\" καταργήθηκε"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Κοινή χρήση κρυπτών: ${ vaultMembersCount } μέλος",
+        "Κοινή χρήση κρυπτών: ${ vaultMembersCount } μέλη"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -2390,8 +2416,8 @@
       "All": [
         "Όλα"
       ],
-      "All vaults": [
-        "Όλες οι κρύπτες"
+      "All items": [
+        "Ολα τα αντικείμενα"
       ],
       "Alphabetical": [
         "Αλφαβητικά"
@@ -2591,6 +2617,9 @@
       "Floor, apartment, building": [
         "Όροφος, διαμέρισμα, κτίριο"
       ],
+      "For a one-off sharing": [
+        "Για εφάπαξ κοινή χρήση"
+      ],
       "Forwards to": [
         "Προώθηση σε"
       ],
@@ -2602,9 +2631,6 @@
       ],
       "General": [
         "Γενικά"
-      ],
-      "Generate a secure link for this item": [
-        "Δημιουργία ασφαλούς συνδέσμου για αυτό το στοιχείο"
       ],
       "Generic CSV": [
         "Γενικό CSV"
@@ -2753,6 +2779,9 @@
       "Need help?": [
         "Χρειάζεστε βοήθεια;"
       ],
+      "New": [
+        "Νέο"
+      ],
       "New vault": [
         "Νέα κρύπτη"
       ],
@@ -2888,6 +2917,9 @@
       "Security code": [
         "Κωδικός διασφάλισης"
       ],
+      "See member and permission overview": [
+        "Δείτε την επισκόπηση μελών και δικαιωμάτων"
+      ],
       "Select a domain": [
         "Επιλέξτε ένα τομέα"
       ],
@@ -2912,11 +2944,17 @@
       "Share": [
         "Κοινοποίηση"
       ],
-      "Share this vault or create a new vault": [
-        "Κοινοποιήστε αυτή την κρύπτη ή δημιουργήστε μια νέα κρύπτη"
+      "Shared": [
+        "Διαμοιρασμένα"
+      ],
+      "Shared by me": [
+        "Κοινοποιημένο από εμένα"
       ],
       "Shared link": [
         "Κοινοποιημένος συνδέσμος"
+      ],
+      "Shared with me": [
+        "Σε κοινή χρήση με εμένα"
       ],
       "Show website favicons": [
         "Εμφάνιση favicons ιστότοπου"
@@ -2959,10 +2997,6 @@
       ],
       "Text": [
         "Κείμενο"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Η κρύπτη του στοιχείου είναι προς το παρόν κοινόχρηστη με ${ targetMembers } άτομο",
-        "Η κρύπτη του στοιχείου είναι προς το παρόν κοινόχρηστη με ${ targetMembers } άτομα"
       ],
       "The URL has been copied to the clipboard": [
         "Αυτός το URL αντιγράφτηκε στο πρόχειρο"
@@ -3023,6 +3057,9 @@
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Χρησιμοποιήστε το ${ PASS_APP_NAME } ως τον προεπιλεγμένο διαχειριστή κωδικών πρόσβασης του προγράμματος περιήγησής σας"
+      ],
+      "Useful for permanent sharing": [
+        "Χρήσιμο για μόνιμη κοινή χρήση"
       ],
       "Username": [
         "Όνομα Χρήστη"
@@ -3201,23 +3238,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Αναζήτηση ${ pluralItemType } στη ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Αναζήτηση ${ pluralItemType } σε όλες τις κρύπτες"
+      "Search ${ pluralItemType } in all items": [
+        "Αναζήτηση ${ pluralItemType } σε όλα τα στοιχεία"
       ],
       "Search in ${ vaultName }": [
         "Αναζήτηση σε ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Αναζήτηση σε όλες τις κρύπτες"
+      "Search in all items": [
+        "Αναζήτηση σε όλα τα στοιχεία"
       ],
       "Search in Trash": [
         "Αναζήτηση στον Κάδο απορριμμάτων"
       ],
       "Select a suffix": [
         "Επιλογή επιθήματος"
-      ],
-      "Shared vault": [
-        "Κοινόχρηστη κρύπτη"
       ],
       "Unknown origin": [
         "Άγνωστη προέλευση"
@@ -3333,6 +3367,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Ο τομέας επαληθεύτηκε με επιτυχία. Ο τομέας σας μπορεί να αρχίσει να λαμβάνει μηνύματα ηλεκτρονικού ταχυδρομείου και να δημιουργεί ψευδώνυμα"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστη.",
+        "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστες."
+      ],
       "Mailbox successfully deleted": [
         "Το γραμματοκιβώτιο διαγράφηκε με επιτυχία"
       ],
@@ -3348,9 +3386,9 @@
       "Random prefix generation successfully enabled": [
         "Η δημιουργία τυχαίων προθεμάτων ενεργοποιήθηκε με επιτυχία"
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστη.",
-        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστες."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστη.",
+        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστες."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Στάλθηκε μήνυμα επαλήθευσης. Παρακαλούμε ελέγξτε τα εισερχόμενά σας για να επαληθεύσετε το γραμματοκιβώτιό σας"
@@ -3516,11 +3554,17 @@
       "Import to vault(s)": [
         "Εισαγωγή στην(ις) κρύπτη(ες)"
       ],
+      "Item": [
+        "Στοιχείο"
+      ],
       "Last autofill": [
         "Τελευταία αυτόματη συμπλήρωση"
       ],
       "Last modified": [
         "Τελευταία τροποποίηση"
+      ],
+      "Leave this item?": [
+        "Αποχώρηση από αυτό το στοιχείο;"
       ],
       "Leave vault?": [
         "Αποχώρηση από την κρύπτη;"
@@ -3562,6 +3606,9 @@
       ],
       "No items selected": [
         "Δεν επιλέχθηκαν αντικείμενα"
+      ],
+      "No shared items": [
+        "Δεν υπάρχουν κοινόχρηστα στοιχεία"
       ],
       "No shared secure links": [
         "Δεν υπάρχουν κοινόχρηστοι ασφαλείς σύνδεσμοι"
@@ -3629,6 +3676,12 @@
       ],
       "Share with": [
         "Κοινοποίηση με"
+      ],
+      "Shared item invitation": [
+        "Πρόσκληση για κοινόχρηστο στοιχείο"
+      ],
+      "Shared via": [
+        "Κοινή χρήση μέσω"
       ],
       "SPF (Optional)": [
         "SPF (Προαιρετικό)"
@@ -3742,6 +3795,9 @@
       ],
       "A description of the problem is required": [
         "Απαιτείται περιγραφή του προβλήματος"
+      ],
+      "Addresses already invited.": [
+        "Διευθύνσεις που έχουν ήδη προσκληθεί."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Τα ψευδώνυμα στον κάδο απορριμμάτων θα συνεχίσουν να προωθούν μηνύματα ηλεκτρονικού ταχυδρομείου."
@@ -3860,6 +3916,9 @@
       "No secure links matching": [
         "Δεν υπάρχουν ασφαλείς σύνδεσμοι που να ταιριάζουν"
       ],
+      "No shared items matching": [
+        "Δε βρέθηκαν κοινόχρηστα στοιχεία που να ταιριάζουν"
+      ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Μετά τον συγχρονισμό, διαγράφοντας ψευδώνυμα στο ${ PASS_SHORT_APP_NAME } αυτά θα διαγραφούν ταυτόχρονα και από το SimpleLogin"
       ],
@@ -3890,6 +3949,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Ορισμένα στοιχεία είναι κοινόχρηστα προς το παρόν. Αν διαγραφούν, όλοι οι υπόλοιποι χρήστες θα χάσουν την πρόσβασή τους σε αυτά."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Ορισμένα στοιχεία είναι κοινόχρηστα. Αν μεταφερθούν σε άλλη κρύπτη, όλοι οι υπόλοιποι χρήστες θα χάσουν την πρόσβασή τους σε αυτά."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά την εκκίνηση του ${ PASS_APP_NAME }. Δοκιμάστε να ανανεώσετε ή να φορτώσετε ξανά την προέκταση"
       ],
@@ -3898,6 +3963,12 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Αυτό το ψευδώνυμο \"${ aliasEmail }\" χρησιμοποιείται αυτήν τη στιγμή στη σύνδεση \"${ relatedLoginName }\"."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Αυτό το στοιχείο είναι κοινόχρηστο. Αν διαγραφεί, όλοι οι υπόλοιποι χρήστες θα χάσουν την πρόσβασή τους σε αυτό."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Αυτό το στοιχείο είναι κοινόχρηστο. Αν μεταφερθεί σε άλλη κρύπτη, όλοι οι υπόλοιποι χρήστες θα χάσουν την πρόσβασή τους σε αυτό."
       ],
       "Title is required": [
         "Απαιτείται τίτλος"
@@ -3920,8 +3991,14 @@
       "Verification code is required": [
         "Απαιτείται κωδικός επαλήθευσης"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Έχετε φτάσει το όριο των μελών που μπορούν να έχουν πρόσβαση σε αυτό το στοιχείο."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Έχετε φτάσει το όριο των μελών που μπορούν να έχουν πρόσβαση σε αυτή την κρύπτη."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Έχετε φτάσει το όριο των χρηστών σε αυτό το στοιχείο. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Έχετε φτάσει το όριο των χρηστών σε αυτή την κρύπτη. ${ upgradeLink }"
@@ -3934,6 +4011,9 @@
       ],
       "You must select at least one mailbox": [
         "Πρέπει να επιλέξετε τουλάχιστον ένα γραμματοκιβώτιο"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Θα χάσετε την πρόσβαση σε αυτό το στοιχείο και τις λεπτομέρειές του. Θέλετε να συνεχίσετε?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Δε θα έχετε πλέον πρόσβαση σε αυτή την κρύπτη. Για να συμμετάσχετε ξανά, θα χρειαστείτε μια νέα πρόσκληση."
