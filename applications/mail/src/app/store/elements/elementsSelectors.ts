@@ -151,7 +151,11 @@ export const elementIDs = createSelector(elements, (elements): string[] =>
     elements.map((element) => element.ID).filter(isTruthy)
 );
 
-export const elementsLength = createSelector(elements, (elements) => elements.length);
+export const elementsLength = createSelector([params, elements], (params, elements) => {
+    return elements.filter((element) => {
+        return hasLabel(element, params.labelID);
+    }).length;
+});
 
 export const elementsAreUnread = createSelector([params, elements], (params, elements) => {
     return elements.reduce<{ [elementID: string]: boolean }>((acc, element) => {
@@ -201,17 +205,17 @@ export const paramsChanged = createSelector([params, currentParams], (params, cu
 });
 
 /**
- * @returns a boolean specifying whether or not the current page is in the cache or not.
+ * @returns a boolean specifying whether the current page is in the cache or not.
  */
 export const pageCached = createSelector([pages, currentPage], (pages, currentPage) => pages.includes(currentPage));
 
 /**
- * @returns a boolean specifying whether or not the current page is the one set in the store or not.
+ * @returns a boolean specifying whether the current page is the one set in the store or not.
  */
 export const pageChanged = createSelector([page, currentPage], (page, currentPage) => page !== currentPage);
 
 /**
- * @returns a boolean specifying whether or not the cache contains a page that is +/-1 the current page.
+ * @returns a boolean specifying whether the cache contains a page that is +/-1 the current page.
  * It is useful to check if there is page jump and refetch accordingly
  */
 export const pageIsConsecutive = createSelector([pages, currentPage], (pages, currentPage) =>
@@ -219,7 +223,7 @@ export const pageIsConsecutive = createSelector([pages, currentPage], (pages, cu
 );
 
 /**
- * @returns a boolean specifying whether or not the elements state should be reset, including `elements` cache.
+ * @returns a boolean specifying whether the elements state should be reset, including `elements` cache.
  * It should be `true` whenever one of the search params changes or when a page jump occurs (e.g: users from page 2 to page 7)
  */
 export const shouldResetElementsState = createSelector(
@@ -250,7 +254,7 @@ export const shouldLoadElements = createSelector(
 );
 
 /**
- * @returns true when user is in a unpredicable context because we don't have enough conversations/message metadata infos
+ * @returns true when user is in an unpredictable context because we don't have enough conversations/message metadata infos
  */
 export const shouldInvalidateElementsState = createSelector(
     [params, pages],
@@ -301,9 +305,9 @@ export const messagesToLoadMoreES = createSelector(
 );
 
 /**
- * Computed up to date total of elements for the current parameters
+ * Computed up-to-date total of elements for the current parameters
  * Warning: this value has been proved not to be 100% consistent
- * Has to be used only for non sensitive behaviors
+ * Has to be used only for non-sensitive behaviors
  *
  * labelID - string | undefined - This label ID is the one we use in useElement which is based on the URL value
  * We prefer using this value when present because store one is not immediately up to date when switching labels
@@ -321,9 +325,9 @@ export const dynamicTotal = createSelector(
 );
 
 /**
- * Computed up to date number of elements on the current page
+ * Computed up-to-date number of elements on the current page
  * Warning: this value has been proved not to be 100% consistent
- * Has to be used only for non sensitive behaviors
+ * Has to be used only for non-sensitive behaviors
  */
 export const dynamicPageLength = createSelector(
     [page, pageSize, dynamicTotal, params, bypassFilter],
