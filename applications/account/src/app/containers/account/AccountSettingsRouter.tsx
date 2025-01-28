@@ -103,6 +103,7 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(upgrade) && (
                 <Route path={getSectionPath(path, upgrade)}>
+                    <AutomaticSubscriptionModal />
                     <PrivateMainArea>
                         <div className="container-section-sticky">
                             <div className="text-center flex">

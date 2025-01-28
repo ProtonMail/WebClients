@@ -1,5 +1,5 @@
 import { PLANS } from '@proton/payments';
-import type { APP_NAMES, UPSELL_COMPONENT, UPSELL_FEATURE } from '@proton/shared/lib/constants';
+import type { APP_NAMES, COUPON_CODES, CYCLE, UPSELL_COMPONENT, UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { APPS, APP_UPSELL_REF_PATH } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, Audience, Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -95,6 +95,8 @@ export const getUpgradePath = ({
     app,
     audience,
     target,
+    coupon,
+    cycle,
 }: {
     user?: UserModel;
     plan?: PLANS;
@@ -102,6 +104,8 @@ export const getUpgradePath = ({
     audience?: Audience;
     app?: APP_NAMES;
     target?: 'compare' | 'checkout';
+    coupon?: COUPON_CODES;
+    cycle?: CYCLE;
 }) => {
     const params = new URLSearchParams();
     if (plan) {
@@ -110,6 +114,13 @@ export const getUpgradePath = ({
     if (audience) {
         params.set('audience', audience);
     }
+    if (coupon) {
+        params.set('coupon', coupon);
+    }
+    if (cycle) {
+        params.set('cycle', cycle.toString());
+    }
+
     if (!user || user.isFree) {
         if (app === APPS.PROTONVPN_SETTINGS) {
             return `/dashboard${params.size ? `?${params}` : ''}`;

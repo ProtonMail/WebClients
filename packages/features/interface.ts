@@ -63,6 +63,8 @@ export enum FeatureCode {
     SubscriptionLastReminderDate = 'SubscriptionLastReminderDate',
     MailPostSignupOneDollarState = 'MailPostSignupOneDollarState',
     MailPostSignupOneDollarAccountAge = 'MailPostSignupOneDollarAccountAge',
+    DrivePostSignupOneDollarState = 'DrivePostSignupOneDollarState',
+    DrivePostSignupOneDollarAccountAge = 'DrivePostSignupOneDollarAccountAge',
 
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',

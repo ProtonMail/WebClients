@@ -73,6 +73,7 @@ const TopNavbarComponent = () => (
 const getUserSettings = ({ offersEnabled }: { offersEnabled: boolean }): UserSettings => {
     return {
         News: offersEnabled ? setBit(0, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS) : 0,
+        UsedClientFlags: 0,
     } as UserSettings;
 };
 
