@@ -1,4 +1,4 @@
-import type { Template } from '@pdfme/common';
+import { type Template } from '@pdfme/common';
 import { generate } from '@pdfme/generator';
 
 import chunk from '@proton/utils/chunk';
@@ -56,8 +56,8 @@ export const getFont = async () => {
 // Copy exported template here
 const exportedTemplate = {
     schemas: [
-        {
-            'email title': {
+        [
+            {
                 type: 'text',
                 position: {
                     x: 60,
@@ -71,8 +71,9 @@ const exportedTemplate = {
                 lineHeight: 1,
                 fontName: 'interBold',
                 fontColor: '#6d4aff',
+                name: 'email title',
             },
-            date: {
+            {
                 type: 'text',
                 position: {
                     x: 60,
@@ -86,8 +87,9 @@ const exportedTemplate = {
                 lineHeight: 1,
                 fontColor: '#706d6b',
                 fontName: 'interRegular',
+                name: 'date',
             },
-            'recovery phrase line 1': {
+            {
                 type: 'text',
                 position: {
                     x: 35,
@@ -99,8 +101,9 @@ const exportedTemplate = {
                 characterSpacing: 0.5,
                 fontName: 'interBold',
                 fontSize: 12,
+                name: 'recovery phrase line 1',
             },
-            'recovery phrase line 2': {
+            {
                 type: 'text',
                 position: {
                     x: 35,
@@ -112,8 +115,9 @@ const exportedTemplate = {
                 characterSpacing: 0.5,
                 fontName: 'interBold',
                 fontSize: 12,
+                name: 'recovery phrase line 2',
             },
-        },
+        ],
     ],
     columns: ['email title', 'date', 'recovery phrase line 1', 'recovery phrase line 2'],
     sampledata: [
@@ -129,11 +133,11 @@ const exportedTemplate = {
 export function getTemplate(basePdf: any): Template {
     return {
         basePdf,
-        ...(exportedTemplate as Omit<Template, 'basePdf'>),
+        ...exportedTemplate,
     };
 }
 
-type InputKeys = keyof (typeof exportedTemplate.schemas)[0];
+type InputKeys = (typeof exportedTemplate.schemas)[0][number]['name'];
 type Input = { [key in InputKeys]: string };
 
 export async function generatePDFKit({
@@ -157,6 +161,10 @@ export async function generatePDFKit({
         },
     ];
 
+    /**
+     * There is an issue where links are stripped from the pdf
+     * https://github.com/pdfme/pdfme/issues/239
+     */
     const pdf = (await generate({
         template: getTemplate(emptyTemplate),
         inputs,
