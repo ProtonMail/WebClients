@@ -3,26 +3,32 @@ import { differenceInDays, fromUnixTime, isAfter } from 'date-fns';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
+import {
+    POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE,
+    POST_SIGNUP_ONE_DOLLAR_DURATION,
+    type PostSubscriptionOneDollarOfferState,
+} from '../interface';
+
 interface Props {
     user: UserModel;
     protonConfig: ProtonConfig;
-    postSignupTimestamp: number;
-    postSignupThreshold: number;
+    offerStartDateTimeStamp: number;
+    minimalAccountAgeTimestamp: number;
     mailOneDollarPostSignupFlag: boolean;
-    totalMessage: number;
+    nbrEmailsInAllMail: number;
+    driveOfferStartDateTimestamp?: PostSubscriptionOneDollarOfferState;
 }
 
-const POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE = 7 as const;
-export const POST_SIGNUP_ONE_DOLLAR_DURATION = 30 as const;
 const POST_SIGNUP_REQUIRED_EMAILS = 10 as const;
 
 export const getIsUserEligibleForOneDollar = ({
     user,
     protonConfig,
-    postSignupTimestamp,
-    postSignupThreshold,
+    offerStartDateTimeStamp,
+    minimalAccountAgeTimestamp,
     mailOneDollarPostSignupFlag,
-    totalMessage,
+    nbrEmailsInAllMail,
+    driveOfferStartDateTimestamp,
 }: Props) => {
     // Global offer flag
     if (!mailOneDollarPostSignupFlag) {
@@ -32,9 +38,18 @@ export const getIsUserEligibleForOneDollar = ({
     const hasValidApp = protonConfig.APP_NAME === APPS.PROTONMAIL;
 
     const today = new Date();
-    const postSignupThresholdDate = fromUnixTime(postSignupThreshold);
+
+    // We don't want to run the offer if the drive offer is running
+    const isDriveOfferRunning =
+        differenceInDays(today, fromUnixTime(driveOfferStartDateTimestamp?.offerStartDate || 0)) <=
+        POST_SIGNUP_ONE_DOLLAR_DURATION;
+    if (isDriveOfferRunning) {
+        return false;
+    }
+
+    const postSignupThresholdDate = fromUnixTime(minimalAccountAgeTimestamp);
     const accountCreationDate = fromUnixTime(user.CreateTime);
-    const offerExpirationDate = fromUnixTime(postSignupTimestamp);
+    const offerExpirationDate = fromUnixTime(offerStartDateTimeStamp);
 
     // Accounts must be created after the signup threshold date (controlled by feature flag)
     const isAccountCreatedAfterThreshold = isAfter(accountCreationDate, postSignupThresholdDate);
@@ -44,10 +59,11 @@ export const getIsUserEligibleForOneDollar = ({
 
     // The offer is valid for 30 days after the first time it was shown to the user
     const isOfferStillValid =
-        !postSignupTimestamp || differenceInDays(today, offerExpirationDate) <= POST_SIGNUP_ONE_DOLLAR_DURATION;
+        !offerStartDateTimeStamp || differenceInDays(today, offerExpirationDate) <= POST_SIGNUP_ONE_DOLLAR_DURATION;
 
-    const basicEligibility =
-        user.isFree && !user.isDelinquent && hasValidApp && totalMessage >= POST_SIGNUP_REQUIRED_EMAILS;
+    // We consider the user has the required mail if the offer already started
+    const hasRequiredEmails = offerStartDateTimeStamp ? true : nbrEmailsInAllMail >= POST_SIGNUP_REQUIRED_EMAILS;
+    const basicEligibility = user.isFree && !user.isDelinquent && hasValidApp && hasRequiredEmails;
 
     return isAccountCreatedAfterThreshold && basicEligibility && isOfferStillValid && isAccountOldEnough;
 };

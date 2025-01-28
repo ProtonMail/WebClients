@@ -2,12 +2,12 @@ import { subDays } from 'date-fns';
 
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-import { getIsUserEligibleForOneDollar } from './mailPostSignupOneDollarHelper';
+import { getIsUserEligibleForOneDollar } from './drivePostSignupOneDollarHelper';
 
 const today = new Date();
-const protonConfig = { APP_NAME: 'proton-mail' } as unknown as ProtonConfig;
+const protonConfig = { APP_NAME: 'proton-drive' } as unknown as ProtonConfig;
 
-describe('Mail post signup one dollar eligibility', () => {
+describe('Drive post signup one dollar eligibility', () => {
     describe('Account created after the release', () => {
         it('should be eligible, account 7 days old', () => {
             const user = {
@@ -20,15 +20,15 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
-                    nbrEmailsInAllMail: 10,
+                    driveOneDollarPostSignupFlag: true,
+                    hasUploadedFile: true,
                 })
             ).toBeTruthy();
         });
 
-        it('should not be eligible, account 7 days old but 5 messages', () => {
+        it('should not be be eligible, account 7 days old but no file uploaded', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
@@ -39,10 +39,10 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
-                    nbrEmailsInAllMail: 5,
+                    driveOneDollarPostSignupFlag: true,
+                    hasUploadedFile: false,
                 })
             ).toBeFalsy();
         });
@@ -58,10 +58,10 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
-                    nbrEmailsInAllMail: 10,
+                    driveOneDollarPostSignupFlag: true,
+                    hasUploadedFile: true,
                 })
             ).toBeFalsy();
         });
@@ -77,10 +77,10 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig,
-                    offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
+                    offerStartDateTimestamp: subDays(today, 30).getTime() / 1000,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 60).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
-                    nbrEmailsInAllMail: 10,
+                    driveOneDollarPostSignupFlag: true,
+                    hasUploadedFile: true,
                 })
             ).toBeTruthy();
         });
@@ -96,17 +96,17 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig,
-                    offerStartDateTimeStamp: subDays(today, 31).getTime() / 1000,
+                    offerStartDateTimestamp: subDays(today, 31).getTime() / 1000,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 60).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
-                    nbrEmailsInAllMail: 10,
+                    driveOneDollarPostSignupFlag: true,
+                    hasUploadedFile: true,
                 })
             ).toBeFalsy();
         });
     });
 
-    describe('Drive and Mail offer tests', () => {
-        it('should be eligible if no Drive offer', () => {
+    describe('Mail and Drive offer tests', () => {
+        it('should be eligible if no Mail offer', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
@@ -117,19 +117,19 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
-                    driveOfferStartDateTimestamp: {
+                    driveOneDollarPostSignupFlag: true,
+                    mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: 0,
                     },
-                    nbrEmailsInAllMail: 10,
+                    hasUploadedFile: true,
                 })
             ).toBeTruthy();
         });
 
-        it('should not be eligible if Drive offer present', () => {
+        it('should not be eligible if Mail offer present', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
@@ -140,19 +140,19 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
-                    driveOfferStartDateTimestamp: {
+                    driveOneDollarPostSignupFlag: true,
+                    mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 14).getTime() / 1000,
                     },
-                    nbrEmailsInAllMail: 10,
+                    hasUploadedFile: true,
                 })
             ).toBeFalsy();
         });
 
-        it('should not be eligible if Drive offer present and 30 days old', () => {
+        it('should not be eligible if Mail offer present and 30 days old', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
@@ -163,19 +163,19 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
-                    driveOfferStartDateTimestamp: {
+                    driveOneDollarPostSignupFlag: true,
+                    mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 30).getTime() / 1000,
                     },
-                    nbrEmailsInAllMail: 10,
+                    hasUploadedFile: true,
                 })
             ).toBeFalsy();
         });
 
-        it('should be eligible if Drive offer present but is 31 days old', () => {
+        it('should be eligible if Mail offer present but is 31 days old', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
@@ -186,14 +186,14 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
-                    driveOfferStartDateTimestamp: {
+                    driveOneDollarPostSignupFlag: true,
+                    mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 31).getTime() / 1000,
                     },
-                    nbrEmailsInAllMail: 10,
+                    hasUploadedFile: true,
                 })
             ).toBeTruthy();
         });
@@ -211,10 +211,10 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user: nonFreeUser,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
-                    mailOneDollarPostSignupFlag: false,
-                    nbrEmailsInAllMail: 10,
+                    driveOneDollarPostSignupFlag: false,
+                    hasUploadedFile: true,
                 })
             ).toBeFalsy();
         });
@@ -230,10 +230,10 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user: nonFreeUser,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
-                    mailOneDollarPostSignupFlag: true,
-                    nbrEmailsInAllMail: 10,
+                    driveOneDollarPostSignupFlag: true,
+                    hasUploadedFile: true,
                 })
             ).toBeFalsy();
         });
@@ -249,10 +249,10 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user: delinquentUser,
                     protonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
-                    mailOneDollarPostSignupFlag: true,
-                    nbrEmailsInAllMail: 10,
+                    driveOneDollarPostSignupFlag: true,
+                    hasUploadedFile: true,
                 })
             ).toBeFalsy();
         });
@@ -268,10 +268,10 @@ describe('Mail post signup one dollar eligibility', () => {
                 getIsUserEligibleForOneDollar({
                     user,
                     protonConfig: { APP_NAME: 'proton-calendar' } as unknown as ProtonConfig,
-                    offerStartDateTimeStamp: 0,
+                    offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
-                    mailOneDollarPostSignupFlag: true,
-                    nbrEmailsInAllMail: 10,
+                    driveOneDollarPostSignupFlag: true,
+                    hasUploadedFile: true,
                 })
             ).toBeFalsy();
         });

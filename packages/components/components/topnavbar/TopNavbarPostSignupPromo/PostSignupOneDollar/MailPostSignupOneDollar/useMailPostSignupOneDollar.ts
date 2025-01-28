@@ -8,8 +8,8 @@ import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
-import type { PostSubscriptionOneDollarOfferState } from '../components/interface';
-import { shouldOpenPostSignupOffer } from '../components/postSignupOffersHelpers';
+import type { PostSubscriptionOneDollarOfferState } from '../interface';
+import { shouldOpenPostSignupOffer } from '../postSignupOffersHelpers';
 import { getIsUserEligibleForOneDollar } from './mailPostSignupOneDollarHelper';
 
 export const useMailPostSignupOneDollar = () => {
@@ -28,9 +28,11 @@ export const useMailPostSignupOneDollar = () => {
     const mailOneDollarPostSignupFlag = useFlag('MailPostSignupOneDollarPromo');
 
     // One flag to store the state of the offer and the different modals, and another to manage the progressive rollout
-    const { feature: mailOfferState, loading: postSignupDateLoading } = useFeature<PostSubscriptionOneDollarOfferState>(
+    const { feature: mailOfferState, loading: mailOfferStateLoading } = useFeature<PostSubscriptionOneDollarOfferState>(
         FeatureCode.MailPostSignupOneDollarState
     );
+    const { feature: driveOfferState, loading: driveOfferStateLoading } =
+        useFeature<PostSubscriptionOneDollarOfferState>(FeatureCode.DrivePostSignupOneDollarState);
     const { feature: postSignupThreshold, loading: postSignupThresholdLoading } = useFeature(
         FeatureCode.MailPostSignupOneDollarAccountAge
     );
@@ -41,12 +43,18 @@ export const useMailPostSignupOneDollar = () => {
         isEligible: getIsUserEligibleForOneDollar({
             user,
             protonConfig,
-            postSignupTimestamp: mailOfferState?.Value?.offerStartDate ?? 0,
-            postSignupThreshold: postSignupThreshold?.Value,
+            offerStartDateTimeStamp: mailOfferState?.Value?.offerStartDate ?? 0,
+            minimalAccountAgeTimestamp: postSignupThreshold?.Value,
             mailOneDollarPostSignupFlag,
-            totalMessage,
+            nbrEmailsInAllMail: totalMessage,
+            driveOfferStartDateTimestamp: driveOfferState?.Value,
         }),
-        loading: userLoading || postSignupDateLoading || postSignupThresholdLoading || loadingMessageCount,
+        loading:
+            userLoading ||
+            mailOfferStateLoading ||
+            postSignupThresholdLoading ||
+            driveOfferStateLoading ||
+            loadingMessageCount,
         openSpotlight: isInFolder && shouldOpenPostSignupOffer(mailOfferState?.Value) && !isDomBusy,
     };
 };

@@ -10,8 +10,10 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useDrivePostSignupOneDollarTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollarTelemetry';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { TelemetryMailDrivePostSignupOneDollar } from '@proton/shared/lib/api/telemetry';
+import { APPS, type APP_NAMES, COUPON_CODES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { getHas2024OfferCoupon, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
@@ -36,7 +38,6 @@ export interface SubscriptionModalFowardedRefProps {
     /** Opens the subscription modal */
     open: (subscriptionProps: OpenCallbackProps) => void;
 }
-
 const isOverridablableStep = (step: SUBSCRIPTION_STEPS): step is SubscriptionOverridableStep =>
     [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step);
 
@@ -55,6 +56,8 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
         const [modalState, setModalState, render] = useModalState();
 
         const depsLoading = loadingSubscription || loadingPlans || loadingOrganization || statusLoading;
+
+        const { sendReportDrivePostSignup } = useDrivePostSignupOneDollarTelemetry();
 
         useImperativeHandle(ref, () => {
             return {
@@ -99,6 +102,16 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             void invokeInboxDesktopIPC({ type: 'subscriptionModalOpened', payload: 'subscriptionModalStarted' });
         }
 
+        // This is required since we cannot pay inside the Drive app
+        const sendTelemetry = () => {
+            if (rest?.coupon === COUPON_CODES.TRYDRIVEPLUS2024) {
+                sendReportDrivePostSignup({
+                    event: TelemetryMailDrivePostSignupOneDollar.userSubscribed,
+                    dimensions: {},
+                });
+            }
+        };
+
         const handleClose = () => {
             if (hasInboxDesktopInAppPayments) {
                 void invokeInboxDesktopIPC({
@@ -114,6 +127,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
         };
 
         const handleSubscribed = () => {
+            sendTelemetry();
             handleClose();
             onSubscribed?.();
         };

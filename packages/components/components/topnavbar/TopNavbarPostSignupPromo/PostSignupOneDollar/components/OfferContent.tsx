@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
 
+import type { FeatureProps, SUPPORTED_PRODUCTS } from '../interface';
 import { PostSignupOneDollarFooter } from './PostSignupOneDollarFooter';
 import { PostSignupOneDollarTable } from './PostSignupOneDollarTable';
 import { PostSignupOneDollarTitle } from './PostSignupOneDollarTitle';
-import type { FeatureProps, SUPPORTED_PRODUCTS } from './interface';
 
 interface Props {
     product: SUPPORTED_PRODUCTS;

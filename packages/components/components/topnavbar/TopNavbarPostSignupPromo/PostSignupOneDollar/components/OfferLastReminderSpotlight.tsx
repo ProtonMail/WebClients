@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { SUPPORTED_PRODUCTS } from './interface';
+import type { SUPPORTED_PRODUCTS } from '../interface';
 
 interface Props {
     product: SUPPORTED_PRODUCTS;
