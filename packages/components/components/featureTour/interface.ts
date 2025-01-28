@@ -8,9 +8,13 @@ import type { SharedStore } from '@proton/redux-shared-store/sharedStore';
 export interface FeatureTourStepProps {
     onNext: () => void;
     children?: ReactNode;
-    isActive: boolean;
-    bullets?: ReactNode;
+    bullets: JSX.Element;
 }
+
+export type FeatureTourStep = {
+    id: FeatureTourStepId;
+    isActive: boolean;
+};
 
 export type FeatureTourStepId =
     | 'short-domain'
@@ -25,4 +29,6 @@ export type FeatureTourStepId =
     | 'proton-drive'
     | 'other-features';
 
-export type ShouldDisplayTourStep = (dispatch: SharedStore['dispatch']) => Promise<boolean>;
+export type ShouldDisplayTourStep = (
+    dispatch: SharedStore['dispatch']
+) => Promise<{ canDisplay: boolean; preloadUrls?: string[] }>;

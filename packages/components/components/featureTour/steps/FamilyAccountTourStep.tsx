@@ -8,22 +8,25 @@ import { PLANS } from '@proton/payments';
 import familyPlanBackground from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
+import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayFamilyAccountTourStep: ShouldDisplayTourStep = async (dispatch) => {
     const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
-    return user.isAdmin && organization.PlanName === PLANS.FAMILY && organization.UsedMembers <= 1;
+    return {
+        canDisplay: user.isAdmin && organization.PlanName === PLANS.FAMILY && organization.UsedMembers <= 1,
+        preloadUrls: [familyPlanBackground],
+    };
 };
 
 const FamilyAccountTourStep = (props: FeatureTourStepProps) => {
     return (
         <FeatureTourStepsContent
+            bullets={props.bullets}
             title={c('Title').t`Set up your family account`}
-            description={c('Info').t`Invite family members and get everything up and running.`}
             illustration={familyPlanBackground}
             illustrationSize="medium"
-            descriptionClassName="mb-16"
-            primaryButton={
+            mainCTA={
                 <ButtonLike
                     as={SettingsLink}
                     onClick={props.onNext}
@@ -31,11 +34,16 @@ const FamilyAccountTourStep = (props: FeatureTourStepProps) => {
                     target="_blank"
                     color="norm"
                     fullWidth
-                    className="mb-2"
                 >{c('Action').t`Invite members`}</ButtonLike>
             }
-            {...props}
-        />
+            extraCTA={
+                <FeatureTourStepCTA type="secondary" onClick={props.onNext}>
+                    {c('Button').t`Maybe later`}
+                </FeatureTourStepCTA>
+            }
+        >
+            <p className="m-0">{c('Info').t`Invite family members and get everything up and running.`}</p>
+        </FeatureTourStepsContent>
     );
 };
 
