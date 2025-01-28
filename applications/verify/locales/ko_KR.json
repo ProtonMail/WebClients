@@ -1079,6 +1079,9 @@
       "Country code": [
         "국가 코드"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "여러개의 무료 계정을 만드는 것은 저희의 ${ termsLink } 에 따라 허용되지 않습니다."
+      ],
       "Each code can only be used once": [
         "각각의 코드는 한 번만 사용 가능합니다"
       ],
@@ -1096,6 +1099,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "추가적인 정보와 제한을 없애기 위해 ${ mailLink } 에서 로그인 해주세요."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -1275,6 +1281,9 @@
       "15 GB storage": [
         "저장 공간 15GB"
       ],
+      "200 GB of storage": [
+        "200GB 저장공간"
+      ],
       "Advanced account protection": [
         "향상된 계정 보호"
       ],
@@ -1359,6 +1368,9 @@
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
+      "Private photo backup": [
+        "안전한 사진 백업"
+      ],
       "Proofread and refine your emails": [
         "이메일 교정 및 수정하기"
       ],
@@ -1379,6 +1391,9 @@
       ],
       "Search message content": [
         "메시지 내용 검색"
+      ],
+      "Secure file storage and sharing": [
+        "안전한 파일 저장 공간 및 공유"
       ],
       "See team's availability": [
         "팀의 가용성 확인"
@@ -1604,6 +1619,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "계정 제한됨"
+      ],
       "Enter 2FA code": [
         "2단계 인증 코드 입력"
       ],
