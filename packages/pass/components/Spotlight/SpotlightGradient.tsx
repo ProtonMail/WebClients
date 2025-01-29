@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { type FC } from 'react';
 
 import { c } from 'ttag';
@@ -10,31 +10,30 @@ import clsx from '@proton/utils/clsx';
 import './SpotlightGradient.scss';
 
 type Props = {
-    title: ReactNode;
-    message: ReactNode;
-    onClose: () => void;
     action?: {
         label: ReactNode;
         onClick: () => void;
     };
     className?: string;
+    message: ReactNode;
+    title: ReactNode;
+    backgroundImage?: string;
+    onClose: () => void;
 };
 
-export const SpotlightGradient: FC<Props & ComponentPropsWithoutRef<'div'>> = ({
-    title,
-    message,
-    onClose,
-    action,
-    className,
-    ...rest
-}) => {
+export const SpotlightGradient: FC<Props> = ({ action, backgroundImage, className, message, title, onClose }) => {
     return (
         <div
             className={clsx(
                 className,
-                `pass-spotlight-gradient flex items-center gap-4 p-4 pr-6 rounded relative mt-2`
+                'pass-spotlight-gradient flex items-center gap-4 p-4 pr-6 rounded relative mt-2',
+                backgroundImage && 'pass-spotlight-gradient--image'
             )}
-            {...rest}
+            style={
+                backgroundImage
+                    ? { '--spotlight-gradient-image': `url("${backgroundImage}") no-repeat right top` }
+                    : undefined
+            }
         >
             <Button
                 icon

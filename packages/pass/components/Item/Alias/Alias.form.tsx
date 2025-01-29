@@ -53,23 +53,21 @@ const AliasFormBase: FC<
                     ))}
                 </Field>
             </FieldsetCluster>
-            {
-                <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_MAILBOX}>
-                    {({ closeAndAcknowledge }) => (
-                        <SpotlightGradient
-                            title={c('Title').t`Did you know?`}
-                            message={c('Info')
-                                .t`Share aliases with others by adding their inbox as an additional mailbox.`}
-                            onClose={closeAndAcknowledge}
-                            action={{
-                                label: c('Action').t`Add mailbox`,
-                                onClick: handleSpotlightActionClick,
-                            }}
-                            className="mb-2"
-                        />
-                    )}
-                </WithSpotlight>
-            }
+
+            <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_MAILBOX}>
+                {({ closeAndAcknowledge }) => (
+                    <SpotlightGradient
+                        title={c('Title').t`Did you know?`}
+                        message={c('Info').t`Share aliases with others by adding their inbox as an additional mailbox.`}
+                        onClose={closeAndAcknowledge}
+                        action={{
+                            label: c('Action').t`Add mailbox`,
+                            onClick: handleSpotlightActionClick,
+                        }}
+                        className="mb-2"
+                    />
+                )}
+            </WithSpotlight>
         </>
     );
 };
