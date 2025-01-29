@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import isDomain from 'is-valid-domain';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
@@ -14,7 +15,6 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { isDomain } from '@proton/shared/lib/helpers/validators';
 
 import type { SpamLocation } from '../Spams.interfaces';
 
