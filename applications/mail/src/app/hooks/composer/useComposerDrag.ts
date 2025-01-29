@@ -12,8 +12,8 @@ import { computeLeftPosition } from '../../helpers/composerPositioning';
 
 interface Props {
     composerDimension: ComposerDimension;
-    minimized: boolean;
-    maximized: boolean;
+    isMinimized: boolean;
+    isMaximized: boolean;
     composerIndex: number;
     totalComposers: number;
     drawerOffset: number;
@@ -51,15 +51,15 @@ const moveReducer = (state: State, action: Action) => {
 const useComposerDrag = ({
     composerDimension,
     drawerOffset,
-    maximized,
-    minimized,
+    isMaximized,
+    isMinimized,
     totalComposers,
     composerIndex,
 }: Props) => {
     const windowWidth = window.innerWidth - drawerOffset;
     const mailSettings = useMailModel('MailSettings');
-    const prevMinimized = useRef(minimized);
-    const prevMaximized = useRef(maximized);
+    const prevMinimized = useRef(isMinimized);
+    const prevMaximized = useRef(isMaximized);
     const composerLeftStyle = computeLeftPosition(composerDimension, composerIndex, totalComposers, windowWidth);
 
     const [{ isDragging, initialCursorPosition, offset, lastOffset }, dispatch] = useReducer<Reducer<State, Action>>(
@@ -82,7 +82,7 @@ const useComposerDrag = ({
 
     const handleMouseMove = useCallback(
         (e: MouseEvent) => {
-            if (!initialCursorPosition || !isDragging || (maximized && !minimized)) {
+            if (!initialCursorPosition || !isDragging || (isMaximized && !isMinimized)) {
                 return;
             }
 
@@ -103,7 +103,7 @@ const useComposerDrag = ({
 
             dispatch({ type: 'move', payload: { offset: finalOffset } });
         },
-        [isDragging, initialCursorPosition, maximized]
+        [isDragging, initialCursorPosition, isMaximized]
     );
 
     useEffect(() => {
@@ -135,30 +135,30 @@ const useComposerDrag = ({
 
     useEffect(() => {
         if (
-            minimized === false &&
-            maximized === true &&
+            isMinimized === false &&
+            isMaximized === true &&
             prevMaximized.current === true &&
             prevMinimized.current === true
         ) {
             dispatch({ type: 'reset-offset' });
         }
 
-        prevMinimized.current = minimized;
-    }, [minimized]);
+        prevMinimized.current = isMinimized;
+    }, [isMinimized]);
 
     useEffect(() => {
         if (
-            minimized === false &&
-            maximized === false &&
+            isMinimized === false &&
+            isMaximized === false &&
             prevMaximized.current === true &&
             prevMinimized.current === true
         ) {
-            prevMaximized.current = maximized;
+            prevMaximized.current = isMaximized;
             return;
         }
         dispatch({ type: 'reset-offset' });
-        prevMaximized.current = maximized;
-    }, [maximized]);
+        prevMaximized.current = isMaximized;
+    }, [isMaximized]);
 
     return {
         start: handleStartDragging,
