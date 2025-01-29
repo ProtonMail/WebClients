@@ -17,7 +17,7 @@ import './OnboardingModal.scss';
 interface Props {
     children?: OnboardingStepComponent[];
     className?: string;
-    extraProductStep?: OnboardingStepComponent[];
+    extraProductStep?: OnboardingStepComponent | OnboardingStepComponent[];
     genericSteps?: Partial<Record<'discoverAppsStep' | 'setupThemeStep' | 'organizationStep', OnboardingStepComponent>>;
     hideDiscoverApps?: boolean;
     /** Some onboarding modals need custom dimension / margins */
