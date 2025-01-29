@@ -654,7 +654,7 @@ export default function useUploadFile() {
                     }
                 },
                 notifyVerificationError: (retryHelped: boolean) => {
-                    getShare(new AbortController().signal, shareId)
+                    void getShare(new AbortController().signal, shareId)
                         .then(getShareTypeString)
                         // getShare should be fast call as share is already cached by this time.
                         // In case of failure, fallback 'shared' is good assumption as it might

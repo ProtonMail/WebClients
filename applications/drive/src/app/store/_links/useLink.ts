@@ -815,13 +815,11 @@ export function useLinkInner(
         if (link.cachedThumbnailUrl || !link.hasThumbnail || !link.activeRevision) {
             return link.cachedThumbnailUrl;
         }
-
         let downloadInfo = {
             isFresh: false,
             downloadUrl: link.activeRevision.thumbnail?.bareUrl,
             downloadToken: link.activeRevision.thumbnail?.token,
         };
-
         const loadDownloadUrl = async (activeRevisionId: string) => {
             const res = (await debouncedRequest(
                 queryFileRevisionThumbnail(shareId, linkId, activeRevisionId)
