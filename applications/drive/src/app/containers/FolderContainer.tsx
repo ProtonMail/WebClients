@@ -121,7 +121,7 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     );
 }
 
-export const FolderConntainerWrapper = ({ match, ...props }: RouteComponentProps<DriveSectionRouteProps>) => {
+export const FolderContainerWrapper = ({ match, ...props }: RouteComponentProps<DriveSectionRouteProps>) => {
     const { isShareAvailable } = useDefaultShare();
     const [isLoading, withLoading] = useLoading(true);
     const { navigateToRoot } = useNavigate();
