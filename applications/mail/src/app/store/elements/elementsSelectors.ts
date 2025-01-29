@@ -30,7 +30,7 @@ const page = (state: MailState) => state.elements.page;
 export const pageSize = (state: MailState) => state.elements.pageSize;
 export const pages = (state: MailState) => state.elements.pages;
 const bypassFilter = (state: MailState) => state.elements.bypassFilter;
-const pendingRequest = (state: MailState) => state.elements.pendingRequest;
+export const pendingRequest = (state: MailState) => state.elements.pendingRequest;
 export const pendingActions = (state: MailState) => state.elements.pendingActions;
 const retry = (state: MailState) => state.elements.retry;
 const invalidated = (state: MailState) => state.elements.invalidated;

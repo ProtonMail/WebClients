@@ -1,17 +1,71 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { SearchParameters } from '@proton/shared/lib/mail/search';
+
+import type { Element } from 'proton-mail/models/element';
 
 import type { Conversation, ConversationLabel } from '../models/conversation';
 import {
+    filterElementsInState,
     getCounterMap,
     getDate,
     getLocationElementsCount,
     isConversation,
     isMessage,
     isUnread,
+    matchBegin,
+    matchEmailAddress,
+    matchEnd,
+    matchFrom,
+    matchTo,
     sort,
 } from './elements';
+
+const senderAddress = 'sender@protonmail.com';
+const toAddress = 'recipient@protonmail.com';
+
+const message = {
+    ID: 'message1',
+    ConversationID: 'conversationID',
+    Sender: {
+        Name: 'Sender',
+        Address: senderAddress,
+    },
+    ToList: [
+        {
+            Name: 'Recipient',
+            Address: toAddress,
+        },
+    ],
+    Time: new Date('2018/01/01').getTime(),
+    LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+    Unread: 1,
+} as Message;
+
+const conversation = {
+    ID: 'conversation1',
+    Senders: [
+        {
+            Name: 'Sender',
+            Address: senderAddress,
+        },
+    ],
+    Recipients: [
+        {
+            Name: 'Recipient',
+            Address: toAddress,
+        },
+    ],
+    Labels: [
+        {
+            ID: MAILBOX_LABEL_IDS.INBOX,
+            ContextTime: new Date('2018/01/01').getTime(),
+            ContextNumMessages: 2,
+            ContextNumUnread: 2,
+        },
+    ],
+} as Conversation;
 
 describe('elements', () => {
     describe('isConversation / isMessage', () => {
@@ -193,6 +247,260 @@ describe('elements', () => {
 
         it('should return the expected count for conversations', () => {
             expect(getLocationElementsCount(labelID, conversationCounts, messageCounts, true)).toEqual(5);
+        });
+    });
+
+    describe('matchFrom', () => {
+        it('should match from address', () => {
+            const addresses = [senderAddress, 'sender+alias@protonmail.com', 'SENDER@protonmail.COM'];
+
+            addresses.forEach((address) => {
+                expect(matchFrom(message, address)).toBeTruthy();
+                expect(matchFrom(conversation, address)).toBeTruthy();
+            });
+        });
+
+        it('should not match from address', () => {
+            const addresses = ['sender@otherdomain.com', 'sender@'];
+
+            addresses.forEach((address) => {
+                expect(matchFrom(message, address)).toBeFalsy();
+                expect(matchFrom(conversation, address)).toBeFalsy();
+            });
+        });
+    });
+
+    describe('matchTo', () => {
+        it('should match to address', () => {
+            const addresses = [toAddress, 'recipient+alias@protonmail.com', 'RECIPIENT@protonmail.COM'];
+
+            addresses.forEach((address) => {
+                expect(matchTo(message, address)).toBeTruthy();
+                expect(matchTo(conversation, address)).toBeTruthy();
+            });
+        });
+
+        it('should not match to address', () => {
+            const addresses = ['recipient@otherdomain.com', 'recipient@'];
+
+            addresses.forEach((address) => {
+                expect(matchTo(message, address)).toBeFalsy();
+                expect(matchTo(conversation, address)).toBeFalsy();
+            });
+        });
+    });
+
+    describe('matchBegin', () => {
+        it('should match begin', () => {
+            const date = new Date('2017/12/31').getTime();
+            expect(matchBegin(conversation, MAILBOX_LABEL_IDS.INBOX, date)).toBeTruthy();
+        });
+
+        it('should not match begin', () => {
+            const date = new Date('2020/01/01').getTime();
+            expect(matchBegin(conversation, MAILBOX_LABEL_IDS.INBOX, date)).toBeFalsy();
+        });
+    });
+
+    describe('matchEnd', () => {
+        it('should match end', () => {
+            const date = new Date('2020/01/01').getTime();
+            expect(matchEnd(conversation, MAILBOX_LABEL_IDS.INBOX, date)).toBeTruthy();
+        });
+
+        it('should not match end', () => {
+            const date = new Date('2017/12/31').getTime();
+            expect(matchEnd(conversation, MAILBOX_LABEL_IDS.INBOX, date)).toBeFalsy();
+        });
+    });
+
+    describe('matchEmailAddress', () => {
+        it('should match address', () => {
+            const addresses = [toAddress, senderAddress];
+
+            addresses.forEach((address) => {
+                expect(matchEmailAddress(message, address)).toBeTruthy();
+                expect(matchEmailAddress(conversation, address)).toBeTruthy();
+            });
+        });
+
+        it('should not match address', () => {
+            const addresses = ['recipient@otherdomain.com', 'sender@otherdomain.com'];
+
+            addresses.forEach((address) => {
+                expect(matchTo(message, address)).toBeFalsy();
+                expect(matchTo(conversation, address)).toBeFalsy();
+            });
+        });
+    });
+
+    describe('filterElementsInState', () => {
+        it('should return the expected element list', () => {
+            /* Filter all elements that:
+             * - Are in inbox
+             * - Are unread OR bypass unread filter
+             * - Are messages
+             * - match from address
+             * - match to address
+             * - match begin
+             * - match end
+             */
+
+            const messageBypassFilter = {
+                ID: 'message2',
+                ConversationID: 'conversationID2',
+                Sender: {
+                    Name: 'Sender',
+                    Address: senderAddress,
+                },
+                ToList: [
+                    {
+                        Name: 'Recipient',
+                        Address: toAddress,
+                    },
+                ],
+                Time: new Date('2018/01/01').getTime(),
+                LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                Unread: 0,
+            } as Message;
+
+            const messageInOtherLabel = {
+                ID: 'message3',
+                ConversationID: 'conversationID3',
+                Sender: {
+                    Name: 'Sender',
+                    Address: senderAddress,
+                },
+                ToList: [
+                    {
+                        Name: 'Recipient',
+                        Address: toAddress,
+                    },
+                ],
+                Time: new Date('2018/01/01').getTime(),
+                LabelIDs: [MAILBOX_LABEL_IDS.TRASH],
+                Unread: 1,
+            } as Message;
+
+            const messageRead = {
+                ID: 'message4',
+                ConversationID: 'conversationID4',
+                Sender: {
+                    Name: 'Sender',
+                    Address: senderAddress,
+                },
+                ToList: [
+                    {
+                        Name: 'Recipient',
+                        Address: toAddress,
+                    },
+                ],
+                Time: new Date('2018/01/01').getTime(),
+                LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                Unread: 0,
+            } as Message;
+
+            const messageWrongSender = {
+                ID: 'message5',
+                ConversationID: 'conversationID5',
+                Sender: {
+                    Name: 'Sender2',
+                    Address: 'someone@protonmail.com',
+                },
+                ToList: [
+                    {
+                        Name: 'Recipient',
+                        Address: toAddress,
+                    },
+                ],
+                Time: new Date('2018/01/01').getTime(),
+                LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                Unread: 1,
+            } as Message;
+
+            const messageWrongRecipient = {
+                ID: 'message6',
+                ConversationID: 'conversationID6',
+                Sender: {
+                    Name: 'Sender',
+                    Address: senderAddress,
+                },
+                ToList: [
+                    {
+                        Name: 'Recipient2',
+                        Address: 'someone@protonmail.com',
+                    },
+                ],
+                Time: new Date('2018/01/01').getTime(),
+                LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                Unread: 1,
+            } as Message;
+
+            const messageTooOld = {
+                ID: 'message7',
+                ConversationID: 'conversationID7',
+                Sender: {
+                    Name: 'Sender',
+                    Address: senderAddress,
+                },
+                ToList: [
+                    {
+                        Name: 'Recipient',
+                        Address: toAddress,
+                    },
+                ],
+                Time: new Date('2016/01/01').getTime(),
+                LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                Unread: 1,
+            } as Message;
+
+            const messageTooRecent = {
+                ID: 'message8',
+                ConversationID: 'conversationID8',
+                Sender: {
+                    Name: 'Sender',
+                    Address: senderAddress,
+                },
+                ToList: [
+                    {
+                        Name: 'Recipient',
+                        Address: toAddress,
+                    },
+                ],
+                Time: new Date('2025/01/01').getTime(),
+                LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                Unread: 1,
+            } as Message;
+
+            const elements: Element[] = [
+                message,
+                conversation,
+                messageBypassFilter,
+                messageInOtherLabel,
+                messageRead,
+                messageWrongSender,
+                messageWrongRecipient,
+                messageTooOld,
+                messageTooRecent,
+            ];
+
+            const expectedFilteredList = [message, messageBypassFilter];
+
+            expect(
+                filterElementsInState({
+                    elements,
+                    bypassFilter: [messageBypassFilter.ID],
+                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    filter: { Unread: 1 },
+                    conversationMode: false,
+                    search: {
+                        from: senderAddress,
+                        to: toAddress,
+                        begin: new Date('2017/12/31').getTime(),
+                        end: new Date('2019/01/01').getTime(),
+                    } as SearchParameters,
+                })
+            ).toEqual(expectedFilteredList);
         });
     });
 });
