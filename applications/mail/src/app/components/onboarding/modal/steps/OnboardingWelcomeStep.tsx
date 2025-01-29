@@ -12,6 +12,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
+import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
 const getPrivacyFeatures = () => {
@@ -55,6 +56,11 @@ const getPrivacyFeatures = () => {
         },
     ];
 };
+
+export const isOnboardingWelcomeStepEligible: OnboardingStepEligibleCallback = async () => ({
+    canDisplay: true,
+    preload: [encryptionSvg, spamProtectionSvg, blockTrackersSvg],
+});
 
 const PrivacyFeature = ({ description, imgSrc }: { imgSrc: string; description: ReactNode }) => {
     const { viewportWidth } = useActiveBreakpoint();

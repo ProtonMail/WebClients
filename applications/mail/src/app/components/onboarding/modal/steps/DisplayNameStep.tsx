@@ -18,7 +18,13 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys';
 import displayNameImage from '@proton/styles/assets/img/onboarding/img-display-name.svg';
 
+import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
+
+export const isDisplayNameStepEligible: OnboardingStepEligibleCallback = async () => ({
+    canDisplay: new URLSearchParams(window.location.search).get('partner') === 'true',
+    preload: [displayNameImage],
+});
 
 const DisplayNameStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const [displayName, setDisplayName] = useState<string | null>(null);

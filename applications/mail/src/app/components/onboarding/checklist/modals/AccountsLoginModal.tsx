@@ -22,7 +22,7 @@ import { getOnlineServices } from './getOnlineServices';
 
 const AccountsLoginModal = (props: ModalStateProps) => {
     const { items, markItemsAsDone } = useGetStartedChecklist();
-    const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
+    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const [user] = useUser();
 
     const [{ Locale }] = useUserSettings();
