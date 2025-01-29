@@ -7,21 +7,21 @@ import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/compone
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/OnboardingLockSetup';
-import type { SpotlightModalProps } from '@proton/pass/components/Spotlight/WithSpotlight';
+import type { WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 
 import './OnboardingModal.scss';
 
-export const OnboardingSSO: FC<SpotlightModalProps> = ({ closeAndAcknowledge }) => {
+export const OnboardingSSO: FC<WithSpotlightRenderProps> = ({ close }) => {
     const { lock } = useLockSetup();
     const online = useConnectivity();
     const lockModeIsNotPreferred = oneOf(LockMode.PASSWORD, LockMode.NONE)(lock.mode);
 
     useEffect(() => {
-        // Only display the modal if the Lock Mode is Password or None
-        if (!lockModeIsNotPreferred) closeAndAcknowledge();
+        /* Only display the modal if the Lock Mode is Password or None */
+        if (!lockModeIsNotPreferred) close();
     }, []);
 
     return (
@@ -47,7 +47,7 @@ export const OnboardingSSO: FC<SpotlightModalProps> = ({ closeAndAcknowledge }) 
                         <Button
                             pill
                             shape="solid"
-                            onClick={closeAndAcknowledge}
+                            onClick={close}
                             disabled={!online || lock.mode === LockMode.PASSWORD}
                         >
                             {c('Action').t`Accept`}
