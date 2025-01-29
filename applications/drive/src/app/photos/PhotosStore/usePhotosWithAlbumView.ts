@@ -1,5 +1,6 @@
 import type React from 'react';
-import { useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
@@ -40,17 +41,20 @@ export function updateByEvents(
 }
 
 export const usePhotosWithAlbumsView = () => {
+    let { albumLinkId } = useParams<{ albumLinkId?: string }>();
     const eventsManager = useDriveEventManager();
-    const { getCachedChildren, loadLinksMeta } = useLinksListing();
+    const { getCachedChildren, loadLinksMeta, getCachedLinksWithoutMeta } = useLinksListing();
     const {
         shareId,
         linkId,
         isPhotosLoading,
         volumeId,
         photos,
+        albumPhotos,
         albums,
         loadPhotos,
         loadAlbums,
+        loadAlbumPhotos,
         removePhotosFromCache,
     } = usePhotosWithAlbums();
     const { addToQueue } = useLinksQueue({ loadThumbnails: true });
@@ -59,6 +63,18 @@ export const usePhotosWithAlbumsView = () => {
     const abortSignal = useAbortSignal([shareId, linkId]);
     const cache = shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
     const cachedLinks = useMemoArrayNoMatterTheOrder(cache?.links || []);
+    const cachedAlbums =
+        shareId && linkId
+            ? getCachedLinksWithoutMeta(
+                  abortSignal,
+                  shareId,
+                  albums.map((album) => album.cover?.linkId || '')
+              )
+            : undefined;
+    const cachedAlbumsCover = useMemoArrayNoMatterTheOrder(cachedAlbums?.links || []);
+    const cacheAlbumPhotos =
+        shareId && linkId && albumLinkId ? getCachedChildren(abortSignal, shareId, albumLinkId) : undefined;
+    const cachedAlbumPhotosLinks = useMemoArrayNoMatterTheOrder(cacheAlbumPhotos?.links || []);
 
     // This will be flattened to contain categories and links
     const { photosViewData, photoLinkIdToIndexMap, photoLinkIds } = useMemo(() => {
@@ -125,14 +141,96 @@ export const usePhotosWithAlbumsView = () => {
         };
     }, [photos, cachedLinks, linkId, shareId]);
 
+    const { albumPhotosViewData, albumPhotosLinkIdToIndexMap, albumPhotosLinkIds } = useMemo(() => {
+        if (!shareId || !linkId) {
+            return {
+                albumPhotosViewData: [],
+                albumPhotosLinkIdToIndexMap: {},
+                albumPhotosLinkIds: [],
+            };
+        }
+
+        const result: Record<string, PhotoLink> = {};
+
+        // We create "fake" links to avoid complicating the rest of the code
+        albumPhotos.forEach((photo) => {
+            result[photo.linkId] = {
+                linkId: photo.linkId,
+                rootShareId: shareId,
+                parentLinkId: linkId,
+                isFile: true,
+                activeRevision: {
+                    photo,
+                },
+            };
+        });
+
+        // Add data from cache
+        cachedAlbumPhotosLinks.forEach((link) => {
+            // If this link is not a photo, ignore it
+            if (!link.activeRevision?.photo) {
+                return;
+            }
+
+            // Related photos are not supported by the web client for now
+            if (link.activeRevision.photo.mainPhotoLinkId) {
+                return;
+            }
+
+            result[link.linkId] = link;
+        });
+
+        const albumPhotosViewData = sortWithCategories(Object.values(result));
+
+        // To improve performance, let's build some maps ahead of time
+        // For previews and selection, we need these maps to know where
+        // each link is located in the data array.
+        let albumPhotosLinkIdToIndexMap: Record<string, number> = {};
+
+        // We also provide a list of linkIds for the preview navigation,
+        // so it's important that this array follows the sorted view order.
+        let albumPhotosLinkIds: string[] = [];
+
+        albumPhotosViewData.forEach((item, index) => {
+            if (!isPhotoGroup(item)) {
+                albumPhotosLinkIdToIndexMap[item.linkId] = index;
+                albumPhotosLinkIds.push(item.linkId);
+            }
+        });
+
+        return {
+            albumPhotosViewData,
+            albumPhotosLinkIdToIndexMap,
+            albumPhotosLinkIds,
+        };
+    }, [albumPhotos, cachedAlbumPhotosLinks, linkId, shareId]);
+
+    const albumsView = useMemo(() => {
+        if (!shareId || !linkId || !cachedAlbumsCover) {
+            return albums;
+        }
+        const albumsView = albums.map((album) => {
+            const cachedAlbumCover = cachedAlbumsCover.find((link) => album.cover?.linkId === link.linkId);
+            return {
+                ...album,
+                ...(cachedAlbumCover && { cover: cachedAlbumCover }),
+            };
+        });
+        return albumsView;
+    }, [albums, cachedAlbumsCover, linkId, shareId]);
+
     useEffect(() => {
         if (!volumeId || !shareId) {
             return;
         }
         const abortController = new AbortController();
 
-        loadPhotos(abortController.signal, volumeId);
-        loadAlbums(abortController.signal, volumeId);
+        if (albumLinkId) {
+            loadAlbumPhotos(abortController.signal, volumeId, albumLinkId);
+        } else {
+            loadPhotos(abortController.signal, volumeId);
+            loadAlbums(abortController.signal, volumeId);
+        }
 
         const callbackId = eventsManager.eventHandlers.register((eventVolumeId, events, processedEventCounter) => {
             if (eventVolumeId === volumeId) {
@@ -144,13 +242,12 @@ export const usePhotosWithAlbumsView = () => {
             eventsManager.eventHandlers.unregister(callbackId);
             abortController.abort();
         };
-    }, [volumeId, shareId]);
+    }, [volumeId, shareId, albumLinkId]);
 
     const loadPhotoLink = (linkId: string, domRef?: React.MutableRefObject<unknown>) => {
-        if (!shareId) {
+        if (!shareId || !linkId) {
             return;
         }
-
         addToQueue(shareId, linkId, domRef);
     };
 
@@ -170,6 +267,17 @@ export const usePhotosWithAlbumsView = () => {
         const abortController = new AbortController();
         loadAlbums(abortController.signal, volumeId);
     };
+
+    const refreshAlbumPhotos = useCallback(
+        (albumLinkId: string) => {
+            if (!volumeId || !shareId) {
+                return;
+            }
+            const abortController = new AbortController();
+            loadAlbumPhotos(abortController.signal, volumeId, albumLinkId);
+        },
+        [volumeId, shareId, loadAlbumPhotos]
+    );
 
     const refreshPhotos = () => {
         if (!volumeId || !shareId) {
@@ -247,7 +355,10 @@ export const usePhotosWithAlbumsView = () => {
     return {
         shareId,
         linkId,
-        albums,
+        albums: albumsView,
+        albumPhotos: albumPhotosViewData,
+        albumPhotosLinkIdToIndexMap,
+        albumPhotosLinkIds,
         photos: photosViewData,
         photoLinkIdToIndexMap,
         photoLinkIds,
@@ -258,5 +369,6 @@ export const usePhotosWithAlbumsView = () => {
         refreshAll,
         refreshAlbums,
         refreshPhotos,
+        refreshAlbumPhotos,
     };
 };

@@ -61,6 +61,14 @@ function useNavigate() {
         pushToHistory(`/shared-with-me`);
     };
 
+    const navigateToAlbum = useCallback((linkId: string) => {
+        pushToHistory(`/photos/${linkId}`);
+    }, []);
+
+    const navigateToPhotos = useCallback(() => {
+        pushToHistory(`/photos`);
+    }, []);
+
     const navigateToSearch = useCallback(
         (searchTerm: string) => {
             history.push({
@@ -94,6 +102,8 @@ function useNavigate() {
         navigateToDevices,
         navigateToSharedWithMe,
         redirectToLink,
+        navigateToAlbum,
+        navigateToPhotos,
     };
 }
 
