@@ -1,5 +1,4 @@
 import { sha1 } from '@noble/hashes/sha1';
-import type { ReadableStream } from 'web-streams-polyfill';
 
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { queryCheckAvailableHashes } from '@proton/shared/lib/api/drive/link';
@@ -142,8 +141,7 @@ export default function useUploadHelper() {
             };
         }
 
-        // Force polyfill type for ReadableStream
-        const fileStream = file.stream() as ReadableStream<Uint8Array>;
+        const fileStream = file.stream();
         const sha1Instance = sha1.create();
         await untilStreamEnd<Uint8Array>(fileStream, async (chunk) => {
             if (chunk?.buffer) {
