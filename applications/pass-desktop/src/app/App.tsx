@@ -92,6 +92,10 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
 
     getApiState: api.getState,
 
+    supportsBiometrics: async () => {
+        return window.ctxBridge?.canCheckPresence() ?? false;
+    },
+
     getBiometricsKey: async (store: AuthStore) => {
         try {
             const { storageKey, version } = inferBiometricsStorageKey(store);

@@ -59,6 +59,7 @@ import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
+import { isChromiumBased, isMinimumSafariVersion } from '@proton/shared/lib/helpers/browser';
 import { decodeBase64URL, stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -144,6 +145,13 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
 
         prepareImport,
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
+
+        supportsBiometrics: async () => {
+            const platformCapability = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
+
+            // Until PRF is more widely adopted, we additionaly restrict this to Safari >= 18 and Chromium-based browsers
+            return platformCapability && (isChromiumBased() || isMinimumSafariVersion(18));
+        },
 
         getBiometricsKey: async (store) => {
             const { storageKey } = inferBiometricsStorageKey(store);
