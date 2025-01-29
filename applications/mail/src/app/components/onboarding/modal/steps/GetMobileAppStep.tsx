@@ -20,7 +20,7 @@ import type { OnboardingStepEligibleCallback } from '../interface';
 export const isGetMobileAppStepEligible: OnboardingStepEligibleCallback = async () => {
     return {
         canDisplay: true,
-        preload: [mobileAppImg1x, mobileAppImg2x],
+        preload: [mobileAppImg1x, mobileAppImg2x, appStoreSvg, playStoreSvg],
     };
 };
 
