@@ -30,6 +30,7 @@ interface Props extends DownloadButtonProps {
     isFolderView?: boolean;
     token: string;
     linkId: string;
+    openInDocs?: (linkId: string) => void;
 }
 
 export function SharedPageContentHeader({
@@ -45,6 +46,7 @@ export function SharedPageContentHeader({
     isPartialView,
     isFolderView = false,
     onNavigate,
+    openInDocs,
 }: Props) {
     const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
     const selectionControls = useSelection();
@@ -93,7 +95,13 @@ export function SharedPageContentHeader({
                 </div>
             </div>
             <div className="shared-page-content-header-buttons m-auto md:m-0 md:ml-auto">
-                <DownloadButton rootLink={rootLink} items={items} disabled={hasOnlyDocuments || !items.length} />
+                <DownloadButton
+                    rootLink={rootLink}
+                    items={items}
+                    openInDocs={openInDocs}
+                    // Single document selection will redirect to Docs app
+                    disabled={!items.length || (hasOnlyDocuments && (!openInDocs || selectedItems.length > 1))}
+                />
 
                 {isFolderView && !viewOnly && (
                     <>

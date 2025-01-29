@@ -5,7 +5,6 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import usePublicToken from '../../../../hooks/drive/usePublicToken';
 import type { LinkDownload } from '../../../../store';
 import { useDownload } from '../../../../store';
-import { useDocumentActions } from '../../../../store/_documents';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface SelectedBrowserItem extends Omit<LinkDownload, 'shareId'> {
@@ -15,12 +14,12 @@ interface SelectedBrowserItem extends Omit<LinkDownload, 'shareId'> {
 interface Props {
     selectedBrowserItems: SelectedBrowserItem[];
     close: () => void;
+    openInDocs?: (linkId: string) => void;
     virusScan?: boolean;
 }
-export const DownloadButton = ({ selectedBrowserItems, close, virusScan }: Props) => {
+export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusScan }: Props) => {
     const { download } = useDownload();
     const { token } = usePublicToken();
-    const { downloadDocument } = useDocumentActions();
 
     const onClick = async () => {
         // Document downloads are handled in two ways:
@@ -32,10 +31,10 @@ export const DownloadButton = ({ selectedBrowserItems, close, virusScan }: Props
                 : undefined;
 
         if (documentLink) {
-            void downloadDocument({
-                shareId: token,
-                linkId: documentLink.linkId,
-            });
+            // Should never happen to have openInDocs false as the button will be hidden in that case
+            if (openInDocs) {
+                void openInDocs(documentLink.linkId);
+            }
             return;
         }
 
