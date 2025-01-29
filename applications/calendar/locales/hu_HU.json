@@ -764,6 +764,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Mappa létrehozása"
       ]
     },
     "Action subline": {
@@ -3206,6 +3209,12 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Az Ön felhasználóneve ${ user.Name }. A ${ emailAddress } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
+      ],
+      "Organization key is not decrypted": [
+        "A szervezeti kulcs nincs visszafejtve"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5066,6 +5075,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Úgy tűnik, hogy a rendszer időzónája ${ timezone } -re változott. Szeretne erre az időzónára frissíteni?"
+      ],
+      "Keys created": [
+        "Kulcsok létrehozva"
+      ],
+      "User activated": [
+        "Felhasználó aktiválva"
       ]
     },
     "info": {
@@ -5698,6 +5713,36 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ],
+      "All mail": [
+        "Összes levél"
+      ],
+      "Archive": [
+        "Archívum"
+      ],
+      "Drafts": [
+        "Piszkozatok"
+      ],
+      "Inbox": [
+        "Beérkezett üzenetek"
+      ],
+      "Scheduled": [
+        "Ütemezés"
+      ],
+      "Sent": [
+        "Elküldött"
+      ],
+      "Snooze": [
+        "Szüneteltetés"
+      ],
+      "Spam": [
+        "Levélszemét"
+      ],
+      "Starred": [
+        "Csillagozott"
+      ],
+      "Trash": [
+        "Lomtár"
       ]
     },
     "Link label (optional)": {
@@ -6066,6 +6111,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Előfizetés a ${ MAIL_SHORT_APP_NAME } Pluszra"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: action": {
@@ -9184,6 +9232,9 @@
     "vpn_2step: feature": {
       "No ads": [
         "Nincsenek hirdetések"
+      ],
+      "Advanced VPN customizations": [
+        "Haladó VPN beállítások"
       ]
     },
     "wallet_signup_2024: Info": {

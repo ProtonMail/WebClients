@@ -312,7 +312,7 @@
         "Eksportuj grupę kontaktów"
       ],
       "Export selection as .vcf": [
-        "Eksportuj selekcję jako .vcf"
+        "Eksportuj zaznaczone jako plik VCF"
       ],
       "Forgot password?": [
         "Nie pamiętasz hasła?"
@@ -808,6 +808,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Darmowa wersja próbna aplikacji desktopowej zakończy się ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Utwórz folder"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
       ]
     },
     "Action subline": {
@@ -1287,6 +1293,18 @@
       ],
       "Continue your subscription": [
         "Kontynuuj subskrypcję"
+      ],
+      "Create label": [
+        "Utwórz etykietę"
+      ],
+      "Remind me later": [
+        "Przypomnij mi później"
+      ],
+      "Set up other features": [
+        "Skonfiguruj inne funkcje"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
       ]
     },
     "Calendar access select label": {
@@ -3462,6 +3480,15 @@
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Klucz organizacji nie został odszyfrowany"
+      ],
+      "Please select a country": [
+        "Wybierz kraj"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4105,6 +4132,18 @@
       ],
       "Time zone not supported": [
         "Strefa czasowa nie jest obsługiwana"
+      ],
+      "Floating times not supported": [
+        "Czas w formacie \"floating\" nie jest obsługiwany"
+      ],
+      "Malformed all-day event": [
+        "Czas wydarzenia całodniowego posiada nieprawidłowy format"
+      ],
+      "Recurring event has no occurrences": [
+        "Wydarzenie cykliczne nie posiada powtórzeń"
+      ],
+      "Recurring rule not supported": [
+        "Reguła powtórzeń nie jest obsługiwana"
       ]
     },
     "Import calendar": {
@@ -5535,6 +5574,21 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Twoja strefa czasowa w systemie zmieniła się na ${ timezone }. Czy chcesz zaktualizować ustawienia strefy czasowej?"
+      ],
+      "Enabling auto-deletion…": [
+        "Włącz automatyczne usuwanie..."
+      ],
+      "Keys created": [
+        "Klucze zostały utworzone"
+      ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji..."
+      ],
+      "Setting up your new address…": [
+        "Konfiguracja nowego adresu…"
+      ],
+      "User activated": [
+        "Użytkownik został aktywowany"
       ]
     },
     "info": {
@@ -6192,6 +6246,39 @@
       ],
       "What’s this?": [
         "Co to jest?"
+      ],
+      "All mail": [
+        "Wszystkie wiadomości"
+      ],
+      "Archive": [
+        "Archiwum"
+      ],
+      "Drafts": [
+        "Szkice"
+      ],
+      "Inbox": [
+        "Odebrane"
+      ],
+      "Scheduled": [
+        "Zaplanowane"
+      ],
+      "Sent": [
+        "Wysłane"
+      ],
+      "settings": [
+        "ustawienia"
+      ],
+      "Snooze": [
+        "Odłożone"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Wyróżnione"
+      ],
+      "Trash": [
+        "Kosz"
       ]
     },
     "Link label (optional)": {
@@ -6600,6 +6687,15 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7129,6 +7225,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
+      ],
+      "200 GB of storage": [
+        "200 GB przestrzeni dyskowej"
+      ],
+      "Private photo backup": [
+        "Prywatna kopia zapasowa zdjęć"
       ]
     },
     "new_plans: feature highlight": {
@@ -10309,6 +10411,9 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Auto-deletion is active": [
+        "Automatyczne usuwanie jest aktywne"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10965,6 +11070,40 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "Offer": {
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Limited-time offer": [
+        "Oferta ograniczona czasowo"
+      ],
+      "Maybe later": [
+        "Może później"
+      ],
+      "Save 80% on your first month.": [
+        "Zaoszczędź 80% przez pierwszy miesiąc."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 więcej funkcji premium"
+      ],
+      "Custom email domain": [
+        "Niestandardowa domena"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Przestrzeń dyskowa"
       ]
     }
   }

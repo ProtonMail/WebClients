@@ -808,6 +808,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Стварыць папку"
       ]
     },
     "Action subline": {
@@ -3460,6 +3463,12 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } ваша імя карыстальніка. Каб стварыць ${ emailAddress }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Ключ арганізацыі не расшыфраваны"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5563,6 +5572,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Падобна, што ваш часавы пояс змяніўся на ${ timezone }. Вы сапраўды хочаце абнавіць налады вашага часавога пояса?"
+      ],
+      "Keys created": [
+        "Ключы створаны"
+      ],
+      "User activated": [
+        "Карыстальнік актываваны"
       ]
     },
     "info": {
@@ -6220,6 +6235,36 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "All mail": [
+        "Уся пошта"
+      ],
+      "Archive": [
+        "Архіў"
+      ],
+      "Drafts": [
+        "Чарнавікі"
+      ],
+      "Inbox": [
+        "Уваходныя"
+      ],
+      "Scheduled": [
+        "Запланавана"
+      ],
+      "Sent": [
+        "Адпраўленыя"
+      ],
+      "Snooze": [
+        "Адкласці"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Starred": [
+        "З зорачкай"
+      ],
+      "Trash": [
+        "Сметніца"
       ]
     },
     "Link label (optional)": {
@@ -6628,6 +6673,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade": [
+        "Палепшыць"
       ]
     },
     "new_plans: action": {

@@ -800,6 +800,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Luo kansio"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Hanki ${ planName } hintaan ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Hanki ${ planOrAppName }"
+      ],
+      "Take a tour": [
+        "Katso esittely"
       ]
     },
     "Action subline": {
@@ -1270,6 +1282,21 @@
       ],
       "Continue your subscription": [
         "Jatka tilaustasi"
+      ],
+      "Create label": [
+        "Luo tunniste"
+      ],
+      "Discover and set up features": [
+        "Tutustu ja määritä ominaisuuksia"
+      ],
+      "Remind me later": [
+        "Muistuta myöhemmin"
+      ],
+      "Set up other features": [
+        "Määritä muut ominaisuudet"
+      ],
+      "Take a tour": [
+        "Katso esittely"
       ]
     },
     "Calendar access select label": {
@@ -3401,6 +3428,18 @@
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Viestit ja kirjoitus > Lyhytosoite (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Organisaatioavaimen salausta ei ole purettu"
+      ],
+      "Please select a country": [
+        "Valitse maa"
+      ],
+      "Please select a state": [
+        "Valitse osavaltio"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3534,6 +3573,9 @@
       ],
       "Unsupported event": [
         "Tapahtumaa ei tueta"
+      ],
+      "Time zone component ignored": [
+        "Aikavyöhykekomponentti ohitettu"
       ]
     },
     "Error message": {
@@ -4033,6 +4075,12 @@
       ],
       "Time zone not supported": [
         "Aikavyöhykettä ei tueta"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Ainoastaan gregoriaaninen kalenteri on sallittu"
+      ],
+      "Recurring event has no occurrences": [
+        "Toistuva tapahtuma ei sisällä tapahtumakertoja"
       ]
     },
     "Import calendar": {
@@ -5392,6 +5440,30 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Järjestelmäsi aikavyöhykkeeksi näyttää vaihtuneen ${ timezone }. Haluatko päivittää aikavyöhykeasetuksesi?"
+      ],
+      "Keys created": [
+        "Avaimet luotiin"
+      ],
+      "Registering your subscription…": [
+        "Rekisteröidään tilaustasi…"
+      ],
+      "Setting up ${ feature }…": [
+        "Määritetään ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Määritetään uutta osoitettasi…"
+      ],
+      "User activated": [
+        "Käyttäjä aktivoitiin"
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Ota yhteyttä asiakastukeen, jos tarvitset välitöntä muutosta tilaukseen."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti ${ cycle } kuukauden välein."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
       ]
     },
     "info": {
@@ -5940,6 +6012,9 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "State": [
+        "Osavaltio"
       ]
     },
     "Label for contact group color": {
@@ -6039,6 +6114,39 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ],
+      "All mail": [
+        "Kaikki viestit"
+      ],
+      "Archive": [
+        "Arkisto"
+      ],
+      "Drafts": [
+        "Luonnokset"
+      ],
+      "Inbox": [
+        "Saapuneet"
+      ],
+      "Scheduled": [
+        "Ajoitetut"
+      ],
+      "Sent": [
+        "Lähetetyt"
+      ],
+      "settings": [
+        "asetukset"
+      ],
+      "Snooze": [
+        "Torkuta"
+      ],
+      "Spam": [
+        "Roskaposti"
+      ],
+      "Starred": [
+        "Tähdelliset"
+      ],
+      "Trash": [
+        "Roskakori"
       ]
     },
     "Link label (optional)": {
@@ -6431,6 +6539,15 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6916,6 +7033,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ],
+      "200 GB of storage": [
+        "200 Gt tallennustilaa"
+      ],
+      "Private photo backup": [
+        "Yksityinen kuvien varmuuskopiointi"
+      ],
+      "Secure file storage and sharing": [
+        "Suojattu tiedoston tallennus ja jako"
       ]
     },
     "new_plans: feature highlight": {
@@ -9938,6 +10064,12 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "${ feature } is now active": [
+        "${ feature } on nyt käytössä"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10512,6 +10644,49 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } tarjous päättyy tänään!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Hanki Drive Plus hintaan ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Hanki Mail Plus hintaan ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
+      "Limited-time offer": [
+        "Rajoitetun ajan tarjous"
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ],
+      "Save 80% on your first month.": [
+        "Säästä 80 % ensimmäisestä kuukaudestasi."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 muuta premium-ominaisuutta"
+      ],
+      "Custom email domain": [
+        "Oma sähköpostiverkkotunnus"
+      ],
+      "Email addresses": [
+        "Sähköpostiosoitteet"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Tallennustila"
       ]
     }
   }

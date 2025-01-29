@@ -97,7 +97,7 @@
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
-        "Adjuntar captura(s) de pantalla"
+        "Adjuntar una o varias capturas de pantalla"
       ],
       "Attention required": [
         "Atención requerida"
@@ -800,6 +800,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Obtén ${ planName } por ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Obtén ${ planOrAppName }"
+      ],
+      "Take a tour": [
+        "Explora ahora"
       ]
     },
     "Action subline": {
@@ -1151,6 +1163,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Inicios de sesión seguros en todos tus dispositivos. Incluye un número ilimitado de alias de hide-my-email, uso compartido, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } y mucho más."
       ]
     },
     "Billing cycle option": {
@@ -1270,6 +1285,21 @@
       ],
       "Continue your subscription": [
         "Continuar con tu suscripción"
+      ],
+      "Create label": [
+        "Crea una etiqueta"
+      ],
+      "Discover and set up features": [
+        "Descubre y configura las funcionalidades"
+      ],
+      "Remind me later": [
+        "Recordarme más tarde"
+      ],
+      "Set up other features": [
+        "Configura otras funciones"
+      ],
+      "Take a tour": [
+        "Hacer el recorrido"
       ]
     },
     "Calendar access select label": {
@@ -3401,6 +3431,18 @@
       ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Configuración > Mensajes y redacción > Dominio corto (pm.me)."
+      ],
+      "Organization key is not decrypted": [
+        "La clave de la organización no está descifrada."
+      ],
+      "Please select a country": [
+        "Selecciona un país"
+      ],
+      "Please select a state": [
+        "Selecciona un estado"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4029,7 +4071,7 @@
         "El formato de la hora inicial no es válido."
       ],
       "Only the Gregorian calendar scale is allowed": [
-        "Sólo se permite la escala del calendario gregoriano."
+        "Solo se permite la escala del calendario gregoriano."
       ],
       "Recurring event has no occurrences": [
         "El evento recurrente no tiene ocurrencias."
@@ -5410,6 +5452,45 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "La zona horaria del sistema parece haber cambiado a ${ timezone }. ¿Quieres actualizar tu preferencia de zona horaria?"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado de actividades sospechosas."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Descubre las nuevas funciones desbloqueadas y empieza a usarlas de inmediato."
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Descubre las nuevas funciones desbloqueadas con ${ planTitle } y empieza a usarlas de inmediato."
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Los correos electrónicos movidos a las carpetas Papelera y Spam hace más de 30 días se eliminarán automáticamente."
+      ],
+      "Enabling auto-deletion…": [
+        "Activando la eliminación automática…"
+      ],
+      "Keys created": [
+        "Se han creado las claves."
+      ],
+      "or discover other features:": [
+        "o descubre otras funciones:"
+      ],
+      "Registering your subscription…": [
+        "Registrando tu suscripción…"
+      ],
+      "Setting up ${ feature }…": [
+        "Configurando ${ feature }"
+      ],
+      "Setting up your new address…": [
+        "Configurando tu nueva dirección…"
+      ],
+      "User activated": [
+        "Se ha activado el usuario."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Puedes cambiarlo en cualquier momento en ${ settingsLink }."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
       ]
     },
     "info": {
@@ -5961,6 +6042,9 @@
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
+      ],
+      "State": [
+        "Estado"
       ]
     },
     "Label for contact group color": {
@@ -6060,6 +6144,39 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "All mail": [
+        "Todo el correo"
+      ],
+      "Archive": [
+        "Archivo"
+      ],
+      "Drafts": [
+        "Borradores"
+      ],
+      "Inbox": [
+        "Bandeja de entrada"
+      ],
+      "Scheduled": [
+        "Programado"
+      ],
+      "Sent": [
+        "Enviados"
+      ],
+      "settings": [
+        "ajustes"
+      ],
+      "Snooze": [
+        "Pausar"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Destacados"
+      ],
+      "Trash": [
+        "Papelera"
       ]
     },
     "Link label (optional)": {
@@ -6452,6 +6569,15 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Starting from ${ pricing }": [
+        "Desde ${ pricing }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6791,7 +6917,7 @@
         "Soporte prioritario y chat en vivo"
       ],
       "Private photo backup": [
-        "Copia de seguridad de fotos privadas"
+        "Copia de seguridad de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Revisa y mejora tus correos electrónicos"
@@ -8487,6 +8613,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Tu suscripción se renovará a la misma tarifa cada año."
       ]
     },
     "specialoffer: Link": {
@@ -8495,6 +8624,9 @@
       ],
       "Upgrade": [
         "Mejorar"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Mejora por ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9255,7 +9387,7 @@
         "Eventos futuros actualizados"
       ],
       "Import record deleted": [
-        "Se ha eliminado el registro importación."
+        "Se ha eliminado el registro de importación."
       ],
       "Invitation rejected": [
         "Se ha rechazado la invitación."
@@ -9968,6 +10100,15 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "${ feature } is now active": [
+        "La funcionalidad ${ feature } ya está activada."
+      ],
+      "Auto-deletion is active": [
+        "La eliminación automática está activa."
+      ],
+      "You can now create unlimited folders and labels": [
+        "Ahora puedes crear carpetas y etiquetas ilimitadas."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10128,6 +10269,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Tu suscripción se renovará automáticamente en ${ cycle } mes.",
         "Tu suscripción se renovará automáticamente en ${ cycle } meses."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Tu nueva suscripción se renovará automáticamente en ${ cycle } meses.",
+        "Tu nueva suscripción se renovará automáticamente en ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Tu plan programado comienza el ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -10542,6 +10690,60 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Desbloquea todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceMailPlus }. Cancela en cualquier momento."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "¡La oferta de ${ pricingTitle } vence hoy!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Obtén Drive Plus por solo ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Obtén Mail Plus por solo ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Aprovéchate de la oferta"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Última oportunidad para obtener un 80 % de descuento en tu primer mes de ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Oferta por tiempo limitado"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
+      ],
+      "Save 80% on your first month.": [
+        "Ahorra un 80 % en tu primer mes."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 funciones premium más"
+      ],
+      "Custom email domain": [
+        "Dominio de correo electrónico personalizado"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Free": [
+        "Gratuito"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Almacenamiento"
       ]
     }
   }

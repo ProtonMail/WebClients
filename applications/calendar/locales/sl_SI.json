@@ -787,6 +787,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Ustvari mapo"
+      ],
+      "More actions": [
+        "Več dejanj"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ]
     },
     "Action subline": {
@@ -1219,6 +1228,9 @@
       ],
       "Website access problem": [
         "Težava z dostopom do spletnega mesta"
+      ],
+      "Docs problem": [
+        "Težava s Docs"
       ]
     },
     "Button": {
@@ -1233,6 +1245,15 @@
       ],
       "Continue your subscription": [
         "Podaljšajte naročnino"
+      ],
+      "Create label": [
+        "Ustvarite oznako"
+      ],
+      "Remind me later": [
+        "Opomni me kasneje"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ]
     },
     "Calendar access select label": {
@@ -2652,6 +2673,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3349,6 +3373,12 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Sporočila in sestavljanje > Kratka domena (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Ključ organizacije ni dešifriran."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3715,6 +3745,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Družinski paket trenutno ne omogoča uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5327,6 +5360,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Vaš sistemski časovni pas se je spremenil v ${ timezone }. Ali želite posodobiti nastavitve časovnega pasu?"
+      ],
+      "Keys created": [
+        "Ključi so bili ustvarjeni."
+      ],
+      "User activated": [
+        "Uporabnik je aktiviran."
       ]
     },
     "info": {
@@ -5879,6 +5918,9 @@
       ],
       "Your password (admin)": [
         "Vaše geslo (admin)"
+      ],
+      "State": [
+        "Država"
       ]
     },
     "Label for contact group color": {
@@ -5978,6 +6020,36 @@
       ],
       "What’s this?": [
         "Kaj je to?"
+      ],
+      "All mail": [
+        "Vsa pošta"
+      ],
+      "Archive": [
+        "Arhiv"
+      ],
+      "Drafts": [
+        "Osnutki"
+      ],
+      "Inbox": [
+        "Prejeto"
+      ],
+      "Scheduled": [
+        "Načrtovano"
+      ],
+      "Sent": [
+        "Poslano"
+      ],
+      "Snooze": [
+        "Dremež"
+      ],
+      "Spam": [
+        "Neželena pošta"
+      ],
+      "Starred": [
+        "Z zvezdico"
+      ],
+      "Trash": [
+        "Smetnjak"
       ]
     },
     "Link label (optional)": {
@@ -6383,6 +6455,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Nadgradite na ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
       ]
     },
     "new_plans: action": {
@@ -7190,6 +7265,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Lahko imate več kot enega skrbnika. Vsi skrbniki lahko dodajajo in upravljajo uporabnike, vendar ima samo glavni skrbnik nadzor nad plačili."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Z enim klikom preusmerite internetni promet prek omrežja Tor."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8682,6 +8760,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Vaš paket je bil kupljen preko iOS aplikacije. Zato boste za spremembe na vašem paketu ali posodobitve podatkov o plačilu morali iti v trgovino Apple App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Samo prijavite se v svoj račun v Apple App Store in nato izberite ${ subscriptions }."
       ]
     },
     "Subscription price": {
@@ -10372,6 +10453,25 @@
       ],
       "Meeting ID:": [
         "ID sestanka:"
+      ]
+    },
+    "Offer": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Maybe later": [
+        "Morda kasneje"
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Brezplačno"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Shramba"
       ]
     }
   }

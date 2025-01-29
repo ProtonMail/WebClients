@@ -796,6 +796,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "创建文件夹"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格获取 ${ planName }"
+      ],
+      "Get ${ planOrAppName }": [
+        "开通 ${ planOrAppName }"
+      ],
+      "Take a tour": [
+        "开始导览"
       ]
     },
     "Action subline": {
@@ -1069,7 +1081,7 @@
         "无限 hide-my-email 别名"
       ],
       "Unlimited logins, notes, credit cards": [
-        "无限登录、备注、信用卡"
+        "无限登录、笔记、信用卡"
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
@@ -1138,6 +1150,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "所有 ${ BRAND_NAME } 服务共用同一存储空间。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "在所有设备上安全登录。包括无限制 hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
       ]
     },
     "Billing cycle option": {
@@ -1257,6 +1272,21 @@
       ],
       "Continue your subscription": [
         "继续您的订阅"
+      ],
+      "Create label": [
+        "新建标签"
+      ],
+      "Discover and set up features": [
+        "发现并设置功能"
+      ],
+      "Remind me later": [
+        "稍后提醒我"
+      ],
+      "Set up other features": [
+        "设置其他功能"
+      ],
+      "Take a tour": [
+        "开始导览"
       ]
     },
     "Calendar access select label": {
@@ -2999,10 +3029,10 @@
         "无法启用内容搜索。请重新启动应用或清除数据。"
       ],
       "Could not open created vault": [
-        "无法打开创建的保管库"
+        "无法打开创建的保险库"
       ],
       "Could not open updated vault": [
-        "无法打开已更新的保管库"
+        "无法打开已更新的保险库"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "解密失败：无法解密此日程的内容。"
@@ -3366,6 +3396,18 @@
       ],
       "Your import will not be processed.": [
         "此次导入将不会进行。"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "使用用户名 ${ user.Name }。前往设置 -> 消息和编辑 -> 短域名 (pm.me)，创建 ${ emailAddress }。"
+      ],
+      "Organization key is not decrypted": [
+        "机构密钥尚未解密"
+      ],
+      "Please select a country": [
+        "请选择国家/地区"
+      ],
+      "Please select a state": [
+        "请选择州"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3684,6 +3726,9 @@
     "familyOffer_2023:Error": {
       "Organization not recognized. Try again.": [
         "无法识别机构，请重试。"
+      ],
+      "Family group not recognized. Try again.": [
+        "无法识别家庭群组。请重试。"
       ]
     },
     "familyOffer_2023:Family plan": {
@@ -3762,6 +3807,9 @@
     "familyOffer_2023:Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         "这将永久删除与您的组织相关的所有子用户、账户和数据。"
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "这将删除每个家庭成员所有的 ${ BRAND_NAME } 高级功能。"
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -5322,6 +5370,45 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系统时区似乎已更改为 ${ timezone }。您想要更新您的时区偏好吗？"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } 通过对可疑活动进行专门监测来保护您的账户。"
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "发现解锁的新功能，并立即开始使用！"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "发现 ${ planTitle } 解锁的新功能，并立即开始使用！"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "超过 30 天前移至废件箱和垃圾邮件的电子邮件将自动清除。"
+      ],
+      "Enabling auto-deletion…": [
+        "正在启用自动删除…"
+      ],
+      "Keys created": [
+        "密钥已创建"
+      ],
+      "or discover other features:": [
+        "或发现其他功能："
+      ],
+      "Registering your subscription…": [
+        "正在注册您的订阅…"
+      ],
+      "Setting up ${ feature }…": [
+        "正在设置 ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "正在设置您的新地址…"
+      ],
+      "User activated": [
+        "用户已激活"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "您可以随时在 ${ settingsLink } 中更改此项。"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "如果你的密码或其他数据从第三方服务泄露，你会收到通知。"
       ]
     },
     "info": {
@@ -5865,6 +5952,9 @@
       ],
       "Your password (admin)": [
         "您的密码(管理员)"
+      ],
+      "State": [
+        "省份/地区"
       ]
     },
     "Label for contact group color": {
@@ -5964,6 +6054,39 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "All mail": [
+        "所有邮件"
+      ],
+      "Archive": [
+        "存档"
+      ],
+      "Drafts": [
+        "草稿"
+      ],
+      "Inbox": [
+        "收件箱"
+      ],
+      "Scheduled": [
+        "定时发送"
+      ],
+      "Sent": [
+        "已发送"
+      ],
+      "settings": [
+        "设置"
+      ],
+      "Snooze": [
+        "延迟通知"
+      ],
+      "Spam": [
+        "垃圾邮件"
+      ],
+      "Starred": [
+        "星标邮件"
+      ],
+      "Trash": [
+        "废件箱"
       ]
     },
     "Link label (optional)": {
@@ -6348,6 +6471,15 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "升级至 ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6627,7 +6759,7 @@
         "集成了双重身份验证"
       ],
       "Kill switch/always-on VPN": [
-        "安全闸确保始终开启 VPN"
+        "Kill Switch/始终开启 VPN"
       ],
       "Limited support": [
         "有限的客户服务"
@@ -6807,10 +6939,19 @@
         "用户储存管理"
       ],
       "Vault sharing (up to ${ n } person)": [
-        "密码分享（最多${ n }个人）"
+        "密码分享（最多 ${ n } 个人）"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "200 GB of storage": [
+        "200 GB 存储空间"
+      ],
+      "Private photo backup": [
+        "隐私照片备份"
+      ],
+      "Secure file storage and sharing": [
+        "安全的文件存储和共享"
       ]
     },
     "new_plans: feature highlight": {
@@ -7143,6 +7284,30 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "您可以指派多位管理员，所有管理员均可创建及管理用户，但只有主管理员能够执行计费相关操作。"
+      ],
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }：通过端到端加密确保日程安全。包括支持自定义日历、日历共享等功能。"
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }：访问被屏蔽的内容，私密浏览。包括 ${ serversAndCountries }、最快 VPN 速度、访问全球流媒体服务、恶意软件和广告拦截器、快速 BitTorrent 下载等。"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "使用加密日历为您和家人保密您们的计划"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "像文件夹一样，保险库是安排您项目的简便方式"
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "从公共互联网上锁定公司资源，使其只能通过专用网关访问"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "一个 VPN 连接允许一个设备在任何指定时间连接到 ${ VPN_APP_NAME } 。 例如，若要同时连接手机和笔记本电脑到 ${ VPN_APP_NAME } ，您需要2个 VPN 连接。"
+      ],
+      "Password management and identity protection": [
+        "密码管理和身份保护"
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "保护您的家人免受有害网站的侵扰，并访问我们的高速 VPN 服务器以串流您喜爱的内容"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7178,6 +7343,27 @@
       ],
       "Support for ${ n } custom email domains": [
         "支持 ${ n } 个自定义域"
+      ],
+      "AES 256-bit VPN encryption": [
+        "AES 256 位 VPN 加密"
+      ],
+      "Censorship circumvention": [
+        "规避审查"
+      ],
+      "Dedicated Account manager": [
+        "专职客户经理"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "${ numberOfCountries }+ 个国家的专用服务器地址"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "专用服务器位于北美和欧洲"
+      ],
+      "Private gateways": [
+        "专用网关"
+      ],
+      "Require 2FA": [
+        "要求使用 2FA"
       ]
     },
     "Notification": {
@@ -7606,6 +7792,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "我们正在处理您的付款信息。请等待付款完成后再更改您的计划或更新您的付款详细信息。感谢您的耐心等待。"
+      ],
+      "Timeout exceeded": [
+        "超时"
       ]
     },
     "Payments.Error": {
@@ -7617,6 +7806,15 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
+      ],
+      "Invalid security code": [
+        "无效安全码"
+      ],
+      "Something went wrong. Please try again later.": [
+        "发生一些错误，请稍候再试。"
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "我们无法验证您的付款方式。请选择不同的付款方式或再试一次。"
       ]
     },
     "Payments.Sepa": {
@@ -8243,6 +8441,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "此订阅将以相同费率每 2 年自动续订一次，直至取消。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "您的订阅将以每年相同的费率续订。"
       ]
     },
     "specialoffer: Link": {
@@ -8251,6 +8452,9 @@
       ],
       "Upgrade": [
         "升级账户"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "升级至 ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -8401,6 +8605,9 @@
       ],
       "Up to ${ totalStorageSize } Mail storage": [
         "最高 ${ totalStorageSize } 邮箱容量"
+      ],
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、 ${ CALENDAR_SHORT_APP_NAME }、 ${ CONTACTS_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME } 生成的数据存储"
       ]
     },
     "storage_split: info": {
@@ -8451,6 +8658,21 @@
       ],
       "Your storage is full. ${ cta }.": [
         "您的存储空间已满。 ${ cta }"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "我们会将剩余时间的点数计入您的 ${ BRAND_NAME } 账户。"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "您将无法使用 ${ gb } 存储和优先支持。"
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "您将无法使用额外的存储空间、电子邮件地址、别名、日历以及优先支持。"
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "您将无法获得最快的 VPN 速度、10 台设备的保护、高速流媒体、广告拦截器和恶意软件保护以及优先支持。"
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "您将失去无限次登录和笔记、无限次 hide-my-email 别名、20个保险库以及优先支持的特权。"
       ]
     },
     "Subscribe to calendar modal": {
@@ -8475,6 +8697,18 @@
       ],
       "Billed yearly": [
         "每年付费"
+      ],
+      "Billed for 15 months": [
+        "按 15 个月计费"
+      ],
+      "Billed for 18 months": [
+        "按 18 个月计费"
+      ],
+      "Billed for 3 months": [
+        "按 3 个月计费"
+      ],
+      "Billed for 30 months": [
+        "按 30 个月计费"
       ]
     },
     "Subscription attribute": {
@@ -8503,6 +8737,18 @@
       ],
       "Subscriptions": [
         "订阅"
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "只需登录到您的 Play 商店帐户，然后按 ${ subscriptions }。"
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "在 ${ subscriptionManager } 管理您的订阅"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "您的计划是使用 Android 应用程序购买的。因此，要更改计划或更新付款详情，您需要访问 Google Play 商店。"
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "您的计划是使用 iOS 应用程序购买的。因此，要更改计划或更新付款详情，您需要访问 Apple App Store。"
       ]
     },
     "subscription downgrading info": {
@@ -8712,6 +8958,69 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "您的 ${ planName } 计划不仅能确保您的业务数据和通信安全。它支持您的合规目标，让您的企业脱颖而出，并让您的团队保持联系。"
+      ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } 允许您访问所有应用和高级功能。 隐私是内置的，因此您可以继续使用它，要知道您的数据和身份是安全的。"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } 为您提供所有应用程序、所有功能、新版本的早期访问权限，以及控制数据及其安全性所需的一切。"
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } 超越了基础知识，以帮助您提高生产力、组织和控制您的收件箱、电子邮件身份等等。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } 为您的电子邮件、附件、事件、密码和文件提供 ${ planMaxSpace } 存储。您还有资格获得年度存储奖金。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ planName } 为您的文件和照片提供 ${ planMaxSpace } 存储。您还有资格获得年度存储奖金。"
+      ],
+      "Comprehensive privacy and security": [
+        "全面的隐私和安全"
+      ],
+      "Direct contribution to our mission": [
+        "对我们的使命做出直接贡献"
+      ],
+      "Helping activists in Hong Kong": [
+        "帮助在香港的活动家"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "我们的客户支持团队是如何将我们的 VPN 应用程序直接送到用户手中的。"
+      ],
+      "Learn more about our impact": [
+        "进一步了解我们的影响"
+      ],
+      "Manage your calendar": [
+        "管理您的日历"
+      ],
+      "Our fight against censorship in Russia": [
+        "我们与俄罗斯的审查制度作斗争"
+      ],
+      "Read the story": [
+        "阅读故事"
+      ],
+      "Receive new emails": [
+        "接收新邮件"
+      ],
+      "Send emails with attachments": [
+        "发送带有附件的电子邮件"
+      ],
+      "Sync files on devices": [
+        "在设备上同步文件"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "最好的 ${ BRAND_NAME }"
+      ],
+      "Unblocking internet access in Iran": [
+        "解除对伊朗互联网接入的封锁"
+      ],
+      "Watch the interview": [
+        "观看访谈"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "取消 ${ planName } 时您所放弃的内容"
+      ],
+      "Your own short @pm.me email alias": [
+        "您自己的短 @pm.me 电子邮件别名"
       ]
     },
     "subscription reminder": {
@@ -8761,6 +9070,24 @@
       ],
       "Disable": [
         "关闭"
+      ],
+      "Auto-pay is disabled": [
+        "自动付款已禁用"
+      ],
+      "Auto-pay is enabled": [
+        "自动付款已启用"
+      ],
+      "Enable auto-pay support": [
+        "启用自动付款支持"
+      ],
+      "Keep auto-pay": [
+        "保留自动付款"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。此外，如果您忘记手动付款，且所有付款方式的自动付款功能都被禁用，我们可能会自动降级您的帐户，这将导致您失去许多功能。"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
       ]
     },
     "Subscription saving": {
@@ -8959,7 +9286,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保管库、集成 2FA、信用卡自动填充等。"
+        "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保险库、集成 2FA、信用卡自动填充等。"
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "连接全球逾 65 个国家的 2950 + 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
@@ -9571,6 +9898,15 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "${ feature } is now active": [
+        "${ feature } 已激活"
+      ],
+      "Auto-deletion is active": [
+        "自动删除已启用"
+      ],
+      "You can now create unlimited folders and labels": [
+        "您现在可以创建无限的文件夹和标签"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -9721,11 +10057,23 @@
     "vpn_2024: renew": {
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的订阅将在 ${ cycle } 个月后自动续期。"
+      ],
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "然后每 12 个月向您收取 ${ renewPrice }。"
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "您的新订阅将在 ${ cycle } 个月后自动续订。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "您的预定计划从 ${ renewalTime } 开始。"
       ]
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
         "高级 VPN 定制"
+      ],
+      "No ads": [
+        "无广告"
       ]
     },
     "vpn_2step: tooltip": {
@@ -9850,6 +10198,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免费体验期将于 ${ textDate } 结束。${ action }"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "过期日期格式不是 MM/YY"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -10095,6 +10446,60 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "${ priceCoupon } 折扣价的有效期为第一个月。之后将以 ${ priceMailPlus } 价格每月自动续订。您可以随时取消。"
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "只需 ${ priceMailPlus } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。可随时取消。"
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } 优惠今天到期！"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "仅需 ${ pricingTitle } 即可获得 Drive Plus"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "仅需 ${ pricingTitle } 即可获得 Mail Plus"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "首月购买 ${ plan } Plus 八折优惠的最后机会。"
+      ],
+      "Limited-time offer": [
+        "限时特惠"
+      ],
+      "Maybe later": [
+        "以后再说"
+      ],
+      "Save 80% on your first month.": [
+        "第一个月可节省 80% 的费用。"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 多项高级功能"
+      ],
+      "Custom email domain": [
+        "自定义电子邮件域"
+      ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "存储"
       ]
     }
   }

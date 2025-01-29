@@ -306,7 +306,7 @@
         "Exporta el grup de contactes"
       ],
       "Export selection as .vcf": [
-        "Exporteu la selecció al format *.vcf"
+        "Exporta la selecció com a .vcf"
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -800,6 +800,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Obteniu ${ planName } per ${ priceCoupon }."
+      ],
+      "Get ${ planOrAppName }": [
+        "Obtingueu ${ planOrAppName }"
+      ],
+      "Take a tour": [
+        "Feu una visita guiada"
       ]
     },
     "Action subline": {
@@ -975,7 +987,7 @@
     },
     "bf2023: renew": {
       "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant els primers ${ cycle } mesos. Després es renovarà automàticament al preu rebaixat de ${ nextPrice } durant ${ renewalLength } mesos. Podeu cancel·lar en qualsevol moment."
+        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant els primers ${ cycle } mesos. Després es renovarà automàticament al preu rebaixat de ${ nextPrice } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ discountedPrice } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ nextPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
@@ -1146,6 +1158,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
       ]
     },
     "Billing cycle option": {
@@ -1265,6 +1280,21 @@
       ],
       "Continue your subscription": [
         "Continueu amb la vostra subscripció"
+      ],
+      "Create label": [
+        "Crea una etiqueta"
+      ],
+      "Discover and set up features": [
+        "Descobriu i configureu les característiques"
+      ],
+      "Remind me later": [
+        "Recorda-m'ho més tard"
+      ],
+      "Set up other features": [
+        "Configureu altres característiques"
+      ],
+      "Take a tour": [
+        "Feu una visita guiada"
       ]
     },
     "Calendar access select label": {
@@ -1497,7 +1527,7 @@
         "Proveu ${ planName }"
       ],
       "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
-        "Proveu ${ upsellPlanName } i manteniu l'accés a totes les funcions de correu electrònic i calendari prèmium."
+        "Proveu ${ upsellPlanName } i manteniu l'accés a totes les funcions prèmium de correu electrònic i calendari."
       ],
       "Ultra fast and private VPN": [
         "VPN ultraràpida i privada"
@@ -2615,7 +2645,7 @@
     },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
-        "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa l'escalada a especialistes en seguretat."
+        "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
@@ -2663,7 +2693,7 @@
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
       "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Estalvieu temps enviant correus electrònics a tothom alhora amb grups de contactes. Desbloquegeu aquesta i altres funcions prèmium quan milloreu."
+        "Estalvieu temps enviant correus electrònics a tothom alhora amb grups de contactes. Desbloquegeu aquesta i altres funcions prèmium quan milloreu el pla."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Establiu un mètode de recuperació de dades per evitar la pèrdua de dades."
@@ -2793,7 +2823,7 @@
         "Suprimeix el descompte"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
-        "La vostra subscripció de ${ PLAN_NAMES[PLANS.PASS] } té un preu especial de ${ price } per any. En passar a un pla gratuït, perdreu el descompte permanentment, fins i tot si torneu a millorar en el futur."
+        "La vostra subscripció de ${ PLAN_NAMES[PLANS.PASS] } té un preu especial de ${ price } per any. En passar a un pla gratuït, perdreu el descompte permanentment, fins i tot si torneu a millorar el pla en el futur."
       ]
     },
     "driveplus2024: Deal details": {
@@ -3396,6 +3426,18 @@
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències> Missatges i redacció > Domini curt (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "La clau de l'organització no està desxifrada"
+      ],
+      "Please select a country": [
+        "Seleccioneu un país"
+      ],
+      "Please select a state": [
+        "Seleccioneu un estat"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3554,7 +3596,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "Alguna cosa ha anat malament."
+        "S'ha produït un error."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Per utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
@@ -3563,7 +3605,7 @@
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quan s'ha activat una contrasenya addicional, la gestió d'àlies només es pot fer a ${ PASS_APP_NAME }."
+        "Quan s'ha activat la contrasenya addicional, la gestió d'àlies només es pot fer a ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
         "Necessiteu tenir un calendari personal actiu per importar esdeveniments"
@@ -4012,7 +4054,7 @@
         "Els temps flotants no són compatibles."
       ],
       "Malformed all-day event": [
-        "El format de l'esdeveniment para tot el dia és incorrecte."
+        "El format de l'esdeveniment per a tot el dia és incorrecte."
       ],
       "Malformed end time": [
         "El format de l'hora de finalització és incorrecte."
@@ -4186,7 +4228,7 @@
         "El vostre compte de correu electrònic en requereix una per exportar les dades."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. No utilitzeu la contrasenya normal."
+        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. No utilitzeu la contrasenya habitual."
       ],
       "Your email address and password are correct.": [
         "La vostra adreça de correu electrònic i contrasenya són correctes."
@@ -5405,6 +5447,45 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Sembla que el fus horari del sistema ha canviat a ${ timezone }. Voleu actualitzar la vostra preferència de fus horari?"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Descobriu les noves característiques desbloquejades i comenceu a utilitzar-les de seguida!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Descobriu les noves característiques desbloquejades amb ${ planTitle } i comenceu a utilitzar-les de seguida!"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Els correus electrònics moguts a la paperera i el correu brossa fa més de 30 dies se suprimiran automàticament."
+      ],
+      "Enabling auto-deletion…": [
+        "S'està activant la supressió automàtica…"
+      ],
+      "Keys created": [
+        "S'han creat les claus."
+      ],
+      "or discover other features:": [
+        "o descobriu altres característiques:"
+      ],
+      "Registering your subscription…": [
+        "S'està registrant la vostra subscripció…"
+      ],
+      "Setting up ${ feature }…": [
+        "S'està configurant ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "S'està configurant la vostra nova adreça…"
+      ],
+      "User activated": [
+        "S'ha activat l'usuari."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Podeu canviar-ho en qualsevol moment a ${ settingsLink }."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
       ]
     },
     "info": {
@@ -5953,6 +6034,9 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
+      ],
+      "State": [
+        "Estat"
       ]
     },
     "Label for contact group color": {
@@ -6052,6 +6136,39 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ],
+      "All mail": [
+        "Tot el correu"
+      ],
+      "Archive": [
+        "Arxiu"
+      ],
+      "Drafts": [
+        "Esborranys"
+      ],
+      "Inbox": [
+        "Safata d'entrada"
+      ],
+      "Scheduled": [
+        "Programats"
+      ],
+      "Sent": [
+        "Enviats"
+      ],
+      "settings": [
+        "preferències"
+      ],
+      "Snooze": [
+        "Posa en pausa"
+      ],
+      "Spam": [
+        "Correu brossa"
+      ],
+      "Starred": [
+        "Destacats"
+      ],
+      "Trash": [
+        "Paperera"
       ]
     },
     "Link label (optional)": {
@@ -6444,6 +6561,15 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6783,7 +6909,7 @@
         "Suport prioritari i xat en directe"
       ],
       "Private photo backup": [
-        "Còpia de seguretat de fotos privades"
+        "Còpia de seguretat de fotos privada"
       ],
       "Proofread and refine your emails": [
         "Corregiu i refineu els vostres correus electrònics"
@@ -6865,7 +6991,7 @@
         "TOR sobre VPN"
       ],
       "Two-factor authentication": [
-        "Autenticació de dos factors"
+        "Autenticació de doble factor"
       ],
       "Unlimited devices": [
         "Nombre il·limitat de dispositius"
@@ -7134,7 +7260,7 @@
         "Dominis personalitzats per a àlies, bústies de correu addicionals, la possibilitat d'enviar correus electrònics des d'àlies i molt més"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreces IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
+        "Es poden afegir servidors dedicats amb adreces IP dedicades a portes d'enllaç privades per a activar un control d'accés més optimitzat"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -7233,7 +7359,7 @@
         "Requereix un codi enviat a un telèfon mòbil per iniciar la sessió. Això assegura que, fins i tot si una contrasenya està compromesa, el compte roman segur."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
+        "Restableix les contrasenyes i l'autenticació de doble factor dels usuaris."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Dirigiu el trànsit d'internet a través de la xarxa Tor amb un sol clic"
@@ -7541,7 +7667,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
-        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
+        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzar els vostres missatges de correu electrònic i la vostra configuració, visualitzar i descarregar els vostres contactes, visualitzar i descarregar totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
     "Onboarding": {
@@ -7797,13 +7923,13 @@
         "Seleccioneu el país de facturació per pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar-ho en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. Després es renovarà automàticament al preu de ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. Després es renovarà automàticament al preu de ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLength } mes. Podeu cancel·lar-ho en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLength } mes. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
@@ -7837,7 +7963,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a ordenar al vostre banc que debiti el vostre compte i que faci el càrrec al vostre compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes a partir de la data de dèbit, segons les condicions del vostre acord amb el vostre banc."
+        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a instruir el vostre banc perquè debiti el vostre compte, i el banc a debitar el compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes des de la data del dèbit d'acord amb les condicions del vostre acord amb el banc."
       ],
       "Street address, postal code, and city": [
         "Adreça, codi postal i ciutat"
@@ -8479,6 +8605,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "La teva subscripció es renovarà al mateix preu cada any."
       ]
     },
     "specialoffer: Link": {
@@ -8487,6 +8616,9 @@
       ],
       "Upgrade": [
         "Millora"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Milloreu el pla per ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -8807,7 +8939,7 @@
     },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
-        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
       ],
       "${ dayDiff } day left": [
         "Queda ${ dayDiff } dia.",
@@ -8844,7 +8976,7 @@
         "${ planName } va més enllà de l'essencial per a ajudar-vos a tenir una major productivitat, capacitat d'organització i el control de la vostra safata d'entrada, la vostra identitat de correu electrònic i molt més."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
-        "${ planName } us ajuda a assegurar-vos que els membres de la vostra família, i les seves dades, estiguin protegits sempre que estiguin en línia."
+        "${ planName } us ajuda a assegurar-vos que els membres de la vostra família, així com les seves dades, estiguin protegits sempre que estiguin en línia."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per als vostres correus electrònics, adjunts, esdeveniments, contrasenyes i fitxers. També podeu optar a bonificacions d'emmagatzematge anuals."
@@ -9334,7 +9466,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Creeu detalls d'inici de sessió segurs en tots els vostres dispositius. Inclou, entre d'altres, àlies il·limitats, 20 caixes fortes, autenticació de dos factors (2FA) i inserció automàtica de targetes de crèdit."
+        "Creeu detalls d'inici de sessió segurs en tots els vostres dispositius. Inclou, entre d'altres, àlies il·limitats, 20 caixes fortes, autenticació de doble factor (2FA) i inserció automàtica de targetes de crèdit."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclou, entre d'altres, més de 2950 servidors en més de 65 països, connexió fins a 10 dispositius, accés a serveis de transmissió en línia de tot el món i bloqueig de programari maliciós i d'anuncis."
@@ -9960,6 +10092,15 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "${ feature } is now active": [
+        "La característica ${ feature } està ara activa."
+      ],
+      "Auto-deletion is active": [
+        "La supressió automàtica està activada."
+      ],
+      "You can now create unlimited folders and labels": [
+        "Ara podeu crear carpetes i etiquetes il·limitades."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10120,6 +10261,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "La vostra subscripció es renovarà automàticament en ${ cycle } mes.",
         "La vostra subscripció es renovarà automàticament en ${ cycle } mesos."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mes.",
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "El vostre pla programat comença el ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -10534,6 +10682,60 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "L'oferta de ${ pricingTitle } caduca avui!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Obteniu Drive Plus per només ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Obteniu Mail Plus per només ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Aconseguiu l'oferta"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Oferta per temps limitat"
+      ],
+      "Maybe later": [
+        "Potser després"
+      ],
+      "Save 80% on your first month.": [
+        "Estalvieu un 80% en el vostre primer mes."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 característiques prèmium més"
+      ],
+      "Custom email domain": [
+        "Domini de correu electrònic personalitzat"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Free": [
+        "Gratuït"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Emmagatzematge"
       ]
     }
   }

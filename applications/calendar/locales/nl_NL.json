@@ -717,7 +717,7 @@
         "Niet meer vertrouwen"
       ],
       "Update": [
-        "Updaten"
+        "Bijwerken"
       ],
       "Update recovery file": [
         "Herstelbestand bijwerken"
@@ -800,6 +800,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Map maken"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Neem ${ planName } voor ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Neem ${ planOrAppName }"
+      ],
+      "Take a tour": [
+        "Volg een rondleiding"
       ]
     },
     "Action subline": {
@@ -1151,6 +1163,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
       ]
     },
     "Billing cycle option": {
@@ -1270,6 +1285,21 @@
       ],
       "Continue your subscription": [
         "Uw abonnement voortzetten"
+      ],
+      "Create label": [
+        "Maak label"
+      ],
+      "Discover and set up features": [
+        "Ontdek en configureer functies"
+      ],
+      "Remind me later": [
+        "Herinner mij later"
+      ],
+      "Set up other features": [
+        "Andere functies instellen"
+      ],
+      "Take a tour": [
+        "Volg een rondleiding"
       ]
     },
     "Calendar access select label": {
@@ -3401,6 +3431,18 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Organisatiesleutel is niet ontsleuteld"
+      ],
+      "Please select a country": [
+        "Selecteer een land"
+      ],
+      "Please select a state": [
+        "Selecteer een staat"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5410,6 +5452,45 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Uw systeemtijdzone lijkt te zijn veranderd naar ${ timezone }. Wilt u uw voorkeur voor uw tijdzone bijwerken?"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Ontdek nieuwe functies ontgrendeld en begin direct met het gebruik ervan!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Ontdek nieuwe functies ontgrendeld met ${ planTitle } en begin ze meteen te gebruiken!"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-mails die meer dan 30 dagen geleden naar prullenbak werden verplaatst worden automatisch gewist."
+      ],
+      "Enabling auto-deletion…": [
+        "Activatie automatisch verwijderen"
+      ],
+      "Keys created": [
+        "Sleutels aangemaakt"
+      ],
+      "or discover other features:": [
+        "of andere functies ontdekken:"
+      ],
+      "Registering your subscription…": [
+        "Uw abonnement registreren…"
+      ],
+      "Setting up ${ feature }…": [
+        "Instellen van ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Uw nieuwe adres instellen…"
+      ],
+      "User activated": [
+        "Gebruiker geactiveerd"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "U kunt dit op elk gewenst moment in ${ settingsLink } wijzigen."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ]
     },
     "info": {
@@ -5958,6 +6039,9 @@
       ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
+      ],
+      "State": [
+        "Staat"
       ]
     },
     "Label for contact group color": {
@@ -6057,6 +6141,39 @@
       ],
       "What’s this?": [
         "Wat is dit?"
+      ],
+      "All mail": [
+        "Alle e-mail"
+      ],
+      "Archive": [
+        "Archief"
+      ],
+      "Drafts": [
+        "Concepten"
+      ],
+      "Inbox": [
+        "Inbox"
+      ],
+      "Scheduled": [
+        "Gepland"
+      ],
+      "Sent": [
+        "Verzonden"
+      ],
+      "settings": [
+        "instellingen"
+      ],
+      "Snooze": [
+        "Snoozen"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Met ster"
+      ],
+      "Trash": [
+        "Prullenbak"
       ]
     },
     "Link label (optional)": {
@@ -6449,6 +6566,15 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Starting from ${ pricing }": [
+        "Vanaf ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6934,6 +7060,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "200 GB of storage": [
+        "200 GB opslagruimte"
+      ],
+      "Private photo backup": [
+        "Privé foto back-up"
+      ],
+      "Secure file storage and sharing": [
+        "Veilige bestandsopslag en delen"
       ]
     },
     "new_plans: feature highlight": {
@@ -8475,6 +8610,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dit abonnement wordt na twee jaar automatisch verlengd tegen dezelfde prijs totdat het wordt geannuleerd."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Uw abonnement zal elk jaar met hetzelfde tarief worden verlengd."
       ]
     },
     "specialoffer: Link": {
@@ -8483,6 +8621,9 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Upgraden naar ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9956,6 +10097,15 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "${ feature } is now active": [
+        "${ feature } is nu actief"
+      ],
+      "Auto-deletion is active": [
+        "Automatisch verwijderen is actief"
+      ],
+      "You can now create unlimited folders and labels": [
+        "U kunt nu onbeperkt mappen en labels maken"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10116,6 +10266,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maanden."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
+        "Uw abonnement wordt automatisch verlengd over ${ cycle } maanden."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Uw geplande abonnement begint op ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -10530,6 +10687,60 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "De kortingsprijs van ${ priceCoupon } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ priceMailPlus }. U kunt op ieder moment annuleren."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Ontgrendel alle premium ${ BRAND_NAME } producten en functies van ${ priceMailPlus }. Elk moment te annuleren."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } aanbieding verloopt vandaag!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Krijg Drive Plus voor slechts ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Krijg Mail Plus voor slechts ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Tijdelijke aanbieding"
+      ],
+      "Maybe later": [
+        "Misschien later"
+      ],
+      "Save 80% on your first month.": [
+        "Bespaar 80% op uw eerste maand."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 meer premium functies"
+      ],
+      "Custom email domain": [
+        "Aangepast e-maildomein"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
+      "Free": [
+        "Gratis"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Opslagruimte"
       ]
     }
   }

@@ -808,6 +808,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Vytvořit složku"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Získat ${ planName } za ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Získat ${ planOrAppName }"
+      ],
+      "Take a tour": [
+        "Absolvujte prohlídku"
       ]
     },
     "Action subline": {
@@ -1171,6 +1183,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Bezpečené přihlašování na všech zařízeních. Obsahuje neomezený počet aliasů hide-my-email, sdílení, integrované 2FA, Sledování ${ DARK_WEB_MONITORING_NAME } a další funkce."
       ]
     },
     "Billing cycle option": {
@@ -1290,6 +1305,21 @@
       ],
       "Continue your subscription": [
         "Pokračovat v předplatném"
+      ],
+      "Create label": [
+        "Vytvořit štítek"
+      ],
+      "Discover and set up features": [
+        "Objevit a nastavit funkce"
+      ],
+      "Remind me later": [
+        "Připomenout později"
+      ],
+      "Set up other features": [
+        "Nastavit další funkce"
+      ],
+      "Take a tour": [
+        "Absolvovat prohlídku"
       ]
     },
     "Calendar access select label": {
@@ -3465,6 +3495,18 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } je vaše uživatelské jméno. Pro vytvoření ${ emailAddress } jděte prosím do Nastavení > Zprávy a psaní > Krátká doména (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Klíč organizace není dešifrován"
+      ],
+      "Please select a country": [
+        "Vyberte prosím zemi"
+      ],
+      "Please select a state": [
+        "Vyberte prosím stát"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5568,6 +5610,45 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zdá se, že se vaše systémové časové pásmo změnilo na ${ timezone }. Chcete aktualizovat nastavení časového pásma?"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí dedikovaného sledování podezřelých aktivit."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Objevte nové odemčené funkce a začněte je ihned používat!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Objevte nové funkce odemčené pomocí ${ planTitle } a začněte je ihned používat!"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-maily přesunuté do koše a spamu před více než 30 dny budou automaticky smazány."
+      ],
+      "Enabling auto-deletion…": [
+        "Povolování automatického mazání..."
+      ],
+      "Keys created": [
+        "Klíče vytvořeny"
+      ],
+      "or discover other features:": [
+        "nebo objevte další funkce:"
+      ],
+      "Registering your subscription…": [
+        "Registrace vašeho předplatného…"
+      ],
+      "Setting up ${ feature }…": [
+        "Nastavování ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Nastavování nové adresy…"
+      ],
+      "User activated": [
+        "Uživatel aktivován"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Toto můžete později změnit v ${ settingsLink }."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ]
     },
     "info": {
@@ -6126,6 +6207,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ],
+      "State": [
+        "Stát"
       ]
     },
     "Label for contact group color": {
@@ -6225,6 +6309,39 @@
       ],
       "What’s this?": [
         "Co je to?"
+      ],
+      "All mail": [
+        "Všechna pošta"
+      ],
+      "Archive": [
+        "Archiv"
+      ],
+      "Drafts": [
+        "Koncepty"
+      ],
+      "Inbox": [
+        "Doručená pošta"
+      ],
+      "Scheduled": [
+        "Naplánováno"
+      ],
+      "Sent": [
+        "Odeslané"
+      ],
+      "settings": [
+        "nastavení"
+      ],
+      "Snooze": [
+        "Odložit"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "S hvězdičkou"
+      ],
+      "Trash": [
+        "Koš"
       ]
     },
     "Link label (optional)": {
@@ -6633,6 +6750,15 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7162,6 +7288,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "200 GB of storage": [
+        "200 GB úložiště"
+      ],
+      "Private photo backup": [
+        "Soukromé zálohování fotek"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpečné ukládání a sdílení souborů"
       ]
     },
     "new_plans: feature highlight": {
@@ -8810,6 +8945,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Vaše předplatné se bude každý rok obnovovat za stejnou cenu."
       ]
     },
     "specialoffer: Link": {
@@ -8818,6 +8956,9 @@
       ],
       "Upgrade": [
         "Navýšit"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Navýšit za ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -10345,6 +10486,15 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "${ feature } is now active": [
+        "${ feature } je nyní aktivní"
+      ],
+      "Auto-deletion is active": [
+        "Automatické mazání je aktivní"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Nyní můžete vytvořit neomezený počet složek a štítků"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10519,6 +10669,15 @@
         "Vaše předplatné se automaticky obnoví za ${ cycle } měsíce.",
         "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců.",
         "Vaše předplatné se automaticky obnoví za ${ cycle } měsíců."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Vaše nové předplatné se automaticky obnoví za ${ cycle } měsíc.",
+        "Vaše nové předplatné se automaticky obnoví za ${ cycle } měsíce.",
+        "Vaše nové předplatné se automaticky obnoví za ${ cycle } měsíců.",
+        "Vaše nové předplatné se automaticky obnoví za ${ cycle } měsíců."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Váš naplánovaný tarif začíná ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -11001,6 +11160,60 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceMailPlus }. Službu můžete kdykoli zrušit."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceMailPlus }. Zrušit můžete kdykoli."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } nabídka končí dnes!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Získejte Drive Plus za pouhých ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Získejte Mail Plus za pouhých ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Získejte nabídku"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Poslední šance získat 80% slevu na první měsíc ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Časově omezená nabídka"
+      ],
+      "Maybe later": [
+        "Možná později"
+      ],
+      "Save 80% on your first month.": [
+        "Ušetřete 80% za první měsíc."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 dalších prémiových funkcí"
+      ],
+      "Custom email domain": [
+        "Vlastní e-mailová doména"
+      ],
+      "Email addresses": [
+        "E-mailové adresy"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Úložiště"
       ]
     }
   }

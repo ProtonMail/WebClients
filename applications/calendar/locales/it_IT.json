@@ -800,6 +800,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create folder": [
+        "Crea cartella"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Ottieni ${ planName } per ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Scegli ${ planOrAppName }"
+      ],
+      "Take a tour": [
+        "Fai un tour"
       ]
     },
     "Action subline": {
@@ -1151,6 +1163,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, ${ DARK_WEB_MONITORING_NAME } e molto altro."
       ]
     },
     "Billing cycle option": {
@@ -1270,6 +1285,21 @@
       ],
       "Continue your subscription": [
         "Continua il tuo abbonamento"
+      ],
+      "Create label": [
+        "Crea un'etichetta"
+      ],
+      "Discover and set up features": [
+        "Scopri e configura le funzionalità"
+      ],
+      "Remind me later": [
+        "Ricordamelo più tardi"
+      ],
+      "Set up other features": [
+        "Configura altre funzionalità"
+      ],
+      "Take a tour": [
+        "Fai un tour"
       ]
     },
     "Calendar access select label": {
@@ -3401,6 +3431,18 @@
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "La chiave dell'organizzazione non è decriptata"
+      ],
+      "Please select a country": [
+        "Seleziona un paese"
+      ],
+      "Please select a state": [
+        "Per favore seleziona uno stato"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5410,6 +5452,45 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Il fuso orario di sistema sembra essere cambiato a ${ timezone }. Vuoi aggiornare la tua preferenza di fuso orario?"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } protegge il tuo account con uno scrupoloso monitoraggio delle attività sospette."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Scopri le nuove funzionalità sbloccate e inizia a usarle subito!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Scopri le nuove funzionalità sbloccate con ${ planTitle } e inizia a usarle subito!"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Le email spostate in Cestino e Spam verranno cancellate automaticamente dopo 30 giorni."
+      ],
+      "Enabling auto-deletion…": [
+        "Attivazione dell'eliminazione automatica…"
+      ],
+      "Keys created": [
+        "Chiavi create"
+      ],
+      "or discover other features:": [
+        "o scopri altre funzionalità:"
+      ],
+      "Registering your subscription…": [
+        "Registrazione dell'abbonamento…"
+      ],
+      "Setting up ${ feature }…": [
+        "Configurazione di ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Configurazione del tuo nuovo indirizzo…"
+      ],
+      "User activated": [
+        "Utente attivato"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Puoi cambiarlo in qualunque momento nelle ${ settingsLink }."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Ricevi notifiche se la tua password o altri dati vengono divulgati da servizi di terze parti."
       ]
     },
     "info": {
@@ -5961,6 +6042,9 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "State": [
+        "Stato"
       ]
     },
     "Label for contact group color": {
@@ -6060,6 +6144,39 @@
       ],
       "What’s this?": [
         "Cos'è questo?"
+      ],
+      "All mail": [
+        "Tutta la posta"
+      ],
+      "Archive": [
+        "Archivio"
+      ],
+      "Drafts": [
+        "Bozze"
+      ],
+      "Inbox": [
+        "Posta in arrivo"
+      ],
+      "Scheduled": [
+        "Programmata"
+      ],
+      "Sent": [
+        "Inviata"
+      ],
+      "settings": [
+        "impostazioni"
+      ],
+      "Snooze": [
+        "Posticipa"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Importante"
+      ],
+      "Trash": [
+        "Cestino"
       ]
     },
     "Link label (optional)": {
@@ -6452,6 +6569,15 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Starting from ${ pricing }": [
+        "A partire da ${ pricing }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade to ${ planName }": [
+        "Effettua l'upgrade a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6937,6 +7063,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "200 GB of storage": [
+        "200 GB di spazio di archiviazione"
+      ],
+      "Private photo backup": [
+        "Backup foto privato"
+      ],
+      "Secure file storage and sharing": [
+        "Archiviazione e condivisione sicura dei file"
       ]
     },
     "new_plans: feature highlight": {
@@ -8481,6 +8616,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Questo abbonamento si rinnoverà automaticamente ogni 2 anni alla stessa tariffa fino all'annullamento."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Il tuo abbonamento verrà rinnovato ogni anno alla stessa tariffa."
       ]
     },
     "specialoffer: Link": {
@@ -8489,6 +8627,9 @@
       ],
       "Upgrade": [
         "Effettua l'upgrade"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Effettua l'upgrade per ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9962,6 +10103,15 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "${ feature } is now active": [
+        "${ feature } è adesso attivo"
+      ],
+      "Auto-deletion is active": [
+        "L'eliminazione automatica é attiva."
+      ],
+      "You can now create unlimited folders and labels": [
+        "Adesso puoi creare cartelle ed etichette illimitate"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10122,6 +10272,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Il tuo abbonamento si rinnoverà automaticamente tra ${ cycle } mese.",
         "Il tuo abbonamento si rinnoverà automaticamente tra ${ cycle } mesi."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Il tuo nuovo abbonamento si rinnoverà automaticamente tra ${ cycle } mese.",
+        "Il tuo nuovo abbonamento si rinnoverà automaticamente tra ${ cycle } mesi."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Il tuo piano programmato inizia il ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -10536,6 +10693,60 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceMailPlus }. Cancellazione in qualsiasi momento."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "L'offerta ${ pricingTitle } scade oggi!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Ottieni Drive Plus per solo ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Ottieni Mail Plus per solo ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Approfitta dell'offerta"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Ultima chance per avere l´80% di sconto sul tuo primo mese di ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Offerta a tempo limitato"
+      ],
+      "Maybe later": [
+        "Forse più tardi"
+      ],
+      "Save 80% on your first month.": [
+        "Salva l'80% nel tuo primo mese."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 funzionalità premium in più"
+      ],
+      "Custom email domain": [
+        "Dominio email personalizzato"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
+      ],
+      "Free": [
+        "Gratuito"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Archiviazione"
       ]
     }
   }
