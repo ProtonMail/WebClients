@@ -35,7 +35,7 @@ import { VolumeType } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
-import { FolderConntainerWrapper } from './FolderContainer';
+import { FolderContainerWrapper } from './FolderContainer';
 import NoAccessContainer from './NoAccessContainer';
 import { PhotosContainer } from './PhotosContainer';
 import { SearchContainer } from './SearchContainer';
@@ -176,7 +176,7 @@ const InitContainer = () => {
                     {photosEnabled && !photosWithAlbumsEnabled && <Route path="/photos" component={PhotosContainer} />}
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
                     <Route path="/:volumeId/:linkId" exact component={VolumeLinkContainer} />
-                    <Route path="/:shareId?/:type/:linkId?" component={FolderConntainerWrapper} />
+                    <Route path="/:shareId?/:type/:linkId?" component={FolderContainerWrapper} />
                     <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
                 </Switch>
             </DriveWindow>
