@@ -1,5 +1,3 @@
-import type { ReadableStream } from 'web-streams-polyfill';
-
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';

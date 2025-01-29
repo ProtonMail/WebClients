@@ -33,6 +33,7 @@ import { extraThunkArguments } from './redux-store/thunk';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { logPerformanceMarker } from './utils/performance';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
+import { loadStreamsPolyfill } from './utils/webSteamsPolyfill';
 import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 const bootstrapApp = async () => {
@@ -51,7 +52,11 @@ const bootstrapApp = async () => {
     bootstrap.unleashReady({ unleashClient }).catch(noop);
 
     const searchParams = new URLSearchParams(location.search);
-    await bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' });
+
+    await Promise.all([
+        loadStreamsPolyfill(),
+        bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' }),
+    ]);
 
     return { store };
 };

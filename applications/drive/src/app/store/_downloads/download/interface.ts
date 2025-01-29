@@ -1,5 +1,3 @@
-import type { ReadableStream } from 'web-streams-polyfill';
-
 import type { LinkDownload } from '../interface';
 
 export type NestedLinkDownload = LinkDownload & {
