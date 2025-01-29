@@ -1,10 +1,11 @@
-import { useOrganization } from '@proton/account/organization/hooks';
+import { organizationThunk } from '@proton/account/organization';
 import { useApi } from '@proton/components';
 import { PLANS } from '@proton/payments';
 import { type TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
+
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { type OnlineServicesKey } from './checklist/constants';
 
@@ -13,38 +14,32 @@ type SendTelemetryCallback = <TEvent extends TelemetryMailOnboardingEvents>(
     dimensionsParam: Omit<Extract<Options, { event: TEvent }>['dimensions'], 'plan' | 'variant'>
 ) => Promise<void>;
 
-export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallback, loadingDeps: boolean] => {
+export const useMailOnboardingTelemetry = (): SendTelemetryCallback => {
     const api = useApi();
-    const [organization, loadingOrg] = useOrganization();
-    const userPlan = organization?.PlanName || PLANS.FREE;
+    const dispatch = useMailDispatch();
 
-    const sendTelemetry: SendTelemetryCallback = (
+    const sendTelemetry: SendTelemetryCallback = async (
         event,
         /** No need to send variant and plan in the dimensions they're fetched at hook instanciation level */
         dimensionsParam
     ) => {
-        if (loadingOrg) {
-            captureMessage('useTelemetryOnboarding: Data is still loading, failled to send ' + event);
-            return Promise.resolve();
-        }
-
-        const dimensions = {
-            ...dimensionsParam,
-            plan: userPlan,
-            variant: 'new',
-        } as const;
+        const organization = await dispatch(organizationThunk());
 
         return sendTelemetryReport({
             api,
             measurementGroup: TelemetryMeasurementGroups.mailOnboarding,
             event,
             silence: true,
-            dimensions,
+            dimensions: {
+                ...dimensionsParam,
+                plan: organization?.PlanName || PLANS.FREE,
+                variant: 'new',
+            },
             delay: false,
         });
     };
 
-    return [sendTelemetry, loadingOrg];
+    return sendTelemetry;
 };
 
 type Options =

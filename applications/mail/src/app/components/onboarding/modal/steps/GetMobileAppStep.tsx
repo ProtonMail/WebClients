@@ -15,6 +15,15 @@ import clsx from '@proton/utils/clsx';
 
 import OnboardingContent from 'proton-mail/components/onboarding/modal/layout/OnboardingContent';
 
+import type { OnboardingStepEligibleCallback } from '../interface';
+
+export const isGetMobileAppStepEligible: OnboardingStepEligibleCallback = async () => {
+    return {
+        canDisplay: true,
+        preload: [mobileAppImg1x, mobileAppImg2x, appStoreSvg, playStoreSvg],
+    };
+};
+
 const GetMobileAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -52,7 +61,8 @@ const GetMobileAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
                 titleBlockClassName="mb-8"
             >
                 <img
-                    className={clsx('w-full', viewportWidth['<=small'] && 'self-start')}
+                    className={clsx('max-w-full w-custom', viewportWidth['<=small'] && 'self-start')}
+                    style={{ '--w-custom': '24rem' }}
                     srcSet={`${mobileAppImg1x} 1x, ${mobileAppImg2x} 2x`}
                     alt=""
                 />
