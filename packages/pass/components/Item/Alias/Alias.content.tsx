@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import spotlightBackground from '@proton/pass/assets/alias/alias-contact-spotlight.svg';
+import aliasContactSpotlightImg from '@proton/pass/assets/alias/alias-contact-spotlight.svg';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -163,9 +163,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                                     }
                                     className="mb-2"
                                     onClose={closeAndAcknowledge}
-                                    style={{
-                                        background: `url('${spotlightBackground}') no-repeat right top, radial-gradient(51.04% 51.04% at 85.42% 18.75%, #9251eb 0%, #5b53ed 100%)`,
-                                    }}
+                                    backgroundImage={aliasContactSpotlightImg}
                                 />
                             )}
                         </WithSpotlight>
