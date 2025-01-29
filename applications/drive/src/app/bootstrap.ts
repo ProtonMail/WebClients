@@ -27,6 +27,7 @@ import { getMetricsUserPlan } from './store/_user/getMetricsUserPlan';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { clearOPFS } from './utils/opfs';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
+import { loadStreamsPolyfill } from './utils/webSteamsPolyfill';
 import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
@@ -112,6 +113,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const [driveUserSettings] = await Promise.all([
             api<UserSettingsResponse>(queryUserSettings()),
             dispatch(addressesThunk()),
+            loadStreamsPolyfill(),
         ]).finally(() => {
             userSettingFeature.end();
         });
