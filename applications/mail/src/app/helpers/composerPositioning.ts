@@ -67,8 +67,8 @@ interface ComputeComposerStyleOptions {
     index: number;
     // Number of composer opened
     count: number;
-    minimized: boolean;
-    maximized: boolean;
+    isMinimized: boolean;
+    isMaximized: boolean;
     isSmallViewport: boolean;
     drawerOffset: number;
 }
@@ -82,8 +82,8 @@ export const computeComposerStyle = ({
     composerDimension,
     index,
     count,
-    minimized,
-    maximized,
+    isMinimized,
+    isMaximized,
     isSmallViewport,
     drawerOffset,
 }: ComputeComposerStyleOptions): ComputeComposerStyleReturns => {
@@ -97,9 +97,9 @@ export const computeComposerStyle = ({
 
     if (isSmallViewport) {
         style = COMPOSER_SMALL_SCREEN_STYLES;
-    } else if (minimized) {
+    } else if (isMinimized) {
         style['--h-custom'] = '2.5em';
-    } else if (maximized) {
+    } else if (isMaximized) {
         const composerWidth = windowWidth - composerDimension.gutter - composerDimension.appBarWidth;
         style['--left-custom'] = `${windowWidth - composerWidth - composerDimension.gutter}px`;
         style['--w-custom'] = `${composerWidth}px`;

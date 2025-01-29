@@ -64,8 +64,8 @@ const ComposerFrame = ({
         composerDimension,
         index,
         count,
-        minimized: isMinimized,
-        maximized: isMaximized,
+        isMinimized,
+        isMaximized,
         isSmallViewport: breakpoints.viewportWidth['<=small'],
         drawerOffset,
     });
@@ -77,8 +77,8 @@ const ComposerFrame = ({
     } = useComposerDrag({
         composerDimension,
         composerIndex: index,
-        maximized: isMinimized,
-        minimized: isMaximized,
+        isMaximized,
+        isMinimized,
         totalComposers: count,
         drawerOffset,
     });
