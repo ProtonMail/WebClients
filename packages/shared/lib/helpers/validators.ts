@@ -1,5 +1,3 @@
-import isValidDomain from 'is-valid-domain';
-
 /* eslint-disable no-useless-escape */
 export const REGEX_URL =
     /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
@@ -21,7 +19,6 @@ export const isURL = (value = '') => {
     }
     return REGEX_URL.test(value);
 };
-export const isDomain = isValidDomain;
 export const isHexColor = (value = '') => REGEX_HEX_COLOR.test(value);
 export const isNumber = (value = '') => REGEX_NUMBER.test(value);
 export const isBase64Image = (value = '') => value.startsWith('data:image') && value.includes(';base64');
