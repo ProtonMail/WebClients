@@ -1439,6 +1439,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Activate": [
+        "Актываваць"
+      ],
+      "More options": [
+        "Дадатковыя параметры"
       ]
     },
     "action": {
@@ -4567,6 +4573,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } ваша імя карыстальніка. Каб стварыць ${ emailAddress }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Ключ арганізацыі не расшыфраваны"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7997,6 +8009,12 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны месяц."
+      ],
+      "Keys created": [
+        "Ключы створаны"
+      ],
+      "User activated": [
+        "Карыстальнік актываваны"
       ]
     },
     "info": {
@@ -9500,6 +9518,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade": [
+        "Палепшыць"
       ]
     },
     "new_plans: action": {
@@ -14551,6 +14572,11 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Бачнае імя"
       ]
     }
   }

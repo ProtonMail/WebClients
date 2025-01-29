@@ -1430,6 +1430,21 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "About hide-my-email aliases": [
+        "О псевдонимах hide-my-email"
+      ],
+      "Activate": [
+        "Активировать"
+      ],
+      "Export selection as .vcf": [
+        "Экспортировать выбор как .vcf"
+      ],
+      "More actions": [
+        "Больше действий"
+      ],
+      "More options": [
+        "Дополнительные параметры"
       ]
     },
     "action": {
@@ -3767,6 +3782,12 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "От: ${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } новое сообщение",
+        "${ notificationsToShow.length } новых сообщения",
+        "${ notificationsToShow.length } новых сообщений",
+        "${ notificationsToShow.length } новых сообщений"
       ]
     },
     "Desktop notification title": {
@@ -4554,6 +4575,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Ключ организации не расшифрован"
+      ],
+      "Please select a country": [
+        "Пожалуйста, выберите страну"
+      ],
+      "Please select a state": [
+        "Пожалуйста, выберите штат"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7875,6 +7908,42 @@
       ],
       "Your private writing assistant": [
         "Ваш конфиденциальный помощник по написанию"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
+        "Создать безопасное облако для ${ value } участника"
+      ],
+      "Enabling auto-deletion…": [
+        "Включение автоудаления…"
+      ],
+      "Keys created": [
+        "Ключи созданы"
+      ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
+      ],
+      "Registering your subscription…": [
+        "Регистрация вашей подписки…"
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-платежи сейчас недоступны. Пожалуйста, попробуйте позже."
+      ],
+      "Setting up your new address…": [
+        "Настройка вашего нового адреса…"
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Начните делиться им с контактами и использовать его для онлайн-сервисов."
+      ],
+      "Switch to": [
+        "Переключиться на"
+      ],
+      "User activated": [
+        "Пользователь активирован"
       ]
     },
     "info": {
@@ -8713,6 +8782,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Remove metadata": [
+        "Удалить метаданные"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9375,6 +9447,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Улучшить до ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade": [
+        "Улучшить"
       ]
     },
     "new_plans: action": {
@@ -12293,7 +12368,7 @@
         "Пользователи не смогут отправлять письма"
       ],
       "Users won’t be able to upload files on their devices": [
-        "Пользователи не смогут выгружать файлы на своих устройствах"
+        "Пользователи не смогут загружать файлы со своих устройств"
       ],
       "Version history": [
         "История версий"
@@ -14405,6 +14480,60 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Непредвиденная ошибка"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часовой пояс календаря не поддерживается"
+      ],
+      "Edited event not supported": [
+        "Отредактированное событие не поддерживается"
+      ],
+      "End time out of bounds": [
+        "Время окончания находится вне границ"
+      ],
+      "Event validation failed": [
+        "Проверка события не удалась"
+      ],
+      "Floating times not supported": [
+        "Плавающие значения времени не поддерживаются"
+      ],
+      "Malformed all-day event": [
+        "Неправильный формат события на весь день"
+      ],
+      "Malformed end time": [
+        "Неправильный формат времени окончания"
+      ],
+      "Malformed recurring event": [
+        "Неправильное повторяющееся событие"
+      ],
+      "Malformed start time": [
+        "Неправильный формат времени начала"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Допускается только григорианский календарь"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторяющееся событие не имеет повторений"
+      ],
+      "Recurring rule not supported": [
+        "Правило для повторения не поддерживается"
+      ],
+      "Start time out of bounds": [
+        "Время начала находится вне границ"
+      ],
+      "Time zone not supported": [
+        "Часовой пояс не поддерживается"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Отображаемое имя"
       ]
     }
   }

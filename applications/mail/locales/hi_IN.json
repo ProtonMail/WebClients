@@ -1250,6 +1250,12 @@
       ],
       "Zoom out": [
         "ज़ूम कम करें"
+      ],
+      "Activate": [
+        "सक्रिय"
+      ],
+      "More options": [
+        "अधिक विकल्प"
       ]
     },
     "action": {
@@ -3872,6 +3878,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "आपकी खोज का मिलान बहुत अधिक परिणामों से हुआ. कृपया अपनी खोज सीमित करें और पुन: प्रयास करें।"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } यूजर नाम है। ${ emailAddress } बनाने के लिए, कृपया सेटिंग्स > संदेश और रचना > लघु डोमेन (pm.me) पर जाएं"
+      ],
+      "Organization key is not decrypted": [
+        "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6353,6 +6365,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "आपके फ़ोन नंबर का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
+      ],
+      "Keys created": [
+        "कुंजी बनाई गई"
+      ],
+      "User activated": [
+        "उपयोगकर्ता सक्रिय किया गया"
       ]
     },
     "info": {
@@ -7706,6 +7724,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "${ MAIL_SHORT_APP_NAME } Plus पे अपग्रेड करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
       ]
     },
     "new_plans: action": {
@@ -11030,6 +11051,11 @@
       ],
       "Yearly, ${ untilString }": [
         "वार्षिक, ${ untilString }"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "प्रदर्शित नाम"
       ]
     }
   }

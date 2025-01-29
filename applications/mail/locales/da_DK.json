@@ -1420,6 +1420,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Activate": [
+        "Aktivér"
+      ],
+      "More options": [
+        "Flere muligheder"
       ]
     },
     "action": {
@@ -1916,6 +1922,9 @@
       ],
       "Continue your subscription": [
         "Fortsæt dit abonnement"
+      ],
+      "Next": [
+        "Næste"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4482,6 +4491,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Organisationsnøgle er ikke dekrypteret"
+      ],
+      "Please select a country": [
+        "Vælg venligst et land"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7619,6 +7637,54 @@
       ],
       "Your private writing assistant": [
         "Din private skriveassistent"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } beskytter din konto med dedikeret overvågning af mistænkelig aktivitet."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Fjern automatisk e-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden."
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden, slettes automatisk."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
+      ],
+      "Keys created": [
+        "Nøgler oprettet"
+      ],
+      "Registering your subscription…": [
+        "Registrerer dit abonnement…"
+      ],
+      "Setting up ${ feature }…": [
+        "Konfigurerer ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Konfigurerer din nye adresse…"
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "For at fjerne restriktioner, kan du opgradere til et betalt abonnement"
+      ],
+      "User activated": [
+        "Bruger aktiveret"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Vi har abonnementer, der er designet specifikt til brugere som dig, der har brug for mere end én e-mailadresse."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Du kan ændre dette når som helst i ${ settingsLink }."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Kontakt venligst support, hvis du har brug for en abonnementsændring."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
       ]
     },
     "info": {
@@ -9091,6 +9157,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade": [
+        "Opgradér"
       ]
     },
     "new_plans: action": {
@@ -13705,6 +13774,19 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Gratis"
+      ],
+      "Plus": [
+        "Plus"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Vist navn"
       ]
     }
   }

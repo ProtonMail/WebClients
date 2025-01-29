@@ -1327,6 +1327,12 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Activate": [
+        "Aktiválás"
+      ],
+      "More options": [
+        "További lehetőségek"
       ]
     },
     "action": {
@@ -4184,6 +4190,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Az Ön felhasználóneve ${ user.Name }. A ${ emailAddress } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
+      ],
+      "Organization key is not decrypted": [
+        "A szervezeti kulcs nincs visszafejtve"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7109,6 +7121,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "Keys created": [
+        "Kulcsok létrehozva"
+      ],
+      "User activated": [
+        "Felhasználó aktiválva"
       ]
     },
     "info": {
@@ -8527,6 +8545,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Előfizetés a ${ MAIL_SHORT_APP_NAME } Pluszra"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: action": {
@@ -12100,6 +12121,9 @@
     "vpn_2step: feature": {
       "No ads": [
         "Nincsenek hirdetések"
+      ],
+      "Advanced VPN customizations": [
+        "Haladó VPN beállítások"
       ]
     },
     "wallet_signup_2024: Info": {
@@ -12480,6 +12504,11 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Megjelenített név"
       ]
     }
   }
