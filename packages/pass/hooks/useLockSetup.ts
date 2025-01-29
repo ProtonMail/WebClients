@@ -57,7 +57,7 @@ interface LockSetup {
 }
 
 export const useLockSetup = (): LockSetup => {
-    const { getBiometricsKey } = usePassCore();
+    const { getBiometricsKey, supportsBiometrics } = usePassCore();
     const { createNotification } = useNotifications();
 
     const confirmPin = usePinUnlock();
@@ -262,13 +262,8 @@ export const useLockSetup = (): LockSetup => {
 
     useEffect(() => {
         (async () => {
-            if (EXTENSION_BUILD || currentLockMode === LockMode.BIOMETRICS) return;
-            /** TODO(@djankovic) Move to core, add more checks for PRF/webauthn compat! */
-            const canCheckPresence = await (
-                DESKTOP_BUILD
-                    ? window.ctxBridge!.canCheckPresence
-                    : PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable
-            )();
+            if (currentLockMode === LockMode.BIOMETRICS) return;
+            const canCheckPresence = (await supportsBiometrics?.()) ?? false;
             setBiometricsEnabled(canCheckPresence);
         })().catch(noop);
     }, [currentLockMode]);
