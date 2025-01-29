@@ -84,6 +84,8 @@ export type PassCoreContextValue = {
     setCurrentTabUrl?: (url: ParsedUrl) => void;
     /** Writes text to the clipboard */
     writeToClipboard: (text: string) => Promise<void>;
+    /** Checks whether biometrics functionalities can be used */
+    supportsBiometrics?: () => Promise<boolean>;
     /** Gets the unlock key via biometrics */
     getBiometricsKey?: (authStore: AuthStore) => Promise<MaybeNull<string>>;
     /** Generates the unlock key for biometrics */
