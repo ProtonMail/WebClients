@@ -10,6 +10,8 @@
  * Performance is optimized by freeing resources in inactive tabs through complete client
  * destruction on tab hiding. A continuous activity probe ensures connection health with the
  * service worker through periodic pings for long-running tabs. */
+import 'proton-pass-extension/lib/utils/polyfills';
+
 import { createActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
