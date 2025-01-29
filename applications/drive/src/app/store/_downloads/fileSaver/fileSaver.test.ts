@@ -1,4 +1,4 @@
-import { ReadableStream, WritableStream } from 'web-streams-polyfill';
+import 'web-streams-polyfill/polyfill/es5';
 
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';

@@ -1,5 +1,4 @@
 import { waitFor } from '@testing-library/react';
-import { ReadableStream } from 'web-streams-polyfill';
 
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import type { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
