@@ -15,7 +15,6 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { MINUTE, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import EmptyViewContainer from '../../../containers/app/EmptyViewContainer';
-import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import SharedServersTypeButton from './SharedServersTypeButton';
 import { useSharedServers } from './useSharedServers';
@@ -55,13 +54,13 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }: SharedServersSectionProp
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph>
+            <div className="mb-14 flex items-center gap-1">
                 {getBoldFormattedText(
                     c('Info')
                         .t`Allow users to connect to secure shared servers from the **Countries** section of the ${VPN_APP_NAME} app.`
                 )}
                 <Href href={''} className="ml-1">{c('Link').t`Learn more`}</Href>
-            </SettingsParagraph>
+            </div>
 
             <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full mt-8">
                 <SharedServersTypeButton
