@@ -1,3 +1,4 @@
+import type { Album, DecryptedAlbum } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import type { DecryptedLink } from '../_links/interface';
 
 export interface Photo {
@@ -22,5 +23,19 @@ export type PhotoLink =
               photo: Photo;
           };
       };
+
+export type AlbumLink =
+    | DecryptedAlbum
+    | {
+          // These properties are always present, even on incomplete links
+          linkId: string;
+          rootShareId: string;
+          parentLinkId: string;
+          isFile: boolean;
+          activeRevision: {
+              album: Album;
+          };
+      };
+
 export type PhotoGroup = string;
 export type PhotoGridItem = PhotoLink | PhotoGroup;
