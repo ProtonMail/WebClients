@@ -1,6 +1,5 @@
 import { sha1 } from '@noble/hashes/sha1';
 import { c } from 'ttag';
-import type { ReadableStream } from 'web-streams-polyfill';
 
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
