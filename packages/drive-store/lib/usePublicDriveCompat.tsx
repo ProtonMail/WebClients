@@ -2,6 +2,7 @@ import { createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
 
 import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useGetPublicKeysForEmail } from '../store';
 import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
@@ -36,6 +37,11 @@ export interface PublicDriveCompat {
      * The url password for the public link.
      */
     urlPassword: string;
+
+    /**
+     * Returns true when the shared url is a folder rather than the current document only.
+     */
+    isSharedUrlAFolder: boolean | undefined;
 
     /**
      * Whether or not a custom password is needed.
@@ -110,10 +116,11 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         linkId,
     } = usePublicDocsToken();
 
-    const { getNode, getNodeContentKey, didCompleteInitialSetup, getAddressKeyInfo, permissions } = usePublicNode({
-        isDocsTokenReady,
-        linkId,
-    });
+    const { sharedUrlInfo, getNode, getNodeContentKey, didCompleteInitialSetup, getAddressKeyInfo, permissions } =
+        usePublicNode({
+            isDocsTokenReady,
+            linkId,
+        });
     const { openDocumentWindow } = useOpenDocument();
 
     const redirectToAuthedDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open', window: window });
@@ -138,6 +145,7 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         submitPassword,
         token,
         urlPassword,
+        isSharedUrlAFolder: sharedUrlInfo?.linkType === LinkType.FOLDER,
         isReady: isDocsTokenReady && didCompleteInitialSetup,
         isError,
         error,

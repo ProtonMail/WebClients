@@ -52,11 +52,14 @@ export const HeaderPublicOptions = ({
     editorController,
     documentState,
   })
-  const { user, openParams } = surePublicContext
+  const { user, openParams, compat } = surePublicContext
+  const { isSharedUrlAFolder } = compat
 
   const saveForLater = useCallback(async () => {
     void addBookmark()
   }, [addBookmark])
+
+  const canShowSaveForLaterOption = !isLoading && isSharedUrlAFolder === false
 
   /**
    * Handle coming back from redirection and perform the appropriate action, such as bookmarking or making a copy.
@@ -139,8 +142,8 @@ export const HeaderPublicOptions = ({
             <span>{c('Action').t`Create a copy`}</span>
           </Button>
         </Spotlight>
-        <SimpleDropdown data-testid="public-options-dropdown-button">
-          {!isLoading && (
+        {canShowSaveForLaterOption && (
+          <SimpleDropdown data-testid="public-options-dropdown-button">
             <Spotlight
               show={showSpotlight}
               content={c('Spotlight')
@@ -170,8 +173,8 @@ export const HeaderPublicOptions = ({
                 </ButtonLike>
               </Tooltip>
             </Spotlight>
-          )}
-        </SimpleDropdown>
+          </SimpleDropdown>
+        )}
       </ButtonGroup>
 
       {!user && (
@@ -215,10 +218,12 @@ export const HeaderPublicOptions = ({
         originalPlacement="bottom-start"
       >
         <DropdownMenu>
-          <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleSaveToDriveClick}>
-            <Icon name="folder-arrow-in" />
-            <span>{isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}</span>
-          </DropdownMenuButton>
+          {canShowSaveForLaterOption && (
+            <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleSaveToDriveClick}>
+              <Icon name="folder-arrow-in" />
+              <span>{isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}</span>
+            </DropdownMenuButton>
+          )}
           <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleMakeCopyClick}>
             <Icon name="squares" />
             <span>{c('Action').t`Create a copy`}</span>
