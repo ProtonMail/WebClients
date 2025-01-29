@@ -51,6 +51,7 @@ export function DrivePublicContextMenu({
 
     const showPreviewButton = hasPreviewAvailable;
     const showOpenInDocsButton = isOnlyOneFileItem && isDocument && openInDocs;
+    const showDownloadButton = isDocument ? isOnlyOneFileItem && openInDocs : true;
 
     return (
         <>
@@ -65,10 +66,17 @@ export function DrivePublicContextMenu({
                     />
                 )}
                 {(showPreviewButton || showOpenInDocsButton) && <ContextSeparator />}
-                {isDownloadScanEnabled && (
-                    <DownloadButton selectedBrowserItems={selectedLinks} close={close} virusScan />
+                {isDownloadScanEnabled && showDownloadButton && (
+                    <DownloadButton
+                        selectedBrowserItems={selectedLinks}
+                        openInDocs={openInDocs}
+                        close={close}
+                        virusScan
+                    />
                 )}
-                <DownloadButton selectedBrowserItems={selectedLinks} close={close} />
+                {showDownloadButton && (
+                    <DownloadButton selectedBrowserItems={selectedLinks} openInDocs={openInDocs} close={close} />
+                )}
                 {!viewOnly && isOnlyOneItem && (
                     <>
                         <ContextSeparator />

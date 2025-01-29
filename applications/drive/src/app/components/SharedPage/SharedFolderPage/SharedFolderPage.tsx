@@ -274,6 +274,7 @@ export default function SharedFolder({
                     hideSaveToDrive={hideSaveToDrive}
                     className="mt-3 mb-8"
                     isFolderView
+                    openInDocs={openInDocs}
                 />
                 {shouldRenderPreviewContainer && (
                     <SharedPagePreviewContainer
