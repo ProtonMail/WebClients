@@ -29,6 +29,20 @@ export const queryAlbums = (
     },
 });
 
+export const queryAlbumPhotos = (
+    volumeId: string,
+    albumLinkId: string,
+    params?: {
+        AnchorID?: string;
+    }
+) => ({
+    method: 'get',
+    url: `drive/photos/volumes/${volumeId}/albums/${albumLinkId}/children`,
+    params: {
+        ...params,
+    },
+});
+
 export const queryDeletePhotosShare = (volumeId: string, shareId: string) => ({
     method: 'delete',
     url: `drive/volumes/${volumeId}/photos/share/${shareId}`,

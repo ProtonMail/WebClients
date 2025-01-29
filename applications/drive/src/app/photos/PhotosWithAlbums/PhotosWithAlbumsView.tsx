@@ -1,9 +1,11 @@
 import type { FC } from 'react';
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { Loader, NavigationControl, TopBanner, useAppTitle, useModalStateObject } from '@proton/components';
+import { Loader, NavigationControl, TopBanner, useAppTitle, useConfig, useModalStateObject } from '@proton/components';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
 
@@ -12,6 +14,7 @@ import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
+import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { PhotoLink } from '../../store';
@@ -25,16 +28,40 @@ import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 // import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
-import { PhotosWithAlbumsToolbar, ToolbarLeftActions } from './toolbar/PhotosWithAlbumsToolbar';
+import {
+    PhotosWithAlbumsToolbar,
+    ToolbarLeftActionsAlbumsGallery,
+    ToolbarLeftActionsGallery,
+} from './toolbar/PhotosWithAlbumsToolbar';
+
+const useAppTitleUpdate = () => {
+    const { APP_NAME } = useConfig();
+
+    const memoedTitle = useCallback((title?: string, maybeAppName?: string) => {
+        const appName = maybeAppName || getAppName(APP_NAME);
+        return [title, appName].filter(Boolean).join(' - ');
+    }, []);
+
+    return (title?: string, maybeAppName?: string) => {
+        const titleUpdate = memoedTitle(title, maybeAppName);
+        if (titleUpdate === undefined) {
+            return;
+        }
+        document.title = titleUpdate;
+    };
+};
 
 /*
     TODO:
     - Split file into multiple components
 */
 
-export const PhotosView: FC<void> = () => {
+export const PhotosWithAlbumsView: FC = () => {
     useAppTitle(c('Title').t`Photos`);
-    const [tabSelection, setTabSelection] = useState<'albums' | 'gallery'>('gallery');
+    const updateTitle = useAppTitleUpdate();
+    let { albumLinkId } = useParams<{ albumLinkId?: string }>();
+    // TODO: should probably be an enum
+    const [tabSelection, setTabSelection] = useState<'albums' | 'gallery' | 'albums-gallery'>('gallery');
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const {
         shareId,
@@ -46,7 +73,11 @@ export const PhotosView: FC<void> = () => {
         photoLinkIdToIndexMap,
         photoLinkIds,
         requestDownload,
-        refreshAlbums,
+        albumPhotos,
+        // albumPhotosLinkIdToIndexMap,
+        // albumPhotosLinkIds,
+        // refreshAlbums,
+        // refreshAlbumPhotos,
     } = usePhotosWithAlbumsView();
 
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
@@ -61,6 +92,8 @@ export const PhotosView: FC<void> = () => {
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
+    const { navigateToAlbum, navigateToPhotos } = useNavigate();
+
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
             incrementItemRenderedCounter();
@@ -100,23 +133,47 @@ export const PhotosView: FC<void> = () => {
         [setPreviewLinkId, photoLinkIds]
     );
 
-    const onCreateAlbum = async (name: string) => {
-        if (!shareId || !linkId) {
-            return;
-        }
-        try {
-            const abortSignal = new AbortController().signal;
-            await createAlbum(abortSignal, shareId, linkId, name);
-            refreshAlbums();
-        } catch (e) {
-            console.error('album creation failed', e);
-        }
-    };
+    const onCreateAlbum = useCallback(
+        async (name: string) => {
+            if (!shareId || !linkId) {
+                return;
+            }
+            try {
+                const abortSignal = new AbortController().signal;
+                const albumLinkId = await createAlbum(abortSignal, shareId, linkId, name);
+                navigateToAlbum(albumLinkId);
+            } catch (e) {
+                console.error('album creation failed', e);
+            }
+        },
+        [shareId, linkId, createAlbum, navigateToAlbum]
+    );
 
     const isPhotosEmpty = photos.length === 0;
     const isAlbumsEmpty = albums.length === 0;
+    const isAlbumPhotosEmpty = albumPhotos.length === 0;
+    const album = albumLinkId ? albums.find((album) => album.linkId === albumLinkId) : undefined;
 
-    if (isPhotosLoading && isPhotosEmpty && isAlbumsEmpty) {
+    useEffect(() => {
+        if (albumLinkId && tabSelection !== 'albums-gallery') {
+            setTabSelection('albums-gallery');
+        }
+        if (!albumLinkId && tabSelection === 'albums-gallery') {
+            setTabSelection('albums');
+        }
+
+        if (tabSelection === 'gallery') {
+            updateTitle(c('Title').t`Photos`);
+        }
+        if (tabSelection === 'albums') {
+            updateTitle(`Album`);
+        }
+        if (tabSelection === 'albums-gallery' && album) {
+            updateTitle(`Album > ${album.name}`);
+        }
+    }, [albumLinkId, tabSelection, album, updateTitle]);
+
+    if (isPhotosLoading && isPhotosEmpty && isAlbumsEmpty && isAlbumPhotosEmpty) {
         return <Loader />;
     }
 
@@ -175,7 +232,7 @@ export const PhotosView: FC<void> = () => {
                 disabled={isUploadDisabled || tabSelection === 'albums'}
                 isForPhotos
                 shareId={shareId}
-                linkId={linkId}
+                linkId={albumLinkId || linkId}
                 className="flex flex-column flex-nowrap flex-1"
             >
                 <ToolbarRow
@@ -197,14 +254,26 @@ export const PhotosView: FC<void> = () => {
                                 </span>
                             )}
 
-                            {selectedCount === 0 && (
-                                <ToolbarLeftActions
+                            {selectedCount === 0 && (tabSelection === 'gallery' || tabSelection === 'albums') && (
+                                <ToolbarLeftActionsGallery
                                     onGalleryClick={() => {
                                         setTabSelection('gallery');
                                     }}
                                     onAlbumsClick={() => {
                                         setTabSelection('albums');
                                     }}
+                                    isLoading={isPhotosLoading}
+                                    selection={tabSelection}
+                                />
+                            )}
+
+                            {selectedCount === 0 && album && tabSelection === 'albums-gallery' && (
+                                <ToolbarLeftActionsAlbumsGallery
+                                    onAlbumsClick={() => {
+                                        setTabSelection('albums');
+                                        navigateToPhotos();
+                                    }}
+                                    name={album.name}
                                     isLoading={isPhotosLoading}
                                 />
                             )}
@@ -213,7 +282,7 @@ export const PhotosView: FC<void> = () => {
                     toolbar={
                         <PhotosWithAlbumsToolbar
                             shareId={shareId}
-                            linkId={linkId}
+                            linkId={albumLinkId || linkId}
                             selectedItems={selectedItems}
                             onPreview={handleToolbarPreview}
                             requestDownload={requestDownload}
@@ -263,17 +332,50 @@ export const PhotosView: FC<void> = () => {
                             </>
                         ) : (
                             <AlbumsGrid
-                                data={albums} // TODO: Get Albums
+                                data={albums}
                                 onItemRender={handleItemRender}
                                 onItemRenderLoadedLink={handleItemRenderLoadedLink}
                                 isLoading={false} // TODO: Get Albums loading status
+                                onItemClick={(linkId) => {
+                                    navigateToAlbum(linkId);
+                                }}
+                            />
+                        )}
+                    </>
+                )}
+
+                {/**
+                 * Inside Albums View
+                 * TODO: Split into separate component
+                 */}
+                {tabSelection === 'albums-gallery' && (
+                    <>
+                        {isAlbumPhotosEmpty ? (
+                            <>
+                                {/** TODO: Empty Albums View */}
+                                <span>Empty Albums View</span>
+                            </>
+                        ) : (
+                            <PhotosGrid
+                                data={albumPhotos}
+                                onItemRender={handleItemRender}
+                                onItemRenderLoadedLink={handleItemRenderLoadedLink}
+                                isLoading={isPhotosLoading} // TODO: dedicated album photos status
                                 onItemClick={setPreviewLinkId}
+                                hasSelection={selectedCount > 0}
+                                onSelectChange={(i, isSelected) =>
+                                    handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
+                                }
+                                isGroupSelected={isGroupSelected}
+                                isItemSelected={isItemSelected}
                             />
                         )}
                     </>
                 )}
             </UploadDragDrop>
-            <CreateAlbumModal createAlbumModal={createAlbumModal} createAlbum={onCreateAlbum} />
+            {tabSelection === 'albums' && (
+                <CreateAlbumModal createAlbumModal={createAlbumModal} createAlbum={onCreateAlbum} />
+            )}
         </>
     );
 };

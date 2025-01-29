@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC } from 'react';
 
 import { Button, Vr } from '@proton/atoms';
 import {
@@ -42,10 +42,11 @@ const VideoDropdownButton = () => {
         </>
     );
 };
-interface ToolbarLeftActionsProps {
+interface ToolbarLeftActionsGalleryProps {
     isLoading: boolean;
     onGalleryClick: () => void;
     onAlbumsClick: () => void;
+    selection: 'gallery' | 'albums';
 }
 
 interface TabOption {
@@ -54,9 +55,12 @@ interface TabOption {
     onClick: () => void;
 }
 
-export const ToolbarLeftActions = ({ isLoading, onGalleryClick, onAlbumsClick }: ToolbarLeftActionsProps) => {
-    const [selection, setSelection] = useState<'gallery' | 'albums'>('gallery');
-
+export const ToolbarLeftActionsGallery = ({
+    isLoading,
+    onGalleryClick,
+    onAlbumsClick,
+    selection,
+}: ToolbarLeftActionsGalleryProps) => {
     const tabs: TabOption[] = [
         {
             id: 'gallery',
@@ -71,7 +75,6 @@ export const ToolbarLeftActions = ({ isLoading, onGalleryClick, onAlbumsClick }:
     ];
 
     const handleClick = (tab: TabOption) => {
-        setSelection(tab.id);
         tab.onClick();
     };
 
@@ -96,6 +99,33 @@ export const ToolbarLeftActions = ({ isLoading, onGalleryClick, onAlbumsClick }:
                 </Button>
             ))}
         </ButtonGroup>
+    );
+};
+
+interface ToolbarLeftActionsAlbumsGalleryProps {
+    isLoading: boolean;
+    onAlbumsClick: () => void;
+    name: string;
+}
+
+export const ToolbarLeftActionsAlbumsGallery = ({
+    isLoading,
+    onAlbumsClick,
+    name,
+}: ToolbarLeftActionsAlbumsGalleryProps) => {
+    const getButtonStyles = () => ({
+        loading: isLoading,
+        selected: false,
+    });
+
+    return (
+        <>
+            <Button color="weak" {...getButtonStyles()} onClick={onAlbumsClick}>
+                Albums
+            </Button>
+            <Icon name="chevron-right" />
+            <span>{name}</span>
+        </>
     );
 };
 
@@ -151,7 +181,7 @@ interface PhotosWithAlbumToolbarProps {
     onPreview: () => void;
     requestDownload: (linkIds: string[]) => Promise<void>;
     uploadDisabled: boolean;
-    tabSelection: 'albums' | 'gallery';
+    tabSelection: 'albums' | 'gallery' | 'albums-gallery';
     createAlbumModal: ModalStateReturnObj;
 }
 
@@ -175,6 +205,11 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                     <ToolbarRightActionsGallery uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
                 )}
                 {tabSelection === 'albums' && <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />}
+
+                {tabSelection === 'albums-gallery' && (
+                    // TODO: Album Gallery dedicated toolbar
+                    <ToolbarRightActionsGallery uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
+                )}
 
                 {/* Some photos are selected */}
                 {hasSelection && (
