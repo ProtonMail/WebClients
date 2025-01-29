@@ -26,7 +26,7 @@ import { useShareBackgroundActions } from '../store/_views/useShareBackgroundAct
 import { VolumesProvider, VolumeType } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getTokenFromSearchParams } from '../utils/url/token';
-import { PhotosView } from './PhotosWithAlbums/PhotosView';
+import { PhotosWithAlbumsView } from './PhotosWithAlbums/PhotosWithAlbumsView';
 import { DriveEventManagerProvider } from '../store/_events';
 import { LinksProvider } from '../store/_links';
 import { DevicesProvider } from '../store/_devices';
@@ -39,7 +39,8 @@ import { PhotosWithAlbumsProvider } from './PhotosStore/PhotosWithAlbumsProvider
 const PhotosWithAlbumsContainer: FC<RouteComponentProps> = ({ match }) => {
     return (
         <Switch>
-            <Route path={match.url} exact component={PhotosView} />
+            <Route path={match.url} exact component={PhotosWithAlbumsView} />
+            <Route path={`${match.url}/:albumLinkId`} exact component={PhotosWithAlbumsView} />
             <Redirect to="/photos" />
         </Switch>
     );
