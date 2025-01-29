@@ -1,11 +1,17 @@
 import type { FC, ReactNode } from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-import { queryAlbums, queryDeletePhotosShare, queryPhotos } from '@proton/shared/lib/api/drive/photos';
+import {
+    queryAlbumPhotos,
+    queryAlbums,
+    queryDeletePhotosShare,
+    queryPhotos,
+} from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { type Photo, type ShareWithKey, useDefaultShare } from '../../store';
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
+import { type DecryptedLink, useLink } from '../../store/_links';
 import { useShare } from '../../store/_shares';
 import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
 
@@ -19,6 +25,11 @@ export interface Album {
     ShareID: string;
 }
 
+export interface DecryptedAlbum extends DecryptedLink {
+    cover?: DecryptedLink;
+    photoCount: number;
+}
+
 /**
  *
  * TODO: Migrate to Zustand
@@ -30,8 +41,10 @@ export const PhotosWithAlbumsContext = createContext<{
     isPhotosLoading: boolean;
     isAlbumsLoading: boolean;
     photos: Photo[];
-    albums: Album[];
+    albumPhotos: Photo[];
+    albums: DecryptedAlbum[];
     loadPhotos: (abortSignal: AbortSignal, volumeId: string) => void;
+    loadAlbumPhotos: (abortSignal: AbortSignal, volumeId: string, albumLinkId: string) => void;
     loadAlbums: (abortSignal: AbortSignal, volumeId: string) => void;
     removePhotosFromCache: (linkIds: string[]) => void;
     deletePhotosShare: (volumeId: string, shareId: string) => Promise<void>;
@@ -45,8 +58,10 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [albumsLoading, setIsAlbumsLoading] = useState<boolean>(true);
     const [photos, setPhotos] = useState<Photo[]>([]);
-    const [albums, setAlbums] = useState<Album[]>([]);
+    const [albums, setAlbums] = useState<DecryptedAlbum[]>([]);
+    const [albumPhotos, setAlbumPhotos] = useState<Photo[]>([]);
     const { getShareWithKey } = useShare();
+    const { getLink } = useLink();
 
     useEffect(() => {
         const signal = new AbortController().signal;
@@ -85,6 +100,37 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         void photoCall();
     };
 
+    const loadAlbumPhotos = useCallback(
+        async (abortSignal: AbortSignal, volumeId: string, albumLinkId: string) => {
+            const albumPhotosCall = async (anchorID?: string) => {
+                const { Photos, Code, AnchorID, More } = await request<{
+                    Photos: PhotoPayload[];
+                    Code: number;
+                    AnchorID: string;
+                    More: boolean;
+                }>(
+                    queryAlbumPhotos(volumeId, albumLinkId, {
+                        AnchorID: anchorID,
+                    }),
+                    abortSignal
+                );
+                if (Code === 1000) {
+                    const photosData = Photos.map(photoPayloadToPhotos);
+                    setAlbumPhotos((prevPhotos) => [...prevPhotos, ...photosData]);
+                    // there is a limit of 500 albums so should actually never happen technically
+                    if (More) {
+                        void albumPhotosCall(AnchorID);
+                    }
+                }
+                setIsPhotosLoading(false);
+            };
+
+            setIsAlbumsLoading(true);
+            void albumPhotosCall();
+        },
+        [request]
+    );
+
     const loadAlbums = async (abortSignal: AbortSignal, volumeId: string) => {
         const albumCall = async (anchorID?: string) => {
             const { Albums, Code, AnchorID, More } = await request<{
@@ -99,7 +145,20 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 abortSignal
             );
             if (Code === 1000) {
-                setAlbums(() => [...Albums]);
+                const decryptedAlbums = await Promise.all(
+                    Albums.map(async (album) => {
+                        const link = await getLink(abortSignal, volumeId, album.LinkID);
+                        const cover = album.CoverLinkID
+                            ? await getLink(abortSignal, volumeId, album.CoverLinkID)
+                            : undefined;
+                        return {
+                            ...link,
+                            cover: cover,
+                            photoCount: album.PhotoCount,
+                        };
+                    })
+                );
+                setAlbums(() => [...decryptedAlbums]);
                 // there is a limit of 500 albums so should actually never happen technically
                 if (More) {
                     void albumCall(AnchorID);
@@ -132,6 +191,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 isAlbumsLoading: albumsLoading,
                 photos,
                 albums,
+                albumPhotos,
+                loadAlbumPhotos,
                 loadAlbums,
                 loadPhotos,
                 removePhotosFromCache,
