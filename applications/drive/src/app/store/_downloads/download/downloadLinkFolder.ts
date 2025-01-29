@@ -187,7 +187,8 @@ export class FolderTreeLoader {
             parentLinkIds,
             parent,
             onSignatureIssue,
-            onProgress
+            onProgress,
+            onContainsDocument
         );
     }
 
