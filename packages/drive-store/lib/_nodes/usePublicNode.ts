@@ -8,6 +8,7 @@ import type { LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/l
 import { linkMetaToEncryptedLink, usePublicSession } from '../../store/_api';
 import { type DecryptedLink, useLink, usePublicLinksListing } from '../../store/_links';
 import { useLinksListingHelpers } from '../../store/_links/useLinksListing/useLinksListingHelpers';
+import type { SharedUrlInfo } from '../../store/_shares';
 import { usePublicShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -25,6 +26,7 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
 
     const cache = useRef(new Map<string, DecryptedLink>());
     const [rootLink, setRootLink] = useState<DecryptedLink>();
+    const [sharedUrlInfo, setSharedUrlInfo] = useState<SharedUrlInfo>();
     const [token, setToken] = useState<string>('');
     const [permissions, setPermissions] = useState<SHARE_URL_PERMISSIONS>();
     const didQueueLoadPublicShare = useRef(false);
@@ -94,6 +96,7 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
                 setRootLink(link);
                 setToken(sharedUrlInfo.token);
                 setPermissions(sharedUrlInfo.permissions);
+                setSharedUrlInfo(sharedUrlInfo);
             })
             .catch(console.error);
     }, [loadPublicShare, rootLink, isDocsTokenReady, abortSignal]);
@@ -186,6 +189,7 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
     };
 
     return {
+        sharedUrlInfo,
         getNode,
         getNodeContentKey,
         permissions,
