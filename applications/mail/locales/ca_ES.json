@@ -1434,7 +1434,7 @@
         "Activa"
       ],
       "Auto-delete spam and trash": [
-        "Supressió automàtica del correu brossa i de la paperera"
+        "Neteja automàtica del correu brossa i de la paperera"
       ],
       "Download the desktop app": [
         "Descarregueu l'aplicació d'escriptori"
@@ -1452,7 +1452,7 @@
         "Obtingueu l'extensió del navegador"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
-        "Aneu a ${ DRIVE_APP_NAME }"
+        "Ves a ${ DRIVE_APP_NAME }"
       ],
       "Invite members": [
         "Convideu membres"
@@ -1973,7 +1973,7 @@
         "Continueu amb la vostra subscripció"
       ],
       "Create label": [
-        "Creu una etiqueta"
+        "Crea una etiqueta"
       ],
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
@@ -4611,6 +4611,12 @@
       ],
       "Please select a state": [
         "Seleccioneu un estat"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències> Missatges i redacció > Domini curt (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "La clau de l'organització no està desxifrada"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4830,7 +4836,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "Alguna cosa ha anat malament."
+        "S'ha produït un error."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "Per utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
@@ -7842,7 +7848,7 @@
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
-        "${ PASS_APP_NAME } us permet emmagatzemar contrasenyes, notes i altres informacions sensibles amb xifratge de punta a punta. Disponible a ${ ios }, ${ android } i al vostre ${ browser }."
+        "${ PASS_APP_NAME } us permet emmagatzemar contrasenyes, notes i altres informacions confidencials amb xifratge d'extrem a extrem. Disponible a ${ ios }, ${ android } i al vostre ${ browser }."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
@@ -7866,7 +7872,7 @@
         "Descobriu les noves característiques desbloquejades amb ${ planTitle } i comenceu a utilitzar-les de seguida!"
       ],
       "Download on the App Store": [
-        "Descarregau-lo a l'App Store"
+        "Descarregueu-la a l'App Store"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Els correus electrònics moguts a la paperera i el correu brossa fa més de 30 dies se suprimiran automàticament."
@@ -7875,7 +7881,7 @@
         "S'està activant la supressió automàtica…"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "Gaudiu d'una experiència de correu electrònic més ràpida i centrada en l'aplicació d'escriptori."
+        "Gaudiu d'una experiència de correu electrònic més ràpida i centrada amb l'aplicació d'escriptori."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Per obtenir informació addicional i eliminar restriccions, inicieu sessió a ${ mailLink }."
@@ -7884,16 +7890,16 @@
         "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ androidAppLink } o ${ iosAppLink }."
       ],
       "Get it on Google Play": [
-        "Obteniu-lo a Google Play"
+        "Obteniu-la a Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
       ],
       "Invite family members and get everything up and running.": [
-        "Convideu a altres membres de la vostra família i comenceu de manera immediata."
+        "Convideu els membres de la família i poseu-ho tot en marxa."
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
-        "Convideu la vostra parella, amics o qui sigui amb qui estiguis compartint el vostre pla ${ protonDuoPlanName }."
+        "Convideu la vostra parella, un amic o qui sigui amb qui estigueu compartint el vostre pla ${ protonDuoPlanName }."
       ],
       "or discover other features:": [
         "o descobriu altres característiques:"
@@ -7920,7 +7926,7 @@
         "Comenceu a utilitzar la versió més curta i atractiva de la vostra adreça de correu electrònic."
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
-        "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creu i compartiu documents a ${ DOCS_APP_NAME } i deseu'ls de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
+        "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creeu i compartiu documents a ${ DOCS_APP_NAME } i deseu-los de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
       ],
       "You can add your own custom domain to ${ MAIL_APP_NAME }": [
         "Podeu afegir el vostre propi domini personalitzat a ${ MAIL_APP_NAME }."
@@ -7930,6 +7936,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
+      ],
+      "Keys created": [
+        "S'han creat les claus."
+      ],
+      "User activated": [
+        "S'ha activat l'usuari."
       ]
     },
     "info": {
@@ -9832,7 +9844,7 @@
         "TOR sobre VPN"
       ],
       "Two-factor authentication": [
-        "Autenticació de dos factors"
+        "Autenticació de doble factor"
       ],
       "Unlimited devices": [
         "Nombre il·limitat de dispositius"
@@ -9910,7 +9922,7 @@
         "200 GB d'emmagatzematge"
       ],
       "Private photo backup": [
-        "Còpia de seguretat de fotos privades"
+        "Còpia de seguretat de fotos privada"
       ],
       "Secure file storage and sharing": [
         "Emmagatzematge i ús compartit de fitxers segurs"
@@ -10209,7 +10221,7 @@
         "Requereix un codi enviat a un telèfon mòbil per iniciar la sessió. Això assegura que, fins i tot si una contrasenya està compromesa, el compte roman segur."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
+        "Restableix les contrasenyes i l'autenticació de doble factor dels usuaris."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Dirigiu el trànsit d'internet a través de la xarxa Tor amb un sol clic"
@@ -10416,7 +10428,7 @@
         "Xarxes socials"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Utilitzeu la vostra adreça de ${ MAIL_APP_NAME } per iniciar la sessió als serveis en línia i evitar que se us faci un seguiment i es perfili. Canvieu el vostre correu electrònic per als serveis populars ara. ${ learnMoreLink }"
+        "Utilitzeu la vostra adreça de ${ MAIL_APP_NAME } per a iniciar la sessió als serveis en línia i evitar que se us faci un seguiment i se us perfili. Canvieu el vostre correu electrònic per a serveis populars. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11659,6 +11671,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "La teva subscripció es renovarà al mateix preu cada any."
       ]
     },
     "specialoffer: Link": {
@@ -11798,7 +11813,7 @@
         "El vostre correu electrònic de pm.me està actiu."
       ],
       "Check out what's included with your subscription and start enjoying the benefits.": [
-        "Consulteu el que està inclòs en la vostra subscripció i comenceu a gaudir dels avantatges."
+        "Consulteu el que està inclòs a la vostra subscripció i comenceu a gaudir dels avantatges."
       ],
       "Discover your subscription benefits": [
         "Descobriu els avantatges de la vostra subscripció"
@@ -13827,6 +13842,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "La vostra subscripció es renovarà automàticament en ${ cycle } mes.",
         "La vostra subscripció es renovarà automàticament en ${ cycle } mesos."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mes.",
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "El vostre pla programat comença el ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14314,7 +14336,7 @@
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "Offer": {
@@ -14358,6 +14380,9 @@
       ],
       "Storage": [
         "Emmagatzematge"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
       ]
     },
     "Signup label": {

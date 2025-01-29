@@ -23,7 +23,7 @@
         "En potentiell läcka på ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
@@ -1459,6 +1459,12 @@
       ],
       "Take a tour": [
         "Ta en rundtur"
+      ],
+      "Auto-delete spam and trash": [
+        "Autoborttagning av skräppost och kastat"
+      ],
+      "Get the browser extension": [
+        "Skaffa webbläsartillägget"
       ]
     },
     "action": {
@@ -4616,6 +4622,12 @@
       ],
       "Please select a state": [
         "Välj en delstat"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Meddelanden och skrivning > Kort domän (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Organisationsnyckel är inte dekrypterad"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5437,7 +5449,7 @@
         "Uppdatera dina inloggningar"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
-        "Med din mobila enhet, skanna denna QR-kod eller besök iOS- eller Android-butiken."
+        "Använd din mobila enhet, skanna denna QR-kod eller besök iOS- eller Android-butiken."
       ],
       "We stop advertisers and data collectors from profiling you.": [
         "Vi hindrar annonsörer och datainsamlare från att profilera dig."
@@ -6717,7 +6729,7 @@
         "Laddar meddelande"
       ],
       "Loading preview": [
-        "Läser in förhandsgranskning"
+        "Laddar förhandsgranskning"
       ],
       "Loading...": [
         "Laddar in …"
@@ -7931,6 +7943,30 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Rensa automatiskt bort e-postmeddelanden flyttade till papperskorgen och skräppost för mer än 30 dagar sedan."
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-postmeddelanden flyttade till papperskorgen och skräppost för mer än 30 dagar sedan kommer att rensas automatiskt."
+      ],
+      "Enabling auto-deletion…": [
+        "Aktiverar autoborttagning…"
+      ],
+      "Invite family members and get everything up and running.": [
+        "Bjud in familjemedlemmar och få igång allt."
+      ],
+      "Keys created": [
+        "Nycklar skapade"
+      ],
+      "Send messages at just the right now": [
+        "Skicka meddelanden vid rätt tidpunkt"
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Snooza meddelanden för senare så att de är högst upp i din inkorg när du vill"
+      ],
+      "User activated": [
+        "Användare aktiverad"
       ]
     },
     "info": {
@@ -9918,6 +9954,9 @@
       ],
       "Secure file storage and sharing": [
         "Säker fillagring och delning"
+      ],
+      "Private photo backup": [
+        "Privat säkerhetskopiering av foton"
       ]
     },
     "new_plans: feature highlight": {
@@ -10446,7 +10485,7 @@
         "Avancerad kryptering"
       ],
       "Auto-delete spam and trash": [
-        "Ta automatiskt bort skräppost och pappersborg"
+        "Ta bort skräppost och papperskorg automatiskt"
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Rensa bort borttagna e-postmeddelanden och skräppost efter 30 dagar."
@@ -11812,6 +11851,9 @@
       ],
       "Discover your subscription benefits": [
         "Upptäck dina prenumerationsförmåner"
+      ],
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Kolla in vad som är inkluderat i din prenumeration och njut av förmånerna."
       ]
     },
     "sso": {
@@ -13677,6 +13719,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu skapa ett obegränsat antal mappar och etiketter"
+      ],
+      "Auto-deletion is active": [
+        "Autoborttagning aktivt"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13834,6 +13879,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Din prenumeration kommer förnyas automatiskt om ${ cycle } månad.",
         "Din prenumeration kommer förnyas automatiskt om ${ cycle } månader."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Din nya prenumeration kommer förnyas automatiskt om ${ cycle } månad.",
+        "Din nya prenumeration kommer förnyas automatiskt om ${ cycle } månader."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Ditt schemalagda paket startar den ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14345,6 +14397,9 @@
       ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
+      ],
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle }-erbjudandet löper ut idag!"
       ]
     },
     "Offer feature": {
@@ -14362,6 +14417,9 @@
       ],
       "Storage": [
         "Lagringsutrymme"
+      ],
+      "Email addresses": [
+        "E-postadresser"
       ]
     },
     "Signup label": {

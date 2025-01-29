@@ -4618,6 +4618,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Ключ организации не расшифрован"
+      ],
+      "Please select a country": [
+        "Пожалуйста, выберите страну"
+      ],
+      "Please select a state": [
+        "Пожалуйста, выберите штат"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8008,6 +8020,21 @@
       ],
       "Switch to": [
         "Переключиться на"
+      ],
+      "Enabling auto-deletion…": [
+        "Включение автоудаления…"
+      ],
+      "Keys created": [
+        "Ключи созданы"
+      ],
+      "Registering your subscription…": [
+        "Регистрация вашей подписки…"
+      ],
+      "Setting up your new address…": [
+        "Настройка вашего нового адреса…"
+      ],
+      "User activated": [
+        "Пользователь активирован"
       ]
     },
     "info": {
@@ -12435,7 +12462,7 @@
         "Пользователи не смогут отправлять письма"
       ],
       "Users won’t be able to upload files on their devices": [
-        "Пользователи не смогут выгружать файлы на своих устройствах"
+        "Пользователи не смогут загружать файлы со своих устройств"
       ],
       "Version history": [
         "История версий"

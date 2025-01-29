@@ -511,7 +511,7 @@
         "Générer du texte"
       ],
       "Get ${ BRAND_NAME } Duo": [
-        "Je choisis ${ BRAND_NAME } Duo"
+        "Essayez ${ BRAND_NAME } Duo"
       ],
       "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
         "Profitez de ${ MAIL_SHORT_APP_NAME } Plus pour ${ priceCoupon }"
@@ -1446,7 +1446,7 @@
         "Profitez de ${ planName } pour ${ priceCoupon }"
       ],
       "Get ${ planOrAppName }": [
-        "Je choisis ${ planOrAppName }"
+        "Essayez ${ planOrAppName }"
       ],
       "Get the browser extension": [
         "Téléchargez l'extension de navigateur"
@@ -1462,6 +1462,9 @@
       ],
       "Take a tour": [
         "Visite guidée"
+      ],
+      "Get the app": [
+        "Téléchargez l'application"
       ]
     },
     "action": {
@@ -1997,6 +2000,9 @@
       ],
       "Take a tour": [
         "Visite guidée"
+      ],
+      "Got it": [
+        "J'ai compris"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4615,7 +4621,13 @@
         "Sélectionnez un pays"
       ],
       "Please select a state": [
-        "Selectionnez un état"
+        "Sélectionnez une région"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
+      ],
+      "Organization key is not decrypted": [
+        "La clé de l'organisation n'est pas déchiffrée."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7871,7 +7883,7 @@
         "Découvrez les nouvelles fonctionnalités incluses dans ${ planTitle } et utilisez-les dès maintenant !"
       ],
       "Download on the App Store": [
-        "Téléchargez-le sur l'App Store"
+        "Télécharger sur l'App Store"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Les e-mails déplacés vers le dossier Corbeille ou Indésirables/spam de plus de 30 jours seront supprimés automatiquement."
@@ -7889,7 +7901,7 @@
         "Pour un accès à vos e-mails à tout moment et une expérience mobile optimisée, téléchargez notre ${ androidAppLink } ou ${ iosAppLink }."
       ],
       "Get it on Google Play": [
-        "Obtenez-le sur Google Play"
+        "Télécharger sur Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
@@ -7935,6 +7947,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
+      ],
+      "Keys created": [
+        "Les clés ont été créées."
+      ],
+      "User activated": [
+        "L'utilisateur a été activé."
       ]
     },
     "info": {
@@ -11664,6 +11682,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Votre abonnement sera renouvelé au même tarif chaque année."
       ]
     },
     "specialoffer: Link": {
@@ -13832,6 +13853,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
         "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Votre abonnement prévu commence le ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -13875,6 +13903,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Une façon plus sécurisée et simple de détenir et d'envoyer des bitcoins"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Une manière plus sûre de détenir des bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -14363,6 +14394,15 @@
       ],
       "Storage": [
         "Espace de stockage"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérer les versions précédentes des fichiers"
       ]
     },
     "Signup label": {

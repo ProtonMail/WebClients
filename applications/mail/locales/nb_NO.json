@@ -1435,6 +1435,33 @@
       ],
       "More options": [
         "Flere valg"
+      ],
+      "Auto-delete spam and trash": [
+        "Auto-slett søppelpost og meldinger i papirkurven"
+      ],
+      "Download the desktop app": [
+        "Last ned skrivebordsappen"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Aktiver ${ darkWebMonitoring }"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Skaff deg ${ planName } for ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Skaff deg ${ planOrAppName }"
+      ],
+      "Get the browser extension": [
+        "Hent nettleserutvidelsen"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Gå til ${ DRIVE_APP_NAME }"
+      ],
+      "Invite members": [
+        "Inviter medlemmer"
+      ],
+      "Take a tour": [
+        "Få en omvisning"
       ]
     },
     "action": {
@@ -1827,6 +1854,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
       ]
     },
     "Billing cycle option": {
@@ -1946,6 +1976,27 @@
       ],
       "Continue your subscription": [
         "Fortsett abonnementet"
+      ],
+      "Create label": [
+        "Opprett etikett"
+      ],
+      "Discover and set up features": [
+        "Oppdag og konfigurer funksjoner"
+      ],
+      "Maybe later": [
+        "Kanskje senere"
+      ],
+      "Next": [
+        "Neste"
+      ],
+      "Remind me later": [
+        "Påminn meg senere"
+      ],
+      "Set up other features": [
+        "Konfigurer andre funksjoner"
+      ],
+      "Take a tour": [
+        "Få en omvisning"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4565,6 +4616,12 @@
       ],
       "Please select a state": [
         "Velg en stat"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Organisasjonsnøkkel er ikke dekryptert"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7884,6 +7941,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
+      ],
+      "Keys created": [
+        "Nøkler opprettet"
+      ],
+      "User activated": [
+        "Bruker aktivert"
       ]
     },
     "info": {
@@ -8713,6 +8776,9 @@
       ],
       "Remove metadata": [
         "Fjern metadata"
+      ],
+      "State": [
+        "Stat"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8977,6 +9043,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
+      ],
+      "settings": [
+        "innstillinger"
       ]
     },
     "Link to calendar event": {
@@ -9362,6 +9431,12 @@
       ],
       "Upgrade": [
         "Oppgrader"
+      ],
+      "Starting from ${ pricing }": [
+        "Starter fra ${ pricing }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -9847,6 +9922,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "200 GB of storage": [
+        "200 GB lagringsplass"
+      ],
+      "Private photo backup": [
+        "Privat sikkerhetskopiering av bilder"
+      ],
+      "Secure file storage and sharing": [
+        "Sikker fillagring og -deling"
       ]
     },
     "new_plans: feature highlight": {
@@ -10436,6 +10520,33 @@
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
         "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }-app."
+      ],
+      "browser": [
+        "nettleser"
+      ],
+      "Continue": [
+        "Fortsett"
+      ],
+      "Desktop": [
+        "Skrivebord"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Oppdag ${ MAIL_APP_NAME }"
+      ],
+      "Set a display name": [
+        "Angi et visningsnavn"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Velg et visningsnavn for å komme i gang. Dette er hva folk vil se når du sender en e-post, inviterer dem til et arrangement eller deler en fil."
+      ],
+      "You are all set!": [
+        "Du er klar!"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Domenet ditt ${ domain } og ${ subscriptionName }-abonnementet er klart til bruk."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "Domenet og abonnementet ditt er klart til bruk."
       ]
     },
     "Onboarding Proton": {
@@ -11565,6 +11676,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dette abonnementet fornyes automatisk hvert 2. år med samme pris til det kanselleres."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Abonnementet ditt fornyes med samme pris hvert år."
       ]
     },
     "specialoffer: Link": {
@@ -11573,6 +11687,9 @@
       ],
       "Upgrade": [
         "Oppgrader"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Oppgrader for ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -11699,6 +11816,12 @@
       ],
       "Your pm.me email is active": [
         "Din pm.me-e-post er aktiv"
+      ],
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Sjekk ut hva som er inkludert i abonnementet ditt og begynn å nyte fordelene."
+      ],
+      "Discover your subscription benefits": [
+        "Oppdag abonnementsfordelene dine"
       ]
     },
     "sso": {
@@ -12741,6 +12864,9 @@
       ],
       "Show me how": [
         "Vis meg hvordan"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktiver ${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "Title": {
@@ -13522,6 +13648,48 @@
       ],
       "Are you sure?": [
         "Er du sikker?"
+      ],
+      "${ feature } is now active": [
+        "${ feature } er nå aktiv"
+      ],
+      "Account restricted": [
+        "Konto begrenset"
+      ],
+      "Anytime, anywhere access": [
+        "Tilgang når som helst, hvor som helst"
+      ],
+      "Auto-deletion is active": [
+        "Auto-sletting er aktiv"
+      ],
+      "Custom domains:": [
+        "Egendefinerte domener:"
+      ],
+      "Discover your subscription benefits": [
+        "Oppdag abonnementsfordelene dine"
+      ],
+      "Distraction-free emailing": [
+        "Distraksjonsfri e-post"
+      ],
+      "Other features included in your plan": [
+        "Andre funksjoner inkludert i planen din"
+      ],
+      "Priority support:": [
+        "Prioritert brukerstøtte:"
+      ],
+      "Schedule send:": [
+        "Planlegg sending:"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Konfigurer ${ protonDuoPlanName }"
+      ],
+      "Set up your family account": [
+        "Konfigurer familiekontoen din"
+      ],
+      "Snooze:": [
+        "Slumre:"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Du kan nå opprette ubegrenset antall mapper og etiketter"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13679,6 +13847,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Abonnementet ditt fornyes automatisk om ${ cycle } måned.",
         "Abonnementet ditt fornyes automatisk om ${ cycle } måneder."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Det nye abonnementet ditt fornyes automatisk om ${ cycle } måned.",
+        "Det nye abonnementet ditt fornyes automatisk om ${ cycle } måneder."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Din planlagte plan begynner den ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14164,6 +14339,60 @@
     "Signup label": {
       "Display name": [
         "Visningsnavn"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceMailPlus }. Avslutt når som helst."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle }-tilbud utløper i dag!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Skaff deg Drive Plus for kun ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Skaff deg Mail Plus for kun ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Skaff deg avtalen"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Tidsbegrenset tilbud"
+      ],
+      "Maybe later": [
+        "Kanskje senere"
+      ],
+      "Save 80% on your first month.": [
+        "Spar 80% på den første måneden."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 flere premiumfunksjoner"
+      ],
+      "Custom email domain": [
+        "Egendefinert e-postdomene"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Lagringsplass"
       ]
     }
   }

@@ -70,7 +70,7 @@
         "Adicionar grupo"
       ],
       "Add new group": [
-        "Adicionar novo grupo"
+        "Adicionar um grupo"
       ],
       "Add note": [
         "Adicionar uma nota"
@@ -287,7 +287,7 @@
         "Copiar o número da versão para a área de transferência"
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contactos"
+        "Criar um grupo de contactos"
       ],
       "Create a new folder": [
         "Criar uma pasta"
@@ -308,10 +308,10 @@
         "Criar etiqueta"
       ],
       "Create new contact": [
-        "Criar novo contacto"
+        "Criar um contacto"
       ],
       "Create new message": [
-        "Criar nova mensagem"
+        "Criar uma mensagem"
       ],
       "Current plan": [
         "Plano atual"
@@ -4521,6 +4521,12 @@
       ],
       "Please select a state": [
         "Selecione um estado"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Mensagens e composição > Domínio curto (pm.me)."
+      ],
+      "Organization key is not decrypted": [
+        "A chave da organização não está encriptada."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6189,7 +6195,7 @@
         "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contactos"
+        "Criar um grupo de contactos"
       ],
       "Create in": [
         "Criar em"
@@ -7771,7 +7777,7 @@
         "Descubra novas funcionalidades desbloqueadas com o ${ planTitle } e comece a usá-las imediatamente!"
       ],
       "Download on the App Store": [
-        "Descarregue-o na App Store"
+        "Descarregue-a na App Store"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Os e-mails movidos para o lixo e o spam mais de 30 dias atrás serão apagados automaticamente."
@@ -7789,7 +7795,7 @@
         "Para aceder aos seus e-mails a qualquer momento e aproveitar uma experiência móvel otimizada, descarregue a nossa aplicação na ${ androidAppLink } ou ${ iosAppLink }."
       ],
       "Get it on Google Play": [
-        "Obtenha-o no Google Play"
+        "Obtenha-a no Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado se a sua palavra-passe ou outros dados tiverem sido divulgados por um serviço de terceiros."
@@ -7835,6 +7841,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Será notificado se a sua palavra-passe ou outros dados foram vazados de um serviço de terceiros."
+      ],
+      "Keys created": [
+        "Chaves criadas"
+      ],
+      "User activated": [
+        "O utilizador foi ativado."
       ]
     },
     "info": {
@@ -9764,7 +9776,7 @@
         "Apoio telefónico (mais de 20 utilizadores)"
       ],
       "Private photo backup": [
-        "Cópia de segurança de fotos privadas"
+        "Cópia de segurança de fotos privada"
       ],
       "Recover previous file versions": [
         "Recuperar as versões anteriores do ficheiro"
@@ -10488,7 +10500,7 @@
         "Automático (${ value })"
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Ignore group": [
         "Ignorar grupo"
@@ -11498,6 +11510,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "A sua subscrição será renovada pelo mesmo preço todos os anos."
       ]
     },
     "specialoffer: Link": {
@@ -12817,7 +12832,7 @@
         "Criar etiqueta \"${ search }\""
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Credits": [
         "Créditos"
@@ -13623,6 +13638,13 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Será faturado a cada 12 meses no valor de ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "A sua nova subscrição será renovada automaticamente dentro de ${ cycle } mês.",
+        "A sua nova subscrição será renovada automaticamente em ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "O seu plano agendado começa em ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14325,6 +14347,9 @@
       ],
       "Storage": [
         "Armazenamento"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
       ]
     },
     "Signup label": {

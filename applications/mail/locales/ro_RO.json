@@ -4647,6 +4647,12 @@
       ],
       "Please select a state": [
         "Alegeți un stat"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Aveți numele de utilizator ${ user.Name }. Pentru a crea ${ emailAddress }, accesați Setări > Toate setările > Mesaje și compunere > Domeniu scurt (pm.me)."
+      ],
+      "Organization key is not decrypted": [
+        "Cheia organizației nu este decriptată."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8066,6 +8072,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
+      ],
+      "Keys created": [
+        "Cheile au fost create."
+      ],
+      "User activated": [
+        "Utilizator activat"
       ]
     },
     "info": {
@@ -11864,6 +11876,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Abonamentul dumneavoastră se va reînnoi la același tarif în fiecare an."
       ]
     },
     "specialoffer: Link": {
@@ -14095,6 +14110,9 @@
         "Abonamentul vi se va reînnoi automat peste ${ cycle } lună.",
         "Abonamentul vi se va reînnoi automat peste ${ cycle } luni.",
         "Abonamentul vi se va reînnoi automat peste ${ cycle } de luni."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Planul tău programat începe pe ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14661,6 +14679,9 @@
       ],
       "Storage": [
         "Spațiu de stocare"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
       ]
     },
     "Signup label": {

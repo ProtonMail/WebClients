@@ -131,7 +131,7 @@
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
-        "Adjuntar captura(s) de pantalla"
+        "Adjuntar una o varias capturas de pantalla"
       ],
       "Attachment": [
         "Archivo adjunto"
@@ -722,7 +722,7 @@
         "Marcar como legítimo"
       ],
       "Maximize composer": [
-        "Maximizar el editor"
+        "Ampliar el editor"
       ],
       "Maybe": [
         "Quizás"
@@ -743,7 +743,7 @@
         "Mensajes a este destinatario"
       ],
       "Minimize composer": [
-        "Minimizar el editor"
+        "Reducir el editor"
       ],
       "Modify": [
         "Modificar"
@@ -1094,7 +1094,7 @@
         "Destruir automaticamente el mensaje"
       ],
       "Self-destruct on ...": [
-        "Destrucción automática el ..."
+        "Destrucción automática el..."
       ],
       "Send": [
         "Enviar"
@@ -1286,7 +1286,7 @@
         "Desmarcar para eliminar"
       ],
       "Unordered list": [
-        "Lista con viñetas"
+        "Lista desordenada"
       ],
       "Unsnooze": [
         "Desactivar la pausa"
@@ -4616,6 +4616,12 @@
       ],
       "Please select a state": [
         "Selecciona un estado"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Configuración > Mensajes y redacción > Dominio corto (pm.me)."
+      ],
+      "Organization key is not decrypted": [
+        "La clave de la organización no está descifrada."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6559,7 +6565,7 @@
         "Prioridad alta"
       ],
       "How hide-my-email aliases works": [
-        "Funcionamiento de los alias de Hide-my-email"
+        "Funcionamiento de los alias de hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estoy enviando este mensaje a un usuario fuera de ${ MAIL_APP_NAME }."
@@ -7853,7 +7859,7 @@
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado de actividades sospechosas."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
-        "Accede a más de 6,500 servidores de alta velocidad en hasta 10 dispositivos para mantener tus datos de navegación seguros. Disponible en ${ ios }, ${ android }, ${ appleTV } y ${ desktop }."
+        "Accede a más de 6.500 servidores de alta velocidad en hasta 10 dispositivos para mantener tus datos de navegación seguros. Disponible en ${ ios }, ${ android }, ${ appleTV } y ${ desktop }."
       ],
       "Active": [
         "Activo"
@@ -7871,7 +7877,7 @@
         "Descubre las nuevas funciones desbloqueadas con ${ planTitle } y empieza a usarlas de inmediato."
       ],
       "Download on the App Store": [
-        "Descárgalo en la App Store"
+        "Descárgala en la App Store"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Los correos electrónicos movidos a las carpetas Papelera y Spam hace más de 30 días se eliminarán automáticamente."
@@ -7889,7 +7895,7 @@
         "Para acceder a tu correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descarga nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
       ],
       "Get it on Google Play": [
-        "Descárgalo en Google Play"
+        "Descárgala en Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -7935,6 +7941,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
+      ],
+      "Keys created": [
+        "Se han creado las claves."
+      ],
+      "User activated": [
+        "Se ha activado el usuario."
       ]
     },
     "info": {
@@ -9918,7 +9930,7 @@
         "200 GB de almacenamiento"
       ],
       "Private photo backup": [
-        "Copia de seguridad de fotos privadas"
+        "Copia de seguridad de fotos privada"
       ],
       "Secure file storage and sharing": [
         "Almacenamiento y uso compartido seguro de archivos"
@@ -11667,6 +11679,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Tu suscripción se renovará a la misma tarifa cada año."
       ]
     },
     "specialoffer: Link": {
@@ -12551,7 +12566,7 @@
         "Huella digital copiada al portapapeles"
       ],
       "Import record deleted": [
-        "Se ha eliminado el registro importación."
+        "Se ha eliminado el registro de importación."
       ],
       "Invitation rejected": [
         "Se ha rechazado la invitación."
@@ -13835,6 +13850,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Tu suscripción se renovará automáticamente en ${ cycle } mes.",
         "Tu suscripción se renovará automáticamente en ${ cycle } meses."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Tu nueva suscripción se renovará automáticamente en ${ cycle } meses.",
+        "Tu nueva suscripción se renovará automáticamente en ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Tu plan programado comienza el ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14302,7 +14324,7 @@
         "El formato de la hora inicial no es válido."
       ],
       "Only the Gregorian calendar scale is allowed": [
-        "Sólo se permite la escala del calendario gregoriano."
+        "Solo se permite la escala del calendario gregoriano."
       ],
       "Recurring event has no occurrences": [
         "El evento recurrente no tiene ocurrencias."
@@ -14366,6 +14388,9 @@
       ],
       "Storage": [
         "Almacenamiento"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
       ]
     },
     "Signup label": {

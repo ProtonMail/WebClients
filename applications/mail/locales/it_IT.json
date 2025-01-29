@@ -4616,6 +4616,12 @@
       ],
       "Please select a state": [
         "Per favore seleziona uno stato"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "La chiave dell'organizzazione non è decriptata"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7853,7 +7859,7 @@
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con uno scrupoloso monitoraggio delle attività sospette."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
-        "Accedi a 6,500+ server ad alta velocità su un massimo di 10 dispositivi per mantenere i tuoi dati di navigazione al sicuro. Disponibile su ${ ios }, ${ android }, ${ appleTV }, e ${ desktop }."
+        "Accedi a 6.500+ server ad alta velocità su un massimo di 10 dispositivi per mantenere i tuoi dati di navigazione al sicuro. Disponibile su ${ ios }, ${ android }, ${ appleTV }, e ${ desktop }."
       ],
       "Active": [
         "Attivo"
@@ -7932,6 +7938,15 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi notifiche se la tua password o altri dati vengono divulgati da servizi di terze parti."
+      ],
+      "Keys created": [
+        "Chiavi create"
+      ],
+      "Send messages at just the right now": [
+        "Invia messaggi al momento giusto"
+      ],
+      "User activated": [
+        "Utente attivato"
       ]
     },
     "info": {
@@ -11667,6 +11682,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Questo abbonamento si rinnoverà automaticamente ogni 2 anni alla stessa tariffa fino all'annullamento."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Il tuo abbonamento verrà rinnovato ogni anno alla stessa tariffa."
       ]
     },
     "specialoffer: Link": {
@@ -13835,6 +13853,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Il tuo abbonamento si rinnoverà automaticamente tra ${ cycle } mese.",
         "Il tuo abbonamento si rinnoverà automaticamente tra ${ cycle } mesi."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Il tuo nuovo abbonamento si rinnoverà automaticamente tra ${ cycle } mese.",
+        "Il tuo nuovo abbonamento si rinnoverà automaticamente tra ${ cycle } mesi."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Il tuo piano programmato inizia il ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14366,6 +14391,9 @@
       ],
       "Storage": [
         "Archiviazione"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
       ]
     },
     "Signup label": {

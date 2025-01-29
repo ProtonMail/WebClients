@@ -1435,6 +1435,30 @@
       ],
       "More options": [
         "Lisää asetuksia"
+      ],
+      "Download the desktop app": [
+        "Lataa työpöytäsovellus"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Ota ${ darkWebMonitoring } käyttöön"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Hanki ${ planName } hintaan ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Hanki ${ planOrAppName }"
+      ],
+      "Get the browser extension": [
+        "Hanki selainlaajennus"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Avaa ${ DRIVE_APP_NAME }"
+      ],
+      "Invite members": [
+        "Kutsu jäseniä"
+      ],
+      "Take a tour": [
+        "Katso esittely"
       ]
     },
     "action": {
@@ -1946,6 +1970,27 @@
       ],
       "Continue your subscription": [
         "Jatka tilaustasi"
+      ],
+      "Create label": [
+        "Luo tunniste"
+      ],
+      "Discover and set up features": [
+        "Tutustu ja määritä ominaisuuksia"
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ],
+      "Next": [
+        "Seuraava"
+      ],
+      "Remind me later": [
+        "Muistuta myöhemmin"
+      ],
+      "Set up other features": [
+        "Määritä muut ominaisuudet"
+      ],
+      "Take a tour": [
+        "Katso esittely"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4559,6 +4604,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Viestit ja kirjoitus > Lyhytosoite (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Organisaatioavaimen salausta ei ole purettu"
+      ],
+      "Please select a country": [
+        "Valitse maa"
+      ],
+      "Please select a state": [
+        "Valitse osavaltio"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7779,6 +7836,39 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Tyhjennä yli 30 päivää sitten roskakoriin ja -postiin siirretyt sähköpostit automaattisesti."
+      ],
+      "Download on the App Store": [
+        "Lataa App Storesta"
+      ],
+      "Get it on Google Play": [
+        "Hanki se Google Playstä"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut kolmannen osapuolen palvelusta."
+      ],
+      "Keys created": [
+        "Avaimet luotiin"
+      ],
+      "Registering your subscription…": [
+        "Rekisteröidään tilaustasi…"
+      ],
+      "Send messages at just the right now": [
+        "Lähetä viestejä juuri oikealla hetkellä"
+      ],
+      "Setting up ${ feature }…": [
+        "Määritetään ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Määritetään uutta osoitettasi…"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Aloita sähköpostiosoitteesi lyhyemmän ja tarttuvamman version käyttäminen."
+      ],
+      "User activated": [
+        "Käyttäjä aktivoitiin"
       ]
     },
     "info": {
@@ -8608,6 +8698,9 @@
       ],
       "Remove metadata": [
         "Poista metatiedot"
+      ],
+      "State": [
+        "Osavaltio"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8872,6 +8965,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Sinun on aktivoitava avaimesi uudelleen nähdäksesi päivitetyn kutsun"
+      ],
+      "settings": [
+        "asetukset"
       ]
     },
     "Link to calendar event": {
@@ -9257,6 +9353,12 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -9742,6 +9844,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ],
+      "200 GB of storage": [
+        "200 Gt tallennustilaa"
+      ],
+      "Private photo backup": [
+        "Yksityinen kuvien varmuuskopiointi"
+      ],
+      "Secure file storage and sharing": [
+        "Suojattu tiedoston tallennus ja jako"
       ]
     },
     "new_plans: feature highlight": {
@@ -10325,6 +10436,30 @@
       ],
       "Distraction-free emailing": [
         "Häiriötön sähköpostittelu"
+      ],
+      "browser": [
+        "selain"
+      ],
+      "Continue": [
+        "Jatka"
+      ],
+      "Desktop": [
+        "Työpöytä"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Tutustu ${ MAIL_APP_NAME }iin"
+      ],
+      "Set a display name": [
+        "Aseta näyttönimi"
+      ],
+      "You are all set!": [
+        "Kaikki on kunnossa!"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Verkkotunnuksesi ${ domain } ja ${ subscriptionName }-tilauksesi ovat valmiina käyttöön."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "Verkkotunnuksesi ja tilauksesi ovat valmiina käyttöön."
       ]
     },
     "Onboarding Proton": {
@@ -11588,6 +11723,9 @@
       ],
       "Your pm.me email is active": [
         "Sinun pm.me-osoitteesi on käytössä"
+      ],
+      "Discover your subscription benefits": [
+        "Tutustu tilauksesi etuihin"
       ]
     },
     "sso": {
@@ -12630,6 +12768,9 @@
       ],
       "Show me how": [
         "Näytä miten"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
       ]
     },
     "Title": {
@@ -13411,6 +13552,42 @@
       ],
       "Are you sure?": [
         "Oletko varma?"
+      ],
+      "${ feature } is now active": [
+        "${ feature } on nyt käytössä"
+      ],
+      "Anytime, anywhere access": [
+        "Käytettävissä milloin ja missä tahansa"
+      ],
+      "Custom domains:": [
+        "Omat verkkotunnukset:"
+      ],
+      "Discover your subscription benefits": [
+        "Tutustu tilauksesi etuihin"
+      ],
+      "Distraction-free emailing": [
+        "Häiriötön sähköpostittelu"
+      ],
+      "Other features included in your plan": [
+        "Muut tilaukseesi sisältyvät ominaisuudet"
+      ],
+      "Priority support:": [
+        "Ensisijainen tuki:"
+      ],
+      "Schedule send:": [
+        "Ajoita lähetys:"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Määritä ${ protonDuoPlanName }"
+      ],
+      "Set up your family account": [
+        "Määritä perhetilisi"
+      ],
+      "Snooze:": [
+        "Torkuta:"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14053,6 +14230,49 @@
     "Signup label": {
       "Display name": [
         "Näyttönimi"
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } tarjous päättyy tänään!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Hanki Drive Plus hintaan ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Hanki Mail Plus hintaan ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
+      "Limited-time offer": [
+        "Rajoitetun ajan tarjous"
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ],
+      "Save 80% on your first month.": [
+        "Säästä 80 % ensimmäisestä kuukaudestasi."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 muuta premium-ominaisuutta"
+      ],
+      "Custom email domain": [
+        "Oma sähköpostiverkkotunnus"
+      ],
+      "Email addresses": [
+        "Sähköpostiosoitteet"
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Tallennustila"
       ]
     }
   }

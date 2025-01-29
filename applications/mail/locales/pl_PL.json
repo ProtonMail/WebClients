@@ -1432,7 +1432,7 @@
         "Dodaj konto"
       ],
       "Export selection as .vcf": [
-        "Eksportuj selekcję jako .vcf"
+        "Eksportuj zaznaczone jako plik VCF"
       ],
       "More actions": [
         "Więcej akcji"
@@ -1445,6 +1445,27 @@
       ],
       "More options": [
         "Więcej opcji"
+      ],
+      "Auto-delete spam and trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
+      "Download the desktop app": [
+        "Pobierz aplikację desktopową"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Włącz ${ darkWebMonitoring }"
+      ],
+      "Get the browser extension": [
+        "Pobierz rozszerzenie przeglądarki"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Przejdź do ${ DRIVE_APP_NAME }"
+      ],
+      "Invite members": [
+        "Zaproś użytkowników"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
       ]
     },
     "action": {
@@ -1965,6 +1986,24 @@
       ],
       "Continue your subscription": [
         "Kontynuuj subskrypcję"
+      ],
+      "Create label": [
+        "Utwórz etykietę"
+      ],
+      "Maybe later": [
+        "Może później"
+      ],
+      "Next": [
+        "Dalej"
+      ],
+      "Remind me later": [
+        "Przypomnij mi później"
+      ],
+      "Set up other features": [
+        "Skonfiguruj inne funkcje"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3785,7 +3824,7 @@
       ],
       "${ notificationsToShow.length } new message": [
         "${ notificationsToShow.length } nowa wiadomość",
-        "${ notificationsToShow.length } nowych wiadomości",
+        "${ notificationsToShow.length } nowe wiadomości",
         "${ notificationsToShow.length } nowych wiadomości",
         "${ notificationsToShow.length } nowych wiadomości"
       ]
@@ -4618,6 +4657,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "Klucz organizacji nie został odszyfrowany"
+      ],
+      "Please select a country": [
+        "Wybierz kraj"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8023,6 +8071,30 @@
       ],
       "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
         "Aby usunąć ograniczenia, można odwiedzić stronę ${ mailLink } i wykupić płatny plan."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatyczne usuwanie wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
+      ],
+      "Download on the App Store": [
+        "Pobierz z App Store"
+      ],
+      "Enabling auto-deletion…": [
+        "Włącz automatyczne usuwanie..."
+      ],
+      "Get it on Google Play": [
+        "Pobierz z Google Play"
+      ],
+      "Keys created": [
+        "Klucze zostały utworzone"
+      ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji..."
+      ],
+      "Setting up your new address…": [
+        "Konfiguracja nowego adresu…"
+      ],
+      "User activated": [
+        "Użytkownik został aktywowany"
       ]
     },
     "info": {
@@ -9128,6 +9200,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Musisz reaktywować klucze, aby zobaczyć zaktualizowane zaproszenie"
+      ],
+      "settings": [
+        "ustawienia"
       ]
     },
     "Link to calendar event": {
@@ -9529,6 +9604,12 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -10058,6 +10139,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
+      ],
+      "200 GB of storage": [
+        "200 GB przestrzeni dyskowej"
+      ],
+      "Private photo backup": [
+        "Prywatna kopia zapasowa zdjęć"
       ]
     },
     "new_plans: feature highlight": {
@@ -10639,10 +10726,28 @@
         "Gdzie prywatność jest domyślna."
       ],
       "${ MAIL_APP_NAME } on App Store": [
-        "${ MAIL_APP_NAME } na App Store"
+        "${ MAIL_APP_NAME } w App Store"
       ],
       "${ MAIL_APP_NAME } on Play Store": [
-        "${ MAIL_APP_NAME } na Google Play"
+        "${ MAIL_APP_NAME } w Google Play"
+      ],
+      "browser": [
+        "przeglądarka"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
+      "Desktop": [
+        "Komputer"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Poznaj ${ MAIL_APP_NAME }"
+      ],
+      "Set a display name": [
+        "Ustaw nazwę wyświetlaną"
+      ],
+      "You are all set!": [
+        "Wszystko gotowe!"
       ]
     },
     "Onboarding Proton": {
@@ -13096,6 +13201,9 @@
       ],
       "Show me how": [
         "Pokaż jak"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Włącz ${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "Title": {
@@ -13899,6 +14007,27 @@
       ],
       "Are you sure?": [
         "Czy na pewno?"
+      ],
+      "Account restricted": [
+        "Konto ograniczone"
+      ],
+      "Auto-deletion is active": [
+        "Automatyczne usuwanie jest aktywne"
+      ],
+      "Custom domains:": [
+        "Niestandardowe domeny:"
+      ],
+      "Priority support:": [
+        "Priorytetowe wsparcie:"
+      ],
+      "Schedule send:": [
+        "Zaplanuj wysłanie:"
+      ],
+      "Set up your family account": [
+        "Skonfiguruj konto rodzinne"
+      ],
+      "Snooze:": [
+        "Odłóż:"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14605,11 +14734,57 @@
       ],
       "Time zone not supported": [
         "Strefa czasowa nie jest obsługiwana"
+      ],
+      "Floating times not supported": [
+        "Czas w formacie \"floating\" nie jest obsługiwany"
+      ],
+      "Malformed all-day event": [
+        "Czas wydarzenia całodniowego posiada nieprawidłowy format"
+      ],
+      "Recurring event has no occurrences": [
+        "Wydarzenie cykliczne nie posiada powtórzeń"
+      ],
+      "Recurring rule not supported": [
+        "Reguła powtórzeń nie jest obsługiwana"
       ]
     },
     "Signup label": {
       "Display name": [
         "Nazwa wyświetlana"
+      ]
+    },
+    "Offer": {
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Limited-time offer": [
+        "Oferta ograniczona czasowo"
+      ],
+      "Maybe later": [
+        "Może później"
+      ],
+      "Save 80% on your first month.": [
+        "Zaoszczędź 80% przez pierwszy miesiąc."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 więcej funkcji premium"
+      ],
+      "Custom email domain": [
+        "Niestandardowa domena"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Przestrzeń dyskowa"
       ]
     }
   }

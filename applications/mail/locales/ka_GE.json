@@ -3772,6 +3772,9 @@
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
+      ],
+      "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
+        "გამოიყენეთ ${ MAIL_APP_NAME } ონლაინ სერვისებში შესასვლელად, რადგან, სხვა ელფოსტის პროვაიდერებისგან განსხვავებით, ჩვენ თქვენს მონაცემებს არც ვტრეკავთ, არც მესამე პირებს ვუზიარებთ."
       ]
     },
     "description": {
@@ -4606,6 +4609,12 @@
       ],
       "Please select a state": [
         "აირჩიეთ შტატი"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } არის თქვენი მომხმარებლის სახელი. ${ emailAddress }-ის შესაქმნელად გთხოვთ გადადით პარამეტრები > შეტყობინებები და შედგენა > მოკლე დომენი (pm.me)"
+      ],
+      "Organization key is not decrypted": [
+        "ორგანიზაციის გასაღები გაშიფრული არაა"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7898,6 +7907,21 @@
       ],
       "You can change this anytime in ${ settingsLink }.": [
         "ამის შეცვლა ყოველთვის შეგიძლიათ ${ settingsLink }-ში."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } იცავს თქვენს ანგარიშს საეჭვო აქტივობების გამოყოფილი მონიტორინგით."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "მოიწვიეთ თქვენი პარტნიორი, მეგობარი, ან ვისაც ${ protonDuoPlanName } ტარიფს უზიარებთ."
+      ],
+      "Keys created": [
+        "გასაღებები შექმნა"
+      ],
+      "User activated": [
+        "მომხმრებელი გააქტიურდა"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "თქვენ მიიღებთ გაფრთხილებას, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
       ]
     },
     "info": {
@@ -11618,6 +11642,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "თქვენი გამოწერა განახლდება იგივე ტარიფით ყოველ წელს."
       ]
     },
     "specialoffer: Link": {
@@ -13783,6 +13810,13 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
         "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
+        "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "თქვენი დაგეგმილი ტარიფის დაწყების დროა ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14268,6 +14302,9 @@
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
         "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceMailPlus } თვით. გაუქმება ყოველთვის შეგიძლიათ."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceMailPlus }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
     "Offer": {
@@ -14311,6 +14348,9 @@
       ],
       "Storage": [
         "საცავი"
+      ],
+      "Email addresses": [
+        "ელფოსტის მისამართები"
       ]
     },
     "Signup label": {

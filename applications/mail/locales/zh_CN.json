@@ -1758,7 +1758,7 @@
         "无限 hide-my-email 别名"
       ],
       "Unlimited logins, notes, credit cards": [
-        "无限登录、备注、信用卡"
+        "无限登录、笔记、信用卡"
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
@@ -4017,10 +4017,10 @@
         "无法启用内容搜索。请重新启动应用或清除数据。"
       ],
       "Could not open created vault": [
-        "无法打开创建的保管库"
+        "无法打开创建的保险库"
       ],
       "Could not open updated vault": [
-        "无法打开已更新的保管库"
+        "无法打开已更新的保险库"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密失败：此邮件内容解密失败"
@@ -4474,6 +4474,12 @@
       ],
       "Please select a state": [
         "请选择州"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "使用用户名 ${ user.Name }。前往设置 -> 消息和编辑 -> 短域名 (pm.me)，创建 ${ emailAddress }。"
+      ],
+      "Organization key is not decrypted": [
+        "机构密钥尚未解密"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7668,6 +7674,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "如果你的密码或其他数据从第三方服务泄露，你会收到通知。"
+      ],
+      "Keys created": [
+        "密钥已创建"
+      ],
+      "User activated": [
+        "用户已激活"
       ]
     },
     "info": {
@@ -9486,7 +9498,7 @@
         "用户储存管理"
       ],
       "Vault sharing (up to ${ n } person)": [
-        "密码分享（最多${ n }个人）"
+        "密码分享（最多 ${ n } 个人）"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
@@ -10147,7 +10159,7 @@
         "以后再说"
       ],
       "Replay introduction": [
-        "重播介绍"
+        "重新播放引导"
       ],
       "Start using ${ BRAND_NAME }": [
         "开始使用 ${ BRAND_NAME }"
@@ -11209,6 +11221,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "此订阅将以相同费率每 2 年自动续订一次，直至取消。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "您的订阅将以每年相同的费率续订。"
       ]
     },
     "specialoffer: Link": {
@@ -11483,7 +11498,7 @@
         "您将无法获得最快的 VPN 速度、10 台设备的保护、高速流媒体、广告拦截器和恶意软件保护以及优先支持。"
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "您将失去无限次登录和备注、无限次 hide-my-email 别名、20个保险库以及优先支持的特权。"
+        "您将失去无限次登录和笔记、无限次 hide-my-email 别名、20个保险库以及优先支持的特权。"
       ]
     },
     "Subscription": {
@@ -12181,7 +12196,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保管库、集成 2FA、信用卡自动填充等。"
+        "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保险库、集成 2FA、信用卡自动填充等。"
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "连接全球逾 65 个国家的 2950 + 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
@@ -13284,6 +13299,12 @@
       ],
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "然后每 12 个月向您收取 ${ renewPrice }。"
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "您的新订阅将在 ${ cycle } 个月后自动续订。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "您的预定计划从 ${ renewalTime } 开始。"
       ]
     },
     "wallet_signup_2024: Info": {
@@ -14021,6 +14042,9 @@
       ],
       "Storage": [
         "存储"
+      ],
+      "Email addresses": [
+        "邮箱地址"
       ]
     },
     "Signup label": {

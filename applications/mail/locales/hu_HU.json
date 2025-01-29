@@ -4225,6 +4225,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Az Ön felhasználóneve ${ user.Name }. A ${ emailAddress } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
+      ],
+      "Organization key is not decrypted": [
+        "A szervezeti kulcs nincs visszafejtve"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7198,6 +7204,12 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ez minden jelenleg bejelentkezett fiókjából kilépteti."
+      ],
+      "Keys created": [
+        "Kulcsok létrehozva"
+      ],
+      "User activated": [
+        "Felhasználó aktiválva"
       ]
     },
     "info": {
