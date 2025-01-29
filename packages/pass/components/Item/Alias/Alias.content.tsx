@@ -152,7 +152,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     </FieldsetCluster>
                     {
                         <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_CONTACT}>
-                            {({ closeAndAcknowledge }) => (
+                            {({ close }) => (
                                 <SpotlightGradient
                                     title={c('Title').t`Did you know?`}
                                     message={
@@ -162,7 +162,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                                         </span>
                                     }
                                     className="mb-2"
-                                    onClose={closeAndAcknowledge}
+                                    onClose={close}
                                     backgroundImage={aliasContactSpotlightImg}
                                 />
                             )}
