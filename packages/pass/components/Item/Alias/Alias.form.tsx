@@ -55,11 +55,11 @@ const AliasFormBase: FC<
             </FieldsetCluster>
 
             <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_MAILBOX}>
-                {({ closeAndAcknowledge }) => (
+                {({ close }) => (
                     <SpotlightGradient
                         title={c('Title').t`Did you know?`}
                         message={c('Info').t`Share aliases with others by adding their inbox as an additional mailbox.`}
-                        onClose={closeAndAcknowledge}
+                        onClose={close}
                         action={{
                             label: c('Action').t`Add mailbox`,
                             onClick: handleSpotlightActionClick,
@@ -135,12 +135,12 @@ export const AliasForm = <V extends AliasFormValues>({
 
                     {
                         <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_DOMAIN}>
-                            {({ closeAndAcknowledge }) => (
+                            {({ close }) => (
                                 <SpotlightGradient
                                     title={c('Title').t`Did you know?`}
                                     message={c('Info')
                                         .t`By adding your domain, you can create aliases like hi@my-domain.com.`}
-                                    onClose={closeAndAcknowledge}
+                                    onClose={close}
                                     action={{
                                         label: c('Action').t`Add domain`,
                                         onClick: handleSpotlightActionClick,
