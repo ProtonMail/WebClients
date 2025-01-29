@@ -7,7 +7,13 @@ import { OnboardingStep, type OnboardingStepRenderCallback } from '@proton/compo
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import checkConfirmation from '@proton/styles/assets/img/onboarding/img-check-confirmation.svg';
 
+import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
+
+export const isPartnerStepEligible: OnboardingStepEligibleCallback = async () => ({
+    canDisplay: new URLSearchParams(window.location.search).get('partner') === 'true',
+    preload: [checkConfirmation],
+});
 
 const PartnerStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const [subscription] = useSubscription();

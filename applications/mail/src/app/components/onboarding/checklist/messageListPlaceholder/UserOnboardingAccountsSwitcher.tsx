@@ -89,7 +89,7 @@ const getFinanceServicesByCountry = ({
 
 const TabContent = memo(({ selectedCategory }: { selectedCategory: Category }) => {
     const { viewportWidth } = useActiveBreakpoint();
-    const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
+    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const countryLocation = useMyCountry();
     const servicesKeys = getFinanceServicesByCountry({ category: selectedCategory, countryLocation }) || [];
 
@@ -152,7 +152,7 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
     const { createNotification } = useNotifications();
     const { viewportWidth } = useActiveBreakpoint();
     const { changeChecklistDisplay, canDisplayChecklist, markItemsAsDone } = useGetStartedChecklist();
-    const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
+    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
 
     if (!canDisplayChecklist) {
         return null;
