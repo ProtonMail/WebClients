@@ -56,7 +56,7 @@ export const useDrivePostSignupOneDollar = () => {
         isEligible: getIsUserEligibleForOneDollar({
             user,
             protonConfig,
-            offerStartDateTimestamp: driveOfferState?.Value.offerStartDate ?? 0,
+            offerStartDateTimestamp: driveOfferState?.Value?.offerStartDate ?? 0,
             minimalAccountAgeTimestamp: postSignupThreshold?.Value,
             driveOneDollarPostSignupFlag,
             mailOfferStartDateTimestamp: mailOfferState?.Value,
