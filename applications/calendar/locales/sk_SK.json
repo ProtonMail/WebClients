@@ -7926,6 +7926,9 @@
       "Custom email domain": [
         "Vlastná emailová doména"
       ],
+      "Email addresses": [
+        "Emailové adresy"
+      ],
       "Free": [
         "Zdarma"
       ],
@@ -8925,6 +8928,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Toto predplatné sa bude automaticky obnovovať každé 2 roky za rovnakú cenu, kým sa nezruší."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Vaše predplatné sa bude obnovovať každý rok za rovnakú cenu."
       ]
     },
     "specialoffer: Link": {
@@ -10635,6 +10641,15 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude každých 12 mesiacov vystavená faktúra vo výške ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiac",
+        "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiace",
+        "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiacov",
+        "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiacov"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Váš naplánovaný plán začína ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiac",
         "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiace",
@@ -10679,11 +10694,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin cez email"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bezpečnejší/jednoduchší spôsob držania a posielania Bitcoinu"
       ]
     },
     "wallet_signup_2024:Bug category": {

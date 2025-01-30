@@ -7787,6 +7787,9 @@
       "Custom email domain": [
         "Domeniu personal de e-mail"
       ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
       "Free": [
         "Gratuit"
       ],
@@ -8759,6 +8762,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Abonamentul dumneavoastră se va reînnoi la același tarif în fiecare an."
       ]
     },
     "specialoffer: Link": {
@@ -10436,6 +10442,9 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vi se va emite factura la fiecare 12 luni cu ${ renewPrice }."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Planul tău programat începe pe ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Abonamentul vi se va reînnoi automat peste ${ cycle } lună.",
         "Abonamentul vi se va reînnoi automat peste ${ cycle } luni.",
@@ -10476,11 +10485,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin prin e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "O metodă mai sigură/ușoară de a păstra/trimite bitcoini"
       ]
     },
     "wallet_signup_2024:Bug category": {
