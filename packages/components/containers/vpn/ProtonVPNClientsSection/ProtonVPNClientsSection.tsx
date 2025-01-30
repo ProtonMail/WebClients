@@ -13,6 +13,8 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { appendUrlSearchParams } from '@proton/shared/lib/helpers/url';
+import { VPN_MOBILE_APP_LINKS } from '@proton/shared/lib/vpn/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
 import DownloadClientCard from '../../../components/downloadClientCard/DownloadClientCard';
@@ -106,13 +108,23 @@ const ProtonVPNClientsSection = () => {
                 <DownloadClientCard
                     title={c('VPNClient').t`Android`}
                     icon="brand-android"
-                    link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_campaign=ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard&utm_source=account.protonvpn.com&utm_medium=link&utm_content=dashboard&utm_term=android"
+                    link={appendUrlSearchParams(VPN_MOBILE_APP_LINKS.playStore, {
+                        utm_campaign: 'ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard',
+                        utm_source: 'account.protonvpn.com',
+                        utm_medium: 'link',
+                        utm_content: 'dashboard',
+                        utm_term: 'android',
+                    })}
                     items={androidLinks}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`iOS`}
                     icon="brand-apple"
-                    link="https://apps.apple.com/app/apple-store/id1437005085?pt=106513916&ct=protonvpn.com-dashboard&mt=8"
+                    link={appendUrlSearchParams(VPN_MOBILE_APP_LINKS.appStore, {
+                        pt: '106513916',
+                        ct: 'protonvpn.com-dashboard',
+                        mt: '8',
+                    })}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`Windows`}
@@ -132,13 +144,25 @@ const ProtonVPNClientsSection = () => {
                 <DownloadClientCard
                     title={c('VPNClient').t`Chromebook`}
                     icon="brand-chrome"
-                    link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_campaign=ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard&utm_source=account.protonvpn.com&utm_medium=link&utm_content=dashboard&utm_term=chromebook"
+                    link={appendUrlSearchParams(VPN_MOBILE_APP_LINKS.playStore, {
+                        utm_campaign: 'ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard',
+                        utm_source: 'account.protonvpn.com',
+                        utm_medium: 'link',
+                        utm_content: 'dashboard',
+                        utm_term: 'chromebook',
+                    })}
                     items={androidLinks}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`Android TV`}
                     icon="tv"
-                    link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_campaign=ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard&utm_source=account.protonvpn.com&utm_medium=link&utm_content=dashboard&utm_term=androidtv"
+                    link={appendUrlSearchParams(VPN_MOBILE_APP_LINKS.playStore, {
+                        utm_campaign: 'ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard',
+                        utm_source: 'account.protonvpn.com',
+                        utm_medium: 'link',
+                        utm_content: 'dashboard',
+                        utm_term: 'androidtv',
+                    })}
                     items={androidLinks}
                 />
             </div>
