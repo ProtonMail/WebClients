@@ -11,19 +11,16 @@ import { getBaseDomain, throwKTError } from '../helpers/utils';
 const importPkijs = () =>
     import(
         /* webpackChunkName: "pkijs" */
-        /* webpackPrefetch: true */
         'pkijs'
     );
 const importPvUtils = () =>
     import(
         /* webpackChunkName: "pvutils" */
-        /* webpackPrefetch: true */
         'pvutils'
     );
 const importAsn1js = () =>
     import(
         /* webpackChunkName: "asn1js" */
-        /* webpackPrefetch: true */
         'asn1js'
     );
 
