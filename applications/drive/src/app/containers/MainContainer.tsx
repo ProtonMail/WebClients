@@ -20,6 +20,7 @@ import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
+import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';
 import {
     DriveProvider,
     useActivePing,
@@ -174,6 +175,9 @@ const InitContainer = () => {
                     <Route path="/shared-urls" component={SharedURLsContainer} />
                     {!isDirectSharingDisabled && <Route path="/shared-with-me" component={SharedWithMeContainer} />}
                     {photosEnabled && !photosWithAlbumsEnabled && <Route path="/photos" component={PhotosContainer} />}
+                    {photosEnabled && photosWithAlbumsEnabled && (
+                        <Route path="/photos" component={PhotosWithAlbumsContainer} />
+                    )}
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
                     <Route path="/:volumeId/:linkId" exact component={VolumeLinkContainer} />
                     <Route path="/:shareId?/:type/:linkId?" component={FolderContainerWrapper} />
