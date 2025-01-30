@@ -25,7 +25,7 @@ export const useStar = () => {
     const { sendSimpleActionReport } = useListTelemetry();
 
     const star = useCallback(
-        async (elements: Element[], value: boolean, sourceAction: SOURCE_ACTION, currentFolder?: string) => {
+        async (elements: Element[], value: boolean, labelID: string, sourceAction: SOURCE_ACTION) => {
             if (!elements.length) {
                 return;
             }
@@ -39,7 +39,6 @@ export const useStar = () => {
                 actionType: value ? ACTION_TYPE.STAR : ACTION_TYPE.UNSTAR,
                 actionLocation: sourceAction,
                 numberMessage: numberSelectionElements(elements.length),
-                folderLocation: currentFolder,
             });
 
             let rollback = () => {};

@@ -46,7 +46,6 @@ const useSnooze = () => {
         elements: Element[],
         snooze: boolean,
         sourceAction: SOURCE_ACTION,
-        currentFolder?: string,
         data?: SnoozeProps
     ) => {
         const conversationIDs = elements.map(({ ID }) => ID);
@@ -57,7 +56,6 @@ const useSnooze = () => {
             actionLocation: sourceAction,
             numberMessage: numberSelectionElements(elements.length),
             destination: snooze ? 'SNOOZE' : undefined,
-            folderLocation: currentFolder,
         });
 
         let rollback = () => {};
@@ -86,12 +84,12 @@ const useSnooze = () => {
         }
     };
 
-    const snooze = async (data: SnoozeProps, sourceAction: SOURCE_ACTION, currentFolder?: string) => {
-        await proceedSnoozeUnsnooze(data.elements, true, sourceAction, currentFolder, data);
+    const snooze = async (data: SnoozeProps, sourceAction: SOURCE_ACTION) => {
+        await proceedSnoozeUnsnooze(data.elements, true, sourceAction, data);
     };
 
-    const unsnooze = async (elements: Element[], sourceAction: SOURCE_ACTION, currentFolder?: string) => {
-        await proceedSnoozeUnsnooze(elements, false, sourceAction, currentFolder);
+    const unsnooze = async (elements: Element[], sourceAction: SOURCE_ACTION) => {
+        await proceedSnoozeUnsnooze(elements, false, sourceAction);
     };
 
     const handleCustomClick = () => {

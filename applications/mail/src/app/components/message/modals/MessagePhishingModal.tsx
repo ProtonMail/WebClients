@@ -16,11 +16,10 @@ const { SPAM } = MAILBOX_LABEL_IDS;
 
 interface Props extends ModalProps {
     message: MessageState;
-    currentFolder?: string;
     onBack: () => void;
 }
 
-const MessagePhishingModal = ({ message, currentFolder, onBack, ...rest }: Props) => {
+const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
     const api = useApi();
     const { moveToFolder } = useMoveToFolder();
     const { createNotification } = useNotifications();
@@ -47,7 +46,6 @@ const MessagePhishingModal = ({ message, currentFolder, onBack, ...rest }: Props
             silent: true,
             askUnsub: false,
             sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
-            currentFolder: currentFolder,
         });
         createNotification({ text: c('Success').t`Phishing reported` });
         onBack();

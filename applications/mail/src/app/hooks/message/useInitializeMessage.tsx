@@ -146,7 +146,6 @@ export const useInitializeMessage = () => {
                     labelID,
                     status: MARK_AS_STATUS.READ,
                     sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
-                    currentFolder: 'INIT_MESSAGE',
                 });
                 dataChanges = { ...dataChanges, Unread: 0 };
             }

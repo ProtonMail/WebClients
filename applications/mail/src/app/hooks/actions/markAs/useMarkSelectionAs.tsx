@@ -79,15 +79,7 @@ export const useMarkSelectionAs = () => {
     const { sendSimpleActionReport } = useListTelemetry();
 
     const markAs = useCallback(
-        ({
-            elements,
-            labelID = '',
-            status,
-            silent = true,
-            isMessage,
-            sourceAction,
-            currentFolder,
-        }: MarkSelectionAsParams) => {
+        ({ elements, labelID = '', status, silent = true, isMessage, sourceAction }: MarkSelectionAsParams) => {
             const markAsReadAction = isMessage ? markMessageAsRead : markConversationsAsRead;
             const markAsUnreadAction = isMessage ? markMessageAsUnread : markConversationsAsUnread;
             const action = status === MARK_AS_STATUS.READ ? markAsReadAction : markAsUnreadAction;
@@ -159,7 +151,6 @@ export const useMarkSelectionAs = () => {
                 actionType: status === MARK_AS_STATUS.READ ? ACTION_TYPE.MARK_AS_READ : ACTION_TYPE.MARK_AS_UNREAD,
                 actionLocation: sourceAction,
                 numberMessage: numberSelectionElements(elements.length),
-                folderLocation: currentFolder,
             });
 
             if (!silent) {

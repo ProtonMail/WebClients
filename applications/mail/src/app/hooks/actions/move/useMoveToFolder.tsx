@@ -53,7 +53,6 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             selectAll,
             onCheckAll,
             sourceAction,
-            currentFolder,
             percentUnread,
         }: MoveParams) => {
             if (!elements.length) {
@@ -86,7 +85,6 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     actionLocation: sourceAction,
                     numberMessage: numberSelectionElements(elements.length),
                     destination: destinationFolder,
-                    folderLocation: currentFolder,
                     percentUnread: percentUnread,
                 });
                 await moveSelectionToFolder({
@@ -100,7 +98,6 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     isMessage,
                     authorizedToMove,
                     sourceAction,
-                    currentFolder,
                 });
             }
         },

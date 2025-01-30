@@ -20,16 +20,9 @@ interface Props {
     onLock: (lock: boolean) => void;
     selectedIDs: string[];
     displayUpsellModal: () => void;
-    displayedFolder?: string;
 }
 
-const SnoozeToolbarDropdownStepWrapper = ({
-    onClose,
-    onLock,
-    selectedIDs,
-    displayUpsellModal,
-    displayedFolder,
-}: Props) => {
+const SnoozeToolbarDropdownStepWrapper = ({ onClose, onLock, selectedIDs, displayUpsellModal }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const getElementsFromIDs = useGetElementsFromIDs();
     const elements = useMemo(() => getElementsFromIDs(selectedIDs), [selectedIDs]);
@@ -38,7 +31,7 @@ const SnoozeToolbarDropdownStepWrapper = ({
 
     const handleSnooze = (event: MouseEvent, duration: SNOOZE_DURATION, snoozeTime?: Date) => {
         event.stopPropagation();
-        snooze({ elements, duration, snoozeTime }, SOURCE_ACTION.TOOLBAR, displayedFolder);
+        snooze({ elements, duration, snoozeTime }, SOURCE_ACTION.TOOLBAR);
         onClose();
     };
 
@@ -54,7 +47,7 @@ const SnoozeToolbarDropdownStepWrapper = ({
 
     const handleUnsnoozeClick = (event: MouseEvent) => {
         event.stopPropagation();
-        unsnooze(elements, SOURCE_ACTION.TOOLBAR, displayedFolder);
+        unsnooze(elements, SOURCE_ACTION.TOOLBAR);
         onClose();
     };
 
