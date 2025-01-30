@@ -1,10 +1,12 @@
-import { type FC, useEffect, useMemo, useRef } from 'react';
+import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/index';
+import { Icon } from '@proton/components/index';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -15,6 +17,8 @@ import { AliasForm } from '@proton/pass/components/Item/Alias/Alias.form';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
+import { SpotlightGradient } from '@proton/pass/components/Spotlight/SpotlightGradient';
+import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
@@ -22,7 +26,7 @@ import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
-import type { MaybeNull, NewAliasFormValues } from '@proton/pass/types';
+import { type MaybeNull, type NewAliasFormValues, SpotlightMessage } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -36,9 +40,17 @@ const FORM_ID = 'new-alias';
 const getPlaceholderNote = (url: string) => c('Placeholder').t`Used on ${url}`;
 
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
+    const { ParentPortal, openPortal } = usePortal();
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
     const reconciled = useRef(false);
-    const { ParentPortal, openPortal } = usePortal();
+
+    const [showAdvanced, setShowAdvanced] = useState(false);
+    const customizeAliasDiscovery = useSpotlightFor(SpotlightMessage.ALIAS_DISCOVERY_CUSTOMIZE);
+
+    const toggleShowAdvanced = () => {
+        if (customizeAliasDiscovery.open) customizeAliasDiscovery.close();
+        setShowAdvanced((state) => !state);
+    };
 
     const { needsUpgrade } = useSelector(selectAliasLimits);
     const { vaultTotalCount } = useSelector(selectVaultLimits);
@@ -137,6 +149,8 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
     const ready = !aliasOptions.loading;
     const { unverified } = aliasOptions;
 
+    const gearIcon = <Icon name="cog-wheel" key="alias-customize-icon" />;
+
     useEffect(() => {
         if (reconciled.current) {
             const allowPrefixDerivation = !touched.aliasPrefix;
@@ -198,12 +212,38 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                         Object.keys(form.touched).length > 0 &&
                                             (form.errors.aliasPrefix || form.errors.aliasSuffix)
                                     )}
+                                    actions={
+                                        <Button
+                                            shape="ghost"
+                                            icon
+                                            pill
+                                            onClick={toggleShowAdvanced}
+                                            title={c('Action').t`Show advanced options`}
+                                        >
+                                            <Icon name="cog-wheel" />
+                                        </Button>
+                                    }
                                 >
                                     {`${aliasPrefix}${aliasSuffix?.value ?? ''}`}
                                 </ValueControl>
                             </FieldsetCluster>
 
-                            <AliasForm aliasOptions={aliasOptions.value} loading={!ready} form={form} />
+                            {customizeAliasDiscovery.open && (
+                                <SpotlightGradient
+                                    title={c('Title').t`Did you know?`}
+                                    message={c('Info')
+                                        .jt`Tap the icon ${gearIcon} to customize the alias the way you want.`}
+                                    className="mb-2"
+                                    onClose={customizeAliasDiscovery.close}
+                                />
+                            )}
+
+                            <AliasForm
+                                aliasOptions={aliasOptions.value}
+                                loading={!ready}
+                                form={form}
+                                showAdvanced={showAdvanced}
+                            />
 
                             <FieldsetCluster>
                                 <Field

@@ -1,6 +1,6 @@
 import { type FC, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -42,11 +42,10 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
 
-    const { search } = useLocation();
     const history = useHistory();
     const { ParentPortal, openPortal } = usePortal();
 
-    const searchParams = new URLSearchParams(search);
+    const searchParams = useMemo(() => new URLSearchParams(history.location.search), []);
     const showUsernameField = useSelector(selectShowUsernameField);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
@@ -178,13 +177,15 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
         onHydrated: (draft) => draft?.withAlias && aliasOptions.request(),
     });
 
-    useEffect(
-        () => () => {
+    useEffect(() => {
+        /** Removes the `email` parameter from URL on initial mount.
+         * This prevents the email from persisting in browser history
+         * when arriving from the 'create login from alias' flow */
+        if (searchParams.has('email')) {
             searchParams.delete('email');
             history.replace({ search: searchParams.toString() });
-        },
-        []
-    );
+        }
+    }, []);
 
     return (
         <>
@@ -215,7 +216,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                             </FieldsetCluster>
 
                             <FieldsetCluster>
-                                <LoginEditCredentials form={form} isNew />
+                                <LoginEditCredentials form={form} />
 
                                 {
                                     /* only allow adding a new TOTP code if user
