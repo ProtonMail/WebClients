@@ -1339,6 +1339,9 @@
       ],
       "Work": [
         "İş"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2175,11 +2178,6 @@
         "Süresi geçmiş fatura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2258,6 +2256,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3367,6 +3370,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -3375,6 +3381,9 @@
       ],
       "No verification method available": [
         "Kullanılabilecek bir doğrulama yöntemi yok"
+      ],
+      "SMS": [
+        "Kısa mesaj"
       ]
     },
     "ICS event error": {
@@ -3647,6 +3656,9 @@
       ],
       "ICS file": [
         "ICS dosyası"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4633,7 +4645,7 @@
         "Bu belgede çok sayıda işlem yapılmış. Bazı özellikler geçici olarak kullanılamayabilir."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
-        "Bu belge mevcut olmayabilir veya görüntüleme izniniz olmayabilir. Sorunun devam edip etmediğini görmek için sayfayı yeniden yüklemeyi deneyebilir veya erişim için sahibine ulaşabilirsiniz."
+        "Bu belge var olmayabilir veya onu görüntüleme izniniz olmayabilir. Sorun sürüyor mu anlamak için sayfayı yeniden yüklemeyi ya da erişim izni vermesi için sahibi ile görüşmeyi deneyebilirsiniz."
       ],
       "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Bu belge var olmayabilir veya seçilmiş hesabınızda belgeyi görüntülemek için gerekli izinler olmayabilir. Farklı bir hesap kullanmayı deneyin veya erişim izni vermesi için belge sahibiyle görüşün."
@@ -5054,6 +5066,9 @@
       ],
       "Trusted": [
         "Güvenilen"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7152,8 +7167,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükle"
       ],
       "Storage": [
         "Depolama alanı"
@@ -7356,6 +7377,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -7924,7 +7950,7 @@
         "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "Aboneliğiniz her yıl aynı oranda yenilenecektir."
+        "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
     },
     "specialoffer: Link": {
@@ -8243,25 +8269,6 @@
         "${ totalPrice } için"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "Folders, labels, and custom filters": [
-        "Klasörler, etiketler ve özel süzgeçler"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -8301,6 +8308,25 @@
       ],
       "Your privacy is our mission": [
         "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
       ]
     },
     "Subscription renewal state": {
@@ -9030,11 +9056,6 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Bu paylaşılan dosyayı daha sonra kolayca erişebilmek için ${ DRIVE_APP_NAME } depolama alanınıza ekleyin"
@@ -9112,6 +9133,11 @@
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
@@ -9162,11 +9188,11 @@
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "Yeni aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir.",
-        "Yeni aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir."
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Planlanmış planınız ${ renewalTime } tarihinde başlar."
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
@@ -9207,8 +9233,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin birikimlerinizi kolayca ve güvenle saklayın ve gönderin"
+      "A safer way to hold Bitcoin": [
+        "Bitcoin saklamak için daha güvenli bir yol"
       ]
     },
     "wallet_signup_2024:Bug category": {

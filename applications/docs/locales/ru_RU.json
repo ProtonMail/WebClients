@@ -2145,11 +2145,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2225,6 +2220,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3769,6 +3769,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
         "Найдены ${ providerFoldersNumLocalized } папки",
@@ -4045,6 +4048,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "ЭЦП проверена. Эта папка была безопасно загружена ${ emailAddress }."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Откройте для себя новые доступные функции и начните использовать их прямо сейчас!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Откройте для себя новые функции, доступные с ${ planTitle }, и начните использовать их прямо сейчас!"
+      ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
@@ -4098,6 +4107,9 @@
       ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Письма, перемещённые в Корзину и Спам более 30 дней назад, будут автоматически очищены."
       ],
       "Enabling auto-deletion…": [
         "Включение автоудаления…"
@@ -4399,6 +4411,9 @@
       "Opening...": [
         "Открывается..."
       ],
+      "or discover other features:": [
+        "или откройте для себя другие возможности:"
+      ],
       "Organization size": [
         "Размер организации"
       ],
@@ -4534,6 +4549,9 @@
       "Session timed out": [
         "Время сеанса истекло"
       ],
+      "Setting up ${ feature }…": [
+        "Установка ${ feature }…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
       ],
@@ -4614,6 +4632,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "В этом документе много активности. Некоторые функции могут быть временно недоступны."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
       ],
       "This item already exists in your library": [
         "Этот элемент уже существует в вашей библиотеке"
@@ -4798,6 +4819,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы также можете объединить импортированные календари с существующими календарями ${ BRAND_NAME }."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можете изменить это в любой момент в ${ settingsLink }."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить ход выполнения ${ importProgressLink }."
       ],
@@ -4827,6 +4851,9 @@
       ],
       "You cannot undo this action.": [
         "Это действие нельзя отменить."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас пробная подписка на ${ planTitle }. Если вы хотите продолжить подписку после пробного периода, добавьте способ оплаты."
@@ -4912,11 +4939,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Следующая дата выставления счета - ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
+      ],
       "Your password was leaked:": [
         "Произошла утечка вашего пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
       ]
     },
     "info": {
@@ -8222,29 +8258,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Объем хранилища на пользователя: ${ planMaxSpace }"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } пользовательский домен электронной почты",
-        "${ planNumberOfDomains } пользовательских домена электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адрес электронной почты",
-        "${ planNumberOfEmails } адреса электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты"
-      ],
-      "Folders, labels, and custom filters": [
-        "Папки, ярлыки и пользовательские фильтры"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ хранилища"
@@ -8284,6 +8297,29 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватность является нашей задачей"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Объем хранилища на пользователя: ${ planMaxSpace }"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "Folders, labels, and custom filters": [
+        "Папки, ярлыки и пользовательские фильтры"
       ]
     },
     "Subscription renewal state": {
@@ -9014,11 +9050,6 @@
         "Сегодня"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Добавьте этот общий файл к вашему ${ DRIVE_APP_NAME } для легкого доступа к нему в дальнейшем."
@@ -9091,6 +9122,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы отправили им приглашение получить доступ к этому элементу."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Validation": {
@@ -9200,11 +9236,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin по эл. почте"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Безопасный и простой способ хранить и переводить Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

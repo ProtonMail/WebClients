@@ -2166,11 +2166,6 @@
         "Протермінований рахунок"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скористайтеся помічником з імпортування Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
@@ -2246,6 +2241,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скористайтеся помічником з імпортування Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -8338,29 +8338,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } сховища на користувача"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } власний поштовий домен",
-        "${ planNumberOfDomains } власні поштові домени",
-        "${ planNumberOfDomains } власних поштових доменів",
-        "${ planNumberOfDomains } власних поштових доменів"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } поштова адреса",
-        "${ planNumberOfEmails } поштові адреси",
-        "${ planNumberOfEmails } поштових адрес",
-        "${ planNumberOfEmails } поштових адрес"
-      ],
-      "Folders, labels, and custom filters": [
-        "Теки, мітки та користувацькі фільтри"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ сховища"
@@ -8400,6 +8377,29 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватність є нашою місією"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } сховища на користувача"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } власний поштовий домен",
+        "${ planNumberOfDomains } власні поштові домени",
+        "${ planNumberOfDomains } власних поштових доменів",
+        "${ planNumberOfDomains } власних поштових доменів"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } поштова адреса",
+        "${ planNumberOfEmails } поштові адреси",
+        "${ planNumberOfEmails } поштових адрес",
+        "${ planNumberOfEmails } поштових адрес"
+      ],
+      "Folders, labels, and custom filters": [
+        "Теки, мітки та користувацькі фільтри"
       ]
     },
     "Subscription renewal state": {
@@ -9139,11 +9139,6 @@
         "Сьогодні"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Додайте цей спільний файл до вашого ${ DRIVE_APP_NAME } для легкого доступу пізніше."
@@ -9219,6 +9214,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Ми надіслали їм запрошення, щоб отримати доступ до цього елементу."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
       ]
     },
     "Validation": {
@@ -9328,11 +9328,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin електронною поштою"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Безпечніший/простіший спосіб зберігати та надсилати біткоїн"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -1339,6 +1339,9 @@
       ],
       "Work": [
         "Werk"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2175,11 +2178,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2258,6 +2256,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3367,6 +3370,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -3375,6 +3381,9 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3647,6 +3656,9 @@
       ],
       "ICS file": [
         "ICS-bestand"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5054,6 +5066,9 @@
       ],
       "Trusted": [
         "Vertrouwd"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7152,8 +7167,14 @@
       "Free": [
         "Gratis"
       ],
+      "Online document editor": [
+        "Online document editor"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
       ],
       "Storage": [
         "Opslagruimte"
@@ -7356,6 +7377,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Gratis"
       ]
     },
     "Payments.Sepa": {
@@ -8243,25 +8269,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } opslagruimte per gebruiker"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigen e-maildomein",
-        "${ planNumberOfDomains } eigen e-maildomeinen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadres",
-        "${ planNumberOfEmails } e-mailadressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappen, labels en aangepaste filters"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB opslagruimte"
@@ -8301,6 +8308,25 @@
       ],
       "Your privacy is our mission": [
         "Uw privacy is onze missie"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappen, labels en aangepaste filters"
       ]
     },
     "Subscription renewal state": {
@@ -9030,11 +9056,6 @@
         "Vandaag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Voeg dit gedeelde bestand toe aan uw ${ DRIVE_APP_NAME } voor eenvoudige toegang op een later tijdstip."
@@ -9112,6 +9133,11 @@
         "We hebben ze een uitnodiging gestuurd om het item te bekijken."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
@@ -9166,7 +9192,7 @@
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maanden."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Uw geplande abonnement begint op ${ renewalTime }."
+        "Uw gepland abonnement begint op ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
@@ -9207,8 +9233,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Een veiligere/makkelijkere manier om Bitcoin te bewaren en te verzenden"
+      "A safer way to hold Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
       ]
     },
     "wallet_signup_2024:Bug category": {
