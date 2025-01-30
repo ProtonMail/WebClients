@@ -5,7 +5,7 @@ import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage
 
 import type { DecryptedLink } from '../_links';
 import { useLinksActions, useLinksListing } from '../_links';
-import { usePhotos } from './PhotosProvider';
+import { usePhotosOrPhotosWithAlbums } from './PhotosOrPhotosWithAlbumsProvider';
 import { usePhotosRecovery } from './usePhotosRecovery';
 
 function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
@@ -101,9 +101,9 @@ jest.mock('../../zustand/share/shares.store', () => {
     };
 });
 
-jest.mock('./PhotosProvider', () => {
+jest.mock('./PhotosOrPhotosWithAlbumsProvider', () => {
     return {
-        usePhotos: jest.fn(),
+        usePhotosOrPhotosWithAlbums: jest.fn(),
     };
 });
 
@@ -127,7 +127,7 @@ const mockedSetItem = jest.mocked(setItem);
 
 describe('usePhotosRecovery', () => {
     const links = [generateDecryptedLink('linkId1'), generateDecryptedLink('linkId2')];
-    const mockedUsePhotos = jest.mocked(usePhotos);
+    const mockedUsePhotos = jest.mocked(usePhotosOrPhotosWithAlbums);
     const mockedUseLinksListing = jest.mocked(useLinksListing);
     const mockedUseLinksActions = jest.mocked(useLinksActions);
     const mockedGetCachedChildren = jest.fn();
