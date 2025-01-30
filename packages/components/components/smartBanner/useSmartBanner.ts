@@ -1,7 +1,9 @@
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { APPS, CALENDAR_MOBILE_APP_LINKS, MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/constants';
+import { CALENDAR_MOBILE_APP_LINKS } from '@proton/shared/lib/calendar/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { isAndroid as getIsAndroid, isIos as getIsIos } from '@proton/shared/lib/helpers/browser';
 import { isCalendarMobileAppUser, isMailMobileAppUser } from '@proton/shared/lib/helpers/usedClientsFlags';
+import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
 
 import type { SmartBannerApp } from './types';
 
