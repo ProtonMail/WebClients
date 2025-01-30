@@ -1662,6 +1662,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3942,6 +3945,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "邮件"
       ],
@@ -3950,6 +3956,9 @@
       ],
       "No verification method available": [
         "没有可用的验证方法"
+      ],
+      "SMS": [
+        "短信"
       ]
     },
     "ICS event error": {
@@ -4216,6 +4225,9 @@
       ],
       "ICS file": [
         "ICS 文件"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5462,6 +5474,9 @@
       ],
       "Trusted": [
         "已信任"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -7515,8 +7530,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
       ],
       "Storage": [
         "存储"
@@ -7804,6 +7825,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8430,6 +8456,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "此订阅将以相同费率每 2 年自动续订一次，直至取消。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "您的订阅将以每年相同的费率续订。"
       ]
     },
     "specialoffer: Link": {
@@ -10041,6 +10070,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "然后每 12 个月向您收取 ${ renewPrice }。"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "您的新订阅将在 ${ cycle } 个月后自动续订。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "您的预定计划从 ${ renewalTime } 开始。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的订阅将在 ${ cycle } 个月后自动续期。"
       ]
@@ -10076,8 +10111,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "持有和发送比特币更安全/更便捷的方式"
+      "A safer way to hold Bitcoin": [
+        "更安全持有比特币的方式"
       ]
     },
     "wallet_signup_2024:Bug category": {

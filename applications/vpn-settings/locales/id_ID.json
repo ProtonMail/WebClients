@@ -2924,10 +2924,10 @@
         "Ditunda"
       ],
       "Pending invitation": [
-        "Undangan tertunda"
+        "Undangan belum ditanggapi"
       ],
       "Pending invitations": [
-        "Undangan tertunda"
+        "Undangan belum ditanggapi"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
@@ -3321,6 +3321,11 @@
         "Mungil"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privasi sebagai hal yang baku."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Sudah memiliki akun? ${ signIn }"
@@ -3480,6 +3485,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -3488,6 +3496,9 @@
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -3573,7 +3584,7 @@
         "${ vaultLink } diperbarui"
       ],
       "${ vpnPlus } required for Country level connection.": [
-        "${ vpnPlus } diperlukan untuk koneksi tingkat Negara."
+        "${ vpnPlus } dibutuhkan untuk koneksi tingkat Negara."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } diperlukan untuk fitur Secure Core."
@@ -4623,13 +4634,13 @@
         "Masa berlaku sesi telah berakhir"
       ],
       "Setting up ${ feature }…": [
-        "Menyiapkan ${ feature }…"
+        "Mempersiapkan ${ feature }…"
       ],
       "Setting up your new address…": [
-        "Menyiapkan alamat baru Anda…"
+        "Mempersiapkan alamat baru Anda…"
       ],
       "Setting up your organization": [
-        "Menyiapkan organisasi Anda"
+        "Mempersiapkan organisasi Anda"
       ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } terbagi telah dihapus"
@@ -5324,7 +5335,7 @@
         "Dijeda"
       ],
       "Pending": [
-        "Tertunda"
+        "Belum ditanggapi"
       ],
       "Sending invite...": [
         "Mengirimkan undangan..."
@@ -7500,11 +7511,20 @@
       "Custom email domain": [
         "Domain email khusus"
       ],
+      "Email addresses": [
+        "Alamat email"
+      ],
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Penyunting dokumen online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
       ],
       "Storage": [
         "Ruang penyimpanan"
@@ -7946,6 +7966,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8776,6 +8801,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Langganan ini akan diperbarui secara otomatis setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Langganan Anda akan diperbarui dengan harga yang sama setiap tahunnya."
       ]
     },
     "specialoffer: Link": {
@@ -9095,7 +9123,7 @@
         "Nonaktif"
       ],
       "Pending activation": [
-        "Aktivasi tertunda"
+        "Menunggu aktivasi"
       ],
       "Pending admin activation": [
         "Menunggu aktivasi admin"
@@ -9322,6 +9350,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription reminder": {
@@ -9606,47 +9675,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -10974,6 +11002,9 @@
       "Keep request": [
         "Pertahankan permintaan"
       ],
+      "Member activation incomplete": [
+        "Aktivasi anggota belum rampung"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Setelah pengguna menyetujui, Anda akan dapat membantunya mendapatkan kembali akses akun atau mengelola datanya."
       ],
@@ -11002,7 +11033,7 @@
         "Pengguna harus memiliki alamat untuk meminta pengaksesan data"
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
-        "Tindakan ini akan membatalkan permintaan akses administrator bagi data pengguna ini atau pengaturan ulang kata sandi yang masih tertunda."
+        "Tindakan ini akan membatalkan permintaan akses administrator bagi data pengguna ini atau pengaturan ulang kata sandi yang belum ditanggapi."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tindakan ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."
@@ -11169,6 +11200,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Langganan baru Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Paket terjadwal Anda akan dimulai pada ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Langganan Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
       ]
@@ -11264,8 +11301,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Cara yang lebih aman/mudah untuk menyimpan & mengirim Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Cara yang lebih aman untuk menyimpan Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

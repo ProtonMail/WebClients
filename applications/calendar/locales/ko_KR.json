@@ -1662,6 +1662,9 @@
       ],
       "Work": [
         "직장"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3942,6 +3945,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "이메일"
       ],
@@ -3950,6 +3956,9 @@
       ],
       "No verification method available": [
         "사용 가능한 인증 방법 없음"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4216,6 +4225,9 @@
       ],
       "ICS file": [
         "ICS 파일"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5462,6 +5474,9 @@
       ],
       "Trusted": [
         "신뢰됨"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -7515,8 +7530,14 @@
       "Free": [
         "무료"
       ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "파일 이전 버전 복원"
       ],
       "Storage": [
         "저장 공간"
@@ -7804,6 +7825,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8432,7 +8458,7 @@
         "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "귀하의 구독은 매년 같은 요율로 갱신됩니다."
+        "회원님의 구독이 매년 같은 요율로 갱신됩니다."
       ]
     },
     "specialoffer: Link": {
@@ -10045,10 +10071,10 @@
         "12개월마다 ${ renewPrice }가 결제됩니다."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "귀하의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
+        "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "귀하의 요금제가 ${ renewalTime }에 시작합니다."
+        "회원님의 플랜이 ${ renewalTime }부터 시작합니다."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "사용자의 구독이 ${ cycle }개월 뒤에 자동으로 갱신됩니다."
@@ -10085,8 +10111,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "쉽고 안전하게 Bitcoin을 보관 및 송금하세요"
+      "A safer way to hold Bitcoin": [
+        "비트코인을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {

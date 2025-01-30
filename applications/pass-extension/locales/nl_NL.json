@@ -254,9 +254,6 @@
       "Export": [
         "Exporteren"
       ],
-      "Feedback & Help": [
-        "Feedback & Help"
-      ],
       "Fill in": [
         "Invullen"
       ],
@@ -316,6 +313,9 @@
       ],
       "Invite others": [
         "Nodig anderen uit"
+      ],
+      "Join our Reddit": [
+        "Maak je lid van onze Reddit"
       ],
       "Join shared vault": [
         "Deelnemen aan gedeelde kluis"
@@ -512,9 +512,6 @@
       "Send invite": [
         "Stuur een uitnodiging"
       ],
-      "Send us a message": [
-        "Stuur ons een bericht"
-      ],
       "Set access level": [
         "Stel toegangsniveau in"
       ],
@@ -646,11 +643,8 @@
       "With other ${ BRAND_NAME } users": [
         "Met ${ BRAND_NAME } gebruikers"
       ],
-      "Write us on Reddit": [
-        "Schrijf ons op Reddit"
-      ],
-      "Write us on Twitter": [
-        "Schrijf ons op Twitter"
+      "Write us on X/Twitter": [
+        "Schrijf ons op X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
@@ -1756,11 +1750,7 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis en alle beveiligde links.",
-        "Bij het verplaatsen van items naar een andere kluis worden de geschiedenis en alle beveiligde koppelingen gewist."
-      ],
-      "Moving an item to another vault will erase its history.": [
+      "Moving an item to another vault will erase its secure links.": [
         "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
         "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
@@ -2604,6 +2594,9 @@
       ],
       "Facebook account": [
         "Facebook-account"
+      ],
+      "Feedback": [
+        "Feedback"
       ],
       "Field name": [
         "Veldnaam"

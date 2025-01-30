@@ -546,6 +546,9 @@
       "Get started": [
         "Comenzar"
       ],
+      "Get the app": [
+        "Obtener la aplicación"
+      ],
       "Get the browser extension": [
         "Obtén la extensión del navegador"
       ],
@@ -599,6 +602,9 @@
       ],
       "Hide messages": [
         "Ocultar mensajes"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ],
       "Hide toolbar": [
         "Ocultar la barra de herramientas"
@@ -1935,6 +1941,9 @@
       "Discover and set up features": [
         "Descubre y configura las funcionalidades"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "Maybe later": [
         "Quizás más tarde"
       ],
@@ -2674,6 +2683,9 @@
       ],
       "Work": [
         "Trabajo"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5155,6 +5167,11 @@
         "Muy pequeño"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Fecha: el ${ date }"
@@ -5409,6 +5426,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Correo electrónico"
       ],
@@ -5417,6 +5437,9 @@
       ],
       "No verification method available": [
         "No hay ningún método de verificación disponible."
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5706,6 +5729,9 @@
       ],
       "ICS file": [
         "archivo CSV"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7905,6 +7931,9 @@
       ],
       "Trusted": [
         "Confiable"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10350,8 +10379,14 @@
       "Free": [
         "Gratuito"
       ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Recuperar las versiones previas de los archivos"
       ],
       "Storage": [
         "Almacenamiento"
@@ -10402,6 +10437,9 @@
       "Advanced encryption": [
         "Cifrado avanzado"
       ],
+      "Android": [
+        "Android"
+      ],
       "Anytime, anywhere access": [
         "Acceso en cualquier momento y en cualquier lugar"
       ],
@@ -10440,6 +10478,9 @@
       ],
       "Industry-leading spam protection": [
         "Protección contra spam líder en la industria"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "Let's get started": [
         "¡Comencemos!"
@@ -10761,6 +10802,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -11998,6 +12044,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, y ${ VPN_SHORT_APP_NAME } con características prémium"
@@ -12256,47 +12343,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -13625,11 +13671,6 @@
         "Hoy"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático: indica que formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
@@ -13711,6 +13752,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Tor out of date": {
@@ -13823,8 +13869,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Una forma más segura y sencilla de guardar y enviar Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Una manera más segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

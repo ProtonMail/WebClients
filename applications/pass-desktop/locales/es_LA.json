@@ -253,9 +253,6 @@
       "Export": [
         "Exportar"
       ],
-      "Feedback": [
-        "Comentarios"
-      ],
       "Fill password": [
         "Completar contraseña"
       ],
@@ -301,6 +298,9 @@
       "How to update ${ PASS_APP_NAME } on Linux": [
         "Cómo actualizar ${ PASS_APP_NAME } en Linux"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Cómo usar ${ PASS_APP_NAME }"
+      ],
       "Import": [
         "Importar"
       ],
@@ -318,6 +318,9 @@
       ],
       "Invite others": [
         "Invitar a otros"
+      ],
+      "Join our Reddit": [
+        "Únese a nuestro Reddit"
       ],
       "Join shared vault": [
         "Unirse a la bóveda compartida"
@@ -517,9 +520,6 @@
       "Send invite": [
         "Enviar invitación"
       ],
-      "Send us a message": [
-        "Envíenos un mensaje"
-      ],
       "Set access level": [
         "Configurar nivel de acceso"
       ],
@@ -645,11 +645,8 @@
       "With other ${ BRAND_NAME } users": [
         "Con otros usuarios de ${ BRAND_NAME }"
       ],
-      "Write us on Reddit": [
-        "Escríbanos en Reddit"
-      ],
-      "Write us on Twitter": [
-        "Escríbanos en Twitter"
+      "Write us on X/Twitter": [
+        "Escríbanos en X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
@@ -1804,13 +1801,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Mover un elemento a otra bóveda eliminará el historial y todos los enlaces seguros.",
-        "Mover los elementos a otra bóveda eliminará el historial y todos los enlaces seguros."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Mover un elemento a otra bóveda eliminará su historial.",
-        "Mover los elementos a otra bóveda eliminará el historial."
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2656,6 +2649,9 @@
       ],
       "Facebook account": [
         "Cuenta de Facebook"
+      ],
+      "Feedback": [
+        "Comentarios"
       ],
       "Field name": [
         "Nombre del campo"

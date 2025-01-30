@@ -2199,11 +2199,6 @@
         "Faktúra po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2282,6 +2277,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4755,6 +4755,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Tento dokument obsahuje veľa aktivít. Niektoré funkcie môžu byť dočasne nedostupné."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "Tento dokument nemusí existovať alebo nemáte povolenie na jeho zobrazenie. Môžete skúsiť znovu načítať stránku, aby ste zistili, či problém pretrváva, alebo sa obráťte na vlastníka, aby vám poskytol prístup."
       ],
       "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Tento dokument nemusí existovať alebo nemáte potrebné oprávnenia na jeho zobrazenie vo vybranom účte. Skúste použiť iný účet alebo sa obráťte na vlastníka, aby vám poskytol prístup."
@@ -7363,6 +7366,9 @@
       "Custom email domain": [
         "Vlastná emailová doména"
       ],
+      "Email addresses": [
+        "Emailové adresy"
+      ],
       "Free": [
         "Zdarma"
       ],
@@ -8180,6 +8186,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Toto predplatné sa bude automaticky obnovovať každé 2 roky za rovnakú cenu, kým sa nezruší."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Vaše predplatné sa bude obnovovať každý rok za rovnakú cenu."
       ]
     },
     "specialoffer: Link": {
@@ -8512,29 +8521,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložisko na používateľa"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastná emailová doména",
-        "${ planNumberOfDomains } vlastné emailové domény",
-        "${ planNumberOfDomains } vlastných emailových domén",
-        "${ planNumberOfDomains } vlastných emailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } emailová adresa",
-        "${ planNumberOfEmails } emailové adresy",
-        "${ planNumberOfEmails } emailových adries",
-        "${ planNumberOfEmails } emailových adries"
-      ],
-      "Folders, labels, and custom filters": [
-        "Priečinky, štítky a vlastné filtre"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložného priestoru"
@@ -8574,6 +8560,29 @@
       ],
       "Your privacy is our mission": [
         "Vaše súkromie je naším poslaním"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložisko na používateľa"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
+      ],
+      "Folders, labels, and custom filters": [
+        "Priečinky, štítky a vlastné filtre"
       ]
     },
     "Subscription renewal state": {
@@ -9331,11 +9340,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tento zdieľaný súbor pridajte do svojho ${ DRIVE_APP_NAME } pre neskorší jednoduchý prístup."
@@ -9413,6 +9417,11 @@
         "Poslali sme im pozvánku s prístupom k položke."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
@@ -9476,6 +9485,15 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Potom vám bude každých 12 mesiacov vystavená faktúra vo výške ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiac",
+        "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiace",
+        "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiacov",
+        "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiacov"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Váš naplánovaný plán začína ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiac",
         "Vaše predplatné bude automaticky obnovené o ${ cycle } mesiace",
@@ -9520,11 +9538,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin cez email"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bezpečnejší/jednoduchší spôsob držania a posielania Bitcoinu"
       ]
     },
     "wallet_signup_2024:Bug category": {

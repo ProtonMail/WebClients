@@ -254,9 +254,6 @@
       "Export": [
         "Eksportér"
       ],
-      "Feedback & Help": [
-        "Feedback og hjælp"
-      ],
       "Fill in": [
         "Udfyld"
       ],
@@ -316,6 +313,9 @@
       ],
       "Invite others": [
         "Invitér andre"
+      ],
+      "Join our Reddit": [
+        "Mød os på Reddit"
       ],
       "Join shared vault": [
         "Deltag i delt boks"
@@ -512,9 +512,6 @@
       "Send invite": [
         "Send invitation"
       ],
-      "Send us a message": [
-        "Send en besked til os"
-      ],
       "Set access level": [
         "Angiv adgangsniveau"
       ],
@@ -646,11 +643,8 @@
       "With other ${ BRAND_NAME } users": [
         "Med andre brugere af ${ BRAND_NAME }"
       ],
-      "Write us on Reddit": [
-        "Skriv til os på Reddit"
-      ],
-      "Write us on Twitter": [
-        "Skriv til os på Twitter"
+      "Write us on X/Twitter": [
+        "Skriv til os på X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
@@ -1756,13 +1750,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Flyttes et element til en anden boks, slettes dets historik og alle sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres historik og alle sikre links."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Flyttes et element til en anden boks, slettes dets historik.",
-        "Flyttes elementer til en anden boks, slettes deres historik."
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2601,6 +2591,9 @@
       ],
       "Facebook account": [
         "Facebook-konto"
+      ],
+      "Feedback": [
+        "Feedback"
       ],
       "Field name": [
         "Feltnavn"

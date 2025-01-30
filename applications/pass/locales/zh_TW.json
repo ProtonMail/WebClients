@@ -175,9 +175,6 @@
       "Export": [
         "匯出"
       ],
-      "Feedback": [
-        "意見回饋"
-      ],
       "Fill password": [
         "填寫密碼"
       ],
@@ -213,6 +210,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "如何從${ PROVIDER_INFO_MAP[form.values.provider].title }匯出資料?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "如何使用${ PASS_APP_NAME }"
       ],
       "Import": [
         "匯入"
@@ -382,9 +382,6 @@
       "Send invite": [
         "寄送邀請"
       ],
-      "Send us a message": [
-        "傳送訊息給我們"
-      ],
       "Set access level": [
         "設定存取層級"
       ],
@@ -471,12 +468,6 @@
       ],
       "View older history": [
         "查看較舊的歷史"
-      ],
-      "Write us on Reddit": [
-        "在 Reddit 上寫上我們"
-      ],
-      "Write us on Twitter": [
-        "在 Twitter 上寫上我們"
       ],
       "Your password manager is not here? Request it.": [
         "找不到您使用的密碼管理器？歡迎告訴我們"

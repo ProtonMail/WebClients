@@ -484,6 +484,9 @@
       "Edit group": [
         "編輯群組"
       ],
+      "Edit invoice note": [
+        "編輯帳單註記"
+      ],
       "Edit label": [
         "編輯標籤"
       ],
@@ -613,6 +616,9 @@
       "Get more servers": [
         "取得更多伺服器"
       ],
+      "Get the app": [
+        "取得應用程式"
+      ],
       "Get the browser extension": [
         "取得瀏覽器擴充工具"
       ],
@@ -627,6 +633,9 @@
       ],
       "Go to label": [
         "跳至標籤"
+      ],
+      "Go to panel ${ index }": [
+        "前往面板 ${ index }"
       ],
       "Go to settings": [
         "前往設定"
@@ -1952,6 +1961,9 @@
       ],
       "Discover and set up features": [
         "探索及設定功能"
+      ],
+      "Got it": [
+        "瞭解"
       ],
       "Invite": [
         "邀請"
@@ -5658,6 +5670,11 @@
         "非常小"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }。預設即隱私"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "網頁應用程序"
@@ -5979,6 +5996,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA 驗證碼"
+      ],
       "Email": [
         "電郵"
       ],
@@ -5987,6 +6007,9 @@
       ],
       "No verification method available": [
         "沒有可用的驗證方法"
+      ],
+      "SMS": [
+        "簡訊"
       ]
     },
     "ICS event error": {
@@ -6258,6 +6281,9 @@
       ],
       "ICS file": [
         "ICS 檔案"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -6386,6 +6412,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
+      "${ checkout.discountPercent }% discount": [
+        "${ checkout.discountPercent }%折扣"
+      ],
       "${ current } of ${ total }": [
         "${ total } 中的 ${ current }"
       ],
@@ -6424,6 +6453,9 @@
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME }允許您透過端對端加密儲存密碼，筆記，及其他敏感資料。於${ ios }${ android }及您的${ browser }可用。"
+      ],
+      "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
+        "${ PASS_APP_NAME }是為方便使用及生產力設計的下一世代的密碼管理器。開源及與SimpleLogin和${ BRAND_NAME }共同開發。"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
@@ -6821,6 +6853,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升您組織機構的品牌形象，為您的使用者創造更一致的線上體驗。"
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "透過您的SimpleLogin電子郵件創建${ PASS_APP_NAME }帳號，您可直接從${ PASS_APP_NAME }管理您的別名。"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
       ],
@@ -6964,6 +6999,9 @@
       ],
       "Dedicated servers": [
         "專用伺服器"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "具有專用多組 IP 位址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制。"
       ],
       "default email address": [
         "預設電子信箱地址"
@@ -7181,6 +7219,9 @@
       "Event invitations and responses will be sent in this language.": [
         "行程邀請與回應將會以此語言傳送。"
       ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "事件包含所有使用 ${ BRAND_NAME_TWO } 憑證的 ${ BRAND_NAME } 服務的驗證嘗試。"
+      ],
       "Example: ${ spfExample }": [
         "範例: ${ spfExample }"
       ],
@@ -7238,6 +7279,9 @@
       "Get ${ upsellPlanName }": [
         "取得 ${ upsellPlanName }"
       ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "透過創建${ BRAND_NAME }帳號和接受邀請以取得存取權。"
+      ],
       "Get it on Google Play": [
         "於 Google Play取得"
       ],
@@ -7285,6 +7329,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "若您於其他地方登入，您將可以${ signedInPasswordResetLink }。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
@@ -7535,6 +7582,9 @@
       "learn more about Sieve programming language": [
         "了解更多有關 Sieve 程式語言"
       ],
+      "Learn more about single sign-on": [
+        "了解單一登入"
+      ],
       "Left to Right": [
         "由左至右"
       ],
@@ -7591,6 +7641,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "請確保 ${ addARecoveryMethod } ，如果忘記密碼您還能恢復存取帳號。"
+      ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "管理您電子郵件的${ DOCS_APP_NAME }通知偏好設定"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。${ switchButton }。"
@@ -8024,6 +8077,9 @@
       "SCIM token active": [
         "SCIM 憑證啟用"
       ],
+      "Search by an email address to begin": [
+        "透過電子郵件地址以開始"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "保護您的 ${ BRAND_NAME } 帳號"
       ],
@@ -8222,6 +8278,9 @@
       "The calendar will be removed from your account.": [
         "該行事曆將會從您的帳號中移除。"
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "暗網是隱藏的網路充斥著個人資訊，如身分，可為買賣。"
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "下載數量包含實際下載與預覽檔案時的實體。"
       ],
@@ -8374,6 +8433,9 @@
       ],
       "to ${ product } Business": [
         "至${ product }商業版"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "若要允許 **${ domainName }**網域使用 SAML SSO，您必須前往您的 DNS 提供者新增下列 DNS TXT 記錄到您的網域中，以便驗證其為您所有。"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
@@ -8786,6 +8848,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以編輯這個一次以確保用於驗證的電子郵件位址正確。"
       ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "您可以啟用認證記錄，以查看您的帳號何時被存取以及來自哪個 IP。我們將記錄存取帳號所使用的 IP 位址及時間，以及失敗的登入嘗試。"
+      ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
       ],
@@ -8902,6 +8967,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您將再也不能使用您先前下載的帳號救援檔案恢復被鎖定的資料。此操作將一併停用基於裝置的復原方法。"
+      ],
+      "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
+        "您${ boldPlanTitle }的${ boldDiscountPercent }折扣已套用"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。"
@@ -12460,8 +12528,14 @@
       "Free": [
         "免費"
       ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
       "Plus": [
         "進階"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
       ],
       "Storage": [
         "雲端儲存"
@@ -13304,6 +13378,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "免費"
       ]
     },
     "Payments.Sepa": {
@@ -14444,6 +14523,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "您的訂閱每年將以同費率更新"
       ]
     },
     "specialoffer: Link": {
@@ -15727,6 +15809,9 @@
       "Amount due": [
         "應付金額"
       ],
+      "An address for each role": [
+        "每一職位一個地址"
+      ],
       "Anytime, anywhere access": [
         "任何時間，任何地點存取"
       ],
@@ -16045,6 +16130,9 @@
       "Download the mobile apps": [
         "下載行動 app"
       ],
+      "Edit billing address": [
+        "編輯帳單地址"
+      ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
       ],
@@ -16062,6 +16150,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "設定閘道器 ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "編輯帳單註記"
       ],
       "Edit profile": [
         "編輯個人資料"
@@ -16429,9 +16520,6 @@
       "PayPal verification failed": [
         "PayPal 驗證失敗"
       ],
-      "Personalise your e-mail footer": [
-        "個人化電郵簽名檔"
-      ],
       "Personalize your email footer": [
         "自訂您電郵的頁尾"
       ],
@@ -16464,6 +16552,9 @@
       ],
       "QR Code": [
         "QRCode"
+      ],
+      "Ready, set, forward": [
+        "準備,設定,轉寄"
       ],
       "Recommended": [
         "推薦"
@@ -16758,6 +16849,9 @@
       ],
       "User": [
         "使用者"
+      ],
+      "User converted to SSO": [
+        "使用者已轉換至單一登入"
       ],
       "Users": [
         "使用者"
@@ -17482,8 +17576,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "一個更安全/容易持有&傳送Bitcoin的方法"
+      "A safer way to hold Bitcoin": [
+        "更安全持有Bitcoin的方法"
       ]
     },
     "wallet_signup_2024:Bug category": {

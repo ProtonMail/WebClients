@@ -543,6 +543,9 @@
       "Get started": [
         "Selesai"
       ],
+      "Get the app": [
+        "Dapatkan aplikasinya"
+      ],
       "Get the browser extension": [
         "Dapatkan ekstensi browser"
       ],
@@ -597,11 +600,14 @@
       "Hide messages": [
         "Sembunyikan pesan"
       ],
+      "Hide my email": [
+        "Hide my email"
+      ],
       "Hide toolbar": [
         "Sembunyikan bilah alat"
       ],
       "I like this response": [
-        "Saya menyukai respon ini"
+        "Saya menyukai respons ini"
       ],
       "Image could not be loaded with tracker protection.": [
         "Gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
@@ -1924,6 +1930,9 @@
       "Discover and set up features": [
         "Telusuri dan siapkan berbagai fitur"
       ],
+      "Got it": [
+        "Mengerti"
+      ],
       "Maybe later": [
         "Mungkin nanti"
       ],
@@ -2168,16 +2177,16 @@
         "Waktu baru yang diajukan tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Balasan ini tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
+        "Jawaban ini tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
       ],
       "This response is out of date.": [
-        "Balasan ini telah kedaluwarsa."
+        "Jawaban ini telah kedaluwarsa."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
-        "Respon ini kedaluwarsa. Acara ini sudah tidak ada di kalender Anda."
+        "Jawaban ini telah kedaluwarsa. Acara ini sudah tidak ada pada kalender Anda."
       ],
       "This response is out of date. You have no calendars.": [
-        "Respon ini kedaluwarsa. Anda tidak memiliki kalender."
+        "Jawaban ini telah kedaluwarsa. Anda tidak memiliki kalender."
       ],
       "You already accepted this invitation.": [
         "Anda telah menyetujui undangan ini."
@@ -2661,6 +2670,9 @@
       ],
       "Work": [
         "Kantor"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5116,6 +5128,11 @@
         "Mungil"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privasi sebagai hal yang baku."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Tanggal: Pada ${ date }"
@@ -5367,6 +5384,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -5375,6 +5395,9 @@
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5474,7 +5497,7 @@
         "Berkas ini mengandung undangan acara:"
       ],
       "This file contains an invitation response:": [
-        "Berkas ini mengandung balasan undangan:"
+        "Berkas ini mengandung jawaban undangan:"
       ],
       "This file contains some data that we cannot import:": [
         "Sebagian data yang terkandung dalam berkas ini tidak dapat kami impor:"
@@ -5657,6 +5680,9 @@
       ],
       "ICS file": [
         "Berkas ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -6483,7 +6509,7 @@
         "Sertakan Spam/Sampah."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
-        "Sertakan perintah Anda dan respon yang Anda peroleh untuk membantu kami meningkatkan akurasi asisten penulisan."
+        "Sertakan perintah Anda dan respons yang Anda peroleh untuk membantu kami meningkatkan akurasi asisten penulisan."
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
@@ -6984,13 +7010,13 @@
         "Tentukan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan untuk browser ini. ${ MAIL_APP_NAME } akan terbuka secara otomatis ketika Anda mengeklik tautan email."
       ],
       "Setting up ${ feature }…": [
-        "Menyiapkan ${ feature }…"
+        "Mempersiapkan ${ feature }…"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Setting up your new address…": [
-        "Menyiapkan alamat baru Anda…"
+        "Mempersiapkan alamat baru Anda…"
       ],
       "Shorten selection": [
         "Persingkat pilihan"
@@ -7173,7 +7199,7 @@
         "Pesan ini telah disesuaikan agar dapat nyaman dibaca dengan tema gelap."
       ],
       "This message is automatically generated as a response to a previous message.": [
-        "Pesan ini dibuat secara otomatis sebagai respon terhadap pesan sebelumnya."
+        "Pesan ini dihasilkan secara otomatis sebagai tanggapan terhadap pesan sebelumnya."
       ],
       "This message is from a ${ PASS_APP_NAME } alias.": [
         "Pesan ini berasal dari alias ${ PASS_APP_NAME }."
@@ -7768,6 +7794,9 @@
       ],
       "Trusted": [
         "Terpercaya"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10170,11 +10199,20 @@
       "Custom email domain": [
         "Domain email khusus"
       ],
+      "Email addresses": [
+        "Alamat email"
+      ],
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Penyunting dokumen online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
       ],
       "Storage": [
         "Ruang penyimpanan"
@@ -10583,6 +10621,11 @@
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda untuk mendebit akun Anda, serta bank Anda untuk mendebit akun Anda. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
@@ -10920,7 +10963,7 @@
         "Tidak ada hasil yang ditemukan"
       ],
       "No snoozed messages": [
-        "Tidak ada pesan yang tertunda"
+        "Tidak ada pesan yang ditunda"
       ],
       "No unread messages found": [
         "Tidak ada pesan belum dibaca yang ditemukan"
@@ -11314,7 +11357,7 @@
     },
     "Snooze message": {
       "Snooze Message": [
-        "Pesan tertunda"
+        "Tunda Pesan"
       ],
       "When should the message reappear in your inbox?": [
         "Kapan Anda ingin pesan ini muncul kembali pada kotak masuk Anda?"
@@ -11413,6 +11456,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Langganan ini akan diperbarui secara otomatis setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Langganan Anda akan diperbarui dengan harga yang sama setiap tahunnya."
       ]
     },
     "specialoffer: Link": {
@@ -11782,6 +11828,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -12034,47 +12121,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -13031,7 +13077,7 @@
         "Memindahkan pesan yang terjadwal"
       ],
       "Moving a snoozed message": [
-        "Pindah pesan tertunda"
+        "Memindahkan pesan yang ditunda"
       ],
       "Need more aliases?": [
         "Butuh lebih banyak alias?"
@@ -13360,11 +13406,6 @@
         "Hari ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
@@ -13448,6 +13489,11 @@
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
@@ -13501,6 +13547,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Langganan baru Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Paket terjadwal Anda akan dimulai pada ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Langganan Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
       ]
@@ -13541,8 +13593,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Cara yang lebih aman/mudah untuk menyimpan & mengirim Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Cara yang lebih aman untuk menyimpan Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -253,9 +253,6 @@
       "Export": [
         "エクスポート"
       ],
-      "Feedback": [
-        "フィードバック"
-      ],
       "Fill password": [
         "パスワードを入力"
       ],
@@ -301,6 +298,9 @@
       "How to update ${ PASS_APP_NAME } on Linux": [
         "Linux で ${ PASS_APP_NAME } を更新する方法"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } の使用方法"
+      ],
       "Import": [
         "インポート"
       ],
@@ -318,6 +318,9 @@
       ],
       "Invite others": [
         "他の人を招待"
+      ],
+      "Join our Reddit": [
+        "Reddit に参加"
       ],
       "Join shared vault": [
         "共有フォルダーに参加"
@@ -517,9 +520,6 @@
       "Send invite": [
         "招待を送信"
       ],
-      "Send us a message": [
-        "メッセージを送る"
-      ],
       "Set access level": [
         "アクセスレベルの設定"
       ],
@@ -642,12 +642,6 @@
       ],
       "With other ${ BRAND_NAME } users": [
         "他の ${ BRAND_NAME } ユーザーと"
-      ],
-      "Write us on Reddit": [
-        "Redditに書き込む"
-      ],
-      "Write us on Twitter": [
-        "Twitterに書き込む"
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
@@ -1777,12 +1771,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "アイテムを別の保管庫に移動すると、それらの履歴とすべてのセキュアリンクが消去されます。"
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "アイテムを別の保管庫に移動すると、それらの履歴が消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
