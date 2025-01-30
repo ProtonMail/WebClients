@@ -18,7 +18,7 @@ import {
     getHeaderLargeScreen,
     getHeaderSmallScreen,
 } from './CellComponents';
-import { EmptyPlaceholder } from './EmptyPlaceholder';
+import { SharedFolderPageEmptyView } from './SharedFolderPageEmptyView';
 
 import './FileBrowser.scss';
 
@@ -31,6 +31,7 @@ interface Props {
     sortParams?: SortParams<SortField>;
     setSorting?: (params: SortParams<SortField>) => void;
     canWrite: boolean;
+    linkId: string;
 }
 
 export function SharedFileBrowser({
@@ -42,6 +43,7 @@ export function SharedFileBrowser({
     onItemOpen,
     openInDocs,
     canWrite,
+    linkId,
 }: Props) {
     const { viewportWidth } = useActiveBreakpoint();
     const thumbnails = useThumbnailsDownload();
@@ -88,7 +90,7 @@ export function SharedFileBrowser({
     return (
         <div className={classname}>
             {isListEmpty ? (
-                <EmptyPlaceholder />
+                <SharedFolderPageEmptyView token={token} linkId={linkId} />
             ) : (
                 <>
                     <DrivePublicContextMenu
