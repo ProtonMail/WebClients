@@ -18,7 +18,6 @@ interface Props {
     element: Element;
     index: number;
     breakpoints: Breakpoints;
-    currentFolder?: string;
 }
 
 const SkeletonItem = ({
@@ -30,7 +29,6 @@ const SkeletonItem = ({
     columnLayout,
     index,
     breakpoints,
-    currentFolder,
 }: Props) => {
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
 
@@ -71,7 +69,6 @@ const SkeletonItem = ({
                     unread={false}
                     breakpoints={breakpoints}
                     isSelected={false}
-                    currentFolder={currentFolder}
                 />
             </div>
         </div>

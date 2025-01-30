@@ -17,7 +17,6 @@ export interface MarkAsParams {
     selectAll?: boolean;
     onCheckAll?: (check: boolean) => void;
     sourceAction: SOURCE_ACTION;
-    currentFolder?: string;
 }
 export const useMarkAs = () => {
     const markSelectionAs = useMarkSelectionAs();
@@ -32,7 +31,6 @@ export const useMarkAs = () => {
             selectAll,
             onCheckAll,
             sourceAction,
-            currentFolder,
         }: MarkAsParams) => {
             if (!elements.length) {
                 return;
@@ -41,7 +39,7 @@ export const useMarkAs = () => {
             const isMessage = testIsMessage(elements[0]);
 
             if (selectAll) {
-                await markAllAs({ isMessage, labelID, status, onCheckAll, sourceAction, currentFolder });
+                await markAllAs({ isMessage, labelID, status, onCheckAll, sourceAction });
             } else {
                 void markSelectionAs({
                     elements,
@@ -50,7 +48,6 @@ export const useMarkAs = () => {
                     silent,
                     isMessage,
                     sourceAction,
-                    currentFolder,
                 });
             }
         },

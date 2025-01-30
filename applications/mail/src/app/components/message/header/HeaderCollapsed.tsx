@@ -37,7 +37,6 @@ interface Props {
     onExpand: () => void;
     breakpoints: Breakpoints;
     conversationIndex?: number;
-    currentFolder?: string;
 }
 
 const HeaderCollapsed = ({
@@ -50,7 +49,6 @@ const HeaderCollapsed = ({
     onExpand,
     breakpoints,
     conversationIndex = 0,
-    currentFolder,
 }: Props) => {
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
@@ -129,7 +127,7 @@ const HeaderCollapsed = ({
                             <ItemStar
                                 element={message.data}
                                 sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
-                                currentFolder={currentFolder}
+                                labelID={labelID}
                             />
                         </span>
 

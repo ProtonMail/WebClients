@@ -75,7 +75,6 @@ const ItemHoverButtons = ({
             labelID,
             status: isUnread ? READ : UNREAD,
             sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
-            currentFolder: displayedFolder,
         });
     };
 
@@ -87,7 +86,6 @@ const ItemHoverButtons = ({
             destinationLabelID: ARCHIVE,
             folderName: c('Title').t`Archive`,
             sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
-            currentFolder: displayedFolder,
             percentUnread: 1,
         });
     };
@@ -108,7 +106,7 @@ const ItemHoverButtons = ({
     const handlePermanentDelete = (event: MouseEvent) => {
         event.stopPropagation();
         event.preventDefault();
-        permanentDelete([element.ID], SOURCE_ACTION.HOVER_BUTTONS, displayedFolder);
+        permanentDelete([element.ID], SOURCE_ACTION.HOVER_BUTTONS);
         return false;
     };
 
@@ -116,7 +114,7 @@ const ItemHoverButtons = ({
         event.stopPropagation();
 
         if (!loadingStar) {
-            void withLoadingStar(star([element], !isStarred, SOURCE_ACTION.HOVER_BUTTONS, displayedFolder));
+            void withLoadingStar(star([element], !isStarred, labelID, SOURCE_ACTION.HOVER_BUTTONS));
         }
     };
 
@@ -192,7 +190,7 @@ const ItemHoverButtons = ({
                     </Button>
                 </Tooltip>
 
-                <SnoozeDropdown elements={[element]} size={size} labelID={labelID} labels={labels} folders={folders} />
+                <SnoozeDropdown elements={[element]} size={size} labelID={labelID} />
                 {hasStar && (
                     <Tooltip title={starAlt} tooltipClassName="pointer-events-none">
                         <Button

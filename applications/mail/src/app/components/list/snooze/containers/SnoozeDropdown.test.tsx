@@ -28,7 +28,6 @@ jest.mock('proton-mail/hooks/actions/useSnooze', () => ({
         handleClose: jest.fn(),
         handleCustomClick: jest.fn(),
         snoozeState: 'snooze-selection',
-        currentFolder: 'INBOX',
     }),
 }));
 
@@ -124,8 +123,7 @@ describe('Snooze dropdown', () => {
         expect(spySnooze).toHaveBeenCalledTimes(1);
         expect(spySnooze).toHaveBeenCalledWith(
             { elements: [element], duration: 'tomorrow', snoozeTime: undefined },
-            'HOVER_BUTTONS',
-            'INBOX'
+            'HOVER_BUTTONS'
         );
     });
 
@@ -140,7 +138,7 @@ describe('Snooze dropdown', () => {
 
         fireEvent.click(getByTestId('snooze-duration-unsnooze'));
         expect(spySnooze).toHaveBeenCalledTimes(1);
-        expect(spySnooze).toHaveBeenCalledWith([element], 'HOVER_BUTTONS', 'INBOX');
+        expect(spySnooze).toHaveBeenCalledWith([element], 'HOVER_BUTTONS');
     });
 
     it('should call custom click method when pressing button', async () => {
