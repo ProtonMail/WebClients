@@ -3,6 +3,7 @@ import type { AuthenticatedDocControllerInterface } from '../../AuthenticatedDoc
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
+import type { RenameControllerInterface } from '../../RenameController/RenameController'
 
 export type DocLoaderStatusObserver<S extends DocumentState | PublicDocumentState> = {
   onSuccess: (result: {
@@ -10,6 +11,7 @@ export type DocLoaderStatusObserver<S extends DocumentState | PublicDocumentStat
     documentState: S
     docController?: AuthenticatedDocControllerInterface
     editorController: EditorControllerInterface
+    renameController: RenameControllerInterface | undefined
   }) => void
   onError: (error: string, code?: DocsApiErrorCode) => void
 }

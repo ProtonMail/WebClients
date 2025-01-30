@@ -1,11 +1,12 @@
-import { createContext, useContext } from 'react';
+import { createContext, useCallback, useContext } from 'react';
 import type { ReactNode } from 'react';
 
 import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import { useGetPublicKeysForEmail } from '../store';
+import { useGetPublicKeysForEmail, usePublicActions } from '../store';
 import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
+import { useAbortSignal } from '../store/_views/utils';
 import type { NodeMeta, PublicNodeMeta } from './NodeMeta';
 import type { PublicDocumentKeys } from './_documents';
 import { usePublicNode } from './_nodes';
@@ -97,6 +98,8 @@ export interface PublicDriveCompat {
      * Gets the public keys for a given email.
      */
     getPublicKeysForEmail: (email: string, abortSignal?: AbortSignal) => Promise<string[] | undefined>;
+
+    renamePublicDocument: (nodeMeta: PublicNodeMeta, parentLinkId: string, newName: string) => Promise<void>;
 }
 
 export const usePublicDriveCompatValue = (): PublicDriveCompat => {
@@ -121,6 +124,16 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
             isDocsTokenReady,
             linkId,
         });
+    const abortSignal = useAbortSignal([]);
+    const { renameLink } = usePublicActions();
+
+    const renamePublicDocument: PublicDriveCompat['renamePublicDocument'] = useCallback(
+        async (nodeMeta, parentLinkId, newName) => {
+            await renameLink(abortSignal, { ...nodeMeta, parentLinkId, newName });
+        },
+        [abortSignal, renameLink]
+    );
+
     const { openDocumentWindow } = useOpenDocument();
 
     const redirectToAuthedDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open', window: window });
@@ -156,6 +169,7 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         getPublicAuthHeaders,
         permissions,
         getPublicKeysForEmail,
+        renamePublicDocument,
     };
 };
 
