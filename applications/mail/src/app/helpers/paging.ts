@@ -29,3 +29,10 @@ export const expectedPageLength = (
 
     return pageSize;
 };
+
+export const isPageConsecutive = (pages: number[], destinationPage: number) => {
+    return (
+        pages.length === 0 ||
+        pages.some((p) => p === destinationPage || p === destinationPage - 1 || p === destinationPage + 1)
+    );
+};
