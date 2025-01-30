@@ -54,7 +54,6 @@ interface Props {
     userSettings: UserSettings;
     mailSettings: MailSettings;
     labels?: Label[];
-    currentFolder?: string;
 }
 
 const Item = ({
@@ -80,7 +79,6 @@ const Item = ({
     userSettings,
     labels,
     showAttachmentThumbnails,
-    currentFolder,
 }: Props) => {
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, contentIndexingDone } = esStatus;
@@ -209,7 +207,6 @@ const Item = ({
                     attachmentsMetadata={filteredThumbnails}
                     userSettings={userSettings}
                     showAttachmentThumbnails={showAttachmentThumbnails}
-                    currentFolder={currentFolder}
                 />
             </div>
         </div>

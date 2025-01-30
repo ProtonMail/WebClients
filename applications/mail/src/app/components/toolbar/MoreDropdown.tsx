@@ -74,7 +74,6 @@ interface Props {
     onDelete: (sourceAction: SOURCE_ACTION) => void;
     breakpoints: Breakpoints;
     onCheckAll?: (check: boolean) => void;
-    currentFolder?: string;
 }
 
 const MoreDropdown = ({
@@ -88,7 +87,6 @@ const MoreDropdown = ({
     onDelete,
     breakpoints,
     onCheckAll,
-    currentFolder,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
     const { selectAll } = useSelectAll({ labelID });
@@ -125,7 +123,6 @@ const MoreDropdown = ({
             actionType: ACTION_TYPE.DELETE_PERMANENTLY,
             actionLocation: SOURCE_ACTION.TOOLBAR,
             numberMessage: SELECTED_RANGE.ALL,
-            folderLocation: currentFolder,
         });
         emptyLabel(labelID);
     };
@@ -137,7 +134,6 @@ const MoreDropdown = ({
             destinationLabelID: ARCHIVE,
             telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_archive,
             sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
-            currentFolder,
         });
     };
     const handleMoveAllToTrash = () => {
@@ -147,7 +143,6 @@ const MoreDropdown = ({
             destinationLabelID: TRASH,
             telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_trash,
             sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
-            currentFolder,
         });
     };
 
@@ -269,7 +264,6 @@ const MoreDropdown = ({
                     onLock={onLock}
                     selectedIDs={selectedIDs}
                     displayUpsellModal={() => handleUpsellModalDisplay(true)}
-                    displayedFolder={currentFolder}
                 />
             ),
         });

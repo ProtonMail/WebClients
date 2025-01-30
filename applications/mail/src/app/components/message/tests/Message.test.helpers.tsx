@@ -41,7 +41,6 @@ export const defaultProps: MessageViewProps = {
     breakpoints: mockDefaultBreakpoints,
     onFocus: noop,
     isComposerOpened: false,
-    currentFolder: 'INBOX',
 };
 
 export const initMessage = (store: MailStore, message: MessageState) => {

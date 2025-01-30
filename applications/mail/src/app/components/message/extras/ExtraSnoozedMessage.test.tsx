@@ -62,9 +62,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = new Date();
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText, queryByText } = await render(
-            <ExtraSnoozedMessage message={message} currentFolder="INBOX" />
-        );
+        const { getByTestId, getByText, queryByText } = await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -77,9 +75,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addHours(new Date(), 1);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(
-            <ExtraSnoozedMessage message={message} currentFolder="INBOX" />
-        );
+        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -93,9 +89,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addDays(new Date(), 1);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(
-            <ExtraSnoozedMessage message={message} currentFolder="INBOX" />
-        );
+        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -108,9 +102,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addDays(new Date(), 100);
         const message = getMessage(sendingDate);
 
-        const { getByTestId, getByText } = await render(
-            <ExtraSnoozedMessage message={message} currentFolder="INBOX" />
-        );
+        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime, dateString } = formatDateToHuman(sendingDate);
 
@@ -130,9 +122,7 @@ describe('Scheduled messages banner', () => {
             canUnsnooze: true,
         });
 
-        const { getByTestId, getByText } = await render(
-            <ExtraSnoozedMessage message={message} currentFolder="INBOX" />
-        );
+        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -161,9 +151,7 @@ describe('Scheduled messages banner', () => {
             canUnsnooze: true,
         });
 
-        const { getByTestId, getByText } = await render(
-            <ExtraSnoozedMessage message={message} currentFolder="INBOX" />
-        );
+        const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -190,9 +178,7 @@ describe('Scheduled messages banner', () => {
             canUnsnooze: false,
         });
 
-        const { getByTestId, getByText, queryByText } = await render(
-            <ExtraSnoozedMessage message={message} currentFolder="INBOX" />
-        );
+        const { getByTestId, getByText, queryByText } = await render(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 

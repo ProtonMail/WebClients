@@ -54,7 +54,6 @@ interface Props {
     loadingElements: boolean;
     elementIDs: string[];
     conversationMode: boolean;
-    currentFolder?: string;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -74,7 +73,6 @@ const ConversationView = ({
     loadingElements,
     elementIDs,
     conversationMode,
-    currentFolder,
 }: Props) => {
     const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
@@ -182,7 +180,6 @@ const ConversationView = ({
                 labelID,
                 status: MARK_AS_STATUS.READ,
                 sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
-                currentFolder: currentFolder,
             });
         }
     }, [conversation]);
@@ -252,7 +249,6 @@ const ConversationView = ({
                             wrapperRef={wrapperRef}
                             onOpenQuickReply={handleOpenQuickReply}
                             onReadMessage={handleReadMessage}
-                            currentFolder={currentFolder}
                         />
                     ))}
                 </div>
