@@ -6,7 +6,23 @@ module.exports = {
         'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart)/)',
     ],
     transform: {
-        '^.+\\.(m?js|tsx?)$': '<rootDir>/jest.transform.js',
+        '^.+\\.(ts|js|mjs)x?$': [
+            '@swc/jest',
+            {
+                jsc: {
+                    transform: {
+                        react: {
+                            runtime: 'automatic',
+                        },
+                    },
+                    parser: {
+                        jsx: true,
+                        syntax: 'typescript',
+                        tsx: true,
+                    },
+                },
+            },
+        ],
     },
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|pdf|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$':
