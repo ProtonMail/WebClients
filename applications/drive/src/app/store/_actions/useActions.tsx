@@ -8,7 +8,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDevicesActions from '../_devices/useDevicesActions';
 import { useLinkActions, useLinksActions } from '../_links';
-import { usePhotos } from '../_photos';
+import { usePhotosOrPhotosWithAlbums } from '../_photos/PhotosOrPhotosWithAlbumsProvider';
 import { useShareActions, useShareUrl } from '../_shares';
 import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
 import { TransferConflictStrategy } from '../_uploads/interface';
@@ -38,7 +38,7 @@ export default function useActions() {
     const shareUrl = useShareUrl();
     const shareActions = useShareActions();
     const devicesActions = useDevicesActions();
-    const { removePhotosFromCache } = usePhotos();
+    const { removePhotosFromCache } = usePhotosOrPhotosWithAlbums();
 
     const createFolder = async (
         abortSignal: AbortSignal,
