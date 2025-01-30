@@ -19,15 +19,25 @@ type Props = {
     title: ReactNode;
     backgroundImage?: string;
     onClose: () => void;
+    withArrow?: boolean;
 };
 
-export const SpotlightGradient: FC<Props> = ({ action, backgroundImage, className, message, title, onClose }) => {
+export const SpotlightGradient: FC<Props> = ({
+    action,
+    backgroundImage,
+    className,
+    message,
+    title,
+    onClose,
+    withArrow,
+}) => {
     return (
         <div
             className={clsx(
                 className,
                 'pass-spotlight-gradient flex items-center gap-4 p-4 pr-6 rounded relative mt-2',
-                backgroundImage && 'pass-spotlight-gradient--image'
+                backgroundImage && 'pass-spotlight-gradient--image',
+                withArrow && 'pass-spotlight-gradient--with-arrow'
             )}
             style={
                 backgroundImage
