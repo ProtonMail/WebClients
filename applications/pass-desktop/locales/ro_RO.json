@@ -247,9 +247,6 @@
       "Export": [
         "Exportare"
       ],
-      "Feedback": [
-        "Feedback"
-      ],
       "Fill password": [
         "Completare parolă"
       ],
@@ -294,6 +291,9 @@
       ],
       "How to update ${ PASS_APP_NAME } on Linux": [
         "Cum se actualizează ${ PASS_APP_NAME } pe Linux"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Cum se folosește ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Importare"
@@ -508,9 +508,6 @@
       "Send invite": [
         "Trimitere invitație"
       ],
-      "Send us a message": [
-        "Trimiteți-ne un mesaj"
-      ],
       "Set access level": [
         "Setare nivel de acces"
       ],
@@ -634,12 +631,6 @@
       ],
       "View older history": [
         "Afișare istoric mai vechi"
-      ],
-      "Write us on Reddit": [
-        "Scrieți-ne pe Reddit"
-      ],
-      "Write us on Twitter": [
-        "Scrieți-ne pe Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
@@ -1781,16 +1772,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge istoricul și toate legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge istoricul și toate legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge istoricul și toate legăturile web securizate."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Mutarea unui articol în alt seif îi va șterge istoricul.",
-        "Mutarea articolelor în alt seif le va șterge istoricul.",
-        "Mutarea articolelor în alt seif le va șterge istoricul."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2024,6 +2005,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Partajați-vă datele de conectare și notițele securizate cu până la 10 persoane"
       ],
+      "Shared item invitation": [
+        "Invitație pentru articol partajat"
+      ],
       "Sign in to your account": [
         "Conectare la cont"
       ],
@@ -2091,6 +2075,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Acest fișier exportat va fi necriptat și oricine are acces la el va putea vedea parolele. Pentru securitate, trebuie să-l ștergeți după ce l-ați terminat de utilizat."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Acest articol nu este în prezent partajat cu nimeni. Invită persoane pentru a-l partaja cu alții."
       ],
       "This operation is irreversible.": [
         "Această operație nu este reversibilă."
