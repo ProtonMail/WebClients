@@ -9,10 +9,11 @@ import {
 } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
-import { type Photo, type ShareWithKey, useDefaultShare } from '../../store';
+import { type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink } from '../../store/_links';
 import { useShare } from '../../store/_shares';
+import { VolumeType } from '../../store/_volumes';
 import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
 
 export interface Album {
@@ -55,6 +56,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { getDefaultPhotosShare } = useDefaultShare();
     const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const request = useDebouncedRequest();
+    const driveEventManager = useDriveEventManager();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [albumsLoading, setIsAlbumsLoading] = useState<boolean>(true);
     const [photos, setPhotos] = useState<Photo[]>([]);
@@ -78,6 +80,19 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             }
         });
     }, []);
+
+    const photosSharevolumeId = photosShare?.volumeId;
+
+    useEffect(() => {
+        if (photosSharevolumeId === undefined) {
+            return;
+        }
+
+        driveEventManager.volumes.startSubscription(photosSharevolumeId, VolumeType.photo).catch(console.warn);
+        return () => {
+            driveEventManager.volumes.unsubscribe(photosSharevolumeId);
+        };
+    }, [photosSharevolumeId]);
 
     const loadPhotos = async (abortSignal: AbortSignal, volumeId: string) => {
         const photoCall = async (lastLinkId?: string) => {
