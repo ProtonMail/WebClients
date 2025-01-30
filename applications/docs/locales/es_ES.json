@@ -402,6 +402,9 @@
       "Merge contacts": [
         "Combinar contactos"
       ],
+      "Microsoft Word (.docx)": [
+        "Microsoft Word (.docx)"
+      ],
       "More actions": [
         "Más acciones"
       ],
@@ -1339,6 +1342,9 @@
       ],
       "Work": [
         "Trabajo"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2175,11 +2181,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2258,6 +2259,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3367,6 +3373,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Correo electrónico"
       ],
@@ -3375,6 +3384,9 @@
       ],
       "No verification method available": [
         "No hay ningún método de verificación disponible."
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3647,6 +3659,9 @@
       ],
       "ICS file": [
         "archivo CSV"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5057,6 +5072,9 @@
       ],
       "Trusted": [
         "Confiable"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -5755,6 +5773,15 @@
       "Apple Installer Package": [
         "Paquete de instalación de Apple"
       ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Apple Pages": [
+        "Apple Pages"
+      ],
       "Archive document": [
         "Archivo de documento"
       ],
@@ -5818,8 +5845,38 @@
       "Java Archive (JAR)": [
         "Archivo Java (JAR)"
       ],
+      "JavaScript": [
+        "JavaScript"
+      ],
       "JPEG image": [
         "Imagen JPEG"
+      ],
+      "JSON": [
+        "JSON"
+      ],
+      "JSON-LD": [
+        "JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft PowerPoint": [
+        "Microsoft PowerPoint"
+      ],
+      "Microsoft PowerPoint (OpenXML)": [
+        "Microsoft PowerPoint (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
       ],
       "MP3 audio": [
         "Audio MP3"
@@ -5835,6 +5892,9 @@
       ],
       "Musical Instrument Digital Interface (MIDI)": [
         "Interfaz digital para instrumentos musicales (MIDI)"
+      ],
+      "OGG": [
+        "OGG"
       ],
       "OGG audio": [
         "Audio OGG"
@@ -5860,6 +5920,9 @@
       "Portable Network Graphics (PNG)": [
         "Gráficos de red portátiles (PNG)"
       ],
+      "Python": [
+        "Python"
+      ],
       "RAR archive": [
         "Archivo RAR"
       ],
@@ -5884,6 +5947,9 @@
       "TrueType Font": [
         "Fuente TrueType"
       ],
+      "TypeScript": [
+        "TypeScript"
+      ],
       "Unknown file": [
         "Archivo desconocido"
       ],
@@ -5907,6 +5973,15 @@
       ],
       "Windows OS/2 Bitmap Graphics": [
         "Gráficos de mapa de bits de Windows OS/2"
+      ],
+      "XHTML": [
+        "XHTML"
+      ],
+      "XML": [
+        "XML"
+      ],
+      "XUL": [
+        "XUL"
       ],
       "ZIP archive": [
         "Archivo ZIP"
@@ -7155,8 +7230,14 @@
       "Free": [
         "Gratuito"
       ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Recuperar las versiones previas de los archivos"
       ],
       "Storage": [
         "Almacenamiento"
@@ -7359,6 +7440,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8246,25 +8332,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de almacenamiento por usuario"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio de correo electrónico personalizado",
-        "${ planNumberOfDomains } dominios de correo electrónico personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } dirección de correo electrónico",
-        "${ planNumberOfEmails } direcciones de correo electrónico"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetas, etiquetas y filtros personalizados"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -8304,6 +8371,25 @@
       ],
       "Your privacy is our mission": [
         "Tu privacidad es nuestra misión."
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo electrónico personalizado",
+        "${ planNumberOfDomains } dominios de correo electrónico personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo electrónico",
+        "${ planNumberOfEmails } direcciones de correo electrónico"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetas, etiquetas y filtros personalizados"
       ]
     },
     "Subscription renewal state": {
@@ -9033,11 +9119,6 @@
         "Hoy"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Añade este archivo compartido a tu ${ DRIVE_APP_NAME } para un acceso fácil después."
@@ -9113,6 +9194,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Validation": {
@@ -9210,8 +9296,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Una forma más segura y sencilla de guardar y enviar Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Una manera más segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

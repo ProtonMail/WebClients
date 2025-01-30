@@ -1327,6 +1327,9 @@
       ],
       "Work": [
         "직장"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2163,11 +2166,6 @@
         "기한이 지난 청구서"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2246,6 +2244,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3339,6 +3342,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "이메일"
       ],
@@ -3347,6 +3353,9 @@
       ],
       "No verification method available": [
         "사용 가능한 인증 방법 없음"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3613,6 +3622,9 @@
       ],
       "ICS file": [
         "ICS 파일"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4988,6 +5000,9 @@
       ],
       "Trusted": [
         "신뢰됨"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7042,8 +7057,14 @@
       "Free": [
         "무료"
       ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "파일 이전 버전 복원"
       ],
       "Storage": [
         "저장 공간"
@@ -7243,6 +7264,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -7792,7 +7818,7 @@
         "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "귀하의 구독은 매년 같은 요율로 갱신됩니다."
+        "회원님의 구독이 매년 같은 요율로 갱신됩니다."
       ]
     },
     "specialoffer: Link": {
@@ -8104,23 +8130,6 @@
         "${ totalPrice }용"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "사용자 당 ${ planMaxSpace } 스토리지"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails }개 이메일 주소"
-      ],
-      "Folders, labels, and custom filters": [
-        "폴더, 라벨, 커스텀 필터"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "저장공간 15GB"
@@ -8160,6 +8169,23 @@
       ],
       "Your privacy is our mission": [
         "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "사용자 당 ${ planMaxSpace } 스토리지"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }개 이메일 주소"
+      ],
+      "Folders, labels, and custom filters": [
+        "폴더, 라벨, 커스텀 필터"
       ]
     },
     "Subscription renewal state": {
@@ -8875,11 +8901,6 @@
         "오늘"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "추후 간편하게 접근할 수 있도록 내 ${ DRIVE_APP_NAME }에 공유된 파일을 추가하세요."
@@ -8957,6 +8978,11 @@
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
@@ -9000,10 +9026,10 @@
         "12개월마다 ${ renewPrice }가 결제됩니다."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "귀하의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
+        "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "귀하의 요금제가 ${ renewalTime }에 시작합니다."
+        "회원님의 플랜이 ${ renewalTime }부터 시작합니다."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "사용자의 구독이 ${ cycle }개월 뒤에 자동으로 갱신됩니다."
@@ -9040,8 +9066,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "쉽고 안전하게 Bitcoin을 보관 및 송금하세요"
+      "A safer way to hold Bitcoin": [
+        "비트코인을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {
