@@ -1,10 +1,13 @@
 import useApi from '@proton/components/hooks/useApi';
+import { useFolders, useLabels } from '@proton/mail';
 import { isCustomFolder, isCustomLabel } from '@proton/mail/labels/helpers';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
+
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 export const enum ACTION_TYPE {
     MARK_AS_READ = 'MARK_AS_READ',
@@ -158,6 +161,9 @@ export const numberSelectionElements = (selected: number) => {
 
 const useListTelemetry = () => {
     const api = useApi();
+    const [folders = []] = useFolders();
+    const [labels = []] = useLabels();
+    const labelID = useMailSelector((store) => store.elements.params.labelID);
 
     const isListTelemetryEnabled = useFlag('MailWebListTelemetry');
 
@@ -165,19 +171,19 @@ const useListTelemetry = () => {
         actionType,
         actionLocation,
         numberMessage,
-        folderLocation,
         destination,
         percentUnread,
     }: {
         actionType?: ACTION_TYPE;
         actionLocation: SOURCE_ACTION;
         numberMessage: SELECTED_RANGE;
-        folderLocation?: string;
         destination?: string;
         percentUnread?: number;
     }) => {
         if (isListTelemetryEnabled) {
             const actionTime = actionTimeUser();
+
+            const folderActionLocation = folderLocation(labelID, labels, folders);
 
             void sendTelemetryReport({
                 api,
@@ -189,7 +195,7 @@ const useListTelemetry = () => {
                 dimensions: {
                     actionType: actionType,
                     actionLocation: actionLocation,
-                    folderLocation: folderLocation,
+                    folderLocation: folderActionLocation,
                     destination: destination,
                     actionTime: actionTime,
                     numberMessage: numberMessage,
