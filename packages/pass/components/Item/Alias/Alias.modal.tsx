@@ -110,8 +110,8 @@ export const AliasModal = <T extends AliasFormValues>({
                         suffix={form.values.aliasSuffix?.value ?? '<suffix>'}
                         loading={loading}
                     />
-                    <div className="flex justify-center mb-2">
-                        <Button shape="ghost" onClick={toggleShowAdvanced}>
+                    <div className="flex justify-center mb-4">
+                        <Button shape="ghost" onClick={toggleShowAdvanced} pill>
                             <span className="flex items-center color-weak text-sm">
                                 <Icon name="cog-wheel" className="mr-1" />
                                 {c('Action').t`Advanced options`}
