@@ -15,10 +15,10 @@ import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { InAppNotificationProvider } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { InAppNotifications } from '@proton/pass/components/Notifications/InAppNotifications';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
-import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { selectIsSSO, selectLockSetupRequired } from '@proton/pass/store/selectors';
@@ -46,9 +46,9 @@ const MainSwitch: FC = () => {
                         <ThemeOnboardingModal />
                         <InAppNotifications />
                         {isSSO && (
-                            <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
+                            <WithSpotlight type={SpotlightMessage.SSO_CHANGE_LOCK}>
                                 {(props) => <OnboardingSSO {...props} />}
-                            </WithSpotlightModal>
+                            </WithSpotlight>
                         )}
                     </div>
                 </main>

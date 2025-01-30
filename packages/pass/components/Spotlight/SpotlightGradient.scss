@@ -1,0 +1,41 @@
+.pass-spotlight-gradient {
+	--spotlight-gradient-overlay: rgb(from var(--interaction-norm-contrast) r g b / 0.5);
+
+	/** Remove the dark gradient overlay for light theme.
+	 * FIXME: ideally we could use a themable variable */
+	@at-root .pass-light & {
+		--spotlight-gradient-overlay: transparent;
+	}
+
+	--spotlight-gradient-layers: linear-gradient(
+			0deg,
+			var(--spotlight-gradient-overlay),
+			var(--spotlight-gradient-overlay)
+		),
+		radial-gradient(51.04% 51.04% at 85.42% 18.75%, #9251eb 0%, #5b53ed 100%),
+		linear-gradient(0deg, var(--interaction-weak), var(--interaction-weak));
+
+	box-shadow: 0 0 14px 0 rgb(255 255 255 / 0.1) inset;
+	border: 1px solid rgb(255 255 255 / 0.1);
+	background: var(--spotlight-gradient-layers);
+
+	&--image {
+		background: var(--spotlight-gradient-image, ''), var(--spotlight-gradient-layers);
+	}
+
+	&--text {
+		color: white;
+	}
+
+	&--button {
+		background-color: white;
+
+		--button-default-text-color: black;
+		--button-hover-text-color: black;
+		--button-hover-background-color: rgb(255 255 255 / 0.5);
+	}
+
+	&--close-icon {
+		color: white !important;
+	}
+}

@@ -1,16 +1,19 @@
-import { type FC, type PropsWithChildren, useEffect, useState } from 'react';
+import { type FC, type PropsWithChildren, useEffect } from 'react';
 
 import { type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, Option } from '@proton/components';
+import { Option } from '@proton/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
+import { SpotlightGradient } from '@proton/pass/components/Spotlight/SpotlightGradient';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
-import type { AliasFormValues, AliasMailbox, MaybeNull } from '@proton/pass/types';
+import { type AliasFormValues, type AliasMailbox, type MaybeNull, SpotlightMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 type AliasFormProps<V extends AliasFormValues> = {
@@ -18,6 +21,7 @@ type AliasFormProps<V extends AliasFormValues> = {
     disabled?: boolean;
     form: FormikContextType<V>;
     loading: boolean;
+    showAdvanced: boolean;
 };
 
 const AliasFormBase: FC<
@@ -25,19 +29,11 @@ const AliasFormBase: FC<
         disabled: boolean;
         loading: boolean;
         mailboxes: AliasMailbox[];
-        toggleShowAdvanced: () => void;
+        handleSpotlightActionClick: () => void;
     }>
-> = ({ children, disabled, loading, mailboxes, toggleShowAdvanced }) => {
+> = ({ children, disabled, loading, mailboxes, handleSpotlightActionClick }) => {
     return (
         <>
-            <div className="flex justify-end mb-2">
-                <Button shape="ghost" onClick={toggleShowAdvanced}>
-                    <span className="flex items-center color-weak text-sm">
-                        <Icon name="cog-wheel" className="mr-1" />
-                        {c('Action').t`Advanced options`}
-                    </span>
-                </Button>
-            </div>
             {children}
             <FieldsetCluster>
                 <Field
@@ -57,20 +53,49 @@ const AliasFormBase: FC<
                     ))}
                 </Field>
             </FieldsetCluster>
+
+            <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_MAILBOX}>
+                {({ close }) => (
+                    <SpotlightGradient
+                        title={c('Title').t`Did you know?`}
+                        message={c('Info').t`Share aliases with others by adding their inbox as an additional mailbox.`}
+                        onClose={close}
+                        action={{
+                            label: c('Action').t`Add mailbox`,
+                            onClick: handleSpotlightActionClick,
+                        }}
+                        className="mb-2"
+                    />
+                )}
+            </WithSpotlight>
         </>
     );
 };
 
-export const AliasForm = <V extends AliasFormValues>({ form, loading, aliasOptions, disabled }: AliasFormProps<V>) => {
-    const [showAdvanced, setShowAdvanced] = useState(false);
-    const toggleShowAdvanced = () => setShowAdvanced((state) => !state);
+export const AliasForm = <V extends AliasFormValues>({
+    form,
+    loading,
+    aliasOptions,
+    disabled,
+    showAdvanced,
+}: AliasFormProps<V>) => {
+    const { openSettings } = usePassCore();
+    const { acknowledge } = useSpotlight();
+
     const disabledForm = disabled || loading || aliasOptions === null;
+
+    /** Acknowledge both alias domain and mailbox spotlights because both spotlights open the same page */
+    const handleSpotlightActionClick = () => {
+        acknowledge(SpotlightMessage.ALIAS_DISCOVERY_MAILBOX);
+        acknowledge(SpotlightMessage.ALIAS_DISCOVERY_DOMAIN);
+        openSettings?.('aliases');
+    };
 
     const wrapperProps = {
         disabled: disabledForm,
         loading,
         mailboxes: aliasOptions?.mailboxes ?? [],
-        toggleShowAdvanced,
+        handleSpotlightActionClick,
     };
 
     useEffect(() => {
@@ -84,28 +109,48 @@ export const AliasForm = <V extends AliasFormValues>({ form, loading, aliasOptio
     return (
         <AliasFormBase {...wrapperProps}>
             {showAdvanced && (
-                <FieldsetCluster>
-                    <Field
-                        name="aliasPrefix"
-                        label={c('Label').t`Prefix`}
-                        placeholder={c('Placeholder').t`Enter a prefix`}
-                        component={TextField}
-                    />
-                    <Field
-                        name="aliasSuffix"
-                        label={c('Label').t`Suffix`}
-                        placeholder={c('Placeholder').t`Select a suffix`}
-                        component={SelectField}
-                        disabled={disabledForm}
-                        loading={loading}
-                    >
-                        {(aliasOptions?.suffixes ?? []).map((suffix) => (
-                            <Option key={suffix.value} value={suffix} title={suffix.value}>
-                                {suffix.value}
-                            </Option>
-                        ))}
-                    </Field>
-                </FieldsetCluster>
+                <>
+                    <FieldsetCluster>
+                        <Field
+                            name="aliasPrefix"
+                            label={c('Label').t`Prefix`}
+                            placeholder={c('Placeholder').t`Enter a prefix`}
+                            component={TextField}
+                        />
+                        <Field
+                            name="aliasSuffix"
+                            label={c('Label').t`Suffix`}
+                            placeholder={c('Placeholder').t`Select a suffix`}
+                            component={SelectField}
+                            disabled={disabledForm}
+                            loading={loading}
+                        >
+                            {(aliasOptions?.suffixes ?? []).map((suffix) => (
+                                <Option key={suffix.value} value={suffix} title={suffix.value}>
+                                    {suffix.value}
+                                </Option>
+                            ))}
+                        </Field>
+                    </FieldsetCluster>
+
+                    {
+                        <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_DOMAIN}>
+                            {({ close }) => (
+                                <SpotlightGradient
+                                    title={c('Title').t`Did you know?`}
+                                    message={c('Info')
+                                        .t`By adding your domain, you can create aliases like hi@my-domain.com.`}
+                                    onClose={close}
+                                    action={{
+                                        label: c('Action').t`Add domain`,
+                                        onClick: handleSpotlightActionClick,
+                                    }}
+                                    className="mb-2"
+                                />
+                            )}
+                        </WithSpotlight>
+                    }
+                </>
             )}
         </AliasFormBase>
     );

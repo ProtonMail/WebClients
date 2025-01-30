@@ -4,6 +4,10 @@ import type { Store } from 'redux';
 
 import browser from '@proton/pass/lib/globals/browser';
 import {
+    createAliasDiscoveryContactRule,
+    createAliasDiscoveryCustomizeRule,
+    createAliasDiscoveryDomainRule,
+    createAliasDiscoveryMailboxRule,
     createAliasSyncEnableRule,
     createItemSharingRule,
     createPendingShareAccessRule,
@@ -48,6 +52,10 @@ export const createSpotlightService = (
             /* "Invisible" rules not displayed as spotlight should be defined at the bottom */
             createSSOChangeLockRule(),
             createItemSharingRule(),
+            createAliasDiscoveryCustomizeRule(),
+            createAliasDiscoveryMailboxRule(),
+            createAliasDiscoveryDomainRule(),
+            createAliasDiscoveryContactRule(),
         ],
     });
 
