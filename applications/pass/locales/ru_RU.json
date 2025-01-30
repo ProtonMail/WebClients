@@ -235,9 +235,6 @@
       "Export": [
         "Экспорт"
       ],
-      "Feedback": [
-        "Обратная связь"
-      ],
       "Fill password": [
         "Заполнить пароль"
       ],
@@ -279,6 +276,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Как экспортировать или данные из${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Как использовать ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Импортировать"
@@ -490,9 +490,6 @@
       "Send invite": [
         "Отправить приглашение"
       ],
-      "Send us a message": [
-        "Отправить нам сообщение"
-      ],
       "Set access level": [
         "Установить уровень доступа"
       ],
@@ -609,12 +606,6 @@
       ],
       "View older history": [
         "Просмотреть более раннюю историю"
-      ],
-      "Write us on Reddit": [
-        "Написать нам в Reddit"
-      ],
-      "Write us on Twitter": [
-        "Написать нам в Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
