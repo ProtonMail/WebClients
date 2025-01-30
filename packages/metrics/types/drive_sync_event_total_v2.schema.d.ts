@@ -11,7 +11,7 @@
 export interface HttpsProtonMeDriveSyncEventTotalV2SchemaJson {
   Labels: {
     eventType: "create" | "delete" | "update" | "update_metadata";
-    volumeType: "main" | "shared";
+    volumeType: "main" | "shared" | "photo";
   };
   Value: number;
 }
