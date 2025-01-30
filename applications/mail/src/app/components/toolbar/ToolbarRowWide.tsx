@@ -13,7 +13,6 @@ import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarRespo
 import { pageSize as pageSizeSelector } from '../../store/elements/elementsSelectors';
 import ListSettings from '../list/ListSettings';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
-import { folderLocation } from '../list/useListTelemetry';
 import LabelName from './LabelName';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';
@@ -69,8 +68,6 @@ const ToolbarRowWide = ({
     const [folders] = useFolders();
     const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
 
-    const currentFolder = folderLocation(labelID, labels, folders);
-
     const pageSize = useMailSelector(pageSizeSelector);
 
     return (
@@ -107,14 +104,7 @@ const ToolbarRowWide = ({
                         />
                     ) : null}
 
-                    {!localIsTiny ? (
-                        <SnoozeToolbarDropdown
-                            selectedIDs={selectedIDs}
-                            labelID={labelID}
-                            labels={labels}
-                            folders={folders}
-                        />
-                    ) : null}
+                    {!localIsTiny ? <SnoozeToolbarDropdown selectedIDs={selectedIDs} labelID={labelID} /> : null}
 
                     <MoreDropdown
                         labelID={labelID}
@@ -127,7 +117,6 @@ const ToolbarRowWide = ({
                         onMove={onMove}
                         onDelete={onDelete}
                         breakpoints={breakpoints}
-                        currentFolder={currentFolder}
                     />
 
                     <MoreActions selectedIDs={selectedIDs} />

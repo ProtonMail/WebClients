@@ -63,7 +63,6 @@ interface Props {
     wrapperRef?: React.RefObject<HTMLDivElement>;
     onOpenQuickReply?: (index?: number) => void;
     onReadMessage?: (messageID?: string) => void;
-    currentFolder?: string;
 }
 
 export interface MessageViewRef {
@@ -94,7 +93,6 @@ const MessageView = (
         wrapperRef,
         onOpenQuickReply,
         onReadMessage,
-        currentFolder,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -329,7 +327,6 @@ const MessageView = (
                 labelID,
                 status: MARK_AS_STATUS.READ,
                 sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
-                currentFolder: currentFolder,
             });
         }
 
@@ -341,7 +338,6 @@ const MessageView = (
                 labelID,
                 status: MARK_AS_STATUS.READ,
                 sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
-                currentFolder: currentFolder,
             });
         }
     }, [expanded, unread, bodyLoaded]);
@@ -393,7 +389,6 @@ const MessageView = (
             conversationMode,
             mailSettings,
             messageRef: elementRef,
-            currentFolder,
         },
         {
             hasFocus: !!hasFocus,
@@ -473,7 +468,6 @@ const MessageView = (
                         filterDropdownToggleRef={filterDropdownToggleRef}
                         parentMessageRef={elementRef}
                         conversationIndex={conversationIndex}
-                        currentFolder={currentFolder}
                     />
                     <MessageBody
                         labelID={labelID}
@@ -521,7 +515,6 @@ const MessageView = (
                     onExpand={handleToggle(true)}
                     breakpoints={breakpoints}
                     conversationIndex={conversationIndex}
-                    currentFolder={currentFolder}
                 />
             )}
             {moveScheduledModal}

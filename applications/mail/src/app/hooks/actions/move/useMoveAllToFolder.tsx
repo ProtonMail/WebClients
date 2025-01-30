@@ -44,7 +44,6 @@ interface MoveAllParams {
     destinationLabelID: string;
     telemetryEvent: TelemetryMailSelectAllEvents;
     sourceAction: SOURCE_ACTION;
-    currentFolder?: string;
 }
 
 interface SelectAllParams {
@@ -156,7 +155,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
     );
 
     const moveAllCallback = useCallback(
-        async ({ sourceLabelID, destinationLabelID, telemetryEvent, sourceAction, currentFolder }: MoveAllParams) => {
+        async ({ sourceLabelID, destinationLabelID, telemetryEvent, sourceAction }: MoveAllParams) => {
             await handleMoveAllMoveModal({
                 destinationLabelID,
             });
@@ -171,7 +170,6 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
                 actionLocation: sourceAction,
                 numberMessage: SELECTED_RANGE.ALL,
                 destination: destinationFolder,
-                folderLocation: currentFolder,
             });
 
             void handleMoveAllToFolder({

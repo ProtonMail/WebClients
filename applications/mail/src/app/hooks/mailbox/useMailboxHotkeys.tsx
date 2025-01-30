@@ -43,7 +43,6 @@ export interface MailboxHotkeysContext {
     columnLayout: boolean;
     isMessageOpening: boolean;
     location: Location;
-    currentFolder?: string;
 }
 
 export interface MailboxHotkeysHandlers {
@@ -74,7 +73,6 @@ export const useMailboxHotkeys = (
         columnLayout,
         isMessageOpening,
         location,
-        currentFolder,
     }: MailboxHotkeysContext,
     {
         handleBack,
@@ -141,7 +139,6 @@ export const useMailboxHotkeys = (
             selectAll,
             onCheckAll: handleCheckAll,
             sourceAction: SOURCE_ACTION.SHORTCUTS,
-            currentFolder,
         });
         if (elementIDForList) {
             handleBack();
@@ -321,7 +318,6 @@ export const useMailboxHotkeys = (
                         selectAll,
                         onCheckAll: handleCheckAll,
                         sourceAction: SOURCE_ACTION.SHORTCUTS,
-                        currentFolder: currentFolder,
                     });
                 }
             },
@@ -342,7 +338,6 @@ export const useMailboxHotkeys = (
                         selectAll,
                         onCheckAll: handleCheckAll,
                         sourceAction: SOURCE_ACTION.SHORTCUTS,
-                        currentFolder: currentFolder,
                     });
                 }
             },
@@ -381,7 +376,7 @@ export const useMailboxHotkeys = (
                     }
                     e.stopPropagation();
                     const isAllStarred = elements.filter((element) => isStarred(element)).length === elements.length;
-                    await star(elements, !isAllStarred, SOURCE_ACTION.SHORTCUTS, currentFolder);
+                    await star(elements, !isAllStarred, labelID, SOURCE_ACTION.SHORTCUTS);
                 }
             },
         ],
@@ -404,7 +399,6 @@ export const useMailboxHotkeys = (
                     await permanentDelete(
                         elements.map((e) => e.ID).filter(isTruthy),
                         SOURCE_ACTION.SHORTCUTS,
-                        currentFolder,
                         selectAll
                     );
                 }
