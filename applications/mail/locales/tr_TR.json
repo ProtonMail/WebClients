@@ -546,6 +546,9 @@
       "Get started": [
         "Başlayalım"
       ],
+      "Get the app": [
+        "Uygulamayı edinin"
+      ],
       "Get the browser extension": [
         "Tarayıcı eklentisini edinin"
       ],
@@ -599,6 +602,9 @@
       ],
       "Hide messages": [
         "İletileri gizle"
+      ],
+      "Hide my email": [
+        "E-postamı gizle"
       ],
       "Hide toolbar": [
         "Araç çubuğunu gizle"
@@ -1935,6 +1941,9 @@
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
       ],
+      "Got it": [
+        "Anladım"
+      ],
       "Maybe later": [
         "Belki daha sonra"
       ],
@@ -2674,6 +2683,9 @@
       ],
       "Work": [
         "İş"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5155,6 +5167,11 @@
         "Çok küçük"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Varsayılan olarak gizlilik."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Tarih: ${ date }"
@@ -5409,6 +5426,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -5417,6 +5437,9 @@
       ],
       "No verification method available": [
         "Kullanılabilecek bir doğrulama yöntemi yok"
+      ],
+      "SMS": [
+        "Kısa mesaj"
       ]
     },
     "ICS event error": {
@@ -5706,6 +5729,9 @@
       ],
       "ICS file": [
         "ICS dosyası"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -6976,7 +7002,7 @@
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
-        "${ BRAND_NAME } ile ilgili her konuda yardım almak için bize ulaşın."
+        "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -7902,6 +7928,9 @@
       ],
       "Trusted": [
         "Güvenilen"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10347,8 +10376,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükle"
       ],
       "Storage": [
         "Depolama alanı"
@@ -10758,6 +10793,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -11618,7 +11658,7 @@
         "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "Aboneliğiniz her yıl aynı oranda yenilenecektir."
+        "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
     },
     "specialoffer: Link": {
@@ -11995,6 +12035,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -12253,47 +12334,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Masaüstü uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -13622,11 +13662,6 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
@@ -13710,6 +13745,11 @@
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
@@ -13770,11 +13810,11 @@
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "Yeni aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir.",
-        "Yeni aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir."
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Planlanmış planınız ${ renewalTime } tarihinde başlar."
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
@@ -13820,8 +13860,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin birikimlerinizi kolayca ve güvenle saklayın ve gönderin"
+      "A safer way to hold Bitcoin": [
+        "Bitcoin saklamak için daha güvenli bir yol"
       ]
     },
     "wallet_signup_2024:Bug category": {

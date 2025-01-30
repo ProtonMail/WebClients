@@ -543,6 +543,9 @@
       "Get started": [
         "入门"
       ],
+      "Get the app": [
+        "获取应用"
+      ],
       "Get the browser extension": [
         "获取浏览器扩展"
       ],
@@ -596,6 +599,9 @@
       ],
       "Hide messages": [
         "隐藏邮件"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ],
       "Hide toolbar": [
         "隐藏工具栏"
@@ -1924,6 +1930,9 @@
       "Discover and set up features": [
         "发现并设置功能"
       ],
+      "Got it": [
+        "明白了"
+      ],
       "Maybe later": [
         "以后再说"
       ],
@@ -2661,6 +2670,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5367,6 +5379,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "邮件"
       ],
@@ -5375,6 +5390,9 @@
       ],
       "No verification method available": [
         "没有可用的验证方法"
+      ],
+      "SMS": [
+        "短信"
       ]
     },
     "ICS event error": {
@@ -5657,6 +5675,9 @@
       ],
       "ICS file": [
         "ICS 文件"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7768,6 +7789,9 @@
       ],
       "Trusted": [
         "已信任"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10176,8 +10200,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
       ],
       "Storage": [
         "存储"
@@ -10584,6 +10614,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -11416,6 +11451,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "此订阅将以相同费率每 2 年自动续订一次，直至取消。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "您的订阅将以每年相同的费率续订。"
       ]
     },
     "specialoffer: Link": {
@@ -11785,6 +11823,47 @@
         "总计${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动转发 ${ strongText } 电子邮件"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "短电子邮箱地址 @pm.me"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -12037,47 +12116,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 电子邮件别名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动转发 ${ strongText } 电子邮件"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "短电子邮箱地址 @pm.me"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -13363,11 +13401,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
@@ -13451,6 +13484,11 @@
         "上传公钥后方可向此地址发送端到端加密邮件"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "稳定版"
@@ -13504,6 +13542,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "然后每 12 个月向您收取 ${ renewPrice }。"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "您的新订阅将在 ${ cycle } 个月后自动续订。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "您的预定计划从 ${ renewalTime } 开始。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的订阅将在 ${ cycle } 个月后自动续期。"
       ]
@@ -13544,8 +13588,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "持有和发送比特币更安全/更便捷的方式"
+      "A safer way to hold Bitcoin": [
+        "更安全持有比特币的方式"
       ]
     },
     "wallet_signup_2024:Bug category": {
