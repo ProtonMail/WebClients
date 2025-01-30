@@ -38,6 +38,9 @@ export const AliasModal = <T extends AliasFormValues>({
     const [ready, setReady] = useState(false);
     const { needsUpgrade } = useSelector(selectAliasLimits);
 
+    const [showAdvanced, setShowAdvanced] = useState(false);
+    const toggleShowAdvanced = () => setShowAdvanced((state) => !state);
+
     useEffect(() => {
         if (open && aliasOptions) {
             const firstSuffix = aliasOptions.suffixes?.[0];
@@ -107,7 +110,20 @@ export const AliasModal = <T extends AliasFormValues>({
                         suffix={form.values.aliasSuffix?.value ?? '<suffix>'}
                         loading={loading}
                     />
-                    <AliasForm<T> form={form} aliasOptions={aliasOptions} loading={loading} />
+                    <div className="flex justify-center mb-4">
+                        <Button shape="ghost" onClick={toggleShowAdvanced} pill>
+                            <span className="flex items-center color-weak text-sm">
+                                <Icon name="cog-wheel" className="mr-1" />
+                                {c('Action').t`Advanced options`}
+                            </span>
+                        </Button>
+                    </div>
+                    <AliasForm<T>
+                        form={form}
+                        aliasOptions={aliasOptions}
+                        loading={loading}
+                        showAdvanced={showAdvanced}
+                    />
                 </FormikProvider>
             </Panel>
         </SidebarModal>

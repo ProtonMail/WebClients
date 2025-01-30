@@ -114,8 +114,8 @@ export const createSpotlightService = <StorageKey extends string>(options: Spotl
 export type SpotlightService = ReturnType<typeof createSpotlightService>;
 
 export type SpotlightProxy = {
-    /** Acknowledge a spotlight message */
-    check: (message: SpotlightMessage) => MaybePromise<boolean>;
     /** Returns `true` if a spotlight message should show */
+    check: (message: SpotlightMessage) => MaybePromise<boolean>;
+    /** Acknowledge a spotlight message */
     acknowledge: (message: SpotlightMessage) => MaybePromise<boolean>;
 };
