@@ -319,6 +319,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<LoadThreads>(App_TYPES.LoadThreads),
         this.get<HandleRealtimeCommentsEvent>(App_TYPES.HandleRealtimeCommentsEvent),
         this.get<MetricService>(App_TYPES.MetricService),
+        this.get<GetNode>(App_TYPES.GetNode),
       )
     })
 

@@ -35,20 +35,26 @@ import { useWordCount } from '../WordCount/useWordCount'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { useExportToPDFModal } from '../Modals/ExportToPDFModal/ExportToPDFModal'
 import * as config from '../../config'
+import type { RenameControllerInterface } from '@proton/docs-core'
+import { useDocsContext } from '../../Containers/DocsContextProvider'
 
 const DocumentTitleDropdown = ({
   authenticatedController,
+  renameController,
   editorController,
   documentState,
   action,
 }: {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
+  renameController: RenameControllerInterface | undefined
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
   action?: DocumentAction['mode']
 }) => {
   const application = useApplication()
   const isPublicMode = application.isPublicMode
+  const { publicContext, privateContext } = useDocsContext()
+  const user = privateContext?.user || publicContext?.user
   const { getLocalID } = useAuthentication()
   const wordCountInfoCollection = useWordCount()
   const { floatingUIIsEnabled, setFloatingUIIsEnabled } = useFloatingWordCount()
@@ -94,8 +100,8 @@ const DocumentTitleDropdown = ({
   }, [])
 
   const confirmRename = useCallback(() => {
-    if (!authenticatedController) {
-      throw new Error('Attempting to rename document in a public context')
+    if (!renameController) {
+      throw new Error('Cannot rename document without rename controller')
     }
 
     const oldName = title
@@ -104,7 +110,7 @@ const DocumentTitleDropdown = ({
       setIsRenaming(false)
 
       if (oldName !== newName) {
-        void authenticatedController.renameDocument(newName).then((result) => {
+        void renameController.renameDocument(newName).then((result) => {
           if (result.isFailed()) {
             PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
             setTitle(oldName)
@@ -115,7 +121,7 @@ const DocumentTitleDropdown = ({
     } else {
       setIsRenaming(false)
     }
-  }, [application.eventBus, authenticatedController, renameInputValue, title])
+  }, [application.eventBus, renameController, renameInputValue, title])
 
   const onDuplicate = useCallback(
     async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -258,7 +264,7 @@ const DocumentTitleDropdown = ({
         }}
       >
         <DropdownMenu>
-          {authenticatedController && documentState.getProperty('userRole').canRename() && (
+          {user && documentState.getProperty('userRole').canRename() && (
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => setIsRenaming((renaming) => !renaming)}
