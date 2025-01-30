@@ -2389,6 +2389,11 @@
         "Fatura vencida"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
@@ -2470,11 +2475,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5767,6 +5767,9 @@
       "Address": [
         "Endereço"
       ],
+      "Album": [
+        "Álbum"
+      ],
       "Anderson": [
         "Braga"
       ],
@@ -6593,6 +6596,15 @@
       "Apple Installer Package": [
         "Pacote de instalação da Apple"
       ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Apple Pages": [
+        "Apple Pages"
+      ],
       "Archive document": [
         "Arquivo de documento"
       ],
@@ -6656,8 +6668,32 @@
       "Java Archive (JAR)": [
         "Arquivo Java (JAR)"
       ],
+      "JavaScript": [
+        "JavaScript"
+      ],
       "JPEG image": [
         "Imagem JPEG"
+      ],
+      "JSON": [
+        "JSON"
+      ],
+      "JSON-LD": [
+        "JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
       ],
       "MP3 audio": [
         "Áudio MP3"
@@ -6673,6 +6709,9 @@
       ],
       "Musical Instrument Digital Interface (MIDI)": [
         "Interface digital de instrumento musical (MIDI)"
+      ],
+      "OGG": [
+        "OGG"
       ],
       "OGG audio": [
         "Áudio OGG"
@@ -6698,6 +6737,9 @@
       "Portable Network Graphics (PNG)": [
         "Gráficos de Rede Portáteis (PNG)"
       ],
+      "Python": [
+        "Python"
+      ],
       "RAR archive": [
         "Arquivo RAR"
       ],
@@ -6722,6 +6764,9 @@
       "TrueType Font": [
         "Fonte TrueType"
       ],
+      "TypeScript": [
+        "TypeScript"
+      ],
       "Unknown file": [
         "Arquivo desconhecido"
       ],
@@ -6745,6 +6790,15 @@
       ],
       "Windows OS/2 Bitmap Graphics": [
         "Gráficos de mapa de bits do Windows OS/2"
+      ],
+      "XHTML": [
+        "XHTML"
+      ],
+      "XML": [
+        "XML"
+      ],
+      "XUL": [
+        "XUL"
       ],
       "ZIP archive": [
         "Arquivo ZIP"
@@ -8057,8 +8111,14 @@
       "Free": [
         "Gratuito"
       ],
+      "Online document editor": [
+        "Editor de documentos on-line"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versões anteriores de arquivos"
       ],
       "Storage": [
         "Armazenamento"
@@ -8417,6 +8477,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -10551,6 +10616,11 @@
         "Hoje"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adicione este arquivo compartilhado ao seu ${ DRIVE_APP_NAME } para fácil acesso mais tarde."
@@ -10632,11 +10702,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviamos um convite para acessar o item."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Validation": {
@@ -10734,8 +10799,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Uma maneira mais segura e fácil de guardar e enviar Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Uma maneira mais segura de guardar o Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

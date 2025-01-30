@@ -619,6 +619,9 @@
       "Get more servers": [
         "Bénéficiez de plus de serveurs"
       ],
+      "Get the app": [
+        "Téléchargez l'application"
+      ],
       "Get the browser extension": [
         "Téléchargez l'extension de navigateur"
       ],
@@ -633,6 +636,9 @@
       ],
       "Go to label": [
         "Afficher le label"
+      ],
+      "Go to panel ${ index }": [
+        "Aller au panneau ${ index }"
       ],
       "Go to settings": [
         "Accéder aux paramètres"
@@ -2000,6 +2006,9 @@
       "Discover and set up features": [
         "Découvrez et configurez les fonctionnalités"
       ],
+      "Got it": [
+        "J'ai compris"
+      ],
       "Invite": [
         "Inviter"
       ],
@@ -2614,6 +2623,9 @@
       ],
       "Work": [
         "Professionnel"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5926,6 +5938,11 @@
         "Très petit"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "application web"
@@ -6281,6 +6298,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -6289,6 +6309,9 @@
       ],
       "No verification method available": [
         "Aucune méthode de vérification n'est disponible."
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -6566,6 +6589,9 @@
       ],
       "ICS file": [
         "fichier ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -13393,8 +13419,14 @@
       "Free": [
         "Gratuit"
       ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Récupérer les versions précédentes des fichiers"
       ],
       "Storage": [
         "Espace de stockage"
@@ -14416,6 +14448,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -18263,7 +18300,7 @@
         "La vérification PayPal n'a pas abouti."
       ],
       "Personalise your e-mail footer": [
-        "Personnalisez le pied de page de vos messages."
+        "Personnaliser le pied de page de vos messages."
       ],
       "Personalize your email footer": [
         "Personnalisez le pied de page de vos messages."
@@ -19199,6 +19236,9 @@
       "Keep request": [
         "Conserver la demande"
       ],
+      "Member activation incomplete": [
+        "L'activation du membre est incomplète."
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Une fois que l'utilisateur a donné son accord, vous pourrez l'aider à retrouver l'accès à son compte ou à gérer ses données."
       ],
@@ -19596,8 +19636,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Une façon plus sécurisée et simple de détenir et d'envoyer des bitcoins"
+      "A safer way to hold Bitcoin": [
+        "Une manière plus sûre de détenir des bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

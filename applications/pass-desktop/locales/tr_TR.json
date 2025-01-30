@@ -253,9 +253,6 @@
       "Export": [
         "Dışa aktar"
       ],
-      "Feedback": [
-        "Geri bildirim"
-      ],
       "Fill password": [
         "Parolayı doldur"
       ],
@@ -301,6 +298,9 @@
       "How to update ${ PASS_APP_NAME } on Linux": [
         "Linux üzerinde ${ PASS_APP_NAME } nasıl güncellenir"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } nasıl kullanılır"
+      ],
       "Import": [
         "İçe aktar"
       ],
@@ -318,6 +318,9 @@
       ],
       "Invite others": [
         "Başkalarını davet edin"
+      ],
+      "Join our Reddit": [
+        "Reddit topluluğumuza katılın"
       ],
       "Join shared vault": [
         "Paylaşılan kasaya eriş"
@@ -517,9 +520,6 @@
       "Send invite": [
         "Davet gönder"
       ],
-      "Send us a message": [
-        "Bize ileti gönderin"
-      ],
       "Set access level": [
         "Erişim düzeyini ayarla"
       ],
@@ -645,11 +645,8 @@
       "With other ${ BRAND_NAME } users": [
         "Diğer ${ BRAND_NAME } kullanıcılarıyla"
       ],
-      "Write us on Reddit": [
-        "Bize Reddit üzerinden yazın"
-      ],
-      "Write us on Twitter": [
-        "Bize Twitter üzerinden yazın"
+      "Write us on X/Twitter": [
+        "X/Twitter üzerinden bize yazın"
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
@@ -1804,13 +1801,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak, ögenin geçmişini ve tüm güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak, ögelerin geçmişini ve tüm güvenli bağlantılarını siler."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Bir ögeyi başka bir kasaya taşımak ögenin geçmişini siler.",
-        "Ögeleri başka bir kasaya taşımak ögelerin geçmişini siler."
+      "Moving an item to another vault will erase its secure links.": [
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını silecektir.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını silecektir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2302,7 +2295,7 @@
         "${ PASS_APP_NAME } uygulamasındaki paylaşım, iki adımlı doğrulama, kredi kartı ve diğer gelişmiş özelliklere artık erişemeyeceksiniz"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Belirli bir süre kullanılmayan ${ PASS_APP_NAME } otomatik olarak kilitlendiğinde, kilidi bu PIN kodu ile açabileceksiniz."
+        "Belirli bir süre etkinlik yapılmayan ${ PASS_APP_NAME } otomatik olarak kilitlendiğinde, kilidi bu PIN kodu ile açabileceksiniz."
       ],
       "You're invited to a vault.": [
         "Bir kasaya davet edildiniz."
@@ -2656,6 +2649,9 @@
       ],
       "Facebook account": [
         "Facebook hesabı"
+      ],
+      "Feedback": [
+        "Geri Bildirim"
       ],
       "Field name": [
         "Alan adı"

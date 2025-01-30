@@ -1538,6 +1538,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2374,6 +2377,11 @@
         "逾期账单"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } 对可疑活动进行全天候专门监控，包括上报安全专家，从而保护您的账户。"
@@ -2455,11 +2463,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3600,6 +3603,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "邮件"
       ],
@@ -3608,6 +3614,9 @@
       ],
       "No verification method available": [
         "没有可用的验证方法"
+      ],
+      "SMS": [
+        "短信"
       ]
     },
     "ICS event error": {
@@ -3874,6 +3883,9 @@
       ],
       "ICS file": [
         "ICS 文件"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5624,6 +5636,9 @@
       ],
       "Trusted": [
         "已信任"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7899,8 +7914,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
       ],
       "Storage": [
         "存储"
@@ -8250,6 +8271,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8812,6 +8838,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "此订阅将以相同费率每 2 年自动续订一次，直至取消。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "您的订阅将以每年相同的费率续订。"
       ]
     },
     "specialoffer: Link": {
@@ -9891,6 +9920,9 @@
       "Download unverified folder?": [
         "下载未经验证的文件夹？"
       ],
+      "Drive": [
+        "云端硬盘"
+      ],
       "Drop to upload": [
         "拖拽文件并上传"
       ],
@@ -10326,6 +10358,11 @@
         "今天"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "将此共享文件添加到您的 ${ DRIVE_APP_NAME } 中，方便以后访问。"
@@ -10409,11 +10446,6 @@
         "我们已向他们发送了访问该项目的邀请。"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
@@ -10456,6 +10488,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "然后每 12 个月向您收取 ${ renewPrice }。"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "您的新订阅将在 ${ cycle } 个月后自动续订。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "您的预定计划从 ${ renewalTime } 开始。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的订阅将在 ${ cycle } 个月后自动续期。"
       ]
@@ -10491,8 +10529,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "持有和发送比特币更安全/更便捷的方式"
+      "A safer way to hold Bitcoin": [
+        "更安全持有比特币的方式"
       ]
     },
     "wallet_signup_2024:Bug category": {
