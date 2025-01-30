@@ -1,7 +1,7 @@
 /** We're using a Proxy here to avoid loading the UI WASM file in
  * contexts where it should not live. This ensures that the PassUI
  * module is not executed in workers or content-scripts */
-import type PassRustUI from '@protontech/pass-rust-core/ui';
+import type * as PassRustUI from '@protontech/pass-rust-core/ui';
 
 import { isNativeJSError } from '@proton/pass/lib/core/utils';
 import type { Maybe } from '@proton/pass/types';
