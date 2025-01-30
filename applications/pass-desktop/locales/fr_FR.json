@@ -253,9 +253,6 @@
       "Export": [
         "Exporter"
       ],
-      "Feedback": [
-        "Commentaires"
-      ],
       "Fill password": [
         "Remplir le mot de passe"
       ],
@@ -301,6 +298,9 @@
       "How to update ${ PASS_APP_NAME } on Linux": [
         "Comment mettre à jour ${ PASS_APP_NAME } sur Linux ?"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Comment utiliser ${ PASS_APP_NAME }"
+      ],
       "Import": [
         "Importer"
       ],
@@ -318,6 +318,9 @@
       ],
       "Invite others": [
         "Inviter d'autres personnes"
+      ],
+      "Join our Reddit": [
+        "Rejoignez notre Reddit"
       ],
       "Join shared vault": [
         "Rejoindre le coffre-fort partagé"
@@ -517,9 +520,6 @@
       "Send invite": [
         "Envoyer l'invitation"
       ],
-      "Send us a message": [
-        "Envoyez-nous un message"
-      ],
       "Set access level": [
         "Définir le niveau d'accès"
       ],
@@ -645,11 +645,8 @@
       "With other ${ BRAND_NAME } users": [
         "Avec d'autres utilisateurs de ${ BRAND_NAME }"
       ],
-      "Write us on Reddit": [
-        "Écrivez-nous sur Reddit"
-      ],
-      "Write us on Twitter": [
-        "Écrivez-nous sur Twitter"
+      "Write us on X/Twitter": [
+        "Écrivez-nous sur X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
@@ -1804,13 +1801,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Le déplacement d'un élément vers un autre coffre-fort effacera son historique et tous les liens sécurisés.",
-        "Le déplacement d'éléments vers un autre coffre-fort effacera leur historique et tous les liens sécurisés."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Le déplacement d'un élément vers un autre coffre-fort effacera son historique.",
-        "Le déplacement d'éléments vers un autre coffre-fort effacera leur historique."
+      "Moving an item to another vault will erase its secure links.": [
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2656,6 +2649,9 @@
       ],
       "Facebook account": [
         "Compte Facebook"
+      ],
+      "Feedback": [
+        "Commentaires"
       ],
       "Field name": [
         "Nom du champ"
