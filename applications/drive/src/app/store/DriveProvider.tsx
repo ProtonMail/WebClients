@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { PhotosWithAlbumsProvider } from '../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { PublicSessionProvider } from './_api';
 import { DevicesProvider } from './_devices';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
@@ -8,6 +9,7 @@ import { InvitationsStateProvider } from './_invitations/useInvitationsState';
 import { LinksProvider, PublicLinksProvider } from './_links';
 import { PhotosProvider } from './_photos';
 import { SearchProvider } from './_search';
+import { useUserSettings } from './_settings';
 import { SharesProvider } from './_shares';
 import { UploadProvider } from './_uploads';
 import { PublicUploadProvider } from './_uploads/UploadProvider/UploadProvider';
@@ -18,6 +20,8 @@ interface DriveProviderProps {
 }
 
 export function DriveProvider({ children }: DriveProviderProps) {
+    const { photosEnabled, photosWithAlbumsEnabled } = useUserSettings();
+
     return (
         <DriveEventManagerProvider>
             <VolumesProvider>
@@ -27,10 +31,21 @@ export function DriveProvider({ children }: DriveProviderProps) {
                             <DownloadsProvider>
                                 <UploadProvider>
                                     <SearchProvider>
-                                        {/**TODO: Remove provider if albums enabled as useless */}
-                                        <PhotosProvider>
+                                        {photosEnabled && !photosWithAlbumsEnabled && (
+                                            <PhotosProvider>
+                                                <InvitationsStateProvider>{children}</InvitationsStateProvider>
+                                            </PhotosProvider>
+                                        )}
+
+                                        {photosEnabled && photosWithAlbumsEnabled && (
+                                            <PhotosWithAlbumsProvider>
+                                                <InvitationsStateProvider>{children}</InvitationsStateProvider>
+                                            </PhotosWithAlbumsProvider>
+                                        )}
+
+                                        {!photosEnabled && (
                                             <InvitationsStateProvider>{children}</InvitationsStateProvider>
-                                        </PhotosProvider>
+                                        )}
                                     </SearchProvider>
                                 </UploadProvider>
                             </DownloadsProvider>
