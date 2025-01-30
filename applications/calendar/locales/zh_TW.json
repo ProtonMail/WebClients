@@ -3933,6 +3933,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA 驗證碼"
+      ],
       "Email": [
         "電郵"
       ],
@@ -3941,6 +3944,9 @@
       ],
       "No verification method available": [
         "沒有可用的驗證方法"
+      ],
+      "SMS": [
+        "簡訊"
       ]
     },
     "ICS event error": {
@@ -4207,6 +4213,9 @@
       ],
       "ICS file": [
         "ICS 檔案"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5453,6 +5462,9 @@
       ],
       "Trusted": [
         "已信任"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -7479,8 +7491,14 @@
       "Free": [
         "免費"
       ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
       "Plus": [
         "進階"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
       ],
       "Storage": [
         "雲端儲存"
@@ -7759,6 +7777,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "免費"
       ]
     },
     "Payments.Sepa": {
@@ -8377,6 +8400,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "您的訂閱每年將以同費率更新"
       ]
     },
     "specialoffer: Link": {
@@ -9969,8 +9995,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "一個更安全/容易持有&傳送Bitcoin的方法"
+      "A safer way to hold Bitcoin": [
+        "更安全持有Bitcoin的方法"
       ]
     },
     "wallet_signup_2024:Bug category": {
