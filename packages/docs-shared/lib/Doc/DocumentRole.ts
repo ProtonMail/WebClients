@@ -42,7 +42,12 @@ export class DocumentRole {
    * even though the request may fail for them. The ideal goal is for "owner" to be accurate, but it is not.
    */
   canRename(): boolean {
-    return this.roleType === 'Editor' || this.roleType === 'Admin' || this.roleType === 'Owner'
+    return (
+      this.roleType === 'Editor' ||
+      this.roleType === 'Admin' ||
+      this.roleType === 'Owner' ||
+      this.roleType === 'PublicEditor'
+    )
   }
 
   canTrash(): boolean {
