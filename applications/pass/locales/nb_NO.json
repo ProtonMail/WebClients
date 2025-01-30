@@ -253,9 +253,6 @@
       "Export": [
         "Eksport"
       ],
-      "Feedback": [
-        "Tilbakemelding"
-      ],
       "Fill password": [
         "Fyll ut passord"
       ],
@@ -298,6 +295,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hvordan eksporterer jeg mine data fra ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Hvordan bruke ${ PASS_APP_NAME }"
+      ],
       "Import": [
         "Importer"
       ],
@@ -315,6 +315,9 @@
       ],
       "Invite others": [
         "Inviter andre"
+      ],
+      "Join our Reddit": [
+        "Bli med på vår Reddit"
       ],
       "Join shared vault": [
         "Bli med delt hvelv"
@@ -511,9 +514,6 @@
       "Send invite": [
         "Send invitasjon"
       ],
-      "Send us a message": [
-        "Send oss en melding"
-      ],
       "Set access level": [
         "Sett tilgangsnivå"
       ],
@@ -636,11 +636,8 @@
       "With other ${ BRAND_NAME } users": [
         "Med andre ${ BRAND_NAME }-brukere"
       ],
-      "Write us on Reddit": [
-        "Skriv til oss på Reddit"
-      ],
-      "Write us on Twitter": [
-        "Skriv til oss på Twitter"
+      "Write us on X/Twitter": [
+        "Skriv til oss på X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
@@ -1772,13 +1769,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Flytting av et element til et annet hvelv vil slette historikken og alle sikre koblinger.",
-        "Flytting av elementer til et annet hvelv vil slette historikken og alle sikre koblinger."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Flytting av et element til et annet hvelv vil slette historikken.",
-        "Flytting av elementer til et annet hvelv vil slette historikken deres."
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2594,6 +2587,9 @@
       ],
       "Facebook account": [
         "Facebook-konto"
+      ],
+      "Feedback": [
+        "Tilbakemelding"
       ],
       "Field name": [
         "Feltnavn"

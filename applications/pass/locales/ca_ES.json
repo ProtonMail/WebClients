@@ -200,7 +200,7 @@
         "Eliminar-ho tot"
       ],
       "Delete it, I will never need it": [
-        "Suprimeix-lo. No ho necessitaré mai."
+        "Elimina'l. No el necessitaré mai."
       ],
       "Delete mailbox": [
         "Elimina la bústia de correu"
@@ -253,9 +253,6 @@
       "Export": [
         "Exporta"
       ],
-      "Feedback": [
-        "Comentaris"
-      ],
       "Fill password": [
         "Emplena la contrasenya"
       ],
@@ -297,6 +294,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Com exporto les meves dades de ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Com utilitzar ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Importa"
@@ -511,9 +511,6 @@
       "Send invite": [
         "Envia l'invitació"
       ],
-      "Send us a message": [
-        "Envieu-nos un missatge"
-      ],
       "Set access level": [
         "Estableix el nivell d`accés"
       ],
@@ -635,12 +632,6 @@
       ],
       "With other ${ BRAND_NAME } users": [
         "Amb altres usuaris de ${ BRAND_NAME }"
-      ],
-      "Write us on Reddit": [
-        "Escriviu-nos a Reddit"
-      ],
-      "Write us on Twitter": [
-        "Escriviu-nos a Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
@@ -1006,7 +997,7 @@
         "Els enllaços segurs inactius no es van poder esborrar."
       ],
       "Invalid password manager": [
-        "Gestor de contrasenya invàlid"
+        "El gestor de contrasenyes no és vàlid."
       ],
       "Invitation could not be accepted": [
         "No es pot acceptar la invitació"
@@ -1111,7 +1102,7 @@
         "Error de desbloqueig"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
-        "Format de fitxer de ${ PASS_APP_NAME } no admès"
+        "El format de fitxer de ${ PASS_APP_NAME } no és compatible."
       ],
       "Unsupported 1Password file format": [
         "Format de fitxer de 1Password no suportat"
@@ -1563,7 +1554,7 @@
         "S'està activant el mode fora de línia..."
       ],
       "Enabling password auto-lock": [
-        "Activant el bloqueig automàtic de la contrasenya"
+        "S'està activant el bloqueig automàtic de la contrasenya"
       ],
       "Enabling password lock failed": [
         "No s'ha pogut activar el bloqueig amb contrasenya"
@@ -1772,14 +1763,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial i tots els enllaços segurs.",
-        "Si moveu elements a una altra caixa forta, se n'esborrarà l'historial i tots els enllaços segurs."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial."
-      ],
       "Moving items": [
         "S'estan movent elements"
       ],
@@ -1923,7 +1906,7 @@
         "Tingueu en compte que, un cop suprimit, l'àlies no es pot restaurar. Potser voleu desactivar l'àlies?"
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
-        "Un cop suprimit, l'àlies no es pot restaurar. L'àlies ja està desactivat i no reenviarà correus electrònics a la vostra bústia de correu"
+        "Tingueu en compte que, un cop suprimit, l'àlies no es pot restaurar. L'àlies ja està desactivat i no reenviarà correus electrònics a la vostra bústia de correu."
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Utilitzeu el domini del camí complet, per exemple el- meu-domini.cat o el-meu-subdomini.el-meu-domini.cat si feu servir un subdomini."
@@ -2217,8 +2200,8 @@
         "No podeu canviar les bústies de correu per a aquest àlies."
       ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Teniu ${ aliasCount } àlies en SimpleLogin però no apareix en ${ PASS_APP_NAME }. Voleu sincronitzar-lo?",
-        "Teniu ${ aliasCount } àlies en SimpleLogin però no apareixen en ${ PASS_APP_NAME }. Voleu sincronitzar-los?"
+        "Teniu ${ aliasCount } àlies en SimpleLogin que no apareix en ${ PASS_APP_NAME }. Voleu sincronitzar-lo?",
+        "Teniu ${ aliasCount } àlies en SimpleLogin que no apareixen en ${ PASS_APP_NAME }. Voleu sincronitzar-los?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Us queda ${ daysRemaining } dia per provar aquestes i altres característiques prèmium.",
@@ -2594,6 +2577,9 @@
       ],
       "Facebook account": [
         "Compte de Facebook"
+      ],
+      "Feedback": [
+        "Comentaris"
       ],
       "Field name": [
         "Nom del camp"

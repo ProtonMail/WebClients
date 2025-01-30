@@ -205,9 +205,6 @@
       "Export": [
         "Izvozi"
       ],
-      "Feedback": [
-        "Povratne informacije"
-      ],
       "Fill password": [
         "Izpolni geslo"
       ],
@@ -246,6 +243,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Kako izvozim svoje podatke iz ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Kako uporabljati ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Uvoz"
@@ -445,9 +445,6 @@
       "Send invite": [
         "Pošlji povabilo"
       ],
-      "Send us a message": [
-        "Pošlji sporočilo"
-      ],
       "Set access level": [
         "Nastavite raven dostopa"
       ],
@@ -537,12 +534,6 @@
       ],
       "View older history": [
         "Prikaži starejšo zgodovino"
-      ],
-      "Write us on Reddit": [
-        "Pišite nam na Reddit"
-      ],
-      "Write us on Twitter": [
-        "Pišite nam na X (Twitter)"
       ]
     },
     "Browser": {
