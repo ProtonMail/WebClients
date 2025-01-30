@@ -3332,6 +3332,11 @@
         "ძალიან პატარა"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. კონფიდენციალობა ნაგულისხმევია."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "უკვე გაქვთ ანგარიში? ${ signIn }"
@@ -3493,6 +3498,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "ელ-ფოსტა"
       ],
@@ -3501,6 +3509,9 @@
       ],
       "No verification method available": [
         "შემოწმების არცერთი მეთოდი წვდომადი არაა"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -7575,8 +7586,14 @@
       "Free": [
         "უფასო"
       ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
       "Plus": [
         "პლუსი"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
       ],
       "Storage": [
         "საცავი"
@@ -8021,6 +8038,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8867,6 +8889,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "თქვენი გამოწერა განახლდება იგივე ტარიფით ყოველ წელს."
       ]
     },
     "specialoffer: Link": {
@@ -9436,6 +9461,47 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -9721,47 +9787,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -11095,6 +11120,9 @@
       "Keep request": [
         "მოთხოვნის შენარჩუნება"
       ],
+      "Member activation incomplete": [
+        "წევრის გააქტიურება დასრულებული არაა"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "მომხმარებლის თანხმობის შემდეგ საშუალება გექნებათ, დაეხმაროთ მათ, დაიბრუნონ წვდომა ან მართონ თავიანთი მონაცემები"
       ],
@@ -11296,6 +11324,13 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
+        "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "თქვენი დაგეგმილი ტარიფის დაწყების დროა ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
         "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
@@ -11397,8 +11432,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "უფრო უსაფრთხო და ადვილი გზა Bitcoin-ის შესანახად და გასაგზავნად"
+      "A safer way to hold Bitcoin": [
+        "უფრო უსაფრთხო გზა Bitcoin-ის შესანახად"
       ]
     },
     "wallet_signup_2024:Bug category": {

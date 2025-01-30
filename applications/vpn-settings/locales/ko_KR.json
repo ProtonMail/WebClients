@@ -3321,6 +3321,11 @@
         "매우 작게"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "이미 계정이 있으신가요? ${ signIn }"
@@ -3480,6 +3485,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "이메일"
       ],
@@ -3488,6 +3496,9 @@
       ],
       "No verification method available": [
         "사용 가능한 인증 방법 없음"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -4089,7 +4100,7 @@
         "다른 관리자가 이 비밀번호를 변경 한 경우 새 조직 비밀번호를 요청해야 합니다."
       ],
       "If it’s not right for you, we’ll refund you.": [
-        "만약 고객님과 맞지 않는다면, 언제든지 환불하실 수 있어요."
+        "만약 회원님과 맞지 않는다면, 언제든지 환불하실 수 있어요."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -7515,8 +7526,14 @@
       "Free": [
         "무료"
       ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "파일 이전 버전 복원"
       ],
       "Storage": [
         "저장 공간"
@@ -7979,6 +7996,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8811,7 +8833,7 @@
         "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "귀하의 구독은 매년 같은 요율로 갱신됩니다."
+        "회원님의 구독이 매년 같은 요율로 갱신됩니다."
       ]
     },
     "specialoffer: Link": {
@@ -9360,6 +9382,47 @@
         "${ totalPrice }용"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "저희는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -9642,47 +9705,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "저희는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -11007,6 +11029,9 @@
       "Keep request": [
         "요청 유지"
       ],
+      "Member activation incomplete": [
+        "구성원 활성화 미완료"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "사용자가 동의하면, 해당 사용자가 계정에 다시 접근하도록 하거나 데이터를 관리할 수 있도록 도울 수 있습니다."
       ],
@@ -11203,10 +11228,10 @@
         "12개월마다 ${ renewPrice }가 결제됩니다."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "귀하의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
+        "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "귀하의 요금제가 ${ renewalTime }에 시작합니다."
+        "회원님의 플랜이 ${ renewalTime }부터 시작합니다."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "사용자의 구독이 ${ cycle }개월 뒤에 자동으로 갱신됩니다."
@@ -11271,7 +11296,7 @@
         "단 ${ price }"
       ],
       "Try ${ upsellPlanName } risk-free": [
-        "${ upsellPlanName } 요금제를 걱정 없이 체험해 보세요"
+        "${ upsellPlanName } 플랜을 걱정 없이 체험해 보세요"
       ],
       "Your ${ a } and ${ b } bundle": [
         "사용자의 ${ a } 및 ${ b } 번들"
@@ -11326,8 +11351,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "쉽고 안전하게 Bitcoin을 보관 및 송금하세요"
+      "A safer way to hold Bitcoin": [
+        "비트코인을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {
