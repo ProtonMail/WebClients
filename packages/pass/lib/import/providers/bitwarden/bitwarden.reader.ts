@@ -34,8 +34,8 @@ const BitwardenTypeMap: Record<number, string> = {
 const addCustomFieldsWarning = (ignored: string[], item: BitwardenItem) => {
     if (item.fields) {
         ignored.push(
-            `[${BitwardenTypeMap[item.type]}] ${item.name}: ${c('Warning').t`item was imported without custom fields`}`
             // Translator: The item name and a colon will precede the warning message, e.g. "[My login]: item was imported without custom fields"
+            `[${BitwardenTypeMap[item.type]}] ${item.name}: ${c('Warning').t`item was imported without custom fields`}`
         );
     }
 };
