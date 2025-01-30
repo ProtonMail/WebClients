@@ -5893,6 +5893,9 @@
       "Start date": [
         "Anfangsdatum"
       ],
+      "State": [
+        "Bundesland"
+      ],
       "Street address": [
         "Straße und Hausnummer"
       ],
@@ -6468,11 +6471,17 @@
       "Get started for ${ priceCoupon }": [
         "Leg los für ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Ab ${ pricing }"
+      ],
       "Upgrade": [
         "Upgraden"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
       ]
     },
     "new_plans: action": {
@@ -8541,6 +8550,9 @@
       ],
       "Upgrade": [
         "Upgrade durchführen"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Upgraden für ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -10214,11 +10226,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via E-Mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Eine sicherere und einfachere Art Bitcoin zu besitzen und zu versenden"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -253,9 +253,6 @@
       "Export": [
         "내보내기"
       ],
-      "Feedback": [
-        "피드백"
-      ],
       "Fill password": [
         "비밀번호 채우기"
       ],
@@ -298,6 +295,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "어떻게 ${ PROVIDER_INFO_MAP[form.values.provider].title }에서 데이터를 내보낼 수 있죠?"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 사용법 안내"
+      ],
       "Import": [
         "불러오기"
       ],
@@ -315,6 +315,9 @@
       ],
       "Invite others": [
         "다른 사용자 초대"
+      ],
+      "Join our Reddit": [
+        "저희의 Reddit에 참여하세요"
       ],
       "Join shared vault": [
         "공유 금고 참가"
@@ -511,9 +514,6 @@
       "Send invite": [
         "초대장 보내기"
       ],
-      "Send us a message": [
-        "메시지 보내기"
-      ],
       "Set access level": [
         "접근 수준 설정"
       ],
@@ -634,11 +634,8 @@
       "With other ${ BRAND_NAME } users": [
         "다른 ${ BRAND_NAME }명 사용자 포함"
       ],
-      "Write us on Reddit": [
-        "Reddit에서 작성"
-      ],
-      "Write us on Twitter": [
-        "Twitter에서 작성"
+      "Write us on X/Twitter": [
+        "X/트위터에 방문하기"
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
@@ -1746,11 +1743,8 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "타 금고로 항목을 이동하면 아이템의 기록 및 안전한 링크가 삭제됩니다."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "항목들을 다른 금고로 이동하면 그 기록이 지워집니다."
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2548,6 +2542,9 @@
       ],
       "Facebook account": [
         "Facebook 계정"
+      ],
+      "Feedback": [
+        "피드백"
       ],
       "Field name": [
         "필드 이름"

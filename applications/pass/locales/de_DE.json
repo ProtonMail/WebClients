@@ -247,9 +247,6 @@
       "Export": [
         "Exportieren"
       ],
-      "Feedback": [
-        "Feedback"
-      ],
       "Fill password": [
         "Passwort ausfüllen"
       ],
@@ -291,6 +288,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Wie exportiere ich meine Daten aus ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Wie man ${ PASS_APP_NAME } verwendet"
       ],
       "Import": [
         "Importieren"
@@ -505,9 +505,6 @@
       "Send invite": [
         "Einladung senden"
       ],
-      "Send us a message": [
-        "Sende uns eine Nachricht"
-      ],
       "Set access level": [
         "Zugriffsstufe festlegen"
       ],
@@ -629,12 +626,6 @@
       ],
       "With other ${ BRAND_NAME } users": [
         "Mit anderen ${ BRAND_NAME }-Benutzern"
-      ],
-      "Write us on Reddit": [
-        "Schreibe uns auf Reddit"
-      ],
-      "Write us on Twitter": [
-        "Schreibe uns auf Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
@@ -1690,9 +1681,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history.": [
-        "Das Verschieben eines Eintrags in einen anderen Tresor löscht seinen Verlauf.",
-        "Das Verschieben von Einträgen in einen anderen Tresor löscht ihre Verläufe."
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"

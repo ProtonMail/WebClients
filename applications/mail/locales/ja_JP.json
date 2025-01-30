@@ -543,6 +543,9 @@
       "Get started": [
         "利用開始"
       ],
+      "Get the app": [
+        "アプリを入手"
+      ],
       "Get the browser extension": [
         "ブラウザ拡張機能を入手"
       ],
@@ -1924,6 +1927,9 @@
       "Discover and set up features": [
         "機能の発見と設定"
       ],
+      "Got it": [
+        "はい"
+      ],
       "Maybe later": [
         "またあとで"
       ],
@@ -2661,6 +2667,9 @@
       ],
       "Work": [
         "勤務先"
+      ],
+      "Yomi": [
+        "ヨミカタ"
       ]
     },
     "Country name": {
@@ -5116,6 +5125,11 @@
         "極小"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }、Privacy by default"
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "日付: ${ date }"
@@ -5367,6 +5381,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "メール"
       ],
@@ -5375,6 +5392,9 @@
       ],
       "No verification method available": [
         "検証方法がありません"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5657,6 +5677,9 @@
       ],
       "ICS file": [
         "ICS ファイル"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7768,6 +7791,9 @@
       ],
       "Trusted": [
         "信頼済み"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10170,11 +10196,20 @@
       "Custom email domain": [
         "独自メールドメイン"
       ],
+      "Email addresses": [
+        "メールアドレス"
+      ],
       "Free": [
         "無料"
       ],
+      "Online document editor": [
+        "オンラインテキスト編集プログラム"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
       ],
       "Storage": [
         "ストレージ"
@@ -11782,6 +11817,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -12034,47 +12110,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -13360,11 +13395,6 @@
         "今日"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
@@ -13448,6 +13478,11 @@
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "安定版"
@@ -13501,6 +13536,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "その後、12 か月ごとに ${ renewPrice } が請求されます。"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "予定のプランは ${ renewalTime }から始まります。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "サブスクリプションは ${ cycle } か月後に自動的に更新されます。"
       ]
@@ -13541,8 +13582,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin を保持・送信する安全で簡単な方法"
+      "A safer way to hold Bitcoin": [
+        "Bitcoinをより安全に保持します"
       ]
     },
     "wallet_signup_2024:Bug category": {
