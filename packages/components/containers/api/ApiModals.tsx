@@ -19,9 +19,6 @@ const HumanVerificationModal = lazy(
     () =>
         import(
             /* webpackChunkName: "human-verification-modal" */
-            /* webpackMode: "lazy" */
-            /* webpackFetchPriority: "low" */
-            /* webpackPrefetch: true */
             './humanVerification/HumanVerificationModal'
         )
 );
@@ -30,9 +27,6 @@ const AuthModal = lazy(
     () =>
         import(
             /* webpackChunkName: "auth-modal" */
-            /* webpackMode: "lazy" */
-            /* webpackFetchPriority: "low" */
-            /* webpackPrefetch: true */
             '../password/AuthModal'
         )
 );
