@@ -8,6 +8,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -62,7 +63,11 @@ const ItemHoverButtons = ({
 
     const handleMarkAs = (event: MouseEvent) => {
         event.stopPropagation();
+        // The active item might be a conversation, and the list can display either multiple messages or conversations
         if (element.ID === elementID && !isUnread) {
+            onBack();
+        }
+        if (isMessage(element) && (element as Message).ConversationID === elementID && !isUnread) {
             onBack();
         }
         markAs({
