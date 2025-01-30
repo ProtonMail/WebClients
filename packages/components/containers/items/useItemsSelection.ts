@@ -9,7 +9,10 @@ interface Props {
     allIDs: string[];
     resetDependencies?: DependencyList;
     onCheck?: (checked: boolean) => void;
+    // Parameters specific to mail
     rowMode?: boolean;
+    conversationMode?: boolean;
+    messageID?: string;
 }
 
 /**
@@ -17,14 +20,24 @@ interface Props {
  * You have an active id which represents the selection if there is no checked items
  * As soon as you have checked items, it replaces the active item
  * Items can be any object, we only deal with IDs
- * @param activeID The current active item
+ * @param activeID The current opened item: message or conversation
+ * @param messageID The current opened message
  * @param allIDs The complete list of ids in the list
  * @param resetDependencies React dependencies to reset selection if there is a change
  * @param onCheck Optional action to be triggered when interacting with element checkboxes
  * @param rowMode Used only for mail since we keep checkedMap state in row mode
+ * @param conversationMode Whether the list renders conversations or messages
  * @returns all helpers useful to check one, a range or all items
  */
-const useItemsSelection = ({ activeID, allIDs, rowMode, resetDependencies, onCheck }: Props) => {
+const useItemsSelection = ({
+    activeID,
+    messageID,
+    allIDs,
+    rowMode,
+    resetDependencies,
+    conversationMode,
+    onCheck,
+}: Props) => {
     // We are managing checked IDs through a Map and not an array for performance issues.
     const [checkedMap, setCheckedMap] = useState<{ [ID: string]: boolean }>({});
 
@@ -44,14 +57,24 @@ const useItemsSelection = ({ activeID, allIDs, rowMode, resetDependencies, onChe
         if (activeID && rowMode) {
             return [activeID];
         }
+        // Return checked items
         if (checkedIDs.length) {
             return checkedIDs;
         }
+        // Return the item opened
         if (activeID) {
+            // The list renders conversations
+            if (conversationMode) {
+                return [activeID];
+            }
+            // The list renders messages
+            if (messageID) {
+                return [messageID];
+            }
             return [activeID];
         }
         return [];
-    }, [checkedIDs, activeID]);
+    }, [checkedIDs, activeID, conversationMode, messageID]);
 
     /**
      * Put *IDs* to *checked* state
