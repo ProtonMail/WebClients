@@ -589,6 +589,9 @@
       "Go to label": [
         "Gå til etikette"
       ],
+      "Go to panel ${ index }": [
+        "Gå til panel ${ index }"
+      ],
       "Go to settings": [
         "Gå til indstillinger"
       ],
@@ -8192,9 +8195,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-indsendelse tillader tredjepartstjenester eller -enheder at sende e-mail via ${ MAIL_APP_NAME } til dine tilpassede domæneadresser. Denne funktion er kun tilgængelig for ${ BRAND_NAME } for erhvervsbrugere med tilpassede domæner."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at anmode om adgang, skal du ${ createTicket } der beskriver dine brugsscenarier, hvilke brugerdomæner, du gerne vil bruge, og forventede timemæssige og daglige e-mailmængder."
@@ -17230,9 +17230,6 @@
       "PayPal verification failed": [
         "PayPal-bekræftelse fejlede"
       ],
-      "Personalise your e-mail footer": [
-        "Personliggør din e-mail-sidefod"
-      ],
       "Personalize your email footer": [
         "Personliggør din e-mail-sidefod"
       ],
@@ -18446,11 +18443,6 @@
       ],
       "You're Invited.": [
         "Du er inviteret."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "En sikrere/nemmere måde at opbevare og sende Bitcoin på"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -619,6 +619,9 @@
       "Get more servers": [
         "Skaffa fler servrar"
       ],
+      "Get the app": [
+        "Skaffa appen"
+      ],
       "Get the browser extension": [
         "Skaffa webbläsartillägget"
       ],
@@ -633,6 +636,9 @@
       ],
       "Go to label": [
         "Gå till etikett"
+      ],
+      "Go to panel ${ index }": [
+        "Gå till panel ${ index }"
       ],
       "Go to settings": [
         "Gå till inställningar"
@@ -1999,6 +2005,9 @@
       ],
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
+      ],
+      "Got it": [
+        "Jag förstår"
       ],
       "Invite": [
         "Bjud in"
@@ -8622,9 +8631,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. Denna funktion är endast tillgänglig för ${ BRAND_NAME } för företagsanvändare med anpassade domäner."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
       ],
@@ -13422,8 +13428,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
       ],
       "Storage": [
         "Lagringsutrymme"
@@ -14472,6 +14484,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -19261,6 +19278,9 @@
       "Keep request": [
         "Behåll begäran"
       ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ofullständig"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "När användaren samtycker kommer du att kunna hjälpa dem att återfå kontoåtkomst eller hantera deras data."
       ],
@@ -19678,11 +19698,6 @@
       ],
       "You're Invited.": [
         "Du är inbjuden."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Ett säkrare/enklare sätt att förvara och skicka Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
