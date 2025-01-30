@@ -1550,6 +1550,9 @@
       ],
       "Work": [
         "Professionnel"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2386,6 +2389,11 @@
         "Facture impayée"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2467,11 +2475,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3629,6 +3632,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3637,6 +3643,9 @@
       ],
       "No verification method available": [
         "Aucune méthode de vérification n'est disponible."
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3909,6 +3918,9 @@
       ],
       "ICS file": [
         "fichier ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5696,6 +5708,9 @@
       "Expired": [
         "Expirée"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Obsolète"
       ],
@@ -5707,6 +5722,9 @@
       ],
       "Trusted": [
         "Approuvée"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -5748,6 +5766,9 @@
       ],
       "Address": [
         "Adresse"
+      ],
+      "Album": [
+        "Album"
       ],
       "Anderson": [
         "Durant"
@@ -6575,6 +6596,15 @@
       "Apple Installer Package": [
         "Package d'installation Apple"
       ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Apple Pages": [
+        "Apple Pages"
+      ],
       "Archive document": [
         "Archive de documents"
       ],
@@ -6638,8 +6668,38 @@
       "Java Archive (JAR)": [
         "Archive JAVA (JAR)"
       ],
+      "JavaScript": [
+        "JavaScript"
+      ],
       "JPEG image": [
         "Image JPEG"
+      ],
+      "JSON": [
+        "JSON"
+      ],
+      "JSON-LD": [
+        "JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft PowerPoint": [
+        "Microsoft PowerPoint"
+      ],
+      "Microsoft PowerPoint (OpenXML)": [
+        "Microsoft PowerPoint (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
       ],
       "MP3 audio": [
         "Audio MP3"
@@ -6655,6 +6715,9 @@
       ],
       "Musical Instrument Digital Interface (MIDI)": [
         "Musical Instrument Digital Interface (MIDI)"
+      ],
+      "OGG": [
+        "OGG"
       ],
       "OGG audio": [
         "Audio OGG"
@@ -6680,6 +6743,9 @@
       "Portable Network Graphics (PNG)": [
         "Portable Network Graphics (PNG)"
       ],
+      "Python": [
+        "Python"
+      ],
       "RAR archive": [
         "Archive RAR"
       ],
@@ -6704,6 +6770,9 @@
       "TrueType Font": [
         "Police TrueType"
       ],
+      "TypeScript": [
+        "TypeScript"
+      ],
       "Unknown file": [
         "Fichier inconnu"
       ],
@@ -6727,6 +6796,15 @@
       ],
       "Windows OS/2 Bitmap Graphics": [
         "Images Bitmap Windows OS/2"
+      ],
+      "XHTML": [
+        "XHTML"
+      ],
+      "XML": [
+        "XML"
+      ],
+      "XUL": [
+        "XUL"
       ],
       "ZIP archive": [
         "Archive ZIP"
@@ -8034,8 +8112,14 @@
       "Free": [
         "Gratuit"
       ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Récupérer les versions précédentes des fichiers"
       ],
       "Storage": [
         "Espace de stockage"
@@ -8388,6 +8472,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -10082,6 +10171,9 @@
       "Download unverified folder?": [
         "Télécharger le dossier non vérifié ?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "Déposer pour charger"
       ],
@@ -10519,6 +10611,11 @@
         "Aujourd'hui"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Ajoutez ce fichier partagé à votre ${ DRIVE_APP_NAME } pour y accéder facilement plus tard."
@@ -10600,11 +10697,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
     "Validation": {
@@ -10702,8 +10794,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Une façon plus sécurisée et simple de détenir et d'envoyer des bitcoins"
+      "A safer way to hold Bitcoin": [
+        "Une manière plus sûre de détenir des bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
