@@ -619,6 +619,9 @@
       "Get more servers": [
         "サーバーを増やす"
       ],
+      "Get the app": [
+        "アプリを入手"
+      ],
       "Get the browser extension": [
         "ブラウザ拡張機能を入手"
       ],
@@ -633,6 +636,9 @@
       ],
       "Go to label": [
         "ラベルへ移動"
+      ],
+      "Go to panel ${ index }": [
+        "パネル ${ index } に移動"
       ],
       "Go to settings": [
         "設定を開く"
@@ -1992,6 +1998,9 @@
       "Discover and set up features": [
         "機能の発見と設定"
       ],
+      "Got it": [
+        "はい"
+      ],
       "Invite": [
         "招待"
       ],
@@ -2603,6 +2612,9 @@
       ],
       "Work": [
         "勤務先"
+      ],
+      "Yomi": [
+        "ヨミカタ"
       ]
     },
     "Country name": {
@@ -5888,6 +5900,11 @@
         "極小"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }、Privacy by default"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "ウェブアプリ"
@@ -6241,6 +6258,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "メール"
       ],
@@ -6249,6 +6269,9 @@
       ],
       "No verification method available": [
         "検証方法がありません"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -6520,6 +6543,9 @@
       ],
       "ICS file": [
         "ICS ファイル"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -8516,9 +8542,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタムドメインアドレスの ${ MAIL_APP_NAME } を介してメールを送信できるようになります。 この機能は、カスタムドメインを持つ ${ BRAND_NAME } for business ユーザーのみが利用できます。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介してメールを送信できるようになります。 アクセスをリクエストするには、ユースケース、使用したいカスタム ドメイン、および予想される時間ごとおよび日ごとのメールの量を説明する ${ createTicket } を送信してください。"
@@ -13238,11 +13261,20 @@
       "Custom email domain": [
         "独自メールドメイン"
       ],
+      "Email addresses": [
+        "メールアドレス"
+      ],
       "Free": [
         "無料"
       ],
+      "Online document editor": [
+        "オンラインテキスト編集プログラム"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
       ],
       "Storage": [
         "ストレージ"
@@ -18972,6 +19004,9 @@
       "Keep request": [
         "リクエスト中"
       ],
+      "Member activation incomplete": [
+        "メンバーの有効化が未完了です"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "ユーザーが同意すると、アカウントへのアクセスを回復したり、データを管理したりするのを手助けできるようになります。"
       ],
@@ -19218,6 +19253,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "その後、12 か月ごとに ${ renewPrice } が請求されます。"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "予定のプランは ${ renewalTime }から始まります。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "サブスクリプションは ${ cycle } か月後に自動的に更新されます。"
       ]
@@ -19349,8 +19390,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin を保持・送信する安全で簡単な方法"
+      "A safer way to hold Bitcoin": [
+        "Bitcoinをより安全に保持します"
       ]
     },
     "wallet_signup_2024:Bug category": {

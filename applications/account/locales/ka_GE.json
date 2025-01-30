@@ -619,6 +619,9 @@
       "Get more servers": [
         "მეტი სერვერის მიღება"
       ],
+      "Get the app": [
+        "გადმოიწერეთ აპი"
+      ],
       "Get the browser extension": [
         "ბრაუზერის გაფართოების მიღება"
       ],
@@ -633,6 +636,9 @@
       ],
       "Go to label": [
         "ჭდეზე გადასვლა"
+      ],
+      "Go to panel ${ index }": [
+        "${ index }-ე პანელზე გადასვლა"
       ],
       "Go to settings": [
         "მორგებაზე გადასვლა"
@@ -1993,6 +1999,9 @@
       "Discover and set up features": [
         "აღმოაჩინეთ და მოირგეთ ფუნქციები"
       ],
+      "Got it": [
+        "გავიგე"
+      ],
       "Invite": [
         "მოწვევა"
       ],
@@ -2607,6 +2616,9 @@
       ],
       "Work": [
         "სამსახურის"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5911,6 +5923,11 @@
         "ძალიან პატარა"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. კონფიდენციალობა ნაგულისხმევია."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "ვებ-აპლიკაცია"
@@ -6266,6 +6283,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "ელ-ფოსტა"
       ],
@@ -6274,6 +6294,9 @@
       ],
       "No verification method available": [
         "შემოწმების არცერთი მეთოდი წვდომადი არაა"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -6551,6 +6574,9 @@
       ],
       "ICS file": [
         "ICS ფაილი"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -8574,9 +8600,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-ით გაგზავნა მესამე პირების სერვისებს ან მოწყობილობებს, თქვენი დომენის მისამართებით, ${ MAIL_APP_NAME }-ის გავლით გაგზავნის საშუალებას აძლევს. ეს ფუნქცია ხელმისაწვდომია, მხოლოდ, ${ BRAND_NAME } for Business-ის მომხმარებლებისთვის, როლებიც არანაგულისხმევ დომენებს იყენებენ."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP მესამე პირების მიერ მოწოდებულ სერვისებისა და მოწყობილობებს ${ MAIL_APP_NAME }-ის გავლით თქვენი დომენის მისამართებზე ელფოსტის გაგზავნის საშუალებას იძლევა. წვდომის მოსათხოვნად, ${ createTicket } და აღწერეთ რისთვის გჭირდებათ ის, რომელი დომენების გამოყენებას აპირებთ და მიუთითეთ მოსალოდნელი საათობრივი და დღიური ელფოსტის რაოდენობები."
@@ -13352,8 +13375,14 @@
       "Free": [
         "უფასო"
       ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
       "Plus": [
         "პლუსი"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
       ],
       "Storage": [
         "საცავი"
@@ -14372,6 +14401,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -15852,6 +15886,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "თქვენი გამოწერა განახლდება იგივე ტარიფით ყოველ წელს."
       ]
     },
     "specialoffer: Link": {
@@ -19140,6 +19177,9 @@
       "Keep request": [
         "მოთხოვნის შენარჩუნება"
       ],
+      "Member activation incomplete": [
+        "წევრის გააქტიურება დასრულებული არაა"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "მომხმარებლის თანხმობის შემდეგ საშუალება გექნებათ, დაეხმაროთ მათ, დაიბრუნონ წვდომა ან მართონ თავიანთი მონაცემები"
       ],
@@ -19393,6 +19433,13 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
+        "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "თქვენი დაგეგმილი ტარიფის დაწყების დროა ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
         "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
@@ -19530,8 +19577,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "უფრო უსაფრთხო და ადვილი გზა Bitcoin-ის შესანახად და გასაგზავნად"
+      "A safer way to hold Bitcoin": [
+        "უფრო უსაფრთხო გზა Bitcoin-ის შესანახად"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -619,6 +619,9 @@
       "Get more servers": [
         "Krijg meer servers"
       ],
+      "Get the app": [
+        "Download de app"
+      ],
       "Get the browser extension": [
         "Download de browserextensie"
       ],
@@ -633,6 +636,9 @@
       ],
       "Go to label": [
         "Ga naar label"
+      ],
+      "Go to panel ${ index }": [
+        "Ga naar paneel ${ index }"
       ],
       "Go to settings": [
         "Ga naar instellingen"
@@ -2000,6 +2006,9 @@
       "Discover and set up features": [
         "Ontdek en configureer functies"
       ],
+      "Got it": [
+        "Begrepen"
+      ],
       "Invite": [
         "Uitnodigen"
       ],
@@ -2614,6 +2623,9 @@
       ],
       "Work": [
         "Werk"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5923,6 +5935,11 @@
         "Zeer klein"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy standaard"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "web-app"
@@ -6278,6 +6295,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -6286,6 +6306,9 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -6563,6 +6586,9 @@
       ],
       "ICS file": [
         "ICS-bestand"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -13390,8 +13416,14 @@
       "Free": [
         "Gratis"
       ],
+      "Online document editor": [
+        "Online document editor"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
       ],
       "Storage": [
         "Opslagruimte"
@@ -14413,6 +14445,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Gratis"
       ]
     },
     "Payments.Sepa": {
@@ -19193,6 +19230,9 @@
       "Keep request": [
         "Verzoek bewaren"
       ],
+      "Member activation incomplete": [
+        "Gebruikersactivatie onvolledig"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Zodra de gebruiker zijn toestemming geeft, kunt u hen helpen de toegang tot hun account te heroveren of hun gegevens te beheren."
       ],
@@ -19451,7 +19491,7 @@
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maanden."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Uw geplande abonnement begint op ${ renewalTime }."
+        "Uw gepland abonnement begint op ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
@@ -19590,8 +19630,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Een veiligere/makkelijkere manier om Bitcoin te bewaren en te verzenden"
+      "A safer way to hold Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
       ]
     },
     "wallet_signup_2024:Bug category": {
