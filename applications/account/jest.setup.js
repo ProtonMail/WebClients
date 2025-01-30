@@ -38,3 +38,11 @@ window.SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
 // could fail seconds later when the metrics batch is sent via fetch.
 // The metrics package has its own test coverage, so we don't need to test it here.
 jest.mock('@proton/metrics');
+
+jest.mock('@proton/components/containers/vpn/flag', () => ({
+    getFlagSvg: jest.fn().mockImplementation((it) => it),
+}));
+
+jest.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
+    getFlagSvg: jest.fn().mockImplementation((it) => it),
+}));
