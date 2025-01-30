@@ -619,6 +619,9 @@
       "Get more servers": [
         "Daha fazla sunucu edinin"
       ],
+      "Get the app": [
+        "Uygulamayı edinin"
+      ],
       "Get the browser extension": [
         "Tarayıcı eklentisini edinin"
       ],
@@ -633,6 +636,9 @@
       ],
       "Go to label": [
         "Etikete git"
+      ],
+      "Go to panel ${ index }": [
+        "${ index } panosuna git"
       ],
       "Go to settings": [
         "Ayarlara git"
@@ -2000,6 +2006,9 @@
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
       ],
+      "Got it": [
+        "Anladım"
+      ],
       "Invite": [
         "Davet et"
       ],
@@ -2614,6 +2623,9 @@
       ],
       "Work": [
         "İş"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3684,7 +3696,7 @@
         "${ MAIL_APP_NAME } alt bilgisini kaldırmak için tarifenizi yükseltin ve diğer ücretli özelliklere de erişin."
       ],
       "Track the status and activity of your referrals.": [
-        "Önerileri işlemlerinizi ve durumunu izleyin."
+        "Önerilerinizin etkinliklerini ve durumunu izleyin."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Tarifenizi yükselterek daha kısa e-posta adreslerine ve diğer ücretli özelliklere erişin."
@@ -5923,6 +5935,11 @@
         "Çok küçük"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Varsayılan olarak gizlilik."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "İnternet uygulaması"
@@ -6278,6 +6295,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -6286,6 +6306,9 @@
       ],
       "No verification method available": [
         "Kullanılabilecek bir doğrulama yöntemi yok"
+      ],
+      "SMS": [
+        "Kısa mesaj"
       ]
     },
     "ICS event error": {
@@ -6563,6 +6586,9 @@
       ],
       "ICS file": [
         "ICS dosyası"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -8396,7 +8422,7 @@
         "ek depolama alanı satın alın"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
-        "${ BRAND_NAME } ile ilgili her konuda yardım almak için bize ulaşın."
+        "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
       ],
       "read our two-factor authentication guide first": [
         "önce iki adımlı doğrulama rehberimizi okuyun"
@@ -11321,7 +11347,7 @@
     },
     "Link": {
       "Activity log": [
-        "İşlem günlüğü"
+        "Etkinlik günlüğü"
       ],
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
@@ -13390,8 +13416,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükle"
       ],
       "Storage": [
         "Depolama alanı"
@@ -14413,6 +14445,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -15898,7 +15935,7 @@
         "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "Aboneliğiniz her yıl aynı oranda yenilenecektir."
+        "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
     },
     "specialoffer: Link": {
@@ -18257,7 +18294,7 @@
         "PayPal doğrulaması başarısız oldu"
       ],
       "Personalise your e-mail footer": [
-        "E-posta alt bilginizi kişiselleştirin"
+        "E-posta alt bilgilerinizi kişiselleştirin"
       ],
       "Personalize your email footer": [
         "E-posta alt bilginizi isteğinize göre değiştirin"
@@ -19193,6 +19230,9 @@
       "Keep request": [
         "İsteği iptal etme"
       ],
+      "Member activation incomplete": [
+        "Üye aktivasyonu tamamlanamadı"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kullanıcı onay verdiğinde kullanıcının hesabına yeniden erişebilecek ya da verilerini yönetebileceksiniz."
       ],
@@ -19447,11 +19487,11 @@
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "Yeni aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir.",
-        "Yeni aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir."
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Planlanmış planınız ${ renewalTime } tarihinde başlar."
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
@@ -19590,8 +19630,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin birikimlerinizi kolayca ve güvenle saklayın ve gönderin"
+      "A safer way to hold Bitcoin": [
+        "Bitcoin saklamak için daha güvenli bir yol"
       ]
     },
     "wallet_signup_2024:Bug category": {
