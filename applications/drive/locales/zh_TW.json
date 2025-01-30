@@ -2368,6 +2368,11 @@
         "逾期帳單"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }24/7保護您的帳號包含躲避安全專家的可疑活動。"
@@ -2398,6 +2403,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
+      ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "透過端對端加密保護檔案,照片,文件安全"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
@@ -2448,11 +2456,6 @@
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
-      ]
-    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "另外，我們已將 CSV 自動轉換為 vCard 信息，您可以查看並修改對應關係。"
@@ -2462,6 +2465,9 @@
       ]
     },
     "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "合作變得更簡單了。現在任何不須變更文件即可建議編輯。"
+      ],
       "Suggestion mode is here": [
         "此為建議模式"
       ]
@@ -3588,6 +3594,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA 驗證碼"
+      ],
       "Email": [
         "電郵"
       ],
@@ -3596,6 +3605,9 @@
       ],
       "No verification method available": [
         "沒有可用的驗證方法"
+      ],
+      "SMS": [
+        "簡訊"
       ]
     },
     "ICS event error": {
@@ -3862,6 +3874,9 @@
       ],
       "ICS file": [
         "ICS 檔案"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3945,6 +3960,9 @@
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } 位聯絡人"
+      ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME }檔案無法直接下載也不會包含於此次下載。您可透過點擊'繼續下載'下載其他檔案。"
       ],
       "${ doneCount } finished": [
         "${ doneCount } 項已完成"
@@ -5050,6 +5068,12 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "帳號可能換了新的金鑰，不然下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "此電子簽署已部分完成驗證。此檔案由無${ BRAND_NAME }帳號的使用者由大眾可共享連結上傳，所以身分無法驗證。"
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "此電子簽署已部分完成驗證。此資料夾由無${ BRAND_NAME }帳號的使用者由大眾可共享連結上傳，所以身分無法驗證。"
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "下載數量包含實際下載與預覽檔案時的實體。"
       ],
@@ -5122,6 +5146,9 @@
       "This month": [
         "本月"
       ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "此將會移除從${ DRIVE_APP_NAME }移除同步裝置${ deviceName }及從${ DRIVE_APP_NAME }移除其資料。添加至我的電腦的資料夾將停止同步。"
+      ],
       "This will replace the existing file with the folder": [
         "這將會使用資料夾取代既有檔案"
       ],
@@ -5139,6 +5166,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "欲完成您的繳款，請傳送 ${ btcAmountBold } 至以下位址。"
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "於${ DOCS_APP_NAME }開啟它們及匯出以下載${ DOCS_APP_NAME }檔案。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "${ DRIVE_APP_NAME } 需在您的機器上創建索引，以啟用真正的私密搜尋。"
@@ -5594,6 +5624,9 @@
       ],
       "Trusted": [
         "已信任"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7839,8 +7872,14 @@
       "Free": [
         "免費"
       ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
       "Plus": [
         "進階"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
       ],
       "Storage": [
         "雲端儲存"
@@ -8175,6 +8214,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "免費"
       ]
     },
     "Payments.Sepa": {
@@ -8729,6 +8773,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "您的訂閱每年將以同費率更新"
       ]
     },
     "specialoffer: Link": {
@@ -9754,6 +9801,9 @@
       "Download unverified folder?": [
         "要下載未驗證的資料夾嗎？"
       ],
+      "Drive": [
+        "硬碟"
+      ],
       "Drop to upload": [
         "拖放到此處以上傳"
       ],
@@ -9997,6 +10047,9 @@
       "Restore your files": [
         "還原您的檔案"
       ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "替稍後儲存於${ DRIVE_APP_NAME }"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "稍後儲存於${ DRIVE_APP_NAME }"
       ],
@@ -10186,6 +10239,11 @@
         "今天"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "添加此共享檔案至您的${ DRIVE_APP_NAME }以方便未來存取"
@@ -10264,11 +10322,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "您已寄送他們存取項目的邀請。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ]
     },
     "Validation": {
@@ -10351,8 +10404,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "一個更安全/容易持有&傳送Bitcoin的方法"
+      "A safer way to hold Bitcoin": [
+        "更安全持有Bitcoin的方法"
       ]
     },
     "wallet_signup_2024:Bug category": {

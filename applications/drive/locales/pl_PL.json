@@ -367,7 +367,7 @@
         "Eksportuj grupę kontaktów"
       ],
       "Export selection as .vcf": [
-        "Eksportuj selekcję jako .vcf"
+        "Eksportuj zaznaczone jako plik VCF"
       ],
       "Fit to window": [
         "Dopasuj do okna"
@@ -2392,6 +2392,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2467,11 +2472,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2943,6 +2943,9 @@
       ],
       "Please select a country": [
         "Wybierz kraj"
+      ],
+      "Please select a state": [
+        "Wybierz stan"
       ],
       "Port is required": [
         "Port jest wymagany"
@@ -3506,6 +3509,11 @@
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
+    "Feature": {
+      "Free 5 GB storage": [
+        "Darmowe 5 GB przestrzeni dyskowej"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
@@ -3666,6 +3674,9 @@
       "Event validation failed": [
         "Weryfikacja wydarzenia nie powiodła się"
       ],
+      "Floating times not supported": [
+        "Czas w formacie \"floating\" nie jest obsługiwany"
+      ],
       "Malformed all-day event": [
         "Czas wydarzenia całodniowego posiada nieprawidłowy format"
       ],
@@ -3677,6 +3688,9 @@
       ],
       "Malformed start time": [
         "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
+      "Recurring event has no occurrences": [
+        "Wydarzenie cykliczne nie posiada powtórzeń"
       ],
       "Recurring rule not supported": [
         "Reguła powtórzeń nie jest obsługiwana"
@@ -5145,13 +5159,16 @@
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
       ],
       "Setting up your new address…": [
-        "Konfiguracja nowego adresu..."
+        "Konfiguracja nowego adresu…"
       ],
       "Share files with links": [
         "Udostępnij pliki za pomocą linków"
       ],
       "Share via link settings": [
         "Ustawienia linku"
+      ],
+      "Shared by ${ rootLink.signatureEmail }": [
+        "Udostępnione przez ${ rootLink.signatureEmail }"
       ],
       "Shared link not found": [
         "Udostępniony link nie został znaleziony"
@@ -6461,6 +6478,11 @@
       ],
       "What’s this?": [
         "Co to jest?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "Zawiera:"
       ]
     },
     "Loading info": {
@@ -8190,11 +8212,20 @@
       ],
       "Maybe later": [
         "Może później"
+      ],
+      "Save 80% on your first month.": [
+        "Zaoszczędź 80% przez pierwszy miesiąc."
       ]
     },
     "Offer feature": {
+      "+10 more premium features": [
+        "+10 więcej funkcji premium"
+      ],
       "Custom email domain": [
         "Niestandardowa domena"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
       ],
       "Plus": [
         "Plus"
@@ -10767,6 +10798,11 @@
         "Dzisiaj"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Dodaj udostępniony plik do ${ DRIVE_APP_NAME }, aby mieć do niego łatwy dostęp."
@@ -10848,11 +10884,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wysłaliśmy zaproszenie do elementu."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Validation": {
@@ -10962,11 +10993,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoiny przez e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bezpieczniejsza i łatwiejsza metoda przechowywania i wysyłania Bitcoinów"
       ]
     },
     "wallet_signup_2024:Bug category": {
