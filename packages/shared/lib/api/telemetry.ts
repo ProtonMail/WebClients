@@ -28,6 +28,7 @@ export enum TelemetryMeasurementGroups {
     mailDesktopDailyStats = 'mail.desktop.daily_stats',
     mailActions = 'mail.web.clicks_mail_actions',
     mailPostSignupOneDollar = 'mail.web.post_signup_one_dollar',
+    mailPagingControls = 'mail.web.paging_controls',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     paymentsFlow = 'payments.flow',
@@ -77,6 +78,13 @@ export enum TelemetryMailDrivePostSignupOneDollar {
     clickTopNavbar = 'click_top_navbar',
     closeOffer = 'close_offer',
     userSubscribed = 'user_subscribed',
+}
+
+export enum TelemetryMailPagingControlsEvents {
+    move_to_previous_page = 'move_to_previous_page',
+    move_to_next_page = 'move_to_next_page',
+    clicked_load_more_search_results = 'clicked_load_more_search_results',
+    move_to_custom_page = 'move_to_custom_page',
 }
 
 export enum TelemetryCalendarEvents {
@@ -289,6 +297,7 @@ export type TelemetryEvents =
     | TelemetryMailComposerAssistantEvents
     | TelemetryMailOnboardingEvents
     | TelemetryMailDrivePostSignupOneDollar
+    | TelemetryMailPagingControlsEvents
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
     | TelemetryPaymentsEvents
