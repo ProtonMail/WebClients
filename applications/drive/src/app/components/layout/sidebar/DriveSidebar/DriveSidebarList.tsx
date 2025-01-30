@@ -15,7 +15,7 @@ interface Props {
 }
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
-    const { photosEnabled, photosWithAlbumsEnabled } = useUserSettings();
+    const { photosEnabled } = useUserSettings();
     const { invitations } = useInvitationsView();
     const [sidebarWidth, setSidebarWidth] = useState('100%');
     const setSidebarLevel = (level: number) => {
@@ -44,7 +44,7 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
             ))}
             <DriveSidebarDevices setSidebarLevel={setSidebarLevel} />
             {photosEnabled && (
-                <DriveSidebarListItem to="/photos" forceReload={photosWithAlbumsEnabled} icon="image" isActive={(match) => match?.url === '/photos'}>
+                <DriveSidebarListItem to="/photos" icon="image" isActive={(match) => match?.url === '/photos'}>
                     <span className="text-ellipsis" title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
                     </span>
