@@ -12,7 +12,7 @@ let service: Maybe<PassUI>;
 
 const getUIModule = () =>
     BUILD_TARGET === 'safari'
-        ? import(/* webpackChunkName: "pass-core.ui" */ './asm/ui/proton_pass_web.asm')
+        ? import(/* webpackChunkName: "pass-core.ui" */ '@protontech/pass-rust-core/ui/proton_pass_web.asm')
         : import(/* webpackChunkName: "pass-core.ui" */ '@protontech/pass-rust-core/ui');
 
 export const preloadPassCoreUI = () => {
