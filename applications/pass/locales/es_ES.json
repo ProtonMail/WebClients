@@ -253,9 +253,6 @@
       "Export": [
         "Exportar"
       ],
-      "Feedback": [
-        "Comentarios"
-      ],
       "Fill password": [
         "Rellenar contraseña"
       ],
@@ -298,6 +295,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "¿Cómo exporto mis datos desde ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Como usar ${ PASS_APP_NAME }"
+      ],
       "Import": [
         "Importar"
       ],
@@ -315,6 +315,9 @@
       ],
       "Invite others": [
         "Invitar a otros"
+      ],
+      "Join our Reddit": [
+        "Únete a nuestro Reddit"
       ],
       "Join shared vault": [
         "Unirte a la caja fuerte compartida"
@@ -511,9 +514,6 @@
       "Send invite": [
         "Enviar una invitación"
       ],
-      "Send us a message": [
-        "Envíanos un mensaje"
-      ],
       "Set access level": [
         "Configurar el nivel de acceso"
       ],
@@ -636,11 +636,8 @@
       "With other ${ BRAND_NAME } users": [
         "Con otros usuarios de ${ BRAND_NAME }"
       ],
-      "Write us on Reddit": [
-        "Escríbenos en Reddit"
-      ],
-      "Write us on Twitter": [
-        "Escríbenos en Twitter"
+      "Write us on X/Twitter": [
+        "Escríbenos en X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
@@ -1772,13 +1769,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Mover el elemento a otra caja fuerte eliminará el historial y todos los enlaces seguros.",
-        "Mover los elementos a otra caja fuerte eliminará el historial y todos los enlaces seguros."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Mover un elemento a otra caja fuerte eliminará su historial.",
-        "Mover los elementos a otra caja fuerte eliminará su historial."
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2594,6 +2587,9 @@
       ],
       "Facebook account": [
         "Cuenta de Facebook"
+      ],
+      "Feedback": [
+        "Comentarios"
       ],
       "Field name": [
         "Nombre del campo"
