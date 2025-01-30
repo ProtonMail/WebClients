@@ -1538,6 +1538,9 @@
       ],
       "Work": [
         "勤務先"
+      ],
+      "Yomi": [
+        "ヨミカタ"
       ]
     },
     "Country name": {
@@ -2374,6 +2377,11 @@
         "未払いの請求"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2404,6 +2412,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
+      ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "ファイル、写真、書類をエンドツーエンドの暗号化で保護しましょう。"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
@@ -2452,11 +2463,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3467,6 +3473,14 @@
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ]
     },
+    "Feature": {
+      "Free 5 GB storage": [
+        "無料の5GBストレージ"
+      ],
+      "Share privately and securely": [
+        "プライベートかつ安全に共有できます"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
@@ -3583,6 +3597,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "メール"
       ],
@@ -3591,6 +3608,9 @@
       ],
       "No verification method available": [
         "検証方法がありません"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3857,6 +3877,9 @@
       ],
       "ICS file": [
         "ICS ファイル"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5607,6 +5630,9 @@
       ],
       "Trusted": [
         "信頼済み"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7876,11 +7902,20 @@
       "Custom email domain": [
         "独自メールドメイン"
       ],
+      "Email addresses": [
+        "メールアドレス"
+      ],
       "Free": [
         "無料"
       ],
+      "Online document editor": [
+        "オンラインテキスト編集プログラム"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
       ],
       "Storage": [
         "ストレージ"
@@ -9871,6 +9906,9 @@
       "Download unverified folder?": [
         "未検証のフォルダーをダウンロードしますか?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "ドロップしてアップロード"
       ],
@@ -10114,6 +10152,9 @@
       "Restore your files": [
         "ファイルを復元"
       ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }にあとで保存"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }にあとで保存"
       ],
@@ -10303,6 +10344,11 @@
         "今日"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "この共有ファイルを${ DRIVE_APP_NAME }に追加して、後で簡単にアクセスできるようにしましょう。"
@@ -10386,11 +10432,6 @@
         "アイテムにアクセスするための招待を送りました。"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
@@ -10433,6 +10474,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "その後、12 か月ごとに ${ renewPrice } が請求されます。"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "予定のプランは ${ renewalTime }から始まります。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "サブスクリプションは ${ cycle } か月後に自動的に更新されます。"
       ]
@@ -10468,8 +10515,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin を保持・送信する安全で簡単な方法"
+      "A safer way to hold Bitcoin": [
+        "Bitcoinをより安全に保持します"
       ]
     },
     "wallet_signup_2024:Bug category": {
