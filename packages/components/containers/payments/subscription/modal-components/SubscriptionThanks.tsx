@@ -3,8 +3,6 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import useConfig from '@proton/components/hooks/useConfig';
-import type { PlainPaymentMethodType } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
@@ -19,25 +17,15 @@ import '@proton/components/components/upsell/modal/NewUpsellModal.scss';
 
 interface Props {
     onClose?: () => void;
-    paymentMethodType?: PlainPaymentMethodType;
     loading?: boolean;
     showDownloads?: boolean;
 }
 
-const SubscriptionThanks = ({ onClose, paymentMethodType, showDownloads }: Props) => {
+const SubscriptionThanks = ({ onClose, showDownloads }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN =
         APP_NAME === APPS.PROTONVPN_SETTINGS ||
         getAppFromPathnameSafe(window.location.pathname) === APPS.PROTONVPN_SETTINGS;
-    const isDeferedPaymentMethod =
-        paymentMethodType &&
-        [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN, PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN].includes(
-            paymentMethodType as any
-        );
-
-    const title = isDeferedPaymentMethod
-        ? c('Info').t`Your account will be updated once the payment is cleared.`
-        : c('Info').t`Account successfully updated`;
 
     const description = showDownloads ? (
         <>
@@ -72,7 +60,7 @@ const SubscriptionThanks = ({ onClose, paymentMethodType, showDownloads }: Props
                                         className={clsx('text-bold text-center', description ? 'text-lg' : 'text-2xl')}
                                         data-testid="successfull-update"
                                     >
-                                        {title}
+                                        {c('Info').t`Account successfully updated`}
                                     </h1>
                                     {description}
                                 </div>

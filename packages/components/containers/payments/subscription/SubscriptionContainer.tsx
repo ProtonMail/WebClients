@@ -1210,7 +1210,6 @@ const SubscriptionContainer = ({
             {model.step === SUBSCRIPTION_STEPS.THANKS && (
                 <SubscriptionThanks
                     showDownloads={!isVpnB2bPlan}
-                    paymentMethodType={paymentFacade.selectedMethodType}
                     onClose={() => {
                         onSubscribed?.();
                     }}
