@@ -18,10 +18,9 @@ import type { MessageStateWithData } from '../../../store/messages/messagesTypes
 
 interface Props {
     message: MessageStateWithData;
-    currentFolder?: string;
 }
 
-const ExtraSnoozedMessage = ({ message }: Props, currentFolder: string) => {
+const ExtraSnoozedMessage = ({ message }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
     const elements = useMemo(() => getElementsFromIDs([message.data.ConversationID]), [message]);
 
@@ -45,7 +44,7 @@ const ExtraSnoozedMessage = ({ message }: Props, currentFolder: string) => {
             return;
         }
 
-        unsnooze(elements, SOURCE_ACTION.MESSAGE_VIEW, currentFolder);
+        unsnooze(elements, SOURCE_ACTION.MESSAGE_VIEW);
     };
 
     const getSnoozeBannerMessage = () => {

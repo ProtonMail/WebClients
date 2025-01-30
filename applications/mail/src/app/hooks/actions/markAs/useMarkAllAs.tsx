@@ -26,7 +26,6 @@ interface MarkAllParams {
     status: MARK_AS_STATUS;
     onCheckAll?: (check: boolean) => void;
     sourceAction: SOURCE_ACTION;
-    currentFolder?: string;
 }
 
 /**
@@ -46,7 +45,7 @@ export const useMarkAllAs = () => {
     const { sendSimpleActionReport } = useListTelemetry();
 
     const markAllAs = useCallback(
-        async ({ isMessage, labelID = '', status, onCheckAll, sourceAction, currentFolder }: MarkAllParams) => {
+        async ({ isMessage, labelID = '', status, onCheckAll, sourceAction }: MarkAllParams) => {
             await handleShowSelectAllMarkModal({
                 labelID,
                 isMessage: isMessage,
@@ -87,7 +86,6 @@ export const useMarkAllAs = () => {
                 actionType: status === MARK_AS_STATUS.READ ? ACTION_TYPE.MARK_AS_READ : ACTION_TYPE.MARK_AS_UNREAD,
                 actionLocation: sourceAction,
                 numberMessage: SELECTED_RANGE.ALL,
-                folderLocation: currentFolder,
             });
 
             createNotification({
