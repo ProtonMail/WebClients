@@ -3344,6 +3344,11 @@
         "Çok küçük"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Varsayılan olarak gizlilik."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Zaten bir hesabınız var mı? ${ signIn }"
@@ -3505,6 +3510,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -3513,6 +3521,9 @@
       ],
       "No verification method available": [
         "Kullanılabilecek bir doğrulama yöntemi yok"
+      ],
+      "SMS": [
+        "Kısa mesaj"
       ]
     },
     "Info": {
@@ -7601,8 +7612,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükle"
       ],
       "Storage": [
         "Depolama alanı"
@@ -8050,6 +8067,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8901,7 +8923,7 @@
         "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "Aboneliğiniz her yıl aynı oranda yenilenecektir."
+        "Aboneliğiniz her yıl aynı tutarla yenilenecek."
       ]
     },
     "specialoffer: Link": {
@@ -9474,6 +9496,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -9762,47 +9825,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Masaüstü uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -11136,6 +11158,9 @@
       "Keep request": [
         "İsteği iptal etme"
       ],
+      "Member activation incomplete": [
+        "Üye aktivasyonu tamamlanamadı"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kullanıcı onay verdiğinde kullanıcının hesabına yeniden erişebilecek ya da verilerini yönetebileceksiniz."
       ],
@@ -11338,11 +11363,11 @@
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "Yeni aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir.",
-        "Yeni aboneliğiniz ${ cycle } ay içinde otomatik olarak yenilenecektir."
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Planlanmış planınız ${ renewalTime } tarihinde başlar."
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
@@ -11445,8 +11470,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin birikimlerinizi kolayca ve güvenle saklayın ve gönderin"
+      "A safer way to hold Bitcoin": [
+        "Bitcoin saklamak için daha güvenli bir yol"
       ]
     },
     "wallet_signup_2024:Bug category": {
