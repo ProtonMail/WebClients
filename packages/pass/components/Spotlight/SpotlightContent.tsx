@@ -23,6 +23,7 @@ export type BaseSpotlightMessage = {
 export type DefaultSplotlightMessage = BaseSpotlightMessage & {
     mode: 'default';
     action?: { label: string; onClick: (e: MouseEvent<HTMLElement>) => void; type: 'link' | 'button' };
+    button?: ReactNode;
     dense?: boolean;
     icon?: ElementType;
     message: ReactNode;
@@ -77,9 +78,11 @@ export const SpotlightContent: FC<SpotlightMessageDefinition> = (props) => {
                     }
 
                     case 'default': {
-                        const { action, dense, icon: CustomIcon, message, title, weak } = props;
+                        const { action, button, dense, icon: CustomIcon, message, title, weak } = props;
 
                         const actionNode = (() => {
+                            if (button) return button;
+
                             switch (action?.type) {
                                 case 'link':
                                     return (
