@@ -201,6 +201,8 @@ describe('SubscriptionContainer', () => {
         props.currency = 'CHF';
 
         await initialize(props);
+        await waitUntilChecked();
+
         expect(screen.getByTestId('currency-selector')).toHaveTextContent('CHF');
 
         await selectCurrency('USD');
