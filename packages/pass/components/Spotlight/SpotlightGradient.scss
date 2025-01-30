@@ -1,10 +1,12 @@
 .pass-spotlight-gradient {
 	--spotlight-gradient-overlay: rgb(from var(--interaction-norm-contrast) r g b / 0.5);
+	--arrow-color: #47327c;
 
 	/** Remove the dark gradient overlay for light theme.
 	 * FIXME: ideally we could use a themable variable */
 	@at-root .pass-light & {
 		--spotlight-gradient-overlay: transparent;
+		--arrow-color: #845bed;
 	}
 
 	--spotlight-gradient-layers: linear-gradient(
@@ -37,5 +39,31 @@
 
 	&--close-icon {
 		color: white !important;
+	}
+
+	&--with-arrow::after {
+		content: '';
+		position: absolute;
+		inset-block-start: -6px;
+		inset-inline-end: 24px;
+		inline-size: 0;
+		block-size: 0;
+		border-inline-start: 10px solid transparent;
+		border-inline-end: 10px solid transparent;
+		border-block-end: 10px solid var(--arrow-color);
+		box-shadow: 0 0 14px 0 rgb(255 255 255 / 0.1) inset;
+	}
+
+	&--with-arrow::before {
+		content: '';
+		position: absolute;
+		inset-block-start: -8px;
+		inset-inline-end: 24px;
+		inline-size: 0;
+		block-size: 0;
+		border-inline-start: 10px solid transparent;
+		border-inline-end: 10px solid transparent;
+		border-block-end: 10px solid rgb(255 255 255 / 0.1);
+		z-index: -1;
 	}
 }

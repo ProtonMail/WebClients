@@ -58,13 +58,14 @@ const AliasFormBase: FC<
                 {({ close }) => (
                     <SpotlightGradient
                         title={c('Title').t`Did you know?`}
-                        message={c('Info').t`Share aliases with others by adding their inbox as an additional mailbox.`}
+                        message={c('Info').t`Share aliases with others by adding their inbox as a forwarding mailbox.`}
                         onClose={close}
                         action={{
-                            label: c('Action').t`Add mailbox`,
+                            label: c('Action').t`Add forwarding mailbox`,
                             onClick: handleSpotlightActionClick,
                         }}
                         className="mb-2"
+                        withArrow
                     />
                 )}
             </WithSpotlight>
@@ -146,6 +147,7 @@ export const AliasForm = <V extends AliasFormValues>({
                                         onClick: handleSpotlightActionClick,
                                     }}
                                     className="mb-2"
+                                    withArrow
                                 />
                             )}
                         </WithSpotlight>
