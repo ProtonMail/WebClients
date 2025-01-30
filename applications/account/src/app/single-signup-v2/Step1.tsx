@@ -1,5 +1,5 @@
 import type { Dispatch, MutableRefObject, ReactNode, SetStateAction } from 'react';
-import { Fragment, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { Fragment, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -86,7 +86,7 @@ import Guarantee from './Guarantee';
 import Layout from './Layout';
 import { PlanCardSelector } from './PlanCardSelector';
 import RightSummary from './RightSummary';
-import { getAccessiblePlans, getFreeSubscriptionData } from './helper';
+import { getAccessiblePlans, getFreeSubscriptionData, getSubscriptionMapping } from './helper';
 import type {
     Measure,
     OnOpenLogin,
@@ -615,6 +615,43 @@ const Step1 = ({
     );
     const boldPlanTitle = <b key="bold-plan-title">{selectedPlan.Title}</b>;
 
+    const planSelectorHeaderMiddleText = useMemo(() => {
+        if (!isPorkbunPayment) {
+            return undefined;
+        }
+
+        const isFreePlan = selectedPlan.Name === PLANS.FREE;
+        const planIDs = isFreePlan ? {} : { [selectedPlan.Name]: 1 };
+        const pricing = getPricingFromPlanIDs(planIDs, model.plansMap);
+        const totals = getTotalFromPricing(pricing, options.cycle);
+        let discountPercent = totals.discountPercentage;
+
+        const cycleMapping = getSubscriptionMapping({
+            subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
+            planIDs,
+            planName: selectedPlan.Name,
+        })?.[options.cycle];
+
+        if (cycleMapping) {
+            const checkout = getCheckout({
+                planIDs,
+                plansMap: model.plansMap,
+                checkResult: cycleMapping.checkResult,
+            });
+            discountPercent = checkout.discountPercent;
+        }
+
+        if (discountPercent > 0) {
+            return (
+                <span className="color-success">
+                    {c('pass_signup_2023: Header').t`Including ${discountPercent}% Porkbun discount`}
+                </span>
+            );
+        }
+
+        return undefined;
+    }, [isPorkbunPayment, selectedPlan.Name, model.plansMap, model.subscriptionDataCycleMapping, options.cycle]);
+
     return (
         <Layout
             afterLogo={afterLogo}
@@ -864,6 +901,7 @@ const Step1 = ({
                                         ? c('pass_signup_2023: Header').t`Select your plan`
                                         : c('pass_signup_2023: Header').t`Upgrade your plan`
                                 }
+                                middle={planSelectorHeaderMiddleText}
                                 right={
                                     <>
                                         {model.upsell.mode === UpsellTypes.PLANS &&
