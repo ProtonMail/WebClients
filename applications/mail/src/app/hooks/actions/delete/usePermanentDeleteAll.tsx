@@ -27,7 +27,7 @@ export const usePermanentDeleteAll = (labelID: string) => {
     const { sendSimpleActionReport } = useListTelemetry();
     const dispatch = useMailDispatch();
 
-    const handleDeleteAll = async (selectedIDs: string[], sourceAction: SOURCE_ACTION, currentFolder?: string) => {
+    const handleDeleteAll = async (selectedIDs: string[], sourceAction: SOURCE_ACTION) => {
         const elements = getElementsFromIDs(selectedIDs);
         const isMessage = testIsMessage(elements[0]);
         // Send Telemetry
@@ -44,7 +44,6 @@ export const usePermanentDeleteAll = (labelID: string) => {
             actionType: ACTION_TYPE.DELETE_PERMANENTLY,
             actionLocation: sourceAction,
             numberMessage: SELECTED_RANGE.ALL,
-            folderLocation: currentFolder,
         });
 
         createNotification({

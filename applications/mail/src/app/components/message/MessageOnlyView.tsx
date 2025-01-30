@@ -34,7 +34,6 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
-    currentFolder?: string;
 }
 
 const MessageOnlyView = ({
@@ -49,7 +48,6 @@ const MessageOnlyView = ({
     onMessageReady,
     columnLayout,
     isComposerOpened,
-    currentFolder,
 }: Props) => {
     const [labels = []] = useLabels();
 
@@ -179,7 +177,6 @@ const MessageOnlyView = ({
                     onFocus={handleFocusCallback}
                     hasFocus={isMessageFocused}
                     onOpenQuickReply={handleOpenQuickReply}
-                    currentFolder={currentFolder}
                 />
             </div>
         </Scroll>

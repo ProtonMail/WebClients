@@ -45,7 +45,6 @@ import ConversationView from '../../components/conversation/ConversationView';
 import MailHeader from '../../components/header/MailHeader';
 import List from '../../components/list/List';
 import type { SOURCE_ACTION } from '../../components/list/useListTelemetry';
-import { folderLocation } from '../../components/list/useListTelemetry';
 import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
@@ -268,8 +267,6 @@ const MailboxContainer = ({
 
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 
-    const currentFolder = folderLocation(labelID, labels, folders);
-
     const handleElement = useCallback(
         (elementID: string | undefined, preventComposer = false) => {
             startECRTMetric(labelID, elementID);
@@ -335,7 +332,6 @@ const MailboxContainer = ({
                 selectAll,
                 onCheckAll: handleCheckAll,
                 sourceAction,
-                currentFolder,
             });
         },
         [selectedIDs, labelID, handleBack, selectAll]
@@ -343,7 +339,7 @@ const MailboxContainer = ({
 
     const handleDelete = useCallback(
         async (sourceAction: SOURCE_ACTION) => {
-            await permanentDelete(selectedIDs, sourceAction, currentFolder, selectAll);
+            await permanentDelete(selectedIDs, sourceAction, selectAll);
         },
         [selectedIDs, permanentDelete, selectAll]
     );
@@ -374,7 +370,6 @@ const MailboxContainer = ({
             columnLayout,
             isMessageOpening,
             location,
-            currentFolder,
         },
         {
             focusLastID,
@@ -404,7 +399,6 @@ const MailboxContainer = ({
                 folderName,
                 selectAll,
                 sourceAction: sourceAction,
-                currentFolder: currentFolder,
             });
             if (selectedIDs.includes(elementID || '')) {
                 handleBack();
@@ -616,7 +610,6 @@ const MailboxContainer = ({
                         userSettings={userSettings}
                         toolbar={toolbar()}
                         onCheckAll={handleCheckAll}
-                        currentFolder={currentFolder}
                     />
                     <ErrorBoundary>
                         <section
@@ -652,7 +645,6 @@ const MailboxContainer = ({
                                         elementIDs={elementIDs}
                                         loadingElements={loading}
                                         conversationMode={conversationMode}
-                                        currentFolder={currentFolder}
                                     />
                                 ) : (
                                     <MessageOnlyView
@@ -667,7 +659,6 @@ const MailboxContainer = ({
                                         onMessageReady={onMessageReady}
                                         columnLayout={columnLayout}
                                         isComposerOpened={isComposerOpened}
-                                        currentFolder={currentFolder}
                                     />
                                 ))}
                         </section>

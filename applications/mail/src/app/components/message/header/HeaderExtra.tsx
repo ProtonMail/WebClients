@@ -28,7 +28,6 @@ interface Props {
     messageLoaded: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
-    currentFolder?: string;
 }
 
 const HeaderExtra = ({
@@ -38,7 +37,6 @@ const HeaderExtra = ({
     onResignContact,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
-    currentFolder,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
     const received = isReceived(message.data);
@@ -78,7 +76,7 @@ const HeaderExtra = ({
             {showCalendarWidget ? <EmailReminderWidget message={message.data} errors={message.errors} /> : null}
             {showCalendarWidget ? <ExtraEvents message={message} /> : null}
             {isScheduledMessage && canScheduleSend ? <ExtraScheduledMessage message={message} /> : null}
-            {isSnoozeMessage ? <ExtraSnoozedMessage message={message} currentFolder={currentFolder} /> : null}
+            {isSnoozeMessage ? <ExtraSnoozedMessage message={message} /> : null}
             <ExtraExpiration message={message} />
 
             <span className="inline-flex flex-row w-full md:w-auto empty:hidden">

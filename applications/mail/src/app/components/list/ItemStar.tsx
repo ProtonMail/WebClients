@@ -17,12 +17,12 @@ import type { SOURCE_ACTION } from './useListTelemetry';
 
 interface Props {
     element?: Element;
+    labelID: string;
     size?: IconSize;
     sourceAction: SOURCE_ACTION;
-    currentFolder?: string;
 }
 
-const ItemStar = ({ sourceAction, currentFolder, element, size }: Props) => {
+const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
     const [loading, withLoading] = useLoading();
     const star = useStar();
     const { Shortcuts } = useMailModel('MailSettings');
@@ -44,7 +44,7 @@ const ItemStar = ({ sourceAction, currentFolder, element, size }: Props) => {
         // Programmatically block the action instead of disabling the action
         // Perhaps a bit less accessible but prevent to collapse a message on a second click
         if (!loading) {
-            void withLoading(star([element || ({} as Element)], !isStarred, sourceAction, currentFolder));
+            void withLoading(star([element || ({} as Element)], !isStarred, labelID, sourceAction));
         }
     };
 

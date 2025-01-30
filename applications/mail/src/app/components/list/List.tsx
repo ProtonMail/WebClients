@@ -119,7 +119,6 @@ const List = (
         toolbar,
         onCheckAll,
         listContainerRef,
-        currentFolder,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -317,7 +316,6 @@ const List = (
                                                         element={element}
                                                         index={index}
                                                         breakpoints={breakpoints}
-                                                        currentFolder={currentFolder}
                                                     />
                                                 ) : (
                                                     <Item
@@ -343,7 +341,6 @@ const List = (
                                                         mailSettings={mailSettings}
                                                         labels={labels}
                                                         showAttachmentThumbnails={showAttachmentThumbnails}
-                                                        currentFolder={currentFolder}
                                                     />
                                                 )}
                                             </Fragment>

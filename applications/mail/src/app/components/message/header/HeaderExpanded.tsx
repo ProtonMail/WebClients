@@ -83,7 +83,6 @@ const HeaderExpanded = ({
     filterDropdownToggleRef,
     parentMessageRef,
     conversationIndex = 0,
-    currentFolder,
 }: Props) => {
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
@@ -216,11 +215,7 @@ const HeaderExpanded = ({
                     </span>
                     <ItemDate element={message.data} labelID={labelID} useTooltip className="color-weak text-sm" />
                     <span className="message-header-star mr-2 inline-flex">
-                        <ItemStar
-                            element={message.data}
-                            sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
-                            currentFolder={currentFolder}
-                        />
+                        <ItemStar element={message.data} sourceAction={SOURCE_ACTION.MESSAGE_VIEW} labelID={labelID} />
                     </span>
                 </div>
             )}
@@ -249,8 +244,8 @@ const HeaderExpanded = ({
                         <span className="message-header-star mr-2 inline-flex">
                             <ItemStar
                                 sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
-                                currentFolder={currentFolder}
                                 element={message.data}
+                                labelID={labelID}
                             />
                         </span>
                         {messageLoaded && (
@@ -298,7 +293,6 @@ const HeaderExpanded = ({
                 messageLoaded={messageLoaded}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
-                currentFolder={currentFolder}
             />
 
             {messageLoaded && (

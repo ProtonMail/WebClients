@@ -4,14 +4,12 @@ import { Vr } from '@proton/atoms';
 import { Icon, useModalState } from '@proton/components';
 import { useApi } from '@proton/components';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
 import ToolbarDropdown from '../../../toolbar/ToolbarDropdown';
-import { folderLocation } from '../../useListTelemetry';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
 import { sendSnoozeReport } from '../helpers/snoozeTelemetry';
 import SnoozeToolbarDropdownStepWrapper, {
@@ -21,11 +19,9 @@ import SnoozeToolbarDropdownStepWrapper, {
 interface Props {
     labelID: string;
     selectedIDs: string[];
-    labels?: Label[];
-    folders?: Folder[];
 }
 
-const SnoozeToolbarDropdown = ({ selectedIDs, labelID, labels, folders }: Props) => {
+const SnoozeToolbarDropdown = ({ selectedIDs, labelID }: Props) => {
     const api = useApi();
 
     const { canSnooze, canUnsnooze } = useSnooze();
@@ -36,8 +32,6 @@ const SnoozeToolbarDropdown = ({ selectedIDs, labelID, labels, folders }: Props)
     if (!selectedIDs.length || (!canSnooze && !canUnsnooze)) {
         return null;
     }
-
-    const displayedFolder = folderLocation(labelID, labels, folders);
 
     return (
         <>
@@ -65,7 +59,6 @@ const SnoozeToolbarDropdown = ({ selectedIDs, labelID, labels, folders }: Props)
                                 onLock={onLock}
                                 selectedIDs={selectedIDs}
                                 displayUpsellModal={() => handleUpsellModalDisplay(true)}
-                                displayedFolder={displayedFolder}
                             />
                         </>
                     ),

@@ -217,17 +217,12 @@ export const usePermanentDeleteSelection = (labelID: string) => {
         </Prompt>
     );
 
-    const handleDeleteSelection = async (
-        selectedIDs: string[],
-        sourceAction: SOURCE_ACTION,
-        currentFolder?: string
-    ) => {
+    const handleDeleteSelection = async (selectedIDs: string[], sourceAction: SOURCE_ACTION) => {
         setSelectedIDs(selectedIDs);
         sendSimpleActionReport({
             actionType: ACTION_TYPE.DELETE_PERMANENTLY,
             actionLocation: sourceAction,
             numberMessage: numberSelectionElements(selectedIDs.length),
-            folderLocation: currentFolder,
         });
         setDeleteModalOpen(true);
     };
