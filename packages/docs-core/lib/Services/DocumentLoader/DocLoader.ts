@@ -31,11 +31,13 @@ import type { MetricService } from '../Metrics/MetricService'
 import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import type { SquashDocument } from '../../UseCase/SquashDocument'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
+import { PrivateRenameController, type RenameControllerInterface } from '../../RenameController/RenameController'
 
 export class DocLoader implements DocLoaderInterface<DocumentState> {
   private docController?: AuthenticatedDocControllerInterface
   private editorController?: EditorControllerInterface
   private commentsController?: CommentControllerInterface
+  private renameController?: RenameControllerInterface
   private orchestrator?: EditorOrchestratorInterface
   private documentState?: DocumentState
   private readonly statusObservers: DocLoaderStatusObserver<DocumentState>[] = []
@@ -139,6 +141,8 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
       documentState,
     )
 
+    this.renameController = new PrivateRenameController(documentState, this.driveCompat, this.getNode, this.logger)
+
     this.statusObservers.forEach((observer) => {
       if (this.orchestrator) {
         observer.onSuccess({
@@ -146,6 +150,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
           documentState,
           docController: controller,
           editorController: editorController,
+          renameController: this.renameController,
         })
       }
     })
@@ -173,6 +178,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
         documentState: this.documentState,
         docController: this.docController,
         editorController: this.editorController,
+        renameController: this.renameController,
       })
     }
 
