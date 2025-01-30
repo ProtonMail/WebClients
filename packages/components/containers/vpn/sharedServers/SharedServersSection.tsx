@@ -13,6 +13,7 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { MINUTE, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import EmptyViewContainer from '../../../containers/app/EmptyViewContainer';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
@@ -59,7 +60,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }: SharedServersSectionProp
                     c('Info')
                         .t`Allow users to connect to secure shared servers from the **Countries** section of the ${VPN_APP_NAME} app.`
                 )}
-                <Href href={''} className="ml-1">{c('Link').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/shared-servers')} className="ml-1">{c('Link').t`Learn more`}</Href>
             </div>
 
             <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full mt-8">
