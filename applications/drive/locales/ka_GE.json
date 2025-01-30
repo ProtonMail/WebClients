@@ -1543,6 +1543,9 @@
       ],
       "Work": [
         "სამსახურის"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2379,6 +2382,11 @@
         "ინვოისი გადაცილებულია"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2409,6 +2417,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
+      ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "იქონიეთ თქვენი ფაილები, ფოტოები და საქაღალდეები დაცულად გამჭოლი დაშიფვრით."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების შერწყმა... ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
@@ -2457,11 +2468,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3482,6 +3488,20 @@
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ]
     },
+    "Feature": {
+      "Access on mobile and desktop": [
+        "წვდომა მობილურიდან და კომპიუტერიდან"
+      ],
+      "Free 5 GB storage": [
+        "უფასო 5 გბ საცავი"
+      ],
+      "Save files for later access": [
+        "ფაილების შენახვა მოგვიანებით წვდომისთვის"
+      ],
+      "Share privately and securely": [
+        "გააზიარეთ კონფიდენციალურად და დაცულად"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
@@ -3605,6 +3625,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "ელ-ფოსტა"
       ],
@@ -3613,6 +3636,9 @@
       ],
       "No verification method available": [
         "შემოწმების არცერთი მეთოდი წვდომადი არაა"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3885,6 +3911,9 @@
       ],
       "ICS file": [
         "ICS ფაილი"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5662,6 +5691,9 @@
       ],
       "Trusted": [
         "სანდო"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7989,8 +8021,14 @@
       "Free": [
         "უფასო"
       ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
       "Plus": [
         "პლუსი"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
       ],
       "Storage": [
         "საცავი"
@@ -8340,6 +8378,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8918,6 +8961,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "თქვენი გამოწერა განახლდება იგივე ტარიფით ყოველ წელს."
       ]
     },
     "specialoffer: Link": {
@@ -10025,6 +10071,9 @@
       "Download unverified folder?": [
         "გადმოვწერო შეუმოწმებელი საქაღალდე?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "ასატვირთად გადმოათრიეთ ზედ"
       ],
@@ -10270,6 +10319,9 @@
       "Restore your files": [
         "თქვენი ფაილების აღდგენა"
       ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "შეინახეთ ის მოგვიანებით სამუშაოდ ${ DRIVE_APP_NAME }-ზე"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "შეინახეთ ის მოგვიანებით სამუშაოდ ${ DRIVE_APP_NAME }-ზე"
       ],
@@ -10459,6 +10511,11 @@
         "დღეს"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "დაამატეთ ეს გაზიარებული ფაილი თქვენს ${ DRIVE_APP_NAME }-ზე მოგვიანებით იოლი წვდომისთვის."
@@ -10542,11 +10599,6 @@
         "ჩვენ მათ მოწვევა გავუგზავნეთ ელემენტთან წვდომისთვის."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
@@ -10596,6 +10648,13 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
+        "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "თქვენი დაგეგმილი ტარიფის დაწყების დროა ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
         "თქვენი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
@@ -10635,8 +10694,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "უფრო უსაფრთხო და ადვილი გზა Bitcoin-ის შესანახად და გასაგზავნად"
+      "A safer way to hold Bitcoin": [
+        "უფრო უსაფრთხო გზა Bitcoin-ის შესანახად"
       ]
     },
     "wallet_signup_2024:Bug category": {
