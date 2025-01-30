@@ -254,9 +254,6 @@
       "Export": [
         "Exportovať"
       ],
-      "Feedback & Help": [
-        "Spätná väzba a Pomoc"
-      ],
       "Fill in": [
         "Vyplniť"
       ],
@@ -316,6 +313,9 @@
       ],
       "Invite others": [
         "Pozvať iných"
+      ],
+      "Join our Reddit": [
+        "Pripojte sa k nášmu Redditu"
       ],
       "Join shared vault": [
         "Pripojiť k zdieľanému trezoru"
@@ -512,9 +512,6 @@
       "Send invite": [
         "Odoslať pozvánku"
       ],
-      "Send us a message": [
-        "Pošlite nám správu"
-      ],
       "Set access level": [
         "Nastaviť úroveň prístupu"
       ],
@@ -650,11 +647,8 @@
       "With other ${ BRAND_NAME } users": [
         "S ostatnými ${ BRAND_NAME } používateľmi"
       ],
-      "Write us on Reddit": [
-        "Napíšte nám na Reddite"
-      ],
-      "Write us on Twitter": [
-        "Napíšte nam na Twitteri"
+      "Write us on X/Twitter": [
+        "Napíšte nam na X/Twitteri"
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
@@ -1808,17 +1802,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Presunutím položky do iného trezora sa vymaže jej história a všetky zabezpečené odkazy.",
-        "Presunutím položiek do iného trezora sa vymaže ich história a všetky zabezpečené odkazy.",
-        "Presunutím položiek do iného trezora sa vymaže ich história a všetky zabezpečené odkazy.",
-        "Presunutím položiek do iného trezora sa vymaže ich história a všetky zabezpečené odkazy."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Presunutím položky do iného trezora sa vymaže jej história.",
-        "Presunutím položiek do iného trezora sa vymaže ich história.",
-        "Presunutím položiek do iného trezora sa vymaže ich história.",
-        "Presunutím položiek do iného trezora sa vymaže ich história."
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2694,6 +2682,9 @@
       ],
       "Facebook account": [
         "Facebookový účet"
+      ],
+      "Feedback": [
+        "Spätná väzba"
       ],
       "Field name": [
         "Názov poľa"

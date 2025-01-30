@@ -254,9 +254,6 @@
       "Export": [
         "გატანა"
       ],
-      "Feedback & Help": [
-        "უკუკავშირი და დახმარება"
-      ],
       "Fill in": [
         "შეავსეთ"
       ],
@@ -316,6 +313,9 @@
       ],
       "Invite others": [
         "სხვების მოწვევა"
+      ],
+      "Join our Reddit": [
+        "შემოგვიერთდით Reddit-ზე"
       ],
       "Join shared vault": [
         "გაზიარებულ საცავთან მიერთება"
@@ -512,9 +512,6 @@
       "Send invite": [
         "მოსაწვევის გაგზავნა"
       ],
-      "Send us a message": [
-        "მოგვწერეთ"
-      ],
       "Set access level": [
         "წვდომის დონის დაყენება"
       ],
@@ -646,11 +643,8 @@
       "With other ${ BRAND_NAME } users": [
         "სხვა ${ BRAND_NAME }-ის მომხმარებლებთან ერთად"
       ],
-      "Write us on Reddit": [
-        "მოგვწერეთ Reddit-ზე"
-      ],
-      "Write us on Twitter": [
-        "მოგვწერეთ ტვიტერზე"
+      "Write us on X/Twitter": [
+        "მოგვწერეთ X-ზე/ტვიტერზე"
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
@@ -1732,13 +1726,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "ელემენტების გადატანა სხვა საცავში მის ისტორიას და ყველა დაცულ ბმულს წაშლის.",
-        "ელემენტების გადატანა სხვა საცავში მის ისტორიას და ყველა დაცულ ბმულს წაშლის."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის.",
-        "ელემენტების გადატანა სხვა საცავში მათ ისტორიას წაშლის."
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2571,6 +2561,9 @@
       ],
       "Facebook account": [
         "Facebook-ის ანგარიში"
+      ],
+      "Feedback": [
+        "უკუკავშირი"
       ],
       "Field name": [
         "ველის სახელწოდება"
