@@ -7081,6 +7081,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
       ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Verwende die kürzere, eingängigere Version deiner E-Mail Adresse."
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Speichermöglichkeiten werden von deinem Browser nicht unterstützt. Wir brauchen diese Unterstützung um die Suche nach Nachrichteninhalten zu aktivieren."
       ],
@@ -8531,6 +8534,9 @@
       "Start date": [
         "Anfangsdatum"
       ],
+      "State": [
+        "Bundesland"
+      ],
       "Statement": [
         "Aussage"
       ],
@@ -9249,11 +9255,17 @@
       "Get started for ${ priceCoupon }": [
         "Leg los für ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Ab ${ pricing }"
+      ],
       "Upgrade": [
         "Upgraden"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
       ]
     },
     "new_plans: action": {
@@ -11519,6 +11531,9 @@
       ],
       "Upgrade": [
         "Upgrade durchführen"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Upgraden für ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -11616,6 +11631,9 @@
       ]
     },
     "Spotlight": {
+      "Discover your subscription benefits": [
+        "Entdecke die Vorteile deines Abonnements"
+      ],
       "Email tracking protection": [
         "Schutz vor E-Mail-Trackern"
       ],
@@ -11878,6 +11896,47 @@
         "Für ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -12136,47 +12195,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -12753,6 +12771,9 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
+      "Anytime, anywhere access": [
+        "Jederzeit und überall Zugang"
+      ],
       "Apply gift code": [
         "Geschenkcode anwenden"
       ],
@@ -12937,6 +12958,9 @@
       ],
       "Details": [
         "Details"
+      ],
+      "Distraction-free emailing": [
+        "Ablenkungsfreier E-Mail-Verkehr"
       ],
       "Don't give spam a chance": [
         "Gib Spam keine Chance"
@@ -13299,6 +13323,9 @@
       "Schedule send": [
         "Senden planen"
       ],
+      "Schedule send:": [
+        "Senden planen:"
+      ],
       "Security center": [
         "Sicherheitszentrum"
       ],
@@ -13346,6 +13373,12 @@
       ],
       "Set recovery phrase": [
         "Wiederherstellungsphrase festlegen"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Richte ${ protonDuoPlanName } ein"
+      ],
+      "Set up your family account": [
+        "Richte dein Family-Konto ein"
       ],
       "Set your own schedule": [
         "Eigenen Zeitplan festlegen"
@@ -13478,11 +13511,6 @@
         "Heute"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "„Automatisch“ zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
@@ -13561,6 +13589,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Tor out of date": {
@@ -13670,11 +13703,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Auf Wallet-App zugreifen"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Eine sicherere und einfachere Art Bitcoin zu besitzen und zu versenden"
       ]
     },
     "wallet_signup_2024:Bug category": {

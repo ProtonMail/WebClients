@@ -2386,6 +2386,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2467,11 +2472,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -8034,6 +8034,9 @@
       "Free": [
         "Gratuït"
       ],
+      "Online document editor": [
+        "Editor de documents en línia"
+      ],
       "Plus": [
         "Plus"
       ],
@@ -10519,6 +10522,11 @@
         "Avui"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Afegiu aquest fitxer compartit al vostre ${ DRIVE_APP_NAME } per accedir-hi fàcilment més endavant."
@@ -10602,11 +10610,6 @@
         "Els hem enviat una invitació per accedir a l'element."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
@@ -10657,7 +10660,7 @@
         "Després se us facturarà cada 12 mesos a ${ renewPrice }."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos.",
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mes.",
         "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
@@ -10702,8 +10705,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Una manera més segura i fàcil de mantenir i enviar Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Una manera més segura de mantenir Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

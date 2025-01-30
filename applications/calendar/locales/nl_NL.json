@@ -1677,6 +1677,9 @@
       ],
       "Work": [
         "Werk"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3984,6 +3987,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -3992,6 +3998,9 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4264,6 +4273,9 @@
       ],
       "ICS file": [
         "ICS-bestand"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5544,6 +5556,9 @@
       ],
       "Trusted": [
         "Vertrouwd"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -7654,8 +7669,14 @@
       "Free": [
         "Gratis"
       ],
+      "Online document editor": [
+        "Online document editor"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
       ],
       "Storage": [
         "Opslagruimte"
@@ -7950,6 +7971,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Gratis"
       ]
     },
     "Payments.Sepa": {
@@ -10248,7 +10274,7 @@
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maanden."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Uw geplande abonnement begint op ${ renewalTime }."
+        "Uw gepland abonnement begint op ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
@@ -10289,8 +10315,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Een veiligere/makkelijkere manier om Bitcoin te bewaren en te verzenden"
+      "A safer way to hold Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
       ]
     },
     "wallet_signup_2024:Bug category": {

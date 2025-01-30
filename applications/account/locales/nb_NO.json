@@ -619,6 +619,9 @@
       "Get more servers": [
         "Få flere tjenere"
       ],
+      "Get the app": [
+        "Skaff deg appen"
+      ],
       "Get the browser extension": [
         "Hent nettleserutvidelsen"
       ],
@@ -633,6 +636,9 @@
       ],
       "Go to label": [
         "Gå til etikett"
+      ],
+      "Go to panel ${ index }": [
+        "Gå til panel ${ index }"
       ],
       "Go to settings": [
         "Gå til innstillinger"
@@ -2000,6 +2006,9 @@
       "Discover and set up features": [
         "Oppdag og konfigurer funksjoner"
       ],
+      "Got it": [
+        "Skjønner"
+      ],
       "Invite": [
         "Inviter"
       ],
@@ -2614,6 +2623,9 @@
       ],
       "Work": [
         "Arbeid"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5923,6 +5935,11 @@
         "Veldig liten"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "nettapp"
@@ -6278,6 +6295,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-post"
       ],
@@ -6286,6 +6306,9 @@
       ],
       "No verification method available": [
         "Ingen verifiseringsmetode tilgjengelig"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -6563,6 +6586,9 @@
       ],
       "ICS file": [
         "ICS-fil"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -8603,7 +8629,7 @@
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-innsending tillater 3-partstjenester eller enheter å sende e-post via ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. Denne funksjonen er bare tilgjengelig for ${ BRAND_NAME } for forretningsbrukere med egendefinerte domener."
+        "SMTP-innsending tillater tredjepartstjenester eller enheter å sende e-post via ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. Denne funksjonen er bare tilgjengelig for ${ BRAND_NAME } for forretningsbrukere med egendefinerte domener."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-innsending tillater tredje-parttjenester eller enheter å sende e-post gjennom ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. For å be om tilgang, ${ createTicket } der du beskriver dine bruksområder, hvilke egendefinerte domener du ønsker å bruke, og forventede timebaserte og daglige e-postvolumer."
@@ -13396,8 +13422,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Dokumentredigering på nett"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
       ],
       "Storage": [
         "Lagringsplass"
@@ -14440,6 +14472,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -19217,6 +19254,9 @@
       "Keep request": [
         "Behold forespørsel"
       ],
+      "Member activation incomplete": [
+        "Medlemsaktivering ufullstendig"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Når brukeren samtykker, vil du kunne hjelpe dem med å få kontotilgang eller administrere dataene deres."
       ],
@@ -19637,8 +19677,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "En sikrere/enklere måte å oppbevare og sende Bitcoin på"
+      "A safer way to hold Bitcoin": [
+        "En tryggere måte å bevare Bitcoin på"
       ]
     },
     "wallet_signup_2024:Bug category": {

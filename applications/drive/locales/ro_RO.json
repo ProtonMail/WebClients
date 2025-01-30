@@ -2398,6 +2398,11 @@
         "Factură restantă"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "folosiți asistentul de importare Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul printr-o monitorizare dedicată 24/7 a activităților suspecte, inclusiv intervenția specialiștilor în securitate."
@@ -2428,6 +2433,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
+      ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "Păstrați fișierele, fotografiile și documentele în siguranță cu criptare end-to-end."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -2476,11 +2484,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "folosiți asistentul de importare Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3509,6 +3512,17 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "Feature": {
+      "Free 5 GB storage": [
+        "5 GB spațiu de stocare gratuit"
+      ],
+      "Save files for later access": [
+        "Salvați fișierele pentru acces ulterior"
+      ],
+      "Share privately and securely": [
+        "Distribuie în mod privat și securizat"
       ]
     },
     "fido2: Error": {
@@ -8146,6 +8160,9 @@
       "Custom email domain": [
         "Domeniu personal de e-mail"
       ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
       "Free": [
         "Gratuit"
       ],
@@ -9106,6 +9123,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Abonamentul dumneavoastră se va reînnoi la același tarif în fiecare an."
       ]
     },
     "specialoffer: Link": {
@@ -10494,6 +10514,9 @@
       "Restore your files": [
         "Restaurare fișiere"
       ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "Salvează pentru mai târziu în ${ DRIVE_APP_NAME }"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Salvare pentru mai târziu în ${ DRIVE_APP_NAME }"
       ],
@@ -10683,6 +10706,11 @@
         "Astăzi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adăugați acest fișier partajat în ${ DRIVE_APP_NAME } pentru a-l accesa mai ușor mai târziu."
@@ -10766,11 +10794,6 @@
         "Li s-a trimis o invitație pentru a accesa articolul."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
@@ -10827,6 +10850,9 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vi se va emite factura la fiecare 12 luni cu ${ renewPrice }."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Planul tău programat începe pe ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Abonamentul vi se va reînnoi automat peste ${ cycle } lună.",
         "Abonamentul vi se va reînnoi automat peste ${ cycle } luni.",
@@ -10867,11 +10893,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin prin e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "O metodă mai sigură/ușoară de a păstra/trimite bitcoini"
       ]
     },
     "wallet_signup_2024:Bug category": {

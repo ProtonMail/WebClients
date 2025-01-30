@@ -466,6 +466,9 @@
       "Edit": [
         "Edytuj"
       ],
+      "Edit billing address": [
+        "Edytuj adres rozliczeniowy"
+      ],
       "Edit billing cycle": [
         "Edytuj cykl rozliczeniowy"
       ],
@@ -604,6 +607,9 @@
       "Get more servers": [
         "Uzyskaj więcej serwerów"
       ],
+      "Get the browser extension": [
+        "Pobierz rozszerzenie przeglądarki"
+      ],
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
@@ -615,6 +621,9 @@
       ],
       "Go to label": [
         "Przejdź do etykiety"
+      ],
+      "Go to panel ${ index }": [
+        "Przejdź do panelu ${ index }"
       ],
       "Go to settings": [
         "Przejdź do ustawień"
@@ -672,6 +681,9 @@
       ],
       "Invite": [
         "Zaproś"
+      ],
+      "Invite members": [
+        "Zaproś użytkowników"
       ],
       "Invite user": [
         "Zaproś użytkownika"
@@ -4695,6 +4707,9 @@
       "Please select a country": [
         "Wybierz kraj"
       ],
+      "Please select a state": [
+        "Wybierz stan"
+      ],
       "Please set a recovery email first": [
         "Ustaw adres pomocniczy"
       ],
@@ -6325,6 +6340,9 @@
       "Event validation failed": [
         "Weryfikacja wydarzenia nie powiodła się"
       ],
+      "Floating times not supported": [
+        "Czas w formacie \"floating\" nie jest obsługiwany"
+      ],
       "Malformed all-day event": [
         "Czas wydarzenia całodniowego posiada nieprawidłowy format"
       ],
@@ -6336,6 +6354,9 @@
       ],
       "Malformed start time": [
         "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
+      "Recurring event has no occurrences": [
+        "Wydarzenie cykliczne nie posiada powtórzeń"
       ],
       "Recurring rule not supported": [
         "Reguła powtórzeń nie jest obsługiwana"
@@ -8600,7 +8621,7 @@
         "Ustawienia zostały zapisane"
       ],
       "Setting up your new address…": [
-        "Konfiguracja nowego adresu..."
+        "Konfiguracja nowego adresu…"
       ],
       "Setting up your organization": [
         "Konfiguracja organizacji"
@@ -8640,9 +8661,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
@@ -13478,11 +13496,20 @@
       ],
       "Maybe later": [
         "Może później"
+      ],
+      "Save 80% on your first month.": [
+        "Zaoszczędź 80% przez pierwszy miesiąc."
       ]
     },
     "Offer feature": {
+      "+10 more premium features": [
+        "+10 więcej funkcji premium"
+      ],
       "Custom email domain": [
         "Niestandardowa domena"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
       ],
       "Plus": [
         "Plus"
@@ -18457,9 +18484,6 @@
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
       ],
-      "Personalise your e-mail footer": [
-        "Spersonalizuj stopkę swojej wiadomości e-mail"
-      ],
       "Personalize your email footer": [
         "Spersonalizuj stopkę wiadomości"
       ],
@@ -19805,11 +19829,6 @@
       ],
       "You're Invited.": [
         "Otrzymano zaproszenie."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bezpieczniejsza i łatwiejsza metoda przechowywania i wysyłania Bitcoinów"
       ]
     },
     "wallet_signup_2024:Bug category": {

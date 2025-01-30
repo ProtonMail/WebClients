@@ -5993,6 +5993,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
         "Найдены ${ providerFoldersNumLocalized } папки",
@@ -6115,6 +6118,9 @@
       ],
       "Activation in progress": [
         "Выполняется активация"
+      ],
+      "Active": [
+        "Активно"
       ],
       "Add image URL": [
         "Добавить ссылку на изображение"
@@ -6250,6 +6256,9 @@
       ],
       "Attention required": [
         "Требуется внимание"
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Автоматически удалять письма, перемещённые в Корзину и Спам более 30 дней назад."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Автоматически удалять сообщения, находящиеся в корзине и спаме более 30 дней."
@@ -6419,6 +6428,12 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Знаете ли вы, что мы зарезервировали более короткий адрес электронной почты специально для вас? Это ваше имя пользователя, за которым следует «@${ PM_DOMAIN }»."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Откройте для себя новые доступные функции и начните использовать их прямо сейчас!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Откройте для себя новые функции, доступные с ${ planTitle }, и начните использовать их прямо сейчас!"
+      ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
@@ -6448,6 +6463,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
+      ],
+      "Download on the App Store": [
+        "Скачать в App Store"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
@@ -6515,6 +6533,9 @@
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Письма, перемещённые в Корзину и Спам более 30 дней назад, будут автоматически очищены."
+      ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Письма, помеченные ярлыком ${ nameDeleted }, не будут удалены и по-прежнему могут быть найдены в соответствующей папке."
       ],
@@ -6529,6 +6550,9 @@
       ],
       "Encrypt message": [
         "Зашифровать сообщение"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Наслаждайтесь более быстрой и целенаправленной отправкой электронных писем с помощью приложения для ПК."
       ],
       "Enter the code from your authenticator app": [
         "Введите код из приложения для аутентификации"
@@ -6599,6 +6623,9 @@
       "Folder": [
         "Папка"
       ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Для постоянного доступа к электронной почте и оптимизации мобильных устройств, скачайте ${ androidAppLink } или ${ iosAppLink }."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Для сообщений новее, чем ${ oldestDate }"
       ],
@@ -6616,6 +6643,12 @@
       ],
       "Generate text": [
         "Сгенерировать текст"
+      ],
+      "Get it on Google Play": [
+        "Скачать в Google Play"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Дайте входящим счетам цветной ярлык, например «${ suggestedLabelName }». А после оплаты поменяйте ярлык на «${ suggestedPaidLabelName }»."
@@ -6730,6 +6763,12 @@
       ],
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
+      ],
+      "Invite family members and get everything up and running.": [
+        "Пригласите членов семьи и настройте всё для работы."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Пригласите своего партнёра, друга или того, с кем вы делитесь тарифом ${ protonDuoPlanName }."
       ],
       "JCB logo": [
         "Логотип JCB"
@@ -6938,6 +6977,9 @@
       "Open shortcut cheat sheet": [
         "Открыть шпаргалку сочетаний клавиш"
       ],
+      "or discover other features:": [
+        "или откройте для себя другие возможности:"
+      ],
       "Organization size": [
         "Размер организации"
       ],
@@ -7076,6 +7118,9 @@
       "Public sharing of documents is not yet supported.": [
         "Публичный обмен документами пока не поддерживается."
       ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Обращайтесь к нам за помощью по любому вопросу, связанному с ${ BRAND_NAME }."
+      ],
       "Recipient: ": [
         "Получатель: "
       ],
@@ -7166,6 +7211,9 @@
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Отправьте зашифрованное, защищенное паролем сообщение на адрес электронной почты ${ boldText }."
       ],
+      "Send messages at just the right now": [
+        "Отправить сообщения сейчас"
+      ],
       "Sender has been blocked.": [
         "Отправитель был заблокирован."
       ],
@@ -7193,6 +7241,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Установите ${ MAIL_APP_NAME } в качестве почтового приложения по умолчанию для этого браузера. Приложение ${ MAIL_APP_NAME } будет открываться автоматически при нажатии на ссылку электронной почты."
       ],
+      "Setting up ${ feature }…": [
+        "Установка ${ feature }…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
       ],
@@ -7210,6 +7261,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Откладывайте сообщения на потом, чтобы они находились в верхней части вашего почтового ящика, когда вам это нужно."
       ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
         "Отложено до ${ dateString } ${ formattedTime }"
@@ -7258,6 +7312,9 @@
       ],
       "Switch to": [
         "Переключиться на"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Синхронизируйте и управляйте файлами с приложением ${ DRIVE_APP_NAME }. Создавайте и делитесь документами в ${ DOCS_APP_NAME } и безопасно храните их. Все на ${ ios }, ${ android } и ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -7363,6 +7420,9 @@
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Это предназначено для написания текстов. Проверьте предложенный текст на точность. ${ learnMoreResult }"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
@@ -7706,8 +7766,14 @@
       "You can add it as an attachment or display it inline in your mail body.": [
         "Вы можете добавить его в качестве вложения или встроить в тело письма."
       ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Вы можете добавить свой собственный домен в ${ MAIL_APP_NAME }"
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы также можете объединить импортированные календари с существующими календарями ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можете изменить это в любой момент в ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить ход выполнения ${ importProgressLink }."
@@ -7750,6 +7816,9 @@
       ],
       "You do not have any messages here": [
         "Здесь нет сообщений"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "You have ${ unread } in your inbox.": [
         "У вас ${ unread } во Входящих."
@@ -7928,6 +7997,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Следующая дата выставления счета - ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
+      ],
       "Your password was leaked:": [
         "Произошла утечка вашего пароля:"
       ],
@@ -7936,6 +8008,12 @@
       ],
       "Your private writing assistant": [
         "Ваш конфиденциальный помощник по написанию"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
       ]
     },
     "info": {
@@ -12106,6 +12184,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -12376,47 +12495,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -13786,11 +13864,6 @@
         "Сегодня"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
@@ -13869,6 +13942,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Tor out of date": {
@@ -13991,11 +14069,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Получить доступ к приложению Wallet"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Безопасный и простой способ хранить и переводить Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

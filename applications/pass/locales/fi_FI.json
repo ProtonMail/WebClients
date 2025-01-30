@@ -253,9 +253,6 @@
       "Export": [
         "Vie"
       ],
-      "Feedback": [
-        "Palaute"
-      ],
       "Fill password": [
         "Täytä salasana"
       ],
@@ -297,6 +294,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Miten vien tietoni palvelusta ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Miten ${ PASS_APP_NAME }ia käytetään"
       ],
       "Import": [
         "Tuo"
@@ -511,9 +511,6 @@
       "Send invite": [
         "Lähetä kutsu"
       ],
-      "Send us a message": [
-        "Lähetä meille viesti"
-      ],
       "Set access level": [
         "Aseta käyttöoikeustaso"
       ],
@@ -632,12 +629,6 @@
       ],
       "View older history": [
         "Näytä aiempi historia"
-      ],
-      "Write us on Reddit": [
-        "Kirjoita meille Redditissä"
-      ],
-      "Write us on Twitter": [
-        "Kirjoita meille Twitterissä"
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
@@ -1741,14 +1732,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen historiatiedot ja suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden historiatiedot ja suojatut linkit."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Kohteen siirtäminen toiseen holviin poistaa sen historian.",
-        "Kohteiden siirtäminen toiseen holviin poistaa niiden historian."
       ],
       "Moving items": [
         "Siirretään kohteita"

@@ -1327,6 +1327,9 @@
       ],
       "Work": [
         "Kantor"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2163,11 +2166,6 @@
         "Faktur yang tertunggak"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2246,6 +2244,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3339,6 +3342,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -3347,6 +3353,9 @@
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3438,7 +3447,7 @@
         "Berkas ini mengandung undangan acara:"
       ],
       "This file contains an invitation response:": [
-        "Berkas ini mengandung balasan undangan:"
+        "Berkas ini mengandung jawaban undangan:"
       ],
       "This file contains some data that we cannot import:": [
         "Sebagian data yang terkandung dalam berkas ini tidak dapat kami impor:"
@@ -3613,6 +3622,9 @@
       ],
       "ICS file": [
         "Berkas ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4475,13 +4487,13 @@
         "Masa berlaku sesi telah berakhir"
       ],
       "Setting up ${ feature }…": [
-        "Menyiapkan ${ feature }…"
+        "Mempersiapkan ${ feature }…"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Setting up your new address…": [
-        "Menyiapkan alamat baru Anda…"
+        "Mempersiapkan alamat baru Anda…"
       ],
       "Settings update failed": [
         "Pembaruan pengaturan gagal"
@@ -4569,6 +4581,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dokumen ini sedang memiliki banyak aktivitas. Sebagian fitur mungkin tidak akan tersedia untuk sementara waktu."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "Dokumen ini mungkin tidak ada, atau Anda mungkin tidak memiliki izin untuk menampilkan dokumen ini. Anda dapat mencoba memuat ulang halaman untuk melihat apakah masalah ini terus berlanjut atau menghubungi pemilik dokumen untuk meminta akses."
       ],
       "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Dokumen ini tidak ada, atau Anda mungkin tidak memiliki izin yang memadai untuk menampilkan dokumen ini dengan akun yang Anda pilih. Silakan coba dengan akun yang berbeda atau hubungi pemilik dokumen untuk meminta akses."
@@ -4985,6 +5000,9 @@
       ],
       "Trusted": [
         "Terpercaya"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7090,11 +7108,20 @@
       "Custom email domain": [
         "Domain email khusus"
       ],
+      "Email addresses": [
+        "Alamat email"
+      ],
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Penyunting dokumen online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
       ],
       "Storage": [
         "Ruang penyimpanan"
@@ -7294,6 +7321,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -7841,6 +7873,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Langganan ini akan diperbarui secara otomatis setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Langganan Anda akan diperbarui dengan harga yang sama setiap tahunnya."
       ]
     },
     "specialoffer: Link": {
@@ -8152,23 +8187,6 @@
         "Untuk ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } alamat email khusus"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } alamat email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Folder, label, dan filter khusus"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "Ruang penyimpanan 15 GB"
@@ -8208,6 +8226,23 @@
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } alamat email khusus"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } alamat email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Folder, label, dan filter khusus"
       ]
     },
     "Subscription renewal state": {
@@ -8923,11 +8958,6 @@
         "Hari ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tambahkan berkas bersama ini ke ${ DRIVE_APP_NAME } anda untuk akses mudah nanti."
@@ -9005,6 +9035,11 @@
         "Kami telah mengirim undangan untuk mengakses berkas ini."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
@@ -9047,6 +9082,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Langganan baru Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Paket terjadwal Anda akan dimulai pada ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Langganan Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
       ]
@@ -9082,8 +9123,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Cara yang lebih aman/mudah untuk menyimpan & mengirim Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Cara yang lebih aman untuk menyimpan Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -543,6 +543,9 @@
       "Get started": [
         "시작하기"
       ],
+      "Get the app": [
+        "앱 다운로드"
+      ],
       "Get the browser extension": [
         "브라우저 확장 기능 받기"
       ],
@@ -596,6 +599,9 @@
       ],
       "Hide messages": [
         "메시지 숨기기"
+      ],
+      "Hide my email": [
+        "이메일 주소 숨기기"
       ],
       "Hide toolbar": [
         "도구 모음 숨기기"
@@ -1924,6 +1930,9 @@
       "Discover and set up features": [
         "기능 알아보고 설정하기"
       ],
+      "Got it": [
+        "확인했습니다"
+      ],
       "Maybe later": [
         "나중에"
       ],
@@ -2661,6 +2670,9 @@
       ],
       "Work": [
         "직장"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5116,6 +5128,11 @@
         "매우 작게"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "날짜: ${ date } 에"
@@ -5367,6 +5384,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "이메일"
       ],
@@ -5375,6 +5395,9 @@
       ],
       "No verification method available": [
         "사용 가능한 인증 방법 없음"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5657,6 +5680,9 @@
       ],
       "ICS file": [
         "ICS 파일"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7768,6 +7794,9 @@
       ],
       "Trusted": [
         "신뢰됨"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10176,8 +10205,14 @@
       "Free": [
         "무료"
       ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "파일 이전 버전 복원"
       ],
       "Storage": [
         "저장 공간"
@@ -10584,6 +10619,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -11418,7 +11458,7 @@
         "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "귀하의 구독은 매년 같은 요율로 갱신됩니다."
+        "회원님의 구독이 매년 같은 요율로 갱신됩니다."
       ]
     },
     "specialoffer: Link": {
@@ -11788,6 +11828,47 @@
         "${ totalPrice }용"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "저희는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -12040,47 +12121,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "저희는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -13366,11 +13406,6 @@
         "오늘"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "자동은 작성기의 형식이 이 사용자에게 보내는 데 사용됨을 나타냅니다. 일반 텍스트는 발송 시 메시지가 항상 일반 텍스트로 변환됨을 나타냅니다."
@@ -13454,6 +13489,11 @@
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "안정 배포판"
@@ -13508,10 +13548,10 @@
         "12개월마다 ${ renewPrice }가 결제됩니다."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "귀하의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
+        "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "귀하의 요금제가 ${ renewalTime }에 시작합니다."
+        "회원님의 플랜이 ${ renewalTime }부터 시작합니다."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "사용자의 구독이 ${ cycle }개월 뒤에 자동으로 갱신됩니다."
@@ -13553,8 +13593,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "쉽고 안전하게 Bitcoin을 보관 및 송금하세요"
+      "A safer way to hold Bitcoin": [
+        "비트코인을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {
