@@ -43,13 +43,13 @@ export enum SpotlightMessage {
     /** Item sharing feature discovery */
     ITEM_SHARING = 19,
     /** Alias customize (prefix etc.) discovery  */
-    ALIAS_DISCOVERY_CUSTOMIZE = 20,
+    ALIAS_DISCOVERY_CUSTOMIZE = 21,
     /** Alias add new mailbox discovery */
-    ALIAS_DISCOVERY_MAILBOX = 21,
+    ALIAS_DISCOVERY_MAILBOX = 22,
     /** Alias add new domain discovery */
-    ALIAS_DISCOVERY_DOMAIN = 22,
+    ALIAS_DISCOVERY_DOMAIN = 23,
     /** Alias contact discovery */
-    ALIAS_DISCOVERY_CONTACT = 23,
+    ALIAS_DISCOVERY_CONTACT = 24,
 }
 
 export type SpotlightAcknowledgment = {
