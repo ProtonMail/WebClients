@@ -13,8 +13,13 @@ import type { DocumentAction } from '@proton/drive-store'
 import PopoverPill from '../PopoverPill'
 import { useDocsContext } from '../../Containers/DocsContextProvider'
 import { HeaderPublicOptions } from '../../Apps/Public/Header/HeaderPublicOptions'
-import type { EditorControllerInterface } from '@proton/docs-core'
-import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
+import { type EditorControllerInterface } from '@proton/docs-core'
+import type {
+  AuthenticatedDocControllerInterface,
+  DocumentState,
+  PublicDocumentState,
+  RenameControllerInterface,
+} from '@proton/docs-core'
 
 function getWindowLocationExcludingDomain() {
   return window.location.pathname + window.location.search + window.location.hash
@@ -28,6 +33,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const [authenticatedController, setAuthenticatedController] = useState<
     AuthenticatedDocControllerInterface | undefined
   >(undefined)
+  const [renameController, setRenameController] = useState<RenameControllerInterface>()
   const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [showErrorHeader, setShowErrorHeader] = useState(false)
@@ -45,6 +51,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
         setAuthenticatedController(result.docController)
         setEditorController(result.editorController)
         setDocumentState(result.documentState)
+        setRenameController(result.renameController)
       },
       onError: (error) => {
         traceError(error)
@@ -63,6 +70,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
         editorController={editorController}
         documentState={documentState}
         authenticatedController={authenticatedController}
+        renameController={renameController}
       />
     )
   }
@@ -107,11 +115,13 @@ const DocsHeaderForDocument = ({
   editorController,
   documentState,
   authenticatedController,
+  renameController,
 }: {
   action?: DocumentAction['mode']
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
   authenticatedController: AuthenticatedDocControllerInterface | undefined
+  renameController: RenameControllerInterface | undefined
 }) => {
   const { publicContext } = useDocsContext()
   const role = useMemo(() => documentState.getProperty('userRole'), [documentState])
@@ -124,6 +134,7 @@ const DocsHeaderForDocument = ({
           authenticatedController={authenticatedController}
           editorController={editorController}
           documentState={documentState}
+          renameController={renameController}
         />
         <div
           className="flex-grow-1 flex-basis-0 ml-0.5 flex min-w-fit flex-shrink-0 items-center justify-between gap-2 head-max-1199:!max-w-[4.5rem]"

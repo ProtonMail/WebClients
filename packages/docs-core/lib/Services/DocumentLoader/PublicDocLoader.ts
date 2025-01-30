@@ -24,12 +24,15 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import type { MetricService } from '../Metrics/MetricService'
 import type { PublicDriveCompat, PublicNodeMeta } from '@proton/drive-store'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
+import { PublicRenameController } from '../../RenameController/RenameController'
+import type { GetNode } from '../../UseCase/GetNode'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
   private editorController?: EditorControllerInterface
   private orchestrator?: EditorOrchestratorInterface
   private documentState?: PublicDocumentState
   private commentsController?: CommentControllerInterface
+  private renameController?: PublicRenameController
   private readonly statusObservers: DocLoaderStatusObserver<PublicDocumentState>[] = []
 
   constructor(
@@ -50,6 +53,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
     private loadThreads: LoadThreads,
     private handleRealtimeCommentsEvent: HandleRealtimeCommentsEvent,
     private metricService: MetricService,
+    private getNode: GetNode,
   ) {}
 
   destroy(): void {}
@@ -138,12 +142,15 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       this.documentState,
     )
 
+    this.renameController = new PublicRenameController(documentState, this.driveCompat, this.getNode, this.logger)
+
     this.statusObservers.forEach((observer) => {
       if (this.orchestrator) {
         observer.onSuccess({
           orchestrator: this.orchestrator,
           documentState: documentState,
           editorController: editorController,
+          renameController: this.renameController,
         })
       }
     })
@@ -157,6 +164,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
         orchestrator: this.orchestrator,
         documentState: this.documentState,
         editorController: this.editorController,
+        renameController: this.renameController,
       })
     }
 
