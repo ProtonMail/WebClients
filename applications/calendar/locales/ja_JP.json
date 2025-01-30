@@ -1662,6 +1662,9 @@
       ],
       "Work": [
         "勤務先"
+      ],
+      "Yomi": [
+        "ヨミカタ"
       ]
     },
     "Country name": {
@@ -3942,6 +3945,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "メール"
       ],
@@ -3950,6 +3956,9 @@
       ],
       "No verification method available": [
         "検証方法がありません"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4216,6 +4225,9 @@
       ],
       "ICS file": [
         "ICS ファイル"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5462,6 +5474,9 @@
       ],
       "Trusted": [
         "信頼済み"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -7509,11 +7524,20 @@
       "Custom email domain": [
         "独自メールドメイン"
       ],
+      "Email addresses": [
+        "メールアドレス"
+      ],
       "Free": [
         "無料"
       ],
+      "Online document editor": [
+        "オンラインテキスト編集プログラム"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
       ],
       "Storage": [
         "ストレージ"
@@ -10038,6 +10062,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "その後、12 か月ごとに ${ renewPrice } が請求されます。"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "予定のプランは ${ renewalTime }から始まります。"
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "サブスクリプションは ${ cycle } か月後に自動的に更新されます。"
       ]
@@ -10073,8 +10103,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin を保持・送信する安全で簡単な方法"
+      "A safer way to hold Bitcoin": [
+        "Bitcoinをより安全に保持します"
       ]
     },
     "wallet_signup_2024:Bug category": {
