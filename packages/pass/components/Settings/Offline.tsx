@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Checkbox } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
-import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
@@ -19,6 +19,7 @@ import { SettingsPanel } from './SettingsPanel';
 
 export const Offline: FC = () => {
     const confirmPassword = usePasswordUnlock();
+    const passwordTypeSwitch = usePasswordTypeSwitch();
     const authStore = useAuthStore();
 
     const enabled = useSelector(selectOfflineEnabled);
@@ -40,7 +41,11 @@ export const Offline: FC = () => {
     const toggleOffline = async (enabled: boolean) =>
         confirmPassword({
             onSubmit: (loginPassword) => toggle.dispatch({ loginPassword, enabled }),
-            message: c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`,
+            message: passwordTypeSwitch({
+                extra: c('Info').t`Please confirm your extra password in order to enable offline mode`,
+                sso: c('Info').t`Please confirm your backup password in order to enable offline mode`,
+                default: c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`,
+            }),
         });
 
     return (
