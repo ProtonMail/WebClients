@@ -253,9 +253,6 @@
       "Export": [
         "Exportar"
       ],
-      "Feedback": [
-        "Comentários"
-      ],
       "Fill password": [
         "Preencher senha"
       ],
@@ -300,6 +297,9 @@
       ],
       "How to update ${ PASS_APP_NAME } on Linux": [
         "Como atualizar o ${ PASS_APP_NAME } no Linux"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Como usar o ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Importar"
@@ -517,9 +517,6 @@
       "Send invite": [
         "Enviar convite"
       ],
-      "Send us a message": [
-        "Envie-nos uma mensagem"
-      ],
       "Set access level": [
         "Definir nível de acesso"
       ],
@@ -645,11 +642,8 @@
       "With other ${ BRAND_NAME } users": [
         "Com outros usuários da ${ BRAND_NAME }"
       ],
-      "Write us on Reddit": [
-        "Escreva-nos no Reddit"
-      ],
-      "Write us on Twitter": [
-        "Escreva-nos no Twitter"
+      "Write us on X/Twitter": [
+        "Escreva-nos no X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
@@ -1804,14 +1798,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Movendo um item para outro cofre apagará seu histórico e todos os links seguros.",
-        "Mover itens para outro cofre apagará seu histórico e todos os links seguros."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Movendo um item para outro cofre apagará seu histórico.",
-        "Movendo item para outro cofre apagará seus históricos."
-      ],
       "Moving items": [
         "Movendo itens"
       ],
@@ -2656,6 +2642,9 @@
       ],
       "Facebook account": [
         "Conta do Facebook"
+      ],
+      "Feedback": [
+        "Comentários"
       ],
       "Field name": [
         "Nome do campo"
