@@ -7,7 +7,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
 import { Icon } from '@proton/components/index';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -19,7 +18,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { SpotlightGradient } from '@proton/pass/components/Spotlight/SpotlightGradient';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
@@ -33,7 +32,6 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
-import noop from '@proton/utils/noop';
 
 const FORM_ID = 'new-alias';
 
@@ -42,15 +40,17 @@ const FORM_ID = 'new-alias';
 const getPlaceholderNote = (url: string) => c('Placeholder').t`Used on ${url}`;
 
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
-    const { spotlight } = usePassCore();
-    const { acknowledge } = useSpotlight();
-
-    const [showAdvanced, setShowAdvanced] = useState(false);
-    const [showCustomizeSpotlight, setShowCustomizeSpotlight] = useState(false);
-
+    const { ParentPortal, openPortal } = usePortal();
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
     const reconciled = useRef(false);
-    const { ParentPortal, openPortal } = usePortal();
+
+    const [showAdvanced, setShowAdvanced] = useState(false);
+    const customizeAliasDiscovery = useSpotlightFor(SpotlightMessage.ALIAS_DISCOVERY_CUSTOMIZE);
+
+    const toggleShowAdvanced = () => {
+        if (customizeAliasDiscovery.open) customizeAliasDiscovery.close();
+        setShowAdvanced((state) => !state);
+    };
 
     const { needsUpgrade } = useSelector(selectAliasLimits);
     const { vaultTotalCount } = useSelector(selectVaultLimits);
@@ -151,22 +151,6 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     const gearIcon = <Icon name="cog-wheel" key="alias-customize-icon" />;
 
-    const closeCustomizeSpotlight = () => {
-        acknowledge(SpotlightMessage.ALIAS_DISCOVERY_CUSTOMIZE);
-        setShowCustomizeSpotlight(false);
-    };
-
-    const toggleShowAdvanced = () => {
-        if (showCustomizeSpotlight) closeCustomizeSpotlight();
-        setShowAdvanced((state) => !state);
-    };
-
-    useEffect(() => {
-        (async () => spotlight.check(SpotlightMessage.ALIAS_DISCOVERY_CUSTOMIZE))()
-            .then((shouldShow) => setShowCustomizeSpotlight(shouldShow))
-            .catch(noop);
-    }, []);
-
     useEffect(() => {
         if (reconciled.current) {
             const allowPrefixDerivation = !touched.aliasPrefix;
@@ -232,23 +216,25 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                         <Button
                                             shape="ghost"
                                             icon
+                                            pill
                                             onClick={toggleShowAdvanced}
                                             title={c('Action').t`Show advanced options`}
                                         >
-                                            <Icon name="cog-wheel"></Icon>
+                                            <Icon name="cog-wheel" />
                                         </Button>
                                     }
                                 >
                                     {`${aliasPrefix}${aliasSuffix?.value ?? ''}`}
                                 </ValueControl>
                             </FieldsetCluster>
-                            {showCustomizeSpotlight && (
+
+                            {customizeAliasDiscovery.open && (
                                 <SpotlightGradient
                                     title={c('Title').t`Did you know?`}
                                     message={c('Info')
                                         .jt`Tap the icon ${gearIcon} to customize the alias the way you want.`}
                                     className="mb-2"
-                                    onClose={closeCustomizeSpotlight}
+                                    onClose={customizeAliasDiscovery.close}
                                 />
                             )}
 
