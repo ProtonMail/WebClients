@@ -136,6 +136,11 @@
 			align-items: stretch;
 		}
 
+		&--xsmall {
+			--size: #{rem(360)};
+			--margin: #{rem(16)};
+		}
+
 		&--small {
 			--size: #{rem(392)};
 			--margin: #{rem(24)};
