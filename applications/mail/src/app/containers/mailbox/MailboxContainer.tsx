@@ -199,6 +199,8 @@ const MailboxContainer = ({
         }
     };
 
+    const conversationMode = isConversationMode(labelID, mailSettings, location);
+
     const {
         checkedIDs,
         selectedIDs,
@@ -208,9 +210,11 @@ const MailboxContainer = ({
         handleCheckOnlyOne,
         handleCheckRange,
     } = useItemsSelection({
+        conversationMode,
         activeID: elementID,
         allIDs: elementIDs,
         rowMode: !columnMode,
+        messageID,
         // Using inputLabelID and page as dependency to reset checkedIDs on page or location change
         resetDependencies: [columnMode ? elementID : undefined, inputLabelID, page],
         onCheck,
@@ -228,7 +232,6 @@ const MailboxContainer = ({
     const showPlaceholder =
         !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && columnMode));
     const showContentView = showContentPanel && !!elementID;
-    const elementIDForList = checkedIDs.length ? undefined : elementID;
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
     const { focusID, setFocusID, focusLastID, focusFirstID, focusNextID, focusPreviousID } = useMailboxFocus({
         elementIDs,
@@ -344,8 +347,6 @@ const MailboxContainer = ({
         },
         [selectedIDs, permanentDelete, selectAll]
     );
-
-    const conversationMode = isConversationMode(labelID, mailSettings, location);
 
     usePreLoadElements({ elements, labelID, loading });
 
@@ -590,7 +591,7 @@ const MailboxContainer = ({
                         loading={loading}
                         placeholderCount={placeholderCount}
                         columnLayout={columnLayout}
-                        elementID={elementIDForList}
+                        elementID={elementID}
                         elements={elements}
                         checkedIDs={checkedIDs}
                         onCheck={handleCheck}
