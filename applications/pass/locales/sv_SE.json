@@ -253,9 +253,6 @@
       "Export": [
         "Exportera"
       ],
-      "Feedback": [
-        "Feedback"
-      ],
       "Fill password": [
         "Fyll lösenord"
       ],
@@ -298,6 +295,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hur exporterar jag mina data från ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Hur man använder ${ PASS_APP_NAME }"
+      ],
       "Import": [
         "Importera"
       ],
@@ -315,6 +315,9 @@
       ],
       "Invite others": [
         "Bjud in andra"
+      ],
+      "Join our Reddit": [
+        "Gå med i vår Reddit"
       ],
       "Join shared vault": [
         "Gå med delat valv"
@@ -511,9 +514,6 @@
       "Send invite": [
         "Skicka inbjudan"
       ],
-      "Send us a message": [
-        "Skicka oss ett meddelande"
-      ],
       "Set access level": [
         "Ställ in åtkomstnivå"
       ],
@@ -636,11 +636,8 @@
       "With other ${ BRAND_NAME } users": [
         "Med andra ${ BRAND_NAME }-användare"
       ],
-      "Write us on Reddit": [
-        "Skriv till oss på Reddit"
-      ],
-      "Write us on Twitter": [
-        "Skriv till oss på Twitter"
+      "Write us on X/Twitter": [
+        "Skriv till oss på X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
@@ -1772,13 +1769,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess historik och alla säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras historik och alla säkra länkar."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Att flytta ett objekt till annat valv kommer radera dess historik.",
-        "Att flytta objekt till annat valv kommer radera deras historik."
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2594,6 +2587,9 @@
       ],
       "Facebook account": [
         "Facebook-konto"
+      ],
+      "Feedback": [
+        "Feedback"
       ],
       "Field name": [
         "Fältnamn"
