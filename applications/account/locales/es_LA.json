@@ -619,6 +619,9 @@
       "Get more servers": [
         "Obtener más servidores"
       ],
+      "Get the app": [
+        "Obtener la aplicación"
+      ],
       "Get the browser extension": [
         "Obtenga la extensión del navegador"
       ],
@@ -633,6 +636,9 @@
       ],
       "Go to label": [
         "Ir a la etiqueta"
+      ],
+      "Go to panel ${ index }": [
+        "Ir al panel ${ index }"
       ],
       "Go to settings": [
         "Ir a los ajustes"
@@ -2000,6 +2006,9 @@
       "Discover and set up features": [
         "Descubra y configure las funcionalidades"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "Invite": [
         "Invitar"
       ],
@@ -2614,6 +2623,9 @@
       ],
       "Work": [
         "Trabajo"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5926,6 +5938,11 @@
         "Muy pequeña"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplicación web"
@@ -6281,6 +6298,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Correo"
       ],
@@ -6289,6 +6309,9 @@
       ],
       "No verification method available": [
         "No hay un método de verificación disponible"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -6566,6 +6589,9 @@
       ],
       "ICS file": [
         "archivo ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -8603,7 +8629,7 @@
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
+        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para las direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo sus casos de uso, cuáles dominios personalizados le gustaría usar y los volúmenes de correo electrónico esperados por hora y por día."
@@ -13393,8 +13419,14 @@
       "Free": [
         "Gratuito"
       ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Recuperar las versiones previas de los archivos"
       ],
       "Storage": [
         "Almacenamiento"
@@ -14416,6 +14448,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tarjeta fue rechazada. Pruebe otra tarjeta o póngase en contacto con el banco para autorizar el cargo."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -18260,7 +18297,7 @@
         "Error con la verificación de PayPal"
       ],
       "Personalise your e-mail footer": [
-        "Personalice su pie de correo"
+        "Personalice su pie de correo electrónico"
       ],
       "Personalize your email footer": [
         "Personalice su pie de correo"
@@ -19196,6 +19233,9 @@
       "Keep request": [
         "Mantener la solicitud"
       ],
+      "Member activation incomplete": [
+        "La activación del miembro está incompleta."
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Una vez que el usuario acepte, podrá ayudarle a recuperar el acceso a la cuenta o gestionar sus datos."
       ],
@@ -19593,8 +19633,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Una forma más segura y sencilla de guardar y enviar Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Una manera más segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

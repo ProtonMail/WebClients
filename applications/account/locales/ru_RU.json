@@ -604,6 +604,9 @@
       "Go to label": [
         "Перейти к ярлыку"
       ],
+      "Go to panel ${ index }": [
+        "Перейти к панели ${ index }"
+      ],
       "Go to settings": [
         "Перейти в настройки"
       ],
@@ -1088,7 +1091,7 @@
         "Выйти из всех учётных записей"
       ],
       "sign up for free": [
-        "зарегистрироваться бесплатно"
+        "Зарегистрироваться бесплатно"
       ],
       "Signing in": [
         "Выполняется вход"
@@ -3836,7 +3839,7 @@
     },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
-        "**Коллаборативно:** онлайн редактор документов"
+        "**Коллаборативно:** онлайн-редактор документов."
       ],
       "**GDPR** and **HIPAA** compliant": [
         "Соответствует требованиям **GDPR** и **HIPAA**"
@@ -3845,10 +3848,10 @@
         "Сертифицировано **ISO 27001**"
       ],
       "**Secure:** end-to-end encryption": [
-        "**Безопасно:** сквозное шифрование"
+        "**Безопасно:** сквозное шифрование."
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Просто и дружелюбно:** импортируйте свои файлы и приготовьте за минуты"
+        "**Простое и удобное:** импортируйте свои файлы и настройте их за считанные минуты."
       ],
       "Advanced protection that goes beyond industry standards": [
         "Передовая защита, превосходящая отраслевые стандарты"
@@ -6737,6 +6740,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } - это продвинутая программа для защиты аккаунта, которая защищает вас от злоумышленников и угроз безопасности при помощи мощных ИИ и круглосуточно работающих специалистов."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
         "Найдены ${ providerFoldersNumLocalized } папки",
@@ -6907,6 +6913,9 @@
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
+      ],
+      "Active": [
+        "Активно"
       ],
       "active": [
         "активный"
@@ -7135,6 +7144,9 @@
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Автоответчик всегда активен в выбранные вами дни недели и в выбранный вами промежуток времени."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Автоматически удалять письма, перемещённые в Корзину и Спам более 30 дней назад."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Доступно на macOS, Windows и Linux."
@@ -7394,6 +7406,12 @@
       "Discount": [
         "Скидка"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Откройте для себя новые доступные функции и начните использовать их прямо сейчас!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Откройте для себя новые функции, доступные с ${ planTitle }, и начните использовать их прямо сейчас!"
+      ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
@@ -7441,6 +7459,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
+      ],
+      "Download on the App Store": [
+        "Скачать в App Store"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Скачайте наш шаблон CSV, заполните информацию о пользователях, а затем загрузите заполненный файл CSV, чтобы создать аккаунты для этих пользователей."
@@ -7493,6 +7514,9 @@
       "Emailing preference saved": [
         "Настройки отправки почты сохранены"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Письма, перемещённые в Корзину и Спам более 30 дней назад, будут автоматически очищены."
+      ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Письма, помеченные ярлыком ${ nameDeleted }, не будут удалены и по-прежнему могут быть найдены в соответствующей папке."
       ],
@@ -7534,6 +7558,9 @@
       ],
       "Enhance your network security": [
         "Повысьте безопасность вашей сети"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Наслаждайтесь более быстрой и целенаправленной отправкой электронных писем с помощью приложения для ПК."
       ],
       "Enter key manually instead": [
         "Ввести ключ вручную"
@@ -7613,6 +7640,9 @@
       "For a 10-year version history, please contact our sales team.": [
         "Для получения 10-летней истории версий, пожалуйста, свяжитесь с нашей командой продаж."
       ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Для постоянного доступа к электронной почте и оптимизации мобильных устройств, скачайте ${ androidAppLink } или ${ iosAppLink }."
+      ],
       "for choosing ${ product }": [
         "за выбор ${ product }"
       ],
@@ -7648,6 +7678,12 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Получите доступ, создав учетную запись ${ BRAND_NAME } и приняв приглашение."
+      ],
+      "Get it on Google Play": [
+        "Скачать в Google Play"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Получайте уведомления, если ваш пароль или другие личные данные подвергнутся утечке. ${ learnMoreLinkNoBreach }"
@@ -7835,6 +7871,9 @@
       "Invite deleted": [
         "Приглашение удалено"
       ],
+      "Invite family members and get everything up and running.": [
+        "Пригласите членов семьи и настройте всё для работы."
+      ],
       "Invite for new user deleted": [
         "Приглашение пользователя удалено"
       ],
@@ -7852,6 +7891,9 @@
         "Приглашения успешно отправлено",
         "Приглашений успешно отправлено",
         "Приглашений успешно отправлено"
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Пригласите своего партнёра, друга или того, с кем вы делитесь тарифом ${ protonDuoPlanName }."
       ],
       "It appears some of your data is encrypted and locked.": [
         "Похоже, что некоторые ваши данные зашифрованы и заблокированы."
@@ -8168,6 +8210,9 @@
         "или назначьте любую страну в течение ${ availableAgainAfterHours } часов",
         "или назначьте любую страну в течение ${ availableAgainAfterHours } часов"
       ],
+      "or discover other features:": [
+        "или откройте для себя другие возможности:"
+      ],
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
       ],
@@ -8369,6 +8414,9 @@
       "purchase additional storage": [
         "приобрести дополнительное место"
       ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Обращайтесь к нам за помощью по любому вопросу, связанному с ${ BRAND_NAME }."
+      ],
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
       ],
@@ -8495,6 +8543,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Отправьте электронные письма, чтобы убедить ваших пользователей защитить свои аккаунты двухфакторной аутентификацией (2FA)."
       ],
+      "Send messages at just the right now": [
+        "Отправить сообщения сейчас"
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Отправлено с помощью защищённой почты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -8518,6 +8569,9 @@
       ],
       "Setting successfully saved": [
         "Настройка успешно сохранена"
+      ],
+      "Setting up ${ feature }…": [
+        "Установка ${ feature }…"
       ],
       "Setting up your new address…": [
         "Настройка вашего нового адреса…"
@@ -8563,6 +8617,9 @@
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Отправка по SMTP позволяет сторонним службам или устройствам отправлять электронную почту через ${ MAIL_APP_NAME } на ваши пользовательские доменные адреса. Чтобы воспользоваться этой функцией, начните с генерации нового токена."
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Откладывайте сообщения на потом, чтобы они находились в верхней части вашего почтового ящика, когда вам это нужно."
       ],
       "Some keys successfully reactivated": [
         "Некоторые ключи успешно реактивированы"
@@ -8632,6 +8689,9 @@
       ],
       "Switch to": [
         "Переключиться на"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Синхронизируйте и управляйте файлами с приложением ${ DRIVE_APP_NAME }. Создавайте и делитесь документами в ${ DOCS_APP_NAME } и безопасно храните их. Все на ${ ios }, ${ android } и ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -8764,6 +8824,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Это ключ шифрования, который вы могли сохранить ранее."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
       ],
       "This is the password you used before the password reset.": [
         "Это пароль, который вы использовали до сброса пароля."
@@ -9299,8 +9362,14 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Вы используете больше места в хранилище, чем включено в тариф ${ downgradedPlanName }. Удалите данные, чтобы перейти на более дешевую версию."
       ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Вы можете добавить свой собственный домен в ${ MAIL_APP_NAME }"
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы также можете объединить импортированные календари с существующими календарями ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можете изменить это в любой момент в ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить ход выполнения ${ importProgressLink }."
@@ -9373,6 +9442,9 @@
       ],
       "You do not have permission to perform this action": [
         "У вас нет разрешения на выполнение данного действия"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "You have ${ availableCount } new server available.": [
         "Вам доступен ${ availableCount } выделенный сервер.",
@@ -9519,7 +9591,7 @@
         "Ваши импорты из ${ accounts } временно отложены."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "Ваша информация в безопасности с нами. Мы будем связываться с вами только когда это требуется для предоставления наших сервисов."
+        "С нами ваши данные находятся в безопасности. Мы свяжемся с вами только в случае предоставления наших сервисов."
       ],
       "Your information was found on ${ displayedDate }": [
         "Ваша информация была найдена ${ displayedDate }"
@@ -9529,6 +9601,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Следующая дата выставления счета - ${ renewalTime }."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша организация использует единый вход (SSO). Нажмите нв Войти, чтобы продолжить работу с поставщиком услуг SSO."
@@ -9550,6 +9625,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Ваша фраза для восстановления — это набор из 12 случайных слов в определенном порядке."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ваша заявка в службу поддержки была закрыта. Благодарим вас за обращение в службу поддержки ${ BRAND_NAME }."
@@ -13929,7 +14010,7 @@
         "Это единственный способ полностью восстановить аккаунт, поэтому убедитесь, что вы храните его в надежном месте."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Присоединяйтесь к более чем 100 миллионам людей, выбравшим ${ BRAND_NAME }, чтобы оставаться в безопасности в Интернете"
+        "Присоединяйтесь к более чем 100 миллионам людей, выбравшим ${ BRAND_NAME }, чтобы оставаться в безопасности в Интернете."
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Запуск ${ PASS_APP_NAME }"
@@ -15628,7 +15709,7 @@
         "10 псевдонимами для защиты электронной почты от утечек"
       ],
       "Advanced security features": [
-        "Расширенные функции безопасности"
+        "Расширенными функциями безопасности"
       ],
       "Advanced sharing security": [
         "С повышенной безопасностью совместного доступа"
@@ -15643,7 +15724,7 @@
         "Со встроенным шифрованием"
       ],
       "Calendar, password manager, file storage, and VPN included": [
-        "Календарем, менеджером паролей, хранилищем файлов и VPN в комплекте"
+        "Календарём, менеджером паролей, хранилищем файлов и VPN в комплекте"
       ],
       "Device sync": [
         "Синхронизацией устройств"
@@ -15667,7 +15748,7 @@
         "Встроенной электронной почтой, календарем, хранилищем файлов, менеджером паролей и VPN"
       ],
       "ISO 27001 certified": [
-        "Сертифицирован ISO 27001"
+        "Сертифицировано ISO 27001."
       ],
       "Open source and audited": [
         "Открытым исходным кодом, проверенным на безопасность"
@@ -15699,7 +15780,7 @@
     },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
-        "Соответствие требованиям GDPR и HIPAA."
+        "Соответствует требованиям GDPR и HIPAA."
       ]
     },
     "specialoffer: Action": {
@@ -18184,9 +18265,6 @@
       "PayPal verification failed": [
         "Сбой проверки PayPal"
       ],
-      "Personalise your e-mail footer": [
-        "Настройте нижний колонтитул вашего электронного письма"
-      ],
       "Personalize your email footer": [
         "Персонализируйте нижний колонтитул электронной почты"
       ],
@@ -19508,11 +19586,6 @@
       ],
       "You're Invited.": [
         "Вас пригласили."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Безопасный и простой способ хранить и переводить Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
