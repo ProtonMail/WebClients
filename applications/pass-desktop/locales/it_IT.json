@@ -253,9 +253,6 @@
       "Export": [
         "Esporta"
       ],
-      "Feedback": [
-        "Feedback"
-      ],
       "Fill password": [
         "Inserisci password"
       ],
@@ -301,6 +298,9 @@
       "How to update ${ PASS_APP_NAME } on Linux": [
         "Come aggiornare ${ PASS_APP_NAME } su Linux"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Come usare ${ PASS_APP_NAME }"
+      ],
       "Import": [
         "Importa"
       ],
@@ -318,6 +318,9 @@
       ],
       "Invite others": [
         "Invita altri"
+      ],
+      "Join our Reddit": [
+        "Unisciti al nostro Reddit"
       ],
       "Join shared vault": [
         "Unisciti alla cassaforte condivisa"
@@ -517,9 +520,6 @@
       "Send invite": [
         "Manda invito"
       ],
-      "Send us a message": [
-        "Inviaci un messaggio"
-      ],
       "Set access level": [
         "Imposta il livello di accesso"
       ],
@@ -645,11 +645,8 @@
       "With other ${ BRAND_NAME } users": [
         "Con altri utenti di ${ BRAND_NAME }"
       ],
-      "Write us on Reddit": [
-        "Scrivici su Reddit"
-      ],
-      "Write us on Twitter": [
-        "Scrivici su Twitter"
+      "Write us on X/Twitter": [
+        "Scrivici su X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
@@ -1804,13 +1801,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Spostare di un elemento in un'altra cassaforte cancellerà la sua cronologia e tutti i collegamenti sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà la loro cronologia e tutti i collegamenti sicuri."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà la sua cronologia.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà la loro cronologia."
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2656,6 +2649,9 @@
       ],
       "Facebook account": [
         "Account Facebook"
+      ],
+      "Feedback": [
+        "Feedback"
       ],
       "Field name": [
         "Nome campo"

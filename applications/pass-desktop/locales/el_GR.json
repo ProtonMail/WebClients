@@ -253,9 +253,6 @@
       "Export": [
         "Εξαγωγή"
       ],
-      "Feedback": [
-        "Αξιολόγηση"
-      ],
       "Fill password": [
         "Συμπληρώστε τον κωδικό πρόσβασης"
       ],
@@ -301,6 +298,9 @@
       "How to update ${ PASS_APP_NAME } on Linux": [
         "Πώς να ενημερώσετε το ${ PASS_APP_NAME } στο Linux"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Πώς να χρησιμοποιήσετε το ${ PASS_APP_NAME }"
+      ],
       "Import": [
         "Εισαγωγή"
       ],
@@ -318,6 +318,9 @@
       ],
       "Invite others": [
         "Πρόσκληση άλλων"
+      ],
+      "Join our Reddit": [
+        "Εγγραφείτε στο Reddit μας"
       ],
       "Join shared vault": [
         "Συμμετοχή σε κοινόχρηστη κρύπτη"
@@ -517,9 +520,6 @@
       "Send invite": [
         "Αποστολή πρόσκλησης"
       ],
-      "Send us a message": [
-        "Στείλτε μας ένα μήνυμα"
-      ],
       "Set access level": [
         "Ορισμός επιπέδου πρόσβασης"
       ],
@@ -645,11 +645,8 @@
       "With other ${ BRAND_NAME } users": [
         "Με άλλους ${ BRAND_NAME } χρήστες"
       ],
-      "Write us on Reddit": [
-        "Γράψτε μας στο Reddit"
-      ],
-      "Write us on Twitter": [
-        "Γράψτε μας στο Twitter"
+      "Write us on X/Twitter": [
+        "Γράψτε μας στο X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
@@ -1804,13 +1801,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του και όλους τους ασφαλείς συνδέσμους.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους και όλους τους ασφαλείς συνδέσμους."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους."
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2656,6 +2649,9 @@
       ],
       "Facebook account": [
         "Λογαριασμός Facebook"
+      ],
+      "Feedback": [
+        "Αξιολόγηση"
       ],
       "Field name": [
         "Όνομα πεδίου"
