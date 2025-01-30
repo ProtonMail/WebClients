@@ -1662,6 +1662,9 @@
       ],
       "Work": [
         "Kantor"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3942,6 +3945,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -3950,6 +3956,9 @@
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4041,7 +4050,7 @@
         "Berkas ini mengandung undangan acara:"
       ],
       "This file contains an invitation response:": [
-        "Berkas ini mengandung balasan undangan:"
+        "Berkas ini mengandung jawaban undangan:"
       ],
       "This file contains some data that we cannot import:": [
         "Sebagian data yang terkandung dalam berkas ini tidak dapat kami impor:"
@@ -4216,6 +4225,9 @@
       ],
       "ICS file": [
         "Berkas ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4952,13 +4964,13 @@
         "Masa berlaku sesi telah berakhir"
       ],
       "Setting up ${ feature }…": [
-        "Menyiapkan ${ feature }…"
+        "Mempersiapkan ${ feature }…"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Setting up your new address…": [
-        "Menyiapkan alamat baru Anda…"
+        "Mempersiapkan alamat baru Anda…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
@@ -5462,6 +5474,9 @@
       ],
       "Trusted": [
         "Terpercaya"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -7509,11 +7524,20 @@
       "Custom email domain": [
         "Domain email khusus"
       ],
+      "Email addresses": [
+        "Alamat email"
+      ],
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Penyunting dokumen online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
       ],
       "Storage": [
         "Ruang penyimpanan"
@@ -7801,6 +7825,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8427,6 +8456,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Langganan ini akan diperbarui secara otomatis setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Langganan Anda akan diperbarui dengan harga yang sama setiap tahunnya."
       ]
     },
     "specialoffer: Link": {
@@ -10038,6 +10070,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Langganan baru Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Paket terjadwal Anda akan dimulai pada ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Langganan Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
       ]
@@ -10073,8 +10111,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Cara yang lebih aman/mudah untuk menyimpan & mengirim Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Cara yang lebih aman untuk menyimpan Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

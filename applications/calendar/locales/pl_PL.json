@@ -315,7 +315,7 @@
         "Eksportuj grupę kontaktów"
       ],
       "Export selection as .vcf": [
-        "Eksportuj selekcję jako .vcf"
+        "Eksportuj zaznaczone jako plik VCF"
       ],
       "Forgot password?": [
         "Nie pamiętasz hasła?"
@@ -3277,6 +3277,9 @@
       "Please select a country": [
         "Wybierz kraj"
       ],
+      "Please select a state": [
+        "Wybierz stan"
+      ],
       "Port is required": [
         "Port jest wymagany"
       ],
@@ -4070,6 +4073,9 @@
       "Event validation failed": [
         "Weryfikacja wydarzenia nie powiodła się"
       ],
+      "Floating times not supported": [
+        "Czas w formacie \"floating\" nie jest obsługiwany"
+      ],
       "Malformed all-day event": [
         "Czas wydarzenia całodniowego posiada nieprawidłowy format"
       ],
@@ -4081,6 +4087,9 @@
       ],
       "Malformed start time": [
         "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
+      "Recurring event has no occurrences": [
+        "Wydarzenie cykliczne nie posiada powtórzeń"
       ],
       "Recurring rule not supported": [
         "Reguła powtórzeń nie jest obsługiwana"
@@ -5138,7 +5147,7 @@
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
       ],
       "Setting up your new address…": [
-        "Konfiguracja nowego adresu..."
+        "Konfiguracja nowego adresu…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
@@ -7825,11 +7834,20 @@
       ],
       "Maybe later": [
         "Może później"
+      ],
+      "Save 80% on your first month.": [
+        "Zaoszczędź 80% przez pierwszy miesiąc."
       ]
     },
     "Offer feature": {
+      "+10 more premium features": [
+        "+10 więcej funkcji premium"
+      ],
       "Custom email domain": [
         "Niestandardowa domena"
+      ],
+      "Email addresses": [
+        "Adresy e-mail"
       ],
       "Plus": [
         "Plus"
@@ -10572,11 +10590,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoiny przez e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bezpieczniejsza i łatwiejsza metoda przechowywania i wysyłania Bitcoinów"
       ]
     },
     "wallet_signup_2024:Bug category": {

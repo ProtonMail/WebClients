@@ -1677,6 +1677,9 @@
       ],
       "Work": [
         "Εργασία"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3984,6 +3987,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -3992,6 +3998,9 @@
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4264,6 +4273,9 @@
       ],
       "ICS file": [
         "αρχείο ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5544,6 +5556,9 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -7654,8 +7669,14 @@
       "Free": [
         "Δωρεάν"
       ],
+      "Online document editor": [
+        "Online επεξεργαστής εγγράφου"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
       ],
       "Storage": [
         "Αποθηκευτικός χώρος"
@@ -7950,6 +7971,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Η κάρτα σας απορρίφθηκε. Παρακαλώ δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Δωρεάν"
       ]
     },
     "Payments.Sepa": {
@@ -10289,8 +10315,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Ένας ασφαλέστερος/ευκολότερος τρόπος για να κρατήσετε και να στείλετε Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Ένας ασφαλέστερος τρόπος να φυλάξετε τα Bitcoin σας"
       ]
     },
     "wallet_signup_2024:Bug category": {
