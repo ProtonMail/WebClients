@@ -4,9 +4,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
+import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
+
+import { isPageConsecutive } from 'proton-mail/helpers/paging';
+import useTelemetryPagingControls from 'proton-mail/hooks/useTelemetryPagingControls';
+import { pages } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 interface Props {
     onPrevious: () => void;
@@ -18,6 +24,9 @@ interface Props {
 }
 
 const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Props) => {
+    const pagesState = useMailSelector(pages);
+    const sendPagingTelemetryReport = useTelemetryPagingControls();
+
     const goToPageTitle = (page: number) => c('Action').t`Go to page ${page}`;
     const disablePrevious = page === 1;
     const disableNext = page === total;
@@ -44,6 +53,32 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
         }
     }, [page, total]);
 
+    const handleClickPrevious = () => {
+        onPrevious();
+        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_previous_page });
+    };
+
+    const handleClickNext = () => {
+        onNext();
+        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_previous_page });
+    };
+
+    const handleClickCustomPage = (page: number) => {
+        onPage(page);
+
+        /* One tricky things that we have to manage with the page is when a user is "creating a gap' in the pages.
+         * E.g. the user has loaded page 1 and 2, and goes to page 10
+         * All items in between are not in the cache, and it makes the items management difficult when users then
+         * navigates to other pages, because we need to predict what needs to be loaded.
+         * => Here we want to track how often users are creating this gap.
+         * note: in the state pages start with index 0, so we need to decrease the destination page to compare them
+         */
+        void sendPagingTelemetryReport({
+            event: TelemetryMailPagingControlsEvents.move_to_custom_page,
+            dimensions: { isPageConsecutive: isPageConsecutive(pagesState, page - 1) ? 'true' : 'false' },
+        });
+    };
+
     return (
         <div className="flex flex-column items-center">
             <div className="flex flex-row gap-2 items-inherit">
@@ -54,7 +89,7 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
                         shape="ghost"
                         className="rtl:mirror"
                         disabled={loading || disablePrevious}
-                        onClick={() => onPrevious()}
+                        onClick={handleClickPrevious}
                         data-testid="pagination-row:go-to-previous-page"
                     >
                         <Icon name="chevron-left" className="block" alt={c('Action').t`Go to previous page`} />
@@ -75,7 +110,7 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
                                 shape={isActive ? 'solid' : 'ghost'}
                                 className={clsx([isActive && 'text-bold pointer-events-none', 'px-2'])}
                                 disabled={loading}
-                                onClick={() => onPage(pageNumber)}
+                                onClick={() => handleClickCustomPage(pageNumber)}
                                 data-testid={`pagination-row:go-to-page-${pageNumber}`}
                             >
                                 <span className="sr-only">{buttonTitle}</span>
@@ -91,7 +126,7 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
                         className="rtl:mirror"
                         icon
                         disabled={loading || disableNext}
-                        onClick={() => onNext()}
+                        onClick={handleClickNext}
                         data-testid="pagination-row:go-to-next-page"
                     >
                         <Icon name="chevron-right" className="block" alt={c('Action').t`Go to next page`} />
