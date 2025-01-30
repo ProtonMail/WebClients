@@ -186,6 +186,10 @@ export interface SubscriptionCheckResponse {
     TaxInclusive?: TaxInclusive;
     SubscriptionMode: SubscriptionMode;
     optimistic?: boolean;
+    /**
+     * This property doesn't actually exist in the response.
+     * It's added by the frontend and echoes the same property from the request.
+     */
     ProrationMode?: ProrationMode;
 }
 

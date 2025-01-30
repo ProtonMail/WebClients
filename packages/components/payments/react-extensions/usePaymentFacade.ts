@@ -627,6 +627,8 @@ export const usePaymentFacade = (
         chargebeePaypal,
     ]);
 
+    const initialized = !methods.loading;
+
     return {
         methods,
         savedMethod,
@@ -643,5 +645,6 @@ export const usePaymentFacade = (
         currency,
         paymentContext,
         directDebit,
+        initialized,
     };
 };
