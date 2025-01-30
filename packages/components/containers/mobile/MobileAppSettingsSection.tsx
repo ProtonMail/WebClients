@@ -3,12 +3,9 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import QRCode from '@proton/components/components/image/QRCode';
 import Logo from '@proton/components/components/logo/Logo';
-import {
-    CALENDAR_APP_NAME,
-    CALENDAR_MOBILE_APP_LINKS,
-    MAIL_APP_NAME,
-    MAIL_MOBILE_APP_LINKS,
-} from '@proton/shared/lib/constants';
+import { CALENDAR_MOBILE_APP_LINKS } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 
