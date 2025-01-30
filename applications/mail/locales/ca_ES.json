@@ -149,7 +149,7 @@
         "Autentica"
       ],
       "Auto-delete spam and trash": [
-        "Supressió automàtica del correu brossa i de la paperera"
+        "Neteja automàtica del correu brossa i de la paperera"
       ],
       "Back": [
         "Torna"
@@ -546,6 +546,9 @@
       "Get started": [
         "Comença"
       ],
+      "Get the app": [
+        "Aconseguiu l'aplicació"
+      ],
       "Get the browser extension": [
         "Obtingueu l'extensió del navegador"
       ],
@@ -556,7 +559,7 @@
         "Obtenir codi de verificació"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
-        "Aneu a ${ DRIVE_APP_NAME }"
+        "Ves a ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -1934,6 +1937,9 @@
       ],
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
+      ],
+      "Got it": [
+        "Entesos"
       ],
       "Maybe later": [
         "Potser després"
@@ -10347,6 +10353,9 @@
       "Free": [
         "Gratuït"
       ],
+      "Online document editor": [
+        "Editor de documents en línia"
+      ],
       "Plus": [
         "Plus"
       ],
@@ -11995,6 +12004,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -12253,47 +12303,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -13622,11 +13631,6 @@
         "Avui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
@@ -13710,6 +13714,11 @@
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "versió estable"
@@ -13770,7 +13779,7 @@
         "Després se us facturarà cada 12 mesos a ${ renewPrice }."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos.",
+        "La vostra nova subscripció es renovarà automàticament en ${ cycle } mes.",
         "La vostra nova subscripció es renovarà automàticament en ${ cycle } mesos."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
@@ -13820,8 +13829,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Una manera més segura i fàcil de mantenir i enviar Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Una manera més segura de mantenir Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
