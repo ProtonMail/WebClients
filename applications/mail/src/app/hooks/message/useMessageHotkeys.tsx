@@ -50,7 +50,6 @@ interface MessageHotkeysContext {
     conversationMode: boolean;
     mailSettings: MailSettings;
     messageRef: React.RefObject<HTMLElement>;
-    currentFolder?: string;
 }
 
 interface MessageHotkeysHandlers {
@@ -74,7 +73,6 @@ export const useMessageHotkeys = (
         conversationMode,
         mailSettings,
         messageRef,
-        currentFolder,
     }: MessageHotkeysContext,
     {
         hasFocus,
@@ -118,7 +116,6 @@ export const useMessageHotkeys = (
             destinationLabelID: LabelID,
             folderName,
             sourceAction: SOURCE_ACTION.SHORTCUTS,
-            currentFolder,
         });
     };
 
@@ -286,7 +283,6 @@ export const useMessageHotkeys = (
                         labelID,
                         status: MARK_AS_STATUS.UNREAD,
                         sourceAction: SOURCE_ACTION.SHORTCUTS,
-                        currentFolder,
                     });
                     await call();
                 }
@@ -297,12 +293,7 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady && message.data) {
                     e.stopPropagation();
-                    await star(
-                        [message.data as Element],
-                        !isStarred(message.data),
-                        SOURCE_ACTION.SHORTCUTS,
-                        currentFolder
-                    );
+                    await star([message.data as Element], !isStarred(message.data), labelID, SOURCE_ACTION.SHORTCUTS);
                 }
             },
         ],

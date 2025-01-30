@@ -48,7 +48,6 @@ interface Props {
     attachmentsMetadata?: AttachmentsMetadata[];
     userSettings?: UserSettings;
     showAttachmentThumbnails?: boolean;
-    currentFolder?: string;
 }
 
 const ItemColumnLayout = ({
@@ -66,7 +65,6 @@ const ItemColumnLayout = ({
     attachmentsMetadata = [],
     userSettings,
     showAttachmentThumbnails,
-    currentFolder,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -215,8 +213,8 @@ const ItemColumnLayout = ({
                                     {isStarred && !isSnoozeDropdownOpen && (
                                         <ItemStar
                                             element={element}
+                                            labelID={labelID}
                                             sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
-                                            currentFolder={currentFolder}
                                         />
                                     )}
                                 </span>
@@ -240,7 +238,7 @@ const ItemColumnLayout = ({
                                 <ItemStar
                                     element={element}
                                     sourceAction={SOURCE_ACTION.MESSAGE_VIEW}
-                                    currentFolder={currentFolder}
+                                    labelID={labelID}
                                 />
                             </span>
                         </div>

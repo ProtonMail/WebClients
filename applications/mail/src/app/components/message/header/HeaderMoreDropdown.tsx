@@ -21,7 +21,7 @@ import {
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
-import { useFolders, useLabels } from '@proton/mail';
+import { useFolders } from '@proton/mail';
 import { getFolderName } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -29,7 +29,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { SOURCE_ACTION, folderLocation } from 'proton-mail/components/list/useListTelemetry';
+import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -116,7 +116,6 @@ const HeaderMoreDropdown = ({
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const closeDropdown = useRef<() => void>();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
-    const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const { markAs } = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
@@ -135,8 +134,6 @@ const HeaderMoreDropdown = ({
     const staringText = isStarred ? c('Action').t`Unstar` : c('Action').t`Star`;
     const willExpire = !!message.data?.ExpirationTime;
 
-    const displayedFolder = folderLocation(labelID, labels, folders);
-
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
         const folderName = getFolderName(folderID, folders);
@@ -146,7 +143,6 @@ const HeaderMoreDropdown = ({
             destinationLabelID: folderID,
             folderName,
             sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
-            currentFolder: displayedFolder,
         });
     };
 
@@ -163,7 +159,6 @@ const HeaderMoreDropdown = ({
             labelID,
             status: MARK_AS_STATUS.UNREAD,
             sourceAction: SOURCE_ACTION.MORE_DROPDOWN,
-            currentFolder: displayedFolder,
         });
     };
 
@@ -183,9 +178,7 @@ const HeaderMoreDropdown = ({
 
     const handleStar = async () => {
         if (!loading) {
-            void withLoading(
-                star([message.data || ({} as Element)], !isStarred, SOURCE_ACTION.MORE_DROPDOWN, displayedFolder)
-            );
+            void withLoading(star([message.data || ({} as Element)], !isStarred, labelID, SOURCE_ACTION.MORE_DROPDOWN));
         }
     };
 
@@ -677,12 +670,7 @@ const HeaderMoreDropdown = ({
                 />
             )}
             {renderMessagePhishingModal && (
-                <MessagePhishingModal
-                    message={message}
-                    currentFolder={displayedFolder}
-                    onBack={onBack}
-                    {...messagePhishingModalProps}
-                />
+                <MessagePhishingModal message={message} onBack={onBack} {...messagePhishingModalProps} />
             )}
             {renderMessagePermanentDeleteModal && (
                 <MessagePermanentDeleteModal
