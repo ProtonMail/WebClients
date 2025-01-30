@@ -795,6 +795,10 @@ const SubscriptionContainer = ({
     }, [model.step, model.initialCheckComplete]);
 
     useEffect(() => {
+        if (!paymentFacade.initialized) {
+            return;
+        }
+
         // Trigger once to initialise the check values
         void withLoadingCheck(check());
         if (parent === 'subscription-modal') {
@@ -808,7 +812,7 @@ const SubscriptionContainer = ({
                 coupon: model.coupon,
             });
         }
-    }, []);
+    }, [paymentFacade.initialized]);
 
     useEffect(() => {
         // Each time the user switch between steps, scroll to the top
