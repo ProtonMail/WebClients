@@ -307,6 +307,7 @@ export default function SharedFolder({
                         openInDocs={openInDocs}
                         items={fileBrowserItems}
                         canWrite={!viewOnly}
+                        linkId={linkId}
                     />
                 </UploadDragDrop>
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
