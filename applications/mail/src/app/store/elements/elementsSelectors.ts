@@ -20,7 +20,7 @@ import {
     isUnread,
     sort as sortElements,
 } from '../../helpers/elements';
-import { expectedPageLength } from '../../helpers/paging';
+import { expectedPageLength, isPageConsecutive } from '../../helpers/paging';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { MailState } from '../store';
 import type { ElementsStateParams } from './elementsTypes';
@@ -31,7 +31,7 @@ export const elementsMap = (state: MailState) => state.elements.elements;
 export const params = (state: MailState) => state.elements.params;
 const page = (state: MailState) => state.elements.page;
 export const pageSize = (state: MailState) => state.elements.pageSize;
-const pages = (state: MailState) => state.elements.pages;
+export const pages = (state: MailState) => state.elements.pages;
 const bypassFilter = (state: MailState) => state.elements.bypassFilter;
 const pendingRequest = (state: MailState) => state.elements.pendingRequest;
 export const pendingActions = (state: MailState) => state.elements.pendingActions;
@@ -178,10 +178,8 @@ export const pageChanged = createSelector([page, currentPage], (page, currentPag
  * @returns a boolean specifying whether or not the cache contains a page that is +/-1 the current page.
  * It is useful to check if there is page jump and refetch accordingly
  */
-export const pageIsConsecutive = createSelector(
-    [pages, currentPage],
-    (pages, currentPage) =>
-        pages.length === 0 || pages.some((p) => p === currentPage || p === currentPage - 1 || p === currentPage + 1)
+export const pageIsConsecutive = createSelector([pages, currentPage], (pages, currentPage) =>
+    isPageConsecutive(pages, currentPage)
 );
 
 /**
