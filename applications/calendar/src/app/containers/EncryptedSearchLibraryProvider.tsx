@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import { useUser } from '@proton/account/user/hooks';
 import {
     useApi,
@@ -71,9 +73,12 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
         [api, calendarIDs, history, userID, getCalendarEventRaw]
     );
 
+    const contentIndexingSuccessMessage = c('Success').t`Event content search enabled`;
+
     const esLibraryFunctions = useEncryptedSearch<ESCalendarMetadata, ESCalendarSearchParams, ESCalendarContent>({
         refreshMask: 1,
         esCallbacks,
+        contentIndexingSuccessMessage,
     });
     const { isConfigFromESDBLoaded, cachedIndexKey, esEnabled } = esLibraryFunctions.esStatus;
 
