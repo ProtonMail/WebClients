@@ -8,6 +8,8 @@ import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-d
 
 import { useFileDrop } from '../../../hooks/drive/useFileDrop';
 
+import './UploadDragDrop.scss';
+
 interface UploadDragDropProps {
     children: ReactNode;
     shareId: string;

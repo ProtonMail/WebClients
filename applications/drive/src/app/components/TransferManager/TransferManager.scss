@@ -76,7 +76,6 @@
 		gap: 1em;
 		align-items: center;
 		block-size: 5em; // To avoid height blinking on status changing
-		@extend .border-bottom;
 
 		@include media('<=small') {
 			grid-template-columns: 4fr minmax(5em, 2fr) 2.5em minmax(4.5em, 1fr);
