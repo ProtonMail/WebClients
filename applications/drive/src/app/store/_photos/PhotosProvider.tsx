@@ -7,6 +7,7 @@ import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/
 import { photoPayloadToPhotos, useDebouncedRequest } from '../_api';
 import type { ShareWithKey } from '../_shares';
 import { useDefaultShare } from '../_shares';
+import { useVolumesState } from '../_volumes';
 import type { Photo } from './interface';
 
 export const PhotosContext = createContext<{
@@ -24,6 +25,7 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [photosShare, setPhotosShare] = useState<ShareWithKey>();
     const [share, setShare] = useState<ShareWithKey>();
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
+    const { setVolumeShareIds } = useVolumesState();
     const request = useDebouncedRequest();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [photos, setPhotos] = useState<Photo[]>([]);
@@ -32,6 +34,9 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
         void Promise.all([getDefaultShare(), getDefaultPhotosShare()]).then(([defaultShare, defaultPhotosShare]) => {
             setShare(defaultShare);
             setPhotosShare(defaultPhotosShare);
+            if (defaultPhotosShare) {
+                setVolumeShareIds(defaultPhotosShare.volumeId, [defaultPhotosShare.shareId]);
+            }
             // loadPhotos() depends on the photo share shareId/volumeId
             // if its undefined = loading is stopped (we have a problem)
             // if its truthy = loading continues and loadPhotos will take over the photosLoading()

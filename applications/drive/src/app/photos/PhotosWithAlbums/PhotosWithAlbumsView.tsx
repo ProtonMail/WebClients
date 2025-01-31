@@ -173,14 +173,9 @@ export const PhotosWithAlbumsView: FC = () => {
         }
     }, [albumLinkId, tabSelection, album, updateTitle]);
 
-    if (isPhotosLoading && isPhotosEmpty && isAlbumsEmpty && isAlbumPhotosEmpty) {
-        return <Loader />;
+    if (!shareId || !linkId || isPhotosLoading) {        
+		return <Loader />;
     }
-
-    if (!shareId || !linkId) {
-        return <EmptyPhotos />;
-    }
-
     const hasPreview = !!previewItem;
 
     return (
@@ -300,7 +295,7 @@ export const PhotosWithAlbumsView: FC = () => {
                 {tabSelection === 'gallery' && (
                     <>
                         {isPhotosEmpty ? (
-                            <EmptyPhotos />
+                            <EmptyPhotos shareId={shareId} linkId={linkId} />
                         ) : (
                             <PhotosGrid
                                 data={photos}
@@ -328,7 +323,7 @@ export const PhotosWithAlbumsView: FC = () => {
                         {isAlbumsEmpty ? (
                             <>
                                 {/** TODO: Empty Albums View */}
-                                <EmptyPhotos />
+                                <EmptyPhotos shareId={shareId} linkId={linkId} />
                             </>
                         ) : (
                             <AlbumsGrid

@@ -26,6 +26,8 @@ import type { Download, TransfersStats, Upload } from './transfer';
 import { STATE_TO_GROUP_MAP, TransferGroup, TransferType } from './transfer';
 import useTransferControls from './useTransferControls';
 
+import './TransferManager.scss';
+
 interface TransferListEntry<T extends TransferType> {
     transfer: T extends TransferType.Download ? Download : Upload;
     type: T;
