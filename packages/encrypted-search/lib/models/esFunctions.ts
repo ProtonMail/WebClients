@@ -53,6 +53,7 @@ export type EnableEncryptedSearch = (options?: {
     isRefreshed?: boolean | undefined;
     isBackgroundIndexing?: boolean;
     showErrorNotification?: boolean;
+    notify?: boolean;
 }) => Promise<boolean>;
 
 /**
