@@ -13,7 +13,7 @@ import { type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } 
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink } from '../../store/_links';
 import { useShare } from '../../store/_shares';
-import { VolumeType } from '../../store/_volumes';
+import { VolumeType, useVolumesState } from '../../store/_volumes';
 import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
 
 export interface Album {
@@ -64,6 +64,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const [albumPhotos, setAlbumPhotos] = useState<Photo[]>([]);
     const { getShareWithKey } = useShare();
     const { getLink } = useLink();
+    const { setVolumeShareIds } = useVolumesState();
 
     useEffect(() => {
         const signal = new AbortController().signal;
@@ -74,6 +75,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 const createdPhotos = await createPhotosWithAlbumsShare();
                 const share = await getShareWithKey(signal, createdPhotos.shareId);
                 setPhotosShare(share);
+                setVolumeShareIds(share.volumeId, [share.shareId]);
             } else {
                 // use old photo share
                 setPhotosShare(defaultPhotosShare);
