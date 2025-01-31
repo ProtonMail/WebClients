@@ -13,8 +13,6 @@ import useFlag from '@proton/unleash/useFlag';
 import { useModalStateObject } from '../modalTwo/useModalState';
 import FeatureTourLoader from './FeatureTourLoader';
 
-import './FeatureTour.scss';
-
 const FeatureTourSteps = lazy(() => import(/* webpackChunkName: "FeatureTourSteps" */ './FeatureTourSteps'));
 
 const FeatureTour = () => {
@@ -87,7 +85,7 @@ const FeatureTour = () => {
 
     return (
         <Suspense fallback={<FeatureTourLoader />}>
-            <Modal {...modalState.modalProps} className="modal-two--feature-tour">
+            <Modal {...modalState.modalProps} size="xsmall">
                 <FeatureTourSteps stepsList={featureTourState.steps} onFinishTour={handleFinishFeatureTour} />
             </Modal>
         </Suspense>
