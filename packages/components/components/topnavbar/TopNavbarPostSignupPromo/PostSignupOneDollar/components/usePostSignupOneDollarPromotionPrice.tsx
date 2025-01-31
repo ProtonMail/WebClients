@@ -5,8 +5,8 @@ import Price from '@proton/components/components/price/Price';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
-import { type Currency, PLANS, getPlanByName } from '@proton/payments';
-import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, type Currency, PLANS, getPlanByName } from '@proton/payments';
+import { COUPON_CODES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import type { SUPPORTED_PRODUCTS } from '../interface';

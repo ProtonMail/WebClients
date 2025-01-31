@@ -21,10 +21,10 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import type { APPS } from '@proton/shared/lib/constants';
-import { BRAND_NAME, CYCLE, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

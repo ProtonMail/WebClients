@@ -18,14 +18,22 @@ import { usePaymentsTelemetry } from '@proton/components/payments/client-extensi
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import { type BillingAddress, CURRENCIES, type Currency, PLANS, getPlansMap, isMainCurrency } from '@proton/payments';
+import {
+    type BillingAddress,
+    CURRENCIES,
+    CYCLE,
+    type Currency,
+    PLANS,
+    getPlansMap,
+    isMainCurrency,
+} from '@proton/payments';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { CYCLE, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';

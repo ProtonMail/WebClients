@@ -1,7 +1,7 @@
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { CYCLE } from '@proton/payments';
 import type { ADDON_NAMES, PLANS } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
 
 interface Props extends Pick<OpenCallbackProps, 'step' | 'cycle' | 'coupon' | 'upsellRef'> {
     plan?: PLANS | ADDON_NAMES;

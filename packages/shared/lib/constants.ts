@@ -401,11 +401,6 @@ export enum USER_ROLES {
     ADMIN_ROLE = 2,
 }
 
-export enum INVOICE_OWNER {
-    USER = 0,
-    ORGANIZATION = 1,
-}
-
 export enum MEMBER_TYPE {
     PROTON = 0,
     MANAGED = 1,
@@ -688,18 +683,6 @@ export const COVID_VISIONARY_BONUS_STORAGE = 10 * sizeUnits.GB;
 
 export const FREE_VPN_CONNECTIONS = 1;
 export const VPN_CONNECTIONS = 10;
-
-export enum CYCLE {
-    MONTHLY = 1,
-    THREE = 3,
-    YEARLY = 12,
-    FIFTEEN = 15,
-    EIGHTEEN = 18,
-    TWO_YEARS = 24,
-    THIRTY = 30,
-}
-
-export const DEFAULT_CYCLE = CYCLE.YEARLY;
 
 export const PRODUCT_PAYER = {
     START: new Date(Date.UTC(2020, 9, 28, 6)),
