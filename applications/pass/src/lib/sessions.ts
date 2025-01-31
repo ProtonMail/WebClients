@@ -9,7 +9,6 @@ import { sortOn } from '@proton/pass/utils/fp/sort';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
 export const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
-export const getStateKey = (state: string) => `f${state}`;
 export const getLocalIDFromSessionKey = (key: string) => parseInt(key.replace(STORAGE_PREFIX, ''), 10);
 
 export const getPersistedSession = (localID: Maybe<number>) => {

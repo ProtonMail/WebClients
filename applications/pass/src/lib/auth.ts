@@ -1,6 +1,6 @@
 import { flushSync } from 'react-dom';
 
-import type { History } from 'history';
+import type { History, LocationDescriptorObject } from 'history';
 import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
@@ -22,10 +22,12 @@ import {
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
-import { biometricsLockAdapterFactory } from '@proton/pass/lib/auth/lock/biometrics/adapter';
+import { extractOfflineComponents, getStateKey } from '@proton/pass/lib/auth/fork';
+import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pass/lib/auth/lock/biometrics/adapter';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
+import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -59,7 +61,6 @@ import {
     getPersistedSession,
     getPersistedSessions,
     getSessionKey,
-    getStateKey,
 } from './sessions';
 
 type AuthServiceBindings = {
@@ -202,7 +203,7 @@ export const createAuthService = ({
             return app.setStatus(AppStatus.AUTHORIZING);
         },
 
-        onLoginComplete: async (_, localID) => {
+        onLoginComplete: async (_, localID, reauth) => {
             app.setAuthorized(true);
             setSentryUID(authStore.getUID());
 
@@ -217,17 +218,27 @@ export const createAuthService = ({
 
             if (app.getState().booted) app.setStatus(AppStatus.READY);
             else {
-                const route = stripLocalBasenameFromPathname(redirect.get('pathname'));
+                const route = ((): Partial<LocationDescriptorObject<MaybeNull<AuthRouteState>>> => {
+                    const base = getBasename(localID) ?? '/';
+                    switch (reauth?.type) {
+                        case ReauthAction.SSO_EXPORT:
+                            return { pathname: base + '/settings', hash: 'export' };
+                        case ReauthAction.SSO_PW_LOCK:
+                            return { pathname: base + '/settings', hash: 'security' };
+                        case ReauthAction.SSO_OFFLINE:
+                            return { pathname: base + '/settings', hash: 'general' };
+                        default:
+                            return {
+                                pathname: base + stripLocalBasenameFromPathname(redirect.get('pathname')),
+                                search: redirect.get('search'),
+                                hash: redirect.get('hash'),
+                            };
+                    }
+                })();
 
-                history.replace({
-                    ...history.location,
-                    pathname: (getBasename(localID) ?? '/') + route,
-                    search: redirect.get('search'),
-                    hash: redirect.get('hash'),
-                });
-
+                history.replace({ ...history.location, ...route });
                 app.setStatus(AppStatus.AUTHORIZED);
-                store.dispatch(bootIntent());
+                store.dispatch(bootIntent({ reauth }));
             }
         },
 
@@ -268,7 +279,9 @@ export const createAuthService = ({
             history.replace('/');
         },
 
-        onForkConsumed: async (session, { state }) => {
+        onForkConsumeStart: () => auth.config.onLoginStart?.(),
+
+        onForkConsumeComplete: async (session, { state }) => {
             if (session.sso) {
                 /** If account provides us offline components for a SSO user,
                  * remove them to disable backup password locking */
@@ -276,7 +289,7 @@ export const createAuthService = ({
                 delete session.offlineKD;
             }
 
-            const { offlineConfig, offlineKD, UserID, LocalID, encryptedOfflineKD } = session;
+            const { offlineConfig, offlineKD, UserID, LocalID } = session;
             history.replace({ hash: '' }); /** removes selector from hash */
 
             try {
@@ -308,7 +321,7 @@ export const createAuthService = ({
              * as this would require using the backup password (bad UX) */
             if (offlineConfig && offlineKD) {
                 logger.info('[AuthServiceProvider] Automatically creating password lock');
-                session.lockMode = encryptedOfflineKD ? LockMode.BIOMETRICS : LockMode.PASSWORD;
+                session.lockMode = LockMode.PASSWORD;
                 session.lockTTL = DEFAULT_LOCK_TTL;
                 session.offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
                 authStore.setLockLastExtendTime(getEpoch());
@@ -319,10 +332,67 @@ export const createAuthService = ({
             await authSwitch.sync({ revalidate: false });
         },
 
+        onForkReauth: (fork, _, blob) =>
+            auth.resumeSession(fork.localID, {
+                reauth: fork.reauth,
+                onComplete: async (userID, localID) => {
+                    try {
+                        const action = ReauthAction[fork.reauth.type];
+                        logger.info(`[AuthServiceProvider] Successful reauth for "${action}"`);
+
+                        if (blob?.type === 'offline') {
+                            const { offlineKD, offlineConfig } = extractOfflineComponents(blob);
+                            const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
+
+                            authStore.setOfflineKD(offlineKD);
+                            authStore.setOfflineConfig(offlineConfig);
+                            authStore.setOfflineVerifier(offlineVerifier);
+
+                            switch (fork.reauth.type) {
+                                case ReauthAction.SSO_PW_LOCK: {
+                                    const { current, ttl } = fork.reauth.data;
+                                    if (current) await auth.deleteLock(authStore.getLockMode(), current);
+                                    authStore.setLockMode(LockMode.PASSWORD);
+                                    authStore.setLockTTL(ttl);
+                                    break;
+                                }
+                                case ReauthAction.SSO_BIOMETRICS: {
+                                    const { current, ttl } = fork.reauth.data;
+                                    if (current) await auth.deleteLock(authStore.getLockMode(), current);
+                                    const encryptedOfflineKD = await generateBiometricsKey(localID!, offlineKD);
+                                    authStore.setEncryptedOfflineKD(encryptedOfflineKD);
+                                    authStore.setLockMode(LockMode.BIOMETRICS);
+                                    authStore.setLockTTL(ttl);
+                                    break;
+                                }
+                            }
+
+                            await auth.persistSession();
+
+                            /** Session has been persisted at this point so
+                             * it's safe to mutate the `offlineEnabled` setting */
+                            if (fork.reauth.type === ReauthAction.SSO_OFFLINE) {
+                                const localID = authStore.getLocalID();
+                                const settings = await core.settings.resolve(localID);
+                                await core.settings.sync({ ...settings, offlineEnabled: true }, localID);
+                            }
+                        }
+                    } catch (err) {
+                        /** If there was a failure processing the `reauth` payload
+                         * do not pass it to the default completion handler. This
+                         * avoids triggering the reauth handlers after boot. */
+                        logger.warn(`[AuthServiceProvider] Failed setting up SSO password lock`, err);
+                        return auth.config.onLoginComplete?.(userID, localID);
+                    }
+
+                    return auth.config.onLoginComplete?.(userID, localID, fork.reauth);
+                },
+            }),
+
         onForkInvalid: () => history.replace('/'),
 
-        onForkRequest: ({ url, state }) => {
-            sessionStorage.setItem(getStateKey(state), JSON.stringify(redirect.data));
+        onForkRequest: ({ url, state }, data) => {
+            sessionStorage.setItem(getStateKey(state), JSON.stringify(data ?? redirect.data));
             window.location.replace(url);
         },
 
