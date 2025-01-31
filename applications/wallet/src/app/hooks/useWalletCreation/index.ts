@@ -46,20 +46,41 @@ import {
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isUndefined } from '../../utils';
 
+const parseError = (words: string[], error: any): string => {
+    if (error.kind === 'BadWordCount') {
+        return c('Wallet setup').t`Wallet seed phrase length is invalid. It should be between 12 and 24 words.`;
+    } else if (error.kind === 'UnknownWord') {
+        const word = words[error.index];
+        // translator: Wallet seed phrase contains an unknown word: child
+        return c('Wallet setup')
+            .t`Wallet seed phrase contains an unknown word: ${word}. We only support the BIP39 English word list.`;
+    } else if (error.kind === 'BadEntropyBitCount') {
+        return c('Wallet setup')
+            .t`Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.`;
+    } else if (error.kind === 'InvalidChecksum') {
+        return c('Wallet setup')
+            .t`Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.`;
+    } else if (error.kind === 'AmbiguousLanguages') {
+        return c('Wallet setup').t`Wallet seed phrase language is not supported.`;
+    }
+
+    return c('Wallet setup').t`Wallet seed phrase is incorrect. Please check it and try again.`;
+};
+
 const parseMnemonic = (value?: string): { mnemonic: WasmMnemonic } | { error: string } => {
     const words = value?.trim().split(' ') ?? [];
 
     if (!Object.values(wordCountToNumber).includes(words.length)) {
         return {
-            error: c('Wallet setup').t`Wallet seed phrase length is invalid. This should be between 12 to 24 words.`,
+            error: c('Wallet setup').t`Wallet seed phrase length is invalid. It should be between 12 and 24 words.`,
         };
     }
 
     try {
         const parsed = WasmMnemonic.fromString(words.join(' '));
         return { mnemonic: parsed };
-    } catch {
-        return { error: c('Wallet setup').t`Wallet seed phrase is incorrect. Please check this and try again.` };
+    } catch (error: any) {
+        return { error: parseError(words, error) };
     }
 };
 
