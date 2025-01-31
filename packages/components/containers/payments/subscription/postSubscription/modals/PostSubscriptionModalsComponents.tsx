@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-import { Button } from '@proton/atoms';
+import { Button, Scroll } from '@proton/atoms';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
@@ -22,7 +22,9 @@ export const PostSubscriptionModalWrapper = ({
         }}
         size="xsmall"
     >
-        <div>{children}</div>
+        <Scroll className="overflow-hidden" scrollContained>
+            {children}
+        </Scroll>
     </Modal>
 );
 
