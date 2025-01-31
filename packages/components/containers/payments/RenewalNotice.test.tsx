@@ -1,8 +1,7 @@
 import { render } from '@testing-library/react';
 import { addMonths } from 'date-fns';
 
-import { ADDON_NAMES, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { type PlansMap, type Subscription, SubscriptionMode } from '@proton/shared/lib/interfaces';

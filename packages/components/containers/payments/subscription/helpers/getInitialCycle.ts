@@ -1,7 +1,14 @@
 import type { FullPlansMap } from '@proton/payments';
-import { type Currency, type FreeSubscription, type PlanIDs, isFreeSubscription } from '@proton/payments';
+import {
+    CYCLE,
+    type Currency,
+    DEFAULT_CYCLE,
+    type FreeSubscription,
+    type PlanIDs,
+    isFreeSubscription,
+} from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { APPS, CYCLE, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Cycle, Subscription } from '@proton/shared/lib/interfaces';
 

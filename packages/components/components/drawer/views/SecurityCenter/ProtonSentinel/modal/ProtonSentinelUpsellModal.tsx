@@ -13,12 +13,11 @@ import Price from '@proton/components/components/price/Price';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import useApi from '@proton/components/hooks/useApi';
-import { type Currency, PLANS } from '@proton/payments';
+import { CYCLE, type Currency, PLANS } from '@proton/payments';
 import {
     APPS,
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
-    CYCLE,
     MAIL_UPSELL_PATHS,
     PROTON_SENTINEL_NAME,
     UPSELL_COMPONENT,

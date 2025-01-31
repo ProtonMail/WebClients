@@ -8,8 +8,8 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { useLoading } from '@proton/hooks';
-import { type Currency, PLANS, PLAN_NAMES, type PaymentsApi, type PlanIDs } from '@proton/payments';
-import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, type Currency, PLANS, PLAN_NAMES, type PaymentsApi, type PlanIDs } from '@proton/payments';
+import { COUPON_CODES } from '@proton/shared/lib/constants';
 import { type Cycle, type PlansMap } from '@proton/shared/lib/interfaces';
 
 import SaveLabel from '../SaveLabel';

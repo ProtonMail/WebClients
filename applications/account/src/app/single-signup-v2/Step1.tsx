@@ -27,6 +27,7 @@ import { IcTag } from '@proton/icons';
 import metrics from '@proton/metrics';
 import {
     type BillingAddress,
+    CYCLE,
     type Currency,
     type FullPlansMap,
     PLANS,
@@ -42,7 +43,6 @@ import {
     APPS,
     BRAND_NAME,
     COUPON_CODES,
-    CYCLE,
     DRIVE_APP_NAME,
     PASS_APP_NAME,
     SSO_PATHS,

@@ -13,8 +13,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import useApi from '@proton/components/hooks/useApi';
-import { type Currency, PLANS, PLAN_NAMES, getPlanByName } from '@proton/payments';
-import { APPS, type APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, type Currency, PLANS, PLAN_NAMES, getPlanByName } from '@proton/payments';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import {
     type SourceEventUpsell,
     UPSELL_MODALS_TYPE,

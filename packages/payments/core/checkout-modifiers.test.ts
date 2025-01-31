@@ -1,7 +1,7 @@
-import { CYCLE } from '@proton/shared/lib/constants';
 import { type SubscriptionCheckResponse, SubscriptionMode } from '@proton/shared/lib/interfaces';
 
 import { getCheckoutModifiers } from './checkout-modifiers';
+import { CYCLE } from './constants';
 
 describe('getCheckoutModifiers', () => {
     let checkResult: SubscriptionCheckResponse;

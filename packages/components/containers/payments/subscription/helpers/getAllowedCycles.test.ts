@@ -1,5 +1,6 @@
 import {
     ADDON_NAMES,
+    CYCLE,
     type Currency,
     DEFAULT_CURRENCY,
     FREE_SUBSCRIPTION,
@@ -7,7 +8,7 @@ import {
     type PlanIDs,
     isRegionalCurrency,
 } from '@proton/payments';
-import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import { COUPON_CODES } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP, getSubscriptionMock, getTestPlansMap } from '@proton/testing/data';
 

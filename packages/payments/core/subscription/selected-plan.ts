@@ -1,4 +1,3 @@
-import { CYCLE } from '@proton/shared/lib/constants';
 import {
     type AddonGuard,
     getAddonType,
@@ -16,7 +15,7 @@ import type { Plan, PlansMap, Subscription } from '@proton/shared/lib/interfaces
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ADDON_NAMES, DEFAULT_CURRENCY, PLANS } from '../constants';
+import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from '../constants';
 import type { Currency, FreeSubscription, MaxKeys, PlanIDs } from '../interface';
 import { getLumoAddonNameByPlan, getScribeAddonNameByPlan } from './helpers';
 import { getPlansMap } from './plans-map-wrapper';
