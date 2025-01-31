@@ -15,8 +15,8 @@ import Price from '@proton/components/components/price/Price';
 import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
 import useApi from '@proton/components/hooks/useApi';
 import { useModalTwoStatic } from '@proton/components/index';
-import { type Currency, PLANS } from '@proton/payments';
-import { APPS, type APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, type Currency, PLANS } from '@proton/payments';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import {
     type SourceEventUpsell,
     UPSELL_MODALS_TYPE,

@@ -1,7 +1,6 @@
-import { type PLANS } from '@proton/payments';
+import { type CYCLE, type PLANS } from '@proton/payments';
 import { type Currency } from '@proton/payments';
 import type { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import type { CYCLE } from '@proton/shared/lib/constants';
 
 export type InteractFields = 'username' | 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
 

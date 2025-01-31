@@ -6,8 +6,9 @@ import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/d
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
+import { type CYCLE } from '@proton/payments';
 import type { ADDON_NAMES, PLANS } from '@proton/payments';
-import { APPS, type APP_NAMES, type CYCLE } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash';

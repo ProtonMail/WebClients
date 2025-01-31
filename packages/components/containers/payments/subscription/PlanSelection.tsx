@@ -19,6 +19,7 @@ import useCancellationFlow from '@proton/components/containers/payments/subscrip
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import {
     ADDON_NAMES,
+    CYCLE,
     type Currency,
     type FreeSubscription,
     PLANS,
@@ -31,7 +32,7 @@ import {
     mainCurrencies,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { APPS, CYCLE } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getCanSubscriptionAccessDuoPlan,

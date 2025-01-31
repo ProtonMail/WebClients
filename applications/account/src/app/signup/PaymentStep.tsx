@@ -28,6 +28,7 @@ import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import type { ExtendedTokenPayment, PaymentMethodStatusExtended, TokenPayment } from '@proton/payments';
 import {
+    CYCLE,
     type Currency,
     PAYMENT_METHOD_TYPES,
     type PlanIDs,
@@ -38,7 +39,6 @@ import {
 } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

@@ -2,8 +2,7 @@ import { act, render } from '@testing-library/react';
 
 import * as paymentsDataUtilsModule from '@proton/components/payments/client-extensions/data-utils';
 import type { PaymentMethodStatus } from '@proton/payments';
-import { DEFAULT_TAX_BILLING_ADDRESS, PLANS, PLAN_TYPES } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_TAX_BILLING_ADDRESS, PLANS, PLAN_TYPES } from '@proton/payments';
 import {
     addApiMock,
     applyHOCs,

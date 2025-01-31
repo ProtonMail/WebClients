@@ -1,8 +1,7 @@
 import type { PaymentMethodStatus } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments';
+import { type CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments';
 import { type Currency } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import type { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { PlansMap } from '@proton/shared/lib/interfaces';

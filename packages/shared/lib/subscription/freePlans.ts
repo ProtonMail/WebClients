@@ -1,7 +1,15 @@
-import { type Currency, DEFAULT_CURRENCY, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '@proton/payments';
+import {
+    CYCLE,
+    type Currency,
+    DEFAULT_CURRENCY,
+    DEFAULT_CYCLE,
+    PLANS,
+    PLAN_NAMES,
+    PLAN_SERVICES,
+    PLAN_TYPES,
+} from '@proton/payments';
 
-import { CYCLE, DEFAULT_CYCLE } from '../constants';
-import type { Cycle, FreePlanDefault, SubscriptionCheckResponse } from '../interfaces';
+import { type Cycle, type FreePlanDefault, type SubscriptionCheckResponse } from '../interfaces';
 
 export const FREE_PLAN: FreePlanDefault = {
     ID: 'free',

@@ -1,5 +1,4 @@
-import { type PlanIDs } from '@proton/payments';
-import type { CYCLE } from '@proton/shared/lib/constants';
+import { type CYCLE, type PlanIDs } from '@proton/payments';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import type { Subscription } from '@proton/shared/lib/interfaces';

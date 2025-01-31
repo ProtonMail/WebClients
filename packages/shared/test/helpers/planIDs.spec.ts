@@ -1,5 +1,4 @@
-import { ADDON_NAMES, PLANS, type PlanIDs, SelectedPlan } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, CYCLE, PLANS, type PlanIDs, SelectedPlan } from '@proton/payments';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { type AggregatedPricing } from '@proton/shared/lib/helpers/subscription';
 import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data';

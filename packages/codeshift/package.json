@@ -1,0 +1,18 @@
+{
+    "name": "proton-codeshift",
+    "version": "0.0.1",
+    "scripts": {
+        "build:transforms": "tsc --project tsconfig.transform.json",
+        "clean": "rimraf \"src/**/*.js\"",
+        "start": "yarn clean && yarn build:transforms && ts-node -P tsconfig.json src/main.ts"
+    },
+    "dependencies": {
+        "jscodeshift": "^17.1.2"
+    },
+    "devDependencies": {
+        "@types/jscodeshift": "^0.12.0",
+        "rimraf": "^5.0.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.0.0"
+    }
+}

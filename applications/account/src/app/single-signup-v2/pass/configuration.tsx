@@ -34,11 +34,10 @@ import {
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     APPS,
     BRAND_NAME,
-    CYCLE,
     FAMILY_MAX_USERS,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,

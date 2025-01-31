@@ -17,6 +17,7 @@ import type {
 } from '@proton/payments';
 import {
     type Currency,
+    type INVOICE_OWNER,
     type INVOICE_STATE,
     type INVOICE_TYPE,
     PAYMENT_METHOD_TYPES,
@@ -24,7 +25,6 @@ import {
     isTokenPaymentMethod,
     isV5PaymentToken,
 } from '@proton/payments';
-import type { INVOICE_OWNER } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import type { ProductParam } from '../apps/product';

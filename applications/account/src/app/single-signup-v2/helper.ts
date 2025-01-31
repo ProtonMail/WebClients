@@ -9,11 +9,12 @@ import type {
     PaymentsApi,
     SavedPaymentMethod,
 } from '@proton/payments';
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 import {
     type ADDON_NAMES,
+    CYCLE,
     type Currency,
     DEFAULT_CURRENCY,
+    DEFAULT_TAX_BILLING_ADDRESS,
     FREE_SUBSCRIPTION,
     PLANS,
     type PlanIDs,
@@ -24,7 +25,7 @@ import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import {

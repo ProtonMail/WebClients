@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { VpnLogo } from '@proton/components';
 import { getVPNPlan } from '@proton/components/containers/payments/features/plan';
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
-import { PLANS } from '@proton/payments';
-import { CYCLE, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS } from '@proton/payments';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import type { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
