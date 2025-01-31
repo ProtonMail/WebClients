@@ -10,11 +10,13 @@ export const PASS_UPGRADE_PATH = EXTENSION_BUILD || DESKTOP_BUILD ? 'pass/signup
 export const useNavigateToUpgrade = (options: {
     coupon?: string;
     cycle?: string;
+    disableEdit?: boolean;
     path?: string;
     plan?: string;
-    offer?: boolean;
+    offer?: string;
     upsellRef?: UpsellRef;
     email?: string;
+    type?: string;
 }) => {
     const { onLink, config, endpoint } = usePassCore();
     const authStore = useAuthStore();
@@ -33,10 +35,12 @@ export const useNavigateToUpgrade = (options: {
 
     if (options.coupon) searchParams.append('coupon', options.coupon);
     if (options.cycle) searchParams.append('cycle', options.cycle);
+    if (options.disableEdit) searchParams.append('edit', 'disable');
     if (options.email) searchParams.append('email', options.email);
-    if (options.offer) searchParams.append('offer', 'true');
+    if (options.offer) searchParams.append('offer', options.offer);
     if (options.plan) searchParams.append('plan', options.plan);
     if (options.upsellRef) searchParams.append('ref', `${refPrefix}_${options.upsellRef}`);
+    if (options.type) searchParams.append('type', options.type);
 
     if (!options.email) {
         const localID = authStore?.getLocalID();
