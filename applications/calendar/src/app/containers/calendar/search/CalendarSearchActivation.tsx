@@ -24,7 +24,7 @@ const CalendarSearchActivation = ({ onClose }: Props) => {
         }
 
         if (!isMetadataIndexingPaused) {
-            void enableEncryptedSearch();
+            void enableEncryptedSearch({ notify: true });
         }
     }, [isLibraryInitialized, isMetadataIndexingPaused, isConfigFromESDBLoaded, esEnabled]);
 
@@ -53,7 +53,7 @@ const CalendarSearchActivation = ({ onClose }: Props) => {
                         shape="outline"
                         color="weak"
                         onClick={() => {
-                            void enableEncryptedSearch();
+                            void enableEncryptedSearch({ notify: true });
                         }}
                     >
                         {c('Action').t`Resume indexing`}
