@@ -22,22 +22,22 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
-import { type BillingAddress, type Currency, PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
+import {
+    type BillingAddress,
+    CYCLE,
+    type Currency,
+    DEFAULT_CYCLE,
+    PLANS,
+    type PlanIDs,
+    getPlansMap,
+} from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import {
-    APPS,
-    BRAND_NAME,
-    CYCLE,
-    DEFAULT_CYCLE,
-    MAIL_APP_NAME,
-    REFERRER_CODE_MAIL_TRIAL,
-    SSO_PATHS,
-} from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, MAIL_APP_NAME, REFERRER_CODE_MAIL_TRIAL, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';

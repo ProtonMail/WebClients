@@ -8,8 +8,9 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { CYCLE } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import { APPS, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import OfferModal from '../../containers/offers/components/OfferModal';

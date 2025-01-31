@@ -1,8 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
 import useOneDollarPromo from '@proton/components/components/upsell/useOneDollarPromo';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
-import { PLANS } from '@proton/payments';
-import { type CYCLE } from '@proton/shared/lib/constants';
+import { type CYCLE, PLANS } from '@proton/payments';
 import { useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 
 interface Props {

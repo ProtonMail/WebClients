@@ -3,13 +3,12 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
-import { type Currency, type FullPlansMap, PLANS } from '@proton/payments';
+import { CYCLE, type Currency, type FullPlansMap, PLANS } from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
     BRAND_NAME,
-    CYCLE,
     DASHBOARD_UPSELL_PATHS,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
