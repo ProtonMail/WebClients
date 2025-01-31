@@ -1,10 +1,13 @@
 {
     "name": "@proton/icons",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "sideEffects": false,
     "files": [
         "lib",
-        "assets"
+        "assets",
+        "icons",
+        "index.ts",
+        "types.ts"
     ],
     "scripts": {
         "build": "yarn generate && tsc -P build.tsconfig.json",
