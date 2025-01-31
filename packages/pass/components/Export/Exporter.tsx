@@ -7,6 +7,7 @@ import { useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
 import type { MaybePromise } from '@proton/pass/types';
@@ -42,6 +43,11 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                 setLoading(true);
 
                 await confirmPassword({
+                    reauth: {
+                        type: ReauthAction.SSO_EXPORT,
+                        data: values,
+                        fork: { promptBypass: 'none', promptType: 'default' },
+                    },
                     message: passwordTypeSwitch({
                         extra: c('Info')
                             .t`Please confirm your extra password in order to export your ${PASS_APP_NAME} data`,
