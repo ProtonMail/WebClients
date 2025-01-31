@@ -6,14 +6,8 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import Price from '@proton/components/components/price/Price';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { type Currency, PLANS, PLAN_NAMES } from '@proton/payments';
-import {
-    APP_UPSELL_REF_PATH,
-    BRAND_NAME,
-    CYCLE,
-    MAIL_UPSELL_PATHS,
-    UPSELL_COMPONENT,
-} from '@proton/shared/lib/constants';
+import { CYCLE, type Currency, PLANS, PLAN_NAMES } from '@proton/payments';
+import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import {
     addUpsellPath,
     getUpgradePath,

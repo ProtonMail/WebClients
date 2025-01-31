@@ -24,11 +24,12 @@ import type { PLANS } from '@proton/payments';
 import {
     CURRENCIES,
     type Currency,
+    DEFAULT_CYCLE,
     type PaymentMethodStatusExtended,
     SelectedPlan,
     getPlansMap,
 } from '@proton/payments';
-import { APPS, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getPlanName, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

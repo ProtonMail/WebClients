@@ -1,5 +1,4 @@
-import { type Currency, isRegionalCurrency } from '@proton/payments';
-import { type CYCLE } from '@proton/shared/lib/constants';
+import { type CYCLE, type Currency, isRegionalCurrency } from '@proton/payments';
 import type { Plan, PlansMap, Pricing } from '@proton/shared/lib/interfaces';
 
 // borrowed from:

@@ -62,6 +62,11 @@ export enum INVOICE_STATE {
     WRITEOFF = 4,
 }
 
+export enum INVOICE_OWNER {
+    USER = 0,
+    ORGANIZATION = 1,
+}
+
 export enum TransactionState {
     SUCCESS = 0,
     VOIDED = 1,
@@ -356,3 +361,15 @@ export const FREE_SUBSCRIPTION = {
     Cycle: undefined,
     UpcomingSubscription: undefined,
 };
+
+export enum CYCLE {
+    MONTHLY = 1,
+    THREE = 3,
+    YEARLY = 12,
+    FIFTEEN = 15,
+    EIGHTEEN = 18,
+    TWO_YEARS = 24,
+    THIRTY = 30,
+}
+
+export const DEFAULT_CYCLE = CYCLE.YEARLY;

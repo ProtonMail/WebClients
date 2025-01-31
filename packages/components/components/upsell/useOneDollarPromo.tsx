@@ -9,8 +9,8 @@ import Price from '@proton/components/components/price/Price';
 import { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
-import { PLANS, PLAN_NAMES, getPlanByName, isMainCurrency } from '@proton/payments';
-import { BRAND_NAME, COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS, PLAN_NAMES, getPlanByName, isMainCurrency } from '@proton/payments';
+import { BRAND_NAME, COUPON_CODES } from '@proton/shared/lib/constants';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 

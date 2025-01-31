@@ -1,5 +1,5 @@
+import { CYCLE } from '@proton/payments';
 import type { PlanIDs } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getSubscriptionMock } from '@proton/testing/data';
 
