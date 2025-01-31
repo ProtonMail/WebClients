@@ -123,6 +123,7 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
                             ...quote,
                         }))
                     )
+                    .filter((quote) => Number(quote.FiatAmount) === Number(amount))
                     .sort((quoteA, quoteB) => {
                         if (quoteA.provider === 'Azteco' && quoteB.provider !== 'Azteco') {
                             return -1;
