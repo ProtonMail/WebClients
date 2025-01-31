@@ -2,15 +2,18 @@ import { c } from 'ttag';
 
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import type { TabId } from '@proton/pass/types';
 import { type Api, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
+import { isObject } from '@proton/pass/utils/object/is-object';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { pullForkSession, setRefreshCookies as refreshTokens, setCookies } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
+import type { ForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { ForkSearchParameters, type ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/fork/validation';
@@ -29,45 +32,71 @@ import { encodeUserData } from './store';
 
 export type RequestForkOptions = {
     app: APP_NAMES;
+    forkType?: ForkType;
     host?: string;
     localID?: number;
-    forkType?: ForkType;
-    prompt?: 'login';
-    payloadType?: 'offline';
+    payloadType?: 'offline' | 'default';
     payloadVersion?: AuthSessionVersion;
+    prompt?: 'login';
+    promptType?: 'default' | 'offline' | 'offline-bypass';
+    promptBypass?: 'none' | 'sso';
 };
-export type RequestForkResult = { state: string; url: string };
 
+export type RequestForkResult = {
+    state: string;
+    url: string;
+};
+
+export type RequestForkData = {
+    type: 'reauth';
+    /** LocalID which initiated the re-auth fork in Pass */
+    localID?: number;
+    /** UserID which initiated the re-auth fork. Compare against
+     * the `PullForkResponse` in order to validate */
+    userID?: string;
+    /** Action that should be resumed upon successful re-auth */
+    reauth: ReauthActionPayload;
+};
+
+export const getStateKey = (state: string) => `f${state}`;
+export const generateForkState = () => encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
+
+/** Will compute offline params by default. Only allows by-pass for web.
+ * Extension does not support password locking yet, as such force re-auth. */
 export const requestFork = ({
     app,
     host = getAppHref('/', APPS.PROTONACCOUNT),
-    localID,
     forkType,
-    prompt = 'login',
+    localID,
     payloadType = 'offline',
     payloadVersion,
+    /** `login` prompt will force re-auth if no by-pass is set-up */
+    prompt = 'login',
+    /** Default behaviour will by pass re-auth for SSO on login.
+     * When doing an in-app SSO re-auth check (ie: before triggering
+     * a data export), pass `none` to force re-auth. */
+    promptBypass = 'sso',
+    promptType = EXTENSION_BUILD || DESKTOP_BUILD ? 'offline' : 'offline-bypass',
 }: RequestForkOptions): RequestForkResult => {
-    const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
-
     const searchParams = new URLSearchParams();
+    const state = generateForkState();
+
     searchParams.append(ForkSearchParameters.App, app);
     searchParams.append(ForkSearchParameters.State, state);
     searchParams.append(ForkSearchParameters.Independent, '0');
+
     if (prompt === 'login') {
-        searchParams.append(ForkSearchParameters.Prompt, 'login'); /* Force re-auth */
-        /* Compute offline params. Only allow by-pass for web. Extension does
-         * not support password locking yet, as such we must force re-auth. */
-        const promptType = EXTENSION_BUILD || DESKTOP_BUILD ? 'offline' : 'offline-bypass';
+        searchParams.append(ForkSearchParameters.Prompt, 'login');
+        searchParams.append(ForkSearchParameters.PromptBypass, promptBypass);
         searchParams.append(ForkSearchParameters.PromptType, promptType);
     }
-    if (payloadType === 'offline') {
-        searchParams.append(ForkSearchParameters.PayloadType, payloadType); /* offline payload */
-    }
+
+    if (payloadType) searchParams.append(ForkSearchParameters.PayloadType, payloadType);
     if (payloadVersion === 2) searchParams.append(ForkSearchParameters.PayloadVersion, `${payloadVersion}`);
     if (localID !== undefined) searchParams.append(ForkSearchParameters.LocalID, `${localID}`);
     if (forkType) searchParams.append(ForkSearchParameters.ForkType, forkType);
 
-    return { url: `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, state };
+    return { state, url: `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}` };
 };
 
 export type PullForkCall = (payload: ConsumeForkPayload) => Promise<PullForkResponse>;
@@ -83,24 +112,54 @@ export type ConsumeForkOptions = {
 
 export type ConsumeForkPayload =
     | {
-          mode: 'web';
           key?: Uint8Array;
           localState: MaybeNull<string>;
+          mode: 'web';
           payloadVersion: AuthSessionVersion;
           persistent: boolean;
           selector: string;
           state: string;
       }
     | {
-          mode: 'secure';
           keyPassword: string;
+          localState: MaybeNull<string>;
+          mode: 'extension';
           persistent: boolean;
           selector: string;
           state: string;
           tabId: TabId;
-          /** FIXME: support passing offline key components
-           * when consuming a "secure" extension fork */
       };
+
+export const pullFork = async (options: ConsumeForkOptions): Promise<PullForkResponse> => {
+    const { payload, apiUrl, api } = options;
+
+    const validFork =
+        (payload.mode === 'extension' || (payload.localState !== null && payload.key)) &&
+        payload.selector &&
+        payload.state;
+
+    if (!validFork) throw new InvalidForkConsumeError('Invalid fork state');
+
+    return (
+        options.pullFork ??
+        (({ selector }) => {
+            const pullForkParams = pullForkSession(selector);
+            pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
+            return api<PullForkResponse>(pullForkParams);
+        })
+    )(payload);
+};
+
+export const extractOfflineComponents = ({
+    offlineKeyPassword,
+    offlineKeySalt,
+}: Extract<ForkEncryptedBlob, { type: 'offline' }>): Required<Pick<AuthSession, 'offlineConfig' | 'offlineKD'>> => ({
+    offlineKD: atob(offlineKeyPassword),
+    offlineConfig: {
+        salt: atob(offlineKeySalt),
+        params: ARGON2_PARAMS.RECOMMENDED,
+    },
+});
 
 /**
  * If `keyPassword` is not provided to `ConsumeForkOptions`, it will attempt to recover it from
@@ -110,25 +169,10 @@ export type ConsumeForkPayload =
  * ⚠️ Only validates the fork state in SSO mode.
  */
 export const consumeFork = async (options: ConsumeForkOptions): Promise<ConsumedFork> => {
-    const { payload, apiUrl, api } = options;
+    const { payload, api } = options;
     const cookies = AUTH_MODE === AuthMode.COOKIE;
 
-    const validFork =
-        (payload.mode === 'secure' || (payload.localState !== null && payload.key)) &&
-        payload.selector &&
-        payload.state;
-
-    if (!validFork) throw new InvalidForkConsumeError('Invalid fork state');
-
-    const pullFork: PullForkCall =
-        options.pullFork ??
-        (({ selector }) => {
-            const pullForkParams = pullForkSession(selector);
-            pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
-            return api<PullForkResponse>(pullForkParams);
-        });
-
-    const { UID, RefreshToken, LocalID, Payload, Scopes } = await pullFork(payload);
+    const { UID, RefreshToken, LocalID, Payload, Scopes } = await pullFork(options);
     const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
     const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
 
@@ -160,15 +204,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
                       return {
                           keyPassword: decryptedBlob.keyPassword,
                           payloadVersion,
-                          ...(decryptedBlob.type === 'offline'
-                              ? {
-                                    offlineConfig: {
-                                        salt: atob(decryptedBlob.offlineKeySalt),
-                                        params: ARGON2_PARAMS.RECOMMENDED,
-                                    },
-                                    offlineKD: atob(decryptedBlob.offlineKeyPassword),
-                                }
-                              : {}),
+                          ...(decryptedBlob.type === 'offline' ? extractOfflineComponents(decryptedBlob) : {}),
                       };
                   } catch (err) {
                       throw new InvalidForkConsumeError(getErrorMessage(err));
@@ -253,3 +289,6 @@ export const getConsumeForkParameters = () => {
         payloadType: payloadType === 'offline' ? payloadType : 'default',
     } as const;
 };
+
+export const isReauthForkState = (data: unknown): data is Extract<RequestForkData, { type: 'reauth' }> =>
+    isObject(data) && 'type' in data && 'reauth' in data && data.type === 'reauth';
