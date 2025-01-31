@@ -5,15 +5,9 @@ import Price from '@proton/components/components/price/Price';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import { getSubscriptionPlanTitleAndName } from '@proton/payments';
+import { CYCLE, getSubscriptionPlanTitleAndName } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import {
-    APPS,
-    CYCLE,
-    DRIVE_SHORT_APP_NAME,
-    FREE_VPN_CONNECTIONS,
-    MAIL_SHORT_APP_NAME,
-} from '@proton/shared/lib/constants';
+import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
     getHasVpnB2BPlan,

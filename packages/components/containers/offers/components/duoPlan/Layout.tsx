@@ -8,8 +8,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import Price from '@proton/components/components/price/Price';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import type { AmountAndCurrency } from '@proton/payments';
-import { PLANS } from '@proton/payments';
-import { APPS, CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import percentage from '@proton/utils/percentage';
 

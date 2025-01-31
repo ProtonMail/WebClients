@@ -1,6 +1,5 @@
-import { type PLANS } from '@proton/payments';
+import { type CYCLE, type PLANS } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import type { CYCLE } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';

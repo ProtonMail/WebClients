@@ -1,12 +1,12 @@
 import {
     type ADDON_NAMES,
+    CYCLE,
     type Currency,
     type FreeSubscription,
     PLANS,
     type PlanIDs,
     hasCycle,
 } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { isRegularCycle, isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
