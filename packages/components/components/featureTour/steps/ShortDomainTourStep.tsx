@@ -73,10 +73,10 @@ const ShortDomainTourStep = (props: FeatureTourStepProps) => {
                 checked={isToggleChecked}
                 onToggle={toggle}
                 title={
-                    <div className="text-left">
+                    <div className="text-left text-ellipsis">
                         {/* translator: Sentense is "Activate myshortDomain@pm.me" if short domain feature is not active. */}
                         {!isFeatureEnabled ? <div className="color-weak">{c('Action').t`Activate`}</div> : null}
-                        <strong className="text-ellipsis pr-4" title={shortDomainAddress}>
+                        <strong className="pr-4" title={shortDomainAddress}>
                             {shortDomainAddress}
                         </strong>
                     </div>
