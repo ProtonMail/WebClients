@@ -2,22 +2,24 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-interface Props {
+interface PDFPreviewProps {
     filename?: string;
-    contents?: Uint8Array[];
+    contents: Uint8Array[];
 }
-const PDFPreview = ({ filename = 'preview.pdf', contents }: Props) => {
+
+const PDFPreview = ({ filename = 'preview.pdf', contents }: PDFPreviewProps) => {
     const [url, setUrl] = useState<string>();
 
     useEffect(() => {
-        const newUrl = URL.createObjectURL(new Blob(contents, { type: 'application/pdf' }));
+        const file = new File(contents, filename, { type: 'application/pdf' });
+        const newUrl = URL.createObjectURL(file);
         setUrl(newUrl);
         return () => {
             if (newUrl) {
                 URL.revokeObjectURL(newUrl);
             }
         };
-    }, [contents]);
+    }, [contents, filename]);
 
     return (
         <>
