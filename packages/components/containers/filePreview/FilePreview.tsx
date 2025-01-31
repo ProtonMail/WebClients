@@ -201,7 +201,7 @@ export const FilePreviewContent = ({
         if (isSupportedText(mimeType)) {
             return <TextPreview contents={contents} onNewContents={onNewContents} />;
         }
-        if (isPDF(mimeType)) {
+        if (isPDF(mimeType) && contents) {
             return <PDFPreview contents={contents} filename={fileName} />;
         }
         if (isWordDocument(mimeType)) {
