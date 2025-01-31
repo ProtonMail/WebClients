@@ -1,10 +1,10 @@
 import type * as H from 'history';
 
-import { PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnUrl';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, CYCLE, REFERRER_CODE_MAIL_TRIAL } from '@proton/shared/lib/constants';
+import { APPS, REFERRER_CODE_MAIL_TRIAL } from '@proton/shared/lib/constants';
 
 import type { InviteData } from '../signup/interfaces';
 import { getSignupSearchParams } from '../signup/searchParams';

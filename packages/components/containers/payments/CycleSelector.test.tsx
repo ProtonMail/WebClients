@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/payments';
 
 import CycleSelector from './CycleSelector';
 

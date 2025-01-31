@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "src",
+        "module": "CommonJS",
+        "noEmit": false,
+        "declaration": false
+    },
+    "include": ["src/**/transform.ts"],
+    "exclude": ["node_modules"]
+}

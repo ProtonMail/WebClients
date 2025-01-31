@@ -1,7 +1,6 @@
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
 import type { PLANS } from '@proton/payments';
-import { type Currency } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, type Currency } from '@proton/payments';
 
 export const getCycleData = ({ plan, coupon, currency }: { plan: PLANS; coupon?: string; currency: Currency }) => {
     if (getIsVPNPassPromotion(coupon, currency)) {

@@ -13,15 +13,9 @@ import useSpotlightShow from '@proton/components/components/spotlight/useSpotlig
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments';
 import { TelemetryMailDrivePostSignupOneDollar } from '@proton/shared/lib/api/telemetry';
-import {
-    APP_UPSELL_REF_PATH,
-    COUPON_CODES,
-    CYCLE,
-    DRIVE_UPSELL_PATHS,
-    UPSELL_COMPONENT,
-} from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, COUPON_CODES, DRIVE_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import clsx from '@proton/utils/clsx';
 

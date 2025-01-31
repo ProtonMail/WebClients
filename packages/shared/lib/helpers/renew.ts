@@ -1,6 +1,5 @@
-import { PLANS, type PlanIDs } from '@proton/payments';
+import { CYCLE, PLANS, type PlanIDs } from '@proton/payments';
 import { type Currency } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import type { Cycle, PlansMap } from '@proton/shared/lib/interfaces';
 
