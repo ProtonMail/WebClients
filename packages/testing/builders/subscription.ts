@@ -1,5 +1,4 @@
-import { PLANS, type PlanIDs } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS, type PlanIDs } from '@proton/payments';
 import { External, type Plan, Renew, type Subscription } from '@proton/shared/lib/interfaces';
 
 import { getTestPlans } from '../data';

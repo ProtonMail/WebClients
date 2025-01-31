@@ -4,12 +4,11 @@ import { c, msgid } from 'ttag';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
 import { getDesktopAppText, getOwnDomainText } from '@proton/components/containers/payments/features/mail';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
     CALENDAR_SHORT_APP_NAME,
-    CYCLE,
     DARK_WEB_MONITORING_NAME,
     DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,

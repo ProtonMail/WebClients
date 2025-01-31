@@ -16,10 +16,17 @@ import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { type Currency, FREE_SUBSCRIPTION, type PlanIDs, getPlansMap, isStringPLAN } from '@proton/payments';
+import {
+    type Currency,
+    DEFAULT_CYCLE,
+    FREE_SUBSCRIPTION,
+    type PlanIDs,
+    getPlansMap,
+    isStringPLAN,
+} from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import {

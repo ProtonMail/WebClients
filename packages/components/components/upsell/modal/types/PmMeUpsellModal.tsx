@@ -5,7 +5,8 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { CYCLE, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/payments';
+import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import pmMeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';

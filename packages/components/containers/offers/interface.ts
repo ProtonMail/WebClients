@@ -4,8 +4,8 @@ import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms';
 import type { IconName, IconSize } from '@proton/components/components/icon/Icon';
 import type { FeatureCode } from '@proton/features';
 import type { PlanIDs } from '@proton/payments';
-import { type Currency } from '@proton/payments';
-import type { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import { type CYCLE, type Currency } from '@proton/payments';
+import type { COUPON_CODES } from '@proton/shared/lib/constants';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
 export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'mail-trial-2024' | 'pass-family-plan-2024-yearly';
