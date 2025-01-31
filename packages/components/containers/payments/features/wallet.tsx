@@ -5,8 +5,8 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
-export const FREE_WALLETS = 2;
-export const FREE_WALLET_ACCOUNTS = 2;
+export const FREE_WALLETS = 3;
+export const FREE_WALLET_ACCOUNTS = 3;
 export const FREE_WALLET_EMAIL = 1;
 
 export const WALLET_PLUS_WALLETS = 10;
@@ -57,7 +57,7 @@ export const getWalletEmailAddresses = (
 };
 
 export const getBitcoinViaEmailText = () => {
-    return c('wallet_signup_2024: Info').t`Bitcoin via email`;
+    return c('wallet_signup_2024: Info').t`Bitcoin via Email`;
 };
 
 export const getBitcoinViaEmail = (): PlanCardFeatureDefinition => {
