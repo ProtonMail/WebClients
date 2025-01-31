@@ -1,8 +1,7 @@
 import { screen } from '@testing-library/react';
 
-import { PLANS } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
-import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { CYCLE, PLANS } from '@proton/payments';
+import { type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';

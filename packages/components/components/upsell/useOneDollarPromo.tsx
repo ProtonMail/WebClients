@@ -9,8 +9,8 @@ import Price from '@proton/components/components/price/Price';
 import { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
-import { PLANS, PLAN_NAMES, getPlanByName, isMainCurrency } from '@proton/payments';
-import { BRAND_NAME, COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS, PLAN_NAMES, getPlanByName, isMainCurrency } from '@proton/payments';
+import { BRAND_NAME, COUPON_CODES } from '@proton/shared/lib/constants';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 
 const OFFER_DEFAULT_AMOUNT_DUE = 100;

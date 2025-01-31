@@ -1,4 +1,4 @@
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/payments';
 
 import type { DealWithPrices } from '../interface';
 import { getDiscount, getDiscountWithCoupon } from './dealPrices';

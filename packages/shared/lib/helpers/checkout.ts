@@ -2,7 +2,9 @@ import { c, msgid } from 'ttag';
 
 import {
     ADDON_NAMES,
+    CYCLE,
     type Currency,
+    DEFAULT_CYCLE,
     type MaxKeys,
     PLANS,
     PLAN_NAMES,
@@ -10,8 +12,14 @@ import {
     type PlanIDs,
 } from '@proton/payments';
 
-import { CYCLE, DEFAULT_CYCLE, LUMO_APP_NAME, VPN_PASS_PROMOTION_COUPONS } from '../constants';
-import type { Plan, PlansMap, Pricing, Subscription, SubscriptionCheckResponse } from '../interfaces';
+import { LUMO_APP_NAME, VPN_PASS_PROMOTION_COUPONS } from '../constants';
+import {
+    type Plan,
+    type PlansMap,
+    type Pricing,
+    type Subscription,
+    type SubscriptionCheckResponse,
+} from '../interfaces';
 import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './addons';
 import { getPlanFromPlanIDs } from './planIDs';
 import {

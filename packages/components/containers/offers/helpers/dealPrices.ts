@@ -1,6 +1,5 @@
-import { type PaymentsApi, getPlanByName, hasCycle } from '@proton/payments';
+import { CYCLE, type PaymentsApi, getPlanByName, hasCycle } from '@proton/payments';
 import type { Currency } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
 
 import type { DealWithPrices, OfferConfig } from '../interface';

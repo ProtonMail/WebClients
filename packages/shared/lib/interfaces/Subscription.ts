@@ -1,7 +1,6 @@
-import type { ADDON_NAMES, Currency, PLANS, PLAN_TYPES } from '@proton/payments';
+import type { ADDON_NAMES, CYCLE, Currency, PLANS, PLAN_TYPES } from '@proton/payments';
 
 import type { ProrationMode } from '../api/payments';
-import type { CYCLE } from '../constants';
 import type { Nullable } from './utils';
 
 export type Cycle =

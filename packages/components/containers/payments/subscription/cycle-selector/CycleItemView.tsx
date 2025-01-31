@@ -1,7 +1,6 @@
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import Price from '@proton/components/components/price/Price';
-import { type Currency, type PlanIDs } from '@proton/payments';
-import type { CYCLE } from '@proton/shared/lib/constants';
+import { type CYCLE, type Currency, type PlanIDs } from '@proton/payments';
 import { isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
 
 import { getMonthFreeText } from '../../../offers/helpers/offerCopies';

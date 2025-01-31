@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/payments';
 import type { Cycle } from '@proton/shared/lib/interfaces';
 
 export const BilledCycleText = ({ cycle }: { cycle: Cycle }) => {

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import { PLANS, PLAN_TYPES } from '@proton/payments';
-import { APPS, CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { External, type Plan } from '@proton/shared/lib/interfaces';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';

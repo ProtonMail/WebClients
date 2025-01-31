@@ -11,8 +11,8 @@ import {
     getNMessagesFeature,
 } from '@proton/components/containers/payments/features/mail';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { PLANS } from '@proton/payments';
-import { APPS, BRAND_NAME, CYCLE, MAIL_APP_NAME, MAIL_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS } from '@proton/payments';
+import { APPS, BRAND_NAME, MAIL_APP_NAME, MAIL_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

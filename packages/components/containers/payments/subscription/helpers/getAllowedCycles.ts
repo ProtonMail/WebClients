@@ -1,5 +1,6 @@
 import {
     ADDON_NAMES,
+    CYCLE,
     type Currency,
     type FreeSubscription,
     PLANS,
@@ -7,7 +8,6 @@ import {
     hasCycle,
     isRegionalCurrency,
 } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';

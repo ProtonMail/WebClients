@@ -1,5 +1,4 @@
-import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
 import { Renew } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP, subscriptionMock, upcomingSubscriptionMock } from '@proton/testing/data';
 

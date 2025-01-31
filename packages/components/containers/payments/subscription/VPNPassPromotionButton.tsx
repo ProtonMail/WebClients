@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Logo from '@proton/components/components/logo/Logo';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import { type Currency } from '@proton/payments';
-import { CYCLE, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { CYCLE, type Currency } from '@proton/payments';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getSimplePriceString } from '../../../components/price/helper';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';

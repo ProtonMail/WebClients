@@ -1,11 +1,11 @@
 import {
     type ADDON_NAMES,
     type AmountAndCurrency,
+    CYCLE,
     type FullPlansMap,
     PLANS,
     isFreeSubscription,
 } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 import type { Member, Organization, Subscription } from '@proton/shared/lib/interfaces';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';

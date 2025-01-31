@@ -39,7 +39,9 @@ import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton/payments';
 import {
+    CYCLE,
     type Currency,
+    DEFAULT_CYCLE,
     PAYMENT_METHOD_TYPES,
     PLANS,
     type PlanIDs,
@@ -52,8 +54,6 @@ import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
-    CYCLE,
-    DEFAULT_CYCLE,
     PASS_SHORT_APP_NAME,
     VPN_APP_NAME,
     VPN_CONNECTIONS,

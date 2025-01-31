@@ -1,4 +1,4 @@
-import type { CYCLE } from '@proton/shared/lib/constants';
+import { type CYCLE } from '@proton/payments';
 
 import type { BaseMeasure, SignupModelV2 } from '../single-signup-v2/interface';
 import type { TelemetryMeasurementData } from './measure';

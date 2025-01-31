@@ -1,8 +1,7 @@
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import type { SelectedPlan } from '@proton/payments';
-import { type ADDON_NAMES, type PLANS, type PlanIDs, getScribeAddonNameByPlan } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { type ADDON_NAMES, CYCLE, type PLANS, type PlanIDs, getScribeAddonNameByPlan } from '@proton/payments';
 import { isScribeAddon, removeAddon } from '@proton/shared/lib/helpers/addons';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 

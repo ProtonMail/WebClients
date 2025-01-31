@@ -1,5 +1,6 @@
 import {
     ADDON_NAMES,
+    CYCLE,
     type Currency,
     DEFAULT_CURRENCY,
     PLANS,
@@ -8,7 +9,6 @@ import {
     SelectedPlan,
 } from '@proton/payments';
 
-import { CYCLE } from '../constants';
 import type { Organization, Plan, PlansMap, StrictPlan, SubscriptionCheckResponse, User } from '../interfaces';
 import { ChargebeeEnabled } from '../interfaces';
 import {
