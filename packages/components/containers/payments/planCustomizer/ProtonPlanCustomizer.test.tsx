@@ -1,7 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS, type PlanIDs } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, type PlanIDs } from '@proton/payments';
 import { type Plan, Renew } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP } from '@proton/testing/data';
