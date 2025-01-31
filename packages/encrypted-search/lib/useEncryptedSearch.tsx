@@ -479,6 +479,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         isRefreshed = false,
         isBackgroundIndexing = false,
         showErrorNotification = true,
+        notify = false,
     } = {}) => {
         // If indexing instance is already in progress, don't start a new one
         const { isEnablingEncryptedSearch } = esStatus;
@@ -678,6 +679,12 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             onMetadataIndexed?.(metrics);
 
             sendEndESIndexingReport({ type: 'metadata', metrics });
+        }
+
+        if (notify && contentIndexingSuccessMessage) {
+            createNotification({
+                text: contentIndexingSuccessMessage,
+            });
         }
 
         // In case this process did not create an IDB, e.g. because it's a memory only
