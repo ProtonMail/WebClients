@@ -1,33 +1,40 @@
 import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/components';
+import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
+import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { getOfflineComponents, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
-import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
+import type { Maybe, MaybeNull, MaybePromise, Result } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { generateClientKey } from '@proton/shared/lib/authentication/clientKey';
+import type { ForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
+import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import noop from '@proton/utils/noop';
 
-import type { PullForkCall } from './fork';
+import type { PullForkCall, RequestForkData } from './fork';
 import {
     type ConsumeForkPayload,
     type RequestForkOptions,
     type RequestForkResult,
     consumeFork,
+    isReauthForkState,
+    pullFork,
     requestFork,
 } from './fork';
 import { checkSessionLock } from './lock/session/lock.requests';
@@ -63,10 +70,12 @@ export type AuthOptions = {
     retryable?: boolean;
     /** If `true`, the session is considered unlocked */
     unlocked?: boolean;
-    /** PRIVATE: Optional override of the `onLoginStart` callback. */
-    onStart?: () => void;
-    /** PRIVATE: Optional override of the `onLoginComplete` callback */
-    onComplete?: (userID: string, localID: Maybe<number>) => void;
+    /** Finalize pending action if it triggered a re-auth  */
+    reauth?: ReauthActionPayload;
+    /** Optional override of the `onLoginStart` callback. */
+    onStart?: AuthServiceConfig['onLoginStart'];
+    /** Optional override of the `onLoginComplete` callback */
+    onComplete?: AuthServiceConfig['onLoginComplete'];
 };
 
 export interface AuthServiceConfig {
@@ -91,10 +100,10 @@ export interface AuthServiceConfig {
     onInit: (options: AuthOptions) => Promise<boolean>;
     /** Called when authorization sequence starts: this can happen when consuming a
      * session fork or when trying to resume a session. */
-    onLoginStart?: () => void;
+    onLoginStart?: () => MaybePromise<void>;
     /** Called whenever a user is successfully authenticated. This can happen
      * after consuming a fork or resuming a session.  */
-    onLoginComplete?: (userID: string, localID: Maybe<number>) => void;
+    onLoginComplete?: (userID: string, localID: Maybe<number>, reauth?: ReauthActionPayload) => MaybePromise<void>;
     /** Called when logout sequence starts before the authentication store is cleared */
     onLogoutStart?: () => void;
     /** Called whenever a user is unauthenticated. This will be triggered any time
@@ -102,15 +111,25 @@ export interface AuthServiceConfig {
      * session is detected). The `broadcast` flag indicates wether we should
      * broadcast the unauthorized session to other clients. */
     onLogoutComplete?: (userID: Maybe<string>, localID: Maybe<number>, broadcast: boolean) => void;
+    /** Called right before consuming a fork. Will not be called in the
+     * case of a "reauth" fork (see `onForkReauth`) */
+    onForkConsumeStart?: () => MaybePromise<void>;
     /** Called immediately after a fork has been successfully consumed. At this
      * point the user is not fully logged in yet. */
-    onForkConsumed?: (session: AuthSession, payload: ConsumeForkPayload) => MaybePromise<void>;
+    onForkConsumeComplete?: (session: AuthSession, payload: ConsumeForkPayload) => MaybePromise<void>;
+    /** Called on a successful fork re-auth flow. */
+    onForkReauth?: (
+        data: Extract<RequestForkData, { type: 'reauth' }>,
+        state: string,
+        blob?: ForkEncryptedBlob
+    ) => Promise<boolean>;
     /** Called when a fork could not be successfully consumed. This can happen
      * if the fork data is invalid */
     onForkInvalid?: () => void;
     /** Handle the result of a fork request call. Can be used to redirect the
-     * user automatically when requesting a fork from account. */
-    onForkRequest?: (result: RequestForkResult) => void;
+     * user automatically when requesting a fork from account. Optional `data`
+     * object should be persisted for the `result.state` key. */
+    onForkRequest?: (result: RequestForkResult, data?: RequestForkData) => void;
     /** Called when an invalid persistent session error is thrown during a
      * session resuming sequence. It will get called with the invalid session
      * and the localID being resumed for retry mechanisms */
@@ -181,7 +200,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             const onLoginStart = options.onStart ?? config.onLoginStart;
             const onLoginComplete = options.onComplete ?? config.onLoginComplete;
 
-            onLoginStart?.();
+            await onLoginStart?.();
 
             try {
                 if (!authStore.validSession(session)) {
@@ -229,7 +248,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
 
             logger.info(`[AuthService] User is authorized`);
-            onLoginComplete?.(authStore.getUserID()!, authStore.getLocalID());
+            await onLoginComplete?.(authStore.getUserID()!, authStore.getLocalID(), options.reauth);
 
             return true;
         },
@@ -252,9 +271,30 @@ export const createAuthService = (config: AuthServiceConfig) => {
             return true;
         },
 
-        consumeFork: async (payload: ConsumeForkPayload, apiUrl?: string): Promise<boolean> => {
+        consumeFork: async (payload: ConsumeForkPayload, apiUrl?: string): Promise<Result<{ reauth: boolean }>> => {
             try {
-                config.onLoginStart?.();
+                const data = safeCall(() => JSON.parse(payload.localState ?? ''))();
+
+                if (isReauthForkState(data)) {
+                    const encryptedSession = await config.getPersistedSession(data.localID);
+                    if (!encryptedSession) throw new Error('No session matching reauth');
+
+                    const { UserID, Payload } = await pullFork({ api, apiUrl, payload, pullFork: config.pullFork });
+                    if (UserID !== encryptedSession.UserID) throw new Error('Reauth session mismatch');
+
+                    const decryptedBlob = await (async () => {
+                        if (payload.mode === 'web') {
+                            const { payloadVersion, key } = payload;
+                            const clientKey = await importKey(key!);
+                            return getForkDecryptedBlob(clientKey, Payload, payloadVersion);
+                        }
+                    })();
+
+                    await config?.onForkReauth?.(data, payload.state, decryptedBlob);
+                    return { ok: true, reauth: true };
+                }
+
+                await config.onForkConsumeStart?.();
 
                 const { session, Scopes } = await consumeFork({ api, apiUrl, payload, pullFork: config.pullFork });
                 const validScope = Scopes.includes('pass');
@@ -268,7 +308,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     delete session.offlineKD;
                 }
 
-                await config.onForkConsumed?.(session, payload);
+                await config.onForkConsumeComplete?.(session, payload);
 
                 /** Override login hooks as `consumeFork` is orchestrating these side-effects */
                 const loggedIn = validScope && (await authService.login(session, { onStart: noop, onComplete: noop }));
@@ -286,9 +326,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
                  * user does not unlock immediately (reset api state for persisting). */
                 if (locked) await api.reset();
                 if (loggedIn || locked) await authService.persistSession({ regenerateClientKey: true });
-                if (loggedIn) config.onLoginComplete?.(authStore.getUserID()!, authStore.getLocalID());
+                if (loggedIn) await config.onLoginComplete?.(authStore.getUserID()!, authStore.getLocalID());
 
-                return true;
+                return { ok: true, reauth: false };
             } catch (error: unknown) {
                 const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
 
@@ -304,9 +344,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
         },
 
-        requestFork: (options: RequestForkOptions): RequestForkResult => {
+        requestFork: (options: RequestForkOptions, data?: RequestForkData): RequestForkResult => {
             const result = requestFork(options);
-            config.onForkRequest?.(result);
+            config.onForkRequest?.(result, data);
 
             return result;
         },
@@ -453,7 +493,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         }
 
                         logger.info(`[AuthService] Resuming persisted session [lock=${options.forceLock ?? false}]`);
-                        config.onLoginStart?.();
+                        await config.onLoginStart?.();
 
                         /** Partially configure the auth store before resume sequence. `keyPassword`
                          * and `sessionLockToken` may be still encrypted at this point */

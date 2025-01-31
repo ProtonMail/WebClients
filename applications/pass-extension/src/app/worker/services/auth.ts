@@ -5,7 +5,7 @@ import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 
 import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
-import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
+import { AccountForkResponse, getAccountForkResponsePayload, getStateKey } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS } from '@proton/pass/lib/auth/session';
@@ -27,7 +27,7 @@ import {
     stopEventPolling,
     unlock,
 } from '@proton/pass/store/actions';
-import type { Api } from '@proton/pass/types';
+import type { Api, MaybeNull } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -254,7 +254,15 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (authStore.hasSession()) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
 
             try {
-                await authService.consumeFork({ mode: 'secure', tabId: tab?.id!, ...payload }, `${SSO_URL}/api`);
+                const stateKey = getStateKey(payload.state);
+                const localState: MaybeNull<string> = await service.storage.session
+                    .getItem<any>(stateKey)
+                    .catch(() => null);
+
+                await authService.consumeFork(
+                    { mode: 'extension', tabId: tab?.id!, localState, ...payload },
+                    `${SSO_URL}/api`
+                );
                 if (clientSessionLocked(status)) await service.storage.session.setItems(authStore.getSession());
                 return getAccountForkResponsePayload(AccountForkResponse.SUCCESS);
             } catch (error: unknown) {
