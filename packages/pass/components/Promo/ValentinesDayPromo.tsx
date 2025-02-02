@@ -11,6 +11,7 @@ import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_VALENTINES_DAY_END_DATE, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectInAppNotificationsEnabled, selectUser, selectUserPlan } from '@proton/pass/store/selectors';
+import type { PassPlanResponse } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { COUPON_CODES } from '@proton/shared/lib/constants';
@@ -19,10 +20,24 @@ import clsx from '@proton/utils/clsx';
 
 import { ValentinesDayPromoModal } from './ValentinesDayPromoModal';
 
+const FORBIDDEN_COUPONS = new Set<string>([
+    COUPON_CODES.LOVEPRIVACY25,
+    COUPON_CODES.LOVEPRIVACY225,
+    COUPON_CODES.PASSFLASH5025,
+]);
+
 const getUpsellRef = (isFreePlan: boolean) => {
     const freeRef = EXTENSION_BUILD ? UpsellRef.VD_25_PASS_FREE_EXTENSION : UpsellRef.VD_25_PASS_FREE_WEB;
     const plusRef = EXTENSION_BUILD ? UpsellRef.VD_25_PASS_PLUS_EXTENSION : UpsellRef.VD_25_PASS_PLUS_WEB;
     return isFreePlan ? freeRef : plusRef;
+};
+
+/** Upsell free users to Pass Plus and upsell Pass Plus users to
+ * Unlimited. Exclude users who have already consumed the offer. */
+const getPlanEligble = ({ InternalName, SubscriptionCoupon }: PassPlanResponse) => {
+    const planEligble = InternalName === 'free' || InternalName === 'pass2023';
+    const couponEligble = !FORBIDDEN_COUPONS.has(SubscriptionCoupon ?? '');
+    return planEligble && couponEligble;
 };
 
 type MaybeToolTipProps = { children: ReactElement; planName: string };
@@ -49,12 +64,11 @@ const ValentinesDayPromo: FC = memo(() => {
 
     const isFreePlan = plan?.InternalName === 'free';
     const planToUpsell = isFreePlan ? PLANS.PASS : PLANS.BUNDLE;
-    /** Upsell free users to Pass Plus and upsell Pass Plus users to Proton Unlimited */
-    const isPlanEligible = plan?.InternalName === 'free' || plan?.InternalName === 'pass2023';
+    const isPlanEligible = plan && getPlanEligble(plan);
     const isUserEligible = isPlanEligible && inAppNotificationEnabled && user && !isDelinquent(user);
 
     const canShowPromo = useMemo(
-        /** Safe-guard promo end date in case feature flagscould not be revalidated */
+        /** Safe-guard promo end date in case feature flags could not be revalidated */
         () => isUserEligible && new Date().getTime() < PASS_VALENTINES_DAY_END_DATE,
         [isUserEligible]
     );
