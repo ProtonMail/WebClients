@@ -8,7 +8,7 @@ import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsB
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { ValentinesDayPromo } from '@proton/pass/components/Onboarding/ValentinesDayPromo';
+import { ValentinesDayPromoButton } from '@proton/pass/components/Promo/ValentinesDayPromo';
 import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useSpotlightMessages } from '@proton/pass/hooks/useSpotlightMessages';
@@ -46,7 +46,7 @@ export const HeaderMain = memo(({ sidebarExpanded, sidebarToggle }: HeaderProps)
                 <div className="flex items-center gap-x-2 w-full">
                     <Hamburger expanded={sidebarExpanded} onToggle={sidebarToggle} />
                     <SearchBar disabled={!interactive} />
-                    <ValentinesDayPromo />
+                    <ValentinesDayPromoButton />
                     <ItemQuickActions />
                     {interactive && <SpotlightSection />}
                 </div>
