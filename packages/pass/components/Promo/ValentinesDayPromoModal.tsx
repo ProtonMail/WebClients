@@ -13,6 +13,7 @@ import {
 import { ValentineOfferLayout } from '@proton/components/containers/offers/components/valentine/ValentineLayout25';
 import protonLogo from '@proton/components/containers/offers/components/valentine/protonLogo.svg';
 import { Icon, ModalTwoContent, ProtonLogo } from '@proton/components/index';
+import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import {
     PASS_PLUS_VALENTINES_DAY_MONTHLY_PRICE,
     PASS_PLUS_VALENTINES_DAY_MONTHLY_PRICE_WITHOUT_COUPON,
@@ -23,8 +24,6 @@ import { selectUser } from '@proton/pass/store/selectors';
 import { DEFAULT_CURRENCY, PLANS, PLAN_NAMES } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-
-import { PassModal } from '../Layout/Modal/PassModal';
 
 type Props = {
     onClose: () => void;
