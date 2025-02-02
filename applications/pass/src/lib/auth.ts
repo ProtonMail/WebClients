@@ -269,6 +269,13 @@ export const createAuthService = ({
         },
 
         onForkConsumed: async (session, { state }) => {
+            if (session.sso) {
+                /** If account provides us offline components for a SSO user,
+                 * remove them to disable backup password locking */
+                delete session.offlineConfig;
+                delete session.offlineKD;
+            }
+
             const { offlineConfig, offlineKD, UserID, LocalID, encryptedOfflineKD } = session;
             history.replace({ hash: '' }); /** removes selector from hash */
 
@@ -296,6 +303,9 @@ export const createAuthService = ({
 
             sw?.send({ type: 'fork', localID: LocalID, userID: UserID, broadcast: true });
 
+            /** Automatically create the password lock if we have the necessary
+             * offline components when consuming the fork. Disabled for SSO users
+             * as this would require using the backup password (bad UX) */
             if (offlineConfig && offlineKD) {
                 logger.info('[AuthServiceProvider] Automatically creating password lock');
                 session.lockMode = encryptedOfflineKD ? LockMode.BIOMETRICS : LockMode.PASSWORD;
