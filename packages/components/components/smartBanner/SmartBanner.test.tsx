@@ -28,6 +28,7 @@ jest.mock('@proton/shared/lib/helpers/browser', () => {
     return {
         isAndroid: jest.fn(),
         isIos: jest.fn(),
+        isMobile: jest.fn(),
     };
 });
 
