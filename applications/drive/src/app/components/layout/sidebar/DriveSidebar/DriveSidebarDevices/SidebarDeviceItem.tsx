@@ -34,6 +34,7 @@ export const SidebarDeviceItem = ({
                 shareId={device.shareId}
                 isActive={() => isActive}
                 style={generateSidebarItemStyle(1)}
+                collapsed={false} // we never show expended devices when collapsed
             >
                 <span className="text-ellipsis" title={device.name} data-testid="sidebar-device-name">
                     {device.name}
