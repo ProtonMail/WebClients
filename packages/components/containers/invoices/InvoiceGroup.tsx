@@ -23,7 +23,11 @@ import PaymentsPdfPreview from './PaymentsPdfPreview';
 import { getInvoicePaymentsVersion } from './helpers';
 import { type InvoicesHook } from './useInvoices';
 
-const InvoiceGroup = ({ invoices, loading, error, page, request }: InvoicesHook) => {
+type Props = InvoicesHook & {
+    onEdit: (invoice: Invoice) => Promise<void>;
+};
+
+const InvoiceGroup = ({ invoices, loading, error, page, request, onEdit }: Props) => {
     const previewRef = useRef<PdfPreviewControls>(null);
     const api = useApi();
 
@@ -85,6 +89,7 @@ const InvoiceGroup = ({ invoices, loading, error, page, request }: InvoicesHook)
                                                 fetchInvoices={request}
                                                 onPreview={previewRef.current?.preview}
                                                 onDownload={handleDownload}
+                                                onEdit={onEdit}
                                             />,
                                         ]}
                                     />
