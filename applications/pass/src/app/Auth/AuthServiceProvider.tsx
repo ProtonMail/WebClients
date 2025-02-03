@@ -79,7 +79,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const run = async () => {
             if (matchPath(history.location.pathname, SSO_PATHS.FORK)) {
                 return authService.consumeFork({
-                    mode: 'sso',
+                    mode: 'web',
                     key,
                     localState,
                     state,
