@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
-import { applyHOCs, withConfig, withPaymentContext } from '@proton/testing';
+import { applyHOCs, withConfig, withNotifications, withPaymentContext, withReduxStore } from '@proton/testing';
 
 import InvoicesSection from './InvoicesSection';
 
@@ -51,7 +51,12 @@ jest.mock('../../hooks/useModals', () => {
 
 jest.mock('@proton/components/payments/client-extensions/useChargebeeContext');
 
-const InvoicesSectionContext = applyHOCs(withConfig(), withPaymentContext())(InvoicesSection);
+const InvoicesSectionContext = applyHOCs(
+    withConfig(),
+    withPaymentContext(),
+    withNotifications(),
+    withReduxStore()
+)(InvoicesSection);
 
 describe('InvoicesSection', () => {
     let useSubscribeEventManagerMock: jest.Mock;

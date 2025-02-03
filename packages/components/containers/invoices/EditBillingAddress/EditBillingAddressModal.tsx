@@ -16,13 +16,29 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { type FullBillingAddress } from '@proton/payments';
+import { type FullBillingAddress, type Invoice, countriesWithStates } from '@proton/payments';
 import { CountryStateSelector } from '@proton/payments/ui';
 import { useDispatch } from '@proton/redux-shared-store';
 
-type Props = ModalProps & {
-    initialFullBillingAddress: FullBillingAddress;
+type EditExistingInvoiceProps = {
+    editExistingInvoice: true;
+    invoice: Invoice;
 };
+
+function isEditExistingInvoice(props: EditInvoiceProps): props is EditExistingInvoiceProps {
+    return props.editExistingInvoice;
+}
+
+export type EditInvoiceProps =
+    | {
+          editExistingInvoice: false;
+      }
+    | EditExistingInvoiceProps;
+
+type Props = ModalProps &
+    EditInvoiceProps & {
+        initialFullBillingAddress: FullBillingAddress;
+    };
 
 const zipCodeValidator = (countryCode: string, zipCode: string | null) => {
     if (countryCode === 'US' && !zipCode) {
@@ -42,21 +58,32 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
     const [loading, withLoading] = useLoading();
 
     const handleSubmit = async () => {
-        await paymentsApi.updateFullBillingAddress(fullBillingAddress);
-        dispatch(
-            changeBillingAddress({ CountryCode: fullBillingAddress.CountryCode, State: fullBillingAddress.State })
-        );
+        if (isEditExistingInvoice(props)) {
+            await paymentsApi.updateInvoiceBillingAddress(props.invoice.ID, fullBillingAddress);
+        } else {
+            await paymentsApi.updateFullBillingAddress(fullBillingAddress);
+            dispatch(
+                changeBillingAddress({ CountryCode: fullBillingAddress.CountryCode, State: fullBillingAddress.State })
+            );
+        }
+
         props.onClose?.();
         createNotification({ text: c('Success').t`Billing details updated` });
     };
+
+    const showCountryAndState = !props.editExistingInvoice;
+    const showPostalCode = !props.editExistingInvoice || !countriesWithStates.includes(fullBillingAddress.CountryCode);
 
     return (
         <ModalTwo as={Form} onSubmit={handleSubmit} {...props}>
             <ModalTwoHeader title={c('Title').t`Edit billing address`} />
             <ModalTwoContent>
                 <p className="mb-4">
-                    {c('Edit billing address form note')
-                        .t`Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.`}
+                    {props.editExistingInvoice
+                        ? c('Edit billing address form note')
+                              .t`Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.`
+                        : c('Edit billing address form note')
+                              .t`Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.`}
                 </p>
                 <form name="billing-address-form">
                     <InputFieldTwo
@@ -109,37 +136,45 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
                         value={fullBillingAddress.City ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, City: value }))}
                     />
-                    <InputFieldTwo
-                        label={
-                            fullBillingAddress.CountryCode === 'US' ? c('Label').t`ZIP code` : c('Label').t`Postal code`
-                        }
-                        placeholder="12345"
-                        name="zipcode"
-                        data-testid="billing-address-zipcode"
-                        value={fullBillingAddress.ZipCode ?? ''}
-                        onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, ZipCode: value }))}
-                        error={validator([
-                            zipCodeValidator(fullBillingAddress.CountryCode, fullBillingAddress.ZipCode),
-                        ])}
-                    />
-                    <div className="field-two-container">
-                        <CountryStateSelector
-                            selectedCountryCode={fullBillingAddress.CountryCode}
-                            setSelectedCountry={(CountryCode: string) => {
-                                setFullBillingAddress((model) => ({
-                                    ...model,
-                                    CountryCode,
-                                    State: null,
-                                }));
-                            }}
-                            setFederalState={(State: string) => {
-                                setFullBillingAddress((model) => ({ ...model, State }));
-                            }}
-                            federalStateCode={fullBillingAddress.State ?? null}
-                            fullsize={true}
-                            validator={validator}
+                    {showPostalCode && (
+                        <InputFieldTwo
+                            label={
+                                fullBillingAddress.CountryCode === 'US'
+                                    ? c('Label').t`ZIP code`
+                                    : c('Label').t`Postal code`
+                            }
+                            placeholder="12345"
+                            name="zipcode"
+                            data-testid="billing-address-zipcode"
+                            value={fullBillingAddress.ZipCode ?? ''}
+                            onValue={(value: string) =>
+                                setFullBillingAddress((model) => ({ ...model, ZipCode: value }))
+                            }
+                            error={validator([
+                                zipCodeValidator(fullBillingAddress.CountryCode, fullBillingAddress.ZipCode),
+                            ])}
                         />
-                    </div>
+                    )}
+                    {showCountryAndState && (
+                        <div className="field-two-container">
+                            <CountryStateSelector
+                                selectedCountryCode={fullBillingAddress.CountryCode}
+                                setSelectedCountry={(CountryCode: string) => {
+                                    setFullBillingAddress((model) => ({
+                                        ...model,
+                                        CountryCode,
+                                        State: null,
+                                    }));
+                                }}
+                                setFederalState={(State: string) => {
+                                    setFullBillingAddress((model) => ({ ...model, State }));
+                                }}
+                                federalStateCode={fullBillingAddress.State ?? null}
+                                fullsize={true}
+                                validator={validator}
+                            />
+                        </div>
+                    )}
                 </form>
             </ModalTwoContent>
 
