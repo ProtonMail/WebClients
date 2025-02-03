@@ -64,6 +64,7 @@ enum PaymentsFlag {
     TransactionsView = 'TransactionsView',
     ScheduledDowncycling = 'ScheduledDowncycling',
     BillingAddressModal = 'BillingAddressModal',
+    EditInvoiceDetails = 'EditInvoiceDetails',
 }
 
 enum CalendarFeatureFlag {
