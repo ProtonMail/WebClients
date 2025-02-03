@@ -436,7 +436,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
                         >
                             <Icon className="shrink-0" name="pass-shield-ok" size={6} />
 
-                            <div>{c('Safety review').t`Review your account safety`}</div>
+                            <div>{c('Safety review').t`Review account safety`}</div>
                         </AppLink>
                     ) : null}
 
