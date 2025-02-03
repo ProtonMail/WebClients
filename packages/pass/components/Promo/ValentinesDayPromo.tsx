@@ -13,6 +13,7 @@ import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectInAppNotificationsEnabled, selectUser, selectUserPlan } from '@proton/pass/store/selectors';
 import type { PassPlanResponse } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { COUPON_CODES } from '@proton/shared/lib/constants';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
@@ -96,6 +97,8 @@ const ValentinesDayPromo: FC = memo(() => {
      * modal so we directly open the upgrade page */
     const handlePromoButtonClick = EXTENSION_BUILD ? upgrade : () => setShowModal(true);
 
+    const onClose = () => setShowModal(false);
+
     return canShowPromo ? (
         <>
             <MaybeToolTip planName={PLAN_NAMES[planToUpsell]}>
@@ -113,8 +116,8 @@ const ValentinesDayPromo: FC = memo(() => {
 
             {!EXTENSION_BUILD && showModal && (
                 <ValentinesDayPromoModal
-                    onClose={() => setShowModal(false)}
-                    onUpgradeClick={upgrade}
+                    onClose={onClose}
+                    onUpgradeClick={pipe(upgrade, onClose)}
                     planToUpsell={planToUpsell}
                 />
             )}
