@@ -94,7 +94,6 @@ import type { Background } from './Layout';
 import Layout from './Layout';
 import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummary';
-import StepLabel from './StepLabel';
 import UpsellModal from './UpsellModal';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
 import swissFlag from './flag.svg';
@@ -139,17 +138,10 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
     );
 };
 
-const BoxHeader = ({ step, title, right }: { step?: number; title: string; right?: ReactNode }) => {
+const BoxHeader = ({ title, right }: { title: string; right?: ReactNode }) => {
     return (
         <div className="flex items-center justify-space-between flex-nowrap">
-            <div className="flex md:items-center flex-column md:flex-row md:gap-4 gap-2">
-                {step !== undefined && (
-                    <div className="shrink-0">
-                        <StepLabel step={step} />
-                    </div>
-                )}
-                <h2 className="text-bold text-4xl md:flex-1">{title}</h2>
-            </div>
+            <h2 className="text-bold text-4xl">{title}</h2>
             {right && <div className="shrink-0">{right}</div>}
         </div>
     );
@@ -666,8 +658,6 @@ const Step1 = ({
 
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE;
 
-    const showStepLabel = !isB2bPlan;
-    let step = 1;
     const padding = 'sm:p-11';
 
     const planInformation = getPlanInformation({
@@ -987,6 +977,64 @@ const Step1 = ({
     const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue);
     const loadingPaymentsForm = model.loadingDependencies;
 
+    const title = (() => {
+        if (mode === 'vpn-pass-promotion' || isVpn2024Deal) {
+            return c('Header').t`Save big on the best ${VPN_APP_NAME} deals`;
+        }
+
+        if (isB2bPlan) {
+            return c('new_plans: feature').t`Start protecting your organization`;
+        }
+
+        if (isBlackFriday) {
+            if (isBlackFridayPeriod) {
+                return c('bf2023: header').t`Save with Black Friday deals on a high-speed Swiss VPN`;
+            }
+            if (isCyberWeekPeriod) {
+                return c('bf2023: header').t`Save with Cyber Week deals on a high-speed Swiss VPN`;
+            }
+            return c('bf2023: header').t`Save with End of Year deals on a high-speed Swiss VPN`;
+        }
+
+        if (mode === 'pricing') {
+            return c('new_plans: feature').t`High-speed Swiss VPN that protects your privacy`;
+        }
+
+        return;
+    })();
+
+    const signInTo = {
+        pathname: `/dashboard${stringifySearchParams(
+            {
+                plan: options.plan.Name,
+                cycle: `${options.cycle}`,
+                currency: options.currency,
+                coupon: options.checkResult.Coupon?.Code,
+                type: 'offer',
+                ref: 'signup',
+            },
+            '?'
+        )}`,
+    } as const;
+
+    const signIn = (
+        <Link
+            key="signin"
+            className="link link-focus text-nowrap"
+            to={signInTo}
+            onClick={() =>
+                measure({
+                    event: TelemetryAccountSignupEvents.userSignIn,
+                    dimensions: {
+                        location: 'step2',
+                    },
+                })
+            }
+        >
+            {c('Link').t`Sign in`}
+        </Link>
+    );
+
     return (
         <Layout
             hasDecoration
@@ -999,38 +1047,21 @@ const Step1 = ({
             }
             background={background}
             isB2bPlan={isB2bPlan}
+            headerCenterElement={
+                <div>
+                    {
+                        // translator: Full sentence "Already have an account? Sign in"
+                        c('Go to sign in').jt`Already have an account? ${signIn}`
+                    }
+                </div>
+            }
         >
             <div className="flex items-center flex-column">
-                <div className="signup-v1-header mb-4 mt-4 md:mt-0 text-center">
-                    <h1 className="m-0 large-font lg:px-4 text-semibold">
-                        {(() => {
-                            if (mode === 'vpn-pass-promotion' || isVpn2024Deal) {
-                                return c('Header').t`Save big on the best ${VPN_APP_NAME} deals`;
-                            }
-
-                            if (isB2bPlan) {
-                                return c('new_plans: feature').t`Start protecting your organization`;
-                            }
-
-                            if (isBlackFriday) {
-                                if (isBlackFridayPeriod) {
-                                    return c('bf2023: header')
-                                        .t`Save with Black Friday deals on a high-speed Swiss VPN`;
-                                }
-                                if (isCyberWeekPeriod) {
-                                    return c('bf2023: header').t`Save with Cyber Week deals on a high-speed Swiss VPN`;
-                                }
-                                return c('bf2023: header').t`Save with End of Year deals on a high-speed Swiss VPN`;
-                            }
-
-                            if (mode === 'pricing') {
-                                return c('new_plans: feature').t`High-speed Swiss VPN that protects your privacy`;
-                            }
-
-                            return c('new_plans: feature').t`Start protecting yourself online in 2 easy steps`;
-                        })()}
-                    </h1>
-                </div>
+                {title && (
+                    <div className="signup-v1-header mb-4 mt-4 md:mt-0 text-center">
+                        <h1 className="m-0 large-font lg:px-4 text-semibold">{title}</h1>
+                    </div>
+                )}
                 {(() => {
                     if (!getHasValentinesCoupon(options.checkResult.Coupon?.Code)) {
                         return null;
@@ -1065,7 +1096,6 @@ const Step1 = ({
                 {showCycleAndSelectors && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
-                            step={showStepLabel ? step++ : undefined}
                             title={(() => {
                                 if (isVpn2024Deal || upsellToVPNPassBundle) {
                                     return c('Header').t`Select your deal`;
@@ -1160,10 +1190,7 @@ const Step1 = ({
                 <Box className="mt-8 w-full">
                     <div className="flex justify-space-between flex-column lg:flex-row ">
                         <div className={`lg:flex-1 ${padding}`}>
-                            <BoxHeader
-                                step={showStepLabel ? step++ : undefined}
-                                title={c('Header').t`Create your account`}
-                            />
+                            <BoxHeader title={c('Header').t`Enter your email address`} />
                             <BoxContent>
                                 <div className="relative">
                                     <AccountStepDetails
@@ -1187,41 +1214,7 @@ const Step1 = ({
                                                   }
                                                 : undefined
                                         }
-                                        footer={(details) => {
-                                            const signInTo = {
-                                                pathname: `/dashboard${stringifySearchParams(
-                                                    {
-                                                        plan: options.plan.Name,
-                                                        cycle: `${options.cycle}`,
-                                                        currency: options.currency,
-                                                        coupon: options.checkResult.Coupon?.Code,
-                                                        type: 'offer',
-                                                        ref: 'signup',
-                                                    },
-                                                    '?'
-                                                )}`,
-                                                state: {
-                                                    username: details.email,
-                                                },
-                                            } as const;
-                                            const signIn = (
-                                                <Link
-                                                    key="signin"
-                                                    className="link link-focus text-nowrap"
-                                                    to={signInTo}
-                                                    onClick={() =>
-                                                        measure({
-                                                            event: TelemetryAccountSignupEvents.userSignIn,
-                                                            dimensions: {
-                                                                location: 'step2',
-                                                            },
-                                                        })
-                                                    }
-                                                >
-                                                    {c('Link').t`Sign in`}
-                                                </Link>
-                                            );
-
+                                        footer={() => {
                                             return (
                                                 <>
                                                     {hasSelectedFree && (
@@ -1238,12 +1231,6 @@ const Step1 = ({
                                                             </Button>
                                                         </div>
                                                     )}
-                                                    <span>
-                                                        {
-                                                            // translator: Full sentence "Already have an account? Sign in"
-                                                            c('Go to sign in').jt`Already have an account? ${signIn}`
-                                                        }
-                                                    </span>
                                                     {!isB2bPlan && (
                                                         <div className="mt-4 color-weak text-sm">
                                                             {c('Info')
@@ -1294,7 +1281,6 @@ const Step1 = ({
                 {!hasSelectedFree && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
-                            step={showStepLabel ? step++ : undefined}
                             title={c('Header').t`Checkout`}
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
