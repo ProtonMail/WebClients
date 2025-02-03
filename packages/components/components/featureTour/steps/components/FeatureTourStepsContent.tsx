@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Scroll } from '@proton/atoms/index';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import clsx from '@proton/utils/clsx';
 
@@ -40,7 +40,7 @@ const FeatureTourStepsContent = ({
     })();
 
     return (
-        <Scroll className="overflow-hidden" scrollContained>
+        <ModalContent unstyled>
             <div
                 className={illustration ? 'relative flex justify-center items-center h-custom custom-bg' : undefined}
                 style={
@@ -86,7 +86,7 @@ const FeatureTourStepsContent = ({
 
                 {bullets}
             </div>
-        </Scroll>
+        </ModalContent>
     );
 };
 
