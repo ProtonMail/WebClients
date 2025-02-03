@@ -6,6 +6,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { INVOICE_STATE, type Invoice } from '@proton/payments';
+import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
@@ -27,6 +28,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
     const [viewLoading, withViewLoading] = useLoading();
     const [editLoading, withEditLoading] = useLoading();
     const redirectToAccountApp = useRedirectToAccountApp();
+    const editInvoiceDetails = useFlag('EditInvoiceDetails');
 
     const list = [
         invoice.State === INVOICE_STATE.UNPAID && {
@@ -73,12 +75,13 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
             },
             loading: downloadLoading,
         },
-        {
-            text: c('Action').t`Edit billing address`,
-            'data-testid': 'editBillingAddress',
-            onClick: () => withEditLoading(onEdit(invoice)),
-            loading: editLoading,
-        },
+        editInvoiceDetails &&
+            !!invoice.IsExternal && {
+                text: c('Action').t`Edit billing address`,
+                'data-testid': 'editBillingAddress',
+                onClick: () => withEditLoading(onEdit(invoice)),
+                loading: editLoading,
+            },
     ].filter(isTruthy);
 
     return <DropdownActions loading={Boolean(downloadLoading || viewLoading)} list={list} size="small" />;
