@@ -8,7 +8,19 @@ import { type CYCLE, type Currency } from '@proton/payments';
 import type { COUPON_CODES } from '@proton/shared/lib/constants';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'mail-trial-2024' | 'pass-family-plan-2024-yearly';
+export type OfferId =
+    | 'go-unlimited-2022'
+    | 'mail-trial-2023'
+    | 'mail-trial-2024'
+    | 'pass-family-plan-2024-yearly'
+    | 'valentine-2025-mail-plus'
+    | 'valentine-2025-mail-bundle'
+    | 'valentine-2025-drive-plus'
+    | 'valentine-2025-drive-bundle'
+    | 'valentine-2025-vpn-plus'
+    | 'valentine-2025-vpn-bundle'
+    | 'valentine-2025-pass-plus'
+    | 'valentine-2025-pass-bundle';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
