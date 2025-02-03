@@ -21,8 +21,14 @@ import {
     PROTON_UNLIMITED_VALENTINES_DAY_MONTHLY_PRICE_WITHOUT_COUPON,
 } from '@proton/pass/constants';
 import { selectUser } from '@proton/pass/store/selectors';
-import { DEFAULT_CURRENCY, PLANS, PLAN_NAMES } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_NAMES } from '@proton/payments';
+import {
+    BRAND_NAME,
+    CALENDAR_APP_NAME,
+    DARK_WEB_MONITORING_NAME,
+    DRIVE_APP_NAME,
+    MAIL_APP_NAME,
+} from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 type Props = {
@@ -38,10 +44,27 @@ export const ValentinesDayPromoModal: FC<Props> = ({ onClose, onUpgradeClick, pl
 
     const dealName = PLAN_NAMES[planToUpsell];
 
-    const features = [
+    const passPlusfeatures = [
         { name: c('Valentine_2025: Offer').t`Unlimited hide-my-email aliases` },
         { name: c('Valentine_2025: Offer').t`Integrated 2FA authenticator` },
         { name: c('Valentine_2025: Offer').t`Secure vault sharing` },
+    ];
+
+    const unlimitedFeatures = [
+        {
+            name: c('Valentine_2025: Offer').t`500 GB total storage`,
+            tooltip: c('Valentine_2025: Offer')
+                .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`,
+        },
+        {
+            name: c('Valentine_2025: Offer').t`All Mail, VPN, Pass, and Drive premium features`,
+            tooltip: c('Valentine_2025: Offer').t`All premium ${BRAND_NAME} services. One easy subscription.`,
+        },
+        {
+            name: c('Valentine_2025: Offer').t`Advanced account protection`,
+            tooltip: c('Valentine_2025: Offer')
+                .t`Offers top-tier account security and expert support. ${DARK_WEB_MONITORING_NAME} scans hidden parts of the internet for ${MAIL_APP_NAME} email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.`,
+        },
     ];
 
     const priceWithCoupon =
@@ -108,7 +131,9 @@ export const ValentinesDayPromoModal: FC<Props> = ({ onClose, onUpgradeClick, pl
                             >{c('Valentine_2025: Offer').t`50% off`}</p>
                         </section>
                         <ValentineCTA onClick={onUpgradeClick} />
-                        <ValentineFeatureList features={features} />
+                        <ValentineFeatureList
+                            features={planToUpsell === PLANS.PASS ? passPlusfeatures : unlimitedFeatures}
+                        />
                         <ValentineFooter />
                     </section>
                 </ValentineOfferLayout>
