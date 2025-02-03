@@ -3,7 +3,7 @@ import type { HTMLAttributes, ReactNode } from 'react';
 import { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
-interface Props extends HTMLAttributes<HTMLSpanElement> {
+interface SidebarListItemContentProps extends HTMLAttributes<HTMLSpanElement> {
     icon?: IconName;
     iconColor?: string;
     children?: ReactNode;
@@ -13,7 +13,14 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
     collapsed?: boolean;
 }
 
-const SidebarListItemContent = ({ left, right, children, collapsed, className, ...rest }: Props) => {
+const SidebarListItemContent = ({
+    left,
+    right,
+    children,
+    collapsed,
+    className,
+    ...rest
+}: SidebarListItemContentProps) => {
     return (
         <span className={clsx('flex flex-nowrap w-full items-center', !collapsed && 'gap-2', className)} {...rest}>
             {left}

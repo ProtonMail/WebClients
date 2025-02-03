@@ -15,7 +15,7 @@ const UploadFolderButton = ({ onClick }: Props) => {
                 data-testid="dropdown-upload-folder"
             >
                 <Icon className="mr-2" name="folder-arrow-up" />
-                {c('Action').t`Upload folder`}
+                <span>{c('Action').t`Upload folder`}</span>
             </DropdownMenuButton>
         </>
     );
