@@ -11,6 +11,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user.jpg';
+import { useFlag } from '@proton/unleash/index';
 import { useWalletApiClients } from '@proton/wallet';
 
 import { Button, Input } from '../../atoms';
@@ -25,6 +26,7 @@ interface InviteModalOwnProps {
 type Props = ModalOwnProps & InviteModalOwnProps;
 
 export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalProps }: Props) => {
+    const isEarlyAccess = useFlag('WalletEarlyAccess');
     const [selectedInviterId, setSelectedInviterId] = useState<string>();
 
     useEffect(() => {
@@ -111,15 +113,23 @@ export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalPro
                         style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                     />
 
-                    <h1 className="block text-semibold text-4xl text-center mb-2">{c('Wallet invite')
-                        .t`Exclusive Invites`}</h1>
+                    <h1 className="block text-semibold text-4xl text-center mb-2">
+                        {isEarlyAccess ? c('Wallet invite').t`Exclusive Invites` : c('Wallet invite').t`Invites`}
+                    </h1>
                 </div>
 
                 <ModalParagraph>
-                    <p>{c('Wallet invite')
-                        .t`${WALLET_APP_NAME} Early Access is limited to Visionary supporters and invited users.`}</p>
-                    <p>{c('Wallet invite')
-                        .t`Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.`}</p>
+                    {isEarlyAccess ? (
+                        <>
+                            <p>{c('Wallet invite')
+                                .t`${WALLET_APP_NAME} Early Access is limited to Visionary supporters and invited users.`}</p>
+                            <p>{c('Wallet invite')
+                                .t`Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.`}</p>
+                        </>
+                    ) : (
+                        c('Wallet invite')
+                            .t`Invite your friends and family to ${WALLET_APP_NAME} so you can all send Bitcoin via Email.` // translator: Invite your friends and family to Proton Wallet so you can all send Bitcoin via Email.
+                    )}
                 </ModalParagraph>
 
                 <div className="flex flex-row mt-2 w-full">
