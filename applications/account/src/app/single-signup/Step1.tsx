@@ -996,10 +996,6 @@ const Step1 = ({
             return c('bf2023: header').t`Save with End of Year deals on a high-speed Swiss VPN`;
         }
 
-        if (mode === 'pricing') {
-            return c('new_plans: feature').t`High-speed Swiss VPN that protects your privacy`;
-        }
-
         return;
     })();
 
@@ -1074,7 +1070,7 @@ const Step1 = ({
                         />
                     );
                 })()}
-                {(mode === 'pricing' || mode === 'vpn-pass-promotion') && !isB2bPlan && (
+                {mode === 'vpn-pass-promotion' && !isB2bPlan && (
                     <div
                         className={clsx(
                             'flex flex-nowrap md:gap-8 gap-3',
@@ -1281,7 +1277,7 @@ const Step1 = ({
                 {!hasSelectedFree && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
-                            title={c('Header').t`Checkout`}
+                            title={c('Header').t`Select your payment method`}
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
                         <BoxContent>
