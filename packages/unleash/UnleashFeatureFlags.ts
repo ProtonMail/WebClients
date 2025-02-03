@@ -25,8 +25,6 @@ enum CommonFeatureFlag {
     InboxWebPostSubscriptionFlow = 'InboxWebPostSubscriptionFlow',
     NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
     ScribeAdminSetting = 'ScribeAdminSetting',
-    WalletRbf = 'WalletRbf',
-    WalletAddressList = 'WalletAddressList',
     WalletAztecoWeb = 'WalletAztecoWeb',
     WalletFullSync = 'WalletFullSync',
     WalletEarlyAccess = 'WalletEarlyAccess',
