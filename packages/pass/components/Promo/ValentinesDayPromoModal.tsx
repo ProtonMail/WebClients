@@ -77,6 +77,10 @@ export const ValentinesDayPromoModal: FC<Props> = ({ onClose, onUpgradeClick, pl
             ? PASS_PLUS_VALENTINES_DAY_MONTHLY_PRICE_WITHOUT_COUPON
             : PROTON_UNLIMITED_VALENTINES_DAY_MONTHLY_PRICE_WITHOUT_COUPON;
 
+    const userCurrency = user?.Currency ?? DEFAULT_CURRENCY;
+    /** Prices are only correct for USD, EUR and CHF. If user uses another currency, defaults to EUR */
+    const displayedCurrency = ['USD', 'EUR', 'CHF'].includes(userCurrency) ? userCurrency : DEFAULT_CURRENCY;
+
     const isDarkTheme = document.body.classList.contains('pass-dark');
 
     return (
@@ -113,7 +117,7 @@ export const ValentinesDayPromoModal: FC<Props> = ({ onClose, onUpgradeClick, pl
                                 ref: '',
                                 planIDs: {},
                             }}
-                            currency={user?.Currency ?? DEFAULT_CURRENCY}
+                            currency={displayedCurrency}
                         />
                         <section className="py-3 px-3 mb-4 gap-4 rounded-lg flex flex-row items-center relative valentine-text valentine-background">
                             <Icon name="plus" size={7} className="shrink-0" />
