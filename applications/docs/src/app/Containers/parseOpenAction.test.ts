@@ -36,6 +36,27 @@ describe('parseOpenAction', () => {
       })
     })
 
+    it('handles open-url-download mode with public link', () => {
+      const params = createSearchParams({
+        mode: 'open-url-download',
+        token: 'test-token',
+        linkId: 'test-link',
+        action: 'edit',
+      })
+
+      Object.defineProperty(window, 'location', {
+        value: { hash: '#password123' },
+      })
+
+      expect(parseOpenAction(params)).toEqual({
+        mode: 'open-url-download',
+        token: 'test-token',
+        linkId: 'test-link',
+        urlPassword: '#password123',
+        action: 'edit',
+      })
+    })
+
     it('handles open-url-reauth mode', () => {
       const params = createSearchParams({
         mode: 'open-url-reauth',
