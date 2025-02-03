@@ -7,10 +7,12 @@ import { useWelcomeFlags } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { CYCLE } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
 import OfferModal from '../../containers/offers/components/OfferModal';
@@ -45,6 +47,8 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
         currency,
         onChangeCurrency,
     } = useOfferModal(offerConfig);
+
+    const theme = useTheme();
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -110,6 +114,9 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
     const upgradeIcon =
         CTAText.length > 20 && viewportWidth['>=large'] ? undefined : offerConfig.topButton?.icon || 'bag-percent';
 
+    const buttonSize =
+        viewportWidth['<=small'] || (CTAText.length > 14 && app === APPS.PROTONCALENDAR) ? 'small' : 'medium';
+
     return (
         <>
             <TopNavbarListItem collapsedOnDesktop={false} noShrink>
@@ -117,7 +124,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
                     as="button"
                     type="button"
                     color="norm"
-                    size={CTAText.length > 14 && app === APPS.PROTONCALENDAR ? 'small' : 'medium'}
+                    size={buttonSize}
                     responsive
                     shape={offerConfig.topButton?.shape || 'solid'}
                     buttonGradient={offerConfig.topButton?.gradient}
@@ -132,8 +139,18 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
                     className={clsx([
                         offerConfig.topButton?.variant && `button-promotion--${offerConfig.topButton?.variant}`,
                         offerConfig.topButton?.variant === 'bf-2024' && 'text-uppercase text-semibold',
+                        offerConfig.topButton?.variant === 'valentines-day' && 'text-uppercase text-semibold',
+                        offerConfig.topButton?.variant === 'valentines-day' &&
+                            (theme.information.dark ||
+                                theme.information.theme === ThemeTypes.Classic ||
+                                theme.information.theme === ThemeTypes.Legacy) &&
+                            'color-inherit',
                     ])}
-                    pill={!!offerConfig.topButton?.variant && offerConfig.topButton?.variant !== 'bf-2024'}
+                    pill={
+                        !!offerConfig.topButton?.variant &&
+                        offerConfig.topButton?.variant !== 'bf-2024' &&
+                        offerConfig.topButton?.variant !== 'valentines-day'
+                    }
                     data-testid="cta:special-offer"
                 >
                     {CTAText}

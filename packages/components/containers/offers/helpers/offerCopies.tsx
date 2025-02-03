@@ -462,6 +462,28 @@ export const getDealDurationText = (cycle: CYCLE | undefined) => {
     return c('specialoffer: Offers').ngettext(msgid`${n} month`, `${n} months`, n);
 };
 
+export const getDealMonthDurationText = (cycle: CYCLE | undefined) => {
+    const n = Number(cycle);
+
+    if (n === 12) {
+        return c('Valentine_2025: Offers').t`12 months`;
+    }
+
+    if (n === 24) {
+        return c('Valentine_2025: Offers').t`24 months`;
+    }
+
+    if (n === 15) {
+        return c('Valentine_2025: Offers').t`15 months`;
+    }
+
+    if (n === 30) {
+        return c('Valentine_2025: Offers').t`30 months`;
+    }
+
+    return c('Valentine_2025: Offers').ngettext(msgid`${n} month`, `${n} months`, n);
+};
+
 export const getDealDuration = (cycle: CYCLE): ReactElement | null => {
     return <>{getDealDurationText(cycle)}</>;
 };
