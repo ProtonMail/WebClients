@@ -793,6 +793,21 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
     return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
 };
 
+const forbiddenCoupon = new Set<string>([
+    COUPON_CODES.LOVEPRIVACY25,
+    COUPON_CODES.LOVEPRIVACY225,
+    COUPON_CODES.MAILFLASH5025,
+    COUPON_CODES.DRIVEFLASH5025,
+    COUPON_CODES.VPNFLASH6025,
+    COUPON_CODES.PASSFLASH5025,
+]);
+export const getHasValentineCoupon = (subscription: Subscription | undefined) => {
+    return (
+        forbiddenCoupon.has(subscription?.CouponCode ?? '') ||
+        forbiddenCoupon.has(subscription?.UpcomingSubscription?.CouponCode ?? '')
+    );
+};
+
 export function isCancellableOnlyViaSupport(subscription: Subscription | undefined) {
     const vpnB2BPlans = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO];
     const isVpnB2BPlan = vpnB2BPlans.includes(getPlanName(subscription) as PLANS);

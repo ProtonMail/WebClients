@@ -185,6 +185,7 @@ export type IconName =
     | 'folders'
     | 'folders-filled'
     | 'gift'
+    | 'gift-2'
     | 'globe'
     | 'grid-2'
     | 'grid-3'
@@ -448,6 +449,7 @@ export { IcBrandPaypal } from './icons/IcBrandPaypal';
 export { IcBrandProton } from './icons/IcBrandProton';
 export { IcBrandProtonCalendar } from './icons/IcBrandProtonCalendar';
 export { IcBrandProtonCalendarFilled } from './icons/IcBrandProtonCalendarFilled';
+export { IcBrandProtonDocs } from './icons/IcBrandProtonDocs';
 export { IcBrandProtonDrive } from './icons/IcBrandProtonDrive';
 export { IcBrandProtonDriveFilled } from './icons/IcBrandProtonDriveFilled';
 export { IcBrandProtonMail } from './icons/IcBrandProtonMail';
@@ -562,6 +564,7 @@ export { IcFolderPlus } from './icons/IcFolderPlus';
 export { IcFolders } from './icons/IcFolders';
 export { IcFoldersFilled } from './icons/IcFoldersFilled';
 export { IcGift } from './icons/IcGift';
+export { IcGift2 } from './icons/IcGift2';
 export { IcGlobe } from './icons/IcGlobe';
 export { IcGrid2 } from './icons/IcGrid2';
 export { IcGrid3 } from './icons/IcGrid3';
@@ -700,6 +703,7 @@ export { IcShield2Bolt } from './icons/IcShield2Bolt';
 export { IcShield2CheckFilled } from './icons/IcShield2CheckFilled';
 export { IcShieldFilled } from './icons/IcShieldFilled';
 export { IcShieldHalfFilled } from './icons/IcShieldHalfFilled';
+export { IcShieldExclamationFilled } from './icons/IcShieldExclamationFilled';
 export { IcSizeArrowUp } from './icons/IcSizeArrowUp';
 export { IcSizeArrowDown } from './icons/IcSizeArrowDown';
 export { IcSpeechBubble } from './icons/IcSpeechBubble';
