@@ -3,18 +3,20 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { SidebarList } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { type ShareWithKey, useDriveSharingFlags, useInvitationsView, useUserSettings } from '../../../../store';
 import DriveSidebarDevices from './DriveSidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
 import DriveSidebarListItem from './DriveSidebarListItem';
 
-interface Props {
+interface DriveSidebarListProps {
     shareId?: string;
     userShares: ShareWithKey[];
+    collapsed: boolean;
 }
 
-const DriveSidebarList = ({ shareId, userShares }: Props) => {
+const DriveSidebarList = ({ shareId, userShares, collapsed }: DriveSidebarListProps) => {
     const { photosEnabled } = useUserSettings();
     const { invitations } = useInvitationsView();
     const [sidebarWidth, setSidebarWidth] = useState('100%');
@@ -40,12 +42,18 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                     shareId={userShare.shareId}
                     linkId={userShare.rootLinkId}
                     setSidebarLevel={setSidebarLevel}
+                    collapsed={collapsed}
                 />
             ))}
-            <DriveSidebarDevices setSidebarLevel={setSidebarLevel} />
+            <DriveSidebarDevices collapsed={collapsed} setSidebarLevel={setSidebarLevel} />
             {photosEnabled && (
-                <DriveSidebarListItem to="/photos" icon="image" isActive={(match) => match?.url === '/photos'}>
-                    <span className="text-ellipsis" title={c('Link').t`Photos`}>
+                <DriveSidebarListItem
+                    to="/photos"
+                    icon="image"
+                    collapsed={collapsed}
+                    isActive={(match) => match?.url === '/photos'}
+                >
+                    <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
                     </span>
                 </DriveSidebarListItem>
@@ -54,19 +62,24 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                 to="/shared-urls"
                 icon="link"
                 shareId={shareId}
+                collapsed={collapsed}
                 isActive={(match) => match?.url === '/shared-urls'}
             >
-                <span className="text-ellipsis" title={c('Link').t`Shared`}>{c('Link').t`Shared`}</span>
+                <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Shared`}>{c('Link')
+                    .t`Shared`}</span>
             </DriveSidebarListItem>
             {showSharedWithMeSection && (
                 <DriveSidebarListItem
                     to="/shared-with-me"
                     icon="users"
                     shareId={shareId}
+                    collapsed={collapsed}
                     isActive={(match) => match?.url === '/shared-with-me'}
                 >
-                    <span className="text-ellipsis" title={c('Link').t`Shared with me`}>{c('Link')
-                        .t`Shared with me`}</span>
+                    <span
+                        className={clsx('text-ellipsis', collapsed && 'sr-only')}
+                        title={c('Link').t`Shared with me`}
+                    >{c('Link').t`Shared with me`}</span>
                     {!!invitations.length && (
                         <span
                             className="navigation-counter-item px-1 ml-auto"
@@ -83,9 +96,11 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                 to="/trash"
                 icon="trash"
                 shareId={shareId}
+                collapsed={collapsed}
                 isActive={(match) => match?.url === '/trash'}
             >
-                <span className="text-ellipsis" title={c('Link').t`Trash`}>{c('Link').t`Trash`}</span>
+                <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Trash`}>{c('Link')
+                    .t`Trash`}</span>
             </DriveSidebarListItem>
         </SidebarList>
     );

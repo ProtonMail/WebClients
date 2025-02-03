@@ -15,10 +15,10 @@ const CreateDocumentButton = ({ onClick }: Props) => {
         >
             <span className="flex items-center">
                 <MimeIcon name="proton-doc" className="mr-2" />
-                {
+                <span>{
                     // translator: Action button in sidebar dropdown to create a new Proton Document
                     c('Action').t`New document`
-                }
+                }</span>
             </span>
         </DropdownMenuButton>
     );
