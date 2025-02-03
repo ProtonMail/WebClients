@@ -6,6 +6,7 @@ import { mockUseAddresses, mockUseNotifications } from '@proton/testing/lib/vite
 import {
     apiWalletAccountOneA,
     getAddressKey,
+    mockUseFlag,
     mockUseRemainingInvites,
     mockUseWalletApiClients,
     mockUseWalletDispatch,
@@ -15,6 +16,7 @@ import { InvitesButton } from '.';
 
 describe('InvitesButton', () => {
     beforeAll(async () => {
+        mockUseFlag(true);
         await setupCryptoProxyForTesting();
     });
 
