@@ -336,6 +336,8 @@ export interface PaymentsApi {
 
     getFullBillingAddress: () => Promise<FullBillingAddress>;
     updateFullBillingAddress: (fullBillingAddress: FullBillingAddress) => Promise<void>;
+    updateInvoiceBillingAddress: (invoiceId: string, fullBillingAddress: FullBillingAddress) => Promise<void>;
+    getInvoiceBillingAddress: (invoiceId: string) => Promise<FullBillingAddress>;
 }
 
 export type ChargebeeKillSwitchData = {

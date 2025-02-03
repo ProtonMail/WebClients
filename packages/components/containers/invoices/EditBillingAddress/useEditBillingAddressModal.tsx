@@ -1,32 +1,50 @@
 import { useState } from 'react';
 
+import { c } from 'ttag';
+
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import useLoading from '@proton/hooks/useLoading';
 import { type FullBillingAddress } from '@proton/payments';
 
-import InvoiceTextNewModal from './EditBillingAddressModal';
+import InvoiceTextNewModal, { type EditInvoiceProps } from './EditBillingAddressModal';
 
 export const useEditBillingAddressModal = () => {
     const [modalProps, setModalOpen, renderModal] = useModalState();
     const [initialFullBillingAddress, setInitialFullBillingAddress] = useState<FullBillingAddress>();
+    const [editExistingInvoiceProps, setEditExistingInvoiceProps] = useState<EditInvoiceProps>({
+        editExistingInvoice: false,
+    });
     const { paymentsApi } = usePaymentsApi();
-    const [loadingBillingAddressModal, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
 
-    const openBillingAddressModal = (): Promise<unknown> => {
-        return withLoading(async () => {
-            const fullBillingAddress = await paymentsApi.getFullBillingAddress();
+    const openBillingAddressModal = async (props: EditInvoiceProps): Promise<void> => {
+        try {
+            let fullBillingAddress: FullBillingAddress;
+            if (props.editExistingInvoice) {
+                fullBillingAddress = await paymentsApi.getInvoiceBillingAddress(props.invoice.ID);
+            } else {
+                fullBillingAddress = await paymentsApi.getFullBillingAddress();
+            }
             setInitialFullBillingAddress(fullBillingAddress);
-            // todo add error handling
-
+            setEditExistingInvoiceProps(props);
             setModalOpen(true);
-        });
+        } catch (error) {
+            createNotification({
+                type: 'error',
+                text: c('Error').t`Editing billing address is not available at the moment. Please try again later.`,
+            });
+        }
     };
 
     const editBillingAddressModal =
         renderModal && !!initialFullBillingAddress ? (
-            <InvoiceTextNewModal initialFullBillingAddress={initialFullBillingAddress} {...modalProps} />
+            <InvoiceTextNewModal
+                initialFullBillingAddress={initialFullBillingAddress}
+                {...editExistingInvoiceProps}
+                {...modalProps}
+            />
         ) : null;
 
-    return { editBillingAddressModal, openBillingAddressModal, loadingBillingAddressModal };
+    return { editBillingAddressModal, openBillingAddressModal };
 };
