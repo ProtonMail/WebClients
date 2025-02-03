@@ -30,7 +30,7 @@ interface Props extends DownloadButtonProps {
     isFolderView?: boolean;
     token: string;
     linkId: string;
-    openInDocs?: (linkId: string) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
 }
 
 export function SharedPageContentHeader({

@@ -34,7 +34,7 @@ export function DrivePublicContextMenu({
     selectedLinks: DecryptedLink[];
     isActiveLinkReadOnly?: boolean;
     openPreview: (item: DecryptedLink) => void;
-    openInDocs?: (linkId: string) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
 }) {
     const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
     const { canRename, canDelete } = usePublicLinksPermissions(selectedLinks);
@@ -66,7 +66,8 @@ export function DrivePublicContextMenu({
                     />
                 )}
                 {(showPreviewButton || showOpenInDocsButton) && <ContextSeparator />}
-                {isDownloadScanEnabled && showDownloadButton && (
+                {/* // Hide button with scan as docs can't be scanned */}
+                {isDownloadScanEnabled && showDownloadButton && !showOpenInDocsButton && (
                     <DownloadButton
                         selectedBrowserItems={selectedLinks}
                         openInDocs={openInDocs}

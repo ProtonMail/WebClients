@@ -14,26 +14,25 @@ interface SelectedBrowserItem extends Omit<LinkDownload, 'shareId'> {
 interface Props {
     selectedBrowserItems: SelectedBrowserItem[];
     close: () => void;
-    openInDocs?: (linkId: string) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
     virusScan?: boolean;
 }
 export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusScan }: Props) => {
     const { download } = useDownload();
     const { token } = usePublicToken();
+    const count = selectedBrowserItems.length;
+    const isDoc = isProtonDocument(selectedBrowserItems[0]?.mimeType);
 
     const onClick = async () => {
         // Document downloads are handled in two ways:
         //  1. single files are redirected to the Docs app using `downloadDocument`
         //  2. multiple files are ignored, using `handleContainsDocument` in the queue
-        const documentLink =
-            selectedBrowserItems.length === 1 && isProtonDocument(selectedBrowserItems[0].mimeType)
-                ? selectedBrowserItems[0]
-                : undefined;
+        const documentLink = selectedBrowserItems.length === 1 && isDoc ? selectedBrowserItems[0] : undefined;
 
         if (documentLink) {
             // Should never happen to have openInDocs false as the button will be hidden in that case
             if (openInDocs) {
-                void openInDocs(documentLink.linkId);
+                void openInDocs(documentLink.linkId, { download: true });
             }
             return;
         }
@@ -47,15 +46,13 @@ export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusS
         );
     };
 
-    const count = selectedBrowserItems.length;
-
     const buttonTextWithScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
     const buttonTextWithoutScan =
         count > 1 ? c('Action').t`Download without scanning (${count})` : c('Action').t`Download without scanning`;
 
     return (
         <ContextMenuButton
-            name={virusScan ? buttonTextWithScan : buttonTextWithoutScan}
+            name={virusScan || isDoc ? buttonTextWithScan : buttonTextWithoutScan}
             icon="arrow-down-line"
             testId={`context-menu-download${virusScan ? '-scan' : ''}`}
             action={onClick}
