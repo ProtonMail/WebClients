@@ -83,6 +83,24 @@ const putFullBillingAddress = (data: FullBillingAddress) => {
     };
 };
 
+const putInvoiceBillingAddress = (invoiceId: string, data: FullBillingAddress) => {
+    const { VatId, ...BillingAddress } = data;
+
+    return {
+        url: `payments/v5/invoices/${invoiceId}/billing-information`,
+        method: 'PUT',
+        data: {
+            VatId,
+            BillingAddress,
+        },
+    };
+};
+
+const queryInvoiceBillingAddress = (invoiceId: string) => ({
+    url: `payments/v5/invoices/${invoiceId}/billing-information`,
+    method: 'GET',
+});
+
 type FullBillingAddressResponse = {
     BillingAddress: FullBillingAddress;
     VatId: string | null;
@@ -389,19 +407,30 @@ export const usePaymentsApi = (
             multiCheckCache.set(data, options, result);
         };
 
-        const getFullBillingAddress = async (): Promise<FullBillingAddress> => {
-            const response = await api<FullBillingAddressResponse>(queryFullBillingAddress());
-
-            const fullBillingAddress: FullBillingAddress = {
+        const formatFullBillingAddress = (response: FullBillingAddressResponse): FullBillingAddress => {
+            return {
                 ...response.BillingAddress,
                 VatId: response.VatId ?? null,
             };
+        };
 
-            return fullBillingAddress;
+        const getFullBillingAddress = async (): Promise<FullBillingAddress> => {
+            const response = await api<FullBillingAddressResponse>(queryFullBillingAddress());
+
+            return formatFullBillingAddress(response);
         };
 
         const updateFullBillingAddress = async (fullBillingAddress: FullBillingAddress) => {
             await api(putFullBillingAddress(fullBillingAddress));
+        };
+
+        const updateInvoiceBillingAddress = async (invoiceId: string, fullBillingAddress: FullBillingAddress) => {
+            await api(putInvoiceBillingAddress(invoiceId, fullBillingAddress));
+        };
+
+        const getInvoiceBillingAddress = async (invoiceId: string): Promise<FullBillingAddress> => {
+            const response = await api<FullBillingAddressResponse>(queryInvoiceBillingAddress(invoiceId));
+            return formatFullBillingAddress(response);
         };
 
         return {
@@ -411,6 +440,8 @@ export const usePaymentsApi = (
             statusExtendedAutomatic,
             getFullBillingAddress,
             updateFullBillingAddress,
+            updateInvoiceBillingAddress,
+            getInvoiceBillingAddress,
         };
     };
 
