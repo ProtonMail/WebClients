@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
-import { applyHOCs, withConfig, withPaymentContext, withReduxStore } from '@proton/testing';
+import { applyHOCs, withConfig, withNotifications, withPaymentContext, withReduxStore } from '@proton/testing';
 
 import InvoicesSection from './InvoicesSection';
 
@@ -25,7 +25,36 @@ jest.mock('../../hooks/useApiResult', () => {
     };
 });
 
-const InvoicesSectionContext = applyHOCs(withConfig(), withPaymentContext(), withReduxStore())(InvoicesSection);
+jest.mock('@proton/account/user/hooks', () => ({
+    __esModule: true,
+    useUser: jest.fn(() => [{ isPaid: false, Flags: {} }, false]),
+    useGetUser: jest.fn(() => [{ isPaid: false, Flags: {} }, false]),
+}));
+
+jest.mock('@proton/account/subscription/hooks', () => {
+    return {
+        __esModule: true,
+        useSubscription: jest.fn().mockReturnValue([]),
+    };
+});
+
+jest.mock('../../hooks/useModals', () => {
+    return {
+        __esModule: true,
+        default: jest.fn().mockReturnValue({
+            createModal: jest.fn(),
+        }),
+    };
+});
+
+jest.mock('@proton/components/payments/client-extensions/useChargebeeContext');
+
+const InvoicesSectionContext = applyHOCs(
+    withConfig(),
+    withPaymentContext(),
+    withNotifications(),
+    withReduxStore()
+)(InvoicesSection);
 
 describe('InvoicesSection', () => {
     let useSubscribeEventManagerMock: jest.Mock;
