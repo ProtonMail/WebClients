@@ -3,7 +3,11 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
+import { SSOReauthModal } from '@proton/pass/components/Lock/SSOReauthModal';
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
+import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { selectExtraPasswordEnabled, selectIsSSO } from '@proton/pass/store/selectors';
 
 import type { PasswordModalState } from './PasswordModal';
@@ -29,8 +33,17 @@ export const usePasswordTypeSwitch = () => {
     return useCallback(passwordTypeSwitch(hasExtraPassword, isSSO), [hasExtraPassword, isSSO]);
 };
 
-export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
+export type OnReauthFn = (payload: ReauthActionPayload, forkOptions: Partial<RequestForkOptions>) => void;
+export type PasswordUnlockProps = { onReauth?: OnReauthFn };
+
+export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> = ({ children, onReauth }) => {
+    const authStore = useAuthStore();
     const passwordTypeSwitch = usePasswordTypeSwitch();
+
+    /** SSO users which do not have an offline password should
+     * trigger a re-auth via account when unlocking. */
+    const isSSO = useSelector(selectIsSSO);
+    const hasOfflinePassword = Boolean(authStore?.hasOfflinePassword());
 
     const getInitialModalState = useCallback((): PasswordModalState => {
         const { message, title, label } = passwordTypeSwitch({
@@ -63,11 +76,12 @@ export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const modal = useAsyncModalHandles<string, PasswordModalState>({ getInitialModalState });
     const { handler, abort, resolver, state, key } = modal;
+    const Component = isSSO && !hasOfflinePassword ? SSOReauthModal : PasswordModal;
 
     return (
         <PasswordUnlockContext.Provider value={handler}>
             {children}
-            <PasswordModal onSubmit={resolver} onClose={abort} {...state} key={key} />
+            {state.open && <Component onReauth={onReauth} onSubmit={resolver} onClose={abort} {...state} key={key} />}
         </PasswordUnlockContext.Provider>
     );
 };
