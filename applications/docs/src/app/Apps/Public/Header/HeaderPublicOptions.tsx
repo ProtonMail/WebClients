@@ -66,7 +66,7 @@ export const HeaderPublicOptions = ({
    * Then reset the URL to ensure the action is not triggered again.
    */
   useEffectOnce(() => {
-    if (openParams.mode !== 'open-url') {
+    if (openParams.mode !== 'open-url' && openParams.mode !== 'open-url-download') {
       return
     }
 

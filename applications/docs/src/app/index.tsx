@@ -9,7 +9,9 @@ import PublicApp from './Apps/Public/PublicApp'
 import './tailwind.scss'
 import './style'
 
-const isPublicApp = new URL(window.location.href).searchParams.get('mode') === 'open-url'
+const isPublicApp = ['open-url', 'open-url-download'].includes(
+  new URL(window.location.href).searchParams.get('mode') || '',
+)
 
 // eslint-disable-next-line no-console
 console.log(`Rendering ${isPublicApp ? 'public' : 'user'} app`)
