@@ -83,7 +83,7 @@ export type ConsumeForkOptions = {
 
 export type ConsumeForkPayload =
     | {
-          mode: 'sso';
+          mode: 'web';
           key?: Uint8Array;
           localState: MaybeNull<string>;
           payloadVersion: AuthSessionVersion;
@@ -148,7 +148,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
     }
 
     const data =
-        payload.mode === 'secure'
+        payload.mode === 'extension'
             ? { keyPassword: payload.keyPassword, payloadVersion: SESSION_VERSION }
             : await (async () => {
                   try {
