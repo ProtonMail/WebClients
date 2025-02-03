@@ -92,11 +92,12 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
     application.syncedEditorState.setProperty('suggestionsEnabled', isSuggestionsEnabled || isLocalEnvironment())
   }, [application.syncedEditorState, isSuggestionsEnabled])
 
+  const isDownloadAction = action === 'download' || action === 'open-url-download'
   useEffect(() => {
-    if (action === 'download' && didLoadTitle && didLoadEditorContent && docOrchestrator) {
+    if (isDownloadAction && didLoadTitle && didLoadEditorContent && docOrchestrator) {
       void docOrchestrator.exportAndDownload('docx')
     }
-  }, [action, docOrchestrator, didLoadTitle, didLoadEditorContent])
+  }, [docOrchestrator, didLoadTitle, didLoadEditorContent, isDownloadAction])
 
   useEffect(() => {
     if (!bridge) {
