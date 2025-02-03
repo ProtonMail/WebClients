@@ -59,8 +59,6 @@ const feesMapToList = (feesMap: Map<string, number>) => {
 
 const modelThunk = createAsyncModelThunk<Model, NetworkFeesState, WalletThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
-        const isRecommendedFeesEnabled = await extraArgument.unleashClient.isEnabled('WalletRecommendedFees');
-
         const blockchainClient = new WasmBlockchainClient(extraArgument.walletApi);
 
         const feesMap = await blockchainClient.getFeesEstimation();
@@ -69,28 +67,22 @@ const modelThunk = createAsyncModelThunk<Model, NetworkFeesState, WalletThunkArg
 
         const feesList = feesMapToList(feesMap);
 
-        const recommendedFees = isRecommendedFeesEnabled
-            ? await blockchainClient
-                  .getRecommendedFees()
-                  .then((recommendedFees) => {
-                      return {
-                          HighPriority: recommendedFees.FastestFee,
-                          MedianPriority: recommendedFees.HalfHourFee,
-                          LowPriority: recommendedFees.HourFee,
-                      };
-                  })
-                  .catch(() => {
-                      return {
-                          HighPriority: 1,
-                          MedianPriority: 1,
-                          LowPriority: 1,
-                      };
-                  })
-            : {
-                  HighPriority: 1,
-                  MedianPriority: 1,
-                  LowPriority: 1,
-              };
+        const recommendedFees = await blockchainClient
+            .getRecommendedFees()
+            .then((recommendedFees) => {
+                return {
+                    HighPriority: recommendedFees.FastestFee,
+                    MedianPriority: recommendedFees.HalfHourFee,
+                    LowPriority: recommendedFees.HourFee,
+                };
+            })
+            .catch(() => {
+                return {
+                    HighPriority: 1,
+                    MedianPriority: 1,
+                    LowPriority: 1,
+                };
+            });
 
         return { feesMap, feesList, minimumBroadcastFee, minimumIncrementalFee, recommendedFees };
     },

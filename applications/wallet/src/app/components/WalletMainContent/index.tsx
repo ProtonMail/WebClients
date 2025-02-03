@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { type WasmApiWalletAccount } from '@proton/andromeda';
 import { Dropdown, DropdownCaret, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components/index';
-import { useFlag } from '@proton/unleash/index';
 import clsx from '@proton/utils/clsx';
 import { type IWasmApiWalletData } from '@proton/wallet';
 
@@ -35,7 +34,6 @@ const VIEWS: View[] = ['transactions', 'addresses'];
 export const WalletMainContent = ({ apiWalletData, apiAccount, onClickReceive, onClickBuy }: Props) => {
     const { isNarrow } = useResponsiveContainerContext();
     const [selectedView, setSelectedView] = useState<View>('transactions');
-    const isAddressListEnabled = useFlag('WalletAddressList');
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
@@ -43,40 +41,33 @@ export const WalletMainContent = ({ apiWalletData, apiAccount, onClickReceive, o
         <h2 className={clsx('mr-4 text-semibold', isNarrow ? 'text-lg' : 'text-4xl')}>{viewToLabel(selectedView)}</h2>
     );
 
-    const selectorOrTitle =
-        isAddressListEnabled && apiAccount ? (
-            <>
-                <button className="flex flex-row items-center" ref={anchorRef} onClick={toggle}>
-                    {viewTitle}
-                    <DropdownCaret className={clsx(['shrink-0 ml-1'])} isOpen={isOpen} />
-                </button>
+    const selectorOrTitle = apiAccount ? (
+        <>
+            <button className="flex flex-row items-center" ref={anchorRef} onClick={toggle}>
+                {viewTitle}
+                <DropdownCaret className={clsx(['shrink-0 ml-1'])} isOpen={isOpen} />
+            </button>
 
-                <Dropdown
-                    isOpen={isOpen}
-                    anchorRef={anchorRef}
-                    onClose={close}
-                    autoClose={false}
-                    autoCloseOutside={false}
-                >
-                    <DropdownMenu>
-                        {VIEWS.map((view) => (
-                            <DropdownMenuButton
-                                className="text-left"
-                                key={view}
-                                onClick={() => {
-                                    setSelectedView(view);
-                                    close();
-                                }}
-                            >
-                                {viewToLabel(view)}
-                            </DropdownMenuButton>
-                        ))}
-                    </DropdownMenu>
-                </Dropdown>
-            </>
-        ) : (
-            viewTitle
-        );
+            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false} autoCloseOutside={false}>
+                <DropdownMenu>
+                    {VIEWS.map((view) => (
+                        <DropdownMenuButton
+                            className="text-left"
+                            key={view}
+                            onClick={() => {
+                                setSelectedView(view);
+                                close();
+                            }}
+                        >
+                            {viewToLabel(view)}
+                        </DropdownMenuButton>
+                    ))}
+                </DropdownMenu>
+            </Dropdown>
+        </>
+    ) : (
+        viewTitle
+    );
 
     if (selectedView === 'addresses' && apiAccount) {
         return (
