@@ -28,7 +28,6 @@ import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import DriveQuickSettings from '../drawer/DriveQuickSettings';
 import { DriveHeaderPrivate } from './DriveHeader';
 import { getDriveDrawerPermissions } from './drawerPermissions';
-import { ActionMenuButton } from './sidebar/ActionMenu/ActionMenuButton';
 import DriveSidebar from './sidebar/DriveSidebar';
 
 interface Props {
@@ -83,7 +82,7 @@ const DriveWindow = ({ children }: Props) => {
     const sidebar = (
         <DriveSidebar
             logo={logo}
-            primary={<ActionMenuButton className="hidden md:flex" disabled={isNewUploadDisabled} />}
+            isNewUploadDisabled={isNewUploadDisabled || false}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />

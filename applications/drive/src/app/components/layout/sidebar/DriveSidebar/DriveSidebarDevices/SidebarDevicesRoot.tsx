@@ -1,11 +1,20 @@
 import { Loader } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { useDevicesListing } from '../../../../../store/_devices';
 import { getDevicesSectionName } from '../../../../sections/Devices/constants';
 import ExpandButton from '../DriveSidebarFolders/DriveExpandButton';
 import DriveSidebarListItem from '../DriveSidebarListItem';
 
-export function SidebarDevicesRoot({ isExpanded, toggleExpand }: { toggleExpand: () => void; isExpanded: boolean }) {
+export function SidebarDevicesRoot({
+    isExpanded,
+    toggleExpand,
+    collapsed,
+}: {
+    toggleExpand: () => void;
+    isExpanded: boolean;
+    collapsed: boolean;
+}) {
     const { cachedDevices, isLoading } = useDevicesListing();
     const sectionTitle = getDevicesSectionName();
 
@@ -16,8 +25,9 @@ export function SidebarDevicesRoot({ isExpanded, toggleExpand }: { toggleExpand:
             icon="tv"
             isActive={(match) => match?.url === '/devices'}
             onDoubleClick={toggleExpand}
+            collapsed={collapsed}
         >
-            <span className="text-ellipsis" title={sectionTitle}>
+            <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={sectionTitle}>
                 {sectionTitle}
             </span>
             {isLoading ? (
