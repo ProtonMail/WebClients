@@ -63,6 +63,7 @@ module.exports = {
                     // explicitly disable these in the webpack config
                     stream: false,
                     crypto: false,
+                    iconv: false,
                 },
             },
             module: {
