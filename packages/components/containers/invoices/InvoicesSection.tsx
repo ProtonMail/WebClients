@@ -12,6 +12,7 @@ import Pagination from '@proton/components/components/pagination/Pagination';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
+import useLoading from '@proton/hooks/useLoading';
 import { INVOICE_OWNER, INVOICE_STATE } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { InvoiceDocument } from '@proton/shared/lib/api/payments';
@@ -43,8 +44,8 @@ const InvoicesSection = () => {
     const [owner, setOwner] = useState(USER);
 
     const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
-    const { openBillingAddressModal, editBillingAddressModal, loadingBillingAddressModal } =
-        useEditBillingAddressModal();
+    const { openBillingAddressModal, editBillingAddressModal } = useEditBillingAddressModal();
+    const [loadingBillingAddressModal, withLoadingBillingAddressModal] = useLoading();
 
     const invoicesHook = useInvoices({ owner, Document: InvoiceDocument.Invoice });
     const creditNotesHook = useInvoices({ owner, Document: InvoiceDocument.CreditNote });
@@ -95,7 +96,8 @@ const InvoicesSection = () => {
                     !!user.ChargebeeUserExists && {
                         text: c('Action').t`Edit billing address`,
                         'data-testid': 'editBillingAddress',
-                        onClick: () => openBillingAddressModal(),
+                        onClick: () =>
+                            withLoadingBillingAddressModal(openBillingAddressModal({ editExistingInvoice: false })),
                         loading: loadingBillingAddressModal,
                     },
                 {
@@ -182,7 +184,10 @@ const InvoicesSection = () => {
                 {document === DocumentType.Transactions ? (
                     <TransactionGroup {...(hook as TransactionsHook)} />
                 ) : (
-                    <InvoiceGroup {...(hook as InvoicesHook)} />
+                    <InvoiceGroup
+                        {...(hook as InvoicesHook)}
+                        onEdit={(invoice) => openBillingAddressModal({ editExistingInvoice: true, invoice })}
+                    />
                 )}
             </SettingsSectionWide>
 
