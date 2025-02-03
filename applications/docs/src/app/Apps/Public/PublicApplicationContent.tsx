@@ -23,7 +23,7 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
 
   const { openAction } = useDocsUrlBar({ isDocsEnabled: publicDriveCompat.isDocsEnabled })
 
-  const [action] = useState<DocumentAction['mode']>()
+  const [action, setAction] = useState<DocumentAction['mode']>()
 
   const application = useMemo(() => {
     return new Application(
@@ -57,6 +57,9 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
         linkId: 'linkId' in openAction ? openAction.linkId : undefined,
         volumeId: 'volumeId' in openAction ? openAction.volumeId : undefined,
       })
+      if (openAction.mode === 'open-url-download') {
+        setAction('download')
+      }
     }
   }, [application.logger, openAction])
 
@@ -91,7 +94,7 @@ function Content({
   openAction: DocumentAction | null
   actionMode: DocumentAction['mode'] | undefined
 }) {
-  if (openAction?.mode !== 'open-url') {
+  if (openAction?.mode !== 'open-url' && openAction?.mode !== 'open-url-download') {
     return null
   }
 

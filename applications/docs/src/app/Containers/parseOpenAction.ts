@@ -32,6 +32,16 @@ export const parseOpenAction = (searchParams: URLSearchParams): DocumentAction |
     }
   }
 
+  if (mode === 'open-url-download' && hasValidPublicLink) {
+    return {
+      mode,
+      token,
+      linkId,
+      urlPassword: window.location.hash,
+      action,
+    }
+  }
+
   if (hasValidPublicLink) {
     return {
       mode: 'open-url',

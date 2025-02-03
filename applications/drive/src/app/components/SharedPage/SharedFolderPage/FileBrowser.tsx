@@ -26,7 +26,7 @@ interface Props {
     folderName: string;
     items: PublicLink[];
     onItemOpen: (item: DecryptedLink) => void;
-    openInDocs?: (linkId: string) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
     isLoading?: boolean;
     sortParams?: SortParams<SortField>;
     setSorting?: (params: SortParams<SortField>) => void;
