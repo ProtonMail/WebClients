@@ -17,6 +17,7 @@ import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsPro
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
+import type { OnReauthFn } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { InAppNotificationProvider } from '@proton/pass/components/Notifications/InAppNotificationPortal';
@@ -30,10 +31,12 @@ import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { selectIsSSO, selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
+import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
@@ -112,13 +115,30 @@ const Main: FC = () => {
 
 export const PrivateApp: FC = () => {
     const lockSetup = useSelector(selectLockSetupRequired);
+    const config = usePassConfig();
+    const authStore = useAuthStore();
     const auth = useAuthService();
     const logout = useCallback(() => auth.logout({ soft: true }), []);
     const handleProbe = useCallback(() => auth.checkLock().catch(noop), []);
 
+    const onReauth = useCallback<OnReauthFn>((reauth, fork) => {
+        const localID = authStore?.getLocalID();
+        const userID = authStore?.getUserID();
+
+        auth.requestFork(
+            {
+                app: APPS.PROTONPASS,
+                host: config.SSO_URL,
+                localID,
+                ...fork,
+            },
+            { localID, reauth, type: 'reauth', userID }
+        );
+    }, []);
+
     return (
         <LockProbeProvider onProbe={handleProbe}>
-            <PasswordUnlockProvider>
+            <PasswordUnlockProvider onReauth={onReauth}>
                 <PinUnlockProvider>
                     <OrganizationProvider>
                         <BulkSelectProvider>
