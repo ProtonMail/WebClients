@@ -32,7 +32,7 @@ export type DocumentAction =
           mode: 'new';
       }
     | {
-          mode: 'open-url';
+          mode: 'open-url' | 'open-url-download';
           action?: RedirectAction;
           linkId: string;
           token: string;
