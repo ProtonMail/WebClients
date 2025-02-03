@@ -12,6 +12,7 @@ import type { BrowserTransportOptions } from '@sentry/browser/types/transports/t
 import { Availability, AvailabilityTypes } from '@proton/utils/availability';
 
 import { VPN_HOSTNAME } from '../constants';
+import { SHARE_GENERATED_PASSWORD_LENGTH } from '../drive/constants';
 import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
 import type { ProtonConfig } from '../interfaces';
@@ -246,6 +247,11 @@ function main({
                         [breadcrumb.data.to] = breadcrumb.data.to.split('#');
                     }
 
+                    if (breadcrumb.category === 'fetch' && breadcrumb.data) {
+                        // Redact email addresses in breadcrumb messages
+                        breadcrumb.message = breadcrumb.data.url.replace(/Email=[^&]+/, 'Email=[Filtered]');
+                    }
+
                     // Button titles may contain accidental PII
                     if (
                         breadcrumb.category === 'ui.click' &&
@@ -256,6 +262,25 @@ function main({
                     }
 
                     return breadcrumb;
+                });
+            }
+
+            // This will prevent from sending the password in the public url. Ex: https://drive.proton.local/urls/TBYS1295RG#[password]
+            if (event.exception && event.exception.values) {
+                event.exception.values = event.exception.values.map((error) => {
+                    if (
+                        error.value &&
+                        error.value.includes('/urls/') &&
+                        error.value.match(new RegExp(`#[a-zA-Z0-9]{${SHARE_GENERATED_PASSWORD_LENGTH}}\\b`))
+                    ) {
+                        // Redact sensitive information in the error message
+                        error.value = error.value.replace(
+                            new RegExp(`#[a-zA-Z0-9]{${SHARE_GENERATED_PASSWORD_LENGTH}}\\b.*$`),
+                            '#[Filtered]'
+                        );
+                    }
+
+                    return error;
                 });
             }
 
