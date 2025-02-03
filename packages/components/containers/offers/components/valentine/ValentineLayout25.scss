@@ -1,0 +1,56 @@
+@import '~@proton/styles/scss/lib';
+
+.offer-modal[class*='offer-valentine-2025'] {
+	.modal-close-icon {
+		inline-size: 1rem;
+		block-size: 1rem;
+	}
+
+	.valentine-sparkes {
+		inset-block-start: 1.5rem;
+		inset-inline-end: 1.5rem;
+	}
+
+	&.offer-modal--one-deal {
+		&#{&} {
+			--size: #{em(480)};
+
+			.valentine-text {
+				color: #cd003a;
+			}
+
+			.info-button > svg {
+				color: var(--text-norm);
+			}
+
+			.valentine-background {
+				background: #ff5d7e0d;
+			}
+
+			.scroll-outer-vertical .scroll-inner,
+			.scroll-outer-vertical .scroll-child {
+				overflow: overlay;
+			}
+
+			.text-xxl {
+				font-size: em(48);
+			}
+
+			.off-pill {
+				inset-block-start: -0.5rem;
+				inset-inline-end: 0.5rem;
+				background: radial-gradient(circle at 23% 50%, #cd003a 0%, #670059 100%),
+					linear-gradient(0deg, #c23468, #8d3479);
+			}
+
+			.gradient-highlight {
+				background: linear-gradient(90deg, #d80265, #9a017a);
+				background-blend-mode: overlay;
+			}
+
+			.odd\:bg-weak > *:nth-child(odd) {
+				background-color: #ff5d7e0d;
+			}
+		}
+	}
+}

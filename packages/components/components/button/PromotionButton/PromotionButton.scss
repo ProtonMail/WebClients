@@ -97,4 +97,16 @@
 			border: 0;
 		}
 	}
+
+	&--valentines-day {
+		&#{&} {
+			--button-hover-background-color: #ff5d7e0d;
+			--button-active-background-color: #ff5d7e0d;
+			--button-default-text-color: #cd003a;
+			--button-hover-text-color: #cd003a;
+			--button-active-text-color: #cd003a;
+
+			border-color: #dedbd9;
+		}
+	}
 }

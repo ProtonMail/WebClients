@@ -24,7 +24,15 @@ export type OfferId =
     | 'black-friday-2024-plus'
     | 'black-friday-2024-vpn-monthly'
     | 'black-friday-2024-unlimited'
-    | 'black-friday-2024-duo';
+    | 'black-friday-2024-duo'
+    | 'valentine-2025-mail-plus'
+    | 'valentine-2025-mail-bundle'
+    | 'valentine-2025-drive-plus'
+    | 'valentine-2025-drive-bundle'
+    | 'valentine-2025-vpn-plus'
+    | 'valentine-2025-vpn-bundle'
+    | 'valentine-2025-pass-plus'
+    | 'valentine-2025-pass-bundle';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
