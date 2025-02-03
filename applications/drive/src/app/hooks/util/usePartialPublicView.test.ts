@@ -12,7 +12,13 @@ describe('usePartialPublicView', () => {
 
         Object.defineProperty(window, 'location', {
             writable: true,
-            value: { ...originalWindowLocation, search: '', pathname: '/test', hash: '' },
+            value: {
+                ...originalWindowLocation,
+                search: '',
+                pathname: '/test',
+                hash: '',
+                origin: 'https://test.com',
+            },
         });
 
         Object.defineProperty(window, 'history', {
@@ -57,6 +63,6 @@ describe('usePartialPublicView', () => {
     it('should clean up the URL after checking', () => {
         window.location.search = `?other=param&${partialPublicViewKey}=true`;
         renderHook(() => usePartialPublicView());
-        expect(window.history.replaceState).toHaveBeenCalledWith({}, '', '/test?other=param');
+        expect(window.history.replaceState).toHaveBeenCalledWith({}, '', 'https://test.com/test?other=param');
     });
 });
