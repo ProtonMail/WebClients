@@ -83,6 +83,15 @@ export enum FeatureCode {
     OfferBlackFriday2024Unlimited = 'OfferBlackFriday2024Unlimited',
     OfferBlackFriday2024Duo = 'OfferBlackFriday2024Duo',
 
+    OfferValentine2025MailPlus = 'OfferValentine2025MailPlus',
+    OfferValentine2025MailBundle = 'OfferValentine2025MailBundle',
+    OfferValentine2025DrivePlus = 'OfferValentine2025DrivePlus',
+    OfferValentine2025DriveBundle = 'OfferValentine2025DriveBundle',
+    OfferValentine2025VPNPlus = 'OfferValentine2025VPNPlus',
+    OfferValentine2025VPNBundle = 'OfferValentine2025VPNBundle',
+    OfferValentine2025PassPlus = 'OfferValentine2025PassPlus',
+    OfferValentine2025PassBundle = 'OfferValentine2025PassBundle',
+
     Offers = 'Offers',
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
     ProtonBadge = 'ProtonBadge',
