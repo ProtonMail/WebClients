@@ -21,7 +21,6 @@ import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
 import type { PublicLink } from '../interface';
 import { useScanAndDownloadInfoModal } from './ScanAndDownloadInfoModal';
-import { useDownloadNotifications } from './useDownloadNotifications';
 
 export interface DownloadButtonProps {
     rootLink: DecryptedLink;
@@ -29,7 +28,7 @@ export interface DownloadButtonProps {
     className?: string;
     color?: ThemeColorUnion;
     disabled?: boolean;
-    openInDocs?: (linkId: string) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
 }
 
 export function DownloadButton({ items, rootLink, openInDocs, disabled }: DownloadButtonProps) {
@@ -39,8 +38,6 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
     const { downloads, download, clearDownloads } = useDownload();
     const [scanAndDownloadInfoModal, showScanAndDownloadInfoModal] = useScanAndDownloadInfoModal();
     const isDownloadScanEnabled = useDownloadScanFlag();
-
-    useDownloadNotifications(downloads);
 
     const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
     const count = selectedItems.length;
@@ -58,7 +55,7 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
         if (documentLink) {
             // Should never happen to have openInDocs false as the button will be disabled in that case
             if (openInDocs) {
-                void openInDocs(documentLink.linkId);
+                void openInDocs(documentLink.linkId, { download: true });
             }
             return;
         }

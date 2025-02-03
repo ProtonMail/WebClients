@@ -244,6 +244,7 @@ function Content({
   if (
     !openAction ||
     openAction.mode === 'create' ||
+    openAction.mode === 'open-url-download' ||
     openAction.mode === 'open-url' ||
     !openAction.volumeId ||
     !openAction.linkId ||

@@ -98,13 +98,13 @@ function PublicShareLinkInitContainer() {
     const shouldRedirectToDocs = isDocsPublicSharingEnabled && link && link.isFile && isProtonDocument(link.mimeType);
 
     const openInDocs = useCallback(
-        (linkId: string, redirect = false) => {
+        (linkId: string, { redirect, download }: { redirect?: boolean; download?: boolean } = {}) => {
             if (!isDocsPublicSharingEnabled || error) {
                 return;
             }
 
             openDocumentWindow({
-                mode: 'open-url',
+                mode: download ? 'open-url-download' : 'open-url',
                 token,
                 urlPassword,
                 linkId,
@@ -117,7 +117,7 @@ function PublicShareLinkInitContainer() {
     // This hook automatically redirects to Docs when opening a document.
     useEffect(() => {
         if (shouldRedirectToDocs) {
-            openInDocs(link.linkId, true);
+            openInDocs(link.linkId, { redirect: true });
         }
     }, [isDocsPublicSharingEnabled, error, link]);
 
