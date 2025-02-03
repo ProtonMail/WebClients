@@ -59,6 +59,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const loadUser = async () => {
             const userFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserSettings);
+            userFeature.start();
             const [user, userSettings, features] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(userSettingsThunk()),
@@ -69,6 +70,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(welcomeFlagsActions.initial(userSettings));
 
             const userInitFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserInit);
+            userInitFeature.start();
             const [scopes] = await Promise.all([
                 bootstrap.initUser({ appName, user, userSettings }),
                 bootstrap.loadLocales({ userSettings, locales }),
@@ -84,10 +86,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         };
 
         const loadUserFeature = measureFeaturePerformance(api, Features.globalBootstrapAppLoadUser);
+        loadUserFeature.start();
         const userPromise = loadUser().finally(() => {
             loadUserFeature.end();
         });
         const unleashFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUnleash);
+        unleashFeature.start();
         const unleashPromise = bootstrap
             .unleashReady({ unleashClient })
             .catch(noop)
@@ -95,20 +99,24 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                 unleashFeature.end();
             });
         const cryptoFeature = measureFeaturePerformance(api, Features.globalBootstrapAppCrypto);
+        cryptoFeature.start();
         const cryptoPromise = bootstrap.loadCrypto({ appName }).finally(() => {
             cryptoFeature.end();
         });
 
         const userDataFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserData);
+        userDataFeature.start();
         const [userData] = await Promise.all([userPromise, cryptoPromise, unleashPromise]);
         userDataFeature.end();
 
         const postLoadFeature = measureFeaturePerformance(api, Features.globalBootstrapAppPostLoad);
+        postLoadFeature.start();
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         postLoadFeature.end();
 
         const userSettingFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserSettingsAddress);
+        userSettingFeature.start();
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
         const [driveUserSettings] = await Promise.all([
             api<UserSettingsResponse>(queryUserSettings()),
