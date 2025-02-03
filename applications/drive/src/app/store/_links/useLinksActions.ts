@@ -21,7 +21,7 @@ import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
-import { useDefaultShare, useShare } from '../_shares';
+import { ShareType, useDefaultShare, useShare } from '../_shares';
 import { useVolumesState } from '../_volumes';
 import useLink from './useLink';
 import useLinks from './useLinks';
@@ -64,7 +64,7 @@ export function useLinksActions({
     const { lockLinks, lockTrash, unlockLinks } = useLinksState();
     const { getDefaultShare } = useDefaultShare();
 
-    const { getShareCreatorKeys } = useShare();
+    const { getShareCreatorKeys, getShare } = useShare();
     const volumeState = useVolumesState();
 
     /**
@@ -107,12 +107,14 @@ export function useLinksActions({
             newParentPrivateKey,
             newParentHashKey,
             { privateKey: addressKey, address },
+            newShare,
         ] = await Promise.all([
             getLink(abortSignal, shareId, linkId),
             getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
             getLinkPrivateKey(abortSignal, newShareId, newParentLinkId),
             getLinkHashKey(abortSignal, newShareId, newParentLinkId),
             getShareCreatorKeys(abortSignal, newShareId),
+            getShare(abortSignal, newShareId),
         ]);
 
         if (link.corruptedLink) {
@@ -135,20 +137,22 @@ export function useLinksActions({
                         })
                     )
                 ),
-                link.digests?.sha1 &&
-                    generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
-                        Promise.reject(
-                            new EnrichedError('Failed to generate content hash during move', {
-                                tags: {
-                                    shareId,
-                                    newParentLinkId,
-                                    newShareId: newShareId === shareId ? undefined : newShareId,
-                                    linkId,
-                                },
-                                extra: { e },
-                            })
-                        )
-                    ),
+                // ContentHash is only needed for Photos section and during recovery of photos
+                link.digests?.sha1 && newShare.type === ShareType.photos
+                    ? generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
+                          Promise.reject(
+                              new EnrichedError('Failed to generate content hash during move', {
+                                  tags: {
+                                      shareId,
+                                      newParentLinkId,
+                                      newShareId: newShareId === shareId ? undefined : newShareId,
+                                      linkId,
+                                  },
+                                  extra: { e },
+                              })
+                          )
+                      )
+                    : undefined,
                 encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to encrypt link passphrase during move', {
