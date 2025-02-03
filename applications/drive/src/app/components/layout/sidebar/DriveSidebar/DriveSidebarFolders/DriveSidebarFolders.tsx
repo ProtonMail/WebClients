@@ -4,13 +4,14 @@ import { useFolderTree } from '../../../../../store';
 import DriveSidebarFoldersRoot from './DriveSidebarFoldersRoot';
 import DriveSidebarSubfolders from './DriveSidebarSubfolders';
 
-interface Props {
+interface DriveSidebarFoldersProps {
     shareId: string;
     linkId: string;
     setSidebarLevel: (level: number) => void;
+    collapsed: boolean;
 }
 
-export default function DriveSidebarFolders({ shareId, linkId, setSidebarLevel }: Props) {
+export default function DriveSidebarFolders({ shareId, linkId, setSidebarLevel, collapsed }: DriveSidebarFoldersProps) {
     const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolderTree(shareId, { rootLinkId: linkId });
 
     useEffect(() => {
@@ -24,8 +25,11 @@ export default function DriveSidebarFolders({ shareId, linkId, setSidebarLevel }
                 linkId={linkId}
                 rootFolder={rootFolder}
                 toggleExpand={toggleExpand}
+                collapsed={collapsed}
             />
-            <DriveSidebarSubfolders shareId={shareId} rootFolder={rootFolder} toggleExpand={toggleExpand} />
+            {!collapsed && (
+                <DriveSidebarSubfolders shareId={shareId} rootFolder={rootFolder} toggleExpand={toggleExpand} />
+            )}
         </>
     );
 }

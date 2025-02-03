@@ -50,3 +50,7 @@
 .navigation > div > .navigation-list:last-child {
 	padding-block-end: 0;
 }
+
+.sidebar-collapse-button-container--not-collapsed {
+	margin-block-end: calc(var(--space-12) + var(--space-14));
+}
