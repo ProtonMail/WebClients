@@ -28,6 +28,7 @@ interface Props {
     onClick?: MouseEventHandler<HTMLLIElement>;
     className?: string;
     forceReload?: boolean;
+    collapsed: boolean;
 }
 
 const DriveSidebarListItem = ({
@@ -41,7 +42,8 @@ const DriveSidebarListItem = ({
     style,
     onClick,
     className,
-    forceReload
+    forceReload,
+    collapsed,
 }: Props) => {
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
@@ -67,13 +69,14 @@ const DriveSidebarListItem = ({
         <SidebarListItem onClick={onClick}>
             <SidebarListItemLink to={to} forceReload={forceReload || false} isActive={isActive}>
                 <SidebarListItemContent
-                    className={clsx(className, 'flex flex-nowrap')}
+                    className={clsx(className, 'flex flex-nowrap', collapsed && 'justify-center')}
                     onDoubleClick={handleDoubleClick}
                     left={left}
                     right={rightIcon}
                     title={typeof children === 'string' ? children : undefined}
                     data-testid="sidebar-main-sections"
                     style={style}
+                    collapsed={collapsed}
                 >
                     {children}
                 </SidebarListItemContent>
