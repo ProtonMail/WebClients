@@ -16,14 +16,16 @@ interface Props {
     fetchInvoices: () => void;
     onPreview?: (invoice: Invoice) => void;
     onDownload: (invoice: Invoice) => void;
+    onEdit: (invoice: Invoice) => Promise<void>;
 }
 
-const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props) => {
+const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { paymentsApi } = usePaymentsApi();
     const [downloadLoading, withDownloadLoading] = useLoading();
     const [viewLoading, withViewLoading] = useLoading();
+    const [editLoading, withEditLoading] = useLoading();
     const redirectToAccountApp = useRedirectToAccountApp();
 
     const list = [
@@ -70,6 +72,12 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
                 await withDownloadLoading(handler());
             },
             loading: downloadLoading,
+        },
+        {
+            text: c('Action').t`Edit billing address`,
+            'data-testid': 'editBillingAddress',
+            onClick: () => withEditLoading(onEdit(invoice)),
+            loading: editLoading,
         },
     ].filter(isTruthy);
 
