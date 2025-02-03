@@ -32,10 +32,17 @@ const getUpsellRef = (isFreePlan: boolean) => {
     return isFreePlan ? freeRef : plusRef;
 };
 
-/** Upsell free users to Pass Plus and upsell Pass Plus users to
- * Unlimited. Exclude users who have already consumed the offer. */
+/** Upsell free users to Pass Plus and upsell Pass/Mail/VPN/Drive Plus users
+ * to Unlimited. Exclude users who have already consumed the offer. */
 const getPlanEligble = ({ InternalName, SubscriptionCoupon }: PassPlanResponse) => {
-    const planEligble = InternalName === 'free' || InternalName === 'pass2023';
+    const planEligble =
+        InternalName === PLANS.FREE ||
+        InternalName === PLANS.PASS ||
+        InternalName === PLANS.MAIL ||
+        InternalName === PLANS.VPN ||
+        InternalName === PLANS.VPN2024 ||
+        InternalName === PLANS.VPN_PASS_BUNDLE ||
+        InternalName === PLANS.DRIVE;
     const couponEligble = !FORBIDDEN_COUPONS.has(SubscriptionCoupon ?? '');
     return planEligble && couponEligble;
 };
@@ -62,7 +69,7 @@ const ValentinesDayPromo: FC = memo(() => {
 
     const [showModal, setShowModal] = useState(false);
 
-    const isFreePlan = plan?.InternalName === 'free';
+    const isFreePlan = plan?.InternalName === PLANS.FREE;
     const planToUpsell = isFreePlan ? PLANS.PASS : PLANS.BUNDLE;
     const isPlanEligible = plan && getPlanEligble(plan);
     const isUserEligible = isPlanEligible && inAppNotificationEnabled && user && !isDelinquent(user);
