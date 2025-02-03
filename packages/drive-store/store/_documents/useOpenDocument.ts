@@ -39,6 +39,13 @@ export type DocumentAction =
           urlPassword: string;
       }
     | {
+          mode: 'open-url-download';
+          action?: RedirectAction;
+          linkId: string;
+          token: string;
+          urlPassword: string;
+      }
+    | {
           /**
            * Reauth occurs when a user is first in a public context (viewing a public doc), then selects an option that
            * redirects them to sign up / sign in. Instead of redirecting back to the public context immediately on

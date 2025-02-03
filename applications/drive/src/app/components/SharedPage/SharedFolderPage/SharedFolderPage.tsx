@@ -34,7 +34,7 @@ interface Props {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     hideSaveToDrive: boolean;
     isPartialView: boolean;
-    openInDocs?: (linkId: string) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
 }
 
 interface PreviewContainerProps {
@@ -44,7 +44,7 @@ interface PreviewContainerProps {
     onClose: () => void;
     onNavigate: (linkId: DecryptedLink['linkId']) => void;
     onDownload: () => void;
-    openInDocs?: (linkId: string) => void;
+    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
 }
 
 function SharedPagePreviewContainer({
