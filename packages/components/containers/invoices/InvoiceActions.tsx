@@ -73,7 +73,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
             },
             loading: downloadLoading,
         },
-        {
+        !!invoice.IsExternal && {
             text: c('Action').t`Edit billing address`,
             'data-testid': 'editBillingAddress',
             onClick: () => withEditLoading(onEdit(invoice)),
