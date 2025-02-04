@@ -633,6 +633,9 @@
       "Switch or add account": [
         "Змяніць або дадаць уліковы запіс"
       ],
+      "Take a tour": [
+        "Пачаць знаёмства"
+      ],
       "Take out of trash": [
         "Выняць са сметніцы"
       ],
@@ -1333,6 +1336,9 @@
       ],
       "Work": [
         "Працоўны"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2709,6 +2715,12 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "Увядзіце імя, прозвішча або бачнае імя"
+      ],
+      "Please select a country": [
+        "Выберыце краіну"
+      ],
+      "Please select a state": [
+        "Калі ласка, выберыце рэгіён"
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
@@ -4564,6 +4576,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Registering your subscription…": [
+        "Рэгістрацыя вашай падпіскі…"
+      ],
       "Restored version to": [
         "Версія адноўлена да"
       ],
@@ -4599,6 +4614,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
+      ],
+      "Setting up your new address…": [
+        "Наладжванне вашага новага адраса…"
       ],
       "Settings update failed": [
         "Збой абнаўлення налад"
@@ -4672,8 +4690,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Гэта дзеянне незваротна выдаліць файл, які вы запампавалі."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Гэта дзеянне незваротна выдаліць папку, якую вы запампавалі. Вы не зможаце выдаліць папку з файлам, якая вам не належыць."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Гэта дзеянне выдаліць спасылку і адклікае доступ для ўсіх карыстальнікаў."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Гэта дзеянне незваротна выдаліць выбраныя элементы."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
@@ -4878,6 +4905,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы таксама можаце аб'яднаць імпартаваныя календары з існуючымі календарамі ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можаце змяніць свой выбар у любы час у ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можаце праверыць ход выканання ${ importProgressLink }."
@@ -7652,11 +7682,6 @@
         "Афіцыйныя лісты ад ${ BRAND_NAME }"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Агляд бяспекі вашага ўліковага запісу"
-      ]
-    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Рэгістрацыя завяршылася з памылкай."
@@ -8837,6 +8862,9 @@
       "Day theme": [
         "Дзённая тэма"
       ],
+      "Delete": [
+        "Выдаліць"
+      ],
       "Delete ${ count } contact": [
         "Выдаліць ${ count } кантакт",
         "Выдаліць ${ count } кантакты",
@@ -8848,6 +8876,12 @@
         "Выдаліць ${ count } групы кантактаў",
         "Выдаліць ${ count } груп кантактаў",
         "Выдаліць ${ count } групы кантактаў"
+      ],
+      "Delete ${ item.name }?": [
+        "Выдаліць ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Выдаліць ${ links.length } элементаў?"
       ],
       "Delete ${ value }": [
         "Выдаліць ${ value }"
@@ -9333,6 +9367,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
@@ -9374,9 +9414,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Больш бяспечны спосаб захоўвання Bitcoin"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin праз электронную пошту"
       ]
     },
     "wallet_signup_2024:Bug category": {

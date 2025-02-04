@@ -2557,6 +2557,9 @@
       "Please select a country": [
         "Vælg venligst et land"
       ],
+      "Please select a state": [
+        "Vælg venligst en region"
+      ],
       "Please set a recovery email first": [
         "Angiv først en gendannelsesmail"
       ],
@@ -3752,6 +3755,12 @@
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Hvis du deaktiverer totrins-godkendelse, bliver din konto mindre sikker. Gør kun dette med det største forbehold."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Oplev nye funktioner, der er låst op med ${ planTitle }, og begynd at bruge dem med det samme!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -3833,6 +3842,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivér single sign-on for at holde din organisation sikker"
+      ],
+      "Enabling auto-deletion…": [
+        "Aktivering af automatisk sletning…"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL modtaget fra din identitetsudbyder (f.eks. https://idp.example.com/sso/saml)."
@@ -4229,6 +4241,9 @@
       ],
       "or ${ selectFileButton }": [
         "eller ${ selectFileButton }"
+      ],
+      "or discover other features:": [
+        "eller opdag andre funktioner:"
       ],
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
@@ -5051,8 +5066,11 @@
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
       ],
       "Zoom meeting": [
         "Zoom-møde"
@@ -7845,11 +7863,6 @@
         "Bruger"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Gennemgå din kontos sikkerhed"
-      ]
-    },
     "saml: Action": {
       "Cancel": [
         "Annuller"
@@ -8855,47 +8868,6 @@
         "Til ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -9169,6 +9141,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -10658,9 +10671,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "En sikrere måde at gemme dine Bitcoin på"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -174,6 +174,9 @@
       "Collapse folder": [
         "Zbaliť priečinok"
       ],
+      "Collapse navigation bar": [
+        "Zbaliť navigačný panel"
+      ],
       "Compose": [
         "Napísať správu"
       ],
@@ -296,6 +299,9 @@
       ],
       "Dismiss": [
         "Odmietnuť"
+      ],
+      "Display navigation bar": [
+        "Zobraziť navigačný panel"
       ],
       "Done": [
         "Hotovo"
@@ -774,6 +780,9 @@
       "Show advanced PGP settings": [
         "Zobraziť pokročilé nastavenia PGO"
       ],
+      "Show navigation bar": [
+        "Zobraziť navigačný panel"
+      ],
       "Show preview": [
         "Zobraziť náhľad"
       ],
@@ -879,6 +888,9 @@
       "Upload file": [
         "Nahrať súbor"
       ],
+      "Upload files": [
+        "Nahrať súbory"
+      ],
       "Upload folder": [
         "Nahrať priečinok"
       ],
@@ -938,6 +950,11 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Nahrať"
       ]
     },
     "Actions message": {
@@ -1574,6 +1591,9 @@
       ],
       "Work": [
         "Práca"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3687,6 +3707,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -3695,6 +3718,9 @@
       ],
       "No verification method available": [
         "Nie sú k dispozícii žiadne metódy overovania"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3979,6 +4005,9 @@
       ],
       "ICS file": [
         "Súbor ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4549,23 +4578,8 @@
       "Download ${ name } app": [
         "Prevziať aplikáciu ${ name }"
       ],
-      "Download canceled": [
-        "Sťahovanie zrušené"
-      ],
-      "Download failed": [
-        "Sťahovanie zlyhalo"
-      ],
-      "Download failed due to ${ error }": [
-        "Sťahovanie zlyhalo z dôvodu ${ error }"
-      ],
-      "Download finished": [
-        "Sťahovanie dokončené"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Preberanie súboru ${ downloadFileName } bude prerušené"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Sťahovanie pozastavené kvôli problému s pripojením; obnoví sa automaticky"
       ],
       "Download was canceled": [
         "Sťahovanie bolo zrušené"
@@ -4584,6 +4598,9 @@
       ],
       "Drop files here": [
         "Presuňte sem súbory"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Ak chcete nahrať súbory, vložte ich sem alebo kliknite na tlačidlo nahrať"
       ],
       "Drop to import": [
         "Presuňte na import"
@@ -4716,6 +4733,9 @@
       ],
       "from the version history?": [
         "z histórie verzií?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Na zálohovanie fotografií z telefónu si stiahnite aplikáciu alebo ich sem nahrajte."
       ],
       "Get the app to backup photos from your phone.": [
         "Získajte aplikáciu na zálohovanie fotografií z vášho telefónu."
@@ -4927,9 +4947,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Potrebujete zdieľať súbor? Získajte ${ DRIVE_APP_NAME },\nnajbezpečnejší spôsob zdieľania, ukladania a synchronizácie vašich súborov."
-      ],
       "Network issue": [
         "Sieťový problém"
       ],
@@ -4968,9 +4985,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Poznámka: dáta môžu byť stále dostupné lokálne na zariadeniach, kde ste nainštalovali ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Zatiaľ tu nič nie je"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -5873,6 +5887,9 @@
       ],
       "Trusted": [
         "Dôveryhodný"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -8304,8 +8321,14 @@
       "Free": [
         "Zdarma"
       ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Obnova predchádzajúcich verzií súborov"
       ],
       "Storage": [
         "Úložisko"
@@ -8666,6 +8689,11 @@
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Zdarma"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Potvrdením tejto platby oprávňujete spoločnosť ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali pokyn vašej banke na odpísanie finančných prostriedkov z vášho účtu a aby vaša banka zodpovedajúcim spôsobom odpísala finančné prostriedky z vášho účtu. Peniaze môžete získať späť do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
@@ -8875,11 +8903,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficiálny email od ${ BRAND_NAME }"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Skontrolujte bezpečnosť svojho účtu"
       ]
     },
     "saml: Error": {
@@ -10458,6 +10481,9 @@
       "Download unverified folder?": [
         "Stiahnuť neoverený priečinok?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "Pretiahnuť a nahrať"
       ],
@@ -11101,8 +11127,13 @@
       "A safer way to hold your Bitcoin": [
         "Bezpečnejší spôsob vlastnenia Bitcoinu"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin cez email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Bezpečnejší spôsob ako vlastniť Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

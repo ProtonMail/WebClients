@@ -1074,6 +1074,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Эл. почта"
       ],
@@ -1082,6 +1085,9 @@
       ],
       "No verification method available": [
         "Нет доступных способов проверки"
+      ],
+      "SMS": [
+        "СМС"
       ]
     },
     "Info": {
@@ -1096,6 +1102,9 @@
       ],
       "Country code": [
         "Код страны"
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Создание нескольких бесплатных учетных записей не допускается нашим ${ termsLink }."
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
@@ -1114,6 +1123,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Введите собственный пароль (как администратор организации)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Для получения дополнительной информации и снятия ограничений, пожалуйста, войдите на ${ mailLink }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
@@ -1144,6 +1156,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Для отмены ограничений вы можете перейти на платный тарифный план."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Мы разработали специальные планы для тех пользователей, которым нужны несколько адресов электронной почты."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
@@ -1320,6 +1338,9 @@
       "15 GB storage": [
         "15 ГБ хранилища"
       ],
+      "200 GB of storage": [
+        "200 ГБ памяти"
+      ],
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
@@ -1404,6 +1425,9 @@
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
+      "Private photo backup": [
+        "Конфиденциальное резервное копирование фото"
+      ],
       "Proofread and refine your emails": [
         "Проверьте и уточните ваши электронные письма"
       ],
@@ -1424,6 +1448,9 @@
       ],
       "Search message content": [
         "Поиск содержимого сообщения"
+      ],
+      "Secure file storage and sharing": [
+        "Безопасное хранение и обмен файлами"
       ],
       "See team's availability": [
         "Посмотреть доступность команды"
@@ -1655,6 +1682,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Учётная запись ограничена"
+      ],
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
       ],

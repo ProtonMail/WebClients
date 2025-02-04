@@ -28,6 +28,9 @@
       "Accept": [
         "Acceptare"
       ],
+      "Accept and view the item": [
+        "Acceptare și vizualizare articol"
+      ],
       "Add": [
         "Adăugare"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add custom domain": [
         "Adăugare domeniu personal"
+      ],
+      "Add domain": [
+        "Adăugare domeniu"
       ],
       "Add mailbox": [
         "Adăugare cont de e-mail"
@@ -135,6 +141,9 @@
       ],
       "Copy and close": [
         "Copiere și închidere"
+      ],
+      "Copy forwarding address": [
+        "Copiere adresă de redirecționare"
       ],
       "Copy link": [
         "Copiere legătură web"
@@ -304,8 +313,14 @@
       "Install extension": [
         "Instalare extensie"
       ],
+      "Invite more...": [
+        "Invitare alții…"
+      ],
       "Invite others": [
         "Invitare alții"
+      ],
+      "Join our Reddit": [
+        "Alăturați-vă pe Reddit"
       ],
       "Join shared vault": [
         "Alăturare la seif partajat"
@@ -526,6 +541,9 @@
       "Show": [
         "Afișare"
       ],
+      "Show advanced options": [
+        "Afișare opțiuni avansate"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
       ],
@@ -622,6 +640,12 @@
       ],
       "View older history": [
         "Afișare istoric mai vechi"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Cu alți utilizatori ${ BRAND_NAME }"
+      ],
+      "Write us on X/Twitter": [
+        "Scrieți-ne pe X (Twitter)"
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
@@ -782,6 +806,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Nu s-a putut confirma această invitație momentan."
+      ],
+      "Could not leave item.": [
+        "Articolul nu a putut fi părăsit."
       ],
       "Could not leave vault.": [
         "Nu s-a putut părăsi seiful."
@@ -1257,6 +1284,9 @@
         "Redirecționate: ${ forwardedEmailsCount }",
         "Redirecționate: ${ forwardedEmailsCount }"
       ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } dorește să vă partajeze un articol."
+      ],
       "${ memberCount } member": [
         "${ memberCount } membru",
         "${ memberCount } membri",
@@ -1284,6 +1314,11 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vă va solicita parola ${ BRAND_NAME } pentru a accesa datele deconectat."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "Invitații trimise: ${ payload.count }",
+        "Invitații trimise: ${ payload.count }",
+        "Invitații trimise: ${ payload.count }"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } s-a dezactivat."
@@ -1415,8 +1450,23 @@
       "Built in 2FA authenticator": [
         "Autentificator A2F încorporat."
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Prin adăugarea domeniului personal, puteți crea aliasuri cum ar fi salut@domeniul-meu.com."
+      ],
       "Can be viewed": [
         "Se poate accesa"
+      ],
+      "Can create, edit, and delete items in this vault.": [
+        "Poate crea, edita și șterge articole din acest seif."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Poate crea, edita și șterge acest articol."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Poate acorda și revoca accesul la acest articol și îl poate șterge."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Poate acorda și anula accesul la acest articol."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Poate acorda și revoca accesul la acest seif și îl poate șterge."
@@ -1426,6 +1476,9 @@
       ],
       "Can view items in this vault.": [
         "Poate vizualiza articolele din acest seif."
+      ],
+      "Can view this item.": [
+        "Poate vedea acest articol."
       ],
       "Change your password": [
         "Schimbare parolă"
@@ -1556,6 +1609,9 @@
       "Enter your PIN code": [
         "Introduceți codul PIN"
       ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "De fiecare dată când aliasul primește un mesaj de la cineva, este creat automat un contact."
+      ],
       "Expires in": [
         "Expiră peste"
       ],
@@ -1584,6 +1640,9 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Adresa de redirecționare a fost copiată în memorie. Trimite un mesaj la această adresă și ${ Email } îl va primi."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână.",
@@ -1675,6 +1734,11 @@
       "Item restored": [
         "Articolul s-a restaurat."
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Partajare articol: ${ itemAccessCount } utilizator",
+        "Partajare articol: ${ itemAccessCount } utilizatori",
+        "Partajare articol: ${ itemAccessCount } de utilizatori"
+      ],
       "Item successfully excluded from monitoring": [
         "Articol a fost exclus de la monitorizare."
       ],
@@ -1695,6 +1759,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Aflați cum să ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Se părăsește articolul…"
       ],
       "Leaving vault...": [
         "Se părăsește seiful..."
@@ -1739,6 +1806,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -1967,11 +2039,14 @@
       "Settings successfully updated": [
         "Setările s-au actualizat."
       ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "Partajați aliasuri cu alții adăugând adresa lor de e-mail ca adresă suplimentară."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "Partajați-vă datele de conectare și notițele securizate cu până la 10 persoane"
       ],
       "Shared item invitation": [
-        "Invitație pentru articol partajat"
+        "Invitație articol partajat"
       ],
       "Sign in to your account": [
         "Conectare la cont"
@@ -1988,6 +2063,9 @@
       "Successfully exported all your items": [
         "Toate articole au fost exportate."
       ],
+      "Successfully left the item": [
+        "Articolul a fost părăsit."
+      ],
       "Successfully left the vault": [
         "Ați părăsit seiful."
       ],
@@ -2002,6 +2080,9 @@
       ],
       "Syncing your vaults…": [
         "Se sincronizează seifurile…"
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Atingeți pictograma ${ gearIcon } pentru vă a personaliza aliasul cum doriți."
       ],
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
@@ -2039,7 +2120,7 @@
         "Acest fișier exportat va fi necriptat și oricine are acces la el va putea vedea parolele. Pentru securitate, trebuie să-l ștergeți după ce l-ați terminat de utilizat."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
-        "Acest articol nu este în prezent partajat cu nimeni. Invită persoane pentru a-l partaja cu alții."
+        "Acest articol nu este în prezent partajat cu nimeni. Invitați persoane pentru a-l partaja."
       ],
       "This operation is irreversible.": [
         "Această operație nu este reversibilă."
@@ -2136,6 +2217,11 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Seiful „${ share.content.name }” a fost șters."
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Partajare seif: ${ vaultMembersCount } membru",
+        "Partajare seif: ${ vaultMembersCount } membri",
+        "Partajare seif: ${ vaultMembersCount } de membri"
       ],
       "Verification code sent.": [
         "Codul de verificare a fost trimis."
@@ -2388,6 +2474,9 @@
       "All": [
         "Toate"
       ],
+      "All items": [
+        "Toate articolele"
+      ],
       "Alphabetical": [
         "Alfabetic"
       ],
@@ -2562,6 +2651,9 @@
       "Facebook account": [
         "Cont Facebook"
       ],
+      "Feedback": [
+        "Opinii"
+      ],
       "Field name": [
         "Nume câmp"
       ],
@@ -2573,6 +2665,9 @@
       ],
       "Floor, apartment, building": [
         "Etaj, apartament, clădire"
+      ],
+      "For a one-off sharing": [
+        "Pentru o partajare unică"
       ],
       "Forwards to": [
         "Redirecționare către"
@@ -2736,6 +2831,9 @@
       "Need help?": [
         "Doriți ajutor?"
       ],
+      "New": [
+        "Nou"
+      ],
       "New vault": [
         "Seif nou"
       ],
@@ -2862,6 +2960,9 @@
       "Security code": [
         "Cod de securitate"
       ],
+      "See member and permission overview": [
+        "Afișare prezentare generală membru și permisiuni"
+      ],
       "Select a domain": [
         "Selectare domeniu"
       ],
@@ -2883,8 +2984,17 @@
       "Share": [
         "Partajare"
       ],
+      "Shared": [
+        "Partajat"
+      ],
+      "Shared by me": [
+        "Partajate de mine"
+      ],
       "Shared link": [
         "Legătură web partajată"
+      ],
+      "Shared with me": [
+        "Partajate cu mine"
       ],
       "Show website favicons": [
         "Afișare pictogramă site web"
@@ -2990,6 +3100,9 @@
       ],
       "Used in": [
         "Utilizată în"
+      ],
+      "Useful for permanent sharing": [
+        "Util pentru partajare permanentă"
       ],
       "Username": [
         "Nume utilizator"
@@ -3189,8 +3302,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Căutare ${ pluralItemType } în ${ vaultName }"
       ],
+      "Search ${ pluralItemType } in all items": [
+        "Căutare ${ pluralItemType } în toate articolele"
+      ],
       "Search in ${ vaultName }": [
         "Căutare în ${ vaultName }"
+      ],
+      "Search in all items": [
+        "Căutare în toate articolele"
       ],
       "Search in Trash": [
         "Căutare în gunoi"
@@ -3326,6 +3445,11 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domeniul a fost verificat. Domeniul poate începe să primească mesaje și să creeze aliasuri."
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } utilizator.",
+        "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } utilizatori.",
+        "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } de utilizatori."
+      ],
       "Mailbox successfully deleted": [
         "Contul de e-mail a fost șters."
       ],
@@ -3340,6 +3464,11 @@
       ],
       "Random prefix generation successfully enabled": [
         "Generarea aleatorie a prefixelor a fost activată."
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizator.",
+        "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizatori.",
+        "Seifurile nu pot conține mai mult de ${ targetMaxMembers } de utilizatori."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Mesajul de verificare a fost trimis. Accesați-vă contul de e-mail pentru a citi mesajul primit și confirma verificarea."
@@ -3470,6 +3599,9 @@
       "Details": [
         "Detalii"
       ],
+      "Did you know?": [
+        "Știați că?"
+      ],
       "Discard changes?": [
         "Anulare modificări?"
       ],
@@ -3527,11 +3659,17 @@
       "Install extension": [
         "Instalați extensia"
       ],
+      "Item": [
+        "Articol"
+      ],
       "Last autofill": [
         "Ultima autocompletare"
       ],
       "Last modified": [
         "Ultima modificare"
+      ],
+      "Leave this item?": [
+        "Părăsiți acest articol?"
       ],
       "Leave vault?": [
         "Părăsiți seiful?"
@@ -3590,6 +3728,9 @@
       ],
       "No reused passwords": [
         "Nu sunt parole reutilizate"
+      ],
+      "No shared items": [
+        "Nu există articole partajate"
       ],
       "No shared secure links": [
         "Nu există legături web partajate"
@@ -3687,6 +3828,12 @@
       ],
       "Share with": [
         "Partajare cu"
+      ],
+      "Shared item invitation": [
+        "Invitație articol partajat"
+      ],
+      "Shared via": [
+        "Partajat prin"
       ],
       "SPF (Optional)": [
         "SPF (Opțional)"
@@ -3804,6 +3951,9 @@
       ],
       "A description of the problem is required": [
         "Este necesară o descriere a problemei."
+      ],
+      "Addresses already invited.": [
+        "Adrese deja invitate."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Aliasurile din gunoi vor continua să redirecționeze mesajele primite."
@@ -3928,6 +4078,9 @@
       "No secure links matching": [
         "Nu există legături web securizate corelate."
       ],
+      "No shared items matching": [
+        "Nu există articole partajate care se potrivesc"
+      ],
       "Offline": [
         "Deconectat"
       ],
@@ -3967,6 +4120,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Unele articole sunt partajate. Dacă le ștergeți, ceilalți utilizatori nu le vor mai putea accesa."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Unele articole sunt partajate. Dacă le mutați în alt seif, ceilalți utilizatori nu le vor mai putea accesa."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Ceva nu a mers bine la pornirea ${ PASS_APP_NAME }. Încercați să reîmprospătați sau să reîncărcați extensia."
       ],
@@ -3978,6 +4137,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Această adresă de e-mail nu va mai fi monitorizată pentru divulgări."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Acest articol este partajat. Dacă îl ștergeți, ceilalți utilizatori nu-l vor mai putea accesa."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Articolul este partajat. Dacă îl mutați în alt seif, ceilalți utilizatori nu-l vor mai putea accesa."
       ],
       "Title is required": [
         "Titlul este obligatoriu."
@@ -4000,8 +4165,14 @@
       "Verification code is required": [
         "Este necesar codul de verificare."
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Ați atins limita de membri care pot accesa acest seif."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Ați atins limita de membri care pot accesa acest seif."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Ați atins limita de utilizatori pentru acest articol. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Ați atins limita de utilizatori pentru acest seif. ${ upgradeLink }"
@@ -4014,6 +4185,9 @@
       ],
       "You must select at least one mailbox": [
         "Trebuie să selectați cel puțin o adresă de e-mail."
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Veți pierde accesul la acest articol și la detaliile sale. Continuați?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Nu veți mai avea acces la acest seif. Pentru a vă realătura, veți avea nevoie de o nouă invitație."

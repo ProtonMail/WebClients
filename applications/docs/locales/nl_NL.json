@@ -4635,8 +4635,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Deze actie zal het bestand dat u heeft geüpload definitief verwijderen."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Deze actie zorgt ervoor dat de map die u opgeladen heeft permanent verwijderd zal worden. U kan geen map verwijderen die bestanden bevat waarvan u geen eigenaar bent."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Deze actie verwijdert de link en trekt de toegang voor alle gebruikers in."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Deze actie zal de geselecteerde items definitief verwijderen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -7089,6 +7098,9 @@
       "Stopping the sharing of this item has failed": [
         "Het stoppen van het delen van dit item is mislukt"
       ],
+      "The document failed to be created": [
+        "Het document kon niet aangemaakt worden"
+      ],
       "The link to your item failed to be deleted": [
         "De link naar uw item kon niet worden verwijderd"
       ],
@@ -7575,8 +7587,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Controleer de veiligheid van uw account"
+      "Review account safety": [
+        "Accountveiligheid controleren"
       ]
     },
     "saml: Error": {
@@ -8699,6 +8711,9 @@
       "Day theme": [
         "Dag thema"
       ],
+      "Delete": [
+        "Verwijderen"
+      ],
       "Delete ${ count } contact": [
         "Verwijder ${ count } contact",
         "${ count } contacten verwijderen"
@@ -8706,6 +8721,12 @@
       "Delete ${ count } contact group": [
         "${ count } contactgroep verwijderen",
         "${ count } contactgroepen verwijderen"
+      ],
+      "Delete ${ item.name }?": [
+        "Verwijder ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Verwijder ${ links.length } items?"
       ],
       "Delete ${ value }": [
         "Verwijder ${ value }"
@@ -9228,7 +9249,7 @@
       "A safer way to hold your Bitcoin": [
         "Een veiligere manier om uw Bitcoin vast te houden"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ]
     },

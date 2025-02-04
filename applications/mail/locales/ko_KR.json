@@ -6728,7 +6728,7 @@
         "트래커를 찾을 수 없음"
       ],
       "non-${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } 아님"
+        "${ MAIL_APP_NAME }이 아닌"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "암호화를 위한 유효한 업로드된 키가 존재하지 않습니다. 이 주소로 메시지를 전송하려면, 유호한 키를 업로드 하거나 \"이메일 암호화\"를 비활성화 하세요."
@@ -7085,7 +7085,7 @@
         "다음으로 전환:"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
-        "${ DRIVE_APP_NAME } 앱으로 파일을 동기화하고 관리하세요. ${ DOCS_APP_NAME }에서 문서를 만들고 공유하고 안전하게 저장하세요. 모두 ${ ios }, ${ android } 및 ${ desktop }에서 사용 가능합니다."
+        "${ DRIVE_APP_NAME } 앱으로 파일을 동기화하고 관리하세요. ${ DOCS_APP_NAME }에서 문서를 만들고 공유하고 안전하게 저장하세요. ${ ios }, ${ android } 및 ${ desktop }에서 모두 사용 가능합니다."
       ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
@@ -7583,7 +7583,7 @@
         "여기엔 아무런 메시지가 없습니다"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
-        "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
+        "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
       ],
       "You have ${ unread } in your inbox.": [
         "받은 메일함에 ${ unread }가 있습니다."
@@ -10942,11 +10942,6 @@
         "초대 재암호화 실패. 다시 시도해주세요."
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "내 계정 보안 검토하기"
-      ]
-    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "로그인이 성공적으로 완료되지 못했습니다."
@@ -11828,47 +11823,6 @@
         "${ totalPrice }용"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "저희는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -12121,6 +12075,47 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "저희는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -13406,6 +13401,11 @@
         "오늘"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "자동은 작성기의 형식이 이 사용자에게 보내는 데 사용됨을 나타냅니다. 일반 텍스트는 발송 시 메시지가 항상 일반 텍스트로 변환됨을 나타냅니다."
@@ -13487,11 +13487,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Tor out of date": {
@@ -13582,9 +13577,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Bitcoin을 보관하는 가장 안전한 방법"
-      ],
-      "Bitcoin via email": [
-        "이메일을 통한 Bitcoin"
       ]
     },
     "wallet_signup_2024:Action": {

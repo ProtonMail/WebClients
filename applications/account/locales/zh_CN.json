@@ -3933,6 +3933,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "文本字段为选填字段。您在此表单中提供的信息只会更改您选择的发票，而不会更改您未来的发票详细信息。"
       ]
     },
     "Email": {
@@ -4471,6 +4474,9 @@
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前无法编辑帐单地址。请稍后重试。"
       ],
       "Email address disabled": [
         "邮箱地址已停用"
@@ -5900,6 +5906,11 @@
         "极小"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }。默认隐私。"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "网页应用"
@@ -7302,10 +7313,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8537,6 +8548,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP 投递功能允许第三方服务或设备通过 ${ MAIL_APP_NAME } 为您的自定义域名地址发送电子邮件。此功能仅适用于 ${ BRAND_NAME } 拥有自定义域名的企业用户。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。如需开通此功能，请${ createTicket }并说明您的用途、希望使用的自有域名，以及每小时与每天的预计邮件数量。"
@@ -13754,6 +13768,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "继续使用您的 ${ BRAND_NAME } 账户"
       ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "包括${ discountPercent }% Porkbun 折扣"
+      ],
       "Let's talk": [
         "让我们聊聊"
       ],
@@ -14766,8 +14783,8 @@
       "Recovery phone number": [
         "密保手机号"
       ],
-      "Review your account safety": [
-        "检查您的帐户安全"
+      "Review account safety": [
+        "审查帐户安全"
       ],
       "Safeguard account now": [
         "立即保护账户"
@@ -18069,6 +18086,9 @@
       "PayPal verification failed": [
         "PayPal 验证失败"
       ],
+      "Personalise your e-mail footer": [
+        "个性化您的电子邮件页脚"
+      ],
       "Personalize your email footer": [
         "个性化您的邮件页脚"
       ],
@@ -19001,6 +19021,9 @@
       "Keep request": [
         "保留申请"
       ],
+      "Member activation incomplete": [
+        "成员激活未完成"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "一旦用户同意，您就可以帮助他们重新获得账户访问权或管理他们的数据。"
       ],
@@ -19349,8 +19372,8 @@
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "作为受邀用户，注册免费的 ${ BRAND_NAME } 帐户，即可独享 ${ appName } 的访问权限"
       ],
-      "Bitcoin via email": [
-        "通过电子邮件接收比特币"
+      "Bitcoin via Email": [
+        "通过电子邮件获取比特币"
       ],
       "Create ${ BRAND_NAME } Account now": [
         "立即创建 ${ BRAND_NAME } 账户"
