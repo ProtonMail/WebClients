@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -32,7 +32,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { User, UserSettings, KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
-import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
+import { getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
@@ -130,6 +130,7 @@ const ReAuthContainer = ({
     });
     const [ssoAuthModal, showSSOAuthModal] = useModalTwoPromise();
     const errorHandler = useErrorHandler();
+    const idpButtonRef = useRef<HTMLButtonElement>(null);
     const normalApi = useApi();
 
     const { UID, User } = state.session;
@@ -137,6 +138,10 @@ const ReAuthContainer = ({
 
     const nameToDisplay = User.DisplayName || User.Name || User.Email || '';
     const initials = getInitials(nameToDisplay);
+
+    useEffect(() => {
+        idpButtonRef?.current?.click();
+    }, []);
 
     const handleFinalizeLogin = (session: OnLoginCallbackArguments) => {
         return onLogin({ ...session, prompt: null, flow: 'reauth' });
@@ -210,7 +215,7 @@ const ReAuthContainer = ({
         return handleSubmitKeyPassword(keyPassword, salts, 'sso');
     };
 
-    const loginForm = (
+    const srpLoginForm = (
         <SrpForm
             onSubmit={async (password) => {
                 await onPreSubmit();
@@ -256,15 +261,37 @@ const ReAuthContainer = ({
         />
     );
 
-    const backupPasswordForm = (
-        <SSOBackupPasswordForm
-            onSubmit={async (keyPassword) => {
-                await onPreSubmit();
-                await wait(500);
-                await handleSubmitSSO(keyPassword).catch(errorHandler);
-            }}
-        />
-    );
+    const handleSubmitSSOIdP = async () => {
+        await showSSOAuthModal();
+        return handleFinalizeLogin(state.session);
+    };
+
+    const ssoLoginForm =
+        state.reAuthType === 'default' || getIsSSOVPNOnlyAccount(state.session.User) ? (
+            <div className="mt-4">
+                <Button
+                    ref={idpButtonRef}
+                    size="large"
+                    color="norm"
+                    type="submit"
+                    fullWidth
+                    onClick={async () => {
+                        await onPreSubmit();
+                        await handleSubmitSSOIdP().catch(errorHandler);
+                    }}
+                >
+                    {c('Action').t`Continue`}
+                </Button>
+            </div>
+        ) : (
+            <SSOBackupPasswordForm
+                onSubmit={async (keyPassword) => {
+                    await onPreSubmit();
+                    await wait(500);
+                    await handleSubmitSSO(keyPassword).catch(errorHandler);
+                }}
+            />
+        );
 
     const user = (
         <div className="p-3 flex items-start w-full text-left rounded relative">
@@ -284,7 +311,7 @@ const ReAuthContainer = ({
         </div>
     );
 
-    const initialForm = getIsGlobalSSOAccount(User) ? backupPasswordForm : loginForm;
+    const initialForm = getIsGlobalSSOAccount(User) ? ssoLoginForm : srpLoginForm;
 
     return (
         <>
