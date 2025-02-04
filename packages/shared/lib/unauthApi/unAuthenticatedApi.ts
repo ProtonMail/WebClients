@@ -282,6 +282,7 @@ export const createUnauthenticatedApi = (api: Api) => {
         setChallenge,
         startUnAuthFlow,
         setup: initSetup,
+        getUID: () => context.UID,
     };
 };
 

@@ -9,6 +9,7 @@ import {
     getIsVPNApp,
     getIsWalletApp,
 } from '@proton/shared/lib/authentication/apps';
+import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
@@ -16,8 +17,6 @@ import { localeCode } from '@proton/shared/lib/i18n';
 
 import { getLocaleMapping } from '../locales';
 import { getLocalePathPrefix } from '../useLocationWithoutLocale';
-import type { ProduceForkData } from './fork/interface';
-import { SSOType } from './fork/interface';
 import type { LocalRedirect } from './localRedirect';
 
 export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
