@@ -313,6 +313,12 @@
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Получить ${ planName } за ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Получить ${ planOrAppName }"
+      ],
       "Get a new encrypted email address": [
         "Получите новый адрес зашифрованной электронной почты"
       ],
@@ -657,6 +663,9 @@
       ],
       "Switch or add account": [
         "Переключить или добавить аккаунт"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
       ],
       "Test": [
         "Проверить"
@@ -1077,6 +1086,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Защитите логины на всех ваших устройствах, включая неограниченное число псевдонимов hide-my-email, совместное пользование, интегрированную двухфакторную аутентификацию, ${ DARK_WEB_MONITORING_NAME } и многое другое."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
@@ -1224,6 +1236,21 @@
       ],
       "Continue your subscription": [
         "Продолжить подписку"
+      ],
+      "Create label": [
+        "Создать ярлык"
+      ],
+      "Discover and set up features": [
+        "Настройте функции"
+      ],
+      "Remind me later": [
+        "Напомнить позже"
+      ],
+      "Set up other features": [
+        "Настроить другие функции"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
       ]
     },
     "Cancellation upsell": {
@@ -3484,6 +3511,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Эл. почта"
       ],
@@ -3492,6 +3522,9 @@
       ],
       "No verification method available": [
         "Нет доступных способов проверки"
+      ],
+      "SMS": [
+        "СМС"
       ]
     },
     "Info": {
@@ -5937,6 +5970,9 @@
       "Start date": [
         "Дата начала"
       ],
+      "State": [
+        "Состояние"
+      ],
       "Street address": [
         "Адрес"
       ],
@@ -6166,6 +6202,9 @@
       ],
       "Request an invite": [
         "Запросить приглашение"
+      ],
+      "settings": [
+        "настройки"
       ],
       "Sign in": [
         "Войти"
@@ -6416,11 +6455,17 @@
       "Get started for ${ priceCoupon }": [
         "Начните с ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
       "Upgrade": [
         "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6596,6 +6641,9 @@
       ],
       "15 GB storage": [
         "15 ГБ хранилища"
+      ],
+      "200 GB of storage": [
+        "200 ГБ памяти"
       ],
       "24/7 account management support": [
         "Постоянная круглосуточная поддержка управления аккаунтом"
@@ -6810,6 +6858,9 @@
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
       ],
+      "Private photo backup": [
+        "Конфиденциальное резервное копирование фото"
+      ],
       "Proofread and refine your emails": [
         "Проверьте и уточните ваши электронные письма"
       ],
@@ -6848,6 +6899,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Безопасное хранение и обмен файлами"
       ],
       "Secure link sharing": [
         "Защищенный совместный доступ к ссылкам"
@@ -7134,6 +7188,14 @@
       ],
       "terms and conditions": [
         "условия"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Скидка ${ priceCoupon } действует в течение первого месяца. Затем она будет автоматически продлена до ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Разблокируйте все премиум продукты и функции ${ BRAND_NAME } только за ${ priceMailPlus }. Отменить можно в любое время."
       ]
     },
     "new_plans: Title": {
@@ -7558,6 +7620,58 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Некоторые изображения не были загружены из-за дублирования имен файлов в текущей выборке."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Предложение ${ pricingTitle } истекает сегодня!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Попробуйте Drive Plus всего за ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Попробуйте Mail Plus всего за ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Последний шанс получить скидку 80% на первый месяц подписки ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Ограниченное предложение"
+      ],
+      "Maybe later": [
+        "Может быть позже"
+      ],
+      "Save 80% on your first month.": [
+        "Сэкономьте 80% в первый месяц."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 дополнительных премиум-функций"
+      ],
+      "Custom email domain": [
+        "Пользовательский домен электронной почты"
+      ],
+      "Email addresses": [
+        "Адреса электронной почты"
+      ],
+      "Free": [
+        "Бесплатно"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Storage": [
+        "Хранилище"
       ]
     },
     "Onboarding": {
@@ -8016,6 +8130,11 @@
         "Ваша карта отклонена. Пожалуйста, попробуйте другую карту или свяжитесь с вашим банком для авторизации транзакции."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Бесплатно"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Подтверждая этот платеж, вы авторизуете ${ BRAND_NAME } и Stripe, наш поставщик платежных услуг, поручить вашему банку депонировать свой счет и банк соответствующим образом депонировать свой счет. Вы можете получить возврат средств в течение 8 недель со дня дебетования на основании Вашего договора с Вашим банком."
@@ -8257,8 +8376,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Просмотрите безопасность вашего аккаунта"
+      "Review account safety": [
+        "Проверьте безопасность аккаунта"
       ]
     },
     "saml: Action": {
@@ -8874,6 +8993,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Эта подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока она не будет отменена."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Ваша подписка будет продлеваться каждый год по фиксированной цене."
       ]
     },
     "specialoffer: Link": {
@@ -8882,6 +9004,9 @@
       ],
       "Upgrade": [
         "Сменить тариф"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Улучшить за ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9479,47 +9604,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -9814,6 +9898,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -10157,6 +10282,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помощник по написанию ${ BRAND_NAME } Scribe"
       ],
+      "${ feature } is now active": [
+        "${ feature } теперь активна"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Клиенты ${ VPN_APP_NAME }"
       ],
@@ -10273,6 +10401,9 @@
       ],
       "Authentication security": [
         "Безопасность аутентификации"
+      ],
+      "Auto-deletion is active": [
+        "Автоматическое удаление включено"
       ],
       "Billing cycle": [
         "Период оплаты"
@@ -10832,6 +10963,9 @@
       "WireGuard configuration": [
         "Конфигурация WireGuard"
       ],
+      "You can now create unlimited folders and labels": [
+        "Теперь вы можете создавать неограниченное количество папок и ярлыков."
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
       ],
@@ -11342,6 +11476,9 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Ваш запланированный тариф начинается с ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша подписка будет автоматически обновлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
@@ -11450,8 +11587,13 @@
       "A safer way to hold your Bitcoin": [
         "Безопасный способ держать свои Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin по эл. почте"
+      "Bitcoin via Email": [
+        "Bitcoin по электронной почте"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Безопасный способ хранить Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -2316,10 +2316,10 @@
         "Tothom a la vostra organització es pot connectar a servidors compartits de tots els països."
       ],
       "If disabled, only admins will have access.": [
-        "Si està desactivat, només els administradors tenen accés."
+        "Si està desactivat, només els administradors hi tenen accés."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
-        "Separeu les diferents parts de la vostra vida i organitzeu la vostra safata d'entrada amb adreces addicionals."
+        "Manteniu les diferents parts de la vostra vida separades i la safata d'entrada organitzada amb adreces addicionals."
       ],
       "No one in your organization can connect to shared servers.": [
         "Ningú de la vostra organització no es pot connectar a servidors compartits."
@@ -2452,6 +2452,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només apareixerà en les factures emeses en el futur i no afectarà les factures existents."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només canviarà la factura que hàgiu seleccionat i no els detalls de la vostra factura futura."
       ]
     },
     "Email spam notification": {
@@ -2523,6 +2526,9 @@
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "L'edició de l'adreça de facturació no està disponible en aquests moments. Proveu de nou més tard."
       ],
       "Email address is invalid": [
         "L'adreça de correu electrònic no és vàlida."
@@ -3344,6 +3350,11 @@
         "Molt petit"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Ja teniu un compte? ${ signIn }"
@@ -3494,7 +3505,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Afegiu aquest registre al domini, al tauler de control del registrador de noms de domini"
+        "Afegiu aquest registre al domini, al tauler de control del registrador"
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "S'ha trobat ${ itemsCount } suggeriment. Utilitzeu el teclat per navegar.",
@@ -3505,6 +3516,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -3513,6 +3527,9 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -4105,10 +4122,10 @@
         "Passarel·les"
       ],
       "Gateways monitoring is disabled.": [
-        "La supervisió de passarel·les està desactivada."
+        "El monitoratge de passarel·les està desactivat."
       ],
       "Gateways monitoring is enabled.": [
-        "La supervisió de passarel·les està activada."
+        "El monitoratge de passarel·les està activat."
       ],
       "Get ${ upsellPlanName }": [
         "Obteniu ${ upsellPlanName }"
@@ -4701,7 +4718,7 @@
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
-        "Especifiqueu el domini que es pot autenticar amb autenticació SSO basada en SAML."
+        "Especifiqueu el domini que es pot autenticar amb SSO basat en SAML."
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclareix qui està autoritzat a enviar correus electrònics per al vostre domini. Assegureu-vos d'afegir el registre TXT següent a la consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
@@ -6293,7 +6310,7 @@
         "Canvia la contrasenya"
       ],
       "Convert to SSO": [
-        "Passar al SSO"
+        "Converteix a inici de sessió únic (SSO)"
       ],
       "Delete": [
         "Elimina"
@@ -6302,7 +6319,7 @@
         "Elimina i revoca la invitació"
       ],
       "Detach from SSO": [
-        "Desconnectar del SSO"
+        "Desconnecta de l'SSO"
       ],
       "Edit": [
         "Edita"
@@ -6441,7 +6458,7 @@
         "Millora ara"
       ],
       "Upgrade to ${ planName }": [
-        "Milloreu a ${ planName }"
+        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6678,7 +6695,7 @@
         "Camps personalitzats"
       ],
       "Custom snooze time": [
-        "Períodes de pausa personalitzats"
+        "Temps d'ajornament personalitzat"
       ],
       "Custom workspace branding": [
         "Marca personalitzada de l'espai de treball"
@@ -6827,7 +6844,7 @@
         "Estalvieu temps en l'enviament dels vostres correus electrònics"
       ],
       "Schedule and snooze emails for any time": [
-        "Planifiqueu i poseu en pausa els correus electrònics per a qualsevol moment"
+        "Programeu i ajorneu correus electrònics per a qualsevol moment."
       ],
       "Schedule messages at any time": [
         "Programeu missatges en qualsevol moment."
@@ -6839,7 +6856,7 @@
         "Servidors Secure Core"
       ],
       "Secure file storage and sharing": [
-        "Emmagatzematge i ús compartit de fitxers segurs"
+        "Compartició i emmagatzematge segurs de fitxers"
       ],
       "Secure link sharing": [
         "Compartició d'enllaços segurs"
@@ -6984,7 +7001,7 @@
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
       "Snooze messages and get reminded when you want": [
-        "Poseu en pausa els missatges i rebeu-ne un recordatori quan vulgueu"
+        "Ajorneu els missatges i rebeu-ne un recordatori quan vulgueu"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
@@ -7121,7 +7138,7 @@
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "new_plans: Title": {
@@ -7607,6 +7624,9 @@
       "Plus": [
         "Plus"
       ],
+      "Recover previous file versions": [
+        "Recupera versions anteriors del fitxer"
+      ],
       "Storage": [
         "Emmagatzematge"
       ]
@@ -8055,6 +8075,11 @@
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a instruir el vostre banc perquè debiti el vostre compte, i el banc a debitar el compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes des de la data del dèbit d'acord amb les condicions del vostre acord amb el banc."
@@ -8315,7 +8340,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Reviseu la seguretat del compte"
       ]
     },
@@ -8904,7 +8929,7 @@
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "La teva subscripció es renovarà al mateix preu cada any."
+        "La vostra subscripció es renovarà al mateix preu cada any."
       ]
     },
     "specialoffer: Link": {
@@ -9477,47 +9502,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -9806,6 +9790,47 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -10993,7 +11018,7 @@
         "Els membres que no utilitzen l'A2F rebran un correu electrònic sol·licitant-los que ho habiliten al més aviat possible."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
-        "Especifiqueu el domini que es pot autenticar amb autenticació SSO basada en SAML."
+        "Especifiqueu el domini que es pot autenticar amb SSO basat en SAML"
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Especifiqueu els usuaris de l'entitat d'eduGAIN que tenen permís per autenticar-se amb un inici de sessió únic (SSO) SAML."
@@ -11045,7 +11070,7 @@
         "Devolució de càrrec"
       ],
       "Failed": [
-        "Ha fallat"
+        "Operació fallida"
       ],
       "Needs attention": [
         "Necessita atenció"
@@ -11060,7 +11085,7 @@
         "Temps esgotat"
       ],
       "Voided": [
-        "Anul·lado"
+        "Anul·lat"
       ]
     },
     "Transaction type display as badge": {
@@ -11138,6 +11163,9 @@
       ],
       "Keep request": [
         "Manté la sol·licitud"
+      ],
+      "Member activation incomplete": [
+        "L'activació del membre no s'ha completat."
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Un cop l'usuari doni el consentiment, podreu ajudar-lo a recuperar l'accés al compte o gestionar les seves dades."
@@ -11443,13 +11471,13 @@
       "A safer way to hold your Bitcoin": [
         "Una manera més segura de mantenir el vostre Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Una manera més segura de mantenir Bitcoin"
+        "Una manera més segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
