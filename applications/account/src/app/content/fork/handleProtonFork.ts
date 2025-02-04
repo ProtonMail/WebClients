@@ -8,6 +8,7 @@ import {
     getRequiredForkParameters,
     getShouldReAuth,
 } from '@proton/shared/lib/authentication/fork';
+import { type ProtonForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     GetActiveSessionType,
@@ -17,9 +18,6 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { Api } from '@proton/shared/lib/interfaces';
-
-import type { ProtonForkData } from './interface';
-import { SSOType } from './interface';
 
 type ProtonForkResult =
     | { type: 'invalid' }

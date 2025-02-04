@@ -8,13 +8,13 @@ import {
     produceForkConsumption,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
+import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { AuthExtensionState } from '../../public/AuthExtension';
-import { type ProduceForkData, SSOType } from '../fork/interface';
 import type { Paths } from '../helper';
 import type { LoginResult } from './interface';
 
