@@ -80,7 +80,7 @@ const getRegularRenewalNoticeText = ({
     }
 
     const renewalTime = (
-        <Time format="P" key="auto-renewal-time">
+        <Time format="PPP" key="auto-renewal-time">
             {unixRenewalTime}
         </Time>
     );
@@ -133,7 +133,7 @@ const getSpecialLengthRenewNoticeText = ({
         let scheduledChangeText: string | string[] | null = null;
         if (subscription && renewalNoticeProps.isScheduled) {
             const renewalTime = (
-                <Time format="P" key="auto-renewal-time">
+                <Time format="PPP" key="auto-renewal-time">
                     {subscription.PeriodEnd}
                 </Time>
             );

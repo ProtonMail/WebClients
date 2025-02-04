@@ -16,6 +16,7 @@ import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssi
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { getScribeUpsellLearnMore, getScribeUpsellText } from './helpers';
 
@@ -31,7 +32,9 @@ const AssistantToggle = () => {
 
     const hasBoughtPlan = hasAIAssistant(subscription);
     const { trialStatus, trialEndDate } = useAssistantSubscriptionStatus();
-    const formattedDate = format(trialEndDate || new Date(), 'PP');
+    const formattedDate = format(trialEndDate || new Date(), 'PPP', {
+        locale: dateLocale,
+    });
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
