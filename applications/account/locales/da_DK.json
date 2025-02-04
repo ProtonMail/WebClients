@@ -4548,6 +4548,9 @@
       "Please select a country": [
         "Vælg venligst et land"
       ],
+      "Please select a state": [
+        "Vælg venligst en region"
+      ],
       "Please set a recovery email first": [
         "Angiv først en gendannelsesmail"
       ],
@@ -7063,11 +7066,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen."
@@ -7093,6 +7096,12 @@
       ],
       "Discount": [
         "Rabat"
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Oplev nye funktioner, der er låst op med ${ planTitle }, og begynd at bruge dem med det samme!"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -7209,6 +7218,9 @@
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktiver TLS eller SSL på den eksterne service, hvis det er understøttet."
       ],
+      "Enabling auto-deletion…": [
+        "Aktivering af automatisk sletning…"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Hvis du aktiverer gendannelse ved hjælp af en sætning igen, genereres der en ny gendannelsessætning."
       ],
@@ -7220,6 +7232,9 @@
       ],
       "Enhance your network security": [
         "Styrk din netværkssikkerhed"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Få en hurtigere og mere fokuseret e-mailoplevelse med desktop-appen."
       ],
       "Enter key manually instead": [
         "Indtast nøgle manuelt i stedet"
@@ -7831,6 +7846,9 @@
       ],
       "or ${ selectFileButton }": [
         "eller ${ selectFileButton }"
+      ],
+      "or discover other features:": [
+        "eller opdag andre funktioner:"
       ],
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
@@ -9133,8 +9151,11 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Din gendannelsessætning er en serie af 12 tilfældigt genererede ord i en bestemt rækkefølge."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Din supportsag er blevet lukket. Tak for at kontakte ${ BRAND_NAME } support."
@@ -14162,9 +14183,6 @@
       "Recovery phone number": [
         "Telefonnummer til gendannelse"
       ],
-      "Review your account safety": [
-        "Gennemgå din kontos sikkerhed"
-      ],
       "Safeguard account now": [
         "Beskyt din konto nu"
       ],
@@ -18410,9 +18428,6 @@
       ],
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "Som inviteret bruger, tilmeld dig en gratis ${ BRAND_NAME }-konto for at få eksklusiv adgang til ${ appName }."
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via e-mail"
       ],
       "Create ${ BRAND_NAME } Account now": [
         "Opret ${ BRAND_NAME }-konto nu"

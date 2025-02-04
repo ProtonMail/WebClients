@@ -3948,6 +3948,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Informationen du anger i detta formulär kommer endast att ändra den faktura du har valt och inte dina framtida fakturadetaljer."
       ]
     },
     "Email": {
@@ -4488,6 +4491,9 @@
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Redigering av faktureringsadress är inte tillgänglig just nu. Försök igen senare."
       ],
       "Email address disabled": [
         "E-postadress inaktiverad"
@@ -7382,11 +7388,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -8630,6 +8636,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP-inlämning låter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina e-postadresser med anpassade domäner. Denna funktion är endast tillgänglig för ${ BRAND_NAME } for Business-användare med anpassade domäner."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
@@ -13944,6 +13953,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Fortsätt med ditt ${ BRAND_NAME }-konto"
       ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "Inkluderar ${ discountPercent } % Porkbun-rabatt"
+      ],
       "Let's talk": [
         "Låt oss prata"
       ],
@@ -14966,8 +14978,8 @@
       "Recovery phone number": [
         "Telefonnummer för återställning"
       ],
-      "Review your account safety": [
-        "Granska din kontosäkerhet"
+      "Review account safety": [
+        "Granska kontosäkerhet"
       ],
       "Safeguard account now": [
         "Skydda konto nu"
@@ -15972,6 +15984,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Denna prenumeration kommer förnyas automatiskt vartannat år med samma pris tills den avbryts."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
     },
     "specialoffer: Link": {
@@ -19666,7 +19681,7 @@
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "Som en inbjuden användare, registrera dig för ett gratis ${ BRAND_NAME }-konto för att exklusivt få åtkomst till ${ appName }"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-post"
       ],
       "Create ${ BRAND_NAME } Account now": [
@@ -19698,6 +19713,11 @@
       ],
       "You're Invited.": [
         "Du är inbjuden."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Ett säkrare sätt att hålla Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
