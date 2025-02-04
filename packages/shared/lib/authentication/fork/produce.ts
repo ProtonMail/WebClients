@@ -1,5 +1,5 @@
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { getIsGlobalSSOAccount, getIsSSOAccount } from '@proton/shared/lib/keys';
+import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
 
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
@@ -136,6 +136,7 @@ export interface ProduceForkParameters {
     forkVersion: number;
     prompt: 'login' | undefined;
     promptType: 'offline-bypass' | 'offline' | 'default';
+    promptBypass: 'none' | 'sso';
     payloadType: 'offline' | 'default';
     payloadVersion: 1 | 2;
     email?: string;
@@ -179,6 +180,15 @@ export const getProduceForkParameters = (
         }
         return 'default';
     })();
+    const promptBypass = (() => {
+        const value = searchParams.get(ForkSearchParameters.PromptBypass) || '';
+        if (value === 'none' || value === 'sso') {
+            return value;
+        }
+        // By default, re-auth prompts are disabled for SSO users due to bad UX. But it's still allowed in some flows,
+        // like exporting passwords.
+        return 'sso';
+    })();
     const email = getEmailSessionForkSearchParameter(searchParams);
 
     return {
@@ -188,6 +198,7 @@ export const getProduceForkParameters = (
         forkType: getValidatedForkType(forkType),
         prompt: prompt === 'login' ? 'login' : undefined,
         promptType,
+        promptBypass,
         plan,
         independent: independent === '1' || independent === 'true',
         payloadType,
@@ -204,38 +215,33 @@ export const getRequiredForkParameters = (
     return Boolean(forkParameters.app && forkParameters.state);
 };
 
-export const getCanUserReAuth = (user: User) => {
+const getCanUserReAuth = (user: User) => {
     // The reauth container doesn't support an admin signed into a sub-user
     if (user.OrganizationPrivateKey) {
-        return false;
-    }
-    // Global SSO accounts are supported by entering the backup password - currently disabled
-    // due to bad UX, and Pass is using something else for e.g. export feature.
-    if (getIsGlobalSSOAccount(user)) {
-        return false;
-    }
-    // Not supported for a standard SSO account without keys
-    if (getIsSSOAccount(user)) {
         return false;
     }
     return true;
 };
 
 export const getShouldReAuth = (
-    forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType'>,
+    forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'> | undefined,
     authSession: {
         User: User;
         offlineKey: OfflineKey | undefined;
+        prompt?: 'login' | null;
     }
 ) => {
-    const shouldReAuth = forkParameters.prompt === 'login';
-    if (!shouldReAuth) {
+    const shouldReauth = forkParameters?.prompt === 'login' || authSession.prompt === 'login';
+    if (!shouldReauth) {
         return false;
     }
     if (!getCanUserReAuth(authSession.User)) {
         return false;
     }
-    if (forkParameters.promptType === 'offline-bypass' && authSession.offlineKey) {
+    if (forkParameters?.promptType === 'offline-bypass' && authSession.offlineKey) {
+        return false;
+    }
+    if (forkParameters?.promptBypass === 'sso' && getIsGlobalSSOAccount(authSession.User)) {
         return false;
     }
     return true;
