@@ -423,7 +423,9 @@ const BasePublicApp = () => {
                             }}
                             onLogin={({ username, token, flow }) => {
                                 const state: LoginContainerState = {
-                                    authType: AuthType.ExternalSSO,
+                                    authTypeData: {
+                                        type: AuthType.ExternalSSO,
+                                    },
                                     externalSSO: {
                                         token,
                                         flow,
