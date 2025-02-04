@@ -223,6 +223,7 @@ module.exports = {
         'custom-rules/deprecate-classes': 'warn',
         'custom-rules/no-template-in-translator-context': 'error',
         'custom-rules/validate-ttag': 'error',
+        'custom-rules/date-formatting-locale': 'warn',
         '@typescript-eslint/consistent-type-imports': 'error',
         'lodash/import-scope': [2, 'method'],
     },
