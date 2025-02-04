@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { AuthStep } from '@proton/components/containers/login/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -10,8 +10,8 @@ import Main from '../public/Main';
 import PublicHelpLink from '../public/PublicHelpLink';
 
 export interface RenderProps {
-    title: string;
-    subTitle?: string;
+    title: ReactNode;
+    subTitle?: string | ReactElement;
     onBack?: () => void;
     content: ReactNode;
     beforeMain?: ReactNode;
