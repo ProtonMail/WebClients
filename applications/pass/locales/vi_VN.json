@@ -11,6 +11,9 @@
       "Add current URL": [
         "Thêm URL hiện tại"
       ],
+      "Add domain": [
+        "Thêm tên miền"
+      ],
       "Add more": [
         "Bổ sung thêm"
       ],
@@ -83,6 +86,9 @@
       "Copy and close": [
         "Sao chép và đóng"
       ],
+      "Copy forwarding address": [
+        "Sao chép địa chỉ chuyển tiếp"
+      ],
       "Copy link": [
         "Sao chép liên kết"
       ],
@@ -128,6 +134,9 @@
       "Delete all": [
         "Xóa tất"
       ],
+      "Delete it, I will never need it": [
+        "Xoá nó, tôi sẽ không cần nó"
+      ],
       "Delete password": [
         "Xóa mật khẩu"
       ],
@@ -139,6 +148,9 @@
       ],
       "Deselect": [
         "Bỏ chọn"
+      ],
+      "Disable alias": [
+        "Vô hiệu bí danh"
       ],
       "Disable instead": [
         "Vô hiệu hóa thay thế"
@@ -383,6 +395,9 @@
       "Show": [
         "Hiện"
       ],
+      "Show advanced options": [
+        "Hiện tùy chọn nâng cao"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Đăng nhập bằng ${ BRAND_NAME }"
       ],
@@ -398,6 +413,9 @@
       "Submitting report...": [
         "Đang nộp báo cáo..."
       ],
+      "Sync alias": [
+        "Đồng bộ bí danh"
+      ],
       "Sync aliases": [
         "Đồng bộ bí danh"
       ],
@@ -409,6 +427,9 @@
       ],
       "Try again.": [
         "Thử lại."
+      ],
+      "Understood, I will never need it": [
+        "Đã hiểu, tôi không bao giờ cần nó"
       ],
       "Unlock": [
         "Mở khóa"
@@ -461,6 +482,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } có sẵn với gói trả phí. Nâng cấp để truy cập ngay lập tức."
+      ],
       "${ total } other login uses the same password": [
         "${ total } lần đăng nhập khác sử dụng cùng mật khẩu"
       ],
@@ -540,6 +564,9 @@
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "Phát hiện ${ errors.length } hàng CSV bị lỗi"
+      ],
+      "Domain not available, try again later": [
+        "Tên miền không khả dụng, vui lòng thử lại sau"
       ],
       "Editing item failed": [
         "Chỉnh sửa nội dung thất bại"
@@ -642,6 +669,9 @@
       ],
       "PIN codes do not match": [
         "Mã PIN không khớp"
+      ],
+      "Request timed out": [
+        "Yêu cầu đã hết hạn"
       ],
       "Requesting alias options failed": [
         "Yêu cầu tùy chọn bí danh thất bại"
@@ -954,6 +984,12 @@
       "Disabling offline mode...": [
         "Đang tắt chế độ ngoại tuyến..."
       ],
+      "Drop file here to upload": [
+        "Thả tệp vào đây để tải lên"
+      ],
+      "Drop to import": [
+        "Thả để nhập"
+      ],
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
         "Do một hạn chế của trình mở rộng trên Safari, tập tin sau khi được xuất ra sẽ thiếu phần mở rộng \".pgp\". Vui lòng thêm mở rộng \".pgp\" vào tập tin sau khi xuất ra (ví dụ file.pgp)."
       ],
@@ -1005,6 +1041,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Vì lý do bảo mật, truy cập của bạn cần được xác nhận"
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Đã sao chép địa chỉ chuyển tiếp vào bảng tạm. Gửi email đến địa chỉ này và ${ Email } sẽ nhận được."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Các mật khẩu sẽ được lưu trữ trong ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần."
       ],
@@ -1025,6 +1064,9 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Để có được trải nghiệm tốt nhất từ ${ PASS_APP_NAME }, vui lòng cấp quyền phần mở rộng cần thiết"
+      ],
+      "Internet connection lost": [
+        "Kết nối internet bị lỗi"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Mất kết nối Internet. Vui lòng kiểm tra tình trạng kết nối của thiết bị."
@@ -1203,6 +1245,12 @@
       "Please enter your current PIN code to continue": [
         "Vui lòng nhập mã PIN hiện tại để tiếp tục"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Xin lưu ý rằng sau khi xóa, bí danh không thể khôi phục được. Có lẽ bạn muốn tắt bí danh thay thế?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Xin lưu ý rằng sau khi xóa, bí danh không thể khôi phục được. Bí danh đã bị vô hiệu hóa và sẽ không chuyển tiếp email đến hộp thư của bạn"
+      ],
       "Press Enter to copy": [
         "Nhấn Enter để sao chép"
       ],
@@ -1238,6 +1286,12 @@
       ],
       "Selected items successfully restored from trash": [
         "Các nội dung được chọn đã được khôi phục từ thùng rác"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Máy chủ không thể truy cập được. Vui lòng thử lại sau vài phút"
+      ],
+      "Session timed out": [
+        "Phiên hết hạn"
       ],
       "Set by your organization": [
         "Được thiết lập bới tổ chức của bạn"
@@ -1368,6 +1422,9 @@
       "You cannot change the mailboxes for this alias.": [
         "Bạn không thể đổi địa chỉ email nhận cho bí danh này."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Bạn có ${ aliasCount } alias có trong SimpleLogin nhưng lại thiếu trong ${ PASS_APP_NAME }. Bạn có muốn đồng bộ hóa nó không?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Bạn còn ${ daysRemaining } ngày để thử nó và những tính năng cao cấp khác."
       ],
@@ -1406,6 +1463,9 @@
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Tài khoản bị hạn chế vì tổ chức của bạn yêu cầu xác minh 2FA. Vui lòng bật xác minh 2FA trong mục cài đặt tài khoản hoặc liên hệ với quản trị viên."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Các tệp của bạn sẽ được mã hoá và sau đó được lưu"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tổ chức của bạn yêu cầu phải bảo mật truy cập của bạn tới ${ PASS_APP_NAME }"
@@ -2227,6 +2287,9 @@
       "Pending access to the shared data": [
         "Đang chờ truy cập vào dữ liệu được chia sẻ"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Xin lưu ý rằng một khi đã xóa, bí danh sẽ không thể khôi phục lại được."
+      ],
       "Recommended actions": [
         "Hành động được đề xuất"
       ],
@@ -2280,6 +2343,9 @@
       ],
       "Sync alias": [
         "Đồng bộ hoá alias"
+      ],
+      "Sync your aliases from SimpleLogin": [
+        "Đồng bộ bí danh của bạn từ SimpleLogin"
       ],
       "Transfer ownership": [
         "Chuyển quyền sở hữu"
@@ -2350,6 +2416,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Không thể tạo kho lưu trữ \"${ vaultName }\""
+      ],
+      "Delete alias": [
+        "Xoá bí danh"
       ],
       "Empty note": [
         "Ghi chú trống"
