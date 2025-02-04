@@ -354,7 +354,7 @@ const MinimalLoginContainer = ({
                                 api: silentApi,
                             });
                             const result = await handleNextLogin({
-                                authType: AuthType.SRP,
+                                authType: AuthType.Srp,
                                 authResponse: loginResult.authResult.result,
                                 authVersion: loginResult.authResult.authVersion,
                                 appName: APP_NAME,
