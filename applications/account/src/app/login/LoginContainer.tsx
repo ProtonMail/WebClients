@@ -4,11 +4,12 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import type { OnLoginCallback } from '@proton/components';
-import { AbuseModal, useApi, useConfig, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
+import { AbuseModal, Icon, useApi, useConfig, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
 import type {
     AuthActionResponse,
     AuthCacheResult,
+    AuthTypeData,
     ExternalSSOFlow,
 } from '@proton/components/containers/login/interface';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
@@ -24,7 +25,7 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsPassApp, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronPass } from '@proton/shared/lib/helpers/desktop';
 
@@ -77,7 +78,7 @@ const defaultRender = isElectronPass ? defaultElectronPassLoginRender : defaultL
 
 export interface LoginContainerState {
     username?: string;
-    authType?: AuthType;
+    authTypeData?: AuthTypeData;
     externalSSO?: {
         token?: string;
         flow?: ExternalSSOFlow;
@@ -106,7 +107,15 @@ const LoginContainer = ({
 }: Props) => {
     const { state } = useLocation<LoginContainerState | undefined>();
     const { APP_NAME } = useConfig();
-    const [authType, setAuthType] = useState<AuthType>(state?.authType || AuthType.SRP);
+    const [authTypeData, setAuthTypeData] = useState<AuthTypeData>(() => {
+        if (state?.authTypeData) {
+            return state.authTypeData;
+        }
+        if (getIsVPNApp(toApp) || getIsPassApp(toApp)) {
+            return { type: AuthType.Auto };
+        }
+        return { type: AuthType.Srp };
+    });
     const { isElectronDisabled } = useIsInboxElectronApp();
     const loginFormRef = useRef<LoginFormRef>();
     const searchParams = new URLSearchParams(location.search);
@@ -170,6 +179,12 @@ const LoginContainer = ({
 
     const handleBackStep = (() => {
         if (step === AuthStep.LOGIN) {
+            if (authTypeData.type === AuthType.AutoSrp) {
+                return () => {
+                    setAuthTypeData({ type: AuthType.Auto });
+                    loginFormRef.current?.reset();
+                };
+            }
             return onBack
                 ? () => {
                       if (loginFormRef.current?.getIsLoading()) {
@@ -194,10 +209,20 @@ const LoginContainer = ({
             };
         }
         const continueTo = toAppName ? getContinueToString(toAppName) : '';
-        if (authType === AuthType.ExternalSSO) {
+        if (authTypeData.type === AuthType.ExternalSSO) {
             return {
                 title: c('sso').t`Sign in to your organization`,
                 subTitle: continueTo,
+            };
+        }
+        if (authTypeData.type === AuthType.AutoSrp) {
+            return {
+                title: c('sso').t`Welcome`,
+                subTitle: (
+                    <button onClick={handleBackStep} type="button" className="inline text-ellipsis">
+                        <Icon name="user" /> {authTypeData.username}
+                    </button>
+                ),
             };
         }
         const title = c('Title').t`Sign in`;
@@ -253,9 +278,7 @@ const LoginContainer = ({
                                     modal={modal || isElectronPass}
                                     appName={APP_NAME}
                                     externalSSO={{
-                                        enabled:
-                                            APP_NAME === APPS.PROTONACCOUNT &&
-                                            (getIsVPNApp(toApp) || getIsPassApp(toApp)),
+                                        enabled: true,
                                         options: state?.externalSSO,
                                     }}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
@@ -263,11 +286,9 @@ const LoginContainer = ({
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
                                     hasRemember={hasRemember && !isElectronPass}
-                                    authType={authType}
+                                    authTypeData={authTypeData}
                                     externalRedirect={externalRedirect}
-                                    onChangeAuthType={(authType) => {
-                                        setAuthType(authType);
-                                    }}
+                                    onChangeAuthTypeData={setAuthTypeData}
                                     onPreSubmit={onPreSubmit}
                                     onStartAuth={onStartAuth}
                                     onSubmit={async (data) => {

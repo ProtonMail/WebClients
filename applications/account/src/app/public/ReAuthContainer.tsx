@@ -159,7 +159,7 @@ const ReAuthContainer = ({
         return handleFinalizeLogin(session);
     };
 
-    const handleSubmitSRP = async (password: string) => {
+    const handleSubmitSrp = async (password: string) => {
         await srpAuth({
             api: uidApi,
             credentials: { password },
@@ -219,7 +219,7 @@ const ReAuthContainer = ({
         <SrpForm
             onSubmit={async (password) => {
                 await onPreSubmit();
-                await handleSubmitSRP(password).catch(errorHandler);
+                await handleSubmitSrp(password).catch(errorHandler);
             }}
             below={
                 <>
