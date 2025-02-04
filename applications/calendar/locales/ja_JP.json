@@ -1664,7 +1664,7 @@
         "勤務先"
       ],
       "Yomi": [
-        "ヨミカタ"
+        "ふりがな"
       ]
     },
     "Country name": {
@@ -3029,7 +3029,7 @@
         "エラーが発生しました"
       ],
       "Error connecting to the Bitcoin API.": [
-        "ビットコインAPIへの接続中にエラーが発生しました。"
+        "Bitcoin APIへの接続中にエラーが発生しました。"
       ],
       "Error: ${ errorMessage }": [
         "エラー： ${ errorMessage }"
@@ -5543,10 +5543,10 @@
         "ブラウザのバージョン"
       ],
       "BTC address": [
-        "ビットコインアドレス"
+        "Bitcoin アドレス"
       ],
       "BTC amount": [
-        "ビットコイン金額"
+        "Bitcoin 金額"
       ],
       "Calendar": [
         "カレンダー"
@@ -6002,7 +6002,7 @@
         "下書き"
       ],
       "How to pay with Bitcoin?": [
-        "ビットコインで支払うには？"
+        "Bitcoinで支払うには？"
       ],
       "Inbox": [
         "受信トレイ"
@@ -7531,7 +7531,7 @@
         "無料"
       ],
       "Online document editor": [
-        "オンラインテキスト編集プログラム"
+        "オンライン文書エディタ"
       ],
       "Plus": [
         "Plus"
@@ -7827,6 +7827,11 @@
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "無料"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から 8 週間以内に返金を受けることができます。"
@@ -8040,7 +8045,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "アカウントの安全性を確認してください"
       ]
     },
@@ -8451,6 +8456,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "サブスクリプションは毎年同じ料金で更新されます。"
       ]
     },
     "specialoffer: Link": {
@@ -9177,6 +9185,9 @@
       ],
       "Email address copied to clipboard": [
         "メールアドレスがクリップボードにコピーされました"
+      ],
+      "Event content search enabled": [
+        "予定内容の検索が有効になりました"
       ],
       "Event created": [
         "予定が作成されました。"
@@ -10098,7 +10109,7 @@
       "A safer way to hold your Bitcoin": [
         "Bitcoin を保持する安全な方法"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "メールで Bitcoin"
       ]
     },
