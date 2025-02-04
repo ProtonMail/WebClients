@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'react';
+import type { TimeHTMLAttributes } from 'react';
 
 import type { Options } from '@proton/shared/lib/helpers/time';
 import { readableTime } from '@proton/shared/lib/helpers/time';
@@ -19,7 +19,7 @@ const getValue = (value?: string | number | null) => {
     return 0;
 };
 
-interface Props extends HTMLAttributes<HTMLTimeElement> {
+interface Props extends TimeHTMLAttributes<HTMLTimeElement> {
     children?: string | number | null;
     sameDayFormat?: Options['sameDayFormat'];
     format?: Options['format'];
