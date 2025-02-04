@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Klasörü daralt"
       ],
+      "Collapse navigation bar": [
+        "Gezinme çubuğunu daralt"
+      ],
       "Compose": [
         "Oluştur"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Yok say"
+      ],
+      "Display navigation bar": [
+        "Gezinme çubuğunu görüntüle"
       ],
       "Done": [
         "Tamam"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Gelişmiş PGP ayarlarını görüntüle"
       ],
+      "Show navigation bar": [
+        "Gezinme çubuğunu görüntüle"
+      ],
       "Show preview": [
         "Ön izlemeyi görüntüle"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Dosya yükle"
       ],
+      "Upload files": [
+        "Dosyaları yükle"
+      ],
       "Upload folder": [
         "Klasör yükle"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Yükle"
       ]
     },
     "Actions message": {
@@ -3633,7 +3650,7 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        "Güvenlik kodu"
       ],
       "Email": [
         "E-posta"
@@ -4417,23 +4434,8 @@
       "Download ${ name } app": [
         "${ name } uygulamasını indir"
       ],
-      "Download canceled": [
-        "İndirme iptal edildi"
-      ],
-      "Download failed": [
-        "İndirilemedi"
-      ],
-      "Download failed due to ${ error }": [
-        "İndirme ${ error } nedeniyle tamamlanamadı"
-      ],
-      "Download finished": [
-        "İndirme tamamlandı"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } dosyasının indirilmesinden vazgeçilecek"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Bağlantı sorunu nedeniyle indirme duraklatıldı. Otomatik olarak sürdürülecek"
       ],
       "Download was canceled": [
         "İndirme iptal edildi"
@@ -4452,6 +4454,9 @@
       ],
       "Drop files here": [
         "Dosyaları sürükleyip buraya bırakın"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Yüklemek için dosyaları buraya bırakın veya yükle düğmesine tıklayın"
       ],
       "Drop to import": [
         "İçe aktarmak için bırakın"
@@ -4582,6 +4587,9 @@
       ],
       "from the version history?": [
         "sürüm geçmişinden?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Telefonunuzdaki fotoğrafları yedeklemek için uygulamayı edinin veya buraya yükleyin."
       ],
       "Get the app to backup photos from your phone.": [
         "Telefonunuzdaki fotoğrafları yedeklemek için uygulamayı edinin."
@@ -4789,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Bir dosya paylaşmanız mı gerekiyor? ${ DRIVE_APP_NAME } dosyalarınızı paylaşmanın, depolamanın ve eşitlemenin en güvenli yoludur."
-      ],
       "Network issue": [
         "Ağ sorunu"
       ],
@@ -4830,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Not: Veriler, ${ DRIVE_APP_NAME } kurulu aygıtlarda yerel olarak bulunmayı sürdürebilir."
-      ],
-      "Nothing here yet": [
-        "Burada henüz hiçbir şey yok"
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
@@ -8622,8 +8624,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Hesabınızın güvenliğini değerlendirin"
+      "Review account safety": [
+        "Hesap güvenliğini gözden geçirin"
       ]
     },
     "saml: Error": {
@@ -10109,7 +10111,7 @@
         "Doğrulanmamış klasör indirilsin mi?"
       ],
       "Drive": [
-        "Sürücü"
+        "Drive"
       ],
       "Drop to upload": [
         "Yüklemek için bırakın"
@@ -10726,13 +10728,13 @@
       "A safer way to hold your Bitcoin": [
         "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "E-posta ile Bitcoin"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Bitcoin saklamak için daha güvenli bir yol"
+        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Fechar a pasta"
       ],
+      "Collapse navigation bar": [
+        "Recolher a barra de navegação"
+      ],
       "Compose": [
         "Compor"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Display navigation bar": [
+        "Mostrar a barra de navegação"
       ],
       "Done": [
         "Feito"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Mostrar definições de PGP avançadas"
       ],
+      "Show navigation bar": [
+        "Mostrar barra de navegação"
+      ],
       "Show preview": [
         "Mostrar pré-visualização"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Enviar o ficheiro"
       ],
+      "Upload files": [
+        "Carregar ficheiros"
+      ],
       "Upload folder": [
         "Enviar a pasta"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Enviar"
       ]
     },
     "Actions message": {
@@ -1550,6 +1567,9 @@
       ],
       "Work": [
         "Trabalho"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2933,7 +2953,7 @@
         "Selecione um país"
       ],
       "Please select a state": [
-        "Selecione um estado"
+        "Selecione um distrito"
       ],
       "Port is required": [
         "A porta é obrigatória."
@@ -3629,6 +3649,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3637,6 +3660,9 @@
       ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3909,6 +3935,9 @@
       ],
       "ICS file": [
         "Ficheiro ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4405,23 +4434,8 @@
       "Download ${ name } app": [
         "Transfira a app ${ name }"
       ],
-      "Download canceled": [
-        "A transferência foi cancelada."
-      ],
-      "Download failed": [
-        "Erro na transferência"
-      ],
-      "Download failed due to ${ error }": [
-        "Erro de transferência devido a: ${ error }"
-      ],
-      "Download finished": [
-        "A transferência foi terminada."
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "A transferência para ${ downloadFileName } será cancelada."
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "A transferência foi interrompida devido a um problema de ligação. Será retomada automaticamente."
       ],
       "Download was canceled": [
         "A transferência foi cancelada."
@@ -4440,6 +4454,9 @@
       ],
       "Drop files here": [
         "Largue os ficheiros aqui"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Solte aqui os ficheiros para enviar ou clique no botão de envio."
       ],
       "Drop to import": [
         "Solte para importar"
@@ -4570,6 +4587,9 @@
       ],
       "from the version history?": [
         "do histórico de versões?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Obtenha a aplicação para fazer cópia de segurança de fotos do seu telefone ou enviá-las aqui."
       ],
       "Get the app to backup photos from your phone.": [
         "Obtenha a aplicação para fazer a cópia de segurança a partir do seu telefone."
@@ -4777,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e selecione a pasta principal onde deseja colocá-la. Se não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Precisa de partilhar um ficheiro? Então obtenha ${ DRIVE_APP_NAME },\na forma mais segura de partilhar, armazenar e sincronizar os seus ficheiros."
-      ],
       "Network issue": [
         "Problema de rede"
       ],
@@ -4818,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: os dados podem ainda estar disponíveis localmente em dispositivos onde tenha instalado ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Neste momento, não há nada aqui."
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
@@ -5707,6 +5721,9 @@
       ],
       "Trusted": [
         "Confiada"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -8034,8 +8051,14 @@
       "Free": [
         "Gratuito"
       ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Recuperar as versões anteriores do ficheiro"
       ],
       "Storage": [
         "Armazenamento"
@@ -8390,6 +8413,11 @@
         "O seu cartão foi recusado. Tente com outro cartão ou contacte o seu banco para autorizar esta compra."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Ao confirmar este pagamento, autoriza o ${ BRAND_NAME } e a Stripe, o nosso provedor de serviços de pagamento, a instruir o seu banco a debitar a sua conta e o seu banco a proceder com o débito de acordo. Poderá receber um reembolso dentro de 8 semanas a partir da data de débito, de acordo com as condições do seu acordo com o seu banco."
@@ -8596,7 +8624,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Verifique a segurança da sua conta"
       ]
     },
@@ -10082,6 +10110,9 @@
       "Download unverified folder?": [
         "Transferir uma pasta não verificada?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "Solte para enviar"
       ],
@@ -10697,8 +10728,13 @@
       "A safer way to hold your Bitcoin": [
         "Uma maneira mais segura de conservar o seu Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Uma maneira mais segura de conservar bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

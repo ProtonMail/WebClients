@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Skjul mappe"
       ],
+      "Collapse navigation bar": [
+        "Skjul navigasjonslinjen"
+      ],
       "Compose": [
         "Skriv"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Avvis"
+      ],
+      "Display navigation bar": [
+        "Vis navigasjonslinjen"
       ],
       "Done": [
         "Utført"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Vis avanserte PGP-innstillinger"
       ],
+      "Show navigation bar": [
+        "Vis navigasjonslinjen"
+      ],
       "Show preview": [
         "Vis forhåndsvisning"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Last opp fil"
       ],
+      "Upload files": [
+        "Last opp filer"
+      ],
       "Upload folder": [
         "Last opp mappe"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Last opp"
       ]
     },
     "Actions message": {
@@ -4417,23 +4434,8 @@
       "Download ${ name } app": [
         "Last ned ${ name }-appen"
       ],
-      "Download canceled": [
-        "Nedlasting avbrutt"
-      ],
-      "Download failed": [
-        "Nedlasting mislyktes"
-      ],
-      "Download failed due to ${ error }": [
-        "Nedlastingen mislyktes på grunn av ${ error }"
-      ],
-      "Download finished": [
-        "Nedlastingen er fullført"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedlasting av ${ downloadFileName } vil bli avbrutt"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Nedlastingen satt på pause på grunn av tilkoblingsproblem; den gjenopptas automatisk"
       ],
       "Download was canceled": [
         "Nedlastingen ble kansellert"
@@ -4452,6 +4454,9 @@
       ],
       "Drop files here": [
         "Slipp filer her"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Slipp filer her for å laste opp, eller klikk på opplastingsknappen"
       ],
       "Drop to import": [
         "Slipp for å importere"
@@ -4582,6 +4587,9 @@
       ],
       "from the version history?": [
         "fra versjonshistorikken?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Skaff deg appen til å sikkerhetskopiere bilder fra telefonen din eller last dem opp her."
       ],
       "Get the app to backup photos from your phone.": [
         "Skaff deg appen til å sikkerhetskopiere bilder fra telefonen."
@@ -4789,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Trenger å dele en fil? Så få ${ DRIVE_APP_NAME }, den tryggeste måten å dele, lagre og synkronisere filene dine på."
-      ],
       "Network issue": [
         "Nettverksproblem"
       ],
@@ -4830,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Merk: data kan fortsatt være tilgjengelig lokalt på enheter der du har installert ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Ingenting her enda"
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
@@ -8679,8 +8681,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Gjennomgå kontosikkerheten din"
+      "Review account safety": [
+        "Gjennomgå kontosikkerhet"
       ]
     },
     "saml: Error": {
@@ -10783,7 +10785,7 @@
       "A safer way to hold your Bitcoin": [
         "En tryggere måte å bevare Bitcoin på"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-post"
       ]
     },

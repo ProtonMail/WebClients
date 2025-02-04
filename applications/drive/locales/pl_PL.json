@@ -174,6 +174,9 @@
       "Collapse folder": [
         "Zwiń folder"
       ],
+      "Collapse navigation bar": [
+        "Zwiń pasek nawigacji"
+      ],
       "Compose": [
         "Napisz"
       ],
@@ -188,6 +191,9 @@
       ],
       "Continue": [
         "Kontynuuj"
+      ],
+      "Continue downloading": [
+        "Kontynuuj pobieranie"
       ],
       "Continue import": [
         "Kontynuuj importowanie"
@@ -293,6 +299,9 @@
       ],
       "Dismiss": [
         "Odrzuć"
+      ],
+      "Display navigation bar": [
+        "Pokaż pasek nawigacji"
       ],
       "Done": [
         "Gotowe"
@@ -765,6 +774,9 @@
       "Show advanced PGP settings": [
         "Pokaż zaawansowane ustawienia PGP"
       ],
+      "Show navigation bar": [
+        "Pokaż pasek nawigacji"
+      ],
       "Show preview": [
         "Pokaż podgląd"
       ],
@@ -869,6 +881,9 @@
       ],
       "Upload file": [
         "Prześlij plik"
+      ],
+      "Upload files": [
+        "Prześlij pliki"
       ],
       "Upload folder": [
         "Prześlij folder"
@@ -1556,6 +1571,9 @@
       ],
       "Work": [
         "Służbowy"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3512,6 +3530,12 @@
     "Feature": {
       "Free 5 GB storage": [
         "Darmowe 5 GB przestrzeni dyskowej"
+      ],
+      "Save files for later access": [
+        "Zapisz pliki do późniejszego dostępu"
+      ],
+      "Share privately and securely": [
+        "Udostępniaj prywatnie i bezpiecznie"
       ]
     },
     "fido2: Error": {
@@ -3940,6 +3964,9 @@
       ],
       "ICS file": [
         "pliku ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4489,23 +4516,8 @@
       "Download ${ name } app": [
         "Pobierz aplikację dla systemu ${ name }"
       ],
-      "Download canceled": [
-        "Pobieranie zostało anulowane"
-      ],
-      "Download failed": [
-        "Pobieranie nie powiodło się"
-      ],
-      "Download failed due to ${ error }": [
-        "Pobieranie nie powiodło się: ${ error }"
-      ],
-      "Download finished": [
-        "Pobieranie zostało zakończone"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Pobieranie pliku ${ downloadFileName } zostało przerwane"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Pobieranie zostało wstrzymane z powodu problemu z połączeniem. Proces zostanie automatycznie wznowiony"
       ],
       "Download was canceled": [
         "Pobieranie zostało anulowane"
@@ -4864,9 +4876,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nazwij nowy folder i wybierz folder nadrzędny, do którego chcesz go dodać. Jeśli nie wybierzesz folderu nadrzędnego, nowy folder zostanie utworzony jako folder najwyższego poziomu."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Potrzebujesz udostępnić plik? Uzyskaj dysk ${ DRIVE_APP_NAME }, aby udostępniać, przechowywać i synchronizować pliki w bezpieczny sposób."
-      ],
       "Network issue": [
         "Błąd sieci"
       ],
@@ -4905,9 +4914,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Uwaga: Dane mogą być nadal dostępne lokalnie na urządzeniach, na których zainstalowano aplikację ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Niczego tutaj nie ma"
       ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
@@ -5774,6 +5780,9 @@
       ],
       "Trusted": [
         "Zaufany"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -6916,6 +6925,9 @@
       ],
       "Get started for ${ priceCoupon }": [
         "Od ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Od ${ priceDrivePlus }"
       ],
       "Starting from ${ pricing }": [
         "Od ${ pricing }"
@@ -8140,6 +8152,9 @@
       "Subfolder failed to be loaded": [
         "Załadowanie podfolderu nie powiodło się"
       ],
+      "The document failed to be created": [
+        "Utworzenie dokumentu nie powiodło się"
+      ],
       "The item was not added to your drive": [
         "Element nie został dodany do dysku"
       ],
@@ -8798,11 +8813,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficjalna wiadomość od ${ BRAND_NAME }"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Sprawdź bezpieczeństwo konta"
       ]
     },
     "saml: Error": {
@@ -10369,6 +10379,9 @@
       "Download unverified folder?": [
         "Pobrać niezweryfikowany folder?"
       ],
+      "Drive": [
+        "Dysk"
+      ],
       "Drop to upload": [
         "Upuść, aby przesłać"
       ],
@@ -10516,6 +10529,9 @@
       "Need more aliases?": [
         "Potrzebujesz więcej aliasów?"
       ],
+      "Need to share more files with edit access?": [
+        "Chcesz udostępnić więcej plików z uprawnieniem do edycji?"
+      ],
       "Network error": [
         "Błąd sieci"
       ],
@@ -10614,6 +10630,9 @@
       ],
       "Restore your files": [
         "Przywróć pliki"
+      ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "Zapisz na później w ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Zapisz na później w ${ DRIVE_APP_NAME }"
@@ -10779,6 +10798,9 @@
       ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
+      ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "Zawiera plik ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
@@ -10990,9 +11012,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
-      ],
-      "Bitcoin via email": [
-        "Bitcoiny przez e-mail"
       ]
     },
     "wallet_signup_2024:Bug category": {
