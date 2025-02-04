@@ -74,7 +74,7 @@ describe('UpsellPanel', () => {
             />
         );
 
-        screen.getByText('Your trial ends June 20, 2024');
+        expect(screen.getByTestId('period-end')).toHaveTextContent('June 20th, 2024');
     });
 
     it.each([
