@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Luk mappe sammen"
       ],
+      "Collapse navigation bar": [
+        "Sammenfold navigationsbjælke"
+      ],
       "Compose": [
         "Skriv"
       ],
@@ -186,6 +189,9 @@
       ],
       "Continue": [
         "Fortsæt"
+      ],
+      "Continue downloading": [
+        "Fortsæt med at downloade"
       ],
       "Continue import": [
         "Fortsæt import"
@@ -287,6 +293,9 @@
       ],
       "Dismiss": [
         "Afvis"
+      ],
+      "Display navigation bar": [
+        "Fremvis navigationsbjælke"
       ],
       "Done": [
         "Udført"
@@ -752,6 +761,9 @@
       ],
       "Show advanced PGP settings": [
         "Vis avancerede PGP-indstillinger"
+      ],
+      "Show navigation bar": [
+        "Vis navigationsbjælke"
       ],
       "Show preview": [
         "Vis en forhåndsvisning"
@@ -2377,6 +2389,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "Hold dine filer, fotos og dokumenter sikre med end-to-end-kryptering."
+      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
@@ -2397,6 +2412,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
+      ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Opgrader til ${ BRAND_NAME } ${ planName } for at fortsætte med at dele filer med redigeringsadgang"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Opgrader din konto for at aktivere ${ PROTON_SENTINEL_NAME }, vores banebrydende AI-dreven sikkerhedsløsning med ekspert døgn support."
@@ -2880,6 +2898,9 @@
       ],
       "Please select a country": [
         "Vælg venligst et land"
+      ],
+      "Please select a state": [
+        "Vælg venligst en region"
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -3430,6 +3451,20 @@
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
       ]
     },
+    "Feature": {
+      "Access on mobile and desktop": [
+        "Adgang på mobil og desktop"
+      ],
+      "Free 5 GB storage": [
+        "5 GB gratis lagerplads"
+      ],
+      "Save files for later access": [
+        "Gem filer til senere brug"
+      ],
+      "Share privately and securely": [
+        "Del privat og sikkert"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
@@ -3899,6 +3934,9 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } filer kan ikke downloades direkte og vil ikke blive inkluderet i dette download. Du kan downloade de andre filer ved at klikke på 'Fortsæt med at downloade'."
+      ],
       "${ doneCount } finished": [
         "${ doneCount } færdig",
         "${ doneCount } færdige"
@@ -4271,6 +4309,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne mappe blev uploaded sikkert af ${ emailAddress }."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Oplev nye funktioner, der er låst op med ${ planTitle }, og begynd at bruge dem med det samme!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -4286,23 +4330,8 @@
       "Download ${ name } app": [
         "Download ${ name }-app"
       ],
-      "Download canceled": [
-        "Download annulleret"
-      ],
-      "Download failed": [
-        "Download mislykkedes"
-      ],
-      "Download failed due to ${ error }": [
-        "Download mislykkedes på grund af ${ error }"
-      ],
-      "Download finished": [
-        "Download er færdig"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Hentning af ${ downloadFileName } vil blive afbrudt"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Downloadet er sat på pause på grund af forbindelsesproblemer - det vil fortsætte automatisk"
       ],
       "Download was canceled": [
         "Download blev annulleret"
@@ -4348,6 +4377,9 @@
       ],
       "Empty folder": [
         "Tom mappe"
+      ],
+      "Enabling auto-deletion…": [
+        "Aktivering af automatisk sletning…"
       ],
       "Enabling drive search": [
         "Aktiverer søgning på drev"
@@ -4655,9 +4687,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Brug for at dele en fil? Så få ${ DRIVE_APP_NAME },\nden sikreste vej til at dele, opbevare og synkroniserer dine filer."
-      ],
       "Network issue": [
         "Netværksproblem"
       ],
@@ -4697,9 +4726,6 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Bemærk: Data kan stadig være tilgængelige lokalt på enheder, hvor du har installeret ${ DRIVE_APP_NAME }."
       ],
-      "Nothing here yet": [
-        "Intet her endnu"
-      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
       ],
@@ -4717,6 +4743,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne mappe."
+      ],
+      "or discover other features:": [
+        "eller opdag andre funktioner:"
       ],
       "Or use the \"+ New\" button": [
         "Eller brug knappen \"+ Ny\""
@@ -4954,6 +4983,9 @@
       "Share via link settings": [
         "Del via link-indstillinger"
       ],
+      "Shared by ${ rootLink.signatureEmail }": [
+        "Delt af ${ rootLink.signatureEmail }"
+      ],
       "Shared link not found": [
         "Delt link ikke fundet"
       ],
@@ -5010,6 +5042,12 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
+      ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Den digitale signatur er delvist verificeret. Denne fil blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Den digitale signatur er delvist verificeret. Denne mappe blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
@@ -5103,6 +5141,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For at gennemføre din betaling skal du sende ${ btcAmountBold } til nedenstående adresse."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "For at downloade ${ DOCS_APP_NAME }-filerne skal du åbne dem i ${ DOCS_APP_NAME } og eksportere dem."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For at aktivere ægte privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt."
@@ -5444,6 +5485,9 @@
       "Your email address was exposed:": [
         "Din e-mailadresse blev eksponeret:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Din e-mailadresse vil være synlig som linkets ejer på delingssiden."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
@@ -5483,8 +5527,11 @@
       "Your previous recovery phrase": [
         "Din forrige gendannelsessætning"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
       ]
     },
     "info": {
@@ -5605,6 +5652,9 @@
       ],
       "Anderson": [
         "Andersen"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Enhver på internettet med linket kan redigere"
       ],
       "Anyone on the Internet with the link can view": [
         "Enhver på internettet med linket kan se"
@@ -6625,6 +6675,9 @@
       ],
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnementer starter fra ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Opgradér"
@@ -7734,6 +7787,9 @@
       "Subfolder failed to be loaded": [
         "Undermappe kunne ikke indlæses"
       ],
+      "The document failed to be created": [
+        "Dokumentet kunne ikke oprettes"
+      ],
       "The item was not added to your drive": [
         "Elementet blev ikke tilføjet dit drev"
       ],
@@ -8319,11 +8375,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiel e-mail fra ${ BRAND_NAME }"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Gennemgå din kontos sikkerhed"
       ]
     },
     "Security Center": {
@@ -9779,6 +9830,9 @@
       "Download unverified folder?": [
         "Hent ubekræftet mappe?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "Slip for at uploade"
       ],
@@ -9922,6 +9976,9 @@
       "Need more aliases?": [
         "Brug for flere aliasser?"
       ],
+      "Need to share more files with edit access?": [
+        "Har du brug for at dele flere filer med redigeringsadgang?"
+      ],
       "Network error": [
         "Netværksfejl"
       ],
@@ -10020,6 +10077,9 @@
       ],
       "Restore your files": [
         "Gendan dine filer"
+      ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "Gem den til senere i ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Gem den til senere i ${ DRIVE_APP_NAME }."
@@ -10185,6 +10245,9 @@
       ],
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
+      ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "Dit download inkluderer en ${ DOCS_APP_NAME }-fil"
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
@@ -10374,9 +10437,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "En sikrere måde at gemme dine Bitcoin på"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:Bug category": {

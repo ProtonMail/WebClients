@@ -3759,23 +3759,8 @@
       "Download ${ name } app": [
         "${ name } ऐप डाउनलोड करें"
       ],
-      "Download canceled": [
-        "डाउनलोड रद्द"
-      ],
-      "Download failed": [
-        "डाउनलोड असफल"
-      ],
-      "Download failed due to ${ error }": [
-        "${ error } की वजह से डाउनलोड असफल"
-      ],
-      "Download finished": [
-        "डाउनलोड खत्म"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } का डाउनलोड छोड़ दिया जाएगा"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "कनेक्शन समस्या के कारण डाउनलोड रुका हुआ है; यह स्वचालित रूप से फिर से शुरू हो जाएगा"
       ],
       "Download was canceled": [
         "डाउनलोड रद्द कर दिया गया था"
@@ -4104,9 +4089,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "अपने नए फ़ोल्डर को नाम दें और उस मूल फ़ोल्डर का चयन करें जिसे आप इसे रखना चाहते हैं। यदि आप किसी मूल फ़ोल्डर का चयन नहीं करते हैं, तो यह नया फ़ोल्डर एक शीर्ष स्तर फ़ोल्डर के रूप में बनाया जाएगा।"
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "फाइल भेजनी हैं? तब ${ DRIVE_APP_NAME } लें, अपने फाइल को शेयर, स्टोर, और सिंक करने का सबसे आसान तरीका।"
-      ],
       "Network issue": [
         "नेटवर्क समस्या"
       ],
@@ -4145,9 +4127,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "नोट: डाटा उन डिवाइसों पे भी मौजूद हो सकता है जहा आपने ${ DRIVE_APP_NAME } इंस्टॉल किया है।"
-      ],
-      "Nothing here yet": [
-        "यहां अभी कुछ नहीं"
       ],
       "Number of dedicated servers in the organization": [
         "संगठन में विशेष सर्वरों की संख्या"

@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Contraer carpeta"
       ],
+      "Collapse navigation bar": [
+        "Minimizar la barra de navegación"
+      ],
       "Compose": [
         "Escribir"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Display navigation bar": [
+        "Mostrar la barra de navegación"
       ],
       "Done": [
         "Hecho"
@@ -622,25 +628,25 @@
         "Actualizar la página"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove access": [
-        "Borrar el acceso"
+        "Eliminar el acceso"
       ],
       "Remove bonuses": [
-        "Borrar los beneficios"
+        "Eliminar los beneficios"
       ],
       "Remove device": [
-        "Borrar el dispositivo"
+        "Eliminar el dispositivo"
       ],
       "Remove from this list": [
-        "Borrar de la lista"
+        "Eliminar de la lista"
       ],
       "Remove gift code": [
-        "Borrar el código de regalo"
+        "Eliminar el código de regalo"
       ],
       "Remove me": [
-        "Borrarme"
+        "Eliminarme"
       ],
       "Rename": [
         "Renombrar"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Mostrar configuración PGP avanzada"
       ],
+      "Show navigation bar": [
+        "Mostrar la barra de navegación"
+      ],
       "Show preview": [
         "Mostrar la vista previa"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Cargar archivo"
       ],
+      "Upload files": [
+        "Cargar archivos"
+      ],
       "Upload folder": [
         "Cargar carpeta"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Alejar"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Cargar"
       ]
     },
     "Actions message": {
@@ -2616,7 +2633,7 @@
     },
     "Email body for invitation (event details part)": {
       "Removed": [
-        "Borrado"
+        "Eliminado"
       ]
     },
     "Email body for invitation (location part)": {
@@ -2951,8 +2968,8 @@
         "Proceso anulado"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
-        "Invitado duplicado borrado: ${ joinedInvitee }",
-        "Invitados duplicados borrados: ${ joinedInvitee }"
+        "Invitado duplicado eliminado: ${ joinedInvitee }",
+        "Invitados duplicados eliminados: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Error al enviar el informe"
@@ -4417,23 +4434,8 @@
       "Download ${ name } app": [
         "Descargar la aplicación para ${ name }"
       ],
-      "Download canceled": [
-        "Descarga cancelada"
-      ],
-      "Download failed": [
-        "Error de descarga"
-      ],
-      "Download failed due to ${ error }": [
-        "Error al descargar debido a ${ error }"
-      ],
-      "Download finished": [
-        "Descarga finalizada"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Se anulará la descarga de ${ downloadFileName }."
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "La descarga se ha pausado por un incidente en la conexión. Se reanudará automáticamente."
       ],
       "Download was canceled": [
         "Se ha cancelado la descarga."
@@ -4452,6 +4454,9 @@
       ],
       "Drop files here": [
         "Suelta los archivos aquí."
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Arrastra los archivos aquí para cargar o haz clic en el botón para cargar."
       ],
       "Drop to import": [
         "Suelta aquí para importar"
@@ -4582,6 +4587,9 @@
       ],
       "from the version history?": [
         "del historial de versiones?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Descarga la aplicación para hacer una copia de seguridad de las fotos de tu teléfono o cárgalas aquí."
       ],
       "Get the app to backup photos from your phone.": [
         "Obtén la aplicación para hacer copias de seguridad de fotos desde el teléfono."
@@ -4789,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "¿Quieres compartir un archivo? Usa ${ DRIVE_APP_NAME }, la forma más segura de compartir, almacenar y sincronizar tus archivos."
-      ],
       "Network issue": [
         "Problema de red"
       ],
@@ -4830,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que hayas instalado ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Todavía no hay nada aquí"
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
@@ -5503,12 +5505,12 @@
         "Puedes importar un tipo de datos a la vez."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tu calendario antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido el calendario antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción."
       ],
       "You can now return to the application to continue": [
         "Ahora puedes regresar a la aplicación para continuar."
@@ -5536,7 +5538,7 @@
         "Puedes ser redirigido al sitio web de tu banco."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debes desactivar o borrar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
+        "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta de PayPal. Si tu cuenta de PayPal no lo tiene, haz clic en el botón de abajo."
@@ -6291,7 +6293,7 @@
         "¿Cuál es tu motivo principal por el que cancelas o bajas de plan?"
       ],
       "Yes, I want to permanently delete my old files": [
-        "Sí, quiero borrar permanentemente mis archivos antiguos."
+        "Sí, quiero eliminar permanentemente mis archivos antiguos."
       ],
       "Your alias": [
         "Tu alias"
@@ -6349,10 +6351,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para añadir un calendario, borra uno existente."
+        "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario, borra otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -7885,7 +7887,7 @@
         "Se ha activado ${ reason }."
       ],
       "Access for the member removed": [
-        "Acceso para el miembro borrado"
+        "Se ha eliminado el acceso para el miembro."
       ],
       "Access updated": [
         "Se ha actualizado el acceso."
@@ -7912,13 +7914,13 @@
         "Grupo de contactos actualizado"
       ],
       "Device failed to be removed": [
-        "Error al borrar el dispositivo"
+        "Error al eliminar el dispositivo"
       ],
       "Device failed to be renamed": [
         "Error al renombrar el dispositivo"
       ],
       "Device removed": [
-        "El dispositivo está borrado."
+        "El dispositivo está eliminado."
       ],
       "Device renamed": [
         "Dispositivo renombrado"
@@ -7927,7 +7929,7 @@
         "Búsqueda cifrada activada"
       ],
       "External invitation removed from the share": [
-        "La invitación externa ha sido borrada de los elementos compartidos."
+        "Se ha eliminado la invitación externa de los elementos compartidos."
       ],
       "External invitation's email was sent again": [
         "Se ha enviado nuevamente el correo de invitación externa."
@@ -7954,7 +7956,7 @@
         "Se ha producido un error al rechazar la invitación compartida."
       ],
       "Failed to remove the file": [
-        "Error al borrar el archivo"
+        "Error al eliminar el archivo"
       ],
       "Failed to upload files: ${ err }": [
         "Error al cargar los archivos: ${ err }"
@@ -7970,7 +7972,7 @@
         "Falta el nombre del archivo o carpeta"
       ],
       "File removed": [
-        "Se ha borrado el archivo."
+        "Se ha eliminado el archivo."
       ],
       "Invitation's email was sent again": [
         "Se ha enviado nuevamente el correo de invitación."
@@ -8030,12 +8032,12 @@
         "Se ha eliminado el enlace a tu elemento."
       ],
       "This item was not removed from your list": [
-        "No se ha borrado este elemento de tu lista.",
-        "No se han borrado algunos elementos de tu lista."
+        "No se ha eliminado este elemento de tu lista.",
+        "No se han eliminado algunos elementos de tu lista."
       ],
       "This item was successfully removed from your list": [
-        "Se ha borrado este elemento de tu lista.",
-        "Se han borrado estos elementos de tu lista."
+        "Se ha eliminado este elemento de tu lista.",
+        "Se han eliminado estos elementos de tu lista."
       ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
@@ -8685,7 +8687,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Comprueba la seguridad de la cuenta"
       ]
     },
@@ -10399,7 +10401,7 @@
         "Recuperar datos"
       ],
       "Remove device?": [
-        "¿Borrar el dispositivo?"
+        "¿Eliminar el dispositivo?"
       ],
       "Rename a file": [
         "Renombrar un archivo"
@@ -10789,7 +10791,7 @@
       "A safer way to hold your Bitcoin": [
         "Una forma más segura de mantener tu Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"
       ]
     },
