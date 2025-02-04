@@ -45,7 +45,7 @@ it('should display end date of the current subscription', () => {
         <CancelSubscriptionModal subscription={adaptedSubscription} onResolve={onResolve} onReject={onReject} open />
     );
 
-    const expectedDate = format(futureDate, 'PP');
+    const expectedDate = format(futureDate, 'PPP');
     expect(container).toHaveTextContent(`expires on ${expectedDate}`);
 });
 
@@ -59,5 +59,5 @@ it('should display the end date of the upcoming subscription if it exists', () =
         />
     );
 
-    expect(container).toHaveTextContent('expires on Jun 5, 2026');
+    expect(container).toHaveTextContent('expires on June 5th, 2026');
 });

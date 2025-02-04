@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-import { addMonths } from 'date-fns';
 
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
@@ -238,7 +237,7 @@ describe('<RenewalNotice />', () => {
 
         it('should display the correct renewal date', () => {
             const renewCycle = 12;
-            const expectedDateString = '11/01/2024'; // because months are 0-indexed ¯\_(ツ)_/¯
+            const expectedDateString = 'November 1st, 2024';
 
             const { container } = render(
                 <RenewalNotice
@@ -256,7 +255,7 @@ describe('<RenewalNotice />', () => {
 
         it('should use period end date if custom billing is enabled', () => {
             const renewCycle = 12;
-            const expectedDateString = '08/11/2025'; // because months are 0-indexed ¯\_(ツ)_/¯
+            const expectedDateString = 'August 11th, 2025';
 
             const { container } = render(
                 <RenewalNotice
@@ -294,7 +293,7 @@ describe('<RenewalNotice />', () => {
                 />
             );
 
-            const expectedDateString = '02/03/2026'; // and finally the renewal date is 02/03/2026 (3rd of February 2026)
+            const expectedDateString = 'February 3rd, 2026'; // and finally the renewal date is 02/03/2026 (3rd of February 2026)
 
             expect(container).toHaveTextContent(
                 `Subscription auto-renews every 24 months. Your next billing date is ${expectedDateString}.`
@@ -567,7 +566,7 @@ describe('<RenewalNotice />', () => {
             );
 
             // end of the current subscription, NOT upcoming that will be created when user accepts the terms of ScheduledChargedLater subscription
-            const expectedDateString = '06/12/2025';
+            const expectedDateString = 'June 12th, 2025';
 
             expect(container).toHaveTextContent(
                 `Your scheduled plan starts on ${expectedDateString} and will auto-renew every 12 months. Your next billing date is ${expectedDateString}. Please contact support if you require an immediate plan change.`
@@ -576,8 +575,9 @@ describe('<RenewalNotice />', () => {
     });
 
     describe('vpn2024 special renew cycle', () => {
-        [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.FIFTEEN, CYCLE.THIRTY].forEach((cycle) => {
-            it(`should display special renewal notice for vpn2024 ${cycle} months`, () => {
+        it.each([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.FIFTEEN, CYCLE.THIRTY])(
+            `should display special renewal notice for vpn2024 %s months`,
+            (cycle) => {
                 const { container } = render(
                     <RenewalNotice
                         {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
@@ -588,35 +588,40 @@ describe('<RenewalNotice />', () => {
                 expect(container).toHaveTextContent(
                     `Your subscription will automatically renew in ${cycle} months. You'll then be billed every 12 months at CHF 79.95.`
                 );
-            });
+            }
+        );
+
+        it(`should display special renewal notice for vpn2024 ${CYCLE.MONTHLY} months`, () => {
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
+                    cycle={CYCLE.MONTHLY}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                `Subscription auto-renews every month. Your next billing date is December 1st, 2023.`
+            );
         });
 
-        [CYCLE.THREE, CYCLE.MONTHLY].forEach((cycle) => {
-            it(`should display special renewal notice for vpn2024 ${cycle} months`, () => {
-                const { container } = render(
-                    <RenewalNotice
-                        {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
-                        cycle={cycle}
-                    />
-                );
+        it(`should display special renewal notice for vpn2024 ${CYCLE.THREE} months`, () => {
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
+                    cycle={CYCLE.THREE}
+                />
+            );
 
-                if (cycle != CYCLE.MONTHLY) {
-                    const nextDate = addMonths(new Date(), cycle);
-                    expect(container).toHaveTextContent(
-                        `Subscription auto-renews every ${cycle} months. Your next billing date is ${(nextDate.getMonth() + 1).toString().padStart(2, '0')}/${nextDate.getDate().toString().padStart(2, '0')}/${nextDate.getFullYear()}.`
-                    );
-                } else {
-                    expect(container).toHaveTextContent(
-                        `Subscription auto-renews every month. Your next billing date is 12/01/2023.`
-                    );
-                }
-            });
+            expect(container).toHaveTextContent(
+                `Subscription auto-renews every 3 months. Your next billing date is February 1st, 2024.`
+            );
         });
     });
 
     describe('one time coupons', () => {
-        [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.FIFTEEN, CYCLE.THIRTY].forEach((cycle) => {
-            it(`should ignore coupon for vpn2024 with a coupon`, () => {
+        it.each([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.FIFTEEN, CYCLE.THIRTY])(
+            `should ignore coupon for vpn2024 with a coupon`,
+            (cycle) => {
                 const { container } = render(
                     <RenewalNotice
                         {...getProps({
@@ -653,8 +658,8 @@ describe('<RenewalNotice />', () => {
                 expect(container).toHaveTextContent(
                     `Your subscription will automatically renew in ${cycle} months. You'll then be billed every 12 months at CHF 79.95.`
                 );
-            });
-        });
+            }
+        );
 
         it(`should apply it for 12m vpnpass bundle`, () => {
             const { container } = render(
