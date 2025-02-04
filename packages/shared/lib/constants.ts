@@ -294,6 +294,7 @@ export const SSO_PATHS = {
     EXTERNAL_SSO_REAUTH: '/sso/reauth',
     OAUTH_AUTHORIZE: '/oauth/authorize',
     OAUTH_CONFIRM_FORK: '/oauth/confirm',
+    OAUTH_PARTNERS: '/oauth/partners',
     AUTHORIZE: '/authorize',
     FORK: '/login',
     SWITCH: '/switch',

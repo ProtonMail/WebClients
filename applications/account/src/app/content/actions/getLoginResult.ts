@@ -6,6 +6,7 @@ import { getAppHref, getExtension, getInvoicesPathname } from '@proton/shared/li
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { getCanUserReAuth, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
+import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -17,7 +18,6 @@ import noop from '@proton/utils/noop';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import type { ReAuthState } from '../../public/ReAuthContainer';
-import { type ProduceForkData, SSOType } from '../fork/interface';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';

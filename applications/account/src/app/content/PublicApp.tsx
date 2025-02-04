@@ -33,6 +33,7 @@ import {
     getLocalIDForkSearchParameter,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
+import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
@@ -51,7 +52,7 @@ import resetPasswordPage from '../../pages/reset-password';
 import * as config from '../config';
 import HandleLogout from '../containers/HandleLogout';
 import locales from '../locales';
-import LoginContainer from '../login/LoginContainer';
+import LoginContainer, { type LoginContainerState } from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
 import AppSwitcherContainer from '../public/AppSwitcherContainer';
 import AuthExtension from '../public/AuthExtension';
@@ -66,10 +67,12 @@ import GroupMembershipsContainer from '../public/GroupMembershipsContainer';
 import InboxDesktopFreeTrialEnded from '../public/InboxDesktopFreeTrialEnded';
 import JoinMagicLinkContainer from '../public/JoinMagicLinkContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
+import OAuthPartnersContainer, { type OAuthPartnersCallbackState } from '../public/OAuthPartnersContainer';
 import ReAuthContainer from '../public/ReAuthContainer';
 import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
+import { readForkState } from '../public/persistedForkState';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { type ProductParams, getProductParams, getThemeFromLocation } from '../signup/searchParams';
@@ -89,7 +92,6 @@ import { getProduceForkLoginResult } from './actions/getProduceForkLoginResult';
 import type { LoginLocationState, LoginResult } from './actions/interface';
 import { handleOAuthFork } from './fork/handleOAuthFork';
 import { handleProtonFork } from './fork/handleProtonFork';
-import { type ProduceForkData, SSOType } from './fork/interface';
 import { UNAUTHENTICATED_ROUTES, getPaths, getPreAppIntent } from './helper';
 import { getLocalRedirect } from './localRedirect';
 import { addSession } from './session';
@@ -198,7 +200,7 @@ const BasePublicApp = () => {
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
-    const [forkState, setForkState] = useState<ProduceForkData | null>(null);
+    const [forkState, setForkState] = useState<ProduceForkData | null>(readForkState);
     const [activeSessions, setActiveSessions] = useState<ActiveSession[]>();
     const [maybeHasActiveSessions] = useState(initialSessionsLengthBool);
     const [locationState, setLocationState] = useState<null | LoginLocationState>(null);
@@ -404,16 +406,32 @@ const BasePublicApp = () => {
                 <Route path={[SSO_PATHS.EXTERNAL_SSO_LOGIN, SSO_PATHS.EXTERNAL_SSO_REAUTH]}>
                     <UnAuthenticated>
                         <ExternalSSOConsumer
-                            onLogin={({ username, token, flow }) =>
-                                history.replace(SSO_PATHS.LOGIN, {
+                            onOAuthLogin={({ token, uid }) => {
+                                const state: OAuthPartnersCallbackState = {
+                                    type: 'callback',
+                                    payload: {
+                                        token,
+                                        uid,
+                                    },
+                                };
+                                const loginLocationState: LoginLocationState = {
+                                    type: 'oauth-partners',
+                                    payload: state,
+                                    location: { pathname: SSO_PATHS.OAUTH_PARTNERS },
+                                };
+                                handleLoginResult(loginLocationState).catch(noop);
+                            }}
+                            onLogin={({ username, token, flow }) => {
+                                const state: LoginContainerState = {
                                     authType: AuthType.ExternalSSO,
                                     externalSSO: {
                                         token,
                                         flow,
                                     },
                                     username,
-                                })
-                            }
+                                };
+                                history.replace(SSO_PATHS.LOGIN, state);
+                            }}
                         >
                             {loader}
                         </ExternalSSOConsumer>
@@ -684,6 +702,22 @@ const BasePublicApp = () => {
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
+                                                {locationState?.type === 'oauth-partners' && (
+                                                    <Route path={SSO_PATHS.OAUTH_PARTNERS}>
+                                                        <UnAuthenticated>
+                                                            <OAuthPartnersContainer
+                                                                loader={loader}
+                                                                state={locationState.payload}
+                                                                unauthenticatedApi={
+                                                                    extraThunkArguments.unauthenticatedApi
+                                                                }
+                                                                onLogin={handleLogin}
+                                                                toApp={maybePreAppIntent}
+                                                                productParam={productParam}
+                                                            />
+                                                        </UnAuthenticated>
+                                                    </Route>
+                                                )}
                                                 {locationState?.type === 'confirm-oauth' && (
                                                     <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
                                                         <UnAuthenticated>
