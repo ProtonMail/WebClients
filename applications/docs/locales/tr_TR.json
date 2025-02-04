@@ -3371,7 +3371,7 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        "Güvenlik kodu"
       ],
       "Email": [
         "E-posta"
@@ -4635,8 +4635,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Bu işlem yüklediğiniz dosyayı kalıcı olarak silecek."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Bu işlem yüklediğiniz klasörü kalıcı olarak silecek. Sahibi olmadığınız bir dosyanın bulunduğu bir klasörü silemezsiniz."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Bu işlem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecek."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Bu işlem seçilmiş ögeleri kalıcı olarak silecek."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
@@ -7089,6 +7098,9 @@
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
       ],
+      "The document failed to be created": [
+        "Belge oluşturulurken sorun çıktı"
+      ],
       "The link to your item failed to be deleted": [
         "Öge bağlantınız silinemedi"
       ],
@@ -7575,8 +7587,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Hesabınızın güvenliğini değerlendirin"
+      "Review account safety": [
+        "Hesap güvenliğini gözden geçirin"
       ]
     },
     "saml: Error": {
@@ -8699,6 +8711,9 @@
       "Day theme": [
         "Gündüz teması"
       ],
+      "Delete": [
+        "Sil"
+      ],
       "Delete ${ count } contact": [
         "${ count } kişiyi sil",
         "${ count } kişiyi sil"
@@ -8706,6 +8721,12 @@
       "Delete ${ count } contact group": [
         "${ count } kişi grubunu sil",
         "${ count } kişi grubunu sil"
+      ],
+      "Delete ${ item.name }?": [
+        "${ item.name } silinsin mi?"
+      ],
+      "Delete ${ links.length } items?": [
+        "${ links.length } öge silinsin mi?"
       ],
       "Delete ${ value }": [
         "${ value } sil"
@@ -9228,13 +9249,13 @@
       "A safer way to hold your Bitcoin": [
         "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "E-posta ile Bitcoin"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Bitcoin saklamak için daha güvenli bir yol"
+        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ]
     },
     "wallet_signup_2024:Bug category": {
