@@ -1,4 +1,5 @@
 import { ForkType, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
+import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import {
     GetActiveSessionType,
     type GetActiveSessionsResult,
@@ -6,8 +7,8 @@ import {
 import { type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import type { OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
 import type { ReAuthState } from '../../public/ReAuthContainer';
-import { type ProduceForkData, SSOType } from '../fork/interface';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { getLoginResult } from './getLoginResult';
@@ -49,6 +50,22 @@ export const getActiveSessionLoginResult = async ({
                 type: 'login',
                 location: { pathname: paths.login },
                 payload: null,
+            };
+        }
+
+        // The oauth partner flow is only used in case there are no valid sessions that already exist in proton
+        // Otherwise, a proton session takes precedence
+        if (forkParameters.partnerId && !sessionsResult.sessions.length) {
+            const payload: OAuthPartnersInitiateState = {
+                type: 'initiate',
+                payload: {
+                    forkData: forkState,
+                },
+            };
+            return {
+                type: 'oauth-partners',
+                payload,
+                location: { pathname: SSO_PATHS.OAUTH_PARTNERS },
             };
         }
 

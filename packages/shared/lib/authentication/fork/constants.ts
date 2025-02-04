@@ -40,6 +40,7 @@ export enum ForkSearchParameters {
     PayloadVersion = 'pv',
     PromptType = 'promptType',
     Plan = 'plan',
+    PartnerId = 'partnerId',
 }
 
 export enum ExtraSessionForkSearchParameters {
