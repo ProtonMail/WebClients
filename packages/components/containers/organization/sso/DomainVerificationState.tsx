@@ -8,14 +8,16 @@ import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import TXTRecordModal from './TXTRecordModal';
+import type { SsoAppInfo } from './ssoAppInfo';
 
 interface Props {
     domain: Domain;
+    ssoAppInfo: SsoAppInfo;
 }
 
 const { DOMAIN_STATE_DEFAULT, DOMAIN_STATE_VERIFIED, DOMAIN_STATE_WARN } = DOMAIN_STATE;
 
-const DomainVerificationState = ({ domain }: Props) => {
+const DomainVerificationState = ({ domain, ssoAppInfo }: Props) => {
     const [txtRecordModalProps, setTXTRecordModalOpen, renderTXTRecordModal] = useModalState();
 
     const showTXT = () => {
@@ -50,7 +52,9 @@ const DomainVerificationState = ({ domain }: Props) => {
 
     return (
         <>
-            {renderTXTRecordModal && <TXTRecordModal domain={domain} {...txtRecordModalProps} />}
+            {renderTXTRecordModal && (
+                <TXTRecordModal ssoAppInfo={ssoAppInfo} domain={domain} {...txtRecordModalProps} />
+            )}
 
             <div className="flex gap-1 flex-nowrap">
                 <Icon className={clsx('shrink-0', className)} type="warning" name={iconName} />

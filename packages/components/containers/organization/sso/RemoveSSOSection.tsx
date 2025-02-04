@@ -7,13 +7,15 @@ import SettingsSection from '@proton/components/containers/account/SettingsSecti
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 
 import RemoveSSOModal from './RemoveSSOModal';
+import type { SsoAppInfo } from './ssoAppInfo';
 
 interface Props {
     domain: Domain;
     ssoConfig: SSO;
+    ssoAppInfo: SsoAppInfo;
 }
 
-const RemoveSSOSection = ({ domain, ssoConfig }: Props) => {
+const RemoveSSOSection = ({ domain, ssoConfig, ssoAppInfo }: Props) => {
     const [removeSSOModalProps, setRemoveSSOModalOpen, renderRemoveSSOModal] = useModalState();
 
     const removeSSO = () => {
@@ -26,7 +28,7 @@ const RemoveSSOSection = ({ domain, ssoConfig }: Props) => {
         <>
             {renderRemoveSSOModal && <RemoveSSOModal sso={ssoConfig} {...removeSSOModalProps} />}
             <SettingsSection>
-                <SettingsParagraph learnMoreUrl="https://protonvpn.com/support/sso">
+                <SettingsParagraph learnMoreUrl={ssoAppInfo.kbUrl}>
                     {c('Info').jt`This will remove SSO for ${boldDomainName}.`}
                 </SettingsParagraph>
 
