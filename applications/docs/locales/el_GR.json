@@ -4635,8 +4635,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Αυτή η ενέργεια θα διαγράψει το αρχείο που μεταφορτώσατε μη αναστρέψιμα."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Αυτή η ενέργεια θα διαγράψει τον φάκελο που μεταφορτώσατε μη αναστρέψιμα. Δεν μπορείτε να διαγράψετε έναν φάκελο που περιέχει αρχείο που δεν σας ανήκει."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Αυτή η ενέργεια θα διαγράψει τον σύνδεσμο και θα ανακαλέσει την πρόσβαση για όλους τους χρήστες."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Αυτή η ενέργεια θα διαγράψει τα επιλεγμένα στοιχεία μη αναστρέψιμα."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
@@ -7089,6 +7098,9 @@
       "Stopping the sharing of this item has failed": [
         "Η διακοπή της κοινοποίησης αυτού του στοιχείου απέτυχε"
       ],
+      "The document failed to be created": [
+        "Απέτυχε η δημιουργία του εγγράφου"
+      ],
       "The link to your item failed to be deleted": [
         "Αποτυχία διαγραφής του συνδέσμου για το στοιχείο σας"
       ],
@@ -7575,8 +7587,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Ελέγξτε την ασφάλεια του λογαριασμού σας"
+      "Review account safety": [
+        "Έλεγχος ασφάλειας λογαριασμού"
       ]
     },
     "saml: Error": {
@@ -8699,6 +8711,9 @@
       "Day theme": [
         "Ανοιχτό θέμα"
       ],
+      "Delete": [
+        "Διαγραφή"
+      ],
       "Delete ${ count } contact": [
         "Διαγραφή ${ count } επαφής",
         "Διαγραφή ${ count } επαφών"
@@ -8706,6 +8721,12 @@
       "Delete ${ count } contact group": [
         "Διαγραφή ${ count } ομάδα επαφών",
         "Διαγραφή ${ count } ομάδες επαφών"
+      ],
+      "Delete ${ item.name }?": [
+        "Να διαγραφεί το ${ item.name };"
+      ],
+      "Delete ${ links.length } items?": [
+        "Να διαγραφούν τα ${ links.length } στοιχεία;"
       ],
       "Delete ${ value }": [
         "Διαγραφή ${ value }"
@@ -9228,8 +9249,8 @@
       "A safer way to hold your Bitcoin": [
         "Ένας ασφαλέστερος τρόπος για να κρατήσετε το Bitcoin σας"
       ],
-      "Bitcoin via email": [
-        "Bitcoin μέσω email"
+      "Bitcoin via Email": [
+        "Bitcoin μέσω Εmail"
       ]
     },
     "wallet_signup_2024:app-switcher": {

@@ -4638,8 +4638,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Esta ação excluirá permanentemente o arquivo que você enviou."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Esta ação excluirá permanentemente a pasta que você enviou. Você não pode excluir uma pasta que contenha um arquivo não pertencente a você."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Essa ação excluirá o link e revogará o acesso para todos os usuários."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Esta ação excluirá permanentemente os itens selecionados."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -7157,6 +7166,9 @@
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
       ],
+      "The document failed to be created": [
+        "O documento não foi criado."
+      ],
       "The link to your item failed to be deleted": [
         "Erro ao excluir o link do seu item"
       ],
@@ -7649,8 +7661,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Revise a segurança de sua conta"
+      "Review account safety": [
+        "Revise a segurança da conta"
       ]
     },
     "saml: Error": {
@@ -8773,6 +8785,9 @@
       "Day theme": [
         "Tema diurno"
       ],
+      "Delete": [
+        "Excluir"
+      ],
       "Delete ${ count } contact": [
         "Excluir ${ count } contato",
         "Excluir ${ count } contatos"
@@ -8780,6 +8795,12 @@
       "Delete ${ count } contact group": [
         "Excluir ${ count } grupo de contatos",
         "Excluir ${ count } grupos de contatos"
+      ],
+      "Delete ${ item.name }?": [
+        "Excluir ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Excluir ${ links.length } itens?"
       ],
       "Delete ${ value }": [
         "Excluir ${ value }"
@@ -9302,7 +9323,7 @@
       "A safer way to hold your Bitcoin": [
         "Uma maneira mais segura de guardar seu Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ]
     },

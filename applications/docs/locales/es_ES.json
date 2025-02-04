@@ -502,16 +502,16 @@
         "Actualizar la página"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove access": [
-        "Borrar el acceso"
+        "Eliminar el acceso"
       ],
       "Remove bonuses": [
-        "Borrar los beneficios"
+        "Eliminar los beneficios"
       ],
       "Remove gift code": [
-        "Borrar el código de regalo"
+        "Eliminar el código de regalo"
       ],
       "Rename document": [
         "Cambiar el nombre del documento"
@@ -2397,7 +2397,7 @@
     },
     "Email body for invitation (event details part)": {
       "Removed": [
-        "Borrado"
+        "Eliminado"
       ]
     },
     "Email body for invitation (location part)": {
@@ -2732,8 +2732,8 @@
         "Proceso anulado"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
-        "Invitado duplicado borrado: ${ joinedInvitee }",
-        "Invitados duplicados borrados: ${ joinedInvitee }"
+        "Invitado duplicado eliminado: ${ joinedInvitee }",
+        "Invitados duplicados eliminados: ${ joinedInvitee }"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -4638,8 +4638,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Esta acción eliminará permanentemente el archivo cargado."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Esta acción eliminará la carpeta que has cargado de forma permanente. No puedes eliminar una carpeta que contenga archivos que no sean de tu propiedad."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Esta acción eliminará el enlace y revocará el acceso de todos los usuarios."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Esta acción eliminará permanentemente los elementos seleccionados."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para enviar correos esta dirección, el propietario debe en primer lugar activar la dirección."
@@ -4867,12 +4876,12 @@
         "Puedes importar un tipo de datos a la vez."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tu calendario antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido el calendario antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción."
       ],
       "You can now return to the application to continue": [
         "Ahora puedes regresar a la aplicación para continuar."
@@ -4896,7 +4905,7 @@
         "Puedes ser redirigido al sitio web de tu banco."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debes desactivar o borrar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
+        "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta de PayPal. Si tu cuenta de PayPal no lo tiene, haz clic en el botón de abajo."
@@ -4950,7 +4959,7 @@
         "Tu navegador actual no admite la descarga de archivos grandes por no disponer de trabajos de servicio. La descarga de archivos grandes puede inmovilizar o dejar sin respuesta al navegador. Usa la última versión de ${ recommendedBrowser } e inténtalo de nuevo."
       ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
-        "Tu documento actual será reemplazado por esta versión. Los comentarios y sugerencias se eliminarán del documento, pero permanecerán accesibles en el historial de comentarios."
+        "El documento actual será reemplazado por esta versión. Los comentarios y sugerencias se eliminarán del documento, pero permanecerán accesibles en el historial de comentarios."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
@@ -5565,10 +5574,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para añadir un calendario, borra uno existente."
+        "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario, borra otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -7062,7 +7071,7 @@
         "Se ha activado ${ reason }."
       ],
       "Access for the member removed": [
-        "Acceso para el miembro borrado"
+        "Se ha eliminado el acceso para el miembro."
       ],
       "Access updated": [
         "Se ha actualizado el acceso."
@@ -7086,19 +7095,19 @@
         "Grupo de contactos actualizado"
       ],
       "Device failed to be removed": [
-        "Error al borrar el dispositivo"
+        "Error al eliminar el dispositivo"
       ],
       "Device failed to be renamed": [
         "Error al renombrar el dispositivo"
       ],
       "Device removed": [
-        "El dispositivo está borrado."
+        "El dispositivo está eliminado."
       ],
       "Device renamed": [
         "Dispositivo renombrado"
       ],
       "External invitation removed from the share": [
-        "La invitación externa ha sido borrada de los elementos compartidos."
+        "Se ha eliminado la invitación externa de los elementos compartidos."
       ],
       "External invitation's email was sent again": [
         "Se ha enviado nuevamente el correo de invitación externa."
@@ -7151,6 +7160,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
+      ],
+      "The document failed to be created": [
+        "No se ha creado el documento."
       ],
       "The link to your item failed to be deleted": [
         "Error al eliminar el enlace a tu elemento"
@@ -7638,7 +7650,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Comprueba la seguridad de la cuenta"
       ]
     },
@@ -8762,6 +8774,9 @@
       "Day theme": [
         "Tema de día"
       ],
+      "Delete": [
+        "Eliminar"
+      ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
         "Eliminar ${ count } contactos"
@@ -8769,6 +8784,12 @@
       "Delete ${ count } contact group": [
         "Eliminar ${ count } grupo de contactos",
         "Eliminar ${ count } grupos de contactos"
+      ],
+      "Delete ${ item.name }?": [
+        "¿Deseas eliminar ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "¿Deseas eliminar ${ links.length } elementos?"
       ],
       "Delete ${ value }": [
         "Eliminar ${ value }"
@@ -9291,7 +9312,7 @@
       "A safer way to hold your Bitcoin": [
         "Una forma más segura de mantener tu Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"
       ]
     },

@@ -4635,8 +4635,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Denna åtgärd kommer att ta bort filen du laddat upp permanent."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Denna åtgärd kommer att ta bort mappen du laddat upp permanent. Du kan inte ta bort en mapp som innehåller en fil du inte äger."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Denna åtgärd kommer ta bort länken och återkalla åtkomst för alla användare."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Denna åtgärd kommer att ta bort de valda objekten permanent."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
@@ -7154,6 +7163,9 @@
       "Stopping the sharing of this item has failed": [
         "Misslyckades att stoppa delning av detta objekt"
       ],
+      "The document failed to be created": [
+        "Dokumentet misslyckades att skapas"
+      ],
       "The link to your item failed to be deleted": [
         "Länken till ditt objekt misslyckades att tas bort"
       ],
@@ -7646,8 +7658,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Granska din kontosäkerhet"
+      "Review account safety": [
+        "Granska kontosäkerhet"
       ]
     },
     "saml: Error": {
@@ -8019,6 +8031,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Denna prenumeration kommer förnyas automatiskt vartannat år med samma pris tills den avbryts."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
     },
     "specialoffer: Link": {
@@ -8767,6 +8782,9 @@
       "Day theme": [
         "Dagstema"
       ],
+      "Delete": [
+        "Ta bort"
+      ],
       "Delete ${ count } contact": [
         "Ta bort ${ count } kontakt",
         "Ta bort ${ count } kontakter"
@@ -8774,6 +8792,12 @@
       "Delete ${ count } contact group": [
         "Ta bort ${ count } kontaktgrupp",
         "Ta bort ${ count } kontaktgrupper"
+      ],
+      "Delete ${ item.name }?": [
+        "Ta bort ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Ta bort ${ links.length } objekt?"
       ],
       "Delete ${ value }": [
         "Ta bort ${ value }"
@@ -9296,8 +9320,13 @@
       "A safer way to hold your Bitcoin": [
         "Ett säkrare sätt att hålla din Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-post"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Ett säkrare sätt att hålla Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

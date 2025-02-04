@@ -169,6 +169,9 @@
       "Continue": [
         "Fortsæt"
       ],
+      "Continue downloading": [
+        "Fortsæt med at downloade"
+      ],
       "Continue import": [
         "Fortsæt import"
       ],
@@ -2662,6 +2665,9 @@
       "Please select a country": [
         "Vælg venligst et land"
       ],
+      "Please select a state": [
+        "Vælg venligst en region"
+      ],
       "Port is required": [
         "Port er påkrævet."
       ],
@@ -3644,6 +3650,9 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } filer kan ikke downloades direkte og vil ikke blive inkluderet i dette download. Du kan downloade de andre filer ved at klikke på 'Fortsæt med at downloade'."
+      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } giver dig mulighed for at samarbejde i realtid med end-to-end-kryptering, der giver komplet privatliv. Opret en kopi for at begynde at redigere, eller bed ejeren om redigeringsadgang."
       ],
@@ -3917,6 +3926,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne mappe blev uploaded sikkert af ${ emailAddress }."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Oplev nye funktioner, der er låst op med ${ planTitle }, og begynd at bruge dem med det samme!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -3976,6 +3991,9 @@
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "E-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden, slettes automatisk."
+      ],
+      "Enabling auto-deletion…": [
+        "Aktivering af automatisk sletning…"
       ],
       "End-to-end encrypted": [
         "End-to-end krypteret"
@@ -4285,6 +4303,9 @@
       "Opening...": [
         "Åbner..."
       ],
+      "or discover other features:": [
+        "eller opdag andre funktioner:"
+      ],
       "Organization size": [
         "Organisationsstørrelse"
       ],
@@ -4494,6 +4515,12 @@
       "The Beginning": [
         "Begyndelsen"
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Den digitale signatur er delvist verificeret. Denne fil blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Den digitale signatur er delvist verificeret. Denne mappe blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
       ],
@@ -4506,8 +4533,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Bekræftelsesprocessen åbner en ny browserfane. Deaktivér venligst alle aktive pop-up-blokkere."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Denne handling sletter den fil, du har uploadet, permanent."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Denne handling sletter den mappe, du har uploadet, permanent. Du kan ikke slette en mappe, der indeholder en ikke-ejet fil."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Denne handling vil slette linket og fjerne adgangen for alle brugere."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Denne handling sletter de valgte elementer permanent."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
@@ -4550,6 +4586,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For at gennemføre din betaling skal du sende ${ btcAmountBold } til nedenstående adresse."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "For at downloade ${ DOCS_APP_NAME }-filerne skal du åbne dem i ${ DOCS_APP_NAME } og eksportere dem."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -4820,6 +4859,9 @@
       "Your email address was exposed:": [
         "Din e-mailadresse blev eksponeret:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Din e-mailadresse vil være synlig som linkets ejer på delingssiden."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
@@ -4844,8 +4886,11 @@
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
       ]
     },
     "info": {
@@ -4952,6 +4997,9 @@
       ],
       "Anderson": [
         "Andersen"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Enhver på internettet med linket kan redigere"
       ],
       "Anyone on the Internet with the link can view": [
         "Enhver på internettet med linket kan se"
@@ -5816,6 +5864,9 @@
       ],
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnementer starter fra ${ priceDrivePlus }"
       ],
       "Upgrade": [
         "Opgradér"
@@ -6886,6 +6937,9 @@
       "Stopping the sharing of this item has failed": [
         "Det lykkedes ikke at stoppe delingen af dette element"
       ],
+      "The document failed to be created": [
+        "Dokumentet kunne ikke oprettes"
+      ],
       "The link to your item failed to be deleted": [
         "Linket til dit element kunne ikke slettes"
       ],
@@ -7289,11 +7343,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiel e-mail fra ${ BRAND_NAME }"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Gennemgå din kontos sikkerhed"
       ]
     },
     "Security Center": {
@@ -8399,6 +8448,9 @@
       "Day theme": [
         "Dagstema"
       ],
+      "Delete": [
+        "Slet"
+      ],
       "Delete ${ count } contact": [
         "Slet ${ count } kontakt",
         "Slet ${ count } kontakter"
@@ -8406,6 +8458,12 @@
       "Delete ${ count } contact group": [
         "Slet ${ count } kontaktgruppe",
         "Slet ${ count } kontaktgrupper"
+      ],
+      "Delete ${ item.name }?": [
+        "Slet ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Slet ${ links.length } elementer?"
       ],
       "Delete ${ value }": [
         "Slet ${ value }"
@@ -8732,6 +8790,9 @@
       "Your document cannot be loaded": [
         "Dit dokument kan ikke indlæses"
       ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "Dit download inkluderer en ${ DOCS_APP_NAME }-fil"
+      ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
       ],
@@ -8908,9 +8969,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "En sikrere måde at gemme dine Bitcoin på"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:Bug category": {

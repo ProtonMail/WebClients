@@ -165,6 +165,9 @@
       "Continue": [
         "Kontynuuj"
       ],
+      "Continue downloading": [
+        "Kontynuuj pobieranie"
+      ],
       "Continue import": [
         "Kontynuuj importowanie"
       ],
@@ -620,6 +623,9 @@
       ],
       "Submit": [
         "Wyślij"
+      ],
+      "Switch accounts": [
+        "Przełącz konto"
       ],
       "Switch or add account": [
         "Przełącz lub dodaj konto"
@@ -1330,6 +1336,9 @@
       ],
       "Work": [
         "Służbowy"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3673,6 +3682,9 @@
       ],
       "ICS file": [
         "pliku ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4669,8 +4681,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Ta akcja spowoduje trwałe usunięcie przesłanego pliku."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Ta akcja spowoduje trwałe usunięcie przesłanego folderu. Nie można usunąć folderu, który zawiera pliki innego właściciela."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Ta akcja spowoduje usunięcie linku i unieważnienie dostępu dla wszystkich użytkowników."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Ta akcja spowoduje trwałe usunięcie zaznaczonych elementów."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ten adres jest wyłączony. Aby móc wysyłać wiadomości na ten adres, musi on zostać najpierw włączony przez właściciela."
@@ -5066,6 +5087,9 @@
       ],
       "Trusted": [
         "Zaufany"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -6032,6 +6056,9 @@
       ],
       "Get started for ${ priceCoupon }": [
         "Od ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Od ${ priceDrivePlus }"
       ],
       "Starting from ${ pricing }": [
         "Od ${ pricing }"
@@ -7211,6 +7238,9 @@
       "Stopping the sharing of this item has failed": [
         "Zatrzymanie udostępniania nie powiodło się"
       ],
+      "The document failed to be created": [
+        "Utworzenie dokumentu nie powiodło się"
+      ],
       "The link to your item failed to be deleted": [
         "Usunięcie linku do elementu nie powiodło się"
       ],
@@ -7683,11 +7713,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficjalna wiadomość od ${ BRAND_NAME }"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Sprawdź bezpieczeństwo konta"
       ]
     },
     "saml: Error": {
@@ -8873,6 +8898,9 @@
       "Day theme": [
         "Jasny motyw"
       ],
+      "Delete": [
+        "Usuń"
+      ],
       "Delete ${ count } contact": [
         "Usuń kontakt",
         "Usuń ${ count } kontakty",
@@ -8884,6 +8912,9 @@
         "Usuń ${ count } grupy kontaktów",
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
+      ],
+      "Delete ${ item.name }?": [
+        "Usunąć ${ item.name }?"
       ],
       "Delete ${ value }": [
         "Usuń ${ value }"
@@ -9215,6 +9246,9 @@
       "Your document cannot be loaded": [
         "Dokument nie może zostać załadowany"
       ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "Zawiera plik ${ DOCS_APP_NAME }"
+      ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
       ],
@@ -9413,9 +9447,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
-      ],
-      "Bitcoin via email": [
-        "Bitcoiny przez e-mail"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -1363,6 +1363,9 @@
       ],
       "Work": [
         "Práca"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3423,6 +3426,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -3431,6 +3437,9 @@
       ],
       "No verification method available": [
         "Nie sú k dispozícii žiadne metódy overovania"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3715,6 +3724,9 @@
       ],
       "ICS file": [
         "Súbor ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4747,8 +4759,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces overenia otvorí novú kartu prehliadača. Vypnite všetky aktívne blokovania automaticky otváraných okien."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Táto akcia natrvalo vymaže nahraný súbor."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Táto akcia natrvalo vymaže priečinok, ktorý ste nahrali. Nemôžete vymazať priečinok, ktorý obsahuje nevlastnený súbor."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Táto akcia odstráni prepojenie a zruší prístup pre všetkých používateľov."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Táto akcia natrvalo vymaže vybrané položky."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Táto adresa nie je povolená. Ak chcete odosielať správy na túto adresu, musí ju majiteľ najskôr povoliť."
@@ -5186,6 +5207,9 @@
       ],
       "Trusted": [
         "Dôveryhodný"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7294,6 +7318,9 @@
       "Stopping the sharing of this item has failed": [
         "Ukončenie zdieľania tejto položky zlyhalo"
       ],
+      "The document failed to be created": [
+        "Dokument sa nepodarilo vytvoriť"
+      ],
       "The link to your item failed to be deleted": [
         "Odkaz na vašu položku sa nepodarilo zmazať"
       ],
@@ -7372,8 +7399,14 @@
       "Free": [
         "Zdarma"
       ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Obnova predchádzajúcich verzií súborov"
       ],
       "Storage": [
         "Úložisko"
@@ -7584,6 +7617,11 @@
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Zdarma"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Potvrdením tejto platby oprávňujete spoločnosť ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali pokyn vašej banke na odpísanie finančných prostriedkov z vášho účtu a aby vaša banka zodpovedajúcim spôsobom odpísala finančné prostriedky z vášho účtu. Peniaze môžete získať späť do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
@@ -7778,11 +7816,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficiálny email od ${ BRAND_NAME }"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Skontrolujte bezpečnosť svojho účtu"
       ]
     },
     "saml: Error": {
@@ -8977,6 +9010,9 @@
       "Day theme": [
         "Denný motív"
       ],
+      "Delete": [
+        "Vymazať"
+      ],
       "Delete ${ count } contact": [
         "Zmazať ${ count } kontakt",
         "Zmazať ${ count } kontakty",
@@ -8988,6 +9024,12 @@
         "Zmazať ${ count } skupiny kontaktov",
         "Zmazať ${ count } skupín kontaktov",
         "Zmazať ${ count } skupín kontaktov"
+      ],
+      "Delete ${ item.name }?": [
+        "Vymazať ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Vymazať ${ links.length } položiek?"
       ],
       "Delete ${ value }": [
         "Vymazať ${ value }"
@@ -9536,8 +9578,13 @@
       "A safer way to hold your Bitcoin": [
         "Bezpečnejší spôsob vlastnenia Bitcoinu"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin cez email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Bezpečnejší spôsob ako vlastniť Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -4613,8 +4613,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "გადამოწმების პროცესი ბრაუზერის ახალ ჩანართს გახსნის. გთხოვთ, გამორთოთ მხტუნარა ფანჯრებს მბლოკავები."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "ეს ქმედება თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "ეს ქმედება შეუქცევადად წაშლის საქაღალდეს, რომელიც ატვირთეთ. საქაღალდეს, რომელიც შეიცავს ფაილს, რომლის მფლობელიც თქვენ არ ბრძანდებით, ვერ წაშლით."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "ეს ქმედება წაშლის ბმულს და გააუქმებს წვდომას ყველა მომხმარებლისთვის."
+      ],
+      "This action will delete the selected items permanently.": [
+        "ეს ქმედება მონიშნულ ელემენტებს სამუდამოდ წაშლის."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "ეს მისამართი გათიშულია. ამ მისამართზე გასაგზავნად მისმა მფლობელმა ის ჯერ უნდა ჩართოს."
@@ -7061,6 +7070,9 @@
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
       ],
+      "The document failed to be created": [
+        "დოკუმენტის შექმნა ჩავარდა"
+      ],
       "The link to your item failed to be deleted": [
         "თქვენს ელემენტამდე ბმულის წაშლის შეცდომა"
       ],
@@ -7538,11 +7550,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "თქვენი ანგარიშის უსაფრთხოების გადახედვა"
       ]
     },
     "saml: Error": {
@@ -8665,6 +8672,9 @@
       "Day theme": [
         "დღის თემა"
       ],
+      "Delete": [
+        "წაშლა"
+      ],
       "Delete ${ count } contact": [
         "${ count } კონტაქტის წაშლა",
         "${ count } კონტაქტის წაშლა"
@@ -8672,6 +8682,12 @@
       "Delete ${ count } contact group": [
         "${ count } კონტაქტების ჯგუფის წაშლა",
         "${ count } კონტაქტების ჯგუფის წაშლა"
+      ],
+      "Delete ${ item.name }?": [
+        "წავშალო ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "წავშალო ${ links.length } ელემენტი?"
       ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"
@@ -9194,7 +9210,7 @@
       "A safer way to hold your Bitcoin": [
         "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin ელფოსტით"
       ]
     },
