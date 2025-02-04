@@ -482,19 +482,19 @@
         "actualizar la página"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove all members": [
-        "Borrar todos los miembros"
+        "Eliminar todos los miembros"
       ],
       "Remove bonuses": [
-        "Borrar los beneficios"
+        "Eliminar los beneficios"
       ],
       "Remove domain": [
-        "Borrar el dominio"
+        "Eliminar el dominio"
       ],
       "Remove gift code": [
-        "Borrar el código de regalo"
+        "Eliminar el código de regalo"
       ],
       "Rename": [
         "Renombrar"
@@ -2452,6 +2452,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
       ]
     },
     "Email spam notification": {
@@ -2523,6 +2526,9 @@
       ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
       ],
       "Email address is invalid": [
         "La dirección de correo electrónico no es válida."
@@ -3138,7 +3144,7 @@
         "Servidores VPN más rápidos"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
@@ -3195,7 +3201,7 @@
         "Llave de seguridad"
       ],
       "Security key removed": [
-        "Se ha borrardo la clave de seguridad."
+        "Se ha eliminado la clave de seguridad."
       ],
       "Security key updated": [
         "Llave de seguridad actualizada"
@@ -3761,13 +3767,13 @@
         "¿Estás seguro de que quieres conceder los privilegios administrativos a este usuario?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "¿Estás seguro de que quieres borrar los privilegios administrativos de este usuario?"
+        "¿Estás seguro de que quieres eliminar los privilegios administrativos de este usuario?"
       ],
       "Are you sure you want to remove all members from this group?": [
-        "¿Estás seguro de que quieres borrar a todos los miembros de este grupo?"
+        "¿Estás seguro de que quieres eliminar a todos los miembros de este grupo?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "¿Estás seguro de que quieres borrar el dominio ${ boldDomain }?"
+        "¿Estás seguro de que quieres eliminar el dominio ${ boldDomain }?"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Pregunta al administrador de la organización para configurar puertas de enlace."
@@ -4191,7 +4197,7 @@
         "Estamos para ayudarte si tienes problemas. ${ boldPhoneCall } o una ${ boldZoomMeeting } con uno de nuestros especialistas de soporte."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
-        "IMPORTANTE: Si tu panel de DNS no permite que los valores CNAME terminen con un punto, puedes eliminar el último punto de los valores CNAME."
+        "IMPORTANTE: Si el panel de DNS no permite que los valores CNAME terminen con un punto, puedes eliminar el último punto de los valores CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de dos factores."
@@ -4836,7 +4842,7 @@
         "Este usuario es actualmente responsable de los pagos de tu organización. Al darlo de baja, serás el responsable de los pagos de tu organización."
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Esta verificación puede tomar hasta una hora. Después de la verificación, no borra el registro TXT, ya que se necesita para confirmar que continúas siendo el propietario del dominio."
+        "Esta verificación puede tomar hasta una hora. Después de la verificación, no elimines el registro TXT, ya que se necesita para confirmar que continúas siendo el propietario del dominio."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Esto denegará el acceso a **${ email }**. ¿Está seguro de que desea continuar?"
@@ -4857,7 +4863,7 @@
         "Esto eliminará permanentemente tu cuenta y todos sus datos. No podrás reactivar esta cuenta."
       ],
       "This will remove any enabled 2FA methods.": [
-        "Esto borrará cualquier método 2FA activado."
+        "Esto eliminará cualquier método 2FA activado."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Esto eliminará el SSO de ${ boldDomainName }."
@@ -5182,12 +5188,12 @@
         "Puedes editar esto una vez para asegurarte de la dirección de correo correcta para verificar."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tu calendario antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido el calendario antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción."
       ],
       "You can now access and manage the account as an administrator.": [
         "Ahora puedes acceder y gestionar la cuenta como administrador."
@@ -5237,7 +5243,7 @@
         "Debes activar la clave privada de tu organización con la copia de seguridad suministrada por el administrador de la organización."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debes desactivar o borrar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
+        "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta PayPal para añadirla como método de pago."
@@ -5887,7 +5893,7 @@
         "Frase de recuperación"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Repeat backup password": [
         "Repite la contraseña de respaldo"
@@ -7702,13 +7708,13 @@
         "${ upgradeLink } para añadir más usuarios, o elimina algunas cuentas de usuario para liberar espacio."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } para añadir más usuarios, o desactiva el acceso VPN de otros usuarios."
+        "${ upgradeLink } para añadir más usuarios, o elimina el acceso VPN de otros usuarios."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
         "${ upgradeLink } para conseguir más direcciones, o elimina algunas direcciones para liberar espacio."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } para conseguir más almacenamiento, o borra contenido para liberar espacio."
+        "${ upgradeLink } para conseguir más almacenamiento o elimina contenido para liberar espacio."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Tu plan incluye un máximo de ${ availableAddresses } dirección adicional.",
@@ -8334,7 +8340,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Comprueba la seguridad de la cuenta"
       ]
     },
@@ -9181,10 +9187,10 @@
         "Una vez que el inicio de sesión único esté desactivado para la organización:"
       ],
       "Remove single sign-on": [
-        "Quitar el inicio de sesión único"
+        "Eliminar el inicio de sesión único"
       ],
       "Remove single sign-on for your organization?": [
-        "¿Quitar el inicio de sesión único de la organización?"
+        "¿Eliminar el inicio de sesión único de la organización?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Establezca una contraseña de respaldo para agregar una capa adicional de protección. Te permitirá iniciar sesión si se bloquea tu cuenta, así que asegúrese de guardarla en un lugar seguro."
@@ -9496,47 +9502,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, y ${ VPN_SHORT_APP_NAME } con características prémium"
@@ -9825,6 +9790,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -10680,19 +10686,19 @@
         "Recuperación"
       ],
       "Remove all members?": [
-        "¿Borrar todos los miembros?"
+        "¿Eliminar todos los miembros?"
       ],
       "Remove domain": [
-        "Borrar el dominio"
+        "Eliminar el dominio"
       ],
       "Remove server?": [
-        "¿Borrar el servidor?"
+        "¿Eliminar el servidor?"
       ],
       "Remove single sign-on": [
         "Borrar el inicio de sesión único"
       ],
       "Remove user?": [
-        "¿Borrar el usuario?"
+        "¿Eliminar el usuario?"
       ],
       "Rename the gateway": [
         "Cambiar el nombre de la puerta de enlace"
@@ -11465,7 +11471,7 @@
       "A safer way to hold your Bitcoin": [
         "Una forma más segura de mantener tu Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"
       ]
     },
@@ -11522,7 +11528,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Después de la verificación, no borres este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
+        "Después de la verificación, no elimines este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
       ]
     }
   }
