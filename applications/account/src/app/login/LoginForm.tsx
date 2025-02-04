@@ -10,7 +10,6 @@ import {
     Challenge,
     Checkbox,
     Icon,
-    Info,
     InputFieldTwo,
     Label,
     PasswordInputTwo,
@@ -19,15 +18,20 @@ import {
     useLocalState,
     useNotifications,
 } from '@proton/components';
-import { AuthType, ExternalSSOFlow } from '@proton/components/containers/login/interface';
+import { AuthType, type AuthTypeData, ExternalSSOFlow } from '@proton/components/containers/login/interface';
 import { handleLogin } from '@proton/components/containers/login/loginActions';
-import { handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
+import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
 import { useLoading } from '@proton/hooks';
 import { auth, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { normalizeProduct } from '@proton/shared/lib/apps/product';
-import type { AuthResponse, AuthVersion, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
+import type {
+    AuthResponse,
+    AuthVersion,
+    InfoResponse,
+    SSOInfoResponse,
+} from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -45,6 +49,7 @@ import SignupButton from './SignupButton';
 
 export interface LoginFormRef {
     getIsLoading: () => boolean;
+    reset: () => void;
 }
 
 interface Props {
@@ -76,20 +81,42 @@ interface Props {
     paths: Paths;
     toApp?: APP_NAMES;
     productParam?: ProductParam;
-    authType: AuthType;
-    onChangeAuthType: (authType: AuthType) => void;
+    authTypeData: AuthTypeData;
+    onChangeAuthTypeData: (authTypeData: AuthTypeData) => void;
     loginFormRef: MutableRefObject<LoginFormRef | undefined>;
     appName: APP_NAMES;
     externalRedirect?: string;
     usernameReadOnly?: boolean;
 }
 
+const handleVpnToAccountSSORedirect = ({
+    externalRedirect,
+    productParam,
+    username,
+}: {
+    externalRedirect?: string;
+    productParam?: ProductParam;
+    username: string;
+}) => {
+    const url = new URL('https://account.proton.me/sso/login');
+    url.searchParams.set('username', username);
+    url.searchParams.set('flow', 'redirect');
+    if (externalRedirect && externalRedirect !== '/') {
+        url.searchParams.set('continueTo', externalRedirect);
+    }
+    const normalizedProductParam = normalizeProduct(productParam);
+    if (normalizedProductParam) {
+        url.searchParams.set('product', normalizedProductParam);
+    }
+    window.location.assign(url.toString());
+};
+
 const LoginForm = ({
     api,
     appName,
     modal,
-    authType,
-    onChangeAuthType,
+    authTypeData,
+    onChangeAuthTypeData,
     onSubmit,
     onPreSubmit,
     onStartAuth,
@@ -124,13 +151,17 @@ const LoginForm = ({
     >(undefined);
     const onceRef = useRef(false);
 
+    const { validator, onFormSubmit, reset } = useFormErrors();
+
     useImperativeHandle(loginFormRef, () => ({
         getIsLoading: () => {
             return Boolean(submitting || externalSSOState);
         },
+        reset: () => {
+            reset();
+            setPassword('');
+        },
     }));
-
-    const { validator, onFormSubmit } = useFormErrors();
 
     const keepMeSignedInLearnMoreLink = (
         <Href
@@ -162,7 +193,6 @@ const LoginForm = ({
             const config = auth({ SSOResponseToken: token }, persistent);
             authResponse = await api<AuthResponse>(uid ? withUIDHeaders(uid, config) : config);
         } catch (e) {
-            handleError(e);
             throw e;
         }
 
@@ -177,24 +207,26 @@ const LoginForm = ({
             persistent,
         });
     };
-    const handleSubmitExternalSSO = async () => {
+
+    const handleSubmitExternalSSO = async (maybeSSOInfoResponse?: SSOInfoResponse) => {
         setExternalSSOState(undefined);
 
-        let ssoInfoResponse: SSOInfoResponse | undefined;
-        try {
-            await onPreSubmit?.();
-            await onStartAuth();
-            ssoInfoResponse = await api<SSOInfoResponse>(getInfo({ username, intent: 'SSO' }));
-        } catch (e) {
-            const { code } = getApiError(e);
-            if (code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP) {
-                onChangeAuthType(AuthType.SRP);
-                handleError(e);
-                setPassword('');
-                return;
+        let ssoInfoResponse: SSOInfoResponse | undefined = maybeSSOInfoResponse;
+        if (!ssoInfoResponse) {
+            try {
+                await onPreSubmit?.();
+                await onStartAuth();
+                ssoInfoResponse = await api<SSOInfoResponse>(getInfo({ username, intent: 'SSO' }));
+            } catch (e) {
+                const { code } = getApiError(e);
+                if (code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP) {
+                    onChangeAuthTypeData({ type: AuthType.Srp });
+                    handleError(e);
+                    setPassword('');
+                    return;
+                }
+                throw e;
             }
-            handleError(e);
-            throw e;
         }
 
         const challengeResult = await challengeRefLogin.current?.getChallenge().catch(noop);
@@ -209,6 +241,9 @@ const LoginForm = ({
                 token: ssoInfoResponse.SSOChallengeToken,
             });
         } catch (e) {
+            if (e instanceof ExternalSSOError) {
+                return;
+            }
             throw e;
         } finally {
             setExternalSSOState(undefined);
@@ -221,6 +256,42 @@ const LoginForm = ({
         });
     };
 
+    const handleSubmitAuto = async () => {
+        setExternalSSOState(undefined);
+        setPassword('');
+        onChangeAuthTypeData({ type: AuthType.Auto });
+
+        let ssoInfoResponse: SSOInfoResponse | InfoResponse | undefined;
+        try {
+            await onPreSubmit?.();
+            await onStartAuth();
+            ssoInfoResponse = await api<SSOInfoResponse | InfoResponse>(getInfo({ username, intent: 'Auto' }));
+        } catch (e) {
+            const { code } = getApiError(e);
+            if (code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO) {
+                if (appName !== APPS.PROTONACCOUNT) {
+                    handleVpnToAccountSSORedirect({ externalRedirect, productParam, username });
+                    return;
+                }
+                await handleSubmitExternalSSO();
+                return;
+            }
+            throw e;
+        }
+
+        if (ssoInfoResponse && 'SSOChallengeToken' in ssoInfoResponse) {
+            return handleSubmitExternalSSO(ssoInfoResponse);
+        }
+
+        if (ssoInfoResponse && 'Modulus' in ssoInfoResponse) {
+            reset();
+            onChangeAuthTypeData({ type: AuthType.AutoSrp, info: ssoInfoResponse, username });
+            return;
+        }
+
+        throw new Error('Invalid response from server');
+    };
+
     const triggerSSOLoginNotification = () => {
         createNotification({
             type: 'info',
@@ -229,7 +300,7 @@ const LoginForm = ({
         });
     };
 
-    const handleSubmitSRP = async () => {
+    const handleSubmitSrp = async () => {
         const payload = await challengeRefLogin.current?.getChallenge().catch(noop);
 
         let result: Unwrap<ReturnType<typeof handleLogin>>;
@@ -249,20 +320,10 @@ const LoginForm = ({
 
             if (code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO) {
                 if (appName !== APPS.PROTONACCOUNT) {
-                    const url = new URL('https://account.proton.me/sso/login');
-                    url.searchParams.set('username', username);
-                    url.searchParams.set('flow', 'redirect');
-                    if (externalRedirect && externalRedirect !== '/') {
-                        url.searchParams.set('continueTo', externalRedirect);
-                    }
-                    const normalizedProductParam = normalizeProduct(productParam);
-                    if (normalizedProductParam) {
-                        url.searchParams.set('product', normalizedProductParam);
-                    }
-                    window.location.assign(url.toString());
+                    handleVpnToAccountSSORedirect({ externalRedirect, productParam, username });
                     return;
                 }
-                onChangeAuthType(AuthType.ExternalSSO);
+                onChangeAuthTypeData({ type: AuthType.ExternalSSO });
                 triggerSSOLoginNotification();
                 return;
             } else if (code === API_CUSTOM_ERROR_CODES.INVALID_LOGIN) {
@@ -270,12 +331,11 @@ const LoginForm = ({
                 return;
             }
 
-            handleError(e);
             throw e;
         }
 
         return onSubmit({
-            authType: AuthType.SRP,
+            authType: AuthType.Srp,
             authResponse: result.authResult.result,
             authVersion: result.authResult.authVersion,
             uid: undefined,
@@ -290,7 +350,7 @@ const LoginForm = ({
         if (
             !externalSSO.options ||
             externalSSO.options.token ||
-            authType !== AuthType.ExternalSSO ||
+            authTypeData.type !== AuthType.ExternalSSO ||
             externalSSO.options.flow !== ExternalSSOFlow.Redirect
         ) {
             return;
@@ -303,7 +363,7 @@ const LoginForm = ({
             submitting ||
             !externalSSO.options ||
             !externalSSO.options.token ||
-            authType !== AuthType.ExternalSSO ||
+            authTypeData.type !== AuthType.ExternalSSO ||
             onceRef.current
         ) {
             return;
@@ -315,7 +375,7 @@ const LoginForm = ({
                 token: externalSSO.options.token,
                 payload: undefined,
             })
-        ).catch(noop);
+        ).catch(handleError);
     }, []);
 
     const abortExternalSSO = () => {
@@ -335,90 +395,200 @@ const LoginForm = ({
         };
     }, []);
 
-    return (
-        <>
+    const checkboxEl = hasRemember && !isElectronApp && (
+        <div className="flex flex-row items-start">
+            <Checkbox
+                id="staySignedIn"
+                className="mt-2 mr-2"
+                checked={persistent}
+                onChange={submitting ? noop : () => setPersistent(!persistent)}
+            />
+
+            <div className="flex-1">
+                <Label htmlFor="staySignedIn" className="flex items-center">
+                    {c('Label').t`Keep me signed in`}
+                </Label>
+                <div className="color-weak">
+                    {c('Info').jt`Recommended on trusted devices. ${keepMeSignedInLearnMoreLink}`}
+                </div>
+            </div>
+        </div>
+    );
+
+    const errorEl = errorMsg && (
+        <div
+            data-testid="login:error-block"
+            className="mb-4 bg-weak w-full border-none pl-3 pr-4 py-3 gap-3 rounded-lg flex items-start flex-nowrap"
+        >
+            <div className="flex justify-start items-start shrink-0 pt-0.5">
+                <Icon name="exclamation-circle-filled" className="color-danger shrink-0" />
+            </div>
+            {errorMsg}
+        </div>
+    );
+
+    const usernameEl = () => (
+        <InputFieldTwo
+            id="username"
+            bigger
+            autoFocus
+            label={authTypeData.type === AuthType.ExternalSSO ? c('Label').t`Email` : c('Label').t`Email or username`}
+            error={validator([requiredValidator(username)]) || !!errorMsg}
+            disableChange={submitting}
+            autoComplete="username"
+            value={username}
+            onValue={setUsername}
+            ref={usernameRef}
+            onChange={() => setErrorMsg(null)}
+            readOnly={usernameReadOnly}
+        />
+    );
+
+    const passwordEl = () => (
+        <InputFieldTwo
+            id="password"
+            bigger
+            label={authTypeData.type === AuthType.AutoSrp ? c('Label').t`Enter your password` : c('Label').t`Password`}
+            error={validator([requiredValidator(password)]) || !!errorMsg}
+            as={PasswordInputTwo}
+            disableChange={submitting}
+            autoComplete="current-password"
+            autoFocus={authTypeData.type === AuthType.AutoSrp}
+            value={password}
+            onValue={setPassword}
+            rootClassName="mt-2"
+            onChange={() => setErrorMsg(null)}
+        />
+    );
+
+    if (authTypeData.type === AuthType.Auto || authTypeData.type === AuthType.AutoSrp) {
+        return (
             <form
                 name="loginForm"
+                data-testid="login-form-auto"
                 onSubmit={(event) => {
                     event.preventDefault();
                     setErrorMsg(null);
-
-                    if (authType === AuthType.SRP) {
+                    if (authTypeData.type === AuthType.Auto) {
                         if (submitting || !onFormSubmit()) {
                             return;
                         }
-                        withSubmitting(handleSubmitSRP()).catch(noop);
-                    } else {
-                        if (submitting) {
+                        withSubmitting(handleSubmitAuto()).catch(handleError);
+                    } else if (authTypeData.type === AuthType.AutoSrp) {
+                        if (submitting || !onFormSubmit()) {
                             return;
                         }
-                        withSubmitting(handleSubmitExternalSSO()).catch(noop);
+                        withSubmitting(handleSubmitSrp()).catch(handleError);
                     }
                 }}
                 method="post"
             >
                 <Challenge empty tabIndex={-1} challengeRef={challengeRefLogin} type={0} name="login" />
-                <InputFieldTwo
-                    id="username"
-                    bigger
-                    autoFocus
-                    label={authType === AuthType.ExternalSSO ? c('Label').t`Email` : c('Label').t`Email or username`}
-                    error={validator([requiredValidator(username)]) || !!errorMsg}
-                    disableChange={submitting}
-                    autoComplete="username"
-                    value={username}
-                    onValue={setUsername}
-                    ref={usernameRef}
-                    onChange={() => setErrorMsg(null)}
-                    readOnly={usernameReadOnly}
-                />
-                {authType === AuthType.ExternalSSO ? null : (
-                    <InputFieldTwo
-                        id="password"
-                        bigger
-                        label={c('Label').t`Password`}
-                        error={validator([requiredValidator(password)]) || !!errorMsg}
-                        as={PasswordInputTwo}
-                        disableChange={submitting}
-                        autoComplete="current-password"
-                        value={password}
-                        onValue={setPassword}
-                        rootClassName="mt-2"
-                        onChange={() => setErrorMsg(null)}
-                    />
-                )}
+                {(() => {
+                    if (authTypeData.type === AuthType.Auto) {
+                        return (
+                            <>
+                                {usernameEl()}
+                                <div className="mb-4">
+                                    <Link to={paths.forgotUsername}>{c('Link').t`Forgot email?`}</Link>
+                                </div>
+                                {checkboxEl}
+                                <Button
+                                    size="large"
+                                    color="norm"
+                                    type="submit"
+                                    fullWidth
+                                    loading={submitting}
+                                    className={modal ? 'mt-4' : 'mt-6'}
+                                >
+                                    {c('Action').t`Continue`}
+                                </Button>
+                                {externalSSOState && (
+                                    <Button
+                                        size="large"
+                                        type="button"
+                                        shape="ghost"
+                                        color="norm"
+                                        fullWidth
+                                        className="mt-2"
+                                        onClick={() => {
+                                            abortExternalSSO();
+                                        }}
+                                    >
+                                        {c('Action').t`Cancel`}
+                                    </Button>
+                                )}
+                                {signUp && !modal && !usernameReadOnly && (
+                                    <div className="text-center mt-6">
+                                        {
+                                            // translator: Full sentence "New to Proton? Create account"
+                                            c('Go to sign up').jt`New to ${BRAND_NAME}? ${signUp}`
+                                        }
+                                    </div>
+                                )}
+                            </>
+                        );
+                    }
 
-                {errorMsg && (
-                    <div
-                        data-testid="login:error-block"
-                        className="mb-4 bg-weak w-full border-none pl-3 pr-4 py-3 gap-3 rounded-lg flex items-start flex-nowrap"
-                    >
-                        <div className="flex justify-start items-start shrink-0 pt-0.5">
-                            <Icon name="exclamation-circle-filled" className="color-danger shrink-0" />
-                        </div>
-                        {errorMsg}
-                    </div>
-                )}
+                    if (authTypeData.type === AuthType.AutoSrp) {
+                        return (
+                            <>
+                                <input id="username" readOnly value={username} hidden />
+                                {passwordEl()}
+                                <div className="mb-4">
+                                    <Link to={paths.reset}>{c('Link').t`Forgot password?`}</Link>
+                                </div>
+                                {checkboxEl}
+                                {errorEl && <div className="mt-4">{errorEl}</div>}
+                                <Button
+                                    size="large"
+                                    color="norm"
+                                    type="submit"
+                                    fullWidth
+                                    loading={submitting}
+                                    className={modal ? 'mt-4' : 'mt-6'}
+                                >
+                                    {
+                                        // translator: when the "sign in" button is in loading state, it gets updated to "Signing in"
+                                        submitting ? c('Action').t`Signing in` : signInText
+                                    }
+                                </Button>
+                            </>
+                        );
+                    }
+                })()}
+            </form>
+        );
+    }
 
-                {hasRemember && authType !== AuthType.ExternalSSO && !isElectronApp && (
-                    <div className="flex flex-row items-start">
-                        <Checkbox
-                            id="staySignedIn"
-                            className="mt-2 mr-2"
-                            checked={persistent}
-                            onChange={submitting ? noop : () => setPersistent(!persistent)}
-                        />
+    return (
+        <>
+            <form
+                name="loginForm"
+                data-testid="login-form"
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    setErrorMsg(null);
 
-                        <div className="flex-1">
-                            <Label htmlFor="staySignedIn" className="flex items-center">
-                                {c('Label').t`Keep me signed in`}
-                            </Label>
-                            <div className="color-weak">
-                                {c('Info').jt`Recommended on trusted devices. ${keepMeSignedInLearnMoreLink}`}
-                            </div>
-                        </div>
-                    </div>
-                )}
+                    if (authTypeData.type === AuthType.Srp) {
+                        if (submitting || !onFormSubmit()) {
+                            return;
+                        }
+                        withSubmitting(handleSubmitSrp()).catch(handleError);
+                    } else {
+                        if (submitting) {
+                            return;
+                        }
+                        withSubmitting(handleSubmitExternalSSO()).catch(handleError);
+                    }
+                }}
+                method="post"
+            >
+                <Challenge empty tabIndex={-1} challengeRef={challengeRefLogin} type={0} name="login" />
+                {usernameEl()}
+                {authTypeData.type === AuthType.ExternalSSO ? null : passwordEl()}
+                {errorEl}
+                {authTypeData.type !== AuthType.ExternalSSO && checkboxEl}
                 <Button
                     size="large"
                     color="norm"
@@ -434,7 +604,7 @@ const LoginForm = ({
                 </Button>
 
                 {(() => {
-                    if (authType === AuthType.ExternalSSO) {
+                    if (authTypeData.type === AuthType.ExternalSSO) {
                         return (
                             <>
                                 {externalSSOState && (
@@ -460,7 +630,7 @@ const LoginForm = ({
                                             disabled={submitting}
                                             onClick={() => {
                                                 abortExternalSSO();
-                                                onChangeAuthType(AuthType.SRP);
+                                                onChangeAuthTypeData({ type: AuthType.Srp });
                                                 setPassword('');
                                             }}
                                         >
@@ -474,32 +644,6 @@ const LoginForm = ({
 
                     return (
                         <>
-                            {externalSSO.enabled && (
-                                <>
-                                    <Button
-                                        size="large"
-                                        type="button"
-                                        shape="ghost"
-                                        color="norm"
-                                        fullWidth
-                                        disabled={submitting}
-                                        className="mt-2"
-                                        onClick={() => {
-                                            abortExternalSSO();
-                                            onChangeAuthType(AuthType.ExternalSSO);
-                                        }}
-                                    >
-                                        <div className="inline-flex items-center flex-nowrap gap-2">
-                                            {c('Action').t`Sign in with SSO`}
-                                            <Info
-                                                title={c('Info')
-                                                    .t`For members of organizations using single sign-on (SAML SSO)`}
-                                            />
-                                        </div>
-                                    </Button>
-                                </>
-                            )}
-
                             {signUp && !modal && !usernameReadOnly && (
                                 <div className="text-center mt-4">
                                     {
