@@ -247,7 +247,7 @@ const JoinMagicLinkContainer = ({
             username: data.username,
             password: data.password,
             persistent: data.persistent,
-            authType: AuthType.SRP,
+            authType: AuthType.Srp,
             authResponse: initialLoginResult.authResult.result,
             authVersion: initialLoginResult.authResult.authVersion,
             productParam,

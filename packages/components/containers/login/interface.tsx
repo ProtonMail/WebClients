@@ -1,5 +1,5 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { AuthResponse, AuthVersion } from '@proton/shared/lib/authentication/interface';
+import type { AuthResponse, AuthVersion, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type {
@@ -166,7 +166,12 @@ export type AuthActionResponse =
       };
 
 export enum AuthType {
-    SRP,
+    Auto,
+    // AutoSrp references step 2 of the auto login with srp authentication.
+    // This is an intermediate phase, when we rollout auto login style
+    // everywhere, it can be replaced with the `Srp` type
+    AutoSrp,
+    Srp,
     ExternalSSO,
 }
 
@@ -175,3 +180,9 @@ export enum ExternalSSOFlow {
     Idp,
     Redirect,
 }
+
+export type AuthTypeData =
+    | { type: AuthType.Auto }
+    | { type: AuthType.AutoSrp; info: InfoResponse; username: string }
+    | { type: AuthType.Srp }
+    | { type: AuthType.ExternalSSO };
