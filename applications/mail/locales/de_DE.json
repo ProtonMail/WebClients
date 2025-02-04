@@ -1926,6 +1926,9 @@
       "Create label": [
         "Kategorie erstellen"
       ],
+      "Got it": [
+        "Verstanden"
+      ],
       "Maybe later": [
         "Vielleicht später"
       ],
@@ -2662,6 +2665,9 @@
       ],
       "Work": [
         "Arbeit"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5394,6 +5400,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-Mail"
       ],
@@ -5402,6 +5411,9 @@
       ],
       "No verification method available": [
         "Keine Verifizierungsmethode verfügbar"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5870,6 +5882,9 @@
       "${ numOccurrences } occurrence found in the mail content": [
         "${ numOccurrences } Vorkommen im E-Mail-Inhalt gefunden",
         "${ numOccurrences } Vorkommen im E-Mail-Inhalt gefunden"
+      ],
+      "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
+        "${ PASS_APP_NAME } erlaubt es dir, deine Passwörter, Notizen und andere sensible Informationen mit Ende-zu-Ende-Verschlüsselung zu speichern. Verfügbar auf ${ ios }, ${ android } und in deinem ${ browser }."
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } bietet eine einfache Möglichkeit, Anmeldungen auf nicht vertrauenswürdigen Websites von Drittanbietern zu erstellen, auf denen du deine tatsächliche E-Mail-Adresse nicht preisgeben möchtest."
@@ -10330,11 +10345,17 @@
       "Auto-delete spam and trash": [
         "Spam und Papierkorb automatisch löschen"
       ],
+      "browser": [
+        "Browser"
+      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Lösche gelöschte und Spam-E-Mails nach 30 Tagen."
       ],
       "Continue": [
         "Fortfahren"
+      ],
+      "Desktop": [
+        "Desktop"
       ],
       "Discover ${ MAIL_APP_NAME }": [
         "Entdecke ${ MAIL_APP_NAME }"
@@ -10988,8 +11009,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Überprüfe deine Kontosicherheit"
+      "Review account safety": [
+        "Überprüfung der Kontosicherheit"
       ]
     },
     "saml: Error": {
@@ -11896,47 +11917,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -12195,6 +12175,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -13511,6 +13532,11 @@
         "Heute"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "„Automatisch“ zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
@@ -13589,11 +13615,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Tor out of date": {
@@ -13695,9 +13716,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via E-Mail"
       ]
     },
     "wallet_signup_2024:Action": {
