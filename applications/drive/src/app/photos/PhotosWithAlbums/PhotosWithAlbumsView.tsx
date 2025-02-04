@@ -18,7 +18,7 @@ import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { PhotoLink } from '../../store';
-import { isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { PhotoTags, isDecryptedLink, useThumbnailsDownload } from '../../store';
 import { useCreateAlbum } from '../PhotosActions/Albums';
 import { CreateAlbumModal } from '../PhotosModals/CreateAlbumModal';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
@@ -26,6 +26,7 @@ import { AlbumsGrid } from './AlbumsGrid';
 import { EmptyPhotos } from './EmptyPhotos';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
+import { PhotosTags, type PhotosTagsProps } from './components/PhotosTags';
 // import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import {
@@ -93,6 +94,8 @@ export const PhotosWithAlbumsView: FC = () => {
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
     const { navigateToAlbum, navigateToPhotos } = useNavigate();
+    // TODO: Move tag selection to specific hook
+    const [selectedTag, setSelectedTag] = useState<PhotosTagsProps['selectedTag']>([]);
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -173,8 +176,8 @@ export const PhotosWithAlbumsView: FC = () => {
         }
     }, [albumLinkId, tabSelection, album, updateTitle]);
 
-    if (!shareId || !linkId || isPhotosLoading) {        
-		return <Loader />;
+    if (!shareId || !linkId || isPhotosLoading) {
+        return <Loader />;
     }
     const hasPreview = !!previewItem;
 
@@ -286,6 +289,23 @@ export const PhotosWithAlbumsView: FC = () => {
                             createAlbumModal={createAlbumModal}
                         />
                     }
+                />
+
+                <PhotosTags
+                    selectedTag={selectedTag}
+                    tags={[
+                        PhotoTags.Favorites,
+                        PhotoTags.Screenshots,
+                        PhotoTags.Videos,
+                        PhotoTags.LivePhotos,
+                        PhotoTags.MotionPhotos,
+                        PhotoTags.Selfies,
+                        PhotoTags.Portraits,
+                        PhotoTags.Bursts,
+                        PhotoTags.Panoramas,
+                        PhotoTags.Raw,
+                    ]}
+                    onTagSelect={setSelectedTag}
                 />
 
                 {/**
