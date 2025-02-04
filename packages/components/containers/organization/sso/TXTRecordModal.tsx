@@ -16,12 +16,14 @@ import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 
 import { verifyDomain } from '../../domains/DomainModal';
 import TXTSection from './TXTSection';
+import type { SsoAppInfo } from './ssoAppInfo';
 
 interface Props extends ModalProps {
     domain: Domain;
+    ssoAppInfo: SsoAppInfo;
 }
 
-const TXTRecordModal = ({ domain, ...rest }: Props) => {
+const TXTRecordModal = ({ domain, ssoAppInfo, ...rest }: Props) => {
     const onContinue = rest.onClose;
     const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
@@ -44,7 +46,7 @@ const TXTRecordModal = ({ domain, ...rest }: Props) => {
         <Modal size="large" {...rest}>
             <ModalHeader title={c('Info').t`Verify domain`} />
             <ModalContent>
-                <TXTSection domain={domain} includeTimeInformation />
+                <TXTSection ssoAppInfo={ssoAppInfo} domain={domain} includeTimeInformation />
             </ModalContent>
             <ModalFooter className="justify-end">
                 <Button
