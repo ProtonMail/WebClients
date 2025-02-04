@@ -8,7 +8,7 @@ import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { Button } from '@proton/atoms';
+import { Button, Scroll } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -42,10 +42,13 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getIsPasswordless } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import PasswordStrengthIndicator, {
+    usePasswordStrengthIndicator,
+} from '../../components/passwordStrengthIndicator/PasswordStrengthIndicator';
 import GenericError from '../error/GenericError';
-import PasswordStrengthIndicator, { usePasswordStrengthIndicator } from './PasswordStrengthIndicator';
 import { handleChangeLoginPassword } from './changePasswordHelper';
 
 export enum MODES {
@@ -553,74 +556,101 @@ const ChangePasswordModal = ({
     const handleClose = loading ? noop : lockAndClose;
 
     return (
-        <Modal as={Form} onClose={handleClose} {...rest} onSubmit={onSubmit}>
-            <ModalHeader title={title} />
-            <ModalContent>
-                {description}
-                <div className="mb-4">
-                    {c('Info')
-                        .t`${BRAND_NAME}'s encryption technology means that nobody can access your password - not even us.`}
+        <Modal
+            size={passwordStrengthIndicator.supported ? 'xlarge' : undefined}
+            as={Form}
+            onClose={handleClose}
+            {...rest}
+            onSubmit={onSubmit}
+        >
+            <div className={clsx(passwordStrengthIndicator.supported && 'flex flex-nowrap h-full')}>
+                <div className={clsx(passwordStrengthIndicator.supported && 'modal-two-dialog-container md:w-3/5')}>
+                    <ModalHeader title={title} />
+                    <ModalContent>
+                        {description}
+                        <div className="mb-4">
+                            {c('Info')
+                                .t`${BRAND_NAME}'s encryption technology means that nobody can access your password - not even us.`}
+                        </div>
+                        {getIsRecoveryAvailable(user) && !signedInRecoveryFlow ? (
+                            <div className="mb-4">
+                                {
+                                    // translator: Make sure you add a recovery method so that you can get back into your account if you forget your password.
+                                    c('Info')
+                                        .jt`Make sure you ${addARecoveryMethod} so that you can get back into your account if you forget your password.`
+                                }
+                            </div>
+                        ) : null}
+
+                        {disable2FA ? (
+                            <div className="mb-4">{c('Info').t`This will remove any enabled 2FA methods.`}</div>
+                        ) : null}
+
+                        <InputFieldTwo
+                            id="newPassword"
+                            label={labels.newPassword}
+                            placeholder={c('Placeholder').t`Password`}
+                            error={validator([
+                                requiredValidator(inputs.newPassword),
+                                passwordLengthValidator(inputs.newPassword),
+                            ])}
+                            as={PasswordInputTwo}
+                            autoFocus
+                            autoComplete="new-password"
+                            value={inputs.newPassword}
+                            onValue={(value: string) => setPartialInput({ newPassword: value })}
+                            disabled={loading}
+                        />
+
+                        {passwordStrengthIndicator.supported && (
+                            <PasswordStrengthIndicator
+                                service={passwordStrengthIndicator.service}
+                                password={inputs.newPassword}
+                                className="block md:hidden w-full mb-4"
+                            />
+                        )}
+
+                        <InputFieldTwo
+                            key={`${isSecondPhase}${labels.confirmPassword}`}
+                            id="confirmPassword"
+                            label={labels.confirmPassword}
+                            placeholder={c('Placeholder').t`Confirm`}
+                            error={validator([
+                                requiredValidator(inputs.confirmPassword),
+                                passwordLengthValidator(inputs.confirmPassword),
+                                confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword),
+                            ])}
+                            as={PasswordInputTwo}
+                            autoComplete="new-password"
+                            value={inputs.confirmPassword}
+                            onValue={(value: string) => setPartialInput({ confirmPassword: value })}
+                            disabled={loading}
+                        />
+                    </ModalContent>
+                    <ModalFooter>
+                        <Button onClick={handleClose} disabled={loading}>
+                            {close || c('Action').t`Cancel`}
+                        </Button>
+                        <Button loading={loading} type="submit" color="norm">
+                            {submit || c('Action').t`Save`}
+                        </Button>
+                    </ModalFooter>
                 </div>
-                {getIsRecoveryAvailable(user) && !signedInRecoveryFlow ? (
-                    <div className="mb-4">
-                        {
-                            // translator: Make sure you add a recovery method so that you can get back into your account if you forget your password.
-                            c('Info')
-                                .jt`Make sure you ${addARecoveryMethod} so that you can get back into your account if you forget your password.`
-                        }
+                {passwordStrengthIndicator.supported && (
+                    <div className="hidden md:flex w-2/5 border-left">
+                        <Scroll>
+                            <PasswordStrengthIndicator
+                                service={passwordStrengthIndicator.service}
+                                password={inputs.newPassword}
+                                hideWhenEmpty={false}
+                                variant="large"
+                                showGeneratePasswordButton={true}
+                                className="p-5"
+                            />
+                        </Scroll>
                     </div>
-                ) : null}
-
-                {disable2FA ? (
-                    <div className="mb-4">{c('Info').t`This will remove any enabled 2FA methods.`}</div>
-                ) : null}
-
-                <InputFieldTwo
-                    id="newPassword"
-                    label={labels.newPassword}
-                    placeholder={c('Placeholder').t`Password`}
-                    error={validator([
-                        requiredValidator(inputs.newPassword),
-                        passwordLengthValidator(inputs.newPassword),
-                    ])}
-                    assistiveText={
-                        passwordStrengthIndicator.supported && (
-                            <PasswordStrengthIndicator password={inputs.newPassword} />
-                        )
-                    }
-                    as={PasswordInputTwo}
-                    autoFocus
-                    autoComplete="new-password"
-                    value={inputs.newPassword}
-                    onValue={(value: string) => setPartialInput({ newPassword: value })}
-                    disabled={loading}
-                />
-
-                <InputFieldTwo
-                    key={`${isSecondPhase}${labels.confirmPassword}`}
-                    id="confirmPassword"
-                    label={labels.confirmPassword}
-                    placeholder={c('Placeholder').t`Confirm`}
-                    error={validator([
-                        requiredValidator(inputs.confirmPassword),
-                        passwordLengthValidator(inputs.confirmPassword),
-                        confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword),
-                    ])}
-                    as={PasswordInputTwo}
-                    autoComplete="new-password"
-                    value={inputs.confirmPassword}
-                    onValue={(value: string) => setPartialInput({ confirmPassword: value })}
-                    disabled={loading}
-                />
-            </ModalContent>
-            <ModalFooter>
-                <Button onClick={handleClose} disabled={loading}>
-                    {close || c('Action').t`Cancel`}
-                </Button>
-                <Button loading={loading} type="submit" color="norm">
-                    {submit || c('Action').t`Save`}
-                </Button>
-            </ModalFooter>
+                )}
+            </div>
         </Modal>
     );
 };

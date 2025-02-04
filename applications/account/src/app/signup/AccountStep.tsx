@@ -40,6 +40,9 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import { getAccountDetailsFromEmail } from '../single-signup-v2/accountDetails';
+import PasswordStrengthIndicatorSpotlight, {
+    usePasswordStrengthIndicatorSpotlight,
+} from './PasswordStrengthIndicatorSpotlight';
 import challengeIconsSvg from './challenge-icons.source.svg';
 import { getThemeData } from './challenge-theme';
 import { getSignupApplication } from './helper';
@@ -100,6 +103,7 @@ const AccountStep = ({
     const { APP_NAME } = useConfig();
     const challengeRefLogin = useRef<ChallengeRef>();
     const anchorRef = useRef<HTMLButtonElement | null>(null);
+    const passwordContainerRef = useRef<HTMLDivElement | null>(null);
     const [loading, withLoading] = useLoading();
     const [, setRerender] = useState<any>();
     const [loadingChallenge, setLoadingChallenge] = useState(hasChallenge);
@@ -108,7 +112,7 @@ const AccountStep = ({
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [maybeDomain, setDomain] = useState('');
-    const [passwordInputFocused, setPasswordInputFocused] = useState(false);
+    const passwordStrengthIndicatorSpotlight = usePasswordStrengthIndicatorSpotlight();
 
     const trimmedEmail = email.trim();
     const trimmedUsername = username.trim();
@@ -355,21 +359,32 @@ const AccountStep = ({
                         </div>
                     ) : null}
 
-                    <InputFieldTwo
-                        as={PasswordInputTwo}
-                        id="password"
-                        label={c('Label').t`Password`}
-                        assistiveText={passwordInputFocused && getMinPasswordLengthMessage()}
-                        error={validator([requiredValidator(password), passwordLengthValidator(password)])}
-                        bigger
-                        disableChange={disableChange}
-                        autoComplete="new-password"
-                        value={password}
-                        onValue={setPassword}
-                        rootClassName="mt-2"
-                        onFocus={() => setPasswordInputFocused(true)}
-                        onBlur={() => setPasswordInputFocused(false)}
-                    />
+                    <PasswordStrengthIndicatorSpotlight
+                        wrapper={passwordStrengthIndicatorSpotlight}
+                        anchorRef={passwordContainerRef}
+                        password={password}
+                    >
+                        <InputFieldTwo
+                            containerRef={passwordContainerRef}
+                            as={PasswordInputTwo}
+                            id="password"
+                            label={c('Label').t`Password`}
+                            assistiveText={
+                                !passwordStrengthIndicatorSpotlight.supported &&
+                                passwordStrengthIndicatorSpotlight.inputFocused &&
+                                getMinPasswordLengthMessage()
+                            }
+                            error={validator([requiredValidator(password), passwordLengthValidator(password)])}
+                            bigger
+                            disableChange={disableChange}
+                            autoComplete="new-password"
+                            value={password}
+                            onValue={setPassword}
+                            rootClassName="mt-2"
+                            onFocus={passwordStrengthIndicatorSpotlight.onInputFocus}
+                            onBlur={passwordStrengthIndicatorSpotlight.onInputBlur}
+                        />
+                    </PasswordStrengthIndicatorSpotlight>
 
                     <InputFieldTwo
                         as={PasswordInputTwo}
