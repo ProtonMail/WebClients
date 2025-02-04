@@ -56,7 +56,7 @@ export const FamilyPlanPromo2024: FC<BaseSpotlightMessage> = ({ onClose = noop }
     const upgrade = useNavigateToUpgrade({
         coupon: cohort === FamilyPlanCohort.EARLY_SUPPORTER ? 'PASSEARLYSUPPORTER' : 'PASSFAMILYLAUNCH',
         cycle: '12',
-        offer: true,
+        offer: 'true',
         plan: 'passfamily2024',
         upsellRef: cohort ? FamilyPlanUpsellRefs[cohort] : undefined,
         email: user?.Email,
