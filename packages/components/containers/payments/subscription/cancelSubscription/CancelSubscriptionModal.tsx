@@ -34,7 +34,7 @@ export const CancelSubscriptionModal = ({
 
     const latestSubscription = subscription.UpcomingSubscription ?? subscription;
     const expiryDate = (
-        <Time format="PP" className="text-bold" key="expiry-time">
+        <Time format="PPP" className="text-bold" key="expiry-time">
             {latestSubscription.PeriodEnd}
         </Time>
     );

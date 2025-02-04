@@ -1,8 +1,8 @@
-import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import type { ButtonLikeShape } from '@proton/atoms';
 import Price from '@proton/components/components/price/Price';
+import Time from '@proton/components/components/time/Time';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBundle } from '@proton/shared/lib/helpers/subscription';
@@ -18,7 +18,11 @@ interface Props {
 }
 
 const UpsellPanels = ({ upsells, subscription }: Props) => {
-    const formattedPeriodEndDate = format(fromUnixTime(subscription?.PeriodEnd || 0), 'MMMM d, y');
+    const formattedPeriodEndDate = (
+        <Time format="PPP" key="period-end" data-testid="period-end">
+            {subscription?.PeriodEnd}
+        </Time>
+    );
 
     // Currently supporting trials for Mail Plus and Unlimited.
     // Add more branching logic here if you need to add another trial plan.
@@ -74,7 +78,7 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
                         {/* Warning when user is in Trial period for a plan */}
                         {upsell.isTrialEnding ? (
                             <>
-                                <h4>{c('new_plans: Info').t`Your trial ends ${formattedPeriodEndDate}`}</h4>
+                                <h4>{c('new_plans: Info').jt`Your trial ends ${formattedPeriodEndDate}`}</h4>
                                 <div className="color-weak">
                                     {c('new_plans: Info')
                                         .t`To continue to use ${trialPlanName} with premium features, choose your subscription and payment options.`}
