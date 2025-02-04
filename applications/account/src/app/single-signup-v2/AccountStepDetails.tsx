@@ -905,7 +905,9 @@ const AccountStepDetails = ({
                                     ref={passwordConfirmRef}
                                     id="password-confirm"
                                     as={PasswordInputTwo}
-                                    placeholder={c('Signup label').t`Confirm password`}
+                                    placeholder={
+                                        !showConfirmPasswordLabel ? c('Signup label').t`Confirm password` : undefined
+                                    }
                                     label={showConfirmPasswordLabel && c('Signup label').t`Confirm password`}
                                     error={passwordConfirmError}
                                     dense={!passwordConfirmError}
