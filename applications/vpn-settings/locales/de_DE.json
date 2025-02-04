@@ -250,6 +250,9 @@
       "Edit": [
         "Bearbeiten"
       ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
+      ],
       "Edit billing cycle": [
         "Abrechnungszeitraum bearbeiten"
       ],
@@ -264,6 +267,9 @@
       ],
       "Edit group": [
         "Gruppe bearbeiten"
+      ],
+      "Edit invoice note": [
+        "Rechnungsnotiz bearbeiten"
       ],
       "Edit name": [
         "Name bearbeiten"
@@ -2428,6 +2434,11 @@
         "Priorisierter Support"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textfelder sind optional. Die Informationen, die du in diesem Formular eingibst, ändern nur die von dir ausgewählte Rechnung und nicht deine zukünftigen Rechnungsdetails."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } hinzugefügt"
@@ -2498,6 +2509,9 @@
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Die Bearbeitung der Rechnungsadresse ist im Moment nicht möglich. Bitte versuche es später noch einmal."
+      ],
       "Email address is invalid": [
         "E-Mail-Adresse ist ungültig"
       ],
@@ -2530,6 +2544,9 @@
       ],
       "Impossible to rename the gateway": [
         "Gateway kann nicht umbenannt werden"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Ungültiges Dateiformat. Lade eine Datei im PNG- oder JPEG-Format hoch."
@@ -3476,6 +3493,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-Mail"
       ],
@@ -3484,6 +3504,9 @@
       ],
       "No verification method available": [
         "Keine Verifizierungsmethode verfügbar"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -5911,6 +5934,9 @@
       "VAT": [
         "MwSt."
       ],
+      "VAT identification number": [
+        "Umsatzsteuer-Identifikationsnummer"
+      ],
       "Verification code": [
         "Verifizierungscode"
       ],
@@ -8092,6 +8118,9 @@
       "Thomas": [
         "Max"
       ],
+      "VAT number": [
+        "Umsatzsteuernummer"
+      ],
       "yourdomain.com": [
         "ihredomain.com"
       ]
@@ -8218,8 +8247,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Überprüfe deine Kontosicherheit"
+      "Review account safety": [
+        "Überprüfung der Kontosicherheit"
       ]
     },
     "saml: Action": {
@@ -8915,6 +8944,9 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } benötigt deine Hilfe, um sich bei seinem/ihrem ${ BRAND_NAME } Konto mit Single Sign-On anzumelden."
+      ],
       "${ n } member requested your help to sign in.": [
         "${ n } Mitglied hat dich um Hilfe gebeten, sich anzumelden.",
         "${ n } Mitglieder haben dich um Hilfe gebeten, sich anzumelden."
@@ -9353,47 +9385,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -9684,6 +9675,47 @@
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Bist du sicher?"
@@ -9740,6 +9772,9 @@
       ],
       "Backup password updated": [
         "Backup-Passwort aktualisiert"
+      ],
+      "Billing details updated": [
+        "Rechnungsdetails aktualisiert"
       ],
       "Catch-all address updated": [
         "Catch-all-Weiterleitungsadresse aktualisiert"
@@ -10319,6 +10354,9 @@
       "Downloads": [
         "Downloads"
       ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
+      ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
       ],
@@ -10333,6 +10371,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } bearbeiten"
+      ],
+      "Edit invoice note": [
+        "Rechnungsnotiz bearbeiten"
       ],
       "Edit servers": [
         "Server bearbeiten"
@@ -11285,9 +11326,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via E-Mail"
       ]
     },
     "wallet_signup_2024:Bug category": {

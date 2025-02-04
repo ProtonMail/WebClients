@@ -3948,6 +3948,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "I campi di testo sono facoltativi. Le informazioni fornite in questo modulo modificheranno solo la fattura che hai selezionato e non i dettagli della fattura futura."
       ]
     },
     "Email": {
@@ -4488,6 +4491,9 @@
       ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La modifica dell'indirizzo di fatturazione non è al momento disponibile. Per favore riprova più tardi."
       ],
       "Email address disabled": [
         "Indirizzo email disabilitato"
@@ -7379,11 +7385,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "dedicated servers": [
-        "server dedicati"
-      ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "dedicated servers": [
+        "server dedicati"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -13941,6 +13947,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Continua con il tuo account ${ BRAND_NAME }"
       ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "Incluso lo sconto del ${ discountPercent }% su Porkbun"
+      ],
       "Let's talk": [
         "Parliamo"
       ],
@@ -14957,8 +14966,8 @@
       "Recovery phone number": [
         "Numero di telefono di recupero"
       ],
-      "Review your account safety": [
-        "Controlla la sicurezza del tuo account"
+      "Review account safety": [
+        "Controlla la sicurezza del account"
       ],
       "Safeguard account now": [
         "Proteggi il tuo account adesso"
@@ -19633,7 +19642,7 @@
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "Come utente invitato, registrati per un account Free ${ BRAND_NAME } per ottenere l'accesso esclusivo a ${ appName }"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via email"
       ],
       "Create ${ BRAND_NAME } Account now": [

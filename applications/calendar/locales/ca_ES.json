@@ -1677,6 +1677,9 @@
       ],
       "Work": [
         "Feina"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3984,6 +3987,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -3992,6 +3998,9 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4264,6 +4273,9 @@
       ],
       "ICS file": [
         "Fitxer ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5533,6 +5545,9 @@
       "Expired": [
         "Caducada"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Obsoleta"
       ],
@@ -5544,6 +5559,9 @@
       ],
       "Trusted": [
         "De confiança"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -6104,7 +6122,7 @@
         "preferències"
       ],
       "Snooze": [
-        "Posa en pausa"
+        "Ajorna"
       ],
       "Spam": [
         "Correu brossa"
@@ -6514,7 +6532,7 @@
         "Millora ara"
       ],
       "Upgrade to ${ planName }": [
-        "Milloreu a ${ planName }"
+        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6742,7 +6760,7 @@
         "Camps personalitzats"
       ],
       "Custom snooze time": [
-        "Períodes de pausa personalitzats"
+        "Temps d'ajornament personalitzat"
       ],
       "Custom workspace branding": [
         "Marca personalitzada de l'espai de treball"
@@ -6882,7 +6900,7 @@
         "Estalvieu temps en l'enviament dels vostres correus electrònics"
       ],
       "Schedule and snooze emails for any time": [
-        "Planifiqueu i poseu en pausa els correus electrònics per a qualsevol moment"
+        "Programeu i ajorneu correus electrònics per a qualsevol moment."
       ],
       "Schedule messages at any time": [
         "Programeu missatges en qualsevol moment."
@@ -6894,7 +6912,7 @@
         "Servidors Secure Core"
       ],
       "Secure file storage and sharing": [
-        "Emmagatzematge i ús compartit de fitxers segurs"
+        "Compartició i emmagatzematge segurs de fitxers"
       ],
       "Secure link sharing": [
         "Compartició d'enllaços segurs"
@@ -7029,7 +7047,7 @@
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
       "Snooze messages and get reminded when you want": [
-        "Poseu en pausa els missatges i rebeu-ne un recordatori quan vulgueu"
+        "Ajorneu els missatges i rebeu-ne un recordatori quan vulgueu"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
@@ -7134,7 +7152,7 @@
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "new_plans: title": {
@@ -7660,6 +7678,9 @@
       "Plus": [
         "Plus"
       ],
+      "Recover previous file versions": [
+        "Recupera versions anteriors del fitxer"
+      ],
       "Storage": [
         "Emmagatzematge"
       ]
@@ -7955,6 +7976,11 @@
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a instruir el vostre banc perquè debiti el vostre compte, i el banc a debitar el compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes des de la data del dèbit d'acord amb les condicions del vostre acord amb el banc."
@@ -8171,7 +8197,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Reviseu la seguretat del compte"
       ]
     },
@@ -8601,7 +8627,7 @@
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "La teva subscripció es renovarà al mateix preu cada any."
+        "La vostra subscripció es renovarà al mateix preu cada any."
       ]
     },
     "specialoffer: Link": {
@@ -9344,6 +9370,9 @@
       ],
       "Email address copied to clipboard": [
         "Correu electronic copiat al porta-retalls"
+      ],
+      "Event content search enabled": [
+        "S'ha activat la cerca al contingut dels esdeveniments."
       ],
       "Event created": [
         "Esdeveniment creat"
@@ -10287,13 +10316,13 @@
       "A safer way to hold your Bitcoin": [
         "Una manera més segura de mantenir el vostre Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Una manera més segura de mantenir Bitcoin"
+        "Una manera més segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

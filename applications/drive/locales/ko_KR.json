@@ -171,6 +171,9 @@
       "Collapse folder": [
         "폴더 닫기"
       ],
+      "Collapse navigation bar": [
+        "네비게이션 바 접기"
+      ],
       "Compose": [
         "메일 쓰기"
       ],
@@ -287,6 +290,9 @@
       ],
       "Dismiss": [
         "무시"
+      ],
+      "Display navigation bar": [
+        "네비게이션 바 보이기"
       ],
       "Done": [
         "완료"
@@ -764,6 +770,9 @@
       ],
       "Show advanced PGP settings": [
         "고급 PGP 설정 보기"
+      ],
+      "Show navigation bar": [
+        "네비게이션 바 보기"
       ],
       "Show preview": [
         "미리보기 표시"
@@ -4345,23 +4354,8 @@
       "Download ${ name } app": [
         "${ name }앱 설치"
       ],
-      "Download canceled": [
-        "다운로드 취소됨"
-      ],
-      "Download failed": [
-        "다운로드 실패"
-      ],
-      "Download failed due to ${ error }": [
-        "${ error }로 인한 다운로드 실패"
-      ],
-      "Download finished": [
-        "다운로드 완료"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }의 다운로드가 중단됩니다"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "연결 문제로 인해 다운로드가 중단되었습니다; 자동으로 재개됩니다"
       ],
       "Download was canceled": [
         "다운로드가 취소되었습니다."
@@ -4714,9 +4708,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "공유 파일이 필요하세요? ${ DRIVE_APP_NAME }를 사용해 보세요.\n파일을 공유, 저장, 동기화하기에 가장 안전한 방법입니다."
-      ],
       "Network issue": [
         "네트워크 문제 발생"
       ],
@@ -4755,9 +4746,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "참고: ${ DRIVE_APP_NAME }를 설치한 기기에서는 데이터가 로컬에 저장됩니다."
-      ],
-      "Nothing here yet": [
-        "아직 여기에 아무것도 없습니다"
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
@@ -5441,7 +5429,7 @@
         "이 동작은 실행취소할 수 없습니다."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
-        "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
+        "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "웰컴 보너스로 저장공간 3 GB 확장을 받을 수 있는 시간이 ${ expiresInDays } "
@@ -8480,11 +8468,6 @@
         "${ BRAND_NAME } 의 공식 이메일"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "내 계정 보안 검토하기"
-      ]
-    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "로그인이 성공적으로 완료되지 못했습니다."
@@ -10523,9 +10506,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Bitcoin을 보관하는 가장 안전한 방법"
-      ],
-      "Bitcoin via email": [
-        "이메일을 통한 Bitcoin"
       ]
     },
     "wallet_signup_2024:app-switcher": {
