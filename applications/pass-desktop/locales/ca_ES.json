@@ -43,6 +43,9 @@
       "Add custom domain": [
         "Afegeix un domini personalitzat"
       ],
+      "Add domain": [
+        "Afegir domini"
+      ],
       "Add mailbox": [
         "Afegeix una bústia de correu"
       ],
@@ -319,6 +322,9 @@
       "Invite others": [
         "Convida altres persones"
       ],
+      "Join our Reddit": [
+        "Uniu-vos al nostre Reddit"
+      ],
       "Join shared vault": [
         "Uniu-vos a la caixa forta compartida"
       ],
@@ -541,6 +547,9 @@
       "Show": [
         "Mostra"
       ],
+      "Show advanced options": [
+        "Mostra les opcions avançades"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
       ],
@@ -642,6 +651,9 @@
       "With other ${ BRAND_NAME } users": [
         "Amb altres usuaris de ${ BRAND_NAME }"
       ],
+      "Write us on X/Twitter": [
+        "Escriviu-nos a X/Twitter"
+      ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
       ]
@@ -689,7 +701,7 @@
     },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
-        "${ DARK_WEB_MONITORING_NAME } està disponible amb un pla de pagament. Milloreu per accedir-hi immediatament."
+        "${ DARK_WEB_MONITORING_NAME } està disponible amb un pla de pagament. Milloreu el pla per a accedir-hi immediatament."
       ],
       "${ total } other login uses the same password": [
         "${ total } altre inici de sessió fa servir la mateixa contrasenya.",
@@ -830,7 +842,7 @@
         "No s'ha pogut deixar l'element."
       ],
       "Could not leave vault.": [
-        "No s'ha pogut deixar la cassa forta."
+        "No s'ha pogut deixar la caixa forta."
       ],
       "Could not load recommendations at the moment.": [
         "No s'han pogut acarregar les recomanacions ara mateix"
@@ -1035,10 +1047,10 @@
         "El gestor de contrasenyes no és vàlid."
       ],
       "Invitation could not be accepted": [
-        "No es pot acceptar la invitació"
+        "No s'ha pogut acceptar la invitació"
       ],
       "Invitation could not be rejected": [
-        "No es pot rebutjar la invitació."
+        "No s'ha pogut rebutjar la invitació."
       ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 Kb."
@@ -1110,7 +1122,7 @@
         "S'ha produït un error en eliminar l'enllaç segur. Torneu a provar-ho en uns minuts."
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Massa intents erronis. Torneu a iniciar la sessió."
+        "S'han fet massa intents fallits. Torneu a iniciar la sessió."
       ],
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
@@ -1164,7 +1176,7 @@
         "La contrasenya no es correcta."
       ],
       "Wrong PIN code. Try again.": [
-        "Codi PIN incorrecte. Proveu de nou."
+        "El codi PIN no és correcte. Torneu a provar."
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
@@ -1453,6 +1465,9 @@
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrat"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Afegint el vostre domini, podeu crear àlies com hola@el-meu-domini.cat."
+      ],
       "Can be viewed": [
         "Es pot veure"
       ],
@@ -1605,6 +1620,9 @@
       ],
       "Enter your PIN code": [
         "Introduïu el codi PIN"
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Cada vegada que el vostre àlies rep un correu electrònic d'algú, es crea automàticament un contacte."
       ],
       "Expires in": [
         "Caduca en"
@@ -1794,6 +1812,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2004,7 +2026,7 @@
         "Seleccioneu on voleu que es desi les caixes fortes importades."
       ],
       "Selected items permanently deleted": [
-        "Els elements seleccionats s'han suprimit permanentment"
+        "S'han suprimit permanentment els elements seleccionats."
       ],
       "Selected items successfully moved to trash": [
         "S'han mogut els elements seleccionats a la paperera."
@@ -2023,6 +2045,9 @@
       ],
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
+      ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "Compartiu àlies amb altres persones afegint la vostra safata d'entrada com a bústia de correu addicional."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Compartiu els inicis de sessió i notes segures amb un màxim de 10 persones"
@@ -2062,6 +2087,9 @@
       ],
       "Syncing your vaults…": [
         "S'estan sincronitzant les vostres caixes fortes..."
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Toqueu la icona ${ gearIcon } per a personalitzar l'àlies com vulgueu."
       ],
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
@@ -3662,6 +3690,9 @@
       ],
       "Details": [
         "Detalls"
+      ],
+      "Did you know?": [
+        "Ho sabíeu?"
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
