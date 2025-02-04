@@ -5,6 +5,7 @@ import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
 
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { validateInvite } from '@proton/pass/lib/validation/invite';
 import type { inviteBatchCreateFailure, inviteBatchCreateSuccess } from '@proton/pass/store/actions';
 import { inviteBatchCreateIntent } from '@proton/pass/store/actions';
@@ -23,6 +24,7 @@ type InviteFormOptions<V extends InviteFormValues> = {
 export const useInviteForm = <V extends InviteFormValues>({ initialValues, onSuccess }: InviteFormOptions<V>) => {
     const store = useStore<State>();
     const validator = useAddressValidator(initialValues.shareId);
+    const validatorRef = useStatefulRef(validator);
     const emailFieldRef = useRef<HTMLInputElement>(null);
 
     const { dispatch, loading } = useActionRequest<
@@ -55,11 +57,11 @@ export const useInviteForm = <V extends InviteFormValues>({ initialValues, onSuc
     });
 
     useEffect(() => {
-        validator
+        validatorRef.current
             ?.validate(form.values.members.map(({ value }) => value.email))
             .then(() => form.validateForm())
             .catch(noop);
-    }, [form.values.members, validator]);
+    }, [form.values.members]);
 
     return useMemo(() => ({ form, emailFieldRef, validator, loading }), [form, validator, loading]);
 };
