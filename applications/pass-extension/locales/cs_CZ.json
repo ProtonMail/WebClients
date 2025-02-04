@@ -1454,6 +1454,9 @@
       "Built in 2FA authenticator": [
         "Vestavěný autentizátor 2FA"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Přidáním své domény můžete vytvořit aliasy, například ahoj@moje-domena.cz."
+      ],
       "Can be viewed": [
         "Lze zobrazit"
       ],
@@ -1624,6 +1627,9 @@
       ],
       "Enter your PIN code": [
         "Zadejte PIN kód"
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Pokaždé, když váš alias od někoho obdrží e-mail, automaticky se vytvoří nový kontakt."
       ],
       "Expires in": [
         "Vyprší za"
@@ -1803,10 +1809,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím bezpečného odkazu do jiného trezoru se smaže jeho historie.",
-        "Přesunutím bezpečných odkazů do jiného trezoru se smaže jejich historie.",
-        "Přesunutím bezpečných odkazů do jiného trezoru se smaže jejich historie.",
-        "Přesunutím bezpečných odkazů do jiného trezoru se smaže jejich historie."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2048,6 +2054,9 @@
       "Settings successfully updated": [
         "Nastavení bylo úspěšně aktualizováno"
       ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "Sdílejte aliasy s ostatními přidáním jejich doručené pošty jako další e-mailové schránky."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "Sdílení přihlašovacích údajů a zabezpečených poznámek až s 10 lidmi"
       ],
@@ -2086,6 +2095,9 @@
       ],
       "Syncing your vaults…": [
         "Synchronizace trezorů…"
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Klepněte na ikonu ${ gearIcon } a přizpůsobte si alias podle svých představ."
       ],
       "Thank you, the problem has been reported": [
         "Děkujeme, problém byl nahlášen"
@@ -3584,6 +3596,9 @@
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Smazat trezor \"${ vaultName }\"?"
+      ],
+      "Did you know?": [
+        "Věděli jste?"
       ],
       "Discard changes?": [
         "Zahodit změny?"
