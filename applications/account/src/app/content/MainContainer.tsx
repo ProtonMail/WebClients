@@ -256,7 +256,7 @@ const MainContainer = () => {
     const top = (
         <TopBanners app={app}>
             <UnprivatizationRequestTopBanner />
-            <SSODomainUnverifiedBanner />
+            <SSODomainUnverifiedBanner app={app} />
             <AuthDevicesTopBanner />
             <MembersAuthDevicesTopBanner />
         </TopBanners>

@@ -168,7 +168,7 @@ const MainContainer: FunctionComponent = () => {
 
     const top = (
         <TopBanners app={APPS.PROTONVPN_SETTINGS}>
-            <SSODomainUnverifiedBanner />
+            <SSODomainUnverifiedBanner app={APPS.PROTONVPN_SETTINGS} />
             <MembersAuthDevicesTopBanner />
         </TopBanners>
     );

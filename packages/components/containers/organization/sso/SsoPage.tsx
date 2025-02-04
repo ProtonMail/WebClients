@@ -25,9 +25,7 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
 import { planSupportsSSO } from '@proton/shared/lib/helpers/subscription';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import { IDP_TYPE } from '@proton/shared/lib/interfaces';
@@ -47,12 +45,14 @@ import SetupSSODomainModal from './SetupSSODomainModal';
 import TXTRecordModal from './TXTRecordModal';
 import SCIMSettingsSection from './scim/SCIMSettingsSection';
 import SelectIDPSection from './scim/SelectIDPSection';
+import { type SsoAppInfo, getSsoAppInfo } from './ssoAppInfo';
 
 const getSsoConfigForDomain = (ssoConfigs: SSO[], domain: Domain) => {
     return ssoConfigs.find(({ DomainID }) => DomainID === domain.ID);
 };
 
 const ConfigureSamlContent = ({
+    ssoAppInfo,
     domain,
     domains,
     ssoConfigs,
@@ -69,6 +69,7 @@ const ConfigureSamlContent = ({
     identityProviderEndpointsContentProps,
     isEduGainSSOEnabled,
 }: {
+    ssoAppInfo: SsoAppInfo;
     domain: Domain;
     domains: Domain[];
     count: { used: number; total: number };
@@ -97,6 +98,7 @@ const ConfigureSamlContent = ({
                     domain={domain}
                     {...configureSamlModalProps}
                     {...identityProviderEndpointsContentProps}
+                    ssoAppInfo={ssoAppInfo}
                 />
             )}
             {renderConfigureSamlEdugainModal && (
@@ -128,7 +130,7 @@ const ConfigureSamlContent = ({
                                     id="domainName"
                                     value={domain.DomainName}
                                     readOnly
-                                    assistiveText={<DomainVerificationState domain={domain} />}
+                                    assistiveText={<DomainVerificationState domain={domain} ssoAppInfo={ssoAppInfo} />}
                                 />
                             );
                         }
@@ -176,7 +178,7 @@ const ConfigureSamlContent = ({
                                 as={SelectTwo<Domain | typeof addDomainKey>}
                                 id="domainName"
                                 value={domain}
-                                assistiveText={<DomainVerificationState domain={domain} />}
+                                assistiveText={<DomainVerificationState domain={domain} ssoAppInfo={ssoAppInfo} />}
                                 renderSelected={(domain) => {
                                     if (domain === addDomainKey) {
                                         return null;
@@ -267,7 +269,15 @@ const ConfigureSamlContent = ({
     );
 };
 
-const RemoveSSOSettingsSection = ({ domain, ssoConfigs }: { domain: Domain; ssoConfigs: SSO[] }) => {
+const RemoveSSOSettingsSection = ({
+    domain,
+    ssoConfigs,
+    ssoAppInfo,
+}: {
+    domain: Domain;
+    ssoConfigs: SSO[];
+    ssoAppInfo: SsoAppInfo;
+}) => {
     const ssoConfigForDomain = getSsoConfigForDomain(ssoConfigs, domain);
 
     if (!ssoConfigForDomain) {
@@ -281,7 +291,7 @@ const RemoveSSOSettingsSection = ({ domain, ssoConfigs }: { domain: Domain; ssoC
             className="container-section-sticky-section"
         >
             <SettingsSectionWide>
-                <RemoveSSOSection domain={domain} ssoConfig={ssoConfigForDomain} />
+                <RemoveSSOSection domain={domain} ssoConfig={ssoConfigForDomain} ssoAppInfo={ssoAppInfo} />
             </SettingsSectionWide>
         </SubSettingsSection>
     );
@@ -311,15 +321,9 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
 
     const ssoDomains = customDomains.filter((domain) => domain.Flags['sso-intent']);
 
+    const ssoAppInfo = getSsoAppInfo(app);
+
     if (!planSupportsSSO(organization.PlanName)) {
-        const upsellPlan = (() => {
-            if (app === APPS.PROTONVPN_SETTINGS) {
-                return PLANS.VPN_BUSINESS;
-            }
-            if (app === APPS.PROTONPASS) {
-                return PLANS.PASS_BUSINESS;
-            }
-        })();
         return (
             <SettingsSectionWide>
                 <PromotionBanner
@@ -333,15 +337,14 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                             <div>
                                 {c('Info')
                                     .t`Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.`}{' '}
-                                <Href
-                                    href="https://protonvpn.com/support/sso"
-                                    title={c('Info').t`Learn more about single sign-on`}
-                                >{c('Link').t`Learn more`}</Href>
+                                <Href href={ssoAppInfo.kbUrl} title={c('Info').t`Learn more about single sign-on`}>{c(
+                                    'Link'
+                                ).t`Learn more`}</Href>
                             </div>
                         </div>
                     }
                     cta={
-                        user.canPay && upsellPlan ? (
+                        user.canPay && ssoAppInfo.upsellPlan ? (
                             <Button
                                 color="norm"
                                 fullWidth
@@ -351,7 +354,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                                             source: 'upsells',
                                         },
                                         step: SUBSCRIPTION_STEPS.CHECKOUT,
-                                        plan: upsellPlan,
+                                        plan: ssoAppInfo.upsellPlan,
                                     });
                                 }}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
@@ -393,9 +396,12 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                     onClose={() => {
                         setupSSODomainModalProps.onClose();
                     }}
+                    ssoAppInfo={ssoAppInfo}
                 />
             )}
-            {renderVerifySSODomainModal && domain && <TXTRecordModal domain={domain} {...verifySSODOmainModalProps} />}
+            {renderVerifySSODomainModal && domain && (
+                <TXTRecordModal domain={domain} ssoAppInfo={ssoAppInfo} {...verifySSODOmainModalProps} />
+            )}
 
             <SubSettingsSection
                 id="saml-authentication"
@@ -404,13 +410,14 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                 className="container-section-sticky-section"
             >
                 <SettingsSectionWide>
-                    <SettingsParagraph learnMoreUrl="https://protonvpn.com/support/sso">
+                    <SettingsParagraph learnMoreUrl={ssoAppInfo.kbUrl}>
                         {c('Info')
                             .t`Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.`}
                     </SettingsParagraph>
 
                     {hasSsoDomain ? (
                         <ConfigureSamlContent
+                            ssoAppInfo={ssoAppInfo}
                             domain={domain}
                             domains={ssoDomains}
                             count={{
@@ -441,6 +448,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                             identityProviderEndpointsContentProps={{
                                 issuerID: samlSSO.staticInfo.EntityID,
                                 callbackURL: samlSSO.staticInfo.CallbackURL,
+                                ssoAppInfo,
                             }}
                             isEduGainSSOEnabled={isEduGainSSOEnabled}
                         />
@@ -478,9 +486,12 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                 onShowVerifyDomain={() => {
                     setVerifySSODomainModalOpen(true);
                 }}
+                ssoAppInfo={ssoAppInfo}
             />
 
-            {hasSsoDomain && hasSsoConfig && <RemoveSSOSettingsSection domain={domain} ssoConfigs={samlSSO.configs} />}
+            {hasSsoDomain && hasSsoConfig && (
+                <RemoveSSOSettingsSection domain={domain} ssoConfigs={samlSSO.configs} ssoAppInfo={ssoAppInfo} />
+            )}
         </>
     );
 };
