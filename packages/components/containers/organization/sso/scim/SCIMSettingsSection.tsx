@@ -27,6 +27,7 @@ import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
 import SubSettingsSection from '../../../layout/SubSettingsSection';
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
+import type { SsoAppInfo } from '../ssoAppInfo';
 import DisableSCIMModal from './DisableSCIMModal';
 import RegenerateSCIMConfirmModal from './RegenerateSCIMConfirmModal';
 import type { SCIMConfiguration } from './SetupSCIMModal';
@@ -37,6 +38,7 @@ interface Props {
     onShowVerifyDomain: () => void;
     hasSsoConfig: boolean;
     scimInfo: NonNullable<SamlState['sso']['value']>['scimInfo'];
+    ssoAppInfo: SsoAppInfo;
 }
 
 const PreReq = ({ data, action }: { data: ReactNode; action?: ReactNode }) => {
@@ -56,7 +58,7 @@ const getDescriptionString = (appName: string) => {
         .t`Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${appName} organization.`;
 };
 
-const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInfo }: Props) => {
+const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInfo, ssoAppInfo }: Props) => {
     const api = useApi();
     const dispatch = baseUseDispatch<ThunkDispatch<SamlState, ProtonThunkArguments, Action>>();
     const { createNotification } = useNotifications();
@@ -128,7 +130,11 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
                                                                     api,
                                                                 })
                                                             );
-                                                            setLocalSCIMConfiguration({ ...result, type: 'setup' });
+                                                            setLocalSCIMConfiguration({
+                                                                ...result,
+                                                                type: 'setup',
+                                                                ssoAppInfo,
+                                                            });
                                                             setSetupSCIMModalOpen(true);
                                                             createNotification({
                                                                 text: c('Info').t`SCIM token active`,
@@ -220,7 +226,7 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
                                 api,
                             })
                         );
-                        setLocalSCIMConfiguration({ ...result, type: 'generated' });
+                        setLocalSCIMConfiguration({ ...result, type: 'generated', ssoAppInfo });
                         setSetupSCIMModalOpen(true);
                         regenerateSCIMModalProps.onClose();
                         createNotification({ text: c('Info').t`SCIM token active` });
