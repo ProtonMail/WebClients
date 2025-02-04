@@ -43,6 +43,9 @@
       "Add custom domain": [
         "커스텀 도메인 추가"
       ],
+      "Add domain": [
+        "도메인 추가"
+      ],
       "Add mailbox": [
         "메일함 추가"
       ],
@@ -537,6 +540,9 @@
       ],
       "Show": [
         "보기"
+      ],
+      "Show advanced options": [
+        "고급 옵션 표시"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME }에 로그인"
@@ -1404,6 +1410,9 @@
       "Built in 2FA authenticator": [
         "2단계 인증기 내장"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "도메인을 추가하면 hi@my-domain.com과 같은 별칭을 만들 수 있습니다."
+      ],
       "Can be viewed": [
         "확인 가능 횟수"
       ],
@@ -1559,6 +1568,9 @@
       ],
       "Enter your PIN code": [
         "PIN 코드를 입력하세요"
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "별칭이 누군가로부터 이메일을 받으면 새 연락처가 자동으로 생성됩니다."
       ],
       "Expires in": [
         "만료:"
@@ -1971,6 +1983,9 @@
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
       ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "상대방의 메일함을 추가 메일함으로 추가하여 별칭을 공유하세요."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "최대 10명까지 로그인과 안전한 메모를 공유하세요"
       ],
@@ -2009,6 +2024,9 @@
       ],
       "Syncing your vaults…": [
         "금고를 동기화 하는 중..."
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "${ gearIcon } 아이콘을 탭해 별칭을 원하는 방식으로 커스터마이징 하세요."
       ],
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
@@ -2877,7 +2895,7 @@
         "공유"
       ],
       "Shared": [
-        "공유"
+        "공유됨"
       ],
       "Shared by me": [
         "내가 공유함"
@@ -3191,13 +3209,13 @@
         "${ vaultName } 에서 ${ pluralItemType } 검색"
       ],
       "Search ${ pluralItemType } in all items": [
-        "전체 금고 내에서 ${ pluralItemType } 검색"
+        "전체 항목 내에서 ${ pluralItemType } 검색"
       ],
       "Search in ${ vaultName }": [
         "${ vaultName }에서 검색"
       ],
       "Search in all items": [
-        "전체 금고 내에서 검색"
+        "전체 항목 내에서 검색"
       ],
       "Search in Trash": [
         "휴지통 검색"
@@ -3480,6 +3498,9 @@
       ],
       "Details": [
         "세부 사항"
+      ],
+      "Did you know?": [
+        "알고 계셨나요?"
       ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"
