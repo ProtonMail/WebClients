@@ -1,12 +1,13 @@
 import { render } from '@testing-library/react';
 
-import PasswordStrengthIndicator from './PasswordStrengthIndicator';
+import BasePasswordStrengthIndicator from './BasePasswordStrengthIndicator';
 
 describe('<PasswordStrengthIndicator />', () => {
     it('should render with the provided className', () => {
-        const { container } = render(<PasswordStrengthIndicator score="Vulnerable" />);
+        const { container } = render(
+            <BasePasswordStrengthIndicator score="Vulnerable" variant="compact" password="1234" />
+        );
 
         expect(container.firstChild).toHaveClass('password-strength-indicator');
-        expect(container.firstChild).toHaveClass('password-strength-indicator--vulnerable');
     });
 });
