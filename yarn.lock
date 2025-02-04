@@ -7101,14 +7101,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.50.0":
-  version: 1.50.0
-  resolution: "@playwright/test@npm:1.50.0"
+"@playwright/test@npm:^1.50.1":
+  version: 1.50.1
+  resolution: "@playwright/test@npm:1.50.1"
   dependencies:
-    playwright: "npm:1.50.0"
+    playwright: "npm:1.50.1"
   bin:
     playwright: cli.js
-  checksum: 10c0/70b46eab2a5c8b4accc1c8a29a0ea371b7b8f56b0d38509e5c06354ebc60dc262837e92cea727076aea5e1c32f31e215c02fbde977519a7e38488cfc48f0ba5c
+  checksum: 10c0/77c1a7cfaca7b3b88804256bb4c0e15c54b8df02690298086ef4a4fc8c2a42b99b69ba1b83906d00cc7ddb322ce8b2f19f0238f189913607c679779a4d132da1
   languageName: node
   linkType: hard
 
@@ -7583,7 +7583,7 @@ __metadata:
     karma-jasmine: "npm:^5.1.0"
     karma-webkit-launcher: "npm:^2.6.0"
     karma-webpack: "npm:^5.0.1"
-    playwright: "npm:^1.50.0"
+    playwright: "npm:^1.50.1"
     pmcrypto: "npm:@protontech/pmcrypto@^8.2.1"
     prettier: "npm:^3.4.2"
     ts-loader: "npm:^9.5.2"
@@ -7764,7 +7764,7 @@ __metadata:
     karma-jasmine: "npm:^5.1.0"
     karma-spec-reporter: "npm:^0.0.36"
     karma-webpack: "npm:^5.0.1"
-    playwright: "npm:^1.50.0"
+    playwright: "npm:^1.50.1"
     react: "npm:^18.3.1"
     ts-loader: "npm:^9.5.2"
     ttag: "npm:^1.8.7"
@@ -7894,7 +7894,7 @@ __metadata:
     karma-jasmine: "npm:^5.1.0"
     karma-webpack: "npm:^5.0.1"
     pkijs: "npm:^3.2.4"
-    playwright: "npm:^1.50.0"
+    playwright: "npm:^1.50.1"
     ts-loader: "npm:^9.5.2"
     typescript: "npm:^5.7.3"
     webpack: "npm:^5.97.1"
@@ -8246,7 +8246,7 @@ __metadata:
     karma-webpack: "npm:^5.0.1"
     lodash: "npm:^4.17.21"
     papaparse: "npm:^5.5.2"
-    playwright: "npm:^1.50.0"
+    playwright: "npm:^1.50.1"
     prettier: "npm:^3.4.2"
     ts-loader: "npm:^9.5.2"
     ttag: "npm:^1.8.7"
@@ -8356,7 +8356,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/testpackage-measurement-sdk@workspace:tests/packages/measurement-sdk"
   dependencies:
-    "@playwright/test": "npm:^1.50.0"
+    "@playwright/test": "npm:^1.50.1"
     "@proton/testpackage-loki-client": "workspace:^"
     eslint: "npm:^8.57.1"
     prettier: "npm:^3.4.2"
@@ -34328,27 +34328,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.50.0":
-  version: 1.50.0
-  resolution: "playwright-core@npm:1.50.0"
+"playwright-core@npm:1.50.1":
+  version: 1.50.1
+  resolution: "playwright-core@npm:1.50.1"
   bin:
     playwright-core: cli.js
-  checksum: 10c0/b0cc7fadcb2db68a7b8d730b26c7a7d17baad454a0697c781e08074a619e57779a90be9b57c4c741ff4895390bdfd093d8393a746e8bf68ae57ac452f4c1cdb2
+  checksum: 10c0/c158764257d870897c31807a830ddcc3f5aaf4376719e05aeada3489a01f751650b2dc43e027201a40405a1b075084e89f58cd3730a985a229efe9d8cecfe360
   languageName: node
   linkType: hard
 
-"playwright@npm:1.50.0, playwright@npm:^1.50.0":
-  version: 1.50.0
-  resolution: "playwright@npm:1.50.0"
+"playwright@npm:1.50.1, playwright@npm:^1.50.1":
+  version: 1.50.1
+  resolution: "playwright@npm:1.50.1"
   dependencies:
     fsevents: "npm:2.3.2"
-    playwright-core: "npm:1.50.0"
+    playwright-core: "npm:1.50.1"
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: 10c0/0076a536433819b7122066a07c5fcfa56d40d09cbbec0a39061bbfa832c8a1f626df5e4fe206fbeba56b3a61f0e2b26d4ad3c2b402852d6f147a266fd18e4ddf
+  checksum: 10c0/b292ee6e0d122748a3d024b85ace86a0d9c848fc4121685d90ffc5d43d6bcf13ed7dc7488b1055f69040599c420052306ccba6fabfe2f69a15fc109c55171207
   languageName: node
   linkType: hard
 
@@ -35927,7 +35927,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-e2e@workspace:tests"
   dependencies:
-    "@playwright/test": "npm:^1.50.0"
+    "@playwright/test": "npm:^1.50.1"
     "@proton/colors": "workspace:^"
     "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
