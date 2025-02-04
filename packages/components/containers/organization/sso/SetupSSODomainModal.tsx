@@ -23,6 +23,7 @@ import type { Domain } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 
 import TXTSection from './TXTSection';
+import type { SsoAppInfo } from './ssoAppInfo';
 
 enum STEP {
     DOMAIN_INPUT,
@@ -30,11 +31,12 @@ enum STEP {
 }
 
 interface Props extends ModalProps {
+    ssoAppInfo: SsoAppInfo;
     onDomainAdded?: (domain: Domain) => void;
     onContinue: () => void;
 }
 
-const SetupSSODomainModal = ({ onContinue, onDomainAdded, onClose, ...rest }: Props) => {
+const SetupSSODomainModal = ({ onContinue, onDomainAdded, onClose, ssoAppInfo, ...rest }: Props) => {
     const [step, setStep] = useState(STEP.DOMAIN_INPUT);
     const [domainName, setDomainName] = useState('');
     const [domain, setDomain] = useState<Domain>();
@@ -125,7 +127,7 @@ const SetupSSODomainModal = ({ onContinue, onDomainAdded, onClose, ...rest }: Pr
             };
             return {
                 title: c('Info').t`Verify domain`,
-                content: <TXTSection domain={domain} />,
+                content: <TXTSection domain={domain} ssoAppInfo={ssoAppInfo} />,
                 footer: (
                     <>
                         <Button onClick={onClose}>{c('Action').t`Close`}</Button>

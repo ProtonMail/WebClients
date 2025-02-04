@@ -10,11 +10,13 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
+import type { SsoAppInfo } from '../ssoAppInfo';
 
 export interface SCIMConfiguration {
     baseUrl: string;
     token: string;
     type: 'setup' | 'generated' | 'static';
+    ssoAppInfo: SsoAppInfo;
 }
 
 const getDescriptionString = (type: SCIMConfiguration['type'], appName: string) => {
@@ -27,7 +29,7 @@ const getDescriptionString = (type: SCIMConfiguration['type'], appName: string) 
 
 type SetupSCIMModalProps = ModalProps & SCIMConfiguration;
 
-const SetupSCIMModal = ({ onClose, token, type, baseUrl, ...rest }: SetupSCIMModalProps) => {
+const SetupSCIMModal = ({ onClose, token, type, baseUrl, ssoAppInfo, ...rest }: SetupSCIMModalProps) => {
     return (
         <Modal size="large" onClose={onClose} {...rest}>
             <ModalHeader
@@ -41,7 +43,7 @@ const SetupSCIMModal = ({ onClose, token, type, baseUrl, ...rest }: SetupSCIMMod
                 <div className="mb-6">
                     {getDescriptionString(type, BRAND_NAME)}
                     <br />
-                    <Href href="https://protonvpn.com/support/sso">{c('Info').t`Learn more`}</Href>
+                    <Href href={ssoAppInfo.kbUrl}>{c('Info').t`Learn more`}</Href>
                 </div>
                 {type === 'setup' && (
                     <ReadonlyFieldWithCopy label={c('scim: Label').t`SCIM base URL (or tenant URL)`} value={baseUrl} />
