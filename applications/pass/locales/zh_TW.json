@@ -34,6 +34,9 @@
       "Add current URL": [
         "添加目前的網址"
       ],
+      "Add domain": [
+        "加入網域"
+      ],
       "Add more": [
         "加入更多"
       ],
@@ -399,6 +402,9 @@
       ],
       "Show": [
         "顯示"
+      ],
+      "Show advanced options": [
+        "顯示進階選項"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 登入"
@@ -1339,7 +1345,7 @@
         "雙重驗證一次性驗證碼金鑰(TOTP)"
       ],
       "2FA token (TOTP)": [
-        "雙重驗證憑證  (TOTP)"
+        "雙重驗證憑證(TOTP) "
       ],
       "30 days": [
         "30 天"
@@ -1744,7 +1750,7 @@
         "顯示網站圖示"
       ],
       "Social security number": [
-        "社會安全碼（SSN）"
+        "社會安全碼(SSN)"
       ],
       "Special characters (!&*)": [
         "特殊字元 (!&*)"
@@ -1998,6 +2004,11 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
+      ]
+    },
+    "sso": {
+      "Invalid confirmation code": [
+        "無效的驗證碼"
       ]
     },
     "Theme": {

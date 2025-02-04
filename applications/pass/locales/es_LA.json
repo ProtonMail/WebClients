@@ -43,6 +43,9 @@
       "Add custom domain": [
         "Añadir un dominio personalizado"
       ],
+      "Add domain": [
+        "Añadir dominio"
+      ],
       "Add mailbox": [
         "Añadir un buzón"
       ],
@@ -317,7 +320,7 @@
         "Invitar a otros"
       ],
       "Join our Reddit": [
-        "Únese a nuestro Reddit"
+        "Únase a nuestro Reddit"
       ],
       "Join shared vault": [
         "Unirse a la bóveda compartida"
@@ -443,19 +446,19 @@
         "Recargar"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove access": [
-        "Borrar el acceso"
+        "Eliminar el acceso"
       ],
       "Remove all expired links (${ inactiveLinkCount })": [
         "Eliminar todos los enlaces expirados (${ inactiveLinkCount })"
       ],
       "Remove link": [
-        "Borrar el enlace"
+        "Eliminar el enlace"
       ],
       "Remove member": [
-        "Quitar este miembro"
+        "Eliminar el miembro"
       ],
       "Request a feature": [
         "Solicitar una característica"
@@ -537,6 +540,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Show advanced options": [
+        "Mostrar las opciones avanzadas"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sesión con ${ BRAND_NAME }"
@@ -925,7 +931,7 @@
         "Error al anclar el elemento"
       ],
       "Failed to remove user's access.": [
-        "Error al borrar el acceso del usuario"
+        "Error al eliminar el acceso del usuario"
       ],
       "Failed to resend verification code": [
         "Error al reenviar el código de verificación"
@@ -1147,7 +1153,7 @@
         "El DNS no está configurado correctamente. El registro TXT obtenido es:"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "El código PIN fue eliminado por otro cliente de ${ PASS_APP_NAME }"
+        "Se eliminó el código PIN desde otro cliente de ${ PASS_APP_NAME }."
       ]
     },
     "Error message": {
@@ -1371,7 +1377,7 @@
         "Todas las vulneraciones actuales serán marcadas como resueltas. Se le notificará en caso de futuras vulneraciones de datos."
       ],
       "All inactive secure links were removed": [
-        "Todos los enlaces seguros inactivos fueron eliminados"
+        "Se eliminaron todos los enlaces seguros inactivos."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" fueron movidos."
@@ -1386,7 +1392,7 @@
         "Todos los elementos de la papelera fueron restaurados."
       ],
       "An item previously shared with you was removed": [
-        "Se borró un elemento previamente compartido con usted."
+        "Se eliminó un elemento previamente compartido con usted."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "¿En verdad desea eliminar ${ emailJSX } de sus buzones de correo?"
@@ -1423,6 +1429,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
+      ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Al añadir su dominio, puede crear alias como hola@mi-dominio.com."
       ],
       "Can be viewed": [
         "Puede ser visto"
@@ -1580,6 +1589,9 @@
       "Enter your PIN code": [
         "Ingrese el código PIN"
       ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Cada vez que su alias reciba un correo de alguien, se creará automáticamente un contacto."
+      ],
       "Expires in": [
         "Expira en"
       ],
@@ -1590,7 +1602,7 @@
         "Se creó la contraseña adicional."
       ],
       "Extra password successfully removed": [
-        "Se borró la contraseña adicional."
+        "Se eliminó la contraseña adicional."
       ],
       "Fill in the CSV with your data": [
         "Complete el CSV con los datos"
@@ -1668,7 +1680,7 @@
         "Invite a personas específicas y establezca los permisos correctos."
       ],
       "Invite successfully removed": [
-        "Invitación borrada"
+        "Se eliminó la invitación."
       ],
       "Invite successfully resent": [
         "La invitación fue enviada."
@@ -1999,6 +2011,9 @@
       "Settings successfully updated": [
         "Ajustes actualizados con éxito"
       ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "Comparta alias con otros añadiendo sus bandejas de entrada como buzón adicional."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "Comparta sus inicios de sesión y notas con hasta 10 personas"
       ],
@@ -2038,6 +2053,9 @@
       "Syncing your vaults…": [
         "Sincronizando sus bóvedas…"
       ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Pulse el ícono ${ gearIcon } para personalizar el alias como desee."
+      ],
       "Thank you, the problem has been reported": [
         "Gracias, el problema ha sido reportado"
       ],
@@ -2061,7 +2079,7 @@
         "Los siguientes ${ result.ignored.length } elementos no pudieron importarse:"
       ],
       "The secure link has been removed": [
-        "El enlace seguro fue eliminado"
+        "El enlace seguro fue eliminado."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El texto que intenta pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
@@ -2151,7 +2169,7 @@
         "Mejore a un plan de pago para crear varias bóvedas."
       ],
       "User's access removed": [
-        "El acceso del usuario fue borrado."
+        "Se eliminó el acceso del usuario."
       ],
       "User's access successfully updated": [
         "Se actualizó el acceso del usuario."
@@ -2169,7 +2187,7 @@
         "Bóveda \"${ payload.share.content.name }\" actualizada con éxito"
       ],
       "Vault \"${ share.content.name }\" was removed": [
-        "La bóveda \"${ share.content.name }\" fue borrada."
+        "Se eliminó la bóveda «${ share.content.name }»."
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Bóveda compartida: ${ vaultMembersCount } miembro",
@@ -2877,7 +2895,7 @@
         "Nombre de usuario de Reddit"
       ],
       "Remove link": [
-        "Eliminar enlace"
+        "Eliminar el enlace"
       ],
       "Report a problem": [
         "Reportar un problema"
@@ -3531,6 +3549,9 @@
       "Details": [
         "Detalles"
       ],
+      "Did you know?": [
+        "¿Lo sabía?"
+      ],
       "Discard changes?": [
         "¿Descartar cambios?"
       ],
@@ -3681,7 +3702,7 @@
         "Acceso pendiente a los datos compartidos"
       ],
       "Permanently remove all items?": [
-        "¿Borrar todos los elementos permanentemente?"
+        "¿Eliminar todos los elementos permanentemente?"
       ],
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
@@ -3700,7 +3721,7 @@
         "¿Rechazar el dispositivo?"
       ],
       "Remove email address?": [
-        "¿Borrar la dirección de correo electrónico?"
+        "¿Eliminar la dirección de correo electrónico?"
       ],
       "Remove extra password": [
         "Eliminar la contraseña adicional"
