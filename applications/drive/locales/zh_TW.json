@@ -168,6 +168,9 @@
       "Collapse folder": [
         "收合資料夾"
       ],
+      "Collapse navigation bar": [
+        "折疊導航欄"
+      ],
       "Compose": [
         "撰寫郵件"
       ],
@@ -284,6 +287,9 @@
       ],
       "Dismiss": [
         "忽略"
+      ],
+      "Display navigation bar": [
+        "顯示側邊導覽欄"
       ],
       "Done": [
         "完成"
@@ -762,6 +768,9 @@
       "Show advanced PGP settings": [
         "顯示進階 PGP 設定"
       ],
+      "Show navigation bar": [
+        "顯示導航欄"
+      ],
       "Show preview": [
         "顯示預覽"
       ],
@@ -867,6 +876,9 @@
       "Upload file": [
         "上載檔案"
       ],
+      "Upload files": [
+        "上傳檔案"
+      ],
       "Upload folder": [
         "上載資料夾"
       ],
@@ -923,6 +935,11 @@
       ],
       "Zoom out": [
         "縮小"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "上傳"
       ]
     },
     "Actions message": {
@@ -1137,7 +1154,7 @@
         "單次收費 ${ amount }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "首月免費，之後每月續訂 ${ regularAmount }。"
+        "1個月之後續訂 ${ regularAmount }。"
       ]
     },
     "BF2024: Tooltip": {
@@ -1532,6 +1549,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2587,7 +2607,7 @@
         "時間：${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "時間：${ formattedStart }（全天）"
+        "時間：${ formattedStart }(全天)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
         "時間：${ formattedStart } - ${ formattedEnd }"
@@ -4336,23 +4356,8 @@
       "Download ${ name } app": [
         "下載 ${ name } app"
       ],
-      "Download canceled": [
-        "下載已取消"
-      ],
-      "Download failed": [
-        "下載失敗"
-      ],
-      "Download failed due to ${ error }": [
-        "由於${ error }，下載失敗"
-      ],
-      "Download finished": [
-        "下載已完成"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 將會中止下載"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "由於連線問題，下載已暫停；將伺機自動恢復"
       ],
       "Download was canceled": [
         "下載已取消"
@@ -4705,9 +4710,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "需要分享檔案？請使用 ${ DRIVE_APP_NAME }，\n分享、儲存與同步您檔案的最安全方法。"
-      ],
       "Network issue": [
         "網路問題"
       ],
@@ -4746,9 +4748,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "備註：資料將會持續在安裝 ${ DRIVE_APP_NAME } 的裝置上保持可用狀態。"
-      ],
-      "Nothing here yet": [
-        "還沒有任何內容"
       ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
@@ -6535,7 +6534,7 @@
         "超文件標示語言 (HTML)"
       ],
       "Hypertext Preprocessor (Personal Home Page)": [
-        "超文字預處理器 (PHP)"
+        " 超文字預處理器(PHP)"
       ],
       "iCalendar format": [
         "iCalendar 格式"
@@ -7126,7 +7125,7 @@
         "資料夾、標籤和篩選器無上限"
       ],
       "Unlimited hide-my-email aliases": [
-        "無限制的隱藏電子郵件別名"
+        "無限制的 hide-my-email別名"
       ],
       "Unlimited labels": [
         "無限制標籤"
@@ -8189,11 +8188,17 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ subscriptionLength } 個月。而後將以每 ${ subscriptionLengthCopy } 月 ${ renewPrice } 的價格自動續約。您可以在任何時候取消訂閱。"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "首月限定折扣價為${ priceWithDiscount }。優惠券可使用${ couponRedemptions }次，之後後將以 ${ renewPrice } 的價格自動續約 ${ subscriptionLength } 個月，您可以隨時取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "我們正在處理您已開立發票的付款。請在付款完成後，再更改您的計劃或更新您的付款詳情。感謝您的耐心等候。"
       ]
     },
     "Payments.Error": {
@@ -8222,6 +8227,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示從您的銀行帳戶中扣款，並授權您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
+      ],
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
       ]
@@ -8421,8 +8429,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "查看您的帳號安全"
+      "Review account safety": [
+        "查看帳號安全"
       ]
     },
     "Security Center": {
@@ -8533,7 +8541,7 @@
         "密碼重設需要核准(${ user.Email })。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
+        "請前往已登入的裝置(在發起需求的工作階段中)變更您的密碼。"
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "此權限將在${ timeRemaining.inDays }天後過期"
@@ -8833,7 +8841,7 @@
         "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+        "2年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }(${ discount }% 折扣)續訂"
       ],
       "Save ${ discount }%": [
         "省下 ${ discount }%"
@@ -8902,6 +8910,9 @@
     "sso": {
       "Sign in": [
         "登入"
+      ],
+      "Sign in to your organization": [
+        "登入您的組織"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "您將被重新導向至您的第三方單一登入提供者。"
@@ -9583,7 +9594,7 @@
     },
     "Title": {
       "# of downloads": [
-        "下載次數"
+        "下載#次數"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
@@ -10399,8 +10410,8 @@
       "A safer way to hold your Bitcoin": [
         "更安全的方法持有Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin透過電子郵件"
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
       ]
     },
     "wallet_signup_2024:app-switcher": {

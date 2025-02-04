@@ -173,6 +173,9 @@
       "Collapse folder": [
         "Restrângere folder"
       ],
+      "Collapse navigation bar": [
+        "Restrângere bară de navigare"
+      ],
       "Compose": [
         "Compunere"
       ],
@@ -293,6 +296,9 @@
       ],
       "Dismiss": [
         "Renunțare"
+      ],
+      "Display navigation bar": [
+        "Afișare bară de navigare"
       ],
       "Done": [
         "Gata"
@@ -770,6 +776,9 @@
       ],
       "Show advanced PGP settings": [
         "Afișare setări PGP avansate"
+      ],
+      "Show navigation bar": [
+        "Afișare bară de navigare"
       ],
       "Show preview": [
         "Afișare previzualizare"
@@ -1562,6 +1571,9 @@
       ],
       "Work": [
         "Serviciu"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2435,7 +2447,7 @@
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
       "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Păstrați fișierele, fotografiile și documentele în siguranță cu criptare end-to-end."
+        "Păstrați-vă fișierele, fotografiile și documentele în siguranță cu criptare bilaterală."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -3515,14 +3527,17 @@
       ]
     },
     "Feature": {
+      "Access on mobile and desktop": [
+        "Acces pe mobil și desktop"
+      ],
       "Free 5 GB storage": [
-        "5 GB spațiu de stocare gratuit"
+        "5 GiB spațiu de stocare gratuit"
       ],
       "Save files for later access": [
-        "Salvați fișierele pentru acces ulterior"
+        "Salvare fișiere pentru acces ulterior"
       ],
       "Share privately and securely": [
-        "Distribuie în mod privat și securizat"
+        "Partajare privată și securizată"
       ]
     },
     "fido2: Error": {
@@ -3655,6 +3670,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3663,6 +3681,9 @@
       ],
       "No verification method available": [
         "Nu sunt metode de verificare disponibile"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3941,6 +3962,9 @@
       ],
       "ICS file": [
         "fișier ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4474,23 +4498,8 @@
       "Download ${ name } app": [
         "Descărcați aplicația ${ name }"
       ],
-      "Download canceled": [
-        "Descărcare anulată."
-      ],
-      "Download failed": [
-        "Descărcare eșuată."
-      ],
-      "Download failed due to ${ error }": [
-        "Descărcarea a eșuat deoarece ${ error }"
-      ],
-      "Download finished": [
-        "Descărcare finalizată."
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Descărcarea fișierului ${ downloadFileName } va fi întreruptă."
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Descărcare întreruptă din cauza conectării cu probleme; se va relua automat."
       ],
       "Download was canceled": [
         "Descărcarea a fost anulată."
@@ -4849,9 +4858,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Doriți să partajați un fișier? Atunci luați ${ DRIVE_APP_NAME },\ncel mai sigur mod de partajare, stocare și sincronizare a fișierelor."
-      ],
       "Network issue": [
         "Problemă de rețea"
       ],
@@ -4890,9 +4896,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Observație: este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Nimic aici încă"
       ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
@@ -5787,6 +5790,9 @@
       ],
       "Trusted": [
         "Aprobată"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -8166,8 +8172,14 @@
       "Free": [
         "Gratuit"
       ],
+      "Online document editor": [
+        "Editor online de documente"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierului"
       ],
       "Storage": [
         "Spațiu de stocare"
@@ -8525,6 +8537,11 @@
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul, iar banca să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
@@ -8731,11 +8748,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Revizuire securitate cont"
       ]
     },
     "saml: Error": {
@@ -9125,7 +9137,7 @@
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "Abonamentul dumneavoastră se va reînnoi la același tarif în fiecare an."
+        "Abonamentul vi se va reînnoi la același tarif în fiecare an."
       ]
     },
     "specialoffer: Link": {
@@ -10267,6 +10279,9 @@
       "Download unverified folder?": [
         "Descărcați un folder neverificat?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "Plasați aici pentru încărcare"
       ],
@@ -10515,7 +10530,7 @@
         "Restaurare fișiere"
       ],
       "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "Salvează pentru mai târziu în ${ DRIVE_APP_NAME }"
+        "Salvare pentru mai târziu în ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Salvare pentru mai târziu în ${ DRIVE_APP_NAME }"
@@ -10850,8 +10865,13 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vi se va emite factura la fiecare 12 luni cu ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Noul abonament vi se va reînnoi automat peste ${ cycle } lună.",
+        "Noul abonament vi se va reînnoi automat peste ${ cycle } luni.",
+        "Noul abonament vi se va reînnoi automat peste ${ cycle } de luni."
+      ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Planul tău programat începe pe ${ renewalTime }."
+        "Planul programat începe ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Abonamentul vi se va reînnoi automat peste ${ cycle } lună.",
@@ -10890,9 +10910,11 @@
       ],
       "A safer way to hold your Bitcoin": [
         "O metodă mai sigură de a vă păstra monedele Bitcoin"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin prin e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Un mod mai sigur de a deține bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

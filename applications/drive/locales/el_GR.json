@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Σύμπτυξη φακέλου"
       ],
+      "Collapse navigation bar": [
+        "Σύμπτυξη γραμμής περιήγησης"
+      ],
       "Compose": [
         "Σύνταξη"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Παράβλεψη"
+      ],
+      "Display navigation bar": [
+        "Εμφάνιση γραμμής περιήγησης"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Εμφάνιση προηγμένων ρυθμίσεων PGP"
       ],
+      "Show navigation bar": [
+        "Προβολή γραμμής περιήγησης"
+      ],
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Ανέβασμα αρχείου"
       ],
+      "Upload files": [
+        "Ανέβασμα αρχείων"
+      ],
       "Upload folder": [
         "Ανέβασμα φακέλου"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Ανέβασμα"
       ]
     },
     "Actions message": {
@@ -4417,23 +4434,8 @@
       "Download ${ name } app": [
         "Λήψη εφαρμογής ${ name }"
       ],
-      "Download canceled": [
-        "Η λήψη ακυρώθηκε"
-      ],
-      "Download failed": [
-        "Η λήψη απέτυχε"
-      ],
-      "Download failed due to ${ error }": [
-        "Η λήψη απέτυχε λόγω του ${ error }"
-      ],
-      "Download finished": [
-        "Η λήψη ολοκληρώθηκε"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Η λήψη του ${ downloadFileName } θα ματαιωθεί"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Η λήψη διακόπηκε λόγω προβλήματος σύνδεσης. Θα συνεχιστεί αυτόματα"
       ],
       "Download was canceled": [
         "Η λήψη ακυρώθηκε"
@@ -4452,6 +4454,9 @@
       ],
       "Drop files here": [
         "Σύρετε αρχεία εδώ"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Αποθέστε αρχεία εδώ για μεταφόρτωση ή κάντε κλικ στο κουμπί μεταφόρτωσης"
       ],
       "Drop to import": [
         "Απόθεση για εισαγωγή"
@@ -4582,6 +4587,9 @@
       ],
       "from the version history?": [
         "από το ιστορικό εκδόσεων;"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Αποκτήστε την εφαρμογή για να δημιουργήσετε αντίγραφα ασφαλείας φωτογραφιών από το τηλέφωνό σας ή να τις ανεβάσετε εδώ."
       ],
       "Get the app to backup photos from your phone.": [
         "Αποκτήστε την εφαρμογή για δημιουργία αντιγράφων ασφαλείας φωτογραφιών από το τηλέφωνό σας."
@@ -4789,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Θέλετε να μοιραστείτε ένα αρχείο; Τότε, κάντε λήψη του ${ DRIVE_APP_NAME },\nο ασφαλέστερος τρόπος κοινής χρήσης, αποθήκευσης και συγχρονισμού των αρχείων σας."
-      ],
       "Network issue": [
         "Πρόβλημα δικτύου"
       ],
@@ -4830,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Σημείωση: Σε συσκευές όπου εγκαταστήσατε το ${ DRIVE_APP_NAME }, κάποια δεδομένα ίσως είναι ακόμα διαθέσιμα."
-      ],
-      "Nothing here yet": [
-        "Δεν υπάρχει τίποτα εδώ"
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
@@ -8622,8 +8624,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Ελέγξτε την ασφάλεια του λογαριασμού σας"
+      "Review account safety": [
+        "Έλεγχος ασφάλειας λογαριασμού"
       ]
     },
     "saml: Error": {
@@ -10726,8 +10728,8 @@
       "A safer way to hold your Bitcoin": [
         "Ένας ασφαλέστερος τρόπος για να κρατήσετε το Bitcoin σας"
       ],
-      "Bitcoin via email": [
-        "Bitcoin μέσω email"
+      "Bitcoin via Email": [
+        "Bitcoin μέσω Εmail"
       ]
     },
     "wallet_signup_2024:app-switcher": {

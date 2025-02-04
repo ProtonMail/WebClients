@@ -174,6 +174,9 @@
       "Collapse folder": [
         "Свернуть папку"
       ],
+      "Collapse navigation bar": [
+        "Свернуть панель навигации"
+      ],
       "Compose": [
         "Новое письмо"
       ],
@@ -294,6 +297,9 @@
       "Dismiss": [
         "Отклонить"
       ],
+      "Display navigation bar": [
+        "Показать панель навигации"
+      ],
       "Done": [
         "Готово"
       ],
@@ -371,6 +377,12 @@
       ],
       "Forward as attachment": [
         "Переслать как вложение"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Получить ${ planName } за ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Получить ${ planOrAppName }"
       ],
       "Get in touch": [
         "Связаться с нами"
@@ -753,6 +765,9 @@
       "Show advanced PGP settings": [
         "Показать расширенные настройки PGP"
       ],
+      "Show navigation bar": [
+        "Показать панель навигации"
+      ],
       "Show preview": [
         "Показать предпросмотр"
       ],
@@ -797,6 +812,9 @@
       ],
       "Switch or add account": [
         "Переключить или добавить аккаунт"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
       ],
       "Toggle Calendar app": [
         "Переключить на приложение Календарь"
@@ -1150,6 +1168,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Защитите логины на всех ваших устройствах, включая неограниченное число псевдонимов hide-my-email, совместное пользование, интегрированную двухфакторную аутентификацию, ${ DARK_WEB_MONITORING_NAME } и многое другое."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
@@ -1286,6 +1307,21 @@
       ],
       "Continue your subscription": [
         "Продолжить подписку"
+      ],
+      "Create label": [
+        "Создать ярлык"
+      ],
+      "Discover and set up features": [
+        "Настройте функции"
+      ],
+      "Remind me later": [
+        "Напомнить позже"
+      ],
+      "Set up other features": [
+        "Настроить другие функции"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
       ]
     },
     "Cancellation reminder": {
@@ -1532,6 +1568,9 @@
       ],
       "Work": [
         "Рабочий"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3222,6 +3261,9 @@
       "Time zone": [
         "Часовой пояс"
       ],
+      "Time zone component ignored": [
+        "Часовой пояс игнорируется."
+      ],
       "To-do entry": [
         "Запись списка задач"
       ],
@@ -3622,6 +3664,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Эл. почта"
       ],
@@ -3630,6 +3675,9 @@
       ],
       "No verification method available": [
         "Нет доступных способов проверки"
+      ],
+      "SMS": [
+        "СМС"
       ]
     },
     "ICS event error": {
@@ -3825,11 +3873,17 @@
       "Use your app password instead of your regular password if:": [
         "Используйте ваш пароль приложения вместо обычного пароля, если:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Пароль от приложения верный. Не используйте обычный пароль."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ваш почтовый аккаунт требует пароль приложения для экспорта данных."
       ],
       "Your email account requires one to export your data.": [
         "Для экспорта данных требуется аккаунт электронной почты."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Ваш адрес электронной почты и пароль от приложения верны. Не используйте обычный пароль."
       ],
       "Your email address and password are correct.": [
         "Ваш адрес электронной почты и пароль верны."
@@ -3908,6 +3962,9 @@
       ],
       "ICS file": [
         "файл ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4466,23 +4523,8 @@
       "Download ${ name } app": [
         "Загрузите приложение ${ name }"
       ],
-      "Download canceled": [
-        "Скачивание отменено"
-      ],
-      "Download failed": [
-        "Скачивание не удалось"
-      ],
-      "Download failed due to ${ error }": [
-        "Скачивание не удалось из-за: ${ error }"
-      ],
-      "Download finished": [
-        "Скачивание завершено"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Скачивание ${ downloadFileName } будет прервано"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Скачивание приостановлено из-за проблем с подключением; оно возобновится автоматически"
       ],
       "Download was canceled": [
         "Скачивание отменено"
@@ -4841,9 +4883,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Нужно поделиться файлом? Тогда используйте ${ DRIVE_APP_NAME },\nсамый безопасный способ обмена, хранения и синхронизации файлов."
-      ],
       "Network issue": [
         "Проблема с сетью"
       ],
@@ -4882,9 +4921,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Примечание: данные все еще могут быть доступны локально на устройствах, на которых вы установили ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Пока здесь ничего нет"
       ],
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
@@ -5754,6 +5790,9 @@
       ],
       "Trusted": [
         "Доверенный"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -6246,6 +6285,9 @@
       "Start date": [
         "Дата начала"
       ],
+      "State": [
+        "Состояние"
+      ],
       "Stolen data": [
         "Украденные данные"
       ],
@@ -6428,6 +6470,9 @@
       ],
       "Sent": [
         "Отправленные"
+      ],
+      "settings": [
+        "настройки"
       ],
       "Shared": [
         "В общем доступе"
@@ -6829,11 +6874,17 @@
       "Get started for ${ priceCoupon }": [
         "Начните с ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
       "Upgrade": [
         "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7009,6 +7060,9 @@
       ],
       "15 GB storage": [
         "15 ГБ хранилища"
+      ],
+      "200 GB of storage": [
+        "200 ГБ памяти"
       ],
       "24/7 account management support": [
         "Постоянная круглосуточная поддержка управления аккаунтом"
@@ -7205,6 +7259,9 @@
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
       ],
+      "Private photo backup": [
+        "Конфиденциальное резервное копирование фото"
+      ],
       "Proofread and refine your emails": [
         "Проверьте и уточните ваши электронные письма"
       ],
@@ -7243,6 +7300,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Безопасное хранение и обмен файлами"
       ],
       "Secure link sharing": [
         "Защищенный совместный доступ к ссылкам"
@@ -7485,6 +7545,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Скидка ${ priceCoupon } действует в течение первого месяца. Затем она будет автоматически продлена до ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Разблокируйте все премиум продукты и функции ${ BRAND_NAME } только за ${ priceMailPlus }. Отменить можно в любое время."
       ]
     },
     "new_plans: title": {
@@ -8091,6 +8159,58 @@
         "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
       ]
     },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Предложение ${ pricingTitle } истекает сегодня!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Попробуйте Drive Plus всего за ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Попробуйте Mail Plus всего за ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Последний шанс получить скидку 80% на первый месяц подписки ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Ограниченное предложение"
+      ],
+      "Maybe later": [
+        "Может быть позже"
+      ],
+      "Save 80% on your first month.": [
+        "Сэкономьте 80% в первый месяц."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 дополнительных премиум-функций"
+      ],
+      "Custom email domain": [
+        "Пользовательский домен электронной почты"
+      ],
+      "Email addresses": [
+        "Адреса электронной почты"
+      ],
+      "Free": [
+        "Бесплатно"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Storage": [
+        "Хранилище"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
@@ -8446,6 +8566,11 @@
         "Ваша карта отклонена. Пожалуйста, попробуйте другую карту или свяжитесь с вашим банком для авторизации транзакции."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Бесплатно"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Подтверждая этот платеж, вы авторизуете ${ BRAND_NAME } и Stripe, наш поставщик платежных услуг, поручить вашему банку депонировать свой счет и банк соответствующим образом депонировать свой счет. Вы можете получить возврат средств в течение 8 недель со дня дебетования на основании Вашего договора с Вашим банком."
@@ -8658,8 +8783,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Просмотрите безопасность вашего аккаунта"
+      "Review account safety": [
+        "Проверьте безопасность аккаунта"
       ]
     },
     "saml: Error": {
@@ -9063,6 +9188,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Эта подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока она не будет отменена."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Ваша подписка будет продлеваться каждый год по фиксированной цене."
       ]
     },
     "specialoffer: Link": {
@@ -9071,6 +9199,9 @@
       ],
       "Upgrade": [
         "Сменить тариф"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Улучшить за ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9998,6 +10129,9 @@
         "${ emailsCount } адресов электронной почты",
         "${ emailsCount } адресов электронной почты"
       ],
+      "${ feature } is now active": [
+        "${ feature } теперь активна"
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } неудавшееся скачивание",
         "${ numberOfFailedTransfer.total } неудавшихся скачивания",
@@ -10069,6 +10203,9 @@
       ],
       "Are you sure?": [
         "Вы уверены?"
+      ],
+      "Auto-deletion is active": [
+        "Автоматическое удаление включено"
       ],
       "Billing cycle": [
         "Период оплаты"
@@ -10607,6 +10744,9 @@
       "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
         "Вы собираетесь отклонить приглашение для элемента, находящегося в общем доступе. Вы не сможете получить к нему доступ до тех пор, пока владелец не поделится им с вами."
       ],
+      "You can now create unlimited folders and labels": [
+        "Теперь вы можете создавать неограниченное количество папок и ярлыков."
+      ],
       "You have inaccessible files": [
         "Имеются недоступные файлы"
       ],
@@ -10794,6 +10934,9 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Ваш запланированный тариф начинается с ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша подписка будет автоматически обновлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
@@ -10836,8 +10979,13 @@
       "A safer way to hold your Bitcoin": [
         "Безопасный способ держать свои Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin по эл. почте"
+      "Bitcoin via Email": [
+        "Bitcoin по электронной почте"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Безопасный способ хранить Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
