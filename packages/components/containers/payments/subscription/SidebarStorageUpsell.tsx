@@ -134,6 +134,7 @@ const SidebarStorageUpsell = ({ app }: Props) => {
     }
 
     // Storage upsell is completely hidden in drive.
+    // Warning: changing these conditions might break UI in DriveSidebar.tsx
     const data = app === APPS.PROTONDRIVE ? undefined : getStorageUpsell({ app, user });
 
     const upsellButton = (
@@ -159,6 +160,7 @@ const SidebarStorageUpsell = ({ app }: Props) => {
     if (!data) {
         const hasDriveSpecificUpsell =
             // Drive specific upsell if subscribed to a drive plan or free plan.
+            // Warning: changing these conditions might break UI in DriveSidebar.tsx
             app === APPS.PROTONDRIVE && (user.Subscribed === PRODUCT_BIT.DRIVE || user.Subscribed === 0);
         if (hasDriveSpecificUpsell) {
             return upsellButton;

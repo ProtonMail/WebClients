@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import {
     AppsDropdown,
@@ -18,7 +19,7 @@ import {
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import {
     COLLAPSE_EVENTS,
     SOURCE_EVENT,
@@ -26,6 +27,7 @@ import {
     useLeftSidebarButton,
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { getCanAddStorage } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
@@ -52,10 +54,14 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
     const [defaultShare, setDefaultShare] = useState<ShareWithKey>();
     const { createDevice } = useCreateDevice();
     const [user] = useUser();
+    const [subscription] = useSubscription();
     const [showSideBar, setShowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONDRIVE}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
     const api = useApi();
     const navigationRef = useRef<HTMLDivElement>(null);
+    // This is same logic is in SidebarStorageUpsell to determine if we show the storage button
+    const showStorage =
+        getCanAddStorage({ user, subscription }) && (user.Subscribed === PRODUCT_BIT.DRIVE || user.Subscribed === 0);
 
     const collapsed = !showSideBar && !viewportWidth['<=small'];
 
@@ -107,7 +113,7 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
                 <ActionMenuButton className="hidden md:flex" collapsed={collapsed} disabled={isNewUploadDisabled} />
             }
             version={<DriveSidebarFooter />}
-            postFooter={<SidebarStorageUpsell app={APPS.PROTONDRIVE} />}
+            postFooter={showStorage ? <SidebarStorageUpsell app={APPS.PROTONDRIVE} /> : null}
             navigationRef={navigationRef}
             collapsed={collapsed}
             showStorage={showSideBar}
@@ -121,7 +127,13 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
                 <span
                     className={clsx(
                         'mt-auto',
-                        !collapsed && 'absolute bottom-0 right-0 sidebar-collapse-button-container--not-collapsed',
+                        !collapsed && 'absolute bottom-0 right-0',
+                        !collapsed &&
+                            showStorage &&
+                            'sidebar-collapse-button-container--not-collapsed',
+                        !collapsed &&
+                            !showStorage &&
+                            'sidebar-collapse-button-container--not-collapsed-no-storage',
                         isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
                     )}
                 >
