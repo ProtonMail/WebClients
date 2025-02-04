@@ -25,7 +25,7 @@ const SubscriptionEndsBanner = () => {
     }
 
     const byDate = (
-        <Time format="PP" key="subscription-end">
+        <Time format="PPP" key="subscription-end">
             {expirationDate}
         </Time>
     );

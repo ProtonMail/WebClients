@@ -15,6 +15,7 @@ import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';
 
 import { getReminderPageConfig } from '../cancellationFlow/reminderPageConfig';
@@ -43,7 +44,7 @@ const CancellationReminderModal = (props: ModalProps) => {
         return;
     }
 
-    const formattedEndDate = format(fromUnixTime(subscription.PeriodEnd), 'PP');
+    const formattedEndDate = format(fromUnixTime(subscription.PeriodEnd), 'PPP', { locale: dateLocale });
 
     return (
         <ModalTwo {...props} onClose={markAsSeen}>

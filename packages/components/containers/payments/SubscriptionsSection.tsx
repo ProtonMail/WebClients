@@ -205,7 +205,7 @@ const SubscriptionsSection = () => {
                                 <Badge type={status.type}>{status.label}</Badge>
                             </TableCell>
                             <TableCell label={c('Title subscription').t`End date`}>
-                                <Time format="PP" sameDayFormat={false} data-testid="planEndTimeId">
+                                <Time format="PPP" sameDayFormat={false} data-testid="planEndTimeId">
                                     {renewalDate}
                                 </Time>
                                 {subscriptionExpiresSoon && (
