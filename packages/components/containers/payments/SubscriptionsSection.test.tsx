@@ -115,7 +115,7 @@ describe('SubscriptionsSection', () => {
 
         expect(getByTestId('planNameId')).toHaveTextContent('Proton Unlimited');
         expect(getByTestId('subscriptionStatusId')).toHaveTextContent('Active');
-        expect(getByTestId('planEndTimeId')).toHaveTextContent('Nov 6, 2023');
+        expect(getByTestId('planEndTimeId')).toHaveTextContent('November 6th, 2023');
     });
 
     it('should display Expiring badge if renew is disabled', () => {
@@ -129,7 +129,7 @@ describe('SubscriptionsSection', () => {
 
         expect(getByTestId('planNameId')).toHaveTextContent('Proton Unlimited');
         expect(getByTestId('subscriptionStatusId')).toHaveTextContent('Expiring');
-        expect(getByTestId('planEndTimeId')).toHaveTextContent('Nov 6, 2023');
+        expect(getByTestId('planEndTimeId')).toHaveTextContent('November 6th, 2023');
     });
 
     it('should render end date of upcoming subscription', () => {
@@ -144,7 +144,7 @@ describe('SubscriptionsSection', () => {
 
         expect(getByTestId('planNameId')).toHaveTextContent('Proton Unlimited');
         expect(getByTestId('subscriptionStatusId')).toHaveTextContent('Active');
-        expect(getByTestId('planEndTimeId')).toHaveTextContent('Nov 6, 2024');
+        expect(getByTestId('planEndTimeId')).toHaveTextContent('November 6th, 2024');
     });
 
     it('should show renewal notice if there is no upcoming subscription', () => {

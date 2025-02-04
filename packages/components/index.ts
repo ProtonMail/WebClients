@@ -776,7 +776,6 @@ export { OverviewSection } from './containers/recovery/OverviewSection';
 export { SessionRecoverySection } from './containers/recovery/SessionRecoverySection';
 export { InviteSection } from './containers/referral/invite/InviteSection';
 export { getShouldOpenReferralModal } from './containers/referral/modals/helper';
-export { ReferralModal } from './containers/referral/modals/ReferralModal';
 export { ReferralFeaturesList } from './containers/referral/ReferralFeaturesList';
 export { ReferralHowItWorks } from './containers/referral/ReferralHowItWorks';
 export {

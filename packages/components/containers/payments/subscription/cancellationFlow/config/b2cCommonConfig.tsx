@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { type Subscription } from '@proton/shared/lib/interfaces';
 import alias from '@proton/styles/assets/img/cancellation-flow/testimonial_alias.png';
 import darkWeb from '@proton/styles/assets/img/cancellation-flow/testimonial_dark_web.png';
@@ -57,9 +58,9 @@ export const ExpirationTime = ({
 
     if (cancellablePlan) {
         const endDate = fromUnixTime(subscriptionExpiryTime);
-        const formattedEndDate = format(fromUnixTime(subscriptionExpiryTime), 'PP');
+        const formattedEndDate = format(fromUnixTime(subscriptionExpiryTime), 'PPP', { locale: dateLocale });
         return (
-            <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd')}>
+            <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd', { locale: dateLocale })}>
                 {formattedEndDate}
             </time>
         );
@@ -68,7 +69,7 @@ export const ExpirationTime = ({
         const dayDiff = differenceInDays(endSubDate, new Date());
         return (
             <strong>
-                <time dateTime={format(endSubDate, 'yyyy-MM-dd')}>
+                <time dateTime={format(endSubDate, 'yyyy-MM-dd', { locale: dateLocale })}>
                     {c('Subscription reminder').ngettext(msgid`${dayDiff} day left`, `${dayDiff} days left`, dayDiff)}
                 </time>
             </strong>
