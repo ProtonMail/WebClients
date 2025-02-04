@@ -54,3 +54,7 @@
 .sidebar-collapse-button-container--not-collapsed {
 	margin-block-end: calc(var(--space-12) + var(--space-14));
 }
+
+.sidebar-collapse-button-container--not-collapsed-no-storage {
+	margin-block-end: var(--space-12);
+}
