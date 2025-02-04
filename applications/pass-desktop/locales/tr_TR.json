@@ -43,6 +43,9 @@
       "Add custom domain": [
         "Özel etki alanı ekle"
       ],
+      "Add domain": [
+        "Etki alanı ekle"
+      ],
       "Add mailbox": [
         "E-posta kutusu ekle"
       ],
@@ -544,6 +547,9 @@
       "Show": [
         "Görüntüle"
       ],
+      "Show advanced options": [
+        "Gelişmiş seçenekleri görüntüle"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
       ],
@@ -646,7 +652,7 @@
         "Diğer ${ BRAND_NAME } kullanıcılarıyla"
       ],
       "Write us on X/Twitter": [
-        "X/Twitter üzerinden bize yazın"
+        "Bize X/Twitter üzerinden yazın"
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
@@ -1459,6 +1465,9 @@
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Etki alanınızı ekleyerek merhaba@etki-alanim.com gibi takma adlar oluşturabilirsiniz."
+      ],
       "Can be viewed": [
         "Görüntülenebilir"
       ],
@@ -1611,6 +1620,9 @@
       ],
       "Enter your PIN code": [
         "PIN kodunuzu yazın"
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Takma adınız birinden bir e-posta aldığında otomatik olarak yeni bir kişi oluşturulur."
       ],
       "Expires in": [
         "Geçerlilik sonu"
@@ -1802,8 +1814,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını silecektir.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını silecektir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2034,6 +2046,9 @@
       "Settings successfully updated": [
         "Ayarlar güncellendi"
       ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "Başka birinin gelen kutusunu ek e-posta kutusu olarak ekleyerek takma adları onlarla paylaşabilirsiniz."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
       ],
@@ -2072,6 +2087,9 @@
       ],
       "Syncing your vaults…": [
         "Kasalarınız eşitleniyor…"
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Takma adınızı istediğiniz şekilde özelleştirmek için ${ gearIcon } simgesine dokunun."
       ],
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
@@ -2651,7 +2669,7 @@
         "Facebook hesabı"
       ],
       "Feedback": [
-        "Geri Bildirim"
+        "Geri bildirim"
       ],
       "Field name": [
         "Alan adı"
@@ -3672,6 +3690,9 @@
       ],
       "Details": [
         "Ayrıntılar"
+      ],
+      "Did you know?": [
+        "Biliyor muydunuz?"
       ],
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
