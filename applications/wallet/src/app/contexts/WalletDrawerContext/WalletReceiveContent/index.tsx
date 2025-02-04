@@ -88,7 +88,8 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                             <div className="flex flex-row flex-nowrap items-center p-4">
                                 <div>
                                     <h4 className="text-lg text-bold flex gap-2 mb-2 items-center text-center justify-center">
-                                        {c('Wallet Receive').t`Bitcoin address`}{' '}
+                                        {c('Wallet Receive').t`Bitcoin address`}
+                                        {` #${bitcoinAddressIndex}`}
                                         <Info
                                             className="color-norm"
                                             title={c('Wallet Receive')
@@ -96,7 +97,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                                         />
                                     </h4>
                                     <span className="block text-break-all text-center text-no-decoration">
-                                        {bitcoinAddress} {`(#${bitcoinAddressIndex})`}
+                                        {bitcoinAddress}
                                     </span>
                                 </div>
                             </div>
