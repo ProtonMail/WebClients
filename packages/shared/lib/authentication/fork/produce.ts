@@ -139,6 +139,7 @@ export interface ProduceForkParameters {
     payloadType: 'offline' | 'default';
     payloadVersion: 1 | 2;
     email?: string;
+    partnerId?: string;
 }
 
 export interface ProduceForkParametersFull extends ProduceForkParameters {
@@ -154,6 +155,7 @@ export const getProduceForkParameters = (
     const forkType = searchParams.get(ForkSearchParameters.ForkType) || '';
     const prompt = searchParams.get(ForkSearchParameters.Prompt) || '';
     const plan = searchParams.get(ForkSearchParameters.Plan) || '';
+    const partnerId = searchParams.get(ForkSearchParameters.PartnerId) || '';
     const forkVersion = Number(searchParams.get(ForkSearchParameters.Version) || '1');
     const independent = searchParams.get(ForkSearchParameters.Independent) || '0';
     const payloadType = (() => {
@@ -192,6 +194,7 @@ export const getProduceForkParameters = (
         payloadVersion,
         email,
         forkVersion,
+        partnerId,
     };
 };
 

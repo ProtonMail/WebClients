@@ -75,6 +75,15 @@ const getDefaultUsername = (searchParams?: URLSearchParams) => {
 
 const defaultRender = isElectronPass ? defaultElectronPassLoginRender : defaultLoginRender;
 
+export interface LoginContainerState {
+    username?: string;
+    authType?: AuthType;
+    externalSSO?: {
+        token?: string;
+        flow?: ExternalSSOFlow;
+    };
+}
+
 const LoginContainer = ({
     initialSearchParams,
     metaTags,
@@ -95,17 +104,7 @@ const LoginContainer = ({
     onPreSubmit,
     onStartAuth,
 }: Props) => {
-    const { state } = useLocation<
-        | {
-              username?: string;
-              authType?: AuthType;
-              externalSSO?: {
-                  token?: string;
-                  flow?: ExternalSSOFlow;
-              };
-          }
-        | undefined
-    >();
+    const { state } = useLocation<LoginContainerState | undefined>();
     const { APP_NAME } = useConfig();
     const [authType, setAuthType] = useState<AuthType>(state?.authType || AuthType.SRP);
     const { isElectronDisabled } = useIsInboxElectronApp();
