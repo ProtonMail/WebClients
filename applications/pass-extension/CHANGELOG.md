@@ -1,3 +1,7 @@
+### Version 1.29.1
+
+- Fix address validator for organization members
+
 ### Version 1.29.0
 
 - Add support for item sharing
