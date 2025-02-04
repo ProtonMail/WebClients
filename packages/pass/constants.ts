@@ -87,6 +87,10 @@ export enum UpsellRef {
     PASS_FAMILY_FREE_399 = 'pass_family_free_399',
     PASS_FAMILY_PLUS_399 = 'pass_family_plus_399',
     PASS_FAMILY_1LT_299 = 'pass_family_1lt_299',
+    VD_25_PASS_FREE_WEB = 'vd_25_pass_free_web',
+    VD_25_PASS_PLUS_WEB = 'vd_25_pass_plus_web',
+    VD_25_PASS_FREE_EXTENSION = 'vd_25_pass_free_extension',
+    VD_25_PASS_PLUS_EXTENSION = 'vd_25_pass_plus_extension',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
@@ -109,6 +113,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebOfflineMode]: false,
     [PassFeature.PassInAppMessages]: false,
+    [PassFeature.PassValentinePromo2025]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
@@ -117,3 +122,11 @@ export const RUNTIME_RELOAD_TIMEOUT = 2_000; /* ms */
 export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 
 export const PASS_DEFAULT_THEME = PassThemeOption.PassDark;
+
+export const PASS_PLUS_VALENTINES_DAY_MONTHLY_PRICE = 249;
+export const PASS_PLUS_VALENTINES_DAY_MONTHLY_PRICE_WITHOUT_COUPON = 499;
+
+export const PROTON_UNLIMITED_VALENTINES_DAY_MONTHLY_PRICE = 649;
+export const PROTON_UNLIMITED_VALENTINES_DAY_MONTHLY_PRICE_WITHOUT_COUPON = 1299;
+
+export const PASS_VALENTINES_DAY_END_DATE = new Date('2025-02-17T12:00:00+01:00').getTime();
