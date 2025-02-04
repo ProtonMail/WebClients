@@ -37,7 +37,7 @@
         "Reconectar"
       ],
       "Remove forward": [
-        "Borrar el reenvío"
+        "Eliminar el reenvío"
       ],
       "You will stop the mail forwarding.": [
         "Detendrás el reenvío de correos."
@@ -884,34 +884,34 @@
         "Recargar"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove all members": [
-        "Borrar todos los miembros"
+        "Eliminar todos los miembros"
       ],
       "Remove all other devices": [
-        "Borrar todas las demás sesiones"
+        "Eliminar todos los demás dispositivos"
       ],
       "Remove bonuses": [
-        "Borrar los beneficios"
+        "Eliminar los beneficios"
       ],
       "Remove calendar": [
-        "Borrar el calendario"
+        "Eliminar el calendario"
       ],
       "Remove domain": [
-        "Borrar el dominio"
+        "Eliminar el dominio"
       ],
       "Remove gift code": [
-        "Borrar el código de regalo"
+        "Eliminar el código de regalo"
       ],
       "Remove this label": [
-        "Borrar esta etiqueta"
+        "Eliminar esta etiqueta"
       ],
       "Remove this member": [
-        "Borrar este miembro"
+        "Eliminar este miembro"
       ],
       "Remove this notification": [
-        "Borrar esta notificación"
+        "Eliminar esta notificación"
       ],
       "Rename": [
         "Renombrar"
@@ -1507,7 +1507,7 @@
         "Bandeja de entrada de ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "5 rastreadores borrados"
+        "5 rastreadores eliminados"
       ],
       "Auto forwarded": [
         "Reenvío automático"
@@ -2080,7 +2080,7 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Puedes modificar o borrar permisos en cualquier momento."
+        "Puedes modificar o eliminar permisos en cualquier momento."
       ]
     },
     "Calendar permissions label": {
@@ -2095,7 +2095,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Crea un enlace a tu calendario y compártelo con cualquier persona fuera de ${ BRAND_NAME }. Solo tú puedes añadir o borrar eventos."
+        "Crea un enlace a tu calendario y compártelo con cualquier persona fuera de ${ BRAND_NAME }. Solo tú puedes añadir o eliminar eventos."
       ]
     },
     "Calendar settings private share description": {
@@ -2524,7 +2524,7 @@
         "¿Salir de la importación?"
       ],
       "Remove from the list?": [
-        "¿Borrar de la lista?"
+        "¿Eliminar de la lista?"
       ],
       "Undo this import?": [
         "¿Deshacer esta importación?"
@@ -3693,7 +3693,7 @@
         "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Para borrar el pie de página de ${ MAIL_APP_NAME }, mejora y desbloquea aún más funciones premium."
+        "Para eliminar el pie de página de ${ MAIL_APP_NAME }, mejora y desbloquea aún más funciones premium."
       ],
       "Track the status and activity of your referrals.": [
         "Sigue el estado y la actividad de tus referidos."
@@ -3948,6 +3948,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
       ]
     },
     "Email": {
@@ -4008,7 +4011,7 @@
     },
     "Email body for invitation (event details part)": {
       "Removed": [
-        "Borrado"
+        "Eliminado"
       ]
     },
     "Email body for invitation (location part)": {
@@ -4163,7 +4166,7 @@
         "Reenviar el correo electrónico de confirmación"
       ],
       "Remove “${ value }”": [
-        "Borrar «${ value }»"
+        "Eliminar «${ value }»"
       ],
       "Request confirmation": [
         "Solicitar una confirmación"
@@ -4489,6 +4492,9 @@
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
+      ],
       "Email address disabled": [
         "Dirección de correo electrónico desactivada"
       ],
@@ -4762,8 +4768,8 @@
         "Proceso anulado"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Destinatario duplicado borrado: ${ joinedRecipients }",
-        "Destinatarios duplicados borrados: ${ joinedRecipients }"
+        "Destinatario duplicado eliminado: ${ joinedRecipients }",
+        "Destinatarios duplicados eliminados: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -5635,7 +5641,7 @@
         "Servidores VPN más rápidos"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
@@ -5692,7 +5698,7 @@
         "Llave de seguridad"
       ],
       "Security key removed": [
-        "Se ha borrardo la clave de seguridad."
+        "Se ha eliminado la clave de seguridad."
       ],
       "Security key updated": [
         "Llave de seguridad actualizada"
@@ -7134,13 +7140,13 @@
         "¿Estás seguro de que quieres eliminar permanentemente todos tus registros?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "¿Estás seguro de que quieres borrar los privilegios administrativos de este usuario?"
+        "¿Estás seguro de que quieres eliminar los privilegios administrativos de este usuario?"
       ],
       "Are you sure you want to remove all members from this group?": [
-        "¿Estás seguro de que quieres borrar a todos los miembros de este grupo?"
+        "¿Estás seguro de que quieres eliminar a todos los miembros de este grupo?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "¿Estás seguro de que quieres borrar el dominio ${ boldDomain }?"
+        "¿Estás seguro de que quieres eliminar el dominio ${ boldDomain }?"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Pregunta al administrador de la organización para configurar puertas de enlace."
@@ -7382,11 +7388,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -7802,7 +7808,7 @@
         "URL de la imagen"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Las imágenes se han quitado porque no están permitidas en la respuesta automática."
+        "Las imágenes se han eliminado porque no están permitidas en la respuesta automática."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -7821,7 +7827,7 @@
         "Importa tus correos, calendarios y contactos desde otro proveedor a ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
-        "IMPORTANTE: Si tu panel de DNS no permite que los valores CNAME terminen con un punto, puedes eliminar el último punto de los valores CNAME."
+        "IMPORTANTE: Si el panel de DNS no permite que los valores CNAME terminen con un punto, puedes eliminar el último punto de los valores CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de dos factores."
@@ -8479,7 +8485,7 @@
         "Elimina los metadatos de las imágenes para proteger tu privacidad."
       ],
       "Remove one of your calendars to join this one": [
-        "Borra uno de tus calendarios para unirte a este."
+        "Elimina uno de tus calendarios para unirte a este."
       ],
       "Report link expired": [
         "Notificar el enlace expirado"
@@ -8738,7 +8744,7 @@
         "La herramienta de exportación de ${ MAIL_APP_NAME } te permite exportar correos descifrados de tu cuenta de ${ MAIL_APP_NAME } a tu dispositivo. Luego podrás ver los mensajes o importarlos a otra cuenta de correo o cliente de correo electrónico."
       ],
       "The calendar will be removed from your account.": [
-        "El calendario se eliminará de tu cuenta."
+        "El calendario se eliminará de la cuenta."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "La dark web es una parte de internet oculta donde información robada, como identidades, pueden ser compradas y vendidas."
@@ -8867,7 +8873,7 @@
         "Este usuario es actualmente responsable de los pagos de tu organización. Al darlo de baja, serás el responsable de los pagos de tu organización."
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Esta verificación puede tomar hasta una hora. Después de la verificación, no borra el registro TXT, ya que se necesita para confirmar que continúas siendo el propietario del dominio."
+        "Esta verificación puede tomar hasta una hora. Después de la verificación, no elimines el registro TXT, ya que se necesita para confirmar que continúas siendo el propietario del dominio."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Esto eliminará todas las versiones anteriores de tus archivos anteriores a ${ rententionLabel }."
@@ -8903,7 +8909,7 @@
         "Esto rechazará el dispositivo **${ name }** que ha intentado iniciar sesión en tu cuenta ${ BRAND_NAME } el **${ date }**."
       ],
       "This will remove any enabled 2FA methods.": [
-        "Esto borrará cualquier método 2FA activado."
+        "Esto eliminará cualquier método 2FA activado."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Esto eliminará el SSO de ${ boldDomainName }."
@@ -9399,12 +9405,12 @@
         "Puedes importar un tipo de datos a la vez."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tu calendario antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido el calendario antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción."
       ],
       "You can now access and manage the account as an administrator.": [
         "Ahora puedes acceder y gestionar la cuenta como administrador."
@@ -9482,7 +9488,7 @@
         "Debes activar la clave privada de tu organización con la copia de seguridad suministrada por el administrador de la organización."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debes desactivar o borrar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
+        "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta PayPal para añadirla como método de pago."
@@ -10929,7 +10935,7 @@
         "Frase de recuperación"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove image metadata": [
         "Eliminar los metadatos de la imagen"
@@ -11339,10 +11345,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para añadir un calendario, borra uno existente."
+        "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario, borra otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -13729,13 +13735,13 @@
         "${ upgradeLink } para añadir más usuarios, o elimina algunas cuentas de usuario para liberar espacio."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } para añadir más usuarios, o desactiva el acceso VPN de otros usuarios."
+        "${ upgradeLink } para añadir más usuarios, o elimina el acceso VPN de otros usuarios."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
         "${ upgradeLink } para conseguir más direcciones, o elimina algunas direcciones para liberar espacio."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } para conseguir más almacenamiento, o borra contenido para liberar espacio."
+        "${ upgradeLink } para conseguir más almacenamiento o elimina contenido para liberar espacio."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Tu plan incluye un máximo de ${ availableAddresses } dirección adicional.",
@@ -13913,6 +13919,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Continuar con tu cuenta de ${ BRAND_NAME }"
+      ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "Incluyendo un descuento de ${ discountPercent }% en Porkbun"
       ],
       "Let's talk": [
         "Habla con nosotros"
@@ -14714,7 +14723,7 @@
         "No has aún verificado la dirección de correo electrónico."
       ],
       "Email removed": [
-        "Correo electrónico borrado"
+        "Correo electrónico eliminado"
       ],
       "sign in": [
         "iniciar sesión"
@@ -14735,7 +14744,7 @@
         "Verificar tu dirección de correo electrónico aumenta la seguridad de tu cuenta y permite opciones adicionales para la recuperación."
       ],
       "Your recovery email has been successfully removed.": [
-        "Tu correo electrónico de recuperación se ha eliminado con éxito."
+        "Se ha eliminado el correo electrónico de recuperación."
       ]
     },
     "Recovery method": {
@@ -14788,7 +14797,7 @@
         "Si abandonas este calendario, deberás preguntarle al propietario para unirte de nuevo."
       ],
       "This calendar will be removed from your account.": [
-        "Este calendario se eliminará de tu cuenta."
+        "Este calendario se eliminará de la cuenta."
       ]
     },
     "Remove calendar section title": {
@@ -14799,7 +14808,7 @@
         "¿Abandonar el calendario?"
       ],
       "Remove calendar": [
-        "Borrar el calendario"
+        "Eliminar el calendario"
       ],
       "Unsubscribe?": [
         "¿Cancelar la suscripción?"
@@ -14930,7 +14939,7 @@
       "Recovery phone number": [
         "Número de teléfono de recuperación"
       ],
-      "Review your account safety": [
+      "Review account safety": [
         "Comprueba la seguridad de la cuenta"
       ],
       "Safeguard account now": [
@@ -16160,7 +16169,7 @@
         "Gestión de dispositivos"
       ],
       "Do you want to remove all other devices than the current one?": [
-        "¿Quieres revocar todas las demás sesiones y mantener la actual?"
+        "¿Quieres eliminar todas las demás sesiones y mantener la actual?"
       ],
       "Enter the confirmation code we sent on your other device.": [
         "Ingrese el código de confirmación que te enviamos a tu otro dispositivo."
@@ -16223,16 +16232,16 @@
         "Rechazar"
       ],
       "Remove": [
-        "Quitar"
+        "Eliminar"
       ],
       "Remove all other devices": [
-        "Revocar todas las demás sesiones"
+        "Eliminar todos los demás dispositivos"
       ],
       "Remove single sign-on": [
-        "Quitar el inicio de sesión único"
+        "Eliminar el inicio de sesión único"
       ],
       "Remove single sign-on for your organization?": [
-        "¿Quitar el inicio de sesión único de la organización?"
+        "¿Eliminar el inicio de sesión único de la organización?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Establezca una contraseña de respaldo para agregar una capa adicional de protección. Te permitirá iniciar sesión si se bloquea tu cuenta, así que asegúrese de guardarla en un lugar seguro."
@@ -17016,7 +17025,7 @@
         "Información del calendario actualizada"
       ],
       "Calendar removed": [
-        "Se ha borrado el calendario."
+        "Se ha eliminado el calendario."
       ],
       "Calendar updated": [
         "Calendario actualizado"
@@ -17225,7 +17234,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } borrado"
+        "${ label.Name } eliminado"
       ],
       "Address deleted": [
         "Dirección eliminada"
@@ -17249,7 +17258,7 @@
         "Creando archivo de configuración para ${ serverName }"
       ],
       "Filter removed": [
-        "Se ha borrado el filtro."
+        "Se ha eliminado el filtro."
       ],
       "Group end-to-end email encryption disabled": [
         "El cifrado de extremo a extremo de los correos electrónicos de grupo está desactivado."
@@ -18363,25 +18372,25 @@
         "¿Rechazar el dispositivo?"
       ],
       "Remove all members?": [
-        "¿Borrar todos los miembros?"
+        "¿Eliminar todos los miembros?"
       ],
       "Remove calendar": [
-        "Borrar el calendario"
+        "Eliminar el calendario"
       ],
       "Remove device?": [
-        "¿Borrar el dispositivo?"
+        "¿Eliminar el dispositivo?"
       ],
       "Remove domain": [
-        "Borrar el dominio"
+        "Eliminar el dominio"
       ],
       "Remove server?": [
-        "¿Borrar el servidor?"
+        "¿Eliminar el servidor?"
       ],
       "Remove single sign-on": [
         "Borrar el inicio de sesión único"
       ],
       "Remove user?": [
-        "¿Borrar el usuario?"
+        "¿Eliminar el usuario?"
       ],
       "Rename the gateway": [
         "Cambiar el nombre de la puerta de enlace"
@@ -19601,7 +19610,7 @@
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "Como usuario invitado, regístrate para obtener una cuenta gratuita de ${ BRAND_NAME } y consigue acceso exclusivo a ${ appName }"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"
       ],
       "Create ${ BRAND_NAME } Account now": [
@@ -19775,7 +19784,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Después de la verificación, no borres este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
+        "Después de la verificación, no elimines este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
       ]
     },
     "Weak personal key warning": {
