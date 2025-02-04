@@ -4,8 +4,10 @@ import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
+import type { SsoAppInfo } from './ssoAppInfo';
 
 export interface IdentityProviderEndpointsContentProps {
+    ssoAppInfo: SsoAppInfo;
     issuerID: string;
     callbackURL: string;
 }
@@ -17,13 +19,17 @@ const getDescriptionString = (appName: string) => {
         .t`When enabling SAML for ${appName} in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.`;
 };
 
-const IdentityProviderEndpointsContent = ({ issuerID, callbackURL }: IdentityProviderEndpointsContentProps) => {
+const IdentityProviderEndpointsContent = ({
+    ssoAppInfo,
+    issuerID,
+    callbackURL,
+}: IdentityProviderEndpointsContentProps) => {
     return (
         <div className="flex flex-column gap-4">
             <div>
                 {getDescriptionString(BRAND_NAME)}
                 <br />
-                <Href href="https://protonvpn.com/support/sso">{c('Info').t`Learn more`}</Href>
+                <Href href={ssoAppInfo.kbUrl}>{c('Info').t`Learn more`}</Href>
             </div>
             <ReadonlyFieldWithCopy
                 label={c('Label').t`Assertion Consumer Service URL`}
