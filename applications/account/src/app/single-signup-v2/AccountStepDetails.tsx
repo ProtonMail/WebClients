@@ -31,6 +31,9 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePublicTheme } from '../containers/PublicThemeProvider';
+import PasswordStrengthIndicatorSpotlight, {
+    usePasswordStrengthIndicatorSpotlight,
+} from '../signup/PasswordStrengthIndicatorSpotlight';
 import challengeIconsSvg from '../signup/challenge-icons.source.svg';
 import { getThemeData } from '../signup/challenge-theme';
 import type { AccountData } from '../signup/interfaces';
@@ -245,6 +248,7 @@ const AccountStepDetails = ({
     const domainOptions = domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
     const [maybeDomain, setDomain] = useState('');
     const theme = usePublicTheme();
+    const passwordStrengthIndicatorSpotlight = usePasswordStrengthIndicatorSpotlight();
 
     const safeDomain = domains?.includes(maybeDomain) ? maybeDomain : '';
     const domain = safeDomain || domains?.[0];
@@ -263,7 +267,11 @@ const AccountStepDetails = ({
     const emailRef = useRef<HTMLInputElement>(null);
     const usernameRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
+    const passwordContainerRef = useRef<HTMLDivElement>(null);
     const passwordConfirmRef = useRef<HTMLInputElement>(null);
+
+    const showConfirmPasswordLabel =
+        passwordStrengthIndicatorSpotlight.supported && !passwordStrengthIndicatorSpotlight.spotlight;
 
     const setInputsStateDiff = useCallback((diff: Partial<AccountDetailsInputState>) => {
         setStates((old) => {
@@ -855,32 +863,50 @@ const AccountStepDetails = ({
 
                     {passwordFields && (
                         <>
-                            <InputFieldTwo
-                                ref={passwordRef}
-                                id="password"
-                                as={PasswordInputTwo}
-                                assistiveText={states.password.focus && getMinPasswordLengthMessage()}
-                                label={c('Signup label').t`Password`}
-                                error={passwordError}
-                                dense={!passwordError}
-                                rootClassName={clsx(hasSwitchSignupType ? 'mt-4' : 'mt-2', !passwordError && 'pb-2')}
-                                disableChange={disableChange}
-                                value={details.password}
-                                autoComplete="new-password"
-                                onValue={(value: string) => {
-                                    setInputsDiff({ password: value });
-                                    setInputsStateDiff({ password: { interactive: true } });
-                                }}
-                                onBlur={() => {
-                                    setInputsStateDiff({ password: { focus: true } });
-                                }}
-                            />
+                            <PasswordStrengthIndicatorSpotlight
+                                wrapper={passwordStrengthIndicatorSpotlight}
+                                password={details.password}
+                                anchorRef={passwordContainerRef}
+                            >
+                                <InputFieldTwo
+                                    ref={passwordRef}
+                                    containerRef={passwordContainerRef}
+                                    id="password"
+                                    as={PasswordInputTwo}
+                                    assistiveText={
+                                        !passwordStrengthIndicatorSpotlight.supported &&
+                                        states.password.focus &&
+                                        getMinPasswordLengthMessage()
+                                    }
+                                    label={c('Signup label').t`Password`}
+                                    error={passwordError}
+                                    dense={!passwordError}
+                                    rootClassName={clsx(
+                                        hasSwitchSignupType ? 'mt-4' : 'mt-2',
+                                        !passwordError && 'pb-2'
+                                    )}
+                                    disableChange={disableChange}
+                                    value={details.password}
+                                    autoComplete="new-password"
+                                    onValue={(value: string) => {
+                                        setInputsDiff({ password: value });
+                                        setInputsStateDiff({ password: { interactive: true } });
+                                    }}
+                                    onBlur={() => {
+                                        setInputsStateDiff({ password: { focus: true } });
+                                        passwordStrengthIndicatorSpotlight.onInputBlur();
+                                    }}
+                                    onFocus={passwordStrengthIndicatorSpotlight.onInputFocus}
+                                />
+                            </PasswordStrengthIndicatorSpotlight>
+
                             {states.password.interactive && (
                                 <InputFieldTwo
                                     ref={passwordConfirmRef}
                                     id="password-confirm"
                                     as={PasswordInputTwo}
                                     placeholder={c('Signup label').t`Confirm password`}
+                                    label={showConfirmPasswordLabel && c('Signup label').t`Confirm password`}
                                     error={passwordConfirmError}
                                     dense={!passwordConfirmError}
                                     rootClassName={clsx(passwordError && 'pt-2')}
