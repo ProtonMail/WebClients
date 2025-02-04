@@ -76,10 +76,7 @@ export const finalizeLogin = async ({
         };
     }
 
-    let [user, addresses] = await Promise.all([
-        cache.data.user || syncUser(cache),
-        cache.data.addresses || syncAddresses(cache),
-    ]);
+    let user = cache.data.user || (await syncUser(cache));
 
     const validatedSession = attemptResume ? await maybeResumeSessionByUser({ api, User: user }) : null;
     if (validatedSession) {
@@ -92,6 +89,7 @@ export const finalizeLogin = async ({
 
     let trusted = false;
     if (keyPassword) {
+        let addresses = await (cache.data.addresses || syncAddresses(cache));
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
             api,
             user,
