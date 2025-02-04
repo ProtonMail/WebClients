@@ -1777,7 +1777,7 @@
         "單次收費 ${ amount }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "首月免費，之後每月續訂 ${ regularAmount }。"
+        "1個月之後續訂 ${ regularAmount }。"
       ]
     },
     "BF2024: Tooltip": {
@@ -2664,6 +2664,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3859,7 +3862,7 @@
         "時間：${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "時間：${ formattedStart }（全天）"
+        "時間：${ formattedStart }(全天)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
         "時間：${ formattedStart } - ${ formattedEnd }"
@@ -5263,6 +5266,9 @@
       ],
       "Storage unlocked": [
         "儲存鎖定"
+      ],
+      "Tasks to complete count": [
+        "需要完成的任務數"
       ],
       "This feature is currently unavailable": [
         "此功能暫未開放"
@@ -7310,7 +7316,7 @@
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "關閉「搜尋郵件內容」後，僅搜尋日期、名稱、電子郵件地址或主旨。若要停用郵件內容搜尋功能（以及刪除已為了此功能而下載的郵件內容），請至設定。"
+        "關閉「搜尋郵件內容」後，僅搜尋日期、名稱、電子郵件地址或主旨。若要停用郵件內容搜尋功能(以及刪除已為了此功能而下載的郵件內容)，請至設定。"
       ],
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
@@ -9621,7 +9627,7 @@
         "資料夾、標籤和篩選器無上限"
       ],
       "Unlimited hide-my-email aliases": [
-        "無限制的隱藏電子郵件別名"
+        "無限制的 hide-my-email別名"
       ],
       "Unlimited labels": [
         "無限制標籤"
@@ -10546,11 +10552,17 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ subscriptionLength } 個月。而後將以每 ${ subscriptionLengthCopy } 月 ${ renewPrice } 的價格自動續約。您可以在任何時候取消訂閱。"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "首月限定折扣價為${ priceWithDiscount }。優惠券可使用${ couponRedemptions }次，之後後將以 ${ renewPrice } 的價格自動續約 ${ subscriptionLength } 個月，您可以隨時取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "我們正在處理您已開立發票的付款。請在付款完成後，再更改您的計劃或更新您的付款詳情。感謝您的耐心等候。"
       ]
     },
     "Payments.Error": {
@@ -10579,6 +10591,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示從您的銀行帳戶中扣款，並授權您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
+      ],
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
       ]
@@ -10892,8 +10907,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "查看您的帳號安全"
+      "Review account safety": [
+        "查看帳號安全"
       ]
     },
     "Search - no results": {
@@ -11105,7 +11120,7 @@
         "密碼重設需要核准(${ user.Email })。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
+        "請前往已登入的裝置(在發起需求的工作階段中)變更您的密碼。"
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "此權限將在${ timeRemaining.inDays }天後過期"
@@ -11460,7 +11475,7 @@
         "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+        "2年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }(${ discount }% 折扣)續訂"
       ],
       "Save ${ discount }%": [
         "省下 ${ discount }%"
@@ -11547,6 +11562,9 @@
     "sso": {
       "Sign in": [
         "登入"
+      ],
+      "Sign in to your organization": [
+        "登入您的組織"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "您將被重新導向至您的第三方單一登入提供者。"
@@ -11760,47 +11778,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -12011,6 +11988,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -13296,6 +13314,11 @@
         "今天"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
@@ -13377,11 +13400,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ]
     },
     "Tor out of date": {
@@ -13470,8 +13488,8 @@
       "A safer way to hold your Bitcoin": [
         "更安全的方法持有Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin透過電子郵件"
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
       ]
     },
     "wallet_signup_2024:Action": {

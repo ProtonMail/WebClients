@@ -4218,6 +4218,9 @@
       "Please select a country": [
         "Vælg venligst et land"
       ],
+      "Please select a state": [
+        "Vælg venligst en region"
+      ],
       "Please try again or refresh the page.": [
         "Prøv venligst igen eller opdater siden."
       ],
@@ -6153,6 +6156,12 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Vidste du godt det? Vi har forbeholdt en kortere e-mailadresse kun til dig. Det er dit brugernavn efterfulgt af \"@${ PM_DOMAIN }\"."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Oplev nye funktioner, der er låst op med ${ planTitle }, og begynd at bruge dem med det samme!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -6257,8 +6266,14 @@
         "indlejret billede",
         "indlejrede billeder"
       ],
+      "Enabling auto-deletion…": [
+        "Aktivering af automatisk sletning…"
+      ],
       "Encrypt message": [
         "Krypter besked"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Få en hurtigere og mere fokuseret e-mailoplevelse med desktop-appen."
       ],
       "Enter the code from your authenticator app": [
         "Indtast koden fra din godkendelsesapp"
@@ -6656,6 +6671,9 @@
       ],
       "Open shortcut cheat sheet": [
         "Åbn snydeark med genveje"
+      ],
+      "or discover other features:": [
+        "eller opdag andre funktioner:"
       ],
       "Organization size": [
         "Organisationsstørrelse"
@@ -7632,8 +7650,11 @@
       "Your private writing assistant": [
         "Din private skriveassistent"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
       ]
     },
     "info": {
@@ -10681,11 +10702,6 @@
         "Genkryptering af invitation mislykkedes. Prøv igen."
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Gennemgå din kontos sikkerhed"
-      ]
-    },
     "Search - no results": {
       "No messages found": [
         "Ingen beskeder fundet"
@@ -11565,47 +11581,6 @@
         "Til ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -11852,6 +11827,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -13135,6 +13151,11 @@
         "I dag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivesessionen benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelse."
@@ -13213,11 +13234,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
     },
     "Tor out of date": {
@@ -13309,9 +13325,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "En sikrere måde at gemme dine Bitcoin på"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:Action": {

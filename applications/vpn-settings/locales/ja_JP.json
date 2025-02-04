@@ -2442,6 +2442,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "テキストフィールドは任意です。 このフォームに入力した情報は、将来発行された請求書にのみ表示され、既存の請求書には影響しません。"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "テキスト フィールドはオプションです。このフォームで入力した情報は、選択した請求書のみを変更し、将来の請求書の詳細は変更しません。"
       ]
     },
     "Email spam notification": {
@@ -2514,6 +2517,9 @@
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "現在、請求先住所の編集はご利用いただけません。しばらくしてからもう一度お試しください。"
+      ],
       "Email address is invalid": [
         "メールアドレスが無効です"
       ],
@@ -2527,7 +2533,7 @@
         "6 桁の数字を入力してください"
       ],
       "Error connecting to the Bitcoin API.": [
-        "ビットコインAPIへの接続中にエラーが発生しました。"
+        "Bitcoin APIへの接続中にエラーが発生しました。"
       ],
       "Failed to process the logo": [
         "ロゴの処理に失敗しました"
@@ -5500,10 +5506,10 @@
         "ブラウザのバージョン"
       ],
       "BTC address": [
-        "ビットコインアドレス"
+        "Bitcoin アドレス"
       ],
       "BTC amount": [
-        "ビットコイン金額"
+        "Bitcoin 金額"
       ],
       "Card details": [
         "カード詳細"
@@ -6084,7 +6090,7 @@
         "こちら"
       ],
       "How to pay with Bitcoin?": [
-        "ビットコインで支払うには？"
+        "Bitcoinで支払うには？"
       ],
       "Learn more": [
         "詳細"
@@ -7521,7 +7527,7 @@
         "無料"
       ],
       "Online document editor": [
-        "オンラインテキスト編集プログラム"
+        "オンライン文書エディタ"
       ],
       "Plus": [
         "Plus"
@@ -7971,6 +7977,11 @@
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "無料"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から 8 週間以内に返金を受けることができます。"
@@ -8230,7 +8241,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "アカウントの安全性を確認してください"
       ]
     },
@@ -8799,6 +8810,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "サブスクリプションは毎年同じ料金で更新されます。"
       ]
     },
     "specialoffer: Link": {
@@ -9347,47 +9361,6 @@
         "${ totalPrice } の場合"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -9670,6 +9643,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -10933,7 +10947,7 @@
         "銀行振込"
       ],
       "Bitcoin": [
-        "ビットコイン"
+        "Bitcoin"
       ],
       "Cash": [
         "現金"
@@ -11291,7 +11305,7 @@
       "A safer way to hold your Bitcoin": [
         "Bitcoin を保持する安全な方法"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "メールで Bitcoin"
       ]
     },

@@ -3190,6 +3190,9 @@
       "Please select a country": [
         "Vælg venligst et land"
       ],
+      "Please select a state": [
+        "Vælg venligst en region"
+      ],
       "Port is required": [
         "Port er påkrævet."
       ],
@@ -4531,6 +4534,12 @@
       "Discard changes?": [
         "Kassér ændringer?"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Oplev nye funktioner, der er låst op med ${ planTitle }, og begynd at bruge dem med det samme!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -4575,6 +4584,9 @@
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "E-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden, slettes automatisk."
+      ],
+      "Enabling auto-deletion…": [
+        "Aktivering af automatisk sletning…"
       ],
       "Enter the code from your authenticator app": [
         "Indtast koden fra din godkendelsesapp"
@@ -4805,6 +4817,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
+      ],
+      "or discover other features:": [
+        "eller opdag andre funktioner:"
       ],
       "Organization size": [
         "Organisationsstørrelse"
@@ -5321,8 +5336,11 @@
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszone ser ud til at være ændret til ${ timezone }. Vil du opdatere din tidszone præferencer?"
@@ -7931,11 +7949,6 @@
         "Genindlæs begivenhed"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Gennemgå din kontos sikkerhed"
-      ]
-    },
     "Security Center": {
       "All aliases": [
         "Alle aliasser"
@@ -10008,9 +10021,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "En sikrere måde at gemme dine Bitcoin på"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:Bug category": {

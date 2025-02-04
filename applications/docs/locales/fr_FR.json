@@ -4638,8 +4638,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Cette action supprimera définitivement le fichier importé."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Cette action supprimera définitivement le dossier que vous avez importé. Vous ne pouvez pas supprimer un dossier qui contient un fichier qui ne vous appartient pas."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Cette action supprimera le lien et révoquera l'accès de tous les utilisateurs."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Cette action supprimera définitivement les éléments sélectionnés."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
@@ -7152,6 +7161,9 @@
       "Stopping the sharing of this item has failed": [
         "L'arrêt du partage de cet élément n'a pas abouti."
       ],
+      "The document failed to be created": [
+        "Le document n'a pas été créé."
+      ],
       "The link to your item failed to be deleted": [
         "Le lien vers votre élément n'a pas pu être supprimé."
       ],
@@ -7638,7 +7650,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Vérifier la sécurité du compte"
       ]
     },
@@ -8762,6 +8774,9 @@
       "Day theme": [
         "Thème jour"
       ],
+      "Delete": [
+        "Supprimer"
+      ],
       "Delete ${ count } contact": [
         "Supprimer ${ count } contact",
         "Supprimer ${ count } contacts"
@@ -8769,6 +8784,12 @@
       "Delete ${ count } contact group": [
         "Supprimer ${ count } groupe de contacts",
         "Supprimer ${ count } groupes de contacts"
+      ],
+      "Delete ${ item.name }?": [
+        "Voulez-vous supprimer ${ item.name } ?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Voulez-vous supprimer ${ links.length } éléments ?"
       ],
       "Delete ${ value }": [
         "Supprimer ${ value } "
@@ -9291,8 +9312,8 @@
       "A safer way to hold your Bitcoin": [
         "Une manière plus sûre de détenir votre Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin par e-mail"
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:app-switcher": {

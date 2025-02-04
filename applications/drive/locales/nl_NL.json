@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Map samenvouwen"
       ],
+      "Collapse navigation bar": [
+        "Navigatiebalk inklappen"
+      ],
       "Compose": [
         "Opstellen"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Negeren"
+      ],
+      "Display navigation bar": [
+        "Navigatiebalk weergeven"
       ],
       "Done": [
         "Klaar"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Geavanceerde PGP-instellingen tonen"
       ],
+      "Show navigation bar": [
+        "Navigatiebalk tonen"
+      ],
       "Show preview": [
         "Voorbeeld tonen"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Bestand uploaden"
       ],
+      "Upload files": [
+        "Bestanden opladen"
+      ],
       "Upload folder": [
         "Map uploaden"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Opladen"
       ]
     },
     "Actions message": {
@@ -4417,23 +4434,8 @@
       "Download ${ name } app": [
         "Download ${ name }-app"
       ],
-      "Download canceled": [
-        "Download geannuleerd"
-      ],
-      "Download failed": [
-        "Downloaden mislukt"
-      ],
-      "Download failed due to ${ error }": [
-        "Downloaden mislukt vanwege ${ error }"
-      ],
-      "Download finished": [
-        "Downloaden voltooid"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download van ${ downloadFileName } zal afgebroken worden"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Downloaden gepauseerd vanwege verbindingsproblemen; het hervat automatisch"
       ],
       "Download was canceled": [
         "Download is geannuleerd"
@@ -4452,6 +4454,9 @@
       ],
       "Drop files here": [
         "Drop bestanden hier"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Sleep bestanden hierheen om op te laden of klik op de oplaad knop"
       ],
       "Drop to import": [
         "Neerzetten om te importeren"
@@ -4582,6 +4587,9 @@
       ],
       "from the version history?": [
         "van de versie geschiedenis?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Download de app om foto's van je telefoon te back-uppen of laad hier op."
       ],
       "Get the app to backup photos from your phone.": [
         "Download de app om foto's van uw telefoon te back-uppen."
@@ -4789,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Moet u een bestand delen? Kies dan voor ${ DRIVE_APP_NAME }, de veiligste manier om uw bestanden te delen, op te slaan en te synchroniseren."
-      ],
       "Network issue": [
         "Netwerk probleem"
       ],
@@ -4830,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Opmerking: gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
-      ],
-      "Nothing here yet": [
-        "Nog niets om te weergeven"
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
@@ -8622,8 +8624,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Controleer de veiligheid van uw account"
+      "Review account safety": [
+        "Accountveiligheid controleren"
       ]
     },
     "saml: Error": {
@@ -10726,7 +10728,7 @@
       "A safer way to hold your Bitcoin": [
         "Een veiligere manier om uw Bitcoin vast te houden"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ]
     },

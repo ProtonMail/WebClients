@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Ordner einklappen"
       ],
+      "Collapse navigation bar": [
+        "Navigationsleiste einklappen"
+      ],
       "Compose": [
         "Verfassen"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Verwerfen"
+      ],
+      "Display navigation bar": [
+        "Navigationsleiste anzeigen"
       ],
       "Done": [
         "Fertig"
@@ -767,6 +773,9 @@
       ],
       "Show advanced PGP settings": [
         "Erweiterte PGP-Einstellungen anzeigen"
+      ],
+      "Show navigation bar": [
+        "Navigationsleiste anzeigen"
       ],
       "Show preview": [
         "Vorschau anzeigen"
@@ -1538,6 +1547,9 @@
       ],
       "Work": [
         "Arbeit"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2433,6 +2445,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
+      ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Upgrade auf ${ BRAND_NAME } ${ planName }, um weiterhin Dateien mit Bearbeitungszugriff zu teilen"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Upgrade dein Konto und aktiviere ${ PROTON_SENTINEL_NAME }, unsere hochmoderne KI-gesteuerte Sicherheitslösung mit dediziertem 24/7-Experten-Support."
@@ -3614,6 +3629,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-Mail"
       ],
@@ -3622,6 +3640,9 @@
       ],
       "No verification method available": [
         "Keine Verifizierungsmethode verfügbar"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3989,6 +4010,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } Kontakt",
         "${ contactsLength } Kontakte"
+      ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME }-Dateien können nicht direkt heruntergeladen werden und werden nicht in diesem Download beinhaltet. Du kannst die anderen Dateien herunterladen, indem du „Herunterladen fortsetzten“ drückst."
       ],
       "${ doneCount } finished": [
         "${ doneCount } beendet",
@@ -4378,23 +4402,8 @@
       "Download ${ name } app": [
         "${ name } herunterladen"
       ],
-      "Download canceled": [
-        "Download abgebrochen"
-      ],
-      "Download failed": [
-        "Download fehlgeschlagen"
-      ],
-      "Download failed due to ${ error }": [
-        "Download ist aufgrund von ${ error } fehlgeschlagen"
-      ],
-      "Download finished": [
-        "Download abgeschlossen"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Der Download von ${ downloadFileName } wird abgebrochen"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Download wurde aufgrund eines Verbindungsproblems angehalten; er wird automatisch fortgesetzt"
       ],
       "Download was canceled": [
         "Download wurde abgebrochen"
@@ -4744,9 +4753,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Du möchtest eine Datei teilen? Dann hol dir ${ DRIVE_APP_NAME },\ndie sicherste Art, um deine Dateien zu teilen, speichern und synchronisieren."
-      ],
       "Network issue": [
         "Netzwerkproblem"
       ],
@@ -4785,9 +4791,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Hinweis: Auf Geräten, auf denen ${ DRIVE_APP_NAME } installiert ist, sind die Daten möglicherweise weiterhin lokal verfügbar."
-      ],
-      "Nothing here yet": [
-        "Hier gibt es noch nichts"
       ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
@@ -5046,6 +5049,9 @@
       "Share via link settings": [
         "Einstellungen für das Teilen via Link"
       ],
+      "Shared by ${ rootLink.signatureEmail }": [
+        "Geteilt von ${ rootLink.signatureEmail }"
+      ],
       "Shared link not found": [
         "Geteilten Link nicht gefunden"
       ],
@@ -5102,6 +5108,12 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Das Konto hat möglicherweise einen neuen Schlüssel, oder die folgenden Daten wurden manipuliert: ${ items }. Öffne sie nur, wenn du sie für vertrauenswürdig hältst."
+      ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Die digitale Signatur wurde teilweise verifiziert. Diese Datei wurde durch einen öffentlich zugänglichen Teilen-Link von einem Nutzer ohne ${ BRAND_NAME }-Konto hochgeladen, weshalb seine Identität nicht verifiziert werden kann."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Die digitale Signatur wurde teilweise verifiziert. Dieser Ordner wurde durch einen öffentlich zugänglichen Teilen-Link von einem Nutzer ohne ${ BRAND_NAME }-Konto hochgeladen, weshalb seine Identität nicht verifiziert werden kann."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Die Anzahl der Downloads umfasst sowohl die tatsächlichen Downloads als auch die Fälle, in denen Dateien in der Vorschau angezeigt werden."
@@ -5195,6 +5207,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Um ${ DOCS_APP_NAME }-Dateien herunterladen zu können, öffne sie in ${ DOCS_APP_NAME } und exportiere sie."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indexieren."
@@ -5533,6 +5548,9 @@
       "Your email address was exposed:": [
         "Ihre E-Mail-Adresse wurde offengelegt:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Deine E-Mail-Adresse wird auf der Teilen-Seite als Besitzer des Links angezeigt."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
@@ -5697,6 +5715,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Jeder mit dem Link kann bearbeiten"
       ],
       "Anyone on the Internet with the link can view": [
         "Für jeden im Internet mit diesem Link sichtbar"
@@ -6780,6 +6801,9 @@
       ],
       "Get started for ${ priceCoupon }": [
         "Leg los für ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements ab ${ priceDrivePlus }"
       ],
       "Starting from ${ pricing }": [
         "Ab ${ pricing }"
@@ -7915,6 +7939,9 @@
       "Share invitation declined": [
         "Einladung zur gemeinsamen Nutzung abgelehnt"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Das Beenden der Freigabe dieses Eintrags ist fehlgeschlagen"
+      ],
       "Subfolder failed to be loaded": [
         "Unterordner konnte nicht geladen werden"
       ],
@@ -8569,8 +8596,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Überprüfe deine Kontosicherheit"
+      "Review account safety": [
+        "Überprüfung der Kontosicherheit"
       ]
     },
     "saml: Error": {
@@ -10052,6 +10079,9 @@
       "Download unverified folder?": [
         "Ungeprüften Ordner herunterladen?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "Datei zum Hochladen in dieses Feld ziehen"
       ],
@@ -10194,6 +10224,9 @@
       ],
       "Need more aliases?": [
         "Brauchst du mehr Aliasse?"
+      ],
+      "Need to share more files with edit access?": [
+        "Musst du mehr Dateien mit Bearbeitungszugang teilen?"
       ],
       "Network error": [
         "Netzwerkfehler"
@@ -10660,9 +10693,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via E-Mail"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -598,6 +598,9 @@
       "Get more servers": [
         "Атрымаць больш сервераў"
       ],
+      "Get the app": [
+        "Спампаваць праграму"
+      ],
       "Get the deal": [
         "Скарыстацца прапановай"
       ],
@@ -666,6 +669,9 @@
       ],
       "Invite": [
         "Запрасіць"
+      ],
+      "Invite members": [
+        "Запрасіць удзельнікаў"
       ],
       "Invite user": [
         "Запрасіць карыстальніка"
@@ -1143,6 +1149,9 @@
       ],
       "Switch or add account": [
         "Змяніць або дадаць уліковы запіс"
+      ],
+      "Take a tour": [
+        "Пачаць знаёмства"
       ],
       "Test": [
         "Тэст"
@@ -2582,6 +2591,9 @@
       ],
       "Work": [
         "Працоўны"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -4667,6 +4679,12 @@
       ],
       "Please generate keys before you try to change your password": [
         "Згенерыруйце ключы перад тым, як паспрабаваць змяніць пароль"
+      ],
+      "Please select a country": [
+        "Выберыце краіну"
+      ],
+      "Please select a state": [
+        "Калі ласка, выберыце рэгіён"
       ],
       "Please set a recovery email first": [
         "Спачатку задайце электронную пошту для аднаўлення доступу"
@@ -6946,6 +6964,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Актывуйце прынамсі адзін спосаб аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
+      "Active": [
+        "Актыўна"
+      ],
       "active": [
         "актыўна"
       ],
@@ -7396,11 +7417,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -8464,6 +8485,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Registering your subscription…": [
+        "Рэгістрацыя вашай падпіскі…"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
       ],
@@ -8571,6 +8595,9 @@
       ],
       "Setting successfully saved": [
         "Налады паспяхова захаваны"
+      ],
+      "Setting up your new address…": [
+        "Наладжванне вашага новага адраса…"
       ],
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
@@ -9357,6 +9384,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы таксама можаце аб'яднаць імпартаваныя календары з існуючымі календарамі ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можаце змяніць свой выбар у любы час у ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можаце праверыць ход выканання ${ importProgressLink }."
@@ -14908,9 +14938,6 @@
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
       ],
-      "Review your account safety": [
-        "Агляд бяспекі вашага ўліковага запісу"
-      ],
       "Safeguard account now": [
         "Абараніць уліковы запіс"
       ],
@@ -19551,6 +19578,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
@@ -19664,9 +19697,6 @@
       ],
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "Вы з'яўляецеся запрошаным карыстальнікам. Зарэгіструйце бясплатны ўліковы запіс ${ BRAND_NAME } для эксклюзіўнага доступу да ${ appName }"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin праз электронную пошту"
       ],
       "Create ${ BRAND_NAME } Account now": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"

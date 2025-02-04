@@ -4573,8 +4573,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Tindakan ini akan menghapus berkas yang Anda unggah secara permanen."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Tindakan ini akan menghapus folder yang Anda unggah secara permanen. Anda tidak dapat menghapus folder yang berisi berkas yang tidak dimiliki."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Tindakan ini akan menghapus tautan yang bersangkutan dan mencabut akses bagi seluruh pengguna."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Tindakan ini akan menghapus item yang dipilih secara permanen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
@@ -7036,6 +7045,9 @@
       "Stopping the sharing of this item has failed": [
         "Pembagian item gagal dihentikan"
       ],
+      "The document failed to be created": [
+        "Dokumen ini gagal dibuat"
+      ],
       "The link to your item failed to be deleted": [
         "Tautan ke item Anda gagal dihapus"
       ],
@@ -7516,8 +7528,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Tinjau keamanan akun Anda"
+      "Review account safety": [
+        "Tinjau keamanan akun"
       ]
     },
     "saml: Error": {
@@ -8604,11 +8616,20 @@
       "Day theme": [
         "Tema siang"
       ],
+      "Delete": [
+        "Hapus"
+      ],
       "Delete ${ count } contact": [
         "Hapus ${ count } kontak"
       ],
       "Delete ${ count } contact group": [
         "Hapus ${ count } grup kontak"
+      ],
+      "Delete ${ item.name }?": [
+        "Hapus ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Hapus ${ links.length } item?"
       ],
       "Delete ${ value }": [
         "Hapus ${ value }"
@@ -9118,8 +9139,8 @@
       "A safer way to hold your Bitcoin": [
         "Cara yang lebih aman untuk menyimpan Bitcoin Anda"
       ],
-      "Bitcoin via email": [
-        "Bitcoin via email"
+      "Bitcoin via Email": [
+        "Bitcoin via Email"
       ]
     },
     "wallet_signup_2024:app-switcher": {

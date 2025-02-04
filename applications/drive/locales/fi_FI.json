@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Pienennä kansio"
       ],
+      "Collapse navigation bar": [
+        "Supista navigointipalkki"
+      ],
       "Compose": [
         "Kirjoita"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Sulje"
+      ],
+      "Display navigation bar": [
+        "Näytä navigointipalkki"
       ],
       "Done": [
         "Valmis"
@@ -767,6 +773,9 @@
       ],
       "Show advanced PGP settings": [
         "Näytä PGP-lisäasetukset"
+      ],
+      "Show navigation bar": [
+        "Näytä navigointipalkki"
       ],
       "Show preview": [
         "Näytä esikatselu"
@@ -4370,23 +4379,8 @@
       "Download ${ name } app": [
         "Lataa ${ name }-sovellus"
       ],
-      "Download canceled": [
-        "Lataus peruttiin"
-      ],
-      "Download failed": [
-        "Lataus epäonnistui"
-      ],
-      "Download failed due to ${ error }": [
-        "Lataus epäonnistui, koska ${ error }"
-      ],
-      "Download finished": [
-        "Lataus on valmis"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Tiedoston ${ downloadFileName } lataus perutaan"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Lataus pysähtyi yhteysongelman vuoksi, mutta jatkuu automaattisesti"
       ],
       "Download was canceled": [
         "Lataus peruttiin"
@@ -4736,9 +4730,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Haluatko jakaa tiedoston? Hanki ${ DRIVE_APP_NAME }, joka on turvallisin tapa tiedostojen jakoon, säilytykseen ja synkronointiin."
-      ],
       "Network issue": [
         "Yhteysongelma"
       ],
@@ -4777,9 +4768,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Huomioi: Tiedot saattavat edelleen löytyä paikallisesti niiltä laitteilta, joille ${ DRIVE_APP_NAME } on asennettu."
-      ],
-      "Nothing here yet": [
-        "Täällä ei ole vielä mitään"
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
@@ -8502,11 +8490,6 @@
         "Virallinen viesti ${ BRAND_NAME }ilta"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Tarkista tilisi turvallisuus"
-      ]
-    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Sisäänkirjautumista ei suoritettu loppuun."
@@ -10581,9 +10564,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Turvallisempi tapa säilyttää Bitcoineja"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin sähköpostitse"
       ]
     },
     "wallet_signup_2024:Bug category": {

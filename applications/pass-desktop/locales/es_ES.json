@@ -43,6 +43,9 @@
       "Add custom domain": [
         "Añadir un dominio personalizado"
       ],
+      "Add domain": [
+        "Añadir dominio"
+      ],
       "Add mailbox": [
         "Añadir un buzón"
       ],
@@ -452,19 +455,19 @@
         "Recargar"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove access": [
-        "Borrar el acceso"
+        "Eliminar el acceso"
       ],
       "Remove all expired links (${ inactiveLinkCount })": [
-        "Borrar todos los enlaces expirados (${ inactiveLinkCount })"
+        "Eliminar todos los enlaces expirados (${ inactiveLinkCount })"
       ],
       "Remove link": [
-        "Borrar el enlace"
+        "Eliminar el enlace"
       ],
       "Remove member": [
-        "Borrar el miembro"
+        "Eliminar el miembro"
       ],
       "Request a feature": [
         "Solicitar una función"
@@ -543,6 +546,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Show advanced options": [
+        "Mostrar las opciones avanzadas"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sesión con ${ BRAND_NAME }"
@@ -960,7 +966,7 @@
         "No se ha podido anclar el elemento."
       ],
       "Failed to remove user's access.": [
-        "Error al borrar el acceso del usuario"
+        "Error al eliminar el acceso del usuario"
       ],
       "Failed to resend verification code": [
         "Error al reenviar el código de verificación"
@@ -1182,7 +1188,7 @@
         "El DNS no está configurado correctamente. El registro TXT obtenido es:"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "Tu código PIN ha sido eliminado por otro cliente de ${ PASS_APP_NAME }"
+        "Se ha eliminado el código PIN desde otro cliente de ${ PASS_APP_NAME }."
       ]
     },
     "Error message": {
@@ -1406,7 +1412,7 @@
         "Todas las vulneraciones actuales serán marcadas como resueltas. Se te notificará en caso de futuras vulneraciones de datos."
       ],
       "All inactive secure links were removed": [
-        "Todos los enlaces seguros inactivos han sido borrados."
+        "Se han eliminado todos los enlaces seguros inactivos."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" han sido movidos."
@@ -1421,13 +1427,13 @@
         "Todos los elementos de la papelera han sido restaurados."
       ],
       "An item previously shared with you was removed": [
-        "Se ha borrado un elemento previamente compartido contigo."
+        "Se ha eliminado un elemento previamente compartido contigo."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "¿Estás seguro de que deseas eliminar ${ emailJSX } de tus buzones de correo?"
       ],
       "Are you sure you want to remove the link?": [
-        "¿Estás seguro de que quieres borrar el enlace?"
+        "¿Estás seguro de que quieres eliminar el enlace?"
       ],
       "Auto-created aliases are automatically owned by the following mailbox(es):": [
         "Los alias creados automáticamente son propiedad de los siguientes buzones de correo:"
@@ -1458,6 +1464,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
+      ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Al agregar tu dominio, puedes crear alias como hola@mi-dominio.es."
       ],
       "Can be viewed": [
         "Leer"
@@ -1612,6 +1621,9 @@
       "Enter your PIN code": [
         "Introduce tu código PIN"
       ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Cada vez que tu alias reciba un correo de alguien, se creará automáticamente un contacto."
+      ],
       "Expires in": [
         "Expira en"
       ],
@@ -1622,7 +1634,7 @@
         "Se ha creado la contraseña adicional."
       ],
       "Extra password successfully removed": [
-        "Se ha borrado la contraseña adicional."
+        "Se ha eliminado la contraseña adicional."
       ],
       "Fill in the CSV with your data": [
         "Rellenar el CSV con tus datos"
@@ -1703,7 +1715,7 @@
         "Invita a personas específicas y establece los permisos correctos."
       ],
       "Invite successfully removed": [
-        "La invitación ha sido borrada."
+        "Se ha eliminado la invitación."
       ],
       "Invite successfully resent": [
         "La invitación ha sido enviada."
@@ -2034,6 +2046,9 @@
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
       ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "Comparte aliases con otros añadiendo su bandeja de entrada como buzón adicional."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "Comparte tus inicios de sesión y notas con hasta 10 personas"
       ],
@@ -2073,6 +2088,9 @@
       "Syncing your vaults…": [
         "Sincronizando tus cajas fuertes…"
       ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Pulsa el ícono ${ gearIcon } para personalizar el alias como desees."
+      ],
       "Thank you, the problem has been reported": [
         "Gracias por notificar el problema."
       ],
@@ -2099,7 +2117,7 @@
         "Los siguientes ${ result.ignored.length } elementos no pudieron importarse:"
       ],
       "The secure link has been removed": [
-        "El enlace seguro ha sido eliminado."
+        "Se ha eliminado el enlace seguro."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El texto que intentas pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
@@ -2207,7 +2225,7 @@
         "Se ha actualizado la caja fuerte \"${ payload.share.content.name }\"."
       ],
       "Vault \"${ share.content.name }\" was removed": [
-        "La caja fuerte \"${ share.content.name }\" ha sido borrada."
+        "Se ha eliminado la caja fuerte «${ share.content.name }»."
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Cajas fuertes compartidas: ${ vaultMembersCount } miembro",
@@ -2978,7 +2996,7 @@
         "Nombre de usuario de Reddit"
       ],
       "Remove link": [
-        "Borrar el enlace"
+        "Eliminar el enlace"
       ],
       "Report a problem": [
         "Notificar un problema"
@@ -3673,6 +3691,9 @@
       "Details": [
         "Detalles"
       ],
+      "Did you know?": [
+        "¿Lo sabías?"
+      ],
       "Discard changes?": [
         "¿Descartar los cambios?"
       ],
@@ -3823,7 +3844,7 @@
         "Acceso pendiente a los datos compartidos"
       ],
       "Permanently remove all items?": [
-        "¿Borrar todos los elementos permanentemente?"
+        "¿Eliminar todos los elementos permanentemente?"
       ],
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
@@ -3842,13 +3863,13 @@
         "¿Rechazar el dispositivo?"
       ],
       "Remove email address?": [
-        "¿Borrar la dirección de correo electrónico?"
+        "¿Eliminar la dirección de correo electrónico?"
       ],
       "Remove extra password": [
         "Borrar la contraseña adicional"
       ],
       "Remove secure link?": [
-        "¿Borrar el enlace seguro?"
+        "¿Eliminar el enlace seguro?"
       ],
       "Resolved breaches": [
         "Vulneraciones resueltas"
