@@ -144,7 +144,8 @@ describe('WalletReceiveContent', () => {
         });
 
         it('should display QRCode containing `paymentLink`', () => {
-            expect(screen.getByText(`${bitcoinURI.toString()} (#0)`));
+            expect(screen.getByText(`Bitcoin address #0`));
+            expect(screen.getByText(`${bitcoinURI.toString()}`));
         });
 
         it('should enable actions', () => {
@@ -193,7 +194,8 @@ describe('WalletReceiveContent', () => {
         });
 
         it('should display QRCode containing `paymentLink`', () => {
-            expect(screen.getByText(`${bitcoinURI.toString()} (#0)`));
+            expect(screen.getByText(`Bitcoin address #0`));
+            expect(screen.getByText(`${bitcoinURI.toString()}`));
         });
 
         it('should disable actions', () => {
@@ -226,7 +228,8 @@ describe('WalletReceiveContent', () => {
         });
 
         it('should display QRCode containing `paymentLink`', () => {
-            expect(screen.getByText(`${bitcoinURI.toString()} (#0)`));
+            expect(screen.getByText(`Bitcoin address #0`));
+            expect(screen.getByText(`${bitcoinURI.toString()}`));
         });
     });
 });
