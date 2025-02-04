@@ -1414,6 +1414,9 @@
       "Built in 2FA authenticator": [
         "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Προσθέτοντας τον τομέα σας, μπορείτε να δημιουργήσετε ψευδώνυμα όπως hi@my-domain.com."
+      ],
       "Can be viewed": [
         "Μπορεί να προβληθεί"
       ],
@@ -1584,6 +1587,9 @@
       ],
       "Enter your PIN code": [
         "Εισαγωγή κωδικού ΡΙΝ"
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Κάθε φορά που το ψευδώνυμό σας λαμβάνει ένα μήνυμα ηλεκτρονικού ταχυδρομείου από κάποιον, μια νέα επαφή δημιουργείται αυτόματα."
       ],
       "Expires in": [
         "Λήγει σε"
@@ -1992,6 +1998,9 @@
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
       ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "Μοιραστείτε ψευδώνυμα με άλλους προσθέτοντας τα εισερχόμενά τους ως πρόσθετο γραμματοκιβώτιο."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "Μοιραστείτε στοιχεία σύνδεσης και ασφαλείς σημειώσεις, με έως και 10 άτομα"
       ],
@@ -2030,6 +2039,9 @@
       ],
       "Syncing your vaults…": [
         "Συγχρονισμός των κρυπτών σας..."
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Πατήστε το εικονίδιο ${ gearIcon } για να προσαρμόσετε το ψευδώνυμο με τον τρόπο που θέλετε."
       ],
       "Thank you, the problem has been reported": [
         "Σας ευχαριστώ, το πρόβλημα έχει αναφερθεί"
@@ -3486,6 +3498,9 @@
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Διαγραφή κρύπτης \"${ vaultName }\";"
+      ],
+      "Did you know?": [
+        "Γνωρίζατε;"
       ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
