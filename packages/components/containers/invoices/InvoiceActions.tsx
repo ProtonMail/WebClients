@@ -5,7 +5,7 @@ import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { INVOICE_STATE, type Invoice } from '@proton/payments';
+import { INVOICE_STATE, type Invoice, isRegularInvoice } from '@proton/payments';
 import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -76,7 +76,8 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
             loading: downloadLoading,
         },
         editInvoiceDetails &&
-            !!invoice.IsExternal && {
+            !!invoice.IsExternal &&
+            isRegularInvoice(invoice) && {
                 text: c('Action').t`Edit billing address`,
                 'data-testid': 'editBillingAddress',
                 onClick: () => withEditLoading(onEdit(invoice)),
