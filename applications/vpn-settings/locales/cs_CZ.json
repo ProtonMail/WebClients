@@ -2472,6 +2472,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, změní pouze vybranou fakturu, nikoli budoucí fakturační údaje."
       ]
     },
     "Email spam notification": {
@@ -2543,6 +2546,9 @@
       ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturační adresy není v tuto chvíli k dispozici. Zkuste to prosím později."
       ],
       "Email address is invalid": [
         "E-mailová adresa je neplatná"
@@ -8559,8 +8565,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Zkontrolujte bezpečnost svého účtu"
+      "Review account safety": [
+        "Zkontrolujte bezpečnost účtu"
       ]
     },
     "saml: Action": {
@@ -9805,47 +9811,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -10146,6 +10111,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -11847,7 +11853,7 @@
       "A safer way to hold your Bitcoin": [
         "Bezpečnější způsob jak vlastnit Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin přes e-mail"
       ]
     },

@@ -3367,6 +3367,11 @@
         "Foarte mic"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Confidențialitate implicită."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Aveți deja un cont? ${ signIn }"
@@ -3530,6 +3535,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3538,6 +3546,9 @@
       ],
       "No verification method available": [
         "Nu sunt metode de verificare disponibile"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -7699,8 +7710,14 @@
       "Free": [
         "Gratuit"
       ],
+      "Online document editor": [
+        "Editor online de documente"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierului"
       ],
       "Storage": [
         "Spațiu de stocare"
@@ -8177,6 +8194,11 @@
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul, iar banca să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
@@ -8435,11 +8457,6 @@
       ],
       "User": [
         "Utilizator"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Revizuire securitate cont"
       ]
     },
     "saml: Action": {
@@ -9045,7 +9062,7 @@
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "Abonamentul dumneavoastră se va reînnoi la același tarif în fiecare an."
+        "Abonamentul vi se va reînnoi la același tarif în fiecare an."
       ]
     },
     "specialoffer: Link": {
@@ -9642,47 +9659,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -9977,6 +9953,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -11316,6 +11333,9 @@
       "Keep request": [
         "Păstrare solicitare"
       ],
+      "Member activation incomplete": [
+        "Activarea membrului nu este completă"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "După ce utilizatorul își dă acordul, îl veți putea ajuta să recâștige accesul la cont sau să-și gestioneze datele."
       ],
@@ -11523,8 +11543,13 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vi se va emite factura la fiecare 12 luni cu ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Noul abonament vi se va reînnoi automat peste ${ cycle } lună.",
+        "Noul abonament vi se va reînnoi automat peste ${ cycle } luni.",
+        "Noul abonament vi se va reînnoi automat peste ${ cycle } de luni."
+      ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Planul tău programat începe pe ${ renewalTime }."
+        "Planul programat începe ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Abonamentul vi se va reînnoi automat peste ${ cycle } lună.",
@@ -11650,9 +11675,11 @@
       ],
       "A safer way to hold your Bitcoin": [
         "O metodă mai sigură de a vă păstra monedele Bitcoin"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin prin e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Un mod mai sigur de a deține bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
