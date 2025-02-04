@@ -1,8 +1,7 @@
 import React from 'react';
 
 import Radio from '@proton/components/components/input/Radio';
-import illustrationDeselected from '@proton/styles/assets/img/shared-servers/Illustration.svg';
-import illustrationSelected from '@proton/styles/assets/img/shared-servers/illustration-selected.png';
+import { illustrations, isValidLabel } from '@proton/components/containers/vpn/sharedServers/illustrations';
 import clsx from '@proton/utils/clsx';
 
 type SharedServersTypeButtonProps = {
@@ -49,7 +48,16 @@ const SharedServersTypeButton: React.FC<SharedServersTypeButtonProps> = ({
 
             {/* Bottom Section: Illustration */}
             <div className="bg-white rounded-lg flex items-center w-32 h-32 justify-center self-end">
-                <img src={isSelected ? illustrationSelected : illustrationDeselected} alt="" />
+                <img
+                    src={
+                        isValidLabel(label)
+                            ? isSelected
+                                ? illustrations[label].selected
+                                : illustrations[label].deselected
+                            : '#'
+                    }
+                    alt=""
+                />
             </div>
         </button>
     );
