@@ -7,6 +7,7 @@ import type { Domain } from '@proton/shared/lib/interfaces';
 
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
+import type { SsoAppInfo } from './ssoAppInfo';
 
 interface ReadOnlyInputFieldProps {
     label: string;
@@ -28,9 +29,10 @@ const ReadOnlyInputField: FC<ReadOnlyInputFieldProps> = ({ label, value }: ReadO
 interface Props {
     domain: Domain;
     includeTimeInformation?: boolean;
+    ssoAppInfo: SsoAppInfo;
 }
 
-const TXTSection = ({ domain, includeTimeInformation }: Props) => {
+const TXTSection = ({ domain, includeTimeInformation, ssoAppInfo }: Props) => {
     const domainName = domain.DomainName;
 
     return (
@@ -41,7 +43,7 @@ const TXTSection = ({ domain, includeTimeInformation }: Props) => {
                         .t`To allow the domain **${domainName}** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.`
                 )}
             </div>
-            <Href href="https://protonvpn.com/support/sso">{c('Link').t`Learn more`}</Href>
+            <Href href={ssoAppInfo.kbUrl}>{c('Link').t`Learn more`}</Href>
 
             <h3 className="text-semibold text-rg mt-4 mb-1">{c('Info').t`DNS TXT record`}</h3>
             <div className="rounded border border-weak flex flex-column gap-2 p-4">

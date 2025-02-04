@@ -29,6 +29,7 @@ import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-i
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import IdentityProviderEndpointsContent from './IdentityProviderEndpointsContent';
 import UploadedXmlFile from './UploadedXmlFile';
+import type { SsoAppInfo } from './ssoAppInfo';
 
 enum STEP {
     IDP_VALUES,
@@ -70,6 +71,7 @@ const defaultMetadataState: MetadataState = {
 };
 
 interface Props extends ModalProps, IdentityProviderEndpointsContentProps {
+    ssoAppInfo: SsoAppInfo;
     domain: Domain;
     onClose: () => void;
 }
@@ -92,7 +94,7 @@ const getFileLabelString = (appName: string) => {
     return c('Label').t`Metadata file for ${appName}`;
 };
 
-const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }: Props) => {
+const ConfigureSamlModal = ({ ssoAppInfo, domain, onClose, issuerID, callbackURL, ...rest }: Props) => {
     const [step, setStep] = useState(STEP.IDP_VALUES);
 
     const { createNotification } = useNotifications();
@@ -126,7 +128,13 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
             return {
                 onSubmit: () => setStep(STEP.SAML_METADATA),
                 title: c('Title').t`Enter endpoints into your identity provider`,
-                content: <IdentityProviderEndpointsContent issuerID={issuerID} callbackURL={callbackURL} />,
+                content: (
+                    <IdentityProviderEndpointsContent
+                        ssoAppInfo={ssoAppInfo}
+                        issuerID={issuerID}
+                        callbackURL={callbackURL}
+                    />
+                ),
                 footer: (
                     <>
                         <div />
@@ -286,7 +294,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
                         <div className="mb-4">
                             {getDescriptionString(BRAND_NAME)}
                             <br />
-                            <Href href="https://protonvpn.com/support/sso">{c('Link').t`Learn more`}</Href>
+                            <Href href={ssoAppInfo.kbUrl}>{c('Link').t`Learn more`}</Href>
                         </div>
                         <div className="text-semibold mb-1">{c('Label').t`Method for importing metadata`}</div>
                         <RadioGroup
