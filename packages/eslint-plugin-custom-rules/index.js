@@ -6,5 +6,6 @@ module.exports = {
         'deprecate-classes': require('./deprecate-classes'),
         'no-template-in-translator-context': require('./no-template-in-translator-context'),
         'validate-ttag': require('./validate-ttag'),
+        'date-formatting-locale': require('./date-formatting-locale'),
     },
 };
