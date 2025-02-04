@@ -3948,6 +3948,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet vil bare vises på fakturaer som utstedes i fremtiden og vil ikke påvirke eksisterende fakturaer."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet, vil bare endre fakturaen du har valgt, og ikke dine fremtidige fakturadetaljer."
       ]
     },
     "Email": {
@@ -4488,6 +4491,9 @@
       ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Redigering av faktureringsadresse er ikke tilgjengelig for øyeblikket. Prøv igjen senere."
       ],
       "Email address disabled": [
         "E-postadresse deaktivert"
@@ -7379,11 +7385,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerte tjenere"
-      ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "dedicated servers": [
+        "dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -13938,6 +13944,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Fortsett med din ${ BRAND_NAME }-konto"
       ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "Inkluderer ${ discountPercent } % Porkbun-rabatt"
+      ],
       "Let's talk": [
         "La oss snakke"
       ],
@@ -14954,8 +14963,8 @@
       "Recovery phone number": [
         "Gjenopprettingstelefonnummer"
       ],
-      "Review your account safety": [
-        "Gjennomgå kontosikkerheten din"
+      "Review account safety": [
+        "Gjennomgå kontosikkerhet"
       ],
       "Safeguard account now": [
         "Beskytt konto nå"
@@ -19642,7 +19651,7 @@
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "Som en invitert bruker kan du melde deg på for en gratis ${ BRAND_NAME }-konto med eksklusiv tilgang til ${ appName }"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-post"
       ],
       "Create ${ BRAND_NAME } Account now": [
