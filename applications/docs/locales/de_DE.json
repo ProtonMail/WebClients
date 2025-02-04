@@ -1327,6 +1327,9 @@
       ],
       "Work": [
         "Arbeit"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2214,6 +2217,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
+      ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
+        "Upgrade auf ${ BRAND_NAME } ${ planName }, um öffentliche Dateifreigabe mit Bearbeitungszugriff zu ermöglichen. Arbeite weiterhin nahtlos und sicher zusammen."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Upgrade dein Konto und aktiviere ${ PROTON_SENTINEL_NAME }, unsere hochmoderne KI-gesteuerte Sicherheitslösung mit dediziertem 24/7-Experten-Support."
@@ -3352,6 +3358,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-Mail"
       ],
@@ -3360,6 +3369,9 @@
       ],
       "No verification method available": [
         "Keine Verifizierungsmethode verfügbar"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3718,6 +3730,9 @@
         "${ contactsLength } Kontakt",
         "${ contactsLength } Kontakte"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME }-Dateien können nicht direkt heruntergeladen werden und werden nicht in diesem Download beinhaltet. Du kannst die anderen Dateien herunterladen, indem du „Herunterladen fortsetzten“ drückst."
+      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } lässt dich in Echtzeit mit Ende-zu-Ende-Verschlüsselung für absolute Privatsphäre zusammenarbeiten. Erstelle eine Kopie, um mit dem Bearbeiten zu beginnen, oder frage den Besitzer nach Bearbeitungszugriff."
       ],
@@ -3956,6 +3971,9 @@
       "Create public link": [
         "Öffentlichen Link erstellen"
       ],
+      "Create your end-to-end encrypted document": [
+        "Erstelle dein Ende-zu-Ende-verschlüsseltes Dokument"
+      ],
       "Creating link to file": [
         "Link zur Datei wird erstellt"
       ],
@@ -4129,6 +4147,9 @@
       ],
       "Free 5GB encrypted storage to get started": [
         "Kostenlose 5 GB verschlüsselter Speicherplatz für den Anfang"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Erhalte E-Mail-Updates für Kommentare und Vorschläge, die zu deinen Dokumenten hinzugefügt wurden."
       ],
       "Get Notified About Comments": [
         "Über Kommentare benachrichtigt werden"
@@ -4446,6 +4467,9 @@
       "Primary": [
         "Primär"
       ],
+      "Public documents are not yet enabled for your organization.": [
+        "Öffentliche Dokumente sind für deine Organisation noch nicht aktiviert."
+      ],
       "recommended browser": [
         "empfohlenen Browsers"
       ],
@@ -4560,6 +4584,12 @@
       "The Beginning": [
         "Der Anfang"
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Die digitale Signatur wurde teilweise verifiziert. Diese Datei wurde durch einen öffentlich zugänglichen Teilen-Link von einem Nutzer ohne ${ BRAND_NAME }-Konto hochgeladen, weshalb seine Identität nicht verifiziert werden kann."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Die digitale Signatur wurde teilweise verifiziert. Dieser Ordner wurde durch einen öffentlich zugänglichen Teilen-Link von einem Nutzer ohne ${ BRAND_NAME }-Konto hochgeladen, weshalb seine Identität nicht verifiziert werden kann."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Die offengelegten Informationen wurden von einem Service eines Drittanbieters preisgegeben. Deine ${ BRAND_NAME } Kontoinformationen bleiben sicher und verschlüsselt. ${ learnMoreLink }"
       ],
@@ -4572,14 +4602,29 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Mit dieser Aktion wird die hochgeladene Datei endgültig gelöscht."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Mit dieser Aktion wird der von dir hochgeladene Ordner endgültig gelöscht. Du kannst einen Ordner, der keine eigene Datei enthält, nicht löschen."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Diese Aktion löscht den Link und der Zugang für alle Benutzer wird widerrufen."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Mit dieser Aktion werden die ausgewählten Einträge endgültig gelöscht."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Für dieses Dokument findet viel Aktivität statt. Einige Funktionen sind möglicherweise vorübergehend nicht verfügbar."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "Möglicherweise existiert dieses Dokument nicht, oder du hast keine Berechtigung, es anzuzeigen. Du kannst versuchen, die Seite neu zu laden, um zu sehen, ob das Problem weiterhin besteht, oder dich an den Besitzer wenden, um Zugang zu erhalten."
+      ],
+      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Möglicherweise existiert dieses Dokument nicht, oder du hast keine Berechtigung, es anzuzeigen. Probiere es mit einem anderen Konto oder kontaktiere den Besitzer, um Zugang zu erhalten."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Das ist nun deine ${ defaultEmailAddress } für das Senden von Nachrichten."
@@ -4616,6 +4661,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Um ${ DOCS_APP_NAME }-Dateien herunterladen zu können, öffne sie in ${ DOCS_APP_NAME } und exportiere sie."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
@@ -4883,6 +4931,9 @@
       "Your email address was exposed:": [
         "Ihre E-Mail-Adresse wurde offengelegt:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Deine E-Mail-Adresse wird auf der Teilen-Seite als Besitzer des Links angezeigt."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
@@ -5018,6 +5069,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Jeder mit dem Link kann bearbeiten"
       ],
       "Anyone on the Internet with the link can view": [
         "Für jeden im Internet mit diesem Link sichtbar"
@@ -5945,6 +5999,9 @@
       ],
       "Get started for ${ priceCoupon }": [
         "Leg los für ${ priceCoupon }"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Abonnements ab ${ priceDrivePlus }"
       ],
       "Starting from ${ pricing }": [
         "Ab ${ pricing }"
@@ -7044,6 +7101,12 @@
       "Share invitation declined": [
         "Einladung zur gemeinsamen Nutzung abgelehnt"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Das Beenden der Freigabe dieses Eintrags ist fehlgeschlagen"
+      ],
+      "The document failed to be created": [
+        "Fehler beim Erstellen des Dokuments."
+      ],
       "The link to your item failed to be deleted": [
         "Der Link zu deinem Element konnte nicht gelöscht werden"
       ],
@@ -7510,8 +7573,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Überprüfe deine Kontosicherheit"
+      "Review account safety": [
+        "Überprüfung der Kontosicherheit"
       ]
     },
     "saml: Error": {
@@ -7999,6 +8062,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Um dieses Dokument zu bearbeiten, erstelle eine Kopie, die du ändern kannst."
       ]
     },
     "sso": {
@@ -8628,6 +8694,9 @@
       "Day theme": [
         "Helles Design"
       ],
+      "Delete": [
+        "Löschen"
+      ],
       "Delete ${ count } contact": [
         "${ count } Kontakt löschen",
         "${ count } Kontakte löschen"
@@ -8635,6 +8704,12 @@
       "Delete ${ count } contact group": [
         "${ count } Kontaktgruppe löschen",
         "${ count } Kontaktgruppen löschen"
+      ],
+      "Delete ${ item.name }?": [
+        "${ item.name } löschen?"
+      ],
+      "Delete ${ links.length } items?": [
+        "${ links.length } Einträge löschen?"
       ],
       "Delete ${ value }": [
         "${ value } löschen"
@@ -8888,6 +8963,9 @@
       ],
       "Share ${ name }": [
         "${ name } teilen"
+      ],
+      "Share files with full edit access": [
+        "Teile Dateien mit vollem Bearbeitungszugriff"
       ],
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
@@ -9150,9 +9228,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin via E-Mail"
       ]
     },
     "wallet_signup_2024:Bug category": {

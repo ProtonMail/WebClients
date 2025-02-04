@@ -43,6 +43,9 @@
       "Add custom domain": [
         "Adicionar domínio personalizado"
       ],
+      "Add domain": [
+        "Adicionar domínio"
+      ],
       "Add mailbox": [
         "Adicionar caixa de correio"
       ],
@@ -534,6 +537,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Show advanced options": [
+        "Mostrar opções avançadas"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com ${ BRAND_NAME }"
@@ -1421,6 +1427,9 @@
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrado"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Adicionando o seu domínio, você pode criar aliases como olá@meu-domínio.br."
+      ],
       "Can be viewed": [
         "Pode ser visualizado"
       ],
@@ -1576,6 +1585,9 @@
       ],
       "Enter your PIN code": [
         "Digite seu código PIN"
+      ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Cada vez que seu alias receber um e-mail de alguém, um contato será criado automaticamente."
       ],
       "Expires in": [
         "Expira em"
@@ -1765,6 +1777,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -1992,6 +2008,9 @@
       "Settings successfully updated": [
         "Configurações atualizadas"
       ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "Compartilhe aliases com outros adicionando sua caixa de entrada como uma caixa de correio adicional."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "Compartilhe seus inícios de sessão e notas seguras, com até 10 pessoas"
       ],
@@ -2030,6 +2049,9 @@
       ],
       "Syncing your vaults…": [
         "Sincronizando seus cofres..."
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Toque no ícone ${ gearIcon } para personalizar o alias que deseja."
       ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
@@ -3526,6 +3548,9 @@
       ],
       "Details": [
         "Detalhes"
+      ],
+      "Did you know?": [
+        "Você sabia?"
       ],
       "Discard changes?": [
         "Descartar alterações?"

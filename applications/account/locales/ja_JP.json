@@ -2614,7 +2614,7 @@
         "勤務先"
       ],
       "Yomi": [
-        "ヨミカタ"
+        "ふりがな"
       ]
     },
     "Country name": {
@@ -3933,6 +3933,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "テキストフィールドは任意です。 このフォームに入力した情報は、将来発行された請求書にのみ表示され、既存の請求書には影響しません。"
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "テキスト フィールドはオプションです。このフォームで入力した情報は、選択した請求書のみを変更し、将来の請求書の詳細は変更しません。"
       ]
     },
     "Email": {
@@ -4472,6 +4475,9 @@
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "現在、請求先住所の編集はご利用いただけません。しばらくしてからもう一度お試しください。"
+      ],
       "Email address disabled": [
         "メールアドレスが無効です"
       ],
@@ -4494,7 +4500,7 @@
         "6 桁の数字を入力してください"
       ],
       "Error connecting to the Bitcoin API.": [
-        "ビットコインAPIへの接続中にエラーが発生しました。"
+        "Bitcoin APIへの接続中にエラーが発生しました。"
       ],
       "Error in one of the conditions": [
         "いずれかの条件にエラーがあります"
@@ -7307,10 +7313,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8542,6 +8548,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタムドメインアドレスの ${ MAIL_APP_NAME } を介してメールを送信できるようになります。 この機能は、カスタムドメインを持つ ${ BRAND_NAME } for business ユーザーのみが利用できます。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介してメールを送信できるようになります。 アクセスをリクエストするには、ユースケース、使用したいカスタム ドメイン、および予想される時間ごとおよび日ごとのメールの量を説明する ${ createTicket } を送信してください。"
@@ -10020,7 +10029,7 @@
         "15 分"
       ],
       "2 minutes": [
-        "2分"
+        "2 分"
       ],
       "30 minutes": [
         "30 分"
@@ -10029,7 +10038,7 @@
         "30 秒"
       ],
       "5 minutes": [
-        "5分"
+        "5 分"
       ],
       "Account holder": [
         "アカウント所有者"
@@ -10194,10 +10203,10 @@
         "ブラウザのバージョン"
       ],
       "BTC address": [
-        "ビットコインアドレス"
+        "Bitcoin アドレス"
       ],
       "BTC amount": [
-        "ビットコイン金額"
+        "Bitcoin 金額"
       ],
       "Calendar": [
         "カレンダー"
@@ -11313,7 +11322,7 @@
         "モニタリングの仕組みは？"
       ],
       "How to pay with Bitcoin?": [
-        "ビットコインで支払うには？"
+        "Bitcoinで支払うには？"
       ],
       "How to unlock data": [
         "データのロックを解除する方法"
@@ -13268,7 +13277,7 @@
         "無料"
       ],
       "Online document editor": [
-        "オンラインテキスト編集プログラム"
+        "オンライン文書エディタ"
       ],
       "Plus": [
         "Plus"
@@ -13705,7 +13714,7 @@
         "${ free } に進む"
       ],
       "Continue with Bitcoin": [
-        "ビットコインを続ける"
+        "Bitcoinを続ける"
       ],
       "create a new account": [
         "新しいアカウントを作成する"
@@ -13758,6 +13767,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントで続ける"
+      ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "${ discountPercent }%のポークバン割引"
       ],
       "Let's talk": [
         "話しましょう"
@@ -14292,6 +14304,11 @@
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "無料"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から 8 週間以内に返金を受けることができます。"
@@ -14766,7 +14783,7 @@
       "Recovery phone number": [
         "回復用電話番号"
       ],
-      "Review your account safety": [
+      "Review account safety": [
         "アカウントの安全性を確認してください"
       ],
       "Safeguard account now": [
@@ -15753,6 +15770,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "サブスクリプションは毎年同じ料金で更新されます。"
       ]
     },
     "specialoffer: Link": {
@@ -18916,7 +18936,7 @@
         "銀行振込"
       ],
       "Bitcoin": [
-        "ビットコイン"
+        "Bitcoin"
       ],
       "Cash": [
         "現金"
@@ -19355,7 +19375,7 @@
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "招待されたユーザーとして、無料で${ BRAND_NAME }アカウントにサインアップして、${ appName }への限定アクセスを獲得"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "メールで Bitcoin"
       ],
       "Create ${ BRAND_NAME } Account now": [

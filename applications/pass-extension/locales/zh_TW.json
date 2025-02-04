@@ -512,7 +512,7 @@
         "勾選的選項表示以被禁用的功能"
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "禁用 ${ PASS_SHORT_APP_NAME } 中自動功能（填入、建議、儲存）的網域清單。${ infoText }"
+        "禁用 ${ PASS_SHORT_APP_NAME } 中自動功能(填入、建議、儲存)的網域清單。${ infoText }"
       ]
     },
     "Error": {
@@ -1443,7 +1443,7 @@
         "雙重驗證一次性驗證碼金鑰(TOTP)"
       ],
       "2FA token (TOTP)": [
-        "雙重驗證憑證  (TOTP)"
+        "雙重驗證憑證(TOTP) "
       ],
       "30 days": [
         "30 天"
@@ -1878,7 +1878,7 @@
         "顯示網站圖示"
       ],
       "Social security number": [
-        "社會安全碼（SSN）"
+        "社會安全碼(SSN)"
       ],
       "Special characters (!&*)": [
         "特殊字元 (!&*)"
@@ -2097,6 +2097,11 @@
       ],
       "Write your note": [
         "新增備註"
+      ]
+    },
+    "sso": {
+      "Invalid confirmation code": [
+        "無效的驗證碼"
       ]
     },
     "Theme": {

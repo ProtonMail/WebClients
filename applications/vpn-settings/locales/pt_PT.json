@@ -2452,6 +2452,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Os campos de texto são opcionais. As informações fornecidas neste formulário só aparecerão nas faturas emitidas no futuro e não afetarão as faturas existentes."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Os campos de texto são opcionais. As informações fornecidas neste formulário só irão alterar a fatura que selecionou e não os detalhes da futura fatura."
       ]
     },
     "Email spam notification": {
@@ -2523,6 +2526,9 @@
       ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "A edição do endereço de faturação não está disponível no momento. Tente novamente mais tarde."
       ],
       "Email address is invalid": [
         "O endereço de email é inválido"
@@ -2660,7 +2666,7 @@
         "Selecione um país"
       ],
       "Please select a state": [
-        "Selecione um estado"
+        "Selecione um distrito"
       ],
       "Please set a recovery email first": [
         "Defina primeiro um e-mail de recuperação."
@@ -3344,6 +3350,11 @@
         "Muito pequeno"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Já tem uma conta? ${ signIn }"
@@ -3505,6 +3516,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3513,6 +3527,9 @@
       ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -7604,8 +7621,14 @@
       "Free": [
         "Gratuito"
       ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Recuperar as versões anteriores do ficheiro"
       ],
       "Storage": [
         "Armazenamento"
@@ -8064,6 +8087,11 @@
         "O seu cartão foi recusado. Tente com outro cartão ou contacte o seu banco para autorizar esta compra."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Ao confirmar este pagamento, autoriza o ${ BRAND_NAME } e a Stripe, o nosso provedor de serviços de pagamento, a instruir o seu banco a debitar a sua conta e o seu banco a proceder com o débito de acordo. Poderá receber um reembolso dentro de 8 semanas a partir da data de débito, de acordo com as condições do seu acordo com o seu banco."
@@ -8324,7 +8352,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Verifique a segurança da sua conta"
       ]
     },
@@ -9486,47 +9514,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -9815,6 +9802,47 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -11145,6 +11173,9 @@
       "Keep request": [
         "Manter o pedido"
       ],
+      "Member activation incomplete": [
+        "A ativação do membro é incompleta."
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Quando o utilizador consentir, poderá ajudá-los a recuperar o acesso à conta ou a gerir os seus dados."
       ],
@@ -11454,8 +11485,13 @@
       "A safer way to hold your Bitcoin": [
         "Uma maneira mais segura de conservar o seu Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Uma maneira mais segura de conservar bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

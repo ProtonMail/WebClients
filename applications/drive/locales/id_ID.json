@@ -171,6 +171,9 @@
       "Collapse folder": [
         "Ciutkan folder"
       ],
+      "Collapse navigation bar": [
+        "Ciutkan bilah navigasi"
+      ],
       "Compose": [
         "Tulis"
       ],
@@ -287,6 +290,9 @@
       ],
       "Dismiss": [
         "Abaikan"
+      ],
+      "Display navigation bar": [
+        "Tampilkan bilah navigasi"
       ],
       "Done": [
         "Selesai"
@@ -764,6 +770,9 @@
       ],
       "Show advanced PGP settings": [
         "Tampilkan pengaturan PGP lanjutan"
+      ],
+      "Show navigation bar": [
+        "Tampilkan bilah navigasi"
       ],
       "Show preview": [
         "Tampilkan pratinjau"
@@ -4345,23 +4354,8 @@
       "Download ${ name } app": [
         "Unduh aplikasi ${ name }"
       ],
-      "Download canceled": [
-        "Unduhan dibatalkan"
-      ],
-      "Download failed": [
-        "Unduhan gagal"
-      ],
-      "Download failed due to ${ error }": [
-        "Unduhan gagal akibat ${ error }"
-      ],
-      "Download finished": [
-        "Unduhan selesai"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Unduhan ${ downloadFileName } akan dibatalkan"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Unduhan dijeda karena masalah koneksi; unduhan akan berlanjut secara otomatis ketika koneksi pulih"
       ],
       "Download was canceled": [
         "Unduhan dibatalkan"
@@ -4714,9 +4708,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Perlu untuk berbagi berkas? Dapatkan ${ DRIVE_APP_NAME },\ncara teraman untuk membagikan, menyimpan, dan menyinkronkan berkas Anda."
-      ],
       "Network issue": [
         "Masalah jaringan"
       ],
@@ -4755,9 +4746,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Catatan: data mungkin masih akan tersedia secara lokal pada perangkat yang Anda pasangi ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Belum ada hal apa pun di sini"
       ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
@@ -8538,8 +8526,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Tinjau keamanan akun Anda"
+      "Review account safety": [
+        "Tinjau keamanan akun"
       ]
     },
     "saml: Error": {
@@ -10581,8 +10569,8 @@
       "A safer way to hold your Bitcoin": [
         "Cara yang lebih aman untuk menyimpan Bitcoin Anda"
       ],
-      "Bitcoin via email": [
-        "Bitcoin via email"
+      "Bitcoin via Email": [
+        "Bitcoin via Email"
       ]
     },
     "wallet_signup_2024:app-switcher": {

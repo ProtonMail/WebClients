@@ -2452,6 +2452,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Metin alanları isteğe bağlıdır. Bu formda verdiğiniz bilgiler sadece seçtiğiniz faturayı değiştirecek, gelecekteki fatura detaylarınızı değiştirmeyecektir."
       ]
     },
     "Email spam notification": {
@@ -2523,6 +2526,9 @@
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Fatura adresi düzenleme şu anda mevcut değil. Lütfen daha sonra tekrar deneyin."
       ],
       "Email address is invalid": [
         "E-posta adresi geçersiz"
@@ -3346,7 +3352,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Varsayılan olarak gizlilik."
+        "${ BRAND_NAME }. Gizlilik odaklı."
       ]
     },
     "Go to sign in": {
@@ -3511,7 +3517,7 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        "Güvenlik kodu"
       ],
       "Email": [
         "E-posta"
@@ -8334,8 +8340,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Hesabınızın güvenliğini değerlendirin"
+      "Review account safety": [
+        "Hesap güvenliğini gözden geçirin"
       ]
     },
     "saml: Action": {
@@ -9496,47 +9502,6 @@
         "${ totalPrice } için"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Masaüstü uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -9825,6 +9790,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -11159,7 +11165,7 @@
         "İsteği iptal etme"
       ],
       "Member activation incomplete": [
-        "Üye aktivasyonu tamamlanamadı"
+        "Üye etkinleştirilmemiş"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kullanıcı onay verdiğinde kullanıcının hesabına yeniden erişebilecek ya da verilerini yönetebileceksiniz."
@@ -11465,13 +11471,13 @@
       "A safer way to hold your Bitcoin": [
         "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "E-posta ile Bitcoin"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Bitcoin saklamak için daha güvenli bir yol"
+        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -537,6 +537,9 @@
       "Get started": [
         "Пачаць працу"
       ],
+      "Get the app": [
+        "Спампаваць праграму"
+      ],
       "Get the writing assistant": [
         "Атрымаць памочніка ў напісанні"
       ],
@@ -584,6 +587,9 @@
       ],
       "Hide messages": [
         "Схаваць паведамленні"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ],
       "Hide toolbar": [
         "Схаваць панэль інструментаў"
@@ -656,6 +662,9 @@
       ],
       "Insert link": [
         "Уставіць спасылку"
+      ],
+      "Invite members": [
+        "Запрасіць удзельнікаў"
       ],
       "Italic": [
         "Курсіў"
@@ -1241,6 +1250,9 @@
       ],
       "Switch or add account": [
         "Змяніць або дадаць уліковы запіс"
+      ],
+      "Take a tour": [
+        "Пачаць знаёмства"
       ],
       "This message contains embedded images.": [
         "Гэта паведамленне змяшчае ўбудаваныя відарысы."
@@ -2649,6 +2661,9 @@
       ],
       "Work": [
         "Працоўны"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -4287,6 +4302,12 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Выберыце катэгорыю і напішыце, што пайшло не так з генерацыяй тэксту"
+      ],
+      "Please select a country": [
+        "Выберыце краіну"
+      ],
+      "Please select a state": [
+        "Калі ласка, выберыце рэгіён"
       ],
       "Please try again or refresh the page.": [
         "Паспрабуйце яшчэ раз або абнавіце старонку."
@@ -6122,6 +6143,9 @@
       "Activation in progress": [
         "Выконваецца актывацыя"
       ],
+      "Active": [
+        "Актыўна"
+      ],
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
       ],
@@ -7094,6 +7118,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Registering your subscription…": [
+        "Рэгістрацыя вашай падпіскі…"
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Не забудзьцеся абнавіць яго ў менеджары пароляў або ў тым месцы, дзе вы захоўваеце ўліковы запіс і звесткі для яго ўваходу."
       ],
@@ -7201,6 +7228,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
+      ],
+      "Setting up your new address…": [
+        "Наладжванне вашага новага адраса…"
       ],
       "Shorten selection": [
         "Скараціць выбар"
@@ -7723,6 +7753,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы таксама можаце аб'яднаць імпартаваныя календары з існуючымі календарамі ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можаце змяніць свой выбар у любы час у ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можаце праверыць ход выканання ${ importProgressLink }."
@@ -11187,11 +11220,6 @@
         "Не ўдалося выканаць паўторную спробу шыфравання запрашэння. Паспрабуйце яшчэ раз."
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Агляд бяспекі вашага ўліковага запісу"
-      ]
-    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Рэгістрацыя завяршылася з памылкай."
@@ -12148,47 +12176,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -12459,6 +12446,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -13053,6 +13081,9 @@
       ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
+      ],
+      "Account restricted": [
+        "Абмежавана ўліковым запісам"
       ],
       "Account security": [
         "Бяспека ўліковага запісу"
@@ -13828,6 +13859,11 @@
         "Сёння"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“Аўтаматычна” азначае, што для адпраўкі гэтаму карыстальніку выкарыстоўваецца фармат рэдактара. “Звычайны тэкст” азначае, што пры адпраўцы паведамленне заўсёды будзе ператварацца ў звычайны тэкст."
@@ -13911,11 +13947,6 @@
         "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "стабільны выпуск"
@@ -13987,6 +14018,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
@@ -14028,9 +14065,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Больш бяспечны спосаб захоўвання Bitcoin"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin праз электронную пошту"
       ]
     },
     "wallet_signup_2024:Action": {

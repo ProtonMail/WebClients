@@ -1794,7 +1794,7 @@
         "單次收費 ${ amount }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "首月免費，之後每月續訂 ${ regularAmount }。"
+        "1個月之後續訂 ${ regularAmount }。"
       ]
     },
     "BF2024: Tooltip": {
@@ -2573,6 +2573,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3558,6 +3561,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在您的來信訊息到達收件匣前會自動排列"
       ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "於${ MAIL_APP_NAME }進階版可用"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "恭喜！您已賺取上限 ${ rewardsLimit } 個月免費 ${ plusPlanName }."
       ],
@@ -3862,7 +3868,7 @@
         "時間：${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "時間：${ formattedStart }（全天）"
+        "時間：${ formattedStart }(全天)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
         "時間：${ formattedStart } - ${ formattedEnd }"
@@ -4989,7 +4995,7 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "事件於 ${ timeString }"
+        "事件於@ ${ timeString }"
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "事件開始於 ${ timeString }，${ rruleString }"
@@ -5221,7 +5227,7 @@
         "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "你已達到每六個月${ n }個邀請函限制。"
+        "你已達到每6個月${ n }個邀請函限制。"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
         "您已到達 6 個月內${ n } 個已接受邀請的上限。待您可再邀請額外使用者時，自可按下此按鈕。"
@@ -5416,7 +5422,7 @@
         "允許平台金鑰"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "允許您註冊內建安全金鑰（如 Windows Hello、Face ID、Touch ID 或內部 TPM）"
+        "允許您註冊內建安全金鑰(如 Windows Hello、Face ID、Touch ID 或內部 TPM)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "您確定要永久刪除此安全性金鑰 ${ name } 嗎？"
@@ -6571,6 +6577,9 @@
       "30-day money-back guarantee.": [
         "30天退款保證。"
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain }是由${ BRAND_NAME }管理，允許您快速設定子網域。${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "一個好記且讓您很快辨識它用在何處，如此一來就可輕鬆將其撤銷或是延展。"
       ],
@@ -6673,6 +6682,9 @@
       "All (${ totalFoldersCount } label)": [
         "全部 (${ totalFoldersCount } 個標籤)"
       ],
+      "All inactive members deleted": [
+        "已刪除全部未使用的成員"
+      ],
       "All keys successfully reactivated": [
         "所有金鑰都已成功重新啟用"
       ],
@@ -6735,6 +6747,9 @@
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "知道此連結的任何人都無法同步或取得您行事曆的日後更新。 若要再次給予他們存取權限，您需要創建一個新連結。"
+      ],
+      "Are you sure you want to cancel editing the group?": [
+        "您確定要取消編輯此群組?"
       ],
       "Are you sure you want to delete this calendar?": [
         "你確定要刪除這個行事曆嗎?"
@@ -6899,7 +6914,7 @@
         "使用身份識別服務（像是 Okta、Microsoft Azure、或 Google Identity Platform） 設定 SAML 驗證，即可在整個組織裡面用 SAML 來登入。"
       ],
       "Connection data will be available in around 1 hour.": [
-        "連結資料將於約一小時後為可用"
+        "連結資料將於約1小時後為可用"
       ],
       "Continue with ${ freeName }": [
         "繼續使用 ${ freeName }"
@@ -6912,6 +6927,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "請複製此 URL 並到您的身分提供者提示的 ACS (判斷提示取用者服務) URL 欄位中貼上"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "請複製此 URL 並到您的身分提供者提示的實體 ID 欄位中貼上"
       ],
       "Copy the link to clipboard": [
         "複製連結到剪貼簿"
@@ -6994,10 +7012,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7040,7 +7058,7 @@
         "Discover ProtectBuy 標誌"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DKIM 允許 ${ BRAND_NAME } 對電子郵件簽章，可保護郵件不被竄改。確保您已添加下列 CNAME 記錄在您的 DNS 中（通常由您的網域註冊商提供）。"
+        "DKIM 允許 ${ BRAND_NAME } 對電子郵件簽章，可保護郵件不被竄改。確保您已添加下列 CNAME 記錄在您的 DNS 中(通常由您的網域註冊商提供)。"
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DAMRC 檢查信件的 SPF 與 DKIM 來確認郵件來自何方，這可以阻止攻擊者使用其他網域的 SPF 與 DKIM 來冒充您的身份。其中的 \"p=\" (policy)可以指定收件伺服器如何處理不合規的電子郵件，通常我們建議大多數網域使用\"p=quarantine\"，即隔離不合規的信件。確保您有在您的 DNS 中 (通常由網域註冊商提供) 添加以下的 TXT 紀錄。"
@@ -7106,7 +7124,7 @@
         "每組驗證代碼只能使用一次"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
-        "每個網域僅能有一條 SPF (TXT)紀錄，若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄 (${ spfValue }) 的後面。"
+        "每個網域僅能有一條 SPF (TXT)紀錄，若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄  (${ spfValue }) 的後面。"
       ],
       "Early access": [
         "搶鮮體驗"
@@ -7142,7 +7160,7 @@
         "啟用電子郵件通知"
       ],
       "Enable single sign-on to keep your organization safe": [
-        "開啟單一登入 (SSO) 來保障你的組織安全"
+        "開啟單一登入((SSO)來保障你的組織安全"
       ],
       "Enable this address to join this calendar": [
         "啟用此位址來加入這個行事曆"
@@ -7161,6 +7179,15 @@
       ],
       "Encryption setting updated": [
         "加密設定已更新"
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "因為外部地址此群組已停用端對端加密電子郵件。"
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "此群組已停用端對端加密電子郵件。它可以被啟用。"
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "此群組已開啟端對端加密電子郵件。"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "由您的身分提供者提供的端點 URL (範例：https://idp.example.com/sso/saml)。"
@@ -7234,6 +7261,9 @@
       "Failed to fetch logs.": [
         "擷取紀錄檔失敗。"
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "快速和專注。電子郵件及行事曆，直接於桌面。"
+      ],
       "Fill in user details": [
         "填入使用者詳細資料"
       ],
@@ -7253,7 +7283,7 @@
         "選用 ${ product }"
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
-        "為了有使用單一登入（SAML SSO）的組織機構的成員"
+        "為了有使用單一登入(SAML SSO)的組織機構的成員"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
@@ -7375,6 +7405,12 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "若您想要將此帳號與其它的結合，則請不要刪除它。"
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "若您有任何問題，我們在此服務。${ boldPhoneCall }或${ boldZoomMeeting }與我們的支援專家或開啟支援對話${ boldLiveChat }。"
+      ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
+        "若您有任何問題，我們在此服務。${ boldPhoneCall }或${ boldZoomMeeting }與我們的支援專家。"
+      ],
       "Image description": [
         "圖樣描述"
       ],
@@ -7400,7 +7436,7 @@
         "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
-        "重要事項：若您的 DNS 不允許 CNAME 以「.」(英文句點) 結尾，您可以移除這個句點。"
+        "重要事項：若您的 DNS 不允許 CNAME 以「.」 (英文句點) 結尾，您可以移除這個句點。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要：請確認你已將復原代碼儲存到其它地方。否則在你遺失兩步驟驗證裝置時，你將會永久失去你的帳號"
@@ -7735,6 +7771,9 @@
       "No label selected": [
         "未選取任何標籤"
       ],
+      "No location filters are currently assigned.": [
+        "無指派任何地點過濾器。"
+      ],
       "No logs yet.": [
         "未有任何記錄。"
       ],
@@ -7899,6 +7938,9 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "請保存在安全的地方。在重設密碼後你將會需要它來解密你的資料。"
+      ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "請知悉，若您刪除此 ${ nameDeleted } 篩選器，我們將會停止處理任何有關於此篩選器的自動化操作。"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
         "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
@@ -8356,6 +8398,9 @@
       "This invitation link has expired. We just sent you a new link.": [
         "此邀請連結已過期。我們已重新寄送新的連結。"
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "已使用此邀請連結。請直接登入."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "此一 12字短語是你過去被要求設定的。"
       ],
@@ -8377,6 +8422,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
       ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "此訊息將不會到達支援團隊，若我們的服務有任何問題或需要更多我們的幫助${ supportLink }。"
+      ],
       "This promotion link has expired.": [
         "此促銷連結已過期。"
       ],
@@ -8394,6 +8442,9 @@
       ],
       "This will delete all previous versions of your files.": [
         "這將會為您的檔案刪除所有先前的版本。"
+      ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "此將停用雙重身分驗證，包含驗證應用程式及安全金鑰方式。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "這將讓你目前的復原短語被提用。你無法再使用它來存取你的帳號或是解密你的資料。"
@@ -8429,7 +8480,7 @@
         "這將會使您登出所有裝置並停用雙重驗證。"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "本精靈將會在您的 ${ BRAND_NAME } 帳號上啟用兩步驟驗證。兩步驟驗證讓您的 ${ BRAND_NAME_TWO } 帳號更安全，所以我們建議啟用它。"
+        "本精靈將會在您的 ${ BRAND_NAME } 帳號上啟用兩步驟驗證 (2FA)。兩步驟驗證讓您的 ${ BRAND_NAME_TWO } 帳號更安全，所以我們建議啟用它。"
       ],
       "to ${ product } Business": [
         "至${ product }商業版"
@@ -8518,6 +8569,9 @@
       "Two-factor authentication enabled": [
         "兩步驟驗證已啟用"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "雙重密碼模式需要兩個密碼：一個用來登入您的帳號，另一個用來解密您的資料(進階)"
+      ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "雙重密碼模式即是使用不同的密碼作登入和解密資料。在某些情況下，這可能稍微提高安全性，但我們建議大部份使用者使用單一密碼模式。如要切換為雙重密碼模式，請首先設定登入密碼，然後設定第二個密碼。"
       ],
@@ -8586,6 +8640,9 @@
       ],
       "URL link": [
         "URL 連結"
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "使用復原方法以停用您的雙重身分驗證方式。"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "根據目前的負載與地理位置挑選最佳的伺服器： ${ formattedBestServerName }"
@@ -8704,6 +8761,9 @@
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "我們建議在不同的地點擁有多台伺服器以提供備援。"
       ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "我們建議於強制啟用雙重驗證前通知家庭成員為帳號設定雙重驗證"
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我們建議於強制啟用雙重驗證前通知組織成員為帳號設定雙重驗證"
       ],
@@ -8764,8 +8824,17 @@
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "當他們訂購了一個方案。您會得到點數可使用在您的訂購授權上。"
       ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "當您取消目前付費訂閱，您訂閱的餘額將轉換為帳號額度並降級至${ BRAND_NAME }${ PLANS.FREE }方案。"
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "當您取消，您的訂閱將不會續約，您仍可享受方案福利直到訂閱結束。之後，您將降級至${ BRAND_NAME }免費方案。"
+      ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "當您按下一則連結時，此防釣魚功能將詢問您以確認網頁的 URL。"
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "當您從閘道器移除伺服器，將進入10天整的停用期。此伺服器可被新增至其他閘道器，但無法變更國家。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
@@ -8786,7 +8855,7 @@
         "透過已加密的 ${ BRAND_NAME } 位址，您可以使用全部的 ${ BRAND_NAME } 服務"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "您現有的服務方案，僅可用您的 @pm.me 電郵位址接收訊息郵件。現在就升級方案，即可使用 @pm.me 位址傳送電郵，還可創建其它所需的 @pm.me 電郵位址"
+        "您現有的服務方案，僅可用您的 @pm.me 電郵位址接收訊息郵件。現在就升級方案，即可傳送電郵，還可創建其它所需的 @pm.me 電郵位址"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "如果沒有啟用，您將無法創建新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
@@ -8893,11 +8962,17 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您沒有設定復原方法，萬一忘記您的密碼，將無從恢復帳號。要在無復原電郵的情況下繼續嗎？"
       ],
+      "You do not have permission to perform this action": [
+        "您沒有執行這個動作的權限"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
       "You have ${ availableCount } new server available.": [
         "您有${ availableCount }台可用的新伺服器。"
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "您有${ unassignedAvailableCount }近期使用的伺服器為可用。若要調整這些伺服器至其他國家，需要等待停用完畢。"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
@@ -8961,6 +9036,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
+      ],
+      "You won’t be able to reassign these servers to another country for 10 days.": [
+        "您10內無法將此伺服器分配至其他國家。"
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "您無法使用下載的復原檔案進行鎖定資料復原。"
@@ -9041,7 +9119,7 @@
         "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
-        "您的組織機構使用單一登入（SSO）。按「登入」以 SSO 登入。"
+        "您的組織機構使用單一登入(SSO)。按「登入」以 SSO 登入。"
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "您的組織中所有電郵均使用組織金鑰作端對端加密受到保護。此指紋可用來驗證您的帳號中所有系統管理員均擁有相同的金鑰。"
@@ -9069,6 +9147,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支援服務工單已關閉。感謝您使用 ${ BRAND_NAME } 支援服務。"
+      ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "您可立即添加此伺服器至其他閘道器。"
       ],
       "Zoom meeting": [
         "Zoom 會議"
@@ -9572,8 +9653,14 @@
       "Allow": [
         "允許"
       ],
+      "Allow memorable passwords": [
+        "允許記憶式密碼"
+      ],
       "Allow notifications by email": [
         "允許電郵通知"
+      ],
+      "Allow random passwords": [
+        "允許隨機密碼"
       ],
       "Allow recovery by email": [
         "允許透過電郵復原"
@@ -9700,6 +9787,9 @@
       ],
       "Calendars": [
         "行事曆"
+      ],
+      "Capitalize words": [
+        "大寫字首字母"
       ],
       "Card details": [
         "卡片資訊"
@@ -10109,6 +10199,12 @@
       "Mark as": [
         "標記為"
       ],
+      "Maximum number of characters": [
+        "最大字元數"
+      ],
+      "Maximum number of words": [
+        "最大單字個數"
+      ],
       "Message": [
         "郵件"
       ],
@@ -10123,6 +10219,12 @@
       ],
       "Method for importing metadata": [
         "匯入後設資料方案"
+      ],
+      "Minimum number of characters": [
+        "最低字元數"
+      ],
+      "Minimum number of words": [
+        "最少單字個數"
       ],
       "Moderate NAT": [
         "中等 NAT"
@@ -10180,6 +10282,9 @@
       ],
       "Notifications": [
         "通知"
+      ],
+      "Numbers": [
+        "數字"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 密碼"
@@ -10296,7 +10401,7 @@
         "復原短語"
       ],
       "Remove": [
-        "刪除 "
+        "刪除"
       ],
       "Remove image metadata": [
         "移除圖像中繼資料"
@@ -10388,6 +10493,9 @@
       "Spam": [
         "垃圾郵件"
       ],
+      "Special characters": [
+        "特殊字元"
+      ],
       "Starred": [
         "已加星號"
       ],
@@ -10468,6 +10576,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "上載一個或更多的帳號救援檔案或是加密金鑰"
+      ],
+      "Uppercase": [
+        "大寫"
       ],
       "URL": [
         "網址"
@@ -11804,7 +11915,7 @@
         "資料夾、標籤和篩選器無上限"
       ],
       "Unlimited hide-my-email aliases": [
-        "無限制的隱藏電子郵件別名"
+        "無限制的 hide-my-email別名"
       ],
       "Unlimited labels": [
         "無限制標籤"
@@ -12433,7 +12544,7 @@
         "行事曆邀請被婉拒"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
-        "已加入 ${ calendarName }（${ senderEmail }）"
+        "已加入 ${ calendarName }(${ senderEmail })"
       ]
     },
     "Notification success": {
@@ -12885,19 +12996,19 @@
     },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
-        ".deb（適用於 Debian/Ubuntu）"
+        ".deb(適用於 Debian/Ubuntu)"
       ],
       ".dmg (10.12 or later)": [
-        ".dmg（10.12 或更新）"
+        ".dmg(10.12 或更新)"
       ],
       ".exe (64-bit)": [
-        ".exe（64 位元）"
+        ".exe(64 位元)"
       ],
       ".rpm (for Fedora/openSUSE)": [
-        ".rpm（適用於 Fedora/openSUSE）"
+        ".rpm(適用於 Fedora/openSUSE)"
       ],
       "PKGBUILD (for other distributions)": [
-        "PKGBUILD（適用於其它散佈版）"
+        "PKGBUILD(適用於其它散佈版)"
       ]
     },
     "Participant name": {
@@ -13353,11 +13464,17 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ subscriptionLength } 個月。而後將以每 ${ subscriptionLengthCopy } 月 ${ renewPrice } 的價格自動續約。您可以在任何時候取消訂閱。"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "首月限定折扣價為${ priceWithDiscount }。優惠券可使用${ couponRedemptions }次，之後後將以 ${ renewPrice } 的價格自動續約 ${ subscriptionLength } 個月，您可以隨時取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "我們正在處理您已開立發票的付款。請在付款完成後，再更改您的計劃或更新您的付款詳情。感謝您的耐心等候。"
       ]
     },
     "Payments.Error": {
@@ -13386,6 +13503,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示從您的銀行帳戶中扣款，並授權您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
+      ],
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
       ]
@@ -13510,6 +13630,9 @@
       ],
       "Search for a user or address": [
         "搜尋使用者或電子信箱"
+      ],
+      "Search for an email or IP address": [
+        "搜尋電子郵件或IP地址"
       ],
       "Search parent folder": [
         "搜尋資料夾主目錄"
@@ -13785,8 +13908,8 @@
       "Recovery phone number": [
         "復原電話號碼"
       ],
-      "Review your account safety": [
-        "查看您的帳號安全"
+      "Review account safety": [
+        "查看帳號安全"
       ],
       "Safeguard account now": [
         "現在保護帳號安全"
@@ -14021,7 +14144,7 @@
         "密碼重設需要核准(${ user.Email })。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
+        "請前往已登入的裝置(在發起需求的工作階段中)變更您的密碼。"
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "此權限將在${ timeRemaining.inDays }天後過期"
@@ -14427,7 +14550,7 @@
         "包含電子郵件、行事曆、密碼管理程式與 VPN"
       ],
       "ISO 27001 certified": [
-        "ISO 27001 認證"
+        "ISO 27001認證"
       ],
       "Protected by Swiss privacy laws": [
         "受瑞士隱私法律保障"
@@ -14583,7 +14706,7 @@
         "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+        "2年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }(${ discount }% 折扣)續訂"
       ],
       "Save ${ discount }%": [
         "省下 ${ discount }%"
@@ -14647,8 +14770,47 @@
       "${ n } user converted to SSO": [
         "${ n }位使用者轉換至單一登入"
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n }使用者透過您的身分提供者已加入您的組織機構。立即查看帳號:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n }使用者要求您協助透過單一登入登入至它們的${ BRAND_NAME }帳號。"
+      ],
+      "Access denied": [
+        "拒絕存取"
+      ],
+      "Access granted": [
+        "已獲得存取權"
+      ],
+      "Approve the sign-in from another device": [
+        "允許從其它裝置登入"
+      ],
+      "Ask administrator for help": [
+        "尋求管理員協助"
+      ],
+      "Ask your administrator for access?": [
+        "向您的管理員要求存取權？"
+      ],
+      "Backup password": [
+        "備份密碼"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Change backup password": [
+        "變更備份密碼"
+      ],
+      "Confirm backup password": [
+        "確認備份密碼"
+      ],
       "Confirmation code": [
         "確認碼"
+      ],
+      "Contact administrator": [
+        "聯繫管理員"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "若問題仍然存在，請聯絡您的管理員。"
       ],
       "Delete ${ n } inactive user?": [
         "刪除${ n }未使用的使用者?"
@@ -14656,8 +14818,47 @@
       "Delete ${ n } user": [
         "刪除 ${ n } 位使用者"
       ],
+      "Deny": [
+        "拒絕"
+      ],
+      "Deny access": [
+        "拒絕存取"
+      ],
+      "Devices available": [
+        "可用裝置"
+      ],
+      "Devices management": [
+        "裝置管理"
+      ],
+      "Enter your backup password": [
+        "輸入您的備份密碼"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "為了您的安全，已登出其他所有使用中的裝置。在存取您的帳號前，您必須輸入新的備份密碼。"
+      ],
       "Grant": [
         "授予"
+      ],
+      "Grant access": [
+        "授予存取權"
+      ],
+      "Grant access to users?": [
+        "授予使用者存取?"
+      ],
+      "Invalid confirmation code": [
+        "無效的驗證碼"
+      ],
+      "Join ${ organizationName }": [
+        "加入 ${ organizationName }"
+      ],
+      "New backup password": [
+        "新的備份密碼"
+      ],
+      "Remove single sign-on for your organization?": [
+        "要為您的組織移除單一登入嗎？"
+      ],
+      "Set your backup password": [
+        "設定您的備份密碼"
       ],
       "Share the confirmation code with your administrator": [
         "與您的管理員分享確認碼"
@@ -14665,14 +14866,35 @@
       "Sign in": [
         "登入"
       ],
+      "Sign in to your organization": [
+        "登入您的組織"
+      ],
+      "Sign out and in again to change your backup password": [
+        "登出並登入以變更備用密碼"
+      ],
+      "Single sign-on removed": [
+        "已移除單一登入"
+      ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "若要確定真的是您嘗試登入 **${ email }**，請檢視確認碼，並從其他裝置批准請求。"
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "為了確定真的是您嘗試登入，請輸入您的備份密碼。"
+      ],
+      "Tried to sign in at": [
+        "登入嘗試於"
       ],
       "Use backup password instead": [
         "改用備份密碼"
       ],
+      "User details:": [
+        "用戶詳細信息:"
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "您將被重新導向至您的第三方單一登入提供者。"
+      ],
+      "Your SSO configuration will be deleted.": [
+        "您的單一登入配置將被刪除。"
       ]
     },
     "State": {
@@ -15292,6 +15514,12 @@
       "Default calendar updated": [
         "預設行事曆已更新"
       ],
+      "Device deleted": [
+        "設備已刪除"
+      ],
+      "Device rejected": [
+        "拒絕裝置"
+      ],
       "Display name updated": [
         "已更新顯示名稱"
       ],
@@ -15438,6 +15666,12 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "若您輸入的復原電子郵件正確，使用者名稱將會立即以電子郵件傳送給您 。"
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "若您輸入的復原電話號碼正確，使用者名稱將會立即以SMS傳送給您 。"
       ]
     },
     "Success message": {
@@ -16068,7 +16302,7 @@
         "刪除組織標誌？"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "刪除伺服器（您仍可於 ${ days } 天內還原）"
+        "刪除伺服器(您仍可於 ${ days } 天內還原)"
       ],
       "Delete user?": [
         "刪除使用者?"
@@ -17280,6 +17514,9 @@
       "Cancel": [
         "取消"
       ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "因為他們的加密金鑰同時被更新，無法替${ n }使用者自動啟用管理員權限權"
+      ],
       "Enable admin access?": [
         "啟用管理員存取權?"
       ],
@@ -17559,8 +17796,8 @@
       "A safer way to hold your Bitcoin": [
         "更安全的方法持有Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin透過電子郵件"
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
       ],
       "Early access waitlist": [
         "優先存取等候名單"

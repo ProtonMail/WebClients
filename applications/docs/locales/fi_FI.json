@@ -4590,8 +4590,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Tämä toiminto poistaa lähettämäsi tiedoston pysyvästi."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Tämä toiminto poistaa lähettämäsi kansion pysyvästi. Et voi poistaa kansiota, joka sisältää tiedoston, jota et omista."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Tämä poistaa linkin ja mitätöi kaikki jaetut käyttöoikeudet."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Tämä toiminto poistaa valitut kohteet pysyvästi."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
@@ -6998,6 +7007,9 @@
       "Stopping the sharing of this item has failed": [
         "Kohteen jakamisen lopetus epäonnistui"
       ],
+      "The document failed to be created": [
+        "Dokumentin luominen epäonnistui"
+      ],
       "The link to your item failed to be deleted": [
         "Kohteen linkin poisto epäonnistui"
       ],
@@ -7467,11 +7479,6 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Tarkista tilisi turvallisuus"
       ]
     },
     "saml: Error": {
@@ -8585,6 +8592,9 @@
       "Day theme": [
         "Päiväteema"
       ],
+      "Delete": [
+        "Poista"
+      ],
       "Delete ${ count } contact": [
         "Poista ${ count } yhteystieto",
         "Poista ${ count } yhteystietoa"
@@ -8592,6 +8602,12 @@
       "Delete ${ count } contact group": [
         "Poista ${ count } yhteystietoryhmä",
         "Poista ${ count } yhteystietoryhmää"
+      ],
+      "Delete ${ item.name }?": [
+        "Poistetaanko ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Poistetaanko ${ links.length } kohdetta?"
       ],
       "Delete ${ value }": [
         "Poista ${ value }"
@@ -9103,9 +9119,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Turvallisempi tapa säilyttää Bitcoineja"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin sähköpostitse"
       ]
     },
     "wallet_signup_2024:Bug category": {

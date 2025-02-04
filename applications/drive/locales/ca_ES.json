@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Replega la carpeta"
       ],
+      "Collapse navigation bar": [
+        "Redueix la barra de navegació"
+      ],
       "Compose": [
         "Redactar"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Descarta"
+      ],
+      "Display navigation bar": [
+        "Mostra la barra de navegació"
       ],
       "Done": [
         "Fet"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Mostra la configuració avançada del PGP"
       ],
+      "Show navigation bar": [
+        "Mostra la barra de navegació"
+      ],
       "Show preview": [
         "Mostra visualització prèvia"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Puja un fitxer"
       ],
+      "Upload files": [
+        "Carrega fitxers"
+      ],
       "Upload folder": [
         "Puja una carpeta"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Carrega"
       ]
     },
     "Actions message": {
@@ -1550,6 +1567,9 @@
       ],
       "Work": [
         "Feina"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2423,7 +2443,7 @@
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
       "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Manteníeu els fitxers, fotos i documents segurs amb el xifratge d’extrem a extrem."
+        "Manteniu els fitxers, fotos i documents segurs amb el xifratge d’extrem a extrem."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
@@ -2447,7 +2467,7 @@
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
       ],
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Milloreu el pla a ${ BRAND_NAME } ${ planName } per a seguir compartint arxius amb accés per editar."
+        "Milloreu el pla a ${ BRAND_NAME } ${ planName } per a continuar compartint arxius amb accés per a editar."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
@@ -3629,6 +3649,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -3637,6 +3660,9 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3909,6 +3935,9 @@
       ],
       "ICS file": [
         "Fitxer ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4006,7 +4035,7 @@
         "${ contactsLength } contactes"
       ],
       "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Els fitxers ${ DOCS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta descàrrega. Podeu descarregar els altres fitxers fent clic a ‘Continua la descàrrega’."
+        "Els fitxers ${ DOCS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta descàrrega. Podeu descarregar els altres fitxers fent clic a Continua la descàrrega."
       ],
       "${ doneCount } finished": [
         "${ doneCount } finalitzat",
@@ -4069,8 +4098,8 @@
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
       ],
       "${ scanErrorCount } scan failed": [
-        "Ha fallat ${ scanErrorCount } escaneig",
-        "Han fallat ${ scanErrorCount } escanejos"
+        "${ scanErrorCount } escaneig ha fallat",
+        "${ scanErrorCount } escanejos han fallat"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
@@ -4405,23 +4434,8 @@
       "Download ${ name } app": [
         "Descarrega l'aplicació ${ name }"
       ],
-      "Download canceled": [
-        "S'ha cancel·lat la descarregada"
-      ],
-      "Download failed": [
-        "No s'ha pogut descarregar"
-      ],
-      "Download failed due to ${ error }": [
-        "No s'ha pogut descarregar a causa de ${ error }"
-      ],
-      "Download finished": [
-        "La descarregada ha acabat"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "La descàrrega de ${ downloadFileName } serà cancel·lada"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "La descàrrega s'ha posat en pausa a causa d'un problema de connexió. Es reprendrà automàticament"
       ],
       "Download was canceled": [
         "La descàrrega ha estat cancel·lada"
@@ -4440,6 +4454,9 @@
       ],
       "Drop files here": [
         "Deixeu anar els fitxers aquí"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Arrossegueu els fitxers aquí per carregar-los o feu clic al botó de càrrega."
       ],
       "Drop to import": [
         "Arrossegueu aquí per a importar"
@@ -4570,6 +4587,9 @@
       ],
       "from the version history?": [
         "de l'historial de versions?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Obtingueu l'aplicació per fer una còpia de seguretat de les fotos del vostre telèfon o carregueu-les aquí."
       ],
       "Get the app to backup photos from your phone.": [
         "Obteniu l'aplicació per a fer còpies de seguretat de les fotos del vostre telèfon."
@@ -4777,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Voleu compartir un fitxer? Utilitzeu ${ DRIVE_APP_NAME }, la manera més segura de compartir, emmagatzemar i sincronitzar els vostres fitxers."
-      ],
       "Network issue": [
         "Problema de xarxa"
       ],
@@ -4818,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: les dades encara poden estar disponibles localment en dispositius on hàgiu instal·lat ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "No hi ha res aquí de moment."
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
@@ -5176,7 +5190,7 @@
         "Aquesta acció suprimirà el fitxer que heu carregat permanentment."
       ],
       "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Aquesta acció suprimirà la carpeta que heu carregat permanentment. No podeu suprimir una carpeta que contingui un fitxer del qual no sou propietari."
+        "Aquesta acció eliminarà la carpeta que heu carregat permanentment. No podeu eliminar una carpeta que contingui un fitxer del qual no sou propietari."
       ],
       "This action will delete the link and revoke access for all users.": [
         "Aquesta acció eliminarà l'enllaç i revocarà l'accés per a tots els usuaris."
@@ -5696,6 +5710,9 @@
       "Expired": [
         "Caducada"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Obsoleta"
       ],
@@ -5707,6 +5724,9 @@
       ],
       "Trusted": [
         "De confiança"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -5748,6 +5768,9 @@
       ],
       "Address": [
         "Adreça"
+      ],
+      "Album": [
+        "Àlbum"
       ],
       "Anderson": [
         "Pujol"
@@ -6393,7 +6416,7 @@
         "Compartit amb mi"
       ],
       "Snooze": [
-        "Posa en pausa"
+        "Ajorna"
       ],
       "Spam": [
         "Correu brossa"
@@ -6575,6 +6598,15 @@
       "Apple Installer Package": [
         "Paquet d'instal·lació d'Apple"
       ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Apple Pages": [
+        "Apple Pages"
+      ],
       "Archive document": [
         "Document d'arxiu"
       ],
@@ -6638,8 +6670,38 @@
       "Java Archive (JAR)": [
         "Arxiu Java (JAR)"
       ],
+      "JavaScript": [
+        "JavaScript"
+      ],
       "JPEG image": [
         "Imatge JPEG"
+      ],
+      "JSON": [
+        "JSON"
+      ],
+      "JSON-LD": [
+        "JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft PowerPoint": [
+        "Microsoft PowerPoint"
+      ],
+      "Microsoft PowerPoint (OpenXML)": [
+        "Microsoft PowerPoint (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
       ],
       "MP3 audio": [
         "Àudio MP3"
@@ -6655,6 +6717,9 @@
       ],
       "Musical Instrument Digital Interface (MIDI)": [
         "Interfície Digital d'Instrument Musical (MIDI)"
+      ],
+      "OGG": [
+        "OGG"
       ],
       "OGG audio": [
         "Àudio OGG"
@@ -6680,6 +6745,9 @@
       "Portable Network Graphics (PNG)": [
         "Gràfics de xarxa portàtils (PNG)"
       ],
+      "Python": [
+        "Python"
+      ],
       "RAR archive": [
         "Arxiu RAR"
       ],
@@ -6704,6 +6772,9 @@
       "TrueType Font": [
         "Lletra TrueType"
       ],
+      "TypeScript": [
+        "TypeScript"
+      ],
       "Unknown file": [
         "Fitxer desconegut"
       ],
@@ -6727,6 +6798,15 @@
       ],
       "Windows OS/2 Bitmap Graphics": [
         "Gràfics de mapa de bits de Windows OS/2"
+      ],
+      "XHTML": [
+        "XHTML"
+      ],
+      "XML": [
+        "XML"
+      ],
+      "XUL": [
+        "XUL"
       ],
       "ZIP archive": [
         "Arxiu ZIP"
@@ -6794,7 +6874,7 @@
         "Millora ara"
       ],
       "Upgrade to ${ planName }": [
-        "Milloreu a ${ planName }"
+        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7022,7 +7102,7 @@
         "Camps personalitzats"
       ],
       "Custom snooze time": [
-        "Períodes de pausa personalitzats"
+        "Temps d'ajornament personalitzat"
       ],
       "Custom workspace branding": [
         "Marca personalitzada de l'espai de treball"
@@ -7162,7 +7242,7 @@
         "Estalvieu temps en l'enviament dels vostres correus electrònics"
       ],
       "Schedule and snooze emails for any time": [
-        "Planifiqueu i poseu en pausa els correus electrònics per a qualsevol moment"
+        "Programeu i ajorneu correus electrònics per a qualsevol moment."
       ],
       "Schedule messages at any time": [
         "Programeu missatges en qualsevol moment."
@@ -7174,7 +7254,7 @@
         "Servidors Secure Core"
       ],
       "Secure file storage and sharing": [
-        "Emmagatzematge i ús compartit de fitxers segurs"
+        "Compartició i emmagatzematge segurs de fitxers"
       ],
       "Secure link sharing": [
         "Compartició d'enllaços segurs"
@@ -7309,7 +7389,7 @@
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
       "Snooze messages and get reminded when you want": [
-        "Poseu en pausa els missatges i rebeu-ne un recordatori quan vulgueu"
+        "Ajorneu els missatges i rebeu-ne un recordatori quan vulgueu"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
@@ -7414,7 +7494,7 @@
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "new_plans: title": {
@@ -8040,6 +8120,9 @@
       "Plus": [
         "Plus"
       ],
+      "Recover previous file versions": [
+        "Recupera versions anteriors del fitxer"
+      ],
       "Storage": [
         "Emmagatzematge"
       ]
@@ -8393,6 +8476,11 @@
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a instruir el vostre banc perquè debiti el vostre compte, i el banc a debitar el compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes des de la data del dèbit d'acord amb les condicions del vostre acord amb el banc."
@@ -8599,7 +8687,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Reviseu la seguretat del compte"
       ]
     },
@@ -8974,7 +9062,7 @@
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "La teva subscripció es renovarà al mateix preu cada any."
+        "La vostra subscripció es renovarà al mateix preu cada any."
       ]
     },
     "specialoffer: Link": {
@@ -10085,6 +10173,9 @@
       "Download unverified folder?": [
         "Baixa una carpeta no verificada?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "Arrossegueu per a carregar"
       ],
@@ -10700,13 +10791,13 @@
       "A safer way to hold your Bitcoin": [
         "Una manera més segura de mantenir el vostre Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Una manera més segura de mantenir Bitcoin"
+        "Una manera més segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

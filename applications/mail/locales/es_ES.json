@@ -980,31 +980,31 @@
         "Actualizar la página"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove ${ attachmentName }": [
-        "Borrar ${ attachmentName }"
+        "Eliminar ${ attachmentName }"
       ],
       "Remove bonuses": [
-        "Borrar los beneficios"
+        "Eliminar los beneficios"
       ],
       "Remove encryption": [
-        "Borrar el cifrado"
+        "Eliminar el cifrado"
       ],
       "Remove expiration time": [
-        "Borrar el tiempo de expiración"
+        "Eliminar el tiempo de expiración"
       ],
       "Remove gift code": [
-        "Borrar el código de regalo"
+        "Eliminar el código de regalo"
       ],
       "Remove self-destruction": [
-        "Borrar la destrucción automática"
+        "Eliminar la destrucción automática"
       ],
       "Remove this label": [
-        "Borrar esta etiqueta"
+        "Eliminar esta etiqueta"
       ],
       "Remove Zoom meeting": [
-        "Quitar la reunión de Zoom"
+        "Eliminar la reunión de Zoom"
       ],
       "Replace": [
         "Reemplazar"
@@ -1576,7 +1576,7 @@
         "Buzón de ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "5 rastreadores borrados"
+        "5 rastreadores eliminados"
       ],
       "Auto forwarded": [
         "Reenvío automático"
@@ -3895,7 +3895,7 @@
     },
     "Email body for invitation (event details part)": {
       "Removed": [
-        "Borrado"
+        "Eliminado"
       ]
     },
     "Email body for invitation (location part)": {
@@ -4346,8 +4346,8 @@
         "reactivar la clave anterior"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "Destinatario duplicado borrado: ${ recipents }",
-        "Destinatarios duplicados borrados: ${ recipents }"
+        "Destinatario duplicado eliminado: ${ recipents }",
+        "Destinatarios duplicados eliminados: ${ recipents }"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -6591,7 +6591,7 @@
         "URL de la imagen"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Las imágenes se han quitado porque no están permitidas en la respuesta automática."
+        "Las imágenes se han eliminado porque no están permitidas en la respuesta automática."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -7020,7 +7020,7 @@
         "Recuerda actualizarlo en tu gestor de contraseñas o dónde guardes tu información de inicio de sesión."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
-        "Borra todos los datos asociados con esta aplicación (incluyendo los mensajes descargados, etc.)"
+        "Elimina todos los datos asociados con esta aplicación (incluyendo los mensajes descargados, etc.)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Denunciar un mensaje como intento de suplantación de identidad nos enviará el mensaje a nosotros, para analizarlo y mejorar nuestros filtros. Esto significa que podremos ver todo el contenido del mensaje."
@@ -7576,7 +7576,7 @@
         "Necesitamos autenticar el pago con tu banco."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Hemos borrado la información de seguimiento de los siguientes enlaces para ayudarle a protegerse de los anunciantes y otros que intenten rastrear tu actividad en Internet."
+        "Hemos eliminado la información de seguimiento de los siguientes enlaces para ayudarle a protegerse de los anunciantes y otros que intenten rastrear tu actividad en Internet."
       ],
       "We use 3-D Secure to protect your payments": [
         "Se utiliza 3-D Secure para proteger tus pagos."
@@ -7678,12 +7678,12 @@
         "Puedes importar un tipo de datos a la vez."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tu calendario antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido el calendario antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción."
       ],
       "You can now return to the application to continue": [
         "Ahora puedes regresar a la aplicación para continuar."
@@ -7741,7 +7741,7 @@
         "Puedes ser redirigido al sitio web de tu banco."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debes desactivar o borrar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
+        "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta de PayPal. Si tu cuenta de PayPal no lo tiene, haz clic en el botón de abajo."
@@ -8796,10 +8796,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para añadir un calendario, borra uno existente."
+        "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario, borra otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -10284,7 +10284,7 @@
         "Se ha activado ${ reason }."
       ],
       "Block removed": [
-        "Se ha borrado el bloqueo."
+        "Se ha eliminado el bloqueo."
       ],
       "Contact group created": [
         "Grupo de contactos creado"
@@ -11130,7 +11130,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Comprueba la seguridad de la cuenta"
       ]
     },
@@ -12044,47 +12044,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, y ${ VPN_SHORT_APP_NAME } con características prémium"
@@ -12345,6 +12304,47 @@
         "Tu alias de correo electrónico @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "¿Estás seguro?"
@@ -12422,8 +12422,8 @@
         "${ elementsCount } conversaciones movidas a spam y remitentes añadidos a tu lista de spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } conversación borrada de ${ labelName }.",
-        "${ elementsCount } conversaciones borradas de ${ labelName }."
+        "${ elementsCount } conversación eliminada de ${ labelName }.",
+        "${ elementsCount } conversaciones eliminadas de ${ labelName }."
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversación pausada",
@@ -12462,8 +12462,8 @@
         "${ elementsCount } mensajes movidos a la carpeta Spam y remitentes añadidos a la lista de spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } mensaje borrado de ${ labelName }.",
-        "${ elementsCount } mensajes borrados de ${ labelName }."
+        "${ elementsCount } mensaje eliminado de ${ labelName }.",
+        "${ elementsCount } mensajes eliminados de ${ labelName }."
       ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
@@ -12525,7 +12525,7 @@
         "Conversación movida a spam y remitente añadido a tu lista de spam."
       ],
       "Conversation removed from ${ labelName }.": [
-        "Conversación borrada de ${ labelName }."
+        "Conversación eliminada de ${ labelName }."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Las conversaciones de ${ sendersList } serán etiquetadas como ${ labelsList }"
@@ -12597,7 +12597,7 @@
         "Mensaje movido a spam y remitente añadido a tu lista de spam."
       ],
       "Message removed from ${ labelName }.": [
-        "Mensaje borrado de ${ labelName }."
+        "Mensaje eliminado de ${ labelName }."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Los mensajes de ${ sendersList } serán etiquetados como ${ labelsList }"
@@ -12644,7 +12644,7 @@
         "Confirmación de lectura enviada"
       ],
       "Self-destruction removed": [
-        "Se ha borrado la eliminación automática."
+        "Se ha eliminado la eliminación automática."
       ],
       "Self-destruction set": [
         "Destrucción automatica configurada"
@@ -12679,7 +12679,7 @@
         " ahora está activo"
       ],
       "${ label.Name } removed": [
-        "${ label.Name } borrado"
+        "${ label.Name } eliminado"
       ]
     },
     "Suffix": {
@@ -13671,6 +13671,11 @@
         "Hoy"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático: indica que formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
@@ -13752,11 +13757,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Tor out of date": {
@@ -13859,7 +13859,7 @@
       "A safer way to hold your Bitcoin": [
         "Una forma más segura de mantener tu Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"
       ]
     },

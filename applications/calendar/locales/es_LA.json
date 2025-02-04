@@ -555,22 +555,22 @@
         "Refrescar la página"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove bonuses": [
-        "Borrar los beneficios"
+        "Eliminar los beneficios"
       ],
       "Remove gift code": [
-        "Borrar el código de regalo"
+        "Eliminar el código de regalo"
       ],
       "Remove this notification": [
-        "Borrar esta notificación"
+        "Eliminar esta notificación"
       ],
       "Remove this participant": [
-        "Borrar a este participante"
+        "Eliminar a este participante"
       ],
       "Remove Zoom meeting": [
-        "Quitar la reunión de Zoom"
+        "Eliminar la reunión de Zoom"
       ],
       "Report a problem": [
         "Reportar un problema"
@@ -1042,7 +1042,7 @@
         "Protección de cuentas avanzada"
       ],
       "Easily add or remove users": [
-        "Agregar o borrar usuarios fácilmente"
+        "Añadir o eliminar usuarios fácilmente"
       ],
       "High speed streaming": [
         "Streaming de alta velocidad"
@@ -1300,7 +1300,7 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Puede cambiar o borrar permisos en cualquier momento."
+        "Puede modificar o eliminar permisos en cualquier momento."
       ]
     },
     "Calendar permissions label": {
@@ -1327,8 +1327,8 @@
         "No se puede compartir este calendario con más usuarios de ${ BRAND_NAME }"
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
-        "Ha alcanzado el límite de ${ MAX_CALENDAR_MEMBERS } miembro para este calendario.\nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, borre algunos miembros.",
-        "Ha alcanzado el límite de ${ MAX_CALENDAR_MEMBERS } miembros para este calendario.\nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, borre algunos miembros."
+        "Ha alcanzado el límite de ${ MAX_CALENDAR_MEMBERS } miembro para este calendario.\nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, elimine algunos miembros.",
+        "Ha alcanzado el límite de ${ MAX_CALENDAR_MEMBERS } miembros para este calendario.\nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, elimine algunos miembros."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Ha alcanzado el máximo de ${ MAX_LINKS_PER_CALENDAR } enlace para este calendario.\nPara crear un enlace nuevo a este calendario, elimine uno existe.",
@@ -2780,7 +2780,7 @@
         "Confirmar pérdida del descuento especial de ${ PASS_APP_NAME }"
       ],
       "Remove discount": [
-        "Eliminar descuento"
+        "Eliminar el descuento"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderá el descuento permanentemente incluso si mejora el plan en el futuro."
@@ -2870,7 +2870,7 @@
     },
     "Email body for invitation (event details part)": {
       "Removed": [
-        "Borrado"
+        "Eliminado"
       ]
     },
     "Email body for invitation (location part)": {
@@ -3257,8 +3257,8 @@
         "Proceso abortado"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Destinatario duplicado borrado: ${ joinedRecipients }",
-        "Destinatarios duplicados borrados: ${ joinedRecipients }"
+        "Destinatario duplicado eliminado: ${ joinedRecipients }",
+        "Destinatarios duplicados eliminados: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -3802,7 +3802,7 @@
         "Esta acción eliminará permanentemente todos los subusuarios, cuentas y datos asociados con la organización."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Esta acción borrará todas las funciones premium de ${ BRAND_NAME } de cada miembro de la familia."
+        "Esta acción eliminará todas las funciones premium de ${ BRAND_NAME } de cada miembro de la familia."
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -4424,7 +4424,7 @@
         "30 días de garantía de devolución del dinero."
       ],
       "A cancellation email will be sent to removed participants.": [
-        "Se enviará un correo de cancelación a los participantes borrados."
+        "Se enviará un correo de cancelación a los participantes eliminados."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
         "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Quiere eliminar todos los eventos de esta serie?"
@@ -4445,10 +4445,10 @@
         "Cuenta actualizada"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "Los participantes añadidos y borrados serán notificados de todos los eventos de esta serie."
+        "Los participantes añadidos y eliminados serán notificados de todos los eventos de esta serie."
       ],
       "Added and removed participants will be notified.": [
-        "Se notificarán a los participantes añadidos y borrados."
+        "Se notificarán a los participantes añadidos y eliminados."
       ],
       "Address copied to clipboard": [
         "Se copió la dirección al portapapeles."
@@ -4719,10 +4719,10 @@
         "Se notificarán a los participantes existentes y añadidos."
       ],
       "Existent and removed participants will be notified.": [
-        "Se notificarán a los participantes existentes y borrados."
+        "Se notificará a los participantes existentes y eliminados."
       ],
       "Existent, added and removed participants will be notified.": [
-        "Se notificarán a los participantes existentes, añadidos y borrados."
+        "Se notificará a los participantes existentes, añadidos y eliminados."
       ],
       "Expired": [
         "Expirado"
@@ -4967,7 +4967,7 @@
         "Proporcione un nombre y una dirección de correo para crear un grupo."
       ],
       "Please remove the duplicates and try again.": [
-        "Borre los duplicados y vuelva a intentarlo."
+        "Elimine los duplicados y vuelva a intentarlo."
       ],
       "Please select the folders you would like to import:": [
         "Seleccione las carpetas que quiere importar:"
@@ -5013,7 +5013,7 @@
         "Registrando su suscripción…"
       ],
       "Removed participants will be notified.": [
-        "Se notificarán a los participantes borrados."
+        "Se notificarán a los participantes eliminados."
       ],
       "Saving event...": [
         "Guardando el evento...",
@@ -5305,12 +5305,12 @@
         "Puede importar un tipo de datos a la vez."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Borre enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borre enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Borre enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción.",
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borre enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción."
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción.",
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción."
       ],
       "You can now return to the application to continue": [
         "Ahora puede regresar a la aplicación para continuar."
@@ -5337,7 +5337,7 @@
         "Podría ser redirigido al sitio web de el banco."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debe desactivar o borrar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
+        "Debe desactivar o eliminar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada a la cuenta de PayPal. Si la cuenta de PayPal no lo tiene, haga clic en el botón de abajo."
@@ -5355,7 +5355,7 @@
         "Pronto será redirigido a PayPal para verificar el pago."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Actualizará todos los eventos de esta serie. Se notificarán a los participantes añadidos y borrados."
+        "Actualizará todos los eventos de esta serie. Se notificarán a los participantes añadidos y eliminados."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
         "Actualizará todos los eventos de esta serie. Se enviará una invitación a los participantes del evento."
@@ -5364,13 +5364,13 @@
         "Actualizará todos los eventos de esta serie. Los participantes existentes y añadidos serán notificados."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Actualizará todos los eventos de esta serie. Los participantes existentes y borrados serán notificados."
+        "Actualizará todos los eventos de esta serie. Los participantes existentes y eliminados serán notificados."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Actualizará todos los eventos de esta serie. Se notificarán a los participantes existentes, añadidos y borrados."
+        "Actualizará todos los eventos de esta serie. Se notificarán a los participantes existentes, añadidos y eliminados."
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
-        "Actualizará todos los eventos de esta serie. Se notificarán a los participantes borrados."
+        "Actualizará todos los eventos de esta serie. Se notificarán a los participantes eliminados."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Ha alcanzado el número máximo de direcciones en el grupo o grupos de contactos:"
@@ -6057,10 +6057,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para añadir un calendario nuevo, borre uno existente."
+        "Para añadir un calendario, elimine uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario nuevo, borre otro o mejore el plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimine otro o mejore el plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Ha alcanzado el número máximo de calendarios disponibles en el plan."
@@ -8197,7 +8197,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Compruebe la seguridad de la cuenta"
       ]
     },
@@ -9295,7 +9295,7 @@
         "${ countMergeableContacts } contactos parecen idénticos."
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        "Se enviará un correo electrónico de cancelación a los participantes borrados para todos los eventos de esta serie."
+        "Se enviará un correo electrónico de cancelación a los participantes eliminados para todos los eventos de esta serie."
       ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
@@ -9343,10 +9343,10 @@
         "Cancelación enviada y evento eliminado"
       ],
       "Cancellation sent and participants removed": [
-        "Cancelación enviada y participantes borrados"
+        "Se envió la cancelación y se eliminaron los participantes."
       ],
       "Cancellation sent and participants removed from all events": [
-        "Cancelación enviada y participantes borrados de todos los eventos"
+        "Cancelación enviada y participantes eliminados de todos los eventos"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -9370,6 +9370,9 @@
       ],
       "Email address copied to clipboard": [
         "Dirección de correo copiada al portapapeles"
+      ],
+      "Event content search enabled": [
+        "Se activó la búsqueda de contenido de eventos."
       ],
       "Event created": [
         "Evento creado"
@@ -9955,7 +9958,7 @@
         "Recuperar datos"
       ],
       "Remove participants": [
-        "Borrar los participantes"
+        "Eliminar los participantes"
       ],
       "Report a problem": [
         "Reportar un problema"
@@ -10313,8 +10316,8 @@
       "A safer way to hold your Bitcoin": [
         "Una forma más segura de mantener su Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin vía correo electrónico"
+      "Bitcoin via Email": [
+        "Bitcoin por correo electrónico"
       ]
     },
     "wallet_signup_2024:app-switcher": {

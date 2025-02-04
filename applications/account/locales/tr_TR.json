@@ -3948,6 +3948,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Metin alanları isteğe bağlıdır. Bu formda verdiğiniz bilgiler sadece seçtiğiniz faturayı değiştirecek, gelecekteki fatura detaylarınızı değiştirmeyecektir."
       ]
     },
     "Email": {
@@ -4488,6 +4491,9 @@
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Fatura adresi düzenleme şu anda mevcut değil. Lütfen daha sonra tekrar deneyin."
       ],
       "Email address disabled": [
         "E-posta adresi kullanım dışı"
@@ -5937,7 +5943,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Varsayılan olarak gizlilik."
+        "${ BRAND_NAME }. Gizlilik odaklı."
       ]
     },
     "Free trial dekstop": {
@@ -6296,7 +6302,7 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        "Güvenlik kodu"
       ],
       "Email": [
         "E-posta"
@@ -7379,11 +7385,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -8626,7 +8632,7 @@
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP gönderimi, 3. taraf hizmetlerin veya cihazların özel alan adı adresleriniz için ${ MAIL_APP_NAME } üzerinden e-posta göndermesine olanak tanır. Bu özellik yalnızca özel alan adlarına sahip iş kullanıcıları için ${ BRAND_NAME } tarafından kullanılabilir."
+        "SMTP gönderimi, üçüncü taraf hizmetlerin veya aygıtların özel etki alanı adreslerinizi kullanarak ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar. Bu özellik yalnızca özel etki alanları olan ${ BRAND_NAME } for Business kullanıcıları tarafından kullanılabilir."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP gönderimi özelliği, üçüncü taraf hizmetlerin veya aygıtların özel etki alanı adreslerinizle ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar. Erişim isteğinde bulunmak için lütfen kullanım durumlarınızı, hangi özel etki alanlarını kullanmak istediğinizi ve gerçekleşmesi beklenen saatlik ve günlük e-posta sayılarını açıklayan ${ createTicket }."
@@ -13911,6 +13917,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesabınızla ilerleyin"
       ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "${ discountPercent }% Porkbun indirimi dahil"
+      ],
       "Let's talk": [
         "Hadi konuşalım."
       ],
@@ -14927,8 +14936,8 @@
       "Recovery phone number": [
         "Kurtarma telefon numarası"
       ],
-      "Review your account safety": [
-        "Hesabınızın güvenliğini değerlendirin"
+      "Review account safety": [
+        "Hesap güvenliğini gözden geçirin"
       ],
       "Safeguard account now": [
         "Hesabınızı koruyun"
@@ -19231,7 +19240,7 @@
         "İsteği iptal etme"
       ],
       "Member activation incomplete": [
-        "Üye aktivasyonu tamamlanamadı"
+        "Üye etkinleştirilmemiş"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kullanıcı onay verdiğinde kullanıcının hesabına yeniden erişebilecek ya da verilerini yönetebileceksiniz."
@@ -19595,7 +19604,7 @@
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "Davetli bir kullanıcı olarak, ${ appName } uygulamasına özel erişim sağlamak için ücretsiz bir ${ BRAND_NAME } hesabı açın."
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "E-posta ile Bitcoin"
       ],
       "Create ${ BRAND_NAME } Account now": [
@@ -19631,7 +19640,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Bitcoin saklamak için daha güvenli bir yol"
+        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ]
     },
     "wallet_signup_2024:Bug category": {

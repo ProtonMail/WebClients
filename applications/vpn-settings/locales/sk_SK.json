@@ -3390,6 +3390,11 @@
         "Veľmi malé"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Už máte účet? ${ signIn }"
@@ -3555,6 +3560,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -3563,6 +3571,9 @@
       ],
       "No verification method available": [
         "Nie sú k dispozícii žiadne metódy overovania"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -7785,8 +7796,14 @@
       "Free": [
         "Zdarma"
       ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Obnova predchádzajúcich verzií súborov"
       ],
       "Storage": [
         "Úložisko"
@@ -8248,6 +8265,11 @@
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Zdarma"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Potvrdením tejto platby oprávňujete spoločnosť ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali pokyn vašej banke na odpísanie finančných prostriedkov z vášho účtu a aby vaša banka zodpovedajúcim spôsobom odpísala finančné prostriedky z vášho účtu. Peniaze môžete získať späť do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
@@ -8507,11 +8529,6 @@
       ],
       "User": [
         "Používateľ"
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Skontrolujte bezpečnosť svojho účtu"
       ]
     },
     "saml: Action": {
@@ -9756,47 +9773,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -10097,6 +10073,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -11775,8 +11792,13 @@
       "A safer way to hold your Bitcoin": [
         "Bezpečnejší spôsob vlastnenia Bitcoinu"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin cez email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Bezpečnejší spôsob ako vlastniť Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

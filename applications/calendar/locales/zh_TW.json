@@ -1081,7 +1081,7 @@
         "單次收費 ${ amount }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "首月免費，之後每月續訂 ${ regularAmount }。"
+        "1個月之後續訂 ${ regularAmount }。"
       ]
     },
     "BF2024: Tooltip": {
@@ -1656,6 +1656,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2830,7 +2833,7 @@
         "時間：${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "時間：${ formattedStart }（全天）"
+        "時間：${ formattedStart }(全天)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
         "時間：${ formattedStart } - ${ formattedEnd }"
@@ -6846,7 +6849,7 @@
         "資料夾、標籤和篩選器無上限"
       ],
       "Unlimited hide-my-email aliases": [
-        "無限制的隱藏電子郵件別名"
+        "無限制的 hide-my-email別名"
       ],
       "Unlimited labels": [
         "無限制標籤"
@@ -7337,7 +7340,7 @@
         "行事曆邀請被婉拒"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
-        "已加入 ${ calendarName }（${ senderEmail }）"
+        "已加入 ${ calendarName }(${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -7752,11 +7755,17 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ subscriptionLength } 個月。而後將以每 ${ subscriptionLengthCopy } 月 ${ renewPrice } 的價格自動續約。您可以在任何時候取消訂閱。"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "首月限定折扣價為${ priceWithDiscount }。優惠券可使用${ couponRedemptions }次，之後後將以 ${ renewPrice } 的價格自動續約 ${ subscriptionLength } 個月，您可以隨時取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "我們正在處理您已開立發票的付款。請在付款完成後，再更改您的計劃或更新您的付款詳情。感謝您的耐心等候。"
       ]
     },
     "Payments.Error": {
@@ -7785,6 +7794,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示從您的銀行帳戶中扣款，並授權您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
+      ],
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
       ]
@@ -7994,8 +8006,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "查看您的帳號安全"
+      "Review account safety": [
+        "查看帳號安全"
       ]
     },
     "Security Center": {
@@ -8109,7 +8121,7 @@
         "密碼重設需要核准(${ user.Email })。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
+        "請前往已登入的裝置(在發起需求的工作階段中)變更您的密碼。"
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "此權限將在${ timeRemaining.inDays }天後過期"
@@ -8460,7 +8472,7 @@
         "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+        "2年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }(${ discount }% 折扣)續訂"
       ],
       "Save ${ discount }%": [
         "省下 ${ discount }%"
@@ -8529,6 +8541,9 @@
     "sso": {
       "Sign in": [
         "登入"
+      ],
+      "Sign in to your organization": [
+        "登入您的組織"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "您將被重新導向至您的第三方單一登入提供者。"
@@ -9072,6 +9087,9 @@
       ],
       "Email address copied to clipboard": [
         "電郵位址已複製到剪貼簿"
+      ],
+      "Event content search enabled": [
+        "行程內容搜尋已啟用"
       ],
       "Event created": [
         "事件已創建"
@@ -9990,8 +10008,8 @@
       "A safer way to hold your Bitcoin": [
         "更安全的方法持有Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin透過電子郵件"
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
       ]
     },
     "wallet_signup_2024:app-switcher": {

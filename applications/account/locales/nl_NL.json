@@ -3948,6 +3948,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
       ]
     },
     "Email": {
@@ -4488,6 +4491,9 @@
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
       ],
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
@@ -7379,11 +7385,11 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -13911,6 +13917,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Ga verder met uw ${ BRAND_NAME }-account"
       ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "Inclusief ${ discountPercent }% Porkbun korting"
+      ],
       "Let's talk": [
         "Laten we praten!"
       ],
@@ -14927,8 +14936,8 @@
       "Recovery phone number": [
         "Herstel-telefoonnummer"
       ],
-      "Review your account safety": [
-        "Controleer de veiligheid van uw account"
+      "Review account safety": [
+        "Accountveiligheid controleren"
       ],
       "Safeguard account now": [
         "Veilige account nu"
@@ -19595,7 +19604,7 @@
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "Als een uitgenodigde gebruiker, schrijf u in voor een gratis ${ BRAND_NAME } account om exclusief toegang te krijgen tot ${ appName }"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
       "Create ${ BRAND_NAME } Account now": [

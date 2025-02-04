@@ -664,6 +664,9 @@
       "Switch or add account": [
         "Змяніць або дадаць уліковы запіс"
       ],
+      "Take a tour": [
+        "Пачаць знаёмства"
+      ],
       "Test": [
         "Тэст"
       ],
@@ -2628,6 +2631,12 @@
       ],
       "Please generate keys before you try to change your password": [
         "Згенерыруйце ключы перад тым, як паспрабаваць змяніць пароль"
+      ],
+      "Please select a country": [
+        "Выберыце краіну"
+      ],
+      "Please select a state": [
+        "Калі ласка, выберыце рэгіён"
       ],
       "Please set a recovery email first": [
         "Спачатку задайце электронную пошту для аднаўлення доступу"
@@ -4605,6 +4614,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Registering your subscription…": [
+        "Рэгістрацыя вашай падпіскі…"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
       ],
@@ -4682,6 +4694,9 @@
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
+      ],
+      "Setting up your new address…": [
+        "Наладжванне вашага новага адраса…"
       ],
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
@@ -5186,6 +5201,9 @@
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Вы выкарыстоўваеце больш сховішча, чым гэта прадугледжана тарыфным планам ${ downgradedPlanName }. Выдаліце або перамясціце даныя, калі вы ўсё яшчэ хочаце панізіць свой тарыфны план."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можаце змяніць свой выбар у любы час у ${ settingsLink }."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
@@ -8313,11 +8331,6 @@
         "Карыстальнік"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Агляд бяспекі вашага ўліковага запісу"
-      ]
-    },
     "saml: Action": {
       "Cancel": [
         "Скасаваць"
@@ -9554,47 +9567,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -9895,6 +9867,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -11438,6 +11451,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "З вас будзе спаганяцца плата кожныя 12 месяцаў у памеры ${ renewPrice }"
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў.",
+        "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
@@ -11545,9 +11564,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Больш бяспечны спосаб захоўвання Bitcoin"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin праз электронную пошту"
       ]
     },
     "wallet_signup_2024:Bug category": {

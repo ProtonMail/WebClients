@@ -172,6 +172,9 @@
       "Collapse folder": [
         "საქაღალდის ჩაკეცვა"
       ],
+      "Collapse navigation bar": [
+        "ნავიგაციის პანელის აკეცვა"
+      ],
       "Compose": [
         "შედგენა"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "მოცილება"
+      ],
+      "Display navigation bar": [
+        "ნავიგაციის პანელის ჩვენება"
       ],
       "Done": [
         "მზადაა"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების ჩვენება"
       ],
+      "Show navigation bar": [
+        "ნავიგაციის პანელის ჩვენება"
+      ],
       "Show preview": [
         "გადახედვის ჩვენება"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "ფაილის ატვირთვა"
       ],
+      "Upload files": [
+        "ფაილების ატვირთვა"
+      ],
       "Upload folder": [
         "საქაღალდის ატვირთვა"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "ატვირთვა"
       ]
     },
     "Actions message": {
@@ -4404,23 +4421,8 @@
       "Download ${ name } app": [
         "გადმოწერეთ აპი ${ name }"
       ],
-      "Download canceled": [
-        "გადმოწერა გაუქმებულია"
-      ],
-      "Download failed": [
-        "გადმოწერის შეცდომა"
-      ],
-      "Download failed due to ${ error }": [
-        "გადმოწერის შეცდომა: ${ error }"
-      ],
-      "Download finished": [
-        "გადმოწერა დასრულდა"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }-ის გადმოწერა გაუქმდება"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "მიერთების პრობლემის გამო გადმოწერა შეჩერდა; ის თვითონ გაგრძელდება"
       ],
       "Download was canceled": [
         "გადმოწერა გაწყდა"
@@ -4776,9 +4778,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "გჭირდებათ, ფაილი გააზიაროთ? დააყენეთ${ DRIVE_APP_NAME },\nპროგრამა ფაილების უადვილესად გასაზიარელად, დასამახსოვრებლად და სინქრონიზაციისთვის."
-      ],
       "Network issue": [
         "ქსელის პრობლემა"
       ],
@@ -4817,9 +4816,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "გაფრთხილება: მონაცემები ჯერ კიდევ შეიძლება ხელმისაწვდომი იყო იმ მოწყობილობებზე, სადაც ${ DRIVE_APP_NAME } დააყენეთ."
-      ],
-      "Nothing here yet": [
-        "აქ ჯერ არაფერია"
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
@@ -8587,11 +8583,6 @@
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "თქვენი ანგარიშის უსაფრთხოების გადახედვა"
-      ]
-    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "შესვლა წარმატებით არ დასრულდა."
@@ -10689,7 +10680,7 @@
       "A safer way to hold your Bitcoin": [
         "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin ელფოსტით"
       ]
     },

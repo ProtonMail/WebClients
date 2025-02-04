@@ -4759,8 +4759,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces ověření otevře novou kartu prohlížeče. Vypněte prosím blokování vyskakovacích oken."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Tato akce trvale smaže vámi nahraný soubor."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Tato akce trvale smaže nahranou složku. Nemůžete smazat složku, která obsahuje soubor, který nevlastníte."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Tato akce smaže odkaz a zruší přistup všem uživatelům."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Tato akce trvale smaže vybrané položky."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji vlastník nejdříve povolit."
@@ -7309,6 +7318,9 @@
       "Stopping the sharing of this item has failed": [
         "Ukončení sdílení této položky selhalo"
       ],
+      "The document failed to be created": [
+        "Vytvoření dokumentu selhalo"
+      ],
       "The link to your item failed to be deleted": [
         "Odkaz na položku se nepodařilo odstranit"
       ],
@@ -7807,8 +7819,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Zkontrolujte bezpečnost svého účtu"
+      "Review account safety": [
+        "Zkontrolujte bezpečnost účtu"
       ]
     },
     "saml: Error": {
@@ -9003,6 +9015,9 @@
       "Day theme": [
         "Denní motiv"
       ],
+      "Delete": [
+        "Smazat"
+      ],
       "Delete ${ count } contact": [
         "Smazat ${ count } kontakt",
         "Smazat ${ count } kontakty",
@@ -9014,6 +9029,12 @@
         "Smazat ${ count } skupiny kontaktů",
         "Smazat ${ count } skupin kontaktů",
         "Smazat ${ count } skupin kontaktů"
+      ],
+      "Delete ${ item.name }?": [
+        "Smazat ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Smazat ${ links.length } položek?"
       ],
       "Delete ${ value }": [
         "Smazat ${ value }"
@@ -9562,7 +9583,7 @@
       "A safer way to hold your Bitcoin": [
         "Bezpečnější způsob jak vlastnit Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin přes e-mail"
       ]
     },

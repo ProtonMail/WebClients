@@ -174,6 +174,9 @@
       "Collapse folder": [
         "Strni mapo"
       ],
+      "Collapse navigation bar": [
+        "Skrči vrstico za krmarjenje"
+      ],
       "Compose": [
         "Napiši sporočilo"
       ],
@@ -293,6 +296,9 @@
       ],
       "Dismiss": [
         "Opusti"
+      ],
+      "Display navigation bar": [
+        "Prikaži vrstico za krmarjenje"
       ],
       "Done": [
         "Opravljeno"
@@ -761,6 +767,9 @@
       ],
       "Show advanced PGP settings": [
         "Prikaži napredne nastavitve PGP"
+      ],
+      "Show navigation bar": [
+        "Pokaži vrstico za krmarjenje"
       ],
       "Show preview": [
         "Prikaži predogled"
@@ -4328,23 +4337,8 @@
       "Download ${ name } app": [
         "Prenesite aplikacijo ${ name }"
       ],
-      "Download canceled": [
-        "Prenos je preklican"
-      ],
-      "Download failed": [
-        "Prenos ni uspel"
-      ],
-      "Download failed due to ${ error }": [
-        "Prenos ni uspel zaradi ${ error }"
-      ],
-      "Download finished": [
-        "Prenos končan"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Prenos datoteke ${ downloadFileName } bo prekinjen"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Prenos se je ustavil zaradi težav s povezavo in se bo samodejno nadaljeval"
       ],
       "Download was canceled": [
         "Prenos preklican"
@@ -4697,9 +4691,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poimenujte novo mapo in izberite, v kateri mapi naj se ustvari. Če ne izberete nadrejene mape, bo ta mapa ustvarjena kot mapa najvišje ravni."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Potrebujete skupno rabo datoteke? Potem pridobite ${ DRIVE_APP_NAME },\nnajvarnejši način za skupno rabo, shranjevanje in sinhronizacijo datotek."
-      ],
       "Network issue": [
         "Težava z omrežjem"
       ],
@@ -4738,9 +4729,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Opomba: podatki so morda še vedno na voljo lokalno v napravah, kjer ste namestili ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Tukaj še ni nič"
       ],
       "Number of dedicated servers in the organization": [
         "Število namenskih strežnikov v organizaciji"
@@ -8236,11 +8224,6 @@
         "Uradno sporočilo ${ BRAND_NAME }"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Preglejte varnost računa"
-      ]
-    },
     "Security Center": {
       "All aliases": [
         "Vsi vzdevki"
@@ -10247,9 +10230,6 @@
         "${ n } e-poštna naslova",
         "${ n } e-poštni naslovi",
         "${ n } e-poštnih naslovov"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin prek elektronske pošte"
       ]
     },
     "Warning": {
