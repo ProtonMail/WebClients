@@ -174,6 +174,9 @@
       "Collapse folder": [
         "Згорнути теку"
       ],
+      "Collapse navigation bar": [
+        "Згорнути панель навігації"
+      ],
       "Compose": [
         "Написати"
       ],
@@ -293,6 +296,9 @@
       ],
       "Dismiss": [
         "Відхилити"
+      ],
+      "Display navigation bar": [
+        "Показувати панель навігації"
       ],
       "Done": [
         "Готово"
@@ -764,6 +770,9 @@
       ],
       "Show advanced PGP settings": [
         "Показати розширені налаштування PGP"
+      ],
+      "Show navigation bar": [
+        "Показати панель навігації"
       ],
       "Show preview": [
         "Показати попередній перегляд"
@@ -4481,23 +4490,8 @@
       "Download ${ name } app": [
         "Завантажити програму ${ name }"
       ],
-      "Download canceled": [
-        "Завантаження скасовано"
-      ],
-      "Download failed": [
-        "Не вдалося завантажити"
-      ],
-      "Download failed due to ${ error }": [
-        "Не вдалося завантажити через ${ error }"
-      ],
-      "Download finished": [
-        "Завантаження завершено"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Завантаження ${ downloadFileName } буде скасовано"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Завантаження призупинено через проблеми зі з'єднанням; воно відновиться автоматично"
       ],
       "Download was canceled": [
         "Завантаження скасовано"
@@ -4853,9 +4847,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Потрібно поділитися файлом? Тоді отримайте ${ DRIVE_APP_NAME } – найнадійніший спосіб зберігання, поширення та синхронізації ваших файлів."
-      ],
       "Network issue": [
         "Проблема з мережею"
       ],
@@ -4894,9 +4885,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Примітка: дані можуть бути досі доступними локально на пристроях, де встановлено ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Тут ще нічого немає"
       ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
@@ -8686,11 +8674,6 @@
         "Офіційний лист від ${ BRAND_NAME }"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Переглянути безпеку вашого облікового запису"
-      ]
-    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Вхід не був успішно завершений."
@@ -10876,9 +10859,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Безпечніший спосіб зберігання Bitcoin"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin електронною поштою"
       ]
     },
     "wallet_signup_2024:Bug category": {

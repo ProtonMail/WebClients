@@ -4006,23 +4006,8 @@
       "Download ${ name } app": [
         "${ name } alkalmazás letöltése"
       ],
-      "Download canceled": [
-        "Letöltés megszakítva"
-      ],
-      "Download failed": [
-        "Letöltés sikertelen"
-      ],
-      "Download failed due to ${ error }": [
-        "A letöltés sikeres ${ error } miatt"
-      ],
-      "Download finished": [
-        "Letöltés befejezve"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } letöltése megszakításra kerül"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "A letöltés szünetel kapcsolódási probléma miatt; folytatódni fog automatikusan"
       ],
       "Download was canceled": [
         "A letöltés leállítva"
@@ -4366,9 +4351,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Adjon nevet a mappának és válassza ki a szülő mappát amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Meg kellene osztania egy fájlt? Használja a ${ DRIVE_APP_NAME }\nalkalmazást, a fájlok megosztására, tárolására és szinkronizálásra."
-      ],
       "Network issue": [
         "Hálózati probléma"
       ],
@@ -4407,9 +4389,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Megjegyzés: az adatok még mindig elérhetők lehetnek helyileg olyan eszközökön, ahol telepítette a ${ DRIVE_APP_NAME } alkalmazást."
-      ],
-      "Nothing here yet": [
-        "Egyelőre itt nincs semmi"
       ],
       "Number of dedicated servers in the organization": [
         "A dedikált szerverek száma a szervezeténél"
@@ -7509,11 +7488,6 @@
         "Hivatalos e-mail tőle: ${ BRAND_NAME }"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Tekintse át fiókja biztonságát"
-      ]
-    },
     "Security Center": {
       "All aliases": [
         "Minden e-mail álnév"
@@ -9282,9 +9256,6 @@
       "${ n } wallet": [
         "${ n } tároló",
         "${ n } tároló"
-      ],
-      "Bitcoin via email": [
-        "Bitcoin küldése e-mail címmel"
       ]
     },
     "wallet_signup_2024:Bug category": {

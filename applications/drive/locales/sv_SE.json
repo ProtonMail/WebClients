@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Minimera mapp"
       ],
+      "Collapse navigation bar": [
+        "Minimera navigeringsfält"
+      ],
       "Compose": [
         "Skriv"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Avfärda"
+      ],
+      "Display navigation bar": [
+        "Visa navigeringsfält"
       ],
       "Done": [
         "Klar"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Visa avancerade PGP-inställningar"
       ],
+      "Show navigation bar": [
+        "Visa navigeringsfält"
+      ],
       "Show preview": [
         "Visa förhandsgranskning"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Ladda upp fil"
       ],
+      "Upload files": [
+        "Ladda upp filer"
+      ],
       "Upload folder": [
         "Ladda upp mapp"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Ladda upp"
       ]
     },
     "Actions message": {
@@ -3496,6 +3513,9 @@
       ]
     },
     "Feature": {
+      "Access on mobile and desktop": [
+        "Åtkomst på mobil och dator"
+      ],
       "Free 5 GB storage": [
         "Gratis 5 GB lagringsutrymme"
       ],
@@ -4414,23 +4434,8 @@
       "Download ${ name } app": [
         "Ladda ner ${ name }-appen"
       ],
-      "Download canceled": [
-        "Nedladdning avbröts"
-      ],
-      "Download failed": [
-        "Nedladdning misslyckades"
-      ],
-      "Download failed due to ${ error }": [
-        "Nedladdning misslyckades på grund av ${ error }"
-      ],
-      "Download finished": [
-        "Nedladdning klar"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedladdning av ${ downloadFileName } kommer att avbrytas"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Nedladdningen pausades på grund av anslutningsproblem. Det kommer att återupptas automatiskt"
       ],
       "Download was canceled": [
         "Nedladdning avbröts"
@@ -4449,6 +4454,9 @@
       ],
       "Drop files here": [
         "Släpp filer här"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Släpp filer här för att ladda upp eller klicka på uppladdningsknappen"
       ],
       "Drop to import": [
         "Släpp för att importera"
@@ -4579,6 +4587,9 @@
       ],
       "from the version history?": [
         "från versionshistoriken?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Skaffa appen för att säkerhetskopiera foton från din telefon eller ladda upp dem här."
       ],
       "Get the app to backup photos from your phone.": [
         "Skaffa appen för att säkerhetskopiera foton från din telefon."
@@ -4786,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Behöver du dela en fil? Skaffa då ${ DRIVE_APP_NAME },\ndet säkraste sättet att dela, lagra och synkronisera dina filer."
-      ],
       "Network issue": [
         "Nätverksproblem"
       ],
@@ -4827,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Obs! Data kan fortfarande vara tillgänglig lokalt på enheter där du har installerat ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Ingenting här ännu"
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
@@ -8690,8 +8695,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Granska din kontosäkerhet"
+      "Review account safety": [
+        "Granska kontosäkerhet"
       ]
     },
     "saml: Error": {
@@ -9063,6 +9068,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Denna prenumeration kommer förnyas automatiskt vartannat år med samma pris tills den avbryts."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Din prenumeration kommer att förnyas med samma pris varje år."
       ]
     },
     "specialoffer: Link": {
@@ -10791,8 +10799,13 @@
       "A safer way to hold your Bitcoin": [
         "Ett säkrare sätt att hålla din Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-post"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Ett säkrare sätt att hålla Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -101,7 +101,7 @@
         "Voltar"
       ],
       "Back to Homepage": [
-        "Voltar para a página inicial"
+        "Voltar a página inicial"
       ],
       "Cancel": [
         "Cancelar"
@@ -171,6 +171,9 @@
       ],
       "Collapse folder": [
         "Recolher pasta"
+      ],
+      "Collapse navigation bar": [
+        "Esconder barra de navegação"
       ],
       "Compose": [
         "Escrever"
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Display navigation bar": [
+        "Mostrar barra de navegação"
       ],
       "Done": [
         "Concluído"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Mostrar configurações PGP avançadas"
       ],
+      "Show navigation bar": [
+        "Mostrar barra de navegação"
+      ],
       "Show preview": [
         "Mostrar pré-visualização"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Enviar arquivo"
       ],
+      "Upload files": [
+        "Enviar arquivos"
+      ],
       "Upload folder": [
         "Enviar pasta"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Enviar"
       ]
     },
     "Actions message": {
@@ -4417,23 +4434,8 @@
       "Download ${ name } app": [
         "Baixe o aplicativo ${ name }"
       ],
-      "Download canceled": [
-        "Download cancelado"
-      ],
-      "Download failed": [
-        "Erro no download"
-      ],
-      "Download failed due to ${ error }": [
-        "Erro no download devido a ${ error }"
-      ],
-      "Download finished": [
-        "Download concluído"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download de ${ downloadFileName } será abortado"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Download pausado devido a problemas de conexão; será retomado automaticamente"
       ],
       "Download was canceled": [
         "O download foi cancelado"
@@ -4789,9 +4791,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Precisa compartilhar um arquivo? Então obtenha ${ DRIVE_APP_NAME },\na maneira mais segura de compartilhar, armazenar e sincronizar seus arquivos."
-      ],
       "Network issue": [
         "Problema na rede"
       ],
@@ -4830,9 +4829,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Observação: Os dados ainda podem estar disponíveis localmente em dispositivos onde você instalou ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Nada por aqui ainda"
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
@@ -8690,8 +8686,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Revise a segurança de sua conta"
+      "Review account safety": [
+        "Revise a segurança da conta"
       ]
     },
     "saml: Error": {
@@ -10794,7 +10790,7 @@
       "A safer way to hold your Bitcoin": [
         "Uma maneira mais segura de guardar seu Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ]
     },

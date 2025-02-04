@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Comprimi cartella"
       ],
+      "Collapse navigation bar": [
+        "Nascondi la barra di navigazione"
+      ],
       "Compose": [
         "Componi"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Ignora"
+      ],
+      "Display navigation bar": [
+        "Visualizza la barra di navigazione"
       ],
       "Done": [
         "Fatto"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Mostra impostazioni PGP avanzate"
       ],
+      "Show navigation bar": [
+        "Mostra la barra di navigazione"
+      ],
       "Show preview": [
         "Mostra anteprima"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Carica file"
       ],
+      "Upload files": [
+        "Carica file"
+      ],
       "Upload folder": [
         "Carica cartella"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Carica"
       ]
     },
     "Actions message": {
@@ -4417,23 +4434,8 @@
       "Download ${ name } app": [
         "Scarica l'app per ${ name }"
       ],
-      "Download canceled": [
-        "Download annullato"
-      ],
-      "Download failed": [
-        "Scaricamento non riuscito"
-      ],
-      "Download failed due to ${ error }": [
-        "Scaricamento non riuscito a causa di ${ error }"
-      ],
-      "Download finished": [
-        "Download terminato"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Il download del file ${ downloadFileName } verrà interrotto"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Download in pausa a causa di un problema di connessione; verrà ripreso automaticamente"
       ],
       "Download was canceled": [
         "Download annullato"
@@ -4452,6 +4454,9 @@
       ],
       "Drop files here": [
         "Rilascia qui i file"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Rilascia qui i file da caricare o fai clic sul pulsante di caricamento"
       ],
       "Drop to import": [
         "Trascina per importare"
@@ -4582,6 +4587,9 @@
       ],
       "from the version history?": [
         "della cronologia delle versioni?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Ottieni l'app per eseguire il backup delle foto dal tuo telefono o caricale qui."
       ],
       "Get the app to backup photos from your phone.": [
         "Ottieni l'app per eseguire il backup delle foto dal tuo telefono."
@@ -4789,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Devi condividere un file? Ottieni ${ DRIVE_APP_NAME },\nil modo più sicuro per condividere, archiviare e sincronizzare i tuoi file."
-      ],
       "Network issue": [
         "Problema di rete"
       ],
@@ -4830,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: i dati potrebbero essere ancora disponibili localmente sui dispositivi su cui hai installato ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Non c'è ancora niente qui"
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
@@ -8678,8 +8680,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Controlla la sicurezza del tuo account"
+      "Review account safety": [
+        "Controlla la sicurezza del account"
       ]
     },
     "saml: Error": {
@@ -10782,7 +10784,7 @@
       "A safer way to hold your Bitcoin": [
         "Un modo più sicuro per conservare il tuo Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via email"
       ]
     },

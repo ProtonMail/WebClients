@@ -171,6 +171,9 @@
       "Collapse folder": [
         "收起文件夹"
       ],
+      "Collapse navigation bar": [
+        "折叠导航栏"
+      ],
       "Compose": [
         "写邮件"
       ],
@@ -287,6 +290,9 @@
       ],
       "Dismiss": [
         "忽略"
+      ],
+      "Display navigation bar": [
+        "显示导航栏"
       ],
       "Done": [
         "完成"
@@ -765,6 +771,9 @@
       "Show advanced PGP settings": [
         "显示高级 PGP 设置"
       ],
+      "Show navigation bar": [
+        "显示导航栏"
+      ],
       "Show preview": [
         "显示预览"
       ],
@@ -870,6 +879,9 @@
       "Upload file": [
         "上传文件"
       ],
+      "Upload files": [
+        "上传文件"
+      ],
       "Upload folder": [
         "上传文件夹"
       ],
@@ -926,6 +938,11 @@
       ],
       "Zoom out": [
         "缩小"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "上传"
       ]
     },
     "Actions message": {
@@ -4345,23 +4362,8 @@
       "Download ${ name } app": [
         "下载 ${ name } app"
       ],
-      "Download canceled": [
-        "下载已取消"
-      ],
-      "Download failed": [
-        "下载失败"
-      ],
-      "Download failed due to ${ error }": [
-        "由于 ${ error }，下载失败。"
-      ],
-      "Download finished": [
-        "下载已完成"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 的下载进程将被中止"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "由于网络连接问题，下载已中断，将尝试自动恢复连接。"
       ],
       "Download was canceled": [
         "已取消下载"
@@ -4380,6 +4382,9 @@
       ],
       "Drop files here": [
         "将文件拖放到此处"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "将文件拖放到此处进行上传或单击上传按钮"
       ],
       "Drop to import": [
         "拖至此处即可导入"
@@ -4509,6 +4514,9 @@
       ],
       "from the version history?": [
         "版本历史记录中永久删除吗？"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "获取应用程序以备份手机中的照片或将其上传到此处。"
       ],
       "Get the app to backup photos from your phone.": [
         "获取应用程序来备份手机中的照片。"
@@ -4714,9 +4722,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "有文件要共享？即刻注册 ${ DRIVE_APP_NAME }，\n体验最安全的文件存储、同步及共享方式。"
-      ],
       "Network issue": [
         "网络问题"
       ],
@@ -4755,9 +4760,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "请注意：安装过 ${ DRIVE_APP_NAME } 的设备上仍可能存在本地数据。"
-      ],
-      "Nothing here yet": [
-        "这里还没有任何内容"
       ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
@@ -8481,8 +8483,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "检查您的帐户安全"
+      "Review account safety": [
+        "审查帐户安全"
       ]
     },
     "saml: Error": {
@@ -10524,8 +10526,8 @@
       "A safer way to hold your Bitcoin": [
         "更安全持有比特币的方式"
       ],
-      "Bitcoin via email": [
-        "通过电子邮件接收比特币"
+      "Bitcoin via Email": [
+        "通过电子邮件获取比特币"
       ]
     },
     "wallet_signup_2024:app-switcher": {

@@ -172,6 +172,9 @@
       "Collapse folder": [
         "Réduire le dossier"
       ],
+      "Collapse navigation bar": [
+        "Réduire la barre de navigation"
+      ],
       "Compose": [
         "Rédiger"
       ],
@@ -290,6 +293,9 @@
       ],
       "Dismiss": [
         "Annuler"
+      ],
+      "Display navigation bar": [
+        "Afficher la barre de navigation"
       ],
       "Done": [
         "Terminé"
@@ -768,6 +774,9 @@
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
       ],
+      "Show navigation bar": [
+        "Afficher la barre de navigation"
+      ],
       "Show preview": [
         "Afficher un aperçu"
       ],
@@ -873,6 +882,9 @@
       "Upload file": [
         "Importer un fichier"
       ],
+      "Upload files": [
+        "Importer des fichiers"
+      ],
       "Upload folder": [
         "Importer un dossier"
       ],
@@ -930,6 +942,11 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Importer"
       ]
     },
     "Actions message": {
@@ -4417,23 +4434,8 @@
       "Download ${ name } app": [
         "Télécharger l'application ${ name }"
       ],
-      "Download canceled": [
-        "Le téléchargement a été annulé."
-      ],
-      "Download failed": [
-        "Le téléchargement n'a pas abouti."
-      ],
-      "Download failed due to ${ error }": [
-        "Le téléchargement n'a pas abouti à cause de ${ error }."
-      ],
-      "Download finished": [
-        "Le téléchargement est terminé."
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Le téléchargement de ${ downloadFileName } sera annulé."
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "Le téléchargement a été interrompu à cause d'un problème de connexion. Il reprendra automatiquement."
       ],
       "Download was canceled": [
         "Le téléchargement a été annulé."
@@ -4452,6 +4454,9 @@
       ],
       "Drop files here": [
         "Déposez des fichiers ici."
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Déposez des fichiers pour les importer ou cliquez sur le bouton d'importation."
       ],
       "Drop to import": [
         "Déposez ici pour importer"
@@ -4582,6 +4587,9 @@
       ],
       "from the version history?": [
         "de l'historique des versions ?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Téléchargez l'application pour sauvegarder vos photos depuis votre téléphone ou importez-les ici."
       ],
       "Get the app to backup photos from your phone.": [
         "Téléchargez l'application pour sauvegarder les photos de votre téléphone."
@@ -4789,9 +4797,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Vous voulez partager un fichier ? Utilisez ${ DRIVE_APP_NAME }, le moyen le plus sécurisé de partager, stocker et synchroniser vos fichiers."
-      ],
       "Network issue": [
         "Problème de réseau"
       ],
@@ -4830,9 +4835,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Remarque : les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
-      ],
-      "Nothing here yet": [
-        "Il n'y a rien ici pour le moment."
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
@@ -8685,7 +8687,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Vérifier la sécurité du compte"
       ]
     },
@@ -10789,8 +10791,8 @@
       "A safer way to hold your Bitcoin": [
         "Une manière plus sûre de détenir votre Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin par e-mail"
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:app-switcher": {

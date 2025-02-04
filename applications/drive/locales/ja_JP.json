@@ -171,6 +171,9 @@
       "Collapse folder": [
         "フォルダーを閉じる"
       ],
+      "Collapse navigation bar": [
+        "ナビゲーションバーを閉じる"
+      ],
       "Compose": [
         "新規作成"
       ],
@@ -287,6 +290,9 @@
       ],
       "Dismiss": [
         "却下"
+      ],
+      "Display navigation bar": [
+        "ナビゲーションバーを表示する"
       ],
       "Done": [
         "完了"
@@ -765,6 +771,9 @@
       "Show advanced PGP settings": [
         "拡張 PGP 設定を表示"
       ],
+      "Show navigation bar": [
+        "ナビゲーションバーを表示する"
+      ],
       "Show preview": [
         "プレビューを表示"
       ],
@@ -870,6 +879,9 @@
       "Upload file": [
         "ファイルをアップロード"
       ],
+      "Upload files": [
+        "ファイルをアップロード"
+      ],
       "Upload folder": [
         "フォルダーをアップロード"
       ],
@@ -926,6 +938,11 @@
       ],
       "Zoom out": [
         "縮小"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "アップロード"
       ]
     },
     "Actions message": {
@@ -1540,7 +1557,7 @@
         "勤務先"
       ],
       "Yomi": [
-        "ヨミカタ"
+        "ふりがな"
       ]
     },
     "Country name": {
@@ -2756,7 +2773,7 @@
         "6 桁の数字を入力してください"
       ],
       "Error connecting to the Bitcoin API.": [
-        "ビットコインAPIへの接続中にエラーが発生しました。"
+        "Bitcoin APIへの接続中にエラーが発生しました。"
       ],
       "Error decrypting a computer": [
         "コンピュータの復号化エラー"
@@ -3474,8 +3491,14 @@
       ]
     },
     "Feature": {
+      "Access on mobile and desktop": [
+        "モバイルとデスクトップでのアクセス"
+      ],
       "Free 5 GB storage": [
         "無料の5GBストレージ"
+      ],
+      "Save files for later access": [
+        "後でアクセスするためにファイルを保存"
       ],
       "Share privately and securely": [
         "プライベートかつ安全に共有できます"
@@ -4339,23 +4362,8 @@
       "Download ${ name } app": [
         "${ name } アプリをダウンロード"
       ],
-      "Download canceled": [
-        "ダウンロードをキャンセルしました"
-      ],
-      "Download failed": [
-        "ダウンロードに失敗しました"
-      ],
-      "Download failed due to ${ error }": [
-        "${ error } が発生したためダウンロードに失敗しました"
-      ],
-      "Download finished": [
-        "ダウンロードが完了しました"
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }のダウンロードは中断されます"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        "接続に問題が発生したためダウンロードが一時停止されました。問題が解消すると自動的に再開します。"
       ],
       "Download was canceled": [
         "ダウンロードはキャンセルされました。"
@@ -4374,6 +4382,9 @@
       ],
       "Drop files here": [
         "ここにファイルをドロップします"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "アップロードするファイルをここにドロップするか、アップロードボタンをクリックしてください"
       ],
       "Drop to import": [
         "ドロップしてインポート"
@@ -4503,6 +4514,9 @@
       ],
       "from the version history?": [
         "バージョン履歴から"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "携帯電話から写真をバックアップするか、こちらにアップロードしてください。"
       ],
       "Get the app to backup photos from your phone.": [
         "携帯電話から写真をバックアップするアプリを入手してください。"
@@ -4708,9 +4722,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
-      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "ファイルを共有する必要がありますか？\nそれなら、ファイルを共有/保管/同期する最も安全な ${ DRIVE_APP_NAME } を使いましょう。"
-      ],
       "Network issue": [
         "ネットワークの問題"
       ],
@@ -4749,9 +4760,6 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "補足: データはまだ ${ DRIVE_APP_NAME } をインストールしているデバイスで開くことができる場合があります。"
-      ],
-      "Nothing here yet": [
-        "まだ何もありません"
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
@@ -5718,10 +5726,10 @@
         "ブラウザのバージョン"
       ],
       "BTC address": [
-        "ビットコインアドレス"
+        "Bitcoin アドレス"
       ],
       "BTC amount": [
-        "ビットコイン金額"
+        "Bitcoin 金額"
       ],
       "Calendar": [
         "カレンダー"
@@ -6279,7 +6287,7 @@
         "下書き"
       ],
       "How to pay with Bitcoin?": [
-        "ビットコインで支払うには？"
+        "Bitcoinで支払うには？"
       ],
       "Inbox": [
         "受信トレイ"
@@ -7909,7 +7917,7 @@
         "無料"
       ],
       "Online document editor": [
-        "オンラインテキスト編集プログラム"
+        "オンライン文書エディタ"
       ],
       "Plus": [
         "Plus"
@@ -8267,6 +8275,11 @@
         "あなたのカードは拒否されました。 別のカードを試すか、銀行に問い合わせて請求を承認してください。"
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "無料"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から 8 週間以内に返金を受けることができます。"
@@ -8470,7 +8483,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "アカウントの安全性を確認してください"
       ]
     },
@@ -8827,6 +8840,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "サブスクリプションは毎年同じ料金で更新されます。"
       ]
     },
     "specialoffer: Link": {
@@ -10510,7 +10526,7 @@
       "A safer way to hold your Bitcoin": [
         "Bitcoin を保持する安全な方法"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "メールで Bitcoin"
       ]
     },
