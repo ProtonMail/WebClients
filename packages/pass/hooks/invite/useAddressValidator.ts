@@ -25,7 +25,7 @@ export const useAddressValidator = (shareId: string): MaybeNull<InviteAddressVal
     const cache = useRef<InviteAddressesCache>(new Map());
     const pending = useRef<Awaiter<void>>();
 
-    const validateAddresses = useActionRequest<
+    const { loading, revalidate } = useActionRequest<
         typeof inviteAddressesValidateIntent,
         typeof inviteAddressesValidateSuccess,
         typeof inviteAddressesValidateFailure
@@ -34,6 +34,9 @@ export const useAddressValidator = (shareId: string): MaybeNull<InviteAddressVal
             Object.entries(data).forEach(([email, valid]) => cache.current.set(email, valid));
             pending.current?.resolve();
         },
+        onFailure: () => {
+            pending.current?.reject('failure');
+        },
     });
 
     return useMemo(
@@ -41,20 +44,23 @@ export const useAddressValidator = (shareId: string): MaybeNull<InviteAddressVal
             shouldValidate
                 ? {
                       validate: async (addresses: string[]) => {
-                          pending.current?.reject('aborted');
-                          pending.current = awaiter();
+                          const emails = addresses.filter((email) => !cache.current.get(email));
 
-                          const emails = addresses.filter((email) => cache.current.get(email) === undefined);
+                          try {
+                              pending.current?.reject('aborted');
+                              pending.current = awaiter();
+                              if (emails.length > 0) revalidate({ shareId, emails }, uniqueId());
+                              else pending.current.resolve();
 
-                          if (emails.length > 0) validateAddresses.revalidate({ shareId, emails }, uniqueId());
-                          else pending.current.resolve();
-
-                          await pending.current;
+                              await pending.current;
+                          } catch (err) {
+                              if (err === 'failure') emails.forEach((email) => cache.current.set(email, false));
+                          }
                       },
                       emails: cache,
-                      loading: validateAddresses.loading,
+                      loading,
                   }
                 : null,
-        [validateAddresses, shouldValidate]
+        [revalidate, loading, shouldValidate]
     );
 };
