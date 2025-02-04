@@ -552,6 +552,9 @@
       "Get started": [
         "Začíname"
       ],
+      "Get the app": [
+        "Získajte aplikáciu"
+      ],
       "Get the browser extension": [
         "Získať rozšírenie prehliadača"
       ],
@@ -605,6 +608,9 @@
       ],
       "Hide messages": [
         "Skryť správy"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ],
       "Hide toolbar": [
         "Skryť panel nástrojov"
@@ -1957,6 +1963,9 @@
       "Discover and set up features": [
         "Spoznajte a nastavte funkcie"
       ],
+      "Got it": [
+        "Rozumiem"
+      ],
       "Maybe later": [
         "Možno neskôr"
       ],
@@ -2700,6 +2709,9 @@
       ],
       "Work": [
         "Práca"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5233,6 +5245,11 @@
         "Veľmi malé"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Dátum: ${ date }"
@@ -5493,6 +5510,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -5501,6 +5521,9 @@
       ],
       "No verification method available": [
         "Nie sú k dispozícii žiadne metódy overovania"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5804,6 +5827,9 @@
       ],
       "ICS file": [
         "Súbor ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -8170,6 +8196,9 @@
       ],
       "Trusted": [
         "Dôveryhodný"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10689,8 +10718,14 @@
       "Free": [
         "Zdarma"
       ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Obnova predchádzajúcich verzií súborov"
       ],
       "Storage": [
         "Úložisko"
@@ -11108,6 +11143,11 @@
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Zdarma"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Potvrdením tejto platby oprávňujete spoločnosť ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali pokyn vašej banke na odpísanie finančných prostriedkov z vášho účtu a aby vaša banka zodpovedajúcim spôsobom odpísala finančné prostriedky z vášho účtu. Peniaze môžete získať späť do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
@@ -11434,11 +11474,6 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Znovu-zašifrovanie pozvánky zlyhalo. Prosíme skúste to znova."
-      ]
-    },
-    "Safety review": {
-      "Review your account safety": [
-        "Skontrolujte bezpečnosť svojho účtu"
       ]
     },
     "saml: Error": {
@@ -12409,47 +12444,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -12720,6 +12714,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -14134,6 +14169,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editore bude použitý na odoslanie užívateľovi. Jednoduchý text znamená, že správa bude pri odoslaní vždy prevedená na obyčajný text."
@@ -14215,11 +14255,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Tor out of date": {
@@ -14344,13 +14379,18 @@
       "A safer way to hold your Bitcoin": [
         "Bezpečnejší spôsob vlastnenia Bitcoinu"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin cez email"
       ]
     },
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Prístup k aplikácii Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Bezpečnejší spôsob ako vlastniť Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
