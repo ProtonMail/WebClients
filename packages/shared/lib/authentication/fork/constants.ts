@@ -39,6 +39,7 @@ export enum ForkSearchParameters {
     Selector = 'selector',
     PayloadVersion = 'pv',
     PromptType = 'promptType',
+    PromptBypass = 'promptBypass',
     Plan = 'plan',
     PartnerId = 'partnerId',
 }

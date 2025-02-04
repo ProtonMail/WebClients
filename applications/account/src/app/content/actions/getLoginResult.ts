@@ -5,7 +5,7 @@ import { getOrganization as getOrganizationConfig } from '@proton/shared/lib/api
 import { getAppHref, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
-import { getCanUserReAuth, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
+import { getShouldReAuth } from '@proton/shared/lib/authentication/fork';
 import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
@@ -174,19 +174,16 @@ export const getLoginResult = async ({
         };
     }
 
+    const forkParameters = forkState?.type === SSOType.Proton ? forkState.payload.forkParameters : undefined;
+
     if (
         // Reauth is only triggered through the switch flow as in other scenarios the user always enters their password
         session.flow === 'switch' &&
-        getCanUserReAuth(session.User) &&
-        (session.prompt === 'login' ||
-            (forkState?.type === SSOType.Proton && getShouldReAuth(forkState.payload.forkParameters, session)))
+        getShouldReAuth(forkParameters, session)
     ) {
         const reAuthState: ReAuthState = {
             session,
-            reAuthType:
-                forkState && forkState.type === SSOType.Proton
-                    ? forkState.payload.forkParameters.promptType
-                    : 'default',
+            reAuthType: forkParameters?.promptType || 'default',
         };
         return {
             type: 'reauth',
