@@ -40,7 +40,7 @@ import resetPasswordPage from '../pages/reset-password';
 import signupPage from '../pages/signup';
 import AccountLoaderPage from './AccountLoaderPage';
 import VPNPublicApp from './VPNPublicApp';
-import LoginContainer from './containers/LoginContainer';
+import LoginContainer, { type LoginContainerState } from './containers/LoginContainer';
 
 const getPaths = (maybeLocalePrefix: string): Paths => {
     const localePrefix = maybeLocalePrefix || getLocaleMapping(localeCode);
@@ -177,16 +177,18 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                             <UnAuthenticated>
                                                 <ExternalSSOConsumer
                                                     onOAuthLogin={noop}
-                                                    onLogin={({ username, token, flow }) =>
-                                                        history.replace(SSO_PATHS.LOGIN, {
-                                                            authType: AuthType.ExternalSSO,
+                                                    onLogin={({ username, token, flow }) => {
+                                                        const state: LoginContainerState = {
+                                                            authTypeData: { type: AuthType.ExternalSSO },
                                                             externalSSO: {
                                                                 token,
                                                                 flow,
                                                             },
                                                             username,
-                                                        })
-                                                    }
+                                                        };
+
+                                                        history.replace(SSO_PATHS.LOGIN, state);
+                                                    }}
                                                 >
                                                     {loader}
                                                 </ExternalSSOConsumer>
