@@ -15,3 +15,20 @@
 	opacity: 0;
 	animation-fill-mode: forwards; /* Reste visible après l'animation */
 }
+
+@keyframes scaleFadeIn {
+	from {
+		opacity: 0;
+		scale: 0;
+	}
+
+	to {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+.scale-fade-in {
+	animation: scaleFadeIn 0.15s easing(ease-out-quad);
+	animation-fill-mode: forwards;
+}
