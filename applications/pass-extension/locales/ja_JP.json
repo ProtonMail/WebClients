@@ -327,7 +327,7 @@
         "退出"
       ],
       "Leave vault": [
-        "フォルダーを出る"
+        "保管庫を退出"
       ],
       "Link copied to clipboard": [
         "クリップボードにリンクがコピーされました"
@@ -531,7 +531,7 @@
         "セキュアリンクを共有"
       ],
       "Share vault": [
-        "フォルダーの共有"
+        "フォルダの共有"
       ],
       "Show": [
         "表示"
@@ -546,7 +546,7 @@
         "サインイン"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "${ BRAND_NAME } でログインします"
+        "${ BRAND_NAME } でサインイン"
       ],
       "Sign out": [
         "サインアウト"
@@ -640,6 +640,9 @@
       ],
       "With other ${ BRAND_NAME } users": [
         "他の ${ BRAND_NAME } ユーザーと"
+      ],
+      "Write us on X/Twitter": [
+        "X/Twitter でご連絡ください"
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
@@ -1391,6 +1394,9 @@
       "Built in 2FA authenticator": [
         "2要素認証システム内蔵"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "ドメインを追加することで、 hi@my-domain.com のようなエイリアスを作成できます。"
+      ],
       "Can be viewed": [
         "表示可能回数"
       ],
@@ -1562,6 +1568,9 @@
       "Enter your PIN code": [
         "PINコードの入力"
       ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "エイリアスが誰かからメールを受け取るたびに、新しい連絡先が自動的に作成されます。"
+      ],
       "Expires in": [
         "有効期限"
       ],
@@ -1720,6 +1729,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -1958,6 +1970,9 @@
       "Settings successfully updated": [
         "設定が正常に更新されました"
       ],
+      "Share aliases with others by adding their inbox as an additional mailbox.": [
+        "受信トレイを追加のメールボックスとして追加することで、エイリアスを他のユーザーと共有できます。"
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "最大 10 人まで、ログインやセキュアノートを共有できます"
       ],
@@ -1996,6 +2011,9 @@
       ],
       "Syncing your vaults…": [
         "保管庫を同期中…"
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "${ gearIcon }アイコンをタップして、エイリアスを好きなようにカスタマイズします。"
       ],
       "Thank you, the problem has been reported": [
         "ありがとうございます。問題が報告されました"
@@ -2184,10 +2202,10 @@
         "あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。アイテムは最初の2つのフォルダーにのみ移動できます。すべてのフォルダー間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "「あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。新しいアイテムは最初の2つのフォルダーでのみ作成できます。すべてのフォルダーで新しいアイテムを作成するには、サブスクリプションをアップグレードしてください。"
+        "あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。新しいアイテムは最初の2つのフォルダーでのみ作成できます。すべてのフォルダーで新しいアイテムを作成するには、サブスクリプションをアップグレードしてください。"
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "作成できるエイリアスの制限に達しました。 サブスクリプションをアップグレードするときに、エイリアスを無制限に作成できます。"
+        "作成できるエイリアスの制限に達しました。 サブスクリプションをアップグレードすると、エイリアスを無制限に作成できます。"
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
         "作成できるクレジット カードの上限に達しました。サブスクリプションをアップグレードすると、無制限の数のクレジット カードを作成できます。"
@@ -2291,7 +2309,7 @@
         "15 分"
       ],
       "2 minutes": [
-        "2分"
+        "2 分"
       ],
       "24 hours": [
         "24 時間"
@@ -2315,7 +2333,7 @@
         "30 秒"
       ],
       "5 minutes": [
-        "5分"
+        "5 分"
       ],
       "7 days": [
         "7日間"
@@ -2544,6 +2562,9 @@
       ],
       "Facebook account": [
         "Facebook アカウント"
+      ],
+      "Feedback": [
+        "フィードバック"
       ],
       "Field name": [
         "フィールド名"
@@ -2813,7 +2834,7 @@
         "プレミアムドメイン"
       ],
       "Priority:": [
-        "プライオリティ:"
+        "優先度:"
       ],
       "Prompt for auto-save": [
         "自動保存のプロンプト"
@@ -3429,6 +3450,9 @@
       "Delete vault \"${ vaultName }\"?": [
         "デフォルトの保管庫は\"${ vaultName }\"ですか？"
       ],
+      "Did you know?": [
+        "ご存知ですか？"
+      ],
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
@@ -3655,7 +3679,7 @@
         "未認証"
       ],
       "Update available": [
-        "更新あり"
+        "アップデートが利用可能です"
       ],
       "Use my email": [
         "メールアドレスを使用"
@@ -3944,7 +3968,7 @@
         "このアイテムとその詳細にアクセスできなくなります。続行しますか？"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "あなたはこのフォルダーへのアクセスを持たなくなります。再度参加するには、新しい招待が必要です。"
+        "あなたはこのフォルダーへのアクセス権を持たなくなります。再度参加するには、新しい招待が必要です。"
       ],
       "Your plan does not allow you to create more aliases": [
         "あなたのプランでは、それ以上のエイリアスを作成することはできません。"
