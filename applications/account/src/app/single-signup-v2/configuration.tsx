@@ -233,8 +233,7 @@ export const getSummaryPlan = ({
     }
 
     if (plan && plan?.Name === PLANS.VISIONARY) {
-        // walletEnabled not important since we override the plans
-        const shortPlan = getVisionaryPlan({ plan, freePlan, serversCount: vpnServersCountData, walletEnabled: false });
+        const shortPlan = getVisionaryPlan({ plan, freePlan, serversCount: vpnServersCountData });
         return {
             logo: (
                 <div>
