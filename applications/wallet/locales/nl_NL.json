@@ -238,6 +238,9 @@
       "Show balance": [
         "Toon saldo"
       ],
+      "Show QRCode": [
+        "Toon QR-code"
+      ],
       "Sign out": [
         "Uitloggen"
       ],
@@ -249,6 +252,9 @@
       ],
       "Switch or add account": [
         "Account toevoegen of wisselen"
+      ],
+      "Take a tour": [
+        "Volg een rondleiding"
       ],
       "Try again": [
         "Opnieuw proberen"
@@ -516,6 +522,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
@@ -547,9 +556,6 @@
       "12 months": [
         "12 maanden"
       ],
-      "24 months": [
-        "24 maanden"
-      ],
       "Annually": [
         "Jaarlijks"
       ],
@@ -562,28 +568,31 @@
     },
     "bitcoin buy": {
       "${ serviceFeePercentage }% Azteco service fee": [
-        "${ serviceFeePercentage }% Azteco service kosten"
+        "${ serviceFeePercentage }% Azteco-servicekosten"
       ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
-        "${ WALLET_APP_NAME } heeft samengewerkt met ${ rampLink } ${ banxaLink } en ${ moonpayLink }, drie geregistreerde crypto-activa diensten, om de aankoop van BTC te vergemakkelijken. Vul uw regio in om de beschikbare aanbieders en betalingsmethoden te zien."
+        "${ WALLET_APP_NAME } werkt samen met ${ rampLink } ${ banxaLink } en ${ moonpayLink }, drie geregistreerde crypto-activadiensten, om de aankoop van BTC te vergemakkelijken. Vul uw regio in om de beschikbare aanbieders en betalingsmethoden te zien."
       ],
       "1% bank transfer fee": [
         "1% bankoverschrijvingskosten"
       ],
       "4% credit card fee": [
-        "4% creditcard vergoeding"
+        "4% creditcardkosten"
       ],
       "Amount": [
         "Bedrag"
       ],
       "An error occurred while confirming this quote, please select another provider and try again.": [
-        "Er is een fout opgetreden tijdens het bevestigen van deze quote, selecteer een andere provider en probeer het opnieuw."
+        "Er is een fout opgetreden tijdens het bevestigen van deze offerte, selecteer een andere provider en probeer het opnieuw."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
-        "Als een betaalde gebruiker, bespaart u ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } op de servicekosten!"
+        "Als betaalde gebruiker bespaart u ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } op de Azteco-servicekosten!"
       ],
       "Bank transfer": [
         "Bankoverschrijving"
+      ],
+      "Banxa": [
+        "Banxa"
       ],
       "Binance": [
         "Binance"
@@ -595,10 +604,13 @@
         "Kopen"
       ],
       "Buy Azteco vouchers": [
-        "Koop Azteco vouchers"
+        "Koop Azteco-vouchers"
       ],
       "Choose a country": [
         "Kies een land"
+      ],
+      "Coinbase": [
+        "Coinbase"
       ],
       "Confirm": [
         "Bevestigen"
@@ -618,8 +630,14 @@
       "Instant payment": [
         "Directe betaling"
       ],
+      "Kraken": [
+        "Kraken"
+      ],
       "Location": [
         "Locatie"
+      ],
+      "MoonPay": [
+        "MoonPay"
       ],
       "Pay with": [
         "Betaald met"
@@ -628,7 +646,10 @@
         "Betalingsgegevens"
       ],
       "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
-        "Voer uw regio in om de beschikbare BTC-aanbieders en betaalmethodes te zien. Elk aangekochte BTC zal worden verzonden naar een BTC-adres van dit wallet account."
+        "Voer uw regio in om de beschikbare BTC-aanbieders en betaalmethodes te zien. Elk aangekochte BTC zal worden verzonden naar een BTC-adres van dit walletaccount."
+      ],
+      "Ramp Network": [
+        "Ramp Network"
       ],
       "Recipients": [
         "Ontvangers"
@@ -646,7 +667,7 @@
         "Deze offerte is geldig voor de komende 5 minuten"
       ],
       "Upgrade to Visionary plan to reduce Azteco service fee to 3%": [
-        "Upgrade naar Visionary plan om de Azteco service kosten te verlagen tot 3%"
+        "Upgrade naar Visionary-abonnement om de Azteco-servicekosten te verlagen tot 3%"
       ],
       "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
         "U kunt ook BTC kopen op beurzen zoals ${ binanceLink }, ${ coinbaseLink } of ${ krakenLink } en vervolgens de BTC naar uw ontvangstadres sturen."
@@ -668,6 +689,9 @@
       "${ quote.provider } checkout": [
         "${ quote.provider } afrekenen"
       ],
+      "No quote available for the requested amount": [
+        "Geen offerte beschikbaar voor het gevraagde bedrag"
+      ],
       "The selected currency is not supported in your country or the requested amount is too low": [
         "De geselecteerde valuta wordt niet ondersteund in uw land of het opgevraagde bedrag is te laag"
       ]
@@ -681,6 +705,9 @@
       ],
       "Native Segwit": [
         "Native Segwit"
+      ],
+      "Taproot": [
+        "Taproot"
       ]
     },
     "Bitcoin Script Type Description": {
@@ -831,27 +858,44 @@
         "Probleem met toegang tot website"
       ]
     },
+    "Button": {
+      "Create label": [
+        "Maak label"
+      ],
+      "Discover and set up features": [
+        "Ontdek en configureer functies"
+      ],
+      "Remind me later": [
+        "Herinner mij later"
+      ],
+      "Set up other features": [
+        "Andere functies instellen"
+      ],
+      "Take a tour": [
+        "Volg een rondleiding"
+      ]
+    },
     "Buy confirm": {
       "Buy more bitcoin": [
         "Koop meer bitcoin"
       ],
       "For any issues with the purchasing process, please contact ${ support }.": [
-        "Bij problemen met het aankoopproces, neem contact op met ${ support }."
+        "Bij problemen met het aankoopproces neemt u contact op met ${ support }."
       ],
       "For any issues with the purchasing process, please contact the partner’s support team.": [
         "Neem voor problemen met het aankoopproces contact op met het ondersteuningsteam van de partner."
       ],
       "Purchase completed": [
-        "Koop succesvol"
+        "Aankoop succesvol"
       ],
       "Purchase finished": [
         "Aankoop voltooid"
       ],
       "Thank you for purchasing an Azteco voucher.\nWe will now redeem your voucher and Azteco will send the BTC to your wallet.\nWe will also send you an email with the purchase details.": [
-        "Bedankt voor het kopen van een Azteco voucher.\nWe zullen nu uw waardebon inwisselen en Azteco zal de BTC naar uw portemonnee sturen.\nWe sturen u ook een e-mail met de inkoopgegevens."
+        "Bedankt voor het aankopen van een Azteco-voucher.\nWe zullen nu uw voucher inwisselen en Azteco zal de BTC naar uw wallet verzenden.\nWe sturen u ook een e-mail met de gegevens van de aankoop."
       ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
-        "Bedankt voor uw inkooppoging met onze partner.\nU kunt de status van uw bestelling volgen via de bevestigingsmail die u van onze partner heeft ontvangen.\nAls de transactie mislukt, kunt u opnieuw proberen of een andere partner kiezen."
+        "Bedankt voor uw aankoop bij onze partner.\nU kunt de status van uw bestelling volgen via de bevestigingsmail die u van onze partner heeft ontvangen.\nAls de transactie mislukt, kunt u opnieuw proberen of een andere partner kiezen."
       ]
     },
     "Buy in progress": {
@@ -859,13 +903,13 @@
         "Koop meer bitcoin"
       ],
       "For any issues with the purchasing process, please contact ${ support }.": [
-        "Bij problemen met het aankoopproces, neem contact op met ${ support }."
+        "Bij problemen met het aankoopproces neemt u contact op met ${ support }."
       ],
       "Purchase in progress": [
         "Aankoop in behandeling"
       ],
       "Thank you for your purchase attempt for an Azteco voucher.\nAs soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.\nThen Azteco will send the BTC to your wallet.": [
-        "Dank u voor uw inkoop voor een Azteco waardebon.\nZodra we jouw betaling ontvangen zullen we de tegoedbon aanmaken en inwisselen op basis van BTC prijs op dat moment.\nVervolgens zal Azteco de BTC naar uw portemonnee sturen."
+        "Dank u voor uw aankoop van een Azteco-voucher.\nZodra we uw betaling ontvangen zullen we de voucher aanmaken en inwisselen op basis van BTC prijs op dat moment.\nVervolgens zal Azteco de BTC naar uw wallet verzenden."
       ]
     },
     "Cancellation upsell": {
@@ -1945,6 +1989,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
       ],
@@ -2002,6 +2049,9 @@
       "Not a valid number": [
         "Geen geldig getal"
       ],
+      "Organization key is not decrypted": [
+        "Organisatiesleutel is niet ontsleuteld"
+      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
@@ -2016,6 +2066,12 @@
       ],
       "Payment process not supported": [
         "Betalingsproces niet ondersteund"
+      ],
+      "Please select a country": [
+        "Selecteer een land"
+      ],
+      "Please select a state": [
+        "Selecteer een staat"
       ],
       "Process aborted": [
         "Proces afgebroken"
@@ -2248,10 +2304,10 @@
     },
     "Gateway disclaimer": {
       "${ WALLET_APP_NAME } support": [
-        "${ WALLET_APP_NAME } ondersteuning"
+        "${ WALLET_APP_NAME }-ondersteuning"
       ],
       "As soon as your payment is received, ${ WALLET_APP_NAME } will redeem the voucher according to the market price of BTC and network fee at that time.\nThe redeemed BTC will then be sent by ${ azteco } to your wallet.\nFor any questions related to Azteco bitcoin vouchers, please contact ${ support }.": [
-        "Zodra je betaling ontvangen is, zal ${ WALLET_APP_NAME } de voucher inwisselen op basis van de marktprijs van BTC en netwerkkosten op dat moment.\nDe ingewisselde BTC zal door ${ azteco } naar je portemonnee worden verzonden.\nVoor vragen die gerelateerd zijn aan Azteco bitcoin vouchers, neem contact op met ${ support }."
+        "Zodra uw betaling ontvangen is, zal ${ WALLET_APP_NAME } de voucher inwisselen op basis van de marktprijs van BTC en netwerkkosten op dat moment.\nDe ingewisselde BTC zal door ${ azteco } naar uw wallet worden verzonden.\nVoor vragen over Azteco-bitcoinvouchers neemt u contact op met ${ support }."
       ],
       "Confirm": [
         "Bevestigen"
@@ -2269,10 +2325,10 @@
         "Niet nu"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
-        "U verlaat nu ${ WALLET_APP_NAME } voor ${ providerName } (${ websiteLink }).\nDiensten met betrekking tot creditcardbetalingen, bankoverschrijvingen en alle andere fiat transacties worden geleverd door ${ providerName },\neen afzonderlijk platform van derden. Door verder te gaan en diensten uit ${ providerName }aan te schaffen\nerkent u dat u de Algemene Voorwaarden van ${ providerName }heeft gelezen en ermee akkoord gaat (${ termOfUseLink })\nen Privacy en Cookies Policy (${ privacyAndCookiesPolicyLink }).\nVoor vragen gerelateerd aan ${ providerName }'s diensten, neem contact op met ${ providerName } via ${ supportEmailLink }"
+        "U verlaat nu ${ WALLET_APP_NAME } voor ${ providerName } (${ websiteLink }).\nDiensten met betrekking tot creditcardbetalingen, bankoverschrijvingen en alle andere fiat-transacties worden geleverd door ${ providerName },\neen afzonderlijk platform van derden. Door verder te gaan en diensten van ${ providerName }aan te schaffen\nerkent u dat u de Algemene Voorwaarden van ${ providerName } (${ termOfUseLink })\nen het Privacy- en Cookiebeleid heeft gelezen en ermee akkoord gaat (${ privacyAndCookiesPolicyLink }).\nVoor vragen over de diensten van ${ providerName } neemt u contact op met ${ providerName } via ${ supportEmailLink }"
       ],
       "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
-        "U kunt nu een Azteco bitcoin waardebon kopen met ${ WALLET_APP_NAME }. Dit werkt vergelijkbaar met een cadeaubon en is een van de makkelijkste en meest private manieren om BTC te verkrijgen."
+        "U kunt nu een Azteco-bitcoinvoucher kopen met ${ WALLET_APP_NAME }. Dit werkt net als een cadeaubon en is een van de makkelijkste en meest privé manieren om BTC te verkrijgen."
       ]
     },
     "Group": {
@@ -2293,6 +2349,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -2318,6 +2377,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
       ],
       "${ storage } storage": [
         "${ storage } opslag"
@@ -2409,6 +2471,12 @@
       "default email address": [
         "standaard e-mailadres"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Ontdek nieuwe functies ontgrendeld en begin direct met het gebruik ervan!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Ontdek nieuwe functies ontgrendeld met ${ planTitle } en begin ze meteen te gebruiken!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -2432,6 +2500,12 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-mails die meer dan 30 dagen geleden naar prullenbak werden verplaatst worden automatisch gewist."
+      ],
+      "Enabling auto-deletion…": [
+        "Activatie automatisch verwijderen"
       ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw verificatie-app in"
@@ -2481,6 +2555,9 @@
       "JCB logo": [
         "JCB-logo"
       ],
+      "Keys created": [
+        "Sleutels aangemaakt"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -2520,6 +2597,9 @@
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
+      "or discover other features:": [
+        "of andere functies ontdekken:"
+      ],
       "Organization size": [
         "Grootte van de organisatie"
       ],
@@ -2551,6 +2631,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Registering your subscription…": [
+        "Uw abonnement registreren…"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
       ],
@@ -2559,6 +2642,12 @@
       ],
       "Session timed out": [
         "Sessie verlopen"
+      ],
+      "Setting up ${ feature }…": [
+        "Instellen van ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Uw nieuwe adres instellen…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
@@ -2607,6 +2696,9 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
+      ],
+      "User activated": [
+        "Gebruiker geactiveerd"
       ],
       "Users": [
         "Gebruikers"
@@ -2659,6 +2751,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "U gebruikt meer opslag dan is inbegrepen in een ${ downgradedPlanName } abonnement. Wis of verwijder gegevens om te kunnen downgraden."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "U kunt dit op elk gewenst moment in ${ settingsLink } wijzigen."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
         "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
@@ -2672,6 +2767,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
@@ -2904,8 +3002,14 @@
       "Security code (${ codeName })": [
         "Beveiligingscode (${ codeName })"
       ],
+      "Show QRCode": [
+        "Toon QR-code"
+      ],
       "Start date": [
         "Begindatum"
+      ],
+      "State": [
+        "Staat"
       ],
       "Subscription options": [
         "Abonnementsopties"
@@ -2974,6 +3078,9 @@
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
+      ],
+      "settings": [
+        "instellingen"
       ],
       "View on blockchain": [
         "Op blockchain bekijken"
@@ -4029,6 +4136,11 @@
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Gratis"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Door deze betaling te bevestigen, autoriseert u ${ BRAND_NAME } en Stripe, onze provider van betalingsdiensten, om uw bank te instrueren om uw rekening en uw bank dienovereenkomstig in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
@@ -4121,8 +4233,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Controleer de veiligheid van uw account"
+      "Review account safety": [
+        "Accountveiligheid controleren"
       ]
     },
     "saml: Error": {
@@ -4605,6 +4717,9 @@
       ]
     },
     "Title": {
+      "${ feature } is now active": [
+        "${ feature } is nu actief"
+      ],
       "Add credit/debit card": [
         "Krediet/debietkaart toevoegen"
       ],
@@ -4616,6 +4731,9 @@
       ],
       "Are you sure?": [
         "Weet u het zeker?"
+      ],
+      "Auto-deletion is active": [
+        "Automatisch verwijderen is actief"
       ],
       "Billing cycle": [
         "Factuurperiode"
@@ -4722,6 +4840,9 @@
       "Wallet": [
         "Portemonnee"
       ],
+      "You can now create unlimited folders and labels": [
+        "U kunt nu onbeperkt mappen en labels maken"
+      ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
       ]
@@ -4811,6 +4932,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "U wordt vervolgens elke 12 maanden ${ renewPrice } aangerekend."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
+        "Uw abonnement wordt automatisch verlengd over ${ cycle } maanden."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Uw gepland abonnement begint op ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
@@ -5029,8 +5157,8 @@
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
         "Een wachtwoordzin van een portemonnee is een extra wachtwoord dat u aanmaakt om beveiliging toe te voegen aan uw cryptocurrency-portemonnee. Het werkt naast uw seed-phrase. Bewaar de zin op een veilige plek. Als u de zin verliest, kunt u de toegang tot uw portemonnee kwijtraken."
       ],
-      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Een seed-phrase van een portemonnee is een reeks van 12 of 24 woorden die door uw portemonnee zijn gegenereerd. Het dient als hoofdsleutel, waardoor u uw vermogen kunt herstellen. Houd het veilig en deel de woorden nooit. Het dient als toegang tot uw vermogen."
+      "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Een wallet seed phrase is een reeks van 12 tot 24 woorden die door je wallet wordt gegenereerd. Het dient als een hoofdcode, waarmee je je geld kunt herstellen. Bewaar het veilig en deel het nooit, want het geeft toegang tot je geld."
       ],
       "What’s a wallet passphrase?": [
         "Wat is een wachtwoordzin van een portemonnee?"
@@ -5064,6 +5192,12 @@
       "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
         "Nodig uw vrienden en familie uit, zodat u allemaal Bitcoin via e-mail kunt versturen. U krijgt meer uitnodigingen als we meer servers toevoegen."
       ],
+      "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Nodig je vrienden en familie uit voor ${ WALLET_APP_NAME }, zodat jullie allemaal Bitcoin via e-mail kunnen versturen."
+      ],
+      "Invites": [
+        "Uitnodigen"
+      ],
       "Not now": [
         "Niet nu"
       ],
@@ -5096,6 +5230,9 @@
       "${ availableInvites } invite left": [
         "${ availableInvites } uitnodiging over",
         "${ availableInvites } uitnodigingen over"
+      ],
+      "Invite your friends": [
+        "Nodig je vrienden uit."
       ]
     },
     "Wallet passphrase": {
@@ -5222,8 +5359,17 @@
       "For better privacy, generate a new address for each transaction.": [
         "Gebruik voor meer privacy een ander adres voor elke transactie."
       ],
+      "Generate new address": [
+        "Genereer nieuw adres"
+      ],
       "Receive to": [
         "Ontvangen op"
+      ],
+      "To prevent a large gap, generating new addresses has been disabled. You can either use this address or a previously generated one": [
+        "Om een groot gat te voorkomen, is het genereren van nieuwe adressen uitgeschakeld. U kunt dit adres gebruiken of een eerder gegenereerd adres"
+      ],
+      "To prevent a large gap, you should either use this address or a previously generated one": [
+        "Om een groot gat te voorkomen, moet u dit adres gebruiken of een eerder gegenereerd adres"
       ]
     },
     "Wallet receive": {
@@ -5383,7 +5529,7 @@
         "U heeft niet genoeg BTC op dit account om de transactie te financieren en de vereiste netwerkvergoeding van ${ feesToReserveElement } te betalen."
       ],
       "You do not have enough funds. Please choose a lower network fee and try again": [
-        "U heeft niet genoeg fondsen. Kies een lagere netwerkvergoeding en probeer het opnieuw"
+        "U heeft niet genoeg geld. Kies een lagere netwerkvergoeding en probeer het opnieuw"
       ],
       "Your Bitcoin is on its way!": [
         "Uw Bitcoin is onderweg!"
@@ -5420,7 +5566,7 @@
         "Bitcoin via e-mail"
       ],
       "Browser storage cleared. Please refresh the page": [
-        "Browser opslag gewist. Vernieuw de pagina"
+        "Browseropslag gewist. Vernieuw de pagina"
       ],
       "Could not fill the pool after email address addition": [
         "Kan de pool niet invullen na de toevoeging van het e-mailadres"
@@ -5564,8 +5710,8 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Verhuis uw bitcoins naar een andere portemonnee voordat u deze verwijdert. Het verwijderen van deze portemonnee zal al de bijbehorende gegevens van de servers van ${ BRAND_NAME } verwijderen. U kunt deze portemonnee later herstellen met de seedphrase."
       ],
-      "Seed phrase (12 or 24 words, separated by space)": [
-        "Seed zin (12 of 24 woorden, gescheiden door spatie)"
+      "Seed phrase (12 to 24 words, separated by space)": [
+        "Herstelzin (12 tot 24 woorden, gescheiden door spatie)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Deze 12 woorden mogen alleen als laatste redmiddel worden gebruikt om de activa van deze portemonnee te herstellen, bijvoorbeeld als u de toegang tot uw ${ BRAND_NAME } account verliest."
@@ -5585,14 +5731,26 @@
       "Wallet seed phrase": [
         "Seed-phrase van portemonnee"
       ],
+      "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
+        "De checksum van de Wallet seed phrase is ongeldig. We accepteren alleen BIP39 seed phrases en ondersteunen geen Electrum seed phrases."
+      ],
+      "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
+        "De portefeuille herstelzin bevat een onbekend woord: ${ word }. We ondersteunen alleen de BIP39 Engelse woordenlijst."
+      ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "De seed-phrase van een portemonnee codeert de privésleutel die uw digitale activa beheert."
       ],
-      "Wallet seed phrase is incorrect. Please check this and try again.": [
-        "Seed-phrase van portemonnee is onjuist. Controleer dit en probeer het opnieuw."
+      "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
+        "De portefeuille herstelzin is ongeldig. Deze moet tussen 128 en 256 bits lang zijn."
       ],
-      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
-        "Lengte van seed-phrase van portemonnee is ongeldig. Dit moet tussen de 12 en 24 woorden zijn."
+      "Wallet seed phrase is incorrect. Please check it and try again.": [
+        "De wallet seed phrase is onjuist. Controleer het en probeer het opnieuw."
+      ],
+      "Wallet seed phrase language is not supported.": [
+        "De taal van de wallet seed phrase wordt niet ondersteund."
+      ],
+      "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
+        "De lengte van de portefeuille herstelzin is ongeldig. Deze moet tussen 12 en 24 woorden zijn."
       ],
       "Wallet setup": [
         "Configuratie van portemonnee"
@@ -5861,13 +6019,13 @@
       "A safer way to hold your Bitcoin": [
         "Een veiligere manier om uw Bitcoin vast te houden"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Een veiligere/makkelijkere manier om Bitcoin te bewaren en te verzenden"
+      "A safer way to hold Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
       ]
     },
     "wallet_signup_2024:Bug category": {
