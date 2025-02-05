@@ -2,9 +2,10 @@
     "name": "proton-codeshift",
     "version": "0.0.1",
     "scripts": {
+        "build": "yarn clean && yarn build:transforms",
         "build:transforms": "tsc --project tsconfig.transform.json",
         "clean": "rimraf \"src/**/*.js\"",
-        "start": "yarn clean && yarn build:transforms && ts-node -P tsconfig.json src/main.ts"
+        "move:coupons": "yarn build && yarn jscodeshift --transform ./src/payments/move-coupons/transform.js --no-dry --parser tsx --stdin < ./src/payments/move-coupons/files.txt"
     },
     "dependencies": {
         "jscodeshift": "^17.1.2"

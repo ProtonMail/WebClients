@@ -1,5 +1,4 @@
-import { type ADDON_NAMES, CYCLE, PLANS, isFreeSubscription } from '@proton/payments';
-import { COUPON_CODES } from '@proton/shared/lib/constants';
+import { type ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, isFreeSubscription } from '@proton/payments';
 import {
     getHas2024OfferCoupon,
     getIsB2BAudienceFromSubscription,

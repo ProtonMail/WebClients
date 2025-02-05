@@ -1,5 +1,5 @@
-import { type CYCLE, PLANS } from '@proton/payments';
-import type { APP_NAMES, COUPON_CODES, UPSELL_COMPONENT, UPSELL_FEATURE } from '@proton/shared/lib/constants';
+import { type COUPON_CODES, type CYCLE, PLANS } from '@proton/payments';
+import type { APP_NAMES, UPSELL_COMPONENT, UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { APPS, APP_UPSELL_REF_PATH } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, Audience, Subscription, UserModel } from '@proton/shared/lib/interfaces';
