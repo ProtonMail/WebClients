@@ -75,7 +75,7 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
 
     const warning = useMemo(() => {
         if (canManage && limitReached) {
-            const upgradeLink = <AccessUpgrade />;
+            const upgradeLink = <AccessUpgrade key="access-upgrade" />;
             return (
                 <Card type="primary" className="text-sm">
                     {plan === UserPassPlan.FREE
