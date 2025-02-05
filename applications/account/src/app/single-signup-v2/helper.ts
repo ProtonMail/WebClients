@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
-import { CYCLE, formatPaymentMethods } from '@proton/payments';
+import { COUPON_CODES, CYCLE, formatPaymentMethods } from '@proton/payments';
 import type {
     BillingAddress,
     FullPlansMap,
@@ -25,7 +25,7 @@ import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, COUPON_CODES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import {
