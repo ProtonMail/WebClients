@@ -3392,6 +3392,9 @@
       ],
       "Please select a country": [
         "Vælg venligst et land"
+      ],
+      "Please select a state": [
+        "Vælg venligst en region"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5373,7 +5376,22 @@
         "Din næste faktureringsdato er ${ renewalTime }. Kontakt venligst support, hvis du har brug for en abonnementsændring."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Oplev nye funktioner, der er låst op med ${ planTitle }, og begynd at bruge dem med det samme!"
+      ],
+      "Enabling auto-deletion…": [
+        "Aktivering af automatisk sletning…"
+      ],
+      "or discover other features:": [
+        "eller opdag andre funktioner:"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
       ]
     },
     "info": {

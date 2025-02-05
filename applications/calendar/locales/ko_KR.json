@@ -1710,6 +1710,9 @@
       ],
       "Work": [
         "직장"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3998,6 +4001,12 @@
       ],
       "No verification method available": [
         "사용 가능한 인증 방법 없음"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4264,6 +4273,9 @@
       ],
       "ICS file": [
         "ICS 파일"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5411,7 +5423,7 @@
         "언제든지 ${ settingsLink }(에)서 변경하실 수 있습니다."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
-        "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
+        "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
       ]
     },
     "info": {
@@ -5516,6 +5528,9 @@
       ],
       "Trusted": [
         "신뢰됨"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -8035,6 +8050,9 @@
     "Safety review": {
       "Review your account safety": [
         "내 계정 보안 검토하기"
+      ],
+      "Review account safety": [
+        "내 계정 보안 검토하기"
       ]
     },
     "saml: Error": {
@@ -8446,7 +8464,7 @@
         "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "귀하의 구독은 매년 같은 요율로 갱신됩니다."
+        "회원님의 구독이 매년 같은 요율로 갱신됩니다."
       ]
     },
     "specialoffer: Link": {
@@ -9269,6 +9287,9 @@
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
+      ],
+      "Event content search enabled": [
+        "이벤트 콘텐츠 검색 활성화됨"
       ]
     },
     "Suffix": {
@@ -10068,10 +10089,10 @@
         "사용자의 구독이 ${ cycle }개월 뒤에 자동으로 갱신됩니다."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "귀하의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
+        "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "귀하의 요금제가 ${ renewalTime }에 시작합니다."
+        "회원님의 플랜이 ${ renewalTime }부터 시작합니다."
       ]
     },
     "vpn_2step: feature": {
@@ -10102,11 +10123,17 @@
       ],
       "Bitcoin via email": [
         "이메일을 통한 Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "이메일을 통한 Bitcoin"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "쉽고 안전하게 Bitcoin을 보관 및 송금하세요"
+      ],
+      "A safer way to hold Bitcoin": [
+        "비트코인을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -10506,6 +10533,17 @@
       ],
       "Storage": [
         "저장 공간"
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Recover previous file versions": [
+        "파일 이전 버전 복원"
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }

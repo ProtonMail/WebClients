@@ -811,6 +811,15 @@
       ],
       "More actions": [
         "Больше действий"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Получить ${ planName } за ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Получить ${ planOrAppName }"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
       ]
     },
     "Action subline": {
@@ -1174,6 +1183,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Защитите логины на всех ваших устройствах, включая неограниченное число псевдонимов hide-my-email, совместное пользование, интегрированную двухфакторную аутентификацию, ${ DARK_WEB_MONITORING_NAME } и многое другое."
       ]
     },
     "Billing cycle option": {
@@ -1293,6 +1305,21 @@
       ],
       "Continue your subscription": [
         "Продолжить подписку"
+      ],
+      "Create label": [
+        "Создать ярлык"
+      ],
+      "Discover and set up features": [
+        "Настройте функции"
+      ],
+      "Remind me later": [
+        "Напомнить позже"
+      ],
+      "Set up other features": [
+        "Настроить другие функции"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
       ]
     },
     "Calendar access select label": {
@@ -1728,6 +1755,9 @@
       ],
       "Work": [
         "Рабочий"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3615,6 +3645,9 @@
       ],
       "Unsupported event": [
         "Неподдерживаемое событие"
+      ],
+      "Time zone component ignored": [
+        "Часовой пояс игнорируется."
       ]
     },
     "Error message": {
@@ -4089,6 +4122,12 @@
       ],
       "No verification method available": [
         "Нет доступных способов проверки"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "СМС"
       ]
     },
     "Import calendar": {
@@ -4251,6 +4290,12 @@
       ],
       "Your password is correct.": [
         "Ваш пароль правильный."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Пароль от приложения верный. Не используйте обычный пароль."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Ваш адрес электронной почты и пароль от приложения верны. Не используйте обычный пароль."
       ]
     },
     "Import instructions": {
@@ -4323,6 +4368,9 @@
       ],
       "ICS file": [
         "файл ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5528,6 +5576,42 @@
       ],
       "User activated": [
         "Пользователь активирован"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Откройте для себя новые доступные функции и начните использовать их прямо сейчас!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Откройте для себя новые функции, доступные с ${ planTitle }, и начните использовать их прямо сейчас!"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Письма, перемещённые в Корзину и Спам более 30 дней назад, будут автоматически очищены."
+      ],
+      "or discover other features:": [
+        "или откройте для себя другие возможности:"
+      ],
+      "Setting up ${ feature }…": [
+        "Установка ${ feature }…"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можете изменить это в любой момент в ${ settingsLink }."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
       ]
     },
     "info": {
@@ -5641,6 +5725,9 @@
       ],
       "Trusted": [
         "Доверенный"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -6086,6 +6173,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "State": [
+        "Состояние"
       ]
     },
     "Label for contact group color": {
@@ -6215,6 +6305,9 @@
       ],
       "Trash": [
         "Корзина"
+      ],
+      "settings": [
+        "настройки"
       ]
     },
     "Link label (optional)": {
@@ -6626,6 +6719,12 @@
       ],
       "Upgrade": [
         "Улучшить"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7155,6 +7254,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканируем Темную паутину на предмет утечки ваших адресов или псевдонимов ${ BRAND_NAME } и немедленно оповещаем вас, если что-то находим."
+      ],
+      "200 GB of storage": [
+        "200 ГБ памяти"
+      ],
+      "Private photo backup": [
+        "Конфиденциальное резервное копирование фото"
+      ],
+      "Secure file storage and sharing": [
+        "Безопасное хранение и обмен файлами"
       ]
     },
     "new_plans: feature highlight": {
@@ -8340,6 +8448,9 @@
     "Safety review": {
       "Review your account safety": [
         "Просмотрите безопасность вашего аккаунта"
+      ],
+      "Review account safety": [
+        "Проверьте безопасность аккаунта"
       ]
     },
     "saml: Error": {
@@ -8800,6 +8911,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Эта подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока она не будет отменена."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Ваша подписка будет продлеваться каждый год по фиксированной цене."
       ]
     },
     "specialoffer: Link": {
@@ -8808,6 +8922,9 @@
       ],
       "Upgrade": [
         "Сменить тариф"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Улучшить за ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9667,6 +9784,9 @@
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
+      ],
+      "Event content search enabled": [
+        "Включен поиск по содержимому события"
       ]
     },
     "Suffix": {
@@ -10335,6 +10455,15 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "${ feature } is now active": [
+        "${ feature } теперь активна"
+      ],
+      "Auto-deletion is active": [
+        "Автоматическое удаление включено"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Теперь вы можете создавать неограниченное количество папок и ярлыков."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10509,6 +10638,9 @@
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Ваш запланированный тариф начинается с ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -10548,11 +10680,17 @@
       ],
       "Bitcoin via email": [
         "Bitcoin по эл. почте"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin по электронной почте"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Безопасный и простой способ хранить и переводить Bitcoin"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Безопасный способ хранить Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -11040,6 +11178,71 @@
       ],
       "Time zone not supported": [
         "Часовой пояс не поддерживается"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Скидка ${ priceCoupon } действует в течение первого месяца. Затем она будет автоматически продлена до ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Разблокируйте все премиум продукты и функции ${ BRAND_NAME } только за ${ priceMailPlus }. Отменить можно в любое время."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Предложение ${ pricingTitle } истекает сегодня!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Попробуйте Drive Plus всего за ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Попробуйте Mail Plus всего за ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Последний шанс получить скидку 80% на первый месяц подписки ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Ограниченное предложение"
+      ],
+      "Maybe later": [
+        "Может быть позже"
+      ],
+      "Save 80% on your first month.": [
+        "Сэкономьте 80% в первый месяц."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 дополнительных премиум-функций"
+      ],
+      "Custom email domain": [
+        "Пользовательский домен электронной почты"
+      ],
+      "Email addresses": [
+        "Адреса электронной почты"
+      ],
+      "Free": [
+        "Бесплатно"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Storage": [
+        "Хранилище"
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Бесплатно"
       ]
     }
   }

@@ -1710,6 +1710,9 @@
       ],
       "Work": [
         "勤務先"
+      ],
+      "Yomi": [
+        "ふりがな"
       ]
     },
     "Country name": {
@@ -3071,7 +3074,7 @@
         "エラーが発生しました"
       ],
       "Error connecting to the Bitcoin API.": [
-        "ビットコインAPIへの接続中にエラーが発生しました。"
+        "Bitcoin APIへの接続中にエラーが発生しました。"
       ],
       "Error: ${ errorMessage }": [
         "エラー： ${ errorMessage }"
@@ -3998,6 +4001,12 @@
       ],
       "No verification method available": [
         "検証方法がありません"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4264,6 +4273,9 @@
       ],
       "ICS file": [
         "ICS ファイル"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5516,6 +5528,9 @@
       ],
       "Trusted": [
         "信頼済み"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -5582,10 +5597,10 @@
         "ブラウザのバージョン"
       ],
       "BTC address": [
-        "ビットコインアドレス"
+        "Bitcoin アドレス"
       ],
       "BTC amount": [
-        "ビットコイン金額"
+        "Bitcoin 金額"
       ],
       "Calendar": [
         "カレンダー"
@@ -6032,7 +6047,7 @@
         "ここをクリック"
       ],
       "How to pay with Bitcoin?": [
-        "ビットコインで支払うには？"
+        "Bitcoinで支払うには？"
       ],
       "Learn more": [
         "詳細"
@@ -8035,6 +8050,9 @@
     "Safety review": {
       "Review your account safety": [
         "アカウントの安全性を確認してください"
+      ],
+      "Review account safety": [
+        "アカウントの安全性を確認してください"
       ]
     },
     "saml: Error": {
@@ -8444,6 +8462,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "サブスクリプションは毎年同じ料金で更新されます。"
       ]
     },
     "specialoffer: Link": {
@@ -9266,6 +9287,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Event content search enabled": [
+        "予定内容の検索が有効になりました"
       ]
     },
     "Suffix": {
@@ -10063,6 +10087,12 @@
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "サブスクリプションは ${ cycle } か月後に自動的に更新されます。"
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "予定のプランは ${ renewalTime }から始まります。"
       ]
     },
     "vpn_2step: feature": {
@@ -10093,11 +10123,17 @@
       ],
       "Bitcoin via email": [
         "メールで Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "メールで Bitcoin"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Bitcoin を保持・送信する安全で簡単な方法"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Bitcoinをより安全に保持します"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -10494,6 +10530,20 @@
       ],
       "Storage": [
         "ストレージ"
+      ],
+      "Email addresses": [
+        "メールアドレス"
+      ],
+      "Online document editor": [
+        "オンライン文書エディタ"
+      ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "無料"
       ]
     }
   }
