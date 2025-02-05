@@ -261,7 +261,7 @@ describe('usePublicActions', () => {
             expect(mockShowConfirmModal).toHaveBeenCalledWith(
                 expect.objectContaining({
                     title: 'Delete test-file.txt?',
-                    message: 'This action will delete the file you uploaded permanently.',
+                    message: 'This will permanently delete the file you uploaded.',
                     submitText: 'Delete',
                 })
             );
@@ -287,8 +287,7 @@ describe('usePublicActions', () => {
             expect(mockShowConfirmModal).toHaveBeenCalledWith(
                 expect.objectContaining({
                     title: 'Delete test-folder?',
-                    message:
-                        'This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.',
+                    message: 'This will permanently delete the folder you uploaded.',
                     submitText: 'Delete',
                 })
             );
@@ -320,7 +319,7 @@ describe('usePublicActions', () => {
             expect(mockShowConfirmModal).toHaveBeenCalledWith(
                 expect.objectContaining({
                     title: 'Delete 2 items?',
-                    message: 'This action will delete the selected items permanently.',
+                    message: 'This will permanently delete the selected items you uploaded.',
                     submitText: 'Delete',
                 })
             );
@@ -399,6 +398,49 @@ describe('usePublicActions', () => {
                 ['link1'],
                 ['link2']
             );
+        });
+
+        it('should show error notification when trying to delete non-empty folders', async () => {
+            const { result } = renderHook(() => usePublicActions());
+            const links = [
+                {
+                    linkId: 'link1',
+                    parentLinkId: 'parent1',
+                    name: 'test-folder1',
+                    isFile: false,
+                },
+                {
+                    linkId: 'link2',
+                    parentLinkId: 'parent1',
+                    name: 'test-folder2',
+                    isFile: false,
+                },
+            ];
+
+            mockDeleteLinks.mockResolvedValue({
+                successes: [],
+                failures: [],
+                notAllowedErrorCount: 2,
+            });
+
+            await result.current.deleteLinks(mockAbortSignal, {
+                token: mockToken,
+                links,
+                showConfirmModal: mockShowConfirmModal,
+            });
+
+            await confirmModalHandler.onSubmit();
+
+            expect(mockDeleteLinks).toHaveBeenCalledWith(mockAbortSignal, {
+                token: mockToken,
+                linkIds: ['link1', 'link2'],
+                parentLinkId: 'parent1',
+            });
+            expect(mockCreateNotification).toHaveBeenCalledWith({
+                type: 'error',
+                text: "Sorry, we couldn't delete the folders because they are not empty.",
+            });
+            expect(mockCreateDeletedPublicItemsNotifications).not.toHaveBeenCalled();
         });
     });
 });
