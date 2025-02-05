@@ -1467,6 +1467,12 @@
       ],
       "Take a tour": [
         "Faceți un tur"
+      ],
+      "Get the app": [
+        "Luați aplicația"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ]
     },
     "action": {
@@ -2008,6 +2014,9 @@
       ],
       "Take a tour": [
         "Faceți un tur"
+      ],
+      "Got it": [
+        "Am înțeles"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2735,6 +2744,9 @@
       ],
       "Work": [
         "Serviciu"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5507,6 +5519,12 @@
       ],
       "No verification method available": [
         "Nu sunt metode de verificare disponibile"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5803,6 +5821,9 @@
       ],
       "ICS file": [
         "fișier ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -8096,6 +8117,9 @@
       ],
       "Trusted": [
         "Aprobată"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -11284,6 +11308,9 @@
     "Safety review": {
       "Review your account safety": [
         "Revizuire securitate cont"
+      ],
+      "Review account safety": [
+        "Revizuire securitate cont"
       ]
     },
     "saml: Error": {
@@ -11836,7 +11863,7 @@
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "Abonamentul dumneavoastră se va reînnoi la același tarif în fiecare an."
+        "Abonamentul vi se va reînnoi la același tarif în fiecare an."
       ]
     },
     "specialoffer: Link": {
@@ -14067,7 +14094,12 @@
         "Abonamentul vi se va reînnoi automat peste ${ cycle } de luni."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "Planul tău programat începe pe ${ renewalTime }."
+        "Planul programat începe ${ renewalTime }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Noul abonament vi se va reînnoi automat peste ${ cycle } lună.",
+        "Noul abonament vi se va reînnoi automat peste ${ cycle } luni.",
+        "Noul abonament vi se va reînnoi automat peste ${ cycle } de luni."
       ]
     },
     "vpn_2step: feature": {
@@ -14104,6 +14136,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin prin e-mail"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin prin e-mail"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -14114,6 +14149,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "O metodă mai sigură/ușoară de a păstra/trimite bitcoini"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Un mod mai sigur de a deține bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -14588,11 +14626,27 @@
       ],
       "Storage": [
         "Spațiu de stocare"
+      ],
+      "Online document editor": [
+        "Editor online de documente"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierului"
       ]
     },
     "Signup label": {
       "Display name": [
         "Nume afișat"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Confidențialitate implicită."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }

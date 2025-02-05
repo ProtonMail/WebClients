@@ -1462,6 +1462,12 @@
       ],
       "Take a tour": [
         "Visita guiada"
+      ],
+      "Get the app": [
+        "Obter a aplicação"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ]
     },
     "action": {
@@ -1997,6 +2003,9 @@
       ],
       "Take a tour": [
         "Visita guiada"
+      ],
+      "Got it": [
+        "Entendido"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2722,6 +2731,9 @@
       ],
       "Work": [
         "Trabalho"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -4578,7 +4590,7 @@
         "Selecione um país"
       ],
       "Please select a state": [
-        "Selecione um estado"
+        "Selecione um distrito"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5465,6 +5477,12 @@
       ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5754,6 +5772,9 @@
       ],
       "ICS file": [
         "Ficheiro ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7962,6 +7983,9 @@
       ],
       "Trusted": [
         "Confiada"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -11106,6 +11130,9 @@
     "Safety review": {
       "Review your account safety": [
         "Verifique a segurança da sua conta"
+      ],
+      "Review account safety": [
+        "Verifique a segurança da sua conta"
       ]
     },
     "saml: Error": {
@@ -13842,6 +13869,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13852,6 +13882,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Uma maneira mais segura/fácil de conservar e enviar Bitcoin"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Uma maneira mais segura de conservar bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -14289,11 +14322,27 @@
       ],
       "Storage": [
         "Armazenamento"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recuperar as versões anteriores do ficheiro"
       ]
     },
     "Signup label": {
       "Display name": [
         "Nome a mostrar"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }

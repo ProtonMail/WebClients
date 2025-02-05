@@ -1465,6 +1465,9 @@
       ],
       "Take a tour": [
         "Visite guidée"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ]
     },
     "action": {
@@ -2728,6 +2731,9 @@
       ],
       "Work": [
         "Professionnel"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5471,6 +5477,12 @@
       ],
       "No verification method available": [
         "Aucune méthode de vérification n'est disponible."
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5760,6 +5772,9 @@
       ],
       "ICS file": [
         "fichier ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7282,7 +7297,7 @@
         "Ce message sera supprimé automatiquement à ${ value }."
       ],
       "This message will be automatically deleted on ${ value }": [
-        "Ce message sera automatiquement supprimé à ${ value }."
+        "Ce message sera automatiquement supprimé le ${ value }."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Ce message sera marqué comme indésirable/spam. Voulez-vous aussi vous désinscrire pour les futurs messages ?",
@@ -7968,6 +7983,12 @@
       ],
       "Trusted": [
         "Approuvée"
+      ],
+      "KOO": [
+        "KOO"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10511,6 +10532,12 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Pour commencer, choisissez un nom d'affichage. C'est le nom que les gens verront quand vous leur enverrez un message, quand vous les inviterez à un événement ou quand vous partagerez un fichier avec eux."
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -11111,6 +11138,9 @@
     },
     "Safety review": {
       "Review your account safety": [
+        "Vérifier la sécurité du compte"
+      ],
+      "Review account safety": [
         "Vérifier la sécurité du compte"
       ]
     },
@@ -13848,6 +13878,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -14314,6 +14347,16 @@
     "Signup label": {
       "Display name": [
         "Nom d'affichage"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }

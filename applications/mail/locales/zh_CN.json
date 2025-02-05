@@ -1457,6 +1457,12 @@
       ],
       "Take a tour": [
         "开始导览"
+      ],
+      "Get the app": [
+        "获取应用"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ]
     },
     "action": {
@@ -1983,6 +1989,9 @@
       ],
       "Take a tour": [
         "开始导览"
+      ],
+      "Got it": [
+        "明白了"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2706,6 +2715,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5420,6 +5432,12 @@
       ],
       "No verification method available": [
         "没有可用的验证方法"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "短信"
       ]
     },
     "ICS event error": {
@@ -5702,6 +5720,9 @@
       ],
       "ICS file": [
         "ICS 文件"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7825,6 +7846,9 @@
       ],
       "Trusted": [
         "已信任"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10925,6 +10949,9 @@
     "Safety review": {
       "Review your account safety": [
         "检查您的帐户安全"
+      ],
+      "Review account safety": [
+        "审查帐户安全"
       ]
     },
     "saml: Error": {
@@ -13569,6 +13596,9 @@
       ],
       "Bitcoin via email": [
         "通过电子邮件接收比特币"
+      ],
+      "Bitcoin via Email": [
+        "通过电子邮件获取比特币"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13579,6 +13609,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "持有和发送比特币更安全/更便捷的方式"
+      ],
+      "A safer way to hold Bitcoin": [
+        "更安全持有比特币的方式"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -13989,11 +14022,27 @@
       ],
       "Storage": [
         "存储"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
       ]
     },
     "Signup label": {
       "Display name": [
         "称呼"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }。默认隐私。"
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }

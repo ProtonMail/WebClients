@@ -1462,6 +1462,12 @@
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
+      ],
+      "Get the app": [
+        "Αποκτήστε την εφαρμογή"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ]
     },
     "action": {
@@ -1997,6 +2003,9 @@
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
+      ],
+      "Got it": [
+        "Το κατάλαβα"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2722,6 +2731,9 @@
       ],
       "Work": [
         "Εργασία"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5465,6 +5477,12 @@
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5754,6 +5772,9 @@
       ],
       "ICS file": [
         "αρχείο ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7962,6 +7983,9 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -11106,6 +11130,9 @@
     "Safety review": {
       "Review your account safety": [
         "Ελέγξτε την ασφάλεια του λογαριασμού σας"
+      ],
+      "Review account safety": [
+        "Έλεγχος ασφάλειας λογαριασμού"
       ]
     },
     "saml: Error": {
@@ -13842,6 +13869,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin μέσω email"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin μέσω Εmail"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13852,6 +13882,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Ένας ασφαλέστερος/ευκολότερος τρόπος για να κρατήσετε και να στείλετε Bitcoin"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Ένας ασφαλέστερος τρόπος να φυλάξετε τα Bitcoin σας"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -14294,11 +14327,27 @@
       ],
       "Storage": [
         "Αποθηκευτικός χώρος"
+      ],
+      "Online document editor": [
+        "Online επεξεργαστής εγγράφου"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
       ]
     },
     "Signup label": {
       "Display name": [
         "Εμφανιζόμενο Όνομα"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Απόρρητο από προεπιλογή."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Δωρεάν"
       ]
     }
   }

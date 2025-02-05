@@ -580,7 +580,7 @@
         "Sembunyikan bilah alat"
       ],
       "I like this response": [
-        "Saya menyukai respon ini"
+        "Saya menyukai respons ini"
       ],
       "Image could not be loaded with tracker protection.": [
         "Gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
@@ -1457,6 +1457,12 @@
       ],
       "Take a tour": [
         "Ikuti tur kami"
+      ],
+      "Get the app": [
+        "Dapatkan aplikasinya"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ]
     },
     "action": {
@@ -1986,6 +1992,9 @@
       ],
       "Take a tour": [
         "Ikuti tur kami"
+      ],
+      "Got it": [
+        "Mengerti"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2216,16 +2225,16 @@
         "Waktu baru yang diajukan tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Balasan ini tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
+        "Jawaban ini tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
       ],
       "This response is out of date.": [
-        "Balasan ini telah kedaluwarsa."
+        "Jawaban ini telah kedaluwarsa."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
-        "Respon ini kedaluwarsa. Acara ini sudah tidak ada di kalender Anda."
+        "Jawaban ini telah kedaluwarsa. Acara ini sudah tidak ada pada kalender Anda."
       ],
       "This response is out of date. You have no calendars.": [
-        "Respon ini kedaluwarsa. Anda tidak memiliki kalender."
+        "Jawaban ini telah kedaluwarsa. Anda tidak memiliki kalender."
       ],
       "You already accepted this invitation.": [
         "Anda telah menyetujui undangan ini."
@@ -2709,6 +2718,9 @@
       ],
       "Work": [
         "Kantor"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5423,6 +5435,12 @@
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5522,7 +5540,7 @@
         "Berkas ini mengandung undangan acara:"
       ],
       "This file contains an invitation response:": [
-        "Berkas ini mengandung balasan undangan:"
+        "Berkas ini mengandung jawaban undangan:"
       ],
       "This file contains some data that we cannot import:": [
         "Sebagian data yang terkandung dalam berkas ini tidak dapat kami impor:"
@@ -5705,6 +5723,9 @@
       ],
       "ICS file": [
         "Berkas ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -6483,7 +6504,7 @@
         "Sertakan Spam/Sampah."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
-        "Sertakan perintah Anda dan respon yang Anda peroleh untuk membantu kami meningkatkan akurasi asisten penulisan."
+        "Sertakan perintah Anda dan respons yang Anda peroleh untuk membantu kami meningkatkan akurasi asisten penulisan."
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
@@ -6513,7 +6534,7 @@
         "Logo JCB"
       ],
       "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
-        "Bergabunglah dengan program ${ PROTON_SENTINEL_NAME } untuk memperoleh tingkat keamanan dan dukungan akun tertinggi yang kami sediakan."
+        "Bergabunglah dengan program ${ PROTON_SENTINEL_NAME } untuk memperoleh tingkat keamanan akun dan layanan dukungan tertinggi kami."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
@@ -7143,7 +7164,7 @@
         "Pesan ini telah disesuaikan agar dapat nyaman dibaca dengan tema gelap."
       ],
       "This message is automatically generated as a response to a previous message.": [
-        "Pesan ini dibuat secara otomatis sebagai respon terhadap pesan sebelumnya."
+        "Pesan ini dihasilkan secara otomatis sebagai tanggapan terhadap pesan sebelumnya."
       ],
       "This message is from a ${ PASS_APP_NAME } alias.": [
         "Pesan ini berasal dari alias ${ PASS_APP_NAME }."
@@ -7828,6 +7849,9 @@
       ],
       "Trusted": [
         "Terpercaya"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10928,6 +10952,9 @@
     "Safety review": {
       "Review your account safety": [
         "Tinjau keamanan akun Anda"
+      ],
+      "Review account safety": [
+        "Tinjau keamanan akun"
       ]
     },
     "saml: Error": {
@@ -10946,7 +10973,7 @@
         "Tidak ada hasil yang ditemukan"
       ],
       "No snoozed messages": [
-        "Tidak ada pesan yang tertunda"
+        "Tidak ada pesan yang ditunda"
       ],
       "No unread messages found": [
         "Tidak ada pesan belum dibaca yang ditemukan"
@@ -11335,7 +11362,7 @@
     },
     "Snooze message": {
       "Snooze Message": [
-        "Pesan tertunda"
+        "Tunda Pesan"
       ],
       "When should the message reappear in your inbox?": [
         "Kapan Anda ingin pesan ini muncul kembali pada kotak masuk Anda?"
@@ -13046,7 +13073,7 @@
         "Memindahkan pesan yang terjadwal"
       ],
       "Moving a snoozed message": [
-        "Pindah pesan tertunda"
+        "Memindahkan pesan yang ditunda"
       ],
       "Need more aliases?": [
         "Butuh lebih banyak alias?"
@@ -13575,6 +13602,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via email"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via Email"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13585,6 +13615,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Cara yang lebih aman/mudah untuk menyimpan & mengirim Bitcoin"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Cara yang lebih aman untuk menyimpan Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -13995,11 +14028,27 @@
       ],
       "Storage": [
         "Ruang penyimpanan"
+      ],
+      "Online document editor": [
+        "Penyunting dokumen online"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
       ]
     },
     "Signup label": {
       "Display name": [
         "Nama tampilan"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privasi sebagai hal yang baku."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }

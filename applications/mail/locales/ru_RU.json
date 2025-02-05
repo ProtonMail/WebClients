@@ -1445,6 +1445,39 @@
       ],
       "More options": [
         "Дополнительные параметры"
+      ],
+      "Auto-delete spam and trash": [
+        "Автоматическое удаление спама и сообщений в корзине"
+      ],
+      "Download the desktop app": [
+        "Скачать приложение для компьютера"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Включите ${ darkWebMonitoring }"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Получить ${ planName } за ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Получить ${ planOrAppName }"
+      ],
+      "Get the app": [
+        "Скачать приложение"
+      ],
+      "Get the browser extension": [
+        "Получить расширение для браузера"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Перейти на ${ DRIVE_APP_NAME }"
+      ],
+      "Hide my email": [
+        "Скрыть мою почту"
+      ],
+      "Invite members": [
+        "Пригласить участников"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
       ]
     },
     "action": {
@@ -1849,6 +1882,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Защитите логины на всех ваших устройствах, включая неограниченное число псевдонимов hide-my-email, совместное пользование, интегрированную двухфакторную аутентификацию, ${ DARK_WEB_MONITORING_NAME } и многое другое."
       ]
     },
     "Billing cycle option": {
@@ -1968,6 +2004,30 @@
       ],
       "Continue your subscription": [
         "Продолжить подписку"
+      ],
+      "Create label": [
+        "Создать ярлык"
+      ],
+      "Discover and set up features": [
+        "Настройте функции"
+      ],
+      "Got it": [
+        "Понятно"
+      ],
+      "Maybe later": [
+        "Может быть позже"
+      ],
+      "Next": [
+        "Далее"
+      ],
+      "Remind me later": [
+        "Напомнить позже"
+      ],
+      "Set up other features": [
+        "Настроить другие функции"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2697,6 +2757,9 @@
       ],
       "Work": [
         "Рабочий"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3764,6 +3827,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Обновитесь до ${ activatePmUser } для получения более короткого и запоминаемого адреса электронной почты в дополнение к текущему."
       ]
     },
     "description": {
@@ -4737,6 +4803,9 @@
       ],
       "Unsupported event": [
         "Неподдерживаемое событие"
+      ],
+      "Time zone component ignored": [
+        "Часовой пояс игнорируется."
       ]
     },
     "Error message": {
@@ -5487,6 +5556,12 @@
       ],
       "No verification method available": [
         "Нет доступных способов проверки"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "СМС"
       ]
     },
     "ICS widget label for event details": {
@@ -5660,6 +5735,12 @@
       ],
       "Your password is correct.": [
         "Ваш пароль правильный."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Пароль от приложения верный. Не используйте обычный пароль."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Ваш адрес электронной почты и пароль от приложения верны. Не используйте обычный пароль."
       ]
     },
     "Import ICS file from Mail": {
@@ -5740,6 +5821,9 @@
       ],
       "ICS file": [
         "файл ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7944,6 +8028,114 @@
       ],
       "User activated": [
         "Пользователь активирован"
+      ],
+      "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
+        "${ PASS_APP_NAME } позволяет хранить пароли, заметки и другую конфиденциальную информацию с помощью сквозного шифрования. Доступно на ${ ios }, ${ android } и в вашем ${ browser }."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
+      ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Получите доступ к 6 500+ высокоскоростным серверам до 10 устройств, чтобы защитить ваши данные. Доступно на ${ ios }, ${ android }, ${ appleTV } и ${ desktop }."
+      ],
+      "Active": [
+        "Активно"
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Автоматически удалять письма, перемещённые в Корзину и Спам более 30 дней назад."
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Создание нескольких бесплатных учетных записей не допускается нашим ${ termsLink }."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Откройте для себя новые доступные функции и начните использовать их прямо сейчас!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Откройте для себя новые функции, доступные с ${ planTitle }, и начните использовать их прямо сейчас!"
+      ],
+      "Download on the App Store": [
+        "Скачать в App Store"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Письма, перемещённые в Корзину и Спам более 30 дней назад, будут автоматически очищены."
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Наслаждайтесь более быстрой и целенаправленной отправкой электронных писем с помощью приложения для ПК."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Для получения дополнительной информации и снятия ограничений, пожалуйста, войдите на ${ mailLink }."
+      ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Для постоянного доступа к электронной почте и оптимизации мобильных устройств, скачайте ${ androidAppLink } или ${ iosAppLink }."
+      ],
+      "Get it on Google Play": [
+        "Скачать в Google Play"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
+      ],
+      "Invite family members and get everything up and running.": [
+        "Пригласите членов семьи и настройте всё для работы."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Пригласите своего партнёра, друга или того, с кем вы делитесь тарифом ${ protonDuoPlanName }."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Присоединяйтесь к программе ${ PROTON_SENTINEL_NAME }, чтобы получить максимальный уровень безопасности аккаунта и поддержки."
+      ],
+      "or discover other features:": [
+        "или откройте для себя другие возможности:"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Защитите вашу электронную почту от перехвата списков рассылки или спама с помощью псевдонимов hide-my-email."
+      ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Обращайтесь к нам за помощью по любому вопросу, связанному с ${ BRAND_NAME }."
+      ],
+      "Send messages at just the right now": [
+        "Отправить сообщения сейчас"
+      ],
+      "Setting up ${ feature }…": [
+        "Установка ${ feature }…"
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Откладывайте сообщения на потом, чтобы они находились в верхней части вашего почтового ящика, когда вам это нужно."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Начните использовать более короткий и запоминающийся вариант своего адреса электронной почты."
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Синхронизируйте и управляйте файлами с приложением ${ DRIVE_APP_NAME }. Создавайте и делитесь документами в ${ DOCS_APP_NAME } и безопасно храните их. Все на ${ ios }, ${ android } и ${ desktop }."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Это сообщение от псевдонима ${ PASS_APP_NAME }."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Для отмены ограничений вы можете перейти на платный тарифный план."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Мы разработали специальные планы для тех пользователей, которым нужны несколько адресов электронной почты."
+      ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Вы можете добавить свой собственный домен в ${ MAIL_APP_NAME }"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можете изменить это в любой момент в ${ settingsLink }."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
       ]
     },
     "info": {
@@ -8007,6 +8199,9 @@
       ],
       "Trusted": [
         "Доверенный"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -8785,6 +8980,9 @@
       ],
       "Remove metadata": [
         "Удалить метаданные"
+      ],
+      "State": [
+        "Состояние"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9049,6 +9247,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Вам нужно повторно активировать ключи, чтобы увидеть обновленное приглашение"
+      ],
+      "settings": [
+        "настройки"
       ]
     },
     "Link to calendar event": {
@@ -9450,6 +9651,12 @@
       ],
       "Upgrade": [
         "Улучшить"
+      ],
+      "Starting from ${ pricing }": [
+        "Начиная с ${ pricing }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить на ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -9979,6 +10186,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканируем Темную паутину на предмет утечки ваших адресов или псевдонимов ${ BRAND_NAME } и немедленно оповещаем вас, если что-то находим."
+      ],
+      "200 GB of storage": [
+        "200 ГБ памяти"
+      ],
+      "Private photo backup": [
+        "Конфиденциальное резервное копирование фото"
+      ],
+      "Secure file storage and sharing": [
+        "Безопасное хранение и обмен файлами"
       ]
     },
     "new_plans: feature highlight": {
@@ -10558,6 +10774,51 @@
       ],
       "Where privacy is default.": [
         "Где приватность по умолчанию."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } в App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } в Play Store"
+      ],
+      "Anytime, anywhere access": [
+        "Доступ в любое время и в любом месте"
+      ],
+      "browser": [
+        "браузер"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
+      "Desktop": [
+        "Рабочий стол"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Узнайте об ${ MAIL_APP_NAME }"
+      ],
+      "Distraction-free emailing": [
+        "Отправка электронных писем без отвлекающих факторов"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Наслаждайтесь более быстрой и сфокусированной отправкой электронных писем с помощью настольного приложения."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Для постоянного доступа к электронной почте и оптимизированного использования мобильных устройств скачайте наше приложение ${ mobileAppAppStoreLink } или ${ mobileAppGooglePlayLink }."
+      ],
+      "Set a display name": [
+        "Задать отображаемое имя"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Для начала работы выберите отображаемое имя. Его будут видеть люди, когда вы отправите им электронное сообщение, пригласите их на мероприятие или поделитесь файлом."
+      ],
+      "You are all set!": [
+        "Всё готово!"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Ваш домен ${ domain } и ${ subscriptionName } подписка готовы к использованию."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "Ваш домен и подписка готовы к использованию."
       ]
     },
     "Onboarding Proton": {
@@ -11173,6 +11434,9 @@
     "Safety review": {
       "Review your account safety": [
         "Просмотрите безопасность вашего аккаунта"
+      ],
+      "Review account safety": [
+        "Проверьте безопасность аккаунта"
       ]
     },
     "saml: Error": {
@@ -11745,6 +12009,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Эта подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока она не будет отменена."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Ваша подписка будет продлеваться каждый год по фиксированной цене."
       ]
     },
     "specialoffer: Link": {
@@ -11753,6 +12020,9 @@
       ],
       "Upgrade": [
         "Сменить тариф"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Улучшить за ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -11878,6 +12148,12 @@
       ],
       "Your pm.me email is active": [
         "Ваша почта pm.me активна"
+      ],
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Узнайте, что включено в вашу подписку, и начните наслаждаться преимуществами."
+      ],
+      "Discover your subscription benefits": [
+        "Откройте для себя преимущества подписки"
       ]
     },
     "sso": {
@@ -13008,6 +13284,9 @@
       ],
       "Show me how": [
         "Показать как"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Включить ${ DARK_WEB_MONITORING_NAME }"
       ]
     },
     "Title": {
@@ -13811,6 +14090,48 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "${ feature } is now active": [
+        "${ feature } теперь активна"
+      ],
+      "Account restricted": [
+        "Учётная запись ограничена"
+      ],
+      "Anytime, anywhere access": [
+        "Доступ в любое время и в любом месте"
+      ],
+      "Auto-deletion is active": [
+        "Автоматическое удаление включено"
+      ],
+      "Custom domains:": [
+        "Пользовательские домены:"
+      ],
+      "Discover your subscription benefits": [
+        "Откройте для себя преимущества подписки"
+      ],
+      "Distraction-free emailing": [
+        "Отправка электронных писем без отвлекающих факторов"
+      ],
+      "Other features included in your plan": [
+        "Другие функции, включённые в ваш тарифный план"
+      ],
+      "Priority support:": [
+        "Приоритетная поддержка:"
+      ],
+      "Schedule send:": [
+        "Запланированная отправка:"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Настроить ${ protonDuoPlanName }"
+      ],
+      "Set up your family account": [
+        "Настройте семейный аккаунт"
+      ],
+      "Snooze:": [
+        "Отложить:"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Теперь вы можете создавать неограниченное количество папок и ярлыков."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13896,6 +14217,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Это гарантирует, что никто не сможет увидеть местоположение, устройство и другую информацию, которая может быть использована для идентификации или отслеживания вас."
       ]
     },
     "tooltip": {
@@ -13979,6 +14303,9 @@
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Ваш запланированный тариф начинается с ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14018,6 +14345,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin по эл. почте"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin по электронной почте"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -14028,6 +14358,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Безопасный и простой способ хранить и переводить Bitcoin"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Безопасный способ хранить Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -14534,6 +14867,76 @@
     "Signup label": {
       "Display name": [
         "Отображаемое имя"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Конфиденциальность по умолчанию."
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Скидка ${ priceCoupon } действует в течение первого месяца. Затем она будет автоматически продлена до ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Разблокируйте все премиум продукты и функции ${ BRAND_NAME } только за ${ priceMailPlus }. Отменить можно в любое время."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Предложение ${ pricingTitle } истекает сегодня!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Попробуйте Drive Plus всего за ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Попробуйте Mail Plus всего за ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Последний шанс получить скидку 80% на первый месяц подписки ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Ограниченное предложение"
+      ],
+      "Maybe later": [
+        "Может быть позже"
+      ],
+      "Save 80% on your first month.": [
+        "Сэкономьте 80% в первый месяц."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 дополнительных премиум-функций"
+      ],
+      "Custom email domain": [
+        "Пользовательский домен электронной почты"
+      ],
+      "Email addresses": [
+        "Адреса электронной почты"
+      ],
+      "Free": [
+        "Бесплатно"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Storage": [
+        "Хранилище"
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Бесплатно"
       ]
     }
   }

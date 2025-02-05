@@ -1457,6 +1457,12 @@
       ],
       "Take a tour": [
         "둘러보기"
+      ],
+      "Get the app": [
+        "앱 다운로드"
+      ],
+      "Hide my email": [
+        "이메일 주소 숨기기"
       ]
     },
     "action": {
@@ -1986,6 +1992,9 @@
       ],
       "Take a tour": [
         "둘러보기"
+      ],
+      "Got it": [
+        "확인했습니다"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2709,6 +2718,9 @@
       ],
       "Work": [
         "직장"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -5423,6 +5435,12 @@
       ],
       "No verification method available": [
         "사용 가능한 인증 방법 없음"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5705,6 +5723,9 @@
       ],
       "ICS file": [
         "ICS 파일"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -6693,7 +6714,7 @@
         "트래커를 찾을 수 없음"
       ],
       "non-${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } 아님"
+        "${ MAIL_APP_NAME }이 아닌"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "암호화를 위한 유효한 업로드된 키가 존재하지 않습니다. 이 주소로 메시지를 전송하려면, 유호한 키를 업로드 하거나 \"이메일 암호화\"를 비활성화 하세요."
@@ -7761,7 +7782,7 @@
         "더 짧고 매력있는 이메일 주소를 사용하세요."
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
-        "${ DRIVE_APP_NAME } 앱으로 파일을 동기화하고 관리하세요. ${ DOCS_APP_NAME }에서 문서를 만들고 공유하고 안전하게 저장하세요. 모두 ${ ios }, ${ android } 및 ${ desktop }에서 사용 가능합니다."
+        "${ DRIVE_APP_NAME } 앱으로 파일을 동기화하고 관리하세요. ${ DOCS_APP_NAME }에서 문서를 만들고 공유하고 안전하게 저장하세요. ${ ios }, ${ android } 및 ${ desktop }에서 모두 사용 가능합니다."
       ],
       "User activated": [
         "사용자 활성화됨"
@@ -7773,7 +7794,7 @@
         "언제든지 ${ settingsLink }(에)서 변경하실 수 있습니다."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
-        "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
+        "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
       ]
     },
     "info": {
@@ -7828,6 +7849,9 @@
       ],
       "Trusted": [
         "신뢰됨"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10928,6 +10952,9 @@
     "Safety review": {
       "Review your account safety": [
         "내 계정 보안 검토하기"
+      ],
+      "Review account safety": [
+        "내 계정 보안 검토하기"
       ]
     },
     "saml: Error": {
@@ -11436,7 +11463,7 @@
         "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "귀하의 구독은 매년 같은 요율로 갱신됩니다."
+        "회원님의 구독이 매년 같은 요율로 갱신됩니다."
       ]
     },
     "specialoffer: Link": {
@@ -13541,10 +13568,10 @@
         "사용자의 구독이 ${ cycle }개월 뒤에 자동으로 갱신됩니다."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "귀하의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
+        "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
-        "귀하의 요금제가 ${ renewalTime }에 시작합니다."
+        "회원님의 플랜이 ${ renewalTime }부터 시작합니다."
       ]
     },
     "vpn_2step: feature": {
@@ -13575,6 +13602,9 @@
       ],
       "Bitcoin via email": [
         "이메일을 통한 Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "이메일을 통한 Bitcoin"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13585,6 +13615,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "쉽고 안전하게 Bitcoin을 보관 및 송금하세요"
+      ],
+      "A safer way to hold Bitcoin": [
+        "비트코인을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -13995,11 +14028,27 @@
       ],
       "Storage": [
         "저장 공간"
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Recover previous file versions": [
+        "파일 이전 버전 복원"
       ]
     },
     "Signup label": {
       "Display name": [
         "표시되는 이름"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }

@@ -704,7 +704,7 @@
         "Gestiona les etiquetes"
       ],
       "Manage Snooze": [
-        "Gestiona la pausa"
+        "Gestiona l'ajornament"
       ],
       "Mark as read": [
         "Marca com a llegit"
@@ -1199,7 +1199,7 @@
         "Omet la verificació"
       ],
       "Snooze": [
-        "Posa en pausa"
+        "Ajorna"
       ],
       "Star": [
         "Destaca"
@@ -1295,7 +1295,7 @@
         "Llista no ordenada"
       ],
       "Unsnooze": [
-        "Desactiva la pausa"
+        "Deixa d'ajornar"
       ],
       "Unstar": [
         "No destaquis"
@@ -1434,7 +1434,7 @@
         "Activa"
       ],
       "Auto-delete spam and trash": [
-        "Neteja automàtica del correu brossa i de la paperera"
+        "Neteja automàticament el correu brossa i la paperera"
       ],
       "Download the desktop app": [
         "Descarregueu l'aplicació d'escriptori"
@@ -1462,6 +1462,12 @@
       ],
       "Take a tour": [
         "Feu una visita guiada"
+      ],
+      "Get the app": [
+        "Aconseguiu l'aplicació"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ]
     },
     "action": {
@@ -1992,6 +1998,9 @@
       ],
       "Take a tour": [
         "Feu una visita guiada"
+      ],
+      "Got it": [
+        "Entesos"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2717,6 +2726,9 @@
       ],
       "Work": [
         "Feina"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3728,7 +3740,7 @@
         "Desbloquegeu la planificació personalitzada de missatges i més característiques prèmium quan milloreu el pla."
       ],
       "Unlock custom snooze times and more premium features when you upgrade.": [
-        "Desbloquegeu els temps de pausa personalitzada i més funcions prèmium quan milloreu el pla."
+        "Desbloquegeu els temps d'ajornament personalitzat i més funcions prèmium quan milloreu el pla."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Desbloquegeu adreces de correu electrònic més curtes i altres característiques prèmium mitjançant la millora del vostre pla."
@@ -3761,7 +3773,7 @@
         "Amb els grups de contactes, podeu enviar correus electrònics a tots els membres del grup amb un sol clic."
       ],
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
-        "Amb la pausa personalitzada, podeu amagar els correus electrònics i configurar-los perquè tornin a aparèixer en un millor moment."
+        "Amb l'ajornament personalitzat, podeu amagar els correus electrònics i configurar-los perquè tornin a aparèixer en un millor moment."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
@@ -4226,7 +4238,7 @@
         "El codi de verificació no és vàlid."
       ],
       "Item content cannot exceed 40KB": [
-        "El contingut de l'element no pot excedir 40 Kb."
+        "El contingut de l'element no pot excedir 40 kB."
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
@@ -5460,6 +5472,12 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5749,6 +5767,9 @@
       ],
       "ICS file": [
         "Fitxer ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -6097,7 +6118,7 @@
         "Es mostrarà un altre consell la pròxima vegada que obriu el Mail"
       ],
       "Any scheduled or snoozed messages will be canceled.": [
-        "Qualsevol missatge planificat o en pausa es cancel·larà."
+        "Qualsevol missatge planificat o ajornat es cancel·larà."
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en la carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
@@ -7092,16 +7113,16 @@
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
-        "En pausa fins al ${ dateString } a les ${ formattedTime }"
+        "Ajornat fins al ${ dateString } a les ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "En pausa fins avui a les ${ formattedTime }"
+        "Ajornat fins avui a les ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
-        "En pausa fins demà a les ${ formattedTime }"
+        "Ajornat fins demà a les ${ formattedTime }"
       ],
       "Snoozing this conversation will be canceled.": [
-        "Es cancel·larà la posposició d'aquesta conversa."
+        "Es cancel·larà l'ajornament d'aquesta conversa."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
@@ -7881,7 +7902,7 @@
         "S'està configurant la vostra nova adreça…"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
-        "Posposeu els missatges per més tard perquè estiguin a la part superior de la vostra bústia quan ho vulgueu."
+        "Ajorneu els missatges perquè estiguin a la part superior de la safata d'entrada quan vulgueu."
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Comenceu a utilitzar la versió més curta i atractiva de la vostra adreça de correu electrònic."
@@ -7957,6 +7978,12 @@
       ],
       "Trusted": [
         "De confiança"
+      ],
+      "KOO": [
+        "KOO"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -8944,10 +8971,10 @@
         "Registreu-vos gratuïtament"
       ],
       "Snooze": [
-        "Posa en pausa"
+        "Ajorna"
       ],
       "Snoozed": [
-        "En pausa"
+        "Ajornat"
       ],
       "Spam": [
         "Correu brossa"
@@ -9389,7 +9416,7 @@
         "Millora"
       ],
       "Upgrade to ${ planName }": [
-        "Milloreu a ${ planName }"
+        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -9617,7 +9644,7 @@
         "Camps personalitzats"
       ],
       "Custom snooze time": [
-        "Períodes de pausa personalitzats"
+        "Temps d'ajornament personalitzat"
       ],
       "Custom workspace branding": [
         "Marca personalitzada de l'espai de treball"
@@ -9757,7 +9784,7 @@
         "Estalvieu temps en l'enviament dels vostres correus electrònics"
       ],
       "Schedule and snooze emails for any time": [
-        "Planifiqueu i poseu en pausa els correus electrònics per a qualsevol moment"
+        "Programeu i ajorneu correus electrònics per a qualsevol moment."
       ],
       "Schedule messages at any time": [
         "Programeu missatges en qualsevol moment."
@@ -9769,7 +9796,7 @@
         "Servidors Secure Core"
       ],
       "Secure file storage and sharing": [
-        "Emmagatzematge i ús compartit de fitxers segurs"
+        "Compartició i emmagatzematge segurs de fitxers"
       ],
       "Secure link sharing": [
         "Compartició d'enllaços segurs"
@@ -9904,7 +9931,7 @@
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
       "Snooze messages and get reminded when you want": [
-        "Poseu en pausa els missatges i rebeu-ne un recordatori quan vulgueu"
+        "Ajorneu els missatges i rebeu-ne un recordatori quan vulgueu"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
@@ -10500,6 +10527,12 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -11101,6 +11134,9 @@
     "Safety review": {
       "Review your account safety": [
         "Reviseu la seguretat del compte"
+      ],
+      "Review account safety": [
+        "Reviseu la seguretat del compte"
       ]
     },
     "saml: Error": {
@@ -11525,7 +11561,7 @@
     },
     "Snooze message": {
       "Snooze Message": [
-        "Posa en pausa el missatge"
+        "Ajorna el missatge"
       ],
       "When should the message reappear in your inbox?": [
         "Quan ha de reaparèixer el missatge a la safata d'entrada?"
@@ -11631,7 +11667,7 @@
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
       ],
       "Your subscription will renew at the same rate every year.": [
-        "La teva subscripció es renovarà al mateix preu cada any."
+        "La vostra subscripció es renovarà al mateix preu cada any."
       ]
     },
     "specialoffer: Link": {
@@ -12393,12 +12429,12 @@
         "${ elementsCount } converses esborrades de ${ labelName }."
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } conversa en pausa",
-        "${ elementsCount } converses en pausa"
+        "S'ha ajornat ${ elementsCount } conversa",
+        "S'han ajornat ${ elementsCount } converses"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } conversa sense pausa",
-        "${ elementsCount } converses sense pausa"
+        "S'ha deixat d'ajornar ${ elementsCount } conversa",
+        "S'han deixat d'ajornar ${ elementsCount } converses"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } missatge afegit a ${ labelName }.",
@@ -13295,7 +13331,7 @@
         "Moure un missatge programat"
       ],
       "Moving a snoozed message": [
-        "S'està movent un missatge en pausa."
+        "S'està movent un missatge ajornat."
       ],
       "Need more aliases?": [
         "Necessiteu més àlies?"
@@ -13487,10 +13523,10 @@
         "Tanca la sessió"
       ],
       "Snooze": [
-        "Posa en pausa"
+        "Ajorna"
       ],
       "Snooze message": [
-        "Posa en pausa el missatge"
+        "Ajorna el missatge"
       ],
       "Sort conversations": [
         "Ordenar converses"
@@ -13560,7 +13596,7 @@
         "S'està verificant el pagament..."
       ],
       "Want to snooze any time?": [
-        "Voleu posar en pausa els vostres missatges quan vulgueu?"
+        "Voleu ajornar en qualsevol moment?"
       ],
       "Warning": [
         "Advertència"
@@ -13636,7 +13672,7 @@
         "Configureu el vostre compte familiar"
       ],
       "Snooze:": [
-        "Posposa:"
+        "Ajorna:"
       ],
       "You can now create unlimited folders and labels": [
         "Ara podeu crear carpetes i etiquetes il·limitades."
@@ -13837,6 +13873,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via correu electrònic"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13847,6 +13886,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Una manera més segura i fàcil de mantenir i enviar Bitcoin"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Una manera més segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -14242,7 +14284,7 @@
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "Offer": {
@@ -14289,11 +14331,27 @@
       ],
       "Storage": [
         "Emmagatzematge"
+      ],
+      "Online document editor": [
+        "Editor de documents en línia"
+      ],
+      "Recover previous file versions": [
+        "Recupera versions anteriors del fitxer"
       ]
     },
     "Signup label": {
       "Display name": [
         "Nom a mostrar"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }

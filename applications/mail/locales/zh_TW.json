@@ -1454,6 +1454,12 @@
       ],
       "Take a tour": [
         "瀏覽"
+      ],
+      "Get the app": [
+        "取得應用程式"
+      ],
+      "Hide my email": [
+        "隱藏我的電子郵件"
       ]
     },
     "action": {
@@ -1807,7 +1813,7 @@
         "永久"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "首月免費，之後每月續訂 ${ regularAmount }。"
+        "1個月之後續訂 ${ regularAmount }。"
       ]
     },
     "BF2024: Tooltip": {
@@ -1980,6 +1986,9 @@
       ],
       "Take a tour": [
         "瀏覽"
+      ],
+      "Got it": [
+        "瞭解"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2703,6 +2712,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3898,7 +3910,7 @@
         "時間：${ formattedStart }"
       ],
       "TIME:\n${ formattedStart } (all day)": [
-        "時間：${ formattedStart }（全天）"
+        "時間：${ formattedStart }(全天)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
         "時間：${ formattedStart } - ${ formattedEnd }"
@@ -5312,6 +5324,9 @@
       ],
       "You've unlocked 1 GB": [
         "您解鎖1GB"
+      ],
+      "Tasks to complete count": [
+        "需要完成的任務數"
       ]
     },
     "Gmail forwarding": {
@@ -5414,6 +5429,12 @@
       ],
       "No verification method available": [
         "沒有可用的驗證方法"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA 驗證碼"
+      ],
+      "SMS": [
+        "簡訊"
       ]
     },
     "ICS event error": {
@@ -5696,6 +5717,9 @@
       ],
       "ICS file": [
         "ICS 檔案"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7260,7 +7284,7 @@
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "關閉「搜尋郵件內容」後，僅搜尋日期、名稱、電子郵件地址或主旨。若要停用郵件內容搜尋功能（以及刪除已為了此功能而下載的郵件內容），請至設定。"
+        "關閉「搜尋郵件內容」後，僅搜尋日期、名稱、電子郵件地址或主旨。若要停用郵件內容搜尋功能(以及刪除已為了此功能而下載的郵件內容)，請至設定。"
       ],
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
@@ -7819,6 +7843,9 @@
       ],
       "Trusted": [
         "已信任"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -9652,7 +9679,7 @@
         "資料夾、標籤和篩選器無上限"
       ],
       "Unlimited hide-my-email aliases": [
-        "無限制的隱藏電子郵件別名"
+        "無限制的 hide-my-email別名"
       ],
       "Unlimited labels": [
         "無限制標籤"
@@ -10537,6 +10564,12 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ subscriptionLength } 個月。而後將以每 ${ subscriptionLengthCopy } 月 ${ renewPrice } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "首月限定折扣價為${ priceWithDiscount }。優惠券可使用${ couponRedemptions }次，之後後將以 ${ renewPrice } 的價格自動續約 ${ subscriptionLength } 個月，您可以隨時取消。"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "我們正在處理您已開立發票的付款。請在付款完成後，再更改您的計劃或更新您的付款詳情。感謝您的耐心等候。"
       ]
     },
     "Payments.Error": {
@@ -10870,6 +10903,9 @@
     "Safety review": {
       "Review your account safety": [
         "查看您的帳號安全"
+      ],
+      "Review account safety": [
+        "查看帳號安全"
       ]
     },
     "Search - no results": {
@@ -11081,7 +11117,7 @@
         "密碼重設需要核准(${ user.Email })。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
+        "請前往已登入的裝置(在發起需求的工作階段中)變更您的密碼。"
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "此權限將在${ timeRemaining.inDays }天後過期"
@@ -11371,6 +11407,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "您的訂閱每年將以同費率更新"
       ]
     },
     "specialoffer: Link": {
@@ -11428,7 +11467,7 @@
         "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+        "2年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }(${ discount }% 折扣)續訂"
       ],
       "Save ${ discount }%": [
         "省下 ${ discount }%"
@@ -11518,6 +11557,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "您將被重新導向至您的第三方單一登入提供者。"
+      ],
+      "Sign in to your organization": [
+        "登入您的組織"
       ]
     },
     "State": {
@@ -13452,6 +13494,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin透過電子郵件"
+      ],
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13462,6 +13507,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "一個更安全/容易持有&傳送Bitcoin的方法"
+      ],
+      "A safer way to hold Bitcoin": [
+        "更安全持有Bitcoin的方法"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -13874,16 +13922,35 @@
       ],
       "Storage": [
         "雲端儲存"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
       ]
     },
     "Payments.Sepa": {
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示從您的銀行帳戶中扣款，並授權您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
       ]
     },
     "Signup label": {
       "Display name": [
         "顯示名稱"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }。預設即隱私"
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "免費"
       ]
     }
   }

@@ -947,31 +947,31 @@
         "Refrescar la página"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove ${ attachmentName }": [
-        "Borrar ${ attachmentName }"
+        "Eliminar ${ attachmentName }"
       ],
       "Remove bonuses": [
-        "Borrar los beneficios"
+        "Eliminar los beneficios"
       ],
       "Remove encryption": [
-        "Borrar el cifrado"
+        "Eliminar el cifrado"
       ],
       "Remove expiration time": [
-        "Borrar el tiempo de expiración"
+        "Eliminar el tiempo de expiración"
       ],
       "Remove gift code": [
-        "Borrar el código de regalo"
+        "Eliminar el código de regalo"
       ],
       "Remove self-destruction": [
-        "Borrar la destrucción automática"
+        "Eliminar la destrucción automática"
       ],
       "Remove this label": [
-        "Borrar esta etiqueta"
+        "Eliminar esta etiqueta"
       ],
       "Remove Zoom meeting": [
-        "Quitar la reunión de Zoom"
+        "Eliminar la reunión de Zoom"
       ],
       "Replace": [
         "Reemplazar"
@@ -1462,6 +1462,12 @@
       ],
       "Take a tour": [
         "Explore ahora"
+      ],
+      "Get the app": [
+        "Obtener la aplicación"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ]
     },
     "action": {
@@ -1573,7 +1579,7 @@
         "Buzón de ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "5 rastreadores borrados"
+        "5 rastreadores eliminados"
       ],
       "Auto forwarded": [
         "Reenvío automático"
@@ -1744,7 +1750,7 @@
         "Monitoreo de la Dark Web"
       ],
       "Easily add or remove users": [
-        "Agregar o borrar usuarios fácilmente"
+        "Añadir o eliminar usuarios fácilmente"
       ],
       "High speed streaming": [
         "Streaming de alta velocidad"
@@ -1997,6 +2003,9 @@
       ],
       "Take a tour": [
         "Explore ahora"
+      ],
+      "Got it": [
+        "Entendido"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2722,6 +2731,9 @@
       ],
       "Work": [
         "Trabajo"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3865,7 +3877,7 @@
         "Confirmar pérdida del descuento especial de ${ PASS_APP_NAME }"
       ],
       "Remove discount": [
-        "Eliminar descuento"
+        "Eliminar el descuento"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderá el descuento permanentemente incluso si mejora el plan en el futuro."
@@ -3931,7 +3943,7 @@
     },
     "Email body for invitation (event details part)": {
       "Removed": [
-        "Borrado"
+        "Eliminado"
       ]
     },
     "Email body for invitation (location part)": {
@@ -4370,8 +4382,8 @@
         "reactivar la clave anterior"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "Destinatario duplicado borrado: ${ recipents }",
-        "Destinatarios duplicados borrados: ${ recipents }"
+        "Destinatario duplicado eliminado: ${ recipents }",
+        "Destinatarios duplicados eliminados: ${ recipents }"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -4955,7 +4967,7 @@
         "Esta acción eliminará permanentemente todos los subusuarios, cuentas y datos asociados con la organización."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Esta acción borrará todas las funciones premium de ${ BRAND_NAME } de cada miembro de la familia."
+        "Esta acción eliminará todas las funciones premium de ${ BRAND_NAME } de cada miembro de la familia."
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -5465,6 +5477,12 @@
       ],
       "No verification method available": [
         "No hay un método de verificación disponible"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5754,6 +5772,9 @@
       ],
       "ICS file": [
         "archivo ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -6565,7 +6586,7 @@
         "URL de la imagen"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Las imágenes se han borrado porque no están permitidas en la respuesta automática."
+        "Se eliminaron las imágenes porque no están permitidas en la respuesta automática."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -6979,7 +7000,7 @@
         "Recuerde actualizarlo en su gestor de contraseñas o donde guarde su información de inicio de sesión."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
-        "Borra todos los datos asociados con esta aplicación (incluyendo los mensajes descargados, etc…)"
+        "Elimine todos los datos asociados con esta aplicación (incluyendo los mensajes descargados, etc…)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Al reportar un mensaje como suplantación de identidad, enviará una alerta a nosotros para analizarlo y mejorar nuestros filtros. Significa que podremos ver todo el contenido del mensaje."
@@ -7523,7 +7544,7 @@
         "Necesitamos autenticar el pago con el banco."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Hemos borrado la información de rastreo de los siguientes enlaces para ayudarle a protegerse de los anunciantes y otros que intentan rastrear su actividad en línea."
+        "Hemos eliminado la información de rastreo de los siguientes enlaces para ayudarle a protegerse de los anunciantes y otros que intentan rastrear su actividad en línea."
       ],
       "We use 3-D Secure to protect your payments": [
         "Se usa 3-D Secure para proteger sus pagos."
@@ -7619,12 +7640,12 @@
         "Puede importar un tipo de datos a la vez."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Borre enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borre enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Borre enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción.",
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borre enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción."
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción.",
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción."
       ],
       "You can now return to the application to continue": [
         "Ahora puede regresar a la aplicación para continuar."
@@ -7679,7 +7700,7 @@
         "Podría ser redirigido al sitio web de el banco."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debe desactivar o borrar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
+        "Debe desactivar o eliminar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada a la cuenta de PayPal. Si la cuenta de PayPal no lo tiene, haga clic en el botón de abajo."
@@ -7965,6 +7986,9 @@
       ],
       "Trusted": [
         "Confiada"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -8827,10 +8851,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para añadir un calendario nuevo, borre uno existente."
+        "Para añadir un calendario, elimine uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario nuevo, borre otro o mejore el plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimine otro o mejore el plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Ha alcanzado el número máximo de calendarios disponibles en el plan."
@@ -10321,7 +10345,7 @@
         "Se ha activado ${ reason }."
       ],
       "Block removed": [
-        "Bloqueo borrado"
+        "Bloqueo eliminado"
       ],
       "Contact group created": [
         "Grupo de contactos creado"
@@ -10508,6 +10532,12 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Para comenzar, elija un nombre para mostrar. Esto es lo que la gente verá cuando envíe un correo electrónico, los invite a un evento o comparta un archivo."
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -11108,6 +11138,9 @@
     },
     "Safety review": {
       "Review your account safety": [
+        "Compruebe la seguridad de la cuenta"
+      ],
+      "Review account safety": [
         "Compruebe la seguridad de la cuenta"
       ]
     },
@@ -12397,8 +12430,8 @@
         "${ elementsCount } conversaciones movidas a spam y los remitentes añadidos a la lista de spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } conversación borrada de ${ labelName }.",
-        "${ elementsCount } conversaciones borradas de ${ labelName }."
+        "${ elementsCount } conversación eliminada de ${ labelName }.",
+        "${ elementsCount } conversaciones eliminadas de ${ labelName }."
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversación pausada",
@@ -12437,8 +12470,8 @@
         "${ elementsCount } mensajes movidos a spam y los remitentes añadidos a la lista de spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } mensaje borrado de ${ labelName }.",
-        "${ elementsCount } mensajes borrados de ${ labelName }."
+        "${ elementsCount } mensaje eliminado de ${ labelName }.",
+        "${ elementsCount } mensajes eliminados de ${ labelName }."
       ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
@@ -12500,7 +12533,7 @@
         "Conversación movida a spam y el remitente añadido a la lista de spam."
       ],
       "Conversation removed from ${ labelName }.": [
-        "Conversación borrada de ${ labelName }."
+        "Conversación eliminada de ${ labelName }."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Las conversaciones desde ${ sendersList } serán etiquetadas como ${ labelsList }"
@@ -12572,7 +12605,7 @@
         "Mensaje movido a spam y el remitente añadido a la lista de spam."
       ],
       "Message removed from ${ labelName }.": [
-        "Mensaje borrado de ${ labelName }."
+        "Mensaje eliminado de ${ labelName }."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Los mensajes desde ${ sendersList } serán etiquetados como ${ labelsList }"
@@ -12619,7 +12652,7 @@
         "Acuse de recibo enviado"
       ],
       "Self-destruction removed": [
-        "Eliminación automática borrada"
+        "Se eliminó la destrucción automática."
       ],
       "Self-destruction set": [
         "Autodestrucción establecida"
@@ -12654,7 +12687,7 @@
         " ahora está activo"
       ],
       "${ label.Name } removed": [
-        "${ label.Name } borrado"
+        "${ label.Name } eliminado"
       ]
     },
     "Suffix": {
@@ -13845,6 +13878,9 @@
       ],
       "Bitcoin via email": [
         "Bitcoin por correo electrónico"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin por correo electrónico"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13855,6 +13891,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Una forma más segura y sencilla de guardar y enviar Bitcoin"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Una manera más segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -14297,11 +14336,27 @@
       ],
       "Storage": [
         "Almacenamiento"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recuperar las versiones previas de los archivos"
       ]
     },
     "Signup label": {
       "Display name": [
         "Nombre a mostrar"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }
