@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { type useConfirmActionModal, useNotifications } from '@proton/components';
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
@@ -127,17 +127,15 @@ export function usePublicActions() {
 
         let title;
         let message;
-
         if (isSingleItem) {
             // translator: ${item.name} is for a folder or file name.
             title = c('Title').t`Delete ${item.name}?`;
             message = item.isFile
-                ? c('Info').t`This action will delete the file you uploaded permanently.`
-                : c('Info')
-                      .t`This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.`;
+                ? c('Info').t`This will permanently delete the file you uploaded.`
+                : c('Info').t`This will permanently delete the folder you uploaded.`;
         } else {
             title = c('Title').t`Delete ${links.length} items?`;
-            message = c('Info').t`This action will delete the selected items permanently.`;
+            message = c('Info').t`This will permanently delete the selected items you uploaded.`;
         }
 
         void showConfirmModal({
@@ -151,10 +149,21 @@ export function usePublicActions() {
                         linkIds: links.map((link) => link.linkId),
                         parentLinkId: links[0].parentLinkId,
                     })
-                    .then(({ successes, failures }) => {
+                    .then(({ successes, failures, notAllowedErrorCount }) => {
                         linksState.removeLinksForPublicPage(token, successes);
                         if (!user) {
                             removeUploadTokens(successes);
+                        }
+                        if (!!notAllowedErrorCount) {
+                            createNotification({
+                                type: 'error',
+                                text: c('Notification').ngettext(
+                                    msgid`Sorry, we couldn't delete the folder because it is not empty.`,
+                                    `Sorry, we couldn't delete the folders because they are not empty.`,
+                                    notAllowedErrorCount
+                                ),
+                            });
+                            return;
                         }
                         createDeletedPublicItemsNotifications(
                             links.map((link) => ({ ...link, rootShareId: token })),

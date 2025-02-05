@@ -60,7 +60,6 @@ export const CreateButton = ({ token, linkId }: Props) => {
                                 createFolder,
                             })
                         }
-                        data-testid="download-button"
                     >
                         <Icon name="folder-plus" className="mr-2" />
                         {c('Action').t`New folder`}
@@ -84,7 +83,6 @@ export const CreateButton = ({ token, linkId }: Props) => {
                                     });
                                 })
                             }
-                            data-testid="download-button"
                         >
                             <Icon name="brand-proton-docs" className="mr-2" />
                             {c('Action').t`New document`}
