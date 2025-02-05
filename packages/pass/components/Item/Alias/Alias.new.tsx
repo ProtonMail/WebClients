@@ -235,6 +235,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                         .jt`Tap the icon ${gearIcon} to customize the alias the way you want.`}
                                     className="mb-2"
                                     onClose={customizeAliasDiscovery.close}
+                                    withArrow
                                 />
                             )}
 
