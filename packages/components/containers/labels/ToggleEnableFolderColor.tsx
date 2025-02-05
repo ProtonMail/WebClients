@@ -4,11 +4,13 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateEnableFolderColor } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 interface Props {
     id?: string;
@@ -17,14 +19,15 @@ interface Props {
 
 const ToggleEnableFolderColor = ({ id, className }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [mailSettings] = useMailSettings();
+    const dispatch = useDispatch();
 
     const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
-        await api(updateEnableFolderColor(+target.checked));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateEnableFolderColor(+target.checked));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+
         createNotification({
             text: c('label/folder notification').t`Preference saved`,
         });
