@@ -238,6 +238,9 @@
       "Show balance": [
         "Показать баланс"
       ],
+      "Show QRCode": [
+        "Показать QR-код"
+      ],
       "Sign out": [
         "Выйти"
       ],
@@ -249,6 +252,9 @@
       ],
       "Switch or add account": [
         "Переключить или добавить аккаунт"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
       ],
       "Try again": [
         "Попробовать снова"
@@ -356,11 +362,20 @@
       "Receive address": [
         "Адрес получения"
       ],
+      "Search exact address": [
+        "Искать точный адрес"
+      ],
+      "Search for exact address": [
+        "Искать по точному адресу"
+      ],
       "Status": [
         "Состояние"
       ],
       "Toggle keychain": [
         "Переключить набор ключей"
+      ],
+      "Used": [
+        "Использованный"
       ],
       "Value": [
         "Значение"
@@ -515,6 +530,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Защитите логины на всех ваших устройствах, включая неограниченное число псевдонимов hide-my-email, совместное пользование, интегрированную двухфакторную аутентификацию, ${ DARK_WEB_MONITORING_NAME } и многое другое."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
@@ -550,9 +568,6 @@
       "12 months": [
         "12 месяцев"
       ],
-      "24 months": [
-        "24 месяца"
-      ],
       "Annually": [
         "Ежегодно"
       ],
@@ -564,20 +579,50 @@
       ]
     },
     "bitcoin buy": {
+      "${ serviceFeePercentage }% Azteco service fee": [
+        "Комиссия ${ serviceFeePercentage } % за услуги Azteco"
+      ],
+      "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
+        "${ WALLET_APP_NAME } заключил партнёрство с ${ rampLink }, ${ banxaLink } и ${ moonpayLink }, тремя зарегистрированными услугами криптоактивов, чтобы облегчить покупку BTC. Укажите свой регион, чтобы увидеть доступных провайдеров и способы оплаты."
+      ],
+      "1% bank transfer fee": [
+        "Комиссия 1 % за банковский перевод"
+      ],
+      "4% credit card fee": [
+        "Комиссия 4 % за кредитную карту"
+      ],
       "Amount": [
         "Сумма"
+      ],
+      "An error occurred while confirming this quote, please select another provider and try again.": [
+        "Не удалось подтвердить котировку. Выберите другого провайдера и попробуйте снова."
+      ],
+      "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
+        "Как платный пользователь, вы экономите ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } на плате за услуги Azteco!"
       ],
       "Bank transfer": [
         "Банковский перевод"
       ],
+      "Banxa": [
+        "Banxa"
+      ],
       "Binance": [
         "Binance"
+      ],
+      "BTC network fee": [
+        "Комиссия сети BTC"
       ],
       "Buy": [
         "Купить"
       ],
+      "Buy Azteco vouchers": [
+        "Купите ваучеры Azteco"
+      ],
       "Choose a country": [
         "Выберите страну"
+      ],
+      "Coinbase": [
+        "Coinbase"
       ],
       "Confirm": [
         "Подтвердить"
@@ -597,14 +642,26 @@
       "Instant payment": [
         "Мгновенный платёж"
       ],
+      "Kraken": [
+        "Kraken"
+      ],
       "Location": [
         "Расположение"
+      ],
+      "MoonPay": [
+        "MoonPay"
       ],
       "Pay with": [
         "Оплатить с помощью"
       ],
       "Payment details": [
-        "Информация платежа"
+        "Информация о платеже"
+      ],
+      "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
+        "Укажите свой регион, чтобы увидеть доступных поставщиков BTC и способы оплаты. Все купленные BTC будут отправлены на BTC-адрес этого аккаунта кошелька."
+      ],
+      "Ramp Network": [
+        "Ramp Network"
       ],
       "Recipients": [
         "Получатели"
@@ -618,8 +675,17 @@
       "Send": [
         "Отправить"
       ],
+      "This quote is valid for the next 5 minutes": [
+        "Этот тариф действителен в течение следующих 5 минут"
+      ],
+      "Upgrade to Visionary plan to reduce Azteco service fee to 3%": [
+        "Перейдите на тариф Visionary, чтобы снизить плату за услуги Azteco до 3 %"
+      ],
       "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
         "Вы также можете купить BTC на биржах, таких как ${ binanceLink }, ${ coinbaseLink } или ${ krakenLink }, и затем отправить BTC на ваш адрес получения."
+      ],
+      "You got 25% off": [
+        "Вы получили скидку 25 %"
       ],
       "You pay": [
         "Вы платите"
@@ -635,6 +701,9 @@
       "${ quote.provider } checkout": [
         "${ quote.provider } — оплата"
       ],
+      "No quote available for the requested amount": [
+        "Нет доступных тарифов для запрашиваемой суммы"
+      ],
       "The selected currency is not supported in your country or the requested amount is too low": [
         "Выбранная валюта не поддерживается в вашей стране или запрашиваемая сумма слишком мала"
       ]
@@ -648,6 +717,9 @@
       ],
       "Native Segwit": [
         "Native Segwit"
+      ],
+      "Taproot": [
+        "Taproot"
       ]
     },
     "Bitcoin Script Type Description": {
@@ -798,15 +870,58 @@
         "Проблема с доступом к сайту"
       ]
     },
+    "Button": {
+      "Create label": [
+        "Создать ярлык"
+      ],
+      "Discover and set up features": [
+        "Настройте функции"
+      ],
+      "Remind me later": [
+        "Напомнить позже"
+      ],
+      "Set up other features": [
+        "Настроить другие функции"
+      ],
+      "Take a tour": [
+        "Ознакомительный тур"
+      ]
+    },
     "Buy confirm": {
+      "Buy more bitcoin": [
+        "Купить больше биткоина"
+      ],
       "For any issues with the purchasing process, please contact ${ support }.": [
         "По всем вопросам, связанным с процессом покупки, обращайтесь в службу поддержки ${ support }."
+      ],
+      "For any issues with the purchasing process, please contact the partner’s support team.": [
+        "По всем вопросам, связанным с процессом покупки, свяжитесь со службой поддержки партнёра."
+      ],
+      "Purchase completed": [
+        "Покупка завершена"
       ],
       "Purchase finished": [
         "Покупка завершена"
       ],
       "Thank you for purchasing an Azteco voucher.\nWe will now redeem your voucher and Azteco will send the BTC to your wallet.\nWe will also send you an email with the purchase details.": [
         "Благодарим вас за покупку ваучера Azteco.\nСейчас мы выкупим ваш ваучер, и Azteco отправит BTC на ваш кошелек.\nМы также отправим вам электронное письмо с информацией о покупке."
+      ],
+      "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
+        "Спасибо за попытку покупки у нашего партнёра.\nВы можете отслеживать статус вашего заказа через письмо с подтверждением, отправленное вам нашим партнёром.\nЕсли транзакция не удалась, вы можете попробовать снова или выбрать другого партнёра."
+      ]
+    },
+    "Buy in progress": {
+      "Buy more bitcoin": [
+        "Купить больше биткоина"
+      ],
+      "For any issues with the purchasing process, please contact ${ support }.": [
+        "По всем проблемам, связанным с процессом покупки, обращайтесь в службу поддержки ${ support }."
+      ],
+      "Purchase in progress": [
+        "Покупка в процессе"
+      ],
+      "Thank you for your purchase attempt for an Azteco voucher.\nAs soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.\nThen Azteco will send the BTC to your wallet.": [
+        "Спасибо за попытку покупки ваучера Azteco.\nКак только мы получим ваш платеж, мы создадим и активируем ваучер на основе курса BTC в тот момент.\nЗатем Azteco отправит BTC на ваш кошелек."
       ]
     },
     "Cancellation upsell": {
@@ -1890,6 +2005,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
+      ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
       ],
@@ -1947,6 +2065,9 @@
       "Not a valid number": [
         "Номер недействителен"
       ],
+      "Organization key is not decrypted": [
+        "Ключ организации не расшифрован"
+      ],
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
@@ -1961,6 +2082,12 @@
       ],
       "Payment process not supported": [
         "Процесс оплаты не поддерживается"
+      ],
+      "Please select a country": [
+        "Пожалуйста, выберите страну"
+      ],
+      "Please select a state": [
+        "Пожалуйста, выберите штат"
       ],
       "Process aborted": [
         "Процесс прерван"
@@ -2204,14 +2331,20 @@
       ]
     },
     "Gateway disclaimer": {
+      "${ WALLET_APP_NAME } support": [
+        "Поддержка ${ WALLET_APP_NAME }"
+      ],
       "As soon as your payment is received, ${ WALLET_APP_NAME } will redeem the voucher according to the market price of BTC and network fee at that time.\nThe redeemed BTC will then be sent by ${ azteco } to your wallet.\nFor any questions related to Azteco bitcoin vouchers, please contact ${ support }.": [
-        "Как только ваш платеж будет получен, ${ WALLET_APP_NAME } выкупит ваучер в соответствии с рыночной ценой BTC и комиссией сети на тот момент.\nЗатем выкупленные BTC будут отправлены ${ azteco } на ваш кошелек.\nПо любым вопросам, связанным с биткоин-ваучерами Azteco, пожалуйста, обращайтесь в службу поддержки ${ support }."
+        "Как только ваш платеж будет получен, ${ WALLET_APP_NAME } выкупит ваучер в соответствии с рыночной ценой BTC и комиссией сети на тот момент.\nЗатем выкупленные BTC будут отправлены ${ azteco } на ваш кошелек.\nПо любым вопросам, связанным с биткоин-ваучерами Azteco, обращайтесь в службу поддержки ${ support }."
       ],
       "Confirm": [
         "Подтвердить"
       ],
       "Disclaimer": [
         "Отказ от ответственности"
+      ],
+      "Done": [
+        "Готово"
       ],
       "I have read and agree to the disclaimer": [
         "Я прочитал(-а) и согласен(-на) с отказом от ответственности"
@@ -2220,7 +2353,10 @@
         "Не сейчас"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
-        "Вы теперь покидаете ${ WALLET_APP_NAME } для ${ providerName } (${ websiteLink }).\nУслуги, связанные с оплатами по картам, банковскими переводами и любыми другими фиатными транзакциями, предоставляются ${ providerName },\nотдельной сторонней платформой. Продолжая и получая услуги от ${ providerName },\nвы подтверждаете, что прочитали и согласны с Условиями обслуживания ${ providerName } (${ termOfUseLink })\nи Политикой конфиденциальности и использования файлов cookie (${ privacyAndCookiesPolicyLink }).\nПо любым вопросам, связанным с услугами ${ providerName }, свяжитесь с ${ providerName } по адресу ${ supportEmailLink }"
+        "Вы покидаете ${ WALLET_APP_NAME } для ${ providerName } (${ websiteLink }).\nУслуги, связанные с оплатами по картам, банковскими переводами и любыми другими фиатными транзакциями, предоставляются ${ providerName },\nотдельной сторонней платформой. Продолжая и получая услуги от ${ providerName },\nвы подтверждаете, что прочитали и согласны с Условиями обслуживания ${ providerName } (${ termOfUseLink })\nи Политикой конфиденциальности и использования файлов cookie (${ privacyAndCookiesPolicyLink }).\nПо любым вопросам, связанным с услугами ${ providerName }, свяжитесь с ${ providerName } по адресу ${ supportEmailLink }"
+      ],
+      "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
+        "Вы купите ваучер на биткоин Azteco с помощью ${ WALLET_APP_NAME }. Это работает как подарочная карта и является одним из самых простых и конфиденциальных способов получить BTC."
       ]
     },
     "Group": {
@@ -2241,6 +2377,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Эл. почта"
       ],
@@ -2266,6 +2405,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
       ],
       "${ storage } storage": [
         "${ storage } хранилище"
@@ -2363,6 +2505,12 @@
       "default email address": [
         "адрес эл. почты по умолчанию"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Откройте для себя новые доступные функции и начните использовать их прямо сейчас!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Откройте для себя новые функции, доступные с ${ planTitle }, и начните использовать их прямо сейчас!"
+      ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
@@ -2386,6 +2534,12 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Письма, перемещённые в Корзину и Спам более 30 дней назад, будут автоматически очищены."
+      ],
+      "Enabling auto-deletion…": [
+        "Включение автоудаления…"
       ],
       "Enter the code from your authenticator app": [
         "Введите код из приложения для аутентификации"
@@ -2435,6 +2589,9 @@
       "JCB logo": [
         "Логотип JCB"
       ],
+      "Keys created": [
+        "Ключи созданы"
+      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -2474,6 +2631,9 @@
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
+      "or discover other features:": [
+        "или откройте для себя другие возможности:"
+      ],
       "Organization size": [
         "Размер организации"
       ],
@@ -2507,6 +2667,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Registering your subscription…": [
+        "Регистрация вашей подписки…"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-платежи сейчас недоступны. Пожалуйста, попробуйте позже."
       ],
@@ -2515,6 +2678,12 @@
       ],
       "Session timed out": [
         "Время сеанса истекло"
+      ],
+      "Setting up ${ feature }…": [
+        "Установка ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Настройка вашего нового адреса…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
@@ -2540,6 +2709,9 @@
       "This address is for Bitcoin via Email": [
         "Это адрес для Bitcoin по электронной почте"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
       ],
@@ -2560,6 +2732,9 @@
       ],
       "Total VPN connections": [
         "Всего подключений к VPN"
+      ],
+      "User activated": [
+        "Пользователь активирован"
       ],
       "Users": [
         "Пользователи"
@@ -2612,6 +2787,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Вы используете больше места в хранилище, чем включено в тариф ${ downgradedPlanName }. Удалите данные, чтобы перейти на более дешевую версию."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Вы можете изменить это в любой момент в ${ settingsLink }."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
@@ -2629,6 +2807,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас пробная подписка на ${ planTitle }. Если вы хотите продолжить подписку после пробного периода, добавьте способ оплаты."
@@ -2669,8 +2850,17 @@
       "Your next billing date is ${ renewalTime }.": [
         "Следующая дата выставления счета - ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использован только для этой разовой проверки."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
       ]
     },
     "info": {
@@ -2854,8 +3044,14 @@
       "Security code (${ codeName })": [
         "Код безопасности (${ codeName })"
       ],
+      "Show QRCode": [
+        "Показать QR-код"
+      ],
       "Start date": [
         "Дата начала"
+      ],
+      "State": [
+        "Состояние"
       ],
       "Subscription options": [
         "Параметры подписки"
@@ -2924,6 +3120,9 @@
       ],
       "Request an invite": [
         "Запросить приглашение"
+      ],
+      "settings": [
+        "настройки"
       ],
       "View on blockchain": [
         "Просмотреть в блокчейне"
@@ -4037,6 +4236,11 @@
         "Ваша карта отклонена. Пожалуйста, попробуйте другую карту или свяжитесь с вашим банком для авторизации транзакции."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Бесплатно"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Подтверждая этот платеж, вы авторизуете ${ BRAND_NAME } и Stripe, наш поставщик платежных услуг, поручить вашему банку депонировать свой счет и банк соответствующим образом депонировать свой счет. Вы можете получить возврат средств в течение 8 недель со дня дебетования на основании Вашего договора с Вашим банком."
@@ -4129,8 +4333,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Просмотрите безопасность вашего аккаунта"
+      "Review account safety": [
+        "Проверьте безопасность аккаунта"
       ]
     },
     "saml: Error": {
@@ -4635,6 +4839,9 @@
       ]
     },
     "Title": {
+      "${ feature } is now active": [
+        "${ feature } теперь активна"
+      ],
       "Add credit/debit card": [
         "Добавить кредитную/дебетовую карту"
       ],
@@ -4646,6 +4853,9 @@
       ],
       "Are you sure?": [
         "Вы уверены?"
+      ],
+      "Auto-deletion is active": [
+        "Автоматическое удаление включено"
       ],
       "Billing cycle": [
         "Период оплаты"
@@ -4752,6 +4962,9 @@
       "Wallet": [
         "Кошелёк"
       ],
+      "You can now create unlimited folders and labels": [
+        "Теперь вы можете создавать неограниченное количество папок и ярлыков."
+      ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
       ]
@@ -4853,6 +5066,9 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Ваш запланированный тариф начинается с ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша подписка будет автоматически обновлена через ${ cycle } месяц.",
@@ -5054,6 +5270,9 @@
       ],
       "View receive addresses": [
         "Просмотр адресов получения"
+      ],
+      "We are having trouble opening your wallet. Please refresh the page or try again later.": [
+        "Не удаётся открыть кошелёк. Обновите страницу или попробуйте позже."
       ]
     },
     "Wallet import": {
@@ -5069,9 +5288,6 @@
     "Wallet information": {
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
         "Кодовая фраза — это дополнительный пароль, который вы создаёте, чтобы повысить защиту своего криптокошелька. Её можно использовать вместе с мнемонической фразой. Храните её в надёжном месте, поскольку без неё вы не получите доступ к кошельку."
-      ],
-      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Мнемоническая фраза — это последовательность 12-24 слов, созданных вашим кошельком. Она служит главным ключом для восстановления средств. Храните её в надёжном месте и никому не сообщайте, поскольку она даёт доступ к вашим средствам."
       ],
       "What’s a wallet passphrase?": [
         "Что такое кодовая фраза для кошелька?"
@@ -5265,8 +5481,17 @@
       "For better privacy, generate a new address for each transaction.": [
         "Для повышения конфиденциальности создавайте новый адрес для каждой транзакции."
       ],
+      "Generate new address": [
+        "Создать новый адрес"
+      ],
       "Receive to": [
         "Куда получить"
+      ],
+      "To prevent a large gap, generating new addresses has been disabled. You can either use this address or a previously generated one": [
+        "Чтобы предотвратить значительный разрыв, создание новых адресов было отключено. Вы можете использовать этот адрес или ранее сгенерированный"
+      ],
+      "To prevent a large gap, you should either use this address or a previously generated one": [
+        "Чтобы предотвратить значительный разрыв, используйте этот адрес или ранее сгенерированный"
       ]
     },
     "Wallet receive": {
@@ -5302,8 +5527,14 @@
       "Bitcoin address signature could not be verified": [
         "Не удалось проверить подпись Bitcoin-адреса"
       ],
+      "Boost transaction": [
+        "Увеличить приоритет транзакции"
+      ],
       "Boost transaction priority": [
         "Увеличить приоритет транзакции"
+      ],
+      "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
+        "Увеличив комиссию сети, вы можете приоритизировать скорость транзакции, что ускорит её обработку и подтверждение."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "Невозможно использовать QRCode-сканер. Пожалуйста, проверьте совместимость браузера"
@@ -5419,6 +5650,9 @@
       "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
         "У вас недостаточно BTC на этом аккаунте, чтобы профинансировать транзакцию и необходимую сеть для оплаты ${ feesToReserveElement }."
       ],
+      "You do not have enough funds. Please choose a lower network fee and try again": [
+        "Недостаточно средств. Выберите более низкую комиссию сети и попробуйте снова"
+      ],
       "Your Bitcoin is on its way!": [
         "Ваш Bitcoin уже в пути!"
       ],
@@ -5452,6 +5686,9 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin по эл. почте"
+      ],
+      "Browser storage cleared. Please refresh the page": [
+        "Хранилище браузера очищено. Обновите страницу"
       ],
       "Could not fill the pool after email address addition": [
         "Не удалось заполнить пул после добавления адреса электронной почты"
@@ -5615,12 +5852,6 @@
       ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "Мнемоническая фраза кошелька кодирует закрытый ключ, который контролирует ваши цифровые активы."
-      ],
-      "Wallet seed phrase is incorrect. Please check this and try again.": [
-        "Фраза для восстановления кошелька неверна. Проверьте её и попробуйте снова."
-      ],
-      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
-        "Длина фразы для восстановления кошелька недопустима. Она должна содержать от 12 до 24 слов."
       ],
       "Wallet setup": [
         "Настройка кошелька"
@@ -5895,13 +6126,13 @@
       "A safer way to hold your Bitcoin": [
         "Безопасный способ держать свои Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin по эл. почте"
+      "Bitcoin via Email": [
+        "Bitcoin по электронной почте"
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Безопасный и простой способ хранить и переводить Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Безопасный способ хранить Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

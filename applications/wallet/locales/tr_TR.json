@@ -131,7 +131,7 @@
         "Artır"
       ],
       "Input passphrase": [
-        "Parolayı girin"
+        "Parola ifadesini yazın"
       ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
@@ -140,7 +140,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Learn more about Bitcoin via Email": [
-        "E-posta aracılığıyla Bitcoin hakkında daha fazla bilgi al"
+        "E-posta ile Bitcoin hakkında ayrıntılı bilgi alın"
       ],
       "Let's talk": [
         "Hadi konuşalım!"
@@ -236,10 +236,10 @@
         "Ayarlar"
       ],
       "Show balance": [
-        "Bakiyeyi göster"
+        "Bakiyeyi görüntüle"
       ],
       "Show QRCode": [
-        "QR Kodu göster"
+        "Kare kodu görüntüle"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -302,7 +302,7 @@
         "Faturayı görüntüle"
       ],
       "Visit knowledge base": [
-        "Bilgi bankasını ziyaret et"
+        "Bilgi bankasına bakın"
       ],
       "What do I get?": [
         "Ne alacağım?"
@@ -346,7 +346,7 @@
         "Dizin"
       ],
       "Not used": [
-        "Kullanılmıyor"
+        "Kullanılmamış"
       ],
       "Page ${ pageNumber }": [
         "${ pageNumber }. sayfa"
@@ -523,7 +523,7 @@
         "Netflix, Disney+, Prime Video ve diğer internet yayın akışı içeriklerine herhangi bir yerden erişin."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Tüm cihazlarınızda güvenli girişler. Sınırsız hide-my-email takma adları, güvenli paylaşım, entegre 2FA, ${ DARK_WEB_MONITORING_NAME } ve daha fazlasını içerir."
+        "Tüm aygıtlarınızda güvenli oturum açma. Sınırsız sayıda hide-my-email takma adı, paylaşım, bütünleşik iki adımlı doğrulama, ${ DARK_WEB_MONITORING_NAME } ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
@@ -537,7 +537,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-e-mail ve diğer şeyler.ide-my-email"
+        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -555,9 +555,6 @@
       ],
       "12 months": [
         "12 ay"
-      ],
-      "24 months": [
-        "24 ay"
       ],
       "Annually": [
         "Yıllık"
@@ -594,6 +591,9 @@
       "Bank transfer": [
         "Banka havalesi"
       ],
+      "Banxa": [
+        "Banxa"
+      ],
       "Binance": [
         "Binance"
       ],
@@ -608,6 +608,9 @@
       ],
       "Choose a country": [
         "Bir ülke seçin"
+      ],
+      "Coinbase": [
+        "Coinbase"
       ],
       "Confirm": [
         "Onayla"
@@ -627,8 +630,14 @@
       "Instant payment": [
         "Anında ödeme"
       ],
+      "Kraken": [
+        "Kraken"
+      ],
       "Location": [
         "Konum"
+      ],
+      "MoonPay": [
+        "MoonPay"
       ],
       "Pay with": [
         "Şununla öde"
@@ -638,6 +647,9 @@
       ],
       "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
         "Kullanabileceğiniz BTC hizmeti sağlayıcılarını ve ödeme yöntemlerini görmek için lütfen bölgenizi seçin. Satın alınan herhangi bir BTC, bu cüzdan hesabının bir BTC adresine gönderilir."
+      ],
+      "Ramp Network": [
+        "Ramp Network"
       ],
       "Recipients": [
         "Alıcılar"
@@ -675,10 +687,10 @@
     },
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
-        "${ quote.provider } ödeme"
+        "${ quote.provider } ödemesi"
       ],
       "No quote available for the requested amount": [
-        "Talep edilen tutar için teklif mevcut değil"
+        "İstenilen tutar için bir teklif bulunamadı"
       ],
       "The selected currency is not supported in your country or the requested amount is too low": [
         "Seçilmiş para birimi ülkenizde desteklenmiyor veya istenilen miktar çok düşük"
@@ -693,6 +705,9 @@
       ],
       "Native Segwit": [
         "Doğal Segwit"
+      ],
+      "Taproot": [
+        "Taproot"
       ]
     },
     "Bitcoin Script Type Description": {
@@ -729,7 +744,7 @@
         "Cüzdan bulunamadı"
       ],
       "Open QR code reader": [
-        "QR kod okuyucusunu aç"
+        "Kare kod okuyucuyu aç"
       ],
       "Recipient email or BTC address": [
         "Alıcı e-posta adresi veya BTC adresi"
@@ -741,10 +756,10 @@
         "${ email } adresine davet gönder"
       ],
       "This email is not using a ${ WALLET_APP_NAME } yet. Invite them to create their own wallet for easier transactions.": [
-        "Bu e-posta henüz ${ WALLET_APP_NAME } kullanmıyor. Onu kendi cüzdanını oluşturmaya davet edin. Böylece hesap işlemlerini daha kolay yapabilir."
+        "Bu e-posta adresi henüz ${ WALLET_APP_NAME } kullanmıyor. Onu kendi cüzdanını oluşturmaya davet edin. Böylece hesap işlemlerini daha kolay yapabilir."
       ],
       "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
-        "Bu kullanıcının henüz e-postasıyla ilişkilendirilmiş bir ${ WALLET_APP_NAME } hesabı olmayabilir. Ona Bitcoin göndermek istediğinizi bildiren bir e-posta gönderin."
+        "Bu kullanıcının henüz e-posta adresi ile ilişkilendirilmiş bir ${ WALLET_APP_NAME } hesabı olmayabilir. Ona Bitcoin göndermek istediğinizi bildiren bir e-posta gönderin."
       ],
       "To": [
         "Alıcı"
@@ -851,10 +866,10 @@
         "Özellikleri keşfedin ve ayarlayın"
       ],
       "Remind me later": [
-        "Bana sonra hatırlat"
+        "Daha sonra hatırlat"
       ],
       "Set up other features": [
-        "Diğer özellikleri keşfedin"
+        "Diğer özellikleri ayarlayın"
       ],
       "Take a tour": [
         "Keşfedin"
@@ -1843,7 +1858,7 @@
         "Diğerleri"
       ],
       "Popular": [
-        "Popüler"
+        "Beğenilen"
       ]
     },
     "Cycle": {
@@ -1866,7 +1881,7 @@
     },
     "Discover": {
       "${ WALLET_APP_NAME } launch": [
-        "${ WALLET_APP_NAME } sunumu"
+        "${ WALLET_APP_NAME } tanıtımı"
       ],
       "${ WALLET_APP_NAME } security model": [
         "${ WALLET_APP_NAME } güvenlik modeli"
@@ -1875,13 +1890,13 @@
         "Yeni başlayanlar için Bitcoin rehberi"
       ],
       "Bitcoin is an innovative payment network that leverages peer-to-peer transactions to remove the need for a central bank. Bitcoin has revolutionized the core principles of value exchange by showing that a network of fully independent nodes can operate payments in a trustless and secure way.": [
-        "Bitcoin, bir merkez bankasına gerek duymadan hesap işlemlerini gerçekleştirmek için eşler arası işlemlerden yararlanan yenilikçi bir ödeme ağıdır. Bitcoin, tümüyle bağımsız düğümlerin güvenli ve karşınızdakine güvenmeniz gerekmeden ödeme işlemleri yapılabileceğini göstererek değer aktarımının temel ilkelerini devrim niteliğinde değiştirdi."
+        "Bitcoin, bir merkez bankasına gerek duymadan hesap işlemleri yapabilmek için eşler arası çalışan yenilikçi bir ödeme ağıdır. Bitcoin, tümüyle bağımsız düğümlerin güvenli olduğunu ve karşınızdakine güvenmeniz gerekmeden ödeme işlemleri yapılabileceğini göstererek, değer aktarımının temel ilkelerini devrim niteliğinde değiştirdi."
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"
       ],
       "Bitcoin via Email is a unique feature in ${ WALLET_APP_NAME } that makes sending bitcoin as easy as sending an email. Any ${ WALLET_APP_NAME } user can frictionlessly receive bitcoin with their email.": [
-        "E-posta ile Bitcoin, benzersiz bir ${ WALLET_APP_NAME } özelliğidir. Bitcoin göndermenin bir e-posta göndermek kadar kolay olmasını sağlar. Herhangi bir ${ WALLET_APP_NAME } kullanıcısı, e-posta adresiyle sorun yaşamadan Bitcoin alabilir."
+        "E-posta ile Bitcoin, benzersiz bir ${ WALLET_APP_NAME } özelliğidir. Bitcoin göndermenin bir e-posta göndermek kadar kolay olmasını sağlar. Herhangi bir ${ WALLET_APP_NAME } kullanıcısı, sorun yaşamadan e-posta adresiyle Bitcoin alabilir."
       ],
       "Discover": [
         "Keşfedin"
@@ -1893,13 +1908,13 @@
         "${ WALLET_APP_NAME } uygulamasının neden oluşturulduğunu ve ${ BRAND_NAME } topluluğuna ne gibi faydalar sağlayabileceğini açıklıyoruz."
       ],
       "We review how to secure your wallets and Bitcoin, including important recovery methods in case you ever forget your password.": [
-        "Cüzdanlarınızın ve Bitcoin birikimlerinizin güvenliğini nasıl sağlayacağınızı gözden geçiriyoruz. Ayrıca parolanızı unuttuğunuzda önemli olacak kurtarma yöntemlerini de anlatıyoruz."
+        "Cüzdanlarınızın ve Bitcoin birikimlerinizin güvenliğini nasıl sağlayacağınızın üzerinden geçiyoruz. Ayrıca parolanızı unuttuğunuzda önemli olacak kurtarma yöntemlerini de anlatıyoruz."
       ],
       "We review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.": [
-        "Yeni başlayanlar için bazı önemli Bitcoin tarihlerini ve özelliklerini gözden geçiriyoruz. Bitcoin ile finansal egemenliğin ve özgürlüğün nasıl sağlandığını da inceliyoruz. Son olarak, Bitcoin hakkında karşılaşılan zorlukları ve gelecekteki potansiyeli keşfediyoruz."
+        "Yeni başlayanlar için bazı önemli Bitcoin tarihlerini ve özelliklerini gözden geçiriyoruz. Bitcoin ile finansal egemenliğin ve özgürlüğün nasıl sağlandığını da inceliyoruz. Son olarak, Bitcoin hakkında karşılaşılan zorlukları ve gelecekteki potansiyelini keşfediyoruz."
       ],
       "We review the key features and security architecture that make ${ WALLET_APP_NAME } a private and secure wallet that is as easy to use as email.": [
-        "${ WALLET_APP_NAME } uygulamasının özel ve güvenli bir cüzdan olmasını sağlayan temel özellikleri ve güvenlik mimarisini gözden geçiriyoruz."
+        "${ WALLET_APP_NAME } uygulamasının gizliliği koruyan ve güvenli bir cüzdan olmasını sağlayan temel özellikleri ve güvenlik mimarisini gözden geçiriyoruz."
       ],
       "What is Bitcoin?": [
         "Bitcoin nedir?"
@@ -1974,6 +1989,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > İletiler ve ileti oluşturma > Kısa etki alanı (pm.me) bölümüne gidin"
+      ],
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
       ],
@@ -1981,7 +1999,7 @@
         "Tutar en az miktarın altında (${ minimumAmount })."
       ],
       "Bitcoin via Email to self is not supported": [
-        "Kendinize E-posta aracılığıyla Bitcoin göndermeniz desteklenmiyor"
+        "Kendinize E-posta ile Bitcoin göndermeniz desteklenmiyor"
       ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
@@ -2005,7 +2023,7 @@
         "Kullanıcı adı yanlış"
       ],
       "Input isn't a valid email or bitcoin address": [
-        "Girdi geçerli bir e-posta veya Bitcoin adresi değil"
+        "Giriş geçerli bir e-posta veya Bitcoin adresi değil"
       ],
       "Invalid ${ name } code": [
         "${ name } kodu geçersiz"
@@ -2031,6 +2049,9 @@
       "Not a valid number": [
         "Numara geçerli değil"
       ],
+      "Organization key is not decrypted": [
+        "Kuruluş anahtarının şifresi çözülmedi"
+      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
@@ -2047,10 +2068,10 @@
         "Ödeme işlemi desteklenmiyor"
       ],
       "Please select a country": [
-        "Lütfen bir ülke seçiniz"
+        "Lütfen bir ülke seçin"
       ],
       "Please select a state": [
-        "Lütfen bir il seçiniz"
+        "Lütfen bir eyalet seçin"
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -2077,7 +2098,7 @@
         "Kabul ettiğimiz en az ödeme: ${ price }"
       ],
       "The passphrases do not match": [
-        "Parolalar eşleşmiyor"
+        "Parola ifadeleri eşleşmiyor"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -2304,7 +2325,7 @@
         "Şimdi değil"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
-        "${ WALLET_APP_NAME } üzerinden ${ providerName } (${ websiteLink }) üzerine geçiyorsunuz. Kart ödemeleri, banka havaleleri ve diğer herhangi bir fiyat işlemiyle ilgili hizmetler, ayrı bir üçüncü taraf platformu olan ${ providerName } \ntarafından sağlanmaktadır ${ providerName } üzerinden hizmet alarak ve ilerleyerek, ${ providerName } Hizmet Koşulları (${ termOfUseLink }) \nile Gizlilik ve Çerez İlkeleri (${ privacyAndCookiesPolicyLink }) metinlerini okuduğunuzu ve kabul etmiş olursunuz. ${ providerName } hizmetleriyle ilgili herhangi bir sorunuz varsa, lütfen ${ providerName } ile ${ supportEmailLink } adresinden görüşün."
+        "${ WALLET_APP_NAME } üzerinden ${ providerName } (${ websiteLink }) üzerine geçiyorsunuz. Kart ödemeleri, banka havaleleri ve diğer herhangi bir fiyat işlemiyle ilgili hizmetler, ayrı bir üçüncü taraf platformu olan ${ providerName } \ntarafından sağlanmaktadır ${ providerName } üzerinden hizmet alarak ve ilerleyerek, ${ providerName } Hizmet Koşulları (${ termOfUseLink }) \nile Gizlilik ve Çerez İlkeleri (${ privacyAndCookiesPolicyLink }) metinlerini okuduğunuzu ve anladığınızı kabul etmiş olursunuz. ${ providerName } hizmetleriyle ilgili herhangi bir sorunuz varsa, lütfen ${ providerName } ile ${ supportEmailLink } adresinden görüşün."
       ],
       "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
         "Şimdi ${ WALLET_APP_NAME } ile bir Azteco Bitcoin kuponu satın alacaksınız. Bu kupon bir hediye kartına benzer ve BTC edinmenin en kolay ve gizliliği en iyi koruyan yollarından biridir."
@@ -2328,6 +2349,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "Güvenlik kodu"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -2355,7 +2379,7 @@
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } hesabınızı şüpheli etkinlikleri özel olarak izleyerek korur."
+        "${ PROTON_SENTINEL_NAME } şüpheli etkinlikleri özel olarak izleyerek hesabınızı korur."
       ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
@@ -2448,10 +2472,10 @@
         "varsayılan e-posta adresi"
       ],
       "Discover new features unlocked and start using them right away!": [
-        "Yeni sunulan özellikleri keşfedin ve hemen kullanmaya başlayın!"
+        "Erişebileceğiniz yeni özellikleri keşfedin ve hemen kullanmaya başlayın!"
       ],
       "Discover new features unlocked with ${ planTitle } and start using them right away!": [
-        "${ planTitle } ile açılan yeni özellikleri keşfedin ve hemen kullanmaya başlayın!"
+        "${ planTitle } ile erişebileceğiniz yeni özellikleri keşfedin ve hemen kullanmaya başlayın!"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
@@ -2478,10 +2502,10 @@
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Çöp Kutusu ve Spam’a taşınan 30 günden eski e-postalar otomatik olarak silinecektir."
+        "Çöp ve İstenmeyen klasörlerine taşınan 30 günden eski e-postalar otomatik olarak silinir."
       ],
       "Enabling auto-deletion…": [
-        "Otomatik silme etkinleştiriliyor…"
+        "Otomatik silme özelliği açılıyor…"
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -2530,6 +2554,9 @@
       ],
       "JCB logo": [
         "JCB logosu"
+      ],
+      "Keys created": [
+        "Anahtarlar oluşturuldu"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -2605,7 +2632,7 @@
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
       "Registering your subscription…": [
-        "Aboneliğiniz kaydediliyor..."
+        "Aboneliğiniz kaydediliyor…"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
@@ -2617,10 +2644,10 @@
         "Oturum zaman aşımına uğradı"
       ],
       "Setting up ${ feature }…": [
-        "${ feature } ayarlanıyor..."
+        "${ feature } ayarlanıyor…"
       ],
       "Setting up your new address…": [
-        "Yeni adresiniz ayarlanıyor..."
+        "Yeni adresiniz ayarlanıyor…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
@@ -2644,7 +2671,7 @@
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
       "This address is for Bitcoin via Email": [
-        "Bu adres E-posta aracılığıyla Bitcoin içindir"
+        "Bu adres E-posta ile Bitcoin içindir"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
@@ -2669,6 +2696,9 @@
       ],
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
+      ],
+      "User activated": [
+        "Kullanıcı ektinleştirildi"
       ],
       "Users": [
         "Kullanıcılar"
@@ -2739,7 +2769,7 @@
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
-        "Şifreniz veya diğer verileriniz üçüncü taraf bir hizmet tarafından sızdırıldığında bilgilendirilirsiniz."
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "${ planTitle } deneme aboneliğiniz var. Deneme süresinden sonra aboneliğinizi sürdürmek istiyorsanız lütfen bir ödeme yöntemi ekleyin."
@@ -2973,7 +3003,7 @@
         "Güvenlik kodu (${ codeName })"
       ],
       "Show QRCode": [
-        "QR Kodu göster"
+        "Kare kodu görüntüle"
       ],
       "Start date": [
         "Başlangıç tarihi"
@@ -3053,7 +3083,7 @@
         "ayarlar"
       ],
       "View on blockchain": [
-        "Blockchain üzerinde görüntüleyin"
+        "Blockchain üzerinde görüntüle"
       ],
       "What’s this?": [
         "Bu nedir?"
@@ -3469,7 +3499,7 @@
         "Tek oturum açma bütünleştirmesi (yakında)"
       ],
       "Strict no-logs policy": [
-        "Sıkı kayıt tutmama ilkesi"
+        "Katı kayıt tutmama ilkesi"
       ],
       "Sync and backup all your files across devices": [
         "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
@@ -4106,6 +4136,11 @@
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Bu ödemeyi onaylayarak, ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine bankanıza hesabınızdan para çekmesi talimatını vermesini ve bankanızın da buna göre hesabınızdan para çekmesine izin vermiş olursunuz. Bankanızla yaptığınız anlaşmanın koşulları uyarınca, paranın çekilme tarihinden itibaren 8 hafta içinde geri ödeme alabilirsiniz."
@@ -4119,10 +4154,10 @@
         "Sizinle iletişim kurmak için bir yol"
       ],
       "Confirm passphrase or leave empty": [
-        "Parolayı onaylayın veya boş bırakın"
+        "Parola ifadesini onaylayın veya boş bırakın"
       ],
       "Enter a passphrase or leave empty": [
-        "Bir parola girin veya boş bırakın"
+        "Bir parola ifadesi yazın ya da boş bırakın"
       ],
       "Gift code": [
         "Hediye kodu"
@@ -4198,8 +4233,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Hesabınızın güvenliğini değerlendirin"
+      "Review account safety": [
+        "Hesap güvenliğini gözden geçirin"
       ]
     },
     "saml: Error": {
@@ -4683,7 +4718,7 @@
     },
     "Title": {
       "${ feature } is now active": [
-        "${ feature } artık aktif"
+        "${ feature } etkinleştirildi"
       ],
       "Add credit/debit card": [
         "Kredi ya da banka kartı ekle"
@@ -4698,7 +4733,7 @@
         "Emin misiniz?"
       ],
       "Auto-deletion is active": [
-        "Otomatik silme aktif"
+        "Otomatik silme özelliği açık"
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -4830,7 +4865,7 @@
         "Kimden geldiğini hatırlamak için bir ad yazın."
       ],
       "Add their email address or leave empty": [
-        "E-posta adresini ekleyin veya boş bırakın"
+        "E-posta adresini ekleyin ya da boş bırakın"
       ],
       "Add their email address to save as contact": [
         "E-posta adresini ekleyin ve kişi olarak kaydedin"
@@ -4898,6 +4933,13 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
+        "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
         "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek."
@@ -4924,7 +4966,7 @@
         "Kapat"
       ],
       "Continue": [
-        "Devam et"
+        "İlerle"
       ],
       "Could not fetch wallets data": [
         "Cüzdan verileri alınamadı"
@@ -4936,15 +4978,15 @@
         "Yeni veriler eşitleniyor"
       ],
       "Upgrade to Visionary": [
-        "Visionary planına yükselt"
+        "Visionary tarifesine yükselt"
       ],
       "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
-        "Tarayıcınız veya cihaz yazılımınız ${ WALLET_APP_NAME } uygulamasını desteklemiyor. Lütfen tarayıcınızı veya cihazınızı güncelleyin. Alternatif olarak, mobil uygulamalarımızdan birini kullanabilirsiniz."
+        "Tarayıcınız veya aygıt yazılımınız ${ WALLET_APP_NAME } uygulamasını desteklemiyor. Lütfen tarayıcınızı veya aygıtınızı güncelleyin. Alternatif olarak, mobil uygulamalarımızdan birini kullanabilirsiniz."
       ]
     },
     "Wallet Account": {
       "Account index": [
-        "Hesap indeksi"
+        "Hesap dizini"
       ],
       "Add wallet account": [
         "Cüzdan hesabı ekle"
@@ -4956,7 +4998,7 @@
         "İptal"
       ],
       "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
-        "Finansal faaliyetlerinizi daha iyi gizlilik ve organizasyon için ayırmak üzere birden fazla cüzdan hesabı oluşturun."
+        "Finansal işlemlerinizi daha iyi gizlilik ve düzen sağlamak üzere ayırmak için birden fazla cüzdan hesabı oluşturun."
       ],
       "Create wallet account": [
         "Cüzdan hesabı oluştur"
@@ -4971,7 +5013,7 @@
         "Hesabınız cüzdanınıza eklenirken sorun çıktı. Lütfen yeniden deneyin."
       ],
       "If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.": [
-        "Birden fazla e-posta adresi ile E-posta aracılığıyla Bitcoin almak istiyorsanız, her bir e-posta için bir cüzdan hesabı oluşturmanız gerekir."
+        "Birden fazla e-posta adresi kullanarak E-posta ile Bitcoin almak istiyorsanız, her bir e-posta için bir cüzdan hesabı oluşturmanız gerekir."
       ],
       "Name": [
         "Ad"
@@ -4997,10 +5039,10 @@
         "Bu hesap zaten oluşturulmuş"
       ],
       "We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.": [
-        "Varsayılan olarak en düşük ağ ücretlerine sahip Native Segwit kullanıyoruz. Yalnızca diğer türleri destekleyen hizmetlerden Bitcoin almak için bunu değiştirebilirsiniz."
+        "Varsayılan olarak en düşük ağ ücretlerine uygulayan Native Segwit kullanıyoruz. Yalnızca diğer türleri destekleyen hizmetlerden Bitcoin almak için bunu değiştirebilirsiniz."
       ],
       "We default to the next unused index. You can change this to recover or to skip a previous account.": [
-        "Varsayılan olarak bir sonraki kullanılmamış dizin ayarlanır. Bu seçeneği, önceki bir hesabı geri yüklemek veya atlamak için değiştirebilirsiniz."
+        "Varsayılan olarak bir sonraki kullanılmamış dizin ayarlanır. Bu seçeneği, önceki bir hesabı kurtarmak veya atlamak için değiştirebilirsiniz."
       ]
     },
     "Wallet buy": {
@@ -5011,7 +5053,7 @@
         "Ülke eksik. Lütfen yenileyip yeniden deneyin veya destek ekibiyle görüşün"
       ],
       "Missing quote. Please refresh and try again or contact support": [
-        "Alıntı eksik. Lütfen yenileyip yeniden deneyin veya destek ekibiyle görüşün"
+        "Teklif eksik. Lütfen yenileyip yeniden deneyin veya destek ekibiyle görüşün"
       ]
     },
     "Wallet dashboard": {
@@ -5036,7 +5078,7 @@
     },
     "wallet dashboard": {
       "You need to have a positive bitcoin balance with sufficient funds to transact": [
-        "İşlem yapabilmek için artıda yeterli Bitcoin birikiminiz olmalıdır"
+        "İşlem yapabilmek için yeterli miktarda artı Bitcoin birikiminiz olmalıdır"
       ]
     },
     "Wallet deletion": {
@@ -5061,7 +5103,7 @@
         "Cüzdanınızı koruyun"
       ],
       "Set up 2FA to secure your account": [
-        "Hesabınızı korumak için 2 adımlı doğrulama kurun"
+        "Hesabınızı korumak için 2 adımlı doğrulamayı kurun"
       ]
     },
     "Wallet explore proton": {
@@ -5069,7 +5111,7 @@
         "Çevrim içi kimliğinizi koruyan şifrelenmiş parola yöneticisi."
       ],
       "Encrypted email that's private by default.": [
-        "Varsayılan olarak gizli şifrelenmiş e-posta."
+        "Gizlilik odaklı şifrelenmiş e-posta."
       ],
       "Improve the security of your business and comply with data protection laws.": [
         "Kurumunuzun güvenliğini geliştirin ve veri koruma kanunlarına uyun."
@@ -5098,7 +5140,7 @@
         "Alıcı adreslerini görüntüle"
       ],
       "We are having trouble opening your wallet. Please refresh the page or try again later.": [
-        "Cüzdanınızı açmakta sorun yaşıyoruz. Lütfen sayfayı yenileyin veya bir süre sonra yeniden deneyin."
+        "Cüzdanınızı açmakta sorun yaşıyoruz. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ]
     },
     "Wallet import": {
@@ -5108,15 +5150,15 @@
     },
     "Wallet info": {
       "This fee incentivizes Bitcoin miners to include your transaction in the blockchain. None of the fee goes to ${ BRAND_NAME }.": [
-        "Bu ücret, Bitcoin madencilerini hesap işleminizi blok zincirine eklemeye özendirir. Ücretin hiçbir bölümü ${ BRAND_NAME } tarafından alınmaz."
+        "Bu ücret, Bitcoin madencilerini hesap işleminizi blok zincirine eklemeye özendirir. ${ BRAND_NAME } ücretten hiçbir şey almaz."
       ]
     },
     "Wallet information": {
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
         "Cüzdan parola ifadesi, kripto para cüzdanınızın güvenliğini artırmak için oluşturduğunuz bir ek paroladır. Bu parola, kurtarma ifadenizle birlikte kullanılır. Kaybederseniz cüzdanınıza erişmenizi engelleyebileceğinden bu parolayı güvenli bir yerde saklayın."
       ],
-      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Cüzdan tohumlama ifadesi, cüzdanınız tarafından oluşturulan ve 12 ya da 24 sözcükten oluşan bir sözcük grubudur. Bu ifade, birikimlerinizi kurtarmanızı sağlayan bir anahtar görevi görür. Birikimlerinize erişim sağlayacağından bu ifadeyi güvende tutun ve asla kimseyle paylaşmayın."
+      "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Cüzdan tohumlama ifadesi, cüzdanınız tarafından oluşturulan ve 12 ile 24 arasında sözcükten oluşan bir sözcük grubudur. Bu ifade, birikimlerinizi kurtarmanızı sağlayan bir anahtar görevi görür. Birikimlerinize erişim sağlayacağından bu ifadeyi güvende tutun ve asla kimseyle paylaşmayın."
       ],
       "What’s a wallet passphrase?": [
         "Cüzdan parola ifadesi nedir?"
@@ -5127,7 +5169,7 @@
     },
     "Wallet invite": {
       "${ WALLET_APP_NAME } Early Access is limited to Visionary supporters and invited users.": [
-        "${ WALLET_APP_NAME } erken erişimi, Visionary tarifesi ve davet kullanıcıları ile sınırlıdır."
+        "${ WALLET_APP_NAME } uygulamasına Visionary tarifesinde olan ve davet edilmiş kullanıcılar erkenden erişebilir."
       ],
       "Close": [
         "Kapat"
@@ -5150,14 +5192,20 @@
       "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
         "Arkadaşlarınızı ve ailenizi davet edin. Böylece hepiniz E-posta ile Bitcoin gönderebilirsiniz. Yeni sunucular ekledikçe daha fazla davet alacaksınız."
       ],
+      "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Arkadaşlarınızı ve ailenizi ${ WALLET_APP_NAME } kullanmaya davet edin. Böylece hepiniz E-posta ile Bitcoin aktarımı yapabilirsiniz."
+      ],
+      "Invites": [
+        "Davetler"
+      ],
       "Not now": [
         "Şimdi değil"
       ],
       "Please let them know to check their email and follow the instruction to set up their ${ WALLET_APP_NAME } with Bitcoin via Email.": [
-        "Lütfen e-posta adresini kontrol etmesini ve E-posta ile Bitcoin için ${ WALLET_APP_NAME } ayarlama yönergelerini uygulamasını iletin."
+        "Lütfen e-posta adresini kontrol etmesini ve E-posta ile Bitcoin aktarımı için ${ WALLET_APP_NAME } ayarlama yönergesini izlemesini iletin."
       ],
       "Send invite email now": [
-        "Şimdi davet e-postası gönder"
+        "Davet e-postası gönder"
       ],
       "Thank you for supporting ${ WALLET_APP_NAME }!": [
         "${ WALLET_APP_NAME } uygulamasına destek olduğunuz için teşekkürler!"
@@ -5180,8 +5228,11 @@
     },
     "Wallet invites": {
       "${ availableInvites } invite left": [
-        "${ availableInvites } davet kaldı",
-        "${ availableInvites } davet kaldı"
+        "${ availableInvites } davet hakkı kaldı",
+        "${ availableInvites } davet hakkı kaldı"
+      ],
+      "Invite your friends": [
+        "Arkadaşlarınızı davet edin"
       ]
     },
     "Wallet passphrase": {
@@ -5209,7 +5260,7 @@
         "İptal"
       ],
       "Clear browser storage": [
-        "Tarayıcı verilerini temizle"
+        "Tarayıcı depolama alanını temizle"
       ],
       "Copy seed phrase": [
         "Tohumlama ifadesini kopyala"
@@ -5218,7 +5269,7 @@
         "E-posta oluştur"
       ],
       "Create email address": [
-        "E-posta adresi oluşturun"
+        "E-posta adresi oluştur"
       ],
       "Delete account": [
         "Hesabı sil"
@@ -5233,7 +5284,7 @@
         "Görüntülenecek ad (isteğe bağlı)"
       ],
       "Email": [
-        "E-posta"
+        "E-posta adresi"
       ],
       "Email address": [
         "E-posta adresi"
@@ -5245,10 +5296,10 @@
         "E-posta adresi geçersiz"
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.": [
-        "Çoğu insan için bu önemli değildir çünkü güvendikleri insanlardan BTC alırlar. Ancak, bu konuda endişeleriniz varsa, Bİrincil BTC hesabınızı E-posta ile Bitcoin alma seçeneğini kapalı bırakmanızı ve diğer BTC hesaplarınızda E-posta ile Bitcoin alma özelliğini açarak hesap işlemlerini yapmanızı öneririz. Böylece, blockchain gizliliğiniz artırılmış olur ve bu hesapta tutulan BTC birikimleri aldığınız otomatik BTC birikimlerinden ayrı tutulur."
+        "Bu durum çoğu insan için önemli değildir çünkü güvendikleri insanlardan BTC alırlar. Ancak, bu konuda endişeleriniz varsa, Birincil BTC hesabınızda E-posta ile Bitcoin alma seçeneğini kapalı bırakmanızı ve diğer BTC hesaplarınızda E-posta ile Bitcoin alma özelliğini açarak hesap işlemlerini yapmanızı öneririz. Böylece, blockchain gizliliğiniz artırılmış olur ve bu hesapta tutulan BTC birikimleri aldığınız otomatik BTC birikimlerinden ayrı tutulur."
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, you can create a new BTC account so that the new BTC you receive is separated from your existing BTC.": [
-        "Çoğu insan için bu önemli değildir çünkü güvendikleri insanlardan BTC alırlar. Ancak, bu konu sizi endişelendiriyorsa, yeni BTC almak için var olan BTC birikimlerinizden ayrı bir yeni BTC hesabı oluşturabilirsiniz."
+        "Bu durum çoğu insan için önemli değildir çünkü güvendikleri insanlardan BTC alırlar. Ancak, bu konu sizi endişelendiriyorsa, yeni BTC almak için var olan BTC birikimlerinizden ayrı bir yeni BTC hesabı oluşturabilirsiniz."
       ],
       "My super account": [
         "Süper hesabım"
@@ -5263,7 +5314,7 @@
         "Şimdi değil"
       ],
       "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
-        "Bitcoin blok zinciri herkese açıktır, yani tüm hareketler herkese açık olarak görülebilir. Ancak, Bitcoin adresleri takma adlardır, yani göndericinin ve alıcının kim olduğu genellikle anlaşılmaz."
+        "Bitcoin blok zinciri herkese açıktır. Yani her işlem herkese açık olarak görülebilir. Ancak, Bitcoin adresleri olarak takma adlar kullanılır, yani gönderici ve alıcı kimlikleri genellikle bilinmez."
       ],
       "View more": [
         "Diğerlerini görüntüle"
@@ -5280,13 +5331,13 @@
     },
     "Wallet preferences": {
       "creating a new BTC account": [
-        "yeni bir BTC hesabı oluşturma"
+        "yeni bir BTC hesabı oluşturun"
       ],
       "Default currency": [
         "Varsayılan para birimi"
       ],
       "For better privacy, we recommend ${ walletAccountCreation } for receiving Bitcoin via Email. ${ learnMore }.": [
-        "Daha iyi gizlilik ve E-posta aracılığıyla Bitcoin almak için ${ walletAccountCreation } öneririz. ${ learnMore }"
+        "Daha iyi gizlilik ve E-posta ile Bitcoin almak için ${ walletAccountCreation } öneririz. ${ learnMore }"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -5295,7 +5346,7 @@
         "Yerel para birimi"
       ],
       "Receive Bitcoin via Email": [
-        "E-posta aracılığıyla Bitcoin alın"
+        "E-posta ile Bitcoin alın"
       ],
       "Select your currency": [
         "Para biriminizi seçin"
@@ -5315,7 +5366,7 @@
         "Şu adrese al"
       ],
       "To prevent a large gap, generating new addresses has been disabled. You can either use this address or a previously generated one": [
-        "Büyük bir boşluk oluşmasını engellemek için yeni adres oluşturma devre dışı bırakıldı. Ya bu adresi ya da daha önce oluşturulmuş bir adresi kullanabilirsiniz."
+        "Büyük bir boşluk oluşmasını engellemek için yeni adres oluşturma özelliği kapatılmış. Bu adresi ya da daha önce oluşturulmuş bir adresi kullanabilirsiniz."
       ],
       "To prevent a large gap, you should either use this address or a previously generated one": [
         "Büyük bir boşluk oluşmasını önlemek için ya bu adresi ya da daha önce oluşturulmuş bir adresi kullanmalısınız"
@@ -5337,10 +5388,10 @@
         "10+ saat"
       ],
       "Add a message": [
-        "Bir not ekle"
+        "Bir ileti ekle"
       ],
       "Add a note": [
-        "Not ekle"
+        "Bir not ekle"
       ],
       "Add private note to myself": [
         "Kendiniz için özel not ekleyin"
@@ -5358,13 +5409,13 @@
         "Hesap işlemini hızlandır"
       ],
       "Boost transaction priority": [
-        "Hesap işlemi önceliğini artır"
+        "Hesap işleminin önceliğini artır"
       ],
       "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
-        "Ağ ücretini artırarak hesap işleminizin önceliğini artırabilir, daha hızlı işlenmesini ve onaylanmasını sağlayabilirsiniz."
+        "Ağ ücretini artırarak hesap işleminizin önceliğini yükseltebilir ve daha hızlı işlenerek onaylanmasını sağlayabilirsiniz."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
-        "QR kod tarayıcısı kullanılamıyor. Lütfen tarayıcı uyumluluğunu denetleyin"
+        "Kare kod tarayıcı kullanılamıyor. Lütfen tarayıcı uyumluluğunu denetleyin"
       ],
       "Confirm": [
         "Onayla"
@@ -5382,7 +5433,7 @@
         "Hesap işlemi hızlandırılamadı. Lütfen cüzdanınızı eşitleyip yeniden deneyin."
       ],
       "Current fee": [
-        "Mevcut ücret"
+        "Geçerli ücret"
       ],
       "Edit": [
         "Düzenle"
@@ -5412,7 +5463,7 @@
         "Orta öncelik"
       ],
       "Message to recipient (optional)": [
-        "Alıcıya not (isteğe bağlı)"
+        "Alıcıya ileti (isteğe bağlı)"
       ],
       "Network fees": [
         "Ağ ücretleri"
@@ -5424,16 +5475,16 @@
         "Normal"
       ],
       "One of recipient's amount is below minimum value": [
-        "Alıcılardan birine gönderilen tutar minimum değerin altında"
+        "Alıcının birinin tutarı en az değerin altında"
       ],
       "Please grant camera permission to use QRCode scanner": [
-        "QR kod tarayıcısını kullanabilmek için lütfen kamera izni verin."
+        "Lütfen kare kod tarayıcıyı kullanmak için kamerayı kullanma izni verin"
       ],
       "Please setup an email address in your account settings in order to send messages": [
-        "Mesaj gönderebilmek için lütfen hesap ayarlarınızda bir e-posta adresi ayarlayın"
+        "İleti gönderebilmek için lütfen hesap ayarlarınız bölümünden bir e-posta adresi ayarlayın"
       ],
       "Recent recipients": [
-        "Son gönderilenler"
+        "Son alıcılar"
       ],
       "Recipient": [
         "Alıcı"
@@ -5448,7 +5499,7 @@
         "E-postayı kaldır"
       ],
       "Review": [
-        "İncele"
+        "Gözden geçir"
       ],
       "Send all": [
         "Tümünü gönder"
@@ -5460,28 +5511,28 @@
         "Hesap işleminin önceliği artırıldı"
       ],
       "Transaction was successfully sent": [
-        "İşlem başarıyla gönderildi"
+        "Hesap işlemi gönderildi"
       ],
       "Try adding an email address to start sending Bitcoin!": [
         "Bitcoin göndermeye başlamak için bir e-posta adresi eklemeyi deneyin!"
       ],
       "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
-        "Beklerken ailenizi ve arkadaşlarınızı ${ WALLET_APP_NAME }'a davet adin. Böylece hepsine \"E-posta aracılığıyla Bitcoin\" gönderebilirsiniz."
+        "Beklerken, tüm ailenizi ve arkadaşlarınızı ${ WALLET_APP_NAME } uygulamasına davet edin. Böylece hepsine E-posta ile Bitcoin gönderebilirsiniz."
       ],
       "Who are you sending Bitcoin to?": [
         "Kime Bitcoin gönderiyorsunuz?"
       ],
       "You are sending": [
-        "Gönderiyorsunuz"
+        "Gönderilecek"
       ],
       "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
-        "Bu hesabınızda gönderilen miktar ve gönderim için gereken ağ ücreti olan toplam ${ feesToReserveElement } tutarında BTC bakiyesi mevcut değil."
+        "Bu hesapta işlem tutarı ve gereken ağ ücreti olan ${ feesToReserveElement } için yeterli BTC birikimi yok."
       ],
       "You do not have enough funds. Please choose a lower network fee and try again": [
-        "Yeterli bakiyeniz yok. Lütfen daha düşük bir ağ ücreti seçerek yeniden deneyin"
+        "Yeterli birikiminiz yok. Lütfen daha düşük bir ağ ücreti seçerek yeniden deneyin"
       ],
       "Your Bitcoin is on its way!": [
-        "Bitcoin'iniz yolda!"
+        "Bitcoin işleminiz yolda!"
       ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Hesap işleminiz Bitcoin ağına gönderildi. Ağın hesap işlemini onaylaması bir saat kadar sürebilir."
@@ -5512,7 +5563,7 @@
         "E-posta ile Bitcoin adresiniz düzenlenirken bir sorun çıktı. Lütfen ayrıntılara bakın ve yeniden deneyin."
       ],
       "Bitcoin via Email": [
-        "E-posta aracılığıyla Bitcoin"
+        "E-posta ile Bitcoin"
       ],
       "Browser storage cleared. Please refresh the page": [
         "Tarayıcı depolama alanı temizlendi. Lütfen sayfayı yenileyin"
@@ -5551,7 +5602,7 @@
         "Yeni fiyat para birimi uygulandı"
       ],
       "Preferred bitcoin unit could not be changed. Please try again.": [
-        "Tercih edilen Bitcoin birimi değiştirilemedi. Lütfen yeniden deneyin."
+        "Yeğlenen Bitcoin birimi değiştirilemedi. Lütfen yeniden deneyin."
       ],
       "Preferred bitcoin unit was changed": [
         "Yeğlenen Bitcoin birimi değiştirildi"
@@ -5591,10 +5642,10 @@
         "Parola ifadesi ikinci bir parola gibi çalışır. Değiştirilemez veya sonradan eklenemez. Her oturum açtığınızda cüzdanınızı açmak için güvenli bir yere yedekleyin."
       ],
       "Add a passphrase": [
-        "Parola ifadesi ekleyin"
+        "Bir parola ifadesi ekleyin"
       ],
       "Add a passphrase (optional)": [
-        "Parola ifadesi ekleyin (isteğe bağlı)"
+        "Bir parola ifadesi ekleyin (isteğe bağlı)"
       ],
       "Choose a name and default currency.": [
         "Bir ad ve varsayılan para birimi seçin."
@@ -5657,10 +5708,10 @@
         "Bitcoin işlemlerinizin değerini, işlem zamanına göre en son piyasa verilerini kullanarak görüntüleyebilmemiz için varsayılan bir para birimi seçin."
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
-        "Lütfen cüzdanı silmeden önce bitcoin birikiminizi başka bir cüzdana aktarın. Bu cüzdanı silmek, verilerini ${ BRAND_NAME } sunucularından kaldırır. Bu cüzdanı daha sonra tohumlama ifadesi ile kurtarabilirsiniz."
+        "Lütfen cüzdanı silmeden önce Bitcoin birikiminizi başka bir cüzdana aktarın. Bu cüzdanı silmek, verilerini ${ BRAND_NAME } sunucularından kaldırır. Bu cüzdanı daha sonra tohumlama ifadesi ile kurtarabilirsiniz."
       ],
-      "Seed phrase (12 or 24 words, separated by space)": [
-        "Tohumlama ifadesi (boşluk ile ayrılmış 12 ya da 24 sözcük)"
+      "Seed phrase (12 to 24 words, separated by space)": [
+        "Tohumlama ifadesi (boşluk ile ayrılmış 12 ile 24 sözcük arasında)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Bu 12 sözcük yalnızca bu cüzdanın varlıklarını kurtarmak için son çare olarak kullanılmalıdır. Örneğin ${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz."
@@ -5680,14 +5731,26 @@
       "Wallet seed phrase": [
         "Cüzdan tohumlama ifadesi"
       ],
+      "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
+        "Cüzdan tohumlama ifadesi sağlama toplamı geçersiz. Yalnızca BIP39 tohumlama ifadelerini kabul ediyoruz ve Electrum tohumlama ifadelerini desteklemiyoruz."
+      ],
+      "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
+        "Cüzdan tohumlama ifadesinde bilinmeyen bir sözcük var: ${ word }. Yalnızca BIP39 İngilizce sözcükler listesini destekliyoruz."
+      ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "Cüzdan tohumlama ifadesi, dijital varlıklarınızı yöneten özel anahtarı kodlar."
       ],
-      "Wallet seed phrase is incorrect. Please check this and try again.": [
-        "Cüzdan tohumlama ifadesi yanlış. Lütfen bunu bakıp yeniden deneyin."
+      "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
+        "Cüzdan tohumlama ifadesi entropi değeri geçersiz. İfade uzunluğu 128 ile 256 bit arasında olmalıdır."
       ],
-      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
-        "Cüzdan tohumlama cümlesi uzunluğu geçersiz. 12 ile 24 sözcük arasında olmalıdır."
+      "Wallet seed phrase is incorrect. Please check it and try again.": [
+        "Cüzdan tohumlama ifadesi yanlış. Lütfen denetleyip yeniden deneyin."
+      ],
+      "Wallet seed phrase language is not supported.": [
+        "Cüzdan tohumlama ifadesi dili desteklenmiyor."
+      ],
+      "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
+        "Cüzdan tohumlama ifadesinin uzunluğu geçersiz. 12 ile 24 sözcük arasında olmalıdır."
       ],
       "Wallet setup": [
         "Cüzdan kurulumu"
@@ -5702,7 +5765,7 @@
         "Cüzdanınızı herhangi bir cüzdan uygulamasına aktarmak için tohumlama ifadesini kullanabilirsiniz."
       ],
       "Your keys, your coins.": [
-        "Anahtarlar sizinse, coinler sizindir."
+        "Anahtarlar sizinse, kripto paralar sizindir."
       ]
     },
     "Wallet Sidebar": {
@@ -5747,13 +5810,13 @@
     },
     "Wallet Terms and Conditions": {
       "This is a self-custodial Bitcoin wallet, meaning any BTC you buy or receive will be fully controlled by you. Not even ${ BRAND_NAME } can seize your assets.": [
-        "Bu uygulama, kendinden korumalı bir Bitcoin cüzdanıdır. Satın aldığınız veya size gönderilen her BTC biriminin tümüyle sizin kontrolunuzda almasını sağlar. ${ BRAND_NAME } bile varlıklarınıza el koyamaz."
+        "Bu uygulama, kendinden korumalı bir Bitcoin cüzdanıdır. Satın aldığınız veya size gönderilen her BTC biriminin tümüyle sizin kontrolunuzda olmasını sağlar. ${ BRAND_NAME } bile varlıklarınıza el koyamaz."
       ],
       "To avoid losing assets due to forgetting your password or other access issues, back up your ${ BRAND_NAME } recovery phrase and wallet seed phrase.": [
-        "Parolanızı unutmanız veya başka erişim sorunları nedeniyle varlıklarınızı kaybetmenizi önlemek için, ${ BRAND_NAME } kurtarma ifadenizi ve cüzdan tohum ifadenizi yedekleyin."
+        "Parolanızı unutmanız veya başka erişim sorunları nedeniyle varlıklarınızı kaybetmenizi önlemek için, ${ BRAND_NAME } kurtarma ifadenizi ve cüzdan tohumlama ifadenizi yedekleyin."
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
-        "Sizin için iki BTC hesabı oluşturduk. Bir birincil hesap ve diğer ${ WALLET_APP_NAME } kullanıcılarından E-posta ile Bitcoin ( ${ emailEl } adresiyle) almak için ikinci bir hesap."
+        "Sizin için iki BTC hesabı oluşturduk. Bir birincil hesap ve diğer ${ WALLET_APP_NAME } kullanıcılarından E-posta ile Bitcoin ( ${ emailEl } adresiyle) almak için bir ikincil hesap."
       ]
     },
     "Wallet transaction": {
@@ -5785,7 +5848,7 @@
         "Satın al"
       ],
       "Confirmed": [
-        "Doğrulandı"
+        "Onaylandı"
       ],
       "Date": [
         "Tarih"
@@ -5794,7 +5857,7 @@
         "Gönderici"
       ],
       "From: ${ senderOrRecipientName }": [
-        "Kimden: ${ senderOrRecipientName }"
+        "Gönderici: ${ senderOrRecipientName }"
       ],
       "In progress": [
         "İşleniyor"
@@ -5836,7 +5899,7 @@
         "Alıcı"
       ],
       "To: ${ senderOrRecipientName }": [
-        "Kime: ${ senderOrRecipientName }"
+        "Alıcı: ${ senderOrRecipientName }"
       ],
       "Total (Amount + fee)": [
         "Toplam (tutar + ücret)"
@@ -5956,13 +6019,13 @@
       "A safer way to hold your Bitcoin": [
         "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "E-posta ile Bitcoin"
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin birikimlerinizi kolayca ve güvenle saklayın ve gönderin"
+      "A safer way to hold Bitcoin": [
+        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ]
     },
     "wallet_signup_2024:Bug category": {
