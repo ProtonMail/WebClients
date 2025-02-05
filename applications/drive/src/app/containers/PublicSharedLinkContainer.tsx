@@ -2,13 +2,14 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { LocationErrorBoundary } from '@proton/components';
+import { LocationErrorBoundary, useTheme } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import useFlag from '@proton/unleash/useFlag';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
@@ -68,6 +69,7 @@ export const PUBLIC_SHARE_SIGNUP_MODAL_KEY = 'public-share-signup-modal';
 function PublicShareLinkInitContainer() {
     const { clearDownloads } = useDownload();
     const { token, urlPassword } = usePublicToken();
+    const { setTheme } = useTheme();
     const {
         isLoading,
         customPassword,
@@ -113,6 +115,10 @@ function PublicShareLinkInitContainer() {
         },
         [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword]
     );
+
+    useEffect(() => {
+        setTheme(ThemeTypes.Snow);
+    }, [setTheme]);
 
     // This hook automatically redirects to Docs when opening a document.
     useEffect(() => {

@@ -79,7 +79,6 @@ const TransferManager = ({
     hasActiveTransfer,
     numberOfFailedTransfer,
     onVirusReport,
-    theme,
 }: {
     downloads: Download[];
     uploads: Upload[];
@@ -92,7 +91,6 @@ const TransferManager = ({
         uploads: number;
     };
     onVirusReport?: (params: { transferId: string; linkId?: string; errorMessage?: string }) => void;
-    theme: 'prominent' | 'standard';
 }) => {
     const transferManagerControls = useTransferControls();
 
@@ -277,11 +275,10 @@ const TransferManager = ({
         <>
             <div
                 id="transfer-manager"
-                className={clsx(['transfers-manager', minimized && 'transfers-manager--minimized'])}
+                className={clsx(['transfers-manager ui-prominent', minimized && 'transfers-manager--minimized'])}
             >
                 <div ref={headerRef}>
                     <Header
-                        theme={theme}
                         downloads={downloads}
                         uploads={uploads}
                         stats={stats}
@@ -290,7 +287,7 @@ const TransferManager = ({
                         onClose={handleCloseClick}
                     />
                 </div>
-                <div ref={containerRef} className="flex">
+                <div ref={containerRef} className="flex ui-standard">
                     {!minimized && (
                         <>
                             <Tabs
@@ -344,10 +341,8 @@ const TransferManager = ({
  */
 const TransferManagerContainer = ({
     onVirusReport,
-    theme = 'prominent',
 }: {
     onVirusReport?: (params: { transferId: string; linkId?: string; errorMessage?: string }) => void;
-    theme?: 'prominent' | 'standard';
 }) => {
     const { downloads, uploads, hasActiveTransfer, numberOfFailedTransfer, stats, clearAllTransfers } =
         useTransfersView();
@@ -358,7 +353,6 @@ const TransferManagerContainer = ({
 
     return (
         <TransferManager
-            theme={theme}
             downloads={downloads}
             uploads={uploads}
             stats={stats}
