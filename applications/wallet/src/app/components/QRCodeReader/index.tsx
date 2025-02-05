@@ -8,6 +8,7 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import { Icon, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 interface Props {
     onScan: (qrcode: QRCode) => void;
@@ -114,7 +115,7 @@ const QRCodeReader = ({ onScan, onError }: Props) => {
 
             <video ref={videoRef} autoPlay playsInline className="w-full" />
             <canvas ref={canvasRef} className="hidden" />
-            {!loadingCam && (
+            {!loadingCam && isMobile() && (
                 <Button icon shape="solid" onClick={() => handleSwitchCamera()}>
                     <span>
                         <Icon name={'camera'} size={5} />
