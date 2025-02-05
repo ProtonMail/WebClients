@@ -188,10 +188,10 @@
         "Refrescar la página"
       ],
       "Remove bonuses": [
-        "Borrar los beneficios"
+        "Eliminar los beneficios"
       ],
       "Remove gift code": [
-        "Borrar el código de regalo"
+        "Eliminar el código de regalo"
       ],
       "Report a problem": [
         "Reportar un problema"
@@ -462,7 +462,7 @@
         "Protección de cuentas avanzada"
       ],
       "Easily add or remove users": [
-        "Agregar o borrar usuarios fácilmente"
+        "Añadir o eliminar usuarios fácilmente"
       ],
       "High speed streaming": [
         "Streaming de alta velocidad"
@@ -556,9 +556,6 @@
       "12 months": [
         "12 meses"
       ],
-      "24 months": [
-        "24 meses"
-      ],
       "Annually": [
         "Cada año"
       ],
@@ -571,25 +568,25 @@
     },
     "bitcoin buy": {
       "${ serviceFeePercentage }% Azteco service fee": [
-        "${ serviceFeePercentage }% de tarifa de servicio de Azteco"
+        "Tarifa del ${ serviceFeePercentage } % por el servicio de Azteco"
       ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } se ha asociado con ${ rampLink }, ${ banxaLink } y ${ moonpayLink }, tres servicios de criptoactivos registrados, para facilitar la compra de BTC. Ingrese su región para ver los proveedores y métodos de pago disponibles."
       ],
       "1% bank transfer fee": [
-        "1% de tarifa de transferencia bancaria"
+        "Tarifa del 1 % por transferencia bancaria"
       ],
       "4% credit card fee": [
-        "4% de comisión por tarjeta de crédito"
+        "Tarifa del 4 % por uso de tarjeta de crédito"
       ],
       "Amount": [
         "Importe"
       ],
       "An error occurred while confirming this quote, please select another provider and try again.": [
-        "Ocurrió un error al confirmar esta cuota. Seleccione otro proveedor y vuelva a intentarlo."
+        "Ocurrió un error al confirmar este presupuesto. Seleccione otro proveedor y vuelva a intentarlo."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
-        "¡Como usuario de pago, está ahorrando ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } en tarifas de servicio de Azteco!"
+        "Como usuario de pago, ¡está ahorrando ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } en las tarifas de servicio de Azteco!"
       ],
       "Bank transfer": [
         "Transferencia bancaria"
@@ -601,7 +598,7 @@
         "Binance"
       ],
       "BTC network fee": [
-        "Tarifa de la red BTC"
+        "Tarifa de red de BTC"
       ],
       "Buy": [
         "Comprar"
@@ -639,6 +636,9 @@
       "Location": [
         "Ubicación"
       ],
+      "MoonPay": [
+        "MoonPay"
+      ],
       "Pay with": [
         "Pagar con"
       ],
@@ -646,7 +646,10 @@
         "Detalles del pago"
       ],
       "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
-        "Por favor, ingrese su región para ver proveedores de BTC disponibles y métodos de pago. Cualquier cantidad de BTC adquirida será enviada a una dirección BTC de esta cuenta."
+        "Por favor, ingrese su región para ver los proveedores de BTC y métodos de pago disponibles. Cualquier cantidad de BTC adquirida se enviará a una dirección de BTC de la cuenta de esta cartera."
+      ],
+      "Ramp Network": [
+        "Ramp Network"
       ],
       "Recipients": [
         "Destinatarios"
@@ -661,16 +664,16 @@
         "Enviar"
       ],
       "This quote is valid for the next 5 minutes": [
-        "Esta cuota será válida por los próximos 5 minutos."
+        "Este presupuesto será válido por los próximos 5 minutos."
       ],
       "Upgrade to Visionary plan to reduce Azteco service fee to 3%": [
-        "Cámbiese al plan Visionary para reducir al 3% la tarifa de service de Azetco."
+        "Cámbiese al plan Visionary para reducir al 3 % la tarifa de service de Azetco."
       ],
       "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
         "También puede comprar BTC en intercambios como ${ binanceLink }, ${ coinbaseLink }, o ${ krakenLink } y luego enviar BTC a su dirección de recepción."
       ],
       "You got 25% off": [
-        "Obtuvo un 25% de descuento"
+        "Obtuvo un 25 % de descuento"
       ],
       "You pay": [
         "Paga"
@@ -687,7 +690,7 @@
         "Pago de ${ quote.provider }"
       ],
       "No quote available for the requested amount": [
-        "No hay cuota disponible para el monto solicitado."
+        "No hay presupuesto disponible para el monto solicitado."
       ],
       "The selected currency is not supported in your country or the requested amount is too low": [
         "La moneda seleccionada no se admite en su país o el monto solicitado es demasiado bajo."
@@ -886,13 +889,13 @@
         "Compra completada"
       ],
       "Purchase finished": [
-        "Se finalizó la compra."
+        "Compra finalizada"
       ],
       "Thank you for purchasing an Azteco voucher.\nWe will now redeem your voucher and Azteco will send the BTC to your wallet.\nWe will also send you an email with the purchase details.": [
         "Gracias por comprar un cupón de Azteco.\nAhora canjearemos el cupón y Azteco enviará los BTC a su cartera.\nTambién le enviaremos un correo electrónico con los detalles de la compra."
       ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
-        "Gracias por su intento de compra con nuestro socio.\nPuede seguir el estado de su pedido a través del correo electrónico de confirmación enviado por nuestro socio.\nSi la transacción falla, puede intentar de nuevo o elegir un socio alternativo."
+        "Gracias por su intento de compra con nuestro socio.\nPuede seguir el estado de su pedido a través del correo electrónico de confirmación enviado por nuestro socio.\nSi la transacción falla, puede intentarlo de nuevo o elegir un socio alternativo."
       ]
     },
     "Buy in progress": {
@@ -906,7 +909,7 @@
         "Compra en curso"
       ],
       "Thank you for your purchase attempt for an Azteco voucher.\nAs soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.\nThen Azteco will send the BTC to your wallet.": [
-        "Gracias por comprar un cupón de Azteco.\nTan pronto como recibamos tu pago, crearemos y canjearemos el cupón según el precio de BTC en ese momento.\nLuego, Azteco enviará los BTC a su cartera."
+        "Gracias por comprar un cupón de Azteco.\nTan pronto como recibamos su pago, crearemos y canjearemos el cupón según el precio de BTC en ese momento.\nLuego, Azteco enviará los BTC a su cartera."
       ]
     },
     "Cancellation upsell": {
@@ -1971,7 +1974,7 @@
         "Confirmar pérdida del descuento especial de ${ PASS_APP_NAME }"
       ],
       "Remove discount": [
-        "Eliminar descuento"
+        "Eliminar el descuento"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderá el descuento permanentemente incluso si mejora el plan en el futuro."
@@ -1986,6 +1989,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } es su usuario. Para crear ${ emailAddress }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
+      ],
       "Amount above the maximum.": [
         "Cantidad superior al máximo."
       ],
@@ -2042,6 +2048,9 @@
       ],
       "Not a valid number": [
         "Número no válido"
+      ],
+      "Organization key is not decrypted": [
+        "La clave de la organización no está descifrada"
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden."
@@ -2183,7 +2192,7 @@
         "Esta acción eliminará permanentemente todos los subusuarios, cuentas y datos asociados con la organización."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Esta acción borrará todas las funciones premium de ${ BRAND_NAME } de cada miembro de la familia."
+        "Esta acción eliminará todas las funciones premium de ${ BRAND_NAME } de cada miembro de la familia."
       ]
     },
     "familyOffer_2023:Title": {
@@ -2298,7 +2307,7 @@
         "Soporte para ${ WALLET_APP_NAME }"
       ],
       "As soon as your payment is received, ${ WALLET_APP_NAME } will redeem the voucher according to the market price of BTC and network fee at that time.\nThe redeemed BTC will then be sent by ${ azteco } to your wallet.\nFor any questions related to Azteco bitcoin vouchers, please contact ${ support }.": [
-        "Tan pronto como se reciba su pago, ${ WALLET_APP_NAME } canjeará el vale de acuerdo con el precio de mercado de BTC y la tarifa de red en ese momento.\nEl BTC canjeado será entonces enviado por ${ azteco } a su cartera.\nPara cualquier pregunta relacionada con vales Azteco bitcoin, comuníquese con ${ support }."
+        "Tan pronto como se reciba su pago, ${ WALLET_APP_NAME } canjeará el cupón de acuerdo con el precio de mercado de BTC y la tarifa de red en ese momento.\n${ azteco } enviará entonces los BTC canjeados a su cartera.\nPara cualquier pregunta relacionada con los cupones de bitcoin de Azteco, comuníquese con ${ support }."
       ],
       "Confirm": [
         "Confirmar"
@@ -2307,7 +2316,7 @@
         "Descargo de responsabilidad"
       ],
       "Done": [
-        "Terminado"
+        "Listo"
       ],
       "I have read and agree to the disclaimer": [
         "He leído y acepto el descargo de responsabilidad"
@@ -2316,10 +2325,10 @@
         "Ahora no"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
-        "Está abandonando ${ WALLET_APP_NAME } para ir a ${ providerName } (${ websiteLink }).\nLos servicios relacionados a pagos con tarjetas, transferencias bancarias y cualquier otra transacción fiduciaria son proporcionados por ${ providerName },\nuna plataforma de terceros independiente. Al proceder y adquirir los servicios de ${ providerName },\nusted reconoce que ha leído y aceptado los términos de servicio (${ termOfUseLink }) de ${ providerName }\ny la política de privacidad y cookies (${ privacyAndCookiesPolicyLink }).\nSi tiene alguna pregunta relacionada con los servicios de ${ providerName }, comuníquese con ${ providerName } en ${ supportEmailLink }."
+        "Está abandonando ${ WALLET_APP_NAME } para ir a ${ providerName } (${ websiteLink }).\nLos servicios relacionados a pagos con tarjetas, transferencias bancarias y cualquier otra transacción fiduciaria son proporcionados por ${ providerName },\nuna plataforma de terceros independiente. Al proceder y adquirir los servicios de ${ providerName },\nusted reconoce que ha leído y aceptado los términos de servicio (${ termOfUseLink })\ny la política de privacidad y cookies (${ privacyAndCookiesPolicyLink }) de ${ providerName }.\nSi tiene alguna pregunta relacionada con los servicios de ${ providerName }, comuníquese con ${ providerName } en ${ supportEmailLink }."
       ],
       "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
-        "Ahora comprará un cupón de bitcoin de Azteco con ${ WALLET_APP_NAME }. Funciona de forma similar a una tarjeta regalo y es una de las formas más sencillas y más privadas de obtener BTC."
+        "Ahora comprará un cupón de bitcoin de Azteco con ${ WALLET_APP_NAME }. Funciona de forma similar a una tarjeta regalo y es una de las formas más sencillas y privadas de obtener BTC."
       ]
     },
     "Group": {
@@ -2340,6 +2349,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Correo"
       ],
@@ -2543,6 +2555,9 @@
       "JCB logo": [
         "Logo de JCB"
       ],
+      "Keys created": [
+        "Las claves fueron creadas."
+      ],
       "Learn more": [
         "Más información"
       ],
@@ -2656,7 +2671,7 @@
         "El proceso de verificación abrirá una pestaña nueva en el navegador. Desactive cualquier bloqueador de ventanas emergentes activo."
       ],
       "This address is for Bitcoin via Email": [
-        "Esta dirección es para los bitcoins vía correo electrónico."
+        "Esta dirección es para Bitcoin por correo electrónico."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Esta es ahora su ${ defaultEmailAddress } para enviar mensajes nuevos."
@@ -2681,6 +2696,9 @@
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
+      ],
+      "User activated": [
+        "El usuario fue activado."
       ],
       "Users": [
         "Usuarios"
@@ -2737,12 +2755,12 @@
         "Puede cambiar esto en cualquier momento en ${ settingsLink }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Borre enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borre enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Borre enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción.",
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borre enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción."
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción.",
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción."
       ],
       "You can now return to the application to continue": [
         "Ahora puede regresar a la aplicación para continuar."
@@ -2763,7 +2781,7 @@
         "Podría ser redirigido al sitio web de el banco."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debe desactivar o borrar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
+        "Debe desactivar o eliminar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada a la cuenta de PayPal. Si la cuenta de PayPal no lo tiene, haga clic en el botón de abajo."
@@ -4118,6 +4136,11 @@
         "La tarjeta fue rechazada. Pruebe otra tarjeta o póngase en contacto con el banco para autorizar el cargo."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Al confirmar este pago, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a su banco para que debite su cuenta, y a su banco para que debite el cargo correspondiente en su cuenta. Puede obtener un reembolso en un plazo de 8 semanas a partir de la fecha del débito, según las condiciones de su acuerdo con su banco."
@@ -4210,7 +4233,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Compruebe la seguridad de la cuenta"
       ]
     },
@@ -4695,7 +4718,7 @@
     },
     "Title": {
       "${ feature } is now active": [
-        "La funcionalidad ${ feature } ya está activada."
+        "La función ${ feature } ya está activada"
       ],
       "Add credit/debit card": [
         "Añadir tarjeta de crédito/débito"
@@ -4909,6 +4932,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Se le facturará cada 12 meses por ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Su nueva suscripción se renovará automáticamente en ${ cycle } mes.",
+        "Su nueva suscripción se renovará automáticamente en ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Su plan programado comienza el ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "La suscripción se renovará automáticamente en ${ cycle } mes.",
@@ -5127,8 +5157,8 @@
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
         "Una frase de contraseña de la cartera es una contraseña adicional que crea para darle más seguridad a su cartera de criptomonedas. Funciona junto con su frase de recuperación. Guárdela de forma segura, ya que si la pierde puede dejar de tener acceso a su cartera."
       ],
-      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Una frase de recuperación de la cartera es una serie de 12 o 24 palabras que genera su cartera. Actúa como una llave maestra que le permite recuperar sus fondos. Guárdela en un lugar seguro y nunca la comparta, ya que le da acceso a sus fondos."
+      "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Una frase de recuperación de la cartera es una secuencia de 12 hasta 24 palabras que genera tu cartera. Actúa como una clave maestra que le permite recuperar sus fondos. Guárdela en un lugar seguro y nunca la compartas, ya que le da acceso a tus fondos."
       ],
       "What’s a wallet passphrase?": [
         "¿Qué es una frase de contraseña de la cartera?"
@@ -5162,6 +5192,12 @@
       "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
         "Invite a sus amistades y familia para que puedan enviarse Bitcoin por correo electrónico. Obtendrá más invitaciones a medida que agreguemos más servidores."
       ],
+      "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Invite a sus amistades y familia a ${ WALLET_APP_NAME } así podrán enviar Bitcoin por correo electrónico."
+      ],
+      "Invites": [
+        "Invitaciones"
+      ],
       "Not now": [
         "Ahora no"
       ],
@@ -5194,6 +5230,9 @@
       "${ availableInvites } invite left": [
         "Queda ${ availableInvites } invitación",
         "Quedan ${ availableInvites } invitaciones"
+      ],
+      "Invite your friends": [
+        "Invite a sus amistades"
       ]
     },
     "Wallet passphrase": {
@@ -5373,7 +5412,7 @@
         "Aumentar la prioridad de la transacción"
       ],
       "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
-        "Al aumentar la tarifa de la red, puede aumentar la velocidad de su transacción, ayudándola a procesarse y confirmarse más rápido."
+        "Al aumentar la tarifa de la red, puede priorizar la velocidad de su transacción, lo que ayudará a que se procese y confirme más rápido."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "No se puede usar el escáner QRCode. Compruebe la compatibilidad del navegador."
@@ -5457,7 +5496,7 @@
         "Destinatarios"
       ],
       "Remove email": [
-        "Borrar correo electrónico"
+        "Eliminar el correo electrónico"
       ],
       "Review": [
         "Revisar"
@@ -5527,7 +5566,7 @@
         "Bitcoin por correo electrónico"
       ],
       "Browser storage cleared. Please refresh the page": [
-        "Se borró el espacio de almacenamiento del navegador. Actualice la página."
+        "Se borró el almacenamiento del navegador. Actualice la página."
       ],
       "Could not fill the pool after email address addition": [
         "No se pudo llenar el conjunto tras agregar la dirección de correo electrónico."
@@ -5542,13 +5581,13 @@
         "No se pudo agregar la dirección de correo electrónico. Intente de nuevo."
       ],
       "Email address could not be removed. Please try again.": [
-        "No se pudo borrar la dirección de correo electrónico. Intente de nuevo."
+        "No se pudo eliminar la dirección de correo electrónico. Intente de nuevo."
       ],
       "Email address has been added": [
         "Se agregó la dirección de correo electrónico."
       ],
       "Email address has been removed": [
-        "Se borró la dirección de correo electrónico."
+        "Se eliminó la dirección de correo electrónico."
       ],
       "Email address has been replaced": [
         "Se reemplazó la dirección de correo electrónico."
@@ -5671,8 +5710,8 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Transfiera sus bitcoins a otra cartera antes de eliminar la cartera. Al eliminar esta cartera, se borrarán todos sus datos de los servidores de ${ BRAND_NAME }. Puede recuperar la cartera más tarde si tiene su frase de recuperación."
       ],
-      "Seed phrase (12 or 24 words, separated by space)": [
-        "Frase de recuperación (12 o 24 palabras separadas por espacio)"
+      "Seed phrase (12 to 24 words, separated by space)": [
+        "Frase de recuperación (de 12 hasta 24 palabras separadas por espacios)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Estas 12 palabras solo deberían usarse para recuperar los activos de esta cartera como último recurso, por ejemplo, si pierde el acceso a su cuenta de ${ BRAND_NAME }."
@@ -5692,14 +5731,26 @@
       "Wallet seed phrase": [
         "Frase de recuperación de la cartera"
       ],
+      "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
+        "La suma de verificación de la frase de recuperación de la cartera no es válida. Solo aceptamos frase de recuperación BIP39 y no soportamos las de Electrum."
+      ],
+      "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
+        "La frase de recuperación de la cartera contiene una palabra desconocida: ${ word }. Solo admitimos la lista de palabras en inglés BIP39."
+      ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "La frase de recuperación de la cartera codifica la clave privada que controla sus activos digitales."
       ],
-      "Wallet seed phrase is incorrect. Please check this and try again.": [
-        "La frase de recuperación de Wallet es incorrecta. Verifique esto e intente de nuevo."
+      "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
+        "El nivel de entropía o aleatoriedad de la frase de recuperación de la cartera no es válido. Debería tener entre 128 y 256 bits de longitud."
       ],
-      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
-        "La longitud de la frase de recuperación de Wallet no es válida. Debe tener entre 12 y 24 palabras."
+      "Wallet seed phrase is incorrect. Please check it and try again.": [
+        "La frase de recuperación de la cartera es incorrecta. Verifiqie esto e intente nuevamente."
+      ],
+      "Wallet seed phrase language is not supported.": [
+        "No se admite el idioma de la frase de recuperación de la cartera."
+      ],
+      "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
+        "La longitud de la frase de recuperación de la cartera no es válida. Debe tener entre 12 y 24 palabras."
       ],
       "Wallet setup": [
         "Configuración de la cartera"
@@ -5968,13 +6019,13 @@
       "A safer way to hold your Bitcoin": [
         "Una forma más segura de mantener su Bitcoin"
       ],
-      "Bitcoin via email": [
-        "Bitcoin vía correo electrónico"
+      "Bitcoin via Email": [
+        "Bitcoin por correo electrónico"
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Una forma más segura y sencilla de guardar y enviar Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Una manera más segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
