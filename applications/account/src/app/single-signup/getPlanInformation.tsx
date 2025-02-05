@@ -29,6 +29,7 @@ import {
     getVPNAppFeature,
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
+import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import { SkeletonLoader, VpnLogo } from '@proton/components/index';
 import type { IconSize } from '@proton/icons';
 import { PLANS } from '@proton/payments';
@@ -118,6 +119,7 @@ export const getPlanInformation = ({
                 getDriveAppFeature(),
                 getVPNAppFeature({ serversCount: vpnServersCountData }),
                 getPassAppFeature(),
+                getWalletAppFeature(),
             ],
         };
     }
