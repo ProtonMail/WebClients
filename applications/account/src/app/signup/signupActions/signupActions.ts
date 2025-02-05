@@ -305,6 +305,7 @@ export const handleSetupOrg = async ({
             Members: [],
             AdminInvitations: [],
             AdminActivations: [],
+            GroupAddressKeyTokens: [],
         }),
     });
 };
