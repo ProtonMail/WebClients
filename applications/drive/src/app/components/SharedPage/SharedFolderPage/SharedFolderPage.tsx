@@ -74,7 +74,6 @@ function SharedPagePreviewContainer({
     return (
         <>
             <FilePreview
-                colorUi="standard"
                 isPublic
                 isMetaLoading={isLinkLoading}
                 isLoading={isContentLoading}
@@ -292,7 +291,7 @@ export default function SharedFolder({
                     className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
                     style={{ '--max-w-custom': '50em' }}
                 >
-                    <TransferManager onVirusReport={handleVirusReport} theme="standard" />
+                    <TransferManager onVirusReport={handleVirusReport} />
                 </div>
 
                 <UploadDragDrop
