@@ -10,9 +10,10 @@ import {
     PLAN_NAMES,
     PLAN_TYPES,
     type PlanIDs,
+    VPN_PASS_PROMOTION_COUPONS,
 } from '@proton/payments';
 
-import { LUMO_APP_NAME, VPN_PASS_PROMOTION_COUPONS } from '../constants';
+import { LUMO_APP_NAME } from '../constants';
 import {
     type Plan,
     type PlansMap,
