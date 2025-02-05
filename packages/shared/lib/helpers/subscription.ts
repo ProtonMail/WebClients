@@ -2,6 +2,7 @@ import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import {
     ADDON_NAMES,
+    COUPON_CODES,
     CYCLE,
     type Currency,
     type MaxKeys,
@@ -23,7 +24,7 @@ import {
     isScribeAddon,
 } from '@proton/shared/lib/helpers/addons';
 
-import { APPS, type APP_NAMES, COUPON_CODES } from '../constants';
+import { APPS, type APP_NAMES } from '../constants';
 import type {
     Organization,
     Plan,
