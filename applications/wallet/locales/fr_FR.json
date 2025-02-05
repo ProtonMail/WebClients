@@ -556,9 +556,6 @@
       "12 months": [
         "12 mois"
       ],
-      "24 months": [
-        "24 mois"
-      ],
       "Annually": [
         "Annuel"
       ],
@@ -639,6 +636,9 @@
       "Location": [
         "Emplacement"
       ],
+      "MoonPay": [
+        "MoonPay"
+      ],
       "Pay with": [
         "Payer avec"
       ],
@@ -647,6 +647,9 @@
       ],
       "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
         "Veuillez entrer votre région pour voir les fournisseurs de BTC et les moyens de paiement disponibles. Tout BTC acheté sera envoyé à l'adresse BTC du compte de ce portefeuille."
+      ],
+      "Ramp Network": [
+        "Ramp Network"
       ],
       "Recipients": [
         "Destinataires"
@@ -702,6 +705,9 @@
       ],
       "Native Segwit": [
         "Segwit natif"
+      ],
+      "Taproot": [
+        "Taproot"
       ]
     },
     "Bitcoin Script Type Description": {
@@ -1983,6 +1989,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
+      ],
       "Amount above the maximum.": [
         "Le montant est supérieur au maximum."
       ],
@@ -2040,6 +2049,9 @@
       "Not a valid number": [
         "Le numéro n'est pas valide."
       ],
+      "Organization key is not decrypted": [
+        "La clé de l'organisation n'est pas déchiffrée."
+      ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
       ],
@@ -2059,7 +2071,7 @@
         "Sélectionnez un pays"
       ],
       "Please select a state": [
-        "Selectionnez un état"
+        "Sélectionnez une région"
       ],
       "Process aborted": [
         "Le processus a été abandonné."
@@ -2337,6 +2349,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -2540,6 +2555,9 @@
       "JCB logo": [
         "Logo JCB"
       ],
+      "Keys created": [
+        "Les clés ont été créées."
+      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -2678,6 +2696,9 @@
       ],
       "Total VPN connections": [
         "Nombre total de connexions VPN"
+      ],
+      "User activated": [
+        "L'utilisateur a été activé."
       ],
       "Users": [
         "Utilisateurs"
@@ -4115,6 +4136,11 @@
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
@@ -4207,7 +4233,7 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
+      "Review account safety": [
         "Vérifier la sécurité du compte"
       ]
     },
@@ -4907,6 +4933,13 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vous serez ensuite facturé ${ renewPrice } tous les 12 mois."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Votre abonnement prévu commence le ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
         "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois."
@@ -5124,8 +5157,8 @@
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
         "Une phrase secrète de portefeuille est un mot de passe supplémentaire que vous créez pour renforcer la sécurité de votre portefeuille de cryptomonnaies. Elle fonctionne en complément de votre phrase de récupération. Conservez-la en lieu sûr, car sa perte pourrait vous empêcher d'accéder à votre portefeuille."
       ],
-      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Une phrase de récupération de portefeuille est une série de 12 ou 24 mots générés par votre portefeuille. Elle sert de clé principale, vous permettant de récupérer vos fonds. Gardez-la en sécurité et ne la partagez jamais, car elle donne accès à vos fonds."
+      "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Une phrase de récupération de portefeuille est une séquence de 12 à 24 mots générés par votre portefeuille. Elle sert de clé principale, vous permettant de récupérer vos fonds. Gardez-la en sécurité et ne la partagez jamais, car elle donne accès à vos fonds."
       ],
       "What’s a wallet passphrase?": [
         "Qu'est-ce qu'une phrase secrète de portefeuille ?"
@@ -5159,6 +5192,12 @@
       "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
         "Invitez vos amis et votre famille pour que vous puissiez tous envoyer des bitcoins via e-mail. Vous recevrez plus d'invitations à mesure que nous ajoutons de nouveaux serveurs."
       ],
+      "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Invitez vos amis et votre famille sur ${ WALLET_APP_NAME } afin que vous puissiez tous envoyer des bitcoins via e-mail."
+      ],
+      "Invites": [
+        "Invitations"
+      ],
       "Not now": [
         "Pas maintenant"
       ],
@@ -5191,6 +5230,9 @@
       "${ availableInvites } invite left": [
         "Il reste ${ availableInvites } invitation.",
         "Il reste ${ availableInvites } invitations."
+      ],
+      "Invite your friends": [
+        "Invitez vos amis"
       ]
     },
     "Wallet passphrase": {
@@ -5668,8 +5710,8 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Transférez vos bitcoins vers un autre portefeuille avant la suppression. La suppression de ce portefeuille retirera toutes les données qu'il contient des serveurs ${ BRAND_NAME }. Vous pouvez récupérer ce portefeuille par la suite à l'aide de la phrase de récupération."
       ],
-      "Seed phrase (12 or 24 words, separated by space)": [
-        "Phrase de récupération (12 ou 24 mots séparés par un espace)"
+      "Seed phrase (12 to 24 words, separated by space)": [
+        "Phrase de récupération (12 à 24 mots séparés par un espace)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Ces 12 mots ne doivent être utilisés qu'en dernier recours pour récupérer les actifs de ce portefeuille, comme lorsque vous perdez l''accès à votre compte ${ BRAND_NAME }."
@@ -5689,13 +5731,25 @@
       "Wallet seed phrase": [
         "Phrase de récupération du portefeuille"
       ],
+      "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
+        "La somme de contrôle de la phrase de récupération du portefeuille n'est pas valide. Nous acceptons uniquement les phrases de récupération BIP39 et ne prenons pas en charge celles d'Electrum."
+      ],
+      "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
+        "La phrase de récupération du portefeuille contient un mot inconnu : ${ word }. Nous prenons uniquement en charge la liste de mots BIP39 en anglais."
+      ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "La phrase de récupération d'un portefeuille encode la clé privée qui contrôle vos actifs numériques."
       ],
-      "Wallet seed phrase is incorrect. Please check this and try again.": [
+      "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
+        "L'entropie ou niveau d’aléa de la phrase de récupération du portefeuille n'est pas valide. Elle doit se trouver entre 128 et 256 bits."
+      ],
+      "Wallet seed phrase is incorrect. Please check it and try again.": [
         "La phrase de récupération du portefeuille n'est pas correcte. Nous vous invitons à la vérifier et à réessayer."
       ],
-      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
+      "Wallet seed phrase language is not supported.": [
+        "La langue de la phrase de récupération du portefeuille n'est pas prise en charge."
+      ],
+      "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
         "La longueur de la phrase de récupération du portefeuille n'est pas valide. Elle doit comporter entre 12 et 24 mots."
       ],
       "Wallet setup": [
@@ -5965,13 +6019,13 @@
       "A safer way to hold your Bitcoin": [
         "Une manière plus sûre de détenir votre Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Une façon plus sécurisée et simple de détenir et d'envoyer des bitcoins"
+      "A safer way to hold Bitcoin": [
+        "Une manière plus sûre de détenir des bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
