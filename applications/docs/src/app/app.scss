@@ -6,6 +6,12 @@
 	--signal-info-minor-custom: #f6fbff;
 }
 
+.ui-standard {
+	// Used in the Proton Docs logo for the text. We don't support themes in Docs so we hardcode this color,
+	// which otherwise defaults to the primary color which is not what we want.
+	--logo-text-product-color: #1b1340;
+}
+
 *:focus,
 *:focus-visible {
 	outline-color: var(--primary-major-3);
@@ -109,7 +115,7 @@ input[type='number'] {
 	.topnav-list {
 		// Since we don't show a settings icon, we need to add some margin to the promotion button
 		.button-promotion {
-			margin-right: 0.75em;
+			margin-inline-end: 0.75em;
 		}
 	}
 }
