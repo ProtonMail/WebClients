@@ -123,6 +123,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
         firstMarkNodeLatest.selectStart()
       },
       {
+        tag: 'skip-dom-selection',
         discrete: true,
       },
     )
