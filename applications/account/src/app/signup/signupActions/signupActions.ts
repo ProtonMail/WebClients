@@ -6,7 +6,7 @@ import type { VerificationModel } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { V5PaymentToken } from '@proton/payments';
-import { isTokenPayment, isWrappedPaymentsVersion } from '@proton/payments';
+import { COUPON_CODES, isTokenPayment, isWrappedPaymentsVersion } from '@proton/payments';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -31,14 +31,7 @@ import {
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import {
-    APPS,
-    CLIENT_TYPES,
-    COUPON_CODES,
-    KEYGEN_CONFIGS,
-    KEYGEN_TYPES,
-    VPN_CONNECTIONS,
-} from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

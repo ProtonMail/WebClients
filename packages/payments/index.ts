@@ -18,6 +18,7 @@ export {
     AddonKey,
     AddonLimit,
     Autopay,
+    COUPON_CODES,
     CURRENCIES,
     CYCLE,
     CurrencySymbols,
@@ -52,6 +53,7 @@ export {
     TransactionState,
     TransactionType,
     UNPAID_STATE,
+    VPN_PASS_PROMOTION_COUPONS,
 } from './core/constants';
 export {
     correctAbbr,
