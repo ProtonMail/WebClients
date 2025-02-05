@@ -66,8 +66,6 @@ interface Props {
     onOpenInDocs?: () => void;
     date?: Date | string | number;
 
-    colorUi?: 'standard' | 'prominent';
-
     navigationControls?: ReactNode;
     signatureStatus?: ReactNode;
     signatureConfirmation?: ReactNode;
@@ -244,8 +242,6 @@ const FilePreview = (
         onRestore,
         onOpenInDocs,
         date,
-
-        colorUi = 'prominent',
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -315,7 +311,7 @@ const FilePreview = (
     ]);
 
     return (
-        <div className={`file-preview ui-${colorUi}`} ref={combinedRefs} data-testid="file-preview" {...focusTrapProps}>
+        <div className="file-preview" ref={combinedRefs} data-testid="file-preview" {...focusTrapProps}>
             <Header
                 mimeType={mimeType}
                 name={fileName}
