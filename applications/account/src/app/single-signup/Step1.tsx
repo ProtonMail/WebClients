@@ -6,7 +6,6 @@ import { c, msgid } from 'ttag';
 
 import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
 import {
-    Alert3ds,
     type Breakpoints,
     CurrencySelector,
     Icon,
@@ -1318,6 +1317,7 @@ const Step1 = ({
                                                 billingAddressStatus={getBillingAddressStatus(
                                                     model.subscriptionData.billingAddress
                                                 )}
+                                                showCardIcons
                                             />
                                         ) : (
                                             <div className="mb-4">
@@ -1392,7 +1392,6 @@ const Step1 = ({
                                                             <Guarantee />
                                                         </div>
                                                     )}
-                                                    <Alert3ds />
                                                     <div className="mt-4 text-sm color-weak text-center">
                                                         {
                                                             // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
