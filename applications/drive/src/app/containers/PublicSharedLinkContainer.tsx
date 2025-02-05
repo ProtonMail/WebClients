@@ -116,10 +116,6 @@ function PublicShareLinkInitContainer() {
         [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword]
     );
 
-    useEffect(() => {
-        setTheme(ThemeTypes.Snow);
-    }, [setTheme]);
-
     // This hook automatically redirects to Docs when opening a document.
     useEffect(() => {
         if (shouldRedirectToDocs) {
@@ -139,6 +135,9 @@ function PublicShareLinkInitContainer() {
     useEffect(() => {
         // Always delete saved public share URL when browsing a public share url
         deleteStoredUrlPassword();
+
+        // Set default theme to Snow (white)
+        setTheme(ThemeTypes.Snow);
     }, []);
 
     useEffect(() => {
