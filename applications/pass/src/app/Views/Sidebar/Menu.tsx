@@ -28,7 +28,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
             <Scroll className="flex flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
                 <div className="flex mx-3 gap-5 pb-2">
-                    <div className="flex flex-column gap-2 w-full">
+                    <div className="flex flex-column w-full">
                         <Button
                             icon
                             size="medium"
@@ -36,10 +36,10 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                             onClick={vaultActions.create}
                             shape="ghost"
                             title={c('Action').t`Create a new vault`}
-                            className="flex items-center justify-space-between flex-nowrap py-2 pl-3 px-2 w-full"
+                            className="flex items-center justify-space-between flex-nowrap py-2 pl-3 px-2 w-full mb-2"
                         >
-                            <div className="flex text-ellipsis">{c('Label').t`Vaults`}</div>
-                            <Icon name="plus" alt={c('Action').t`Create a new vault`} />
+                            <span className="block text-ellipsis">{c('Label').t`Vaults`}</span>
+                            <Icon name="plus" alt={c('Action').t`Create a new vault`} className="shrink-0" />
                         </Button>
                         <VaultMenu />
                     </div>
