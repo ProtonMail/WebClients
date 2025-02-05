@@ -556,9 +556,6 @@
       "12 months": [
         "12 mesi"
       ],
-      "24 months": [
-        "24 mesi"
-      ],
       "Annually": [
         "Annuale"
       ],
@@ -594,6 +591,9 @@
       "Bank transfer": [
         "Bonifico"
       ],
+      "Banxa": [
+        "Banxa"
+      ],
       "Binance": [
         "Binance"
       ],
@@ -608,6 +608,9 @@
       ],
       "Choose a country": [
         "Seleziona un paese"
+      ],
+      "Coinbase": [
+        "Coinbase"
       ],
       "Confirm": [
         "Conferma"
@@ -627,8 +630,14 @@
       "Instant payment": [
         "Pagamento istantaneo"
       ],
+      "Kraken": [
+        "Kraken"
+      ],
       "Location": [
         "Posizione"
+      ],
+      "MoonPay": [
+        "MoonPay"
       ],
       "Pay with": [
         "Paga con"
@@ -638,6 +647,9 @@
       ],
       "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
         "Inserisci la tua regione per vedere i fornitori di BTC e i metodi di pagamento disponibili. Qualsiasi BTC acquistato verrà inviato a un indirizzo BTC di questo account portafoglio."
+      ],
+      "Ramp Network": [
+        "Ramp Network"
       ],
       "Recipients": [
         "Destinatari"
@@ -677,6 +689,9 @@
       "${ quote.provider } checkout": [
         "Checkout ${ quote.provider }"
       ],
+      "No quote available for the requested amount": [
+        "Nessuna quotazione disponibile per l'importo richiesto."
+      ],
       "The selected currency is not supported in your country or the requested amount is too low": [
         "La valuta selezionata non è supportata nel tuo Paese oppure l'importo richiesto è troppo basso"
       ]
@@ -690,6 +705,9 @@
       ],
       "Native Segwit": [
         "Native Segwit"
+      ],
+      "Taproot": [
+        "Taproot"
       ]
     },
     "Bitcoin Script Type Description": {
@@ -891,7 +909,7 @@
         "Acquisto in corso"
       ],
       "Thank you for your purchase attempt for an Azteco voucher.\nAs soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.\nThen Azteco will send the BTC to your wallet.": [
-        "Grazie per aver tentato di acquistare un buono Azteco.\nNon appena riceveremo il pagamento, creeremo e riscatteremo il voucher in base al prezzo BTC in quel momento.\nQuindi Azteco invierà i BTC al tuo wallet."
+        "Grazie per aver tentato di acquistare un buono Azteco.\nNon appena riceveremo il pagamento, creeremo e riscatteremo il voucher in base al prezzo BTC in quel momento.\nQuindi Azteco invierà i BTC al tuo Wallet."
       ]
     },
     "Cancellation upsell": {
@@ -1971,6 +1989,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
+      ],
       "Amount above the maximum.": [
         "Importo al di sopra del massimo."
       ],
@@ -2027,6 +2048,9 @@
       ],
       "Not a valid number": [
         "Numero non valido"
+      ],
+      "Organization key is not decrypted": [
+        "La chiave dell'organizzazione non è decriptata"
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
@@ -2301,7 +2325,7 @@
         "Non ora"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
-        "Stai per lasciare ${ WALLET_APP_NAME } per ${ providerName } (${ websiteLink }).\nI servizi relativi a pagamenti con carta, bonifici bancari e qualsiasi altra transazione fiat sono forniti da ${ providerName },\nuna piattaforma separata di terze parti. Procedendo e acquistando servizi da ${ providerName },\ndichiari di aver letto e accettato i Termini di servizio di ${ providerName } (${ termOfUseLink })\ne l'Informativa sulla privacy e sui cookie (${ privacyAndCookiesPolicyLink }).\nPer qualsiasi domanda relativa ai servizi di ${ providerName }, contatta ${ providerName } all'indirizzo ${ supportEmailLink }"
+        "Stai per uscire da ${ WALLET_APP_NAME } per ${ providerName } (${ websiteLink }).\nI servizi relativi a pagamenti con carta, bonifici bancari e qualsiasi altra transazione fiat sono forniti da ${ providerName }, una piattaforma separata di terze parti. Procedendo e acquistando servizi da ${ providerName },\ndichiari di aver letto e accettato i Termini di servizio (${ termOfUseLink }) e l'Informativa sulla privacy e sui cookie (${ privacyAndCookiesPolicyLink }) di ${ providerName }.\nPer qualsiasi domanda relativa ai servizi di ${ providerName }, contatta ${ providerName } all'indirizzo ${ supportEmailLink }"
       ],
       "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
         "Ora comprerai un buono bitcoin Azteco con ${ WALLET_APP_NAME }. Funziona in modo simile a una carta regalo ed è uno dei modi più semplici e privati ​​per ottenere BTC."
@@ -2325,6 +2349,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Email"
       ],
@@ -2528,6 +2555,9 @@
       "JCB logo": [
         "Logo JCB"
       ],
+      "Keys created": [
+        "Chiavi create"
+      ],
       "Learn more": [
         "Scopri di più"
       ],
@@ -2666,6 +2696,9 @@
       ],
       "Total VPN connections": [
         "Totale connessioni VPN"
+      ],
+      "User activated": [
+        "Utente attivato"
       ],
       "Users": [
         "Utenti"
@@ -4108,6 +4141,11 @@
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Confermando questo pagamento, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a istruire la tua banca ad addebitare il tuo conto e la tua banca ad addebitare il tuo conto di conseguenza. Puoi ottenere un rimborso entro 8 settimane dalla data di addebito, secondo le condizioni dell'accordo con la tua banca."
@@ -4200,8 +4238,8 @@
       ]
     },
     "Safety review": {
-      "Review your account safety": [
-        "Controlla la sicurezza del tuo account"
+      "Review account safety": [
+        "Controlla la sicurezza dell'account"
       ]
     },
     "saml: Error": {
@@ -4900,6 +4938,13 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Ti verrà addebitato un importo pari a ${ renewPrice } ogni 12 mesi."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Il tuo nuovo abbonamento si rinnoverà automaticamente tra ${ cycle } mese.",
+        "Il tuo nuovo abbonamento si rinnoverà automaticamente tra ${ cycle } mesi."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Il tuo piano programmato inizia il ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Il tuo abbonamento si rinnoverà automaticamente tra ${ cycle } mese.",
         "Il tuo abbonamento si rinnoverà automaticamente tra ${ cycle } mesi."
@@ -5100,7 +5145,7 @@
         "Visualizza gli indirizzi di ricezione"
       ],
       "We are having trouble opening your wallet. Please refresh the page or try again later.": [
-        "Stiamo riscontrando problemi nell'aprire il tuo portafoglio. Aggiorna la pagina o riprova più tardi."
+        "Stiamo riscontrando problemi nell'aprire il tuo Wallet. Aggiorna la pagina o riprova più tardi."
       ]
     },
     "Wallet import": {
@@ -5117,8 +5162,8 @@
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
         "Una passphrase del wallet è un'ulteriore password che puoi creare per aggiungere sicurezza al tuo wallet di criptovaluta. Funziona in combinazione con la seed phrase. Memorizzala in un posto sicuro, perché in caso di smarrimento il tuo wallet può bloccarsi."
       ],
-      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Una seed phrase del wallet è composta da una serie di 12 o 24 parole generate dal tuo wallet. Funziona come una chiave principale e consente di recuperare i tuoi fondi. Conservala in un posto sicuro e non condividerla mai con nessuno, poiché garantisce l'accesso ai tuoi fondi."
+      "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Una seed phrase del wallet è composta da una serie di 12 a 24 parole generate dal tuo wallet. Funziona come una chiave principale e consente di recuperare i tuoi fondi. Conservala in un posto sicuro e non condividerla mai con nessuno, poiché garantisce l'accesso ai tuoi fondi."
       ],
       "What’s a wallet passphrase?": [
         "Cos'è una passphrase del wallet?"
@@ -5152,6 +5197,12 @@
       "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
         "Invita amici e familiari per poter inviare Bitcoin via Email. Otterrai più inviti ogni volta che aggiungeremo nuovi server."
       ],
+      "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Invita i tuoi amici e familiari su ${ WALLET_APP_NAME } così potrete inviare tutti Bitcoin tramite email."
+      ],
+      "Invites": [
+        "Inviti"
+      ],
       "Not now": [
         "Non ora"
       ],
@@ -5184,6 +5235,9 @@
       "${ availableInvites } invite left": [
         "${ availableInvites } invito rimasto",
         "${ availableInvites } inviti rimasti"
+      ],
+      "Invite your friends": [
+        "Invita i tuoi amici"
       ]
     },
     "Wallet passphrase": {
@@ -5315,6 +5369,12 @@
       ],
       "Receive to": [
         "Ricevi a"
+      ],
+      "To prevent a large gap, generating new addresses has been disabled. You can either use this address or a previously generated one": [
+        "Per evitare una grande differenza, la generazione di nuovi indirizzi è stata disabilitata. Puoi utilizzare questo indirizzo o uno precedentemente generato."
+      ],
+      "To prevent a large gap, you should either use this address or a previously generated one": [
+        "Per evitare una grande differenza, dovresti utilizzare questo indirizzo o uno precedentemente generato."
       ]
     },
     "Wallet receive": {
@@ -5655,8 +5715,8 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Prima di eliminarli, trasferisci i tuoi Bitcoin su un altro portafoglio. L'eliminazione di questo portafoglio rimuoverà tutti i relativi dati dai server di ${ BRAND_NAME }. Potrai recuperarlo in una fase successiva utilizzando la frase seed."
       ],
-      "Seed phrase (12 or 24 words, separated by space)": [
-        "Frase seme (12 o 24 parole, separate da spazio)"
+      "Seed phrase (12 to 24 words, separated by space)": [
+        "Seed phrase (12 a 24 parole, separate da spazio)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Queste 12 parole dovrebbero essere utilizzate per recuperare gli asset di questo portafoglio solo come ultima risorsa, ad esempio se perdi l'accesso al tuo account ${ BRAND_NAME }."
@@ -5676,14 +5736,26 @@
       "Wallet seed phrase": [
         "Seed phrase del wallet"
       ],
+      "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
+        "Il checksum della frase seed del Wallet non è valido. Accettiamo solo frasi seed BIP39 e non supportiamo quelle Electrum."
+      ],
+      "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
+        "La frase seed del Wallet contiene una parola sconosciuta: ${ word }. Supportiamo solo l'elenco di parole inglesi BIP39."
+      ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "La seed phrase del portafoglio codifica la chiave privata che controlla i tuoi asset digitali."
       ],
-      "Wallet seed phrase is incorrect. Please check this and try again.": [
+      "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
+        "L'entropia della frase seed del Wallet non è valida. Dovrebbe avere una lunghezza compresa tra 128 e 256 bit."
+      ],
+      "Wallet seed phrase is incorrect. Please check it and try again.": [
         "La frase seed del Wallet non è corretta. Controlla e riprova."
       ],
-      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
-        "La lunghezza della frase seed del portafoglio non è valida. Deve contenere da 12 a 24 parole."
+      "Wallet seed phrase language is not supported.": [
+        "Il linguaggio della frase seed del Wallet non è supportato."
+      ],
+      "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
+        "La lunghezza della seed phrase del portafoglio non è valida. Deve contenere fra 12 e 24 parole."
       ],
       "Wallet setup": [
         "Configurazione del portafoglio"
@@ -5952,13 +6024,13 @@
       "A safer way to hold your Bitcoin": [
         "Un modo più sicuro per conservare il tuo Bitcoin"
       ],
-      "Bitcoin via email": [
+      "Bitcoin via Email": [
         "Bitcoin via email"
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Un modo più sicuro/facile per conservare e inviare Bitcoin"
+      "A safer way to hold Bitcoin": [
+        "Un modo più sicuro per conservare Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
