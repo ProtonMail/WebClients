@@ -51,6 +51,7 @@ import {
     splitKeys,
 } from '@proton/shared/lib/keys';
 import { decryptKeyPacket } from '@proton/shared/lib/keys/keypacket';
+import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { addressKeysThunk } from '../addressKeys';
@@ -98,7 +99,7 @@ export const getOrganizationTokenThunk = (): ThunkAction<
 };
 
 export interface PublicMemberKeyPayload {
-    type: 0;
+    type: 'public';
     member: Member;
     email: string;
     address: Address | undefined;
@@ -106,11 +107,18 @@ export interface PublicMemberKeyPayload {
 }
 
 export interface PrivateMemberKeyPayload {
-    type: 1;
+    type: 'private';
     member: Member;
     email: string;
     address: Address;
     publicKey: PublicKeyReference;
+}
+
+export interface PromoteGlobalSSOPayload {
+    type: 'promote-global-sso';
+    address: Address | undefined;
+    email: string;
+    member: Member;
 }
 
 export type MemberKeyPayload = PrivateMemberKeyPayload | PublicMemberKeyPayload;
@@ -168,7 +176,7 @@ export const getMemberKeyPayload = async ({
             throw new Error('Unable to decrypt non-private user keys');
         }
         return {
-            type: 0,
+            type: 'public',
             member,
             address,
             email: address?.Email || member.Name,
@@ -178,7 +186,7 @@ export const getMemberKeyPayload = async ({
 
     if (mode.type === 'org-key') {
         return {
-            type: 1,
+            type: 'private',
             member,
             address: {} as any, // Unused
             email: 'unused',
@@ -201,7 +209,7 @@ export const getMemberKeyPayload = async ({
         throw new Error(getPrivateAdminError());
     }
     return {
-        type: 1,
+        type: 'private',
         member,
         address,
         email,
@@ -238,7 +246,7 @@ const getReEncryptedAdminTokens = async ({
         publicAdminPromises: ReturnType<typeof generatePublicMemberInvitation>[];
     }>(
         (acc, memberPayload) => {
-            if (memberPayload.type === 1) {
+            if (memberPayload.type === 'private') {
                 const { member, publicKey, address } = memberPayload;
                 acc.privateAdminPromises.push(
                     generatePrivateMemberInvitation({
@@ -298,14 +306,32 @@ const getReEncryptedMemberTokens = async ({
 
 type ConfirmPromotionMemberAction = {
     type: 'confirm-promote';
-    payload: MemberKeyPayload;
+    payload: PromoteGlobalSSOPayload | MemberKeyPayload;
     prompt: boolean;
 };
 type ConfirmDemotionMemberAction = {
     type: 'confirm-demote';
-    payload: null;
+    payload: PromoteGlobalSSOPayload | null;
 };
 export type MemberPromptAction = ConfirmPromotionMemberAction | ConfirmDemotionMemberAction;
+
+const getPromoteGlobalSSOPayload = ({
+    member,
+    memberAddresses,
+}: {
+    member: Member;
+    memberAddresses: Address[];
+}): PromoteGlobalSSOPayload => {
+    const address: Address | undefined = memberAddresses.filter(
+        (address) => getIsAddressEnabled(address) && address.HasKeys
+    )[0];
+    return {
+        type: 'promote-global-sso',
+        address,
+        member,
+        email: address?.Email || '',
+    };
+};
 
 export const getMemberEditPayload = ({
     member,
@@ -328,13 +354,30 @@ export const getMemberEditPayload = ({
         const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
+            const payload =
+                member.SSO && !getIsMemberSetup(member)
+                    ? getPromoteGlobalSSOPayload({
+                          member,
+                          memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
+                      })
+                    : null;
             return {
                 type: 'confirm-demote',
-                payload: null,
+                payload,
             };
         }
 
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
+            const memberAddresses = await dispatch(getMemberAddresses({ member, retry: true }));
+
+            if (member.SSO && !getIsMemberSetup(member)) {
+                return {
+                    type: 'confirm-promote',
+                    payload: getPromoteGlobalSSOPayload({ member, memberAddresses }),
+                    prompt: true,
+                };
+            }
+
             const payload = await getMemberKeyPayload({
                 organizationKey,
                 mode: {
@@ -343,7 +386,7 @@ export const getMemberEditPayload = ({
                 },
                 api,
                 member,
-                memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
+                memberAddresses,
             });
 
             if (member.Private === MEMBER_PRIVATE.UNREADABLE) {
