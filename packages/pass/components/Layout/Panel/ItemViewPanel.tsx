@@ -127,9 +127,12 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
         />
     );
 
-    const onManageItem = free
-        ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING })
-        : handleManageClick;
+    /** Free user might have shared the vault - avoid upselling
+     * from the `manage access` button in this case */
+    const onManageItem =
+        free && !share.shared
+            ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING })
+            : handleManageClick;
 
     const onSecureLink = free
         ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.SECURE_LINKS })
