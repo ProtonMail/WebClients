@@ -31,6 +31,7 @@ export enum MEMBER_ORG_KEY_STATE {
 export interface MemberInvitationData {
     Address: string;
     Revision: number;
+    Admin?: boolean;
 }
 
 export enum MemberUnprivatizationState {
