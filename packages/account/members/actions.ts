@@ -16,6 +16,7 @@ import {
     privatizeMember as privatizeMemberConfig,
     removeSSOSamlMember,
     requestUnprivatization as requestUnprivatizationConfig,
+    unprivatizeMemberKeysRoute,
     updateAI,
     updateLumo,
     updateName,
@@ -32,7 +33,15 @@ import {
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { Address, Api, Domain, Member, Organization } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    Api,
+    Domain,
+    KTUserContext,
+    Member,
+    MemberReadyForUnprivatization,
+    Organization,
+} from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import {
     getInvitationData,
@@ -40,6 +49,7 @@ import {
     getIsMemberInManualAcceptState,
     getIsPasswordless,
     getSignedInvitationData,
+    getUnprivatizeMemberPayload,
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
@@ -74,8 +84,56 @@ import {
     membersThunk,
     upsertMember,
 } from './index';
-import { unprivatizeMember } from './unprivatizeMembers';
 import validateAddUser from './validateAddUser';
+
+export const unprivatizeMember = ({
+    member,
+    ktUserContext,
+    options,
+    api,
+}: {
+    member: MemberReadyForUnprivatization;
+    ktUserContext: KTUserContext;
+    options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
+    api: Api;
+}): ThunkAction<
+    Promise<void>,
+    KtState & MemberState & MembersState & OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch) => {
+        const [organizationKey, memberAddresses] = await Promise.all([
+            dispatch(organizationKeyThunk()), // Fetch org key again to ensure it's up-to-date.
+            dispatch(getMemberAddresses({ member, retry: true })),
+        ]);
+        const { data, payload } = await getUnprivatizeMemberPayload({
+            api,
+            member,
+            memberAddresses,
+            organizationKey: organizationKey.privateKey,
+            ktUserContext,
+            options,
+        });
+
+        await api(unprivatizeMemberKeysRoute(member.ID, payload));
+
+        if (data.Admin === true) {
+            const newMember = await getMember(api, member.ID);
+            const memberKeyPayload = await getMemberKeyPayload({
+                organizationKey,
+                member: newMember,
+                memberAddresses,
+                mode: {
+                    type: 'email',
+                    ktUserContext: await dispatch(getKTUserContext()),
+                },
+                api,
+            });
+            await dispatch(setAdminRoles({ api, memberKeyPayloads: [memberKeyPayload] }));
+        }
+    };
+};
 
 export const deleteMembers = ({
     members,
@@ -114,12 +172,10 @@ export const deleteMembers = ({
 export const requestUnprivatization = ({
     api,
     member,
-    upsert,
     makeAdmin,
 }: {
     api: Api;
     member: Member;
-    upsert: boolean;
     makeAdmin?: boolean;
 }): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
@@ -156,20 +212,15 @@ export const requestUnprivatization = ({
                 InvitationSignature: invitationSignature,
             })
         );
-        if (upsert) {
-            dispatch(upsertMember({ member: await getMember(api, member.ID) }));
-        }
     };
 };
 
 export const unprivatizeSelf = ({
     api,
     member: initialMember,
-    upsert,
 }: {
     api: Api;
     member: Member;
-    upsert: boolean;
 }): ThunkAction<
     Promise<void>,
     KtState & MemberState & MembersState & OrganizationKeyState,
@@ -193,8 +244,7 @@ export const unprivatizeSelf = ({
             extra.eventManager.stop();
 
             if (!member.Unprivatization) {
-                await dispatch(requestUnprivatization({ member, api, upsert: false }));
-                // memberWithUnprivatizationRequest
+                await dispatch(requestUnprivatization({ member, api }));
                 member = await dispatch(memberThunk({ cache: CacheType.None }));
             }
 
@@ -220,14 +270,9 @@ export const unprivatizeSelf = ({
 
             if (getIsMemberInAutomaticApproveState(member)) {
                 const ktUserContext = await dispatch(getKTUserContext());
-
                 await dispatch(unprivatizeMember({ member, api, ktUserContext }));
             } else {
                 throw new Error('Unable to finalize self unprivatization');
-            }
-
-            if (upsert) {
-                dispatch(upsertMember({ member: await getMember(api, member.ID) }));
             }
         } finally {
             extra.eventManager.start();
@@ -292,7 +337,7 @@ export const setRole = ({
                 throw new MemberCreationValidationError('Unexpected request');
             }
             // For VPN SSO users we request unprivatization with admin flag to convert them to global sso users
-            await dispatch(requestUnprivatization({ member, api, upsert: false, makeAdmin: true }));
+            await dispatch(requestUnprivatization({ member, api, makeAdmin: true }));
             return;
         }
 
@@ -402,9 +447,9 @@ export const editMember = ({
             }
             if (member.Private === MEMBER_PRIVATE.UNREADABLE && memberDiff.private === MEMBER_PRIVATE.READABLE) {
                 if (member.Self) {
-                    await dispatch(unprivatizeSelf({ member, api, upsert: false }));
+                    await dispatch(unprivatizeSelf({ member, api }));
                 } else {
-                    await dispatch(requestUnprivatization({ member, api, upsert: false }));
+                    await dispatch(requestUnprivatization({ member, api }));
                 }
             }
         }
@@ -707,7 +752,7 @@ export const createMember = ({
                     });
                     await dispatch(setAdminRoles({ api, memberKeyPayloads: [memberKeyPayload] }));
                 } else {
-                    // Ignore, can't set non-private users admins on creation
+                    // Ignore, can't set private users admins on creation because they don't have keys setup
                 }
             } else {
                 await api(updateRoleConfig(Member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
@@ -775,7 +820,7 @@ export const attachMemberSSO = ({
             member.Self &&
             member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN
         ) {
-            await dispatch(unprivatizeSelf({ member, api, upsert: true }));
+            await dispatch(unprivatizeSelf({ member, api }));
         }
         await api(addSSOSamlMember(member.ID));
         dispatch(upsertMember({ member: await getMember(api, member.ID) }));

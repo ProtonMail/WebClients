@@ -596,7 +596,7 @@ export const getUnprivatizeMemberPayload = async ({
     options?: {
         ignoreRevisionCheck: boolean;
     };
-}): Promise<UnprivatizeMemberResult> => {
+}): Promise<{ data: MemberInvitationData; payload: UnprivatizeMemberResult }> => {
     if (!organizationKey) {
         throw new Error('Invalid requirements');
     }
@@ -625,7 +625,7 @@ export const getUnprivatizeMemberPayload = async ({
     }
     const verifiedPublicKeys = verifiedApiKeys.addressKeys.map(({ publicKey }) => publicKey);
 
-    return unprivatizeMemberHelper({
+    const payload = await unprivatizeMemberHelper({
         data: {
             ActivationToken,
             PrivateKeys,
@@ -634,4 +634,6 @@ export const getUnprivatizeMemberPayload = async ({
         verificationKeys: verifiedPublicKeys,
         organizationKey,
     });
+
+    return { data, payload };
 };
