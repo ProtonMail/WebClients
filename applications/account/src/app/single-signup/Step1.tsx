@@ -126,9 +126,7 @@ export const getBilledText = (cycle: CYCLE): string | null => {
 const getBundleTitle = (a: string, b: string) => {
     return c('vpn_2step: info').t`Your ${a} and ${b} bundle`;
 };
-const getPlanTitle = (selected: string) => {
-    return c('vpn_2step: info').t`Your ${selected} plan`;
-};
+
 const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
     return (
         <div className="flex items-center text-center flex-column md:flex-row justify-center">
@@ -664,7 +662,6 @@ const Step1 = ({
         loading: model.loadingDependencies,
         selectedPlan: options.plan,
         vpnServersCountData,
-        mode,
     });
 
     const upsellToCycle = (() => {
@@ -1256,20 +1253,14 @@ const Step1 = ({
                                         : undefined
                                 }
                             >
-                                <div
-                                    className={
-                                        viewportWidth['>=large'] ? undefined : 'border rounded-xl border-weak p-6 '
+                                <RightPlanSummary
+                                    {...planInformation}
+                                    title={
+                                        options.planIDs[PLANS.VPN_PASS_BUNDLE]
+                                            ? getBundleTitle(VPN_SHORT_APP_NAME, PASS_SHORT_APP_NAME)
+                                            : c('vpn_2step: info').t`Your plan includes:`
                                     }
-                                >
-                                    <RightPlanSummary
-                                        {...planInformation}
-                                        title={
-                                            options.planIDs[PLANS.VPN_PASS_BUNDLE]
-                                                ? getBundleTitle(VPN_SHORT_APP_NAME, PASS_SHORT_APP_NAME)
-                                                : getPlanTitle(planInformation.title)
-                                        }
-                                    />
-                                </div>
+                                />
                             </div>
                         )}
                     </div>
@@ -1434,7 +1425,6 @@ const Step1 = ({
                                                     ? getPlanInformation({
                                                           selectedPlan: plansMap[PLANS.VPN2024],
                                                           vpnServersCountData,
-                                                          mode,
                                                           loading: model.loadingDependencies,
                                                       }) || planInformation
                                                     : planInformation;
