@@ -138,7 +138,7 @@ const allFiles = [
 ];
 
 export async function transform() {
-    const transformPath = path.resolve(__dirname, 'transform.js');
+    const transformPath = path.resolve(__dirname, 'cycle-transform.js');
     const paths = allFiles.map(({ path: filePath, prefix }) => path.resolve(__dirname, prefix, filePath));
 
     const options = {
