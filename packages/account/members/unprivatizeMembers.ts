@@ -9,9 +9,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { unprivatizeMemberKeysRoute } from '@proton/shared/lib/api/members';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type {
-    Api,
     EnhancedMember,
-    KTUserContext,
     Member,
     MemberReadyForUnprivatization,
     MemberReadyForUnprivatizationApproval,
@@ -21,14 +19,16 @@ import {
     getIsMemberInAutomaticApproveState,
     getIsMemberInManualApproveState,
     getSentryError,
-    getUnprivatizeMemberPayload,
+    type getUnprivatizeMemberPayload,
     unprivatizeMemberHelper,
 } from '@proton/shared/lib/keys';
 
 import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
+import type { MemberState } from '../member';
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
+import { unprivatizeMember } from './actions';
 import { getMember } from './getMember';
 import {
     type MembersState,
@@ -40,6 +40,8 @@ import {
     setUnprivatizationState,
     upsertMember,
 } from './index';
+
+type RequiredState = KtState & MemberState & MembersState & OrganizationKeyState;
 
 export const selectUnprivatizationState = (state: MembersState) => state.members.unprivatization;
 
@@ -276,34 +278,6 @@ const getMembersToUnprivatize = ({
     return { membersToUnprivatize, membersToDelete, membersToApprove };
 };
 
-export const unprivatizeMember = ({
-    member,
-    ktUserContext,
-    options,
-    api,
-}: {
-    member: MemberReadyForUnprivatization;
-    ktUserContext: KTUserContext;
-    options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
-    api: Api;
-}): ThunkAction<Promise<void>, MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
-        const [organizationKey, memberAddresses] = await Promise.all([
-            dispatch(organizationKeyThunk()), // Fetch org key again to ensure it's up-to-date.
-            dispatch(getMemberAddresses({ member, retry: true })),
-        ]);
-        const payload = await getUnprivatizeMemberPayload({
-            api,
-            member,
-            memberAddresses,
-            organizationKey: organizationKey.privateKey,
-            ktUserContext,
-            options,
-        });
-        await api(unprivatizeMemberKeysRoute(member.ID, payload));
-    };
-};
-
 export const unprivatizeMembersBackgroundHelper = ({
     membersToUnprivatize,
     options,
@@ -315,7 +289,7 @@ export const unprivatizeMembersBackgroundHelper = ({
         membersToUpdate: Member[];
         membersToError: { member: Member; error: any }[];
     }>,
-    KtState & MembersState & OrganizationKeyState,
+    RequiredState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -361,7 +335,7 @@ export const unprivatizeMembersBackground = ({
               type: 'action';
               members: MemberReadyForUnprivatization[];
           };
-}): ThunkAction<Promise<void>, KtState & MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState) => {
         if (!target.members.length) {
             return;
