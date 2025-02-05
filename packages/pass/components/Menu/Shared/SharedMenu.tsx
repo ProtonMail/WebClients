@@ -34,7 +34,7 @@ export const SharedMenuContent: FC<Props> = ({ dense, onAction }) => {
     const free = passPlan === UserPassPlan.FREE;
 
     return (
-        <div>
+        <>
             {sharedWithMeCount > 0 && (
                 <FeatureFlag feature={PassFeature.PassItemSharingV1}>
                     <SharedMenuItem
@@ -75,7 +75,7 @@ export const SharedMenuContent: FC<Props> = ({ dense, onAction }) => {
                 onAction={onAction}
                 dense={dense}
             />
-        </div>
+        </>
     );
 };
 
@@ -86,7 +86,7 @@ export const SharedMenu = memo(() => {
 
     return (
         <div className="flex flex-column gap-2 w-full">
-            <div className="mx-2 flex flex-nowrap items-center gap-3">
+            <div className="px-2 flex flex-nowrap items-center gap-3 w-full">
                 <span className="text-ellipsis color-weak"> {c('Label').t`Shared`}</span>
                 {free && (
                     <PassPlusPromotionButton
