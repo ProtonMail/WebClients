@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features/interface';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
-import { COUPON_CODES } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 
 import { type OfferConfig } from '../../interface';
 import Layout from './Layout';

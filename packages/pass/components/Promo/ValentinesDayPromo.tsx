@@ -14,8 +14,7 @@ import { selectInAppNotificationsEnabled, selectUser, selectUserPlan } from '@pr
 import type { PassPlanResponse } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { COUPON_CODES } from '@proton/shared/lib/constants';
+import { COUPON_CODES, PLANS, PLAN_NAMES } from '@proton/payments';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
