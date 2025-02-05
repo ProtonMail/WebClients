@@ -57,6 +57,7 @@ import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
 import {
     type MemberKeyPayload,
+    type PromoteGlobalSSOPayload,
     getMemberKeyPayload,
     getPrivateAdminError,
     setAdminRoles,
@@ -110,39 +111,16 @@ export const deleteMembers = ({
     };
 };
 
-export const setAdminRole = ({
-    member,
-    payload,
-    api,
-}: {
-    member: Member;
-    payload: MemberKeyPayload | null;
-    api: Api;
-}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
-        const organizationKey = await dispatch(organizationKeyThunk());
-
-        if (!getIsPasswordless(organizationKey?.Key)) {
-            await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
-            return;
-        }
-
-        if (!payload) {
-            throw new Error('Missing payload');
-        }
-
-        await dispatch(setAdminRoles({ memberKeyPayloads: [payload], api }));
-    };
-};
-
 export const requestUnprivatization = ({
     api,
     member,
     upsert,
+    makeAdmin,
 }: {
     api: Api;
     member: Member;
     upsert: boolean;
+    makeAdmin?: boolean;
 }): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
@@ -158,13 +136,18 @@ export const requestUnprivatization = ({
                 c('unprivatization').t`The user must have an address to request data access`
             );
         }
-        if (!getIsMemberSetup(member)) {
+        // If the member don't have keys setup, it's only allowed to pass-through for SSO members.
+        // This is because those members get into the global SSO password setup flow on next login.
+        // For regular members, there's the join magic link flow, however that is not triggered
+        // for those members signing in.
+        if (!member.SSO && !getIsMemberSetup(member)) {
             throw new MemberCreationValidationError(c('unprivatization').t`Member activation incomplete`);
         }
         const invitationData = await getInvitationData({
             api,
             address: primaryEmailAddress,
             expectRevisionChange: false,
+            admin: makeAdmin ? true : undefined,
         });
         const invitationSignature = await getSignedInvitationData(organizationKey.privateKey, invitationData);
         await api(
@@ -272,6 +255,51 @@ export const deleteRequestUnprivatization = ({
     };
 };
 
+export const setRole = ({
+    member,
+    payload,
+    api,
+    role,
+}: {
+    member: Member;
+    payload: PromoteGlobalSSOPayload | MemberKeyPayload | null;
+    api: Api;
+    role: MEMBER_ROLE;
+}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
+            if (payload?.type === 'promote-global-sso') {
+                await dispatch(deleteRequestUnprivatization({ member, api, upsert: false }));
+                return;
+            }
+            await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+            return;
+        }
+
+        const organizationKey = await dispatch(organizationKeyThunk());
+
+        if (!getIsPasswordless(organizationKey?.Key)) {
+            await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
+            return;
+        }
+
+        if (!payload) {
+            throw new Error('Missing payload');
+        }
+
+        if (payload.type === 'promote-global-sso') {
+            if (getIsMemberSetup(member) || !member.SSO) {
+                throw new MemberCreationValidationError('Unexpected request');
+            }
+            // For VPN SSO users we request unprivatization with admin flag to convert them to global sso users
+            await dispatch(requestUnprivatization({ member, api, upsert: false, makeAdmin: true }));
+            return;
+        }
+
+        await dispatch(setAdminRoles({ memberKeyPayloads: [payload], api }));
+    };
+};
+
 export const privatizeMember = ({
     api,
     member,
@@ -327,7 +355,7 @@ export const editMember = ({
 }: {
     member: Member;
     memberDiff: Partial<CreateMemberPayload>;
-    memberKeyPacketPayload: MemberKeyPayload | null;
+    memberKeyPacketPayload: PromoteGlobalSSOPayload | MemberKeyPayload | null;
     api: Api;
 }): ThunkAction<
     Promise<{ diff: true; member: Member } | { diff: false; member: null }>,
@@ -359,10 +387,10 @@ export const editMember = ({
             await api(updateLumo(member.ID, memberDiff.lumo ? 1 : 0));
         }
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-            await dispatch(setAdminRole({ member, payload: memberKeyPacketPayload, api }));
+            await dispatch(setRole({ member, payload: memberKeyPacketPayload, api, role: memberDiff.role }));
         }
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
-            await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+            await dispatch(setRole({ member, payload: memberKeyPacketPayload, api, role: memberDiff.role }));
         }
         if (memberDiff.private !== undefined) {
             if (memberDiff.private === MEMBER_PRIVATE.UNREADABLE) {

@@ -20,7 +20,7 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useModalState, { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
@@ -35,6 +35,7 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
+    BRAND_NAME,
     LUMO_APP_NAME,
     MEMBER_PRIVATE,
     MEMBER_ROLE,
@@ -116,7 +117,57 @@ const getMemberStateFromMember = (member: Member): MemberState => {
 };
 
 const getMemberKeyPacketPayload = (memberAction: MemberPromptAction | null) => {
-    return memberAction?.type === 'confirm-promote' ? memberAction.payload : null;
+    return memberAction ? memberAction.payload : null;
+};
+
+const ConfirmAdminPromotionPrompt = ({
+    memberPromptAction,
+    onConfirm,
+    ...confirmPromotionModalProps
+}: {
+    onConfirm: () => void;
+    memberPromptAction: MemberPromptAction | null;
+} & ModalStateProps) => {
+    const memberKeyPacketPayload = getMemberKeyPacketPayload(memberPromptAction);
+    if (!memberKeyPacketPayload) {
+        return null;
+    }
+    const { member, email } = memberKeyPacketPayload;
+    const name = member.Name;
+    return (
+        <Prompt
+            title={c('Title').t`Change role`}
+            buttons={[
+                <Button
+                    color="norm"
+                    onClick={() => {
+                        confirmPromotionModalProps.onClose();
+                        onConfirm();
+                    }}
+                >{c('Action').t`Make admin`}</Button>,
+                <Button
+                    onClick={() => {
+                        confirmPromotionModalProps.onClose();
+                    }}
+                >{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...confirmPromotionModalProps}
+        >
+            <div className="mb-2">
+                {c('Info').t`Are you sure you want to give administrative privileges to this user?`}
+            </div>
+            <Card rounded className="text-break">
+                <div className="text-bold">{name}</div>
+                {email !== name && <div>{email}</div>}
+            </Card>
+            {memberKeyPacketPayload.type === 'promote-global-sso' && (
+                <div className="mt-2">
+                    {c('unprivatization')
+                        .t`To gain administrator rights, they will have to set a backup password the next time they sign in to ${BRAND_NAME}.`}
+                </div>
+            )}
+        </Prompt>
+    );
 };
 
 const SubUserEditModal = ({
@@ -191,7 +242,6 @@ const SubUserEditModal = ({
     const canPromoteAdmin =
         !isSelf &&
         member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER &&
-        (!member.SSO || (member.SSO && member.Keys?.length > 0)) &&
         unprivatization.mode !== MemberUnprivatizationMode.MagicLinkInvite;
 
     const canRevokeAdmin = !isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
@@ -226,7 +276,7 @@ const SubUserEditModal = ({
     const handleClose = submitting ? undefined : rest.onClose;
 
     const hasToggledPrivate = model.private === MEMBER_PRIVATE.UNREADABLE && !unprivatization.pending;
-    const hasToggledAdmin = model.role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+    const hasToggledAdmin = model.role === MEMBER_ROLE.ORGANIZATION_ADMIN || unprivatization.makeAdmin;
     const isPendingAdminAccess =
         unprivatization.pending && unprivatization.mode === MemberUnprivatizationMode.AdminAccess;
 
@@ -355,46 +405,15 @@ const SubUserEditModal = ({
                 </Prompt>
             )}
             {renderConfirmPromotion && (
-                <Prompt
-                    title={c('Title').t`Change role`}
-                    buttons={[
-                        <Button
-                            color="norm"
-                            loading={submitting}
-                            onClick={() => {
-                                confirmPromotionModalProps.onClose();
-                                withLoadingRole(handleUpdateMember({ role: MEMBER_ROLE.ORGANIZATION_ADMIN })).catch(
-                                    errorHandler
-                                );
-                            }}
-                        >{c('Action').t`Make admin`}</Button>,
-                        <Button
-                            onClick={() => {
-                                confirmPromotionModalProps.onClose();
-                            }}
-                        >{c('Action').t`Cancel`}</Button>,
-                    ]}
+                <ConfirmAdminPromotionPrompt
+                    onConfirm={() => {
+                        withLoadingRole(handleUpdateMember({ role: MEMBER_ROLE.ORGANIZATION_ADMIN })).catch(
+                            errorHandler
+                        );
+                    }}
+                    memberPromptAction={memberPromptActionRef.current}
                     {...confirmPromotionModalProps}
-                >
-                    <div className="mb-2">
-                        {c('Info').t`Are you sure you want to give administrative privileges to this user?`}
-                    </div>
-                    <Card rounded className="text-break">
-                        {(() => {
-                            const memberKeyPacketPayload = getMemberKeyPacketPayload(memberPromptActionRef.current);
-                            if (!memberKeyPacketPayload) {
-                                return '';
-                            }
-                            const { member, email } = memberKeyPacketPayload;
-                            return (
-                                <>
-                                    <div className="text-bold">{member.Name}</div>
-                                    <div>{email}</div>
-                                </>
-                            );
-                        })()}
-                    </Card>
-                </Prompt>
+                />
             )}
             <Modal
                 as="form"

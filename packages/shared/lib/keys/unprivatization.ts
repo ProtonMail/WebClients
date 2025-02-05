@@ -49,10 +49,12 @@ export const getInvitationData = async ({
     address,
     api,
     expectRevisionChange,
+    admin,
 }: {
     address: string;
     api: Api;
     expectRevisionChange?: boolean;
+    admin?: boolean;
 }) => {
     let revision = 1;
     try {
@@ -63,6 +65,7 @@ export const getInvitationData = async ({
     return serializeInvitationData({
         Address: address,
         Revision: revision,
+        Admin: admin,
     });
 };
 
