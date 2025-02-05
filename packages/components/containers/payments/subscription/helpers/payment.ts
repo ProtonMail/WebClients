@@ -1,14 +1,16 @@
 import {
+    COUPON_CODES,
     CYCLE,
     type Currency,
     type FreeSubscription,
     PLANS,
     type PlanIDs,
+    VPN_PASS_PROMOTION_COUPONS,
     isFreeSubscription,
     isRegionalCurrency,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { APPS, COUPON_CODES, VPN_PASS_PROMOTION_COUPONS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 import { Audience, Renew } from '@proton/shared/lib/interfaces';

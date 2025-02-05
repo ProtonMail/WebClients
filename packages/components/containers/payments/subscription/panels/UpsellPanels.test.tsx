@@ -1,6 +1,6 @@
 import { render, screen, within } from '@testing-library/react';
 
-import { COUPON_CODES } from '@proton/shared/lib/constants';
+import { COUPON_CODES } from '@proton/payments';
 import type { Subscription } from '@proton/shared/lib/interfaces';
 
 import {

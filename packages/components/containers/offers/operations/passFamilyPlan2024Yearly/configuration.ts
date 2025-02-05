@@ -1,6 +1,5 @@
 import { FeatureCode } from '@proton/features';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
-import { COUPON_CODES } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 
 import Layout from '../../components/passFamilyPlan/Layout';
 import type { OfferConfig } from '../../interface';

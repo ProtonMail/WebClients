@@ -27,6 +27,7 @@ import { IcTag } from '@proton/icons';
 import metrics from '@proton/metrics';
 import {
     type BillingAddress,
+    COUPON_CODES,
     CYCLE,
     type Currency,
     type FullPlansMap,
@@ -42,7 +43,6 @@ import type { ActiveSession } from '@proton/shared/lib/authentication/persistedS
 import {
     APPS,
     BRAND_NAME,
-    COUPON_CODES,
     DRIVE_APP_NAME,
     PASS_APP_NAME,
     SSO_PATHS,

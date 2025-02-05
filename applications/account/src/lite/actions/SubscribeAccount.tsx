@@ -24,14 +24,20 @@ import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitc
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { CURRENCIES, type Currency, PLANS, PLAN_TYPES, type PaymentMethodStatusExtended } from '@proton/payments';
+import {
+    COUPON_CODES,
+    CURRENCIES,
+    type Currency,
+    PLANS,
+    PLAN_TYPES,
+    type PaymentMethodStatusExtended,
+} from '@proton/payments';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     APPS,
     BRAND_NAME,
     CALENDAR_APP_NAME,
-    COUPON_CODES,
     DRIVE_APP_NAME,
     HTTP_STATUS_CODE,
     MAIL_APP_NAME,
