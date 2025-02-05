@@ -77,11 +77,18 @@ export const updateTwoFactor = (GracePeriod: number) => ({
     data: { GracePeriod },
 });
 
+export interface GroupAddressKeyToken {
+    ID: string;
+    Token: string;
+    OrgSignature: string;
+}
+
 export interface UpdateOrganizationKeysPayloadLegacy {
     PrivateKey: string;
     BackupPrivateKey: string;
     BackupKeySalt: string;
     Tokens: { ID: string; Token: string }[];
+    GroupAddressKeyTokens: GroupAddressKeyToken[];
 }
 
 export const updateOrganizationKeysLegacy = ({
@@ -89,10 +96,11 @@ export const updateOrganizationKeysLegacy = ({
     BackupPrivateKey,
     BackupKeySalt,
     Tokens,
+    GroupAddressKeyTokens,
 }: UpdateOrganizationKeysPayloadLegacy) => ({
     url: 'core/v4/organizations/keys',
     method: 'post',
-    data: { PrivateKey, BackupPrivateKey, BackupKeySalt, Tokens },
+    data: { PrivateKey, BackupPrivateKey, BackupKeySalt, Tokens, GroupAddressKeyTokens },
 });
 
 interface Members {
@@ -126,6 +134,7 @@ export interface UpdatePasswordlessOrganizationKeysPayload {
         TokenKeyPacket: string;
         Signature: string;
     }[];
+    GroupAddressKeyTokens: GroupAddressKeyToken[];
 }
 
 export const createPasswordlessOrganizationKeys = (data: UpdatePasswordlessOrganizationKeysPayload) => ({
@@ -140,7 +149,7 @@ export const updatePasswordlessOrganizationKeys = (data: UpdatePasswordlessOrgan
 });
 
 interface MigratePasswordlessOrganizationKeysPayload
-    extends Omit<UpdatePasswordlessOrganizationKeysPayload, 'Members' | 'AdminInvitations'> {
+    extends Omit<UpdatePasswordlessOrganizationKeysPayload, 'Members' | 'AdminInvitations' | 'GroupAddressKeyTokens'> {
     AdminInvitations: {
         MemberID: string;
         TokenKeyPacket: string;
@@ -159,6 +168,7 @@ export interface UpdateOrganizationKeysPayloadV2 {
     BackupPrivateKey: string;
     BackupKeySalt: string;
     Members: Members[];
+    GroupAddressKeyTokens: GroupAddressKeyToken[];
 }
 
 export const updateOrganizationKeysV2 = ({
