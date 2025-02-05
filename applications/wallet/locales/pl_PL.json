@@ -238,6 +238,9 @@
       "Show balance": [
         "Pokaż saldo"
       ],
+      "Show QRCode": [
+        "Pokaż kod QR"
+      ],
       "Sign out": [
         "Wyloguj"
       ],
@@ -249,6 +252,9 @@
       ],
       "Switch or add account": [
         "Przełącz lub dodaj konto"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
       ],
       "Try again": [
         "Spróbuj ponownie"
@@ -369,7 +375,7 @@
         "Przełącz klucz"
       ],
       "Used": [
-        "Używane"
+        "Używany"
       ],
       "Value": [
         "Wartość"
@@ -556,9 +562,6 @@
       "12 months": [
         "12 miesięcy"
       ],
-      "24 months": [
-        "24 miesiące"
-      ],
       "Annually": [
         "Rocznie"
       ],
@@ -571,19 +574,25 @@
     },
     "bitcoin buy": {
       "${ serviceFeePercentage }% Azteco service fee": [
-        "Prowizja Azteco ${ serviceFeePercentage }%"
+        "Opłata za usługi Azteco w wysokości ${ serviceFeePercentage }%"
+      ],
+      "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
+        "${ WALLET_APP_NAME } współpracuje z ${ rampLink }, ${ banxaLink } i ${ moonpayLink }, trzema zarejestrowanymi platformami kryptowalutowymi, aby ułatwić zakup BTC. Wybierz swój region, aby zobaczyć dostępnych dostawców i metody płatności."
       ],
       "1% bank transfer fee": [
-        "Prowizja przelewu bankowego 1%"
+        "Opłata za przelew bankowy w wysokości 1% kwoty przelewu"
       ],
       "4% credit card fee": [
-        "Prowizja karty płatniczej 4%"
+        "Opłata za kartę kredytową w wysokości 4%"
       ],
       "Amount": [
         "Kwota"
       ],
+      "An error occurred while confirming this quote, please select another provider and try again.": [
+        "Wystąpił błąd podczas potwierdzania tej oferty, wybierz inną giełdę i spróbuj ponownie."
+      ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
-        "Jako płatny użytkownik oszczędzasz ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } na prowizji usługi Azteco!"
+        "Jako płacący użytkownik oszczędzasz ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } na opłacie za usługi Azteco!"
       ],
       "Bank transfer": [
         "Przelew bankowy"
@@ -601,7 +610,7 @@
         "Kup"
       ],
       "Buy Azteco vouchers": [
-        "Kup voucher Azteco"
+        "Kup vouchery Azteco"
       ],
       "Choose a country": [
         "Wybierz kraj"
@@ -633,6 +642,9 @@
       "Location": [
         "Lokalizacja"
       ],
+      "MoonPay": [
+        "MoonPay"
+      ],
       "Pay with": [
         "Zapłać za pomocą"
       ],
@@ -641,6 +653,9 @@
       ],
       "Please enter your region to see the available BTC providers and payment methods. Any purchased BTC will be sent to a BTC address of this wallet account.": [
         "Wprowadź swój region, aby zobaczyć dostępnych dostawców BTC i metody płatności. Wszelkie zakupione BTC zostaną wysłane na adres BTC tego konta portfela."
+      ],
+      "Ramp Network": [
+        "Ramp Network"
       ],
       "Recipients": [
         "Odbiorcy"
@@ -655,10 +670,10 @@
         "Wyślij"
       ],
       "This quote is valid for the next 5 minutes": [
-        "Wycena ważna przez najbliższe 5 minut"
+        "Ta oferta jest ważna przez kolejne 5 minut"
       ],
       "Upgrade to Visionary plan to reduce Azteco service fee to 3%": [
-        "Ulepsz konto do planu Visionary, aby obniżyć prowizję usługi Azteco do 3%"
+        "Przejdź na plan Visionary, aby obniżyć opłatę serwisową Azteco do 3%"
       ],
       "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
         "Możesz kupić Bitcoiny na giełdach, takich jak ${ binanceLink }, ${ coinbaseLink } lub ${ krakenLink }, a następnie wysłać środki na swój adres."
@@ -679,6 +694,9 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "Płatność ${ quote.provider }"
+      ],
+      "No quote available for the requested amount": [
+        "Brak dostępnej oferty dla żądanej kwoty"
       ],
       "The selected currency is not supported in your country or the requested amount is too low": [
         "Wybrana waluta nie jest obsługiwana w danym kraju lub żądana kwota jest zbyt niska"
@@ -846,6 +864,20 @@
         "Problem z dostępem do strony"
       ]
     },
+    "Button": {
+      "Create label": [
+        "Utwórz etykietę"
+      ],
+      "Remind me later": [
+        "Przypomnij mi później"
+      ],
+      "Set up other features": [
+        "Skonfiguruj inne funkcje"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
+      ]
+    },
     "Buy confirm": {
       "Buy more bitcoin": [
         "Kup więcej Bitcoinów"
@@ -857,10 +889,13 @@
         "W przypadku jakichkolwiek problemów z procesem zakupu prosimy o kontakt z zespołem pomocy technicznej partnera."
       ],
       "Purchase completed": [
-        "Transakcja została zakończona"
+        "Zakup zrealizowany"
       ],
       "Purchase finished": [
-        "Zakończono zakup"
+        "Zakup zakończony"
+      ],
+      "Thank you for purchasing an Azteco voucher.\nWe will now redeem your voucher and Azteco will send the BTC to your wallet.\nWe will also send you an email with the purchase details.": [
+        "Dziękujemy za zakup vouchera Azteco.\nTeraz zrealizujemy Twój voucher, a Azteco prześle BTC do Twojego portfela.\nWyślemy również wiadomość e-mail ze szczegółami zakupu."
       ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
         "Dziękujemy za próbę zakupu u naszego partnera.\nStatus zamówienia można śledzić za pośrednictwem wiadomości e-mail z potwierdzeniem wysłanej przez naszego partnera.\nJeśli transakcja nie powiedzie się, możesz spróbować ponownie lub wybrać innego partnera."
@@ -874,7 +909,10 @@
         "W przypadku jakichkolwiek problemów z procesem zakupu skontaktuj się z ${ support }"
       ],
       "Purchase in progress": [
-        "Zakup jest w toku"
+        "Zakup w toku"
+      ],
+      "Thank you for your purchase attempt for an Azteco voucher.\nAs soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.\nThen Azteco will send the BTC to your wallet.": [
+        "Dziękujemy za próbę zakupu vouchera Azteco.\nJak tylko otrzymamy Twoją płatność, utworzymy i zrealizujemy voucher na podstawie aktualnej ceny BTC.\nNastępnie Azteco wyśle ​​BTC do Twojego portfela."
       ]
     },
     "Cancellation upsell": {
@@ -1958,6 +1996,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
+      ],
       "Amount above the maximum.": [
         "Kwota powyżej maksimum."
       ],
@@ -2015,6 +2056,9 @@
       "Not a valid number": [
         "Numer telefonu nie jest prawidłowy"
       ],
+      "Organization key is not decrypted": [
+        "Klucz organizacji nie został odszyfrowany"
+      ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
@@ -2029,6 +2073,12 @@
       ],
       "Payment process not supported": [
         "Przetwarzanie płatności nie jest obsługiwane"
+      ],
+      "Please select a country": [
+        "Wybierz kraj"
+      ],
+      "Please select a state": [
+        "Wybierz stan"
       ],
       "Process aborted": [
         "Proces został przerwany"
@@ -2275,6 +2325,9 @@
       "${ WALLET_APP_NAME } support": [
         "Wsparcie ${ WALLET_APP_NAME }"
       ],
+      "As soon as your payment is received, ${ WALLET_APP_NAME } will redeem the voucher according to the market price of BTC and network fee at that time.\nThe redeemed BTC will then be sent by ${ azteco } to your wallet.\nFor any questions related to Azteco bitcoin vouchers, please contact ${ support }.": [
+        "Po otrzymaniu płatności ${ WALLET_APP_NAME } zrealizuje voucher zgodnie z ceną rynkową BTC i opłatą sieciową w danym momencie.\nNastępnie ${ azteco } wyśle ​​wymienione BTC do Twojego portfela.\nW przypadku pytań dotyczących voucherów Bitcoin Azteco skontaktuj się z ${ support }."
+      ],
       "Confirm": [
         "Potwierdź"
       ],
@@ -2291,10 +2344,10 @@
         "Nie teraz"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
-        "Opuszczasz teraz ${ WALLET_APP_NAME } na rzecz ${ providerName } (${ websiteLink }).\nUsługi związane z płatnościami kartą, przelewami bankowymi i wszelkimi innymi transakcjami fiat są świadczone przez ${ providerName },\noddzielną platformę strony trzeciej. Korzystając z usług świadczonych przez ${ providerName }, użytkownik potwierdza, że zapoznał się z Warunkami świadczenia usług ${ providerName } (${ termOfUseLink }) oraz Polityką prywatności i plików cookie (${ privacyAndCookiesPolicyLink }) i wyraził na nie zgodę.\nW przypadku jakichkolwiek pytań związanych z usługami ${ providerName } prosimy o kontakt z ${ providerName } pod adresem ${ supportEmailLink }"
+        "Opuszczasz teraz ${ WALLET_APP_NAME } i przechodzisz do ${ providerName } (${ websiteLink }).\nUsługi związane z płatnościami kartą, przelewami bankowymi i wszelkimi innymi transakcjami fiat są świadczone przez ${ providerName },\noddzielną platformę strony trzeciej. Korzystając z usług świadczonych przez ${ providerName }, użytkownik potwierdza, że zapoznał się z Warunkami świadczenia usług przez ${ providerName } (${ termOfUseLink }) oraz Polityką prywatności i plików cookie (${ privacyAndCookiesPolicyLink }) i wyraził na nie zgodę.\nW przypadku jakichkolwiek pytań związanych z usługami ${ providerName } prosimy o kontakt z ${ providerName } pod adresem ${ supportEmailLink }"
       ],
       "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
-        "Kupujesz teraz voucher Azteco za ${ WALLET_APP_NAME }. Działa to podobnie do karty podarunkowej i jest jednym z najłatwiejszych i najbardziej prywatnych sposobów uzyskania BTC."
+        "Teraz kupisz voucher bitcoinowy Azteco za pomocą ${ WALLET_APP_NAME }. Działa to podobnie jak karta podarunkowa i jest jednym z najłatwiejszych i najbardziej dyskretnych sposobów na uzyskanie BTC."
       ]
     },
     "Group": {
@@ -2458,6 +2511,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez ${ BRAND_NAME } nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
       ],
+      "Enabling auto-deletion…": [
+        "Włącz automatyczne usuwanie..."
+      ],
       "Enter the code from your authenticator app": [
         "Wpisz kod z aplikacji uwierzytelniającej"
       ],
@@ -2505,6 +2561,9 @@
       ],
       "JCB logo": [
         "Logo JCB"
+      ],
+      "Keys created": [
+        "Klucze zostały utworzone"
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -2578,6 +2637,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji..."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
       ],
@@ -2586,6 +2648,9 @@
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
+      ],
+      "Setting up your new address…": [
+        "Konfiguracja nowego adresu…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
@@ -2607,6 +2672,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
+      ],
+      "This address is for Bitcoin via Email": [
+        "Ten adres jest przeznaczony do odbierania Bitcoinów wysyłanych za pośrednictwem poczty e-mail"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "To Twój ${ defaultEmailAddress } do wysyłania nowych wiadomości."
@@ -2631,6 +2699,9 @@
       ],
       "Total VPN connections": [
         "Połączenia VPN"
+      ],
+      "User activated": [
+        "Użytkownik został aktywowany"
       ],
       "Users": [
         "Użytkownicy"
@@ -2925,6 +2996,9 @@
       "Security code (${ codeName })": [
         "Kod zabezpieczający (${ codeName })"
       ],
+      "Show QRCode": [
+        "Pokaż kod QR"
+      ],
       "Start date": [
         "Data rozpoczęcia"
       ],
@@ -2995,6 +3069,9 @@
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
+      ],
+      "settings": [
+        "ustawienia"
       ],
       "View on blockchain": [
         "Pokaż w łańcuchu bloków"
@@ -4199,11 +4276,6 @@
         "Zewnętrzny odbiorca"
       ]
     },
-    "Safety review": {
-      "Review your account safety": [
-        "Sprawdź bezpieczeństwo konta"
-      ]
-    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Logowanie nie zostało zakończone."
@@ -4718,6 +4790,9 @@
       "Are you sure?": [
         "Czy na pewno?"
       ],
+      "Auto-deletion is active": [
+        "Automatyczne usuwanie jest aktywne"
+      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -5144,9 +5219,6 @@
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
         "To jest Twoje dodatkowe hasło, aby zwiększyć bezpieczeństwo portfela. Działa ono równolegle z frazą odzyskiwania. Przechowuj je bezpiecznie, gdyż w przypadku jego utraty zablokujesz dostęp do portfela."
       ],
-      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Fraza seed to seria 12 lub 24 słów wygenerowanych przez Twój portfel. Działa jako podstawowy klucz do odzyskiwania środków. Przechowuj ją w bezpiecznym miejscu i nie udostępniaj nikomu, gdyż zapewnia ona dostęp do Twoich środków."
-      ],
       "What’s a wallet passphrase?": [
         "Co to jest hasło portfela?"
       ],
@@ -5339,8 +5411,17 @@
       "For better privacy, generate a new address for each transaction.": [
         "Generuj nowy adres dla każdej transakcji, aby zapewnić większą prywatność."
       ],
+      "Generate new address": [
+        "Wygeneruj nowy adres"
+      ],
       "Receive to": [
         "Odbierz do"
+      ],
+      "To prevent a large gap, generating new addresses has been disabled. You can either use this address or a previously generated one": [
+        "Aby zapobiec dużej przerwie, generowanie nowych adresów zostało wyłączone. Możesz użyć tego adresu lub wcześniej wygenerowanego."
+      ],
+      "To prevent a large gap, you should either use this address or a previously generated one": [
+        "Aby zapobiec dużej przerwie, użyj tego adresu lub wcześniej wygenerowanego"
       ]
     },
     "Wallet receive": {
@@ -5381,6 +5462,9 @@
       ],
       "Boost transaction priority": [
         "Zwiększ priorytet transakcji"
+      ],
+      "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
+        "Podwyższając opłatę sieciową, możesz nadać priorytet szybkości transakcji, dzięki czemu zostanie ona szybciej przetworzona i potwierdzona."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "Nie można użyć skanera kodów QR. Sprawdź zgodność przeglądarki."
@@ -5534,7 +5618,7 @@
         "Bitcoin na adres e-mail"
       ],
       "Browser storage cleared. Please refresh the page": [
-        "Pamięć przeglądarki wyczyszczona. Odśwież stronę"
+        "Pamięć przeglądarki została wyczyszczona. Odśwież stronę"
       ],
       "Could not fill the pool after email address addition": [
         "Nie można uzupełnić puli po dodaniu adresu e-mail"
@@ -5698,12 +5782,6 @@
       ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "Fraza seed portfela koduje klucz prywatny, który kontroluje Twoje cyfrowe środki."
-      ],
-      "Wallet seed phrase is incorrect. Please check this and try again.": [
-        "Fraza seed portfela jest niepoprawna. Sprawdź ją i spróbuj ponownie."
-      ],
-      "Wallet seed phrase length is invalid. This should be between 12 to 24 words.": [
-        "Długość frazy seed portfela jest niepoprawna. Fraza powinna zawierać od 12 do 24 słów."
       ],
       "Wallet setup": [
         "Konfiguracja portfela"
@@ -5977,14 +6055,6 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
-      ],
-      "Bitcoin via email": [
-        "Bitcoiny przez e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer/easier way to hold & send Bitcoin": [
-        "Bezpieczniejsza i łatwiejsza metoda przechowywania i wysyłania Bitcoinów"
       ]
     },
     "wallet_signup_2024:Bug category": {
