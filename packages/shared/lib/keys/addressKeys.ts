@@ -513,3 +513,24 @@ export const getNewAddressKeyTokenFromOrgKey = async ({
         return generateAddressKeyTokensUsingOrgKey(decryptedOrganizationKey);
     }
 };
+
+export async function reencryptAddressKeyTokenUsingOrgKey(
+    addressKey: AddressKey,
+    oldOrganizationKey: CachedOrganizationKey,
+    newOrganizationKey: PrivateKeyReference
+) {
+    if (!oldOrganizationKey.privateKey) {
+        throw new Error('Missing old organization key');
+    }
+
+    const { token } = await getPreviousAddressKeyToken({
+        addressKey: addressKey,
+        privateKeys: oldOrganizationKey.privateKey,
+        publicKeys: oldOrganizationKey.publicKey,
+    });
+    const { encryptedToken, signature } = await encryptAddressKeyUsingOrgKeyToken({
+        token,
+        organizationKey: newOrganizationKey,
+    });
+    return { encryptedToken, signature };
+}
