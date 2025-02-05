@@ -97,6 +97,7 @@ export interface NoApiProps extends Props {
     billingAddressStatus?: BillingAddressStatus;
     formErrors?: FormErrorsHook;
     onChargebeeInitialized?: () => void;
+    showCardIcons?: boolean;
 }
 
 export const PaymentsNoApi = ({
@@ -142,6 +143,7 @@ export const PaymentsNoApi = ({
     paymentStatus,
     formErrors,
     onChargebeeInitialized,
+    showCardIcons,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -253,6 +255,7 @@ export const PaymentsNoApi = ({
                         onChange={(value) => onMethod(value)}
                         lastUsedMethod={lastUsedMethod}
                         narrow={isSingleSignup}
+                        showCardIcons={showCardIcons}
                     />
                 </div>
                 <div className="mt-4">
