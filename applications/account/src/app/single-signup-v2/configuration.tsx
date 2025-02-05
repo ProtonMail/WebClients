@@ -36,6 +36,7 @@ import {
     getRefundable,
     getVPNAppFeature,
 } from '@proton/components/containers/payments/features/vpn';
+import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import { PLANS } from '@proton/payments';
 import { APPS, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -149,6 +150,7 @@ export const getSummaryPlan = ({
                 getDriveAppFeature(),
                 getVPNAppFeature({ serversCount: vpnServersCountData }),
                 getPassAppFeature(),
+                getWalletAppFeature(),
             ],
         };
     }
