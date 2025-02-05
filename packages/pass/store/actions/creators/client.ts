@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
@@ -39,8 +40,10 @@ export const wakeupSuccess = createAction(
     withRequestSuccess((receiver: EndpointOptions) => withReceiver(receiver)({ payload: {} }))
 );
 
-export const bootIntent = createAction('boot::intent', (payload?: { offline: boolean }) =>
-    withRequest({ id: bootRequest(), status: 'start' })({ payload })
+export const bootIntent = createAction(
+    'boot::intent',
+    (payload?: { offline?: boolean; reauth?: ReauthActionPayload }) =>
+        withRequest({ id: bootRequest(), status: 'start' })({ payload })
 );
 
 export const bootFailure = createAction('boot::failure', (error?: unknown) =>

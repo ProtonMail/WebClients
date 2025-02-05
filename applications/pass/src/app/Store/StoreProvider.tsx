@@ -26,6 +26,7 @@ import {
     getLocalPath,
     removeLocalPath,
 } from '@proton/pass/components/Navigation/routing';
+import { useReauthActionHandler } from '@proton/pass/hooks/auth/useReauthActionHandler';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -63,10 +64,12 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const history = useHistory();
     const { installed } = usePassExtensionLink();
     const online = useConnectivity();
-
     const sw = useServiceWorker();
+
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
+
+    const handleReauthAction = useReauthActionHandler();
 
     useEffect(() => {
         const runner = sagaMiddleware.run(
@@ -138,6 +141,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         }
 
                         history.replace({ ...history.location, search });
+
+                        if (res.reauth) void handleReauthAction(res.reauth);
                     } else if (res.clearCache) void deletePassDB(userID);
                 },
 
