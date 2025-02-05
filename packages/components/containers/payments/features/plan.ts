@@ -550,12 +550,10 @@ export const getVisionaryPlan = ({
     serversCount,
     plan,
     freePlan,
-    walletEnabled,
 }: {
     serversCount: VPNServersCountData;
     plan: Plan;
     freePlan: FreePlanDefault;
-    walletEnabled?: boolean;
 }): ShortPlan => {
     const planName = plan.Title;
     return {
@@ -575,7 +573,7 @@ export const getVisionaryPlan = ({
             getDriveAppFeature(),
             getPassAppFeature(),
             getVPNAppFeature({ serversCount, family: false }),
-            walletEnabled && getWalletAppFeature(),
+            getWalletAppFeature(),
         ].filter(isTruthy),
     };
 };
