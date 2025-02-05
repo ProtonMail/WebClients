@@ -25,10 +25,9 @@ interface Props {
     minimized: boolean;
     onToggleMinimize: () => void;
     onClose: () => void;
-    theme: 'prominent' | 'standard';
 }
 
-const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimized = false, theme }: Props) => {
+const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimized = false }: Props) => {
     const [uploadsInSession, setUploadsInSession] = useState<Upload[]>([]);
     const [downloadsInSession, setDownloadsInSession] = useState<Download[]>([]);
 
@@ -189,7 +188,7 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
     const closeTitle = c('Action').t`Close transfers`;
 
     return (
-        <div className={`transfers-manager-heading ui-${theme} flex items-center flex-nowrap px-2`}>
+        <div className="transfers-manager-heading flex items-center flex-nowrap px-2">
             <div
                 role="presentation"
                 className="flex-1 p-2"
