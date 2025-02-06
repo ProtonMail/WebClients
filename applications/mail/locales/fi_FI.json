@@ -148,6 +148,9 @@
       "Authenticate": [
         "Tunnistaudu"
       ],
+      "Auto-delete spam and trash": [
+        "Roskapostin ja roskakorin automaattinen tyhjennys"
+      ],
       "Back": [
         "Takaisin"
       ],
@@ -542,6 +545,9 @@
       ],
       "Get started": [
         "Aloita"
+      ],
+      "Get the app": [
+        "Hanki sovellus"
       ],
       "Get the browser extension": [
         "Hanki selainlaajennus"
@@ -1929,6 +1935,9 @@
       "Discover and set up features": [
         "Tutustu ja määritä ominaisuuksia"
       ],
+      "Got it": [
+        "Selvä"
+      ],
       "Maybe later": [
         "Ehkä myöhemmin"
       ],
@@ -2668,6 +2677,9 @@
       ],
       "Work": [
         "Työ"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3585,7 +3597,7 @@
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
       "Also included": [
-        "Sisältyy myös"
+        "Sisältää myös:"
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Päivitä tilauksesi poistaaksesi roskapostit ja roskakorissa olevat viestit automaattisesti, ja avataksesi muita premium-ominaisuuksia."
@@ -5149,6 +5161,11 @@
         "Erittäin pieni"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Päiväys: ${ date }"
@@ -5403,6 +5420,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -5411,6 +5431,9 @@
       ],
       "No verification method available": [
         "Vahvistustapoja ei ole"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5700,6 +5723,9 @@
       ],
       "ICS file": [
         "ICS-tiedosto"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -6381,6 +6407,9 @@
         "upotettu kuva",
         "upotettua kuvaa"
       ],
+      "Enabling auto-deletion…": [
+        "Otetaan automaattista poistoa käyttöön…"
+      ],
       "Encrypt message": [
         "Salaa viesti"
       ],
@@ -6576,6 +6605,9 @@
       ],
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
+      ],
+      "Invite family members and get everything up and running.": [
+        "Kutsu perheenjäseniä ja aloita käyttö."
       ],
       "JCB logo": [
         "JCB-logo"
@@ -7827,6 +7859,9 @@
       ],
       "Trusted": [
         "Luotettu"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -10261,8 +10296,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Verkkodokumenttieditori"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Storage": [
         "Tallennustila"
@@ -10665,6 +10706,11 @@
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
@@ -10983,6 +11029,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Kutsun uudelleensalaus epäonnistui. Yritä uudelleen."
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Tarkista tiliturvallisuus"
       ]
     },
     "saml: Error": {
@@ -11524,6 +11575,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Päivitä hintaan ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -12718,6 +12772,9 @@
       "Account recovery": [
         "Tilin palautus"
       ],
+      "Account restricted": [
+        "Tiliä on rajoitettu"
+      ],
       "Account security": [
         "Tilin suojaus"
       ],
@@ -12778,6 +12835,9 @@
       ],
       "Attachments": [
         "Liitteet"
+      ],
+      "Auto-deletion is active": [
+        "Automaattinen poisto on käytössä"
       ],
       "Bad time for this email?": [
         "Huono aika tälle sähköpostille?"
@@ -13687,11 +13747,19 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Turvallisempi tapa säilyttää Bitcoineja"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin sähköpostitse"
       ]
     },
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Käytä Wallet-sovellusta"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
       ]
     },
     "wallet_signup_2024:Bug category": {
