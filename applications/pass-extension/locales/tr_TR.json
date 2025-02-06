@@ -30,7 +30,7 @@
         "Etki alanı ekle"
       ],
       "Add forwarding mailbox": [
-        "İletilen E-posta kutusu ekle"
+        "İletme e-posta kutusu ekle"
       ],
       "Add mailbox": [
         "E-posta kutusu ekle"
@@ -1268,7 +1268,7 @@
         "${ PASS_APP_NAME } sistem ayarlarınıza uyacak."
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
-        "${ PASS_APP_NAME } panoya kopyalayabileceğiniz bir yönlendirme adresi (ters takma ad olarak da bilinir) oluşturacak."
+        "${ PASS_APP_NAME } panoya kopyalayabileceğiniz bir iletme adresi (ters takma ad olarak da bilinir) oluşturacak."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
@@ -2008,7 +2008,7 @@
         "Ayarlar güncellendi"
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
-        "Takma adları başkalarıyla paylaşmak için onların gelen kutusunu yönlendirme E-posta kutusu olarak ekleyin."
+        "Takma adları başkalarıyla paylaşmak için alıcıların gelen kutularını iletme e-posta kutusu olarak ekleyin."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
@@ -3781,6 +3781,14 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ]
+    },
+    "Valentine_2025": {
+      "VALENTINE'S DEAL": [
+        "SEVGİLİLER GÜNÜ FIRSATI"
+      ],
+      "Valentine's deal: ${ planName } 50% off for you": [
+        "Sevgililer Günü fırsatı: ${ planName } için %50 indirim"
       ]
     },
     "Validation": {
