@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Copiado para a área de transferência"
       ],
+      "Copy password": [
+        "Copiar senha"
+      ],
       "Copy version number to clipboard": [
         "Copiar número da versão para a área de transferência"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Criar gateway"
+      ],
+      "Create new password": [
+        "Criar nova senha"
       ],
       "Create new policy": [
         "Criar uma política"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Esqueceu um método de recuperação?"
+      ],
+      "Generate password": [
+        "Gerar senha"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtenha o ${ planName } por ${ priceCoupon }"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Iniciar sessão com sua senha"
-      ],
-      "Sign in with SSO": [
-        "Iniciar sessão com SSO"
       ],
       "Sign out": [
         "Encerrar sessão"
@@ -3772,6 +3778,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Peça ao administrador de sua organização para configurar os Gateways."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Pelo menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
       "Attention required": [
         "Atenção necessária"
       ],
@@ -4103,9 +4112,6 @@
       "for choosing ${ product }": [
         "por escolher ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Para membros da organização usando o login único (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para usuários que estão migrando de outro serviço de e-mail para ${ MAIL_APP_NAME }, selecione a guia ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registro MX para garantir uma transição tranquila."
       ],
@@ -4409,6 +4415,9 @@
       "No addresses exist": [
         "Não existem endereços"
       ],
+      "No common passwords": [
+        "Nenhuma senha comum"
+      ],
       "No gateways": [
         "Sem gateways"
       ],
@@ -4429,6 +4438,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
+      ],
+      "Numbers": [
+        "Números"
       ],
       "of": [
         "de"
@@ -4763,6 +4775,9 @@
       "Switch to": [
         "Mudar para"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Thank you": [
         "Obrigado"
       ],
@@ -4975,6 +4990,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Envie o logotipo da sua organização para impulsionar a identidade da sua marca e criar uma experiência personalizada para seus usuários"
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras maiúsculas e minúsculas:"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Use um método de recuperação para desativar seu método de autenticação de dois fatores."
@@ -5694,6 +5712,9 @@
       "Enter the code displayed on your TV": [
         "Digite o código exibido na sua TV"
       ],
+      "Enter your password": [
+        "Digite sua senha"
+      ],
       "Entity ID": [
         "ID da entidade"
       ],
@@ -5947,6 +5968,9 @@
       "Strong": [
         "Forte"
       ],
+      "Strong password": [
+        "Senha forte"
+      ],
       "Subscription options": [
         "Opções de assinatura"
       ],
@@ -5998,11 +6022,17 @@
       "Vulnerable": [
         "Vulnerável"
       ],
+      "Vulnerable password": [
+        "Senha vulnerável"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Sentimos muito em vê-lo partir. Explique por que você está partindo para nos ajudar a melhorar."
       ],
       "Weak": [
         "Fraco"
+      ],
+      "Weak password": [
+        "Senha fraca"
       ],
       "What happened?": [
         "O que aconteceu?"
@@ -6137,6 +6167,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Não tem acesso ao seu A2F?"
+      ],
+      "Forgot email?": [
+        "Esqueceu o e-mail?"
       ],
       "Forgot password?": [
         "Esqueceu sua senha?"
@@ -9257,6 +9290,9 @@
       ],
       "User details:": [
         "Detalhes do usuário"
+      ],
+      "Welcome": [
+        "Bem-vindo"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Você terá que criar manualmente novos usuários para adicioná-los à sua organização."

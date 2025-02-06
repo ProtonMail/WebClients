@@ -322,6 +322,9 @@
       "Forgot recovery method?": [
         "დაგავიწყდათ აღდგენის მეთოდი?"
       ],
+      "Generate password": [
+        "პაროლის გენერირება"
+      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "დააყენეთ ${ planName } ${ priceCoupon }-სთვის"
       ],
@@ -639,9 +642,6 @@
       ],
       "Sign in with password": [
         "პაროლით შესვლა"
-      ],
-      "Sign in with SSO": [
-        "Sign in with SSO"
       ],
       "Sign out": [
         "გასვლა"
@@ -2512,6 +2512,9 @@
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "გადახდის მისამართის ჩასწორება, ამჟამად, ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
+      ],
       "Email address is invalid": [
         "ელფოსტის მისამართი არასწორია"
       ],
@@ -4087,9 +4090,6 @@
       ],
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "ორგანიზაციის წევრებისთვის, რომელიც SSO-ს (SAML SSO) იყენებენ"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "მომხმარებლებისთვს, რომლებიც ${ MAIL_APP_NAME }-ზე სხვა ელფოსტის სერვისიდან გადმოდიან, აირჩიეთ ${ boldAddresses } ჩანართი და დაამატეთ ყველა აქტიური ელფოსტის მისამართი, სანამ MX ჩანაწერს შეცვლით, რათა შუაში ელფოსტა არ დაკარგოთ."
@@ -8299,6 +8299,11 @@
       ],
       "User": [
         "მომხმარებელი"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "ანგარიშის უსაფრთხოების გადახედვა"
       ]
     },
     "saml: Action": {

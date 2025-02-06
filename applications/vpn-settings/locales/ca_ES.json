@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Copia la clau al porta-retalls"
       ],
+      "Copy password": [
+        "Copia la contrasenya"
+      ],
       "Copy version number to clipboard": [
         "Copia el número de versió al porta-retalls"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Crea una passarel·la"
+      ],
+      "Create new password": [
+        "Crea una contrasenya nova"
       ],
       "Create new policy": [
         "Crea una política"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Heu oblidat el mètode de recuperació?"
+      ],
+      "Generate password": [
+        "Genera la contrasenya"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obteniu ${ planName } per ${ priceCoupon }."
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Inicieu la sessió amb una contrasenya"
-      ],
-      "Sign in with SSO": [
-        "Inicieu la sessió amb SSO"
       ],
       "Sign out": [
         "Tanca la sessió"
@@ -2454,7 +2460,7 @@
         "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només apareixerà en les factures emeses en el futur i no afectarà les factures existents."
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només canviarà la factura que hàgiu seleccionat i no els detalls de la vostra factura futura."
+        "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només canviarà la factura que heu seleccionat i no els detalls de les factures futures."
       ]
     },
     "Email spam notification": {
@@ -2528,7 +2534,7 @@
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
-        "L'edició de l'adreça de facturació no està disponible en aquests moments. Proveu de nou més tard."
+        "L'edició de l'adreça de facturació no està disponible en aquests moments. Torneu a provar més tard."
       ],
       "Email address is invalid": [
         "L'adreça de correu electrònic no és vàlida."
@@ -3505,7 +3511,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Afegiu aquest registre al domini, al tauler de control del registrador"
+        "Afegiu aquest registre al domini, al tauler de control del registrador de noms de domini"
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "S'ha trobat ${ itemsCount } suggeriment. Utilitzeu el teclat per navegar.",
@@ -3777,6 +3783,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Demaneu a l'administrador de l'organització que configuri passarel·les."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
@@ -4109,9 +4118,6 @@
       "for choosing ${ product }": [
         "per escollir ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Per a membres d'organitzacions que utilitzen un inici de sessió únic (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
       ],
@@ -4255,6 +4261,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Es triga 10 dies a canviar el país d'un servidor. Assegureu-vos que la vostra selecció sigui correcta."
+      ],
+      "It's better to have:": [
+        "És millor tenir:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "S'ha emplenat automàticament l'element a ${ vaultLink }"
@@ -4415,6 +4424,9 @@
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
       ],
+      "No common passwords": [
+        "Cap contrasenya comuna"
+      ],
       "No gateways": [
         "Sense passarel·les"
       ],
@@ -4427,6 +4439,9 @@
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Cap seqüència predictible (1234, aaa)"
+      ],
       "No results found": [
         "No s'ha trobat cap resultat."
       ],
@@ -4435,6 +4450,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
+      ],
+      "Numbers": [
+        "Números"
       ],
       "of": [
         "de"
@@ -4766,6 +4784,9 @@
       "Switch to": [
         "Canvia a"
       ],
+      "Symbols (#$&)": [
+        "Símbols (#$&)"
+      ],
       "Thank you": [
         "Gràcies"
       ],
@@ -4978,6 +4999,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Carregueu el logo de la vostra organització per millorar la identitat de marca i crear una experiència personalitzada per als usuaris."
+      ],
+      "Uppercase and lowercase letters": [
+        "Lletres majúscules i minúscules"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Utilitzeu un mètode de recuperació per desactivar els mètodes d'autenticació de doble factor."
@@ -5697,6 +5721,9 @@
       "Enter the code displayed on your TV": [
         "Introduïu el codi que es mostra al televisor"
       ],
+      "Enter your password": [
+        "Introduïu la contrasenya"
+      ],
       "Entity ID": [
         "Identificador de l'entitat"
       ],
@@ -5774,6 +5801,9 @@
       ],
       "Moderate NAT": [
         "NAT moderat"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
       ],
       "Name": [
         "Nom"
@@ -5950,6 +5980,9 @@
       "Strong": [
         "Forta"
       ],
+      "Strong password": [
+        "Contrasenya forta"
+      ],
       "Subscription options": [
         "Opcions de subscripció"
       ],
@@ -5998,11 +6031,17 @@
       "Vulnerable": [
         "Vulnerable"
       ],
+      "Vulnerable password": [
+        "Contrasenya vulnerable"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ens sap greu que marxeu. Expliqueu perquè us n'aneu per ajudar-nos a millorar."
       ],
       "Weak": [
         "Feble"
+      ],
+      "Weak password": [
+        "Contrasenya feble."
       ],
       "What happened?": [
         "Què ha passat?"
@@ -6137,6 +6176,9 @@
       ],
       "Don't have access to your 2FA?": [
         "No teniu accés a l'A2F?"
+      ],
+      "Forgot email?": [
+        "Heu oblidat el vostre correu electrònic?"
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -7952,6 +7994,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Heu estat nomenat administrador de l'organització **${ organizationName }** per"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Heu de suprimir tots els grups abans de generar una clau d'organització nova."
+      ],
       "You must privatize all users before generating a new organization key": [
         "Heu de privatitzar tots els usuaris abans de generar una clau d'organització nova"
       ],
@@ -9181,7 +9226,7 @@
         "Nova contrasenya de recuperació"
       ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
-        "Els usuaris que no utilitzen un inici de sessió únic (SSO) - creats manualment, no proporcionats pel vostre proveïdor d'identitat - encara poden iniciar sessió a la vostra organització."
+        "Els usuaris que no utilitzen un inici de sessió únic (SSO) —creats manualment, no proporcionats pel vostre proveïdor d'identitat— encara poden iniciar sessió a la vostra organització."
       ],
       "Once single sign-on is disabled for your organization:": [
         "Un cop desactivat l'inici de sessió únic per a la vostra organització:"
@@ -9239,6 +9284,9 @@
       ],
       "User details:": [
         "Detalls de l'usuari:"
+      ],
+      "Welcome": [
+        "Us donem la benvinguda"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Haureu de crear nous usuaris manualment per afegir-los a la vostra organització."
@@ -9874,7 +9922,7 @@
     },
     "Subtitle": {
       "View VPN session details for your organization.": [
-        "Afegiu les informacions de la sessió VPN per a la vostra organització."
+        "Veieu els detalls de la sessió VPN de la vostra organització."
       ]
     },
     "Success": {

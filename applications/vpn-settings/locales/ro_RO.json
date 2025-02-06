@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Copiere cheie în memorie"
       ],
+      "Copy password": [
+        "Copiere parolă"
+      ],
       "Copy version number to clipboard": [
         "Copiere număr versiune în memorie"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Creare poartă de acces"
+      ],
+      "Create new password": [
+        "Creare parolă"
       ],
       "Create new policy": [
         "Creare regulă"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Ați uitat metoda de recuperare?"
+      ],
+      "Generate password": [
+        "Generare parolă"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Luați ${ planName } cu ${ priceCoupon }"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Autentificare cu parolă"
-      ],
-      "Sign in with SSO": [
-        "Autentificare cu SSO"
       ],
       "Sign out": [
         "Deconectare"
@@ -2462,6 +2468,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Câmpurile de text sunt opționale. Informațiile pe care le furnizați în acest formular vor modifica doar factura pe care ați selectat-o ​​și nu detaliile viitoarei facturi."
       ]
     },
     "Email spam notification": {
@@ -2533,6 +2542,9 @@
       ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Editarea adresei de facturare nu este disponibilă momentan. Reîncercați mai târziu."
       ],
       "Email address is invalid": [
         "Adresa de e-mail nu este validă."
@@ -3811,6 +3823,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Solicitați administratorului organizației să seteze porțile de acces."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
+      ],
       "Attention required": [
         "Necesită atenție"
       ],
@@ -4146,9 +4161,6 @@
       "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Pentru membrii organizației care folosesc conectarea unică (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
       ],
@@ -4292,6 +4304,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Durează 10 zile pentru a schimba serverul unei țări, așa că asigurați-vă că l-ați ales pe cel potrivit."
+      ],
+      "It's better to have:": [
+        "Este bine să aveți:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Articol autocompletat în ${ vaultLink }."
@@ -4452,6 +4467,9 @@
       "No addresses exist": [
         "Nu există adrese"
       ],
+      "No common passwords": [
+        "Fără parole comune"
+      ],
       "No gateways": [
         "Nu există porți de acces"
       ],
@@ -4464,6 +4482,9 @@
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Fără secvențe predictibile (1234, aaa)"
+      ],
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
@@ -4472,6 +4493,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
+      ],
+      "Numbers": [
+        "Cifre"
       ],
       "of": [
         "din"
@@ -4812,6 +4836,9 @@
       "Switch to": [
         "Comutare la"
       ],
+      "Symbols (#$&)": [
+        "Simboluri (#$&)"
+      ],
       "Thank you": [
         "Vă mulțumim"
       ],
@@ -5027,6 +5054,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Încărcați sigla organizației proprii pentru a vă îmbunătăți identitatea mărcii și pentru a crea o experiență personalizată pentru utilizatorii dvs."
+      ],
+      "Uppercase and lowercase letters": [
+        "Litere mari și mici"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Utilizați o metodă de recuperare pentru a dezactiva metodele de autentificare cu doi factori."
@@ -5757,6 +5787,9 @@
       "Enter the code displayed on your TV": [
         "Introduceți codul afișat pe TV"
       ],
+      "Enter your password": [
+        "Introduceți parola"
+      ],
       "Entity ID": [
         "ID entitate"
       ],
@@ -5834,6 +5867,9 @@
       ],
       "Moderate NAT": [
         "NAT moderat"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Trebuie să aibă cel puțin ${ MIN_PASSWORD_LENGTH } caractere"
       ],
       "Name": [
         "Nume"
@@ -6011,6 +6047,9 @@
       "Strong": [
         "Puternică"
       ],
+      "Strong password": [
+        "Parolă puternică"
+      ],
       "Subscription options": [
         "Opțiuni abonament"
       ],
@@ -6062,11 +6101,17 @@
       "Vulnerable": [
         "Vulnerabilă"
       ],
+      "Vulnerable password": [
+        "Parolă vulnerabilă"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ne pare rău că ne părăsiți. Vă rugăm să ne explicaţi de ce plecaţi pentru a ne ajuta să îmbunătăţim serviciul."
       ],
       "Weak": [
         "Slabă"
+      ],
+      "Weak password": [
+        "Parolă slabă"
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
@@ -6201,6 +6246,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Nu aveți acces la A2F?"
+      ],
+      "Forgot email?": [
+        "V-ați uitat adresa de e-mail?"
       ],
       "Forgot password?": [
         "Ați uitat parola?"
@@ -8459,6 +8507,11 @@
         "Utilizator"
       ]
     },
+    "Safety review": {
+      "Review account safety": [
+        "Revizuire securitate cont"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Anulare"
@@ -9381,6 +9434,9 @@
       ],
       "User details:": [
         "Detalii utilizator:"
+      ],
+      "Welcome": [
+        "Bun venit"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Va trebui să creați utilizatorii manual pentru a-i adăuga în organizație."
@@ -11675,6 +11731,9 @@
       ],
       "A safer way to hold your Bitcoin": [
         "O metodă mai sigură de a vă păstra monedele Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin prin e-mail"
       ]
     },
     "wallet_signup_2024:app-switcher": {
