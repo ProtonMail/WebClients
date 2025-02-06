@@ -246,6 +246,7 @@ export type PaymentMethodFlows =
     | 'signup'
     | 'signup-pass'
     | 'signup-pass-upgrade'
+    | 'signup-wallet'
     | 'signup-v2'
     | 'signup-v2-upgrade'
     | 'signup-vpn'

@@ -246,16 +246,18 @@ export const getNoLogsFeature = () => ({
     text: c('signup: Feature').t`Strict no-logs policy`,
 });
 
+export const getOpenSourceFeature = () => ({
+    key: 'open-source',
+    left: <Icon size={6} className="color-primary" name="globe" />,
+    text: c('pass_signup_2023: Feature').t`Open source`,
+});
+
 export const getGenericFeatures = (isLargeViewport: boolean, audience?: Audience) => {
     const e2ee = getEncryptedFeature({ e2ee: true });
 
     const swiss = getSwissFeature({ fullText: isLargeViewport });
 
-    const openSource = {
-        key: 'open-source',
-        left: <Icon size={6} className="color-primary" name="globe" />,
-        text: c('pass_signup_2023: Feature').t`Open source`,
-    };
+    const openSource = getOpenSourceFeature();
 
     const gdpr = {
         key: 'gdpr',

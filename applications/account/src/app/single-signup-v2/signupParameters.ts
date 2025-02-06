@@ -125,24 +125,6 @@ export const getSignupParameters = ({
         result.noPromo = true;
     }
 
-    if (toApp === APPS.PROTONWALLET && email && preVerifiedAddressToken) {
-        mode = SignupMode.Invite;
-        localID = -1;
-        invite = {
-            type: 'wallet',
-            data: { invitee: email, preVerifiedAddressToken },
-        };
-        result.preSelectedPlan = PLANS.FREE;
-        result.noPromo = true;
-    } else if (
-        toApp === APPS.PROTONWALLET &&
-        // If it's not visionary or wallet, force free selection
-        !new Set([PLANS.VISIONARY, PLANS.WALLET]).has(result.preSelectedPlan as any)
-    ) {
-        // TODO: WalletEA
-        result.preSelectedPlan = PLANS.FREE;
-    }
-
     if (result.referrer) {
         mode = SignupMode.MailReferral;
         localID = -1;
