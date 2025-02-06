@@ -882,6 +882,9 @@
       "Upload file": [
         "Tallenna tiedosto"
       ],
+      "Upload files": [
+        "Lähetä tiedostoja"
+      ],
       "Upload folder": [
         "Tallenna kansio"
       ],
@@ -939,6 +942,11 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Lähetä"
       ]
     },
     "Actions message": {
@@ -1556,6 +1564,9 @@
       ],
       "Work": [
         "Työ"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2405,7 +2416,7 @@
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
       "Also included": [
-        "Sisältyy myös"
+        "Sisältää myös:"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
@@ -2427,6 +2438,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
+      ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "Pidä tiedostosi, valokuvasi ja dokumenttisi turvassa päästä päähän -salauksella"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja yhdistetään... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
@@ -3492,6 +3506,20 @@
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
       ]
     },
+    "Feature": {
+      "Access on mobile and desktop": [
+        "Käytettävissä mobiililaitteella ja tietokoneella"
+      ],
+      "Free 5 GB storage": [
+        "5 Gt ilmaista tallennustilaa"
+      ],
+      "Save files for later access": [
+        "Tallenna tiedostoja myöhempää käyttöä varten"
+      ],
+      "Share privately and securely": [
+        "Jaa yksityisesti ja turvallisesti"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
@@ -3615,6 +3643,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -3623,6 +3654,9 @@
       ],
       "No verification method available": [
         "Vahvistustapoja ei ole"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3895,6 +3929,9 @@
       ],
       "ICS file": [
         "ICS-tiedosto"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4400,6 +4437,9 @@
       "Drop files here": [
         "Pudota tiedostoja tähän"
       ],
+      "Drop files here to upload or click on the upload button": [
+        "Lähetä tiedostoja vetämällä ne tähän tai klikkaamalla lähetyspainiketta"
+      ],
       "Drop to import": [
         "Tuo pudottamalla"
       ],
@@ -4423,6 +4463,9 @@
       ],
       "Empty folder": [
         "Tyhjä kansio"
+      ],
+      "Enabling auto-deletion…": [
+        "Otetaan automaattista poistoa käyttöön…"
       ],
       "Enabling drive search": [
         "Levyhakua otetaan käyttöön"
@@ -5107,17 +5150,8 @@
       "There is nothing to see here": [
         "Täällä ei ole mitään nähtävää"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Tämä toiminto poistaa lähettämäsi tiedoston pysyvästi."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Tämä toiminto poistaa lähettämäsi kansion pysyvästi. Et voi poistaa kansiota, joka sisältää tiedoston, jota et omista."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Tämä poistaa linkin ja mitätöi kaikki jaetut käyttöoikeudet."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Tämä toiminto poistaa valitut kohteet pysyvästi."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
@@ -5154,6 +5188,15 @@
       ],
       "This month": [
         "Tässä kuussa"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Tämä poistaa lähettämäsi tiedoston pysyvästi."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Tämä poistaa lähettämäsi kansion pysyvästi."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Tämä poistaa lähettämäsi valitut kohteet pysyvästi."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Tämä poistaa synkronoidun laitteen ${ deviceName } ${ DRIVE_APP_NAME }:stä ja kaikki sen tiedot ${ DRIVE_APP_NAME }stä. Omiin tietokoneisiisi lisäämiäsi kansioita ei enää synkronoida."
@@ -5510,6 +5553,9 @@
       "Your email address was exposed:": [
         "Sähköpostiosoitteesi vuosi:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Sähköpostiosoitteesi näkyy linkin omistajana jakosivulla"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
@@ -5630,6 +5676,9 @@
       ],
       "Trusted": [
         "Luotettu"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -5671,6 +5720,9 @@
       ],
       "Address": [
         "Osoite"
+      ],
+      "All": [
+        "Kaikki"
       ],
       "Anderson": [
         "Andersson"
@@ -6329,6 +6381,11 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "Sisältää myös:"
       ]
     },
     "Loading info": {
@@ -7828,6 +7885,10 @@
       "Share invitation declined": [
         "Kieltäydyit jakokutsusta"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Valitettavasti emme voineet poistaa kansiota, koska se ei ole tyhjä.",
+        "Valitettavasti emme voineet poistaa kansioita, koska ne eivät ole tyhjiä."
+      ],
       "Stopping the sharing of this item has failed": [
         "Kohteen jakamisen lopetus epäonnistui"
       ],
@@ -7929,8 +7990,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Verkkodokumenttieditori"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Storage": [
         "Tallennustila"
@@ -8285,6 +8352,11 @@
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
@@ -8488,6 +8560,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Tarkista tiliturvallisuus"
       ]
     },
     "saml: Error": {
@@ -8867,6 +8944,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Päivitä hintaan ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9710,6 +9790,35 @@
         "vCard-kenttä"
       ]
     },
+    "Tag": {
+      "Bursts": [
+        "Sarjakuvaukset"
+      ],
+      "Favorites": [
+        "Suosikit"
+      ],
+      "Live Photos": [
+        "Live Photo -kuvat"
+      ],
+      "Panoramas": [
+        "Panoraamat"
+      ],
+      "Portraits": [
+        "Muotokuvat"
+      ],
+      "RAW": [
+        "RAW-kuvat"
+      ],
+      "Screenshots": [
+        "Kuvakaappaukset"
+      ],
+      "Selfies": [
+        "Selfiet"
+      ],
+      "Videos": [
+        "Videot"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } t",
@@ -9810,6 +9919,9 @@
       ],
       "Are you sure?": [
         "Oletko varma?"
+      ],
+      "Auto-deletion is active": [
+        "Automaattinen poisto on käytössä"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -9962,6 +10074,9 @@
       ],
       "Download unverified folder?": [
         "Ladataanko vahvistamaton kansio?"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Drop to upload": [
         "Lataa pudottamalla"
@@ -10563,6 +10678,14 @@
         "${ n } lompakkoa"
       ],
       "A safer way to hold your Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin sähköpostitse"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
         "Turvallisempi tapa säilyttää Bitcoineja"
       ]
     },

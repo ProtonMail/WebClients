@@ -46,6 +46,9 @@
       "Add domain": [
         "Προσθήκη domain"
       ],
+      "Add forwarding mailbox": [
+        "Προσθήκη γραμματοκιβωτίου προώθησης"
+      ],
       "Add mailbox": [
         "Προσθήκη γραμματοκιβωτίου"
       ],
@@ -69,6 +72,9 @@
       ],
       "Advanced options": [
         "Προηγμένες επιλογές"
+      ],
+      "Apply lifetime coupon code": [
+        "Εφαρμόστε τον κωδικό κουπονιού διάρκειας ζωής"
       ],
       "Authenticate": [
         "Ταυτοποίηση"
@@ -649,6 +655,150 @@
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
       ]
     },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 χρήστης"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 χρήστες"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } αποθηκευτικός χώρος"
+      ],
+      "1 TB total": [
+        "1 TB συνολικά"
+      ],
+      "1 user": [
+        "1 χρήστης"
+      ],
+      "1 user account": [
+        "1 λογαριασμός χρήστη"
+      ],
+      "10 email addresses": [
+        "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "2 users": [
+        "2 χρήστες"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 λογαριασμοί χρηστών"
+      ],
+      "6 users": [
+        "6 χρήστες"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ διακομιστές σε 110+ χώρες"
+      ],
+      "Ad-blocker and malware protection": [
+        "Φραγή Διαφημίσεων και προστασία από κακόβουλο λογισμικό"
+      ],
+      "Admin panel to manage your family": [
+        "Πίνακας διαχείρισης για να διαχειριστείτε την οικογένειά σας"
+      ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
+      "Easily add or remove users": [
+        "Εύκολη προσθήκη ή αφαίρεση χρηστών"
+      ],
+      "High speed streaming": [
+        "Ροή υψηλής ταχύτητας"
+      ],
+      "Integrated 2FA authenticator": [
+        "Ενσωματωμένος ελεγκτής 2FA"
+      ],
+      "One-time payment, lifetime deal": [
+        "Εφάπαξ πληρωμή, συμφωνία εφ' όρου ζωής"
+      ],
+      "Online document editor": [
+        "Ηλεκτρονικός επεξεργαστής εγγράφων"
+      ],
+      "Password health alerts": [
+        "Υγεία κωδικού πρόσβασης"
+      ],
+      "Private photo backup": [
+        "Ιδιωτική δημιουργία αντιγράφων ασφαλείας φωτογραφιών"
+      ],
+      "Protect 10 devices at a time": [
+        "Προστατέψτε 10 συσκευές ανά φορά"
+      ],
+      "Secure file storage & sharing": [
+        "Ασφαλής αποθήκευση & κοινή χρήση αρχείων"
+      ],
+      "Secure vault and link sharing": [
+        "Ασφαλής κρύπτη και κοινή χρήση συνδέσμων"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Απεριόριστα hide-my-email ψευδώνυμα"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Unlimited logins, notes, credit cards"
+      ],
+      "Version history": [
+        "Ιστορικό εκδόσεων"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Χρεώνεται σε ${ amount } μία φορά"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Ανανεώνεται μετά από 1 μήνα στα ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 8.500+ διακομιστές σε 110+ χώρες, 10 συσκευές, ταχύτητες VPN υψηλής ταχύτητας, φραγή διαφημίσεων και προστασία από κακόβουλο λογισμικό, VPN Accelerator και άλλα."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+, Prime Video και άλλων, από οπουδήποτε."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα hide-my-email, κοινή χρήση, ενσωματωμένο 2FA, ${ DARK_WEB_MONITORING_NAME } και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονική διεύθυνση, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση . Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και άλλα."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο cloud storage. Περιλαμβάνει ηλεκτρονικό επεξεργαστή εγγράφων, δημιουργία αντιγράφων ασφαλείας φωτογραφιών, ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Το ειδικά σχεδιασμένο NetShield προστατεύει τις συσκευές σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
@@ -761,6 +911,14 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Τα προσωπικά σας στοιχεία διέρρευσαν σε παραβίαση δεδομένων μιας υπηρεσίας τρίτου μέρους."
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Εκτεταμένο ιστορικό εκδόσεων"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
       ]
     },
     "Email": {
@@ -1167,6 +1325,32 @@
         "Κάτι πήγε στραβά"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Συνολικός αποθηκευτικός χώρος 3 TB"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των μελών της οικογένειας στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Έως 6 χρήστες"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Περιλαμβάνει 2700 διακομιστές σε 65+ χώρες, συνδέει έως και 10 συσκευές, έχει πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασία κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων και πολλά άλλα."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, 90 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ]
+    },
     "Feature": {
       "Integrated 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής 2FA"
@@ -1474,6 +1658,9 @@
       ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
+      ],
+      "Coupon successfully applied!": [
+        "Το κουπόνι εφαρμόστηκε με επιτυχία!"
       ],
       "Create contact illustration": [
         "Απεικόνιση δημιουργίας επαφών"
@@ -2011,8 +2198,8 @@
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Μοιραστείτε ψευδώνυμα με άλλους προσθέτοντας τα εισερχόμενά τους ως πρόσθετο γραμματοκιβώτιο."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Μοιραστείτε ψευδώνυμα με άλλους προσθέτοντας τα εισερχόμενά τους ως γραμματοκιβώτιο προώθησης."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Μοιραστείτε στοιχεία σύνδεσης και ασφαλείς σημειώσεις, με έως και 10 άτομα"
@@ -3204,6 +3391,9 @@
       "Alias Display Name": [
         "Εμφανιζόμενο Όνομα Ψευδώνυμου"
       ],
+      "Coupon": [
+        "Κουπόνι"
+      ],
       "Email address": [
         "Διεύθυνση email"
       ],
@@ -3295,6 +3485,120 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Κλείσιμο"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } μήνα ΔΩΡΕΑΝ",
+        "${ n } μήνες ΔΩΡΕΑΝ"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "1 user": [
+        "1 χρήστης"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 χρήστες"
+      ],
+      "All paid Mail and Calendar features": [
+        "Όλες οι επί πληρωμή δυνατότητες Mail και Calendar"
+      ],
+      "High speed VPN": [
+        "VPN υψηλής ταχύτητας"
+      ],
+      "Premium early access": [
+        "Premium πρώιμη πρόσβαση"
+      ],
+      "Secure cloud storage": [
+        "Ασφαλής αποθήκευση στο cloud"
+      ],
+      "Support online privacy": [
+        "Υποστήριξη ηλεκτρονικού απορρήτου"
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } μήνας",
+        "${ n } μήνες"
+      ],
+      "1 year": [
+        "1 έτος"
+      ],
+      "15 months": [
+        "15 μήνες"
+      ],
+      "2 years": [
+        "2 χρόνια"
+      ],
+      "30 months": [
+        "30 μήνες"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Χρεωμένο στα ${ amount } για 1 μήνα"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Χρεωμένο στα ${ amount } για 12 μήνες"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Χρεωμένο στα ${ amount } για 15 μήνες"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Χρεωμένο στα ${ amount } για 24 μήνες"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Χρεωμένο στα ${ amount } για 30 μήνες"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Ανανεώνεται μετά από 1 έτος σε μειωμένη τιμή ${ discountedAmount } αντί για ${ regularAmount } (${ discount }% έκπτωση)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Ανανεώνεται μετά από 2 έτη σε μειωμένη τιμή ${ discountedAmount } αντί για ${ regularAmount } (${ discount }% έκπτωση)"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Τυπική τιμή ${ amount } για 1 μήνα"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Τυπική τιμή ${ amount } για 12 μήνες"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Τυπική τιμή ${ amount } για 15 μήνες"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Τυπική τιμή ${ amount } για 24 μήνες"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Τυπική τιμή ${ amount } για 30 μήνες"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 1700 διακομιστές σε 60+ χώρες, υψηλότερη ταχύτητα VPN, 10 συνδέσεις VPN ανά χρήστη, παγκόσμιες υπηρεσίες ροής, αποκλεισμό κακόβουλου λογισμικού και διαφημίσεων και πολλά άλλα."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 1700 διακομιστές σε 60+ χώρες, υψηλότερη ταχύτητα VPN, 10 συνδέσεις VPN, παγκόσμιες υπηρεσίες ροής, αποκλεισμό κακόβουλου λογισμικού και διαφημίσεων και πολλά άλλα."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Όλες οι premium υπηρεσίες μας με τα υψηλότερα όριά τους: 100 διευθύνσεις email, υποστήριξη για 10 προσαρμοσμένους τομείς, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου, κρυπτογραφημένη αποθήκευση cloud και κοινή χρήση αρχείων και πολλά άλλα."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Ιδανικό για οικογένειες ή μικρές ομάδες, το καθένα μπορεί να έχει τα δικά του εισερχόμενα και ψευδώνυμα. Απαιτεί προσαρμοσμένος τομέας."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Λάβετε χωρίς επιπλέον κόστος τις πληρωμένες εκδόσεις όλων των νέων υπηρεσιών απορρήτου που θα κυκλοφορήσουμε στο μέλλον, μαζί με έγκαιρη πρόσβαση σε όλες τις μελλοντικές λειτουργίες και προϊόντα."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ]
     },
     "sso": {
@@ -3423,6 +3727,20 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Στάλθηκε μήνυμα επαλήθευσης. Παρακαλούμε ελέγξτε τα εισερχόμενά σας για να επαληθεύσετε το γραμματοκιβώτιό σας"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Δημιουργήστε ασφαλή στοιχεία σύνδεσης σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, 20 κρύπτες, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA), αυτόματη συμπλήρωση πιστωτικών καρτών και πολλά άλλα."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Περιλαμβάνει 2950+ διακομιστές σε 65+ χώρες, σύνδεση έως και 10 συσκευών, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασία κακόβουλου λογισμικού και αποκλεισμό διαφημίσεων και πολλά άλλα."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ]
     },
     "Theme": {
@@ -3569,6 +3887,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
+      ],
+      "Enter coupon code": [
+        "Συμπληρώστε τον κωδικό κουπονιού"
       ],
       "Enter your extra password": [
         "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"
@@ -3934,6 +4255,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Δεν ήταν δυνατή η αποστολή προσκλήσεων στις ακόλουθες διευθύνσεις:"
+      ],
+      "Coupon cannot be empty": [
+        "Το κουπόνι δεν μπορεί να είναι κενό"
+      ],
+      "Coupon could not be applied.": [
+        "Δεν ήταν δυνατή η εφαρμογή κουπονιού."
       ],
       "Delete alias": [
         "Διαγραφή ψευδώνυμου"

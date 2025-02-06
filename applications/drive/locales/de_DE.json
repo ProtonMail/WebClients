@@ -882,6 +882,9 @@
       "Upload file": [
         "Datei hochladen"
       ],
+      "Upload files": [
+        "Dateien hochladen"
+      ],
       "Upload folder": [
         "Ordner hochladen"
       ],
@@ -939,6 +942,11 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Hochladen"
       ]
     },
     "Actions message": {
@@ -4423,6 +4431,9 @@
       "Drop files here": [
         "Lege Dateien hier ab"
       ],
+      "Drop files here to upload or click on the upload button": [
+        "Lege Dateien zum Hochladen hier ab oder klicke auf den Upload-Button"
+      ],
       "Drop to import": [
         "Ablegen zum Importieren"
       ],
@@ -4546,6 +4557,9 @@
       ],
       "from the version history?": [
         "dauerhaft aus dem Versionsverlauf löschen möchtest?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Hol dir die App, um Fotos von deinem Telefon zu sichern, oder lade sie hier hoch."
       ],
       "Get the app to backup photos from your phone.": [
         "Lade die App um Fotos von deinem Handy zu sichern."
@@ -5139,17 +5153,8 @@
       "There is nothing to see here": [
         "Hier gibt es nichts zu sehen"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Mit dieser Aktion wird die hochgeladene Datei endgültig gelöscht."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Mit dieser Aktion wird der von dir hochgeladene Ordner endgültig gelöscht. Du kannst einen Ordner, der keine eigene Datei enthält, nicht löschen."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Diese Aktion löscht den Link und der Zugang für alle Benutzer wird widerrufen."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Mit dieser Aktion werden die ausgewählten Einträge endgültig gelöscht."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
@@ -5186,6 +5191,15 @@
       ],
       "This month": [
         "Diesen Monat"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Dadurch wird die hochgeladene Datei endgültig gelöscht."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Dadurch wird der hochgeladenen Ordner endgültig gelöscht."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Dadurch werden die ausgewählten Einträge, die du hochgeladen hast, endgültig gelöscht."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Dadurch wird das synchronisierte Gerät ${ deviceName } von ${ DRIVE_APP_NAME } und alle seine Daten von ${ DRIVE_APP_NAME } entfernt. Ordner, die du zu Meine Computer hinzugefügt hast, werden nicht mehr synchronisiert."
@@ -5712,6 +5726,9 @@
       ],
       "Address": [
         "Anschrift"
+      ],
+      "All": [
+        "Alle"
       ],
       "Anderson": [
         "Anderson"
@@ -7939,6 +7956,10 @@
       "Share invitation declined": [
         "Einladung zur gemeinsamen Nutzung abgelehnt"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Entschuldige, wir konnten den Ordner nicht löschen, da er nicht leer war.",
+        "Entschuldige, wir konnten die Ordner nicht löschen, da sie nicht leer waren."
+      ],
       "Stopping the sharing of this item has failed": [
         "Das Beenden der Freigabe dieses Eintrags ist fehlgeschlagen"
       ],
@@ -9821,6 +9842,35 @@
       ],
       "vCard field": [
         "vCard-Feld"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Serienbilder"
+      ],
+      "Favorites": [
+        "Favoriten"
+      ],
+      "Live Photos": [
+        "Live-Fotos"
+      ],
+      "Panoramas": [
+        "Panoramen"
+      ],
+      "Portraits": [
+        "Porträts"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Screenshots"
+      ],
+      "Selfies": [
+        "Selfies"
+      ],
+      "Videos": [
+        "Videos"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

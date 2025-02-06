@@ -1674,6 +1674,9 @@
       ],
       "Work": [
         "Työ"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2600,7 +2603,7 @@
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
       "Also included": [
-        "Sisältyy myös"
+        "Sisältää myös:"
       ],
       "Availability unknown": [
         "Tavoitettavuus ei ole tiedossa"
@@ -3981,6 +3984,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -3989,6 +3995,9 @@
       ],
       "No verification method available": [
         "Vahvistustapoja ei ole"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4261,6 +4270,9 @@
       ],
       "ICS file": [
         "ICS-tiedosto"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4659,6 +4671,9 @@
       ],
       "Emails are automatically signed": [
         "Viestit allekirjoitetaan automaattisesti"
+      ],
+      "Enabling auto-deletion…": [
+        "Otetaan automaattista poistoa käyttöön…"
       ],
       "Enter the code from your authenticator app": [
         "Syötä todennussovelluksen näyttämä koodi"
@@ -5517,6 +5532,9 @@
       ],
       "Trusted": [
         "Luotettu"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -7616,8 +7634,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Verkkodokumenttieditori"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Storage": [
         "Tallennustila"
@@ -7914,6 +7938,11 @@
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
@@ -8127,6 +8156,11 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Lataa tapahtuma uudelleen"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Tarkista tiliturvallisuus"
       ]
     },
     "saml: Error": {
@@ -8561,6 +8595,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Päivitä hintaan ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9293,6 +9330,9 @@
       "Email address copied to clipboard": [
         "Sähköpostiosoite kopioitiin leikepöydälle"
       ],
+      "Event content search enabled": [
+        "Tapahtumien sisältöhaku otettiin käyttöön"
+      ],
       "Event created": [
         "Tapahtuma luotiin"
       ],
@@ -9581,6 +9621,9 @@
       ],
       "Are you sure?": [
         "Oletko varma?"
+      ],
+      "Auto-deletion is active": [
+        "Automaattinen poisto on käytössä"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -10223,6 +10266,14 @@
         "${ n } lompakkoa"
       ],
       "A safer way to hold your Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin sähköpostitse"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
         "Turvallisempi tapa säilyttää Bitcoineja"
       ]
     },

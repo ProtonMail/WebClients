@@ -5340,17 +5340,8 @@
       "There is nothing to see here": [
         "Nie je tu nič k videniu"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Táto akcia natrvalo vymaže nahraný súbor."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Táto akcia natrvalo vymaže priečinok, ktorý ste nahrali. Nemôžete vymazať priečinok, ktorý obsahuje nevlastnený súbor."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Táto akcia odstráni prepojenie a zruší prístup pre všetkých používateľov."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Táto akcia natrvalo vymaže vybrané položky."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Táto adresa nie je povolená. Ak chcete odosielať správy na túto adresu, musí ju majiteľ najskôr povoliť."
@@ -5937,6 +5928,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "All": [
+        "Všetko"
       ],
       "Anderson": [
         "Anderson"
@@ -8905,6 +8899,11 @@
         "Oficiálny email od ${ BRAND_NAME }"
       ]
     },
+    "Safety review": {
+      "Review account safety": [
+        "Skontrolujte bezpečnosť účtu"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Registrácia nebola úspešne dokončená."
@@ -10195,6 +10194,35 @@
       ],
       "vCard field": [
         "vCard položka"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Sériové foto"
+      ],
+      "Favorites": [
+        "Obľúbené"
+      ],
+      "Live Photos": [
+        "Živé fotografie"
+      ],
+      "Panoramas": [
+        "Panorámy"
+      ],
+      "Portraits": [
+        "Portréty"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Snímky obrazovky"
+      ],
+      "Selfies": [
+        "Selfíčka"
+      ],
+      "Videos": [
+        "Videá"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

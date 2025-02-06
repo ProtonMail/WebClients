@@ -29,6 +29,9 @@
       "Add domain": [
         "Domein toevoegen"
       ],
+      "Add forwarding mailbox": [
+        "Doorstuur mailbox toevoegen"
+      ],
       "Add mailbox": [
         "Postvak toevoegen"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Geavanceerde instellingen"
+      ],
+      "Apply lifetime coupon code": [
+        "Pas de lifetime kortingscode toe"
       ],
       "Authenticate": [
         "Authenticeren"
@@ -608,7 +614,7 @@
         "Update deze login"
       ],
       "Updating": [
-        "Bijwerken"
+        "Updaten"
       ],
       "Upgrade": [
         "Upgraden"
@@ -1468,6 +1474,9 @@
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
+      "Coupon successfully applied!": [
+        "Kortingscode succesvol toegepast!"
+      ],
       "Create contact illustration": [
         "Maak een contactafbeelding"
       ],
@@ -1998,7 +2007,7 @@
       "Settings successfully updated": [
         "Instellingen succesvol bijgewerkt"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
         "Deel aliassen met anderen door hun inbox toe te voegen als extra mailbox."
       ],
       "Share your logins and secure notes, with up to 10 people": [
@@ -3192,6 +3201,9 @@
       "Alias Display Name": [
         "Alias weergavenaam"
       ],
+      "Coupon": [
+        "Kortingscode"
+      ],
       "Email address": [
         "E-mailadres"
       ],
@@ -3523,6 +3535,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "Vul hier uw kortingscode in"
+      ],
       "Enter your extra password": [
         "Voer uw extra wachtwoord in"
       ],
@@ -3844,6 +3859,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Kon geen uitnodigingen versturen naar de volgende adressen:"
+      ],
+      "Coupon cannot be empty": [
+        "Coupon mag niet leeg zijn"
+      ],
+      "Coupon could not be applied.": [
+        "Kortingscode kon niet worden toegepast."
       ],
       "Delete alias": [
         "Verwijder alias"

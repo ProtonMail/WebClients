@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -540,6 +540,9 @@
       ],
       "Generate new recovery phrase": [
         "Új helyreállító jelmondat létrehozása"
+      ],
+      "Generate password": [
+        "Jelszó létrehozása"
       ],
       "Generate recovery phrase": [
         "Helyreállító jelmondat létrehozása"
@@ -1026,9 +1029,6 @@
       ],
       "Sign in with password": [
         "Bejelentkezés jelszó használatával"
-      ],
-      "Sign in with SSO": [
-        "Bejelentkezés SSO használatával"
       ],
       "Sign out": [
         "Kijelentkezés"
@@ -6701,11 +6701,11 @@
       "Data locked": [
         "Adatok zárolva"
       ],
-      "Dedicated servers": [
-        "Dedikált szerverek"
-      ],
       "dedicated servers": [
         "dedikált szerverek"
+      ],
+      "Dedicated servers": [
+        "Dedikált szerverek"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
@@ -6902,9 +6902,6 @@
       ],
       "for choosing ${ product }": [
         "hogy a ${ product }t választotta"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "A szervezet központosított bejelentkezést (SAML, SSO) használó tagjai számára"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Amennyiben egy másik e-mail szolgáltatásról vált a ${ MAIL_APP_NAME } szolgáltatásra, válassza a ${ boldAddresses } lapot, és az MX rekord módosítása előtt vegyen fel minden aktív e-mail címet, a zökkenőmentes átállás érdekében."
@@ -14583,29 +14580,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -14780,6 +14754,29 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -16466,6 +16463,17 @@
         "Ma"
       ]
     },
+    "tooltip": {
+      "Group membership paused": [
+        "Csoport tagság felfüggesztve"
+      ],
+      "User declined invitation": [
+        "A felhasználó elutasította a meghívást"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Várakozás a meghívás elfogadására"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "A ${ MAIL_APP_NAME } felhasználók alapértelmezetten ezt a kulcsot fogják használni a küldéshez"
@@ -16646,17 +16654,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "A külső fiókja nagy eséllyel elérte a 24-órás sávszélesség korlátját. A ${ BRAND_NAME } meg fogja próbálni folytatni az importálást amilyen hamar csak lehetséges."
-      ]
-    },
-    "tooltip": {
-      "Group membership paused": [
-        "Csoport tagság felfüggesztve"
-      ],
-      "User declined invitation": [
-        "A felhasználó elutasította a meghívást"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Várakozás a meghívás elfogadására"
       ]
     },
     "Tooltip automatically attach public key": {

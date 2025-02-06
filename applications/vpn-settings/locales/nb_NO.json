@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Kopier nøkkel til utklippstavlen"
       ],
+      "Copy password": [
+        "Kopier passord"
+      ],
       "Copy version number to clipboard": [
         "Kopier versjonsnummeret til utklippstavlen"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Opprett porttjener"
+      ],
+      "Create new password": [
+        "Opprett nytt passord"
       ],
       "Create new policy": [
         "Opprett ny retningslinje"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Glemt gjenopprettingsmetode?"
+      ],
+      "Generate password": [
+        "Generer passord"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Skaff deg ${ planName } for ${ priceCoupon }"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Logg på med passord"
-      ],
-      "Sign in with SSO": [
-        "Logg på med SSO"
       ],
       "Sign out": [
         "Logg av"
@@ -3778,6 +3784,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Be organisasjonsadministratoren om å konfigurere porttjenere."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
+      ],
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
@@ -4109,9 +4118,6 @@
       "for choosing ${ product }": [
         "for at du velger ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "For medlemmer av organisasjoner som bruker enkel pålogging (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brukere som bytter til ${ MAIL_APP_NAME } fra en annen e-posttjeneste, velger du ${ boldAddresses }-fanen og legger til alle aktive e-postadresser før du endrer MX-posten for å sikre en jevn overgang."
       ],
@@ -4255,6 +4261,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dager å endre en tjeners land, så sørg for at valget ditt er riktig."
+      ],
+      "It's better to have:": [
+        "Det er bedre å ha:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Element automatisk utfylt i ${ vaultLink }"
@@ -4415,6 +4424,9 @@
       "No addresses exist": [
         "Ingen adresser eksisterer"
       ],
+      "No common passwords": [
+        "Ingen vanlige passord"
+      ],
       "No gateways": [
         "Ingen porttjenere"
       ],
@@ -4427,6 +4439,9 @@
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Ingen forutsigbare sekvenser (1234, aaa)"
+      ],
       "No results found": [
         "Ingen resultater funnet"
       ],
@@ -4435,6 +4450,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
+      ],
+      "Numbers": [
+        "Tall"
       ],
       "of": [
         "av"
@@ -4769,6 +4787,9 @@
       "Switch to": [
         "Bytt til"
       ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
+      ],
       "Thank you": [
         "Tusen takk"
       ],
@@ -4981,6 +5002,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Last opp organisasjonens logo for å styrke merkeidentiteten og skape en personlig opplevelse for brukerne."
+      ],
+      "Uppercase and lowercase letters": [
+        "Store og små bokstaver"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Bruk en gjenopprettingsmetode for å deaktivere tofaktorautentiseringsmetodene dine."
@@ -5700,6 +5724,9 @@
       "Enter the code displayed on your TV": [
         "Tast inn koden som vises på TV-en"
       ],
+      "Enter your password": [
+        "Skriv inn passordet"
+      ],
       "Entity ID": [
         "Enhets-ID"
       ],
@@ -5777,6 +5804,9 @@
       ],
       "Moderate NAT": [
         "Moderat NAT"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
       ],
       "Name": [
         "Navn"
@@ -5953,6 +5983,9 @@
       "Strong": [
         "Sterk"
       ],
+      "Strong password": [
+        "Sterkt passord"
+      ],
       "Subscription options": [
         "Abonnementalternativer"
       ],
@@ -6004,11 +6037,17 @@
       "Vulnerable": [
         "Sårbar"
       ],
+      "Vulnerable password": [
+        "Sårbart passord"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Vi beklager å se deg gå. Forklar hvorfor du slutter for å hjelpe oss med å forbedre oss."
       ],
       "Weak": [
         "Svak"
+      ],
+      "Weak password": [
+        "Svakt passord"
       ],
       "What happened?": [
         "Hva skjedde?"
@@ -6143,6 +6182,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Har du ikke tilgang til din 2FA?"
+      ],
+      "Forgot email?": [
+        "Glemt e-post?"
       ],
       "Forgot password?": [
         "Glemt passord?"
@@ -7979,6 +8021,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Du har blitt gjort til administrator for organisasjonen **${ organizationName }** av"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Du må slette alle grupper før du genererer en ny organisasjonsnøkkel"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Du må privatisere alle brukere før genererering av en ny organisasjonsnøkkel."
       ],
@@ -9266,6 +9311,9 @@
       ],
       "User details:": [
         "Brukerdetaljer:"
+      ],
+      "Welcome": [
+        "Velkommen"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du må opprette nye brukere manuelt for å legge dem til i organisasjonen din."

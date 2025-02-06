@@ -313,6 +313,9 @@
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
       ],
+      "Generate password": [
+        "Создать пароль"
+      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Получить ${ planName } за ${ priceCoupon }"
       ],
@@ -627,9 +630,6 @@
       ],
       "Sign in with password": [
         "Войти с помощью пароля"
-      ],
-      "Sign in with SSO": [
-        "Войти с помощью системы единого входа"
       ],
       "Sign out": [
         "Выйти"
@@ -3349,6 +3349,11 @@
         "Очень маленький"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Конфиденциальность по умолчанию."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "У вас уже есть аккаунт? ${ signIn }"
@@ -4124,9 +4129,6 @@
       ],
       "for choosing ${ product }": [
         "за выбор ${ product }"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Для членов организаций, использующих единое предъявление пароля (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Для пользователей, которые переходят на ${ MAIL_APP_NAME } с другой почтовой службы, выберите вкладку ${ boldAddresses } и добавьте все активные адреса электронной почты перед изменением записи MX, чтобы обеспечить плавный переход."

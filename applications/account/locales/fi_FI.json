@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "Activate": [
-        "Aktivoi"
-      ],
       "activate": [
         "aktivoi"
+      ],
+      "Activate": [
+        "Aktivoi"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -186,6 +186,9 @@
       ],
       "Authenticating": [
         "Tunnistaudutaan"
+      ],
+      "Auto-delete spam and trash": [
+        "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
       "Back": [
         "Takaisin"
@@ -310,6 +313,9 @@
       "Copy link": [
         "Kopioi linkki"
       ],
+      "Copy password": [
+        "Kopioi salasana"
+      ],
       "Copy version number to clipboard": [
         "Kopioi versionumero leikepöydälle"
       ],
@@ -336,6 +342,9 @@
       ],
       "Create link": [
         "Luo linkki"
+      ],
+      "Create new password": [
+        "Luo uusi salasana"
       ],
       "Create new policy": [
         "Luo uusi käytäntö"
@@ -574,6 +583,9 @@
       "Generate new recovery phrase": [
         "Luo uusi palautuslause"
       ],
+      "Generate password": [
+        "Luo salasana"
+      ],
       "Generate recovery phrase": [
         "Luo palautuslause"
       ],
@@ -615,6 +627,9 @@
       ],
       "Get more servers": [
         "Hanki lisää palvelimia"
+      ],
+      "Get the app": [
+        "Hanki sovellus"
       ],
       "Get the browser extension": [
         "Hanki selainlaajennus"
@@ -1110,9 +1125,6 @@
       ],
       "Sign in with password": [
         "Kirjaudu salasanalla"
-      ],
-      "Sign in with SSO": [
-        "Kertakirjautuminen"
       ],
       "Sign out": [
         "Kirjaudu ulos"
@@ -1997,6 +2009,9 @@
       "Discover and set up features": [
         "Tutustu ja määritä ominaisuuksia"
       ],
+      "Got it": [
+        "Selvä"
+      ],
       "Invite": [
         "Kutsu"
       ],
@@ -2611,6 +2626,9 @@
       ],
       "Work": [
         "Työ"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3603,7 +3621,7 @@
     },
     "Description": {
       "Also included": [
-        "Sisältyy myös"
+        "Sisältää myös:"
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Päivitä tilauksesi poistaaksesi roskapostit ja roskakorissa olevat viestit automaattisesti, ja avataksesi muita premium-ominaisuuksia."
@@ -5114,7 +5132,7 @@
     },
     "Error message, Disable account": {
       "There was a problem disabling your account.": [
-        "Virhe poistettaessa tiliäsi käytöstä."
+        "Ongelma poistettaessa tiliäsi käytöstä."
       ]
     },
     "Error message, recovery": {
@@ -5906,6 +5924,11 @@
         "Erittäin pieni"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "verkkosovellus"
@@ -6261,6 +6284,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -6269,6 +6295,9 @@
       ],
       "No verification method available": [
         "Vahvistustapoja ei ole"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -6546,6 +6575,9 @@
       ],
       "ICS file": [
         "ICS-tiedosto"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7087,6 +7119,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -7321,11 +7356,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "Dedicated servers": [
-        "Omat palvelimet"
-      ],
       "dedicated servers": [
         "omia palvelimia"
+      ],
+      "Dedicated servers": [
+        "Omat palvelimet"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -7476,6 +7511,9 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Otettu käyttöön ${ formattedDateAndTime }"
       ],
+      "Enabling auto-deletion…": [
+        "Otetaan automaattista poistoa käyttöön…"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Palautuslauseen uusi käyttöönotto luo uuden lauseen."
       ],
@@ -7580,9 +7618,6 @@
       ],
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Kertakirjautumista (SAML SSO) käyttävien organisaatioiden jäsenille"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
@@ -7804,6 +7839,9 @@
       "Invite deleted": [
         "Kutsu poistettiin"
       ],
+      "Invite family members and get everything up and running.": [
+        "Kutsu perheenjäseniä ja aloita käyttö."
+      ],
       "Invite for new user deleted": [
         "Uuden käyttäjän kutsu poistettiin"
       ],
@@ -7825,6 +7863,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Palvelimen maan vaihtaminen kestää 10 päivää, joten varmista, että valintasi on oikein."
+      ],
+      "It's better to have:": [
+        "On parempi olla:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Kohde automaattitäytettiin holvista ${ vaultLink }"
@@ -8063,6 +8104,9 @@
       "No addresses exist": [
         "Osoitteita ei ole"
       ],
+      "No common passwords": [
+        "Ei yleisiä salasanoja"
+      ],
       "No credit card required": [
         "Maksukorttia ei vaadita"
       ],
@@ -8093,6 +8137,9 @@
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Ei arvattavia sarjoja (1234, aaa)"
+      ],
       "No results found": [
         "Tuloksia ei löytynyt"
       ],
@@ -8107,6 +8154,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
+      ],
+      "Numbers": [
+        "Numerot"
       ],
       "of": [
         "/"
@@ -8613,6 +8663,9 @@
       "Switch to": [
         "Vaihda"
       ],
+      "Symbols (#$&)": [
+        "Symbolit (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -8731,7 +8784,7 @@
         "Kutsulinkki on jo käytetty. Kirjaudu suoraan sisään."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
-        "Tämä on 12-sanainen lauseke, joka sinua pyydettiin määrittämään."
+        "Tämä on 12-sanainen lause, joka sinua pyydettiin määrittämään."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "Tämä on palautustiedosto tai salausavain, jonka olet saattanut tallentaa aiemmin."
@@ -8987,6 +9040,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Ladattu tiedosto ei ole kelvollinen yksityinen avain. Tarkista ja yritä uudelleen."
+      ],
+      "Uppercase and lowercase letters": [
+        "Isot ja pienet kirjaimet"
       ],
       "URL link": [
         "URL-linkki"
@@ -10445,6 +10501,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Syötä salasana avaimelle sormenjäljellä: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "Syötä salasanasi"
+      ],
       "Entity ID": [
         "Entiteetti-ID"
       ],
@@ -10755,7 +10814,7 @@
         "Lauseke"
       ],
       "Phrase consists of 12 unique words in a specific order": [
-        "Lauseke sisältää 12 ainutlaatuista sanaa tietyssä järjestyksessä"
+        "Lause sisältää 12 ainutlaatuista sanaa tietyssä järjestyksessä"
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
         "Lisää seuraavat kolme CNAME -tietuetta. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
@@ -10938,6 +10997,9 @@
       "Strong": [
         "Vahva"
       ],
+      "Strong password": [
+        "Vahva salasana"
+      ],
       "Subscription options": [
         "Tilausvaihtoehdot"
       ],
@@ -11031,11 +11093,17 @@
       "Vulnerable": [
         "Haavoittuvainen"
       ],
+      "Vulnerable password": [
+        "Haavoittuva salasana"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Olemme pahoillamme kun lähdet. Kertoisitko meille miksi, jotta voimme parantaa toimintaamme, kiitos."
       ],
       "Weak": [
         "Heikko"
+      ],
+      "Weak password": [
+        "Heikko salasana"
       ],
       "Week start": [
         "Viikon aloituspäivä"
@@ -11276,6 +11344,9 @@
       ],
       "Encryption and keys": [
         "Salaus ja avaimet"
+      ],
+      "Forgot email?": [
+        "Unohditko sähköpostiosoitteesi?"
       ],
       "Forgot password?": [
         "Unohditko salasanasi?"
@@ -13291,8 +13362,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Verkkodokumenttieditori"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Storage": [
         "Tallennustila"
@@ -14313,6 +14390,11 @@
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
@@ -14787,6 +14869,9 @@
       ],
       "Recovery phone number": [
         "Palautunumero"
+      ],
+      "Review account safety": [
+        "Tarkista tiliturvallisuus"
       ],
       "Safeguard account now": [
         "Suojaa tilisi nyt"
@@ -15799,6 +15884,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Päivitä hintaan ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -16134,6 +16222,9 @@
       "User details:": [
         "Käyttäjätiedot:"
       ],
+      "Welcome": [
+        "Tervetuloa"
+      ],
       "Yes, it was me": [
         "Kyllä, se olin minä"
       ],
@@ -16449,47 +16540,6 @@
         "Hintaan ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
@@ -16778,6 +16828,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -17453,6 +17544,9 @@
       ],
       "Authentication security": [
         "Tunnistautumisen turvallisuus"
+      ],
+      "Auto-deletion is active": [
+        "Automaattinen poisto on käytössä"
       ],
       "Auto-reply": [
         "Automaattivastaus"
@@ -18139,6 +18233,9 @@
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
       ],
+      "Personalise your e-mail footer": [
+        "Mukauta sähköpostiesti alatunnistetta"
+      ],
       "Personalize your email footer": [
         "Mukauta sähköpostiesi alatunnistetta"
       ],
@@ -18676,6 +18773,29 @@
         "Tänään"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä, eikä mitään salattuja tietoja jaeta tälle käyttäjälle."
+      ],
+      "Group membership paused": [
+        "Ryhmän jäsenyys on pysäytetty"
+      ],
+      "Sending member invitation": [
+        "Jäsenkutsua lähetetään"
+      ],
+      "User declined invitation": [
+        "Käyttäjä hylkäsi kutsun"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Odotetaan, että käyttäjä hyväksyy kutsun"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME } -käyttäjät käyttävät lähetykseen oletuksena tätä avainta"
@@ -18891,29 +19011,6 @@
         "Ulkoinen tililisi on saattanut saavuttaa sille asetetun 24-tunnin tiedonsiirtorajoituksen. ${ BRAND_NAME } pyrkii jatkamaan tuontia mahdollisimman pian."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä, eikä mitään salattuja tietoja jaeta tälle käyttäjälle."
-      ],
-      "Group membership paused": [
-        "Ryhmän jäsenyys on pysäytetty"
-      ],
-      "Sending member invitation": [
-        "Jäsenkutsua lähetetään"
-      ],
-      "User declined invitation": [
-        "Käyttäjä hylkäsi kutsun"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Odotetaan, että käyttäjä hyväksyy kutsun"
-      ]
-    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Tämä lisää jokaiseen lähettämääsi viestiin julkisen avaimen automaattisesti. Vastaanottajat voivat käyttää tätä viestiesi aitouden varmistukseen ja salattujen viestien lähetykseen sinulle."
@@ -19072,6 +19169,9 @@
       ],
       "Keep request": [
         "Säilytä pyyntö"
+      ],
+      "Member activation incomplete": [
+        "Jäsenen aktivointi on kesken"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kun käyttäjä on antanyt suostumuksen, voit auttaa heitä samaan takaisin tilinkäyttöoikeuden tai hallinnoimaan heidän tietojaan."
@@ -19428,6 +19528,9 @@
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "Kutsuttuna käyttäjänä voit luoda ilmaisen ${ BRAND_NAME } -tilin ja saada pääsyn palveluun ${ appName }."
       ],
+      "Bitcoin via Email": [
+        "Bitcoin sähköpostitse"
+      ],
       "Create ${ BRAND_NAME } Account now": [
         "Luo ${ BRAND_NAME } -tili nyt"
       ],
@@ -19457,6 +19560,11 @@
       ],
       "You're Invited.": [
         "Sinut on kutsuttu."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
       ]
     },
     "wallet_signup_2024:Bug category": {

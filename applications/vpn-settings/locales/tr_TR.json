@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Anahtarı panoya kopyala"
       ],
+      "Copy password": [
+        "Parolayı kopyala"
+      ],
       "Copy version number to clipboard": [
         "Sürüm numarasını kopyala"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Ağ geçidi ekle"
+      ],
+      "Create new password": [
+        "Yeni parola oluştur"
       ],
       "Create new policy": [
         "Yeni ilke oluştur"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
+      ],
+      "Generate password": [
+        "Parola üret"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ priceCoupon } ödeyerek ${ planName } alın"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Parola ile oturum açın"
-      ],
-      "Sign in with SSO": [
-        "Tek oturum açma ile oturum açın"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -2454,7 +2460,7 @@
         "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Metin alanları isteğe bağlıdır. Bu formda verdiğiniz bilgiler sadece seçtiğiniz faturayı değiştirecek, gelecekteki fatura detaylarınızı değiştirmeyecektir."
+        "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
       ]
     },
     "Email spam notification": {
@@ -2528,7 +2534,7 @@
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
-        "Fatura adresi düzenleme şu anda mevcut değil. Lütfen daha sonra tekrar deneyin."
+        "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Email address is invalid": [
         "E-posta adresi geçersiz"
@@ -3778,6 +3784,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Kuruluş yöneticinizden ağ geçitlerini kurmasını isteyin."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "En az ${ BETTER_PASSWORD_LENGTH } karakter"
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -4109,9 +4118,6 @@
       "for choosing ${ product }": [
         "${ product } seçtiğiniz için"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Tek oturum açma (SAML SSO) kullanan kuruluşların üyeleri için"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
       ],
@@ -4255,6 +4261,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Bir sunucunun ülkesini değiştirmek 10 gün sürer. Bu yüzden seçiminizin doğru olduğundan emin olun."
+      ],
+      "It's better to have:": [
+        "Şöyle olması daha iyidir:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "${ vaultLink } kasasındaki öge otomatik olarak dolduruldu"
@@ -4415,6 +4424,9 @@
       "No addresses exist": [
         "Herhangi bir adres yok"
       ],
+      "No common passwords": [
+        "Yaygın parolalar kullanılmamalıdır"
+      ],
       "No gateways": [
         "Henüz bir ağ geçidi yok"
       ],
@@ -4427,6 +4439,9 @@
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Öngörülebilecek diziler kullanılmamalıdır (1234, aaa)"
+      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
@@ -4435,6 +4450,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
+      ],
+      "Numbers": [
+        "Rakamlar"
       ],
       "of": [
         "/"
@@ -4766,6 +4784,9 @@
       "Switch to": [
         "Şuna geç"
       ],
+      "Symbols (#$&)": [
+        "Simgeler (#$&)"
+      ],
       "Thank you": [
         "Teşekkürler"
       ],
@@ -4978,6 +4999,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Marka kimliğinizi güçlendirmek ve kullanıcılarınız için kişiselleştirilmiş bir deneyim oluşturmak için kuruluşunuzun logosunu yükleyin."
+      ],
+      "Uppercase and lowercase letters": [
+        "Büyük ve küçük harfler"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "İki adımlı doğrulama yöntemlerini kapatmak için bir kurtarma yöntemi kullanın."
@@ -5697,6 +5721,9 @@
       "Enter the code displayed on your TV": [
         "Televizyonunuzda görüntülenen kodu yazın"
       ],
+      "Enter your password": [
+        "Parolanızı yazın"
+      ],
       "Entity ID": [
         "Varlık kimliği"
       ],
@@ -5774,6 +5801,9 @@
       ],
       "Moderate NAT": [
         "Ilımlı NAT"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
       ],
       "Name": [
         "Ad"
@@ -5950,6 +5980,9 @@
       "Strong": [
         "Güçlü"
       ],
+      "Strong password": [
+        "Güçlü parola"
+      ],
       "Subscription options": [
         "Abonelik seçenekleri"
       ],
@@ -5998,11 +6031,17 @@
       "Vulnerable": [
         "Çok zayıf"
       ],
+      "Vulnerable password": [
+        "Güvenlik açığı bulunan parola"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
       ],
       "Weak": [
         "Zayıf"
+      ],
+      "Weak password": [
+        "Zayıf parola"
       ],
       "What happened?": [
         "Ne oldu?"
@@ -6137,6 +6176,9 @@
       ],
       "Don't have access to your 2FA?": [
         "İki adımlı doğrulamayı kullanamıyor musunuz?"
+      ],
+      "Forgot email?": [
+        "E-posta adresinizi mi unuttunuz?"
       ],
       "Forgot password?": [
         "Parolanızı mı unuttunuz?"
@@ -6896,7 +6938,7 @@
         "İki kolay adımda kendinizi korumaya başlayın"
       ],
       "Strict no-logs policy": [
-        "Sıkı kayıt tutmama ilkesi"
+        "Katı kayıt tutmama ilkesi"
       ],
       "Support for up to 2 users": [
         "2 kullanıcıya kadar destek"
@@ -7951,6 +7993,9 @@
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Tarafından **${ organizationName }** kuruluşunun yöneticisi yapıldınız."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Yeni bir kuruluş anahtarı oluşturmadan önce tüm grupları silmeniz gerekir"
       ],
       "You must privatize all users before generating a new organization key": [
         "Yeni bir kuruluş anahtarı oluşturmadan önce tüm kullanıcıları korunan olarak güncellemeniz gerekir"
@@ -9239,6 +9284,9 @@
       ],
       "User details:": [
         "Kullanıcı bilgileri:"
+      ],
+      "Welcome": [
+        "Hoş geldiniz"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Kuruluşunuza eklemek istediğiniz yeni kullanıcıları el ile oluşturmanız gerekecek."

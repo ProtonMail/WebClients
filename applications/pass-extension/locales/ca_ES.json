@@ -29,6 +29,9 @@
       "Add domain": [
         "Afegir domini"
       ],
+      "Add forwarding mailbox": [
+        "Afegeix una bústia de reenviament"
+      ],
       "Add mailbox": [
         "Afegeix una bústia de correu"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Opcions avançades"
+      ],
+      "Apply lifetime coupon code": [
+        "Aplica un cupó de codi vitalici"
       ],
       "Authenticate": [
         "Autentica"
@@ -775,7 +781,7 @@
         "No s'ha pogut deixar l'element."
       ],
       "Could not leave vault.": [
-        "No s'ha pogut deixar la caixa forta."
+        "No s'ha pogut sortir de la caixa forta."
       ],
       "Could not load recommendations at the moment.": [
         "No s'han pogut acarregar les recomanacions ara mateix"
@@ -893,7 +899,7 @@
         "No s'ha pogut moure els elements."
       ],
       "Failed to move items to trash": [
-        "No s'ha pogut moure els elements a la paperera."
+        "No s'han pogut moure els elements a la paperera."
       ],
       "Failed to pin item": [
         "No s'ha pogut ancorar l'element."
@@ -989,7 +995,7 @@
         "No s'ha pogut rebutjar la invitació."
       ],
       "Item content cannot exceed 40KB": [
-        "El contingut de l'element no pot excedir 40 Kb."
+        "El contingut de l'element no pot excedir 40 kB."
       ],
       "Item creation failed": [
         "No s'ha pogut crear l'element"
@@ -1373,10 +1379,10 @@
         "S'han eliminat tots els elements a la paperera de manera permanent."
       ],
       "All trashed items successfully restored": [
-        "S'han restaurat tots els elements a la paperera."
+        "S'han restaurat tots els elements de la paperera."
       ],
       "An item previously shared with you was removed": [
-        "S'ha esborrat un element compartit anteriorment amb vós."
+        "S'ha esborrat un element compartit que heu rebut anteriorment."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Esteu segur que voleu eliminar ${ emailJSX } de les vostres bústies de correu?"
@@ -1467,6 +1473,9 @@
       ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
+      ],
+      "Coupon successfully applied!": [
+        "S'ha aplicat el cupó."
       ],
       "Create contact illustration": [
         "Crea la il·lustració del contacte"
@@ -1978,7 +1987,7 @@
         "Seleccioneu on voleu que es desi les caixes fortes importades."
       ],
       "Selected items permanently deleted": [
-        "S'han suprimit permanentment els elements seleccionats."
+        "S'han eliminat permanentment els elements seleccionats."
       ],
       "Selected items successfully moved to trash": [
         "S'han mogut els elements seleccionats a la paperera."
@@ -1998,8 +2007,8 @@
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Compartiu àlies amb altres persones afegint la vostra safata d'entrada com a bústia de correu addicional."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Compartiu àlies amb altres persones afegint la seva safata d'entrada com a bústia de correu de reenviament."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Compartiu els inicis de sessió i notes segures amb un màxim de 10 persones"
@@ -3192,6 +3201,9 @@
       "Alias Display Name": [
         "Nom a mostrar de l'àlies"
       ],
+      "Coupon": [
+        "Cupó"
+      ],
       "Email address": [
         "Adreça de correu electrònic"
       ],
@@ -3523,6 +3535,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "Introduïu el codi de cupó"
+      ],
       "Enter your extra password": [
         "Introduïu la vostra contrasenya addicional"
       ],
@@ -3844,6 +3859,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "No s'han pogut enviar invitacions a les següents adreces:"
+      ],
+      "Coupon cannot be empty": [
+        "El cupó no pot estar buit."
+      ],
+      "Coupon could not be applied.": [
+        "No s'ha pogut aplicar el cupó."
       ],
       "Delete alias": [
         "Elimina l'àlies"
