@@ -5132,7 +5132,7 @@
     },
     "Error message, Disable account": {
       "There was a problem disabling your account.": [
-        "Ongelma poistettaessa tiliäsi käytöstä."
+        "Ongelma tilisi käytöstä poistamisessa."
       ]
     },
     "Error message, recovery": {
@@ -9327,6 +9327,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Voit myös yhdistää tuotavat kalenterit olemassaoleviin ${ BRAND_NAME }-kalentereihin."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Voit muuttaa tätä koska tahansa ${ settingsLink }."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Voit tarkastaa tilan ${ importProgressLink }."
       ],
@@ -11415,7 +11418,7 @@
         "Aseta sähköpostiosoite"
       ],
       "settings": [
-        "asetukset"
+        "asetuksissa"
       ],
       "Sign in": [
         "Kirjaudu sisään"
@@ -13919,9 +13922,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja kaikki premium-${ BRAND_NAME } -palvelut päivittämällä **${ upsellPlanTitle }**-tilaukseen."
       ],
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Jatkaessasi hyväksyt ${ termsAndConditionsLink }"
-      ],
       "Creating your account": [
         "Tiliäsi luodaan"
       ],
@@ -14381,7 +14381,7 @@
         "Virheellinen turvakoodi"
       ],
       "Something went wrong. Please try again later.": [
-        "Jokin meni pieleen. Yritä myöhemmin uudelleen."
+        "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
         "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
@@ -15040,7 +15040,7 @@
         "Sisäänkirjautumista ei suoritettu loppuun."
       ],
       "Something went wrong": [
-        "Jokin meni pieleen"
+        "Jotain meni pieleen"
       ],
       "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
         "Sähköpostiosoite **${ email }** on jo olemassa ${ BRAND_NAME }-käyttäjänä. Syötä käyttäjän sähköpostiosoite identiteetintarjoajaltasi."
@@ -16255,7 +16255,7 @@
         "Hylätty"
       ],
       "Signed out": [
-        "Kirjattu ulos"
+        "Kirjauduttu ulos"
       ],
       "Unknown": [
         "Tuntematon"
@@ -19507,56 +19507,47 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      " Encrypted email and file storage": [
+        " Salattu sähköposti ja tiedostojen tallennus"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME }-sähköpostiosoite",
+        "${ n } ${ BRAND_NAME }-sähköpostiosoitetta"
+      ],
       "${ n } account per wallet": [
         "${ n } tili/lompakko",
         "${ n } tiliä/lompakko"
-      ],
-      "${ n } email address": [
-        "${ n } sähköpostiosoite",
-        "${ n } sähköpostiosoitetta"
       ],
       "${ n } wallet": [
         "${ n } lompakko",
         "${ n } lompakkoa"
       ],
-      "**Get ${ plan }** for early access to ${ appName }!": [
-        "**Hanki ${ plan }** ja saat varhaisen käyttöoikeuden sovellukseen ${ appName }!"
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } -ohjelma"
       ],
       "A safer way to hold your Bitcoin": [
         "Turvallisempi tapa säilyttää Bitcoineja"
       ],
-      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "Kutsuttuna käyttäjänä voit luoda ilmaisen ${ BRAND_NAME } -tilin ja saada pääsyn palveluun ${ appName }."
+      "Advanced account protection": [
+        "Edistynyt tilin suojaus"
       ],
       "Bitcoin via Email": [
         "Bitcoin sähköpostitse"
       ],
-      "Create ${ BRAND_NAME } Account now": [
-        "Luo ${ BRAND_NAME } -tili nyt"
+      "Encrypted cloud storage for photos and documents": [
+        "Salattu pilvitallennustila kuville ja dokumenteille"
       ],
-      "Early access to new features": [
-        "Varhainen käyttöoikeus uusiin ominaisuuksiin"
-      ],
-      "Early access waitlist": [
-        "Varhaisen käyttöoikeuden odotuslista"
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
       ],
       "Exclusive early access to ${ appName }.": [
         "Varhainen ${ appName }- käyttöoikeus."
       ],
-      "Get started": [
-        "Aloita"
+      "Securely hold and transact Bitcoin for free.": [
+        "Säilytä ja siirrä Bitcoineja ilmaiseksi."
       ],
-      "Invite Friends": [
-        "Kutsu kavereita"
-      ],
-      "Join ${ appName } early access!": [
-        "Hanki varhainen ${ appName } -käyttöoikeus!"
-      ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Rekisteröi ilmainen ${ BRAND_NAME }-tili varmistaaksesi paikkasi. Mitä aiemmin rekisteröidyt, sitä nopeammin pääset käyttämään ${ appName }:ia. Rekisteröitymisen jälkeen voit myös päivittää ainutlaatuiseen Visionary-tilaukseemme, ohittaaksesi jonotuslistan ja aloittaaksesi ${ appName }:n käytön heti."
-      ],
-      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "Visionary-käyttäjät ja heidän kutsumansa kaverit voivat jakaa varhaisen käyttöoikeuden muiden kanssa. Kutsu heidät kokeilemaan sovelusta ${ appName } ilmaiseksi!"
+      "Ultra fast and private VPN": [
+        "Huippunopea ja yksityinen VPN"
       ],
       "You're Invited.": [
         "Sinut on kutsuttu."
