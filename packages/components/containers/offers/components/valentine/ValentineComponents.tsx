@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -7,12 +7,29 @@ import Price from '@proton/components/components/price/Price';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import type { CYCLE } from '@proton/payments';
 import { type Currency } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
-import { getDealMonthDurationText } from '../../helpers/offerCopies';
 import { type DealWithPrices } from '../../interface';
 import protonLogo from './protonLogo.svg';
+
+const getDealMonthDurationText = (cycle: CYCLE | undefined) => {
+    const n = Number(cycle);
+
+    switch (n) {
+        case 12:
+            return c('Valentine_2025: Offers').t`12 months`;
+        case 24:
+            return c('Valentine_2025: Offers').t`24 months`;
+        case 15:
+            return c('Valentine_2025: Offers').t`15 months`;
+        case 30:
+            return c('Valentine_2025: Offers').t`30 months`;
+        default:
+            return c('Valentine_2025: Offers').ngettext(msgid`${n} month`, `${n} months`, n);
+    }
+};
 
 interface HeaderProps {
     salePercentage: string;
