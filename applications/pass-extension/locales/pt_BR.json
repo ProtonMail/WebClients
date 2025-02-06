@@ -29,6 +29,9 @@
       "Add domain": [
         "Adicionar domínio"
       ],
+      "Add forwarding mailbox": [
+        "Adicionar uma caixa de correio de encaminhamento"
+      ],
       "Add mailbox": [
         "Adicionar caixa de correio"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Opções avançadas"
+      ],
+      "Apply lifetime coupon code": [
+        "Aplicar código de cupom vitalício"
       ],
       "Authenticate": [
         "Autenticar"
@@ -313,6 +319,9 @@
       ],
       "Invite others": [
         "Convidar outras pessoas"
+      ],
+      "Join our Reddit": [
+        "Junte-se ao nosso Reddit"
       ],
       "Join shared vault": [
         "Juntar ao cofre compartilhado"
@@ -1465,6 +1474,9 @@
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
+      "Coupon successfully applied!": [
+        "O cupom foi aplicado!"
+      ],
       "Create contact illustration": [
         "Criar ilustração de contato"
       ],
@@ -1995,8 +2007,8 @@
       "Settings successfully updated": [
         "Configurações atualizadas"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Compartilhe aliases com outros adicionando sua caixa de entrada como uma caixa de correio adicional."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Compartilhe aliases com outros adicionando sua caixa de entrada como uma caixa de correio de .encaminhamento."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Compartilhe seus inícios de sessão e notas seguras, com até 10 pessoas"
@@ -3192,6 +3204,9 @@
       "Alias Display Name": [
         "Nome de exibição do alias"
       ],
+      "Coupon": [
+        "Cupom"
+      ],
       "Email address": [
         "Endereço de e-mail"
       ],
@@ -3523,6 +3538,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Aproveitando o ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "Digite o código do cupão"
+      ],
       "Enter your extra password": [
         "Digite sua senha adicional"
       ],
@@ -3844,6 +3862,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Não foi possível enviar convites para os seguintes endereços:"
+      ],
+      "Coupon cannot be empty": [
+        "O cupom não pode estar vazio"
+      ],
+      "Coupon could not be applied.": [
+        "O cupom não pode ser aplicado."
       ],
       "Delete alias": [
         "Excluir alias"

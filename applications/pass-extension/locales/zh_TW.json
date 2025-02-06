@@ -2102,6 +2102,44 @@
     "sso": {
       "Invalid confirmation code": [
         "無效的驗證碼"
+      ],
+      "No, it wasn’t me": [
+        "不，這不是我"
+      ],
+      "Sign-in confirmed": [
+        "已確認登入"
+      ],
+      "Sign-in rejected": [
+        "已拒絕登入"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "在其他裝置上要求登入。是您嗎？"
+      ],
+      "Yes, it was me": [
+        "對，就是我"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "啟用"
+      ],
+      "Inactive": [
+        "未使用"
+      ],
+      "Pending activation": [
+        "待啟動"
+      ],
+      "Pending admin activation": [
+        "待管理員啟動"
+      ],
+      "Rejected": [
+        "拒绝"
+      ],
+      "Signed out": [
+        "已登出"
+      ],
+      "Unknown": [
+        "未知"
       ]
     },
     "Theme": {
