@@ -899,7 +899,7 @@ export const getTemporarySignupParameters = async ({
     if (session && signupParameters.invite?.type === 'porkbun') {
         const { CouponName } = await api<{ CouponName: string }>(
             partnerWhitelist({ Token: signupParameters.invite.data.porkbunToken })
-        ).catch(() => ({ CouponName: '' })); // TODO: What to do if it fails?
+        ).catch(() => ({ CouponName: 'PORKBUN' })); // this catch will need rework if we add a new partner later
 
         return {
             ...signupParameters,
