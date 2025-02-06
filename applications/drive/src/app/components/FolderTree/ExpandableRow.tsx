@@ -49,6 +49,7 @@ const ExpandableRow = ({
             <tr
                 className={clsx(['folder-tree-list-item', !isDisabled && 'cursor-pointer', isSelected && 'bg-strong'])}
                 onClick={handleSelect}
+                data-testid="item-row"
             >
                 <td className="flex items-center flex-nowrap m-0 pl-custom relative">
                     <div
@@ -56,12 +57,17 @@ const ExpandableRow = ({
                             `folder-tree-list-item-selected flex shrink-0`,
                             !isSelected && 'folder-tree-list-item-selected-hidden',
                         ])}
+                        data-testid={!isSelected ? 'checkbox-not-visible' : 'checkbox-visible'}
                     >
                         <span className="flex justify-center items-center w-8 h-8 bg-primary rounded-full">
                             <Icon name="checkmark" className="p-1" size={4} />
                         </span>
                     </div>
-                    <div className="flex shrink-0 folder-tree-list-item-indent" style={paddingElement}></div>
+                    <div
+                        className="flex shrink-0 folder-tree-list-item-indent"
+                        style={paddingElement}
+                        data-testid="expanded-depth"
+                    ></div>
                     <div className="folder-tree-list-item-expand shrink-0 relative">
                         <Button
                             disabled={isDisabled}
@@ -72,6 +78,7 @@ const ExpandableRow = ({
                                 e.currentTarget.blur();
                                 toggleExpand(link.linkId);
                             }}
+                            data-testid={isExpanded ? 'expanded-folder' : 'expand-button'}
                         >
                             <Icon
                                 size={3}
@@ -84,7 +91,11 @@ const ExpandableRow = ({
                     <div key="Name" className="folder-tree-list-item-name flex items-center flex-nowrap w-full">
                         <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
                         <Tooltip title={link.name} originalPlacement="bottom">
-                            <span ref={floatingEllipsisVisibilityControlRef} className="text-nowrap pr-8">
+                            <span
+                                ref={floatingEllipsisVisibilityControlRef}
+                                className="text-nowrap pr-8"
+                                data-testid="item-name"
+                            >
                                 {link.name}
                             </span>
                         </Tooltip>
