@@ -47,7 +47,7 @@
         "Etki alanı ekle"
       ],
       "Add forwarding mailbox": [
-        "İletilen E-posta kutusu ekle"
+        "İletme e-posta kutusu ekle"
       ],
       "Add mailbox": [
         "E-posta kutusu ekle"
@@ -1509,7 +1509,7 @@
         "${ PASS_APP_NAME } sistem ayarlarınıza uyacak."
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
-        "${ PASS_APP_NAME } panoya kopyalayabileceğiniz bir yönlendirme adresi (ters takma ad olarak da bilinir) oluşturacak."
+        "${ PASS_APP_NAME } panoya kopyalayabileceğiniz bir iletme adresi (ters takma ad olarak da bilinir) oluşturacak."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
@@ -2234,7 +2234,7 @@
         "Ayarlar güncellendi"
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
-        "Takma adları başkalarıyla paylaşmak için onların gelen kutusunu yönlendirme E-posta kutusu olarak ekleyin."
+        "Takma adları başkalarıyla paylaşmak için alıcıların gelen kutularını iletme e-posta kutusu olarak ekleyin."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
@@ -4322,6 +4322,97 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ]
+    },
+    "Valentine_2025": {
+      "VALENTINE'S DEAL": [
+        "SEVGİLİLER GÜNÜ FIRSATI"
+      ],
+      "Valentine's deal: ${ planName } 50% off for you": [
+        "Sevgililer Günü fırsatı: ${ planName } için %50 indirim"
+      ]
+    },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "%${ salePercentage } indirim"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "Siz ve 1 kişiye %${ salePercentage } indirim"
+      ],
+      "50% off": [
+        "-%50"
+      ],
+      "50% off for you +1": [
+        "Size ve 1 kişiye %50 indirim"
+      ],
+      "500 GB total storage": [
+        "500 GB toplam depolama alanı"
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Tüm Mail, VPN, Pass ve Drive ücretli özellikleri"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "İndirimler, standart aylık fiyatlandırmaya dayanmaktadır. Fatura dönemi sonunda, aboneliğiniz standart yıllık ücrete göre yenilenecektir."
+      ],
+      "Double the love, half the price": [
+        "Kalpler bir, fiyatlar yarım"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Bir yıllık ${ dealName } aboneliğini %${ salePercentage } indirimle edinin — aynı fırsatı bir arkadaşınızla paylaşmanız için bir hediye kodu da alın"
+      ],
+      "Get 1 year of ${ dealName } at 50% off — plus a gift code to share the same deal with a friend": [
+        "1 yıllık ${ dealName } aboneliğini %50 indirimle edinin — ayrıca, aynı fırsatı bir arkadaşınızla paylaşmanız için hediye kodu da alın."
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Üst düzey hesap güvenliği ve uzman desteği sunar. ${ DARK_WEB_MONITORING_NAME } internetin gizli bölgelerini tarayarak yasadışı veri piyasalarına düşmüş ${ MAIL_APP_NAME } e-posta adreslerini tespit eder. Bir ihlal tespit edilirse, hesabınızı korumak için gerekli adımları içeren bir Güvenlik Merkezi uyarısı alacaksınız."
+      ],
+      "Secure vault sharing": [
+        "Güvenli kasa paylaşımı"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adları"
+      ],
+      "Valentine's deal:": [
+        "Sevgililer günü fırsatı:"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "/ month": [
+        "/ ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "15 months": [
+        "15 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
+      "30 months": [
+        "30 ay"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal } için"
       ]
     },
     "Validation": {
