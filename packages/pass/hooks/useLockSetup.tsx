@@ -14,16 +14,11 @@ import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
+import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import {
-    selectIsSSO,
-    selectLockMode,
-    selectLockTTL,
-    selectPassPlan,
-    selectUserSettings,
-} from '@proton/pass/store/selectors';
+import { selectLockMode, selectLockTTL, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
@@ -76,7 +71,7 @@ export const useLockSetup = (): LockSetup => {
 
     const currentLockMode = useSelector(selectLockMode);
     const lockTTL = useSelector(selectLockTTL);
-    const isSSO = useSelector(selectIsSSO);
+
     const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const plan = useSelector(selectPassPlan);
     const isFreePlan = !isPaidPlan(plan);
@@ -186,6 +181,11 @@ export const useLockSetup = (): LockSetup => {
 
             case LockMode.PASSWORD:
                 return confirmPassword({
+                    reauth: {
+                        type: ReauthAction.SSO_PW_LOCK,
+                        data: { current: current?.secret, ttl },
+                        fork: { promptBypass: 'none', promptType: 'offline' },
+                    },
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
                     message: passwordTypeSwitch({
                         extra: c('Info')
@@ -203,6 +203,11 @@ export const useLockSetup = (): LockSetup => {
 
                 /* else prompt for password */
                 return confirmPassword({
+                    reauth: {
+                        type: ReauthAction.SSO_BIOMETRICS,
+                        data: { current: current?.secret, ttl },
+                        fork: { promptBypass: 'none', promptType: 'offline' },
+                    },
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
                     message: passwordTypeSwitch({
                         extra: c('Info').t`Please confirm your extra password in order to auto-lock with biometrics.`,
@@ -284,7 +289,6 @@ export const useLockSetup = (): LockSetup => {
     const password = useMemo(
         () => ({
             enabled:
-                !isSSO &&
                 !EXTENSION_BUILD &&
                 (pwdMode !== SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE || (authStore?.hasOfflinePassword() ?? false)),
         }),
