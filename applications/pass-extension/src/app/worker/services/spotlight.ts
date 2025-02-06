@@ -19,6 +19,7 @@ import {
     createUpdateRule,
     createUserRatingRule,
     createUserRenewalRule,
+    createValentine2025Rule,
 } from '@proton/pass/lib/spotlight/rules';
 import { createSpotlightService as createCoreSpotlightService } from '@proton/pass/lib/spotlight/service';
 import type { State } from '@proton/pass/store/types';
@@ -56,6 +57,7 @@ export const createSpotlightService = (
             createAliasDiscoveryMailboxRule(),
             createAliasDiscoveryDomainRule(),
             createAliasDiscoveryContactRule(),
+            createValentine2025Rule(),
         ],
     });
 
