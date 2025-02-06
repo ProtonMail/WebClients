@@ -102,6 +102,7 @@ import { getBillingCycleText, getOffText } from './helper';
 import type { Measure, VPNSignupModel } from './interface';
 import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
+import RatingsSection from './ratings/RatingsSection';
 
 const getYears = (n: number) => c('vpn_2step: info').ngettext(msgid`${n} year`, `${n} years`, n);
 const getMonths = (n: number) => c('vpn_2step: info').ngettext(msgid`${n} month`, `${n} months`, n);
@@ -1403,6 +1404,8 @@ const Step1 = ({
                                             );
                                         })()}
                                     </form>
+
+                                    <RatingsSection className="mt-8" />
                                 </div>
                                 <div
                                     className={clsx(viewportWidth['>=large'] && 'w-custom')}
