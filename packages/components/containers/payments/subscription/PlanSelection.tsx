@@ -313,7 +313,7 @@ export function useAccessiblePlans({
     }
 
     if (app === APPS.PROTONWALLET && !canAccessWalletPlan) {
-        IndividualPlans = filterPlans([plansMap[PLANS.VISIONARY]]);
+        IndividualPlans = filterPlans([plansMap[PLANS.BUNDLE], plansMap[PLANS.VISIONARY]]);
         FamilyPlans = [];
         B2BPlans = [];
         enabledProductB2CPlans = [];
