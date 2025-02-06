@@ -44,6 +44,10 @@ function mapFlows(flow: PaymentMethodFlows): DimensionFlows {
         return 'signup-pass-upgrade';
     }
 
+    if (flow === 'signup-wallet') {
+        return 'signup';
+    }
+
     return flow;
 }
 

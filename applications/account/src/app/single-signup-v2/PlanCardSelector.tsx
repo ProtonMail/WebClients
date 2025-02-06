@@ -50,6 +50,7 @@ export interface PlanCard {
     type: 'best' | 'standard';
     guarantee: boolean;
     interactive?: false;
+    subline?: string;
 }
 
 const getLimitedTimeOfferText = () => {
@@ -120,6 +121,7 @@ const PlanCardViewSlot = ({
     onSelect,
     maxWidth = false,
     loading,
+    subline,
 }: {
     highlightPrice?: boolean;
     selected?: boolean;
@@ -138,6 +140,7 @@ const PlanCardViewSlot = ({
     onSelect?: () => void;
     maxWidth?: boolean;
     loading?: boolean;
+    subline?: string;
 }) => {
     const wrapper = (children: ReactNode) => {
         const className = clsx(
@@ -213,6 +216,8 @@ const PlanCardViewSlot = ({
                                     </span>
                                 )}
                             </div>
+
+                            {subline && <div className="mt-4 text-left color-weak text-xs">{subline}</div>}
 
                             <div className="mt-4 mb-6 text-left w-full">
                                 <div
@@ -339,6 +344,7 @@ export const PlanCardSelector = ({
                             price={getLetsTalk()}
                             billedText={c('pass_signup_2023: Info').t`Get in touch with our sales team`}
                             text={planFromCard.Title}
+                            subline={planCard.subline}
                             key={planCard.plan}
                             dark={dark}
                             subsection={planCard.subsection}
@@ -399,6 +405,7 @@ export const PlanCardSelector = ({
                             currency: planCurrency,
                         })}
                         text={planFromCard.Title}
+                        subline={planCard.subline}
                         billedText={billedText}
                         key={planCard.plan}
                         dark={dark}

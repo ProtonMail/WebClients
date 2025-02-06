@@ -94,9 +94,9 @@ export const getSignupConfiguration = ({
             plan,
             signedIn: Boolean(model.session),
             isLargeViewport: viewportWidth['>=large'],
-            vpnServersCountData,
             hideFreePlan: signupParameters.hideFreePlan,
             mode: signupParameters.mode,
+            plansMap: model.plansMap,
         });
     }
 
