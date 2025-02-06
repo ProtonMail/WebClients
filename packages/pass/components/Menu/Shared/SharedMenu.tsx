@@ -85,8 +85,8 @@ export const SharedMenu = memo(() => {
     const free = passPlan === UserPassPlan.FREE;
 
     return (
-        <div className="flex flex-column gap-2 w-full">
-            <div className="px-2 flex flex-nowrap items-center gap-3 w-full">
+        <div className="flex flex-column w-full">
+            <div className="px-2 flex flex-nowrap items-center gap-3 w-full mb-2">
                 <span className="text-ellipsis color-weak"> {c('Label').t`Shared`}</span>
                 {free && (
                     <PassPlusPromotionButton
