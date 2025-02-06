@@ -4599,6 +4599,9 @@
       "Drop files here": [
         "Sem přetáhněte soubory"
       ],
+      "Drop files here to upload or click on the upload button": [
+        "Chcete-li nahrát soubory, přetáhněte je sem nebo klikněte na tlačítko Nahrát."
+      ],
       "Drop to import": [
         "Přetažením provedete import"
       ],
@@ -5337,17 +5340,8 @@
       "There is nothing to see here": [
         "Zde není nic k zobrazení"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Tato akce trvale smaže vámi nahraný soubor."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Tato akce trvale smaže nahranou složku. Nemůžete smazat složku, která obsahuje soubor, který nevlastníte."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Tato akce smaže odkaz a zruší přistup všem uživatelům."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Tato akce trvale smaže vybrané položky."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji vlastník nejdříve povolit."
@@ -5384,6 +5378,15 @@
       ],
       "This month": [
         "Tento měsíc"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Tím se trvale smaže vámi nahraný soubor."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Tím se trvale smaže vámi nahraná složka."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Tím se trvale smažou vybrané položky, které jste nahráli."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Tím odstraníte synchronizované zařízení ${ deviceName } z ${ DRIVE_APP_NAME } a všechna jeho data z ${ DRIVE_APP_NAME }. Složky, které jste přidali do složky Moje počítače se přestanou synchronizovat."
@@ -5934,6 +5937,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "All": [
+        "Vše"
       ],
       "Anderson": [
         "Anderson"
@@ -8210,6 +8216,12 @@
       "Share invitation declined": [
         "Pozvánka sdílení byla odmítnuta"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Je nám líto, ale složku jsme nemohli smazat, protože není prázdná.",
+        "Je nám líto, ale složky jsme nemohli smazat, protože nejsou prázdné.",
+        "Je nám líto, ale složky jsme nemohli smazat, protože nejsou prázdné.",
+        "Je nám líto, ale složky jsme nemohli smazat, protože nejsou prázdné."
+      ],
       "Stopping the sharing of this item has failed": [
         "Ukončení sdílení této položky selhalo"
       ],
@@ -10197,6 +10209,35 @@
       ],
       "vCard field": [
         "vCard položka"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Sekvence"
+      ],
+      "Favorites": [
+        "Oblíbené"
+      ],
+      "Live Photos": [
+        "Živé fotky"
+      ],
+      "Panoramas": [
+        "Panoramata"
+      ],
+      "Portraits": [
+        "Portréty"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Snímky obrazovky"
+      ],
+      "Selfies": [
+        "Selfie"
+      ],
+      "Videos": [
+        "Videa"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

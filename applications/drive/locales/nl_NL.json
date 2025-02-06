@@ -883,7 +883,7 @@
         "Bestand uploaden"
       ],
       "Upload files": [
-        "Bestanden opladen"
+        "Upload bestanden"
       ],
       "Upload folder": [
         "Map uploaden"
@@ -4456,7 +4456,7 @@
         "Drop bestanden hier"
       ],
       "Drop files here to upload or click on the upload button": [
-        "Sleep bestanden hierheen om op te laden of klik op de oplaad knop"
+        "Sleep bestanden hierheen om te uploaden of klik op de upload knop"
       ],
       "Drop to import": [
         "Neerzetten om te importeren"
@@ -4589,7 +4589,7 @@
         "van de versie geschiedenis?"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
-        "Download de app om foto's van je telefoon te back-uppen of laad hier op."
+        "Download de app om foto's van uw telefoon te back-uppen of upload hier."
       ],
       "Get the app to backup photos from your phone.": [
         "Download de app om foto's van uw telefoon te back-uppen."
@@ -5186,17 +5186,8 @@
       "There is nothing to see here": [
         "Er is hier niets te zien"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Deze actie zal het bestand dat u heeft geüpload definitief verwijderen."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Deze actie zorgt ervoor dat de map die u opgeladen heeft permanent verwijderd zal worden. U kan geen map verwijderen die bestanden bevat waarvan u geen eigenaar bent."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Deze actie verwijdert de link en trekt de toegang voor alle gebruikers in."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Deze actie zal de geselecteerde items definitief verwijderen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -5233,6 +5224,15 @@
       ],
       "This month": [
         "Deze maand"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Deze actie zal het bestand dat u heeft opgeladen definitief verwijderen."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Deze actie zal de folder die u heeft opgeladen definitief verwijderen."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Deze actie zal de geselecteerde items die u heeft opgeladen definitief verwijderen."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Hierdoor wordt het gesynchroniseerde apparaat ${ deviceName } verwijderd uit ${ DRIVE_APP_NAME } en worden alle gegevens verwijderd uit ${ DRIVE_APP_NAME }. Mappen die u hebt toegevoegd aan Mijn computers worden niet langer gesynchroniseerd."
@@ -5765,6 +5765,9 @@
       ],
       "Address": [
         "Adres"
+      ],
+      "All": [
+        "Alle"
       ],
       "Anderson": [
         "Anderson"
@@ -7947,6 +7950,10 @@
       "Share invitation declined": [
         "Deel-uitnodiging afgewezen"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Sorry, we konden de map niet verwijderen omdat deze niet leeg is.",
+        "Sorry, we kunnen de mappen niet verwijderen omdat ze niet leeg zijn."
+      ],
       "Stopping the sharing of this item has failed": [
         "Het stoppen van het delen van dit item is mislukt"
       ],
@@ -9852,6 +9859,35 @@
       ],
       "vCard field": [
         "vCard-veld"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Bursts"
+      ],
+      "Favorites": [
+        "Favorieten"
+      ],
+      "Live Photos": [
+        "Live foto"
+      ],
+      "Panoramas": [
+        "Panorama's"
+      ],
+      "Portraits": [
+        "Portretfoto's"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Schermafbeeldingen"
+      ],
+      "Selfies": [
+        "Selfies"
+      ],
+      "Videos": [
+        "Video's"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
