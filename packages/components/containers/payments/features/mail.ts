@@ -432,6 +432,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getNAddressesFeature({ n: 1 }),
+                [PLANS.VISIONARY]: getNAddressesFeature({ n: plansMap[PLANS.VISIONARY]?.MaxAddresses || 100 }),
             },
         },
         {
@@ -457,6 +458,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getNDomainsFeature({ n: 0 }),
+                [PLANS.VISIONARY]: getNDomainsFeature({ n: plansMap[PLANS.VISIONARY]?.MaxDomains || 10 }),
             },
         },
         {
@@ -482,6 +484,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getNMessagesFeature(150),
+                [PLANS.VISIONARY]: getNMessagesFeature('unlimited'),
             },
         },
         {
@@ -507,6 +510,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getFolders(3),
+                [PLANS.VISIONARY]: getFolders('unlimited'),
             },
         },
         {
@@ -532,6 +536,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getLabels(3),
+                [PLANS.VISIONARY]: getLabels('unlimited'),
             },
         },
         {
@@ -557,6 +562,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getFilters(1),
+                [PLANS.VISIONARY]: getFilters('unlimited'),
             },
         },
         {
@@ -582,6 +588,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getAttachments(),
+                [PLANS.VISIONARY]: getAttachments(),
             },
         },
         {
@@ -607,6 +614,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getSignature(),
+                [PLANS.VISIONARY]: getSignature(),
             },
         },
         {
@@ -632,6 +640,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getEndToEndEncryption(),
+                [PLANS.VISIONARY]: getEndToEndEncryption(),
             },
         },
         {
@@ -657,6 +666,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getEncryptionOutside(),
+                [PLANS.VISIONARY]: getEncryptionOutside(),
             },
         },
         {
@@ -682,6 +692,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getEncryptedContacts(),
+                [PLANS.VISIONARY]: getEncryptedContacts(),
             },
         },
         {
@@ -707,6 +718,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getContactGroups(false),
+                [PLANS.VISIONARY]: getContactGroups(true),
             },
         },
         {
@@ -732,6 +744,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getSMTP(false),
+                [PLANS.VISIONARY]: getSMTP(true),
             },
         },
         {
@@ -757,6 +770,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getSMTPToken(false),
+                [PLANS.VISIONARY]: getSMTPToken(true),
             },
         },
         {
@@ -782,6 +796,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getAutoReply(false),
+                [PLANS.VISIONARY]: getAutoReply(true),
             },
         },
         {
@@ -807,6 +822,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getAutoForwarding(false),
+                [PLANS.VISIONARY]: getAutoForwarding(true),
             },
         },
         {
@@ -832,6 +848,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getCatchAll(false),
+                [PLANS.VISIONARY]: getCatchAll(true),
             },
         },
         {
@@ -857,6 +874,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getAutoDeleteSpamAndTrash(false),
+                [PLANS.VISIONARY]: getAutoDeleteSpamAndTrash(true),
             },
         },
         {
@@ -882,6 +900,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getScheduleAndSnooze(false),
+                [PLANS.VISIONARY]: getScheduleAndSnooze(true),
             },
         },
         {
@@ -907,6 +926,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getDesktopApp(false),
+                [PLANS.VISIONARY]: getDesktopApp(true),
             },
         },
         {
@@ -932,6 +952,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: null,
             },
         },
         {
@@ -957,6 +978,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: getProtonScribe(true),
             },
         },
         {
@@ -982,6 +1004,7 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getEasySwitch(),
+                [PLANS.VISIONARY]: getEasySwitch(),
             },
         },
     ];
