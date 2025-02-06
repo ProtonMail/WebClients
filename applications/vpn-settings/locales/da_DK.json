@@ -301,6 +301,9 @@
       "Forgot recovery method?": [
         "Glemt gendannelsesmetoden?"
       ],
+      "Generate password": [
+        "Generér adgangskode"
+      ],
       "Get a new encrypted email address": [
         "Få en ny krypteret e-mailadresse"
       ],
@@ -606,9 +609,6 @@
       ],
       "Sign in with password": [
         "Log ind med en adgangskode"
-      ],
-      "Sign in with SSO": [
-        "Log ind med SSO"
       ],
       "Sign out": [
         "Log ud"
@@ -3911,9 +3911,6 @@
       ],
       "for choosing ${ product }": [
         "for at vælge ${ product }"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "For medlemmer af organisationer, der bruger single sign-on (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."

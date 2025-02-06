@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Αντιγραφή του κλειδιού στο πρόχειρο"
       ],
+      "Copy password": [
+        "Αντιγραφή κωδικού πρόσβασης"
+      ],
       "Copy version number to clipboard": [
         "Αντιγραφή αριθμού έκδοσης στο πρόχειρο"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Δημιουργία Πύλης"
+      ],
+      "Create new password": [
+        "Δημιουργία νέου κωδικού πρόσβασης"
       ],
       "Create new policy": [
         "Δημιουργία νέας πολιτικής"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Ξεχάσατε τη μέθοδο ανάκτησης;"
+      ],
+      "Generate password": [
+        "Παραγωγή τυχαίου κωδικού πρόσβασης"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Λάβετε το ${ planName } για ${ priceCoupon }"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Σύνδεση με κωδικό"
-      ],
-      "Sign in with SSO": [
-        "Σύνδεση με SSO"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -3778,6 +3784,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
@@ -4109,9 +4118,6 @@
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Για μέλη οργανισμών που χρησιμοποιούν ενιαία πρόσβαση (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
       ],
@@ -4255,6 +4261,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Χρειάζονται 10 ημέρες για να αλλάξετε τη χώρα ενός διακομιστή, οπότε βεβαιωθείτε ότι η επιλογή σας είναι σωστή."
+      ],
+      "It's better to have:": [
+        "Είναι καλύτερα να έχετε:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Αυτόματη συμπλήρωση στοιχείου στο ${ vaultLink }"
@@ -4415,6 +4424,9 @@
       "No addresses exist": [
         "Δεν υπάρχουν διευθύνσεις"
       ],
+      "No common passwords": [
+        "Όχι κοινούς κωδικούς πρόσβασης"
+      ],
       "No gateways": [
         "Δεν υπάρχουν πύλες"
       ],
@@ -4427,6 +4439,9 @@
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Μη προβλέψιμες ακολουθίες (1234, aaa)"
+      ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
@@ -4435,6 +4450,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
+      ],
+      "Numbers": [
+        "Αριθμοί"
       ],
       "of": [
         "από"
@@ -4766,6 +4784,9 @@
       "Switch to": [
         "Αλλάξτε σε"
       ],
+      "Symbols (#$&)": [
+        "Σύμβολα (#$&)"
+      ],
       "Thank you": [
         "Ευχαριστούμε"
       ],
@@ -4978,6 +4999,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Ανεβάστε το λογότυπο του οργανισμού σας για να ενισχύσετε την εταιρική σας ταυτότητα και να δημιουργήσετε μια εξατομικευμένη εμπειρία για τους χρήστες σας."
+      ],
+      "Uppercase and lowercase letters": [
+        "Κεφαλαία και πεζά γράμματα"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Χρησιμοποιήστε μια μέθοδο ανάκτησης για να απενεργοποιήσετε τις μεθόδους ελέγχου ταυτότητας δύο παραγόντων."
@@ -5697,6 +5721,9 @@
       "Enter the code displayed on your TV": [
         "Εισάγετε τον κωδικό που εμφανίζεται στην τηλεόρασή σας"
       ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
+      ],
       "Entity ID": [
         "ID οντότητας"
       ],
@@ -5774,6 +5801,9 @@
       ],
       "Moderate NAT": [
         "Μέτριο NAT"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
       ],
       "Name": [
         "Όνομα"
@@ -5950,6 +5980,9 @@
       "Strong": [
         "Δυνατό"
       ],
+      "Strong password": [
+        "Δυνατός κωδικός πρόσβασης"
+      ],
       "Subscription options": [
         "Επιλογές συνδρομής"
       ],
@@ -5998,11 +6031,17 @@
       "Vulnerable": [
         "Ευάλωτο"
       ],
+      "Vulnerable password": [
+        "Ευάλωτος κωδικός πρόσβασης"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Λυπούμαστε που φεύγετε. Παρακαλούμε εξηγήστε τον λόγο, για να μας βοηθήσετε να βελτιωθούμε."
       ],
       "Weak": [
         "Αδύναμο"
+      ],
+      "Weak password": [
+        "Αδύναμος κωδικός πρόσβασης"
       ],
       "What happened?": [
         "Τι συνέβη;"
@@ -6137,6 +6176,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Δεν έχετε πρόσβαση στο 2FA σας;"
+      ],
+      "Forgot email?": [
+        "Ξεχάσατε το email σας;"
       ],
       "Forgot password?": [
         "Ξέχασα τον κωδικό πρόσβασης?"
@@ -7952,6 +7994,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Έχετε γίνει διαχειριστής του οργανισμού **${ organizationName }** από"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Πρέπει να διαγράψετε όλες τις ομάδες πριν τη δημιουργία νέου κλειδιού οργανισμού"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Πρέπει να ιδιωτικοποιήσετε όλους τους χρήστες πριν δημιουργήσετε ένα νέο κλειδί οργανισμού"
       ],
@@ -9239,6 +9284,9 @@
       ],
       "User details:": [
         "Λεπτομέρειες χρήστη:"
+      ],
+      "Welcome": [
+        "Καλώς ήρθατε"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Για να προσθέσετε νέους χρήστες στον οργανισμό σας, θα πρέπει να τους δημιουργήσετε χειροκίνητα."
