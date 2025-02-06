@@ -8021,6 +8021,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Du har blivit administratör för organisationen **${ organizationName }** av"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Du måste ta bort alla grupper innan du genererar en ny organisationsnyckel"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Du måste privatisera alla användare innan du genererar en ny organisationsnyckel"
       ],
@@ -11560,10 +11563,6 @@
       "${ n } account per wallet": [
         "${ n } konto per plånbok",
         "${ n } konton per plånbok"
-      ],
-      "${ n } email address": [
-        "${ n } e-postadress",
-        "${ n } e-postadresser"
       ],
       "${ n } wallet": [
         "${ n } plånbok",
