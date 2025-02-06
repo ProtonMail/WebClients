@@ -9139,6 +9139,115 @@
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "${ salePercentage }% Rabatt"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "${ salePercentage }% Rabatt für dich +1"
+      ],
+      "10 email addresses for you": [
+        "10 E-Mail-Adressen für dich"
+      ],
+      "10,000+ servers in 110+ countries": [
+        "Mehr als 10.000 Server in über 110 Ländern"
+      ],
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "200 GB storage": [
+        "200 GB Speicherplatz"
+      ],
+      "500 GB total storage": [
+        "500 GB Speicherplatz insgesamt"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Alle Premium-Funktionen von Mail, VPN, Pass und Drive"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Alle Premium-Dienste von ${ BRAND_NAME }. Ein einfaches Abonnement."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatte basieren auf den Standardpreisen für Monatsabonnements. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum regulären Jahrespreis."
+      ],
+      "Double the love, half the price": [
+        "Doppelte Liebe, halber Preis"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Sichere dir 1 Jahr ${ dealName } mit ${ salePercentage }% Rabatt – plus einen Geschenkcode, um dasselbe Angebot mit einer Freundin oder einem Freund zu teilen"
+      ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ],
+      "High-speed streaming": [
+        "Hochgeschwindigkeits-Steaming"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Bietet erstklassige Kontosicherheit und fachkundigen Support. ${ DARK_WEB_MONITORING_NAME } durchforstet versteckte Bereiche des Internets nach ${ MAIL_APP_NAME }-E-Mail-Adressen, die in illegalen Datenmärkten gelandet sind. Wenn eine Sicherheitslücke erkannt wird, erhältst du eine Benachrichtigung vom Security Center mit einer Anleitung zum Schutz deines Kontos."
+      ],
+      "Protect 10 devices at a time": [
+        "Schütze 10 Geräte gleichzeitig"
+      ],
+      "Recover previous file versions": [
+        "Vorherige Dateiversionen wiederherstellen"
+      ],
+      "Secure file storage & sharing": [
+        "Sichere Dateispeicherung und -freigabe"
+      ],
+      "Secure vault sharing": [
+        "Sicheres Teilen von Tresoren"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte Hide-my-email-Aliasse"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ],
+      "Valentine's deal:": [
+        "Angebot zum Valentinstag:"
+      ]
+    },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Angebot zum Valentinstag"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
+      "/ month": [
+        "/ Monat"
+      ],
+      "12 months": [
+        "12 Monate"
+      ],
+      "15 months": [
+        "15 Monate"
+      ],
+      "24 months": [
+        "24 Monate"
+      ],
+      "30 months": [
+        "30 Monate"
+      ],
+      "for ${ durationDeal }": [
+        "für ${ durationDeal }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
@@ -9217,10 +9326,6 @@
       "${ n } account per wallet": [
         "${ n } Konto pro Wallet",
         "${ n } Konten pro Wallet"
-      ],
-      "${ n } email address": [
-        "${ n } E-Mail-Adresse",
-        "${ n } E-Mail-Adressen"
       ],
       "${ n } wallet": [
         "${ n } Wallet",
