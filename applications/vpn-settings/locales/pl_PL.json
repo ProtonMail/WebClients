@@ -316,6 +316,9 @@
       "Forgot recovery method?": [
         "Nie pamiętasz metody odzyskiwania?"
       ],
+      "Generate password": [
+        "Generuj hasło"
+      ],
       "Get a new encrypted email address": [
         "Uzyskaj nowy szyfrowany adres e-mail"
       ],
@@ -627,9 +630,6 @@
       ],
       "Sign in with password": [
         "Zaloguj się za pomocą hasła"
-      ],
-      "Sign in with SSO": [
-        "Zaloguj się przez SSO"
       ],
       "Sign out": [
         "Wyloguj"
@@ -4118,9 +4118,6 @@
       ],
       "for choosing ${ product }": [
         "za wybranie ${ product }"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Logowanie SSO (SAML) dla użytkowników organizacji"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Jeśli przechodzisz od innego dostawcy poczty e-mail do ${ MAIL_APP_NAME }, przejdź do karty ${ boldAddresses } i dodaj wszystkie aktywne adresy przed zmianą rekordu MX."

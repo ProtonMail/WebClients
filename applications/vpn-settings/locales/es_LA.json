@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Copiar clave al portapapeles"
       ],
+      "Copy password": [
+        "Copiar la contraseña"
+      ],
       "Copy version number to clipboard": [
         "Copiar el número de versión en el portapapeles"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Crear puerta de enlace"
+      ],
+      "Create new password": [
+        "Crear una contraseña nueva"
       ],
       "Create new policy": [
         "Crear una política"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
+      ],
+      "Generate password": [
+        "Generar contraseña"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Obtenga ${ planName } por ${ priceCoupon }"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Iniciar sesión con contraseña"
-      ],
-      "Sign in with SSO": [
-        "Iniciar sesión con SSO"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -3778,6 +3784,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Pregunte al administrador de la organización para configurar puertas de enlace."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -4109,9 +4118,6 @@
       "for choosing ${ product }": [
         "por elegir ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Para miembros de organizaciones que usan inicio de sesión único (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, seleccione la pestaña ${ boldAddresses } y añada todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
       ],
@@ -4255,6 +4261,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Se necesitan 10 días para cambiar el país de un servidor, así que asegúrese de que su selección sea correcta."
+      ],
+      "It's better to have:": [
+        "Es mejor tener:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Elemento completado automáticamente en ${ vaultLink }"
@@ -4415,6 +4424,9 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
+      "No common passwords": [
+        "Ninguna contraseña común"
+      ],
       "No gateways": [
         "Sin puertas de enlace"
       ],
@@ -4427,6 +4439,9 @@
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "No secuencias predecibles (1234, aaa)"
+      ],
       "No results found": [
         "No se encontraron resultados"
       ],
@@ -4435,6 +4450,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
+      ],
+      "Numbers": [
+        "Números"
       ],
       "of": [
         "de"
@@ -4766,6 +4784,9 @@
       "Switch to": [
         "Cambiar a"
       ],
+      "Symbols (#$&)": [
+        "Símbolos (#$&)"
+      ],
       "Thank you": [
         "Gracias"
       ],
@@ -4978,6 +4999,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Cargue el logotipo de la organización para potenciar su identidad de marca y crear una experiencia personalizada para sus usuarios."
+      ],
+      "Uppercase and lowercase letters": [
+        "Letras mayúsculas y minúsculas"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Use un método de recuperación para desactivar los métodos de autenticación de dos factores."
@@ -5697,6 +5721,9 @@
       "Enter the code displayed on your TV": [
         "Ingrese el código mostrado en su TV"
       ],
+      "Enter your password": [
+        "Ingrese su contraseña"
+      ],
       "Entity ID": [
         "ID de la entidad"
       ],
@@ -5774,6 +5801,9 @@
       ],
       "Moderate NAT": [
         "NAT moderada"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
       ],
       "Name": [
         "Nombre"
@@ -5950,6 +5980,9 @@
       "Strong": [
         "Fuerte"
       ],
+      "Strong password": [
+        "Contraseña segura"
+      ],
       "Subscription options": [
         "Opciones de suscripción"
       ],
@@ -5998,11 +6031,17 @@
       "Vulnerable": [
         "Vulnerable"
       ],
+      "Vulnerable password": [
+        "Contraseña vulnerable"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos que se vaya. Indíquenos por qué se va para ayudarnos a mejorar."
       ],
       "Weak": [
         "Débil"
+      ],
+      "Weak password": [
+        "Contraseña poco segura"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
@@ -6137,6 +6176,9 @@
       ],
       "Don't have access to your 2FA?": [
         "¿No tiene acceso a su 2FA?"
+      ],
+      "Forgot email?": [
+        "¿Olvidó su correo electrónico?"
       ],
       "Forgot password?": [
         "¿Contraseña olvidada?"
@@ -7952,6 +7994,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Se ha convertido en administrador de la organización **${ organizationName }** por"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Debe eliminar todos los grupos antes de generar una clave nueva de la organización"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Debe privatizar todos los usuarios antes de generar una clave nueva de la organización"
       ],
@@ -9239,6 +9284,9 @@
       ],
       "User details:": [
         "Detalles del usuario:"
+      ],
+      "Welcome": [
+        "Le damos la bienvenida"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrá que crear los nuevos usuarios manualmente para añadirlos a su organización."

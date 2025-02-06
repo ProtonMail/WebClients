@@ -29,6 +29,9 @@
       "Add domain": [
         "Ajouter un domaine"
       ],
+      "Add forwarding mailbox": [
+        "Ajouter une messagerie de transfert"
+      ],
       "Add mailbox": [
         "Ajouter une messagerie"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Options avancées"
+      ],
+      "Apply lifetime coupon code": [
+        "Appliquer le code promo pour compte Lifetime"
       ],
       "Authenticate": [
         "S'authentifier"
@@ -1468,6 +1474,9 @@
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
+      "Coupon successfully applied!": [
+        "Le code promo a été appliqué."
+      ],
       "Create contact illustration": [
         "Créer l'illustration du contact"
       ],
@@ -1998,8 +2007,8 @@
       "Settings successfully updated": [
         "Les paramètres ont été mis à jour."
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Partagez des alias avec d'autres personnes en ajoutant leur boîte de réception comme messagerie supplémentaire."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Partagez des alias avec d'autres personnes en ajoutant leur boîte de réception comme messagerie de transfert."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Partagez vos identifiants et notes sécurisées avec jusqu'à 10 personnes"
@@ -3192,6 +3201,9 @@
       "Alias Display Name": [
         "Nom d'affichage de l'alias"
       ],
+      "Coupon": [
+        "Code promo"
+      ],
       "Email address": [
         "Adresse e-mail"
       ],
@@ -3523,6 +3535,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"
       ],
+      "Enter coupon code": [
+        "Saisissez le code promo"
+      ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire"
       ],
@@ -3844,6 +3859,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Les invitations n'ont pu être envoyées aux adresses suivantes :"
+      ],
+      "Coupon cannot be empty": [
+        "Le code promo ne peut pas être vide."
+      ],
+      "Coupon could not be applied.": [
+        "Le code promo n'a pas pu être appliqué."
       ],
       "Delete alias": [
         "Supprimer l'alias"

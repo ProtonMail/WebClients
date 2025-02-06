@@ -5186,17 +5186,8 @@
       "There is nothing to see here": [
         "Il n'y a aucune donnée à afficher."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Cette action supprimera définitivement le fichier importé."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Cette action supprimera définitivement le dossier que vous avez importé. Vous ne pouvez pas supprimer un dossier qui contient un fichier qui ne vous appartient pas."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Cette action supprimera le lien et révoquera l'accès de tous les utilisateurs."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Cette action supprimera définitivement les éléments sélectionnés."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
@@ -5233,6 +5224,15 @@
       ],
       "This month": [
         "Ce mois-ci"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Ceci supprimera définitivement le fichier importé."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Ceci supprimera définitivement le dossier importé."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Ceci supprimera définitivement les éléments sélectionnés que vous avez importés."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Cela retirera l'appareil synchronisé ${ deviceName } de ${ DRIVE_APP_NAME } et toutes ses données de ${ DRIVE_APP_NAME }. Les dossiers que vous avez ajoutés à Mes ordinateurs cesseront d'être synchronisés."
@@ -5771,6 +5771,9 @@
       ],
       "Album": [
         "Album"
+      ],
+      "All": [
+        "Tout"
       ],
       "Anderson": [
         "Durant"
@@ -8010,6 +8013,10 @@
       "Share invitation declined": [
         "L'invitation au partage a été refusée."
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Nous n'avons malheureusement pas pu supprimer le dossier car il n'est pas vide.",
+        "Nous n'avons malheureusement pas pu supprimer les dossiers car ils ne sont pas vides."
+      ],
       "Stopping the sharing of this item has failed": [
         "L'arrêt du partage de cet élément n'a pas abouti."
       ],
@@ -9915,6 +9922,35 @@
       ],
       "vCard field": [
         "Champ vCard"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Rafales"
+      ],
+      "Favorites": [
+        "Favoris"
+      ],
+      "Live Photos": [
+        "Photos en direct"
+      ],
+      "Panoramas": [
+        "Panoramas"
+      ],
+      "Portraits": [
+        "Portraits"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Captures d'écran"
+      ],
+      "Selfies": [
+        "Selfies"
+      ],
+      "Videos": [
+        "Vidéos"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

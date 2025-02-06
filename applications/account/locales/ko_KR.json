@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -313,6 +313,9 @@
       "Copy link": [
         "링크 복사"
       ],
+      "Copy password": [
+        "비밀번호 복사"
+      ],
       "Copy version number to clipboard": [
         "버전 넘버를 클립보드에 복사하기"
       ],
@@ -339,6 +342,9 @@
       ],
       "Create link": [
         "링크 생성"
+      ],
+      "Create new password": [
+        "새로운 비밀번호 생성"
       ],
       "Create new policy": [
         "새 정책 추가"
@@ -576,6 +582,9 @@
       ],
       "Generate new recovery phrase": [
         "새로운 복구시점 만들기"
+      ],
+      "Generate password": [
+        "비밀번호 생성"
       ],
       "Generate recovery phrase": [
         "복구 코드 생성"
@@ -1116,9 +1125,6 @@
       ],
       "Sign in with password": [
         "비밀번호로 로그인"
-      ],
-      "Sign in with SSO": [
-        "SSO로 로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -3933,6 +3939,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "텍스트 입력란은 선택 사항입니다. 이 양식에 제공된 정보는 선택한 송장에 한해 변경되며 향후 송장 세부 사항은 변경되지 않습니다."
       ]
     },
     "Email": {
@@ -4471,6 +4480,9 @@
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "청구서 주소 수정이 현재 사용할 수 없습니다.\n나중에 다시 시도하시기 바랍니다."
       ],
       "Email address disabled": [
         "이메일 주소가 유효하지 않습니다."
@@ -6878,11 +6890,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "비밀번호를 분실한 경우 ${ BRAND_NAME } 계정의 콘텐츠에 계속 액세스할 수 있도록 적어도 하나의 데이터 복구 방법을 활성화하세요."
       ],
-      "Active": [
-        "활성"
-      ],
       "active": [
         "활성화"
+      ],
+      "Active": [
+        "활성"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "계정에 @pm.me 이메일 주소를 추가해 보세요. 더 간단하고 짧은 이 도메인은 \"${ MAIL_APP_NAME } me\" 또는 \"Private Message me\"를 의미합니다."
@@ -7072,6 +7084,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "게이트웨이를 설정하려면 조직 관리자에 문의하십시오."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "최소 ${ BETTER_PASSWORD_LENGTH }글자"
       ],
       "Attention required": [
         "주의 필요"
@@ -7307,10 +7322,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7582,9 +7597,6 @@
       ],
       "for choosing ${ product }": [
         "${ product }을(를) 선택해 주셔서 진심으로 감사드립니다."
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "싱글 사인 온을 사용하는 조직 내의 구성원 (SAML SSO)용"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
@@ -8069,6 +8081,9 @@
       "No addresses exist": [
         "주소 없음"
       ],
+      "No common passwords": [
+        "보편적인 비밀번호 없음"
+      ],
       "No credit card required": [
         "신용 카드 필요 없음"
       ],
@@ -8099,6 +8114,9 @@
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "추측 가능한 구성 없음 (1234, aaa)"
+      ],
       "No results found": [
         "결과를 찾을 수 없음"
       ],
@@ -8113,6 +8131,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
+      ],
+      "Numbers": [
+        "숫자"
       ],
       "of": [
         "의"
@@ -8626,6 +8647,9 @@
       ],
       "Switch to": [
         "다음으로 전환:"
+      ],
+      "Symbols (#$&)": [
+        "기호 (#$&)"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "${ DRIVE_APP_NAME } 앱으로 파일을 동기화하고 관리하세요. ${ DOCS_APP_NAME }에서 문서를 만들고 공유하고 안전하게 저장하세요. ${ ios }, ${ android } 및 ${ desktop }에서 모두 사용 가능합니다."
@@ -10460,6 +10484,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "키의 지문 인식을 위해 비밀번호를 입력하세요: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "비밀번호를 입력해주세요"
+      ],
       "Entity ID": [
         "엔티티 ID"
       ],
@@ -10663,6 +10690,9 @@
       ],
       "Move to Inbox": [
         "받은 편지함으로 이동"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "최소한 ${ MIN_PASSWORD_LENGTH }글자여야 합니다."
       ],
       "Name": [
         "이름"
@@ -10952,6 +10982,9 @@
       "Strong": [
         "강함"
       ],
+      "Strong password": [
+        "강력한 비밀번호"
+      ],
       "Subscription options": [
         "구독 옵션"
       ],
@@ -11048,11 +11081,17 @@
       "Vulnerable": [
         "취약함"
       ],
+      "Vulnerable password": [
+        "취약한 비밀번호"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "가시는 모습을 본다니 슬프네요. 저희가 한층 더 발전할 수 있도록 어떤 이유로 떠나는지 알려주세요."
       ],
       "Weak": [
         "약함"
+      ],
+      "Weak password": [
+        "약한 비밀번호"
       ],
       "Week start": [
         "한 주의 시작"
@@ -11293,6 +11332,9 @@
       ],
       "Encryption and keys": [
         "암호화 및 키"
+      ],
+      "Forgot email?": [
+        "이메일을 잊으셨나요?"
       ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
@@ -13789,6 +13831,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정으로 계속"
       ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "${ discountPercent }% Porkbun 할인 포팜"
+      ],
       "Let's talk": [
         "상담 및 계약 필요"
       ],
@@ -14800,6 +14845,9 @@
       ],
       "Recovery phone number": [
         "복구 전화번호"
+      ],
+      "Review account safety": [
+        "내 계정 보안 검토하기"
       ],
       "Safeguard account now": [
         "지금 계정 보호"
@@ -16125,6 +16173,9 @@
       "User details:": [
         "사용자 세부 정보:"
       ],
+      "Welcome": [
+        "환영합니다"
+      ],
       "Yes, it was me": [
         "네, 저였어요."
       ],
@@ -16425,47 +16476,6 @@
         "${ totalPrice }용"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "저희는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -16748,6 +16758,47 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "저희는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -18637,6 +18688,29 @@
         "오늘"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "외부 주소 - 이 그룹의 모든 이메일 종단간 암호화를 비활성화 합니다"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"
+      ],
+      "Group membership paused": [
+        "그룹 구성 권한 중단됨"
+      ],
+      "Sending member invitation": [
+        "구성원 초대장 발송 중"
+      ],
+      "User declined invitation": [
+        "사용자가 초대를 거절함"
+      ],
+      "Waiting for user to accept the invitation": [
+        "사용자의 초대 수락 대기 중"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME } 사용자들이 전송을 위해 기본으로 이 키를 사용합니다."
@@ -18850,29 +18924,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "사용자의 외부 계정이 24시간 대역폭 제한에 도달했습니다. ${ BRAND_NAME }이 불러오기를 계속하도록 시도할 것입니다."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "외부 주소 - 이 그룹의 모든 이메일 종단간 암호화를 비활성화 합니다"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"
-      ],
-      "Group membership paused": [
-        "그룹 구성 권한 중단됨"
-      ],
-      "Sending member invitation": [
-        "구성원 초대장 발송 중"
-      ],
-      "User declined invitation": [
-        "사용자가 초대를 거절함"
-      ],
-      "Waiting for user to accept the invitation": [
-        "사용자의 초대 수락 대기 중"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19406,6 +19457,9 @@
       ],
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "초대된 사용자로서 무료 ${ BRAND_NAME } 계정에 가입하여 ${ appName }에 독점적으로 액세스하세요."
+      ],
+      "Bitcoin via Email": [
+        "이메일을 통한 Bitcoin"
       ],
       "Create ${ BRAND_NAME } Account now": [
         "지금 ${ BRAND_NAME } 계정 생성"

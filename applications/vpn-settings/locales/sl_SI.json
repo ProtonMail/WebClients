@@ -304,6 +304,9 @@
       "Forgot recovery method?": [
         "Ste pozabili način obnovitve?"
       ],
+      "Generate password": [
+        "Ustvari geslo"
+      ],
       "Get a new encrypted email address": [
         "Pridobite nov šifriran e-poštni naslov"
       ],
@@ -609,9 +612,6 @@
       ],
       "Sign in with password": [
         "Prijava z geslom"
-      ],
-      "Sign in with SSO": [
-        "Prijava s SSO"
       ],
       "Sign out": [
         "Odjava"
@@ -3871,9 +3871,6 @@
       ],
       "for choosing ${ product }": [
         "za izbiro ${ product }"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Za člane organizacij, ki uporabljajo enotno prijavo (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Za uporabnike, ki prehajajo na ${ MAIL_APP_NAME } iz druge e-poštne storitve, izberite zavihek ${ boldAddresses } in dodajte vse aktivne e-poštne naslove, preden spremenite zapis MX, da zagotovite nemoten prenos."

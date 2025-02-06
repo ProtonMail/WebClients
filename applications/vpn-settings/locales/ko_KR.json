@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "클립보드에 키 복사"
       ],
+      "Copy password": [
+        "비밀번호 복사"
+      ],
       "Copy version number to clipboard": [
         "버전 넘버를 클립보드에 복사하기"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "게이트웨이 생성"
+      ],
+      "Create new password": [
+        "새로운 비밀번호 생성"
       ],
       "Create new policy": [
         "새 정책 추가"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "복구 방법을 잊으셨나요?"
+      ],
+      "Generate password": [
+        "비밀번호 생성"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName }을(를) ${ priceCoupon }로 구매하기"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "비밀번호로 로그인"
-      ],
-      "Sign in with SSO": [
-        "SSO로 로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -2442,6 +2448,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "텍스트 입력란은 선택 사항입니다. 이 양식에 제공된 정보는 선택한 송장에 한해 변경되며 향후 송장 세부 사항은 변경되지 않습니다."
       ]
     },
     "Email spam notification": {
@@ -2513,6 +2522,9 @@
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "청구서 주소 수정이 현재 사용할 수 없습니다.\n나중에 다시 시도하시기 바랍니다."
       ],
       "Email address is invalid": [
         "올바르지 않은 이메일 주소입니다"
@@ -3733,6 +3745,9 @@
       "Ask your organization admin to setup Gateways.": [
         "게이트웨이를 설정하려면 조직 관리자에 문의하십시오."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "최소 ${ BETTER_PASSWORD_LENGTH }글자"
+      ],
       "Attention required": [
         "주의 필요"
       ],
@@ -4060,9 +4075,6 @@
       "for choosing ${ product }": [
         "${ product }을(를) 선택해 주셔서 진심으로 감사드립니다."
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "싱글 사인 온을 사용하는 조직 내의 구성원 (SAML SSO)용"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
       ],
@@ -4366,6 +4378,9 @@
       "No addresses exist": [
         "주소 없음"
       ],
+      "No common passwords": [
+        "보편적인 비밀번호 없음"
+      ],
       "No gateways": [
         "게이트웨이 없음"
       ],
@@ -4378,6 +4393,9 @@
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "추측 가능한 구성 없음 (1234, aaa)"
+      ],
       "No results found": [
         "결과를 찾을 수 없음"
       ],
@@ -4386,6 +4404,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
+      ],
+      "Numbers": [
+        "숫자"
       ],
       "of": [
         "의"
@@ -4713,6 +4734,9 @@
       ],
       "Switch to": [
         "다음으로 전환:"
+      ],
+      "Symbols (#$&)": [
+        "기호 (#$&)"
       ],
       "Thank you": [
         "진심으로 감사드립니다."
@@ -5631,6 +5655,9 @@
       "Enter the code displayed on your TV": [
         "TV에 표시된 코드 입력"
       ],
+      "Enter your password": [
+        "비밀번호를 입력해주세요"
+      ],
       "Entity ID": [
         "엔티티 ID"
       ],
@@ -5708,6 +5735,9 @@
       ],
       "Moderate NAT": [
         "일반형 NAT"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "최소한 ${ MIN_PASSWORD_LENGTH }글자여야 합니다."
       ],
       "Name": [
         "이름"
@@ -5883,6 +5913,9 @@
       "Strong": [
         "강함"
       ],
+      "Strong password": [
+        "강력한 비밀번호"
+      ],
       "Subscription options": [
         "구독 옵션"
       ],
@@ -5934,11 +5967,17 @@
       "Vulnerable": [
         "취약함"
       ],
+      "Vulnerable password": [
+        "취약한 비밀번호"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "가시는 모습을 본다니 슬프네요. 저희가 한층 더 발전할 수 있도록 어떤 이유로 떠나는지 알려주세요."
       ],
       "Weak": [
         "약함"
+      ],
+      "Weak password": [
+        "약한 비밀번호"
       ],
       "What happened?": [
         "무슨 일인가요?"
@@ -6073,6 +6112,9 @@
       ],
       "Don't have access to your 2FA?": [
         "회원님의 2단계 인증에 접근할 수 없으신가요?"
+      ],
+      "Forgot email?": [
+        "이메일을 잊으셨나요?"
       ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
@@ -8261,6 +8303,11 @@
         "사용자"
       ]
     },
+    "Safety review": {
+      "Review account safety": [
+        "내 계정 보안 검토하기"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "취소"
@@ -9129,6 +9176,9 @@
       ],
       "User details:": [
         "사용자 세부 정보:"
+      ],
+      "Welcome": [
+        "환영합니다"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "새 사용자를 회원님의 조직에 추가하려면 직접 생성해야 합니다."
@@ -11340,6 +11390,9 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Bitcoin을 보관하는 가장 안전한 방법"
+      ],
+      "Bitcoin via Email": [
+        "이메일을 통한 Bitcoin"
       ]
     },
     "wallet_signup_2024:app-switcher": {

@@ -322,6 +322,9 @@
       "Forgot recovery method?": [
         "回復手順を忘れましたか？"
       ],
+      "Generate password": [
+        "パスワードを生成"
+      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } で ${ priceCoupon }を入手"
       ],
@@ -639,9 +642,6 @@
       ],
       "Sign in with password": [
         "パスワードを使用してサインインする"
-      ],
-      "Sign in with SSO": [
-        "SSO でサインインする"
       ],
       "Sign out": [
         "サインアウト"
@@ -4065,9 +4065,6 @@
       ],
       "for choosing ${ product }": [
         "${ product } を選択した場合"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "シングル サインオン (SAML SSO) を使用する組織のメンバー向け"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "別のメール サービスから ${ MAIL_APP_NAME } に切り替えるユーザーの場合、スムーズに移行できるように、MX レコードを変更する前に、${ boldAddresses } タブを選択し、アクティブなメール アドレスをすべて追加してください。"

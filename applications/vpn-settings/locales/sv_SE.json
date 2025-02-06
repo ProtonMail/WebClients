@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Kopiera nyckel till urklipp"
       ],
+      "Copy password": [
+        "Kopiera lösenord"
+      ],
       "Copy version number to clipboard": [
         "Kopiera versionsnummer till urklipp"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Skapa gateway"
+      ],
+      "Create new password": [
+        "Skapa nytt lösenord"
       ],
       "Create new policy": [
         "Skapa ny policy"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Glömt återställningsmetod?"
+      ],
+      "Generate password": [
+        "Generera lösenord"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Skaffa ${ planName } för ${ priceCoupon }"
@@ -640,9 +649,6 @@
       "Sign in with password": [
         "Logga in med lösenord"
       ],
-      "Sign in with SSO": [
-        "Logga in med SSO"
-      ],
       "Sign out": [
         "Logga ut"
       ],
@@ -955,7 +961,7 @@
       ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad.",
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad."
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månader."
       ]
     },
     "bf2023: Offers": {
@@ -3778,6 +3784,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Be din organisationsadministratör att ställa in gateways."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
+      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -4109,9 +4118,6 @@
       "for choosing ${ product }": [
         "för att välja ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "För medlemmar i organisationer som använder enkel inloggning (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
       ],
@@ -4255,6 +4261,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dagar att ändra en servers land, så se till att ditt val är korrekt."
+      ],
+      "It's better to have:": [
+        "Det är bättre att ha:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Objekt automatiskt ifyllt i ${ vaultLink }"
@@ -4415,6 +4424,9 @@
       "No addresses exist": [
         "Inga adresser finns"
       ],
+      "No common passwords": [
+        "Inga vanliga lösenord"
+      ],
       "No gateways": [
         "Inga gateways"
       ],
@@ -4427,6 +4439,9 @@
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Inga förutsägbara sekvenser (1234, aaa)"
+      ],
       "No results found": [
         "Inga resultat hittades"
       ],
@@ -4435,6 +4450,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
+      ],
+      "Numbers": [
+        "Siffror"
       ],
       "of": [
         "av"
@@ -4769,6 +4787,9 @@
       "Switch to": [
         "Byt till"
       ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
+      ],
       "Thank you": [
         "Tack"
       ],
@@ -4981,6 +5002,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Ladda upp din organisations logga för att stärka din varumärkesidentitet och skapa en personifierad upplevelse för dina användare."
+      ],
+      "Uppercase and lowercase letters": [
+        "Stora och små bokstäver"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Använd en återställningsmetod för att inaktivera dina tvåfaktorsautentiseringsmetoder."
@@ -5700,6 +5724,9 @@
       "Enter the code displayed on your TV": [
         "Ange koden som visas på din TV"
       ],
+      "Enter your password": [
+        "Ange ditt lösenord"
+      ],
       "Entity ID": [
         "Entitets-ID"
       ],
@@ -5777,6 +5804,9 @@
       ],
       "Moderate NAT": [
         "Måttlig NAT"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
       ],
       "Name": [
         "Namn"
@@ -5953,6 +5983,9 @@
       "Strong": [
         "Starkt"
       ],
+      "Strong password": [
+        "Starkt Lösenord"
+      ],
       "Subscription options": [
         "Prenumerationsalternativ"
       ],
@@ -6009,6 +6042,9 @@
       ],
       "Weak": [
         "Svagt"
+      ],
+      "Weak password": [
+        "Svagt lösenord"
       ],
       "What happened?": [
         "Vad hände?"
@@ -6143,6 +6179,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Har du inte åtkomst till din 2FA?"
+      ],
+      "Forgot email?": [
+        "Glömt e-post?"
       ],
       "Forgot password?": [
         "Glömt lösenord?"
@@ -9276,6 +9315,9 @@
       "User details:": [
         "Användardetaljer:"
       ],
+      "Welcome": [
+        "Välkommen"
+      ],
       "You will have to create new users manually to add them to your organization.": [
         "Du måste skapa nya användare manuellt för att lägga till dem till din organisation."
       ],
@@ -11109,7 +11151,7 @@
         "Misslyckad"
       ],
       "Needs attention": [
-        "Kräver åtgärd"
+        "Behöver uppmärksamhet"
       ],
       "Refunded": [
         "Återbetald"

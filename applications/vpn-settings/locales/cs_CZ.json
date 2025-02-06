@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Zkopírovat klíč do schránky"
       ],
+      "Copy password": [
+        "Kopírovat heslo"
+      ],
       "Copy version number to clipboard": [
         "Zkopírovat číslo verze do schránky"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Vytvořit bránu"
+      ],
+      "Create new password": [
+        "Vytvořit nové heslo"
       ],
       "Create new policy": [
         "Vytvořit novou zásadu"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Zapomněli jste metodu obnovení?"
+      ],
+      "Generate password": [
+        "Generovat heslo"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získat ${ planName } za ${ priceCoupon }"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Přihlásit se pomocí hesla"
-      ],
-      "Sign in with SSO": [
-        "Přihlásit se pomocí SSO"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -3856,6 +3862,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Požádejte správce organizace o nastavení brány."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Alespoň ${ BETTER_PASSWORD_LENGTH } znaků"
+      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -4195,9 +4204,6 @@
       "for choosing ${ product }": [
         "za výběr ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Pro členy organizací používajících jednotné přihlášení (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pro uživatele, kteří přecházejí na ${ MAIL_APP_NAME } z jiné e-mailové služby, vyberte kartu ${ boldAddresses } a před změnou záznamu MX přidejte všechny aktivní e-mailové adresy, aby byl zajištěn plynulý přechod."
       ],
@@ -4341,6 +4347,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Změna země serveru trvá 10 dní, proto se ujistěte, že je váš výběr správný."
+      ],
+      "It's better to have:": [
+        "Je lepší mít:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Položka automaticky vyplněna v ${ vaultLink }"
@@ -4501,6 +4510,9 @@
       "No addresses exist": [
         "Neexistují žádné adresy"
       ],
+      "No common passwords": [
+        "Žádná společná hesla"
+      ],
       "No gateways": [
         "Žádné brány"
       ],
@@ -4513,6 +4525,9 @@
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Žádné předvídatelné sekvence (1234, aaa)"
+      ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
@@ -4521,6 +4536,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
+      ],
+      "Numbers": [
+        "Číslice"
       ],
       "of": [
         "z"
@@ -4867,6 +4885,9 @@
       "Switch to": [
         "Přepnout na"
       ],
+      "Symbols (#$&)": [
+        "Symboly (#$&)"
+      ],
       "Thank you": [
         "Děkujeme"
       ],
@@ -5085,6 +5106,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Nahráním loga své organizace podpoříte identitu své značky a vytvoříte pro své uživatele personalizované prostředí."
+      ],
+      "Uppercase and lowercase letters": [
+        "Velká a malá písmena"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "K deaktivaci vašich metod dvoufázového ověřování použijte metodu obnovení."
@@ -5826,6 +5850,9 @@
       "Enter the code displayed on your TV": [
         "Zadejte kód zobrazený na vašem televizoru"
       ],
+      "Enter your password": [
+        "Zadejte své heslo"
+      ],
       "Entity ID": [
         "ID subjektu"
       ],
@@ -5903,6 +5930,9 @@
       ],
       "Moderate NAT": [
         "Moderate NAT"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí mít alespoň ${ MIN_PASSWORD_LENGTH } znaků"
       ],
       "Name": [
         "Jméno"
@@ -6081,6 +6111,9 @@
       "Strong": [
         "Silné"
       ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti předplatného"
       ],
@@ -6132,11 +6165,17 @@
       "Vulnerable": [
         "Zranitelné"
       ],
+      "Vulnerable password": [
+        "Zranitelné heslo"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
       ],
       "Weak": [
         "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "What happened?": [
         "Co se stalo?"
@@ -6271,6 +6310,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Nemáte přístup ke svému 2FA?"
+      ],
+      "Forgot email?": [
+        "Zapomněli jste e-mail?"
       ],
       "Forgot password?": [
         "Zapomenuté heslo?"
@@ -8175,6 +8217,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Roli správce organizace **${ organizationName }** jste získali od"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Než vytvoříte nový klíč organizace, musíte smazat všechny skupiny"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Než vytvoříte nový klíč organizace, musíte privatizovat všechny uživatele"
       ],
@@ -9518,6 +9563,9 @@
       ],
       "User details:": [
         "Podrobnosti o uživateli:"
+      ],
+      "Welcome": [
+        "Vítejte"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Nové uživatele budete muset vytvořit ručně a přidat je do organizace."

@@ -295,6 +295,9 @@
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
       ],
+      "Generate password": [
+        "Jelszó létrehozása"
+      ],
       "Get a new encrypted email address": [
         "Szerezzen egy új, titkosított email címet"
       ],
@@ -579,9 +582,6 @@
       ],
       "Sign in with password": [
         "Bejelentkezés jelszó használatával"
-      ],
-      "Sign in with SSO": [
-        "Bejelentkezés SSO használatával"
       ],
       "Sign out": [
         "Kijelentkezés"
@@ -3601,9 +3601,6 @@
       ],
       "for choosing ${ product }": [
         "hogy a ${ product }t választotta"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "A szervezet központosított bejelentkezést (SAML, SSO) használó tagjai számára"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Amennyiben egy másik e-mail szolgáltatásról vált a ${ MAIL_APP_NAME } szolgáltatásra, válassza a ${ boldAddresses } lapot, és az MX rekord módosítása előtt vegyen fel minden aktív e-mail címet, a zökkenőmentes átállás érdekében."
