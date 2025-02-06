@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "გასაღების დაკოპირება ბუფერში"
       ],
+      "Copy password": [
+        "პაროლის კოპირება"
+      ],
       "Copy version number to clipboard": [
         "ვერსიის ნომრის კოპირება ბუფერში"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "რაუტერის შექმნა"
+      ],
+      "Create new password": [
+        "ახალი პაროლის შექმნა"
       ],
       "Create new policy": [
         "ახალი პოლიტიკის შექმნა"
@@ -3760,6 +3766,9 @@
       "Ask your organization admin to setup Gateways.": [
         "სთხოვეთ ორგანიზაციის ადმინისტრატორს, რაუტერები დააყენოს."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "სულ ცოტა ${ BETTER_PASSWORD_LENGTH } სიმბოლო"
+      ],
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
@@ -4235,6 +4244,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "სერვერის ქვეყნის შეცვლას 10 დღემდე სჭირდება, ასე რომ, დარწმუნდით, რომ თქვენი არჩევანი სწორია."
       ],
+      "It's better to have:": [
+        "უკეთესია, გქონდეთ:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "ელემენტი ავტოშევსებულია ${ vaultLink }-ში"
       ],
@@ -4394,6 +4406,9 @@
       "No addresses exist": [
         "მისამართები ნაპოვნი არაა"
       ],
+      "No common passwords": [
+        "საერთო პაროლების გარეშე"
+      ],
       "No gateways": [
         "რაუტერების გარეშე"
       ],
@@ -4406,6 +4421,9 @@
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "გამოცნობადი მიმდევრობების გარეშე (1234, aaa)"
+      ],
       "No results found": [
         "შედეგების გარეშე"
       ],
@@ -4414,6 +4432,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
+      ],
+      "Numbers": [
+        "რიცხვები"
       ],
       "of": [
         "-დან"
@@ -4745,6 +4766,9 @@
       "Switch to": [
         "გადართვა"
       ],
+      "Symbols (#$&)": [
+        "სიმბოლოები (#$&)"
+      ],
       "Thank you": [
         "მადლობა"
       ],
@@ -4957,6 +4981,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "ატვირთეთ თქვენი ორგანიზაციის ლოგო, რომ გაზარდოთ თქვენი ბრენდის ცნობადობა და შექმნათ პერსონალიზებული გარემო თქვენი მომხმარებლებისთვის."
+      ],
+      "Uppercase and lowercase letters": [
+        "დიდი და პატარა ასოები"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "გამოიყენეთ აღდგენის მეთოდი 2FA-ის მეთოდების გასათიშად."
@@ -5665,6 +5692,9 @@
       "Enter the code displayed on your TV": [
         "შეიყვანეთ თქვენს TV-ზე ნაჩვენები კოდი"
       ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
+      ],
       "Entity ID": [
         "ობიექტის იდენტიფიკატორი"
       ],
@@ -5742,6 +5772,9 @@
       ],
       "Moderate NAT": [
         "საშუალო NAT-ი"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
       ],
       "Name": [
         "სახელი"
@@ -5918,6 +5951,9 @@
       "Strong": [
         "ძლიერი"
       ],
+      "Strong password": [
+        "ძლიერი პაროლი"
+      ],
       "Subscription options": [
         "გამოწერის პარამეტრები"
       ],
@@ -5966,11 +6002,17 @@
       "Vulnerable": [
         "მოწყვლადი"
       ],
+      "Vulnerable password": [
+        "მოწყვლადი პაროლი"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "ვწუხვართ, რომ მიდიხართ. აგვიხსენით, რატომ გვტოვებთ, რომ უკეთესები გავხდეთ."
       ],
       "Weak": [
         "სუსტი"
+      ],
+      "Weak password": [
+        "სუსტი პაროლი"
       ],
       "What happened?": [
         "რა მოხდა?"
@@ -6105,6 +6147,9 @@
       ],
       "Don't have access to your 2FA?": [
         "არ გაქვთ წვდომა თქვენს 2FA-სთან?"
+      ],
+      "Forgot email?": [
+        "დაგავიწყდათ ელფოსტა?"
       ],
       "Forgot password?": [
         "დაგავიწყდათ პაროლი?"
@@ -7920,6 +7965,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "მოგენიჭათ ადმინისტრატორის უფლებები ორგანიზაციაზე **${ organizationName }** შემდეგ მომხმარებლის მიერ:"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "ახალი ორგანიზაციის გასაღების გენერაციამდე ყველა ჯგუფი უნდა წაშალოთ"
+      ],
       "You must privatize all users before generating a new organization key": [
         "ორგანიზაციის ახალი გასაღების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
       ],
@@ -9198,6 +9246,9 @@
       ],
       "User details:": [
         "მომხმარებლის დეტალები:"
+      ],
+      "Welcome": [
+        "მოგესალმებით"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "თქვენს ორგანიზაციაშ დასამატებლად ახალი მომხმარებლების ხელით შექმნა მოგიწევთ."
@@ -11415,10 +11466,6 @@
       "${ n } account per wallet": [
         "${ n } ანგარიში თითოეული საფულისთვის",
         "${ n } ანგარიში თითოეული საფულისთვის"
-      ],
-      "${ n } email address": [
-        "ელფოსტის ${ n } მისამართი",
-        "${ n } ელფოსტის მისამართი"
       ],
       "${ n } wallet": [
         "${ n } საფულე",

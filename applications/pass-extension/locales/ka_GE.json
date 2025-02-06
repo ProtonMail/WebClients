@@ -29,6 +29,9 @@
       "Add domain": [
         "დომენის დამატება"
       ],
+      "Add forwarding mailbox": [
+        "გადაგზავნადი საფოსტო ყუთის დამატება"
+      ],
       "Add mailbox": [
         "საფოსტო ყუთის დამატება"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "დამატებითი პარამეტრები"
+      ],
+      "Apply lifetime coupon code": [
+        "სამუდამო კუპონის კოდის გამოყენება"
       ],
       "Authenticate": [
         "ავთენტიკაცია"
@@ -1450,6 +1456,9 @@
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Coupon successfully applied!": [
+        "კუპონის გამოყენება წარმატებულია!"
+      ],
       "Create contact illustration": [
         "კონტრაქცის ილუსტრაციის შექმნა"
       ],
@@ -1973,6 +1982,9 @@
       ],
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
+      ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "გაუზიარეთ ფსევდონიმები სხვებს მათი თქვენს საფოსტო ყუთში გადამისამართების ელფოსტად დამატებით."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "გაუზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები 10 პიროვნებამდე"
@@ -3156,6 +3168,9 @@
       "Alias Display Name": [
         "ფსევდონიმის საჩვენებელი სახელი"
       ],
+      "Coupon": [
+        "კუპონი"
+      ],
       "Email address": [
         "ელ-ფოსტის მისამართი"
       ],
@@ -3487,6 +3502,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "შეიყვანეთ კუპონის კოდი"
+      ],
       "Enter your extra password": [
         "შეიყვანეთ თქვენი დაამატებითი პაროლი"
       ],
@@ -3808,6 +3826,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "მოსაწვევი ვერ გავაგზავნე შემდეგ მისამართებზე:"
+      ],
+      "Coupon cannot be empty": [
+        "კუპონი, არ შეიძლება, ცარიელი იყოს"
+      ],
+      "Coupon could not be applied.": [
+        "კუპონის გამოყენება შეუძლებელია."
       ],
       "Delete alias": [
         "ფსევდონიმის წაშლა"

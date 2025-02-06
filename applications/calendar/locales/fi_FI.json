@@ -5274,6 +5274,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Voit myös yhdistää tuotavat kalenterit olemassaoleviin ${ BRAND_NAME }-kalentereihin."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Voit muuttaa tätä koska tahansa ${ settingsLink }."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Voit tarkastaa tilan ${ importProgressLink }."
       ],
@@ -6092,7 +6095,7 @@
         "Lähetetyt"
       ],
       "settings": [
-        "asetukset"
+        "asetuksissa"
       ],
       "Snooze": [
         "Torkuta"
@@ -7929,7 +7932,7 @@
         "Virheellinen turvakoodi"
       ],
       "Something went wrong. Please try again later.": [
-        "Jokin meni pieleen. Yritä myöhemmin uudelleen."
+        "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
         "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
@@ -10253,13 +10256,13 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME }-sähköpostiosoite",
+        "${ n } ${ BRAND_NAME }-sähköpostiosoitetta"
+      ],
       "${ n } account per wallet": [
         "${ n } tili/lompakko",
         "${ n } tiliä/lompakko"
-      ],
-      "${ n } email address": [
-        "${ n } sähköpostiosoite",
-        "${ n } sähköpostiosoitetta"
       ],
       "${ n } wallet": [
         "${ n } lompakko",

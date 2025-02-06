@@ -29,6 +29,9 @@
       "Add domain": [
         "ドメインを追加"
       ],
+      "Add forwarding mailbox": [
+        "転送メールボックスを追加"
+      ],
       "Add mailbox": [
         "メールボックスを追加"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "詳細設定"
+      ],
+      "Apply lifetime coupon code": [
+        "生涯クーポンコードを適用"
       ],
       "Authenticate": [
         "認証"
@@ -1448,6 +1454,9 @@
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
+      "Coupon successfully applied!": [
+        "クーポンを適用しました！"
+      ],
       "Create contact illustration": [
         "連絡先イラストを作成"
       ],
@@ -1969,6 +1978,9 @@
       ],
       "Settings successfully updated": [
         "設定が正常に更新されました"
+      ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "転送メールボックスとして受信トレイを追加することで、エイリアスを他の人と共有できます。"
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "最大 10 人まで、ログインやセキュアノートを共有できます"
@@ -3143,6 +3155,9 @@
       "Alias Display Name": [
         "エイリアス表示名"
       ],
+      "Coupon": [
+        "クーポン"
+      ],
       "Email address": [
         "メールアドレス"
       ],
@@ -3471,6 +3486,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
       ],
+      "Enter coupon code": [
+        "クーポンコードを入力"
+      ],
       "Enter your extra password": [
         "追加のパスワードを入力"
       ],
@@ -3786,6 +3804,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "以下のアドレスに招待を送ることができませんでした："
+      ],
+      "Coupon cannot be empty": [
+        "クーポンは空にできません"
+      ],
+      "Coupon could not be applied.": [
+        "クーポンを適用できませんでした。"
       ],
       "Delete alias": [
         "エイリアスを削除"
