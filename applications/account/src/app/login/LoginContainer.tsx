@@ -219,7 +219,7 @@ const LoginContainer = ({
             return {
                 title: c('sso').t`Welcome`,
                 subTitle: (
-                    <button onClick={handleBackStep} type="button" className="inline text-ellipsis">
+                    <button onClick={handleBackStep} type="button" className="max-w-full text-ellipsis">
                         <Icon name="user" /> {authTypeData.username}
                     </button>
                 ),
