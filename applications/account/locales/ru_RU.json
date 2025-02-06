@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -567,6 +567,9 @@
       ],
       "Generate new recovery phrase": [
         "Создать новую фразу для восстановления"
+      ],
+      "Generate password": [
+        "Создать пароль"
       ],
       "Generate recovery phrase": [
         "Создать фразу для восстановления"
@@ -1104,9 +1107,6 @@
       ],
       "Sign in with password": [
         "Войти с помощью пароля"
-      ],
-      "Sign in with SSO": [
-        "Войти с помощью системы единого входа"
       ],
       "Sign out": [
         "Выйти"
@@ -5964,6 +5964,11 @@
         "Очень маленький"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Конфиденциальность по умолчанию."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "веб-приложение"
@@ -7001,11 +7006,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
       ],
-      "Active": [
-        "Активно"
-      ],
       "active": [
         "активный"
+      ],
+      "Active": [
+        "Активно"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
@@ -7454,11 +7459,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -7732,9 +7737,6 @@
       ],
       "for choosing ${ product }": [
         "за выбор ${ product }"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Для членов организаций, использующих единое предъявление пароля (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Для пользователей, которые переходят на ${ MAIL_APP_NAME } с другой почтовой службы, выберите вкладку ${ boldAddresses } и добавьте все активные адреса электронной почты перед изменением записи MX, чтобы обеспечить плавный переход."
@@ -16764,47 +16766,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -17099,6 +17060,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -19006,6 +19008,29 @@
         "Сегодня"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы, и этим пользователем не будут передаваться шифрованные ресурсы."
+      ],
+      "Group membership paused": [
+        "Членство в группе приостановлено"
+      ],
+      "Sending member invitation": [
+        "Отправка приглашения участника"
+      ],
+      "User declined invitation": [
+        "Пользователь отклонил приглашение"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Ожидание принятия приглашения пользователем"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Пользователи ${ MAIL_APP_NAME } будут использовать по умолчанию этот ключ для отправки"
@@ -19213,29 +19238,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Возможно, ваш внешний аккаунт достиг 24-часового лимита пропускной способности. ${ BRAND_NAME } постарается возобновить импорт как можно скорее."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы, и этим пользователем не будут передаваться шифрованные ресурсы."
-      ],
-      "Group membership paused": [
-        "Членство в группе приостановлено"
-      ],
-      "Sending member invitation": [
-        "Отправка приглашения участника"
-      ],
-      "User declined invitation": [
-        "Пользователь отклонил приглашение"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Ожидание принятия приглашения пользователем"
       ]
     },
     "Tooltip automatically attach public key": {

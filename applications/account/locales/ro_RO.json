@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -313,6 +313,9 @@
       "Copy link": [
         "Copiere legătură web"
       ],
+      "Copy password": [
+        "Copiere parolă"
+      ],
       "Copy version number to clipboard": [
         "Copiere număr versiune în memorie"
       ],
@@ -339,6 +342,9 @@
       ],
       "Create link": [
         "Creare legătură web"
+      ],
+      "Create new password": [
+        "Creare parolă"
       ],
       "Create new policy": [
         "Creare regulă"
@@ -576,6 +582,9 @@
       ],
       "Generate new recovery phrase": [
         "Generare frază de recuperare"
+      ],
+      "Generate password": [
+        "Generare parolă"
       ],
       "Generate recovery phrase": [
         "Generare frază de recuperare"
@@ -1116,9 +1125,6 @@
       ],
       "Sign in with password": [
         "Autentificare cu parolă"
-      ],
-      "Sign in with SSO": [
-        "Autentificare cu SSO"
       ],
       "Sign out": [
         "Deconectare"
@@ -3963,6 +3969,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Câmpurile de text sunt opționale. Informațiile pe care le furnizați în acest formular vor modifica doar factura pe care ați selectat-o ​​și nu detaliile viitoarei facturi."
       ]
     },
     "Email": {
@@ -4505,6 +4514,9 @@
       ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Editarea adresei de facturare nu este disponibilă momentan. Reîncercați mai târziu."
       ],
       "Email address disabled": [
         "Adresă de e-mail dezactivată"
@@ -7002,11 +7014,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activați cel puțin o metodă de recuperare a datelor pentru a vă asigura că puteți accesa conținutul din contul ${ BRAND_NAME } dacă vă pierdeți parola."
       ],
-      "Active": [
-        "Activ"
-      ],
       "active": [
         "activă"
+      ],
+      "Active": [
+        "Activ"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
@@ -7210,6 +7222,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Solicitați administratorului organizației să seteze porțile de acces."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
       ],
       "Attention required": [
         "Necesită atenție"
@@ -7451,11 +7466,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -7731,9 +7746,6 @@
       "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Pentru membrii organizației care folosesc conectarea unică (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
       ],
@@ -7984,6 +7996,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Durează 10 zile pentru a schimba serverul unei țări, așa că asigurați-vă că l-ați ales pe cel potrivit."
       ],
+      "It's better to have:": [
+        "Este bine să aveți:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Articol autocompletat în ${ vaultLink }."
       ],
@@ -8221,6 +8236,9 @@
       "No addresses exist": [
         "Nu există adrese"
       ],
+      "No common passwords": [
+        "Fără parole comune"
+      ],
       "No credit card required": [
         "Nu trebuie card de credit"
       ],
@@ -8251,6 +8269,9 @@
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Fără secvențe predictibile (1234, aaa)"
+      ],
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
@@ -8265,6 +8286,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
+      ],
+      "Numbers": [
+        "Cifre"
       ],
       "of": [
         "din"
@@ -8793,6 +8817,9 @@
       "Switch to": [
         "Comutare la"
       ],
+      "Symbols (#$&)": [
+        "Simboluri (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronizați și gestionați mesajele cu aplicația ${ DRIVE_APP_NAME }. Creați și partajați documente în ${ DOCS_APP_NAME } și stocați-le în siguranță. Disponibile pe ${ ios }, ${ android } și ${ desktop }."
       ],
@@ -9173,6 +9200,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Fișierul încărcat nu este o cheie privată validă. Verificați reîncercați."
+      ],
+      "Uppercase and lowercase letters": [
+        "Litere mari și mici"
       ],
       "URL link": [
         "URL legătură web"
@@ -10664,6 +10694,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduceți parola pentru cheia cu amprenta: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "Introduceți parola"
+      ],
       "Entity ID": [
         "ID entitate"
       ],
@@ -10867,6 +10900,9 @@
       ],
       "Move to Inbox": [
         "Mutare în «Primite»"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Trebuie să aibă cel puțin ${ MIN_PASSWORD_LENGTH } caractere"
       ],
       "Name": [
         "Nume"
@@ -11158,6 +11194,9 @@
       "Strong": [
         "Puternică"
       ],
+      "Strong password": [
+        "Parolă puternică"
+      ],
       "Subscription options": [
         "Opțiuni abonament"
       ],
@@ -11254,11 +11293,17 @@
       "Vulnerable": [
         "Vulnerabilă"
       ],
+      "Vulnerable password": [
+        "Parolă vulnerabilă"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ne pare rău că ne părăsiți. Vă rugăm să ne explicaţi de ce plecaţi pentru a ne ajuta să îmbunătăţim serviciul."
       ],
       "Weak": [
         "Slabă"
+      ],
+      "Weak password": [
+        "Parolă slabă"
       ],
       "Week start": [
         "Început săptămână"
@@ -11499,6 +11544,9 @@
       ],
       "Encryption and keys": [
         "Criptare și chei"
+      ],
+      "Forgot email?": [
+        "V-ați uitat adresa de e-mail?"
       ],
       "Forgot password?": [
         "Ați uitat parola?"
@@ -14087,6 +14135,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Continuare cu contul ${ BRAND_NAME }"
       ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "Inclusiv reducerea Porkbun de ${ discountPercent } %"
+      ],
       "Let's talk": [
         "Să discutăm"
       ],
@@ -15106,6 +15157,9 @@
       ],
       "Recovery phone number": [
         "Numărul de telefon de recuperare"
+      ],
+      "Review account safety": [
+        "Revizuire securitate cont"
       ],
       "Safeguard account now": [
         "Protejați-vă contul acum"
@@ -16490,6 +16544,9 @@
       "User details:": [
         "Detalii utilizator:"
       ],
+      "Welcome": [
+        "Bun venit"
+      ],
       "Yes, it was me": [
         "Da, eu am fost"
       ],
@@ -16820,47 +16877,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -17155,6 +17171,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -19071,6 +19128,29 @@
         "Astăzi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup și nici o resursă criptată nu va fi partajată cu acest utilizator."
+      ],
+      "Group membership paused": [
+        "Apartenența la grup a fost suspendată"
+      ],
+      "Sending member invitation": [
+        "Se trimite invitația membrului"
+      ],
+      "User declined invitation": [
+        "Utilizatorul a refuzat invitația"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Se așteaptă ca utilizatorul să accepte invitația"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Utilizatorii ${ MAIL_APP_NAME } vor folosi această cheie în mod implicit pentru trimiteri."
@@ -19284,29 +19364,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. ${ BRAND_NAME } va încerca să reia importarea cât mai curând posibil."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup."
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup și nici o resursă criptată nu va fi partajată cu acest utilizator."
-      ],
-      "Group membership paused": [
-        "Apartenența la grup a fost suspendată"
-      ],
-      "Sending member invitation": [
-        "Se trimite invitația membrului"
-      ],
-      "User declined invitation": [
-        "Utilizatorul a refuzat invitația"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Se așteaptă ca utilizatorul să accepte invitația"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19870,6 +19927,9 @@
       ],
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
         "În calitate de utilizator invitat, creați un cont gratuit ${ BRAND_NAME } pentru a obține acces exclusiv la ${ appName }"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin prin e-mail"
       ],
       "Create ${ BRAND_NAME } Account now": [
         "Creați-vă contul ${ BRAND_NAME }"
