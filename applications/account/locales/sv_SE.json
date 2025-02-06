@@ -14060,9 +14060,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan låsa upp **${ unlockPlanTitle }** och alla premiumtjänster för ${ BRAND_NAME } genom att uppgradera till **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Genom att fortsätta godkänner du våra ${ termsAndConditionsLink }"
-      ],
       "Creating your account": [
         "Skapar ditt konto"
       ],
@@ -14407,6 +14404,9 @@
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Du har blivit administratör för organisationen **${ organizationName }** av"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Du måste ta bort alla grupper innan du genererar en ny organisationsnyckel"
       ],
       "You must privatize all users before generating a new organization key": [
         "Du måste privatisera alla användare innan du genererar en ny organisationsnyckel"
@@ -19706,52 +19706,18 @@
         "${ n } konto per plånbok",
         "${ n } konton per plånbok"
       ],
-      "${ n } email address": [
-        "${ n } e-postadress",
-        "${ n } e-postadresser"
-      ],
       "${ n } wallet": [
         "${ n } plånbok",
         "${ n } plånböcker"
       ],
-      "**Get ${ plan }** for early access to ${ appName }!": [
-        "**Skaffa ${ plan }** för förhandstillgång till ${ appName }!"
-      ],
       "A safer way to hold your Bitcoin": [
         "Ett säkrare sätt att hålla din Bitcoin"
-      ],
-      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "Som en inbjuden användare, registrera dig för ett gratis ${ BRAND_NAME }-konto för att exklusivt få åtkomst till ${ appName }"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
       ],
-      "Create ${ BRAND_NAME } Account now": [
-        "Skapa ${ BRAND_NAME }-konto nu"
-      ],
-      "Early access to new features": [
-        "Förhandstillgång till nya funktioner"
-      ],
-      "Early access waitlist": [
-        "Väntelista för förhandstillgång"
-      ],
       "Exclusive early access to ${ appName }.": [
         "Exklusiv förhandstillgång till ${ appName }."
-      ],
-      "Get started": [
-        "Kom igång"
-      ],
-      "Invite Friends": [
-        "Bjud in vänner"
-      ],
-      "Join ${ appName } early access!": [
-        "Gå med i förhandstillgång för ${ appName }!"
-      ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Registrera dig för ett gratis ${ BRAND_NAME }-konto för att säkra din plats. Ju tidigare du registrerar dig, desto snabbare får du åtkomst till ${ appName }. Efter registreringen kan du också uppgradera till vårt exklusiva Visionary-paket för att hoppa över väntelistan och börja använda ${ appName } direkt."
-      ],
-      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "Visionary-användare och deras inbjudna vänner kan dela förhandstillgång med andra. Bjud in dina vänner att prova ${ appName } gratis!"
       ],
       "You're Invited.": [
         "Du är inbjuden."

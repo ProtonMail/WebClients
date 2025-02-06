@@ -313,6 +313,9 @@
       "Copy link": [
         "リンクをコピー"
       ],
+      "Copy password": [
+        "パスワードをコピー"
+      ],
       "Copy version number to clipboard": [
         "バージョン番号をクリップボードにコピー"
       ],
@@ -339,6 +342,9 @@
       ],
       "Create link": [
         "リンクを作成"
+      ],
+      "Create new password": [
+        "新しいパスワードを作成する"
       ],
       "Create new policy": [
         "新しいポリシーを作成"
@@ -1738,7 +1744,7 @@
         "${ storageSize } ストレージ"
       ],
       "1 TB total": [
-        "1 TB 合計"
+        "合計 1 TB"
       ],
       "1 user": [
         "1 ユーザー"
@@ -1762,7 +1768,7 @@
         "6 ユーザー"
       ],
       "8500+ servers across 110+ countries": [
-        "8500+ servers across 110+ countries"
+        "110 か国以上、8500 台以上のサーバー"
       ],
       "Ad-blocker and malware protection": [
         "広告ブロッカーとマルウェア防止"
@@ -1829,7 +1835,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+        "ブロックされたコンテンツにアクセスし、プライベートに参照します。110 以上の国、10 以上のデバイス、高速ストリーミング、広告ブロッカー、マルウェア保護、VPN Acceleratorなど、8,500 以上のサーバーが含まれています。"
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix、Disney+、Prime Videoをはじめとする各種ストリーミングサービスのコンテンツに、どこからでもアクセスできます。"
@@ -7079,6 +7085,9 @@
       "Ask your organization admin to setup Gateways.": [
         "ゲートウェイをセットアップするよう、組織の管理者に依頼してください。"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
+      ],
       "Attention required": [
         "注意が必要です"
       ],
@@ -7835,6 +7844,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "サーバーの国を変更するには 10 日かかるので、選択が正しいことを確認してください。"
       ],
+      "It's better to have:": [
+        "以下の方が良いでしょう:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "${ vaultLink }のアイテムが自動入力されました"
       ],
@@ -8072,6 +8084,9 @@
       "No addresses exist": [
         "アドレスが存在しません"
       ],
+      "No common passwords": [
+        "一般的なパスワード以外"
+      ],
       "No credit card required": [
         "クレジットカード不要"
       ],
@@ -8102,6 +8117,9 @@
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
       ],
+      "No predictable sequences (1234, aaa)": [
+        "予測可能な配列以外 (1234, aaa)"
+      ],
       "No results found": [
         "該当する項目がありません"
       ],
@@ -8116,6 +8134,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
+      ],
+      "Numbers": [
+        "数字"
       ],
       "of": [
         " / "
@@ -8627,6 +8648,9 @@
       "Switch to": [
         "切り替え"
       ],
+      "Symbols (#$&)": [
+        "記号 (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "${ DRIVE_APP_NAME }アプリでファイルを同期して管理します。${ DOCS_APP_NAME }でドキュメントを作成して共有し、安全に保存します。すべて${ ios }、${ android }、${ desktop }で利用可能です。"
       ],
@@ -9001,6 +9025,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "アップロードされたファイルは有効な秘密鍵ではありません。確認して再度お試しください。"
+      ],
+      "Uppercase and lowercase letters": [
+        "大文字と小文字"
       ],
       "URL link": [
         "リンクの URL"
@@ -10460,6 +10487,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "フィンガープリント ${ fingerprintCode } を持つキーのパスワードを入力してください"
       ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
       "Entity ID": [
         "エンティティID"
       ],
@@ -10663,6 +10693,9 @@
       ],
       "Move to Inbox": [
         "受信トレイに移動"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "少なくとも ${ MIN_PASSWORD_LENGTH } 文字以上でなければなりません"
       ],
       "Name": [
         "名前"
@@ -10952,6 +10985,9 @@
       "Strong": [
         "強い"
       ],
+      "Strong password": [
+        "強力なパスワード"
+      ],
       "Subscription options": [
         "サブスクリプションのオプション"
       ],
@@ -11045,11 +11081,17 @@
       "Vulnerable": [
         "脆弱"
       ],
+      "Vulnerable password": [
+        "脆弱なパスワード"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
       ],
       "Weak": [
         "弱い"
+      ],
+      "Weak password": [
+        "弱いパスワード"
       ],
       "Week start": [
         "週の開始曜日"
@@ -11290,6 +11332,9 @@
       ],
       "Encryption and keys": [
         "暗号化と鍵"
+      ],
+      "Forgot email?": [
+        "メールアドレスを忘れましたか？"
       ],
       "Forgot password?": [
         "パスワードを忘れましたか？"
@@ -13833,9 +13878,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "ただし、**${ upsellPlanTitle }** にアップグレードすると、**${ unlockPlanTitle }** とすべてのプレミアム ${ BRAND_NAME } サービスのロックを解除できます。"
       ],
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "続行すると、${ termsAndConditionsLink } に同意したことになります。"
-      ],
       "Creating your account": [
         "アカウントの作成中"
       ],
@@ -14177,6 +14219,9 @@
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "あなたは組織 **${ organizationName }** によって管理者に任命されました"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "新しい組織の鍵を生成する前に、すべてのグループを削除する必要があります"
       ],
       "You must privatize all users before generating a new organization key": [
         "新しい組織の鍵を生成する前に、すべてのユーザーをプライベート化する必要があります"
@@ -16109,6 +16154,9 @@
       ],
       "User details:": [
         "ユーザー詳細："
+      ],
+      "Welcome": [
+        "ようこそ"
       ],
       "Yes, it was me": [
         "はい、私です"
@@ -19357,50 +19405,17 @@
       "${ n } account per wallet": [
         "一つのウォレットに${ n } 個のアカウント"
       ],
-      "${ n } email address": [
-        "${ n } メールアドレス"
-      ],
       "${ n } wallet": [
         "${ n } 個のウォレット"
-      ],
-      "**Get ${ plan }** for early access to ${ appName }!": [
-        "**${ plan }を獲得**して、${ appName }に早期アクセスしましょう！"
       ],
       "A safer way to hold your Bitcoin": [
         "Bitcoin を保持する安全な方法"
       ],
-      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "招待されたユーザーとして、無料で${ BRAND_NAME }アカウントにサインアップして、${ appName }への限定アクセスを獲得"
-      ],
       "Bitcoin via Email": [
         "メールで Bitcoin"
       ],
-      "Create ${ BRAND_NAME } Account now": [
-        "今すぐ${ BRAND_NAME }アカウントを作成"
-      ],
-      "Early access to new features": [
-        "新機能への早期アクセス"
-      ],
-      "Early access waitlist": [
-        "早期アクセス待機リスト"
-      ],
       "Exclusive early access to ${ appName }.": [
         "${ appName }への限定早期アクセス"
-      ],
-      "Get started": [
-        "始めましょう"
-      ],
-      "Invite Friends": [
-        "フレンドを招待"
-      ],
-      "Join ${ appName } early access!": [
-        "${ appName }の早期アクセスに参加！"
-      ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "無料の${ BRAND_NAME }アカウントにサインアップして、あなたのスポットを確保しましょう。早くサインアップすればするほど、${ appName }へのアクセスも早まります。サインアップ後、限定のビジョナリープランにアップグレードすれば、待機リストをスキップしてすぐに${ appName }を利用開始できます！"
-      ],
-      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "ビジョナリーユーザーと招待されたフレンドは早期アクセスを他の人に共有でき、フレンドを無料で${ appName }に招待できます！"
       ],
       "You're Invited.": [
         "招待されました。"
