@@ -344,6 +344,9 @@ export const PASS_PRO_VAULT_SHARING = 'unlimited';
 export const PASS_BIZ_VAULTS = 'unlimited';
 export const PASS_BIZ_VAULT_SHARING = 'unlimited';
 
+export const PASS_VISIONARY_VAULTS = 'unlimited';
+export const PASS_VISIONARY_VAULT_SHARING = 'unlimited';
+
 export const getPassFeatures = (): PlanCardFeature[] => {
     return [
         {
@@ -369,6 +372,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getLoginsAndNotes('free'),
+                [PLANS.VISIONARY]: getLoginsAndNotes('paid'),
             },
         },
         {
@@ -394,6 +398,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getDevices(),
+                [PLANS.VISIONARY]: getDevices(),
             },
         },
         {
@@ -419,6 +424,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getVaults(FREE_VAULTS),
+                [PLANS.VISIONARY]: getVaults(PASS_VISIONARY_VAULTS),
             },
         },
         {
@@ -444,6 +450,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getHideMyEmailAliases(FREE_PASS_ALIASES),
+                [PLANS.VISIONARY]: getHideMyEmailAliases('unlimited'),
             },
         },
         {
@@ -469,6 +476,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: getAdvancedAliasFeatures(true),
             },
         },
         {
@@ -494,6 +502,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.VISIONARY]: getVaultSharing(PASS_VISIONARY_VAULT_SHARING),
             },
         },
         {
@@ -519,6 +528,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: getLinkSharing(),
             },
         },
         {
@@ -544,6 +554,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: get2FAAuthenticator(),
+                [PLANS.VISIONARY]: get2FAAuthenticator(true),
             },
         },
         {
@@ -569,6 +580,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getCustomFields(),
+                [PLANS.VISIONARY]: getCustomFields(true),
             },
         },
         {
@@ -594,6 +606,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: null,
             },
         },
         {
@@ -619,6 +632,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getDataBreachMonitoring(),
+                [PLANS.VISIONARY]: getDataBreachMonitoring(true),
             },
         },
     ];
