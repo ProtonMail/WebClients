@@ -538,7 +538,6 @@ const LoginForm = ({
                                 <div className="mb-4">
                                     <Link to={paths.reset}>{c('Link').t`Forgot password?`}</Link>
                                 </div>
-                                {checkboxEl}
                                 {errorEl && <div className="mt-4">{errorEl}</div>}
                                 <Button
                                     size="large"
