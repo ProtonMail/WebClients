@@ -14030,9 +14030,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Pero puedes desbloquear **${ unlockPlanTitle }** y todos los servicios premium de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Al continuar, aceptas nuestros ${ termsAndConditionsLink }"
-      ],
       "Creating your account": [
         "Creando tu cuenta"
       ],
@@ -19490,6 +19487,115 @@
         "Asistente de escritura"
       ]
     },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Oferta de San Valentín"
+      ]
+    },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "${ salePercentage }% de descuento"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "${ salePercentage }% de descuento para ti +1"
+      ],
+      "10 email addresses for you": [
+        "10 direcciones de correo electrónico extra para ti"
+      ],
+      "10,000+ servers in 110+ countries": [
+        "+10,000 servidores en +110 países"
+      ],
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "200 GB storage": [
+        "200 GB de almacenamiento"
+      ],
+      "500 GB total storage": [
+        "500 GB de almacenamiento total"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
+      ],
+      "Advanced account protection": [
+        "Protección de cuentas avanzada"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Todas las funciones premium de Mail, VPN, Pass y Drive"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Todos los servicios prémium de ${ BRAND_NAME } en una sola y sencilla suscripción."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Los descuentos se basan en el precio mensual estándar. Al final del ciclo de facturación, tu suscripción se renovará a la tarifa anual estándar."
+      ],
+      "Double the love, half the price": [
+        "El doble de amor, la mitad de precio"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Obtén 1 año de ${ dealName } con un descuento del ${ salePercentage }% — además, un código de regalo para compartir la misma oferta con un amigo"
+      ],
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ],
+      "High-speed streaming": [
+        "Transmisión de gran velocidad"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Ofrece seguridad de cuenta de primera categoría y soporte experto. ${ DARK_WEB_MONITORING_NAME } escanea partes ocultas de Internet en busca de direcciones de correo electrónico de ${ MAIL_APP_NAME } que han terminado en mercados de datos ilegales. Si se detecta una brecha, recibirás una alerta del Centro de Seguridad con los pasos para proteger tu cuenta."
+      ],
+      "Protect 10 devices at a time": [
+        "Protección de 10 dispositivos a la vez"
+      ],
+      "Recover previous file versions": [
+        "Recuperar las versiones previas de los archivos"
+      ],
+      "Secure file storage & sharing": [
+        "Almacenamiento y uso compartido seguros de archivos"
+      ],
+      "Secure vault sharing": [
+        "Compartición segura de cajas fuertes"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "El espacio de almacenamiento se reparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Número ilimitado de alias de hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ],
+      "Valentine's deal:": [
+        "Oferta de San Valentín:"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "/ month": [
+        "/ mes"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "15 months": [
+        "15 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "30 months": [
+        "30 meses"
+      ],
+      "for ${ durationDeal }": [
+        "por ${ durationDeal }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
@@ -19641,52 +19747,18 @@
         "${ n } cuenta por cartera",
         "${ n } cuentas por cartera"
       ],
-      "${ n } email address": [
-        "${ n } dirección de correo electrónico",
-        "${ n } direcciones de correo electrónico"
-      ],
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteras"
       ],
-      "**Get ${ plan }** for early access to ${ appName }!": [
-        "¡**Obtén ${ plan }** para tener acceso anticipado a ${ appName }!"
-      ],
       "A safer way to hold your Bitcoin": [
         "Una forma más segura de mantener tu Bitcoin"
-      ],
-      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "Como usuario invitado, regístrate para obtener una cuenta gratuita de ${ BRAND_NAME } y consigue acceso exclusivo a ${ appName }"
       ],
       "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"
       ],
-      "Create ${ BRAND_NAME } Account now": [
-        "Crear una cuenta de ${ BRAND_NAME } ahora"
-      ],
-      "Early access to new features": [
-        "Acceso anticipado a nuevas funciones"
-      ],
-      "Early access waitlist": [
-        "Lista de espera para el acceso anticipado"
-      ],
       "Exclusive early access to ${ appName }.": [
         "Acceso anticipado exclusivo a ${ appName }."
-      ],
-      "Get started": [
-        "Comenzar"
-      ],
-      "Invite Friends": [
-        "Invitar a amigos"
-      ],
-      "Join ${ appName } early access!": [
-        "¡Únete al acceso anticipado de ${ appName }!"
-      ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Regístrate para obtener una cuenta gratuita de ${ BRAND_NAME } y asegura tu lugar. Cuanto antes te registres, antes tendrás acceso a ${ appName }. Después de registrarte, también puedes mejorar a nuestro plan exclusivo Visionary para saltarte la lista de espera y comenzar a usar ${ appName } de inmediato."
-      ],
-      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "¡Los usuarios de Visionary y sus amigos invitados pueden compartir acceso anticipado con otros, invita a tus amigos a probar ${ appName } gratis!"
       ],
       "You're Invited.": [
         "Estás invitado."
