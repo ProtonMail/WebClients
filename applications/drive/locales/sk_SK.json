@@ -5379,6 +5379,15 @@
       "This month": [
         "Tento mesiac"
       ],
+      "This will permanently delete the file you uploaded.": [
+        "Týmto sa natrvalo odstráni nahraný súbor."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Týmto sa natrvalo odstráni nahraný priečinok."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Týmto sa natrvalo odstránia vybrané položky, ktoré ste nahrali."
+      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Týmto odstránite synchronizované zariadenie ${ deviceName } z ${ DRIVE_APP_NAME } a všetky jeho údaje z ${ DRIVE_APP_NAME }. Priečinky, ktoré ste pridali do Moje počítače, sa prestanú synchronizovať."
       ],
@@ -8206,6 +8215,12 @@
       ],
       "Share invitation declined": [
         "Pozvánka na zdieľanie odmietnutá"
+      ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Je nám ľúto, ale priečinok sme nemohli odstrániť, pretože nie je prázdny.",
+        "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne.",
+        "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne.",
+        "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne."
       ],
       "Stopping the sharing of this item has failed": [
         "Ukončenie zdieľania tejto položky zlyhalo"
@@ -11139,12 +11154,6 @@
         "${ n } účty na peňaženku",
         "${ n } účtov na peňaženku",
         "${ n } účtov na peňaženku"
-      ],
-      "${ n } email address": [
-        "${ n } emailová adresa",
-        "${ n } emailových adries",
-        "${ n } emailových adries",
-        "${ n } emailových adries"
       ],
       "${ n } wallet": [
         "${ n } peňaženka",

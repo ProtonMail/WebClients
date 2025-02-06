@@ -5148,6 +5148,15 @@
       "This month": [
         "이번 달"
       ],
+      "This will permanently delete the file you uploaded.": [
+        "이 작업은 업로드한 파일을 영구적으로 삭제합니다."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "이 작업은 업로드한 폴더를 영구적으로 삭제합니다."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "이 작업은 선택된 항목을 영구적으로 삭제합니다."
+      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "${ DRIVE_APP_NAME }에서 연결된 기기 ${ deviceName } 및 ${ DRIVE_APP_NAME }의 데이터를 전부 삭제합니다. 내 컴퓨터에 추가한 폴더들은 연동이 중단됩니다."
       ],
@@ -7807,6 +7816,9 @@
       ],
       "Share invitation declined": [
         "캘린더 공유 거부됨"
+      ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "죄송합니다, 폴더가 비어있지 않아 삭제할 수 없습니다."
       ],
       "Stopping the sharing of this item has failed": [
         "이 항목에 대한 공유 중단 작업을 수행할 수 없습니다."
@@ -10539,9 +10551,6 @@
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "계정 당 ${ n }개 지갑"
-      ],
-      "${ n } email address": [
-        "이메일 주소 ${ n }개"
       ],
       "${ n } wallet": [
         "${ n }개 지갑"

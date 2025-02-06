@@ -13899,9 +13899,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "다만, **${ upsellPlanTitle }**으로 업그레이드 하여 **${ unlockPlanTitle }**을(를) 잠금 해제하고 모든 ${ BRAND_NAME } 프리미엄 서비스를 잠금해제 할 수 있습니다."
       ],
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "계속하면, ${ termsAndConditionsLink }에 동의하는 것으로 간주합니다."
-      ],
       "Creating your account": [
         "계정을 생성하는 중"
       ],
@@ -14243,6 +14240,9 @@
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "다음 사용자로 부터 조직 **${ organizationName }**의 관리자직이 부여되었습니다:"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "새로운 조직 키를 생성하기 전에 모든 그룹을 삭제해야 합니다."
       ],
       "You must privatize all users before generating a new organization key": [
         "새 조직 키를 생성하기 전에 모든 계정을 민영화해야합니다"
@@ -19443,50 +19443,17 @@
       "${ n } account per wallet": [
         "계정 당 ${ n }개 지갑"
       ],
-      "${ n } email address": [
-        "이메일 주소 ${ n }개"
-      ],
       "${ n } wallet": [
         "${ n }개 지갑"
-      ],
-      "**Get ${ plan }** for early access to ${ appName }!": [
-        "${ appName }에 얼리 액세스하려면 **${ plan }을(를) 구매하세요!**"
       ],
       "A safer way to hold your Bitcoin": [
         "Bitcoin을 보관하는 가장 안전한 방법"
       ],
-      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "초대된 사용자로서 무료 ${ BRAND_NAME } 계정에 가입하여 ${ appName }에 독점적으로 액세스하세요."
-      ],
       "Bitcoin via Email": [
         "이메일을 통한 Bitcoin"
       ],
-      "Create ${ BRAND_NAME } Account now": [
-        "지금 ${ BRAND_NAME } 계정 생성"
-      ],
-      "Early access to new features": [
-        "새 기능에 접근에 대한 얼리 액세스"
-      ],
-      "Early access waitlist": [
-        "얼리 액세스 대기명단"
-      ],
       "Exclusive early access to ${ appName }.": [
         "${ appName }에 대한 얼리 액세스"
-      ],
-      "Get started": [
-        "시작하기"
-      ],
-      "Invite Friends": [
-        "친구 초대"
-      ],
-      "Join ${ appName } early access!": [
-        "${ appName } 얼리 액세스에 가입하세요."
-      ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "얼리 액세스 권한 목록에 추가하기 위해 무료 ${ BRAND_NAME } 계정을 생성하세요. 더 빨리 등록할수록 ${ appName } 접근 권한에 대한 우선 순위가 부여됩니다. 로그인한 후, 대기 명단을 건너뛰고 즉시 ${ appName }을 사용할 수 있도록 최상위 플랜인 Visionary 플랜 업그레이드가 가능합니다."
-      ],
-      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "Visionary 사용자와 초대받은 친구는 다른 사람들과 얼리 액세스를 공유하고 친구를 초대하여 ${ appName }을 무료로 사용해 볼 수 있습니다."
       ],
       "You're Invited.": [
         "회원님께서 초대되었습니다."

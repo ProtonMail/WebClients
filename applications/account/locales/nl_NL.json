@@ -14027,9 +14027,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Maar u kunt **${ unlockPlanTitle }** en alle premium ${ BRAND_NAME }-diensten ontgrendelen door te upgraden naar **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Door verder te gaan gaat u akkoord met onze ${ termsAndConditionsLink }"
-      ],
       "Creating your account": [
         "Account aan het aanmaken"
       ],
@@ -19484,6 +19481,115 @@
         "Schrijfassistent"
       ]
     },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Valentijnsdeal"
+      ]
+    },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "${ salePercentage }% korting"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "${ salePercentage }% korting voor u +1"
+      ],
+      "10 email addresses for you": [
+        "10 e-mailadressen voor u"
+      ],
+      "10,000+ servers in 110+ countries": [
+        "Meer dan 10.000 servers in meer dan 110 landen"
+      ],
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB storage": [
+        "200 GB opslagruimte"
+      ],
+      "500 GB total storage": [
+        "500 GB totale opslagruimte"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Alle premiumfuncties van Mail, VPN, Pass en Drive"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
+      ],
+      "Double the love, half the price": [
+        "Meer liefde, minder betalen"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Ontvang 1 jaar ${ dealName } met ${ salePercentage }% korting — plus een cadeaucode om dezelfde deal met een vriend te delen"
+      ],
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "High-speed streaming": [
+        "Streamen op hoge snelheid"
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde tweestapsverificatie"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Biedt eersteklas accountbeveiliging en deskundige ondersteuning. ${ DARK_WEB_MONITORING_NAME } doorzoekt de verborgen delen van het internet op ${ MAIL_APP_NAME } e-mailadressen die in illegale datamarkten zijn beland. Als een datalek wordt gedetecteerd, ontvangt u een melding in het Security Center met stappen om uw account te beschermen."
+      ],
+      "Protect 10 devices at a time": [
+        "Bescherm 10 apparaten tegelijkertijd"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Secure file storage & sharing": [
+        "Veilig bestanden opslaan en delen"
+      ],
+      "Secure vault sharing": [
+        "Veilig delen van kluis"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte wordt gedeeld tussen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ],
+      "Valentine's deal:": [
+        "Valentijnsdeal:"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "/ month": [
+        "/ maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "30 months": [
+        "30 maanden"
+      ],
+      "for ${ durationDeal }": [
+        "voor ${ durationDeal }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
@@ -19635,52 +19741,18 @@
         "${ n } account per portemonnee",
         "${ n } accounts per portemonnee"
       ],
-      "${ n } email address": [
-        "${ n } e-mailadres",
-        "${ n } e-mailadressen"
-      ],
       "${ n } wallet": [
         "${ n } portemonnee",
         "${ n } portemonnees"
       ],
-      "**Get ${ plan }** for early access to ${ appName }!": [
-        "**Krijg ${ plan }** voor vroegtijdige toegang tot ${ appName }!"
-      ],
       "A safer way to hold your Bitcoin": [
         "Een veiligere manier om uw Bitcoin vast te houden"
-      ],
-      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "Als een uitgenodigde gebruiker, schrijf u in voor een gratis ${ BRAND_NAME } account om exclusief toegang te krijgen tot ${ appName }"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
-      "Create ${ BRAND_NAME } Account now": [
-        "Maak een ${ BRAND_NAME }-account aan"
-      ],
-      "Early access to new features": [
-        "Vroegtijdige toegang tot nieuwe functies"
-      ],
-      "Early access waitlist": [
-        "Vroegtijdige toegangswachtlijst"
-      ],
       "Exclusive early access to ${ appName }.": [
         "Exclusieve vroegtijdige toegang tot ${ appName }."
-      ],
-      "Get started": [
-        "Aan de slag"
-      ],
-      "Invite Friends": [
-        "Vrienden uitnodigen"
-      ],
-      "Join ${ appName } early access!": [
-        "Doe mee met ${ appName } vroegtijdige toegang!"
-      ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Meld u aan voor een gratis ${ BRAND_NAME }-account om uw plek vast te stellen. Hoe eerder u zich aanmeldt, hoe sneller u toegang krijgt tot ${ appName }. Na de aanmelding kunt u zich ook upgraden naar ons exclusieve Visionair abonnement om de wachtlijst over te slaan en meteen gebruik van ${ appName } te kunnen maken."
-      ],
-      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "Visionary gebruikers en hun uitgenodigde vrienden kunnen vroegtijdige toegang met anderen delen, nodig uw vrienden uit om ${ appName } gratis te proberen!"
       ],
       "You're Invited.": [
         "U bent uitgenodigd."

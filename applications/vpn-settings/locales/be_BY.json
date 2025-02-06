@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Скапіяваць ключ у буфер абмену"
       ],
+      "Copy password": [
+        "Скапіяваць пароль"
+      ],
       "Copy version number to clipboard": [
         "Скапіяваць нумар версіі ў буфер абмену"
       ],
@@ -174,6 +177,12 @@
       ],
       "Create Gateway": [
         "Стварыць шлюз"
+      ],
+      "Create new password": [
+        "Стварыць новы пароль"
+      ],
+      "Create new policy": [
+        "Стварыць новую палітыку"
       ],
       "Create users": [
         "Стварыць карыстальнікаў"
@@ -267,6 +276,9 @@
       ],
       "Edit group": [
         "Рэдагаваць групу"
+      ],
+      "Edit invoice note": [
+        "Рэдагаваць рахунак-фактуру"
       ],
       "Edit name": [
         "Рэдагаваць назву"
@@ -1092,6 +1104,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, ${ DARK_WEB_MONITORING_NAME } і іншыя функцыі."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
@@ -1239,6 +1254,21 @@
       ],
       "Continue your subscription": [
         "Працягнуць падпіску"
+      ],
+      "Create label": [
+        "Стварыць метку"
+      ],
+      "Discover and set up features": [
+        "Азнаёміцца і наладзіць функцыі"
+      ],
+      "Remind me later": [
+        "Нагадаць мне пазней"
+      ],
+      "Set up other features": [
+        "Наладзіць іншыя функцыі"
+      ],
+      "Take a tour": [
+        "Пачаць знаёмства"
       ]
     },
     "Cancellation upsell": {
@@ -2305,11 +2335,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Стварыце палітыку, каб вырашаць, хто можа падключацца да абагуленых сервераў у кожнай краіне."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Кожны ўдзельнік вашай арганізацыі можа падключацца да абагуленых сервераў ва ўсіх краінах."
+      ],
       "If disabled, only admins will have access.": [
         "Калі адключана, то толькі адміністратары будуць мець доступ."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Адасобце розныя часткі свайго жыцця і ўпарадкуйце сваю паштовую скрыню з дадатковымі адрасамі."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Ніводны ўдзельнік вашай арганізацыі не можа падключацца да абагуленых сервераў."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
@@ -2436,6 +2475,14 @@
         "Прыярытэтная падтрымка"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа уплыў на будучыя падрабязнасці рахунка."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } дададзены"
@@ -2505,6 +2552,9 @@
       ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Рэдагаванне адраса аплаты ў дадзены момант недаступна. Паспрабуйце яшчэ раз пазней."
       ],
       "Email address is invalid": [
         "Памылковы адрас электроннай пошты"
@@ -3533,9 +3583,18 @@
       ],
       "No verification method available": [
         "Няма даступных спосабаў праверкі"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers } карыстальнік з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў.",
+        "${ amountUsers } карыстальнікі з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў.",
+        "${ amountUsers } карыстальнікаў з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў.",
+        "${ amountUsers } карыстальнікаў з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
@@ -3761,6 +3820,9 @@
       "Allocated": [
         "Вылучана"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Ужо вылучана"
       ],
@@ -3799,6 +3861,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
       ],
       "Attention required": [
         "Патрабуецца ўвага"
@@ -4283,6 +4348,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Пераключэнне краіны сервера зойме 10 дзён і таму, вам варта пераканацца ў правільнасці выбару сервера."
       ],
+      "It's better to have:": [
+        "Лепш за ўсё, каб у вас было:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Элемент аўтазапоўнены ў ${ vaultLink }"
       ],
@@ -4442,6 +4510,9 @@
       "No addresses exist": [
         "Няма адрасоў"
       ],
+      "No common passwords": [
+        "Агульныя паролі адсутнічаюць"
+      ],
       "No gateways": [
         "Без шлюзоў"
       ],
@@ -4454,6 +4525,9 @@
       "No payment is required at this time.": [
         "Зараз аплата не патрабуецца."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Непрадказальная паслядоўнасць (1234, aaa)"
+      ],
       "No results found": [
         "Нічога не знойдзена"
       ],
@@ -4462,6 +4536,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
+      ],
+      "Numbers": [
+        "Лічбы"
       ],
       "of": [
         "з"
@@ -4805,6 +4882,9 @@
       "Switch to": [
         "Пераключыцца на"
       ],
+      "Symbols (#$&)": [
+        "Сімвалы (#$&)"
+      ],
       "Thank you": [
         "Дзякуй"
       ],
@@ -5023,6 +5103,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Запампуйце лагатып сваёй арганізацыі, каб павысіць ідэнтычнасць вашага брэнда і стварыць персаналізаваны досвед для вашых карыстальнікаў."
+      ],
+      "Uppercase and lowercase letters": [
+        "Маленькія і вялікія літары"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Скарыстайцеся метадам аднаўлення, каб адключыць вашы двухфактарныя метады аўтэнтыфікацыі."
@@ -5759,6 +5842,9 @@
       "Enter the code displayed on your TV": [
         "Увядзіце код, які вы бачыце на сваім тэлевізары"
       ],
+      "Enter your password": [
+        "Увядзіце пароль"
+      ],
       "Entity ID": [
         "Entity ID"
       ],
@@ -5836,6 +5922,9 @@
       ],
       "Moderate NAT": [
         "Умераны NAT"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
       ],
       "Name": [
         "Назва"
@@ -6014,6 +6103,9 @@
       "Strong": [
         "Надзейны"
       ],
+      "Strong password": [
+        "Надзейны пароль"
+      ],
       "Subscription options": [
         "Параметры падпіскі"
       ],
@@ -6050,6 +6142,9 @@
       "VAT": [
         "ПДВ"
       ],
+      "VAT identification number": [
+        "Ідэнтыфікацыйны нумар ПДВ"
+      ],
       "Verification code": [
         "Праверачны код"
       ],
@@ -6059,11 +6154,17 @@
       "Vulnerable": [
         "Уразлівы"
       ],
+      "Vulnerable password": [
+        "Уразлівы пароль"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа нам палепшыць наш сэрвіс"
       ],
       "Weak": [
         "Ненадзейны"
+      ],
+      "Weak password": [
+        "Ненадзейны пароль"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -6199,6 +6300,9 @@
       "Don't have access to your 2FA?": [
         "Адсутнічае доступ да вашых 2ФА?"
       ],
+      "Forgot email?": [
+        "Забылі электронную пошту?"
+      ],
       "Forgot password?": [
         "Забылі пароль?"
       ],
@@ -6331,6 +6435,9 @@
       ],
       "for ${ price }": [
         "за ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Наладзьце свой уліковы запіс з даменам Porkbun."
       ]
     },
     "mailtrial2024: Action": {
@@ -6508,11 +6615,17 @@
       "Get started for ${ priceCoupon }": [
         "Пачніце за ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
       "Upgrade": [
         "Палепшыць"
       ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6688,6 +6801,9 @@
       ],
       "15 GB storage": [
         "15 ГБ сховішча"
+      ],
+      "200 GB of storage": [
+        "200 ГБ сховішча"
       ],
       "24/7 account management support": [
         "Падтрымка 24/7 па кіраванні ўліковым запісам"
@@ -6902,6 +7018,9 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Private photo backup": [
+        "Прыватнае рэзерваванне фатаграфій"
+      ],
       "Proofread and refine your emails": [
         "Правярайце і ўдакладняйце свае электронныя лісты"
       ],
@@ -6940,6 +7059,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Бяспечнае файлавае сховішча і абагульванне"
       ],
       "Secure link sharing": [
         "Бяспечнае абагульванне спасылкі"
@@ -7678,6 +7800,58 @@
         "Некаторыя відарысы не былі запампаваны па прычыне дубліравання імён файлаў у бягучым выбары."
       ]
     },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Атрымайце Drive Plus усяго за ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Атрымайце Mail Plus усяго за ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Атрымаць прапанову"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Часовая прапанова"
+      ],
+      "Maybe later": [
+        "Магчыма пазней"
+      ],
+      "Save 80% on your first month.": [
+        "Зэканомце 80% у першы месяц."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "Больш за 10 прэміяльных функцый"
+      ],
+      "Custom email domain": [
+        "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Email addresses": [
+        "Адрасы электроннай пошты"
+      ],
+      "Free": [
+        "Бясплатна"
+      ],
+      "Online document editor": [
+        "Воблачны рэдактар дакументаў"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
+      "Storage": [
+        "Сховішча"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Вітаем у ${ appName }"
@@ -8011,6 +8185,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Вас прызначылі адміністратарам арганізацыі **${ organizationName }**"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Вы павінны выдаліць усе групы перад генерацыяй новага ключа арганізацыі"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новага ключа арганізацыі"
       ],
@@ -8134,6 +8311,11 @@
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Бясплатна"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку зрабіць спісанне з вашага рахунка, а вашаму банку - адпаведна правесці гэту аперацыю. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
@@ -8168,6 +8350,9 @@
       ],
       "Address": [
         "Адрас"
+      ],
+      "Anderson": [
+        "Маўр"
       ],
       "Choose a name": [
         "Выберыце назву"
@@ -8211,6 +8396,9 @@
       "Group name": [
         "Назва групы"
       ],
+      "Main street 12": [
+        "вул. Цэнтральная, д. 12"
+      ],
       "Other": [
         "Іншае"
       ],
@@ -8252,6 +8440,12 @@
       ],
       "Start date": [
         "Дата пачатку"
+      ],
+      "Thomas": [
+        "Янка"
+      ],
+      "VAT number": [
+        "Нумар ПДВ"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -8378,6 +8572,11 @@
       ],
       "User": [
         "Карыстальнік"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Агляд бяспекі ўліковага запісу"
       ]
     },
     "saml: Action": {
@@ -8999,6 +9198,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Ваша падпіска будзе падаўжацца з фіксаваным коштам кожны год."
       ]
     },
     "specialoffer: Link": {
@@ -9007,6 +9209,9 @@
       ],
       "Upgrade": [
         "Палепшыць"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Палепшыць за ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9323,6 +9528,9 @@
       ],
       "User details:": [
         "Падрабязнасці карыстальніка:"
+      ],
+      "Welcome": [
+        "Вітаем"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам давядзецца стварыць новых карыстальнікаў уручную, каб дадаць іх у вашу арганізацыю."
@@ -10016,6 +10224,9 @@
       "Backup password updated": [
         "Рэзервовы пароль абноўлены"
       ],
+      "Billing details updated": [
+        "Плацежныя падрабязнасці абноўлены"
+      ],
       "Catch-all address updated": [
         "Адрас для ўсёй пошты дамена абноўлены"
       ],
@@ -10623,6 +10834,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Рэдагаваць шлюз з назвай ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Рэдагаваць рахунак-фактуру"
       ],
       "Edit servers": [
         "Рэдагаваць серверы"
@@ -11296,6 +11510,9 @@
       "Keep request": [
         "Пакінуць запыт"
       ],
+      "Member activation incomplete": [
+        "Актывацыя ўдзельніка незавершана"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Як толькі карыстальнік пагадзіцца, вы зможаце дапамагчы яму аднавіць доступ да ўліковага запісу або кіраваць яго данымі."
       ],
@@ -11515,6 +11732,9 @@
         "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў.",
         "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Ваш запланаваны тарыфны план пачнецца ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
@@ -11608,12 +11828,6 @@
         "${ n } уліковых запісаў на кашалёк",
         "${ n } уліковых запісаў на кашалёк"
       ],
-      "${ n } email address": [
-        "${ n } адрас электроннай пошты",
-        "${ n } адрасы электроннай пошты",
-        "${ n } адрасоў электроннай пошты",
-        "${ n } адрасоў электроннай пошты"
-      ],
       "${ n } wallet": [
         "${ n } кашалёк",
         "${ n } кашалькі",
@@ -11621,6 +11835,14 @@
         "${ n } кашалькоў"
       ],
       "A safer way to hold your Bitcoin": [
+        "Больш бяспечны спосаб захоўвання Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin праз электронную пошту"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
         "Больш бяспечны спосаб захоўвання Bitcoin"
       ]
     },
