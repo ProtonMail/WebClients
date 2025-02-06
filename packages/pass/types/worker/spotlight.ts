@@ -42,6 +42,8 @@ export enum SpotlightMessage {
     SSO_CHANGE_LOCK = 18,
     /** Item sharing feature discovery */
     ITEM_SHARING = 19,
+    /** Valentine's day 2025 promo */
+    VALENTINE_2025_PROMO = 20,
     /** Alias customize (prefix etc.) discovery  */
     ALIAS_DISCOVERY_CUSTOMIZE = 21,
     /** Alias add new mailbox discovery */
