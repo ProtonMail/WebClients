@@ -277,6 +277,10 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
             [PLANS.VPN_PRO]: null,
             [PLANS.VPN_BUSINESS]: null,
             [PLANS.LUMO]: getStorageFeature(-1, { subtext: true, freePlan }),
+            [PLANS.VISIONARY]: getStorageFeature(plansMap[PLANS.VISIONARY]?.MaxSpace ?? 3298534883328, {
+                subtext: true,
+                freePlan,
+            }),
         },
     };
 };
@@ -307,6 +311,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.VPN_PRO]: getVersionHistory(),
                 [PLANS.VPN_BUSINESS]: getVersionHistory(),
                 [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: getVersionHistory('10y'),
             },
         },
         {
@@ -332,6 +337,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getEndToEndEncryption(),
+                [PLANS.VISIONARY]: getEndToEndEncryption(),
             },
         },
         {
@@ -358,6 +364,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getDocumentEditor(),
+                [PLANS.VISIONARY]: getDocumentEditor(),
             },
         },
         {
@@ -383,6 +390,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getShareFeature(),
+                [PLANS.VISIONARY]: getShareFeature(),
             },
         },
         {
@@ -408,6 +416,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getSyncAndBackupFeature(),
+                [PLANS.VISIONARY]: getSyncAndBackupFeature(),
             },
         },
     ];
