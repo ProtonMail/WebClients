@@ -10877,6 +10877,117 @@
         "Мы отправили им приглашение получить доступ к этому элементу."
       ]
     },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "Скидка ${ salePercentage } %"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "Скидка ${ salePercentage } % для вас и еще одного человека"
+      ],
+      "10 email addresses for you": [
+        "10 адресов электронной почты для вас"
+      ],
+      "10,000+ servers in 110+ countries": [
+        "Более 10 000 серверов в более чем 110 странах"
+      ],
+      "15 GB storage": [
+        "Хранилище 15 ГБ"
+      ],
+      "200 GB storage": [
+        "200 ГБ хранилища"
+      ],
+      "500 GB total storage": [
+        "Общее хранилище 500 ГБ"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Все премиум-функции Mail, VPN, Pass и Drive"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Все премиальные сервисы ${ BRAND_NAME }. Одна удобная подписка."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Скидки рассчитаны исходя из стандартных ежемесячных тарифов. По окончании расчётного периода ваша подписка будет продлена по стандартной годовой ставке."
+      ],
+      "Double the love, half the price": [
+        "Половиним цены для ваших половинок"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Получите 1 год ${ dealName } со скидкой ${ salePercentage } % — плюс подарочный код, чтобы поделиться этим предложением с другом"
+      ],
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ],
+      "High-speed streaming": [
+        "Высокоскоростной стриминг"
+      ],
+      "Integrated 2FA authenticator": [
+        "Интегрированная двухфакторная аутентификация"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Предлагает высокий уровень безопасности аккаунта и экспертную поддержку. ${ DARK_WEB_MONITORING_NAME } сканирует скрытые части Интернета в поисках адресов электронной почты ${ MAIL_APP_NAME }, оказавшихся на нелегальных рынках данных. Если обнаружится утечка, вы получите оповещение в Центре безопасности с инструкциями по защите вашего аккаунта."
+      ],
+      "Protect 10 devices at a time": [
+        "Защитите 10 устройств за раз"
+      ],
+      "Recover previous file versions": [
+        "Восстановление предыдущих версий файлов"
+      ],
+      "Secure file storage & sharing": [
+        "Безопасное хранение и обмен файлами"
+      ],
+      "Secure vault sharing": [
+        "Защищённый общий доступ к хранилищу"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Используйте собственный домен электронной почты"
+      ],
+      "Valentine's deal:": [
+        "Предложение ко Дню влюблённых:"
+      ]
+    },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Предложение ко Дню влюблённых"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "/ month": [
+        "/ месяц"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "15 months": [
+        "15 месяцев"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "30 months": [
+        "30 месяцев"
+      ],
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
@@ -10969,12 +11080,6 @@
         "${ n } счёта на один кошелёк",
         "${ n } счетов на один кошелёк",
         "${ n } счетов на один кошелёк"
-      ],
-      "${ n } email address": [
-        "${ n } адрес эл. почты",
-        "${ n } адреса эл. почты",
-        "${ n } адресов эл. почты",
-        "${ n } адресов эл. почты"
       ],
       "${ n } wallet": [
         "${ n } кошелёк",

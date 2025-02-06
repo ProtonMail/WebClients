@@ -5226,13 +5226,13 @@
         "Aquest mes"
       ],
       "This will permanently delete the file you uploaded.": [
-        "Això suprimirà permanentment el fitxer que heu penjat."
+        "Això eliminarà permanentment el fitxer que heu carregat."
       ],
       "This will permanently delete the folder you uploaded.": [
-        "Això suprimirà permanentment la carpeta que heu penjat."
+        "Això eliminarà permanentment la carpeta que heu carregat."
       ],
       "This will permanently delete the selected items you uploaded.": [
-        "Això suprimirà permanentment els elements seleccionats que heu penjat."
+        "Això eliminarà permanentment els elements seleccionats que heu carregat."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Això eliminarà el dispositiu sincronitzat ${ deviceName } de ${ DRIVE_APP_NAME } i totes les seves dades de ${ DRIVE_APP_NAME }. Les carpetes que heu afegit a Els meus ordinadors deixaran de sincronitzar-se."
@@ -7178,7 +7178,7 @@
         "Autenticador A2F integrat"
       ],
       "Kill switch/always-on VPN": [
-        "Kill switch / sempre en VPN"
+        "Kill switch /VPN sempre activa"
       ],
       "Limited support": [
         "Suport limitat"
@@ -8014,8 +8014,8 @@
         "S'ha rebutjat la invitació per a compartir."
       ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
-        "S'ha produït un error en suprimir; la carpeta no és buida.",
-        "S'ha produït un error en suprimir; les carpetes no són buides."
+        "No hem pogut eliminar la carpeta perquè no està buida.",
+        "No hem pogut eliminar les carpetes perquè no estan buides."
       ],
       "Stopping the sharing of this item has failed": [
         "Error en deixar de compartir aquest element"
@@ -10815,10 +10815,6 @@
       "${ n } account per wallet": [
         "${ n } compte per cartera",
         "${ n } comptes per cartera"
-      ],
-      "${ n } email address": [
-        "${ n } adreça de correu electrònic",
-        "${ n } adreces de correu electrònic"
       ],
       "${ n } wallet": [
         "${ n } cartera",

@@ -1071,7 +1071,7 @@
         "${ storageSize } ストレージ"
       ],
       "1 TB total": [
-        "1 TB 合計"
+        "合計 1 TB"
       ],
       "1 user": [
         "1 ユーザー"
@@ -1095,7 +1095,7 @@
         "6 ユーザー"
       ],
       "8500+ servers across 110+ countries": [
-        "8500+ servers across 110+ countries"
+        "110 か国以上、8500 台以上のサーバー"
       ],
       "Ad-blocker and malware protection": [
         "広告ブロッカーとマルウェア防止"
@@ -1162,7 +1162,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+        "ブロックされたコンテンツにアクセスし、プライベートに参照します。110 以上の国、10 以上のデバイス、高速ストリーミング、広告ブロッカー、マルウェア保護、VPN Acceleratorなど、8,500 以上のサーバーが含まれています。"
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix、Disney+、Prime Videoをはじめとする各種ストリーミングサービスのコンテンツに、どこからでもアクセスできます。"
@@ -5148,6 +5148,15 @@
       "This month": [
         "今月"
       ],
+      "This will permanently delete the file you uploaded.": [
+        "アップロードしたファイルは完全に削除されます。"
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "アップロードしたフォルダは完全に削除されます。"
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "アップロードした選択したアイテムは完全に削除されます。"
+      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "これにより${ DRIVE_APP_NAME }から同期されたデバイス${ deviceName }が削除され、${ DRIVE_APP_NAME }からすべてのデータが削除されます。マイコンピュータに追加されたフォルダは同期が停止します。"
       ],
@@ -7808,6 +7817,9 @@
       "Share invitation declined": [
         "共有への招待が拒否されました"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "申し訳ありませんが、フォルダが空でないため、削除できませんでした。"
+      ],
       "Stopping the sharing of this item has failed": [
         "この項目の共有停止に失敗しました。"
       ],
@@ -9674,6 +9686,35 @@
         "vCard フィールド"
       ]
     },
+    "Tag": {
+      "Bursts": [
+        "バースト"
+      ],
+      "Favorites": [
+        "お気に入り"
+      ],
+      "Live Photos": [
+        "ライブ写真"
+      ],
+      "Panoramas": [
+        "パノラマ"
+      ],
+      "Portraits": [
+        "ポートレート"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "スクリーンショット"
+      ],
+      "Selfies": [
+        "セルフィー"
+      ],
+      "Videos": [
+        "動画"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } 時間"
@@ -10510,9 +10551,6 @@
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "一つのウォレットに${ n } 個のアカウント"
-      ],
-      "${ n } email address": [
-        "${ n } メールアドレス"
       ],
       "${ n } wallet": [
         "${ n } 個のウォレット"

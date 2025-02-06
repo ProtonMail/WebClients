@@ -5225,6 +5225,15 @@
       "This month": [
         "Este mês"
       ],
+      "This will permanently delete the file you uploaded.": [
+        "Isso excluirá permanentemente o arquivo que você enviou."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Isso excluirá permanentemente a pasta que você enviou."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Isso excluirá permanentemente os itens selecionados que você enviou."
+      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Isso removerá o dispositivo sincronizado ${ deviceName } do ${ DRIVE_APP_NAME } e todos os seus dados do ${ DRIVE_APP_NAME }. As pastas que você adicionou aos Meus Computadores deixarão de ser sincronizadas."
       ],
@@ -8003,6 +8012,10 @@
       "Share invitation declined": [
         "Convite para compartilhamento recusado"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Não foi possível excluir a pasta porque ela não está vazia.",
+        "Não foi possível excluir as pastas porque elas não estão vazias."
+      ],
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
       ],
@@ -10729,6 +10742,115 @@
         "Enviamos um convite para acessar o item."
       ]
     },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "${ salePercentage }% de desconto"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "${ salePercentage }% de desconto para você e +1"
+      ],
+      "10 email addresses for you": [
+        "10 endereços de e-mail para você"
+      ],
+      "10,000+ servers in 110+ countries": [
+        "Mais de 10.000 servidores em mais de 110 países"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "200 GB storage": [
+        "200 GB de armazenamento"
+      ],
+      "500 GB total storage": [
+        "500 GB de armazenamento total"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Acesse conteúdo em serviços de streaming, incluindo Netflix, Disney+, Prime Video e muito mais, de qualquer lugar."
+      ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Todos os recursos premium do Mail, VPN, Pass e Drive"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Os descontos são baseados no preço mensal padrão. Ao final do ciclo de cobrança, sua assinatura será renovada na tarifa anual padrão."
+      ],
+      "Double the love, half the price": [
+        "O dobro do amor, a metade do preço"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Obtenha 1 ano de ${ dealName } com ${ salePercentage }% de desconto — além de um código de presente para compartilhar a mesma oferta com um amigo"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ],
+      "High-speed streaming": [
+        "Streaming em alta velocidade"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador A2F integrado"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Oferece segurança de conta de alto nível e suporte especializado. ${ DARK_WEB_MONITORING_NAME } verifica partes ocultas da internet em busca de endereços de e-mail do ${ MAIL_APP_NAME } que acabaram em mercados de dados ilegais. Se uma violação for detectada, você receberá um alerta do Security Center com orientações para proteger sua conta."
+      ],
+      "Protect 10 devices at a time": [
+        "Proteja 10 dispositivos simultaneamente"
+      ],
+      "Recover previous file versions": [
+        "Recupere versões anteriores de arquivos"
+      ],
+      "Secure file storage & sharing": [
+        "Armazenamento e compartilhamento de arquivos seguros"
+      ],
+      "Secure vault sharing": [
+        "Compartilhamento seguro de cofres"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "O espaço de armazenamento é compartilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases ilimitados do hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Use o seu próprio domínio de e-mail"
+      ],
+      "Valentine's deal:": [
+        "Oferta de Dia dos Namorados:"
+      ]
+    },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Oferta de Dia dos Namorados"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "/ month": [
+        "/ mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "15 months": [
+        "15 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "30 months": [
+        "30 meses"
+      ],
+      "for ${ durationDeal }": [
+        "por ${ durationDeal }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
@@ -10807,10 +10929,6 @@
       "${ n } account per wallet": [
         "${ n } conta por carteira",
         "${ n } contas por carteira"
-      ],
-      "${ n } email address": [
-        "${ n } endereço de e-mail",
-        "${ n } endereços de e-mail"
       ],
       "${ n } wallet": [
         "${ n } carteira",
