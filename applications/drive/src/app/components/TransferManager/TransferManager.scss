@@ -133,14 +133,16 @@
 			}
 		}
 
-		.transfers-manager-list-item-controls-button {
-			opacity: 0;
-			will-change: opacity;
-		}
-
-		&:hover {
+		@media (hover: hover) and (pointer: fine) {
 			.transfers-manager-list-item-controls-button {
-				opacity: 1;
+				opacity: 0;
+				will-change: opacity;
+			}
+
+			&:hover {
+				.transfers-manager-list-item-controls-button {
+					opacity: 1;
+				}
 			}
 		}
 	}
