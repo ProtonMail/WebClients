@@ -316,6 +316,9 @@
       "Forgot recovery method?": [
         "Забули спосіб відновлення?"
       ],
+      "Generate password": [
+        "Згенерувати пароль"
+      ],
       "Get a new encrypted email address": [
         "Отримайте нову зашифровану адресу електронної пошти"
       ],
@@ -627,9 +630,6 @@
       ],
       "Sign in with password": [
         "Увійти за допомогою пароля"
-      ],
-      "Sign in with SSO": [
-        "Увійти за допомогою SSO"
       ],
       "Sign out": [
         "Вийти"
@@ -4115,9 +4115,6 @@
       ],
       "for choosing ${ product }": [
         "за вибір ${ product }"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Для учасників організацій, що використовують єдиний вхід (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Користувачам, які переходять на ${ MAIL_APP_NAME } з інших сервісів електронної пошти, необхідно вибрати вкладку ${ boldAddresses } і додати всі активні адреси електронної пошти, перш ніж змінювати MX запис. Зробивши це, ви забезпечите безперебійний перехід."
