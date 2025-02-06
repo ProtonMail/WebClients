@@ -1,5 +1,3 @@
-import { CryptoProxy } from '@proton/crypto';
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { FAILED_TO_DOWNLOAD } from '@proton/llm/lib/constants';
 import { postMessageIframeToParent } from '@proton/llm/lib/helpers';
 import * as _ndarrayCache from '@proton/llm/resources/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/ndarray-cache.json';
@@ -43,7 +41,6 @@ export type LlmFile = {
     cacheUrl: string;
     cacheKey: string;
     cacheId: CacheId;
-    expectedMd5?: string;
     expectedSize?: number;
 };
 
@@ -117,7 +114,7 @@ async function downloadFilesSequentially(
     for (let i = 0; i < files.length; i++) {
         if (abortController.signal.aborted) return;
 
-        const { downloadUrl, cacheUrl, cacheId, expectedMd5 } = files[i];
+        const { downloadUrl, cacheUrl, cacheId } = files[i];
 
         // Do not download files that have already been downloaded and cached
         let ignoreThisFile = filesToIgnore.some((f) => f.downloadUrl === downloadUrl);
@@ -139,7 +136,6 @@ async function downloadFilesSequentially(
                         // use the parent model url so that we put the right element in cache
                         cacheId,
                         cacheUrl,
-                        expectedMd5,
                         terminate: filesDownloaded === totalFilesToDownload,
                     },
                 },
@@ -185,7 +181,6 @@ function listFilesToDownload(variantConfig: AssistantConfigModel): LlmFile[] {
             cacheUrl: new URL(record.dataPath, baseCacheUrl).href,
             cacheKey: `${baseKey}${record.dataPath}`,
             cacheId: CacheId.MODEL,
-            expectedMd5: record.md5sum,
             expectedSize: record.nbytes,
         }))
     );
@@ -283,16 +278,6 @@ export async function downloadModel(
     );
 }
 
-/**
- * Functions used on the parent app to
- * - Check which files of the model have already been downloaded
- * - Store files in the cache
- */
-
-async function computeMd5(data: Uint8Array) {
-    return arrayToHexString(await CryptoProxy.computeHash({ data, algorithm: 'unsafeMD5' }));
-}
-
 function buildFakeResponseForCache(data: string, filename: string, origin: string) {
     const blob = new Blob([data], { type: 'text/plain;charset=utf-8' });
     const headers = new Headers({
@@ -326,20 +311,15 @@ async function storeLocalDataInCache(object: any, filename: string, cacheId: Cac
     await cacheId.put(`${baseKey}${filename}`, response);
 }
 
-// Check if a given url is already present in the cache, and optionally verify its MD5 checksum.
-async function existsInCache(
-    cacheUrl: string,
-    cache: Cache,
-    expects?: { md5?: string; size?: number }
-): Promise<boolean> {
+// Check if a given url is already present in the cache.
+async function existsInCache(cacheUrl: string, cache: Cache, expects?: { size?: number }): Promise<boolean> {
     let cachedResponse = await cache.match(cacheUrl);
     if (!cachedResponse) {
         return false;
     }
     const expectedSize = expects?.size;
-    const expectedMd5 = expects?.md5;
 
-    const needsCheck = expectedSize !== undefined || expectedMd5 !== undefined;
+    const needsCheck = expectedSize !== undefined;
     if (!needsCheck) {
         return true;
     }
@@ -348,22 +328,6 @@ async function existsInCache(
 
     if (expectedSize !== undefined) {
         return arrayBuffer.byteLength === expectedSize;
-    }
-
-    if (expectedMd5 !== undefined) {
-        // disabling for now; it takes too long to compute checksum for cached files
-        const BYPASS_CHECKSUM_FOR_CACHED_FILES = true;
-        if (BYPASS_CHECKSUM_FOR_CACHED_FILES) {
-            return true;
-        }
-
-        const data = new Uint8Array(arrayBuffer);
-
-        const actualMd5 = await computeMd5(data);
-        if (actualMd5 === expectedMd5) {
-            return true;
-        }
-        return false;
     }
 
     return true;
@@ -437,27 +401,15 @@ export async function deleteAssistantCachedFiles() {
 }
 
 // Store a fully downloaded file into the cache.
-export async function storeInCache(
-    downloadResult: DownloadResult,
-    cacheUrl: string,
-    cache: Cache,
-    expectedMd5: string | undefined
-) {
+export async function storeInCache(downloadResult: DownloadResult, cacheUrl: string, cache: Cache) {
     const { status, statusText, headers, chunks } = downloadResult;
     const blob = new Blob(chunks);
-    const arrayBuffer = await blob.arrayBuffer();
-    const data = new Uint8Array(arrayBuffer);
-    const actualMd5 = await computeMd5(data);
 
-    if (!expectedMd5 || actualMd5 === expectedMd5) {
-        try {
-            const parsedHeaders = JSON.parse(headers);
-            await cache.put(cacheUrl, new Response(blob, { status, statusText, headers: parsedHeaders }));
-        } catch (e) {
-            throw new Error(`${cacheUrl}: error while storing in cache: ${e}`);
-        }
-    } else {
-        throw new Error(`${cacheUrl}: checksum failed, expected ${expectedMd5}, got ${actualMd5}`);
+    try {
+        const parsedHeaders = JSON.parse(headers);
+        await cache.put(cacheUrl, new Response(blob, { status, statusText, headers: parsedHeaders }));
+    } catch (e) {
+        throw new Error(`${cacheUrl}: error while storing in cache: ${e}`);
     }
 }
 
