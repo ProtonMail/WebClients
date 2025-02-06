@@ -12237,6 +12237,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/pdf-parse@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "@types/pdf-parse@npm:1.1.4"
+  checksum: 10c0/1192e0a40bae935428a7f02a56d1313474f0d735820824e1d00f06a0330cf89cc18e34d63864202ae997fbd7806952fa68a47a1f0cbc81f8d03000f942543d5c
+  languageName: node
+  linkType: hard
+
 "@types/pg-pool@npm:2.0.6":
   version: 2.0.6
   resolution: "@types/pg-pool@npm:2.0.6"
@@ -35938,6 +35945,7 @@ __metadata:
     "@types/chance": "npm:^1.1.6"
     "@types/fs-extra": "npm:^11.0.4"
     "@types/nodemailer": "npm:^6.4.17"
+    "@types/pdf-parse": "npm:^1.1.4"
     "@types/tinycolor2": "npm:^1.4.6"
     chance: "npm:^1.1.12"
     cross-fetch: "npm:^4.1.0"
