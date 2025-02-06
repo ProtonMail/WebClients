@@ -2871,7 +2871,7 @@
         "El codi de verificació no és vàlid."
       ],
       "Item content cannot exceed 40KB": [
-        "El contingut de l'element no pot excedir 40 Kb."
+        "El contingut de l'element no pot excedir 40 kB."
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
@@ -4589,7 +4589,7 @@
         "de l'historial de versions?"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
-        "Obtingueu l'aplicació per fer una còpia de seguretat de les fotos del vostre telèfon o carregueu-les aquí."
+        "Obtingueu l'aplicació per fer una còpia de seguretat de les fotos del telèfon o carregueu-les aquí."
       ],
       "Get the app to backup photos from your phone.": [
         "Obteniu l'aplicació per a fer còpies de seguretat de les fotos del vostre telèfon."
@@ -5186,17 +5186,8 @@
       "There is nothing to see here": [
         "Aquí no hi ha res a veure"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Aquesta acció suprimirà el fitxer que heu carregat permanentment."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Aquesta acció eliminarà la carpeta que heu carregat permanentment. No podeu eliminar una carpeta que contingui un fitxer del qual no sou propietari."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Aquesta acció eliminarà l'enllaç i revocarà l'accés per a tots els usuaris."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Aquesta acció suprimirà els elements seleccionats permanentment."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
@@ -5233,6 +5224,15 @@
       ],
       "This month": [
         "Aquest mes"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Això suprimirà permanentment el fitxer que heu penjat."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Això suprimirà permanentment la carpeta que heu penjat."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Això suprimirà permanentment els elements seleccionats que heu penjat."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Això eliminarà el dispositiu sincronitzat ${ deviceName } de ${ DRIVE_APP_NAME } i totes les seves dades de ${ DRIVE_APP_NAME }. Les carpetes que heu afegit a Els meus ordinadors deixaran de sincronitzar-se."
@@ -5771,6 +5771,9 @@
       ],
       "Album": [
         "Àlbum"
+      ],
+      "All": [
+        "Tot"
       ],
       "Anderson": [
         "Pujol"
@@ -8010,6 +8013,10 @@
       "Share invitation declined": [
         "S'ha rebutjat la invitació per a compartir."
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "S'ha produït un error en suprimir; la carpeta no és buida.",
+        "S'ha produït un error en suprimir; les carpetes no són buides."
+      ],
       "Stopping the sharing of this item has failed": [
         "Error en deixar de compartir aquest element"
       ],
@@ -9915,6 +9922,35 @@
       ],
       "vCard field": [
         "Camp vCard"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Ràfegues"
+      ],
+      "Favorites": [
+        "Preferits"
+      ],
+      "Live Photos": [
+        "Fotos en directe"
+      ],
+      "Panoramas": [
+        "Panorames"
+      ],
+      "Portraits": [
+        "Retrats"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Captures de pantalla"
+      ],
+      "Selfies": [
+        "Autofotos"
+      ],
+      "Videos": [
+        "Vídeos"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

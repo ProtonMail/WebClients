@@ -70,11 +70,11 @@
       "Accept": [
         "Prijať"
       ],
-      "Activate": [
-        "Aktivovať"
-      ],
       "activate": [
         "aktivovať"
+      ],
+      "Activate": [
+        "Aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -313,6 +313,9 @@
       "Copy link": [
         "Kopírovať odkaz"
       ],
+      "Copy password": [
+        "Kopírovať heslo"
+      ],
       "Copy version number to clipboard": [
         "Skopírovať číslo verzie do schránky"
       ],
@@ -339,6 +342,9 @@
       ],
       "Create link": [
         "Vytvoriť odkaz"
+      ],
+      "Create new password": [
+        "Vytvoriť nové heslo"
       ],
       "Create new policy": [
         "Vytvoriť novú politiku"
@@ -576,6 +582,9 @@
       ],
       "Generate new recovery phrase": [
         "Vygenerovať novú frázu pre obnovenie"
+      ],
+      "Generate password": [
+        "Vygenerovať heslo"
       ],
       "Generate recovery phrase": [
         "Vygenerovať obnovovaciu frázu"
@@ -1116,9 +1125,6 @@
       ],
       "Sign in with password": [
         "Prihláste sa pomocou hesla"
-      ],
-      "Sign in with SSO": [
-        "Prihláste sa pomocou SSO"
       ],
       "Sign out": [
         "Odhlásiť sa"
@@ -3978,6 +3984,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, sa zobrazia len na faktúrach vystavených v budúcnosti a neovplyvnia existujúce faktúry."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, zmenia len vybranú faktúru, a nie vaše budúce fakturačné údaje."
       ]
     },
     "Email": {
@@ -4522,6 +4531,9 @@
       ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturačnej adresy momentálne nie je k dispozícii. Skúste to neskôr, prosím."
       ],
       "Email address disabled": [
         "Emailová adresa je deaktivovaná"
@@ -7064,11 +7076,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte aspoň jeden spôsob obnovy údajov, aby ste mali istotu, že v prípade straty hesla budete mať naďalej prístup k obsahu svojho ${ BRAND_NAME } účtu."
       ],
-      "Active": [
-        "Aktívne"
-      ],
       "active": [
         "aktívne"
+      ],
+      "Active": [
+        "Aktívne"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Pridajte do svojho konta emailovú adresu @pm.me. Táto jednoduchá, kratšia doména znamená \"${ MAIL_APP_NAME } me\" alebo \"Private Message me.\""
@@ -7279,6 +7291,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Požiadajte správcu organizácie o nastavenie brány."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
       ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
@@ -7523,11 +7538,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -7805,9 +7820,6 @@
       "for choosing ${ product }": [
         "za výber ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Pre členov organizácií používajúcich jednotné prihlásenie (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
       ],
@@ -8060,6 +8072,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Zmena krajiny servera trvá 10 dní, preto sa uistite, že je váš výber správny."
       ],
+      "It's better to have:": [
+        "Je lepšie, ak máte:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Položka automaticky vyplnená v trezore ${ vaultLink }"
       ],
@@ -8297,6 +8312,9 @@
       "No addresses exist": [
         "Neexistujú žiadne adresy"
       ],
+      "No common passwords": [
+        "Žiadne bežné heslá"
+      ],
       "No credit card required": [
         "Nie je potrebná platobná karta"
       ],
@@ -8327,6 +8345,9 @@
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Žiadne predvídateľné sekvencie (1234, aaa)"
+      ],
       "No results found": [
         "Nenájdené žiadne výsledky"
       ],
@@ -8341,6 +8362,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
+      ],
+      "Numbers": [
+        "Čísla"
       ],
       "of": [
         "z"
@@ -8873,6 +8897,9 @@
       "Switch to": [
         "Prepnúť na"
       ],
+      "Symbols (#$&)": [
+        "Znaky (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizujte a spravujte súbory pomocou aplikácie ${ DRIVE_APP_NAME }. Vytvárajte a zdieľajte dokumenty v aplikácii ${ DOCS_APP_NAME } a bezpečne ich ukladajte. Všetko v aplikáciách pre ${ ios }, ${ android } a ${ desktop }."
       ],
@@ -9256,6 +9283,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Nahratý kľúč nie je platný súkromný kľúč. Skontrolujte a skúste to znovu."
+      ],
+      "Uppercase and lowercase letters": [
+        "Veľké a malé písmená"
       ],
       "URL link": [
         "URL odkaz"
@@ -10763,6 +10793,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Zadajte heslo pre kľúč s odtlačkom: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "Zadajte svoje heslo"
+      ],
       "Entity ID": [
         "ID entity"
       ],
@@ -10966,6 +10999,9 @@
       ],
       "Move to Inbox": [
         "Presunúť do Doručených"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
       ],
       "Name": [
         "Meno"
@@ -11258,6 +11294,9 @@
       "Strong": [
         "Silné"
       ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti predplatného"
       ],
@@ -11351,11 +11390,17 @@
       "Vulnerable": [
         "Zraniteľné"
       ],
+      "Vulnerable password": [
+        "Zraniteľné heslo"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám ľúto, že odchádzate. Napíšte nám svoj dôvod, prečo odchádzate, aby sme mohli zlepšiť naše služby."
       ],
       "Weak": [
         "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "Week start": [
         "Týždeň začína v"
@@ -11596,6 +11641,9 @@
       ],
       "Encryption and keys": [
         "Šifrovanie a kľúče"
+      ],
+      "Forgot email?": [
+        "Zabudli ste email?"
       ],
       "Forgot password?": [
         "Zabudnuté heslo?"
@@ -14631,6 +14679,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Boli ste menovaný správcom organizácie **${ organizationName }** používateľom"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Pred vytvorením nového kľúča organizácie musíte odstrániť všetky skupiny."
+      ],
       "You must privatize all users before generating a new organization key": [
         "Pred vygenerovaním nového kľúča organizácie musíte všetkých používateľov nastaviť ako súkromných"
       ],
@@ -15235,6 +15286,9 @@
       ],
       "Recovery phone number": [
         "Telefónne číslo pre obnovenie"
+      ],
+      "Review account safety": [
+        "Skontrolujte bezpečnosť účtu"
       ],
       "Safeguard account now": [
         "Zabezpečte svoj účet teraz"
@@ -16647,6 +16701,9 @@
       "User details:": [
         "Podrobnosti o používateľovi:"
       ],
+      "Welcome": [
+        "Vitajte"
+      ],
       "Yes, it was me": [
         "Áno, ide o moju žiadosť"
       ],
@@ -16992,47 +17049,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -17333,6 +17349,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -19261,6 +19318,29 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Externá adresa - deaktivuje end-to-end šifrovanie emailov pre túto skupinu"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Externá adresa - deaktivuje end-to-end šifrovanie emailov pre túto skupinu a s týmto používateľom nebudú zdieľané žiadne šifrované zdroje."
+      ],
+      "Group membership paused": [
+        "Členstvo v skupine pozastavené"
+      ],
+      "Sending member invitation": [
+        "Odosielanie členskej pozvánky"
+      ],
+      "User declined invitation": [
+        "Používateľ odmietol pozvánku"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Čakanie na prijatie pozvania zo strany používateľa"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Používatelia ${ MAIL_APP_NAME } budú štandardne používať tento kľúč na odosielanie"
@@ -19474,29 +19554,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Váš externý účet mohol dosiahnuť 24-hodinový limit prenosovej kapacity. ${ BRAND_NAME } sa pokúsi obnoviť import hneď, ako to bude možné"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Externá adresa - deaktivuje end-to-end šifrovanie emailov pre túto skupinu"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Externá adresa - deaktivuje end-to-end šifrovanie emailov pre túto skupinu a s týmto používateľom nebudú zdieľané žiadne šifrované zdroje."
-      ],
-      "Group membership paused": [
-        "Členstvo v skupine pozastavené"
-      ],
-      "Sending member invitation": [
-        "Odosielanie členskej pozvánky"
-      ],
-      "User declined invitation": [
-        "Používateľ odmietol pozvánku"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Čakanie na prijatie pozvania zo strany používateľa"
       ]
     },
     "Tooltip automatically attach public key": {

@@ -29,6 +29,9 @@
       "Add domain": [
         "Aggiungi dominio"
       ],
+      "Add forwarding mailbox": [
+        "Aggiungi casella di posta di inoltro"
+      ],
       "Add mailbox": [
         "Aggiungi casella email"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Opzioni avanzate"
+      ],
+      "Apply lifetime coupon code": [
+        "Applica codice coupon illimitato"
       ],
       "Authenticate": [
         "Autentica"
@@ -1468,6 +1474,9 @@
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
+      "Coupon successfully applied!": [
+        "Coupon applicato correttamente!"
+      ],
       "Create contact illustration": [
         "Crea un'illustrazione del contatto"
       ],
@@ -1998,8 +2007,8 @@
       "Settings successfully updated": [
         "Impostazioni aggiornate correttamente"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Condividi gli alias con altri aggiungendo la loro posta in arrivo come casella aggiuntiva."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Condividi gli alias con altri aggiungendo la loro casella di posta come casella di posta di inoltro."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Condividi i tuoi dati di accesso e le note sicure con un massimo di 10 persone"
@@ -3192,6 +3201,9 @@
       "Alias Display Name": [
         "Nome visualizzato alias"
       ],
+      "Coupon": [
+        "Coupon"
+      ],
       "Email address": [
         "Indirizzo email"
       ],
@@ -3523,6 +3535,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Ti piace ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "Inserisci il codice del coupon"
+      ],
       "Enter your extra password": [
         "Inserisci la password aggiuntiva"
       ],
@@ -3844,6 +3859,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Impossibile spedire gli inviti ai seguenti indirizzi:"
+      ],
+      "Coupon cannot be empty": [
+        "Il coupon non può essere vuoto."
+      ],
+      "Coupon could not be applied.": [
+        "Non è stato possibile applicare il coupon."
       ],
       "Delete alias": [
         "Elimina alias"

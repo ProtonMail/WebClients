@@ -29,6 +29,9 @@
       "Add domain": [
         "Añadir dominio"
       ],
+      "Add forwarding mailbox": [
+        "Agregar un buzón de reenvío"
+      ],
       "Add mailbox": [
         "Añadir un buzón"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Opciones avanzadas"
+      ],
+      "Apply lifetime coupon code": [
+        "Aplicar código de cupón vitalicio"
       ],
       "Authenticate": [
         "Autenticar"
@@ -1468,6 +1474,9 @@
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
+      "Coupon successfully applied!": [
+        "Se aplicó el cupón."
+      ],
       "Create contact illustration": [
         "Crear la ilustración del contacto"
       ],
@@ -1998,8 +2007,8 @@
       "Settings successfully updated": [
         "Ajustes actualizados con éxito"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Comparta alias con otros añadiendo sus bandejas de entrada como buzón adicional."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Comparta aliases con otros añadiendo su bandeja de entrada como buzón de reenvío."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Comparta sus inicios de sesión y notas con hasta 10 personas"
@@ -3192,6 +3201,9 @@
       "Alias Display Name": [
         "Nombre a mostrar del alias"
       ],
+      "Coupon": [
+        "Cupón"
+      ],
       "Email address": [
         "Dirección de correo"
       ],
@@ -3523,6 +3535,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "Ingresa el código del cupón"
+      ],
       "Enter your extra password": [
         "Ingrese su contraseña adicional"
       ],
@@ -3844,6 +3859,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "No se pudieron enviar las invitaciones a las siguientes direcciones:"
+      ],
+      "Coupon cannot be empty": [
+        "El cupón no puede estar vacío"
+      ],
+      "Coupon could not be applied.": [
+        "No se pudo aplicar el cupón."
       ],
       "Delete alias": [
         "Eliminar el alias"

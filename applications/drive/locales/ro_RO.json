@@ -885,6 +885,9 @@
       "Upload file": [
         "Încărcare fișier"
       ],
+      "Upload files": [
+        "Încărcare fișiere"
+      ],
       "Upload folder": [
         "Încărcare folder"
       ],
@@ -943,6 +946,11 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Încărcare"
       ]
     },
     "Actions message": {
@@ -4519,6 +4527,9 @@
       "Drop files here": [
         "Trageți fișierele aici"
       ],
+      "Drop files here to upload or click on the upload button": [
+        "Trageți aici fișiere sau faceți clic pe butonul de încărcare"
+      ],
       "Drop to import": [
         "Plasare pentru importare"
       ],
@@ -4649,6 +4660,9 @@
       ],
       "from the version history?": [
         "din istoricul versiunilor?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Luați aplicația pentru a vă conserva fotografiile din telefon sau încărcați-le aici."
       ],
       "Get the app to backup photos from your phone.": [
         "Luați aplicația pentru a vă conserva fotografiile din dispozitiv."
@@ -5249,17 +5263,8 @@
       "There is nothing to see here": [
         "Nu e nimic de văzut aici"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Această acțiune va șterge permanent fișierul încărcat."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Această acțiune va șterge permanent folderul încărcat. Nu puteți șterge un folder care conține fișiere care nu vă aparțin."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Această acțiune va șterge legătura web și va anula accesul pentru toți utilizatorii."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Această acțiune va șterge permanent articolele selectate."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
@@ -5296,6 +5301,15 @@
       ],
       "This month": [
         "Luna curentă"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Aceasta va șterge permanent fișierul încărcat."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Aceasta va șterge permanent folderul încărcat."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Aceasta va șterge permanent articolele încărcate."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Aceasta va elimina dispozitivul sincronizat ${ deviceName } din ${ DRIVE_APP_NAME } și toate datele sale din ${ DRIVE_APP_NAME }. Folderele pe care le-ați adăugat la „Calculator” nu se vor mai sincroniza."
@@ -5837,6 +5851,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "All": [
+        "Toate"
       ],
       "Anderson": [
         "Anderson"
@@ -8066,6 +8083,11 @@
       "Share invitation declined": [
         "Invitația la partajare a fost refuzată."
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Folderul nu s-a putut șterge deoarece nu este gol.",
+        "Folderele nu s-au putut șterge deoarece nu sunt goale.",
+        "Folderele nu s-au putut șterge deoarece nu sunt goale."
+      ],
       "Stopping the sharing of this item has failed": [
         "Oprirea partajării acestui articol a eșuat."
       ],
@@ -8748,6 +8770,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Revizuire securitate cont"
       ]
     },
     "saml: Error": {
@@ -10009,6 +10036,35 @@
         "Câmp vCard"
       ]
     },
+    "Tag": {
+      "Bursts": [
+        "Rafale"
+      ],
+      "Favorites": [
+        "Favorite"
+      ],
+      "Live Photos": [
+        "Fotografii live"
+      ],
+      "Panoramas": [
+        "Panorame"
+      ],
+      "Portraits": [
+        "Portrete"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Capturi de ecran"
+      ],
+      "Selfies": [
+        "Autoportrete"
+      ],
+      "Videos": [
+        "Videoclipuri"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -10910,6 +10966,9 @@
       ],
       "A safer way to hold your Bitcoin": [
         "O metodă mai sigură de a vă păstra monedele Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin prin e-mail"
       ]
     },
     "wallet_signup_2024:app-switcher": {

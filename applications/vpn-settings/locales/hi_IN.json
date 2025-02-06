@@ -277,6 +277,9 @@
       "Forgot recovery method?": [
         "रिकवरी विधि भूल गए?"
       ],
+      "Generate password": [
+        "पासवर्ड उत्पन्न करें"
+      ],
       "Get a new encrypted email address": [
         "एक नया एन्क्रिप्टेड ईमेल पता ले"
       ],
@@ -558,9 +561,6 @@
       ],
       "Sign in with password": [
         "पासवर्ड से साइन इन"
-      ],
-      "Sign in with SSO": [
-        "SSO से साइन इन"
       ],
       "Sign out": [
         "साइनआउट करें"
@@ -3443,9 +3443,6 @@
       ],
       "for choosing ${ product }": [
         "${ product } चुनने के लिए"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "सिंगल साइन-ऑन (SAML SSO) का उपयोग करने वाले संगठनों के सदस्यों के लिए"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "उन उपयोगकर्ताओं के लिए जो किसी अन्य ईमेल सेवा से ${ MAIL_APP_NAME } पर स्विच कर रहे हैं, ${ boldAddresses } टैब का चयन करें और MX रिकॉर्ड को बदलने से पहले सभी सक्रिय ईमेल पते जोड़ें ताकि एक सहज परिवर्तन सुनिश्चित हो।"
