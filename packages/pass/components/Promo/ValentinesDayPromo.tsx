@@ -35,7 +35,7 @@ const getUpsellRef = (isFreePlan: boolean) => {
     return isFreePlan ? freeRef : plusRef;
 };
 
-/** Upsell free users to Pass Plus and upsell Pass/Mail/VPN/Drive Plus users
+/** Upsell free users to Pass Plus and upsell Pass/Mail/VPN/Drive Plus/"Pass Plus via SimpleLogin" users
  * to Unlimited. Exclude users who have already consumed the offer. */
 const getPlanEligble = ({ InternalName, SubscriptionCoupon }: PassPlanResponse) => {
     const planEligble =
@@ -45,7 +45,8 @@ const getPlanEligble = ({ InternalName, SubscriptionCoupon }: PassPlanResponse) 
         InternalName === PLANS.VPN ||
         InternalName === PLANS.VPN2024 ||
         InternalName === PLANS.VPN_PASS_BUNDLE ||
-        InternalName === PLANS.DRIVE;
+        InternalName === PLANS.DRIVE ||
+        InternalName === 'simplelogin';
     const couponEligble = !FORBIDDEN_COUPONS.has(SubscriptionCoupon ?? '');
     return planEligble && couponEligble;
 };
