@@ -5186,17 +5186,8 @@
       "There is nothing to see here": [
         "Δεν υπάρχει τίποτα να δείτε εδώ"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Αυτή η ενέργεια θα διαγράψει το αρχείο που μεταφορτώσατε μη αναστρέψιμα."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Αυτή η ενέργεια θα διαγράψει τον φάκελο που μεταφορτώσατε μη αναστρέψιμα. Δεν μπορείτε να διαγράψετε έναν φάκελο που περιέχει αρχείο που δεν σας ανήκει."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Αυτή η ενέργεια θα διαγράψει τον σύνδεσμο και θα ανακαλέσει την πρόσβαση για όλους τους χρήστες."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Αυτή η ενέργεια θα διαγράψει τα επιλεγμένα στοιχεία μη αναστρέψιμα."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
@@ -5233,6 +5224,15 @@
       ],
       "This month": [
         "Αυτό το μήνα"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Αυτό θα διαγράψει οριστικά το αρχείο που ανεβάσατε."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Αυτό θα διαγράψει οριστικά το φάκελο που ανεβάσατε."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Αυτό θα διαγράψει οριστικά τα επιλεγμένα στοιχεία που ανεβάσατε."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Αυτό θα αφαιρέσει την συγχρονιζόμενη συσκευή ${ deviceName } από το ${ DRIVE_APP_NAME } και όλα τα δεδομένα της από το ${ DRIVE_APP_NAME }. Οι φάκελοι που προσθέσατε στους Υπολογιστές θα πάψουν να συγχρονίζονται."
@@ -5765,6 +5765,9 @@
       ],
       "Address": [
         "Διεύθυνση"
+      ],
+      "All": [
+        "Όλα"
       ],
       "Anderson": [
         "Anderson"
@@ -7947,6 +7950,10 @@
       "Share invitation declined": [
         "Η πρόσκληση κοινής χρήσης απορρίφθηκε"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Λυπούμαστε, δεν ήταν δυνατή η διαγραφή του φακέλου επειδή δεν είναι κενός.",
+        "Λυπούμαστε, δεν ήταν δυνατή η διαγραφή των φακέλων επειδή δεν είναι κενοί."
+      ],
       "Stopping the sharing of this item has failed": [
         "Η διακοπή της κοινοποίησης αυτού του στοιχείου απέτυχε"
       ],
@@ -9852,6 +9859,35 @@
       ],
       "vCard field": [
         "πεδίο vCard"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Ριπές"
+      ],
+      "Favorites": [
+        "Αγαπημένα"
+      ],
+      "Live Photos": [
+        "Ζωντανές Φωτογραφίες"
+      ],
+      "Panoramas": [
+        "Πανοράματα"
+      ],
+      "Portraits": [
+        "Πορτραίτα"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Στιγμιότυπα οθόνης"
+      ],
+      "Selfies": [
+        "Selfies"
+      ],
+      "Videos": [
+        "Βίντεο"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
