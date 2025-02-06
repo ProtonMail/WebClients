@@ -29,6 +29,9 @@
       "Add domain": [
         "Adăugare domeniu"
       ],
+      "Add forwarding mailbox": [
+        "Adăugare adresă redirecționare"
+      ],
       "Add mailbox": [
         "Adăugare cont de e-mail"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Opțiuni avansate"
+      ],
+      "Apply lifetime coupon code": [
+        "Aplicare cupon pe viață"
       ],
       "Authenticate": [
         "Autentificare"
@@ -1488,6 +1494,9 @@
       "Copied to clipboard": [
         "Copiat în memorie"
       ],
+      "Coupon successfully applied!": [
+        "Cuponul a fost aplicat!"
+      ],
       "Create contact illustration": [
         "Ilustrare creare contact"
       ],
@@ -2026,8 +2035,8 @@
       "Settings successfully updated": [
         "Setările s-au actualizat."
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Partajați aliasuri cu alții adăugând adresa lor de e-mail ca adresă suplimentară."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Partajați aliasuri cu alții adăugând adresa lor de e-mail ca adresă de redirecționare."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Partajați-vă datele de conectare și notițele securizate cu până la 10 persoane"
@@ -3238,6 +3247,9 @@
       "Alias Display Name": [
         "Nume afișat alias"
       ],
+      "Coupon": [
+        "Cupon"
+      ],
       "Email address": [
         "Adresă e-mail"
       ],
@@ -3572,6 +3584,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vă bucurați de ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "Introduceți codul cuponului"
+      ],
       "Enter your extra password": [
         "Introduceți parola suplimentară"
       ],
@@ -3899,6 +3914,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Nu s-au putut trimite invitații la următoarele adrese:"
+      ],
+      "Coupon cannot be empty": [
+        "Cuponul nu poate fi gol"
+      ],
+      "Coupon could not be applied.": [
+        "Cuponul nu s-a putut aplica."
       ],
       "Delete alias": [
         "Ștergere alias"
