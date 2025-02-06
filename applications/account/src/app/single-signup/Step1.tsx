@@ -89,6 +89,7 @@ import Box from './Box';
 import CycleSelector from './CycleSelector';
 import GiftCodeSummary from './GiftCodeSummary';
 import Guarantee from './Guarantee';
+import GuaranteeCard from './GuaranteeCard';
 import type { Background } from './Layout';
 import Layout from './Layout';
 import PaymentSummary from './PaymentSummary';
@@ -173,6 +174,7 @@ const Step1 = ({
     measure,
     className,
     currencyUrlParam,
+    toAppName,
 }: {
     activeBreakpoint: Breakpoints;
     defaultEmail?: string;
@@ -196,6 +198,7 @@ const Step1 = ({
     measure: Measure;
     className?: string;
     currencyUrlParam?: Currency;
+    toAppName: string;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const normalApi = useApi();
@@ -1388,11 +1391,6 @@ const Step1 = ({
                                                             ? c('Action').jt`Pay ${price}`
                                                             : c('Action').t`Confirm`}
                                                     </Button>
-                                                    {hasGuarantee && (
-                                                        <div className="text-center color-success my-4">
-                                                            <Guarantee />
-                                                        </div>
-                                                    )}
                                                     <div className="mt-4 text-sm color-weak text-center">
                                                         {
                                                             // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
@@ -1405,13 +1403,17 @@ const Step1 = ({
                                         })()}
                                     </form>
 
+                                    {hasGuarantee && viewportWidth['<=medium'] && (
+                                        <GuaranteeCard className="mt-8" productName={toAppName} />
+                                    )}
+
                                     <RatingsSection className="mt-8" />
                                 </div>
                                 <div
                                     className={clsx(viewportWidth['>=large'] && 'w-custom')}
                                     style={viewportWidth['>=large'] ? { '--w-custom': '18.75rem' } : undefined}
                                 >
-                                    <div className="border rounded-xl border-weak px-3 py-4">
+                                    <div className="flex-1 border rounded-xl border-weak px-3 py-4">
                                         <PaymentSummary
                                             model={model}
                                             options={options}
@@ -1482,6 +1484,9 @@ const Step1 = ({
                                             hasSelectedFree={hasSelectedFree}
                                         />
                                     </div>
+                                    {hasGuarantee && viewportWidth['>=large'] && (
+                                        <GuaranteeCard productName={toAppName} className="mt-6" />
+                                    )}
                                 </div>
                             </div>
                         </BoxContent>
