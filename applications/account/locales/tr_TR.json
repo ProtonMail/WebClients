@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -313,6 +313,9 @@
       "Copy link": [
         "Bağlantıyı kopyala"
       ],
+      "Copy password": [
+        "Parolayı kopyala"
+      ],
       "Copy version number to clipboard": [
         "Sürüm numarasını kopyala"
       ],
@@ -339,6 +342,9 @@
       ],
       "Create link": [
         "Bağlantı oluştur"
+      ],
+      "Create new password": [
+        "Yeni parola oluştur"
       ],
       "Create new policy": [
         "Yeni ilke oluştur"
@@ -576,6 +582,9 @@
       ],
       "Generate new recovery phrase": [
         "Yeni kurtarma ifadesi oluştur"
+      ],
+      "Generate password": [
+        "Parola üret"
       ],
       "Generate recovery phrase": [
         "Kurtarma ifadesi oluştur"
@@ -1116,9 +1125,6 @@
       ],
       "Sign in with password": [
         "Parola ile oturum açın"
-      ],
-      "Sign in with SSO": [
-        "Tek oturum açma ile oturum açın"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -3950,7 +3956,7 @@
         "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Metin alanları isteğe bağlıdır. Bu formda verdiğiniz bilgiler sadece seçtiğiniz faturayı değiştirecek, gelecekteki fatura detaylarınızı değiştirmeyecektir."
+        "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
       ]
     },
     "Email": {
@@ -4493,7 +4499,7 @@
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
-        "Fatura adresi düzenleme şu anda mevcut değil. Lütfen daha sonra tekrar deneyin."
+        "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Email address disabled": [
         "E-posta adresi kullanım dışı"
@@ -6946,11 +6952,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
-      "Active": [
-        "Etkin"
-      ],
       "active": [
         "etkin"
+      ],
+      "Active": [
+        "Etkin"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -7147,6 +7153,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Kuruluş yöneticinizden ağ geçitlerini kurmasını isteyin."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "En az ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
@@ -7385,11 +7394,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -7663,9 +7672,6 @@
       "for choosing ${ product }": [
         "${ product } seçtiğiniz için"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Tek oturum açma (SAML SSO) kullanan kuruluşların üyeleri için"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
       ],
@@ -7914,6 +7920,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Bir sunucunun ülkesini değiştirmek 10 gün sürer. Bu yüzden seçiminizin doğru olduğundan emin olun."
       ],
+      "It's better to have:": [
+        "Şöyle olması daha iyidir:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "${ vaultLink } kasasındaki öge otomatik olarak dolduruldu"
       ],
@@ -8151,6 +8160,9 @@
       "No addresses exist": [
         "Herhangi bir adres yok"
       ],
+      "No common passwords": [
+        "Yaygın parolalar kullanılmamalıdır"
+      ],
       "No credit card required": [
         "Kredi kartı gerekmez"
       ],
@@ -8181,6 +8193,9 @@
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Öngörülebilecek diziler kullanılmamalıdır (1234, aaa)"
+      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
@@ -8195,6 +8210,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
+      ],
+      "Numbers": [
+        "Rakamlar"
       ],
       "of": [
         "/"
@@ -8713,6 +8731,9 @@
       "Switch to": [
         "Şuna geç"
       ],
+      "Symbols (#$&)": [
+        "Simgeler (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Dosyalarınızı ${ DRIVE_APP_NAME } uygulamasıyla eşitleyin ve yönetin. ${ DOCS_APP_NAME } ile belgeler oluşturun, paylaşın ve güvenle saklayın. Tüm bunları ${ ios }, ${ android } ve ${ desktop } üzerinde yapın."
       ],
@@ -9090,6 +9111,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Yüklenen dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
+      ],
+      "Uppercase and lowercase letters": [
+        "Büyük ve küçük harfler"
       ],
       "URL link": [
         "Adres bağlantısı"
@@ -10565,6 +10589,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Şu parmak izli anahtar için parolayı yazın: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "Parolanızı yazın"
+      ],
       "Entity ID": [
         "Varlık kimliği"
       ],
@@ -10768,6 +10795,9 @@
       ],
       "Move to Inbox": [
         "Gelen kutusuna taşı"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
       ],
       "Name": [
         "Ad"
@@ -11058,6 +11088,9 @@
       "Strong": [
         "Güçlü"
       ],
+      "Strong password": [
+        "Güçlü parola"
+      ],
       "Subscription options": [
         "Abonelik seçenekleri"
       ],
@@ -11151,11 +11184,17 @@
       "Vulnerable": [
         "Çok zayıf"
       ],
+      "Vulnerable password": [
+        "Güvenlik açığı bulunan parola"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
       ],
       "Weak": [
         "Zayıf"
+      ],
+      "Weak password": [
+        "Zayıf parola"
       ],
       "Week start": [
         "Haftanın ilk günü"
@@ -11396,6 +11435,9 @@
       ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
+      ],
+      "Forgot email?": [
+        "E-posta adresinizi mi unuttunuz?"
       ],
       "Forgot password?": [
         "Parolanızı mı unuttunuz?"
@@ -12531,7 +12573,7 @@
         "İki kolay adımda kendinizi korumaya başlayın"
       ],
       "Strict no-logs policy": [
-        "Sıkı kayıt tutmama ilkesi"
+        "Katı kayıt tutmama ilkesi"
       ],
       "Support for up to 2 users": [
         "2 kullanıcıya kadar destek"
@@ -13918,7 +13960,7 @@
         "${ BRAND_NAME } hesabınızla ilerleyin"
       ],
       "Including ${ discountPercent }% Porkbun discount": [
-        "${ discountPercent }% Porkbun indirimi dahil"
+        "%${ discountPercent } Porkbun indirimi ile"
       ],
       "Let's talk": [
         "Hadi konuşalım."
@@ -14332,6 +14374,9 @@
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Tarafından **${ organizationName }** kuruluşunun yöneticisi yapıldınız."
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "Yeni bir kuruluş anahtarı oluşturmadan önce tüm grupları silmeniz gerekir"
       ],
       "You must privatize all users before generating a new organization key": [
         "Yeni bir kuruluş anahtarı oluşturmadan önce tüm kullanıcıları korunan olarak güncellemeniz gerekir"
@@ -15776,7 +15821,7 @@
         "Şifrelendi"
       ],
       "Strict no-logs policy": [
-        "Sıkı kayıt tutmama ilkesi"
+        "Katı kayıt tutmama ilkesi"
       ]
     },
     "Signup: Info": {
@@ -16294,6 +16339,9 @@
       "User details:": [
         "Kullanıcı bilgileri:"
       ],
+      "Welcome": [
+        "Hoş geldiniz"
+      ],
       "Yes, it was me": [
         "Evet, bendim"
       ],
@@ -16609,47 +16657,6 @@
         "${ totalPrice } için"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Masaüstü uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -16938,6 +16945,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -18842,6 +18890,29 @@
         "Bugün"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."
+      ],
+      "Group membership paused": [
+        "Grup üyeliği duraklatılmış"
+      ],
+      "Sending member invitation": [
+        "Üye daveti gönderiliyor"
+      ],
+      "User declined invitation": [
+        "Kullanıcı daveti reddetti"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Kullanıcının daveti kabul etmesi bekleniyor"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME } kullanıcıları, gönderim için varsayılan olarak bu anahtarı kullanacak"
@@ -19055,29 +19126,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dış hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. ${ BRAND_NAME }, olabilecek en kısa sürede içe aktarma işlemini sürdürmeye çalışacak."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."
-      ],
-      "Group membership paused": [
-        "Grup üyeliği duraklatılmış"
-      ],
-      "Sending member invitation": [
-        "Üye daveti gönderiliyor"
-      ],
-      "User declined invitation": [
-        "Kullanıcı daveti reddetti"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Kullanıcının daveti kabul etmesi bekleniyor"
       ]
     },
     "Tooltip automatically attach public key": {

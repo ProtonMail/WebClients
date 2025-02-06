@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -576,6 +576,9 @@
       ],
       "Generate new recovery phrase": [
         "Buat frasa pemulihan baru"
+      ],
+      "Generate password": [
+        "Hasilkan kata sandi"
       ],
       "Generate recovery phrase": [
         "Hasilkan frasa pemulihan"
@@ -1116,9 +1119,6 @@
       ],
       "Sign in with password": [
         "Masuk dengan kata sandi"
-      ],
-      "Sign in with SSO": [
-        "Masuk dengan SSO"
       ],
       "Sign out": [
         "Keluar"
@@ -6878,11 +6878,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
       ],
-      "Active": [
-        "Aktif"
-      ],
       "active": [
         "aktif"
+      ],
+      "Active": [
+        "Aktif"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
@@ -7307,11 +7307,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -7582,9 +7582,6 @@
       ],
       "for choosing ${ product }": [
         "telah memilih ${ product }"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Untuk anggota organisasi yang menggunakan single sign-on (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Bagi para pengguna yang beralih ke ${ MAIL_APP_NAME } dari layanan email lain, pilih tab ${ boldAddresses } dan tambahkan seluruh alamat email yang aktif sebelum mengubah rekaman MX yang ada untuk memastikan agar proses peralihan berlangsung tanpa masalah."
@@ -16401,47 +16398,6 @@
         "Untuk ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -16724,6 +16680,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -18616,6 +18613,29 @@
         "Hari ini"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini, dan tidak ada sumber daya terenkripsi yang akan dibagikan dengan pengguna ini."
+      ],
+      "Group membership paused": [
+        "Keanggotaan grup dijeda"
+      ],
+      "Sending member invitation": [
+        "Mengirimkan undangan anggota"
+      ],
+      "User declined invitation": [
+        "Pengguna menolak undangan"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Menunggu pengguna untuk menerima undangan"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Pengguna ${ MAIL_APP_NAME } akan menggunakan kunci enkripsi ini secara bawaan untuk mengirim pesan"
@@ -18829,29 +18849,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Akun eksternal Anda ditenggarai telah mencapai batas bandwidth yang diizinkan dalam 24 jam terakhir. ${ BRAND_NAME } akan mencoba untuk melanjutkan proses impor sesegera mungkin."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini, dan tidak ada sumber daya terenkripsi yang akan dibagikan dengan pengguna ini."
-      ],
-      "Group membership paused": [
-        "Keanggotaan grup dijeda"
-      ],
-      "Sending member invitation": [
-        "Mengirimkan undangan anggota"
-      ],
-      "User declined invitation": [
-        "Pengguna menolak undangan"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Menunggu pengguna untuk menerima undangan"
       ]
     },
     "Tooltip automatically attach public key": {
