@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Icon, WalletLogo } from '@proton/components';
-import { getSentinel } from '@proton/components/containers/payments/features/highlights';
+import { type PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
+import { getNDomainsFeatureText } from '@proton/components/containers/payments/features/mail';
 import {
     FREE_WALLETS,
     FREE_WALLET_ACCOUNTS,
@@ -12,9 +13,6 @@ import {
     VISIONARY_WALLETS,
     VISIONARY_WALLET_ACCOUNTS,
     VISIONARY_WALLET_EMAIL,
-    WALLET_PLUS_WALLETS,
-    WALLET_PLUS_WALLET_ACCOUNTS,
-    WALLET_PLUS_WALLET_EMAIL,
     getBitcoinViaEmail,
     getWalletAccounts,
     getWalletEmailAddresses,
@@ -22,8 +20,15 @@ import {
 } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE, PLANS } from '@proton/payments';
-import { APPS, BRAND_NAME, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import type { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import {
+    APPS,
+    BRAND_NAME,
+    PROTON_SENTINEL_NAME,
+    WALLET_APP_NAME,
+    WALLET_SHORT_APP_NAME,
+} from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import type { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -32,8 +37,13 @@ import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
-import StepLabel, { StepLabelSize } from '../StepLabel';
-import { getBenefits, getGenericFeatures, getJoinString, getSwissPrivacyLawsBenefit } from '../configuration/helper';
+import {
+    getBenefits,
+    getJoinString,
+    getOpenSourceFeature,
+    getSwissFeature,
+    getSwissPrivacyLawsBenefit,
+} from '../configuration/helper';
 import type { SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
@@ -66,6 +76,45 @@ export const getWalletBenefits = (): BenefitItem[] => {
     ].filter(isTruthy);
 };
 
+const getStorageFeature = (bytes: number): PlanCardFeatureDefinition => {
+    const size = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
+
+    return {
+        text: c('new_plans: feature').jt`${size} storage`,
+        tooltip: c('wallet_signup_2024: Info').t` Encrypted email and file storage`,
+        included: true,
+    };
+};
+
+const getVpnFeature = () => {
+    return {
+        text: c('wallet_signup_2024: Info').t`Ultra fast and private VPN`,
+        included: true,
+    };
+};
+
+const getPasswordManagerFeature = () => {
+    return {
+        text: c('wallet_signup_2024: Info').t`Encrypted password manager`,
+        included: true,
+    };
+};
+
+const getDriveFeature = () => {
+    return {
+        text: c('wallet_signup_2024: Info').t`Encrypted cloud storage for photos and documents`,
+        included: true,
+    };
+};
+
+const getSentinelFeature = () => {
+    return {
+        text: c('wallet_signup_2024: Info').t`Advanced account protection`,
+        included: true,
+        tooltip: c('wallet_signup_2024: Info').t`${PROTON_SENTINEL_NAME} program`,
+    };
+};
+
 export const getFreeWalletFeatures = () => {
     return [
         getWallets(FREE_WALLETS),
@@ -75,43 +124,47 @@ export const getFreeWalletFeatures = () => {
     ];
 };
 
-export const getWalletPlusFeatures = () => {
-    return [
-        getWallets(WALLET_PLUS_WALLETS),
-        getWalletAccounts(WALLET_PLUS_WALLET_ACCOUNTS),
-        getWalletEmailAddresses(WALLET_PLUS_WALLET_EMAIL),
-        getBitcoinViaEmail(),
-        getSentinel(true),
-    ];
-};
-
-export const getUnlimitedFeatures = () => {
+export const getUnlimitedFeatures = ({ plan }: { plan: Plan | undefined }) => {
+    if (!plan) {
+        return [];
+    }
     return [
         getWallets(UNLIMITED_WALLETS),
         getWalletAccounts(UNLIMITED_WALLET_ACCOUNTS),
         getWalletEmailAddresses(UNLIMITED_WALLET_EMAIL),
         getBitcoinViaEmail(),
-        getSentinel(true),
+        getStorageFeature(plan.MaxSpace),
+        {
+            text: getNDomainsFeatureText(plan.MaxDomains),
+            included: true,
+        },
+        getVpnFeature(),
+        getPasswordManagerFeature(),
+        getDriveFeature(),
+        getSentinelFeature(),
     ];
 };
 
-export const getVisionaryFeatures = () => {
+export const getVisionaryFeatures = ({ plan }: { plan: Plan | undefined }) => {
+    if (!plan) {
+        return [];
+    }
     return [
         getWallets(VISIONARY_WALLETS),
         getWalletAccounts(VISIONARY_WALLET_ACCOUNTS),
         getWalletEmailAddresses(VISIONARY_WALLET_EMAIL),
         getBitcoinViaEmail(),
-        getSentinel(true),
-    ];
-};
+        getStorageFeature(plan.MaxSpace),
+        {
+            text: getNDomainsFeatureText(plan.MaxDomains),
+            included: true,
+        },
 
-const VisionaryWalletFeature = () => {
-    return (
-        <div className="mt-4 px-4 py-3 grow-0 bg-weak rounded flex items-center justify-center flex-nowrap gap-2 w-full">
-            <Icon name="clock" className="color-hint shrink-0" />
-            <p className="color-weak text-sm m-0">{c('wallet_signup_2024: Info').t`Early access to new features`}</p>
-        </div>
-    );
+        getVpnFeature(),
+        getPasswordManagerFeature(),
+        getDriveFeature(),
+        getSentinelFeature(),
+    ];
 };
 
 export const getWalletConfiguration = ({
@@ -119,8 +172,7 @@ export const getWalletConfiguration = ({
     audience,
     hideFreePlan,
     isLargeViewport,
-    signedIn,
-    plan,
+    plansMap,
 }: {
     mode: SignupMode;
     audience: Audience.B2B | Audience.B2C;
@@ -128,7 +180,6 @@ export const getWalletConfiguration = ({
     signedIn: boolean;
     plan: Plan;
     isLargeViewport: boolean;
-    vpnServersCountData: VPNServersCountData;
     plansMap?: PlansMap;
 }): SignupConfiguration => {
     const logo = <WalletLogo />;
@@ -139,36 +190,52 @@ export const getWalletConfiguration = ({
     const inviteTitle1 = c('wallet_signup_2024: Info').t`You're Invited.`;
     const inviteTitle2 = c('wallet_signup_2024: Info').t`Exclusive early access to ${appName}.`;
 
-    const features = getGenericFeatures(isLargeViewport);
+    const features = [
+        {
+            key: 'e2e',
+            left: <Icon size={6} className="color-primary" name="lock" />,
+            text: c('wallet_signup_2024: Info').t`Self-custody wallet`,
+        },
+        getOpenSourceFeature(),
+        getSwissFeature({ fullText: isLargeViewport }),
+    ];
 
     const planCards: SignupConfiguration['planCards'] = {
         [Audience.B2B]: [],
         [Audience.B2C]: [
             !hideFreePlan && {
                 plan: PLANS.FREE,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeWalletFeatures()} />,
+                subline: c('wallet_signup_2024: Info').t`Securely hold and transact Bitcoin for free.`,
+                subsection: (
+                    <PlanCardFeatureList {...planCardFeatureProps} tooltip features={getFreeWalletFeatures()} />
+                ),
                 type: 'standard' as const,
                 guarantee: false,
             },
             {
-                plan: PLANS.WALLET,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getWalletPlusFeatures()} />,
+                plan: PLANS.BUNDLE,
+                subline: c('wallet_signup_2024: Info')
+                    .t`Take control of all your data with premium ${BRAND_NAME} services.`,
+                subsection: (
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        tooltip
+                        features={getUnlimitedFeatures({ plan: plansMap?.[PLANS.BUNDLE] })}
+                    />
+                ),
                 type: 'best' as const,
                 guarantee: true,
             },
             {
-                plan: PLANS.BUNDLE,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getUnlimitedFeatures()} />,
-                type: 'standard' as const,
-                guarantee: true,
-            },
-            {
                 plan: PLANS.VISIONARY,
+                subline: c('wallet_signup_2024: Info')
+                    .t`Our most exclusive plan. Get early access to new features and all premium ${BRAND_NAME} services.`,
                 subsection: (
-                    <>
-                        <PlanCardFeatureList {...planCardFeatureProps} features={getVisionaryFeatures()} />
-                        <VisionaryWalletFeature />
-                    </>
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        tooltip
+                        features={getVisionaryFeatures({ plan: plansMap?.[PLANS.VISIONARY] })}
+                    />
                 ),
                 type: 'standard' as const,
                 guarantee: true,
@@ -177,77 +244,11 @@ export const getWalletConfiguration = ({
     };
 
     const benefits = (() => {
-        // TODO: WalletEA
-        if (mode === SignupMode.Invite) {
-            return (
-                <div>
-                    <div className="text-lg text-semibold">
-                        {c('wallet_signup_2024: Info').t`Join ${appName} early access!`}
-                    </div>
-                    <div className="flex flex-column gap-2 my-6">
-                        {[
-                            {
-                                title: c('wallet_signup_2024: Info').t`Get started`,
-                                message: c('wallet_signup_2024: Info')
-                                    .t`As an invited user, sign up for a free ${BRAND_NAME} account to exclusively get access to ${appName}`,
-                            },
-                            {
-                                title: c('wallet_signup_2024: Info').t`Invite Friends`,
-                                message: c('wallet_signup_2024: Info')
-                                    .t`Visionary users and their invited friends can share early access with others, invite your friends to try ${appName} for free!`,
-                            },
-                        ].map(({ title, message }, i) => {
-                            return (
-                                <div className="flex flex-nowrap gap-2" key={title}>
-                                    <div className="shrink-0">
-                                        <StepLabel step={i + 1} size={StepLabelSize.small} className="color-primary" />
-                                    </div>
-                                    <div>
-                                        <div className="text-semibold mb-1">{title}</div>
-                                        <div className="text-sm">{message}</div>
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                    <div>{getJoinString(audience)}</div>
-                </div>
-            );
-        }
-        if (signedIn || plan.Name !== PLANS.FREE) {
-            const benefitItems = getWalletBenefits();
-            return (
-                benefitItems && (
-                    <div>
-                        <div className="text-lg text-semibold">{getBenefits(appName)}</div>
-                        <Benefits className="mt-5 mb-5" features={benefitItems} />
-                        <div>{getJoinString(audience)}</div>
-                    </div>
-                )
-            );
-        }
-        // TODO: WalletEA
+        const benefitItems = getWalletBenefits();
         return (
             <div>
-                <div>
-                    <div
-                        className="py-0.5 px-2 rounded-lg text-sm text-semibold inline-flex flex-nowrap mb-6 items-center"
-                        style={{
-                            background: 'var(--interaction-norm-minor-1)',
-                            color: 'var(--interaction-norm)',
-                        }}
-                    >
-                        <Icon name="hourglass" size={4} className="shrink-0" />
-                        <span className="ml-1 flex-1">{c('wallet_signup_2024: Info').t`Early access waitlist`}</span>
-                    </div>
-                </div>
-                <div className="text-lg text-semibold">
-                    {c('wallet_signup_2024: Info').t`Join ${appName} early access!`}
-                </div>
-                <div className="my-6">
-                    {c('wallet_signup_2024: Info')
-                        .t`Sign up for a free ${BRAND_NAME} account to secure your spot. The earlier you sign up, the sooner you will get access to ${appName}. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${appName} right away.`}
-                </div>
+                <div className="text-lg text-semibold">{getBenefits(appName)}</div>
+                <Benefits className="mt-5 mb-5" features={benefitItems} />
                 <div>{getJoinString(audience)}</div>
             </div>
         );
@@ -271,10 +272,10 @@ export const getWalletConfiguration = ({
         benefits,
         planCards,
         audience,
-        signupTypes: [SignupType.Email, SignupType.Username],
+        signupTypes: [SignupType.Username, SignupType.Email],
         generateMnemonic: false,
         defaults: {
-            plan: PLANS.WALLET,
+            plan: PLANS.BUNDLE,
             cycle: CYCLE.YEARLY,
         },
         onboarding: {

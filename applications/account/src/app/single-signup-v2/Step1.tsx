@@ -46,7 +46,6 @@ import {
     DRIVE_APP_NAME,
     PASS_APP_NAME,
     SSO_PATHS,
-    WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import {
@@ -56,6 +55,7 @@ import {
     switchPlan,
 } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
+import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, Cycle, SubscriptionPlan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -422,14 +422,7 @@ const Step1 = ({
         if (mode === SignupMode.MailReferral && selectedPlan.Name !== PLANS.FREE) {
             return c('Action in trial plan').t`Try free for 30 days`;
         }
-        if (
-            app === APPS.PROTONWALLET &&
-            selectedPlan.Name === PLANS.FREE &&
-            mode !== SignupMode.Invite &&
-            !model.session
-        ) {
-            return c('wallet_signup_2024: Info').t`Create ${BRAND_NAME} Account now`;
-        }
+
         return c('pass_signup_2023: Action').t`Start using ${appName} now`;
     })();
 
@@ -438,15 +431,28 @@ const Step1 = ({
     const termsAndConditionsLink = (
         <Href className="color-weak" key="terms" href={getLocaleTermsURL(app)}>
             {
-                // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
+                // translator: Full sentence "By continuing, you agree to our terms and conditions and privacy policy."
                 c('new_plans: signup').t`terms and conditions`
             }
         </Href>
     );
 
-    const termsAndConditions = (
+    const privacyPolicyLink = (
+        <Href className="color-weak" key="privacy" href={getPrivacyPolicyURL(app)}>
+            {
+                // translator: Full sentence "By continuing, you agree to our terms and conditions and privacy policy."
+                c('Link').t`privacy policy`
+            }
+        </Href>
+    );
+
+    const terms = (
         <div className="mt-4 text-sm color-weak text-center">
-            {c('pass_signup_2023: Info').jt`By continuing, you agree to our ${termsAndConditionsLink}`}
+            {
+                // translator: Full sentence "By continuing, you agree to our terms and conditions and privacy policy."
+                c('pass_signup_2023: Info')
+                    .jt`By continuing, you agree to our ${termsAndConditionsLink} and ${privacyPolicyLink}.`
+            }
         </div>
     );
 
@@ -764,18 +770,14 @@ const Step1 = ({
                         model.upsell.mode !== UpsellTypes.UPSELL &&
                         mode !== SignupMode.Invite
                     ) {
-                        const plan = `${BRAND_NAME} Visionary`;
-                        let text;
                         if (app === APPS.PROTONWALLET) {
-                            const appName = WALLET_APP_NAME;
-                            text = getBoldFormattedText(
-                                c('wallet_signup_2024: Info').t`**Get ${plan}** for early access to ${appName}!`
-                            );
-                        } else {
-                            text = getBoldFormattedText(
-                                c('mail_signup_2023: Info').t`**Get ${plan}** for a limited time!`
-                            );
+                            return;
                         }
+
+                        const plan = `${BRAND_NAME} Visionary`;
+                        const text = getBoldFormattedText(
+                            c('mail_signup_2023: Info').t`**Get ${plan}** for a limited time!`
+                        );
                         return wrap('hourglass', text);
                     }
 
@@ -1316,7 +1318,7 @@ const Step1 = ({
                                                                         </span>
                                                                     </div>
                                                                 )}
-                                                                {hasSelectedFree && termsAndConditions}
+                                                                {hasSelectedFree && terms}
                                                             </>
                                                         );
                                                     }}
@@ -1342,7 +1344,7 @@ const Step1 = ({
                                 selectedPlan={selectedPlan}
                                 measure={measure}
                                 cta={cta}
-                                terms={termsAndConditions}
+                                terms={terms}
                                 key={model.session?.resumedSessionResult.UID || 'free'}
                                 defaultMethod={model.session?.defaultPaymentMethod}
                                 accountStepPaymentRef={accountStepPaymentRef}

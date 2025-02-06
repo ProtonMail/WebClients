@@ -140,6 +140,10 @@ export const getDarkWebMonitoringFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getNDomainsFeatureText = (n: number) => {
+    return c('new_plans: feature').ngettext(msgid`${n} custom email domain`, `${n} custom email domains`, n);
+};
+
 export const getNDomainsFeature = ({ n, highlight }: { n: number; highlight?: boolean }): PlanCardFeatureDefinition => {
     if (n === 0) {
         return {
@@ -150,7 +154,7 @@ export const getNDomainsFeature = ({ n, highlight }: { n: number; highlight?: bo
         };
     }
     return {
-        text: c('new_plans: feature').ngettext(msgid`${n} custom email domain`, `${n} custom email domains`, n),
+        text: getNDomainsFeatureText(n),
         tooltip: c('new_plans: tooltip').t`Use your own custom email domain addresses, e.g., you@yourname.com`,
         included: true,
         highlight,

@@ -136,6 +136,10 @@ const AccountStepPayment = ({
             return isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
         }
 
+        if (signupParameters.product === APPS.PROTONWALLET) {
+            return 'signup-wallet';
+        }
+
         return isAuthenticated ? 'signup-v2-upgrade' : 'signup-v2';
     })();
 

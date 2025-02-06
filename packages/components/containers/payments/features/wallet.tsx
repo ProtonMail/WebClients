@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { PLANS } from '@proton/payments';
-import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -44,7 +44,11 @@ export const getWalletAccounts = (n: Parameters<typeof getWalletsText>['0']): Pl
 };
 
 export const getWalletEmailAddressesText = (n: number) => {
-    return c('wallet_signup_2024: Info').ngettext(msgid`${n} email address`, `${n} email addresses`, n);
+    return c('wallet_signup_2024: Info').ngettext(
+        msgid`${n} ${BRAND_NAME} email address`,
+        `${n} ${BRAND_NAME} email addresses`,
+        n
+    );
 };
 
 export const getWalletEmailAddresses = (
@@ -53,6 +57,8 @@ export const getWalletEmailAddresses = (
     return {
         text: getWalletEmailAddressesText(n),
         included: true,
+        tooltip: c('wallet_signup_2024: Info')
+            .t`Encrypted and secure ${MAIL_APP_NAME} email address. You can easily send Bitcoin to anyone with just their ${BRAND_NAME} name.`,
     };
 };
 
@@ -64,6 +70,8 @@ export const getBitcoinViaEmail = (): PlanCardFeatureDefinition => {
     return {
         text: getBitcoinViaEmailText(),
         included: true,
+        tooltip: c('wallet_signup_2024: Info')
+            .t`Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error`,
     };
 };
 
