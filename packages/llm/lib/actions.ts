@@ -206,21 +206,19 @@ export class GpuLlmManager implements LlmManager {
                 case AssistantEvent.DOWNLOAD_DATA:
                     {
                         // Get downloaded data from the iframe and store it in the cache
-                        const { downloadResult, cacheUrl, cacheId, expectedMd5, terminate } = event.data.payload;
+                        const { downloadResult, cacheUrl, cacheId, terminate } = event.data.payload;
 
                         if (appCaches) {
                             const destinationCache = appCaches[cacheId as CacheId];
-                            const promise = storeInCache(downloadResult, cacheUrl, destinationCache, expectedMd5).catch(
-                                (e) => {
-                                    // Reject the download promise in case the caching fails
-                                    // This usually happens when user is on private mode, where there is a caching limit
-                                    console.error(e);
-                                    this.status = 'error';
-                                    void this.chat?.unload?.();
-                                    const error = new Error(CACHING_FAILED);
-                                    downloadPromiseReject(error);
-                                }
-                            );
+                            const promise = storeInCache(downloadResult, cacheUrl, destinationCache).catch((e) => {
+                                // Reject the download promise in case the caching fails
+                                // This usually happens when user is on private mode, where there is a caching limit
+                                console.error(e);
+                                this.status = 'error';
+                                void this.chat?.unload?.();
+                                const error = new Error(CACHING_FAILED);
+                                downloadPromiseReject(error);
+                            });
                             promises.push(promise);
 
                             // Resolve the promise when receiving the last file
