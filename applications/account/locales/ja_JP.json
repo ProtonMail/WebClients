@@ -70,11 +70,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -576,6 +576,9 @@
       ],
       "Generate new recovery phrase": [
         "新しい回復用フレーズを生成"
+      ],
+      "Generate password": [
+        "パスワードを生成"
       ],
       "Generate recovery phrase": [
         "回復用フレーズを生成"
@@ -1116,9 +1119,6 @@
       ],
       "Sign in with password": [
         "パスワードを使用してサインインする"
-      ],
-      "Sign in with SSO": [
-        "SSO でサインインする"
       ],
       "Sign out": [
         "サインアウト"
@@ -6884,11 +6884,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "パスワードがわからなくなっても、${ BRAND_NAME } アカウントのコンテンツにアクセスできるように、少なくとも一つのデータ回復方法を有効にしてください。"
       ],
-      "Active": [
-        "有効"
-      ],
       "active": [
         "アクティブ"
+      ],
+      "Active": [
+        "有効"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "@pm.me メール アドレスをアカウントに追加します。 このシンプルで短いドメインは、「${ MAIL_APP_NAME } me」または「Private Message me」を表します。"
@@ -7313,10 +7313,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7588,9 +7588,6 @@
       ],
       "for choosing ${ product }": [
         "${ product } を選択した場合"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "シングル サインオン (SAML SSO) を使用する組織のメンバー向け"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "別のメール サービスから ${ MAIL_APP_NAME } に切り替えるユーザーの場合、スムーズに移行できるように、MX レコードを変更する前に、${ boldAddresses } タブを選択し、アクティブなメール アドレスをすべて追加してください。"
@@ -16413,47 +16410,6 @@
         "${ totalPrice } の場合"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -16736,6 +16692,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -18628,6 +18625,29 @@
         "今日"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
+      ],
+      "Group membership paused": [
+        "グループのメンバーシップは一時停止されました"
+      ],
+      "Sending member invitation": [
+        "メンバー招待を送信中"
+      ],
+      "User declined invitation": [
+        "ユーザーが招待を拒否しました"
+      ],
+      "Waiting for user to accept the invitation": [
+        "ユーザーが招待を受けるのを待っています"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME } のユーザーは、既定でこの鍵を使用して送信します"
@@ -18841,29 +18861,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "外部アカウントが 24 時間の帯域幅制限に達している可能性があります。 ${ BRAND_NAME } は、できるだけ早くインポートを再開しようとします。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
-      ],
-      "Group membership paused": [
-        "グループのメンバーシップは一時停止されました"
-      ],
-      "Sending member invitation": [
-        "メンバー招待を送信中"
-      ],
-      "User declined invitation": [
-        "ユーザーが招待を拒否しました"
-      ],
-      "Waiting for user to accept the invitation": [
-        "ユーザーが招待を受けるのを待っています"
       ]
     },
     "Tooltip automatically attach public key": {

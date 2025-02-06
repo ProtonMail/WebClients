@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -310,6 +310,9 @@
       "Copy link": [
         "Link kopieren"
       ],
+      "Copy password": [
+        "Passwort kopieren"
+      ],
       "Copy version number to clipboard": [
         "Versionsnummer in die Zwischenablage kopieren"
       ],
@@ -336,6 +339,9 @@
       ],
       "Create link": [
         "Link erstellen"
+      ],
+      "Create new password": [
+        "Neues Passwort erstellen"
       ],
       "Create new policy": [
         "Neue Richtlinie erstellen"
@@ -573,6 +579,9 @@
       ],
       "Generate new recovery phrase": [
         "Neue Wiederherstellungsphrase erstellen"
+      ],
+      "Generate password": [
+        "Passwort generieren"
       ],
       "Generate recovery phrase": [
         "Wiederherstellungsphrase erstellen"
@@ -1110,9 +1119,6 @@
       ],
       "Sign in with password": [
         "Mit Passwort anmelden"
-      ],
-      "Sign in with SSO": [
-        "Mit SSO anmelden"
       ],
       "Sign out": [
         "Abmelden"
@@ -6908,11 +6914,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiviere mindestens eine Datenwiederherstellungsmethode, um sicherzustellen, dass du weiterhin auf den Inhalt deines ${ BRAND_NAME }-Kontos zugreifen kannst, wenn du dein Passwort verlierst."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Füge deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -7109,6 +7115,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Bitte den Administrator deiner Organisation um die Einrichtung von Gateways."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
@@ -7344,11 +7353,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -7607,9 +7616,6 @@
       "for choosing ${ product }": [
         "dass du dich für ${ product } entschieden hast."
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Für Mitglieder von Organisationen, die Single Sign-on (SAML SSO) verwenden."
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
       ],
@@ -7855,6 +7861,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Es dauert 10 Tage, um das Land eines Servers zu ändern, stelle also sicher, dass deine Auswahl korrekt ist."
       ],
+      "It's better to have:": [
+        "Es ist besser so:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Eintrag in ${ vaultLink } automatisch ausgefüllt."
       ],
@@ -8092,6 +8101,9 @@
       "No addresses exist": [
         "Keine Adressen vorhanden"
       ],
+      "No common passwords": [
+        "Keine gängigen Passwörter"
+      ],
       "No credit card required": [
         "Keine Kreditkarte erforderlich"
       ],
@@ -8122,6 +8134,9 @@
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Keine vorhersehbaren Sequenzen (1234, aaa)"
+      ],
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
@@ -8136,6 +8151,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
+      ],
+      "Numbers": [
+        "Zahlen"
       ],
       "of": [
         "von"
@@ -8636,6 +8654,9 @@
       "Switch to": [
         "Wechseln zu"
       ],
+      "Symbols (#$&)": [
+        "Symbole (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
       ],
@@ -9010,6 +9031,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Die hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfe die Datei und versuche es erneut."
+      ],
+      "Uppercase and lowercase letters": [
+        "Groß- und Kleinbuchstaben."
       ],
       "URL link": [
         "URL-Link"
@@ -10477,6 +10501,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Gib das Passwort für den Schlüssel mit dem folgenden Fingerabdruck ein: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "Passwort eingeben"
+      ],
       "Entity ID": [
         "Entitäts-ID"
       ],
@@ -10680,6 +10707,9 @@
       ],
       "Move to Inbox": [
         "In Posteingang verschieben"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten"
       ],
       "Name": [
         "Name"
@@ -10970,6 +11000,9 @@
       "Strong": [
         "Stark"
       ],
+      "Strong password": [
+        "Starkes Passwort"
+      ],
       "Subscription options": [
         "Abonnement-Optionen"
       ],
@@ -11063,11 +11096,17 @@
       "Vulnerable": [
         "Verwundbar"
       ],
+      "Vulnerable password": [
+        "Gefährdetes Passwort"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Wir bedauern es sehr, dass du ProtonMail nicht mehr nutzen möchtest. Bitte teile uns deine Gründe mit, damit wir uns verbessern können."
       ],
       "Weak": [
         "Schwach"
+      ],
+      "Weak password": [
+        "Schwaches Passwort"
       ],
       "Week start": [
         "Wochenanfang"
@@ -11308,6 +11347,9 @@
       ],
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
+      ],
+      "Forgot email?": [
+        "E-Mail-Adresse vergessen?"
       ],
       "Forgot password?": [
         "Passwort vergessen?"
@@ -14215,6 +14257,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Du wurdest zum Administrator der Organisation **${ organizationName }** ernannt durch"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Du musst alle Gruppen löschen, bevor du einen neuen Organisationsschlüssel erzeugst."
+      ],
       "You must privatize all users before generating a new organization key": [
         "Du musst alle Benutzer privatisieren, bevor du einen neuen Organisationsschlüssel erzeugst."
       ],
@@ -16138,6 +16183,9 @@
       "User details:": [
         "Benutzerdetails:"
       ],
+      "Welcome": [
+        "Willkommen"
+      ],
       "Yes, it was me": [
         "Ja, das war ich"
       ],
@@ -16453,47 +16501,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -16782,6 +16789,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -18671,6 +18719,23 @@
         "Heute"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ],
+      "Group membership paused": [
+        "Gruppenmitgliedschaft pausiert"
+      ],
+      "Sending member invitation": [
+        "Mitgliedseinladung wird versendet"
+      ],
+      "User declined invitation": [
+        "Der Benutzer hat die Einladung abgelehnt"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Warten auf die Annahme der Einladung durch den Benutzer"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME }-Benutzer verwenden diesen Schlüssel standardmäßig für das Versenden."
@@ -18884,23 +18949,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dein externes Konto könnte sein 24-Stunden-Bandbreitenlimit erreicht haben. ${ BRAND_NAME } wird versuchen, den Import so bald wie möglich fortzusetzen."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
-      ],
-      "Group membership paused": [
-        "Gruppenmitgliedschaft pausiert"
-      ],
-      "Sending member invitation": [
-        "Mitgliedseinladung wird versendet"
-      ],
-      "User declined invitation": [
-        "Der Benutzer hat die Einladung abgelehnt"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Warten auf die Annahme der Einladung durch den Benutzer"
       ]
     },
     "Tooltip automatically attach public key": {
