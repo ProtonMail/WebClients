@@ -8,15 +8,17 @@ import { Button } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
+import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { PASS_VALENTINES_DAY_END_DATE, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectInAppNotificationsEnabled, selectUser, selectUserPlan } from '@proton/pass/store/selectors';
-import type { PassPlanResponse } from '@proton/pass/types';
+import { type PassPlanResponse, SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { COUPON_CODES, PLANS, PLAN_NAMES } from '@proton/payments';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { ValentinesDayPromoModal } from './ValentinesDayPromoModal';
 
@@ -24,6 +26,9 @@ const FORBIDDEN_COUPONS = new Set<string>([
     COUPON_CODES.LOVEPRIVACY25,
     COUPON_CODES.LOVEPRIVACY225,
     COUPON_CODES.PASSFLASH5025,
+    COUPON_CODES.VPNFLASH6025,
+    COUPON_CODES.MAILFLASH5025,
+    COUPON_CODES.DRIVEFLASH5025,
 ]);
 
 const getUpsellRef = (isFreePlan: boolean) => {
@@ -32,7 +37,7 @@ const getUpsellRef = (isFreePlan: boolean) => {
     return isFreePlan ? freeRef : plusRef;
 };
 
-/** Upsell free users to Pass Plus and upsell Pass/Mail/VPN/Drive Plus users
+/** Upsell free users to Pass Plus and upsell Pass/Mail/VPN/Drive Plus/"Pass Plus via SimpleLogin" users
  * to Unlimited. Exclude users who have already consumed the offer. */
 const getPlanEligble = ({ InternalName, SubscriptionCoupon }: PassPlanResponse) => {
     const planEligble =
@@ -42,7 +47,8 @@ const getPlanEligble = ({ InternalName, SubscriptionCoupon }: PassPlanResponse) 
         InternalName === PLANS.VPN ||
         InternalName === PLANS.VPN2024 ||
         InternalName === PLANS.VPN_PASS_BUNDLE ||
-        InternalName === PLANS.DRIVE;
+        InternalName === PLANS.DRIVE ||
+        InternalName === 'simplelogin';
     const couponEligble = !FORBIDDEN_COUPONS.has(SubscriptionCoupon ?? '');
     return planEligble && couponEligble;
 };
@@ -62,7 +68,11 @@ const MaybeToolTip: FC<MaybeToolTipProps> = ({ children, planName }) =>
         children
     );
 
-const ValentinesDayPromo: FC = memo(() => {
+type Props = {
+    onAcknowledge: () => void;
+};
+
+const ValentinesDayPromo: FC<Props> = memo(({ onAcknowledge }) => {
     const user = useSelector(selectUser);
     const plan = useSelector(selectUserPlan);
     const inAppNotificationEnabled = useSelector(selectInAppNotificationsEnabled);
@@ -91,12 +101,15 @@ const ValentinesDayPromo: FC = memo(() => {
         disableEdit: true,
     });
 
+    /** Don't show the promo again for paid users who close the modal */
+    const maybeAcknowledge = isFreePlan ? noop : onAcknowledge;
+    const onClose = pipe(() => setShowModal(false), maybeAcknowledge);
+    const handleUpgradeClick = pipe(upgrade, onClose);
+
     /** On the web app we open the promo modal, on the
      * extension there is not enough space to show the
      * modal so we directly open the upgrade page */
-    const handlePromoButtonClick = EXTENSION_BUILD ? upgrade : () => setShowModal(true);
-
-    const onClose = () => setShowModal(false);
+    const handlePromoButtonClick = EXTENSION_BUILD ? handleUpgradeClick : () => setShowModal(true);
 
     return canShowPromo ? (
         <>
@@ -116,7 +129,7 @@ const ValentinesDayPromo: FC = memo(() => {
             {!EXTENSION_BUILD && showModal && (
                 <ValentinesDayPromoModal
                     onClose={onClose}
-                    onUpgradeClick={pipe(upgrade, onClose)}
+                    onUpgradeClick={handleUpgradeClick}
                     planToUpsell={planToUpsell}
                 />
             )}
@@ -126,4 +139,13 @@ const ValentinesDayPromo: FC = memo(() => {
 
 ValentinesDayPromo.displayName = 'ValentinesDayPromoMemo';
 
-export const ValentinesDayPromoButton = WithFeatureFlag(ValentinesDayPromo, PassFeature.PassValentinePromo2025);
+const ValentinesDayPromoWithSpotlight: FC = () => (
+    <WithSpotlight type={SpotlightMessage.VALENTINE_2025_PROMO}>
+        {(props) => <ValentinesDayPromo onAcknowledge={props.close} />}
+    </WithSpotlight>
+);
+
+export const ValentinesDayPromoButton = WithFeatureFlag(
+    ValentinesDayPromoWithSpotlight,
+    PassFeature.PassValentinePromo2025
+);
