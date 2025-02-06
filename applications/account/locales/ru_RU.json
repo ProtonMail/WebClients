@@ -14118,9 +14118,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Но вы можете разблокировать **${ unlockPlanTitle }** и все платные сервисы ${ BRAND_NAME } если улучшите до **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Продолжая, вы соглашаетесь с нашими ${ termsAndConditionsLink }"
-      ],
       "Creating your account": [
         "Создание вашего аккаунта"
       ],
@@ -19597,6 +19594,117 @@
         "Помощник по написанию"
       ]
     },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Предложение ко Дню влюблённых"
+      ]
+    },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "Скидка ${ salePercentage } %"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "Скидка ${ salePercentage } % для вас и еще одного человека"
+      ],
+      "10 email addresses for you": [
+        "10 адресов электронной почты для вас"
+      ],
+      "10,000+ servers in 110+ countries": [
+        "Более 10 000 серверов в более чем 110 странах"
+      ],
+      "15 GB storage": [
+        "Хранилище 15 ГБ"
+      ],
+      "200 GB storage": [
+        "200 ГБ хранилища"
+      ],
+      "500 GB total storage": [
+        "Общее хранилище 500 ГБ"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Все премиум-функции Mail, VPN, Pass и Drive"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Все премиальные сервисы ${ BRAND_NAME }. Одна удобная подписка."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Скидки рассчитаны исходя из стандартных ежемесячных тарифов. По окончании расчётного периода ваша подписка будет продлена по стандартной годовой ставке."
+      ],
+      "Double the love, half the price": [
+        "Половиним цены для ваших половинок"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Получите 1 год ${ dealName } со скидкой ${ salePercentage } % — плюс подарочный код, чтобы поделиться этим предложением с другом"
+      ],
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ],
+      "High-speed streaming": [
+        "Высокоскоростной стриминг"
+      ],
+      "Integrated 2FA authenticator": [
+        "Интегрированная двухфакторная аутентификация"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Предлагает высокий уровень безопасности аккаунта и экспертную поддержку. ${ DARK_WEB_MONITORING_NAME } сканирует скрытые части Интернета в поисках адресов электронной почты ${ MAIL_APP_NAME }, оказавшихся на нелегальных рынках данных. Если обнаружится утечка, вы получите оповещение в Центре безопасности с инструкциями по защите вашего аккаунта."
+      ],
+      "Protect 10 devices at a time": [
+        "Защитите 10 устройств за раз"
+      ],
+      "Recover previous file versions": [
+        "Восстановление предыдущих версий файлов"
+      ],
+      "Secure file storage & sharing": [
+        "Безопасное хранение и обмен файлами"
+      ],
+      "Secure vault sharing": [
+        "Защищённый общий доступ к хранилищу"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Используйте собственный домен электронной почты"
+      ],
+      "Valentine's deal:": [
+        "Предложение ко Дню влюблённых:"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "/ month": [
+        "/ месяц"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "15 months": [
+        "15 месяцев"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "30 months": [
+        "30 месяцев"
+      ],
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
@@ -19764,56 +19872,20 @@
         "${ n } счетов на один кошелёк",
         "${ n } счетов на один кошелёк"
       ],
-      "${ n } email address": [
-        "${ n } адрес эл. почты",
-        "${ n } адреса эл. почты",
-        "${ n } адресов эл. почты",
-        "${ n } адресов эл. почты"
-      ],
       "${ n } wallet": [
         "${ n } кошелёк",
         "${ n } кошелька",
         "${ n } кошельков",
         "${ n } кошельков"
       ],
-      "**Get ${ plan }** for early access to ${ appName }!": [
-        "**Получите ${ plan }** для раннего доступа к ${ appName }!"
-      ],
       "A safer way to hold your Bitcoin": [
         "Безопасный способ держать свои Bitcoin"
-      ],
-      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "Как приглашенный пользователь, зарегистрируйтесь для Free аккаунта ${ BRAND_NAME }, чтобы исключетельно получить доступ к ${ appName }"
       ],
       "Bitcoin via Email": [
         "Bitcoin по электронной почте"
       ],
-      "Create ${ BRAND_NAME } Account now": [
-        "Создайте аккаунт ${ BRAND_NAME } сейчас"
-      ],
-      "Early access to new features": [
-        "Ранний доступ к новым функциям"
-      ],
-      "Early access waitlist": [
-        "Список ожидания для раннего доступа"
-      ],
       "Exclusive early access to ${ appName }.": [
         "Эксклюзивный ранний доступ к ${ appName }."
-      ],
-      "Get started": [
-        "Начать работу"
-      ],
-      "Invite Friends": [
-        "Пригласить друзей"
-      ],
-      "Join ${ appName } early access!": [
-        "Присоединитесь к ${ appName } для раннего доступа!"
-      ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Зарегистрируйтесь для получения бесплатного аккаунта ${ BRAND_NAME }, чтобы защитить свое рабочее место. Чем раньше вы зарегистрируетесь, тем быстрее получите доступ к ${ appName }. После регистрации вы также можете перейти на наш эксклюзивный тариф Visionary, минуя список ожидания, и начать использовать ${ appName } прямо сейчас."
-      ],
-      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "Пользователи Visionary и их приглашенные друзья могут поделиться ранним доступом с другими, пригласите своих друзей попробовать ${ appName } бесплатно!"
       ],
       "You're Invited.": [
         "Вас пригласили."

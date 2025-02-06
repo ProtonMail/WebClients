@@ -5164,6 +5164,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Voit muuttaa tätä koska tahansa ${ settingsLink }."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi sähköpostiosoitteen olevan vahvistusta varten oikea."
       ],
@@ -6168,7 +6171,7 @@
         "Pyydä kutsu"
       ],
       "settings": [
-        "asetukset"
+        "asetuksissa"
       ],
       "Sign in": [
         "Kirjaudu sisään"
@@ -8042,7 +8045,7 @@
         "Virheellinen turvakoodi"
       ],
       "Something went wrong. Please try again later.": [
-        "Jokin meni pieleen. Yritä myöhemmin uudelleen."
+        "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
         "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
@@ -8330,7 +8333,7 @@
         "Sisäänkirjautumista ei suoritettu loppuun."
       ],
       "Something went wrong": [
-        "Jokin meni pieleen"
+        "Jotain meni pieleen"
       ],
       "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
         "Sähköpostiosoite **${ email }** on jo olemassa ${ BRAND_NAME }-käyttäjänä. Syötä käyttäjän sähköpostiosoite identiteetintarjoajaltasi."
@@ -9240,7 +9243,7 @@
         "Hylätty"
       ],
       "Signed out": [
-        "Kirjattu ulos"
+        "Kirjauduttu ulos"
       ],
       "Unknown": [
         "Tuntematon"
@@ -11422,13 +11425,13 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME }-sähköpostiosoite",
+        "${ n } ${ BRAND_NAME }-sähköpostiosoitetta"
+      ],
       "${ n } account per wallet": [
         "${ n } tili/lompakko",
         "${ n } tiliä/lompakko"
-      ],
-      "${ n } email address": [
-        "${ n } sähköpostiosoite",
-        "${ n } sähköpostiosoitetta"
       ],
       "${ n } wallet": [
         "${ n } lompakko",

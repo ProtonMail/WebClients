@@ -952,6 +952,11 @@
         "Паменшыць"
       ]
     },
+    "Actions": {
+      "Upload": [
+        "Запампаваць"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } або ${ importContact }."
@@ -1186,6 +1191,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, ${ DARK_WEB_MONITORING_NAME } і іншыя функцыі."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
@@ -1322,6 +1330,21 @@
       ],
       "Continue your subscription": [
         "Працягнуць падпіску"
+      ],
+      "Create label": [
+        "Стварыць метку"
+      ],
+      "Discover and set up features": [
+        "Азнаёміцца і наладзіць функцыі"
+      ],
+      "Remind me later": [
+        "Нагадаць мне пазней"
+      ],
+      "Set up other features": [
+        "Наладзіць іншыя функцыі"
+      ],
+      "Take a tour": [
+        "Пачаць знаёмства"
       ]
     },
     "Cancellation reminder": {
@@ -2443,6 +2466,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "Захоўваць вашы файлы, фатаграфіі і дакументы ў бяспецы з дапамогай скразнога шыфравання."
+      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
@@ -2463,6 +2489,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
+      ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Палепшыць да ${ BRAND_NAME } ${ planName }, каб захаваць абагульванне файлаў з правам на рэдагаванне."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з падтрымкай ад экспертаў 24/7."
@@ -3527,6 +3556,20 @@
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ]
     },
+    "Feature": {
+      "Access on mobile and desktop": [
+        "Доступ на тэлефонах і камп'ютарах"
+      ],
+      "Free 5 GB storage": [
+        "Бясплатна 5 ГБ сховішча"
+      ],
+      "Save files for later access": [
+        "Захаваць файлы, каб атрымаць да іх доступ пазней"
+      ],
+      "Share privately and securely": [
+        "Прыватнае і бяспечнае абагульванне"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
@@ -3675,6 +3718,9 @@
       ],
       "No verification method available": [
         "Няма даступных спосабаў праверкі"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5841,6 +5887,9 @@
       ],
       "Trusted": [
         "Давераны"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -5894,6 +5943,9 @@
       ],
       "Anderson": [
         "Маўр"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа рэдагаваць"
       ],
       "Anyone on the Internet with the link can view": [
         "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа праглядаць"
@@ -6553,6 +6605,11 @@
         "Што гэта?"
       ]
     },
+    "List title": {
+      "Also included:": [
+        "Таксама ўключана:"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Амаль гатова"
@@ -6979,11 +7036,20 @@
       "Get started for ${ priceCoupon }": [
         "Пачніце за ${ priceCoupon }"
       ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Тарыфныя планы, якія пачынаюцца з ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
       "Upgrade": [
         "Палепшыць"
       ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7159,6 +7225,9 @@
       ],
       "15 GB storage": [
         "15 ГБ сховішча"
+      ],
+      "200 GB of storage": [
+        "200 ГБ сховішча"
       ],
       "24/7 account management support": [
         "Падтрымка 24/7 па кіраванні ўліковым запісам"
@@ -7355,6 +7424,9 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Private photo backup": [
+        "Прыватнае рэзерваванне фатаграфій"
+      ],
       "Proofread and refine your emails": [
         "Правярайце і ўдакладняйце свае электронныя лісты"
       ],
@@ -7393,6 +7465,9 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Бяспечнае файлавае сховішча і абагульванне"
       ],
       "Secure link sharing": [
         "Бяспечнае абагульванне спасылкі"
@@ -8204,6 +8279,9 @@
       "Subfolder failed to be loaded": [
         "Не ўдалося загрузіць падпапкі"
       ],
+      "The document failed to be created": [
+        "Збой стварэння дакумента"
+      ],
       "The item was not added to your drive": [
         "Элемент не быў дадзены ў ваш дыск"
       ],
@@ -8262,6 +8340,58 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд вашых электронных лістоў і налад, прагляд і спампоўванне кантактаў, прагляд і спампоўванне распарадку дня з праграмы Каляндар Google."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Атрымайце Drive Plus усяго за ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Атрымайце Mail Plus усяго за ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Атрымаць прапанову"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Часовая прапанова"
+      ],
+      "Maybe later": [
+        "Магчыма пазней"
+      ],
+      "Save 80% on your first month.": [
+        "Зэканомце 80% у першы месяц."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "Больш за 10 прэміяльных функцый"
+      ],
+      "Custom email domain": [
+        "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Email addresses": [
+        "Адрасы электроннай пошты"
+      ],
+      "Free": [
+        "Бясплатна"
+      ],
+      "Online document editor": [
+        "Воблачны рэдактар дакументаў"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
+      "Storage": [
+        "Сховішча"
       ]
     },
     "Onboarding": {
@@ -8619,6 +8749,11 @@
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Бясплатна"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку зрабіць спісанне з вашага рахунка, а вашаму банку - адпаведна правесці гэту аперацыю. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
@@ -8828,6 +8963,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Афіцыйныя лісты ад ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Агляд бяспекі ўліковага запісу"
       ]
     },
     "saml: Error": {
@@ -9231,6 +9371,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Ваша падпіска будзе падаўжацца з фіксаваным коштам кожны год."
       ]
     },
     "specialoffer: Link": {
@@ -9239,6 +9382,9 @@
       ],
       "Upgrade": [
         "Палепшыць"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Палепшыць за ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -10116,6 +10262,35 @@
         "Поле vCard"
       ]
     },
+    "Tag": {
+      "Bursts": [
+        "Серыі"
+      ],
+      "Favorites": [
+        "Абраныя"
+      ],
+      "Live Photos": [
+        "Live Photos"
+      ],
+      "Panoramas": [
+        "Панарамы"
+      ],
+      "Portraits": [
+        "Партрэты"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Здымкі экрана"
+      ],
+      "Selfies": [
+        "Сэлфi"
+      ],
+      "Videos": [
+        "Відэа"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } гадз",
@@ -10550,6 +10725,9 @@
       "Need more aliases?": [
         "Патрабуецца больш псеўданімаў?"
       ],
+      "Need to share more files with edit access?": [
+        "Неабходна абагуліць больш файлаў з правам на рэдагаванне?"
+      ],
       "Network error": [
         "Памылка сеткі"
       ],
@@ -10648,6 +10826,9 @@
       ],
       "Restore your files": [
         "Аднавіць вашы файлы"
+      ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "Захаваць для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Захаванне для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"
@@ -10995,6 +11176,9 @@
         "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў.",
         "Ваша новая падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцаў."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Ваш запланаваны тарыфны план пачнецца ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяц.",
         "Ваша падпіска будзе аўтаматычна падоўжана праз ${ cycle } месяцы.",
@@ -11022,12 +11206,6 @@
         "${ n } уліковых запісаў на кашалёк",
         "${ n } уліковых запісаў на кашалёк"
       ],
-      "${ n } email address": [
-        "${ n } адрас электроннай пошты",
-        "${ n } адрасы электроннай пошты",
-        "${ n } адрасоў электроннай пошты",
-        "${ n } адрасоў электроннай пошты"
-      ],
       "${ n } wallet": [
         "${ n } кашалёк",
         "${ n } кашалькі",
@@ -11035,6 +11213,14 @@
         "${ n } кашалькоў"
       ],
       "A safer way to hold your Bitcoin": [
+        "Больш бяспечны спосаб захоўвання Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin праз электронную пошту"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
         "Больш бяспечны спосаб захоўвання Bitcoin"
       ]
     },

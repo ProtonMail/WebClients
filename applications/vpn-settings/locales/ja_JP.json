@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "キーをクリップボードにコピーします"
       ],
+      "Copy password": [
+        "パスワードをコピー"
+      ],
       "Copy version number to clipboard": [
         "バージョン番号をクリップボードにコピー"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "ゲートウェイ作成"
+      ],
+      "Create new password": [
+        "新しいパスワードを作成する"
       ],
       "Create new policy": [
         "新しいポリシーを作成"
@@ -987,7 +993,7 @@
         "${ storageSize } ストレージ"
       ],
       "1 TB total": [
-        "1 TB 合計"
+        "合計 1 TB"
       ],
       "1 user": [
         "1 ユーザー"
@@ -1011,7 +1017,7 @@
         "6 ユーザー"
       ],
       "8500+ servers across 110+ countries": [
-        "8500+ servers across 110+ countries"
+        "110 か国以上、8500 台以上のサーバー"
       ],
       "Ad-blocker and malware protection": [
         "広告ブロッカーとマルウェア防止"
@@ -1078,7 +1084,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+        "ブロックされたコンテンツにアクセスし、プライベートに参照します。110 以上の国、10 以上のデバイス、高速ストリーミング、広告ブロッカー、マルウェア保護、VPN Acceleratorなど、8,500 以上のサーバーが含まれています。"
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix、Disney+、Prime Videoをはじめとする各種ストリーミングサービスのコンテンツに、どこからでもアクセスできます。"
@@ -3739,6 +3745,9 @@
       "Ask your organization admin to setup Gateways.": [
         "ゲートウェイをセットアップするよう、組織の管理者に依頼してください。"
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
+      ],
       "Attention required": [
         "注意が必要です"
       ],
@@ -4210,6 +4219,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "サーバーの国を変更するには 10 日かかるので、選択が正しいことを確認してください。"
       ],
+      "It's better to have:": [
+        "以下の方が良いでしょう:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "${ vaultLink }のアイテムが自動入力されました"
       ],
@@ -4369,6 +4381,9 @@
       "No addresses exist": [
         "アドレスが存在しません"
       ],
+      "No common passwords": [
+        "一般的なパスワード以外"
+      ],
       "No gateways": [
         "ゲートウェイなし"
       ],
@@ -4381,6 +4396,9 @@
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
       ],
+      "No predictable sequences (1234, aaa)": [
+        "予測可能な配列以外 (1234, aaa)"
+      ],
       "No results found": [
         "該当する項目がありません"
       ],
@@ -4389,6 +4407,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
+      ],
+      "Numbers": [
+        "数字"
       ],
       "of": [
         " / "
@@ -4714,6 +4735,9 @@
       "Switch to": [
         "切り替え"
       ],
+      "Symbols (#$&)": [
+        "記号 (#$&)"
+      ],
       "Thank you": [
         "ありがとうございます"
       ],
@@ -4923,6 +4947,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "組織のロゴをアップロードしてブランド アイデンティティを強化し、ユーザーにパーソナライズされたエクスペリエンスを作成します。"
+      ],
+      "Uppercase and lowercase letters": [
+        "大文字と小文字"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "2要素認証を無効にするためには回復手順を使用してください。"
@@ -5631,6 +5658,9 @@
       "Enter the code displayed on your TV": [
         "TV に表示されているコードを入力"
       ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
       "Entity ID": [
         "エンティティID"
       ],
@@ -5708,6 +5738,9 @@
       ],
       "Moderate NAT": [
         "モデレート NAT"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "少なくとも ${ MIN_PASSWORD_LENGTH } 文字以上でなければなりません"
       ],
       "Name": [
         "名前"
@@ -5883,6 +5916,9 @@
       "Strong": [
         "強い"
       ],
+      "Strong password": [
+        "強力なパスワード"
+      ],
       "Subscription options": [
         "サブスクリプションのオプション"
       ],
@@ -5931,11 +5967,17 @@
       "Vulnerable": [
         "脆弱"
       ],
+      "Vulnerable password": [
+        "脆弱なパスワード"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
       ],
       "Weak": [
         "弱い"
+      ],
+      "Weak password": [
+        "弱いパスワード"
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
@@ -6070,6 +6112,9 @@
       ],
       "Don't have access to your 2FA?": [
         "2要素認証にアクセスできませんか？"
+      ],
+      "Forgot email?": [
+        "メールアドレスを忘れましたか？"
       ],
       "Forgot password?": [
         "パスワードを忘れましたか？"
@@ -7851,6 +7896,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "あなたは組織 **${ organizationName }** によって管理者に任命されました"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "新しい組織の鍵を生成する前に、すべてのグループを削除する必要があります"
+      ],
       "You must privatize all users before generating a new organization key": [
         "新しい組織の鍵を生成する前に、すべてのユーザーをプライベート化する必要があります"
       ],
@@ -9110,6 +9158,9 @@
       ],
       "User details:": [
         "ユーザー詳細："
+      ],
+      "Welcome": [
+        "ようこそ"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "組織にユーザーを追加するためには、手動で新しいユーザーを作成する必要があります。"
@@ -11292,9 +11343,6 @@
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "一つのウォレットに${ n } 個のアカウント"
-      ],
-      "${ n } email address": [
-        "${ n } メールアドレス"
       ],
       "${ n } wallet": [
         "${ n } 個のウォレット"

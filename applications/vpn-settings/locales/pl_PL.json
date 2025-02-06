@@ -11449,6 +11449,117 @@
         "Asystent pisania"
       ]
     },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "${ salePercentage }% taniej"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "${ salePercentage }% zniżki dla Ciebie +1"
+      ],
+      "10 email addresses for you": [
+        "10 dodatkowych adresów e-mail dla Ciebie"
+      ],
+      "10,000+ servers in 110+ countries": [
+        "Ponad 10 000 serwerów w ponad 110 krajach"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB storage": [
+        "200 GB przestrzeni dyskowej"
+      ],
+      "500 GB total storage": [
+        "500 GB przestrzeni dyskowej"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Uzyskaj dostęp do treści w usługach streamingowych, w tym Netflix, Disney+, Prime Video i nie tylko, z dowolnego miejsca."
+      ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Wszystkie funkcje premium Mail, VPN, Pass i Drive"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Zniżki oparte są na standardowych cenach miesięcznych. Po zakończeniu cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona według standardowej rocznej stawki."
+      ],
+      "Double the love, half the price": [
+        "Dwa razy więcej miłości za połowę ceny"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Uzyskaj 1 rok ${ dealName } z rabatem ${ salePercentage }% — plus kod upominkowy, którym możesz podzielić się z przyjacielem"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "High-speed streaming": [
+        "Szybki streaming"
+      ],
+      "Integrated 2FA authenticator": [
+        "Zintegrowana aplikacja uwierzytelniająca 2FA"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Oferuje najwyższy poziom bezpieczeństwa konta i profesjonalne wsparcie. ${ DARK_WEB_MONITORING_NAME } przeszukuje ukryte zakamarki Internetu w poszukiwaniu adresów e-mail ${ MAIL_APP_NAME } trafiających na nielegalne rynki danych. Jeśli wykryto naruszenie, otrzymasz alert z Centrum Bezpieczeństwa ze wskazówkami, jak chronić swoje konto."
+      ],
+      "Protect 10 devices at a time": [
+        "Ochrona 10 urządzeń jednocześnie"
+      ],
+      "Recover previous file versions": [
+        "Odzyskiwanie poprzednich wersji plików"
+      ],
+      "Secure file storage & sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
+      ],
+      "Secure vault sharing": [
+        "Bezpieczne udostępnianie sejfu"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Przestrzeń dyskowa jest współdzielona przez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } oraz ${ DRIVE_APP_NAME }."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nieograniczona liczba aliasów hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ],
+      "Valentine's deal:": [
+        "Oferta na walentynki:"
+      ]
+    },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Oferta na walentynki"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "${ n } miesiąca"
+      ],
+      "/ month": [
+        "/ miesiąc"
+      ],
+      "12 months": [
+        "12 miesięcy"
+      ],
+      "15 months": [
+        "15 miesięcy"
+      ],
+      "24 months": [
+        "24 miesiące"
+      ],
+      "30 months": [
+        "30 miesięcy"
+      ],
+      "for ${ durationDeal }": [
+        "na ${ durationDeal }"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
@@ -11604,12 +11715,6 @@
         "${ n } konta na portfel",
         "${ n } kont na portfel",
         "${ n } konta na portfel"
-      ],
-      "${ n } email address": [
-        "${ n } adres e-mail",
-        "${ n } adresy e-mail",
-        "${ n } adresów e-mail",
-        "${ n } adresu e-mail"
       ],
       "${ n } wallet": [
         "${ n } portfel",
