@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { RadioGroup } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
+import { usePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -16,6 +17,7 @@ type Props = { noTTL?: boolean };
 export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const online = useConnectivity();
     const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
+    const passwordTypeSwitch = usePasswordTypeSwitch();
 
     return (
         <>
@@ -57,8 +59,14 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                                       <span className="block">
                                           {c('Label').t`Password`}
                                           <span className="block color-weak text-sm">
-                                              {c('Info')
-                                                  .t`Access to ${PASS_APP_NAME} will always require your ${BRAND_NAME} password.`}
+                                              {passwordTypeSwitch({
+                                                  sso: c('Info')
+                                                      .t`Access to ${PASS_APP_NAME} will always require your backup password.`,
+                                                  extra: c('Info')
+                                                      .t`Access to ${PASS_APP_NAME} will always require your extra password.`,
+                                                  default: c('Info')
+                                                      .t`Access to ${PASS_APP_NAME} will always require your ${BRAND_NAME} password.`,
+                                              })}
                                           </span>
                                       </span>
                                   ),
