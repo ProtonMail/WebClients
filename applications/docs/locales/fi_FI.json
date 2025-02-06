@@ -1336,6 +1336,9 @@
       ],
       "Work": [
         "Työ"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2180,7 +2183,7 @@
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
       "Also included": [
-        "Sisältyy myös"
+        "Sisältää myös:"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
@@ -3361,6 +3364,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -3369,6 +3375,9 @@
       ],
       "No verification method available": [
         "Vahvistustapoja ei ole"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -3641,6 +3650,9 @@
       ],
       "ICS file": [
         "ICS-tiedosto"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4057,6 +4069,9 @@
       ],
       "Emails are automatically signed": [
         "Viestit allekirjoitetaan automaattisesti"
+      ],
+      "Enabling auto-deletion…": [
+        "Otetaan automaattista poistoa käyttöön…"
       ],
       "End-to-end encrypted": [
         "Päästä päähän -salattu"
@@ -4907,6 +4922,9 @@
       "Your email address was exposed:": [
         "Sähköpostiosoitteesi vuosi:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Sähköpostiosoitteesi näkyy linkin omistajana jakosivulla"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
@@ -5012,6 +5030,9 @@
       ],
       "Trusted": [
         "Luotettu"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -5541,6 +5562,11 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "Sisältää myös:"
       ]
     },
     "Loading info": {
@@ -7085,8 +7111,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Verkkodokumenttieditori"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Storage": [
         "Tallennustila"
@@ -7291,6 +7323,11 @@
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
@@ -7479,6 +7516,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Tarkista tiliturvallisuus"
       ]
     },
     "saml: Error": {
@@ -7858,6 +7900,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Päivitä hintaan ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -8511,6 +8556,9 @@
       "Are you sure?": [
         "Oletko varma?"
       ],
+      "Auto-deletion is active": [
+        "Automaattinen poisto on käytössä"
+      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -9118,6 +9166,14 @@
         "${ n } lompakkoa"
       ],
       "A safer way to hold your Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin sähköpostitse"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
         "Turvallisempi tapa säilyttää Bitcoineja"
       ]
     },
