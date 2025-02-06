@@ -149,6 +149,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getNCalendarsFeature(MAX_CALENDARS_FREE),
+                [PLANS.VISIONARY]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.VISIONARY]?.MaxCalendars),
             },
         },
         {
@@ -174,6 +175,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getEndToEndEncryption(),
+                [PLANS.VISIONARY]: getEndToEndEncryption(),
             },
         },
         {
@@ -199,6 +201,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getShareFeature(plansMap, PLANS.LUMO),
+                [PLANS.VISIONARY]: getShareFeature(plansMap, PLANS.VISIONARY),
             },
         },
         {
@@ -224,6 +227,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getInvitation(),
+                [PLANS.VISIONARY]: getInvitation(),
             },
         },
         {
@@ -249,6 +253,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getTeamAvailability(),
+                [PLANS.VISIONARY]: getTeamAvailability(),
             },
         },
     ];

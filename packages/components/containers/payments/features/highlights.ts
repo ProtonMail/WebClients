@@ -8,6 +8,7 @@ import {
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     PROTON_SENTINEL_NAME,
+    VISIONARY_MAX_USERS,
 } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -75,6 +76,11 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.VPN_PRO]: null,
             [PLANS.VPN_BUSINESS]: null,
             [PLANS.LUMO]: null,
+            [PLANS.VISIONARY]: {
+                text: getNUsersText(VISIONARY_MAX_USERS),
+                included: true,
+                highlight: true,
+            },
         },
     };
 };
@@ -186,6 +192,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN_PRO]: getSupport('priority'),
                 [PLANS.VPN_BUSINESS]: getSupport('priority'),
                 [PLANS.LUMO]: getSupport('priority'),
+                [PLANS.VISIONARY]: getSupport('priority'),
             },
         },
         {
@@ -211,6 +218,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN_PRO]: getSentinel(),
                 [PLANS.VPN_BUSINESS]: getSentinel(true),
                 [PLANS.LUMO]: getSentinel(),
+                [PLANS.VISIONARY]: getSentinel(true),
             },
         },
         {
@@ -236,6 +244,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: null,
             },
         },
         {
@@ -262,6 +271,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
+                [PLANS.VISIONARY]: null,
             },
         },
     ];

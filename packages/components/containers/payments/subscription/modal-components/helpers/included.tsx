@@ -30,6 +30,7 @@ import {
 } from '../../../features/pass';
 import {
     WALLET_PLUS_WALLETS,
+    WALLET_PLUS_WALLET_ACCOUNTS,
     getBitcoinViaEmailText,
     getWalletAccountsText,
     getWalletEmailAddressesText,
@@ -195,7 +196,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: getWalletAccountsText(WALLET_PLUS_WALLETS),
+                text: getWalletAccountsText(WALLET_PLUS_WALLET_ACCOUNTS),
             },
             {
                 type: 'text',
