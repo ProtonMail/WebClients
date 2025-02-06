@@ -171,6 +171,9 @@
       "Continue": [
         "Працягнуць"
       ],
+      "Continue downloading": [
+        "Працягнуць спампоўванне"
+      ],
       "Continue import": [
         "Працягнуць імпартаванне"
       ],
@@ -302,6 +305,12 @@
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Атрымаць ${ planName } за ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Атрымаць ${ planOrAppName }"
       ],
       "Get in touch": [
         "Звязацца з намі"
@@ -3396,6 +3405,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -3688,6 +3700,9 @@
       ],
       "ICS file": [
         "файл ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3790,6 +3805,9 @@
         "${ contactsLength } кантактаў",
         "${ contactsLength } кантактаў"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Файлы ${ DOCS_APP_NAME } не могуць быць спампаваны наўпрост і яны не будуць ўключаны ў гэта спампоўванне. Вы можаце спампаваць іншыя файлы націснуўшы \"Працягнуць спампоўванне\"."
+      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } дазваляе вам супрацоўнічаць у рэжыме рэальнага часу з дапамогай скразнога шыфравання для поўнай прыватнасці. Стварыце копію, каб пачаць рэдагаванне, або папрасіце ўладальніка забяспечыць вас правам рэдагавання дакумента."
       ],
@@ -3810,6 +3828,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс пасродках адмысловага маніторынга за падазронай актыўнасцю."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -4096,6 +4117,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Лічбавы подпіс правераны. Гэта папка бяспечна запампавана ${ emailAddress }."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Пазнаёмцеся з новымі функцыямі, якія даступныя з тарыфным планам ${ planTitle } і пачніце іх выкарыстоўваць неадкладна!"
+      ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
@@ -4152,6 +4179,12 @@
       ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Лісты, якія перамешчаны ў папку Сметніца і Спам больш за 30 дзён таму, будуць ачышчацца аўтаматычна."
+      ],
+      "Enabling auto-deletion…": [
+        "Уключэнне аўтавыдалення…"
       ],
       "End-to-end encrypted": [
         "Зашыфравана скразным метадам"
@@ -4465,6 +4498,9 @@
       "Opening...": [
         "Адкрыццё..."
       ],
+      "or discover other features:": [
+        "або пазнаёмцеся з іншымі функцыямі:"
+      ],
       "Organization size": [
         "Памер арганізацыі"
       ],
@@ -4612,6 +4648,9 @@
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
+      "Setting up ${ feature }…": [
+        "Наладжванне ${ feature }..."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
       ],
@@ -4678,6 +4717,12 @@
       "The Beginning": [
         "Пачатак"
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Лічабавы подпіс часткова правераны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Лічабавы подпіс часткова правераны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
       ],
@@ -4743,6 +4788,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Для спампоўвання файлаў ${ DOCS_APP_NAME }, адкрыйце іх у ${ DOCS_APP_NAME } і экспартуйце."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -4939,6 +4987,9 @@
       "You cannot undo this action.": [
         "Гэта дзеянне немагчыма адрабіць."
       ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. Дадайце спосаб аплаты, калі вы хочаце працягнуць карыстацца ёй пасля завяршэння пробнага перыяду."
       ],
@@ -5013,6 +5064,9 @@
       ],
       "Your email address was exposed:": [
         "Ваш адрас электроннай пошты скампраметаваны:"
+      ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Ваш адрас электроннай пошты будзе бачны ў якасці ўладальніка спасылкі на старонцы абагульвання"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
@@ -5513,6 +5567,9 @@
       "Start date": [
         "Дата пачатку"
       ],
+      "State": [
+        "Штат"
+      ],
       "Stop sharing": [
         "Спыніць абагульванне"
       ],
@@ -5642,6 +5699,9 @@
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
+      ],
+      "settings": [
+        "налады"
       ],
       "stay safer online": [
         "застацца абароненым у інтэрнэце"
@@ -6732,6 +6792,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceMailPlus }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: title": {
@@ -8745,6 +8813,9 @@
         "${ emailsCount } адрасоў электроннай пошты",
         "${ emailsCount } адрасоў электроннай пошты"
       ],
+      "${ feature } is now active": [
+        "${ feature } у актыўным стане"
+      ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
@@ -8780,6 +8851,9 @@
       ],
       "Are you sure?": [
         "Вы ўпэўнены?"
+      ],
+      "Auto-deletion is active": [
+        "Аўтавыдаленне ў актыўным стане"
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -9201,6 +9275,9 @@
       "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
         "Вы збіраецеся адхіліць запрашэнне для абагуленага элемента. Вы не зможаце атрымаць доступ да яго, пакуль уладальнік паўторна не абагуліць яго з вамі."
       ],
+      "You can now create unlimited folders and labels": [
+        "Цяпер вы можаце ствараць неамежаваную колькасць папак і метак"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
       ],
@@ -9209,6 +9286,9 @@
       ],
       "Your document cannot be loaded": [
         "Немагчыма загрузіць ваш дакумент"
+      ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "Ваша спампоўванне ўключае файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"

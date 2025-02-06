@@ -29,6 +29,9 @@
       "Add domain": [
         "Lägg till domän"
       ],
+      "Add forwarding mailbox": [
+        "Lägg till vidarebefordrad brevlåda"
+      ],
       "Add mailbox": [
         "Lägg till brevlåda"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Avancerade alternativ"
+      ],
+      "Apply lifetime coupon code": [
+        "Tillämpa livstids kupongkod"
       ],
       "Authenticate": [
         "Autentisera"
@@ -707,7 +713,7 @@
         "Lista över domäner där vissa automatiska funktioner i ${ PASS_SHORT_APP_NAME } (automatisk ifyllnad, automatiskt förslag, automatiskt spara) inte ska köras.${ infoText }"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
-        "Vissa DNS-återförsäljare kan kräva en fullständig postsökväg, i detta fall använd ${ domain } som domänvärde istället."
+        "Vissa DNS-registratorer kan kräva en fullständig postsökväg, i detta fall använd ${ domain } som domänvärde istället."
       ],
       "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
         "Vissa domänregistratorer (Namecheap, Cloudflare, etc.) kan också använda @ för rotdomänen."
@@ -1468,6 +1474,9 @@
       "Copied to clipboard": [
         "Kopierad till urklipp"
       ],
+      "Coupon successfully applied!": [
+        "Kupong tillämpad!"
+      ],
       "Create contact illustration": [
         "Skapa kontaktillustration"
       ],
@@ -1998,8 +2007,8 @@
       "Settings successfully updated": [
         "Inställningarna har uppdaterats"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Dela alias med andra genom att lägga till deras inkorg som en ytterligare brevlåda."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Dela alias med andra genom att lägga till deras inkorg som en vidarebefordrad brevlåda."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Dela dina inloggningar och säkra anteckningar med upp till 10 personer"
@@ -3195,6 +3204,9 @@
       "Alias Display Name": [
         "Aliasvisningsnamn"
       ],
+      "Coupon": [
+        "Kupong"
+      ],
       "Email address": [
         "E-postadress"
       ],
@@ -3526,6 +3538,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gillar du ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "Ange kupongkod"
+      ],
       "Enter your extra password": [
         "Ange ditt extralösenord"
       ],
@@ -3847,6 +3862,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Kunde inte skicka inbjudningar till följande adresser:"
+      ],
+      "Coupon cannot be empty": [
+        "Kupong kan inte vara tom"
+      ],
+      "Coupon could not be applied.": [
+        "Kupong kunde inte tillämpas."
       ],
       "Delete alias": [
         "Ta bort alias"

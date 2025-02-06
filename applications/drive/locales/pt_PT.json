@@ -5186,17 +5186,8 @@
       "There is nothing to see here": [
         "Não há nada para ver aqui."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Esta ação eliminará o ficheiro enviado permanentemente."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Esta ação eliminará a pasta que enviou permanentemente. Não é possível eliminar uma pasta que não contém ficheiro."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Esta ação eliminará a ligação e revogará o acesso de todos os utilizadores."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Esta ação eliminará os itens selecionados permanentemente."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário tem de ativar primeiro o endereço."
@@ -5233,6 +5224,15 @@
       ],
       "This month": [
         "Este mês"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Isto eliminará o ficheiro enviado permanentemente."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Isto eliminará a pasta enviada permanentemente."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Isto eliminará permanentemente os itens selecionados que enviou."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Isto removerá o dispositivo sincronizado ${ deviceName } do ${ DRIVE_APP_NAME } e todos os dados dele do ${ DRIVE_APP_NAME }. As pastas que adicionou na secção Computadores deixarão de sincronizar."
@@ -5765,6 +5765,9 @@
       ],
       "Address": [
         "Endereço"
+      ],
+      "All": [
+        "Todos"
       ],
       "Anderson": [
         "Anderson"
@@ -7947,6 +7950,10 @@
       "Share invitation declined": [
         "O convite para partilhar foi recusado."
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Não foi possível eliminar a pasta porque ela não está vazia.",
+        "Não foi possível eliminar as pastas porque elas não estão vazias."
+      ],
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper a partilha deste item"
       ],
@@ -9852,6 +9859,35 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Rajadas"
+      ],
+      "Favorites": [
+        "Favoritos"
+      ],
+      "Live Photos": [
+        "Fotos ao vivo"
+      ],
+      "Panoramas": [
+        "Panoramas"
+      ],
+      "Portraits": [
+        "Retratos"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Capturas de ecrã"
+      ],
+      "Selfies": [
+        "Selfies"
+      ],
+      "Videos": [
+        "Vídeos"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

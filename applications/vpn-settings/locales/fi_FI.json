@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Kopioi avain leikepöydälle"
       ],
+      "Copy password": [
+        "Kopioi salasana"
+      ],
       "Copy version number to clipboard": [
         "Kopioi versionumero leikepöydälle"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Luo yhdyskäytävä"
+      ],
+      "Create new password": [
+        "Luo uusi salasana"
       ],
       "Create new policy": [
         "Luo uusi käytäntö"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Unohditko palautustavan?"
+      ],
+      "Generate password": [
+        "Luo salasana"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Hanki ${ planName } hintaan ${ priceCoupon }"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Kirjaudu salasanalla"
-      ],
-      "Sign in with SSO": [
-        "Kertakirjautuminen"
       ],
       "Sign out": [
         "Kirjaudu ulos"
@@ -3327,6 +3333,11 @@
         "Erittäin pieni"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Onko sinulla jo tili? ${ signIn }"
@@ -3488,6 +3499,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -3496,6 +3510,9 @@
       ],
       "No verification method available": [
         "Vahvistustapoja ei ole"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -3741,6 +3758,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -3979,6 +3999,9 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Otettu käyttöön ${ formattedDateAndTime }"
       ],
+      "Enabling auto-deletion…": [
+        "Otetaan automaattista poistoa käyttöön…"
+      ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Sähköpostien päästä päähän -salaus ei ole käytössä tällä ryhmällä ulkoisten osoitteiden vuoksi."
       ],
@@ -4056,9 +4079,6 @@
       ],
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Kertakirjautumista (SAML SSO) käyttävien organisaatioiden jäsenille"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
@@ -4203,6 +4223,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Palvelimen maan vaihtaminen kestää 10 päivää, joten varmista, että valintasi on oikein."
+      ],
+      "It's better to have:": [
+        "On parempi olla:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Kohde automaattitäytettiin holvista ${ vaultLink }"
@@ -4363,6 +4386,9 @@
       "No addresses exist": [
         "Osoitteita ei ole"
       ],
+      "No common passwords": [
+        "Ei yleisiä salasanoja"
+      ],
       "No gateways": [
         "Yhdyskäytäviä ei ole"
       ],
@@ -4375,6 +4401,9 @@
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Ei arvattavia sarjoja (1234, aaa)"
+      ],
       "No results found": [
         "Tuloksia ei löytynyt"
       ],
@@ -4383,6 +4412,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
+      ],
+      "Numbers": [
+        "Numerot"
       ],
       "of": [
         "/"
@@ -4711,6 +4743,9 @@
       "Switch to": [
         "Vaihda"
       ],
+      "Symbols (#$&)": [
+        "Symbolit (#$&)"
+      ],
       "Thank you": [
         "Kiitos"
       ],
@@ -4923,6 +4958,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Lisää organisaatiosi logo, vahvistaaksesi brändi-identiteettiäsi ja tarjotaksesi käyttäjillesi mukautetun käyttökokemuksen."
+      ],
+      "Uppercase and lowercase letters": [
+        "Isot ja pienet kirjaimet"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä palautustapaa käyttämällä."
@@ -5631,6 +5669,9 @@
       "Enter the code displayed on your TV": [
         "Syötä televisiossasi näkyvä koodi"
       ],
+      "Enter your password": [
+        "Syötä salasanasi"
+      ],
       "Entity ID": [
         "Entiteetti-ID"
       ],
@@ -5791,7 +5832,7 @@
         "Puhelinnumero"
       ],
       "Phrase consists of 12 unique words in a specific order": [
-        "Lauseke sisältää 12 ainutlaatuista sanaa tietyssä järjestyksessä"
+        "Lause sisältää 12 ainutlaatuista sanaa tietyssä järjestyksessä"
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
         "Lisää seuraavat kolme CNAME -tietuetta. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
@@ -5884,6 +5925,9 @@
       "Strong": [
         "Vahva"
       ],
+      "Strong password": [
+        "Vahva salasana"
+      ],
       "Subscription options": [
         "Tilausvaihtoehdot"
       ],
@@ -5932,11 +5976,17 @@
       "Vulnerable": [
         "Haavoittuvainen"
       ],
+      "Vulnerable password": [
+        "Haavoittuva salasana"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Olemme pahoillamme kun lähdet. Kertoisitko meille miksi, jotta voimme parantaa toimintaamme, kiitos."
       ],
       "Weak": [
         "Heikko"
+      ],
+      "Weak password": [
+        "Heikko salasana"
       ],
       "What happened?": [
         "Mitä tapahtui?"
@@ -6071,6 +6121,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Etkö voi käyttää kaksivaiheista tunnitautumistasi?"
+      ],
+      "Forgot email?": [
+        "Unohditko sähköpostiosoitteesi?"
       ],
       "Forgot password?": [
         "Unohditko salasanasi?"
@@ -7541,8 +7594,14 @@
       "Free": [
         "Free"
       ],
+      "Online document editor": [
+        "Verkkodokumenttieditori"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Storage": [
         "Tallennustila"
@@ -7992,6 +8051,11 @@
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
@@ -8249,6 +8313,11 @@
       ],
       "User": [
         "Käyttäjä"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Tarkista tiliturvallisuus"
       ]
     },
     "saml: Action": {
@@ -8842,6 +8911,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Päivitä hintaan ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9137,6 +9209,9 @@
       ],
       "User details:": [
         "Käyttäjätiedot:"
+      ],
+      "Welcome": [
+        "Tervetuloa"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Sinun on luotava uusia käyttäjiä manuaalisesti lisätäksesi niitä organisaatioosi."
@@ -10196,6 +10271,9 @@
       "Authentication security": [
         "Tunnistautumisen turvallisuus"
       ],
+      "Auto-deletion is active": [
+        "Automaattinen poisto on käytössä"
+      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -11059,6 +11137,9 @@
       "Keep request": [
         "Säilytä pyyntö"
       ],
+      "Member activation incomplete": [
+        "Jäsenen aktivointi on kesken"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kun käyttäjä on antanyt suostumuksen, voit auttaa heitä samaan takaisin tilinkäyttöoikeuden tai hallinnoimaan heidän tietojaan."
       ],
@@ -11354,6 +11435,14 @@
         "${ n } lompakkoa"
       ],
       "A safer way to hold your Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin sähköpostitse"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
         "Turvallisempi tapa säilyttää Bitcoineja"
       ]
     },

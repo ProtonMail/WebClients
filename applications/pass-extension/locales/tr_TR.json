@@ -29,6 +29,9 @@
       "Add domain": [
         "Etki alanı ekle"
       ],
+      "Add forwarding mailbox": [
+        "İletilen E-posta kutusu ekle"
+      ],
       "Add mailbox": [
         "E-posta kutusu ekle"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Gelişmiş seçenekler"
+      ],
+      "Apply lifetime coupon code": [
+        "Ömür boyu geçerli kupon kodunu uygulayın"
       ],
       "Authenticate": [
         "Kimliği doğrula"
@@ -1468,6 +1474,9 @@
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
+      "Coupon successfully applied!": [
+        "Kupon kodu uygulandı!"
+      ],
       "Create contact illustration": [
         "Kişi oluşturma görseli"
       ],
@@ -1998,8 +2007,8 @@
       "Settings successfully updated": [
         "Ayarlar güncellendi"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Başka birinin gelen kutusunu ek e-posta kutusu olarak ekleyerek takma adları onlarla paylaşabilirsiniz."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Takma adları başkalarıyla paylaşmak için onların gelen kutusunu yönlendirme E-posta kutusu olarak ekleyin."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
@@ -3192,6 +3201,9 @@
       "Alias Display Name": [
         "Takma adın görüntülenecek adı"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Email address": [
         "E-posta adresi"
       ],
@@ -3523,6 +3535,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
       ],
+      "Enter coupon code": [
+        "Kupon kodunu yazın"
+      ],
       "Enter your extra password": [
         "Ek parolanızı yazın"
       ],
@@ -3844,6 +3859,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Şu adreslere davetler gönderilemedi:"
+      ],
+      "Coupon cannot be empty": [
+        "Kupon kodu boş olamaz"
+      ],
+      "Coupon could not be applied.": [
+        "Kupon kodu uygulanamadı."
       ],
       "Delete alias": [
         "Takma adı sil"

@@ -4442,6 +4442,9 @@
       "Drop files here": [
         "ფაილები აქ დაყარეთ"
       ],
+      "Drop files here to upload or click on the upload button": [
+        "დაყარეთ ფაილები აქ, ასატვირთადნ, ან დააწკაპუნეთ ატვირთვის ღილაკზე"
+      ],
       "Drop to import": [
         "შემოსატანად დააგდეთ"
       ],
@@ -4571,6 +4574,9 @@
       ],
       "from the version history?": [
         "ვერსიის ისტორიიდან?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "გადმოწერეთ აპი, რომ დაამარქაფოთ სურათები თქვენი ტელეფონიდან, ან აქ ატვირთოთ."
       ],
       "Get the app to backup photos from your phone.": [
         "დააყენეთ აპი სურათების თქვენი ტელეფონიდან მარქაფისთვის."
@@ -5161,17 +5167,8 @@
       "There is nothing to see here": [
         "აქ არაფერია სანახავი"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "ეს ქმედება თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "ეს ქმედება შეუქცევადად წაშლის საქაღალდეს, რომელიც ატვირთეთ. საქაღალდეს, რომელიც შეიცავს ფაილს, რომლის მფლობელიც თქვენ არ ბრძანდებით, ვერ წაშლით."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "ეს ქმედება წაშლის ბმულს და გააუქმებს წვდომას ყველა მომხმარებლისთვის."
-      ],
-      "This action will delete the selected items permanently.": [
-        "ეს ქმედება მონიშნულ ელემენტებს სამუდამოდ წაშლის."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "ეს მისამართი გათიშულია. ამ მისამართზე გასაგზავნად მისმა მფლობელმა ის ჯერ უნდა ჩართოს."
@@ -5731,6 +5728,9 @@
       ],
       "Address": [
         "მისამართი"
+      ],
+      "All": [
+        "ყველა"
       ],
       "Anderson": [
         "ანდერსონი"
@@ -8581,6 +8581,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "ანგარიშის უსაფრთხოების გადახედვა"
       ]
     },
     "saml: Error": {

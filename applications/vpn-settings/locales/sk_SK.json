@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Skopírovať kľúč do schránky"
       ],
+      "Copy password": [
+        "Kopírovať heslo"
+      ],
       "Copy version number to clipboard": [
         "Skopírovať číslo verzie do schránky"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Vytvoriť bránu"
+      ],
+      "Create new password": [
+        "Vytvoriť nové heslo"
       ],
       "Create new policy": [
         "Vytvoriť novú politiku"
@@ -321,6 +327,9 @@
       ],
       "Forgot recovery method?": [
         "Zabudli ste metódu obnovenia?"
+      ],
+      "Generate password": [
+        "Vygenerovať heslo"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Získajte ${ planName } za ${ priceCoupon }"
@@ -639,9 +648,6 @@
       ],
       "Sign in with password": [
         "Prihláste sa pomocou hesla"
-      ],
-      "Sign in with SSO": [
-        "Prihláste sa pomocou SSO"
       ],
       "Sign out": [
         "Odhlásiť sa"
@@ -2472,6 +2478,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, sa zobrazia len na faktúrach vystavených v budúcnosti a neovplyvnia existujúce faktúry."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, zmenia len vybranú faktúru, a nie vaše budúce fakturačné údaje."
       ]
     },
     "Email spam notification": {
@@ -2543,6 +2552,9 @@
       ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Úprava fakturačnej adresy momentálne nie je k dispozícii. Skúste to neskôr, prosím."
       ],
       "Email address is invalid": [
         "Emailová adresa je neplatná"
@@ -3850,6 +3862,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Požiadajte správcu organizácie o nastavenie brány."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
+      ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
@@ -4189,9 +4204,6 @@
       "for choosing ${ product }": [
         "za výber ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Pre členov organizácií používajúcich jednotné prihlásenie (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
       ],
@@ -4335,6 +4347,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Zmena krajiny servera trvá 10 dní, preto sa uistite, že je váš výber správny."
+      ],
+      "It's better to have:": [
+        "Je lepšie, ak máte:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "Položka automaticky vyplnená v trezore ${ vaultLink }"
@@ -4495,6 +4510,9 @@
       "No addresses exist": [
         "Neexistujú žiadne adresy"
       ],
+      "No common passwords": [
+        "Žiadne bežné heslá"
+      ],
       "No gateways": [
         "Žiadne brány"
       ],
@@ -4507,6 +4525,9 @@
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Žiadne predvídateľné sekvencie (1234, aaa)"
+      ],
       "No results found": [
         "Nenájdené žiadne výsledky"
       ],
@@ -4515,6 +4536,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
+      ],
+      "Numbers": [
+        "Čísla"
       ],
       "of": [
         "z"
@@ -4858,6 +4882,9 @@
       "Switch to": [
         "Prepnúť na"
       ],
+      "Symbols (#$&)": [
+        "Znaky (#$&)"
+      ],
       "Thank you": [
         "Ďakujeme"
       ],
@@ -5076,6 +5103,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Nahrajte logo vašej organizácie, aby ste posilnili identitu značky a vytvorili personalizované prostredie pre používateľov."
+      ],
+      "Uppercase and lowercase letters": [
+        "Veľké a malé písmená"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Na deaktiváciu vašich metód dvojfázového overovania použite metódu obnovenia."
@@ -5817,6 +5847,9 @@
       "Enter the code displayed on your TV": [
         "Zadajte kód zobrazený na vašej TV"
       ],
+      "Enter your password": [
+        "Zadajte svoje heslo"
+      ],
       "Entity ID": [
         "ID entity"
       ],
@@ -5894,6 +5927,9 @@
       ],
       "Moderate NAT": [
         "Moderate NAT"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
       ],
       "Name": [
         "Meno"
@@ -6072,6 +6108,9 @@
       "Strong": [
         "Silné"
       ],
+      "Strong password": [
+        "Silné heslo"
+      ],
       "Subscription options": [
         "Možnosti predplatného"
       ],
@@ -6120,11 +6159,17 @@
       "Vulnerable": [
         "Zraniteľné"
       ],
+      "Vulnerable password": [
+        "Zraniteľné heslo"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám ľúto, že odchádzate. Napíšte nám svoj dôvod, prečo odchádzate, aby sme mohli zlepšiť naše služby."
       ],
       "Weak": [
         "Slabé"
+      ],
+      "Weak password": [
+        "Slabé heslo"
       ],
       "What happened?": [
         "Čo sa stalo?"
@@ -6259,6 +6304,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Nemáte prístup k vášmu 2FA?"
+      ],
+      "Forgot email?": [
+        "Zabudli ste email?"
       ],
       "Forgot password?": [
         "Zabudnuté heslo?"
@@ -8142,6 +8190,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Boli ste menovaný správcom organizácie **${ organizationName }** používateľom"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Pred vytvorením nového kľúča organizácie musíte odstrániť všetky skupiny."
+      ],
       "You must privatize all users before generating a new organization key": [
         "Pred vygenerovaním nového kľúča organizácie musíte všetkých používateľov nastaviť ako súkromných"
       ],
@@ -8529,6 +8580,11 @@
       ],
       "User": [
         "Používateľ"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Skontrolujte bezpečnosť účtu"
       ]
     },
     "saml: Action": {
@@ -9480,6 +9536,9 @@
       ],
       "User details:": [
         "Podrobnosti o používateľovi:"
+      ],
+      "Welcome": [
+        "Vitajte"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Ak chcete pridať nových používateľov do svojej organizácie, budete ich musieť vytvoriť ručne."

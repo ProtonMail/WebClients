@@ -89,7 +89,7 @@
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
-        "Adjuntar una o varias capturas de pantalla"
+        "Adjuntar captura(s) de pantalla"
       ],
       "Attention required": [
         "Atención requerida"
@@ -3514,7 +3514,7 @@
     },
     "Feature": {
       "Access on mobile and desktop": [
-        "Acesso desde móvil y escritorio"
+        "Acceso en móvil y escritorio"
       ],
       "Free 5 GB storage": [
         "5 GB de almacenamiento gratis"
@@ -4583,7 +4583,7 @@
         "Para obtener el mejor resultado, evita las actividades de streaming o demandantes de memoria, o divide tus cargas de archivos en lotes más pequeños."
       ],
       "Free 5GB encrypted storage to get started": [
-        "5 GB de almacenamiento cifrado gratuito para comenzar"
+        "Almacenamiento encriptado gratuito de 5GB para empezar"
       ],
       "from the version history?": [
         "del historial de versiones?"
@@ -5186,17 +5186,8 @@
       "There is nothing to see here": [
         "No hay datos que ver aquí."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Esta acción eliminará permanentemente el archivo cargado."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Esta acción eliminará la carpeta que has cargado de forma permanente. No puedes eliminar una carpeta que contenga archivos que no sean de tu propiedad."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Esta acción eliminará el enlace y revocará el acceso de todos los usuarios."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Esta acción eliminará permanentemente los elementos seleccionados."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para enviar correos esta dirección, el propietario debe en primer lugar activar la dirección."
@@ -5233,6 +5224,15 @@
       ],
       "This month": [
         "Este mes"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Esto eliminará permanentemente el archivo cargado."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Esto eliminará permanentemente la carpeta cargada."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Esto eliminará permanentemente los elementos seleccionados cargados."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Esto eliminará el dispositivo sincronizado ${ deviceName } de ${ DRIVE_APP_NAME } y todos sus datos de ${ DRIVE_APP_NAME }. Las carpetas que hayas agregado a Mis ordenadores dejarán de sincronizarse."
@@ -5771,6 +5771,9 @@
       ],
       "Album": [
         "Álbum"
+      ],
+      "All": [
+        "Todos"
       ],
       "Anderson": [
         "García"
@@ -8010,6 +8013,10 @@
       "Share invitation declined": [
         "Se ha rechazado la invitación compartida."
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "No se ha podido eliminar la carpeta porque no está vacía.",
+        "No se han podido eliminar la carpeta porque no está vacía."
+      ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
       ],
@@ -9915,6 +9922,35 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Ráfagas"
+      ],
+      "Favorites": [
+        "Favoritos"
+      ],
+      "Live Photos": [
+        "Fotografías en directo"
+      ],
+      "Panoramas": [
+        "Panoramas"
+      ],
+      "Portraits": [
+        "Retratos"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Capturas de pantalla"
+      ],
+      "Selfies": [
+        "Autorretratos"
+      ],
+      "Videos": [
+        "Vídeos"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

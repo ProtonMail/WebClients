@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -576,6 +576,9 @@
       ],
       "Generate new recovery phrase": [
         "აღდგენის ახალი ფრაზის გენერაცია"
+      ],
+      "Generate password": [
+        "პაროლის გენერირება"
       ],
       "Generate recovery phrase": [
         "აღდგენის ფრაზის გენერაცია"
@@ -1116,9 +1119,6 @@
       ],
       "Sign in with password": [
         "პაროლით შესვლა"
-      ],
-      "Sign in with SSO": [
-        "Sign in with SSO"
       ],
       "Sign out": [
         "გასვლა"
@@ -4477,6 +4477,9 @@
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "გადახდის მისამართის ჩასწორება, ამჟამად, ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
+      ],
       "Email address disabled": [
         "ელფოსტის მისამართი გათიშულია"
       ],
@@ -6916,10 +6919,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "გაააქტიურეთ ანგარიშის აღდგენის ერთი მეთოდი მაინც, რომ დარწმუნდეთ, რომ თქვენს ${ BRAND_NAME }-ის ანგარიშზე წვდომა პაროლის დაკარგვის შემთხვევაშიც კი გექნებათ."
       ],
-      "Active": [
+      "active": [
         "აქტიური"
       ],
-      "active": [
+      "Active": [
         "აქტიური"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -7355,11 +7358,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
@@ -7632,9 +7635,6 @@
       ],
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
-      ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "ორგანიზაციის წევრებისთვის, რომელიც SSO-ს (SAML SSO) იყენებენ"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "მომხმარებლებისთვს, რომლებიც ${ MAIL_APP_NAME }-ზე სხვა ელფოსტის სერვისიდან გადმოდიან, აირჩიეთ ${ boldAddresses } ჩანართი და დაამატეთ ყველა აქტიური ელფოსტის მისამართი, სანამ MX ჩანაწერს შეცვლით, რათა შუაში ელფოსტა არ დაკარგოთ."
@@ -13873,6 +13873,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "გააგრძელეთ თქვენი ${ BRAND_NAME }-ის ანგარიშით"
       ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "${ discountPercent }% Porkbun-ის ფასდაკლება"
+      ],
       "Let's talk": [
         "ვისაუბროთ"
       ],
@@ -14882,6 +14885,9 @@
       ],
       "Recovery phone number": [
         "აღდგენის ტელეფონის ნომერი"
+      ],
+      "Review account safety": [
+        "ანგარიშის უსაფრთხოების გადახედვა"
       ],
       "Safeguard account now": [
         "დაიცავით ანგარიში ახლავე"
@@ -16550,47 +16556,6 @@
         "${ totalPrice }-თვის"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -16876,6 +16841,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -18780,6 +18786,29 @@
         "დღეს"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "გარე მისამართი - გამორთავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის და ამ მომხამრებელთან დაშიფრული რესურსები გაზიარებული არ იქნება."
+      ],
+      "Group membership paused": [
+        "ჯგუფის წევრობა შეჩერდა"
+      ],
+      "Sending member invitation": [
+        "გაწევრების მოსაწვევის გაგზავნა"
+      ],
+      "User declined invitation": [
+        "მომხმარებელმა უარჰყო მოსაწვევი"
+      ],
+      "Waiting for user to accept the invitation": [
+        "მომხმარებლის დადასტურების მოლოდინი"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME }-ის მომხმარებლები ამ გასაღებს გაგზავნისას ნაგულისხმებად გამოიყენებენ"
@@ -18993,29 +19022,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "თქვენმა გარე ანგარიშმა შეიძლება სიჩქარის 24 საათიან ლიმიტს მიაღწია. ${ BRAND_NAME }-ი შეეცდება შემოტანა, რაც შეიძლება, მალე განაახლოს."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "გარე მისამართი - გამორთავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის და ამ მომხამრებელთან დაშიფრული რესურსები გაზიარებული არ იქნება."
-      ],
-      "Group membership paused": [
-        "ჯგუფის წევრობა შეჩერდა"
-      ],
-      "Sending member invitation": [
-        "გაწევრების მოსაწვევის გაგზავნა"
-      ],
-      "User declined invitation": [
-        "მომხმარებელმა უარჰყო მოსაწვევი"
-      ],
-      "Waiting for user to accept the invitation": [
-        "მომხმარებლის დადასტურების მოლოდინი"
       ]
     },
     "Tooltip automatically attach public key": {

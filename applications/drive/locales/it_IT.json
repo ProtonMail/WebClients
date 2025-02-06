@@ -5186,17 +5186,8 @@
       "There is nothing to see here": [
         "Non c'è niente da vedere qui"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Questa azione eliminerà definitivamente il file caricato."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Questa azione eliminerà definitivamente la cartella caricata. Non è possibile eliminare una cartella che contiene file non di proprietà."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Questa azione eliminerà il link e revocherà l'accesso a tutti gli utenti."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Questa azione eliminerà definitivamente gli elementi selezionati."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
@@ -5233,6 +5224,15 @@
       ],
       "This month": [
         "Questo mese"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Questo eliminerà definitivamente il file caricato."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Questo eliminerà definitivamente la cartella caricata."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Questo eliminerà definitivamente gli elementi selezionati che hai caricato."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Questa operazione rimuoverà il dispositivo sincronizzato ${ deviceName } da ${ DRIVE_APP_NAME } e tutti i suoi dati da ${ DRIVE_APP_NAME }. Le cartelle aggiunte a I miei computer non verranno più sincronizzate."
@@ -5768,6 +5768,9 @@
       ],
       "Address": [
         "Indirizzo"
+      ],
+      "All": [
+        "Tutto"
       ],
       "Anderson": [
         "Anderson"
@@ -8003,6 +8006,10 @@
       "Share invitation declined": [
         "Invito alla condivisione rifiutato"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Spiacenti, non è stato possibile eliminare la cartella perché non è vuota.",
+        "Spiacenti, non è stato possibile eliminare le cartelle perché non sono vuote."
+      ],
       "Stopping the sharing of this item has failed": [
         "L'interruzione della condivisione di questo elemento non è riuscita"
       ],
@@ -8681,7 +8688,7 @@
     },
     "Safety review": {
       "Review account safety": [
-        "Controlla la sicurezza del account"
+        "Controlla la sicurezza dell'account"
       ]
     },
     "saml: Error": {
@@ -9908,6 +9915,35 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Raffiche"
+      ],
+      "Favorites": [
+        "Preferiti"
+      ],
+      "Live Photos": [
+        "Foto in diretta"
+      ],
+      "Panoramas": [
+        "Panorami"
+      ],
+      "Portraits": [
+        "Ritratti"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Screenshot"
+      ],
+      "Selfies": [
+        "Selfie"
+      ],
+      "Videos": [
+        "Video"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

@@ -5245,6 +5245,11 @@
         "Очень маленький"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Конфиденциальность по умолчанию."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Дата: ${ date }"
@@ -13311,6 +13316,9 @@
       ],
       "Download Desktop app": [
         "Скачать приложение для компьютера"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Включить ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Получить свой адрес «@${ PM_DOMAIN }»"

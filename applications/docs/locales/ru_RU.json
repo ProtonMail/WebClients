@@ -4672,8 +4672,17 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Загруженный файл будет удалён навсегда"
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Загруженная папка будет удалена навсегда. Вы не можете удалить папку с файлом, не принадлежащим вам."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Это действие удалит ссылку и отменит доступ для всех пользователей."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Выбранные элементы будут удалены навсегда"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы была возможность отправки на него, владелец адреса должен его включить."
@@ -4971,6 +4980,9 @@
       ],
       "Your email address was exposed:": [
         "Ваш адрес электронной почты был опубликован:"
+      ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Ваш адрес электронной почты будет виден как адрес владельца ссылки на странице обмена."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."

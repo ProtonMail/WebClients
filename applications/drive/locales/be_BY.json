@@ -192,6 +192,9 @@
       "Continue": [
         "Працягнуць"
       ],
+      "Continue downloading": [
+        "Працягнуць спампоўванне"
+      ],
       "Continue import": [
         "Працягнуць імпартаванне"
       ],
@@ -383,6 +386,12 @@
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Атрымаць ${ planName } за ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Атрымаць ${ planOrAppName }"
       ],
       "Get in touch": [
         "Звязацца з намі"
@@ -878,6 +887,9 @@
       ],
       "Upload file": [
         "Запампаваць файл"
+      ],
+      "Upload files": [
+        "Запампаваць файлы"
       ],
       "Upload folder": [
         "Запампаваць папку"
@@ -3652,6 +3664,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -3944,6 +3959,9 @@
       ],
       "ICS file": [
         "файл ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4064,6 +4082,9 @@
         "${ contactsLength } кантактаў",
         "${ contactsLength } кантактаў"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Файлы ${ DOCS_APP_NAME } не могуць быць спампаваны наўпрост і яны не будуць ўключаны ў гэта спампоўванне. Вы можаце спампаваць іншыя файлы націснуўшы \"Працягнуць спампоўванне\"."
+      ],
       "${ doneCount } finished": [
         "${ doneCount } завершаны",
         "${ doneCount } завершана",
@@ -4126,6 +4147,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс пасродках адмысловага маніторынга за падазронай актыўнасцю."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -4487,6 +4511,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Лічбавы подпіс правераны. Гэта папка бяспечна запампавана ${ emailAddress }."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Пазнаёмцеся з новымі функцыямі, якія даступныя з тарыфным планам ${ planTitle } і пачніце іх выкарыстоўваць неадкладна!"
+      ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
@@ -4523,6 +4553,9 @@
       "Drop files here": [
         "Перацягніце файлы сюды"
       ],
+      "Drop files here to upload or click on the upload button": [
+        "Перацягніце файлы сюды. каб запампаваць або націсніце адпаведную кнопку"
+      ],
       "Drop to import": [
         "Перацягніце для імпартавання"
       ],
@@ -4544,8 +4577,14 @@
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Лісты, якія перамешчаны ў папку Сметніца і Спам больш за 30 дзён таму, будуць ачышчацца аўтаматычна."
+      ],
       "Empty folder": [
         "Пустая папка"
+      ],
+      "Enabling auto-deletion…": [
+        "Уключэнне аўтавыдалення…"
       ],
       "Enabling drive search": [
         "Уключэнне пошуку на дыску"
@@ -4648,6 +4687,9 @@
       ],
       "from the version history?": [
         "з гісторыі версій?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Атрымаць праграму для рэзервовага капіявання фатаграфій з вашага тэлефона або запампоўвання іх сюды."
       ],
       "Get the app to backup photos from your phone.": [
         "Атрымайце праграму для рэзервовай копіі фатаграфій з вашай прылады."
@@ -4916,6 +4958,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Толькі карыстальнікі са спасылкай і паролем змогуць атрымаць доступ да гэтай папкі."
       ],
+      "or discover other features:": [
+        "або пазнаёмцеся з іншымі функцыямі:"
+      ],
       "Or use the \"+ New\" button": [
         "Або скарыстайцеся кнопкай \"+ Новы\""
       ],
@@ -5144,6 +5189,9 @@
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
+      "Setting up ${ feature }…": [
+        "Наладжванне ${ feature }..."
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
       ],
@@ -5155,6 +5203,9 @@
       ],
       "Share via link settings": [
         "Налады для абагулення праз спасылку"
+      ],
+      "Shared by ${ rootLink.signatureEmail }": [
+        "Абагулена ${ rootLink.signatureEmail }"
       ],
       "Shared link not found": [
         "Абагуленая спасылка не знойдзена"
@@ -5213,6 +5264,12 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Лічабавы подпіс часткова правераны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Лічабавы подпіс часткова правераны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
       ],
@@ -5237,17 +5294,8 @@
       "There is nothing to see here": [
         "Няма даных для адлюстравання"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Гэта дзеянне незваротна выдаліць файл, які вы запампавалі."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Гэта дзеянне незваротна выдаліць папку, якую вы запампавалі. Вы не зможаце выдаліць папку з файлам, якая вам не належыць."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Гэта дзеянне выдаліць спасылку і адклікае доступ для ўсіх карыстальнікаў."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Гэта дзеянне незваротна выдаліць выбраныя элементы."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
@@ -5285,6 +5333,15 @@
       "This month": [
         "У гэтым месяцы"
       ],
+      "This will permanently delete the file you uploaded.": [
+        "Гэта незваротна выдаліць файл, які вы запампавалі."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Гэта незваротна выдаліць папку, якую вы запампавалі."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Гэта незваротна выдаліць выбраныя элементы, якія вы запампавалі."
+      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Гэта прывядзе да выдалення сінхранізаванай прылады ${ deviceName } з ${ DRIVE_APP_NAME } і ўсіх яе даных з ${ DRIVE_APP_NAME }. Папкі дададзеныя ў \"Мой камп'ютар\" больш не будуць сінхранізавацца."
       ],
@@ -5305,6 +5362,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Для спампоўвання файлаў ${ DOCS_APP_NAME }, адкрыйце іх у ${ DOCS_APP_NAME } і экспартуйце."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
@@ -5573,6 +5633,9 @@
       "You cannot undo this action.": [
         "Гэта дзеянне немагчыма адрабіць."
       ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+      ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "У вас яшчэ ёсць яшчэ ${ expiresInDays } дзень, каб атрымаць прывітальны бонус у 3 ГБ і ",
         "У вас яшчэ ёсць яшчэ ${ expiresInDays } дні, каб атрымаць прывітальны бонус у 3 ГБ і ",
@@ -5650,6 +5713,9 @@
       ],
       "Your email address was exposed:": [
         "Ваш адрас электроннай пошты скампраметаваны:"
+      ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Ваш адрас электроннай пошты будзе бачны ў якасці ўладальніка спасылкі на старонцы абагульвання"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
@@ -5822,6 +5888,9 @@
       ],
       "Address": [
         "Адрас"
+      ],
+      "All": [
+        "Усе"
       ],
       "Anderson": [
         "Маўр"
@@ -6267,6 +6336,9 @@
       "Start date": [
         "Дата пачатку"
       ],
+      "State": [
+        "Штат"
+      ],
       "Stolen data": [
         "Скрадзеныя даныя"
       ],
@@ -6452,6 +6524,9 @@
       ],
       "Sent": [
         "Адпраўленыя"
+      ],
+      "settings": [
+        "налады"
       ],
       "Shared": [
         "Абагулены"
@@ -7562,6 +7637,14 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceMailPlus }. Скасаваць можна ў любы момант."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -8108,6 +8191,12 @@
       ],
       "Share invitation declined": [
         "Абагуленае запрашэнне адхілена"
+      ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Немагчыма выдаліць папку, бо яна не пустая.",
+        "Немагчыма выдаліць папкі, бо яны не пустыя.",
+        "Немагчыма выдаліць папкі, бо яны не пустыя.",
+        "Немагчыма выдаліць папкі, бо яны не пустыя."
       ],
       "Stopping the sharing of this item has failed": [
         "Збой спынення абагульвання гэтага элемента"
@@ -10077,6 +10166,9 @@
         "${ emailsCount } адрасоў электроннай пошты",
         "${ emailsCount } адрасоў электроннай пошты"
       ],
+      "${ feature } is now active": [
+        "${ feature } у актыўным стане"
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванне",
         "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванні",
@@ -10148,6 +10240,9 @@
       ],
       "Are you sure?": [
         "Вы ўпэўнены?"
+      ],
+      "Auto-deletion is active": [
+        "Аўтавыдаленне ў актыўным стане"
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -10304,6 +10399,9 @@
       ],
       "Download unverified folder?": [
         "Спампаваць неправераную папку?"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Drop to upload": [
         "Перацягніце, каб запампаваць"
@@ -10695,6 +10793,9 @@
       "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
         "Вы збіраецеся адхіліць запрашэнне для абагуленага элемента. Вы не зможаце атрымаць доступ да яго, пакуль уладальнік паўторна не абагуліць яго з вамі."
       ],
+      "You can now create unlimited folders and labels": [
+        "Цяпер вы можаце ствараць неамежаваную колькасць папак і метак"
+      ],
       "You have inaccessible files": [
         "Вы маеце недаступныя файлы"
       ],
@@ -10715,6 +10816,9 @@
       ],
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"
+      ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "Ваша спампоўванне ўключае файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"

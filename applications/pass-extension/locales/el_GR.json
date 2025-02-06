@@ -29,6 +29,9 @@
       "Add domain": [
         "Προσθήκη domain"
       ],
+      "Add forwarding mailbox": [
+        "Προσθήκη γραμματοκιβωτίου προώθησης"
+      ],
       "Add mailbox": [
         "Προσθήκη γραμματοκιβωτίου"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Προηγμένες επιλογές"
+      ],
+      "Apply lifetime coupon code": [
+        "Εφαρμόστε τον κωδικό κουπονιού διάρκειας ζωής"
       ],
       "Authenticate": [
         "Ταυτοποίηση"
@@ -1468,6 +1474,9 @@
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
+      "Coupon successfully applied!": [
+        "Το κουπόνι εφαρμόστηκε με επιτυχία!"
+      ],
       "Create contact illustration": [
         "Απεικόνιση δημιουργίας επαφών"
       ],
@@ -1998,8 +2007,8 @@
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Μοιραστείτε ψευδώνυμα με άλλους προσθέτοντας τα εισερχόμενά τους ως πρόσθετο γραμματοκιβώτιο."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Μοιραστείτε ψευδώνυμα με άλλους προσθέτοντας τα εισερχόμενά τους ως γραμματοκιβώτιο προώθησης."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Μοιραστείτε στοιχεία σύνδεσης και ασφαλείς σημειώσεις, με έως και 10 άτομα"
@@ -3192,6 +3201,9 @@
       "Alias Display Name": [
         "Εμφανιζόμενο Όνομα Ψευδώνυμου"
       ],
+      "Coupon": [
+        "Κουπόνι"
+      ],
       "Email address": [
         "Διεύθυνση email"
       ],
@@ -3523,6 +3535,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
       ],
+      "Enter coupon code": [
+        "Συμπληρώστε τον κωδικό κουπονιού"
+      ],
       "Enter your extra password": [
         "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"
       ],
@@ -3844,6 +3859,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Δεν ήταν δυνατή η αποστολή προσκλήσεων στις ακόλουθες διευθύνσεις:"
+      ],
+      "Coupon cannot be empty": [
+        "Το κουπόνι δεν μπορεί να είναι κενό"
+      ],
+      "Coupon could not be applied.": [
+        "Δεν ήταν δυνατή η εφαρμογή κουπονιού."
       ],
       "Delete alias": [
         "Διαγραφή ψευδώνυμου"

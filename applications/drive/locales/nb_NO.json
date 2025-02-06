@@ -5186,17 +5186,8 @@
       "There is nothing to see here": [
         "Det er ingenting å se her"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Denne handlingen vil slette filen du lastet opp permanent."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Denne handlingen vil slette mappen du lastet opp permanent. Du kan ikke slette en mappe som inneholder filer som ikke eies."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Denne handlingen sletter koblingen og tilbakekaller tilgang for alle brukere."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Denne handlingen sletter de valgte elementene permanent."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
@@ -5233,6 +5224,15 @@
       ],
       "This month": [
         "Denne måneden"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Dette vil slette filen du lastet opp permanent."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Dette vil slette mappen du lastet opp permanent."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Dette vil slette de valgte elementene du lastet opp permanent."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Dette vil fjerne den synkroniserte enheten ${ deviceName } fra ${ DRIVE_APP_NAME } og alle dens data fra ${ DRIVE_APP_NAME }. Mapper du har lagt til i Mine datamaskiner, slutter å synkronisere."
@@ -5765,6 +5765,9 @@
       ],
       "Address": [
         "Adresse"
+      ],
+      "All": [
+        "Alle"
       ],
       "Anderson": [
         "Andersen"
@@ -8004,6 +8007,10 @@
       "Share invitation declined": [
         "Delingsinvitasjon avslått"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Beklager, vi kunne ikke slette mappen fordi den ikke er tom.",
+        "Beklager, vi kunne ikke slette mappene fordi de ikke er tomme."
+      ],
       "Stopping the sharing of this item has failed": [
         "Det mislyktes å stoppe delingen av dette elementet"
       ],
@@ -9909,6 +9916,35 @@
       ],
       "vCard field": [
         "vCard-felt"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Serier"
+      ],
+      "Favorites": [
+        "Favoritter"
+      ],
+      "Live Photos": [
+        "Live-bilder"
+      ],
+      "Panoramas": [
+        "Panoramaer"
+      ],
+      "Portraits": [
+        "Portretter"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Skjermbilder"
+      ],
+      "Selfies": [
+        "Selfier"
+      ],
+      "Videos": [
+        "Videoer"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

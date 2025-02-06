@@ -160,6 +160,9 @@
       "Copy key to the clipboard": [
         "複製金鑰到剪貼簿"
       ],
+      "Copy password": [
+        "複製密碼"
+      ],
       "Copy version number to clipboard": [
         "複製版本號碼至剪貼簿"
       ],
@@ -171,6 +174,9 @@
       ],
       "Create Gateway": [
         "創建閘道器"
+      ],
+      "Create new password": [
+        "建立新密碼"
       ],
       "Create new policy": [
         "建立新的政策"
@@ -318,6 +324,9 @@
       ],
       "Forgot recovery method?": [
         "忘記復原方法?"
+      ],
+      "Generate password": [
+        "生成密碼"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "盡快為${ priceCoupon }取得${ planName }。"
@@ -636,9 +645,6 @@
       ],
       "Sign in with password": [
         "使用密碼登入"
-      ],
-      "Sign in with SSO": [
-        "使用 SSO 登入"
       ],
       "Sign out": [
         "登出"
@@ -2456,8 +2462,14 @@
       "Couldn't load invoices. Please try again later.": [
         "無法載入發票。請稍後再試。"
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "無法載入交易。請稍後再試。"
+      ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "目前不可編輯付款地址。請稍後再試。"
       ],
       "Email address is invalid": [
         "電子郵件位址無效"
@@ -2606,6 +2618,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "請升級至選用多於 1 位使用者的企業方案，以便管理多個使用者。"
       ],
+      "Please upload a square logo": [
+        "請上傳正方形標誌"
+      ],
       "Please upload only 1 file": [
         "請上傳一個檔案"
       ],
@@ -2698,6 +2713,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "您的帳號或組織有待繳清的繳款單。請儘速繳納所有未付繳款單。"
+      ],
+      "ZIP code is required": [
+        "郵遞區號為必要項目"
       ]
     },
     "error": {
@@ -3546,6 +3564,9 @@
       "Add server (${ availableAddedCount } available)": [
         "新增伺服器 (${ availableAddedCount } 台可用)"
       ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "添加您的名稱及標誌以替貴組織創建更個人化的體驗。"
+      ],
       "Adding ${ addedServerCount } gateway server": [
         "正在新增 ${ addedServerCount } 台閘道伺服器"
       ],
@@ -3617,6 +3638,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "請聯絡貴組織的的管理員以設定閘道。"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "至少 ${ BETTER_PASSWORD_LENGTH } 個字元"
       ],
       "Attention required": [
         "需要您的處理"
@@ -3927,9 +3951,6 @@
       "for choosing ${ product }": [
         "選用 ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "為了有使用單一登入(SAML SSO)的組織機構的成員"
-      ],
       "Free forever": [
         "永遠免費"
       ],
@@ -4224,6 +4245,9 @@
       "No addresses exist": [
         "無任何電郵位址"
       ],
+      "No common passwords": [
+        "無常見密碼"
+      ],
       "No gateways": [
         "無閘道器"
       ],
@@ -4236,6 +4260,9 @@
       "No payment is required at this time.": [
         "此時毋須付款。"
       ],
+      "No predictable sequences (1234, aaa)": [
+        "無可預測順序(1234, aaa)"
+      ],
       "No results found": [
         "找不到相符的結果"
       ],
@@ -4244,6 +4271,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
+      ],
+      "Numbers": [
+        "數字"
       ],
       "of": [
         "/"
@@ -4563,6 +4593,9 @@
       "Switch to": [
         "切換至"
       ],
+      "Symbols (#$&)": [
+        "符號(#$&)"
+      ],
       "Thank you": [
         "感謝您"
       ],
@@ -4637,6 +4670,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "這將允許使用 PayPal 來支付您的 ${ BRAND_NAME } 訂購授權。我們將在瀏覽器的新分頁中重新導向到 PayPal。若您有使用任何彈出式視窗攔截程式，請先停用它然後再繼續。"
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "這將會永久刪除與此使者相關聯的資料與所有電子郵件地址。"
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "這將會永久刪除與此使者相關聯的資料與所有電郵位址。"
@@ -4757,6 +4793,12 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "上傳完成的CSV檔以創建"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "上傳您組織機構的品牌標誌以提升並替使用者創建個人化體驗。"
+      ],
+      "Uppercase and lowercase letters": [
+        "大寫及小寫字母"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "使用復原方法以停用您的雙重身分驗證方式。"
@@ -5436,6 +5478,9 @@
       "Enter the code displayed on your TV": [
         "輸入在您的電視上顯示的代碼"
       ],
+      "Enter your password": [
+        "請輸入您的密碼"
+      ],
       "Entity ID": [
         "編號"
       ],
@@ -5685,6 +5730,9 @@
       "Strong": [
         "強"
       ],
+      "Strong password": [
+        "高強度密碼"
+      ],
       "Subscription options": [
         "訂購授權選項"
       ],
@@ -5727,11 +5775,17 @@
       "Vulnerable": [
         "具有風險"
       ],
+      "Vulnerable password": [
+        "有安全隱患的密碼"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "很抱歉您想離開。請告訴我們原因以讓我們改進。"
       ],
       "Weak": [
         "弱"
+      ],
+      "Weak password": [
+        "脆弱密碼"
       ],
       "What happened?": [
         "發生了甚麼問題？"
@@ -7570,6 +7624,9 @@
       "Choose display name": [
         "請選擇顯示名稱"
       ],
+      "Company name": [
+        "公司名稱"
+      ],
       "Confirm": [
         "確認"
       ],
@@ -8428,6 +8485,9 @@
       "New backup password": [
         "新的備份密碼"
       ],
+      "Remove single sign-on": [
+        "移除單一登入"
+      ],
       "Remove single sign-on for your organization?": [
         "要為您的組織移除單一登入嗎？"
       ],
@@ -8449,6 +8509,9 @@
       "Single sign-on removed": [
         "已移除單一登入"
       ],
+      "The user ${ name } is now a single sign-on account.": [
+        "此${ name }使用者目前是單一登入帳戶。"
+      ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "若要確定真的是您嘗試登入 **${ email }**，請檢視確認碼，並從其他裝置批准請求。"
       ],
@@ -8469,6 +8532,29 @@
       ],
       "Your SSO configuration will be deleted.": [
         "您的單一登入配置將被刪除。"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "啟用"
+      ],
+      "Inactive": [
+        "未使用"
+      ],
+      "Pending activation": [
+        "待啟動"
+      ],
+      "Pending admin activation": [
+        "待管理員啟動"
+      ],
+      "Rejected": [
+        "拒绝"
+      ],
+      "Signed out": [
+        "已登出"
+      ],
+      "Unknown": [
+        "未知"
       ]
     },
     "State": {
@@ -8998,6 +9084,9 @@
       ],
       "Backup password updated": [
         "備份密碼已更新"
+      ],
+      "Billing details updated": [
+        "帳單詳情已更新"
       ],
       "Catch-all address updated": [
         "全部擷取電子郵件位址已更新"
