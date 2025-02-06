@@ -29,6 +29,9 @@
       "Add domain": [
         "Domain hinzufügen"
       ],
+      "Add forwarding mailbox": [
+        "Weiterleitungspostfach hinzufügen"
+      ],
       "Add mailbox": [
         "Postfach hinzufügen"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Erweiterte Optionen"
+      ],
+      "Apply lifetime coupon code": [
+        "Lifetime-Gutscheincode anwenden"
       ],
       "Authenticate": [
         "Authentifizieren"
@@ -1417,6 +1423,9 @@
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
       ],
+      "Coupon successfully applied!": [
+        "Gutschein erfolgreich angewendet"
+      ],
       "Creating alias...": [
         "Alias wird erstellt..."
       ],
@@ -1907,8 +1916,8 @@
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Gib Aliase für andere Personen frei, indem du deren Posteingang als zusätzliches Postfach hinzufügst."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Gib Aliase für andere Personen frei, indem du deren Posteingang als Weiterleitungspostfach hinzufügst."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Teile deine Logins und sichere Notizen mit bis zu 10 Personen."
@@ -3044,6 +3053,9 @@
       "Alias Display Name": [
         "Alias-Anzeigename"
       ],
+      "Coupon": [
+        "Gutschein"
+      ],
       "Email address": [
         "E-Mail-Adresse"
       ],
@@ -3353,6 +3365,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "Gutscheincode eingeben"
+      ],
       "Enter your extra password": [
         "Gib dein zusätzliches Passwort ein."
       ],
@@ -3656,6 +3671,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "An folgende Adressen konnten keine Einladungen gesendet werden:"
+      ],
+      "Coupon cannot be empty": [
+        "Gutschein darf nicht leer sein"
+      ],
+      "Coupon could not be applied.": [
+        "Gutschein konnte nicht angewendet werden"
       ],
       "Delete alias": [
         "Alias löschen"

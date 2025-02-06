@@ -29,6 +29,9 @@
       "Add domain": [
         "Legg til domene"
       ],
+      "Add forwarding mailbox": [
+        "Legg til postboks for videresending"
+      ],
       "Add mailbox": [
         "Legg til postboks"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Avanserte innstillinger"
+      ],
+      "Apply lifetime coupon code": [
+        "Bruk livstidskupongkode"
       ],
       "Authenticate": [
         "Autentiser"
@@ -1468,6 +1474,9 @@
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
       ],
+      "Coupon successfully applied!": [
+        "Kupong vellykket brukt!"
+      ],
       "Create contact illustration": [
         "Lag kontaktillustrasjon"
       ],
@@ -1998,8 +2007,8 @@
       "Settings successfully updated": [
         "Innstillinger oppdatert"
       ],
-      "Share aliases with others by adding their inbox as an additional mailbox.": [
-        "Del aliaser med andre ved å legge til innboksen deres som en ekstra postboks."
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Del aliaser med andre ved å legge til innboksen deres som en postboks for videresending."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Del pålogginger og sikre notater med opptil 10 personer"
@@ -3192,6 +3201,9 @@
       "Alias Display Name": [
         "Visningsnavn for alias"
       ],
+      "Coupon": [
+        "Kupong"
+      ],
       "Email address": [
         "E-postadresse"
       ],
@@ -3523,6 +3535,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Koser du deg med ${ PASS_APP_NAME }?"
       ],
+      "Enter coupon code": [
+        "Skriv inn kupongkode"
+      ],
       "Enter your extra password": [
         "Angi det ekstra passordet ditt"
       ],
@@ -3844,6 +3859,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Kunne ikke sende invitasjoner til følgende adresser:"
+      ],
+      "Coupon cannot be empty": [
+        "Kupongen kan ikke være tom"
+      ],
+      "Coupon could not be applied.": [
+        "Kupongen kan ikke brukes."
       ],
       "Delete alias": [
         "Slett alias"
