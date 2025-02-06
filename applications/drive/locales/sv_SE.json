@@ -5186,17 +5186,8 @@
       "There is nothing to see here": [
         "Det finns inget att se här"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Denna åtgärd kommer att ta bort filen du laddat upp permanent."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Denna åtgärd kommer att ta bort mappen du laddat upp permanent. Du kan inte ta bort en mapp som innehåller en fil du inte äger."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Denna åtgärd kommer ta bort länken och återkalla åtkomst för alla användare."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Denna åtgärd kommer att ta bort de valda objekten permanent."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
@@ -5233,6 +5224,15 @@
       ],
       "This month": [
         "Denna månad"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Detta kommer ta bort filen du laddade upp permanent."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Detta kommer ta bort mappen du laddade upp permanent."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Detta kommer ta bort de valda objekten du laddade upp permanent."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Detta kommer att ta bort den synkade enheten ${ deviceName } från ${ DRIVE_APP_NAME } och all dess data från ${ DRIVE_APP_NAME }. Mappar du lagt till i Mina datorer kommer att inte längre synkas."
@@ -5768,6 +5768,9 @@
       ],
       "Address": [
         "Adress"
+      ],
+      "All": [
+        "Alla"
       ],
       "Anderson": [
         "Anderson"
@@ -8012,6 +8015,10 @@
       "Share invitation declined": [
         "Delningsinbjudan avböjd"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Vi kunde inte ta bort mappen eftersom den inte är tom.",
+        "Vi kunde inte ta bort mapparna eftersom de inte är tomma."
+      ],
       "Stopping the sharing of this item has failed": [
         "Misslyckades att stoppa delning av detta objekt"
       ],
@@ -8225,10 +8232,10 @@
         "Skaffa mobilappen"
       ],
       "Got an Android? We've got you covered.": [
-        "Har du en Android? Då fixar vi resten."
+        "Har du en Android? Då ordnar vi resten."
       ],
       "Got an iPhone? We've got you covered.": [
-        "Har du en iPhone? Då fixar vi resten."
+        "Har du en iPhone? Då ordnar vi resten."
       ],
       "Hang tight": [
         "Häng kvar"
@@ -9923,6 +9930,35 @@
       ],
       "vCard field": [
         "vCard-fält"
+      ]
+    },
+    "Tag": {
+      "Bursts": [
+        "Serie"
+      ],
+      "Favorites": [
+        "Favoriter"
+      ],
+      "Live Photos": [
+        "Livefoton"
+      ],
+      "Panoramas": [
+        "Panorama"
+      ],
+      "Portraits": [
+        "Porträtt"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Skärmdumpar"
+      ],
+      "Selfies": [
+        "Selfies"
+      ],
+      "Videos": [
+        "Videoklipp"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

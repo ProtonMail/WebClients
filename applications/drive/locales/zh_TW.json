@@ -5097,17 +5097,8 @@
       "There is nothing to see here": [
         "這裡什麼都沒有。"
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "此操作將永久刪除上傳的檔案。"
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "此操作將永久刪除您上傳的資料夾。您不可以刪除內含其他人的檔案的資料夾。"
-      ],
       "This action will delete the link and revoke access for all users.": [
         "此項目將刪除連結並撤銷全部使用者的存取權。"
-      ],
-      "This action will delete the selected items permanently.": [
-        "此操作將永久刪除選中的項目。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
@@ -5664,6 +5655,9 @@
       ],
       "Address": [
         "電郵位址"
+      ],
+      "All": [
+        "全部"
       ],
       "Anderson": [
         "安德松"
@@ -9568,6 +9562,26 @@
       ],
       "vCard field": [
         "vCard 欄位"
+      ]
+    },
+    "Tag": {
+      "Favorites": [
+        "最愛"
+      ],
+      "Live Photos": [
+        "及時照片"
+      ],
+      "Portraits": [
+        "肖像"
+      ],
+      "Screenshots": [
+        "螢幕截圖"
+      ],
+      "Selfies": [
+        "自拍"
+      ],
+      "Videos": [
+        "影片"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
