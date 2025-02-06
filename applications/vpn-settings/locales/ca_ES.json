@@ -6816,7 +6816,7 @@
         "Autenticador A2F integrat"
       ],
       "Kill switch/always-on VPN": [
-        "Kill switch / sempre en VPN"
+        "Kill switch /VPN sempre activa"
       ],
       "Limited support": [
         "Suport limitat"
@@ -7995,7 +7995,7 @@
         "Heu estat nomenat administrador de l'organització **${ organizationName }** per"
       ],
       "You must delete all groups before generating a new organization key": [
-        "Heu de suprimir tots els grups abans de generar una clau d'organització nova."
+        "Heu d'eliminar tots els grups abans de generar una clau d'organització nova."
       ],
       "You must privatize all users before generating a new organization key": [
         "Heu de privatitzar tots els usuaris abans de generar una clau d'organització nova"
@@ -11507,10 +11507,6 @@
       "${ n } account per wallet": [
         "${ n } compte per cartera",
         "${ n } comptes per cartera"
-      ],
-      "${ n } email address": [
-        "${ n } adreça de correu electrònic",
-        "${ n } adreces de correu electrònic"
       ],
       "${ n } wallet": [
         "${ n } cartera",
