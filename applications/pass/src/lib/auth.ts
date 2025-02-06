@@ -224,6 +224,7 @@ export const createAuthService = ({
                         case ReauthAction.SSO_EXPORT:
                             return { pathname: base + '/settings', hash: 'export' };
                         case ReauthAction.SSO_PW_LOCK:
+                        case ReauthAction.SSO_BIOMETRICS:
                             return { pathname: base + '/settings', hash: 'security' };
                         case ReauthAction.SSO_OFFLINE:
                             return { pathname: base + '/settings', hash: 'general' };
