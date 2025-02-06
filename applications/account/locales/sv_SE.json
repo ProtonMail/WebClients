@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -313,6 +313,9 @@
       "Copy link": [
         "Kopiera länk"
       ],
+      "Copy password": [
+        "Kopiera lösenord"
+      ],
       "Copy version number to clipboard": [
         "Kopiera versionsnummer till urklipp"
       ],
@@ -339,6 +342,9 @@
       ],
       "Create link": [
         "Skapa länk"
+      ],
+      "Create new password": [
+        "Skapa nytt lösenord"
       ],
       "Create new policy": [
         "Skapa ny policy"
@@ -576,6 +582,9 @@
       ],
       "Generate new recovery phrase": [
         "Generera ny återställningsfras"
+      ],
+      "Generate password": [
+        "Generera lösenord"
       ],
       "Generate recovery phrase": [
         "Generera återställningsfras"
@@ -1116,9 +1125,6 @@
       ],
       "Sign in with password": [
         "Logga in med lösenord"
-      ],
-      "Sign in with SSO": [
-        "Logga in med SSO"
       ],
       "Sign out": [
         "Logga ut"
@@ -1683,7 +1689,7 @@
       ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad.",
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad."
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månader."
       ]
     },
     "bf2023: Info": {
@@ -6949,11 +6955,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7150,6 +7156,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Be din organisationsadministratör att ställa in gateways."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
@@ -7388,11 +7397,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -7666,9 +7675,6 @@
       "for choosing ${ product }": [
         "för att välja ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "För medlemmar i organisationer som använder enkel inloggning (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
       ],
@@ -7917,6 +7923,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dagar att ändra en servers land, så se till att ditt val är korrekt."
       ],
+      "It's better to have:": [
+        "Det är bättre att ha:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Objekt automatiskt ifyllt i ${ vaultLink }"
       ],
@@ -8154,6 +8163,9 @@
       "No addresses exist": [
         "Inga adresser finns"
       ],
+      "No common passwords": [
+        "Inga vanliga lösenord"
+      ],
       "No credit card required": [
         "Inget kreditkort krävs"
       ],
@@ -8184,6 +8196,9 @@
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Inga förutsägbara sekvenser (1234, aaa)"
+      ],
       "No results found": [
         "Inga resultat hittades"
       ],
@@ -8198,6 +8213,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
+      ],
+      "Numbers": [
+        "Siffror"
       ],
       "of": [
         "av"
@@ -8719,6 +8737,9 @@
       "Switch to": [
         "Byt till"
       ],
+      "Symbols (#$&)": [
+        "Symboler (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronisera och hantera filer med ${ DRIVE_APP_NAME }-appen. Skapa och dela dokument i ${ DOCS_APP_NAME } och lagra dem säkert. Allt på ${ ios }, ${ android } och ${ desktop }."
       ],
@@ -9096,6 +9117,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Uppladdad fil är inte en giltig privat nyckel. Verifiera och försök igen."
+      ],
+      "Uppercase and lowercase letters": [
+        "Stora och små bokstäver"
       ],
       "URL link": [
         "URL-länk"
@@ -10571,6 +10595,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Ange lösenordet för nyckeln med fingeravtrycket: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "Ange ditt lösenord"
+      ],
       "Entity ID": [
         "Entitets-ID"
       ],
@@ -10774,6 +10801,9 @@
       ],
       "Move to Inbox": [
         "Flytta till Inkorg"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
       ],
       "Name": [
         "Namn"
@@ -11064,6 +11094,9 @@
       "Strong": [
         "Starkt"
       ],
+      "Strong password": [
+        "Starkt Lösenord"
+      ],
       "Subscription options": [
         "Prenumerationsalternativ"
       ],
@@ -11165,6 +11198,9 @@
       ],
       "Weak": [
         "Svagt"
+      ],
+      "Weak password": [
+        "Svagt lösenord"
       ],
       "Week start": [
         "Veckostart"
@@ -11405,6 +11441,9 @@
       ],
       "Encryption and keys": [
         "Kryptering och nycklar"
+      ],
+      "Forgot email?": [
+        "Glömt e-post?"
       ],
       "Forgot password?": [
         "Glömt lösenord?"
@@ -16336,6 +16375,9 @@
       "User details:": [
         "Användardetaljer:"
       ],
+      "Welcome": [
+        "Välkommen"
+      ],
       "Yes, it was me": [
         "Ja, det var jag"
       ],
@@ -16651,47 +16693,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -16980,6 +16981,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -18896,6 +18938,29 @@
         "Idag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp och inga krypterade resurser kommer att delas med denna användare."
+      ],
+      "Group membership paused": [
+        "Gruppmedlemskap pausad"
+      ],
+      "Sending member invitation": [
+        "Skickar medlemsinbjudan"
+      ],
+      "User declined invitation": [
+        "Användare avböjde inbjudan"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Väntar på att användaren ska acceptera inbjudan"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Användare av ${ MAIL_APP_NAME } kommer använda denna nyckel som standard för att skicka"
@@ -19111,29 +19176,6 @@
         "Ditt externa konto kan ha nått sin bandbreddsgräns för det här dygnet. ${ BRAND_NAME } kommer att försöka återuppta importen så snart som möjligt."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp och inga krypterade resurser kommer att delas med denna användare."
-      ],
-      "Group membership paused": [
-        "Gruppmedlemskap pausad"
-      ],
-      "Sending member invitation": [
-        "Skickar medlemsinbjudan"
-      ],
-      "User declined invitation": [
-        "Användare avböjde inbjudan"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Väntar på att användaren ska acceptera inbjudan"
-      ]
-    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Detta lägger automatiskt till din offentliga nyckel till varje meddelande du skickar. Mottagare kan använda detta för att verifiera äktheten av dina meddelanden och skicka krypterade meddelanden till dig."
@@ -19178,7 +19220,7 @@
         "Misslyckad"
       ],
       "Needs attention": [
-        "Kräver åtgärd"
+        "Behöver uppmärksamhet"
       ],
       "Refunded": [
         "Återbetald"

@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -313,6 +313,9 @@
       "Copy link": [
         "Link kopiëren"
       ],
+      "Copy password": [
+        "Wachtwoord kopiëren"
+      ],
       "Copy version number to clipboard": [
         "Kopieer versienummer naar klembord"
       ],
@@ -339,6 +342,9 @@
       ],
       "Create link": [
         "Link aanmaken"
+      ],
+      "Create new password": [
+        "Nieuw wachtwoord instellen"
       ],
       "Create new policy": [
         "Nieuwe policy aanmaken"
@@ -576,6 +582,9 @@
       ],
       "Generate new recovery phrase": [
         "Genereer nieuwe herstelzin"
+      ],
+      "Generate password": [
+        "Wachtwoord genereren"
       ],
       "Generate recovery phrase": [
         "Genereer herstelzin"
@@ -1116,9 +1125,6 @@
       ],
       "Sign in with password": [
         "Aanmelden met wachtwoord"
-      ],
-      "Sign in with SSO": [
-        "Inloggen met SSO"
       ],
       "Sign out": [
         "Uitloggen"
@@ -3950,7 +3956,7 @@
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
       ]
     },
     "Email": {
@@ -6946,11 +6952,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
       ],
-      "Active": [
-        "Actief"
-      ],
       "active": [
         "actief"
+      ],
+      "Active": [
+        "Actief"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
@@ -7147,6 +7153,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Vraag de beheerder van uw organisatie om Gateways in te stellen."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
       ],
       "Attention required": [
         "Aandacht vereist"
@@ -7385,11 +7394,11 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "Dedicated servers": [
-        "Dedicated servers"
-      ],
       "dedicated servers": [
         "toegewijde servers"
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -7663,9 +7672,6 @@
       "for choosing ${ product }": [
         "voor het kiezen van ${ product }"
       ],
-      "For members of organizations using single sign-on (SAML SSO)": [
-        "Voor leden van organisaties die een enkel bord gebruiken (SAML SSO)"
-      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Voor gebruikers die overschakelen naar ${ MAIL_APP_NAME } vanuit een andere e-maildienst, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om te zorgen voor een soepele overgang."
       ],
@@ -7914,6 +7920,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Het duurt 10 dagen om het land van een server te veranderen, dus zorg ervoor dat uw selectie correct is."
       ],
+      "It's better to have:": [
+        "Het is beter om:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Item automatisch gevuld in ${ vaultLink }"
       ],
@@ -8151,6 +8160,9 @@
       "No addresses exist": [
         "Adressen bestaan niet"
       ],
+      "No common passwords": [
+        "Geen bekende wachtwoorden"
+      ],
       "No credit card required": [
         "Green kredietkaart vereist"
       ],
@@ -8181,6 +8193,9 @@
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Geen voorspelbare reeksen (1234, aaa)"
+      ],
       "No results found": [
         "Geen resultaten gevonden"
       ],
@@ -8195,6 +8210,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
+      ],
+      "Numbers": [
+        "Nummers"
       ],
       "of": [
         "van"
@@ -8713,6 +8731,9 @@
       "Switch to": [
         "Wissel naar"
       ],
+      "Symbols (#$&)": [
+        "Symbolen (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchroniseer en beheer bestanden met de ${ DRIVE_APP_NAME } app. Maak en deel documenten in ${ DOCS_APP_NAME } en sla ze veilig op. Alles op ${ ios }, ${ android } en ${ desktop }."
       ],
@@ -9090,6 +9111,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Geüploadde file is geen geldige geheime sleutel. Controleer en probeer opnieuw."
+      ],
+      "Uppercase and lowercase letters": [
+        "Hoofdletters en kleine letters"
       ],
       "URL link": [
         "Website (URL)"
@@ -10565,6 +10589,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
       "Entity ID": [
         "Entiteit ID"
       ],
@@ -10768,6 +10795,9 @@
       ],
       "Move to Inbox": [
         "Verplaats naar inbox"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten"
       ],
       "Name": [
         "Naam"
@@ -11058,6 +11088,9 @@
       "Strong": [
         "Sterk"
       ],
+      "Strong password": [
+        "Sterk wachtwoord"
+      ],
       "Subscription options": [
         "Abonnementsopties"
       ],
@@ -11151,11 +11184,17 @@
       "Vulnerable": [
         "Kwetsbaar"
       ],
+      "Vulnerable password": [
+        "Kwetsbaar wachtwoord"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "We vinden het jammer u te zien gaan. Leg uit waarom u vertrekt om ons te helpen te verbeteren."
       ],
       "Weak": [
         "Zwak"
+      ],
+      "Weak password": [
+        "Zwak wachtwoord"
       ],
       "Week start": [
         "Eerste dag van de week"
@@ -11396,6 +11435,9 @@
       ],
       "Encryption and keys": [
         "Versleuteling en sleutels"
+      ],
+      "Forgot email?": [
+        "E-mail vergeten?"
       ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
@@ -14333,6 +14375,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "U bent administrateur geworden van de organisatie **${ organizationName }** door"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "U moet alle groepen verwijderen voordat u een nieuwe organisatiesleutel kunt genereren"
+      ],
       "You must privatize all users before generating a new organization key": [
         "U moet eerst alle gebruikers privatiseren voordat u een nieuwe organisatiesleutel genereert"
       ],
@@ -16294,6 +16339,9 @@
       "User details:": [
         "Gebruikerdetails:"
       ],
+      "Welcome": [
+        "Welkom"
+      ],
       "Yes, it was me": [
         "Ja, dat was ik"
       ],
@@ -16609,47 +16657,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -16938,6 +16945,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -18842,6 +18890,29 @@
         "Vandaag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
+      ],
+      "Group membership paused": [
+        "Groepslidmaatschap gepauzeerd"
+      ],
+      "Sending member invitation": [
+        "Uitnodiging aan het versturen"
+      ],
+      "User declined invitation": [
+        "Gebruiker weigerde uitnodiging"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Wachten tot gebruiker de uitnodiging accepteert"
+      ]
+    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME }-gebruikers zullen deze sleutel standaard gebruiken voor het verzenden"
@@ -19055,29 +19126,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Uw externe account heeft mogelijk 24-uurs bandbreedtelimiet bereikt. ${ BRAND_NAME } zal proberen de import zo snel mogelijk te hervatten."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
-      ],
-      "Group membership paused": [
-        "Groepslidmaatschap gepauzeerd"
-      ],
-      "Sending member invitation": [
-        "Uitnodiging aan het versturen"
-      ],
-      "User declined invitation": [
-        "Gebruiker weigerde uitnodiging"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Wachten tot gebruiker de uitnodiging accepteert"
       ]
     },
     "Tooltip automatically attach public key": {
