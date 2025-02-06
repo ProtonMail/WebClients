@@ -313,6 +313,9 @@
       "Copy link": [
         "ბმულის კოპირება"
       ],
+      "Copy password": [
+        "პაროლის კოპირება"
+      ],
       "Copy version number to clipboard": [
         "ვერსიის ნომრის კოპირება ბუფერში"
       ],
@@ -339,6 +342,9 @@
       ],
       "Create link": [
         "ბმულის შექმნა"
+      ],
+      "Create new password": [
+        "ახალი პაროლის შექმნა"
       ],
       "Create new policy": [
         "ახალი პოლიტიკის შექმნა"
@@ -7121,6 +7127,9 @@
       "Ask your organization admin to setup Gateways.": [
         "სთხოვეთ ორგანიზაციის ადმინისტრატორს, რაუტერები დააყენოს."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "სულ ცოტა ${ BETTER_PASSWORD_LENGTH } სიმბოლო"
+      ],
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
@@ -7884,6 +7893,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "სერვერის ქვეყნის შეცვლას 10 დღემდე სჭირდება, ასე რომ, დარწმუნდით, რომ თქვენი არჩევანი სწორია."
       ],
+      "It's better to have:": [
+        "უკეთესია, გქონდეთ:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "ელემენტი ავტოშევსებულია ${ vaultLink }-ში"
       ],
@@ -8121,6 +8133,9 @@
       "No addresses exist": [
         "მისამართები ნაპოვნი არაა"
       ],
+      "No common passwords": [
+        "საერთო პაროლების გარეშე"
+      ],
       "No credit card required": [
         "საკრედიტო ბარათი საჭირო არაა"
       ],
@@ -8151,6 +8166,9 @@
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "გამოცნობადი მიმდევრობების გარეშე (1234, aaa)"
+      ],
       "No results found": [
         "შედეგების გარეშე"
       ],
@@ -8165,6 +8183,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
+      ],
+      "Numbers": [
+        "რიცხვები"
       ],
       "of": [
         "-დან"
@@ -8683,6 +8704,9 @@
       "Switch to": [
         "გადართვა"
       ],
+      "Symbols (#$&)": [
+        "სიმბოლოები (#$&)"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
@@ -9057,6 +9081,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "ატვირთული ფაილი სწორ პირად გასაღებს არ წარმოადგენს. გადაამოწმეთ და თავიდან სცადეთ."
+      ],
+      "Uppercase and lowercase letters": [
+        "დიდი და პატარა ასოები"
       ],
       "URL link": [
         "URL ბმული"
@@ -10521,6 +10548,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "შეიყვანეთ იმ გასაღების პაროლი, რომლის ანაბეჭდია: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
+      ],
       "Entity ID": [
         "ობიექტის იდენტიფიკატორი"
       ],
@@ -10724,6 +10754,9 @@
       ],
       "Move to Inbox": [
         "შემომავლებში გადატანა"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
       ],
       "Name": [
         "სახელი"
@@ -11014,6 +11047,9 @@
       "Strong": [
         "ძლიერი"
       ],
+      "Strong password": [
+        "ძლიერი პაროლი"
+      ],
       "Subscription options": [
         "გამოწერის პარამეტრები"
       ],
@@ -11107,11 +11143,17 @@
       "Vulnerable": [
         "მოწყვლადი"
       ],
+      "Vulnerable password": [
+        "მოწყვლადი პაროლი"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "ვწუხვართ, რომ მიდიხართ. აგვიხსენით, რატომ გვტოვებთ, რომ უკეთესები გავხდეთ."
       ],
       "Weak": [
         "სუსტი"
+      ],
+      "Weak password": [
+        "სუსტი პაროლი"
       ],
       "Week start": [
         "კვირის დასაწყისი"
@@ -11352,6 +11394,9 @@
       ],
       "Encryption and keys": [
         "შიფრაცია და გასაღებები"
+      ],
+      "Forgot email?": [
+        "დაგავიწყდათ ელფოსტა?"
       ],
       "Forgot password?": [
         "დაგავიწყდათ პაროლი?"
@@ -13941,9 +13986,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "მაგრამ, შეგიძლიათ, განბლოკოთ **${ unlockPlanTitle }** და ყველა ფასიანი ${ BRAND_NAME }-ის სერვისი **${ upsellPlanTitle }** ტარიფზე გადასვლით."
       ],
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "გაგრძელების შემთხვევაში თქვენ ეთანხმებით ჩვენს ${ termsAndConditionsLink }"
-      ],
       "Creating your account": [
         "თქვენი ანგარიშის შექმნა"
       ],
@@ -14288,6 +14330,9 @@
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
         "მოგენიჭათ ადმინისტრატორის უფლებები ორგანიზაციაზე **${ organizationName }** შემდეგ მომხმარებლის მიერ:"
+      ],
+      "You must delete all groups before generating a new organization key": [
+        "ახალი ორგანიზაციის გასაღების გენერაციამდე ყველა ჯგუფი უნდა წაშალოთ"
       ],
       "You must privatize all users before generating a new organization key": [
         "ორგანიზაციის ახალი გასაღების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
@@ -16240,6 +16285,9 @@
       ],
       "User details:": [
         "მომხმარებლის დეტალები:"
+      ],
+      "Welcome": [
+        "მოგესალმებით"
       ],
       "Yes, it was me": [
         "დიახ, მე ვიყავი"
@@ -19531,52 +19579,18 @@
         "${ n } ანგარიში თითოეული საფულისთვის",
         "${ n } ანგარიში თითოეული საფულისთვის"
       ],
-      "${ n } email address": [
-        "ელფოსტის ${ n } მისამართი",
-        "${ n } ელფოსტის მისამართი"
-      ],
       "${ n } wallet": [
         "${ n } საფულე",
         "${ n } საფულე"
       ],
-      "**Get ${ plan }** for early access to ${ appName }!": [
-        "**მიიღეთ ${ plan }** ${ appName }-სთან ადრეული წვდომისთვის!"
-      ],
       "A safer way to hold your Bitcoin": [
         "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
-      ],
-      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "როგორც მოწვეული მომხმარებელი, დარეგისტრირდით უფასო ${ BRAND_NAME }-ის ანგარიშზე, რომ მიიროთ ექსკლუზიური წვდომა ${ appName }-სთან"
       ],
       "Bitcoin via Email": [
         "Bitcoin ელფოსტით"
       ],
-      "Create ${ BRAND_NAME } Account now": [
-        "შექმენით ${ BRAND_NAME }-ის ანგარიში ახლავე"
-      ],
-      "Early access to new features": [
-        "ადრეული წვდომა ახალ ფუნქციებთან"
-      ],
-      "Early access waitlist": [
-        "ადრეული წვდომის მოლოდინის სია"
-      ],
       "Exclusive early access to ${ appName }.": [
         "ექსკლუზიური ადრეული წვდომა პროგრამასთან ${ appName }."
-      ],
-      "Get started": [
-        "დაიწყეთ"
-      ],
-      "Invite Friends": [
-        "მეგობრების მოწვევა"
-      ],
-      "Join ${ appName } early access!": [
-        "მიუერთდით ${ appName }-ის ადრეულ წვდომას!"
-      ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "მოირგეთ უფასო ${ BRAND_NAME }-ის ანგარიში, რომ თქვენი ადგილი უსაფრთხო გახადოთ. რაც ადრე შეხვალთ, მით მალე მიიღებთ წვდომას ${ appName }-ის აპებთან. რეგისტრაციის შემდეგ შეგიძლიათ ტარიფი ჩვენს ექსკლუზიურ Visionary გეგმაზე ასწიოთ, რომ გამოტოვოთ მოლოდინის რიგში ყოფნა და ${ appName }-ის გამოყენება მაშინვე დაიწყოთ."
-      ],
-      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "Visionary-ის მომხმარებლებს და მათ მოწვეულ მეგობრებს შეუძლიათ, სხვებს გაუზიარონ ადრეული წვდომა. მოიწვიეთ მეგობრები, რომ ${ appName } უფასოდ გამოსცადონ!"
       ],
       "You're Invited.": [
         "თქვენ მოწვეული ბრძანდებით."

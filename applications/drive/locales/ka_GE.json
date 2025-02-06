@@ -5206,6 +5206,15 @@
       "This month": [
         "ამ თვეში"
       ],
+      "This will permanently delete the file you uploaded.": [
+        "ეს თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "ეს თქვენს ატვირთულ საქაღალდეს სამუდამოდ წაშლის."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "ეს სამუდამოდ წაშლის თქვენს მიერ ატვირთულ ელემენტებს."
+      ],
       "This will replace the existing file with the folder": [
         "ეს არსებულ ფაილს საქაღალდით ჩაანაცვლებს"
       ],
@@ -7913,6 +7922,10 @@
       "Share invitation declined": [
         "გაზიარების მოსაწვევი უარყოფილია"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "უკაცრავად, საქაღალდის წაშლა შეუძლებელია, რადგან ის ცარიელი არაა.",
+        "უკაცრავად, საქაღალდეების წაშლა შეუძლებელია, რადგან ისინი ცარიელი არაა."
+      ],
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
       ],
@@ -9811,6 +9824,35 @@
         "vCard-ის ველი"
       ]
     },
+    "Tag": {
+      "Bursts": [
+        "მიმდევრობები"
+      ],
+      "Favorites": [
+        "რჩეულები"
+      ],
+      "Live Photos": [
+        "ცოცხალი სურათები"
+      ],
+      "Panoramas": [
+        "პანორამა"
+      ],
+      "Portraits": [
+        "პორტრეტები"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "ეკრანის ანაბეჭდები"
+      ],
+      "Selfies": [
+        "სელფები"
+      ],
+      "Videos": [
+        "ვიდეოები"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } საათი",
@@ -10673,10 +10715,6 @@
       "${ n } account per wallet": [
         "${ n } ანგარიში თითოეული საფულისთვის",
         "${ n } ანგარიში თითოეული საფულისთვის"
-      ],
-      "${ n } email address": [
-        "ელფოსტის ${ n } მისამართი",
-        "${ n } ელფოსტის მისამართი"
       ],
       "${ n } wallet": [
         "${ n } საფულე",

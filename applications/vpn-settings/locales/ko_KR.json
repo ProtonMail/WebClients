@@ -7917,6 +7917,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "다음 사용자로 부터 조직 **${ organizationName }**의 관리자직이 부여되었습니다:"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "새로운 조직 키를 생성하기 전에 모든 그룹을 삭제해야 합니다."
+      ],
       "You must privatize all users before generating a new organization key": [
         "새 조직 키를 생성하기 전에 모든 계정을 민영화해야합니다"
       ],
@@ -11381,9 +11384,6 @@
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "계정 당 ${ n }개 지갑"
-      ],
-      "${ n } email address": [
-        "이메일 주소 ${ n }개"
       ],
       "${ n } wallet": [
         "${ n }개 지갑"

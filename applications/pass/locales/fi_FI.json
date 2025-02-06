@@ -46,6 +46,9 @@
       "Add domain": [
         "Lisää verkkotunnus"
       ],
+      "Add forwarding mailbox": [
+        "Lisää välittävä postilaatikko"
+      ],
       "Add mailbox": [
         "Lisää postilaatikko"
       ],
@@ -639,152 +642,14 @@
       "View older history": [
         "Näytä aiempi historia"
       ],
+      "With other ${ BRAND_NAME } users": [
+        "Muiden ${ BRAND_NAME }-käyttäjien kanssa"
+      ],
       "Write us on X/Twitter": [
         "Kirjoita meille X:ssä/Twitterissä"
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
-      ]
-    },
-    "bf2023: Deal details": {
-      "1 user": [
-        "1 käyttäjä"
-      ],
-      "3 TB": [
-        "3 Tt"
-      ],
-      "6 users": [
-        "6 käyttäjää"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitetta, 10 hide-my-email-aliasta kalenterijaon ja paljon muuta."
-      ]
-    },
-    "BF2024: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } tallennustilaa"
-      ],
-      "1 TB total": [
-        "1 Tt yhteensä"
-      ],
-      "1 user": [
-        "1 käyttäjä"
-      ],
-      "1 user account": [
-        "1 käyttäjätili"
-      ],
-      "10 email addresses": [
-        "10 sähköpostiosoitetta"
-      ],
-      "2 users": [
-        "2 käyttäjää"
-      ],
-      "3 TB": [
-        "3 Tt"
-      ],
-      "6 user accounts": [
-        "Kuusi käyttäjätiliä"
-      ],
-      "6 users": [
-        "6 käyttäjää"
-      ],
-      "8500+ servers across 110+ countries": [
-        "8500+ palvelinta 110+ maassa"
-      ],
-      "Ad-blocker and malware protection": [
-        "Mainos- ja haittaohjelmaesto"
-      ],
-      "Admin panel to manage your family": [
-        "Ylläpitopaneeli perheesi hallintaan"
-      ],
-      "Advanced account protection": [
-        "Edistynyt tilin suojaus"
-      ],
-      "Easily add or remove users": [
-        "Lisää tai poista käyttäjiä helposti"
-      ],
-      "High speed streaming": [
-        "Nopea suoratoisto"
-      ],
-      "Integrated 2FA authenticator": [
-        "Sisäänrakennettu kaksivaiheinen todentaja"
-      ],
-      "One-time payment, lifetime deal": [
-        "Kertamaksu, elinikäinen tarjous"
-      ],
-      "Online document editor": [
-        "Selaimella käytettävä dokumenttieditori"
-      ],
-      "Password health alerts": [
-        "Salasanaterveyshälytykset"
-      ],
-      "Private photo backup": [
-        "Yksityinen kuvien varmuuskopiointi"
-      ],
-      "Protect 10 devices at a time": [
-        "Suojaa samanaikaisesti 10 laitetta"
-      ],
-      "Secure file storage & sharing": [
-        "Suojattu tiedoston tallennus ja jako"
-      ],
-      "Secure vault and link sharing": [
-        "Turvallinen holvi- ja linkkijako"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Rajattomasti kansioita, tunnisteita ja suodattimia"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Rajattomasti Hide-my-email-aliaksia"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Rajattomasti kirjautumistietoja, muistiinpanoja, maksukortteja"
-      ],
-      "Version history": [
-        "Versiohistoria"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "${ amount } kertaveloitus"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää yli 8500 palvelinta yli 110 maassa, 10 laitetta, nopean suoratoiston, haittasisällön- ja mainoseston sekä paljon muuta."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, rajattomasti Hide-my-email-aliaksia ja paljon muuta.",
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää mm. 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille ja rajattomasti Hide-my-email-aliaksia."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
       ]
     },
     "Browser": {
@@ -878,14 +743,6 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Henkilökohtaisia tietojasi on vuotanut ulkopuoliseen palveluun kohdistuneen tietomurron yhteydessä."
-      ]
-    },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Laajennettu versiohistoria"
-      ],
-      "Priority support": [
-        "Ensisijainen tuki"
       ]
     },
     "Email": {
@@ -1290,32 +1147,6 @@
       ],
       "Something went wrong": [
         "Jotain meni pieleen"
-      ]
-    },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "Yhteensä 3 Tt tallennustilaa"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Tallennustila jaetaan perheenjäsenille ja se kattaa ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n."
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "6 käyttäjälle"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää mm. yli 2950 palvelinta yli 65 maassa, 10 samanaikaista laiteyhteyttä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön- ja mainoseston."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 90 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
       ]
     },
     "Feature": {
@@ -3044,6 +2875,9 @@
       "Security code": [
         "Turvakoodi"
       ],
+      "See member and permission overview": [
+        "Näytä jäsenten ja käyttöoikeuksien yleiskatsaus"
+      ],
       "Select a domain": [
         "Valitse verkkotunnus"
       ],
@@ -3064,6 +2898,9 @@
       ],
       "Share": [
         "Jaa"
+      ],
+      "Shared": [
+        "Jaettu"
       ],
       "Shared by me": [
         "Minun jakamani"
@@ -3178,6 +3015,9 @@
       ],
       "Used in": [
         "Käyttökohteet"
+      ],
+      "Useful for permanent sharing": [
+        "Hyödyllinen pysyvään jakamiseen"
       ],
       "Username": [
         "Käyttäjätunnus"
@@ -3422,115 +3262,6 @@
         "Sulje"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } kuukausi ILMAISEKSI",
-        "${ n } kuukautta ILMAISEKSI"
-      ]
-    },
-    "specialoffer: Deal details": {
-      "1 user": [
-        "1 käyttäjä"
-      ],
-      "3 TB": [
-        "3 Tt"
-      ],
-      "6 users": [
-        "6 käyttäjää"
-      ],
-      "All paid Mail and Calendar features": [
-        "Kaikki maksulliset Mail- ja Calendar-ominaisuudet"
-      ],
-      "High speed VPN": [
-        "Nopea VPN"
-      ],
-      "Premium early access": [
-        "Premium-ennakkokäyttö"
-      ],
-      "Secure cloud storage": [
-        "Suojattu pilvitallennustila"
-      ],
-      "Support online privacy": [
-        "Tue verkkoyksityisyyttä"
-      ]
-    },
-    "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } kuukausi",
-        "${ n } kuukautta"
-      ],
-      "1 year": [
-        "1 vuosi"
-      ],
-      "15 months": [
-        "15 kuukautta"
-      ],
-      "2 years": [
-        "Kaksi vuotta"
-      ],
-      "30 months": [
-        "30 kuukautta"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Laskutetaan ${ amount } 1 kuukaudelta"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Laskutetaan ${ amount } 12 kuukaudelta"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Laskutetaan ${ amount } 15 kuukaudelta"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Laskutetaan ${ amount } 24 kuukaudelta"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Laskutetaan ${ amount } 30 kuukaudelta"
-      ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Uudistuu 1 vuoden kuluttua alennetulla ${ discountedAmount } hinnalla normaalin ${ regularAmount } sijaan (${ discount } % alennus)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Uudistuu 2 vuoden kuluttua alennetulla ${ discountedAmount } hinnalla normaalin ${ regularAmount } sijaan (${ discount } % alennus)"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Normaalihinta 1 kuukaudelta on ${ amount }"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Normaalihinta 12 kuukaudelta on ${ amount }"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Normaalihinta 15 kuukaudelta on ${ amount }"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Normaalihinta 24 kuukaudelta on ${ amount }"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Normaalihinta 30 kuukaudelta on ${ amount }"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää mm. 1700 palvelinta yli 60 maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä/käyttäjä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön- ja mainosten eston."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää mm. 1700 palvelinta yli 60 maassa, korkeimman VPN-nopeuden, 10 VPN-yhteyttä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön ja mainosten eston."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Kaikki premium-palvelumme parhaimmillaan: 100 sähköpostiosoitetta, tuki 10 omalle verkkotunnukselle, rajattomasti Hide-my-email-aliaksia, kalenterijako, salattu pilvitallennus tiedostojen jaolla sekä paljon muuta."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää mm. tuen 3 omalle sähköpostiverkkotunnukselle, 15 sähköpostiosoittetta, rajattomasti Hide-my-email-aliaksia sekä kalenterijaon."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Täydellinen perheille tai pienille ryhmille, joilla jokaisella voi olla oma postilaatikko ja alias. Vaatii oman verkkotunnuksen."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Saat ilmaiseksi maksulliset versiot kaikista uusista tietosuojapalveluista, jotka julkaisemme tulevaisuudessa, sekä pääsyn kaikkiin tuleviin ominaisuuksiin ja tuotteisiin."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
-      ]
-    },
     "sso": {
       "Approve or deny it now": [
         "Hyväksy tai hylkää se nyt"
@@ -3586,7 +3317,7 @@
         "Hylätty"
       ],
       "Signed out": [
-        "Kirjattu ulos"
+        "Kirjauduttu ulos"
       ],
       "Unknown": [
         "Tuntematon"
@@ -3649,20 +3380,6 @@
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Vahvistussähköposti lähetettiin. Tarkista saapuneet vahvistaaksesi postilaatikkosi"
-      ]
-    },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Luo turvallisia kirjautumistietoja kaikilla laitteillasi. Sisältää rajattomasti aliaksia, 20 holvia, sisäänrakennetun 2FA:n, luottokorttitietojen automaattisen täytön ja paljon muuta."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää mm. yli 2950 palvelinta yli 65 maassa, 10 samanaikaista laiteyhteyttä, maailmanlaajuisen suoratoistotuen, sekä haittasisällön- ja mainoseston."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. versiohistorian ja salatun tiedostojen jakamisen."
       ]
     },
     "Theme": {
@@ -3788,6 +3505,9 @@
       ],
       "Details": [
         "Lisätiedot"
+      ],
+      "Did you know?": [
+        "Tiesitkö?"
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
@@ -4136,6 +3856,9 @@
       ],
       "A description of the problem is required": [
         "Ongelman kuvaus vaaditaan"
+      ],
+      "Addresses already invited.": [
+        "Osoitteet on jo kutsuttu."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Roskakorissa olevat aliakset jatkavat sähköpostien välitystä."
