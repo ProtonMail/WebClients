@@ -9159,6 +9159,115 @@
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "%${ salePercentage } indirim"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "Siz ve 1 kişiye %${ salePercentage } indirim"
+      ],
+      "10 email addresses for you": [
+        "Sizin için 10 ek e-posta adresi"
+      ],
+      "10,000+ servers in 110+ countries": [
+        "10.000+ sunucu, 110+ ülkede"
+      ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "200 GB storage": [
+        "200 GB depolama alanı"
+      ],
+      "500 GB total storage": [
+        "500 GB toplam depolama alanı"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Netflix, Disney+, Prime Video ve diğer internet yayın akışı içeriklerine herhangi bir yerden erişin."
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Tüm Mail, VPN, Pass ve Drive ücretli özellikleri"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "İndirimler, standart aylık fiyatlandırmaya dayanmaktadır. Fatura dönemi sonunda, aboneliğiniz standart yıllık ücrete göre yenilenecektir."
+      ],
+      "Double the love, half the price": [
+        "Kalpler bir, fiyatlar yarım"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Bir yıllık ${ dealName } aboneliğini %${ salePercentage } indirimle edinin — aynı fırsatı bir arkadaşınızla paylaşmanız için bir hediye kodu da alın"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "High-speed streaming": [
+        "Yüksek hızlı yayın akışı izleme"
+      ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Üst düzey hesap güvenliği ve uzman desteği sunar. ${ DARK_WEB_MONITORING_NAME } internetin gizli bölgelerini tarayarak yasadışı veri piyasalarına düşmüş ${ MAIL_APP_NAME } e-posta adreslerini tespit eder. Bir ihlal tespit edilirse, hesabınızı korumak için gerekli adımları içeren bir Güvenlik Merkezi uyarısı alacaksınız."
+      ],
+      "Protect 10 devices at a time": [
+        "Aynı anda 10 aygıtı koruyun"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükle"
+      ],
+      "Secure file storage & sharing": [
+        "Güvenli dosya depolama alanı ve paylaşımı"
+      ],
+      "Secure vault sharing": [
+        "Güvenli kasa paylaşımı"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adları"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ],
+      "Valentine's deal:": [
+        "Sevgililer günü fırsatı:"
+      ]
+    },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Sevgililer günü fırsatı"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "/ month": [
+        "/ ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "15 months": [
+        "15 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
+      "30 months": [
+        "30 ay"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal } için"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
@@ -9237,10 +9346,6 @@
       "${ n } account per wallet": [
         "Cüzdan başına ${ n } hesap",
         "Cüzdan başına ${ n } hesap"
-      ],
-      "${ n } email address": [
-        "${ n } e-posta adresi",
-        "${ n } e-posta adresi"
       ],
       "${ n } wallet": [
         "${ n } cüzdan",
