@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MAX_BATCH_ADDRESS_REQUEST, MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { MAX_BATCH_ADDRESS_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
@@ -102,7 +102,7 @@ export const createUserInvites = async (
     })();
 
     return Promise.all(
-        chunk(users, MAX_BATCH_PER_REQUEST).map(
+        chunk(users, MAX_BATCH_ADDRESS_REQUEST).map(
             async (batch): Promise<InviteBatchResult> =>
                 api({
                     url: `pass/v1/share/${shareId}/invite/batch`,
@@ -141,7 +141,7 @@ export const createNewUserInvites = async (
     b2b: boolean
 ): Promise<InviteBatchResult[]> =>
     Promise.all(
-        chunk(newUsers, MAX_BATCH_PER_REQUEST).map(
+        chunk(newUsers, MAX_BATCH_ADDRESS_REQUEST).map(
             async (batch): Promise<InviteBatchResult> =>
                 api({
                     url: `pass/v1/share/${shareId}/invite/new_user/batch`,
