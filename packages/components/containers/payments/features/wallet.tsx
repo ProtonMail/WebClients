@@ -19,7 +19,7 @@ export const UNLIMITED_WALLET_EMAIL = 15;
 
 export const VISIONARY_WALLETS = 50;
 export const VISIONARY_WALLET_ACCOUNTS = 50;
-export const VISIONARY_WALLET_EMAIL = 90;
+export const VISIONARY_WALLET_EMAIL = 100;
 
 export const getWalletsText = (n: number) => {
     return c('wallet_signup_2024: Info').ngettext(msgid`${n} wallet`, `${n} wallets`, n);
@@ -109,6 +109,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getWallets(FREE_WALLETS),
+                [PLANS.VISIONARY]: getWallets(VISIONARY_WALLETS),
             },
         },
         {
@@ -124,7 +125,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.PASS_FAMILY]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.FAMILY]: getWalletAccounts(UNLIMITED_WALLET_ACCOUNTS),
-                [PLANS.DUO]: getWallets(UNLIMITED_WALLET_ACCOUNTS), // TODO validate with product
+                [PLANS.DUO]: getWalletAccounts(UNLIMITED_WALLET_ACCOUNTS), // TODO validate with product
                 [PLANS.MAIL_PRO]: null,
                 [PLANS.MAIL_BUSINESS]: null,
                 [PLANS.BUNDLE_PRO]: null,
@@ -134,6 +135,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
+                [PLANS.VISIONARY]: getWalletAccounts(VISIONARY_WALLET_ACCOUNTS),
             },
         },
         {
@@ -149,7 +151,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.PASS_FAMILY]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.FAMILY]: getWalletEmailAddresses(UNLIMITED_WALLET_EMAIL),
-                [PLANS.DUO]: getWallets(UNLIMITED_WALLET_EMAIL), // TODO validate with product
+                [PLANS.DUO]: getWalletEmailAddresses(UNLIMITED_WALLET_EMAIL), // TODO validate with product
                 [PLANS.MAIL_PRO]: null,
                 [PLANS.MAIL_BUSINESS]: null,
                 [PLANS.BUNDLE_PRO]: null,
@@ -159,6 +161,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
+                [PLANS.VISIONARY]: getWalletEmailAddresses(VISIONARY_WALLET_EMAIL),
             },
         },
         {
@@ -184,6 +187,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getBitcoinViaEmail(),
+                [PLANS.VISIONARY]: getBitcoinViaEmail(),
             },
         },
     ];
