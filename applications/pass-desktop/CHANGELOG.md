@@ -1,3 +1,12 @@
+### Version 1.29.2
+
+- Reduce invite creation batch size
+- Add ability to redeem lifetime coupon from settings
+- Improved feedback UI (moved to settings)
+- Disable auto password lock creation for SSO users
+- Fix text ellipsis regressions introduced in 1.29.0
+- Fix share access management for free users from item's view
+
 ### Version 1.29.1
 
 - Fix address validator for organization members
