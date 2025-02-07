@@ -104,7 +104,7 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
 
                     {form.values.provider === ImportProvider.CSV && (
                         <Card className="mb-4 text-sm" type="primary">
-                            {c('Info').t`Follow those steps to import your data with a generic CSV :`}
+                            {c('Info').t`Follow those steps to import your data with a generic CSV:`}
                             <ol className="mt-2 mb-0">
                                 <li>
                                     <Href
