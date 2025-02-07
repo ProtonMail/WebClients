@@ -146,6 +146,20 @@
 			}
 		}
 	}
+
+	&--one-plan {
+		@include media('>=large') {
+			// The variable here for the case if only one plan is displayed. In this case the only plan will be simply centered with reduced width
+			grid-template-columns: 0.25fr repeat(var(--plan-selection-number), 1fr) 0.25fr;
+
+			.plan-selection-plan:first-child {
+				grid-column-start: 2;
+			}
+		}
+		@include media('<=medium') {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
 }
 
 .subscriptionCheckout {
