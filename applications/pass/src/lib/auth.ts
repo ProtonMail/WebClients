@@ -283,13 +283,6 @@ export const createAuthService = ({
         onForkConsumeStart: () => auth.config.onLoginStart?.(),
 
         onForkConsumeComplete: async (session, { state }) => {
-            if (session.sso) {
-                /** If account provides us offline components for a SSO user,
-                 * remove them to disable backup password locking */
-                delete session.offlineConfig;
-                delete session.offlineKD;
-            }
-
             const { offlineConfig, offlineKD, UserID, LocalID } = session;
             history.replace({ hash: '' }); /** removes selector from hash */
 
@@ -321,11 +314,14 @@ export const createAuthService = ({
              * offline components when consuming the fork. Disabled for SSO users
              * as this would require using the backup password (bad UX) */
             if (offlineConfig && offlineKD) {
-                logger.info('[AuthServiceProvider] Automatically creating password lock');
-                session.lockMode = LockMode.PASSWORD;
-                session.lockTTL = DEFAULT_LOCK_TTL;
                 session.offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
-                authStore.setLockLastExtendTime(getEpoch());
+
+                if (!session.sso) {
+                    logger.info('[AuthServiceProvider] Automatically creating password lock');
+                    session.lockMode = LockMode.PASSWORD;
+                    session.lockTTL = DEFAULT_LOCK_TTL;
+                    authStore.setLockLastExtendTime(getEpoch());
+                }
             }
 
             authStore.setSession(session);
