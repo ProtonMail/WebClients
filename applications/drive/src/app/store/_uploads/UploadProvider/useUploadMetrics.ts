@@ -12,6 +12,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
+import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
 import type { MetricUserPlan, UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
@@ -61,7 +62,7 @@ export default function useUploadMetrics(plan: MetricUserPlan, metricsModule = m
     };
 
     const uploadSucceeded = (shareId: string, numberOfErrors = 0) => {
-        const shareType = getShareIdType(shareId);
+        const shareType = getIsPublicContext() ? 'shared_public' : getShareIdType(shareId);
         const retry = numberOfErrors > 0;
 
         metricsModule.drive_upload_success_rate_total.increment({
@@ -73,7 +74,7 @@ export default function useUploadMetrics(plan: MetricUserPlan, metricsModule = m
     };
 
     const uploadFailed = (failedUploadMetadata: FailedUploadMetadata, error: any) => {
-        const shareType = getShareIdType(failedUploadMetadata.shareId);
+        const shareType = getIsPublicContext() ? 'shared_public' : getShareIdType(failedUploadMetadata.shareId);
         const errorCategory = getErrorCategory(error);
         const retry = failedUploadMetadata.numberOfErrors > 1;
 
