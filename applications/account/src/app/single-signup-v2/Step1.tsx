@@ -40,13 +40,7 @@ import {
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import {
-    APPS,
-    BRAND_NAME,
-    DRIVE_APP_NAME,
-    PASS_APP_NAME,
-    SSO_PATHS,
-} from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import {
     getPlanFromPlanIDs,
@@ -613,12 +607,6 @@ const Step1 = ({
         },
     };
 
-    const boldDiscountPercent = (
-        <b key="bold-discount-percent">{
-            // full sentence: Your 10% discount to Proton Pass has been applied
-            c('Info').t`${checkout.discountPercent}% discount`
-        }</b>
-    );
     const boldPlanTitle = <b key="bold-plan-title">{selectedPlan.Title}</b>;
 
     const planSelectorHeaderMiddleText = useMemo(() => {
@@ -658,6 +646,147 @@ const Step1 = ({
         return undefined;
     }, [isPorkbunPayment, selectedPlan.Name, model.plansMap, model.subscriptionDataCycleMapping, options.cycle]);
 
+    const offerBanner = (() => {
+        if (model.loadingDependencies) {
+            return <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4" />;
+        }
+
+        if (isPorkbunPayment) {
+            // Don't show any offers for Porkbun
+            return;
+        }
+
+        const wrap = (iconName: IconName | null, textLaunchOffer: ReactNode) => {
+            return (
+                <div className="signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4">
+                    {iconName && <Icon name={iconName} size={3.5} className="shrink-0 mt-1" />}
+                    <span className="ml-2 flex-1">{textLaunchOffer}</span>
+                </div>
+            );
+        };
+
+        if (signupParameters.mode === SignupMode.PassSimpleLogin) {
+            return (
+                <div className="text-center text-lg mt-2 max-w-custom" style={{ '--max-w-custom': '40rem' }}>
+                    {c('Info')
+                        .t`${PASS_APP_NAME} is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${BRAND_NAME}.`}
+                </div>
+            );
+        }
+
+        if (signupParameters.invite?.type === 'pass') {
+            const inviterEmailJSX = <strong key="invite">{signupParameters.invite.data.inviter}</strong>;
+            return wrap(
+                'user',
+                <>
+                    <span className="block">
+                        {c('Info').jt`${inviterEmailJSX} wants to share data with you in ${PASS_APP_NAME}`}
+                    </span>
+                    {c('Info').t`Get access by creating a ${BRAND_NAME} account and accepting the invitation.`}
+                </>
+            );
+        }
+
+        if (
+            selectedPlan.Name === PLANS.VISIONARY &&
+            model.upsell.mode !== UpsellTypes.UPSELL &&
+            mode !== SignupMode.Invite
+        ) {
+            if (app === APPS.PROTONWALLET) {
+                return;
+            }
+
+            const plan = `${BRAND_NAME} Visionary`;
+            const text = getBoldFormattedText(c('mail_signup_2023: Info').t`**Get ${plan}** for a limited time!`);
+            return wrap('hourglass', text);
+        }
+
+        const mailOfferPlans = [PLANS.BUNDLE_PRO_2024, PLANS.MAIL_BUSINESS, PLANS.MAIL_PRO];
+
+        const businessYearlyCycle = model.subscriptionDataCycleMapping[selectedPlan.Name as PLANS]?.[CYCLE.YEARLY];
+        if (mailOfferPlans.includes(selectedPlan.Name as PLANS) && !!businessYearlyCycle?.checkResult.Coupon?.Code) {
+            const textLaunchOffer = getBoldFormattedText(
+                c('mail_signup_2024: Info').t`Limited time offer: **Get up to 35% off** yearly plans`
+            );
+            return wrap('hourglass', textLaunchOffer);
+        }
+
+        const has2024OfferCoupon = getHas2024OfferCoupon(options.checkResult.Coupon?.Code);
+
+        // Using real coupon to show the correct discount percentage
+        if (has2024OfferCoupon) {
+            const discount = checkout.discountPercent;
+            return wrap(
+                'bag-percent',
+                c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday discount has been applied`
+            );
+        }
+
+        if (selectedPlan.Name === PLANS.DRIVE && options.checkResult.Coupon?.Code === COUPON_CODES.TRYDRIVEPLUS2024) {
+            const title = selectedPlan.Title;
+            const price = (
+                <strong key="price">{getSimplePriceString(options.currency, checkout.withDiscountPerMonth)}</strong>
+            );
+            return wrap(
+                'hourglass',
+                c('pass_signup_2023: Info').jt`Limited time offer: ${title} for ${price} for the 1st month`
+            );
+        }
+
+        if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
+            return null;
+        }
+
+        const passBizYearlyCycle = model.subscriptionDataCycleMapping[PLANS.PASS_BUSINESS]?.[CYCLE.YEARLY];
+        if (
+            audience === Audience.B2B &&
+            options.cycle === CYCLE.YEARLY &&
+            passBizYearlyCycle &&
+            !!passBizYearlyCycle.checkResult.Coupon?.Code
+        ) {
+            const checkout = getCheckout({
+                planIDs: { [PLANS.PASS_BUSINESS]: 1 },
+                plansMap: model.plansMap,
+                checkResult: passBizYearlyCycle.checkResult,
+            });
+            const price = (
+                <strong key="price">{getSimplePriceString(options.currency, checkout.withDiscountPerMonth)}</strong>
+            );
+            const title = model.plansMap[PLANS.PASS_BUSINESS]?.Title || '';
+            // translator: full sentence is: Special launch offer: Get Pass Business for ${options.currency} per user monthly!
+            const textLaunchOffer = c('pass_signup_2023: Info')
+                .jt`Limited time offer: Get ${title} for ${price} per user monthly!`;
+            return wrap('hourglass', textLaunchOffer);
+        }
+
+        const bestPlanCard = planCards[audience].find((planCard) => planCard.type === 'best');
+        const bestPlan = bestPlanCard?.plan && model.plansMap[bestPlanCard.plan];
+        if (!bestPlanCard || !bestPlan) {
+            return null;
+        }
+
+        const planOffer = getPlanOffer(bestPlan);
+        if (!planOffer.valid) {
+            return null;
+        }
+
+        const cycle = planOffer.cycles[0];
+
+        const pricing = getPricingFromPlanIDs({ [bestPlan.Name]: 1 }, model.plansMap);
+        const totals = getTotalFromPricing(pricing, cycle);
+        const title = bestPlan.Title;
+
+        const price = (
+            <strong key="price">
+                {getSimplePriceString(options.currency, totals.totalPerMonth, ` ${c('Suffix').t`/month`}`)}
+            </strong>
+        );
+        // translator: full sentence is: Special launch offer: Get Pass Plus for ${options.currency} 1 /month forever!
+        const textLaunchOffer = c('pass_signup_2023: Info')
+            .jt`Special launch offer: Get ${title} for ${price} forever!`;
+        return wrap('hourglass', textLaunchOffer);
+    })();
+
     return (
         <Layout
             afterLogo={afterLogo}
@@ -691,7 +820,13 @@ const Step1 = ({
                     </div>
                 )}
 
+                {offerBanner}
+
                 {(() => {
+                    if (offerBanner) {
+                        return null;
+                    }
+
                     if (!checkout.discountPercent) {
                         return;
                     }
@@ -703,6 +838,13 @@ const Step1 = ({
                     if (model.loadingDependencies) {
                         return <SkeletonLoader width="36em" height="2.5rem" index={0} className="mt-4" />;
                     }
+
+                    const boldDiscountPercent = (
+                        <b key="bold-discount-percent">{
+                            // full sentence: Your 10% discount to Proton Pass has been applied
+                            c('Info').t`${checkout.discountPercent}% discount`
+                        }</b>
+                    );
 
                     return (
                         <div className="single-signup-discount-banner flex-nowrap mt-4 text-lg rounded px-4 py-2 flex gap-2">
@@ -720,179 +862,6 @@ const Step1 = ({
                     );
                 })()}
 
-                {(() => {
-                    if (model.loadingDependencies) {
-                        return;
-                    }
-
-                    if (isPorkbunPayment) {
-                        // Don't show any offers for Porkbun
-                        return;
-                    }
-
-                    const wrap = (iconName: IconName | null, textLaunchOffer: ReactNode) => {
-                        return (
-                            <div className="signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4">
-                                {iconName && <Icon name={iconName} size={3.5} className="shrink-0 mt-1" />}
-                                <span className="ml-2 flex-1">{textLaunchOffer}</span>
-                            </div>
-                        );
-                    };
-
-                    if (signupParameters.mode === SignupMode.PassSimpleLogin) {
-                        return (
-                            <div
-                                className="text-center text-lg mt-2 max-w-custom"
-                                style={{ '--max-w-custom': '40rem' }}
-                            >
-                                {c('Info')
-                                    .t`${PASS_APP_NAME} is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${BRAND_NAME}.`}
-                            </div>
-                        );
-                    }
-
-                    if (signupParameters.invite?.type === 'pass') {
-                        const inviterEmailJSX = <strong key="invite">{signupParameters.invite.data.inviter}</strong>;
-                        return wrap(
-                            'user',
-                            <>
-                                <span className="block">
-                                    {c('Info').jt`${inviterEmailJSX} wants to share data with you in ${PASS_APP_NAME}`}
-                                </span>
-                                {c('Info')
-                                    .t`Get access by creating a ${BRAND_NAME} account and accepting the invitation.`}
-                            </>
-                        );
-                    }
-
-                    if (
-                        selectedPlan.Name === PLANS.VISIONARY &&
-                        model.upsell.mode !== UpsellTypes.UPSELL &&
-                        mode !== SignupMode.Invite
-                    ) {
-                        if (app === APPS.PROTONWALLET) {
-                            return;
-                        }
-
-                        const plan = `${BRAND_NAME} Visionary`;
-                        const text = getBoldFormattedText(
-                            c('mail_signup_2023: Info').t`**Get ${plan}** for a limited time!`
-                        );
-                        return wrap('hourglass', text);
-                    }
-
-                    const mailOfferPlans = [PLANS.BUNDLE_PRO_2024, PLANS.MAIL_BUSINESS, PLANS.MAIL_PRO];
-
-                    const businessYearlyCycle =
-                        model.subscriptionDataCycleMapping[selectedPlan.Name as PLANS]?.[CYCLE.YEARLY];
-                    if (
-                        mailOfferPlans.includes(selectedPlan.Name as PLANS) &&
-                        !!businessYearlyCycle?.checkResult.Coupon?.Code
-                    ) {
-                        const textLaunchOffer = getBoldFormattedText(
-                            c('mail_signup_2024: Info').t`Limited time offer: **Get up to 35% off** yearly plans`
-                        );
-                        return wrap('hourglass', textLaunchOffer);
-                    }
-
-                    const hasOptimistic2024OfferCoupon = getHas2024OfferCoupon(options.coupon);
-                    const has2024OfferCoupon = getHas2024OfferCoupon(options.checkResult.Coupon?.Code);
-
-                    // Using real coupon to show the correct discount percentage
-                    if (has2024OfferCoupon) {
-                        const discount = checkout.discountPercent;
-                        return wrap(
-                            'bag-percent',
-                            c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday discount has been applied`
-                        );
-                    }
-
-                    // Using optimistic coupon to avoid this displaying before above is finished
-                    if (
-                        selectedPlan.Name === PLANS.DUO &&
-                        options.cycle === CYCLE.YEARLY &&
-                        !hasOptimistic2024OfferCoupon
-                    ) {
-                        const discount = getSimplePriceString(options.currency, checkout.discountPerCycle, '');
-                        const name = selectedPlan.Title;
-                        const textLaunchOffer = getBoldFormattedText(
-                            c('mail_signup_2024: Info')
-                                .t`Limited time offer: **Save ${discount} on ${name} with a 1-year plan**`
-                        );
-                        return wrap('hourglass', textLaunchOffer);
-                    }
-
-                    if (
-                        selectedPlan.Name === PLANS.DRIVE &&
-                        options.checkResult.Coupon?.Code === COUPON_CODES.TRYDRIVEPLUS2024
-                    ) {
-                        const title = selectedPlan.Title;
-                        const price = (
-                            <strong key="price">
-                                {getSimplePriceString(options.currency, checkout.withDiscountPerMonth)}
-                            </strong>
-                        );
-                        return wrap(
-                            'hourglass',
-                            c('pass_signup_2023: Info').jt`Limited time offer: ${title} for ${price} for the 1st month`
-                        );
-                    }
-
-                    if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
-                        return null;
-                    }
-
-                    const passBizYearlyCycle = model.subscriptionDataCycleMapping[PLANS.PASS_BUSINESS]?.[CYCLE.YEARLY];
-                    if (
-                        audience === Audience.B2B &&
-                        options.cycle === CYCLE.YEARLY &&
-                        passBizYearlyCycle &&
-                        !!passBizYearlyCycle.checkResult.Coupon?.Code
-                    ) {
-                        const checkout = getCheckout({
-                            planIDs: { [PLANS.PASS_BUSINESS]: 1 },
-                            plansMap: model.plansMap,
-                            checkResult: passBizYearlyCycle.checkResult,
-                        });
-                        const price = (
-                            <strong key="price">
-                                {getSimplePriceString(options.currency, checkout.withDiscountPerMonth)}
-                            </strong>
-                        );
-                        const title = model.plansMap[PLANS.PASS_BUSINESS]?.Title || '';
-                        // translator: full sentence is: Special launch offer: Get Pass Business for ${options.currency} per user monthly!
-                        const textLaunchOffer = c('pass_signup_2023: Info')
-                            .jt`Limited time offer: Get ${title} for ${price} per user monthly!`;
-                        return wrap('hourglass', textLaunchOffer);
-                    }
-
-                    const bestPlanCard = planCards[audience].find((planCard) => planCard.type === 'best');
-                    const bestPlan = bestPlanCard?.plan && model.plansMap[bestPlanCard.plan];
-                    if (!bestPlanCard || !bestPlan) {
-                        return null;
-                    }
-
-                    const planOffer = getPlanOffer(bestPlan);
-                    if (!planOffer.valid) {
-                        return null;
-                    }
-
-                    const cycle = planOffer.cycles[0];
-
-                    const pricing = getPricingFromPlanIDs({ [bestPlan.Name]: 1 }, model.plansMap);
-                    const totals = getTotalFromPricing(pricing, cycle);
-                    const title = bestPlan.Title;
-
-                    const price = (
-                        <strong key="price">
-                            {getSimplePriceString(options.currency, totals.totalPerMonth, ` ${c('Suffix').t`/month`}`)}
-                        </strong>
-                    );
-                    // translator: full sentence is: Special launch offer: Get Pass Plus for ${options.currency} 1 /month forever!
-                    const textLaunchOffer = c('pass_signup_2023: Info')
-                        .jt`Special launch offer: Get ${title} for ${price} forever!`;
-                    return wrap('hourglass', textLaunchOffer);
-                })()}
                 {hasPlanSelector && (
                     <>
                         <Box className="mt-8 w-full max-w-custom" style={boxWidth}>
