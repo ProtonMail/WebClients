@@ -11,6 +11,7 @@ const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 
 export const hasPaidMail = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.MAIL);
 export const hasPaidDrive = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.DRIVE);
+export const hasPaidWallet = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.WALLET);
 export const hasPaidVpn = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.VPN);
 export const hasPassLifetime = (user: User) => !!user.Flags?.['pass-lifetime'];
 export const hasPaidPass = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.PASS) || hasPassLifetime(user);
