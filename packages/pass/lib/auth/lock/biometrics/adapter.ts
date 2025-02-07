@@ -22,6 +22,19 @@ import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpe
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import noop from '@proton/utils/noop';
 
+export const generateBiometricsKey = async (localID: number, offlineKD: string): Promise<string> => {
+    const keyBytes = generateKey();
+    const biometricsStorageKey = getBiometricsStorageKey(localID);
+    await window.ctxBridge?.setSecret(biometricsStorageKey, keyBytes);
+
+    const key = await importSymmetricKey(keyBytes);
+
+    const rawOfflineKD = stringToUint8Array(offlineKD);
+    const rawEncryptedOfflineKD = await encryptData(key, rawOfflineKD, PassEncryptionTag.BiometricOfflineKD);
+
+    return intoBiometricsEncryptedOfflineKD(uint8ArrayToString(rawEncryptedOfflineKD));
+};
+
 /** Password locking involves the offline configuration. As such,
  * we can only password lock if we have a valid offline config in
  * order to be able to verify the user password locally without an
@@ -80,15 +93,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
             const offlineKD = authStore.getOfflineKD();
             if (!offlineKD) throw new Error('Missing offline KD');
 
-            const keyBytes = generateKey();
-            const biometricsStorageKey = getBiometricsStorageKey(authStore.getLocalID()!);
-            await window.ctxBridge?.setSecret(biometricsStorageKey, keyBytes);
-
-            const key = await importSymmetricKey(keyBytes);
-
-            const rawOfflineKD = stringToUint8Array(offlineKD);
-            const rawEncryptedOfflineKD = await encryptData(key, rawOfflineKD, PassEncryptionTag.BiometricOfflineKD);
-            const encryptedOfflineKD = intoBiometricsEncryptedOfflineKD(uint8ArrayToString(rawEncryptedOfflineKD));
+            const encryptedOfflineKD = await generateBiometricsKey(authStore.getLocalID()!, offlineKD);
 
             authStore.setEncryptedOfflineKD(encryptedOfflineKD);
             authStore.setLockMode(adapter.type);
