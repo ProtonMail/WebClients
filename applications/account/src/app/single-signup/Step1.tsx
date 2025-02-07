@@ -1031,6 +1031,15 @@ const Step1 = ({
         </Link>
     );
 
+    const signInText = (
+        <div className="text-center">
+            {
+                // translator: Full sentence "Already have an account? Sign in"
+                c('Go to sign in').jt`Already have an account? ${signIn}`
+            }
+        </div>
+    );
+
     const paymentSummary = (
         <PaymentSummary
             model={model}
@@ -1102,6 +1111,7 @@ const Step1 = ({
             hasSelectedFree={hasSelectedFree}
         />
     );
+
     return (
         <Layout
             hasDecoration
@@ -1114,15 +1124,16 @@ const Step1 = ({
             }
             background={background}
             isB2bPlan={isB2bPlan}
-            headerCenterElement={
-                <div>
+            headerCenterElement={viewportWidth['<=small'] ? undefined : signInText}
+        >
+            {viewportWidth['<=small'] && (
+                <div className="text-center">
                     {
                         // translator: Full sentence "Already have an account? Sign in"
                         c('Go to sign in').jt`Already have an account? ${signIn}`
                     }
                 </div>
-            }
-        >
+            )}
             <div className="flex items-center flex-column">
                 {title && (
                     <div className="signup-v1-header mb-4 mt-4 md:mt-0 text-center">
