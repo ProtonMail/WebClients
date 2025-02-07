@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Time from '@proton/components/components/time/Time';
-import { getPlanTitle } from '@proton/shared/lib/helpers/subscription';
+import { getPlanTitle, getRenewalTime } from '@proton/shared/lib/helpers/subscription';
 import type { Subscription } from '@proton/shared/lib/interfaces';
 
 import type { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
@@ -32,10 +32,9 @@ export const CancelSubscriptionModal = ({
 
     const planTitle = getPlanTitle(subscription) ?? '';
 
-    const latestSubscription = subscription.UpcomingSubscription ?? subscription;
     const expiryDate = (
         <Time format="PPP" className="text-bold" key="expiry-time">
-            {latestSubscription.PeriodEnd}
+            {getRenewalTime(subscription)}
         </Time>
     );
 
