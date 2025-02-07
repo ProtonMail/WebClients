@@ -16,7 +16,6 @@ enum CommonFeatureFlag {
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     InboxDesktopManualUpdateBannerDisabled = 'InboxDesktopManualUpdateBannerDisabled',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
-    WalletPlan = 'WalletPlan',
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
