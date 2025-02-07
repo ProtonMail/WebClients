@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon, WalletLogo } from '@proton/components';
+import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import { type PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getNDomainsFeatureText } from '@proton/components/containers/payments/features/mail';
 import {
@@ -24,6 +25,7 @@ import {
     APPS,
     BRAND_NAME,
     PROTON_SENTINEL_NAME,
+    VISIONARY_MAX_USERS,
     WALLET_APP_NAME,
     WALLET_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
@@ -164,6 +166,11 @@ export const getVisionaryFeatures = ({ plan }: { plan: Plan | undefined }) => {
         getPasswordManagerFeature(),
         getDriveFeature(),
         getSentinelFeature(),
+
+        {
+            text: getNUsersText(VISIONARY_MAX_USERS),
+            included: true,
+        },
     ];
 };
 
@@ -194,7 +201,7 @@ export const getWalletConfiguration = ({
         {
             key: 'e2e',
             left: <Icon size={6} className="color-primary" name="lock" />,
-            text: c('wallet_signup_2024: Info').t`Self-custody wallet`,
+            text: c('wallet_signup_2024: Info').t`Self-custodial wallet`,
         },
         getOpenSourceFeature(),
         getSwissFeature({ fullText: isLargeViewport }),
