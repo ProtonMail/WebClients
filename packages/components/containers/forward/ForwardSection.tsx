@@ -80,7 +80,7 @@ const ForwardSection = () => {
         />
     ) : (
         <UpsellModal
-            title={c('Title').t`Personalise your e-mail footer`}
+            title={c('Title').t`Personalize your e-mail footer`}
             description={c('Description')
                 .t`To remove the ${MAIL_APP_NAME} footer, upgrade and unlock even more premium features.`}
             modalProps={upsellModalProps}
