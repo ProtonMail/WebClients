@@ -22,7 +22,7 @@ export const sendSafariMessage = (message: NativeSafariMessage) =>
  * when pulling the fork during authentication. As such, we must
  * resort to executing the request in a custom script on account */
 export const safariPullFork: PullForkCall = async (payload) => {
-    if (payload.mode !== 'secure') throw new Error('Cannot securely fork session');
+    if (payload.mode !== 'extension') throw new Error('Cannot securely fork session');
 
     try {
         const result = await Promise.race([

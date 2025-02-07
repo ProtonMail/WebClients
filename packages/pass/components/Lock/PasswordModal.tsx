@@ -14,12 +14,17 @@ import {
 } from '@proton/components';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
+import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
+import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import type { Maybe } from '@proton/pass/types';
+
+import type { OnReauthFn } from './PasswordUnlockProvider';
 
 export type PasswordModalState = {
     label?: string;
     message?: string;
     placeholder?: string;
+    reauth?: ReauthActionPayload & { fork: Partial<RequestForkOptions> };
     submitLabel?: string;
     title: string;
     type: 'new-password' | 'current-password';
@@ -30,6 +35,7 @@ export type PasswordModalState = {
 export type PasswordModalProps = AsyncModalState<PasswordModalState> & {
     onClose?: () => void;
     onSubmit?: (password: string) => void;
+    onReauth?: OnReauthFn;
 };
 
 export const PasswordModal: FC<PasswordModalProps> = ({
