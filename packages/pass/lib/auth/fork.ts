@@ -233,6 +233,7 @@ export enum AccountForkResponse {
     CONFLICT,
     SUCCESS,
     ERROR,
+    REAUTH,
 }
 
 export const getAccountForkResponsePayload = (type: AccountForkResponse, error?: any) => {
@@ -254,6 +255,14 @@ export const getAccountForkResponsePayload = (type: AccountForkResponse, error?:
                         .t`More than a password manager, ${PASS_APP_NAME} protects your password and your personal email address via email aliases. Powered by the same technology behind ${MAIL_APP_NAME}, your data is end-to-end encrypted and is only accessible by you.`,
                 };
             }
+
+            case AccountForkResponse.REAUTH: {
+                return {
+                    title: c('Info').t`Identity confirmed`,
+                    message: c('Info').t`You may close this tab.`,
+                };
+            }
+
             case AccountForkResponse.ERROR: {
                 return {
                     title: c('Error').t`Something went wrong`,
