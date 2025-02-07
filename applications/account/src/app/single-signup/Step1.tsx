@@ -140,14 +140,14 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
 const BoxHeader = ({ title, right }: { title: string; right?: ReactNode }) => {
     return (
         <div className="flex items-center justify-space-between flex-nowrap">
-            <h2 className="text-bold text-4xl">{title}:</h2>
+            <h2 className="text-bold text-4xl">{title ? `${title}:` : ''}</h2>
             {right && <div className="shrink-0">{right}</div>}
         </div>
     );
 };
 
-const BoxContent = ({ children }: { children: ReactNode }) => {
-    return <div className="pricing-box-content mt-8">{children}</div>;
+const BoxContent = ({ children, className = 'mt-8' }: { children: ReactNode; className?: string }) => {
+    return <div className={clsx('pricing-box-content', className)}>{children}</div>;
 };
 
 type StepId = WebCoreVpnSingleSignupStep1InteractionTotal['Labels']['step'];
@@ -1031,6 +1031,77 @@ const Step1 = ({
         </Link>
     );
 
+    const paymentSummary = (
+        <PaymentSummary
+            model={model}
+            options={options}
+            actualCheckout={actualCheckout}
+            loadingPaymentDetails={disablePayButton}
+            onBillingAddressChange={handleChangeBillingAddress}
+            showInclusiveTax={paymentFacade.showInclusiveTax}
+            showTaxCountry={paymentFacade.showTaxCountry}
+            isB2bPlan={isB2bPlan}
+            upsellToggle={getUpsellToggle()}
+            planInformation={(() => {
+                return model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
+                    ? getPlanInformation({
+                          selectedPlan: plansMap[PLANS.VPN2024],
+                          vpnServersCountData,
+                          loading: model.loadingDependencies,
+                      }) || planInformation
+                    : planInformation;
+            })()}
+            giftCode={
+                <GiftCodeSummary
+                    coupon={coupon}
+                    onApplyCode={async (code) => {
+                        const checkResult = await getSubscriptionPrices(
+                            getPaymentsApi(silentApi),
+                            options.planIDs,
+                            options.currency,
+                            options.cycle,
+                            model.subscriptionData.billingAddress,
+                            code
+                        );
+
+                        setModel((old) => ({
+                            ...old,
+                            subscriptionData: {
+                                ...model.subscriptionData,
+                                checkResult,
+                            },
+                        }));
+
+                        setCouponCode(code);
+
+                        if (!checkResult.Coupon) {
+                            throw new Error(c('Notification').t`Invalid code`);
+                        }
+                    }}
+                    onRemoveCode={async () => {
+                        const checkResult = await getSubscriptionPrices(
+                            getPaymentsApi(silentApi),
+                            options.planIDs,
+                            options.currency,
+                            options.cycle,
+                            model.subscriptionData.billingAddress
+                        );
+
+                        setModel((old) => ({
+                            ...old,
+                            subscriptionData: {
+                                ...model.subscriptionData,
+                                checkResult,
+                            },
+                        }));
+
+                        setCouponCode(undefined);
+                    }}
+                />
+            }
+            hasSelectedFree={hasSelectedFree}
+        />
+    );
     return (
         <Layout
             hasDecoration
@@ -1272,10 +1343,23 @@ const Step1 = ({
                 {!hasSelectedFree && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
-                            title={c('Header').t`Select your payment method`}
+                            title={viewportWidth['>=large'] ? c('Header').t`Select your payment method` : ''}
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
-                        <BoxContent>
+
+                        {viewportWidth['<=medium'] ? (
+                            <>
+                                <BoxContent>
+                                    <div className="flex-1 border rounded-xl border-weak px-3 py-4">
+                                        {paymentSummary}
+                                    </div>
+                                </BoxContent>
+
+                                <h2 className="text-bold text-4xl mt-8">{c('Header').t`Select your payment method`}</h2>
+                            </>
+                        ) : null}
+
+                        <BoxContent className="mt-4">
                             <div className="flex justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
                                 <div className="lg:flex-1 md:pr-1 order-1 lg:order-0">
                                     <form
@@ -1410,85 +1494,14 @@ const Step1 = ({
 
                                     <RatingsSection className="mt-8" />
                                 </div>
-                                <div
-                                    className={clsx(viewportWidth['>=large'] && 'w-custom')}
-                                    style={viewportWidth['>=large'] ? { '--w-custom': '18.75rem' } : undefined}
-                                >
-                                    <div className="flex-1 border rounded-xl border-weak px-3 py-4">
-                                        <PaymentSummary
-                                            model={model}
-                                            options={options}
-                                            actualCheckout={actualCheckout}
-                                            loadingPaymentDetails={disablePayButton}
-                                            onBillingAddressChange={handleChangeBillingAddress}
-                                            showInclusiveTax={paymentFacade.showInclusiveTax}
-                                            showTaxCountry={paymentFacade.showTaxCountry}
-                                            isB2bPlan={isB2bPlan}
-                                            upsellToggle={getUpsellToggle()}
-                                            planInformation={(() => {
-                                                return model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
-                                                    ? getPlanInformation({
-                                                          selectedPlan: plansMap[PLANS.VPN2024],
-                                                          vpnServersCountData,
-                                                          loading: model.loadingDependencies,
-                                                      }) || planInformation
-                                                    : planInformation;
-                                            })()}
-                                            giftCode={
-                                                <GiftCodeSummary
-                                                    coupon={coupon}
-                                                    onApplyCode={async (code) => {
-                                                        const checkResult = await getSubscriptionPrices(
-                                                            getPaymentsApi(silentApi),
-                                                            options.planIDs,
-                                                            options.currency,
-                                                            options.cycle,
-                                                            model.subscriptionData.billingAddress,
-                                                            code
-                                                        );
-
-                                                        setModel((old) => ({
-                                                            ...old,
-                                                            subscriptionData: {
-                                                                ...model.subscriptionData,
-                                                                checkResult,
-                                                            },
-                                                        }));
-
-                                                        setCouponCode(code);
-
-                                                        if (!checkResult.Coupon) {
-                                                            throw new Error(c('Notification').t`Invalid code`);
-                                                        }
-                                                    }}
-                                                    onRemoveCode={async () => {
-                                                        const checkResult = await getSubscriptionPrices(
-                                                            getPaymentsApi(silentApi),
-                                                            options.planIDs,
-                                                            options.currency,
-                                                            options.cycle,
-                                                            model.subscriptionData.billingAddress
-                                                        );
-
-                                                        setModel((old) => ({
-                                                            ...old,
-                                                            subscriptionData: {
-                                                                ...model.subscriptionData,
-                                                                checkResult,
-                                                            },
-                                                        }));
-
-                                                        setCouponCode(undefined);
-                                                    }}
-                                                />
-                                            }
-                                            hasSelectedFree={hasSelectedFree}
-                                        />
+                                {viewportWidth['>=large'] && (
+                                    <div className="w-custom" style={{ '--w-custom': '18.75rem' }}>
+                                        <div className="flex-1 border rounded-xl border-weak px-3 py-4">
+                                            {paymentSummary}
+                                        </div>
+                                        {hasGuarantee && <GuaranteeCard productName={toAppName} className="mt-6" />}
                                     </div>
-                                    {hasGuarantee && viewportWidth['>=large'] && (
-                                        <GuaranteeCard productName={toAppName} className="mt-6" />
-                                    )}
-                                </div>
+                                )}
                             </div>
                         </BoxContent>
                     </Box>
