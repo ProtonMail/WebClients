@@ -92,9 +92,11 @@ export const SettingsTabs: FC<Props> = ({ pathname }) => {
     useEffect(() => setActiveTab(pathnameToIndex(pathname, tabs)), [pathname, tabs]);
 
     const onReauth = useCallback<OnReauthFn>((reauth, fork) => {
-        const userID = selectUser(store.getState())?.ID;
+        const user = selectUser(store.getState());
+        const userID = user?.ID;
+        const email = user?.Email;
         const data: RequestForkData = { type: 'reauth', userID, reauth };
-        return requestFork({ ...fork, data, replace: true });
+        return requestFork({ ...fork, data, email, replace: true });
     }, []);
 
     if (authorized) {
