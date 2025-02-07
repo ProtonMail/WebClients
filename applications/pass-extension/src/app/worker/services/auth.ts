@@ -7,6 +7,7 @@ import { safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/uti
 import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
 import { AccountForkResponse, getAccountForkResponsePayload, getStateKey } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
+import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
@@ -125,6 +126,24 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: null });
         }),
+
+        onForkConsumeStart: async () => {
+            /** Block fork consumption if the extension is already authenticated */
+            if (authStore.hasSession()) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
+            else await authService.config.onLoginStart?.();
+        },
+
+        onForkReauth: async (data, state) => {
+            switch (data.reauth.type) {
+                case ReauthAction.SSO_EXPORT:
+                    const path = `/settings.html#export?state=${state}`;
+                    await browser.tabs.create({ url: browser.runtime.getURL(path) });
+                    return true;
+
+                default:
+                    return true;
+            }
+        },
 
         onSessionInvalid: withContext(async (ctx, error, _data) => {
             if (error instanceof InvalidPersistentSessionError) {
@@ -251,18 +270,24 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
     const handleAccountFork = withContext<MessageHandlerCallback<WorkerMessageType.ACCOUNT_FORK>>(
         async ({ service, status }, { payload }, { tab }) => {
-            if (authStore.hasSession()) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
-
             try {
                 const stateKey = getStateKey(payload.state);
                 const localState: MaybeNull<string> = await service.storage.session
                     .getItem<any>(stateKey)
                     .catch(() => null);
 
-                await authService.consumeFork(
+                const result = await authService.consumeFork(
                     { mode: 'extension', tabId: tab?.id!, localState, ...payload },
                     `${SSO_URL}/api`
                 );
+
+                if (result.ok && result.reauth) {
+                    /** on fork reauth remove the account tab to
+                     * avoid `/auth-ext` onboarding redirection */
+                    if (tab?.id) await browser.tabs.remove(tab.id);
+                    return getAccountForkResponsePayload(AccountForkResponse.REAUTH);
+                }
+
                 if (clientSessionLocked(status)) await service.storage.session.setItems(authStore.getSession());
                 return getAccountForkResponsePayload(AccountForkResponse.SUCCESS);
             } catch (error: unknown) {
