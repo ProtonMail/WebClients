@@ -4,7 +4,9 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useModalState, useModalStateWithData } from '@proton/components';
+import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { DEFAULT_MAX_SUB_WALLETS, DEFAULT_MAX_WALLETS } from '@proton/wallet';
 import { useUserEligibility, useUserWalletSettings } from '@proton/wallet/store';
@@ -32,6 +34,8 @@ const getPrimaryEmail = (wallet?: IWasmApiWalletData[]) => {
 
 export const WalletSetupModalContextProvider = ({ children }: Props) => {
     const onCloseRef = useRef<() => void>();
+    const [subscription] = useSubscription();
+    const isVisionary = hasVisionary(subscription);
 
     const [settings, loadingSettings] = useUserWalletSettings();
     const [organization] = useOrganization();
@@ -64,8 +68,11 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
             if (hasReachedWalletLimit) {
                 setWalletUpgradeModal({
                     theme: data.theme,
-                    content: c('Wallet upgrade')
-                        .t`You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.`,
+                    content: isVisionary
+                        ? c('Wallet upgrade')
+                              .t`You have reached the maximum number of wallets supported by your current plan.`
+                        : c('Wallet upgrade')
+                              .t`You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.`,
                 });
                 return;
             }
@@ -78,8 +85,11 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
             if (hasReachedWalletAccountLimit) {
                 setWalletUpgradeModal({
                     theme: data.theme,
-                    content: c('Account upgrade')
-                        .t`You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.`,
+                    content: isVisionary
+                        ? c('Wallet upgrade')
+                              .t`You have reached the maximum number of accounts supported by your current plan.`
+                        : c('Wallet upgrade')
+                              .t`You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.`,
                 });
                 return;
             }
