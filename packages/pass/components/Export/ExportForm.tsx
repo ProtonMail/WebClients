@@ -11,7 +11,7 @@ import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
-import { selectIsSSO, selectNonOwnedVaults } from '@proton/pass/store/selectors';
+import { selectNonOwnedVaults } from '@proton/pass/store/selectors';
 import { BitField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
@@ -19,13 +19,10 @@ type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boole
 
 export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
-    const isSSO = useSelector(selectIsSSO);
 
     const org = useOrganization({ sync: true });
     const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
-
-    /** FIXME: Re-enable SSO exporting when supported */
-    const disabled = orgExportDisabled || isSSO;
+    const disabled = orgExportDisabled;
 
     const warnings = useMemo(
         () =>

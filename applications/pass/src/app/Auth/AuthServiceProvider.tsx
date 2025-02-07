@@ -5,7 +5,6 @@ import { matchPath, useHistory } from 'react-router-dom';
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { createAuthService } from 'proton-pass-web/lib/auth';
-import { getStateKey } from 'proton-pass-web/lib/sessions';
 
 import { useNotifications } from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
@@ -18,7 +17,7 @@ import { type AuthRouteState, isUnauthorizedPath, reloadHref } from '@proton/pas
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
+import { getConsumeForkParameters, getStateKey } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -73,13 +72,19 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     useEffect(() => {
         if (isUnauthorizedPath(getCurrentLocation())) return;
 
-        const { key, selector, state, payloadVersion, persistent } = getConsumeForkParameters();
-        const localState = sessionStorage.getItem(getStateKey(state));
-
         const run = async () => {
             if (matchPath(history.location.pathname, SSO_PATHS.FORK)) {
+                const { key, selector, state, payloadVersion, persistent } = getConsumeForkParameters();
+                const localState = sessionStorage.getItem(getStateKey(state));
+
+                if (!localState) {
+                    logger.info('[AuthServiceProvider] Invalid fork path');
+                    history.replace('/');
+                    return window.location.reload();
+                }
+
                 return authService.consumeFork({
-                    mode: 'sso',
+                    mode: 'web',
                     key,
                     localState,
                     state,

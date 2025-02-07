@@ -1,8 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { type PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { EXCLUDED_SETTINGS_KEYS } from '@proton/pass/store/reducers/settings';
+import { selectOrganizationSettings } from '@proton/pass/store/selectors/organization';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import type { DomainCriterias } from '@proton/pass/types/worker/settings';
@@ -31,3 +33,14 @@ export const selectShowUsernameField = ({ settings }: State) => settings.showUse
 export const selectTheme = ({ settings }: State): Maybe<PassThemeOption> => settings?.theme;
 export const selectClipboardTTL = ({ settings }: State) => settings.clipboard?.timeoutMs;
 export const selectAliasTrashAcknowledged = ({ settings }: State) => settings.aliasTrashAcknowledged;
+
+export const selectLockSetupRequired = createSelector(
+    [selectLockMode, selectOrganizationSettings],
+    (lockMode, orgSettings) =>
+        Boolean(orgSettings?.ForceLockSeconds && orgSettings.ForceLockSeconds > 0 && lockMode === LockMode.NONE)
+);
+
+export const selectSanitizedLockTTL = createSelector(
+    [selectLockTTL, selectOrganizationSettings],
+    (ttl, orgSettings) => orgSettings?.ForceLockSeconds ?? ttl ?? DEFAULT_LOCK_TTL
+);

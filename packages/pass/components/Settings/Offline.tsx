@@ -6,12 +6,13 @@ import { c } from 'ttag';
 import { Checkbox } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
-import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
+import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { offlineToggle } from '@proton/pass/store/actions';
-import { selectIsSSO, selectOfflineEnabled, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
+import { selectOfflineEnabled, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
@@ -19,6 +20,7 @@ import { SettingsPanel } from './SettingsPanel';
 
 export const Offline: FC = () => {
     const confirmPassword = usePasswordUnlock();
+    const passwordTypeSwitch = usePasswordTypeSwitch();
     const authStore = useAuthStore();
 
     const enabled = useSelector(selectOfflineEnabled);
@@ -26,10 +28,8 @@ export const Offline: FC = () => {
     const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const freeUser = !isPaidPlan(plan);
     const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
-    const isSSO = useSelector(selectIsSSO);
 
-    /** FIXME: Re-enable SSO offline mode when supported */
-    const validUserType = !freeUser && !isSSO;
+    const validUserType = !freeUser;
     const validPasswordMode = !twoPwdMode || (authStore?.hasOfflinePassword() ?? false);
     const canEnableOffline = validUserType && validPasswordMode;
     const disabled = !canEnableOffline;
@@ -39,8 +39,22 @@ export const Offline: FC = () => {
 
     const toggleOffline = async (enabled: boolean) =>
         confirmPassword({
+            reauth: {
+                type: ReauthAction.SSO_OFFLINE,
+                fork: { promptBypass: 'none', promptType: 'offline' },
+            },
             onSubmit: (loginPassword) => toggle.dispatch({ loginPassword, enabled }),
-            message: c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`,
+            message: passwordTypeSwitch({
+                extra: enabled
+                    ? c('Info').t`Please confirm your extra password in order to enable offline mode`
+                    : c('Info').t`Please confirm your extra password in order to disable offline mode`,
+                sso: enabled
+                    ? c('Info').t`Please confirm your backup password in order to enable offline mode`
+                    : c('Info').t`Please confirm your backup password in order to disable offline mode`,
+                default: enabled
+                    ? c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`
+                    : c('Info').t`Please confirm your ${BRAND_NAME} password in order to disable offline mode`,
+            }),
         });
 
     return (

@@ -90,11 +90,9 @@ export function* hydrate(
          * haven't touched the `offlineEnabled` setting yet */
         if (BUILD_TARGET === 'web' || DESKTOP_BUILD) {
             const supported = DESKTOP_BUILD || (userState.features.PassWebOfflineMode ?? false);
-            const isSSO = Boolean(user.Flags.sso);
             const plan = getPassPlan(userState.plan);
 
-            /** FIXME: re-enable for SSO when supported */
-            const validUserType = isPaidPlan(plan) && !isSSO;
+            const validUserType = isPaidPlan(plan);
             const hasOfflinePassword = authStore.hasOfflinePassword();
             const untouched = settings.offlineEnabled === undefined;
 
