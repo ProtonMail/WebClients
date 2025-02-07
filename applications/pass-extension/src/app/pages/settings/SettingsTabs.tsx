@@ -1,13 +1,16 @@
 import type { FC } from 'react';
-import { type ComponentProps, useEffect, useMemo, useState } from 'react';
+import { type ComponentProps, useCallback, useEffect, useMemo, useState } from 'react';
+import { useStore } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { SettingsFooter } from 'proton-pass-extension/app/pages/settings/SettingsFooter';
 import { SettingsHeader } from 'proton-pass-extension/app/pages/settings/SettingsHeader';
+import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { Icon, Tabs } from '@proton/components';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import type { OnReauthFn } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { OrganizationProvider, useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
@@ -16,7 +19,10 @@ import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvi
 import { AccountPath } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
+import type { RequestForkData } from '@proton/pass/lib/auth/fork';
 import { clientSessionLocked } from '@proton/pass/lib/client';
+import { selectUser } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import { type Unpack } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -66,6 +72,8 @@ export const SettingsTabs: FC<Props> = ({ pathname }) => {
     const aliasesEnabled = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
+    const requestFork = useRequestFork();
+    const store = useStore<State>();
 
     const tabs = useMemo(
         () => getSettingsTabs(organization?.settings.enabled, aliasesEnabled),
@@ -83,10 +91,18 @@ export const SettingsTabs: FC<Props> = ({ pathname }) => {
 
     useEffect(() => setActiveTab(pathnameToIndex(pathname, tabs)), [pathname, tabs]);
 
+    const onReauth = useCallback<OnReauthFn>((reauth, fork) => {
+        const user = selectUser(store.getState());
+        const userID = user?.ID;
+        const email = user?.Email;
+        const data: RequestForkData = { type: 'reauth', userID, reauth };
+        return requestFork({ ...fork, data, email, replace: true });
+    }, []);
+
     if (authorized) {
         return (
             <OrganizationProvider>
-                <PasswordUnlockProvider>
+                <PasswordUnlockProvider onReauth={onReauth}>
                     <PinUnlockProvider>
                         <UpsellingProvider>
                             <SettingsHeader />

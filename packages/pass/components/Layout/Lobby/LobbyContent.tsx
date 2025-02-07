@@ -11,6 +11,7 @@ import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { BiometricsUnlock } from '@proton/pass/components/Lock/BiometricsUnlock';
 import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
+import { passwordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
 import { PasswordVerification } from '@proton/pass/lib/auth/password';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
@@ -67,7 +68,7 @@ export const LobbyContent: FC<Props> = ({
 
     const localID = authStore?.getLocalID();
     const hasExtraPassword = Boolean(authStore?.getExtraPassword());
-    const isSSo = Boolean(authStore?.getSSO());
+    const isSSO = Boolean(authStore?.getSSO());
 
     const stale = clientStale(status);
     const locked = clientSessionLocked(status);
@@ -140,10 +141,15 @@ export const LobbyContent: FC<Props> = ({
                             case AppStatus.SESSION_LOCKED:
                                 return c('Info').jt`Enter your PIN code`;
                             case AppStatus.PASSWORD_LOCKED:
-                                if (isSSo) return c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your backup password`;
-                                return hasExtraPassword
-                                    ? c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your extra password`
-                                    : c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`;
+                                return passwordTypeSwitch(
+                                    hasExtraPassword,
+                                    isSSO
+                                )({
+                                    sso: c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your backup password`,
+                                    extra: c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your extra password`,
+                                    default: c('Info')
+                                        .t`Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`,
+                                });
                             case AppStatus.BIOMETRICS_LOCKED:
                                 return c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with biometrics`;
                             case AppStatus.MISSING_SCOPE:
@@ -159,7 +165,7 @@ export const LobbyContent: FC<Props> = ({
                     {(() => {
                         switch (status) {
                             case AppStatus.PASSWORD_LOCKED:
-                                if (isSSo) {
+                                if (isSSO) {
                                     return c('Info').t`You can also define a PIN code to unlock ${PASS_APP_NAME}`;
                                 }
                         }
