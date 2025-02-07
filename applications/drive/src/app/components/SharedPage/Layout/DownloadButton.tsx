@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import type { ThemeColorUnion } from '@proton/colors/types';
 import {
+    ButtonGroup,
     ContextSeparator,
     Dropdown,
     DropdownMenu,
@@ -76,20 +77,15 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
     if (!isDownloadScanEnabled) {
         return (
             <Button
-                className="flex flex-column gap-4 py-3 min-w-custom"
-                style={{
-                    '--min-w-custom': '8.25rem',
-                }}
+                className="flex items-center gap-2"
                 color="weak"
                 shape="outline"
-                disabled={disabled || isDownloading}
+                disabled={disabled}
+                loading={isDownloading}
                 onClick={() => handleDownload()}
                 data-testid="download-button"
             >
-                <div className="flex items-center gap-2">
-                    <Icon name="arrow-down-line" size={4} />
-                    {isDownloading && <CircleLoader />}
-                </div>
+                <Icon name="arrow-down-line" size={4} />
                 {/* Default Download text if scan not available */}
                 {buttonTextWithScan}
             </Button>
@@ -98,64 +94,61 @@ export function DownloadButton({ items, rootLink, openInDocs, disabled }: Downlo
 
     return (
         <>
-            <div className="relative md:w-full">
+            <ButtonGroup className="flex justify-end flex-nowrap" ref={anchorRef} separators={!isDownloading}>
                 <Button
-                    className="w-full h-full flex gap-2 py-2 items-start justify-center text-left flex-column md:gap-4 md:py-3"
+                    className="flex items-center gap-2 mr-auto"
                     onClick={() => handleDownload({ virusScan: true })}
                     disabled={disabled || isDownloading}
                     data-testid="scan-download-button"
                     color="weak"
                 >
-                    <div className="w-full flex items-center gap-2" ref={anchorRef}>
-                        <Icon name="arrow-down-line" size={4} />
-                        {isDownloading && <CircleLoader />}
-                    </div>
+                    <Icon name="arrow-down-line" size={4} />
                     {buttonTextWithScan}
                 </Button>
                 <Button
                     disabled={disabled || isDownloading}
                     data-testid="dropdown-download-button"
-                    className="absolute right-custom border-none top-custom"
-                    style={{
-                        '--top-custom': '.5rem',
-                        '--right-custom': '.5rem',
-                    }}
                     shape="ghost"
                     size="small"
-                    icon
                     onClick={(e) => {
                         toggle();
                         e.stopPropagation();
                     }}
                 >
-                    <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+                    {isDownloading && <CircleLoader />}
+                    {!isDownloading && isOpen && (
+                        <Icon name="chevron-up-filled" alt={c('Action').t`Hide download options`} />
+                    )}
+                    {!isDownloading && !isOpen && (
+                        <Icon name="chevron-down-filled" alt={c('Action').t`Show more download options`} />
+                    )}
                 </Button>
-            </div>
+            </ButtonGroup>
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close}>
                 <DropdownMenu>
                     <DropdownMenuButton
-                        className="text-left"
+                        className="flex items-center gap-2"
                         onClick={() => handleDownload({ virusScan: true })}
                         data-testid="scan-download-button"
                     >
-                        <Icon name="arrow-down-line" className="mr-2" />
+                        <Icon name="arrow-down-line" />
                         {buttonTextWithScan}
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left"
+                        className="flex items-center gap-2"
                         onClick={() => handleDownload()}
                         data-testid="download-button"
                     >
-                        <Icon name="arrow-down-line" className="mr-2" />
+                        <Icon name="arrow-down-line" />
                         {buttonTextWithoutScan}
                     </DropdownMenuButton>
                     <ContextSeparator />
                     <DropdownMenuButton
-                        className="text-left"
+                        className="flex items-center gap-2"
                         onClick={() => showScanAndDownloadInfoModal({})}
                         data-testid="learn-more"
                     >
-                        <Icon name="info-circle" className="mr-2" />
+                        <Icon name="info-circle" />
                         {c('Info').t`Learn more`}
                     </DropdownMenuButton>
                 </DropdownMenu>
