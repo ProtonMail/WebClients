@@ -39,9 +39,11 @@ import { type HydrationResult, hydrate } from './hydrate.saga';
 function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSagaOptions) {
     try {
         const settings: ProxiedSettings = yield options.getSettings();
-        if (payload?.offline && !settings.offlineEnabled) throw new Error('Unauthorized offline boot');
+        const { offline = false, reauth } = payload ?? {};
 
-        const online = !payload?.offline;
+        if (offline && !settings.offlineEnabled) throw new Error('Unauthorized offline boot');
+
+        const online = !offline;
         const authStore = options.getAuthStore();
         const userID = authStore.getUserID()!;
 
@@ -89,7 +91,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         }
 
         options.setAppStatus(online ? AppStatus.READY : AppStatus.OFFLINE);
-        options.onBoot?.({ ok: true, fromCache, offline: payload?.offline, version });
+        options.onBoot?.({ ok: true, fromCache, version, offline, reauth });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));

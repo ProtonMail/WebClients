@@ -1,4 +1,5 @@
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
+import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type {
@@ -22,7 +23,7 @@ export type State = ReturnType<typeof rootReducer>;
 export type Telemetry = { start: () => void; stop: () => void; push: (event: TelemetryEvent) => Promise<boolean> };
 export type PassSaga = (options: RootSagaOptions) => Generator;
 export type PassBootResult =
-    | { ok: true; fromCache: boolean; offline?: boolean; version?: string }
+    | { ok: true; fromCache: boolean; offline?: boolean; version?: string; reauth?: ReauthActionPayload }
     | { ok: false; clearCache: boolean };
 
 export interface RootSagaOptions {

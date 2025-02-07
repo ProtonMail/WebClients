@@ -1,5 +1,4 @@
 import { type FC, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import { useFormik } from 'formik';
 import { c } from 'ttag';
@@ -7,10 +6,10 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
-import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
-import { selectExtraPasswordEnabled } from '@proton/pass/store/selectors';
 import type { MaybePromise } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { throwError } from '@proton/pass/utils/fp/throw';
@@ -31,7 +30,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
     const [loading, setLoading] = useState(false);
 
     const confirmPassword = usePasswordUnlock();
-    const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
+    const passwordTypeSwitch = usePasswordTypeSwitch();
 
     const form = useFormik<ExportFormValues>({
         initialValues: initialValues,
@@ -44,10 +43,19 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                 setLoading(true);
 
                 await confirmPassword({
-                    message: hasExtraPassword
-                        ? c('Info').t`Please confirm your extra password in order to export your ${PASS_APP_NAME} data`
-                        : c('Info')
-                              .t`Please confirm your ${BRAND_NAME} password in order to export your ${PASS_APP_NAME} data`,
+                    reauth: {
+                        type: ReauthAction.SSO_EXPORT,
+                        data: values,
+                        fork: { promptBypass: 'none', promptType: 'default' },
+                    },
+                    message: passwordTypeSwitch({
+                        extra: c('Info')
+                            .t`Please confirm your extra password in order to export your ${PASS_APP_NAME} data`,
+                        sso: c('Info')
+                            .t`Please confirm your backup password in order to export your ${PASS_APP_NAME} data`,
+                        default: c('Info')
+                            .t`Please confirm your ${BRAND_NAME} password in order to export your ${PASS_APP_NAME} data`,
+                    }),
                     onSubmit: (password) => onConfirm(password),
                     onError: () => throwError({ name: 'AuthConfirmInvalidError' }),
                     onAbort: () => throwError({ name: 'AuthConfirmAbortError' }),
