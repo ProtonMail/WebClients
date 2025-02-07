@@ -67,12 +67,6 @@ describe('useAccessiblePlans', () => {
     });
 
     it('should return the plans accessible to free users in mail app', () => {
-        mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'WalletPlan') {
-                return false;
-            }
-        });
-
         const plans = getLongTestPlans();
 
         const props: AccessiblePlansHookProps = {
@@ -129,16 +123,11 @@ describe('useAccessiblePlans', () => {
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
-            canAccessWalletPlan: false,
         });
     });
 
     it('should render duo plan', () => {
         mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'WalletPlan') {
-                return false;
-            }
-
             if (flag === 'DuoPlan') {
                 return true;
             }
@@ -200,7 +189,6 @@ describe('useAccessiblePlans', () => {
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
-            canAccessWalletPlan: false,
         });
     });
 
@@ -250,7 +238,6 @@ describe('useAccessiblePlans', () => {
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
-            canAccessWalletPlan: false,
         });
     });
 
@@ -316,17 +303,10 @@ describe('useAccessiblePlans', () => {
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
-            canAccessWalletPlan: false,
         });
     });
 
     it('should not render BRL plans if country code is not BR', () => {
-        mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'WalletPlan') {
-                return false;
-            }
-        });
-
         const plans = [
             ...getTestPlans('USD'),
             ...getTestPlans('CHF'),
@@ -388,17 +368,10 @@ describe('useAccessiblePlans', () => {
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
-            canAccessWalletPlan: false,
         });
     });
 
     it('should not render BRL plans if user is subscribed to the maximum cycle of the only BRL plan', () => {
-        mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'WalletPlan') {
-                return false;
-            }
-        });
-
         const plans = [
             ...getTestPlans('USD'),
             ...getTestPlans('CHF'),
@@ -466,17 +439,10 @@ describe('useAccessiblePlans', () => {
             alreadyHasMaxCycle: true,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
-            canAccessWalletPlan: false,
         });
     });
 
     it('should render old bundle pro if user already has it', () => {
-        mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'WalletPlan') {
-                return false;
-            }
-        });
-
         const plans = [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR')];
 
         const props: AccessiblePlansHookProps = {
@@ -541,17 +507,10 @@ describe('useAccessiblePlans', () => {
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
-            canAccessWalletPlan: false,
         });
     });
 
     it('should render new bundle pro if user already has it', () => {
-        mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'WalletPlan') {
-                return false;
-            }
-        });
-
         const plans = [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR')];
 
         const props: AccessiblePlansHookProps = {
@@ -616,17 +575,10 @@ describe('useAccessiblePlans', () => {
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
-            canAccessWalletPlan: false,
         });
     });
 
     it('should render new bundle pro plan for free users', () => {
-        mockUseFlag.mockImplementation((flag: string) => {
-            if (flag === 'WalletPlan') {
-                return false;
-            }
-        });
-
         const plans = [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR')];
 
         const props: AccessiblePlansHookProps = {
@@ -685,7 +637,6 @@ describe('useAccessiblePlans', () => {
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
-            canAccessWalletPlan: false,
         });
     });
 
