@@ -60,6 +60,7 @@ import {
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import CurrencySelector from '../CurrencySelector';
@@ -220,7 +221,6 @@ export function useAccessiblePlans({
 }: AccessiblePlansHookProps) {
     const plansMap = getPlansMap(plans, currency, false);
 
-    const canAccessWalletPlan = useFlag('WalletPlan');
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { getAvailableCurrencies } = useCurrencies();
 
@@ -229,7 +229,6 @@ export function useAccessiblePlans({
         getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
         PLANS.DRIVE,
         !user.hasPassLifetime && PLANS.PASS,
-        canAccessWalletPlan && PLANS.WALLET,
         PLANS.LUMO,
     ].filter(isTruthy);
 
@@ -250,12 +249,16 @@ export function useAccessiblePlans({
 
     let IndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
-        enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
-            enabledProductB2CPlans[0] ??
-            plansMap[PLANS.MAIL],
+        // Special condition to temporarily hide Wallet plus in the individual tab if we are in Proton Wallet
+        app !== APPS.PROTONWALLET
+            ? (enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
+              enabledProductB2CPlans[0] ??
+              plansMap[PLANS.MAIL])
+            : null,
         plansMap[PLANS.BUNDLE],
         // Special condition to hide Pass plus in the individual tab if it's the current plan
         canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        app === APPS.PROTONWALLET ? plansMap[PLANS.VISIONARY] : null,
     ]);
 
     const canAccessPassFamilyPlan =
@@ -285,9 +288,13 @@ export function useAccessiblePlans({
 
     const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
 
+    const walletB2BPlans = filterPlans([plansMap[bundleProPlan]]);
+
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
     const isDriveSettingsApp = app == APPS.PROTONDRIVE;
+    const isWalletSettingsApp = app == APPS.PROTONWALLET;
+
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
      *
@@ -297,6 +304,7 @@ export function useAccessiblePlans({
     const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0;
     const isPassB2bPlans = isPassSettingsApp && passB2BPlans.length !== 0;
     const isDriveB2bPlans = isDriveSettingsApp && driveB2BPlans.length !== 0;
+    const isWalletB2BPlans = isWalletSettingsApp && walletB2BPlans.length !== 0;
 
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
     if (isVpnB2bPlans) {
@@ -308,15 +316,10 @@ export function useAccessiblePlans({
         }
     } else if (isDriveB2bPlans) {
         B2BPlans = driveB2BPlans;
+    } else if (isWalletB2BPlans) {
+        B2BPlans = walletB2BPlans;
     } else {
         B2BPlans = filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
-    }
-
-    if (app === APPS.PROTONWALLET && !canAccessWalletPlan) {
-        IndividualPlans = filterPlans([plansMap[PLANS.BUNDLE], plansMap[PLANS.VISIONARY]]);
-        FamilyPlans = [];
-        B2BPlans = [];
-        enabledProductB2CPlans = [];
     }
 
     const accessiblePlans = [...IndividualPlans, ...FamilyPlans, ...B2BPlans, ...enabledProductB2CPlans]
@@ -345,7 +348,6 @@ export function useAccessiblePlans({
         alreadyHasMaxCycle,
         isVpnSettingsApp,
         isVpnB2bPlans,
-        canAccessWalletPlan,
         availableCurrencies,
     };
 
@@ -407,7 +409,6 @@ const PlanSelection = (props: Props) => {
         alreadyHasMaxCycle,
         isVpnSettingsApp,
         isVpnB2bPlans,
-        canAccessWalletPlan,
         availableCurrencies,
     } = useAccessiblePlans({
         ...props,
@@ -614,7 +615,10 @@ const PlanSelection = (props: Props) => {
             title: c('Tab subscription modal').t`For individuals`,
             content: (
                 <div
-                    className="plan-selection plan-selection--b2c mt-4"
+                    className={clsx(
+                        'plan-selection plan-selection--b2c mt-4',
+                        IndividualPlans.length === 1 && 'plan-selection--one-plan'
+                    )}
                     style={{ '--plan-selection-number': IndividualPlans.length }}
                     data-testid="b2c-plan"
                 >
@@ -627,7 +631,10 @@ const PlanSelection = (props: Props) => {
             title: c('Tab subscription modal').t`For families`,
             content: (
                 <div
-                    className="plan-selection plan-selection--family mt-4"
+                    className={clsx(
+                        'plan-selection plan-selection--family mt-4',
+                        FamilyPlans.length === 1 && 'plan-selection--one-plan'
+                    )}
                     style={{ '--plan-selection-number': FamilyPlans.length }}
                 >
                     {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY, familyRecommendedPlans))}
@@ -639,7 +646,10 @@ const PlanSelection = (props: Props) => {
             title: c('Tab subscription modal').t`For businesses`,
             content: (
                 <div
-                    className="plan-selection plan-selection--b2b mt-4"
+                    className={clsx(
+                        'plan-selection plan-selection--b2b mt-4',
+                        B2BPlans.length === 1 && 'plan-selection--one-plan'
+                    )}
                     style={{ '--plan-selection-number': B2BPlans.length }}
                     data-testid="b2b-plan"
                 >
@@ -714,12 +724,8 @@ const PlanSelection = (props: Props) => {
             <VpnLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
             <PassLogo variant="glyph-only" />
-            {canAccessWalletPlan && (
-                <>
-                    <Icon name="plus" alt="+" className="mx-2" />
-                    <WalletLogo variant="glyph-only" />
-                </>
-            )}
+            <Icon name="plus" alt="+" className="mx-2" />
+            <WalletLogo variant="glyph-only" />
         </div>
     );
 
