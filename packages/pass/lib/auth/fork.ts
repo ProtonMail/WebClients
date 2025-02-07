@@ -15,7 +15,11 @@ import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
 import type { ForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
-import { ForkSearchParameters, type ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import {
+    ExtraSessionForkSearchParameters,
+    ForkSearchParameters,
+    type ForkType,
+} from '@proton/shared/lib/authentication/fork/constants';
 import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/fork/validation';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -32,14 +36,15 @@ import { encodeUserData } from './store';
 
 export type RequestForkOptions = {
     app: APP_NAMES;
+    email?: string;
     forkType?: ForkType;
     host?: string;
     localID?: number;
     payloadType?: 'offline' | 'default';
     payloadVersion?: AuthSessionVersion;
     prompt?: 'login';
-    promptType?: 'default' | 'offline' | 'offline-bypass';
     promptBypass?: 'none' | 'sso';
+    promptType?: 'default' | 'offline' | 'offline-bypass';
 };
 
 export type RequestForkResult = {
@@ -65,6 +70,7 @@ export const generateForkState = () => encodeBase64URL(uint8ArrayToString(crypto
  * Extension does not support password locking yet, as such force re-auth. */
 export const requestFork = ({
     app,
+    email,
     host = getAppHref('/', APPS.PROTONACCOUNT),
     forkType,
     localID,
@@ -94,6 +100,7 @@ export const requestFork = ({
     if (payloadType) searchParams.append(ForkSearchParameters.PayloadType, payloadType);
     if (payloadVersion === 2) searchParams.append(ForkSearchParameters.PayloadVersion, `${payloadVersion}`);
     if (localID !== undefined) searchParams.append(ForkSearchParameters.LocalID, `${localID}`);
+    if (localID === undefined && email) searchParams.append(ExtraSessionForkSearchParameters.Email, email);
     if (forkType) searchParams.append(ForkSearchParameters.ForkType, forkType);
 
     return { state, url: `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}` };
