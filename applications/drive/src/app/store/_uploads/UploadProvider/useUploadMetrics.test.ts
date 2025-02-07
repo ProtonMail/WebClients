@@ -2,6 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { MetricShareType, MetricUserPlan, UploadErrorCategory } from '../../../utils/type/MetricTypes';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
@@ -35,6 +36,10 @@ jest.mock('../../../zustand/share/shares.store', () => {
     };
 });
 
+jest.mock('../../../utils/getIsPublicContext');
+
+const mockedGetIsPublicContext = jest.mocked(getIsPublicContext);
+
 const mockFailedUploadMetadata = (numberOfErrors: number, size: number = 10000) => ({
     shareId: 'defaultShareId',
     numberOfErrors: numberOfErrors,
@@ -49,6 +54,10 @@ describe('useUploadMetrics::', () => {
     });
     afterAll(() => {
         jest.restoreAllMocks();
+    });
+
+    beforeEach(() => {
+        mockedGetIsPublicContext.mockReturnValue(false);
     });
 
     const freeSpaceExceeded = new Error('Unprocessable Content');
@@ -212,6 +221,20 @@ describe('useUploadMetrics::', () => {
                 });
             });
         });
+
+        it('reports with shared_public type when in public context', () => {
+            mockedGetIsPublicContext.mockReturnValue(true);
+
+            act(() => {
+                hook.current.uploadSucceeded('shareId', 0);
+                expect(mockMetricsSuccessRate).toHaveBeenCalledWith({
+                    status: 'success',
+                    shareType: 'shared_public',
+                    retry: 'false',
+                    initiator: 'explicit',
+                });
+            });
+        });
     });
 
     describe('uploadFailed', () => {
@@ -332,6 +355,20 @@ describe('useUploadMetrics::', () => {
                 hook.current.uploadFailed(mockFailedUploadMetadata(1), new Error('unknown error'));
                 expect(mockMetricsSuccessRate).toHaveBeenCalledTimes(1);
                 expect(mockMetricsErrors).toHaveBeenCalledTimes(1);
+            });
+        });
+
+        it('reports with shared_public type when in public context', () => {
+            mockedGetIsPublicContext.mockReturnValue(true);
+
+            act(() => {
+                hook.current.uploadFailed(mockFailedUploadMetadata(1), new Error('error'));
+                expect(mockMetricsSuccessRate).toHaveBeenCalledWith({
+                    status: 'failure',
+                    shareType: 'shared_public',
+                    retry: 'false',
+                    initiator: 'explicit',
+                });
             });
         });
     });
