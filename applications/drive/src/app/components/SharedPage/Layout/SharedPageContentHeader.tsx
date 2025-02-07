@@ -60,9 +60,9 @@ export function SharedPageContentHeader({
         (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocument(item.mimeType)));
 
     return (
-        <div className={clsx('flex lg:justify-space-between gap-4', className)}>
+        <div className={clsx('flex w-full justify-space-between gap-4', className)}>
             <div className="flex flex-column flex-nowrap mb-0 pb-0 mr-4 max-w-full">
-                <div className="flex md:flex-nowrap items-center pb-1 gap-2">
+                <div className="flex flex-nowrap items-center pb-1 gap-2">
                     {isFolderView ? (
                         <Breadcrumbs
                             token={token}
@@ -72,7 +72,7 @@ export function SharedPageContentHeader({
                             className="shared-folder-header-breadcrumbs"
                         />
                     ) : (
-                        <FileNameDisplay className="text-4xl text-bold py-1 md:p-1" text={name} />
+                        <FileNameDisplay className="text-4xl text-bold" text={name} />
                     )}
                     {!viewOnly && <DetailsButton className="shrink-0 " linkId={linkId} />}
                 </div>
@@ -94,7 +94,7 @@ export function SharedPageContentHeader({
                     {size !== undefined ? <span className="text-pre">{readableSize}</span> : <CircleLoader />}
                 </div>
             </div>
-            <div className="shared-page-content-header-buttons m-auto md:m-0 md:ml-auto">
+            <div className="shared-page-content-header-buttons">
                 <DownloadButton
                     rootLink={rootLink}
                     items={items}

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms/index';
+import { Button } from '@proton/atoms/index';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
@@ -28,29 +28,19 @@ export const CreateButton = ({ token, linkId }: Props) => {
     return (
         <>
             <Button
-                disabled={isLoading}
+                loading={isLoading}
                 ref={anchorRef}
                 onClick={toggle}
-                className="flex gap-2 py-2 items-start justify-center text-left flex-column md:gap-4 md:py-3"
+                className="flex gap-2 items-center"
                 size="medium"
             >
-                <div className="w-full flex items-center gap-2">
-                    <Icon name="plus" size={4} />
-                    {isLoading && <CircleLoader />}
-                </div>
+                <Icon name="plus" size={4} />
                 {c('Action').t`Create`}
             </Button>
-            <Dropdown
-                anchorRef={anchorRef}
-                isOpen={isOpen}
-                onClose={close}
-                size={{
-                    width: '15rem',
-                }}
-            >
+            <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close}>
                 <DropdownMenu>
                     <DropdownMenuButton
-                        className="text-left"
+                        className="flex items-center gap-2"
                         onClick={() =>
                             showCreateFolderModal({
                                 folder: {
@@ -61,12 +51,12 @@ export const CreateButton = ({ token, linkId }: Props) => {
                             })
                         }
                     >
-                        <Icon name="folder-plus" className="mr-2" />
+                        <Icon name="folder-plus" />
                         {c('Action').t`New folder`}
                     </DropdownMenuButton>
                     {isDocsPublicSharingEnabled && (
                         <DropdownMenuButton
-                            className="text-left"
+                            className="flex items-center gap-2"
                             onClick={() =>
                                 withLoading(async () => {
                                     const documentLinkId = await createDocument(
@@ -84,7 +74,7 @@ export const CreateButton = ({ token, linkId }: Props) => {
                                 })
                             }
                         >
-                            <Icon name="brand-proton-docs" className="mr-2" />
+                            <Icon name="brand-proton-docs" />
                             {c('Action').t`New document`}
                         </DropdownMenuButton>
                     )}
