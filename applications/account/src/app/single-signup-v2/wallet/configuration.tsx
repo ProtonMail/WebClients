@@ -81,7 +81,7 @@ const getStorageFeature = (bytes: number): PlanCardFeatureDefinition => {
 
     return {
         text: c('new_plans: feature').jt`${size} storage`,
-        tooltip: c('wallet_signup_2024: Info').t` Encrypted email and file storage`,
+        tooltip: c('wallet_signup_2024: Info').t`Encrypted email and file storage`,
         included: true,
     };
 };
