@@ -4,6 +4,7 @@ import { Href } from '@proton/atoms';
 import type { SidebarConfig } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount } from '@proton/shared/lib/keys';
@@ -35,7 +36,7 @@ export const getMailAppRoutes = ({
     addresses?: Address[];
     organization?: Organization;
 }): SidebarConfig => {
-    const hasOrganization = !!organization?.HasKeys;
+    const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const learnMoreLink = (
         <Href key="learn" href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>
     );
@@ -153,7 +154,8 @@ export const getMailAppRoutes = ({
                 text: c('Title').t`Domain names`,
                 to: '/domain-names',
                 icon: 'globe',
-                available: !user.isMember && !hasOrganization,
+                // NOTE: This configuration is tied with the organization/routes.tsx domains availability
+                available: !user.isMember && !hasOrganizationKey,
                 subsections: [
                     { id: 'domains' },
                     {
