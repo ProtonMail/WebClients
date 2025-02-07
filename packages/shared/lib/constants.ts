@@ -705,6 +705,7 @@ export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 
 export const DARK_MODE_CLASS = 'isDarkMode';
 
+export const VISIONARY_MAX_USERS = 6;
 export const FAMILY_MAX_USERS = 6;
 export const DUO_MAX_USERS = 2;
 
