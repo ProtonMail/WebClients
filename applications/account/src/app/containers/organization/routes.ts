@@ -170,6 +170,7 @@ export const getOrganizationAppRoutes = ({
                 to: '/domain-names',
                 icon: 'globe',
                 // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
+                // NOTE: This configuration is tied with the mail/routes.tsx domains availability
                 available: hasOrganizationKey && user.hasPaidMail,
                 subsections: [
                     { id: 'domains' },
