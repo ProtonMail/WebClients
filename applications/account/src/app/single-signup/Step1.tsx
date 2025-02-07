@@ -1199,6 +1199,7 @@ const Step1 = ({
                                         api={silentApi}
                                         accountStepDetailsRef={accountDetailsRef}
                                         disableChange={loadingSignup}
+                                        hideEmailLabel
                                         onSubmit={
                                             hasSelectedFree
                                                 ? () => {
