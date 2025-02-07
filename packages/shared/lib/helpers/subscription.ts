@@ -940,3 +940,30 @@ export function hasPassLaunchOffer(subscription: Subscription | FreeSubscription
 
     return isLaunchOffer && subscription.Cycle === CYCLE.YEARLY && plan?.Name === PLANS.PASS;
 }
+
+export function getIsUpcomingSubscriptionUnpaid(subscription: Subscription): boolean {
+    const current = subscription;
+    const upcoming = subscription.UpcomingSubscription;
+
+    // Two possible cases here: addon downgrade (for example, Scribe) and scheduled downcycling.
+    // 1. Addon downgrade: user decreases the number of addons,
+    //     then the upcoming subscription will have the same cycle as the current subscription
+    // "current.Cycle === upcoming.Cycle" checks that
+    //
+    // 2. Scheduled downcycling: user changes, for example, from 12 months to 1 month,
+    //     then the upcoming subscription will have a lower cycle than the current subscription
+    // "current.Cycle > upcoming.Cycle" checks that
+    //
+    // In both cases, the upcoming subscription will be unpaid until it starts.
+    // see PAY-2060, PAY-2080, and PAY-3027.
+    return !!current && !!upcoming && current.Cycle >= upcoming.Cycle;
+}
+
+export function getRenewalTime(subscription: Subscription): number {
+    const current = subscription;
+    const upcoming = subscription.UpcomingSubscription;
+    const latestSubscription = upcoming ?? current;
+    const isUpcomingSubscriptionUnpaid = getIsUpcomingSubscriptionUnpaid(subscription);
+
+    return upcoming && isUpcomingSubscriptionUnpaid ? upcoming.PeriodStart : latestSubscription.PeriodEnd;
+}
