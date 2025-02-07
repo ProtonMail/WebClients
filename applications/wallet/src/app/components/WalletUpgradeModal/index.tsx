@@ -1,10 +1,20 @@
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt, SUBSCRIPTION_STEPS, Tooltip, useSubscriptionModal } from '@proton/components';
 import { PLANS } from '@proton/payments';
+import {
+    hasBundle,
+    hasBundlePro,
+    hasBundlePro2024,
+    hasDuo,
+    hasFamily,
+    hasVisionary,
+} from '@proton/shared/lib/helpers/subscription';
 import upgradeWalletSrc from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
+import { useFlag } from '@proton/unleash/index';
 
 import { Button } from '../../atoms';
 import type { SubTheme } from '../../utils';
@@ -20,6 +30,25 @@ type Props = WalletUpgradeModalOwnProps & ModalOwnProps;
 export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const [user] = useUser();
+    const [subscription] = useSubscription();
+    const upgradeToVisionaryOnly =
+        hasBundle(subscription) ||
+        hasFamily(subscription) ||
+        hasDuo(subscription) ||
+        hasBundlePro(subscription) ||
+        hasBundlePro2024(subscription);
+    const hidden = hasVisionary(subscription);
+    const isEarlyAccess = useFlag('WalletEarlyAccess');
+    const subscriptionProps =
+        isEarlyAccess || upgradeToVisionaryOnly
+            ? {
+                  step: SUBSCRIPTION_STEPS.CHECKOUT,
+                  disablePlanSelection: true,
+                  plan: PLANS.VISIONARY,
+              }
+            : {
+                  step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+              };
 
     return (
         <Prompt
@@ -32,12 +61,11 @@ export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Pro
                         size="large"
                         shape="solid"
                         color="norm"
+                        hidden={hidden}
                         disabled={!user.canPay}
                         onClick={() => {
                             openSubscriptionModal({
-                                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                                disablePlanSelection: true,
-                                plan: PLANS.VISIONARY,
+                                ...subscriptionProps,
                                 onSubscribed: () => {
                                     modalProps.onClose?.();
                                 },
@@ -62,7 +90,9 @@ export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Pro
                     style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                 />
                 <h1 className="my-4 text-semibold text-3xl">
-                    {title ?? c('Wallet Upgrade').t`Upgrade to support financial freedom`}
+                    {(title ?? hidden)
+                        ? c('Wallet Upgrade').t`You have reached your limit`
+                        : c('Wallet Upgrade').t`Upgrade to support financial freedom`}
                 </h1>
                 <p className="mt-0 text-center">{content}</p>
             </div>
