@@ -41,6 +41,7 @@ export interface PlanCardFeature {
         [PLANS.VPN_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.WALLET]: PlanCardFeatureDefinition | null;
         [PLANS.LUMO]: PlanCardFeatureDefinition | null;
+        [PLANS.VISIONARY]: PlanCardFeatureDefinition | null;
     };
 }
 
