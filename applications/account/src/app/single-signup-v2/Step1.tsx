@@ -711,7 +711,6 @@ const Step1 = ({
             return wrap('hourglass', textLaunchOffer);
         }
 
-        const hasOptimistic2024OfferCoupon = getHas2024OfferCoupon(options.coupon);
         const has2024OfferCoupon = getHas2024OfferCoupon(options.checkResult.Coupon?.Code);
 
         // Using real coupon to show the correct discount percentage
@@ -721,16 +720,6 @@ const Step1 = ({
                 'bag-percent',
                 c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday discount has been applied`
             );
-        }
-
-        // Using optimistic coupon to avoid this displaying before above is finished
-        if (selectedPlan.Name === PLANS.DUO && options.cycle === CYCLE.YEARLY && !hasOptimistic2024OfferCoupon) {
-            const discount = getSimplePriceString(options.currency, checkout.discountPerCycle, '');
-            const name = selectedPlan.Title;
-            const textLaunchOffer = getBoldFormattedText(
-                c('mail_signup_2024: Info').t`Limited time offer: **Save ${discount} on ${name} with a 1-year plan**`
-            );
-            return wrap('hourglass', textLaunchOffer);
         }
 
         if (selectedPlan.Name === PLANS.DRIVE && options.checkResult.Coupon?.Code === COUPON_CODES.TRYDRIVEPLUS2024) {
