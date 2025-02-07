@@ -27,9 +27,11 @@ import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helper
 import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
 import {
     getHas2023OfferCoupon,
+    getIsUpcomingSubscriptionUnpaid,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     getPlanTitle,
+    getRenewalTime,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
@@ -44,8 +46,8 @@ import { subscriptionExpires } from './subscription/helpers';
 const SubscriptionsSection = () => {
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
-    const [current, loadingSubscription] = useSubscription();
-    const upcoming = current?.UpcomingSubscription ?? undefined;
+    const [subscription, loadingSubscription] = useSubscription();
+    const upcoming = subscription?.UpcomingSubscription ?? undefined;
     const api = useApi();
     const eventManager = useEventManager();
     const [reactivating, withReactivating] = useLoading();
@@ -57,13 +59,13 @@ const SubscriptionsSection = () => {
 
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
-    if (!current || !plans || loadingSubscription || loadingPlans || plansMapLoading) {
+    if (!subscription || !plans || loadingSubscription || loadingPlans || plansMapLoading) {
         return <Loader />;
     }
 
-    const planTitle = getPlanTitle(current);
+    const planTitle = getPlanTitle(subscription);
 
-    const { renewEnabled, subscriptionExpiresSoon } = subscriptionExpires(current);
+    const { renewEnabled, subscriptionExpiresSoon } = subscriptionExpires(subscription);
 
     const reactivateAction: DropdownActionProps[] = [
         !renewEnabled && {
@@ -78,7 +80,7 @@ const SubscriptionsSection = () => {
                             {
                                 RenewalState: Renew.Enabled,
                             },
-                            onSessionMigrationPaymentsVersion(user, current)
+                            onSessionMigrationPaymentsVersion(user, subscription)
                         )
                     );
 
@@ -88,20 +90,9 @@ const SubscriptionsSection = () => {
         },
     ].filter(isTruthy);
 
-    const latestSubscription = upcoming ?? current;
+    const latestSubscription = upcoming ?? subscription;
 
-    // Two possible cases here: addon downgrade (for example, Scribe) and scheduled downcycling.
-    // 1. Addon downgrade: user decreases the number of addons,
-    //     then the upcoming subscription will have the same cycle as the current subscription
-    // "current.Cycle === upcoming.Cycle" checks that
-    //
-    // 2. Scheduled downcycling: user changes, for example, from 12 months to 1 month,
-    //     then the upcoming subscription will have a lower cycle than the current subscription
-    // "current.Cycle > upcoming.Cycle" checks that
-    //
-    // In both cases, the upcoming subscription will be unpaid until it starts.
-    // see PAY-2060, PAY-2080, and PAY-3027.
-    const isUpcomingSubscriptionUnpaid = !!current && !!upcoming && current.Cycle >= upcoming.Cycle;
+    const isUpcomingSubscriptionUnpaid = getIsUpcomingSubscriptionUnpaid(subscription);
 
     const { renewAmount, renewCurrency, renewLength } = (() => {
         const latestPlanIDs = getPlanIDs(latestSubscription);
@@ -143,7 +134,7 @@ const SubscriptionsSection = () => {
             };
         }
 
-        if (isUpcomingSubscriptionUnpaid) {
+        if (upcoming && isUpcomingSubscriptionUnpaid) {
             return {
                 renewAmount: upcoming.Amount,
                 renewCurrency: upcoming.Currency,
@@ -160,8 +151,8 @@ const SubscriptionsSection = () => {
 
     const renewPrice = getSimplePriceString(renewCurrency, renewAmount);
     const renewalText = (() => {
-        if (isManagedExternally(current)) {
-            const subscriptionManagerName = getSubscriptionManagerName(current.External);
+        if (isManagedExternally(subscription)) {
+            const subscriptionManagerName = getSubscriptionManagerName(subscription.External);
             // translator: possible values are "Google Play" or "Apple App Store". This sentence means "Subscription renews automatically on Google Play (or Apple App Store)"
             return c('Billing cycle').t`Renews automatically on ${subscriptionManagerName}`;
         }
@@ -181,8 +172,6 @@ const SubscriptionsSection = () => {
               label: c('Subscription status').t`Expiring`,
           }
         : { type: 'success' as BadgeType, label: c('Subscription status').t`Active` };
-
-    const renewalDate = isUpcomingSubscriptionUnpaid ? upcoming.PeriodStart : latestSubscription.PeriodEnd;
 
     return (
         <SettingsSectionWide>
@@ -206,7 +195,7 @@ const SubscriptionsSection = () => {
                             </TableCell>
                             <TableCell label={c('Title subscription').t`End date`}>
                                 <Time format="PPP" sameDayFormat={false} data-testid="planEndTimeId">
-                                    {renewalDate}
+                                    {getRenewalTime(subscription)}
                                 </Time>
                                 {subscriptionExpiresSoon && (
                                     <Tooltip
