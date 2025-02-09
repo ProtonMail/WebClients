@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:map';
 
 /**
  * Convert a $breakpoint map from px to em
@@ -12,7 +13,7 @@
 
 	@each $name, $value in $breakpoints {
 		$em-value: (math.div($value, $base-value)) * 1em;
-		$new-breakpoints: map-merge(
+		$new-breakpoints: map.merge(
 			$new-breakpoints,
 			(
 				$name: $em-value,
