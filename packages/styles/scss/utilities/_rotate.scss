@@ -1,13 +1,7 @@
 @use 'sass:string';
 
 @mixin gen-rotate($axis, $angle) {
-	$test: 'rotate: x 90deg';
-	@supports not (#{$test}) {
-		transform: #{'rotate' + string.to-upper-case($axis) }(#{$angle}deg);
-	}
-	@supports (#{$test}) {
-		rotate: $axis #{$angle}deg;
-	}
+	transform: #{'rotate' + string.to-upper-case($axis) }(#{$angle}deg); // migrate to CSS rotate prop later
 }
 
 .rotateX-180 {
