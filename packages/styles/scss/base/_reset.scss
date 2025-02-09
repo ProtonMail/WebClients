@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 article,
 aside,
 details,
@@ -242,7 +244,7 @@ dfn {
  * see https://en.wikipedia.org/wiki/Quotation_mark#Summary_table for reference
  */
 html {
-	quotes: '\201C''\201D''\2018''\2019'; // default
+	quotes: '\201C' '\201D' '\2018' '\2019'; // default
 }
 
 @each $quotes
@@ -256,8 +258,8 @@ html {
 		('lang': 'ar', 'quotes': '"\201C" "\201D"')
 	)
 {
-	:lang(#{map-get($quotes, 'lang')}) {
-		quotes: #{map-get($quotes, 'quotes')};
+	:lang(#{map.get($quotes, 'lang')}) {
+		quotes: #{map.get($quotes, 'quotes')};
 	}
 }
 
