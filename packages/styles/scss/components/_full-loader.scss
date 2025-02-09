@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 // Init values
 $animation-duration: 3s !default;
 $second-circle-time-offset: 0.125s !default;
@@ -29,7 +31,7 @@ $stroke-map: (
 		transform-origin: 50%;
 		fill: none;
 		stroke: currentcolor;
-		stroke-width: map-get($stroke-map, default);
+		stroke-width: map.get($stroke-map, default);
 		will-change: transform;
 		animation: $animation-duration linear infinite;
 

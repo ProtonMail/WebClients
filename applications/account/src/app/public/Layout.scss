@@ -1,6 +1,7 @@
 /*
  * signup specific styles
  */
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 .sign-layout {
@@ -147,7 +148,7 @@
 		font-weight: normal;
 
 		@include media('<=xsmall') {
-			font-size: em(map-get($title-sizes, 'h3'));
+			font-size: em(map.get($title-sizes, 'h3'));
 			margin: 0;
 		}
 	}
