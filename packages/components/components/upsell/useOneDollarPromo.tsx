@@ -4,8 +4,6 @@ import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { CircleLoader } from '@proton/atoms/index';
-import Price from '@proton/components/components/price/Price';
 import { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
@@ -13,6 +11,8 @@ import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, getPlanByName, isMainCurrency }
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+
+import { PriceCoupon, PriceLine } from './OneDollarPromoComponents';
 
 const OFFER_DEFAULT_AMOUNT_DUE = 100;
 
@@ -40,14 +40,14 @@ const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
     const planName = user.isPaid ? PLAN_NAMES[PLANS.BUNDLE] : PLAN_NAMES[PLANS.MAIL];
     const plan = getPlanByName(plansResult?.plans ?? [], planID, currency);
     const cycle = user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY;
-    const planPricePerMonth = getPricePerCycle(plan, cycle) ?? 0;
+    const planPricePerCycle = getPricePerCycle(plan, cycle) ?? 0;
 
     useEffect(() => {
         const handleGetPlanAmount = async () => {
             if (plan && currency && !loadingCurrency && !amountDue) {
                 // For USD, CHF and EUR, default value is "1 dollar"
                 if (isMainCurrency(currency)) {
-                    setAmountDue(user.isFree ? OFFER_DEFAULT_AMOUNT_DUE : planPricePerMonth);
+                    setAmountDue(user.isFree ? OFFER_DEFAULT_AMOUNT_DUE : planPricePerCycle);
                     return;
                 }
 
@@ -58,7 +58,7 @@ const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
                         Cycle: CYCLE.MONTHLY,
                         CouponCode: user.isFree ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
                     },
-                    defaultPrice: planPricePerMonth,
+                    defaultPrice: planPricePerCycle,
                     currency,
                 });
 
@@ -69,25 +69,14 @@ const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
         void withLoading(handleGetPlanAmount);
     }, [plan, currency, loadingCurrency]);
 
-    const priceMailPlus = (
-        <Price
-            key="monthly-price"
-            currency={currency}
-            suffix={c('specialoffer: Offers').t`/month`}
-            isDisplayedInSentence
-        >
-            {planPricePerMonth}
-        </Price>
+    const priceLine = user.isFree ? (
+        <PriceLine currency={currency} planPrice={planPricePerCycle} />
+    ) : (
+        // Paid users are upsell to yearly cycle, we want monthly price so we need to divide the price by 12
+        <PriceLine currency={currency} planPrice={planPricePerCycle / CYCLE.YEARLY} />
     );
 
-    const priceCoupon =
-        !loading && amountDue ? (
-            <Price currency={currency} key="monthlyAmount">
-                {amountDue}
-            </Price>
-        ) : (
-            <CircleLoader size="small" />
-        );
+    const priceCoupon = <PriceCoupon currency={currency} amountDue={amountDue} loading={loading} />;
 
     if (newUpsellModalVariant) {
         return {
@@ -96,9 +85,9 @@ const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
                 : getPlanOrAppNameText(planName),
             footerText: user.isFree
                 ? c('new_plans: Subtext')
-                      .jt`The discounted price of ${priceCoupon} is valid for the first month. Then it will automatically be renewed at ${priceMailPlus}. You can cancel at any time.`
+                      .jt`The discounted price of ${priceCoupon} is valid for the first month. Then it will automatically be renewed at ${priceLine}. You can cancel at any time.`
                 : c('new_plans: Subtext')
-                      .jt`Unlock all ${BRAND_NAME} premium products and features for just ${priceMailPlus}. Cancel anytime.`,
+                      .jt`Unlock all ${BRAND_NAME} premium products and features for just ${priceLine}. Cancel anytime.`,
             cycle,
             coupon: user.isFree ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
             planIDs: {
