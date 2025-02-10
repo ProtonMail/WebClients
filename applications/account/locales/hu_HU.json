@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -10464,9 +10464,6 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Korlátozott idejű ajánlat: **Akár 35% kedvezmény** az éves csomagokkal"
       ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Korlátozott idejű ajánlat: **${ discount } megtakarítás a ${ name } csomagon, 1 éves csomaggal**"
-      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Meghívás a ${ MAIL_APP_NAME } alkalmazás kipróbálására"
       ]
@@ -11255,9 +11252,6 @@
       ],
       "Tailored to your needs": [
         "Az igényeihez igazítva"
-      ],
-      "TOR over VPN": [
-        "Tor VPN-en"
       ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
@@ -14577,6 +14571,29 @@
         "${ totalPrice } áron"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -14751,29 +14768,6 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -15294,6 +15288,10 @@
       ],
       "Activate user": [
         "Felhasználó aktiválása"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "Hozzáad ${ totalServerCount } szervert?",
+        "Hozzáad ${ totalServerCount } szervert?"
       ],
       "Add a custom logo": [
         "Egyedi logó hozzáadása"
@@ -16460,17 +16458,6 @@
         "Ma"
       ]
     },
-    "tooltip": {
-      "Group membership paused": [
-        "Csoport tagság felfüggesztve"
-      ],
-      "User declined invitation": [
-        "A felhasználó elutasította a meghívást"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Várakozás a meghívás elfogadására"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "A ${ MAIL_APP_NAME } felhasználók alapértelmezetten ezt a kulcsot fogják használni a küldéshez"
@@ -16651,6 +16638,17 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "A külső fiókja nagy eséllyel elérte a 24-órás sávszélesség korlátját. A ${ BRAND_NAME } meg fogja próbálni folytatni az importálást amilyen hamar csak lehetséges."
+      ]
+    },
+    "tooltip": {
+      "Group membership paused": [
+        "Csoport tagság felfüggesztve"
+      ],
+      "User declined invitation": [
+        "A felhasználó elutasította a meghívást"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Várakozás a meghívás elfogadására"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17052,11 +17050,52 @@
         "${ n } tároló",
         "${ n } tároló"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Biztonságosabb módja a Bitcoin tárolásának"
+      ],
+      "Advanced account protection": [
+        "Fejlett fiók védelmi program"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin küldés e-mailben"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Titkosított és biztonságos ${ MAIL_APP_NAME } e-mail cím. Egyszerűen küldhetsz Bitcoint bárkinek csupán a ${ BRAND_NAME } nevét."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Titkosított felhő tárhely fényképekhez és dokumentumokhoz"
+      ],
+      "Encrypted password manager": [
+        "Titkosított jelszókezelő"
+      ],
       "Exclusive early access to ${ appName }.": [
         "Exkluzív korai hozzáférés a ${ appName }-hez."
       ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Legexkluzívabb Csomagunk. Szerezz korai hozzáférést az új funkciókhoz és az összes prémium ${ BRAND_NAME } szolgáltatáshoz."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Biztonságosan cserélj Bitcoint e-mailen keresztül, ahelyett, hogy összetett, 26 karakteres és hibára hajlamos Bitcoin címeket használnál"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Biztonságosan tárolja és intézze a Bitcoin tranzakciókat ingyenesen."
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Vedd kezedbe az összes adataid irányítását a prémium ${ BRAND_NAME } szolgáltatásaival."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultra gyors és privát VPN"
+      ],
       "You're Invited.": [
         "Önt meghívták"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Biztonságosabb módja a Bitcoin tárolásának"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -17065,6 +17104,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "A ${ WALLET_APP_NAME } a korai hozzáférés program része. Az iOS alkalmazást az Apple TestFlighton, az Android alkalmazást pedig a Google Open Testingen érheti el."
+      ],
       "Coming soon": [
         "Hamarosan"
       ]

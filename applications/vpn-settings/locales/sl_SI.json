@@ -307,6 +307,9 @@
       "Generate password": [
         "Ustvari geslo"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Pridobite ${ planName } za ${ priceCoupon }."
+      ],
       "Get a new encrypted email address": [
         "Pridobite nov šifriran e-poštni naslov"
       ],
@@ -2546,6 +2549,9 @@
       "Please generate keys before you try to change your password": [
         "Preden poskusite spremeniti geslo, ustvarite ključe."
       ],
+      "Please select a country": [
+        "Izberite državo."
+      ],
       "Please set a recovery email first": [
         "Najprej nastavite e-poštni naslov za obnovitev"
       ],
@@ -3360,6 +3366,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -3368,6 +3377,9 @@
       ],
       "No verification method available": [
         "Način preverjanja ni na voljo"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -3466,6 +3478,9 @@
         "(${ memberCount } člana)",
         "(${ memberCount } člani)",
         "(${ memberCount } članov)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mesec)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Pridobite si naslov ${ BRAND_NAME }**, ki ga uporabite za vse storitve ${ BRAND_NAME_TWO }, vključno z ${ MAIL_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }."
@@ -3852,7 +3867,7 @@
         "Vnesite svojo telefonsko številko za obnovitev računa in poslali vam bomo vaše uporabniško ime ali naslov e-pošte."
       ],
       "Enter your recovery phrase to change your password now.": [
-        "Vnesite obnovitveno besedno zvezo, če želite zdaj spremeniti geslo."
+        "Vnesite obnovitveno frazo, če želite zdaj spremeniti geslo."
       ],
       "Example: ${ spfExample }": [
         "Primer: ${ spfExample }"
@@ -4100,6 +4115,9 @@
       "Number of dedicated servers in the organization": [
         "Število namenskih strežnikov v organizaciji"
       ],
+      "Numbers": [
+        "Številke"
+      ],
       "of": [
         "od"
       ],
@@ -4188,7 +4206,7 @@
         "Preverite datoteko ali poskusite uporabiti našo ${ csvTemplateButton }."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "Vnesite obnovitveni stavek z 12 besedami, ki je povezan z vašim računom."
+        "Vnesite obnovitveno frazo z 12 besedami, ki je povezana z vašim računom."
       ],
       "please open a support ticket": [
         "prosimo odprite zahtevek za podporo"
@@ -4656,7 +4674,7 @@
         "Priporočamo, da obvestite člane organizacije in jih prosite, naj nastavijo dvojno preverjanje pristnosti za svoje račune, preden zahtevate uporabo tega preverjanja."
       ],
       "We recommend using your recovery phrase instead.": [
-        "Namesto tega priporočamo uporabo vaše fraze za obnovitev."
+        "Namesto tega priporočamo uporabo vaše obnovitvene fraze."
       ],
       "We use 3-D Secure to protect your payments": [
         "Za zaščito vaših plačil uporabljamo 3-D Secure."
@@ -5461,7 +5479,7 @@
         "Podatki o sistemu"
       ],
       "Thomas": [
-        "Janek"
+        "Janez"
       ],
       "Two-password mode": [
         "Način z dvema gesloma"
@@ -5907,11 +5925,17 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
       "Upgrade": [
         "Nadgradnja"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: action": {
@@ -6060,6 +6084,9 @@
       ],
       "1 user": [
         "En uporabnik"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-poštnih naslovov/psevdonimov"
       ],
       "10-year file version history": [
         "Zgodovina različic datotek za 10 let"
@@ -6343,8 +6370,8 @@
       "Sync and backup all your files across devices": [
         "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
-      "TOR over VPN": [
-        "Tor prek VPN"
+      "Tor over VPN": [
+        "Tor preko VPN"
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
@@ -6977,14 +7004,29 @@
       ]
     },
     "Offer": {
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Pridobite Drive Plus za samo ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Pridobite Mail Plus za samo ${ pricingTitle }"
+      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
+      ],
+      "Limited-time offer": [
+        "Časovno omejena ponudba"
       ],
       "Maybe later": [
         "Morda kasneje"
       ]
     },
     "Offer feature": {
+      "Custom email domain": [
+        "E-poštna domena po meri"
+      ],
+      "Email addresses": [
+        "E-poštni naslovi"
+      ],
       "Free": [
         "Brezplačno"
       ],
@@ -7468,7 +7510,7 @@
         "Začetni datum"
       ],
       "Thomas": [
-        "Janek"
+        "Janez"
       ],
       "yourdomain.com": [
         "vašadomena.com"
@@ -7523,7 +7565,7 @@
         "Telefonska številka"
       ],
       "Phrase": [
-        "Stavek"
+        "Fraza"
       ]
     },
     "Recovery Phone": {
@@ -8277,7 +8319,7 @@
     },
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
-        "Pridobite do ${ credits } dobropisov."
+        "Pridobite do ${ credits } kot dobropis."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
@@ -8340,6 +8382,9 @@
       ],
       "User details:": [
         "Podrobnosti o uporabniku:"
+      ],
+      "Welcome": [
+        "Dobrodošli"
       ]
     },
     "sso: auth device state": {
@@ -9425,6 +9470,9 @@
       "Email subscriptions": [
         "E-poštne naročnine"
       ],
+      "Enter 2FA code": [
+        "Vnesite kodo 2FA"
+      ],
       "Enter endpoints into your identity provider": [
         "Vnesite končne točke v ponudnika identitete"
       ],
@@ -9900,6 +9948,9 @@
       ],
       "Failed": [
         "Neuspešno"
+      ],
+      "Success": [
+        "Uspešno"
       ]
     },
     "Transaction type display as badge": {
@@ -10167,6 +10218,30 @@
       ],
       "Your ${ selected } plan": [
         "Vaš ${ selected } paket"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "A safer way to hold your Bitcoin": [
+        "Varnejši način shranjevanja Bitcoina"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin prek elektronske pošte"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Šifriran in varen e-poštni naslov ${ MAIL_APP_NAME }. Lahko preprosto pošljete Bitcoin vsakomur, samo s pomočjo imena ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Varnejši način izmenjave Bitcoina prek e-pošte namesto zapletenih 26-znakovnih Bitcoin naslovov, ki so dovzetni za napake"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Varnejši način shranjevanja Bitcoina"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Težava z Wallet"
       ]
     },
     "Warning": {

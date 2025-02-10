@@ -799,6 +799,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentisering mislyktes. Bekreft ${ BRAND_NAME }-passordet for å forsette med eksporten."
       ],
+      "Biometric authentication failed": [
+        "Biometrisk autentisering mislyktes"
+      ],
       "Cannot send invitation at the moment": [
         "Kan ikke sende invitasjon for øyeblikket",
         "Kan ikke sende invitasjoner for øyeblikket"
@@ -1340,6 +1343,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Tilgang til ${ PASS_APP_NAME } vil alltid kreve ${ BRAND_NAME }-passordet ditt."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve reservepassordet ditt."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve det ekstra passordet ditt."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
       ],
@@ -1607,6 +1616,9 @@
       "Expires in ${ remainingTime }": [
         "Utløper om ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Eksporterer dataene dine..."
+      ],
       "Extra password successfully created": [
         "Ekstra passord vellykket opprettet"
       ],
@@ -1619,8 +1631,11 @@
       "finance": [
         "finans"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil :"
+      "Follow those steps to import your data with a generic CSV:": [
+        "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Av sikkerhetsgrunner krever denne handlingen identitetsbekreftelse."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Av sikkerhetsgrunner må du bekrefte tilgangen til dette delte hvelvet",
@@ -1650,6 +1665,9 @@
       ],
       "How does monitoring work?": [
         "Hvordan fungerer overvåking?"
+      ],
+      "Identity confirmed": [
+        "Identitet bekreftet"
       ],
       "Import in progress:": [
         "Import pågår:"
@@ -1876,11 +1894,38 @@
       "Please check your spam folder or try resending the code.": [
         "Sjekk søppelpostmappen din eller prøv å sende koden på nytt."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Bekreft passordet for ${ BRAND_NAME } for å deaktivere frakoblet modus"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bekreft passordet for ${ BRAND_NAME } for å aktivere frakoblet modus"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
+      ],
+      "Please confirm your backup password": [
+        "Bekreft reservepassordet ditt"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Bekreft reservepassordet ditt for å låse automatisk med biometri."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Bekreft reservepassordet ditt for å låse automatisk med passordet ditt."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Bekreft reservepassordet ditt for å deaktivere frakoblet modus"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bekreft reservepassordet ditt for å aktivere frakoblet modus"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekreft reservepassordet ditt for å eksportere ${ PASS_APP_NAME }-dataene."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Bekreft reservepassordet ditt for å avregistrere din nåværende lås."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Bekreft reservepassordet ditt for å oppdatere tiden for automatisk låsing."
       ],
       "Please confirm your extra password": [
         "Bekreft det ekstra passordet"
@@ -1890,6 +1935,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bekreft det ekstra passordet for å kunne låse automatisk med ditt ekstra passord."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Bekreft ekstra passordet ditt for å deaktivere frakoblet modus"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bekreft ekstra passordet ditt for å aktivere frakoblet modus"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Bekreft ekstra passordet for å eksportere ${ PASS_APP_NAME }-dataene dine."
@@ -2262,6 +2313,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nådd den maksimalt tillatte lengden på ${ maxLength }-tegn."
       ],
+      "You may close this tab.": [
+        "Du kan lukke denne fanen."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Du vil kunne tilpasse domeneinnstillingene dine (catch-all e-postaliaser, standard visningsnavn for aliaser osv...) etter å ha bekreftet domenet ditt."
       ],
@@ -2452,6 +2506,9 @@
       ],
       "Auto-lock after": [
         "Autolås etter"
+      ],
+      "Backup password": [
+        "Reservepassord"
       ],
       "Beta Access": [
         "Beta-tilgang"
@@ -3505,6 +3562,9 @@
       "Confirm extra password": [
         "Bekreft ekstra passord"
       ],
+      "Confirm identity": [
+        "Bekreft identitet"
+      ],
       "Confirm PIN code": [
         "Bekreft PIN-kode"
       ],
@@ -3589,6 +3649,9 @@
       ],
       "Enter coupon code": [
         "Skriv inn kupongkode"
+      ],
+      "Enter your backup password": [
+        "Skriv inn reservepassordet ditt"
       ],
       "Enter your extra password": [
         "Angi det ekstra passordet ditt"

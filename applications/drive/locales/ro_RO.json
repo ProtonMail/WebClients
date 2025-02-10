@@ -432,6 +432,9 @@
       "Hide advanced PGP settings": [
         "Ascundere setări PGP avansate"
       ],
+      "Hide download options": [
+        "Ascundere opțiuni de descărcare"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Imaginea nu a putut fi încărcată cu protecția împotriva urmăririi activată."
       ],
@@ -776,6 +779,9 @@
       ],
       "Show advanced PGP settings": [
         "Afișare setări PGP avansate"
+      ],
+      "Show more download options": [
+        "Afișare alte opțiuni de descărcare"
       ],
       "Show navigation bar": [
         "Afișare bară de navigare"
@@ -7343,7 +7349,7 @@
       "Sync and backup all your files across devices": [
         "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor prin VPN"
       ],
       "Two-factor authentication": [
@@ -8565,8 +8571,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul, iar banca să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
       ],
       "Street address, postal code, and city": [
         "Strada, cod poștal și oraș"
@@ -10949,6 +10955,11 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adresă de e-mail ${ BRAND_NAME }",
+        "${ n } adrese de e-mail ${ BRAND_NAME }",
+        "${ n } de adrese de e-mail ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } cont per portofel",
         "${ n } conturi per portofel",
@@ -10964,6 +10975,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin prin e-mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Adresă de e-mail ${ MAIL_APP_NAME } criptată și sigură. Puteți trimite cu ușurință Bitcoin oricui doar cu numele ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Schimbați în siguranță Bitcoin prin e-mail, în loc de adrese Bitcoin complexe, de 26 de caractere, care sunt predispuse la eroare"
       ]
     },
     "wallet_signup_2024:app-switcher": {

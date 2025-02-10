@@ -70,11 +70,11 @@
       "Accept": [
         "接受"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -313,6 +313,9 @@
       "Copy link": [
         "复制链接"
       ],
+      "Copy password": [
+        "复制密码"
+      ],
       "Copy version number to clipboard": [
         "复制版本号"
       ],
@@ -339,6 +342,9 @@
       ],
       "Create link": [
         "创建链接"
+      ],
+      "Create new password": [
+        "创建新密码"
       ],
       "Create new policy": [
         "创建新政策"
@@ -6884,11 +6890,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "active": [
-        "启用"
-      ],
       "Active": [
         "已启用"
+      ],
+      "active": [
+        "启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7078,6 +7084,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "要求您的组织管理员设置网关。"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "至少 ${ BETTER_PASSWORD_LENGTH } 个字符"
       ],
       "Attention required": [
         "需要关注"
@@ -7835,6 +7844,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "更改服务器的国家/地区需要 10 天时间，因此请确保您的选择正确。"
       ],
+      "It's better to have:": [
+        "最好是有："
+      ],
       "Item autofilled in ${ vaultLink }": [
         "在 ${ vaultLink } 中自动填充项目"
       ],
@@ -8072,6 +8084,9 @@
       "No addresses exist": [
         "没有地址"
       ],
+      "No common passwords": [
+        "没有常用密码"
+      ],
       "No credit card required": [
         "无需信用卡"
       ],
@@ -8102,6 +8117,9 @@
       "No payment is required at this time.": [
         "目前不需要支付。"
       ],
+      "No predictable sequences (1234, aaa)": [
+        "不要可预测的序列 (1234，aaa)"
+      ],
       "No results found": [
         "未找到结果"
       ],
@@ -8116,6 +8134,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
+      ],
+      "Numbers": [
+        "数字"
       ],
       "of": [
         "，共"
@@ -8627,6 +8648,9 @@
       "Switch to": [
         "切换为"
       ],
+      "Symbols (#$&)": [
+        "符号 (#$&)"
+      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用 ${ DRIVE_APP_NAME } 应用程序同步和管理文件。在 ${ DOCS_APP_NAME } 中创建和共享文档，并安全存储。一切尽在 ${ ios }、${ android } 和 ${ desktop }。"
       ],
@@ -9001,6 +9025,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "上传的文件不是有效的私钥。请验证并重试。"
+      ],
+      "Uppercase and lowercase letters": [
+        "大写字母和小写字母"
       ],
       "URL link": [
         "网址"
@@ -10460,6 +10487,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "输入以下密钥的密码：${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "请输入您的密码"
+      ],
       "Entity ID": [
         "实体 ID"
       ],
@@ -10663,6 +10693,9 @@
       ],
       "Move to Inbox": [
         "移至收件箱"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
       ],
       "Name": [
         "姓名"
@@ -10952,6 +10985,9 @@
       "Strong": [
         "强"
       ],
+      "Strong password": [
+        "强密码"
+      ],
       "Subscription options": [
         "计费方式"
       ],
@@ -11045,11 +11081,17 @@
       "Vulnerable": [
         "易受攻击"
       ],
+      "Vulnerable password": [
+        "易受攻击的密码"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "我们对您的离去深表遗憾。请告诉我们您为什么要删除账户，帮助我们加以改进："
       ],
       "Weak": [
         "弱"
+      ],
+      "Weak password": [
+        "弱密码"
       ],
       "Week start": [
         "每周第一天"
@@ -11291,6 +11333,9 @@
       "Encryption and keys": [
         "加密与密钥"
       ],
+      "Forgot email?": [
+        "忘记电子邮箱？"
+      ],
       "Forgot password?": [
         "忘记密码?"
       ],
@@ -11347,6 +11392,9 @@
       ],
       "Privacy policy": [
         "隐私协议"
+      ],
+      "privacy policy": [
+        "隐私条款"
       ],
       "Reactivate now": [
         "立即重新激活"
@@ -11517,9 +11565,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "限时优惠： 年度计划**折扣高达 35%**"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "限时优惠： **使用 1 年计划可在 ${ name } 上节省 ${ discount }**"
       ],
       "Set up your account with your Porkbun domain.": [
         "使用您的 Pokbun 域设置您的帐户。"
@@ -12405,8 +12450,8 @@
       "Tailored to your needs": [
         "根据您的需求量身定制"
       ],
-      "TOR over VPN": [
-        "VPN 上的 Tor"
+      "Tor over VPN": [
+        "经 Tor 连接 VPN"
       ],
       "Two-factor authentication": [
         "双重验证"
@@ -13833,6 +13878,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "但您可以通过升级到 **${ upsellPlanTitle }** 来解锁 **${ unlockPlanTitle }** 和所有高级 ${ BRAND_NAME } 服务。"
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "继续使用即表示您同意我们的 ${ termsAndConditionsLink } 和 ${ privacyPolicyLink }。"
+      ],
       "Creating your account": [
         "正在为您创建账户"
       ],
@@ -14175,6 +14223,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "您已经被设置为组织 **${ organizationName }** 的管理员"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "在生成新的组织密钥前，您必须删除所有群组"
+      ],
       "You must privatize all users before generating a new organization key": [
         "在生成新的组织密钥之前，您必须先将所有用户私有化"
       ],
@@ -14304,8 +14355,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "确认付款后，您即授权 ${ BRAND_NAME } 和我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣款，您的银行则相应地从您的账户中扣款。根据您与银行签订的协议，你可以在扣款日起 8 周内获得退款。"
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "确认付款后，您即授权 ${ BRAND_NAME } 和我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣除相应款项。根据您与银行签订的协议，您可以在扣款日起 8 周内获得退款。"
       ],
       "Street address, postal code, and city": [
         "街道地址、邮政编码和城市"
@@ -16107,6 +16158,9 @@
       "User details:": [
         "用户详细信息："
       ],
+      "Welcome": [
+        "欢迎"
+      ],
       "Yes, it was me": [
         "是的，就是我"
       ],
@@ -16407,6 +16461,47 @@
         "总计${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动转发 ${ strongText } 电子邮件"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "短电子邮箱地址 @pm.me"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -16689,47 +16784,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 电子邮件别名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动转发 ${ strongText } 电子邮件"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "短电子邮箱地址 @pm.me"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -18080,8 +18134,8 @@
       "PayPal verification failed": [
         "PayPal 验证失败"
       ],
-      "Personalise your e-mail footer": [
-        "个性化您的电子邮件页脚"
+      "Personalize your e-mail footer": [
+        "个性化您的邮件页脚"
       ],
       "Personalize your email footer": [
         "个性化您的邮件页脚"
@@ -18619,29 +18673,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "外部地址 - 禁用该组的端到端电子邮件加密功能"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "外部地址 - 禁用该组的端到端电子邮件加密，不会与该用户共享加密资源。"
-      ],
-      "Group membership paused": [
-        "群组成员资格暂停"
-      ],
-      "Sending member invitation": [
-        "正在发送成员邀请"
-      ],
-      "User declined invitation": [
-        "用户拒绝了邀请"
-      ],
-      "Waiting for user to accept the invitation": [
-        "等待用户接受邀请"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME } 用户默认使用这个密钥发送邮件"
@@ -18855,6 +18886,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "您的第三方账户可能已超过 24 小时内的带宽上限，${ BRAND_NAME } 将尽快继续导入过程。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "外部地址 - 禁用该组的端到端电子邮件加密功能"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "外部地址 - 禁用该组的端到端电子邮件加密，不会与该用户共享加密资源。"
+      ],
+      "Group membership paused": [
+        "群组成员资格暂停"
+      ],
+      "Sending member invitation": [
+        "正在发送成员邀请"
+      ],
+      "User declined invitation": [
+        "用户拒绝了邀请"
+      ],
+      "Waiting for user to accept the invitation": [
+        "等待用户接受邀请"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19348,20 +19402,59 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } 电子邮箱地址"
+      ],
       "${ n } account per wallet": [
         "每个钱包${ n }个 账户"
       ],
       "${ n } wallet": [
         "${ n } 个钱包"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 计划"
+      ],
       "A safer way to hold your Bitcoin": [
         "更安全持有比特币的方式"
+      ],
+      "Advanced account protection": [
+        "高级账户保护"
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "已加密且安全的 ${ MAIL_APP_NAME } 电子邮件地址。您只需使用其 ${ BRAND_NAME } 名称即可轻松发送 Bitcoin。"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "用于照片和文档的加密云存储"
+      ],
+      "Encrypted email and file storage": [
+        "加密电子邮件和文件存储"
+      ],
+      "Encrypted password manager": [
+        "加密的密码管理器"
+      ],
       "Exclusive early access to ${ appName }.": [
         "独家的尽早访问 ${ appName }。"
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "我们最专属的套餐。抢先体验新功能和所有付費版伺服器 ${ BRAND_NAME } 服务。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "通过电子邮件安全地交换 Bitcoin，而不是那些复杂、26个字符长且容易出错的 Bitcoin 地址"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "安全地持有并免费交易 Bitcoin。"
+      ],
+      "Self-custodial wallet": [
+        "自我托管钱包"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "使用付費版伺服器 ${ BRAND_NAME } 服务掌控您所有的数据。"
+      ],
+      "Ultra fast and private VPN": [
+        "超快且私有的 VPN"
       ],
       "You're Invited.": [
         "您已被邀请。"

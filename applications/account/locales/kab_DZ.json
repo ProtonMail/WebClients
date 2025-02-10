@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -9576,6 +9576,14 @@
         "Imultaɣen"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -9607,14 +9615,6 @@
       ],
       "Version history": [
         "Azray n lqem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -11287,12 +11287,77 @@
         "Aɣawas-ik ${ selected }"
       ]
     },
+    "wallet_signup_2024: Info": {
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } barnamej"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Tura amezwaru i ttwaliḍ Bitcoin"
+      ],
+      "Advanced account protection": [
+        "Tawuri tamezwarut n amiḍan"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin s tansa n imayl"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Tansa n imayl yettwawgelhen d amezwaru ${ MAIL_APP_NAME } email address. Tzemrem ad sennu Bitcoin i yal win s ${ BRAND_NAME } isem."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Aklas n asigna yettwawgelhen i taswirin d tadawit"
+      ],
+      "Encrypted password manager": [
+        "Wawal uffir yettwawgelhen"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Amezruy aseggas tameṭṭut i ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Aɣawas-inek amenzu. Sselkem aseggas tameṭṭut i timahilin amaynut akked yal tizwarut premium ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Deg ameẓwaru, bedel Bitcoin s tansa n imayl, mačči d tansa n Bitcoin 26-amsayen ameɛriwen i d-yettusnen Tuccḍa"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Kkes-ed s teɣrem Bitcoin, deg umeddi."
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Ssekrem aɣbalu n yal tadukli n-ik s timahilin premium ${ BRAND_NAME }."
+      ],
+      "Ultra fast and private VPN": [
+        "VPN d-awniḍ aẓṛif, d Uslig"
+      ],
+      "You're Invited.": [
+        "Tettwaslent-ed."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Tura amezwaru i ttwaliḍ Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Ugur n tikkelt"
+      ]
+    },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME } d-yeţţawaled di aseggas tameṭṭut. Ttedd sader n asnas iOS s yid Apple TestFlight, akk i asnas Android s yid Google Open Testing."
+      ],
       "Coming soon": [
         "Ad d-yaweḍ"
       ]
     },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Uɣal ɣer tajusmit"
+      ]
+    },
     "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Asireg"
+      ],
       "Downloads": [
         "Isadaren"
       ]
