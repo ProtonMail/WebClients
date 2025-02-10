@@ -84,7 +84,11 @@ export type ItemRevisionsSuccess = {
 };
 
 export type SecureLinkItem = { item: Item; expirationDate: number; readCount?: number };
-export type SecureLinkOptions = { expirationTime: number; maxReadCount: MaybeNull<number> };
+export type SecureLinkOptions = {
+    expirationTime: number;
+    maxReadCount: MaybeNull<number>;
+    linkKeyEncryptedWithItemKey: boolean;
+};
 export type SecureLinkCreationDTO = UniqueItem & SecureLinkOptions;
 export type SecureLinkDeleteDTO = UniqueItem & { linkId: string };
 export type SecureLinkQuery = { token: string; linkKey: string };
