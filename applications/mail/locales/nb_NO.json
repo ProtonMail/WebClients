@@ -9775,7 +9775,7 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhetskopier alle filene dine på tvers av enheter"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "TOR over VPN"
       ],
       "Two-factor authentication": [
@@ -10801,7 +10801,7 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Ved å bekrefte denne betalingen autoriserer du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, til å instruere banken din om å debitere kontoen din, og banken din til å debitere kontoen din tilsvarende. Du kan få refusjon innen 8 uker fra belastningsdatoen, i henhold til vilkårene i avtalen din med banken."
       ],
       "Street address, postal code, and city": [
@@ -13835,6 +13835,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME }-epostadresse",
+        "${ n } ${ BRAND_NAME }-epostadresser"
+      ],
       "${ n } account per wallet": [
         "${ n } konto per lommebok",
         "${ n } kontoer per lommebok"
@@ -13848,6 +13852,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Kryptert og sikker ${ MAIL_APP_NAME } e-postadresse. Du kan enkelt sende Bitcoin til hvem som helst med bare deres ${ BRAND_NAME } navn."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Utveksle Bitcoin trygt via e-post i stedet for komplekse, 26-tegns Bitcoin-adresser som er utsatt for feil"
       ]
     },
     "wallet_signup_2024:Action": {
