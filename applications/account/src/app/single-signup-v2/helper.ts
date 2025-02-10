@@ -63,6 +63,7 @@ import {
     hasPaidDrive,
     hasPaidMail,
     hasPaidPass,
+    hasPaidWallet,
 } from '@proton/shared/lib/user/helpers';
 
 import { getSubscriptionPrices } from '../signup/helper';
@@ -421,6 +422,10 @@ const hasAccess = ({
         return hasPaidDrive(user);
     }
 
+    if (toApp === APPS.PROTONWALLET) {
+        return hasPaidWallet(user);
+    }
+
     return false;
 };
 
@@ -526,11 +531,6 @@ export const getUserInfo = async ({
 
     if (user && hasAccess({ toApp, user, audience, currentPlan })) {
         state.access = true;
-    }
-
-    // TODO: WalletEA
-    if (toApp === APPS.PROTONWALLET) {
-        state.access = false;
     }
 
     // Disable the access modal and show the upsell flow instead
