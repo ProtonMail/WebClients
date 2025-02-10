@@ -29,6 +29,7 @@ import {
     PassCryptoShareError,
     isPassCryptoError,
 } from './utils/errors';
+import { resolveItemKey } from './utils/helpers';
 
 function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<PassCryptoManagerContext> {
     if (
@@ -430,16 +431,20 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async createSecureLink({ itemKey, shareId }) {
             assertHydrated(context);
 
-            const manager = getShareManager(shareId);
-            const rotation = manager.getLatestRotation();
-
             const shareKey = (() => {
-                switch (manager.getType()) {
-                    case ShareType.Vault:
-                        return manager.getVaultShareKey(rotation);
-                    case ShareType.Item:
-                        return manager.getItemShareKey(rotation);
-                }
+                if (!shareId) return itemKey;
+
+                const manager = getShareManager(shareId);
+                const rotation = manager.getLatestRotation();
+
+                return (() => {
+                    switch (manager.getType()) {
+                        case ShareType.Vault:
+                            return manager.getVaultShareKey(rotation);
+                        case ShareType.Item:
+                            return manager.getItemShareKey(rotation);
+                    }
+                })();
             })();
 
             return processes.createSecureLink({ itemKey, shareKey });
@@ -457,11 +462,20 @@ export const createPassCrypto = (): PassCryptoWorker => {
             });
         },
 
-        async openLinkKey({ encryptedLinkKey, linkKeyShareKeyRotation, shareId }) {
+        async openLinkKey({ encryptedLinkKey, linkKeyShareKeyRotation, shareId, itemId, linkKeyEncryptedWithItemKey }) {
             assertHydrated(context);
 
-            const vaultKey = getShareManager(shareId).getVaultShareKey(linkKeyShareKeyRotation);
-            return processes.openLinkKey({ encryptedLinkKey, shareKey: vaultKey.key });
+            const shareKey: CryptoKey = await (async () => {
+                if (!linkKeyEncryptedWithItemKey) {
+                    const vaultKey = getShareManager(shareId).getVaultShareKey(linkKeyShareKeyRotation);
+                    return vaultKey.key;
+                }
+
+                const itemKey = await resolveItemKey(shareId, itemId);
+                return itemKey.key;
+            })();
+
+            return processes.openLinkKey({ encryptedLinkKey, shareKey });
         },
 
         async openItemKey({ encryptedItemKey, shareId }) {
