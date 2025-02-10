@@ -1,3 +1,4 @@
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
 import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import {
@@ -66,6 +67,16 @@ export const getActiveSessionLoginResult = async ({
                 type: 'oauth-partners',
                 payload,
                 location: { pathname: SSO_PATHS.OAUTH_PARTNERS },
+            };
+        }
+
+        if (!sessionsResult.sessions.length && forkParameters.unauthenticatedReturnUrl && preAppIntent) {
+            const url = new URL(getAppHref(forkParameters.unauthenticatedReturnUrl, preAppIntent));
+            return {
+                type: 'done',
+                payload: {
+                    url,
+                },
             };
         }
 
