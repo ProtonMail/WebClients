@@ -47,7 +47,6 @@ enum AccountFlag {
     GlobalSSO = 'GlobalSSO',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
     EduGainSSO = 'EduGainSSO',
-    ChangePasswordStrengthIndicator = 'ChangePasswordStrengthIndicator',
     LumoInProductSwitcher = 'LumoInProductSwitcher',
     LumoAddonAvailable = 'LumoAddonAvailable',
     LumoSignupAvailable = 'LumoSignupAvailable',
