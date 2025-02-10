@@ -28,6 +28,9 @@
       "Accept": [
         "Прыняць"
       ],
+      "Accept and view the item": [
+        "Прыняць і паглядзець элемент"
+      ],
       "Add": [
         "Дадаць"
       ],
@@ -42,6 +45,9 @@
       ],
       "Add domain": [
         "Дадаць дамен"
+      ],
+      "Add forwarding mailbox": [
+        "Дадаць паштовую скрыню для перасылкі"
       ],
       "Add mailbox": [
         "Дадаць паштовую скрыню"
@@ -138,6 +144,9 @@
       ],
       "Copy and close": [
         "Скапіяваць і закрыць"
+      ],
+      "Copy forwarding address": [
+        "Капіяваць адрас перысылкі"
       ],
       "Copy link": [
         "Капіяваць спасылку"
@@ -303,6 +312,9 @@
       ],
       "Install extension": [
         "Усталяваць пашырэнне"
+      ],
+      "Invite more...": [
+        "Запрасіць больш..."
       ],
       "Invite others": [
         "Запрасіць іншых"
@@ -628,6 +640,9 @@
       "View older history": [
         "Паглядзець больш старую гісторыю"
       ],
+      "With other ${ BRAND_NAME } users": [
+        "З іншымі карыстальнікамі ${ BRAND_NAME }"
+      ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
       ]
@@ -651,6 +666,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } даступны з платным тарыфным планам. Палепшыце для неадкладнага доступу."
+      ],
       "${ total } other login uses the same password": [
         "${ total } запіс уваходу выкарыстоўвае такі ж самы пароль",
         "${ total } запісы ўваходу выкарыстоўваюць такі ж самы пароль",
@@ -775,6 +793,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш пароль ${ BRAND_NAME }, каб працягнуць экспартаванне"
       ],
+      "Biometric authentication failed": [
+        "Збой аўтэнтыфікацыі біяметрыі"
+      ],
       "Cannot send invitation at the moment": [
         "У цяперашні час немагчыма адправіць запрашэнне",
         "У цяперашні час немагчыма адправіць запрашэнні",
@@ -786,6 +807,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "У дадзены момант немагчыма пацвердзіць запрашэнне"
+      ],
+      "Could not leave item.": [
+        "Не атрымалася выйсці з элемента."
       ],
       "Could not leave vault.": [
         "Не атрымалася выйсці са сховішча."
@@ -1272,6 +1296,9 @@
         "${ forwardedEmailsCount } пераслана",
         "${ forwardedEmailsCount } пераслана"
       ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } хоча абагуліць элемент з вамі."
+      ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
         "${ memberCount } удзельнікі",
@@ -1301,6 +1328,12 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } будзе патрабаваць ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } запрашэнне паспяхова адпраўлена",
+        "${ payload.count } запрашэнні паспяхова адпраўлены",
+        "${ payload.count } запрашэнняў паспяхова адпраўлены",
+        "${ payload.count } запрашэнняў паспяхова адпраўлены"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова адключана"
@@ -1434,8 +1467,23 @@
       "Built in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Вы можаце стварыць такі псеўданім, як pryvitanne@moi-damen.com пры дадаванні свайго дамена."
+      ],
       "Can be viewed": [
         "Могуць праглядаць"
+      ],
+      "Can create, edit, and delete items in this vault.": [
+        "Можа ствараць, рэдагаваць і выдаляць элементы ў гэтым сховішчы."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Можа ствараць, рэдагаваць і выдаляць гэты элемент."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Можа даваць і адклікаць дазвол на доступ да гэтага элемента, а таксама выдаляць яго."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Можа даваць і адклікаць дазвол на доступ да гэтага элемента."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча, а таксама выдаляць яго."
@@ -1445,6 +1493,9 @@
       ],
       "Can view items in this vault.": [
         "Можа праглядаць элементы ў гэтым сховішчы."
+      ],
+      "Can view this item.": [
+        "Можа праглядаць гэты элемент."
       ],
       "Change your password": [
         "Змяніць свой пароль"
@@ -1460,6 +1511,9 @@
       ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
+      ],
+      "Coupon successfully applied!": [
+        "Купон паспяхова ўжыты!"
       ],
       "Create contact illustration": [
         "Стварыце ілюстрацыю кантакту"
@@ -1575,6 +1629,9 @@
       "Enter your PIN code": [
         "Увядзіце свой PIN-код."
       ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Новы кантакт аўтаматычна ствараецца. Гэта адбываецца кожны раз, калі ваш псеўданім атрымлівае ліст ад каго-небудзь."
+      ],
       "Expires in": [
         "Дзейнічае да"
       ],
@@ -1593,7 +1650,7 @@
       "finance": [
         "фінансы"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
+      "Follow those steps to import your data with a generic CSV:": [
         "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
       ],
       "For security reasons, you need to confirm access to this shared vault": [
@@ -1604,6 +1661,9 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "У мэтах бяспекі вам неабходна пацвердзіць свой доступ"
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Адрас перасылкі скапіяваны ў буфер абмену. Адпраўце ліст на гэты адрас і ${ Email } атрымае яго."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдня.",
@@ -1698,6 +1758,12 @@
       "Item restored": [
         "Элемент адноўлены"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Абагульванне элемента: ${ itemAccessCount } карыстальнік",
+        "Абагульванне элемента: ${ itemAccessCount } карыстальнікі",
+        "Абагульванне элемента: ${ itemAccessCount } карыстальнікаў",
+        "Абагульванне элемента: ${ itemAccessCount } карыстальнікаў"
+      ],
       "Item successfully excluded from monitoring": [
         "Элемент паспяхова выключаны з назірання"
       ],
@@ -1718,6 +1784,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Даведайцеся, як ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Выхад з элемента..."
       ],
       "Leaving vault...": [
         "Выхад са сховішча..."
@@ -1763,6 +1832,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -1992,8 +2067,14 @@
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
       ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Абагульвайце псеўданімы з іншымі, дадаючы іх паштовую скрыню ў якасці паштовай скрыні для перасылання."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "Абагульвайце свае запісы ўваходу і бяспечныя нататкі (да 10 карыстальнікаў)"
+      ],
+      "Shared item invitation": [
+        "Запрашэнне да абагуленага элемента"
       ],
       "Sign in to your account": [
         "Увайдзіце ў свой уліковы запіс"
@@ -2010,6 +2091,9 @@
       "Successfully exported all your items": [
         "Усе вашы элементы паспяхова экспартаваны"
       ],
+      "Successfully left the item": [
+        "Выхад з элемента паспяхова выкананы"
+      ],
       "Successfully left the vault": [
         "Паспяхова пакінулі сховішча"
       ],
@@ -2024,6 +2108,9 @@
       ],
       "Syncing your vaults…": [
         "Сінхранізацыя вашых сховішчаў..."
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Націсніце значок ${ gearIcon }, каб наладзіць псеўданім пад свае патрабаванні."
       ],
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
@@ -2060,6 +2147,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Элемент у цяперашні час ні з кім не абагулены. Запрасіце карыстальнікаў, каб абагуліць яго з іншымі."
       ],
       "This operation is irreversible.": [
         "Гэта аперацыя з'яўляецца незваротнай."
@@ -2156,6 +2246,12 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Сховішча \"${ share.content.name }\" было выдалена"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Абагульванне сховішча: ${ vaultMembersCount } удзельнік",
+        "Абагульванне сховішча: ${ vaultMembersCount } удзельнікі",
+        "Абагульванне сховішча: ${ vaultMembersCount } удзельнікаў",
+        "Абагульванне сховішча: ${ vaultMembersCount } удзельнікаў"
       ],
       "Verification code sent.": [
         "Код пацвярджэння адпраўлены."
@@ -2423,6 +2519,9 @@
       "All": [
         "Усе"
       ],
+      "All items": [
+        "Усе элементы"
+      ],
       "Alphabetical": [
         "Па алфавіце"
       ],
@@ -2434,6 +2533,9 @@
       ],
       "Auto-lock after": [
         "Аўтаблакіроўка пасля"
+      ],
+      "Backup password": [
+        "Рэзервовы пароль"
       ],
       "Beta Access": [
         "Бэта-доступ"
@@ -2609,6 +2711,9 @@
       "Floor, apartment, building": [
         "Паверх, кватэра, будынак"
       ],
+      "For a one-off sharing": [
+        "Для аднаразовага абагульвання"
+      ],
       "Forwards to": [
         "Перасылаць на"
       ],
@@ -2771,6 +2876,9 @@
       "Need help?": [
         "Неабходна дапамога?"
       ],
+      "New": [
+        "Новая"
+      ],
       "New vault": [
         "Новае сховішча"
       ],
@@ -2897,6 +3005,9 @@
       "Security code": [
         "Код бяспекі"
       ],
+      "See member and permission overview": [
+        "Паглядзець удзельніка і дазволы"
+      ],
       "Select a domain": [
         "Выбраць дамен"
       ],
@@ -2918,8 +3029,17 @@
       "Share": [
         "Абагуліць"
       ],
+      "Shared": [
+        "Абагулена"
+      ],
+      "Shared by me": [
+        "Абагулена мной"
+      ],
       "Shared link": [
         "Абагуленая спасылка"
+      ],
+      "Shared with me": [
+        "Абагулена са мной"
       ],
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
@@ -3025,6 +3145,9 @@
       ],
       "Used in": [
         "Выкарыстоўвалася ў"
+      ],
+      "Useful for permanent sharing": [
+        "Карысна для пастаяннага абагульвання"
       ],
       "Username": [
         "Імя карыстальніка"
@@ -3175,6 +3298,9 @@
       "Alias Display Name": [
         "Бачнае імя псеўданіма"
       ],
+      "Coupon": [
+        "Купон"
+      ],
       "Email address": [
         "Адрас электроннай пошты"
       ],
@@ -3226,8 +3352,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Пошук ${ pluralItemType } у ${ vaultName }"
       ],
+      "Search ${ pluralItemType } in all items": [
+        "Пошук ${ pluralItemType } ва ўсіх элементах"
+      ],
       "Search in ${ vaultName }": [
         "Пошук у ${ vaultName }"
+      ],
+      "Search in all items": [
+        "Пошук ва ўсіх элементах"
       ],
       "Search in Trash": [
         "Пошук у Сметніцы"
@@ -3368,6 +3500,12 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Дамен паспяхова правераны. Цяпер ваш дамен можа прымаць лісты і ствараць псеўданімы"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальніка.",
+        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікі.",
+        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікаў.",
+        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікаў."
+      ],
       "Mailbox successfully deleted": [
         "Паштовая скрыня паспяхова выдалена"
       ],
@@ -3382,6 +3520,12 @@
       ],
       "Random prefix generation successfully enabled": [
         "Адвольная генерацыя прэфіксу паспяхова ўключана"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальніка.",
+        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікі.",
+        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікаў.",
+        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікаў."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Праверачны ліст адпраўлены. Праверце папку з уваходнымі лістамі для праверкі сваёй паштовай скрыні."
@@ -3513,6 +3657,9 @@
       "Details": [
         "Падрабязнасці"
       ],
+      "Did you know?": [
+        "Ці ведалі вы што?"
+      ],
       "Discard changes?": [
         "Адхіліць змены?"
       ],
@@ -3530,6 +3677,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Падабаецца ${ PASS_APP_NAME }?"
+      ],
+      "Enter coupon code": [
+        "Увядзіце код купона"
       ],
       "Enter your extra password": [
         "Увядзіце свой дадатковы пароль"
@@ -3570,11 +3720,17 @@
       "Install extension": [
         "Усталяваць пашырэнне"
       ],
+      "Item": [
+        "Элемент"
+      ],
       "Last autofill": [
         "Апошняе аўтазапаўненне"
       ],
       "Last modified": [
         "Апошняе змяненне"
+      ],
+      "Leave this item?": [
+        "Выйсці з гэтага элемента?"
       ],
       "Leave vault?": [
         "Выйсці са сховішча?"
@@ -3635,6 +3791,9 @@
       ],
       "No reused passwords": [
         "Паўторна выкарыстаныя паролі адсутнічаюць"
+      ],
+      "No shared items": [
+        "Няма абагуленых элементаў"
       ],
       "No shared secure links": [
         "Няма абагуленых бяспечных спасылак"
@@ -3734,6 +3893,12 @@
       ],
       "Share with": [
         "Абагуліць з"
+      ],
+      "Shared item invitation": [
+        "Запрашэнне да абагуленага элемента"
+      ],
+      "Shared via": [
+        "Абагулена праз"
       ],
       "SPF (Optional)": [
         "SPF (неабавязкова)"
@@ -3852,6 +4017,9 @@
       ],
       "A description of the problem is required": [
         "Патрабуецца апісанне праблемы"
+      ],
+      "Addresses already invited.": [
+        "Адрасы ўжо былі запрошаны."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Псеўданімы ў сметніцы працягваюць перасылаць лісты."
@@ -3979,6 +4147,9 @@
       "No secure links matching": [
         "Няма адпаведных бяспечных спасылак"
       ],
+      "No shared items matching": [
+        "Няма адпаведных абагуленых элементаў"
+      ],
       "Offline": [
         "Па-за сеткай"
       ],
@@ -4018,6 +4189,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Некаторыя элементы ў цяпершані час абагулены. Іх выдаленне пазбавіць доступу ўсіх іншых карыстальнікаў."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Некаторыя элементы у цяперашні час абагулены. Іх перамяшчэнне ў іншае сховішча пазбавіць доступу ўсіх іншых карыстальнікаў."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Нешта пайшло не так падчас запуску ${ PASS_APP_NAME }. Паспрабуйце абнавіць або перазагрузіць пашырэнне"
       ],
@@ -4029,6 +4206,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Гэты адрас электроннай пошты больш не будзе адсочвацца на прадмет уцечкі даных."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Гэты элемент у цяперашні час абагулены. Яго выдаленне пазбавіць доступу ўсіх іншых карыстальнікаў."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Гэты элемент у цяпершані час абагулены. Яго перамяшчэнне пазбавіць доступу ўсіх іншых карыстальнікаў."
       ],
       "Title is required": [
         "Патрабуецца загаловак"
@@ -4051,8 +4234,14 @@
       "Verification code is required": [
         "Патрабуецца праверачны код"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Вы дасягнулі абмежавання па колькасці ўдзельнікаў, якія могуць атрымаць доступ да гэтага элемента."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Вы дасягнулі абмежавання па колькасці ўдзельнікаў, якія могуць атрымаць доступ да гэтага сховішча."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Вы дасягнулі максімальнай колькасці карыстальнікаў для гэтага элемента. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў у сховішчы. ${ upgradeLink }"
@@ -4065,6 +4254,9 @@
       ],
       "You must select at least one mailbox": [
         "Вы павінны выбраць прынамсі адну паштовую скрыню"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Вы згубіце доступ да гэтага элемента і яго падрабязнасцяў. Вы сапраўды хочаце працягнуць?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "У вас больш не будзе доступу да гэтага сховішча. Каб паўторна далучыцца да яго, вам неабходна будзе атрымаць новае запрашэнне."

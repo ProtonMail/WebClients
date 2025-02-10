@@ -799,6 +799,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Falha na autenticação. Confirme sua senha do ${ BRAND_NAME } para prosseguir com a exportação"
       ],
+      "Biometric authentication failed": [
+        "A Autenticação biométrica falhou"
+      ],
       "Cannot send invitation at the moment": [
         "Não é possível enviar o convite no momento",
         "Não é possível enviar convites no momento"
@@ -1340,6 +1343,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha da ${ BRAND_NAME }"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha de backup"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha adicional"
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "O acesso a ${ PASS_APP_NAME } exigirá sua impressão digital ou o PIN do dispositivo."
       ],
@@ -1607,6 +1616,9 @@
       "Expires in ${ remainingTime }": [
         "Expira em ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Exportando seus dados..."
+      ],
       "Extra password successfully created": [
         "A senha adicional foi criada."
       ],
@@ -1619,8 +1631,11 @@
       "finance": [
         "finança"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
+      "Follow those steps to import your data with a generic CSV:": [
         "Siga estas etapas para importar seus dados com um CSV genérico:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Por motivos de segurança, essa ação requer verificação de identidade."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Por razões de segurança, você precisa confirmar o acesso a este cofre compartilhado",
@@ -1650,6 +1665,9 @@
       ],
       "How does monitoring work?": [
         "Como funciona o monitoramento?"
+      ],
+      "Identity confirmed": [
+        "Identidade confirmada"
       ],
       "Import in progress:": [
         "Importação em progresso:"
@@ -1876,11 +1894,38 @@
       "Please check your spam folder or try resending the code.": [
         "Verifique sua pasta de spam ou tente reenviar o código."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Confirme sua senha da ${ BRAND_NAME } para desativar o modo off-line"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirme sua senha da ${ BRAND_NAME } para ativar o modo off-line"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Confirme sua nova senha de backup"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Confirme sua senha de backup para bloquear automaticamente com a sua biometria."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Confirme sua senha de backup para bloquear automaticamente com a sua senha."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Confirme sua senha de backup para desativar o modo off-line"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Confirme sua senha de backup para ativar o modo off-line"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirme sua senha de backup para exportar os dados de ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Confirme sua senha de backup para cancelar o registro do seu bloqueio atual."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Confirme sua senha de backup para atualizar o tempo do bloqueio automático."
       ],
       "Please confirm your extra password": [
         "Confirme sua nova senha adicional"
@@ -1890,6 +1935,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Confirme sua senha adicional para bloquear automaticamente com a sua senha adicional."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Confirme sua senha adicional para ativar o modo off-line"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Confirme sua senha adicional para ativar o modo off-line"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha extra para exportar os dados de ${ PASS_APP_NAME }"
@@ -2262,6 +2313,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Você atingiu o comprimento máximo permitido de ${ maxLength } caracteres."
       ],
+      "You may close this tab.": [
+        "Você pode fechar esta guia."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Você poderá personalizar as configurações do seu domínio (aliases de e-mail, nome de exibição padrão para aliases etc.) após verificar seu domínio."
       ],
@@ -2452,6 +2506,9 @@
       ],
       "Auto-lock after": [
         "Bloqueio automático após"
+      ],
+      "Backup password": [
+        "Senha de backup"
       ],
       "Beta Access": [
         "Acesso beta"
@@ -3508,6 +3565,9 @@
       "Confirm extra password": [
         "Confirmar senha adicional"
       ],
+      "Confirm identity": [
+        "Confirmar identidade"
+      ],
       "Confirm PIN code": [
         "Confirmar código PIN"
       ],
@@ -3592,6 +3652,9 @@
       ],
       "Enter coupon code": [
         "Digite o código do cupão"
+      ],
+      "Enter your backup password": [
+        "Digite sua senha de backup"
       ],
       "Enter your extra password": [
         "Digite sua senha adicional"
