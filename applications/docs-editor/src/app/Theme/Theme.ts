@@ -100,7 +100,7 @@ const DocumentEditorTheme: EditorThemeClasses = {
   tableResizeRuler: 'Lexical__tableCellResizeRuler',
   tableSelected: 'Lexical__tableSelected',
   tableSelection: 'Lexical__tableSelection',
-  hr: 'Lexical__hr',
+  hr: 'Lexical__divider',
   text: {
     bold: 'Lexical__textBold',
     code: 'Lexical__textCode',
