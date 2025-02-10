@@ -41,8 +41,11 @@ import {
   $createTableRowNode,
   TableCellHeaderStates,
 } from '@lexical/table'
-import { $insertFirst } from '@lexical/utils'
+import { $insertFirst, mergeRegister } from '@lexical/utils'
 import type { BlockTypeChangeSuggestionProperties } from './Types'
+import { LINK_CHANGE_COMMAND, ProtonLinkPlugin } from '../Link/LinkPlugin'
+import { $handleLinkChangeSuggestion } from './handleLinkChangeSuggestion'
+import { $isLinkNode } from '@lexical/link'
 
 polyfillSelectionRelatedThingsForTests()
 
@@ -78,6 +81,7 @@ describe('$handleBeforeInputEvent', () => {
             ErrorBoundary={LexicalErrorBoundary}
           />
           <TestPlugin />
+          <ProtonLinkPlugin />
         </LexicalComposer>
       )
     }
@@ -731,74 +735,195 @@ describe('$handleBeforeInputEvent', () => {
     })
 
     describe('Plaintext-only data transfer', () => {
-      let commandDisposer!: () => void
+      describe('Non-URL text', () => {
+        let commandDisposer!: () => void
 
-      beforeEach(async () => {
-        commandDisposer = editor!.registerCommand(
-          SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
-          ({ nodes }) => $selectionInsertClipboardNodes(nodes, onSuggestionCreation, logger),
-          COMMAND_PRIORITY_CRITICAL,
-        )
-        const dataTransfer = {
-          getData: (format: string) => {
-            if (format === 'text/plain') {
-              return 'Hello\tWorld\nParagraph'
-            }
-            return ''
-          },
-          types: [],
-        } as unknown as DataTransfer
-        await update(() => {
-          $handleBeforeInputEvent(
-            editor!,
-            {
-              inputType: 'insertFromPaste',
-              data: null,
-              dataTransfer,
-            } as InputEvent,
-            onSuggestionCreation,
-            logger,
+        beforeEach(async () => {
+          commandDisposer = editor!.registerCommand(
+            SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
+            ({ nodes }) => $selectionInsertClipboardNodes(nodes, onSuggestionCreation, logger),
+            COMMAND_PRIORITY_CRITICAL,
           )
+          const dataTransfer = {
+            getData: (format: string) => {
+              if (format === 'text/plain') {
+                return 'Hello\tWorld\nParagraph'
+              }
+              return ''
+            },
+            types: [],
+          } as unknown as DataTransfer
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertFromPaste',
+                data: null,
+                dataTransfer,
+              } as InputEvent,
+              onSuggestionCreation,
+              logger,
+            )
+          })
+        })
+
+        test('root should have 2 paragraphs', () => {
+          editor!.read(() => {
+            const root = $getRoot()
+            const children = root.getChildren()
+            expect(children.length).toBe(2)
+            expect(children.every($isParagraphNode)).toBe(true)
+          })
+        })
+
+        test('first paragraph should have text, tab, text nodes inside a suggestion', () => {
+          editor!.read(() => {
+            const paragraph = $getRoot().getChildAtIndex<ParagraphNode>(0)
+            expect(paragraph?.getChildrenSize()).toBe(1)
+
+            const child = paragraph?.getFirstChild<ProtonNode>()
+            expect($isSuggestionNode(child)).toBe(true)
+
+            expect($isTextNode(child?.getChildAtIndex(0))).toBe(true)
+            expect($isTabNode(child?.getChildAtIndex(1))).toBe(true)
+            expect($isTextNode(child?.getChildAtIndex(2))).toBe(true)
+          })
+        })
+
+        test('second paragraph should have text node inside suggestion', () => {
+          editor!.read(() => {
+            const paragraph = $getRoot().getChildAtIndex<ParagraphNode>(1)
+            expect(paragraph?.getChildrenSize()).toBe(1)
+
+            const child = paragraph?.getFirstChild<ProtonNode>()
+            expect($isSuggestionNode(child)).toBe(true)
+
+            expect($isTextNode(child?.getChildAtIndex(0))).toBe(true)
+          })
+        })
+
+        afterEach(() => {
+          commandDisposer()
         })
       })
 
-      test('root should have 2 paragraphs', () => {
-        editor!.read(() => {
-          const root = $getRoot()
-          const children = root.getChildren()
-          expect(children.length).toBe(2)
-          expect(children.every($isParagraphNode)).toBe(true)
+      describe('URL text', () => {
+        let commandDisposer!: () => void
+
+        const word = 'Proton'
+        const url = 'https://proton.me/'
+
+        beforeEach(async () => {
+          commandDisposer = mergeRegister(
+            editor!.registerCommand(
+              SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
+              ({ nodes }) => $selectionInsertClipboardNodes(nodes, onSuggestionCreation, logger),
+              COMMAND_PRIORITY_CRITICAL,
+            ),
+            editor!.registerCommand(
+              LINK_CHANGE_COMMAND,
+              (payload) => $handleLinkChangeSuggestion(editor!, payload, logger, onSuggestionCreation),
+              COMMAND_PRIORITY_CRITICAL,
+            ),
+          )
+          const dataTransfer = {
+            getData: (format: string) => {
+              if (format === 'text/plain') {
+                return url
+              }
+              return ''
+            },
+            types: [],
+          } as unknown as DataTransfer
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertFromPaste',
+                data: null,
+                dataTransfer,
+              } as InputEvent,
+              onSuggestionCreation,
+              logger,
+            )
+          })
+          await update(() => {
+            const paragraph = $createParagraphNode()
+            const text = $createTextNode(word)
+            $getRoot().append(paragraph.append(text))
+            $setSelection(text.select(0, text.__text.length))
+          })
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertFromPaste',
+                data: null,
+                dataTransfer,
+              } as InputEvent,
+              onSuggestionCreation,
+              logger,
+            )
+          })
         })
-      })
 
-      test('first paragraph should have text, tab, text nodes inside a suggestion', () => {
-        editor!.read(() => {
-          const paragraph = $getRoot().getChildAtIndex<ParagraphNode>(0)
-          expect(paragraph?.getChildrenSize()).toBe(1)
-
-          const child = paragraph?.getFirstChild<ProtonNode>()
-          expect($isSuggestionNode(child)).toBe(true)
-
-          expect($isTextNode(child?.getChildAtIndex(0))).toBe(true)
-          expect($isTabNode(child?.getChildAtIndex(1))).toBe(true)
-          expect($isTextNode(child?.getChildAtIndex(2))).toBe(true)
+        test('root should have 1 paragraph', () => {
+          editor!.read(() => {
+            const root = $getRoot()
+            const children = root.getChildren()
+            expect(children.length).toBe(2)
+            expect(children.every($isParagraphNode)).toBe(true)
+          })
         })
-      })
 
-      test('second paragraph should have text node inside suggestion', () => {
-        editor!.read(() => {
-          const paragraph = $getRoot().getChildAtIndex<ParagraphNode>(1)
-          expect(paragraph?.getChildrenSize()).toBe(1)
+        test('first paragraph should have link inside insert suggestion', () => {
+          editor!.read(() => {
+            const paragraph = $getRoot().getChildAtIndex<ParagraphNode>(0)
+            expect(paragraph?.getChildrenSize()).toBe(1)
 
-          const child = paragraph?.getFirstChild<ProtonNode>()
-          expect($isSuggestionNode(child)).toBe(true)
+            const child = paragraph?.getFirstChild<ProtonNode>()
+            assertCondition($isSuggestionNode(child))
+            expect(child.getSuggestionTypeOrThrow()).toBe('insert')
 
-          expect($isTextNode(child?.getChildAtIndex(0))).toBe(true)
+            const link = child?.getFirstChild()
+            assertCondition($isLinkNode(link))
+            expect(link.getURL()).toBe(url)
+
+            const text = link.getFirstChild()
+            assertCondition($isTextNode(text))
+            expect(text.getTextContent()).toBe(url)
+          })
         })
-      })
 
-      afterEach(() => {
-        commandDisposer()
+        test('second paragraph should have link-change suggestion', () => {
+          editor!.read(() => {
+            const paragraph = $getRoot().getChildAtIndex<ParagraphNode>(1)
+            expect(paragraph?.getChildrenSize()).toBe(1)
+
+            const child = paragraph?.getFirstChild<ProtonNode>()
+            assertCondition($isSuggestionNode(child))
+            expect(child.exportJSON()).toMatchObject({
+              properties: {
+                suggestionType: 'link-change',
+                nodePropertiesChanged: {
+                  __url: null,
+                },
+              },
+            })
+
+            const link = child?.getFirstChild()
+            assertCondition($isLinkNode(link))
+            expect(link.getURL()).toBe(url)
+
+            const text = link.getFirstChild()
+            assertCondition($isTextNode(text))
+            expect(text.getTextContent()).toBe(word)
+          })
+        })
+
+        afterEach(() => {
+          commandDisposer()
+        })
       })
     })
 
