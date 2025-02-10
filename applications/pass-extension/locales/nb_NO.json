@@ -1330,6 +1330,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Tilgang til ${ PASS_APP_NAME } vil alltid kreve ${ BRAND_NAME }-passordet ditt."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve reservepassordet ditt."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve det ekstra passordet ditt."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
       ],
@@ -1606,6 +1612,9 @@
       "Expires in ${ remainingTime }": [
         "Utløper om ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Eksporterer dataene dine..."
+      ],
       "Extra password successfully created": [
         "Ekstra passord vellykket opprettet"
       ],
@@ -1615,14 +1624,17 @@
       "Fill in the CSV with your data": [
         "Fyll ut CSV-filen med dataene dine"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil :"
+      "Follow those steps to import your data with a generic CSV:": [
+        "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil:"
       ],
       "For easy access to your passwords and more.": [
         "For enkel tilgang til passordene dine og mer."
       ],
       "For security reason, your access needs to be confirmed": [
         "Av sikkerhetsgrunner må tilgangen din bekreftes."
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Av sikkerhetsgrunner krever denne handlingen identitetsbekreftelse."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Av sikkerhetsgrunner må du bekrefte tilgangen til dette delte hvelvet",
@@ -1649,6 +1661,9 @@
       ],
       "Here's how it works:": [
         "Slik fungerer det:"
+      ],
+      "Identity confirmed": [
+        "Identitet bekreftet"
       ],
       "Import in progress:": [
         "Import pågår:"
@@ -1856,6 +1871,24 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
+      ],
+      "Please confirm your backup password": [
+        "Bekreft reservepassordet ditt"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Bekreft reservepassordet ditt for å låse automatisk med biometri."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Bekreft reservepassordet ditt for å låse automatisk med passordet ditt."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekreft reservepassordet ditt for å eksportere ${ PASS_APP_NAME }-dataene."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Bekreft reservepassordet ditt for å avregistrere din nåværende lås."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Bekreft reservepassordet ditt for å oppdatere tiden for automatisk låsing."
       ],
       "Please confirm your extra password": [
         "Bekreft det ekstra passordet"
@@ -2258,6 +2291,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nådd den maksimalt tillatte lengden på ${ maxLength }-tegn."
       ],
+      "You may close this tab.": [
+        "Du kan lukke denne fanen."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Du vil kunne tilpasse domeneinnstillingene dine (catch-all e-postaliaser, standard visningsnavn for aliaser osv...) etter å ha bekreftet domenet ditt."
       ],
@@ -2456,6 +2492,9 @@
       ],
       "Autosuggest": [
         "Foreslå automatisk"
+      ],
+      "Backup password": [
+        "Reservepassord"
       ],
       "Biometrics": [
         "Biometri"
@@ -3462,6 +3501,9 @@
       "Confirm extra password": [
         "Bekreft ekstra passord"
       ],
+      "Confirm identity": [
+        "Bekreft identitet"
+      ],
       "Confirm PIN code": [
         "Bekreft PIN-kode"
       ],
@@ -3537,6 +3579,9 @@
       ],
       "Enter coupon code": [
         "Skriv inn kupongkode"
+      ],
+      "Enter your backup password": [
+        "Skriv inn reservepassordet ditt"
       ],
       "Enter your extra password": [
         "Angi det ekstra passordet ditt"

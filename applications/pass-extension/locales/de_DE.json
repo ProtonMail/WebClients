@@ -134,6 +134,9 @@
       "Copy and close": [
         "Kopieren und schließen"
       ],
+      "Copy forwarding address": [
+        "Weiterleitungsadresse kopieren"
+      ],
       "Copy link": [
         "Link kopieren"
       ],
@@ -643,6 +646,9 @@
       "With other ${ BRAND_NAME } users": [
         "Mit anderen ${ BRAND_NAME }-Benutzern"
       ],
+      "Write us on X/Twitter": [
+        "Schreibe uns auf X/Twitter"
+      ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
       ]
@@ -761,6 +767,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Fehler beim Bestätigen der Einladung."
+      ],
+      "Could not leave item.": [
+        "Fehler beim Verlassen des Eintrags."
       ],
       "Could not leave vault.": [
         "Fehler beim Verlassen des Tresors."
@@ -1232,6 +1241,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
       ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } passt sich deinem Systemdesign an."
+      ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
         "${ PASS_APP_NAME } generiert eine Weiterleitungsadresse (auch als Reverse Alias bezeichnet), die du in die Zwischenablage kopieren kannst."
       ],
@@ -1287,6 +1299,12 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Der Zugang zu ${ PASS_APP_NAME } erfordert immer dein ${ BRAND_NAME }-Passwort."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Der Zugriff auf ${ PASS_APP_NAME } erfordert immer dein Backup-Passwort."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Der Zugriff auf ${ PASS_APP_NAME } erfordert immer dein zusätzliches Passwort."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Zugang zu ${ PASS_APP_NAME } wird deinen Fingerabdruck oder Geräte-PIN-Code benötigen."
@@ -1426,6 +1444,9 @@
       "Coupon successfully applied!": [
         "Gutschein erfolgreich angewendet"
       ],
+      "Created ${ time }.": [
+        "Erstellt ${ time }."
+      ],
       "Creating alias...": [
         "Alias wird erstellt..."
       ],
@@ -1534,6 +1555,9 @@
       "Expires in ${ remainingTime }": [
         "Läuft ab in ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Exportieren deiner Daten..."
+      ],
       "Extra password successfully created": [
         "Zusätzliches Passwort erstellt"
       ],
@@ -1543,7 +1567,7 @@
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
-      "Follow those steps to import your data with a generic CSV :": [
+      "Follow those steps to import your data with a generic CSV:": [
         "Befolge diese Schritte, um deine Daten mit einer generischen CSV zu importieren:"
       ],
       "For easy access to your passwords and more.": [
@@ -1551,6 +1575,9 @@
       ],
       "For security reason, your access needs to be confirmed": [
         "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Aus Sicherheitsgründen erfordert diese Aktion eine Identitätsprüfung."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Aus Sicherheitsgründen musst du den Zugriff auf diesen geteilten Tresor bestätigen.",
@@ -1574,6 +1601,9 @@
       ],
       "Here's how it works:": [
         "So funktioniert es:"
+      ],
+      "Identity confirmed": [
+        "Identität bestätigt"
       ],
       "Import in progress:": [
         "Import im Gange:"
@@ -1772,6 +1802,24 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
       ],
+      "Please confirm your backup password": [
+        "Bitte bestätige dein Backup-Passwort"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Bitte bestätige dein Backup-Passwort, um die automatische Sperre mit biometrischen Merkmalen zu aktivieren."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Bitte bestätige dein Backup-Passwort, um die automatische Sperre mit deinem Passwort zu aktivieren."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Bitte bestätige dein Backup-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Bitte bestätige dein Backup-Passwort, um die Registrierung deiner aktuellen Sperre aufzuheben."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Bitte bestätige dein Backup-Passwort, um die Zeit für die automatische Sperre zu aktualisieren."
+      ],
       "Please confirm your extra password": [
         "Bitte bestätige dein zusätzliches Passwort"
       ],
@@ -1921,6 +1969,9 @@
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Teile deine Logins und sichere Notizen mit bis zu 10 Personen."
+      ],
+      "Shared item invitation": [
+        "Geteilte Eintrageinladung"
       ],
       "Sign in or create an account to continue.": [
         "Melde dich an oder erstelle ein Konto, um fortzufahren."
@@ -2133,6 +2184,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du hast die maximal erlaubte Länge von ${ maxLength } Zeichen erreicht."
       ],
+      "You may close this tab.": [
+        "Du kannst diesen Tab schließen."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Nachdem du deine Domain verifiziert hast, kannst du deine Domain-Einstellungen anpassen (Catch-All-E-Mail-Aliasse, Standard-Anzeigename für Aliasse usw.)."
       ],
@@ -2318,6 +2372,9 @@
       "Autosuggest": [
         "Auto-Vorschlagen"
       ],
+      "Backup password": [
+        "Passwort sichern"
+      ],
       "Biometrics": [
         "Biometrische Authentifizierung"
       ],
@@ -2477,6 +2534,9 @@
       "Facebook account": [
         "Facebook-Konto"
       ],
+      "Feedback": [
+        "Feedback"
+      ],
       "Field name": [
         "Feldname"
       ],
@@ -2521,6 +2581,9 @@
       ],
       "ID Card": [
         "Ausweis"
+      ],
+      "ID Card number": [
+        "Personalausweis Nummer"
       ],
       "Identities": [
         "Identitäten"
@@ -3110,6 +3173,9 @@
       "Search in ${ vaultName }": [
         "In ${ vaultName } suchen"
       ],
+      "Search in all items": [
+        "In allen Einträgen suchen "
+      ],
       "Search in Trash": [
         "Im Papierkorb suchen"
       ],
@@ -3292,6 +3358,9 @@
       "Confirm extra password": [
         "Zusätzliches Passwort bestätigen"
       ],
+      "Confirm identity": [
+        "Identität bestätigen"
+      ],
       "Confirm PIN code": [
         "PIN-Code bestätigen"
       ],
@@ -3368,6 +3437,9 @@
       "Enter coupon code": [
         "Gutscheincode eingeben"
       ],
+      "Enter your backup password": [
+        "Gib dein Backup-Passwort ein"
+      ],
       "Enter your extra password": [
         "Gib dein zusätzliches Passwort ein."
       ],
@@ -3416,6 +3488,9 @@
       "Last modified": [
         "Zuletzt geändert"
       ],
+      "Leave this item?": [
+        "Dieses Element verlassen?"
+      ],
       "Leave vault?": [
         "Tresor verlassen?"
       ],
@@ -3447,6 +3522,9 @@
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Alle Einträge zu \"${ vaultName }\" verschieben?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Eintrag zu „${ vaultName }“ verschieben"
       ],
       "MX record": [
         "MX-Eintrag"
@@ -3517,6 +3595,9 @@
       ],
       "Share with": [
         "Teilen mit"
+      ],
+      "Shared item invitation": [
+        "Geteilte Eintrageinladung"
       ],
       "Shared via": [
         "Geteilt über"
