@@ -115,6 +115,7 @@ import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import { NoPaymentRequiredNote } from './modal-components/NoPaymentRequiredNote';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
+import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
 import './SubscriptionContainer.scss';
@@ -1204,16 +1205,11 @@ const SubscriptionContainer = ({
             )}
 
             {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
-                <SubscriptionThanks
-                    showDownloads={!isVpnB2bPlan}
-                    loading={true}
-                    paymentMethodType={paymentFacade.selectedMethodType}
-                />
+                <PostSubscriptionModalLoadingContent title={c('Info').t`Registering your subscription…`} />
             )}
             {model.step === SUBSCRIPTION_STEPS.THANKS && (
                 <SubscriptionThanks
                     showDownloads={!isVpnB2bPlan}
-                    paymentMethodType={paymentFacade.selectedMethodType}
                     onClose={() => {
                         onSubscribed?.();
                     }}
