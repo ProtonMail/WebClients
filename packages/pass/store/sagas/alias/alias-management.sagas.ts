@@ -1,14 +1,18 @@
 import {
+    cancelMailboxEditApi,
     createMailboxApi,
     deleteMailboxApi,
+    editMailboxApi,
     getMailboxesApi,
     resendVerifyMailboxApi,
     setDefaultMailboxApi,
     validateMailboxApi,
 } from '@proton/pass/lib/alias/alias.requests';
 import {
+    cancelMailboxEdit,
     createMailbox,
     deleteMailbox,
+    editMailbox,
     getMailboxes,
     resendVerifyMailbox,
     setDefaultMailbox,
@@ -41,6 +45,16 @@ const deleteMailboxSaga = createRequestSaga({
     call: deleteMailboxApi,
 });
 
+const editMailboxSaga = createRequestSaga({
+    actions: editMailbox,
+    call: editMailboxApi,
+});
+
+const cancelMailboxEditSaga = createRequestSaga({
+    actions: cancelMailboxEdit,
+    call: cancelMailboxEditApi,
+});
+
 const setDefaultMailboxSaga = createRequestSaga({
     actions: setDefaultMailbox,
     call: setDefaultMailboxApi,
@@ -52,5 +66,7 @@ export default [
     resendVerifyMailboxSaga,
     validateMailboxSaga,
     deleteMailboxSaga,
+    editMailboxSaga,
+    cancelMailboxEditSaga,
     setDefaultMailboxSaga,
 ];

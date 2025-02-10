@@ -29,6 +29,7 @@ export type AliasToggleStatusDTO = UniqueItem & { enabled: boolean };
 
 export type MailboxDeleteDTO = { mailboxID: number; transferMailboxID?: MaybeNull<number> };
 export type MailboxDefaultDTO = { defaultMailboxID: number };
+export type MailboxEditDTO = { mailboxID: number; email: string };
 
 export type CatchAllDTO = { domainID: number; catchAll: boolean };
 export type CustomDomainMailboxesDTO = { domainID: number; mailboxIDs: number[] };
