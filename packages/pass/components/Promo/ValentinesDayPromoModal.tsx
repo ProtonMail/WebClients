@@ -92,7 +92,7 @@ export const ValentinesDayPromoModal: FC<Props> = ({ onClose, onUpgradeClick, pl
             <ModalTwoContent>
                 <OfferCloseButton onClose={onClose} darkBackground={isDarkTheme} />
                 <ValentineOfferLayout>
-                    <section className="flex flex-column flex-nowrap w-full px-2 py-12 valentine">
+                    <section className="flex flex-column *:min-size-auto flex-nowrap w-full px-2 py-12 valentine">
                         <header className="mb-6">
                             {isDarkTheme ? (
                                 <ProtonLogo color="invert" className="z-1" />
