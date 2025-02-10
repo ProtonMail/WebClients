@@ -751,6 +751,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Аутентификация не удалась. Подтвердите ваш пароль ${ BRAND_NAME } для продолжения экспорта"
       ],
+      "Biometric authentication failed": [
+        "Биометрическая аутентификация не удалась"
+      ],
       "Cannot send invitation at the moment": [
         "Невозможно отправить приглашение в данный момент",
         "Невозможно отправить приглашения в данный момент",
@@ -1532,9 +1535,6 @@
       ],
       "finance": [
         "финансы"
-      ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Выполните эти шаги для импорта ваших данных из произвольного CSV:"
       ],
       "For security reasons, your access needs to be confirmed": [
         "По причинам безопасности, ваш доступ должен быть подтверждён"
@@ -2329,6 +2329,9 @@
       ],
       "Auto-lock after": [
         "Автоматическая блокировка через"
+      ],
+      "Backup password": [
+        "Пароль резервной копии"
       ],
       "Beta Access": [
         "Бета доступ"
