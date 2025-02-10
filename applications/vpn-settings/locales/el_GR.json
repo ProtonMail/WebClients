@@ -374,7 +374,7 @@
         "Απόκρυψη"
       ],
       "Hide plan features": [
-        "Απόκρυψη δυνατοτήτων προγράμματος"
+        "Απόκρυψη δυνατοτήτων πλάνου"
       ],
       "Import new SAML metadata": [
         "Εισαγωγή νέων μεταδεδομένων SAML"
@@ -1281,7 +1281,7 @@
         "Κρυπτογραφημένος διαχειριστής κωδικών πρόσβασης"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Το βασικό, δωρεάν πακέτο μας με κρυπτογραφημένο email και αποθηκευτικό χώρο από άκρο σε άκρο. Δεν περιλαμβάνονται premium χαρακτηριστικά."
+        "Το βασικό, δωρεάν πλάνο μας με κρυπτογραφημένο ηλεκτρονικό ταχυδρομείο και αποθηκευτικό χώρο από άκρο σε άκρο. Δεν περιλαμβάνονται premium χαρακτηριστικά."
       ],
       "Save ${ upsellSavings }": [
         "Εξοικονομίστε ${ upsellSavings }"
@@ -2880,7 +2880,7 @@
         "Ρύθμιση οικογενειακής ομάδας"
       ],
       "Switch plans": [
-        "Αλλαγή προγράμματος;"
+        "Αλλαγή πλάνου"
       ],
       "View invitation": [
         "Προβολή πρόσκλησης"
@@ -2919,7 +2919,7 @@
         "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πρόγραμμά σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
+        "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πλάνο σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
       ],
       "Invitation from ${ invitation.OrganizationName }": [
         "Πρόσκληση από ${ invitation.OrganizationName }"
@@ -2941,7 +2941,7 @@
         "Μόνο ${ n } αποδεκτές προσκλήσεις επιτρέπονται σε περίοδο 6 μηνών."
       ],
       "Owners of a plan with members cannot join another family plan.": [
-        "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο οικογενειακό πλάνο."
+        "Οι κάτοχοι ενός πλάνου με μέλη δεν μπορούν να συμμετάσχουν σε άλλο οικογενειακό πλάνο."
       ],
       "Pending": [
         "Σε εκκρεμότητα"
@@ -2953,13 +2953,13 @@
         "Προσκλήσεις σε αναμονή"
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Λυπούμαστε, δεν μπορείτε να αλλάξετε σχέδια αυτήν τη στιγμή."
+        "Λυπούμαστε, δεν μπορείτε να αλλάξετε πλάνο αυτήν τη στιγμή."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Αποθηκευτικός χώρος που σας έχει εκχωρηθεί: ${ assignedStorage }"
       ],
       "The subscription will be billed to the primary admin of this plan.": [
-        "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του προγράμματος."
+        "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του πλάνου."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Έχετε προσκληθεί να συμμετάσχετε στο ${ invite.OrganizationName }"
@@ -2985,7 +2985,7 @@
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "Έχετε ανεξόφλητα τιμολόγια. Πληρώστε τους πριν συμμετάσχετε σε ένα οικογενειακό πλάνο."
+        "Έχετε ανεξόφλητα τιμολόγια. Παρακαλούμε πληρώστε τα πριν συμμετάσχετε σε ένα οικογενειακό πλάνο."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Πρέπει να διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε πολλούς χρήστες."
@@ -2997,10 +2997,10 @@
         "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το οικογενειακό πλάνο και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το σχέδιο. ${ addressSettingsLink }"
+        "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το πλάνο. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του προγράμματος να αυξήσει τον αποθηκευτικό σας χώρο."
+        "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του πλάνου να αυξήσει τον αποθηκευτικό σας χώρο."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3008,10 +3008,10 @@
         "*Μόνο μία δωρεάν δοκιμή ανά χρήστη. Στη συνέχεια ισχύει κανονική τιμολόγηση."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
-        "Αφού φύγει από το πρόγραμμά σας, αυτός ο χρήστης θα μετακινηθεί σε στο πλάνο Free του ${ BRAND_NAME }."
+        "Όταν αποχωρήσει από το πλάνο σας, αυτός ο χρήστης θα μετακινηθεί σε στο πλάνο Free του ${ BRAND_NAME }."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Αφού αποχωρήσει από το πρόγραμμά σας, αυτός ο χρήστης θα μετακινηθεί σε ένα πρόγραμμα ${ BRAND_NAME } Unlimited με δωρεάν δοκιμή 30 ημερών.*"
+        "Όταν αποχωρήσει από το πλάνο σας, αυτός ο χρήστης θα μετακινηθεί σε ένα πρόγραμμα ${ BRAND_NAME } Unlimited με δωρεάν δοκιμή 30 ημερών.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Από προεπιλογή, εκχωρούμε ${ formattedStorage } αποθηκευτικού χώρου στον λογαριασμό διαχειριστή. Μπορείτε να διαχειριστείτε τον εκχωρημένο χώρο αποθήκευσης που θα διανεμηθεί σε επιπλέον χρήστες αργότερα."
@@ -3452,7 +3452,7 @@
         "Επιλέξτε την προσφορά σας"
       ],
       "Select your pricing plan": [
-        "Επιλέξτε το πρόγραμμα χρέωσης:"
+        "Επιλέξτε το πλάνο χρέωσης σας:"
       ],
       "Server": [
         "Διακομιστής"
@@ -4770,7 +4770,7 @@
         "Η συνδρομή ανανεώνεται αυτόματα κάθε μήνα."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Λήξη συνδρομής: Ενεργοποιήστε ξανά έως ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
+        "Λήξη συνδρομής: Ενεργοποιήστε ξανά έως τις ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
       ],
       "Summary": [
         "Περίληψη"
@@ -6946,8 +6946,8 @@
       "Sync and backup all your files across devices": [
         "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
       ],
-      "TOR over VPN": [
-        "TOR μέσω VPN"
+      "Tor over VPN": [
+        "Tor μέσω VPN"
       ],
       "Two-factor authentication": [
         "Ταυτοποίηση δύο παραγόντων"
@@ -7429,7 +7429,7 @@
         "Περιλαμβάνεται στα ${ plus }, ${ bundle } και ${ BRAND_NAME } για Επιχειρήσεις."
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Περιλαμβάνεται με πολλαπλούς χρήστες ${ BRAND_NAME } για επιχειρηματικά πακέτα."
+        "Περιλαμβάνεται με πολλαπλούς χρήστες ${ BRAND_NAME } για επιχειρηματικά πλάνα."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7759,7 +7759,7 @@
         "${ upgradeLink } για να αποκτήσετε περισσότερο χώρο αποθήκευσης ή να αφαιρέσετε κάποιο χώρο αποθήκευσης για να ελευθερώσετε χώρο."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
-        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableAddresses } παραπανίσια διεύθυνση.",
+        "Το πλάνο σας περιλαμβάνει το μέγιστο ${ availableAddresses } παραπανίσια διεύθυνση.",
         "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableAddresses } παραπανίσιες διευθύνσεις."
       ],
       "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
@@ -7767,8 +7767,8 @@
         "Το πρόγραμμά σας περιλαμβάνει το μέγιστο των ${ availableNumberOfMembers } επιπλέον χρηστών του οργανισμού."
       ],
       "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
-        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableVPNAccess } παραπανίσιο λογαριασμό VPN.",
-        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableVPNAccess } παραπανίσιους λογαριασμούς VPN."
+        "Το πλάνο σας περιλαμβάνει το μέγιστο ${ availableVPNAccess } παραπανίσιο λογαριασμό VPN.",
+        "Το πλάνο σας περιλαμβάνει το μέγιστο ${ availableVPNAccess } παραπανίσιους λογαριασμούς VPN."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ humanReadableAvailableSpace } παραπανίσιο χώρο αποθήκευσης."
@@ -8043,7 +8043,7 @@
         "ΜΜ/ΕΕ"
       ],
       "More plans are available in other currencies": [
-        "Περισσότερα προγράμματα είναι διαθέσιμα σε άλλα νομίσματα"
+        "Περισσότερα πλάνα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
       "Payment Processing": [
         "Επεξεργασία Πληρωμής"
@@ -8094,7 +8094,7 @@
         "Υπέρβαση χρονικού ορίου"
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Επεξεργαζόμαστε την πληρωμή σας για το τιμολογημένο τιμολόγιο. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή προτού κάνετε αλλαγές στο πρόγραμμά σας ή ενημερώσετε τα στοιχεία πληρωμής σας. Σας ευχαριστούμε για την υπομονή σας."
+        "Επεξεργαζόμαστε την πληρωμή σας για το τιμολογημένο τιμολόγιο. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή προτού κάνετε αλλαγές στο πλάνο σας ή ενημερώσετε τα στοιχεία πληρωμής σας. Σας ευχαριστούμε για την υπομονή σας."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Θα χρεωθείτε ${ amountToCharge } από τον επιλεγμένο τρόπο πληρωμής."
@@ -8126,8 +8126,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Επιβεβαιώνοντας αυτήν την πληρωμή, εξουσιοδοτείτε το ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να δώσουν εντολή στην τράπεζά σας να χρεώσει τον λογαριασμό σας και στην τράπεζά σας να χρεώσει ανάλογα τον λογαριασμό σας. Μπορείτε να λάβετε επιστροφή χρημάτων εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Επιβεβαιώνοντας αυτήν την πληρωμή, εξουσιοδοτείτε το ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να δώσουν εντολή στην τράπεζά σας να χρεώσει ανάλογα τον λογαριασμό σας. Μπορείτε να λάβετε επιστροφή χρημάτων εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας."
       ],
       "Street address, postal code, and city": [
         "Οδός, ταχυδρομικός κώδικας και πόλη"
@@ -8979,7 +8979,7 @@
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Μεταβείτε στα συνδρομητικά προγράμματα"
+        "Μεταβείτε στα συνδρομητικά πλάνα"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -9529,10 +9529,10 @@
         "Συνδρομές"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Το πρόγραμμά σας αγοράστηκε χρησιμοποιώντας μια εφαρμογή Android. Επομένως, για να κάνετε αλλαγές στο πρόγραμμά σας ή να ενημερώσετε τα στοιχεία πληρωμής σας, θα πρέπει να μεταβείτε στο Google Play Store."
+        "Το πλάνο σας αγοράστηκε χρησιμοποιώντας μια εφαρμογή Android. Επομένως, για να κάνετε αλλαγές στο πλάνο σας ή να ενημερώσετε τα στοιχεία πληρωμής σας, θα πρέπει να μεταβείτε στο Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Το πρόγραμμά σας αγοράστηκε χρησιμοποιώντας μια εφαρμογή iOS. Επομένως, για να κάνετε αλλαγές στο πρόγραμμά σας ή να ενημερώσετε τα στοιχεία πληρωμής σας, θα πρέπει να μεταβείτε στο Apple App Store."
+        "Το πλάνο σας αγοράστηκε χρησιμοποιώντας μια εφαρμογή iOS. Επομένως, για να κάνετε αλλαγές στο πλάνο σας ή να ενημερώσετε τα στοιχεία πληρωμής σας, θα πρέπει να μεταβείτε στο Apple App Store."
       ]
     },
     "subscription downgrading info": {
@@ -9633,10 +9633,10 @@
         "Προσθέσετε νέα αρχεία"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου στο Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
+        "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου στο Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου στο Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Η ομάδα σας θα αντιμετωπίσει διακοπές στην εργασία της, καθώς επιπλέον χρήστες δεν υποστηρίζονται στο δωρεάν πρόγραμμα."
+        "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου στο Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Η ομάδα σας θα αντιμετωπίσει διακοπές στην εργασία της, καθώς επιπλέον χρήστες δεν υποστηρίζονται στο δωρεάν πλάνο."
       ],
       "All you need for your business": [
         "Όλα όσα χρειάζεστε για την επιχείρησή σας"
@@ -9816,10 +9816,10 @@
         "Τι εγκαταλείπετε όταν ακυρώσετε το ${ planName }"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Όταν ακυρώσετε το ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
+        "Όταν ακυρώσετε το ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Όταν ακυρώσετε το ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Η ομάδα σας θα αντιμετωπίσει διακοπές στην εργασία της, καθώς επιπλέον χρήστες δεν υποστηρίζονται στο δωρεάν πρόγραμμα."
+        "Όταν ακυρώσετε το ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Η ομάδα σας θα αντιμετωπίσει διακοπές στην εργασία της, καθώς επιπλέον χρήστες δεν υποστηρίζονται στο δωρεάν πλάνα."
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν η συνδρομή σας ${ planName } λήξει στις ${ expiryDate }, θα υποβαθμιστείτε στο Free πλάνο ${ BRAND_NAME }."
@@ -9828,10 +9828,10 @@
         "Ετήσια δωρεάν μπόνους αποθήκευσης"
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
-        "Μπορείτε να συνεχίσετε να απολαμβάνετε όλα τα οφέλη του τρέχοντος προγράμματός σας μέχρι ${ boldedDate }."
+        "Μπορείτε να συνεχίσετε να απολαμβάνετε όλα τα οφέλη του τρέχοντος πλάνου σας μέχρι ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Εξακολουθείτε να έχετε ${ expiryDate } στη ${ planName } συνδρομή σας. Θα προσθέσουμε τις πιστώσεις για τον υπόλοιπο χρόνο στον λογαριασμό σας ${ BRAND_NAME }. Βεβαιωθείτε ότι δεν υπερβαίνετε τα όρια του δωρεάν προγράμματος πριν ακυρώσετε.${ learnMoreLink }"
+        "Εξακολουθείτε να έχετε ${ expiryDate } στη ${ planName } συνδρομή σας. Θα προσθέσουμε τις πιστώσεις για τον υπόλοιπο χρόνο στον λογαριασμό σας ${ BRAND_NAME }. Βεβαιωθείτε ότι δεν υπερβαίνετε τα όρια του δωρεάν πλάνου πριν ακυρώσετε.${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Το ${ planName } πλάνο σας δε διατηρεί απλώς ασφαλή τα δεδομένα και τις επικοινωνίες της επιχείρησής σας. Υποστηρίζει τους στόχους συμμόρφωσης, κάνει την επιχείρησή σας να ξεχωρίζει και διατηρεί την ομάδα σας συνδεδεμένη."
@@ -9857,7 +9857,7 @@
         "Εφαρμογή σταθερού υπολογιστή"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πρόγραμμα επί πληρωμή."
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
       ],
       "No ads or tracking": [
         "Χωρίς διαφημίσεις ή παρακολούθηση"
@@ -10710,7 +10710,7 @@
         "Τηλέφωνο"
       ],
       "Plans": [
-        "Προγράμματα"
+        "Πλάνα"
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -11018,7 +11018,7 @@
     },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
-        "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το σχέδιο του οργανισμού."
+        "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
       ],
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης στις προσκλήσεις ημερολογίου σας."
@@ -11501,6 +11501,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ n } ${ BRAND_NAME } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
       "${ n } account per wallet": [
         "${ n } λογαριασμό ανά πορτοφόλι",
         "${ n } λογαριασμούς ανά πορτοφόλι"
@@ -11514,6 +11518,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin μέσω Εmail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Κρυπτογραφημένη και ασφαλής διεύθυνση ηλεκτρονικού ταχυδρομείου ${ MAIL_APP_NAME }. Μπορείτε εύκολα να στείλετε Bitcoin σε οποιονδήποτε με μόνο το ${ BRAND_NAME } όνομά του."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Ανταλλάξτε με ασφάλεια Bitcoin μέσω email αντί για πολύπλοκες διευθύνσεις Bitcoin 26 χαρακτήρων που είναι επιρρεπείς σε σφάλματα"
       ]
     },
     "wallet_signup_2024:app-switcher": {

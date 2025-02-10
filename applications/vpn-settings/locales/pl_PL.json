@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Kopiuj klucz do schowka"
       ],
+      "Copy password": [
+        "Skopiuj hasło"
+      ],
       "Copy version number to clipboard": [
         "Kopiuj numer wersji do schowka"
       ],
@@ -174,6 +177,12 @@
       ],
       "Create Gateway": [
         "Utwórz bramę"
+      ],
+      "Create new password": [
+        "Utwórz nowe hasło"
+      ],
+      "Create new policy": [
+        "Utwórz nową zasadę"
       ],
       "Create users": [
         "Utwórz użytkowników"
@@ -4443,6 +4452,9 @@
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
+      "Numbers": [
+        "Numery"
+      ],
       "of": [
         "z"
       ],
@@ -4778,6 +4790,9 @@
       ],
       "Switch to": [
         "Przełącz na konto"
+      ],
+      "Symbols (#$&)": [
+        "Symbole (#$&)"
       ],
       "Thank you": [
         "Dziękujemy"
@@ -6957,9 +6972,6 @@
       "Sync and backup all your files across devices": [
         "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
       ],
-      "TOR over VPN": [
-        "Tor przez VPN"
-      ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
       ],
@@ -8129,9 +8141,6 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
-      ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
       ]
@@ -11724,6 +11733,20 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin na adres e-mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Zaszyfrowany i bezpieczny ${ MAIL_APP_NAME } adres e-mail. Możesz z łatwością wysłać Bitcoin każdemu, używając wyłącznie nazwy ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Wymieniaj bezpiecznie Bitcoin przez e-mail, zamiast skomplikowanych, 26-znakowych adresów Bitcoin, które są podatne na błąd"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ]
     },
     "wallet_signup_2024:Bug category": {

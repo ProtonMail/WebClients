@@ -1050,7 +1050,7 @@
         "プライベート写真バックアップ"
       ],
       "Protect 10 devices at a time": [
-        "Protect 10 devices at a time"
+        "一度に 10 台のデバイスを保護"
       ],
       "Secure file storage & sharing": [
         "安全なファイルストレージと共有"
@@ -1099,7 +1099,7 @@
         "メールとスケジュールをエンドツーエンドの暗号化で保護します。${ addresses }のメールアドレス、カスタムメールドメインのサポート、無制限のide-my-emailエイリアスなどが含まれています。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more."
+        "メールとスケジュールをエンドツーエンド暗号化で保護します。15 のメールアドレス、カスタムメールドメインのサポート、${ BRAND_NAME }執筆アシスタント、無制限のide-my-emailなどが含まれています。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "メールとスケジュールをエンドツーエンド暗号化で保護します。15 のメールアドレス、カスタムメールドメインのサポート、無制限のide-my-emailなどが含まれています。"
@@ -5054,7 +5054,7 @@
         "代わりに回復用フレーズを使うことをおすすめします。"
       ],
       "We use 3-D Secure to protect your payments": [
-        "支払いを保護するために 3 D セキュアを使用しています"
+        "支払いを保護するために3Dセキュアを使用しています"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
@@ -6861,8 +6861,8 @@
       "Sync and backup all your files across devices": [
         "デバイス間のすべてのファイルを同期とバックアップ"
       ],
-      "TOR over VPN": [
-        "VPNを通じたTOR"
+      "Tor over VPN": [
+        "VPN経由Tor"
       ],
       "Two-factor authentication": [
         "2 要素認証"
@@ -8028,8 +8028,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から 8 週間以内に返金を受けることができます。"
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "この支払いを確認することにより、あなたは${ BRAND_NAME }と私たちの決済サービスプロバイダーであるStripeに、あなたの銀行に対して口座からの引き落としを指示する権限を与えることになります。引き落とし日から 8 週間以内であれば、銀行との契約条件に基づいて返金を受けることができます。"
       ],
       "Street address, postal code, and city": [
         "番地、郵便番号、市区町村名"
@@ -11341,6 +11341,9 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } メールアドレス"
+      ],
       "${ n } account per wallet": [
         "一つのウォレットに${ n } 個のアカウント"
       ],
@@ -11352,6 +11355,12 @@
       ],
       "Bitcoin via Email": [
         "メールで Bitcoin"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "暗号化済みで安全な${ MAIL_APP_NAME }メールアドレス。お客様は、相手の${ BRAND_NAME }名だけで簡単にBitcoinを送信できます。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "エラーが発生しやすい複雑な 26 文字のBitcoinアドレスの代わりにメールでBitcoinを安全に交換します"
       ]
     },
     "wallet_signup_2024:app-switcher": {
