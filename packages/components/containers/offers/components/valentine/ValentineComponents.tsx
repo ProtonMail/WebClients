@@ -22,7 +22,7 @@ export const ValentineHeader = ({ salePercentage }: HeaderProps) => {
     const theme = useTheme();
 
     return (
-        <header className="mb-6">
+        <header className="mb-6 md:w-5/6">
             {theme.information.dark ? (
                 <ProtonLogo color="invert" className="z-1" />
             ) : (
