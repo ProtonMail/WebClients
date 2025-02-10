@@ -1,3 +1,7 @@
+### Version 1.29.3
+
+- Re-enable exporting capabilities for SSO users
+
 ### Version 1.29.2
 
 - Reduce invite creation batch size

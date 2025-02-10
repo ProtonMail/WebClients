@@ -157,9 +157,11 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
 
                 await setRetryCount(retryCount).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true, userInitiated: true });
+
                 const errMessage = authStore.getExtraPassword()
                     ? c('Error').t`Wrong extra password`
                     : c('Error').t`Wrong password`;
+
                 throw Error(errMessage);
             }
         },
