@@ -13,11 +13,14 @@ import {
     MAIL_SHORT_APP_NAME,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
+    WALLET_APP_NAME,
+    WALLET_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 
 import driveAccess from '../drive/access.svg';
 import mailAccess from '../mail/access.svg';
 import passAccess from '../pass/access.svg';
+import walletAccess from '../wallet/access.svg';
 
 interface Props extends ModalProps {
     onContinue: () => void;
@@ -37,13 +40,16 @@ const AccessModal = ({ app, onClose, onContinue, onSignOut, ...rest }: Props) =>
         if (app === APPS.PROTONDRIVE) {
             return { svg: driveAccess, appName: DRIVE_APP_NAME, shortName: DRIVE_SHORT_APP_NAME };
         }
+        if (app === APPS.PROTONWALLET) {
+            return { svg: walletAccess, appName: WALLET_APP_NAME, shortName: WALLET_SHORT_APP_NAME };
+        }
         throw new Error('unknown app');
     })();
     return (
         <ModalTwo {...rest} disableCloseOnEscape={true} size="small">
             <ModalTwoContent>
                 <div className="text-center">
-                    <img src={svg} alt="" className="mb-4 mt-4" />
+                    {svg && <img src={svg} alt="" className="mb-4 mt-4" />}
                     <div className="mb-4 text-bold h3">{c('pass_signup_2023: Info')
                         .t`Welcome to ${shortName} Plus`}</div>
                     <div className="mb-6 color-weak">
