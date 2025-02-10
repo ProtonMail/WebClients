@@ -33,7 +33,7 @@ export type LoginLocationState =
 export interface LoginCompleteState {
     type: 'done';
     payload: {
-        session: AuthSession;
+        session?: AuthSession;
         url: URL;
     };
 }
