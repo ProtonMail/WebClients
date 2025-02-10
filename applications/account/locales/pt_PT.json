@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -6952,11 +6952,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ativar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
       ],
-      "active": [
-        "ativa"
-      ],
       "Active": [
         "Ativo"
+      ],
+      "active": [
+        "ativa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -11499,6 +11499,9 @@
       "Privacy policy": [
         "Política de privacidade"
       ],
+      "privacy policy": [
+        "política de privacidade"
+      ],
       "Reactivate now": [
         "Reativar"
       ],
@@ -11674,9 +11677,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta por tempo limitado: **Obtenha até 35% de desconto nos planos** anuais."
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Oferta por tempo limitado: **Poupe ${ discount } no ${ name } com um plano de 1 ano**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Configure a sua conta com o seu domínio Porkbun."
@@ -12587,8 +12587,8 @@
       "Tailored to your needs": [
         "Personalizado de acordo com as suas necessidades"
       ],
-      "TOR over VPN": [
-        "TOR sobre VPN"
+      "Tor over VPN": [
+        "Tor sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
@@ -14039,6 +14039,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Mas pode desbloquear o **${ unlockPlanTitle }** e todos os serviços premium da ${ BRAND_NAME } ao melhorar o seu plano para o **${ upsellPlanTitle }**."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Ao continuar, concorda com os nossos ${ termsAndConditionsLink } e ${ privacyPolicyLink }."
+      ],
       "Creating your account": [
         "A criar a sua conta"
       ],
@@ -14516,8 +14519,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Ao confirmar este pagamento, autoriza o ${ BRAND_NAME } e a Stripe, o nosso provedor de serviços de pagamento, a instruir o seu banco a debitar a sua conta e o seu banco a proceder com o débito de acordo. Poderá receber um reembolso dentro de 8 semanas a partir da data de débito, de acordo com as condições do seu acordo com o seu banco."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ao confirmar este pagamento, autoriza o ${ BRAND_NAME } e a Stripe, o nosso provedor de serviços de pagamento, a instruir o seu banco a debitar a sua conta. Poderá receber um reembolso dentro de 8 semanas a partir da data de débito, conforme as condições do seu acordo com o seu banco."
       ],
       "Street address, postal code, and city": [
         "Endereço, código postal e cidade"
@@ -16666,6 +16669,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -16954,47 +16998,6 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -18356,8 +18359,8 @@
       "PayPal verification failed": [
         "Erro na verificação PayPal"
       ],
-      "Personalise your e-mail footer": [
-        "Personalize o rodapé do seu e-mail"
+      "Personalize your e-mail footer": [
+        "Personalize o rodapé do seu e-mail."
       ],
       "Personalize your email footer": [
         "Personalize o rodapé do seu e-mail"
@@ -18896,29 +18899,6 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Endereço externo - desativa a encriptação criptografia de ponta a ponta de email para este grupo."
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Endereço externo - desativa a encriptação de ponta a ponta de e-mail para este grupo e nenhum recurso encriptado será partilhado com este utilizador."
-      ],
-      "Group membership paused": [
-        "A associação ao grupo foi pausada."
-      ],
-      "Sending member invitation": [
-        "A enviar um convite ao membro"
-      ],
-      "User declined invitation": [
-        "O utilizador rejeitou o convite."
-      ],
-      "Waiting for user to accept the invitation": [
-        "A aguardar que o utilizador aceite o convite"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Os utilizadores do ${ MAIL_APP_NAME } utilizarão esta chave por predefinição para o envio."
@@ -19132,6 +19112,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "A sua conta externa pode ter atingido o limite de largura de banda de 24 horas. ${ BRAND_NAME } tentará retomar a importação assim que possível."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Endereço externo - desativa a encriptação criptografia de ponta a ponta de email para este grupo."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Endereço externo - desativa a encriptação de ponta a ponta de e-mail para este grupo e nenhum recurso encriptado será partilhado com este utilizador."
+      ],
+      "Group membership paused": [
+        "A associação ao grupo foi pausada."
+      ],
+      "Sending member invitation": [
+        "A enviar um convite ao membro"
+      ],
+      "User declined invitation": [
+        "O utilizador rejeitou o convite."
+      ],
+      "Waiting for user to accept the invitation": [
+        "A aguardar que o utilizador aceite o convite"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19642,6 +19645,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } endereço de e-mail da ${ BRAND_NAME }",
+        "${ n } endereços de e-mail da ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } conta por carteira",
         "${ n } contas por carteira"
@@ -19650,14 +19657,50 @@
         "${ n } carteira",
         "${ n } carteiras"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programa ${ PROTON_SENTINEL_NAME }"
+      ],
       "A safer way to hold your Bitcoin": [
         "Uma maneira mais segura de conservar o seu Bitcoin"
+      ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Endereço de e-mail encriptada e seguro do ${ MAIL_APP_NAME }. Você pode enviar Bitcoin facilmente para qualquer pessoa apenas com o nome ${ BRAND_NAME }."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Armazenamento na nuvem encriptado para fotografias e documentos"
+      ],
+      "Encrypted email and file storage": [
+        "E-mail e armazenamento de ficheiros encriptados"
+      ],
+      "Encrypted password manager": [
+        "Gestor de palavras-passe encriptado"
+      ],
       "Exclusive early access to ${ appName }.": [
         "Acesso antecipado exclusivo para ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "O nosso plano mais exclusivo. Obtenha acesso antecipado a novas funcionalidades e a todos os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Troque Bitcoin com segurança via e-mail em vez de endereços de Bitcoin complexos de 26 caracteres que são propensos a erro"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Guarde e transacione Bitcoin de forma segura e gratuita."
+      ],
+      "Self-custodial wallet": [
+        "Carteira de autocustódia"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Assuma o controlo de todos os seus dados com os serviços premium da ${ BRAND_NAME }."
+      ],
+      "Ultra fast and private VPN": [
+        "VPN privada ultrarrápida"
       ],
       "You're Invited.": [
         "Está convidado."

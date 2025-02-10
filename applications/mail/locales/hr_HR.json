@@ -7567,6 +7567,46 @@
         "Bez oglasa"
       ]
     },
+    "wallet_signup_2024: Info": {
+      "A safer way to hold your Bitcoin": [
+        "Sigurniji način za čuvanje vašeg Bitcoin-a"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin putem e-pošte"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Šifrirana i sigurna ${ MAIL_APP_NAME } e-pošta. Možete jednostavno poslati Bitcoin bilo kome, koristeći samo njihovo ${ BRAND_NAME } ime."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Sigurno zamijenite Bitcoin putem e-pošte umjesto složenih, 26-znamenkastih Bitcoin adresa koje su sklone pogreškama"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Pristupi apl. novčanika"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Sigurniji način za čuvanje Bitcoin-a"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem s novčanikom"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Korisnički račun ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Moj uvezeni novčanik${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Moj novčanik${ indexStr }"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } će spojiti sve mape s istim imenom. Da biste to izbjegli, promijenite imena prije uvoza."

@@ -7116,8 +7116,8 @@
       "Sync and backup all your files across devices": [
         "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
       ],
-      "TOR over VPN": [
-        "TOR cez VPN"
+      "Tor over VPN": [
+        "Tor cez VPN"
       ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
@@ -8322,8 +8322,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potvrdením tejto platby oprávňujete spoločnosť ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali pokyn vašej banke na odpísanie finančných prostriedkov z vášho účtu a aby vaša banka zodpovedajúcim spôsobom odpísala finančné prostriedky z vášho účtu. Peniaze môžete získať späť do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrdením tejto platby oprávňujete ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali vašej banke pokyn na odpísanie prostriedkov z vášho účtu. Peniaze vám môžu byť vrátené do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
       ],
       "Street address, postal code, and city": [
         "Ulica, PSČ a mesto"
@@ -11830,6 +11830,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } emailová adresa",
+        "${ n } ${ BRAND_NAME } emailové adresy",
+        "${ n } ${ BRAND_NAME } emailových adries",
+        "${ n } ${ BRAND_NAME } emailových adries"
+      ],
       "${ n } account per wallet": [
         "${ n } účet na peňaženku",
         "${ n } účty na peňaženku",
@@ -11847,6 +11853,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin cez email"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Zašifrovaná a bezpečná emailová adresa ${ MAIL_APP_NAME }. Môžete jednoducho odoslať Bitcoin komukoľvek len s ich ${ BRAND_NAME } menom."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Bezpečne vymieňajte Bitcoin prostredníctvom emailu namiesto zložitých, 26-znakových bitcoinových adries, ktoré sú náchylné na chybu"
       ]
     },
     "wallet_signup_2024:app-switcher": {

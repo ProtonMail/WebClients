@@ -739,6 +739,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Uwierzytelnianie nie powiodło się. Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane"
       ],
+      "Biometric authentication failed": [
+        "Uwierzytelnianie biometryczne nie powiodło się"
+      ],
       "Cannot send invitation at the moment": [
         "Nie można wysłać zaproszenia",
         "Nie można wysłać zaproszeń",
@@ -1535,9 +1538,6 @@
       ],
       "finance": [
         "finanse"
-      ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Wykonaj te kroki, aby zaimportować dane za pomocą ogólnego pliku CSV:"
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfu",
@@ -2353,6 +2353,9 @@
       ],
       "Auto-lock after": [
         "Automatyczna blokada"
+      ],
+      "Backup password": [
+        "Hasło zapasowe"
       ],
       "Beta Access": [
         "Dostęp beta"

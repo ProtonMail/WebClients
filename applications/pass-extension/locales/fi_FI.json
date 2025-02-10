@@ -1573,6 +1573,9 @@
       "Expires in ${ remainingTime }": [
         "Erääntymiseen: ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Viedään tietojasi..."
+      ],
       "Extra password successfully created": [
         "Lisäsalasana luotiin"
       ],
@@ -1581,9 +1584,6 @@
       ],
       "Fill in the CSV with your data": [
         "Täytä CSV omilla tiedoillasi"
-      ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Tuo tietosi yleisenä CSV -tiedostona noudattamalla ohjeita"
       ],
       "For easy access to your passwords and more.": [
         "Helppo pääsy salasanoihisi ja muihin tietoihisi."
@@ -1816,6 +1816,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
+      ],
+      "Please confirm your backup password": [
+        "Vahvista varasalasanasi"
       ],
       "Please confirm your extra password": [
         "Vahvista lisäsalasanasi"
@@ -2209,6 +2212,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Olet saavuttanut ${ maxLength }-merkin enimmäispituuden."
       ],
+      "You may close this tab.": [
+        "Voit sulkea tämän välilehden."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Voit mukauttaa verkkotunnuksen asetuksia (nappaa kaikki -sähköpostialiakset, aliasten oletusnäyttönimi, jne...) verkkotunnuksesi vahvistamisen jälkeen."
       ],
@@ -2407,6 +2413,9 @@
       ],
       "Autosuggest": [
         "Automaattiehdotus"
+      ],
+      "Backup password": [
+        "Varasalasana"
       ],
       "Biometrics": [
         "Biometria"
@@ -3477,6 +3486,9 @@
       ],
       "Enter coupon code": [
         "Syötä etukoodi"
+      ],
+      "Enter your backup password": [
+        "Syötä varasalasanasi"
       ],
       "Enter your extra password": [
         "Syötä lisäsalasanasi"

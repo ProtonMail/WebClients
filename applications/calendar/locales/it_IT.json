@@ -6950,8 +6950,8 @@
       "Sync and backup all your files across devices": [
         "Sincronizza ed effettua il backup dei file su tutti i tuoi dispositivi"
       ],
-      "TOR over VPN": [
-        "TOR su VPN"
+      "Tor over VPN": [
+        "Tor su VPN"
       ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
@@ -7987,8 +7987,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Confermando questo pagamento, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a istruire la tua banca ad addebitare il tuo conto e la tua banca ad addebitare il tuo conto di conseguenza. Puoi ottenere un rimborso entro 8 settimane dalla data di addebito, secondo le condizioni dell'accordo con la tua banca."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confermando questo pagamento, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a chiedere alla tua banca l'addebito sul tuo conto. Puoi ottenere un rimborso entro 8 settimane dalla data di addebito, secondo le condizioni dell'accordo con la tua banca."
       ],
       "Street address, postal code, and city": [
         "Indirizzo, codice postale e città"
@@ -10415,6 +10415,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n }indirizzo email ${ BRAND_NAME }",
+        "${ n }indirizzi email ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } account per portafoglio",
         "${ n } account per portafoglio"
@@ -10428,6 +10432,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via email"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Indirizzo email ${ MAIL_APP_NAME } criptato e sicuro. Puoi facilmente inviare Bitcoin a chiunque semplicemente usando il loro nome ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Scambia Bitcoin in modo sicuro tramite email invece di complesse indirizzi Bitcoin di 26 caratteri soggetti a errori."
       ]
     },
     "wallet_signup_2024:app-switcher": {

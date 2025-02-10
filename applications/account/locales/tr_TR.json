@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "activate": [
-        "kullanıma al"
-      ],
       "Activate": [
         "Kullanıma al"
+      ],
+      "activate": [
+        "kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -6952,11 +6952,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
-      "active": [
-        "etkin"
-      ],
       "Active": [
         "Etkin"
+      ],
+      "active": [
+        "etkin"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -7104,7 +7104,7 @@
         "Bu bağlantıya sahip olan kimseler takviminizi eşitleyemeyecek ya da gelecekteki güncellemeleri alamayacak. Bu kişilere yeniden erişim vermek için yeni bir bağlantı oluşturmalısınız."
       ],
       "Are you sure you want to cancel editing the group?": [
-        "Bu grubu düzenlemeyi iptal etmek istediğinizden emin misiniz?"
+        "Bu grubu düzenlemeyi iptal etmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to delete this calendar?": [
         "Bu takvimi silmek istediğinize emin misiniz?"
@@ -8014,13 +8014,13 @@
         "Ayrıntılı bilgi alın"
       ],
       "Learn more about Gateways": [
-        "Ağ geçitleri hakkında ayrıntılı bilgi alın"
+        "Ağ geçitleri ile ilgili ayrıntılı bilgi alın"
       ],
       "learn more about Sieve programming language": [
-        "Sieve programlama dili hakkında ayrıntılı bilgi alabilirsiniz"
+        "Sieve programlama dili ile ilgili ayrıntılı bilgi alabilirsiniz"
       ],
       "Learn more about single sign-on": [
-        "Tek oturum açma hakkında ayrıntılı bilgi alın"
+        "Tek oturum açma ile ilgili ayrıntılı bilgi alın"
       ],
       "Left to Right": [
         "Soldan sağa"
@@ -9684,7 +9684,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı hakkında bilgi almak için bizimle ${ email } adresinden görüşün."
+        "Nakit ödemenin nasıl yapılacağı ile ilgili bilgi almak için bizimle ${ email } adresinden görüşün."
       ]
     },
     "Info for domain modal": {
@@ -11479,7 +11479,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Learn more about data recovery": [
-        "Veri kurtarma hakkında ayrıntılı bilgi alın"
+        "Veri kurtarma ile ilgili ayrıntılı bilgi alın"
       ],
       "Not activated": [
         "Kullanıma alınmamış"
@@ -11495,6 +11495,9 @@
       ],
       "Privacy policy": [
         "Gizlilik ilkesi"
+      ],
+      "privacy policy": [
+        "gizlilik ilkesi"
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
@@ -11671,9 +11674,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Sınırlı süreli teklif: Yıllık tarifelerde **35% indirim alın**"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Sınırlı süreli teklif: **${ name } uygulamasında 1 yıllık tarife ile ${ discount } indirimden yararlanın**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Hesabınızı Porkbun etki alanınızla kurun."
@@ -12584,7 +12584,7 @@
       "Tailored to your needs": [
         "Gereksinimlerinize göre uyarlanmış"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "VPN üzerinden Tor"
       ],
       "Two-factor authentication": [
@@ -14027,6 +14027,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Ancak **${ upsellPlanTitle }** tarifesine yükselterek **${ unlockPlanTitle }** tarifesine geçebilir ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "İlerleyerek ${ termsAndConditionsLink } ve ${ privacyPolicyLink } metinlerini kabul etmiş olursunuz."
+      ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
       ],
@@ -14504,8 +14507,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Bu ödemeyi onaylayarak, ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine bankanıza hesabınızdan para çekmesi talimatını vermesini ve bankanızın da buna göre hesabınızdan para çekmesine izin vermiş olursunuz. Bankanızla yaptığınız anlaşmanın koşulları uyarınca, paranın çekilme tarihinden itibaren 8 hafta içinde geri ödeme alabilirsiniz."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
       ],
       "Street address, postal code, and city": [
         "Sokak adresi, posta kodu ve il"
@@ -16654,6 +16657,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -16833,7 +16877,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Learn more about our impact": [
-        "Yarattığımız etki hakkında ayrıntılı bilgi alın"
+        "Yarattığımız etki ile ilgili bilgi alın"
       ],
       "Limitations of the free plan:": [
         "Free tarife sınırları:"
@@ -16942,47 +16986,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Masaüstü uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -18347,8 +18350,8 @@
       "PayPal verification failed": [
         "PayPal doğrulaması başarısız oldu"
       ],
-      "Personalise your e-mail footer": [
-        "E-posta alt bilgilerinizi kişiselleştirin"
+      "Personalize your e-mail footer": [
+        "E-posta alt bilginizi kişiselleştirin"
       ],
       "Personalize your email footer": [
         "E-posta alt bilginizi isteğinize göre değiştirin"
@@ -18887,29 +18890,6 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."
-      ],
-      "Group membership paused": [
-        "Grup üyeliği duraklatılmış"
-      ],
-      "Sending member invitation": [
-        "Üye daveti gönderiliyor"
-      ],
-      "User declined invitation": [
-        "Kullanıcı daveti reddetti"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Kullanıcının daveti kabul etmesi bekleniyor"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME } kullanıcıları, gönderim için varsayılan olarak bu anahtarı kullanacak"
@@ -19123,6 +19103,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dış hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. ${ BRAND_NAME }, olabilecek en kısa sürede içe aktarma işlemini sürdürmeye çalışacak."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."
+      ],
+      "Group membership paused": [
+        "Grup üyeliği duraklatılmış"
+      ],
+      "Sending member invitation": [
+        "Üye daveti gönderiliyor"
+      ],
+      "User declined invitation": [
+        "Kullanıcı daveti reddetti"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Kullanıcının daveti kabul etmesi bekleniyor"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19737,6 +19740,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-posta adresi",
+        "${ n } ${ BRAND_NAME } e-posta adresi"
+      ],
       "${ n } account per wallet": [
         "Cüzdan başına ${ n } hesap",
         "Cüzdan başına ${ n } hesap"
@@ -19745,14 +19752,50 @@
         "${ n } cüzdan",
         "${ n } cüzdan"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programı"
+      ],
       "A safer way to hold your Bitcoin": [
         "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Şifrelenmiş ve güvenli ${ MAIL_APP_NAME } e-posta adresi. Yalnızca ${ BRAND_NAME } adını kullanarak birine kolayca Bitcoin gönderebilirsiniz."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Fotoğraflar ve belgeler için şifrelenmiş bulut depolama alanı"
+      ],
+      "Encrypted email and file storage": [
+        "Şifrelenmiş e-posta ve dosya depolama alanı"
+      ],
+      "Encrypted password manager": [
+        "Şifrelenmiş parola yöneticisi"
+      ],
       "Exclusive early access to ${ appName }.": [
         "${ appName } için özel erken erişim."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "En geniş kapsamlı tarifemiz. Yeni özelliklere ve tüm ücretli ${ BRAND_NAME } hizmetlerine erkenden erişin."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Aktarım sırasında hata yapmaya açık olan 26 karakter uzunluğundaki karmaşık Bitcoin adreslerini kullanmak yerine, E-posta ile Bitcoin özelliğini kullanarak güvenli bir şekilde Bitcoin alışverişi yapabilirsiniz"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Bitcoin birikimlerinizi ücretsiz ve güvenli olarak saklayın ve işlem yapın."
+      ],
+      "Self-custodial wallet": [
+        "Kendinden korumalı cüzdan"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Tüm verilerinizi ücretli ${ BRAND_NAME } hizmetleriyle koruyun."
+      ],
+      "Ultra fast and private VPN": [
+        "Çok hızlı ve güvenli VPN"
       ],
       "You're Invited.": [
         "Davetlisiniz."

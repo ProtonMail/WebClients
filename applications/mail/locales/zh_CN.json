@@ -9611,8 +9611,8 @@
       "Sync and backup all your files across devices": [
         "跨设备同步并备份所有文件"
       ],
-      "TOR over VPN": [
-        "VPN 上的 Tor"
+      "Tor over VPN": [
+        "经 Tor 连接 VPN"
       ],
       "Two-factor authentication": [
         "双重验证"
@@ -10627,8 +10627,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "确认付款后，您即授权 ${ BRAND_NAME } 和我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣款，您的银行则相应地从您的账户中扣款。根据您与银行签订的协议，你可以在扣款日起 8 周内获得退款。"
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "确认付款后，您即授权 ${ BRAND_NAME } 和我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣除相应款项。根据您与银行签订的协议，您可以在扣款日起 8 周内获得退款。"
       ],
       "Street address, postal code, and city": [
         "街道地址、邮政编码和城市"
@@ -13571,6 +13571,9 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } 电子邮箱地址"
+      ],
       "${ n } account per wallet": [
         "每个钱包${ n }个 账户"
       ],
@@ -13582,6 +13585,12 @@
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "已加密且安全的 ${ MAIL_APP_NAME } 电子邮件地址。您只需使用其 ${ BRAND_NAME } 名称即可轻松发送 Bitcoin。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "通过电子邮件安全地交换 Bitcoin，而不是那些复杂、26个字符长且容易出错的 Bitcoin 地址"
       ]
     },
     "wallet_signup_2024:Action": {
