@@ -11,7 +11,6 @@ export const valentineDriveBundle2025: OfferConfig = {
     ID: 'valentine-2025-drive-bundle',
     featureCode: FeatureCode.OfferValentine2025DriveBundle,
     canBeDisabled: false,
-    autoPopUp: 'one-time',
     deals: [
         {
             ref: 'vd_25_drive_plus_web',
