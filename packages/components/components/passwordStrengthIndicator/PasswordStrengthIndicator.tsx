@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import BasePasswordStrengthIndicator from './BasePasswordStrengthIndicator';
@@ -23,13 +22,9 @@ const context: {
 };
 
 export const usePasswordStrengthIndicator = () => {
-    const enabled = useFlag('ChangePasswordStrengthIndicator');
     const [supported, setSupported] = useState(context.service !== undefined);
 
     useEffect(() => {
-        if (!enabled) {
-            return;
-        }
         if (context.promise === undefined) {
             context.promise = loadWasm()
                 .then((value) => {
@@ -46,10 +41,10 @@ export const usePasswordStrengthIndicator = () => {
                 setSupported(true);
             })
             .catch(noop);
-    }, [enabled]);
+    }, []);
 
     return {
-        supported: supported && enabled,
+        supported: supported,
         service: context.service,
     };
 };
