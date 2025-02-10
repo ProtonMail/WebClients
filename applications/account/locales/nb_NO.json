@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -6952,11 +6952,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiver minst én datagjenopprettingsmetode for å sikre at du fortsatt har tilgang til innholdet i ${ BRAND_NAME }-kontoen hvis du mister passordet."
       ],
-      "active": [
-        "aktiv"
-      ],
       "Active": [
         "Aktiv"
+      ],
+      "active": [
+        "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Legg til en @pm.me e-postadresse til kontoen din. Dette enkle, kortere domene står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding.\""
@@ -11502,6 +11502,9 @@
       "Privacy policy": [
         "Personvernerklæring"
       ],
+      "privacy policy": [
+        "personvernerklæring"
+      ],
       "Reactivate now": [
         "Aktiver på nytt nå"
       ],
@@ -11677,9 +11680,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Tidsbegrenset tilbud: **Få opptil 35% avslag** på årlige planer"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Tidsbegrenset tilbud: **Spar ${ discount } på ${ name } med en 1-års plan**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Sett opp kontoen med Porkbun-domenet ditt."
@@ -12590,7 +12590,7 @@
       "Tailored to your needs": [
         "Skreddersydd til dine behov"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "TOR over VPN"
       ],
       "Two-factor authentication": [
@@ -14054,6 +14054,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan låse opp **${ unlockPlanTitle }** og alle ${ BRAND_NAME }-premiumtjenester ved å oppgradere til **${ upsellPlanTitle }**."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Ved å fortsette godtar du våre ${ termsAndConditionsLink } og ${ privacyPolicyLink }."
+      ],
       "Creating your account": [
         "Oppretter kontoen din"
       ],
@@ -14531,7 +14534,7 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Ved å bekrefte denne betalingen autoriserer du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, til å instruere banken din om å debitere kontoen din, og banken din til å debitere kontoen din tilsvarende. Du kan få refusjon innen 8 uker fra belastningsdatoen, i henhold til vilkårene i avtalen din med banken."
       ],
       "Street address, postal code, and city": [
@@ -16681,6 +16684,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -16969,47 +17013,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -18371,7 +18374,7 @@
       "PayPal verification failed": [
         "PayPal-bekreftelse mislyktes"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Tilpass bunnteksten i e-post"
       ],
       "Personalize your email footer": [
@@ -18911,29 +18914,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Ekstern adresse – deaktiverer ende-til-ende-kryptering av e-post for denne gruppen"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Ekstern adresse – deaktiverer ende-til-ende-e-postkryptering for denne gruppen, og ingen krypterte ressurser deles med denne brukeren."
-      ],
-      "Group membership paused": [
-        "Gruppemedlemskap satt på pause"
-      ],
-      "Sending member invitation": [
-        "Sender medlemsinvitasjon"
-      ],
-      "User declined invitation": [
-        "Brukeren avslo invitasjonen"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Venter på at brukeren godtar invitasjonen"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME }-brukere vil bruke denne nøkkelen som standard til sending"
@@ -19147,6 +19127,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto kan ha nådd båndbreddegrensen for 24 timer. ${ BRAND_NAME } vil forsøke å gjenoppta importen så snart som mulig."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Ekstern adresse – deaktiverer ende-til-ende-kryptering av e-post for denne gruppen"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Ekstern adresse – deaktiverer ende-til-ende-e-postkryptering for denne gruppen, og ingen krypterte ressurser deles med denne brukeren."
+      ],
+      "Group membership paused": [
+        "Gruppemedlemskap satt på pause"
+      ],
+      "Sending member invitation": [
+        "Sender medlemsinvitasjon"
+      ],
+      "User declined invitation": [
+        "Brukeren avslo invitasjonen"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Venter på at brukeren godtar invitasjonen"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19675,6 +19678,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME }-epostadresse",
+        "${ n } ${ BRAND_NAME }-epostadresser"
+      ],
       "${ n } account per wallet": [
         "${ n } konto per lommebok",
         "${ n } kontoer per lommebok"
@@ -19683,14 +19690,50 @@
         "${ n } lommebok",
         "${ n } lommebøker"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }-program"
+      ],
       "A safer way to hold your Bitcoin": [
         "En tryggere måte å bevare Bitcoin på"
+      ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Kryptert og sikker ${ MAIL_APP_NAME } e-postadresse. Du kan enkelt sende Bitcoin til hvem som helst med bare deres ${ BRAND_NAME } navn."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Kryptert skylagring for bilder og dokumenter"
+      ],
+      "Encrypted email and file storage": [
+        "Kryptert e-post og fillagring"
+      ],
+      "Encrypted password manager": [
+        "Kryptert passordbehandler"
+      ],
       "Exclusive early access to ${ appName }.": [
         "Eksklusiv tidlig tilgang til ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Vår mest eksklusive plan. Få tidlig tilgang til nye funksjoner og alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Utveksle Bitcoin trygt via e-post i stedet for komplekse, 26-tegns Bitcoin-adresser som er utsatt for feil"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Hold Bitcoin sikkert og utfør transaksjoner gratis."
+      ],
+      "Self-custodial wallet": [
+        "Selvforvaltet lommebok"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Ta kontroll over alle dine data med premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Ultra fast and private VPN": [
+        "Superrask og privat VPN"
       ],
       "You're Invited.": [
         "Du er invitert."

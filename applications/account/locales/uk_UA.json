@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -11635,9 +11635,6 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Пропозиція з обмеженим терміном дії: **Знижка до 35%** на річні тарифи"
       ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Пропозиція з обмеженим терміном дії: **Заощаджуйте ${ discount } на ${ name } з планом на 1 рік**"
-      ],
       "Set up your account with your Porkbun domain.": [
         "Налаштуйте свій обліковий запис за допомогою домену Porkbun."
       ],
@@ -12581,9 +12578,6 @@
       ],
       "Tailored to your needs": [
         "З урахуванням ваших потреб"
-      ],
-      "TOR over VPN": [
-        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -14456,9 +14450,6 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Підтверджуючи цей платіж, ви дозволяєте ${ BRAND_NAME } і Stripe, нашому постачальнику платіжних послуг, доручити вашому банку списати кошти з вашого рахунку, а вашому банку - списати кошти з вашого рахунку. Ви можете отримати відшкодування протягом 8 тижнів з дати списання коштів, відповідно до умов вашого договору з вашим банком."
-      ],
       "Street address, postal code, and city": [
         "Вулиця, поштовий код та місто"
       ]
@@ -16664,6 +16655,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
@@ -16964,47 +16996,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
@@ -18882,29 +18873,6 @@
         "Сьогодні"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи, і жодні зашифровані ресурси не будуть доступні цьому користувачеві."
-      ],
-      "Group membership paused": [
-        "Членство в групі призупинено"
-      ],
-      "Sending member invitation": [
-        "Надсилання запрошення учаснику"
-      ],
-      "User declined invitation": [
-        "Користувач відхилив запрошення"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Очікування на прийняття користувачем запрошення"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Користувачі ${ MAIL_APP_NAME } типово застосовуватимуть цей ключ для надсилання"
@@ -19118,6 +19086,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Схоже, ваш зовнішній обліковий запис досягнув 24-годинного обмеження пропускної здатності. ${ BRAND_NAME } спробує відновити імпортування одразу, як це стане можливим."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи, і жодні зашифровані ресурси не будуть доступні цьому користувачеві."
+      ],
+      "Group membership paused": [
+        "Членство в групі призупинено"
+      ],
+      "Sending member invitation": [
+        "Надсилання запрошення учаснику"
+      ],
+      "User declined invitation": [
+        "Користувач відхилив запрошення"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Очікування на прийняття користувачем запрошення"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19647,14 +19638,52 @@
         "${ n } гаманців",
         "${ n } гаманців"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Програма ${ PROTON_SENTINEL_NAME }"
+      ],
       "A safer way to hold your Bitcoin": [
         "Безпечніший спосіб зберігання Bitcoin"
+      ],
+      "Advanced account protection": [
+        "Розширений захист облікового запису"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin е-поштою"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Зашифрована та безпечна ${ MAIL_APP_NAME } адреса електронної пошти. Ви можете легко надіслати Bitcoin будь-кому, використовуючи лише їх ${ BRAND_NAME } ім’я."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Зашифроване хмарне сховище для фотографій і документів"
+      ],
+      "Encrypted password manager": [
+        "Зашифрований менеджер паролів"
       ],
       "Exclusive early access to ${ appName }.": [
         "Ексклюзивний ранній доступ до ${ appName }."
       ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Наш найексклюзивніший тарифний план. Отримайте ранній доступ до нових функцій та всіх преміум сервісів ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Безпечно обмінюйтесь Bitcoin електронною поштою замість складних, 26-символьних адрес Bitcoin, схильних до помилок"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Безпечно зберігайте та здійснюйте транзакції з Bitcoin безкоштовно."
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Візьміть під контроль усі свої дані за допомогою преміум сервісів ${ BRAND_NAME }."
+      ],
+      "Ultra fast and private VPN": [
+        "Ультра швидка та приватна VPN"
+      ],
       "You're Invited.": [
         "Ви запрошені."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Безпечніший спосіб зберігання Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

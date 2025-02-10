@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "activate": [
-        "aktivoi"
-      ],
       "Activate": [
         "Aktivoi"
+      ],
+      "activate": [
+        "aktivoi"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -7493,6 +7493,9 @@
       "Emailing preference saved": [
         "Sähköpostitilausten asetukset tallennettiin"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt sähköpostit poistetaan automaattisesti."
+      ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Tunnisteella ${ nameDeleted } merkittyjä sähköposteja ei poisteta, ja ne löytyvät edelleen vastaavasta kansiosta."
       ],
@@ -11408,6 +11411,9 @@
       "Privacy policy": [
         "Tietosuojakäytäntö"
       ],
+      "privacy policy": [
+        "tietosuojakäytäntömme"
+      ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
       ],
@@ -11583,9 +11589,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Rajoitetun ajan tarjous: **Saat jopa 35 % alennusta** vuosittaisista tilauksista"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Aikarajoitettu tarjous: **Säästä ${ discount } yksivuotisella ${ name }-tilauksella**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Määritä tilisi Porkbun-verkkotunnuksellasi."
@@ -12496,8 +12499,8 @@
       "Tailored to your needs": [
         "Räätälöity tarpeisiisi"
       ],
-      "TOR over VPN": [
-        "TOR + VPN"
+      "Tor over VPN": [
+        "Tor + VPN"
       ],
       "Two-factor authentication": [
         "Kaksivaiheinen tunnistautuminen"
@@ -13922,6 +13925,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja kaikki premium-${ BRAND_NAME } -palvelut päivittämällä **${ upsellPlanTitle }**-tilaukseen."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Jatkamalla hyväksyt ${ termsAndConditionsLink } ja ${ privacyPolicyLink }."
+      ],
       "Creating your account": [
         "Tiliäsi luodaan"
       ],
@@ -14396,9 +14402,6 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
-      ],
       "Street address, postal code, and city": [
         "Katuosoite, postinumero ja kaupunki"
       ]
@@ -16540,6 +16543,47 @@
         "Hintaan ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
@@ -16828,47 +16872,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -18233,9 +18236,6 @@
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
       ],
-      "Personalise your e-mail footer": [
-        "Mukauta sähköpostiesti alatunnistetta"
-      ],
       "Personalize your email footer": [
         "Mukauta sähköpostiesi alatunnistetta"
       ],
@@ -18773,29 +18773,6 @@
         "Tänään"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä, eikä mitään salattuja tietoja jaeta tälle käyttäjälle."
-      ],
-      "Group membership paused": [
-        "Ryhmän jäsenyys on pysäytetty"
-      ],
-      "Sending member invitation": [
-        "Jäsenkutsua lähetetään"
-      ],
-      "User declined invitation": [
-        "Käyttäjä hylkäsi kutsun"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Odotetaan, että käyttäjä hyväksyy kutsun"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME } -käyttäjät käyttävät lähetykseen oletuksena tätä avainta"
@@ -19009,6 +18986,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ulkoinen tililisi on saattanut saavuttaa sille asetetun 24-tunnin tiedonsiirtorajoituksen. ${ BRAND_NAME } pyrkii jatkamaan tuontia mahdollisimman pian."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä, eikä mitään salattuja tietoja jaeta tälle käyttäjälle."
+      ],
+      "Group membership paused": [
+        "Ryhmän jäsenyys on pysäytetty"
+      ],
+      "Sending member invitation": [
+        "Jäsenkutsua lähetetään"
+      ],
+      "User declined invitation": [
+        "Käyttäjä hylkäsi kutsun"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Odotetaan, että käyttäjä hyväksyy kutsun"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19507,9 +19507,6 @@
       ]
     },
     "wallet_signup_2024: Info": {
-      " Encrypted email and file storage": [
-        " Salattu sähköposti ja tiedostojen tallennus"
-      ],
       "${ n } ${ BRAND_NAME } email address": [
         "${ n } ${ BRAND_NAME }-sähköpostiosoite",
         "${ n } ${ BRAND_NAME }-sähköpostiosoitetta"
@@ -19534,8 +19531,14 @@
       "Bitcoin via Email": [
         "Bitcoin sähköpostitse"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Salattu ja turvallinen ${ MAIL_APP_NAME } sähköpostiosoite. Voit helposti lähettää Bitcoinia kenelle tahansa pelkällä ${ BRAND_NAME }-nimellä."
+      ],
       "Encrypted cloud storage for photos and documents": [
         "Salattu pilvitallennustila kuville ja dokumenteille"
+      ],
+      "Encrypted email and file storage": [
+        "Salattu sähköposti ja tiedostojen säilytys"
       ],
       "Encrypted password manager": [
         "Salattu salasanahallinta"
@@ -19543,8 +19546,17 @@
       "Exclusive early access to ${ appName }.": [
         "Varhainen ${ appName }- käyttöoikeus."
       ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Meidän eksklusiivisin tilaus. Saat varhaisen pääsyn uusiin ominaisuuksiin ja kaikkiin premium ${ BRAND_NAME } -palveluihin."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Vaihda Bitcoin turvallisesti sähköpostitse monimutkaisten, 26-merkkisten Bitcoinosoitteiden sijaan, jotka ovat alttiita virheille"
+      ],
       "Securely hold and transact Bitcoin for free.": [
         "Säilytä ja siirrä Bitcoineja ilmaiseksi."
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Hallitse kaikkia tietojasi premium ${ BRAND_NAME } -palveluiden avulla."
       ],
       "Ultra fast and private VPN": [
         "Huippunopea ja yksityinen VPN"

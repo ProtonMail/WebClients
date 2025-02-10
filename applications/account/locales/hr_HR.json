@@ -16,11 +16,11 @@
       "Accept": [
         "Prihvati"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -7523,6 +7523,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -7547,17 +7558,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -8839,7 +8839,77 @@
         "${ n } godina"
       ]
     },
+    "wallet_signup_2024: Info": {
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } program"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Sigurniji način za čuvanje vašeg Bitcoin-a"
+      ],
+      "Advanced account protection": [
+        "Napredna zaštita korisničkog računa"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin putem e-pošte"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Šifrirana i sigurna ${ MAIL_APP_NAME } e-pošta. Možete jednostavno poslati Bitcoin bilo kome, koristeći samo njihovo ${ BRAND_NAME } ime."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Šifrirana pohrana u oblaku za fotografije i dokumente"
+      ],
+      "Encrypted password manager": [
+        "Šifrirani upravitelj lozinki"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Ekskluzivan rani pristup ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Naš najekskluzivniji plan. Osigurajte rani pristup novim značajkama i svim premium ${ BRAND_NAME } uslugama."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Sigurno zamijenite Bitcoin putem e-pošte umjesto složenih, 26-znamenkastih Bitcoin adresa koje su sklone pogreškama"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Sigurno čuvajte i obavljajte transakcije Bitcoinom besplatno."
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Preuzmite kontrolu nad svim svojim podacima uz premium ${ BRAND_NAME } usluge."
+      ],
+      "Ultra fast and private VPN": [
+        "Izuzetno brz i privatan VPN"
+      ],
+      "You're Invited.": [
+        "Pozvani ste."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Sigurniji način za čuvanje Bitcoin-a"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem s novčanikom"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME } je u Ranim pristupu. Možete učitati iOS apl. preko Apple TestFlighta i Android apl. preko Google Open Testinga."
+      ],
+      "Coming soon": [
+        "Uskoro dolazi"
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Natrag na novčanik"
+      ]
+    },
     "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autorizacija"
+      ],
       "Downloads": [
         "Preuzimanja"
       ]
