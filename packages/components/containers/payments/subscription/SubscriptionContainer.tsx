@@ -104,6 +104,7 @@ import { RenewalEnableNote } from './RenewalEnableNote';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription/useCancelSubscriptionFlow';
 import { SUBSCRIPTION_STEPS } from './constants';
+import { useCouponConfig } from './coupon-config/useCouponConfig';
 import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
 import type { SelectedProductPlans } from './helpers';
@@ -348,6 +349,8 @@ const SubscriptionContainer = ({
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>(
         getFreeCheckResult(model.currency, model.cycle)
     );
+
+    const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap });
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
@@ -978,7 +981,7 @@ const SubscriptionContainer = ({
         </>
     );
 
-    const gift = !model.noPaymentNeeded && (
+    const gift = !model.noPaymentNeeded && !couponConfig?.hidden && (
         <>
             {couponCode && (
                 <div className="flex items-center mb-1">
@@ -1088,7 +1091,9 @@ const SubscriptionContainer = ({
                                 return (
                                     <>
                                         <h2 className="text-2xl text-bold mb-4">
-                                            {c('Label').t`Subscription options`}
+                                            {couponConfig?.checkoutSubtitle
+                                                ? couponConfig?.checkoutSubtitle()
+                                                : c('Label').t`Subscription options`}
                                         </h2>
                                         {hasPlanCustomizer && currentPlan && (
                                             <ProtonPlanCustomizer
@@ -1113,6 +1118,7 @@ const SubscriptionContainer = ({
                                                     plansMap={plansMap}
                                                     planIDs={model.planIDs}
                                                     loading={loadingCheck}
+                                                    couponConfig={couponConfig}
                                                 />
                                             ) : (
                                                 <SubscriptionCycleSelector
@@ -1189,6 +1195,7 @@ const SubscriptionContainer = ({
                                 showPlanDescription={audience !== Audience.B2B}
                                 paymentNeeded={!model.noPaymentNeeded}
                                 user={user}
+                                couponConfig={couponConfig}
                                 {...checkoutModifiers}
                             />
                         </div>

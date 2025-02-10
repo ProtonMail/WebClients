@@ -13,6 +13,7 @@ import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/
 import type { PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import { useCouponConfig } from '../coupon-config/useCouponConfig';
 import { getDiscountPrice, getShortBillingText } from '../helpers';
 import CycleItemView from './CycleItemView';
 
@@ -23,6 +24,8 @@ const CycleItem = ({
     monthlySuffix,
     loading,
     planIDs,
+    plansMap,
+    additionalCheckResults,
 }: {
     totals: TotalPricings;
     monthlySuffix: string;
@@ -30,19 +33,32 @@ const CycleItem = ({
     currency: Currency;
     loading: boolean;
     planIDs: PlanIDs;
+    plansMap: PlansMap;
+    additionalCheckResults: SubscriptionCheckResponse[];
 }) => {
     const freeMonths = 0;
     const { discountedTotal, viewPricePerMonth, discount } = totals[cycle];
 
+    const couponConfig = useCouponConfig({
+        checkResult: additionalCheckResults.find((result) => result.Cycle === cycle),
+        planIDs,
+        plansMap,
+    });
+
+    const cyclePriceCompare = couponConfig?.renderCyclePriceCompare?.({ cycle, suffix: monthlySuffix });
+
+    const cycleTitle = couponConfig?.renderCycleTitle?.({ cycle }) ?? getShortBillingText(cycle, planIDs);
+
     return (
         <CycleItemView
-            text={getShortBillingText(cycle, planIDs)}
+            text={cycleTitle}
             currency={currency}
             discount={discount}
             monthlySuffix={monthlySuffix}
             freeMonths={freeMonths}
             total={discountedTotal}
             totalPerMonth={viewPricePerMonth}
+            cyclePriceCompare={cyclePriceCompare}
             cycle={cycle}
             loading={loading}
             planIDs={planIDs}
@@ -167,6 +183,8 @@ const SubscriptionCycleSelector = ({
                                 cycle={cycle}
                                 loading={!!loading}
                                 planIDs={planIDs}
+                                plansMap={plansMap}
+                                additionalCheckResults={additionalCheckResults}
                             />
                         </button>
                     </li>
