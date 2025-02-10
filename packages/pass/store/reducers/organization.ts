@@ -11,6 +11,10 @@ export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
     ShareMode: BitField.DISABLED,
     ForceLockSeconds: BitField.DISABLED,
     PasswordPolicy: null,
+    ShareAcceptMode: BitField.DISABLED,
+    VaultCreateMode: BitField.DISABLED,
+    ItemShareMode: BitField.DISABLED,
+    PublicLinkMode: BitField.DISABLED,
 };
 
 export type OrganizationState = {
