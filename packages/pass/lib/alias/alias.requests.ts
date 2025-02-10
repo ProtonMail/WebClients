@@ -28,6 +28,7 @@ import type {
     ItemRevisionContentsResponse,
     MailboxDefaultDTO,
     MailboxDeleteDTO,
+    MailboxEditDTO,
     MaybeNull,
     RandomPrefixDTO,
     SlSyncStatusOutput,
@@ -246,6 +247,21 @@ export const deleteMailboxApi = async ({ mailboxID, transferMailboxID }: Mailbox
         url: `pass/v1/user/alias/mailbox/${mailboxID}`,
         method: 'delete',
         data: { TransferMailboxID: transferMailboxID },
+    }).then(() => mailboxID);
+
+export const editMailboxApi = async ({ mailboxID, email }: MailboxEditDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox/${mailboxID}/email`,
+            method: 'put',
+            data: { Email: email },
+        })
+    ).Mailbox;
+
+export const cancelMailboxEditApi = async (mailboxID: number) =>
+    api({
+        url: `pass/v1/user/alias/mailbox/${mailboxID}/email`,
+        method: 'delete',
     }).then(() => mailboxID);
 
 export const setDefaultMailboxApi = async ({ defaultMailboxID }: MailboxDefaultDTO) =>
