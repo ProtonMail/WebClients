@@ -44,7 +44,7 @@ export const MailboxVerifyModal: FC<Props> = ({ mailboxID, sentAt }) => {
     return (
         mailbox && (
             <EmailVerifyModal
-                email={mailbox.Email}
+                email={mailbox.PendingEmail ?? mailbox.Email}
                 onClose={onClose}
                 onResend={() => resend.dispatch(mailboxID)}
                 onSubmit={(code) => verify.dispatch({ mailboxID, code })}

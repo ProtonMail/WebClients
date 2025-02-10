@@ -7,6 +7,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
 import { useRequest } from '@proton/pass/hooks/useRequest';
+import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
 import { deleteMailbox } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -23,7 +24,9 @@ export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID, aliasCount = 0 }
     const { mailbox, remaining } = useMemo(
         () => ({
             mailbox: mailboxes.find((mailbox) => mailbox.MailboxID === mailboxID),
-            remaining: mailboxes.filter((mailbox) => mailbox.MailboxID !== mailboxID && mailbox.Verified),
+            remaining: mailboxes.filter(
+                (mailbox) => mailbox.MailboxID !== mailboxID && !mailboxVerificationRequired(mailbox)
+            ),
         }),
         [mailboxID, mailboxes]
     );

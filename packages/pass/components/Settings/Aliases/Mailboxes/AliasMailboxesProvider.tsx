@@ -6,6 +6,7 @@ import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useRequest } from '@proton/pass/hooks/useRequest';
+import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
 import { getMailboxes } from '@proton/pass/store/actions';
 import { selectCanManageAlias } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull, UserMailboxOutput } from '@proton/pass/types';
@@ -18,6 +19,8 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { AliasMailboxCreateModal } from './AliasMailboxCreateModal';
 import { AliasMailboxDeleteModal } from './AliasMailboxDeleteModal';
+import { AliasMailboxEditModal } from './AliasMailboxEdit';
+import { AliasMailboxEditCancel } from './AliasMailboxEditCancel';
 import { MailboxVerifyModal } from './AliasMailboxVerifyModal';
 
 export interface AliasMailboxesContextValue {
@@ -27,6 +30,8 @@ export interface AliasMailboxesContextValue {
     mailboxes: UserMailboxOutput[];
     setAction: (action: MaybeNull<AliasMailboxAction>) => void;
     onCreate: (contact: UserMailboxOutput) => void;
+    onCancelEdit: (mailboxID: number) => void;
+    onEdit: (contact: UserMailboxOutput) => void;
     onVerify: (mailbox: UserMailboxOutput) => void;
     onDelete: (mailboxID: number, transferAliases?: boolean) => void;
     onSetDefault: (mailboxID: number) => void;
@@ -36,7 +41,9 @@ export interface AliasMailboxesContextValue {
 export type AliasMailboxAction =
     | { type: 'create' }
     | { type: 'verify'; mailboxID: number; sentAt?: number }
-    | { type: 'delete'; mailboxID: number };
+    | { type: 'delete'; mailboxID: number }
+    | { type: 'edit'; mailboxID: number }
+    | { type: 'cancel-edit'; mailboxID: number };
 
 export const AliasMailboxesContext = createContext<MaybeNull<AliasMailboxesContextValue>>(null);
 export const useAliasMailboxes = createUseContext(AliasMailboxesContext);
@@ -59,6 +66,13 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
         onSuccess: (mailboxes) => setMailboxes(toMap(mailboxes, 'MailboxID')),
     });
 
+    const onCreateOrEdit = (mailbox: UserMailboxOutput) => {
+        setMailboxes((mailboxes) => fullMerge(mailboxes, { [mailbox.MailboxID]: mailbox }));
+        if (mailboxVerificationRequired(mailbox)) {
+            setAction({ type: 'verify', mailboxID: mailbox.MailboxID, sentAt: getEpoch() });
+        } else setAction(null);
+    };
+
     const context = useMemo<AliasMailboxesContextValue>(
         () => ({
             action,
@@ -75,11 +89,15 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
                         setAction(action);
                 }
             },
-            onCreate: (mailbox) => {
-                setMailboxes((mailboxes) => fullMerge(mailboxes, { [mailbox.MailboxID]: mailbox }));
-                if (!mailbox.Verified) setAction({ type: 'verify', mailboxID: mailbox.MailboxID, sentAt: getEpoch() });
-                else setAction(null);
-            },
+            onCancelEdit: (mailboxID) =>
+                setMailboxes((mailboxes) =>
+                    objectMap(mailboxes, (_, mailbox) => ({
+                        ...mailbox,
+                        PendingEmail: mailbox.MailboxID === mailboxID ? null : mailbox.PendingEmail,
+                    }))
+                ),
+            onCreate: onCreateOrEdit,
+            onEdit: onCreateOrEdit,
             onVerify: (mailbox) => setMailboxes(fullMerge(mailboxes, { [mailbox.MailboxID]: mailbox })),
             onDelete: (mailboxID, transferAliases) => {
                 setMailboxes((mailboxes) => objectDelete(mailboxes, mailboxID));
@@ -125,6 +143,10 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
                         );
                     case 'verify':
                         return <MailboxVerifyModal mailboxID={action.mailboxID} sentAt={action.sentAt} />;
+                    case 'edit':
+                        return <AliasMailboxEditModal mailboxID={action.mailboxID} />;
+                    case 'cancel-edit':
+                        return <AliasMailboxEditCancel mailboxID={action.mailboxID} />;
                 }
             })()}
         </AliasMailboxesContext.Provider>
