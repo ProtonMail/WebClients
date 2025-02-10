@@ -9,6 +9,7 @@ import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { clearUserLocalData, localGarbageCollect } from 'proton-pass-web/lib/storage';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getThemeForLocalID } from 'proton-pass-web/lib/theme';
+import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/components';
 import type { AppStateService } from '@proton/pass/components/Core/AppStateManager';
@@ -27,7 +28,7 @@ import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pas
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
-import { ReauthAction } from '@proton/pass/lib/auth/reauth';
+import { ReauthAction, isSSOBackupPasswordReauth } from '@proton/pass/lib/auth/reauth';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -333,10 +334,9 @@ export const createAuthService = ({
             auth.resumeSession(fork.localID, {
                 reauth: fork.reauth,
                 onComplete: async (userID, localID) => {
-                    try {
-                        const action = ReauthAction[fork.reauth.type];
-                        logger.info(`[AuthServiceProvider] Successful reauth for "${action}"`);
+                    const action = ReauthAction[fork.reauth.type];
 
+                    try {
                         if (blob?.type === 'offline') {
                             const { offlineKD, offlineConfig } = extractOfflineComponents(blob);
                             const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
@@ -373,15 +373,21 @@ export const createAuthService = ({
                                 const settings = await core.settings.resolve(localID);
                                 await core.settings.sync({ ...settings, offlineEnabled: true }, localID);
                             }
+                        } else if (isSSOBackupPasswordReauth(fork.reauth)) {
+                            /** Ensure SSO backup password reauth has required
+                             * offline components, otherwise throw an error */
+                            throw new Error('Invalid SSO backup password reauth');
                         }
                     } catch (err) {
                         /** If there was a failure processing the `reauth` payload
                          * do not pass it to the default completion handler. This
                          * avoids triggering the reauth handlers after boot. */
-                        logger.warn(`[AuthServiceProvider] Failed setting up SSO password lock`, err);
+                        logger.warn(`[AuthServiceProvider] Failed reauth for "${action}"`, err);
+                        onNotification({ type: 'error', text: c('Warning').t`Identity could not be confirmed` });
                         return auth.config.onLoginComplete?.(userID, localID);
                     }
 
+                    logger.info(`[AuthServiceProvider] Successful reauth for "${action}"`);
                     return auth.config.onLoginComplete?.(userID, localID, fork.reauth);
                 },
             }),
