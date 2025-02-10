@@ -61,6 +61,9 @@
       "Add external address": [
         "Externe Adresse hinzufügen"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Weitere ${ BRAND_NAME } Scribe Lizenzen hinzufügen"
+      ],
       "Add PayPal": [
         "Paypal hinzufügen"
       ],
@@ -1088,6 +1091,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, ${ DARK_WEB_MONITORING_NAME } und mehr."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -1233,8 +1239,14 @@
       "Create label": [
         "Kategorie erstellen"
       ],
+      "Discover and set up features": [
+        "Entdecken und Funktionen einrichten"
+      ],
       "Remind me later": [
         "Später erneut fragen"
+      ],
+      "Set up other features": [
+        "Andere Funktionen einrichten"
       ],
       "Take a tour": [
         "Rundgang"
@@ -2441,6 +2453,9 @@
       ]
     },
     "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Die Textfelder sind optional. Die Informationen, die du in diesem Formular angibst, erscheinen nur auf zukünftigen Rechnungen und haben keinen Einfluss auf bestehende Rechnungen."
+      ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "Textfelder sind optional. Die Informationen, die du in diesem Formular eingibst, ändern nur die von dir ausgewählte Rechnung und nicht deine zukünftigen Rechnungsdetails."
       ]
@@ -3338,6 +3353,11 @@
         "Sehr klein"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Du hast bereits ein Konto? ${ signIn }"
@@ -3564,6 +3584,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } schützt dein Konto durch gezielte Überwachung verdächtiger Aktivitäten."
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } Server wird noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }.",
@@ -3920,6 +3943,12 @@
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Wenn du die Zwei-Faktor-Authentifizierung deaktivierst, wird dein Konto weniger sicher. Fahre nur fort, wenn es unbedingt notwendig ist."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Entdecke die neuen Funktionen, die freigeschaltet wurden, und probiere sie gleich aus!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Entdecke die neuen Funktionen, die mit ${ planTitle } freigeschaltet wurden, und probiere sie gleich aus!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
       ],
@@ -3996,11 +4025,17 @@
       "Emailing preference saved": [
         "E-Mail-Einstellungen gespeichert"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-Mails, die vor mehr als 30 Tagen in Papierkorb und Spam verschoben wurden, werden automatisch gelöscht."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiviere Single Sign-on, um die Sicherheit deines Unternehmens zu gewährleisten."
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Aktiviert am ${ formattedDateAndTime }"
+      ],
+      "Enabling auto-deletion…": [
+        "Automatisches Löschen wird aktiviert…"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Die End-to-End E-Mail-Verschlüsselung ist für diese Gruppe aufgrund externer Adressen deaktiviert."
@@ -4679,6 +4714,9 @@
       "Shared ${ vaultLink } updated": [
         "Geteilten ${ vaultLink } aktualisiert."
       ],
+      "Shared Server Location Filters": [
+        "Geteilte Server-Standort-Filter"
+      ],
       "Shared vault deleted": [
         "Geteilter Tresor gelöscht"
       ],
@@ -5190,6 +5228,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kannst die folgenden Anmeldedaten verwenden, um dich mit einem ${ VPN_APP_NAME }-Server zu verbinden, indem du eine Open-Source-VPN-Anwendung eines Drittanbieters verwendest, wie Tunnelblick für macOS oder OpenVPN für GNU/Linux."
       ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Du wirst benachrichtigt, wenn dein Passwort oder andere Daten vom Dienst eines Drittanbieters preisgegeben wurden."
+      ],
       "You have ${ availableCount } new server available.": [
         "Dir steht ${ availableCount } neuer Server zur Verfügung.",
         "Dir stehen ${ availableCount } neue Server zur Verfügung."
@@ -5343,6 +5384,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kannst eine Zahlungsmethode hinzufügen, um dein Abonnement automatisch zu erneuern. Weitere Zahlungsarten sind ebenfalls verfügbar."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Gib eine Notiz für die Rechnungen ein. Diese Angaben werden sowohl zu persönlichen als auch zu organisatorischen Rechnungen hinzugefügt. Sie werden nur auf Rechnungen erscheinen, die in der Zukunft ausgestellt werden."
       ]
     },
     "Info subscription": {
@@ -6642,6 +6688,9 @@
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
       ],
+      "Breach alerts": [
+        "Warnung bei Datendiebstahl"
+      ],
       "Calendar sharing": [
         "Kalenderfreigabe"
       ],
@@ -6836,6 +6885,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Secure file storage and sharing": [
+        "Sichere Dateispeicherung und -freigabe"
+      ],
       "Secure link sharing": [
         "Sicheres Teilen von Links"
       ],
@@ -6882,7 +6934,7 @@
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor über VPN"
       ],
       "Two-factor authentication": [
@@ -7114,6 +7166,9 @@
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceMailPlus } frei. Jederzeit kündbar."
       ]
     },
     "new_plans: Title": {
@@ -7471,8 +7526,14 @@
       "Application notifications": [
         "Anwendungsbenachrichtigungen"
       ],
+      "Critical account notifications will still be delivered": [
+        "Kritische Konto-Benachrichtigungen werden weiterhin zugestellt."
+      ],
       "Daily email notifications": [
         "Tägliche E-Mail-Benachrichtigungen"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Wenn du diese Option deaktivierst, kannst du keine Benachrichtigungen mehr in ${ BRAND_NAME }-Anwendungen empfangen"
       ],
       "During your first month": [
         "Während des ersten Monats"
@@ -7587,8 +7648,14 @@
       "Free": [
         "Kostenlos"
       ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Vorherige Dateiversionen wiederherstellen"
       ],
       "Storage": [
         "Speicherplatz"
@@ -8032,9 +8099,14 @@
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto zu belasten, und deine Bank, dein Konto entsprechend zu belasten. Du kannst innerhalb von 8 Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen, sofern du mit deiner Bank eine entsprechende Vereinbarung getroffen hast."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto entsprechend zu belasten. Du kannst gemäß den Bedingungen deiner Vereinbarung mit deiner Bank eine Rückerstattung innerhalb von 8 Wochen ab dem Belastungsdatum erhalten."
       ],
       "Street address, postal code, and city": [
         "Straße, Postleitzahl und Ort"
@@ -8307,6 +8379,9 @@
       ],
       "Something went wrong": [
         "Etwas ist schiefgelaufen."
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Die E-Mail-Adresse **${ email }** existiert bereits als Benutzer ${ BRAND_NAME }. Bitte gib die E-Mail-Adresse eines Benutzers von deinem Identitätsanbieter ein."
       ]
     },
     "saml: Info": {
@@ -8315,6 +8390,9 @@
       ],
       "Details": [
         "Details"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Gib die E-Mail-Adresse eines Benutzers ein, der von deinem Identitätsanbieter für **${ domainName }** bereitgestellt wird."
       ],
       "Test in progress...": [
         "Test läift..."
@@ -8873,6 +8951,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dieses Abonnement verlängert sich automatisch im Rhythmus von jeweils 2 Jahren, bis es gekündigt wird."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Dein Abonnement wird jedes Jahr zum gleichen Preis verlängert."
       ]
     },
     "specialoffer: Link": {
@@ -9117,6 +9198,12 @@
       "Join ${ organizationName }": [
         "${ organizationName } beitreten"
       ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Bitte speichere es an einem sicheren Ort, damit du wieder auf dein Konto zugreifen kannst, falls du den Zugriff auf deine Identitätsanbieter- Zugangsdaten verlierst."
+      ],
+      "New backup password": [
+        "Neues Backup-Passwort"
+      ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
         "Nicht-SSO-Benutzer (manuell erstellt, nicht von deinem Identitätsanbieter bereitgestellt) können sich weiterhin bei deiner Organisation anmelden."
       ],
@@ -9128,6 +9215,9 @@
       ],
       "Remove single sign-on for your organization?": [
         "Single Sign-on für deine Organisation entfernen?"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Erstelle ein Backup-Passwort, um einen zusätzlichen Schutz zu gewährleisten. Damit kannst du dich anmelden, falls du ausgesperrt wirst. Bewahre es also an einem sicheren Ort auf."
       ],
       "Set your backup password": [
         "Setze dein Backup-Password"
@@ -9141,11 +9231,17 @@
       "Sign in to your organization": [
         "Bei deiner Organisation anmelden"
       ],
+      "Sign out and in again to change your backup password": [
+        "Melde dich ab und wieder an, um dein Backup-Passwort zu ändern"
+      ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
       ],
       "The user ${ name } is now a single sign-on account.": [
         "Der Benutzer ${ name } ist jetzt ein Single Sign-on-Konto."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Dadurch wird der Benutzer von seinen anderen Geräten abgemeldet und muss ein neues Backup-Passwort erstellen."
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Dadurch wirst du von deinen anderen Geräten abgemeldet, und du musst ein neues Backup-Passwort festlegen."
@@ -9981,6 +10077,12 @@
       "Creating config file for ${ serverName }": [
         "Konfigurationsdatei für ${ serverName } wird erstellt"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Gruppen-Ende-zu-Ende-Verschlüsselung deaktiviert"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Gruppen-Ende-zu-Ende-Verschlüsselung aktiviert"
+      ],
       "Preference updated": [
         "Einstellungen aktualisiert"
       ],
@@ -10788,6 +10890,9 @@
       "WireGuard configuration": [
         "WireGuard-Konfiguration"
       ],
+      "You can now create unlimited folders and labels": [
+        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
       ],
@@ -10873,6 +10978,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Externe Adresse - deaktiviert die Ende-zu-Ende-Verschlüsselung für diese Gruppe"
       ],
       "Group membership paused": [
         "Gruppenmitgliedschaft pausiert"
@@ -11046,6 +11154,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Ausstehender Admin-Zugang:** Wir haben eine Anfrage an diesen Benutzer gesendet, um einem beliebigen Administrator die Verwaltung seines Kontos zu ermöglichen."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
       ],
@@ -11074,6 +11185,9 @@
       "Keep request": [
         "Anfrage behalten"
       ],
+      "Member activation incomplete": [
+        "Mitgliederaktivierung unvollständig"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Sobald der Nutzer zustimmt, kannst du ihm helfen, wieder Zugang zu seinem Konto zu erhalten oder seine Daten zu verwalten."
       ],
@@ -11100,6 +11214,9 @@
       ],
       "The user must have an address to request data access": [
         "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Dadurch wird die ausstehende Anfrage für den Administratorzugriff auf die Daten des Benutzers oder das Zurücksetzen des Passworts abgebrochen."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Dadurch wird dem Administrator die Berechtigung entzogen, das Konto dieses Benutzers zu verwalten."
@@ -11469,6 +11586,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } E-Mail-Adresse",
+        "${ n } ${ BRAND_NAME } E-Mail-Adressen"
+      ],
       "${ n } account per wallet": [
         "${ n } Konto pro Wallet",
         "${ n } Konten pro Wallet"
@@ -11478,6 +11599,20 @@
         "${ n } Wallets"
       ],
       "A safer way to hold your Bitcoin": [
+        "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via E-Mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Verschlüsselte und sichere ${ MAIL_APP_NAME } E-Mail-Adresse. Du kannst Bitcoin ganz einfach an jeden senden. Du benötigst lediglich den ${ BRAND_NAME }-Namen des Empfängers."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Tausche Bitcoin sicher per E-Mail aus statt komplexe, 26-stellige Bitcoin-Adressen zu verwenden, die anfällig für Fehler sind"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
         "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
       ]
     },

@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Salin kunci ke papan klip"
       ],
+      "Copy password": [
+        "Salin kata sandi"
+      ],
       "Copy version number to clipboard": [
         "Salin nomor versi ke papan klip"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Buat Gateway"
+      ],
+      "Create new password": [
+        "Buat kata sandi baru"
       ],
       "Create new policy": [
         "Buat kebijakan baru"
@@ -218,7 +224,7 @@
         "Rincian"
       ],
       "Didn't receive a code?": [
-        "Tidak menerima kode?"
+        "Tidak menerima kode verifikasi?"
       ],
       "Disable": [
         "Nonaktifkan"
@@ -2442,6 +2448,9 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
       ]
     },
     "Email spam notification": {
@@ -2513,6 +2522,9 @@
       ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Penyuntingan alamat tagihan saat ini tidak tersedia. Silakan coba lagi nanti."
       ],
       "Email address is invalid": [
         "Alamat email tidak valid"
@@ -2815,7 +2827,7 @@
         "Untuk menggunakan ${ MAIL_APP_NAME } atau ${ CALENDAR_APP_NAME }, beralihlah ke versi web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Kami tidak dapat memuat laman ini. Silakan muat ulang laman atau periksa koneksi internet Anda."
+        "Kami tidak dapat memuat halaman ini. Silakan muat ulang halaman atau periksa koneksi internet Anda."
       ]
     },
     "Error notification": {
@@ -3733,6 +3745,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Mintalah admin organisasi Anda untuk mengatur Gateway."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Setidaknya ${ BETTER_PASSWORD_LENGTH } karakter"
+      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -4204,6 +4219,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Perubahan negara server akan memakan waktu 10 hari. Oleh karenanya, pastikan pilihan Anda sudah benar."
       ],
+      "It's better to have:": [
+        "Kata sandi Anda sebaiknya mengandung:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Item diisi otomatis dalam ${ vaultLink }"
       ],
@@ -4363,6 +4381,9 @@
       "No addresses exist": [
         "Tidak ada alamat"
       ],
+      "No common passwords": [
+        "Tanpa kata sandi yang umum"
+      ],
       "No gateways": [
         "Tidak ada gateway"
       ],
@@ -4375,6 +4396,9 @@
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
       ],
+      "No predictable sequences (1234, aaa)": [
+        "Tanpa urutan angka/huruf yang mudah ditebak (1234, aaa)"
+      ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
@@ -4383,6 +4407,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
+      ],
+      "Numbers": [
+        "Angka"
       ],
       "of": [
         "dari"
@@ -4708,6 +4735,9 @@
       "Switch to": [
         "Beralih ke"
       ],
+      "Symbols (#$&)": [
+        "Simbol (#$&)"
+      ],
       "Thank you": [
         "Terima kasih"
       ],
@@ -4917,6 +4947,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Unggah logo organisasi Anda untuk mengangkat identitas merek Anda dan menciptakan pengalaman yang personal bagi para pengguna Anda."
+      ],
+      "Uppercase and lowercase letters": [
+        "Huruf besar dan kecil"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Gunakan metode pemulihan untuk menonaktifkan metode autentikasi dua faktor Anda."
@@ -5625,6 +5658,9 @@
       "Enter the code displayed on your TV": [
         "Masukkan kode yang tertera pada TV Anda"
       ],
+      "Enter your password": [
+        "Masukkan kata sandi Anda"
+      ],
       "Entity ID": [
         "ID Entitas"
       ],
@@ -5702,6 +5738,9 @@
       ],
       "Moderate NAT": [
         "NAT Moderat"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
       ],
       "Name": [
         "Nama"
@@ -5877,6 +5916,9 @@
       "Strong": [
         "Kuat"
       ],
+      "Strong password": [
+        "Kata sandi yang kuat"
+      ],
       "Subscription options": [
         "Pilihan langganan"
       ],
@@ -5925,11 +5967,17 @@
       "Vulnerable": [
         "Rentan"
       ],
+      "Vulnerable password": [
+        "Kata sandi yang rentan"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Kami menyayangkan kepergian Anda dari layanan kami. Mohon jelaskan alasan kepergian Anda untuk membantu kami berkembang."
       ],
       "Weak": [
         "Lemah"
+      ],
+      "Weak password": [
+        "Kata sandi yang lemah"
       ],
       "What happened?": [
         "Apa yang terjadi?"
@@ -6064,6 +6112,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Tidak memiliki akses ke 2FA Anda?"
+      ],
+      "Forgot email?": [
+        "Lupa email?"
       ],
       "Forgot password?": [
         "Lupa kata sandi?"
@@ -6520,7 +6571,7 @@
         "99.95% SLA"
       ],
       "Ad-blocker and malware protection": [
-        "Pemblokiran iklan dan perlindungan perangkat lunak jahat"
+        "Pemblokir iklan dan perlindungan perangkat lunak jahat"
       ],
       "Admin console": [
         "Konsol admin"
@@ -6807,8 +6858,8 @@
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
       ],
-      "TOR over VPN": [
-        "TOR via VPN"
+      "Tor over VPN": [
+        "Tor via VPN"
       ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
@@ -7258,7 +7309,7 @@
         "Dukungan untuk protokol berbagi berkas seperti BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Unggah logo bisnismu untuk mengatur pengalaman tim di aplikasi web ${ BRAND_NAME }"
+        "Unggah logo bisnis Anda untuk menyesuaikan pengalaman tim Anda di aplikasi web ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
@@ -7842,6 +7893,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Anda telah diangkat sebagai administrator organisasi **${ organizationName }** oleh"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Anda harus menghapus seluruh grup sebelum menghasilkan kunci organisasi baru"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Anda harus memprivatkan seluruh pengguna sebelum menghasilkan kunci organisasi baru"
       ],
@@ -7971,8 +8025,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda untuk mendebit akun Anda, serta bank Anda untuk mendebit akun Anda. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda mendebit akun Anda sesuai dengan jumlah yang dibutuhkan. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
       ],
       "Street address, postal code, and city": [
         "Alamat, kode pos, dan kota"
@@ -9101,6 +9155,9 @@
       ],
       "User details:": [
         "Rincian pengguna:"
+      ],
+      "Welcome": [
+        "Selamat datang"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Anda akan perlu untuk membuat pengguna baru secara manual untuk menambahkan pengguna ini ke organisasi Anda."
@@ -11281,6 +11338,9 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } alamat email ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } akun per dompet"
       ],
@@ -11292,6 +11352,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via Email"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Alamat email ${ MAIL_APP_NAME } yang terenkripsi dan aman. Anda dapat dengan mudah mengirim Bitcoin kepada siapa pun hanya dengan nama ${ BRAND_NAME } mereka."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Tukar Bitcoin dengan aman melalui email daripada menggunakan alamat Bitcoin 26-karakter yang kompleks dan rentan terhadap kesalahan"
       ]
     },
     "wallet_signup_2024:app-switcher": {

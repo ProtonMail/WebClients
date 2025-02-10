@@ -3993,6 +3993,9 @@
       "Emailing preference saved": [
         "Sähköpostitilausten asetukset tallennettiin"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt sähköpostit poistetaan automaattisesti."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
       ],
@@ -6894,8 +6897,8 @@
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
       ],
-      "TOR over VPN": [
-        "TOR + VPN"
+      "Tor over VPN": [
+        "Tor + VPN"
       ],
       "Two-factor authentication": [
         "Kaksivaiheinen tunnistautuminen"
@@ -8060,9 +8063,6 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
-      ],
       "Street address, postal code, and city": [
         "Katuosoite, postinumero ja kaupunki"
       ]
@@ -11442,6 +11442,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin sähköpostitse"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Salattu ja turvallinen ${ MAIL_APP_NAME } sähköpostiosoite. Voit helposti lähettää Bitcoinia kenelle tahansa pelkällä ${ BRAND_NAME }-nimellä."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Vaihda Bitcoin turvallisesti sähköpostitse monimutkaisten, 26-merkkisten Bitcoinosoitteiden sijaan, jotka ovat alttiita virheille"
       ]
     },
     "wallet_signup_2024:app-switcher": {

@@ -3764,7 +3764,7 @@
         "Ödenecek tutar"
       ],
       "Are you sure you want to cancel editing the group?": [
-        "Bu grubu düzenlemeyi iptal etmek istediğinizden emin misiniz?"
+        "Bu grubu düzenlemeyi iptal etmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
@@ -4329,10 +4329,10 @@
         "Ayrıntılı bilgi alın"
       ],
       "Learn more about Gateways": [
-        "Ağ geçitleri hakkında ayrıntılı bilgi alın"
+        "Ağ geçitleri ile ilgili ayrıntılı bilgi alın"
       ],
       "Learn more about single sign-on": [
-        "Tek oturum açma hakkında ayrıntılı bilgi alın"
+        "Tek oturum açma ile ilgili ayrıntılı bilgi alın"
       ],
       "Let's get started by pressing the New group button above": [
         "Yukarıdaki Yeni grup düğmesine tıklayarak başlayalım"
@@ -5373,7 +5373,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı hakkında bilgi almak için bizimle ${ email } adresinden görüşün."
+        "Nakit ödemenin nasıl yapılacağı ile ilgili bilgi almak için bizimle ${ email } adresinden görüşün."
       ]
     },
     "Info for domain modal": {
@@ -6946,7 +6946,7 @@
       "Sync and backup all your files across devices": [
         "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "VPN üzerinden Tor"
       ],
       "Two-factor authentication": [
@@ -8126,8 +8126,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Bu ödemeyi onaylayarak, ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine bankanıza hesabınızdan para çekmesi talimatını vermesini ve bankanızın da buna göre hesabınızdan para çekmesine izin vermiş olursunuz. Bankanızla yaptığınız anlaşmanın koşulları uyarınca, paranın çekilme tarihinden itibaren 8 hafta içinde geri ödeme alabilirsiniz."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
       ],
       "Street address, postal code, and city": [
         "Sokak adresi, posta kodu ve il"
@@ -9729,7 +9729,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Learn more about our impact": [
-        "Yarattığımız etki hakkında ayrıntılı bilgi alın"
+        "Yarattığımız etki ile ilgili bilgi alın"
       ],
       "Limitations of the free plan:": [
         "Free tarife sınırları:"
@@ -11613,6 +11613,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-posta adresi",
+        "${ n } ${ BRAND_NAME } e-posta adresi"
+      ],
       "${ n } account per wallet": [
         "Cüzdan başına ${ n } hesap",
         "Cüzdan başına ${ n } hesap"
@@ -11626,6 +11630,12 @@
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Şifrelenmiş ve güvenli ${ MAIL_APP_NAME } e-posta adresi. Yalnızca ${ BRAND_NAME } adını kullanarak birine kolayca Bitcoin gönderebilirsiniz."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Aktarım sırasında hata yapmaya açık olan 26 karakter uzunluğundaki karmaşık Bitcoin adreslerini kullanmak yerine, E-posta ile Bitcoin özelliğini kullanarak güvenli bir şekilde Bitcoin alışverişi yapabilirsiniz"
       ]
     },
     "wallet_signup_2024:app-switcher": {
