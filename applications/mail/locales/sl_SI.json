@@ -402,6 +402,9 @@
       "Download now": [
         "Prenesi zdaj"
       ],
+      "Download the desktop app": [
+        "Prenesi namizno aplikacijo"
+      ],
       "Downloading": [
         "Prenašanje"
       ],
@@ -443,6 +446,9 @@
       ],
       "Enable": [
         "Omogoči"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Omogoči ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
         "omogoči obvestila na namizju"
@@ -501,6 +507,9 @@
       "Get ${ BRAND_NAME } Duo": [
         "Pridobi ${ BRAND_NAME } Duo"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Pridobite ${ planName } za ${ priceCoupon }."
+      ],
       "Get in touch": [
         "Oglasite se nam!"
       ],
@@ -513,11 +522,17 @@
       "Get started": [
         "Začnite"
       ],
+      "Get the app": [
+        "Pridobi aplikacijo"
+      ],
       "Get the writing assistant": [
         "Pridobite pomočnika pri pisanju"
       ],
       "Get verification code": [
         "Pridobi kodo za preverjanje"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Pojdi na ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Pojdi na oznako"
@@ -557,6 +572,9 @@
       ],
       "Hide messages": [
         "Skrij sporočila"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ],
       "Hide toolbar": [
         "Skrij orodno vrstico"
@@ -629,6 +647,9 @@
       ],
       "Insert link": [
         "Vstavi povezavo"
+      ],
+      "Invite members": [
+        "Povabi člane"
       ],
       "Italic": [
         "Ležeče"
@@ -1835,6 +1856,9 @@
       "Create label": [
         "Ustvarite oznako"
       ],
+      "Got it": [
+        "Razumem"
+      ],
       "Maybe later": [
         "Morda kasneje"
       ],
@@ -2560,6 +2584,9 @@
       ],
       "Work": [
         "Službeno"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -4119,6 +4146,9 @@
       "Please select a category and what went wrong with the generated text": [
         "Izberite kategorijo in navedite, kaj je narobe z ustvarjenim besedilom"
       ],
+      "Please select a country": [
+        "Izberite državo."
+      ],
       "Please try again or refresh the page.": [
         "Poskusite znova ali osvežite stran."
       ],
@@ -5205,6 +5235,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -5213,26 +5246,41 @@
       ],
       "No verification method available": [
         "Način preverjanja ni na voljo"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Časovni pas koledarja ni podprt"
+      ],
       "Edited event not supported": [
         "Urejen dogodek ni podprt."
       ],
       "End time out of bounds": [
-        "Konec časa presega dovoljene meje."
+        "Končni čas je izven dovoljenih meja."
+      ],
+      "Event validation failed": [
+        "Preverjanje dogodka ni uspelo."
       ],
       "Floating times not supported": [
         "Plavajoči časi niso podprti."
       ],
+      "Malformed all-day event": [
+        "Napaka pri oblikovanju celodnevnega dogodka"
+      ],
       "Malformed end time": [
-        "Nepravilni končni čas."
+        "Nepravilni končni čas"
       ],
       "Malformed recurring event": [
-        "Nepravilno oblikovan ponavljajoči se dogodek."
+        "Nepravilno oblikovan ponavljajoči se dogodek"
       ],
       "Malformed start time": [
         "Nepravilni začetni čas"
+      ],
+      "Recurring event has no occurrences": [
+        "Ponavljajoči se dogodek nima ponovitev."
       ],
       "Recurring rule not supported": [
         "Ponavljajoče se pravilo ni podprto."
@@ -5495,6 +5543,9 @@
       ],
       "ICS file": [
         "datoteko ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5812,6 +5863,9 @@
         "(${ memberCount } člana)",
         "(${ memberCount } člani)",
         "(${ memberCount } članov)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mesec)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtriraj, če so izpolnjeni VSI naslednji pogoji)"
@@ -6173,6 +6227,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Zmanjšanje paketa bo prekinila vse povezave do plačljivih ${ VPN_APP_NAME } strežnikov."
       ],
+      "Download on the App Store": [
+        "Prenesi iz trgovine App Store"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Prenesite svojo najljubšo aplikacijo in uživajte v svoji zasebnosti povsod."
       ],
@@ -6325,6 +6382,9 @@
       ],
       "Generate text": [
         "Ustvari besedilo"
+      ],
+      "Get it on Google Play": [
+        "Prenesi iz trgovine Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
@@ -7188,7 +7248,7 @@
         "Nadgradite naročniški paket za priključitev dodatnih naslovov računu."
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
-        "Nadgradite naročniški paket za samodejno brisanje sporočil, ki so v smetnjaku ali neželeni pošti več kot 30 dni."
+        "Nadgradite paket za samodejno brisanje sporočil, ki so v smetnjaku ali neželeni pošti več kot 30 dni."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Nadgradite naročniški paket za ustvaritev več map, filtrov in naslovov."
@@ -7645,6 +7705,9 @@
       ],
       "Trusted": [
         "Zaupanja vreden"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -8356,7 +8419,7 @@
         "Potem"
       ],
       "Thomas": [
-        "Janek"
+        "Janez"
       ],
       "Time": [
         "Čas"
@@ -9050,11 +9113,17 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Zmanjšanje paketa na ${ downgradedPlanName }."
       ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
       "Upgrade": [
         "Nadgradnja"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: action": {
@@ -9203,6 +9272,9 @@
       ],
       "1 user": [
         "En uporabnik"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-poštnih naslovov/psevdonimov"
       ],
       "10-year file version history": [
         "Zgodovina različic datotek za 10 let"
@@ -9456,8 +9528,8 @@
       "Sync and backup all your files across devices": [
         "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
-      "TOR over VPN": [
-        "Tor prek VPN"
+      "Tor over VPN": [
+        "Tor preko VPN"
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
@@ -9986,14 +10058,29 @@
       ]
     },
     "Offer": {
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Pridobite Drive Plus za samo ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Pridobite Mail Plus za samo ${ pricingTitle }"
+      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
+      ],
+      "Limited-time offer": [
+        "Časovno omejena ponudba"
       ],
       "Maybe later": [
         "Morda kasneje"
       ]
     },
     "Offer feature": {
+      "Custom email domain": [
+        "E-poštna domena po meri"
+      ],
+      "Email addresses": [
+        "E-poštni naslovi"
+      ],
       "Free": [
         "Brezplačno"
       ],
@@ -10048,6 +10135,9 @@
       ],
       "Protection from trackers": [
         "Zaščita pred sledilniki"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Začnite uporabljati ${ BRAND_NAME }"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Za začetek izberite prikazno ime. To je ime, ki ga bodo uporabniki videli, ko jim pošljete sporočilo, jih povabite na dogodek ali z njimi delite datoteko."
@@ -10624,6 +10714,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Poizkusite ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
@@ -11247,7 +11340,7 @@
         "Zaščita pred sledenjem v sporočilih"
       ],
       "Get up to ${ credits } in credits.": [
-        "Pridobite do ${ credits } dobropisov."
+        "Pridobite do ${ credits } kot dobropis."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
@@ -12548,6 +12641,9 @@
       "Enable message content search": [
         "Omogoči iskanje po vsebini sporočil"
       ],
+      "Enter 2FA code": [
+        "Vnesite kodo 2FA"
+      ],
       "Enter your password": [
         "Vnesite geslo"
       ],
@@ -12833,6 +12929,9 @@
       "Schedule send": [
         "Načrtuj pošiljanje"
       ],
+      "Schedule send:": [
+        "Načrtuj pošiljanje:"
+      ],
       "Security center": [
         "Varnostno središče"
       ],
@@ -12880,6 +12979,9 @@
       ],
       "Set recovery phrase": [
         "Nastavi obnovitveno frazo"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Nastavi ${ protonDuoPlanName }"
       ],
       "Set your own schedule": [
         "Nastavite svoj urnik."
@@ -13182,6 +13284,35 @@
       ],
       "No ads": [
         "Brez oglasov"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "A safer way to hold your Bitcoin": [
+        "Varnejši način shranjevanja Bitcoina"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin prek elektronske pošte"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Šifriran in varen e-poštni naslov ${ MAIL_APP_NAME }. Lahko preprosto pošljete Bitcoin vsakomur, samo s pomočjo imena ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Varnejši način izmenjave Bitcoina prek e-pošte namesto zapletenih 26-znakovnih Bitcoin naslovov, ki so dovzetni za napake"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Dostop do aplikacije Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Varnejši način shranjevanja Bitcoina"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Težava z Wallet"
       ]
     },
     "wallet_signup_2024:Wallet setup": {
