@@ -799,6 +799,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "L'authentification n'a pas abouti. Confirmez votre mot de passe ${ BRAND_NAME } pour poursuivre l'exportation."
       ],
+      "Biometric authentication failed": [
+        "L'authentification biométrique n'a pas abouti."
+      ],
       "Cannot send invitation at the moment": [
         "L'envoi de l'invitation n'est pas possible pour le moment.",
         "L'envoi des invitations n'est pas possible pour le moment."
@@ -1340,6 +1343,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accès à ${ PASS_APP_NAME } nécessitera toujours votre mot de passe ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "L'accès à ${ PASS_APP_NAME } nécessitera toujours votre mot de passe de secours."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "L'accès à ${ PASS_APP_NAME } nécessitera toujours votre mot de passe supplémentaire."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accès à ${ PASS_APP_NAME } nécessitera votre empreinte digitale ou le code PIN de votre appareil."
       ],
@@ -1607,6 +1616,9 @@
       "Expires in ${ remainingTime }": [
         "Expire dans ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Exportation de vos données..."
+      ],
       "Extra password successfully created": [
         "Le mot de passe supplémentaire a été créé."
       ],
@@ -1619,8 +1631,11 @@
       "finance": [
         "finance"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Suivez ces étapes pour importer vos données à l'aide d'un fichier CSV générique :"
+      "Follow those steps to import your data with a generic CSV:": [
+        "Suivez ces étapes pour importer vos données à l'aide d'un fichier CSV générique :"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Pour des raisons de sécurité, cette action nécessite la vérification de votre identité."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Pour des raisons de sécurité, vous devez confirmer l'accès à ce coffre-fort partagé.",
@@ -1650,6 +1665,9 @@
       ],
       "How does monitoring work?": [
         "Comment fonctionne la surveillance ?"
+      ],
+      "Identity confirmed": [
+        "L'identité a été confirmée."
       ],
       "Import in progress:": [
         "L'importation est en cours :"
@@ -1876,11 +1894,38 @@
       "Please check your spam folder or try resending the code.": [
         "Vérifiez le dossier indésirables/spam ou essayez de renvoyer le code."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Confirmez votre mot de passe ${ BRAND_NAME } pour désactiver le mode hors ligne."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour activer le mode hors ligne."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your backup password": [
+        "Confirmez votre mot de passe de secours."
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Veuillez confirmer votre mot de passe de secours afin de permettre le verrouillage automatique avec les données biométriques."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Confirmez votre mot de passe de secours afin de verrouiller automatiquement avec votre mot de passe."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Confirmez votre mot de passe de secours pour désactiver le mode hors ligne."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Confirmez votre mot de passe de secours pour activer le mode hors ligne."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Veuillez confirmer votre mot de passe de secours afin d'exporter vos données ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Confirmez votre mot de passe de secours afin d'enlever votre verrouillage actuel."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Veuillez confirmer votre mot de passe de secours afin de modifier le délai du verrouillage automatique."
       ],
       "Please confirm your extra password": [
         "Veuillez confirmer votre mot de passe supplémentaire."
@@ -1890,6 +1935,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Veuillez confirmer votre mot de passe supplémentaire afin de permettre le verrouillage automatique avec votre mot de passe supplémentaire."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Confirmez votre mot de passe supplémentaire pour désactiver le mode hors ligne."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Confirmez votre mot de passe supplémentaire pour activer le mode hors ligne."
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Veuillez confirmer votre mot de passe supplémentaire afin d'exporter vos données ${ PASS_APP_NAME }."
@@ -2262,6 +2313,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Vous avez atteint le nombre maximum de ${ maxLength } caractères."
       ],
+      "You may close this tab.": [
+        "Vous pouvez fermer cet onglet."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Vous pourrez personnaliser les paramètres de votre domaine (alias d'e-mail catch-all, nom d'affichage par défaut pour les alias, etc.) après avoir vérifié votre domaine."
       ],
@@ -2452,6 +2506,9 @@
       ],
       "Auto-lock after": [
         "Verrouillage automatique après"
+      ],
+      "Backup password": [
+        "Mot de passe de secours"
       ],
       "Beta Access": [
         "Accès à la version bêta"
@@ -3505,6 +3562,9 @@
       "Confirm extra password": [
         "Confirmer le mot de passe supplémentaire"
       ],
+      "Confirm identity": [
+        "Confirmer l'identité"
+      ],
       "Confirm PIN code": [
         "Confirmez le code PIN"
       ],
@@ -3589,6 +3649,9 @@
       ],
       "Enter coupon code": [
         "Saisissez le code promo"
+      ],
+      "Enter your backup password": [
+        "Saisissez votre mot de passe de secours."
       ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire"

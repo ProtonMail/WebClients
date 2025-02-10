@@ -799,6 +799,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Verificatie is mislukt. Bevestig uw ${ BRAND_NAME }-wachtwoord om verder te gaan met de export"
       ],
+      "Biometric authentication failed": [
+        "Biometrische authenticatie mislukt"
+      ],
       "Cannot send invitation at the moment": [
         "Kan op dit moment geen uitnodiging verzenden",
         "Kan op dit moment geen uitnodigingen verzenden"
@@ -1340,6 +1343,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Toegang tot ${ PASS_APP_NAME } vereist altijd uw ${ BRAND_NAME }-wachtwoord."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Toegang tot ${ PASS_APP_NAME } vereist altijd uw backup wachtwoord."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Toegang tot ${ PASS_APP_NAME } vereist altijd uw extra wachtwoord."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Toegang tot ${ PASS_APP_NAME } vereist uw vingerafdruk of apparaat pincode."
       ],
@@ -1607,6 +1616,9 @@
       "Expires in ${ remainingTime }": [
         "Verloopt over ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Uw gegevens importeren..."
+      ],
       "Extra password successfully created": [
         "Extra wachtwoord succesvol aangemaakt"
       ],
@@ -1619,8 +1631,11 @@
       "finance": [
         "financiën"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Volg deze stappen om uw gegevens te importeren met een algemeen CSV-bestand:"
+      "Follow those steps to import your data with a generic CSV:": [
+        "Volg deze stappen om uw gegevens te importeren met behulp van een algemeen CSV-bestand:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Om veiligheidsredenen vereist deze actie identiteitsverificatie."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Om veiligheidsredenen moet u de toegang tot deze gedeelde kluis bevestigen",
@@ -1650,6 +1665,9 @@
       ],
       "How does monitoring work?": [
         "Hoe werkt monitoring?"
+      ],
+      "Identity confirmed": [
+        "Identiteit bevestigd"
       ],
       "Import in progress:": [
         "Bezig met importeren:"
@@ -1876,11 +1894,38 @@
       "Please check your spam folder or try resending the code.": [
         "Controleer uw spam map of probeer de code opnieuw te versturen."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus te deactiveren"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus in te schakelen"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw ${ BRAND_NAME }-wachtwoord om uw ${ PASS_APP_NAME }-gegevens te exporteren"
+      ],
+      "Please confirm your backup password": [
+        "Bevestig uw backup wachtwoord"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Bevestig uw backup wachtwoord om automatisch te kunnen vergrendelen met biometrische gegevens"
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Bevestig uw backup wachtwoord om automatisch te vergrendelen met uw wachtwoord."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Bevestig alstublieft uw backup wachtwoord om offline modus uit te schakelen"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bevestig uw extra wachtwoord om de offline modus te activeren"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Bevestig uw backup wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Bevestig uw backup wachtwoord om uw huidige vergrendeling uit te zetten."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Bevestig uw backup wachtwoord om de auto-lock tijd bij te werken."
       ],
       "Please confirm your extra password": [
         "Bevestig uw extra wachtwoord"
@@ -1890,6 +1935,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bevestig uw extra wachtwoord om automatisch te vergrendelen met uw extra wachtwoord."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Bevestig uw extra wachtwoord om de offline modus te deactiveren"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bevestig uw extra wachtwoord om de offline modus te activeren"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw extra wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
@@ -2262,6 +2313,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "U hebt de maximaal toegestane lengte van ${ maxLength } tekens bereikt."
       ],
+      "You may close this tab.": [
+        "U kunt dit tabblad sluiten."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "U kunt uw domein instellingen aanpassen (catch-all e-mail aliassen, standaard weergavenaam voor aliassen enz...) na het verifiëren van uw domein."
       ],
@@ -2452,6 +2506,9 @@
       ],
       "Auto-lock after": [
         "Automatisch vergrendelen na"
+      ],
+      "Backup password": [
+        "Back-up wachtwoord"
       ],
       "Beta Access": [
         "Bèta toegang"
@@ -3505,6 +3562,9 @@
       "Confirm extra password": [
         "Bevestig extra wachtwoord"
       ],
+      "Confirm identity": [
+        "Identiteit bevestigen"
+      ],
       "Confirm PIN code": [
         "Pincode bevestigen"
       ],
@@ -3589,6 +3649,9 @@
       ],
       "Enter coupon code": [
         "Vul hier uw kortingscode in"
+      ],
+      "Enter your backup password": [
+        "Voer uw back-up wachtwoord in"
       ],
       "Enter your extra password": [
         "Voer uw extra wachtwoord in"
