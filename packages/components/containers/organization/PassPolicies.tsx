@@ -38,6 +38,12 @@ const getPolicies = (): { setting: keyof OrganizationSettings; label: string; to
         tooltip: c('Info')
             .t`By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data`,
     },
+    {
+        setting: 'VaultCreateMode',
+        label: c('Label').t`Restrict vault creation to administrators only`,
+        tooltip: c('Info')
+            .t`If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items`,
+    },
 ];
 
 const PassPolicies = () => {
