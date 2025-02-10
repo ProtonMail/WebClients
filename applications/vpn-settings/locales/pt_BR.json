@@ -1095,7 +1095,7 @@
         "Acesse conteúdo em serviços de streaming, incluindo Netflix, Disney+, Prime Video e muito mais, de qualquer lugar."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Logins seguros em todos os seus dispositivos. Inclui aliases ide-my-email ilimitados, compartilhamento, 2FA integrado, ${ DARK_WEB_MONITORING_NAME } e muito mais."
+        "Logins seguros em todos os seus dispositivos. Inclui aliases hide-my-email ilimitados, compartilhamento, A2F integrado, ${ DARK_WEB_MONITORING_NAME } e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais.",
@@ -5064,7 +5064,7 @@
         "Versão ${ version }"
       ],
       "Version number successfully copied to clipboard": [
-        "O número da versão foi copiado para a área de transferência."
+        "O número da versão foi copiado para a área de transferência"
       ],
       "View, download, and manage your invoices.": [
         "Ver, baixar e gerenciar suas notas ficais"
@@ -5342,7 +5342,7 @@
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "A data da sua próxima renovação será em ${ renewalTime }.Entre em contato com o suporte se você precisa de uma mudança de plano imediata."
+        "Sua próxima data de cobrança é ${ renewalTime }. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Sua organização usa o login único (SSO). Pressione iniciar seção para continuar com seu provedor SSO."
@@ -6600,8 +6600,8 @@
         "Até ${ numberOfUsers } usuários"
       ],
       "${ options }-day file version history": [
-        "Histórico de versões do arquivo de ${ options } dia",
-        "Histórico de versões do arquivo de ${ options } dias"
+        "Histórico de versões de arquivo de ${ options } dia",
+        "Histórico de versões de arquivo de ${ options } dias"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin vitalícios"
@@ -6864,7 +6864,7 @@
         "Suporte prioritário e chat ao-vivo"
       ],
       "Private photo backup": [
-        "Backup de fotos privado"
+        "Backup de fotos privadas"
       ],
       "Proofread and refine your emails": [
         "Revise e otimize seus e-mails"
@@ -6904,7 +6904,7 @@
         "Servidores Secure Core"
       ],
       "Secure file storage and sharing": [
-        "Armazenamento e compartilhamento de arquivos seguros"
+        "Armazenamento e compartilhamento seguro de arquivos"
       ],
       "Secure link sharing": [
         "Compartilhamento de link seguro"
@@ -6952,7 +6952,7 @@
       "Sync and backup all your files across devices": [
         "Sincronize e faça backup dos seus arquivos em todos os dispositivos"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor sobre VPN"
       ],
       "Two-factor authentication": [
@@ -8146,11 +8146,11 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "Free"
+        "Gratuito"
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
       ],
       "Street address, postal code, and city": [
@@ -9009,7 +9009,7 @@
         "Fazer upgrade"
       ],
       "Upgrade for ${ pricingTitle }": [
-        "Faza upgrade para o ${ pricingTitle }"
+        "Faça upgrade para o ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -10071,10 +10071,10 @@
         "Código de verificação copiado para a área de transferência"
       ],
       "Verification successful": [
-        "A verificação é terminada."
+        "Verificado com sucesso"
       ],
       "You have successfully canceled your subscription.": [
-        "Você cancelou sua assinatura."
+        "Você cancelou sua assinatura com sucesso."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
@@ -10857,8 +10857,8 @@
         "Assinatura"
       ],
       "Successfully created ${ n } user account": [
-        "Conta de usuário ${ n } criada",
-        "${ n } contas de usuário criadas"
+        "${ n } conta de usuário criada com sucesso",
+        "${ n } contas de usuário criadas com sucesso"
       ],
       "Summary": [
         "Resumo"
@@ -11642,6 +11642,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } endereço de e-mail da ${ BRAND_NAME }",
+        "${ n } endereços de e-mail da ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } conta por carteira",
         "${ n } contas por carteira"
@@ -11655,11 +11659,17 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Endereço de e-mail ${ MAIL_APP_NAME } criptografado e seguro. Você pode enviar facilmente Bitcoin para qualquer pessoa usando apenas o nome ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Troque Bitcoin via e-mail com segurança em vez de usar endereços de Bitcoin complexos de 26 caracteres, que são propensos a erro"
       ]
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Uma maneira mais segura de guardar o Bitcoin"
+        "Uma maneira mais segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -6037,6 +6037,9 @@
       "Vulnerable": [
         "Sårbart"
       ],
+      "Vulnerable password": [
+        "Sårbart lösenord"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Tråkigt att du lämnar oss. Vill du vara snäll och berätta varför du lämnar oss för att hjälpa oss bli bättre."
       ],
@@ -6949,8 +6952,8 @@
       "Sync and backup all your files across devices": [
         "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
       ],
-      "TOR over VPN": [
-        "TOR över VPN"
+      "Tor over VPN": [
+        "Tor över VPN"
       ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
@@ -8159,9 +8162,6 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto och din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdatumet, enligt villkoren i ditt avtal med din bank."
-      ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
       ]
@@ -11573,6 +11573,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Krypterad och säker ${ MAIL_APP_NAME } e-postadress. Du kan enkelt skicka Bitcoin till vem som helst med bara deras ${ BRAND_NAME } namn."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Växla Bitcoin säkert via e-post istället för komplexa, 26-teckniga Bitcoin-adresser som är benägna att ge upphov till fel"
       ]
     },
     "wallet_signup_2024:app-switcher": {
