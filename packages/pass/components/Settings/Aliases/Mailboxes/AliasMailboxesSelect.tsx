@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components';
 import { useAliasMailboxes } from '@proton/pass/components/Settings/Aliases/Mailboxes/AliasMailboxesProvider';
+import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
 
 type Props = {
     values: number[];
@@ -16,7 +17,7 @@ export const DomainMailboxesSelector = ({ onChange, values, disabled }: Props) =
 
     useEffect(getMailboxes, []);
 
-    const options = useMemo(() => mailboxes.filter((mailbox) => mailbox.Verified), [mailboxes]);
+    const options = useMemo(() => mailboxes.filter((mailbox) => !mailboxVerificationRequired(mailbox)), [mailboxes]);
 
     return (
         <SelectTwo<number[]>
