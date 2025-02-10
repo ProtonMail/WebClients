@@ -16,7 +16,7 @@ import type { MessageImage } from '../../store/messages/messagesTypes';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 /** Styles we should not clone on the anchor */
-const forbiddenStyles = ['display', 'border', 'outline', 'background', 'padding'];
+const forbiddenStyles = ['border', 'outline', 'background', 'padding'];
 
 const spineToCamelCase = (value: string) => value.replaceAll(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 
@@ -37,7 +37,11 @@ const extractStyle = (original: HTMLElement | undefined, documentWidth: number |
     }
     const style: CSSProperties = {};
     forEachStyle(original.style, (prop, value) => {
-        if (prop === 'display' || forbiddenStyles.some((forbidden) => prop.startsWith(forbidden))) {
+        // we only autorise display: inline-block
+        if (
+            (prop === 'display' && value !== 'inline-block') ||
+            forbiddenStyles.some((forbidden) => prop.startsWith(forbidden))
+        ) {
             return;
         }
         style[spineToCamelCase(prop)] = value;
