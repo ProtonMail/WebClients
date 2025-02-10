@@ -18,7 +18,7 @@
 	font-size: var(--font-size);
 	line-height: var(--line-height);
 
-	> *:not(:first-child):not([class*='Lexical__h']),
+	> *:not(:first-child, [class*='Lexical__h']),
 	> .Lexical__paragraph:not(:first-child) {
 		margin-block-start: 0.75rem;
 	}
@@ -156,42 +156,41 @@ $line-height: 1.2; // Consistent line-height
 .Lexical__h1 {
 	font-size: 32px;
 	font-weight: bold;
-	margin-block-start: 1.5rem;
-	margin-block-end: 0.5rem;
+	margin-block: 1.5rem 0.5rem;
 }
+
 .Lexical__h2 {
 	font-size: 24px;
 	font-weight: bold;
-	margin-block-start: 1.3rem;
-	margin-block-end: 0.45rem;
+	margin-block: 1.3rem 0.45rem;
 }
+
 .Lexical__h3 {
 	font-size: 19px;
 	font-weight: 600;
-	margin-block-start: 1.2rem;
-	margin-block-end: 0.4rem;
+	margin-block: 1.2rem 0.4rem;
 }
+
 .Lexical__h4 {
 	font-size: 17px;
 	font-weight: normal;
 	color: var(--text-weak);
-	margin-block-start: 1.15rem;
-	margin-block-end: 0.35rem;
+	margin-block: 1.15rem 0.35rem;
 }
+
 .Lexical__h5 {
 	font-size: 15px;
 	font-weight: normal;
 	color: var(--text-weak);
-	margin-block-start: 1.1rem;
-	margin-block-end: 0.3rem;
+	margin-block: 1.1rem 0.3rem;
 }
+
 .Lexical__h6 {
 	font-size: 13px;
 	font-weight: normal;
 	font-style: italic;
 	color: var(--text-weak);
-	margin-block-start: 1.05rem;
-	margin-block-end: 0.3rem;
+	margin-block: 1.05rem 0.3rem;
 }
 
 .Lexical__cursorCaret {
@@ -273,6 +272,6 @@ $line-height: 1.2; // Consistent line-height
 	user-select: none;
 }
 
-.Lexical__hr {
+.Lexical__divider {
 	border-block-end: 1px solid var(--border-norm);
 }
