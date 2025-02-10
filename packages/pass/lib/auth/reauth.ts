@@ -20,3 +20,7 @@ export type ReauthActionPayload =
     | { type: ReauthAction.SSO_EXPORT; data: ExportOptions }
     | { type: ReauthAction.SSO_OFFLINE }
     | { type: ReauthAction.SSO_PW_LOCK; data: ReauthLockChange };
+
+/** Checks if the reauth action requires backup password authentication */
+export const isSSOBackupPasswordReauth = ({ type }: ReauthActionPayload) =>
+    type === ReauthAction.SSO_BIOMETRICS || type === ReauthAction.SSO_OFFLINE || type === ReauthAction.SSO_PW_LOCK;

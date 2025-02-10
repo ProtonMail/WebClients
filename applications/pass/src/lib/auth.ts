@@ -9,6 +9,7 @@ import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { clearUserLocalData, localGarbageCollect } from 'proton-pass-web/lib/storage';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getThemeForLocalID } from 'proton-pass-web/lib/theme';
+import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/components';
 import type { AppStateService } from '@proton/pass/components/Core/AppStateManager';
@@ -27,7 +28,7 @@ import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pas
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
-import { ReauthAction } from '@proton/pass/lib/auth/reauth';
+import { ReauthAction, isSSOBackupPasswordReauth } from '@proton/pass/lib/auth/reauth';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -36,10 +37,11 @@ import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type MaybeNull } from '@proton/pass/types';
+import { AppStatus, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { revoke } from '@proton/shared/lib/api/auth';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     getBasename,
@@ -56,11 +58,14 @@ import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import {
+    clearPendingRevocations,
     getDefaultLocalID,
+    getPendingRevocations,
     getPersistedLocalIDsForUserID,
     getPersistedSession,
     getPersistedSessions,
     getSessionKey,
+    setPendingRevocation,
 } from './sessions';
 
 type AuthServiceBindings = {
@@ -275,6 +280,8 @@ export const createAuthService = ({
             history.replace('/');
         },
 
+        onLogoutFailure: setPendingRevocation,
+
         onMissingScope: () => {
             flushSync(() => app.setStatus(AppStatus.MISSING_SCOPE));
             history.replace('/');
@@ -333,10 +340,9 @@ export const createAuthService = ({
             auth.resumeSession(fork.localID, {
                 reauth: fork.reauth,
                 onComplete: async (userID, localID) => {
-                    try {
-                        const action = ReauthAction[fork.reauth.type];
-                        logger.info(`[AuthServiceProvider] Successful reauth for "${action}"`);
+                    const action = ReauthAction[fork.reauth.type];
 
+                    try {
                         if (blob?.type === 'offline') {
                             const { offlineKD, offlineConfig } = extractOfflineComponents(blob);
                             const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
@@ -373,23 +379,42 @@ export const createAuthService = ({
                                 const settings = await core.settings.resolve(localID);
                                 await core.settings.sync({ ...settings, offlineEnabled: true }, localID);
                             }
+                        } else if (isSSOBackupPasswordReauth(fork.reauth)) {
+                            /** Ensure SSO backup password reauth has required
+                             * offline components, otherwise throw an error */
+                            throw new Error('Invalid SSO backup password reauth');
                         }
                     } catch (err) {
                         /** If there was a failure processing the `reauth` payload
                          * do not pass it to the default completion handler. This
                          * avoids triggering the reauth handlers after boot. */
-                        logger.warn(`[AuthServiceProvider] Failed setting up SSO password lock`, err);
+                        logger.warn(`[AuthServiceProvider] Failed reauth for "${action}"`, err);
+                        onNotification({ type: 'error', text: c('Warning').t`Identity could not be confirmed` });
                         return auth.config.onLoginComplete?.(userID, localID);
                     }
 
+                    logger.info(`[AuthServiceProvider] Successful reauth for "${action}"`);
                     return auth.config.onLoginComplete?.(userID, localID, fork.reauth);
                 },
             }),
 
         onForkInvalid: () => history.replace('/'),
 
-        onForkRequest: ({ url, state }, data) => {
+        onForkRequest: async ({ url, state }, data) => {
+            const revokedUIDs = getPendingRevocations();
+
+            /** When requesting a fork, attempt to revoke any pending sessions that were
+             * flagged during offline mode. This ensures sessions revoked locally are
+             * also revoked BE-side before proceeding with the request and forcing reauth. */
+            for (const UID of revokedUIDs) {
+                await api({ ...revoke(), sideEffects: false, auth: { type: AuthMode.COOKIE, UID } })
+                    .then(() => logger.info(`[AuthServiceProvider] Revoked ${UID}`))
+                    .catch(noop);
+            }
+
+            clearPendingRevocations();
             sessionStorage.setItem(getStateKey(state), JSON.stringify(data ?? redirect.data));
+
             window.location.replace(url);
         },
 
