@@ -30,7 +30,7 @@
         "Přidat doménu"
       ],
       "Add forwarding mailbox": [
-        "Přidat přeposílání e-mailové schránky"
+        "Přidat e-mailovou schránku pro přeposílání"
       ],
       "Add mailbox": [
         "Přidat e-mailovou schránku"
@@ -1370,6 +1370,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Přístup k ${ PASS_APP_NAME } bude vždy vyžadovat vaše ${ BRAND_NAME } heslo."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Přístup k ${ PASS_APP_NAME } bude vždy vyžadovat vaše záložní heslo."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Přístup k ${ PASS_APP_NAME } bude vždy vyžadovat vaše dodatečné heslo."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Přístup k ${ PASS_APP_NAME } bude vyžadovat váš otisk prstu nebo PIN zařízení."
       ],
@@ -1646,6 +1652,9 @@
       "Expires in ${ remainingTime }": [
         "Vyprší za ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Exportování vašich dat..."
+      ],
       "Extra password successfully created": [
         "Dodatečné heslo úspěšně vytvořeno"
       ],
@@ -1655,7 +1664,7 @@
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
+      "Follow those steps to import your data with a generic CSV:": [
         "Postupujte podle těchto kroků pro import vašich dat pomocí obecného CSV:"
       ],
       "For easy access to your passwords and more.": [
@@ -1663,6 +1672,9 @@
       ],
       "For security reason, your access needs to be confirmed": [
         "Z bezpečnostních důvodů musí být váš přístup potvrzen"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Z bezpečnostních důvodů tato akce vyžaduje ověření identity."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Z bezpečnostních důvodů je třeba potvrdit přístup k tomuto sdílenému trezoru",
@@ -1693,6 +1705,9 @@
       ],
       "Here's how it works:": [
         "Funguje to takto:"
+      ],
+      "Identity confirmed": [
+        "Identita potvrzena"
       ],
       "Import in progress:": [
         "Import probíhá:"
@@ -1912,6 +1927,24 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte prosím své ${ BRAND_NAME } heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your backup password": [
+        "Prosím potvrďte vaše záložní heslo"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Pro automatické zamykání pomocí biometrie prosím potvrďte své záložní heslo."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Pro automatické zamykání vaším heslem prosím potvrďte své záložní heslo."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Potvrďte prosím své záložní heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Pro zrušení stávajícího zámku prosím potvrďte své záložní heslo."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Pro aktualizaci času automatického zamykání prosím potvrďte své záložní heslo."
       ],
       "Please confirm your extra password": [
         "Prosím potvrďte vaše dodatečné heslo"
@@ -2324,6 +2357,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosáhli jste maximální povolené délky ${ maxLength } znaků."
       ],
+      "You may close this tab.": [
+        "Tuto kartu můžete zavřít."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Po ověření domény budete moci upravit nastavení domény (doménový koš e-mailových aliasů, výchozí zobrazované jméno pro aliasy atd...)."
       ],
@@ -2544,6 +2580,9 @@
       ],
       "Autosuggest": [
         "Automatické doporučení"
+      ],
+      "Backup password": [
+        "Záložní heslo"
       ],
       "Biometrics": [
         "Biometrie"
@@ -3558,6 +3597,9 @@
       "Confirm extra password": [
         "Potvrdit dodatečné heslo"
       ],
+      "Confirm identity": [
+        "Potvrzení identity"
+      ],
       "Confirm PIN code": [
         "Potvrdit PIN kód"
       ],
@@ -3635,6 +3677,9 @@
       ],
       "Enter coupon code": [
         "Zadejte kód kupónu"
+      ],
+      "Enter your backup password": [
+        "Zadejte své záložní heslo"
       ],
       "Enter your extra password": [
         "Zadejte své dodatečné heslo"

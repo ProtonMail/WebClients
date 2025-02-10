@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -7014,11 +7014,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activați cel puțin o metodă de recuperare a datelor pentru a vă asigura că puteți accesa conținutul din contul ${ BRAND_NAME } dacă vă pierdeți parola."
       ],
-      "active": [
-        "activă"
-      ],
       "Active": [
         "Activ"
+      ],
+      "active": [
+        "activă"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
@@ -11605,6 +11605,9 @@
       "Privacy policy": [
         "Politica de confidențialitate"
       ],
+      "privacy policy": [
+        "politica de confidențialitate"
+      ],
       "Reactivate now": [
         "Reactivare"
       ],
@@ -11786,9 +11789,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Ofertă cu durată limitată: **Obțineți până la 35% reducere** la planurile anuale"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Ofertă limitată: **Economisiți ${ discount } pentru ${ name } cu un plan de un an**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Setați-vă contul cu domeniul Porkbun."
@@ -12724,7 +12724,7 @@
       "Tailored to your needs": [
         "Adaptat nevoilor personale"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor prin VPN"
       ],
       "Two-factor authentication": [
@@ -14203,6 +14203,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Dar puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ${ BRAND_NAME } trecând la **${ upsellPlanTitle }**."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Continuând, sunteți de acord cu ${ termsAndConditionsLink } și cu ${ privacyPolicyLink }."
+      ],
       "Creating your account": [
         "Se creează contul"
       ],
@@ -14551,6 +14554,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Vi s-au acord drepturi de administrare a organizației **${ organizationName }** de către"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Trebuie să ștergeți toate grupurile înainte de a genera o cheie nouă pentru organizație."
+      ],
       "You must privatize all users before generating a new organization key": [
         "Trebuie să faceți privați toți utilizatorii înainte de a genera o cheie nouă pentru organizație."
       ],
@@ -14680,8 +14686,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul, iar banca să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
       ],
       "Street address, postal code, and city": [
         "Strada, cod poștal și oraș"
@@ -16874,6 +16880,47 @@
         "Pentru ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -17168,47 +17215,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -18584,7 +18590,7 @@
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Personalizați-vă subsolul mesajelor"
       ],
       "Personalize your email footer": [
@@ -19125,29 +19131,6 @@
         "Astăzi"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup."
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup și nici o resursă criptată nu va fi partajată cu acest utilizator."
-      ],
-      "Group membership paused": [
-        "Apartenența la grup a fost suspendată"
-      ],
-      "Sending member invitation": [
-        "Se trimite invitația membrului"
-      ],
-      "User declined invitation": [
-        "Utilizatorul a refuzat invitația"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Se așteaptă ca utilizatorul să accepte invitația"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Utilizatorii ${ MAIL_APP_NAME } vor folosi această cheie în mod implicit pentru trimiteri."
@@ -19361,6 +19344,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. ${ BRAND_NAME } va încerca să reia importarea cât mai curând posibil."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup și nici o resursă criptată nu va fi partajată cu acest utilizator."
+      ],
+      "Group membership paused": [
+        "Apartenența la grup a fost suspendată"
+      ],
+      "Sending member invitation": [
+        "Se trimite invitația membrului"
+      ],
+      "User declined invitation": [
+        "Utilizatorul a refuzat invitația"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Se așteaptă ca utilizatorul să accepte invitația"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19901,6 +19907,11 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adresă de e-mail ${ BRAND_NAME }",
+        "${ n } adrese de e-mail ${ BRAND_NAME }",
+        "${ n } de adrese de e-mail ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } cont per portofel",
         "${ n } conturi per portofel",
@@ -19911,14 +19922,50 @@
         "${ n } portofele",
         "${ n } de portofele"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programul ${ PROTON_SENTINEL_NAME }"
+      ],
       "A safer way to hold your Bitcoin": [
         "O metodă mai sigură de a vă păstra monedele Bitcoin"
+      ],
+      "Advanced account protection": [
+        "Protecție avansată a contului"
       ],
       "Bitcoin via Email": [
         "Bitcoin prin e-mail"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Adresă de e-mail ${ MAIL_APP_NAME } criptată și sigură. Puteți trimite cu ușurință Bitcoin oricui doar cu numele ${ BRAND_NAME }."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Stocare în cloud criptată pentru fotografii și documente"
+      ],
+      "Encrypted email and file storage": [
+        "E-mail criptat și stocare criptată de fișiere"
+      ],
+      "Encrypted password manager": [
+        "Manager de parole criptat"
+      ],
       "Exclusive early access to ${ appName }.": [
         "Acces timpuriu exclusiv la ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Planul nostru cel mai exclusiv. Obțineți acces timpuriu la funcțiile noi și la toate serviciile speciale ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Schimbați în siguranță Bitcoin prin e-mail, în loc de adrese Bitcoin complexe, de 26 de caractere, care sunt predispuse la eroare"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Păstrați și tranzacționați Bitcoin în siguranță, gratuit."
+      ],
+      "Self-custodial wallet": [
+        "Portofel în custodie proprie"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Preluați-vă controlul asupra tuturor datelor cu serviciile ${ BRAND_NAME } premium."
+      ],
+      "Ultra fast and private VPN": [
+        "VPN rapid și privat"
       ],
       "You're Invited.": [
         "Ați primit o invitație."
