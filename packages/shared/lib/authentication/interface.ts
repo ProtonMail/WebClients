@@ -105,4 +105,5 @@ export interface ExtraSessionForkData {
     returnUrl?: string;
     pathname?: string;
     reloadDocument?: boolean;
+    unauthenticatedReturnUrl?: string;
 }
