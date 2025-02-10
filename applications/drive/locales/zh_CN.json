@@ -426,6 +426,9 @@
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
       ],
+      "Hide download options": [
+        "隐藏下载选项"
+      ],
       "Image could not be loaded with tracker protection.": [
         "跟踪防护模式下无法加载此图像。"
       ],
@@ -770,6 +773,9 @@
       ],
       "Show advanced PGP settings": [
         "显示高级 PGP 设置"
+      ],
+      "Show more download options": [
+        "显示更多下载选项"
       ],
       "Show navigation bar": [
         "显示导航栏"
@@ -5148,6 +5154,15 @@
       "This month": [
         "这个月"
       ],
+      "This will permanently delete the file you uploaded.": [
+        "这将永久删除您上传的文件。"
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "这将永久删除您上传的文件夹。"
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "这将永久删除您上传的选定项目。"
+      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "这将从 ${ DRIVE_APP_NAME } 中移除同步设备 ${ deviceName }，并从 ${ DRIVE_APP_NAME } 中移除其所有数据。添加到“我的电脑”中的文件夹将停止同步。"
       ],
@@ -7112,8 +7127,8 @@
       "Sync and backup all your files across devices": [
         "跨设备同步并备份所有文件"
       ],
-      "TOR over VPN": [
-        "VPN 上的 Tor"
+      "Tor over VPN": [
+        "经 Tor 连接 VPN"
       ],
       "Two-factor authentication": [
         "双重验证"
@@ -7808,6 +7823,9 @@
       "Share invitation declined": [
         "分享邀请被拒绝"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "对不起，我们无法删除这些文件夹，因为它们不是空的。"
+      ],
       "Stopping the sharing of this item has failed": [
         "停止共享此项目失败"
       ],
@@ -8275,8 +8293,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "确认付款后，您即授权 ${ BRAND_NAME } 和我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣款，您的银行则相应地从您的账户中扣款。根据您与银行签订的协议，你可以在扣款日起 8 周内获得退款。"
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "确认付款后，您即授权 ${ BRAND_NAME } 和我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣除相应款项。根据您与银行签订的协议，您可以在扣款日起 8 周内获得退款。"
       ],
       "Street address, postal code, and city": [
         "街道地址、邮政编码和城市"
@@ -9674,6 +9692,35 @@
         "vCard 字段"
       ]
     },
+    "Tag": {
+      "Bursts": [
+        "连拍"
+      ],
+      "Favorites": [
+        "收藏夹"
+      ],
+      "Live Photos": [
+        "实况照片"
+      ],
+      "Panoramas": [
+        "全景图"
+      ],
+      "Portraits": [
+        "肖像"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "截图"
+      ],
+      "Selfies": [
+        "自拍照"
+      ],
+      "Videos": [
+        "视频"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } 小时"
@@ -10508,6 +10555,9 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } 电子邮箱地址"
+      ],
       "${ n } account per wallet": [
         "每个钱包${ n }个 账户"
       ],
@@ -10519,6 +10569,12 @@
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "已加密且安全的 ${ MAIL_APP_NAME } 电子邮件地址。您只需使用其 ${ BRAND_NAME } 名称即可轻松发送 Bitcoin。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "通过电子邮件安全地交换 Bitcoin，而不是那些复杂、26个字符长且容易出错的 Bitcoin 地址"
       ]
     },
     "wallet_signup_2024:app-switcher": {
