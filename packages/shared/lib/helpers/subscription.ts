@@ -503,6 +503,21 @@ export const getHas2024OfferCoupon = (coupon: string | undefined | null): boolea
     return blackFriday2024Discounts.has(coupon?.toUpperCase());
 };
 
+const valentinesCoupons = new Set<string>([
+    COUPON_CODES.LOVEPRIVACY25,
+    COUPON_CODES.LOVEPRIVACY225,
+    COUPON_CODES.MAILFLASH5025,
+    COUPON_CODES.DRIVEFLASH5025,
+    COUPON_CODES.VPNFLASH6025,
+    COUPON_CODES.PASSFLASH5025,
+]);
+export const getHasValentinesCoupon = (coupon: string | undefined | null): boolean => {
+    if (!coupon) {
+        return false;
+    }
+    return valentinesCoupons.has(coupon?.toUpperCase());
+};
+
 export const allCycles = Object.freeze(
     Object.values(CYCLE)
         .filter((cycle): cycle is CYCLE => typeof cycle === 'number')
