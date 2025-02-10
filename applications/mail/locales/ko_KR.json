@@ -9611,8 +9611,8 @@
       "Sync and backup all your files across devices": [
         "기기를 넘나들며 파일을 동기화 및 백업하세요"
       ],
-      "TOR over VPN": [
-        "VPN을 통한 TOR"
+      "Tor over VPN": [
+        "VPN을 통한 Tor"
       ],
       "Two-factor authentication": [
         "2단계 인증"
@@ -10627,8 +10627,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "이 결제를 확인함으로써, 자사 결제 서비스 제공자인 ${ BRAND_NAME }과 Stripe가 사용자의 은행 계좌에서 금액을 인출하도록 동의하고, 사용자의 은행이 이에 따라 계좌에서 금액을 인출하도록 수행할 수 있는 권한을 부여하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "이 지불을 확인함으로써, ${ BRAND_NAME }과 당사 지불 서비스 제공자인 Stripe가 사용자의 은행 계좌에서 인출하도록 동의하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
       ],
       "Street address, postal code, and city": [
         "주소명, 우편 번호 및 도시"
@@ -13571,6 +13571,9 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n }개 ${ BRAND_NAME } 이메일 주소"
+      ],
       "${ n } account per wallet": [
         "계정 당 ${ n }개 지갑"
       ],
@@ -13582,6 +13585,12 @@
       ],
       "Bitcoin via Email": [
         "이메일을 통한 Bitcoin"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소． 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 보내실 수 있습니다．"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "착오가 발생하기 쉬운 복잡한 26자 Bitcoin 주소 대신 이메일을 통해 Bitcoin을 안전하게 거래하세요"
       ]
     },
     "wallet_signup_2024:Action": {
