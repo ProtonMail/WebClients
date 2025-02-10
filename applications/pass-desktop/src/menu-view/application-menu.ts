@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import * as config from '../app/config';
 import { uninstallProton } from '../uninstallers/macos/uninstall';
 import { isMac, isProdEnv } from '../utils/platform';
 
@@ -29,6 +30,13 @@ const insertInMenu = ({ menu, key, otherOsEntries, macEntries, allOSEntries }: M
     }
 
     menu[editIndex].submenu = [...submenu, ...(allOSEntries ?? [])];
+};
+
+/** Block reload shortcuts when navigating to account from the
+ * desktop app. This avoids losing authentication context. */
+const reloadGuard = (mainWindow: BrowserWindow) => (handler: () => void) => () => {
+    const currentUrl = mainWindow.webContents.getURL();
+    if (!currentUrl.startsWith(config.SSO_URL)) handler();
 };
 
 export const setApplicationMenu = (mainWindow: BrowserWindow) => {
@@ -68,12 +76,12 @@ export const setApplicationMenu = (mainWindow: BrowserWindow) => {
                 {
                     label: c('App menu').t`Reload`,
                     accelerator: isMac ? 'Cmd+R' : 'Ctrl+R',
-                    click: () => mainWindow.webContents.reload(),
+                    click: reloadGuard(mainWindow)(() => mainWindow.webContents.reload()),
                 },
                 {
                     label: c('App menu').t`Force Reload`,
                     accelerator: isMac ? 'Cmd+Shift+R' : 'Ctrl+Shift+R',
-                    click: () => mainWindow.webContents.reloadIgnoringCache(),
+                    click: reloadGuard(mainWindow)(() => mainWindow.webContents.reloadIgnoringCache()),
                 },
                 { type: 'separator' },
                 { role: 'resetZoom' },
