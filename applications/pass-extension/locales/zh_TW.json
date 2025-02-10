@@ -1041,9 +1041,6 @@
       "Fill in the CSV with your data": [
         "CSV格式的檔案"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "跟隨這些步驟以CSV匯入資料:"
-      ],
       "For easy access to your passwords and more.": [
         "容易存取密碼及更多。"
       ],
@@ -1311,6 +1308,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "此匯出將會解密，所有能存取匯出檔案者皆可以看到密碼。為了安全請與使用後刪除。"
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "此將拒絕嘗試於**${ date }**登入至${ BRAND_NAME }帳號的裝置**${ name }**。"
+      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "嘗試重啟或重新下載擴充功能，並確認您的瀏覽器和 ${ PASS_SHORT_APP_NAME } 已是最新版本"
       ],
@@ -1501,6 +1501,9 @@
       ],
       "Autosuggest": [
         "自動建議"
+      ],
+      "Backup password": [
+        "備份密碼"
       ],
       "Birthdate": [
         "日期"
@@ -2100,6 +2103,15 @@
       ]
     },
     "sso": {
+      "Approve or deny it now": [
+        "立即允許或拒絕"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "輸入我們在您其他裝置上傳送的確認碼。"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "若您並未做出此請求，請立刻取消。"
+      ],
       "Invalid confirmation code": [
         "無效的驗證碼"
       ],

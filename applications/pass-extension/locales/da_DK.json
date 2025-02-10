@@ -29,6 +29,9 @@
       "Add domain": [
         "Tilføj domæne"
       ],
+      "Add forwarding mailbox": [
+        "Tilføj postkasse til videresendelse"
+      ],
       "Add mailbox": [
         "Tilføj postkasse"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Avancerede indstillinger"
+      ],
+      "Apply lifetime coupon code": [
+        "Anvend livstids-kuponkode"
       ],
       "Authenticate": [
         "Godkend"
@@ -1324,6 +1330,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Adgang til ${ PASS_APP_NAME } vil altid kræve din ${ BRAND_NAME }-adgangskode."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Adgang til ${ PASS_APP_NAME } vil altid kræve din sikkerhedskopi-adgangskode."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Adgang til ${ PASS_APP_NAME } vil altid kræve din ekstra adgangskode."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Brug af ${ PASS_APP_NAME } kræver dit fingeraftryk eller enhedens pinkode."
       ],
@@ -1468,6 +1480,9 @@
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
+      "Coupon successfully applied!": [
+        "Kupon anvendt!"
+      ],
       "Create contact illustration": [
         "Opret illustration af kontakt"
       ],
@@ -1597,6 +1612,9 @@
       "Expires in ${ remainingTime }": [
         "Udløber om ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Eksporterer dine data..."
+      ],
       "Extra password successfully created": [
         "Ekstra adgangskode oprettet"
       ],
@@ -1606,14 +1624,17 @@
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Følg disse trin for at importere dine data med en generisk CSV:"
+      "Follow those steps to import your data with a generic CSV:": [
+        "Følg de trin for at importere dine data med en generisk CSV:"
       ],
       "For easy access to your passwords and more.": [
         "For nem adgang til dine adgangskoder og mere."
       ],
       "For security reason, your access needs to be confirmed": [
         "Af en sikkerhedsmæssig årsag skal din adgang bekræftes"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Af sikkerhedsmæssige årsager kræver denne handling identitetsbekræftelse."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Af sikkerhedsmæssige årsager skal du bekræfte adgangen til denne fælles boks.",
@@ -1640,6 +1661,9 @@
       ],
       "Here's how it works:": [
         "Det virker sådan her:"
+      ],
+      "Identity confirmed": [
+        "Identitet bekræftet"
       ],
       "Import in progress:": [
         "Import i gang:"
@@ -1848,6 +1872,24 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
       ],
+      "Please confirm your backup password": [
+        "Bekræft din adgangskode til sikkerhedskopi"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Bekræft din sikkerhedskopi-adgangskode for at få automatisk låsning med biometri."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Bekræft din sikkerhedskopi-adgangskode for at autolåse med din adgangskode."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekræft din sikkerhedskopi-adgangskode for at eksportere dine ${ PASS_APP_NAME }-data."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Bekræft din sikkerhedskopi-adgangskode for at afregistrere din nuværende lås."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Bekræft din ekstra sikkerhedskopi-adgangskode for at opdatere tiden for den automatiske lås."
+      ],
       "Please confirm your extra password": [
         "Bekræft din ekstra adgangskode"
       ],
@@ -1997,6 +2039,9 @@
       ],
       "Settings successfully updated": [
         "Indstillingerne blev opdateret"
+      ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Del aliasser med andre ved at tilføje deres indbakke som en videresendelsespostkasse."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Del dine logins og sikre noter med op til 10 personer"
@@ -2243,6 +2288,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nået den maksimalt tilladte længde på ${ maxLength } tegn."
       ],
+      "You may close this tab.": [
+        "Du kan lukke denne fane."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Du får mulighed for at tilpasse dine domæneindstillinger (catch-all e-mail-alias, standardvisningsnavn for aliasser osv.), når du har bekræftet dit domæne."
       ],
@@ -2441,6 +2489,9 @@
       ],
       "Autosuggest": [
         "Auto-forslag"
+      ],
+      "Backup password": [
+        "Adgangskode til sikkerhedskopi"
       ],
       "Biometrics": [
         "Biometri"
@@ -3186,6 +3237,9 @@
       "Alias Display Name": [
         "Alias-visningsnavn"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Email address": [
         "E-mail"
       ],
@@ -3432,6 +3486,9 @@
       "Confirm extra password": [
         "Bekræft ekstra adgangskode"
       ],
+      "Confirm identity": [
+        "Bekræft identitet"
+      ],
       "Confirm PIN code": [
         "Bekræft pinkode"
       ],
@@ -3504,6 +3561,12 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
+      ],
+      "Enter coupon code": [
+        "Indtast kuponkode"
+      ],
+      "Enter your backup password": [
+        "Indtast din sikkerhedskopi-adgangskode"
       ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
@@ -3823,6 +3886,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Kunne ikke sende invitationer til følgende adresser:"
+      ],
+      "Coupon cannot be empty": [
+        "Kupon må ikke være tom"
+      ],
+      "Coupon could not be applied.": [
+        "Kupon kunne ikke anvendes."
       ],
       "Delete alias": [
         "Slet alias"

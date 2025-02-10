@@ -1312,6 +1312,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება ${ BRAND_NAME }-ის პაროლი."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება მარქაფი პაროლი."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება დამატებითი პაროლი."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }-სთან წვდომისთვის თქვენი თითის ანაბეჭდი, ან მოწყობილობის PIN-კოდი დაგჭირდებათ."
       ],
@@ -1585,6 +1591,9 @@
       "Expires in ${ remainingTime }": [
         "ვადა ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "თქვენი მონაცემების გატანა..."
+      ],
       "Extra password successfully created": [
         "დამატებითი პაროლი წარმატებით შეიქმნა"
       ],
@@ -1594,7 +1603,7 @@
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
+      "Follow those steps to import your data with a generic CSV:": [
         "მიყევით ამ ნაბიჯებს, რომ შემოიტანოთ თქვენი მონაცემები ზოგადი CSV-ით:"
       ],
       "For easy access to your passwords and more.": [
@@ -1602,6 +1611,9 @@
       ],
       "For security reason, your access needs to be confirmed": [
         "უსაფრთხოებისთვის თქვენს წვდომას დადასტურება სჭირდება"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "უსაფრთხოების მიზნით ამ ქმედებას იდენტიფიკატორის გადამოწმება სჭირდება."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "უსაფრთხოებისთვის გჭირდებათ, რომ დაადასტუროთ წვდომა ამ გაზიარებულ საცავზე",
@@ -1628,6 +1640,9 @@
       ],
       "Here's how it works:": [
         "აი, როგორ მუშაობს ის:"
+      ],
+      "Identity confirmed": [
+        "იდენტიფიკატორი დადასტურებულია"
       ],
       "Import in progress:": [
         "მიმდინარეობს შემოტანა:"
@@ -1832,6 +1847,24 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
+      "Please confirm your backup password": [
+        "დაადასტურეთ თქვენი მარქაფი პაროლი"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "დაადასტურეთ თქვენი მარქაფი პაროლი, რომ ბიომეტრიით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "დაადასტურეთ თქვენი მარქაფი პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "დაადასტურეთ თქვნი მარქაფი პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი მარქფი პაროლი."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "დაადასტურეთ თქვენი მარქაფი პაროლი, რომ ავტოდაბლოკვის დრო განაახლოთ."
       ],
       "Please confirm your extra password": [
         "დაადასტურეთ თქვენი დამატებითი პაროლი"
@@ -2225,6 +2258,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "მიაღწიეთ მაქსიმალურად დაშვებულ ${ maxLength } სიმბოლოს."
       ],
+      "You may close this tab.": [
+        "ახლა ეს ჩანართი შეგიძლიათ, დახუროთ."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "თქვენი დომენის პარამეტრების (ყველას ჩაჭერის ელფოსტის ფსევდონიმები, ნაგულისხმევი საჩვენებელი სახელი ფსევდონიმებისთვის და ა.შ.) მისი გადამოწმების შემდეგ შეგეძლებათ."
       ],
@@ -2423,6 +2459,9 @@
       ],
       "Autosuggest": [
         "ავტომატური რჩევა"
+      ],
+      "Backup password": [
+        "მარქაფი პაროლი"
       ],
       "Biometrics": [
         "ბიომეტრია"
@@ -3429,6 +3468,9 @@
       "Confirm extra password": [
         "დაადასტურეთ დამატებითი პაროლი"
       ],
+      "Confirm identity": [
+        "იდენტიფიკატორის დადასტურება"
+      ],
       "Confirm PIN code": [
         "დაადასტურეთ PIN–კოდი"
       ],
@@ -3504,6 +3546,9 @@
       ],
       "Enter coupon code": [
         "შეიყვანეთ კუპონის კოდი"
+      ],
+      "Enter your backup password": [
+        "შეიყვანეთ თქვენი მარქაფის პაროლი"
       ],
       "Enter your extra password": [
         "შეიყვანეთ თქვენი დაამატებითი პაროლი"
