@@ -799,6 +799,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "L'autenticació ha fallat. Confirmeu la contrasenya de ${ BRAND_NAME } per a continuar amb l'exportació"
       ],
+      "Biometric authentication failed": [
+        "L'autenticació biomètrica no ha funcionat."
+      ],
       "Cannot send invitation at the moment": [
         "Ara mateix no es pot enviar la invitació",
         "Ara mateix no es poden enviar invitacions"
@@ -1340,6 +1343,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "L'accés a ${ PASS_APP_NAME } sempre requerirà la contrasenya de recuperació."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "L'accés a ${ PASS_APP_NAME } sempre requerirà la contrasenya addicional."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Per accedir a ${ PASS_APP_NAME } caldrà la vostra empremta digital o el codi PIN del dispositiu."
       ],
@@ -1607,6 +1616,9 @@
       "Expires in ${ remainingTime }": [
         "Caduca en ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "S'estan exportant les dades..."
+      ],
       "Extra password successfully created": [
         "S'ha creat la contrasenya addicional."
       ],
@@ -1619,8 +1631,11 @@
       "finance": [
         "finances"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Seguiu aquests passos per a importar les dades amb un CSV genèric:"
+      "Follow those steps to import your data with a generic CSV:": [
+        "Seguiu aquests passos per a importar les dades amb un fitxer CSV genèric:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Per motius de seguretat, aquesta acció requereix la verificació de la vostra identitat."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Per motius de seguretat, heu de confirmar l'accés a aquesta caixa forta compartida",
@@ -1650,6 +1665,9 @@
       ],
       "How does monitoring work?": [
         "Com funciona el monitoratge?"
+      ],
+      "Identity confirmed": [
+        "S'ha confirmat la identitat."
       ],
       "Import in progress:": [
         "Importació en curs:"
@@ -1876,11 +1894,38 @@
       "Please check your spam folder or try resending the code.": [
         "Comproveu la carpeta de correu brossa o proveu de tornar a enviar el codi."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Confirmeu la contrasenya de ${ BRAND_NAME } per a desactivar el mode fora de línia."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirmeu la contrasenya de ${ BRAND_NAME } per a activar el mode fora de línia."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmeu la contrasenya de ${ BRAND_NAME } per a exportar les dades de ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Confirmeu la contrasenya de recuperació."
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Confirmeu la contrasenya de recuperació per tal de bloquejar automàticament amb dades biomètriques."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Confirmeu la contrasenya de recuperació per tal de bloquejar-la automàticament amb la vostra contrasenya."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Confirmeu la contrasenya de recuperació per a desactivar el mode fora de línia."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Confirmeu la contrasenya de recuperació per a activar el mode fora de línia."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirmeu la contrasenya de recuperació per a exportar les dades de ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Confirmeu la contrasenya de recuperació per desregistrar el vostre bloqueig."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Confirmeu la contrasenya de recuperació per actualitzar l'hora del bloqueig automàtic."
       ],
       "Please confirm your extra password": [
         "Confirmeu la vostra contrasenya addicional."
@@ -1890,6 +1935,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Confirmeu la vostra contrasenya addicional per tal de bloquejar automàticament l'aplicació amb ella."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Confirmeu la contrasenya addicional per a desactivar el mode fora de línia."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Confirmeu la contrasenya addicional per a activar el mode fora de línia."
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmeu la contrasenya addicional per a exportar les dades de ${ PASS_APP_NAME }."
@@ -2262,6 +2313,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Heu assolit la longitud màxima permesa de ${ maxLength } caràcters."
       ],
+      "You may close this tab.": [
+        "Ara podeu tancar aquesta pestanya."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Podreu personalitzar la configuració del vostre domini (àlies de correu electrònic catch-all, nom a mostrar per defecte per als àlies, etc.) després de verificar el vostre domini."
       ],
@@ -2452,6 +2506,9 @@
       ],
       "Auto-lock after": [
         "Bloqueig automàtic després de"
+      ],
+      "Backup password": [
+        "Contrasenya de recuperació"
       ],
       "Beta Access": [
         "Accés beta"
@@ -3505,6 +3562,9 @@
       "Confirm extra password": [
         "Confirmeu la contrasenya addicional"
       ],
+      "Confirm identity": [
+        "Confirmeu la identitat"
+      ],
       "Confirm PIN code": [
         "Confirmeu el codi PIN"
       ],
@@ -3589,6 +3649,9 @@
       ],
       "Enter coupon code": [
         "Introduïu el codi de cupó"
+      ],
+      "Enter your backup password": [
+        "Introduïu la contrasenya de recuperació."
       ],
       "Enter your extra password": [
         "Introduïu la vostra contrasenya addicional"
