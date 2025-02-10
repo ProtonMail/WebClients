@@ -23,7 +23,6 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { IcTag } from '@proton/icons';
 import metrics from '@proton/metrics';
 import {
     type BillingAddress,
@@ -75,6 +74,7 @@ import AudienceTabs from './Audience';
 import Box from './Box';
 import BoxContent from './BoxContent';
 import BoxHeader from './BoxHeader';
+import DiscountBanner from './DiscountBanner';
 import FeatureItem from './FeatureItem';
 import Guarantee from './Guarantee';
 import Layout from './Layout';
@@ -94,8 +94,6 @@ import { SignupMode, UpsellTypes } from './interface';
 import DriveTrial2024UpsellModal from './modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import { type CheckTrialPriceParams, type CheckTrialPriceResult, checkTrialPrice } from './modals/Trial2024UpsellModal';
-
-import './Step1.scss';
 
 export interface Step1Rref {
     scrollIntoPayment: () => void;
@@ -607,8 +605,6 @@ const Step1 = ({
         },
     };
 
-    const boldPlanTitle = <b key="bold-plan-title">{selectedPlan.Title}</b>;
-
     const planSelectorHeaderMiddleText = useMemo(() => {
         if (!isPorkbunPayment) {
             return undefined;
@@ -839,26 +835,11 @@ const Step1 = ({
                         return <SkeletonLoader width="36em" height="2.5rem" index={0} className="mt-4" />;
                     }
 
-                    const boldDiscountPercent = (
-                        <b key="bold-discount-percent">{
-                            // full sentence: Your 10% discount to Proton Pass has been applied
-                            c('Info').t`${checkout.discountPercent}% discount`
-                        }</b>
-                    );
-
                     return (
-                        <div className="single-signup-discount-banner flex-nowrap mt-4 text-lg rounded px-4 py-2 flex gap-2">
-                            <div className="shrink-0 flex items-center">
-                                <IcTag size={4} />
-                            </div>
-
-                            <span className="text-center">
-                                {
-                                    // full sentence: Your 10% discount to Proton Pass has been applied
-                                    c('Info').jt`Your ${boldDiscountPercent} to ${boldPlanTitle} has been applied`
-                                }
-                            </span>
-                        </div>
+                        <DiscountBanner
+                            discountPercent={checkout.discountPercent}
+                            selectedPlanTitle={selectedPlan.Title}
+                        />
                     );
                 })()}
 
