@@ -6,9 +6,12 @@ import {
   $createTextNode,
   $getSelection,
   $insertNodes,
+  $isElementNode,
   $isRangeSelection,
+  COMMAND_PRIORITY_LOW,
   COMMAND_PRIORITY_NORMAL,
   createCommand,
+  PASTE_COMMAND,
 } from 'lexical'
 import { useEffect } from 'react'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
@@ -67,6 +70,35 @@ export function ProtonLinkPlugin() {
           return true
         },
         COMMAND_PRIORITY_NORMAL,
+      ),
+      editor.registerCommand(
+        PASTE_COMMAND,
+        function applyLinkFromClipboard(event) {
+          const selection = $getSelection()
+          if (!$isRangeSelection(selection) || !(event instanceof ClipboardEvent)) {
+            return false
+          }
+          const clipboardText = event.clipboardData?.getData('text')
+          if (!clipboardText) {
+            return false
+          }
+          const sanitizedURL = sanitizeUrl(clipboardText)
+          if (sanitizedURL.isFailed()) {
+            return false
+          }
+          if (!selection.getNodes().some((node) => $isElementNode(node))) {
+            editor.dispatchCommand(LINK_CHANGE_COMMAND, {
+              url: clipboardText,
+              linkNode: null,
+              linkTextNode: null,
+              text: null,
+            })
+            event.preventDefault()
+            return true
+          }
+          return false
+        },
+        COMMAND_PRIORITY_LOW,
       ),
     )
   }, [editor])
