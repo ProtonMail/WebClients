@@ -82,6 +82,9 @@ export const requestFork = ({
     if (payloadVersion !== undefined) {
         searchParams.append(ForkSearchParameters.PayloadVersion, `${payloadVersion}`);
     }
+    if (extra?.unauthenticatedReturnUrl) {
+        searchParams.append(ForkSearchParameters.UnauthenticatedReturnUrl, extra.unauthenticatedReturnUrl);
+    }
     if (extra?.email) {
         searchParams.append(ExtraSessionForkSearchParameters.Email, `${extra.email}`);
     }

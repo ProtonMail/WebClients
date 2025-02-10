@@ -139,6 +139,7 @@ export interface ProduceForkParameters {
     promptBypass: 'none' | 'sso';
     payloadType: 'offline' | 'default';
     payloadVersion: 1 | 2;
+    unauthenticatedReturnUrl: string;
     email?: string;
     partnerId?: string;
 }
@@ -159,6 +160,18 @@ export const getProduceForkParameters = (
     const partnerId = searchParams.get(ForkSearchParameters.PartnerId) || '';
     const forkVersion = Number(searchParams.get(ForkSearchParameters.Version) || '1');
     const independent = searchParams.get(ForkSearchParameters.Independent) || '0';
+    const unauthenticatedReturnUrl = (() => {
+        const value = searchParams.get(ForkSearchParameters.UnauthenticatedReturnUrl) || '';
+        if (value) {
+            try {
+                const decodedValue = decodeURIComponent(value);
+                if (decodedValue.startsWith('/')) {
+                    return decodedValue;
+                }
+            } catch {}
+        }
+        return '';
+    })();
     const payloadType = (() => {
         const value = searchParams.get(ForkSearchParameters.PayloadType) || '';
         if (value === 'offline') {
@@ -206,6 +219,7 @@ export const getProduceForkParameters = (
         email,
         forkVersion,
         partnerId,
+        unauthenticatedReturnUrl,
     };
 };
 

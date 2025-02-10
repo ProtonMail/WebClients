@@ -42,6 +42,7 @@ export enum ForkSearchParameters {
     PromptBypass = 'promptBypass',
     Plan = 'plan',
     PartnerId = 'partnerId',
+    UnauthenticatedReturnUrl = 'uru',
 }
 
 export enum ExtraSessionForkSearchParameters {
