@@ -9778,8 +9778,8 @@
       "Sync and backup all your files across devices": [
         "Sincronitzeu i feu una còpia de seguretat de tots els fitxers entre dispositius."
       ],
-      "TOR over VPN": [
-        "TOR sobre VPN"
+      "Tor over VPN": [
+        "Tor sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticació de doble factor"
@@ -10810,8 +10810,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a instruir el vostre banc perquè debiti el vostre compte, i el banc a debitar el compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes des de la data del dèbit d'acord amb les condicions del vostre acord amb el banc."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a instruir el vostre banc perquè debiti el vostre compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes des de la data del dèbit d'acord amb les condicions del vostre acord amb el banc."
       ],
       "Street address, postal code, and city": [
         "Adreça, codi postal i ciutat"
@@ -13844,6 +13844,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adreça de correu electrònic de ${ BRAND_NAME }",
+        "${ n } adreces de correu electrònic de ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } compte per cartera",
         "${ n } comptes per cartera"
@@ -13857,6 +13861,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Adreça de correu electrònic de ${ MAIL_APP_NAME } xifrada i segura. Podeu enviar bitcoins fàcilment a qualsevol persona només amb el seu nom ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Intercanvieu bitcoins de manera segura per correu electrònic en comptes d’utilitzar adreces Bitcoin complexes de 26 caràcters que poden generar errors."
       ]
     },
     "wallet_signup_2024:Action": {
