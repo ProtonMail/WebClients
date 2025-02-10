@@ -328,8 +328,8 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
                                 currency={parsedCurrency}
                                 plan={plan}
                                 coupon={coupon}
-                                disablePlanSelection={disableCycleSelectorValue}
-                                disableCycleSelector={disablePlanSelectionValue}
+                                disablePlanSelection={disablePlanSelectionValue}
+                                disableCycleSelector={disableCycleSelectorValue}
                                 disableThanksStep
                                 onSubscribed={handleSuccess}
                                 onUnsubscribed={handleSuccess}
