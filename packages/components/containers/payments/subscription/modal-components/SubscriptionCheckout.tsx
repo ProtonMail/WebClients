@@ -7,6 +7,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import Badge from '@proton/components/components/badge/Badge';
 import Info from '@proton/components/components/link/Info';
+import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { type MethodsHook } from '@proton/components/payments/react-extensions';
@@ -43,6 +44,7 @@ import type {
 import Checkout from '../../Checkout';
 import { getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
+import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { getTotalBillingText } from '../helpers';
 import { AddonTooltip } from './helpers/AddonTooltip';
 import { BilledCycleText } from './helpers/BilledCycleText';
@@ -70,7 +72,8 @@ type Props = {
     paymentNeeded: boolean;
     paymentMethods: MethodsHook;
     user: UserModel;
-} & CheckoutModifiers;
+    couponConfig?: CouponConfigRendered;
+};
 
 export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscription: Subscription) => {
     const [user] = useUser();
@@ -108,6 +111,7 @@ const SubscriptionCheckout = ({
     paymentNeeded,
     paymentMethods,
     user,
+    couponConfig,
     ...checkoutModifiers
 }: Props & CheckoutModifiers) => {
     const { APP_NAME } = useConfig();
@@ -127,7 +131,16 @@ const SubscriptionCheckout = ({
         plansMap,
         checkResult,
     });
-    const { planTitle, usersTitle, addons, membersPerMonth, couponDiscount } = checkout;
+
+    const {
+        planTitle,
+        usersTitle,
+        addons,
+        membersPerMonth,
+        couponDiscount,
+        withDiscountPerCycle,
+        withDiscountPerMonth,
+    } = checkout;
 
     const plan = getPlanFromPlanIDs(plansMap, planIDs);
     const currencies = useAvailableCurrenciesForPlan(plan, subscription);
@@ -148,7 +161,7 @@ const SubscriptionCheckout = ({
 
     const proration = checkResult.Proration ?? 0;
     const credit = checkResult.Credit ?? 0;
-    const amount = checkResult.Amount || 0;
+    const amount = couponConfig?.hidden ? withDiscountPerCycle : checkResult.Amount;
     const amountDue = checkResult.AmountDue || 0;
     const giftValue = Math.abs(checkResult.Gift || 0);
 
@@ -157,6 +170,17 @@ const SubscriptionCheckout = ({
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
     const displayRenewNotice = isPaidPlanSelected && paymentNeeded;
+
+    const discountBadgeElement = (
+        <Badge
+            type="success"
+            tooltip={c('Info')
+                .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
+            className="ml-2 text-semibold absolute"
+        >
+            -{discountPercent}%
+        </Badge>
+    );
 
     return (
         <Checkout
@@ -187,49 +211,50 @@ const SubscriptionCheckout = ({
             <div className="mb-4 flex flex-column">
                 <span className="relative">
                     <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
-                    {discountPercent !== 0 && !loading && (
-                        <Badge
-                            type="success"
-                            tooltip={c('Info')
-                                .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
-                            className="ml-2 text-semibold absolute"
-                        >
-                            -{discountPercent}%
-                        </Badge>
-                    )}
+                    {discountPercent !== 0 && !loading && !couponConfig?.hidden && discountBadgeElement}
                 </span>
 
                 {isPaidPlanSelected && !isSpecialRenewPlan(planIDs) && !lifetimePlan && (
                     <BilledCycleText cycle={cycle} />
                 )}
             </div>
-            {lifetimePlan ? (
-                <div className="mb-4">{usersTitle}</div>
-            ) : (
-                <CheckoutRow
-                    title={usersTitle}
-                    amount={membersPerMonth}
-                    currency={currency}
-                    suffix={perMonthSuffix}
-                    loading={loading}
-                    data-testid="members-price-per-month"
-                />
-            )}
+            {(() => {
+                if (lifetimePlan) {
+                    return <div className="mb-4">{usersTitle}</div>;
+                }
+
+                const noAddonsAndCouponIsHidden = !!couponConfig?.hidden && addons.length === 0;
+
+                return (
+                    <CheckoutRow
+                        title={
+                            <>
+                                {usersTitle}
+                                {noAddonsAndCouponIsHidden ? discountBadgeElement : null}
+                            </>
+                        }
+                        amount={noAddonsAndCouponIsHidden ? withDiscountPerMonth : membersPerMonth}
+                        currency={currency}
+                        suffix={perMonthSuffix}
+                        loading={loading}
+                        data-testid="members-price-per-month"
+                    />
+                );
+            })()}
             {addons.map((addon) => {
+                const pricePerAddon = (addon.pricing[cycle] || 0) / cycle;
+                const addonAmount = addon.quantity * pricePerAddon;
+
                 return (
                     <CheckoutRow
                         key={addon.name}
                         title={
                             <>
                                 {addon.title}
-                                <AddonTooltip
-                                    addon={addon}
-                                    pricePerAddon={(addon.pricing[cycle] || 0) / cycle}
-                                    currency={currency}
-                                />
+                                <AddonTooltip addon={addon} pricePerAddon={pricePerAddon} currency={currency} />
                             </>
                         }
-                        amount={(addon.quantity * (addon.pricing[cycle] || 0)) / cycle}
+                        amount={addonAmount}
                         currency={currency}
                         loading={loading}
                         suffix={perMonthSuffix}
@@ -262,7 +287,7 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            {!!couponDiscount && (
+            {!!couponDiscount && !couponConfig?.hidden && (
                 <CheckoutRow
                     title={c('Title').t`Coupon`}
                     amount={couponDiscount}
@@ -322,7 +347,17 @@ const SubscriptionCheckout = ({
                 className="text-bold m-0 text-2xl"
                 data-testid="subscription-amout-due"
             />
+            {(() => {
+                if (!couponConfig?.renderAmountDueMessage) {
+                    return null;
+                }
 
+                return loading ? (
+                    <EllipsisLoader />
+                ) : (
+                    <div className="mb-4">{couponConfig.renderAmountDueMessage()}</div>
+                );
+            })()}
             <div className="my-4">{submit}</div>
             {amount > 0 && gift ? gift : null}
         </Checkout>

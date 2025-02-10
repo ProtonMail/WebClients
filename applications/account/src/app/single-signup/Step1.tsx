@@ -64,7 +64,7 @@ import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helper
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getHasValentinesCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import type { Cycle, CycleMapping, Plan, StrictPlan } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -81,6 +81,7 @@ import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
+import DiscountBanner from '../single-signup-v2/DiscountBanner';
 import { getFreeSubscriptionData, getSubscriptionMapping } from '../single-signup-v2/helper';
 import type { OptimisticOptions } from '../single-signup-v2/interface';
 import { getPaymentMethod } from '../single-signup-v2/measure';
@@ -889,6 +890,10 @@ const Step1 = ({
             );
         }
 
+        if (getHasValentinesCoupon(options.checkResult.Coupon?.Code)) {
+            return null;
+        }
+
         if (getHas2024OfferCoupon(options.checkResult.Coupon?.Code) && options.cycle === CYCLE.MONTHLY) {
             return null;
         }
@@ -1026,6 +1031,18 @@ const Step1 = ({
                         })()}
                     </h1>
                 </div>
+                {(() => {
+                    if (!getHasValentinesCoupon(options.checkResult.Coupon?.Code)) {
+                        return null;
+                    }
+
+                    return (
+                        <DiscountBanner
+                            discountPercent={actualCheckout.discountPercent}
+                            selectedPlanTitle={selectedPlan.Title}
+                        />
+                    );
+                })()}
                 {(mode === 'pricing' || mode === 'vpn-pass-promotion') && !isB2bPlan && (
                     <div
                         className={clsx(
