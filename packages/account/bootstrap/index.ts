@@ -146,11 +146,13 @@ export const loadSession = async ({
     api,
     pathname,
     searchParams,
+    unauthenticatedReturnUrl,
 }: {
     pathname: string;
     authentication: AuthenticationStore;
     api: ApiWithListener;
     searchParams: URLSearchParams;
+    unauthenticatedReturnUrl?: string;
 }): Promise<SessionPayloadData> => {
     if (authentication.ready) {
         api.UID = authentication.UID;
@@ -166,11 +168,12 @@ export const loadSession = async ({
 
     api.UID = undefined;
 
-    const extra = {
+    const extra: ExtraSessionForkData = {
         localID,
         email: getEmailSessionForkSearchParameter(searchParams),
         returnUrl: getReturnUrlParameter(searchParams),
         pathname,
+        unauthenticatedReturnUrl,
     };
 
     try {
