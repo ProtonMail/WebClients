@@ -94,3 +94,9 @@ export const LABELS_UNMODIFIABLE_BY_USER = [
 
 // List of location where messages are marked automatically as read after moving by the API
 export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
+
+export const MAIL_MOBILE_APP_LINKS = {
+    qrCode: 'https://proton.me/mailapp',
+    appStore: 'https://apps.apple.com/app/apple-store/id979659905',
+    playStore: 'https://play.google.com/store/apps/details?id=ch.protonmail.android',
+};

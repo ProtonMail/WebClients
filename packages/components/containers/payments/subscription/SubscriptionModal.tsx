@@ -172,15 +172,18 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                 disableThanksStep={postSubscriptionProps.disableThanksStep ?? rest.disableThanksStep}
                 {...rest}
                 render={({ onSubmit, title, content, footer, step, planIDs }) => {
+                    const isUpgradeOrThanks = [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step);
+                    const isCheckout = step === SUBSCRIPTION_STEPS.CHECKOUT;
+                    const isPlanSelection = step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
+
                     const modal = (
                         <ModalTwo
                             blurBackdrop={blurBackdrop}
                             className={clsx([
                                 subscriptionModalClassName,
-                                [SUBSCRIPTION_STEPS.PLAN_SELECTION, SUBSCRIPTION_STEPS.CHECKOUT].includes(step) &&
-                                    'subscription-modal--fixed-height',
-                                [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(step) && 'subscription-modal--large-width',
-                                [SUBSCRIPTION_STEPS.CHECKOUT].includes(step) && 'subscription-modal--medium-width',
+                                isPlanSelection && 'subscription-modal--fixed-height subscription-modal--large-width',
+                                isCheckout && 'subscription-modal--fixed-height subscription-modal--medium-width',
+                                isUpgradeOrThanks && 'modal-two--twocolors',
                             ])}
                             rootClassName={rootClassName}
                             data-testid="plansModal"
@@ -189,11 +192,11 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                             disableCloseOnEscape={disableCloseOnEscape}
                             fullscreen={fullscreen}
                             as="form"
-                            size="large"
+                            size={isUpgradeOrThanks ? undefined : 'large'}
                             onSubmit={onSubmit}
                         >
                             <ModalTwoHeader title={title} hasClose={hasClose} />
-                            <ModalTwoContent>{content}</ModalTwoContent>
+                            {isUpgradeOrThanks ? content : <ModalTwoContent>{content}</ModalTwoContent>}
                             {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
                         </ModalTwo>
                     );
