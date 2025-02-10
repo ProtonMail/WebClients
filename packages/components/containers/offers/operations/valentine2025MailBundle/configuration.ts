@@ -11,7 +11,6 @@ export const valentineMailBundle2025: OfferConfig = {
     ID: 'valentine-2025-mail-bundle',
     featureCode: FeatureCode.OfferValentine2025MailBundle,
     canBeDisabled: false,
-    autoPopUp: 'one-time',
     deals: [
         {
             ref: 'vd_25_mail_plus_web',

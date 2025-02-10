@@ -11,7 +11,6 @@ export const valentinePassBundle2025: OfferConfig = {
     ID: 'valentine-2025-pass-bundle',
     featureCode: FeatureCode.OfferValentine2025PassBundle,
     canBeDisabled: false,
-    autoPopUp: 'one-time',
     deals: [
         {
             ref: 'vd_25_pass_plus_web',

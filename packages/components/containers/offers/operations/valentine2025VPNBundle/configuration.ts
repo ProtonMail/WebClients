@@ -11,7 +11,6 @@ export const valentineVPNBundle2025: OfferConfig = {
     ID: 'valentine-2025-vpn-bundle',
     featureCode: FeatureCode.OfferValentine2025VPNBundle,
     canBeDisabled: false,
-    autoPopUp: 'one-time',
     deals: [
         {
             ref: 'vd_25_vpn_plus_web',
