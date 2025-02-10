@@ -26,6 +26,7 @@ import type {
     ItemRevision,
     MailboxDefaultDTO,
     MailboxDeleteDTO,
+    MailboxEditDTO,
     MaybeNull,
     RandomPrefixDTO,
     SelectedItem,
@@ -206,6 +207,37 @@ export const deleteMailbox = requestActionsFactory<MailboxDeleteDTO, number>('al
         prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to delete the mailbox`,
+                type: 'error',
+                error,
+            })({ payload }),
+    },
+});
+
+export const editMailbox = requestActionsFactory<MailboxEditDTO, UserMailboxOutput>('alias::mailboxes::edit')({
+    key: ({ mailboxID }) => mailboxID.toString(),
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                text: c('Error').t`Failed to change mailbox`,
+                type: 'error',
+                error,
+            })({ payload }),
+    },
+});
+
+export const cancelMailboxEdit = requestActionsFactory<number, number>('alias::mailboxes::cancel-edit')({
+    key: intKey,
+    success: {
+        prepare: (data) =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Mailbox change successfully cancelled`,
+            })({ payload: data }),
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                text: c('Error').t`Failed to cancel mailbox change`,
                 type: 'error',
                 error,
             })({ payload }),
