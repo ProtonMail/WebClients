@@ -15,7 +15,7 @@ import type { Maybe } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
-export const FORM_ID = 'email-verify';
+const FORM_ID = 'email-verify';
 
 export const SECONDS_BEFORE_RESEND = 60;
 

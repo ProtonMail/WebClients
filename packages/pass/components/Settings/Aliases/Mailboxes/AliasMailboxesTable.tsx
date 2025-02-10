@@ -43,39 +43,55 @@ export const AliasMailboxesTable: FC = () => {
                 {loading ? (
                     <TableRowLoading rows={1} cells={4} />
                 ) : (
-                    mailboxes.map(({ MailboxID, Email, Verified, IsDefault, AliasCount }) => (
+                    mailboxes.map(({ MailboxID, Email, Verified, IsDefault, AliasCount, PendingEmail }) => (
                         <AliasMailboxLoading mailboxID={MailboxID} key={MailboxID}>
-                            {(loading) => (
-                                <TableRow key={MailboxID} className={clsx(loading && 'pointer-events-none')}>
-                                    <TableCell label={c('Title').t`Mailbox`}>
-                                        <div className="flex items-center gap-2 flex-nowrap">
-                                            <span className="block text-ellipsis">{Email}</span>
-                                            {loading && <CircleLoader size="tiny" className="shrink-0" />}
-                                        </div>
-                                    </TableCell>
-                                    <TableCell label={c('Title').t`Aliases`}>{AliasCount}</TableCell>
-                                    <TableCell>
-                                        <div className="flex justify-start lg:justify-center">
-                                            {IsDefault ? (
-                                                <Badge type="primary" className="text-center">{c('Title')
-                                                    .t`Default`}</Badge>
-                                            ) : (
-                                                !Verified && (
-                                                    <Button
-                                                        shape="ghost"
-                                                        style={{ padding: 0 }}
-                                                        onClick={() => handleVerifyClick(MailboxID)}
+                            {(loading) => {
+                                const verificationRequired = Boolean(!Verified || PendingEmail);
+                                return (
+                                    <TableRow key={MailboxID} className={clsx(loading && 'pointer-events-none')}>
+                                        <TableCell label={c('Title').t`Mailbox`}>
+                                            <div className="flex items-center gap-2 flex-nowrap">
+                                                <div>
+                                                    <span
+                                                        className={clsx(
+                                                            'block text-ellipsis',
+                                                            PendingEmail && 'color-weak'
+                                                        )}
                                                     >
-                                                        <Badge type="light" className="m-0">{c('Info')
-                                                            .t`Unverified`}</Badge>
-                                                    </Button>
-                                                )
-                                            )}
-                                        </div>
-                                    </TableCell>
-                                    <TableCell>
-                                        <div className="flex justify-end">
-                                            {!IsDefault && (
+                                                        {Email}
+                                                    </span>
+                                                    {PendingEmail && (
+                                                        <span className="block text-ellipsis">
+                                                            {'→ '}
+                                                            <span className="">{PendingEmail}</span>
+                                                        </span>
+                                                    )}
+                                                </div>
+                                                {loading && <CircleLoader size="tiny" className="shrink-0" />}
+                                            </div>
+                                        </TableCell>
+                                        <TableCell label={c('Title').t`Aliases`}>{AliasCount}</TableCell>
+                                        <TableCell>
+                                            <div className="flex justify-start lg:justify-center">
+                                                {IsDefault ? (
+                                                    <Badge type="primary" className="text-center">{c('Title')
+                                                        .t`Default`}</Badge>
+                                                ) : (
+                                                    verificationRequired && (
+                                                        <Button
+                                                            shape="ghost"
+                                                            style={{ padding: 0 }}
+                                                            onClick={() => handleVerifyClick(MailboxID)}
+                                                        >
+                                                            <Badge type="light" className="m-0">{c('Info')
+                                                                .t`Unverified`}</Badge>
+                                                        </Button>
+                                                    )
+                                                )}
+                                            </div>
+                                        </TableCell>
+                                        <TableCell>
+                                            <div className="flex justify-end">
                                                 <QuickActionsDropdown
                                                     icon="three-dots-horizontal"
                                                     color="weak"
@@ -86,23 +102,43 @@ export const AliasMailboxesTable: FC = () => {
                                                     originalPlacement="bottom-end"
                                                     disabled={loading}
                                                 >
-                                                    <DropdownMenuButton
-                                                        disabled={!Verified || setDefault.loading}
-                                                        label={c('Action').t`Make default`}
-                                                        onClick={() =>
-                                                            setDefault.dispatch({ defaultMailboxID: MailboxID })
-                                                        }
-                                                        loading={setDefault.loading}
-                                                    />
-                                                    {!Verified && (
+                                                    {!IsDefault && (
+                                                        <DropdownMenuButton
+                                                            disabled={verificationRequired || setDefault.loading}
+                                                            label={c('Action').t`Make default`}
+                                                            onClick={() =>
+                                                                setDefault.dispatch({ defaultMailboxID: MailboxID })
+                                                            }
+                                                            loading={setDefault.loading}
+                                                        />
+                                                    )}
+                                                    {verificationRequired && (
                                                         <DropdownMenuButton
                                                             label={c('Action').t`Verify`}
                                                             onClick={() => handleVerifyClick(MailboxID)}
                                                         />
                                                     )}
+                                                    {PendingEmail ? (
+                                                        <DropdownMenuButton
+                                                            label={c('Action').t`Cancel email change`}
+                                                            onClick={() =>
+                                                                setAction({
+                                                                    type: 'cancel-edit',
+                                                                    mailboxID: MailboxID,
+                                                                })
+                                                            }
+                                                        />
+                                                    ) : (
+                                                        <DropdownMenuButton
+                                                            label={c('Action').t`Change email`}
+                                                            onClick={() =>
+                                                                setAction({ type: 'edit', mailboxID: MailboxID })
+                                                            }
+                                                        />
+                                                    )}
                                                     <DropdownMenuButton
                                                         label={c('Action').t`Delete`}
-                                                        disabled={mailboxes.length === 1}
+                                                        disabled={IsDefault || mailboxes.length === 1}
                                                         onClick={() =>
                                                             // skip confirmation modal if not verified
                                                             Verified
@@ -111,11 +147,11 @@ export const AliasMailboxesTable: FC = () => {
                                                         }
                                                     />
                                                 </QuickActionsDropdown>
-                                            )}
-                                        </div>
-                                    </TableCell>
-                                </TableRow>
-                            )}
+                                            </div>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            }}
                         </AliasMailboxLoading>
                     ))
                 )}
