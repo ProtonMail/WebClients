@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -6955,11 +6955,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
-      "active": [
-        "aktiv"
-      ],
       "Active": [
         "Aktiv"
+      ],
+      "active": [
+        "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -11193,6 +11193,9 @@
       "Vulnerable": [
         "Sårbart"
       ],
+      "Vulnerable password": [
+        "Sårbart lösenord"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Tråkigt att du lämnar oss. Vill du vara snäll och berätta varför du lämnar oss för att hjälpa oss bli bättre."
       ],
@@ -11502,6 +11505,9 @@
       "Privacy policy": [
         "Integritetspolicy"
       ],
+      "privacy policy": [
+        "integritetspolicy"
+      ],
       "Reactivate now": [
         "Återaktivera nu"
       ],
@@ -11677,9 +11683,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Tidsbegränsat erbjudande: **Få upp till 35 % rabatt** på årliga paket"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Tidsbegränsat erbjudande: **Spara ${ discount } på ${ name } med ett 1-årigt paket**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Ställ in ditt konto med din Porkbun-domän."
@@ -12593,8 +12596,8 @@
       "Tailored to your needs": [
         "Skräddarsytt efter dina behov"
       ],
-      "TOR over VPN": [
-        "TOR över VPN"
+      "Tor over VPN": [
+        "Tor över VPN"
       ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
@@ -14060,6 +14063,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan låsa upp **${ unlockPlanTitle }** och alla premiumtjänster för ${ BRAND_NAME } genom att uppgradera till **${ upsellPlanTitle }**."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Genom att fortsätta så godkänner du våra ${ termsAndConditionsLink } och ${ privacyPolicyLink }."
+      ],
       "Creating your account": [
         "Skapar ditt konto"
       ],
@@ -14543,9 +14549,6 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto och din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdatumet, enligt villkoren i ditt avtal med din bank."
-      ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
       ]
@@ -16693,6 +16696,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -16981,47 +17025,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -18395,7 +18398,7 @@
       "PayPal verification failed": [
         "Verifiering av PayPal misslyckades"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Personifiera sidfoten för din e-post"
       ],
       "Personalize your email footer": [
@@ -18938,29 +18941,6 @@
         "Idag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp och inga krypterade resurser kommer att delas med denna användare."
-      ],
-      "Group membership paused": [
-        "Gruppmedlemskap pausad"
-      ],
-      "Sending member invitation": [
-        "Skickar medlemsinbjudan"
-      ],
-      "User declined invitation": [
-        "Användare avböjde inbjudan"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Väntar på att användaren ska acceptera inbjudan"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Användare av ${ MAIL_APP_NAME } kommer använda denna nyckel som standard för att skicka"
@@ -19174,6 +19154,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ditt externa konto kan ha nått sin bandbreddsgräns för det här dygnet. ${ BRAND_NAME } kommer att försöka återuppta importen så snart som möjligt."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp och inga krypterade resurser kommer att delas med denna användare."
+      ],
+      "Group membership paused": [
+        "Gruppmedlemskap pausad"
+      ],
+      "Sending member invitation": [
+        "Skickar medlemsinbjudan"
+      ],
+      "User declined invitation": [
+        "Användare avböjde inbjudan"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Väntar på att användaren ska acceptera inbjudan"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19710,14 +19713,47 @@
         "${ n } plånbok",
         "${ n } plånböcker"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }-program"
+      ],
       "A safer way to hold your Bitcoin": [
         "Ett säkrare sätt att hålla din Bitcoin"
+      ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Krypterad och säker ${ MAIL_APP_NAME } e-postadress. Du kan enkelt skicka Bitcoin till vem som helst med bara deras ${ BRAND_NAME } namn."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Krypterad molnlagring för foton och dokument"
+      ],
+      "Encrypted email and file storage": [
+        "Krypterad e-post och fillagring"
+      ],
+      "Encrypted password manager": [
+        "Krypterad lösenordshanterare"
+      ],
       "Exclusive early access to ${ appName }.": [
         "Exklusiv förhandstillgång till ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Vårt mest exklusiva paket. Få förhandstillgång till nya funktioner och alla premium ${ BRAND_NAME } tjänster."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Växla Bitcoin säkert via e-post istället för komplexa, 26-teckniga Bitcoin-adresser som är benägna att ge upphov till fel"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Håll Bitcoin säkert och utför transaktioner utan kostnad."
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Ta kontroll över alla dina data med premium ${ BRAND_NAME } tjänster."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultrasnabb och privat VPN"
       ],
       "You're Invited.": [
         "Du är inbjuden."
