@@ -353,16 +353,17 @@ const Composer = (
     // TODO: Execute this method only if assistant is opened
     // Might need a useEffect is user opens on selection but
     // as this method could affect performances, we need to be sure it's only called when needed
-    const handleEditorSelection = () => {
-        // Need to wait for a processor tick to get Rooster method work efficiently
-        setTimeout(() => {
+    // in the meantime a debounce is applied to avoid too many calls
+    const handleEditorSelection = useHandler(
+        () => {
             if (editorRef.current) {
                 const selectedText = editorRef.current.getSelectionContent();
                 const cleanedText = selectedText ? removeLineBreaks(selectedText).trim() : '';
                 setSelectedText(cleanedText);
             }
-        }, 0);
-    };
+        },
+        { debounce: 150 }
+    );
 
     const handleSetEditorSelection = (textToInsert: string) => {
         if (editorRef.current) {
