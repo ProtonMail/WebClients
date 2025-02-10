@@ -5,6 +5,7 @@ import { authStore, decodeUserData } from '@proton/pass/lib/auth/store';
 import type { SwitchableSession } from '@proton/pass/lib/auth/switch';
 import type { Maybe } from '@proton/pass/types/utils';
 import { first } from '@proton/pass/utils/array/first';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
@@ -76,3 +77,23 @@ export const getSwitchableSessions = (): SwitchableSession[] =>
 /** Resolves the most recent used localID */
 export const getDefaultLocalID = (sessions: EncryptedAuthSession[]): Maybe<number> =>
     first(sessions.sort(sortOn('lastUsedAt')))?.LocalID;
+
+export const PENDING_REVOKE_KEY = `rs`;
+
+export const getPendingRevocations = (): string[] => {
+    const UIDs = safeCall(() => {
+        const data = localStorage.getItem(PENDING_REVOKE_KEY);
+        if (!data) return [];
+        return JSON.parse(data);
+    })();
+
+    return Array.isArray(UIDs) ? (UIDs as string[]) : [];
+};
+
+export const setPendingRevocation = (UID: string): void => {
+    const UIDs = getPendingRevocations();
+    UIDs.push(UID);
+    localStorage.setItem(PENDING_REVOKE_KEY, JSON.stringify(UIDs));
+};
+
+export const clearPendingRevocations = () => localStorage.removeItem(PENDING_REVOKE_KEY);

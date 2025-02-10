@@ -18,7 +18,7 @@ import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { generateClientKey } from '@proton/shared/lib/authentication/clientKey';
 import type { ForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
@@ -111,6 +111,10 @@ export interface AuthServiceConfig {
      * session is detected). The `broadcast` flag indicates wether we should
      * broadcast the unauthorized session to other clients. */
     onLogoutComplete?: (userID: Maybe<string>, localID: Maybe<number>, broadcast: boolean) => void;
+    /** Called during a hard logout sequence if we couldn't properly revoke the session.
+     * This can be the case when revoking a session offline due to too many failed unlocks.
+     * Only the session `UID` is passed (should be stored to revoke after) */
+    onLogoutFailure?: (UID: string) => void;
     /** Called right before consuming a fork. Will not be called in the
      * case of a "reauth" fork (see `onForkReauth`) */
     onForkConsumeStart?: () => MaybePromise<void>;
@@ -259,7 +263,16 @@ export const createAuthService = (config: AuthServiceConfig) => {
             const localID = authStore.getLocalID();
             const userID = authStore.getUserID();
 
-            if (!options?.soft) await api({ ...revoke(), silence: true }).catch(noop);
+            if (!options?.soft) {
+                await api({ ...revoke(), silence: true }).catch((err) => {
+                    if (getIsOfflineError(err)) {
+                        const UID = authStore.getUID();
+                        logger.info(`[AuthService] Session not fully revoked`);
+                        return UID && config.onLogoutFailure?.(UID);
+                    }
+                });
+            }
+
             logger.info(`[AuthService] User is not authorized`);
 
             await api.reset();

@@ -37,10 +37,11 @@ import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type MaybeNull } from '@proton/pass/types';
+import { AppStatus, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { revoke } from '@proton/shared/lib/api/auth';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     getBasename,
@@ -57,11 +58,14 @@ import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import {
+    clearPendingRevocations,
     getDefaultLocalID,
+    getPendingRevocations,
     getPersistedLocalIDsForUserID,
     getPersistedSession,
     getPersistedSessions,
     getSessionKey,
+    setPendingRevocation,
 } from './sessions';
 
 type AuthServiceBindings = {
@@ -276,6 +280,8 @@ export const createAuthService = ({
             history.replace('/');
         },
 
+        onLogoutFailure: setPendingRevocation,
+
         onMissingScope: () => {
             flushSync(() => app.setStatus(AppStatus.MISSING_SCOPE));
             history.replace('/');
@@ -394,8 +400,21 @@ export const createAuthService = ({
 
         onForkInvalid: () => history.replace('/'),
 
-        onForkRequest: ({ url, state }, data) => {
+        onForkRequest: async ({ url, state }, data) => {
+            const revokedUIDs = getPendingRevocations();
+
+            /** When requesting a fork, attempt to revoke any pending sessions that were
+             * flagged during offline mode. This ensures sessions revoked locally are
+             * also revoked BE-side before proceeding with the request and forcing reauth. */
+            for (const UID of revokedUIDs) {
+                await api({ ...revoke(), sideEffects: false, auth: { type: AuthMode.COOKIE, UID } })
+                    .then(() => logger.info(`[AuthServiceProvider] Revoked ${UID}`))
+                    .catch(noop);
+            }
+
+            clearPendingRevocations();
             sessionStorage.setItem(getStateKey(state), JSON.stringify(data ?? redirect.data));
+
             window.location.replace(url);
         },
 
