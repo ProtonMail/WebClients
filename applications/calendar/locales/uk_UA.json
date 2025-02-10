@@ -7067,9 +7067,6 @@
       "Sync and backup all your files across devices": [
         "Синхронізуйте та створюйте резервні копії всіх файлів на різних пристроях"
       ],
-      "TOR over VPN": [
-        "Tor через VPN"
-      ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
       ],
@@ -8104,9 +8101,6 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Підтверджуючи цей платіж, ви дозволяєте ${ BRAND_NAME } і Stripe, нашому постачальнику платіжних послуг, доручити вашому банку списати кошти з вашого рахунку, а вашому банку - списати кошти з вашого рахунку. Ви можете отримати відшкодування протягом 8 тижнів з дати списання коштів, відповідно до умов вашого договору з вашим банком."
-      ],
       "Street address, postal code, and city": [
         "Вулиця, поштовий код та місто"
       ]
@@ -10514,6 +10508,20 @@
         "${ n } гаманців"
       ],
       "A safer way to hold your Bitcoin": [
+        "Безпечніший спосіб зберігання Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin е-поштою"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Зашифрована та безпечна ${ MAIL_APP_NAME } адреса електронної пошти. Ви можете легко надіслати Bitcoin будь-кому, використовуючи лише їх ${ BRAND_NAME } ім’я."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Безпечно обмінюйтесь Bitcoin електронною поштою замість складних, 26-символьних адрес Bitcoin, схильних до помилок"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
         "Безпечніший спосіб зберігання Bitcoin"
       ]
     },

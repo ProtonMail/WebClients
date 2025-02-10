@@ -805,6 +805,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Overenie zlyhalo. Potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli pokračovať v exporte"
       ],
+      "Biometric authentication failed": [
+        "Biometrické overenie zlyhalo"
+      ],
       "Cannot send invitation at the moment": [
         "Momentálne nie je možné odoslať pozvánku",
         "Momentálne nie je možné odoslať pozvánky",
@@ -1380,6 +1383,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše heslo do ${ BRAND_NAME }"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše záložné heslo"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše doplnkové heslo"
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
       ],
@@ -1647,6 +1656,9 @@
       "Expires in ${ remainingTime }": [
         "Vyprší o ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Exportujeme vaše dáta..."
+      ],
       "Extra password successfully created": [
         "Dodatočné heslo bolo úspešne vytvorené"
       ],
@@ -1659,8 +1671,11 @@
       "finance": [
         "financie"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
+      "Follow those steps to import your data with a generic CSV:": [
         "Pre importovanie údajov pomocou všeobecného CSV súboru, postupujte nasledovne:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Z bezpečnostných dôvodov si táto akcia vyžaduje overenie totožnosti."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k tomuto zdieľanému trezoru",
@@ -1694,6 +1709,9 @@
       ],
       "How does monitoring work?": [
         "Ako monitorovanie funguje?"
+      ],
+      "Identity confirmed": [
+        "Identita potvrdená"
       ],
       "Import in progress:": [
         "Prebieha import:"
@@ -1932,11 +1950,38 @@
       "Please check your spam folder or try resending the code.": [
         "Skontrolujte priečinok so spamom alebo skúste kód poslať znova."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Potvrďte svoje ${ BRAND_NAME } heslo pre deaktiváciu offline režimu"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potvrďte svoje ${ BRAND_NAME } heslo na povolenie offline režimu"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Potvrďte vaše záložné heslo, prosím"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Potvrďte, prosím, vaše záložné heslo pre automatické uzamknutie pomocou biometrie."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Potvrďte, prosím, vaše záložné heslo pre automatické uzamknutie pomocou vášho hesla."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Potvrďte svoje záložné heslo na deaktiváciu offline režimu"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Potvrďte svoje záložné heslo na povolenie offline režimu"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Potvrďte, prosím, vaše záložné heslo, aby ste mohli exportovať vaše údaje z ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Potvrďte, prosím, vaše záložné heslo pre zrušenie vášho aktuálneho zámku."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Pre aktualizovanie času automatického uzamknutia potvrďte svoje záložné heslo, prosím."
       ],
       "Please confirm your extra password": [
         "Potvrďte vaše dodatočné heslo, prosím"
@@ -1946,6 +1991,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Pre automatické uzamknutie pomocou dodatočného hesla potvrďte svoje dodatočné heslo, prosím."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Potvrďte svoje doplnkové heslo na deaktiváciu offline režimu"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Potvrďte svoje doplnkové heslo na povolenie offline režimu"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte, prosím, vaše dodatočné heslo, aby ste mohli exportovať vaše údaje z ${ PASS_APP_NAME }"
@@ -2328,6 +2379,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosiahli ste maximálnu povolenú dĺžku ${ maxLength } znakov."
       ],
+      "You may close this tab.": [
+        "Túto kartu môžete zatvoriť."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Po overení domény si budete môcť prispôsobiť nastavenia domény (aliasy doménových košov, predvolené zobrazované meno pre aliasy atď.)."
       ],
@@ -2542,6 +2596,9 @@
       ],
       "Auto-lock after": [
         "Automatické uzamknutie po"
+      ],
+      "Backup password": [
+        "Záložné heslo"
       ],
       "Beta Access": [
         "Beta prístup"
@@ -3603,6 +3660,9 @@
       "Confirm extra password": [
         "Potvrďte dodatočné heslo"
       ],
+      "Confirm identity": [
+        "Potvrďte identitu"
+      ],
       "Confirm PIN code": [
         "Potvrdiť PIN kód"
       ],
@@ -3689,6 +3749,9 @@
       ],
       "Enter coupon code": [
         "Zadajte kód kupónu"
+      ],
+      "Enter your backup password": [
+        "Zadajte vaše záložné heslo"
       ],
       "Enter your extra password": [
         "Zadajte vaše dodatočné heslo"

@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -11081,9 +11081,6 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Tidsbegrænset tilbud: **Få op til 35% rabat** på års-abonnementer"
       ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Tidsbegrænset tilbud: **Spar ${ discount } på ${ name } med et 1-årigt abonnement**."
-      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blevet inviteret til at prøve ${ MAIL_APP_NAME }"
       ]
@@ -11962,9 +11959,6 @@
       ],
       "Tailored to your needs": [
         "Skræddersyet til dine behov"
-      ],
-      "TOR over VPN": [
-        "Tor over VPN"
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
@@ -15647,6 +15641,47 @@
         "Til ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -15920,47 +15955,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -17743,23 +17737,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
-      ],
-      "Group membership paused": [
-        "Gruppemedlemskab sat på pause"
-      ],
-      "Sending member invitation": [
-        "Sender medlemsinvitation"
-      ],
-      "User declined invitation": [
-        "Bruger afviste invitation"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Venter på, at brugeren accepterer invitationen"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Brugere af ${ MAIL_APP_NAME } vil som standard bruge denne nøgle til afsendelse"
@@ -17952,6 +17929,23 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ],
+      "Group membership paused": [
+        "Gruppemedlemskab sat på pause"
+      ],
+      "Sending member invitation": [
+        "Sender medlemsinvitation"
+      ],
+      "User declined invitation": [
+        "Bruger afviste invitation"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Venter på, at brugeren accepterer invitationen"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -18410,14 +18404,52 @@
         "${ n } wallet",
         "${ n } wallets"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }-program"
+      ],
       "A safer way to hold your Bitcoin": [
         "En sikrere måde at gemme dine Bitcoin på"
+      ],
+      "Advanced account protection": [
+        "Avanceret kontobeskyttelse"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Krypteret og sikker ${ MAIL_APP_NAME } e-mailadresse. De kan nemt send Bitcoin til enhver, blot med Deres ${ BRAND_NAME } navn."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Krypteret sky-lagring til billeder og dokumenter"
+      ],
+      "Encrypted password manager": [
+        "Krypteret adgangskodehåndtering"
       ],
       "Exclusive early access to ${ appName }.": [
         "Eksklusiv tidlig adgang til ${ appName }."
       ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Vores mest eksklusive abonnement. Få tidlig adgang til nye funktioner og alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Udveksl Bitcoin sikkert via e-mail i stedet for komplekse, 26-tegns Bitcoin-adresser, der er tilbøjelige til fejl"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Opbevar og gennemfør Bitcoin-transaktioner sikkert og gratis."
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Tag kontrol over alle dine data med premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultra hurtig og privat VPN"
+      ],
       "You're Invited.": [
         "Du er inviteret."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "En sikrere måde at gemme Bitcoin på"
       ]
     },
     "wallet_signup_2024:Bug category": {

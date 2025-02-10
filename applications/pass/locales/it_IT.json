@@ -799,6 +799,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autenticazione non riuscita. Conferma la password del tuo account ${ BRAND_NAME } per procedere con l'esportazione."
       ],
+      "Biometric authentication failed": [
+        "Autenticazione biometrica non riuscita"
+      ],
       "Cannot send invitation at the moment": [
         "Impossibile spedire l'invito al momento",
         "Impossibile spedire gli inviti al momento"
@@ -1340,6 +1343,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password di backup."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "L'accesso a ${ PASS_APP_NAME } richiederà sempre la tua password extra."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà l'impronta digitale o il PIN del dispositivo."
       ],
@@ -1607,6 +1616,9 @@
       "Expires in ${ remainingTime }": [
         "Scade tra ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Esportazione dei dati..."
+      ],
       "Extra password successfully created": [
         "Password aggiuntiva creata"
       ],
@@ -1619,8 +1631,11 @@
       "finance": [
         "dati finanziari"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
+      "Follow those steps to import your data with a generic CSV:": [
         "Segui quei passaggi per importare i tuoi dati con un file CSV generico:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Per motivi di sicurezza, questa azione richiede la verifica dell'identità."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Per motivi di sicurezza, è necessario confermare l'accesso a questa cassaforte condivisa",
@@ -1650,6 +1665,9 @@
       ],
       "How does monitoring work?": [
         "Come funziona il monitoraggio?"
+      ],
+      "Identity confirmed": [
+        "Identità confermata"
       ],
       "Import in progress:": [
         "Importazione in corso:"
@@ -1876,11 +1894,38 @@
       "Please check your spam folder or try resending the code.": [
         "Controlla la cartella spam o prova a inviare nuovamente il codice."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Conferma la password dell'account ${ BRAND_NAME } per disabilitare la modalità offline"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Conferma la password dell'account ${ BRAND_NAME } per abilitare la modalità offline"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la password del tuo account ${ BRAND_NAME } per esportare i dati di ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Conferma la tua password di backup"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Conferma la tua password di backup per abilitare il blocco automatico con biometria."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Conferma la tua password di backup per abilitare il blocco automatico con password."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Conferma la password di backup dell'account per disabilitare la modalità offline"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Conferma la password di backup dell'account per abilitare la modalità offline"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Conferma la tua password di backup per esportare i dati di ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Conferma la tua password di backup per disabilitare il blocco attuale."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Conferma la tua password di backup per aggiornare il periodo di blocco automatico."
       ],
       "Please confirm your extra password": [
         "Conferma la tua password aggiuntiva"
@@ -1890,6 +1935,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Conferma la tua password aggiuntiva per abilitare il blocco automatico con la password aggiuntiva."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Conferma la password extra dell'account per disabilitare la modalità offline"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Conferma la password extra dell'account per abilitare la modalità offline"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la tua password aggiuntiva per esportare i dati di ${ PASS_APP_NAME }"
@@ -2237,8 +2288,8 @@
         "Non puoi cambiare le caselle di posta associate a questo alias."
       ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Hai un alias ${ aliasCount } presente in SimpleLogin ma mancante in ${ PASS_APP_NAME }. Desideri sincronizzarlo?",
-        "Hai alias ${ aliasCount } presenti in SimpleLogin ma mancanti in ${ PASS_APP_NAME }. Desideri sincronizzarli?"
+        "Hai ${ aliasCount } alias presente in SimpleLogin ma mancante in ${ PASS_APP_NAME }. Desideri sincronizzarlo?",
+        "Hai ${ aliasCount } alias presenti in SimpleLogin ma mancanti in ${ PASS_APP_NAME }. Desideri sincronizzarli?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Hai ancora ${ daysRemaining } giorno per provare queste e le altre funzionalità premium.",
@@ -2261,6 +2312,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Hai raggiunto la lunghezza massima consentita di ${ maxLength } caratteri."
+      ],
+      "You may close this tab.": [
+        "Puoi chiudere questa scheda."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Potrai personalizzare le impostazioni del tuo dominio (alias email catch-all, nome visualizzato predefinito per gli alias ecc...) dopo aver verificato il tuo dominio."
@@ -2452,6 +2506,9 @@
       ],
       "Auto-lock after": [
         "Blocca automaticamente dopo"
+      ],
+      "Backup password": [
+        "Password di backup"
       ],
       "Beta Access": [
         "Accesso beta"
@@ -3505,6 +3562,9 @@
       "Confirm extra password": [
         "Conferma la password aggiuntiva"
       ],
+      "Confirm identity": [
+        "Conferma identità"
+      ],
       "Confirm PIN code": [
         "Conferma il codice PIN"
       ],
@@ -3589,6 +3649,9 @@
       ],
       "Enter coupon code": [
         "Inserisci il codice del coupon"
+      ],
+      "Enter your backup password": [
+        "Inserisci la tua password di backup"
       ],
       "Enter your extra password": [
         "Inserisci la password aggiuntiva"

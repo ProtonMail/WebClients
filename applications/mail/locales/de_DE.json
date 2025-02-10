@@ -546,6 +546,9 @@
       "Get started": [
         "Erste Schritte"
       ],
+      "Get the app": [
+        "App herunterladen"
+      ],
       "Get the browser extension": [
         "Hol dir die Browsererweiterung"
       ],
@@ -599,6 +602,9 @@
       ],
       "Hide messages": [
         "Nachrichten ausblenden"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ],
       "Hide toolbar": [
         "Symbolleiste verstecken"
@@ -1790,6 +1796,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, ${ DARK_WEB_MONITORING_NAME } und mehr."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -1926,6 +1935,9 @@
       "Create label": [
         "Kategorie erstellen"
       ],
+      "Discover and set up features": [
+        "Entdecken und Funktionen einrichten"
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -1937,6 +1949,9 @@
       ],
       "Remind me later": [
         "Später erneut fragen"
+      ],
+      "Set up other features": [
+        "Andere Funktionen einrichten"
       ],
       "Take a tour": [
         "Rundgang"
@@ -5146,6 +5161,11 @@
         "Sehr klein"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Datum: Am ${ date }"
@@ -5703,6 +5723,9 @@
       ],
       "ICS file": [
         "ICS-Datei"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5898,6 +5921,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } schützt dein Konto durch gezielte Überwachung verdächtiger Aktivitäten."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } Ordner gefunden",
         "${ providerFoldersNumLocalized } Ordner gefunden"
@@ -5983,6 +6009,9 @@
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
+      ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Greife auf mehr als 6.500 Hochgeschwindigkeitsserver auf bis zu 10 Geräten zu, um deine Browsing-Daten zu schützen. Verfügbar für ${ ios }, ${ android }, ${ appleTV } und ${ desktop }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
@@ -6289,6 +6318,12 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Wusstest du? Wir haben eine kürzere E-Mail-Adresse nur für dich reserviert. Sie besteht aus deinem Benutzernamen, gefolgt von „@${ PM_DOMAIN }“."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Entdecke die neuen Funktionen, die freigeschaltet wurden, und probiere sie gleich aus!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Entdecke die neuen Funktionen, die mit ${ planTitle } freigeschaltet wurden, und probiere sie gleich aus!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
       ],
@@ -6386,12 +6421,18 @@
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-Mails, die vor mehr als 30 Tagen in Papierkorb und Spam verschoben wurden, werden automatisch gelöscht."
+      ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-Mails, die mit der Kategorie ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
       ],
       "embedded image": [
         "eingebettetes Bild",
         "eingebettete Bilder"
+      ],
+      "Enabling auto-deletion…": [
+        "Automatisches Löschen wird aktiviert…"
       ],
       "Encrypt message": [
         "Nachricht verschlüsseln"
@@ -6459,6 +6500,12 @@
       ],
       "Folder": [
         "Ordner"
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Für weitere Informationen und zur Aufhebung von Einschränkungen melde dich bitte unter ${ mailLink } an."
+      ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Lade unsere ${ androidAppLink } oder ${ iosAppLink } herunter, um jederzeit auf deine E-Mails zugreifen zu können und ein optimiertes mobiles Erlebnis zu haben."
       ],
       "For messages newer than ${ oldestDate }": [
         "Für Nachrichten, die neuer sind als ${ oldestDate }"
@@ -6594,6 +6641,9 @@
       ],
       "Invite family members and get everything up and running.": [
         "Lade Familienmitglieder ein und bringe alles zum Laufen."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Lade eine Person ein, mit der du dein ${ protonDuoPlanName }-Abonnement teilen möchtest."
       ],
       "JCB logo": [
         "JCB-Logo"
@@ -6942,6 +6992,9 @@
       "Public sharing of documents is not yet supported.": [
         "Die öffentliche Freigabe von Dokumenten wird noch nicht unterstützt."
       ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Wende dich an uns, wenn du Hilfe zu ${ BRAND_NAME } benötigst."
+      ],
       "Recipient: ": [
         "Empfänger: "
       ],
@@ -7029,6 +7082,9 @@
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Sende eine verschlüsselte, passwortgeschützte Nachricht an eine ${ boldText } E-Mail-Adresse."
+      ],
+      "Send messages at just the right now": [
+        "Versende Nachrichten genau zur richtigen Zeit."
       ],
       "Sender has been blocked.": [
         "Der Absender wurde blockiert."
@@ -7128,6 +7184,9 @@
       ],
       "Switch to": [
         "Wechseln zu"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Synchronisiere und verwalte Dateien mit der ${ DRIVE_APP_NAME } App. Erstelle und teile Dokumente in ${ DOCS_APP_NAME }, und speichere sie sicher. Alles auf ${ ios }, ${ android } und ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
@@ -7629,6 +7688,9 @@
       "You do not have any messages here": [
         "Noch keine Nachrichten vorhanden"
       ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Du wirst benachrichtigt, wenn dein Passwort oder andere Daten vom Dienst eines Drittanbieters preisgegeben wurden."
+      ],
       "You have ${ unread } in your inbox.": [
         "Du hast ${ unread } in deinem Posteingang."
       ],
@@ -7854,6 +7916,9 @@
       ],
       "Trusted": [
         "Vertrauenswürdig"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -9471,6 +9536,9 @@
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
       ],
+      "Breach alerts": [
+        "Warnung bei Datendiebstahl"
+      ],
       "Calendar sharing": [
         "Kalenderfreigabe"
       ],
@@ -9653,6 +9721,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Secure file storage and sharing": [
+        "Sichere Dateispeicherung und -freigabe"
+      ],
       "Secure link sharing": [
         "Sicheres Teilen von Links"
       ],
@@ -9689,7 +9760,7 @@
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor über VPN"
       ],
       "Two-factor authentication": [
@@ -9889,6 +9960,9 @@
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceMailPlus } frei. Jederzeit kündbar."
       ]
     },
     "new_plans: title": {
@@ -10287,8 +10361,14 @@
       "Free": [
         "Kostenlos"
       ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Vorherige Dateiversionen wiederherstellen"
       ],
       "Storage": [
         "Speicherplatz"
@@ -10404,6 +10484,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Verwende die kürzere, eingängigere Version deiner E-Mail Adresse."
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Wähle zunächst einen Anzeigenamen aus. Diesen werden deine Empfänger sehen, wenn du ihnen eine E-Mail sendest, sie zu einem Termin einlädst oder eine Datei mit ihnen teilst."
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Willkommen bei ${ MAIL_APP_NAME }"
@@ -10688,9 +10771,14 @@
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto zu belasten, und deine Bank, dein Konto entsprechend zu belasten. Du kannst innerhalb von 8 Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen, sofern du mit deiner Bank eine entsprechende Vereinbarung getroffen hast."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto entsprechend zu belasten. Du kannst gemäß den Bedingungen deiner Vereinbarung mit deiner Bank eine Rückerstattung innerhalb von 8 Wochen ab dem Belastungsdatum erhalten."
       ],
       "Street address, postal code, and city": [
         "Straße, Postleitzahl und Ort"
@@ -11544,6 +11632,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dieses Abonnement verlängert sich automatisch im Rhythmus von jeweils 2 Jahren, bis es gekündigt wird."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Dein Abonnement wird jedes Jahr zum gleichen Preis verlängert."
       ]
     },
     "specialoffer: Link": {
@@ -12980,6 +13071,9 @@
       "Details": [
         "Details"
       ],
+      "Discover your subscription benefits": [
+        "Entdecke die Vorteile deines Abonnements"
+      ],
       "Distraction-free emailing": [
         "Ablenkungsfreier E-Mail-Verkehr"
       ],
@@ -13257,6 +13351,9 @@
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
       ],
+      "Other features included in your plan": [
+        "Weitere Funktionen, die in deinem Abonnement enthalten sind"
+      ],
       "Other information": [
         "Weitere Informationen"
       ],
@@ -13419,6 +13516,9 @@
       "Snooze message": [
         "Nachricht aufschieben"
       ],
+      "Snooze:": [
+        "Später lesen:"
+      ],
       "Sort conversations": [
         "Unterhaltungen sortieren"
       ],
@@ -13507,6 +13607,9 @@
       ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
@@ -13702,6 +13805,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } E-Mail-Adresse",
+        "${ n } ${ BRAND_NAME } E-Mail-Adressen"
+      ],
       "${ n } account per wallet": [
         "${ n } Konto pro Wallet",
         "${ n } Konten pro Wallet"
@@ -13712,11 +13819,25 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via E-Mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Verschlüsselte und sichere ${ MAIL_APP_NAME } E-Mail-Adresse. Du kannst Bitcoin ganz einfach an jeden senden. Du benötigst lediglich den ${ BRAND_NAME }-Namen des Empfängers."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Tausche Bitcoin sicher per E-Mail aus statt komplexe, 26-stellige Bitcoin-Adressen zu verwenden, die anfällig für Fehler sind"
       ]
     },
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Auf Wallet-App zugreifen"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
       ]
     },
     "wallet_signup_2024:Bug category": {

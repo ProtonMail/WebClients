@@ -775,6 +775,9 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Tunnistautuminen epäonnistui. Jatka vientiä vahvistamalla ${ BRAND_NAME } -salasanasi"
       ],
+      "Biometric authentication failed": [
+        "Biometrinen tunnistautuminen epäonnistui"
+      ],
       "Cannot send invitation at the moment": [
         "Kutsua ei voida lähettää juuri nyt",
         "Kutsuja ei voida lähettää juuri nyt"
@@ -1574,6 +1577,9 @@
       "Expires in ${ remainingTime }": [
         "Erääntymiseen: ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Viedään tietojasi..."
+      ],
       "Extra password successfully created": [
         "Lisäsalasana luotiin"
       ],
@@ -1585,9 +1591,6 @@
       ],
       "finance": [
         "rahoitus"
-      ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Tuo tietosi yleisenä CSV -tiedostona noudattamalla ohjeita"
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Turvallisuussyistä sinun on vahvistettava pääsy tähän jaettuun holviin",
@@ -1841,6 +1844,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
+      ],
+      "Please confirm your backup password": [
+        "Vahvista varasalasanasi"
       ],
       "Please confirm your extra password": [
         "Vahvista lisäsalasanasi"
@@ -2213,6 +2219,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Olet saavuttanut ${ maxLength }-merkin enimmäispituuden."
       ],
+      "You may close this tab.": [
+        "Voit sulkea tämän välilehden."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Voit mukauttaa verkkotunnuksen asetuksia (nappaa kaikki -sähköpostialiakset, aliasten oletusnäyttönimi, jne...) verkkotunnuksesi vahvistamisen jälkeen."
       ],
@@ -2403,6 +2412,9 @@
       ],
       "Auto-lock after": [
         "Lukitse automaattisesti"
+      ],
+      "Backup password": [
+        "Varasalasana"
       ],
       "Beta Access": [
         "Käytä beetaversiota"
@@ -3529,6 +3541,9 @@
       ],
       "Enter coupon code": [
         "Syötä etukoodi"
+      ],
+      "Enter your backup password": [
+        "Syötä varasalasanasi"
       ],
       "Enter your extra password": [
         "Syötä lisäsalasanasi"

@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1670,7 +1670,7 @@
         "고속 스위스 VPN을 연말 할인으로 할인되게 누리세요."
       ],
       "Select your Black Friday offer": [
-        "당신의 블랙 프라이데이 제안 선택"
+        "나의 블랙 프라이데이 제안 선택"
       ],
       "Select your Cyber Week offer": [
         "나의 사이버 위크 할인 선택"
@@ -6890,11 +6890,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "비밀번호를 분실한 경우 ${ BRAND_NAME } 계정의 콘텐츠에 계속 액세스할 수 있도록 적어도 하나의 데이터 복구 방법을 활성화하세요."
       ],
-      "active": [
-        "활성화"
-      ],
       "Active": [
         "활성"
+      ],
+      "active": [
+        "활성화"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "계정에 @pm.me 이메일 주소를 추가해 보세요. 더 간단하고 짧은 이 도메인은 \"${ MAIL_APP_NAME } me\" 또는 \"Private Message me\"를 의미합니다."
@@ -11393,6 +11393,9 @@
       "Privacy policy": [
         "개인 정보 정책"
       ],
+      "privacy policy": [
+        "개인정보 취급방침"
+      ],
       "Reactivate now": [
         "지금 재활성화"
       ],
@@ -11562,9 +11565,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "기간 한정 할인: 연간 요금제 **최대 35% 할인**"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "기간 한정 세일: **1년 ${ name } 플랜을 ${ discount } 할인받으세요**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Porkbun 도메인으로 계정을 설정하세요."
@@ -12450,8 +12450,8 @@
       "Tailored to your needs": [
         "필요에 맞추어졌습니다"
       ],
-      "TOR over VPN": [
-        "VPN을 통한 TOR"
+      "Tor over VPN": [
+        "VPN을 통한 Tor"
       ],
       "Two-factor authentication": [
         "2단계 인증"
@@ -13899,6 +13899,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "다만, **${ upsellPlanTitle }**으로 업그레이드 하여 **${ unlockPlanTitle }**을(를) 잠금 해제하고 모든 ${ BRAND_NAME } 프리미엄 서비스를 잠금해제 할 수 있습니다."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "계속하면, 당사 ${ termsAndConditionsLink } 및 ${ privacyPolicyLink }에 동의하는 것으로 간주합니다."
+      ],
       "Creating your account": [
         "계정을 생성하는 중"
       ],
@@ -14373,8 +14376,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "이 결제를 확인함으로써, 자사 결제 서비스 제공자인 ${ BRAND_NAME }과 Stripe가 사용자의 은행 계좌에서 금액을 인출하도록 동의하고, 사용자의 은행이 이에 따라 계좌에서 금액을 인출하도록 수행할 수 있는 권한을 부여하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "이 지불을 확인함으로써, ${ BRAND_NAME }과 당사 지불 서비스 제공자인 Stripe가 사용자의 은행 계좌에서 인출하도록 동의하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
       ],
       "Street address, postal code, and city": [
         "주소명, 우편 번호 및 도시"
@@ -16476,6 +16479,47 @@
         "${ totalPrice }용"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "저희는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -16758,47 +16802,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "저희는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -18149,7 +18152,7 @@
       "PayPal verification failed": [
         "PayPal 인증 실패"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "이메일 바닥글 개인화"
       ],
       "Personalize your email footer": [
@@ -18688,29 +18691,6 @@
         "오늘"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "외부 주소 - 이 그룹의 모든 이메일 종단간 암호화를 비활성화 합니다"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"
-      ],
-      "Group membership paused": [
-        "그룹 구성 권한 중단됨"
-      ],
-      "Sending member invitation": [
-        "구성원 초대장 발송 중"
-      ],
-      "User declined invitation": [
-        "사용자가 초대를 거절함"
-      ],
-      "Waiting for user to accept the invitation": [
-        "사용자의 초대 수락 대기 중"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME } 사용자들이 전송을 위해 기본으로 이 키를 사용합니다."
@@ -18924,6 +18904,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "사용자의 외부 계정이 24시간 대역폭 제한에 도달했습니다. ${ BRAND_NAME }이 불러오기를 계속하도록 시도할 것입니다."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "외부 주소 - 이 그룹의 모든 이메일 종단간 암호화를 비활성화 합니다"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"
+      ],
+      "Group membership paused": [
+        "그룹 구성 권한 중단됨"
+      ],
+      "Sending member invitation": [
+        "구성원 초대장 발송 중"
+      ],
+      "User declined invitation": [
+        "사용자가 초대를 거절함"
+      ],
+      "Waiting for user to accept the invitation": [
+        "사용자의 초대 수락 대기 중"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19440,20 +19443,56 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n }개 ${ BRAND_NAME } 이메일 주소"
+      ],
       "${ n } account per wallet": [
         "계정 당 ${ n }개 지갑"
       ],
       "${ n } wallet": [
         "${ n }개 지갑"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 프로그램"
+      ],
       "A safer way to hold your Bitcoin": [
         "Bitcoin을 보관하는 가장 안전한 방법"
+      ],
+      "Advanced account protection": [
+        "고급 계정 보호"
       ],
       "Bitcoin via Email": [
         "이메일을 통한 Bitcoin"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소． 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 보내실 수 있습니다．"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "사진 및 문서에 대한 암호화된 클라우드 스토리지"
+      ],
+      "Encrypted email and file storage": [
+        "암호화된 이메일 및 파일 저장공간"
+      ],
+      "Encrypted password manager": [
+        "암호화된 비밀번호 관리자"
+      ],
       "Exclusive early access to ${ appName }.": [
         "${ appName }에 대한 얼리 액세스"
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "가장 독점적인 요금제입니다． 새로운 기능과 모든 premium ${ BRAND_NAME } 서비스를 조기 이용해 보세요．"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "착오가 발생하기 쉬운 복잡한 26자 Bitcoin 주소 대신 이메일을 통해 Bitcoin을 안전하게 거래하세요"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "안전하게 Bitcoin을 보관하고 무료로 거래하세요．"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "귀하의 모든 데이터를 premium ${ BRAND_NAME } 서비스와 함께 직접 관리하세요．"
+      ],
+      "Ultra fast and private VPN": [
+        "초고속 비공개 VPN"
       ],
       "You're Invited.": [
         "회원님께서 초대되었습니다."

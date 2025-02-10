@@ -1330,6 +1330,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } uygulamasına erişim için her zaman ${ BRAND_NAME } parolanız istenir."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "${ PASS_APP_NAME } uygulamasına erişmek için her zaman yedek parolanızı yazmanız gerekir."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "${ PASS_APP_NAME } uygulamasına erişmek için her zaman ek parolanızı yazmanız gerekir."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } kilidi açmak için parmak iziniz veya aygıtınızın PIN kodu gerekecek."
       ],
@@ -1606,6 +1612,9 @@
       "Expires in ${ remainingTime }": [
         "${ remainingTime } sonra geçerlilik süresi dolacak"
       ],
+      "Exporting your data...": [
+        "Verileriniz dışa aktarılıyor..."
+      ],
       "Extra password successfully created": [
         "Ek parola oluşturuldu"
       ],
@@ -1615,14 +1624,17 @@
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Verilerinizi bir CSV dosyasından içe aktarmak için şu adımları izleyin:"
+      "Follow those steps to import your data with a generic CSV:": [
+        "Verilerinizi sıradan bir CSV dosyası ile içe aktarmak için şu adımları izleyin:"
       ],
       "For easy access to your passwords and more.": [
         "Parolalarınıza ve diğer bilgilerinize kolayca erişmek için."
       ],
       "For security reason, your access needs to be confirmed": [
         "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Güvenlik nedeniyle bu işlem için kimliğin doğrulanması gerekir."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Güvenlik nedeniyle, bu paylaşılan kasaya erişme iznini onaylamanız gerekiyor",
@@ -1649,6 +1661,9 @@
       ],
       "Here's how it works:": [
         "Şöyle çalışır:"
+      ],
+      "Identity confirmed": [
+        "Kimlik onaylandı"
       ],
       "Import in progress:": [
         "İçe aktarılıyor:"
@@ -1857,11 +1872,29 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
+      "Please confirm your backup password": [
+        "Lütfen yedek parolanızı onaylayın"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Biyometriyle otomatik kilitleme yapabilmek için lütfen yedek parolanızı yazın."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Parolanızla otomatik kilitleme yapabilmek için lütfen yedek parolanızı yazın."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen yedek parolanızı yazın"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Geçerli kilit kaydını kaldırmak için lütfen yedek parolanızı onaylayın."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Otomatik kilitleme süresini güncellemek için lütfen yedek parolanızı yazın."
+      ],
       "Please confirm your extra password": [
         "Lütfen ek parolanızı onaylayın"
       ],
       "Please confirm your extra password in order to auto-lock with biometrics.": [
-        "Biyometri ile otomatik kilitleme için lütfen ek parolanızı doğrulayın."
+        "Biyometri ile otomatik kilitleme için lütfen ek parolanızı yazın."
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Ek parolanızla otomatik kilitleme için lütfen ek parolanızı yazın."
@@ -1870,25 +1903,25 @@
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ek parolanızı yazın"
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
-        "Geçerli kilidin kaydını kaldırmak için ek parolanızı yazın."
+        "Geçerli kilit kaydını kaldırmak için ek parolanızı yazın."
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
         "Otomatik kilitleme süresini güncellemek için lütfen ek parolanızı yazın."
       ],
       "Please confirm your password": [
-        "Lütfen parolanızı onaylayın"
+        "Lütfen parolanızı doğrulayın"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Biyometri ile otomatik kilitleme için lütfen parolanızı doğrulayın."
+        "Biyometri ile otomatik kilitleme için lütfen parolanızı yazın."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
-        "Parolanızla otomatik kilitlemek için lütfen parolanızı doğrulayın."
+        "Parolanızla otomatik kilitleme için lütfen parolanızı yazın."
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "Geçerli kilidi kaldırmak için lütfen parolanızı doğrulayın."
+        "Geçerli kilidi kaldırmak için lütfen parolanızı yazın."
       ],
       "Please confirm your password in order to update the auto-lock time.": [
-        "Otomatik kilitleme süresini güncellemek için lütfen parolanızı doğrulayın."
+        "Otomatik kilitleme süresini güncellemek için lütfen parolanızı yazın."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın."
@@ -2258,6 +2291,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
       ],
+      "You may close this tab.": [
+        "Bu sekmeyi kapatabilirsiniz."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Etki alanınızı doğruladıktan sonra etki alanı ayarlarınızı (tümünü toplama e-posta takma adları, takma adlar için varsayılan görüntülenecek ad vb.) özelleştirebileceksiniz."
       ],
@@ -2456,6 +2492,9 @@
       ],
       "Autosuggest": [
         "Otomatik öneri"
+      ],
+      "Backup password": [
+        "Yedek parola"
       ],
       "Biometrics": [
         "Biyometri"
@@ -3462,6 +3501,9 @@
       "Confirm extra password": [
         "Ek parolayı onayla"
       ],
+      "Confirm identity": [
+        "Kimliği onayla"
+      ],
       "Confirm PIN code": [
         "PIN kodu onayı"
       ],
@@ -3537,6 +3579,9 @@
       ],
       "Enter coupon code": [
         "Kupon kodunu yazın"
+      ],
+      "Enter your backup password": [
+        "Yedek parolanızı yazın"
       ],
       "Enter your extra password": [
         "Ek parolanızı yazın"

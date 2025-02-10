@@ -4693,7 +4693,7 @@
         "Untuk menggunakan ${ MAIL_APP_NAME } atau ${ CALENDAR_APP_NAME }, beralihlah ke versi web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Kami tidak dapat memuat laman ini. Silakan muat ulang laman atau periksa koneksi internet Anda."
+        "Kami tidak dapat memuat halaman ini. Silakan muat ulang halaman atau periksa koneksi internet Anda."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Pada saat kata sandi tambahan diaktifkan, pengelolaan alias hanya dapat dilakukan di ${ PASS_APP_NAME }."
@@ -7100,7 +7100,7 @@
         "Teks yang akan ditampilkan"
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
-        "Data yang Anda masukkan ke dalam draf dapat tidak tersimpan apabila Anda meninggalkan laman."
+        "Data yang Anda masukkan ke draf dapat tidak tersimpan apabila Anda meninggalkan halaman ini."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
@@ -9348,7 +9348,7 @@
         "99.95% SLA"
       ],
       "Ad-blocker and malware protection": [
-        "Pemblokiran iklan dan perlindungan perangkat lunak jahat"
+        "Pemblokir iklan dan perlindungan perangkat lunak jahat"
       ],
       "Admin console": [
         "Konsol admin"
@@ -9611,8 +9611,8 @@
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
       ],
-      "TOR over VPN": [
-        "TOR via VPN"
+      "Tor over VPN": [
+        "Tor via VPN"
       ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
@@ -10022,7 +10022,7 @@
         "Dukungan untuk protokol berbagi berkas seperti BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Unggah logo bisnismu untuk mengatur pengalaman tim di aplikasi web ${ BRAND_NAME }"
+        "Unggah logo bisnis Anda untuk menyesuaikan pengalaman tim Anda di aplikasi web ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dapatkan alamat email yang berakhir pada domain khusus milik Anda sendiri, cth. anda@namaanda.com"
@@ -10627,8 +10627,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda untuk mendebit akun Anda, serta bank Anda untuk mendebit akun Anda. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda mendebit akun Anda sesuai dengan jumlah yang dibutuhkan. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
       ],
       "Street address, postal code, and city": [
         "Alamat, kode pos, dan kota"
@@ -13571,6 +13571,9 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } alamat email ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } akun per dompet"
       ],
@@ -13582,6 +13585,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via Email"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Alamat email ${ MAIL_APP_NAME } yang terenkripsi dan aman. Anda dapat dengan mudah mengirim Bitcoin kepada siapa pun hanya dengan nama ${ BRAND_NAME } mereka."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Tukar Bitcoin dengan aman melalui email daripada menggunakan alamat Bitcoin 26-karakter yang kompleks dan rentan terhadap kesalahan"
       ]
     },
     "wallet_signup_2024:Action": {

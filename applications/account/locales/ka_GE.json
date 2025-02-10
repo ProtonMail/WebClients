@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -6925,10 +6925,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "გაააქტიურეთ ანგარიშის აღდგენის ერთი მეთოდი მაინც, რომ დარწმუნდეთ, რომ თქვენს ${ BRAND_NAME }-ის ანგარიშზე წვდომა პაროლის დაკარგვის შემთხვევაშიც კი გექნებათ."
       ],
-      "active": [
+      "Active": [
         "აქტიური"
       ],
-      "Active": [
+      "active": [
         "აქტიური"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -11455,6 +11455,9 @@
       "Privacy policy": [
         "პირადულობის დაცვა"
       ],
+      "privacy policy": [
+        "კონფიდენციალობის პოლიტიკა"
+      ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
       ],
@@ -11630,9 +11633,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "შეთავაზება შეზღუდული დროით: **მიიღეთ 35%-მდე ფასდაკლება** წლიურ სატარიფო გეგმებზე"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "შეთავაზება შეზღუდული დროით: **დაზოგეთ ${ discount } ${ name }-ზე ერთწლიანი სატარიფო გეგმით**"
       ],
       "Set up your account with your Porkbun domain.": [
         "მოირგეთ თქვენი ანგარიში Porkbun-ის დომენთან ერთად."
@@ -12543,7 +12543,7 @@
       "Tailored to your needs": [
         "მორგებული თქვენ საჭიროებებზე"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor VPN-ის ზემოდან"
       ],
       "Two-factor authentication": [
@@ -13985,6 +13985,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "მაგრამ, შეგიძლიათ, განბლოკოთ **${ unlockPlanTitle }** და ყველა ფასიანი ${ BRAND_NAME }-ის სერვისი **${ upsellPlanTitle }** ტარიფზე გადასვლით."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "გაგრძელებით თქვენ ეთანხმებით ჩვენს ${ termsAndConditionsLink }-ს და ${ privacyPolicyLink }-ს."
       ],
       "Creating your account": [
         "თქვენი ანგარიშის შექმნა"
@@ -16604,6 +16607,47 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -16889,47 +16933,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -18294,7 +18297,7 @@
       "PayPal verification failed": [
         "PayPal-ით გადახდის შეცდომა"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "მოირგეთ თქვენი ელფოსტის ქვედა კოლონტიტული"
       ],
       "Personalize your email footer": [
@@ -18834,29 +18837,6 @@
         "დღეს"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "გარე მისამართი - გამორთავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის და ამ მომხამრებელთან დაშიფრული რესურსები გაზიარებული არ იქნება."
-      ],
-      "Group membership paused": [
-        "ჯგუფის წევრობა შეჩერდა"
-      ],
-      "Sending member invitation": [
-        "გაწევრების მოსაწვევის გაგზავნა"
-      ],
-      "User declined invitation": [
-        "მომხმარებელმა უარჰყო მოსაწვევი"
-      ],
-      "Waiting for user to accept the invitation": [
-        "მომხმარებლის დადასტურების მოლოდინი"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME }-ის მომხმარებლები ამ გასაღებს გაგზავნისას ნაგულისხმებად გამოიყენებენ"
@@ -19070,6 +19050,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "თქვენმა გარე ანგარიშმა შეიძლება სიჩქარის 24 საათიან ლიმიტს მიაღწია. ${ BRAND_NAME }-ი შეეცდება შემოტანა, რაც შეიძლება, მალე განაახლოს."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "გარე მისამართი - გამორთავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის და ამ მომხამრებელთან დაშიფრული რესურსები გაზიარებული არ იქნება."
+      ],
+      "Group membership paused": [
+        "ჯგუფის წევრობა შეჩერდა"
+      ],
+      "Sending member invitation": [
+        "გაწევრების მოსაწვევის გაგზავნა"
+      ],
+      "User declined invitation": [
+        "მომხმარებელმა უარჰყო მოსაწვევი"
+      ],
+      "Waiting for user to accept the invitation": [
+        "მომხმარებლის დადასტურების მოლოდინი"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19575,6 +19578,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n }${ BRAND_NAME }-ის ელფოსტის მისმაართი",
+        "${ n }${ BRAND_NAME }-ის ელფოსტის მისმაართი"
+      ],
       "${ n } account per wallet": [
         "${ n } ანგარიში თითოეული საფულისთვის",
         "${ n } ანგარიში თითოეული საფულისთვის"
@@ -19583,14 +19590,50 @@
         "${ n } საფულე",
         "${ n } საფულე"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } პროგრამა"
+      ],
       "A safer way to hold your Bitcoin": [
         "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
+      ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვის პროგრამა"
       ],
       "Bitcoin via Email": [
         "Bitcoin ელფოსტით"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "შიფრირებული და უსაფრთხო ${ MAIL_APP_NAME } ელფოსტის მისამართი. შეგიძლიათ მარტივად გაგზავნოთ Bitcoin ნებისმიერ ადამიანს, მხოლოდ ${ BRAND_NAME } სახელით."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "დაშიფრული ღრუბლოვანი საცავი ფოტოებისთვის და დოკუმენტებისთვის"
+      ],
+      "Encrypted email and file storage": [
+        "დაშიფრული ელფოსტისა და ფაილების საცავი"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
       "Exclusive early access to ${ appName }.": [
         "ექსკლუზიური ადრეული წვდომა პროგრამასთან ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "ჩვენი საუკეთესო ექსკლუზიური გეგმა. მიიღეთ ადრეული წვდომა ახალ ფუნქციებზე და პრემიუმ ${ BRAND_NAME } სერვისებზე."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "უსაფრთხოდ გაცვალეთ Bitcoin ელფოსტით, კომპლექსური, 26-სიმბოლოიანი Bitcoin მისამართების ნაცვლად, რომლებიც შეცდომებისთვის მგრძნობიარე არიან"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "უსაფრთხოდ შეინახეთ და შესრულეთ Bitcoin-ის ტრანზაქციები უფასოდ."
+      ],
+      "Self-custodial wallet": [
+        "თვითმართვადი საფულე"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "მიიღეთ სრული კონტროლი ყველა თქვენს მონაცემზე პრემიუმ ${ BRAND_NAME } სერვისებით."
+      ],
+      "Ultra fast and private VPN": [
+        "სუპერ სწრაფი და პირადი VPN"
       ],
       "You're Invited.": [
         "თქვენ მოწვეული ბრძანდებით."
