@@ -317,6 +317,9 @@
       "Forward as attachment": [
         "Posreduj kot priponko"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Pridobite ${ planName } za ${ priceCoupon }."
+      ],
       "Get in touch": [
         "Oglasite se nam!"
       ],
@@ -1641,6 +1644,9 @@
       ],
       "Work": [
         "Službeno"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3188,6 +3194,9 @@
       "Please provide either a first name, a last name or a display name": [
         "Prosimo, vpišite ime, priimek ali prikazno ime."
       ],
+      "Please select a country": [
+        "Izberite državo."
+      ],
       "Port is required": [
         "Zahtevana so vrata"
       ],
@@ -3923,6 +3932,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -3931,26 +3943,41 @@
       ],
       "No verification method available": [
         "Način preverjanja ni na voljo"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Časovni pas koledarja ni podprt"
+      ],
       "Edited event not supported": [
         "Urejen dogodek ni podprt."
       ],
       "End time out of bounds": [
-        "Konec časa presega dovoljene meje."
+        "Končni čas je izven dovoljenih meja."
+      ],
+      "Event validation failed": [
+        "Preverjanje dogodka ni uspelo."
       ],
       "Floating times not supported": [
         "Plavajoči časi niso podprti."
       ],
+      "Malformed all-day event": [
+        "Napaka pri oblikovanju celodnevnega dogodka"
+      ],
       "Malformed end time": [
-        "Nepravilni končni čas."
+        "Nepravilni končni čas"
       ],
       "Malformed recurring event": [
-        "Nepravilno oblikovan ponavljajoči se dogodek."
+        "Nepravilno oblikovan ponavljajoči se dogodek"
       ],
       "Malformed start time": [
         "Nepravilni začetni čas"
+      ],
+      "Recurring event has no occurrences": [
+        "Ponavljajoči se dogodek nima ponovitev."
       ],
       "Recurring rule not supported": [
         "Ponavljajoče se pravilo ni podprto."
@@ -4194,6 +4221,9 @@
       ],
       "ICS file": [
         "datoteko ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4352,6 +4382,9 @@
         "(${ memberCount } člana)",
         "(${ memberCount } člani)",
         "(${ memberCount } članov)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mesec)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } dodaten prostor za shranjevanje"
@@ -5446,6 +5479,9 @@
       ],
       "Trusted": [
         "Zaupanja vreden"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Knowledge base link label": {
@@ -5845,7 +5881,7 @@
         "Tema"
       ],
       "Thomas": [
-        "Janek"
+        "Janez"
       ],
       "Time zone": [
         "Časovni pas"
@@ -6414,11 +6450,17 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Zmanjšanje paketa na ${ downgradedPlanName }."
       ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
       "Upgrade": [
         "Nadgradnja"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: action": {
@@ -6567,6 +6609,9 @@
       ],
       "1 user": [
         "En uporabnik"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-poštnih naslovov/psevdonimov"
       ],
       "10-year file version history": [
         "Zgodovina različic datotek za 10 let"
@@ -6820,8 +6865,8 @@
       "Sync and backup all your files across devices": [
         "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
-      "TOR over VPN": [
-        "Tor prek VPN"
+      "Tor over VPN": [
+        "Tor preko VPN"
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
@@ -7513,14 +7558,29 @@
       ]
     },
     "Offer": {
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Pridobite Drive Plus za samo ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Pridobite Mail Plus za samo ${ pricingTitle }"
+      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
+      ],
+      "Limited-time offer": [
+        "Časovno omejena ponudba"
       ],
       "Maybe later": [
         "Morda kasneje"
       ]
     },
     "Offer feature": {
+      "Custom email domain": [
+        "E-poštna domena po meri"
+      ],
+      "Email addresses": [
+        "E-poštni naslovi"
+      ],
       "Free": [
         "Brezplačno"
       ],
@@ -8007,6 +8067,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Poizkusite ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
@@ -8533,7 +8596,7 @@
         "Barve dogodka po meri"
       ],
       "Get up to ${ credits } in credits.": [
-        "Pridobite do ${ credits } dobropisov."
+        "Pridobite do ${ credits } kot dobropis."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
@@ -9510,6 +9573,9 @@
       "Encrypted event": [
         "Šifriran dogodek"
       ],
+      "Enter 2FA code": [
+        "Vnesite kodo 2FA"
+      ],
       "Enter your password": [
         "Vnesite geslo"
       ],
@@ -9979,6 +10045,30 @@
       ],
       "No ads": [
         "Brez oglasov"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "A safer way to hold your Bitcoin": [
+        "Varnejši način shranjevanja Bitcoina"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin prek elektronske pošte"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Šifriran in varen e-poštni naslov ${ MAIL_APP_NAME }. Lahko preprosto pošljete Bitcoin vsakomur, samo s pomočjo imena ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Varnejši način izmenjave Bitcoina prek e-pošte namesto zapletenih 26-znakovnih Bitcoin naslovov, ki so dovzetni za napake"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Varnejši način shranjevanja Bitcoina"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Težava z Wallet"
       ]
     },
     "Warning": {
