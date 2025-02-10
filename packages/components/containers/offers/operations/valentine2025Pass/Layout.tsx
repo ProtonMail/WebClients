@@ -27,7 +27,7 @@ const Layout = (props: OfferLayoutProps) => {
 
     return hasOffer(props) ? (
         <ValentineOfferLayout>
-            <section className="flex flex-column flex-nowrap w-full px-2 py-12 valentine" {...props}>
+            <section className="flex flex-column *:min-size-auto flex-nowrap w-full px-2 py-12 valentine" {...props}>
                 <ValentineHeader salePercentage="50" />
                 <ValentinePricing deal={deal} currency={currency} />
                 <ValentinePartnerCoupon dealName={deal.dealName} salePercentage="50" />
