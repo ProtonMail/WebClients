@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account';
 import { Href } from '@proton/atoms';
-import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/constants';
 import { appendUrlSearchParams } from '@proton/shared/lib/helpers/url';
 import { isMailMobileAppUser } from '@proton/shared/lib/helpers/usedClientsFlags';
+import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
 import downloadOniOS from '@proton/styles/assets/img/onboarding/feature_tour-app_store.svg';
 import downloadOnGooglePlay from '@proton/styles/assets/img/onboarding/feature_tour-google_play.svg';
 import mobileAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-mobile-app-background.svg';
