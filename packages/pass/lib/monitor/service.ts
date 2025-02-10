@@ -25,11 +25,12 @@ export const createMonitorService = (core: PassCoreProxy, store: Store): Monitor
             const logins = getLoginItems();
             /** Valid 2FAs : OTPs or Passkeys */
             const candidates = logins.filter(and(hasDomain, not(or(hasOTP, hasPasskeys))));
-            const domains = candidates.flatMap((item) => item.data.content.urls);
-            const chunks = chunk(domains, WASM_PROCEDURE_BATCH_SIZE);
 
+            const domains = new Set(candidates.flatMap((item) => item.data.content.urls));
+            const chunks = chunk(Array.from(domains), WASM_PROCEDURE_BATCH_SIZE);
             const results = await Promise.all(chunks.map(core.twofa_domains_eligible));
-            const eligible = new Map(...results.flatMap((dic) => dic.entries()));
+
+            const eligible = new Map(results.flatMap((dic) => Array.from(dic.entries())));
             const eligibleDomain = (url: string) => eligible.get(url) === true;
 
             return candidates.filter((item) => item.data.content.urls.some(eligibleDomain)).map(intoSelectedItem);
