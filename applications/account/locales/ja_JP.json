@@ -70,11 +70,11 @@
       "Accept": [
         "承認する"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -1801,7 +1801,7 @@
         "プライベート写真バックアップ"
       ],
       "Protect 10 devices at a time": [
-        "Protect 10 devices at a time"
+        "一度に 10 台のデバイスを保護"
       ],
       "Secure file storage & sharing": [
         "安全なファイルストレージと共有"
@@ -1850,7 +1850,7 @@
         "メールとスケジュールをエンドツーエンドの暗号化で保護します。${ addresses }のメールアドレス、カスタムメールドメインのサポート、無制限のide-my-emailエイリアスなどが含まれています。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more."
+        "メールとスケジュールをエンドツーエンド暗号化で保護します。15 のメールアドレス、カスタムメールドメインのサポート、${ BRAND_NAME }執筆アシスタント、無制限のide-my-emailなどが含まれています。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "メールとスケジュールをエンドツーエンド暗号化で保護します。15 のメールアドレス、カスタムメールドメインのサポート、無制限のide-my-emailなどが含まれています。"
@@ -4839,7 +4839,7 @@
         "セッションがタイムアウトしました。再度サインインしてください。"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "外部アカウントのフォルダが多すぎます。いくつかのフォルダを削除するにはインポートをカスタマイズしてください。"
+        "外部アカウントのフォルダが多すぎます。インポートをカスタマイズしてフォルダをいくつか削除してください。"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "このフィールドは${ maximumLength }文字の最大値を超えています。"
@@ -6890,11 +6890,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "パスワードがわからなくなっても、${ BRAND_NAME } アカウントのコンテンツにアクセスできるように、少なくとも一つのデータ回復方法を有効にしてください。"
       ],
-      "active": [
-        "アクティブ"
-      ],
       "Active": [
         "有効"
+      ],
+      "active": [
+        "アクティブ"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "@pm.me メール アドレスをアカウントに追加します。 このシンプルで短いドメインは、「${ MAIL_APP_NAME } me」または「Private Message me」を表します。"
@@ -9171,7 +9171,7 @@
         "回復に関する情報を信頼できるデバイスに安全に保存し、データ紛失を防止します"
       ],
       "We use 3-D Secure to protect your payments": [
-        "支払いを保護するために 3 D セキュアを使用しています"
+        "支払いを保護するために3Dセキュアを使用しています"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
@@ -11393,6 +11393,9 @@
       "Privacy policy": [
         "プライバシーポリシー"
       ],
+      "privacy policy": [
+        "プライバシーポリシー"
+      ],
       "Reactivate now": [
         "今すぐ再アクティブ化する"
       ],
@@ -11562,9 +11565,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "限定オファー：**年間プランの 35 %割引を獲得**"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "限定オファー：**1 年間プランで${ name }が${ discount }お得**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Porkbunドメインでアカウントを設定します。"
@@ -12450,8 +12450,8 @@
       "Tailored to your needs": [
         "必要に応じた"
       ],
-      "TOR over VPN": [
-        "VPNを通じたTOR"
+      "Tor over VPN": [
+        "VPN経由Tor"
       ],
       "Two-factor authentication": [
         "2 要素認証"
@@ -13878,6 +13878,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "ただし、**${ upsellPlanTitle }** にアップグレードすると、**${ unlockPlanTitle }** とすべてのプレミアム ${ BRAND_NAME } サービスのロックを解除できます。"
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "続行すると、当社の ${ termsAndConditionsLink } と ${ privacyPolicyLink }に同意したことになります。"
+      ],
       "Creating your account": [
         "アカウントの作成中"
       ],
@@ -14352,8 +14355,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "この支払いを確認することにより、${ BRAND_NAME }と当社の支払いサービスプロバイダーであるStripeに、あなたの銀行口座から引き落とすよう指示することを許可します。また、あなたの銀行はそれに応じて口座から引き落とします。銀行との契約条件に基づき、引き落とし日から 8 週間以内に返金を受けることができます。"
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "この支払いを確認することにより、あなたは${ BRAND_NAME }と私たちの決済サービスプロバイダーであるStripeに、あなたの銀行に対して口座からの引き落としを指示する権限を与えることになります。引き落とし日から 8 週間以内であれば、銀行との契約条件に基づいて返金を受けることができます。"
       ],
       "Street address, postal code, and city": [
         "番地、郵便番号、市区町村名"
@@ -16458,6 +16461,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -16740,47 +16784,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -18134,8 +18137,8 @@
       "PayPal verification failed": [
         "PayPal 認証に失敗しました。"
       ],
-      "Personalise your e-mail footer": [
-        "メールのフッターをカスタマイズ"
+      "Personalize your e-mail footer": [
+        "メールフッターを個別にカスタマイズする"
       ],
       "Personalize your email footer": [
         "メールフッターを個別にカスタマイズする"
@@ -18673,29 +18676,6 @@
         "今日"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
-      ],
-      "Group membership paused": [
-        "グループのメンバーシップは一時停止されました"
-      ],
-      "Sending member invitation": [
-        "メンバー招待を送信中"
-      ],
-      "User declined invitation": [
-        "ユーザーが招待を拒否しました"
-      ],
-      "Waiting for user to accept the invitation": [
-        "ユーザーが招待を受けるのを待っています"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME } のユーザーは、既定でこの鍵を使用して送信します"
@@ -18909,6 +18889,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "外部アカウントが 24 時間の帯域幅制限に達している可能性があります。 ${ BRAND_NAME } は、できるだけ早くインポートを再開しようとします。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
+      ],
+      "Group membership paused": [
+        "グループのメンバーシップは一時停止されました"
+      ],
+      "Sending member invitation": [
+        "メンバー招待を送信中"
+      ],
+      "User declined invitation": [
+        "ユーザーが招待を拒否しました"
+      ],
+      "Waiting for user to accept the invitation": [
+        "ユーザーが招待を受けるのを待っています"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19402,20 +19405,59 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } メールアドレス"
+      ],
       "${ n } account per wallet": [
         "一つのウォレットに${ n } 個のアカウント"
       ],
       "${ n } wallet": [
         "${ n } 個のウォレット"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }プログラム"
+      ],
       "A safer way to hold your Bitcoin": [
         "Bitcoin を保持する安全な方法"
+      ],
+      "Advanced account protection": [
+        "高度なアカウント保護"
       ],
       "Bitcoin via Email": [
         "メールで Bitcoin"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "暗号化済みで安全な${ MAIL_APP_NAME }メールアドレス。お客様は、相手の${ BRAND_NAME }名だけで簡単にBitcoinを送信できます。"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "写真や文書のための暗号化クラウドストレージ"
+      ],
+      "Encrypted email and file storage": [
+        "暗号化されたメールとファイルストレージ"
+      ],
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
+      ],
       "Exclusive early access to ${ appName }.": [
         "${ appName }への限定早期アクセス"
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "私たちの中で最も特別なプランです。新機能とすべてのプレミアム${ BRAND_NAME }サービスに早期アクセスできます。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "エラーが発生しやすい複雑な 26 文字のBitcoinアドレスの代わりにメールでBitcoinを安全に交換します"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Bitcoinを安全に保管し、無料で取引できます。"
+      ],
+      "Self-custodial wallet": [
+        "自己管理型ウォレット"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "プレミアム${ BRAND_NAME }サービスを利用して、すべてのデータを自ら管理しましょう。"
+      ],
+      "Ultra fast and private VPN": [
+        "超高速でプライベートな VPN"
       ],
       "You're Invited.": [
         "招待されました。"

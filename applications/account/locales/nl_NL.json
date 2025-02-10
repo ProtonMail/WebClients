@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -6952,11 +6952,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
       ],
-      "active": [
-        "actief"
-      ],
       "Active": [
         "Actief"
+      ],
+      "active": [
+        "actief"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
@@ -11496,6 +11496,9 @@
       "Privacy policy": [
         "Privacybeleid"
       ],
+      "privacy policy": [
+        "privacybeleid"
+      ],
       "Reactivate now": [
         "Nu heractiveren"
       ],
@@ -11671,9 +11674,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Tijdelijke aanbieding: **Ontvang tot wel 35% korting** op jaarlijkse abonnementen"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Beperkte aanbieding: **Bespaar ${ discount } op ${ name } met een 1-jarig abonnement**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Maak uw account aan met uw Porkbun domein."
@@ -12584,7 +12584,7 @@
       "Tailored to your needs": [
         "Aangepast aan uw behoeften"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor via VPN"
       ],
       "Two-factor authentication": [
@@ -14027,6 +14027,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Maar u kunt **${ unlockPlanTitle }** en alle premium ${ BRAND_NAME }-diensten ontgrendelen door te upgraden naar **${ upsellPlanTitle }**."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Door verder te gaan, gaat u akkoord met onze ${ termsAndConditionsLink } en ${ privacyPolicyLink }."
+      ],
       "Creating your account": [
         "Account aan het aanmaken"
       ],
@@ -14504,8 +14507,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Door deze betaling te bevestigen, autoriseert u ${ BRAND_NAME } en Stripe, onze provider van betalingsdiensten, om uw bank te instrueren om uw rekening en uw bank dienovereenkomstig in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw rekening naar behoren in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
       ],
       "Street address, postal code, and city": [
         "Straatnaam, postcode en plaats"
@@ -16654,6 +16657,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -16942,47 +16986,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -18347,7 +18350,7 @@
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Personaliseer de voettekst van uw e-mail"
       ],
       "Personalize your email footer": [
@@ -18887,29 +18890,6 @@
         "Vandaag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
-      ],
-      "Group membership paused": [
-        "Groepslidmaatschap gepauzeerd"
-      ],
-      "Sending member invitation": [
-        "Uitnodiging aan het versturen"
-      ],
-      "User declined invitation": [
-        "Gebruiker weigerde uitnodiging"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Wachten tot gebruiker de uitnodiging accepteert"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "${ MAIL_APP_NAME }-gebruikers zullen deze sleutel standaard gebruiken voor het verzenden"
@@ -19123,6 +19103,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Uw externe account heeft mogelijk 24-uurs bandbreedtelimiet bereikt. ${ BRAND_NAME } zal proberen de import zo snel mogelijk te hervatten."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
+      ],
+      "Group membership paused": [
+        "Groepslidmaatschap gepauzeerd"
+      ],
+      "Sending member invitation": [
+        "Uitnodiging aan het versturen"
+      ],
+      "User declined invitation": [
+        "Gebruiker weigerde uitnodiging"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Wachten tot gebruiker de uitnodiging accepteert"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19737,6 +19740,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadres",
+        "${ n } ${ BRAND_NAME } e-mailadressen"
+      ],
       "${ n } account per wallet": [
         "${ n } account per portemonnee",
         "${ n } accounts per portemonnee"
@@ -19745,14 +19752,50 @@
         "${ n } portemonnee",
         "${ n } portemonnees"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programma"
+      ],
       "A safer way to hold your Bitcoin": [
         "Een veiligere manier om uw Bitcoin vast te houden"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Versleuteld en veilig ${ MAIL_APP_NAME } e-mailadres. U kunt gemakkelijk Bitcoin verzenden naar iedereen met alleen hun ${ BRAND_NAME } naam."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Versleutelde cloudopslag voor foto's en documenten"
+      ],
+      "Encrypted email and file storage": [
+        "Versleutelde e-mail en opslagruimte"
+      ],
+      "Encrypted password manager": [
+        "Versleutelde wachtwoordmanager"
+      ],
       "Exclusive early access to ${ appName }.": [
         "Exclusieve vroegtijdige toegang tot ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Ons meest exclusieve abonnement. Krijg vroegtijdige toegang tot nieuwe functies en alle premium ${ BRAND_NAME } diensten."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Wissel Bitcoin veilig uit via email in plaats van complexe, 26 tekens lange, Bitcoin adressen die vatbaar zijn voor fouten"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Bewaar Bitcoin veilig en handel gratis."
+      ],
+      "Self-custodial wallet": [
+        "Portemonnee in eigen bewaarneming"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Beheer over al uw gegevens met premium ${ BRAND_NAME } diensten."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultrasnelle en private VPN"
       ],
       "You're Invited.": [
         "U bent uitgenodigd."

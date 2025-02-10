@@ -70,11 +70,11 @@
       "Accept": [
         "Прыняць"
       ],
-      "activate": [
-        "актываваць"
-      ],
       "Activate": [
         "Актываваць"
+      ],
+      "activate": [
+        "актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -6900,7 +6900,7 @@
         "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вас ад зламыснікаў і пагроз бяспекі."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс пасродках адмысловага маніторынга за падазронай актыўнасцю."
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс пасродкам адмысловага маніторынга за падазронай актыўнасцю."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -7076,11 +7076,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Актывуйце прынамсі адзін спосаб аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
-      "active": [
-        "актыўна"
-      ],
       "Active": [
         "Актыўна"
+      ],
+      "active": [
+        "актыўна"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
@@ -8610,7 +8610,7 @@
         "набыць дадатковае сховішча"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
-        "Звяртафйцеся да нас з любымі пытаннямі, якія датычацца ${ BRAND_NAME }"
+        "Звяртайцеся да нас з любымі пытаннямі, якія датычацца ${ BRAND_NAME }"
       ],
       "read our two-factor authentication guide first": [
         "спачатку прачытаць наш дапаможнік па двухфактарнай аўтэнтыфікацыі"
@@ -11697,6 +11697,9 @@
       "Privacy policy": [
         "Палітыка прыватнасці"
       ],
+      "privacy policy": [
+        "палітыкай прыватнасці"
+      ],
       "Reactivate now": [
         "Актываваць паўторна"
       ],
@@ -11884,9 +11887,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Прапанова абмежавана па часе: **Атрымайце скідку ў памеры 35%** за штогадовыя тарыфныя планы"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Прапанова абмежавана па часе: **Эканомце ${ discount } на тарыфным планам ${ name } з гадавой падпіскай**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Наладзьце свой уліковы запіс з даменам Porkbun."
@@ -12847,7 +12847,7 @@
       "Tailored to your needs": [
         "Адаптаваны пад вашы патрэбы"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor праз VPN"
       ],
       "Two-factor authentication": [
@@ -14320,6 +14320,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя функцыі сэрвісаў ${ BRAND_NAME } , палепшыўшы да **${ upsellPlanTitle }**."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Працягваючы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink } і ${ privacyPolicyLink }."
+      ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
       ],
@@ -14803,8 +14806,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку зрабіць спісанне з вашага рахунка, а вашаму банку - адпаведна правесці гэту аперацыю. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку спісаць з вашага рахунку адпаведныя сродкі. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
       ],
       "Street address, postal code, and city": [
         "Адрас вуліцы, паштовы індэкс і горад"
@@ -14855,6 +14858,9 @@
       ],
       "Anderson": [
         "Маўр"
+      ],
+      "Anytown": [
+        "Полацк"
       ],
       "Choose a name": [
         "Выберыце назву"
@@ -17038,6 +17044,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -17338,47 +17385,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -18765,8 +18771,8 @@
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
       ],
-      "Personalise your e-mail footer": [
-        "Персаналізуйце ніжні калонтытул свайго ліста"
+      "Personalize your e-mail footer": [
+        "Персаналізуйце свой ніжні калонтытул ліста"
       ],
       "Personalize your email footer": [
         "Персаналізуйце свой ніжні калонтытул ліста"
@@ -19156,7 +19162,7 @@
         "Канфігурацыя WireGuard"
       ],
       "You can now create unlimited folders and labels": [
-        "Цяпер вы можаце ствараць неамежаваную колькасць папак і метак"
+        "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"
       ],
       "You have no open alerts": [
         "У вас няма адкрытых папярэджанняў"
@@ -19305,29 +19311,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сёння"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы і зашыфраваныя рэсурсы не будуць абагулены з гэтым карыстальнікам."
-      ],
-      "Group membership paused": [
-        "Знаходжанне ў групе прыпынена"
-      ],
-      "Sending member invitation": [
-        "Адпраўка запрашэння ўдзельніку"
-      ],
-      "User declined invitation": [
-        "Карыстальнік адхіліў запрашэнне"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Чаканне прыняцця запрашэння карыстальнікам"
       ]
     },
     "Tooltip": {
@@ -19543,6 +19526,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Відавочна, што ваш уліковы запіс дасягнуў абмежавання паласы прапускання, якая разлічана на суткі. ${ BRAND_NAME } паспрабуе ўзнавіць імпартаванне, як толькі гэта будзе магчыма."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы і зашыфраваныя рэсурсы не будуць абагулены з гэтым карыстальнікам."
+      ],
+      "Group membership paused": [
+        "Знаходжанне ў групе прыпынена"
+      ],
+      "Sending member invitation": [
+        "Адпраўка запрашэння ўдзельніку"
+      ],
+      "User declined invitation": [
+        "Карыстальнік адхіліў запрашэнне"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Чаканне прыняцця запрашэння карыстальнікам"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -20072,6 +20078,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } адрас электроннай пошты ${ BRAND_NAME }",
+        "${ n } адрасы электроннай пошты ${ BRAND_NAME }",
+        "${ n } адрасоў электроннай пошты ${ BRAND_NAME }",
+        "${ n } адрасоў электроннай пошты ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } уліковы запіс на кашалёк",
         "${ n } уліковыя запісы на кашалёк",
@@ -20084,14 +20096,50 @@
         "${ n } кашалькоў",
         "${ n } кашалькоў"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Праграма ${ PROTON_SENTINEL_NAME }"
+      ],
       "A safer way to hold your Bitcoin": [
         "Больш бяспечны спосаб захоўвання Bitcoin"
+      ],
+      "Advanced account protection": [
+        "Пашыраная абарона ўліковага запісу"
       ],
       "Bitcoin via Email": [
         "Bitcoin праз электронную пошту"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Зашыфраваны і бяспечны ${ MAIL_APP_NAME } адрас электроннай пошты. Вы можаце лёгка адправіць Bitcoin каму заўгодна, маючы толькі іх ${ BRAND_NAME } імя."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Зашыфраванае воблачнае сховішча для фатаграфій і дакументаў"
+      ],
+      "Encrypted email and file storage": [
+        "Зашыфраваная электронная пошта і файлавае сховішча"
+      ],
+      "Encrypted password manager": [
+        "Зашыфраваны менеджар пароляў"
+      ],
       "Exclusive early access to ${ appName }.": [
         "Эксклюзіўны ранні доступ да ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Наш самы эксклюзіўны тарыфны план. Атрымайце ранні доступ да новых функцый і ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Бяспечна абменьвайце Bitcoin праз электронную пошту замест складаных, 26-значных адрасаў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Бяспечна захоўвайце і здзяйсняйце транзакцыі з Bitcoin бясплатна."
+      ],
+      "Self-custodial wallet": [
+        "Кашалёк з самастойным захоўваннем"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Атрымайце поўны кантроль над усімі сваімі дадзенымі з дапамогай прэміяльных сэрвісаў ${ BRAND_NAME }."
+      ],
+      "Ultra fast and private VPN": [
+        "Звышхуткі і прыватны VPN"
       ],
       "You're Invited.": [
         "Вы запрошаны"

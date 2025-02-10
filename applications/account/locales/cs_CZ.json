@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -7076,11 +7076,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
-      "active": [
-        "aktivní"
-      ],
       "Active": [
         "Aktivní"
+      ],
+      "active": [
+        "aktivní"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
@@ -11708,6 +11708,9 @@
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
       ],
+      "privacy policy": [
+        "zásadami ochrany osobních údajů"
+      ],
       "Reactivate now": [
         "Opětovně nyní aktivovat"
       ],
@@ -11895,9 +11898,6 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Časově omezená nabídka: **Získejte až 35% slevu** z ročních tarifů"
-      ],
-      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Časově omezená nabídka: **Ušetřete ${ discount } na ${ name } s ročním předplatným**"
       ],
       "Set up your account with your Porkbun domain.": [
         "Nastavte svůj účet s doménou Porkbun."
@@ -12858,7 +12858,7 @@
       "Tailored to your needs": [
         "Na míru vaším potřebám"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "TOR skrze VPN"
       ],
       "Two-factor authentication": [
@@ -14352,6 +14352,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Můžete však odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Pokračováním souhlasíte s našimi ${ termsAndConditionsLink } a ${ privacyPolicyLink }."
+      ],
       "Creating your account": [
         "Vytváření vašeho účtu"
       ],
@@ -14835,8 +14838,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potvrzením této platby zmocňujete ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, aby dali pokyn vaší bance k odepsání peněz z vašeho účtu a aby vaše banka odpovídajícím způsobem odepsala peníze z vašeho účtu. Vrácení peněz je možné do 8 týdnů od data odepsání peněz za podmínek stanovených ve smlouvě s bankou."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrzením této platby zmocňujete ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, aby dali pokyn vaší bance k převodu peněz z vašeho účtu. Vrácení peněz je možné do 8 týdnů od data tohoto převodu peněz, za podmínek stanovených ve smlouvě s vaší bankou."
       ],
       "Street address, postal code, and city": [
         "Ulice, poštovní směrovací číslo a město"
@@ -17073,6 +17076,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -17373,47 +17417,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -18800,7 +18803,7 @@
       "PayPal verification failed": [
         "Ověření platby PayPal se nezdařilo"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Přizpůsobte si zápatí e-mailu"
       ],
       "Personalize your email footer": [
@@ -19342,29 +19345,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu a s tímto uživatelem nebudou sdíleny žádné šifrované zdroje"
-      ],
-      "Group membership paused": [
-        "Členství ve skupině pozastaveno"
-      ],
-      "Sending member invitation": [
-        "Odesílání členské pozvánky"
-      ],
-      "User declined invitation": [
-        "Uživatel odmítl pozvání"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Čekání na přijetí pozvánky uživatelem"
-      ]
-    },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         "Uživatelé ${ MAIL_APP_NAME } budou používat tento klíč ve výchozím nastavení pro odesílání"
@@ -19578,6 +19558,29 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Váš externí účet možná dosáhl 24-hodinového omezení datového přenosu. ${ BRAND_NAME } se pokusí pokračovat v importu co nejdříve."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu a s tímto uživatelem nebudou sdíleny žádné šifrované zdroje"
+      ],
+      "Group membership paused": [
+        "Členství ve skupině pozastaveno"
+      ],
+      "Sending member invitation": [
+        "Odesílání členské pozvánky"
+      ],
+      "User declined invitation": [
+        "Uživatel odmítl pozvání"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Čekání na přijetí pozvánky uživatelem"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -20130,6 +20133,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n }${ BRAND_NAME } e-mailová adresa",
+        "${ n }${ BRAND_NAME } e-mailové adresy",
+        "${ n }${ BRAND_NAME } e-mailových adres",
+        "${ n }${ BRAND_NAME } e-mailových adres"
+      ],
       "${ n } account per wallet": [
         "${ n } účet na peněženku",
         "${ n } účty na peněženku",
@@ -20142,14 +20151,50 @@
         "${ n } peněženek",
         "${ n } peněženek"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
       "A safer way to hold your Bitcoin": [
         "Bezpečnější způsob jak vlastnit Bitcoin"
+      ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
       ],
       "Bitcoin via Email": [
         "Bitcoin přes e-mail"
       ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Šifrovaná a bezpečná e-mailová adresa ${ MAIL_APP_NAME }. Bitcoiny můžete snadno poslat komukoli jen pomocí jejich ${ BRAND_NAME } jména."
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Šifrované cloudové úložiště pro fotky a dokumenty"
+      ],
+      "Encrypted email and file storage": [
+        "Šifrovaný e-mail a úložiště souborů"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správce hesel"
+      ],
       "Exclusive early access to ${ appName }.": [
         "Exkluzivní předběžný přístup k ${ appName }."
+      ],
+      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
+        "Náš nejexkluzivnější plán. Získejte předběžný přístup k novým funkcím a všem prémiovým službám ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Bezpečná výměna bitcoinů přes e-mail namísto složitých 26znakových bitcoinových adres, u kterých můžete snadno udělat chybu"
+      ],
+      "Securely hold and transact Bitcoin for free.": [
+        "Bezpečně a zdarma uchovávejte bitcoiny a obchodujte s nimi."
+      ],
+      "Self-custodial wallet": [
+        "Peněženka s vlastní úschovu"
+      ],
+      "Take control of all your data with premium ${ BRAND_NAME } services.": [
+        "Převezměte kontrolu nad všemi svými daty pomocí prémiových služeb ${ BRAND_NAME }."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultra rychlá a soukromá VPN"
       ],
       "You're Invited.": [
         "Jste pozváni."
