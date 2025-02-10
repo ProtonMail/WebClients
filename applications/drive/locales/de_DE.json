@@ -429,6 +429,9 @@
       "Hide advanced PGP settings": [
         "Erweiterte PGP-Einstellungen ausblenden"
       ],
+      "Hide download options": [
+        "Download-Optionen ausblenden"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Das Bild konnte aufgrund des Tracking-Schutzes nicht geladen werden."
       ],
@@ -773,6 +776,9 @@
       ],
       "Show advanced PGP settings": [
         "Erweiterte PGP-Einstellungen anzeigen"
+      ],
+      "Show more download options": [
+        "Weitere Download-Optionen anzeigen"
       ],
       "Show navigation bar": [
         "Navigationsleiste anzeigen"
@@ -1172,6 +1178,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, ${ DARK_WEB_MONITORING_NAME } und mehr."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -1308,8 +1317,14 @@
       "Create label": [
         "Kategorie erstellen"
       ],
+      "Discover and set up features": [
+        "Entdecken und Funktionen einrichten"
+      ],
       "Remind me later": [
         "Später erneut fragen"
+      ],
+      "Set up other features": [
+        "Andere Funktionen einrichten"
       ],
       "Take a tour": [
         "Rundgang"
@@ -3923,6 +3938,9 @@
       ],
       "ICS file": [
         "ICS-Datei"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4070,6 +4088,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } schützt dein Konto durch gezielte Überwachung verdächtiger Aktivitäten."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } Ordner gefunden",
@@ -4395,6 +4416,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Dieser Ordner wurde von ${ emailAddress } sicher hochgeladen."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Entdecke die neuen Funktionen, die freigeschaltet wurden, und probiere sie gleich aus!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Entdecke die neuen Funktionen, die mit ${ planTitle } freigeschaltet wurden, und probiere sie gleich aus!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
       ],
@@ -4455,8 +4482,14 @@
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-Mails, die vor mehr als 30 Tagen in Papierkorb und Spam verschoben wurden, werden automatisch gelöscht."
+      ],
       "Empty folder": [
         "Leerer Ordner"
+      ],
+      "Enabling auto-deletion…": [
+        "Automatisches Löschen wird aktiviert…"
       ],
       "Enabling drive search": [
         "Suche in Drive wird aktiviert"
@@ -5488,6 +5521,9 @@
       "You cannot undo this action.": [
         "Diese Aktion kann nicht widerrufen werden."
       ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Du wirst benachrichtigt, wenn dein Passwort oder andere Daten vom Dienst eines Drittanbieters preisgegeben wurden."
+      ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "Du hast noch ${ expiresInDays } Tag Zeit, um deinen 3 GB-Willkommensbonus in Anspruch zu nehmen und ",
         "Du hast noch ${ expiresInDays } Tage Zeit, um deinen 3 GB-Willkommensbonus in Anspruch zu nehmen und "
@@ -5685,6 +5721,9 @@
       ],
       "Trusted": [
         "Vertrauenswürdig"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -7023,6 +7062,9 @@
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
       ],
+      "Breach alerts": [
+        "Warnung bei Datendiebstahl"
+      ],
       "Calendar sharing": [
         "Kalenderfreigabe"
       ],
@@ -7205,6 +7247,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Secure file storage and sharing": [
+        "Sichere Dateispeicherung und -freigabe"
+      ],
       "Secure link sharing": [
         "Sicheres Teilen von Links"
       ],
@@ -7241,7 +7286,7 @@
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor über VPN"
       ],
       "Two-factor authentication": [
@@ -7441,6 +7486,9 @@
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceMailPlus } frei. Jederzeit kündbar."
       ]
     },
     "new_plans: title": {
@@ -8064,8 +8112,14 @@
       "Free": [
         "Kostenlos"
       ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Vorherige Dateiversionen wiederherstellen"
       ],
       "Storage": [
         "Speicherplatz"
@@ -8411,9 +8465,14 @@
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto zu belasten, und deine Bank, dein Konto entsprechend zu belasten. Du kannst innerhalb von 8 Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen, sofern du mit deiner Bank eine entsprechende Vereinbarung getroffen hast."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto entsprechend zu belasten. Du kannst gemäß den Bedingungen deiner Vereinbarung mit deiner Bank eine Rückerstattung innerhalb von 8 Wochen ab dem Belastungsdatum erhalten."
       ],
       "Street address, postal code, and city": [
         "Straße, Postleitzahl und Ort"
@@ -8990,6 +9049,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dieses Abonnement verlängert sich automatisch im Rhythmus von jeweils 2 Jahren, bis es gekündigt wird."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Dein Abonnement wird jedes Jahr zum gleichen Preis verlängert."
       ]
     },
     "specialoffer: Link": {
@@ -10524,6 +10586,9 @@
       "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
         "Du bist dabei, die Einladung für das freigegebene Element abzulehnen. Du kannst erst wieder darauf zugreifen, wenn der Besitzer es für dich freigibt."
       ],
+      "You can now create unlimited folders and labels": [
+        "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."
+      ],
       "You have inaccessible files": [
         "Auf einige Dateien kann nicht zugegriffen werden"
       ],
@@ -10838,6 +10903,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } E-Mail-Adresse",
+        "${ n } ${ BRAND_NAME } E-Mail-Adressen"
+      ],
       "${ n } account per wallet": [
         "${ n } Konto pro Wallet",
         "${ n } Konten pro Wallet"
@@ -10847,6 +10916,20 @@
         "${ n } Wallets"
       ],
       "A safer way to hold your Bitcoin": [
+        "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via E-Mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Verschlüsselte und sichere ${ MAIL_APP_NAME } E-Mail-Adresse. Du kannst Bitcoin ganz einfach an jeden senden. Du benötigst lediglich den ${ BRAND_NAME }-Namen des Empfängers."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Tausche Bitcoin sicher per E-Mail aus statt komplexe, 26-stellige Bitcoin-Adressen zu verwenden, die anfällig für Fehler sind"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
         "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
       ]
     },
