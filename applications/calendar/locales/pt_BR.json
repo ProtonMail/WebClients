@@ -1165,7 +1165,7 @@
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Logins seguros em todos os seus dispositivos. Inclui aliases ide-my-email ilimitados, compartilhamento, 2FA integrado, ${ DARK_WEB_MONITORING_NAME } e muito mais."
+        "Logins seguros em todos os seus dispositivos. Inclui aliases hide-my-email ilimitados, compartilhamento, A2F integrado, ${ DARK_WEB_MONITORING_NAME } e muito mais."
       ]
     },
     "Billing cycle option": {
@@ -5212,7 +5212,7 @@
         "O processo de verificação abrirá uma nova guia. Desative os bloqueadores de pop-ups. Você não será cobrado. Qualquer quantia usada para verificar seu cartão será reembolsada imediatamente."
       ],
       "Version number successfully copied to clipboard": [
-        "O número da versão foi copiado para a área de transferência."
+        "O número da versão foi copiado para a área de transferência"
       ],
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
@@ -5448,7 +5448,7 @@
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "A data da sua próxima renovação será em ${ renewalTime }.Entre em contato com o suporte se você precisa de uma mudança de plano imediata."
+        "Sua próxima data de cobrança é ${ renewalTime }. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
       ],
       "Your password was leaked:": [
         "Sua senha foi vazada:"
@@ -6686,8 +6686,8 @@
         "Até ${ numberOfUsers } usuários"
       ],
       "${ options }-day file version history": [
-        "Histórico de versões do arquivo de ${ options } dia",
-        "Histórico de versões do arquivo de ${ options } dias"
+        "Histórico de versões de arquivo de ${ options } dia",
+        "Histórico de versões de arquivo de ${ options } dias"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin vitalícios"
@@ -6932,7 +6932,7 @@
         "Suporte prioritário e chat ao-vivo"
       ],
       "Private photo backup": [
-        "Backup de fotos privado"
+        "Backup de fotos privadas"
       ],
       "Proofread and refine your emails": [
         "Revise e otimize seus e-mails"
@@ -7086,7 +7086,10 @@
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
       ],
       "Secure file storage and sharing": [
-        "Armazenamento e compartilhamento de arquivos seguros"
+        "Armazenamento e compartilhamento seguro de arquivos"
+      ],
+      "Tor over VPN": [
+        "Tor sobre VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -7999,6 +8002,9 @@
       ],
       "Street address, postal code, and city": [
         "Endereço da rua, CEP e cidade"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
       ]
     },
     "PGP key encryption warning": {
@@ -8653,7 +8659,7 @@
         "Fazer upgrade"
       ],
       "Upgrade for ${ pricingTitle }": [
-        "Faza upgrade para o ${ pricingTitle }"
+        "Faça upgrade para o ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9474,10 +9480,10 @@
         "Desfazer em andamento"
       ],
       "Verification successful": [
-        "A verificação é terminada."
+        "Verificado com sucesso"
       ],
       "You have successfully canceled your subscription.": [
-        "Você cancelou sua assinatura."
+        "Você cancelou sua assinatura com sucesso."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
@@ -10342,6 +10348,16 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } endereço de e-mail da ${ BRAND_NAME }",
+        "${ n } endereços de e-mail da ${ BRAND_NAME }"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Endereço de e-mail ${ MAIL_APP_NAME } criptografado e seguro. Você pode enviar facilmente Bitcoin para qualquer pessoa usando apenas o nome ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Troque Bitcoin via e-mail com segurança em vez de usar endereços de Bitcoin complexos de 26 caracteres, que são propensos a erro"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -10349,7 +10365,7 @@
         "Uma maneira mais segura e fácil de guardar e enviar Bitcoin"
       ],
       "A safer way to hold Bitcoin": [
-        "Uma maneira mais segura de guardar o Bitcoin"
+        "Uma maneira mais segura de guardar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -10790,7 +10806,116 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "Free"
+        "Gratuito"
+      ]
+    },
+    "Valentine_2025: Offer": {
+      "${ salePercentage }% off": [
+        "${ salePercentage }% de desconto"
+      ],
+      "${ salePercentage }% off for you +1": [
+        "${ salePercentage }% de desconto para você e +1"
+      ],
+      "10 email addresses for you": [
+        "10 endereços de e-mail para você"
+      ],
+      "10,000+ servers in 110+ countries": [
+        "Mais de 10.000 servidores em mais de 110 países"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "200 GB storage": [
+        "200 GB de armazenamento"
+      ],
+      "500 GB total storage": [
+        "500 GB de armazenamento total"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Acesse conteúdo em serviços de streaming, incluindo Netflix, Disney+, Prime Video e muito mais, de qualquer lugar."
+      ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
+      ],
+      "All Mail, VPN, Pass, and Drive premium features": [
+        "Todos os recursos premium do Mail, VPN, Pass e Drive"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil."
+      ],
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Os descontos são baseados no preço mensal padrão. Ao final do ciclo de cobrança, sua assinatura será renovada na tarifa anual padrão."
+      ],
+      "Double the love, half the price": [
+        "O dobro do amor, a metade do preço"
+      ],
+      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
+        "Obtenha 1 ano de ${ dealName } com ${ salePercentage }% de desconto — além de um código de presente para compartilhar a mesma oferta com um amigo"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ],
+      "High-speed streaming": [
+        "Streaming em alta velocidade"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador A2F integrado"
+      ],
+      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
+        "Oferece segurança de conta de alto nível e suporte especializado. ${ DARK_WEB_MONITORING_NAME } verifica partes ocultas da internet em busca de endereços de e-mail do ${ MAIL_APP_NAME } que acabaram em mercados de dados ilegais. Se uma violação for detectada, você receberá um alerta do Security Center com orientações para proteger sua conta."
+      ],
+      "Protect 10 devices at a time": [
+        "Proteja 10 dispositivos simultaneamente"
+      ],
+      "Recover previous file versions": [
+        "Recupere versões anteriores de arquivos"
+      ],
+      "Secure file storage & sharing": [
+        "Armazenamento e compartilhamento de arquivos seguros"
+      ],
+      "Secure vault sharing": [
+        "Compartilhamento seguro de cofres"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "O espaço de armazenamento é compartilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases ilimitados do hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Use o seu próprio domínio de e-mail"
+      ],
+      "Valentine's deal:": [
+        "Oferta de Dia dos Namorados:"
+      ]
+    },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Oferta de Dia dos Namorados"
+      ]
+    },
+    "Valentine_2025: Offers": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "/ month": [
+        "/ mês"
+      ],
+      "12 months": [
+        "12 meses"
+      ],
+      "15 months": [
+        "15 meses"
+      ],
+      "24 months": [
+        "24 meses"
+      ],
+      "30 months": [
+        "30 meses"
+      ],
+      "for ${ durationDeal }": [
+        "por ${ durationDeal }"
       ]
     }
   }

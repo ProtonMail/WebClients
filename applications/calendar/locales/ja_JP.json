@@ -132,7 +132,7 @@
         "データを消去"
       ],
       "Clear query": [
-        "クエリをクリア"
+        "検索をクリア"
       ],
       "Clear search": [
         "検索をクリア"
@@ -1006,7 +1006,7 @@
         "${ storageSize } ストレージ"
       ],
       "1 TB total": [
-        "1 TB 合計"
+        "合計 1 TB"
       ],
       "1 user": [
         "1 ユーザー"
@@ -1030,7 +1030,7 @@
         "6 ユーザー"
       ],
       "8500+ servers across 110+ countries": [
-        "8500+ servers across 110+ countries"
+        "110 か国以上、8500 台以上のサーバー"
       ],
       "Ad-blocker and malware protection": [
         "広告ブロッカーとマルウェア防止"
@@ -1066,7 +1066,7 @@
         "プライベート写真バックアップ"
       ],
       "Protect 10 devices at a time": [
-        "Protect 10 devices at a time"
+        "一度に 10 台のデバイスを保護"
       ],
       "Secure file storage & sharing": [
         "安全なファイルストレージと共有"
@@ -1125,7 +1125,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+        "ブロックされたコンテンツにアクセスし、プライベートに参照します。110 以上の国、10 以上のデバイス、高速ストリーミング、広告ブロッカー、マルウェア保護、VPN Acceleratorなど、8,500 以上のサーバーが含まれています。"
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix、Disney+、Prime Videoをはじめとする各種ストリーミングサービスのコンテンツに、どこからでもアクセスできます。"
@@ -1140,7 +1140,7 @@
         "メールとスケジュールをエンドツーエンドの暗号化で保護します。${ addresses }のメールアドレス、カスタムメールドメインのサポート、無制限のide-my-emailエイリアスなどが含まれています。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more."
+        "メールとスケジュールをエンドツーエンド暗号化で保護します。15 のメールアドレス、カスタムメールドメインのサポート、${ BRAND_NAME }執筆アシスタント、無制限のide-my-emailなどが含まれています。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "メールとスケジュールをエンドツーエンド暗号化で保護します。15 のメールアドレス、カスタムメールドメインのサポート、無制限のide-my-emailなどが含まれています。"
@@ -3338,7 +3338,7 @@
         "送信用の鍵が有効ではありません"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "外部アカウントのフォルダが多すぎます。いくつかのフォルダを削除するにはインポートをカスタマイズしてください。"
+        "外部アカウントのフォルダが多すぎます。インポートをカスタマイズしてフォルダをいくつか削除してください。"
       ],
       "There was an error when exporting the contacts vCards": [
         "連絡先の vCard のエクスポート中にエラーが発生しました"
@@ -5153,7 +5153,7 @@
         "お客様のお支払いを銀行で認証する必要があります。"
       ],
       "We use 3-D Secure to protect your payments": [
-        "支払いを保護するために 3 D セキュアを使用しています"
+        "支払いを保護するために3Dセキュアを使用しています"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
@@ -6970,6 +6970,9 @@
       ],
       "Secure file storage and sharing": [
         "安全なファイルストレージと共有"
+      ],
+      "Tor over VPN": [
+        "VPN経由Tor"
       ]
     },
     "new_plans: feature highlight": {
@@ -7841,6 +7844,9 @@
       ],
       "Street address, postal code, and city": [
         "番地、郵便番号、市区町村名"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "この支払いを確認することにより、あなたは${ BRAND_NAME }と私たちの決済サービスプロバイダーであるStripeに、あなたの銀行に対して口座からの引き落としを指示する権限を与えることになります。引き落とし日から 8 週間以内であれば、銀行との契約条件に基づいて返金を受けることができます。"
       ]
     },
     "PGP key encryption warning": {
@@ -10126,6 +10132,15 @@
       ],
       "Bitcoin via Email": [
         "メールで Bitcoin"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } メールアドレス"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "暗号化済みで安全な${ MAIL_APP_NAME }メールアドレス。お客様は、相手の${ BRAND_NAME }名だけで簡単にBitcoinを送信できます。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "エラーが発生しやすい複雑な 26 文字のBitcoinアドレスの代わりにメールでBitcoinを安全に交換します"
       ]
     },
     "wallet_signup_2024:app-switcher": {

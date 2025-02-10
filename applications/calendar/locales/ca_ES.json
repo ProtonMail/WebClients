@@ -6888,7 +6888,7 @@
         "Autenticador A2F integrat"
       ],
       "Kill switch/always-on VPN": [
-        "Kill switch / sempre en VPN"
+        "Kill switch /VPN sempre activa"
       ],
       "Limited support": [
         "Suport limitat"
@@ -7082,6 +7082,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Tor over VPN": [
+        "Tor sobre VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -7985,6 +7988,9 @@
       ],
       "Street address, postal code, and city": [
         "Adreça, codi postal i ciutat"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmar aquest pagament, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a instruir el vostre banc perquè debiti el vostre compte en conseqüència. Podeu obtenir un reemborsament en un termini de 8 setmanes des de la data del dèbit d'acord amb les condicions del vostre acord amb el banc."
       ]
     },
     "PGP key encryption warning": {
@@ -10328,6 +10334,16 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adreça de correu electrònic de ${ BRAND_NAME }",
+        "${ n } adreces de correu electrònic de ${ BRAND_NAME }"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Adreça de correu electrònic de ${ MAIL_APP_NAME } xifrada i segura. Podeu enviar bitcoins fàcilment a qualsevol persona només amb el seu nom ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Intercanvieu bitcoins de manera segura per correu electrònic en comptes d’utilitzar adreces Bitcoin complexes de 26 caràcters que poden generar errors."
       ]
     },
     "wallet_signup_2024:app-switcher": {
