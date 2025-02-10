@@ -1459,6 +1459,12 @@
       ],
       "Take a tour": [
         "Katso esittely"
+      ],
+      "Auto-delete spam and trash": [
+        "Roskapostin ja roskakorin automaattinen tyhjennys"
+      ],
+      "Get the app": [
+        "Hanki sovellus"
       ]
     },
     "action": {
@@ -1991,6 +1997,9 @@
       ],
       "Take a tour": [
         "Katso esittely"
+      ],
+      "Got it": [
+        "Selvä"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2716,6 +2725,9 @@
       ],
       "Work": [
         "Työ"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -3633,7 +3645,7 @@
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
       "Also included": [
-        "Sisältyy myös"
+        "Sisältää myös:"
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Päivitä tilauksesi poistaaksesi roskapostit ja roskakorissa olevat viestit automaattisesti, ja avataksesi muita premium-ominaisuuksia."
@@ -5459,6 +5471,12 @@
       ],
       "No verification method available": [
         "Vahvistustapoja ei ole"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5748,6 +5766,9 @@
       ],
       "ICS file": [
         "ICS-tiedosto"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7827,6 +7848,18 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt sähköpostit poistetaan automaattisesti."
+      ],
+      "Enabling auto-deletion…": [
+        "Otetaan automaattista poistoa käyttöön…"
+      ],
+      "Invite family members and get everything up and running.": [
+        "Kutsu perheenjäseniä ja aloita käyttö."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Voit muuttaa tätä koska tahansa ${ settingsLink }."
       ]
     },
     "info": {
@@ -7884,6 +7917,9 @@
       ],
       "Trusted": [
         "Luotettu"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -8925,7 +8961,7 @@
         "Sinun on aktivoitava avaimesi uudelleen nähdäksesi päivitetyn kutsun"
       ],
       "settings": [
-        "asetukset"
+        "asetuksissa"
       ]
     },
     "Link to calendar event": {
@@ -9811,6 +9847,9 @@
       ],
       "Secure file storage and sharing": [
         "Suojattu tiedoston tallennus ja jako"
+      ],
+      "Tor over VPN": [
+        "Tor + VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -10687,7 +10726,7 @@
         "Virheellinen turvakoodi"
       ],
       "Something went wrong. Please try again later.": [
-        "Jokin meni pieleen. Yritä myöhemmin uudelleen."
+        "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
         "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
@@ -11019,6 +11058,9 @@
     "Safety review": {
       "Review your account safety": [
         "Tarkista tilisi turvallisuus"
+      ],
+      "Review account safety": [
+        "Tarkista tiliturvallisuus"
       ]
     },
     "saml: Error": {
@@ -11555,6 +11597,9 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Päivitä hintaan ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -13543,6 +13588,12 @@
       ],
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
+      ],
+      "Account restricted": [
+        "Tiliä on rajoitettu"
+      ],
+      "Auto-deletion is active": [
+        "Automaattinen poisto on käytössä"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13733,6 +13784,19 @@
       ],
       "Bitcoin via email": [
         "Bitcoin sähköpostitse"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME }-sähköpostiosoite",
+        "${ n } ${ BRAND_NAME }-sähköpostiosoitetta"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin sähköpostitse"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Salattu ja turvallinen ${ MAIL_APP_NAME } sähköpostiosoite. Voit helposti lähettää Bitcoinia kenelle tahansa pelkällä ${ BRAND_NAME }-nimellä."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Vaihda Bitcoin turvallisesti sähköpostitse monimutkaisten, 26-merkkisten Bitcoinosoitteiden sijaan, jotka ovat alttiita virheille"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13743,6 +13807,9 @@
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
         "Turvallisempi ja helpompi tapa säilyttää ja lähettää Bitcoineja"
+      ],
+      "A safer way to hold Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -14174,11 +14241,27 @@
       ],
       "Storage": [
         "Tallennustila"
+      ],
+      "Online document editor": [
+        "Verkkodokumenttieditori"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ]
     },
     "Signup label": {
       "Display name": [
         "Näyttönimi"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     }
   }

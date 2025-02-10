@@ -1397,6 +1397,27 @@
       ],
       "Take a tour": [
         "Oglejte si"
+      ],
+      "Download the desktop app": [
+        "Prenesi namizno aplikacijo"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Omogoči ${ darkWebMonitoring }"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Pridobite ${ planName } za ${ priceCoupon }."
+      ],
+      "Get the app": [
+        "Pridobi aplikacijo"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Pojdi na ${ DRIVE_APP_NAME }"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
+      ],
+      "Invite members": [
+        "Povabi člane"
       ]
     },
     "action": {
@@ -1879,6 +1900,9 @@
       ],
       "Take a tour": [
         "Oglejte si"
+      ],
+      "Got it": [
+        "Razumem"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2593,6 +2617,9 @@
       ],
       "Work": [
         "Službeno"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -4385,6 +4412,9 @@
       ],
       "Organization key is not decrypted": [
         "Ključ organizacije ni dešifriran."
+      ],
+      "Please select a country": [
+        "Izberite državo."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5246,6 +5276,12 @@
       ],
       "No verification method available": [
         "Način preverjanja ni na voljo"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -5253,16 +5289,16 @@
         "Urejen dogodek ni podprt."
       ],
       "End time out of bounds": [
-        "Konec časa presega dovoljene meje."
+        "Končni čas je izven dovoljenih meja."
       ],
       "Floating times not supported": [
         "Plavajoči časi niso podprti."
       ],
       "Malformed end time": [
-        "Nepravilni končni čas."
+        "Nepravilni končni čas"
       ],
       "Malformed recurring event": [
-        "Nepravilno oblikovan ponavljajoči se dogodek."
+        "Nepravilno oblikovan ponavljajoči se dogodek"
       ],
       "Malformed start time": [
         "Nepravilni začetni čas"
@@ -5275,6 +5311,18 @@
       ],
       "Time zone not supported": [
         "Časovni pas ni podprt"
+      ],
+      "Calendar time zone not supported": [
+        "Časovni pas koledarja ni podprt"
+      ],
+      "Event validation failed": [
+        "Preverjanje dogodka ni uspelo."
+      ],
+      "Malformed all-day event": [
+        "Napaka pri oblikovanju celodnevnega dogodka"
+      ],
+      "Recurring event has no occurrences": [
+        "Ponavljajoči se dogodek nima ponovitev."
       ]
     },
     "ICS widget label for event details": {
@@ -5528,6 +5576,9 @@
       ],
       "ICS file": [
         "datoteko ICS"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -7611,10 +7662,19 @@
         "Ključi so bili ustvarjeni."
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
-        "Nadgradite naročniški paket za samodejno brisanje sporočil, ki so v smetnjaku ali neželeni pošti več kot 30 dni."
+        "Nadgradite paket za samodejno brisanje sporočil, ki so v smetnjaku ali neželeni pošti več kot 30 dni."
       ],
       "User activated": [
         "Uporabnik je aktiviran."
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mesec)"
+      ],
+      "Download on the App Store": [
+        "Prenesi iz trgovine App Store"
+      ],
+      "Get it on Google Play": [
+        "Prenesi iz trgovine Google Play"
       ]
     },
     "info": {
@@ -7678,6 +7738,9 @@
       ],
       "Trusted": [
         "Zaupanja vreden"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Key pinning": {
@@ -8386,7 +8449,7 @@
         "Potem"
       ],
       "Thomas": [
-        "Janek"
+        "Janez"
       ],
       "Time": [
         "Čas"
@@ -9094,6 +9157,12 @@
       ],
       "Upgrade": [
         "Nadgradnja"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
       ]
     },
     "new_plans: action": {
@@ -9569,6 +9638,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "10 email addresses/aliases": [
+        "10 e-poštnih naslovov/psevdonimov"
+      ],
+      "Tor over VPN": [
+        "Tor preko VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -10085,6 +10160,9 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Za začetek izberite prikazno ime. To je ime, ki ga bodo uporabniki videli, ko jim pošljete sporočilo, jih povabite na dogodek ali z njimi delite datoteko."
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "Začnite uporabljati ${ BRAND_NAME }"
       ]
     },
     "Onboarding Proton": {
@@ -10660,6 +10738,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11275,7 +11356,7 @@
         "Zaščita pred sledenjem v sporočilih"
       ],
       "Get up to ${ credits } in credits.": [
-        "Pridobite do ${ credits } dobropisov."
+        "Pridobite do ${ credits } kot dobropis."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
@@ -13046,6 +13127,15 @@
       ],
       "Snooze:": [
         "Dremež:"
+      ],
+      "Enter 2FA code": [
+        "Vnesite kodo 2FA"
+      ],
+      "Schedule send:": [
+        "Načrtuj pošiljanje:"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Nastavi ${ protonDuoPlanName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13233,6 +13323,18 @@
       ],
       "Bitcoin via email": [
         "Bitcoin prek elektronske pošte"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Varnejši način shranjevanja Bitcoina"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin prek elektronske pošte"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Šifriran in varen e-poštni naslov ${ MAIL_APP_NAME }. Lahko preprosto pošljete Bitcoin vsakomur, samo s pomočjo imena ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Varnejši način izmenjave Bitcoina prek e-pošte namesto zapletenih 26-znakovnih Bitcoin naslovov, ki so dovzetni za napake"
       ]
     },
     "wallet_signup_2024:Wallet setup": {
@@ -13680,6 +13782,15 @@
       ],
       "Maybe later": [
         "Morda kasneje"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Pridobite Drive Plus za samo ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Pridobite Mail Plus za samo ${ pricingTitle }"
+      ],
+      "Limited-time offer": [
+        "Časovno omejena ponudba"
       ]
     },
     "Offer feature": {
@@ -13691,11 +13802,32 @@
       ],
       "Storage": [
         "Shramba"
+      ],
+      "Custom email domain": [
+        "E-poštna domena po meri"
+      ],
+      "Email addresses": [
+        "E-poštni naslovi"
       ]
     },
     "Signup label": {
       "Display name": [
         "Prikazno ime"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Dostop do aplikacije Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Varnejši način shranjevanja Bitcoina"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Težava z Wallet"
       ]
     }
   }

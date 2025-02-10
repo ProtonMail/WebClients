@@ -9333,6 +9333,18 @@
       "${ n } email address": [
         "${ n } tansa n yimayl",
         "${ n } n tansiwin imayl"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Tura amezwaru i ttwaliḍ Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin s tansa n imayl"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Tansa n imayl yettwawgelhen d amezwaru ${ MAIL_APP_NAME } email address. Tzemrem ad sennu Bitcoin i yal win s ${ BRAND_NAME } isem."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Deg ameẓwaru, bedel Bitcoin s tansa n imayl, mačči d tansa n Bitcoin 26-amsayen ameɛriwen i d-yettusnen Tuccḍa"
       ]
     },
     "Warning": {
@@ -9662,6 +9674,32 @@
     "Signup label": {
       "Display name": [
         "Isem n uskan"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Sɣur asnas n tikkelt"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Tura amezwaru i ttwaliḍ Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Ugur n tikkelt"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Amiḍan ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Tikkelt-iw n Kter${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Tikkelt-iw${ indexStr }"
       ]
     }
   }

@@ -9913,6 +9913,9 @@
       ],
       "Secure file storage and sharing": [
         "Veilige bestandsopslag en delen"
+      ],
+      "Tor over VPN": [
+        "Tor via VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -10813,6 +10816,9 @@
       ],
       "Street address, postal code, and city": [
         "Straatnaam, postcode en plaats"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw rekening naar behoren in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
       ]
     },
     "PGP key encryption warning": {
@@ -13872,6 +13878,16 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadres",
+        "${ n } ${ BRAND_NAME } e-mailadressen"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Versleuteld en veilig ${ MAIL_APP_NAME } e-mailadres. U kunt gemakkelijk Bitcoin verzenden naar iedereen met alleen hun ${ BRAND_NAME } naam."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Wissel Bitcoin veilig uit via email in plaats van complexe, 26 tekens lange, Bitcoin adressen die vatbaar zijn voor fouten"
       ]
     },
     "wallet_signup_2024:Action": {
