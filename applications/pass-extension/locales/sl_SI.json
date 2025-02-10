@@ -279,13 +279,13 @@
         "Povezava poteče čez"
       ],
       "Lock extension": [
-        "Podaljšek ključavnice"
+        "Zakleni razširitev"
       ],
       "Make admin": [
         "Naredite za skrbnika"
       ],
       "Make default": [
-        "Nastavite na splošno"
+        "Nastavi za privzeto"
       ],
       "Make editor": [
         "Lahko ureja"
@@ -572,7 +572,7 @@
         "Potrjeno polje pomeni, da je funkcija onemogočena."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Seznam domen, kjer se nekatere samodejne funkcije v ${ PASS_SHORT_APP_NAME } (samodejno izpolnjevanje, samodejni predlogi, samodejno shranjevanje) ne smejo izvajati.${ infoText }"
+        "Seznam domen, kjer se nekatere samodejne funkcije v ${ PASS_SHORT_APP_NAME } (samodejno izpolnjevanje, samodejni predlogi, samodejno shranjevanje) ne bi smele izvajati.${ infoText }"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Ta račun je ranljiv, obiščite storitev in spremenite geslo."
@@ -1194,9 +1194,6 @@
       "Fill in the CSV with your data": [
         "Izpolnite CSV s svojimi podatki"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Za uvoz podatkov z generičnim CSV sledite tem korakom:"
-      ],
       "For easy access to your passwords and more.": [
         "Za enostaven dostop do vaših gesel in več."
       ],
@@ -1781,6 +1778,9 @@
       "Autosuggest": [
         "Samodejni predlog"
       ],
+      "Backup password": [
+        "Varnostna kopija gesla"
+      ],
       "Birthdate": [
         "Rojstni datum"
       ],
@@ -1873,6 +1873,9 @@
       ],
       "Domain": [
         "Domena"
+      ],
+      "Domain:": [
+        "Domena:"
       ],
       "Domains": [
         "Domene"
@@ -2071,6 +2074,9 @@
       ],
       "Need help?": [
         "Potrebujete pomoč?"
+      ],
+      "New": [
+        "Novo"
       ],
       "New vault": [
         "Nov trezor"
@@ -2488,13 +2494,16 @@
     },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
-        "${ PASS_APP_NAME } Nastavitve"
+        "Nastavitve ${ PASS_APP_NAME }"
       ],
       "Actions": [
         "Dejanja"
       ],
       "Activity": [
         "Opravilo"
+      ],
+      "Aliases": [
+        "Vzdevki"
       ],
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
@@ -2530,7 +2539,7 @@
         "Trenutna različica"
       ],
       "Custom domains": [
-        "Domen po meri"
+        "Domene po meri"
       ],
       "Default": [
         "Privzeta"
@@ -2592,6 +2601,9 @@
       "Import to vault(s)": [
         "Uvozi v trezor(je)"
       ],
+      "Item": [
+        "Predmet"
+      ],
       "Last autofill": [
         "Zadnje samodejno izpolnjevanje"
       ],
@@ -2606,6 +2618,9 @@
       ],
       "Low disk space": [
         "Malo prostora na disku"
+      ],
+      "Mailbox": [
+        "Poštni predal"
       ],
       "Member limit": [
         "Omejitev članov"
@@ -2698,7 +2713,7 @@
         "Odkleni ${ brandNameJSX }"
       ],
       "Unverified": [
-        "Nepotrjeno"
+        "Nepreverjeno"
       ],
       "Update available": [
         "Na voljo je posodobitev."

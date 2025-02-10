@@ -1330,6 +1330,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον κωδικό πρόσβασής σας ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον εφεδρικό κωδικό πρόσβασής σας."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον επιπλέον κωδικό πρόσβασής σας ."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει το δακτυλικό αποτύπωμα σας ή το PIN της συσκευής σας."
       ],
@@ -1606,6 +1612,9 @@
       "Expires in ${ remainingTime }": [
         "Λήγει σε ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Γίνεται εξαγωγή των δεδομένων σας..."
+      ],
       "Extra password successfully created": [
         "Ο επιπλέον κωδικός πρόσβασης δημιουργήθηκε με επιτυχία"
       ],
@@ -1615,7 +1624,7 @@
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
+      "Follow those steps to import your data with a generic CSV:": [
         "Ακολουθήστε αυτά τα βήματα για να εισαγάγετε τα δεδομένα σας με ένα γενικό αρχείο CSV:"
       ],
       "For easy access to your passwords and more.": [
@@ -1623,6 +1632,9 @@
       ],
       "For security reason, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Για λόγους ασφαλείας, αυτή η ενέργεια απαιτεί επαλήθευση ταυτότητας."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Για λόγους ασφαλείας, πρέπει να επιβεβαιώσετε την πρόσβαση σε αυτήν την κοινόχρηστη κρύπτη",
@@ -1649,6 +1661,9 @@
       ],
       "Here's how it works:": [
         "Δείτε πώς λειτουργεί:"
+      ],
+      "Identity confirmed": [
+        "Η ταυτότητα επιβεβαιώθηκε"
       ],
       "Import in progress:": [
         "Εισαγωγή σε εξέλιξη:"
@@ -1856,6 +1871,24 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
+      ],
+      "Please confirm your backup password": [
+        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό σας"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασής σας για αυτόματο κλείδωμα με βιομετρικά στοιχεία."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης για αυτόματο κλείδωμα με τον κωδικό πρόσβασής σας."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Παρακαλούμε πιβεβαιώστε τον εφεδρικό κωδικό πρόσβασής σας για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης σας για να καταργήσετε το τρέχον κλείδωμα."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης για να ενημερώσετε την ώρα αυτόματου κλειδώματος."
       ],
       "Please confirm your extra password": [
         "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας"
@@ -2258,6 +2291,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Έχετε φτάσει στο μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
       ],
+      "You may close this tab.": [
+        "Μπορείτε να κλείσετε αυτήν την καρτέλα."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Θα μπορείτε να προσαρμόσετε τις ρυθμίσεις του τομέα σας (ψευδώνυμα ηλεκτρονικού ταχυδρομείου, προεπιλεγμένο εμφανιζόμενο όνομα για ψευδώνυμα κλπ.) αφού επαληθεύσετε τον τομέα σας."
       ],
@@ -2456,6 +2492,9 @@
       ],
       "Autosuggest": [
         "Αυτόματη πρόταση"
+      ],
+      "Backup password": [
+        "Εφεδρικός κωδικός πρόσβασης"
       ],
       "Biometrics": [
         "Βιομετρικά"
@@ -3462,6 +3501,9 @@
       "Confirm extra password": [
         "Επιβεβαίωση επιπλέον κωδικού πρόσβασης"
       ],
+      "Confirm identity": [
+        "Επιβεβαίωση ταυτότητας"
+      ],
       "Confirm PIN code": [
         "Επιβεβαιώστε τον κωδικό PIN"
       ],
@@ -3537,6 +3579,9 @@
       ],
       "Enter coupon code": [
         "Συμπληρώστε τον κωδικό κουπονιού"
+      ],
+      "Enter your backup password": [
+        "Εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας"
       ],
       "Enter your extra password": [
         "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"
@@ -4048,7 +4093,7 @@
         "Δε θα έχετε πλέον πρόσβαση σε αυτή την κρύπτη. Για να συμμετάσχετε ξανά, θα χρειαστείτε μια νέα πρόσκληση."
       ],
       "Your plan does not allow you to create more aliases": [
-        "Το σχέδιό σας δε σας επιτρέπει να δημιουργήσετε περισσότερα ψευδώνυμα"
+        "Το πλάνο σας δε σας επιτρέπει να δημιουργήσετε περισσότερα ψευδώνυμα"
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Το πλάνο σας σάς επιτρέπει να συμπληρώνετε αυτόματα μόνο από τις πρώτες δύο κρύπτες σας"

@@ -29,6 +29,9 @@
       "Add domain": [
         "Tambah domain"
       ],
+      "Add forwarding mailbox": [
+        "Tambah kotak surat penerusan"
+      ],
       "Add mailbox": [
         "Tambahkan kotak surat"
       ],
@@ -49,6 +52,9 @@
       ],
       "Advanced options": [
         "Opsi lanjutan"
+      ],
+      "Apply lifetime coupon code": [
+        "Terapkan kode kupon Lifetime"
       ],
       "Authenticate": [
         "Autentikasi"
@@ -1304,6 +1310,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi ${ BRAND_NAME } Anda."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi tambahan Anda."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Akses ke ${ PASS_APP_NAME } akan membutuhkan sidik jari atau PIN milik perangkat Anda."
       ],
@@ -1448,6 +1457,9 @@
       "Copied to clipboard": [
         "Disalin ke papan klip"
       ],
+      "Coupon successfully applied!": [
+        "Kupon berhasil diterapkan!"
+      ],
       "Create contact illustration": [
         "Ilustrasi pembuatan kontak"
       ],
@@ -1476,7 +1488,7 @@
         "Menghapus \"${ payload.content.name }\""
       ],
       "Didn't receive the code?": [
-        "Tidak menerima kode?"
+        "Tidak menerima kode verifikasi?"
       ],
       "Disabling auto-lock": [
         "Menonaktifkan kunci otomatis"
@@ -1577,6 +1589,9 @@
       "Expires in ${ remainingTime }": [
         "Kedaluwarsa dalam ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Mengekspor data Anda..."
+      ],
       "Extra password successfully created": [
         "Kata sandi tambahan berhasil dibuat"
       ],
@@ -1586,8 +1601,8 @@
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
       ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Ikuti langkah-langkah berikut untuk mengimpor data Anda dengan berkas CSV umum:"
+      "Follow those steps to import your data with a generic CSV:": [
+        "Ikuti langkah-langkah berikut untuk mengimpor data Anda dengan berkas CSV generik:"
       ],
       "For easy access to your passwords and more.": [
         "Untuk akses mudah ke kata sandi Anda dan lainnya."
@@ -1618,6 +1633,9 @@
       ],
       "Here's how it works:": [
         "Berikut cara kerjanya:"
+      ],
+      "Identity confirmed": [
+        "Identitas terkonfirmasi"
       ],
       "Import in progress:": [
         "Impor yang sedang berlangsung:"
@@ -1970,6 +1988,9 @@
       "Settings successfully updated": [
         "Pengaturan berhasil diperbarui"
       ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Bagikan alias kepada pengguna lainnya dengan menambahkan kotak masuk mereka sebagai kotak masuk penerusan."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "Bagikan entri masuk dan catatan aman Anda, sampai dengan 10 pengguna"
       ],
@@ -2172,7 +2193,7 @@
         "Kami telah mengirimkan kode verifikasi ke ${ email }. Masukkan kode tersebut pada kolom di bawah ini:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Ketika membuat/mengedit informasi masuk di ${ PASS_APP_NAME } masukan 'nama pengguna' akan terus terlihat."
+        "Pada saat Anda membuat/menyunting informasi entri masuk pada ${ PASS_APP_NAME }, kolom masukan 'nama pengguna' akan selalu ditampilkan."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Pada saat mengirim email dari alias ini, email yang bersangkutan akan menampilkan ${ emailSender } sebagai nama pengirimnya."
@@ -2212,6 +2233,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
+      ],
+      "You may close this tab.": [
+        "Anda dapat menutup tab ini."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Anda akan dapat menyesuaikan pengaturan domain Anda (alias email catch-all, nama tampilan alias bawaan, dll...) setelah memverifikasi domain Anda."
@@ -2378,7 +2402,7 @@
         "Menurut abjad"
       ],
       "Always show username field": [
-        "Selalu perlihatkan kolom nama pengguna"
+        "Selalu tampilkan kolom nama pengguna"
       ],
       "Application logs": [
         "Log aplikasi"
@@ -2400,6 +2424,9 @@
       ],
       "Autosuggest": [
         "Saran otomatis"
+      ],
+      "Backup password": [
+        "Kata sandi cadangan"
       ],
       "Biometrics": [
         "Biometrik"
@@ -3143,6 +3170,9 @@
       "Alias Display Name": [
         "Nama Tampilan Alias"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Email address": [
         "Alamat email"
       ],
@@ -3786,6 +3816,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Undangan tidak dapat dikirimkan ke alamat berikut:"
+      ],
+      "Coupon cannot be empty": [
+        "Kupon tidak boleh kosong"
+      ],
+      "Coupon could not be applied.": [
+        "Kupon tidak dapat diterapkan."
       ],
       "Delete alias": [
         "Hapus alias"
