@@ -45,6 +45,8 @@ import type { CreateNotificationOptions } from '@proton/components'
 import { c } from 'ttag'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
+import { sanitizeUrl } from '../../Utils/sanitizeUrl'
+import { LINK_CHANGE_COMMAND } from '../Link/LinkPlugin'
 
 /**
  * This is the main core of suggestion mode. It handles input events,
@@ -704,6 +706,19 @@ function $insertDataTransferAsSuggestion(dataTransfer: DataTransfer, selection: 
   if (!text) {
     return
   }
+
+  const sanitizedURL = sanitizeUrl(text)
+  const isValidURL = !sanitizedURL.isFailed()
+  if (isValidURL) {
+    editor.dispatchCommand(LINK_CHANGE_COMMAND, {
+      text: null,
+      linkNode: null,
+      url: sanitizedURL.getValue(),
+      linkTextNode: null,
+    })
+    return
+  }
+
   const parts = text.split(/\r?\n/)
   if (parts[parts.length - 1] === '') {
     parts.pop()
