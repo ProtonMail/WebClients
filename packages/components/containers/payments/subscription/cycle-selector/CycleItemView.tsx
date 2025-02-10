@@ -1,3 +1,5 @@
+import { type ReactNode } from 'react';
+
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import Price from '@proton/components/components/price/Price';
 import { type CYCLE, type Currency, type PlanIDs } from '@proton/payments';
@@ -18,10 +20,11 @@ const CycleItemView = ({
     freeMonths,
     cycle,
     planIDs,
+    cyclePriceCompare,
 }: {
     loading?: boolean;
     currency: Currency;
-    text: string;
+    text: ReactNode;
     total: number;
     monthlySuffix: string;
     totalPerMonth: number;
@@ -29,8 +32,18 @@ const CycleItemView = ({
     freeMonths: number;
     cycle: CYCLE;
     planIDs: PlanIDs;
+    cyclePriceCompare?: ReactNode;
 }) => {
     const isLifetimePlan = isLifetimePlanSelected(planIDs);
+
+    const pricePerMonth = (
+        <>
+            <Price currency={currency} suffix={monthlySuffix} data-testid="price-value-per-user-per-month">
+                {totalPerMonth}
+            </Price>
+            {cyclePriceCompare}
+        </>
+    );
 
     return (
         <div className="flex-1 pl-2">
@@ -49,17 +62,7 @@ const CycleItemView = ({
             {!isLifetimePlan && (
                 <div className="flex items-center">
                     <span className="color-weak flex flex-auto" data-testid={`price-per-user-per-month-${cycle}`}>
-                        {loading ? (
-                            <EllipsisLoader />
-                        ) : (
-                            <Price
-                                currency={currency}
-                                suffix={monthlySuffix}
-                                data-testid="price-value-per-user-per-month"
-                            >
-                                {totalPerMonth}
-                            </Price>
-                        )}
+                        {loading ? <EllipsisLoader /> : pricePerMonth}
                     </span>
 
                     <PlanDiscount loading={loading} discount={discount} currency={currency} />
