@@ -4,11 +4,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 
 import type { PasswordModalProps } from './PasswordModal';
 
 export const SSOReauthModal: FC<PasswordModalProps> = ({ loading, open, reauth, onClose, onReauth }) => {
+    const online = useConnectivity();
+
     if (!reauth) return null;
     const { fork, ...payload } = reauth;
 
@@ -31,7 +34,7 @@ export const SSOReauthModal: FC<PasswordModalProps> = ({ loading, open, reauth, 
                 <Button color="danger" shape="outline" onClick={onClose}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button type="submit" color="norm" loading={loading}>
+                <Button type="submit" color="norm" loading={loading} disabled={!online}>
                     {c('Action').t`Continue`}
                 </Button>
             </ModalTwoFooter>
