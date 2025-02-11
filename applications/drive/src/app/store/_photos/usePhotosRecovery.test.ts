@@ -3,8 +3,10 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
+import { useSharesStore } from '../../zustand/share/shares.store';
 import type { DecryptedLink } from '../_links';
 import { useLinksActions, useLinksListing } from '../_links';
+import { ShareState, ShareType } from '../_shares';
 import { usePhotosOrPhotosWithAlbums } from './PhotosOrPhotosWithAlbumsProvider';
 import { usePhotosRecovery } from './usePhotosRecovery';
 
@@ -48,57 +50,6 @@ jest.mock('../_links', () => {
     const useLinksActions = jest.fn();
     const useLinksListing = jest.fn();
     return { useLinksActions, useLinksListing };
-});
-
-jest.mock('../../zustand/share/shares.store', () => {
-    const actual = jest.requireActual('../../zustand/share/shares.store');
-
-    return {
-        ...actual,
-        useSharesStore: (cb: any) => {
-            const state = actual.useSharesStore();
-            if (cb) {
-                return cb({
-                    ...state,
-                    getRestoredPhotosShares: () => [
-                        {
-                            addressId: 'addressId',
-                            shareId: 'shareId',
-                            rootLinkId: 'rootLinkId',
-                            volumeId: 'volumeId',
-                            creator: 'creator',
-                            isLocked: false,
-                            isDefault: false,
-                            isVolumeSoftDeleted: false,
-                            possibleKeyPackets: ['dsad'],
-                            type: 4,
-                            state: 1,
-                            createTime: 1234,
-                        },
-                    ],
-                });
-            }
-            return {
-                ...state,
-                getRestoredPhotosShares: () => [
-                    {
-                        addressId: 'addressId',
-                        shareId: 'shareId',
-                        rootLinkId: 'rootLinkId',
-                        volumeId: 'volumeId',
-                        creator: 'creator',
-                        isLocked: false,
-                        isDefault: false,
-                        isVolumeSoftDeleted: false,
-                        possibleKeyPackets: ['dsad'],
-                        type: 4,
-                        state: 1,
-                        createTime: 1234,
-                    },
-                ],
-            };
-        },
-    };
 });
 
 jest.mock('./PhotosOrPhotosWithAlbumsProvider', () => {
@@ -163,6 +114,26 @@ describe('usePhotosRecovery', () => {
         // @ts-ignore
         mockedUseLinksActions.mockReturnValue({
             moveLinks: mockedMoveLinks,
+        });
+
+        const { result } = renderHook(() => useSharesStore());
+        act(() => {
+            result.current.setShares([
+                {
+                    addressId: 'addressId',
+                    shareId: 'shareId',
+                    rootLinkId: 'rootLinkId',
+                    volumeId: 'volumeId',
+                    creator: 'creator',
+                    isLocked: false,
+                    isDefault: false,
+                    isVolumeSoftDeleted: false,
+                    possibleKeyPackets: ['dsad'],
+                    type: ShareType.photos,
+                    state: ShareState.restored,
+                    createTime: 1234,
+                },
+            ]);
         });
     });
 
