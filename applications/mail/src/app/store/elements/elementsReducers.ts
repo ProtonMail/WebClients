@@ -10,7 +10,7 @@ import range from '@proton/utils/range';
 import unique from '@proton/utils/unique';
 
 import { MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
-import { parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
+import { getElementContextIdentifier, parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import { newElementsState } from './elementsSlice';
@@ -121,18 +121,34 @@ export const loadFulfilled = (
  */
 export const showSerializedElements = (
     state: Draft<ElementsState>,
-    action: PayloadAction<{ result: QueryResults; page: number }, string>
+    action: PayloadAction<{ result: QueryResults; page: number; params: ElementsStateParams }, string>
 ) => {
     const {
         result: { Total, Elements },
         page,
+        params,
     } = action.payload;
+
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
 
     Object.assign(state, {
         total: Total,
         elements: { ...state.elements, ...toMap(Elements, 'ID') },
-        pages: unique([...state.pages, page]).sort(),
     });
+    state.pages[contextFilter] = state.pages[contextFilter]
+        ? unique([...state.pages[contextFilter], page]).sort()
+        : [page];
 };
 
 export const manualPending = (state: Draft<ElementsState>) => {
@@ -181,7 +197,7 @@ export const eventUpdatesFulfilled = (
 
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
     const total = action.payload.elements.length;
-    const pages = range(0, Math.ceil(total / state.pageSize));
+    const pages = range(0, Math.ceil(total / state.pageSize)); // TODO update
     // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
     // when there are no results
     Object.assign(state, {
@@ -191,7 +207,7 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
         pendingRequest: false,
         page: action.payload.page,
         total,
-        pages,
+        pages, // TODO update
         elements: toMap(action.payload.elements, 'ID'),
         retry: { payload: undefined, count: MAX_ELEMENT_LIST_LOAD_RETRIES, error: undefined },
     });
