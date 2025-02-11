@@ -1246,6 +1246,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zavrieť"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
       ],
@@ -3606,6 +3609,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
+      ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }% zľava"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: obrázok v plnej veľkosti"
@@ -9441,9 +9447,6 @@
       "Enter your backup password": [
         "Zadajte vaše záložné heslo"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Aby sa tento používateľ mohol prihlásiť, uistite sa, že existuje vo vašom poskytovateľovi identít."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "V záujme vašej bezpečnosti sme vás odhlásili zo všetkých ostatných aktívnych zariadení. Pred prístupom k svojmu kontu budete musieť zadať nové záložné heslo."
       ],
@@ -9509,9 +9512,6 @@
       ],
       "Single sign-on removed": [
         "Jednotné prihlásenie bolo odstránené"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Používateľ ${ name } teraz používa účet s jednotným prihlásením"
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tým sa používateľ odhlási z ostatných zariadení a bude musieť vytvoriť nové záložné heslo."

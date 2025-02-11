@@ -9195,9 +9195,6 @@
       "Enter your backup password": [
         "Ingresa tu contraseña de respaldo."
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Para que este usuario pueda iniciar sesión, asegúrate de que existe en tu proveedor de identidad."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Por tu seguridad, se ha cerrado la sesión activa en todos tus otros dispositivos. Antes de acceder a tu cuenta, necesitarás introducir tu contraseña de respaldo."
       ],
@@ -9264,8 +9261,11 @@
       "Single sign-on removed": [
         "Se ha quitado el inicio de sesión único."
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "El usuario ${ name } tiene ahora una cuenta de inicio de sesión único (SSO)."
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "El usuario ${ user } ahora tiene una cuenta con inicio de sesión única. Su contraseña anterior se ha convertido en su contraseña de respaldo."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Necesitará volver a conectarse con tu proveedor de identidad para acceder a los servicios de ${ BRAND_NAME }. Para que este usuario pueda iniciar sesión, asegúrate de que exista con tu proveedor de identidad."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Esto cerrará la sesión del usuario en sus otros dispositivos y tendrá que crear una nueva contraseña de respaldo."
@@ -11376,7 +11376,7 @@
         "+ regalo gratuito"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Un código de regalo para obtener ${ discountPercentAbsolute }% de descuento en ${ planTitle } por 1 año"
+        "Un código de regalo para obtener un ${ discountPercentAbsolute } % de descuento en ${ planTitle } durante 1 año"
       ],
       "Valentine's deal": [
         "Oferta de San Valentín"
@@ -11491,7 +11491,7 @@
         "30 meses"
       ],
       "for ${ durationDeal }": [
-        "por ${ durationDeal }"
+        "durante ${ durationDeal }"
       ]
     },
     "Validation": {

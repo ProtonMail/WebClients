@@ -9207,9 +9207,6 @@
       "Enter your backup password": [
         "Introduza a sua palavra-passe de backup"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Para que este utilizador possa entrar, certifique-se de que ele existe no seu fornecedor de identidade."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Para a sua segurança, foi desconectado de todos os seus outros dispositivos ativos. Antes de aceder a sua conta, precisará inserir uma nova palavra-passe de backup."
       ],
@@ -9276,8 +9273,11 @@
       "Single sign-on removed": [
         "A autenticação única foi removida."
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "O utilizador ${ name } agora é uma conta com autenticação única (SSO)."
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "O utilizador ${ user } é agora tem conta com início de sessão único. A palavra-passe anterior tornou-se a palavra-passe de backup."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Terá de iniciar sessão de novo com o seu fornecedor de identidade para aceder aos serviços da ${ BRAND_NAME }. Para que este utilizador possa iniciar sessão, certifique-se de que existe no seu fornecedor de identidade."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Isto desconectará o utilizador dos seus outros dispositivos e terá de criar uma palavra-passe de backup."
