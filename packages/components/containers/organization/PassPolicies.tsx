@@ -35,7 +35,13 @@ const getPolicies = ({
         setting: 'ShareMode',
         label: c('Label').t`Disable sharing outside the organization`,
         tooltip: c('Info')
-            .t`If this option is turned on, organization members will only be able to share vaults within the organization`,
+            .t`If this option is turned on, organization members will only be able to share vaults or items within the organization`,
+    },
+    {
+        setting: 'ItemShareMode',
+        label: c('Label').t`Enable individual item sharing`,
+        tooltip: c('Info')
+            .t`If this option is turned on, organization members will be able to share individual items in addition to vaults.`,
     },
     {
         setting: 'ExportMode',
