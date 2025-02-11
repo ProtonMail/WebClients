@@ -348,7 +348,6 @@ const InteractiveCalendarView = ({
     const [{ hasPaidMail }] = useUser();
     const isSavingEvent = useRef(false);
     const isEditSingleOccurrenceEnabled = useFlag('EditSingleOccurrenceWeb');
-    const hasReduxStore = useFlag('CalendarRedux');
     const [targetEventElement, setTargetEventElement] = useState<HTMLElement | null>(null);
     const [targetMoreElement, setTargetMoreElement] = useState<HTMLDivElement | null>(null);
     const eventInPopoverUniqueIdRef = useRef<string | undefined>(undefined);
@@ -477,37 +476,33 @@ const InteractiveCalendarView = ({
 
     const isProcessing = useCallback(
         (uniqueId: string) => {
-            if (hasReduxStore) {
-                if (isTmpEventSaving) {
-                    return true;
-                }
-                const selectedEvent: CalendarViewEventStore | undefined = events.find(
-                    (event) => event.uniqueId === uniqueId
-                );
-
-                if (!selectedEvent) {
-                    return false;
-                }
-
-                if (selectedEvent.isSaving || selectedEvent.isDeleting) {
-                    return true;
-                }
-
-                return events.some((event: CalendarViewEventStore) => {
-                    const UID = (event.data?.eventData as CalendarEvent)?.UID;
-                    const selectedUID = (selectedEvent.data?.eventData as CalendarEvent)?.UID;
-
-                    if (UID && UID === selectedUID) {
-                        return event.isSaving || event.isDeleting;
-                    }
-
-                    return false;
-                });
-            } else {
-                return isSavingEvent.current;
+            if (isTmpEventSaving) {
+                return true;
             }
+            const selectedEvent: CalendarViewEventStore | undefined = events.find(
+                (event) => event.uniqueId === uniqueId
+            );
+
+            if (!selectedEvent) {
+                return false;
+            }
+
+            if (selectedEvent.isSaving || selectedEvent.isDeleting) {
+                return true;
+            }
+
+            return events.some((event: CalendarViewEventStore) => {
+                const UID = (event.data?.eventData as CalendarEvent)?.UID;
+                const selectedUID = (selectedEvent.data?.eventData as CalendarEvent)?.UID;
+
+                if (UID && UID === selectedUID) {
+                    return event.isSaving || event.isDeleting;
+                }
+
+                return false;
+            });
         },
-        [events, hasReduxStore, isTmpEventSaving]
+        [events, isTmpEventSaving]
     );
 
     const sortedEventsWithTemporary = useMemo(() => {
@@ -711,11 +706,6 @@ const InteractiveCalendarView = ({
 
         if (isEventDownAction(mouseDownAction)) {
             const { event, type } = mouseDownAction.payload;
-            // If already creating something in blocking mode and not touching on the temporary event.
-            // Perform this check only when the redux feature flag is off. If ON, we should be able to open other events.
-            if (!hasReduxStore && temporaryEvent && event.uniqueId !== TMP_UNIQUE_ID && isInTemporaryBlocking) {
-                return;
-            }
 
             if (isProcessing(event.uniqueId)) {
                 return;
@@ -1487,7 +1477,7 @@ const InteractiveCalendarView = ({
 
         try {
             isSavingEvent.current = true;
-            if (hasReduxStore && isChangePartstat && selfEmail && inviteActions.partstat) {
+            if (isChangePartstat && selfEmail && inviteActions.partstat) {
                 oldPartstat = getCurrentPartstat(uniqueId, selfEmail);
                 dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: inviteActions.partstat }));
             }
@@ -1519,7 +1509,7 @@ const InteractiveCalendarView = ({
                         return result;
                     } catch (e) {
                         // Reset partstat if the user cancels the confirmation modal
-                        if (hasReduxStore && isChangePartstat && selfEmail && oldPartstat) {
+                        if (isChangePartstat && selfEmail && oldPartstat) {
                             dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: oldPartstat }));
                         }
                         throw e;
@@ -1562,29 +1552,27 @@ const InteractiveCalendarView = ({
                 }
             }
 
-            if (hasReduxStore) {
-                if (isSingleEventUpdate) {
-                    dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: true }));
-                } else {
-                    dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: true }));
-                }
-                if (isModal) {
-                    closeProcessingModal(uniqueId);
-                } else {
-                    closeProcessingPopover(uniqueId);
-                }
-                const count = isSingleEventUpdate ? 1 : 3;
-                notificationId = createNotification({
-                    text: (
-                        <>
-                            {c('Info').ngettext(msgid`Saving event...`, `Saving events...`, count)} <CircleLoader />
-                        </>
-                    ),
-                    type: 'info',
-                    expiration: -1, // Keeps the notification visible until manually removed
-                    showCloseButton: false,
-                });
+            if (isSingleEventUpdate) {
+                dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: true }));
+            } else {
+                dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: true }));
             }
+            if (isModal) {
+                closeProcessingModal(uniqueId);
+            } else {
+                closeProcessingPopover(uniqueId);
+            }
+            const count = isSingleEventUpdate ? 1 : 3;
+            notificationId = createNotification({
+                text: (
+                    <>
+                        {c('Info').ngettext(msgid`Saving event...`, `Saving events...`, count)} <CircleLoader />
+                    </>
+                ),
+                type: 'info',
+                expiration: -1, // Keeps the notification visible until manually removed
+                showCloseButton: false,
+            });
 
             successNotification = texts;
             hasStartChanged = hasStartChangedProp;
@@ -1667,7 +1655,7 @@ const InteractiveCalendarView = ({
             } else {
                 removeTemporaryEvent(uniqueId);
                 // Reset partstat if error detected
-                if (hasReduxStore && isChangePartstat && selfEmail && oldPartstat) {
+                if (isChangePartstat && selfEmail && oldPartstat) {
                     dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: oldPartstat }));
                 }
 
@@ -1680,12 +1668,10 @@ const InteractiveCalendarView = ({
         } finally {
             isSavingEvent.current = false;
 
-            if (hasReduxStore) {
-                if (isSingleEventUpdate) {
-                    dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: false }));
-                } else {
-                    dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: false }));
-                }
+            if (isSingleEventUpdate) {
+                dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: false }));
+            } else {
+                dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: false }));
             }
         }
         stopNESTMetric(isCreatingEvent);
@@ -1717,37 +1703,35 @@ const InteractiveCalendarView = ({
                         isSingleEventUpdate = false;
                     }
 
-                    if (hasReduxStore) {
-                        dispatch(
-                            eventsActions.markEventAsDeleting({
-                                targetEvent,
-                                isDeleting: true,
-                                recurringType,
-                            })
-                        );
-                        // Hide the event from the view immediately
-                        dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: true, recurringType }));
+                    dispatch(
+                        eventsActions.markEventAsDeleting({
+                            targetEvent,
+                            isDeleting: true,
+                            recurringType,
+                        })
+                    );
+                    // Hide the event from the view immediately
+                    dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: true, recurringType }));
 
-                        if (isModal) {
-                            closeProcessingModal(targetEvent.uniqueId);
-                            removeTemporaryEvent(targetEvent.uniqueId);
-                        } else {
-                            closeProcessingPopover(targetEvent.uniqueId);
-                        }
-
-                        const count = isSingleEventUpdate ? 1 : 3;
-                        notificationId = createNotification({
-                            text: (
-                                <>
-                                    {c('Info').ngettext(msgid`Deleting event...`, `Deleting events...`, count)}{' '}
-                                    <CircleLoader />
-                                </>
-                            ),
-                            type: 'info',
-                            expiration: -1, // Keeps the notification visible until manually removed
-                            showCloseButton: false,
-                        });
+                    if (isModal) {
+                        closeProcessingModal(targetEvent.uniqueId);
+                        removeTemporaryEvent(targetEvent.uniqueId);
+                    } else {
+                        closeProcessingPopover(targetEvent.uniqueId);
                     }
+
+                    const count = isSingleEventUpdate ? 1 : 3;
+                    notificationId = createNotification({
+                        text: (
+                            <>
+                                {c('Info').ngettext(msgid`Deleting event...`, `Deleting events...`, count)}{' '}
+                                <CircleLoader />
+                            </>
+                        ),
+                        type: 'info',
+                        expiration: -1, // Keeps the notification visible until manually removed
+                        showCloseButton: false,
+                    });
 
                     return result;
                 },
@@ -1809,9 +1793,7 @@ const InteractiveCalendarView = ({
             if (notificationId) {
                 removeNotification(notificationId);
             }
-            if (hasReduxStore) {
-                dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: false, recurringType }));
-            }
+            dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: false, recurringType }));
             if (e instanceof EscapeTryBlockError) {
                 if (e.recursive) {
                     // we need to escape the outer block
@@ -1822,9 +1804,7 @@ const InteractiveCalendarView = ({
                 createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
             }
         } finally {
-            if (hasReduxStore) {
-                dispatch(eventsActions.markEventAsDeleting({ targetEvent, isDeleting: false, recurringType }));
-            }
+            dispatch(eventsActions.markEventAsDeleting({ targetEvent, isDeleting: false, recurringType }));
         }
         stopEALMetric();
     };
