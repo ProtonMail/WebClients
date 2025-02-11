@@ -1088,6 +1088,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Cerrar"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -2992,7 +2995,7 @@
         "Evento"
       ],
       "Free-busy time information": [
-        "Información de disponibilidad por Internet"
+        "Información de disponibilidad"
       ],
       "Invalid event": [
         "Evento inválido"
@@ -4943,9 +4946,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "La cuenta tiene al menos una factura pendiente. La cuenta está restringida. El no pago continuo bloqueará los correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "La cuenta se actualizará una vez que el pago se haya completado."
-      ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "Se abrirá la ventana de diálogo Imprimir del navegador, donde podrá exportar el documento a PDF."
       ],
@@ -6674,11 +6674,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puede cancelar en cualquier momento."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceLine }. Puede cancelar en cualquier momento."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceMailPlus }. Cancele en cualquier momento."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancele en cualquier momento."
       ]
     },
     "new_plans: title": {
@@ -9220,6 +9220,20 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ regalo gratuito"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Un código de regalo para obtener un descuento del ${ discountPercentAbsolute }% en ${ planTitle } durante 1 año"
+      ],
+      "Valentine's deal": [
+        "Oferta de San Valentín"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Su regalo gratuito para compartir, valorado en ${ price }﻿: "
       ]
     },
     "Valentine_2025: Offer": {
