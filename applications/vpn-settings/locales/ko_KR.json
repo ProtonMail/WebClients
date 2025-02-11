@@ -3529,6 +3529,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
       ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }% 할인"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: 최대 크기 이미지"
       ],
@@ -4948,6 +4951,9 @@
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "조직의 로고를 업로드하여 브랜드 아이덴티티를 높이고 사용자 개개인에 맞는 경험을 제공하세요."
       ],
+      "Uppercase and lowercase letters": [
+        "대소문자 문자"
+      ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "복구 방법을 사용하여 2단계 인증 방법을 비활성화할 수 있습니다."
       ],
@@ -5262,9 +5268,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "결제가 완료되면 계정이 업데이트될 것입니다."
       ],
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
@@ -7089,11 +7092,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고 나면 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "단 ${ priceMailPlus }(으)로 모든 ${ BRAND_NAME } 프리미엄 제품과 기능들을 잠금 해제하세요. 언제든지 취소할 수 있습니다."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
     "new_plans: Title": {
