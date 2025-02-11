@@ -35,7 +35,7 @@ export const displayNotification = ({
     const location = setParamsInLocation(cleanHistoryLocation, { labelID, elementID });
 
     if (isElectronMail) {
-        return createElectronNotification({ title, body, app: 'mail' });
+        return createElectronNotification({ title, body, app: 'mail', labelID, elementID });
     }
 
     return create(title, {
