@@ -841,11 +841,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Reject": [
         "Відхилити"
@@ -1649,6 +1649,17 @@
         "Оберіть свою пропозицію Кінця року"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяць.",
+        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяці.",
+        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців.",
+        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ТБ сховища (вдвічі більше, ніж з будь-яким іншим планом)"
@@ -1670,17 +1681,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "План ${ plan } доступний знову лише протягом обмеженого часу"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяць.",
-        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяці.",
-        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців.",
-        "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців."
       ]
     },
     "bf2023: Offers": {
@@ -7411,11 +7411,11 @@
       "Data locked": [
         "Дані заблоковано"
       ],
-      "Dedicated servers": [
-        "Виділені сервери"
-      ],
       "dedicated servers": [
         "виділені сервери"
+      ],
+      "Dedicated servers": [
+        "Виділені сервери"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Виділені сервери з окремими IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу."
@@ -9103,11 +9103,11 @@
       "User activated": [
         "Користувач активований"
       ],
-      "Username": [
-        "Ім’я користувача"
-      ],
       "username": [
         "ім'я користувача"
+      ],
+      "Username": [
+        "Ім’я користувача"
       ],
       "Users": [
         "Користувачі"
@@ -12067,6 +12067,26 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Розпочати з ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Залишити безплатний"
@@ -12094,26 +12114,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Розпочати з ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -12694,6 +12694,17 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ trialPlanName } з преміальними функціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -12804,17 +12815,6 @@
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ trialPlanName } з преміальними функціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } з ${ humanMaxSpace }"
@@ -12857,6 +12857,14 @@
         "Обраний вами тарифний план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -12875,14 +12883,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -16187,9 +16187,6 @@
       "Enter your backup password": [
         "Введіть ваш резервний пароль"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Щоб цей користувач зміг увійти в систему, переконайтеся, що він існує у вашому постачальнику ідентифікаційних даних."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Для вашої безпеки, ви вийшли з усіх інших активних пристроїв. Перш ніж отримати доступ до свого облікового запису, вам потрібно буде ввести новий резервний пароль."
       ],
@@ -16279,9 +16276,6 @@
       ],
       "Single sign-on removed": [
         "Єдиний вхід вилучено"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Користувач ${ name } тепер є єдиним обліковим записом для входу в систему."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Це призведе до виходу користувача з інших пристроїв, і йому доведеться створити новий резервний пароль."
@@ -17701,11 +17695,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-all address": [
-        "Catch-all адреси"
-      ],
       "Catch-All address": [
         "Catch-All адреса"
+      ],
+      "Catch-all address": [
+        "Catch-all адреси"
       ],
       "Change login password": [
         "Змінити пароль входу"

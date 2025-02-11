@@ -880,11 +880,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Refresh the page": [
         "Actualizar a página"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1683,6 +1683,15 @@
         "Selecione a sua oferta de fim de ano"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Esta oferta não está disponível com o seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mês.",
+        "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mese."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Armazenamento de 6 TB (2vezes mais do que qualquer outro plano)"
@@ -1704,15 +1713,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } está de volta por tempo limitado."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Esta oferta não está disponível com o seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mês.",
-        "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mese."
       ]
     },
     "bf2023: Offers": {
@@ -7397,11 +7397,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
@@ -9145,11 +9145,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "Username": [
-        "Nome de utilizador"
-      ],
       "username": [
         "nome de utilizador"
+      ],
+      "Username": [
+        "Nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -12103,6 +12103,32 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -12130,32 +12156,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12698,6 +12698,17 @@
         "Gestão de equipa"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -12808,17 +12819,6 @@
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -12869,6 +12869,14 @@
         "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -12887,14 +12895,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -16231,9 +16231,6 @@
       "Enter your backup password": [
         "Introduza a sua palavra-passe de backup"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Para que este utilizador possa entrar, certifique-se de que ele existe no seu fornecedor de identidade."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Para a sua segurança, foi desconectado de todos os seus outros dispositivos ativos. Antes de aceder a sua conta, precisará inserir uma nova palavra-passe de backup."
       ],
@@ -16324,8 +16321,11 @@
       "Single sign-on removed": [
         "A autenticação única foi removida."
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "O utilizador ${ name } agora é uma conta com autenticação única (SSO)."
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "O utilizador ${ user } é agora tem conta com início de sessão único. A palavra-passe anterior tornou-se a palavra-passe de backup."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Terá de iniciar sessão de novo com o seu fornecedor de identidade para aceder aos serviços da ${ BRAND_NAME }. Para que este utilizador possa iniciar sessão, certifique-se de que existe no seu fornecedor de identidade."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Isto desconectará o utilizador dos seus outros dispositivos e terá de criar uma palavra-passe de backup."
@@ -17704,11 +17704,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço Catch-All"
-      ],
       "Catch-All address": [
         "Endereço captura-tudo"
+      ],
+      "Catch-all address": [
+        "Endereço Catch-All"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
