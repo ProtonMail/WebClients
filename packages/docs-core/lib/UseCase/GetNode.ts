@@ -21,6 +21,34 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
     private logger: LoggerInterface,
   ) {}
 
+  /** Persists a new name for the node in the existing cache value. If no cached value, returns. */
+  async updateNodeNameInCache(nodeMeta: NodeMeta | PublicNodeMeta, name: string) {
+    if (!this.cacheService) {
+      return
+    }
+
+    try {
+      const cachedResult = await this.cacheService.getCachedValue({
+        document: nodeMeta,
+        key: NODE_CACHE_KEY,
+      })
+      if (cachedResult.isFailed()) {
+        return
+      }
+
+      const value = cachedResult.getValue()
+      if (!value) {
+        return
+      }
+
+      const cachedNode = JSON.parse(value)
+      cachedNode.name = name
+      void this.cacheService.cacheValue({ document: nodeMeta, key: NODE_CACHE_KEY, value: JSON.stringify(cachedNode) })
+    } catch (error) {
+      this.logger.info('Failed to update node name in cache', getErrorString(error))
+    }
+  }
+
   async execute(
     nodeMeta: NodeMeta | PublicNodeMeta,
     options: { useCache: boolean; forceFetch?: boolean },
