@@ -2400,11 +2400,6 @@
         "未払いの請求"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2486,6 +2481,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6103,11 +6103,17 @@
       "Share a file": [
         "ファイルを共有"
       ],
+      "Shared": [
+        "共有済み"
+      ],
       "Shared by": [
         "から共有された"
       ],
       "Shared on": [
         "に共有された"
+      ],
+      "Shared with me": [
+        "自分と共有"
       ],
       "Show indexing progress of Encrypted Search": [
         "暗号化済みデータ検索のインデックス作成状況を表示"
@@ -10398,11 +10404,6 @@
         "今日"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "この共有ファイルを${ DRIVE_APP_NAME }に追加して、後で簡単にアクセスできるようにしましょう。"
@@ -10484,6 +10485,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {

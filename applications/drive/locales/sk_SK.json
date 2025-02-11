@@ -1328,6 +1328,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zavrieť"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
       ],
@@ -2436,11 +2439,6 @@
         "Faktúra po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2522,6 +2520,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4962,6 +4965,9 @@
       "No": [
         "Nie"
       ],
+      "No Albums": [
+        "Žiadne albumy"
+      ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
       ],
@@ -5315,6 +5321,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet môže mať nový kľúč alebo mohlo dôjsť k manipulácii s nasledujúcimi údajmi: ${ items }. Otvorte len v prípade, že tomu dôverujete."
+      ],
+      "The albums you create are shown here": [
+        "Albumy, ktoré vytvoríte budú zobrazené na tomto mieste"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitálny podpis bol čiastočne overený. Tento súbor bol nahraný pomocou verejne prístupného zdieľacieho odkazu používateľom bez ${ BRAND_NAME } účtu, takže jeho identitu nemožno overiť."
@@ -6364,11 +6373,17 @@
       "Share a file": [
         "Zdieľať súbor"
       ],
+      "Shared": [
+        "Zdieľané"
+      ],
       "Shared by": [
         "Zdieľané používateľom"
       ],
       "Shared on": [
         "Zdieľané"
+      ],
+      "Shared with me": [
+        "Zdieľané so mnou"
       ],
       "Show indexing progress of Encrypted Search": [
         "Zobraziť priebeh indexovania šifrovaného vyhľadávania"
@@ -10344,6 +10359,12 @@
       "Addresses": [
         "Adresy"
       ],
+      "Album": [
+        "Album"
+      ],
+      "Albums": [
+        "Albumy"
+      ],
       "All": [
         "Všetko"
       ],
@@ -10971,11 +10992,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tento zdieľaný súbor pridajte do svojho ${ DRIVE_APP_NAME } pre neskorší jednoduchý prístup."
@@ -11057,6 +11073,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Validation": {

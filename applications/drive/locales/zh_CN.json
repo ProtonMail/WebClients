@@ -2400,11 +2400,6 @@
         "逾期账单"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 导入助手"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } 对可疑活动进行全天候专门监控，包括上报安全专家，从而保护您的账户。"
@@ -2486,6 +2481,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6103,11 +6103,17 @@
       "Share a file": [
         "共享文件"
       ],
+      "Shared": [
+        "已共享"
+      ],
       "Shared by": [
         "共享者"
       ],
       "Shared on": [
         "共享于"
+      ],
+      "Shared with me": [
+        "与我共享"
       ],
       "Show indexing progress of Encrypted Search": [
         "显示加密搜索的索引进度"
@@ -10390,11 +10396,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "将此共享文件添加到您的 ${ DRIVE_APP_NAME } 中，方便以后访问。"
@@ -10476,6 +10477,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "我们已向他们发送了访问该项目的邀请。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ]
     },
     "Validation": {
