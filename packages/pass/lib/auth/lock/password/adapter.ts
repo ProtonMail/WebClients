@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
+import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
 import { getOfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
@@ -55,12 +56,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
             logger.info(`[PasswordLock] creating password lock`);
 
             const verified = await auth.confirmPassword(secret);
-            if (!verified) {
-                const message = authStore.getExtraPassword()
-                    ? c('Error').t`Wrong extra password`
-                    : c('Error').t`Wrong password`;
-                throw new Error(message);
-            }
+            if (!verified) throw new Error(getInvalidPasswordString(authStore));
 
             await onBeforeCreate?.();
 
@@ -158,11 +154,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
                 await setRetryCount(retryCount).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true, userInitiated: true });
 
-                const errMessage = authStore.getExtraPassword()
-                    ? c('Error').t`Wrong extra password`
-                    : c('Error').t`Wrong password`;
-
-                throw Error(errMessage);
+                throw new Error(getInvalidPasswordString(authStore));
             }
         },
     };
