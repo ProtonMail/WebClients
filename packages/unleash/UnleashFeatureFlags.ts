@@ -51,6 +51,7 @@ enum AccountFlag {
     LumoSignupAvailable = 'LumoSignupAvailable',
     PassB2BPasswordGenerator = 'PassB2BPasswordGenerator',
     SharedServerFeature = 'SharedServerFeature',
+    PassB2BVaultCreation = 'PassB2BVaultCreation',
 }
 
 enum PaymentsFlag {
