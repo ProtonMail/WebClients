@@ -290,13 +290,13 @@ export const dynamicPageLength = createSelector(
 );
 
 export const placeholderCount = createSelector(
-    [page, pageSize, total, params, dynamicPageLength],
-    (page, pageSize, total, params, dynamicPageLength) => {
+    [page, pageSize, total, params, dynamicPageLength, bypassFilter],
+    (page, pageSize, total, params, dynamicPageLength, bypassFilter) => {
         if (dynamicPageLength !== undefined) {
             return dynamicPageLength;
         }
         if (total !== undefined) {
-            return expectedPageLength(page, pageSize, total, isEmpty(params.filter) ? bypassFilter.length : 0);
+            return expectedPageLength(page, pageSize, total, isEmpty(params.filter) ? 0 : bypassFilter.length);
         }
         return DEFAULT_PLACEHOLDERS_COUNT;
     }
