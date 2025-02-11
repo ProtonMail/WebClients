@@ -880,11 +880,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Reject": [
         "Respingere"
@@ -1687,6 +1687,16 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1708,16 +1718,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
       ]
     },
     "bf2023: Offers": {
@@ -7466,11 +7466,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -9228,11 +9228,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "Username": [
-        "Nume de utilizator"
-      ],
       "username": [
         "utilizator"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -12217,6 +12217,32 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -12244,32 +12270,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12837,6 +12837,17 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -12947,17 +12958,6 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } din ${ humanMaxSpace }"
@@ -13008,6 +13008,14 @@
         "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -13026,14 +13034,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -16424,9 +16424,6 @@
       "Enter your backup password": [
         "Introduceți parola de rezervă"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Pentru ca acest utilizator să se poată autentifica, asigurați-vă că există la furnizorul de identitate."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Din motive de securitate contul a fost deconectat de la toate celelalte dispozitive active. Înainte de a vă accesa contul, va trebui să introduceți o nouă parolă de rezervă."
       ],
@@ -16516,9 +16513,6 @@
       ],
       "Single sign-on removed": [
         "Conectarea prin autentificare unică a fost eliminată."
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Utilizatorul ${ name } are un cont cu autentificare unică (SSO)."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Aceasta va deconecta utilizatorul de pe alte dispozitive și va trebui să-și creeze o parolă de rezervă nouă."
@@ -17928,10 +17922,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [

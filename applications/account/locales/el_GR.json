@@ -880,11 +880,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Reject": [
         "Απόρριψη"
@@ -1683,6 +1683,15 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνα.",
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνες."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πλάνο)"
@@ -1704,15 +1713,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνα.",
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -7397,11 +7397,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "Dedicated servers": [
-        "Αποκλειστικοί διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αποκλειστικοί διακομιστές"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να επιτρέψουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -9142,11 +9142,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "Username": [
-        "Όνομα Χρήστη"
-      ],
       "username": [
         "όνομα χρήστη"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -12100,6 +12100,32 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Ξεκινήστε με ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ξεκινώντας από ${ pricing }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
@@ -12127,32 +12153,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Ξεκινήστε με ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ξεκινώντας από ${ pricing }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12695,6 +12695,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ trialPlanName } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -12805,17 +12816,6 @@
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ trialPlanName } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } από ${ humanMaxSpace }"
@@ -12866,6 +12866,14 @@
         "Ξεκλειδώστε όλα τα ${ BRAND_NAME } premium προϊόντα και δυνατότητες με μόλις ${ priceLine }. Ακυρώστε ανά πάσα στιγμή."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -12884,14 +12892,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium χαρακτηριστικά με αναβάθμιση"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -16219,9 +16219,6 @@
       "Enter your backup password": [
         "Εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Για να μπορεί αυτός ο χρήστης να συνδεθεί, βεβαιωθείτε ότι υπάρχει στην υπηρεσία παροχής ταυτότητάς σας."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Για την ασφάλειά σας, έχετε αποσυνδεθεί από όλες τις άλλες ενεργές συσκευές σας. Προτού αποκτήσετε πρόσβαση στον λογαριασμό σας, θα πρέπει να εισαγάγετε έναν νέο εφεδρικό κωδικό πρόσβασης σας."
       ],
@@ -16311,9 +16308,6 @@
       ],
       "Single sign-on removed": [
         "Η καθολική σύνδεση καταργήθηκε"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Ο χρήστης ${ name } είναι πλέον ένας λογαριασμός καθολικής σύνδεσης."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Αυτό θα αποσυνδέσει τον χρήστη από τις άλλες συσκευές του και θα πρέπει να δημιουργήσει έναν νέο εφεδρικό κωδικό πρόσβασης."
@@ -17692,10 +17686,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [

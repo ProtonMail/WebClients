@@ -880,10 +880,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reject": [
@@ -1679,6 +1679,14 @@
         "选择您的年终优惠"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "抱歉，此优惠不适用于您当前的套餐。但当您订阅 ${ cycle } 个月的 ${ plan.Title } 时可享受 ${ discountPercentage } 的折扣。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 存储空间 (是其他套餐的 2 倍)"
@@ -1700,14 +1708,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "套餐 ${ plan } 限时回归"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "抱歉，此优惠不适用于您当前的套餐。但当您订阅 ${ cycle } 个月的 ${ plan.Title } 时可享受 ${ discountPercentage } 的折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -7319,10 +7319,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -9050,10 +9050,10 @@
       "User activated": [
         "用户已激活"
       ],
-      "Username": [
+      "username": [
         "用户名"
       ],
-      "username": [
+      "Username": [
         "用户名"
       ],
       "Users": [
@@ -11980,6 +11980,32 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "以 ${ priceCoupon } 价格开始"
+      ],
+      "Starting from ${ pricing }": [
+        "低至 ${ pricing }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
+      "Upgrade to ${ planName }": [
+        "升级至 ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -12007,32 +12033,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格开始"
-      ],
-      "Starting from ${ pricing }": [
-        "低至 ${ pricing }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ],
-      "Upgrade to ${ planName }": [
-        "升级至 ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12550,6 +12550,17 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ trialPlanName } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的体验期将于 ${ formattedPeriodEndDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -12660,17 +12671,6 @@
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ trialPlanName } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的体验期将于 ${ formattedPeriodEndDate } 结束"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -12713,6 +12713,14 @@
         "您所选的账户等级：${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -12731,14 +12739,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -16024,9 +16024,6 @@
       "Enter your backup password": [
         "输入您的备份密码"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "为使该用户能够登录，请确保他们存在于身份供应商中。"
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "为了您的账号安全，您已从其他所有活跃设备中登出。在访问您的账户之前，您将需要输入一个新的备用密码。"
       ],
@@ -16116,9 +16113,6 @@
       ],
       "Single sign-on removed": [
         "单点登录已移除"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "用户 ${ name } 现在是单点登录账户。"
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "这将使用户退出其他设备，并必须创建一个新的备份密码。"
@@ -17469,10 +17463,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
       "Change login password": [
