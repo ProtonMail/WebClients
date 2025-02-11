@@ -13,15 +13,15 @@ import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import type { PhotoLink } from '../../store';
-import { PhotoTags, isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { AlbumTag, isDecryptedLink, useThumbnailsDownload } from '../../store';
 import { useCreateAlbum } from '../PhotosActions/Albums';
 import { CreateAlbumModal } from '../PhotosModals/CreateAlbumModal';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { AlbumsGrid } from './AlbumsGrid';
-import { EmptyPhotos } from './EmptyPhotos';
+import { EmptyAlbums } from './EmptyAlbums';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
-import { PhotosTags, type PhotosTagsProps } from './components/PhotosTags';
+import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
@@ -50,7 +50,7 @@ export const AlbumsView: FC = () => {
     const thumbnails = useThumbnailsDownload();
     const { navigateToPhotos, navigateToAlbum, navigateToAlbums } = useNavigate();
     // TODO: Move tag selection to specific hook
-    const [selectedTag, setSelectedTag] = useState<PhotosTagsProps['selectedTag']>([]);
+    const [selectedTag, setSelectedTag] = useState<AlbumsTagsProps['selectedTag']>([AlbumTag.All]);
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -204,27 +204,17 @@ export const AlbumsView: FC = () => {
                 }
             />
 
-            <PhotosTags
-                selectedTag={selectedTag}
-                tags={[
-                    PhotoTags.Favorites,
-                    PhotoTags.Screenshots,
-                    PhotoTags.Videos,
-                    PhotoTags.LivePhotos,
-                    PhotoTags.MotionPhotos,
-                    PhotoTags.Selfies,
-                    PhotoTags.Portraits,
-                    PhotoTags.Bursts,
-                    PhotoTags.Panoramas,
-                    PhotoTags.Raw,
-                ]}
-                onTagSelect={setSelectedTag}
-            />
+            {!isAlbumsEmpty && (
+                <AlbumsTags
+                    selectedTag={selectedTag}
+                    tags={[AlbumTag.All, AlbumTag.MyAlbums, AlbumTag.Shared, AlbumTag.SharedWithMe]}
+                    onTagSelect={setSelectedTag}
+                />
+            )}
 
             {isAlbumsEmpty ? (
                 <>
-                    {/** TODO: Empty Albums View */}
-                    <EmptyPhotos shareId={shareId} linkId={linkId} />
+                    <EmptyAlbums createAlbumModal={createAlbumModal} />
                 </>
             ) : (
                 <AlbumsGrid

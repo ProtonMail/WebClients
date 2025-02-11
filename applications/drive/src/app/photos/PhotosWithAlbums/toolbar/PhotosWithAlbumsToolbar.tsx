@@ -1,17 +1,7 @@
 import { type FC } from 'react';
 
 import { Button, Vr } from '@proton/atoms';
-import {
-    ButtonGroup,
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    type ModalStateReturnObj,
-    Toolbar,
-    usePopperAnchor,
-} from '@proton/components';
+import { ButtonGroup, Icon, type ModalStateReturnObj, Toolbar } from '@proton/components';
 
 import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../../store';
 import PhotosDetailsButton from './PhotosDetailsButton';
@@ -21,27 +11,6 @@ import PhotosShareLinkButton from './PhotosShareLinkButton';
 import PhotosTrashButton from './PhotosTrashButton';
 import { PhotosUploadButton } from './PhotosUploadButton';
 
-const VideoDropdownButton = () => {
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    return (
-        <>
-            <DropdownButton shape="ghost" ref={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret>
-                Videos
-            </DropdownButton>
-            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                <DropdownMenu>
-                    {['Live', 'Burst'].map((i) => {
-                        return (
-                            <DropdownMenuButton className="text-left" key={i}>
-                                {i}
-                            </DropdownMenuButton>
-                        );
-                    })}
-                </DropdownMenu>
-            </Dropdown>
-        </>
-    );
-};
 interface ToolbarLeftActionsGalleryProps {
     isLoading: boolean;
     onGalleryClick: () => void;
@@ -138,9 +107,6 @@ const ToolbarRightActionsAlbums = ({ createAlbumModal }: ToolbarRightActionsAlbu
     return (
         <>
             <ButtonGroup shape="ghost">
-                <Button>All</Button>
-                <Button>My album</Button>
-                <Button>Shared with me</Button>
                 <Button
                     icon={true}
                     onClick={() => {
@@ -168,15 +134,7 @@ const ToolbarRightActionsGallery = ({
     onFileUpload,
 }: ToolbarRightActionsGalleryProps) => {
     return (
-        <>
-            <ButtonGroup shape="ghost">
-                <Button>All</Button>
-                <Button>Favorites</Button>
-                <Button>Screenshots</Button>
-                <VideoDropdownButton />
-            </ButtonGroup>
-            {!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />}
-        </>
+        <>{!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />}</>
     );
 };
 
