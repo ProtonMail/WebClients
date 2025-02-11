@@ -1,11 +1,18 @@
 import type { TransferProgresses } from '../../../components/TransferManager/transfer';
-import type { UploadFileList } from '../interface';
+import type { OnFileUploadSuccessCallbackData, OnFolderUploadSuccessCallbackData, UploadFileList } from '../interface';
 import type { FileUpload, FolderUpload, UpdateFilter } from './interface';
 
 export interface UploadProviderState {
     uploads: (FileUpload | FolderUpload)[];
     hasUploads: boolean;
-    uploadFiles: (shareId: string, parentId: string, list: UploadFileList, isForPhotos?: boolean) => Promise<void>;
+    uploadFiles: (
+        shareId: string,
+        parentId: string,
+        list: UploadFileList,
+        isForPhotos?: boolean,
+        onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void,
+        onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
+    ) => Promise<void>;
     pauseUploads: (idOrFilter: UpdateFilter) => void;
     resumeUploads: (idOrFilter: UpdateFilter) => void;
     cancelUploads: (idOrFilter: UpdateFilter) => void;

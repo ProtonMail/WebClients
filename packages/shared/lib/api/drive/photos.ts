@@ -29,6 +29,18 @@ export const queryAlbums = (
     },
 });
 
+export const queryAddAlbumPhotos = (
+    volumeId: string,
+    albumLinkId: string,
+    data: {
+        AlbumData: any[]; // TODO: type correctly
+    }
+) => ({
+    method: 'POST',
+    url: `drive/photos/volumes/${volumeId}/albums/${albumLinkId}/add-multiple`,
+    data,
+});
+
 export const queryAlbumPhotos = (
     volumeId: string,
     albumLinkId: string,

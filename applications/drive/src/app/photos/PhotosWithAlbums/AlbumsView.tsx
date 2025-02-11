@@ -3,50 +3,54 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Loader, NavigationControl, TopBanner, useAppTitle } from '@proton/components';
+import { Loader, NavigationControl, useAppTitle, useModalStateObject } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import { useFlag } from '@proton/unleash';
 
-import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import { useShiftKey } from '../../../hooks/util/useShiftKey';
-import type { PhotoLink } from '../../../store';
-import { isDecryptedLink, usePhotosView, useThumbnailsDownload } from '../../../store';
-import PortalPreview from '../../PortalPreview';
-import { useDetailsModal } from '../../modals/DetailsModal';
-import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
-import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
-import ToolbarRow from '../ToolbarRow/ToolbarRow';
+import PortalPreview from '../../components/PortalPreview';
+import { useDetailsModal } from '../../components/modals/DetailsModal';
+import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
+import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
+import useNavigate from '../../hooks/drive/useNavigate';
+import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
+import type { PhotoLink } from '../../store';
+import { PhotoTags, isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { useCreateAlbum } from '../PhotosActions/Albums';
+import { CreateAlbumModal } from '../PhotosModals/CreateAlbumModal';
+import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
+import { AlbumsGrid } from './AlbumsGrid';
 import { EmptyPhotos } from './EmptyPhotos';
-import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
-import { usePhotosSelection } from './hooks';
-import { PhotosToolbar } from './toolbar';
+import { PhotosTags, type PhotosTagsProps } from './components/PhotosTags';
+import { usePhotosSelection } from './hooks/usePhotosSelection';
+import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
-export const PhotosView: FC<void> = () => {
-    useAppTitle(c('Title').t`Photos`);
-
-    const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
+export const AlbumsView: FC = () => {
+    useAppTitle(c('Title').t`Albums`);
     const {
+        volumeId,
         shareId,
         linkId,
         photos,
+        albums,
         isPhotosLoading,
         loadPhotoLink,
         photoLinkIdToIndexMap,
         photoLinkIds,
         requestDownload,
-    } = usePhotosView();
-    const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
-        photos,
-        photoLinkIdToIndexMap
-    );
+    } = usePhotosWithAlbumsView();
+
+    const { selectedItems, clearSelection } = usePhotosSelection(photos, photoLinkIdToIndexMap);
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const [detailsModal, showDetailsModal] = useDetailsModal();
+    const createAlbumModal = useModalStateObject();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const createAlbum = useCreateAlbum();
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
-    const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
+    const { navigateToPhotos, navigateToAlbum, navigateToAlbums } = useNavigate();
+    // TODO: Move tag selection to specific hook
+    const [selectedTag, setSelectedTag] = useState<PhotosTagsProps['selectedTag']>([]);
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -87,14 +91,26 @@ export const PhotosView: FC<void> = () => {
         [setPreviewLinkId, photoLinkIds]
     );
 
-    const isEmpty = photos.length === 0;
+    const onCreateAlbum = useCallback(
+        async (name: string) => {
+            if (!shareId || !linkId || !volumeId) {
+                return;
+            }
+            try {
+                const abortSignal = new AbortController().signal;
+                const albumLinkId = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
+                navigateToAlbum(albumLinkId);
+            } catch (e) {
+                console.error('album creation failed', e);
+            }
+        },
+        [shareId, linkId, createAlbum, navigateToAlbum]
+    );
 
-    if (isPhotosLoading && isEmpty) {
+    const isAlbumsEmpty = albums.length === 0;
+
+    if (!shareId || !linkId || isPhotosLoading) {
         return <Loader />;
-    }
-
-    if (!shareId || !linkId) {
-        return <EmptyPhotos />;
     }
 
     const hasPreview = !!previewItem;
@@ -103,10 +119,6 @@ export const PhotosView: FC<void> = () => {
         <>
             {detailsModal}
             {linkSharingModal}
-            {isUploadDisabled && (
-                <TopBanner className="bg-warning">{c('Info')
-                    .t`We are experiencing technical issues. Uploading new photos is temporarily disabled.`}</TopBanner>
-            )}
             {hasPreview && (
                 <PortalPreview
                     ref={previewRef}
@@ -144,17 +156,12 @@ export const PhotosView: FC<void> = () => {
                 />
             )}
             <PhotosRecoveryBanner />
-            <UploadDragDrop
-                disabled={isUploadDisabled}
-                isForPhotos
-                shareId={shareId}
-                parentLinkId={linkId}
-                className="flex flex-column flex-nowrap flex-1"
-            >
-                <ToolbarRow
-                    titleArea={
-                        <span className="flex items-center text-strong pl-1">
-                            {selectedCount > 0 ? (
+
+            <ToolbarRow
+                titleArea={
+                    <>
+                        {selectedCount > 0 && (
+                            <span className="flex items-center text-strong pl-1">
                                 <div className="flex gap-2" data-testid="photos-selected-count">
                                     <PhotosClearSelectionButton onClick={clearSelection} />
                                     {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
@@ -166,42 +173,72 @@ export const PhotosView: FC<void> = () => {
                                         )}
                                     </span>
                                 </div>
-                            ) : (
-                                c('Title').t`Photos`
-                            )}
-                            {isPhotosLoading && <Loader className="ml-2 flex items-center" />}
-                        </span>
-                    }
-                    toolbar={
-                        <PhotosToolbar
-                            shareId={shareId}
-                            linkId={linkId}
-                            selectedItems={selectedItems}
-                            onPreview={handleToolbarPreview}
-                            requestDownload={requestDownload}
-                            uploadDisabled={isUploadDisabled}
-                        />
-                    }
-                />
+                            </span>
+                        )}
 
-                {isEmpty ? (
-                    <EmptyPhotos />
-                ) : (
-                    <PhotosGrid
-                        data={photos}
-                        onItemRender={handleItemRender}
-                        onItemRenderLoadedLink={handleItemRenderLoadedLink}
-                        isLoading={isPhotosLoading}
-                        onItemClick={setPreviewLinkId}
-                        hasSelection={selectedCount > 0}
-                        onSelectChange={(i, isSelected) =>
-                            handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
-                        }
-                        isGroupSelected={isGroupSelected}
-                        isItemSelected={isItemSelected}
+                        {selectedCount === 0 && (
+                            <ToolbarLeftActionsGallery
+                                onGalleryClick={() => {
+                                    navigateToPhotos();
+                                }}
+                                onAlbumsClick={() => {
+                                    navigateToAlbums();
+                                }}
+                                isLoading={isPhotosLoading}
+                                selection={'albums'}
+                            />
+                        )}
+                    </>
+                }
+                toolbar={
+                    <PhotosWithAlbumsToolbar
+                        shareId={shareId}
+                        linkId={linkId}
+                        selectedItems={selectedItems}
+                        onPreview={handleToolbarPreview}
+                        requestDownload={requestDownload}
+                        uploadDisabled={true}
+                        tabSelection={'albums'}
+                        createAlbumModal={createAlbumModal}
                     />
-                )}
-            </UploadDragDrop>
+                }
+            />
+
+            <PhotosTags
+                selectedTag={selectedTag}
+                tags={[
+                    PhotoTags.Favorites,
+                    PhotoTags.Screenshots,
+                    PhotoTags.Videos,
+                    PhotoTags.LivePhotos,
+                    PhotoTags.MotionPhotos,
+                    PhotoTags.Selfies,
+                    PhotoTags.Portraits,
+                    PhotoTags.Bursts,
+                    PhotoTags.Panoramas,
+                    PhotoTags.Raw,
+                ]}
+                onTagSelect={setSelectedTag}
+            />
+
+            {isAlbumsEmpty ? (
+                <>
+                    {/** TODO: Empty Albums View */}
+                    <EmptyPhotos shareId={shareId} linkId={linkId} />
+                </>
+            ) : (
+                <AlbumsGrid
+                    data={albums}
+                    onItemRender={handleItemRender}
+                    onItemRenderLoadedLink={handleItemRenderLoadedLink}
+                    isLoading={false} // TODO: Get Albums loading status
+                    onItemClick={(linkId) => {
+                        navigateToAlbum(linkId);
+                    }}
+                />
+            )}
+
+            <CreateAlbumModal createAlbumModal={createAlbumModal} createAlbum={onCreateAlbum} />
         </>
     );
 };

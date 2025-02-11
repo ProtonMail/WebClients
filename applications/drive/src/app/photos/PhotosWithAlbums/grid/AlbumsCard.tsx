@@ -40,7 +40,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
     useEffect(() => {
         const hasName = album.name;
         if (!hasName) {
-            onRender(album.cover?.linkId || album.linkId, ref);
+            onRender(album.linkId, ref);
         } else {
             onRenderLoadedLink(album.cover?.linkId || album.linkId, ref);
         }
