@@ -5317,9 +5317,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，因此功能已受限。欠费时间过长将导致无法收取邮件，网盘分享链接也将失效。${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "支付成功后账户将立即完成升级。"
-      ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "您的地址被禁用，无法向活动参与者发送活动取消邮件。仍要删除该系列活动中的所有活动吗？"
       ],
@@ -7026,14 +7023,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "${ priceCoupon } 折扣价的有效期为第一个月。之后将以 ${ priceMailPlus } 价格每月自动续订。您可以随时取消。"
-      ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "只需 ${ priceMailPlus } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。可随时取消。"
       ]
     },
     "new_plans: title": {
