@@ -70,7 +70,7 @@ interface MarkSelectionAsParams extends MarkAsParams {
  */
 export const useMarkSelectionAs = () => {
     const api = useApi();
-    const { call, start, stop } = useEventManager();
+    const { start, stop } = useEventManager();
     const optimisticMarkAs = useOptimisticMarkAs();
     const { createNotification } = useNotifications();
     const dispatch = useMailDispatch();
@@ -103,7 +103,8 @@ export const useMarkSelectionAs = () => {
                     }
                 } finally {
                     start();
-                    await call();
+                    // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                    // await call();
                 }
             };
 
@@ -139,6 +140,7 @@ export const useMarkSelectionAs = () => {
                 } finally {
                     dispatch(backendActionFinished());
                     start();
+                    // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
                     // await call();
                 }
                 return tokens;
