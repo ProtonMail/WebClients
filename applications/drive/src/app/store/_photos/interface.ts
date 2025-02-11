@@ -11,7 +11,9 @@ export interface Photo {
     relatedPhotosLinkIds?: string[];
 }
 
-export enum PhotoTags {
+export enum PhotoTag {
+    All = -1,
+    // All these are defined by the BE
     Favorites = 0,
     Screenshots = 1,
     Videos = 2,
@@ -23,6 +25,15 @@ export enum PhotoTags {
     Panoramas = 8,
     Raw = 9,
 }
+
+export enum AlbumTag {
+    All = 0,
+    MyAlbums = 1,
+    Shared = 2,
+    SharedWithMe = 3,
+}
+
+export type Tag = PhotoTag | AlbumTag;
 
 export type PhotoLink =
     | DecryptedLink
