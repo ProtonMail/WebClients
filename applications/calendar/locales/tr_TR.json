@@ -297,7 +297,7 @@
         "E-posta ayarları"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini açmak"
+        "bilgisayar bildirimlerini açmak"
       ],
       "Expand video conferencing widget": [
         "Görüntülü görüşme araç takımını büyüt"
@@ -802,13 +802,13 @@
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Masaüstü uygulaması ücretsiz deneme sürümünüz 2 gün içinde sona erecek. ${ upgradeButton }"
+        "Bilgisayar uygulamasını ücretsiz deneme süreniz 2 gün sonra sona erecek. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Masaüstü uygulaması ücretsiz deneme sürümünüz 5 gün içinde sona erecek. ${ upgradeButton }"
+        "Bilgisayar uygulamasını ücretsiz deneme süreniz 5 gün sonra sona erecek. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Masaüstü uygulaması ücretsiz deneme sürümünüz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+        "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
       ]
     },
     "Action subline": {
@@ -997,7 +997,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus ve ${ CALENDAR_SHORT_APP_NAME }"
@@ -1148,7 +1148,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ]
     },
     "Bug category": {
@@ -5230,7 +5230,7 @@
         "Hafta"
       ],
       "Week and month views only apply to desktop.": [
-        "Haftalık ve aylık görünümler yalnızca masaüstü için geçerlidir."
+        "Haftalık ve aylık görünümler yalnızca bilgisayar uygulamasında kullanılabilir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
@@ -6766,7 +6766,7 @@
         "Verilerin ele geçirilmesini izleme"
       ],
       "Desktop app": [
-        "Masaüstü uygulaması"
+        "Bilgisayar uygulaması"
       ],
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
@@ -7146,10 +7146,10 @@
     },
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "İndirimli ${ priceCoupon } fiyatı ilk ay için geçerlidir. Daha sonra otomatik olarak ${ priceLine } üzerinden yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
+        "İlk ay için ${ priceCoupon } indirimli tutar uygulanır. Ardından, otomatik olarak ${ priceLine } tutarla yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Tüm ${ BRAND_NAME } ayrıcalıklı ürün ve özelliklerin kilidini sadece ${ priceLine } karşılığında açın. İstediğiniz zaman iptal edin."
+        "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "new_plans: title": {
@@ -7180,7 +7180,7 @@
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Masaüstünüzün rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
+        "Bilgisayarınızın rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
@@ -7241,7 +7241,7 @@
         "Kullanıcı kimlik doğrulama bilgilerinin ele geçirildiğini düşündüğünüzde kullanıcı oturumlarını zorla kapatın"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
+        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden bilgisayar uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
       ],
       "Increase or reallocate storage for a user": [
         "Bir kullanıcının depolama alanını artırın ya da yeniden ayarlayın"
@@ -8968,7 +8968,7 @@
         "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
       ],
       "Desktop app": [
-        "Masaüstü uygulaması"
+        "Bilgisayar uygulaması"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
@@ -9004,7 +9004,7 @@
         "${ dayDiff } gün kaldı"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } iş verilerinizi güvende tutar ve herkese şifrelenmiş e-postalar göndermenizi sağlar."
@@ -9105,7 +9105,7 @@
         "Kapsamlı gizlilik ve güvenlik"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Masaüstü uygulaması ve e-posta istemcisi desteği (IMAP ile)"
+        "Bilgisayar uygulaması ve e-posta istemcisi desteği (IMAP ile)"
       ],
       "Direct contribution to our mission": [
         "Amacımıza doğrudan katkıda bulunmak"
@@ -10229,13 +10229,13 @@
         "+ ücretsiz hediye"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "1 yıl boyunca ${ planTitle } için yüzde ${ discountPercentAbsolute }'lik indirim sağlayan hediye kodu"
+        "1 yıl boyunca ${ planTitle } tarifesinde yüzde ${ discountPercentAbsolute } oranında indirim sağlayan hediye kodu"
       ],
       "Valentine's deal": [
         "Sevgililer günü fırsatı"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Paylaşmanız için ücretsiz hediyeniz, değeri ${ price }﻿: "
+        "🎁 ${ price } değerindeki paylaşması ücretsiz hediyeniz: "
       ]
     },
     "Valentine_2025: Offer": {
