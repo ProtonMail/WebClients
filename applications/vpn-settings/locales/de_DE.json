@@ -970,6 +970,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ discountedPrice } gilt für die ersten ${ cycle } Monate. Danach wird das Abonnement automatisch zum reduzierten Preis von ${ nextPrice } für ${ renewalLength } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ discountedPrice } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ nextPrice } verlängert. Du kannst jederzeit kündigen."
       ]
@@ -1227,6 +1230,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Schließen"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
       ],
@@ -4480,6 +4486,9 @@
         "oder einem beliebigen Land in ${ availableAgainAfterHours } Stunde zuordnen",
         "oder einem beliebigen Land in ${ availableAgainAfterHours } Stunden zuordnen"
       ],
+      "or discover other features:": [
+        "oder entdecke andere Funktionen:"
+      ],
       "Or select a particular server:": [
         "Oder wähle einen bestimmten Server aus:"
       ],
@@ -6307,6 +6316,9 @@
       ],
       "for ${ price }": [
         "für ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Richte dein Konto mit deiner Porkbun-Domain ein."
       ]
     },
     "mailtrial2024: Action": {
@@ -6590,6 +6602,9 @@
       "${ options }-day file version history": [
         "Dateiversionsverlauf für ${ options } Tag",
         "Dateiversionsverlauf für ${ options } Tage"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Lebenslanger Zugang zu den Funktionen von ${ PASS_APP_NAME } und SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } mit ${ n } hide-my-email-Alias",
@@ -8066,6 +8081,15 @@
       "Select billing country to pay": [
         "Wähle zum Bezahlen ein Rechnungsland aus"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für die ersten ${ subscriptionLength } Monate. Der Gutschein ist bei ${ couponRedemptions } Verlängerungen gültig. Danach wird das Abonnement automatisch zum Preis von ${ renewPrice } für ${ subscriptionLengthCopy } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für die ersten ${ subscriptionLength } Monate. Danach wird das Abonnement automatisch zum Preis von ${ renewPrice } für ${ subscriptionLengthCopy } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount }gilt für den ersten Monat. Der Gutschein kann bei ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPrice } für ${ subscriptionLength } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPrice } verlängert. Du kannst jederzeit kündigen."
       ],
@@ -9171,9 +9195,6 @@
       "Enter your backup password": [
         "Gib dein Backup-Passwort ein"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Damit sich dieser Benutzer anmelden kann, musst du sicherstellen, dass er bei deinem Identitätsanbieter vorhanden ist."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Zu deiner Sicherheit wurdest du von all deinen anderen aktiven Geräten abgemeldet. Bevor du auf dein Konto zugreifen kannst, musst du ein neues Backup-Passwort eingeben."
       ],
@@ -9239,9 +9260,6 @@
       ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Der Benutzer ${ name } ist jetzt ein Single Sign-on-Konto."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dadurch wird der Benutzer von seinen anderen Geräten abgemeldet und muss ein neues Backup-Passwort erstellen."
@@ -10985,6 +11003,9 @@
       "External address - disables end-to-end email encryption for this group": [
         "Externe Adresse - deaktiviert die Ende-zu-Ende-Verschlüsselung für diese Gruppe"
       ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Externe Adresse – deaktiviert die Ende-zu-Ende E-Mail-Verschlüsselung für diese Gruppe, und keine verschlüsselten Ressourcen werden mit diesem Benutzer geteilt."
+      ],
       "Group membership paused": [
         "Gruppenmitgliedschaft pausiert"
       ],
@@ -11116,6 +11137,9 @@
       ]
     },
     "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Anpassungsgutschrift"
+      ],
       "Authorization": [
         "Autorisierung"
       ],
@@ -11346,21 +11370,21 @@
         "+ Gratisgeschenk"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Ein Geschenkcode für ${ discountPercentAbsolute }% Rabatt auf ${ planTitle } für 1 Jahr"
+        "Ein Geschenkcode für ${ discountPercentAbsolute } % Rabatt auf ${ planTitle } für 1 Jahr"
       ],
       "Valentine's deal": [
         "Angebot zum Valentinstag"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Dein Gratisgeschenk zum Teilen, im Wert von ${ price } "
+        "🎁 Dein Gratisgeschenk zum Teilen, im Wert von ${ price }: "
       ]
     },
     "Valentine_2025: Offer": {
       "${ salePercentage }% off": [
-        "${ salePercentage }% Rabatt"
+        "${ salePercentage } % Rabatt"
       ],
       "${ salePercentage }% off for you +1": [
-        "${ salePercentage }% Rabatt für dich +1"
+        "${ salePercentage } % Rabatt für dich +1"
       ],
       "10 email addresses for you": [
         "10 E-Mail-Adressen für dich"
@@ -11396,7 +11420,7 @@
         "Doppelte Liebe, halber Preis"
       ],
       "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Sichere dir 1 Jahr ${ dealName } mit ${ salePercentage }% Rabatt – plus einen Geschenkcode, um dasselbe Angebot mit einer Freundin oder einem Freund zu teilen"
+        "Sichere dir 1 Jahr ${ dealName } mit ${ salePercentage } % Rabatt – plus einen Geschenkcode, um dasselbe Angebot mit einer Freundin oder einem Freund zu teilen"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
