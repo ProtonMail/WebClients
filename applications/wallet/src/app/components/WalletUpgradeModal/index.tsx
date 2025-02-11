@@ -14,7 +14,6 @@ import {
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import upgradeWalletSrc from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
-import { useFlag } from '@proton/unleash/index';
 
 import { Button } from '../../atoms';
 import type { SubTheme } from '../../utils';
@@ -38,17 +37,15 @@ export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Pro
         hasBundlePro(subscription) ||
         hasBundlePro2024(subscription);
     const hidden = hasVisionary(subscription);
-    const isEarlyAccess = useFlag('WalletEarlyAccess');
-    const subscriptionProps =
-        isEarlyAccess || upgradeToVisionaryOnly
-            ? {
-                  step: SUBSCRIPTION_STEPS.CHECKOUT,
-                  disablePlanSelection: true,
-                  plan: PLANS.VISIONARY,
-              }
-            : {
-                  step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-              };
+    const subscriptionProps = upgradeToVisionaryOnly
+        ? {
+              step: SUBSCRIPTION_STEPS.CHECKOUT,
+              disablePlanSelection: true,
+              plan: PLANS.VISIONARY,
+          }
+        : {
+              step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+          };
 
     return (
         <Prompt
