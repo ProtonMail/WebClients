@@ -117,8 +117,6 @@ describe('FileSaver', () => {
 
         describe('OPFS mechanism selection', () => {
             beforeEach(() => {
-                // Set up conditions for OPFS to be considered
-                mockUnleashStore.isEnabled.mockReturnValue(true);
                 mockStorageEstimate.mockResolvedValue({
                     quota: 2000 * 1024 * 1024, // 2GB
                     usage: 100 * 1024 * 1024, // 100MB
@@ -129,14 +127,6 @@ describe('FileSaver', () => {
                 const size = 500 * 1024 * 1024; // 500MB
                 const result = await fileSaver.selectMechanismForDownload(size);
                 expect(result).toBe('opfs');
-                expect(mockUnleashStore.isEnabled).toHaveBeenCalledWith('DriveWebOPFSDownloadMechanism');
-            });
-
-            it('should not return "opfs" when feature flag is disabled', async () => {
-                mockUnleashStore.isEnabled.mockReturnValue(false);
-                const size = 500 * 1024 * 1024;
-                const result = await fileSaver.selectMechanismForDownload(size);
-                expect(result).toBe('sw');
             });
 
             it('should not return "opfs" when useSWFallback is true', async () => {

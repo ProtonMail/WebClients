@@ -70,14 +70,13 @@ export const selectMechanismForDownload = async (
         return cookie as 'memory' | 'opfs' | 'sw';
     }
 
-    const isOPFSEnabled = unleashVanillaStore.getState().isEnabled('DriveWebOPFSDownloadMechanism');
     const limit = getMemoryLimit();
     if (size && size < limit) {
         return 'memory';
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system
-    if (isOPFSEnabled && isOPFSSupported() && (await hasEnoughOPFSStorage(size))) {
+    if (isOPFSSupported() && (await hasEnoughOPFSStorage(size))) {
         return 'opfs';
     }
 
