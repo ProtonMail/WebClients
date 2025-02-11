@@ -7,7 +7,11 @@ import { DS_STORE } from '@proton/shared/lib/drive/constants';
 import { isImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { mimeTypeFromFile, useUpload } from '../../store/_uploads';
-import type { UploadFileList } from '../../store/_uploads/interface';
+import type {
+    OnFileUploadSuccessCallbackData,
+    OnFolderUploadSuccessCallbackData,
+    UploadFileList,
+} from '../../store/_uploads/interface';
 import { isTransferCancelError } from '../../utils/transfer';
 
 declare global {
@@ -29,15 +33,15 @@ declare global {
 export const useFileDrop = ({
     isForPhotos = false,
     shareId,
-    linkId,
+    parentLinkId,
     onFileUpload,
     onFolderUpload,
 }: {
     isForPhotos?: boolean;
     shareId: string;
-    linkId: string;
-    onFileUpload?: () => void;
-    onFolderUpload?: () => void;
+    parentLinkId: string;
+    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+    onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void;
 }) => {
     const { createNotification } = useNotifications();
     const { uploadFiles } = useUpload();
@@ -173,22 +177,15 @@ export const useFileDrop = ({
                 console.error(errors);
             }
 
-            // For telemetry we only want to count the upload once, so we do it after the traversal
-            if (filesToUpload.length > 0) {
-                if (filesToUpload.find((item) => 'folder' in item)) {
-                    onFolderUpload?.();
-                } else {
-                    onFileUpload?.();
+            uploadFiles(shareId, parentLinkId, filesToUpload, isForPhotos, onFileUpload, onFolderUpload).catch(
+                (err) => {
+                    if (!isTransferCancelError(err)) {
+                        console.error(err);
+                    }
                 }
-            }
-
-            uploadFiles(shareId, linkId, filesToUpload, isForPhotos).catch((err) => {
-                if (!isTransferCancelError(err)) {
-                    console.error(err);
-                }
-            });
+            );
         },
-        [isForPhotos, shareId, linkId]
+        [isForPhotos, shareId, parentLinkId]
     );
 
     return {

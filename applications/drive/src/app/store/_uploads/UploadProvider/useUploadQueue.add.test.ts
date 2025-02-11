@@ -42,11 +42,17 @@ describe('useUploadQueue::add', () => {
                 name: 'folder',
                 shareId: 'shareId',
                 parentId: 'parentId',
+                callbacks: {
+                    onFolderUpload: undefined,
+                },
             },
             {
                 name: 'folder',
                 shareId: 'shareId2',
                 parentId: 'parentId2',
+                callbacks: {
+                    onFolderUpload: undefined,
+                },
             },
         ]);
     });
@@ -61,11 +67,17 @@ describe('useUploadQueue::add', () => {
                 name: 'folder',
                 shareId: 'shareId',
                 parentId: 'parentId',
+                callbacks: {
+                    onFolderUpload: undefined,
+                },
             },
             {
                 name: 'folder2',
                 shareId: 'shareId',
                 parentId: 'parentId',
+                callbacks: {
+                    onFolderUpload: undefined,
+                },
             },
         ]);
     });

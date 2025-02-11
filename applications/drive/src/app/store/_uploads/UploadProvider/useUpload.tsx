@@ -29,7 +29,14 @@ import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useTransferLog } from '../../_transfer';
 import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
-import type { UploadFileControls, UploadFileItem, UploadFileList, UploadFolderControls } from '../interface';
+import type {
+    OnFileUploadSuccessCallbackData,
+    OnFolderUploadSuccessCallbackData,
+    UploadFileControls,
+    UploadFileItem,
+    UploadFileList,
+    UploadFolderControls,
+} from '../interface';
 import type { UploadModalContainer } from './UploadModalContainer';
 import type { UploadProviderState } from './UploadProviderState';
 import type { ConflictStrategyHandler, UpdateFilter } from './interface';
@@ -126,7 +133,9 @@ function useBaseUpload(
         shareId: string,
         parentId: string,
         list: UploadFileList,
-        isForPhotos: boolean = false
+        isForPhotos: boolean = false,
+        onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void,
+        onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
     ) => {
         const total = getTotalFileList(list);
         // We check if item is upload into a shared with me share as we don't check for space on external volumes
@@ -159,23 +168,25 @@ function useBaseUpload(
             });
         }
 
-        await queue.add(shareId, parentId, list, isForPhotos, isSharedWithMe).catch((err: any) => {
-            const errors = Array.isArray(err) ? err : [err];
-            errors.forEach((err) => {
-                if ((err as Error).name === 'UploadUserError' || (err as Error).name === 'UploadConflictError') {
-                    createNotification({
-                        text: err.message,
-                        type: 'error',
-                    });
-                } else {
-                    createNotification({
-                        text: c('Notification').t`Failed to upload files: ${err}`,
-                        type: 'error',
-                    });
-                    console.error(err);
-                }
+        await queue
+            .add(shareId, parentId, list, isForPhotos, isSharedWithMe, onFileUpload, onFolderUpload)
+            .catch((err: any) => {
+                const errors = Array.isArray(err) ? err : [err];
+                errors.forEach((err) => {
+                    if ((err as Error).name === 'UploadUserError' || (err as Error).name === 'UploadConflictError') {
+                        createNotification({
+                            text: err.message,
+                            type: 'error',
+                        });
+                    } else {
+                        createNotification({
+                            text: c('Notification').t`Failed to upload files: ${err}`,
+                            type: 'error',
+                        });
+                        console.error(err);
+                    }
+                });
             });
-        });
     };
 
     const restartUploads = useCallback(
@@ -226,6 +237,7 @@ function useBaseUpload(
                 .start()
                 .then(({ folderId, folderName }) => {
                     queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId, name: folderName });
+                    nextFolderUpload.callbacks.onFolderUpload?.({ folderId, folderName });
                 })
                 .catch((error) => {
                     if (isTransferCancelError(error)) {
@@ -284,9 +296,10 @@ function useBaseUpload(
                         queue.updateState(nextFileUpload.id, TransferState.Finalizing);
                     },
                 })
-                .then(() => {
+                .then((file) => {
                     queue.updateState(nextFileUpload.id, TransferState.Done);
                     metrics.uploadSucceeded(nextFileUpload.shareId, nextFileUpload.numberOfErrors);
+                    nextFileUpload.callbacks.onFileUpload?.(file);
                 })
                 .catch((error) => {
                     if (isPhotosDisabledUploadError(error)) {

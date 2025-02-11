@@ -23,6 +23,7 @@ function makeFileUpload(id: string, state: TransferState, filename: string, size
             size: file.size,
         },
         numberOfErrors: 0,
+        callbacks: {},
     };
 }
 
