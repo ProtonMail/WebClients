@@ -1466,6 +1466,9 @@
       ],
       "Take a tour": [
         "Otwórz przewodnik"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Wybierz plan ${ planName } za ${ priceCoupon }"
       ]
     },
     "action": {
@@ -1997,13 +2000,19 @@
         "Dalej"
       ],
       "Remind me later": [
-        "Przypomnij mi później"
+        "Przypomnij później"
       ],
       "Set up other features": [
         "Skonfiguruj inne funkcje"
       ],
       "Take a tour": [
         "Otwórz przewodnik"
+      ],
+      "Close": [
+        "Zamknij"
+      ],
+      "Got it": [
+        "Ok"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4839,7 +4848,7 @@
     },
     "Event invistation error": {
       "Unexpected error": [
-        "Niespodziewany błąd"
+        "Wystąpił nieoczekiwany błąd"
       ]
     },
     "Event invitation error": {
@@ -5534,6 +5543,12 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -7272,7 +7287,7 @@
         "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
+        "Płatności SEPA nie są obecnie dostępne. Spróbuj ponownie później."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -7554,7 +7569,7 @@
         "Aby odzyskać dane, musisz reaktywować klucz konta użyty podczas jego tworzenia. Wymaga to znajomości hasła użytego podczas generowania klucza."
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
-        "Aby usunąć ograniczenia, można przejść na płatny plan."
+        "Ulepsz do płatnego planu, aby usunąć ograniczenia."
       ],
       "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
         "Aby usunąć ograniczenia, można odwiedzić stronę ${ mailLink } i wykupić płatny plan."
@@ -8043,7 +8058,7 @@
         "Pobierz z App Store"
       ],
       "Enabling auto-deletion…": [
-        "Włącz automatyczne usuwanie..."
+        "Włączanie automatycznego usuwania…"
       ],
       "Get it on Google Play": [
         "Pobierz z Google Play"
@@ -8052,13 +8067,16 @@
         "Klucze zostały utworzone"
       ],
       "Registering your subscription…": [
-        "Rejestrowanie subskrypcji..."
+        "Rejestrowanie subskrypcji…"
       ],
       "Setting up your new address…": [
         "Konfiguracja nowego adresu…"
       ],
       "User activated": [
         "Użytkownik został aktywowany"
+      ],
+      "Setting up ${ feature }…": [
+        "Konfigurowanie ${ feature }…"
       ]
     },
     "info": {
@@ -10112,6 +10130,9 @@
       ],
       "Private photo backup": [
         "Prywatna kopia zapasowa zdjęć"
+      ],
+      "Tor over VPN": [
+        "Tor przez VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -13995,6 +14016,12 @@
       ],
       "Snooze:": [
         "Odłóż:"
+      ],
+      "${ feature } is now active": [
+        "Funkcja ${ feature } jest aktywna"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Skonfiguruj ${ protonDuoPlanName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14166,6 +14193,12 @@
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
       ]
     },
     "vpn_2step: feature": {
@@ -14718,6 +14751,11 @@
     "Signup label": {
       "Display name": [
         "Nazwa wyświetlana"
+      ]
+    },
+    "new_plans: Subtext": {
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     }
   }

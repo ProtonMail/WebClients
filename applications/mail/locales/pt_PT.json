@@ -2006,6 +2006,9 @@
       ],
       "Got it": [
         "Entendido"
+      ],
+      "Close": [
+        "Fechar"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4601,7 +4604,7 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Rascunhos não podem ser movidos para a Caixa de Entrada"
+        "Os rascunhos não podem ser movidos para a caixa de entrada."
       ],
       "Drafts cannot be moved to Spam": [
         "Rascunhos não podem ser movidos para a pasta de Spam"
@@ -14292,6 +14295,12 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
         "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceMailPlus }. Cancele a qualquer momento."
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "O preço com desconto de ${ priceCoupon } é válido pelo primeiro mês. Após esse período, será automaticamente renovado por ${ priceLine } . Pode cancelar a qualquer momento."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
     "Offer": {
