@@ -1085,6 +1085,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Sluiten"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
       ],
@@ -4940,9 +4943,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt. Verdere niet-betaling zal leiden tot het blokkeren van uw e-mails een deel-links. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Uw account wordt bijgewerkt zodra de betaling is verwerkt."
-      ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "Uw browsers afdrukvenster wordt nu geopend, waar u uw document naar PDF kunt exporteren."
       ],
@@ -6611,11 +6611,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "De kortingsprijs van ${ priceCoupon } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ priceMailPlus }. U kunt op ieder moment annuleren."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "De prijs van ${ priceCoupon } is alleen voor de eerste maand, hierna wordt uw abonnement automatisch verlengt voor ${ priceLine }. U kunt op ieder moment annuleren."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Ontgrendel alle premium ${ BRAND_NAME } producten en functies van ${ priceMailPlus }. Elk moment te annuleren."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
       ]
     },
     "new_plans: title": {
@@ -9157,6 +9157,20 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ]
+    },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ gratis cadeau"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Een cadeaucode voor ${ discountPercentAbsolute }% korting op ${ planTitle } voor 1 jaar"
+      ],
+      "Valentine's deal": [
+        "Valentijnsdeal"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Uw gratis cadeau om te delen, ter waarde van ${ price }﻿: "
       ]
     },
     "Valentine_2025: Offer": {
