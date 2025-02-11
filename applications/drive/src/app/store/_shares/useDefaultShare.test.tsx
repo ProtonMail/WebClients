@@ -5,7 +5,6 @@ import useDefaultShare from './useDefaultShare';
 
 const mockRequest = jest.fn();
 const mockCreateVolume = jest.fn();
-const mockGetDefaultShareId = jest.fn();
 const mockGetShare = jest.fn();
 const mockGetShareWithKey = jest.fn();
 
@@ -38,22 +37,6 @@ jest.mock('../_utils/useDebouncedFunction', () => {
         return (wrapper: any) => wrapper();
     };
     return useDebouncedFunction;
-});
-
-jest.mock('../../zustand/share/shares.store', () => {
-    const actual = jest.requireActual('../../zustand/share/shares.store');
-
-    return {
-        ...actual,
-        useSharesStore: () => {
-            const state = actual.useSharesStore();
-            return {
-                ...state,
-                setShares: () => {},
-                getDefaultShareId: mockGetDefaultShareId,
-            };
-        },
-    };
 });
 
 jest.mock('../_shares/useShare', () => {
@@ -104,11 +87,6 @@ describe('useDefaultShare', () => {
     });
 
     it('creates a volume if existing shares are locked/soft deleted', async () => {
-        mockGetDefaultShareId.mockImplementation(() => {
-            // no valid shares were found
-            return undefined;
-        });
-
         await act(async () => {
             await hook.current.getDefaultShare();
         });
