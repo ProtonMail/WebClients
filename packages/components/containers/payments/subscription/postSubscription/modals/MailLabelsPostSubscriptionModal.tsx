@@ -61,18 +61,21 @@ const MailLabelsPostSubscriptionModal = ({
             ) : (
                 <>
                     <PostSubscriptionModalHeader illustration={illustration} />
-                    <PostSubscriptionModalContentWrapper>
+                    <PostSubscriptionModalContentWrapper
+                        footer={
+                            <>
+                                <Button color="norm" fullWidth onClick={handleCreateLabel}>
+                                    {c('Button').t`Create label`}
+                                </Button>
+                                <p className="my-4 text-center color-weak text-sm">{c('Info')
+                                    .t`or discover other features:`}</p>
+                                <Button fullWidth onClick={onDisplayFeatureTour}>{c('Button').t`Take a tour`}</Button>
+                            </>
+                        }
+                    >
                         <h1 className="text-lg text-bold text-center mb-0">{c('Title').t`Upgrade complete!`}</h1>
                         <h2 className="text-lg text-center mt-0 mb-6">{c('Title')
                             .t`You can now create unlimited folders and labels`}</h2>
-                        <div>
-                            <Button color="norm" fullWidth onClick={handleCreateLabel}>
-                                {c('Button').t`Create label`}
-                            </Button>
-                            <p className="my-4 text-center color-weak text-sm">{c('Info')
-                                .t`or discover other features:`}</p>
-                            <Button fullWidth onClick={onDisplayFeatureTour}>{c('Button').t`Take a tour`}</Button>
-                        </div>
                     </PostSubscriptionModalContentWrapper>
                 </>
             )}

@@ -14,7 +14,7 @@ import generateUID from '@proton/utils/generateUID';
 
 import './Modal.scss';
 
-export type ModalSize = 'small' | 'medium' | 'large' | 'xlarge' | 'full';
+export type ModalSize = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'full';
 
 /**
  * Omission of id from ModalOwnProps because in ModalOwnProps "id"
@@ -242,6 +242,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     className={clsx([
                         'modal-two-dialog outline-none',
                         className,
+                        size === 'xsmall' && 'modal-two-dialog--xsmall',
                         size === 'small' && 'modal-two-dialog--small',
                         size === 'large' && 'modal-two-dialog--large',
                         size === 'xlarge' && 'modal-two-dialog--xlarge',

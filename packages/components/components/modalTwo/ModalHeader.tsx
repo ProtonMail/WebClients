@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef, ReactElement, ReactNode } from 'react';
+import type { ComponentPropsWithRef, ReactElement, ReactNode, SVGProps } from 'react';
 import { cloneElement, useContext } from 'react';
 
 import { c } from 'ttag';
@@ -48,6 +48,28 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
     additionalContent?: JSX.Element;
 }
 
+interface ModalHeaderCloseButtonProps {
+    buttonProps?: ButtonProps;
+    iconProps?: Omit<SVGProps<SVGSVGElement>, 'ref' | 'name' | 'rotate'>;
+}
+
+export const ModalHeaderCloseButton = ({ buttonProps, iconProps }: ModalHeaderCloseButtonProps) => {
+    const { onClose } = useContext(ModalContext);
+
+    return (
+        <Tooltip title={c('Action').t`Close`}>
+            <Button shape="ghost" data-testid="modal:close" {...buttonProps} icon onClick={onClose}>
+                <Icon
+                    {...iconProps}
+                    className={clsx('modal-close-icon', iconProps?.className)}
+                    name="cross-big"
+                    alt={c('Action').t`Close`}
+                />
+            </Button>
+        </Tooltip>
+    );
+};
+
 const ModalHeader = ({
     title,
     subline,
@@ -58,7 +80,7 @@ const ModalHeader = ({
     hasClose = true,
     ...rest
 }: ModalHeaderProps) => {
-    const { id, onClose, size } = useContext(ModalContext);
+    const { id, size } = useContext(ModalContext);
 
     const actionsArray = Array.isArray(actions) ? actions : [actions];
 
@@ -99,18 +121,12 @@ const ModalHeader = ({
                     )}
 
                     {hasClose && (
-                        <Tooltip title={c('Action').t`Close`}>
-                            <Button
-                                icon
-                                shape="ghost"
-                                data-testid="modal:close"
-                                onClick={onClose}
-                                {...closeButtonProps}
-                                className={clsx('shrink-0', closeButtonProps?.className)}
-                            >
-                                <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
-                            </Button>
-                        </Tooltip>
+                        <ModalHeaderCloseButton
+                            buttonProps={{
+                                ...closeButtonProps,
+                                className: clsx('shrink-0', closeButtonProps?.className),
+                            }}
+                        />
                     )}
                 </div>
             </div>

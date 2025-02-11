@@ -60,16 +60,29 @@ const ConfirmationModalContent = ({
     return (
         <>
             <PostSubscriptionModalHeader illustration={illustration} />
-            <PostSubscriptionModalContentWrapper>
+            <PostSubscriptionModalContentWrapper
+                footer={
+                    <>
+                        <Button className="mb-2" color="norm" fullWidth onClick={onDisplayFeatureTour}>
+                            {c('Button').t`Set up other features`}
+                        </Button>
+                        <Button fullWidth onClick={onRemindMeLater}>{c('Button').t`Remind me later`}</Button>
+                    </>
+                }
+            >
                 <h1 className="text-lg text-bold text-center mb-0">{c('Title').t`Upgrade complete!`}</h1>
                 <h2 className="text-lg text-center mt-0 mb-4">{c('Title').t`Your shorter address is now ready`}</h2>
-                <div className="mb-4 rounded bg-weak text-center">
-                    {shortDomainAddress}{' '}
-                    <Copy
-                        value={shortDomainAddress}
-                        shape="ghost"
-                        onCopy={() => createNotification({ text: c('Info').t`Address copied to clipboard` })}
-                    />
+                <div className="mb-4 pl-2 rounded bg-weak text-center flex flex-nowrap justify-space-between items-center">
+                    <div className="text-ellipsis" title={shortDomainAddress}>
+                        {shortDomainAddress}{' '}
+                    </div>
+                    <div className="shrink-0">
+                        <Copy
+                            value={shortDomainAddress}
+                            shape="ghost"
+                            onCopy={() => createNotification({ text: c('Info').t`Address copied to clipboard` })}
+                        />
+                    </div>
                 </div>
                 <ul className="unstyled">
                     {listItems.map(({ icon, text }) => (
@@ -88,17 +101,11 @@ const ConfirmationModalContent = ({
                     ))}
                 </ul>
                 {APP_NAME !== 'proton-account' && (
-                    <p className="color-weak text-center mb-4">{
+                    <p className="color-weak text-center m-0">{
                         // translator complete sentence: You can change this anytime in <>settings<>
                         c('Info').jt`You can change this anytime in ${settingsLink}.`
                     }</p>
                 )}
-                <div>
-                    <Button className="mb-2" color="norm" fullWidth onClick={onDisplayFeatureTour}>
-                        {c('Button').t`Set up other features`}
-                    </Button>
-                    <Button fullWidth onClick={onRemindMeLater}>{c('Button').t`Remind me later`}</Button>
-                </div>
             </PostSubscriptionModalContentWrapper>
         </>
     );
