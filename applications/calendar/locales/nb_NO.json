@@ -5396,9 +5396,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Kontoen din har minst én forfalt faktura. Kontoen din er begrenset. Fortsatt manglende betaling vil blokkere e-postene dine og delingskoblinger. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Din konto vil bli oppdatert så snart betalingen er klarert."
-      ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Adressen din er deaktivert. En avlysnings-e-post kan ikke sendes til deltakerne på hendelsen. Vil du slette denne hendelsen likevel?"
       ],
@@ -7145,11 +7142,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceLine }. Du kan avbryte når som helst."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceMailPlus }. Avslutt når som helst."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Lås opp alle ${ BRAND_NAME }-premiumprodukter og funksjoner for bare ${ priceLine }. Avslutt når som helst."
       ]
     },
     "new_plans: title": {
