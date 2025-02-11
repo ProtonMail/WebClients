@@ -805,11 +805,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Reject": [
         "Elutasítás"
@@ -1554,11 +1554,6 @@
         "Válassza ki az Új évi ajánlatát"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB tárhely (2x több mint bármelyik másik előfizetésben)"
@@ -1580,6 +1575,11 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "A ${ plan } csomag visszatért egy korlátozott ideig"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével."
       ]
     },
     "bf2023: Offers": {
@@ -6701,11 +6701,11 @@
       "Data locked": [
         "Adatok zárolva"
       ],
-      "dedicated servers": [
-        "dedikált szerverek"
-      ],
       "Dedicated servers": [
         "Dedikált szerverek"
+      ],
+      "dedicated servers": [
+        "dedikált szerverek"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
@@ -8181,11 +8181,11 @@
       "User activated": [
         "Felhasználó aktiválva"
       ],
-      "username": [
-        "felhasználónév"
-      ],
       "Username": [
         "Felhasználónév"
+      ],
+      "username": [
+        "felhasználónév"
       ],
       "Users": [
         "Felhasználók"
@@ -8576,9 +8576,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "A fiókja sikeresen frissítve az ajánlattal"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "A fiókját frissítjük, mihelyst megérkezik a befizetés."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
@@ -10859,23 +10856,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -10903,6 +10883,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -11349,17 +11346,6 @@
         "Csoport menedzsment"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -11467,6 +11453,17 @@
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } a ${ humanMaxSpace } tárhelyből"
@@ -11509,14 +11506,6 @@
         "A választott csomagja: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -11535,6 +11524,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -15410,10 +15407,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -17101,14 +17098,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Wallet probléma"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "A ${ WALLET_APP_NAME } a korai hozzáférés program része. Az iOS alkalmazást az Apple TestFlighton, az Android alkalmazást pedig a Google Open Testingen érheti el."
-      ],
-      "Coming soon": [
-        "Hamarosan"
       ]
     },
     "wallet_signup_2024:Navigation": {

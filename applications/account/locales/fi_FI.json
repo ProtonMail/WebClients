@@ -880,10 +880,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
       "Reject": [
@@ -1683,15 +1683,6 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1713,6 +1704,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
       ]
     },
     "bf2023: Offers": {
@@ -6713,9 +6713,6 @@
         "${ calendarsToBeMergedCount } yhdistetty kalenteri",
         "${ calendarsToBeMergedCount } yhdistettyä kalenteria"
       ],
-      "${ checkout.discountPercent }% discount": [
-        "${ checkout.discountPercent }% alennus"
-      ],
       "${ current } of ${ total }": [
         "${ current }/${ total }"
       ],
@@ -7356,11 +7353,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -9071,11 +9068,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "username": [
-        "käyttäjätunnus"
-      ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "username": [
+        "käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -9517,9 +9514,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Tilisi päivitys tällä kampanjalla onnistui"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Tilisi päivitetään kun maksu on käsitelty."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
@@ -12015,32 +12009,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Aloita hintaan ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Alkaen ${ pricing }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ planName }": [
-        "Päivitä tilaukseen ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -12068,6 +12036,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Aloita hintaan ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Alkaen ${ pricing }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ planName }": [
+        "Päivitä tilaukseen ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12610,17 +12604,6 @@
         "Tiimin hallinta"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -12731,6 +12714,17 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace }/${ humanMaxSpace }"
@@ -12773,14 +12767,6 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -12799,6 +12785,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -17581,10 +17575,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -19573,14 +19567,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Wallet-ongelma"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } on varhaisessa kokeiluvaiheessa. Voit ladata iOS-sovelluksen Applen TestFlightistä, ja Android-sovelluksen Google Open Testingin kautta."
-      ],
-      "Coming soon": [
-        "Tulossa pian"
       ]
     },
     "wallet_signup_2024:Navigation": {
