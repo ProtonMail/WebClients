@@ -5266,9 +5266,6 @@
       "Your account was successfully updated with this promotion": [
         "あなたのアカウントはこのプロモーションで正常に更新されました"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "支払いが完了すると、アカウントは更新されます。"
-      ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
@@ -7089,11 +7086,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceMailPlus }で自動更新されます。いつでもキャンセル可能です。"
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceLine }で自動更新されます。いつでもキャンセル可能です。"
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceMailPlus }だけでアンロックできます。いつでもキャンセルできます。"
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
     "new_plans: Title": {
