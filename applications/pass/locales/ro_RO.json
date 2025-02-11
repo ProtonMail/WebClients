@@ -3113,8 +3113,8 @@
       "Theme": [
         "Tema"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Acest articol va rămâne accesibil până la ${ remaining }"
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
       ],
       "Title": [
         "Titlu"
@@ -4113,6 +4113,9 @@
       ],
       "Failed to load breaches.": [
         "Încărcarea divulgărilor a eșuat."
+      ],
+      "Identity could not be confirmed": [
+        "Identitatea nu a putut fi verificată."
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."

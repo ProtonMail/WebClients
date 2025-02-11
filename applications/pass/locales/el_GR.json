@@ -3068,8 +3068,8 @@
       "Theme": [
         "Θέμα"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Αυτό το στοιχείο θα παραμείνει προσβάσιμο μέχρι τις ${ remaining }"
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Αυτό το στοιχείο είναι προσβάσιμο μέχρι τις ${ date } ή μέχρι να συμπληρωθεί το όριο προβολής."
       ],
       "Title": [
         "Τίτλος"
@@ -4056,6 +4056,9 @@
       ],
       "Failed to load breaches.": [
         "Αποτυχία φόρτωσης παραβιάσεων."
+      ],
+      "Identity could not be confirmed": [
+        "Δεν ήταν δυνατή η επιβεβαίωση της ταυτότητας"
       ],
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"
