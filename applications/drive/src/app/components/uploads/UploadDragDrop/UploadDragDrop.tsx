@@ -1,22 +1,24 @@
 import type { ReactNode, SyntheticEvent } from 'react';
 import { useCallback, useState } from 'react';
-import * as React from 'react';
 
 import { c } from 'ttag';
 
 import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
 
 import { useFileDrop } from '../../../hooks/drive/useFileDrop';
+import type { OnFileUploadSuccessCallbackData, OnFolderUploadSuccessCallbackData } from '../../../store';
 
 import './UploadDragDrop.scss';
 
 interface UploadDragDropProps {
     children: ReactNode;
     shareId: string;
-    linkId: string;
+    parentLinkId: string;
     className?: string;
     disabled?: boolean;
     isForPhotos?: boolean;
+    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+    onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void;
 }
 
 const UploadDragDrop = ({
@@ -24,10 +26,12 @@ const UploadDragDrop = ({
     className,
     disabled,
     shareId,
-    linkId,
+    parentLinkId,
+    onFileUpload,
+    onFolderUpload,
     isForPhotos = false,
 }: UploadDragDropProps) => {
-    const { handleDrop } = useFileDrop({ isForPhotos, shareId, linkId });
+    const { handleDrop } = useFileDrop({ isForPhotos, shareId, parentLinkId, onFileUpload, onFolderUpload });
 
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
 

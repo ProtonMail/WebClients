@@ -7,7 +7,12 @@ import { useNotifications } from '@proton/components';
 
 import { logError } from '../../utils/errorHandling';
 import { useUploadProvider } from './UploadProvider';
-import type { UploadFileItem, UploadFileList } from './interface';
+import type {
+    OnFileUploadSuccessCallbackData,
+    OnFolderUploadSuccessCallbackData,
+    UploadFileItem,
+    UploadFileList,
+} from './interface';
 
 export function useFileUploadInput(shareId: string, linkId: string, isForPhotos: boolean = false) {
     return useUploadInput(shareId, linkId, false, isForPhotos);
@@ -76,7 +81,11 @@ function useUploadInput(shareId: string, linkId: string, forFolders?: boolean, i
         inputRef.current.click();
     };
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (
+        e: ChangeEvent<HTMLInputElement>,
+        onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void,
+        onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
+    ) => {
         const { files } = e.target;
         if (!shareId || !linkId || !files) {
             return;
@@ -88,7 +97,7 @@ function useUploadInput(shareId: string, linkId: string, forFolders?: boolean, i
             filesToUpload = filesToUpload.filter((item) => !!(item as UploadFileItem).file);
         }
 
-        uploadFiles(shareId, linkId, filesToUpload, isForPhotos).catch(logError);
+        uploadFiles(shareId, linkId, filesToUpload, isForPhotos, onFileUpload, onFolderUpload).catch(logError);
     };
 
     return { inputRef, handleClick, handleChange };

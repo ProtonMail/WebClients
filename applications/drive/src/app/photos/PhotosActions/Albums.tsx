@@ -17,7 +17,6 @@ import { useDebouncedRequest } from '../../store/_api';
 import { useLink, validateLinkName } from '../../store/_links';
 import { useShare } from '../../store/_shares';
 import { useErrorHandler } from '../../store/_utils';
-import { useVolumesState } from '../../store/_volumes';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 
@@ -27,9 +26,14 @@ function useAlbumsActions() {
     const events = useDriveEventManager();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
     const { getShareCreatorKeys } = useShare();
-    const volumeState = useVolumesState();
 
-    const createAlbum = async (abortSignal: AbortSignal, shareId: string, linkId: string, name: string) => {
+    const createAlbum = async (
+        abortSignal: AbortSignal,
+        volumeId: string,
+        shareId: string,
+        linkId: string,
+        name: string
+    ) => {
         // Name Hash is generated from LC, for case-insensitive duplicate detection.
         const error = validateLinkName(name);
         if (error) {
@@ -96,7 +100,7 @@ function useAlbumsActions() {
 
         const { Album } = await preventLeave(
             debouncedRequest<{ Album: { Link: { LinkID: string } } }>(
-                queryCreateAlbum(shareId, {
+                queryCreateAlbum(volumeId, {
                     Locked: false,
                     Link: {
                         Name: encryptedName,
@@ -112,10 +116,8 @@ function useAlbumsActions() {
             )
         );
 
-        const volumeId = volumeState.findVolumeId(shareId);
-        if (volumeId) {
-            await events.pollEvents.volumes(volumeId);
-        }
+        await events.pollEvents.volumes(volumeId);
+
         return Album.Link.LinkID;
     };
 
@@ -130,9 +132,15 @@ export const useCreateAlbum = () => {
     const { createAlbum } = useAlbumsActions();
 
     return useCallback(
-        async (abortSignal: AbortSignal, shareId: string, linkId: string, name: string): Promise<string> => {
+        async (
+            abortSignal: AbortSignal,
+            volumeId: string,
+            shareId: string,
+            linkId: string,
+            name: string
+        ): Promise<string> => {
             try {
-                const id = await createAlbum(abortSignal, shareId, linkId, name);
+                const id = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
                 createNotification({
                     text: <span className="text-pre-wrap">{c('Notification').t`"${name}" created successfully`}</span>,
                 });

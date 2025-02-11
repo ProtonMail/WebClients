@@ -5,13 +5,14 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
 
-import { useFileUploadInput } from '../../../store';
+import { type OnFileUploadSuccessCallbackData, useFileUploadInput } from '../../../store';
 
-interface Props {
+interface PhotosUploadButtonProps {
     shareId: string;
     linkId: string;
+    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
 }
-export const PhotosUploadButton: FC<Props> = ({ shareId, linkId }) => {
+export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({ shareId, linkId, onFileUpload }) => {
     const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput(shareId, linkId, true);
 
     return (
@@ -21,7 +22,9 @@ export const PhotosUploadButton: FC<Props> = ({ shareId, linkId }) => {
                 type="file"
                 ref={fileInput}
                 className="hidden"
-                onChange={handleChange}
+                onChange={(e) => {
+                    handleChange(e, onFileUpload);
+                }}
                 accept={PHOTOS_ACCEPTED_INPUT}
             />
             <ToolbarButton
