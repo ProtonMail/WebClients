@@ -26,7 +26,6 @@ enum CommonFeatureFlag {
     ScribeAdminSetting = 'ScribeAdminSetting',
     WalletAztecoWeb = 'WalletAztecoWeb',
     WalletFullSync = 'WalletFullSync',
-    WalletEarlyAccess = 'WalletEarlyAccess',
 }
 
 enum AccountFlag {
