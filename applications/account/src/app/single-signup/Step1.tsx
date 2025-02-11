@@ -139,7 +139,7 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
 
 const BoxHeader = ({ title, right }: { title: string; right?: ReactNode }) => {
     return (
-        <div className="flex items-center justify-space-between flex-nowrap">
+        <div className="flex items-center justify-space-between flex-nowrap gap-6">
             <h2 className="text-bold text-4xl">{title ? `${title}:` : ''}</h2>
             {right && <div className="shrink-0">{right}</div>}
         </div>
