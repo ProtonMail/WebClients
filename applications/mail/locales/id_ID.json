@@ -541,7 +541,7 @@
         "Dapatkan fitur ini dari hanya ${ addonPriceWithCurrency } /bulan"
       ],
       "Get started": [
-        "Selesai"
+        "Mulai"
       ],
       "Get the app": [
         "Dapatkan aplikasinya"
@@ -1237,7 +1237,7 @@
         "Mulai impor"
       ],
       "Start setup": [
-        "Mulai penyetelan"
+        "Mulai pengaturan"
       ],
       "Starting from ${ priceUnlimited }": [
         "Mulai dari ${ priceUnlimited }"
@@ -1675,7 +1675,7 @@
         "Harga diskon khusus ${ discountedPrice } berlaku untuk ${ cycle } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga diskon ${ nextPrice } selama ${ renewalLength } bulan. Anda dapat membatalkannya kapan saja."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Harga ${ discountedPrice } yang didiskon masih valid untuk bulan pertama. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } setiap bulan. Anda dapat membatalkan kapan pun."
+        "Harga diskon khusus ${ discountedPrice } ini valid untuk bulan pertama. Selanjutnya, paket Anda akan diperbarui secara otomatis dengan harga ${ nextPrice } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ]
     },
     "bf2023: Tooltip": {
@@ -1915,6 +1915,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Tutup"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -3697,7 +3700,7 @@
         "Tingkatkan akun Anda untuk mengaktifkan ${ PROTON_SENTINEL_NAME }, solusi keamanan mutakhir berbasis AI kami dengan dukungan ahli yang tersedia 24/7."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
-        "Gunakan ${ MAIL_APP_NAME } untuk masuk ke berbagai layanan online karena, tidak seperti penyedia email lainnya, kami tidak akan pernah melacak data Anda dan membagikan data ini kepada pihak ketiga."
+        "Gunakan ${ MAIL_APP_NAME } untuk masuk ke berbagai layanan online karena (tidak seperti layanan penyedia email lainnya) kami tidak akan pernah melacak data Anda dan membagikan data ini dengan pihak ketiga."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
@@ -5229,7 +5232,7 @@
         "Enkripsi yang teramat kuat, yang memastikan email Anda hanya dapat dibaca oleh para penerima dan diri Anda sendiri."
       ],
       "Finish setup": [
-        "Selesaikan penyiapan"
+        "Selesaikan pengaturan"
       ],
       "For your eyes only": [
         "Khusus untuk Anda"
@@ -10232,15 +10235,15 @@
         "Media sosial"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Gunakan alamat ${ MAIL_APP_NAME } Anda untuk masuk ke berbagai layanan online agar Anda tidak dilacak dan diprofilkan. Ubah email Anda untuk layanan-layanan populer di bawah ini sekarang juga. ${ learnMoreLink }"
+        "Gunakan alamat ${ MAIL_APP_NAME } Anda untuk masuk ke berbagai layanan online agar Anda tidak dilacak dan diprofilkan. Ubah email Anda untuk layanan populer di bawah ini sekarang juga. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
-        "${ advancedEncryptionTitle } memastikan bahwa email Anda hanya akan dapat diakses oleh Anda dan penerima yang dikehendaki."
+        "${ advancedEncryptionTitle } memastikan bahwa email Anda hanya akan dapat diakses oleh Anda dan penerima yang Anda kehendaki."
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
-        "${ industryLeadingSpamProtectionTitle } mencegah email penipuan sampai untuk sampai ke kotak masuk Anda."
+        "${ industryLeadingSpamProtectionTitle } mencegah email penipuan untuk sampai diterima oleh kotak masuk Anda."
       ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } di App Store"
@@ -10249,7 +10252,7 @@
         "${ MAIL_APP_NAME } di Play Store"
       ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
-        "${ protectionFromTrackersTitle } berarti bahwa Anda tidak akan lagi diikuti di internet."
+        "${ protectionFromTrackersTitle } berarti bahwa Anda tidak akan lagi diikuti di seantero jagat maya."
       ],
       "Activate premium features": [
         "Aktifkan fitur premium"
@@ -10258,7 +10261,7 @@
         "Aktifkan yang dipilih"
       ],
       "Advanced encryption": [
-        "Enkripsi tingkat lanjut"
+        "Enkripsi mutakhir"
       ],
       "Anytime, anywhere access": [
         "Akses kapan dan di mana saja"
@@ -10291,7 +10294,7 @@
         "Nikmati pengalaman berkirim email yang lebih cepat dan terfokus dengan aplikasi desktop."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
-        "Untuk akses kapan saja dan pengalaman mobile yang lebih optimal, unduh aplikasi ${ mobileAppAppStoreLink } atau ${ mobileAppGooglePlayLink } kami."
+        "Untuk akses email kapan saja dan pengalaman mobile yang lebih optimal, unduh aplikasi ${ mobileAppAppStoreLink } atau ${ mobileAppGooglePlayLink } kami."
       ],
       "Get notified if your password is compromised.": [
         "Dapatkan notifikasi pada saat kata sandi Anda dibocorkan."
@@ -10312,7 +10315,7 @@
         "Berikutnya"
       ],
       "Protection from trackers": [
-        "Perlindungan dari pelacak"
+        "Perlindungan terhadap pelacak"
       ],
       "Replay introduction": [
         "Ulangi pengenalan"
@@ -10368,7 +10371,7 @@
         "Siapkan organisasi Anda"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Gunakan pemilih aplikasi di kiri atas untuk mengakses layanan ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } dan ${ PASS_SHORT_APP_NAME }."
+        "Gunakan pemilih aplikasi di sisi kiri atas untuk mengakses layanan ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } dan ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
         "Anda akan dapat mengubah tema Anda kapan pun pada menu pengaturan."
@@ -10574,7 +10577,7 @@
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
       ],
       "Renews at ${ renewPrice }, cancel anytime.": [
-        "Diperbarui seharga ${ renewPrice }, batalkan kapan pun."
+        "Diperbarui seharga ${ renewPrice }, batalkan kapan saja."
       ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
@@ -12942,7 +12945,7 @@
         "Keamanan yang tinggi bagi akun Anda"
       ],
       "How to update your email address": [
-        "Cara untuk memperbarui alamat email Anda"
+        "Cara memperbarui alamat email Anda"
       ],
       "Human verification": [
         "Verifikasi manusia"
