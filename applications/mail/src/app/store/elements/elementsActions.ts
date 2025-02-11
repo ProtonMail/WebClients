@@ -128,6 +128,7 @@ export const load = createAsyncThunk<
 
         if (result.Stale === 1 && REFRESHES?.[count]) {
             const ms = 1 * SECOND * REFRESHES[count];
+            const isLastRefetch = REFRESHES[count + 1] === undefined;
 
             // Wait few seconds before retrying
             setTimeout(() => {
@@ -139,7 +140,8 @@ export const load = createAsyncThunk<
                             params,
                             abortController,
                             count: count + 1,
-                            refetch: true, // Do not update current page if we refetch
+                            refetch: true, // Do not update current page if we refetch,
+                            isLastRefetch,
                         })
                     );
                 }
