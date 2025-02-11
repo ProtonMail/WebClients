@@ -969,7 +969,7 @@
         "Harga diskon khusus ${ discountedPrice } berlaku untuk ${ cycle } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga diskon ${ nextPrice } selama ${ renewalLength } bulan. Anda dapat membatalkannya kapan saja."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Harga ${ discountedPrice } yang didiskon masih valid untuk bulan pertama. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } setiap bulan. Anda dapat membatalkan kapan pun."
+        "Harga diskon khusus ${ discountedPrice } ini valid untuk bulan pertama. Selanjutnya, paket Anda akan diperbarui secara otomatis dengan harga ${ nextPrice } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ]
     },
     "bf2023: Title": {
@@ -1222,6 +1222,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Tutup"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -7076,7 +7079,7 @@
     },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
-        "Dengan mengeklik tombol \"Bayar\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
+        "Dengan mengeklik tombol \"Bayar\", Anda menyatakan diri setuju terhadap ${ termsAndConditions } kami."
       ],
       "terms and conditions": [
         "syarat dan ketentuan"
@@ -7969,7 +7972,7 @@
         "Memproses pembayaran"
       ],
       "Renews at ${ renewPrice }, cancel anytime.": [
-        "Diperbarui seharga ${ renewPrice }, batalkan kapan pun."
+        "Diperbarui seharga ${ renewPrice }, batalkan kapan saja."
       ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
@@ -9060,9 +9063,6 @@
       "Enter your backup password": [
         "Masukkan kata sandi cadangan Anda"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Agar pengguna ini dapat masuk, pastikan pengguna tersebut ada dalam penyedia identitas."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Demi keamanan Anda, Anda telah dikeluarkan dari seluruh perangkat aktif lainnya yang Anda miliki. Sebelum mengakses akun, Anda akan perlu untuk memasukkan kata sandi cadangan yang baru."
       ],
@@ -9129,9 +9129,6 @@
       "Single sign-on removed": [
         "Single sign-on dihapus"
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Pengguna ${ name } kini merupakan akun single sign-on."
-      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tindakan ini akan mengeluarkan pengguna yang bersangkutan dari perangkat lainnya yang mereka miliki, di mana mereka akan perlu untuk membuat kata sandi cadangan baru."
       ],
@@ -9139,7 +9136,7 @@
         "Tindakan ini akan mengeluarkan Anda dari perangkat lainnya yang Anda miliki, dan Anda akan perlu untuk membuat kata sandi cadangan baru."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
-        "Untuk memastikan bahwa entri masuk ke **${ email }** ini benar-benar berasal dari Anda, tinjau kode konfirmasi yang tertera dan setujui permintaan ini dari perangkat lainnya."
+        "Untuk memastikan bahwa entri masuk ke **${ email }** ini benar-benar berasal dari Anda, tinjau kode konfirmasi berikut dan setujui permintaan ini dari perangkat lainnya."
       ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Untuk memastikan bahwa upaya masuk ini benar-benar berasal dari Anda, silakan masukkan kata sandi cadangan Anda."

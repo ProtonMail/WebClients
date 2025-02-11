@@ -2415,11 +2415,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2501,6 +2496,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6199,11 +6199,17 @@
       "Share a file": [
         "Compartir un archivo"
       ],
+      "Shared": [
+        "Compartido"
+      ],
       "Shared by": [
         "Compartido por"
       ],
       "Shared on": [
         "Compartido en"
+      ],
+      "Shared with me": [
+        "Compartido conmigo"
       ],
       "Show indexing progress of Encrypted Search": [
         "Mostrar progreso de indexación de la búsqueda cifrada"
@@ -10038,6 +10044,12 @@
       "Addresses": [
         "Direcciones"
       ],
+      "Album": [
+        "Álbum"
+      ],
+      "Albums": [
+        "Álbumes"
+      ],
       "All": [
         "Todo"
       ],
@@ -10655,11 +10667,6 @@
         "Hoy"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Añada este archivo compartido a su ${ DRIVE_APP_NAME } para un acceso fácil después."
@@ -10743,12 +10750,17 @@
         "Hemos enviado una invitación para acceder al elemento."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Valentine_2025": {
       "+ free gift": [
         "+ regalo gratuito"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Un código de regalo para obtener un descuento del ${ discountPercentAbsolute }% en ${ planTitle } durante 1 año"
+        "Un código de regalo para obtener un descuento del ${ discountPercentAbsolute } % en ${ planTitle } por 1 año"
       ],
       "Valentine's deal": [
         "Oferta de San Valentín"
@@ -10863,7 +10875,7 @@
         "30 meses"
       ],
       "for ${ durationDeal }": [
-        "durante ${ durationDeal }"
+        "por ${ durationDeal }"
       ]
     },
     "Validation": {

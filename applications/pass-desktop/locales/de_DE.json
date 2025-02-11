@@ -804,6 +804,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Fehler] Ein Eintrag konnte nicht analysiert werden."
+      ],
       "A domain ownership must be verified first.": [
         "Die Eigentümerschaft einer Domain muss zunächst verifiziert werden."
       ],
@@ -1569,6 +1572,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Aktivieren der automatischen PIN-Sperre"
+      ],
+      "Enter the address you want to email.": [
+        "Gib die Adresse ein, an die du eine E-Mail senden möchtest."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
@@ -3950,10 +3956,10 @@
     },
     "Valentine_2025: Offer": {
       "${ salePercentage }% off": [
-        "${ salePercentage }% Rabatt"
+        "${ salePercentage } % Rabatt"
       ],
       "${ salePercentage }% off for you +1": [
-        "${ salePercentage }% Rabatt für dich +1"
+        "${ salePercentage } % Rabatt für dich +1"
       ],
       "50% off": [
         "− 50 %"
@@ -3980,7 +3986,7 @@
         "Doppelte Liebe, halber Preis"
       ],
       "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Sichere dir 1 Jahr ${ dealName } mit ${ salePercentage }% Rabatt – plus einen Geschenkcode, um dasselbe Angebot mit einer Freundin oder einem Freund zu teilen"
+        "Sichere dir 1 Jahr ${ dealName } mit ${ salePercentage } % Rabatt – plus einen Geschenkcode, um dasselbe Angebot mit einer Freundin oder einem Freund zu teilen"
       ],
       "Get 1 year of ${ dealName } at 50% off — plus a gift code to share the same deal with a friend": [
         "Sichere dir 1 Jahr ${ dealName } mit 50 % Rabatt – plus einen Geschenkcode, um dasselbe Angebot mit einer Freundin oder einem Freund zu teilen"
