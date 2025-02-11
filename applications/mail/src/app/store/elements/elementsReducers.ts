@@ -197,7 +197,22 @@ export const eventUpdatesFulfilled = (
 
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
     const total = action.payload.elements.length;
-    const pages = range(0, Math.ceil(total / state.pageSize)); // TODO update
+    const pages = range(0, Math.ceil(total / state.pageSize));
+
+    const params = action.payload.params;
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
+
     // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
     // when there are no results
     Object.assign(state, {
@@ -207,10 +222,12 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
         pendingRequest: false,
         page: action.payload.page,
         total,
-        pages, // TODO update
         elements: toMap(action.payload.elements, 'ID'),
         retry: { payload: undefined, count: MAX_ELEMENT_LIST_LOAD_RETRIES, error: undefined },
     });
+    state.pages[contextFilter] = state.pages[contextFilter]
+        ? unique([...state.pages[contextFilter], ...pages]).sort()
+        : [...pages];
 };
 
 export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAction<OptimisticUpdates>) => {
