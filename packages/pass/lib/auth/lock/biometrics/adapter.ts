@@ -7,6 +7,7 @@ import {
 } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
+import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
 import { getOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import {
     decryptData,
@@ -79,7 +80,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
             if (!window.ctxBridge) throw new Error('Biometrics unsupported');
 
             const verified = await auth.confirmPassword(secret);
-            if (!verified) throw new Error(c('Error').t`Wrong password`);
+            if (!verified) throw new Error(getInvalidPasswordString(authStore));
 
             await onBeforeCreate?.();
 
