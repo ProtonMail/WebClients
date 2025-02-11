@@ -27,9 +27,11 @@ import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm
 
 type GetPoliciesProps = {
     showVaultCreation: boolean;
+    showItemSharing: boolean;
 };
 const getPolicies = ({
     showVaultCreation = false,
+    showItemSharing = false,
 }: GetPoliciesProps): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
     {
         setting: 'ShareMode',
@@ -37,12 +39,16 @@ const getPolicies = ({
         tooltip: c('Info')
             .t`If this option is turned on, organization members will only be able to share vaults or items within the organization`,
     },
-    {
-        setting: 'ItemShareMode',
-        label: c('Label').t`Enable individual item sharing`,
-        tooltip: c('Info')
-            .t`If this option is turned on, organization members will be able to share individual items in addition to vaults.`,
-    },
+    ...(showItemSharing
+        ? [
+              {
+                  setting: 'ItemShareMode',
+                  label: c('Label').t`Enable individual item sharing`,
+                  tooltip: c('Info')
+                      .t`If this option is turned on, organization members will be able to share individual items in addition to vaults.`,
+              } as const,
+          ]
+        : []),
     {
         setting: 'ExportMode',
         label: c('Label').t`Disable data export for organization members`,
@@ -69,9 +75,10 @@ const PassPolicies = () => {
 
     const showPasswordGenerator = useFlag('PassB2BPasswordGenerator');
     const showVaultCreation = useFlag('PassB2BVaultCreation');
+    const showItemSharing = useFlag('PassB2BItemSharing');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
-    const policies = getPolicies({ showVaultCreation });
+    const policies = getPolicies({ showVaultCreation, showItemSharing });
 
     const touched = useRef<keyof OrganizationSettings>();
     const didLoad = useRef(false);

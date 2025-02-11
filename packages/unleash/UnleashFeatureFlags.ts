@@ -52,6 +52,7 @@ enum AccountFlag {
     PassB2BPasswordGenerator = 'PassB2BPasswordGenerator',
     SharedServerFeature = 'SharedServerFeature',
     PassB2BVaultCreation = 'PassB2BVaultCreation',
+    PassB2BItemSharing = 'PassB2BItemSharing',
 }
 
 enum PaymentsFlag {
