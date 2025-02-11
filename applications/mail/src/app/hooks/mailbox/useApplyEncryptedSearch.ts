@@ -70,7 +70,7 @@ export const useApplyEncryptedSearch = ({
     );
 
     const setEncryptedSearchResults = (elements: Element[]) => {
-        dispatch(addESResults({ elements, page: parseSearchParams(history.location).page }));
+        dispatch(addESResults({ elements, page: parseSearchParams(history.location).page, params }));
     };
 
     const executeSearch = async () => {
