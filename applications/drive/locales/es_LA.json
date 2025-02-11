@@ -1308,6 +1308,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Cerrar"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -3231,7 +3234,7 @@
         "Evento"
       ],
       "Free-busy time information": [
-        "Información de disponibilidad por Internet"
+        "Información de disponibilidad"
       ],
       "Invalid event": [
         "Evento inválido"
@@ -5589,9 +5592,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "La cuenta tiene al menos una factura pendiente. La cuenta está restringida. El no pago continuo bloqueará los correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "La cuenta se actualizará una vez que el pago se haya completado."
-      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "El navegador actual no admite la descarga de archivos grandes debido a la falta de disponibilidad de trabajadores de servicio. La descarga de archivos grandes puede bloquearse o dejar que el navegador no responda. Use las últimas versiones de ${ recommendedBrowser } e intente de nuevo."
       ],
@@ -7499,11 +7499,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puede cancelar en cualquier momento."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceLine }. Puede cancelar en cualquier momento."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceMailPlus }. Cancele en cualquier momento."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceLine }. Cancele en cualquier momento."
       ]
     },
     "new_plans: title": {
@@ -10741,6 +10741,20 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ]
+    },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ regalo gratuito"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Un código de regalo para obtener un descuento del ${ discountPercentAbsolute }% en ${ planTitle } durante 1 año"
+      ],
+      "Valentine's deal": [
+        "Oferta de San Valentín"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Su regalo gratuito para compartir, valorado en ${ price }﻿: "
       ]
     },
     "Valentine_2025: Offer": {
