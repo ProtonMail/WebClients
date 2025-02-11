@@ -25,7 +25,12 @@ import GenericError from '../error/GenericError';
 import SubSettingsSection from '../layout/SubSettingsSection';
 import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm';
 
-const getPolicies = (): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
+type GetPoliciesProps = {
+    showVaultCreation: boolean;
+};
+const getPolicies = ({
+    showVaultCreation = false,
+}: GetPoliciesProps): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
     {
         setting: 'ShareMode',
         label: c('Label').t`Disable sharing outside the organization`,
@@ -38,12 +43,16 @@ const getPolicies = (): { setting: keyof OrganizationSettings; label: string; to
         tooltip: c('Info')
             .t`By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data`,
     },
-    {
-        setting: 'VaultCreateMode',
-        label: c('Label').t`Restrict vault creation to administrators only`,
-        tooltip: c('Info')
-            .t`If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items`,
-    },
+    ...(showVaultCreation
+        ? [
+              {
+                  setting: 'VaultCreateMode',
+                  label: c('Label').t`Restrict vault creation to administrators only`,
+                  tooltip: c('Info')
+                      .t`If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items`,
+              } as const,
+          ]
+        : []),
 ];
 
 const PassPolicies = () => {
@@ -52,9 +61,11 @@ const PassPolicies = () => {
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
 
-    const policies = getPolicies();
     const showPasswordGenerator = useFlag('PassB2BPasswordGenerator');
+    const showVaultCreation = useFlag('PassB2BVaultCreation');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
+
+    const policies = getPolicies({ showVaultCreation });
 
     const touched = useRef<keyof OrganizationSettings>();
     const didLoad = useRef(false);
