@@ -13,29 +13,6 @@ import useUploadMetrics, { getErrorCategory, getFailedUploadMetadata, getShareTy
 
 jest.mock('@proton/metrics');
 
-const mockGetShare = jest.fn();
-
-jest.mock('../../../zustand/share/shares.store', () => {
-    const actual = jest.requireActual('../../../zustand/share/shares.store');
-
-    return {
-        ...actual,
-        useSharesStore: (cb: any) => {
-            const state = actual.useSharesStore();
-            if (cb) {
-                return cb({
-                    ...state,
-                    getShare: mockGetShare,
-                });
-            }
-            return {
-                ...state,
-                getShare: mockGetShare,
-            };
-        },
-    };
-});
-
 jest.mock('../../../utils/getIsPublicContext');
 
 const mockedGetIsPublicContext = jest.mocked(getIsPublicContext);
