@@ -104,6 +104,7 @@ export interface QueryParams {
     params: ElementsStateParams;
     count?: number;
     refetch?: boolean;
+    isLastRefetch?: boolean;
 }
 
 export interface QueryResults {
