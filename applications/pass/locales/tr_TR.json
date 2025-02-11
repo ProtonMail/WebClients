@@ -657,7 +657,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ]
     },
     "Button": {
@@ -1142,6 +1142,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "${ PASS_SHORT_APP_NAME } başlatılırken bir sorun çıktı. Sorun sürerse yardım almak için müşteri desteği ekibimizle görüşün."
+      ],
+      "Wrong backup password": [
+        "Yedek parola yanlış"
       ],
       "Wrong extra password": [
         "Ek parola yanlış"
@@ -3069,7 +3072,7 @@
         "Tema"
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Bu öğeye ${ date } tarihine kadar veya görüntüleme sınırına ulaşılana kadar erişilebilir."
+        "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
       ],
       "Title": [
         "Başlık"
