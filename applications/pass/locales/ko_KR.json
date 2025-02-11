@@ -2043,6 +2043,9 @@
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
       ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "다른 사람의 메일함을 포워딩 메일함으로 추가하여 별칭을 공유하세요."
+      ],
       "Share your logins and secure notes, with up to 10 people": [
         "최대 10명까지 로그인과 안전한 메모를 공유하세요"
       ],
@@ -3020,8 +3023,8 @@
       "Theme": [
         "테마"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "이 항목은 ${ remaining }까지 접근 가능 상태로 유지됩니다."
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "이 항목은 ${ date }이 되거나 보기 제한에 도달하기 전까지 접근가능합니다."
       ],
       "Title": [
         "제목"
@@ -3996,6 +3999,9 @@
       ],
       "Failed to load breaches.": [
         "침해를 불러오지 못했습니다."
+      ],
+      "Identity could not be confirmed": [
+        "신원을 확인하지 못했습니다"
       ],
       "Invalid alias prefix": [
         "유효하지 않은 별칭 접두사"

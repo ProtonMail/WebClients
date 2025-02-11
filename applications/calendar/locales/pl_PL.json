@@ -5500,9 +5500,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Dalszy brak płatności spowoduje zablokowanie dostarczania wiadomości i udostępnionych linków. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Konto zostanie zaktualizowane po zaksięgowaniu płatności."
-      ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Twój adres jest wyłączony. Wiadomość o anulowaniu wydarzenia nie może zostać wysłana do jego uczestników. Czy chcesz usunąć wszystkie wydarzenia w tej serii?"
       ],
@@ -7304,6 +7301,11 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
+    "new_plans: Subtext": {
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Odblokuj wszystkie produkty i funkcje premium ${ BRAND_NAME } za jedyne ${ priceLine }. Anuluj w dowolnym momencie"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -8127,15 +8129,6 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez pierwszy miesiąc. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
@@ -10487,6 +10480,20 @@
         "Udostępniono z szyfrowaniem end-to-end do zweryfikowanego kontaktu"
       ]
     },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ darmowy prezent"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Kod podarunkowy na ${ discountPercentAbsolute }% zniżki na ${ planTitle } na 1 rok"
+      ],
+      "Valentine's deal": [
+        "Oferta na walentynki"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Twój darmowy prezent do udostępnienia, o wartości ${ price }﻿: "
+      ]
+    },
     "Valentine_2025: Offer": {
       "${ salePercentage }% off": [
         "${ salePercentage }% taniej"
@@ -10657,6 +10664,12 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Następnie zapłacisz co 12 miesięcy ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",

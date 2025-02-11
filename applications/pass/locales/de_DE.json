@@ -2950,8 +2950,8 @@
       "Theme": [
         "Farbschema"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Der Zugriff auf diesen Eintrag bleibt bestehen bis ${ remaining }."
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dieser Eintrag ist bis ${ date } oder bis zum Erreichen der Anzeigegrenze zugänglich."
       ],
       "Title": [
         "Titel"
@@ -4001,6 +4001,9 @@
       ],
       "Failed to load breaches.": [
         "Fehler beim Laden der Datenlecks."
+      ],
+      "Identity could not be confirmed": [
+        "Identität konnte nicht bestätigt werden"
       ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
