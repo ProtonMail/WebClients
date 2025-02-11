@@ -83,7 +83,7 @@ export const loadFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ result: QueryResults; taskRunning: TaskRunningInfo }, string, { arg: QueryParams }>
 ) => {
-    const { page, params, refetch } = action.meta.arg;
+    const { page, params, refetch, isLastRefetch } = action.meta.arg;
     const {
         result: { Total, Stale },
         taskRunning,
@@ -97,11 +97,17 @@ export const loadFulfilled = (
             retry: newRetry(state.retry, params, undefined),
         });
 
-        // If the request in "on stale", do not update the total and pending request status.
-        // Otherwise, we would run into a scenario where part of the state is updated,
-        // E.g. total is updated but not elements
-        // This inconsistency would trigger another load action.
-        if (Stale !== 1) {
+        /* If the request in "on stale", do not update the total and pending request status.
+         * Otherwise, we would run into a scenario where part of the state is updated,
+         * E.g. total is updated but not elements
+         * This inconsistency would trigger another load action.
+         *
+         * When Stale = 1, we are making additional fetches to get the proper data.
+         * But sometimes, the last fetch that we are making is still on Stale = 1
+         * In that case, we want to update the state, and especially the pendingRequest,
+         * so that the UI does not stay in a loading state forever.
+         */
+        if (Stale !== 1 || isLastRefetch) {
             state.pendingRequest = false;
             state.total = Total;
         }
