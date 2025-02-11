@@ -35,12 +35,10 @@ const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onUpgrade }: P
         return (
             <NewUpsellModal
                 titleModal={DARK_WEB_MONITORING_NAME}
-                description={
+                description={c('Description')
+                    .t`Get notified if your password or other data was leaked from a third-party service.`}
+                customDescription={
                     <>
-                        <p className="text-wrap-balance color-weak mt-0 mb-6">
-                            {c('Description')
-                                .t`Get notified if your password or other data was leaked from a third-party service.`}
-                        </p>
                         <p className="text-left my-0 mb-2">
                             <strong>{c('Description').t`Also included`}</strong>
                         </p>
