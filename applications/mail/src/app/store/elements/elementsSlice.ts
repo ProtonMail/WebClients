@@ -90,7 +90,7 @@ export const newElementsState = ({
         pageSize,
         total: undefined,
         elements: {},
-        pages: [],
+        pages: {},
         bypassFilter: [],
         retry,
         taskRunning,

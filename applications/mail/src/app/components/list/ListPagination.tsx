@@ -11,7 +11,7 @@ import unique from '@proton/utils/unique';
 
 import { isPageConsecutive } from 'proton-mail/helpers/paging';
 import useTelemetryPagingControls from 'proton-mail/hooks/useTelemetryPagingControls';
-import { pages } from 'proton-mail/store/elements/elementsSelectors';
+import { contextPages } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 interface Props {
@@ -24,7 +24,7 @@ interface Props {
 }
 
 const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Props) => {
-    const pagesState = useMailSelector(pages);
+    const pagesState = useMailSelector(contextPages);
     const sendPagingTelemetryReport = useTelemetryPagingControls();
 
     const goToPageTitle = (page: number) => c('Action').t`Go to page ${page}`;

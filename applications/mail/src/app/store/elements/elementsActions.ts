@@ -49,6 +49,7 @@ export const showSerializedElements = createAction<{
     queryIndex: number;
     result: QueryResults;
     page: number;
+    params: ElementsStateParams;
 }>('elements/showSerializedElements');
 
 export const load = createAsyncThunk<
@@ -93,6 +94,7 @@ export const load = createAsyncThunk<
                     queryIndex: index,
                     result,
                     page,
+                    params,
                 })
             );
         };
