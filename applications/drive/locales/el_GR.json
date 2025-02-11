@@ -2415,11 +2415,6 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
@@ -2501,6 +2496,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6193,11 +6193,17 @@
       "Share a file": [
         "Κοινοποίηση αρχείου"
       ],
+      "Shared": [
+        "Διαμοιρασμένα"
+      ],
       "Shared by": [
         "Κοινοποιήθηκε από"
       ],
       "Shared on": [
         "Κοινοποιήθηκε στις"
+      ],
+      "Shared with me": [
+        "Σε κοινή χρήση με εμένα"
       ],
       "Show indexing progress of Encrypted Search": [
         "Εμφάνιση προόδου ευρετηριοποίησης της Κρυπτογραφημένης Αναζήτησης"
@@ -9975,6 +9981,12 @@
       "Addresses": [
         "Διευθύνσεις"
       ],
+      "Album": [
+        "Άλμπουμ"
+      ],
+      "Albums": [
+        "Άλμπουμ"
+      ],
       "All": [
         "Όλα"
       ],
@@ -10592,11 +10604,6 @@
         "Σήμερα"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Προσθέστε αυτό το κοινόχρηστο αρχείο στο ${ DRIVE_APP_NAME } για εύκολη πρόσβαση αργότερα."
@@ -10678,6 +10685,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
     "Validation": {

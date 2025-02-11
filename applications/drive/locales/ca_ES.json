@@ -2415,11 +2415,6 @@
         "Factura vençuda"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2501,6 +2496,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4565,7 +4565,7 @@
         "El fitxer no s'actualitzarà"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Els fitxers i les carpetes compartits per altres persones apareixeran aquí"
+        "Els fitxers i les carpetes que altres persones han compartit amb vós apareixeran aquí"
       ],
       "Finalizing": [
         "Finalitzant"
@@ -6199,11 +6199,17 @@
       "Share a file": [
         "Comparteix un fitxer"
       ],
+      "Shared": [
+        "Compartit"
+      ],
       "Shared by": [
         "Compartit per"
       ],
       "Shared on": [
         "Compartit a"
+      ],
+      "Shared with me": [
+        "Compartit amb mi"
       ],
       "Show indexing progress of Encrypted Search": [
         "Mostra el progrés d'indexació de la Cerca Xifrada"
@@ -7503,7 +7509,7 @@
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceLine }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Desbloqueu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "new_plans: title": {
@@ -10038,6 +10044,12 @@
       "Addresses": [
         "Adreces"
       ],
+      "Album": [
+        "Àlbum"
+      ],
+      "Albums": [
+        "Àlbums"
+      ],
       "All": [
         "Tot"
       ],
@@ -10655,11 +10667,6 @@
         "Avui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Afegiu aquest fitxer compartit al vostre ${ DRIVE_APP_NAME } per accedir-hi fàcilment més endavant."
@@ -10741,6 +10748,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
     "Validation": {
