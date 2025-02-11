@@ -880,11 +880,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Reject": [
         "Rebutja"
@@ -1683,6 +1683,15 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mes.",
+        "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mesos."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1704,15 +1713,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mes.",
-        "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mesos."
       ]
     },
     "bf2023: Offers": {
@@ -7397,11 +7397,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Es poden afegir servidors dedicats amb adreces IP dedicades a portes d'enllaç privades per a activar un control d'accés més optimitzat."
@@ -9142,11 +9142,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "Username": [
-        "Nom d'usuari"
-      ],
       "username": [
         "nom d'usuari"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -12100,6 +12100,32 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comenceu per ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -12127,32 +12153,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comenceu per ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Des de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ planName }": [
-        "Milloreu el pla a ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12695,6 +12695,17 @@
         "Gestió d'equips"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba amb ${ last4 }."
@@ -12805,17 +12816,6 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -12863,7 +12863,15 @@
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceLine }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Desbloqueu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: title": {
@@ -12884,14 +12892,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -16222,9 +16222,6 @@
       "Enter your backup password": [
         "Introduïu la vostra contrasenya de recuperació"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Perquè aquest usuari pugui iniciar la sessió, assegureu-vos que existeix al vostre proveïdor d'identitat."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Per la vostra seguretat, se us ha tancat la sessió de tots els vostres dispositius actius. Abans d'accedir al vostre compte, haureu d'introduir una nova contrasenya de recuperació."
       ],
@@ -16315,8 +16312,11 @@
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "L'usuari ${ name } ara té un compte d'inici de sessió únic (SSO)."
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "L'usuari ${ user } té ara un compte amb inici de sessió únic. La seva contrasenya anterior es va convertir en la seva ccontrasenya de recuperació."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Haureu de tornar a connectar amb el vostre proveïdor d'identitat per accedir als serveis de ${ BRAND_NAME }. Perquè aquest usuari pugui iniciar sessió, assegureu-vos que existeixen amb el vostre proveïdor d'identitat."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Això tancarà la sessió de l'usuari dels seus altres dispositius i haurà de crear una nova contrasenya de recuperació."
@@ -17698,10 +17698,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [

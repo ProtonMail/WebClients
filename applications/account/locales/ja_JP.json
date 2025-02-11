@@ -880,10 +880,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Reject": [
@@ -1679,6 +1679,14 @@
         "年末オファーを選択してください"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1700,14 +1708,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
       ]
     },
     "bf2023: Offers": {
@@ -7319,10 +7319,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -9050,11 +9050,11 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
-      "Username": [
-        "ユーザーネーム"
-      ],
       "username": [
         "ユーザー名"
+      ],
+      "Username": [
+        "ユーザーネーム"
       ],
       "Users": [
         "ユーザー"
@@ -11980,6 +11980,32 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }で開始"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }から始める"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "無料で続ける"
@@ -12007,32 +12033,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }で開始"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }から始める"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } へアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -12550,6 +12550,17 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "トライアルは ${ formattedPeriodEndDate } に終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -12660,17 +12671,6 @@
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "トライアルは ${ formattedPeriodEndDate } に終了します"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } のうち ${ humanUsedSpace }"
@@ -12721,6 +12721,14 @@
         "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceLine }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -12739,14 +12747,6 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -16032,9 +16032,6 @@
       "Enter your backup password": [
         "バックアップパスワードを入力してください"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "このユーザーがサインインできるようにするには、アイデンティティプロバイダーに存在していることを確認してください。"
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "セキュリティのため、全ての他のデバイスからサインアウトされました。アカウントにアクセスする前に、新しいバックアップパスワードを入力する必要があります。"
       ],
@@ -16124,9 +16121,6 @@
       ],
       "Single sign-on removed": [
         "シングルサインオンは削除されました"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "ユーザー${ name }は現在シングルサイオンアカウントです。"
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "これにより、ユーザーは他のデバイスからサインアウトされ、新しいバックアップパスワードを作成する必要があります。"
@@ -17480,10 +17474,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [

@@ -880,11 +880,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reject": [
         "Odmítnout"
@@ -1691,6 +1691,17 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1712,17 +1723,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
       ]
     },
     "bf2023: Offers": {
@@ -7541,11 +7541,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -9317,11 +9317,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -12334,6 +12334,32 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začněte za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -12361,32 +12387,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začněte za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ planName }": [
-        "Navýšit na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12979,6 +12979,17 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Zkušební verze končí ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -13089,17 +13100,6 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Zkušební verze končí ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -13150,6 +13150,14 @@
         "Odemkněte všechny prémiové produkty a funkce ${ BRAND_NAME } jen za ${ priceLine }. Zrušit můžete kdykoli."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -13168,14 +13176,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -16608,9 +16608,6 @@
       "Enter your backup password": [
         "Zadejte své záložní heslo"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Aby se tento uživatel mohl přihlásit, ujistěte se, že existuje ve vašem poskytovateli identit."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Pro vaši bezpečnost jste byli odhlášeni ze všech ostatních aktivních zařízení. Před přístupem k účtu je třeba zadat nové záložní heslo."
       ],
@@ -16700,9 +16697,6 @@
       ],
       "Single sign-on removed": [
         "Jednotné přihlášení zrušeno"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Uživatel ${ name } nyní používá účet s jednotným přihlášením."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tím se uživatel odhlásí z ostatních zařízení a bude muset vytvořit nové záložní heslo."
@@ -18140,10 +18134,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
