@@ -737,6 +737,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Fehler] Ein Eintrag konnte nicht analysiert werden."
+      ],
       "A domain ownership must be verified first.": [
         "Die Eigentümerschaft einer Domain muss zunächst verifiziert werden."
       ],
@@ -1536,6 +1539,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Aktivieren der automatischen PIN-Sperre"
+      ],
+      "Enter the address you want to email.": [
+        "Gib die Adresse ein, an die du eine E-Mail senden möchtest."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."

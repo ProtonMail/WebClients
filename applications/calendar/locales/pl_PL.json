@@ -323,6 +323,9 @@
       "Forward as attachment": [
         "Przekaż jako załącznik"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Wybierz plan ${ planName } za ${ priceCoupon }"
+      ],
       "Get in touch": [
         "Skontaktuj się z nami"
       ],
@@ -1237,6 +1240,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zamknij"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
@@ -1249,8 +1255,11 @@
       "Create label": [
         "Utwórz etykietę"
       ],
+      "Discover and set up features": [
+        "Odkryj i skonfiguruj funkcje"
+      ],
       "Remind me later": [
-        "Przypomnij mi później"
+        "Przypomnij później"
       ],
       "Set up other features": [
         "Skonfiguruj inne funkcje"
@@ -3668,7 +3677,7 @@
     },
     "Event invistation error": {
       "Unexpected error": [
-        "Niespodziewany błąd"
+        "Wystąpił nieoczekiwany błąd"
       ]
     },
     "Event invitation error": {
@@ -4053,6 +4062,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -4061,6 +4073,9 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4747,6 +4762,12 @@
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Poznaj nowe funkcje i zacznij z nich korzystać!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Poznaj nowe funkcje planu ${ planTitle } i zacznij z nich korzystać!"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -4790,7 +4811,7 @@
         "Wiadomości są automatyczne podpisywane"
       ],
       "Enabling auto-deletion…": [
-        "Włącz automatyczne usuwanie..."
+        "Włączanie automatycznego usuwania…"
       ],
       "Enter the code from your authenticator app": [
         "Wpisz kod z aplikacji uwierzytelniającej"
@@ -5026,6 +5047,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
       ],
+      "or discover other features:": [
+        "lub poznaj inne funkcje:"
+      ],
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
@@ -5117,7 +5141,7 @@
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Registering your subscription…": [
-        "Rejestrowanie subskrypcji..."
+        "Rejestrowanie subskrypcji…"
       ],
       "Removed participants will be notified.": [
         "Usunięci uczestnicy zostaną powiadomieni."
@@ -5141,13 +5165,16 @@
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
+        "Płatności SEPA nie są obecnie dostępne. Spróbuj ponownie później."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
+      ],
+      "Setting up ${ feature }…": [
+        "Konfigurowanie ${ feature }…"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
@@ -5397,6 +5424,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Możesz to zmienić w ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Możesz sprawdzić postęp ${ importProgressLink }."
@@ -6215,7 +6245,7 @@
         "Wysłane"
       ],
       "settings": [
-        "ustawienia"
+        "ustawieniach"
       ],
       "Snooze": [
         "Odłożone"
@@ -7097,6 +7127,9 @@
       "Sync and backup all your files across devices": [
         "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
       ],
+      "Tor over VPN": [
+        "Tor przez VPN"
+      ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
       ],
@@ -7303,7 +7336,7 @@
     },
     "new_plans: Subtext": {
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Odblokuj wszystkie produkty i funkcje premium ${ BRAND_NAME } za jedyne ${ priceLine }. Anuluj w dowolnym momencie"
+        "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
     "new_plans: title": {
@@ -8378,6 +8411,11 @@
         "Odśwież wydarzenie"
       ]
     },
+    "Safety review": {
+      "Review account safety": [
+        "Sprawdź bezpieczeństwo konta"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Logowanie nie zostało zakończone."
@@ -8844,6 +8882,9 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Ulepsz do planu ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9856,6 +9897,9 @@
         "${ emailsCount } adresów e-mail",
         "${ emailsCount } adresów e-mail"
       ],
+      "${ feature } is now active": [
+        "Funkcja ${ feature } jest aktywna"
+      ],
       "Account recovery": [
         "Odzyskiwanie konta"
       ],
@@ -10482,7 +10526,7 @@
     },
     "Valentine_2025": {
       "+ free gift": [
-        "+ darmowy prezent"
+        "+ prezent"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
         "Kod podarunkowy na ${ discountPercentAbsolute }% zniżki na ${ planTitle } na 1 rok"
@@ -10491,7 +10535,7 @@
         "Oferta na walentynki"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Twój darmowy prezent do udostępnienia, o wartości ${ price }﻿: "
+        "🎁 Twój prezent o wartości ${ price }, którym możesz się podzielić﻿: "
       ]
     },
     "Valentine_2025: Offer": {
@@ -10523,7 +10567,7 @@
         "Zaawansowana ochrona konta"
       ],
       "All Mail, VPN, Pass, and Drive premium features": [
-        "Wszystkie funkcje premium Mail, VPN, Pass i Drive"
+        "Wszystkie funkcje premium Mail, VPN, Pass i Drive"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
@@ -10535,7 +10579,7 @@
         "Dwa razy więcej miłości za połowę ceny"
       ],
       "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Uzyskaj 1 rok ${ dealName } z rabatem ${ salePercentage }% — plus kod upominkowy, którym możesz podzielić się z przyjacielem"
+        "Uzyskaj 1 rok ${ dealName } z rabatem ${ salePercentage }% oraz kod upominkowy, którym możesz podzielić się z przyjacielem"
       ],
       "Get the deal": [
         "Skorzystaj z oferty"
@@ -10692,6 +10736,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adres ${ BRAND_NAME }",
+        "${ n } adresy ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } konto na portfel",
         "${ n } konta na portfel",

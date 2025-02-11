@@ -534,6 +534,9 @@
       "Get ${ BRAND_NAME } Duo": [
         "Wybierz plan ${ BRAND_NAME } Duo"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Wybierz plan ${ planName } za ${ priceCoupon }"
+      ],
       "Get in touch": [
         "Skontaktuj się z nami"
       ],
@@ -1930,6 +1933,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zamknij"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
@@ -1942,6 +1948,12 @@
       "Create label": [
         "Utwórz etykietę"
       ],
+      "Discover and set up features": [
+        "Odkryj i skonfiguruj funkcje"
+      ],
+      "Got it": [
+        "Ok"
+      ],
       "Maybe later": [
         "Może później"
       ],
@@ -1949,7 +1961,7 @@
         "Dalej"
       ],
       "Remind me later": [
-        "Przypomnij mi później"
+        "Przypomnij później"
       ],
       "Set up other features": [
         "Skonfiguruj inne funkcje"
@@ -4791,7 +4803,7 @@
     },
     "Event invistation error": {
       "Unexpected error": [
-        "Niespodziewany błąd"
+        "Wystąpił nieoczekiwany błąd"
       ]
     },
     "Event invitation error": {
@@ -5478,6 +5490,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -5486,6 +5501,9 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -6467,6 +6485,12 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Czy wiesz, że zarezerwowaliśmy dla Ciebie krótszy adres e-mail? To jest nazwa użytkownika, po której następuje “@${ PM_DOMAIN }”."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Poznaj nowe funkcje i zacznij z nich korzystać!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Poznaj nowe funkcje planu ${ planTitle } i zacznij z nich korzystać!"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -6576,7 +6600,7 @@
         "osadzonych obrazów"
       ],
       "Enabling auto-deletion…": [
-        "Włącz automatyczne usuwanie..."
+        "Włączanie automatycznego usuwania…"
       ],
       "Encrypt message": [
         "Zaszyfruj wiadomość"
@@ -6995,6 +7019,9 @@
       "Open shortcut cheat sheet": [
         "Otwórz listę skrótów"
       ],
+      "or discover other features:": [
+        "lub poznaj inne funkcje:"
+      ],
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
@@ -7143,7 +7170,7 @@
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Registering your subscription…": [
-        "Rejestrowanie subskrypcji..."
+        "Rejestrowanie subskrypcji…"
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Pamiętaj, aby zaktualizować adres w menedżerze haseł lub miejscu, gdzie przechowujesz swoje konto i dane logowania."
@@ -7239,7 +7266,7 @@
         "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
+        "Płatności SEPA nie są obecnie dostępne. Spróbuj ponownie później."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -7249,6 +7276,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową dla tej przeglądarki. Aplikacja ${ MAIL_APP_NAME } będzie automatycznie otwierać linki wiadomości."
+      ],
+      "Setting up ${ feature }…": [
+        "Konfigurowanie ${ feature }…"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
@@ -7521,7 +7551,7 @@
         "Aby odzyskać dane, musisz reaktywować klucz konta użyty podczas jego tworzenia. Wymaga to znajomości hasła użytego podczas generowania klucza."
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
-        "Aby usunąć ograniczenia, można przejść na płatny plan."
+        "Ulepsz do płatnego planu, aby usunąć ograniczenia."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "W celu anulowania subskrypcji tej listy mailingowej zostanie wysłana wiadomość z adresu ${ boldFrom } wraz z następującymi szczegółami:"
@@ -7771,6 +7801,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Możesz to zmienić w ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Możesz sprawdzić postęp ${ importProgressLink }."
@@ -9049,7 +9082,7 @@
         "Wysłane"
       ],
       "settings": [
-        "ustawienia"
+        "ustawieniach"
       ],
       "Sign up for free": [
         "Załóż darmowe konto"
@@ -9960,6 +9993,9 @@
       "Sync and backup all your files across devices": [
         "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
       ],
+      "Tor over VPN": [
+        "Tor przez VPN"
+      ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
       ],
@@ -10166,7 +10202,7 @@
     },
     "new_plans: Subtext": {
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Odblokuj wszystkie produkty i funkcje premium ${ BRAND_NAME } za jedyne ${ priceLine }. Anuluj w dowolnym momencie"
+        "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
     "new_plans: title": {
@@ -11274,6 +11310,11 @@
         "Ponowne szyfrowanie zaproszenia nie powiodło się. Spróbuj ponownie."
       ]
     },
+    "Safety review": {
+      "Review account safety": [
+        "Sprawdź bezpieczeństwo konta"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Logowanie nie zostało zakończone."
@@ -11857,6 +11898,9 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Ulepsz do planu ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -11956,6 +12000,9 @@
       ]
     },
     "Spotlight": {
+      "Discover your subscription benefits": [
+        "Odkryj zalety subskrypcji"
+      ],
       "Email tracking protection": [
         "Ochrona przed śledzeniem wiadomości"
       ],
@@ -13118,6 +13165,9 @@
         "${ emailsCount } adresów e-mail",
         "${ emailsCount } adresów e-mail"
       ],
+      "${ feature } is now active": [
+        "Funkcja ${ feature } jest aktywna"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Skróty klawiszowe ${ MAIL_APP_NAME }"
       ],
@@ -13378,6 +13428,9 @@
       ],
       "Details": [
         "Szczegóły"
+      ],
+      "Discover your subscription benefits": [
+        "Odkryj zalety subskrypcji"
       ],
       "Don't give spam a chance": [
         "Pokonaj spam"
@@ -13793,6 +13846,9 @@
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
       ],
+      "Set up ${ protonDuoPlanName }": [
+        "Skonfiguruj ${ protonDuoPlanName }"
+      ],
       "Set up your family account": [
         "Skonfiguruj konto rodzinne"
       ],
@@ -14120,6 +14176,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adres ${ BRAND_NAME }",
+        "${ n } adresy ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } konto na portfel",
         "${ n } konta na portfel",

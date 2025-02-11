@@ -1230,6 +1230,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Lukk"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
       ],
@@ -9219,9 +9222,6 @@
       "Enter your backup password": [
         "Angi reservepassordet ditt"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "For at denne brukeren skal kunne logge på, må du kontrollere at de finnes hos identitetsleverandøren."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Av sikkerhetshensyn har du blitt logget av alle de andre aktive enhetene dine. Før du får tilgang til kontoen din, må du skrive inn et nytt reservepassord."
       ],
@@ -9287,9 +9287,6 @@
       ],
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Brukeren ${ name } er nå en konto med enkel pålogging."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dette vil logge brukeren ut av de andre enhetene sine, og vedkommende må opprette et nytt reservepassord."

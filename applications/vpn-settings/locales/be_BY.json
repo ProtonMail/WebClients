@@ -1246,6 +1246,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Закрыць"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
       ],
@@ -3606,6 +3609,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
+      ],
+      "${ discountPercent }% discount": [
+        "скідка ${ discountPercent }%"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
@@ -9436,9 +9442,6 @@
       "Enter your backup password": [
         "Увядзіце свой рэзервовы пароль"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Пераканайцеся, што гэты карыстальнік існуе ў вашым пастаўшчыку пасведчанняў. Гэта неабходна для яго ўваходу ў сістэму."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "У мэтах бяспекі вы выйшлі з сістэмы на ўсіх вашых іншых актыўных прыладах. Вам неабходна будзе ўвесці новы рэзервовы пароль перад тым, як вы атрымаеце доступ да свайго ўліковага запісу."
       ],
@@ -9504,9 +9507,6 @@
       ],
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "У карыстальніка ${ name } цяпер уліковы запіс з адзіным уваходам."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Гэта дзеянне прывядзе да выхаду карыстальніка з яго іншых прылад, і яму давядзецца стварыць новы рэзервовы пароль."
