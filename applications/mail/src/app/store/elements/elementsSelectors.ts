@@ -11,6 +11,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { DEFAULT_PLACEHOLDERS_COUNT, MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
 import {
     filterElementsInState,
+    getElementContextIdentifier,
     hasAttachmentsFilter,
     isEmpty,
     isSearch,
@@ -28,7 +29,7 @@ export const elementsMap = (state: MailState) => state.elements.elements;
 export const params = (state: MailState) => state.elements.params;
 const page = (state: MailState) => state.elements.page;
 export const pageSize = (state: MailState) => state.elements.pageSize;
-export const pages = (state: MailState) => state.elements.pages;
+const pages = (state: MailState) => state.elements.pages;
 const bypassFilter = (state: MailState) => state.elements.bypassFilter;
 export const pendingRequest = (state: MailState) => state.elements.pendingRequest;
 export const pendingActions = (state: MailState) => state.elements.pendingActions;
@@ -53,8 +54,25 @@ const currentESDBStatus = (
 const currentCounts = (_: MailState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 const currentLabelID = (_: MailState, { labelID }: { labelID: string }) => labelID;
 
+export const contextPages = createSelector([params, pages], (params, pages) => {
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
+
+    return pages[contextFilter] || [];
+});
+
 export const elements = createSelector(
-    [elementsMap, params, page, pageSize, pages, bypassFilter, addresses],
+    [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses],
     (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
@@ -157,7 +175,9 @@ export const paramsChanged = createSelector([params, currentParams], (params, cu
 /**
  * @returns a boolean specifying whether the current page is in the cache or not.
  */
-export const pageCached = createSelector([pages, currentPage], (pages, currentPage) => pages.includes(currentPage));
+export const pageCached = createSelector([contextPages, currentPage], (pages, currentPage) =>
+    pages.includes(currentPage)
+);
 
 /**
  * @returns a boolean specifying whether the current page is the one set in the store or not.
@@ -168,7 +188,7 @@ export const pageChanged = createSelector([page, currentPage], (page, currentPag
  * @returns a boolean specifying whether the cache contains a page that is +/-1 the current page.
  * It is useful to check if there is page jump and refetch accordingly
  */
-export const pageIsConsecutive = createSelector([pages, currentPage], (pages, currentPage) =>
+export const pageIsConsecutive = createSelector([contextPages, currentPage], (pages, currentPage) =>
     isPageConsecutive(pages, currentPage)
 );
 
@@ -192,9 +212,10 @@ export const shouldResetElementsState = createSelector(
  * It should be true either when `shouldResetElementsState` or
  */
 export const shouldLoadElements = createSelector(
-    [paramsChanged, pendingRequest, retry, needsMoreElements, invalidated, pageCached],
-    (paramsChanged, pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
+    [paramsChanged, pendingRequest, retry, needsMoreElements, invalidated, pageCached, shouldResetElementsState],
+    (paramsChanged, pendingRequest, retry, needsMoreElements, invalidated, pageCached, shouldResetElementsState) => {
         return (
+            shouldResetElementsState ||
             paramsChanged ||
             (!pendingRequest &&
                 retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
@@ -207,7 +228,7 @@ export const shouldLoadElements = createSelector(
  * @returns true when user is in an unpredictable context because we don't have enough conversations/message metadata infos
  */
 export const shouldInvalidateElementsState = createSelector(
-    [params, pages],
+    [params, contextPages],
     (params, pages) => !!params.search.keyword || !pages.includes(0)
 );
 
