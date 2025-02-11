@@ -85,7 +85,6 @@ enum DriveFeatureFlag {
     DrivePublicShareEditModeDisabled = 'DrivePublicShareEditModeDisabled',
     // Download
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
-    DriveWebOPFSDownloadMechanism = 'DriveWebOPFSDownloadMechanism',
     // Bookmarks
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
     DriveWebShareURLSignupModal = 'DriveWebShareURLSignupModal',

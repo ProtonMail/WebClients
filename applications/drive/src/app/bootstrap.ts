@@ -143,10 +143,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         dispatch(bootstrapEvent({ type: 'complete' }));
 
         // Register callback to clear OPFS entries on logout
-        const isOPFSEnabled = unleashVanillaStore.getState().isEnabled('DriveWebOPFSDownloadMechanism');
-        if (isOPFSEnabled) {
-            registerSessionRemovalListener(clearOPFS);
-        }
+        registerSessionRemovalListener(clearOPFS);
 
         return {
             ...userData,

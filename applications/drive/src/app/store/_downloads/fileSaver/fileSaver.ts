@@ -85,8 +85,7 @@ export class FileSaver {
         }
 
         // https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system
-        const isOPFSEnabled = unleashVanillaStore.getState().isEnabled('DriveWebOPFSDownloadMechanism');
-        if (isOPFSEnabled && isOPFSSupported() && this.useSWFallback === false && (await hasEnoughOPFSStorage(size))) {
+        if (isOPFSSupported() && this.useSWFallback === false && (await hasEnoughOPFSStorage(size))) {
             return 'opfs';
         }
 
