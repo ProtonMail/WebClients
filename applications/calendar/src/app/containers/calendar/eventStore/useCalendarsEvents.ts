@@ -2,7 +2,6 @@ import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import useFlag from '@proton/unleash/useFlag';
 
 import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import { visualEventsSelector } from '../../../store/events/eventsSelectors';
@@ -34,8 +33,6 @@ const useCalendarsEvents = ({
     tzid,
     utcDateRange,
 }: CalendarEventsProps): [CalendarViewEvent[], boolean, (range: [Date, Date]) => void] => {
-    const hasReduxStore = useFlag('CalendarRedux');
-
     const dispatch = useCalendarDispatch();
     const events = useCalendarSelector(visualEventsSelector);
 
@@ -84,15 +81,13 @@ const useCalendarsEvents = ({
         [rerender, isLoading, tzid, requestedCalendars, utcDateRange]
     );
 
-    useMemo(() => setCalendarEvents(hasReduxStore ? events : eventsResults), [events, eventsResults, hasReduxStore]);
+    useMemo(() => setCalendarEvents(events), [events, eventsResults]);
 
     useEffect(() => {
-        if (hasReduxStore) {
-            dispatch(eventsActions.synchronizeEvents(eventsResults));
-        }
-    }, [eventsResults, hasReduxStore]);
+        dispatch(eventsActions.synchronizeEvents(eventsResults));
+    }, [eventsResults]);
 
-    return [hasReduxStore ? events : eventsResults, isLoading, prefetchCalendarEvents];
+    return [events, isLoading, prefetchCalendarEvents];
 };
 
 export default useCalendarsEvents;
