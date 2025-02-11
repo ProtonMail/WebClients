@@ -18,12 +18,12 @@ import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../store';
-import { PhotoTags, isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { PhotoTag, isDecryptedLink, useThumbnailsDownload } from '../../store';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
-import { PhotosTags, type PhotosTagsProps } from './components/PhotosTags';
+import { PhotosTags, type PhotosTagsProps } from './components/Tags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsAlbumsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
@@ -78,7 +78,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const thumbnails = useThumbnailsDownload();
     const { navigateToAlbums } = useNavigate();
     // TODO: Move tag selection to specific hook
-    const [selectedTag, setSelectedTag] = useState<PhotosTagsProps['selectedTag']>([]);
+    const [selectedTag, setSelectedTag] = useState<PhotosTagsProps['selectedTag']>([PhotoTag.All]);
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -255,16 +255,17 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 <PhotosTags
                     selectedTag={selectedTag}
                     tags={[
-                        PhotoTags.Favorites,
-                        PhotoTags.Screenshots,
-                        PhotoTags.Videos,
-                        PhotoTags.LivePhotos,
-                        PhotoTags.MotionPhotos,
-                        PhotoTags.Selfies,
-                        PhotoTags.Portraits,
-                        PhotoTags.Bursts,
-                        PhotoTags.Panoramas,
-                        PhotoTags.Raw,
+                        PhotoTag.All,
+                        PhotoTag.Favorites,
+                        PhotoTag.Screenshots,
+                        PhotoTag.Videos,
+                        PhotoTag.LivePhotos,
+                        PhotoTag.MotionPhotos,
+                        PhotoTag.Selfies,
+                        PhotoTag.Portraits,
+                        PhotoTag.Bursts,
+                        PhotoTag.Panoramas,
+                        PhotoTag.Raw,
                     ]}
                     onTagSelect={setSelectedTag}
                 />
