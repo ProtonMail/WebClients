@@ -3071,8 +3071,8 @@
       "Theme": [
         "Tema"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Este item permanecerá acessível até ${ remaining }"
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Este item está disponível até ${ date } ou até que o limite de visualizações seja atingido."
       ],
       "Title": [
         "Título"
@@ -4150,6 +4150,9 @@
       ],
       "Failed to load breaches.": [
         "Falha ao carregar violações."
+      ],
+      "Identity could not be confirmed": [
+        "A identidade não pode ser confirmada."
       ],
       "Invalid alias prefix": [
         "O prefixo de alias não é valido."
