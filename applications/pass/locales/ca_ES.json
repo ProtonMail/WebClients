@@ -3068,8 +3068,8 @@
       "Theme": [
         "Tema"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Aquest element romandrà accessible fins a ${ remaining }"
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
       ],
       "Title": [
         "Títol"
@@ -4056,6 +4056,9 @@
       ],
       "Failed to load breaches.": [
         "No s'han pogut carregar les infraccions."
+      ],
+      "Identity could not be confirmed": [
+        "No s'ha pogut confirmar la identitat."
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
