@@ -72,8 +72,14 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                     if (error instanceof Error) {
                         switch (error.name) {
                             case 'AuthConfirmInvalidError':
-                                return c('Error')
-                                    .t`Authentication failed. Confirm your ${BRAND_NAME} password in order to proceed with the export`;
+                                return passwordTypeSwitch({
+                                    sso: c('Error')
+                                        .t`Authentication failed. Confirm your backup password in order to proceed with the export`,
+                                    extra: c('Error')
+                                        .t`Authentication failed. Confirm your extra password in order to proceed with the export`,
+                                    default: c('Error')
+                                        .t`Authentication failed. Confirm your ${BRAND_NAME} password in order to proceed with the export`,
+                                });
                             case 'AuthConfirmAbortError':
                                 return null;
                         }
