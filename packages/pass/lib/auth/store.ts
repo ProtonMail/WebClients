@@ -199,7 +199,7 @@ export const createAuthStore = (store: Store) => {
         getUnlockRetryCount: (): number => store.get(PASS_UNLOCK_RETRY_KEY) ?? 0,
 
         setExtraPassword: (enabled: boolean): void => store.set(PASS_EXTRA_PWD_KEY, enabled),
-        getExtraPassword: () => store.get(PASS_EXTRA_PWD_KEY) ?? false,
+        getExtraPassword: (): boolean => store.get(PASS_EXTRA_PWD_KEY) ?? false,
 
         getSessionVersion: (): AuthSessionVersion => store.get(PASS_SESSION_VERSION_KEY) ?? SESSION_VERSION,
         setSessionVersion: (version: AuthSessionVersion) => store.set(PASS_SESSION_VERSION_KEY, version),
