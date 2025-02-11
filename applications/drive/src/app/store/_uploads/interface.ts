@@ -2,8 +2,10 @@ import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
 import type { ThumbnailType } from './media';
 
+export type OnFileUploadSuccessCallbackData = { fileId: string; fileName: string } | void;
+export type OnFolderUploadSuccessCallbackData = { folderId: string; folderName: string };
 export interface UploadFileControls {
-    start: (progressCallbacks?: UploadFileProgressCallbacks) => Promise<void>;
+    start: (progressCallbacks?: UploadFileProgressCallbacks) => Promise<OnFileUploadSuccessCallbackData>;
     pause: () => void;
     resume: () => void;
     cancel: () => void;
@@ -17,7 +19,7 @@ export interface UploadFileProgressCallbacks {
 }
 
 export interface UploadFolderControls {
-    start: () => Promise<{ folderId: string; folderName: string }>;
+    start: () => Promise<OnFolderUploadSuccessCallbackData>;
     cancel: () => void;
 }
 
@@ -33,7 +35,12 @@ export interface UploadCallbacks {
         fileBlocks: FileRequestBlock[],
         thumbnailBlocks?: ThumbnailRequestBlock[]
     ) => Promise<{ fileLinks: Link[]; thumbnailLinks?: Link[] }>;
-    finalize: (signature: string, signatureEmail: string, xattr: string, photo?: PhotoUpload) => Promise<void>;
+    finalize: (
+        signature: string,
+        signatureEmail: string,
+        xattr: string,
+        photo?: PhotoUpload
+    ) => Promise<OnFileUploadSuccessCallbackData>;
     onError?: (error: Error) => void;
     notifyVerificationError: (retryHelped: boolean) => void;
 }

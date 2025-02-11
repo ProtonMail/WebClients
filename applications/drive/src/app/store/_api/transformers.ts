@@ -138,7 +138,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         nodeKey: link.NodeKey,
         nodePassphrase: link.NodePassphrase,
         nodePassphraseSignature: link.NodePassphraseSignature,
-        nodeHashKey: link.FolderProperties?.NodeHashKey,
+        nodeHashKey: link.FolderProperties?.NodeHashKey || link.AlbumProperties?.NodeHashKey,
         contentKeyPacket: link.FileProperties?.ContentKeyPacket,
         contentKeyPacketSignature: link.FileProperties?.ContentKeyPacketSignature,
         signatureEmail: link.SignatureEmail,

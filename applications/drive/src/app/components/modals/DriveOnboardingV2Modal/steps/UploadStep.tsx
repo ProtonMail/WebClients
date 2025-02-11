@@ -19,7 +19,7 @@ export const UploadStep = ({ onNext }: OnboardingProps) => {
     const { activeFolder } = useActiveShare();
     const { handleDrop } = useFileDrop({
         shareId: activeFolder.shareId,
-        linkId: activeFolder.linkId,
+        parentLinkId: activeFolder.linkId,
         onFileUpload: () => countActionWithTelemetry(Actions.OnboardingV2UploadFile),
         onFolderUpload: () => countActionWithTelemetry(Actions.OnboardingV2UploadFolder),
     });
