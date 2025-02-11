@@ -1300,6 +1300,9 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
+      ],
+      "Close": [
+        "Sluiten"
       ]
     },
     "Calendar access select label": {
@@ -10738,6 +10741,12 @@
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
         "Ontgrendel alle premium ${ BRAND_NAME } producten en functies van ${ priceMailPlus }. Elk moment te annuleren."
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "De prijs van ${ priceCoupon } is alleen voor de eerste maand, hierna wordt uw abonnement automatisch verlengt voor ${ priceLine }. U kunt op ieder moment annuleren."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Ontgrendel alle ${ BRAND_NAME } premium producten en functies voor ${ priceLine }. U kunt op ieder moment annuleren."
       ]
     },
     "Offer": {
@@ -10904,6 +10913,20 @@
       ],
       "for ${ durationDeal }": [
         "voor ${ durationDeal }"
+      ]
+    },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ gratis cadeau"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Een cadeaucode voor ${ discountPercentAbsolute }% korting op ${ planTitle } voor 1 jaar"
+      ],
+      "Valentine's deal": [
+        "Valentijnsdeal"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Uw gratis cadeau om te delen, ter waarde van ${ price }﻿: "
       ]
     }
   }

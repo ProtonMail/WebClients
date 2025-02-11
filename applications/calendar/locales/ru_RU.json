@@ -11361,6 +11361,20 @@
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
       ]
+    },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ бесплатный подарок"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Подарочный код, предоставляющий скидку ${ discountPercentAbsolute }% на ${ planTitle } на 1 год"
+      ],
+      "Valentine's deal": [
+        "Предложение ко Дню влюблённых"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Ваш бесплатный подарок, которым можно поделиться, стоимостью ${ price } "
+      ]
     }
   }
 }
