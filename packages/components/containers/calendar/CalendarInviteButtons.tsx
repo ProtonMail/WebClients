@@ -15,7 +15,6 @@ import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
-import useFlag from '@proton/unleash/useFlag';
 import move from '@proton/utils/move';
 import noop from '@proton/utils/noop';
 
@@ -37,7 +36,6 @@ const CalendarInviteButtons = ({
     const api = useApi();
     const { APP_NAME } = useConfig();
     const isCalendarApp = APP_NAME === APPS.PROTONCALENDAR;
-    const hasReduxStore = useFlag('CalendarRedux');
     const [subscription] = useSubscription();
     const plan: PLANS = getPlan(subscription)?.Name || PLANS.FREE;
     const [loadingAccept, withLoadingAccept] = useLoading();
@@ -92,7 +90,7 @@ const CalendarInviteButtons = ({
                 <Button
                     onClick={onAccept}
                     disabled={loadingAnswer || disabled}
-                    loading={hasReduxStore && isCalendarApp ? false : loadingAccept}
+                    loading={isCalendarApp ? false : loadingAccept}
                     title={acceptText}
                 >
                     {c('Action').t`Yes`}
@@ -100,7 +98,7 @@ const CalendarInviteButtons = ({
                 <Button
                     onClick={onTentative}
                     disabled={loadingAnswer || disabled}
-                    loading={hasReduxStore && isCalendarApp ? false : loadingTentative}
+                    loading={isCalendarApp ? false : loadingTentative}
                     title={tentativeText}
                 >
                     {c('Action').t`Maybe`}
@@ -108,7 +106,7 @@ const CalendarInviteButtons = ({
                 <Button
                     onClick={onDecline}
                     disabled={loadingAnswer || disabled}
-                    loading={hasReduxStore && isCalendarApp ? false : loadingDecline}
+                    loading={isCalendarApp ? false : loadingDecline}
                     title={declineText}
                 >
                     {c('Action').t`No`}
