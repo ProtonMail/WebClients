@@ -17,19 +17,6 @@ export class PublicRenameController implements RenameControllerInterface {
     readonly logger: LoggerInterface,
   ) {}
 
-  async refreshDocumentName() {
-    const { nodeMeta } = this.documentState.getProperty('entitlements')
-
-    const result = await this._getNode.execute(nodeMeta, { useCache: false, forceFetch: true })
-    if (result.isFailed()) {
-      this.logger.error('Failed to get node', result.getError())
-      return
-    }
-
-    const { node } = result.getValue()
-    this.documentState.setProperty('documentName', node.name)
-  }
-
   public async renameDocument(newName: string): Promise<TranslatedResult<void>> {
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
@@ -39,7 +26,11 @@ export class PublicRenameController implements RenameControllerInterface {
 
       const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
       await this.compat.renamePublicDocument(nodeMeta, decryptedNode.parentNodeId, newName)
-      await this.refreshDocumentName()
+
+      this.documentState.setProperty('documentName', newName)
+
+      void this._getNode.updateNodeNameInCache(nodeMeta, newName)
+
       return TranslatedResult.ok()
     } catch (e) {
       this.logger.error(getErrorString(e) ?? 'Failed to rename document')
@@ -57,19 +48,6 @@ export class PrivateRenameController implements RenameControllerInterface {
     readonly logger: LoggerInterface,
   ) {}
 
-  async refreshDocumentName() {
-    const { nodeMeta } = this.documentState.getProperty('entitlements')
-
-    const result = await this._getNode.execute(nodeMeta, { useCache: false, forceFetch: true })
-    if (result.isFailed()) {
-      this.logger.error('Failed to get node', result.getError())
-      return
-    }
-
-    const { node } = result.getValue()
-    this.documentState.setProperty('documentName', node.name)
-  }
-
   public async renameDocument(newName: string): Promise<TranslatedResult<void>> {
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
@@ -86,7 +64,19 @@ export class PrivateRenameController implements RenameControllerInterface {
         newName,
       )
       await this.compat.renameDocument(nodeMeta, name)
-      await this.refreshDocumentName()
+
+      /**
+       * In previous iterations, we would refetch the node after a rename, and set the global documentName property
+       * from this refetch.
+       * However recent complicated drive-store API changes made it so that the returned node after a fetch, even after
+       * invalidating the cache for that node, would return a stale node.
+       * Rather than fight against this, we will take the pragmatic approach of just setting the documentName property
+       * based on the successful rename result, then update the cache with the new name.
+       */
+      this.documentState.setProperty('documentName', name)
+
+      void this._getNode.updateNodeNameInCache(nodeMeta, name)
+
       return TranslatedResult.ok()
     } catch (e) {
       this.logger.error(getErrorString(e) ?? 'Failed to rename document')
