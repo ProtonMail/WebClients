@@ -67,7 +67,6 @@ enum CalendarFeatureFlag {
     CalendarEventsPrefetch = 'CalendarEventsPrefetch',
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
     VideoConferenceWidget = 'VideoConferenceWidget',
-    CalendarRedux = 'CalendarRedux',
     ZoomIntegration = 'ZoomIntegration',
     CalendarMetrics = 'CalendarMetrics',
 }
