@@ -3184,8 +3184,8 @@
       "Theme": [
         "Tema"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Dette elementet vil forbli tilgjengelig til ${ remaining }"
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dette elementet er tilgjengelig til ${ date } eller til visningsgrensen er nådd."
       ],
       "Title": [
         "Tittel"
@@ -4195,6 +4195,9 @@
       ],
       "Failed to load breaches.": [
         "Kunne ikke laste inn brudd."
+      ],
+      "Identity could not be confirmed": [
+        "Identitet kunne ikke bekreftes"
       ],
       "Invalid alias prefix": [
         "Ugyldig aliasprefiks"
