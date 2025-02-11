@@ -3184,8 +3184,8 @@
       "Theme": [
         "Tema"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Bu ögeye ${ remaining } zamanına kadar erişilebilir"
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Bu öğeye ${ date } tarihine kadar veya görüntüleme sınırına ulaşılana kadar erişilebilir."
       ],
       "Title": [
         "Başlık"
@@ -4286,6 +4286,9 @@
       ],
       "Failed to load breaches.": [
         "Verilerin ele geçirilmesi olayları yüklenemedi."
+      ],
+      "Identity could not be confirmed": [
+        "Kimlik doğrulanamadı"
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
