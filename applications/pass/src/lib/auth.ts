@@ -332,7 +332,6 @@ export const createAuthService = ({
             }
 
             authStore.setSession(session);
-            // NOTE: ideally we should sync after a successful login on fork
             await authSwitch.sync({ revalidate: false });
         },
 
@@ -340,6 +339,7 @@ export const createAuthService = ({
             auth.resumeSession(fork.localID, {
                 reauth: fork.reauth,
                 onComplete: async (userID, localID) => {
+                    await authSwitch.sync({ revalidate: false });
                     const action = ReauthAction[fork.reauth.type];
 
                     try {
