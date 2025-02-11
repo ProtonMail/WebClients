@@ -383,6 +383,10 @@ const LoginForm = ({
         setExternalSSOState(undefined);
     };
 
+    const usernameParams = username ? `?username=${username}` : '';
+    const resetPath = `${paths.reset}${usernameParams}`;
+    const forgotUsernamePath = `${paths.forgotUsername}${usernameParams}`;
+
     useEffect(() => {
         // This handles the case for:
         // 1) Being on the unlock/2fa screen and hitting the back button
@@ -490,7 +494,7 @@ const LoginForm = ({
                             <>
                                 {usernameEl()}
                                 <div className="mb-4">
-                                    <Link to={paths.forgotUsername}>{c('Link').t`Forgot email?`}</Link>
+                                    <Link to={forgotUsernamePath}>{c('Link').t`Forgot email?`}</Link>
                                 </div>
                                 {checkboxEl}
                                 <Button
@@ -536,7 +540,7 @@ const LoginForm = ({
                                 <input id="username" readOnly value={username} hidden />
                                 {passwordEl()}
                                 <div className="mb-4">
-                                    <Link to={paths.reset}>{c('Link').t`Forgot password?`}</Link>
+                                    <Link to={resetPath}>{c('Link').t`Forgot password?`}</Link>
                                 </div>
                                 {errorEl && <div className="mt-4">{errorEl}</div>}
                                 <Button
@@ -662,14 +666,14 @@ const LoginForm = ({
                                             content={c('Link').t`Trouble signing in?`}
                                         >
                                             <Link
-                                                to={paths.reset}
+                                                to={resetPath}
                                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                                             >
                                                 <Icon name="key" />
                                                 {c('Link').t`Forgot password?`}
                                             </Link>
                                             <Link
-                                                to={paths.forgotUsername}
+                                                to={forgotUsernamePath}
                                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                                             >
                                                 <Icon name="user-circle" />
