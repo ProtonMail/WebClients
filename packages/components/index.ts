@@ -212,7 +212,10 @@ export type { ModalOwnProps, ModalProps, ModalSize } from './components/modalTwo
 export { default as ModalContent, default as ModalTwoContent } from './components/modalTwo/ModalContent';
 export type { ModalContentProps } from './components/modalTwo/ModalContent';
 export { default as ModalTwoFooter } from './components/modalTwo/ModalFooter';
-export { default as ModalTwoHeader } from './components/modalTwo/ModalHeader';
+export {
+    default as ModalTwoHeader,
+    ModalHeaderCloseButton as ModalTwoHeaderCloseButton,
+} from './components/modalTwo/ModalHeader';
 export {
     default as useModalState,
     useModalStateObject,
