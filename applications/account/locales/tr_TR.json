@@ -880,11 +880,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reject": [
         "Reddet"
@@ -1683,15 +1683,6 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz.",
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1713,6 +1704,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz.",
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -1993,6 +1993,9 @@
     "Button": {
       "Add link to your email footer": [
         "E-postalarınıza alt bilgi bağlantısı ekleyin"
+      ],
+      "Close": [
+        "Kapat"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
@@ -6736,11 +6739,11 @@
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
-      "${ checkout.discountPercent }% discount": [
-        "%${ checkout.discountPercent } indirim"
-      ],
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
+      ],
+      "${ discountPercent }% discount": [
+        "%${ discountPercent } indirim"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
@@ -7394,11 +7397,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -9139,11 +9142,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -9594,9 +9597,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Hesabınız bu fırsata göre güncellendi"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
@@ -12100,32 +12100,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon } ile başlayın"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -12153,6 +12127,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon } ile başlayın"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
       ]
     },
     "new_plans: feature": {
@@ -12695,17 +12695,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -12816,6 +12805,17 @@
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
@@ -12859,19 +12859,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "İndirimli ${ priceCoupon } fiyatı ilk ay için geçerlidir. Daha sonra otomatik olarak ${ priceLine } üzerinden yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Yalnızca ${ priceMailPlus } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Tüm ${ BRAND_NAME } ayrıcalıklı ürün ve özelliklerin kilidini sadece ${ priceLine } karşılığında açın. İstediğiniz zaman iptal edin."
       ]
     },
     "new_plans: title": {
@@ -12892,6 +12884,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -17695,10 +17695,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -19484,6 +19484,20 @@
         "Yazma yardımcısı"
       ]
     },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ ücretsiz hediye"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "1 yıl boyunca ${ planTitle } için yüzde ${ discountPercentAbsolute }'lik indirim sağlayan hediye kodu"
+      ],
+      "Valentine's deal": [
+        "Sevgililer günü fırsatı"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Paylaşmanız için ücretsiz hediyeniz, değeri ${ price }﻿: "
+      ]
+    },
     "Valentine_2025: offer": {
       "Valentine's deal": [
         "Sevgililer günü fırsatı"
@@ -19809,14 +19823,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Cüzdan sorunu"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } erken erişime sunuldu. iOS uygulamasını Apple TestFlight üzerinden, Android uygulamasını ise Google Açık Test üzerinden indirebilirsiniz."
-      ],
-      "Coming soon": [
-        "Yakında"
       ]
     },
     "wallet_signup_2024:Navigation": {

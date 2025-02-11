@@ -1926,6 +1926,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Kapat"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ],
@@ -7811,9 +7814,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Tarayıcınız yazma yardımcısını desteklemiyor. Sunucular üzerinden çalıştırmayı deneyin."
       ],
@@ -9973,11 +9973,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "İndirimli ${ priceCoupon } fiyatı ilk ay için geçerlidir. Daha sonra otomatik olarak ${ priceLine } üzerinden yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Yalnızca ${ priceMailPlus } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Tüm ${ BRAND_NAME } ayrıcalıklı ürün ve özelliklerin kilidini sadece ${ priceLine } karşılığında açın. İstediğiniz zaman iptal edin."
       ]
     },
     "new_plans: title": {

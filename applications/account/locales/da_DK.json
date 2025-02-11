@@ -820,11 +820,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
       "refresh the page": [
         "opdater siden"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
       ],
       "Reject": [
         "Afvis"
@@ -1611,11 +1611,6 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1637,6 +1632,11 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
       ]
     },
     "bf2023: Offers": {
@@ -7066,11 +7066,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen."
@@ -8665,11 +8665,11 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "username": [
-        "brugernavn"
-      ],
       "Username": [
         "Brugernavn"
+      ],
+      "username": [
+        "brugernavn"
       ],
       "Users": [
         "Brugere"
@@ -9092,9 +9092,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Din konto er blevet opdateret med denne kampagne"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Din konto vil blive opdateret, når betalingen er godkendt."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
@@ -11497,26 +11494,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom i gang for ${ priceCoupon }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11544,6 +11521,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom i gang for ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -12068,17 +12065,6 @@
         "Brugeradministration"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ trialPlanName } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -12186,6 +12172,17 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ trialPlanName } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } af ${ humanMaxSpace }"
@@ -12228,14 +12225,6 @@
         "Dit valgte abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -12254,6 +12243,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -16617,11 +16614,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -18455,14 +18452,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problem med wallet"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } er i Tidlig Adgang. Du kan hente iOS-appen via Apple TestFlight og Android-appen via Google Open Testing."
-      ],
-      "Coming soon": [
-        "Kommer snart"
       ]
     },
     "wallet_signup_2024:Navigation": {

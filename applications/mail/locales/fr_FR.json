@@ -1926,6 +1926,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Fermer"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ],
@@ -7811,9 +7814,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Votre compte ayant au moins une facture en retard, il est restreint. Vos messages et liens de partage seront bloqués en cas de non-paiement. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Votre compte sera mis à jour une fois le paiement effectué."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Votre navigateur ne prend pas en charge l'assistant d'écriture. Essayez de l'exécuter sur des serveurs."
       ],
@@ -9976,11 +9976,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceLine }. Vous pouvez annuler à tout moment."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceMailPlus } avec possibilité de résiliation à tout moment."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceLine } avec possibilité de résiliation à tout moment."
       ]
     },
     "new_plans: title": {

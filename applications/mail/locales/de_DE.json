@@ -7799,9 +7799,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt. Bei anhaltender Nichtbezahlung werden deine E-Mails und Freigabelinks gesperrt. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Dein Browser unterstützt den Schreibassistenten nicht. Versuche ihn auf Servern auszuführen."
       ],
@@ -9958,11 +9955,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Der ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird es automatisch jeden Monat zum Preis von ${ priceLine } verlängert. Du kannst jederzeit kündigen."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceMailPlus } frei. Jederzeit kündbar."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
     "new_plans: title": {

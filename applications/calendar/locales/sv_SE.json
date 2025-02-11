@@ -1229,6 +1229,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Stäng"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
       ],
@@ -5396,9 +5399,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat. Fortsatt utebliven betalning kommer att blockera dina e-postmeddelanden och delningslänkar. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ditt konto kommer att uppdateras när betalningen är klargjord."
-      ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Din adress är inaktiverad. Ett e-postmeddelande för avbokning av händelsen kan inte skickas till evenemangsdeltagarna. Vill du ändå ta bort alla händelser i denna serie?"
       ],
@@ -7148,11 +7148,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Det rabatterade priset på ${ priceCoupon } är giltigt för den första månaden. Därefter kommer det förnyas automatiskt med ${ priceMailPlus }. Du kan avbryta när som helst."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Det rabatterade priset på ${ priceCoupon } är giltigt för den första månaden. Därefter kommer det förnyas automatiskt med ${ priceLine }. Du kan avbryta när som helst."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceMailPlus }. Avbryt när som helst."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
     "new_plans: title": {

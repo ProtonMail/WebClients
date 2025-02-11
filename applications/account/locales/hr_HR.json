@@ -562,11 +562,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reject": [
         "Odbiti"
@@ -4623,9 +4623,6 @@
       "Your account recovery method is set": [
         "Postavljen je način oporavka za vaš korisnički račun."
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Vaš račun će se ažurirati nakon uspješnog plaćanja."
-      ],
       "Your data recovery method is set": [
         "Postavljen je način oporavka za vaše podatke."
       ],
@@ -6174,14 +6171,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -6194,6 +6183,14 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -6381,11 +6378,6 @@
         "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6395,6 +6387,11 @@
       ],
       "Unlock premium features by upgrading": [
         "Otključajte vrhunske značajke nadogradnjom"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7955,10 +7952,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [
@@ -8891,14 +8888,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problem s novčanikom"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } je u Ranim pristupu. Možete učitati iOS apl. preko Apple TestFlighta i Android apl. preko Google Open Testinga."
-      ],
-      "Coming soon": [
-        "Uskoro dolazi"
       ]
     },
     "wallet_signup_2024:Navigation": {

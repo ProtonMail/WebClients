@@ -3184,8 +3184,8 @@
       "Theme": [
         "Thema"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Dit item blijft toegankelijk tot ${ remaining }"
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dit item is toegankelijk tot ${ date } of totdat de weergavelimiet is bereikt."
       ],
       "Title": [
         "Titel"
@@ -4286,6 +4286,9 @@
       ],
       "Failed to load breaches.": [
         "Kon inbreuken niet laden."
+      ],
+      "Identity could not be confirmed": [
+        "Identiteit kon niet worden bevestigd"
       ],
       "Invalid alias prefix": [
         "Ongeldig aliasvoorvoegsel"
