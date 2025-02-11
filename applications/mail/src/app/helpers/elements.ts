@@ -330,3 +330,18 @@ export const filterElementsInState = ({
         return true;
     });
 };
+
+export const getElementContextIdentifier = (contextFilter: {
+    labelID: string;
+    conversationMode: boolean;
+    filter?: Filter;
+    sort?: Sort;
+    from?: string;
+    to?: string;
+    address?: string;
+    begin?: number;
+    end?: number;
+    keyword?: string;
+}) => {
+    return JSON.stringify(contextFilter);
+};
