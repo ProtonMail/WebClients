@@ -430,7 +430,7 @@
         "Amagueu la configuració avançada del PGP"
       ],
       "Hide download options": [
-        "Amaga les opcions de baixada"
+        "Amaga les opcions de descàrrega"
       ],
       "Image could not be loaded with tracker protection.": [
         "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
@@ -778,7 +778,7 @@
         "Mostra la configuració avançada del PGP"
       ],
       "Show more download options": [
-        "Mostra més opcions de baixada"
+        "Mostra més opcions de descàrrega"
       ],
       "Show navigation bar": [
         "Mostra la barra de navegació"
@@ -1308,6 +1308,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Tanca"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ],
@@ -5589,9 +5592,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura vençuda. El vostre compte està restringit. La manca de pagament continuada us bloquejarà els correus electrònics i enllaços de compartició. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "El vostre compte s’actualitzarà un cop suprimit el pagament."
-      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "El vostre navegador actual no suporta la descàrrega de fitxers grans a causa de la indisponibilitat de prestadors de servei. La descàrrega de fitxers grans pot provocar que el navegador quedi bloquejat o que no respongui. Utilitzeu les últimes versions d'un ${ recommendedBrowser } i torneu-ho a provar."
       ],
@@ -7499,11 +7499,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar-ho en qualsevol moment."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceLine }. Podeu cancel·lar-ho en qualsevol moment."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu-ho en qualsevol moment."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Desbloqueu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "new_plans: title": {
@@ -10837,10 +10837,10 @@
         "Bitcoin via correu electrònic"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Adreça de correu electrònic de ${ MAIL_APP_NAME } xifrada i segura. Podeu enviar bitcoins fàcilment a qualsevol persona només amb el seu nom ${ BRAND_NAME }."
+        "Adreça de correu electrònic de ${ MAIL_APP_NAME } xifrada i segura. Podeu enviar bitcoins fàcilment a qualsevol només amb el seu nom de ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Intercanvieu bitcoins de manera segura per correu electrònic en comptes d’utilitzar adreces Bitcoin complexes de 26 caràcters que poden generar errors."
+        "Intercanvieu bitcoins de manera segura per correu electrònic en comptes d’utilitzar adreces complexes de Bitcoin de 26 caràcters que són propenses a errors."
       ]
     },
     "wallet_signup_2024:app-switcher": {
