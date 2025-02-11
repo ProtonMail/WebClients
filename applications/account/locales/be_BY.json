@@ -880,11 +880,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Reject": [
         "Адхіліць"
@@ -1691,17 +1691,6 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяц.",
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў.",
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1723,6 +1712,17 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяц.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў.",
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцаў."
       ]
     },
     "bf2023: Offers": {
@@ -6830,9 +6830,6 @@
         "${ calendarsToBeMergedCount } аб'яднаных календароў",
         "${ calendarsToBeMergedCount } аб'яднаных календароў"
       ],
-      "${ checkout.discountPercent }% discount": [
-        "скідка ${ checkout.discountPercent }%"
-      ],
       "${ current } of ${ total }": [
         "${ current } з ${ total }"
       ],
@@ -7538,11 +7535,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -9311,11 +9308,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "username": [
-        "імя карыстальніка"
-      ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -9784,9 +9781,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ваш уліковы запіс будзе абноўлены, калі плацеж будзе правераны."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
@@ -12323,32 +12317,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Пачніце за ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Пачатковы кошт ${ pricing }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -12376,6 +12344,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Пачніце за ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Пачатковы кошт ${ pricing }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12968,17 +12962,6 @@
         "Кіраванне камандамі"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -13089,6 +13072,17 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } з ${ humanMaxSpace }"
@@ -13132,19 +13126,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceLine }. Скасаваць можна ў любы момант."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceMailPlus }. Скасаваць можна ў любы момант."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: title": {
@@ -13165,6 +13151,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -18108,10 +18102,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -20153,14 +20147,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Праблема з Wallet"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } знаходзіцца ў стадыі ранняга доступу. Вы можаце спампаваць праграму для iOS праз Apple TestFlight і праграму для Android праз Google Open Testing."
-      ],
-      "Coming soon": [
-        "Неўзабаве з'явіцца"
       ]
     },
     "wallet_signup_2024:Navigation": {

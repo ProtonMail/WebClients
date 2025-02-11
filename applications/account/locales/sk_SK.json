@@ -880,11 +880,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "Refresh the page": [
-        "Obnoviť stránku"
-      ],
       "refresh the page": [
         "obnoviť stránku"
+      ],
+      "Refresh the page": [
+        "Obnoviť stránku"
       ],
       "Reject": [
         "Odmietnuť"
@@ -1691,17 +1691,6 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiac.",
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiace.",
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov.",
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1723,6 +1712,17 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plán ${ plan } je späť len na obmedzený čas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiac.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiace.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov.",
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiacov."
       ]
     },
     "bf2023: Offers": {
@@ -6830,9 +6830,6 @@
         "${ calendarsToBeMergedCount } zlúčených kalendárov",
         "${ calendarsToBeMergedCount } zlúčených kalendárov"
       ],
-      "${ checkout.discountPercent }% discount": [
-        "${ checkout.discountPercent }% zľava"
-      ],
       "${ current } of ${ total }": [
         "${ current } z ${ total }"
       ],
@@ -7538,11 +7535,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -9311,11 +9308,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -9784,9 +9781,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Váš účet bol úspešne aktualizovaný touto akciovou ponukou"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Váš účet bude aktualizovaný po zúčtovaní platby."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
@@ -12328,32 +12322,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Začnite teraz za ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Cena od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgradujte na ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
@@ -12381,6 +12349,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Začnite teraz za ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Cena od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgradujte na ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12973,17 +12967,6 @@
         "Tímový manažment"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Ak chcete naďalej používať ${ trialPlanName } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končiaca na ${ last4 }"
@@ -13094,6 +13077,17 @@
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ak chcete naďalej používať ${ trialPlanName } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -13137,19 +13131,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceMailPlus }. Službu môžete kedykoľvek zrušiť."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceLine }. Službu môžete kedykoľvek zrušiť."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceMailPlus }. Zrušiť môžete kedykoľvek."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Odomknite všetky prémiové produkty a funkcie ${ BRAND_NAME } len za ${ priceLine }. Zrušiť môžete kedykoľvek."
       ]
     },
     "new_plans: title": {
@@ -13170,6 +13156,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -18113,10 +18107,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -20158,14 +20152,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problém s Wallet"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } je v režime predčasného prístupu. Aplikáciu pre iOS môžete stiahnuť cez Apple TestFlight a aplikáciu pre Android cez Google Open Testing."
-      ],
-      "Coming soon": [
-        "Už čoskoro"
       ]
     },
     "wallet_signup_2024:Navigation": {

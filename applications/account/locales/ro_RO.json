@@ -880,11 +880,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "Împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Reject": [
         "Respingere"
@@ -1687,16 +1687,6 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1718,6 +1708,16 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni."
       ]
     },
     "bf2023: Offers": {
@@ -6783,11 +6783,11 @@
         "${ calendarsToBeMergedCount } calendare îmbinate",
         "${ calendarsToBeMergedCount } de calendare îmbinate"
       ],
-      "${ checkout.discountPercent }% discount": [
-        "Reducere ${ checkout.discountPercent }%"
-      ],
       "${ current } of ${ total }": [
         "${ current } din ${ total }"
+      ],
+      "${ discountPercent }% discount": [
+        "Reducere ${ discountPercent }%"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } nu va mai păstra versiunile anterioare ale fișierelor."
@@ -7466,11 +7466,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -9228,11 +9228,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -9692,9 +9692,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Contul a fost modificat cu planul din această promoție."
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Contul va fi modificat după verificarea plății."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
@@ -12220,32 +12217,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Începeți cu ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Începând de la ${ pricing }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ planName }": [
-        "Trecere la ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -12273,6 +12244,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Începeți cu ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Începând de la ${ pricing }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ planName }": [
+        "Trecere la ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12840,17 +12837,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -12961,6 +12947,17 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } din ${ humanMaxSpace }"
@@ -13004,19 +13001,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceLine }. Puteți anula oricând."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceMailPlus }. Anulați oricând."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
     "new_plans: title": {
@@ -13037,6 +13026,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -17931,10 +17928,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -19979,14 +19976,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problemă portofel"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } este în faza de acces timpuriu. Puteți descărca aplicația pentru iOS prin Apple TestFlight și aplicația pentru Android prin Google Open Testing."
-      ],
-      "Coming soon": [
-        "În curând"
       ]
     },
     "wallet_signup_2024:Navigation": {

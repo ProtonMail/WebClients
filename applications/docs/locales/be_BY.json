@@ -4774,6 +4774,9 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "У гэтага дакумента занадта высокая актыўнасць. Некаторыя функцыі могуць быць часова недаступныя."
       ],
+      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Гэты дакумент можа не існаваць або ў вас можа не быць неабходных правоў, каб прагледзець яго з выбраным уліковым запісам. Паспрабуйце іншы ўліковы запіс або звяжыцеся з уладальнікам для атрымання доступу."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
       ],
@@ -5058,9 +5061,6 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны. Далейшая неаплата прывядзе да блакіроўкі лістоў і абагуленых спасылак.${ payInvoiceLink }"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ваш уліковы запіс будзе абноўлены, калі плацеж будзе правераны."
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "Дыялогавае акно друку вашага браўзера ў цяперашні час адкрыта. Туды вы можаце экспартаваць свае дакументы ў PDF."
@@ -6845,11 +6845,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceLine }. Скасаваць можна ў любы момант."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceMailPlus }. Скасаваць можна ў любы момант."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Разблакіраваць усе прэміяльныя прадукты ${ BRAND_NAME } і функцыі ўсяго за ${ priceLine }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: title": {
@@ -9149,6 +9149,9 @@
       ],
       "Enable 2FA": [
         "Уключыць 2ФА"
+      ],
+      "End-to-end encrypted": [
+        "Зашыфравана скразным метадам"
       ],
       "Enter 2FA code": [
         "Увядзіце код 2ФА"

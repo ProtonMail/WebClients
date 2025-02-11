@@ -1323,6 +1323,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi ${ BRAND_NAME } Anda."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi cadangan Anda."
+      ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi tambahan Anda."
       ],
@@ -1611,6 +1614,9 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Ikuti langkah-langkah berikut untuk mengimpor data Anda dengan berkas CSV generik:"
       ],
+      "For security reasons, this action requires identity verification.": [
+        "Demi alasan keamanan, tindakan ini memerlukan verifikasi identitas."
+      ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Demi alasan keamanan, Anda perlu untuk mengonfirmasi akses ke brankas terbagi ini"
       ],
@@ -1860,11 +1866,38 @@
       "Please check your spam folder or try resending the code.": [
         "Silakan periksa folder spam Anda atau cobalah untuk mengirimkan ulang kode ini."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk menonaktifkan mode offline"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengaktifkan mode offline"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
+      ],
+      "Please confirm your backup password": [
+        "Silakan konfirmasi kata sandi cadangan Anda"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Silakan konfirmasi kata sandi cadangan Anda untuk mengunci aplikasi secara otomatis dengan kunci biometrik."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Silakan konfirmasi kata sandi cadangan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi Anda."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Silakan konfirmasi kata sandi cadangan Anda untuk menonaktifkan mode offline"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Silakan konfirmasi kata sandi cadangan Anda untuk mengaktifkan mode offline"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Silakan konfirmasi kata sandi cadangan Anda untuk mengekspor data ${ PASS_APP_NAME } milik Anda"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Silakan konfirmasi kata sandi cadangan Anda untuk membatalkan kunci Anda saat ini."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Silakan konfirmasi kata sandi cadangan Anda untuk memperbarui waktu penguncian otomatis."
       ],
       "Please confirm your extra password": [
         "Silakan konfirmasi kata sandi tambahan Anda"
@@ -1874,6 +1907,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi tambahan Anda."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk menonaktifkan mode offline"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk mengaktifkan mode offline"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk mengekspor data ${ PASS_APP_NAME } milik Anda"
@@ -2984,8 +3023,8 @@
       "Theme": [
         "Tema"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Item ini akan dapat diakses hingga ${ remaining }"
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Item ini dapat diakses hingga ${ date } atau hingga batas jumlah tampilannya tercapai."
       ],
       "Title": [
         "Judul"
@@ -3474,6 +3513,9 @@
       "Confirm extra password": [
         "Konfirmasi kata sandi tambahan"
       ],
+      "Confirm identity": [
+        "Konfirmasi identitas"
+      ],
       "Confirm PIN code": [
         "Konfirmasikan kode PIN"
       ],
@@ -3554,6 +3596,12 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
+      ],
+      "Enter coupon code": [
+        "Masukkan kode kupon"
+      ],
+      "Enter your backup password": [
+        "Masukkan kata sandi cadangan Anda"
       ],
       "Enter your extra password": [
         "Masukkan kata sandi tambahan Anda"
@@ -3951,6 +3999,9 @@
       ],
       "Failed to load breaches.": [
         "Daftar kebocoran gagal dimuat."
+      ],
+      "Identity could not be confirmed": [
+        "Identitas tidak dapat dikonfirmasi"
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"

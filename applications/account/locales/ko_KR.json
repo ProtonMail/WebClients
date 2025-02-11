@@ -880,11 +880,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "Refresh the page": [
-        "페이지 새로 고침"
-      ],
       "refresh the page": [
         "페이지 새로고침"
+      ],
+      "Refresh the page": [
+        "페이지 새로 고침"
       ],
       "Reject": [
         "거절"
@@ -1679,14 +1679,6 @@
         "연말 할인 선택"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "죄송하지만 이 제안은 현재 플랜으로 받을 수 없습니다. 하지만 ${ plan.Title }(을)를 ${ cycle }개월간 구독하면 ${ discountPercentage } 할인을 받을 수 있습니다."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1708,6 +1700,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "죄송하지만 이 제안은 현재 플랜으로 받을 수 없습니다. 하지만 ${ plan.Title }(을)를 ${ cycle }개월간 구독하면 ${ discountPercentage } 할인을 받을 수 있습니다."
       ]
     },
     "bf2023: Offers": {
@@ -6689,11 +6689,11 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount }개 캘린더로 병합됨"
       ],
-      "${ checkout.discountPercent }% discount": [
-        "${ checkout.discountPercent }% 할인"
-      ],
       "${ current } of ${ total }": [
         "${ total } 중 ${ current }"
+      ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }% 할인"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME }가 더 이상 사용자의 이전 버전의 파일을 보관하지 않습니다."
@@ -7322,10 +7322,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -9026,6 +9026,9 @@
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "업로드된 파일이 유효하지 않은 비공개 키입니다. 인증 후 다시 시도하세요."
       ],
+      "Uppercase and lowercase letters": [
+        "대소문자 문자"
+      ],
       "URL link": [
         "URL 링크"
       ],
@@ -9050,10 +9053,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -9496,9 +9499,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "결제가 완료되면 계정이 업데이트될 것입니다."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
@@ -11986,32 +11986,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "${ priceCoupon }에 시작하기"
-      ],
-      "Starting from ${ pricing }": [
-        "${ pricing }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName }(으)로 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -12039,6 +12013,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "${ priceCoupon }에 시작하기"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -12556,17 +12556,6 @@
         "팀 관리"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -12677,6 +12666,17 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } 의 ${ humanMaxSpace }"
@@ -12720,19 +12720,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고 나면 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "단 ${ priceMailPlus }(으)로 모든 ${ BRAND_NAME } 프리미엄 제품과 기능들을 잠금 해제하세요. 언제든지 취소할 수 있습니다."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
       ]
     },
     "new_plans: title": {
@@ -12753,6 +12745,14 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -17501,11 +17501,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -19506,14 +19506,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "지갑 오류"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME }은 현재 얼리 액세스 상태입니다. iOS에서 Apple Testflight, 안드로이드에서 Google Open Testing을 통해 앱을 받으실 수 있습니다."
-      ],
-      "Coming soon": [
-        "출시 예정"
       ]
     },
     "wallet_signup_2024:Navigation": {

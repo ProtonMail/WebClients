@@ -4960,9 +4960,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "У Вас есть по крайней мере один просроченный счёт. Ваш аккаунт ограничен. Отсутствие оплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ваш аккаунт будет обновлен, когда платеж будет проверен."
-      ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Ваши изменения синхронизируются с Drive. Не закрывайте веб-страницу."
       ],
@@ -6666,14 +6663,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Скидка ${ priceCoupon } действует в течение первого месяца. Затем она будет автоматически продлена до ${ priceMailPlus }. Вы можете отменить подписку в любое время."
-      ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Разблокируйте все премиум продукты и функции ${ BRAND_NAME } только за ${ priceMailPlus }. Отменить можно в любое время."
       ]
     },
     "new_plans: title": {
@@ -9288,6 +9277,20 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ бесплатный подарок"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Подарочный код, предоставляющий скидку ${ discountPercentAbsolute }% на ${ planTitle } на 1 год"
+      ],
+      "Valentine's deal": [
+        "Предложение ко Дню влюблённых"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Ваш бесплатный подарок, которым можно поделиться, стоимостью ${ price } "
       ]
     },
     "Valentine_2025: Offer": {

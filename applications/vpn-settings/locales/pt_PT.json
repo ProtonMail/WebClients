@@ -1230,6 +1230,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Fechar"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
       ],
@@ -3555,6 +3558,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
       ],
+      "${ discountPercent }% discount": [
+        "Desconto de ${ discountPercent }%"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagem em tamanho máximo"
       ],
@@ -5328,9 +5334,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "A sua conta foi atualizada com esta promoção"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "A conta será atualizada assim que o pagamento for aprovado."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será utilizado para esta verificação única."
@@ -7182,11 +7185,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "O preço com desconto de ${ priceCoupon } é válido pelo primeiro mês. Após esse período, será automaticamente renovado por ${ priceMailPlus } . Pode cancelar a qualquer momento."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "O preço com desconto de ${ priceCoupon } é válido pelo primeiro mês. Após esse período, será automaticamente renovado por ${ priceLine } . Pode cancelar a qualquer momento."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceMailPlus }. Cancele a qualquer momento."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
     "new_plans: Title": {
