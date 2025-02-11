@@ -96,10 +96,12 @@ export const Primary = () => {
                                 name="selected-shape"
                                 onChange={setSize}
                                 value={size}
-                                options={(['small', 'medium', 'large', 'xlarge', 'full'] as const).map((size) => ({
-                                    value: size,
-                                    label: size,
-                                }))}
+                                options={(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full'] as const).map(
+                                    (size) => ({
+                                        value: size,
+                                        label: size,
+                                    })
+                                )}
                             />
                         </div>
                     </ModalTwoContent>
