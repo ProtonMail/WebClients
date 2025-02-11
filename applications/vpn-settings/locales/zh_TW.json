@@ -3459,6 +3459,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }%折扣"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }：完整大小圖片"
       ],
@@ -5162,9 +5165,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "您帳號已成功更新此促銷"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "付款一結算完成，您的帳號將會升級。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -6916,14 +6916,6 @@
       ],
       "terms and conditions": [
         "條款及細則"
-      ]
-    },
-    "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceMailPlus } 月的價格自動續約。您可以於任何時候取消訂閱。"
-      ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "只要${ priceMailPlus }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
     "new_plans: Title": {
