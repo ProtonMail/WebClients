@@ -73,6 +73,9 @@
       "Advanced options": [
         "Дадатковыя параметры"
       ],
+      "Apply lifetime coupon code": [
+        "Ужыць пажыццёвы код купона"
+      ],
       "Authenticate": [
         "Аўтэнтыфікацыя"
       ],
@@ -247,6 +250,9 @@
       "Edit vault": [
         "Рэдагаваць сховішча"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Уключыць ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Уключыць гэты псеўданім і зноў пачаць атрымліваць лісты, якія адпраўляюцца на яго"
       ],
@@ -318,6 +324,9 @@
       ],
       "Invite others": [
         "Запрасіць іншых"
+      ],
+      "Join our Reddit": [
+        "Далучыцца да нас на Reddit"
       ],
       "Join shared vault": [
         "Далучыцца да абагуленага сховішча"
@@ -642,6 +651,9 @@
       ],
       "With other ${ BRAND_NAME } users": [
         "З іншымі карыстальнікамі ${ BRAND_NAME }"
+      ],
+      "Write us on X/Twitter": [
+        "Напісаць нам у X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
@@ -1371,6 +1383,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступу да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш пароль ад ${ BRAND_NAME }"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Для доступу да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш рэзервовы пароль."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Для доступу да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш дадатковы пароль."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступу да ${ PASS_APP_NAME } спатрэбіцца ваш адбітак пальца або PIN-код прылады."
       ],
@@ -1638,6 +1656,9 @@
       "Expires in ${ remainingTime }": [
         "Тэрмін дзеяння завершыцца ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Экспартаванне вашых даных..."
+      ],
       "Extra password successfully created": [
         "Дадатковы пароль паспяхова створаны"
       ],
@@ -1652,6 +1673,9 @@
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Гэта дзеянне патрабуе праверкі ідэнтычнасці ў мэтах бяспекі."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтага абагуленага сховішча",
@@ -1685,6 +1709,9 @@
       ],
       "How does monitoring work?": [
         "Як працуе назіранне?"
+      ],
+      "Identity confirmed": [
+        "Ідэнтычнасць пацверджана"
       ],
       "Import in progress:": [
         "Выконваецца імпартаванне:"
@@ -1923,11 +1950,38 @@
       "Please check your spam folder or try resending the code.": [
         "Праверце папку са спамам або паспрабуйце адправіць код паўторна."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб адключыць рэжым па-за сеткай"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб уключыць рэжым па-за сеткай"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Пацвердзіце свой рэзервовы пароль"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Пацвердзіце свой рэзервовы пароль для аўтаблакіроўкі з дапамогай біяметрыі."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Пацвердзіце свой рэзервовы пароль для аўтаблакіроўкі з дапамогай вашага пароля."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Пацвердзіце свой рэзервовы пароль для таго, каб адключыць рэжым па-за сеткай"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Пацвердзіце свой рэзервовы пароль для таго, каб уключыць рэжым па-за сеткай"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Пацвердзіце свой рэзервовы пароль, каб экспартаваць даныя ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Пацвердзіце свой рэзервовы пароль для скасавання рэгістрацыі бягучай блакіроўкі."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Пацвердзіце свой рэзервовы пароль для абнаўлення часу аўтаблакіравання."
       ],
       "Please confirm your extra password": [
         "Пацвердзіце свой дадатковы пароль"
@@ -1937,6 +1991,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Пацвердзіце свой дадатковы пароль, калі вы хочаце прызначыць яго для аўтаблакіроўкі."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Пацвердзіце свой дадатковы пароль для таго, каб адключыць рэжым па-за сеткай"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Пацвердзіце свой дадатковы пароль для таго, каб уключыць рэжым па-за сеткай"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Пацвердзіце свой пароль, каб экспартаваць даныя ${ PASS_APP_NAME }"
@@ -2319,6 +2379,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Вы дасягнулі максімальнай даўжыні. Дазволена сімвалаў: ${ maxLength }."
       ],
+      "You may close this tab.": [
+        "Вы можаце закрыць гэту ўкладку."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "У вас ёсць магчымасць наладзіць дамен пад свае патрабаванні (адпраўляць усе лісты псеўданімаў ва ўсю пошту дамена, задаць прадвызначанае бачнае імя для псеўданімаў і г.д.) пасля таго, як ён будзе правераны."
       ],
@@ -2698,6 +2761,9 @@
       ],
       "Facebook account": [
         "Уліковы запіс Facebook"
+      ],
+      "Feedback": [
+        "Зваротная сувязь"
       ],
       "Field name": [
         "Назва поля"
@@ -3091,9 +3157,6 @@
       ],
       "Theme": [
         "Тэма"
-      ],
-      "This item will remain accessible until ${ remaining }": [
-        "Гэты элемент будзе заставацца даступным да ${ remaining }"
       ],
       "Title": [
         "Назва"
@@ -3594,6 +3657,9 @@
       "Confirm extra password": [
         "Пацвярджэнне дадатковага пароля"
       ],
+      "Confirm identity": [
+        "Пацвердзіць ідэнтычнасць"
+      ],
       "Confirm PIN code": [
         "Пацвердзіць PIN-код"
       ],
@@ -3680,6 +3746,9 @@
       ],
       "Enter coupon code": [
         "Увядзіце код купона"
+      ],
+      "Enter your backup password": [
+        "Увядзіце свой рэзервовы пароль"
       ],
       "Enter your extra password": [
         "Увядзіце свой дадатковы пароль"
@@ -4059,6 +4128,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Немагчыма адправіць запрашэнні на наступныя адрасы:"
+      ],
+      "Coupon cannot be empty": [
+        "Купон не можа быць пустым"
+      ],
+      "Coupon could not be applied.": [
+        "Купон не можа быць ужыты."
       ],
       "Delete alias": [
         "Выдаліць псеўданім"
