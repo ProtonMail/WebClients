@@ -35,15 +35,11 @@ const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
         return (
             <NewUpsellModal
                 titleModal={c('Title').t`Same inbox, shorter email address`}
-                description={
+                // translator: full sentence is Upgrade to get <address@pm.me> for a shorter, easy-to-remember email address in addition to your current one.
+                description={c('Description')
+                    .t`Upgrade to get ${activatePmUser} for a shorter, easy-to-remember email address in addition to your current one.`}
+                customDescription={
                     <>
-                        <p className="text-wrap-balance color-weak mt-0 mb-6">
-                            {
-                                // translator: full sentence is Upgrade to get <address@pm.me> for a shorter, easy-to-remember email address in addition to your current one.
-                                c('Description')
-                                    .t`Upgrade to get ${activatePmUser} for a shorter, easy-to-remember email address in addition to your current one.`
-                            }
-                        </p>
                         <p className="text-left my-0 mb-2">
                             <strong>{c('Description').t`Also included`}</strong>
                         </p>
