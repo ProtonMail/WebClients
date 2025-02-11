@@ -20,6 +20,7 @@ import {
     UPSELL_MODALS_TYPE,
     sendRequestUpsellModalReport,
 } from '@proton/shared/lib/helpers/upsell';
+import clsx from '@proton/utils/clsx';
 
 import './NewUpsellModal.scss';
 
@@ -27,7 +28,16 @@ export interface NewUpsellModalProps {
     ['data-testid']?: string;
     modalProps: ModalStateProps;
     titleModal: ReactNode;
-    description: ReactNode;
+    /**
+     * The description is a text put before the CTA, can be used alongside
+     * the `customDescription` props
+     */
+    description?: string;
+    /**
+     * Custom description are put below the CTA to ensure the CTA is alaways above the fold
+     * can be used alongisde the `description` props
+     */
+    customDescription?: ReactNode;
     upgradePath?: string;
     illustration: string;
     onClose?: () => void;
@@ -50,6 +60,7 @@ const NewUpsellModal = ({
     modalProps,
     titleModal,
     description,
+    customDescription,
     upgradePath,
     illustration,
     onClose,
@@ -130,16 +141,13 @@ const NewUpsellModal = ({
             <div className="modal-two-illustration-container relative text-center">
                 <img src={illustration} alt="" />
             </div>
-            <div className="modal-two-content-container">
+            <div className="modal-two-content-container overflow-auto">
                 <ModalTwoContent className="my-8 text-center">
                     <h1 className="text-lg text-bold">{titleModal}</h1>
-                    {typeof description === 'string' ? (
-                        <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>
-                    ) : (
-                        <div className="mt-2 mb-6">{description}</div>
-                    )}
-                    <div>{upgradeButton}</div>
-                    <p className="mt-2 text-sm color-weak">{footerTextModal}</p>
+                    {description && <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>}
+                    <div className={clsx(customDescription ? 'mb-4' : '')}>{upgradeButton}</div>
+                    {customDescription && <div className="mt-2 mb-6">{customDescription}</div>}
+                    <p className={'mt-2 text-sm color-weak'}>{footerTextModal}</p>
                 </ModalTwoContent>
             </div>
         </ModalTwo>
