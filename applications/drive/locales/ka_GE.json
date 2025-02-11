@@ -5561,9 +5561,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "თქვენს ანგარიშზე, სულ ცოტა, ერთი გადაცილებული ინვოისია. გადაუხდელობის შემთხვევაში თქვენი გაზიარებული ბმულები და ელფოსტა დაიბლოკება. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "გადახდის შემდეგ თქვენი ანგარიში განახლდება."
-      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "თქვენს მიმდინარე ბრაუზერს გაშვებული ასლებს მხარდაჭერის არქონის გამო დიდი ფაილების გადმოწერის საშუალება არ გააჩნია. დააყენეთ ${ recommendedBrowser }-ის ბოლო ვერსია და თავიდან სცადეთ."
       ],
@@ -7405,14 +7402,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
-      ]
-    },
-    "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceMailPlus } თვით. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceMailPlus }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
     "new_plans: title": {
