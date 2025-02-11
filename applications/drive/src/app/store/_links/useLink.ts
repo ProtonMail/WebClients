@@ -458,7 +458,7 @@ export function useLinkInner(
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
             if (!encryptedLink.nodeHashKey) {
                 // This is dev error, should not happen in the wild.
-                throw new Error('Hash key is available only in folder context');
+                throw new Error('Hash key is available only in folder or albums context');
             }
 
             const [privateKey, addressPrivateKey] = await Promise.all([
@@ -912,6 +912,7 @@ export function useLinkInner(
         getLinkSessionKey,
         getLinkHashKey,
         decryptLink,
+        getEncryptedLink,
         getLink,
         loadFreshLink,
         loadLinkThumbnail,

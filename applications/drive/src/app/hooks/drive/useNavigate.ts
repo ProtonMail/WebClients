@@ -69,6 +69,10 @@ function useNavigate() {
         pushToHistory(`/photos`);
     }, []);
 
+    const navigateToAlbums = useCallback(() => {
+        pushToHistory(`/photos/albums`);
+    }, []);
+
     const navigateToSearch = useCallback(
         (searchTerm: string) => {
             history.push({
@@ -104,6 +108,7 @@ function useNavigate() {
         redirectToLink,
         navigateToAlbum,
         navigateToPhotos,
+        navigateToAlbums,
     };
 }
 
