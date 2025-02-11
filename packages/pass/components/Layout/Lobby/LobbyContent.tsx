@@ -11,10 +11,10 @@ import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { BiometricsUnlock } from '@proton/pass/components/Lock/BiometricsUnlock';
 import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
-import { passwordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
 import { PasswordVerification } from '@proton/pass/lib/auth/password';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
+import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import {
     clientBusy,
     clientErrored,
