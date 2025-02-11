@@ -102,7 +102,7 @@ export const loadFulfilled = (
         // E.g. total is updated but not elements
         // This inconsistency would trigger another load action.
         if (Stale !== 1) {
-            state.pendingRequest = refetch ? state.pendingRequest : false;
+            state.pendingRequest = false;
             state.total = Total;
         }
 
