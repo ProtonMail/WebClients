@@ -80,27 +80,6 @@ const generateAddressKeys = async () => {
     ];
 };
 
-jest.mock('../../../zustand/share/shares.store', () => {
-    const actual = jest.requireActual('../../../zustand/share/shares.store');
-
-    return {
-        ...actual,
-        useSharesStore: (cb: any) => {
-            const state = actual.useSharesStore();
-            if (cb) {
-                return cb({
-                    ...state,
-                    getLockedShares: mockGetLockedShares,
-                });
-            }
-            return {
-                ...state,
-                getLockedShares: mockGetLockedShares,
-            };
-        },
-    };
-});
-
 const useHook = (props: any = {}) => {
     return useLockedVolumeInner({
         getShareWithKey: jest.fn(),
@@ -134,6 +113,7 @@ describe('useLockedVolume', () => {
         mockGetLockedShares.mockImplementation(() => {
             return [];
         });
+
         const { result } = renderHook(() => useSharesStore());
         act(() => {
             result.current.setLockedVolumesForRestore([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
@@ -184,13 +164,6 @@ describe('useLockedVolume', () => {
         });
 
         it('should return extended volume list with new prepared volumes', async () => {
-            mockGetLockedShares.mockImplementation(() => {
-                return [{ defaultShare: { shareId: 'shareId' }, devices: [], photos: [] }];
-            });
-            mockGetShareWithKey.mockImplementation(() => {
-                return [{ shareId: 'shareId' }];
-            });
-
             const lockedVolumeForRestore = {
                 lockedVolumeId: 'volumeId',
                 defaultShare: {
@@ -198,6 +171,15 @@ describe('useLockedVolume', () => {
                     linkDecryptedPassphrase: 'passphrase',
                 },
             } as LockedVolumeForRestore;
+
+            const { result: resultShareStore } = renderHook(() => useSharesStore());
+            act(() => {
+                resultShareStore.current.setLockedVolumesForRestore([
+                    LOCKED_VOLUME_MOCK_1,
+                    LOCKED_VOLUME_MOCK_2,
+                    lockedVolumeForRestore,
+                ]);
+            });
 
             const addressesKeys = await generateAddressKeys();
 

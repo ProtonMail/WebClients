@@ -1,4 +1,3 @@
-import { expect, jest } from '@jest/globals';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { fetchDesktopVersion } from '@proton/shared/lib/apps/desktopVersions';
