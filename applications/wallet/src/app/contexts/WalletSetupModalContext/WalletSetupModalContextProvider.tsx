@@ -9,14 +9,13 @@ import { useModalState, useModalStateWithData } from '@proton/components';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { DEFAULT_MAX_SUB_WALLETS, DEFAULT_MAX_WALLETS } from '@proton/wallet';
-import { useUserEligibility, useUserWalletSettings } from '@proton/wallet/store';
+import { useUserWalletSettings } from '@proton/wallet/store';
 
 import type { ModalData } from '.';
 import { WalletSetupModalContext, WalletSetupModalKind } from '.';
 import { WalletCreationModal } from '../../components';
 import { WalletAccountCreationModal } from '../../components/WalletAccountCreationModal';
 import { WalletBackupModal } from '../../components/WalletBackupModal';
-import { WalletEarlyAccessUpgradePrompt } from '../../components/WalletEarlyAccessUpgradePrompt';
 import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
 import { WalletUpgradeModal } from '../../components/WalletUpgradeModal';
 import { WalletWelcomePrompt } from '../../components/WalletWelcomePrompt';
@@ -39,8 +38,6 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
 
     const [settings, loadingSettings] = useUserWalletSettings();
     const [organization] = useOrganization();
-
-    const [isEligible, loadingIsEligible] = useUserEligibility();
 
     const [walletUpgradeModal, setWalletUpgradeModal, renderWalletUpgradeModal] =
         useModalStateWithData<WalletUpgradeModalOwnProps>();
@@ -103,14 +100,6 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
             {children}
 
             {(() => {
-                if (loadingIsEligible) {
-                    return null;
-                }
-
-                if (!isEligible) {
-                    return <WalletEarlyAccessUpgradePrompt open />;
-                }
-
                 if (apiWalletsData && !apiWalletsData.length) {
                     // We want to open wallet creation modal whenever there is no wallet setup on for the user
                     return (
