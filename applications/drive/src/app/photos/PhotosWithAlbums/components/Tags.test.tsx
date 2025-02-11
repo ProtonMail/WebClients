@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { PhotoTags } from '../../../store';
-import { PhotosTags, type PhotosTagsProps } from './PhotosTags';
+import { PhotoTag } from '../../../store';
+import { PhotosTags, type PhotosTagsProps } from './Tags';
 
 describe('PhotosTags', () => {
     const defaultProps: PhotosTagsProps = {
-        selectedTag: ['all'],
-        tags: [PhotoTags.Favorites, PhotoTags.Screenshots, PhotoTags.Videos],
+        selectedTag: [PhotoTag.All],
+        tags: [PhotoTag.All, PhotoTag.Favorites, PhotoTag.Screenshots, PhotoTag.Videos],
         onTagSelect: jest.fn(),
     };
 
@@ -31,10 +31,10 @@ describe('PhotosTags', () => {
         render(<PhotosTags {...defaultProps} onTagSelect={onTagSelect} />);
 
         await user.click(screen.getByText('Favorites'));
-        expect(onTagSelect).toHaveBeenCalledWith([PhotoTags.Favorites]);
+        expect(onTagSelect).toHaveBeenCalledWith([PhotoTag.Favorites]);
 
         await user.click(screen.getByText('Screenshots'));
-        expect(onTagSelect).toHaveBeenCalledWith([PhotoTags.Screenshots]);
+        expect(onTagSelect).toHaveBeenCalledWith([PhotoTag.Screenshots]);
     });
 
     it('handles "All" tag selection', async () => {
@@ -42,13 +42,13 @@ describe('PhotosTags', () => {
         render(<PhotosTags {...defaultProps} onTagSelect={onTagSelect} />);
 
         await user.click(screen.getByText('All'));
-        expect(onTagSelect).toHaveBeenCalledWith(['all']);
+        expect(onTagSelect).toHaveBeenCalledWith([PhotoTag.All]);
     });
 
     it('combines Live Photos and Motion Photos correctly', () => {
         const props = {
             ...defaultProps,
-            tags: [PhotoTags.LivePhotos, PhotoTags.MotionPhotos],
+            tags: [PhotoTag.LivePhotos, PhotoTag.MotionPhotos],
         };
 
         render(<PhotosTags {...props} />);
@@ -60,7 +60,7 @@ describe('PhotosTags', () => {
     it('shows selected state correctly', () => {
         const props = {
             ...defaultProps,
-            selectedTag: [PhotoTags.Favorites],
+            selectedTag: [PhotoTag.Favorites],
         };
 
         render(<PhotosTags {...props} />);
@@ -73,27 +73,27 @@ describe('PhotosTags', () => {
         const onTagSelect = jest.fn();
         const props = {
             ...defaultProps,
-            tags: [PhotoTags.LivePhotos],
+            tags: [PhotoTag.LivePhotos],
             onTagSelect,
         };
 
         render(<PhotosTags {...props} />);
 
         await user.click(screen.getByText('Live Photos'));
-        expect(onTagSelect).toHaveBeenCalledWith([PhotoTags.LivePhotos, PhotoTags.MotionPhotos]);
+        expect(onTagSelect).toHaveBeenCalledWith([PhotoTag.LivePhotos, PhotoTag.MotionPhotos]);
     });
 
     it('handles Motion Photos selection correctly', async () => {
         const onTagSelect = jest.fn();
         const props = {
             ...defaultProps,
-            tags: [PhotoTags.MotionPhotos],
+            tags: [PhotoTag.MotionPhotos],
             onTagSelect,
         };
 
         render(<PhotosTags {...props} />);
 
         await user.click(screen.getByText('Live Photos'));
-        expect(onTagSelect).toHaveBeenCalledWith([PhotoTags.LivePhotos, PhotoTags.MotionPhotos]);
+        expect(onTagSelect).toHaveBeenCalledWith([PhotoTag.LivePhotos, PhotoTag.MotionPhotos]);
     });
 });
