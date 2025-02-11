@@ -9,6 +9,7 @@
 .ui-standard {
 	// Used in the Proton Docs logo for the text. We don't support themes in Docs so we hardcode this color,
 	// which otherwise defaults to the primary color which is not what we want.
+	--logo-text-proton-color: #1b1340;
 	--logo-text-product-color: #1b1340;
 }
 
