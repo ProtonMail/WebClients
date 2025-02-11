@@ -142,6 +142,7 @@ export interface EventUpdates {
 export interface ESResults {
     page: number;
     elements: Element[];
+    params: ElementsStateParams;
 }
 
 export interface OptimisticUpdates {
