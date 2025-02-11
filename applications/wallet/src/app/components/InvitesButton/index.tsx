@@ -1,9 +1,8 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import useModalState, { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
-import { useFlag } from '@proton/unleash/index';
 import { decrementAvailableInvites, useRemainingInvites, useWalletDispatch } from '@proton/wallet/store';
 
 import { Button } from '../../atoms';
@@ -27,8 +26,6 @@ export const InvitesButton = ({ walletAccount }: Props) => {
     const address = walletAccount?.Addresses?.[0]?.ID ?? primaryAddress.ID;
     const availableInvites = remainingInvites?.available ?? 0;
 
-    const isEarlyAccess = useFlag('WalletEarlyAccess');
-
     return (
         <>
             <Button
@@ -42,13 +39,7 @@ export const InvitesButton = ({ walletAccount }: Props) => {
                 }}
                 disabled={!availableInvites}
             >
-                {isEarlyAccess
-                    ? c('Wallet invites').ngettext(
-                          msgid`${availableInvites} invite left`,
-                          `${availableInvites} invites left`,
-                          availableInvites
-                      )
-                    : c('Wallet invites').t`Invite your friends`}
+                {c('Wallet invites').t`Invite your friends`}
             </Button>
 
             <InviteModal
