@@ -45,7 +45,11 @@ const ForgotUsernameForm = ({
 }) => {
     const history = useHistory();
     const [loading, withLoading] = useLoading();
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState(() => {
+        const searchParams = new URLSearchParams(window.location.search);
+        const username = searchParams.get('username');
+        return username || '';
+    });
     const [phone, setPhone] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
