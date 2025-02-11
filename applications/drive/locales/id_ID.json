@@ -885,6 +885,9 @@
       "Upload file": [
         "Unggah berkas"
       ],
+      "Upload files": [
+        "Unggah berkas"
+      ],
       "Upload folder": [
         "Unggah folder"
       ],
@@ -941,6 +944,11 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Unggah"
       ]
     },
     "Actions message": {
@@ -1050,7 +1058,7 @@
         "Harga diskon khusus ${ discountedPrice } berlaku untuk ${ cycle } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga diskon ${ nextPrice } selama ${ renewalLength } bulan. Anda dapat membatalkannya kapan saja."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Harga ${ discountedPrice } yang didiskon masih valid untuk bulan pertama. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } setiap bulan. Anda dapat membatalkan kapan pun."
+        "Harga diskon khusus ${ discountedPrice } ini valid untuk bulan pertama. Selanjutnya, paket Anda akan diperbarui secara otomatis dengan harga ${ nextPrice } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ]
     },
     "bf2023: Tooltip": {
@@ -1290,6 +1298,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Tutup"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -2392,11 +2403,6 @@
         "Faktur yang tertunggak"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2478,6 +2484,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6095,11 +6106,17 @@
       "Share a file": [
         "Bagikan berkas"
       ],
+      "Shared": [
+        "Dibagikan"
+      ],
       "Shared by": [
         "Dibagikan oleh"
       ],
       "Shared on": [
         "Dibagikan pada"
+      ],
+      "Shared with me": [
+        "Dibagikan dengan saya"
       ],
       "Show indexing progress of Encrypted Search": [
         "Tampilkan progres pengindeksan Encrypted Search"
@@ -8289,7 +8306,7 @@
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
       ],
       "Renews at ${ renewPrice }, cancel anytime.": [
-        "Diperbarui seharga ${ renewPrice }, batalkan kapan pun."
+        "Diperbarui seharga ${ renewPrice }, batalkan kapan saja."
       ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
@@ -10429,11 +10446,6 @@
         "Hari ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tambahkan berkas bersama ini ke ${ DRIVE_APP_NAME } anda untuk akses mudah nanti."
@@ -10515,6 +10527,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Kami telah mengirim undangan untuk mengakses berkas ini."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Validation": {

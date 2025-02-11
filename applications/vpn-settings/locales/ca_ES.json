@@ -7186,7 +7186,7 @@
         "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceLine }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Desbloqueu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
+        "Desbloquegeu tots els productes i característiques prèmium de ${ BRAND_NAME } per només ${ priceLine }. Cancel·leu-ho en qualsevol moment."
       ]
     },
     "new_plans: Title": {
@@ -9195,9 +9195,6 @@
       "Enter your backup password": [
         "Introduïu la vostra contrasenya de recuperació"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Perquè aquest usuari pugui iniciar la sessió, assegureu-vos que existeix al vostre proveïdor d'identitat."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Per la vostra seguretat, se us ha tancat la sessió de tots els vostres dispositius actius. Abans d'accedir al vostre compte, haureu d'introduir una nova contrasenya de recuperació."
       ],
@@ -9264,8 +9261,11 @@
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "L'usuari ${ name } ara té un compte d'inici de sessió únic (SSO)."
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "L'usuari ${ user } té ara un compte amb inici de sessió únic. La seva contrasenya anterior es va convertir en la seva ccontrasenya de recuperació."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Haureu de tornar a connectar amb el vostre proveïdor d'identitat per accedir als serveis de ${ BRAND_NAME }. Perquè aquest usuari pugui iniciar sessió, assegureu-vos que existeixen amb el vostre proveïdor d'identitat."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Això tancarà la sessió de l'usuari dels seus altres dispositius i haurà de crear una nova contrasenya de recuperació."

@@ -880,11 +880,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reject": [
         "Tolak"
@@ -1679,6 +1679,14 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh diskon ${ discountPercentage } untuk ${ plan.Title } pada saat Anda berlangganan selama ${ cycle } bulan."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1702,14 +1710,6 @@
         "Paket ${ plan } kembali dalam waktu yang terbatas"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh diskon ${ discountPercentage } untuk ${ plan.Title } pada saat Anda berlangganan selama ${ cycle } bulan."
-      ]
-    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Jaminan uang kembali dalam 30 hari"
@@ -1720,7 +1720,7 @@
         "Harga diskon khusus ${ discountedPrice } berlaku untuk ${ cycle } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga diskon ${ nextPrice } selama ${ renewalLength } bulan. Anda dapat membatalkannya kapan saja."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Harga ${ discountedPrice } yang didiskon masih valid untuk bulan pertama. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } setiap bulan. Anda dapat membatalkan kapan pun."
+        "Harga diskon khusus ${ discountedPrice } ini valid untuk bulan pertama. Selanjutnya, paket Anda akan diperbarui secara otomatis dengan harga ${ nextPrice } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ]
     },
     "bf2023: Title": {
@@ -1985,6 +1985,9 @@
     "Button": {
       "Add link to your email footer": [
         "Tambahkan tautan pada footer email Anda"
+      ],
+      "Close": [
+        "Tutup"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
@@ -7319,11 +7322,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -9050,11 +9053,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "Username": [
-        "Nama pengguna"
-      ],
       "username": [
         "nama pengguna"
+      ],
+      "Username": [
+        "Nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -11977,6 +11980,32 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Mulai dengan harga ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Mulai dari ${ pricing }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -12004,32 +12033,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Mulai dengan harga ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Mulai dari ${ pricing }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12547,6 +12550,17 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -12657,17 +12671,6 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
@@ -12680,10 +12683,10 @@
     },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
-        "Dengan mengeklik tombol \"Bayar\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
+        "Dengan mengeklik tombol \"Bayar\", Anda menyatakan diri setuju terhadap ${ termsAndConditions } kami."
       ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju pada ${ terms } kami"
+        "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju terhadap ${ terms } kami"
       ],
       "Payment details": [
         "Rincian pembayaran"
@@ -12718,6 +12721,14 @@
         "Dapatkan seluruh produk dan fitur premium ${ BRAND_NAME } seharga hanya ${ priceLine }. Batalkan kapan saja."
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -12736,14 +12747,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -14290,7 +14293,7 @@
         "Memproses pembayaran"
       ],
       "Renews at ${ renewPrice }, cancel anytime.": [
-        "Diperbarui seharga ${ renewPrice }, batalkan kapan pun."
+        "Diperbarui seharga ${ renewPrice }, batalkan kapan saja."
       ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
@@ -16029,9 +16032,6 @@
       "Enter your backup password": [
         "Masukkan kata sandi cadangan Anda"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Agar pengguna ini dapat masuk, pastikan pengguna tersebut ada dalam penyedia identitas."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Demi keamanan Anda, Anda telah dikeluarkan dari seluruh perangkat aktif lainnya yang Anda miliki. Sebelum mengakses akun, Anda akan perlu untuk memasukkan kata sandi cadangan yang baru."
       ],
@@ -16122,9 +16122,6 @@
       "Single sign-on removed": [
         "Single sign-on dihapus"
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Pengguna ${ name } kini merupakan akun single sign-on."
-      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tindakan ini akan mengeluarkan pengguna yang bersangkutan dari perangkat lainnya yang mereka miliki, di mana mereka akan perlu untuk membuat kata sandi cadangan baru."
       ],
@@ -16132,7 +16129,7 @@
         "Tindakan ini akan mengeluarkan Anda dari perangkat lainnya yang Anda miliki, dan Anda akan perlu untuk membuat kata sandi cadangan baru."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
-        "Untuk memastikan bahwa entri masuk ke **${ email }** ini benar-benar berasal dari Anda, tinjau kode konfirmasi yang tertera dan setujui permintaan ini dari perangkat lainnya."
+        "Untuk memastikan bahwa entri masuk ke **${ email }** ini benar-benar berasal dari Anda, tinjau kode konfirmasi berikut dan setujui permintaan ini dari perangkat lainnya."
       ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Untuk memastikan bahwa upaya masuk ini benar-benar berasal dari Anda, silakan masukkan kata sandi cadangan Anda."
@@ -17477,11 +17474,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"

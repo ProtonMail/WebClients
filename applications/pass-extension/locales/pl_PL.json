@@ -50,6 +50,9 @@
       "Advanced options": [
         "Opcje zaawansowane"
       ],
+      "Apply lifetime coupon code": [
+        "Zastosuj kod kuponu dożywotniego konta"
+      ],
       "Authenticate": [
         "Uwierzytelnij"
       ],
@@ -1266,7 +1269,7 @@
         "Pozostało ${ trialDaysLeft } dnia"
       ],
       "(Empty)": [
-        "(Pusty)"
+        "(pusty)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Masz 7 dni na wypróbowanie funkcji premium za darmo. Tylko podczas pierwszego tygodnia z usługą ${ BRAND_NAME }."
@@ -1402,6 +1405,9 @@
       ],
       "Copied to clipboard": [
         "Skopiowano do schowka"
+      ],
+      "Coupon successfully applied!": [
+        "Kupon został zastosowany!"
       ],
       "Create contact illustration": [
         "Ilustracja utworzenia kontaktu"
@@ -1926,7 +1932,7 @@
         "Logowanie"
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
-        "Po prostu użyj adresu ${ emailBold } następnym razem, kiedy będziesz potrzebować aliasu: zostanie on ${ automaticallyBold } utworzony, kiedy otrzyma pierwszą wiadomość e-mail. Aby mieć nad tym większą kontrolę, możesz także skonfigurować ${ rulesHyperLink }"
+        "Użyj adresu ${ emailBold }, kiedy będziesz potrzebować aliasu. Będzie on ${ automaticallyBold } utworzony za pierwszym razem, gdy otrzymasz wiadomość. Aby mieć bardziej szczegółową kontrolę, możesz również ustawić ${ rulesHyperLink }."
       ],
       "Successfully exported all your items": [
         "Wyeksportowano wszystkie elementy"
@@ -3092,6 +3098,9 @@
       "Alias Display Name": [
         "Nazwa wyświetlana aliasu"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Email address": [
         "Adres e-mail"
       ],
@@ -3389,6 +3398,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Lubisz ${ PASS_APP_NAME }?"
+      ],
+      "Enter coupon code": [
+        "Wpisz kod kuponu"
       ],
       "Enter your extra password": [
         "Wpisz dodatkowe hasło"
@@ -3722,6 +3734,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Nie można wysłać zaproszeń na następujące adresy:"
+      ],
+      "Coupon cannot be empty": [
+        "Kod kuponu nie może być pusty"
+      ],
+      "Coupon could not be applied.": [
+        "Nie można zastosować kuponu."
       ],
       "Delete alias": [
         "Usuń alias"

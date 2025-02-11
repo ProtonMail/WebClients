@@ -9195,9 +9195,6 @@
       "Enter your backup password": [
         "Saisissez votre mot de passe de secours."
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Pour que cet utilisateur puisse se connecter, assurez-vous qu'il existe dans votre fournisseur d'identité."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Pour des raisons de sécurité, vous avez été déconnecté de tous vos autres appareils actifs. Avant d'accéder à votre compte, vous devrez saisir un nouveau mot de passe de secours."
       ],
@@ -9264,8 +9261,11 @@
       "Single sign-on removed": [
         "L'authentification unique a été retirée."
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "L'utilisateur ${ name } dispose désormais d'un compte à authentification unique (SSO)."
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "L'utilisateur ${ user } dispose désormais un compte d'authentification unique. Son mot de passe précédent est devenu son mot de passe de secours."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Il devra se reconnecter auprès de votre fournisseur d'identité pour accéder aux services de ${ BRAND_NAME }. Pour que cet utilisateur puisse se connecter, assurez-vous qu'il existe auprès de votre fournisseur d'identité."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Ceci déconnectera l'utilisateur de ses autres appareils et il devra créer un nouveau mot de passe de secours."
@@ -11376,13 +11376,13 @@
         "+ cadeau gratuit"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Un code cadeau pour ${ discountPercentAbsolute }% de réduction sur ${ planTitle } pendant 1 an"
+        "Un code cadeau pour une réduction de ${ discountPercentAbsolute } % sur ${ planTitle } pendant 1 an"
       ],
       "Valentine's deal": [
         "Offre de Saint-Valentin"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Votre cadeau gratuit à partager, d'une valeur de ${ price } "
+        "🎁 Votre cadeau gratuit à partager, d'une valeur de ${ price } : "
       ]
     },
     "Valentine_2025: Offer": {

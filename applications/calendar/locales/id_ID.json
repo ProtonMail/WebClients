@@ -324,7 +324,7 @@
         "Hubungi kami"
       ],
       "Get started": [
-        "Selesai"
+        "Mulai"
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
@@ -678,7 +678,7 @@
         "Mulai impor"
       ],
       "Start setup": [
-        "Mulai penyetelan"
+        "Mulai pengaturan"
       ],
       "Starting from ${ priceUnlimited }": [
         "Mulai dari ${ priceUnlimited }"
@@ -979,7 +979,7 @@
         "Harga diskon khusus ${ discountedPrice } berlaku untuk ${ cycle } bulan pertama. Kemudian secara otomatis akan diperpanjang dengan harga diskon ${ nextPrice } selama ${ renewalLength } bulan. Anda dapat membatalkannya kapan saja."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Harga ${ discountedPrice } yang didiskon masih valid untuk bulan pertama. Lalu akan diperbarui secara otomatis dengan harga ${ nextPrice } setiap bulan. Anda dapat membatalkan kapan pun."
+        "Harga diskon khusus ${ discountedPrice } ini valid untuk bulan pertama. Selanjutnya, paket Anda akan diperbarui secara otomatis dengan harga ${ nextPrice } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ]
     },
     "bf2023: Tooltip": {
@@ -1219,6 +1219,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Tutup"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -7570,7 +7573,7 @@
         "Siapkan organisasi Anda"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
-        "Gunakan pemilih aplikasi di kiri atas untuk mengakses layanan ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } dan ${ PASS_SHORT_APP_NAME }."
+        "Gunakan pemilih aplikasi di sisi kiri atas untuk mengakses layanan ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } dan ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
         "Anda akan dapat mengubah tema Anda kapan pun pada menu pengaturan."
@@ -7780,7 +7783,7 @@
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
       ],
       "Renews at ${ renewPrice }, cancel anytime.": [
-        "Diperbarui seharga ${ renewPrice }, batalkan kapan pun."
+        "Diperbarui seharga ${ renewPrice }, batalkan kapan saja."
       ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"

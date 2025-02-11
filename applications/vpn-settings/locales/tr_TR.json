@@ -305,7 +305,7 @@
         "Kullanıcıları düzenle"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini açmak"
+        "bilgisayar bildirimlerini açmak"
       ],
       "Enable multi-user support": [
         "Çok kullanıcı desteğini aç"
@@ -989,7 +989,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus ve ${ CALENDAR_SHORT_APP_NAME }"
@@ -1149,7 +1149,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ]
     },
     "Bug category": {
@@ -6755,7 +6755,7 @@
         "Size ayrılmış sunucular ve IP adresleri"
       ],
       "Desktop app": [
-        "Masaüstü uygulaması"
+        "Bilgisayar uygulaması"
       ],
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
@@ -7183,10 +7183,10 @@
     },
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "İndirimli ${ priceCoupon } fiyatı ilk ay için geçerlidir. Daha sonra otomatik olarak ${ priceLine } üzerinden yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
+        "İlk ay için ${ priceCoupon } indirimli tutar uygulanır. Ardından, otomatik olarak ${ priceLine } tutarla yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Tüm ${ BRAND_NAME } ayrıcalıklı ürün ve özelliklerin kilidini sadece ${ priceLine } karşılığında açın. İstediğiniz zaman iptal edin."
+        "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "new_plans: Title": {
@@ -7225,7 +7225,7 @@
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Masaüstünüzün rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
+        "Bilgisayarınızın rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
@@ -7286,7 +7286,7 @@
         "Kullanıcı kimlik doğrulama bilgilerinin ele geçirildiğini düşündüğünüzde kullanıcı oturumlarını zorla kapatın"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
+        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden bilgisayar uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
       ],
       "Increase or reallocate storage for a user": [
         "Bir kullanıcının depolama alanını artırın ya da yeniden ayarlayın"
@@ -9195,9 +9195,6 @@
       "Enter your backup password": [
         "Yedek parolanızı yazın"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Bu kullanıcının oturum açabilmesi için kimlik hizmeti sağlayıcısı üzerinde bulunduğundan emin olun."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Güvenliğiniz için, diğer tüm etkin aygıtlarınızdaki oturumlar kapatıldı. Hesabınıza erişmeden önce, yeni bir yedek parola yazmanız gerekecek."
       ],
@@ -9264,8 +9261,11 @@
       "Single sign-on removed": [
         "Tek oturum açma kaldırıldı"
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "${ name } hesabı artık tek oturum açma kullanıyor."
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "${ user } isimli kullanıcı artık bir tek oturum açma (SSO) hesabıdır. Önceki parolası yedek parolası olarak kullanılacaktır."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "${ BRAND_NAME } hizmetlerine erişmeleri için kimlik sağlayıcınızda yeniden oturum açmaları gerekecek. Bu kullanıcının oturum açabilmesi için kimlik sağlayıcınızda var olduğundan emin olun."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Bu işlem kullanıcının diğer aygıtlardaki oturumlarını kapatacak ve yeni bir yedek parola oluşturmaları gerekecek."
@@ -9565,7 +9565,7 @@
         "${ dayDiff } gün kaldı"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } iş verilerinizi güvende tutar ve herkese şifrelenmiş e-postalar göndermenizi sağlar."
@@ -9672,7 +9672,7 @@
         "Kapsamlı gizlilik ve güvenlik"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Masaüstü uygulaması ve e-posta istemcisi desteği (IMAP ile)"
+        "Bilgisayar uygulaması ve e-posta istemcisi desteği (IMAP ile)"
       ],
       "Direct contribution to our mission": [
         "Amacımıza doğrudan katkıda bulunmak"
@@ -9860,7 +9860,7 @@
         "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
       ],
       "Desktop app": [
-        "Masaüstü uygulaması"
+        "Bilgisayar uygulaması"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
@@ -11376,13 +11376,13 @@
         "+ ücretsiz hediye"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "1 yıl boyunca ${ planTitle } için yüzde ${ discountPercentAbsolute }'lik indirim sağlayan hediye kodu"
+        "1 yıl boyunca ${ planTitle } tarifesinde yüzde ${ discountPercentAbsolute } oranında indirim sağlayan hediye kodu"
       ],
       "Valentine's deal": [
         "Sevgililer günü fırsatı"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Paylaşmanız için ücretsiz hediyeniz, değeri ${ price }﻿: "
+        "🎁 ${ price } değerindeki paylaşması ücretsiz hediyeniz: "
       ]
     },
     "Valentine_2025: Offer": {

@@ -877,10 +877,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Reject": [
@@ -1655,6 +1655,14 @@
         "選擇你的年終優惠"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "抱歉，你目前的方案無法使用此優惠。但若您訂購 ${ cycle } 月時，你可以取得 ${ plan.Title } 的 ${ discountPercentage } 優惠。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1670,14 +1678,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "抱歉，你目前的方案無法使用此優惠。但若您訂購 ${ cycle } 月時，你可以取得 ${ plan.Title } 的 ${ discountPercentage } 優惠。"
       ]
     },
     "bf2023: Offers": {
@@ -7102,10 +7102,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -8812,10 +8812,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
       "Users": [
@@ -11621,6 +11621,32 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
+      "Starting from ${ pricing }": [
+        "從${ pricing }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ planName }": [
+        "升級至${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "繼續使用免費方案"
@@ -11648,32 +11674,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得"
-      ],
-      "Starting from ${ pricing }": [
-        "從${ pricing }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ planName }": [
-        "升級至${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12191,6 +12191,17 @@
         "團隊管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ trialPlanName }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -12295,17 +12306,6 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ trialPlanName }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -12348,6 +12348,14 @@
         "您選擇的方案：${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -12366,14 +12374,6 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -15124,9 +15124,6 @@
       "Enter your backup password": [
         "輸入您的備份密碼"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "以讓此使用者可登入，請確認他們於您的身分提供者中。"
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "為了您的安全，已登出其他所有使用中的裝置。在存取您的帳號前，您必須輸入新的備份密碼。"
       ],
@@ -15207,9 +15204,6 @@
       ],
       "Single sign-on removed": [
         "已移除單一登入"
-      ],
-      "The user ${ name } is now a single sign-on account.": [
-        "此${ name }使用者目前是單一登入帳戶。"
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "若要確定真的是您嘗試登入 **${ email }**，請檢視確認碼，並從其他裝置批准請求。"
@@ -16516,10 +16510,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
