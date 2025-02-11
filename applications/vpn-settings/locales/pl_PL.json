@@ -328,6 +328,9 @@
       "Generate password": [
         "Generuj hasło"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Wybierz plan ${ planName } za ${ priceCoupon }"
+      ],
       "Get a new encrypted email address": [
         "Uzyskaj nowy szyfrowany adres e-mail"
       ],
@@ -1231,6 +1234,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zamknij"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
@@ -1243,8 +1249,11 @@
       "Create label": [
         "Utwórz etykietę"
       ],
+      "Discover and set up features": [
+        "Odkryj i skonfiguruj funkcje"
+      ],
       "Remind me later": [
-        "Przypomnij mi później"
+        "Przypomnij później"
       ],
       "Set up other features": [
         "Skonfiguruj inne funkcje"
@@ -3529,6 +3538,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -3537,6 +3549,9 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -3551,6 +3566,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
+      ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }% zniżki"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: obraz w pełnym rozmiarze"
@@ -3963,6 +3981,12 @@
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Wyłączenie uwierzytelniania dwustopniowego obniży bezpieczeństwo konta. Zrób to tylko wtedy, jeśli jest to absolutnie konieczne."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Poznaj nowe funkcje i zacznij z nich korzystać!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Poznaj nowe funkcje planu ${ planTitle } i zacznij z nich korzystać!"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -4048,7 +4072,7 @@
         "Włączono w dniu: ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
-        "Włącz automatyczne usuwanie..."
+        "Włączanie automatycznego usuwania…"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Szyfrowanie wiadomości end-to-end jest wyłączone dla tej grupy ze względu na zewnętrzne adresy."
@@ -4485,6 +4509,9 @@
         "lub przypisz do innego kraju za ${ availableAgainAfterHours } godzin",
         "lub przypisz do innego kraju za ${ availableAgainAfterHours } godziny"
       ],
+      "or discover other features:": [
+        "lub poznaj inne funkcje:"
+      ],
       "Or select a particular server:": [
         "Lub wybierz serwer:"
       ],
@@ -4633,7 +4660,7 @@
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Registering your subscription…": [
-        "Rejestrowanie subskrypcji..."
+        "Rejestrowanie subskrypcji…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
@@ -4699,7 +4726,7 @@
         "Wyślij wiadomości, aby zachęcić użytkowników do ochrony swoich kont za pomocą uwierzytelniania dwustopniowego."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
+        "Płatności SEPA nie są obecnie dostępne. Spróbuj ponownie później."
       ],
       "Server is currently down": [
         "Serwer jest obecnie wyłączony"
@@ -4712,6 +4739,9 @@
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
+      ],
+      "Setting up ${ feature }…": [
+        "Konfigurowanie ${ feature }…"
       ],
       "Setting up your new address…": [
         "Konfiguracja nowego adresu…"
@@ -5223,6 +5253,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Używasz więcej przestrzeni dyskowej niż jest dostępna w planie ${ downgradedPlanName }. Aby obniżyć plan, zwolnij część miejsca."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Możesz to zmienić w ${ settingsLink }."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Edytuj adres, aby zweryfikować prawidłowy adres pomocniczy."
       ],
@@ -5730,6 +5763,9 @@
       "Enter the code displayed on your TV": [
         "Wpisz kod wyświetlony na telewizorze"
       ],
+      "Enter your password": [
+        "Wpisz hasło"
+      ],
       "Entity ID": [
         "Identyfikator jednostki"
       ],
@@ -5982,6 +6018,9 @@
       "Strong": [
         "Silne"
       ],
+      "Strong password": [
+        "Silne hasło"
+      ],
       "Subscription options": [
         "Opcje subskrypcji"
       ],
@@ -6018,6 +6057,9 @@
       "VAT": [
         "podatku VAT"
       ],
+      "VAT identification number": [
+        "Numer VAT"
+      ],
       "Verification code": [
         "Kod weryfikacyjny"
       ],
@@ -6027,11 +6069,17 @@
       "Vulnerable": [
         "Bardzo słabe"
       ],
+      "Vulnerable password": [
+        "Słabe hasło"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Przykro nam, że odchodzisz. Wyjaśnij nam, dlaczego nas opuszczasz, aby pomóc ulepszać nasze usługi."
       ],
       "Weak": [
         "Słabe"
+      ],
+      "Weak password": [
+        "Słabe hasło"
       ],
       "What happened?": [
         "Co się stało?"
@@ -6210,7 +6258,7 @@
         "Poproś o zaproszenie"
       ],
       "settings": [
-        "ustawienia"
+        "ustawieniach"
       ],
       "Sign in": [
         "Zaloguj się"
@@ -6969,6 +7017,9 @@
       "Sync and backup all your files across devices": [
         "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
       ],
+      "Tor over VPN": [
+        "Tor przez VPN"
+      ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
       ],
@@ -7207,7 +7258,7 @@
     },
     "new_plans: Subtext": {
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Odblokuj wszystkie produkty i funkcje premium ${ BRAND_NAME } za jedyne ${ priceLine }. Anuluj w dowolnym momencie"
+        "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
     },
     "new_plans: Title": {
@@ -8391,6 +8442,11 @@
         "Użytkownik"
       ]
     },
+    "Safety review": {
+      "Review account safety": [
+        "Sprawdź bezpieczeństwo konta"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Anuluj"
@@ -9018,6 +9074,9 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Ulepsz do planu ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9239,9 +9298,6 @@
       "Enter your backup password": [
         "Wpisz hasło zapasowe"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Aby ten użytkownik mógł się zalogować, upewnij się, że istnieje on u twojego dostawcy tożsamości."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Ze względów bezpieczeństwa zostaniesz wylogowany ze wszystkich aktywnych urządzeń. Przed uzyskaniem dostępu do konta konieczne będzie wpisanie nowego hasła zapasowego."
       ],
@@ -9308,9 +9364,6 @@
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Użytkownik ${ name } jest teraz kontem z logowaniem SSO."
-      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Spowoduje to wylogowanie użytkownika z innych urządzeń i konieczność utworzenia nowego hasła zapasowego."
       ],
@@ -9334,6 +9387,9 @@
       ],
       "User details:": [
         "Szczegóły użytkownika:"
+      ],
+      "Welcome": [
+        "Witaj"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Konieczne będzie ręcznie utworzenie nowych użytkowników i dodanie ich do organizacji."
@@ -10313,6 +10369,9 @@
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
+      "${ feature } is now active": [
+        "Funkcja ${ feature } jest aktywna"
       ],
       "${ VPN_APP_NAME } clients": [
         "Aplikacje ${ VPN_APP_NAME }"
@@ -11453,7 +11512,7 @@
     },
     "Valentine_2025": {
       "+ free gift": [
-        "+ darmowy prezent"
+        "+ prezent"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
         "Kod podarunkowy na ${ discountPercentAbsolute }% zniżki na ${ planTitle } na 1 rok"
@@ -11462,7 +11521,7 @@
         "Oferta na walentynki"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Twój darmowy prezent do udostępnienia, o wartości ${ price }﻿: "
+        "🎁 Twój prezent o wartości ${ price }, którym możesz się podzielić﻿: "
       ]
     },
     "Valentine_2025: Offer": {
@@ -11494,7 +11553,7 @@
         "Zaawansowana ochrona konta"
       ],
       "All Mail, VPN, Pass, and Drive premium features": [
-        "Wszystkie funkcje premium Mail, VPN, Pass i Drive"
+        "Wszystkie funkcje premium Mail, VPN, Pass i Drive"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
@@ -11506,7 +11565,7 @@
         "Dwa razy więcej miłości za połowę ceny"
       ],
       "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Uzyskaj 1 rok ${ dealName } z rabatem ${ salePercentage }% — plus kod upominkowy, którym możesz podzielić się z przyjacielem"
+        "Uzyskaj 1 rok ${ dealName } z rabatem ${ salePercentage }% oraz kod upominkowy, którym możesz podzielić się z przyjacielem"
       ],
       "Get the deal": [
         "Skorzystaj z oferty"
@@ -11732,6 +11791,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adres ${ BRAND_NAME }",
+        "${ n } adresy ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } konto na portfel",
         "${ n } konta na portfel",

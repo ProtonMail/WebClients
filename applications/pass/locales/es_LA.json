@@ -1143,6 +1143,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Hemos encontrado un problema al iniciar ${ PASS_SHORT_APP_NAME }. Si este problema persiste, contacte a nuestro servicio de atención al cliente para obtener ayuda."
       ],
+      "Wrong backup password": [
+        "Contraseña de respaldo incorrecta"
+      ],
       "Wrong extra password": [
         "Contraseña adicional incorrecta"
       ],
@@ -4032,7 +4035,7 @@
         "30 meses"
       ],
       "for ${ durationDeal }": [
-        "durante ${ durationDeal }"
+        "por ${ durationDeal }"
       ]
     },
     "Validation": {

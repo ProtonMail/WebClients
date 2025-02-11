@@ -226,6 +226,9 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
+      "Create album": [
+        "Albüm oluştur"
+      ],
       "Create and copy alias": [
         "Takma ad ekle ve kopyala"
       ],
@@ -352,7 +355,7 @@
         "Çöp kutusunu boşalt"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini açmak"
+        "bilgisayar bildirimlerini açmak"
       ],
       "Enable drive search": [
         "Drive arama özelliğini aç"
@@ -951,6 +954,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Albüm oluştur"
+      ],
       "Upload": [
         "Yükle"
       ]
@@ -1076,7 +1082,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus ve ${ CALENDAR_SHORT_APP_NAME }"
@@ -1227,7 +1233,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ]
     },
     "Bug category": {
@@ -2415,11 +2421,6 @@
         "Süresi geçmiş fatura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2501,6 +2502,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3523,7 +3529,7 @@
     },
     "Feature": {
       "Access on mobile and desktop": [
-        "Mobil ve masaüstünden erişim"
+        "Mobil ve bilgisayar uygulamaları"
       ],
       "Free 5 GB storage": [
         "Ücretsiz 5 GB depolama alanı"
@@ -4604,7 +4610,7 @@
         "Telefonunuzdaki fotoğrafları yedeklemek için uygulamayı edinin."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Bilgisayarınızdaki dosyaları eşitlemek için masaüstü uygulamasını edinin."
+        "Bilgisayarınızdaki dosyaları eşitlemek için bilgisayar uygulamasını edinin."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "${ DRIVE_APP_NAME } uygulamasını tanıyın ve 3 GB depolama alanı hediyenizi kazanın! Bugün harekete geçin."
@@ -4814,6 +4820,9 @@
       ],
       "No": [
         "Hayır"
+      ],
+      "No Albums": [
+        "Albüm yok"
       ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
@@ -5164,6 +5173,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
+      ],
+      "The albums you create are shown here": [
+        "Oluşturduğunuz albümler burada görüntülenir"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Sayısal imza kısmen doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kullanıcının kimliği doğrulanamıyor."
@@ -6085,6 +6097,9 @@
       "Move to Inbox": [
         "Gelen kutusuna taşı"
       ],
+      "My Albums": [
+        "Albümlerim"
+      ],
       "Name": [
         "Ad"
       ],
@@ -6193,11 +6208,17 @@
       "Share a file": [
         "Bir dosya paylaş"
       ],
+      "Shared": [
+        "Paylaşılmış"
+      ],
       "Shared by": [
         "Paylaşan"
       ],
       "Shared on": [
         "Paylaşılma zamanı"
+      ],
+      "Shared with me": [
+        "Benimle paylaşılanlar"
       ],
       "Show indexing progress of Encrypted Search": [
         "Şifrelenmiş aramanın dizine ekleme işlemini görüntüle"
@@ -7057,7 +7078,7 @@
         "Verilerin ele geçirilmesini izleme"
       ],
       "Desktop app": [
-        "Masaüstü uygulaması"
+        "Bilgisayar uygulaması"
       ],
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
@@ -7437,10 +7458,10 @@
     },
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "İndirimli ${ priceCoupon } fiyatı ilk ay için geçerlidir. Daha sonra otomatik olarak ${ priceLine } üzerinden yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
+        "İlk ay için ${ priceCoupon } indirimli tutar uygulanır. Ardından, otomatik olarak ${ priceLine } tutarla yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Tüm ${ BRAND_NAME } ayrıcalıklı ürün ve özelliklerin kilidini sadece ${ priceLine } karşılığında açın. İstediğiniz zaman iptal edin."
+        "Yalnızca ${ priceLine } ile tüm ${ BRAND_NAME } ücretli ürünlerine ve özelliklerine erişin. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "new_plans: title": {
@@ -7471,7 +7492,7 @@
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Masaüstünüzün rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
+        "Bilgisayarınızın rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
@@ -7532,7 +7553,7 @@
         "Kullanıcı kimlik doğrulama bilgilerinin ele geçirildiğini düşündüğünüzde kullanıcı oturumlarını zorla kapatın"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
+        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden bilgisayar uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
       ],
       "Increase or reallocate storage for a user": [
         "Bir kullanıcının depolama alanını artırın ya da yeniden ayarlayın"
@@ -8167,7 +8188,7 @@
         "Bilgisayarınızın depolama alanını boşaltın"
       ],
       "Get the desktop app": [
-        "Masaüstü uygulamasını edinin"
+        "Bilgisayar uygulamasını edinin"
       ],
       "Get the mobile app": [
         "Mobil uygulamayı edinin"
@@ -9352,7 +9373,7 @@
         "${ dayDiff } gün kaldı"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } iş verilerinizi güvende tutar ve herkese şifrelenmiş e-postalar göndermenizi sağlar."
@@ -9453,7 +9474,7 @@
         "Kapsamlı gizlilik ve güvenlik"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Masaüstü uygulaması ve e-posta istemcisi desteği (IMAP ile)"
+        "Bilgisayar uygulaması ve e-posta istemcisi desteği (IMAP ile)"
       ],
       "Direct contribution to our mission": [
         "Amacımıza doğrudan katkıda bulunmak"
@@ -9617,7 +9638,7 @@
         "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
       ],
       "Desktop app": [
-        "Masaüstü uygulaması"
+        "Bilgisayar uygulaması"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
@@ -9974,6 +9995,12 @@
       ],
       "Addresses": [
         "Adresler"
+      ],
+      "Album": [
+        "Albüm"
+      ],
+      "Albums": [
+        "Albümler"
       ],
       "All": [
         "Tümü"
@@ -10592,11 +10619,6 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Bu paylaşılan dosyayı daha sonra kolayca erişebilmek için ${ DRIVE_APP_NAME } depolama alanınıza ekleyin"
@@ -10680,18 +10702,23 @@
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Valentine_2025": {
       "+ free gift": [
         "+ ücretsiz hediye"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "1 yıl boyunca ${ planTitle } için yüzde ${ discountPercentAbsolute }'lik indirim sağlayan hediye kodu"
+        "1 yıl boyunca ${ planTitle } tarifesinde yüzde ${ discountPercentAbsolute } oranında indirim sağlayan hediye kodu"
       ],
       "Valentine's deal": [
         "Sevgililer günü fırsatı"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Paylaşmanız için ücretsiz hediyeniz, değeri ${ price }﻿: "
+        "🎁 ${ price } değerindeki paylaşması ücretsiz hediyeniz: "
       ]
     },
     "Valentine_2025: Offer": {
