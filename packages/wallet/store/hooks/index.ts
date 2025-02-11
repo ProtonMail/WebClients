@@ -10,7 +10,6 @@ export * from './useFiatCurrenciesByProvider';
 export * from './usePriceGraphData';
 export * from './useQuotesByProvider';
 export * from './useRemainingInvites';
-export * from './useUserEligibility';
 export * from './useUserWalletSettings';
 export * from './useWalletSettings';
 export * from './useWalletAccountExchangeRate';
