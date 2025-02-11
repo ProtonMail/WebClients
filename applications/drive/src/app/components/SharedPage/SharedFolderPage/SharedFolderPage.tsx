@@ -296,7 +296,7 @@ export default function SharedFolder({
 
                 <UploadDragDrop
                     shareId={token}
-                    linkId={linkId}
+                    parentLinkId={linkId}
                     className="flex flex-column flex-nowrap flex-1"
                     disabled={viewOnly}
                 >

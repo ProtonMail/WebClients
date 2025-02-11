@@ -13,7 +13,7 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 
-import type { PhotoLink } from '../../../store';
+import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../../store';
 import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosPreviewButton } from './PhotosPreviewButton';
@@ -158,9 +158,15 @@ interface ToolbarRightActionsGalleryProps {
     uploadDisabled: boolean;
     shareId: string;
     linkId: string;
+    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
 }
 
-const ToolbarRightActionsGallery = ({ uploadDisabled, shareId, linkId }: ToolbarRightActionsGalleryProps) => {
+const ToolbarRightActionsGallery = ({
+    uploadDisabled,
+    shareId,
+    linkId,
+    onFileUpload,
+}: ToolbarRightActionsGalleryProps) => {
     return (
         <>
             <ButtonGroup shape="ghost">
@@ -169,7 +175,7 @@ const ToolbarRightActionsGallery = ({ uploadDisabled, shareId, linkId }: Toolbar
                 <Button>Screenshots</Button>
                 <VideoDropdownButton />
             </ButtonGroup>
-            {!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} />}
+            {!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />}
         </>
     );
 };
@@ -183,6 +189,7 @@ interface PhotosWithAlbumToolbarProps {
     uploadDisabled: boolean;
     tabSelection: 'albums' | 'gallery' | 'albums-gallery';
     createAlbumModal: ModalStateReturnObj;
+    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
@@ -194,6 +201,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     uploadDisabled,
     tabSelection,
     createAlbumModal,
+    onFileUpload,
 }) => {
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
@@ -208,7 +216,12 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
 
                 {tabSelection === 'albums-gallery' && (
                     // TODO: Album Gallery dedicated toolbar
-                    <ToolbarRightActionsGallery uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
+                    <ToolbarRightActionsGallery
+                        uploadDisabled={uploadDisabled}
+                        shareId={shareId}
+                        linkId={linkId}
+                        onFileUpload={onFileUpload}
+                    />
                 )}
 
                 {/* Some photos are selected */}

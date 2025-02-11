@@ -1,9 +1,11 @@
 import type { FC } from 'react';
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { Loader, NavigationControl, TopBanner, useAppTitle, useModalStateObject } from '@proton/components';
+import { Loader, NavigationControl, TopBanner, useAppTitle, useConfig, useModalStateObject } from '@proton/components';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
 
@@ -15,43 +17,66 @@ import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDr
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
-import type { PhotoLink } from '../../store';
+import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../store';
 import { PhotoTags, isDecryptedLink, useThumbnailsDownload } from '../../store';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
-import { EmptyPhotos } from './EmptyPhotos';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { PhotosTags, type PhotosTagsProps } from './components/PhotosTags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
-import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
+import { PhotosWithAlbumsToolbar, ToolbarLeftActionsAlbumsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
-export const PhotosWithAlbumsView: FC = () => {
-    useAppTitle(c('Title').t`Photos`);
+const useAppTitleUpdate = () => {
+    const { APP_NAME } = useConfig();
+
+    const memoedTitle = useCallback((title?: string, maybeAppName?: string) => {
+        const appName = maybeAppName || getAppName(APP_NAME);
+        return [title, appName].filter(Boolean).join(' - ');
+    }, []);
+
+    return (title?: string, maybeAppName?: string) => {
+        const titleUpdate = memoedTitle(title, maybeAppName);
+        if (titleUpdate === undefined) {
+            return;
+        }
+        document.title = titleUpdate;
+    };
+};
+
+export const PhotosWithAlbumsInsideAlbumView: FC = () => {
+    useAppTitle(c('Title').t`Album`);
+    const updateTitle = useAppTitleUpdate();
+    let { albumLinkId } = useParams<{ albumLinkId: string }>();
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const {
+        volumeId,
         shareId,
         linkId,
-        photos,
-        isPhotosLoading,
+        albums,
+        userAddressEmail,
         loadPhotoLink,
-        photoLinkIdToIndexMap,
-        photoLinkIds,
         requestDownload,
+        albumPhotos,
+        addAlbumPhoto,
+        albumPhotosLinkIdToIndexMap,
+        albumPhotosLinkIds,
+        isAlbumsLoading,
     } = usePhotosWithAlbumsView();
 
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
-        photos,
-        photoLinkIdToIndexMap
+        albumPhotos,
+        albumPhotosLinkIdToIndexMap
     );
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isAlbumsLoading);
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const createAlbumModal = useModalStateObject();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
-    const { navigateToAlbums, navigateToPhotos } = useNavigate();
+    const { navigateToAlbums } = useNavigate();
     // TODO: Move tag selection to specific hook
     const [selectedTag, setSelectedTag] = useState<PhotosTagsProps['selectedTag']>([]);
 
@@ -69,7 +94,7 @@ export const PhotosWithAlbumsView: FC = () => {
         }
     };
 
-    const photoCount = photoLinkIds.length;
+    const photoCount = albumPhotos.length;
     const selectedCount = selectedItems.length;
 
     const handleToolbarPreview = useCallback(() => {
@@ -82,24 +107,52 @@ export const PhotosWithAlbumsView: FC = () => {
 
     const previewRef = useRef<HTMLDivElement>(null);
     const previewIndex = useMemo(
-        () => photoLinkIds.findIndex((item) => item === previewLinkId),
-        [photoLinkIds, previewLinkId]
+        () => albumPhotosLinkIds.findIndex((item) => item === previewLinkId),
+        [albumPhotosLinkIds, previewLinkId]
     );
     const previewItem = useMemo(
-        () => (previewLinkId !== undefined ? (photos[photoLinkIdToIndexMap[previewLinkId]] as PhotoLink) : undefined),
-        [photos, previewLinkId, photoLinkIdToIndexMap]
+        () =>
+            previewLinkId !== undefined
+                ? (albumPhotos[albumPhotosLinkIdToIndexMap[previewLinkId]] as PhotoLink)
+                : undefined,
+        [albumPhotos, previewLinkId, albumPhotosLinkIdToIndexMap]
     );
     const setPreviewIndex = useCallback(
-        (index: number) => setPreviewLinkId(photoLinkIds[index]),
-        [setPreviewLinkId, photoLinkIds]
+        (index: number) => setPreviewLinkId(albumPhotosLinkIds[index]),
+        [setPreviewLinkId, albumPhotosLinkIds]
     );
-    const isPhotosEmpty = photos.length === 0;
 
-    if (!shareId || !linkId || isPhotosLoading) {
+    const onPhotoUploadedToAlbum = useCallback(
+        (file: OnFileUploadSuccessCallbackData) => {
+            if (!shareId || !linkId || !volumeId || !file) {
+                return;
+            }
+            const abortSignal = new AbortController().signal;
+            addAlbumPhoto(abortSignal, volumeId, shareId, albumLinkId, file.fileId);
+        },
+        [albumLinkId]
+    );
+
+    const isAlbumPhotosEmpty = albumPhotos.length === 0;
+    const album = albumLinkId ? albums.find((album) => album.linkId === albumLinkId) : undefined;
+    const isOwner = album?.signatureEmail === userAddressEmail;
+
+    useEffect(() => {
+        if (album) {
+            updateTitle(`Album > ${album.name}`);
+        }
+    }, [album, updateTitle]);
+
+    if (!shareId || !linkId || !album || isAlbumsLoading) {
         return <Loader />;
     }
 
+    // TODO: Album not found view
+
     const hasPreview = !!previewItem;
+    // If you own the root photo share, your uploads always goes to the root (photo stream) and then we add the photos to the album
+    // If you don't own it (shared album), you upload directly in the album as a folder, it won't appear in photo stream
+    const uploadLinkId = isOwner ? linkId : albumLinkId || linkId;
 
     return (
         <>
@@ -150,7 +203,8 @@ export const PhotosWithAlbumsView: FC = () => {
                 disabled={isUploadDisabled}
                 isForPhotos={true}
                 shareId={shareId}
-                parentLinkId={linkId}
+                parentLinkId={uploadLinkId}
+                onFileUpload={onPhotoUploadedToAlbum}
                 className="flex flex-column flex-nowrap flex-1"
             >
                 <ToolbarRow
@@ -172,16 +226,13 @@ export const PhotosWithAlbumsView: FC = () => {
                                 </span>
                             )}
 
-                            {selectedCount === 0 && (
-                                <ToolbarLeftActionsGallery
-                                    onGalleryClick={() => {
-                                        navigateToPhotos();
-                                    }}
+                            {selectedCount === 0 && album && (
+                                <ToolbarLeftActionsAlbumsGallery
                                     onAlbumsClick={() => {
                                         navigateToAlbums();
                                     }}
-                                    isLoading={isPhotosLoading}
-                                    selection={'gallery'}
+                                    name={album.name}
+                                    isLoading={isAlbumsLoading}
                                 />
                             )}
                         </>
@@ -189,13 +240,14 @@ export const PhotosWithAlbumsView: FC = () => {
                     toolbar={
                         <PhotosWithAlbumsToolbar
                             shareId={shareId}
-                            linkId={linkId}
+                            linkId={uploadLinkId}
                             selectedItems={selectedItems}
                             onPreview={handleToolbarPreview}
                             requestDownload={requestDownload}
                             uploadDisabled={isUploadDisabled}
-                            tabSelection={'gallery'}
+                            tabSelection={'albums-gallery'}
                             createAlbumModal={createAlbumModal}
+                            onFileUpload={onPhotoUploadedToAlbum}
                         />
                     }
                 />
@@ -217,14 +269,22 @@ export const PhotosWithAlbumsView: FC = () => {
                     onTagSelect={setSelectedTag}
                 />
 
-                {isPhotosEmpty ? (
-                    <EmptyPhotos shareId={shareId} linkId={linkId} />
+                {/**
+                 * Inside Albums View
+                 * TODO: Split into separate component
+                 */}
+
+                {isAlbumPhotosEmpty ? (
+                    <>
+                        {/** TODO: Empty Albums View */}
+                        <span>Empty Albums View</span>
+                    </>
                 ) : (
                     <PhotosGrid
-                        data={photos}
+                        data={albumPhotos}
                         onItemRender={handleItemRender}
                         onItemRenderLoadedLink={handleItemRenderLoadedLink}
-                        isLoading={isPhotosLoading}
+                        isLoading={isAlbumsLoading}
                         onItemClick={setPreviewLinkId}
                         hasSelection={selectedCount > 0}
                         onSelectChange={(i, isSelected) =>

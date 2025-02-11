@@ -8,7 +8,7 @@ import type { LinkDownload } from '../../store/_downloads';
 import { useDownloadProvider } from '../../store/_downloads';
 import type { DriveEvent, DriveEvents } from '../../store/_events';
 import { useDriveEventManager } from '../../store/_events';
-import { useLinksListing, useLinksQueue } from '../../store/_links';
+import { type DecryptedLink, useLinksListing, useLinksQueue } from '../../store/_links';
 import { isPhotoGroup, sortWithCategories } from '../../store/_photos';
 import type { PhotoLink } from '../../store/_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from '../../store/_views/utils';
@@ -48,12 +48,15 @@ export const usePhotosWithAlbumsView = () => {
         shareId,
         linkId,
         isPhotosLoading,
+        isAlbumsLoading,
         volumeId,
         photos,
         albumPhotos,
         albums,
+        userAddressEmail,
         loadPhotos,
         loadAlbums,
+        addAlbumPhotos,
         loadAlbumPhotos,
         removePhotosFromCache,
     } = usePhotosWithAlbums();
@@ -74,7 +77,20 @@ export const usePhotosWithAlbumsView = () => {
     const cachedAlbumsCover = useMemoArrayNoMatterTheOrder(cachedAlbums?.links || []);
     const cacheAlbumPhotos =
         shareId && linkId && albumLinkId ? getCachedChildren(abortSignal, shareId, albumLinkId) : undefined;
-    const cachedAlbumPhotosLinks = useMemoArrayNoMatterTheOrder(cacheAlbumPhotos?.links || []);
+
+    // We have to concat cachedLinks since for albums
+    // some photos are children of root (photo-stream) while some others are children of the album (shared album where upload are done by not the owner)
+    const cachedOwnerAlbumPhotosLinks: DecryptedLink[] = [];
+    albumPhotos.forEach((albumPhoto) => {
+        const albumPhotoLinkId = albumPhoto.linkId;
+        const link = cachedLinks.find((cachedLink) => cachedLink.linkId === albumPhotoLinkId);
+        if (link) {
+            cachedOwnerAlbumPhotosLinks.push(link);
+        }
+    });
+    const cachedAlbumPhotosLinks = useMemoArrayNoMatterTheOrder(
+        (cacheAlbumPhotos?.links || []).concat(cachedOwnerAlbumPhotosLinks)
+    );
 
     // This will be flattened to contain categories and links
     const { photosViewData, photoLinkIdToIndexMap, photoLinkIds } = useMemo(() => {
@@ -225,11 +241,13 @@ export const usePhotosWithAlbumsView = () => {
         }
         const abortController = new AbortController();
 
+        // Always load albums
+        loadAlbums(abortController.signal, volumeId, shareId);
+
         if (albumLinkId) {
             loadAlbumPhotos(abortController.signal, volumeId, albumLinkId);
         } else {
             loadPhotos(abortController.signal, volumeId);
-            loadAlbums(abortController.signal, volumeId);
         }
 
         const callbackId = eventsManager.eventHandlers.register((eventVolumeId, events, processedEventCounter) => {
@@ -257,7 +275,7 @@ export const usePhotosWithAlbumsView = () => {
         }
         const abortController = new AbortController();
         loadPhotos(abortController.signal, volumeId);
-        loadAlbums(abortController.signal, volumeId);
+        loadAlbums(abortController.signal, volumeId, shareId);
     };
 
     const refreshAlbums = () => {
@@ -265,7 +283,7 @@ export const usePhotosWithAlbumsView = () => {
             return;
         }
         const abortController = new AbortController();
-        loadAlbums(abortController.signal, volumeId);
+        loadAlbums(abortController.signal, volumeId, shareId);
     };
 
     const refreshAlbumPhotos = useCallback(
@@ -353,8 +371,10 @@ export const usePhotosWithAlbumsView = () => {
     };
 
     return {
+        volumeId,
         shareId,
         linkId,
+        userAddressEmail,
         albums: albumsView,
         albumPhotos: albumPhotosViewData,
         albumPhotosLinkIdToIndexMap,
@@ -366,9 +386,19 @@ export const usePhotosWithAlbumsView = () => {
         loadPhotoLink,
         requestDownload,
         isPhotosLoading,
+        isAlbumsLoading,
         refreshAll,
         refreshAlbums,
         refreshPhotos,
         refreshAlbumPhotos,
+        addAlbumPhoto: (
+            abortSignal: AbortSignal,
+            volumeId: string,
+            shareId: string,
+            albumLinkId: string,
+            linkId: string
+        ) => {
+            return addAlbumPhotos(abortSignal, volumeId, shareId, albumLinkId, [linkId]);
+        },
     };
 };
