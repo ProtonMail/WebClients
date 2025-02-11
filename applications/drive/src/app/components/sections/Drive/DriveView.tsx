@@ -56,7 +56,7 @@ function DriveView() {
             {isEditor ? (
                 <UploadDragDrop
                     shareId={activeFolder.shareId}
-                    linkId={activeFolder.linkId}
+                    parentLinkId={activeFolder.linkId}
                     className="flex flex-column flex-nowrap flex-1"
                     disabled={folderView.isActiveLinkReadOnly}
                 >

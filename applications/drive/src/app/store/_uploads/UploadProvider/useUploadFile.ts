@@ -60,6 +60,7 @@ type LogCallback = (message: string) => void;
 interface FileRevision {
     isNewFile: boolean;
     filename: string;
+    // this is the file linkID
     fileID: string;
     revisionID: string;
     previousRevisionID?: string;
@@ -168,17 +169,16 @@ export default function useUploadFile() {
                     }
                     throw err;
                 });
-            const createFile = retryOnError<CreateFileResult>({
+
+            const { File: createdFile } = await retryOnError<CreateFileResult>({
                 fn: () => createFilePromise(),
                 shouldRetryBasedOnError: (error: unknown) => isPhotosDisabledUploadError(error as Error),
                 maxRetriesNumber: 3,
                 backoff: true,
-            });
-
-            const { File: createdFile } = await createFile();
+            })();
 
             return {
-                fileID: createdFile.ID,
+                fileID: createdFile.ID, // this is the encrypted linkId for the new File
                 filename,
                 isNewFile: true,
                 privateKey: keys.privateKey,
@@ -616,6 +616,7 @@ export default function useUploadFile() {
                                 includeCommon: true,
                             });
                         }
+                        return { fileId: createdFileRevision.fileID, fileName: createdFileRevision.filename };
                     },
                     5
                 ),

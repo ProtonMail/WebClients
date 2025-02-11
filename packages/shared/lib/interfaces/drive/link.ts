@@ -4,6 +4,7 @@ import type { DriveFileRevisionPayload } from './file';
 export enum LinkType {
     FOLDER = 1,
     FILE = 2,
+    ALBUM = 3,
 }
 
 export enum LinkState {
@@ -33,6 +34,14 @@ interface FileProperties {
 
 interface FolderProperties {
     NodeHashKey: string;
+}
+
+interface AlbumProperties {
+    NodeHashKey: string;
+    CoverLinkID: string;
+    PhotoCount: number;
+    LastActivityTime: number;
+    Locked: boolean;
 }
 
 interface DocumentProperties {
@@ -66,6 +75,7 @@ interface DriveLink {
     Permissions: number;
     FileProperties: FileProperties | null;
     FolderProperties: FolderProperties | null;
+    AlbumProperties: AlbumProperties | null;
     DocumentProperties: DocumentProperties | null;
     Shared: number;
     ShareIDs: string[];
@@ -87,21 +97,26 @@ interface DriveLink {
     VolumeID: string;
 }
 
-export interface FileLinkMeta extends DriveLink {
+interface FileLinkMeta extends DriveLink {
     Type: LinkType.FILE;
     FileProperties: FileProperties;
     FolderProperties: null;
 }
 
-export interface FolderLinkMeta extends DriveLink {
+interface FolderLinkMeta extends DriveLink {
     Type: LinkType.FOLDER;
     FolderProperties: FolderProperties;
     FileProperties: null;
 }
 
-export type LinkMeta = FileLinkMeta | FolderLinkMeta;
+interface AlbumLinkMeta extends DriveLink {
+    Type: LinkType.ALBUM;
+    FolderProperties: null;
+    FileProperties: null;
+    AlbumProperties: AlbumProperties;
+}
 
-export const isFolderLinkMeta = (link: LinkMeta): link is FolderLinkMeta => link.Type === LinkType.FOLDER;
+export type LinkMeta = FileLinkMeta | FolderLinkMeta | AlbumLinkMeta;
 
 export interface LinkMetaResult {
     Link: LinkMeta;
