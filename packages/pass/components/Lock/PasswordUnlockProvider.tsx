@@ -8,24 +8,16 @@ import { SSOReauthModal } from '@proton/pass/components/Lock/SSOReauthModal';
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
+import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import { selectExtraPasswordEnabled, selectIsSSO } from '@proton/pass/store/selectors';
 
 import type { PasswordModalState } from './PasswordModal';
 import { PasswordModal, type PasswordModalProps } from './PasswordModal';
 
-type PasswordTypeSwitch<T> = { extra: T; sso: T; default: T };
 type PasswordUnlockContextValue = UseAsyncModalHandle<string, PasswordModalProps>;
 const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async () => {});
 
 export const usePasswordUnlock = () => useContext(PasswordUnlockContext);
-
-export const passwordTypeSwitch =
-    (hasExtraPassword: boolean, isSSO: boolean) =>
-    <T,>(values: PasswordTypeSwitch<T>) => {
-        if (hasExtraPassword) return values.extra;
-        if (isSSO) return values.sso;
-        return values.default;
-    };
 
 export const usePasswordTypeSwitch = () => {
     const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
