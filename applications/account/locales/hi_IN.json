@@ -772,11 +772,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "Refresh the page": [
-        "पन्ना रिफ्रेश करें"
-      ],
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
+      ],
+      "Refresh the page": [
+        "पन्ना रिफ्रेश करें"
       ],
       "Reload": [
         "रिलोड"
@@ -1476,11 +1476,6 @@
         "अपना वर्ष के अंत का ऑफ़र चुनें"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 टीबी स्टोरेज (किसी भी अन्य योजना की तुलना में 2 गुना ज़्यादा)"
@@ -1502,6 +1497,11 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "केवल सीमित समय के लिए ${ plan } योजना वापस आ गई है"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
       ]
     },
     "bf2023: Offers": {
@@ -6203,11 +6203,11 @@
       "Data locked": [
         "डेटा लॉक"
       ],
-      "dedicated servers": [
-        "समर्पित सर्वर"
-      ],
       "Dedicated servers": [
         "विशेष सर्वर"
+      ],
+      "dedicated servers": [
+        "समर्पित सर्वर"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "कोई भी अन्य MX रिकॉर्ड को हटा दें या सुनिश्चित करें कि ${ MAIL_APP_NAME } की प्राथमिकता सबसे कम नंबर पे है।"
@@ -7549,10 +7549,10 @@
       "User activated": [
         "उपयोगकर्ता सक्रिय किया गया"
       ],
-      "username": [
+      "Username": [
         "यूज़रनेम"
       ],
-      "Username": [
+      "username": [
         "यूज़रनेम"
       ],
       "Users": [
@@ -7904,9 +7904,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "आपका खाता इस प्रोमोशन के साथ सफलतापूर्वक अपडेट किया गया था"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "भुगतान क्लीयर होते ही आपका खाता अपडेट कर दिया जाएगा।"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "आपका डाटा ${ importedEmailAddressStrong } से आपके ${ BRAND_NAME } खाते पे आयात करने के लिए तैयार है।"
@@ -10048,23 +10045,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free जारी रखें"
@@ -10092,6 +10072,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -10462,17 +10459,6 @@
         "टीम संभालना"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } खत्म होता है ${ last4 } से"
@@ -10562,6 +10548,17 @@
         "आप अपने अभी चल रहे प्लान पे छूट पा रहे हैं। अगर डाउनग्रेड करते हैं, तो आप छूट खो देंगे और अगर वापिस सदस्यता लेने की कोशिश करते है तो वो मौजूद नहीं होगा।"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } में से ${ humanUsedSpace }"
@@ -10598,14 +10595,6 @@
         "आपकी चुनी हुई योजना: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -10624,6 +10613,14 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -13495,10 +13492,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -14994,14 +14991,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "वॉलेट समस्या"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } जल्दी एक्सेस में है। आप Apple TestFlight के माध्यम से iOS ऐप डाउनलोड करें और Google Open Testing के माध्यम से Android ऐप डाउनलोड करें।"
-      ],
-      "Coming soon": [
-        "जल्द ही आ रहा है"
       ]
     },
     "wallet_signup_2024:Navigation": {

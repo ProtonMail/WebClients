@@ -880,11 +880,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Reject": [
         "Avvisa"
@@ -1683,15 +1683,6 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad.",
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månader."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1713,6 +1704,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad.",
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månader."
       ]
     },
     "bf2023: Offers": {
@@ -1993,6 +1993,9 @@
     "Button": {
       "Add link to your email footer": [
         "Lägg till länk i sidfoten för din e-post"
+      ],
+      "Close": [
+        "Stäng"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
@@ -6739,11 +6742,11 @@
         "${ calendarsToBeMergedCount } sammanslagen kalender",
         "${ calendarsToBeMergedCount } sammanslagna kalendrar"
       ],
-      "${ checkout.discountPercent }% discount": [
-        "${ checkout.discountPercent } % rabatt"
-      ],
       "${ current } of ${ total }": [
         "${ current } av ${ total }"
+      ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent } % rabatt"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } kommer inte längre behålla tidigare versioner av dina filer."
@@ -7397,11 +7400,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -9145,11 +9148,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "username": [
-        "användarnamn"
-      ],
       "Username": [
         "Användarnamn"
+      ],
+      "username": [
+        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -9600,9 +9603,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Ditt konto har uppdaterats med denna kampanj"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ditt konto kommer att uppdateras när betalningen är klargjord."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
@@ -12112,32 +12112,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Kom igång för ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Startar från ${ pricing }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ planName }": [
-        "Uppgradera till ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -12165,6 +12139,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Kom igång för ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Startar från ${ pricing }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12707,17 +12707,6 @@
         "Teamhantering"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -12828,6 +12817,17 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } av ${ humanMaxSpace }"
@@ -12871,22 +12871,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Det rabatterade priset på ${ priceCoupon } är giltigt för den första månaden. Därefter kommer det förnyas automatiskt med ${ priceMailPlus }. Du kan avbryta när som helst."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Det rabatterade priset på ${ priceCoupon } är giltigt för den första månaden. Därefter kommer det förnyas automatiskt med ${ priceLine }. Du kan avbryta när som helst."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceMailPlus }. Avbryt när som helst."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
     "new_plans: title": {
@@ -12907,6 +12896,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -17737,10 +17737,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -19767,14 +19767,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Wallet-problem"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } är i förhandstillgång. Du kan ladda ner iOS-appen via Apple TestFlight och Android-appen via Google Open Testing."
-      ],
-      "Coming soon": [
-        "Kommer snart"
       ]
     },
     "wallet_signup_2024:Navigation": {

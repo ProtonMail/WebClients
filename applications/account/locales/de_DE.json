@@ -880,11 +880,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
-        "Seite aktualisieren"
-      ],
       "refresh the page": [
         "aktualisiere die Seite"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
       ],
       "Reject": [
         "Ablehnen"
@@ -1683,15 +1683,6 @@
         "Wähle dein Jahresendangebot"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monat anmeldest.",
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monate anmeldest."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1713,6 +1704,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monat anmeldest.",
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monate anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -6730,11 +6730,11 @@
         "${ calendarsToBeMergedCount } zusammengeführter Kalender",
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
-      "${ checkout.discountPercent }% discount": [
-        "${ checkout.discountPercent }% Rabatt"
-      ],
       "${ current } of ${ total }": [
         "${ current } von ${ total }"
+      ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }% Rabatt"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } wird frühere Versionen deiner Dateien nicht mehr behalten."
@@ -7388,11 +7388,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -9127,10 +9127,10 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "username": [
+      "Username": [
         "Benutzername"
       ],
-      "Username": [
+      "username": [
         "Benutzername"
       ],
       "Users": [
@@ -9582,9 +9582,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Dein Konto wurde erfolgreich durch diese Werbeaktion aktualisiert"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
@@ -12085,32 +12082,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Leg los für ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Ab ${ pricing }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ planName }": [
-        "Auf ${ planName } upgraden"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -12138,6 +12109,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Ab ${ pricing }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
       ]
     },
     "new_plans: feature": {
@@ -12677,17 +12674,6 @@
         "Teamverwaltung"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -12798,6 +12784,17 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
@@ -12841,19 +12838,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Der ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird es automatisch jeden Monat zum Preis von ${ priceLine } verlängert. Du kannst jederzeit kündigen."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceMailPlus } frei. Jederzeit kündbar."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
     "new_plans: title": {
@@ -12874,6 +12863,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -17668,11 +17665,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -19451,6 +19448,20 @@
         "Schreibassistent"
       ]
     },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ Gratisgeschenk"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Ein Geschenkcode für ${ discountPercentAbsolute }% Rabatt auf ${ planTitle } für 1 Jahr"
+      ],
+      "Valentine's deal": [
+        "Angebot zum Valentinstag"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Dein Gratisgeschenk zum Teilen, im Wert von ${ price } "
+      ]
+    },
     "Valentine_2025: offer": {
       "Valentine's deal": [
         "Angebot zum Valentinstag"
@@ -19776,14 +19787,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problem mit Wallet"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } ist als Early Access verfügbar. Du kannst die iOS-App über Apple TestFlight und die Android-App über Google Open Testing herunterladen."
-      ],
-      "Coming soon": [
-        "Demnächst verfügbar"
       ]
     },
     "wallet_signup_2024:Navigation": {

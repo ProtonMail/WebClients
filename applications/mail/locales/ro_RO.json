@@ -7941,9 +7941,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile web partajate. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Contul va fi modificat după verificarea plății."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Navigatorul web actual nu acceptă asistentul de scriere. Încercați să îl rulați pe servere."
       ],
@@ -10142,11 +10139,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceLine }. Puteți anula oricând."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceMailPlus }. Anulați oricând."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Deblocați toate produsele și funcțiile premium din ${ BRAND_NAME } cu doar ${ priceLine }. Anulați oricând."
       ]
     },
     "new_plans: title": {

@@ -880,11 +880,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1683,15 +1683,6 @@
         "Selecione a sua oferta de fim de ano"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Esta oferta não está disponível com o seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mês.",
-        "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mese."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Armazenamento de 6 TB (2vezes mais do que qualquer outro plano)"
@@ -1713,6 +1704,15 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } está de volta por tempo limitado."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Esta oferta não está disponível com o seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mês.",
+        "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mese."
       ]
     },
     "bf2023: Offers": {
@@ -1993,6 +1993,9 @@
     "Button": {
       "Add link to your email footer": [
         "Adicionar a ligação ao rodapé do seu e-mail"
+      ],
+      "Close": [
+        "Fechar"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
@@ -6736,11 +6739,11 @@
         "${ calendarsToBeMergedCount } calendário unido",
         "${ calendarsToBeMergedCount } calendários unidos"
       ],
-      "${ checkout.discountPercent }% discount": [
-        "Desconto de ${ checkout.discountPercent }%"
-      ],
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
+      ],
+      "${ discountPercent }% discount": [
+        "Desconto de ${ discountPercent }%"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } deixará de manter as versões anteriores dos seus ficheiros."
@@ -7394,11 +7397,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
@@ -9142,11 +9145,11 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
-      "username": [
-        "nome de utilizador"
-      ],
       "Username": [
         "Nome de utilizador"
+      ],
+      "username": [
+        "nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -9597,9 +9600,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "A sua conta foi atualizada com esta promoção"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "A conta será atualizada assim que o pagamento for aprovado."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
@@ -12103,32 +12103,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Comece por ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "A partir de ${ pricing }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
-      "Upgrade to ${ planName }": [
-        "Melhorar para o plano ${ planName }"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -12156,6 +12130,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Comece por ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ],
+      "Upgrade to ${ planName }": [
+        "Melhorar para o plano ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12698,17 +12698,6 @@
         "Gestão de equipa"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -12819,6 +12808,17 @@
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -12862,19 +12862,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "O preço com desconto de ${ priceCoupon } é válido pelo primeiro mês. Após esse período, será automaticamente renovado por ${ priceMailPlus } . Pode cancelar a qualquer momento."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "O preço com desconto de ${ priceCoupon } é válido pelo primeiro mês. Após esse período, será automaticamente renovado por ${ priceLine } . Pode cancelar a qualquer momento."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceMailPlus }. Cancele a qualquer momento."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Desbloqueie todos os produtos e funcionalidades do ${ BRAND_NAME } premium para apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
     "new_plans: title": {
@@ -12895,6 +12887,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -17704,11 +17704,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -19714,14 +19714,6 @@
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problema com a carteira"
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } está disponível em acesso antecipado. Pode transferir a aplicação para iOS através do Apple TestFlight e a aplicação Android através do Google Open Testing."
-      ],
-      "Coming soon": [
-        "Em breve"
       ]
     },
     "wallet_signup_2024:Navigation": {

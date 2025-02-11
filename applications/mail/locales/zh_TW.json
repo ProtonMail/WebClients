@@ -7675,9 +7675,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "您的帳號已有超過一期以上的逾期繳款單，因此帳號功能將受限。若持續未繳清款項，則將封鎖您的電郵和共享連結。 ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "付款一結算完成，您的帳號將會升級。"
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "您的瀏覽器無法在本地運行寫作助手。嘗試在伺服器執行。"
       ],
@@ -9789,14 +9786,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
-      ]
-    },
-    "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceMailPlus } 月的價格自動續約。您可以於任何時候取消訂閱。"
-      ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "只要${ priceMailPlus }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
     "new_plans: title": {

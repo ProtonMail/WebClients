@@ -3274,8 +3274,8 @@
       "Theme": [
         "Motiv"
       ],
-      "This item will remain accessible until ${ remaining }": [
-        "Tato položka bude dostupná do ${ remaining }"
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Tato položka je přístupná do ${ date } nebo do dosažení limitu počtu zobrazení."
       ],
       "Title": [
         "Název"
@@ -4309,6 +4309,9 @@
       ],
       "Failed to load breaches.": [
         "Nelze načíst úniky informací."
+      ],
+      "Identity could not be confirmed": [
+        "Identitu nebylo možné potvrdit"
       ],
       "Invalid alias prefix": [
         "Nesprávná předpona aliasu"
