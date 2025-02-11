@@ -5390,9 +5390,6 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt. Bei anhaltender Nichtbezahlung werden deine E-Mails und Freigabelinks gesperrt. ${ payInvoiceLink }"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
-      ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Deine E-Mail-Adresse ist deaktiviert. Eine Absage-E-Mail kann nicht an die Teilnehmer des Termins gesendet werden. Möchtest du trotzdem alle Termine dieser Serie löschen?"
       ],
@@ -7136,11 +7133,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Der ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird es automatisch jeden Monat zum Preis von ${ priceLine } verlängert. Du kannst jederzeit kündigen."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceMailPlus } frei. Jederzeit kündbar."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Schalte alle Premium-Produkte und -Funktionen von ${ BRAND_NAME } für nur ${ priceLine } frei. Jederzeit kündbar."
       ]
     },
     "new_plans: title": {
@@ -10204,6 +10201,20 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Ende-zu-Ende-verschlüsselt mit verifiziertem Kontakt geteilt"
+      ]
+    },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ Gratisgeschenk"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Ein Geschenkcode für ${ discountPercentAbsolute }% Rabatt auf ${ planTitle } für 1 Jahr"
+      ],
+      "Valentine's deal": [
+        "Angebot zum Valentinstag"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Dein Gratisgeschenk zum Teilen, im Wert von ${ price } "
       ]
     },
     "Valentine_2025: Offer": {
