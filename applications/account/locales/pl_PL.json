@@ -589,6 +589,9 @@
       "Generate token": [
         "Generuj token"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Wybierz plan ${ planName } za ${ priceCoupon }"
+      ],
       "Get a new encrypted email address": [
         "Uzyskaj nowy szyfrowany adres e-mail"
       ],
@@ -868,10 +871,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reject": [
@@ -1679,6 +1682,17 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesięcy.",
+        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąca."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1700,17 +1714,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesięcy.",
-        "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąca."
       ]
     },
     "bf2023: Offers": {
@@ -1992,6 +1995,9 @@
       "Add link to your email footer": [
         "Dodaj link do stopki wiadomości"
       ],
+      "Close": [
+        "Zamknij"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
@@ -2007,6 +2013,12 @@
       "Create label": [
         "Utwórz etykietę"
       ],
+      "Discover and set up features": [
+        "Odkryj i skonfiguruj funkcje"
+      ],
+      "Got it": [
+        "Ok"
+      ],
       "Invite": [
         "Zaproś"
       ],
@@ -2017,7 +2029,7 @@
         "Dalej"
       ],
       "Remind me later": [
-        "Przypomnij mi później"
+        "Przypomnij później"
       ],
       "Send": [
         "Wyślij"
@@ -5207,7 +5219,7 @@
     },
     "Event invistation error": {
       "Unexpected error": [
-        "Niespodziewany błąd"
+        "Wystąpił nieoczekiwany błąd"
       ]
     },
     "Event invitation error": {
@@ -6329,6 +6341,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -6337,6 +6352,9 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -6765,6 +6783,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } z ${ total }"
+      ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }% zniżki"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } nie zachowa poprzednich wersji plików."
@@ -7447,11 +7468,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
@@ -7485,6 +7506,12 @@
       ],
       "Discount": [
         "Rabat"
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Poznaj nowe funkcje i zacznij z nich korzystać!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Poznaj nowe funkcje planu ${ planTitle } i zacznij z nich korzystać!"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -7607,7 +7634,7 @@
         "Włączono w dniu: ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
-        "Włącz automatyczne usuwanie..."
+        "Włączanie automatycznego usuwania…"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Włączenie odzyskiwania za pomocą hasła wygeneruje nowe hasło odzyskiwania."
@@ -8281,6 +8308,9 @@
         "lub przypisz do innego kraju za ${ availableAgainAfterHours } godzin",
         "lub przypisz do innego kraju za ${ availableAgainAfterHours } godziny"
       ],
+      "or discover other features:": [
+        "lub poznaj inne funkcje:"
+      ],
       "Or select a particular server:": [
         "Lub wybierz serwer:"
       ],
@@ -8525,7 +8555,7 @@
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Registering your subscription…": [
-        "Rejestrowanie subskrypcji..."
+        "Rejestrowanie subskrypcji…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
@@ -8615,7 +8645,7 @@
         "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
+        "Płatności SEPA nie są obecnie dostępne. Spróbuj ponownie później."
       ],
       "Server is currently down": [
         "Serwer jest obecnie wyłączony"
@@ -8634,6 +8664,9 @@
       ],
       "Setting successfully saved": [
         "Ustawienia zostały zapisane"
+      ],
+      "Setting up ${ feature }…": [
+        "Konfigurowanie ${ feature }…"
       ],
       "Setting up your new address…": [
         "Konfiguracja nowego adresu…"
@@ -9160,11 +9193,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "Username": [
-        "Nazwa użytkownika"
-      ],
       "username": [
         "nazwa użytkownika"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -9426,6 +9459,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Możesz to zmienić w ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Możesz sprawdzić postęp ${ importProgressLink }."
@@ -10613,6 +10649,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Wpisz hasło dla klucza z odciskiem: ${ fingerprintCode }"
       ],
+      "Enter your password": [
+        "Wpisz hasło"
+      ],
       "Entity ID": [
         "Identyfikator jednostki"
       ],
@@ -11105,6 +11144,9 @@
       "Strong": [
         "Silne"
       ],
+      "Strong password": [
+        "Silne hasło"
+      ],
       "Subscription options": [
         "Opcje subskrypcji"
       ],
@@ -11183,6 +11225,9 @@
       "VAT": [
         "podatku VAT"
       ],
+      "VAT identification number": [
+        "Numer VAT"
+      ],
       "Verification code": [
         "Kod weryfikacyjny"
       ],
@@ -11195,11 +11240,17 @@
       "Vulnerable": [
         "Bardzo słabe"
       ],
+      "Vulnerable password": [
+        "Słabe hasło"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Przykro nam, że odchodzisz. Wyjaśnij nam, dlaczego nas opuszczasz, aby pomóc ulepszać nasze usługi."
       ],
       "Weak": [
         "Słabe"
+      ],
+      "Weak password": [
+        "Słabe hasło"
       ],
       "Week start": [
         "Początek tygodnia"
@@ -11508,7 +11559,7 @@
         "Ustaw adres e-mail"
       ],
       "settings": [
-        "ustawienia"
+        "ustawieniach"
       ],
       "Sign in": [
         "Zaloguj się"
@@ -12118,6 +12169,32 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Od ${ priceCoupon }"
+      ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -12145,32 +12222,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ priceCoupon }": [
-        "Od ${ priceCoupon }"
-      ],
-      "Starting from ${ pricing }": [
-        "Od ${ pricing }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ planName }": [
-        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: feature": {
@@ -12639,6 +12690,9 @@
       "Tailored to your needs": [
         "Rozwiązania dopasowane do Twoich potrzeb"
       ],
+      "Tor over VPN": [
+        "Tor przez VPN"
+      ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
       ],
@@ -12757,6 +12811,17 @@
         "Zarządzanie zespołem"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -12867,17 +12932,6 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -12922,7 +12976,15 @@
     },
     "new_plans: Subtext": {
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
-        "Odblokuj wszystkie produkty i funkcje premium ${ BRAND_NAME } za jedyne ${ priceLine }. Anuluj w dowolnym momencie"
+        "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: title": {
@@ -12943,14 +13005,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -15021,6 +15075,9 @@
       "Recovery phone number": [
         "Numer pomocniczy"
       ],
+      "Review account safety": [
+        "Sprawdź bezpieczeństwo konta"
+      ],
       "Safeguard account now": [
         "Zabezpiecz konto"
       ],
@@ -16070,6 +16127,9 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Ulepsz do planu ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -16306,9 +16366,6 @@
       "Enter your backup password": [
         "Wpisz hasło zapasowe"
       ],
-      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Aby ten użytkownik mógł się zalogować, upewnij się, że istnieje on u twojego dostawcy tożsamości."
-      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Ze względów bezpieczeństwa zostaniesz wylogowany ze wszystkich aktywnych urządzeń. Przed uzyskaniem dostępu do konta konieczne będzie wpisanie nowego hasła zapasowego."
       ],
@@ -16399,9 +16456,6 @@
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
       ],
-      "The user ${ name } is now a single sign-on account.": [
-        "Użytkownik ${ name } jest teraz kontem z logowaniem SSO."
-      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Spowoduje to wylogowanie użytkownika z innych urządzeń i konieczność utworzenia nowego hasła zapasowego."
       ],
@@ -16425,6 +16479,9 @@
       ],
       "User details:": [
         "Szczegóły użytkownika:"
+      ],
+      "Welcome": [
+        "Witaj"
       ],
       "Yes, it was me": [
         "Tak, to ja"
@@ -17625,6 +17682,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asystent pisania ${ BRAND_NAME } Scribe"
       ],
+      "${ feature } is now active": [
+        "Funkcja ${ feature } jest aktywna"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -17826,10 +17886,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -18650,6 +18710,9 @@
       ],
       "Set organization name": [
         "Ustaw nazwę organizacji"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Skonfiguruj ${ protonDuoPlanName }"
       ],
       "Set up a recovery method": [
         "Ustaw metodę odzyskiwania"
@@ -19610,7 +19673,7 @@
     },
     "Valentine_2025": {
       "+ free gift": [
-        "+ darmowy prezent"
+        "+ prezent"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
         "Kod podarunkowy na ${ discountPercentAbsolute }% zniżki na ${ planTitle } na 1 rok"
@@ -19619,7 +19682,7 @@
         "Oferta na walentynki"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Twój darmowy prezent do udostępnienia, o wartości ${ price }﻿: "
+        "🎁 Twój prezent o wartości ${ price }, którym możesz się podzielić﻿: "
       ]
     },
     "Valentine_2025: offer": {
@@ -19656,7 +19719,7 @@
         "Zaawansowana ochrona konta"
       ],
       "All Mail, VPN, Pass, and Drive premium features": [
-        "Wszystkie funkcje premium Mail, VPN, Pass i Drive"
+        "Wszystkie funkcje premium Mail, VPN, Pass i Drive"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
@@ -19668,7 +19731,7 @@
         "Dwa razy więcej miłości za połowę ceny"
       ],
       "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Uzyskaj 1 rok ${ dealName } z rabatem ${ salePercentage }% — plus kod upominkowy, którym możesz podzielić się z przyjacielem"
+        "Uzyskaj 1 rok ${ dealName } z rabatem ${ salePercentage }% oraz kod upominkowy, którym możesz podzielić się z przyjacielem"
       ],
       "Get the deal": [
         "Skorzystaj z oferty"
@@ -19897,6 +19960,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adres ${ BRAND_NAME }",
+        "${ n } adresy ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } konto na portfel",
         "${ n } konta na portfel",
