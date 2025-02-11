@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { ErrorButton, Prompt, useApi, useModalState, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
@@ -142,7 +142,6 @@ export const getNotificationText = (
  */
 export const usePermanentDeleteSelection = (labelID: string) => {
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
     const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
     const optimisticDelete = useOptimisticDelete();
@@ -200,7 +199,8 @@ export const usePermanentDeleteSelection = (labelID: string) => {
         } finally {
             dispatch(backendActionFinished());
         }
-        await call();
+        // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+        // await call();
     };
 
     const deleteSelectionModal = (

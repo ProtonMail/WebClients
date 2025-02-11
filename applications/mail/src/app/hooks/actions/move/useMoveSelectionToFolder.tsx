@@ -46,7 +46,7 @@ interface MoveSelectionParams extends MoveParams {
  */
 export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
-    const { call, stop, start } = useEventManager();
+    const { stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
     const getFolders = useGetFolders();
@@ -147,7 +147,8 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     }
                 } finally {
                     start();
-                    await call();
+                    // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                    // await call();
                 }
             };
 
@@ -190,7 +191,8 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     dispatch(backendActionFinished());
                     if (!undoing) {
                         start();
-                        await call();
+                        // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                        // await call();
                     }
                 }
                 return tokens;

@@ -106,7 +106,7 @@ export class ApplyLabelsError extends Error {
  */
 export const useApplyLabelsToSelection = () => {
     const api = useApi();
-    const { call, stop, start } = useEventManager();
+    const { stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
@@ -156,7 +156,9 @@ export const useApplyLabelsToSelection = () => {
                         ]);
                     }
                 } finally {
-                    await call();
+                    start();
+                    // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                    // await call();
                 }
             };
 
@@ -214,7 +216,8 @@ export const useApplyLabelsToSelection = () => {
                     dispatch(backendActionFinished());
                     if (!undoing) {
                         start();
-                        await call();
+                        // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                        // await call();
                     }
                 }
                 return tokens;
