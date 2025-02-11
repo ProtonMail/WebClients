@@ -14,7 +14,6 @@ import { paymentMethodsByProviderReducer } from './paymentMethodByProvider';
 import { priceGraphDataReducer } from './priceGraphData';
 import { quotesByProviderReducer } from './quotesByProvider';
 import { remainingInvitesReducer } from './remainingInvites';
-import { userEligibilityReducer } from './userEligibility';
 import { userWalletSettingsReducer } from './userWalletSettings';
 import { walletSettingsReducer } from './walletSettings';
 
@@ -32,7 +31,6 @@ export * from './paymentMethodByProvider';
 export * from './priceGraphData';
 export * from './quotesByProvider';
 export * from './remainingInvites';
-export * from './userEligibility';
 export * from './userWalletSettings';
 export * from './walletSettings';
 export * from './hideAmounts';
@@ -49,7 +47,6 @@ export const walletReducers = {
     ...countriesByProviderReducer,
     ...paymentMethodsByProviderReducer,
     ...quotesByProviderReducer,
-    ...userEligibilityReducer,
     ...remainingInvitesReducer,
     ...priceGraphDataReducer,
     ...apiWalletsDataReducer,
