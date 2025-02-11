@@ -1230,6 +1230,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Chiudi"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
       ],
@@ -3555,6 +3558,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
       ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }% di sconto"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: immagine a grandezza naturale"
       ],
@@ -5328,9 +5334,6 @@
       ],
       "Your account was successfully updated with this promotion": [
         "Il tuo account è stato aggiornato con questa promozione"
-      ],
-      "Your account will be updated once the payment is cleared.": [
-        "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
       ],
       "Your email will only be used for this one-time verification.": [
         "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
@@ -7185,11 +7188,11 @@
       ]
     },
     "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceLine }. Puoi annullare in qualsiasi momento."
       ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceMailPlus }. Cancellazione in qualsiasi momento."
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
     "new_plans: Title": {
@@ -11396,6 +11399,20 @@
       ],
       "Writing assistant": [
         "Assistente alla scrittura"
+      ]
+    },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ regalo gratuito"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Un codice regalo per ${ discountPercentAbsolute }% di sconto su ${ planTitle } per 1 anno"
+      ],
+      "Valentine's deal": [
+        "Offerta di San Valentino"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Il tuo regalo gratuito da condividere, del valore di ${ price }﻿: "
       ]
     },
     "Valentine_2025: Offer": {

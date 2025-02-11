@@ -5333,9 +5333,6 @@
       "Your account was successfully updated with this promotion": [
         "Ваш аккаунт был успешно обновлен с помощью этой акции"
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ваш аккаунт будет обновлен, когда платеж будет проверен."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
@@ -7190,14 +7187,6 @@
       ],
       "terms and conditions": [
         "условия"
-      ]
-    },
-    "new_plans: Subtext": {
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Скидка ${ priceCoupon } действует в течение первого месяца. Затем она будет автоматически продлена до ${ priceMailPlus }. Вы можете отменить подписку в любое время."
-      ],
-      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
-        "Разблокируйте все премиум продукты и функции ${ BRAND_NAME } только за ${ priceMailPlus }. Отменить можно в любое время."
       ]
     },
     "new_plans: Title": {
@@ -11410,6 +11399,20 @@
       ],
       "Writing assistant": [
         "Помощник по написанию"
+      ]
+    },
+    "Valentine_2025": {
+      "+ free gift": [
+        "+ бесплатный подарок"
+      ],
+      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
+        "Подарочный код, предоставляющий скидку ${ discountPercentAbsolute }% на ${ planTitle } на 1 год"
+      ],
+      "Valentine's deal": [
+        "Предложение ко Дню влюблённых"
+      ],
+      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
+        "🎁 Ваш бесплатный подарок, которым можно поделиться, стоимостью ${ price } "
       ]
     },
     "Valentine_2025: Offer": {
