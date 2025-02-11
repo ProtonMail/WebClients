@@ -1074,6 +1074,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -1082,6 +1085,9 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -1146,7 +1152,7 @@
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
-        "Aby usunąć ograniczenia, można przejść na płatny plan."
+        "Ulepsz do płatnego planu, aby usunąć ograniczenia."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
