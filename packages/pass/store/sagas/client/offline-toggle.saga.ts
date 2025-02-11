@@ -1,6 +1,6 @@
 import { put, select, takeLeading } from 'redux-saga/effects';
-import { c } from 'ttag';
 
+import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
 import { type OfflineComponents, getOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { offlineToggle } from '@proton/pass/store/actions';
@@ -21,12 +21,7 @@ function* offlineToggleWorker(
         if (!isPaidPlan(plan)) throw new Error();
 
         const verified: boolean = yield auth.confirmPassword(payload.loginPassword);
-        if (!verified) {
-            const message = authStore.getExtraPassword()
-                ? c('Error').t`Wrong extra password`
-                : c('Error').t`Wrong password`;
-            throw new Error(message);
-        }
+        if (!verified) throw new Error(getInvalidPasswordString(authStore));
 
         /** If the user does not have offline components setup on
          * the authentication store, generate the `offlineConfig`
