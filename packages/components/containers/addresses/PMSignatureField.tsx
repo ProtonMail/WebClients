@@ -7,10 +7,11 @@ import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsell
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -32,9 +33,9 @@ const upsellRef = getUpsellRef({
 });
 
 const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const { state, toggle } = useToggle(!!mailSettings.PMSignature);
     const [user] = useUser();
@@ -44,8 +45,8 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const handleChange = async (checked: number) => {
-        await api(updatePMSignature(checked));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePMSignature(checked));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         toggle();
         createNotification({ text: c('Success').t`Preference saved` });
     };

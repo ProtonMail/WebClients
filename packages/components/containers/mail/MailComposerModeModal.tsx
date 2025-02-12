@@ -7,11 +7,13 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
@@ -21,7 +23,7 @@ import './ModalSettingsLayoutCards.scss';
 
 const MailComposerModeModal = (props: ModalProps) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [{ ComposerMode } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -30,8 +32,8 @@ const MailComposerModeModal = (props: ModalProps) => {
     const { onClose } = props;
 
     const handleChangeComposerMode = async (mode: COMPOSER_MODE) => {
-        await api(updateComposerMode(mode));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateComposerMode(mode));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 

@@ -2,12 +2,14 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateDisplayUnreadFavicon } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 interface Props {
     id?: string;
@@ -16,16 +18,15 @@ interface Props {
 
 export const UnreadFaviconCounterToggle = ({ id, className }: Props) => {
     const [mailSettings] = useMailSettings();
-    const { call } = useEventManager();
     const api = useApi();
-
+    const dispatch = useDispatch();
     const { state, toggle } = useToggle(!!mailSettings?.UnreadFavicon);
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
     const handleChange = async (checked: boolean) => {
-        await api(updateDisplayUnreadFavicon(+checked));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateDisplayUnreadFavicon(+checked));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         toggle();
         createNotification({ text: c('Success').t`Preference saved` });
     };

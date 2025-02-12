@@ -1,14 +1,14 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';
-import { mockUseEventManager } from '@proton/testing/lib/mockUseEventManager';
 import { mockUseHistory } from '@proton/testing/lib/mockUseHistory';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import { mockUseEncryptedSearchContext } from 'proton-mail/helpers/test/mockUseEncryptedSearchContext';
+import { render } from 'proton-mail/helpers/test/render';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import ListBanners from './ListBanners';
@@ -41,10 +41,9 @@ describe('ListBanners', () => {
         useMailSelectorMock.mockReturnValue(false);
     });
 
-    it('should display no banner', () => {
-        const { container } = render(<ListBanners {...baseProps} />);
-
-        expect(container).toBeEmptyDOMElement();
+    it('should display no banner', async () => {
+        await render(<ListBanners {...baseProps} />);
+        expect(screen.queryByText(/\w/)).not.toBeInTheDocument();
     });
 
     describe('when showESSlowToolbar is true', () => {
@@ -59,7 +58,7 @@ describe('ListBanners', () => {
         });
 
         it('should display es slow banner', async () => {
-            render(
+            await render(
                 <ListBanners
                     {...baseProps}
                     esState={{
@@ -95,7 +94,7 @@ describe('ListBanners', () => {
         });
 
         it('should display almost all mail banner', async () => {
-            render(
+            await render(
                 <ListBanners
                     {...baseProps}
                     labelID={MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL}
@@ -124,8 +123,8 @@ describe('ListBanners', () => {
             jest.spyOn(global.Math, 'random').mockReturnValue(0.349);
         });
 
-        it('should render upsell banner', () => {
-            render(<ListBanners {...baseProps} />);
+        it('should render upsell banner', async () => {
+            await render(<ListBanners {...baseProps} />);
 
             expect(screen.getByText(/Use keyboard shortcuts to manage your email faster./i)).toBeInTheDocument();
             expect(screen.getByText(/Learn more/i)).toBeInTheDocument();
@@ -135,20 +134,22 @@ describe('ListBanners', () => {
     describe('when canDisplayTaskRunningBanner is true', () => {
         it('should display task running banner', async () => {
             useMailSelectorMock.mockReturnValue(true);
-            render(<ListBanners {...baseProps} canDisplayTaskRunningBanner={true} />);
+            await render(<ListBanners {...baseProps} canDisplayTaskRunningBanner={true} />);
             expect(screen.getByText(/Message actions in progress. This may take a while./i)).toBeInTheDocument();
         });
     });
 
     describe('when condition for auto delete is true', () => {
+        let mockedApi: jest.Mock;
+
         beforeEach(() => {
-            mockUseApi();
-            mockUseEventManager();
+            mockedApi = jest.fn();
+            mockUseApi(mockedApi);
             mockUseAutoDeleteBanner('paid-banner');
         });
 
-        it('should display auto delete banner', () => {
-            render(<ListBanners {...baseProps} labelID={MAILBOX_LABEL_IDS.TRASH} />);
+        it('should display auto delete banner', async () => {
+            await render(<ListBanners {...baseProps} labelID={MAILBOX_LABEL_IDS.TRASH} />);
             expect(
                 screen.getByText(
                     /Automatically delete messages that have been in trash and spam for more than 30 days./i

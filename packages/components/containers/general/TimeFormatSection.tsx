@@ -1,17 +1,18 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateTimeFormat } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import { SETTINGS_TIME_FORMAT, type UserSettings } from '@proton/shared/lib/interfaces';
 import { getDefaultTimeFormat } from '@proton/shared/lib/settings/helper';
 
 import SettingsLayout from '../account/SettingsLayout';
@@ -22,14 +23,14 @@ import { getAutomaticText } from './helper';
 const TimeSection = () => {
     const api = useApi();
     const [userSettings] = useUserSettings();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
     const handleTimeFormat = async (value: SETTINGS_TIME_FORMAT) => {
         await loadDateLocale(dateLocaleCode, getBrowserLocale(), { ...userSettings, TimeFormat: value });
-        await api(updateTimeFormat(value));
-        await call();
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(updateTimeFormat(value));
+        dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 

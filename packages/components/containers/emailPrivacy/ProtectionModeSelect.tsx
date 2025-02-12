@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import Select from '@proton/components/components/select/Select';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateImageProxy } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {
@@ -21,7 +23,7 @@ const ProtectionModeSelect = ({ id, defaultProtectionMode, ...rest }: Props) => 
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     const options = [
         { text: c('Option protection mode').t`Load content via proxy (recommended)`, value: IMAGE_PROXY_FLAGS.PROXY },
@@ -32,12 +34,18 @@ const ProtectionModeSelect = ({ id, defaultProtectionMode, ...rest }: Props) => 
     ];
 
     const handleChange = async (protectionMode: number) => {
+        let response: { MailSettings: MailSettings };
+
         if (protectionMode === IMAGE_PROXY_FLAGS.PROXY) {
-            await api(updateImageProxy(IMAGE_PROXY_FLAGS.INCORPORATOR, 'remove'));
+            response = await api<{ MailSettings: MailSettings }>(
+                updateImageProxy(IMAGE_PROXY_FLAGS.INCORPORATOR, 'remove')
+            );
         } else {
-            await api(updateImageProxy(IMAGE_PROXY_FLAGS.INCORPORATOR, 'add'));
+            response = await api<{ MailSettings: MailSettings }>(
+                updateImageProxy(IMAGE_PROXY_FLAGS.INCORPORATOR, 'add')
+            );
         }
-        await call();
+        dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
         setProtectionMode(protectionMode);
         createNotification({ text: c('Success').t`Preference saved` });
     };

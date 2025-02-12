@@ -9,10 +9,12 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import AutoDeleteSpamAndTrashDaysToggle from './AutoDeleteSpamAndTrashDaysToggle';
@@ -26,14 +28,14 @@ const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISA
     const api = useApi();
     const { feature: autoDeleteFeature } = useFeature(FeatureCode.AutoDelete);
     const [{ hasPaidMail }, userLoading] = useUser();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     const [loadingAutoDelete, withLoadingAutoDelete] = useLoading();
     const [upsellModalProps, toggleUpsellModal, renderUpsellModal] = useModalState();
 
     const handleChangeAutoDelete = async (autoDelete: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
-        await api(updateAutoDelete(autoDelete));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateAutoDelete(autoDelete));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         onSaved();
     };
 

@@ -4,11 +4,13 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updatePageSize } from '@proton/shared/lib/api/mailSettings';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {
@@ -25,15 +27,15 @@ const PAGE_SIZE_OPTIONS = [
 
 export const PageSizeSelector = ({ id, size, loading }: Props) => {
     const [mailSettings] = useMailSettings();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const api = useApi();
 
     const { createNotification } = useNotifications();
 
     const handleChange = async (value: MAIL_PAGE_SIZE) => {
         try {
-            await api(updatePageSize(value));
-            await call();
+            const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePageSize(value));
+            dispatch(mailSettingsActions.updateMailSettings(MailSettings));
             createNotification({ text: c('Success').t`Preference saved` });
         } catch (err) {
             createNotification({
