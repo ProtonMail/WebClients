@@ -6,7 +6,12 @@ import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { disable2FA } from '@proton/shared/lib/api/settings';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api, Member } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getIsPasswordless, getMemberKeys } from '@proton/shared/lib/keys';
+import {
+    generateKeySaltAndPassphrase,
+    getIsMemberInManualApproveState,
+    getIsPasswordless,
+    getMemberKeys,
+} from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -14,11 +19,12 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import { addressesThunk } from '../addresses';
 import { type MembersState, getMemberAddresses, upsertMember } from '../members';
 import { getMember } from '../members/getMember';
+import { unprivatizeApprovalMembers } from '../members/unprivatizeMembers';
 import { type OrganizationState, organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
 
 export const changeMemberPassword = ({
-    member,
+    member: initialMember,
     memberUID,
     password,
     api,
@@ -34,12 +40,22 @@ export const changeMemberPassword = ({
     UnknownAction
 > => {
     return async (dispatch) => {
+        let member = initialMember;
+
         const [organizationKey, organization, addresses, memberAddresses] = await Promise.all([
             dispatch(organizationKeyThunk()),
             dispatch(organizationThunk()),
             dispatch(addressesThunk()),
             dispatch(getMemberAddresses({ member, retry: true })),
         ]);
+
+        // If the member needs to get unprivatized, let's do it first
+        if (getIsMemberInManualApproveState(member)) {
+            const [updatedMember] = await dispatch(unprivatizeApprovalMembers({ membersToUnprivatize: [member] }));
+            if (updatedMember) {
+                member = updatedMember;
+            }
+        }
 
         const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey, addresses);
         const error = validateOrganizationKey(organizationKeyInfo);
