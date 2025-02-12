@@ -4,9 +4,11 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Banner, Button, Href, InlineLinkButton } from '@proton/atoms';
-import { Icon, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { Icon, useApi, useModalState, useNotifications } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -121,7 +123,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     const [addresses] = useAddresses();
     const [loadingDisablePromptPin, withLoadingDisablePromptPin] = useLoading();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const contactsMap = useContactsMap();
 
     const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen, renderTrustPublicKeyModal] = useModalState();
@@ -174,8 +176,8 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     }
 
     const handleDisablePromptPin = async () => {
-        await api(updatePromptPin(PROMPT_PIN.DISABLED));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePromptPin(PROMPT_PIN.DISABLED));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Success').t`Address verification disabled` });
     };
     const handleTrustKey = () => {

@@ -2,12 +2,14 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateShortcuts } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {
@@ -16,7 +18,7 @@ interface Props {
 }
 
 const ShortcutsToggle = ({ id, className, ...rest }: Props) => {
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [{ Shortcuts } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -24,8 +26,8 @@ const ShortcutsToggle = ({ id, className, ...rest }: Props) => {
     const { state, toggle } = useToggle(!!Shortcuts);
 
     const handleChange = async (value: number) => {
-        await api(updateShortcuts(value));
-        call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateShortcuts(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         toggle();
         createNotification({ text: c('Success').t`Keyboard shortcuts preferences updated` });
     };

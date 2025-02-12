@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
-import { Icon, useApi, useEventManager, useNotifications, useSpotlightOnFeature } from '@proton/components';
+import { Icon, useApi, useNotifications, useSpotlightOnFeature } from '@proton/components';
 import useAssistantSubscriptionStatus, {
     ASSISTANT_TRIAL_TIME_DAYS,
 } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
@@ -12,10 +13,11 @@ import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssista
 import { FeatureCode } from '@proton/features';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces';
 import desktopImg from '@proton/styles/assets/img/illustrations/desktop-screen.svg';
 import serverImg from '@proton/styles/assets/img/illustrations/servers.svg';
 import clsx from '@proton/utils/clsx';
@@ -33,7 +35,7 @@ interface Props {
 
 const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal, onToggleAssistant }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const [{ AIAssistantFlags }] = useUserSettings();
     const { trialStatus } = useAssistantSubscriptionStatus();
@@ -56,8 +58,8 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
 
         const updateSetting = async () => {
             if (AIAssistantFlags !== inputValue) {
-                await api(updateAIAssistant(inputValue));
-                await call();
+                const { UserSettings } = await api<{ UserSettings: UserSettings }>(updateAIAssistant(inputValue));
+                dispatch(userSettingsActions.set({ UserSettings }));
             }
         };
         const closeModal = async () => {

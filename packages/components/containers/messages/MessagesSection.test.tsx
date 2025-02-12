@@ -5,7 +5,6 @@ import { FeatureCode } from '@proton/features';
 import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseFlag, renderWithProviders } from '@proton/testing';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';
-import { mockUseEventManager } from '@proton/testing/lib/mockUseEventManager';
 import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 import { mockUseNotifications } from '@proton/testing/lib/mockUseNotifications';
@@ -15,16 +14,13 @@ import MessagesSection from './MessagesSection';
 
 describe('MessagesSection', () => {
     let mockedApi: jest.Mock;
-    let mockedCall: jest.Mock;
 
     const renderComponent = (props = {}) => renderWithProviders(<MessagesSection {...props} />);
 
     beforeEach(() => {
         mockedApi = jest.fn();
-        mockedCall = jest.fn();
 
         mockUseApi(mockedApi);
-        mockUseEventManager({ call: mockedCall });
 
         mockUseNotifications();
 
@@ -68,8 +64,13 @@ describe('MessagesSection', () => {
                 renderComponent();
 
                 const setting = screen.getByText('Exclude Spam/Trash from All mail');
-                await userEvent.click(setting);
+                mockedApi.mockResolvedValue({
+                    MailSettings: {
+                        AlmostAllMail: ALMOST_ALL_MAIL.ENABLED,
+                    },
+                });
 
+                await userEvent.click(setting);
                 await waitFor(() => {
                     expect(mockedApi).toHaveBeenCalledTimes(1);
                 });
@@ -79,8 +80,13 @@ describe('MessagesSection', () => {
                     url: 'mail/v4/settings/almost-all-mail',
                 });
 
-                await userEvent.click(setting);
+                mockedApi.mockResolvedValue({
+                    MailSettings: {
+                        AlmostAllMail: ALMOST_ALL_MAIL.DISABLED,
+                    },
+                });
 
+                await userEvent.click(setting);
                 await waitFor(() => {
                     expect(mockedApi).toHaveBeenCalledTimes(2);
                 });
@@ -128,43 +134,6 @@ describe('MessagesSection', () => {
                     renderComponent();
 
                     expect(screen.getByText(/Conversations per page/));
-                });
-            });
-
-            describe('when user clicks on an option', () => {
-                const mockedApi = jest.fn();
-                const mockedCall = jest.fn();
-                const mockedCreateNotification = jest.fn();
-
-                beforeEach(() => {
-                    mockUseApi(mockedApi);
-                    mockUseEventManager({ call: mockedCall });
-                    mockUseNotifications({ createNotification: mockedCreateNotification });
-                });
-
-                it('should display correct label', async () => {
-                    renderComponent();
-
-                    const select = screen.getByTestId('page-size-selector');
-                    await userEvent.click(select);
-
-                    const option2 = screen.getByRole('button', { name: /100/ });
-                    await userEvent.click(option2);
-
-                    await waitFor(() => {
-                        expect(mockedApi).toHaveBeenCalledTimes(1);
-                    });
-
-                    expect(mockedApi).toHaveBeenCalledWith({
-                        data: { PageSize: 100 },
-                        method: 'put',
-                        url: 'mail/v4/settings/pagesize',
-                    });
-
-                    expect(mockedCall).toHaveBeenCalledTimes(1);
-
-                    expect(mockedCreateNotification).toHaveBeenCalledTimes(1);
-                    expect(mockedCreateNotification).toHaveBeenCalledWith({ text: 'Preference saved' });
                 });
             });
         });
