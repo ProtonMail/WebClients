@@ -25,19 +25,46 @@ import GenericError from '../error/GenericError';
 import SubSettingsSection from '../layout/SubSettingsSection';
 import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm';
 
-const getPolicies = (): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
+type GetPoliciesProps = {
+    showVaultCreation: boolean;
+    showItemSharing: boolean;
+};
+const getPolicies = ({
+    showVaultCreation = false,
+    showItemSharing = false,
+}: GetPoliciesProps): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
     {
         setting: 'ShareMode',
         label: c('Label').t`Disable sharing outside the organization`,
         tooltip: c('Info')
-            .t`If this option is turned on, organization members will only be able to share vaults within the organization`,
+            .t`If this option is turned on, organization members will only be able to share vaults or items within the organization`,
     },
+    ...(showItemSharing
+        ? [
+              {
+                  setting: 'ItemShareMode',
+                  label: c('Label').t`Enable individual item sharing`,
+                  tooltip: c('Info')
+                      .t`If this option is turned on, organization members will be able to share individual items in addition to vaults.`,
+              } as const,
+          ]
+        : []),
     {
         setting: 'ExportMode',
         label: c('Label').t`Disable data export for organization members`,
         tooltip: c('Info')
             .t`By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data`,
     },
+    ...(showVaultCreation
+        ? [
+              {
+                  setting: 'VaultCreateMode',
+                  label: c('Label').t`Restrict vault creation to administrators only`,
+                  tooltip: c('Info')
+                      .t`If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items`,
+              } as const,
+          ]
+        : []),
 ];
 
 const PassPolicies = () => {
@@ -46,9 +73,12 @@ const PassPolicies = () => {
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
 
-    const policies = getPolicies();
     const showPasswordGenerator = useFlag('PassB2BPasswordGenerator');
+    const showVaultCreation = useFlag('PassB2BVaultCreation');
+    const showItemSharing = useFlag('PassB2BItemSharing');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
+
+    const policies = getPolicies({ showVaultCreation, showItemSharing });
 
     const touched = useRef<keyof OrganizationSettings>();
     const didLoad = useRef(false);
