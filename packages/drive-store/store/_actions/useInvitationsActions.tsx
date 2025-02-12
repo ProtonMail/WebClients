@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components/index';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -47,12 +48,14 @@ export const useInvitationsActions = () => {
                 }
             })
             .catch((error) => {
-                sendErrorReport(error);
-                createNotification({
-                    type: 'error',
-                    text: error.message,
-                });
                 invitationsState.setInvitations([{ ...invitation, isLocked: false }]);
+                // Skip sending error if it's expected error
+                if (
+                    error?.data?.Code === API_CUSTOM_ERROR_CODES.ALREADY_MEMBER_OF_SHARE_IN_VOLUME_WITH_ANOTHER_ADDRESS
+                ) {
+                    return;
+                }
+                sendErrorReport(error);
                 throw error;
             });
 
