@@ -46,11 +46,9 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
         }
     }, [album, onRender, onRenderLoadedLink]);
 
-    const thumbUrl = isCoverDecrypted
-        ? album.cover?.cachedThumbnailUrl
-        : isDecrypted
-          ? album.cachedThumbnailUrl
-          : undefined;
+    const thumbUrl =
+        (isCoverDecrypted && album.cover?.cachedThumbnailUrl) || (isDecrypted && album.cachedThumbnailUrl) || undefined;
+
     const isThumbnailLoading =
         !isDecrypted || (album.hasThumbnail && !imageReady) || (album.cover?.hasThumbnail && !imageReady);
     const isLoaded = !isThumbnailLoading && isDecrypted && isCoverDecrypted;
