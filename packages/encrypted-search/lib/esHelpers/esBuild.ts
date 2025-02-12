@@ -1,6 +1,7 @@
 import type { IDBPDatabase } from 'idb';
 
 import { CryptoProxy } from '@proton/crypto';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -322,13 +323,26 @@ export const buildContentDB = async <ESItemContent>(
         }
 
         try {
-            const itemToStore = await fetchESItemContent(ID, abortIndexingRef.current.signal);
-            if (!itemToStore) {
+            const result = await fetchESItemContent(ID, abortIndexingRef.current.signal);
+            if (!result) {
                 esSentryReport('Item fetch failed', { ID, timepoint });
                 throw new Error('Item fetching failed');
             }
 
-            if (isObjectEmpty(itemToStore)) {
+            const { content: itemToStore, error } = result;
+            if (error) {
+                // Check if this is a NOT_FOUND (2501) error, which is expected when messages are deleted/inaccessible
+                if (error.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+                    // Just skip it without reporting to Sentry since this is expected
+                    recordProgress(++counter);
+                    return { ID, timepoint };
+                }
+                // Other errors should still be reported
+                esSentryReport('Item fetch failed', { ID, timepoint, error });
+                throw error;
+            }
+
+            if (!itemToStore || isObjectEmpty(itemToStore)) {
                 esSentryReport('Empty item fetched', { ID, timepoint });
                 // If decryption fails, we want to anyway count the item
                 recordProgress(++counter);
