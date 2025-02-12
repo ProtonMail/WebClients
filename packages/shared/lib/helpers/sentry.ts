@@ -321,6 +321,7 @@ export enum SentryMailInitiatives {
 
 export enum SentryCommonInitiatives {
     POST_SUBSCRIPTION = 'post-subscription',
+    ENCRYPTED_SEARCH = 'encrypted-search',
 }
 
 export type SentryInitiative = `${SentryMailInitiatives}` | `${SentryCommonInitiatives}`;
