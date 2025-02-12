@@ -117,7 +117,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     </>
                 )}
 
-                {disabled && (
+                {orgExportDisabled && (
                     <Card className="mb-4 p-1 text-sm" type="primary">
                         <div>{c('Info').t`This setting is disabled on the organization level`}</div>
                     </Card>
