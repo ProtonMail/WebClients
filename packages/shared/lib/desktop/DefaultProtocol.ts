@@ -21,6 +21,7 @@ export const UNCHECKED_PROTOCOL: DefaultProtocolActual = {
 const zDefaultProtocolStored = z.object({
     shouldBeDefault: z.boolean(),
     wasDefaultInPast: z.boolean(),
+    canUpdateDefault: z.boolean().optional(),
     lastReport: z.object({
         wasDefault: z.boolean(),
         timestamp: zUnixTime,
