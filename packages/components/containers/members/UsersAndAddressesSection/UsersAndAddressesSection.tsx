@@ -66,7 +66,8 @@ import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfa
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import {
     MemberUnprivatizationMode,
-    getIsMemberInactive,
+    getIsMemberDisabled,
+    getIsMemberInvited,
     getMemberUnprivatizationMode,
 } from '@proton/shared/lib/keys/memberHelper';
 import {
@@ -609,10 +610,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         const hasPendingMagicLinkInvite = hasMagicLinkLayout && unprivatization.pending;
                         const canResendMagicLink = hasPendingMagicLinkInvite;
 
-                        const hasPendingFamilyInvitation = member.State === MEMBER_STATE.STATUS_INVITED;
-                        const isInactive = getIsMemberInactive(member);
+                        const hasPendingFamilyInvitation = getIsMemberInvited(member);
+                        const isDisabled = getIsMemberDisabled(member);
 
-                        const hasDisabledLayout = hasPendingMagicLinkInvite || isInactive;
+                        const hasDisabledLayout = hasPendingMagicLinkInvite || isDisabled;
                         const hasFeaturesColumn = !hasPendingMagicLinkInvite;
 
                         const memberPermissions = getMemberPermissions({
@@ -718,7 +719,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     {c('Users table: badge').t`SSO`}
                                                                 </UserTableBadge>
                                                             )}
-                                                            {isInactive && (
+                                                            {isDisabled && (
                                                                 <UserTableBadge type="weak">
                                                                     {c('Users table: badge').t`Inactive`}
                                                                 </UserTableBadge>
