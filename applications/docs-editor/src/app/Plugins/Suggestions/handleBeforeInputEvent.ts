@@ -151,9 +151,11 @@ function $handleDeleteInput(
     const previousSibling = currentBlock?.getPreviousSibling()
     if ($isDecoratorNode(previousSibling)) {
       logger.info('Previous sibling is decorator node')
-      const key = previousSibling.getKey()
-      selection.anchor.set(key, 0, 'element')
-      selection.focus.set(key, 0, 'element')
+      const parent = previousSibling.getParentOrThrow()
+      const key = parent.getKey()
+      const index = previousSibling.getIndexWithinParent()
+      selection.anchor.set(key, index, 'element')
+      selection.focus.set(key, index, 'element')
       didModifySelection = true
     }
 
