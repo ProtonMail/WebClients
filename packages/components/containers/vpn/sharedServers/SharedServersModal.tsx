@@ -27,7 +27,7 @@ import { MINUTE } from '@proton/shared/lib/constants';
 import ApplyPolicyButton from './ApplyPolicyButton';
 import type { CreateLocationFilterPayload, FilterPolicyRequest } from './api';
 import { createLocationFilter } from './api';
-import type { SharedServerUser } from './useSharedServers';
+import type { SharedServerUser, VpnLocationFilterPolicy } from './useSharedServers';
 import { useSharedServers } from './useSharedServers';
 
 enum STEP {
@@ -36,7 +36,11 @@ enum STEP {
     COUNTRIES,
 }
 
-const SharedServersModal = ({ ...rest }: ModalProps) => {
+interface Props extends ModalProps<typeof Form> {
+    policy?: VpnLocationFilterPolicy;
+}
+
+const SharedServersModal = ({ policy, ...rest }: Props) => {
     const { locations, policies, users } = useSharedServers(10 * MINUTE);
     const api = useApi();
     const [step, setStep] = useState(STEP.NAME);
