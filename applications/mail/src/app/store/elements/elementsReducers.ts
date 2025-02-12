@@ -231,6 +231,7 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
 };
 
 export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAction<OptimisticUpdates>) => {
+    // TODO update total
     action.payload.elements.forEach((element) => {
         if (element.ID) {
             state.elements[element.ID] = element;
@@ -279,6 +280,7 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
     action.payload.elementIDs.forEach((elementID) => {
         delete state.elements[elementID];
     });
+    // TODO update total
 };
 
 export const optimisticEmptyLabel = (state: Draft<ElementsState>) => {

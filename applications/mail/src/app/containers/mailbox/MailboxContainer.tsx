@@ -168,6 +168,7 @@ const MailboxContainer = ({
         filter,
         search: searchParameters,
         onPage: handlePage,
+        mailSettings,
     };
 
     const { labelID, elements, elementIDs, loading, placeholderCount, total } = useElements(elementsParams);
