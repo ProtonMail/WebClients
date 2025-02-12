@@ -1,14 +1,7 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useEffect } from 'react'
 import type { ElementNode, LexicalNode } from 'lexical'
-import {
-  $createParagraphNode,
-  $getSelection,
-  $isParagraphNode,
-  $isRangeSelection,
-  COMMAND_PRIORITY_EDITOR,
-  createCommand,
-} from 'lexical'
+import { $createParagraphNode, $getSelection, $isParagraphNode, COMMAND_PRIORITY_EDITOR, createCommand } from 'lexical'
 import { $setBlocksType } from '@lexical/selection'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode, $isQuoteNode } from '@lexical/rich-text'
 import { $createCodeNode, $isCodeNode } from '@lexical/code'
@@ -16,7 +9,6 @@ import type { ListType } from '@lexical/list'
 import { $createListNode, $isListItemNode, $isListNode } from '@lexical/list'
 import { $findMatchingParent } from '@lexical/utils'
 import { $isNonInlineLeafElement } from '../Utils/isNonInlineLeafElement'
-import { $isEmptyListItemExceptForSuggestions } from './Suggestions/Utils'
 
 export type BlockType = 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'code' | 'quote' | ListType
 
@@ -88,23 +80,6 @@ export function BlockTypePlugin() {
       function handleSetBlockType(blockType) {
         const selection = $getSelection()
         const createElement = blockTypeToCreateElementFn[blockType]
-        /**
-         * Currently there is an issue in Lexical where setting block type on an
-         * empty list item doesn't correctly move the selection, so we handle that
-         * ourselves and make sure the selection is moved correctly.
-         */
-        if ($isRangeSelection(selection) && selection.isCollapsed()) {
-          const anchor = selection.anchor.getNode()
-          const listItem = $isEmptyListItemExceptForSuggestions(anchor)
-          if (listItem) {
-            const targetElement = createElement()
-            targetElement.setFormat(listItem.getFormatType())
-            targetElement.setIndent(listItem.getIndent())
-            listItem.replace(targetElement, true)
-            targetElement.selectEnd()
-            return true
-          }
-        }
         $setBlocksType(selection, createElement)
         return true
       },
