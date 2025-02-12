@@ -18,12 +18,10 @@ import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../store';
-import { PhotoTag, isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { isDecryptedLink, useThumbnailsDownload } from '../../store';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
-import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
-import { PhotosTags, type PhotosTagsProps } from './components/Tags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsAlbumsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
@@ -62,6 +60,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         albumPhotosLinkIdToIndexMap,
         albumPhotosLinkIds,
         isAlbumsLoading,
+        isAlbumPhotosLoading,
     } = usePhotosWithAlbumsView();
 
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
@@ -77,8 +76,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
     const { navigateToAlbums } = useNavigate();
-    // TODO: Move tag selection to specific hook
-    const [selectedTag, setSelectedTag] = useState<PhotosTagsProps['selectedTag']>([PhotoTag.All]);
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -143,7 +140,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }
     }, [album, updateTitle]);
 
-    if (!shareId || !linkId || !album || isAlbumsLoading) {
+    if (!shareId || !linkId || !album || isAlbumsLoading || isAlbumPhotosLoading) {
         return <Loader />;
     }
 
@@ -198,7 +195,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     onExit={() => setPreviewLinkId(undefined)}
                 />
             )}
-            <PhotosRecoveryBanner />
             <UploadDragDrop
                 disabled={isUploadDisabled}
                 isForPhotos={true}
@@ -252,32 +248,8 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     }
                 />
 
-                <PhotosTags
-                    selectedTag={selectedTag}
-                    tags={[
-                        PhotoTag.All,
-                        PhotoTag.Favorites,
-                        PhotoTag.Screenshots,
-                        PhotoTag.Videos,
-                        PhotoTag.LivePhotos,
-                        PhotoTag.MotionPhotos,
-                        PhotoTag.Selfies,
-                        PhotoTag.Portraits,
-                        PhotoTag.Bursts,
-                        PhotoTag.Panoramas,
-                        PhotoTag.Raw,
-                    ]}
-                    onTagSelect={setSelectedTag}
-                />
-
-                {/**
-                 * Inside Albums View
-                 * TODO: Split into separate component
-                 */}
-
                 {isAlbumPhotosEmpty ? (
                     <>
-                        {/** TODO: Empty Albums View */}
                         <span>Empty Albums View</span>
                     </>
                 ) : (
