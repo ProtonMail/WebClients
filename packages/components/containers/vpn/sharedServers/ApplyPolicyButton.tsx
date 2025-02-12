@@ -1,22 +1,15 @@
 import React from 'react';
 
 import Radio from '@proton/components/components/input/Radio';
-import { illustrations, isValidLabel } from '@proton/components/containers/vpn/sharedServers/illustrations';
 import clsx from '@proton/utils/clsx';
 
-type SharedServersTypeButtonProps = {
+type ApplyPolicyButtonProps = {
     onClick: () => void;
     label: string;
-    description: string;
     isSelected?: boolean;
 };
 
-const SharedServersTypeButton: React.FC<SharedServersTypeButtonProps> = ({
-    onClick,
-    label,
-    description,
-    isSelected = false,
-}) => {
+const ApplyPolicyButton: React.FC<ApplyPolicyButtonProps> = ({ onClick, label, isSelected = false }) => {
     const selectedStyle = {
         background:
             'linear-gradient(78deg, color-mix(in srgb, var(--interaction-norm-minor-1) 80%, transparent) 0%, color-mix(in srgb, var(--interaction-norm-minor-2) 20%, transparent) 100%)',
@@ -36,30 +29,16 @@ const SharedServersTypeButton: React.FC<SharedServersTypeButtonProps> = ({
             {/* Top Section: Radio and Text */}
             <div className="flex flex-row flex-nowrap items-start gap-2 px-4 py-4 w-full">
                 <span aria-hidden="true" className="shrink-0">
-                    <Radio id={label} checked={isSelected} name={label} tabIndex={-1} onChange={() => {}} />
+                    <Radio id={label} checked={isSelected} name={label} readOnly tabIndex={-1} />
                 </span>
                 <div className="flex-1 pt-0.5">
                     <p className="mt-0 mb-1">
                         <strong>{label}</strong>
                     </p>
-                    <p className="m-0 color-weak text-sm">{description}</p>
                 </div>
-            </div>
-
-            <div className="bg-white rounded-lg flex items-center w-32 h-32 justify-center self-end">
-                <img
-                    src={
-                        isValidLabel(label)
-                            ? isSelected
-                                ? illustrations[label].selected
-                                : illustrations[label].deselected
-                            : '#'
-                    }
-                    alt=""
-                />
             </div>
         </button>
     );
 };
 
-export default SharedServersTypeButton;
+export default ApplyPolicyButton;
