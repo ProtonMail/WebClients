@@ -11,7 +11,7 @@ const LayoutHeader = ({
     languageSelect,
     onBack,
     logo,
-    afterLogo,
+    centerElement,
     className,
     isDarkBg,
 }: {
@@ -20,7 +20,7 @@ const LayoutHeader = ({
     className?: string;
     onBack?: () => void;
     logo: ReactNode;
-    afterLogo?: ReactNode;
+    centerElement?: ReactNode;
     isDarkBg?: boolean;
 }) => {
     return (
@@ -42,9 +42,8 @@ const LayoutHeader = ({
                         <div className="shrink-0">{logo}</div>
                     </div>
                 </div>
-                <div className="mx-auto md:ml-4 lg:ml-8 md:mr-auto order-3 md:order-initial w-full md:w-auto flex justify-center md:justify-start">
-                    {afterLogo}
-                </div>
+                {centerElement}
+
                 {hasDecoration && languageSelect && (
                     <LanguageSelect
                         className={clsx('max-w-full ml-4 shrink-0', isDarkBg && 'opacity-70')}

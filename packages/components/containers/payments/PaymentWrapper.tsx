@@ -20,6 +20,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     billingAddressStatus?: BillingAddressStatus;
     formErrors?: FormErrorsHook;
     onChargebeeInitialized?: () => void;
+    showCardIcons?: boolean;
 };
 
 const PaymentWrapper = ({
@@ -53,6 +54,7 @@ const PaymentWrapper = ({
     directDebit,
     formErrors,
     onChargebeeInitialized,
+    showCardIcons,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -101,6 +103,7 @@ const PaymentWrapper = ({
             directDebit={directDebit}
             formErrors={formErrors}
             onChargebeeInitialized={onChargebeeInitialized}
+            showCardIcons={showCardIcons}
         />
     );
 };
