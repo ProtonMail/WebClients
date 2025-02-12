@@ -30,7 +30,7 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
         [items, selectionControls!.selectedItemIds]
     );
-    const isOnlyOneItem = selectedItems.length === 1;
+    const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -49,8 +49,13 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
                 <Vr />
                 <RenameButton selectedLinks={selectedItems} renameLink={renameLink} />
                 <DetailsButton selectedBrowserItems={selectedItems} />
-                {isOnlyOneItem && <Vr />}
-                <ShareLinkButton selectedLinks={selectedItems} />
+                {selectedItem && (
+                    <>
+                        <Vr />
+                        <ShareLinkButton shareId={selectedItem.rootShareId} linkId={selectedItem.linkId} />
+                    </>
+                )}
+
                 <StopSharingButton selectedLinks={selectedItems} />
             </>
         );

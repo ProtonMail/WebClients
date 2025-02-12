@@ -43,6 +43,7 @@ function DriveView() {
         <DriveToolbar
             permissions={folderView.permissions}
             isLinkReadOnly={folderView.isActiveLinkReadOnly}
+            isLinkRoot={folderView.isActiveLinkRoot}
             shareId={activeFolder.shareId}
             linkId={activeFolder.linkId}
             items={folderView.items}
