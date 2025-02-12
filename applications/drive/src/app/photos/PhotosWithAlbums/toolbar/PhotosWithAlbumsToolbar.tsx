@@ -1,7 +1,17 @@
 import { type FC } from 'react';
 
 import { Button, Vr } from '@proton/atoms';
-import { ButtonGroup, Icon, type ModalStateReturnObj, Toolbar } from '@proton/components';
+import {
+    ButtonGroup,
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
+    Icon,
+    type ModalStateReturnObj,
+    Toolbar,
+    usePopperAnchor,
+} from '@proton/components';
 
 import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../../store';
 import PhotosDetailsButton from './PhotosDetailsButton';
@@ -23,6 +33,37 @@ interface TabOption {
     label: string;
     onClick: () => void;
 }
+
+const AlbumGalleryDropdownButton = () => {
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    return (
+        <>
+            <DropdownButton shape="ghost" ref={anchorRef} isOpen={isOpen} onClick={toggle} icon={true}>
+                <Icon name="three-dots-vertical" alt={'More'} />
+            </DropdownButton>
+            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                <DropdownMenu>
+                    <DropdownMenuButton className="text-left">
+                        <Icon name="window-image" alt={'Set album cover'} />
+                        {'Set album cover'}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton className="text-left">
+                        <Icon name="pencil" alt={'Edit album'} />
+                        {'Edit album'}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton className="text-left">
+                        <Icon name="info-circle" alt={'Details'} />
+                        {'Details'}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton className="text-left">
+                        <Icon name="trash" alt={'Delete album'} />
+                        {'Delete album'}
+                    </DropdownMenuButton>
+                </DropdownMenu>
+            </Dropdown>
+        </>
+    );
+};
 
 export const ToolbarLeftActionsGallery = ({
     isLoading,
@@ -138,6 +179,38 @@ const ToolbarRightActionsGallery = ({
     );
 };
 
+const ToolbarRightActionsAlbumGallery = ({
+    uploadDisabled,
+    shareId,
+    linkId,
+    onFileUpload,
+}: ToolbarRightActionsGalleryProps) => {
+    return (
+        <>
+            {!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />}
+            <Button
+                shape="ghost"
+                icon={true}
+                onClick={() => {
+                    // console.log('TODO: Download');
+                }}
+            >
+                <Icon name="arrow-down-line" alt={'Download'} />
+            </Button>
+            <Button
+                shape="ghost"
+                icon={true}
+                onClick={() => {
+                    // console.log('TODO: Share Modal');
+                }}
+            >
+                <Icon name="user-plus" alt={'Share'} />
+            </Button>
+            <AlbumGalleryDropdownButton />
+        </>
+    );
+};
+
 interface PhotosWithAlbumToolbarProps {
     shareId: string;
     linkId: string;
@@ -173,8 +246,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                 {tabSelection === 'albums' && <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />}
 
                 {tabSelection === 'albums-gallery' && (
-                    // TODO: Album Gallery dedicated toolbar
-                    <ToolbarRightActionsGallery
+                    <ToolbarRightActionsAlbumGallery
                         uploadDisabled={uploadDisabled}
                         shareId={shareId}
                         linkId={linkId}
