@@ -1469,6 +1469,9 @@
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Wybierz plan ${ planName } za ${ priceCoupon }"
+      ],
+      "Get the app": [
+        "Pobierz aplikację"
       ]
     },
     "action": {
@@ -2013,6 +2016,9 @@
       ],
       "Got it": [
         "Ok"
+      ],
+      "Discover and set up features": [
+        "Odkryj i skonfiguruj funkcje"
       ]
     },
     "Calendar attachment tooltip": {
@@ -8077,6 +8083,60 @@
       ],
       "Setting up ${ feature }…": [
         "Konfigurowanie ${ feature }…"
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Tworzenie wielu bezpłatnych kont nie jest dozwolone przez ${ termsLink }."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Poznaj nowe funkcje i zacznij z nich korzystać!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Poznaj nowe funkcje planu ${ planTitle } i zacznij z nich korzystać!"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Ciesz się szybszym wysyłaniem wiadomości za pomocą aplikacji desktopowej."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Aby uzyskać dodatkowe informacje i usunąć ograniczenia, zaloguj się pod adresem ${ mailLink }."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
+      ],
+      "Invite family members and get everything up and running.": [
+        "Zaproś użytkowników rodziny i rozpocznij."
+      ],
+      "or discover other features:": [
+        "lub poznaj inne funkcje:"
+      ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Skontaktuj się z nami, aby uzyskać pomoc ${ BRAND_NAME }."
+      ],
+      "Send messages at just the right now": [
+        "Wysyłaj wiadomości w odpowiednim momencie"
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Odłóż wiadomości na później, aby znalazły się na górze skrzynki odbiorczej wtedy, kiedy chcesz"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Używaj krótszej i bardziej chwytliwej nazwy swojego adresu e-mail."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Mamy plany zaprojektowane specjalnie dla użytkowników takich jak Ty, którzy potrzebują więcej niż jednego adresu e-mail."
+      ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Możesz dodać własną domenę do ${ MAIL_APP_NAME }"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Możesz to zmienić w ${ settingsLink }."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ]
     },
     "info": {
@@ -9187,7 +9247,7 @@
         "Musisz reaktywować klucze, aby zobaczyć zaktualizowane zaproszenie"
       ],
       "settings": [
-        "ustawienia"
+        "ustawieniach"
       ]
     },
     "Link to calendar event": {
@@ -10133,6 +10193,9 @@
       ],
       "Tor over VPN": [
         "Tor przez VPN"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
       ]
     },
     "new_plans: feature highlight": {
@@ -11354,6 +11417,9 @@
     "Safety review": {
       "Review your account safety": [
         "Sprawdź bezpieczeństwo konta"
+      ],
+      "Review account safety": [
+        "Sprawdź bezpieczeństwo konta"
       ]
     },
     "saml: Error": {
@@ -11934,6 +12000,9 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Ulepsz do planu ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -12059,6 +12128,9 @@
       ],
       "Your pm.me email is active": [
         "Adres pm.me jest aktywny"
+      ],
+      "Discover your subscription benefits": [
+        "Odkryj zalety subskrypcji"
       ]
     },
     "sso": {
@@ -14022,6 +14094,9 @@
       ],
       "Set up ${ protonDuoPlanName }": [
         "Skonfiguruj ${ protonDuoPlanName }"
+      ],
+      "Discover your subscription benefits": [
+        "Odkryj zalety subskrypcji"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14199,6 +14274,9 @@
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -14247,6 +14325,12 @@
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Wymieniaj bezpiecznie Bitcoin przez e-mail, zamiast skomplikowanych, 26-znakowych adresów Bitcoin, które są podatne na błąd"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adres ${ BRAND_NAME }",
+        "${ n } adresy ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -14729,6 +14813,12 @@
       ],
       "Save 80% on your first month.": [
         "Zaoszczędź 80% przez pierwszy miesiąc."
+      ],
+      "${ pricingTitle } offer expires today!": [
+        "Oferta ${ pricingTitle } wygasa dzisiaj!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Wybierz plan Drive Plus za ${ pricingTitle }"
       ]
     },
     "Offer feature": {
@@ -14746,6 +14836,12 @@
       ],
       "Storage": [
         "Przestrzeń dyskowa"
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ]
     },
     "Signup label": {
@@ -14756,6 +14852,11 @@
     "new_plans: Subtext": {
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
       ]
     }
   }

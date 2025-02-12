@@ -1685,6 +1685,9 @@
     "bf2023: renew": {
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ discountedPrice } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ nextPrice } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ discountedPrice } gilt für die ersten ${ cycle } Monate. Danach wird das Abonnement automatisch zum reduzierten Preis von ${ nextPrice } für ${ renewalLength } Monate verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "bf2023: Tooltip": {
@@ -2003,6 +2006,9 @@
       ],
       "Set up other features": [
         "Andere Funktionen einrichten"
+      ],
+      "Close": [
+        "Schließen"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3788,6 +3794,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Upgrade, um ${ activatePmUser } für eine kürzere, leicht zu merkende E-Mail-Adresse zusätzlich zu deiner aktuellen zu erhalten."
       ]
     },
     "description": {
@@ -7911,6 +7920,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du wirst benachrichtigt, wenn dein Passwort oder andere Daten vom Dienst eines Drittanbieters preisgegeben wurden."
+      ],
+      "or discover other features:": [
+        "oder entdecke andere Funktionen:"
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Pause Nachrichten und lies sie später, damit sie jederzeit oben in deinem Posteingang angezeigt werden."
       ]
     },
     "info": {
@@ -9898,6 +9913,9 @@
       ],
       "Tor over VPN": [
         "Tor über VPN"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Lebenslanger Zugang zu den Funktionen von ${ PASS_APP_NAME } und SimpleLogin"
       ]
     },
     "new_plans: feature highlight": {
@@ -10761,6 +10779,15 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Wir bearbeiten gerade deine Zahlung für die Rechnung. Bitte warte, bis die Zahlung abgeschlossen ist, bevor du Änderungen an deinem Abonnement vornimmst oder deine Zahlungsdaten aktualisierst. Vielen Dank für deine Geduld."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für die ersten ${ subscriptionLength } Monate. Der Gutschein ist bei ${ couponRedemptions } Verlängerungen gültig. Danach wird das Abonnement automatisch zum Preis von ${ renewPrice } für ${ subscriptionLengthCopy } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für die ersten ${ subscriptionLength } Monate. Danach wird das Abonnement automatisch zum Preis von ${ renewPrice } für ${ subscriptionLengthCopy } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount }gilt für den ersten Monat. Der Gutschein kann bei ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPrice } für ${ subscriptionLength } Monate verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "Payments.Error": {
@@ -11780,6 +11807,9 @@
       ],
       "Discover your subscription benefits": [
         "Entdecke die Vorteile deines Abonnements"
+      ],
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Sieh dir an, was in deinem Abonnement enthalten ist, und fang an, die Vorteile zu genießen."
       ]
     },
     "sso": {
@@ -13733,6 +13763,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Dies stellt sicher, dass niemand deinen Standort, dein Gerät und andere Informationen sehen kann, die verwendet werden könnten, um dich zu identifizieren oder zu verfolgen."
       ]
     },
     "tooltip": {
