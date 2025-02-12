@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -8,11 +9,12 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import type { DENSITY } from '@proton/shared/lib/constants';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 import DensityRadiosCards from '../layouts/DensityRadiosCards';
 
@@ -20,7 +22,7 @@ import './ModalSettingsLayoutCards.scss';
 
 const MailDensityModal = (props: ModalProps) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [{ Density }] = useUserSettings();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -29,8 +31,8 @@ const MailDensityModal = (props: ModalProps) => {
     const { onClose } = props;
 
     const handleChangeDensity = async (density: DENSITY) => {
-        await api(updateDensity(density));
-        await call();
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(updateDensity(density));
+        dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 

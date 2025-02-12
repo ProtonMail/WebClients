@@ -1,16 +1,17 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces';
 
 interface Props {
     modalProps: ModalProps;
@@ -22,13 +23,15 @@ const AssistantIncompatibleHardwareModal = ({ modalProps, onReject, onResolve }:
     const { createNotification } = useNotifications();
     const { onClose } = modalProps;
     const [loading, withLoading] = useLoading();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const api = useApi();
 
     const handleUpdateSetting = async () => {
-        await withLoading(api(updateAIAssistant(AI_ASSISTANT_ACCESS.SERVER_ONLY)));
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(
+            updateAIAssistant(AI_ASSISTANT_ACCESS.SERVER_ONLY)
+        );
+        dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Writing assistant setting updated` });
-        await call();
         onResolve?.();
         onClose?.();
     };
@@ -48,7 +51,7 @@ const AssistantIncompatibleHardwareModal = ({ modalProps, onReject, onResolve }:
         <Prompt
             title={c('Header').t`Hardware not compatible`}
             buttons={[
-                <Button color="norm" onClick={handleUpdateSetting} loading={loading}>{c('Action')
+                <Button color="norm" onClick={() => withLoading(handleUpdateSetting())} loading={loading}>{c('Action')
                     .t`Run on ${BRAND_NAME} servers`}</Button>,
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}

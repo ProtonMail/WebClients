@@ -8,13 +8,14 @@ import {
     LabelsUpsellModal,
     PmMeUpsellModal,
     useApi,
-    useEventManager,
     useModalStateObject,
     useNotifications,
     useShortDomainAddress,
 } from '@proton/components';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modal/types/IncreasePrivacyUpsellModal';
 import { useFolders, useLabels } from '@proton/mail';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import {
@@ -24,6 +25,7 @@ import {
     ROOT_FOLDER,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import { MESSAGE_ACTIONS } from 'proton-mail/constants';
@@ -55,10 +57,10 @@ const useTipConfig = ({ actionType }: Props) => {
     const [user] = useUser();
     const [folders] = useFolders();
     const [labels] = useLabels();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const onCompose = useOnCompose();
-    const dispatch = useMailDispatch();
+    const dispatch = useDispatch();
+    const dispatchMail = useMailDispatch();
     const mailboxElements = useMailSelector(elements);
     const { sendCTAButtonClickedReport } = useProtonTipsTelemetry();
 
@@ -229,8 +231,10 @@ const useTipConfig = ({ actionType }: Props) => {
     };
 
     const activateAutoDeleteSpamAndTrash = async () => {
-        await api(updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(
+            updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)
+        );
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({
             text: `Messages in Spam/Trash will automatically be deleted after 30 days.`,
         });
@@ -280,7 +284,7 @@ const useTipConfig = ({ actionType }: Props) => {
                 }
                 break;
             case TipActionType.SnoozeEmail:
-                dispatch(
+                dispatchMail(
                     snoozeActions.setSnoozeDropdown({
                         dropdownState: 'forceOpen',
                         element: mailboxElements[0],
