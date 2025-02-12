@@ -80,9 +80,9 @@ export function DriveItemContextMenu({
                 )}
                 {isAdmin && isOnlyOneItem && (
                     <ShareLinkButton
-                        shareId={shareId}
+                        shareId={selectedLink.rootShareId}
                         showLinkSharingModal={showLinkSharingModal}
-                        link={selectedLink}
+                        linkId={selectedLink.linkId}
                         close={close}
                     />
                 )}
