@@ -2,7 +2,7 @@ import { getIsOfflineError, getIsTimeoutError, isNotExistError } from '@proton/s
 import { SECOND } from '@proton/shared/lib/constants';
 import { randomDelay } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
+import { SentryCommonInitiatives, captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { ES_MAX_RETRIES, ES_TEMPORARY_ERRORS } from '../constants';
@@ -15,7 +15,7 @@ export const esErrorReport = (context: string, extra?: Record<string, unknown>) 
             ...extra,
         },
         tags: {
-            initiative: 'encrypted-search',
+            initiative: SentryCommonInitiatives.ENCRYPTED_SEARCH,
             context,
         },
     });
