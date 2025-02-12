@@ -39,6 +39,7 @@ export const updateSettings = (settings: Partial<SettingsStore>) => {
 
 export const getSettings = (): SettingsStore => {
     const settings = store.get("settings");
+
     if (settings) {
         let saveDefaults = false;
 
@@ -61,6 +62,7 @@ export const getSettings = (): SettingsStore => {
     }
 
     settingsLogger.info("Settings not found, using default settings");
+    store.set("settings", defaultSettings);
     return defaultSettings;
 };
 
