@@ -2,7 +2,6 @@ import Logo from '@proton/components/components/logo/Logo';
 import NewBadge from '@proton/components/components/newBadge/NewBadge';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 interface ProductIconProps {
@@ -12,7 +11,6 @@ interface ProductIconProps {
 
 const ProductIcon = ({ appToLinkTo, current }: ProductIconProps) => {
     const appToLinkToName = getAppShortName(appToLinkTo);
-    const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
 
     return (
         <>
@@ -31,10 +29,7 @@ const ProductIcon = ({ appToLinkTo, current }: ProductIconProps) => {
             >
                 {appToLinkToName}
             </span>
-            {appToLinkTo === APPS.PROTONLUMO ||
-            (appToLinkTo === APPS.PROTONWALLET && isWalletAppSwitcherNewBadgeEnabled) ? (
-                <NewBadge />
-            ) : null}
+            {appToLinkTo === APPS.PROTONLUMO ? <NewBadge /> : null}
         </>
     );
 };
