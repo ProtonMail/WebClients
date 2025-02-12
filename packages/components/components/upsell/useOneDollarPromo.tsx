@@ -44,30 +44,37 @@ const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
 
     useEffect(() => {
         const handleGetPlanAmount = async () => {
-            if (plan && currency && !loadingCurrency && !amountDue) {
-                // For USD, CHF and EUR, default value is "1 dollar"
-                if (isMainCurrency(currency)) {
-                    setAmountDue(user.isFree ? OFFER_DEFAULT_AMOUNT_DUE : planPricePerCycle);
-                    return;
-                }
+            const result = await fetchPrice({
+                data: {
+                    Plans: { [planID]: 1 },
+                    Currency: currency,
+                    Cycle: CYCLE.MONTHLY,
+                    CouponCode: user.isFree ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
+                },
+                defaultPrice: planPricePerCycle,
+                currency,
+            });
 
-                const result = await fetchPrice({
-                    data: {
-                        Plans: { [planID]: 1 },
-                        Currency: currency,
-                        Cycle: CYCLE.MONTHLY,
-                        CouponCode: user.isFree ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
-                    },
-                    defaultPrice: planPricePerCycle,
-                    currency,
-                });
-
-                setAmountDue(result);
-            }
+            setAmountDue(result);
         };
 
-        void withLoading(handleGetPlanAmount);
-    }, [plan, currency, loadingCurrency]);
+        // The one-dollar promo is only used for paid Mail features, a users having access to
+        // paid Mail cannot benefit from it. We don't want to fetch the price for those users.
+        if (user.hasPaidMail || loadingCurrency) {
+            return;
+        }
+
+        // Main currencies all have the same price, we don't need to fetch the price.
+        // In those case, the default price is 100 cents
+        if (isMainCurrency(currency)) {
+            setAmountDue(user.isFree ? OFFER_DEFAULT_AMOUNT_DUE : planPricePerCycle);
+            return;
+        }
+
+        if (currency && !amountDue) {
+            void withLoading(handleGetPlanAmount);
+        }
+    }, [planID, planPricePerCycle, user.hasPaidMail, currency, loadingCurrency]);
 
     const priceLine = user.isFree ? (
         <PriceLine currency={currency} planPrice={planPricePerCycle} />
