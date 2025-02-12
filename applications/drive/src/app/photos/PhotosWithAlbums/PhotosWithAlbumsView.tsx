@@ -17,6 +17,8 @@ import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMet
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { PhotoLink } from '../../store';
 import { PhotoTag, isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { useCreateAlbum } from '../PhotosActions/Albums';
+import { AddAlbumPhotosModal } from '../PhotosModals/AddAlbumPhotosModal';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { EmptyPhotos } from './EmptyPhotos';
 import { PhotosGrid } from './PhotosGrid';
@@ -30,14 +32,17 @@ export const PhotosWithAlbumsView: FC = () => {
     useAppTitle(c('Title').t`Photos`);
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const {
+        volumeId,
         shareId,
         linkId,
+        albums,
         photos,
         isPhotosLoading,
         loadPhotoLink,
         photoLinkIdToIndexMap,
         photoLinkIds,
         requestDownload,
+        addAlbumPhotos,
     } = usePhotosWithAlbumsView();
 
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
@@ -47,11 +52,13 @@ export const PhotosWithAlbumsView: FC = () => {
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const createAlbumModal = useModalStateObject();
+    const addAlbumPhotosModal = useModalStateObject();
+    const createAlbum = useCreateAlbum();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
-    const { navigateToAlbums, navigateToPhotos } = useNavigate();
+    const { navigateToAlbum, navigateToAlbums, navigateToPhotos } = useNavigate();
     // TODO: Move tag selection to specific hook
     const [selectedTag, setSelectedTag] = useState<PhotosTagsProps['selectedTag']>([PhotoTag.All]);
 
@@ -94,6 +101,39 @@ export const PhotosWithAlbumsView: FC = () => {
         [setPreviewLinkId, photoLinkIds]
     );
     const isPhotosEmpty = photos.length === 0;
+
+    const onAddAlbumPhotos = useCallback(
+        async (albumLinkId: string, linkIds: string[]) => {
+            if (!shareId || !linkId || !volumeId) {
+                return;
+            }
+            try {
+                const abortSignal = new AbortController().signal;
+                await addAlbumPhotos(abortSignal, volumeId, shareId, albumLinkId, linkIds);
+                navigateToAlbum(albumLinkId);
+            } catch (e) {
+                console.error('photos addition failed', e);
+            }
+        },
+        [shareId, linkId, createAlbum, navigateToAlbum]
+    );
+
+    const onCreateAlbumWithPhotos = useCallback(
+        async (name: string, linkIds: string[]) => {
+            if (!shareId || !linkId || !volumeId) {
+                return;
+            }
+            try {
+                const abortSignal = new AbortController().signal;
+                const albumLinkId = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
+                await addAlbumPhotos(abortSignal, volumeId, shareId, albumLinkId, linkIds);
+                navigateToAlbum(albumLinkId);
+            } catch (e) {
+                console.error('album creation failed', e);
+            }
+        },
+        [shareId, linkId, createAlbum, navigateToAlbum]
+    );
 
     if (!shareId || !linkId || isPhotosLoading) {
         return <Loader />;
@@ -196,6 +236,7 @@ export const PhotosWithAlbumsView: FC = () => {
                             uploadDisabled={isUploadDisabled}
                             tabSelection={'gallery'}
                             createAlbumModal={createAlbumModal}
+                            addAlbumPhotosModal={addAlbumPhotosModal}
                         />
                     }
                 />
@@ -237,6 +278,13 @@ export const PhotosWithAlbumsView: FC = () => {
                         isItemSelected={isItemSelected}
                     />
                 )}
+                <AddAlbumPhotosModal
+                    addAlbumPhotosModal={addAlbumPhotosModal}
+                    onCreateAlbumWithPhotos={onCreateAlbumWithPhotos}
+                    onAddAlbumPhotos={onAddAlbumPhotos}
+                    albums={albums}
+                    photos={selectedItems}
+                />
             </UploadDragDrop>
         </>
     );
