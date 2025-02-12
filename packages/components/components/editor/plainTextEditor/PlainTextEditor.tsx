@@ -41,6 +41,11 @@ const PlainTextEditor = ({
             getContent: () => {
                 return textareaRef.current?.value || '';
             },
+            insertContent: (content: string) => {
+                if (textareaRef.current) {
+                    textareaRef.current.value = textareaRef.current.value + content;
+                }
+            },
             setContent: (value: string) => {
                 if (textareaRef.current) {
                     textareaRef.current.value = value;
