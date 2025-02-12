@@ -2,7 +2,7 @@ import { createHeadlessEditor } from '@lexical/headless'
 import type { Logger } from '@proton/utils/logs'
 import { AllNodes } from '../../AllNodes'
 import type { ElementNode } from 'lexical'
-import { $isParagraphNode } from 'lexical'
+import { $isParagraphNode, $isTextNode } from 'lexical'
 import { $createParagraphNode, $createRangeSelection, $createTextNode, $getRoot, $setSelection } from 'lexical'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
 import type { HeadingNode } from '@lexical/rich-text'
@@ -12,6 +12,7 @@ import { $isSuggestionNode } from './ProtonNode'
 import { $createListItemNode, $isListNode } from '@lexical/list'
 import { blockTypeToCreateElementFn } from '../BlockTypePlugin'
 import { $createCustomListNode } from '../CustomList/$createCustomListNode'
+import { assertCondition } from './TestUtils'
 
 const onSuggestionCreation = jest.fn()
 const logger = {
@@ -114,9 +115,11 @@ describe('$setBlocksTypeAsSuggestion', () => {
             root.append(element)
           }
           const selection = $createRangeSelection()
-          const firstText = root.getFirstChildOrThrow<ElementNode>().getFirstChildOrThrow()
+          const firstText = root.getFirstChildOrThrow<ElementNode>().getFirstDescendant()
+          assertCondition($isTextNode(firstText))
           selection.anchor.set(firstText.__key, 0, 'text')
-          const lastText = root.getLastChildOrThrow<ElementNode>().getFirstChildOrThrow()
+          const lastText = root.getLastChildOrThrow<ElementNode>().getFirstDescendant()
+          assertCondition($isTextNode(lastText))
           selection.focus.set(lastText.__key, lastText.getTextContentSize(), 'text')
           $setSelection(selection)
           $setBlocksTypeAsSuggestion('h2', onSuggestionCreation, logger)

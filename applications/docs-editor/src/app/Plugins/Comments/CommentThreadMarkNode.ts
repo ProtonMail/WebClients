@@ -9,7 +9,15 @@ import type {
   RangeSelection,
   BaseSelection,
 } from 'lexical'
-import { $applyNodeReplacement, ElementNode, $isElementNode, $isTextNode, $isRangeSelection } from 'lexical'
+import {
+  $applyNodeReplacement,
+  ElementNode,
+  $isElementNode,
+  $isTextNode,
+  $isRangeSelection,
+  $isDecoratorNode,
+  $createRangeSelection,
+} from 'lexical'
 
 export type SerializedCommentThreadMarkNode = Spread<
   {
@@ -219,43 +227,32 @@ export function $wrapSelectionInCommentThreadMarkNode(
   isBackward: boolean,
   id: string,
 ): void {
-  const nodes = selection.getNodes()
-  const anchorOffset = selection.anchor.offset
-  const focusOffset = selection.focus.offset
-  const nodesLength = nodes.length
-  const startOffset = isBackward ? focusOffset : anchorOffset
-  const endOffset = isBackward ? anchorOffset : focusOffset
-  let currentNodeParent
-  let lastCreatedMarkNode
+  const forwardSelection = $createRangeSelection()
+  const [startPoint, endPoint] = selection.isBackward()
+    ? [selection.focus, selection.anchor]
+    : [selection.anchor, selection.focus]
+  forwardSelection.anchor.set(startPoint.key, startPoint.offset, startPoint.type)
+  forwardSelection.focus.set(endPoint.key, endPoint.offset, endPoint.type)
+
+  let currentNodeParent: ElementNode | null | undefined
+  let lastCreatedMarkNode: CommentThreadMarkNode | undefined
+
+  const nodes = forwardSelection.extract()
 
   // We only want wrap adjacent text nodes, line break nodes
   // and inline element nodes. For decorator nodes and block
   // element nodes, we step out of their boundary and start
   // again after, if there are more nodes.
-  for (let i = 0; i < nodesLength; i++) {
-    const node = nodes[i]
+  for (const node of nodes) {
     if ($isElementNode(lastCreatedMarkNode) && lastCreatedMarkNode.isParentOf(node)) {
       // If the current node is a child of the last created mark node, there is nothing to do here
       continue
     }
-    const isFirstNode = i === 0
-    const isLastNode = i === nodesLength - 1
     let targetNode: LexicalNode | null = null
 
     if ($isTextNode(node)) {
-      // Case 1: The node is a text node and we can split it
-      const textContentSize = node.getTextContentSize()
-      const startTextOffset = isFirstNode ? startOffset : 0
-      const endTextOffset = isLastNode ? endOffset : textContentSize
-      if (startTextOffset === 0 && endTextOffset === 0) {
-        continue
-      }
-      const splitNodes = node.splitText(startTextOffset, endTextOffset)
-      targetNode =
-        splitNodes.length > 1 &&
-        (splitNodes.length === 3 || (isFirstNode && !isLastNode) || endTextOffset === textContentSize)
-          ? splitNodes[1]
-          : splitNodes[0]
+      // Case 1: The node is a text node and we can include it
+      targetNode = node
     } else if ($isCommentThreadMarkNode(node)) {
       // Case 2: the node is a mark node and we can ignore it as a target,
       // moving on to its children. Note that when we make a mark inside
@@ -264,7 +261,7 @@ export function $wrapSelectionInCommentThreadMarkNode(
       // codebase.
 
       continue
-    } else if ($isElementNode(node) && node.isInline()) {
+    } else if (($isElementNode(node) || $isDecoratorNode(node)) && node.isInline()) {
       // Case 3: inline element nodes can be added in their entirety to the new
       // mark
       targetNode = node
