@@ -402,5 +402,6 @@ export const usePhotosWithAlbumsView = () => {
         ) => {
             return addAlbumPhotos(abortSignal, volumeId, shareId, albumLinkId, [linkId]);
         },
+        addAlbumPhotos,
     };
 };
