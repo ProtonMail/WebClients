@@ -95,6 +95,7 @@ const TableBodyRenderer = ({
             {...props}
             borderWeak
             className={clsx(['file-browser-table simple-table--is-hoverable border-none border-collapse', className])}
+            data-testid="list-view-table-body"
         >
             <TableBody>{children}</TableBody>
         </Table>
