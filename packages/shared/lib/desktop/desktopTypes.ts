@@ -28,6 +28,7 @@ export type IPCInboxDesktopFeature =
     | 'LatestVersionCheck'
     | 'InstallSource'
     | 'MailtoTelemetry'
+    | 'MailtoUpdate'
     | 'ESUserChoice'
     | 'FullTheme'
     | 'StoreVersion'
@@ -59,6 +60,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'setTheme'; payload: ThemeSetting }
     | { type: 'earlyAccess'; payload: Environment | undefined }
     | { type: 'checkDefaultMailtoAndSignal'; payload?: undefined }
+    | { type: 'setDefaultMailto'; payload?: undefined }
+    | { type: 'setShouldCheckDefaultMailto'; payload: boolean }
     | { type: 'checkDailyStatsAndSignal'; payload?: undefined }
     | { type: 'defaultMailtoTelemetryReported'; payload: number }
     | { type: 'dailyStatsReported'; payload: number }

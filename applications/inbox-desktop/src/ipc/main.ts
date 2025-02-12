@@ -20,7 +20,13 @@ import { DESKTOP_FEATURES } from "./ipcConstants";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import { setInstallSourceReported, getInstallSource } from "../store/installInfoStore";
 import { getESUserChoice, setESUserChoice } from "../store/userSettingsStore";
-import { checkDefaultMailto, getDefaultMailto, setDefaultMailtoTelemetryReported } from "../utils/protocol/default";
+import {
+    checkDefaultMailto,
+    getDefaultMailto,
+    setDefaultMailtoApp,
+    setDefaultMailtoTelemetryReported,
+    setShouldCheckDefaultMailtoApp,
+} from "../utils/protocol/default";
 import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 import metrics from "../utils/metrics";
 import telemetry from "../utils/telemetry";
@@ -145,12 +151,14 @@ export const handleIPCCalls = () => {
             }
             case "checkDefaultMailtoAndSignal": {
                 checkDefaultMailto();
-                const defaultMailto = getDefaultMailto();
-
-                getMailView()?.webContents?.send("hostUpdate", {
-                    type: "defaultMailtoChecked",
-                    payload: defaultMailto,
-                });
+                break;
+            }
+            case "setDefaultMailto": {
+                setDefaultMailtoApp();
+                break;
+            }
+            case "setShouldCheckDefaultMailto": {
+                setShouldCheckDefaultMailtoApp(payload);
                 break;
             }
             case "defaultMailtoTelemetryReported": {

@@ -26,6 +26,8 @@ enum CommonFeatureFlag {
     ScribeAdminSetting = 'ScribeAdminSetting',
     WalletAztecoWeb = 'WalletAztecoWeb',
     WalletFullSync = 'WalletFullSync',
+    InboxDesktopDefaultEmailSetupHelper = 'InboxDesktopDefaultEmailSetupHelper',
+    InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
 }
 
 enum AccountFlag {
