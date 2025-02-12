@@ -231,7 +231,6 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
 };
 
 export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAction<OptimisticUpdates>) => {
-    // TODO update total
     action.payload.elements.forEach((element) => {
         if (element.ID) {
             state.elements[element.ID] = element;
@@ -240,6 +239,11 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
     if (action.payload.isMove) {
         const elementIDs = action.payload.elements.map(({ ID }) => ID || '');
         state.bypassFilter = diff(state.bypassFilter, elementIDs);
+
+        // Can update total only if move and is removing item from the current location (not all sent/all drafts/all mail)
+        if (action.payload.elementTotalAdjustment && state.total) {
+            state.total = state.total + action.payload.elementTotalAdjustment;
+        }
     }
 
     // If there is a filter applied when marking elements as read or unread, elements might need to bypass filters
@@ -280,7 +284,9 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
     action.payload.elementIDs.forEach((elementID) => {
         delete state.elements[elementID];
     });
-    // TODO update total
+    if (state.total) {
+        state.total = state.total - action.payload.elementIDs.length;
+    }
 };
 
 export const optimisticEmptyLabel = (state: Draft<ElementsState>) => {
