@@ -5,6 +5,8 @@ import { loadDefaultProtocol, storeDefaultProtocol } from "./store";
 import { checkDefaultMailtoClientMac, setDefaultMailtoMac } from "./default_mailto_macos";
 import { checkDefaultMailtoClientLinux, setDefaultMailtoLinux } from "./default_mailto_linux";
 import { checkDefaultMailtoClientWindows, setDefaultMailtoWindows } from "./default_mailto_windows";
+import { getAccountView, getMailView } from "../view/viewManagement";
+import { DESKTOP_FEATURES } from "../../ipc/ipcConstants";
 
 export function checkDefaultProtocols() {
     checkDefaultMailto();
@@ -13,7 +15,7 @@ export function checkDefaultProtocols() {
 let defaultMailto: DefaultProtocol = {
     isDefault: false,
     wasChecked: false,
-    shouldBeDefault: false,
+    shouldBeDefault: DESKTOP_FEATURES.MailtoUpdate,
     wasDefaultInPast: false,
     lastReport: {
         wasDefault: false,
@@ -44,6 +46,16 @@ export function checkDefaultMailto() {
     }
 
     protocolLogger.info("App default mailto client status", defaultMailto);
+
+    getMailView()?.webContents?.send("hostUpdate", {
+        type: "defaultMailtoChecked",
+        payload: getDefaultMailto(),
+    });
+
+    getAccountView()?.webContents?.send("hostUpdate", {
+        type: "defaultMailtoChecked",
+        payload: getDefaultMailto(),
+    });
 }
 
 export function setDefaultMailtoTelemetryReported(timestamp: number) {
@@ -55,17 +67,33 @@ export function setDefaultMailtoTelemetryReported(timestamp: number) {
     storeDefaultProtocol("mailto", defaultMailto);
 }
 
-// setDefaultMailtoApp and OS implementations is currently used, waiting for UX
-// decision.
+export function setShouldCheckDefaultMailtoApp(shouldCheck: boolean) {
+    protocolLogger.info("Requested to check if app default mailto. Current status:", shouldCheck);
+    defaultMailto.canUpdateDefault = true;
+    defaultMailto.shouldBeDefault = shouldCheck;
+
+    storeDefaultProtocol("mailto", defaultMailto);
+
+    getMailView()?.webContents?.send("hostUpdate", {
+        type: "defaultMailtoChecked",
+        payload: getDefaultMailto(),
+    });
+
+    getAccountView()?.webContents?.send("hostUpdate", {
+        type: "defaultMailtoChecked",
+        payload: getDefaultMailto(),
+    });
+}
+
 export function setDefaultMailtoApp() {
     protocolLogger.info("Requested to set app as default mailto. Current status:", defaultMailto);
-
-    defaultMailto.shouldBeDefault = true;
 
     if (isMac) setDefaultMailtoMac();
     if (isLinux) setDefaultMailtoLinux();
     if (isWindows) setDefaultMailtoWindows();
 
+    checkDefaultMailto();
+    defaultMailto.shouldBeDefault = true;
     storeDefaultProtocol("mailto", defaultMailto);
 }
 

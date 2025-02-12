@@ -1,3 +1,5 @@
+import { Suspense, lazy } from 'react';
+
 import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account';
@@ -11,6 +13,7 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import {
     NEWSLETTER_SUBSCRIPTIONS,
     NEWSLETTER_SUBSCRIPTIONS_BITS,
@@ -26,6 +29,10 @@ import SettingsSection from '../account/SettingsSection';
 import ToggleAssistantContainer from '../general/ToggleAssistant/ToggleAssistantContainer';
 import DailyEmailNotificationToggle from '../recovery/DailyEmailNotificationToggle';
 import RecoveryEmail from '../recovery/email/RecoveryEmail';
+
+const LazyInboxDesktopDefaultAppSettings = lazy(
+    () => import('@proton/components/containers/desktop/defaultApp/InboxDesktopDefaultAppSettings')
+);
 
 const MessagesGeneralSection = () => {
     const [userSettings] = useUserSettings();
@@ -104,6 +111,11 @@ const MessagesGeneralSection = () => {
                     </SettingsLayoutRight>
                 </SettingsLayout>
                 <ToggleAssistantContainer />
+                {isElectronMail && (
+                    <Suspense fallback="">
+                        <LazyInboxDesktopDefaultAppSettings />
+                    </Suspense>
+                )}
             </SettingsSection>
         </>
     );
