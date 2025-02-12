@@ -39,10 +39,14 @@ export const validateAliasPrefix = (prefix: string = ''): Maybe<string> => {
             case 'PrefixTooLong':
                 return c('Warning').t`The alias prefix cannot be longer than 40 characters`;
             case 'InvalidCharacter':
-                return c('Warning').t`Only alphanumeric characters, dots, hyphens and underscores are allowed`;
+                return c('Warning')
+                    .t`Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed`;
             case 'TwoConsecutiveDots':
+                return c('Warning').t`2 consecutive dots are not allowed`;
             case 'DotAtTheBeginning':
+                return c('Warning').t`Cannot contain a dot at the beginning`;
             case 'DotAtTheEnd':
+                return c('Warning').t`Cannot contain a dot at the end`;
             default:
                 return c('Warning').t`Invalid alias prefix`;
         }
