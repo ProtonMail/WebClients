@@ -128,9 +128,13 @@ export const getVPNSpeed = (type: 'medium' | 'highest', highlight?: boolean): Pl
     };
 };
 
+export const getStreamingText = () => {
+    return c('new_plans: feature').t`Dedicated servers optimized for streaming`;
+};
+
 export const getStreaming = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`High-speed streaming`,
+        text: getStreamingText(),
         tooltip: c('new_plans: tooltip')
             .t`Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere`,
         included,
@@ -171,9 +175,13 @@ export const getDoubleHop = (included: boolean, highlight?: boolean): PlanCardFe
     };
 };
 
+export const getNetShieldText = () => {
+    return c('new_plans: feature').t`Ad-blocker and malware protection`;
+};
+
 export const getNetShield = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Ad-blocker and malware protection`,
+        text: getNetShieldText(),
         tooltip: c('new_plans: tooltip')
             .t`Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware`,
         included,
@@ -223,8 +231,8 @@ export const getVPNConnections = (n = 0, highlight?: boolean): PlanCardFeatureDe
 export const getProtectDevices = (n = 0, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').ngettext(
-            msgid`Protect ${n} device at a time`,
-            `Protect ${n} devices at a time`,
+            msgid`Use on up to ${n} device at once`,
+            `Use on up to ${n} devices at once`,
             n
         ),
         included: true,
