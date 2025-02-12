@@ -1153,8 +1153,16 @@ const InteractiveCalendarView = ({
     };
 
     // Close modal and popover for a given uniqueId
-    const closeProcessingPopover = (uniqueId: string = TMP_UNIQUE_ID) => {
-        if (eventInPopoverUniqueIdRef.current === uniqueId) {
+    const closeProcessingModal = (uniqueId: string = TMP_UNIQUE_ID, type: 'modal' | 'popover') => {
+        if (eventInPopoverUniqueIdRef.current !== uniqueId) {
+            return;
+        }
+
+        if (type === 'modal') {
+            closeModal('createEventModal');
+        }
+
+        if (type === 'popover') {
             setInteractiveData((prev) => ({
                 ...prev,
                 targetEventData: prev?.targetEventData
@@ -1164,12 +1172,6 @@ const InteractiveCalendarView = ({
                       }
                     : undefined,
             }));
-        }
-    };
-
-    const closeProcessingModal = (uniqueId: string = TMP_UNIQUE_ID) => {
-        if (eventInPopoverUniqueIdRef.current === uniqueId) {
-            closeModal('createEventModal');
         }
     };
 
@@ -1558,12 +1560,10 @@ const InteractiveCalendarView = ({
             } else {
                 dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: true }));
             }
-            if (isModal) {
-                closeProcessingModal(uniqueId);
-            } else {
-                closeProcessingPopover(uniqueId);
-            }
+
+            closeProcessingModal(uniqueId, isModal ? 'modal' : 'popover');
             hasClosedModalOrPopover = true;
+
             const count = isSingleEventUpdate ? 1 : 3;
             notificationId = createNotification({
                 text: (
@@ -1677,11 +1677,7 @@ const InteractiveCalendarView = ({
             }
 
             if (!hasClosedModalOrPopover) {
-                if (isModal) {
-                    closeProcessingModal(uniqueId);
-                } else {
-                    closeProcessingPopover(uniqueId);
-                }
+                closeProcessingModal(uniqueId, isModal ? 'modal' : 'popover');
             }
         }
         stopNESTMetric(isCreatingEvent);
@@ -1723,11 +1719,10 @@ const InteractiveCalendarView = ({
                     // Hide the event from the view immediately
                     dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: true, recurringType }));
 
+                    closeProcessingModal(targetEvent.uniqueId, isModal ? 'modal' : 'popover');
+
                     if (isModal) {
-                        closeProcessingModal(targetEvent.uniqueId);
                         removeTemporaryEvent(targetEvent.uniqueId);
-                    } else {
-                        closeProcessingPopover(targetEvent.uniqueId);
                     }
 
                     const count = isSingleEventUpdate ? 1 : 3;
@@ -2194,7 +2189,7 @@ const InteractiveCalendarView = ({
                                 return (
                                     handleDeleteEvent(targetEvent, inviteActions)
                                         // Also close the more popover to avoid this event showing there
-                                        .then(() => closeProcessingPopover(targetEvent.uniqueId))
+                                        .then(() => closeProcessingModal(targetEvent.uniqueId, 'popover'))
                                         .catch(noop)
                                 );
                             }}
@@ -2393,7 +2388,7 @@ const InteractiveCalendarView = ({
                             cancelClosePopoverRef.current = false;
                             return;
                         }
-                        closeProcessingModal(temporaryEvent?.uniqueId);
+                        closeProcessingModal(temporaryEvent?.uniqueId, 'modal');
                     }}
                     view={view}
                 />
