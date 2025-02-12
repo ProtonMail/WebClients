@@ -1,5 +1,6 @@
 import type { IDBPDatabase } from 'idb';
 
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import chunk from '@proton/utils/chunk';
 
 import { ES_MAX_PARALLEL_ITEMS, ES_SYNC_ACTIONS, STORING_OUTCOME } from '../constants';
@@ -21,7 +22,10 @@ import { findItemIndex, isObjectEmpty } from './esUtils';
 
 const prefetchContentToSync = async <ESItemMetadata extends object, ESItemContent = void>(
     itemEventsBatch: ESItemEvent<ESItemMetadata>[],
-    fetchESItemContent?: (itemID: string, signal?: AbortSignal | undefined) => Promise<ESItemContent | undefined>
+    fetchESItemContent?: (
+        itemID: string,
+        signal?: AbortSignal | undefined
+    ) => Promise<{ content?: ESItemContent; error?: any }>
 ) => {
     /**
      * We speed up item syncing by first fetching in parallel all items that are
@@ -29,7 +33,7 @@ const prefetchContentToSync = async <ESItemMetadata extends object, ESItemConten
      * no content is required, then the metadata contained in the itemEvents suffice
      * to sync the items
      */
-    const prefetchedContent: Map<string, ESItemContent | undefined> = new Map();
+    const prefetchedContent: Map<string, { content?: ESItemContent; error?: any } | undefined> = new Map();
 
     if (fetchESItemContent) {
         await Promise.all(
@@ -147,11 +151,21 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
              *      - if results are being shown and the new term fulfills, add it there too
              */
             if (Action === ES_SYNC_ACTIONS.CREATE) {
-                const content = prefetchedContent.get(ID);
-                if (useContent && permanentStorage && !content) {
-                    /**
-                     * If an error occurred while fetching, we ignore store the item's ID for later fetching of the content
-                     */
+                const result = prefetchedContent.get(ID);
+                if (!result) {
+                    // If no result at all, add to retry
+                    await addRetry(userID, ID);
+                    continue;
+                }
+
+                const { content, error } = result;
+                // If it's a 2501 (NOT_FOUND), skip it - the item is gone
+                if (error?.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+                    continue;
+                }
+
+                // For any other error, or if content is missing/empty, add to retry
+                if (useContent && permanentStorage && (error || !content || isObjectEmpty(content))) {
                     await addRetry(userID, ID);
                 }
 
@@ -189,13 +203,24 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
             if (Action === ES_SYNC_ACTIONS.UPDATE_CONTENT || Action === ES_SYNC_ACTIONS.UPDATE_METADATA) {
                 let newContent: ESItemContent | undefined;
                 if (Action === ES_SYNC_ACTIONS.UPDATE_CONTENT) {
-                    newContent = prefetchedContent.get(ID);
-                    if (useContent && permanentStorage && !newContent) {
-                        /**
-                         * If an error occurred while fetching, we store the item's ID for later fetching of the content
-                         */
+                    const result = prefetchedContent.get(ID);
+                    if (!result) {
+                        // If no result at all, add to retry
+                        await addRetry(userID, ID);
+                        continue;
+                    }
+
+                    const { content, error } = result;
+                    // If it's a 2501 (NOT_FOUND), skip it - the item is gone
+                    if (error?.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+                        continue;
+                    }
+
+                    // For any other error, or if content is missing/empty, add to retry
+                    if (useContent && permanentStorage && (error || !content || isObjectEmpty(content))) {
                         await addRetry(userID, ID);
                     }
+                    newContent = content;
                 }
 
                 const itemToCache: CachedItem<ESItemMetadata, ESItemContent> = {
