@@ -7,7 +7,7 @@ import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { getOfflineComponents, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
-import type { Maybe, MaybeNull, MaybePromise, Result } from '@proton/pass/types';
+import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -284,11 +284,14 @@ export const createAuthService = (config: AuthServiceConfig) => {
             return true;
         },
 
-        consumeFork: async (payload: ConsumeForkPayload, apiUrl?: string): Promise<Result<{ reauth: boolean }>> => {
-            try {
-                const data = safeCall(() => JSON.parse(payload.localState ?? ''))();
+        consumeFork: async (
+            payload: ConsumeForkPayload,
+            apiUrl?: string
+        ): Promise<{ ok: boolean; reauth: boolean }> => {
+            const data = safeCall(() => JSON.parse(payload.localState ?? ''))();
 
-                if (isReauthForkState(data)) {
+            if (isReauthForkState(data)) {
+                try {
                     const encryptedSession = await config.getPersistedSession(data.localID);
                     if (!encryptedSession) throw new Error('No session matching reauth');
 
@@ -305,10 +308,14 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                     await config?.onForkReauth?.(data, payload.state, decryptedBlob);
                     return { ok: true, reauth: true };
+                } catch {
+                    return { ok: false, reauth: true };
                 }
+            }
 
-                await config.onForkConsumeStart?.();
+            await config.onForkConsumeStart?.();
 
+            try {
                 const { session, Scopes } = await consumeFork({ api, apiUrl, payload, pullFork: config.pullFork });
                 const validScope = Scopes.includes('pass');
 
