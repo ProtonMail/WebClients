@@ -236,10 +236,18 @@ export type ChangeNotificationStateRequest = { State: InAppNotificationState };
 export type OrganizationUpdateSettingsRequest = {
     /* Allowed ways to share within the organization. 0 means unrestricted, 1 means sharing is only allowed within the organization */
     ShareMode?: number | null;
+    /* Who is allowed to accept an invite from outside the organization. 0 means unrestricted, 1 means only admins can accept invites from outside the organization */
+    ShareAcceptMode?: number | null;
+    /* Is item sharing enabled. 0 means no, 1 yes */
+    ItemShareMode?: number | null;
+    /* Are secure links enabled. 0 means no, 1 yes */
+    PublicLinkMode?: number | null;
     /* Force pass to lock after given seconds of time. 0 means disabled. */
     ForceLockSeconds?: number | null;
     /* Allowed ways of exporting the data owned by the org. 0 means anyone can export. 1 means only org admins can export */
     ExportMode?: number | null;
+    /* Who can create vaults in the organization. 0 means any user can create vaults. 1 means only org admins can create vaults */
+    VaultCreateMode?: number | null;
 };
 export type OrganizationUpdatePasswordPolicyRequest = {
     /* Whether subusers are allowed to generate random passwords */
@@ -354,6 +362,10 @@ export type UserMailboxDeleteRequest = {
     TransferMailboxID?: number | null;
 };
 export type SuccessfulResponse = { Code: '1000' };
+export type UserMailboxChangeEmailRequest = {
+    /* New email for this mailbox */
+    Email: string;
+};
 export type UpdateUserMonitorStateRequest = {
     /* Enable or disable monitor for proton addresses. Null leaves the value as is */
     ProtonAddress?: boolean | null;
@@ -715,7 +727,11 @@ export type ItemFileOutput = {
     ModifyTime: number;
 };
 export type ItemFileRestoreResponse = { Item: ItemRevisionContentsResponse; File: ItemFileOutput };
-export type ItemFileRestoreBatchResponse = { Item: ItemRevisionContentsResponse; Files: ItemFileOutput };
+export type ItemFileRestoreBatchResponse = {
+    Item: ItemRevisionContentsResponse;
+    /* New files created after restoring them */
+    Files: ItemFileOutput[];
+};
 export type ShareKeysResponse = {
     /* Keys */
     Keys: ShareKeyResponse[];
@@ -915,6 +931,8 @@ export type UserMailboxOutput = {
     MailboxID: number;
     /* Mailbox email */
     Email: string;
+    /* In case there is a pending email change, this will show what is the requested email change */
+    PendingEmail?: string | null;
     /* Whether the user has verified that he owns the mailbox */
     Verified: boolean;
     /* Whether the mailbox is the default one */
@@ -1206,12 +1224,20 @@ export type InAppNotification = {
 export type OrganizationSettingsGetResponse = {
     /* Bitfield with allowed ways to share within the organization. 0 means unrestricted, 1 means sharing is only allowed within the organization */
     ShareMode: number;
+    /* Bitfield with allowed ways to accept invites outside the organization. 0 means unrestricted, 1 means only admins can accept invites from ouside the org */
+    ShareAcceptMode: number;
+    /* Is item sharing enabled. 0 means no, 1 yes */
+    ItemShareMode: number;
+    /* Are secure links enabled. 0 means no, 1 yes */
+    PublicLinkMode: number;
     /* Force seconds to lock pass. 0 means lock time is not enforced */
     ForceLockSeconds: number;
     /* Bitfield with allowed ways to export data. 0 means anyone can export. 1 means only admins can export data */
     ExportMode: number;
     /* Organization password policy */
     PasswordPolicy?: OrganizationUpdatePasswordPolicyRequest | null;
+    /* Bitfield with who can create vaults. 0 means anyone, 1 means only admins can create vaults */
+    VaultCreateMode: number;
 };
 export type MemberMonitorReport = {
     /* Primary email for this member */
@@ -1515,6 +1541,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `get` ?
             { Code: ResponseCodeSuccess; Settings: CustomDomainSettingsOutput }
         :   never
+    : Path extends `pass/v1/user/alias/mailbox/${string}/email` ?
+        Method extends `put` ? { Code: ResponseCodeSuccess; Mailbox: UserMailboxOutput }
+        : Method extends `delete` ? SuccessfulResponse
+        : never
     : Path extends `pass/v1/user/alias/mailbox/${string}/verify` ?
         Method extends `get` ? { Code: ResponseCodeSuccess; Mailbox: UserMailboxOutput }
         : Method extends `post` ? { Code: ResponseCodeSuccess; Mailbox: UserMailboxOutput }
@@ -1987,6 +2017,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
     : Path extends `pass/v1/share/${string}/item/${string}/file/restore` ?
         Method extends `post` ?
             FileRestoreBatchInput
+        :   never
+    : Path extends `pass/v1/user/alias/mailbox/${string}/email` ?
+        Method extends `put` ?
+            UserMailboxChangeEmailRequest
         :   never
     : Path extends `pass/v1/user/alias/mailbox/${string}/verify` ?
         Method extends `post` ?
