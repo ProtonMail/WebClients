@@ -90,8 +90,8 @@ interface Props {
     loader: ReactNode;
     onLogin: OnLoginCallback;
     productParam: ProductParam;
-    toApp?: APP_NAMES;
-    toAppName?: string;
+    toApp: APP_NAMES;
+    toAppName: string;
     onBack?: () => void;
     clientType: CLIENT_TYPES;
     metaTags: MetaTags;
@@ -127,7 +127,15 @@ const getSignupMode = (coupon: string | undefined, currency: Currency | undefine
     return 'pricing' as const;
 };
 
-const SingleSignupContainer = ({ onPreSubmit, onStartAuth, metaTags, clientType, onLogin, productParam }: Props) => {
+const SingleSignupContainer = ({
+    onPreSubmit,
+    onStartAuth,
+    metaTags,
+    clientType,
+    onLogin,
+    productParam,
+    toAppName,
+}: Props) => {
     const getKtActivation = useGetAccountKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
@@ -692,6 +700,7 @@ const SingleSignupContainer = ({ onPreSubmit, onStartAuth, metaTags, clientType,
                         onCurrencyChange={updatePlans}
                         hideFreePlan={signupParameters.hideFreePlan}
                         upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
+                        toAppName={toAppName}
                     />
                 )}
                 {model.step === Steps.Loading && (
