@@ -4,16 +4,16 @@ import { useFetchData } from '@proton/components/hooks/useFetchData';
 import { queryLocationFilter } from './api';
 
 // Reuse your existing types or adapt them as needed
-interface VpnLocationFilterPolicy {
-    VpnLocationFilterPolicyID: number;
-    State: number;
-    Name: string;
-    Type: number;
-    OrganizationID: number;
-    Locations: SharedServerLocation[];
-    Groups: SharedServerGroup[];
-    Users: SharedServerUser[];
+export interface VpnLocationFilterPolicy {
     Code: number;
+    Groups: SharedServerGroup[];
+    LocationFilterPolicyID: number;
+    Locations: SharedServerLocation[];
+    Name: string;
+    OrganizationID: number;
+    State: number;
+    Type: number;
+    Users: SharedServerUser[];
 }
 
 interface SharedServerLocation {
@@ -21,9 +21,9 @@ interface SharedServerLocation {
     City: string;
 }
 
-interface SharedServerUser {
+export interface SharedServerUser {
     UserID: number;
-    FullName: string;
+    Name: string;
 }
 
 interface SharedServerGroup {
@@ -32,11 +32,11 @@ interface SharedServerGroup {
 }
 
 interface ApiResponse {
-    VpnLocationFilterPolicyResponse: VpnLocationFilterPolicy[];
+    Code: number;
+    FilterPolicies: VpnLocationFilterPolicy[];
+    Groups: SharedServerGroup[];
     Locations: SharedServerLocation[];
     Users: SharedServerUser[];
-    Groups: SharedServerGroup[];
-    Code: number;
 }
 
 export const useSharedServers = (maxAge: number) => {
@@ -57,7 +57,7 @@ export const useSharedServers = (maxAge: number) => {
     // Now you can define convenience return values from the result
     return {
         loading,
-        policies: result?.VpnLocationFilterPolicyResponse || [],
+        policies: result?.FilterPolicies || [],
         locations: result?.Locations || [],
         users: result?.Users || [],
         groups: result?.Groups || [],
