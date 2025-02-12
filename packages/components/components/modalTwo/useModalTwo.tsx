@@ -3,13 +3,15 @@ import { useCallback, useRef, useState } from 'react';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import type { VpnLocationFilterPolicy } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
 import noop from '@proton/utils/noop';
 
 type PartialModalStateProps = Partial<ModalStateProps>;
 
 export const useModalTwoStatic = <
     OwnProps extends PartialModalStateProps,
-    PassedProps = Omit<OwnProps, keyof PartialModalStateProps> & PartialModalStateProps,
+    PassedProps = Omit<OwnProps, keyof PartialModalStateProps> &
+        PartialModalStateProps & { policy?: VpnLocationFilterPolicy },
 >(
     Modal: ComponentType<OwnProps & PartialModalStateProps>
 ) => {
