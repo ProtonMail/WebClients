@@ -41,7 +41,6 @@ enum AccountFlag {
     NewCancellationFlow = 'NewCancellationFlow',
     B2BLogsPass = 'B2BLogsPass',
     B2BLogsVPN = 'B2BLogsVPN',
-    WalletAppSwitcherNewBadge = 'WalletAppSwitcherNewBadge',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
