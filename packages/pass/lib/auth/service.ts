@@ -129,7 +129,7 @@ export interface AuthServiceConfig {
     ) => Promise<boolean>;
     /** Called when a fork could not be successfully consumed. This can happen
      * if the fork data is invalid */
-    onForkInvalid?: () => void;
+    onForkInvalid?: (data: { reauth: boolean }) => void;
     /** Handle the result of a fork request call. Can be used to redirect the
      * user automatically when requesting a fork from account. Optional `data`
      * object should be persisted for the `result.state` key. */
@@ -308,7 +308,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                     await config?.onForkReauth?.(data, payload.state, decryptedBlob);
                     return { ok: true, reauth: true };
-                } catch {
+                } catch (err) {
+                    config.onForkInvalid?.({ reauth: true });
                     return { ok: false, reauth: true };
                 }
             }
@@ -357,7 +358,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     type: 'error',
                 });
 
-                config.onForkInvalid?.();
+                config.onForkInvalid?.({ reauth: false });
                 await authService.logout({ soft: true, broadcast: false });
 
                 throw error;
