@@ -150,7 +150,7 @@ import type {
 import { useCalendarEALMetric } from '../../metrics/useCalendarEALMetric';
 import { useCalendarNESTMetric } from '../../metrics/useCalendarNESTMetric';
 import { getCurrentPartstat } from '../../store/events/eventsCache';
-import { isTmpEventSavingSelector, pendingUniqueIdsSelector } from '../../store/events/eventsSelectors';
+import { pendingUniqueIdsSelector, selectIsTmpEventSaving } from '../../store/events/eventsSelectors';
 import { type CalendarViewEventStore, eventsActions } from '../../store/events/eventsSlice';
 import { useCalendarDispatch, useCalendarSelector } from '../../store/hooks';
 import CalendarView from './CalendarView';
@@ -329,7 +329,7 @@ const InteractiveCalendarView = ({
 }: Props) => {
     const api = useApi();
     const [userSettings] = useUserSettings();
-    const isTmpEventSaving = useCalendarSelector(isTmpEventSavingSelector);
+    const isTmpEventSaving = useCalendarSelector(selectIsTmpEventSaving);
     const pendingUniqueIds = useCalendarSelector(pendingUniqueIdsSelector);
     const hasPendingEvents = useMemo(() => {
         return pendingUniqueIds.length > 0;
