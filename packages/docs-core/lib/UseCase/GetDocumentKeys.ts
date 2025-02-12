@@ -100,7 +100,7 @@ export class GetDocumentKeys implements UseCaseInterface<GetDocumentKeysResult> 
     const { keys, address } = primaryAddressKeys
     const restoredKeys: DocumentKeys = {
       userAddressPrivateKey: keys[0].privateKey,
-      userOwnAddress: address.Email,
+      userOwnAddress: address,
       documentContentKey: deserializeSessionKey(JSON.parse(value)),
     }
 
