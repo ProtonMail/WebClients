@@ -173,7 +173,10 @@ export const useApplyLabelsToSelection = () => {
                     const [apiResults] = await Promise.all([
                         Promise.all(
                             changesKeys.map(async (LabelID) => {
-                                rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
+                                rollbacks[LabelID] = optimisticApplyLabels({
+                                    elements,
+                                    inputChanges: { [LabelID]: changes[LabelID] },
+                                });
                                 try {
                                     const action = changes[LabelID] ? labelAction : unlabelAction;
                                     return await runParallelChunkedActions({

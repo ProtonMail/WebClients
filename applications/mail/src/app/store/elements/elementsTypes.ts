@@ -151,6 +151,7 @@ export interface OptimisticUpdates {
     bypass?: boolean;
     conversationMode?: boolean;
     markAsStatus?: MARK_AS_STATUS;
+    elementTotalAdjustment?: number;
 }
 
 export interface OptimisticDelete {
