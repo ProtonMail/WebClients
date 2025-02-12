@@ -1,5 +1,6 @@
 import type { ESItem, ESStatus, EncryptedSearchFunctions } from '@proton/encrypted-search';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 export type ESBaseMessage = Pick<
@@ -31,6 +32,7 @@ export type ESBaseMessage = Pick<
 export interface ESMessageContent {
     decryptedBody?: string;
     decryptedSubject?: string;
+    mimeType?: MIME_TYPES;
 }
 
 export interface ESDBStatusMail {
