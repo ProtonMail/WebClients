@@ -12,7 +12,7 @@ import { PLANS } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
-import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { getIsMemberInvited } from '@proton/shared/lib/keys/memberHelper';
 
 interface Props extends ModalProps {
     member: Member | undefined;
@@ -25,7 +25,7 @@ const UserRemoveModal = ({ member: initialMember, organization, ...rest }: Props
     const [submitting, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
-    const isInvitationPending = !!(member.State === MEMBER_STATE.STATUS_INVITED);
+    const isInvitationPending = getIsMemberInvited(member);
 
     const handleClose = () => {
         if (submitting) {

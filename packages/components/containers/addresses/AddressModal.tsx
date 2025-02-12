@@ -32,8 +32,8 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import type { Member } from '@proton/shared/lib/interfaces';
-import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import { getCanGenerateMemberKeys, getShouldSetupMemberKeys } from '@proton/shared/lib/keys';
+import { getIsMemberDisabled, getIsMemberInvited } from '@proton/shared/lib/keys/memberHelper';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
@@ -151,10 +151,7 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
                                         key={member.ID}
                                         value={member.ID}
                                         title={name}
-                                        disabled={
-                                            member.State === MEMBER_STATE.STATUS_DISABLED ||
-                                            member.State === MEMBER_STATE.STATUS_INVITED
-                                        }
+                                        disabled={getIsMemberDisabled(member) || getIsMemberInvited(member)}
                                     >
                                         {name}
                                     </Option>
