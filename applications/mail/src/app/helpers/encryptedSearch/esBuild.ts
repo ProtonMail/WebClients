@@ -149,39 +149,45 @@ export const fetchMessage = async (
     api: Api,
     getMessageKeys: GetMessageKeys,
     signal?: AbortSignal
-): Promise<ESMessageContent | undefined> => {
-    const message = await queryMessage(api, messageID, signal);
-    if (!message) {
-        return;
+): Promise<{ content?: ESMessageContent; error?: any }> => {
+    try {
+        const message = await queryMessage(api, messageID, signal);
+        if (!message) {
+            return { error: new Error('Message not found') };
+        }
+
+        const keys = await getMessageKeys(message);
+        const decryptionResult = await decryptMessage(message, keys.decryptionKeys);
+
+        let decryptedSubject: string | undefined;
+        let decryptedBody: string | undefined;
+        let mimetype: MIME_TYPES | undefined;
+        if (!decryptionResult.errors) {
+            ({ decryptedSubject, decryptedBody, mimetype } = decryptionResult);
+        } else {
+            // Decryption can legitimately fail if there are inactive keys. In this
+            // case the above three variables are left undefined
+            return { content: {} };
+        }
+
+        const includeQuote = await shouldIndexQuotedContent(message, api);
+
+        const cleanDecryptedBody =
+            typeof decryptedBody === 'string'
+                ? (mimetype || message.MIMEType) === MIME_TYPES.DEFAULT
+                    ? cleanText(decryptedBody, includeQuote)
+                    : decryptedBody
+                : undefined;
+
+        return {
+            content: {
+                decryptedBody: cleanDecryptedBody,
+                decryptedSubject,
+            },
+        };
+    } catch (error: any) {
+        return { error };
     }
-
-    const keys = await getMessageKeys(message);
-    const decryptionResult = await decryptMessage(message, keys.decryptionKeys);
-
-    let decryptedSubject: string | undefined;
-    let decryptedBody: string | undefined;
-    let mimetype: MIME_TYPES | undefined;
-    if (!decryptionResult.errors) {
-        ({ decryptedSubject, decryptedBody, mimetype } = decryptionResult);
-    } else {
-        // Decryption can legitimately fail if there are inactive keys. In this
-        // case the above three variables are left undefined
-        return {};
-    }
-
-    const includeQuote = await shouldIndexQuotedContent(message, api);
-
-    const cleanDecryptedBody =
-        typeof decryptedBody === 'string'
-            ? (mimetype || message.MIMEType) === MIME_TYPES.DEFAULT
-                ? cleanText(decryptedBody, includeQuote)
-                : decryptedBody
-            : undefined;
-
-    return {
-        decryptedBody: cleanDecryptedBody,
-        decryptedSubject,
-    };
 };
 
 export const prepareCiphertext = (itemToStore: ESMessage, aesGcmCiphertext: AesGcmCiphertext) => {

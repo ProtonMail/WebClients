@@ -1,22 +1,66 @@
-import { add } from 'date-fns';
-
 import { serverTime } from '@proton/crypto';
 import { MINUTE } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { esSentryReport } from '..';
+import { ES_MAX_RETRIES, ES_MAX_RETRY_DELAY, ES_RETRY_QUEUE_TIMEOUT } from '../constants';
 import { executeContentOperations, openESDB, readMetadataBatch, readRetries, setRetries } from '../esIDB';
 import type { EncryptedItemWithInfo, InternalESCallbacks, RetryObject } from '../models';
 import { encryptItem } from './esBuild';
 import { isObjectEmpty } from './esUtils';
 
 /**
- * Increase the number of retries by one and set a new retryTime accordingly
+ * Helper to handle removal of an item from retry queue due to max retries
  */
-export const updateRetryObject = (retry: RetryObject): RetryObject => ({
-    retryTime: +serverTime() + 2 ** (retry.numberRetries + 1) * MINUTE,
-    numberRetries: retry.numberRetries + 1,
-});
+const handleMaxRetriesReached = (
+    userID: string,
+    retryID: string,
+    retry: RetryObject,
+    retryMap?: Map<string, RetryObject>
+) => {
+    const now = +serverTime();
+    // Calculate initial time using retryTime and accumulated delays
+    const initialRetryTime = retry.retryTime - 2 ** retry.numberRetries * MINUTE;
+
+    esSentryReport('[ES Debug] Item removed from retry queue - max retries reached:', {
+        retryID,
+        queueTime: Math.floor((now - initialRetryTime) / (60 * 1000)), // minutes
+    });
+
+    // If map is provided, remove item directly
+    if (retryMap) {
+        retryMap.delete(retryID);
+    }
+
+    // Otherwise return undefined to filter out the item
+    return undefined;
+};
+
+/**
+ * Increase the number of retries by one and set a new retryTime accordingly
+ * with exponential backoff capped at 24 hours
+ */
+export const updateRetryObject = (
+    retry: RetryObject,
+    userID: string,
+    retryID: string,
+    retryMap?: Map<string, RetryObject>
+): RetryObject | undefined => {
+    // If we've reached max retries, return undefined to indicate removal
+    if (retry.numberRetries >= ES_MAX_RETRIES) {
+        return handleMaxRetriesReached(userID, retryID, retry, retryMap);
+    }
+
+    const nextRetryNumber = retry.numberRetries + 1;
+    // Calculate delay with exponential backoff
+    const delay = Math.min(2 ** nextRetryNumber * MINUTE, ES_MAX_RETRY_DELAY);
+
+    return {
+        retryTime: +serverTime() + delay,
+        numberRetries: nextRetryNumber,
+    };
+};
 
 /**
  * Add a new item ID to the list of retries
@@ -29,10 +73,16 @@ export const addRetry = async (userID: string, retryID: string) => {
     if (!!retryObject) {
         const { retryTime } = retryObject;
         if (retryTime < now) {
-            retryMap.set(retryID, updateRetryObject(retryObject));
+            const updatedRetry = updateRetryObject(retryObject, userID, retryID, retryMap);
+            if (updatedRetry) {
+                retryMap.set(retryID, updatedRetry);
+            }
         }
     } else {
-        const defaultRetryObject: RetryObject = { retryTime: now, numberRetries: 0 };
+        const defaultRetryObject: RetryObject = {
+            retryTime: now,
+            numberRetries: 0,
+        };
         retryMap.set(retryID, defaultRetryObject);
     }
 
@@ -40,19 +90,37 @@ export const addRetry = async (userID: string, retryID: string) => {
 };
 
 /**
- * Get all items to be retried. If an item has reached a
- * retry time of one year, we remove it from the list
+ * Get all items to be retried. Remove items that:
+ * 1. Have been in the queue for more than 2 days (based on initial retryTime)
+ * 2. Have reached max retry attempts
  */
 export const getRetries = async (userID: string) => {
     const retryMap = await readRetries(userID);
+    const now = +serverTime();
 
-    for (const [retryID, { retryTime }] of retryMap) {
-        if (retryTime > +add(serverTime(), { years: 1 })) {
-            retryMap.delete(retryID);
+    // Track items to remove
+    const itemsToRemove: string[] = [];
+
+    for (const [retryID, retryObject] of retryMap) {
+        // Remove if item has been in queue for too long
+        // We use initial retryTime as the start time since it was set to 'now' when item was first added
+        const initialRetryTime = retryObject.retryTime - 2 ** retryObject.numberRetries * MINUTE;
+        if (now - initialRetryTime > ES_RETRY_QUEUE_TIMEOUT) {
+            itemsToRemove.push(retryID);
+            esSentryReport('[ES Debug] Item removed from retry queue - timeout reached:', {
+                retryID,
+                queueTime: Math.floor((now - initialRetryTime) / (60 * 1000)), // minutes
+            });
         }
     }
 
-    await setRetries(userID, retryMap);
+    // Remove tracked items
+    itemsToRemove.forEach((id) => retryMap.delete(id));
+
+    // Update the retry map if we removed any items
+    if (itemsToRemove.length > 0) {
+        await setRetries(userID, retryMap);
+    }
 
     return retryMap;
 };
@@ -68,7 +136,6 @@ export const retryAPICalls = async <ESItemContent>(
     const retryMap = await getRetries(userID);
     esSentryReport('[ES Debug] Retrying API calls:', {
         retryCount: retryMap.size,
-        userID,
     });
     if (!retryMap.size || !fetchESItemContent) {
         return;
@@ -100,7 +167,7 @@ export const retryAPICalls = async <ESItemContent>(
         return;
     }
 
-    const arrayMap = Array.from(retryMap);
+    const arrayMap = [...retryMap.entries()];
     const newArrayMap = (
         await Promise.all(
             arrayMap.map(async ([ID, retryObject]): Promise<[string, RetryObject] | undefined> => {
@@ -108,24 +175,39 @@ export const retryAPICalls = async <ESItemContent>(
                     return [ID, retryObject];
                 }
 
-                const item = await fetchESItemContent(ID);
+                const result = await fetchESItemContent(ID);
                 const timepoint = metadataMap.get(ID);
 
-                if (item && !isObjectEmpty(item) && timepoint) {
-                    try {
-                        const aesGcmCiphertext = await encryptItem(item, indexKey);
-                        contentToAdd.push({
-                            ID,
-                            timepoint,
-                            aesGcmCiphertext,
-                        });
-                        return;
-                    } catch (error: any) {
-                        // We store it back as if it failed fetching
-                    }
+                if (!result) {
+                    const updatedRetry = updateRetryObject(retryObject, userID, ID);
+                    return updatedRetry ? [ID, updatedRetry] : undefined;
                 }
 
-                return [ID, updateRetryObject(retryObject)];
+                const { content, error } = result;
+                // Handle 2501 (NOT_FOUND) specially - if the item is gone, no need to retry
+                if (error?.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+                    return undefined;
+                }
+
+                // For any other error, or if content is missing/empty, retry
+                if (error || !content || isObjectEmpty(content) || !timepoint) {
+                    const updatedRetry = updateRetryObject(retryObject, userID, ID);
+                    return updatedRetry ? [ID, updatedRetry] : undefined;
+                }
+
+                try {
+                    const aesGcmCiphertext = await encryptItem(content, indexKey);
+                    contentToAdd.push({
+                        ID,
+                        timepoint,
+                        aesGcmCiphertext,
+                    });
+                    return undefined;
+                } catch (error: any) {
+                    // If encryption fails, retry
+                    const updatedRetry = updateRetryObject(retryObject, userID, ID);
+                    return updatedRetry ? [ID, updatedRetry] : undefined;
+                }
             })
         )
     ).filter(isTruthy);

@@ -1,3 +1,4 @@
+import { DAY } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import type { ESIndexingState, ESProgress, EncryptedSearchFunctions, OptionalESCallbacks } from './models';
@@ -66,6 +67,16 @@ export const INDEXEDDB_VERSION = 2;
  * for a later attempt
  */
 export const ES_MAX_RETRIES = 10;
+
+/**
+ * Maximum delay between retries (24 hours in milliseconds)
+ */
+export const ES_MAX_RETRY_DELAY = DAY;
+
+/**
+ * Time after which to remove an item from retry queue (2 days in milliseconds)
+ */
+export const ES_RETRY_QUEUE_TIMEOUT = 2 * DAY;
 
 /**
  * Error codes that are deemed temporary and therefore will trigger a retry
