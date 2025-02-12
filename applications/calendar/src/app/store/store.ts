@@ -5,6 +5,7 @@ import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedS
 
 import { type StartListeningFeatures, start } from './listener';
 import { type CalendarState, rootReducer } from './rootReducer';
+import { calendarIgnoredActionPaths } from './serializable';
 import { type CalendarThunkArguments, extraThunkArguments } from './thunk';
 
 export type { CalendarState };
@@ -27,6 +28,7 @@ export const setupStore = ({
                 serializableCheck: {
                     ignoredActions: [...ignoredActions],
                     ignoredPaths: [...ignoredPaths],
+                    ignoredActionPaths: calendarIgnoredActionPaths,
                 },
                 thunk: { extraArgument: extraThunkArguments },
             }).prepend(listenerMiddleware.middleware),
