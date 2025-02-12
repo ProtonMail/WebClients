@@ -20,7 +20,6 @@ import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { AlbumsGrid } from './AlbumsGrid';
 import { EmptyAlbums } from './EmptyAlbums';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
-import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
@@ -155,7 +154,6 @@ export const AlbumsView: FC = () => {
                     onExit={() => setPreviewLinkId(undefined)}
                 />
             )}
-            <PhotosRecoveryBanner />
 
             <ToolbarRow
                 titleArea={
