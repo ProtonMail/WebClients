@@ -156,7 +156,11 @@ export const needsMoreElements = createSelector(
         const numberOfPages = Math.ceil(total / pageSize);
 
         // currentPage starts from 1
-        const expectedElementsInPage = page + 1 === numberOfPages ? total % pageSize : pageSize;
+        // If there is only one page left of pageSize elements, the modulo won't work (50%50 = 0).
+        // Meaning that if we have no element in the cache, the selector will be false, and we won't trigger a load
+        // To avoid that, we can return the total (or pageSize, since it will be the same) to trigger a load.
+        const expectedElementsInPage =
+            page + 1 === numberOfPages ? (total % pageSize === 0 ? pageSize : total % pageSize) : pageSize;
         return elementsLength < expectedElementsInPage;
     }
 );

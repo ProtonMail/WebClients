@@ -161,14 +161,14 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     // Stop the event manager to prevent race conditions
                     stop();
                     dispatch(backendActionStarted());
-                    rollback = optimisticApplyLabels(
-                        authorizedToMove,
-                        { [destinationLabelID]: true },
-                        true,
-                        [],
+                    rollback = optimisticApplyLabels({
+                        elements: authorizedToMove,
+                        inputChanges: { [destinationLabelID]: true },
+                        isMove: true,
+                        unreadStatuses: [],
                         // We need to pass a "real" folder to perform optimistic on custom labels
-                        isCustomLabel(sourceLabelID, labels) ? INBOX : sourceLabelID
-                    );
+                        currentLabelID: isCustomLabel(sourceLabelID, labels) ? INBOX : sourceLabelID,
+                    });
 
                     [tokens] = await Promise.all([
                         await runParallelChunkedActions({

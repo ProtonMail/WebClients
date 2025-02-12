@@ -189,6 +189,7 @@ describe('Mailbox hotkeys', () => {
             callTimes++;
             expect(labelSpy).toHaveBeenCalledTimes(callTimes);
             const result = labelSpy.mock.calls[callTimes - 1][0].data;
+            console.log({ result });
             expect(result.LabelID).toBe(LabelID);
 
             expect(result.IDs).toEqual([conversations[conversations.length - 1 * callTimes].ID]);
@@ -200,19 +201,16 @@ describe('Mailbox hotkeys', () => {
         await tick();
         expectLabelCall(MAILBOX_LABEL_IDS.ARCHIVE);
 
-        down();
         space();
         i();
         await tick();
         expectLabelCall(MAILBOX_LABEL_IDS.INBOX);
 
-        down();
         space();
         s();
         await tick();
         expectLabelCall(MAILBOX_LABEL_IDS.SPAM);
 
-        down();
         space();
         t();
         await tick();
