@@ -1,13 +1,7 @@
 import type { Binding, Provider } from '@lexical/yjs'
 import type { LexicalEditor } from 'lexical'
 
-import {
-  createBinding,
-  initLocalState,
-  // syncCursorPositions,
-  syncLexicalUpdateToYjs,
-  syncYjsChangesToLexical,
-} from '@lexical/yjs'
+import { createBinding, initLocalState, syncLexicalUpdateToYjs, syncYjsChangesToLexical } from '@lexical/yjs'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Doc, Transaction, YEvent } from 'yjs'
 import { UndoManager } from 'yjs'
@@ -55,7 +49,7 @@ export function useYjsCollaboration(
       const origin = transaction.origin
       if (origin !== binding) {
         const isFromUndoManger = origin instanceof UndoManager
-        syncYjsChangesToLexical(binding, provider, events, isFromUndoManger)
+        syncYjsChangesToLexical(binding, provider, events, isFromUndoManger, syncCursorPositions)
       }
     }
 
@@ -83,9 +77,6 @@ export function useYjsCollaboration(
             normalizedNodes,
             tags,
           )
-        }
-        if (tags.has('collaboration')) {
-          syncCursorPositions(binding, provider)
         }
       },
     )
