@@ -1311,6 +1311,9 @@
       ],
       "Close": [
         "Zamknij"
+      ],
+      "Discover and set up features": [
+        "Odkryj i skonfiguruj funkcje"
       ]
     },
     "Calendar access select label": {
@@ -5613,6 +5616,27 @@
       ],
       "Setting up ${ feature }…": [
         "Konfigurowanie ${ feature }…"
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Poznaj nowe funkcje i zacznij z nich korzystać!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Poznaj nowe funkcje planu ${ planTitle } i zacznij z nich korzystać!"
+      ],
+      "or discover other features:": [
+        "lub poznaj inne funkcje:"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Możesz to zmienić w ${ settingsLink }."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ]
     },
     "info": {
@@ -6293,7 +6317,7 @@
         "Wysłane"
       ],
       "settings": [
-        "ustawienia"
+        "ustawieniach"
       ],
       "Snooze": [
         "Odłożone"
@@ -7261,6 +7285,9 @@
       ],
       "Tor over VPN": [
         "Tor przez VPN"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
       ]
     },
     "new_plans: feature highlight": {
@@ -8446,6 +8473,9 @@
     "Safety review": {
       "Review your account safety": [
         "Sprawdź bezpieczeństwo konta"
+      ],
+      "Review account safety": [
+        "Sprawdź bezpieczeństwo konta"
       ]
     },
     "saml: Error": {
@@ -8914,6 +8944,9 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Ulepsz do planu ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -10630,6 +10663,9 @@
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -10678,6 +10714,12 @@
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Wymieniaj bezpiecznie Bitcoin przez e-mail, zamiast skomplikowanych, 26-znakowych adresów Bitcoin, które są podatne na błąd"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adres ${ BRAND_NAME }",
+        "${ n } adresy ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -11141,6 +11183,12 @@
       ],
       "Save 80% on your first month.": [
         "Zaoszczędź 80% przez pierwszy miesiąc."
+      ],
+      "${ pricingTitle } offer expires today!": [
+        "Oferta ${ pricingTitle } wygasa dzisiaj!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Wybierz plan Drive Plus za ${ pricingTitle }"
       ]
     },
     "Offer feature": {
@@ -11158,6 +11206,12 @@
       ],
       "Storage": [
         "Przestrzeń dyskowa"
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ]
     },
     "Valentine_2025: Offer": {
@@ -11189,7 +11243,7 @@
         "Zaawansowana ochrona konta"
       ],
       "All Mail, VPN, Pass, and Drive premium features": [
-        "Wszystkie funkcje premium Mail, VPN, Pass i Drive"
+        "Wszystkie funkcje premium Mail, VPN, Pass i Drive"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
@@ -11201,7 +11255,7 @@
         "Dwa razy więcej miłości za połowę ceny"
       ],
       "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Uzyskaj 1 rok ${ dealName } z rabatem ${ salePercentage }% — plus kod upominkowy, którym możesz podzielić się z przyjacielem"
+        "Uzyskaj 1 rok ${ dealName } z rabatem ${ salePercentage }% oraz kod upominkowy, którym możesz podzielić się z przyjacielem"
       ],
       "Get the deal": [
         "Skorzystaj z oferty"
@@ -11278,7 +11332,7 @@
     },
     "Valentine_2025": {
       "+ free gift": [
-        "+ darmowy prezent"
+        "+ prezent"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
         "Kod podarunkowy na ${ discountPercentAbsolute }% zniżki na ${ planTitle } na 1 rok"
@@ -11287,7 +11341,7 @@
         "Oferta na walentynki"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Twój darmowy prezent do udostępnienia, o wartości ${ price }﻿: "
+        "🎁 Twój prezent o wartości ${ price }, którym możesz się podzielić﻿: "
       ]
     }
   }

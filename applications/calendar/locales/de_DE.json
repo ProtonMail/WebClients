@@ -988,6 +988,9 @@
     "bf2023: renew": {
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ discountedPrice } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ nextPrice } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ discountedPrice } gilt für die ersten ${ cycle } Monate. Danach wird das Abonnement automatisch zum reduzierten Preis von ${ nextPrice } für ${ renewalLength } Monate verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "bf2023: Tooltip": {
@@ -1297,6 +1300,9 @@
       ],
       "Set up other features": [
         "Andere Funktionen einrichten"
+      ],
+      "Close": [
+        "Schließen"
       ]
     },
     "Calendar access select label": {
@@ -5497,6 +5503,9 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du wirst benachrichtigt, wenn dein Passwort oder andere Daten vom Dienst eines Drittanbieters preisgegeben wurden."
+      ],
+      "or discover other features:": [
+        "oder entdecke andere Funktionen:"
       ]
     },
     "info": {
@@ -7078,6 +7087,9 @@
       ],
       "Tor over VPN": [
         "Tor über VPN"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Lebenslanger Zugang zu den Funktionen von ${ PASS_APP_NAME } und SimpleLogin"
       ]
     },
     "new_plans: feature highlight": {
@@ -7944,6 +7956,15 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Wir bearbeiten gerade deine Zahlung für die Rechnung. Bitte warte, bis die Zahlung abgeschlossen ist, bevor du Änderungen an deinem Abonnement vornimmst oder deine Zahlungsdaten aktualisierst. Vielen Dank für deine Geduld."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für die ersten ${ subscriptionLength } Monate. Der Gutschein ist bei ${ couponRedemptions } Verlängerungen gültig. Danach wird das Abonnement automatisch zum Preis von ${ renewPrice } für ${ subscriptionLengthCopy } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für die ersten ${ subscriptionLength } Monate. Danach wird das Abonnement automatisch zum Preis von ${ renewPrice } für ${ subscriptionLengthCopy } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount }gilt für den ersten Monat. Der Gutschein kann bei ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPrice } für ${ subscriptionLength } Monate verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "Payments.Error": {
@@ -10787,10 +10808,10 @@
     },
     "Valentine_2025: Offer": {
       "${ salePercentage }% off": [
-        "${ salePercentage }% Rabatt"
+        "${ salePercentage } % Rabatt"
       ],
       "${ salePercentage }% off for you +1": [
-        "${ salePercentage }% Rabatt für dich +1"
+        "${ salePercentage } % Rabatt für dich +1"
       ],
       "10 email addresses for you": [
         "10 E-Mail-Adressen für dich"
@@ -10826,7 +10847,7 @@
         "Doppelte Liebe, halber Preis"
       ],
       "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Sichere dir 1 Jahr ${ dealName } mit ${ salePercentage }% Rabatt – plus einen Geschenkcode, um dasselbe Angebot mit einer Freundin oder einem Freund zu teilen"
+        "Sichere dir 1 Jahr ${ dealName } mit ${ salePercentage } % Rabatt – plus einen Geschenkcode, um dasselbe Angebot mit einer Freundin oder einem Freund zu teilen"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
@@ -10899,13 +10920,13 @@
         "+ Gratisgeschenk"
       ],
       "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Ein Geschenkcode für ${ discountPercentAbsolute }% Rabatt auf ${ planTitle } für 1 Jahr"
+        "Ein Geschenkcode für ${ discountPercentAbsolute } % Rabatt auf ${ planTitle } für 1 Jahr"
       ],
       "Valentine's deal": [
         "Angebot zum Valentinstag"
       ],
       "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Dein Gratisgeschenk zum Teilen, im Wert von ${ price } "
+        "🎁 Dein Gratisgeschenk zum Teilen, im Wert von ${ price }: "
       ]
     }
   }
