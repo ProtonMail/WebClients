@@ -398,7 +398,12 @@ export const createAuthService = ({
                 },
             }),
 
-        onForkInvalid: () => history.replace('/'),
+        onForkInvalid: ({ reauth }) => {
+            history.replace('/');
+            /** If the reauth fork could not be consumed - reinitialize
+             * the authentication service to resume the latest session */
+            if (reauth) void auth.init({ forceLock: true, forcePersist: true });
+        },
 
         onForkRequest: async ({ url, state }, data) => {
             const revokedUIDs = getPendingRevocations();
