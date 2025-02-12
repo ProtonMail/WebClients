@@ -1,6 +1,6 @@
 import type { RefObject } from 'react';
 
-import type { IEditor } from 'roosterjs-editor-types';
+import type { IEditor, InsertOption } from 'roosterjs-editor-types';
 import { ChangeSource, SelectionRangeTypes } from 'roosterjs-editor-types';
 
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
@@ -25,6 +25,9 @@ const getRoosterEditorActions = (
         },
         isDisposed() {
             return editorInstance.isDisposed();
+        },
+        insertContent(content: string, options?: InsertOption) {
+            editorInstance.insertContent(content, options);
         },
         setContent(value: string) {
             editorInstance.addUndoSnapshot(() => {
