@@ -27,11 +27,11 @@
         "electron-winstaller": "^5.4.0",
         "json5": "^2.2.3",
         "merge": "^2.1.1",
-        "node-gyp": "^11.0.0",
+        "node-gyp": "^11.1.0",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
-        "terser": "^5.37.0",
-        "whatwg-url": "^14.1.0"
+        "terser": "^5.38.2",
+        "whatwg-url": "^14.1.1"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:^",
@@ -44,17 +44,17 @@
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^5.2.2",
         "@types/jest-when": "^3.5.5",
-        "danger": "^12.3.3",
+        "danger": "^12.3.4",
         "husky": "^9.1.7",
         "lint-staged": "^15.4.3",
         "nyc": "^17.1.0",
-        "prettier": "^3.4.2",
+        "prettier": "^3.5.0",
         "sort-package-json": "^2.14.0",
-        "turbo": "^2.4.0"
+        "turbo": "^2.4.1"
     },
     "packageManager": "yarn@4.6.0",
     "engines": {
-        "node": ">= 22.13.1"
+        "node": ">= 22.14.0"
     },
     "publishConfig": {
         "registry": "https://nexus.protontech.ch/repository/web-npm/"
