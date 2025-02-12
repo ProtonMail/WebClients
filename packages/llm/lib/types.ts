@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/lines-between-class-members */
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import type { CacheId, DownloadResult, LlmFile } from '@proton/llm/lib/downloader';
 
@@ -225,7 +223,6 @@ interface DownloadedChunkMessage {
         downloadResult: DownloadResult;
         cacheId: CacheId;
         cacheUrl: string;
-        expectedMd5?: string;
         terminate: boolean;
     };
 }
