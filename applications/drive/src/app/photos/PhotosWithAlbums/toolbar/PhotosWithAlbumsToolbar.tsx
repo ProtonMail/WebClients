@@ -14,6 +14,7 @@ import {
 } from '@proton/components';
 
 import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../../store';
+import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
 import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosPreviewButton } from './PhotosPreviewButton';
@@ -220,6 +221,7 @@ interface PhotosWithAlbumToolbarProps {
     uploadDisabled: boolean;
     tabSelection: 'albums' | 'gallery' | 'albums-gallery';
     createAlbumModal: ModalStateReturnObj;
+    addAlbumPhotosModal?: ModalStateReturnObj;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
 }
 
@@ -232,6 +234,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     uploadDisabled,
     tabSelection,
     createAlbumModal,
+    addAlbumPhotosModal,
     onFileUpload,
 }) => {
     const hasSelection = selectedItems.length > 0;
@@ -259,6 +262,9 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                     <>
                         {!uploadDisabled && <Vr />}
                         {!hasMultipleSelected && <PhotosPreviewButton onClick={onPreview} />}
+                        {addAlbumPhotosModal && (
+                            <PhotosAddAlbumPhotosButton onClick={() => addAlbumPhotosModal.openModal(true)} />
+                        )}
                         <PhotosDownloadButton requestDownload={requestDownload} selectedLinks={selectedItems} />
                         {!hasMultipleSelected && <PhotosShareLinkButton selectedLinks={selectedItems} />}
                         <Vr />
