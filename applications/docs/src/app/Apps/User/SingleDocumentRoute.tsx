@@ -34,13 +34,6 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
   const [didCreateNewDocument, setDidCreateNewDocument] = useState<boolean>(false)
   const [contentToInject, setContentToInject] = useState<FileToDocPendingConversion | undefined>(undefined)
-  const [isAppReady, setIsAppReady] = useState(false)
-
-  useEffect(() => {
-    if (!isAppReady) {
-      setIsAppReady(true)
-    }
-  }, [application, isAppReady])
 
   useEffect(() => {
     if (openAction) {
@@ -69,7 +62,7 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
   }, [driveCompat, openAction])
 
   useEffect(() => {
-    if (!isAppReady || isCreatingNewDocument) {
+    if (isCreatingNewDocument) {
       return
     }
 
@@ -117,15 +110,7 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
       setActionMode('download')
       updateParameters({ newVolumeId: openAction.volumeId, newLinkId: openAction.linkId })
     }
-  }, [
-    application.logger,
-    createNewDocInRoot,
-    isAppReady,
-    isCreatingNewDocument,
-    navigateToAction,
-    openAction,
-    updateParameters,
-  ])
+  }, [application.logger, createNewDocInRoot, isCreatingNewDocument, navigateToAction, openAction, updateParameters])
 
   const onConversionSuccess = useCallback(
     (result: FileToDocConversionResult) => {
@@ -150,9 +135,6 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
     return undefined
   }, [contentToInject, didCreateNewDocument])
 
-  if (!isAppReady) {
-    return null
-  }
   return (
     <WordCountContextProvider>
       <UserProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
