@@ -63,18 +63,6 @@ export const updateTheme = (Theme: string | number) => ({
     data: { Theme },
 });
 
-export const updateDisplayName = (DisplayName: string) => ({
-    url: 'mail/v4/settings/display',
-    method: 'put',
-    data: { DisplayName },
-});
-
-export const updateSignature = (Signature: string) => ({
-    url: 'mail/v4/settings/signature',
-    method: 'put',
-    data: { Signature },
-});
-
 export const updatePMSignature = (PMSignature: number) => ({
     url: 'mail/v4/settings/pmsignature',
     method: 'put',
