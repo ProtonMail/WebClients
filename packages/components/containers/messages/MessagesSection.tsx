@@ -4,13 +4,15 @@ import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash';
@@ -42,11 +44,9 @@ const MessagesSection = () => {
     ] = useMailSettings();
     const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
     const { createNotification } = useNotifications();
-
     const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
     const isPageSizeSettingEnabled = useFlag('WebMailPageSizeSetting');
-
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const api = useApi();
 
     const [loadingViewMode, withLoadingViewMode] = useLoading();
@@ -58,8 +58,8 @@ const MessagesSection = () => {
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     const handleToggleStickyLabels = async (value: number) => {
-        await api(updateStickyLabels(value));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateStickyLabels(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
@@ -67,14 +67,14 @@ const MessagesSection = () => {
         if (mode === VIEW_MODE.SINGLE) {
             await api(updateStickyLabels(STICKY_LABELS.DISABLED));
         }
-        await api(updateViewMode(mode));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateViewMode(mode));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
     const handleChangeSpamAction = async (spamAction: SPAM_ACTION | null) => {
-        await api(updateSpamAction(spamAction));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateSpamAction(spamAction));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 

@@ -9,7 +9,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces';
 
 interface Props {
     aiFlag: AI_ASSISTANT_ACCESS;
@@ -51,8 +51,8 @@ const ToggleAssistantEnvironment = ({ aiFlag, onEnableLocal, onEnableServer }: P
     const dispatch = useDispatch();
 
     const handleChange = async (value: AI_ASSISTANT_ACCESS) => {
-        dispatch(userSettingsActions.update({ UserSettings: { AIAssistantFlags: value } }));
-        await api(updateAIAssistant(value));
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(updateAIAssistant(value));
+        dispatch(userSettingsActions.set({ UserSettings }));
 
         if (value === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
             onEnableLocal?.();

@@ -4,11 +4,13 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {
@@ -17,14 +19,14 @@ interface Props {
 
 const PromptPinToggle = ({ id }: Props) => {
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const [{ PromptPin } = DEFAULT_MAILSETTINGS] = useMailSettings();
 
     const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
-        await api(updatePromptPin(+target.checked));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePromptPin(+target.checked));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
