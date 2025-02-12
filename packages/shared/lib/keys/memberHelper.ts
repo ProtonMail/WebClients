@@ -10,8 +10,24 @@ export const getIsMemberSetup = (member?: Member): member is Member => {
     return Boolean(member?.PublicKey);
 };
 
-export const getIsMemberInactive = (member?: Member): member is Member & { State: MEMBER_STATE.STATUS_DISABLED } => {
+export const getIsMemberDisabled = (member?: Member): member is Member & { State: MEMBER_STATE.STATUS_DISABLED } => {
     return member?.State === MEMBER_STATE.STATUS_DISABLED;
+};
+
+export const getIsMemberEnabled = (
+    member?: Member
+): member is Member & {
+    State: MEMBER_STATE.STATUS_ENABLED;
+} => {
+    return member?.State === MEMBER_STATE.STATUS_ENABLED;
+};
+
+export const getIsMemberInvited = (
+    member?: Member
+): member is Member & {
+    State: MEMBER_STATE.STATUS_INVITED;
+} => {
+    return member?.State === MEMBER_STATE.STATUS_INVITED;
 };
 
 export enum MemberUnprivatizationMode {
