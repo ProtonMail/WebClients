@@ -10,7 +10,7 @@ import { getEventReadResult } from './eventsCache';
 import { type CalendarViewEventStore, eventsSliceName } from './eventsSlice';
 
 const selectEvents = (state: CalendarState) => state[eventsSliceName].events;
-const selectIsTmpEventSaving = (state: CalendarState) => state[eventsSliceName].isTmpEventSaving;
+export const selectIsTmpEventSaving = (state: CalendarState) => state[eventsSliceName].isTmpEventSaving;
 
 const mapEventsWithCalendars = (events: CalendarViewEventStore[], calendars?: CalendarWithOwnMembers[]) => {
     const visualCalendarsMap = new Map(getVisualCalendars(calendars || []).map((calendar) => [calendar.ID, calendar]));
