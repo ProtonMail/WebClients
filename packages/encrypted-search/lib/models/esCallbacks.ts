@@ -165,9 +165,9 @@ export interface OptionalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemC
      * be synced when events happen
      * @param itemID The unique ID used as a primary key in IDB
      * @param abortSignal An AbortSignal object to abort the request
-     * @returns A decrypted item, potentially without content, or undefined if something fails and itemMetadata is not provided
+     * @returns A decrypted item, potentially without content, or undefined if something fails and itemMetadata is not provided or if there was an error
      */
-    fetchESItemContent?: (itemID: string, signal?: AbortSignal) => Promise<ESItemContent | undefined>;
+    fetchESItemContent?: (itemID: string, signal?: AbortSignal) => Promise<{ content?: ESItemContent; error?: any }>;
 
     /**
      * Called on key reactivation, attempt to decrypt items stored as undecryptable inside IDB
