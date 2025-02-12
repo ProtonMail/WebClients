@@ -5,6 +5,7 @@ import { useGetMessageCounts, useMessageCounts } from '@proton/mail/counts/messa
 import { CacheType } from '@proton/redux-utilities';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
@@ -58,6 +59,7 @@ interface Options {
     filter: Filter;
     search: SearchParameters;
     onPage: (page: number) => void;
+    mailSettings: MailSettings;
 }
 
 interface ReturnValue {
@@ -82,9 +84,11 @@ export const useElements: UseElements = ({
     sort,
     filter,
     onPage,
+    mailSettings,
 }) => {
     const store = useMailStore();
     const dispatch = useMailDispatch();
+    const canReactToSettingsUpdate = useRef(false);
 
     const abortControllerRef = useRef<AbortController>();
 
@@ -165,6 +169,30 @@ export const useElements: UseElements = ({
             );
         }
     }, [shouldResetElementsState]);
+
+    // Reset the element state when receiving a setting update for page size or conversation mode
+    useEffect(() => {
+        // Do not trigger a reset on the first render
+        if (!canReactToSettingsUpdate.current) {
+            canReactToSettingsUpdate.current = true;
+            return;
+        }
+
+        dispatch(
+            reset({
+                page,
+                pageSize,
+                params: {
+                    labelID,
+                    conversationMode,
+                    sort,
+                    filter,
+                    esEnabled,
+                    search,
+                },
+            })
+        );
+    }, [mailSettings.PageSize, mailSettings.ViewMode]);
 
     useEffect(() => {
         dispatch(setPageSize(MAIL_PAGE_SIZE.FIFTY));
