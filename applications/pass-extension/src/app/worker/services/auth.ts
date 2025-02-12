@@ -187,7 +187,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             /** set the `forceLock` flag for subsequent auth inits and
              * clear the in-memory session storage */
             void ctx.service.storage.local.setItem('forceLock', true);
-            void ctx.service.storage.session.clear();
+            void ctx.service.storage.session.removeItems(SESSION_KEYS);
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
@@ -281,9 +281,10 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                     `${SSO_URL}/api`
                 );
 
-                if (result.ok && result.reauth) {
-                    /** on fork reauth remove the account tab to
-                     * avoid `/auth-ext` onboarding redirection */
+                if (result.reauth) {
+                    /** On fork reauth remove the account tab to  avoid `/auth-ext`
+                     * onboarding redirection. At this point, the extension may be
+                     * locked causing the reauth action to be lost. */
                     if (tab?.id) await browser.tabs.remove(tab.id);
                     return getAccountForkResponsePayload(AccountForkResponse.REAUTH);
                 }
