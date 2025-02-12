@@ -2,12 +2,14 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateShowMoved } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 const { DRAFTS_AND_SENT, NONE } = SHOW_MOVED;
@@ -20,13 +22,15 @@ const ShowMovedToggle = ({ id }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const api = useApi();
+    const dispatch = useDispatch();
     const [{ ShowMoved } = DEFAULT_MAILSETTINGS] = useMailSettings();
-    const { call } = useEventManager();
     const { state, toggle } = useToggle(!!ShowMoved);
 
     const handleChange = async (checked: boolean) => {
-        await api(updateShowMoved(checked ? DRAFTS_AND_SENT : NONE));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(
+            updateShowMoved(checked ? DRAFTS_AND_SENT : NONE)
+        );
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         toggle();
         createNotification({ text: c('Success').t`Preference saved` });
     };

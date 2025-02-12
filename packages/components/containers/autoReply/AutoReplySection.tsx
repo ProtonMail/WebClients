@@ -15,11 +15,12 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import {
     APP_UPSELL_REF_PATH,
@@ -29,6 +30,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
@@ -51,7 +53,7 @@ export const AutoReplySection = () => {
     const { Shortcuts } = mailSettings || DEFAULT_MAILSETTINGS;
     const AutoResponder = mailSettings?.AutoResponder || getDefaultAutoResponder();
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [enablingLoading, withEnablingLoading] = useLoading();
     const [updatingLoading, withUpdatingLoading] = useLoading();
     const [isEnabled, setIsEnabled] = useState(AutoResponder.IsEnabled);
@@ -81,11 +83,11 @@ export const AutoReplySection = () => {
             return;
         }
 
-        await api({
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>({
             ...updateAutoresponder({ ...AutoResponder, IsEnabled: enable }),
             silence: true,
         });
-        await call();
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({
             text: c('Success').t`Auto-reply disabled`,
         });
@@ -107,8 +109,10 @@ export const AutoReplySection = () => {
             }
         }
 
-        await api(updateAutoresponder(toAutoResponder({ ...model, message })));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(
+            updateAutoresponder(toAutoResponder({ ...model, message }))
+        );
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Success').t`Auto-reply updated` });
     };
 

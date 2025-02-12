@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateAutoSaveContacts } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 interface Props {
     autoSaveContacts: boolean;
@@ -19,11 +21,13 @@ const AutoSaveContactsToggle = ({ autoSaveContacts, id, className }: Props) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
-        await api(updateAutoSaveContacts(+event.target.checked));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(
+            updateAutoSaveContacts(+event.target.checked)
+        );
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 

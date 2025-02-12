@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import type { Input } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -10,9 +11,9 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateEmail } from '@proton/shared/lib/api/settings';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
@@ -76,27 +77,25 @@ const RecoveryEmail = ({
     persistPasswordScope = false,
 }: Props) => {
     const api = useApi();
+    const dispatch = useDispatch();
     const [input, setInput] = useState(email.Value || '');
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
     const { validator, onFormSubmit } = useFormErrors();
     const [verifyRecoveryEmailModal, setVerifyRecoveryEmailModalOpen, renderVerifyRecoveryEmailModal] = useModalState();
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
-
     const [updatingEmail, withUpdatingEmail] = useLoading();
 
     const loading = renderVerifyRecoveryEmailModal || renderConfirmModal || updatingEmail;
     const confirmStep = !input && (hasReset || hasNotify);
 
     const handleUpdateEmail = async () => {
-        await api(
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(
             updateEmail({
                 Email: input,
                 PersistPasswordScope: persistPasswordScope,
             })
         );
-        await call();
-
+        dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Email updated` });
         onSuccess?.();
     };

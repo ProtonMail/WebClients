@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -10,9 +11,9 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updatePhone } from '@proton/shared/lib/api/settings';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
@@ -74,9 +75,9 @@ const RecoveryPhone = ({
     persistPasswordScope = false,
 }: Props) => {
     const api = useApi();
+    const dispatch = useDispatch();
     const [input, setInput] = useState(phone.Value || '');
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
     const { onFormSubmit } = useFormErrors();
     const [verifyRecoveryPhoneModal, setVerifyRecoveryPhoneModalOpen, renderVerifyRecoveryPhoneModal] = useModalState();
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
@@ -87,14 +88,13 @@ const RecoveryPhone = ({
     const loading = renderVerifyRecoveryPhoneModal || renderConfirmModal || updatingPhone;
 
     const handleUpdatePhone = async () => {
-        await api(
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(
             updatePhone({
                 Phone: input,
                 PersistPasswordScope: persistPasswordScope,
             })
         );
-        await call();
-
+        dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Phone number updated` });
         onSuccess?.();
     };
