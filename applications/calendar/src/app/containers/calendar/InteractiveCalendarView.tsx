@@ -1464,6 +1464,7 @@ const InteractiveCalendarView = ({
         if (isEditingEvent) {
             startEALMetric('edit');
         }
+        let hasClosedModalOrPopover = false;
         let hasStartChanged;
         // uid is not defined when we create a new event
         const UID = temporaryEvent.tmpData.uid || TMP_UID;
@@ -1562,6 +1563,7 @@ const InteractiveCalendarView = ({
             } else {
                 closeProcessingPopover(uniqueId);
             }
+            hasClosedModalOrPopover = true;
             const count = isSingleEventUpdate ? 1 : 3;
             notificationId = createNotification({
                 text: (
@@ -1672,6 +1674,14 @@ const InteractiveCalendarView = ({
                 dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: false }));
             } else {
                 dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: false }));
+            }
+
+            if (!hasClosedModalOrPopover) {
+                if (isModal) {
+                    closeProcessingModal(uniqueId);
+                } else {
+                    closeProcessingPopover(uniqueId);
+                }
             }
         }
         stopNESTMetric(isCreatingEvent);
@@ -2145,7 +2155,7 @@ const InteractiveCalendarView = ({
                                     }
                                     try {
                                         await handleSaveEvent(temporaryEvent, inviteActions);
-                                        return closeProcessingPopover(temporaryEvent.uniqueId);
+                                        return;
                                     } catch (error) {
                                         return noop();
                                     }
