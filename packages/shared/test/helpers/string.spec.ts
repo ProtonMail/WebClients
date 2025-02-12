@@ -1,6 +1,7 @@
 import {
     DEFAULT_TRUNCATE_OMISSION,
     findLongestMatchingIndex,
+    getHashCode,
     getInitials,
     removeHTMLComments,
     truncateMore,
@@ -129,6 +130,13 @@ describe('string', () => {
             expect(removeHTMLComments('<a href="#">a<!-- b -->c<!-- d -->e<!-- f -->g<!-- h -->i</a>')).toEqual(
                 '<a href="#">acegi</a>'
             );
+        });
+    });
+
+    describe('getHashCode', () => {
+        it('should compute correct value', () => {
+            expect(getHashCode('')).toEqual(0);
+            expect(getHashCode('hello world')).toEqual(1794106052);
         });
     });
 });

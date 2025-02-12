@@ -1,6 +1,5 @@
 import type { Location } from 'history';
 
-import { CryptoProxy } from '@proton/crypto';
 import type { CachedItem, ESEvent, ESItemEvent, EncryptedItemWithInfo, EventsObject } from '@proton/encrypted-search';
 import {
     ES_MAX_CONCURRENT,
@@ -18,6 +17,7 @@ import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models
 import { getEvent, queryEventsIDs, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import { getHashCode } from '@proton/shared/lib/helpers/string';
 import { getSearchParams as getSearchParamsFromURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
@@ -49,13 +49,10 @@ import { CALENDAR_CORE_LOOP } from './constants';
 
 export const getEventKey = (calendarID: string, uid: string) => `${calendarID}-${uid}`;
 
-export const generateOrder = async (ID: string) => {
-    const numericalID = ID.split('').map((char) => char.charCodeAt(0));
-    const digest = await CryptoProxy.computeHash({ algorithm: 'unsafeMD5', data: Uint8Array.from(numericalID) });
-    const orderArray = new Uint32Array(digest.buffer);
-
-    return orderArray[0];
-};
+/**
+ * Generate a deterministic numeric value based on the input
+ */
+export const generateOrder = (ID: string) => getHashCode(ID);
 
 const checkIsSearch = (searchParams: ESCalendarSearchParams) =>
     !!searchParams.calendarID || !!searchParams.begin || !!searchParams.end || !!searchParams.keyword;

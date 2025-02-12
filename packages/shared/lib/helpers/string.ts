@@ -144,3 +144,20 @@ export const rtlSanitize = (str: string) => {
 export const removeHTMLComments = (str: string) => {
     return str.replace(/<!--[\s\S]*?-->/g, '');
 };
+
+/**
+ * Compute a deterministic numeric value for a given string, based on Java's String.hashCode() algorithm
+ * (https://www.w3schools.com/java/ref_string_hashcode.asp).
+ * @dev NB: this method is not a cryptographic hash function.
+ * Different string values do not necessarily result in different hash code values.
+ */
+export const getHashCode = (str: string) => {
+    let hash = 0;
+    if (str.length === 0) {return hash;}
+    for (let i = 0; i < str.length; i++) {
+        const chr = str.charCodeAt(i);
+        hash = (hash << 5) - hash + chr;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+};
