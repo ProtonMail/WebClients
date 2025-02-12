@@ -16,7 +16,7 @@ import type {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
-import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import { getIsMemberEnabled, getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import { getCanGenerateMemberKeysPermissions, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -98,10 +98,12 @@ export const getMemberPermissions = ({
     const isPrivate = member.Private === MEMBER_PRIVATE.UNREADABLE;
     const isMemberSetup = getIsMemberSetup(member);
     const isSelf = Boolean(member.Self);
+    const isEnabled = getIsMemberEnabled(member);
 
     const canLogin =
         !disableMemberSignIn &&
         appName !== APPS.PROTONVPN_SETTINGS &&
+        isEnabled &&
         hasSetupOrganizationWithKeys &&
         !isSelf &&
         isNonPrivate &&
@@ -111,6 +113,7 @@ export const getMemberPermissions = ({
         addresses?.length > 0;
 
     const canChangePassword =
+        isEnabled &&
         hasSetupOrganizationWithKeys &&
         !isSelf &&
         isNonPrivate &&
