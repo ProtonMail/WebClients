@@ -1,17 +1,15 @@
 import { type ReactNode, useCallback } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useAuthentication } from '@proton/components/index';
 import type { PublicKeyReference, SessionKey } from '@proton/crypto/lib';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
-import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import type { ShareURL } from '../store';
-import { useShareUrl } from '../store';
+import { useDefaultShare, useShareUrl } from '../store';
 import { useDriveCrypto } from '../store/_crypto';
 import type { DocumentAction } from '../store/_documents';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
@@ -132,14 +130,13 @@ export interface DriveCompat {
 
     getKeysForLocalStorageEncryption: () => CacheConfig | undefined;
 
-    getPrimaryAddressKeys: () => Promise<{ keys: DecryptedAddressKey[]; address: Address } | undefined>;
+    getPrimaryAddressKeys: () => Promise<{ keys: DecryptedAddressKey[]; address: string } | undefined>;
 }
 
 export const useDriveCompat = (): DriveCompat => {
     const { withResolveShareId } = useResolveShareId();
 
     const authentication = useAuthentication();
-    const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
 
     const getKeysForLocalStorageEncryption: () => CacheConfig | undefined = useCallback(() => {
@@ -159,17 +156,18 @@ export const useDriveCompat = (): DriveCompat => {
 
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { loadShareUrl } = useShareUrl();
+    const { getDefaultShare, getDefaultShareAddressEmail } = useDefaultShare();
 
     const openDocument = (meta: NodeMeta) =>
         openDocumentWindow({ ...meta, mode: 'open', window: getNewWindow().handle });
 
     const getPrimaryAddressKeys = async () => {
-        const primaryAddress = getPrimaryAddress(await getAddresses());
-        if (!primaryAddress) {
-            return undefined;
-        }
-        const keys = await getAddressKeys(primaryAddress.ID);
-        return { keys, address: primaryAddress };
+        const share = await getDefaultShare();
+
+        const email = await getDefaultShareAddressEmail();
+        const keys = await getAddressKeys(share.addressId);
+
+        return { keys, address: email };
     };
 
     return {
