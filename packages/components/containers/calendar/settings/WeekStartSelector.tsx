@@ -1,19 +1,20 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getAutomaticText } from '@proton/components/containers/general/helper';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateWeekStart } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
+import { SETTINGS_WEEK_START, type UserSettings } from '@proton/shared/lib/interfaces';
 import { getDefaultWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 interface Props {
@@ -25,14 +26,14 @@ interface Props {
 const WeekStartSelector = ({ className, unstyledSelect, shortText = false }: Props) => {
     const api = useApi();
     const [userSettings] = useUserSettings();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
     const handleWeekStart = async (value: SETTINGS_WEEK_START) => {
         await loadDateLocale(dateLocaleCode, getBrowserLocale(), { ...userSettings, WeekStart: value });
-        await api(updateWeekStart(value));
-        await call();
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(updateWeekStart(value));
+        dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 

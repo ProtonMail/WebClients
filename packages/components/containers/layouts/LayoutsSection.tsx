@@ -1,18 +1,21 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import type { DENSITY } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
@@ -23,9 +26,9 @@ import ViewLayoutCards from './ViewLayoutCards';
 const LayoutsSection = () => {
     const [{ ComposerMode, ViewLayout } = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
     const [{ Density }, loadingUserSettings] = useUserSettings();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
+    const dispatch = useDispatch();
     const [loadingComposerMode, withLoadingComposerMode] = useLoading();
     const [loadingViewLayout, withLoadingViewLayout] = useLoading();
     const [loadingDensity, withLoadingDensity] = useLoading();
@@ -33,20 +36,20 @@ const LayoutsSection = () => {
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     const handleChangeComposerMode = async (mode: COMPOSER_MODE) => {
-        await api(updateComposerMode(mode));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateComposerMode(mode));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
     const handleChangeViewLayout = async (layout: VIEW_LAYOUT) => {
-        await api(updateViewLayout(layout));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateViewLayout(layout));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
     const handleChangeDensity = async (density: DENSITY) => {
-        await api(updateDensity(density));
-        await call();
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(updateDensity(density));
+        dispatch(userSettingsActions.set({ UserSettings }));
         notifyPreferenceSaved();
     };
 

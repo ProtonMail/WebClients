@@ -4,10 +4,11 @@ import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/componen
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import {
     updateDraftType,
     updateFontFace,
@@ -16,6 +17,7 @@ import {
     updateRightToLeft,
 } from '@proton/shared/lib/api/mailSettings';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import useFlag from '@proton/unleash/useFlag';
@@ -33,6 +35,7 @@ import TextDirectionSelect from './TextDirectionSelect';
 
 const MessagesOtherSection = () => {
     const api = useApi();
+    const dispatch = useDispatch();
     const [
         {
             DraftMIMEType,
@@ -45,7 +48,6 @@ const MessagesOtherSection = () => {
     ] = useMailSettings();
     const fontFaceValue = getFontFaceValueFromId(FontFace) || DEFAULT_FONT_FACE;
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
 
     const [loadingDraftType, withLoadingDraftType] = useLoading();
     const [loadingRightToLeft, withLoadingRightToLeft] = useLoading();
@@ -57,35 +59,35 @@ const MessagesOtherSection = () => {
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     const handleChangeDraftType = async (value: MIME_TYPES) => {
-        await api(updateDraftType(value));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateDraftType(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
     const handleChangeRightToLeft = async (value: DIRECTION) => {
-        await api(updateRightToLeft(value));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateRightToLeft(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
     const handleChangeFontFace = async (value: string) => {
         const fontFaceId = getFontFaceIdFromValue(value);
         if (fontFaceId) {
-            await api(updateFontFace(fontFaceId));
-            await call();
+            const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateFontFace(fontFaceId));
+            dispatch(mailSettingsActions.updateMailSettings(MailSettings));
             notifyPreferenceSaved();
         }
     };
 
     const handleChangeFontSize = async (value: number) => {
-        await api(updateFontSize(value));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateFontSize(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
     const handleRemoveImageMetadata = async (value: boolean) => {
-        await api(updateRemoveImageMetadata(value));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateRemoveImageMetadata(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
