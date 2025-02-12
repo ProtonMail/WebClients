@@ -21,7 +21,7 @@ const TopBanner = ({ children, className, onClose, ...rest }: Props) => {
             className={clsx([
                 'flex shrink-0 flex-nowrap text-center relative text-bold no-print',
                 className,
-                isElectronOnMac && 'pt-4',
+                isElectronOnMac && 'py-2 top-bar',
             ])}
             {...rest}
         >
