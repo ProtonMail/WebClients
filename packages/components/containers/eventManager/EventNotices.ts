@@ -4,21 +4,21 @@ import { useUser } from '@proton/account/user/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToHexString, binaryStringToArray, encodeUtf8 } from '@proton/crypto/lib/utils';
+import { arrayToHexString, stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-const getID = async (text) => {
+const getID = async (text: string) => {
     const id = arrayToHexString(
         await CryptoProxy.computeHash({
-            algorithm: 'unsafeMD5',
-            data: binaryStringToArray(encodeUtf8(text)),
+            algorithm: 'SHA256',
+            data: stringToUtf8Array(text),
         })
     );
     return `NOTICE-${id}`;
 };
 
-const serialize = (number) => `${number}`;
-const deserialize = (string) => (string ? +string : 0);
+const serialize = (number: number) => `${number}`;
+const deserialize = (string?: string | null) => (string ? +string : 0);
 // Two weeks in milliseconds.
 const EXPIRATION = 86400 * 1000 * 14;
 
@@ -28,7 +28,7 @@ const EventNotices = () => {
     const [user] = useUser();
 
     useEffect(() => {
-        const notify = (text) => {
+        const notify = (text: string) => {
             createNotification({
                 type: 'info',
                 text,
@@ -36,7 +36,7 @@ const EventNotices = () => {
             });
         };
 
-        const handleNotice = async (text) => {
+        const handleNotice = async (text: string) => {
             const id = await getID(`${user.ID}${text}`);
 
             const oldTimestamp = deserialize(getItem(id));

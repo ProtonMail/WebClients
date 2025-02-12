@@ -1,6 +1,6 @@
 import type { Location } from 'history';
 
-import { CryptoProxy } from '@proton/crypto';
+import { getHashCode } from '@proton/shared/lib/helpers/string';
 import type { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 
 import type { ESLink } from './types';
@@ -14,13 +14,10 @@ export const parseItemId = (esItemId: string) => {
     return { shareId, linkId };
 };
 
-export const generateOrder = async (ID: string) => {
-    const numericalID = ID.split('').map((char) => char.charCodeAt(0));
-    const digest = await CryptoProxy.computeHash({ algorithm: 'unsafeMD5', data: Uint8Array.from(numericalID) });
-    const orderArray = new Uint32Array(digest.buffer);
-
-    return orderArray[0];
-};
+/**
+ * Generate a deterministic numeric value based on the input
+ */
+export const generateOrder = (ID: string) => getHashCode(ID);
 
 export const convertLinkToESItem = async (link: ShareMapLink, shareId: string): Promise<ESLink> => {
     const id = createItemId(shareId, link.LinkID);

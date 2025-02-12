@@ -54,6 +54,7 @@ export interface EventLoop {
     Labels?: EventItemUpdate<Category, 'Label'>[];
     Members?: EventItemUpdate<Member, 'Member'>[];
     MessageCounts?: LabelCount[];
+    Notices?: string[];
     ConversationCounts?: LabelCount[];
     PaymentMethods?: EventItemUpdate<SavedPaymentMethod, 'PaymentMethod'>[];
     IncomingAddressForwardings?: EventItemUpdate<IncomingAddressForwarding, 'IncomingAddressForwarding'>[];
