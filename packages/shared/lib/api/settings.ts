@@ -136,12 +136,6 @@ export const updateResetPhone = (data: { Reset: number; PersistPasswordScope?: b
     data,
 });
 
-export const verifyPhone = (Token: string) => ({
-    url: 'core/v4/settings/phone/verify',
-    method: 'post',
-    data: { Token },
-});
-
 export const registerSecurityKey = (data: {
     RegistrationOptions: RegistrationOptions;
     ClientData: string;

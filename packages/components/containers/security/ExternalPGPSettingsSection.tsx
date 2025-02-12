@@ -12,13 +12,15 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ATTACH_PUBLIC_KEY, DEFAULT_MAILSETTINGS, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import { PGPSchemeSelect } from './PGPSchemeSelect';
@@ -57,9 +59,9 @@ const AutomaticallySignModal = ({ onConfirm, ...rest }: AutomaticallySignModalPr
 
 export const ExternalPGPSettingsSection = () => {
     const [{ Sign, AttachPublicKey, PGPScheme } = DEFAULT_MAILSETTINGS] = useMailSettings();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
+    const dispatch = useDispatch();
     const [loadingSign, withLoadingSign] = useLoading();
     const [loadingAttach, withLoadingAttach] = useLoading();
     const [loadingScheme, withLoadingScheme] = useLoading();
@@ -67,29 +69,31 @@ export const ExternalPGPSettingsSection = () => {
     const [automaticallySignModalProps, setAutomaticallySignModalOpen, renderAutomaticallySign] = useModalState();
 
     const handleChangeSign = async (value: number) => {
-        await api(updateSign(value));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateSign(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Info').t`Encryption setting updated` });
     };
 
     const handleAttachPublicKey = async (value: number) => {
-        await api(updateAttachPublicKey(value));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateAttachPublicKey(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Info').t`Encryption setting updated` });
     };
 
     const handleChangeScheme = async (value: number) => {
-        await api(updatePGPScheme(value));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePGPScheme(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Info').t`Encryption setting updated` });
     };
 
     const handleAutomaticallySign = async (shouldSign: boolean) => {
-        await Promise.all([
-            shouldSign ? api(updateSign(SIGN.ENABLED)) : undefined,
-            api(updateAttachPublicKey(ATTACH_PUBLIC_KEY.ENABLED)),
-        ]);
-        await call();
+        if (shouldSign) {
+            await api<{ MailSettings: MailSettings }>(updateSign(SIGN.ENABLED));
+        }
+        const { MailSettings: MailSettings } = await api<{ MailSettings: MailSettings }>(
+            updateAttachPublicKey(ATTACH_PUBLIC_KEY.ENABLED)
+        );
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Info').t`Encryption setting updated` });
     };
 

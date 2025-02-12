@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import Select from '@proton/components/components/select/Select';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateDelaySend } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DELAY_IN_SECONDS } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {
@@ -18,7 +20,7 @@ interface Props {
 const DelaySendSecondsSelect = ({ id, delaySendSeconds }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const api = useApi();
     const [delay, setDelay] = useState(delaySendSeconds);
     const options = [
@@ -29,8 +31,8 @@ const DelaySendSecondsSelect = ({ id, delaySendSeconds }: Props) => {
     ];
 
     const handleChange = async (delay: number) => {
-        await api(updateDelaySend(delay));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateDelaySend(delay));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         setDelay(delay);
         createNotification({ text: c('Success').t`Preference saved` });
     };

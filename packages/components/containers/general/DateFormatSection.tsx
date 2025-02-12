@@ -1,17 +1,18 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateDateFormat } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
+import { SETTINGS_DATE_FORMAT, type UserSettings } from '@proton/shared/lib/interfaces';
 import { getDefaultDateFormat } from '@proton/shared/lib/settings/helper';
 
 import SettingsLayout from '../account/SettingsLayout';
@@ -22,14 +23,14 @@ import { getAutomaticText } from './helper';
 const DateFormatSection = () => {
     const api = useApi();
     const [userSettings] = useUserSettings();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
     const handleDateFormat = async (value: SETTINGS_DATE_FORMAT) => {
         await loadDateLocale(dateLocaleCode, getBrowserLocale(), { ...userSettings, DateFormat: value });
-        await api(updateDateFormat(value));
-        await call();
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(updateDateFormat(value));
+        dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 

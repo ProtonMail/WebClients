@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { IconName } from '@proton/components';
 import {
@@ -23,7 +24,6 @@ import {
     ToggleAssistantEnvironment,
     Tooltip,
     useApi,
-    useEventManager,
     useKeyTransparencyContext,
     useModalState,
     useNotifications,
@@ -34,6 +34,8 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
 import { useAssistant } from '@proton/llm/lib';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -43,7 +45,12 @@ import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/inte
 import { isChromiumBased, isFirefox, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { AI_ASSISTANT_ACCESS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import {
+    AI_ASSISTANT_ACCESS,
+    KeyTransparencyActivation,
+    type MailSettings,
+    type UserSettings,
+} from '@proton/shared/lib/interfaces';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -63,7 +70,7 @@ interface QuickSettingsSelectOption {
 
 const MailQuickSettings = () => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
 
     const [{ Density, AIAssistantFlags }] = useUserSettings();
@@ -136,20 +143,20 @@ const MailQuickSettings = () => {
         composerSizeOptions.find((option) => option.value === ComposerMode) || composerSizeOptions[0];
 
     const handleChangeViewLayout = async (layout: number) => {
-        await api(updateViewLayout(layout));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateViewLayout(layout));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
     const handleChangeDensity = async (density: number) => {
-        await api(updateDensity(density));
-        await call();
+        const { UserSettings } = await api<{ UserSettings: UserSettings }>(updateDensity(density));
+        dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
     const handleChangeComposerMode = async (mode: number) => {
-        await api(updateComposerMode(mode));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateComposerMode(mode));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 

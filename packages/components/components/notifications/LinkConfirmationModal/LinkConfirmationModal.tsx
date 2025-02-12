@@ -10,10 +10,12 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
 import LinkConfirmationModalLink from './LinkConfirmationModalLink';
@@ -28,7 +30,7 @@ interface Props extends ModalProps {
 
 const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt = false, modalProps }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [dontAskAgain, setDontAskAgain] = useState(false);
     const [understandRisk, setUnderstandRisk] = useState(false);
 
@@ -44,8 +46,10 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
         openNewTab(link);
 
         if (dontAskAgain && !isOutside) {
-            await api(updateConfirmLink(CONFIRM_LINK.DISABLED));
-            await call();
+            const { MailSettings } = await api<{ MailSettings: MailSettings }>(
+                updateConfirmLink(CONFIRM_LINK.DISABLED)
+            );
+            dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         }
     };
 
