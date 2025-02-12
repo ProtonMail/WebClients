@@ -13,7 +13,7 @@ import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
-import { ShareFileButton } from '../ContextMenu/buttons';
+import { ShareFileButton, ShareLinkButton } from '../ContextMenu/buttons';
 import useIsEditEnabled from '../useIsEditEnabled';
 import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
 import CreateNewDocumentButton from './ContextMenuButtons/CreateNewDocumentButton';
@@ -27,10 +27,12 @@ export function FolderContextMenu({
     close,
     permissions,
     isActiveLinkReadOnly,
+    isActiveLinkRoot,
 }: ContextMenuProps & {
     shareId: string;
     permissions: SHARE_MEMBER_PERMISSIONS;
     isActiveLinkReadOnly?: boolean;
+    isActiveLinkRoot?: boolean;
 }) {
     useEffect(() => {
         if (position) {
@@ -67,6 +69,9 @@ export function FolderContextMenu({
     if (!isEditor) {
         return null;
     }
+
+    const shouldShowShareButton = isAdmin && (isActiveLinkReadOnly || isActiveLinkRoot);
+    const shouldShowShareLinkButton = isAdmin && !isActiveLinkReadOnly && !isActiveLinkRoot;
 
     // ContextMenu is removed from DOM when any action is executed but inputs
     // need to stay rendered so onChange handler can work.
@@ -106,14 +111,28 @@ export function FolderContextMenu({
                         <UploadFolderButton close={close} onClick={folderClick} />
                     </>
                 ) : null}
-                {isAdmin && !isActiveLinkReadOnly && <ContextSeparator />}
-                {isAdmin && (
-                    <ShareFileButton
-                        close={close}
-                        shareId={shareId}
-                        showFileSharingModal={showFileSharingModal}
-                        showLinkSharingModal={showLinkSharingModal}
-                    />
+                {shouldShowShareButton && (
+                    <>
+                        {/* // Device only have one entry in context menu */}
+                        {!isActiveLinkReadOnly && <ContextSeparator />}
+                        <ShareFileButton
+                            close={close}
+                            shareId={shareId}
+                            showFileSharingModal={showFileSharingModal}
+                            showLinkSharingModal={showLinkSharingModal}
+                        />
+                    </>
+                )}
+                {shouldShowShareLinkButton && (
+                    <>
+                        <ContextSeparator />
+                        <ShareLinkButton
+                            close={close}
+                            shareId={activeFolder.shareId}
+                            linkId={activeFolder.linkId}
+                            showLinkSharingModal={showLinkSharingModal}
+                        />
+                    </>
                 )}
             </ContextMenu>
         </>
