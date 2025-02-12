@@ -6,7 +6,6 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { type DecryptedLink, useActions } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
@@ -38,15 +37,23 @@ interface Props {
     permissions: SHARE_MEMBER_PERMISSIONS;
     showOptionsForNoSelection?: boolean;
     isLinkReadOnly?: boolean;
+    isLinkRoot?: boolean;
 }
 
-const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLinkReadOnly, permissions }: Props) => {
+const DriveToolbar = ({
+    shareId,
+    linkId,
+    items,
+    showOptionsForNoSelection = true,
+    isLinkReadOnly,
+    isLinkRoot,
+    permissions,
+}: Props) => {
     const isDesktop = !getDevice()?.type;
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection()!;
     const isEditEnabled = useIsEditEnabled();
     const { createFolder, trashLinks, renameLink } = useActions();
-    const { activeFolder } = useActiveShare();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
@@ -56,7 +63,11 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
         [items, selectionControls!.selectedItemIds]
     );
 
-    const shouldShowShareButton = !isLinkReadOnly || items.length > 0;
+    const shouldShowShareButton =
+        isAdmin && (isLinkReadOnly || isLinkRoot) && selectedItems.length === 0 && items.length > 0;
+    const shouldShowShareLinkButton = isAdmin && (selectedItems.length > 0 || (!isLinkReadOnly && !isLinkRoot));
+
+    const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -67,7 +78,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                 <>
                     {isEditor && !isLinkReadOnly ? (
                         <>
-                            <CreateNewFolderButton createFolder={createFolder} activeFolder={activeFolder} />
+                            <CreateNewFolderButton createFolder={createFolder} activeFolder={{ shareId, linkId }} />
                             {isEditEnabled && <CreateNewFileButton />}
                             <Vr />
                             {isDesktop && <UploadFolderButton />}
@@ -76,7 +87,8 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                         </>
                     ) : null}
 
-                    {isAdmin && shouldShowShareButton && <ShareButton shareId={shareId} />}
+                    {shouldShowShareButton && <ShareButton shareId={shareId} />}
+                    {shouldShowShareLinkButton && <ShareLinkButton shareId={shareId} linkId={linkId} />}
                 </>
             );
         }
@@ -96,9 +108,9 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                     />
                 ) : (
                     <>
-                        {isAdmin && (
+                        {shouldShowShareLinkButton && selectedItem && (
                             <>
-                                <ShareLinkButton selectedLinks={selectedItems} />
+                                <ShareLinkButton shareId={selectedItem.rootShareId} linkId={selectedItem.linkId} />
                                 <Vr />
                             </>
                         )}
