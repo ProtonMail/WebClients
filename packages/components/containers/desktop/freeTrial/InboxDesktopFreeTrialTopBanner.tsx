@@ -78,3 +78,5 @@ export const InboxDesktopFreeTrialTopBanner = () => {
         </TopBanner>
     );
 };
+
+export default InboxDesktopFreeTrialTopBanner;
