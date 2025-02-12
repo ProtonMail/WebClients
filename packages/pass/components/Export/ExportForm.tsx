@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -18,11 +19,11 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boolean };
 
 export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
+    const online = useConnectivity();
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
-
     const org = useOrganization({ sync: true });
     const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
-    const disabled = orgExportDisabled;
+    const disabled = orgExportDisabled || !online;
 
     const warnings = useMemo(
         () =>
