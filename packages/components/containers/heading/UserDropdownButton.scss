@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
 .user-dropdown {
 	&-button {
 		@include media('<=small') {
@@ -11,7 +13,9 @@
 
 		.user-initials {
 			background-color: var(--interaction-default);
-			transition: 0.15s easing(ease-out-quint), background-position 0s;
+			transition:
+				0.15s easing(ease-out-quint),
+				background-position 0s;
 		}
 
 		&:hover,
@@ -56,20 +60,5 @@
 				display: none;
 			}
 		}
-	}
-}
-
-// used on switch account, summary section and user dropdown
-.user-initials {
-	&#{&} {
-		// Specificity -_-v
-		min-inline-size: rem(28);
-		min-block-size: rem(28);
-	}
-}
-
-.userDropdown {
-	@include media('<small') {
-		--width: calc(100vw - 30px) !important;
 	}
 }

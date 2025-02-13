@@ -1,0 +1,8 @@
+// used on switch account, summary section and user dropdown
+.user-initials {
+	&#{&} {
+		// Specificity -_-v
+		min-inline-size: rem(28);
+		min-block-size: rem(28);
+	}
+}

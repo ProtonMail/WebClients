@@ -1,0 +1,58 @@
+@import '~@proton/styles/scss/lib';
+
+.userDropdownV2 {
+	--user-dropdown-accent-color: var(--interaction-norm);
+	--user-dropdown-accent-background: var(--interaction-norm-minor-2);
+	--user-dropdown-accent-border: var(--interaction-norm-minor-1);
+
+	&-theme-dark {
+		--user-dropdown-accent-color: var(--interaction-norm-contrast);
+		--user-dropdown-accent-background: color-mix(in srgb, var(--primary) 15%, transparent);
+	}
+
+	@include media('<small') {
+		--width: calc(100vw - 30px) !important;
+	}
+
+	.dropdown-content {
+		border-radius: 0;
+
+		&::before {
+			position: absolute;
+			inline-size: 100%;
+		}
+	}
+
+	.user-initials-active {
+		color: var(--user-dropdown-accent-color);
+		background-color: var(--user-dropdown-accent-background);
+		border-color: var(--user-dropdown-accent-border);
+	}
+
+	&-planname {
+		color: var(--user-dropdown-accent-color);
+		background-color: var(--user-dropdown-accent-background);
+	}
+
+	.recommended-actions {
+		color: var(--optional-promotion-text-color);
+		background: linear-gradient(77.97deg, rgb(109 74 255 / 0.15) 0%, rgb(70 26 255 / 0.04) 100%);
+		text-decoration: none;
+		z-index: 2;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: var(--optional-promotion-text-color);
+		}
+
+		&:hover,
+		&:active {
+			background-color: var(--interaction-norm-minor-1);
+		}
+
+		&::after {
+			border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+		}
+	}
+}

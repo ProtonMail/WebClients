@@ -1,6 +1,9 @@
+import type { ReactElement } from 'react';
+
 import { c } from 'ttag';
 
 import { Button, Scroll } from '@proton/atoms';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ActiveSessionLite } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -14,33 +17,41 @@ interface Props {
         path?: string;
         target?: '_blank' | '_self';
     };
+    addAccountButton?: ReactElement;
+    addAccountButtonDropdown?: ReactElement;
 }
 
-const AccountSessionsSwitcher = ({ sessions, onSignOut, sessionOptions }: Props) => {
+const AccountSessionsSwitcher = ({
+    sessions,
+    onSignOut,
+    sessionOptions,
+    addAccountButton,
+    addAccountButtonDropdown,
+}: Props) => {
     const [, ...sessionsExceptSelf] = sessions;
     return (
         <div className="relative">
             <div className="flex justify-space-between flex-nowrap items-center mx-4 text-sm">
-                <span className="text-semibold text-ellipsis">{c('Info').t`Switch to`}</span>
+                <span className="text-semibold text-ellipsis">{c('Info').t`Other accounts`}</span>
                 <SimpleDropdown
                     as={Button}
                     shape="ghost"
                     size="small"
                     type="button"
-                    content={<Icon name="three-dots-vertical" size={4} alt={c('Action').t`More options`} />}
+                    content={<Icon name="three-dots-vertical" size={4} />}
                     icon
                     data-testid="sessions:other-accounts:more"
                     hasCaret={false}
                 >
-                    <button
-                        type="button"
-                        className="px-2 py-2 flex items-start w-full text-left relative interactive-pseudo-inset text-no-decoration flex flex-nowrap gap-2 text-break"
+                    <DropdownMenuButton
+                        className="flex flex-nowrap items-center gap-2 text-left"
                         onClick={onSignOut}
                         data-testid="sessions:other-accounts:more:signout-all"
                     >
-                        <Icon name="arrow-out-from-rectangle" className="shrink-0 mt-0.5" />
-                        <span>{c('Action').t`Sign out of all accounts`}</span>
-                    </button>
+                        <Icon name="arrow-out-from-rectangle" className="shrink-0" />
+                        {c('Action').t`Sign out of all accounts`}
+                    </DropdownMenuButton>
+                    {addAccountButtonDropdown}
                 </SimpleDropdown>
             </div>
             <div className="flex overflow-hidden">
@@ -68,7 +79,6 @@ const AccountSessionsSwitcher = ({ sessions, onSignOut, sessionOptions }: Props)
                                             </span>
 
                                             <div className="flex-1 mt-custom">
-                                                <span className="sr-only">{c('Info').t`Switch to`}</span>
                                                 <div className="text-ellipsis">
                                                     <span data-testid="sessions:item-username">
                                                         {sessionDisplayData.name}
@@ -94,6 +104,7 @@ const AccountSessionsSwitcher = ({ sessions, onSignOut, sessionOptions }: Props)
                                 );
                             })}
                         </ul>
+                        {addAccountButton}
                     </Scroll>
                 </div>
             </div>
