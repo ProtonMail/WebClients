@@ -57,7 +57,7 @@ export const PlanCardFeatureList = ({
                 margin ? 'mt-4 mb-0 md:mb-6' : 'm-0'
             )}
         >
-            {features.map((feature, i) => {
+            {features.map((feature) => {
                 const iconToDisplay = (() => {
                     if (
                         icon !== true &&
@@ -90,14 +90,12 @@ export const PlanCardFeatureList = ({
                     return <Icon size={iconSize} name="cross" className="mt-0.5" />;
                 })();
 
+                const key =
+                    typeof feature.text === 'string'
+                        ? feature.text
+                        : `${feature.tooltip}-${feature.highlight}-${feature.icon}`;
                 return (
-                    <li
-                        key={
-                            // Key by index so that we can skeleton load certain features - eg the vpn countries
-                            i
-                        }
-                        className={clsx(odd && 'px-3 py-2 rounded', itemClassName, 'flex')}
-                    >
+                    <li key={key} className={clsx(odd && 'px-3 py-2 rounded', itemClassName, 'flex')}>
                         <div
                             className={clsx(
                                 'flex *:min-size-auto flex-nowrap',
@@ -108,8 +106,8 @@ export const PlanCardFeatureList = ({
                             <span className={clsx('flex shrink-0', iconSize < 5 ? 'mr-1' : 'mr-3')}>
                                 {iconToDisplay}
                             </span>
-                            <span className="flex-1 text-left flex items-center gap-2">
-                                <span className="align-middle">
+                            <span className="flex-1 text-left">
+                                <span className="mr-2 align-middle">
                                     {feature.text}
                                     {feature.subtext && (
                                         <>
