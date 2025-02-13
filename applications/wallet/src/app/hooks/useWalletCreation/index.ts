@@ -21,9 +21,7 @@ import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import {
     DEFAULT_FIRST_ACCOUNT_INDEX,
-    DEFAULT_FIRST_ACCOUNT_LABEL,
     DEFAULT_FIRST_BVE_ACCOUNT_INDEX,
-    DEFAULT_FIRST_BVE_ACCOUNT_LABEL,
     DEFAULT_MAX_SUB_WALLETS,
     DEFAULT_SCRIPT_TYPE,
     WalletType,
@@ -136,7 +134,7 @@ const getWalletAccountsToCreate = async ({
     );
 
     const [encryptedFirstAccountLabel, encryptedBvEAccountLabel] = await encryptWalletDataWithWalletKey(
-        [DEFAULT_FIRST_ACCOUNT_LABEL, DEFAULT_FIRST_BVE_ACCOUNT_LABEL],
+        [c('Wallet setup').t`Primary account`, c('Wallet setup').t`Bitcoin via Email`],
         decryptedWalletKey
     );
 
