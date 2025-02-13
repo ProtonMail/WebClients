@@ -761,6 +761,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Falha na autenticação. Confirme sua senha do ${ BRAND_NAME } para prosseguir com a exportação"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Falha na autenticação. Confirme sua senha de backup para prosseguir com a exportação."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Falha na autenticação. Confirme sua senha adicional para prosseguir com a exportação."
+      ],
       "Authentication failure: ${ message }": [
         "Falha na autenticação: ${ message }"
       ],
@@ -3875,6 +3881,9 @@
       "${ BRAND_NAME } password is required": [
         "A senha da ${ BRAND_NAME } é obrigatória"
       ],
+      "2 consecutive dots are not allowed": [
+        "Não é permitido o uso de 2 pontos consecutivos."
+      ],
       "A description of the problem is required": [
         "Uma descrição do problema é necessária"
       ],
@@ -3906,6 +3915,12 @@
       ],
       "At least one email address is required": [
         "É obrigatório pelo menos um endereço de e-mail"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Não pode começar por um ponto."
+      ],
+      "Cannot contain a dot at the end": [
+        "Não pode conter um ponto no final."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Não é possível recuperar caixas de correio para este alias no momento"
@@ -4010,8 +4025,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Após a sincronização, a exclusão de aliases no ${ PASS_SHORT_APP_NAME } também os excluirá no SimpleLogin."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Somente caracteres alfanuméricos, pontos, hifens e sublinhados são permitidos"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
       ],
       "Passphrase is required": [
         "Frase secreta é obrigatória"
