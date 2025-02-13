@@ -1,20 +1,31 @@
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/components';
+import { type PopperPlacement, Tooltip } from '@proton/components';
 
-type MaybeOrganizationTooltipProps = { children: ReactElement; enforced: boolean };
+type MaybeOrganizationTooltipProps = {
+    children: ReactElement;
+    enforced: boolean;
+    text?: ReactNode;
+    placement?: PopperPlacement;
+};
 
-export const OrganizationPolicyTooltip: FC<MaybeOrganizationTooltipProps> = ({ children, enforced }) =>
+export const OrganizationPolicyTooltip: FC<MaybeOrganizationTooltipProps> = ({
+    children,
+    enforced,
+    text,
+    placement,
+}) =>
     enforced ? (
         <Tooltip
             openDelay={500}
-            originalPlacement="top"
-            title={c('Info').t`This setting is enforced by your organization`}
+            originalPlacement={placement}
+            title={text ?? c('Info').t`This setting is enforced by your organization`}
         >
-            {children}
+            {/* Without <div> the tooltip may not always display properly */}
+            <div>{children}</div>
         </Tooltip>
     ) : (
         children
