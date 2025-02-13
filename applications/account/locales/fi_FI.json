@@ -6120,18 +6120,6 @@
       "Best deal": [
         "Paras tarjous"
       ],
-      "Checkout": [
-        "Kassa"
-      ],
-      "City": [
-        "Kaupunki"
-      ],
-      "Country": [
-        "Maa"
-      ],
-      "Create your account": [
-        "Luo oma tilisi"
-      ],
       "Device": [
         "Laite"
       ],
@@ -7023,9 +7011,6 @@
       "Allow recovery by phone": [
         "Salli palautus puhelimitse"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Salli käyttäjien yhdistää suojattuihin jaettuihin palvelimiin ${ VPN_APP_NAME } -sovelluksen **Maat**-osiosta."
-      ],
       "Already allocated": [
         "Jo varattu"
       ],
@@ -7694,9 +7679,6 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Jos tämä johtuu vanhasta salasanan nollauksesta, voit estää viestiä näkymästä uudelleen."
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Jos tämä asetus on käytössä, organisaation jäsenet voivat jakaa holveja vain organisaation sisällä"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
@@ -8128,9 +8110,6 @@
       "No label selected": [
         "Tunnistetta ei valittu"
       ],
-      "No location filters are currently assigned.": [
-        "Sijaintisuodattimia ei ole asetettu."
-      ],
       "No logs yet.": [
         "Lokeja ei vielä ole."
       ],
@@ -8142,9 +8121,6 @@
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
-      ],
-      "No Shared Servers Found": [
-        "Jaettuja palvelimia ei löytynyt"
       ],
       "Not a valid URL": [
         "Virheellinen URL"
@@ -8562,9 +8538,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Jaettu ${ vaultLink } päivitettiin"
-      ],
-      "Shared Server Location Filters": [
-        "Jaettujen palvelimien sijantisuodattimet"
       ],
       "Shared vault deleted": [
         "Jaettu holvi poistettiin"
@@ -12343,12 +12316,6 @@
       "Group management (coming soon)": [
         "Ryhmien hallinta (tulossa pian)"
       ],
-      "High-speed streaming": [
-        "Nopea suoratoisto"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Nopea sveitsiläinen VPN, joka suojaa yksityisyyttäsi"
-      ],
       "High-speed VPN on ${ n } device": [
         "Nopea VPN ${ n } laitteelle",
         "Nopea VPN ${ n } laitteelle"
@@ -12406,10 +12373,6 @@
       ],
       "Proofread and refine your emails": [
         "Oikolue ja hiovi sähköpostisi"
-      ],
-      "Protect ${ n } device at a time": [
-        "Suojaa samanaikaisesti ${ n } laite",
-        "Suojaa samanaikaisesti ${ n } laitetta"
       ],
       "Quickly craft replies": [
         "Laadi nopeasti vastauksia"
@@ -12477,9 +12440,6 @@
       ],
       "Start protecting your organization": [
         "Aloita organisaatiosi suojaaminen"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Aloita itsesi suojaaminen kahdella helpolla vaiheella"
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
@@ -19487,9 +19447,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Sinun ${ a } ja ${ b } -pakettisi"
-      ],
-      "Your ${ selected } plan": [
-        "${ selected } -tilauksesi"
       ]
     },
     "vpn_2step: tooltip": {
