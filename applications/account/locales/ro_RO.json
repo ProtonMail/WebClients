@@ -2002,6 +2002,9 @@
       "Add link to your email footer": [
         "Adăugare legătură web la subsol"
       ],
+      "Close": [
+        "Închidere"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
       ],
@@ -3662,9 +3665,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Creați câte etichete sau foldere aveți nevoie pentru a vă menține contul ordonat."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Creați reguli pentru a decide cine se poate conecta la serverele partajate din fiecare țară."
-      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activați ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
       ],
@@ -3676,9 +3676,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Oricine din organizație se poate conecta la serverele partajate din toate țările."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
@@ -6179,18 +6176,6 @@
       "Best deal": [
         "Cea mai rentabilă"
       ],
-      "Checkout": [
-        "Finalizare"
-      ],
-      "City": [
-        "Oraș"
-      ],
-      "Country": [
-        "Țara"
-      ],
-      "Create your account": [
-        "Creați-vă contul"
-      ],
       "Device": [
         "Dispozitiv"
       ],
@@ -7130,9 +7115,6 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Permite utilizatorilor să se conecteze la serverele securizate partajate din secțiunea **Țări** a aplicației ${ VPN_APP_NAME }."
-      ],
       "Already allocated": [
         "Deja alocat"
       ],
@@ -7821,9 +7803,6 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Dacă aceasta se datorează unei resetări anterioare a parolei, puteți opri afișarea din nou a mesajului."
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Dacă această opțiune este activată, membrii organizației vor putea partaja doar seifuri în cadrul organizației."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
@@ -8260,9 +8239,6 @@
       "No label selected": [
         "Nicio etichetă selectată"
       ],
-      "No location filters are currently assigned.": [
-        "Momentan nu sunt atribuite filtre de amplasare."
-      ],
       "No logs yet.": [
         "Încă nu sunt jurnale."
       ],
@@ -8274,9 +8250,6 @@
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
-      ],
-      "No Shared Servers Found": [
-        "Nu s-au găsit servere partajate."
       ],
       "Not a valid URL": [
         "URL nevalid"
@@ -8709,9 +8682,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } partajat actualizat."
-      ],
-      "Shared Server Location Filters": [
-        "Filtre de amplasare servere partajate"
       ],
       "Shared vault deleted": [
         "Seif partajat șters."
@@ -12568,12 +12538,6 @@
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
       ],
-      "High-speed streaming": [
-        "Transmisii în flux de mare viteză"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN elvețian de mare viteză care vă protejează confidențialitatea"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN de mare viteză pe un dispozitiv",
         "VPN de mare viteză pe ${ n } dispozitive",
@@ -12632,11 +12596,6 @@
       ],
       "Proofread and refine your emails": [
         "Corectați și cizelați mesajele"
-      ],
-      "Protect ${ n } device at a time": [
-        "Protejare ${ n } dispozitiv",
-        "Protejare ${ n } dispozitive simultan",
-        "Protejare ${ n } de dispozitive simultan"
       ],
       "Quickly craft replies": [
         "Redactați rapid răspunsuri"
@@ -12705,9 +12664,6 @@
       ],
       "Start protecting your organization": [
         "Începeți să vă protejați organizația"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Începeți să vă protejați online în doi pași simpli"
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
@@ -16514,6 +16470,12 @@
       "Single sign-on removed": [
         "Conectarea prin autentificare unică a fost eliminată."
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Utilizatorul ${ user } este acum un cont cu autentificare unică. Parola sa anterioară a devenit parolă de rezervă."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Va trebui să se conecteze din nou cu furnizorul propriu de identitate pentru a accesa serviciile ${ BRAND_NAME }. Pentru ca acest utilizator să se poată conecta, asigurați-vă că există în furnizorul propriu de identitate."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Aceasta va deconecta utilizatorul de pe alte dispozitive și va trebui să-și creeze o parolă de rezervă nouă."
       ],
@@ -19864,9 +19826,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Pachetul ${ a } și ${ b }"
-      ],
-      "Your ${ selected } plan": [
-        "Planul dvs. ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {

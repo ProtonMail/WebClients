@@ -632,7 +632,7 @@
         "Αποκτήστε την εφαρμογή"
       ],
       "Get the browser extension": [
-        "Λήψη της επέκτασης για το πρόγραμμα περιήγησης"
+        "Λήψη της προέκτασης για το πρόγραμμα περιήγησης"
       ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
@@ -1083,6 +1083,9 @@
       ],
       "Set as default": [
         "Ορισμός ως προεπιλογή"
+      ],
+      "Set as default mail application": [
+        "Ορίστε ως προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
       "Set catch-all": [
         "Ορίστε catch-all"
@@ -3626,6 +3629,12 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "Η ${ MAIL_APP_NAME } δεν είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "Η ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
+      ],
       "Also included": [
         "Περιλαμβάνονται επίσης"
       ],
@@ -3650,8 +3659,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Δημιουργήστε όσες ετικέτες ή φακέλους χρειάζεστε για να διατηρήσετε τα εισερχόμενά σας τακτοποιημένα."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
+      "Create policies to manage access to shared servers.": [
+        "Δημιουργήστε πολιτικές για τη διαχείριση της πρόσβασης σε κοινόχρηστους διακομιστές."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ενεργοποιήστε το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
@@ -3665,8 +3674,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Οποιοσδήποτε στον οργανισμό σας μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές σε οποιαδήποτε χώρα."
+      "Everyone in your organization can connect to shared servers.": [
+        "Όλοι στον οργανισμό σας μπορούν να συνδεθούν σε κοινόχρηστους διακομιστές."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
@@ -6146,26 +6155,23 @@
       "Best deal": [
         "Η καλύτερη προσφορά"
       ],
-      "Checkout": [
-        "Ολοκλήρωση αγορών"
-      ],
-      "City": [
-        "Πόλη"
-      ],
-      "Country": [
-        "Χώρα"
-      ],
-      "Create your account": [
-        "Δημιουργήστε τον λογαριασμό σας."
-      ],
       "Device": [
         "Συσκευή"
+      ],
+      "Enabled Countries": [
+        "Ενεργοποιημένες Χώρες"
+      ],
+      "Enter your email address": [
+        "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
       ],
       "Event": [
         "Γεγονός"
       ],
       "Folders": [
         "Φάκελοι"
+      ],
+      "Groups": [
+        "Ομάδες"
       ],
       "IP address": [
         "Διεύθυνση IP"
@@ -6194,6 +6200,9 @@
       "Permissions": [
         "Δικαιώματα"
       ],
+      "Policy Name": [
+        "Όνομα Πολιτικής"
+      ],
       "Protection": [
         "Προστασία"
       ],
@@ -6202,6 +6211,9 @@
       ],
       "Select your deal": [
         "Επιλέξτε την προσφορά σας"
+      ],
+      "Select your payment method": [
+        "Επιλέξτε τη μέθοδο πληρωμής σας"
       ],
       "Select your pricing plan": [
         "Επιλέξτε το πλάνο χρέωσης σας:"
@@ -7064,8 +7076,8 @@
       "Allow recovery by phone": [
         "Άδεια ανάκτησης μέσω τηλεφώνου"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Επιτρέψτε στους χρήστες να συνδέονται σε διασφαλισμένους κοινόχρηστους διακομιστές από την ενότητα **Χώρες** της εφαρμογής ${ VPN_APP_NAME }."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Επιτρέψτε στους χρήστες να συνδέονται σε ασφαλείς κοινόχρηστους διακομιστές βάσει καθορισμένων πολιτικών."
       ],
       "Already allocated": [
         "Ήδη κατανεμημένος"
@@ -7280,6 +7292,9 @@
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Βραβείο επιλογής συντακτών CNET με βαθμολογία 8,4 στα 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Ρυθμίστε τις παραμέτρους ελέγχου ταυτότητας SAML για τον οργανισμό σας μέσω μιας υπηρεσίας παροχής ταυτότητας (IdP). Αυτό θα ενεργοποιήσει το SAML για ολόκληρο τον οργανισμό."
       ],
@@ -7321,6 +7336,9 @@
       ],
       "Copy your referral link": [
         "Αντιγράψτε τον σύνδεσμο παραπομπής σας"
+      ],
+      "countries enabled": [
+        "ενεργοποιημένες χώρες"
       ],
       "Country code": [
         "Κωδικός χώρας"
@@ -7382,6 +7400,9 @@
       "Custom monthly": [
         "Προσαρμοσμένη μηνιαία"
       ],
+      "Custom policies": [
+        "Προσαρμοσμένες πολιτικές"
+      ],
       "Custom weekly": [
         "Προσαρμοσμένη εβδομαδιαία"
       ],
@@ -7408,6 +7429,9 @@
       ],
       "default email address": [
         "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Default mail application": [
+        "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
@@ -7750,8 +7774,14 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Εάν αυτό είναι εξαιτίας μιας παλιάς επαναφοράς κωδικού, μπορείτε να σταματήσετε την επανεμφάνιση του μηνύματος"
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Εάν αυτή η επιλογή είναι ενεργοποιημένη, τα μέλη του οργανισμού θα μπορούν να κάνουν κοινή χρήση θυρίδων αποθήκευσης μόνο εντός του οργανισμού"
+      "If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items": [
+        "Εάν αυτή η επιλογή είναι ενεργοποιημένη, τα μέλη του οργανισμού δεν μπορούν να δημιουργήσουν κρύπτες. Τα νέα μέλη θα απαιτήσουν από έναν διαχειριστή να δημιουργήσει μη αυτόματα την πρώτη κρύπτη για αυτούς (μέσω κοινοποίησης), ώστε να μπορούν να αρχίσουν να δημιουργούν στοιχεία"
+      ],
+      "If this option is turned on, organization members will be able to share individual items in addition to vaults.": [
+        "Εάν αυτή η επιλογή είναι ενεργοποιημένη, τα μέλη του οργανισμού θα μπορούν να κοινοποιήσουν μεμονωμένα στοιχεία καθώς και τις κρύπτες."
+      ],
+      "If this option is turned on, organization members will only be able to share vaults or items within the organization": [
+        "Εάν αυτή η επιλογή είναι ενεργοποιημένη, τα μέλη του οργανισμού θα μπορούν να κάνουν κοινή χρήση κρυπτών ή στοιχείων εντός του οργανισμού"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
@@ -8187,9 +8217,6 @@
       "No label selected": [
         "Δεν επιλέχθηκε ετικέτα"
       ],
-      "No location filters are currently assigned.": [
-        "Προς το παρόν δεν έχουν εκχωρηθεί φίλτρα τοποθεσίας."
-      ],
       "No logs yet.": [
         "Δεν υπάρχουν αρχεία καταγραφής ακόμα."
       ],
@@ -8201,9 +8228,6 @@
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
-      ],
-      "No Shared Servers Found": [
-        "Δε βρέθηκαν Κοινοποιημένοι Διακομιστές"
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
@@ -8315,6 +8339,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Βραβείο επιλογής συντακτών PC Magazine με βαθμολογία 5 στα 5 αστέρια"
       ],
       "per month": [
         "ανά μήνα"
@@ -8601,6 +8628,9 @@
       "Session timed out": [
         "Η συνεδρία έληξε"
       ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Ορίστε τη ${ MAIL_APP_NAME } ως προεπιλεγμένη εφαρμογή αλληλογραφίας. Το ${ MAIL_APP_NAME } θα ανοίξει αυτόματα όταν κάνετε κλικ σε έναν σύνδεσμο αλληλογραφίας."
+      ],
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
       ],
@@ -8627,9 +8657,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Η κοινόχρηστη ${ vaultLink } ενημερώθηκε"
-      ],
-      "Shared Server Location Filters": [
-        "Φίλτρα Τοποθεσίας Κοινοποιημένων Διακομιστών"
       ],
       "Shared vault deleted": [
         "Διαγράφηκε η κοινοποιημένη κρύπτη"
@@ -8739,6 +8766,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Συγχρονίστε και διαχειριστείτε αρχεία με την εφαρμογή ${ DRIVE_APP_NAME }. Δημιουργήστε και μοιραστείτε έγγραφα στο ${ DOCS_APP_NAME } και αποθηκεύστε τα με ασφάλεια. Όλα σε ${ ios }, ${ android } και ${ desktop }."
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Το Tech radar pro το συνιστά με βαθμολογία 4,2 στα 5 αστέρια"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -9034,6 +9064,9 @@
       "Total VPN connections": [
         "Σύνολο συνδέσεων VPN"
       ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Δοκιμάστε το ${ productName } εντελώς χωρίς κίνδυνο - εάν για οποιονδήποτε λόγο αλλάξετε γνώμη, θα λάβετε πλήρη επιστροφή χρημάτων. Χωρίς ερωτήσεις."
+      ],
       "Two-factor authentication disabled": [
         "Έλεγχος ταυτότητας δύο παραγόντων απενεργοποιημένος"
       ],
@@ -9300,6 +9333,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Όταν είναι απενεργοποιημένο, εμποδίζει τη φόρτωση αρχείων εικόνας στη συσκευή σας εν αγνοία σας."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Όταν ενεργοποιηθεί, θα ελέγξουμε εάν η ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας και θα σας ειδοποιήσουμε εάν δεν είναι."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
@@ -10568,6 +10604,9 @@
       "Emails (last month)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
       ],
+      "Enable individual item sharing": [
+        "Ενεργοποίηση κοινής χρήσης μεμονωμένων στοιχείων"
+      ],
       "End date": [
         "Ημερομηνία λήξης"
       ],
@@ -10651,6 +10690,9 @@
       ],
       "Group name": [
         "Όνομα ομάδας"
+      ],
+      "Groups": [
+        "Ομάδες"
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
@@ -10823,6 +10865,9 @@
       "New password": [
         "Νέος κωδικός"
       ],
+      "New policy name": [
+        "Νέο όνομα πολιτικής"
+      ],
       "New second password": [
         "Νέος δεύτερος κωδικός πρόσβασης"
       ],
@@ -10981,6 +11026,9 @@
       ],
       "Require 2FA for everyone": [
         "Απαιτείται έλεγχος ταυτότητας δύο παραγόντων (2FA) για όλους"
+      ],
+      "Restrict vault creation to administrators only": [
+        "Περιορισμός δημιουργίας κρύπτης μόνο σε διαχειριστές"
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
@@ -11162,6 +11210,9 @@
       ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "Users": [
+        "Χρήστες"
       ],
       "Value": [
         "Τιμή"
@@ -12314,6 +12365,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Όλες οι premium υπηρεσίες ${ BRAND_NAME }. Μια εύκολη συνδρομή"
       ],
+      "Apps for": [
+        "Εφαρμογές για"
+      ],
       "Auto-delete Spam and Trash": [
         "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
       ],
@@ -12383,6 +12437,9 @@
       "Dedicated servers and IP": [
         "Αποκλειστικοί διακομιστές και IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
+      ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
       ],
@@ -12433,12 +12490,6 @@
       ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
-      ],
-      "High-speed streaming": [
-        "Ροή υψηλής ταχύτητας"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Ελβετικό VPN υψηλής ταχύτητας που προστατεύει την ιδιωτικότητα σας."
       ],
       "High-speed VPN on ${ n } device": [
         "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
@@ -12497,10 +12548,6 @@
       ],
       "Proofread and refine your emails": [
         "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
-      ],
-      "Protect ${ n } device at a time": [
-        "Προστατέψτε ${ n } συσκευή ανά φορά",
-        "Προστατέψτε ${ n } συσκευές ανά φορά"
       ],
       "Quickly craft replies": [
         "Δημιουργήστε γρήγορα απαντήσεις"
@@ -12568,9 +12615,6 @@
       ],
       "Start protecting your organization": [
         "Ξεκινήστε να προστατεύετε τον οργανισμό σας"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Αρχίστε να προστατεύετε τον εαυτό σας online σε 2 εύκολα βήματα"
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
@@ -12645,6 +12689,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
+      ],
+      "Up to 10 Gbps": [
+        "Μέχρι και 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Χρήση σε έως και ${ n } συσκευή ταυτόχρονα",
+        "Χρήση σε έως και ${ n } συσκευές ταυτόχρονα"
       ],
       "User credential management": [
         "Διαχείριση διαπιστευτηρίων χρηστών"
@@ -13283,6 +13334,9 @@
       "Email notifications have been enabled": [
         "Οι ειδοποιήσεις μέσω ηλεκτρονικού ταχυδρομείου έχουν ενεργοποιηθεί"
       ],
+      "Error creating policy": [
+        "Σφάλμα κατά τη δημιουργία πολιτικής"
+      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -13306,6 +13360,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
+      ],
+      "Policy created successfully": [
+        "Η πολιτική δημιουργήθηκε επιτυχώς"
       ],
       "Reminder has been sent": [
         "Η υπενθύμιση έχει σταλεί"
@@ -16309,6 +16366,12 @@
       "Single sign-on removed": [
         "Η καθολική σύνδεση καταργήθηκε"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Ο χρήστης ${ user } είναι πλέον ένας λογαριασμός καθολικής σύνδεσης. Ο προηγούμενος κωδικός πρόσβασής τους έγινε ο εφεδρικός κωδικός πρόσβασής τους."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Θα πρέπει να συνδεθούν ξανά με τον πάροχο ταυτότητάς σας για να αποκτήσουν πρόσβαση στις υπηρεσίες ${ BRAND_NAME }. Για να μπορεί αυτός ο χρήστης να συνδεθεί, βεβαιωθείτε ότι υπάρχει στην υπηρεσία παροχής ταυτότητάς σας."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Αυτό θα αποσυνδέσει τον χρήστη από τις άλλες συσκευές του και θα πρέπει να δημιουργήσει έναν νέο εφεδρικό κωδικό πρόσβασης."
       ],
@@ -17566,6 +17629,9 @@
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Προσθήκη χωρών στο \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Προσθήκη πιστωτικής/χρεωστικής κάρτας"
       ],
@@ -17607,6 +17673,9 @@
       ],
       "Add users": [
         "Προσθήκη χρηστών"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Προσθήκη χρηστών στο \"${ policyName }\""
       ],
       "Address": [
         "Διεύθυνση"
@@ -17710,6 +17779,9 @@
       "Change second password": [
         "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
+      "Check your default mail application": [
+        "Ελέγξτε την προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
+      ],
       "Choose an account": [
         "Επιλέξτε ένα λογαριασμό"
       ],
@@ -17782,6 +17854,9 @@
       ],
       "Create multiple user accounts": [
         "Δημιουργία πολλαπλών λογαριασμών χρηστών"
+      ],
+      "Create new policy": [
+        "Δημιουργία νέας πολιτικής"
       ],
       "Create organization key": [
         "Δημιουργία κλειδιού οργανισμού"
@@ -19612,8 +19687,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Το ${ a } και ${ b } πακέτο σας"
       ],
-      "Your ${ selected } plan": [
-        "Το ${ selected } πλάνο σας"
+      "Your plan includes:": [
+        "Το πλάνο σας περιλαμβάνει:"
       ]
     },
     "vpn_2step: tooltip": {
@@ -19759,13 +19834,13 @@
         "Παρακαλούμε προσθέστε τουλάχιστον έναν παραλήπτη."
       ],
       "Please check that the extension is properly installed and enabled": [
-        "Παρακαλούμε ελέγξτε ότι η επέκταση έχει εγκατασταθεί και ενεργοποιηθεί σωστά"
+        "Παρακαλούμε ελέγξτε ότι η προέκταση έχει εγκατασταθεί και ενεργοποιηθεί σωστά"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
       ],
       "Please update the extension to its latest version": [
-        "Παρακαλούμε ενημερώστε την επέκταση στην πιο πρόσφατη έκδοσή της"
+        "Παρακαλούμε ενημερώστε την προέκταση στην πιο πρόσφατη έκδοσή της"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."

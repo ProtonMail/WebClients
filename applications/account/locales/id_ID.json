@@ -3635,9 +3635,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Buat label atau folder sebanyak yang Anda butuh demi menjaga kotak masuk Anda tetap rapi."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Buat kebijakan untuk menentukan siapa yang dapat menghubungkan ke server terbagi dalam setiap negara."
-      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
       ],
@@ -3649,9 +3646,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Semua orang dalam organisasi Anda dapat menghubungkan ke server terbagi dalam semua negara."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dapatkan pemberitahuan apabila kata sandi atau data lain Anda terbocorkan dari layanan pihak ketiga."
@@ -6110,18 +6104,6 @@
       "Best deal": [
         "Penawaran terbaik"
       ],
-      "Checkout": [
-        "Rampungkan pembayaran"
-      ],
-      "City": [
-        "Kota"
-      ],
-      "Country": [
-        "Negara"
-      ],
-      "Create your account": [
-        "Buat akun Anda"
-      ],
       "Device": [
         "Perangkat"
       ],
@@ -6695,6 +6677,9 @@
       "${ current } of ${ total }": [
         "${ current } dari ${ total }"
       ],
+      "${ discountPercent }% discount": [
+        "Diskon ${ discountPercent }%"
+      ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } tidak lagi akan menyimpan versi lawas berkas Anda."
       ],
@@ -6991,9 +6976,6 @@
       ],
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
-      ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Perbolehkan pengguna untuk menghubungkan ke server terbagi aman dari bagian **Negara** dalam aplikasi ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Telah dialokasikan"
@@ -7673,9 +7655,6 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Apabila hal ini disebabkan oleh pengaturan ulang kata sandi yang telah lama, Anda dapat mengatur agar pesan ini tidak lagi muncul ke depannya"
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Apabila opsi ini diaktifkan, anggota organisasi hanya akan dapat membagikan brankas di dalam organisasi"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
@@ -8108,9 +8087,6 @@
       "No label selected": [
         "Tidak ada label yang dipilih"
       ],
-      "No location filters are currently assigned.": [
-        "Tidak ada filter lokasi yang ditetapkan saat ini."
-      ],
       "No logs yet.": [
         "Belum ada log."
       ],
@@ -8122,9 +8098,6 @@
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
-      ],
-      "No Shared Servers Found": [
-        "Tidak ada server terbagi yang ditemukan"
       ],
       "Not a valid URL": [
         "URL tidak valid"
@@ -8542,9 +8515,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } terbagi telah diperbarui"
-      ],
-      "Shared Server Location Filters": [
-        "Filter Lokasi Server Terbagi"
       ],
       "Shared vault deleted": [
         "Brankas terbagi dihapus"
@@ -12297,12 +12267,6 @@
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
       ],
-      "High-speed streaming": [
-        "Streaming berkecepatan tinggi"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN Swiss berkecepatan tinggi yang melindungi privasi Anda"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN berkecepatan tinggi pada ${ n } perangkat"
       ],
@@ -12359,9 +12323,6 @@
       ],
       "Proofread and refine your emails": [
         "Periksa dan sempurnakan email Anda"
-      ],
-      "Protect ${ n } device at a time": [
-        "Lindungi ${ n } perangkat secara bersamaan"
       ],
       "Quickly craft replies": [
         "Tulis pesan balasan dengan cepat"
@@ -12428,9 +12389,6 @@
       ],
       "Start protecting your organization": [
         "Mulai lindungi organisasi Anda"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Mulai lindungi diri Anda secara online dengan 2 langkah mudah"
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
@@ -13799,7 +13757,7 @@
     },
     "pass_signup_2023: Header": {
       "Checkout": [
-        "Checkout"
+        "Rampungkan pembayaran"
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Lanjut dengan akun ${ BRAND_NAME } Anda"
@@ -16121,6 +16079,12 @@
       ],
       "Single sign-on removed": [
         "Single sign-on dihapus"
+      ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Pengguna ${ user } kini merupakan akun single sign-on. Kata sandi mereka terdahulu telah dijadikan sebagai kata sandi cadangan."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Mereka akan perlu untuk masuk kembali dengan penyedia identitas Anda untuk dapat mengakses layanan ${ BRAND_NAME }. Agar pengguna ini dapat masuk kembali, pastikan akun mereka telah ada pada penyedia identitas Anda."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tindakan ini akan mengeluarkan pengguna yang bersangkutan dari perangkat lainnya yang mereka miliki, di mana mereka akan perlu untuk membuat kata sandi cadangan baru."
@@ -19382,9 +19346,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Bundel ${ a } dan ${ b } Anda"
-      ],
-      "Your ${ selected } plan": [
-        "Paket ${ selected } pilihan Anda"
       ]
     },
     "vpn_2step: tooltip": {
