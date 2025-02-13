@@ -39,7 +39,7 @@ import type {
     Domain,
     KTUserContext,
     Member,
-    MemberReadyForUnprivatization,
+    MemberReadyForAutomaticUnprivatization,
     Organization,
 } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
@@ -92,7 +92,7 @@ export const unprivatizeMember = ({
     options,
     api,
 }: {
-    member: MemberReadyForUnprivatization;
+    member: MemberReadyForAutomaticUnprivatization;
     ktUserContext: KTUserContext;
     options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
     api: Api;
@@ -103,35 +103,21 @@ export const unprivatizeMember = ({
     UnknownAction
 > => {
     return async (dispatch) => {
-        const [organizationKey, memberAddresses] = await Promise.all([
+        const [userKeys, organizationKey, memberAddresses] = await Promise.all([
+            dispatch(userKeysThunk()),
             dispatch(organizationKeyThunk()), // Fetch org key again to ensure it's up-to-date.
             dispatch(getMemberAddresses({ member, retry: true })),
         ]);
-        const { data, payload } = await getUnprivatizeMemberPayload({
+        const payload = await getUnprivatizeMemberPayload({
             api,
             member,
             memberAddresses,
-            organizationKey: organizationKey.privateKey,
+            organizationKey,
+            userKeys,
             ktUserContext,
             options,
         });
-
         await api(unprivatizeMemberKeysRoute(member.ID, payload));
-
-        if (data.Admin === true) {
-            const newMember = await getMember(api, member.ID);
-            const memberKeyPayload = await getMemberKeyPayload({
-                organizationKey,
-                member: newMember,
-                memberAddresses,
-                mode: {
-                    type: 'email',
-                    ktUserContext: await dispatch(getKTUserContext()),
-                },
-                api,
-            });
-            await dispatch(setAdminRoles({ api, memberKeyPayloads: [memberKeyPayload] }));
-        }
     };
 };
 
@@ -283,20 +269,15 @@ export const unprivatizeSelf = ({
 export const deleteRequestUnprivatization = ({
     api,
     member,
-    upsert,
 }: {
     api: Api;
     member: Member;
-    upsert: boolean;
 }): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
+    return async () => {
         if (member.Unprivatization === null) {
             return;
         }
         await api(deleteUnprivatizationRequest(member.ID));
-        if (upsert) {
-            dispatch(upsertMember({ member: await getMember(api, member.ID) }));
-        }
     };
 };
 
@@ -314,7 +295,7 @@ export const setRole = ({
     return async (dispatch) => {
         if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
             if (payload?.type === 'promote-global-sso') {
-                await dispatch(deleteRequestUnprivatization({ member, api, upsert: false }));
+                await dispatch(deleteRequestUnprivatization({ member, api }));
                 return;
             }
             await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
@@ -348,17 +329,12 @@ export const setRole = ({
 export const privatizeMember = ({
     api,
     member,
-    upsert,
 }: {
     api: Api;
     member: Member;
-    upsert: boolean;
 }): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
+    return async () => {
         await api(privatizeMemberConfig(member.ID));
-        if (upsert) {
-            dispatch(upsertMember({ member: await getMember(api, member.ID) }));
-        }
     };
 };
 
@@ -440,9 +416,9 @@ export const editMember = ({
         if (memberDiff.private !== undefined) {
             if (memberDiff.private === MEMBER_PRIVATE.UNREADABLE) {
                 if (member.Unprivatization) {
-                    await dispatch(deleteRequestUnprivatization({ member, api, upsert: false }));
+                    await dispatch(deleteRequestUnprivatization({ member, api }));
                 } else {
-                    await dispatch(privatizeMember({ member, api, upsert: false }));
+                    await dispatch(privatizeMember({ member, api }));
                 }
             }
             if (member.Private === MEMBER_PRIVATE.UNREADABLE && memberDiff.private === MEMBER_PRIVATE.READABLE) {

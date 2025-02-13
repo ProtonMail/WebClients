@@ -1,3 +1,5 @@
+import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '../keys/organizationKeyDto';
+
 export const getOrganization = () => ({
     url: 'core/v4/organizations',
     method: 'get',
@@ -122,18 +124,12 @@ export interface UpdatePasswordlessOrganizationKeysPayload {
     Signature: string;
     Token: string;
     Members: Members[];
-    AdminInvitations: {
+    AdminInvitations: ({
         MemberID: string;
-        TokenKeyPacket: string;
-        Signature: string;
-        SignatureAddressID: string;
-        EncryptionAddressID: string;
-    }[];
-    AdminActivations: {
+    } & OrganizationKeyInvitation)[];
+    AdminActivations: ({
         MemberID: string;
-        TokenKeyPacket: string;
-        Signature: string;
-    }[];
+    } & OrganizationKeyActivation)[];
     GroupAddressKeyTokens: GroupAddressKeyToken[];
 }
 
@@ -150,11 +146,9 @@ export const updatePasswordlessOrganizationKeys = (data: UpdatePasswordlessOrgan
 
 interface MigratePasswordlessOrganizationKeysPayload
     extends Omit<UpdatePasswordlessOrganizationKeysPayload, 'Members' | 'AdminInvitations' | 'GroupAddressKeyTokens'> {
-    AdminInvitations: {
+    AdminInvitations: ({
         MemberID: string;
-        TokenKeyPacket: string;
-        Signature: string;
-    }[];
+    } & OrganizationKeyActivation)[];
 }
 
 export const migratePasswordlessOrganizationKey = (data: MigratePasswordlessOrganizationKeysPayload) => ({

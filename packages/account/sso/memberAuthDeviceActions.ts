@@ -19,7 +19,7 @@ import { generatePassword } from '@proton/shared/lib/password';
 import noop from '@proton/utils/noop';
 
 import { getMemberAddresses } from '../members';
-import { unprivatizeApprovalMembers } from '../members/unprivatizeMembers';
+import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
 import { organizationKeyThunk } from '../organizationKey';
 import type { MemberAuthDevicesState, PendingAdminActivation } from './memberAuthDevices';
 import { memberAuthDeviceActions } from './memberAuthDevices';
@@ -55,7 +55,7 @@ export const prepareConfirmPendingMemberAuthDevice = ({
         }
         // If the member needs to get unprivatized, let's do it first
         if (getIsMemberInManualApproveState(member)) {
-            const [updatedMember] = await dispatch(unprivatizeApprovalMembers({ membersToUnprivatize: [member] }));
+            const [updatedMember] = await dispatch(unprivatizeMembersManual({ membersToUnprivatize: [member] }));
             if (updatedMember) {
                 member = updatedMember;
             }
