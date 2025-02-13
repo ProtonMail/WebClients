@@ -226,6 +226,9 @@
       "Create a new contact group": [
         "Crear un grupo de contactos"
       ],
+      "Create album": [
+        "Crear un álbum"
+      ],
       "Create and copy alias": [
         "Crear y copiar el alias"
       ],
@@ -951,6 +954,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Crear un álbum"
+      ],
       "Upload": [
         "Cargar"
       ]
@@ -2415,6 +2421,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2496,11 +2507,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4815,6 +4821,9 @@
       "No": [
         "No"
       ],
+      "No Albums": [
+        "Sin álbumes"
+      ],
       "No contacts added yet": [
         "Todavía no se han añadido contactos."
       ],
@@ -5164,6 +5173,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "La cuenta puede tener una nueva clave o es posible que se haya manipulado los siguientes elementos: ${ items }. Ábrelos solo si son de confianza."
+      ],
+      "The albums you create are shown here": [
+        "Los álbumes que creas se muestran aquí."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "La firma digital ha sido verificada parcialmente. Este archivo fue cargado mediante un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que no se puede verificar su identidad."
@@ -6090,6 +6102,9 @@
       ],
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
+      ],
+      "My Albums": [
+        "Mis álbumes"
       ],
       "Name": [
         "Nombre"
@@ -7125,6 +7140,9 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Servidores dedicados optimizados para streaming"
+      ],
       "Desktop app": [
         "Aplicación de escritorio"
       ],
@@ -7175,9 +7193,6 @@
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
-      ],
-      "High-speed streaming": [
-        "Transmisión de gran velocidad"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidad en ${ n } dispositivo",
@@ -7233,10 +7248,6 @@
       ],
       "Proofread and refine your emails": [
         "Revisa y mejora tus correos electrónicos"
-      ],
-      "Protect ${ n } device at a time": [
-        "Protege ${ n } dispositivo a la vez",
-        "Protege ${ n } dispositivos a la vez"
       ],
       "Quickly craft replies": [
         "Redacta rápidamente respuestas"
@@ -7368,6 +7379,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Uso en hasta ${ n } dispositivo a la vez",
+        "Uso en hasta ${ n } dispositivos a la vez"
       ],
       "User credential management": [
         "Administración de credenciales de usuario"
@@ -10667,6 +10682,11 @@
         "Hoy"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Añade este archivo compartido a tu ${ DRIVE_APP_NAME } para un acceso fácil después."
@@ -10748,11 +10768,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Valentine_2025": {
@@ -10995,6 +11010,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tantos datos como sea posible, comenzando con tus mensajes más recientes."
       ],
+      "2 consecutive dots are not allowed": [
+        "No se permite el uso de 2 puntos consecutivos."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } contacto?",
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } contactos?"
@@ -11007,6 +11025,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "¿Estás seguro de que quieres eliminar permanentemente este contacto?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "No puede empezar por un punto."
+      ],
+      "Cannot contain a dot at the end": [
+        "No puede terminar con un punto."
       ],
       "Contacts could not be merged": [
         "No se ha podido combinar los contactos."
@@ -11029,8 +11053,8 @@
       "Name is required": [
         "El nombre es obligatorio."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Solo se permiten caracteres alfanuméricos en minúscula, puntos, guiones y guiones bajos."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."

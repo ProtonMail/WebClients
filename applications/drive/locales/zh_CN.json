@@ -1298,6 +1298,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "关闭"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
       ],
@@ -2400,6 +2403,11 @@
         "逾期账单"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } 对可疑活动进行全天候专门监控，包括上报安全专家，从而保护您的账户。"
@@ -2481,11 +2489,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7001,9 +7004,6 @@
       "Group management (coming soon)": [
         "群组管理（即将推出）"
       ],
-      "High-speed streaming": [
-        "高速看视频"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 台设备可同时接入高速 VPN"
       ],
@@ -7057,9 +7057,6 @@
       ],
       "Proofread and refine your emails": [
         "为您校对并润色邮件"
-      ],
-      "Protect ${ n } device at a time": [
-        "一次性保护 ${ n } 个设备"
       ],
       "Quickly craft replies": [
         "快速撰写回复"
@@ -7320,6 +7317,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "${ priceCoupon } 折扣价的有效期仅限第一个月。之后将以 ${ priceLine } 的价格自动续订。您可以随时取消。"
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "只需 ${ priceLine } 即可解锁所有 ${ BRAND_NAME } 高级产品和功能。随时取消。"
       ]
     },
     "new_plans: title": {
@@ -10396,6 +10401,11 @@
         "今天"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "将此共享文件添加到您的 ${ DRIVE_APP_NAME } 中，方便以后访问。"
@@ -10477,11 +10487,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "我们已向他们发送了访问该项目的邀请。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ]
     },
     "Validation": {
@@ -10621,9 +10626,6 @@
       ],
       "Name is required": [
         "名称为必填项"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "仅允许使用字母数字字符、点、连字符和下划线"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"

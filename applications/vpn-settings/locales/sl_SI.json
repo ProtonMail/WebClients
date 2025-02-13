@@ -3242,23 +3242,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Dejanja"
+      ],
       "App version": [
         "Različica aplikacije"
       ],
       "Best deal": [
         "Najboljša ponudba"
-      ],
-      "Checkout": [
-        "Na blagajno"
-      ],
-      "City": [
-        "Mesto"
-      ],
-      "Country": [
-        "Država"
-      ],
-      "Create your account": [
-        "Ustvarite svoj račun"
       ],
       "Device": [
         "Naprava"
@@ -4348,12 +4339,6 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF pojasnjuje, komu je dovoljeno pošiljati e-pošto za vašo domeno. Prepričajte se, da ste dodali naslednji zapis TXT v konzolo DNS (ki se nahaja na platformi, kjer ste kupili domeno po meri)."
-      ],
-      "Step ${ step }": [
-        "${ step }. korak",
-        "${ step }. korak",
-        "${ step }. korak",
-        "${ step }. korak"
       ],
       "Storage allocated to other users in this organisation": [
         "Shramba, dodeljena drugim uporabnikom v tej organizaciji."
@@ -6232,12 +6217,6 @@
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
-      "High-speed streaming": [
-        "Hitro pretakanje"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Hitri švicarski VPN, ki varuje vašo zasebnost."
-      ],
       "High-speed VPN on ${ n } device": [
         "Hitri VPN v ${ n } napravi",
         "Hitri VPN v ${ n } napravah",
@@ -6291,12 +6270,6 @@
       ],
       "Priority support & live chat": [
         "Prednostna podpora in klepet v živo"
-      ],
-      "Protect ${ n } device at a time": [
-        "Zaščitite ${ n } napravo hkrati.",
-        "Zaščitite ${ n } naprave hkrati.",
-        "Zaščitite ${ n } naprave hkrati.",
-        "Zaščitite ${ n } naprav hkrati."
       ],
       "Recover previous file versions": [
         "Obnovi prejšnje različice datoteke"
@@ -6357,9 +6330,6 @@
       ],
       "Start protecting your organization": [
         "Začnite ščititi svojo organizacijo"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Začnite se varovati na spletu v dveh enostavnih korakih"
       ],
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"
@@ -10212,9 +10182,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Paket ${ a } in ${ b }"
-      ],
-      "Your ${ selected } plan": [
-        "Vaš ${ selected } paket"
       ]
     },
     "wallet_signup_2024: Info": {

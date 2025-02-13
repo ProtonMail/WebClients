@@ -3377,23 +3377,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Toiminnot"
+      ],
       "App version": [
         "Sovellusversio"
       ],
       "Best deal": [
         "Paras tarjous"
-      ],
-      "Checkout": [
-        "Kassa"
-      ],
-      "City": [
-        "Kaupunki"
-      ],
-      "Country": [
-        "Maa"
-      ],
-      "Create your account": [
-        "Luo oma tilisi"
       ],
       "Device": [
         "Laite"
@@ -3715,9 +3706,6 @@
       ],
       "Allocated": [
         "Varattu"
-      ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Salli käyttäjien yhdistää suojattuihin jaettuihin palvelimiin ${ VPN_APP_NAME } -sovelluksen **Maat**-osiosta."
       ],
       "Already allocated": [
         "Jo varattu"
@@ -4398,9 +4386,6 @@
       "No Gateways yet": [
         "Yhdyskäytäviä ei vielä ole"
       ],
-      "No location filters are currently assigned.": [
-        "Sijaintisuodattimia ei ole asetettu."
-      ],
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
       ],
@@ -4409,9 +4394,6 @@
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
-      ],
-      "No Shared Servers Found": [
-        "Jaettuja palvelimia ei löytynyt"
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
@@ -4682,9 +4664,6 @@
       "Shared ${ vaultLink } updated": [
         "Jaettu ${ vaultLink } päivitettiin"
       ],
-      "Shared Server Location Filters": [
-        "Jaettujen palvelimien sijantisuodattimet"
-      ],
       "Shared vault deleted": [
         "Jaettu holvi poistettiin"
       ],
@@ -4705,10 +4684,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
-      ],
-      "Step ${ step }": [
-        "${ step }. vaihe",
-        "${ step }. vaihe"
       ],
       "Storage allocated to other users in this organisation": [
         "Organisaation käyttäjille varattu tallennustila"
@@ -6747,12 +6722,6 @@
       "Group management (coming soon)": [
         "Ryhmien hallinta (tulossa pian)"
       ],
-      "High-speed streaming": [
-        "Nopea suoratoisto"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Nopea sveitsiläinen VPN, joka suojaa yksityisyyttäsi"
-      ],
       "High-speed VPN on ${ n } device": [
         "Nopea VPN ${ n } laitteelle",
         "Nopea VPN ${ n } laitteelle"
@@ -6810,10 +6779,6 @@
       ],
       "Proofread and refine your emails": [
         "Oikolue ja hiovi sähköpostisi"
-      ],
-      "Protect ${ n } device at a time": [
-        "Suojaa samanaikaisesti ${ n } laite",
-        "Suojaa samanaikaisesti ${ n } laitetta"
       ],
       "Quickly craft replies": [
         "Laadi nopeasti vastauksia"
@@ -6881,9 +6846,6 @@
       ],
       "Start protecting your organization": [
         "Aloita organisaatiosi suojaaminen"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Aloita itsesi suojaaminen kahdella helpolla vaiheella"
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
@@ -11408,9 +11370,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Sinun ${ a } ja ${ b } -pakettisi"
-      ],
-      "Your ${ selected } plan": [
-        "${ selected } -tilauksesi"
       ]
     },
     "vpn_2step: tooltip": {

@@ -78,6 +78,9 @@
       "Add phone number": [
         "Telefonnummer hinzufügen"
       ],
+      "Add to album": [
+        "Zum Album hinzufügen"
+      ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
@@ -225,6 +228,9 @@
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
+      ],
+      "Create album": [
+        "Album erstellen"
       ],
       "Create and copy alias": [
         "Erstellen und Alias kopieren"
@@ -545,6 +551,9 @@
       ],
       "New": [
         "Neu"
+      ],
+      "New album": [
+        "Neues Album"
       ],
       "New document": [
         "Neues Dokument"
@@ -951,6 +960,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Album erstellen"
+      ],
       "Upload": [
         "Hochladen"
       ]
@@ -1334,6 +1346,12 @@
       ],
       "Take a tour": [
         "Rundgang"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "${ photos.length } Foto hinzufügen zu",
+        "${ photos.length } Fotos hinzufügen zu"
       ]
     },
     "Cancellation reminder": {
@@ -2415,6 +2433,11 @@
         "Überfällige Rechnung"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2496,11 +2519,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4199,6 +4217,9 @@
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
+      "All albums": [
+        "Alle Alben"
+      ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
       ],
@@ -4815,6 +4836,9 @@
       "No": [
         "Nein"
       ],
+      "No Albums": [
+        "Keine Alben"
+      ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
       ],
@@ -5009,6 +5033,9 @@
       "Ready to add some photos?": [
         "Bereit ein paar Fotos hinzuzufügen?"
       ],
+      "Recent": [
+        "Kürzlich"
+      ],
       "recommended browser": [
         "empfohlenen Browsers"
       ],
@@ -5164,6 +5191,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Das Konto hat möglicherweise einen neuen Schlüssel, oder die folgenden Daten wurden manipuliert: ${ items }. Öffne sie nur, wenn du sie für vertrauenswürdig hältst."
+      ],
+      "The albums you create are shown here": [
+        "Die von dir erstellten Alben werden hier angezeigt"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Die digitale Signatur wurde teilweise verifiziert. Diese Datei wurde durch einen öffentlich zugänglichen Teilen-Link von einem Nutzer ohne ${ BRAND_NAME }-Konto hochgeladen, weshalb seine Identität nicht verifiziert werden kann."
@@ -6084,6 +6114,9 @@
       ],
       "Move to Inbox": [
         "In Posteingang verschieben"
+      ],
+      "My Albums": [
+        "Meine Alben"
       ],
       "Name": [
         "Name"
@@ -7119,6 +7152,9 @@
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Für Streaming optimierte dedizierte Server"
+      ],
       "Desktop app": [
         "Desktop-App"
       ],
@@ -7169,9 +7205,6 @@
       ],
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
-      ],
-      "High-speed streaming": [
-        "Hochgeschwindigkeits-Streaming"
       ],
       "High-speed VPN on ${ n } device": [
         "Hochgeschwindigkeits-VPN auf ${ n } Gerät",
@@ -7227,10 +7260,6 @@
       ],
       "Proofread and refine your emails": [
         "Korrigiere und verfeinere deine E-Mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Schütze ${ n } Gerät gleichzeitig",
-        "Schütze ${ n } Geräte gleichzeitig"
       ],
       "Quickly craft replies": [
         "Schnell Antworten erstellen"
@@ -7362,6 +7391,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Bis zu ${ n } Gerät auf einmal",
+        "Bis zu ${ n } Geräte auf einmal"
       ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"
@@ -10039,7 +10072,7 @@
         "Adressen"
       ],
       "Album": [
-        "Alben"
+        "Album"
       ],
       "Albums": [
         "Alben"
@@ -10661,6 +10694,11 @@
         "Heute"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Füge diese gemeinsame Datei zu deinem ${ DRIVE_APP_NAME } hinzu, damit du später leicht darauf zugreifen kannst."
@@ -10742,11 +10780,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wir haben der Person eine Einladung zum Zugreifen auf den Eintrag gesendet."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Valentine_2025": {
@@ -10989,6 +11022,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 aufeinanderfolgende Punkte sind nicht erlaubt"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Möchtest du wirklich ${ count } Kontakt dauerhaft löschen?",
         "Möchtest du wirklich ${ count } Kontakte dauerhaft löschen?"
@@ -11001,6 +11037,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Möchtest du diesen Kontakt wirklich dauerhaft löschen?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Darf keinen Punkt am Anfang enthalten"
+      ],
+      "Cannot contain a dot at the end": [
+        "Darf keinen Punkt am Ende enthalten"
       ],
       "Contacts could not be merged": [
         "Die Kontakte konnten nicht zusammengeführt werden"
@@ -11023,8 +11065,8 @@
       "Name is required": [
         "Name ist erforderlich"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Nur alphanumerische Zeichen, Punkte, Bindestriche und Unterstriche sind erlaubt."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Nur alphanumerische Kleinbuchstaben, Punkte, Bindestriche und Unterstriche sind erlaubt"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bitte beachte, dass ein Upgrade deines Kontos durch die Wahl dieser Zahlungsmethode nicht sofort durchgeführt werden kann. Wir werden dein Konto umstellen, sobald die Zahlung bei uns eingegangen ist."

@@ -557,7 +557,7 @@
         "삭제 전 키 내보내기"
       ],
       "Extend": [
-        "확장"
+        "연장"
       ],
       "Filters are being applied. This might take a few minutes.": [
         "필터가 적용되고 있습니다. 몇 분 정도 소요됩니다."
@@ -1985,6 +1985,9 @@
     "Button": {
       "Add link to your email footer": [
         "이메일 바닥글에 링크 추가"
+      ],
+      "Close": [
+        "닫기"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
@@ -3632,9 +3635,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "받은 편지함을 깔끔하게 유지하기 위해 원하는 만큼 라벨이나 폴더를 만드세요."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "각 국가에서 공유된 서버에 연결할 수 있는 구성원을 결정할 수 있도록 정책을 추가하세요."
-      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
       ],
@@ -3646,9 +3646,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "조직 내의 전체 구성원이 모든 국가에서 공유된 서버에 접근할 수 있습니다."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
@@ -5294,7 +5291,7 @@
     },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
-        "사용자 계정의 혜택"
+        "나의 계정 혜택"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6106,18 +6103,6 @@
       ],
       "Best deal": [
         "초특가"
-      ],
-      "Checkout": [
-        "주문"
-      ],
-      "City": [
-        "도시"
-      ],
-      "Country": [
-        "국가"
-      ],
-      "Create your account": [
-        "계정 만들기"
       ],
       "Device": [
         "기기"
@@ -6992,9 +6977,6 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "구성원이 ${ VPN_APP_NAME } 앱의 **국가** 섹션에서 보안 공유 서버에 연결할 수 있도록 허용합니다."
-      ],
       "Already allocated": [
         "이미 할당 됨"
       ],
@@ -7673,9 +7655,6 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "이전 비밀번호 재설정으로 인한 것이라면 메시지가 다시 표시되지 않도록 할 수 있어요."
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "이 옵션이 활성화되어 있다면, 조직 구성원의 금고 공유가 조직 내에서만 가능하도록 할 수 있습니다."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
@@ -7843,6 +7822,9 @@
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "서버의 국가를 변경하는데 10일이 소요됩니다. 결정 사항이 옳은지 반드시 확인하십시오."
+      ],
+      "It's better to have:": [
+        "포함되면 더 좋습니다:"
       ],
       "Item autofilled in ${ vaultLink }": [
         "${ vaultLink }에 항목이 자동 완성되었습니다."
@@ -8105,9 +8087,6 @@
       "No label selected": [
         "선택한 라벨 없음"
       ],
-      "No location filters are currently assigned.": [
-        "현재 할당된 위치 필터가 없습니다."
-      ],
       "No logs yet.": [
         "아직 로그가 없습니다."
       ],
@@ -8119,9 +8098,6 @@
       ],
       "No results found": [
         "결과를 찾을 수 없음"
-      ],
-      "No Shared Servers Found": [
-        "발견된 공유된 서버가 없습니다"
       ],
       "Not a valid URL": [
         "유효하지 않은 URL"
@@ -8136,7 +8112,7 @@
         "숫자"
       ],
       "of": [
-        "의"
+        "/"
       ],
       "Off": [
         "끔"
@@ -8542,9 +8518,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "공유된 ${ vaultLink }이(가) 업데이트됨"
-      ],
-      "Shared Server Location Filters": [
-        "공유된 서버 위치 필터"
       ],
       "Shared vault deleted": [
         "공유 금고를 삭제했습니다"
@@ -9027,7 +9000,7 @@
         "업로드된 파일이 유효하지 않은 비공개 키입니다. 인증 후 다시 시도하세요."
       ],
       "Uppercase and lowercase letters": [
-        "대소문자 문자"
+        "대소문자"
       ],
       "URL link": [
         "URL 링크"
@@ -12303,12 +12276,6 @@
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
-      "High-speed streaming": [
-        "고속 스트리밍"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "나의 프라이버시를 보호하는 빠른 속도의 스위스 기반 VPN"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 기기에서 고속 VPN"
       ],
@@ -12365,9 +12332,6 @@
       ],
       "Proofread and refine your emails": [
         "이메일 교정 및 수정하기"
-      ],
-      "Protect ${ n } device at a time": [
-        "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Quickly craft replies": [
         "신속하게 답변 작성하기"
@@ -12434,9 +12398,6 @@
       ],
       "Start protecting your organization": [
         "조직 보호를 시작하세요"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2단계로 온라인에서 나 자신을 보호해보세요."
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
@@ -17304,7 +17265,7 @@
         "(활성)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. 생성할 구성에 이름을 지정하세요"
+        "1. 생성할 구성에 이름 지정"
       ],
       "1. Select platform": [
         "1. 플랫폼 선택"
@@ -19403,9 +19364,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "사용자의 ${ a } 및 ${ b } 번들"
-      ],
-      "Your ${ selected } plan": [
-        "나의 ${ selected } 플랜"
       ]
     },
     "vpn_2step: tooltip": {
@@ -19459,7 +19417,7 @@
         "이메일을 통한 Bitcoin"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소． 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 보내실 수 있습니다．"
+        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소. 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 송금하 수 있습니다．"
       ],
       "Encrypted cloud storage for photos and documents": [
         "사진 및 문서에 대한 암호화된 클라우드 스토리지"
@@ -19483,7 +19441,7 @@
         "안전하게 Bitcoin을 보관하고 무료로 거래하세요．"
       ],
       "Take control of all your data with premium ${ BRAND_NAME } services.": [
-        "귀하의 모든 데이터를 premium ${ BRAND_NAME } 서비스와 함께 직접 관리하세요．"
+        "나의 모든 데이터를 premium ${ BRAND_NAME } 서비스와 함께 직접 관리하세요．"
       ],
       "Ultra fast and private VPN": [
         "초고속 비공개 VPN"
@@ -19494,7 +19452,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "비트코인을 보관할 더 안전한 방법"
+        "Bitcoin을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {

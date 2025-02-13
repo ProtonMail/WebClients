@@ -3650,8 +3650,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Creeu tantes etiquetes o carpetes com necessiteu per mantenir ordenada la safata d'entrada."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Creeu polítiques per decidir qui es pot connectar als servidors compartits de cada país."
+      "Create policies to manage access to shared servers.": [
+        "Creeu polítiques per gestionar l'accés a servidors compartits."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activa ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
@@ -3665,8 +3665,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Tothom a la vostra organització es pot connectar a servidors compartits de tots els països."
+      "Everyone in your organization can connect to shared servers.": [
+        "Tothom a la vostra organització es pot connectar a servidors compartits."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
@@ -6146,26 +6146,23 @@
       "Best deal": [
         "Millor oferta"
       ],
-      "Checkout": [
-        "Pagament"
-      ],
-      "City": [
-        "Ciutat"
-      ],
-      "Country": [
-        "País"
-      ],
-      "Create your account": [
-        "Creeu el vostre compte"
-      ],
       "Device": [
         "Dispositiu"
+      ],
+      "Enabled Countries": [
+        "Països activats"
+      ],
+      "Enter your email address": [
+        "Introduïu la vostra adreça de correu electrònic"
       ],
       "Event": [
         "Esdeveniment"
       ],
       "Folders": [
         "Carpetes"
+      ],
+      "Groups": [
+        "Grups"
       ],
       "IP address": [
         "Adreça IP"
@@ -6194,6 +6191,9 @@
       "Permissions": [
         "Permisos"
       ],
+      "Policy Name": [
+        "Nom de la política"
+      ],
       "Protection": [
         "Protecció"
       ],
@@ -6202,6 +6202,9 @@
       ],
       "Select your deal": [
         "Seleccioneu la vostra oferta"
+      ],
+      "Select your payment method": [
+        "Seleccioneu el vostre mètode de pagament"
       ],
       "Select your pricing plan": [
         "Seleccioneu el vostre pla de preus"
@@ -7064,8 +7067,8 @@
       "Allow recovery by phone": [
         "Permet recuperació per telèfon"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Permet als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Permeteu als usuaris connectar-se a servidors compartits segurs en funció de polítiques definides."
       ],
       "Already allocated": [
         "Ja assignat"
@@ -7280,6 +7283,9 @@
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Premi Editors' Choice de CNET amb una puntuació de 8,4 sobre 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configureu l'autenticació SAML per a l'organització a través d'un proveïdor d'identitat (IdP). Això activarà SAML per a tota l'organització."
       ],
@@ -7321,6 +7327,9 @@
       ],
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
+      ],
+      "countries enabled": [
+        "països activats"
       ],
       "Country code": [
         "Codi de país"
@@ -7381,6 +7390,9 @@
       ],
       "Custom monthly": [
         "Mensual (personalitzat)"
+      ],
+      "Custom policies": [
+        "Polítiques personalitzades"
       ],
       "Custom weekly": [
         "Setmanal (personalitzat)"
@@ -7750,8 +7762,14 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si això és a causa d'un restabliment antic de la contrasenya, podeu evitar que el missatge torni a aparèixer"
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Si s'activa aquesta opció, els membres de l'organització només podran compatir caixes fortes dintre de l'organització"
+      "If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items": [
+        "Si aquesta opció està activada, els membres de l'organització no poden crear caixes fortes. Els nous membres necessitaran un administrador per tal de crear manualment la primera caixa forta (mitjançant la compartició) perquè puguin començar a crear elements."
+      ],
+      "If this option is turned on, organization members will be able to share individual items in addition to vaults.": [
+        "Si aquesta opció està activada, els membres de l'organització podran compartir cada element a més de les voltes."
+      ],
+      "If this option is turned on, organization members will only be able to share vaults or items within the organization": [
+        "Si s'activa aquesta opció, els membres de l'organització només podran compatir caixes fortes o elements dintre de l'organització."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
@@ -8187,9 +8205,6 @@
       "No label selected": [
         "No s'ha seleccionat cap etiqueta"
       ],
-      "No location filters are currently assigned.": [
-        "Actualment, no hi ha cap filtre d'ubicació assignat."
-      ],
       "No logs yet.": [
         "Encara no hi ha registres."
       ],
@@ -8201,9 +8216,6 @@
       ],
       "No results found": [
         "No s'ha trobat cap resultat."
-      ],
-      "No Shared Servers Found": [
-        "No s'ha trobat cap servidor compartit."
       ],
       "Not a valid URL": [
         "No és un URL vàlid."
@@ -8315,6 +8327,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Premi Editors' Choice de PC Magazine amb una puntuació de 5 sobre 5 estrelles"
       ],
       "per month": [
         "al mes"
@@ -8628,9 +8643,6 @@
       "Shared ${ vaultLink } updated": [
         "S'ha actualitzat l'enllaç compartit ${ vaultLink }."
       ],
-      "Shared Server Location Filters": [
-        "Filtres d'ubicació de servidor compartit"
-      ],
       "Shared vault deleted": [
         "S'ha eliminat la caixa forta compartida"
       ],
@@ -8739,6 +8751,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creeu i compartiu documents a ${ DOCS_APP_NAME } i deseu-los de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Recomanat per TechRadar Pro amb una puntuació de 4,2 sobre 5 estrelles"
       ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
@@ -9033,6 +9048,9 @@
       ],
       "Total VPN connections": [
         "Connexions VPN totals"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Proveu ${ productName } totalment sense riscos. Si per qualsevol motiu canvieu d'opinió, rebreu un reemborsament complet. Sense preguntes."
       ],
       "Two-factor authentication disabled": [
         "S'ha desactivat l'autenticació de doble factor"
@@ -10568,6 +10586,9 @@
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
       ],
+      "Enable individual item sharing": [
+        "Activa la compartició de cada element"
+      ],
       "End date": [
         "Data de finalització"
       ],
@@ -10651,6 +10672,9 @@
       ],
       "Group name": [
         "Nom del grup"
+      ],
+      "Groups": [
+        "Grups"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -10823,6 +10847,9 @@
       "New password": [
         "Contrasenya nova"
       ],
+      "New policy name": [
+        "Nou nom de la política"
+      ],
       "New second password": [
         "Nova segona contrasenya"
       ],
@@ -10981,6 +11008,9 @@
       ],
       "Require 2FA for everyone": [
         "Requereix l'A2F per a tothom"
+      ],
+      "Restrict vault creation to administrators only": [
+        "Restringir la creació de caixes fortes només als administradors"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -11162,6 +11192,9 @@
       ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "Users": [
+        "Usuaris"
       ],
       "Value": [
         "Valor"
@@ -12314,6 +12347,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Tots els serveis prèmium de ${ BRAND_NAME }. Una subscripció senzilla"
       ],
+      "Apps for": [
+        "Aplicacions para"
+      ],
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
       ],
@@ -12383,6 +12419,9 @@
       "Dedicated servers and IP": [
         "Servidors i IP dedicats"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Servidors dedicats optimitzats per a estríming"
+      ],
       "Desktop app": [
         "Aplicació d'escriptori"
       ],
@@ -12433,12 +12472,6 @@
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
-      ],
-      "High-speed streaming": [
-        "Estríming d'alta velocitat"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suïssa d'alta velocitat que protegeix la vostra privacitat"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN d'alta velocitat en ${ n } dispositiu",
@@ -12497,10 +12530,6 @@
       ],
       "Proofread and refine your emails": [
         "Corregiu i refineu els vostres correus electrònics"
-      ],
-      "Protect ${ n } device at a time": [
-        "Protegiu ${ n } dispositiu alhora",
-        "Protegiu ${ n } dispositius alhora"
       ],
       "Quickly craft replies": [
         "Crea respostes ràpidament"
@@ -12568,9 +12597,6 @@
       ],
       "Start protecting your organization": [
         "Comenceu a protegir la vostra organització"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Comenceu a protegir-vos en línia en 2 passos senzills"
       ],
       "Strict no-logs policy": [
         "Política estricta de no conservació de registres"
@@ -12645,6 +12671,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge"
+      ],
+      "Up to 10 Gbps": [
+        "Fins a 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Ús fins a ${ n } dispositiu al mateix temps",
+        "Ús fins a ${ n } dispositius al mateix temps"
       ],
       "User credential management": [
         "Gestió de credencials d'usuari"
@@ -13283,6 +13316,9 @@
       "Email notifications have been enabled": [
         "S'han activat les notificacions per correu electrònic."
       ],
+      "Error creating policy": [
+        "S'ha produït un error en crear la política."
+      ],
       "Invalid code": [
         "El codi no és vàlid."
       ],
@@ -13306,6 +13342,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credencials OpenVPN / IKEv2 regenerades"
+      ],
+      "Policy created successfully": [
+        "S'ha creat la política."
       ],
       "Reminder has been sent": [
         "S'ha enviat un recordatori"
@@ -16313,10 +16352,10 @@
         "S'ha esborrat l'inici de sessió únic."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
-        "L'usuari ${ user } té ara un compte amb inici de sessió únic. La seva contrasenya anterior es va convertir en la seva ccontrasenya de recuperació."
+        "L'usuari ${ user } té ara un compte amb inici de sessió únic. La seva contrasenya anterior s'ha convertit en la contrasenya de recuperació."
       ],
       "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Haureu de tornar a connectar amb el vostre proveïdor d'identitat per accedir als serveis de ${ BRAND_NAME }. Perquè aquest usuari pugui iniciar sessió, assegureu-vos que existeixen amb el vostre proveïdor d'identitat."
+        "L'usuari haurà d'iniciar la sessió ara al vostre proveïdor d'identitat per a accedir als serveis de ${ BRAND_NAME }. Perquè aquest usuari pugui iniciar la sessió, assegureu-vos que existeix al vostre proveïdor d'identitat."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Això tancarà la sessió de l'usuari dels seus altres dispositius i haurà de crear una nova contrasenya de recuperació."
@@ -17578,6 +17617,9 @@
       "Add contact group name": [
         "Afegeix el nom del grup de contactes"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Afegeix països a «${ policyName }»"
+      ],
       "Add credit/debit card": [
         "Afegir targeta de crèdit/dèbit"
       ],
@@ -17619,6 +17661,9 @@
       ],
       "Add users": [
         "Afegeix usuaris"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Afegeix usuaris a «${ policyName }»"
       ],
       "Address": [
         "Adreça"
@@ -17794,6 +17839,9 @@
       ],
       "Create multiple user accounts": [
         "Crea diversos comptes d'usuari"
+      ],
+      "Create new policy": [
+        "Crea una política"
       ],
       "Create organization key": [
         "Crea la clau de l'organització"
@@ -19624,8 +19672,8 @@
       "Your ${ a } and ${ b } bundle": [
         "El vostre paquet ${ a } i ${ b }"
       ],
-      "Your ${ selected } plan": [
-        "El vostre pla ${ selected }"
+      "Your plan includes:": [
+        "El pla inclou:"
       ]
     },
     "vpn_2step: tooltip": {

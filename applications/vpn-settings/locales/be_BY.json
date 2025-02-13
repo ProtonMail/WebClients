@@ -2338,11 +2338,8 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Стварыце палітыку, каб вырашаць, хто можа падключацца да абагуленых сервераў у кожнай краіне."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Кожны ўдзельнік вашай арганізацыі можа падключацца да абагуленых сервераў ва ўсіх краінах."
+      "Everyone in your organization can connect to shared servers.": [
+        "Кожны ўдзельнік вашай арганізацыі зожа падключацца да абагуленых сервераў."
       ],
       "If disabled, only admins will have access.": [
         "Калі адключана, то толькі адміністратары будуць мець доступ."
@@ -3451,29 +3448,29 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Дзеянні"
+      ],
       "App version": [
         "Версія праграмы"
       ],
       "Best deal": [
         "Лепшая прапанова"
       ],
-      "Checkout": [
-        "Аплата"
-      ],
-      "City": [
-        "Горад"
-      ],
-      "Country": [
-        "Краіна"
-      ],
-      "Create your account": [
-        "Стварэнне ўліковага запісу"
-      ],
       "Device": [
         "Прылада"
       ],
+      "Enabled Countries": [
+        "Уключыаныя краіны"
+      ],
+      "Enter your email address": [
+        "Увядзіце адрас сваёй электроннай пошты"
+      ],
       "Event": [
         "Падзея"
+      ],
+      "Groups": [
+        "Групы"
       ],
       "IP address": [
         "IP-адрас"
@@ -3493,6 +3490,9 @@
       "Organization key fingerprint": [
         "Адбітак ключа арганізацыі"
       ],
+      "Policy Name": [
+        "Назва палітыкі"
+      ],
       "Protection": [
         "Абарона"
       ],
@@ -3501,6 +3501,9 @@
       ],
       "Select your deal": [
         "Выберыце сваю прапанову"
+      ],
+      "Select your payment method": [
+        "Выберыце спосаб аплаты"
       ],
       "Select your pricing plan": [
         "Выберыце тарыфны план"
@@ -3826,8 +3829,8 @@
       "Allocated": [
         "Вылучана"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Дазваляць карыстальнікам падключацца да бяспечна абагуленых сервераў на падставе вызначаных палітык."
       ],
       "Already allocated": [
         "Ужо вылучана"
@@ -3931,6 +3934,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Узнагарода выбар рэдакцыі CNET з рэйтынгам 8,4 з 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (ldP). Гэта ўключыць SAML для ўсёй арганізацыі."
       ],
@@ -3963,6 +3969,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Скапіяваць прапанаваны пароль у буфер абмену"
+      ],
+      "countries enabled": [
+        "уключаныя краіны"
       ],
       "Country code": [
         "Код краіны"
@@ -4005,6 +4014,9 @@
       ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
+      ],
+      "Custom policies": [
+        "Карыстальніцкія палітыкі"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
@@ -4525,9 +4537,6 @@
       "No Gateways yet": [
         "Шлюзы пакуль адсутнічаюць"
       ],
-      "No location filters are currently assigned.": [
-        "У цяперашні час фільтры месцазнаходжання не прызначаны."
-      ],
       "No payment is required at this time.": [
         "Зараз аплата не патрабуецца."
       ],
@@ -4536,9 +4545,6 @@
       ],
       "No results found": [
         "Нічога не знойдзена"
-      ],
-      "No Shared Servers Found": [
-        "Абагуленыя серверы не знойдзены"
       ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
@@ -4611,6 +4617,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Узнагарода выбар рэдакцыі PC Magazine з рэйтынгам 5 з 5 зорак"
       ],
       "per month": [
         "ў месяц"
@@ -4822,9 +4831,6 @@
       "Shared ${ vaultLink } updated": [
         "Абагульванне ${ vaultLink } абноўлена"
       ],
-      "Shared Server Location Filters": [
-        "Фільтры месцазнаходжання абагуленага сервера"
-      ],
       "Shared vault deleted": [
         "Абагуленае сховішча выдалена"
       ],
@@ -4845,12 +4851,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
-      ],
-      "Step ${ step }": [
-        "Крок ${ step }",
-        "Крок ${ step }",
-        "Крок ${ step }",
-        "Крок ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Сховішча, вылучанае для іншых карыстальнікаў у гэтай арганізацыі"
@@ -4890,6 +4890,9 @@
       ],
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Рэкамендацыя TechRadar Pro з рэйтынгам 4,2 з 5 зорак"
       ],
       "Thank you": [
         "Дзякуй"
@@ -5064,6 +5067,9 @@
       ],
       "Total VPN connections": [
         "Колькасць падключэнняў па VPN"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Паспрабуйце ${ productName } абсалютна нічым не рызыкуючы. Вы атрымаеце поўнае вяртанне грашовых сродкаў, калі па нейкай прычыне зменіце сваё меркаванне. Без ніякіх пытанняў."
       ],
       "Two-factor authentication disabled": [
         "Двухфактарная аўтэнтыфікацыя адключана"
@@ -5887,6 +5893,9 @@
       "Group name": [
         "Назва групы"
       ],
+      "Groups": [
+        "Групы"
+      ],
       "Hide password": [
         "Схаваць пароль"
       ],
@@ -5955,6 +5964,9 @@
       ],
       "New password": [
         "Новы пароль"
+      ],
+      "New policy name": [
+        "Назва новай палітыкі"
       ],
       "New second password": [
         "Новы другі пароль"
@@ -6141,6 +6153,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Users": [
+        "Карыстальнікі"
       ],
       "Value": [
         "Значэнне"
@@ -6913,6 +6928,9 @@
       "Dedicated servers and IP": [
         "Вылучаныя серверы і IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Вылучаныя серверы аптымізаваны для трансляцый"
+      ],
       "Desktop app": [
         "Настольная праграма"
       ],
@@ -6963,12 +6981,6 @@
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
-      ],
-      "High-speed streaming": [
-        "Высакахуткасная трансляцыя"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Высакахуткасны швейцарскі VPN, які абараняе вашу прыватнасць."
       ],
       "High-speed VPN on ${ n } device": [
         "Высакахуткасны VPN на ${ n } прыладзе",
@@ -7029,12 +7041,6 @@
       ],
       "Proofread and refine your emails": [
         "Правярайце і ўдакладняйце свае электронныя лісты"
-      ],
-      "Protect ${ n } device at a time": [
-        "Абараніць ${ n } прыладу адначасова",
-        "Абараніць ${ n } прылады адначасова",
-        "Абараніць ${ n } прылад адначасова",
-        "Абараніць ${ n } прылады адначасова"
       ],
       "Quickly craft replies": [
         "Хутка стварайце адказы"
@@ -7104,9 +7110,6 @@
       ],
       "Start protecting your organization": [
         "Пачніце абараняць сваю арганізацыю"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Пачніце абараняць сябе ў інтэрнэце выканаўшы 2 простыя крокі"
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
@@ -7182,6 +7185,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Выкарыстоўвайце на ${ n } прыладзе адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова"
       ],
       "User credential management": [
         "Кіраванне ўліковымі данымі карыстальнікаў"
@@ -7764,6 +7773,9 @@
       "Downloaded 2FA recovery codes": [
         "Спампаваныя коды аднаўлення 2ФА"
       ],
+      "Error creating policy": [
+        "Памылка стварэння палітыкі"
+      ],
       "Invalid code": [
         "Памылковы код"
       ],
@@ -7781,6 +7793,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваныя"
+      ],
+      "Policy created successfully": [
+        "Палітыка паспяхова створана"
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
@@ -9508,6 +9523,9 @@
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "У карыстальніка ${ user } цяпер уліковы запіс з адзіным уваходам."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Гэта дзеянне прывядзе да выхаду карыстальніка з яго іншых прылад, і яму давядзецца стварыць новы рэзервовы пароль."
       ],
@@ -10574,6 +10592,9 @@
       "Add address": [
         "Дадаць адрас"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Дадаць краіны ў \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Дадаць крэдытную/плацежную картку"
       ],
@@ -10609,6 +10630,9 @@
       ],
       "Add users": [
         "Дадаць карыстальнікаў"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Дадаць карыстальнікаў у \"${ policyName }\""
       ],
       "Allocate storage": [
         "Вылучэнне аб'ёму ў сховішчы"
@@ -10732,6 +10756,9 @@
       ],
       "Create multiple user accounts": [
         "Стварыце некалькі ўліковых запісаў карыстальніка"
+      ],
+      "Create new policy": [
+        "Стварыць новую палітыку"
       ],
       "Create organization key": [
         "Стварыць ключ арганізацыі"
@@ -11814,9 +11841,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ваш камплект ${ a } і ${ b }"
-      ],
-      "Your ${ selected } plan": [
-        "Ваш тарыфны план ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {

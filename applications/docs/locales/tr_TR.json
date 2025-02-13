@@ -6231,6 +6231,9 @@
       "Data breach monitoring": [
         "Verilerin ele geçirilmesini izleme"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Yayın akışı için optimize edilmiş özel sunucular"
+      ],
       "Desktop app": [
         "Bilgisayar uygulaması"
       ],
@@ -6281,9 +6284,6 @@
       ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
-      ],
-      "High-speed streaming": [
-        "Yüksek hızlı yayın akışı izleme"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } aygıt için yüksek hızlı VPN",
@@ -6339,10 +6339,6 @@
       ],
       "Proofread and refine your emails": [
         "E-postalarınızı düzeltin ve düzenleyin"
-      ],
-      "Protect ${ n } device at a time": [
-        "Aynı anda ${ n } aygıtı koruyun",
-        "Aynı anda ${ n } aygıtı koruyun"
       ],
       "Quickly craft replies": [
         "Yanıtları hızlıca oluşturun"
@@ -6474,6 +6470,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Aynı anda en fazla ${ n } cihazda kullanın",
+        "Aynı anda en fazla ${ n } cihazda kullanın"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -9399,6 +9399,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 ardışık noktaya izin verilmez"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
@@ -9411,6 +9414,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Bu kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Başlangıçta nokta içermez"
+      ],
+      "Cannot contain a dot at the end": [
+        "Sonda nokta içermez"
       ],
       "Contacts could not be merged": [
         "Kişiler birleştirilemedi"
@@ -9433,8 +9442,8 @@
       "Name is required": [
         "Adın yazılması zorunludur"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Yalnızca alfanümerik küçük harf karakterlerine, noktalara, tirelere ve alt çizgilere izin verilir"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."

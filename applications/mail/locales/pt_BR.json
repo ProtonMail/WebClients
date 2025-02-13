@@ -1153,6 +1153,9 @@
       "Set as default": [
         "Definir como padrão"
       ],
+      "Set as default mail application": [
+        "Definir como aplicativo de e-mail padrão"
+      ],
       "Set encryption": [
         "Definir criptografia"
       ],
@@ -1357,11 +1360,11 @@
       "Upgrade": [
         "Fazer upgrade"
       ],
-      "Upgrade now": [
-        "Atualizar agora"
-      ],
       "Upgrade Now": [
         "Fazer upgrade agora"
+      ],
+      "Upgrade now": [
+        "Atualizar agora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Faça upgrade para ${ BRAND_NAME } Unlimited"
@@ -5883,6 +5886,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } tambem pode proteger seus negócios."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } não é seu aplicativo padrão de e-mail."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagens."
@@ -6319,6 +6325,9 @@
         "endereço de e-mail padrão"
       ],
       "Default email application": [
+        "Aplicativo de e-mail padrão"
+      ],
+      "Default mail application": [
         "Aplicativo de e-mail padrão"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
@@ -7124,6 +7133,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Define o ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão para este navegador. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Define o ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
       ],
       "Setting up ${ feature }…": [
         "Configurando ${ feature }…"
@@ -9596,6 +9608,9 @@
       "Data breach monitoring": [
         "Monitoramento de violação de dados"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Servidores dedicados otimizados para streaming"
+      ],
       "Desktop app": [
         "Aplicativo para computador"
       ],
@@ -9646,9 +9661,6 @@
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
-      ],
-      "High-speed streaming": [
-        "Streaming em alta velocidade"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidade em ${ n } dispositivo",
@@ -9704,10 +9716,6 @@
       ],
       "Proofread and refine your emails": [
         "Revise e otimize seus e-mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Proteja ${ n } dispositivo por vez",
-        "Proteja ${ n } dispositivos por vez"
       ],
       "Quickly craft replies": [
         "Elabore respostas rapidamente"
@@ -9839,6 +9847,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Use até ${ n } dispositivo ao mesmo tempo",
+        "Use até ${ n } dispositivos ao mesmo tempo"
       ],
       "User credential management": [
         "Gerenciamento de credenciais de usuário"
@@ -10817,7 +10829,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "Gratuito"
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -13918,6 +13930,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
+      "2 consecutive dots are not allowed": [
+        "Não é permitido o uso de 2 pontos consecutivos."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Você tem certeza de que deseja excluir permanentemente ${ count } contato?",
         "Você tem certeza de que deseja excluir permanentemente ${ count } contatos?"
@@ -13930,6 +13945,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Você tem certeza que deseja excluir este contato permanentemente?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Não pode começar por um ponto."
+      ],
+      "Cannot contain a dot at the end": [
+        "Não pode conter um ponto no final."
       ],
       "Contacts could not be merged": [
         "Não foi possível mesclar os contatos."
@@ -13952,8 +13973,8 @@
       "Name is required": [
         "Nome é obrigatório"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Somente caracteres alfanuméricos, pontos, hifens e sublinhados são permitidos"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."

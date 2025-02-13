@@ -78,6 +78,9 @@
       "Add phone number": [
         "Legg til telefonnummer"
       ],
+      "Add to album": [
+        "Legg til album"
+      ],
       "Add to group": [
         "Legg til gruppe"
       ],
@@ -225,6 +228,9 @@
       ],
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
+      ],
+      "Create album": [
+        "Opprett album"
       ],
       "Create and copy alias": [
         "Opprett og kopier alias"
@@ -545,6 +551,9 @@
       ],
       "New": [
         "Ny"
+      ],
+      "New album": [
+        "Nytt album"
       ],
       "New document": [
         "Nytt dokument"
@@ -951,6 +960,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Opprett album"
+      ],
       "Upload": [
         "Last opp"
       ]
@@ -1334,6 +1346,12 @@
       ],
       "Take a tour": [
         "Få en omvisning"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Legg til ${ photos.length } bilde til",
+        "Legg til ${ photos.length } bilder til"
       ]
     },
     "Cancellation reminder": {
@@ -2415,6 +2433,11 @@
         "Forfalt faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
@@ -2496,11 +2519,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "bruk Easy Switch-importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4199,6 +4217,9 @@
         "(${ totalFoldersCount } etikett)",
         "Alle (${ totalFoldersCount } etiketter)"
       ],
+      "All albums": [
+        "Alle album"
+      ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
       ],
@@ -4815,6 +4836,9 @@
       "No": [
         "Nei"
       ],
+      "No Albums": [
+        "Ingen album"
+      ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
       ],
@@ -5009,6 +5033,9 @@
       "Ready to add some photos?": [
         "Klar til å legge til noen bilder?"
       ],
+      "Recent": [
+        "Nylig"
+      ],
       "recommended browser": [
         "anbefalt nettleser"
       ],
@@ -5164,6 +5191,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan ha en ny nøkkel, eller følgende kan ha blitt tuklet med: ${ items }. Bare åpne hvis du klarérer de."
+      ],
+      "The albums you create are shown here": [
+        "Albumene du oppretter vises her"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Den digitale signaturen er delvis verifisert. Denne filen ble lastet opp ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, så identiteten deres kan ikke bekreftes."
@@ -6084,6 +6114,9 @@
       ],
       "Move to Inbox": [
         "Flytt til innboks"
+      ],
+      "My Albums": [
+        "Mine album"
       ],
       "Name": [
         "Navn"
@@ -7119,6 +7152,9 @@
       "Data breach monitoring": [
         "Overvåking av datainnbrudd"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikerte tjenere optimalisert for strømming"
+      ],
       "Desktop app": [
         "Skrivebordsapp"
       ],
@@ -7169,9 +7205,6 @@
       ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
-      ],
-      "High-speed streaming": [
-        "Strømming med høy hastighet"
       ],
       "High-speed VPN on ${ n } device": [
         "Høyhastighets VPN på ${ n } enhet",
@@ -7227,10 +7260,6 @@
       ],
       "Proofread and refine your emails": [
         "Korrekturles og finjuster e-postene dine"
-      ],
-      "Protect ${ n } device at a time": [
-        "Beskytt ${ n } enhet om gangen",
-        "Beskytt ${ n } enheter om gangen"
       ],
       "Quickly craft replies": [
         "Lag svar raskt"
@@ -7362,6 +7391,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Bruk på opptil ${ n } enhet samtidig",
+        "Bruk på opptil ${ n } enheter samtidig"
       ],
       "User credential management": [
         "Administrasjon av brukerpåloggingsinformasjon"
@@ -10661,6 +10694,11 @@
         "I dag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Legg til denne delte filen i din ${ DRIVE_APP_NAME } for enkel tilgang senere."
@@ -10742,11 +10780,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitasjon til å få tilgang til elementet."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ]
     },
     "Validation": {
@@ -10866,6 +10899,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 påfølgende prikker er ikke tillatt"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",
         "Er du sikker på at du ønsker å slette ${ count } kontakter permanent?"
@@ -10878,6 +10914,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Er du sikker på at du vil slette denne kontakten permanent?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Kan ikke inneholde en prikk i begynnelsen"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan ikke inneholde en prikk ved slutten"
       ],
       "Contacts could not be merged": [
         "Kontakene kunne ikke slås sammen"
@@ -10900,8 +10942,8 @@
       "Name is required": [
         "Navn kreves"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Bare alfanumeriske små bokstaver, prikker, bindestreker og understrekingstegn er tillatt."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."

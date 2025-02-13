@@ -5563,11 +5563,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your password was leaked:": [
         "Twoje hasło zostało ujawnione:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Twoja strefa czasowa w systemie zmieniła się na ${ timezone }. Czy chcesz zaktualizować ustawienia strefy czasowej?"
@@ -6995,9 +7004,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "High-speed streaming": [
-        "Szybki streaming"
-      ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
         "Szybki VPN na ${ n } urządzenia",
@@ -7055,12 +7061,6 @@
       "Proofread and refine your emails": [
         "Sprawdzaj i poprawiaj teksty"
       ],
-      "Protect ${ n } device at a time": [
-        "Ochrona ${ n } urządzenia jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzenia jednocześnie"
-      ],
       "Quickly craft replies": [
         "Twórz szybsze wiadomości"
       ],
@@ -7090,6 +7090,9 @@
       ],
       "Secure Core servers": [
         "Serwery Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
       ],
       "Secure link sharing": [
         "Bezpieczne udostępnianie linków"
@@ -7864,6 +7867,12 @@
       ]
     },
     "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Oferta ${ pricingTitle } wygasa dzisiaj!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Wybierz plan Drive Plus za ${ pricingTitle }"
+      ],
       "Get Mail Plus for only ${ pricingTitle }": [
         "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
       ],
@@ -7890,8 +7899,14 @@
       "Email addresses": [
         "Adresy e-mail"
       ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ],
       "Storage": [
         "Przestrzeń dyskowa"
@@ -10715,6 +10730,9 @@
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
@@ -10819,9 +10837,6 @@
       ],
       "Name is required": [
         "Nazwa jest wymagana"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."

@@ -4229,6 +4229,9 @@
       "${ BRAND_NAME } password is required": [
         "Патрабуецца ўвесці пароль ${ BRAND_NAME }"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 кропкі запар забаронены"
+      ],
       "A description of the problem is required": [
         "Патрабуецца апісанне праблемы"
       ],
@@ -4261,6 +4264,12 @@
       ],
       "At least one email address is required": [
         "Патрабуецца прынамсі адзін адрас электроннай пошты"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Не можа змяшчаць кроку ў пачатку"
+      ],
+      "Cannot contain a dot at the end": [
+        "Не можа змяшчаць кроку ў канцы"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"
@@ -4379,8 +4388,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Выдаленне псеўданімаў у ${ PASS_SHORT_APP_NAME } таксама выдаліць іх у SimpleLogin пасля сінхранізацыі."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Дазволены толькі літарна-лічбавыя сімвалы ў ніжнім рэгістры, кропкі, злучкі і сімвалы падкрэслівання."
       ],
       "Passphrase is required": [
         "Патрабуецца парольная фраза"
