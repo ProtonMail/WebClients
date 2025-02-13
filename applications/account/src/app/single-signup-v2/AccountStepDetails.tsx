@@ -220,7 +220,6 @@ interface Props {
     signupTypes: SignupType[];
     domains: string[];
     emailDescription?: ReactNode;
-    hideEmailLabel?: boolean;
 }
 
 const AccountStepDetails = ({
@@ -238,7 +237,6 @@ const AccountStepDetails = ({
     passwordFields,
     defaultEmail,
     emailDescription,
-    hideEmailLabel = false,
 }: Props) => {
     const [, setRerender] = useState<any>();
     const [signupType, setSignupType] = useState(signupTypes[0]);
@@ -668,7 +666,7 @@ const AccountStepDetails = ({
                                 <InputFieldTwo
                                     ref={emailRef}
                                     id="email"
-                                    label={hideEmailLabel ? undefined : c('Signup label').t`Email address`}
+                                    label={c('Signup label').t`Email address`}
                                     inputClassName="email-input-field"
                                     error={emailError}
                                     suffix={(() => {
