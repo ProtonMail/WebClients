@@ -9,7 +9,7 @@ import {
     type PrivateAuthenticationStore,
 } from '@proton/components';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
-import type { UpsellModalProps } from '@proton/components/components/upsell/modal/UpsellModal';
+import type { OldUpsellModalProps } from '@proton/components/components/upsell/modal/OldUpsellModal';
 import { upsellFeatures } from '@proton/components/components/upsell/modal/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -40,7 +40,7 @@ const authentication = {
 
 export const Basic = () => {
     const [opened, setOpened] = useState(false);
-    const [selectedFeatures, setSelectedFeatures] = useState<UpsellModalProps['features']>([
+    const [selectedFeatures, setSelectedFeatures] = useState<OldUpsellModalProps['features']>([
         'auto-delete-trash-and-spam',
     ]);
 
@@ -52,7 +52,7 @@ export const Basic = () => {
                         <strong className="block mb-4">Upsell Features</strong>
                         <ul className="unstyled">
                             {Object.entries(upsellFeatures).map(([fakeKey, feature]) => {
-                                const key = fakeKey as unknown as UpsellModalProps['features'][number];
+                                const key = fakeKey as unknown as OldUpsellModalProps['features'][number];
                                 if (typeof feature === 'function') {
                                     return null;
                                 }
