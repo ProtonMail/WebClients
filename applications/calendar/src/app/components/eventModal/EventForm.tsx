@@ -309,7 +309,7 @@ const EventForm = ({
                 isCreateEvent={isCreateEvent}
                 isColorPerEventEnabled={isColorPerEventEnabled}
             />
-            {isColorPerEventEnabled && <EventColorSelect model={model} setModel={setModel} isDrawerApp={isDrawerApp} />}
+            {isColorPerEventEnabled && <EventColorSelect model={model} setModel={setModel} />}
         </IconRow>
     );
 
