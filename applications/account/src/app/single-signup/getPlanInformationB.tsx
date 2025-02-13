@@ -17,20 +17,18 @@ import {
 } from '@proton/components/containers/payments/features/pass';
 import {
     getAdvancedVPNCustomizations,
-    getAllPlatforms,
     getBandwidth,
     getCountries,
     getNetShield,
+    getNetShieldText,
     getNoAds,
-    getPrioritySupport,
     getProtectDevices,
-    getRefundable,
-    getStreaming,
+    getStreamingText,
     getVPNAppFeature,
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
-import { SkeletonLoader, VpnLogo } from '@proton/components/index';
+import { Icon, SkeletonLoader, VpnLogo } from '@proton/components/index';
 import type { IconSize } from '@proton/icons';
 import { PLANS } from '@proton/payments';
 import { APPS, BRAND_NAME, PASS_APP_NAME, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
@@ -59,12 +57,10 @@ export const getPlanInformation = ({
     loading,
     selectedPlan,
     vpnServersCountData,
-    mode,
 }: {
     loading: boolean;
     selectedPlan: Plan;
     vpnServersCountData: VPNServersCountData;
-    mode: 'pricing' | 'signup' | 'vpn-pass-promotion';
 }): PlanInformation | undefined => {
     const iconSize: IconSize = 7;
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
@@ -86,21 +82,31 @@ export const getPlanInformation = ({
 
     if (selectedPlan.Name === PLANS.VPN || selectedPlan.Name === PLANS.VPN2024) {
         const plusServers = getPlusServers(vpnServersCountData.paid.servers, vpnServersCountData.paid.countries);
-        const pricingMode = mode === 'pricing' || mode === 'vpn-pass-promotion';
+
         return {
             logo: <VpnLogo variant="glyph-only" size={iconSize} />,
             title: selectedPlan.Title,
             features: [
-                pricingMode ? countryPlaceholder || getCountries(plusServers) : undefined,
-                getVPNSpeed('highest'),
-                pricingMode ? getStreaming(true) : undefined,
+                countryPlaceholder || getCountries(plusServers),
+                { text: getStreamingText(), included: true },
                 getProtectDevices(VPN_CONNECTIONS),
-                getAllPlatforms(),
-                getNetShield(true),
-                mode === 'signup' ? getStreaming(true) : undefined,
-                getPrioritySupport(),
-                getAdvancedVPNCustomizations(true),
-                pricingMode ? getRefundable() : undefined,
+                {
+                    text: (
+                        <div className="flex items-center">
+                            {c('new_plans: feature').t`Apps for`}
+                            <span className="ml-1 inline-flex gap-1.5">
+                                <Icon name="brand-windows" />
+                                <Icon name="brand-apple" />
+                                <Icon name="brand-android" />
+                                <Icon name="brand-ios" />
+                                <Icon name="brand-linux" />
+                            </span>
+                        </div>
+                    ),
+                    included: true,
+                },
+                { text: c('new_plans: feature').t`Up to 10 Gbps`, included: true },
+                { text: getNetShieldText(), included: true },
             ].filter(isTruthy),
         };
     }
