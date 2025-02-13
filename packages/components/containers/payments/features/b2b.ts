@@ -39,9 +39,8 @@ export const getActivityLog = (): PlanCardFeatureDefinition => {
 
 export const getSSOIntegration = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`SSO integration (coming soon)`,
+        text: c('new_plans: feature').t`SSO integration`,
         included,
-        status: 'coming-soon',
     };
 };
 
