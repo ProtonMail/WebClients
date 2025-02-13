@@ -1103,6 +1103,9 @@
       "Country code": [
         "Kod kraju"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Tworzenie wielu bezpłatnych kont nie jest dozwolone przez ${ termsLink }."
+      ],
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"
       ],
@@ -1120,6 +1123,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Aby uzyskać dodatkowe informacje i usunąć ograniczenia, zaloguj się pod adresem ${ mailLink }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -1153,6 +1159,9 @@
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Ulepsz do płatnego planu, aby usunąć ograniczenia."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Mamy plany zaprojektowane specjalnie dla użytkowników takich jak Ty, którzy potrzebują więcej niż jednego adresu e-mail."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
@@ -1440,6 +1449,9 @@
       "Search message content": [
         "Wyszukiwanie zawartości wiadomości"
       ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
+      ],
       "See team's availability": [
         "Sprawdzanie dostępności zespołu"
       ],
@@ -1671,7 +1683,7 @@
     },
     "Title": {
       "Account restricted": [
-        "Konto ograniczone"
+        "Konto zostało ograniczone"
       ],
       "Enter 2FA code": [
         "Wpisz kod uwierzytelniający"
