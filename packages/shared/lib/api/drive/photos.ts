@@ -29,6 +29,18 @@ export const queryAlbums = (
     },
 });
 
+export const queryUpdateAlbum = (
+    volumeId: string,
+    albumLinkId: string,
+    data: {
+        CoverLinkID?: string;
+    }
+) => ({
+    method: 'PUT',
+    url: `drive/photos/volumes/${volumeId}/albums/${albumLinkId}`,
+    data,
+});
+
 export const queryAddAlbumPhotos = (
     volumeId: string,
     albumLinkId: string,

@@ -216,7 +216,7 @@ interface PhotosWithAlbumToolbarProps {
     shareId: string;
     linkId: string;
     selectedItems: PhotoLink[];
-    onPreview: () => void;
+    onPreview?: () => void;
     requestDownload: (linkIds: string[]) => Promise<void>;
     uploadDisabled: boolean;
     tabSelection: 'albums' | 'gallery' | 'albums-gallery';
@@ -261,7 +261,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                 {hasSelection && (
                     <>
                         {!uploadDisabled && <Vr />}
-                        {!hasMultipleSelected && <PhotosPreviewButton onClick={onPreview} />}
+                        {!hasMultipleSelected && <PhotosPreviewButton onClick={() => onPreview?.()} />}
                         {addAlbumPhotosModal && (
                             <PhotosAddAlbumPhotosButton onClick={() => addAlbumPhotosModal.openModal(true)} />
                         )}
