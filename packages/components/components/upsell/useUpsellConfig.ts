@@ -15,7 +15,7 @@ import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
-import { type UpsellModalProps } from './modal/UpsellModal';
+import { type UpsellModalProps } from './modal/OldUpsellModal';
 
 interface Props {
     upsellRef?: string;
@@ -67,11 +67,11 @@ const useUpsellConfig = ({
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig({
             coupon,
             cycle,
-            maximumCycle,
-            minimumCycle,
             step,
             upsellRef,
             plan,
+            maximumCycle,
+            minimumCycle,
         });
 
         // The subscription modal will open in inbox app
@@ -89,10 +89,7 @@ const useUpsellConfig = ({
                 fetch(url).catch(noop);
 
                 // Open the subscription modal
-                openSubscriptionModal({
-                    ...subscriptionCallBackProps,
-                    onSubscribed,
-                });
+                openSubscriptionModal({ ...subscriptionCallBackProps, onSubscribed });
             },
         };
     }
