@@ -1084,6 +1084,9 @@
       "Set as default": [
         "Definir como padrão"
       ],
+      "Set as default mail application": [
+        "Definir como aplicativo de e-mail padrão"
+      ],
       "Set catch-all": [
         "Definir catch-all"
       ],
@@ -3626,6 +3629,12 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } não é seu aplicativo padrão de e-mail."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } é seu aplicativo padrão de e-mail."
+      ],
       "Also included": [
         "Também incluído"
       ],
@@ -3650,8 +3659,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Crie quantos marcadores ou pastas precisar para manter sua caixa de entrada organizada."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Crie políticas para decidir quem pode se conectar a servidores compartilhados em cada país."
+      "Create policies to manage access to shared servers.": [
+        "Crie políticas para gerenciar o acesso a servidores compartilhados."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
@@ -3665,8 +3674,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Todos na sua organização podem se conectar a servidores compartilhados em todos os países."
+      "Everyone in your organization can connect to shared servers.": [
+        "Todos os membros da sua organização podem conectar-se a servidores compartilhados."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
@@ -6149,26 +6158,23 @@
       "Best deal": [
         "Melhor oferta"
       ],
-      "Checkout": [
-        "Finalizar compra"
-      ],
-      "City": [
-        "Cidade"
-      ],
-      "Country": [
-        "País"
-      ],
-      "Create your account": [
-        "Crie sua conta"
-      ],
       "Device": [
         "Dispositivo"
+      ],
+      "Enabled Countries": [
+        "Países ativados"
+      ],
+      "Enter your email address": [
+        "Digite seu endereço de e-mail"
       ],
       "Event": [
         "Evento"
       ],
       "Folders": [
         "Pastas"
+      ],
+      "Groups": [
+        "Grupos"
       ],
       "IP address": [
         "Endereço IP"
@@ -6197,6 +6203,9 @@
       "Permissions": [
         "Permissões"
       ],
+      "Policy Name": [
+        "Nome da política"
+      ],
       "Protection": [
         "Proteção"
       ],
@@ -6205,6 +6214,9 @@
       ],
       "Select your deal": [
         "Selecione sua oferta"
+      ],
+      "Select your payment method": [
+        "Selecione o seu método de pagamento"
       ],
       "Select your pricing plan": [
         "Selecione o seu plano"
@@ -7067,8 +7079,8 @@
       "Allow recovery by phone": [
         "Permitir recuperação por telefone"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Permitir que os usuários se conectem a servidores compartilhados seguros na seção **Países** do aplicativo ${ VPN_APP_NAME }."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Permite que os usuários se conectem a servidores compartilhados com base em políticas definidas."
       ],
       "Already allocated": [
         "Já alocado"
@@ -7283,6 +7295,9 @@
       "Close this screen to exit.": [
         "Feche esta tela para sair."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "CNET Editors' Choice Award com classificação de 8,4 de 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configure a autenticação SAML para sua organização através de um provedor de identidade (PI). Isso habilitará o SAML para toda a organização."
       ],
@@ -7324,6 +7339,9 @@
       ],
       "Copy your referral link": [
         "Copiar seu link de referência"
+      ],
+      "countries enabled": [
+        "países ativados"
       ],
       "Country code": [
         "Código do país"
@@ -7385,6 +7403,9 @@
       "Custom monthly": [
         "Personalizar mensalmente"
       ],
+      "Custom policies": [
+        "Políticas personalizadas"
+      ],
       "Custom weekly": [
         "Personalizar semanalmente"
       ],
@@ -7411,6 +7432,9 @@
       ],
       "default email address": [
         "endereço de e-mail padrão"
+      ],
+      "Default mail application": [
+        "Aplicativo de e-mail padrão"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Exclua quaisquer outros registros MX ou certifique-se de que a prioridade do ${ MAIL_APP_NAME } é o menor número."
@@ -7753,8 +7777,14 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Se isso for devido a uma redefinição de senha antiga, você poderá impedir que a mensagem seja exibida novamente"
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Se essa opção estiver ativada, os membros da organização só poderão compartilhar os cofres de dentro da organização."
+      "If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items": [
+        "Se esta opção estiver ativada, os membros da organização não podem criar cofres. Os novos membros precisarão de um administrador para criar manualmente o primeiro cofre para eles (via o partilhamento) para eles poderem começar a criar itens."
+      ],
+      "If this option is turned on, organization members will be able to share individual items in addition to vaults.": [
+        "Se esta opção estiver ativada, os membros da organização poderão compartilhar cada item, para além dos cofres."
+      ],
+      "If this option is turned on, organization members will only be able to share vaults or items within the organization": [
+        "Se essa opção estiver ativada, os membros da organização só poderão compartilhar os cofres ou itens de dentro da organização."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -8190,9 +8220,6 @@
       "No label selected": [
         "Nenhuma marcador selecionado"
       ],
-      "No location filters are currently assigned.": [
-        "Nenhum filtro de localização selecionado no momento."
-      ],
       "No logs yet.": [
         "Ainda não há registros."
       ],
@@ -8204,9 +8231,6 @@
       ],
       "No results found": [
         "Nenhum resultado encontrado"
-      ],
-      "No Shared Servers Found": [
-        "Nenhum Servidor Compartilhado encontrado"
       ],
       "Not a valid URL": [
         "Não é uma URL válida"
@@ -8321,6 +8345,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "PC Magazine Editors' Choice Award com classificação de 5 de 5"
       ],
       "per month": [
         "por mês"
@@ -8607,6 +8634,9 @@
       "Session timed out": [
         "Sessão expirada"
       ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Define o ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
+      ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
       ],
@@ -8633,9 +8663,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } compartilhado atualizado"
-      ],
-      "Shared Server Location Filters": [
-        "Filtros de Localização dos Servidores Compartilhados"
       ],
       "Shared vault deleted": [
         "Cofre compartilhado excluído"
@@ -8745,6 +8772,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronize e gerencie arquivos com o aplicativo ${ DRIVE_APP_NAME }. Crie e compartilhe documentos no ${ DOCS_APP_NAME } e armazene-os com segurança. Tudo no ${ ios }, ${ android } e ${ desktop }."
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Recomendado por Tech Radar Pro com classificação de 4,2 de 5"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -9039,6 +9069,9 @@
       ],
       "Total VPN connections": [
         "Conexões VPN adicionais"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Experimente ${ productName } sem riscos. Se por algum motivo mudar de ideia, receberá um reembolso total. Sem perguntas."
       ],
       "Two-factor authentication disabled": [
         "Autenticação de dois fatores desativada"
@@ -10574,6 +10607,9 @@
       "Emails (last month)": [
         "E-mails (último mês)"
       ],
+      "Enable individual item sharing": [
+        "Ativar compartilhamento individual de item"
+      ],
       "End date": [
         "Data de término"
       ],
@@ -10657,6 +10693,9 @@
       ],
       "Group name": [
         "Nome do grupo"
+      ],
+      "Groups": [
+        "Grupos"
       ],
       "Hide password": [
         "Ocultar senha"
@@ -10829,6 +10868,9 @@
       "New password": [
         "Nova senha"
       ],
+      "New policy name": [
+        "Novo nome da política"
+      ],
       "New second password": [
         "Nova segunda senha"
       ],
@@ -10987,6 +11029,9 @@
       ],
       "Require 2FA for everyone": [
         "Requer A2F para todos"
+      ],
+      "Restrict vault creation to administrators only": [
+        "Restringir a criação de cofre para somente os administradores"
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -11168,6 +11213,9 @@
       ],
       "Username": [
         "Nome de usuário"
+      ],
+      "Users": [
+        "Usuários"
       ],
       "Value": [
         "Valor"
@@ -12326,6 +12374,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil"
       ],
+      "Apps for": [
+        "Aplicativos para"
+      ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
       ],
@@ -12395,6 +12446,9 @@
       "Dedicated servers and IP": [
         "Servidores e IPs dedicados"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Servidores dedicados otimizados para streaming"
+      ],
       "Desktop app": [
         "Aplicativo para computador"
       ],
@@ -12445,12 +12499,6 @@
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
-      ],
-      "High-speed streaming": [
-        "Streaming em alta velocidade"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suíça de alta velocidade que protege a sua privacidade"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidade em ${ n } dispositivo",
@@ -12509,10 +12557,6 @@
       ],
       "Proofread and refine your emails": [
         "Revise e otimize seus e-mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Proteja ${ n } dispositivo por vez",
-        "Proteja ${ n } dispositivos por vez"
       ],
       "Quickly craft replies": [
         "Elabore respostas rapidamente"
@@ -12580,9 +12624,6 @@
       ],
       "Start protecting your organization": [
         "Comece a proteger sua organização"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Comece a se proteger on-line em 2 passos fáceis"
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
@@ -12657,6 +12698,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
+      ],
+      "Up to 10 Gbps": [
+        "Até 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Use até ${ n } dispositivo ao mesmo tempo",
+        "Use até ${ n } dispositivos ao mesmo tempo"
       ],
       "User credential management": [
         "Gerenciamento de credenciais de usuário"
@@ -13298,6 +13346,9 @@
       "Email notifications have been enabled": [
         "As notificações por e-mail foram ativadas"
       ],
+      "Error creating policy": [
+        "Erro ao criar a política"
+      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -13321,6 +13372,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciais OpenVPN / IKEv2 regeneradas"
+      ],
+      "Policy created successfully": [
+        "A política foi criada."
       ],
       "Reminder has been sent": [
         "O lembrete foi enviado"
@@ -14545,7 +14599,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "Gratuito"
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -17620,6 +17674,9 @@
       "Add contact group name": [
         "Adicionar nome do grupo de contatos"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Adicionar países a «${ policyName }»"
+      ],
       "Add credit/debit card": [
         "Adicionar cartão de crédito/débito"
       ],
@@ -17661,6 +17718,9 @@
       ],
       "Add users": [
         "Adicionar usuários"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Adicionar usuários a «${ policyName }»"
       ],
       "Address": [
         "Endereço"
@@ -17836,6 +17896,9 @@
       ],
       "Create multiple user accounts": [
         "Criando múltiplas contas de usuários"
+      ],
+      "Create new policy": [
+        "Criar uma política"
       ],
       "Create organization key": [
         "Criar chave da organização"
@@ -19798,8 +19861,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Seu pacote de ${ a } e ${ b }"
       ],
-      "Your ${ selected } plan": [
-        "Seu plano ${ selected }"
+      "Your plan includes:": [
+        "Seu plano inclui:"
       ]
     },
     "vpn_2step: tooltip": {
