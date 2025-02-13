@@ -8,9 +8,11 @@ import { Icon } from '@proton/components/index';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { ShareMember } from '@proton/pass/components/Invite/Member/ShareMember';
 import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Invite/Member/SharePendingMember';
-import type { AccessDTO } from '@proton/pass/lib/access/types';
+import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
+import { type AccessDTO, AccessTarget } from '@proton/pass/lib/access/types';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types';
-import { type ShareMember as ShareMemberType } from '@proton/pass/types';
+import { BitField, type ShareMember as ShareMemberType } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 export type InviteListItem =
@@ -41,6 +43,10 @@ export const AccessList: FC<Props> = ({
     title,
     onInvite,
 }) => {
+    const org = useOrganization();
+    const orgItemSharingDisabled = org?.settings.ItemShareMode === BitField.DISABLED;
+    const inviteDisabled = !canManage || (target === AccessTarget.Item && orgItemSharingDisabled);
+
     return (
         <div className={clsx('flex flex-column gap-y-3', className)}>
             {title && <div className="color-weak text-sm">{title}</div>}
@@ -50,16 +56,22 @@ export const AccessList: FC<Props> = ({
 
                 {onInvite && (
                     <div>
-                        <Button
-                            color="norm"
-                            shape="ghost"
-                            className="w-full text-left"
-                            onClick={onInvite}
-                            disabled={!canManage}
+                        <OrganizationPolicyTooltip
+                            enforced={orgItemSharingDisabled}
+                            text={c('Warning').t`Your organization does not allow sharing individual items`}
+                            placement="top-start"
                         >
-                            <Icon name="users-plus" className="mr-4" />
-                            {c('Action').t`Invite more...`}
-                        </Button>
+                            <Button
+                                color="norm"
+                                shape="ghost"
+                                className="w-full text-left"
+                                onClick={onInvite}
+                                disabled={inviteDisabled}
+                            >
+                                <Icon name="users-plus" className="mr-4" />
+                                {c('Action').t`Invite more...`}
+                            </Button>
+                        </OrganizationPolicyTooltip>
                     </div>
                 )}
 
