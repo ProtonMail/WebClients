@@ -63,7 +63,6 @@ export type IconName =
     | 'brand-discover'
     | 'brand-edge'
     | 'brand-firefox'
-    | 'brand-ios'
     | 'brand-linux'
     | 'brand-mac'
     | 'brand-mastercard'
@@ -448,7 +447,6 @@ export { IcBrandChrome } from './icons/IcBrandChrome';
 export { IcBrandDiscover } from './icons/IcBrandDiscover';
 export { IcBrandEdge } from './icons/IcBrandEdge';
 export { IcBrandFirefox } from './icons/IcBrandFirefox';
-export { IcBrandIos } from './icons/IcBrandIos';
 export { IcBrandLinux } from './icons/IcBrandLinux';
 export { IcBrandMac } from './icons/IcBrandMac';
 export { IcBrandMastercard } from './icons/IcBrandMastercard';
