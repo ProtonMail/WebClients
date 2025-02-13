@@ -26,6 +26,7 @@ import { AuthType } from '@proton/components/containers/login/interface';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useInstance from '@proton/hooks/useInstance';
+import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -159,6 +160,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                             <AccountSingleSignupContainer
                                                 metaTags={signupPage()}
                                                 toApp={APPS.PROTONVPN_SETTINGS}
+                                                toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
                                                 loader={loader}
                                                 productParam={APPS.PROTONVPN_SETTINGS}
                                                 clientType={CLIENT_TYPES.VPN}
