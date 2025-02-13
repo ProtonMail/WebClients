@@ -77,7 +77,7 @@ const UserDropdownV1 = () => {
             shape="outline"
             color="weak"
             className="w-full"
-            target="_blank"
+            target="_self"
             onClick={(event) => onSwitchAccount(event, ForkType.LOGIN)}
             data-testid="userdropdown:button:add-account"
         >
