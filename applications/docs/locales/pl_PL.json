@@ -2236,6 +2236,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
       ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
+        "Ulepsz plan do wersji ${ BRAND_NAME } ${ planName }, aby włączyć udostępnianie plików z uprawnieniem do edycji. Współpracuj płynnie i bezpiecznie."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Ulepsz konto, aby włączyć program ${ PROTON_SENTINEL_NAME } — nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji z dedykowanym wsparciem ekspertów 24/7."
       ],
@@ -3802,6 +3805,9 @@
         "${ contactsLength } kontaktów",
         "${ contactsLength } kontaktów"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Pliki ${ DOCS_APP_NAME } nie mogą zostać bezpośrednio pobrane i nie zostaną uwzględnione w tym pobieraniu. Pozostałe pliki możesz pobrać, klikając przycisk 'Kontynuuj pobieranie'."
+      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } umożliwia współpracę w czasie rzeczywistym z szyfrowaniem end-to-end zapewniającym prywatność. Utwórz kopię, aby rozpocząć edycję lub poproś właściciela o dostęp do edycji."
       ],
@@ -4696,6 +4702,12 @@
       "The Beginning": [
         "Początek"
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Podpis cyfrowy został częściowo zweryfikowany. Folder został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
       ],
@@ -4725,6 +4737,12 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dokument był edytowany wiele razy. Niektóre funkcje mogą być tymczasowo niedostępne."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "Dokument nie istnieje lub możesz nie mieć do niego uprawnień. Odśwież stronę, aby sprawdzić, czy problem nadal występuje lub skontaktuj się z właścicielem pliku."
+      ],
+      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Dokument może nie istnieć lub możesz nie mieć uprawnień do jego odczytu. Spróbuj użyć innego konta lub skontaktuj się z właścicielem pliku."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "To Twój ${ defaultEmailAddress } do wysyłania nowych wiadomości."
@@ -4761,6 +4779,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Wyślij ${ btcAmountBold } na poniższy adres, aby zakończyć płatność."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Aby pobrać pliki ${ DOCS_APP_NAME }, otwórz je w ${ DOCS_APP_NAME } i wyeksportuj."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
@@ -4875,6 +4896,15 @@
       ],
       "What do you want to do?": [
         "Co chcesz zrobić?"
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "Po otwarciu okna zmień \"Miejsce docelowe\" na \"Zapisz jako plik PDF\" i kliknij Zapisz."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "Po otwarciu okna zmień \"Miejsce docelowe\" na \"Zapisz jako plik PDF\" i kliknij Zapisz."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "Po otwarciu okna wybierz w lewym dolnym rogu opcję \"PDF\" i kliknij Zapisz."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
@@ -4993,6 +5023,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Dalszy brak płatności spowoduje zablokowanie dostarczania wiadomości i udostępnionych linków. ${ payInvoiceLink }"
       ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "Otworzy się okno drukowania, w którym możesz wyeksportować dokument do formatu PDF."
+      ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Zmiany są synchronizowane z dyskiem. Nie zamykaj strony internetowej."
       ],
@@ -5014,6 +5047,9 @@
       "Your email address was exposed:": [
         "Twój adres e-mail został ujawniony:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Twój adres e-mail będzie widoczny jako właściciel linku na stronie udostępniania"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
@@ -5029,11 +5065,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your password was leaked:": [
         "Twoje hasło zostało ujawnione:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ]
     },
     "info": {
@@ -5149,6 +5194,9 @@
       ],
       "Anderson": [
         "Nowak"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Każdy, kto ma link, może edytować zawartość"
       ],
       "Anyone on the Internet with the link can view": [
         "Każdy, kto ma link, może zobaczyć zawartość"
@@ -6418,9 +6466,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "High-speed streaming": [
-        "Szybki streaming"
-      ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
         "Szybki VPN na ${ n } urządzenia",
@@ -6478,12 +6523,6 @@
       "Proofread and refine your emails": [
         "Sprawdzaj i poprawiaj teksty"
       ],
-      "Protect ${ n } device at a time": [
-        "Ochrona ${ n } urządzenia jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzenia jednocześnie"
-      ],
       "Quickly craft replies": [
         "Twórz szybsze wiadomości"
       ],
@@ -6513,6 +6552,9 @@
       ],
       "Secure Core servers": [
         "Serwery Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
       ],
       "Secure link sharing": [
         "Bezpieczne udostępnianie linków"
@@ -7313,6 +7355,12 @@
       ]
     },
     "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Oferta ${ pricingTitle } wygasa dzisiaj!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Wybierz plan Drive Plus za ${ pricingTitle }"
+      ],
       "Get Mail Plus for only ${ pricingTitle }": [
         "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
       ],
@@ -7339,8 +7387,14 @@
       "Email addresses": [
         "Adresy e-mail"
       ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ],
       "Storage": [
         "Przestrzeń dyskowa"
@@ -8252,7 +8306,7 @@
     },
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
-        "Link do elementu został zapisany na dysku. Możesz uzyskać do niego dostęp w sekcji 'Udostępnione Tobie'."
+        "Link do elementu został zapisany na dysku. Możesz uzyskać do niego dostęp w sekcji 'Udostępnione dla mnie'."
       ],
       "Get up to ${ credits } in credits.": [
         "Uzyskaj do ${ credits }."
@@ -9202,6 +9256,9 @@
       "Share ${ name }": [
         "Udostępnij ${ name }"
       ],
+      "Share files with full edit access": [
+        "Udostępnij pliki z uprawnieniem do edycji"
+      ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
       ],
@@ -9568,6 +9625,9 @@
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
@@ -9672,9 +9732,6 @@
       ],
       "Name is required": [
         "Nazwa jest wymagana"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
