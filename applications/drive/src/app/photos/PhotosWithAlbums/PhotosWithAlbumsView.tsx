@@ -109,7 +109,7 @@ export const PhotosWithAlbumsView: FC = () => {
             }
             try {
                 const abortSignal = new AbortController().signal;
-                await addAlbumPhotos(abortSignal, volumeId, shareId, albumLinkId, linkIds);
+                await addAlbumPhotos(abortSignal, albumLinkId, linkIds);
                 navigateToAlbum(albumLinkId);
             } catch (e) {
                 console.error('photos addition failed', e);
@@ -126,7 +126,7 @@ export const PhotosWithAlbumsView: FC = () => {
             try {
                 const abortSignal = new AbortController().signal;
                 const albumLinkId = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
-                await addAlbumPhotos(abortSignal, volumeId, shareId, albumLinkId, linkIds);
+                await addAlbumPhotos(abortSignal, albumLinkId, linkIds);
                 navigateToAlbum(albumLinkId);
             } catch (e) {
                 console.error('album creation failed', e);
