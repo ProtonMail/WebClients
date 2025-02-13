@@ -93,7 +93,7 @@ export const isStateTheSame = (
 };
 
 export const getOfferAgeTelemetryCategory = (day: number) => {
-    if (day >= 0 && day <= 4) {
+    if (day < 0 || (day >= 0 && day <= 4)) {
         return '0-4';
     }
     if (day >= 5 && day <= 9) {
