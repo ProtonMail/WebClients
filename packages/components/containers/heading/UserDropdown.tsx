@@ -71,6 +71,7 @@ import generateUID from '@proton/utils/generateUID';
 import ProductLink from '../../containers/app/ProductLink';
 import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
+import SelfHelpModal from '../support/SelfHelpModal';
 import type { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import UserDropdownButton from './UserDropdownButton';
 
@@ -98,10 +99,12 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
+    const [selfHelpModal, setSelfHelpModal, renderSelfHelpModal] = useModalState();
     const [confirmSignOutModal, setConfirmSignOutModal, renderConfirmSignOutModal] = useModalState();
     const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
+    const isSelfTroubleshoot = useFlag('SelfTroubleshoot');
 
     const [{ isSentinelUser }] = useIsSentinelUser();
     const [
@@ -169,7 +172,11 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
     const planName = isMember ? '' : getSubscriptionPlanTitleAndName(user, subscription).planTitle;
 
     const handleBugReportClick = () => {
-        setBugReportModal(true);
+        if (isSelfTroubleshoot) {
+            setSelfHelpModal(true);
+        } else {
+            setBugReportModal(true);
+        }
     };
 
     const userVoiceLinks: Partial<{ [key in APP_NAMES]: string }> = {
@@ -213,7 +220,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
             color="weak"
             className="w-full"
             target="_blank"
-            onClick={(event) => handleSwitchAccount(event, ForkType.LOGIN)}
+            onClick={(event: React.MouseEvent<HTMLAnchorElement>) => handleSwitchAccount(event, ForkType.LOGIN)}
             data-testid="userdropdown:button:add-account"
         >
             {c('Action').t`Add account`}
@@ -299,6 +306,15 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
     return (
         <>
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} app={app} />}
+            {renderSelfHelpModal && (
+                <SelfHelpModal
+                    open={selfHelpModal.open}
+                    onClose={selfHelpModal.onClose}
+                    onExit={selfHelpModal.onExit}
+                    onBugReportClick={handleBugReportClick}
+                    app={app}
+                />
+            )}
             {renderSessionRecoverySignOutConfirmPrompt && (
                 <SessionRecoverySignOutConfirmPrompt
                     onSignOut={() => handleSignOut(false)}
