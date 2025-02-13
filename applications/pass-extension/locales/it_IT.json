@@ -761,6 +761,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autenticazione non riuscita. Conferma la password del tuo account ${ BRAND_NAME } per procedere con l'esportazione."
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Autenticazione non riuscita. Conferma la password di backup del tuo account per procedere con l'esportazione."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Autenticazione non riuscita. Conferma la password aggiuntiva del tuo account per procedere con l'esportazione."
+      ],
       "Authentication failure: ${ message }": [
         "Autenticazione non riuscita: ${ message }"
       ],
@@ -3872,6 +3878,9 @@
       "${ BRAND_NAME } password is required": [
         "È richiesta la password di ${ BRAND_NAME }"
       ],
+      "2 consecutive dots are not allowed": [
+        "Non sono ammessi 2 punti consecutivi"
+      ],
       "A description of the problem is required": [
         "È richiesta una descrizione del problema"
       ],
@@ -3903,6 +3912,12 @@
       ],
       "At least one email address is required": [
         "È richiesto almeno un indirizzo email"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Non può contenere un punto all'inizio"
+      ],
+      "Cannot contain a dot at the end": [
+        "Non può contenere un punto alla fine"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Al momento non è possibile recuperare le caselle di posta per questo alias"
@@ -4007,8 +4022,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Una volta sincronizzati, l'eliminazione degli alias in ${ PASS_SHORT_APP_NAME } li eliminerà anche in SimpleLogin."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Sono consentiti solo caratteri alfanumerici, punti, trattini e trattini bassi"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Sono consentiti solo caratteri alfanumerici minuscoli, punti, trattini e caratteri di sottolineatura"
       ],
       "Passphrase is required": [
         "Passphrase necessaria"

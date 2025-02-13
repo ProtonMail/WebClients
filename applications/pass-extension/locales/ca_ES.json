@@ -761,6 +761,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "L'autenticació ha fallat. Confirmeu la contrasenya de ${ BRAND_NAME } per a continuar amb l'exportació"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Ha fallat l'autenticació. Confirmeu la contrasenya de recuperació per a continuar amb l'exportació."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Ha fallat l'autenticació. Confirmeu la contrasenya addicional per a continuar amb l'exportació."
+      ],
       "Authentication failure: ${ message }": [
         "S'ha produït un error d'autenticació: ${ message }"
       ],
@@ -3864,6 +3870,9 @@
       "${ BRAND_NAME } password is required": [
         "Es requereix la contrasenya de ${ BRAND_NAME }."
       ],
+      "2 consecutive dots are not allowed": [
+        "No es permet l'ús de 2 punts consecutius."
+      ],
       "A description of the problem is required": [
         "Es requereix una descripció del problema"
       ],
@@ -3895,6 +3904,12 @@
       ],
       "At least one email address is required": [
         "Es requereix almenys una adreça de correu electrònic"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "No es pot començar per un punt."
+      ],
+      "Cannot contain a dot at the end": [
+        "No podeu acabar amb un punt."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No es poden recuperar les bústies d'aquest àlies ara mateix"
@@ -3999,8 +4014,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Un cop sincronitzats, suprimir els àlies a ${ PASS_SHORT_APP_NAME } també els suprimirà a SimpleLogin."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Només es permeten caràcters alfanumèrics, punts, guions i guions baixos"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Només es permeten els caràcters alfanumèrics en minúscules, els punts, els guions i els guions baixos."
       ],
       "Passphrase is required": [
         "La frase de contrasenya és obligatòria."

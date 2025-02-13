@@ -1084,6 +1084,9 @@
       "Set as default": [
         "Angi som standard"
       ],
+      "Set as default mail application": [
+        "Angi som standard e-postapplikasjon"
+      ],
       "Set catch-all": [
         "Konfigurer catch-all"
       ],
@@ -3626,6 +3629,12 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } er ikke din standard e-postapplikasjon."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } er din standard e-postapplikasjon."
+      ],
       "Also included": [
         "Også inkludert"
       ],
@@ -3650,8 +3659,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Opprett så mange etiketter eller mapper du trenger for å holde innboksen ryddig."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
+      "Create policies to manage access to shared servers.": [
+        "Opprett retningslinjer for å administrere tilgang til delte tjenere."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
@@ -3665,8 +3674,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Alle i organisasjonen kan koble til delte tjenere i alle land."
+      "Everyone in your organization can connect to shared servers.": [
+        "Alle i organisasjonen kan koble til delte tjenere."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
@@ -6146,26 +6155,23 @@
       "Best deal": [
         "Beste avtale"
       ],
-      "Checkout": [
-        "Betaling"
-      ],
-      "City": [
-        "By"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Create your account": [
-        "Opprett konto"
-      ],
       "Device": [
         "Enhet"
+      ],
+      "Enabled Countries": [
+        "Aktiverte land"
+      ],
+      "Enter your email address": [
+        "Skriv inn din e-postadresse"
       ],
       "Event": [
         "Hendelse"
       ],
       "Folders": [
         "Mapper"
+      ],
+      "Groups": [
+        "Grupper"
       ],
       "IP address": [
         "IP-adresse"
@@ -6194,6 +6200,9 @@
       "Permissions": [
         "Tillatelser"
       ],
+      "Policy Name": [
+        "Navn på retningslinje"
+      ],
       "Protection": [
         "Beskyttelse"
       ],
@@ -6202,6 +6211,9 @@
       ],
       "Select your deal": [
         "Velg tilbudet ditt"
+      ],
+      "Select your payment method": [
+        "Velg betalingsmåte"
       ],
       "Select your pricing plan": [
         "Velg prisplanen din"
@@ -7064,8 +7076,8 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Tillat brukere å koble til sikre delte tjenere basert på definerte retningslinjer."
       ],
       "Already allocated": [
         "Allerede allokert"
@@ -7280,6 +7292,9 @@
       "Close this screen to exit.": [
         "Lukk dette skjermbildet for å avslutte."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "CNET-redaktørens valgpris med en vurdering på 8.4 av 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurer SAML-autentisering for organisasjonen din gjennom en identitetsleverandør (IdP). Dette vil aktivere SAML for hele organisasjonen."
       ],
@@ -7321,6 +7336,9 @@
       ],
       "Copy your referral link": [
         "Kopier vervekoblingen din"
+      ],
+      "countries enabled": [
+        "land aktivert"
       ],
       "Country code": [
         "Landskode"
@@ -7382,6 +7400,9 @@
       "Custom monthly": [
         "Tilpasset månedlig"
       ],
+      "Custom policies": [
+        "Egendefinerte retningslinjer"
+      ],
       "Custom weekly": [
         "Tilpasset ukentlig"
       ],
@@ -7408,6 +7429,9 @@
       ],
       "default email address": [
         "standard e-postadresse"
+      ],
+      "Default mail application": [
+        "Standard e-postapplikasjon"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
@@ -7750,8 +7774,14 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Hvis dette skyldes en gammel tilbakestilling av passord, kan du hindre meldingen fra å vises igjen"
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Hvis dette alternativet er aktivert, kan organisasjonsmedlemmer bare dele hvelv innen organisasjonen"
+      "If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items": [
+        "Hvis dette alternativet er aktivert, kan ikke organisasjonsmedlemmer opprette hvelv. Nye medlemmer vil kreve at en administrator manuelt oppretter det første hvelvet for dem (via deling) slik at de kan begynne å opprette elementer"
+      ],
+      "If this option is turned on, organization members will be able to share individual items in addition to vaults.": [
+        "Hvis dette alternativet er aktivert, kan organisasjonsmedlemmer dele enkeltelementer i tillegg til hvelv."
+      ],
+      "If this option is turned on, organization members will only be able to share vaults or items within the organization": [
+        "Hvis dette alternativet er aktivert, kan organisasjonsmedlemmer bare dele hvelv eller elementer innen organisasjonen"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
@@ -8187,9 +8217,6 @@
       "No label selected": [
         "Ingen etikett valgt"
       ],
-      "No location filters are currently assigned.": [
-        "Ingen plasseringsfiltre er for øyeblikket tildelt."
-      ],
       "No logs yet.": [
         "Ingen logger enda."
       ],
@@ -8201,9 +8228,6 @@
       ],
       "No results found": [
         "Ingen resultater funnet"
-      ],
-      "No Shared Servers Found": [
-        "Fant ikke noen delte tjenere"
       ],
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
@@ -8318,6 +8342,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "PC Magazine-redaktørens valgpris med en vurdering på 5 av 5 stjerner"
       ],
       "per month": [
         "per måned"
@@ -8604,6 +8631,9 @@
       "Session timed out": [
         "Økten ble tidsavbrutt"
       ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Angi ${ MAIL_APP_NAME } som din standard e-postapplikasjon. ${ MAIL_APP_NAME } vil åpne automatisk når du klikker en e-postkobling."
+      ],
       "Set recovery phrase": [
         "Sett gjenopprettingsfrase"
       ],
@@ -8630,9 +8660,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Delt ${ vaultLink } oppdatert"
-      ],
-      "Shared Server Location Filters": [
-        "Plasseringsfiltre for delt tjener"
       ],
       "Shared vault deleted": [
         "Delt hvelv slettet"
@@ -8742,6 +8769,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opprett og del dokumenter i ${ DOCS_APP_NAME } og oppbevar dem sikkert. Alt på ${ ios }, ${ android } og ${ desktop }."
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Anbefales av TechRadar Pro med en vurdering på 4.2 av 5 stjerner"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
@@ -9037,6 +9067,9 @@
       "Total VPN connections": [
         "Totalt antall VPN-forbindelser"
       ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Prøv ${ productName } helt risikofritt - hvis du av en eller annen grunn ombestemmer deg, vil du motta full refusjon. Ingen spørsmål."
+      ],
       "Two-factor authentication disabled": [
         "Tofaktorautentisering deaktivert"
       ],
@@ -9303,6 +9336,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Når deaktivert, vil dette forhindre bildefiler fra å laste på enheten din uten din viten."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Når aktivert, vil vi sjekke om ${ MAIL_APP_NAME } er standard e-postapplikasjon og varsle deg hvis den ikke er det."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
@@ -10571,6 +10607,9 @@
       "Emails (last month)": [
         "E-poster (siste måned)"
       ],
+      "Enable individual item sharing": [
+        "Aktiver individuell elementdeling"
+      ],
       "End date": [
         "Sluttdato"
       ],
@@ -10654,6 +10693,9 @@
       ],
       "Group name": [
         "Gruppenavn"
+      ],
+      "Groups": [
+        "Grupper"
       ],
       "Hide password": [
         "Skjul passord"
@@ -10826,6 +10868,9 @@
       "New password": [
         "Nytt passord"
       ],
+      "New policy name": [
+        "Nytt retningslinjenavn"
+      ],
       "New second password": [
         "Nytt andre passord"
       ],
@@ -10984,6 +11029,9 @@
       ],
       "Require 2FA for everyone": [
         "Krev 2FA for alle"
+      ],
+      "Restrict vault creation to administrators only": [
+        "Begrens oppretting av hvelv til bare administratorer"
       ],
       "Reveal password": [
         "Avslør passord"
@@ -11165,6 +11213,9 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "Users": [
+        "Brukere"
       ],
       "Value": [
         "Verdi"
@@ -12320,6 +12371,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Alle premium ${ BRAND_NAME }-tjenester. Ett enkelt abonnement"
       ],
+      "Apps for": [
+        "Apper for"
+      ],
       "Auto-delete Spam and Trash": [
         "Slett automatisk elementer i søppelpost og papirkurv"
       ],
@@ -12389,6 +12443,9 @@
       "Dedicated servers and IP": [
         "Dedikerte tjenere og IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikerte tjenere optimalisert for strømming"
+      ],
       "Desktop app": [
         "Skrivebordsapp"
       ],
@@ -12439,12 +12496,6 @@
       ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
-      ],
-      "High-speed streaming": [
-        "Strømming med høy hastighet"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Høyhastighets Sveitsisk VPN som beskytter personvernet ditt"
       ],
       "High-speed VPN on ${ n } device": [
         "Høyhastighets VPN på ${ n } enhet",
@@ -12503,10 +12554,6 @@
       ],
       "Proofread and refine your emails": [
         "Korrekturles og finjuster e-postene dine"
-      ],
-      "Protect ${ n } device at a time": [
-        "Beskytt ${ n } enhet om gangen",
-        "Beskytt ${ n } enheter om gangen"
       ],
       "Quickly craft replies": [
         "Lag svar raskt"
@@ -12574,9 +12621,6 @@
       ],
       "Start protecting your organization": [
         "Begynn å beskytte organisasjonen"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Begynn å beskytte deg selv på nettet i 2 enkle trinn"
       ],
       "Strict no-logs policy": [
         "Streng politikk om ingen logger"
@@ -12651,6 +12695,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
+      ],
+      "Up to 10 Gbps": [
+        "Opptil 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Bruk på opptil ${ n } enhet samtidig",
+        "Bruk på opptil ${ n } enheter samtidig"
       ],
       "User credential management": [
         "Administrasjon av brukerpåloggingsinformasjon"
@@ -13289,6 +13340,9 @@
       "Email notifications have been enabled": [
         "E-postvarsler er aktivert"
       ],
+      "Error creating policy": [
+        "Feil ved å opprette retningslinje"
+      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -13312,6 +13366,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-påloggingsinformasjon generert på nytt"
+      ],
+      "Policy created successfully": [
+        "Retningslinje vellykket opprettet"
       ],
       "Reminder has been sent": [
         "Påminnelse er sendt"
@@ -16336,6 +16393,12 @@
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Brukeren ${ user } er nå en konto med enkel pålogging. Deres forrige passord ble deres reservepassord."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "De må logge på igjen hos identitetsleverandøren din for å få tilgang til ${ BRAND_NAME }-tjenester. For at denne brukeren skal kunne logge på, må du kontrollere at de finnes hos identitetsleverandøren."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dette vil logge brukeren ut av de andre enhetene sine, og vedkommende må opprette et nytt reservepassord."
       ],
@@ -17593,6 +17656,9 @@
       "Add contact group name": [
         "Legg til navn på kontaktgruppen"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Legg til land til \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Legg til kreditt-/debetkort"
       ],
@@ -17634,6 +17700,9 @@
       ],
       "Add users": [
         "Legg til brukere"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Legg til brukere til \"${ policyName }\""
       ],
       "Address": [
         "Adresse"
@@ -17737,6 +17806,9 @@
       "Change second password": [
         "Endre andre passord"
       ],
+      "Check your default mail application": [
+        "Sjekk standard e-postapplikasjon"
+      ],
       "Choose an account": [
         "Velg en konto"
       ],
@@ -17809,6 +17881,9 @@
       ],
       "Create multiple user accounts": [
         "Opprett flere brukerkontoer"
+      ],
+      "Create new policy": [
+        "Opprett ny retningslinje"
       ],
       "Create organization key": [
         "Opprett organisasjonsnøkkel"
@@ -19639,8 +19714,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Din ${ a } og ${ b } pakke"
       ],
-      "Your ${ selected } plan": [
-        "Planen du har valgt ${ selected }"
+      "Your plan includes:": [
+        "Planen din inkluderer:"
       ]
     },
     "vpn_2step: tooltip": {

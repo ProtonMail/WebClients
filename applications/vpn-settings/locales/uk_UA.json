@@ -2296,12 +2296,6 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Створити політику, щоби визначити, хто може під'єднуватися до спільних серверів у кожній країні."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Кожен із вашої організації може під'єднуватися до спільних серверів у всіх країнах."
-      ],
       "If disabled, only admins will have access.": [
         "Якщо вимкнено, лише адміністратори матимуть доступ."
       ],
@@ -3384,23 +3378,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Дії"
+      ],
       "App version": [
         "Версія програми"
       ],
       "Best deal": [
         "Найкраща пропозиція"
-      ],
-      "Checkout": [
-        "Оплата"
-      ],
-      "City": [
-        "Місто"
-      ],
-      "Country": [
-        "Країна"
-      ],
-      "Create your account": [
-        "Створіть обліковий запис"
       ],
       "Device": [
         "Пристрій"
@@ -3746,9 +3731,6 @@
       ],
       "Allocated": [
         "Розподілено"
-      ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Дозволити користувачам під'єднуватися до захищених загальних серверів з розділу **Країни** в застосунку ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Вже розподілено"
@@ -4425,17 +4407,11 @@
       "No Gateways yet": [
         "Ще немає мережевих шлюзів"
       ],
-      "No location filters are currently assigned.": [
-        "На цей момент ніяких фільтрів по місцю перебування."
-      ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
       ],
       "No results found": [
         "Результатів не знайдено"
-      ],
-      "No Shared Servers Found": [
-        "Загальних серверів не знайдено"
       ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
@@ -4704,9 +4680,6 @@
       "Shared ${ vaultLink } updated": [
         "Надіслане ${ vaultLink } оновлено"
       ],
-      "Shared Server Location Filters": [
-        "Фільтри розташування спільних серверів"
-      ],
       "Shared vault deleted": [
         "Спільне сховище видалено"
       ],
@@ -4727,12 +4700,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Почніть ділитися ним з контактами та використовуйте його для онлайн-сервісів."
-      ],
-      "Step ${ step }": [
-        "Крок ${ step }",
-        "Крок ${ step }",
-        "Крок ${ step }",
-        "Крок ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Обсяг сховища, розподілений між іншими користувачами в цій організації"
@@ -6792,12 +6759,6 @@
       "Group management (coming soon)": [
         "Керування групами (незабаром)"
       ],
-      "High-speed streaming": [
-        "Високошвидкісна потокова трансляція"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Високошвидкісна швейцарська VPN, що захищає вашу приватність"
-      ],
       "High-speed VPN on ${ n } device": [
         "Високошвидкісна VPN на ${ n } пристрої",
         "Високошвидкісна VPN на ${ n } пристроях",
@@ -6854,12 +6815,6 @@
       ],
       "Proofread and refine your emails": [
         "Вичитуйте та вдосконалюйте свої електронні листи"
-      ],
-      "Protect ${ n } device at a time": [
-        "Захист ${ n } пристрою",
-        "Захист ${ n } пристроїв",
-        "Захист ${ n } пристроїв",
-        "Захист ${ n } пристроїв"
       ],
       "Quickly craft replies": [
         "Швидко створюйте відповіді"
@@ -6926,9 +6881,6 @@
       ],
       "Start protecting your organization": [
         "Почніть захищати свою організацію"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Захистіть себе в мережі, виконавши 2 прості кроки"
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
@@ -11497,9 +11449,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ваш комплект ${ a } та ${ b }"
-      ],
-      "Your ${ selected } plan": [
-        "Ваш тарифний план ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {

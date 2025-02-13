@@ -622,6 +622,9 @@
       "Get more servers": [
         "Uzyskaj więcej serwerów"
       ],
+      "Get the app": [
+        "Pobierz aplikację"
+      ],
       "Get the browser extension": [
         "Pobierz rozszerzenie przeglądarki"
       ],
@@ -5982,6 +5985,11 @@
         "Bardzo mała"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplikacji internetowej"
@@ -6175,26 +6183,20 @@
       "Best deal": [
         "Najlepsza oferta"
       ],
-      "Checkout": [
-        "Płatność"
-      ],
-      "City": [
-        "Miasto"
-      ],
-      "Country": [
-        "Kraj"
-      ],
-      "Create your account": [
-        "Utwórz konto"
-      ],
       "Device": [
         "Urządzenie"
+      ],
+      "Enabled Countries": [
+        "Włączone kraje"
       ],
       "Event": [
         "Zdarzenie"
       ],
       "Folders": [
         "Foldery"
+      ],
+      "Groups": [
+        "Grupy"
       ],
       "IP address": [
         "Adres IP"
@@ -6222,6 +6224,9 @@
       ],
       "Permissions": [
         "Uprawnienia"
+      ],
+      "Policy Name": [
+        "Nazwa zasady"
       ],
       "Protection": [
         "Ochrona"
@@ -7453,6 +7458,9 @@
       "Custom monthly": [
         "Co miesiąc (niestandardowo)"
       ],
+      "Custom policies": [
+        "Niestandardowe zasady"
+      ],
       "Custom weekly": [
         "Co tydzień (niestandardowo)"
       ],
@@ -7657,6 +7665,9 @@
       "Enhance your network security": [
         "Zwiększ bezpieczeństwo sieci"
       ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Ciesz się szybszym wysyłaniem wiadomości za pomocą aplikacji desktopowej."
+      ],
       "Enter key manually instead": [
         "Zamiast tego wpisz klucz ręcznie"
       ],
@@ -7774,6 +7785,9 @@
       "Get it on Google Play": [
         "Pobierz z Google Play"
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
+      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych osobowych. ${ learnMoreLinkNoBreach }"
       ],
@@ -7812,9 +7826,6 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Jeśli jest to spowodowane starym resetowaniem hasła, możesz zatrzymać ponowne pokazywanie tej wiadomości"
-      ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Po włączeniu tej opcji, użytkownicy organizacji będą mogli udostępniać sejfy tylko w obrębie organizacji"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -7959,6 +7970,9 @@
       ],
       "Invite deleted": [
         "Usunięcie zaproszenia"
+      ],
+      "Invite family members and get everything up and running.": [
+        "Zaproś użytkowników rodziny i rozpocznij."
       ],
       "Invite for new user deleted": [
         "Usunięcie zaproszenia dla nowego użytkownika"
@@ -8242,9 +8256,6 @@
       "No label selected": [
         "Nie wybrano etykiety"
       ],
-      "No location filters are currently assigned.": [
-        "Brak przypisanych filtrów lokalizacji."
-      ],
       "No logs yet.": [
         "Logi są puste."
       ],
@@ -8253,9 +8264,6 @@
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
-      ],
-      "No Shared Servers Found": [
-        "Nie znaleziono udostępnionych serwerów"
       ],
       "Not a valid URL": [
         "To nie jest prawidłowy adres URL"
@@ -8273,10 +8281,10 @@
         "z"
       ],
       "Off": [
-        "Wył."
+        "Wyłącz"
       ],
       "On": [
-        "Wł."
+        "Włącz"
       ],
       "Once you reset your password:": [
         "Po zresetowaniu hasła:"
@@ -8512,6 +8520,9 @@
       "purchase additional storage": [
         "kupić dodatkową przestrzeń dyskową"
       ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Skontaktuj się z nami, aby uzyskać pomoc ${ BRAND_NAME }."
+      ],
       "read our two-factor authentication guide first": [
         "wcześniejsze zapoznanie się z naszym przewodnikiem"
       ],
@@ -8641,6 +8652,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Wyślij wiadomości, aby zachęcić użytkowników do ochrony swoich kont za pomocą uwierzytelniania dwustopniowego."
       ],
+      "Send messages at just the right now": [
+        "Wysyłaj wiadomości w odpowiednim momencie"
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -8686,9 +8700,6 @@
       "Shared ${ vaultLink } updated": [
         "Zaktualizowanie udostępniania sejfu ${ vaultLink }"
       ],
-      "Shared Server Location Filters": [
-        "Filtry udostępnionych serwerów"
-      ],
       "Shared vault deleted": [
         "Usunięcie udostępnionego sejfu"
       ],
@@ -8716,6 +8727,9 @@
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Wygeneruj nowy token, aby rozpocząć."
       ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Odłóż wiadomości na później, aby znalazły się na górze skrzynki odbiorczej wtedy, kiedy chcesz"
+      ],
       "Some keys successfully reactivated": [
         "Niektóre klucze zostały reaktywowane"
       ],
@@ -8727,6 +8741,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Używaj krótszej i bardziej chwytliwej nazwy swojego adresu e-mail."
       ],
       "Stay tuned for future promotions.": [
         "Bądź na bieżąco z przyszłymi promocjami."
@@ -9457,6 +9474,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Używasz więcej przestrzeni dyskowej niż jest dostępna w planie ${ downgradedPlanName }. Aby obniżyć plan, zwolnij część miejsca."
       ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Możesz dodać własną domenę do ${ MAIL_APP_NAME }"
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami ${ BRAND_NAME }."
       ],
@@ -9688,6 +9708,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizacja używa logowania SSO. Kliknij \"Zaloguj się\", aby skorzystać z dostawcy tożsamości SSO."
       ],
@@ -9708,6 +9731,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Hasłem odzyskiwania jest seria 12 słów w określonej kolejności."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Zgłoszenie zostało zamknięte. Dziękujemy za kontakt ze wsparciem technicznym ${ BRAND_NAME }."
@@ -12537,12 +12566,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "High-speed streaming": [
-        "Szybki streaming"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Szybka szwajcarska usługa VPN, która chroni Twoją prywatność"
-      ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
         "Szybki VPN na ${ n } urządzenia",
@@ -12603,12 +12626,6 @@
       "Proofread and refine your emails": [
         "Sprawdzaj i poprawiaj teksty"
       ],
-      "Protect ${ n } device at a time": [
-        "Ochrona ${ n } urządzenia jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzenia jednocześnie"
-      ],
       "Quickly craft replies": [
         "Twórz szybsze wiadomości"
       ],
@@ -12638,6 +12655,9 @@
       ],
       "Secure Core servers": [
         "Serwery Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
       ],
       "Secure link sharing": [
         "Bezpieczne udostępnianie linków"
@@ -12674,9 +12694,6 @@
       ],
       "Start protecting your organization": [
         "Chroń swoją organizację"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Chroń się online w 2 prostych krokach"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
@@ -13553,6 +13570,12 @@
       ]
     },
     "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Oferta ${ pricingTitle } wygasa dzisiaj!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Wybierz plan Drive Plus za ${ pricingTitle }"
+      ],
       "Get Mail Plus for only ${ pricingTitle }": [
         "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
       ],
@@ -13579,8 +13602,14 @@
       "Email addresses": [
         "Adresy e-mail"
       ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ],
       "Storage": [
         "Przestrzeń dyskowa"
@@ -13752,6 +13781,9 @@
       ],
       "No permission": [
         "Brak uprawnienia"
+      ],
+      "None": [
+        "Brak"
       ],
       "Normal": [
         "Standardowy"
@@ -17554,7 +17586,7 @@
     },
     "Table header; invitations to share calendar": {
       "Shared with me": [
-        "Udostępnione Tobie"
+        "Udostępnione dla mnie"
       ]
     },
     "TableHeader": {
@@ -19873,6 +19905,9 @@
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
@@ -19949,9 +19984,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Pakiet ${ a } i ${ b }"
-      ],
-      "Your ${ selected } plan": [
-        "Plan ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {

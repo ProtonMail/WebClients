@@ -78,6 +78,9 @@
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
+      "Add to album": [
+        "Προσθήκη στο άλμπουμ"
+      ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
@@ -225,6 +228,9 @@
       ],
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
+      ],
+      "Create album": [
+        "Δημιουργία άλμπουμ"
       ],
       "Create and copy alias": [
         "Δημιουργία και αντιγραφή ψευδωνύμου"
@@ -545,6 +551,9 @@
       ],
       "New": [
         "Νέο"
+      ],
+      "New album": [
+        "Νέο άλμπουμ"
       ],
       "New document": [
         "Νέο έγγραφο"
@@ -951,6 +960,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Δημιουργία άλμπουμ"
+      ],
       "Upload": [
         "Ανέβασμα"
       ]
@@ -1334,6 +1346,12 @@
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Προσθήκη ${ photos.length } φωτογραφίας στο",
+        "Προσθήκη ${ photos.length } φωτογραφιών στο"
       ]
     },
     "Cancellation reminder": {
@@ -2415,6 +2433,11 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
@@ -2496,11 +2519,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4199,6 +4217,9 @@
         "Όλες (${ totalFoldersCount } ετικέτα)",
         "Όλες (${ totalFoldersCount } ετικέτες)"
       ],
+      "All albums": [
+        "Όλα τα άλμπουμ"
+      ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
@@ -4815,6 +4836,9 @@
       "No": [
         "Όχι"
       ],
+      "No Albums": [
+        "Δεν υπάρχουν άλμπουμ"
+      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
@@ -5009,6 +5033,9 @@
       "Ready to add some photos?": [
         "Είστε έτοιμοι να προσθέσετε φωτογραφίες;"
       ],
+      "Recent": [
+        "Πρόσφατα"
+      ],
       "recommended browser": [
         "συνιστώμενο πρόγραμμα περιήγησης"
       ],
@@ -5164,6 +5191,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Ο λογαριασμός μπορεί να έχει ένα νέο κλειδί ή μπορεί τα εξής να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
+      ],
+      "The albums you create are shown here": [
+        "Τα άλμπουμ που δημιουργείτε εμφανίζονται εδώ"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Η ψηφιακή υπογραφή έχει επαληθευτεί εν μέρει. Αυτό το αρχείο μεταφορτώθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
@@ -6084,6 +6114,9 @@
       ],
       "Move to Inbox": [
         "Μετακίνηση στα Εισερχόμενα"
+      ],
+      "My Albums": [
+        "Τα Άλμπουμ μου"
       ],
       "Name": [
         "Όνομα"
@@ -7062,6 +7095,9 @@
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
+      ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
       ],
@@ -7112,9 +7148,6 @@
       ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
-      ],
-      "High-speed streaming": [
-        "Ροή υψηλής ταχύτητας"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
@@ -7170,10 +7203,6 @@
       ],
       "Proofread and refine your emails": [
         "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
-      ],
-      "Protect ${ n } device at a time": [
-        "Προστατέψτε ${ n } συσκευή ανά φορά",
-        "Προστατέψτε ${ n } συσκευές ανά φορά"
       ],
       "Quickly craft replies": [
         "Δημιουργήστε γρήγορα απαντήσεις"
@@ -7305,6 +7334,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Χρήση σε έως και ${ n } συσκευή ταυτόχρονα",
+        "Χρήση σε έως και ${ n } συσκευές ταυτόχρονα"
       ],
       "User credential management": [
         "Διαχείριση διαπιστευτηρίων χρηστών"
@@ -10604,6 +10637,11 @@
         "Σήμερα"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Προσθέστε αυτό το κοινόχρηστο αρχείο στο ${ DRIVE_APP_NAME } για εύκολη πρόσβαση αργότερα."
@@ -10685,11 +10723,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
     "Validation": {
@@ -10809,6 +10842,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 διαδοχικές κουκκίδες δεν επιτρέπονται"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
@@ -10821,6 +10857,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την επαφή;"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Δεν μπορεί να περιέχει τελεία στην αρχή"
+      ],
+      "Cannot contain a dot at the end": [
+        "Δεν μπορεί να περιέχει τελεία στο τέλος"
       ],
       "Contacts could not be merged": [
         "Δεν ήταν δυνατή η συγχώνευση των επαφών"
@@ -10843,8 +10885,8 @@
       "Name is required": [
         "Απαιτείται όνομα"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Επιτρέπονται μόνο αλφαριθμητικοί πεζοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."

@@ -2318,11 +2318,11 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Maak policies aan om te bepalen wie in elk land kan verbinden met de gedeelde servers."
+      "Create policies to manage access to shared servers.": [
+        "Creëer policy's om toegang tot gedeelde servers te beheren."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Iedereen in uw organisatie kan verbinding maken met gedeelde servers in alle landen."
+      "Everyone in your organization can connect to shared servers.": [
+        "Iedereen in uw organisatie kan verbinding maken met gedeelde servers."
       ],
       "If disabled, only admins will have access.": [
         "Indien uitgeschakeld, hebben alleen beheerders toegang."
@@ -3403,29 +3403,29 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Acties"
+      ],
       "App version": [
         "App versie"
       ],
       "Best deal": [
         "Beste deal"
       ],
-      "Checkout": [
-        "Afrekenen"
-      ],
-      "City": [
-        "Stad"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Create your account": [
-        "Maak uw account aan"
-      ],
       "Device": [
         "Apparaat"
       ],
+      "Enabled Countries": [
+        "Ingeschakelde landen"
+      ],
+      "Enter your email address": [
+        "Voer uw e-mailadres in"
+      ],
       "Event": [
         "Gebeurtenis"
+      ],
+      "Groups": [
+        "Groepen"
       ],
       "IP address": [
         "IP-adres"
@@ -3445,6 +3445,9 @@
       "Organization key fingerprint": [
         "Vingerafdruk van organisatiesleutel"
       ],
+      "Policy Name": [
+        "Policy naam"
+      ],
       "Protection": [
         "Bescherming"
       ],
@@ -3453,6 +3456,9 @@
       ],
       "Select your deal": [
         "Kies uw deal"
+      ],
+      "Select your payment method": [
+        "Selecteer uw betalingsmethode"
       ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
@@ -3748,8 +3754,8 @@
       "Allocated": [
         "Toegewezen"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Sta gebruikers toe om verbinding te maken met beveiligde gedeelde servers van de **Landen** sectie van de ${ VPN_APP_NAME }-app."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Sta gebruikers toe om verbinding te maken met beveiligde gedeelde servers op basis van gedefinieerd beleid."
       ],
       "Already allocated": [
         "Reeds toegewezen"
@@ -3853,6 +3859,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "CNET editors keuze prijs met een beoordeling van 8,4 van de 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "SAML-authenticatie voor de organisatie configureren via een identiteitsprovider (IdP). Dit zal SAML voor de hele organisatie inschakelen."
       ],
@@ -3885,6 +3894,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopieer het voorgestelde wachtwoord naar het klembord"
+      ],
+      "countries enabled": [
+        "landen ingeschakeld"
       ],
       "Country code": [
         "Landcode"
@@ -3923,6 +3935,9 @@
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
+      ],
+      "Custom policies": [
+        "Aangepast beleid"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
@@ -4439,9 +4454,6 @@
       "No Gateways yet": [
         "Nog geen gateways"
       ],
-      "No location filters are currently assigned.": [
-        "Er zijn momenteel geen locatie filters toegewezen."
-      ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
       ],
@@ -4450,9 +4462,6 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
-      ],
-      "No Shared Servers Found": [
-        "Geen gedeelde servers gevonden"
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
@@ -4521,6 +4530,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Pc Magazine editors keuze prijs met een beoordeling van 5 op 5 sterren"
       ],
       "per month": [
         "maandelijks"
@@ -4726,9 +4738,6 @@
       "Shared ${ vaultLink } updated": [
         "Gedeelde ${ vaultLink } bijgewerkt"
       ],
-      "Shared Server Location Filters": [
-        "Gedeelde Server Locatie Filters"
-      ],
       "Shared vault deleted": [
         "Gedeelde kluis verwijderd"
       ],
@@ -4749,10 +4758,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
-      ],
-      "Step ${ step }": [
-        "Stap ${ step }",
-        "Stap ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -4792,6 +4797,9 @@
       ],
       "Symbols (#$&)": [
         "Symbolen (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Aanbevolen door Tech radar pro met een beoordeling van 4,2 op 5 sterren"
       ],
       "Thank you": [
         "Bedankt"
@@ -4960,6 +4968,9 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Probeer ${ productName } volledig risicoloos - als u om een andere reden van gedachten verandert, krijgt u een volledige terugbetaling. Zonder vragen."
       ],
       "Two-factor authentication disabled": [
         "Tweestapsverificatie uitgeschakeld"
@@ -5766,6 +5777,9 @@
       "Group name": [
         "Groepsnaam"
       ],
+      "Groups": [
+        "Groepen"
+      ],
       "Hide password": [
         "Wachtwoord verbergen"
       ],
@@ -5834,6 +5848,9 @@
       ],
       "New password": [
         "Nieuw wachtwoord"
+      ],
+      "New policy name": [
+        "Nieuwe naam policy"
       ],
       "New second password": [
         "Nieuw tweede wachtwoord"
@@ -6018,6 +6035,9 @@
       ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "Users": [
+        "Gebruikers"
       ],
       "Value": [
         "Waarde"
@@ -6688,6 +6708,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement"
       ],
+      "Apps for": [
+        "Applicaties voor"
+      ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
@@ -6754,6 +6777,9 @@
       "Dedicated servers and IP": [
         "Toegewijde servers en IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Gereserveerde servers geoptimaliseerd voor streamen"
+      ],
       "Desktop app": [
         "Desktop-app"
       ],
@@ -6804,12 +6830,6 @@
       ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
-      ],
-      "High-speed streaming": [
-        "Streamen op hoge snelheid"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Supersnelle Zwitserse VPN die uw privacy beschermt"
       ],
       "High-speed VPN on ${ n } device": [
         "High-speed VPN op ${ n } apparaat",
@@ -6868,10 +6888,6 @@
       ],
       "Proofread and refine your emails": [
         "Controleer en verfijn uw e-mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Bescherm ${ n } apparaat tegelijkertijd",
-        "Bescherm ${ n } apparaten tegelijkertijd"
       ],
       "Quickly craft replies": [
         "Snel antwoorden opstellen"
@@ -6939,9 +6955,6 @@
       ],
       "Start protecting your organization": [
         "Begin met het beschermen van uw organisatie"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Begin uzelf online te beschermen in 2 eenvoudige stappen"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -7013,6 +7026,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
+      ],
+      "Up to 10 Gbps": [
+        "Tot 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gebruik tot ${ n } apparaat tegelijk",
+        "Gebruik tot ${ n } apparaten tegelijk"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -7585,6 +7605,9 @@
       "Downloaded 2FA recovery codes": [
         "Herstelcodes van 2FA gedownload"
       ],
+      "Error creating policy": [
+        "Fout bij aanmaken policy"
+      ],
       "Invalid code": [
         "Ongeldige code"
       ],
@@ -7602,6 +7625,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
+      ],
+      "Policy created successfully": [
+        "Policy succesvol aangemaakt"
       ],
       "Reminder has been sent": [
         "Herinnering is verstuurd"
@@ -9261,6 +9287,12 @@
       "Single sign-on removed": [
         "Single sign-on verwijderd"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "De gebruiker ${ user } is nu een single sign-on account. Het vorige wachtwoord is het back-upwachtwoord geworden."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Zij zullen opnieuw moeten inloggen met uw identiteitsprovider om toegang te krijgen tot ${ BRAND_NAME } diensten. Om ervoor te zorgen dat deze gebruiker kan inloggen moet u ervoor zorgen dat deze bij uw identiteitsprovider aanwezig is."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dit zal de gebruiker uitloggen uit zijn andere apparaten en hij zal een nieuw back-upwachtwoord moeten maken."
       ],
@@ -10283,6 +10315,9 @@
       "Add address": [
         "E-mailadres toevoegen"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Landen toevoegen aan \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Krediet/debietkaart toevoegen"
       ],
@@ -10318,6 +10353,9 @@
       ],
       "Add users": [
         "Gebruikers toevoegen"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Gebruikers toevoegen aan${ policyName }\""
       ],
       "Allocate storage": [
         "Opslag toewijzen"
@@ -10439,6 +10477,9 @@
       ],
       "Create multiple user accounts": [
         "Meerdere gebruikersaccounts aanmaken"
+      ],
+      "Create new policy": [
+        "Nieuwe policy aanmaken"
       ],
       "Create organization key": [
         "Maak een organisatiesleutel"
@@ -11617,8 +11658,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Uw ${ a } en ${ b } bundel"
       ],
-      "Your ${ selected } plan": [
-        "Je ${ selected }-abonnement"
+      "Your plan includes:": [
+        "Uw plan omvat:"
       ]
     },
     "vpn_2step: tooltip": {

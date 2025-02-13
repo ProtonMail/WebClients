@@ -6765,6 +6765,9 @@
       "Data breach monitoring": [
         "Overvåking av datainnbrudd"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikerte tjenere optimalisert for strømming"
+      ],
       "Desktop app": [
         "Skrivebordsapp"
       ],
@@ -6815,9 +6818,6 @@
       ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
-      ],
-      "High-speed streaming": [
-        "Strømming med høy hastighet"
       ],
       "High-speed VPN on ${ n } device": [
         "Høyhastighets VPN på ${ n } enhet",
@@ -6873,10 +6873,6 @@
       ],
       "Proofread and refine your emails": [
         "Korrekturles og finjuster e-postene dine"
-      ],
-      "Protect ${ n } device at a time": [
-        "Beskytt ${ n } enhet om gangen",
-        "Beskytt ${ n } enheter om gangen"
       ],
       "Quickly craft replies": [
         "Lag svar raskt"
@@ -7008,6 +7004,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Bruk på opptil ${ n } enhet samtidig",
+        "Bruk på opptil ${ n } enheter samtidig"
       ],
       "User credential management": [
         "Administrasjon av brukerpåloggingsinformasjon"
@@ -10340,6 +10340,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 påfølgende prikker er ikke tillatt"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",
         "Er du sikker på at du ønsker å slette ${ count } kontakter permanent?"
@@ -10352,6 +10355,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Er du sikker på at du vil slette denne kontakten permanent?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Kan ikke inneholde en prikk i begynnelsen"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan ikke inneholde en prikk ved slutten"
       ],
       "Contacts could not be merged": [
         "Kontakene kunne ikke slås sammen"
@@ -10374,8 +10383,8 @@
       "Name is required": [
         "Navn kreves"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Bare alfanumeriske små bokstaver, prikker, bindestreker og understrekingstegn er tillatt."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."

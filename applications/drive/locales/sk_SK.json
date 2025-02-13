@@ -228,6 +228,9 @@
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
       ],
+      "Create album": [
+        "Vytvoriť album"
+      ],
       "Create and copy alias": [
         "Vytvoriť a kopírovať alias"
       ],
@@ -959,6 +962,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Vytvoriť album"
+      ],
       "Upload": [
         "Nahrať"
       ]
@@ -2439,6 +2445,11 @@
         "Faktúra po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2520,11 +2531,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6265,6 +6271,9 @@
       "Move to Inbox": [
         "Presunúť do Doručených"
       ],
+      "My Albums": [
+        "Moje albumy"
+      ],
       "Name": [
         "Meno"
       ],
@@ -7286,6 +7295,9 @@
       "Data breach monitoring": [
         "Monitorovanie úniku dát"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikované servery optimalizované na streamovanie"
+      ],
       "Desktop app": [
         "Desktopová aplikácia"
       ],
@@ -7336,9 +7348,6 @@
       ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
-      ],
-      "High-speed streaming": [
-        "Vysokorýchlostné streamovanie"
       ],
       "High-speed VPN on ${ n } device": [
         "Vysoko rýchlostná sieť VPN na ${ n } zariadení",
@@ -7396,12 +7405,6 @@
       ],
       "Proofread and refine your emails": [
         "Korigujte a zdokonaľujte vaše emaily"
-      ],
-      "Protect ${ n } device at a time": [
-        "Chráňte súčasne ${ n } zariadenie",
-        "Chráňte súčasne ${ n } zariadenia",
-        "Chráňte súčasne ${ n } zariadení",
-        "Chráňte súčasne ${ n } zariadení"
       ],
       "Quickly craft replies": [
         "Rýchlo vytvárajte odpovede"
@@ -7537,6 +7540,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Používajte na ${ n } zariadení súčasne",
+        "Používajte až na ${ n } zariadeniach súčasne",
+        "Používajte až na ${ n } zariadeniach súčasne",
+        "Používajte až na ${ n } zariadeniach súčasne"
       ],
       "User credential management": [
         "Správa používateľských údajov"
@@ -10992,6 +11001,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tento zdieľaný súbor pridajte do svojho ${ DRIVE_APP_NAME } pre neskorší jednoduchý prístup."
@@ -11073,11 +11087,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Validation": {
@@ -11221,6 +11230,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 po sebe idúce bodky nie sú povolené"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Naozaj chcete natrvalo vymazať ${ count } kontakt?",
         "Naozaj chcete natrvalo vymazať ${ count } kontakty?",
@@ -11235,6 +11247,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Naozaj chcete natrvalo vymazať tento kontakt?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Na začiatku nesmie byť bodka"
+      ],
+      "Cannot contain a dot at the end": [
+        "Na konci nesmie byť bodka"
       ],
       "Contacts could not be merged": [
         "Kontakty nebolo možné zlúčiť"
@@ -11257,8 +11275,8 @@
       "Name is required": [
         "Názov je povinný"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Povolené sú len alfanumerické znaky, bodky, pomlčky a podčiarkovníky"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Povolené sú len alfanumerické malé písmená, bodky, pomlčky a podčiarkovníky"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Upozorňujeme, že pri výbere tohto spôsobu platby nie je možné váš účet okamžite navýšiť. Váš účet aktualizujeme po zúčtovaní platby."

@@ -805,6 +805,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Ověření selhalo. Potvrďte své ${ BRAND_NAME } heslo, abyste mohli pokračovat v exportu"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Ověření selhalo. Potvrďte své záložní heslo, abyste mohli pokračovat v exportu"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Ověření selhalo. Potvrďte své dodatečné heslo, abyste mohli pokračovat v exportu"
+      ],
       "Biometric authentication failed": [
         "Biometrické ověření selhalo"
       ],
@@ -4239,9 +4245,6 @@
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Po synchronizaci se smazáním aliasů v ${ PASS_SHORT_APP_NAME } smažou také aliasy v SimpleLogin."
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"
       ],
       "Passphrase is required": [
         "Je vyžadováno heslo"

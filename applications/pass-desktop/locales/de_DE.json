@@ -328,6 +328,9 @@
       "Invite others": [
         "Jemanden einladen"
       ],
+      "Join our Reddit": [
+        "Tritt unserem Reddit bei"
+      ],
       "Join shared vault": [
         "Freigegebenem Tresor beitreten"
       ],
@@ -825,6 +828,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Authentifizierung fehlgeschlagen. Bestätige dein ${ BRAND_NAME }-Passwort, um mit dem Export fortzufahren."
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Authentifizierung fehlgeschlagen. Bestätige dein Backup-Passwort, um mit dem Export fortzufahren."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Authentifizierung fehlgeschlagen. Bestätige dein zusätzliches Passwort, um mit dem Export fortzufahren."
+      ],
       "Biometric authentication failed": [
         "Biometrische Authentifizierung fehlgeschlagen"
       ],
@@ -1166,6 +1175,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Beim Start von ${ PASS_SHORT_APP_NAME } ist ein Problem aufgetreten. Wenn dieses Problem weiterhin besteht, wende dich bitte an unseren Kundensupport."
       ],
+      "Wrong backup password": [
+        "Falsches Backup-Passwort"
+      ],
       "Wrong extra password": [
         "Falsches zusätzliches Passwort"
       ],
@@ -1282,6 +1294,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blockiert",
+        "${ blockedEmailsCount } blockiert"
+      ],
       "${ count } time": [
         "${ count } Mal",
         "${ count } Mal"
@@ -1292,6 +1308,13 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } Ansichten"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } weitergeleitet",
+        "${ forwardedEmailsCount } weitergeleitet"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } möchte einen Eintrag mit dir teilen."
       ],
       "${ memberCount } member": [
         "${ memberCount } Mitglied",
@@ -1328,6 +1351,10 @@
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } erfolgreich aktiviert."
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } gesendet",
+        "${ repliedEmailsCount } gesendet"
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } Datendiebstahl entdeckt",
@@ -1486,6 +1513,9 @@
       "Coupon successfully applied!": [
         "Gutschein erfolgreich angewendet"
       ],
+      "Create contact illustration": [
+        "Kontaktillustration erstellen"
+      ],
       "Created ${ time }.": [
         "Erstellt ${ time }."
       ],
@@ -1545,6 +1575,9 @@
       ],
       "Email address successfully included in monitoring": [
         "E-Mail-Adresse erfolgreich in die Überwachung aufgenommen."
+      ],
+      "Email headers illustration": [
+        "Illustration von E-Mail-Headern"
       ],
       "Emptying trash...": [
         "Papierkorb wird geleert..."
@@ -1621,6 +1654,9 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Weiterleitungsadresse in die Zwischenablage kopiert. Sende eine E-Mail an diese Adresse und ${ Email } wird sie erhalten."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Generierte Passwörter werden für ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche gespeichert.",
@@ -1732,6 +1768,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Erfahre, wie man ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Eintrag verlassen..."
       ],
       "Leaving vault...": [
         "Tresor wird verlassen..."
@@ -2154,6 +2193,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem Backup-Passwort"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem zusätzlichen Passwort"
       ],
@@ -2193,6 +2235,10 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Tresor \"${ share.content.name }\" wurde entfernt."
       ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Tresore teilen: ${ vaultMembersCount } Mitglied",
+        "Tresore teilen: ${ vaultMembersCount } Mitglieder"
+      ],
       "Verification code sent.": [
         "Bestätigungscode gesendet."
       ],
@@ -2217,6 +2263,9 @@
       ],
       "You are about to create:": [
         "Folgender Alias wird erstellt:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Du kannst auch einen PIN-Code angeben, um ${ PASS_APP_NAME } zu entsperren."
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kannst dein ${ BRAND_NAME }-Passwort nun verwenden, um auf ${ PASS_SHORT_APP_NAME } offline zuzugreifen."
@@ -2298,6 +2347,10 @@
         "${ aliasCount } Alias",
         "${ aliasCount } Aliasse"
       ],
+      "${ blockedCount } block": [
+        "${ blockedCount } Blockierung",
+        "${ blockedCount } Blockierungen"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } Zeichen",
         "${ config.options.length } Zeichen"
@@ -2309,6 +2362,10 @@
       "${ days } day": [
         "${ days } Tag",
         "${ days } Tage"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } weitergeleitet",
+        "${ forwardCount } weitergeleitet"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } in den letzten 14 Tagen."
@@ -3567,6 +3624,9 @@
       "Breaches detected for": [
         "Datenlecks entdeckt für"
       ],
+      "Change your lock method": [
+        "Ändere deine Sperrmethode"
+      ],
       "Confirm extra password": [
         "Zusätzliches Passwort bestätigen"
       ],
@@ -3798,6 +3858,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Bitte beachte, dass einmal gelöschte Aliasse nicht wiederhergestellt werden können.",
         "Bitte beachte, dass einmal gelöschte Aliasse nicht wiederhergestellt werden können."
+      ],
+      "Random Prefix Generation": [
+        "Zufällige Präfix-Generierung"
       ],
       "Recommended actions": [
         "Empfohlene Aktionen"
@@ -4070,8 +4133,14 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-Passwort erforderlich"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 aufeinanderfolgende Punkte sind nicht erlaubt"
+      ],
       "A description of the problem is required": [
         "Eine Beschreibung des Problems ist erforderlich."
+      ],
+      "Addresses already invited.": [
+        "Die Adressen wurden bereits eingeladen."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Aliasse im Papierkorb werden E-Mails weiterhin weiterleiten."
@@ -4095,6 +4164,12 @@
       ],
       "At least one email address is required": [
         "Mindestens eine E-Mail-Adresse ist erforderlich."
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Darf keinen Punkt am Anfang enthalten"
+      ],
+      "Cannot contain a dot at the end": [
+        "Darf keinen Punkt am Ende enthalten"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Mailboxen für diesen Alias können derzeit nicht abgerufen werden."
@@ -4199,14 +4274,17 @@
       "No results": [
         "Keine Ergebnisse"
       ],
+      "No shared items matching": [
+        "Es gibt keinen geteilten Eintrag, der übereinstimmt."
+      ],
       "Offline": [
         "Offline"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Nach der Synchronisierung werden Aliasnamen, die in ${ PASS_SHORT_APP_NAME } gelöscht werden, auch in SimpleLogin gelöscht."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Nur alphanumerische Zeichen, Punkte, Bindestriche und Unterstriche sind erlaubt."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Nur alphanumerische Kleinbuchstaben, Punkte, Bindestriche und Unterstriche sind erlaubt"
       ],
       "Passphrase is required": [
         "Passphrase ist erforderlich"
@@ -4249,6 +4327,9 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Diese E-Mail-Adresse wird nicht länger auf Datenlecks überwacht."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Dieser Eintrag wird derzeit geteilt. Wenn du ihn in einen anderen Tresor verschiebst, verlieren alle anderen Benutzer den Zugriff."
       ],
       "Title is required": [
         "Titel ist erforderlich"

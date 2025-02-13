@@ -831,6 +831,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Verificatie is mislukt. Bevestig uw ${ BRAND_NAME }-wachtwoord om verder te gaan met de export"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Authenticatie mislukt. Bevestig uw backup wachtwoord om verder te gaan met de export"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Authenticatie mislukt. Bevestig uw extra wachtwoord om verder te gaan met de export"
+      ],
       "Biometric authentication failed": [
         "Biometrische authenticatie mislukt"
       ],
@@ -1174,6 +1180,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Er is een probleem opgetreden tijdens het starten van ${ PASS_SHORT_APP_NAME }. Als dit probleem zich blijft voordoen, neem contact op met onze klantenservice voor hulp."
+      ],
+      "Wrong backup password": [
+        "Foutief back-up wachtwoord"
       ],
       "Wrong extra password": [
         "Verkeerd extra wachtwoord"
@@ -4207,6 +4216,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-wachtwoord is vereist"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 opeenvolgende punten zijn niet toegestaan"
+      ],
       "A description of the problem is required": [
         "Een beschrijving van het probleem is vereist"
       ],
@@ -4235,6 +4247,12 @@
       ],
       "At least one email address is required": [
         "Ten minste één e-mailadres is vereist"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Kan niet starten met een punt"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan niet eindigen met een punt"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan op dit moment geen mailboxen ophalen voor deze alias"
@@ -4351,8 +4369,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Eenmaal gesynchroniseerd, zal het verwijderen van aliassen in ${ PASS_SHORT_APP_NAME } ze ook verwijderen in SimpleLogin."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Alleen alfanumerieke tekens, punten, koppeltekens en underscores zijn toegestaan"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Alleen alfanumerieke kleine letters, punten, koppeltekens en underscores zijn toegestaan"
       ],
       "Passphrase is required": [
         "Wachtzin is vereist"
