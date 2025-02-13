@@ -17,16 +17,28 @@ interface Props {
 export const useMailUpsellConfig = ({ upsellRef, preventInApp = false, cycle }: Props) => {
     const [user] = useUser();
 
-    const oneDollarConfig = useOneDollarPromo();
+    const {
+        submitText: oneDollarConfigSubmitText,
+        footerText: oneDollarConfigFooterText,
+        cycle: oneDollarConfigCycle,
+        planIDs: oneDollarConfigPlanIDs,
+        ...oneDollarConfigRest
+    } = useOneDollarPromo();
 
-    const finalCycle = cycle ?? oneDollarConfig?.cycle;
     const upsellConfig = useUpsellConfig({
         upsellRef,
         preventInApp,
         plan: user.isPaid ? PLANS.BUNDLE : PLANS.MAIL,
-        ...oneDollarConfig,
-        cycle: finalCycle,
+        ...oneDollarConfigRest,
+        cycle: cycle || oneDollarConfigCycle,
     });
 
-    return { upsellConfig };
+    return {
+        upsellConfig: {
+            ...upsellConfig,
+            submitText: oneDollarConfigSubmitText,
+            footerText: oneDollarConfigFooterText,
+            planIDs: oneDollarConfigPlanIDs,
+        },
+    };
 };
