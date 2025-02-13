@@ -28,8 +28,7 @@
 			}
 		}
 
-		&--item-subheading,
-		&--table-cell {
+		&--item-subheading {
 			&::before {
 				inline-size: 65%;
 			}

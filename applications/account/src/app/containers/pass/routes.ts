@@ -13,9 +13,17 @@ interface Props {
     organization?: Organization;
     subscription?: Subscription;
     canDisplayB2BLogsPass?: boolean;
+    canDisplayPassReports?: boolean;
 }
 
-export const getPassAppRoutes = ({ app, user, organization, subscription, canDisplayB2BLogsPass }: Props) => {
+export const getPassAppRoutes = ({
+    app,
+    user,
+    organization,
+    subscription,
+    canDisplayB2BLogsPass,
+    canDisplayPassReports,
+}: Props) => {
     const isAdmin = user.isAdmin && user.isSelf;
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -60,6 +68,18 @@ export const getPassAppRoutes = ({ app, user, organization, subscription, canDis
                 subsections: [
                     {
                         id: 'policies',
+                    },
+                ],
+            },
+            reports: <SectionConfig>{
+                text: c('Title').t`Reports`,
+                to: '/reports',
+                icon: 'chart-line',
+                available:
+                    canDisplayPassReports && (hasOrganizationKey || hasOrganization) && isAdmin && hasPassOrBundleB2B,
+                subsections: [
+                    {
+                        id: 'reports',
                     },
                 ],
             },
