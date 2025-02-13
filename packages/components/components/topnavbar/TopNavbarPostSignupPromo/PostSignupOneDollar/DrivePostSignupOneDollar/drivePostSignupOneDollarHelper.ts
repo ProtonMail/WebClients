@@ -15,6 +15,7 @@ interface Props {
     offerStartDateTimestamp: number;
     minimalAccountAgeTimestamp: number;
     driveOneDollarPostSignupFlag: boolean;
+    lastSubscriptionEnd: number;
     mailOfferStartDateTimestamp?: PostSubscriptionOneDollarOfferState;
     hasUploadedFile: boolean;
 }
@@ -25,6 +26,7 @@ export const getIsUserEligibleForOneDollar = ({
     offerStartDateTimestamp: postSignupTimestamp,
     minimalAccountAgeTimestamp: postSignupThreshold,
     driveOneDollarPostSignupFlag,
+    lastSubscriptionEnd,
     mailOfferStartDateTimestamp: mailOfferState,
     hasUploadedFile,
 }: Props) => {
@@ -58,7 +60,7 @@ export const getIsUserEligibleForOneDollar = ({
     const isOfferStillValid =
         !postSignupTimestamp || differenceInDays(today, offerExpirationDate) <= POST_SIGNUP_ONE_DOLLAR_DURATION;
 
-    const basicEligibility = user.isFree && !user.isDelinquent && hasValidApp;
+    const basicEligibility = user.isFree && !user.isDelinquent && hasValidApp && !lastSubscriptionEnd;
 
     return (
         basicEligibility && hasUploadedFile && isAccountCreatedAfterThreshold && isOfferStillValid && isAccountOldEnough
