@@ -24,10 +24,7 @@ jest.mock('@proton/components/components/upsell/useOneDollarPromo.tsx', () => ({
     default: () => null,
 }));
 
-jest.mock('@proton/components/components/upsell/useUpsellConfig.ts', () => ({
-    __esModule: true,
-    default: () => null,
-}));
+jest.mock('@proton/components/components/upsell/useUpsellConfig.ts', () => ({ __esModule: true, default: () => null }));
 
 jest.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () => ({
     __esModule: true,
@@ -36,11 +33,7 @@ jest.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () =
     },
 }));
 
-jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({
-    __esModule: true,
-    useNewUpsellModalVariant: () => true,
-    getUpsellRef: () => '',
-}));
+jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({ __esModule: true, getUpsellRef: () => '' }));
 
 jest.mock('@proton/components/components/orderableTable/OrderableTable');
 const ActualOrderableTable = jest.requireActual('@proton/components/components/orderableTable/OrderableTable').default;
@@ -75,47 +68,13 @@ jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
 jest.mock('@proton/redux-shared-store');
 
 describe('addresses with user', () => {
-    const user = {
-        ID: 'abc',
-    } as UserModel;
+    const user = { ID: 'abc' } as UserModel;
 
     const addresses = [
-        {
-            ID: '1',
-            Email: 'a@proton.me',
-            Type: ADDRESS_TYPE.TYPE_ORIGINAL,
-            Status: 1,
-            Receive: 1,
-            Send: 1,
-            HasKeys: 1,
-        },
-        {
-            ID: '2',
-            Email: 'a@foo.bar',
-            Type: ADDRESS_TYPE.TYPE_EXTERNAL,
-            Status: 1,
-            Receive: 0,
-            Send: 0,
-            HasKeys: 1,
-        },
-        {
-            ID: '3',
-            Email: 'a1@proton.me',
-            Type: ADDRESS_TYPE.TYPE_ALIAS,
-            Status: 1,
-            Receive: 1,
-            Send: 1,
-            HasKeys: 1,
-        },
-        {
-            ID: '4',
-            Email: 'a2@pm.me',
-            Type: ADDRESS_TYPE.TYPE_PREMIUM,
-            Status: 0,
-            Receive: 0,
-            Send: 0,
-            HasKeys: 1,
-        },
+        { ID: '1', Email: 'a@proton.me', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 1, Receive: 1, Send: 1, HasKeys: 1 },
+        { ID: '2', Email: 'a@foo.bar', Type: ADDRESS_TYPE.TYPE_EXTERNAL, Status: 1, Receive: 0, Send: 0, HasKeys: 1 },
+        { ID: '3', Email: 'a1@proton.me', Type: ADDRESS_TYPE.TYPE_ALIAS, Status: 1, Receive: 1, Send: 1, HasKeys: 1 },
+        { ID: '4', Email: 'a2@pm.me', Type: ADDRESS_TYPE.TYPE_PREMIUM, Status: 0, Receive: 0, Send: 0, HasKeys: 1 },
     ] as Address[];
 
     mockedUseAddresses.mockReturnValue([addresses, false]);

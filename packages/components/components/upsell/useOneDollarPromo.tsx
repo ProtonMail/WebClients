@@ -22,17 +22,13 @@ import { PriceCoupon, PriceLine } from './OneDollarPromoComponents';
 
 const OFFER_DEFAULT_AMOUNT_DUE = 100;
 
-interface Props {
-    newUpsellModalVariant?: boolean;
-}
-
 /**
  * Offers a $1 promo to free users
  * And a normal Unlimited upsell for the paid users.
  * We can't offer $1 Mail Plus to paid users as it might override their existing
  * subscription (e.g. VPN Plus).
  */
-const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
+const useOneDollarConfig = () => {
     const [user] = useUser();
     const [currency, loadingCurrency] = useAutomaticCurrency();
     const [loading, setLoading] = useState(true);
@@ -103,34 +99,16 @@ const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
         <PriceCoupon key="price-coupon-free" currency={currency} amountDue={amountDue} loading={loading} />
     );
 
-    if (newUpsellModalVariant) {
-        return {
-            submitText: user.isFree
-                ? c('Action').jt`Get ${planName} for ${priceCoupon}`
-                : getPlanOrAppNameText(planName),
-            footerText: user.isFree
-                ? c('new_plans: Subtext')
-                      .jt`The discounted price of ${priceCoupon} is valid for the first month. Then it will automatically be renewed at ${priceLine}. You can cancel at any time.`
-                : c('new_plans: Subtext')
-                      .jt`Unlock all ${BRAND_NAME} premium products and features for just ${priceLine}. Cancel anytime.`,
-            cycle,
-            coupon: user.isFree ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
-            planIDs: {
-                [planID]: 1,
-            },
-        };
-    }
-
     return {
-        submitText: user.isFree
-            ? c('new_plans: Action').jt`Get started for ${priceCoupon}`
-            : c('new_plans: Action').t`Upgrade`,
-        title: user.isFree ? c('Action').jt`Get ${planName} for ${priceCoupon}` : getPlanOrAppNameText(planName),
+        submitText: user.isFree ? c('Action').jt`Get ${planName} for ${priceCoupon}` : getPlanOrAppNameText(planName),
+        footerText: user.isFree
+            ? c('new_plans: Subtext')
+                  .jt`The discounted price of ${priceCoupon} is valid for the first month. Then it will automatically be renewed at ${priceLine}. You can cancel at any time.`
+            : c('new_plans: Subtext')
+                  .jt`Unlock all ${BRAND_NAME} premium products and features for just ${priceLine}. Cancel anytime.`,
         cycle,
         coupon: user.isFree ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
-        planIDs: {
-            [planID]: 1,
-        },
+        planIDs: { [planID]: 1 },
     };
 };
 
