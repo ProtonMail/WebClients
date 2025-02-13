@@ -78,6 +78,9 @@
       "Add phone number": [
         "Telefon numarası ekle"
       ],
+      "Add to album": [
+        "Albüme ekle"
+      ],
       "Add to group": [
         "Gruba ekle"
       ],
@@ -548,6 +551,9 @@
       ],
       "New": [
         "Yeni"
+      ],
+      "New album": [
+        "Yeni albüm"
       ],
       "New document": [
         "Yeni belge"
@@ -1340,6 +1346,12 @@
       ],
       "Take a tour": [
         "Keşfedin"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "${ photos.length } fotoğraf ekle",
+        "${ photos.length } fotoğraf ekle"
       ]
     },
     "Cancellation reminder": {
@@ -2421,6 +2433,11 @@
         "Süresi geçmiş fatura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2502,11 +2519,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4205,6 +4217,9 @@
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
       ],
+      "All albums": [
+        "Tüm albümler"
+      ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
@@ -4822,7 +4837,7 @@
         "Hayır"
       ],
       "No Albums": [
-        "Albüm yok"
+        "Herhangi bir albüm yok"
       ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
@@ -5017,6 +5032,9 @@
       ],
       "Ready to add some photos?": [
         "Fotoğraflarınızı eklemeye hazır mısınız?"
+      ],
+      "Recent": [
+        "En son"
       ],
       "recommended browser": [
         "önerilen tarayıcı"
@@ -7077,6 +7095,9 @@
       "Data breach monitoring": [
         "Verilerin ele geçirilmesini izleme"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Yayın akışı için optimize edilmiş özel sunucular"
+      ],
       "Desktop app": [
         "Bilgisayar uygulaması"
       ],
@@ -7127,9 +7148,6 @@
       ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
-      ],
-      "High-speed streaming": [
-        "Yüksek hızlı yayın akışı izleme"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } aygıt için yüksek hızlı VPN",
@@ -7185,10 +7203,6 @@
       ],
       "Proofread and refine your emails": [
         "E-postalarınızı düzeltin ve düzenleyin"
-      ],
-      "Protect ${ n } device at a time": [
-        "Aynı anda ${ n } aygıtı koruyun",
-        "Aynı anda ${ n } aygıtı koruyun"
       ],
       "Quickly craft replies": [
         "Yanıtları hızlıca oluşturun"
@@ -7320,6 +7334,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Aynı anda en fazla ${ n } cihazda kullanın",
+        "Aynı anda en fazla ${ n } cihazda kullanın"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -10619,6 +10637,11 @@
         "Bugün"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Bu paylaşılan dosyayı daha sonra kolayca erişebilmek için ${ DRIVE_APP_NAME } depolama alanınıza ekleyin"
@@ -10700,11 +10723,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Valentine_2025": {
@@ -10947,6 +10965,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 ardışık noktaya izin verilmez"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
@@ -10959,6 +10980,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Bu kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Başlangıçta nokta içermez"
+      ],
+      "Cannot contain a dot at the end": [
+        "Sonda nokta içermez"
       ],
       "Contacts could not be merged": [
         "Kişiler birleştirilemedi"
@@ -10981,8 +11008,8 @@
       "Name is required": [
         "Adın yazılması zorunludur"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Yalnızca alfanümerik küçük harf karakterlerine, noktalara, tirelere ve alt çizgilere izin verilir"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
