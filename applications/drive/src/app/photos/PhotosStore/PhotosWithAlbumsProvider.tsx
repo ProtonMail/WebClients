@@ -7,6 +7,7 @@ import {
     queryAlbums,
     queryDeletePhotosShare,
     queryPhotos,
+    queryUpdateAlbum,
 } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
@@ -47,22 +48,20 @@ export const PhotosWithAlbumsContext = createContext<{
     photos: Photo[];
     albumPhotos: Photo[];
     albums: DecryptedAlbum[];
-    loadPhotos: (abortSignal: AbortSignal, volumeId: string) => void;
-    addAlbumPhotos: (
-        abortSignal: AbortSignal,
-        volumeId: string,
-        shareId: string,
-        albumLinkId: string,
-        LinkIDs: string[]
-    ) => Promise<void>;
-    loadAlbumPhotos: (abortSignal: AbortSignal, volumeId: string, albumLinkId: string) => void;
-    loadAlbums: (abortSignal: AbortSignal, volumeId: string, shareId: string) => void;
+    loadPhotos: (abortSignal: AbortSignal) => void;
+    addAlbumPhotos: (abortSignal: AbortSignal, albumLinkId: string, LinkIDs: string[]) => Promise<void>;
+    addPhotoAsCover: (abortSignal: AbortSignal, albumLinkId: string, coverLinkId: string) => void;
+    loadAlbumPhotos: (abortSignal: AbortSignal, albumLinkId: string) => void;
+    loadAlbums: (abortSignal: AbortSignal) => void;
     removePhotosFromCache: (linkIds: string[]) => void;
-    deletePhotosShare: (volumeId: string, shareId: string) => Promise<void>;
+    deletePhotosShare: () => Promise<void>;
 } | null>(null);
 
 export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [photosShare, setPhotosShare] = useState<ShareWithKey>();
+    const shareId = photosShare?.shareId;
+    const volumeId = photosShare?.volumeId;
+
     const { getDefaultPhotosShare } = useDefaultShare();
     const { getPhotoCloneForAlbum } = useLinkActions();
     const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
@@ -101,20 +100,21 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         });
     }, []);
 
-    const photosSharevolumeId = photosShare?.volumeId;
-
     useEffect(() => {
-        if (photosSharevolumeId === undefined) {
+        if (volumeId === undefined) {
             return;
         }
 
-        driveEventManager.volumes.startSubscription(photosSharevolumeId, VolumeType.photo).catch(console.warn);
+        driveEventManager.volumes.startSubscription(volumeId, VolumeType.photo).catch(console.warn);
         return () => {
-            driveEventManager.volumes.unsubscribe(photosSharevolumeId);
+            driveEventManager.volumes.unsubscribe(volumeId);
         };
-    }, [photosSharevolumeId]);
+    }, [volumeId]);
 
-    const loadPhotos = async (abortSignal: AbortSignal, volumeId: string) => {
+    const loadPhotos = async (abortSignal: AbortSignal) => {
+        if (!volumeId || !shareId) {
+            return;
+        }
         const photoCall = async (lastLinkId?: string) => {
             const { Photos, Code } = await request<{ Photos: PhotoPayload[]; Code: number }>(
                 queryPhotos(volumeId, {
@@ -136,7 +136,10 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     };
 
     const loadAlbumPhotos = useCallback(
-        async (abortSignal: AbortSignal, volumeId: string, albumLinkId: string) => {
+        async (abortSignal: AbortSignal, albumLinkId: string) => {
+            if (!volumeId) {
+                return;
+            }
             const albumPhotosCall = async (anchorID?: string) => {
                 const { Photos, Code, AnchorID, More } = await request<{
                     Photos: PhotoPayload[];
@@ -172,8 +175,11 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         [request]
     );
 
-    const loadAlbums = async (abortSignal: AbortSignal, volumeId: string, shareId: string) => {
+    const loadAlbums = async (abortSignal: AbortSignal) => {
         const albumCall = async (anchorID?: string) => {
+            if (!volumeId || !shareId) {
+                return;
+            }
             const { Albums, Code, AnchorID, More } = await request<{
                 Albums: Album[];
                 Code: number;
@@ -212,15 +218,11 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         void albumCall();
     };
 
-    // Add an already uploaded photo to an album
     const addAlbumPhotos = useCallback(
-        async (
-            abortSignal: AbortSignal,
-            volumeId: string,
-            shareId: string,
-            albumLinkId: string,
-            LinkIDs: string[]
-        ): Promise<void> => {
+        async (abortSignal: AbortSignal, albumLinkId: string, LinkIDs: string[]): Promise<void> => {
+            if (!shareId || !volumeId) {
+                throw new Error('Photo volume or share not found');
+            }
             const links = await Promise.all(
                 LinkIDs.map(async (linkId) => {
                     const link = await getLink(abortSignal, shareId, linkId);
@@ -254,25 +256,51 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 );
                 for (const response of Responses) {
                     if (response.Code !== 1000) {
-                        // TODO: log errors / show toast "could not be added to album"
+                        throw new Error('Photo(s) could not be added to album');
                     }
                 }
-                void loadAlbumPhotos(abortSignal, volumeId, albumLinkId);
+                void loadAlbumPhotos(abortSignal, albumLinkId);
             };
-            void addAlbumPhotosCall();
+            return addAlbumPhotosCall();
+        },
+        [request, loadAlbumPhotos, getLink, getPhotoCloneForAlbum, volumeId, shareId]
+    );
+
+    const addPhotoAsCover = useCallback(
+        async (abortSignal: AbortSignal, albumLinkId: string, coverLinkId: string) => {
+            if (!volumeId) {
+                throw new Error('Photo volume not found');
+            }
+            const addPhotoAsCoverCall = async () => {
+                const response = await request<{
+                    Code: number;
+                }>(
+                    queryUpdateAlbum(volumeId, albumLinkId, {
+                        CoverLinkID: coverLinkId,
+                    }),
+                    abortSignal
+                );
+                if (response.Code !== 1000) {
+                    throw new Error('Failed to set album cover');
+                }
+            };
+            return addPhotoAsCoverCall();
         },
         [request]
     );
 
-    const removePhotosFromCache = (linkIds: string[]) => {
+    const removePhotosFromCache = useCallback((linkIds: string[]) => {
         setPhotos((prevPhotos) => {
             return prevPhotos.filter((photo) => !linkIds.includes(photo.linkId));
         });
-    };
+    }, []);
 
-    const deletePhotosShare = async (volumeId: string, shareId: string): Promise<void> => {
+    const deletePhotosShare = useCallback(async (): Promise<void> => {
+        if (!volumeId || !shareId) {
+            return;
+        }
         await request(queryDeletePhotosShare(volumeId, shareId));
-    };
+    }, [request, volumeId, shareId]);
 
     return (
         <PhotosWithAlbumsContext.Provider
@@ -288,6 +316,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 albums,
                 albumPhotos,
                 addAlbumPhotos,
+                addPhotoAsCover,
                 loadAlbumPhotos,
                 loadAlbums,
                 loadPhotos,

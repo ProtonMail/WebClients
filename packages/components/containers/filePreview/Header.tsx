@@ -35,6 +35,7 @@ interface Props {
     onSave?: () => Promise<void>;
     onDetails?: () => void;
     onShare?: () => void;
+    onSelectCover?: () => void; // photos inside album only
     onRestore?: () => void; // revision's specific
     onOpenInDocs?: () => void;
     date?: Date | string | number;
@@ -54,6 +55,7 @@ const Header = ({
     onShare,
     onRestore,
     onOpenInDocs,
+    onSelectCover,
     date,
     children,
 }: Props) => {
@@ -196,6 +198,18 @@ const Header = ({
                             alt={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
                             className={SHARED_STATUS_TO_COLOR[sharedStatus || '']}
                         />
+                    </Button>
+                )}
+                {onSelectCover && !isMobileHeaderPreview && (
+                    <Button
+                        icon
+                        shape="ghost"
+                        title={c('Action').t`Set as album cover`}
+                        onClick={onSelectCover}
+                        className="ml-2 md:inline-flex"
+                        data-testid="file-preview:actions:selectcover"
+                    >
+                        <Icon name="window-image" size={5} alt={c('Action').t`Set as album cover`} />
                     </Button>
                 )}
                 {onClose && (

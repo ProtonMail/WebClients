@@ -12,7 +12,7 @@ import { getSharedStatus } from '../../utils/share';
 import { SignatureAlertBody } from '../SignatureAlert';
 import SignatureIcon from '../SignatureIcon';
 
-interface Props {
+interface PortalPreviewProps {
     shareId: string;
     linkId: string;
     revisionId?: string;
@@ -20,6 +20,7 @@ interface Props {
     onDetails?: () => void;
     onRestore?: () => void;
     onShare?: () => void;
+    onSelectCover?: () => void;
     className?: string;
     navigationControls?: ReactNode;
 }
@@ -32,11 +33,12 @@ const PortalPreview = (
         onDetails,
         onRestore,
         onShare,
+        onSelectCover,
         date,
         className,
         navigationControls,
         ...modalProps
-    }: Props & ModalStateProps,
+    }: PortalPreviewProps & ModalStateProps,
     ref: Ref<HTMLDivElement>
 ) => {
     const { contents, contentsMimeType, link, error, isLinkLoading, isContentLoading, downloadFile } = useFileView(
@@ -104,6 +106,7 @@ const PortalPreview = (
                     onDetails={onDetails}
                     onRestore={onRestore}
                     onShare={onShare}
+                    onSelectCover={onSelectCover}
                     date={date}
                     navigationControls={navigationControls}
                     signatureStatus={signatureStatus}
