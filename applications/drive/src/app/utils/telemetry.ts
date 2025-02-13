@@ -33,6 +33,7 @@ export enum Features {
     globalBootstrapAppUserData = 'globalBootstrapAppUserData',
     globalBootstrapAppPostLoad = 'globalBootstrapAppPostLoad',
     globalBootstrapAppUserSettingsAddress = 'globalBootstrapAppUserSettingsAddress',
+    globalBootstrapAppLoadSession = 'globalBootstrapAppLoadSession',
 }
 
 /**
