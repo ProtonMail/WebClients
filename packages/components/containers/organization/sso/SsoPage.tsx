@@ -321,7 +321,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
 
     const ssoDomains = customDomains.filter((domain) => domain.Flags['sso-intent']);
 
-    const ssoAppInfo = getSsoAppInfo(app);
+    const ssoAppInfo = getSsoAppInfo(app, organization.PlanName);
 
     if (!planSupportsSSO(organization.PlanName)) {
         return (
