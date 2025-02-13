@@ -831,6 +831,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Error en la autenticación. Confirme la contraseña de ${ BRAND_NAME } para continuar con la exportación."
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Error con la autenticación. Confirme su contraseña de respaldo para continuar con la exportación."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Error con la autenticación. Confirme su contraseña adicional para continuar con la exportación."
+      ],
       "Biometric authentication failed": [
         "Error en la autenticación biométrica"
       ],
@@ -4210,6 +4216,9 @@
       "${ BRAND_NAME } password is required": [
         "Se requiere la contraseña de ${ BRAND_NAME }"
       ],
+      "2 consecutive dots are not allowed": [
+        "No se permite el uso de 2 puntos consecutivos."
+      ],
       "A description of the problem is required": [
         "Se requiere una descripción del problema"
       ],
@@ -4238,6 +4247,12 @@
       ],
       "At least one email address is required": [
         "Al menos se requiere una dirección de correo electrónico"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "No puede empezar por un punto."
+      ],
+      "Cannot contain a dot at the end": [
+        "No puede terminar con un punto."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No se pueden recuperar buzones para este alias en este momento"
@@ -4354,8 +4369,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Una vez sincronizado, al eliminar los alias en ${ PASS_SHORT_APP_NAME } también se eliminarán en SimpleLogin."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Solo se permiten caracteres alfanuméricos en minúscula, puntos, guiones y guiones bajos."
       ],
       "Passphrase is required": [
         "Frase de contraseña requerida"

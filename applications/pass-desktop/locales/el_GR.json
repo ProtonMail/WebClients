@@ -320,7 +320,7 @@
         "Συμπερίληψη στην παρακολούθηση"
       ],
       "Install extension": [
-        "Εγκατάσταση επέκτασης"
+        "Εγκατάσταση προέκτασης"
       ],
       "Invite more...": [
         "Προσκαλέστε περισσότερους..."
@@ -830,6 +830,12 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να προχωρήσετε στην εξαγωγή"
+      ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης σας για να προχωρήσετε στην εξαγωγή"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης σας για να προχωρήσετε στην εξαγωγή"
       ],
       "Biometric authentication failed": [
         "Ο βιομετρικός έλεγχος ταυτότητας απέτυχε"
@@ -1574,7 +1580,7 @@
         "Απόθεση για εισαγωγή"
       ],
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Λόγω περιορισμού των επεκτάσεων του προγράμματος περιήγησης Safari, μετά την εξαγωγή των δεδομένων θα λείπει η επέκταση αρχείου \".pgp\". Μετονομάστε το αρχείο για να συμπεριλάβετε την επέκταση .pgp (π.χ. file.pgp) μετά την εξαγωγή."
+        "Λόγω περιορισμού των προεκτάσεων του προγράμματος περιήγησης Safari, μετά την εξαγωγή των δεδομένων θα λείπει η επέκταση αρχείου \".pgp\". Μετονομάστε το αρχείο για να συμπεριλάβετε την επέκταση .pgp (π.χ. file.pgp) μετά την εξαγωγή."
       ],
       "Editor": [
         "Πρόγραμμα επεξεργασίας"
@@ -1721,7 +1727,7 @@
         "Στο ${ PASS_SHORT_APP_NAME }, μια σημείωση στοιχείου κρυπτογραφείται με το κλειδί κρυπτογράφησης στοιχείου και μόνο οι χρήστες που έχουν πρόσβαση στο στοιχείο μπορούν να δουν τη σημείωση. Ούτε καν η ${ BRAND_NAME } ή η SimpleLogin δεν μπορούν να το δουν."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Για να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }, παραχωρήστε τα απαραίτητα δικαιώματα επέκτασης"
+        "Για να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }, παραχωρήστε τα απαραίτητα δικαιώματα προέκτασης"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Εγκαταστήστε το ${ PASS_APP_NAME } για ${ browser.title } για γρήγορη αυτόματη συμπλήρωση των στοιχείων της σύνδεσής σας."
@@ -2780,7 +2786,7 @@
         "Ξεκινήστε"
       ],
       "Get the extension for your browser.": [
-        "Αποκτήστε την επέκταση για το πρόγραμμα περιήγησής σας."
+        "Αποκτήστε την προέκταση για το πρόγραμμα περιήγησής σας."
       ],
       "Grant": [
         "Παραχώρηση"
@@ -2840,7 +2846,7 @@
         "Εγκατάσταση και συνέχεια"
       ],
       "Install extension": [
-        "Εγκατάσταση επέκτασης"
+        "Εγκατάσταση προέκτασης"
       ],
       "Integrated 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής 2FA"
@@ -3832,7 +3838,7 @@
         "Απενεργοποιημένο 2FA"
       ],
       "Install extension": [
-        "Εγκατάσταση επέκτασης"
+        "Εγκατάσταση προέκτασης"
       ],
       "Item": [
         "Στοιχείο"
@@ -4119,6 +4125,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 διαδοχικές κουκκίδες δεν επιτρέπονται"
+      ],
       "A description of the problem is required": [
         "Απαιτείται περιγραφή του προβλήματος"
       ],
@@ -4147,6 +4156,12 @@
       ],
       "At least one email address is required": [
         "Απαιτείται τουλάχιστον μία διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Δεν μπορεί να περιέχει τελεία στην αρχή"
+      ],
+      "Cannot contain a dot at the end": [
+        "Δεν μπορεί να περιέχει τελεία στο τέλος"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Δεν είναι δυνατή η ανάκτηση γραμματοκιβωτίων για αυτό το ψευδώνυμο αυτήν τη στιγμή"
@@ -4263,8 +4278,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Μετά τον συγχρονισμό, διαγράφοντας ψευδώνυμα στο ${ PASS_SHORT_APP_NAME } αυτά θα διαγραφούν ταυτόχρονα και από το SimpleLogin"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Επιτρέπονται μόνο αλφαριθμητικοί πεζοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
       ],
       "Passphrase is required": [
         "Απαιτείται φράση πρόσβασης"
@@ -4276,7 +4291,7 @@
         "Το κρυπτογραφημένο αρχείο εξαγωγής PGP απαιτεί φράση πρόσβασης"
       ],
       "Please check that the extension is properly installed and enabled": [
-        "Παρακαλούμε ελέγξτε ότι η επέκταση έχει εγκατασταθεί και ενεργοποιηθεί σωστά"
+        "Παρακαλούμε ελέγξτε ότι η προέκταση έχει εγκατασταθεί και ενεργοποιηθεί σωστά"
       ],
       "Please contact us to investigate the issue": [
         "Επικοινωνήστε μαζί μας για να διερευνήσουμε το ζήτημα"
@@ -4285,7 +4300,7 @@
         "Παρακαλούμε σημειώστε ότι μετά τη διαγραφή, τα ψευδώνυμα δεν είναι δυνατό να επαναφερθούν"
       ],
       "Please update the extension to its latest version": [
-        "Παρακαλούμε ενημερώστε την επέκταση στην πιο πρόσφατη έκδοσή της"
+        "Παρακαλούμε ενημερώστε την προέκταση στην πιο πρόσφατη έκδοσή της"
       ],
       "Please verify your email address in order to use email aliases": [
         "Παρακαλούμε επαληθεύστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για να χρησιμοποιήσετε ψευδώνυμα διευθύνσεων ηλεκτρονικού ταχυδρομείου"
