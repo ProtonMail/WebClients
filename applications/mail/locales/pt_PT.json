@@ -1357,11 +1357,11 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ],
       "Upgrade Now": [
         "Atualizar agora"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Atualize para o plano ${ BRAND_NAME } Unlimited"
@@ -9593,6 +9593,9 @@
       "Data breach monitoring": [
         "Monitoramento das violações de dados"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Servidores dedicados otimizados para streaming"
+      ],
       "Desktop app": [
         "Aplicação de desktop"
       ],
@@ -9643,9 +9646,6 @@
       ],
       "Group management (coming soon)": [
         "Gestão de grupos (em breve)"
-      ],
-      "High-speed streaming": [
-        "Streaming de alta velocidade"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidade em ${ n } dispositivo",
@@ -9701,10 +9701,6 @@
       ],
       "Proofread and refine your emails": [
         "Revise e refine os seus e-mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Proteja ${ n } dispositivo ao mesmo tempo",
-        "Proteja ${ n } dispositivos ao mesmo tempo"
       ],
       "Quickly craft replies": [
         "Crie respostas rapidamente"
@@ -9836,6 +9832,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Utilize em até ${ n } dispositivo em simultâneo",
+        "Utilize em até ${ n } dispositivos em simultâneo"
       ],
       "User credential management": [
         "Gestão das credenciais dos utilizadores"
@@ -13893,6 +13893,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } irá transferir o máximo de dados possível, começando pelas mensagens mais recentes."
       ],
+      "2 consecutive dots are not allowed": [
+        "Não é permitido o uso de 2 pontos consecutivos."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Tem a certeza de que deseja eliminar permanentemente ${ count } contacto?",
         "Tem a certeza de que deseja eliminar permanentemente ${ count } contactos?"
@@ -13905,6 +13908,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Tem a certeza de que deseja eliminar permanentemente este contacto?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Não pode começar por um ponto."
+      ],
+      "Cannot contain a dot at the end": [
+        "Não pode conter um ponto no final."
       ],
       "Contacts could not be merged": [
         "Não foi possível unir os contactos."
@@ -13927,8 +13936,8 @@
       "Name is required": [
         "É necessário um nome."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Só são permitidos caracteres alfanuméricos, pontos, hífenes e sublinhados"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Note que ao escolher este método de pagamento, a sua conta não poderá ser atualizada imediatamente. Faremos a atualização assim que o pagamento for aprovado."

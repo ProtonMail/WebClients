@@ -1353,10 +1353,10 @@
       "Upgrade": [
         "업그레이드"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "지금 업그레이드"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "지금 업그레이드"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1915,6 +1915,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "닫기"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
       ],
@@ -6401,7 +6404,7 @@
         "폴더"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "추가적인 정보와 제한을 없애기 위해 ${ mailLink } 에서 로그인 해주세요."
+        "추가적인 정보와 제한을 없애기 위해 ${ mailLink }(에)서 로그인 해주세요."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
@@ -6743,7 +6746,7 @@
         "조직의 전용 서버 수"
       ],
       "of": [
-        "의"
+        "/"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
@@ -9479,9 +9482,6 @@
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
-      "High-speed streaming": [
-        "고속 스트리밍"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 기기에서 고속 VPN"
       ],
@@ -9535,9 +9535,6 @@
       ],
       "Proofread and refine your emails": [
         "이메일 교정 및 수정하기"
-      ],
-      "Protect ${ n } device at a time": [
-        "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Quickly craft replies": [
         "신속하게 답변 작성하기"
@@ -13584,7 +13581,7 @@
         "이메일을 통한 Bitcoin"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소． 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 보내실 수 있습니다．"
+        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소. 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 송금하 수 있습니다．"
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "착오가 발생하기 쉬운 복잡한 26자 Bitcoin 주소 대신 이메일을 통해 Bitcoin을 안전하게 거래하세요"
@@ -13597,7 +13594,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "비트코인을 보관할 더 안전한 방법"
+        "Bitcoin을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -13660,9 +13657,6 @@
       ],
       "Name is required": [
         "이름은 필수입니다"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."

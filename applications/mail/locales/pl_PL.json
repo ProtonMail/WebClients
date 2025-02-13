@@ -549,6 +549,9 @@
       "Get started": [
         "Rozpocznij"
       ],
+      "Get the app": [
+        "Pobierz aplikację"
+      ],
       "Get the browser extension": [
         "Pobierz rozszerzenie przeglądarki"
       ],
@@ -1356,10 +1359,10 @@
       "Upgrade": [
         "Ulepsz"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Ulepsz teraz"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Ulepsz teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5230,6 +5233,11 @@
         "Bardzo mała"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Data: ${ date }"
@@ -6440,6 +6448,9 @@
       "Create in": [
         "Utwórz w"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Tworzenie wielu bezpłatnych kont nie jest dozwolone przez ${ termsLink }."
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Niewykorzystane środki z poprzedniego planu"
       ],
@@ -6605,6 +6616,9 @@
       "Encrypt message": [
         "Zaszyfruj wiadomość"
       ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Ciesz się szybszym wysyłaniem wiadomości za pomocą aplikacji desktopowej."
+      ],
       "Enter the code from your authenticator app": [
         "Wpisz kod z aplikacji uwierzytelniającej"
       ],
@@ -6674,6 +6688,9 @@
       "Folder": [
         "Folder"
       ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Aby uzyskać dodatkowe informacje i usunąć ograniczenia, zaloguj się pod adresem ${ mailLink }."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Dla wiadomości nowszych niż ${ oldestDate }"
       ],
@@ -6694,6 +6711,9 @@
       ],
       "Get it on Google Play": [
         "Pobierz z Google Play"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Zastosuj kolorowe etykiety do rachunków, np. “${ suggestedLabelName }“. Po ich opłaceniu zmień etykietę na “${ suggestedPaidLabelName }“."
@@ -6808,6 +6828,9 @@
       ],
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
+      ],
+      "Invite family members and get everything up and running.": [
+        "Zaproś użytkowników rodziny i rozpocznij."
       ],
       "JCB logo": [
         "Logo JCB"
@@ -7160,6 +7183,9 @@
       "Public sharing of documents is not yet supported.": [
         "Publiczne udostępnianie dokumentów nie jest obsługiwane."
       ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Skontaktuj się z nami, aby uzyskać pomoc ${ BRAND_NAME }."
+      ],
       "Recipient: ": [
         "Odbiorca: "
       ],
@@ -7250,6 +7276,9 @@
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Wyślij zaszyfrowaną, chronioną hasłem wiadomość do ${ boldText }."
       ],
+      "Send messages at just the right now": [
+        "Wysyłaj wiadomości w odpowiednim momencie"
+      ],
       "Sender has been blocked.": [
         "Nadawca został zablokowany."
       ],
@@ -7298,6 +7327,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Odłóż wiadomości na później, aby znalazły się na górze skrzynki odbiorczej wtedy, kiedy chcesz"
+      ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
         "Odłożono: ${ dateString }, ${ formattedTime }"
       ],
@@ -7315,6 +7347,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Używaj krótszej i bardziej chwytliwej nazwy swojego adresu e-mail."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Funkcje przechowywania nie są obsługiwane w tej przeglądarce. Potrzebujemy tej obsługi, aby umożliwić wyszukiwanie zawartości wiadomości."
@@ -7715,6 +7750,9 @@
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
       ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Mamy plany zaprojektowane specjalnie dla użytkowników takich jak Ty, którzy potrzebują więcej niż jednego adresu e-mail."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Musimy zweryfikować metodę płatności z Twoim bankiem."
       ],
@@ -7798,6 +7836,9 @@
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Możesz dodać plik jako załącznik lub osadzony obraz w treści wiadomości."
+      ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Możesz dodać własną domenę do ${ MAIL_APP_NAME }"
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami ${ BRAND_NAME }."
@@ -8021,6 +8062,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your password was leaked:": [
         "Twoje hasło zostało ujawnione:"
       ],
@@ -8029,6 +8073,12 @@
       ],
       "Your private writing assistant": [
         "Twój prywatny asystent pisania"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ]
     },
     "info": {
@@ -9861,9 +9911,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "High-speed streaming": [
-        "Szybki streaming"
-      ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
         "Szybki VPN na ${ n } urządzenia",
@@ -9921,12 +9968,6 @@
       "Proofread and refine your emails": [
         "Sprawdzaj i poprawiaj teksty"
       ],
-      "Protect ${ n } device at a time": [
-        "Ochrona ${ n } urządzenia jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzenia jednocześnie"
-      ],
       "Quickly craft replies": [
         "Twórz szybsze wiadomości"
       ],
@@ -9956,6 +9997,9 @@
       ],
       "Secure Core servers": [
         "Serwery Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
       ],
       "Secure link sharing": [
         "Bezpieczne udostępnianie linków"
@@ -10567,6 +10611,12 @@
       ]
     },
     "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Oferta ${ pricingTitle } wygasa dzisiaj!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Wybierz plan Drive Plus za ${ pricingTitle }"
+      ],
       "Get Mail Plus for only ${ pricingTitle }": [
         "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
       ],
@@ -10593,8 +10643,14 @@
       "Email addresses": [
         "Adresy e-mail"
       ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ],
       "Storage": [
         "Przestrzeń dyskowa"
@@ -13190,7 +13246,7 @@
         "Odzyskiwanie konta"
       ],
       "Account restricted": [
-        "Konto ograniczone"
+        "Konto zostało ograniczone"
       ],
       "Account security": [
         "Bezpieczeństwo konta"
@@ -14155,6 +14211,9 @@
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
@@ -14280,9 +14339,6 @@
       ],
       "Name is required": [
         "Nazwa jest wymagana"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
