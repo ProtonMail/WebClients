@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
-import { NewUpsellModal, useMailUpsellConfig } from '@proton/components';
+import { UpsellModal, useMailUpsellConfig } from '@proton/components';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import snoozeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/alarm-clock.svg';
@@ -16,7 +16,7 @@ const SnoozeDurationSelection = (props: ModalStateProps) => {
     const { upsellConfig } = useMailUpsellConfig({ upsellRef });
 
     return (
-        <NewUpsellModal
+        <UpsellModal
             data-testid="composer:snooze-message:upsell-modal"
             titleModal={c('Title').t`Bad time for this email?`}
             description={c('Description')

@@ -334,7 +334,7 @@ export { default as TopNavbarUpsell } from './components/topnavbar/TopNavbarUpse
 export { default as TreeViewContainer } from './components/treeview/TreeViewContainer';
 export { default as TreeViewItem } from './components/treeview/TreeViewItem';
 export type { UpsellFeature as UpsellFeatures } from './components/upsell/modal/interface';
-export { default as NewUpsellModal } from './components/upsell/modal/NewUpsellModal';
+export { default as UpsellModal } from './components/upsell/modal/UpsellModal';
 export { default as AutoDeleteUpsellModal } from './components/upsell/modal/types/AutoDeleteUpsellModal';
 export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modal/types/ComposerAssistantB2BUpsellModal';
 export { default as DWMUpsellModal } from './components/upsell/modal/types/DWMUpsellModal';

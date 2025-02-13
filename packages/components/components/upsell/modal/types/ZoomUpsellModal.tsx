@@ -12,7 +12,7 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import zoomUpsellSvg from '@proton/styles/assets/img/illustrations/upsell-zoom-header.svg';
 
 import { useMailUpsellConfig } from '../../useMailUpsellConfig';
-import NewUpsellModal from '../NewUpsellModal';
+import UpsellModal from '../UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -29,7 +29,7 @@ const ZoomUpsellModal = ({ modalProps }: Props) => {
     const { upsellConfig } = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
 
     return (
-        <NewUpsellModal
+        <UpsellModal
             titleModal={c('Title').t`Schedule meetings in one click`}
             description={c('Description')
                 .t`Create a Zoom meeting and add joining details to your event with one click.`}

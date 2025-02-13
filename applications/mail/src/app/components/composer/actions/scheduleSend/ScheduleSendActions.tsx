@@ -7,8 +7,8 @@ import { Button } from '@proton/atoms';
 import {
     DropdownMenu,
     DropdownMenuButton,
-    NewUpsellModal,
     SimpleDropdown,
+    UpsellModal,
     useMailUpsellConfig,
     useModalState,
 } from '@proton/components';
@@ -200,7 +200,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                     />
                 </SimpleDropdown>
                 {renderUpsellModal && (
-                    <NewUpsellModal
+                    <UpsellModal
                         data-testid="composer:schedule-send:upsell-modal"
                         titleModal={c('Title').t`Schedule now, send later`}
                         description={c('Description')
