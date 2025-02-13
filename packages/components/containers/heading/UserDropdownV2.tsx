@@ -154,25 +154,27 @@ const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgra
 const AddAccountButton = ({
     showAsButton = false,
     className,
-    copy = () => c('Action').t`Add account`,
+    cta,
 }: {
     showAsButton?: boolean;
     className?: string;
-    copy?: () => string;
+    cta?: string;
 }) => {
     const { loginHref, onSwitchAccount } = useContext(UserDropdownContext);
 
     const commonProps = {
         href: loginHref,
-        target: '_blank',
+        target: '_self',
         onClick: (event: MouseEvent<HTMLAnchorElement>) => onSwitchAccount(event, ForkType.LOGIN),
         'data-testid': 'userdropdown:button:add-account',
     };
 
+    const copy = cta || c('Action').t`Add account`;
+
     if (showAsButton) {
         return (
             <ButtonLike as="a" shape="outline" color="weak" fullWidth className={clsx(className)} {...commonProps}>
-                {copy()}
+                {copy}
             </ButtonLike>
         );
     }
@@ -188,7 +190,7 @@ const AddAccountButton = ({
             {...commonProps}
         >
             <Icon name="plus" className="shrink-0" />
-            {copy()}
+            {copy}
         </a>
     );
 };
@@ -278,7 +280,7 @@ export const UserDropdownV2 = () => {
                 <div className="mb-4 px-4 flex flex-column gap-2">
                     {showSwitchAccountButton && !accountSessions.hasList ? (
                         accountSessions.hasAddAccount ? (
-                            <AddAccountButton showAsButton copy={() => c('Action').t`Add another account`} />
+                            <AddAccountButton showAsButton cta={c('Action').t`Add another account`} />
                         ) : (
                             <SwitchAccountButton />
                         )
