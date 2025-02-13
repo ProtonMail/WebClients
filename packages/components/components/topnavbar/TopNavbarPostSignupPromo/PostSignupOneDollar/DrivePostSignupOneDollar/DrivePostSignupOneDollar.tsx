@@ -59,7 +59,7 @@ export const DrivePostSignupOneDollar = () => {
     );
 
     useEffect(() => {
-        if (openSpotlight) {
+        if (openSpotlight && driveOfferState) {
             sendReportDrivePostSignup({
                 event: TelemetryMailDrivePostSignupOneDollar.automaticModalOpen,
                 dimensions: {
@@ -67,7 +67,7 @@ export const DrivePostSignupOneDollar = () => {
                 },
             });
         }
-    }, []);
+    }, [driveOfferState?.Value]);
 
     const [spotlightState, setSpotlightState] = useState(openSpotlight);
     const show = useSpotlightShow(spotlightState, 3000);

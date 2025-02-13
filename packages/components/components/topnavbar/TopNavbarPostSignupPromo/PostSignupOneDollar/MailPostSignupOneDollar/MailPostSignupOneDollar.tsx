@@ -66,10 +66,10 @@ export const MailPostSignupOneDollar = () => {
     });
 
     useEffect(() => {
-        if (openSpotlight) {
+        if (openSpotlight && mailOfferState) {
             sendReportAutomaticModalOpen(daysSinceOffer);
         }
-    }, []);
+    }, [mailOfferState?.Value]);
 
     const upgradeText = c('specialoffer: Link').jt`Upgrade for ${pricingTitle}`;
     const upgradeIcon = upgradeText.length > 15 && viewportWidth['>=large'] ? undefined : 'upgrade';
