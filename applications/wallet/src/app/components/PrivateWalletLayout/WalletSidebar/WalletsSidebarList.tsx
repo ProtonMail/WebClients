@@ -126,11 +126,8 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme, apiWalletsD
                                 left={<SidebarListItemContentIcon className="color-hint" name="plus-circle" />}
                                 className="sidebar-item-content flex gap-2 w-full pl-6"
                             >
-                                <div
-                                    className="flex flex-row flex-nowrap justify-space-between items-center w-full relative color-hint"
-                                    title={'Add account'}
-                                >
-                                    {'Add account'}
+                                <div className="flex flex-row flex-nowrap justify-space-between items-center w-full relative color-hint">
+                                    {c('Wallet sidebar').t`Add account`}
                                 </div>
                             </SidebarListItemContent>
                         </SidebarListItemButton>
