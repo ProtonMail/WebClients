@@ -1128,6 +1128,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "A apărut o problemă la pornirea ${ PASS_SHORT_APP_NAME }. Dacă această problemă continuă, contactați asistența pentru clienți pentru ajutor."
       ],
+      "Wrong backup password": [
+        "Parolă de rezervă greșită"
+      ],
       "Wrong extra password": [
         "Parolă suplimentară greșită."
       ],
@@ -4051,9 +4054,6 @@
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "După sincronizare, aliasurile șterse din ${ PASS_SHORT_APP_NAME } vor fi șterse și din SimpleLogin."
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."
       ],
       "Passphrase is required": [
         "Este necesară o frază de acces."
