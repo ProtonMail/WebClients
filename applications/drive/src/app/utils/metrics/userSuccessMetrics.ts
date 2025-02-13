@@ -12,7 +12,7 @@ let metricSharedWorker: Remote<MetricSharedWorkerInterface> | undefined = undefi
 let connectionId: string;
 
 export const userSuccessMetrics = {
-    init: async () => {
+    init: () => {
         // It appears certain Mobile browsers do not support SharedWorker
         // Since these are marginal we simply omit them for now
         // Plan is to fallback to simple Workers
