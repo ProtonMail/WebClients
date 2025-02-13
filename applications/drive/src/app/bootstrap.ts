@@ -16,6 +16,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { appMode } from '@proton/shared/lib/webpack.constants';
@@ -31,6 +32,7 @@ import { loadStreamsPolyfill } from './utils/webSteamsPolyfill';
 import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+    setMetricsEnabled(true);
     const appName = config.APP_NAME;
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
@@ -38,17 +40,20 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
-    await userSuccessMetrics.init();
+    userSuccessMetrics.init();
     setupGuestCrossStorage({ appMode, appName });
-
     initSafariFontFixClassnames();
 
     const run = async () => {
+        const sessionFeature = measureFeaturePerformance(api, Features.globalBootstrapAppLoadSession);
+        sessionFeature.start();
         const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
+        sessionFeature.end(undefined, api);
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
+
         unleashVanillaStore.getState().setClient(unleashClient);
         const store = setupStore();
         const dispatch = store.dispatch;
