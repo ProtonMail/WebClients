@@ -34,7 +34,6 @@ export interface Props {
     background?: Background;
     isB2bPlan?: boolean;
     footer?: ReactNode;
-    headerCenterElement?: ReactNode;
 }
 
 const Layout = ({
@@ -48,7 +47,6 @@ const Layout = ({
     background,
     isB2bPlan,
     footer,
-    headerCenterElement,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { viewportWidth } = useActiveBreakpoint();
@@ -106,7 +104,6 @@ const Layout = ({
                     )
                 }
                 isDarkBg={isDarkBg && !viewportWidth.xsmall}
-                centerElement={headerCenterElement}
             />
             <main className="flex-auto flex flex-nowrap flex-column justify-space-between md:mx-12 mx-6">
                 {children}
