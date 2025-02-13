@@ -4,11 +4,6 @@
     "language": "tr_TR"
   },
   "contexts": {
-    "Account upgrade": {
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Geçerli tarifeniz tarafından desteklenen en fazla hesap sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
@@ -417,7 +412,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus ve ${ CALENDAR_SHORT_APP_NAME }"
@@ -859,6 +854,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Kapat"
+      ],
       "Create label": [
         "Etiket oluştur"
       ],
@@ -2801,9 +2799,6 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Plus aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime forsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
-      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -2830,7 +2825,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı hakkında bilgi almak için bizimle ${ email } adresinden görüşün."
+        "Nakit ödemenin nasıl yapılacağı ile ilgili bilgi almak için bizimle ${ email } adresinden görüşün."
       ]
     },
     "Info; access rights for shared calendar": {
@@ -3349,8 +3344,11 @@
       "Data breach monitoring": [
         "Verilerin ele geçirilmesini izleme"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Yayın akışı için optimize edilmiş özel sunucular"
+      ],
       "Desktop app": [
-        "Masaüstü uygulaması"
+        "Bilgisayar uygulaması"
       ],
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
@@ -3396,9 +3394,6 @@
       ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
-      ],
-      "High-speed streaming": [
-        "Yüksek hızlı yayın akışı izleme"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } aygıt için yüksek hızlı VPN",
@@ -3448,10 +3443,6 @@
       ],
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
-      ],
-      "Protect ${ n } device at a time": [
-        "Aynı anda ${ n } aygıtı koruyun",
-        "Aynı anda ${ n } aygıtı koruyun"
       ],
       "Recover previous file versions": [
         "Önceki dosya sürümlerine dönün"
@@ -3504,7 +3495,7 @@
       "Sync and backup all your files across devices": [
         "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "VPN üzerinden Tor"
       ],
       "Two-factor authentication": [
@@ -3565,6 +3556,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Aynı anda en fazla ${ n } cihazda kullanın",
+        "Aynı anda en fazla ${ n } cihazda kullanın"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -3715,7 +3710,7 @@
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Masaüstünüzün rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
+        "Bilgisayarınızın rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
@@ -3776,7 +3771,7 @@
         "Kullanıcı kimlik doğrulama bilgilerinin ele geçirildiğini düşündüğünüzde kullanıcı oturumlarını zorla kapatın"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
+        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden bilgisayar uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
       ],
       "Increase or reallocate storage for a user": [
         "Bir kullanıcının depolama alanını artırın ya da yeniden ayarlayın"
@@ -4142,8 +4137,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Bu ödemeyi onaylayarak, ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine bankanıza hesabınızdan para çekmesi talimatını vermesini ve bankanızın da buna göre hesabınızdan para çekmesine izin vermiş olursunuz. Bankanızla yaptığınız anlaşmanın koşulları uyarınca, paranın çekilme tarihinden itibaren 8 hafta içinde geri ödeme alabilirsiniz."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
       ],
       "Street address, postal code, and city": [
         "Sokak adresi, posta kodu ve il"
@@ -4971,14 +4966,8 @@
       "Could not fetch wallets data": [
         "Cüzdan verileri alınamadı"
       ],
-      "Explore other ${ BRAND_NAME } products": [
-        "Diğer ${ BRAND_NAME } ürünlerini keşfedin"
-      ],
       "Syncing new data": [
         "Yeni veriler eşitleniyor"
-      ],
-      "Upgrade to Visionary": [
-        "Visionary tarifesine yükselt"
       ],
       "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
         "Tarayıcınız veya aygıt yazılımınız ${ WALLET_APP_NAME } uygulamasını desteklemiyor. Lütfen tarayıcınızı veya aygıtınızı güncelleyin. Alternatif olarak, mobil uygulamalarımızdan birini kullanabilirsiniz."
@@ -5106,23 +5095,6 @@
         "Hesabınızı korumak için 2 adımlı doğrulamayı kurun"
       ]
     },
-    "Wallet explore proton": {
-      "An encrypted password manager that protects your online identity.": [
-        "Çevrim içi kimliğinizi koruyan şifrelenmiş parola yöneticisi."
-      ],
-      "Encrypted email that's private by default.": [
-        "Gizlilik odaklı şifrelenmiş e-posta."
-      ],
-      "Improve the security of your business and comply with data protection laws.": [
-        "Kurumunuzun güvenliğini geliştirin ve veri koruma kanunlarına uyun."
-      ],
-      "Secure cloud storage that gives you control of your data.": [
-        "Bilgilerinizin kontrolunu size veren güvenli bulut depolama alanı."
-      ],
-      "Your calendar is a record of your life. Keep it safe.": [
-        "Takviminiz hayatınızın bir kaydıdır. Onu güvende tutun."
-      ]
-    },
     "Wallet header": {
       "Secure your wallet": [
         "Cüzdanınızı koruyun"
@@ -5168,9 +5140,6 @@
       ]
     },
     "Wallet invite": {
-      "${ WALLET_APP_NAME } Early Access is limited to Visionary supporters and invited users.": [
-        "${ WALLET_APP_NAME } uygulamasına Visionary tarifesinde olan ve davet edilmiş kullanıcılar erkenden erişebilir."
-      ],
       "Close": [
         "Kapat"
       ],
@@ -5183,14 +5152,8 @@
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
       ],
-      "Exclusive Invites": [
-        "Özel davetler"
-      ],
       "Invitation sent to ${ email }": [
         "Davet ${ email } adresine gönderildi"
-      ],
-      "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
-        "Arkadaşlarınızı ve ailenizi davet edin. Böylece hepiniz E-posta ile Bitcoin gönderebilirsiniz. Yeni sunucular ekledikçe daha fazla davet alacaksınız."
       ],
       "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
         "Arkadaşlarınızı ve ailenizi ${ WALLET_APP_NAME } kullanmaya davet edin. Böylece hepiniz E-posta ile Bitcoin aktarımı yapabilirsiniz."
@@ -5227,10 +5190,6 @@
       ]
     },
     "Wallet invites": {
-      "${ availableInvites } invite left": [
-        "${ availableInvites } davet hakkı kaldı",
-        "${ availableInvites } davet hakkı kaldı"
-      ],
       "Invite your friends": [
         "Arkadaşlarınızı davet edin"
       ]
@@ -5971,6 +5930,15 @@
       "Unlock more email addresses": [
         "Daha fazla e-posta adresi elde edin"
       ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Geçerli tarifeniz ile oluşturabileceğiniz en fazla hesap sayısına ulaştınız."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Geçerli tarifeniz tarafından desteklenen en fazla hesap sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Geçerli tarifeniz ile oluşturabileceğiniz en fazla cüzdan sayısına ulaştınız."
+      ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Geçerli tarifeniz tarafından desteklenen en fazla cüzdan sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
       ]
@@ -5984,33 +5952,24 @@
       ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
+      ],
+      "You have reached your limit": [
+        "Sınırınıza ulaştınız"
       ]
     },
     "Wallet Welcome": {
-      "Early Access Waitlist": [
-        "Erken erişim bekleme listesi"
-      ],
-      "Invites from active users of ${ WALLET_APP_NAME } will allow you to skip this waiting list.": [
-        "Etkin ${ WALLET_APP_NAME } kullanıcılarından alınan davetler, bu bekleme listesini aşmanızı sağlar."
-      ],
       "Welcome to ${ WALLET_APP_NAME }": [
         "${ WALLET_APP_NAME } uygulamasına hoş geldiniz"
-      ],
-      "You can also support us and get immediate access by upgrading to ${ BRAND_NAME } Visionary, our most premium plan with paid features in all ${ BRAND_NAME } products.": [
-        "${ BRAND_NAME } Visionary tarifesine yükselterek bizi destekleyebilir ve anında erişim elde edebilirsiniz. Bu tarife tüm ${ BRAND_NAME } ürünleri ve ücretli özellikleri ile en kapsamlı tarifemizdir."
-      ],
-      "You have been added to the first come, first serve waiting list. We will notify you at ${ email } once we have more server capacity.": [
-        "İlk gelenin, ilk hizmet alacağı listeye eklendiniz. Sunucu kapasitemizi artırdığımızda ${ email } adresinizden sizi bilgilendireceğiz."
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-posta adresi",
+        "${ n } ${ BRAND_NAME } e-posta adresi"
+      ],
       "${ n } account per wallet": [
         "Cüzdan başına ${ n } hesap",
         "Cüzdan başına ${ n } hesap"
-      ],
-      "${ n } email address": [
-        "${ n } e-posta adresi",
-        "${ n } e-posta adresi"
       ],
       "${ n } wallet": [
         "${ n } cüzdan",
@@ -6021,6 +5980,12 @@
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Şifrelenmiş ve güvenli ${ MAIL_APP_NAME } e-posta adresi. Yalnızca ${ BRAND_NAME } adını kullanarak birine kolayca Bitcoin gönderebilirsiniz."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Aktarım sırasında hata yapmaya açık olan 26 karakter uzunluğundaki karmaşık Bitcoin adreslerini kullanmak yerine, E-posta ile Bitcoin özelliğini kullanarak güvenli bir şekilde Bitcoin alışverişi yapabilirsiniz"
       ]
     },
     "wallet_signup_2024:app-switcher": {

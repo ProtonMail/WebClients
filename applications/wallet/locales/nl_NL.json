@@ -4,11 +4,6 @@
     "language": "nl_NL"
   },
   "contexts": {
-    "Account upgrade": {
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "U heeft het maximale aantal accounts bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer accounts aan te maken. Uw steun is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
@@ -859,6 +854,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Sluiten"
+      ],
       "Create label": [
         "Maak label"
       ],
@@ -2801,9 +2799,6 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Uw ${ PASS_SHORT_APP_NAME } Plus-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Uw account wordt bijgewerkt zodra de betaling is verwerkt."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
@@ -3349,6 +3344,9 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Gereserveerde servers geoptimaliseerd voor streamen"
+      ],
       "Desktop app": [
         "Desktop-app"
       ],
@@ -3396,9 +3394,6 @@
       ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
-      ],
-      "High-speed streaming": [
-        "Streamen op hoge snelheid"
       ],
       "High-speed VPN on ${ n } device": [
         "High-speed VPN op ${ n } apparaat",
@@ -3448,10 +3443,6 @@
       ],
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
-      ],
-      "Protect ${ n } device at a time": [
-        "Bescherm ${ n } apparaat tegelijkertijd",
-        "Bescherm ${ n } apparaten tegelijkertijd"
       ],
       "Recover previous file versions": [
         "Herstel vorige bestandsversies"
@@ -3504,7 +3495,7 @@
       "Sync and backup all your files across devices": [
         "Synchroniseer en back-up al uw bestanden op alle apparaten"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor via VPN"
       ],
       "Two-factor authentication": [
@@ -3565,6 +3556,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gebruik tot ${ n } apparaat tegelijk",
+        "Gebruik tot ${ n } apparaten tegelijk"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -4142,8 +4137,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Door deze betaling te bevestigen, autoriseert u ${ BRAND_NAME } en Stripe, onze provider van betalingsdiensten, om uw bank te instrueren om uw rekening en uw bank dienovereenkomstig in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw rekening naar behoren in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
       ],
       "Street address, postal code, and city": [
         "Straatnaam, postcode en plaats"
@@ -4971,14 +4966,8 @@
       "Could not fetch wallets data": [
         "Kan walletsgegevens niet ophalen"
       ],
-      "Explore other ${ BRAND_NAME } products": [
-        "Ontdek andere ${ BRAND_NAME }-producten"
-      ],
       "Syncing new data": [
         "Nieuwe gegevens synchroniseren"
-      ],
-      "Upgrade to Visionary": [
-        "Kies voor Visionary"
       ],
       "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
         "Uw browser of apparaatsoftware ondersteunt ${ WALLET_APP_NAME } niet. Gelieve uw browser of apparaat bij te werken. U kunt ook een van onze mobiele apps gebruiken."
@@ -5106,23 +5095,6 @@
         "Stel tweevoudige verificatie in om uw account te beveiligen"
       ]
     },
-    "Wallet explore proton": {
-      "An encrypted password manager that protects your online identity.": [
-        "Een versleutelde wachtwoordmanager die uw online identiteit beschermt."
-      ],
-      "Encrypted email that's private by default.": [
-        "Versleutelde e-mail die standaard privé is."
-      ],
-      "Improve the security of your business and comply with data protection laws.": [
-        "Verbeter de beveiliging van uw bedrijf en voldoe aan wetgeving inzake gegevensbescherming."
-      ],
-      "Secure cloud storage that gives you control of your data.": [
-        "Veilige cloudopslag die u de controle geeft over uw gegevens."
-      ],
-      "Your calendar is a record of your life. Keep it safe.": [
-        "Uw agenda is een overzicht van uw leven. Houd het veilig."
-      ]
-    },
     "Wallet header": {
       "Secure your wallet": [
         "Beveilig uw portemonnee"
@@ -5168,9 +5140,6 @@
       ]
     },
     "Wallet invite": {
-      "${ WALLET_APP_NAME } Early Access is limited to Visionary supporters and invited users.": [
-        "${ WALLET_APP_NAME } Vroegtijdige toegang is beperkt tot Visionary supporters en uitgenodigde gebruikers."
-      ],
       "Close": [
         "Sluiten"
       ],
@@ -5183,20 +5152,14 @@
       "Email address is required": [
         "E-mailadres is vereist"
       ],
-      "Exclusive Invites": [
-        "Exclusieve uitnodigingen"
-      ],
       "Invitation sent to ${ email }": [
         "Uitnodiging verzonden naar ${ email }"
-      ],
-      "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
-        "Nodig uw vrienden en familie uit, zodat u allemaal Bitcoin via e-mail kunt versturen. U krijgt meer uitnodigingen als we meer servers toevoegen."
       ],
       "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
         "Nodig je vrienden en familie uit voor ${ WALLET_APP_NAME }, zodat jullie allemaal Bitcoin via e-mail kunnen versturen."
       ],
       "Invites": [
-        "Uitnodigen"
+        "Uitnodigingen"
       ],
       "Not now": [
         "Niet nu"
@@ -5227,12 +5190,8 @@
       ]
     },
     "Wallet invites": {
-      "${ availableInvites } invite left": [
-        "${ availableInvites } uitnodiging over",
-        "${ availableInvites } uitnodigingen over"
-      ],
       "Invite your friends": [
-        "Nodig je vrienden uit."
+        "Nodig uw vrienden uit."
       ]
     },
     "Wallet passphrase": {
@@ -5971,6 +5930,15 @@
       "Unlock more email addresses": [
         "Ontgrendel meer e-mailadressen"
       ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "U heeft het maximum aantal accounts bereikt dat door uw huidige abonnement wordt ondersteund."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "U heeft het maximale aantal accounts bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer accounts aan te maken. Uw support is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "U heeft het maximum aantal portemonnees bereikt dat door uw huidige abonnement wordt ondersteund."
+      ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "U heeft het maximale aantal portemonnees bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer portemonnees aan te maken. Uw steun is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
       ]
@@ -5984,33 +5952,24 @@
       ],
       "Upgrade your privacy": [
         "Upgrade uw privacy"
+      ],
+      "You have reached your limit": [
+        "U heeft uw limiet bereikt"
       ]
     },
     "Wallet Welcome": {
-      "Early Access Waitlist": [
-        "Wachtlijst voor vroege toegang"
-      ],
-      "Invites from active users of ${ WALLET_APP_NAME } will allow you to skip this waiting list.": [
-        "Uitnodigingen van actieve gebruikers van ${ WALLET_APP_NAME } stellen u in staat deze wachtlijst over te slaan."
-      ],
       "Welcome to ${ WALLET_APP_NAME }": [
         "Welkom bij ${ WALLET_APP_NAME }"
-      ],
-      "You can also support us and get immediate access by upgrading to ${ BRAND_NAME } Visionary, our most premium plan with paid features in all ${ BRAND_NAME } products.": [
-        "U kunt ons ook steunen en onmiddellijke toegang krijgen door te upgraden naar ${ BRAND_NAME } Visionary, ons meest premium plan met betaalde functies in alle ${ BRAND_NAME }-producten."
-      ],
-      "You have been added to the first come, first serve waiting list. We will notify you at ${ email } once we have more server capacity.": [
-        "U bent toegevoegd aan de wachtlijst op basis van wie het eerst komt, het eerst maalt. We zullen u op ${ email } informeren zodra we meer servercapaciteit hebben."
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadres",
+        "${ n } ${ BRAND_NAME } e-mailadressen"
+      ],
       "${ n } account per wallet": [
         "${ n } account per portemonnee",
         "${ n } accounts per portemonnee"
-      ],
-      "${ n } email address": [
-        "${ n } e-mailadres",
-        "${ n } e-mailadressen"
       ],
       "${ n } wallet": [
         "${ n } portemonnee",
@@ -6021,6 +5980,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Versleuteld en veilig ${ MAIL_APP_NAME } e-mailadres. U kunt gemakkelijk Bitcoin verzenden naar iedereen met alleen hun ${ BRAND_NAME } naam."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Wissel Bitcoin veilig uit via email in plaats van complexe, 26 tekens lange, Bitcoin adressen die vatbaar zijn voor fouten"
       ]
     },
     "wallet_signup_2024:app-switcher": {

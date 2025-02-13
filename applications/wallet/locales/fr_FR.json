@@ -4,11 +4,6 @@
     "language": "fr_FR"
   },
   "contexts": {
-    "Account upgrade": {
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Vous avez atteint le nombre maximum de comptes pris en charge par votre abonnement actuel. Veuillez passer à un abonnement supérieur pour en créer davantage. Votre soutien est crucial dans notre mission pour préserver la confidentialité et la liberté financière."
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
@@ -859,6 +854,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Fermer"
+      ],
       "Create label": [
         "Créez un label"
       ],
@@ -2801,9 +2799,6 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Votre abonnement ${ PASS_SHORT_APP_NAME } Plus sera remplacé par ${ PASS_SHORT_APP_NAME } Lifetime. Le solde de votre abonnement sera ajouté à votre compte. L'offre ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Votre compte sera mis à jour une fois le paiement effectué."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
       ],
@@ -3349,6 +3344,9 @@
       "Data breach monitoring": [
         "Surveillance des fuites de données"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Serveurs dédiés optimisés pour le streaming"
+      ],
       "Desktop app": [
         "Application de bureau"
       ],
@@ -3396,9 +3394,6 @@
       ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
-      ],
-      "High-speed streaming": [
-        "Streaming haut débit"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN haut débit sur ${ n } appareil",
@@ -3448,10 +3443,6 @@
       ],
       "Priority support & live chat": [
         "Assistance prioritaire et chat en direct"
-      ],
-      "Protect ${ n } device at a time": [
-        "Protégez ${ n } appareil à la fois",
-        "Protégez ${ n } appareils en même temps"
       ],
       "Recover previous file versions": [
         "Récupérer les versions précédentes des fichiers"
@@ -3504,7 +3495,7 @@
       "Sync and backup all your files across devices": [
         "Synchronisez et sauvegardez tous vos fichiers entre plusieurs appareils."
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor via VPN"
       ],
       "Two-factor authentication": [
@@ -3565,6 +3556,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Utiliser sur jusqu'à ${ n } appareil à la fois",
+        "Utiliser sur jusqu'à ${ n } appareils à la fois"
       ],
       "User credential management": [
         "Gestion des identifiants des utilisateurs"
@@ -4053,7 +4048,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Pays de facturation"
+        "Pays de facturation "
       ],
       "Card number": [
         "Numéro de la carte"
@@ -4142,8 +4137,8 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
       ],
       "Street address, postal code, and city": [
         "Adresse, code postal et ville"
@@ -4971,14 +4966,8 @@
       "Could not fetch wallets data": [
         "La récupération des données des portefeuilles n'a pas abouti."
       ],
-      "Explore other ${ BRAND_NAME } products": [
-        "Découvrir les autres produits ${ BRAND_NAME }"
-      ],
       "Syncing new data": [
         "Synchronisation des nouvelles données"
-      ],
-      "Upgrade to Visionary": [
-        "Passer à l'abonnement Visionary"
       ],
       "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
         "Votre navigateur ou le logiciel de votre appareil ne prend pas en charge ${ WALLET_APP_NAME }. Mettez à jour votre navigateur ou votre appareil. Vous pouvez également utiliser l'une de nos applications mobiles."
@@ -5106,23 +5095,6 @@
         "Configurer l'A2F pour sécuriser votre compte"
       ]
     },
-    "Wallet explore proton": {
-      "An encrypted password manager that protects your online identity.": [
-        "Le gestionnaire de mots de passe chiffré qui protège votre identité."
-      ],
-      "Encrypted email that's private by default.": [
-        "Votre messagerie chiffrée, pour des messages privés."
-      ],
-      "Improve the security of your business and comply with data protection laws.": [
-        "Améliorez la sécurité de votre entreprise et respectez la législation sur la protection des données."
-      ],
-      "Secure cloud storage that gives you control of your data.": [
-        "Stockage cloud sécurisé qui vous donne le contrôle de vos données."
-      ],
-      "Your calendar is a record of your life. Keep it safe.": [
-        "Votre calendrier, c'est votre vie quotidienne. Protégez-la."
-      ]
-    },
     "Wallet header": {
       "Secure your wallet": [
         "Sécurisez votre portefeuille"
@@ -5168,9 +5140,6 @@
       ]
     },
     "Wallet invite": {
-      "${ WALLET_APP_NAME } Early Access is limited to Visionary supporters and invited users.": [
-        "L'accès anticipé à ${ WALLET_APP_NAME } est limité aux utilisateurs Visionary qui nous apportent leur soutien et aux utilisateurs invités."
-      ],
       "Close": [
         "Fermer"
       ],
@@ -5183,14 +5152,8 @@
       "Email address is required": [
         "L'adresse e-mail est nécessaire."
       ],
-      "Exclusive Invites": [
-        "Invitations exclusives"
-      ],
       "Invitation sent to ${ email }": [
         "L'invitation a été envoyée à ${ email }."
-      ],
-      "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
-        "Invitez vos amis et votre famille pour que vous puissiez tous envoyer des bitcoins via e-mail. Vous recevrez plus d'invitations à mesure que nous ajoutons de nouveaux serveurs."
       ],
       "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
         "Invitez vos amis et votre famille sur ${ WALLET_APP_NAME } afin que vous puissiez tous envoyer des bitcoins via e-mail."
@@ -5227,10 +5190,6 @@
       ]
     },
     "Wallet invites": {
-      "${ availableInvites } invite left": [
-        "Il reste ${ availableInvites } invitation.",
-        "Il reste ${ availableInvites } invitations."
-      ],
       "Invite your friends": [
         "Invitez vos amis"
       ]
@@ -5971,6 +5930,15 @@
       "Unlock more email addresses": [
         "Débloquer plus d'adresses e-mail"
       ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Vous avez atteint le nombre maximum de comptes pris en charge par votre abonnement actuel."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Vous avez atteint le nombre maximum de comptes pris en charge par votre abonnement actuel. Veuillez passer à un abonnement supérieur pour en créer davantage. Votre soutien est crucial dans notre mission pour préserver la confidentialité et la liberté financière."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Vous avez atteint le nombre maximum de portefeuilles pris en charge par votre abonnement actuel."
+      ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Vous avez atteint le nombre maximal de portefeuilles pris en charge par votre abonnement actuel. Veuillez passer à un abonnement supérieur pour en créer davantage. Votre soutien est crucial dans notre mission pour préserver la confidentialité et la liberté financière."
       ]
@@ -5984,33 +5952,24 @@
       ],
       "Upgrade your privacy": [
         "Faites passer le respect de votre vie privée au niveau supérieur."
+      ],
+      "You have reached your limit": [
+        "Vous avez atteint la limite."
       ]
     },
     "Wallet Welcome": {
-      "Early Access Waitlist": [
-        "Liste d'attente pour accès anticipé"
-      ],
-      "Invites from active users of ${ WALLET_APP_NAME } will allow you to skip this waiting list.": [
-        "Les invitations provenant d'utilisateurs actifs de ${ WALLET_APP_NAME } vous permettront de contourner cette liste d'attente."
-      ],
       "Welcome to ${ WALLET_APP_NAME }": [
         "Bienvenue dans ${ WALLET_APP_NAME }"
-      ],
-      "You can also support us and get immediate access by upgrading to ${ BRAND_NAME } Visionary, our most premium plan with paid features in all ${ BRAND_NAME } products.": [
-        "Vous pouvez également nous apporter votre soutien et bénéficier d'un accès immédiat en passant à ${ BRAND_NAME } Visionary, notre plan premium disposant de toutes les fonctionnalités payantes de tous les produits ${ BRAND_NAME }."
-      ],
-      "You have been added to the first come, first serve waiting list. We will notify you at ${ email } once we have more server capacity.": [
-        "Vous avez été ajouté à la liste d'attente par ordre d'arrivée. Nous vous informerons à l'adresse ${ email } dès que nous augmenterons la capacité de nos serveurs."
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adresse e-mail ${ BRAND_NAME }",
+        "${ n } adresses e-mail ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } compte par portefeuille",
         "${ n } comptes par portefeuille"
-      ],
-      "${ n } email address": [
-        "${ n } adresse e-mail",
-        "${ n } adresses e-mail"
       ],
       "${ n } wallet": [
         "${ n } portefeuille",
@@ -6021,6 +5980,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Adresse e-mail ${ MAIL_APP_NAME } chiffrée et sécurisée. Envoyez facilement des bitcoins à qui vous souhaitez en utilisant simplement son nom ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Échangez des bitcoins en toute sécurité par e-mail, sans avoir à utiliser des adresses Bitcoin complexes de 26 caractères sujettes aux erreurs."
       ]
     },
     "wallet_signup_2024:app-switcher": {
