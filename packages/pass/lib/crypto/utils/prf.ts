@@ -1,3 +1,4 @@
+import { deriveKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import type { Maybe } from '@proton/pass/types/utils';
 
@@ -19,15 +20,7 @@ export async function deriveKeyFromPRFCredential(credential: PublicKeyCredential
 
     const inputKeyMaterial = new Uint8Array(prfBuffer);
 
-    const keyDerivationKey = await crypto.subtle.importKey('raw', inputKeyMaterial, 'HKDF', false, ['deriveKey']);
-
-    const key = await crypto.subtle.deriveKey(
-        { name: 'HKDF', hash: 'SHA-256', info: new Uint8Array(), salt: new Uint8Array() },
-        keyDerivationKey,
-        { name: 'AES-GCM', length: 256 },
-        exported,
-        ['encrypt', 'decrypt']
-    );
+    const key = await deriveKey(inputKeyMaterial, new Uint8Array(), new Uint8Array(), { extractable: exported });
 
     if (exported) {
         const exported = await crypto.subtle.exportKey('raw', key);
