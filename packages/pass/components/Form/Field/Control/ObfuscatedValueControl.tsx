@@ -11,10 +11,15 @@ export type ObfuscatedValueControlProps<E extends ElementType> = Omit<
     ValueControlProps<E>,
     'value' | 'clipboardValue' | 'hiddenValue'
 > & {
-    value: ObfuscatedItemProperty;
-    deobfuscate: (value: ObfuscatedItemProperty, hidden: boolean) => string;
     hiddenValue?: string | ((deobfuscation: string) => string);
-    mask?: (deobfuscation: string) => FactoryArg;
+    value: ObfuscatedItemProperty;
+    /** Use the `hidden` property to apply partial deobfuscation
+     * when necessary. This can be useful to avoid fully deobfuscating
+     * the field if the field is masked in the UI */
+    deobfuscate: (value: ObfuscatedItemProperty, hidden: boolean) => string;
+    /** Receives the partial or full deobfuscated value depending on
+     * the `hidden` state of the underlying `ValueControl` */
+    mask?: (value: string, hidden: boolean) => FactoryArg;
 };
 
 export const ObfuscatedValueControl = <E extends ElementType>({
@@ -24,8 +29,9 @@ export const ObfuscatedValueControl = <E extends ElementType>({
     mask,
     ...props
 }: ObfuscatedValueControlProps<E>) => {
-    const [deobfuscation, setDeobfuscation] = useState(deobfuscate(value, false));
-    const maskedValue = deobfuscation && mask ? pipe(deobfuscation, mask?.(deobfuscation)) : '';
+    /** Field will be masked on mount, trigger `hidden` deobfuscation by default */
+    const [deobfuscation, setDeobfuscation] = useState(deobfuscate(value, true));
+    const maskedValue = mask ? pipe(deobfuscation, mask(deobfuscation, true)) : deobfuscation;
 
     const onHide = (hidden: boolean) => setDeobfuscation(deobfuscate(value, hidden));
     const clipboardValue = props.clickToCopy ? () => deobfuscate(value, false) : undefined;
