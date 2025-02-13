@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
@@ -8,11 +6,6 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import type { PaymentMethodType } from '@proton/payments';
-import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey-colored.svg';
-import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.svg';
-import jcbLogoSvg from '@proton/styles/assets/img/bank-icons/jcb-logo.png';
-import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode-colored.svg';
-import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure-colored.svg';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -22,18 +15,9 @@ interface Props {
     lastUsedMethod?: ViewPaymentMethod;
     forceDropdown?: boolean;
     narrow?: boolean;
-    showCardIcons?: boolean;
 }
 
-const PaymentMethodSelector = ({
-    method,
-    lastUsedMethod,
-    options,
-    onChange,
-    forceDropdown,
-    narrow,
-    showCardIcons = false,
-}: Props) => {
+const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forceDropdown, narrow }: Props) => {
     if (options.length <= 2 && !forceDropdown) {
         return (
             <>
@@ -43,54 +27,19 @@ const PaymentMethodSelector = ({
                             htmlFor={value}
                             key={value}
                             className={clsx([
-                                'py-2 flex items-center gap-2',
+                                'py-2 flex flex-nowrap items-center',
                                 lastUsedMethod?.value === value && 'border-bottom',
                             ])}
                         >
-                            <span className="flex items-center">
-                                <Radio
-                                    className="mr-2"
-                                    id={value}
-                                    name="value"
-                                    checked={value === method}
-                                    onChange={() => onChange(value)}
-                                />
-                                {icon && <Icon className="mr-2" name={icon} />}
-                                <span className="text-cut">{text}</span>
-                            </span>
-
-                            {
-                                // Only show suffix icons for card payments
-                                showCardIcons && value === 'chargebee-card' && (
-                                    <div className="flex items-center justify-center gap-2 flex-nowrap ml-6">
-                                        <img
-                                            alt={c('Info').t`Visa Secure logo`}
-                                            style={{ maxHeight: '26px' }}
-                                            src={verifiedByVisaSvg}
-                                        />
-                                        <img
-                                            alt={c('Info').t`Mastercard SecureCode logo`}
-                                            style={{ maxHeight: '26px' }}
-                                            src={mastercardSecurecodeSvg}
-                                        />
-                                        <img
-                                            alt={c('Info').t`Discover ProtectBuy logo`}
-                                            style={{ maxHeight: '26px' }}
-                                            src={discoverProtectBuySvg}
-                                        />
-                                        <img
-                                            alt={c('Info').t`American Express SafeKey logo`}
-                                            style={{ maxHeight: '26px' }}
-                                            src={americanExpressSafekeySvg}
-                                        />
-                                        <img
-                                            alt={c('Info').t`JCB logo`}
-                                            style={{ maxHeight: '26px' }}
-                                            src={jcbLogoSvg}
-                                        />
-                                    </div>
-                                )
-                            }
+                            <Radio
+                                className="mr-2"
+                                id={value}
+                                name="value"
+                                checked={value === method}
+                                onChange={() => onChange(value)}
+                            />
+                            {icon && <Icon className="mr-2" name={icon} />}
+                            <span className="text-cut">{text}</span>
                         </label>
                     );
                 })}

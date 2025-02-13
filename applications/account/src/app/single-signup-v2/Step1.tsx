@@ -530,7 +530,7 @@ const Step1 = ({
         return handleChangeCurrency(newAvailableCurrency);
     };
 
-    const headerCenterElement = (() => {
+    const afterLogo = (() => {
         if (mode === SignupMode.PassSimpleLogin) {
             return (
                 <>
@@ -785,11 +785,7 @@ const Step1 = ({
 
     return (
         <Layout
-            headerCenterElement={
-                <div className="mx-auto md:ml-4 lg:ml-8 md:mr-auto order-3 md:order-initial w-full md:w-auto flex justify-center md:justify-start">
-                    {headerCenterElement}
-                </div>
-            }
+            afterLogo={afterLogo}
             logo={logo}
             footer={renewalNotice}
             hasDecoration

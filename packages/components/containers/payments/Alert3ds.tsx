@@ -12,24 +12,32 @@ const Alert3ds = () => {
             <div className="mb-2 text-sm" data-testid="3ds-info">
                 {c('Info').t`We use 3-D Secure to protect your payments`}
             </div>
-            <div className="flex items-center justify-center gap-4">
-                <img alt={c('Info').t`Visa Secure logo`} style={{ maxHeight: '44px' }} src={verifiedByVisaSvg} />
+            <div className="flex items-center justify-center">
+                <img
+                    alt={c('Info').t`Visa Secure logo`}
+                    className="mr-4"
+                    style={{ maxHeight: '44px' }}
+                    src={verifiedByVisaSvg}
+                />
                 <img
                     alt={c('Info').t`Mastercard SecureCode logo`}
+                    className="mr-4"
                     style={{ maxHeight: '44px' }}
                     src={mastercardSecurecodeSvg}
                 />
                 <img
                     alt={c('Info').t`Discover ProtectBuy logo`}
+                    className="mr-4"
                     style={{ maxHeight: '44px' }}
                     src={discoverProtectBuySvg}
                 />
                 <img
                     alt={c('Info').t`American Express SafeKey logo`}
+                    className="mr-4"
                     style={{ maxHeight: '44px' }}
                     src={americanExpressSafekeySvg}
                 />
-                <img alt={c('Info').t`JCB logo`} style={{ maxHeight: '44px' }} src={jcbLogoSvg} />
+                <img alt={c('Info').t`JCB logo`} className="mr-4" style={{ maxHeight: '44px' }} src={jcbLogoSvg} />
             </div>
         </div>
     );
