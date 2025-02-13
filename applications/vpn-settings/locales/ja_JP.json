@@ -2305,12 +2305,6 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "各国の共有サーバーに誰が接続できるかを決定するポリシーを作成します。"
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "組織内の誰もが、すべての国の共有サーバーに接続できます。"
-      ],
       "If disabled, only admins will have access.": [
         "もし無効にした場合、管理者のみがアクセスできます。"
       ],
@@ -3376,23 +3370,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "操作"
+      ],
       "App version": [
         "アプリのバージョン"
       ],
       "Best deal": [
         "最高の取引"
-      ],
-      "Checkout": [
-        "チェックアウト"
-      ],
-      "City": [
-        "町"
-      ],
-      "Country": [
-        "国"
-      ],
-      "Create your account": [
-        "アカウントを作成"
       ],
       "Device": [
         "デバイス"
@@ -3702,9 +3687,6 @@
       ],
       "Allocated": [
         "割り当て"
-      ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "ユーザーが${ VPN_APP_NAME }アプリの**国**セクションから安全な共有サーバーに接続することを許可します。"
       ],
       "Already allocated": [
         "割り当て済み"
@@ -4390,9 +4372,6 @@
       "No Gateways yet": [
         "ゲートウェイはまだありません"
       ],
-      "No location filters are currently assigned.": [
-        "現在割り当てられている位置フィルタはありません。"
-      ],
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
       ],
@@ -4401,9 +4380,6 @@
       ],
       "No results found": [
         "該当する項目がありません"
-      ],
-      "No Shared Servers Found": [
-        "共有サーバーが見つかりません"
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
@@ -4672,9 +4648,6 @@
       "Shared ${ vaultLink } updated": [
         "共有 ${ vaultLink } が更新されました"
       ],
-      "Shared Server Location Filters": [
-        "共有サーバーの位置フィルター"
-      ],
       "Shared vault deleted": [
         "共有保管庫が削除されました"
       ],
@@ -4695,9 +4668,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "連絡先との共有を始め、オンラインサービスのために使ってください。"
-      ],
-      "Step ${ step }": [
-        "ステップ ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"
@@ -6717,12 +6687,6 @@
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
       ],
-      "High-speed streaming": [
-        "高速ストリーミング"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "プライバシーを保護する高速 VPN"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 台のデバイスで高速 VPN"
       ],
@@ -6779,9 +6743,6 @@
       ],
       "Proofread and refine your emails": [
         "メールを校正し、洗練させる"
-      ],
-      "Protect ${ n } device at a time": [
-        "${ n }台のデバイスを同時に保護"
       ],
       "Quickly craft replies": [
         "素早く返信を作成"
@@ -6848,9 +6809,6 @@
       ],
       "Start protecting your organization": [
         "組織の保護を開始する"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 つの簡単なステップでオンラインで身を守り始めましょう"
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
@@ -11324,9 +11282,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "${ a }と${ b }はバンドル"
-      ],
-      "Your ${ selected } plan": [
-        "あなたの ${ selected } プラン"
       ]
     },
     "vpn_2step: tooltip": {

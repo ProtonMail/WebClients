@@ -3253,23 +3253,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Handlinger"
+      ],
       "App version": [
         "App-version"
       ],
       "Best deal": [
         "Bedste tilbud"
-      ],
-      "Checkout": [
-        "Betaling"
-      ],
-      "City": [
-        "By"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Create your account": [
-        "Opret din konto"
       ],
       "Device": [
         "Enhed"
@@ -4484,10 +4475,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
-      ],
-      "Step ${ step }": [
-        "Trin ${ step }",
-        "Trin ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
@@ -6420,12 +6407,6 @@
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
       ],
-      "High-speed streaming": [
-        "Streaming ved høj hastighed"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Schweizisk VPN med høj hastighed, der beskytter dit privatliv"
-      ],
       "High-speed VPN on ${ n } device": [
         "Højhastigheds VPN på ${ n } enhed",
         "Højhastigheds VPN på ${ n } enheder"
@@ -6480,10 +6461,6 @@
       ],
       "Proofread and refine your emails": [
         "Korrekturlæs og forfin dine e-mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Beskyt ${ n } enhed ad gangen",
-        "Beskyt ${ n } enheder ad gangen"
       ],
       "Quickly craft replies": [
         "Skriv hurtigt svar"
@@ -6548,9 +6525,6 @@
       ],
       "Start protecting your organization": [
         "Begynd at beskytte din organisation"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Begynd at beskytte dig selv online i 2 nemme trin"
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
@@ -10637,9 +10611,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Din ${ a } og ${ b }-pakke"
-      ],
-      "Your ${ selected } plan": [
-        "Dit ${ selected }-abonnement"
       ]
     },
     "vpn_2step: tooltip": {
