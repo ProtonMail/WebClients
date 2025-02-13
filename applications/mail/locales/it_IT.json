@@ -1153,6 +1153,9 @@
       "Set as default": [
         "Imposta come predefinito"
       ],
+      "Set as default mail application": [
+        "Imposta come applicazione mail predefinita"
+      ],
       "Set encryption": [
         "Imposta crittografia"
       ],
@@ -1357,10 +1360,10 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Effettua l'upgrade ora"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Effettua l'upgrade ora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -5883,6 +5886,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } può proteggere anche la tua azienda."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } non è la tua applicazione mail predefinita."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } messaggio non può essere spostato.",
         "${ messagesNotAuthorizedToMove } messaggi non possono essere spostati."
@@ -6320,6 +6326,9 @@
       ],
       "Default email application": [
         "Applicazione email predefinita"
+      ],
+      "Default mail application": [
+        "Applicazione mail predefinita"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Lo sapevi che hai uno spazio di archiviazione cloud crittografato incluso nel tuo account ${ BRAND_NAME }? Vai su ${ DRIVE_APP_NAME } e sfrutta al meglio il tuo spazio. È gratis."
@@ -7124,6 +7133,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Imposta ${ MAIL_APP_NAME } come applicazione di posta elettronica predefinita per questo browser. ${ MAIL_APP_NAME } si aprirà automaticamente quando clicchi un link email."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Imposta ${ MAIL_APP_NAME } come applicazione mail predefinita. ${ MAIL_APP_NAME } si aprirà automaticamente quando clicchi su un collegamento di posta."
       ],
       "Setting up ${ feature }…": [
         "Configurazione di ${ feature }…"
@@ -9596,6 +9608,9 @@
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Server dedicati ottimizzati per lo streaming"
+      ],
       "Desktop app": [
         "Applicazione desktop"
       ],
@@ -9646,9 +9661,6 @@
       ],
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
-      ],
-      "High-speed streaming": [
-        "Streaming ad alta velocità"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN ad alta velocità su ${ n } dispositivo",
@@ -9704,10 +9716,6 @@
       ],
       "Proofread and refine your emails": [
         "Correggi e affina le tue email"
-      ],
-      "Protect ${ n } device at a time": [
-        "Proteggi ${ n } dispositivo alla volta",
-        "Proteggi ${ n } dispositivi alla volta"
       ],
       "Quickly craft replies": [
         "Crea velocemente risposte"
@@ -9839,6 +9847,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fino a ${ totalStorageSize } di archiviazione"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Utilizza fino a ${ n } dispositivo per volta",
+        "Utilizza fino a ${ n } dispositivi per volta"
       ],
       "User credential management": [
         "Gestione delle credenziali utente"
@@ -13906,6 +13918,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
       ],
+      "2 consecutive dots are not allowed": [
+        "Non sono ammessi 2 punti consecutivi"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } contatto?",
         "Sei sicuro di voler eliminare definitivamente ${ count } contatti?"
@@ -13918,6 +13933,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Sei sicuro di voler eliminare definitivamente questo contatto?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Non può contenere un punto all'inizio"
+      ],
+      "Cannot contain a dot at the end": [
+        "Non può contenere un punto alla fine"
       ],
       "Contacts could not be merged": [
         "Impossibile unire i contatti"
@@ -13940,8 +13961,8 @@
       "Name is required": [
         "Nome obbligatorio"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Sono consentiti solo caratteri alfanumerici, punti, trattini e trattini bassi"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Sono consentiti solo caratteri alfanumerici minuscoli, punti, trattini e caratteri di sottolineatura"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà completato."
