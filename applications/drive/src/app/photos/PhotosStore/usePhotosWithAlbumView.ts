@@ -60,6 +60,7 @@ export const usePhotosWithAlbumsView = () => {
         addAlbumPhotos,
         loadAlbumPhotos,
         removePhotosFromCache,
+        addPhotoAsCover,
     } = usePhotosWithAlbums();
     const { addToQueue } = useLinksQueue({ loadThumbnails: true });
     const { download } = useDownloadProvider();
@@ -243,12 +244,12 @@ export const usePhotosWithAlbumsView = () => {
         const abortController = new AbortController();
 
         // Always load albums
-        loadAlbums(abortController.signal, volumeId, shareId);
+        loadAlbums(abortController.signal);
 
         if (albumLinkId) {
-            loadAlbumPhotos(abortController.signal, volumeId, albumLinkId);
+            loadAlbumPhotos(abortController.signal, albumLinkId);
         } else {
-            loadPhotos(abortController.signal, volumeId);
+            loadPhotos(abortController.signal);
         }
 
         const callbackId = eventsManager.eventHandlers.register((eventVolumeId, events, processedEventCounter) => {
@@ -275,8 +276,8 @@ export const usePhotosWithAlbumsView = () => {
             return;
         }
         const abortController = new AbortController();
-        loadPhotos(abortController.signal, volumeId);
-        loadAlbums(abortController.signal, volumeId, shareId);
+        loadPhotos(abortController.signal);
+        loadAlbums(abortController.signal);
     };
 
     const refreshAlbums = () => {
@@ -284,7 +285,7 @@ export const usePhotosWithAlbumsView = () => {
             return;
         }
         const abortController = new AbortController();
-        loadAlbums(abortController.signal, volumeId, shareId);
+        loadAlbums(abortController.signal);
     };
 
     const refreshAlbumPhotos = useCallback(
@@ -293,7 +294,7 @@ export const usePhotosWithAlbumsView = () => {
                 return;
             }
             const abortController = new AbortController();
-            loadAlbumPhotos(abortController.signal, volumeId, albumLinkId);
+            loadAlbumPhotos(abortController.signal, albumLinkId);
         },
         [volumeId, shareId, loadAlbumPhotos]
     );
@@ -303,7 +304,7 @@ export const usePhotosWithAlbumsView = () => {
             return;
         }
         const abortController = new AbortController();
-        loadPhotos(abortController.signal, volumeId);
+        loadPhotos(abortController.signal);
     };
 
     /**
@@ -371,6 +372,26 @@ export const usePhotosWithAlbumsView = () => {
         await download(links);
     };
 
+    const addAlbumPhoto = useCallback(
+        (abortSignal: AbortSignal, linkId: string) => {
+            if (!albumLinkId) {
+                throw new Error('Failed to add a photo to an album');
+            }
+            return addAlbumPhotos(abortSignal, albumLinkId, [linkId]);
+        },
+        [albumLinkId, addAlbumPhotos]
+    );
+
+    const setPhotoAsCover = useCallback(
+        async (abortSignal: AbortSignal, coverLinkId: string) => {
+            if (!albumLinkId) {
+                return;
+            }
+            return addPhotoAsCover(abortSignal, albumLinkId, coverLinkId);
+        },
+        [addPhotoAsCover, albumLinkId]
+    );
+
     return {
         volumeId,
         shareId,
@@ -393,15 +414,8 @@ export const usePhotosWithAlbumsView = () => {
         refreshAlbums,
         refreshPhotos,
         refreshAlbumPhotos,
-        addAlbumPhoto: (
-            abortSignal: AbortSignal,
-            volumeId: string,
-            shareId: string,
-            albumLinkId: string,
-            linkId: string
-        ) => {
-            return addAlbumPhotos(abortSignal, volumeId, shareId, albumLinkId, [linkId]);
-        },
+        addAlbumPhoto,
         addAlbumPhotos,
+        setPhotoAsCover,
     };
 };
