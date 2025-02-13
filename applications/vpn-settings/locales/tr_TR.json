@@ -2318,11 +2318,11 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Her ülkedeki paylaşılan sunuculara kimin bağlanabileceğine karar vermek için ilkeler oluşturun."
+      "Create policies to manage access to shared servers.": [
+        "Paylaşımlı sunuculara erişimi yönetmek için ilkeler oluşturun."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Kuruluşunuzdaki herkes tüm ülkelerdeki paylaşılan sunuculara bağlanabilir."
+      "Everyone in your organization can connect to shared servers.": [
+        "Kuruluşunuzdaki herkes paylaşımlı sunuculara bağlantı kurabilir."
       ],
       "If disabled, only admins will have access.": [
         "Kapatıldığında yalnızca yöneticiler erişebilir."
@@ -3403,29 +3403,29 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "İşlemler"
+      ],
       "App version": [
         "Uygulama sürümü"
       ],
       "Best deal": [
         "En iyi teklif"
       ],
-      "Checkout": [
-        "Ödeme yapın"
-      ],
-      "City": [
-        "İl"
-      ],
-      "Country": [
-        "Ülke"
-      ],
-      "Create your account": [
-        "Hesabınızı açın"
-      ],
       "Device": [
         "Aygıt"
       ],
+      "Enabled Countries": [
+        "Etkinleştirilmiş Ülkeler"
+      ],
+      "Enter your email address": [
+        "E-posta adresinizi yazın"
+      ],
       "Event": [
         "Etkinlik"
+      ],
+      "Groups": [
+        "Gruplar"
       ],
       "IP address": [
         "IP adresi"
@@ -3445,6 +3445,9 @@
       "Organization key fingerprint": [
         "Kuruluş anahtarı parmak izi"
       ],
+      "Policy Name": [
+        "İlke Adı"
+      ],
       "Protection": [
         "Koruma"
       ],
@@ -3453,6 +3456,9 @@
       ],
       "Select your deal": [
         "Teklifinizi seçin"
+      ],
+      "Select your payment method": [
+        "Ödeme yönteminizi seçin"
       ],
       "Select your pricing plan": [
         "Ücret tarifenizi seçin"
@@ -3748,8 +3754,8 @@
       "Allocated": [
         "Ayrılmış"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Kullanıcıların tanımlanmış ilkelere göre güvenli paylaşımlı sunuculara bağlantı kurmasına izin verin."
       ],
       "Already allocated": [
         "Zaten ayrılmış"
@@ -3853,6 +3859,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "10 üzerinden 8.4 puanlama ile CNET Editörlerin Seçimi Ödülü"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Kuruluşunuz için bir kimlik hizmeti sağlayıcı (IdP) kullanarak SAML kimlik doğrulamasını yapılandırın. Bu işlem, tüm kuruluş için SAML özelliğini kullanıma alır."
       ],
@@ -3885,6 +3894,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Önerilen parolayı panoya kopyala"
+      ],
+      "countries enabled": [
+        "ülkeler etkinleştirildi"
       ],
       "Country code": [
         "Ülke kodu"
@@ -3923,6 +3935,9 @@
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
+      ],
+      "Custom policies": [
+        "Özel ilkeler"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
@@ -4439,9 +4454,6 @@
       "No Gateways yet": [
         "Henüz bir ağ geçidi yok"
       ],
-      "No location filters are currently assigned.": [
-        "Şu anda uygulanmış bir konum süzgeci yok."
-      ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
@@ -4450,9 +4462,6 @@
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
-      ],
-      "No Shared Servers Found": [
-        "Herhangi bir paylaşılan sunucu bulunamadı"
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
@@ -4521,6 +4530,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "5 yıldız üzerinden 5 puanlama ile PC Magazine Editörlerin Seçimi Ödülü"
       ],
       "per month": [
         "aylık"
@@ -4726,9 +4738,6 @@
       "Shared ${ vaultLink } updated": [
         "Paylaşılan ${ vaultLink } güncellendi"
       ],
-      "Shared Server Location Filters": [
-        "Paylaşılan sunucu konum süzgeçleri"
-      ],
       "Shared vault deleted": [
         "Paylaşılmış kasa silindi"
       ],
@@ -4749,10 +4758,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
-      ],
-      "Step ${ step }": [
-        "${ step }. adım",
-        "${ step }. adım"
       ],
       "Storage allocated to other users in this organisation": [
         "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
@@ -4792,6 +4797,9 @@
       ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "5 yıldız üzerinden 4.2 puanlama ile Tech radar pro tavsiye ediyor"
       ],
       "Thank you": [
         "Teşekkürler"
@@ -4960,6 +4968,9 @@
       ],
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Risk olmadan ${ productName } deneyin - eğer herhangi bir sebeple fikrinizi değiştirirseniz, tam geri ödeme alırsınız. Hiçbir soru sorulmaz."
       ],
       "Two-factor authentication disabled": [
         "İki adımlı doğrulama kapatıldı"
@@ -5766,6 +5777,9 @@
       "Group name": [
         "Grup adı"
       ],
+      "Groups": [
+        "Gruplar"
+      ],
       "Hide password": [
         "Parolayı gizle"
       ],
@@ -5834,6 +5848,9 @@
       ],
       "New password": [
         "Yeni parola"
+      ],
+      "New policy name": [
+        "Yeni ilke adı"
       ],
       "New second password": [
         "Yeni ikinci parola"
@@ -6018,6 +6035,9 @@
       ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "Users": [
+        "Kullanıcılar"
       ],
       "Value": [
         "Değer"
@@ -6688,6 +6708,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik"
       ],
+      "Apps for": [
+        "Uygulamalar"
+      ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
@@ -6754,6 +6777,9 @@
       "Dedicated servers and IP": [
         "Size ayrılmış sunucular ve IP adresleri"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Yayın akışı için optimize edilmiş özel sunucular"
+      ],
       "Desktop app": [
         "Bilgisayar uygulaması"
       ],
@@ -6804,12 +6830,6 @@
       ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
-      ],
-      "High-speed streaming": [
-        "Yüksek hızlı yayın akışı izleme"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Gizliliğinizi koruyan yüksek hızlı İsviçre VPN hizmeti"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } aygıt için yüksek hızlı VPN",
@@ -6868,10 +6888,6 @@
       ],
       "Proofread and refine your emails": [
         "E-postalarınızı düzeltin ve düzenleyin"
-      ],
-      "Protect ${ n } device at a time": [
-        "Aynı anda ${ n } aygıtı koruyun",
-        "Aynı anda ${ n } aygıtı koruyun"
       ],
       "Quickly craft replies": [
         "Yanıtları hızlıca oluşturun"
@@ -6939,9 +6955,6 @@
       ],
       "Start protecting your organization": [
         "Kuruluşunuzu korumaya başlayın"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "İki kolay adımda kendinizi korumaya başlayın"
       ],
       "Strict no-logs policy": [
         "Katı kayıt tutmama ilkesi"
@@ -7013,6 +7026,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
+      ],
+      "Up to 10 Gbps": [
+        "10 Gbps'a kadar"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Aynı anda en fazla ${ n } cihazda kullanın",
+        "Aynı anda en fazla ${ n } cihazda kullanın"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -7585,6 +7605,9 @@
       "Downloaded 2FA recovery codes": [
         "İki adımlı doğrulama kodları indirildi"
       ],
+      "Error creating policy": [
+        "İlke oluşturulurken hata oluştu"
+      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -7602,6 +7625,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
+      ],
+      "Policy created successfully": [
+        "İlke başarıyla oluşturuldu"
       ],
       "Reminder has been sent": [
         "Hatırlatıcı gönderildi"
@@ -9262,10 +9288,10 @@
         "Tek oturum açma kaldırıldı"
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
-        "${ user } isimli kullanıcı artık bir tek oturum açma (SSO) hesabıdır. Önceki parolası yedek parolası olarak kullanılacaktır."
+        "${ user } kullanıcısı tek oturum açma hesabına dönüştürüldü. Önceki parolası yedek parolası olarak kullanılacak."
       ],
       "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "${ BRAND_NAME } hizmetlerine erişmeleri için kimlik sağlayıcınızda yeniden oturum açmaları gerekecek. Bu kullanıcının oturum açabilmesi için kimlik sağlayıcınızda var olduğundan emin olun."
+        "${ BRAND_NAME } hizmetlerine erişebilmesi için kimlik hizmeti sağlayıcınızı kullanarak yeniden oturum açması gerekecek. Bu kullanıcının oturum açabilmesi için kimlik hizmeti sağlayıcınız üzerinde bulunduğundan emin olun."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Bu işlem kullanıcının diğer aygıtlardaki oturumlarını kapatacak ve yeni bir yedek parola oluşturmaları gerekecek."
@@ -10289,6 +10315,9 @@
       "Add address": [
         "Adres ekle"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Ülkeleri \"${ policyName }\" ilkesine ekleyin"
+      ],
       "Add credit/debit card": [
         "Kredi ya da banka kartı ekle"
       ],
@@ -10324,6 +10353,9 @@
       ],
       "Add users": [
         "Kullanıcılar ekle"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Kullanıcıları \"${ policyName }\" ilkesine ekleyin"
       ],
       "Allocate storage": [
         "Depolama alanını dağıt"
@@ -10445,6 +10477,9 @@
       ],
       "Create multiple user accounts": [
         "Birkaç kullanıcı hesabı ekle"
+      ],
+      "Create new policy": [
+        "Yeni ilke oluştur"
       ],
       "Create organization key": [
         "Kuruluş anahtarı oluştur"
@@ -11623,8 +11658,8 @@
       "Your ${ a } and ${ b } bundle": [
         "${ a } ve ${ b } paketiniz"
       ],
-      "Your ${ selected } plan": [
-        "${ selected } tarifeniz"
+      "Your plan includes:": [
+        "Planınıza dahil olanlar:"
       ]
     },
     "vpn_2step: tooltip": {
