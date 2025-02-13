@@ -20,7 +20,7 @@ import { usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedIt
 import { formatExpirationDateMMYY } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { deobfuscate, deobfuscateCreditCard } from '@proton/pass/utils/obfuscate/xor';
+import { deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
 
 export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLinkItem, revision }) => {
     const { data: item } = revision;
@@ -52,7 +52,7 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                         label={c('Label').t`Card number`}
                         mask={cardNumberMask}
                         value={number}
-                        deobfuscate={deobfuscateCreditCard}
+                        deobfuscate={deobfuscateCCField}
                     />
                 )}
 
@@ -71,7 +71,7 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                     icon="shield"
                     label={c('Label').t`Security code`}
                     value={verificationNumber}
-                    deobfuscate={deobfuscate}
+                    deobfuscate={deobfuscateCCField}
                 />
 
                 <ObfuscatedValueControl
@@ -80,7 +80,7 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                     icon="grid-3"
                     label={c('Label').t`PIN`}
                     value={pin}
-                    deobfuscate={deobfuscate}
+                    deobfuscate={deobfuscateCCField}
                 />
             </FieldsetCluster>
 
