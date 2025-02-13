@@ -3,6 +3,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { PassEvents, PassPolicies, PrivateMainSettingsArea } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { PassReports } from '@proton/components/containers/pass/reports/PassReports';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 
 import PassDownloadsSettingsPage from './pages/PassDownloadsSettingsPage';
@@ -18,7 +19,7 @@ const PassSettingsRouter = ({
     const { path } = useRouteMatch();
 
     const {
-        routes: { downloads, activityLogs, policies },
+        routes: { downloads, activityLogs, policies, reports },
     } = passAppRoutes;
 
     return (
@@ -37,6 +38,13 @@ const PassSettingsRouter = ({
                 <PrivateMainSettingsArea config={policies}>
                     <PassBridgeProvider>
                         <PassPolicies />
+                    </PassBridgeProvider>
+                </PrivateMainSettingsArea>
+            </Route>
+            <Route path={getSectionPath(path, reports)}>
+                <PrivateMainSettingsArea config={reports}>
+                    <PassBridgeProvider>
+                        <PassReports />
                     </PassBridgeProvider>
                 </PrivateMainSettingsArea>
             </Route>
