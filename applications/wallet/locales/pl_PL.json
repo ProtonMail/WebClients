@@ -4,11 +4,6 @@
     "language": "pl_PL"
   },
   "contexts": {
-    "Account upgrade": {
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Osiągnięto maksymalną liczbę kont. Ulepsz konto, aby utworzyć więcej kont. Twoje wsparcie odegra kluczową rolę w walce o ochronę finansowej prywatności i wolności."
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
@@ -865,11 +860,17 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zamknij"
+      ],
       "Create label": [
         "Utwórz etykietę"
       ],
+      "Discover and set up features": [
+        "Odkryj i skonfiguruj funkcje"
+      ],
       "Remind me later": [
-        "Przypomnij mi później"
+        "Przypomnij później"
       ],
       "Set up other features": [
         "Skonfiguruj inne funkcje"
@@ -2368,6 +2369,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -2487,6 +2491,12 @@
       "default email address": [
         "domyślny adres e-mail"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Poznaj nowe funkcje i zacznij z nich korzystać!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Poznaj nowe funkcje planu ${ planTitle } i zacznij z nich korzystać!"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -2512,7 +2522,7 @@
         "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez ${ BRAND_NAME } nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
       ],
       "Enabling auto-deletion…": [
-        "Włącz automatyczne usuwanie..."
+        "Włączanie automatycznego usuwania…"
       ],
       "Enter the code from your authenticator app": [
         "Wpisz kod z aplikacji uwierzytelniającej"
@@ -2604,6 +2614,9 @@
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
+      "or discover other features:": [
+        "lub poznaj inne funkcje:"
+      ],
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
@@ -2638,16 +2651,19 @@
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Registering your subscription…": [
-        "Rejestrowanie subskrypcji..."
+        "Rejestrowanie subskrypcji…"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
+        "Płatności SEPA nie są obecnie dostępne. Spróbuj ponownie później."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
+      ],
+      "Setting up ${ feature }…": [
+        "Konfigurowanie ${ feature }…"
       ],
       "Setting up your new address…": [
         "Konfiguracja nowego adresu…"
@@ -2754,6 +2770,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Używasz więcej przestrzeni dyskowej niż jest dostępna w planie ${ downgradedPlanName }. Aby obniżyć plan, zwolnij część miejsca."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Możesz to zmienić w ${ settingsLink }."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
@@ -2802,17 +2821,23 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Subskrypcja ${ PASS_SHORT_APP_NAME } Plus zostanie zastąpiona subskrypcją ${ PASS_SHORT_APP_NAME } Lifetime. Pozostałe saldo subskrypcji zostanie dodane do konta. Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Konto zostanie zaktualizowane po zaksięgowaniu płatności."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ]
     },
     "info": {
@@ -3071,7 +3096,7 @@
         "Poproś o zaproszenie"
       ],
       "settings": [
-        "ustawienia"
+        "ustawieniach"
       ],
       "View on blockchain": [
         "Pokaż w łańcuchu bloków"
@@ -3422,9 +3447,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "High-speed streaming": [
-        "Szybki streaming"
-      ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
         "Szybki VPN na ${ n } urządzenia",
@@ -3475,12 +3497,6 @@
       ],
       "Priority support & live chat": [
         "Priorytetowe wsparcie i czat"
-      ],
-      "Protect ${ n } device at a time": [
-        "Ochrona ${ n } urządzenia jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzenia jednocześnie"
       ],
       "Recover previous file versions": [
         "Odzyskaj poprzednie wersje pliku"
@@ -3533,7 +3549,7 @@
       "Sync and backup all your files across devices": [
         "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
       ],
-      "TOR over VPN": [
+      "Tor over VPN": [
         "Tor przez VPN"
       ],
       "Two-factor authentication": [
@@ -4146,15 +4162,6 @@
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez pierwszy miesiąc. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
@@ -4186,9 +4193,6 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
-      ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
       ]
@@ -4274,6 +4278,11 @@
       ],
       "External recipient": [
         "Zewnętrzny odbiorca"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Sprawdź bezpieczeństwo konta"
       ]
     },
     "saml: Error": {
@@ -4778,6 +4787,9 @@
       ]
     },
     "Title": {
+      "${ feature } is now active": [
+        "Funkcja ${ feature } jest aktywna"
+      ],
       "Add credit/debit card": [
         "Dodaj kartę płatniczą"
       ],
@@ -5000,6 +5012,15 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Następnie zapłacisz co 12 miesięcy ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
+        "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
@@ -5033,14 +5054,8 @@
       "Could not fetch wallets data": [
         "Nie można pobrać danych portfelów"
       ],
-      "Explore other ${ BRAND_NAME } products": [
-        "Odkryj inne usługi ${ BRAND_NAME }"
-      ],
       "Syncing new data": [
         "Synchronizowanie nowych danych"
-      ],
-      "Upgrade to Visionary": [
-        "Ulepsz do planu Visionary"
       ],
       "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
         "Twoja przeglądarka lub oprogramowanie urządzenia nie obsługuje ${ WALLET_APP_NAME }. Zaktualizuj przeglądarkę lub urządzenie. Możesz też użyć jednej z naszych aplikacji na urządzenia mobilne."
@@ -5168,23 +5183,6 @@
         "Skonfiguruj uwierzytelnianie dwustopniowe, aby zabezpieczyć swoje konto"
       ]
     },
-    "Wallet explore proton": {
-      "An encrypted password manager that protects your online identity.": [
-        "Szyfrowany menedżer haseł, który chroni Twoją tożsamość online."
-      ],
-      "Encrypted email that's private by default.": [
-        "Szyfrowana poczta e-mail, która zapewnia prywatność."
-      ],
-      "Improve the security of your business and comply with data protection laws.": [
-        "Popraw bezpieczeństwo swojej firmy i zadbaj o jej zgodność z przepisami ochrony danych."
-      ],
-      "Secure cloud storage that gives you control of your data.": [
-        "Bezpieczna przestrzeń dyskowa w chmurze, która daje Ci kontrolę nad Twoimi danymi."
-      ],
-      "Your calendar is a record of your life. Keep it safe.": [
-        "Kalendarz to zapis Twojego życia. Dbaj o jego bezpieczeństwo."
-      ]
-    },
     "Wallet header": {
       "Secure your wallet": [
         "Zabezpiecz portfel"
@@ -5219,6 +5217,9 @@
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
         "To jest Twoje dodatkowe hasło, aby zwiększyć bezpieczeństwo portfela. Działa ono równolegle z frazą odzyskiwania. Przechowuj je bezpiecznie, gdyż w przypadku jego utraty zablokujesz dostęp do portfela."
       ],
+      "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Fraza seed to seria 12 lub 24 słów wygenerowanych przez Twój portfel. Działa jako podstawowy klucz do odzyskiwania środków. Przechowuj ją w bezpiecznym miejscu i nie udostępniaj nikomu, gdyż zapewnia ona dostęp do Twoich środków."
+      ],
       "What’s a wallet passphrase?": [
         "Co to jest hasło portfela?"
       ],
@@ -5227,9 +5228,6 @@
       ]
     },
     "Wallet invite": {
-      "${ WALLET_APP_NAME } Early Access is limited to Visionary supporters and invited users.": [
-        "Wcześniejszy dostęp do ${ WALLET_APP_NAME } jest ograniczony do użytkowników planu Visionary i osób zaproszonych."
-      ],
       "Close": [
         "Zamknij"
       ],
@@ -5242,14 +5240,14 @@
       "Email address is required": [
         "Adres e-mail jest wymagany"
       ],
-      "Exclusive Invites": [
-        "Ekskluzywne zaproszenia"
-      ],
       "Invitation sent to ${ email }": [
         "Wysłano zaproszenie do ${ email }"
       ],
-      "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
-        "Zaproś do usługi swoją rodzinę i znajomych, aby wspólnie wysyłać Bitcoiny na adres e-mail. Otrzymasz więcej zaproszeń, kiedy dodamy więcej serwerów."
+      "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Zaproś swoich przyjaciół i rodzinę do ${ WALLET_APP_NAME }, żebyście mogli wszyscy wysyłać Bitcoiny na adres e-mail."
+      ],
+      "Invites": [
+        "Zaproszenia"
       ],
       "Not now": [
         "Nie teraz"
@@ -5280,11 +5278,8 @@
       ]
     },
     "Wallet invites": {
-      "${ availableInvites } invite left": [
-        "Pozostało ${ availableInvites } zaproszenie",
-        "Pozostały ${ availableInvites } zaproszenia",
-        "Pozostało ${ availableInvites } zaproszeń",
-        "Pozostało ${ availableInvites } zaproszeń"
+      "Invite your friends": [
+        "Zaproś znajomych"
       ]
     },
     "Wallet passphrase": {
@@ -5762,6 +5757,9 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Przenieś swoje bitcoiny do innego portfela przed usunięciem. Usunięcie tego portfela usunie wszystkie jego dane z serwerów ${ BRAND_NAME }. Możesz odzyskać ten portfel na późniejszym etapie, używając frazy seed."
       ],
+      "Seed phrase (12 to 24 words, separated by space)": [
+        "Fraza seed (12 do 24 słów, oddzielonych spacją)"
+      ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Tych 12 słów należy użyć do odzyskania środków z tego portfela tylko w ostateczności, na przykład w przypadku utraty dostępu do konta ${ BRAND_NAME }."
       ],
@@ -5780,8 +5778,26 @@
       "Wallet seed phrase": [
         "Fraza seed portfela"
       ],
+      "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
+        "Suma kontrolna frazy seed portfela jest niepoprawna. Akceptujemy tylko frazy seed BIP39 i nie obsługujemy fraz Electrum."
+      ],
+      "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
+        "Fraza seed portfela zawiera nieznane słowo: ${ word }. Obsługujemy tylko angielską listę słów BIP39."
+      ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "Fraza seed portfela koduje klucz prywatny, który kontroluje Twoje cyfrowe środki."
+      ],
+      "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
+        "Entropia frazy seed portfela jest niepoprawna. Powinna mieć długość od 128 do 256 bitów."
+      ],
+      "Wallet seed phrase is incorrect. Please check it and try again.": [
+        "Fraza seed portfela jest niepoprawna. Sprawdź ją i spróbuj ponownie."
+      ],
+      "Wallet seed phrase language is not supported.": [
+        "Język frazy seed portfela nie jest obsługiwany."
+      ],
+      "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
+        "Długość frazy seed portfela jest niepoprawna. Fraza powinna zawierać od 12 do 24 słów."
       ],
       "Wallet setup": [
         "Konfiguracja portfela"
@@ -5841,7 +5857,7 @@
     },
     "Wallet Terms and Conditions": {
       "This is a self-custodial Bitcoin wallet, meaning any BTC you buy or receive will be fully controlled by you. Not even ${ BRAND_NAME } can seize your assets.": [
-        "Jest to portfel Bitcoin typu self-custody, co oznacza, że każdy BTC, który kupujesz lub otrzymujesz, będzie w pełni kontrolowany przez Ciebie. Nawet ${ BRAND_NAME } nie może zająć Twoich środkód."
+        "Jest to portfel Bitcoin typu self-custody, co oznacza, że każdy BTC, który kupujesz lub otrzymujesz, będzie w pełni kontrolowany przez Ciebie. Nawet ${ BRAND_NAME } nie może zająć Twoich środków."
       ],
       "To avoid losing assets due to forgetting your password or other access issues, back up your ${ BRAND_NAME } recovery phrase and wallet seed phrase.": [
         "Aby uniknąć utraty aktywów z powodu zapomnienia hasła lub innych problemów z dostępem, utwórz kopię zapasową swojej frazy odzyskiwania ${ BRAND_NAME } i frazy seed portfela."
@@ -6002,6 +6018,15 @@
       "Unlock more email addresses": [
         "Odblokuj więcej adresów e-mail"
       ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Osiągnięto maksymalną liczbę kont w obecnym planie."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Osiągnięto maksymalną liczbę kont w obecnym planie. Ulepsz konto, aby utworzyć więcej. Twoje wsparcie odegra kluczową rolę w walce o ochronę finansowej prywatności i wolności."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Osiągnięto maksymalną liczbę portfeli w obecnym planie."
+      ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Osiągnięto limit portfeli obsługiwanych w Twoim bieżącym planie. Ulepsz plan, aby utworzyć więcej portfeli. Twoje wsparcie odegra kluczową rolę w walce o ochronę finansowej prywatności i swobody."
       ]
@@ -6015,37 +6040,28 @@
       ],
       "Upgrade your privacy": [
         "Zwiększ swoją prywatność"
+      ],
+      "You have reached your limit": [
+        "Osiągnięto limit"
       ]
     },
     "Wallet Welcome": {
-      "Early Access Waitlist": [
-        "Lista oczekujących na wczesny dostęp"
-      ],
-      "Invites from active users of ${ WALLET_APP_NAME } will allow you to skip this waiting list.": [
-        "Zaproszenie od aktywnego użytkownika ${ WALLET_APP_NAME } pozwoli pominąć listę oczekujących."
-      ],
       "Welcome to ${ WALLET_APP_NAME }": [
         "Witaj w ${ WALLET_APP_NAME }"
-      ],
-      "You can also support us and get immediate access by upgrading to ${ BRAND_NAME } Visionary, our most premium plan with paid features in all ${ BRAND_NAME } products.": [
-        "Możesz także wesprzeć nas, przechodząc na plan ${ BRAND_NAME } Visionary i uzyskać natychmiastowy dostęp naszego najlepszego planu i płatnych funkcji we wszystkich usługach ${ BRAND_NAME }."
-      ],
-      "You have been added to the first come, first serve waiting list. We will notify you at ${ email } once we have more server capacity.": [
-        "Zostałeś dodany do listy oczekujących na zasadzie „kto pierwszy, ten lepszy”. Powiadomimy Cię na ${ email }, gdy będziemy mieli więcej pojemności serwera."
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adres ${ BRAND_NAME }",
+        "${ n } adresy ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }",
+        "${ n } adresów ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } konto na portfel",
         "${ n } konta na portfel",
         "${ n } kont na portfel",
         "${ n } konta na portfel"
-      ],
-      "${ n } email address": [
-        "${ n } adres e-mail",
-        "${ n } adresy e-mail",
-        "${ n } adresów e-mail",
-        "${ n } adresu e-mail"
       ],
       "${ n } wallet": [
         "${ n } portfel",
@@ -6055,6 +6071,20 @@
       ],
       "A safer way to hold your Bitcoin": [
         "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin na adres e-mail"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Zaszyfrowany i bezpieczny ${ MAIL_APP_NAME } adres e-mail. Możesz z łatwością wysłać Bitcoin każdemu, używając wyłącznie nazwy ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Wymieniaj bezpiecznie Bitcoin przez e-mail, zamiast skomplikowanych, 26-znakowych adresów Bitcoin, które są podatne na błąd"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ]
     },
     "wallet_signup_2024:Bug category": {

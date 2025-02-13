@@ -4,11 +4,6 @@
     "language": "ru_RU"
   },
   "contexts": {
-    "Account upgrade": {
-      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Вы достигли максимального числа аккаунтов, поддерживаемых вашим тарифом. Пожалуйста, обновите план, чтобы создать больше. Ваша поддержка также будет крайне важна для нашей борьбы за защиту финансовой конфиденциальности и свободы."
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
@@ -2841,9 +2836,6 @@
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша подписка ${ PASS_SHORT_APP_NAME } Plus будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your account will be updated once the payment is cleared.": [
-        "Ваш аккаунт будет обновлен, когда платеж будет проверен."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
@@ -3473,9 +3465,6 @@
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
-      "High-speed streaming": [
-        "Высокоскоростной стриминг"
-      ],
       "High-speed VPN on ${ n } device": [
         "Высокоскоростная VPN на ${ n } устройстве",
         "Высокоскоростная VPN на ${ n } устройствах",
@@ -3527,12 +3516,6 @@
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
       ],
-      "Protect ${ n } device at a time": [
-        "Защитите ${ n } устройство за раз",
-        "Защитите ${ n } устройства одновременно",
-        "Защитите ${ n } устройств одновременно",
-        "Защитите ${ n } устройств одновременно"
-      ],
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
       ],
@@ -3583,9 +3566,6 @@
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
-      ],
-      "TOR over VPN": [
-        "TOR через VPN"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -4242,9 +4222,6 @@
       ]
     },
     "Payments.Sepa": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Подтверждая этот платеж, вы авторизуете ${ BRAND_NAME } и Stripe, наш поставщик платежных услуг, поручить вашему банку депонировать свой счет и банк соответствующим образом депонировать свой счет. Вы можете получить возврат средств в течение 8 недель со дня дебетования на основании Вашего договора с Вашим банком."
-      ],
       "Street address, postal code, and city": [
         "Адрес улицы, почтовый индекс и город"
       ]
@@ -5103,14 +5080,8 @@
       "Could not fetch wallets data": [
         "Не удалось загрузить данные кошельков"
       ],
-      "Explore other ${ BRAND_NAME } products": [
-        "Изучите другие продукты ${ BRAND_NAME }"
-      ],
       "Syncing new data": [
         "Синхронизация новых данных"
-      ],
-      "Upgrade to Visionary": [
-        "Улучшить до Visionary"
       ],
       "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
         "Ваш браузер или программное обеспечение устройства не поддерживает ${ WALLET_APP_NAME }. Обновите браузер или устройство. В качестве альтернативы вы можете использовать одно из наших мобильных приложений."
@@ -5238,23 +5209,6 @@
         "Настройте двухфакторную аутентификацию, чтобы защитить аккаунт"
       ]
     },
-    "Wallet explore proton": {
-      "An encrypted password manager that protects your online identity.": [
-        "Зашифрованный менеджер паролей, который защищает вашу личную информацию в Интернете."
-      ],
-      "Encrypted email that's private by default.": [
-        "Электронная почта с шифрованием, в которой конфиденциальность обеспечивается по умолчанию."
-      ],
-      "Improve the security of your business and comply with data protection laws.": [
-        "Улучшите безопасность своего бизнеса и соблюдайте законы о защите данных."
-      ],
-      "Secure cloud storage that gives you control of your data.": [
-        "Безопасное облачное хранилище, позволяющее контролировать данные."
-      ],
-      "Your calendar is a record of your life. Keep it safe.": [
-        "Календарь — это хроника вашей жизни. Он должен быть защищён."
-      ]
-    },
     "Wallet header": {
       "Secure your wallet": [
         "Защитите кошелёк"
@@ -5297,9 +5251,6 @@
       ]
     },
     "Wallet invite": {
-      "${ WALLET_APP_NAME } Early Access is limited to Visionary supporters and invited users.": [
-        "${ WALLET_APP_NAME } Ранний доступ ограничен пользователями Visionary и приглашёнными пользователями."
-      ],
       "Close": [
         "Закрыть"
       ],
@@ -5312,14 +5263,14 @@
       "Email address is required": [
         "Нужно указать адрес электронной почты"
       ],
-      "Exclusive Invites": [
-        "Эксклюзивные приглашения"
-      ],
       "Invitation sent to ${ email }": [
         "Приглашение отправлено на ${ email }"
       ],
-      "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
-        "Пригласите своих друзей и семью, чтобы вы все могли отправить Bitcoin по электронной почте. Вы получите больше приглашений, когда мы добавим больше серверов."
+      "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Пригласите своих друзей и семью в ${ WALLET_APP_NAME } чтобы вы все могли отправлять Bitcoin по эл. почте."
+      ],
+      "Invites": [
+        "Приглашения"
       ],
       "Not now": [
         "Не сейчас"
@@ -5350,11 +5301,8 @@
       ]
     },
     "Wallet invites": {
-      "${ availableInvites } invite left": [
-        "Осталось ${ availableInvites } приглашение",
-        "Осталось ${ availableInvites } приглашения",
-        "Осталось ${ availableInvites } приглашений",
-        "Осталось ${ availableInvites } приглашений"
+      "Invite your friends": [
+        "Пригласить друзей"
       ]
     },
     "Wallet passphrase": {
@@ -5832,6 +5780,9 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Перенесите ваши биткойны в другой кошелёк перед удалением. Удаление этого кошелька удалит все его данные с серверов ${ BRAND_NAME }. Вы сможете восстановить этот кошелёк позже, используя мнемоническую фразу."
       ],
+      "Seed phrase (12 to 24 words, separated by space)": [
+        "Сид-фраза (12 или 24 слова, разделенные пробелом)"
+      ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Эти 12 слов должны использоваться только для восстановления активов этого кошелька в качестве последнего средства, например, если вы потеряете доступ к вашему аккаунту ${ BRAND_NAME }."
       ],
@@ -5850,8 +5801,26 @@
       "Wallet seed phrase": [
         "Мнемоническая фраза для кошелька"
       ],
+      "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
+        "Контрольная сумма фразы для восстановления кошелька недействительна. Мы поддерживаем только фразы для восстановления по стандарту BIP39 и не поддерживаем Electrum."
+      ],
+      "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
+        "Фраза для восстановления кошелька содержит неизвестное слово: ${ word }. Мы поддерживаем только английский список слов BIP39."
+      ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "Мнемоническая фраза кошелька кодирует закрытый ключ, который контролирует ваши цифровые активы."
+      ],
+      "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
+        "Энтропия фразы для восстановления кошелька недопустима. Она должна составлять от 128 до 256 бит."
+      ],
+      "Wallet seed phrase is incorrect. Please check it and try again.": [
+        "Фраза для восстановления кошелька неверна. Проверьте её и попробуйте снова."
+      ],
+      "Wallet seed phrase language is not supported.": [
+        "Язык фразы для восстановления кошелька не поддерживается."
+      ],
+      "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
+        "Длина фразы для восстановления кошелька недопустима. Она должна содержать от 12 до 24 слов."
       ],
       "Wallet setup": [
         "Настройка кошелька"
@@ -6088,20 +6057,8 @@
       ]
     },
     "Wallet Welcome": {
-      "Early Access Waitlist": [
-        "Список ожидания раннего доступа"
-      ],
-      "Invites from active users of ${ WALLET_APP_NAME } will allow you to skip this waiting list.": [
-        "Приглашения от активных пользователей ${ WALLET_APP_NAME } позволят вам пропустить этот список ожидания."
-      ],
       "Welcome to ${ WALLET_APP_NAME }": [
         "Добро пожаловать в ${ WALLET_APP_NAME }"
-      ],
-      "You can also support us and get immediate access by upgrading to ${ BRAND_NAME } Visionary, our most premium plan with paid features in all ${ BRAND_NAME } products.": [
-        "Вы также можете поддержать нас и получить немедленный доступ, улучшив тариф до ${ BRAND_NAME } Visionary, нашего самого высококачественного плана с платными функциями во всех продуктах ${ BRAND_NAME }."
-      ],
-      "You have been added to the first come, first serve waiting list. We will notify you at ${ email } once we have more server capacity.": [
-        "Вы были добавлены в список ожидания на основе принципа «первый пришёл — первый обслужен». Мы уведомим вас по адресу ${ email }, как только у нас будет больше серверных мощностей."
       ]
     },
     "wallet_signup_2024: Info": {
@@ -6110,12 +6067,6 @@
         "${ n } счёта на один кошелёк",
         "${ n } счетов на один кошелёк",
         "${ n } счетов на один кошелёк"
-      ],
-      "${ n } email address": [
-        "${ n } адрес эл. почты",
-        "${ n } адреса эл. почты",
-        "${ n } адресов эл. почты",
-        "${ n } адресов эл. почты"
       ],
       "${ n } wallet": [
         "${ n } кошелёк",
@@ -6128,6 +6079,12 @@
       ],
       "Bitcoin via Email": [
         "Bitcoin по электронной почте"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "Зашифрованный и защищённый адрес электронной почты ${ MAIL_APP_NAME }. Вы можете легко отправить Bitcoin любому, используя всего лишь его имя ${ BRAND_NAME }."
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "Безопасно обменивайте Bitcoin по эл. почте вместо сложных, 26-значных Bitcoin-адресов, склонных к ошибкам"
       ]
     },
     "wallet_signup_2024:app-switcher": {
