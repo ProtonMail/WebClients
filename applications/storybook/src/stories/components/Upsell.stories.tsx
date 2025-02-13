@@ -5,8 +5,8 @@ import {
     AuthenticationProvider,
     Checkbox,
     ConfigProvider,
+    OldUpsellModal,
     type PrivateAuthenticationStore,
-    UpsellModal,
 } from '@proton/components';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import type { UpsellModalProps } from '@proton/components/components/upsell/modal/UpsellModal';
@@ -18,14 +18,7 @@ import noop from '@proton/utils/noop';
 import { getTitle } from '../../helpers/title';
 import mdx from './Upsell.mdx';
 
-export default {
-    title: getTitle(__filename, false),
-    parameters: {
-        docs: {
-            page: mdx,
-        },
-    },
-};
+export default { title: getTitle(__filename, false), parameters: { docs: { page: mdx } } };
 
 export const Icon = () => {
     return <UpsellIcon />;
@@ -87,7 +80,7 @@ export const Basic = () => {
                         </ul>
                     </div>
                     <div className="">
-                        <UpsellModal
+                        <OldUpsellModal
                             modalProps={{
                                 onClose: () => {
                                     setOpened(false);
