@@ -20,8 +20,6 @@ import SubSettingsSection from '../../layout/SubSettingsSection';
 import { PassReportsMonitorTable } from './PassReportsMonitorTable';
 import { PassReportsUsageTable } from './PassReportsUsageTable';
 
-import './PassReports.scss';
-
 /** BE default and max value is 50 */
 const REPORTS_PAGE_SIZE = 50;
 
