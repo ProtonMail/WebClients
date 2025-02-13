@@ -24,7 +24,6 @@ enum CommonFeatureFlag {
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
     DarkWebEmailNotifications = 'DarkWebEmailNotifications',
-    InboxNewUpsellModals = 'InboxNewUpsellModals',
     InboxWebPostSubscriptionFlow = 'InboxWebPostSubscriptionFlow',
     NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
     ScribeAdminSetting = 'ScribeAdminSetting',
