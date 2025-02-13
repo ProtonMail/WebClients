@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import OldUpsellModal from '@proton/components/components/upsell/modal/OldUpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS } from '@proton/payments';
@@ -41,7 +41,7 @@ const ComposerAssistantB2CUpsellModal = ({ modalProps }: Props) => {
     const title = user.isFree ? c('Title').t`Craft better emails` : c('Title').t`Your free trial has ended`;
 
     return (
-        <UpsellModal
+        <OldUpsellModal
             title={title}
             description={c('Description')
                 .t`For unlimited access to the writing assistant and more, upgrade to ${BRAND_NAME} Duo.`}

@@ -45,9 +45,7 @@ type UpsellBoxProps = Partial<
         | 'hideFeaturesListBorder'
         | 'footerText'
         | 'iconSize'
-    > & {
-        path: string;
-    }
+    > & { path: string }
 > &
     Required<Pick<UpsellModalProps, 'description' | 'title' | 'features' | 'submitPosition'>> & {
         handleUpgrade: () => void;
@@ -166,7 +164,10 @@ export interface UpsellModalProps {
     iconSize?: IconSize;
 }
 
-const UpsellModal = ({
+/**
+ * @deprecated Use `NewUpsellModal` instead
+ */
+const OldUpsellModal = ({
     description,
     features,
     featuresDescription,
@@ -192,12 +193,7 @@ const UpsellModal = ({
     const api = useApi();
 
     const handleUpgrade = () => {
-        sendRequestUpsellModalReport({
-            api,
-            application,
-            sourceEvent,
-            upsellModalType,
-        });
+        sendRequestUpsellModalReport({ api, application, sourceEvent, upsellModalType });
         onUpgrade?.();
         modalProps.onClose();
     };
@@ -232,4 +228,4 @@ const UpsellModal = ({
     );
 };
 
-export default UpsellModal;
+export default OldUpsellModal;
