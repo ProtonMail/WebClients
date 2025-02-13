@@ -311,7 +311,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
                     open={selfHelpModal.open}
                     onClose={selfHelpModal.onClose}
                     onExit={selfHelpModal.onExit}
-                    onBugReportClick={handleBugReportClick}
+                    onBugReportClick={() => setBugReportModal(true)}
                     app={app}
                 />
             )}
@@ -437,9 +437,9 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
                     )}
 
                     {!isSentinelUser &&
-                    isSecurityCheckupAvailable &&
-                    (securityCheckup.actions.includes('phrase') ||
-                        securityCheckup.furtherActions.includes('phrase')) ? (
+                        isSecurityCheckupAvailable &&
+                        (securityCheckup.actions.includes('phrase') ||
+                            securityCheckup.furtherActions.includes('phrase')) ? (
                         <AppLink
                             toApp={APPS.PROTONACCOUNT}
                             to={`${SECURITY_CHECKUP_PATHS.ROOT}?${securityCheckupParams.toString()}`}
