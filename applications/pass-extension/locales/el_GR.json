@@ -441,7 +441,7 @@
         "Απόρριψη πρόσκλησης"
       ],
       "Reload extension": [
-        "Επαναφόρτωση επέκτασης"
+        "Επαναφόρτωση προέκτασης"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -761,6 +761,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να προχωρήσετε στην εξαγωγή"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης σας για να προχωρήσετε στην εξαγωγή"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης σας για να προχωρήσετε στην εξαγωγή"
+      ],
       "Authentication failure: ${ message }": [
         "Αποτυχία ελέγχου ταυτότητας: ${ message }"
       ],
@@ -1022,10 +1028,10 @@
         "Οι κωδικοί PIN δεν ταιριάζουν"
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Παραχωρήστε ${ PASS_APP_NAME } τα απαραίτητα δικαιώματα επέκτασης για να συνεχίσετε"
+        "Παραχωρήστε ${ PASS_APP_NAME } τα απαραίτητα δικαιώματα προέκτασης για να συνεχίσετε"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Παρακαλούμε καρφιτσώστε την επέκταση ή επιλέξτε \"Συνέχεια χωρίς καρφίτσωμα\"."
+        "Παρακαλούμε καρφιτσώστε την προέκταση ή επιλέξτε \"Συνέχεια χωρίς καρφίτσωμα\"."
       ],
       "Registration failure: ${ message }": [
         "Αποτυχία εγγραφής: ${ message }"
@@ -1061,7 +1067,7 @@
         "Κάτι πήγε στραβά"
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Κάτι πήγε στραβά. Φορτώστε ξανά την επέκταση ${ PASS_APP_NAME }. Αυτό το ζήτημα έχει καταγραφεί"
+        "Κάτι πήγε στραβά. Φορτώστε ξανά την προέκταση ${ PASS_APP_NAME }. Αυτό το ζήτημα έχει καταγραφεί"
       ],
       "The file you are trying to import is empty": [
         "Το αρχείο που προσπαθείτε να εισαγάγετε είναι κενό"
@@ -1541,7 +1547,7 @@
         "Απόθεση για εισαγωγή"
       ],
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Λόγω περιορισμού των επεκτάσεων του προγράμματος περιήγησης Safari, μετά την εξαγωγή των δεδομένων θα λείπει η επέκταση αρχείου \".pgp\". Μετονομάστε το αρχείο για να συμπεριλάβετε την επέκταση .pgp (π.χ. file.pgp) μετά την εξαγωγή."
+        "Λόγω περιορισμού των προεκτάσεων του προγράμματος περιήγησης Safari, μετά την εξαγωγή των δεδομένων θα λείπει η επέκταση αρχείου \".pgp\". Μετονομάστε το αρχείο για να συμπεριλάβετε την επέκταση .pgp (π.χ. file.pgp) μετά την εξαγωγή."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Εισαγάγετε εύκολα τους υπάρχοντες κωδικούς πρόσβασής σας στο ${ PASS_APP_NAME }."
@@ -1685,7 +1691,7 @@
         "Στο ${ PASS_SHORT_APP_NAME }, μια σημείωση στοιχείου κρυπτογραφείται με το κλειδί κρυπτογράφησης στοιχείου και μόνο οι χρήστες που έχουν πρόσβαση στο στοιχείο μπορούν να δουν τη σημείωση. Ούτε καν η ${ BRAND_NAME } ή η SimpleLogin δεν μπορούν να το δουν."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Για να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }, παραχωρήστε τα απαραίτητα δικαιώματα επέκτασης"
+        "Για να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }, παραχωρήστε τα απαραίτητα δικαιώματα προέκτασης"
       ],
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
@@ -1830,7 +1836,7 @@
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
       ],
       "Open the Extensions menu": [
-        "Άνοιγμα του μενού \"Επεκτάσεις\""
+        "Άνοιγμα του μενού \"Προεκτάσεις\""
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -2159,7 +2165,7 @@
         "Για να ελέγξετε τα εισαγόμενα δεδομένα σας, κάντε κλικ στο εικονίδιο ${ PASS_APP_NAME } στη γραμμή εργαλείων του προγράμματος περιήγησής σας."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
-        "Δοκιμάστε να φορτώσετε ξανά ή να εγκαταστήσετε ξανά την επέκταση και βεβαιωθείτε ότι το πρόγραμμα περιήγησής σας και το ${ PASS_SHORT_APP_NAME } είναι ενημερωμένα."
+        "Δοκιμάστε να φορτώσετε ξανά ή να εγκαταστήσετε ξανά την προέκταση και βεβαιωθείτε ότι το πρόγραμμα περιήγησής σας και το ${ PASS_SHORT_APP_NAME } είναι ενημερωμένα."
       ],
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
@@ -3864,6 +3870,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 διαδοχικές κουκκίδες δεν επιτρέπονται"
+      ],
       "A description of the problem is required": [
         "Απαιτείται περιγραφή του προβλήματος"
       ],
@@ -3895,6 +3904,12 @@
       ],
       "At least one email address is required": [
         "Απαιτείται τουλάχιστον μία διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Δεν μπορεί να περιέχει τελεία στην αρχή"
+      ],
+      "Cannot contain a dot at the end": [
+        "Δεν μπορεί να περιέχει τελεία στο τέλος"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Δεν είναι δυνατή η ανάκτηση γραμματοκιβωτίων για αυτό το ψευδώνυμο αυτήν τη στιγμή"
@@ -3999,8 +4014,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Μετά τον συγχρονισμό, διαγράφοντας ψευδώνυμα στο ${ PASS_SHORT_APP_NAME } αυτά θα διαγραφούν ταυτόχρονα και από το SimpleLogin"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Επιτρέπονται μόνο αλφαριθμητικοί πεζοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
       ],
       "Passphrase is required": [
         "Απαιτείται φράση πρόσβασης"
