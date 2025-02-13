@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -7,6 +7,7 @@ import { ButtonLike } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
@@ -58,6 +59,27 @@ export const MailPostSignupOneDollar = () => {
         fromUnixTime(mailOfferState?.Value?.offerStartDate || Date.now())
     );
 
+    const upsellRef = useMemo(
+        () =>
+            getUpsellRef({
+                app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+                component: UPSELL_COMPONENT.MODAL,
+                feature: getUpsellFeature(daysSinceOffer),
+            }),
+        [daysSinceOffer]
+    );
+
+    const { onUpgrade } = useUpsellConfig({
+        upsellRef,
+        step: SUBSCRIPTION_STEPS.CHECKOUT,
+        coupon: COUPON_CODES.TRYMAILPLUS0724,
+        cycle: CYCLE.MONTHLY,
+        plan: PLANS.MAIL,
+        onSubscribed: () => {
+            sendReportUserSubscribed(daysSinceOffer);
+        },
+    });
+
     const [spotlightState, setSpotlightState] = useState(openSpotlight);
     const show = useSpotlightShow(spotlightState, 3000);
 
@@ -89,27 +111,26 @@ export const MailPostSignupOneDollar = () => {
         handleClose();
         sendReportClickUpsellButton(daysSinceOffer);
 
-        const upsellRef = getUpsellRef({
-            app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-            component: UPSELL_COMPONENT.MODAL,
-            feature: getUpsellFeature(daysSinceOffer),
-        });
-
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            disablePlanSelection: true,
-            plan: PLANS.MAIL,
-            cycle: CYCLE.MONTHLY,
-            maximumCycle: CYCLE.YEARLY,
-            coupon: COUPON_CODES.TRYMAILPLUS0724,
-            upsellRef,
-            metrics: {
-                source: 'upsells',
-            },
-            onSubscribed: () => {
-                sendReportUserSubscribed(daysSinceOffer);
-            },
-        });
+        if (onUpgrade) {
+            onUpgrade();
+        } else {
+            // Keep this as security measure even if `onUpgrade` should always be available
+            openSubscriptionModal({
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                plan: PLANS.MAIL,
+                cycle: CYCLE.MONTHLY,
+                maximumCycle: CYCLE.YEARLY,
+                coupon: COUPON_CODES.TRYMAILPLUS0724,
+                upsellRef,
+                metrics: {
+                    source: 'upsells',
+                },
+                onSubscribed: () => {
+                    sendReportUserSubscribed(daysSinceOffer);
+                },
+            });
+        }
     };
 
     const isLastReminderDay = daysSinceOffer >= LAST_REMINDER_DAY;
