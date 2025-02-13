@@ -4,7 +4,15 @@ import { useParams } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { Loader, NavigationControl, TopBanner, useAppTitle, useConfig, useModalStateObject } from '@proton/components';
+import {
+    Loader,
+    NavigationControl,
+    TopBanner,
+    useAppTitle,
+    useConfig,
+    useModalStateObject,
+    useNotifications,
+} from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
@@ -19,6 +27,7 @@ import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMet
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../store';
 import { isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { sendErrorReport } from '../../utils/errorHandling';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
@@ -45,10 +54,10 @@ const useAppTitleUpdate = () => {
 export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useAppTitle(c('Title').t`Album`);
     const updateTitle = useAppTitleUpdate();
+    const { createNotification } = useNotifications();
     let { albumLinkId } = useParams<{ albumLinkId: string }>();
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const {
-        volumeId,
         shareId,
         linkId,
         albums,
@@ -61,6 +70,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         albumPhotosLinkIds,
         isAlbumsLoading,
         isAlbumPhotosLoading,
+        setPhotoAsCover,
     } = usePhotosWithAlbumsView();
 
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
@@ -120,15 +130,37 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     );
 
     const onPhotoUploadedToAlbum = useCallback(
-        (file: OnFileUploadSuccessCallbackData) => {
-            if (!shareId || !linkId || !volumeId || !file) {
+        async (file: OnFileUploadSuccessCallbackData) => {
+            if (!file) {
                 return;
             }
             const abortSignal = new AbortController().signal;
-            addAlbumPhoto(abortSignal, volumeId, shareId, albumLinkId, file.fileId);
+            try {
+                await addAlbumPhoto(abortSignal, file.fileId);
+            } catch (e) {
+                if (e instanceof Error) {
+                    createNotification({ text: e.message, type: 'error' });
+                }
+                sendErrorReport(e);
+            }
         },
-        [albumLinkId]
+        [createNotification, addAlbumPhoto]
     );
+
+    const onSelectCover = useCallback(async () => {
+        if (previewItem) {
+            const abortSignal = new AbortController().signal;
+            try {
+                await setPhotoAsCover(abortSignal, previewItem.linkId);
+                createNotification({ text: c('Info').t`Photo is set as album cover` });
+            } catch (e) {
+                if (e instanceof Error) {
+                    createNotification({ text: e.message, type: 'error' });
+                }
+                sendErrorReport(e);
+            }
+        }
+    }, [createNotification, setPhotoAsCover, previewItem]);
 
     const isAlbumPhotosEmpty = albumPhotos.length === 0;
     const album = albumLinkId ? albums.find((album) => album.linkId === albumLinkId) : undefined;
@@ -182,6 +214,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             linkId: previewItem.linkId,
                         })
                     }
+                    onSelectCover={onSelectCover}
                     navigationControls={
                         <NavigationControl
                             current={previewIndex + 1}

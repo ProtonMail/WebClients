@@ -40,7 +40,7 @@ import VideoPreview from './VideoPreview';
 // Lazy Loaded since it includes jszip and it's a rare file type (not common)
 const ComicBookPreview = lazy(() => import(/* webpackChunkName: "comic-book-preview" */ './ComicBookPreview'));
 
-interface Props {
+interface FilePreviewProps {
     isMetaLoading?: boolean;
     isLoading: boolean;
     error?: string;
@@ -64,6 +64,7 @@ interface Props {
     onShare?: () => void;
     onRestore?: () => void; // revision's specific
     onOpenInDocs?: () => void;
+    onSelectCover?: () => void; // photos inside albums only
     date?: Date | string | number;
 
     navigationControls?: ReactNode;
@@ -241,8 +242,9 @@ const FilePreview = (
         onShare,
         onRestore,
         onOpenInDocs,
+        onSelectCover,
         date,
-    }: Props,
+    }: FilePreviewProps,
     ref: Ref<HTMLDivElement>
 ) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -329,6 +331,7 @@ const FilePreview = (
                 onShare={onShare}
                 onRestore={onRestore}
                 onOpenInDocs={onOpenInDocs}
+                onSelectCover={onSelectCover}
                 date={date}
             >
                 {isDirty ? <div className="flex items-center">{c('Info').t`Unsaved changes`}</div> : navigationControls}
