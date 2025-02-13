@@ -1357,10 +1357,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -9596,6 +9596,9 @@
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikerade servrar optimerade för streaming"
+      ],
       "Desktop app": [
         "Skrivbordsapp"
       ],
@@ -9646,9 +9649,6 @@
       ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
-      ],
-      "High-speed streaming": [
-        "Höghastighetsstreaming"
       ],
       "High-speed VPN on ${ n } device": [
         "Höghastighets-VPN på ${ n } enhet",
@@ -9704,10 +9704,6 @@
       ],
       "Proofread and refine your emails": [
         "Korrekturläs och finjustera din e-post"
-      ],
-      "Protect ${ n } device at a time": [
-        "Skydda ${ n } enhet åt gången",
-        "Skydda ${ n } enheter åt gången"
       ],
       "Quickly craft replies": [
         "Skapa svar snabbt"
@@ -9839,6 +9835,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Upp till ${ totalStorageSize } lagringsutrymme"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Upp till ${ n } enhet samtidigt",
+        "Upp till ${ n } enheter samtidigt"
       ],
       "User credential management": [
         "Hantera användaruppgifter"
@@ -13905,6 +13905,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 på varandra följande punkter är inte tillåtet"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Är du säker på att du vill ta bort ${ count } kontakt?",
         "Är du säker på att du vill ta bort ${ count } kontakter?"
@@ -13917,6 +13920,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Är du säker på att du vill ta bort denna kontakt permanent?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Kan inte innehålla en punkt i början"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan inte innehålla en punkt i slutet"
       ],
       "Contacts could not be merged": [
         "Kontakter kunde inte slås samman"
@@ -13939,8 +13948,8 @@
       "Name is required": [
         "Namn är obligatoriskt"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Endast alfanumeriska tecken, punkter, bindestreck och understreck är tillåtna"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Endast alfanumeriska gemener, punkter, bindestreck och understreck är tillåtna"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Observera att genom att välja denna betalningsmetod kan ditt konto inte uppgraderas omedelbart. Vi kommer att uppdatera ditt konto när betalningen har gått igenom."
