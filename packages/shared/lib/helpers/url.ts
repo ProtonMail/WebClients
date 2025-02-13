@@ -477,3 +477,19 @@ export const appendUrlSearchParams = (url: string, params: Record<string, string
     });
     return urlObj.toString();
 };
+
+/**
+ * Mapping for the Mail's App Names to Support Self Troubleshooting App Names
+ * @param app APP_NAMES
+ * @returns product name
+ */
+export const getProductForSupport = (app: APP_NAMES): string => {
+    const appToProduct: { [key: string]: string } = {
+        [APPS.PROTONMAIL]: 'mail',
+        [APPS.PROTONCALENDAR]: 'calendar',
+        [APPS.PROTONDRIVE]: 'drive',
+        [APPS.PROTONPASS]: 'pass',
+        [APPS.PROTONVPN_SETTINGS]: 'vpn',
+    };
+    return appToProduct[app] || 'account';
+};
