@@ -3373,6 +3373,11 @@
         "Bardzo mała"
       ]
     },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Masz już konto? ${ signIn }"
@@ -3414,29 +3419,26 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Akcje"
+      ],
       "App version": [
         "Wersja aplikacji"
       ],
       "Best deal": [
         "Najlepsza oferta"
       ],
-      "Checkout": [
-        "Płatność"
-      ],
-      "City": [
-        "Miasto"
-      ],
-      "Country": [
-        "Kraj"
-      ],
-      "Create your account": [
-        "Utwórz konto"
-      ],
       "Device": [
         "Urządzenie"
       ],
+      "Enabled Countries": [
+        "Włączone kraje"
+      ],
       "Event": [
         "Zdarzenie"
+      ],
+      "Groups": [
+        "Grupy"
       ],
       "IP address": [
         "Adres IP"
@@ -3455,6 +3457,9 @@
       ],
       "Organization key fingerprint": [
         "Odcisk klucza organizacji"
+      ],
+      "Policy Name": [
+        "Nazwa zasady"
       ],
       "Protection": [
         "Ochrona"
@@ -3950,6 +3955,9 @@
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
+      ],
+      "Custom policies": [
+        "Niestandardowe zasady"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
@@ -4461,17 +4469,11 @@
       "No Gateways yet": [
         "Brak bram"
       ],
-      "No location filters are currently assigned.": [
-        "Brak przypisanych filtrów lokalizacji."
-      ],
       "No payment is required at this time.": [
         "Płatność nie jest wymagana."
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
-      ],
-      "No Shared Servers Found": [
-        "Nie znaleziono udostępnionych serwerów"
       ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
@@ -4483,10 +4485,10 @@
         "z"
       ],
       "Off": [
-        "Wył."
+        "Wyłącz"
       ],
       "On": [
-        "Wł."
+        "Włącz"
       ],
       "Once you reset your password:": [
         "Po zresetowaniu hasła:"
@@ -4755,9 +4757,6 @@
       "Shared ${ vaultLink } updated": [
         "Zaktualizowanie udostępniania sejfu ${ vaultLink }"
       ],
-      "Shared Server Location Filters": [
-        "Filtry udostępnionych serwerów"
-      ],
       "Shared vault deleted": [
         "Usunięcie udostępnionego sejfu"
       ],
@@ -4778,12 +4777,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
-      ],
-      "Step ${ step }": [
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Przestrzeń dyskowa przydzielona do innych użytkowników organizacji"
@@ -5388,6 +5381,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizacja używa logowania SSO. Kliknij \"Zaloguj się\", aby skorzystać z dostawcy tożsamości SSO."
       ],
@@ -5399,6 +5395,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Możliwość dodania serwerów do innej bramy będzie możliwa natychmiast."
@@ -6867,12 +6869,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "High-speed streaming": [
-        "Szybki streaming"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Szybka szwajcarska usługa VPN, która chroni Twoją prywatność"
-      ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
         "Szybki VPN na ${ n } urządzenia",
@@ -6933,12 +6929,6 @@
       "Proofread and refine your emails": [
         "Sprawdzaj i poprawiaj teksty"
       ],
-      "Protect ${ n } device at a time": [
-        "Ochrona ${ n } urządzenia jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzenia jednocześnie"
-      ],
       "Quickly craft replies": [
         "Twórz szybsze wiadomości"
       ],
@@ -6968,6 +6958,9 @@
       ],
       "Secure Core servers": [
         "Serwery Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
       ],
       "Secure link sharing": [
         "Bezpieczne udostępnianie linków"
@@ -7004,9 +6997,6 @@
       ],
       "Start protecting your organization": [
         "Chroń swoją organizację"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Chroń się online w 2 prostych krokach"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
@@ -7704,6 +7694,12 @@
       ]
     },
     "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Oferta ${ pricingTitle } wygasa dzisiaj!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Wybierz plan Drive Plus za ${ pricingTitle }"
+      ],
       "Get Mail Plus for only ${ pricingTitle }": [
         "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
       ],
@@ -7730,8 +7726,14 @@
       "Email addresses": [
         "Adresy e-mail"
       ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ],
       "Storage": [
         "Przestrzeń dyskowa"
@@ -11704,6 +11706,9 @@
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
@@ -11780,9 +11785,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Pakiet ${ a } i ${ b }"
-      ],
-      "Your ${ selected } plan": [
-        "Plan ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {

@@ -2338,11 +2338,11 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Vytvorte pravidlá na určenie toho, kto sa môže pripojiť k zdieľaným serverom v jednotlivých krajinách."
+      "Create policies to manage access to shared servers.": [
+        "Vytvorte pravidlá na správu prístupu k zdieľaným serverom."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Každý člen vašej organizácie sa môže pripojiť k zdieľaným serverom vo všetkých krajinách."
+      "Everyone in your organization can connect to shared servers.": [
+        "Každý vo vašej organizácie sa môže pripojiť k zdieľaným serverom."
       ],
       "If disabled, only admins will have access.": [
         "Ak je zakázané, prístup budú mať len administrátori."
@@ -3451,29 +3451,29 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Akcie"
+      ],
       "App version": [
         "Verzia aplikácie"
       ],
       "Best deal": [
         "Najlepšia ponuka"
       ],
-      "Checkout": [
-        "Pokladňa"
-      ],
-      "City": [
-        "Mesto"
-      ],
-      "Country": [
-        "Krajina"
-      ],
-      "Create your account": [
-        "Vytvoriť svoj účet"
-      ],
       "Device": [
         "Zariadenie"
       ],
+      "Enabled Countries": [
+        "Povolené krajiny"
+      ],
+      "Enter your email address": [
+        "Zadajte vašu emailovú adresu"
+      ],
       "Event": [
         "Udalosť"
+      ],
+      "Groups": [
+        "Skupiny"
       ],
       "IP address": [
         "IP adresa"
@@ -3493,6 +3493,9 @@
       "Organization key fingerprint": [
         "Odtlačok kľúča organizácie"
       ],
+      "Policy Name": [
+        "Názov pravidla"
+      ],
       "Protection": [
         "Ochrana"
       ],
@@ -3501,6 +3504,9 @@
       ],
       "Select your deal": [
         "Vyberte si svoju ponuku"
+      ],
+      "Select your payment method": [
+        "Vyberte váš spôsob platby"
       ],
       "Select your pricing plan": [
         "Vyberte si plán predplatného"
@@ -3826,8 +3832,8 @@
       "Allocated": [
         "Pridelené"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Umožniť používateľom pripojiť sa k zabezpečeným zdieľaným serverom v položke **Krajiny** v aplikácii ${ VPN_APP_NAME }."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Umožniť používateľom pripájať sa k zabezpečeným zdieľaným serverom na základe definovaných zásad."
       ],
       "Already allocated": [
         "Už pridelené"
@@ -3931,6 +3937,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Ocenenie CNET editors choice s hodnotením 8,4 z 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Nakonfigurujte overovanie SAML pre svoju organizáciu prostredníctvom poskytovateľa identít (IdP). Týmto sa umožní SAML pre celú organizáciu."
       ],
@@ -3963,6 +3972,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Skopírujte navrhované heslo do schránky"
+      ],
+      "countries enabled": [
+        "povolené krajiny"
       ],
       "Country code": [
         "Kód krajiny"
@@ -4005,6 +4017,9 @@
       ],
       "Custom email domains": [
         "Vlastné emailové domény"
+      ],
+      "Custom policies": [
+        "Vlastné pravidlá"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prispôsobte si vzhľad a štýl aplikácií ${ BRAND_NAME }."
@@ -4525,9 +4540,6 @@
       "No Gateways yet": [
         "Zatiaľ žiadne brány"
       ],
-      "No location filters are currently assigned.": [
-        "Aktuálne nie sú použité žiadne filtre umiestnenia"
-      ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
       ],
@@ -4536,9 +4548,6 @@
       ],
       "No results found": [
         "Nenájdené žiadne výsledky"
-      ],
-      "No Shared Servers Found": [
-        "Neboli nájdené žiadne zdieľané servery"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -4611,6 +4620,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Výber redakcie časopisu PC Magazine s hodnotením 5 z 5 hviezdičiek"
       ],
       "per month": [
         "mesačne"
@@ -4822,9 +4834,6 @@
       "Shared ${ vaultLink } updated": [
         "Zdieľaný ${ vaultLink } aktualizovaný"
       ],
-      "Shared Server Location Filters": [
-        "Filtre umiestnenia zdieľaného servera"
-      ],
       "Shared vault deleted": [
         "Zdieľaný trezor bol vymazaný"
       ],
@@ -4845,12 +4854,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
-      ],
-      "Step ${ step }": [
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložisko pridelené iným používateľom v tejto organizácii"
@@ -4890,6 +4893,9 @@
       ],
       "Symbols (#$&)": [
         "Znaky (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Tech radar pro odporúča s hodnotením 4,2 z 5 hviezdičiek"
       ],
       "Thank you": [
         "Ďakujeme"
@@ -5064,6 +5070,9 @@
       ],
       "Total VPN connections": [
         "Celkom VPN pripojení"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Vyskúšajte ${ productName } úplne bez rizika - ak si to z akéhokoľvek dôvodu rozmyslíte, dostanete plnú náhradu. Bez otázok."
       ],
       "Two-factor authentication disabled": [
         "Dvojstupňové overenie vypnuté"
@@ -5892,6 +5901,9 @@
       "Group name": [
         "Názov skupiny"
       ],
+      "Groups": [
+        "Skupiny"
+      ],
       "Hide password": [
         "Skryť heslo"
       ],
@@ -5960,6 +5972,9 @@
       ],
       "New password": [
         "Nové heslo"
+      ],
+      "New policy name": [
+        "Názov nového pravidla"
       ],
       "New second password": [
         "Nové druhé heslo"
@@ -6146,6 +6161,9 @@
       ],
       "Username": [
         "Používateľské meno"
+      ],
+      "Users": [
+        "Používatelia"
       ],
       "Value": [
         "Hodnota"
@@ -6852,6 +6870,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Všetky prémiové služby ${ BRAND_NAME }. Jedno jednoduché predplatné"
       ],
+      "Apps for": [
+        "Aplikácie pre"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
       ],
@@ -6918,6 +6939,9 @@
       "Dedicated servers and IP": [
         "Dedikované servery a IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikované servery optimalizované na streamovanie"
+      ],
       "Desktop app": [
         "Desktopová aplikácia"
       ],
@@ -6968,12 +6992,6 @@
       ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
-      ],
-      "High-speed streaming": [
-        "Vysokorýchlostné streamovanie"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Vysokorýchlostná švajčiarska VPN, ktorá chráni vaše súkromie"
       ],
       "High-speed VPN on ${ n } device": [
         "Vysoko rýchlostná sieť VPN na ${ n } zariadení",
@@ -7034,12 +7052,6 @@
       ],
       "Proofread and refine your emails": [
         "Korigujte a zdokonaľujte vaše emaily"
-      ],
-      "Protect ${ n } device at a time": [
-        "Chráňte súčasne ${ n } zariadenie",
-        "Chráňte súčasne ${ n } zariadenia",
-        "Chráňte súčasne ${ n } zariadení",
-        "Chráňte súčasne ${ n } zariadení"
       ],
       "Quickly craft replies": [
         "Rýchlo vytvárajte odpovede"
@@ -7109,9 +7121,6 @@
       ],
       "Start protecting your organization": [
         "Začnite chrániť vašu organizáciu"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Začnite sa chrániť online v 2 jednoduchých krokoch"
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
@@ -7187,6 +7196,15 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
+      ],
+      "Up to 10 Gbps": [
+        "Až do 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Používajte na ${ n } zariadení súčasne",
+        "Používajte až na ${ n } zariadeniach súčasne",
+        "Používajte až na ${ n } zariadeniach súčasne",
+        "Používajte až na ${ n } zariadeniach súčasne"
       ],
       "User credential management": [
         "Správa používateľských údajov"
@@ -7769,6 +7787,9 @@
       "Downloaded 2FA recovery codes": [
         "Stiahnuté obnovovacie kódy 2FA"
       ],
+      "Error creating policy": [
+        "Chyba pri vytváraní pravidla"
+      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -7786,6 +7807,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 poverenia boli obnovené"
+      ],
+      "Policy created successfully": [
+        "Pravidlo bolo úspešne vytvorené"
       ],
       "Reminder has been sent": [
         "Pripomienka bola odoslaná"
@@ -9513,6 +9537,12 @@
       "Single sign-on removed": [
         "Jednotné prihlásenie bolo odstránené"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Používateľ ${ user } je teraz jednotným prihlasovacím účtom. Jeho predchádzajúce heslo sa stalo záložným heslom."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Na prístup k službám ${ BRAND_NAME } sa budú musieť znova prihlásiť u vášho poskytovateľa identity. Aby sa tento používateľ mohol prihlásiť, uistite sa, že existuje vo vašom poskytovateľovi identity."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tým sa používateľ odhlási z ostatných zariadení a bude musieť vytvoriť nové záložné heslo."
       ],
@@ -10579,6 +10609,9 @@
       "Add address": [
         "Pridať adresu"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Pridať krajiny do \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Pridať platobnú kartu"
       ],
@@ -10614,6 +10647,9 @@
       ],
       "Add users": [
         "Pridať používateľov"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Pridať používateľov do \"${ policyName }\""
       ],
       "Allocate storage": [
         "Prideliť úložisko"
@@ -10737,6 +10773,9 @@
       ],
       "Create multiple user accounts": [
         "Vytvoriť viacero používateľských účtov"
+      ],
+      "Create new policy": [
+        "Vytvoriť nové pravidlo"
       ],
       "Create organization key": [
         "Vytvoriť kľúč organizácie"
@@ -11820,8 +11859,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Váš balíček ${ a } a ${ b }"
       ],
-      "Your ${ selected } plan": [
-        "Váš ${ selected } plán"
+      "Your plan includes:": [
+        "Váš plán obsahuje:"
       ]
     },
     "vpn_2step: tooltip": {

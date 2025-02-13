@@ -2318,11 +2318,11 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
+      "Create policies to manage access to shared servers.": [
+        "Skapa policyer för att hantera åtkomst till delade servrar."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Alla i din organisation kan ansluta till delade servrar i alla länder."
+      "Everyone in your organization can connect to shared servers.": [
+        "Alla i din organisation kan ansluta till delade servrar."
       ],
       "If disabled, only admins will have access.": [
         "Om det är inaktiverat har endast administratörer åtkomst."
@@ -3403,29 +3403,29 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Åtgärder"
+      ],
       "App version": [
         "Appversion"
       ],
       "Best deal": [
         "Bästa erbjudandet"
       ],
-      "Checkout": [
-        "Kassa"
-      ],
-      "City": [
-        "Ort"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Create your account": [
-        "Skapa ditt konto"
-      ],
       "Device": [
         "Enhet"
       ],
+      "Enabled Countries": [
+        "Aktiverade länder"
+      ],
+      "Enter your email address": [
+        "Ange din e-postadress"
+      ],
       "Event": [
         "Händelse"
+      ],
+      "Groups": [
+        "Grupper"
       ],
       "IP address": [
         "IP-adress"
@@ -3445,6 +3445,9 @@
       "Organization key fingerprint": [
         "Organisations nyckelfingeravtryck"
       ],
+      "Policy Name": [
+        "Policynamn"
+      ],
       "Protection": [
         "Skydd"
       ],
@@ -3453,6 +3456,9 @@
       ],
       "Select your deal": [
         "Välj ditt erbjudande"
+      ],
+      "Select your payment method": [
+        "Välj din betalningsmetod"
       ],
       "Select your pricing plan": [
         "Välj ditt prispaket"
@@ -3748,8 +3754,8 @@
       "Allocated": [
         "Tilldelad"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Tillåt användare att ansluta till säkra delade servrar från **Länder**-sektionen i ${ VPN_APP_NAME }-appen."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Tillåt användare att ansluta till säkra delade servrar baserat på definierade policyer."
       ],
       "Already allocated": [
         "Redan tilldelad"
@@ -3886,6 +3892,9 @@
       "Copy the suggested password to clipboard": [
         "Kopiera det föreslagna lösenordet till urklipp"
       ],
+      "countries enabled": [
+        "länder aktiverade"
+      ],
       "Country code": [
         "Landskod"
       ],
@@ -3923,6 +3932,9 @@
       ],
       "Custom email domains": [
         "Anpassade e-domäner"
+      ],
+      "Custom policies": [
+        "Anpassade policyer"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationerna."
@@ -4439,9 +4451,6 @@
       "No Gateways yet": [
         "Inga gateways ännu"
       ],
-      "No location filters are currently assigned.": [
-        "Inga platsfilter är för närvarande tilldelade."
-      ],
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
@@ -4450,9 +4459,6 @@
       ],
       "No results found": [
         "Inga resultat hittades"
-      ],
-      "No Shared Servers Found": [
-        "Inga delade servrar hittade"
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
@@ -4729,9 +4735,6 @@
       "Shared ${ vaultLink } updated": [
         "Delad ${ vaultLink } uppdaterad"
       ],
-      "Shared Server Location Filters": [
-        "Platsfilter för delade servrar"
-      ],
       "Shared vault deleted": [
         "Delat valv borttaget"
       ],
@@ -4752,10 +4755,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Börja dela den med kontakter och använd den för onlinetjänster."
-      ],
-      "Step ${ step }": [
-        "Steg ${ step }",
-        "Steg ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsutrymme tilldelad andra användare i denna organisation"
@@ -4795,6 +4794,9 @@
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "TechRadar Pro rekommenderar med ett betyg på 4,2 av 5 stjärnor"
       ],
       "Thank you": [
         "Tack"
@@ -5769,6 +5771,9 @@
       "Group name": [
         "Gruppnamn"
       ],
+      "Groups": [
+        "Grupper"
+      ],
       "Hide password": [
         "Dölj lösenord"
       ],
@@ -5837,6 +5842,9 @@
       ],
       "New password": [
         "Nytt lösenord"
+      ],
+      "New policy name": [
+        "Nytt policynamn"
       ],
       "New second password": [
         "Nytt andra lösenord"
@@ -6021,6 +6029,9 @@
       ],
       "Username": [
         "Användarnamn"
+      ],
+      "Users": [
+        "Användare"
       ],
       "Value": [
         "Värde"
@@ -6694,6 +6705,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Alla premiumtjänster för ${ BRAND_NAME }. En enkel prenumeration"
       ],
+      "Apps for": [
+        "Appar för"
+      ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
       ],
@@ -6760,6 +6774,9 @@
       "Dedicated servers and IP": [
         "Dedikerade servrar och IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikerade servrar optimerade för streaming"
+      ],
       "Desktop app": [
         "Skrivbordsapp"
       ],
@@ -6810,12 +6827,6 @@
       ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
-      ],
-      "High-speed streaming": [
-        "Höghastighetsstreaming"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Höghastighets schweizisk VPN som skyddar din integritet"
       ],
       "High-speed VPN on ${ n } device": [
         "Höghastighets-VPN på ${ n } enhet",
@@ -6874,10 +6885,6 @@
       ],
       "Proofread and refine your emails": [
         "Korrekturläs och finjustera din e-post"
-      ],
-      "Protect ${ n } device at a time": [
-        "Skydda ${ n } enhet åt gången",
-        "Skydda ${ n } enheter åt gången"
       ],
       "Quickly craft replies": [
         "Skapa svar snabbt"
@@ -6945,9 +6952,6 @@
       ],
       "Start protecting your organization": [
         "Börja skydda din organisation"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Börja skydda dig själv online med två enkla steg"
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
@@ -7019,6 +7023,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Upp till ${ totalStorageSize } lagringsutrymme"
+      ],
+      "Up to 10 Gbps": [
+        "Upp till 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Upp till ${ n } enhet samtidigt",
+        "Upp till ${ n } enheter samtidigt"
       ],
       "User credential management": [
         "Hantera användaruppgifter"
@@ -7594,6 +7605,9 @@
       "Downloaded 2FA recovery codes": [
         "Laddade ner 2FA-återställningskoder"
       ],
+      "Error creating policy": [
+        "Fel vid skapande av policy"
+      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -7611,6 +7625,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN-/IKEv2-inloggningsuppgifter återskapat"
+      ],
+      "Policy created successfully": [
+        "Policynamn skapat"
       ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
@@ -10316,6 +10333,9 @@
       "Add address": [
         "Lägg till adress"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Lägg till länder till ”${ policyName }”"
+      ],
       "Add credit/debit card": [
         "Lägg till kredit-/betalkort"
       ],
@@ -10351,6 +10371,9 @@
       ],
       "Add users": [
         "Lägg till användare"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Lägg till användare till ”${ policyName }”"
       ],
       "Allocate storage": [
         "Allokera lagringsutrymme"
@@ -10472,6 +10495,9 @@
       ],
       "Create multiple user accounts": [
         "Skapa flera användarkonton"
+      ],
+      "Create new policy": [
+        "Skapa ny policy"
       ],
       "Create organization key": [
         "Skapa organisationsnyckel"
@@ -11527,8 +11553,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Ditt ${ a } och ${ b }-paket"
       ],
-      "Your ${ selected } plan": [
-        "Ditt ${ selected }-paket"
+      "Your plan includes:": [
+        "Ditt paket inkluderar:"
       ]
     },
     "vpn_2step: tooltip": {

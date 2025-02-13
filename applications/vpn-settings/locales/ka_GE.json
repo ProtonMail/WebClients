@@ -1223,6 +1223,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "დახურვა"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -2308,12 +2311,6 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "შექმენით პოლიტიკები, რომ გადაწყვიტოთ, ვის შეუძლია გაზიარებულ სერვერებთან დაკავშირება და რომელ ქვეყანაში."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "თქვენს ორგანიზაციაში ყველას შეუძლია გაზიარებულ სერვერებთან დაკავშირება, ყველა ქვეყანაში."
-      ],
       "If disabled, only admins will have access.": [
         "თუ გამორთულია, წვდომა, მხოლოდ, ადმინებს ექნებათ."
       ],
@@ -3385,23 +3382,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "ქმედებები"
+      ],
       "App version": [
         "აპის ვერსია"
       ],
       "Best deal": [
         "საუკეთესო შემოთავაზება"
-      ],
-      "Checkout": [
-        "გადახდა"
-      ],
-      "City": [
-        "ქალაქი"
-      ],
-      "Country": [
-        "ქვეყანა"
-      ],
-      "Create your account": [
-        "შექმენით თქვენი ანგარიში"
       ],
       "Device": [
         "მოწყობილობა"
@@ -3723,9 +3711,6 @@
       ],
       "Allocated": [
         "გამოყოფილი"
-      ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "მიეცით უფლება მომხმარებლებს, დაუკავშირდნენ დაცულ გაზიარებულ სერვერებს ${ VPN_APP_NAME } აპლიკაციის **ქვეყნების** სექციიდან."
       ],
       "Already allocated": [
         "გამოყოფილია"
@@ -4415,9 +4400,6 @@
       "No Gateways yet": [
         "რაუტერების გარეშე"
       ],
-      "No location filters are currently assigned.": [
-        "ამჟამად მდებარეობის ფილტრები მინიჭებული არაა."
-      ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
       ],
@@ -4426,9 +4408,6 @@
       ],
       "No results found": [
         "შედეგების გარეშე"
-      ],
-      "No Shared Servers Found": [
-        "გაზიარებული სერვერები აღმოჩენილი არაა"
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
@@ -4702,9 +4681,6 @@
       "Shared ${ vaultLink } updated": [
         "გაზიარებული ${ vaultLink } განახლდა"
       ],
-      "Shared Server Location Filters": [
-        "გაზიარებული სერვერის მდებარეობის ფილტრები"
-      ],
       "Shared vault deleted": [
         "გაზიარებული საცავი წაიშალა"
       ],
@@ -4725,10 +4701,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
-      ],
-      "Step ${ step }": [
-        "ნაბიჯი ${ step }",
-        "ნაბიჯი ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
@@ -6770,12 +6742,6 @@
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
-      "High-speed streaming": [
-        "ჩქაროსნული სტრიმინგი"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "ჩქაროსნული შვეიცარიული VPN, რომელიც თქვენს კონფიდენციალობას იცავს"
-      ],
       "High-speed VPN on ${ n } device": [
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე",
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე"
@@ -6833,10 +6799,6 @@
       ],
       "Proofread and refine your emails": [
         "თქვენი ელფოსტების კორექტურა და ოპტიმიზაცია"
-      ],
-      "Protect ${ n } device at a time": [
-        "დაიცავით ${ n } მოწყობილობა ერთდროულად",
-        "დაიცავით ${ n } მოწყობილობა ერთდროულად"
       ],
       "Quickly craft replies": [
         "უცებ შექმენით პასუხები"
@@ -6904,9 +6866,6 @@
       ],
       "Start protecting your organization": [
         "დაიწყეთ თქვენი ორგანიზაციის დაცვა"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "დაიწყეთ თავის დაცვა ინტერნეტში 2 იოლი ნაბიჯით"
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
@@ -11438,9 +11397,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "თქვენი ${ a } და ${ b } პაკეტი"
-      ],
-      "Your ${ selected } plan": [
-        "თქვენი ტარიფი ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {

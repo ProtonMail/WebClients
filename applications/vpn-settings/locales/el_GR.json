@@ -2318,11 +2318,11 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
+      "Create policies to manage access to shared servers.": [
+        "Δημιουργήστε πολιτικές για τη διαχείριση της πρόσβασης σε κοινόχρηστους διακομιστές."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Οποιοσδήποτε στον οργανισμό σας μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές σε οποιαδήποτε χώρα."
+      "Everyone in your organization can connect to shared servers.": [
+        "Όλοι στον οργανισμό σας μπορούν να συνδεθούν σε κοινόχρηστους διακομιστές."
       ],
       "If disabled, only admins will have access.": [
         "Εάν είναι απενεργοποιημένο, μόνο οι διαχειριστές θα έχουν πρόσβαση."
@@ -3403,29 +3403,29 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Ενέργειες"
+      ],
       "App version": [
         "Έκδοση εφαρμογής"
       ],
       "Best deal": [
         "Η καλύτερη προσφορά"
       ],
-      "Checkout": [
-        "Ολοκλήρωση αγορών"
-      ],
-      "City": [
-        "Πόλη"
-      ],
-      "Country": [
-        "Χώρα"
-      ],
-      "Create your account": [
-        "Δημιουργήστε τον λογαριασμό σας."
-      ],
       "Device": [
         "Συσκευή"
       ],
+      "Enabled Countries": [
+        "Ενεργοποιημένες Χώρες"
+      ],
+      "Enter your email address": [
+        "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
+      ],
       "Event": [
         "Γεγονός"
+      ],
+      "Groups": [
+        "Ομάδες"
       ],
       "IP address": [
         "Διεύθυνση IP"
@@ -3445,6 +3445,9 @@
       "Organization key fingerprint": [
         "Αποτύπωμα κλειδιού οργανισμού"
       ],
+      "Policy Name": [
+        "Όνομα Πολιτικής"
+      ],
       "Protection": [
         "Προστασία"
       ],
@@ -3453,6 +3456,9 @@
       ],
       "Select your deal": [
         "Επιλέξτε την προσφορά σας"
+      ],
+      "Select your payment method": [
+        "Επιλέξτε τη μέθοδο πληρωμής σας"
       ],
       "Select your pricing plan": [
         "Επιλέξτε το πλάνο χρέωσης σας:"
@@ -3748,8 +3754,8 @@
       "Allocated": [
         "Κατανεμημένος"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Επιτρέψτε στους χρήστες να συνδέονται σε διασφαλισμένους κοινόχρηστους διακομιστές από την ενότητα **Χώρες** της εφαρμογής ${ VPN_APP_NAME }."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Επιτρέψτε στους χρήστες να συνδέονται σε ασφαλείς κοινόχρηστους διακομιστές βάσει καθορισμένων πολιτικών."
       ],
       "Already allocated": [
         "Ήδη κατανεμημένος"
@@ -3853,6 +3859,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Βραβείο επιλογής συντακτών CNET με βαθμολογία 8,4 στα 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Ρυθμίστε τις παραμέτρους ελέγχου ταυτότητας SAML για τον οργανισμό σας μέσω μιας υπηρεσίας παροχής ταυτότητας (IdP). Αυτό θα ενεργοποιήσει το SAML για ολόκληρο τον οργανισμό."
       ],
@@ -3885,6 +3894,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Αντιγράψτε τον προτεινόμενο κωδικό πρόσβασης στο πρόχειρο"
+      ],
+      "countries enabled": [
+        "ενεργοποιημένες χώρες"
       ],
       "Country code": [
         "Κωδικός χώρας"
@@ -3923,6 +3935,9 @@
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
+      ],
+      "Custom policies": [
+        "Προσαρμοσμένες πολιτικές"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
@@ -4439,9 +4454,6 @@
       "No Gateways yet": [
         "Δεν υπάρχουν ακόμη πύλες"
       ],
-      "No location filters are currently assigned.": [
-        "Προς το παρόν δεν έχουν εκχωρηθεί φίλτρα τοποθεσίας."
-      ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
       ],
@@ -4450,9 +4462,6 @@
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
-      ],
-      "No Shared Servers Found": [
-        "Δε βρέθηκαν Κοινοποιημένοι Διακομιστές"
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
@@ -4521,6 +4530,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Βραβείο επιλογής συντακτών PC Magazine με βαθμολογία 5 στα 5 αστέρια"
       ],
       "per month": [
         "ανά μήνα"
@@ -4726,9 +4738,6 @@
       "Shared ${ vaultLink } updated": [
         "Η κοινόχρηστη ${ vaultLink } ενημερώθηκε"
       ],
-      "Shared Server Location Filters": [
-        "Φίλτρα Τοποθεσίας Κοινοποιημένων Διακομιστών"
-      ],
       "Shared vault deleted": [
         "Διαγράφηκε η κοινοποιημένη κρύπτη"
       ],
@@ -4749,10 +4758,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
-      ],
-      "Step ${ step }": [
-        "Βήμα ${ step }",
-        "Βήματα ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
@@ -4792,6 +4797,9 @@
       ],
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Το Tech radar pro το συνιστά με βαθμολογία 4,2 στα 5 αστέρια"
       ],
       "Thank you": [
         "Ευχαριστούμε"
@@ -4960,6 +4968,9 @@
       ],
       "Total VPN connections": [
         "Σύνολο συνδέσεων VPN"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Δοκιμάστε το ${ productName } εντελώς χωρίς κίνδυνο - εάν για οποιονδήποτε λόγο αλλάξετε γνώμη, θα λάβετε πλήρη επιστροφή χρημάτων. Χωρίς ερωτήσεις."
       ],
       "Two-factor authentication disabled": [
         "Έλεγχος ταυτότητας δύο παραγόντων απενεργοποιημένος"
@@ -5766,6 +5777,9 @@
       "Group name": [
         "Όνομα ομάδας"
       ],
+      "Groups": [
+        "Ομάδες"
+      ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
@@ -5834,6 +5848,9 @@
       ],
       "New password": [
         "Νέος κωδικός"
+      ],
+      "New policy name": [
+        "Νέο όνομα πολιτικής"
       ],
       "New second password": [
         "Νέος δεύτερος κωδικός πρόσβασης"
@@ -6018,6 +6035,9 @@
       ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "Users": [
+        "Χρήστες"
       ],
       "Value": [
         "Τιμή"
@@ -6688,6 +6708,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Όλες οι premium υπηρεσίες ${ BRAND_NAME }. Μια εύκολη συνδρομή"
       ],
+      "Apps for": [
+        "Εφαρμογές για"
+      ],
       "Auto-delete Spam and Trash": [
         "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
       ],
@@ -6754,6 +6777,9 @@
       "Dedicated servers and IP": [
         "Αποκλειστικοί διακομιστές και IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
+      ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
       ],
@@ -6804,12 +6830,6 @@
       ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
-      ],
-      "High-speed streaming": [
-        "Ροή υψηλής ταχύτητας"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Ελβετικό VPN υψηλής ταχύτητας που προστατεύει την ιδιωτικότητα σας."
       ],
       "High-speed VPN on ${ n } device": [
         "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
@@ -6868,10 +6888,6 @@
       ],
       "Proofread and refine your emails": [
         "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
-      ],
-      "Protect ${ n } device at a time": [
-        "Προστατέψτε ${ n } συσκευή ανά φορά",
-        "Προστατέψτε ${ n } συσκευές ανά φορά"
       ],
       "Quickly craft replies": [
         "Δημιουργήστε γρήγορα απαντήσεις"
@@ -6939,9 +6955,6 @@
       ],
       "Start protecting your organization": [
         "Ξεκινήστε να προστατεύετε τον οργανισμό σας"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Αρχίστε να προστατεύετε τον εαυτό σας online σε 2 εύκολα βήματα"
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
@@ -7013,6 +7026,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
+      ],
+      "Up to 10 Gbps": [
+        "Μέχρι και 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Χρήση σε έως και ${ n } συσκευή ταυτόχρονα",
+        "Χρήση σε έως και ${ n } συσκευές ταυτόχρονα"
       ],
       "User credential management": [
         "Διαχείριση διαπιστευτηρίων χρηστών"
@@ -7585,6 +7605,9 @@
       "Downloaded 2FA recovery codes": [
         "Λήψη κωδικών ανάκτησης 2FA"
       ],
+      "Error creating policy": [
+        "Σφάλμα κατά τη δημιουργία πολιτικής"
+      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -7602,6 +7625,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
+      ],
+      "Policy created successfully": [
+        "Η πολιτική δημιουργήθηκε επιτυχώς"
       ],
       "Reminder has been sent": [
         "Η υπενθύμιση έχει σταλεί"
@@ -9261,6 +9287,12 @@
       "Single sign-on removed": [
         "Η καθολική σύνδεση καταργήθηκε"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Ο χρήστης ${ user } είναι πλέον ένας λογαριασμός καθολικής σύνδεσης. Ο προηγούμενος κωδικός πρόσβασής τους έγινε ο εφεδρικός κωδικός πρόσβασής τους."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Θα πρέπει να συνδεθούν ξανά με τον πάροχο ταυτότητάς σας για να αποκτήσουν πρόσβαση στις υπηρεσίες ${ BRAND_NAME }. Για να μπορεί αυτός ο χρήστης να συνδεθεί, βεβαιωθείτε ότι υπάρχει στην υπηρεσία παροχής ταυτότητάς σας."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Αυτό θα αποσυνδέσει τον χρήστη από τις άλλες συσκευές του και θα πρέπει να δημιουργήσει έναν νέο εφεδρικό κωδικό πρόσβασης."
       ],
@@ -10280,6 +10312,9 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Προσθήκη χωρών στο \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Προσθήκη πιστωτικής/χρεωστικής κάρτας"
       ],
@@ -10315,6 +10350,9 @@
       ],
       "Add users": [
         "Προσθήκη χρηστών"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Προσθήκη χρηστών στο \"${ policyName }\""
       ],
       "Allocate storage": [
         "Κατανομή αποθηκευτικού χώρου"
@@ -10436,6 +10474,9 @@
       ],
       "Create multiple user accounts": [
         "Δημιουργία πολλαπλών λογαριασμών χρηστών"
+      ],
+      "Create new policy": [
+        "Δημιουργία νέας πολιτικής"
       ],
       "Create organization key": [
         "Δημιουργία κλειδιού οργανισμού"
@@ -11491,8 +11532,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Το ${ a } και ${ b } πακέτο σας"
       ],
-      "Your ${ selected } plan": [
-        "Το ${ selected } πλάνο σας"
+      "Your plan includes:": [
+        "Το πλάνο σας περιλαμβάνει:"
       ]
     },
     "vpn_2step: tooltip": {

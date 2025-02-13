@@ -317,7 +317,7 @@
         "내보내기"
       ],
       "Extend": [
-        "확장"
+        "연장"
       ],
       "Fit to window": [
         "창에 맞게"
@@ -1222,6 +1222,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "닫기"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
       ],
@@ -2305,12 +2308,6 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "각 국가에서 공유된 서버에 연결할 수 있는 구성원을 결정할 수 있도록 정책을 추가하세요."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "조직 내의 전체 구성원이 모든 국가에서 공유된 서버에 접근할 수 있습니다."
-      ],
       "If disabled, only admins will have access.": [
         "비활성화시 관리자만 접근 가능합니다."
       ],
@@ -3376,23 +3373,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "동작"
+      ],
       "App version": [
         "앱 버전"
       ],
       "Best deal": [
         "초특가"
-      ],
-      "Checkout": [
-        "주문"
-      ],
-      "City": [
-        "도시"
-      ],
-      "Country": [
-        "국가"
-      ],
-      "Create your account": [
-        "계정 만들기"
       ],
       "Device": [
         "기기"
@@ -3705,9 +3693,6 @@
       ],
       "Allocated": [
         "할당 됨"
-      ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "구성원이 ${ VPN_APP_NAME } 앱의 **국가** 섹션에서 보안 공유 서버에 연결할 수 있도록 허용합니다."
       ],
       "Already allocated": [
         "이미 할당 됨"
@@ -4222,6 +4207,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "서버의 국가를 변경하는데 10일이 소요됩니다. 결정 사항이 옳은지 반드시 확인하십시오."
       ],
+      "It's better to have:": [
+        "포함되면 더 좋습니다:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "${ vaultLink }에 항목이 자동 완성되었습니다."
       ],
@@ -4390,9 +4378,6 @@
       "No Gateways yet": [
         "아직 게이트웨이가 없습니다."
       ],
-      "No location filters are currently assigned.": [
-        "현재 할당된 위치 필터가 없습니다."
-      ],
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
       ],
@@ -4402,9 +4387,6 @@
       "No results found": [
         "결과를 찾을 수 없음"
       ],
-      "No Shared Servers Found": [
-        "발견된 공유된 서버가 없습니다"
-      ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
@@ -4412,7 +4394,7 @@
         "숫자"
       ],
       "of": [
-        "의"
+        "/"
       ],
       "Off": [
         "끔"
@@ -4675,9 +4657,6 @@
       "Shared ${ vaultLink } updated": [
         "공유된 ${ vaultLink }이(가) 업데이트됨"
       ],
-      "Shared Server Location Filters": [
-        "공유된 서버 위치 필터"
-      ],
       "Shared vault deleted": [
         "공유 금고를 삭제했습니다"
       ],
@@ -4698,9 +4677,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "연락처에 있는 사람들과 공유하고 온라인 서비스에서 사용하세요."
-      ],
-      "Step ${ step }": [
-        "${ step } 단계"
       ],
       "Storage allocated to other users in this organisation": [
         "스토리지가 이 조직의 다른 사용자들에게 할당됨"
@@ -4952,7 +4928,7 @@
         "조직의 로고를 업로드하여 브랜드 아이덴티티를 높이고 사용자 개개인에 맞는 경험을 제공하세요."
       ],
       "Uppercase and lowercase letters": [
-        "대소문자 문자"
+        "대소문자"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "복구 방법을 사용하여 2단계 인증 방법을 비활성화할 수 있습니다."
@@ -6723,12 +6699,6 @@
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
-      "High-speed streaming": [
-        "고속 스트리밍"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "나의 프라이버시를 보호하는 빠른 속도의 스위스 기반 VPN"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 기기에서 고속 VPN"
       ],
@@ -6785,9 +6755,6 @@
       ],
       "Proofread and refine your emails": [
         "이메일 교정 및 수정하기"
-      ],
-      "Protect ${ n } device at a time": [
-        "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Quickly craft replies": [
         "신속하게 답변 작성하기"
@@ -6854,9 +6821,6 @@
       ],
       "Start protecting your organization": [
         "조직 보호를 시작하세요"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2단계로 온라인에서 나 자신을 보호해보세요."
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
@@ -10109,7 +10073,7 @@
         "(활성)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. 생성할 구성에 이름을 지정하세요"
+        "1. 생성할 구성에 이름 지정"
       ],
       "1. Select platform": [
         "1. 플랫폼 선택"
@@ -11348,9 +11312,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "사용자의 ${ a } 및 ${ b } 번들"
-      ],
-      "Your ${ selected } plan": [
-        "나의 ${ selected } 플랜"
       ]
     },
     "vpn_2step: tooltip": {
@@ -11398,7 +11359,7 @@
         "이메일을 통한 Bitcoin"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소． 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 보내실 수 있습니다．"
+        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소. 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 송금하 수 있습니다．"
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "착오가 발생하기 쉬운 복잡한 26자 Bitcoin 주소 대신 이메일을 통해 Bitcoin을 안전하게 거래하세요"
@@ -11406,7 +11367,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "비트코인을 보관할 더 안전한 방법"
+        "Bitcoin을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {

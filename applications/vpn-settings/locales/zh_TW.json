@@ -2276,12 +2276,6 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "創建政策以決定誰可連接至於各國的共享伺服器"
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "於您的組織內任何人可連接至於全部國家共享伺服器"
-      ],
       "If disabled, only admins will have access.": [
         "若關閉，只有管理員擁有權限。"
       ],
@@ -3309,23 +3303,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "動作"
+      ],
       "App version": [
         "應用程式版本"
       ],
       "Best deal": [
         "至划算"
-      ],
-      "Checkout": [
-        "結帳"
-      ],
-      "City": [
-        "市"
-      ],
-      "Country": [
-        "國家"
-      ],
-      "Create your account": [
-        "創建您的帳號"
       ],
       "Device": [
         "裝置"
@@ -3635,9 +3620,6 @@
       ],
       "Allocated": [
         "已分配"
-      ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "允許使用者連接至安全共享於**國家**的${ VPN_APP_NAME }伺服器"
       ],
       "Already allocated": [
         "已分配"
@@ -4305,9 +4287,6 @@
       "No Gateways yet": [
         "尚未有閘道器"
       ],
-      "No location filters are currently assigned.": [
-        "無指派任何地點過濾器。"
-      ],
       "No payment is required at this time.": [
         "此時毋須付款。"
       ],
@@ -4316,9 +4295,6 @@
       ],
       "No results found": [
         "找不到相符的結果"
-      ],
-      "No Shared Servers Found": [
-        "查無共享伺服器"
       ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
@@ -4581,9 +4557,6 @@
       "Shared ${ vaultLink } updated": [
         "共享${ vaultLink }已更新"
       ],
-      "Shared Server Location Filters": [
-        "已共享伺服器地點的選擇器"
-      ],
       "Shared vault deleted": [
         "共享保管庫已刪除"
       ],
@@ -4604,9 +4577,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "開始共享此內容和使用於線上服務。"
-      ],
-      "Step ${ step }": [
-        "步驟 ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "儲存空間已分配給這個組織中的其他使用者"
@@ -6556,12 +6526,6 @@
       "Group management (coming soon)": [
         "群組管理(即將推出)"
       ],
-      "High-speed streaming": [
-        "高速串流"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "高速的瑞士 VPN 可保護您的隱私"
-      ],
       "High-speed VPN on ${ n } device": [
         "極速 VPN 裝載多達 ${ n } 臺裝置"
       ],
@@ -6618,9 +6582,6 @@
       ],
       "Proofread and refine your emails": [
         "校閱與修飾你的電子郵件"
-      ],
-      "Protect ${ n } device at a time": [
-        "同時保護 ${ n } 台裝置"
       ],
       "Quickly craft replies": [
         "快速替回復打草稿"
@@ -6687,9 +6648,6 @@
       ],
       "Start protecting your organization": [
         "開始保護您的組織"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 個簡單步驟即可啟動您專屬的線上防護"
       ],
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
@@ -10609,9 +10567,6 @@
       ],
       "Try ${ upsellPlanName } risk-free": [
         "嘗試無風險的 ${ upsellPlanName }"
-      ],
-      "Your ${ selected } plan": [
-        "您專屬的 ${ selected } 方案"
       ]
     },
     "vpn_2step: tooltip": {

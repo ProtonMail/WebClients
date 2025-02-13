@@ -3395,20 +3395,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Действия"
+      ],
       "App version": [
         "Версия приложения"
       ],
       "Best deal": [
         "Лучшее предложение"
-      ],
-      "Checkout": [
-        "Оформление покупки"
-      ],
-      "City": [
-        "Город"
-      ],
-      "Create your account": [
-        "Создать аккаунт"
       ],
       "Device": [
         "Устройство"
@@ -4735,12 +4729,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
-      ],
-      "Step ${ step }": [
-        "Шаг ${ step }",
-        "Шага ${ step }",
-        "Шагов ${ step }",
-        "Шагов ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Хранилище, выделенное другим пользователям в этой организации"
@@ -6800,12 +6788,6 @@
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
-      "High-speed streaming": [
-        "Высокоскоростной стриминг"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Высокоскоростной Швейцарский VPN, который защищает вашу конфиденциальность."
-      ],
       "High-speed VPN on ${ n } device": [
         "Высокоскоростная VPN на ${ n } устройстве",
         "Высокоскоростная VPN на ${ n } устройствах",
@@ -6865,12 +6847,6 @@
       ],
       "Proofread and refine your emails": [
         "Проверьте и уточните ваши электронные письма"
-      ],
-      "Protect ${ n } device at a time": [
-        "Защитите ${ n } устройство за раз",
-        "Защитите ${ n } устройства одновременно",
-        "Защитите ${ n } устройств одновременно",
-        "Защитите ${ n } устройств одновременно"
       ],
       "Quickly craft replies": [
         "Быстро составляйте ответы"
@@ -6940,9 +6916,6 @@
       ],
       "Start protecting your organization": [
         "Начните защищать свою организацию"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Начните защищать себя в Интернете в 2 простых шага"
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
@@ -11668,9 +11641,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ваш комплект ${ a } и ${ b }"
-      ],
-      "Your ${ selected } plan": [
-        "Ваш тариф ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {
