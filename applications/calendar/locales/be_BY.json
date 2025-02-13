@@ -6983,6 +6983,9 @@
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Вылучаныя серверы аптымізаваны для трансляцый"
+      ],
       "Desktop app": [
         "Настольная праграма"
       ],
@@ -7033,9 +7036,6 @@
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
-      ],
-      "High-speed streaming": [
-        "Высакахуткасная трансляцыя"
       ],
       "High-speed VPN on ${ n } device": [
         "Высакахуткасны VPN на ${ n } прыладзе",
@@ -7093,12 +7093,6 @@
       ],
       "Proofread and refine your emails": [
         "Правярайце і ўдакладняйце свае электронныя лісты"
-      ],
-      "Protect ${ n } device at a time": [
-        "Абараніць ${ n } прыладу адначасова",
-        "Абараніць ${ n } прылады адначасова",
-        "Абараніць ${ n } прылад адначасова",
-        "Абараніць ${ n } прылады адначасова"
       ],
       "Quickly craft replies": [
         "Хутка стварайце адказы"
@@ -7234,6 +7228,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Выкарыстоўвайце на ${ n } прыладзе адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова"
       ],
       "User credential management": [
         "Кіраванне ўліковымі данымі карыстальнікаў"
@@ -10748,6 +10748,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 кропкі запар забаронены"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
@@ -10762,6 +10765,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Вы сапраўды хочаце незваротна выдаліць гэты кантакт?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Не можа змяшчаць кроку ў пачатку"
+      ],
+      "Cannot contain a dot at the end": [
+        "Не можа змяшчаць кроку ў канцы"
       ],
       "Contacts could not be merged": [
         "Не атрымалася аб'яднаць кантакты"
@@ -10784,8 +10793,8 @@
       "Name is required": [
         "Патрабуецца назва"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Дазволены толькі літарна-лічбавыя сімвалы ў ніжнім рэгістры, кропкі, злучкі і сімвалы падкрэслівання."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."

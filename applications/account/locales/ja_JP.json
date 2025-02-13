@@ -3632,9 +3632,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "受信トレイを整理するために、必要なだけラベルやフォルダを作成しましょう。"
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "各国の共有サーバーに誰が接続できるかを決定するポリシーを作成します。"
-      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "これらの機能にアクセスするには ${ PROTON_SENTINEL_NAME } を有効にしてください"
       ],
@@ -3646,9 +3643,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "組織内の誰もが、すべての国の共有サーバーに接続できます。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知します。"
@@ -6107,18 +6101,6 @@
       "Best deal": [
         "最高の取引"
       ],
-      "Checkout": [
-        "チェックアウト"
-      ],
-      "City": [
-        "町"
-      ],
-      "Country": [
-        "国"
-      ],
-      "Create your account": [
-        "アカウントを作成"
-      ],
       "Device": [
         "デバイス"
       ],
@@ -6989,9 +6971,6 @@
       "Allow recovery by phone": [
         "電話番号での回復を許可"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "ユーザーが${ VPN_APP_NAME }アプリの**国**セクションから安全な共有サーバーに接続することを許可します。"
-      ],
       "Already allocated": [
         "割り当て済み"
       ],
@@ -7670,9 +7649,6 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "古いパスワードのリセットが原因の場合は、メッセージを再表示しないようにすることができます。"
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "このオプションをオンにすると、組織メンバーは組織内でのみ保管庫を共有できます"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
       ],
@@ -8105,9 +8081,6 @@
       "No label selected": [
         "ラベルが選択されていません"
       ],
-      "No location filters are currently assigned.": [
-        "現在割り当てられている位置フィルタはありません。"
-      ],
       "No logs yet.": [
         "ログがありません。"
       ],
@@ -8119,9 +8092,6 @@
       ],
       "No results found": [
         "該当する項目がありません"
-      ],
-      "No Shared Servers Found": [
-        "共有サーバーが見つかりません"
       ],
       "Not a valid URL": [
         "有効な URL ではありません"
@@ -8539,9 +8509,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "共有 ${ vaultLink } が更新されました"
-      ],
-      "Shared Server Location Filters": [
-        "共有サーバーの位置フィルター"
       ],
       "Shared vault deleted": [
         "共有保管庫が削除されました"
@@ -12297,12 +12264,6 @@
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
       ],
-      "High-speed streaming": [
-        "高速ストリーミング"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "プライバシーを保護する高速 VPN"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 台のデバイスで高速 VPN"
       ],
@@ -12359,9 +12320,6 @@
       ],
       "Proofread and refine your emails": [
         "メールを校正し、洗練させる"
-      ],
-      "Protect ${ n } device at a time": [
-        "${ n }台のデバイスを同時に保護"
       ],
       "Quickly craft replies": [
         "素早く返信を作成"
@@ -12428,9 +12386,6 @@
       ],
       "Start protecting your organization": [
         "組織の保護を開始する"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 つの簡単なステップでオンラインで身を守り始めましょう"
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
@@ -19382,9 +19337,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "${ a }と${ b }はバンドル"
-      ],
-      "Your ${ selected } plan": [
-        "あなたの ${ selected } プラン"
       ]
     },
     "vpn_2step: tooltip": {

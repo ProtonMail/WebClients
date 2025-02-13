@@ -551,7 +551,7 @@
         "Pomiń"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Udostępniono Tobie element w ${ PASS_APP_NAME }"
+        "Udostępniono Ci element w ${ PASS_APP_NAME }"
       ],
       "Sort vault items": [
         "Sortuj elementy sejfu"
@@ -1428,7 +1428,7 @@
         "Widzi elementy w sejfie."
       ],
       "Can view this item.": [
-        "Odczyt elementu."
+        "Odczyt"
       ],
       "Change your password": [
         "Zmień hasło"
@@ -1878,7 +1878,7 @@
         "Wpisz kod PIN, aby kontynuować"
       ],
       "Please follow the steps below to set up your domain.": [
-        "Wykonaj poniższe kroki, aby skonfigurować swoją domenę."
+        "Wykonaj poniższe kroki, aby skonfigurować domenę."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Pamiętaj, że usuniętego aliasu nie można przywrócić. Czy chcesz, zamiast tego wyłączyć alias?"
@@ -2966,7 +2966,7 @@
         "Udostępnij"
       ],
       "Shared by me": [
-        "Udostępniam"
+        "Udostępnione przez Ciebie"
       ],
       "Shared link": [
         "Udostępniony link"
@@ -4150,9 +4150,6 @@
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Usunięcie aliasów w ${ PASS_SHORT_APP_NAME } spowoduje również ich usunięcie w SimpleLogin."
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"
       ],
       "Passphrase is required": [
         "Hasło jest wymagane"

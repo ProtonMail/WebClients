@@ -2308,12 +2308,6 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Buat kebijakan untuk menentukan siapa yang dapat menghubungkan ke server terbagi dalam setiap negara."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Semua orang dalam organisasi Anda dapat menghubungkan ke server terbagi dalam semua negara."
-      ],
       "If disabled, only admins will have access.": [
         "Apabila dinonaktifkan, hanya admin yang akan memiliki akses."
       ],
@@ -3379,23 +3373,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Tindakan"
+      ],
       "App version": [
         "Versi aplikasi"
       ],
       "Best deal": [
         "Penawaran terbaik"
-      ],
-      "Checkout": [
-        "Rampungkan pembayaran"
-      ],
-      "City": [
-        "Kota"
-      ],
-      "Country": [
-        "Negara"
-      ],
-      "Create your account": [
-        "Buat akun Anda"
       ],
       "Device": [
         "Perangkat"
@@ -3531,6 +3516,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
+      ],
+      "${ discountPercent }% discount": [
+        "Diskon ${ discountPercent }%"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: gambar ukuran penuh"
@@ -3705,9 +3693,6 @@
       ],
       "Allocated": [
         "Dialokasikan"
-      ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Perbolehkan pengguna untuk menghubungkan ke server terbagi aman dari bagian **Negara** dalam aplikasi ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Telah dialokasikan"
@@ -4393,9 +4378,6 @@
       "No Gateways yet": [
         "Belum ada Gateway"
       ],
-      "No location filters are currently assigned.": [
-        "Tidak ada filter lokasi yang ditetapkan saat ini."
-      ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
       ],
@@ -4404,9 +4386,6 @@
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
-      ],
-      "No Shared Servers Found": [
-        "Tidak ada server terbagi yang ditemukan"
       ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
@@ -4675,9 +4654,6 @@
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } terbagi telah diperbarui"
       ],
-      "Shared Server Location Filters": [
-        "Filter Lokasi Server Terbagi"
-      ],
       "Shared vault deleted": [
         "Brankas terbagi dihapus"
       ],
@@ -4698,9 +4674,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
-      ],
-      "Step ${ step }": [
-        "Langkah ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
@@ -6717,12 +6690,6 @@
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
       ],
-      "High-speed streaming": [
-        "Streaming berkecepatan tinggi"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN Swiss berkecepatan tinggi yang melindungi privasi Anda"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN berkecepatan tinggi pada ${ n } perangkat"
       ],
@@ -6779,9 +6746,6 @@
       ],
       "Proofread and refine your emails": [
         "Periksa dan sempurnakan email Anda"
-      ],
-      "Protect ${ n } device at a time": [
-        "Lindungi ${ n } perangkat secara bersamaan"
       ],
       "Quickly craft replies": [
         "Tulis pesan balasan dengan cepat"
@@ -6848,9 +6812,6 @@
       ],
       "Start protecting your organization": [
         "Mulai lindungi organisasi Anda"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Mulai lindungi diri Anda secara online dengan 2 langkah mudah"
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
@@ -9129,6 +9090,12 @@
       "Single sign-on removed": [
         "Single sign-on dihapus"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Pengguna ${ user } kini merupakan akun single sign-on. Kata sandi mereka terdahulu telah dijadikan sebagai kata sandi cadangan."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Mereka akan perlu untuk masuk kembali dengan penyedia identitas Anda untuk dapat mengakses layanan ${ BRAND_NAME }. Agar pengguna ini dapat masuk kembali, pastikan akun mereka telah ada pada penyedia identitas Anda."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tindakan ini akan mengeluarkan pengguna yang bersangkutan dari perangkat lainnya yang mereka miliki, di mana mereka akan perlu untuk membuat kata sandi cadangan baru."
       ],
@@ -11324,9 +11291,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Bundel ${ a } dan ${ b } Anda"
-      ],
-      "Your ${ selected } plan": [
-        "Paket ${ selected } pilihan Anda"
       ]
     },
     "vpn_2step: tooltip": {

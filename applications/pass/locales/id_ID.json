@@ -1138,6 +1138,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Kami menemui masalah pada saat memulai ${ PASS_SHORT_APP_NAME }. Apabila masalah ini terus berlanjut, silakan hubungi layanan dukungan pelanggan kami untuk memperoleh bantuan."
       ],
+      "Wrong backup password": [
+        "Kata sandi cadangan salah"
+      ],
       "Wrong extra password": [
         "Kata sandi tambahan salah"
       ],
@@ -4062,9 +4065,6 @@
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Setelah data tersinkron, menghapus alias di ${ PASS_SHORT_APP_NAME } akan turut menghapus alias yang sama pada SimpleLogin."
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Kolom ini hanya dapat diisi dengan karakter alfanumerik, titik, tanda hubung, dan garis bawah"
       ],
       "Passphrase is required": [
         "Frasa sandi dibutuhkan"

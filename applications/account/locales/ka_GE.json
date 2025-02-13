@@ -1987,6 +1987,9 @@
       "Add link to your email footer": [
         "დაამატეთ ბმული თქვენი ელფოსტის ბოლოს"
       ],
+      "Close": [
+        "დახურვა"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -3640,9 +3643,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "შექმენით იმდენი ჭდე და საქაღალდე, რამდენიც საჭიროა და იქონიეთ თქვენი საფოსტო ყუთი სუფთად."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "შექმენით პოლიტიკები, რომ გადაწყვიტოთ, ვის შეუძლია გაზიარებულ სერვერებთან დაკავშირება და რომელ ქვეყანაში."
-      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "ამ ფუნქციებთან წვდომისთვის ჩართეთ ${ PROTON_SENTINEL_NAME }"
       ],
@@ -3654,9 +3654,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "თქვენს ორგანიზაციაში ყველას შეუძლია გაზიარებულ სერვერებთან დაკავშირება, ყველა ქვეყანაში."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
@@ -6128,18 +6125,6 @@
       "Best deal": [
         "საუკეთესო შემოთავაზება"
       ],
-      "Checkout": [
-        "გადახდა"
-      ],
-      "City": [
-        "ქალაქი"
-      ],
-      "Country": [
-        "ქვეყანა"
-      ],
-      "Create your account": [
-        "შექმენით თქვენი ანგარიში"
-      ],
       "Device": [
         "მოწყობილობა"
       ],
@@ -7031,9 +7016,6 @@
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "მიეცით უფლება მომხმარებლებს, დაუკავშირდნენ დაცულ გაზიარებულ სერვერებს ${ VPN_APP_NAME } აპლიკაციის **ქვეყნების** სექციიდან."
-      ],
       "Already allocated": [
         "გამოყოფილია"
       ],
@@ -7717,9 +7699,6 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "თუ ეს ძველი პაროლის დაბრუნების გამოა, შეგიძლიათ, თავიდან მოიშოროთ ეს შეტყობინება"
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "თუ ეს პარამეტრი ჩართულია, ორგანიზაციის წევრებს საცავის გაზიარება, მხოლოდ, ორგანიზაციის შიგნით შეეძლებათ"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
@@ -8154,9 +8133,6 @@
       "No label selected": [
         "ჭდე მონიშნული არაა"
       ],
-      "No location filters are currently assigned.": [
-        "ამჟამად მდებარეობის ფილტრები მინიჭებული არაა."
-      ],
       "No logs yet.": [
         "ჟურნალში ჩანაწერები ჯერ არაა."
       ],
@@ -8168,9 +8144,6 @@
       ],
       "No results found": [
         "შედეგების გარეშე"
-      ],
-      "No Shared Servers Found": [
-        "გაზიარებული სერვერები აღმოჩენილი არაა"
       ],
       "Not a valid URL": [
         "არასწორი URL"
@@ -8594,9 +8567,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "გაზიარებული ${ vaultLink } განახლდა"
-      ],
-      "Shared Server Location Filters": [
-        "გაზიარებული სერვერის მდებარეობის ფილტრები"
       ],
       "Shared vault deleted": [
         "გაზიარებული საცავი წაიშალა"
@@ -12387,12 +12357,6 @@
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
-      "High-speed streaming": [
-        "ჩქაროსნული სტრიმინგი"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "ჩქაროსნული შვეიცარიული VPN, რომელიც თქვენს კონფიდენციალობას იცავს"
-      ],
       "High-speed VPN on ${ n } device": [
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე",
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე"
@@ -12450,10 +12414,6 @@
       ],
       "Proofread and refine your emails": [
         "თქვენი ელფოსტების კორექტურა და ოპტიმიზაცია"
-      ],
-      "Protect ${ n } device at a time": [
-        "დაიცავით ${ n } მოწყობილობა ერთდროულად",
-        "დაიცავით ${ n } მოწყობილობა ერთდროულად"
       ],
       "Quickly craft replies": [
         "უცებ შექმენით პასუხები"
@@ -12521,9 +12481,6 @@
       ],
       "Start protecting your organization": [
         "დაიწყეთ თქვენი ორგანიზაციის დაცვა"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "დაიწყეთ თავის დაცვა ინტერნეტში 2 იოლი ნაბიჯით"
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
@@ -19547,9 +19504,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "თქვენი ${ a } და ${ b } პაკეტი"
-      ],
-      "Your ${ selected } plan": [
-        "თქვენი ტარიფი ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {

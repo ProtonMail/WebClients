@@ -2318,11 +2318,11 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Crea delle policy per decidere chi può connettersi ai server condivisi in ciascun paese."
+      "Create policies to manage access to shared servers.": [
+        "Creare policy per gestire l'accesso ai server condivisi."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Tutti nella tua organizzazione possono connettersi ai server condivisi in tutti i paesi."
+      "Everyone in your organization can connect to shared servers.": [
+        "Tutti nella tua organizzazione possono connettersi ai server condivisi."
       ],
       "If disabled, only admins will have access.": [
         "Se disabilitato, solo gli amministratori avranno accesso."
@@ -3403,29 +3403,29 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Azioni"
+      ],
       "App version": [
         "Versione applicazione"
       ],
       "Best deal": [
         "Miglior offerta"
       ],
-      "Checkout": [
-        "Checkout"
-      ],
-      "City": [
-        "Città"
-      ],
-      "Country": [
-        "Paese"
-      ],
-      "Create your account": [
-        "Crea il tuo account"
-      ],
       "Device": [
         "Dispositivo"
       ],
+      "Enabled Countries": [
+        "Paesi abilitati"
+      ],
+      "Enter your email address": [
+        "Inserisci il tuo indirizzo email"
+      ],
       "Event": [
         "Evento"
+      ],
+      "Groups": [
+        "Gruppi"
       ],
       "IP address": [
         "Indirizzo IP"
@@ -3445,6 +3445,9 @@
       "Organization key fingerprint": [
         "Impronta digitale della chiave dell'organizzazione"
       ],
+      "Policy Name": [
+        "Nome della policy"
+      ],
       "Protection": [
         "Protezione"
       ],
@@ -3453,6 +3456,9 @@
       ],
       "Select your deal": [
         "Seleziona la tua offerta"
+      ],
+      "Select your payment method": [
+        "Seleziona il tuo metodo di pagamento"
       ],
       "Select your pricing plan": [
         "Seleziona il tuo piano tariffario."
@@ -3748,8 +3754,8 @@
       "Allocated": [
         "Allocato"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Consenti agli utenti di connettersi a server condivisi protetti dalla sezione **Paesi** dell'app ${ VPN_APP_NAME }."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Consenti agli utenti di connettersi a server condivisi sicuri in base a criteri definiti."
       ],
       "Already allocated": [
         "Già allocato"
@@ -3853,6 +3859,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Premio CNET Editors Choice con una valutazione di 8,4 su 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configura l'autenticazione SAML per la tua organizzazione tramite un provider di identità (IdP). Sarà possibile utilizzare SAML per l'intera organizzazione."
       ],
@@ -3885,6 +3894,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Copia la password suggerita negli appunti"
+      ],
+      "countries enabled": [
+        "paesi abilitati"
       ],
       "Country code": [
         "Codice nazione"
@@ -3923,6 +3935,9 @@
       ],
       "Custom email domains": [
         "Domini email personalizzati"
+      ],
+      "Custom policies": [
+        "Critedi personalizzati"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizza l'aspetto delle applicazioni di ${ BRAND_NAME }"
@@ -4439,9 +4454,6 @@
       "No Gateways yet": [
         "Non ci sono ancora Gateway"
       ],
-      "No location filters are currently assigned.": [
-        "Non è stato assegnato nessun filtro di posizione."
-      ],
       "No payment is required at this time.": [
         "Al momento non è richiesto alcun pagamento."
       ],
@@ -4450,9 +4462,6 @@
       ],
       "No results found": [
         "Nessun risultato trovato"
-      ],
-      "No Shared Servers Found": [
-        "Nessun server condiviso trovato"
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
@@ -4524,6 +4533,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Premio della rivista PC Magazine Editors Choice con una valutazione di 5 stelle su 5"
       ],
       "per month": [
         "al mese"
@@ -4729,9 +4741,6 @@
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } condiviso aggiornato"
       ],
-      "Shared Server Location Filters": [
-        "Filtri di posizione del server condiviso"
-      ],
       "Shared vault deleted": [
         "Cassaforte condivisa eliminata"
       ],
@@ -4752,10 +4761,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
-      ],
-      "Step ${ step }": [
-        "Passaggio ${ step }",
-        "Passaggio ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Spazio di archiviazione allocato ad altri utenti in questa organizzazione"
@@ -4795,6 +4800,9 @@
       ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Consigliato da Tech Radar Pro con una valutazione di 4,2 stelle su 5"
       ],
       "Thank you": [
         "Grazie"
@@ -4963,6 +4971,9 @@
       ],
       "Total VPN connections": [
         "Totale connessioni VPN"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Prova ${ productName } senza alcun rischio: se per qualsiasi motivo cambi idea, riceverai un rimborso completo. Nessuna domanda."
       ],
       "Two-factor authentication disabled": [
         "Autenticazione a due fattori disabilitata"
@@ -5769,6 +5780,9 @@
       "Group name": [
         "Nome del gruppo"
       ],
+      "Groups": [
+        "Gruppi"
+      ],
       "Hide password": [
         "Nascondi la password"
       ],
@@ -5837,6 +5851,9 @@
       ],
       "New password": [
         "Nuova password"
+      ],
+      "New policy name": [
+        "Nuovo nome del criterio"
       ],
       "New second password": [
         "Nuova seconda password"
@@ -6021,6 +6038,9 @@
       ],
       "Username": [
         "Nome utente"
+      ],
+      "Users": [
+        "Utenti"
       ],
       "Value": [
         "Valore"
@@ -6694,6 +6714,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento"
       ],
+      "Apps for": [
+        "App per"
+      ],
       "Auto-delete Spam and Trash": [
         "Eliminazione automatica dello spam e dal cestino"
       ],
@@ -6760,6 +6783,9 @@
       "Dedicated servers and IP": [
         "Server e IP dedicati"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Server dedicati ottimizzati per lo streaming"
+      ],
       "Desktop app": [
         "Applicazione desktop"
       ],
@@ -6810,12 +6836,6 @@
       ],
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
-      ],
-      "High-speed streaming": [
-        "Streaming ad alta velocità"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN Svizzera ad alta velocità che protegge la tua privacy."
       ],
       "High-speed VPN on ${ n } device": [
         "VPN ad alta velocità su ${ n } dispositivo",
@@ -6874,10 +6894,6 @@
       ],
       "Proofread and refine your emails": [
         "Correggi e affina le tue email"
-      ],
-      "Protect ${ n } device at a time": [
-        "Proteggi ${ n } dispositivo alla volta",
-        "Proteggi ${ n } dispositivi alla volta"
       ],
       "Quickly craft replies": [
         "Crea velocemente risposte"
@@ -6945,9 +6961,6 @@
       ],
       "Start protecting your organization": [
         "Inizia a proteggere la tua organizzazione"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Inizia a proteggerti online in 2 semplici passaggi"
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
@@ -7019,6 +7032,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fino a ${ totalStorageSize } di archiviazione"
+      ],
+      "Up to 10 Gbps": [
+        "Fino a 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Utilizza fino a ${ n } dispositivo per volta",
+        "Utilizza fino a ${ n } dispositivi per volta"
       ],
       "User credential management": [
         "Gestione delle credenziali utente"
@@ -7594,6 +7614,9 @@
       "Downloaded 2FA recovery codes": [
         "Codici di ripristino A2F scaricati"
       ],
+      "Error creating policy": [
+        "Errore durante la creazione della policy"
+      ],
       "Invalid code": [
         "Codice non valido"
       ],
@@ -7611,6 +7634,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenziali OpenVPN / IKEv2 rigenerate"
+      ],
+      "Policy created successfully": [
+        "Policy creata con successo"
       ],
       "Reminder has been sent": [
         "Il promemoria è stato inviato"
@@ -10319,6 +10345,9 @@
       "Add address": [
         "Aggiungi indirizzi"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Aggiungi paesi a \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Aggiungi carta di credito/debito"
       ],
@@ -10354,6 +10383,9 @@
       ],
       "Add users": [
         "Aggiungi utenti"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Aggiungi utenti a \"${ policyName }\""
       ],
       "Allocate storage": [
         "Alloca spazio"
@@ -10475,6 +10507,9 @@
       ],
       "Create multiple user accounts": [
         "Crea account utente multipli"
+      ],
+      "Create new policy": [
+        "Crea una nuova policy"
       ],
       "Create organization key": [
         "Crea chiave dell'organizzazione"
@@ -11653,8 +11688,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Il tuo pacchetto ${ a } e ${ b }"
       ],
-      "Your ${ selected } plan": [
-        "Il tuo piano ${ selected }"
+      "Your plan includes:": [
+        "Il tuo piano include:"
       ]
     },
     "vpn_2step: tooltip": {

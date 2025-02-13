@@ -227,6 +227,9 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
+      "Create album": [
+        "Creare album"
+      ],
       "Create and copy alias": [
         "Creare și copiere alias"
       ],
@@ -955,6 +958,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Creare album"
+      ],
       "Upload": [
         "Încărcare"
       ]
@@ -1318,6 +1324,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Închidere"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
       ],
@@ -2424,6 +2433,11 @@
         "Factură restantă"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "folosiți asistentul de importare Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul printr-o monitorizare dedicată 24/7 a activităților suspecte, inclusiv intervenția specialiștilor în securitate."
@@ -2505,11 +2519,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "folosiți asistentul de importare Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4887,6 +4896,9 @@
       "No": [
         "Nu"
       ],
+      "No Albums": [
+        "Nu sunt albume"
+      ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
       ],
@@ -5238,6 +5250,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Contul poate avea o cheie nouă sau este posibil ca următoarele să fi fost modificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
+      ],
+      "The albums you create are shown here": [
+        "Albumele create sunt afișate aici"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Semnătura digitală a fost parțial verificată. Acest fișier a fost încărcat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
@@ -6168,6 +6183,9 @@
       ],
       "Move to Inbox": [
         "Mutare în «Primite»"
+      ],
+      "My Albums": [
+        "Albumele mele"
       ],
       "Name": [
         "Nume"
@@ -7219,9 +7237,6 @@
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
       ],
-      "High-speed streaming": [
-        "Transmisii în flux de mare viteză"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN de mare viteză pe un dispozitiv",
         "VPN de mare viteză pe ${ n } dispozitive",
@@ -7277,11 +7292,6 @@
       ],
       "Proofread and refine your emails": [
         "Corectați și cizelați mesajele"
-      ],
-      "Protect ${ n } device at a time": [
-        "Protejare ${ n } dispozitiv",
-        "Protejare ${ n } dispozitive simultan",
-        "Protejare ${ n } de dispozitive simultan"
       ],
       "Quickly craft replies": [
         "Redactați rapid răspunsuri"
@@ -10164,6 +10174,12 @@
       "Addresses": [
         "Adrese"
       ],
+      "Album": [
+        "Album"
+      ],
+      "Albums": [
+        "Albume"
+      ],
       "All": [
         "Toate"
       ],
@@ -10786,6 +10802,11 @@
         "Astăzi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adăugați acest fișier partajat în ${ DRIVE_APP_NAME } pentru a-l accesa mai ușor mai târziu."
@@ -10867,11 +10888,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Validation": {
@@ -11037,9 +11053,6 @@
       ],
       "Name is required": [
         "Numele este obligatoriu."
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
