@@ -1,5 +1,3 @@
-import type { ReactNode } from 'react';
-
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
@@ -15,7 +13,6 @@ import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
-import { type OldUpsellModalProps } from './modal/OldUpsellModal';
 
 interface Props {
     upsellRef?: string;
@@ -26,9 +23,6 @@ interface Props {
     minimumCycle?: CYCLE;
     plan?: PLANS | ADDON_NAMES;
     onSubscribed?: () => void;
-    submitText?: ReactNode;
-    title?: ReactNode;
-    footerText?: ReactNode;
     /**
      * Can be used to prevent the modal from being opened in the drawer
      */
@@ -48,12 +42,9 @@ const useUpsellConfig = ({
     maximumCycle,
     minimumCycle,
     plan,
-    submitText,
-    footerText,
-    title,
     onSubscribed,
     preventInApp = false,
-}: Props): Partial<OldUpsellModalProps> & Required<Pick<OldUpsellModalProps, 'upgradePath'>> => {
+}: Props): { upgradePath: string; onUpgrade?: () => void } => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
@@ -77,11 +68,6 @@ const useUpsellConfig = ({
         // The subscription modal will open in inbox app
         return {
             upgradePath: '',
-            // Add next fields only if they are defined.
-            // We are spreading the returned object on UpsellModal which could erase props set manually on it
-            ...(title && { title }),
-            ...(submitText && { submitText }),
-            ...(footerText && { footerText }),
             onUpgrade() {
                 // Generate a mocked request to track upsell activity
                 const urlParameters = { ref: upsellRef, load: 'modalOpen' };
@@ -95,12 +81,7 @@ const useUpsellConfig = ({
     }
 
     // The user will be redirected to account app
-    return {
-        upgradePath: addUpsellPath(getUpgradePath({ user, subscription, app: APP_NAME }), upsellRef),
-        ...(title && { title }),
-        ...(submitText && { submitText }),
-        ...(footerText && { footerText }),
-    };
+    return { upgradePath: addUpsellPath(getUpgradePath({ user, subscription, app: APP_NAME }), upsellRef) };
 };
 
 export default useUpsellConfig;
