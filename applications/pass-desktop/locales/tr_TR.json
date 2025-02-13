@@ -831,6 +831,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ${ BRAND_NAME } parolasını yazın"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Kimlik doğrulama başarısız oldu. Dışa aktarma işlemine devam etmek için yedekleme parolanızı onaylayın"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Kimlik doğrulama başarısız oldu. Dışa aktarma işlemine devam etmek için ek parolanızı onaylayın"
+      ],
       "Biometric authentication failed": [
         "Biyometrik doğrulama yapılamadı"
       ],
@@ -4210,6 +4216,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } parolası gereklidir"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 ardışık noktaya izin verilmez"
+      ],
       "A description of the problem is required": [
         "Sorunun açıklamasının yazılması zorunludur"
       ],
@@ -4238,6 +4247,12 @@
       ],
       "At least one email address is required": [
         "En az bir e-posta adresi gereklidir"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Başlangıçta nokta içermez"
+      ],
+      "Cannot contain a dot at the end": [
+        "Sonda nokta içermez"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Bu takma adın e-posta kutuları şu anda alınamadı"
@@ -4354,8 +4369,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Eşitleme tamamlandıktan sonra, ${ PASS_SHORT_APP_NAME } içindeki takma adları silmek, bunların SimpleLogin üzerinden de silinmesine neden olur."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Yalnızca alfanümerik küçük harf karakterlerine, noktalara, tirelere ve alt çizgilere izin verilir"
       ],
       "Passphrase is required": [
         "Parola ifadesinin yazılması zorunludur"

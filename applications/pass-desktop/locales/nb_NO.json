@@ -831,6 +831,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentisering mislyktes. Bekreft ${ BRAND_NAME }-passordet for å forsette med eksporten."
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Autentisering mislyktes. Bekreft reservepassordet for å forsette med eksporten."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Autentisering mislyktes. Bekreft ekstra passordet for å forsette med eksporten."
+      ],
       "Biometric authentication failed": [
         "Biometrisk autentisering mislyktes"
       ],
@@ -1174,6 +1180,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Det oppstod et problem under oppstart av ${ PASS_SHORT_APP_NAME }. Hvis dette problemet vedvarer, kan du kontakte vår kundestøtte for å få hjelp."
+      ],
+      "Wrong backup password": [
+        "Feil reservepassord"
       ],
       "Wrong extra password": [
         "Galt ekstra passord"
@@ -4116,6 +4125,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-passord kreves"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 påfølgende prikker er ikke tillatt"
+      ],
       "A description of the problem is required": [
         "En beskrivelse av problemet er nødvendig"
       ],
@@ -4144,6 +4156,12 @@
       ],
       "At least one email address is required": [
         "Minst én e-postadresse kreves"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Kan ikke inneholde en prikk i begynnelsen"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan ikke inneholde en prikk ved slutten"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan ikke hente postbokser for dette aliaset akkurat nå."
@@ -4260,8 +4278,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Når de er synkronisert, vil sletting av aliaser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Bare alfanumeriske små bokstaver, prikker, bindestreker og understrekingstegn er tillatt."
       ],
       "Passphrase is required": [
         "Passfrase kreves"
