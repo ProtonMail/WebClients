@@ -1,6 +1,7 @@
 import { deletePassDB, getPassDBUserID, getPassDBs } from 'proton-pass-web/lib/database';
 import { getSessionKey } from 'proton-pass-web/lib/sessions';
 
+import { getBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
@@ -28,6 +29,7 @@ export const clearUserLocalData = (localID: number) => {
     localStorage.removeItem(getTelemetryStorageKey(localID));
     localStorage.removeItem(getB2BEventsStorageKey(localID));
     localStorage.removeItem(getSpotlightStorageKey(localID));
+    localStorage.removeItem(getBiometricsStorageKey(localID));
 };
 
 export const localGarbageCollect = async (encryptedSessions: EncryptedAuthSession[]) => {
