@@ -23,6 +23,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeTruthy();
@@ -42,6 +43,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     nbrEmailsInAllMail: 5,
                 })
             ).toBeFalsy();
@@ -61,6 +63,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -80,6 +83,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 60).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeTruthy();
@@ -99,6 +103,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 31).getTime() / 1000,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 60).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -120,6 +125,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: 0,
@@ -143,6 +149,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 14).getTime() / 1000,
@@ -166,6 +173,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 30).getTime() / 1000,
@@ -189,6 +197,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 31).getTime() / 1000,
@@ -214,6 +223,27 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
                     mailOneDollarPostSignupFlag: false,
+                    lastSubscriptionEnd: 0,
+                    nbrEmailsInAllMail: 10,
+                })
+            ).toBeFalsy();
+        });
+
+        it('should not be eligible, previous subscription', () => {
+            const nonFreeUser = {
+                isFree: false,
+                isDelinquent: false,
+                CreateTime: today.getTime() / 1000,
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user: nonFreeUser,
+                    protonConfig,
+                    offerStartDateTimeStamp: 0,
+                    minimalAccountAgeTimestamp: today.getTime(),
+                    mailOneDollarPostSignupFlag: false,
+                    lastSubscriptionEnd: 10000000000,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -233,6 +263,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -252,6 +283,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -271,6 +303,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
                     mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
