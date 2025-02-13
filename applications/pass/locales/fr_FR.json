@@ -799,6 +799,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "L'authentification n'a pas abouti. Confirmez votre mot de passe ${ BRAND_NAME } pour poursuivre l'exportation."
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "L'authentification n'a pas abouti. Confirmez votre mot de passe de secours pour continuer l'exportation."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "L'authentification n'a pas abouti. Confirmez votre mot de passe supplémentaire pour continuer l'exportation."
+      ],
       "Biometric authentication failed": [
         "L'authentification biométrique n'a pas abouti."
       ],
@@ -4071,6 +4077,9 @@
       "${ BRAND_NAME } password is required": [
         "Le mot de passe de ${ BRAND_NAME } est nécessaire."
       ],
+      "2 consecutive dots are not allowed": [
+        "L'usage de 2 points consécutifs n'est pas autorisé."
+      ],
       "A description of the problem is required": [
         "Une description du problème est nécessaire."
       ],
@@ -4099,6 +4108,12 @@
       ],
       "At least one email address is required": [
         "Au moins une adresse e-mail est nécessaire."
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Cette entrée ne peut pas commencer par un point."
+      ],
+      "Cannot contain a dot at the end": [
+        "L'entrée ne peut se terminer par un point."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Il n'est pas possible de récupérer les boites aux lettres de cet alias pour l'instant."
@@ -4215,8 +4230,8 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Une fois synchronisés, la suppression d'alias dans ${ PASS_SHORT_APP_NAME } les supprimera également dans SimpleLogin."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Seuls les caractères alphanumériques en minuscule, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
       ],
       "Passphrase is required": [
         "La phrase secrète est nécessaire."
