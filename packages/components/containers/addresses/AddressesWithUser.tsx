@@ -13,7 +13,7 @@ import OrderableTableHeader from '@proton/components/components/orderableTable/O
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
@@ -245,7 +245,7 @@ const AddressesUser = ({
             </OrderableTable>
 
             {renderUpsellModal && (
-                <NewUpsellModal
+                <UpsellModal
                     titleModal={c('Title').t`An address for each role`}
                     description={c('Description')
                         .t`Keep different parts of your life separate and your inbox organized with additional addresses.`}

@@ -11,8 +11,8 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import dwmShield from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
 import { useMailUpsellConfig } from '../../useMailUpsellConfig';
-import NewUpsellModal from '../NewUpsellModal';
 import UpsellFeatureList from '../UpsellFeatureList';
+import UpsellModal from '../UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -31,7 +31,7 @@ const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onUpgrade }: P
     const { upsellConfig } = useMailUpsellConfig({ upsellRef });
 
     return (
-        <NewUpsellModal
+        <UpsellModal
             titleModal={DARK_WEB_MONITORING_NAME}
             description={c('Description')
                 .t`Get notified if your password or other data was leaked from a third-party service.`}

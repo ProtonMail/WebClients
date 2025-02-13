@@ -7,8 +7,8 @@ import { useUser } from '@proton/account/user/hooks';
 import {
     Badge,
     ColorPicker,
-    NewUpsellModal,
     Spotlight,
+    UpsellModal,
     useMailUpsellConfig,
     useModalState,
     useSpotlightOnFeature,
@@ -104,7 +104,7 @@ const EventColorSelect = ({ model, setModel }: Props) => {
             </Spotlight>
 
             {renderUpsellModal && (
-                <NewUpsellModal
+                <UpsellModal
                     data-testid="color-per-event:upsell-modal"
                     titleModal={c('Title').t`Add some color to your day`}
                     description={c('Description')
