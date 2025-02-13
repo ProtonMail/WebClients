@@ -65,7 +65,7 @@ const AccountSessionsSwitcher = ({
                                         <a
                                             href={`${sessionDisplayData.path}${sessionOptions?.path || ''}`}
                                             type="button"
-                                            target={sessionOptions?.target || '_blank'}
+                                            target={sessionOptions?.target || '_self'}
                                             className="color-inherit px-4 py-1.5 flex gap-2 items-start items-center w-full text-left relative interactive-pseudo-inset text-no-decoration"
                                         >
                                             <span
