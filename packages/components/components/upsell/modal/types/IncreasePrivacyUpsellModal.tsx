@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import OldUpsellModal from '@proton/components/components/upsell/modal/OldUpsellModal';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
@@ -21,7 +21,7 @@ const IncreasePrivacyUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     });
 
     return (
-        <UpsellModal
+        <OldUpsellModal
             title={c('Title').t`Increase your privacy with more addresses`}
             description={c('Description')
                 .t`Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.`}

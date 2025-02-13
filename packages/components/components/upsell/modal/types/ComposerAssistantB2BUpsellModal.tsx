@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import OldUpsellModal from '@proton/components/components/upsell/modal/OldUpsellModal';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
@@ -54,7 +54,7 @@ const ComposerAssistantB2BUpsellModal = ({ modalProps, isOrgUser }: Props) => {
     const title = c('Title').t`Your free trial has ended`;
 
     return (
-        <UpsellModal
+        <OldUpsellModal
             title={title}
             description={
                 isOrgUser
