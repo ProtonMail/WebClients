@@ -1078,6 +1078,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "დახურვა"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -6251,9 +6254,6 @@
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
-      "High-speed streaming": [
-        "ჩქაროსნული სტრიმინგი"
-      ],
       "High-speed VPN on ${ n } device": [
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე",
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე"
@@ -6308,10 +6308,6 @@
       ],
       "Proofread and refine your emails": [
         "თქვენი ელფოსტების კორექტურა და ოპტიმიზაცია"
-      ],
-      "Protect ${ n } device at a time": [
-        "დაიცავით ${ n } მოწყობილობა ერთდროულად",
-        "დაიცავით ${ n } მოწყობილობა ერთდროულად"
       ],
       "Quickly craft replies": [
         "უცებ შექმენით პასუხები"
@@ -9264,9 +9260,6 @@
       ],
       "Name is required": [
         "სახელი აუცილებელია"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "გაითვალისწინეთ, რომ გადახდის ამ მეთოდის არჩევით თქვენი ანგარიშის სატარიფო გეგმის მომენტალური შეცვლა შეუძლებელია. ტარიფი, მხოლოდ, გადახდის დასრულების შემდეგ შეიცვლება."
