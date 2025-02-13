@@ -78,6 +78,9 @@
       "Add phone number": [
         "Aggiungi numero di telefono"
       ],
+      "Add to album": [
+        "Aggiungi all'album"
+      ],
       "Add to group": [
         "Aggiungi ad un gruppo"
       ],
@@ -225,6 +228,9 @@
       ],
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
+      ],
+      "Create album": [
+        "Crea un album"
       ],
       "Create and copy alias": [
         "Crea e copia l'alias"
@@ -545,6 +551,9 @@
       ],
       "New": [
         "Nuovo"
+      ],
+      "New album": [
+        "Nuovo album"
       ],
       "New document": [
         "Nuovo documento"
@@ -951,6 +960,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Crea un album"
+      ],
       "Upload": [
         "Carica"
       ]
@@ -1334,6 +1346,12 @@
       ],
       "Take a tour": [
         "Fai un tour"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Aggiungi ${ photos.length } foto a",
+        "Aggiungi ${ photos.length } foto a"
       ]
     },
     "Cancellation reminder": {
@@ -2415,6 +2433,11 @@
         "Fattura scaduta"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "usa l'assistente di importazione Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con un monitoraggio dedicato 24 ore su 24, 7 giorni su 7, delle attività sospette, incluso l'inoltro agli specialisti della sicurezza."
@@ -2496,11 +2519,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4199,6 +4217,9 @@
         "Tutta la (${ totalFoldersCount } etichetta)",
         "Tutte le (${ totalFoldersCount } etichette)"
       ],
+      "All albums": [
+        "Tutti gli album"
+      ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
       ],
@@ -4815,6 +4836,9 @@
       "No": [
         "No"
       ],
+      "No Albums": [
+        "Nessun album"
+      ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
       ],
@@ -5009,6 +5033,9 @@
       "Ready to add some photos?": [
         "Pronto ad aggiungere qualche foto?"
       ],
+      "Recent": [
+        "Recente"
+      ],
       "recommended browser": [
         "browser consigliato"
       ],
@@ -5164,6 +5191,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "L'account potrebbe avere una nuova chiave o quanto segue potrebbe essere stato manomesso: ${ items }. Aprilo solo se ti fidi."
+      ],
+      "The albums you create are shown here": [
+        "Gli album che crei vengono mostrati qui."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "La firma digitale è stata parzialmente verificata. Questo file è stato caricato utilizzando un link di condivisione accessibile pubblicamente da un utente senza un account ${ BRAND_NAME }, quindi la loro identità non può essere verificata."
@@ -6087,6 +6117,9 @@
       ],
       "Move to Inbox": [
         "Sposta nella posta in arrivo"
+      ],
+      "My Albums": [
+        "I miei album"
       ],
       "Name": [
         "Nome"
@@ -7113,6 +7146,9 @@
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Server dedicati ottimizzati per lo streaming"
+      ],
       "Desktop app": [
         "Applicazione desktop"
       ],
@@ -7163,9 +7199,6 @@
       ],
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
-      ],
-      "High-speed streaming": [
-        "Streaming ad alta velocità"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN ad alta velocità su ${ n } dispositivo",
@@ -7221,10 +7254,6 @@
       ],
       "Proofread and refine your emails": [
         "Correggi e affina le tue email"
-      ],
-      "Protect ${ n } device at a time": [
-        "Proteggi ${ n } dispositivo alla volta",
-        "Proteggi ${ n } dispositivi alla volta"
       ],
       "Quickly craft replies": [
         "Crea velocemente risposte"
@@ -7356,6 +7385,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fino a ${ totalStorageSize } di archiviazione"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Utilizza fino a ${ n } dispositivo per volta",
+        "Utilizza fino a ${ n } dispositivi per volta"
       ],
       "User credential management": [
         "Gestione delle credenziali utente"
@@ -10660,6 +10693,11 @@
         "Oggi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Aggiungi questo file condiviso al tuo ${ DRIVE_APP_NAME } per accedervi facilmente in seguito."
@@ -10741,11 +10779,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Abbiamo spedito un invito per accedere all'elemento."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
       ]
     },
     "Valentine_2025": {
@@ -10988,6 +11021,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
       ],
+      "2 consecutive dots are not allowed": [
+        "Non sono ammessi 2 punti consecutivi"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } contatto?",
         "Sei sicuro di voler eliminare definitivamente ${ count } contatti?"
@@ -11000,6 +11036,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Sei sicuro di voler eliminare definitivamente questo contatto?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Non può contenere un punto all'inizio"
+      ],
+      "Cannot contain a dot at the end": [
+        "Non può contenere un punto alla fine"
       ],
       "Contacts could not be merged": [
         "Impossibile unire i contatti"
@@ -11022,8 +11064,8 @@
       "Name is required": [
         "Nome obbligatorio"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Sono consentiti solo caratteri alfanumerici, punti, trattini e trattini bassi"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Sono consentiti solo caratteri alfanumerici minuscoli, punti, trattini e caratteri di sottolineatura"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà completato."

@@ -78,6 +78,9 @@
       "Add phone number": [
         "Přidat telefonní číslo"
       ],
+      "Add to album": [
+        "Přidat do alba"
+      ],
       "Add to group": [
         "Přidat do skupiny"
       ],
@@ -554,6 +557,9 @@
       ],
       "New": [
         "Nový"
+      ],
+      "New album": [
+        "Nové album"
       ],
       "New document": [
         "Nový dokument"
@@ -2445,6 +2451,11 @@
         "Faktura po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2526,11 +2537,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4341,6 +4347,9 @@
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
       ],
+      "All albums": [
+        "Všechna alba"
+      ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
       ],
@@ -5171,6 +5180,9 @@
       ],
       "Ready to add some photos?": [
         "Jste připraveni přidat nějaké fotografie?"
+      ],
+      "Recent": [
+        "Nedávné"
       ],
       "recommended browser": [
         "doporučený prohlížeč"
@@ -7346,9 +7358,6 @@
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
       ],
-      "High-speed streaming": [
-        "Vysokorychlostní streamování"
-      ],
       "High-speed VPN on ${ n } device": [
         "Vysokorychlostní VPN na ${ n } zařízení",
         "Vysokorychlostní VPN na ${ n } zařízeních",
@@ -7405,12 +7414,6 @@
       ],
       "Proofread and refine your emails": [
         "Proveďte korektury a zpřesnění vašich e-mailů"
-      ],
-      "Protect ${ n } device at a time": [
-        "Chránit ${ n } zařízení zároveň",
-        "Chránit ${ n } zařízení zároveň",
-        "Chránit ${ n } zařízení zároveň",
-        "Chránit ${ n } zařízení zároveň"
       ],
       "Quickly craft replies": [
         "Rychle vytvářejte odpovědi"
@@ -11001,6 +11004,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Přidejte tento sdílený soubor na svůj ${ DRIVE_APP_NAME } pro pozdější snadný přístup."
@@ -11082,11 +11090,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "Validation": {
@@ -11265,9 +11268,6 @@
       ],
       "Name is required": [
         "Název je povinný"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Berte prosím na vědomí, že výběrem této platební metody nemůže být váš účet navýšen okamžitě. Předplatné vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."

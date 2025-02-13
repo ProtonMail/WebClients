@@ -225,6 +225,9 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
+      "Create album": [
+        "앨범 생성"
+      ],
       "Create and copy alias": [
         "별칭 생성 및 복사"
       ],
@@ -947,6 +950,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "앨범 생성"
+      ],
       "Upload": [
         "업로드"
       ]
@@ -1298,6 +1304,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "닫기"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
       ],
@@ -2400,6 +2409,11 @@
         "기한이 지난 청구서"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2481,11 +2495,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4737,6 +4746,9 @@
       "No": [
         "아니오"
       ],
+      "No Albums": [
+        "앨범 없음"
+      ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
       ],
@@ -4771,7 +4783,7 @@
         "조직의 전용 서버 수"
       ],
       "of": [
-        "의"
+        "/"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "암호화된 드라이브 중 하나가 잠겼습니다. 이는 최근의 비밀번호 재설정 때문일 가능성이 높습니다."
@@ -5084,6 +5096,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "이 계정이 새 키를 가지고 있거나, 다음이 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
+      ],
+      "The albums you create are shown here": [
+        "생성한 앨범이 여기에 나타납니다."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "디지털 서명이 부분적으로 인증되었습니다. 이 파일은 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 업로드했기 때문에 신원을 확인할 수 없습니다."
@@ -5994,6 +6009,9 @@
       ],
       "Move to Inbox": [
         "받은 편지함으로 이동"
+      ],
+      "My Albums": [
+        "나의 앨범"
       ],
       "Name": [
         "이름"
@@ -7001,9 +7019,6 @@
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
-      "High-speed streaming": [
-        "고속 스트리밍"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 기기에서 고속 VPN"
       ],
@@ -7057,9 +7072,6 @@
       ],
       "Proofread and refine your emails": [
         "이메일 교정 및 수정하기"
-      ],
-      "Protect ${ n } device at a time": [
-        "동시에 최대 ${ n }개까지 장치 보호"
       ],
       "Quickly craft replies": [
         "신속하게 답변 작성하기"
@@ -9792,6 +9804,12 @@
       "Addresses": [
         "주소"
       ],
+      "Album": [
+        "앨범"
+      ],
+      "Albums": [
+        "앨범"
+      ],
       "All": [
         "전체"
       ],
@@ -10404,6 +10422,11 @@
         "오늘"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "추후 간편하게 접근할 수 있도록 내 ${ DRIVE_APP_NAME }에 공유된 파일을 추가하세요."
@@ -10485,11 +10508,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Validation": {
@@ -10574,7 +10592,7 @@
         "이메일을 통한 Bitcoin"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소． 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 보내실 수 있습니다．"
+        "암호화되어 안전한 ${ MAIL_APP_NAME } 이메일 주소. 누구나 ${ BRAND_NAME } 이름만으로 손쉽게 Bitcoin을 송금하 수 있습니다．"
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "착오가 발생하기 쉬운 복잡한 26자 Bitcoin 주소 대신 이메일을 통해 Bitcoin을 안전하게 거래하세요"
@@ -10582,7 +10600,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "비트코인을 보관할 더 안전한 방법"
+        "Bitcoin을 보관할 더 안전한 방법"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -10629,9 +10647,6 @@
       ],
       "Name is required": [
         "이름은 필수입니다"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."
