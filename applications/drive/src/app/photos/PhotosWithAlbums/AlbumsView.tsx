@@ -1,19 +1,16 @@
 import type { FC } from 'react';
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Loader, NavigationControl, useAppTitle, useModalStateObject } from '@proton/components';
+import { Loader, useAppTitle, useModalStateObject } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import PortalPreview from '../../components/PortalPreview';
-import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
-import type { PhotoLink } from '../../store';
-import { AlbumTag, isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { AlbumTag, useThumbnailsDownload } from '../../store';
 import { useCreateAlbum } from '../PhotosActions/Albums';
 import { CreateAlbumModal } from '../PhotosModals/CreateAlbumModal';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
@@ -35,17 +32,16 @@ export const AlbumsView: FC = () => {
         isPhotosLoading,
         loadPhotoLink,
         photoLinkIdToIndexMap,
-        photoLinkIds,
         requestDownload,
     } = usePhotosWithAlbumsView();
 
     const { selectedItems, clearSelection } = usePhotosSelection(photos, photoLinkIdToIndexMap);
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
-    const [detailsModal, showDetailsModal] = useDetailsModal();
     const createAlbumModal = useModalStateObject();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    // TODO: [linkSharingModal, showLinkSharingModal] enable link sharing modal for albums
+    const [linkSharingModal] = useLinkSharingModal();
     const createAlbum = useCreateAlbum();
-    const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
+
     const thumbnails = useThumbnailsDownload();
     const { navigateToPhotos, navigateToAlbum, navigateToAlbums } = useNavigate();
     // TODO: Move tag selection to specific hook
@@ -65,30 +61,7 @@ export const AlbumsView: FC = () => {
         }
     };
 
-    const photoCount = photoLinkIds.length;
     const selectedCount = selectedItems.length;
-
-    const handleToolbarPreview = useCallback(() => {
-        let selected = selectedItems[0];
-
-        if (selectedItems.length === 1 && selected) {
-            setPreviewLinkId(selected.linkId);
-        }
-    }, [selectedItems, setPreviewLinkId]);
-
-    const previewRef = useRef<HTMLDivElement>(null);
-    const previewIndex = useMemo(
-        () => photoLinkIds.findIndex((item) => item === previewLinkId),
-        [photoLinkIds, previewLinkId]
-    );
-    const previewItem = useMemo(
-        () => (previewLinkId !== undefined ? (photos[photoLinkIdToIndexMap[previewLinkId]] as PhotoLink) : undefined),
-        [photos, previewLinkId, photoLinkIdToIndexMap]
-    );
-    const setPreviewIndex = useCallback(
-        (index: number) => setPreviewLinkId(photoLinkIds[index]),
-        [setPreviewLinkId, photoLinkIds]
-    );
 
     const onCreateAlbum = useCallback(
         async (name: string) => {
@@ -112,48 +85,9 @@ export const AlbumsView: FC = () => {
         return <Loader />;
     }
 
-    const hasPreview = !!previewItem;
-
     return (
         <>
-            {detailsModal}
             {linkSharingModal}
-            {hasPreview && (
-                <PortalPreview
-                    ref={previewRef}
-                    shareId={shareId}
-                    linkId={previewItem.linkId}
-                    revisionId={isDecryptedLink(previewItem) ? previewItem.activeRevision?.id : undefined}
-                    key="portal-preview-photos"
-                    open={hasPreview}
-                    date={
-                        previewItem.activeRevision?.photo?.captureTime ||
-                        (isDecryptedLink(previewItem) ? previewItem.createTime : undefined)
-                    }
-                    onShare={
-                        isDecryptedLink(previewItem) && previewItem?.trashed
-                            ? undefined
-                            : () => showLinkSharingModal({ shareId, linkId: previewItem.linkId })
-                    }
-                    onDetails={() =>
-                        showDetailsModal({
-                            shareId,
-                            linkId: previewItem.linkId,
-                        })
-                    }
-                    navigationControls={
-                        <NavigationControl
-                            current={previewIndex + 1}
-                            total={photoCount}
-                            rootRef={previewRef}
-                            onPrev={() => setPreviewIndex(previewIndex - 1)}
-                            onNext={() => setPreviewIndex(previewIndex + 1)}
-                        />
-                    }
-                    onClose={() => setPreviewLinkId(undefined)}
-                    onExit={() => setPreviewLinkId(undefined)}
-                />
-            )}
 
             <ToolbarRow
                 titleArea={
@@ -193,7 +127,6 @@ export const AlbumsView: FC = () => {
                         shareId={shareId}
                         linkId={linkId}
                         selectedItems={selectedItems}
-                        onPreview={handleToolbarPreview}
                         requestDownload={requestDownload}
                         uploadDisabled={true}
                         tabSelection={'albums'}
