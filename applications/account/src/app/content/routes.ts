@@ -35,6 +35,7 @@ interface Arguments {
     assistantKillSwitch: boolean;
     canDisplayB2BLogsPass: boolean;
     canDisplayB2BLogsVPN: boolean;
+    canDisplayPassReports: boolean;
     memberships: GroupMembershipReturn[] | undefined;
     groups: Group[] | undefined;
     isUserGroupsMembershipFeatureEnabled: boolean;
@@ -62,6 +63,7 @@ export const getRoutes = ({
     assistantKillSwitch,
     canDisplayB2BLogsPass,
     canDisplayB2BLogsVPN,
+    canDisplayPassReports,
     memberships,
     groups,
     isUserGroupsMembershipFeatureEnabled,
@@ -99,7 +101,7 @@ export const getRoutes = ({
         calendar: getCalendarAppRoutes({ app, user, organization, isZoomIntegrationEnabled }),
         drive: getDriveAppRoutes({ app, isB2BDrive, canB2BHidePhotos }),
         docs: getDocsAppRoutes({ app }),
-        pass: getPassAppRoutes({ app, user, organization, subscription, canDisplayB2BLogsPass }),
+        pass: getPassAppRoutes({ app, user, organization, subscription, canDisplayB2BLogsPass, canDisplayPassReports }),
         organization: getOrganizationAppRoutes({
             app,
             user,
