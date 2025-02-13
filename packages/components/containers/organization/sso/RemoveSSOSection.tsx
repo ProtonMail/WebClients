@@ -26,7 +26,9 @@ const RemoveSSOSection = ({ domain, ssoConfig, ssoAppInfo }: Props) => {
 
     return (
         <>
-            {renderRemoveSSOModal && <RemoveSSOModal sso={ssoConfig} {...removeSSOModalProps} />}
+            {renderRemoveSSOModal && (
+                <RemoveSSOModal sso={ssoConfig} ssoAppInfo={ssoAppInfo} {...removeSSOModalProps} />
+            )}
             <SettingsSection>
                 <SettingsParagraph learnMoreUrl={ssoAppInfo.kbUrl}>
                     {c('Info').jt`This will remove SSO for ${boldDomainName}.`}

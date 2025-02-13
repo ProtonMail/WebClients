@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import type { SectionConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
-import { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -30,7 +29,6 @@ interface Props {
     canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
     isB2BAuthLogsEnabled: boolean;
-    isGlobalSSOEnabled: boolean;
     groups: Group[] | undefined;
     isScribeEnabled?: boolean;
     isZoomIntegrationEnabled: boolean;
@@ -47,7 +45,6 @@ export const getOrganizationAppRoutes = ({
     canDisplayB2BLogsVPN,
     isUserGroupsFeatureEnabled,
     isB2BAuthLogsEnabled,
-    isGlobalSSOEnabled,
     groups,
     isScribeEnabled,
     isZoomIntegrationEnabled,
@@ -122,13 +119,6 @@ export const getOrganizationAppRoutes = ({
     const subSectionTitle = isPartOfFamily ? '' : c('Title').t`Multi-user support`;
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
-
-    const isPassAndGlobalSSOEnabled =
-        app === APPS.PROTONPASS ||
-        organization?.PlanName === PLANS.PASS_PRO ||
-        organization?.PlanName === PLANS.PASS_BUSINESS
-            ? isGlobalSSOEnabled
-            : true;
 
     return {
         available: canHaveOrganization && app !== APPS.PROTONWALLET,
@@ -304,7 +294,6 @@ export const getOrganizationAppRoutes = ({
                 to: '/single-sign-on',
                 icon: 'key',
                 available:
-                    isPassAndGlobalSSOEnabled &&
                     appSupportsSSO(app) &&
                     (planSupportsSSO(organization?.PlanName) || upsellPlanSSO(organization?.PlanName)) &&
                     canHaveOrganization &&

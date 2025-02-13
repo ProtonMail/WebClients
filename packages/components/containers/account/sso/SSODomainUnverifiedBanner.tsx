@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { InlineLinkButton } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSsoAppInfo } from '@proton/components/containers/organization/sso/ssoAppInfo';
@@ -12,6 +13,7 @@ import TopBanner from '../../topBanners/TopBanner';
 
 const SSODomainUnverifiedBanner = ({ app }: { app: APP_NAMES }) => {
     const [customDomains] = useCustomDomains();
+    const [organization] = useOrganization();
     const [modalProps, setModal, renderModal] = useModalState();
 
     if (!customDomains?.length) {
@@ -40,7 +42,7 @@ const SSODomainUnverifiedBanner = ({ app }: { app: APP_NAMES }) => {
     };
 
     const { text, bgColor } = domainStateMap[unverifiedSSODomain.State];
-    const ssoAppInfo = getSsoAppInfo(app);
+    const ssoAppInfo = getSsoAppInfo(app, organization?.PlanName);
 
     return (
         <>

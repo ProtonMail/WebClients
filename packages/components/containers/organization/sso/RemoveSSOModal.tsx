@@ -6,6 +6,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { SsoAppInfo } from '@proton/components/containers/organization/sso/ssoAppInfo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -14,18 +15,17 @@ import useLoading from '@proton/hooks/useLoading';
 import { removeSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import type { SSO } from '@proton/shared/lib/interfaces';
 import errorImg from '@proton/styles/assets/img/errors/error-generic-triangle.svg';
-import { useFlag } from '@proton/unleash';
 
 interface Props extends ModalProps {
     sso: SSO;
+    ssoAppInfo: SsoAppInfo;
 }
 
-const RemoveSSOModal = ({ sso, onClose, ...rest }: Props) => {
+const RemoveSSOModal = ({ sso, ssoAppInfo, onClose, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
-    const isGlobalSSOEnabled = useFlag('GlobalSSO');
 
     const removeSSO = async () => {
         await api(removeSAMLConfig(sso.ID));
@@ -52,7 +52,7 @@ const RemoveSSOModal = ({ sso, onClose, ...rest }: Props) => {
                 <ul className="m-0">
                     <li className="mb-2">
                         {getBoldFormattedText(
-                            isGlobalSSOEnabled
+                            ssoAppInfo.type === 'global-sso'
                                 ? c('sso')
                                       .t`**SSO users will be detached from your identity provider** and converted to non-SSO users.`
                                 : c('sso')
@@ -60,7 +60,7 @@ const RemoveSSOModal = ({ sso, onClose, ...rest }: Props) => {
                         )}
                     </li>
                     <li>
-                        {isGlobalSSOEnabled
+                        {ssoAppInfo.type === 'global-sso'
                             ? c('sso').t`You will have to create new users manually to add them to your organization.`
                             : c('sso')
                                   .t`Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.`}
