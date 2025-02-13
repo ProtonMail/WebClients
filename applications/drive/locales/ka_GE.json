@@ -226,6 +226,9 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
+      "Create album": [
+        "ალბომის შექმნა"
+      ],
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
       ],
@@ -951,6 +954,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "ალბომის შექმნა"
+      ],
       "Upload": [
         "ატვირთვა"
       ]
@@ -1301,6 +1307,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "დახურვა"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -2405,6 +2414,11 @@
         "ინვოისი გადაცილებულია"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2486,11 +2500,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4799,6 +4808,9 @@
       "No": [
         "არა"
       ],
+      "No Albums": [
+        "ალბომების გარეშე"
+      ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
       ],
@@ -6054,6 +6066,9 @@
       "Move to Inbox": [
         "შემომავლებში გადატანა"
       ],
+      "My Albums": [
+        "ჩემი ალბომები"
+      ],
       "Name": [
         "სახელი"
       ],
@@ -7082,9 +7097,6 @@
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
-      "High-speed streaming": [
-        "ჩქაროსნული სტრიმინგი"
-      ],
       "High-speed VPN on ${ n } device": [
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე",
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე"
@@ -7139,10 +7151,6 @@
       ],
       "Proofread and refine your emails": [
         "თქვენი ელფოსტების კორექტურა და ოპტიმიზაცია"
-      ],
-      "Protect ${ n } device at a time": [
-        "დაიცავით ${ n } მოწყობილობა ერთდროულად",
-        "დაიცავით ${ n } მოწყობილობა ერთდროულად"
       ],
       "Quickly craft replies": [
         "უცებ შექმენით პასუხები"
@@ -9933,6 +9941,12 @@
       "Addresses": [
         "მისამართები"
       ],
+      "Album": [
+        "ალბომი"
+      ],
+      "Albums": [
+        "ალბომები"
+      ],
       "All": [
         "ყველა"
       ],
@@ -10550,6 +10564,11 @@
         "დღეს"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "დაამატეთ ეს გაზიარებული ფაილი თქვენს ${ DRIVE_APP_NAME }-ზე მოგვიანებით იოლი წვდომისთვის."
@@ -10631,11 +10650,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "ჩვენ მათ მოწვევა გავუგზავნეთ ელემენტთან წვდომისთვის."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ]
     },
     "Validation": {
@@ -10788,9 +10802,6 @@
       ],
       "Name is required": [
         "სახელი აუცილებელია"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "გაითვალისწინეთ, რომ გადახდის ამ მეთოდის არჩევით თქვენი ანგარიშის სატარიფო გეგმის მომენტალური შეცვლა შეუძლებელია. ტარიფი, მხოლოდ, გადახდის დასრულების შემდეგ შეიცვლება."

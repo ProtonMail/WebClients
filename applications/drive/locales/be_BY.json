@@ -78,6 +78,9 @@
       "Add phone number": [
         "Дадаць нумар тэлефона"
       ],
+      "Add to album": [
+        "Дадаць у альбом"
+      ],
       "Add to group": [
         "Дадаць у групу"
       ],
@@ -227,6 +230,9 @@
       ],
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
+      ],
+      "Create album": [
+        "Стварыць альбом"
       ],
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
@@ -551,6 +557,9 @@
       ],
       "New": [
         "Новы"
+      ],
+      "New album": [
+        "Новы альбом"
       ],
       "New document": [
         "Новы дакумент"
@@ -959,6 +968,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Стварыць альбом"
+      ],
       "Upload": [
         "Запампаваць"
       ]
@@ -1354,6 +1366,14 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Дадайце ${ photos.length } фатаграфію ў",
+        "Дадайце ${ photos.length } фатаграфіі ў",
+        "Дадайце ${ photos.length } фатаграфій у",
+        "Дадайце ${ photos.length } фатаграфій у"
       ]
     },
     "Cancellation reminder": {
@@ -2439,6 +2459,11 @@
         "Пратэрмінаваны рахунак"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -2520,11 +2545,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4335,6 +4355,9 @@
         "Усе (${ totalFoldersCount } метак)",
         "Усе (${ totalFoldersCount } меткі)"
       ],
+      "All albums": [
+        "Усе альбомы"
+      ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
@@ -4965,6 +4988,9 @@
       "No": [
         "Не"
       ],
+      "No Albums": [
+        "Альбомы адсутнічаюць"
+      ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
       ],
@@ -5163,6 +5189,9 @@
       "Ready to add some photos?": [
         "Гатовыя дадаць некаторыя фатаграфіі?"
       ],
+      "Recent": [
+        "Нядаўнія"
+      ],
       "recommended browser": [
         "рэкамендаваны браўзер"
       ],
@@ -5318,6 +5347,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
+      ],
+      "The albums you create are shown here": [
+        "Створаныя вамі альбомы будуць паказаны тут"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Лічабавы подпіс часткова правераны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
@@ -6258,6 +6290,9 @@
       ],
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
+      ],
+      "My Albums": [
+        "Мае альбомы"
       ],
       "Name": [
         "Назва"
@@ -7331,6 +7366,9 @@
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Вылучаныя серверы аптымізаваны для трансляцый"
+      ],
       "Desktop app": [
         "Настольная праграма"
       ],
@@ -7381,9 +7419,6 @@
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
-      ],
-      "High-speed streaming": [
-        "Высакахуткасная трансляцыя"
       ],
       "High-speed VPN on ${ n } device": [
         "Высакахуткасны VPN на ${ n } прыладзе",
@@ -7441,12 +7476,6 @@
       ],
       "Proofread and refine your emails": [
         "Правярайце і ўдакладняйце свае электронныя лісты"
-      ],
-      "Protect ${ n } device at a time": [
-        "Абараніць ${ n } прыладу адначасова",
-        "Абараніць ${ n } прылады адначасова",
-        "Абараніць ${ n } прылад адначасова",
-        "Абараніць ${ n } прылады адначасова"
       ],
       "Quickly craft replies": [
         "Хутка стварайце адказы"
@@ -7582,6 +7611,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Выкарыстоўвайце на ${ n } прыладзе адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова"
       ],
       "User credential management": [
         "Кіраванне ўліковымі данымі карыстальнікаў"
@@ -11037,6 +11072,11 @@
         "Сёння"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Дадаць гэты абагулены файл у свой ${ DRIVE_APP_NAME } для лёгкага доступу да яго ў будучыні."
@@ -11118,11 +11158,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы адправілі ім запрашэнне на доступ да элемента."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
     },
     "Validation": {
@@ -11266,6 +11301,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 кропкі запар забаронены"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
@@ -11280,6 +11318,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Вы сапраўды хочаце незваротна выдаліць гэты кантакт?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Не можа змяшчаць кроку ў пачатку"
+      ],
+      "Cannot contain a dot at the end": [
+        "Не можа змяшчаць кроку ў канцы"
       ],
       "Contacts could not be merged": [
         "Не атрымалася аб'яднаць кантакты"
@@ -11302,8 +11346,8 @@
       "Name is required": [
         "Патрабуецца назва"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Дазволены толькі літарна-лічбавыя сімвалы ў ніжнім рэгістры, кропкі, злучкі і сімвалы падкрэслівання."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."
