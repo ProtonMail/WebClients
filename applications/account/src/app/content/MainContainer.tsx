@@ -149,7 +149,6 @@ const MainContainer = () => {
     const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
     const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
-    const isGlobalSSOEnabled = useFlag('GlobalSSO');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
@@ -199,7 +198,6 @@ const MainContainer = () => {
         canB2BHidePhotos,
         isB2BDrive,
         isB2BAuthLogsEnabled,
-        isGlobalSSOEnabled,
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,

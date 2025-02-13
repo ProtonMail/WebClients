@@ -23,11 +23,13 @@ export const getSsoUpsellPlan = (app: APP_NAMES) => {
 export interface SsoAppInfo {
     upsellPlan: PLANS | undefined;
     kbUrl: string | undefined;
+    type: 'global-sso' | 'vpn-sso';
 }
 
-export const getSsoAppInfo = (app: APP_NAMES) => {
+export const getSsoAppInfo = (app: APP_NAMES, planName?: PLANS): SsoAppInfo => {
     return {
         upsellPlan: getSsoUpsellPlan(app),
         kbUrl: getSsoKbUrl(app),
+        type: [PLANS.VPN_PRO, PLANS.VPN_BUSINESS].includes(planName as any) ? 'vpn-sso' : 'global-sso',
     };
 };

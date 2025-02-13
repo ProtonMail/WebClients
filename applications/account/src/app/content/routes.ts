@@ -41,7 +41,6 @@ interface Arguments {
     canB2BHidePhotos: boolean;
     isB2BDrive: boolean;
     isB2BAuthLogsEnabled: boolean;
-    isGlobalSSOEnabled: boolean;
     isScribeEnabled: boolean;
     isZoomIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
@@ -69,7 +68,6 @@ export const getRoutes = ({
     canB2BHidePhotos,
     isB2BDrive,
     isB2BAuthLogsEnabled,
-    isGlobalSSOEnabled,
     isScribeEnabled,
     isZoomIntegrationEnabled,
     isSharedServerFeatureEnabled,
@@ -110,7 +108,6 @@ export const getRoutes = ({
             canDisplayB2BLogsVPN,
             isUserGroupsFeatureEnabled,
             isB2BAuthLogsEnabled,
-            isGlobalSSOEnabled,
             groups,
             isScribeEnabled,
             isZoomIntegrationEnabled,
