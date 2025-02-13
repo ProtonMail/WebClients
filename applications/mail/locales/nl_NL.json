@@ -1153,6 +1153,9 @@
       "Set as default": [
         "Als standaard instellen"
       ],
+      "Set as default mail application": [
+        "Stel in als standaard e-mail applicatie"
+      ],
       "Set encryption": [
         "Versleuteling instellen"
       ],
@@ -1300,6 +1303,9 @@
       "Trust": [
         "Vertrouwen"
       ],
+      "Trust key": [
+        "Vertrouwde sleutel"
+      ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
       ],
@@ -1357,11 +1363,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade now": [
-        "Nu upgraden"
-      ],
       "Upgrade Now": [
         "Upgrade Nu"
+      ],
+      "Upgrade now": [
+        "Nu upgraden"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Upgrade naar ${ BRAND_NAME } Unlimited"
@@ -5883,6 +5889,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan uw bedrijf ook beschermen."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } is niet uw standaard e-mail applicatie."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
         "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
@@ -6319,6 +6328,9 @@
         "standaard e-mailadres"
       ],
       "Default email application": [
+        "Standaard e-mailapplicatie"
+      ],
+      "Default mail application": [
         "Standaard e-mailapplicatie"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
@@ -7124,6 +7136,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie voor deze browser. ${ MAIL_APP_NAME } wordt automatisch geopend wanneer u op een e-mailkoppeling klikt."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Stel ${ MAIL_APP_NAME } in als uw standaard e-mail applicatie. ${ MAIL_APP_NAME } wordt automatisch geopend wanneer u op een e-mailkoppeling klikt."
       ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
@@ -9593,6 +9608,9 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Gereserveerde servers geoptimaliseerd voor streamen"
+      ],
       "Desktop app": [
         "Desktop-app"
       ],
@@ -9643,9 +9661,6 @@
       ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
-      ],
-      "High-speed streaming": [
-        "Streamen op hoge snelheid"
       ],
       "High-speed VPN on ${ n } device": [
         "High-speed VPN op ${ n } apparaat",
@@ -9701,10 +9716,6 @@
       ],
       "Proofread and refine your emails": [
         "Controleer en verfijn uw e-mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Bescherm ${ n } apparaat tegelijkertijd",
-        "Bescherm ${ n } apparaten tegelijkertijd"
       ],
       "Quickly craft replies": [
         "Snel antwoorden opstellen"
@@ -9836,6 +9847,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gebruik tot ${ n } apparaat tegelijk",
+        "Gebruik tot ${ n } apparaten tegelijk"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -13898,6 +13913,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 opeenvolgende punten zijn niet toegestaan"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
@@ -13910,6 +13928,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Weet u zeker dat u dit contact permanent wilt verwijderen?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Kan niet starten met een punt"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan niet eindigen met een punt"
       ],
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
@@ -13932,8 +13956,8 @@
       "Name is required": [
         "Naam is vereist."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Alleen alfanumerieke tekens, punten, koppeltekens en underscores zijn toegestaan"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Alleen alfanumerieke kleine letters, punten, koppeltekens en underscores zijn toegestaan"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."

@@ -1161,6 +1161,9 @@
       "Set as default": [
         "Зрабіць прадвызначанай"
       ],
+      "Set as default mail application": [
+        "Задаць у якасці прадвызначанай паштовай праграмы"
+      ],
       "Set encryption": [
         "Задаць шыфраванне"
       ],
@@ -1365,11 +1368,11 @@
       "Upgrade": [
         "Палепшыць"
       ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
       "Upgrade Now": [
         "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Палепшыць да ${ BRAND_NAME } Unlimited"
@@ -6025,6 +6028,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } таксама можа абараніць ваш бізнес."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } не з'яўляецца вашай прадвызначанай паштовай праграмай."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленне.",
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленні.",
@@ -6522,6 +6528,9 @@
       ],
       "Default email application": [
         "Прадвызначаная праграма электроннай пошты"
+      ],
+      "Default mail application": [
+        "Прадвызначаная паштовая праграма"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Ці ведаеце вы, што ў вас ёсць зашыфраванае воблачнае сховішча, якое ўключае ваш уліковы запіс ${ BRAND_NAME }? Пераходзьце ў ${ DRIVE_APP_NAME } і па максімуму выкарыстоўвайце сваю прастору. Гэта абсалютна бясплатна."
@@ -7350,6 +7359,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Задаць ${ MAIL_APP_NAME } у якасці стандартнай праграмы электроннай пошты для браўзера. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку электроннай пошты."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Задаць ${ MAIL_APP_NAME } у якасці стандартнай паштовай праграмы. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку пошты."
       ],
       "Setting up ${ feature }…": [
         "Наладжванне ${ feature }..."
@@ -9917,6 +9929,9 @@
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Вылучаныя серверы аптымізаваны для трансляцый"
+      ],
       "Desktop app": [
         "Настольная праграма"
       ],
@@ -9967,9 +9982,6 @@
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
-      ],
-      "High-speed streaming": [
-        "Высакахуткасная трансляцыя"
       ],
       "High-speed VPN on ${ n } device": [
         "Высакахуткасны VPN на ${ n } прыладзе",
@@ -10027,12 +10039,6 @@
       ],
       "Proofread and refine your emails": [
         "Правярайце і ўдакладняйце свае электронныя лісты"
-      ],
-      "Protect ${ n } device at a time": [
-        "Абараніць ${ n } прыладу адначасова",
-        "Абараніць ${ n } прылады адначасова",
-        "Абараніць ${ n } прылад адначасова",
-        "Абараніць ${ n } прылады адначасова"
       ],
       "Quickly craft replies": [
         "Хутка стварайце адказы"
@@ -10168,6 +10174,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Выкарыстоўвайце на ${ n } прыладзе адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова"
       ],
       "User credential management": [
         "Кіраванне ўліковымі данымі карыстальнікаў"
@@ -14432,6 +14444,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 кропкі запар забаронены"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
@@ -14446,6 +14461,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Вы сапраўды хочаце незваротна выдаліць гэты кантакт?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Не можа змяшчаць кроку ў пачатку"
+      ],
+      "Cannot contain a dot at the end": [
+        "Не можа змяшчаць кроку ў канцы"
       ],
       "Contacts could not be merged": [
         "Не атрымалася аб'яднаць кантакты"
@@ -14468,8 +14489,8 @@
       "Name is required": [
         "Патрабуецца назва"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Дазволены толькі літарна-лічбавыя сімвалы ў ніжнім рэгістры, кропкі, злучкі і сімвалы падкрэслівання."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."
