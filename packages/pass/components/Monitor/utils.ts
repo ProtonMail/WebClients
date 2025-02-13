@@ -15,6 +15,6 @@ export const getPlanFeatures = (): PlanFeaturesType => ({
     business: [
         { icon: 'user', label: PROTON_SENTINEL_NAME },
         { icon: 'lock', label: c('new_plans: feature').t`Require 2FA for organization` },
-        { icon: 'checkmark', label: c('new_plans: feature').t`SSO integration (coming soon)` },
+        { icon: 'checkmark', label: c('new_plans: feature').t`SSO integration` },
     ],
 });
