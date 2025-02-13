@@ -94,7 +94,6 @@ const MainContainer: FunctionComponent = () => {
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
-    const isGlobalSSOEnabled = useFlag('GlobalSSO');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const [groups, loadingGroups] = useGroups();
@@ -112,7 +111,6 @@ const MainContainer: FunctionComponent = () => {
         isUserGroupsFeatureEnabled,
         canDisplayB2BLogsVPN,
         isB2BAuthLogsEnabled,
-        isGlobalSSOEnabled,
         groups,
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
