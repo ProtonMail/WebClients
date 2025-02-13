@@ -10,13 +10,10 @@ interface Props {
     bundle?: { title: string; features: PlanCardFeatureDefinition[] }[];
 }
 
-const RightPlanSummary = ({ logo, title, features, bundle }: Props) => {
+const RightPlanSummaryB = ({ title, features, bundle }: Props) => {
     return (
         <div className="flex flex-column gap-4">
-            <div>
-                <div className="inline-block border rounded-lg p-2">{logo}</div>
-            </div>
-            <div className="color-weak text-semibold">{title}</div>
+            <div className="text-semibold">{title}</div>
             <PlanCardFeatureList
                 odd={false}
                 margin={false}
@@ -50,4 +47,4 @@ const RightPlanSummary = ({ logo, title, features, bundle }: Props) => {
     );
 };
 
-export default RightPlanSummary;
+export default RightPlanSummaryB;
