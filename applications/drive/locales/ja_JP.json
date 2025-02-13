@@ -2400,6 +2400,11 @@
         "未払いの請求"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2481,11 +2486,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7001,9 +7001,6 @@
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
       ],
-      "High-speed streaming": [
-        "高速ストリーミング"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 台のデバイスで高速 VPN"
       ],
@@ -7057,9 +7054,6 @@
       ],
       "Proofread and refine your emails": [
         "メールを校正し、洗練させる"
-      ],
-      "Protect ${ n } device at a time": [
-        "${ n }台のデバイスを同時に保護"
       ],
       "Quickly craft replies": [
         "素早く返信を作成"
@@ -10404,6 +10398,11 @@
         "今日"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "この共有ファイルを${ DRIVE_APP_NAME }に追加して、後で簡単にアクセスできるようにしましょう。"
@@ -10485,11 +10484,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {
@@ -10629,9 +10623,6 @@
       ],
       "Name is required": [
         "名前は必須です"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "英数字、ドット、ハイフン、アンダースコアのみが使用できます"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"

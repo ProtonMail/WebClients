@@ -78,6 +78,9 @@
       "Add phone number": [
         "Telefoonnummer toevoegen"
       ],
+      "Add to album": [
+        "Voeg toe aan album"
+      ],
       "Add to group": [
         "Aan groep toevoegen"
       ],
@@ -225,6 +228,9 @@
       ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
+      ],
+      "Create album": [
+        "Creëer Album"
       ],
       "Create and copy alias": [
         "Maak en kopieer alias"
@@ -545,6 +551,9 @@
       ],
       "New": [
         "Nieuw"
+      ],
+      "New album": [
+        "Nieuw album"
       ],
       "New document": [
         "Nieuw document"
@@ -951,6 +960,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Creëer album"
+      ],
       "Upload": [
         "Opladen"
       ]
@@ -1334,6 +1346,12 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Voeg ${ photos.length } foto toe aan",
+        "Voeg ${ photos.length } foto's toe aan"
       ]
     },
     "Cancellation reminder": {
@@ -2415,6 +2433,11 @@
         "Onbetaalde factuur"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2496,11 +2519,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4199,6 +4217,9 @@
         "Alle (${ totalFoldersCount } label)",
         "Alle (${ totalFoldersCount } labels)"
       ],
+      "All albums": [
+        "Alle albums"
+      ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
       ],
@@ -4815,6 +4836,9 @@
       "No": [
         "Nee"
       ],
+      "No Albums": [
+        "Geen albums"
+      ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
       ],
@@ -5009,6 +5033,9 @@
       "Ready to add some photos?": [
         "Klaar om foto's toe te voegen?"
       ],
+      "Recent": [
+        "Recent"
+      ],
       "recommended browser": [
         "aanbevolen browser"
       ],
@@ -5164,6 +5191,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
+      ],
+      "The albums you create are shown here": [
+        "De albums die u maakt worden hier weergegeven"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "De digitale handtekening is gedeeltelijk geverifieerd. Dit bestand is geüpload met behulp van een openbaar toegankelijke share link door een gebruiker zonder een ${ BRAND_NAME }-account, zodat hun identiteit niet kan worden geverifieerd."
@@ -6084,6 +6114,9 @@
       ],
       "Move to Inbox": [
         "Verplaats naar inbox"
+      ],
+      "My Albums": [
+        "Mijn albums"
       ],
       "Name": [
         "Naam"
@@ -7062,6 +7095,9 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Gereserveerde servers geoptimaliseerd voor streamen"
+      ],
       "Desktop app": [
         "Desktop-app"
       ],
@@ -7112,9 +7148,6 @@
       ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
-      ],
-      "High-speed streaming": [
-        "Streamen op hoge snelheid"
       ],
       "High-speed VPN on ${ n } device": [
         "High-speed VPN op ${ n } apparaat",
@@ -7170,10 +7203,6 @@
       ],
       "Proofread and refine your emails": [
         "Controleer en verfijn uw e-mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Bescherm ${ n } apparaat tegelijkertijd",
-        "Bescherm ${ n } apparaten tegelijkertijd"
       ],
       "Quickly craft replies": [
         "Snel antwoorden opstellen"
@@ -7305,6 +7334,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gebruik tot ${ n } apparaat tegelijk",
+        "Gebruik tot ${ n } apparaten tegelijk"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -9981,6 +10014,12 @@
       "Addresses": [
         "Adressen"
       ],
+      "Album": [
+        "Album"
+      ],
+      "Albums": [
+        "Albums"
+      ],
       "All": [
         "Alle"
       ],
@@ -10598,6 +10637,11 @@
         "Vandaag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Voeg dit gedeelde bestand toe aan uw ${ DRIVE_APP_NAME } voor eenvoudige toegang op een later tijdstip."
@@ -10679,11 +10723,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "We hebben ze een uitnodiging gestuurd om het item te bekijken."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ]
     },
     "Valentine_2025": {
@@ -10926,6 +10965,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 opeenvolgende punten zijn niet toegestaan"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
@@ -10938,6 +10980,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Weet u zeker dat u dit contact permanent wilt verwijderen?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Kan niet starten met een punt"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan niet eindigen met een punt"
       ],
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
@@ -10960,8 +11008,8 @@
       "Name is required": [
         "Naam is vereist."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Alleen alfanumerieke tekens, punten, koppeltekens en underscores zijn toegestaan"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Alleen alfanumerieke kleine letters, punten, koppeltekens en underscores zijn toegestaan"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."

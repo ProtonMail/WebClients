@@ -2362,6 +2362,11 @@
         "Zapadel račun"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
@@ -2416,11 +2421,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6953,9 +6953,6 @@
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
-      "High-speed streaming": [
-        "Hitro pretakanje"
-      ],
       "High-speed VPN on ${ n } device": [
         "Hitri VPN v ${ n } napravi",
         "Hitri VPN v ${ n } napravah",
@@ -7006,12 +7003,6 @@
       ],
       "Priority support & live chat": [
         "Prednostna podpora in klepet v živo"
-      ],
-      "Protect ${ n } device at a time": [
-        "Zaščitite ${ n } napravo hkrati.",
-        "Zaščitite ${ n } naprave hkrati.",
-        "Zaščitite ${ n } naprave hkrati.",
-        "Zaščitite ${ n } naprav hkrati."
       ],
       "Recover previous file versions": [
         "Obnovi prejšnje različice datoteke"
@@ -10126,6 +10117,11 @@
         "Danes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Dodaj to datoteko v skupni rabi v vaš ${ DRIVE_APP_NAME } za lažji dostop."
@@ -10207,11 +10203,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali smo jim povabilo za dostop do predmeta."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
       ]
     },
     "Validation": {
@@ -10358,9 +10349,6 @@
       ],
       "Name is required": [
         "Zahtevano je ime"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Dovoljeni so samo alfanumerični znaki, pike, vezaji in podčrtaji"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Upoštevajte, da z izbiro tega načina plačila vašega računa ni mogoče takoj nadgraditi. Vaš račun bo posodobljen po potrditvi plačila."
