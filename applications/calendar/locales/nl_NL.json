@@ -6765,6 +6765,9 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Gereserveerde servers geoptimaliseerd voor streamen"
+      ],
       "Desktop app": [
         "Desktop-app"
       ],
@@ -6815,9 +6818,6 @@
       ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
-      ],
-      "High-speed streaming": [
-        "Streamen op hoge snelheid"
       ],
       "High-speed VPN on ${ n } device": [
         "High-speed VPN op ${ n } apparaat",
@@ -6873,10 +6873,6 @@
       ],
       "Proofread and refine your emails": [
         "Controleer en verfijn uw e-mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Bescherm ${ n } apparaat tegelijkertijd",
-        "Bescherm ${ n } apparaten tegelijkertijd"
       ],
       "Quickly craft replies": [
         "Snel antwoorden opstellen"
@@ -7008,6 +7004,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gebruik tot ${ n } apparaat tegelijk",
+        "Gebruik tot ${ n } apparaten tegelijk"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -10463,6 +10463,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 opeenvolgende punten zijn niet toegestaan"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
@@ -10475,6 +10478,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Weet u zeker dat u dit contact permanent wilt verwijderen?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Kan niet starten met een punt"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan niet eindigen met een punt"
       ],
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
@@ -10497,8 +10506,8 @@
       "Name is required": [
         "Naam is vereist."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Alleen alfanumerieke tekens, punten, koppeltekens en underscores zijn toegestaan"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Alleen alfanumerieke kleine letters, punten, koppeltekens en underscores zijn toegestaan"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."

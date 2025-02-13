@@ -6768,6 +6768,9 @@
       "Data breach monitoring": [
         "Surveillance des fuites de données"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Serveurs dédiés optimisés pour le streaming"
+      ],
       "Desktop app": [
         "Application de bureau"
       ],
@@ -6818,9 +6821,6 @@
       ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
-      ],
-      "High-speed streaming": [
-        "Streaming haut débit"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN haut débit sur ${ n } appareil",
@@ -6876,10 +6876,6 @@
       ],
       "Proofread and refine your emails": [
         "Relisez et peaufinez vos messages"
-      ],
-      "Protect ${ n } device at a time": [
-        "Protégez ${ n } appareil à la fois",
-        "Protégez ${ n } appareils en même temps"
       ],
       "Quickly craft replies": [
         "Rédigez rapidement des réponses"
@@ -7011,6 +7007,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Utiliser sur jusqu'à ${ n } appareil à la fois",
+        "Utiliser sur jusqu'à ${ n } appareils à la fois"
       ],
       "User credential management": [
         "Gestion des identifiants des utilisateurs"
@@ -7893,7 +7893,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "Pays de facturation"
+        "Pays de facturation "
       ],
       "Card number": [
         "Numéro de la carte"
@@ -10466,6 +10466,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
       ],
+      "2 consecutive dots are not allowed": [
+        "L'usage de 2 points consécutifs n'est pas autorisé."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } contact ?",
         "Voulez-vous vraiment supprimer définitivement ${ count } contacts ?"
@@ -10478,6 +10481,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Voulez-vous vraiment supprimer définitivement ce contact ?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Cette entrée ne peut pas commencer par un point."
+      ],
+      "Cannot contain a dot at the end": [
+        "L'entrée ne peut se terminer par un point."
       ],
       "Contacts could not be merged": [
         "Les contacts n'ont pas pu être fusionnés."
@@ -10500,8 +10509,8 @@
       "Name is required": [
         "Veuillez indiquer un nom."
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Seuls les caractères alphanumériques en minuscule, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Notez qu'en choisissant ce moyen de paiement, votre compte ne pourra pas être mis à niveau immédiatement. Nous mettrons votre compte à niveau dès que le paiement aura été effectué."
