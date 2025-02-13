@@ -14,8 +14,6 @@ import mailThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-mai
 import vpnThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-vpn.svg';
 import clsx from '@proton/utils/clsx';
 
-import '@proton/components/components/upsell/modal/NewUpsellModal.scss';
-
 interface Props {
     onClose?: () => void;
     planIDs: PlanIDs;
