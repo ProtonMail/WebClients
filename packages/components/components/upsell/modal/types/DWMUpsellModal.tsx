@@ -13,7 +13,6 @@ import dwmShield from '@proton/styles/assets/img/illustrations/dwm-upsell-shield
 import { useMailUpsellConfig } from '../../useMailUpsellConfig';
 import NewUpsellModal from '../NewUpsellModal';
 import UpsellFeatureList from '../UpsellFeatureList';
-import UpsellModal from '../UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -29,55 +28,34 @@ const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onUpgrade }: P
         feature: MAIL_UPSELL_PATHS.DARK_WEB_MONITORING,
     });
 
-    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
-
-    if (displayNewUpsellModalsVariant) {
-        return (
-            <NewUpsellModal
-                titleModal={DARK_WEB_MONITORING_NAME}
-                description={c('Description')
-                    .t`Get notified if your password or other data was leaked from a third-party service.`}
-                customDescription={
-                    <>
-                        <p className="text-left my-0 mb-2">
-                            <strong>{c('Description').t`Also included`}</strong>
-                        </p>
-                        <div className="text-left">
-                            <UpsellFeatureList
-                                hideInfo
-                                features={[
-                                    'more-storage',
-                                    'more-email-addresses',
-                                    'unlimited-folders-and-labels',
-                                    'custom-email-domains',
-                                    'more-premium-features',
-                                ]}
-                            />
-                        </div>
-                    </>
-                }
-                modalProps={modalProps}
-                illustration={dwmShield}
-                sourceEvent="BUTTON_DWM"
-                onUpgrade={onUpgrade}
-                {...upsellConfig}
-            />
-        );
-    }
+    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
 
     return (
-        <UpsellModal
-            title={DARK_WEB_MONITORING_NAME}
+        <NewUpsellModal
+            titleModal={DARK_WEB_MONITORING_NAME}
             description={c('Description')
                 .t`Get notified if your password or other data was leaked from a third-party service.`}
+            customDescription={
+                <>
+                    <p className="text-left my-0 mb-2">
+                        <strong>{c('Description').t`Also included`}</strong>
+                    </p>
+                    <div className="text-left">
+                        <UpsellFeatureList
+                            hideInfo
+                            features={[
+                                'more-storage',
+                                'more-email-addresses',
+                                'unlimited-folders-and-labels',
+                                'custom-email-domains',
+                                'more-premium-features',
+                            ]}
+                        />
+                    </div>
+                </>
+            }
             modalProps={modalProps}
-            features={[
-                'more-storage',
-                'more-email-addresses',
-                'unlimited-folders-and-labels',
-                'custom-email-domains',
-                'more-premium-features',
-            ]}
+            illustration={dwmShield}
             sourceEvent="BUTTON_DWM"
             onUpgrade={onUpgrade}
             {...upsellConfig}
