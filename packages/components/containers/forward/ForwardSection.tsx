@@ -11,13 +11,12 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import Tabs from '@proton/components/components/tabs/Tabs';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/mail/forwarding/hooks';
-import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/forward.svg';
@@ -66,35 +65,7 @@ const ForwardSection = () => {
         }
     }, [hash, isIncomingTableAvailable, isOutgoingTableAvailable]);
 
-    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
-
-    const modal = displayNewUpsellModalsVariant ? (
-        <NewUpsellModal
-            titleModal={c('Title').t`Ready, set, forward`}
-            description={c('Description')
-                .t`Set up auto-forwarding to redirect incoming emails to another email address.`}
-            modalProps={upsellModalProps}
-            illustration={forwardImg}
-            sourceEvent="BUTTON_FORWARD_EMAILS"
-            {...upsellConfig}
-        />
-    ) : (
-        <UpsellModal
-            title={c('Title').t`Personalize your e-mail footer`}
-            description={c('Description')
-                .t`To remove the ${MAIL_APP_NAME} footer, upgrade and unlock even more premium features.`}
-            modalProps={upsellModalProps}
-            sourceEvent="BUTTON_FORWARD_EMAILS"
-            features={[
-                'unlimited-folders-and-labels',
-                'search-message-content',
-                'more-storage',
-                'more-email-addresses',
-                'custom-email-domains',
-            ]}
-            {...upsellConfig}
-        />
-    );
+    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
 
     return (
         <SettingsSectionWide className="overflow-hidden">
@@ -151,7 +122,17 @@ const ForwardSection = () => {
                 />
             </SettingsSection>
             {forwardModal}
-            {renderUpsellModal && modal}
+            {renderUpsellModal && (
+                <NewUpsellModal
+                    titleModal={c('Title').t`Ready, set, forward`}
+                    description={c('Description')
+                        .t`Set up auto-forwarding to redirect incoming emails to another email address.`}
+                    modalProps={upsellModalProps}
+                    illustration={forwardImg}
+                    sourceEvent="BUTTON_FORWARD_EMAILS"
+                    {...upsellConfig}
+                />
+            )}
         </SettingsSectionWide>
     );
 };

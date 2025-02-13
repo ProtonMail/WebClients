@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -26,30 +25,14 @@ const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = fals
         isSettings,
     });
 
-    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
-
-    if (displayNewUpsellModalsVariant) {
-        return (
-            <NewUpsellModal
-                titleModal={c('Title').t`Filter for more focus`}
-                description={c('Description')
-                    .t`Automatically sort your incoming messages before they reach your inbox.`}
-                modalProps={modalProps}
-                illustration={filterImg}
-                onClose={onCloseCustomAction}
-                sourceEvent="BUTTON_CUSTOM_FILTERS"
-                {...upsellConfig}
-            />
-        );
-    }
+    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
 
     return (
-        <UpsellModal
-            title={c('Title').t`Save time with email filters`}
-            description={c('Description')
-                .t`Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.`}
+        <NewUpsellModal
+            titleModal={c('Title').t`Filter for more focus`}
+            description={c('Description').t`Automatically sort your incoming messages before they reach your inbox.`}
             modalProps={modalProps}
-            features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
+            illustration={filterImg}
             onClose={onCloseCustomAction}
             sourceEvent="BUTTON_CUSTOM_FILTERS"
             {...upsellConfig}

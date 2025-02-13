@@ -2,20 +2,9 @@ import { type COUPON_CODES, type CYCLE, PLANS, type Subscription, getPlan } from
 import type { APP_NAMES, UPSELL_COMPONENT, UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { APPS, APP_UPSELL_REF_PATH } from '@proton/shared/lib/constants';
 import type { Api, Audience, UserModel } from '@proton/shared/lib/interfaces';
-import useVariant from '@proton/unleash/useVariant';
 
 import { TelemetryMeasurementGroups, TelemetryUpsellModalsEvents } from '../api/telemetry';
 import { sendTelemetryReport } from './metrics';
-
-export const useNewUpsellModalVariant = () => {
-    const InboxNewUpsellModalsVariant = useVariant('InboxNewUpsellModals');
-
-    if (InboxNewUpsellModalsVariant.name === 'old') {
-        return false;
-    }
-
-    return true;
-};
 
 export const enum UPSELL_MODALS {
     CLICK = 'CLICK',
@@ -65,12 +54,7 @@ export const sendRequestUpsellModalReport = ({
         api,
         measurementGroup: TelemetryMeasurementGroups.upsellModals,
         event: TelemetryUpsellModalsEvents.clickUpsellModals,
-        dimensions: {
-            action,
-            application,
-            sourceEvent,
-            upsellModalType,
-        },
+        dimensions: { action, application, sourceEvent, upsellModalType },
         delay,
     });
 };

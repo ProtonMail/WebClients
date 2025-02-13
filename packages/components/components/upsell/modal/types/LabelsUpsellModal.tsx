@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import type { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -34,31 +33,17 @@ const LabelsUpsellModal = ({
         isSettings,
     });
 
-    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
-
-    if (displayNewUpsellModalsVariant) {
-        return (
-            <NewUpsellModal
-                titleModal={c('Title').t`Need more labels or folders?`}
-                description={c('Description').t`Create as many labels or folders as you need to keep your inbox tidy.`}
-                modalProps={modalProps}
-                illustration={labelsImg}
-                sourceEvent="BUTTON_MORE_LABELS_FOLDERS"
-                {...upsellConfig}
-            />
-        );
-    }
+    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
 
     return (
-        <UpsellModal
-            title={c('Title').t`Keep your inbox organized`}
-            description={c('Description')
-                .t`Unlock unlimited folders, labels and more premium features when you upgrade.`}
+        <NewUpsellModal
+            titleModal={c('Title').t`Need more labels or folders?`}
+            description={c('Description').t`Create as many labels or folders as you need to keep your inbox tidy.`}
             modalProps={modalProps}
-            features={['unlimited-folders-and-labels', 'more-storage', 'more-email-addresses', 'custom-email-domains']}
-            onClose={onCloseCustomAction}
+            illustration={labelsImg}
             sourceEvent="BUTTON_MORE_LABELS_FOLDERS"
             {...upsellConfig}
+            onClose={onCloseCustomAction}
         />
     );
 };
