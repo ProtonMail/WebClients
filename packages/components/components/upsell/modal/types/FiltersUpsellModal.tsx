@@ -6,7 +6,7 @@ import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proto
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import filterImg from '@proton/styles/assets/img/illustrations/new-upsells-img/arrows-to-folder-trash.svg';
 
-import NewUpsellModal from '../NewUpsellModal';
+import UpsellModal from '../UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -28,7 +28,7 @@ const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = fals
     const { upsellConfig } = useMailUpsellConfig({ upsellRef });
 
     return (
-        <NewUpsellModal
+        <UpsellModal
             titleModal={c('Title').t`Filter for more focus`}
             description={c('Description').t`Automatically sort your incoming messages before they reach your inbox.`}
             modalProps={modalProps}

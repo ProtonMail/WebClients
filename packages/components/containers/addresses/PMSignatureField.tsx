@@ -4,7 +4,7 @@ import { useUserSettings } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -93,7 +93,7 @@ const PMSignature = ({ id }: Props) => {
             </div>
 
             {renderUpsellModal && (
-                <NewUpsellModal
+                <UpsellModal
                     titleModal={c('Title').t`Personalize your email footer`}
                     description={c('Description')
                         .t`Make your email footer your own — showcase your unique brand, not ours.`}

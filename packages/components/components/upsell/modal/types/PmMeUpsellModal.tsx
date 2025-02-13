@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { CYCLE } from '@proton/payments';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -25,7 +25,7 @@ const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
     const { upsellConfig } = useMailUpsellConfig({ upsellRef, cycle: user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY });
 
     return (
-        <NewUpsellModal
+        <UpsellModal
             titleModal={c('Title').t`Same inbox, shorter email address`}
             // translator: full sentence is Upgrade to get <address@pm.me> for a shorter, easy-to-remember email address in addition to your current one.
             description={c('Description')

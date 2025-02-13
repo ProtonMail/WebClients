@@ -22,9 +22,9 @@ import {
 } from '@proton/shared/lib/helpers/upsell';
 import clsx from '@proton/utils/clsx';
 
-import './NewUpsellModal.scss';
+import './UpsellModal.scss';
 
-export interface NewUpsellModalProps {
+export interface UpsellModalProps {
     ['data-testid']?: string;
     modalProps: ModalStateProps;
     titleModal: ReactNode;
@@ -55,7 +55,7 @@ export interface NewUpsellModalProps {
     footerText?: ReactNode;
 }
 
-const NewUpsellModal = ({
+const UpsellModal = ({
     'data-testid': dataTestid,
     modalProps,
     titleModal,
@@ -72,17 +72,12 @@ const NewUpsellModal = ({
     sourceEvent,
     upsellModalType = UPSELL_MODALS_TYPE.NEW,
     application = APPS.PROTONMAIL,
-}: NewUpsellModalProps) => {
+}: UpsellModalProps) => {
     const api = useApi();
     const [user] = useUser();
 
     const handleUpgrade = () => {
-        sendRequestUpsellModalReport({
-            api,
-            application,
-            sourceEvent,
-            upsellModalType,
-        });
+        sendRequestUpsellModalReport({ api, application, sourceEvent, upsellModalType });
         onUpgrade?.();
         modalProps.onClose();
     };
@@ -154,4 +149,4 @@ const NewUpsellModal = ({
     );
 };
 
-export default NewUpsellModal;
+export default UpsellModal;

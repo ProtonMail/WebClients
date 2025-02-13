@@ -15,7 +15,7 @@ import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
-import { type UpsellModalProps } from './modal/OldUpsellModal';
+import { type OldUpsellModalProps } from './modal/OldUpsellModal';
 
 interface Props {
     upsellRef?: string;
@@ -53,7 +53,7 @@ const useUpsellConfig = ({
     title,
     onSubscribed,
     preventInApp = false,
-}: Props): Partial<UpsellModalProps> & Required<Pick<UpsellModalProps, 'upgradePath'>> => {
+}: Props): Partial<OldUpsellModalProps> & Required<Pick<OldUpsellModalProps, 'upgradePath'>> => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
