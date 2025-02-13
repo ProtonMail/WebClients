@@ -37,7 +37,7 @@ const getHeader = (headerType: UpsellHeaderType) => {
 
 type UpsellBoxProps = Partial<
     Pick<
-        UpsellModalProps,
+        OldUpsellModalProps,
         | 'hideInfo'
         | 'submitText'
         | 'submitButton'
@@ -47,7 +47,7 @@ type UpsellBoxProps = Partial<
         | 'iconSize'
     > & { path: string }
 > &
-    Required<Pick<UpsellModalProps, 'description' | 'title' | 'features' | 'submitPosition'>> & {
+    Required<Pick<OldUpsellModalProps, 'description' | 'title' | 'features' | 'submitPosition'>> & {
         handleUpgrade: () => void;
         headerType: UpsellHeaderType;
     };
@@ -136,7 +136,7 @@ const UpsellBox = ({
     );
 };
 
-export interface UpsellModalProps {
+export interface OldUpsellModalProps {
     ['data-testid']?: string;
     description: string;
     features: UpsellFeatureName[];
@@ -165,7 +165,7 @@ export interface UpsellModalProps {
 }
 
 /**
- * @deprecated Use `NewUpsellModal` instead
+ * @deprecated Use `UpsellModal` instead
  */
 const OldUpsellModal = ({
     description,
@@ -189,7 +189,7 @@ const OldUpsellModal = ({
     sourceEvent,
     upsellModalType = UPSELL_MODALS_TYPE.OLD,
     application = APPS.PROTONMAIL,
-}: UpsellModalProps) => {
+}: OldUpsellModalProps) => {
     const api = useApi();
 
     const handleUpgrade = () => {

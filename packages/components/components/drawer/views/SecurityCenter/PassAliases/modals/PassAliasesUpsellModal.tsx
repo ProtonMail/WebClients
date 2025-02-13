@@ -4,7 +4,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { CYCLE, type Currency, PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -36,7 +36,7 @@ const PassAliasesUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     );
 
     return (
-        <NewUpsellModal
+        <UpsellModal
             data-testid="security-center:proton-sentinel:upsell-modal"
             titleModal={c('Title').t`Need more aliases?`}
             description={c('Description')

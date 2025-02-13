@@ -10,7 +10,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
@@ -123,7 +123,7 @@ const ForwardSection = () => {
             </SettingsSection>
             {forwardModal}
             {renderUpsellModal && (
-                <NewUpsellModal
+                <UpsellModal
                     titleModal={c('Title').t`Ready, set, forward`}
                     description={c('Description')
                         .t`Set up auto-forwarding to redirect incoming emails to another email address.`}

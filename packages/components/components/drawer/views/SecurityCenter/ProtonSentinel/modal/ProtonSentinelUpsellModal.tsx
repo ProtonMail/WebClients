@@ -4,7 +4,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
-import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { CYCLE, type Currency, PLANS } from '@proton/payments';
 import {
@@ -52,7 +52,7 @@ const ProtonSentinelUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     );
 
     return (
-        <NewUpsellModal
+        <UpsellModal
             data-testid="security-center:proton-sentinel:upsell-modal"
             titleModal={c('Title').t`High security for your account`}
             description={c('Description')
