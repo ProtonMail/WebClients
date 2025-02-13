@@ -21,10 +21,10 @@ import AddressesWithUser from './AddressesWithUser';
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/components/upsell/useOneDollarPromo.tsx', () => ({
     __esModule: true,
-    default: () => null,
+    default: () => ({}),
 }));
 
-jest.mock('@proton/components/components/upsell/useUpsellConfig.ts', () => ({ __esModule: true, default: () => null }));
+jest.mock('@proton/components/components/upsell/useUpsellConfig.ts', () => ({ __esModule: true, default: () => ({}) }));
 
 jest.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () => ({
     __esModule: true,
