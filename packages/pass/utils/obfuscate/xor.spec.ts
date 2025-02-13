@@ -1,4 +1,4 @@
-import { deobfuscate, deobfuscatePartialCreditCard, obfuscate } from './xor';
+import { deobfuscate, deobfuscatePartialCCField, obfuscate } from './xor';
 
 describe('XOR obfuscation / deobfuscation', () => {
     test('should work on empty strings', () => {
@@ -52,7 +52,7 @@ describe('XOR obfuscation / deobfuscation', () => {
         ['abc123def456ghi', 'abc1*******6ghi'],
         ['🔥12345678901234', '🔥**********1234'] /** edge-case: 4 bytes emoji */,
     ])('should partially deobfuscate cc "%s" -> "%s"', (input, expected) => {
-        expect(deobfuscatePartialCreditCard(obfuscate(input))).toEqual(expected);
+        expect(deobfuscatePartialCCField(obfuscate(input))).toEqual(expected);
     });
 
     test.each([
@@ -65,6 +65,6 @@ describe('XOR obfuscation / deobfuscation', () => {
         ['undefined', '*********'],
         ['🔥', '****'],
     ])('should mask if invalid "%s" -> "%s"', (input, expected) => {
-        expect(deobfuscatePartialCreditCard(obfuscate(input))).toEqual(expected);
+        expect(deobfuscatePartialCCField(obfuscate(input))).toEqual(expected);
     });
 });

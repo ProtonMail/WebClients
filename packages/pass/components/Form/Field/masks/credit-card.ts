@@ -1,14 +1,18 @@
 import type { FactoryOpts } from 'imask';
 import MaskedRange from 'imask/esm/masked/range';
 
-export const cardNumberMask = (value: string): FactoryOpts => {
+/** If mask is triggered on masked value : accept any character rather
+ * than only digits as partial deobfuscation will include `*` chars.
+ * - mask='0': only digits allowed
+ * - mask='*': any char allowed */
+export const cardNumberMask = (value: string, hidden: boolean = false): FactoryOpts => {
     switch (Number(value.slice(0, 2))) {
         /* AMEX */
         case 34:
         case 37:
-            return { mask: '0000 000000 00000' };
+            return { mask: hidden ? '**** ****** *****' : '0000 000000 00000' };
         default:
-            return { mask: '0000 0000 0000 0000 000' };
+            return { mask: hidden ? '**** **** **** **** ***' : '0000 0000 0000 0000 000' };
     }
 };
 

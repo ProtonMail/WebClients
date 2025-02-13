@@ -36,7 +36,7 @@ export const deobfuscate = (obfuscation: XorObfuscation): string => {
  * byte in UTF-8. We deobfuscate only the first and last 4 digits, masking
  * everything in between with asterisks. If input length is less than 12 bytes
  * (shortest valid CC length), returns a masked string. */
-export const deobfuscatePartialCreditCard = (obfuscation: XorObfuscation): string => {
+export const deobfuscatePartialCCField = (obfuscation: XorObfuscation): string => {
     const data = base64StringToUint8Array(obfuscation.v);
     const xor = base64StringToUint8Array(obfuscation.m);
     const valid = data.length >= 12;
@@ -49,5 +49,5 @@ export const deobfuscatePartialCreditCard = (obfuscation: XorObfuscation): strin
     return utf8ArrayToString(data);
 };
 
-export const deobfuscateCreditCard = (obfuscation: XorObfuscation, partial: boolean): string =>
-    (partial ? deobfuscatePartialCreditCard : deobfuscate)(obfuscation);
+export const deobfuscateCCField = (obfuscation: XorObfuscation, partial: boolean): string =>
+    (partial ? deobfuscatePartialCCField : deobfuscate)(obfuscation);
