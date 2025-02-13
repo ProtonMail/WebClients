@@ -6765,6 +6765,9 @@
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
+      ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
       ],
@@ -6815,9 +6818,6 @@
       ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
-      ],
-      "High-speed streaming": [
-        "Ροή υψηλής ταχύτητας"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
@@ -6873,10 +6873,6 @@
       ],
       "Proofread and refine your emails": [
         "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
-      ],
-      "Protect ${ n } device at a time": [
-        "Προστατέψτε ${ n } συσκευή ανά φορά",
-        "Προστατέψτε ${ n } συσκευές ανά φορά"
       ],
       "Quickly craft replies": [
         "Δημιουργήστε γρήγορα απαντήσεις"
@@ -7008,6 +7004,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Χρήση σε έως και ${ n } συσκευή ταυτόχρονα",
+        "Χρήση σε έως και ${ n } συσκευές ταυτόχρονα"
       ],
       "User credential management": [
         "Διαχείριση διαπιστευτηρίων χρηστών"
@@ -10340,6 +10340,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 διαδοχικές κουκκίδες δεν επιτρέπονται"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
@@ -10352,6 +10355,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την επαφή;"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Δεν μπορεί να περιέχει τελεία στην αρχή"
+      ],
+      "Cannot contain a dot at the end": [
+        "Δεν μπορεί να περιέχει τελεία στο τέλος"
       ],
       "Contacts could not be merged": [
         "Δεν ήταν δυνατή η συγχώνευση των επαφών"
@@ -10374,8 +10383,8 @@
       "Name is required": [
         "Απαιτείται όνομα"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Επιτρέπονται μόνο αλφαριθμητικοί πεζοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
