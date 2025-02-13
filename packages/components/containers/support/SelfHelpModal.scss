@@ -1,0 +1,23 @@
+@import '~@proton/styles/scss/lib';
+
+.help-center-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.help-center-iframe {
+	border: none;
+	inline-size: 100%;
+	block-size: 100%;
+	max-block-size: 100%;
+	flex: 1;
+}
+
+.loader {
+	inline-size: 100%;
+	block-size: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
