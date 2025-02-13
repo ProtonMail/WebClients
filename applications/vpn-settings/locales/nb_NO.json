@@ -2318,11 +2318,11 @@
       ]
     },
     "Description": {
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
+      "Create policies to manage access to shared servers.": [
+        "Opprett retningslinjer for å administrere tilgang til delte tjenere."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Alle i organisasjonen kan koble til delte tjenere i alle land."
+      "Everyone in your organization can connect to shared servers.": [
+        "Alle i organisasjonen kan koble til delte tjenere."
       ],
       "If disabled, only admins will have access.": [
         "Hvis deaktivert, vil bare administratorer ha tilgang."
@@ -3403,29 +3403,29 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Handlinger"
+      ],
       "App version": [
         "App-versjon"
       ],
       "Best deal": [
         "Beste avtale"
       ],
-      "Checkout": [
-        "Betaling"
-      ],
-      "City": [
-        "By"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "Create your account": [
-        "Opprett konto"
-      ],
       "Device": [
         "Enhet"
       ],
+      "Enabled Countries": [
+        "Aktiverte land"
+      ],
+      "Enter your email address": [
+        "Skriv inn din e-postadresse"
+      ],
       "Event": [
         "Hendelse"
+      ],
+      "Groups": [
+        "Grupper"
       ],
       "IP address": [
         "IP-adresse"
@@ -3445,6 +3445,9 @@
       "Organization key fingerprint": [
         "Organisasjonsnøkkelfingeravtrykk"
       ],
+      "Policy Name": [
+        "Navn på retningslinje"
+      ],
       "Protection": [
         "Beskyttelse"
       ],
@@ -3453,6 +3456,9 @@
       ],
       "Select your deal": [
         "Velg tilbudet ditt"
+      ],
+      "Select your payment method": [
+        "Velg betalingsmåte"
       ],
       "Select your pricing plan": [
         "Velg prisplanen din"
@@ -3748,8 +3754,8 @@
       "Allocated": [
         "Tildelt"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Tillat brukere å koble til sikre delte tjenere basert på definerte retningslinjer."
       ],
       "Already allocated": [
         "Allerede allokert"
@@ -3853,6 +3859,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "CNET-redaktørens valgpris med en vurdering på 8.4 av 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurer SAML-autentisering for organisasjonen din gjennom en identitetsleverandør (IdP). Dette vil aktivere SAML for hele organisasjonen."
       ],
@@ -3885,6 +3894,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopier foreslått passord til utklippstavlen"
+      ],
+      "countries enabled": [
+        "land aktivert"
       ],
       "Country code": [
         "Landskode"
@@ -3923,6 +3935,9 @@
       ],
       "Custom email domains": [
         "Egendefinerte e-postdomener"
+      ],
+      "Custom policies": [
+        "Egendefinerte retningslinjer"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpass utseendet og følelsen av ${ BRAND_NAME }-applikasjonene."
@@ -4439,9 +4454,6 @@
       "No Gateways yet": [
         "Ingen porttjenere enda"
       ],
-      "No location filters are currently assigned.": [
-        "Ingen plasseringsfiltre er for øyeblikket tildelt."
-      ],
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
       ],
@@ -4450,9 +4462,6 @@
       ],
       "No results found": [
         "Ingen resultater funnet"
-      ],
-      "No Shared Servers Found": [
-        "Fant ikke noen delte tjenere"
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
@@ -4524,6 +4533,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "PC Magazine-redaktørens valgpris med en vurdering på 5 av 5 stjerner"
       ],
       "per month": [
         "per måned"
@@ -4729,9 +4741,6 @@
       "Shared ${ vaultLink } updated": [
         "Delt ${ vaultLink } oppdatert"
       ],
-      "Shared Server Location Filters": [
-        "Plasseringsfiltre for delt tjener"
-      ],
       "Shared vault deleted": [
         "Delt hvelv slettet"
       ],
@@ -4752,10 +4761,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
-      ],
-      "Step ${ step }": [
-        "Trinn ${ step }",
-        "Trinn ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
@@ -4795,6 +4800,9 @@
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Anbefales av TechRadar Pro med en vurdering på 4.2 av 5 stjerner"
       ],
       "Thank you": [
         "Tusen takk"
@@ -4963,6 +4971,9 @@
       ],
       "Total VPN connections": [
         "Totalt antall VPN-forbindelser"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Prøv ${ productName } helt risikofritt - hvis du av en eller annen grunn ombestemmer deg, vil du motta full refusjon. Ingen spørsmål."
       ],
       "Two-factor authentication disabled": [
         "Tofaktorautentisering deaktivert"
@@ -5769,6 +5780,9 @@
       "Group name": [
         "Gruppenavn"
       ],
+      "Groups": [
+        "Grupper"
+      ],
       "Hide password": [
         "Skjul passord"
       ],
@@ -5837,6 +5851,9 @@
       ],
       "New password": [
         "Nytt passord"
+      ],
+      "New policy name": [
+        "Nytt retningslinjenavn"
       ],
       "New second password": [
         "Nytt andre passord"
@@ -6021,6 +6038,9 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "Users": [
+        "Brukere"
       ],
       "Value": [
         "Verdi"
@@ -6694,6 +6714,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Alle premium ${ BRAND_NAME }-tjenester. Ett enkelt abonnement"
       ],
+      "Apps for": [
+        "Apper for"
+      ],
       "Auto-delete Spam and Trash": [
         "Slett automatisk elementer i søppelpost og papirkurv"
       ],
@@ -6760,6 +6783,9 @@
       "Dedicated servers and IP": [
         "Dedikerte tjenere og IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikerte tjenere optimalisert for strømming"
+      ],
       "Desktop app": [
         "Skrivebordsapp"
       ],
@@ -6810,12 +6836,6 @@
       ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
-      ],
-      "High-speed streaming": [
-        "Strømming med høy hastighet"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Høyhastighets Sveitsisk VPN som beskytter personvernet ditt"
       ],
       "High-speed VPN on ${ n } device": [
         "Høyhastighets VPN på ${ n } enhet",
@@ -6874,10 +6894,6 @@
       ],
       "Proofread and refine your emails": [
         "Korrekturles og finjuster e-postene dine"
-      ],
-      "Protect ${ n } device at a time": [
-        "Beskytt ${ n } enhet om gangen",
-        "Beskytt ${ n } enheter om gangen"
       ],
       "Quickly craft replies": [
         "Lag svar raskt"
@@ -6945,9 +6961,6 @@
       ],
       "Start protecting your organization": [
         "Begynn å beskytte organisasjonen"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Begynn å beskytte deg selv på nettet i 2 enkle trinn"
       ],
       "Strict no-logs policy": [
         "Streng politikk om ingen logger"
@@ -7019,6 +7032,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
+      ],
+      "Up to 10 Gbps": [
+        "Opptil 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Bruk på opptil ${ n } enhet samtidig",
+        "Bruk på opptil ${ n } enheter samtidig"
       ],
       "User credential management": [
         "Administrasjon av brukerpåloggingsinformasjon"
@@ -7591,6 +7611,9 @@
       "Downloaded 2FA recovery codes": [
         "Nedlastede 2FA-gjenopprettingskoder"
       ],
+      "Error creating policy": [
+        "Feil ved å opprette retningslinje"
+      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -7608,6 +7631,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-påloggingsinformasjon generert på nytt"
+      ],
+      "Policy created successfully": [
+        "Retningslinje vellykket opprettet"
       ],
       "Reminder has been sent": [
         "Påminnelse er sendt"
@@ -9288,6 +9314,12 @@
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Brukeren ${ user } er nå en konto med enkel pålogging. Deres forrige passord ble deres reservepassord."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "De må logge på igjen hos identitetsleverandøren din for å få tilgang til ${ BRAND_NAME }-tjenester. For at denne brukeren skal kunne logge på, må du kontrollere at de finnes hos identitetsleverandøren."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dette vil logge brukeren ut av de andre enhetene sine, og vedkommende må opprette et nytt reservepassord."
       ],
@@ -10307,6 +10339,9 @@
       "Add address": [
         "Legg til adresse"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Legg til land til \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Legg til kreditt-/debetkort"
       ],
@@ -10342,6 +10377,9 @@
       ],
       "Add users": [
         "Legg til brukere"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Legg til brukere til \"${ policyName }\""
       ],
       "Allocate storage": [
         "Tildel lagring"
@@ -10463,6 +10501,9 @@
       ],
       "Create multiple user accounts": [
         "Opprett flere brukerkontoer"
+      ],
+      "Create new policy": [
+        "Opprett ny retningslinje"
       ],
       "Create organization key": [
         "Opprett organisasjonsnøkkel"
@@ -11518,8 +11559,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Din ${ a } og ${ b } pakke"
       ],
-      "Your ${ selected } plan": [
-        "Planen du har valgt ${ selected }"
+      "Your plan includes:": [
+        "Planen din inkluderer:"
       ]
     },
     "vpn_2step: tooltip": {

@@ -3047,23 +3047,14 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "Műveletek"
+      ],
       "App version": [
         "Alkalmazás verzió"
       ],
       "Best deal": [
         "Legjobb üzlet"
-      ],
-      "Checkout": [
-        "Fizetés"
-      ],
-      "City": [
-        "Város"
-      ],
-      "Country": [
-        "Ország"
-      ],
-      "Create your account": [
-        "Fiók létrehozása"
       ],
       "Device": [
         "Eszköz"
@@ -4113,10 +4104,6 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "Az SPF tisztázza, hogy ki küldhet e-mailt az ön domain neve nevében. Adja hozzá a következő TXT rekordot a domain név beállításaihoz (azon a felületen található, ahol a saját domain nevet vásárolta)."
-      ],
-      "Step ${ step }": [
-        "${ step }. lépés",
-        "${ step }. lépés"
       ],
       "Storage allocated to other users in this organisation": [
         "A szervezet további felhasználói számára lefoglalt tárhely"
@@ -5839,12 +5826,6 @@
       "Group management (coming soon)": [
         "Csoportkezelés (hamarosan elérhető)"
       ],
-      "High-speed streaming": [
-        "Nagy sebességű videózás"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Nagy sebességű, svájci VPN, amely védi az adatait"
-      ],
       "High-speed VPN on ${ n } device": [
         "Nagysebességű VPN ${ n } eszközön",
         "Nagysebességű VPN ${ n } eszközön"
@@ -5897,10 +5878,6 @@
       "Proofread and refine your emails": [
         "Lektorálja és finomítsa e-mailjeit"
       ],
-      "Protect ${ n } device at a time": [
-        "${ n } eszköz védelme egyidőben",
-        "${ n } eszköz védelme egyidőben"
-      ],
       "Recover previous file versions": [
         "Régebbi fájl verziók visszaállítása"
       ],
@@ -5949,9 +5926,6 @@
       ],
       "Start protecting your organization": [
         "Kezdje meg a szervezet védelmét"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Két egyszerű lépéssel kezdje meg a védelmét online"
       ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
@@ -9433,9 +9407,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Az ön ${ a } és ${ b } kombinált csomagja"
-      ],
-      "Your ${ selected } plan": [
-        "A ${ selected } előfizetés"
       ]
     },
     "wallet_signup_2024: Info": {

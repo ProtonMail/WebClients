@@ -228,6 +228,9 @@
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
       ],
+      "Create album": [
+        "Utwórz album"
+      ],
       "Create and copy alias": [
         "Utwórz i skopiuj alias"
       ],
@@ -431,6 +434,9 @@
       ],
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
+      ],
+      "Hide download options": [
+        "Ukryj opcje pobierania"
       ],
       "Image could not be loaded with tracker protection.": [
         "Obraz nie mógł zostać załadowany z ochroną przed śledzeniem."
@@ -777,6 +783,9 @@
       "Show advanced PGP settings": [
         "Pokaż zaawansowane ustawienia PGP"
       ],
+      "Show more download options": [
+        "Pokaż więcej opcji pobierania"
+      ],
       "Show navigation bar": [
         "Pokaż pasek nawigacji"
       ],
@@ -950,6 +959,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Utwórz album"
+      ],
       "Upload": [
         "Prześlij"
       ]
@@ -2424,6 +2436,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2455,6 +2472,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
       ],
+      "Keep your files, photos and documents secure with end-to-end encryption.": [
+        "Zabezpiecz pliki, zdjęcia i dokumenty za pomocą szyfrowania end-to-end."
+      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
@@ -2475,6 +2495,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
+      ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Ulepsz do planu ${ BRAND_NAME } ${ planName }, aby nadal udostępniać pliki z uprawnieniem do edycji"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Ulepsz konto, aby włączyć program ${ PROTON_SENTINEL_NAME } — nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji z dedykowanym wsparciem ekspertów 24/7."
@@ -2499,11 +2522,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3542,6 +3560,9 @@
       ]
     },
     "Feature": {
+      "Access on mobile and desktop": [
+        "Uzyskaj dostęp na telefonie i komputerze"
+      ],
       "Free 5 GB storage": [
         "Darmowe 5 GB przestrzeni dyskowej"
       ],
@@ -4107,6 +4128,9 @@
         "${ contactsLength } kontaktów",
         "${ contactsLength } kontaktów"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Pliki ${ DOCS_APP_NAME } nie mogą zostać bezpośrednio pobrane i nie zostaną uwzględnione w tym pobieraniu. Pozostałe pliki możesz pobrać, klikając przycisk 'Kontynuuj pobieranie'."
+      ],
       "${ doneCount } finished": [
         "Transfer ${ doneCount } pliku został zakończony",
         "Transfer ${ doneCount } plików został zakończony",
@@ -4563,6 +4587,9 @@
       "Drop files here": [
         "Upuść pliki tutaj"
       ],
+      "Drop files here to upload or click on the upload button": [
+        "Upuść plik tutaj, aby przesłać lub kliknij przycisk przesyłania"
+      ],
       "Drop to import": [
         "Upuść, aby zaimportować"
       ],
@@ -4660,7 +4687,7 @@
         "Plik nie zostanie zaktualizowany"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Pliki i foldery udostępnione Tobie pojawią się tutaj"
+        "Pliki i foldery udostępnione Ci pojawią się tutaj"
       ],
       "Finalizing": [
         "Finalizowanie"
@@ -4691,6 +4718,9 @@
       ],
       "from the version history?": [
         "z historii wersji?"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Pobierz aplikację do tworzenia kopii zapasowych zdjęć z telefonu lub prześlij je tutaj."
       ],
       "Get the app to backup photos from your phone.": [
         "Pobierz aplikację, aby tworzyć kopię zapasową zdjęć z telefonu."
@@ -4910,6 +4940,9 @@
       ],
       "No": [
         "Nie"
+      ],
+      "No Albums": [
+        "Brak albumów"
       ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
@@ -5212,7 +5245,7 @@
         "Udostępniony link nie został znaleziony"
       ],
       "Shared with me": [
-        "Udostępnione Tobie"
+        "Udostępnione dla mnie"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."
@@ -5264,6 +5297,15 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
+      ],
+      "The albums you create are shown here": [
+        "Utworzone albumy pojawią się tutaj"
+      ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Podpis cyfrowy został częściowo zweryfikowany. Folder został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Liczba pobrań obejmuje rzeczywiste pobrania i podgląd plików."
@@ -5328,6 +5370,15 @@
       "This month": [
         "Ten miesiąc"
       ],
+      "This will permanently delete the file you uploaded.": [
+        "Spowoduje to trwałe usunięcie przesłanego pliku."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Spowoduje to trwałe usunięcie przesłanego folderu."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Spowoduje to trwałe usunięcie zaznaczonych elementów."
+      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Spowoduje to usunięcie synchronizowanego urządzenia ${ deviceName } z ${ DRIVE_APP_NAME } i wszystkich jego danych z ${ DRIVE_APP_NAME }. Foldery dodane do folderu Moje urządzenia przestaną być synchronizowane."
       ],
@@ -5349,6 +5400,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Wyślij ${ btcAmountBold } na poniższy adres, aby zakończyć płatność."
       ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Aby pobrać pliki ${ DOCS_APP_NAME }, otwórz je w ${ DOCS_APP_NAME } i wyeksportuj."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Aby włączyć prywatne wyszukiwanie, aplikacja ${ DRIVE_APP_NAME } musi lokalnie zaindeksować pliki."
       ],
@@ -5357,6 +5411,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "${ DRIVE_APP_NAME } może skanować pliki w sposób chroniący prywatność, aby chronić użytkownika i blokować złośliwe pliki. Jednak nadal najlepiej jest pobierać pliki tylko z zaufanych źródeł."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Aby zaimportować wydarzenia, utwórz kalendarz w ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
@@ -5688,6 +5745,9 @@
       "Your email address was exposed:": [
         "Twój adres e-mail został ujawniony:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Twój adres e-mail będzie widoczny jako właściciel linku na stronie udostępniania"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
@@ -5709,6 +5769,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your password was leaked:": [
         "Twoje hasło zostało ujawnione:"
       ],
@@ -5723,6 +5786,12 @@
       ],
       "Your previous recovery phrase": [
         "Poprzednie hasło odzyskiwania"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ]
     },
     "info": {
@@ -5859,6 +5928,9 @@
       ],
       "Anderson": [
         "Nowak"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Każdy, kto ma link, może edytować zawartość"
       ],
       "Anyone on the Internet with the link can view": [
         "Każdy, kto ma link, może zobaczyć zawartość"
@@ -6165,6 +6237,9 @@
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
+      ],
+      "My Albums": [
+        "Moje albumy"
       ],
       "Name": [
         "Nazwa"
@@ -6494,7 +6569,7 @@
         "Udostępnione"
       ],
       "Shared with me": [
-        "Udostępnione Tobie"
+        "Udostępnione dla mnie"
       ],
       "Snooze": [
         "Odłożone"
@@ -7286,9 +7361,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "High-speed streaming": [
-        "Szybki streaming"
-      ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
         "Szybki VPN na ${ n } urządzenia",
@@ -7346,12 +7418,6 @@
       "Proofread and refine your emails": [
         "Sprawdzaj i poprawiaj teksty"
       ],
-      "Protect ${ n } device at a time": [
-        "Ochrona ${ n } urządzenia jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzeń jednocześnie",
-        "Ochrona ${ n } urządzenia jednocześnie"
-      ],
       "Quickly craft replies": [
         "Twórz szybsze wiadomości"
       ],
@@ -7381,6 +7447,9 @@
       ],
       "Secure Core servers": [
         "Serwery Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
       ],
       "Secure link sharing": [
         "Bezpieczne udostępnianie linków"
@@ -8177,6 +8246,12 @@
       "Share invitation declined": [
         "Zaproszenie zostało odrzucone"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Nie możemy usunąć folderu, ponieważ nie jest pusty.",
+        "Nie możemy usunąć folderów, ponieważ nie są puste.",
+        "Nie możemy usunąć folderów, ponieważ nie są puste.",
+        "Nie możemy usunąć folderów, ponieważ nie są puste."
+      ],
       "Stopping the sharing of this item has failed": [
         "Zatrzymanie udostępniania nie powiodło się"
       ],
@@ -8247,6 +8322,12 @@
       ]
     },
     "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "Oferta ${ pricingTitle } wygasa dzisiaj!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Wybierz plan Drive Plus za ${ pricingTitle }"
+      ],
       "Get Mail Plus for only ${ pricingTitle }": [
         "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
       ],
@@ -8273,8 +8354,14 @@
       "Email addresses": [
         "Adresy e-mail"
       ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ],
       "Storage": [
         "Przestrzeń dyskowa"
@@ -9351,7 +9438,7 @@
     },
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
-        "Link do elementu został zapisany na dysku. Możesz uzyskać do niego dostęp w sekcji 'Udostępnione Tobie'."
+        "Link do elementu został zapisany na dysku. Możesz uzyskać do niego dostęp w sekcji 'Udostępnione dla mnie'."
       ],
       "Encrypted search is here": [
         "Wyszukiwanie zawartości jest tutaj"
@@ -10129,8 +10216,14 @@
       ]
     },
     "Tag": {
+      "Bursts": [
+        "Serie"
+      ],
       "Favorites": [
         "Ulubione"
+      ],
+      "Live Photos": [
+        "Live Photos"
       ],
       "Panoramas": [
         "Panoramy"
@@ -10146,6 +10239,9 @@
       ],
       "Selfies": [
         "Selfie"
+      ],
+      "Videos": [
+        "Filmy"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -10248,6 +10344,12 @@
       ],
       "Addresses": [
         "Adresy"
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Albums": [
+        "Albumy"
       ],
       "All": [
         "Wszystkie"
@@ -10724,7 +10826,7 @@
         "Udostępnione"
       ],
       "Shared with me": [
-        "Udostępnione Tobie"
+        "Udostępnione dla mnie"
       ],
       "Show actions": [
         "Pokaż akcje"
@@ -10870,6 +10972,11 @@
         "Dzisiaj"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Dodaj udostępniony plik do ${ DRIVE_APP_NAME }, aby mieć do niego łatwy dostęp."
@@ -10951,11 +11058,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wysłaliśmy zaproszenie do elementu."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Valentine_2025": {
@@ -11152,6 +11254,9 @@
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesięcy.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąca."
       ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
@@ -11256,9 +11361,6 @@
       ],
       "Name is required": [
         "Nazwa jest wymagana"
-      ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."

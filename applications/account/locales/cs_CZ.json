@@ -3680,9 +3680,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Vytvořte si tolik štítků nebo složek, kolik potřebujete, abyste měli ve schránce pořádek."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Vytvořte zásady, určující kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
-      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Pro přístup k těmto funkcím povolte ${ PROTON_SENTINEL_NAME }"
       ],
@@ -3694,9 +3691,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
-      ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Každý člen vaší organizace se může připojit ke sdíleným serverům ve všech zemích."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
@@ -6218,26 +6212,23 @@
       "Best deal": [
         "Nejlepší nabídka"
       ],
-      "Checkout": [
-        "Zaplatit"
-      ],
-      "City": [
-        "Město"
-      ],
-      "Country": [
-        "Země"
-      ],
-      "Create your account": [
-        "Vytvořte si účet"
-      ],
       "Device": [
         "Zařízení"
+      ],
+      "Enabled Countries": [
+        "Povolené země"
+      ],
+      "Enter your email address": [
+        "Zadejte svou e-mailovou adresu"
       ],
       "Event": [
         "Událost"
       ],
       "Folders": [
         "Složky"
+      ],
+      "Groups": [
+        "Skupiny"
       ],
       "IP address": [
         "IP adresa"
@@ -6266,6 +6257,9 @@
       "Permissions": [
         "Oprávnění"
       ],
+      "Policy Name": [
+        "Název zásady"
+      ],
       "Protection": [
         "Ochrana"
       ],
@@ -6274,6 +6268,9 @@
       ],
       "Select your deal": [
         "Vyberte svoji nabídku"
+      ],
+      "Select your payment method": [
+        "Zvolte platební metodu"
       ],
       "Select your pricing plan": [
         "Vyberte si tarif"
@@ -7202,9 +7199,6 @@
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
-      ],
       "Already allocated": [
         "Již bylo přiděleno"
       ],
@@ -7526,6 +7520,9 @@
       "Custom monthly": [
         "Měsíční nastavení"
       ],
+      "Custom policies": [
+        "Vlastní zásady"
+      ],
       "Custom weekly": [
         "Týdenní nastavení"
       ],
@@ -7552,6 +7549,9 @@
       ],
       "default email address": [
         "výchozí e-mailová adresa"
+      ],
+      "Default mail application": [
+        "Výchozí e-mailová aplikace"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ${ MAIL_APP_NAME } záznam má nejnižší prioritu."
@@ -7897,9 +7897,6 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Pokud je to způsobeno resetováním starého hesla, můžete zastavit opětovné zobrazování zprávy"
-      ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Pokud je tato možnost zapnutá, budou moci členové organizace sdílet trezory jen v rámci organizace"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -8339,9 +8336,6 @@
       "No label selected": [
         "Není vybrán žádný štítek"
       ],
-      "No location filters are currently assigned.": [
-        "Aktuálně nejsou použity žádné filtry umístění."
-      ],
       "No logs yet.": [
         "Zatím žádné záznamy."
       ],
@@ -8353,9 +8347,6 @@
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
-      ],
-      "No Shared Servers Found": [
-        "Nebyly nalezeny žádné sdílené servery"
       ],
       "Not a valid URL": [
         "Neplatný odkaz"
@@ -8794,9 +8785,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Sdílený ${ vaultLink } aktualizován"
-      ],
-      "Shared Server Location Filters": [
-        "Filtry umístění sdíleného serveru"
       ],
       "Shared vault deleted": [
         "Sdílený trezor smazán"
@@ -10859,6 +10847,9 @@
       "Group name": [
         "Název skupiny"
       ],
+      "Groups": [
+        "Skupiny"
+      ],
       "Hide password": [
         "Skrýt heslo"
       ],
@@ -11371,6 +11362,9 @@
       ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "Users": [
+        "Uživatelé"
       ],
       "Value": [
         "Hodnota"
@@ -12582,6 +12576,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Všechny prémiové služby ${ BRAND_NAME }. Jedno snadné předplatné"
       ],
+      "Apps for": [
+        "Aplikace pro"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
       ],
@@ -12702,12 +12699,6 @@
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
       ],
-      "High-speed streaming": [
-        "Vysokorychlostní streamování"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Vysokorychlostní švýcarská VPN, která chrání vaše soukromí"
-      ],
       "High-speed VPN on ${ n } device": [
         "Vysokorychlostní VPN na ${ n } zařízení",
         "Vysokorychlostní VPN na ${ n } zařízeních",
@@ -12767,12 +12758,6 @@
       ],
       "Proofread and refine your emails": [
         "Proveďte korektury a zpřesnění vašich e-mailů"
-      ],
-      "Protect ${ n } device at a time": [
-        "Chránit ${ n } zařízení zároveň",
-        "Chránit ${ n } zařízení zároveň",
-        "Chránit ${ n } zařízení zároveň",
-        "Chránit ${ n } zařízení zároveň"
       ],
       "Quickly craft replies": [
         "Rychle vytvářejte odpovědi"
@@ -12842,9 +12827,6 @@
       ],
       "Start protecting your organization": [
         "Začněte chránit svou organizaci"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Začněte se chránit online ve 2 jednoduchých krocích"
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
@@ -12923,6 +12905,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
+      ],
+      "Up to 10 Gbps": [
+        "Až 10 Gb/s"
       ],
       "User credential management": [
         "Správa uživatelů"
@@ -13571,6 +13556,9 @@
       "Email notifications have been enabled": [
         "E-mailová oznámení byla povolena"
       ],
+      "Error creating policy": [
+        "Chyba při vytváření zásady"
+      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -13594,6 +13582,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
+      ],
+      "Policy created successfully": [
+        "Zásada úspěšně vytvořena"
       ],
       "Reminder has been sent": [
         "Připomenutí bylo odesláno"
@@ -16697,6 +16688,12 @@
       ],
       "Single sign-on removed": [
         "Jednotné přihlášení zrušeno"
+      ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Uživatel ${ user } má nyní účet s jednotným přihlášením. Jeho předchozí heslo se stalo záložním heslem."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Pro přístup ke službám ${ BRAND_NAME } se budou muset znovu přihlásit u vašeho poskytovatele identit. Aby se tento uživatel mohl přihlásit, ujistěte se, že existuje ve vašem poskytovateli identit."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tím se uživatel odhlásí z ostatních zařízení a bude muset vytvořit nové záložní heslo."
@@ -20094,8 +20091,8 @@
       "Your ${ a } and ${ b } bundle": [
         "Váš balíček ${ a } a ${ b }"
       ],
-      "Your ${ selected } plan": [
-        "Váš tarif ${ selected }"
+      "Your plan includes:": [
+        "Váš tarif zahrnuje:"
       ]
     },
     "vpn_2step: tooltip": {

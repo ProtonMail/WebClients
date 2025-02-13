@@ -6765,6 +6765,9 @@
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Für Streaming optimierte dedizierte Server"
+      ],
       "Desktop app": [
         "Desktop-App"
       ],
@@ -6815,9 +6818,6 @@
       ],
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
-      ],
-      "High-speed streaming": [
-        "Hochgeschwindigkeits-Streaming"
       ],
       "High-speed VPN on ${ n } device": [
         "Hochgeschwindigkeits-VPN auf ${ n } Gerät",
@@ -6873,10 +6873,6 @@
       ],
       "Proofread and refine your emails": [
         "Korrigiere und verfeinere deine E-Mails"
-      ],
-      "Protect ${ n } device at a time": [
-        "Schütze ${ n } Gerät gleichzeitig",
-        "Schütze ${ n } Geräte gleichzeitig"
       ],
       "Quickly craft replies": [
         "Schnell Antworten erstellen"
@@ -7008,6 +7004,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Bis zu ${ n } Gerät auf einmal",
+        "Bis zu ${ n } Geräte auf einmal"
       ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"
@@ -10463,6 +10463,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 aufeinanderfolgende Punkte sind nicht erlaubt"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Möchtest du wirklich ${ count } Kontakt dauerhaft löschen?",
         "Möchtest du wirklich ${ count } Kontakte dauerhaft löschen?"
@@ -10475,6 +10478,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Möchtest du diesen Kontakt wirklich dauerhaft löschen?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Darf keinen Punkt am Anfang enthalten"
+      ],
+      "Cannot contain a dot at the end": [
+        "Darf keinen Punkt am Ende enthalten"
       ],
       "Contacts could not be merged": [
         "Die Kontakte konnten nicht zusammengeführt werden"
@@ -10497,8 +10506,8 @@
       "Name is required": [
         "Name ist erforderlich"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Nur alphanumerische Zeichen, Punkte, Bindestriche und Unterstriche sind erlaubt."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Nur alphanumerische Kleinbuchstaben, Punkte, Bindestriche und Unterstriche sind erlaubt"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bitte beachte, dass ein Upgrade deines Kontos durch die Wahl dieser Zahlungsmethode nicht sofort durchgeführt werden kann. Wir werden dein Konto umstellen, sobald die Zahlung bei uns eingegangen ist."

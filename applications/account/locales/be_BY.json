@@ -1084,6 +1084,9 @@
       "Set as default": [
         "Зрабіць прадвызначанай"
       ],
+      "Set as default mail application": [
+        "Задаць у якасці прадвызначанай паштовай праграмы"
+      ],
       "Set catch-all": [
         "Задаць адрас для ўсёй пошты дамена"
       ],
@@ -3680,9 +3683,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Стварайце любую колькасць метак або папак, каб падтрымліваць парадак у сваёй паштовай скрыні."
       ],
-      "Create policies to decide who can connect to shared servers in each country.": [
-        "Стварыце палітыку, каб вырашаць, хто можа падключацца да абагуленых сервераў у кожнай краіне."
-      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
       ],
@@ -3695,8 +3695,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
-      "Everyone in your organization can connect to shared servers in all countries.": [
-        "Кожны ўдзельнік вашай арганізацыі можа падключацца да абагуленых сервераў ва ўсіх краінах."
+      "Everyone in your organization can connect to shared servers.": [
+        "Кожны ўдзельнік вашай арганізацыі зожа падключацца да абагуленых сервераў."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -6218,26 +6218,23 @@
       "Best deal": [
         "Лепшая прапанова"
       ],
-      "Checkout": [
-        "Аплата"
-      ],
-      "City": [
-        "Горад"
-      ],
-      "Country": [
-        "Краіна"
-      ],
-      "Create your account": [
-        "Стварэнне ўліковага запісу"
-      ],
       "Device": [
         "Прылада"
+      ],
+      "Enabled Countries": [
+        "Уключыаныя краіны"
+      ],
+      "Enter your email address": [
+        "Увядзіце адрас сваёй электроннай пошты"
       ],
       "Event": [
         "Падзея"
       ],
       "Folders": [
         "Папкі"
+      ],
+      "Groups": [
+        "Групы"
       ],
       "IP address": [
         "IP-адрас"
@@ -6266,6 +6263,9 @@
       "Permissions": [
         "Дазволы"
       ],
+      "Policy Name": [
+        "Назва палітыкі"
+      ],
       "Protection": [
         "Абарона"
       ],
@@ -6274,6 +6274,9 @@
       ],
       "Select your deal": [
         "Выберыце сваю прапанову"
+      ],
+      "Select your payment method": [
+        "Выберыце спосаб аплаты"
       ],
       "Select your pricing plan": [
         "Выберыце тарыфны план"
@@ -7202,8 +7205,8 @@
       "Allow recovery by phone": [
         "Дазволіць аднаўленне доступу па нумары тэлефона"
       ],
-      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
+      "Allow users to connect to secure shared servers based on defined policies.": [
+        "Дазваляць карыстальнікам падключацца да бяспечна абагуленых сервераў на падставе вызначаных палітык."
       ],
       "Already allocated": [
         "Ужо вылучана"
@@ -7418,6 +7421,9 @@
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Узнагарода выбар рэдакцыі CNET з рэйтынгам 8,4 з 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (ldP). Гэта ўключыць SAML для ўсёй арганізацыі."
       ],
@@ -7459,6 +7465,9 @@
       ],
       "Copy your referral link": [
         "Капіяваць сваю рэферальную спасылку"
+      ],
+      "countries enabled": [
+        "уключаныя краіны"
       ],
       "Country code": [
         "Код краіны"
@@ -7526,6 +7535,9 @@
       "Custom monthly": [
         "Штомесяц (карыстальніцкае)"
       ],
+      "Custom policies": [
+        "Карыстальніцкія палітыкі"
+      ],
       "Custom weekly": [
         "Штотыдзень (карыстальніцкае)"
       ],
@@ -7552,6 +7564,9 @@
       ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
+      ],
+      "Default mail application": [
+        "Прадвызначаная паштовая праграма"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Выдаліце ​​ўсе іншыя запісы MX або пераканайцеся, што ${ MAIL_APP_NAME } мае самае нізкае значэнне ў полі прыярытэту."
@@ -7898,8 +7913,14 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Калі гэта звязана са скіданнем старога пароля, то вы можаце спыніць паўторны паказ паведамлення"
       ],
-      "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "Удзельнікі арганізацыі змогуць абагульваць сховішчы толькі ў межах арганізацыі, калі гэты параметр будзе ўключаны"
+      "If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items": [
+        "Удзельнікі арганізацыі не змогуць ствараць сховішчы, калі гэты параметр будзе ўключаны. Новым удзельнікам спатрэбіцца, каб адміністратар уручную стварыў для іх першае сховішча (праз абагульванне) і толькі пасля гэтага яны змогуць пачаць ствараць элементы"
+      ],
+      "If this option is turned on, organization members will be able to share individual items in addition to vaults.": [
+        "Удзельнікі арганізацыя акрамя сховішчаў будуць здольныя абагульваць індывідуальныя элементы, калі гэты параметр будзе ўключаны"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults or items within the organization": [
+        "Удзельнікі арганізацыі змогуць абагульваць сховішчы або элементы толькі ў межах арганізацыі, калі гэты параметр будзе ўключаны"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
@@ -8339,9 +8360,6 @@
       "No label selected": [
         "Метка не выбрана"
       ],
-      "No location filters are currently assigned.": [
-        "У цяперашні час фільтры месцазнаходжання не прызначаны."
-      ],
       "No logs yet.": [
         "Журналаў пакуль няма."
       ],
@@ -8353,9 +8371,6 @@
       ],
       "No results found": [
         "Нічога не знойдзена"
-      ],
-      "No Shared Servers Found": [
-        "Абагуленыя серверы не знойдзены"
       ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
@@ -8473,6 +8488,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Узнагарода выбар рэдакцыі PC Magazine з рэйтынгам 5 з 5 зорак"
       ],
       "per month": [
         "ў месяц"
@@ -8765,6 +8783,9 @@
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Задаць ${ MAIL_APP_NAME } у якасці стандартнай паштовай праграмы. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку пошты."
+      ],
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
       ],
@@ -8791,9 +8812,6 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Абагульванне ${ vaultLink } абноўлена"
-      ],
-      "Shared Server Location Filters": [
-        "Фільтры месцазнаходжання абагуленага сервера"
       ],
       "Shared vault deleted": [
         "Абагуленае сховішча выдалена"
@@ -8905,6 +8923,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Сінхранізуйце і кіруйце файламі з дапамогай праграмы ${ DRIVE_APP_NAME }. Стварайце і абагульвайце дакументы ў ${ DOCS_APP_NAME }, а потым бяспечна захоўвайце іх. Праграмы даступны для ${ ios }, ${ android } і ${ desktop }."
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Рэкамендацыя TechRadar Pro з рэйтынгам 4,2 з 5 зорак"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
@@ -9206,6 +9227,9 @@
       "Total VPN connections": [
         "Колькасць падключэнняў па VPN"
       ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Паспрабуйце ${ productName } абсалютна нічым не рызыкуючы. Вы атрымаеце поўнае вяртанне грашовых сродкаў, калі па нейкай прычыне зменіце сваё меркаванне. Без ніякіх пытанняў."
+      ],
       "Two-factor authentication disabled": [
         "Двухфактарная аўтэнтыфікацыя адключана"
       ],
@@ -9472,6 +9496,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Калі адключана, то гэта не дазволіць загружаць відарысы на вашу прыладу без вашай згоды.\t"
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Калі ўключана, то будзе адбывацца праверка, ці з'яўляецца ${ MAIL_APP_NAME } вашай прадвызначанай паштовай праграмай і калі гэта не так, то вы атрымаеце апавяшчэнне аб гэтым."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
@@ -10767,6 +10794,9 @@
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
       ],
+      "Enable individual item sharing": [
+        "Уключыць індывідуальнае абагульванне элемента"
+      ],
       "End date": [
         "Дата завяршэння"
       ],
@@ -10850,6 +10880,9 @@
       ],
       "Group name": [
         "Назва групы"
+      ],
+      "Groups": [
+        "Групы"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -11022,6 +11055,9 @@
       "New password": [
         "Новы пароль"
       ],
+      "New policy name": [
+        "Назва новай палітыкі"
+      ],
       "New second password": [
         "Новы другі пароль"
       ],
@@ -11180,6 +11216,9 @@
       ],
       "Require 2FA for everyone": [
         "Патрабаваць 2ФА для ўсіх удзельнікаў"
+      ],
+      "Restrict vault creation to administrators only": [
+        "Абмежаваць стварэнне сховішчаў толькі адміністратарам"
       ],
       "Reveal password": [
         "Паказаць пароль"
@@ -11363,6 +11402,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Users": [
+        "Карыстальнікі"
       ],
       "Value": [
         "Значэнне"
@@ -12640,6 +12682,9 @@
       "Dedicated servers and IP": [
         "Вылучаныя серверы і IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Вылучаныя серверы аптымізаваны для трансляцый"
+      ],
       "Desktop app": [
         "Настольная праграма"
       ],
@@ -12690,12 +12735,6 @@
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
-      ],
-      "High-speed streaming": [
-        "Высакахуткасная трансляцыя"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Высакахуткасны швейцарскі VPN, які абараняе вашу прыватнасць."
       ],
       "High-speed VPN on ${ n } device": [
         "Высакахуткасны VPN на ${ n } прыладзе",
@@ -12756,12 +12795,6 @@
       ],
       "Proofread and refine your emails": [
         "Правярайце і ўдакладняйце свае электронныя лісты"
-      ],
-      "Protect ${ n } device at a time": [
-        "Абараніць ${ n } прыладу адначасова",
-        "Абараніць ${ n } прылады адначасова",
-        "Абараніць ${ n } прылад адначасова",
-        "Абараніць ${ n } прылады адначасова"
       ],
       "Quickly craft replies": [
         "Хутка стварайце адказы"
@@ -12831,9 +12864,6 @@
       ],
       "Start protecting your organization": [
         "Пачніце абараняць сваю арганізацыю"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Пачніце абараняць сябе ў інтэрнэце выканаўшы 2 простыя крокі"
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
@@ -12912,6 +12942,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Выкарыстоўвайце на ${ n } прыладзе адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова"
       ],
       "User credential management": [
         "Кіраванне ўліковымі данымі карыстальнікаў"
@@ -13560,6 +13596,9 @@
       "Email notifications have been enabled": [
         "Апавяшчэнні па электроннай пошце ўключаны"
       ],
+      "Error creating policy": [
+        "Памылка стварэння палітыкі"
+      ],
       "Invalid code": [
         "Памылковы код"
       ],
@@ -13583,6 +13622,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваныя"
+      ],
+      "Policy created successfully": [
+        "Палітыка паспяхова створана"
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
@@ -16666,6 +16708,9 @@
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "У карыстальніка ${ user } цяпер уліковы запіс з адзіным уваходам."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Гэта дзеянне прывядзе да выхаду карыстальніка з яго іншых прылад, і яму давядзецца стварыць новы рэзервовы пароль."
       ],
@@ -17982,6 +18027,9 @@
       "Add contact group name": [
         "Дадаць назву групы кантактаў"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Дадаць краіны ў \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Дадаць крэдытную/плацежную картку"
       ],
@@ -18023,6 +18071,9 @@
       ],
       "Add users": [
         "Дадаць карыстальнікаў"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Дадаць карыстальнікаў у \"${ policyName }\""
       ],
       "Address": [
         "Адрас"
@@ -18126,6 +18177,9 @@
       "Change second password": [
         "Змяніць другі пароль"
       ],
+      "Check your default mail application": [
+        "Праверце сваю прадвызначаную паштовую праграму"
+      ],
       "Choose an account": [
         "Выберыце ўліковы запіс"
       ],
@@ -18200,6 +18254,9 @@
       ],
       "Create multiple user accounts": [
         "Стварыце некалькі ўліковых запісаў карыстальніка"
+      ],
+      "Create new policy": [
+        "Стварыць новую палітыку"
       ],
       "Create organization key": [
         "Стварыць ключ арганізацыі"
@@ -20061,9 +20118,6 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ваш камплект ${ a } і ${ b }"
-      ],
-      "Your ${ selected } plan": [
-        "Ваш тарыфны план ${ selected }"
       ]
     },
     "vpn_2step: tooltip": {

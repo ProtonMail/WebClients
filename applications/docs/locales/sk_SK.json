@@ -6409,6 +6409,9 @@
       "Data breach monitoring": [
         "Monitorovanie úniku dát"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikované servery optimalizované na streamovanie"
+      ],
       "Desktop app": [
         "Desktopová aplikácia"
       ],
@@ -6459,9 +6462,6 @@
       ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
-      ],
-      "High-speed streaming": [
-        "Vysokorýchlostné streamovanie"
       ],
       "High-speed VPN on ${ n } device": [
         "Vysoko rýchlostná sieť VPN na ${ n } zariadení",
@@ -6519,12 +6519,6 @@
       ],
       "Proofread and refine your emails": [
         "Korigujte a zdokonaľujte vaše emaily"
-      ],
-      "Protect ${ n } device at a time": [
-        "Chráňte súčasne ${ n } zariadenie",
-        "Chráňte súčasne ${ n } zariadenia",
-        "Chráňte súčasne ${ n } zariadení",
-        "Chráňte súčasne ${ n } zariadení"
       ],
       "Quickly craft replies": [
         "Rýchlo vytvárajte odpovede"
@@ -6660,6 +6654,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Používajte na ${ n } zariadení súčasne",
+        "Používajte až na ${ n } zariadeniach súčasne",
+        "Používajte až na ${ n } zariadeniach súčasne",
+        "Používajte až na ${ n } zariadeniach súčasne"
       ],
       "User credential management": [
         "Správa používateľských údajov"
@@ -9610,6 +9610,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 po sebe idúce bodky nie sú povolené"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Naozaj chcete natrvalo vymazať ${ count } kontakt?",
         "Naozaj chcete natrvalo vymazať ${ count } kontakty?",
@@ -9624,6 +9627,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Naozaj chcete natrvalo vymazať tento kontakt?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Na začiatku nesmie byť bodka"
+      ],
+      "Cannot contain a dot at the end": [
+        "Na konci nesmie byť bodka"
       ],
       "Contacts could not be merged": [
         "Kontakty nebolo možné zlúčiť"
@@ -9646,8 +9655,8 @@
       "Name is required": [
         "Názov je povinný"
       ],
-      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Povolené sú len alfanumerické znaky, bodky, pomlčky a podčiarkovníky"
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Povolené sú len alfanumerické malé písmená, bodky, pomlčky a podčiarkovníky"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Upozorňujeme, že pri výbere tohto spôsobu platby nie je možné váš účet okamžite navýšiť. Váš účet aktualizujeme po zúčtovaní platby."
