@@ -75,6 +75,7 @@ import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
 import Step1 from './Step1';
+import Step1B from './Step1B';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
@@ -90,8 +91,8 @@ interface Props {
     loader: ReactNode;
     onLogin: OnLoginCallback;
     productParam: ProductParam;
-    toApp?: APP_NAMES;
-    toAppName?: string;
+    toApp: APP_NAMES;
+    toAppName: string;
     onBack?: () => void;
     clientType: CLIENT_TYPES;
     metaTags: MetaTags;
@@ -127,7 +128,15 @@ const getSignupMode = (coupon: string | undefined, currency: Currency | undefine
     return 'pricing' as const;
 };
 
-const SingleSignupContainer = ({ onPreSubmit, onStartAuth, metaTags, clientType, onLogin, productParam }: Props) => {
+const SingleSignupContainer = ({
+    onPreSubmit,
+    onStartAuth,
+    metaTags,
+    clientType,
+    onLogin,
+    productParam,
+    toAppName,
+}: Props) => {
     const getKtActivation = useGetAccountKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
@@ -147,6 +156,8 @@ const SingleSignupContainer = ({ onPreSubmit, onStartAuth, metaTags, clientType,
     const { getPreferredCurrency } = useCurrencies();
 
     useMetaTags(metaTags);
+
+    const isVariantB = getSearchParams().get('v') === 'b';
 
     const [signupParameters, setSignupParameters] = useState(() => {
         const result = getSignupSearchParams(location.pathname, getSearchParams());
@@ -624,76 +635,147 @@ const SingleSignupContainer = ({ onPreSubmit, onStartAuth, metaTags, clientType,
             <link rel="prefetch" href={onboardingVPNWelcome2} as="image" />
             <link rel="prefetch" href={vpnUpsellIllustration} as="image" />
             <UnAuthenticated>
-                {model.step === Steps.Account && (
-                    <Step1
-                        activeBreakpoint={activeBreakpoint}
-                        mode={model.mode}
-                        defaultEmail={signupParameters.email}
-                        selectedPlan={selectedPlan}
-                        cycleData={model.cycleData}
-                        isVpn2024Deal={model.signupType === 'vpn2024'}
-                        isB2bPlan={isB2bPlan}
-                        background={background}
-                        upsellShortPlan={upsellShortPlan}
-                        model={model}
-                        setModel={setModel}
-                        measure={measure}
-                        currencyUrlParam={signupParameters.currency}
-                        onComplete={async (data) => {
-                            const { accountData, subscriptionData } = data;
-                            const accountType =
-                                accountData.signupType === SignupType.Email ? 'external_account' : 'proton_account';
-                            try {
-                                const cache: SignupCacheResult = {
-                                    type: 'signup',
-                                    appName: APP_NAME,
-                                    appIntent: undefined,
-                                    productParam,
-                                    // Internal app or oauth app or vpn
-                                    ignoreExplore: true,
-                                    accountData,
-                                    subscriptionData,
-                                    inviteData: model.inviteData,
-                                    referralData: model.referralData,
-                                    persistent: false,
-                                    trusted: false,
-                                    clientType,
-                                    ktActivation: await getKtActivation(),
-                                };
+                {model.step === Steps.Account &&
+                    (isVariantB ? (
+                        <Step1B
+                            activeBreakpoint={activeBreakpoint}
+                            mode={model.mode}
+                            defaultEmail={signupParameters.email}
+                            selectedPlan={selectedPlan}
+                            cycleData={model.cycleData}
+                            isVpn2024Deal={model.signupType === 'vpn2024'}
+                            isB2bPlan={isB2bPlan}
+                            background={background}
+                            upsellShortPlan={upsellShortPlan}
+                            model={model}
+                            setModel={setModel}
+                            measure={measure}
+                            currencyUrlParam={signupParameters.currency}
+                            onComplete={async (data) => {
+                                const { accountData, subscriptionData } = data;
+                                const accountType =
+                                    accountData.signupType === SignupType.Email ? 'external_account' : 'proton_account';
+                                try {
+                                    const cache: SignupCacheResult = {
+                                        type: 'signup',
+                                        appName: APP_NAME,
+                                        appIntent: undefined,
+                                        productParam,
+                                        // Internal app or oauth app or vpn
+                                        ignoreExplore: true,
+                                        accountData,
+                                        subscriptionData,
+                                        inviteData: model.inviteData,
+                                        referralData: model.referralData,
+                                        persistent: false,
+                                        trusted: false,
+                                        clientType,
+                                        ktActivation: await getKtActivation(),
+                                    };
 
-                                await onPreSubmit?.();
-                                const result = await handleCreateUser({
-                                    cache,
-                                    api: silentApi,
-                                    mode: 'cro',
-                                });
-                                setModelDiff({
-                                    subscriptionData: result.cache.subscriptionData,
-                                    cache: result.cache,
-                                    step: Steps.Loading,
-                                });
+                                    await onPreSubmit?.();
+                                    const result = await handleCreateUser({
+                                        cache,
+                                        api: silentApi,
+                                        mode: 'cro',
+                                    });
+                                    setModelDiff({
+                                        subscriptionData: result.cache.subscriptionData,
+                                        cache: result.cache,
+                                        step: Steps.Loading,
+                                    });
 
-                                metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
-                                    status: 'success',
-                                    account_type: accountType,
-                                    flow: isB2bPlan ? 'b2b' : 'b2c',
-                                });
-                            } catch (error) {
-                                handleError(error);
-                                observeApiError(error, (status) =>
                                     metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
-                                        status,
+                                        status: 'success',
                                         account_type: accountType,
                                         flow: isB2bPlan ? 'b2b' : 'b2c',
-                                    })
-                                );
-                            }
-                        }}
-                        onCurrencyChange={updatePlans}
-                        hideFreePlan={signupParameters.hideFreePlan}
-                        upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
-                    />
-                )}
+                                    });
+                                } catch (error) {
+                                    handleError(error);
+                                    observeApiError(error, (status) =>
+                                        metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
+                                            status,
+                                            account_type: accountType,
+                                            flow: isB2bPlan ? 'b2b' : 'b2c',
+                                        })
+                                    );
+                                }
+                            }}
+                            onCurrencyChange={updatePlans}
+                            hideFreePlan={signupParameters.hideFreePlan}
+                            upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
+                            toAppName={toAppName}
+                        />
+                    ) : (
+                        <Step1
+                            activeBreakpoint={activeBreakpoint}
+                            mode={model.mode}
+                            defaultEmail={signupParameters.email}
+                            selectedPlan={selectedPlan}
+                            cycleData={model.cycleData}
+                            isVpn2024Deal={model.signupType === 'vpn2024'}
+                            isB2bPlan={isB2bPlan}
+                            background={background}
+                            upsellShortPlan={upsellShortPlan}
+                            model={model}
+                            setModel={setModel}
+                            measure={measure}
+                            currencyUrlParam={signupParameters.currency}
+                            onComplete={async (data) => {
+                                const { accountData, subscriptionData } = data;
+                                const accountType =
+                                    accountData.signupType === SignupType.Email ? 'external_account' : 'proton_account';
+                                try {
+                                    const cache: SignupCacheResult = {
+                                        type: 'signup',
+                                        appName: APP_NAME,
+                                        appIntent: undefined,
+                                        productParam,
+                                        // Internal app or oauth app or vpn
+                                        ignoreExplore: true,
+                                        accountData,
+                                        subscriptionData,
+                                        inviteData: model.inviteData,
+                                        referralData: model.referralData,
+                                        persistent: false,
+                                        trusted: false,
+                                        clientType,
+                                        ktActivation: await getKtActivation(),
+                                    };
+
+                                    await onPreSubmit?.();
+                                    const result = await handleCreateUser({
+                                        cache,
+                                        api: silentApi,
+                                        mode: 'cro',
+                                    });
+                                    setModelDiff({
+                                        subscriptionData: result.cache.subscriptionData,
+                                        cache: result.cache,
+                                        step: Steps.Loading,
+                                    });
+
+                                    metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
+                                        status: 'success',
+                                        account_type: accountType,
+                                        flow: isB2bPlan ? 'b2b' : 'b2c',
+                                    });
+                                } catch (error) {
+                                    handleError(error);
+                                    observeApiError(error, (status) =>
+                                        metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
+                                            status,
+                                            account_type: accountType,
+                                            flow: isB2bPlan ? 'b2b' : 'b2c',
+                                        })
+                                    );
+                                }
+                            }}
+                            onCurrencyChange={updatePlans}
+                            hideFreePlan={signupParameters.hideFreePlan}
+                            upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
+                        />
+                    ))}
                 {model.step === Steps.Loading && (
                     <Step2
                         hasPayment={

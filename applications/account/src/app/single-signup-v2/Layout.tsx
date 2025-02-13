@@ -20,7 +20,7 @@ export interface Props {
     hasDecoration?: boolean;
     headerClassName?: string;
     languageSelect?: boolean;
-    afterLogo?: ReactNode;
+    headerCenterElement?: ReactNode;
     onBack?: () => void;
     className?: string;
     footer?: ReactNode;
@@ -35,7 +35,7 @@ const Layout = ({
     hasDecoration,
     headerClassName,
     languageSelect = true,
-    afterLogo,
+    headerCenterElement,
     onBack,
     bottomRight,
     className,
@@ -62,7 +62,7 @@ const Layout = ({
                 onBack={onBack}
                 languageSelect={languageSelect}
                 logo={logo}
-                afterLogo={afterLogo}
+                centerElement={headerCenterElement}
             />
             <div className="flex-auto flex flex-nowrap flex-column justify-space-between mx-6">
                 {children}
