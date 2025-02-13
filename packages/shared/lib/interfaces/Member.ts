@@ -134,12 +134,12 @@ export interface Member {
     Unprivatization: null | MemberUnprivatization;
 }
 
-export interface MemberReadyForUnprivatization extends Member {
+export interface MemberReadyForAutomaticUnprivatization extends Member {
     Unprivatization: MemberUnprivatizationAutomaticApproveState;
 }
 
-export interface MemberReadyForUnprivatizationApproval extends Member {
-    Unprivatization: MemberUnprivatizationAutomaticApproveState;
+export interface MemberReadyForManualUnprivatization extends Member {
+    Unprivatization: MemberUnprivatizationManualApproveState;
 }
 
 export type EnhancedMember = Member &
