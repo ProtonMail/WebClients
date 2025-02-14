@@ -126,8 +126,8 @@ export const DrivePostSignupOneDollar = () => {
     return (
         <Spotlight
             anchorRef={buttonRef}
-            className={clsx(!isLastReminderDay && 'rounded-xl')}
-            innerClassName={clsx('rounded-xl', isLastReminderDay ? undefined : 'p-0')}
+            borderRadius="xl"
+            innerClassName={clsx(isLastReminderDay ? undefined : 'p-0')}
             show={show || spotlightState}
             onClose={() => {
                 handleClose();
