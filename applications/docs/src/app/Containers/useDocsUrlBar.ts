@@ -26,13 +26,16 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = {
     const newURL = new URL(location.href)
     newURL.search = ''
     newURL.hash = ''
-    newURL.searchParams.set('linkId', action.linkId)
     if (action.mode === 'open') {
       newURL.searchParams.set('mode', 'open')
       newURL.searchParams.set('volumeId', action.volumeId)
+      newURL.searchParams.set('linkId', action.linkId)
     } else if (action.mode === 'open-url') {
       newURL.searchParams.set('mode', 'open-url')
       newURL.searchParams.set('token', action.token)
+      if (action.linkId) {
+        newURL.searchParams.set('linkId', action.linkId)
+      }
       newURL.hash = action.urlPassword
     }
     history.replaceState(null, '', newURL)
@@ -71,7 +74,7 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = {
       newUrl.searchParams.set('volumeId', action.volumeId)
     }
 
-    if ('linkId' in action) {
+    if ('linkId' in action && action.linkId) {
       newUrl.searchParams.set('linkId', action.linkId)
     }
 
