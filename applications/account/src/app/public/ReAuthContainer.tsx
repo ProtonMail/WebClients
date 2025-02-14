@@ -15,6 +15,7 @@ import {
     useErrorHandler,
     useFormErrors,
 } from '@proton/components';
+import type { AuthSession } from '@proton/components/containers/login/interface';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import SSOAuthModal from '@proton/components/containers/password/SSOAuthModal';
 import useApi from '@proton/components/hooks/useApi';
@@ -24,13 +25,12 @@ import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
-import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import type { User, UserSettings, KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces';
+import type { UserSettings, KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { srpAuth } from '@proton/shared/lib/srp';
@@ -47,16 +47,7 @@ import PublicUserItem from './PublicUserItem';
 import SupportDropdown from './SupportDropdown';
 
 export type ReAuthState = {
-    session: {
-        User: User;
-        LocalID: number;
-        UID: string;
-        keyPassword?: string;
-        clientKey: string;
-        offlineKey: OfflineKey | undefined;
-        persistent: boolean;
-        trusted: boolean;
-    };
+    session: AuthSession;
     reAuthType: 'offline' | 'offline-bypass' | 'default';
 };
 
