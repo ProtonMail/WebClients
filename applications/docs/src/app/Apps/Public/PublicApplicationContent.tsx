@@ -5,7 +5,12 @@ import { useApi } from '@proton/components/index'
 import { Route, Switch } from 'react-router-dom'
 import ApplicationProvider from '../../Containers/ApplicationProvider'
 import { DocumentViewer } from '../../Components/DocumentViewer'
-import type { DocumentAction, PublicDriveCompat, PublicNodeMeta } from '@proton/drive-store'
+import {
+  usePublicDriveCompat,
+  type DocumentAction,
+  type PublicDriveCompat,
+  type PublicNodeMeta,
+} from '@proton/drive-store'
 import { APP_VERSION } from '../../config'
 import { WordCountContextProvider } from '../../Components/WordCount/WordCountProvider'
 import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
@@ -94,13 +99,19 @@ function Content({
   openAction: DocumentAction | null
   actionMode: DocumentAction['mode'] | undefined
 }) {
+  const { linkId } = usePublicDriveCompat()
+
   if (openAction?.mode !== 'open-url' && openAction?.mode !== 'open-url-download') {
+    return null
+  }
+
+  if (!linkId) {
     return null
   }
 
   const nodeMeta: PublicNodeMeta = {
     token: openAction.token,
-    linkId: openAction.linkId,
+    linkId: linkId,
   }
 
   return <DocumentViewer nodeMeta={nodeMeta} action={actionMode} />

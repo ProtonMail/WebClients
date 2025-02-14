@@ -32,7 +32,21 @@ export type DocumentAction =
           mode: 'new';
       }
     | {
-          mode: 'open-url' | 'open-url-download';
+          mode: 'open-url';
+          action?: RedirectAction;
+          /**
+           * linkId can be optional when opening a public doc that has been shared directly since the Docs client can
+           * fetch it using the token. This allows the Drive client to redirect to the Docs client much earlier and allows
+           * Drive to not show a password page on their side.
+           * It cannot be optional when opening a doc from a publicly shared folder since the linkId loaded from the token
+           * will be of the folder and not of the doc.
+           */
+          linkId?: string;
+          token: string;
+          urlPassword: string;
+      }
+    | {
+          mode: 'open-url-download';
           action?: RedirectAction;
           linkId: string;
           token: string;
