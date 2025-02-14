@@ -1,3 +1,4 @@
+import { serverTime } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -56,6 +57,7 @@ export type ResumedSessionResult = {
     trusted: boolean;
     clientKey: string;
     offlineKey: OfflineKey | undefined;
+    persistedAt: number;
 };
 
 export const logRemoval = (e: any = {}, UID: string, context: string) => {
@@ -91,6 +93,7 @@ export const resumeSession = async ({
         persistent,
         trusted,
         payloadVersion,
+        persistedAt,
     } = persistedSession;
 
     try {
@@ -131,6 +134,7 @@ export const resumeSession = async ({
             trusted,
             clientKey: ClientKey,
             offlineKey,
+            persistedAt,
         };
     } catch (e: any) {
         if (options.clearInvalidSession && getIs401Error(e)) {
@@ -175,6 +179,7 @@ export const persistSession = async ({
 }: PersistSessionWithPasswordArgs) => {
     const { serializedData, key } = await generateClientKey();
     await api<LocalKeyResponse>(setLocalKey(serializedData));
+    const persistedAt = +serverTime();
 
     let offlineKey = maybeOfflineKey;
 
@@ -190,10 +195,11 @@ export const persistSession = async ({
             persistent,
             trusted,
             offlineKey,
+            persistedAt,
         });
     }
 
-    return { clientKey: serializedData, offlineKey };
+    return { clientKey: serializedData, offlineKey, persistedAt };
 };
 
 export const findPersistedSession = ({
