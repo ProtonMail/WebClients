@@ -4,16 +4,18 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { type OnLoginCallback, type OnLoginCallbackArguments, useModalTwoPromise } from '@proton/components';
 import {
     DropdownMenu,
     DropdownMenuButton,
     Icon,
     InputFieldTwo,
+    type OnLoginCallback,
+    type OnLoginCallbackArguments,
     PasswordInputTwo,
     SimpleDropdown,
     useErrorHandler,
     useFormErrors,
+    useModalTwoPromise,
 } from '@proton/components';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
@@ -60,12 +62,7 @@ export const getReAuthState = (
 
     // Normalize the reauth type to 'default' (auth with IdP - instead of auth with backup password) for SSO accounts
     // when the offline key exists and 'sso' bypass is requested
-    if (
-        forkParameters?.promptBypass === 'sso' &&
-        session.offlineKey &&
-        getIsGlobalSSOAccount(session.User) &&
-        reAuthType !== 'default'
-    ) {
+    if (forkParameters?.promptBypass === 'sso' && getIsGlobalSSOAccount(session.User) && reAuthType !== 'default') {
         reAuthType = 'default';
     }
 
