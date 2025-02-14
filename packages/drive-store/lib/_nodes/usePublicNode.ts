@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { SessionKey } from '@proton/crypto';
 import { querySharedURLMetadata, querySharedURLPath } from '@proton/shared/lib/api/drive/sharing';
 import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import type { LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
+import { type LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 
 import { linkMetaToEncryptedLink, usePublicSession } from '../../store/_api';
 import { type DecryptedLink, useLink, usePublicLinksListing } from '../../store/_links';
@@ -21,7 +21,18 @@ import { decryptedLinkToNode } from './utils';
  */
 const getCacheKey = ({ linkId }: { linkId: string }) => linkId;
 
-export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: boolean; linkId: string }) => {
+export const usePublicNode = ({
+    isDocsTokenReady,
+    linkId,
+}: {
+    isDocsTokenReady: boolean;
+    /**
+     * If linkId is not passed we can use the linkId of the root link if the root link is a file.
+     * If the root link is not a file and the linkId is not passed, the preloadNode function will
+     * not run. However it is not an issue since an error will have been shown to the user by that point.
+     */
+    linkId: string | undefined;
+}) => {
     const abortSignal = useAbortSignal([]);
 
     const cache = useRef(new Map<string, DecryptedLink>());
@@ -72,12 +83,20 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
     }, []);
 
     useEffect(() => {
-        if (linkId && rootLink) {
-            void preloadNode({ linkId, token }, rootLink).then(() => {
+        if (!rootLink) {
+            return;
+        }
+        /**
+         * If the root link is a file, it will be a document and we can just use
+         * the linkId from the root link itself.
+         */
+        const resolvedLinkId = rootLink.isFile ? rootLink.linkId : linkId;
+        if (resolvedLinkId) {
+            void preloadNode({ linkId: resolvedLinkId, token }, rootLink).then(() => {
                 setDidPreloadNode(true);
             });
         }
-    }, [linkId, rootLink, preloadNode, token]);
+    }, [rootLink, preloadNode, token, linkId]);
 
     useEffect(() => {
         if (rootLink || !isDocsTokenReady) {
@@ -189,6 +208,7 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
     };
 
     return {
+        rootLinkId: rootLink?.linkId,
         sharedUrlInfo,
         getNode,
         getNodeContentKey,
