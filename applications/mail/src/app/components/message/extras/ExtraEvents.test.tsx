@@ -200,7 +200,13 @@ const getSetup = async ({
 
             const inviteAttachment = new File([new Blob([ics])], filename, { type: mimeType });
 
-            const attachmentPackets = await encryptAttachment(ics, inviteAttachment, false, addressKey.publicKeys, []);
+            const attachmentPackets = await encryptAttachment(
+                ics,
+                inviteAttachment,
+                false,
+                addressKey.publicKeys[0],
+                []
+            );
             const concatenatedPackets = mergeUint8Arrays(
                 [attachmentPackets.data, attachmentPackets.keys, attachmentPackets.signature].filter(isTruthy)
             );
