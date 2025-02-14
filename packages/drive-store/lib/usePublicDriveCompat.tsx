@@ -100,6 +100,8 @@ export interface PublicDriveCompat {
     getPublicKeysForEmail: (email: string, abortSignal?: AbortSignal) => Promise<string[] | undefined>;
 
     renamePublicDocument: (nodeMeta: PublicNodeMeta, parentLinkId: string, newName: string) => Promise<void>;
+
+    linkId: string | undefined;
 }
 
 export const usePublicDriveCompatValue = (): PublicDriveCompat => {
@@ -108,22 +110,29 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
 
     const {
         isReady: isDocsTokenReady,
-        isError,
-        error,
+        isError: isPublicDocsTokenError,
+        error: publicDocsTokenError,
         getPublicAuthHeaders,
         customPassword,
         token,
+        linkIdParam,
         urlPassword,
         isPasswordNeeded,
         submitPassword,
-        linkId,
     } = usePublicDocsToken();
 
-    const { sharedUrlInfo, getNode, getNodeContentKey, didCompleteInitialSetup, getAddressKeyInfo, permissions } =
-        usePublicNode({
-            isDocsTokenReady,
-            linkId,
-        });
+    const {
+        rootLinkId,
+        sharedUrlInfo,
+        getNode,
+        getNodeContentKey,
+        didCompleteInitialSetup,
+        getAddressKeyInfo,
+        permissions,
+    } = usePublicNode({
+        isDocsTokenReady,
+        linkId: linkIdParam,
+    });
     const abortSignal = useAbortSignal([]);
     const { renameLink } = usePublicActions();
 
@@ -151,6 +160,10 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         };
     };
 
+    const hasValidLinkId = sharedUrlInfo && sharedUrlInfo.linkType === LinkType.FOLDER ? !!linkIdParam : !!rootLinkId;
+    const isLinkIdError = !!sharedUrlInfo && !hasValidLinkId;
+    const linkIdError = isLinkIdError ? new Error('No valid linkId present') : undefined;
+
     return {
         isDocsEnabled,
         customPassword,
@@ -160,8 +173,8 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         urlPassword,
         isSharedUrlAFolder: sharedUrlInfo?.linkType === LinkType.FOLDER,
         isReady: isDocsTokenReady && didCompleteInitialSetup,
-        isError,
-        error,
+        isError: isPublicDocsTokenError || isLinkIdError,
+        error: publicDocsTokenError || linkIdError,
         redirectToAuthedDocument: redirectToAuthedDocument,
         isPublicDocsEnabled: isDocsPublicSharingEnabled,
         getDocumentKeys,
@@ -170,6 +183,13 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         permissions,
         getPublicKeysForEmail,
         renamePublicDocument,
+        /**
+         * For directly shared public doc links, Drive might redirect to Docs without a linkId.
+         * If the linkType of the shared url is a file then we can use the linkId of the loaded root link,
+         * and if the shared url is a folder we need the linkId param to be passed. In case it isn't,
+         * an error page will be shown because `isError` and `error` will be truthy.
+         */
+        linkId: sharedUrlInfo && sharedUrlInfo.linkType === LinkType.FILE ? rootLinkId : linkIdParam,
     };
 };
 
