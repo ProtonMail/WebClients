@@ -601,6 +601,7 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
             clientKey: setupData.clientKey,
             offlineKey: setupData.offlineKey,
             keyPassword: setupData.keyPassword,
+            persistedAt: setupData.persistedAt,
             persistent: cache.persistent,
             trusted: cache.trusted,
         },

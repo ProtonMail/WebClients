@@ -157,7 +157,7 @@ export const finalizeConsumeFork = async ({
         RefreshToken,
     };
 
-    const { clientKey, offlineKey } = await persistSession({
+    const { clientKey, offlineKey, persistedAt } = await persistSession({
         api: authApi,
         ...result,
         clearKeyPassword: '',
@@ -170,6 +170,7 @@ export const finalizeConsumeFork = async ({
         ...result,
         clientKey,
         offlineKey,
+        persistedAt,
     } as const;
 };
 

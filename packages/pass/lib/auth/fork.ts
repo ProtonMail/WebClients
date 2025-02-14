@@ -82,7 +82,7 @@ export const requestFork = ({
      * When doing an in-app SSO re-auth check (ie: before triggering
      * a data export), pass `none` to force re-auth. */
     promptBypass = 'sso',
-    promptType = EXTENSION_BUILD || DESKTOP_BUILD ? 'offline' : 'offline-bypass',
+    promptType = 'offline',
 }: RequestForkOptions): RequestForkResult => {
     const searchParams = new URLSearchParams();
     const state = generateForkState();

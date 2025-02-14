@@ -196,8 +196,14 @@ export const createAuthService = ({
             else if (autoFork) {
                 /* If the session could not be resumed from the LocalID from path,
                  * we are likely dealing with an app-switch request from another app.
-                 * In this case, redirect to account through a fork request */
-                auth.requestFork({ app: APPS.PROTONPASS, host: config.SSO_URL, localID: pathLocalID });
+                 * In this case, redirect to account through a fork request. On
+                 * auto-fork tolerate `offline-bypass` for smoother UX. */
+                auth.requestFork({
+                    app: APPS.PROTONPASS,
+                    host: config.SSO_URL,
+                    localID: pathLocalID,
+                    promptType: 'offline-bypass',
+                });
             }
 
             return loggedIn;

@@ -171,6 +171,7 @@ export interface SetupData {
     authResponse: AuthResponse;
     api: Api;
     mnemonicData?: MnemonicData;
+    persistedAt: number;
 }
 
 export interface UserData {

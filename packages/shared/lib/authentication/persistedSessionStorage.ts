@@ -187,6 +187,7 @@ export const setPersistedSessionWithBlob = async (
         isSelf: boolean;
         persistent: boolean;
         trusted: boolean;
+        persistedAt: number;
     }
 ) => {
     const payloadVersion =
@@ -221,7 +222,7 @@ export const setPersistedSessionWithBlob = async (
         } as const;
     })();
 
-    const persistedSession = {
+    const persistedSession: PersistedSession = {
         localID,
         UserID: data.UserID,
         UID: data.UID,
@@ -235,7 +236,7 @@ export const setPersistedSessionWithBlob = async (
             JSON.stringify(encryptedPayloadData),
             payloadVersion === 2 ? stringToUtf8Array('session') : undefined
         ),
-        persistedAt: Date.now(),
+        persistedAt: data.persistedAt,
     };
     setItem(getKey(localID), JSON.stringify(omit(persistedSession, ['localID'])));
 
