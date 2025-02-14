@@ -60,7 +60,7 @@ export function useAppendPublicShareKeyMaterialToTitle(
       const urlPassword = new URL(sharedLink).hash
       changeURLVisually({
         mode: 'open-url',
-        linkId: nodeMeta.linkId,
+        linkId,
         token,
         urlPassword,
       })

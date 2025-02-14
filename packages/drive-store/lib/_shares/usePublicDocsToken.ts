@@ -17,7 +17,7 @@ export const usePublicDocsToken = () => {
 
     const params = useMemo(() => new URLSearchParams(search), [search]);
     const token = params.get('token') || '';
-    const linkId = params.get('linkId') || '';
+    const linkIdParam = params.get('linkId') || undefined;
     const urlPassword = hash.substring(1);
 
     const { isLoading, isPasswordNeeded, submitPassword, error, customPassword } = usePublicAuth(token, urlPassword);
@@ -32,10 +32,10 @@ export const usePublicDocsToken = () => {
         error: error[0] as Error,
         customPassword,
         token,
+        linkIdParam,
         urlPassword,
         isPasswordNeeded,
         submitPassword,
-        linkId,
         getPublicAuthHeaders: () => {
             const sessionInfo = getSessionInfo();
 
