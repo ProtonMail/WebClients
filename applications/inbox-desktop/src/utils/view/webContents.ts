@@ -58,6 +58,10 @@ export function handleWebContents(contents: WebContents) {
             return;
         }
 
+        if (isAccountLogin(url) || isAccountSwitch(url)) {
+            resetBadge();
+        }
+
         // There is a big issue with view.webContents.getURL(): if a view is displaying x and you
         // tell it to load y, if you ask which is the current URL, it will return x until y is
         // fully loaded. That's why there is a weird getViewURL function in viewManagement.ts.
@@ -88,7 +92,7 @@ export function handleWebContents(contents: WebContents) {
             return ev.preventDefault();
         }
 
-        if (isAccountSwitch(url)) {
+        if (isAccountLogin(url) || isAccountSwitch(url)) {
             resetBadge();
         }
 
