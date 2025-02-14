@@ -10,6 +10,7 @@ import { ERROR_TYPE } from '@proton/shared/lib/assistant';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+import throttle from '@proton/utils/throttle';
 
 import ComposerAssistantExpanded from 'proton-mail/components/assistant/ComposerAssistantExpanded';
 import ResumeDownloadingModal from 'proton-mail/components/assistant/modals/ResumeDownloadingModal';
@@ -22,6 +23,20 @@ import useComposerAssistantSelectedText from 'proton-mail/hooks/assistant/useCom
 import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
 
 import './ComposerAssistant.scss';
+
+/**
+ * Execute timeout on first call and then execute the function every 150ms
+ * This is used to avoid too many calls to getContentBeforeBlockquote
+ * as it could impact performances
+ */
+const throttleHasComposerContent = throttle(
+    (getContentBeforeBlockquote: () => string) => !!removeLineBreaks(getContentBeforeBlockquote()),
+    150,
+    {
+        leading: false,
+        trailing: true,
+    }
+);
 
 interface Props {
     assistantID: string;
@@ -153,7 +168,7 @@ const ComposerAssistant = ({
         };
     }, [setPrompt, setPreviousGenerationResult]);
 
-    const hasComposerContent = !!removeLineBreaks(getContentBeforeBlockquote());
+    const hasComposerContent = !!throttleHasComposerContent(getContentBeforeBlockquote);
 
     // Show refine buttons when:
     // - There is some content selected in the assistant expanded
