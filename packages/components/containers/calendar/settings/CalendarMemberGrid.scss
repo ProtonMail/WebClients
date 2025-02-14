@@ -6,6 +6,19 @@
 	padding-inline: rem(6);
 }
 
+// temporary workaround until Sass modules fix include-media + cal specific breakpoints
+.calendar-member-delete-button-full {
+	@include media('>#{em(866, 16)}') {
+		display: none;
+	}
+}
+
+.calendar-member-delete-button-icon {
+	@include media('<=#{em(866, 16)}') {
+		display: none;
+	}
+}
+
 .calendar-member-skeleton {
 	&-container {
 		display: flex;
