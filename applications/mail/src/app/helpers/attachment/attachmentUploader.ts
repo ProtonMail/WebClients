@@ -43,7 +43,7 @@ export interface UploadResult {
 export const encryptFile = async (
     file: File,
     inline: boolean,
-    encryptionKeys: PublicKeyReference[],
+    encryptionKey: PublicKeyReference,
     signingKeys?: PrivateKeyReference[]
 ) => {
     if (!file) {
@@ -51,7 +51,7 @@ export const encryptFile = async (
     }
     try {
         const result = await readFileAsBuffer(file);
-        return await encryptAttachment(new Uint8Array(result), file, inline, encryptionKeys, signingKeys);
+        return await encryptAttachment(new Uint8Array(result), file, inline, encryptionKey, signingKeys);
     } catch (e: any) {
         throw new Error(c('Error').t`Failed to encrypt attachment. Please try again.`);
     }
@@ -76,7 +76,7 @@ const uploadFile = (
     let packets: Packets;
 
     const getParams = async () => {
-        packets = await encryptFile(file, inline, messageKeys.encryptionKeys, messageKeys.signingKeys);
+        packets = await encryptFile(file, inline, messageKeys.encryptionKey, messageKeys.signingKeys);
 
         return uploadAttachment({
             Filename: packets.Filename || filename,
@@ -140,11 +140,11 @@ const packetToAttachment = (packet: Packets, message: MessageStateWithData) => {
 const uploadEOFile = (
     file: File,
     message: MessageStateWithData,
-    publicKeys: PublicKeyReference[],
+    encryptionKey: PublicKeyReference,
     inline: boolean
 ): Promise<{ attachment: Attachment; packets: Packets }> => {
     const getAttachment = async () => {
-        const packets = (await encryptFile(file, inline, publicKeys)) as Packets;
+        const packets = (await encryptFile(file, inline, encryptionKey)) as Packets;
 
         return { attachment: packetToAttachment(packets, message) as Attachment, packets };
     };
@@ -172,13 +172,13 @@ export const upload = (
 export const uploadEO = async (
     file: File,
     message: MessageStateWithData,
-    publicKey: PublicKeyReference[],
+    encryptionKey: PublicKeyReference,
     action = ATTACHMENT_DISPOSITION.ATTACHMENT,
     removeImageMetadata?: boolean
 ) => {
     const inline = isEmbeddable(file.type) && action === ATTACHMENT_DISPOSITION.INLINE;
     const updatedFile = removeImageMetadata ? await removeExifMetadata(file).catch(() => file) : file;
-    return uploadEOFile(updatedFile, message, publicKey, inline);
+    return uploadEOFile(updatedFile, message, encryptionKey, inline);
 };
 
 /**

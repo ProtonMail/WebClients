@@ -59,7 +59,7 @@ const encryptBody = async (content: string, messageKeys: PublicPrivateKey) => {
     const { message: data } = await CryptoProxy.encryptMessage({
         textData: content,
         stripTrailingSpaces: true,
-        encryptionKeys: messageKeys.encryptionKeys,
+        encryptionKeys: messageKeys.encryptionKey,
         signingKeys: messageKeys.signingKeys,
     });
 
@@ -75,7 +75,7 @@ export const prepareAndEncryptBody = async (message: MessageState, messageKeys: 
 export const encryptAttachmentKeyPackets = async (
     attachments: Attachment[],
     previousAddressDecryptionKeys: PrivateKeyReference[] = [],
-    newAddressEncryptionKeys: PublicKeyReference[] = [],
+    newAddressEncryptionKey: PublicKeyReference,
     messageFlags?: number
 ) => {
     return Object.fromEntries(
@@ -87,7 +87,7 @@ export const encryptAttachmentKeyPackets = async (
                     const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
                         data: sessionKey.data,
                         algorithm: sessionKey.algorithm,
-                        encryptionKeys: newAddressEncryptionKeys,
+                        encryptionKeys: newAddressEncryptionKey,
                         format: 'binary',
                     });
                     return [attachment.ID || '', encodeBase64(arrayToBinaryString(encryptedSessionKey))];
@@ -113,7 +113,7 @@ export const createMessage = async (
         AttachmentKeyPackets = await encryptAttachmentKeyPackets(
             attachments,
             originalMessageKeys.decryptionKeys,
-            messageKeys.encryptionKeys,
+            messageKeys.encryptionKey,
             message.draftFlags?.originalMessageFlags
         );
     }
@@ -160,7 +160,7 @@ export const updateMessage = async (
         AttachmentKeyPackets = await encryptAttachmentKeyPackets(
             attachments,
             previousMessageKeys.decryptionKeys,
-            messageKeys.encryptionKeys
+            messageKeys.encryptionKey
         );
     }
     const { Message: updatedMessage } = await api({
