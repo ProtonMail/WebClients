@@ -34,11 +34,11 @@ interface EOAttachment {
 
 interface Props {
     message: MessageState;
-    publicKeys?: PublicKeyReference[];
+    encryptionKey?: PublicKeyReference;
     outsideKey?: MessageKeys;
 }
 
-export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
+export const useSendEO = ({ message, encryptionKey, outsideKey }: Props) => {
     const api = useApi();
     const dispatch = useMailDispatch();
     const history = useHistory();
@@ -61,14 +61,14 @@ export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
      *  - Encrypt the blob to get the packets which contains Data and Key packets
      */
     const handleOriginalMessageEmbedded = async (packages: EOAttachment, attachment: Attachment) => {
-        if (outsideKey && publicKeys) {
+        if (outsideKey && encryptionKey) {
             const decryptedAttachment = await getDecryptedAttachment(attachment, undefined, outsideKey, api);
 
             const blobURL = createBlob(attachment, decryptedAttachment.data as Uint8Array);
 
             const blob = await blobURLtoBlob(blobURL);
 
-            const packet = await encryptFile(blob as File, true, publicKeys);
+            const packet = await encryptFile(blob as File, true, encryptionKey);
 
             packages.DataPacket.push(new Blob([packet.data]));
             packages.KeyPackets.push(new Blob([packet.keys]));
@@ -89,7 +89,7 @@ export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
                 await CryptoProxy.encryptMessage({
                     textData: replyContent,
                     stripTrailingSpaces: true,
-                    encryptionKeys: publicKeys,
+                    encryptionKeys: encryptionKey,
                 })
             ).message;
 

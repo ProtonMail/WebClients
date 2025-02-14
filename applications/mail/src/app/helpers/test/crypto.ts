@@ -82,7 +82,7 @@ export const generateKeys = async (name: string, email: string, passphrase = 'pa
 
 export const fromGeneratedKeysToMessageKeys = (generatedKeys: GeneratedKey): MessageKeys => ({
     type: 'publicPrivate',
-    encryptionKeys: [generatedKeys.privateKeys[0]],
+    encryptionKey: generatedKeys.privateKeys[0],
     signingKeys: [generatedKeys.privateKeys[0]],
     decryptionKeys: generatedKeys.privateKeys,
 });

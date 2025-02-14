@@ -60,7 +60,7 @@ export const loadEOMessage = createAsyncThunk<{ eoMessage: EOMessage; messageSta
         try {
             const { Message, PublicKey } = await api(getEOMessage(token, id));
 
-            Message.PublicKey = [await CryptoProxy.importPublicKey({ armoredKey: PublicKey })];
+            Message.PublicKey = await CryptoProxy.importPublicKey({ armoredKey: PublicKey });
 
             // Decrypt replies bodies (Useless for now, but might be needed if we want to display replies)
             await eoDecrypt(Message?.Body, password).then((body) => {
