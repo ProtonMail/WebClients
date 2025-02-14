@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { cardNumberHiddenValue } from '@proton/pass/components/Form/Field/masks/credit-card';
 import { intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import type { ItemRevision, ItemType } from '@proton/pass/types';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { deobfuscate, deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 type PresentedListItem = { heading: string; subheading: string };
@@ -26,7 +26,7 @@ const itemListPresenter: ItemListPresenterMap = {
     }),
     creditCard: ({ data }) => ({
         heading: data.metadata.name,
-        subheading: cardNumberHiddenValue(deobfuscate(data.content.number)),
+        subheading: cardNumberHiddenValue(deobfuscateCCField(data.content.number, true)),
     }),
     identity: ({ data }) => ({
         heading: data.metadata.name,
