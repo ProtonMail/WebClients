@@ -27,7 +27,7 @@
         "@scure/base": "^1.2.4",
         "@sentry/browser": "^7.120.3",
         "@types/dompurify": "^3.2.0",
-        "@types/node": "^22.13.1",
+        "@types/node": "^22.13.4",
         "@types/papaparse": "^5.3.15",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
@@ -44,10 +44,10 @@
         "zod": "^3.24.2"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.26.8",
+        "@babel/plugin-transform-runtime": "^7.26.9",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
-        "@types/jasmine": "^5.1.5",
+        "@types/jasmine": "^5.1.6",
         "@types/karma-junit-reporter": "^2.0.4",
         "@webgpu/types": "^0.1.54",
         "eslint": "^8.57.1",
@@ -61,11 +61,11 @@
         "karma-spec-reporter": "^0.0.36",
         "karma-webpack": "^5.0.1",
         "playwright": "^1.50.1",
-        "prettier": "^3.5.0",
+        "prettier": "^3.5.1",
         "ts-loader": "^9.5.2",
         "ttag": "^1.8.7",
         "typescript": "^5.7.3",
         "url-loader": "^4.1.1",
-        "webpack": "^5.97.1"
+        "webpack": "^5.98.0"
     }
 }
