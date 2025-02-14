@@ -27,7 +27,11 @@ export const resignSKLWithPrimaryKey = async ({
         await Promise.all(
             skls.map(async (skl) => {
                 if (skl.Data && skl.Signature) {
-                    const timestamp = await verifySKLSignature(formerPrimaryKeys, skl.Data, skl.Signature);
+                    const timestamp = await verifySKLSignature({
+                        verificationKeys: formerPrimaryKeys,
+                        signedKeyListData: skl.Data,
+                        signedKeyListSignature: skl.Signature,
+                    });
                     if (!timestamp) {
                         return;
                     }
