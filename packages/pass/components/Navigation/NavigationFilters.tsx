@@ -3,6 +3,7 @@ import { type FC, createContext, useCallback, useMemo } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import type { ItemFilters, MaybeNull } from '@proton/pass/types';
 
 import { useNavigate } from './NavigationActions';
@@ -23,6 +24,7 @@ export const NavigationFilters: FC<PropsWithChildren> = ({ children }) => {
     const navigate = useNavigate();
 
     const filters = useMemo(() => decodeFiltersFromSearch(location.search), [location.search]);
+    const filtersRef = useStatefulRef(filters);
 
     /** Determines whether to replace the history entry only when the search
      * filter have changed. For all other changes, it is preferred to push to
@@ -30,9 +32,9 @@ export const NavigationFilters: FC<PropsWithChildren> = ({ children }) => {
      * debounced search value changes, which would pollute the history stack. */
     const setFilters = useCallback((update: Partial<ItemFilters>) => {
         const shouldPush =
-            (update.selectedShareId && update.selectedShareId !== filters.selectedShareId) ||
-            (update.sort && update.sort !== filters.sort) ||
-            (update.type && update.type !== filters.type);
+            (update.selectedShareId && update.selectedShareId !== filtersRef.current.selectedShareId) ||
+            (update.sort && update.sort !== filtersRef.current.sort) ||
+            (update.type && update.type !== filtersRef.current.type);
 
         navigate(history.location.pathname, {
             mode: shouldPush ? 'push' : 'replace',
