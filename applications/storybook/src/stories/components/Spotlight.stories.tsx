@@ -22,6 +22,15 @@ const sizeOptions = [
     { value: '14px', label: '14px' },
 ];
 
+type BorderRadius = 'xl' | 'lg' | 'md' | 'sm';
+
+const borderRadiusOptions: { value: BorderRadius; label: string }[] = [
+    { value: 'xl', label: 'xl' },
+    { value: 'lg', label: 'lg' },
+    { value: 'md', label: 'md (default)' },
+    { value: 'sm', label: 'sm' },
+];
+
 const placementOptions = allPopperPlacements.map((placement) => ({
     value: placement,
     label: placement,
@@ -30,6 +39,7 @@ const placementOptions = allPopperPlacements.map((placement) => ({
 export const Sandbox = () => {
     const [targetSize, setTargetSize] = useState(sizeOptions[1].value);
     const [placement, setPlacement] = useState<PopperPlacement>(allPopperPlacements[0]);
+    const [borderRadius, setBorderRadius] = useState<BorderRadius>('md');
     const [show, setShow] = useState(false);
 
     useEffect(() => {
@@ -48,6 +58,12 @@ export const Sandbox = () => {
         setTimeout(() => setShow(true), 100);
     };
 
+    const handleChangeBorderRadius = (borderRadius: BorderRadius) => {
+        setShow(false);
+        setBorderRadius(borderRadius);
+        setTimeout(() => setShow(true), 100);
+    };
+
     const style = {
         width: '8em',
         height: '8em',
@@ -58,7 +74,7 @@ export const Sandbox = () => {
 
     return (
         <div className="p-7">
-            <div className="flex items-stretch">
+            <div className="mb-8 flex gap-4 ">
                 <div className="mr-8">
                     <strong className="block mb-4">Target size</strong>
                     <RadioGroup
@@ -77,18 +93,28 @@ export const Sandbox = () => {
                         options={placementOptions}
                     />
                 </div>
-                <div className="flex flex-1 items-center justify-center border">
-                    <Spotlight
-                        content="Content of the spotlight"
-                        show={show}
-                        originalPlacement={placement}
-                        key={placement}
-                    >
-                        <div className="border rounded flex items-center justify-center" style={style}>
-                            Something to put spotlight on
-                        </div>
-                    </Spotlight>
+                <div className="mr-8">
+                    <strong className="block mb-4">Border radius</strong>
+                    <RadioGroup
+                        name="border-radius"
+                        value={borderRadius}
+                        options={borderRadiusOptions}
+                        onChange={handleChangeBorderRadius}
+                    />
                 </div>
+            </div>
+            <div className="flex flex-1 items-center justify-center border">
+                <Spotlight
+                    content="Content of the spotlight"
+                    show={show}
+                    originalPlacement={placement}
+                    borderRadius={borderRadius}
+                    key={placement}
+                >
+                    <div className="border rounded flex items-center justify-center" style={style}>
+                        Something to put spotlight on
+                    </div>
+                </Spotlight>
             </div>
         </div>
     );
