@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { Avatar, Button } from '@proton/atoms';
+import { Avatar, Button, UserAvatar } from '@proton/atoms';
 import { FileIcon, Icon, TableCell } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
@@ -75,18 +74,21 @@ function NameCell({ item }: { item: PublicLink }) {
 function UploadedByCell({ item }: { item: PublicLink }) {
     const email = item.signatureEmail;
     return (
-        <TableCell className="flex flex-nowrap items-center m-0 w-1/5 color-weak" data-testid="column-shared-by">
-            <Avatar
-                color="weak"
-                className="mr-2 min-w-custom max-w-custom max-h-custom"
-                style={{
-                    '--min-w-custom': '1.75rem',
-                    '--max-w-custom': '1.75rem',
-                    '--max-h-custom': '1.75rem',
-                }}
-            >
-                {email ? getInitials(email) : <Icon name="user" className="color-weak" />}
-            </Avatar>
+        <TableCell className="flex flex-nowrap items-center gap-2 m-0 w-1/5 color-weak" data-testid="column-shared-by">
+            {email && <UserAvatar name={email} size="small" />}
+            {!email && (
+                <Avatar
+                    color="weak"
+                    className="min-w-custom max-w-custom max-h-custom"
+                    style={{
+                        '--min-w-custom': '1.75rem',
+                        '--max-w-custom': '1.75rem',
+                        '--max-h-custom': '1.75rem',
+                    }}
+                >
+                    <Icon name="user" className="color-weak" />
+                </Avatar>
+            )}
             <span className="text-ellipsis hidden lg:inline">{email || c('Info').t`Anonymous`}</span>
         </TableCell>
     );
