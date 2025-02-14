@@ -24,10 +24,10 @@ interface Props {
     message: MessageState;
     onChange: MessageChange;
     editorActionsRef: RefObject<ExternalEditorActions | undefined>;
-    publicKey?: PublicKeyReference[];
+    encryptionKey?: PublicKeyReference;
 }
 
-export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKey }: Props) => {
+export const useEOAttachments = ({ message, onChange, editorActionsRef, encryptionKey }: Props) => {
     const { createNotification } = useNotifications();
 
     const [imagesToInsert, setImagesToInsert] = useState<File[]>([]);
@@ -37,35 +37,39 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
      */
     const handleAddAttachmentsUpload = useHandler(
         async (action: ATTACHMENT_DISPOSITION, files: File[] = [], removeImageMetadata?: boolean) => {
-            if (publicKey) {
+            if (encryptionKey) {
                 files.forEach((file: File) => {
-                    void uploadEO(file, message as MessageStateWithData, publicKey, action, removeImageMetadata).then(
-                        ({ attachment, packets }) => {
-                            // Warning, that change function can be called multiple times, don't do any side effect in it
-                            onChange((message: MessageState) => {
-                                // New attachment list
-                                const Attachments = [...getAttachments(message.data), attachment];
-                                const embeddedImages = getEmbeddedImages(message);
-
-                                if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                                    embeddedImages.push(createEmbeddedImageFromUpload(attachment));
-                                }
-
-                                const messageImages = updateImages(
-                                    message.messageImages,
-                                    undefined,
-                                    undefined,
-                                    embeddedImages
-                                );
-
-                                return { data: { Attachments }, messageImages };
-                            });
+                    void uploadEO(
+                        file,
+                        message as MessageStateWithData,
+                        encryptionKey,
+                        action,
+                        removeImageMetadata
+                    ).then(({ attachment, packets }) => {
+                        // Warning, that change function can be called multiple times, don't do any side effect in it
+                        onChange((message: MessageState) => {
+                            // New attachment list
+                            const Attachments = [...getAttachments(message.data), attachment];
+                            const embeddedImages = getEmbeddedImages(message);
 
                             if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                                editorActionsRef.current?.insertEmbedded(attachment, packets.Preview);
+                                embeddedImages.push(createEmbeddedImageFromUpload(attachment));
                             }
+
+                            const messageImages = updateImages(
+                                message.messageImages,
+                                undefined,
+                                undefined,
+                                embeddedImages
+                            );
+
+                            return { data: { Attachments }, messageImages };
+                        });
+
+                        if (action === ATTACHMENT_DISPOSITION.INLINE) {
+                            editorActionsRef.current?.insertEmbedded(attachment, packets.Preview);
                         }
-                    );
+                    });
                 });
             }
         }
