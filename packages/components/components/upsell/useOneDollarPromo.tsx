@@ -45,6 +45,8 @@ const useOneDollarConfig = () => {
     const planPricePerCycle = getPricePerCycle(plan, cycle) ?? 0;
 
     useEffect(() => {
+        console.log('dude');
+
         const handleGetPlanAmount = async () => {
             const result = await fetchPrice({
                 data: {
