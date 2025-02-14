@@ -1,5 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
+import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import useFlag from '@proton/unleash/useFlag';
@@ -11,6 +12,8 @@ import { getIsUserEligibleForOneDollar } from './drivePostSignupOneDollarHelper'
 export const useDrivePostSignupOneDollar = () => {
     const protonConfig = useConfig();
     const [user, loadingUser] = useUser();
+
+    const [subscriptionEnd, loadingSubscriptionEnd] = useLastSubscriptionEnd();
 
     // One flag to control the feature, and another to manage the progressive rollout of existing users
     const driveOneDollarPostSignupFlag = useFlag('DrivePostSignupOneDollarPromo');
@@ -34,10 +37,16 @@ export const useDrivePostSignupOneDollar = () => {
             offerStartDateTimestamp: driveOfferState?.Value?.offerStartDate ?? 0,
             minimalAccountAgeTimestamp: postSignupThreshold?.Value,
             driveOneDollarPostSignupFlag,
+            lastSubscriptionEnd: subscriptionEnd,
             mailOfferStartDateTimestamp: mailOfferState?.Value,
             hasUploadedFile: !!(user?.ProductUsedSpace?.Drive ?? 0 > 0),
         }),
-        loading: loadingUser || postSignupDateLoading || postSignupThresholdLoading || mailOfferLoading,
+        loading:
+            loadingUser ||
+            postSignupDateLoading ||
+            postSignupThresholdLoading ||
+            mailOfferLoading ||
+            loadingSubscriptionEnd,
         openSpotlight: shouldOpenPostSignupOffer(driveOfferState?.Value) && !isDomBusy,
     };
 };
