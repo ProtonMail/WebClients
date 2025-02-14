@@ -138,7 +138,7 @@ export const MailPostSignupOneDollar = () => {
     return (
         <Spotlight
             anchorRef={buttonRef}
-            className={clsx(!isLastReminderDay && 'rounded-xl')}
+            borderRadius="xl"
             innerClassName={clsx(isLastReminderDay ? undefined : 'p-0')}
             show={show || spotlightState}
             onClose={() => {
