@@ -20,9 +20,9 @@ async function setBadgeCount(value: number) {
         }
 
         try {
-            const size = 320;
-            const strValue = value > 99 ? "99+" : value.toString();
-            const fontSize = value < 10 ? 200 : 160;
+            const size = 32;
+            const strValue = value > 99 ? "+" : value.toString();
+            const fontSize = value < 10 || value > 99 ? 24 : 20;
 
             const browserView = new BrowserView();
 
@@ -66,10 +66,10 @@ function drawBadge(badgeValue: string, { badgeSize, fontSize }: { badgeSize: num
     context.textAlign = "center";
     context.textBaseline = "middle";
     context.fillStyle = "#c70039";
-    context.roundRect(0, 0, badgeSize, badgeSize, badgeSize * 0.25);
+    context.roundRect(0, 0, badgeSize, badgeSize, badgeSize * 0.1);
     context.fill();
     context.fillStyle = "white";
-    context.fillText(badgeValue, badgeSize * 0.5, badgeSize * 0.5);
+    context.fillText(badgeValue, badgeSize * 0.5, badgeSize * 0.55);
 
     return canvas.toDataURL();
 }
