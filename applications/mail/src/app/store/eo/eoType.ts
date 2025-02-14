@@ -90,7 +90,8 @@ export type EOMessage = {
     SenderName: string;
     SenderAddress: string;
     MIMEType: MIME_TYPES;
-    PublicKey?: PublicKeyReference[];
+    /** Public key of the original Proton sender to encrypt the reply to */
+    PublicKey?: PublicKeyReference;
 };
 
 export type EOState = {

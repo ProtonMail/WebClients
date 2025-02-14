@@ -158,7 +158,7 @@ const encryptDraftBodyPackage = async (
     publicKeys: (PublicKeyReference | undefined)[],
     scheduledTime?: number
 ) => {
-    const cleanPublicAndMessageKeys = [...messageKeys.encryptionKeys, ...publicKeys].filter(isTruthy);
+    const cleanPublicAndMessageKeys = [messageKeys.encryptionKey, ...publicKeys].filter(isTruthy);
     const cleanPublicKeys = publicKeys.filter(isTruthy);
 
     // pass both messageKeys and publicKeys to make sure the generated session key is compatible with them all

@@ -24,12 +24,12 @@ import EOReplyHeader from './EOReplyHeader';
 interface Props {
     referenceMessage: MessageState;
     id: string;
-    publicKey?: PublicKeyReference[];
+    encryptionKey?: PublicKeyReference;
     outsideKey?: OutsideKey;
     numberOfReplies: number;
 }
 
-const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfReplies }: Props) => {
+const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfReplies }: Props) => {
     // Indicates that the composer is in its initial opening
     // Needed to be able to force focus only at first time
     const [opening, setOpening] = useState(true);
@@ -115,7 +115,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
             message: modelMessage,
             onChange: handleChange,
             editorActionsRef,
-            publicKey,
+            encryptionKey,
         });
 
     const handleEditorReady = useCallback((editorActions: ExternalEditorActions) => {
@@ -159,7 +159,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
                 id={id}
                 onAddAttachments={handleAddAttachments}
                 message={modelMessage}
-                publicKeys={publicKey}
+                encryptionKey={encryptionKey}
                 outsideKey={outsideKey}
                 numberOfReplies={numberOfReplies}
             />

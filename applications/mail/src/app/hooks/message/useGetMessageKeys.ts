@@ -29,7 +29,7 @@ export const useGetMessageKeys: UseGetMessageKeys = () => {
 
             // verificationKeys are meant to be retrieved through useGetVerificationPreferences
             return {
-                encryptionKeys: [encryptionKey],
+                encryptionKey,
                 signingKeys,
                 decryptionKeys,
                 type: 'publicPrivate',
