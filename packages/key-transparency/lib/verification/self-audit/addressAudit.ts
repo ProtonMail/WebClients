@@ -155,12 +155,12 @@ const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: Pr
     const { Email, ID, SignedKeyList } = address;
     const { Revision, Data, Signature } = SignedKeyList!;
     if (Revision === 1) {
-        const signatureIsInTheFuture = await verifySKLSignature(
-            [primaryAddressKey],
-            Data,
-            Signature,
-            new Date(0xffffffff * 1000) // max date in the future
-        );
+        const signatureIsInTheFuture = await verifySKLSignature({
+            verificationKeys: [primaryAddressKey],
+            signedKeyListData: Data,
+            signedKeyListSignature: Signature,
+            verificationTime: new Date(0xffffffff * 1000), // max date in the future
+        });
         if (signatureIsInTheFuture) {
             const newSignature = await getSignedKeyListSignature(Data, [primaryAddressKey]);
             await updateSignedKeyListSignature(ID, Revision, newSignature, api);
@@ -331,7 +331,11 @@ const auditAddressImplementation = async ({
             signatureWasInTheFuture = true;
         }
     } else {
-        const verified = await verifySKLSignature(addressVerificationKeys, inputSKL.Data, inputSKL.Signature);
+        const verified = await verifySKLSignature({
+            verificationKeys: addressVerificationKeys,
+            signedKeyListData: inputSKL.Data,
+            signedKeyListSignature: inputSKL.Signature,
+        });
         if (verified === null) {
             const primaryAddressKeyV4 = addressKeys[0].privateKey;
             if (!primaryAddressKeyV4.isPrivateKeyV4()) {

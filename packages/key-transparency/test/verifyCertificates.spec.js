@@ -10,8 +10,8 @@ import {
     verifyCertChain,
     verifySCT,
 } from '../lib/verification/verifyCertificates';
+import { epoch } from './epoch.data';
 import { letsEncryptCertificateChain, zeroSSLCertificateChain } from './verifyCertificate.data';
-import { epoch } from './verifyKeys.data';
 
 describe('certificate transparency', () => {
     it('should fail to parse with corrupt certificate', async () => {
