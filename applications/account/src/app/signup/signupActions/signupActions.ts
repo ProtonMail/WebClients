@@ -86,7 +86,7 @@ export const handleDone = ({
     if (!setupData?.authResponse) {
         throw new Error('Missing auth response');
     }
-    const { authResponse, user, keyPassword, clientKey, offlineKey } = setupData;
+    const { authResponse, user, keyPassword, clientKey, offlineKey, persistedAt } = setupData;
 
     // Users that creates an account after a logout don't have appIntent, foring forcing it here
     if (isElectronMail) {
@@ -106,6 +106,7 @@ export const handleDone = ({
             keyPassword: keyPassword,
             clientKey,
             offlineKey,
+            persistedAt,
             flow: 'signup',
             appIntent: appIntent,
         },
@@ -553,7 +554,7 @@ export const handleSetupUser = async ({
     const { keySetupData, user, addresses } = await setupKeys({ api, ktActivation, password, productParam });
 
     const trusted = false;
-    const { clientKey, offlineKey } = await persistSession({
+    const { clientKey, offlineKey, persistedAt } = await persistSession({
         ...authResponse,
         keyPassword: keySetupData.keyPassword,
         clearKeyPassword: keySetupData.clearKeyPassword,
@@ -577,6 +578,7 @@ export const handleSetupUser = async ({
         setupData: {
             user,
             keyPassword: keySetupData.keyPassword,
+            persistedAt,
             clientKey,
             offlineKey,
             addresses,

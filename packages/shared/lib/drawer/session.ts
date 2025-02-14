@@ -23,8 +23,18 @@ export const resumeSessionDrawerApp = ({
             }
 
             if (event.data.type === DRAWER_EVENTS.SESSION) {
-                const { UID, keyPassword, User, localID, clientKey, offlineKey, persistent, trusted, tag } =
-                    event.data.payload;
+                const {
+                    UID,
+                    keyPassword,
+                    User,
+                    localID,
+                    clientKey,
+                    offlineKey,
+                    persistent,
+                    trusted,
+                    tag,
+                    persistedAt,
+                } = event.data.payload;
                 window.removeEventListener('message', handler);
 
                 if (timeout) {
@@ -41,6 +51,7 @@ export const resumeSessionDrawerApp = ({
                     persistent,
                     trusted,
                     LocalID: localID ?? parentLocalID,
+                    persistedAt: persistedAt ?? Date.now(), // Backwards compatibility. Can be removed once Mail+Calendar are deployed
                 });
             }
         };
