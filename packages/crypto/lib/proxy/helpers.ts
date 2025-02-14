@@ -11,15 +11,18 @@ import { CryptoProxy } from './proxy';
 export async function getMatchingSigningKey(options: {
     armoredSignature: string;
     keys: KeyReference[];
+    preferV6Key?: boolean;
 }): Promise<KeyReference | undefined>;
 export async function getMatchingSigningKey(options: {
     binarySignature: Uint8Array;
     keys: KeyReference[];
+    preferV6Key?: boolean;
 }): Promise<KeyReference | undefined>;
 export async function getMatchingSigningKey(options: {
     binarySignature?: Uint8Array;
     armoredSignature?: string;
     keys: KeyReference[];
+    preferV6Key?: boolean;
 }): Promise<KeyReference | undefined> {
     const { binarySignature, armoredSignature, keys } = options;
 
@@ -27,6 +30,7 @@ export async function getMatchingSigningKey(options: {
         ? await CryptoProxy.getSignatureInfo({ binarySignature })
         : await CryptoProxy.getSignatureInfo({ armoredSignature: armoredSignature! });
 
+    let v4SigningKey: KeyReference | undefined = undefined;
     for (const signingKeyID of signingKeyIDs) {
         // If the signing key is a subkey, we still return the full key entity
         const signingKey = keys.find((key) => {
@@ -34,9 +38,14 @@ export async function getMatchingSigningKey(options: {
             return keyIDs.indexOf(signingKeyID) >= 0;
         });
         if (signingKey) {
-            return signingKey;
+            if (!options.preferV6Key || signingKey.getVersion() === 6) {
+                return signingKey;
+            } else {
+                v4SigningKey = signingKey;
+            }
         }
     }
+    return v4SigningKey;
 }
 
 /**
