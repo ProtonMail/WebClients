@@ -51,6 +51,11 @@ export interface SpotlightProps {
      * It's suggested to have at least 3 placements
      */
     availablePlacements?: PopperPlacement[];
+    /**
+     * Change the default radius of the spotlight
+     * allowed value is `xl`, `lg`, `md`, `sm`
+     */
+    borderRadius?: 'xl' | 'lg' | 'md' | 'sm';
 }
 
 const Spotlight = ({
@@ -70,6 +75,7 @@ const Spotlight = ({
     footer,
     isAboveModal,
     availablePlacements,
+    borderRadius = 'md',
 }: PropsWithChildren<SpotlightProps>) => {
     const [uid] = useState(generateUID('spotlight'));
 
@@ -147,12 +153,18 @@ const Spotlight = ({
                         isClosing && 'is-spotlight-out',
                         type && 'spotlight--with-illustration',
                         !showSideRadius && 'spotlight--no-side-radius',
+                        borderRadius === 'md' ? 'rounded' : `rounded-${borderRadius}`,
                         className,
                     ])}
                     onAnimationEnd={handleAnimationEnd}
                 >
                     <div
-                        className={clsx(['spotlight-inner', type && 'flex flex-nowrap items-start', innerClassName])}
+                        className={clsx([
+                            'spotlight-inner',
+                            type && 'flex flex-nowrap items-start',
+                            borderRadius === 'md' ? 'rounded' : `rounded-${borderRadius}`,
+                            innerClassName,
+                        ])}
                         data-testid="spotlight-inner"
                     >
                         {illustrationURL && <img className="shrink-0 mr-6" src={illustrationURL} alt="" />}
