@@ -71,7 +71,7 @@ const useSendIcs = () => {
             const inviteAttachment = new File([new Blob([ics])], 'invite.ics', {
                 type: `text/calendar; method=${method}`,
             });
-            const packets = await encryptAttachment(ics, inviteAttachment, false, publicKeys, privateKeys);
+            const packets = await encryptAttachment(ics, inviteAttachment, false, publicKeys[0], privateKeys);
             const concatenatedPackets = mergeUint8Arrays(
                 [packets.data, packets.keys, packets.signature].filter(isTruthy)
             );

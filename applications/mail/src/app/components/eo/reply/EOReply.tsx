@@ -32,7 +32,7 @@ const EOReply = ({ setSessionStorage }: Props) => {
                     <EOComposer
                         referenceMessage={messageState}
                         id={id}
-                        publicKey={message.PublicKey}
+                        encryptionKey={message.PublicKey}
                         outsideKey={outsideKey}
                         numberOfReplies={message.Replies.length}
                     />
