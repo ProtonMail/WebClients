@@ -3,14 +3,13 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Avatar, CircleLoader } from '@proton/atoms';
+import { CircleLoader, UserAvatar } from '@proton/atoms';
 import { useSortedList } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import {
@@ -85,10 +84,8 @@ const MemberItem = ({
             className="flex my-4 justify-space-between items-center"
             data-testid="share-accepted-members"
         >
-            <div className={'flex items-center'}>
-                <Avatar color="weak" className="mr-2">
-                    {getInitials(contactName || contactEmail)}
-                </Avatar>
+            <div className="flex items-center gap-2">
+                <UserAvatar name={contactName || contactEmail} />
                 <p className="flex flex-column p-0 m-0">
                     <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
                     {contactName && <span className="color-weak">{contactEmail}</span>}
@@ -146,10 +143,8 @@ export const DirectSharingListing = ({
     return (
         <>
             <div className="flex my-4 justify-space-between items-center" data-testid="share-owner">
-                <div className={'flex items-center'}>
-                    <Avatar color="weak" className="mr-2">
-                        {getInitials(displayName || user.Email)}
-                    </Avatar>
+                <div className="flex items-center gap-2">
+                    <UserAvatar name={displayName || user.Email} />
                     <p className="flex flex-column p-0 m-0">
                         <span className="text-semibold">
                             {displayName} ({c('Info').t`you`})

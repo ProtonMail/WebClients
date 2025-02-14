@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms';
+import { UserAvatar } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -10,7 +10,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import { PermissionsDropdownMenu } from '../PermissionsDropdownMenu';
 
@@ -63,10 +62,8 @@ export const DirectSharingListInvitation = ({
 
     return (
         <div className="flex my-4 justify-space-between items-center" data-testid="share-members">
-            <div className={'flex items-center'}>
-                <Avatar color="weak" className="mr-2">
-                    {getInitials(contactName || contactEmail)}
-                </Avatar>
+            <div className="flex items-center gap-2">
+                <UserAvatar name={contactName || contactEmail} />
                 <p className="flex flex-column p-0 m-0">
                     <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
                     {contactName ? <span className="color-weak">{contactEmail}</span> : null}
