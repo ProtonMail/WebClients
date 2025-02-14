@@ -66,7 +66,7 @@ export const NavigationActionsProvider: FC<PropsWithChildren> = ({ children }) =
                 }
 
                 /** safe-guard against pushing to the same path */
-                const method = history.location.pathname === pathname ? 'replace' : (options.mode ?? 'push');
+                const method = options.mode ?? (history.location.pathname === pathname ? 'replace' : 'push');
 
                 history[method]({
                     pathname,
