@@ -1,6 +1,5 @@
 import { serverTime } from '@proton/crypto';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
 
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
@@ -260,9 +259,6 @@ export const getShouldReAuth = (
          * This avoids triggering re-auth during a sign-up flow to pass. In any other
          * scenario, we should avoid processing the by-pass and ask for password. */
         return +serverTime() - authSession.persistedAt > BYPASS_SESSION_MIN_AGE;
-    }
-    if (forkParameters?.promptBypass === 'sso' && getIsGlobalSSOAccount(authSession.User)) {
-        return false;
     }
     return true;
 };
