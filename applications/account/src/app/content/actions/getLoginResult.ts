@@ -17,7 +17,7 @@ import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/l
 import noop from '@proton/utils/noop';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
-import type { ReAuthState } from '../../public/ReAuthContainer';
+import { getReAuthState } from '../../public/ReAuthContainer';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
@@ -181,14 +181,10 @@ export const getLoginResult = async ({
         session.flow === 'switch' &&
         getShouldReAuth(forkParameters, session)
     ) {
-        const reAuthState: ReAuthState = {
-            session,
-            reAuthType: forkParameters?.promptType || 'default',
-        };
         return {
             type: 'reauth',
             location: { pathname: paths.reauth },
-            payload: reAuthState,
+            payload: getReAuthState(forkParameters, session),
         };
     }
 
