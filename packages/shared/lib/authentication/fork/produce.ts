@@ -1,3 +1,4 @@
+import { serverTime } from '@proton/crypto';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
 
@@ -198,8 +199,8 @@ export const getProduceForkParameters = (
         if (value === 'none' || value === 'sso') {
             return value;
         }
-        // By default, re-auth prompts are disabled for SSO users due to bad UX. But it's still allowed in some flows,
-        // like exporting passwords.
+        // By default, re-auth prompts are disabled for SSO users due to bad UX.
+        // But it's still allowed in some flows, like exporting passwords.
         return 'sso';
     })();
     const email = getEmailSessionForkSearchParameter(searchParams);
@@ -237,12 +238,14 @@ const getCanUserReAuth = (user: User) => {
     return true;
 };
 
+const BYPASS_SESSION_MIN_AGE = 30_000; // 30 seconds
 export const getShouldReAuth = (
     forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'> | undefined,
     authSession: {
         User: User;
         offlineKey: OfflineKey | undefined;
         prompt?: 'login' | null;
+        persistedAt: number;
     }
 ) => {
     const shouldReauth = forkParameters?.prompt === 'login' || authSession.prompt === 'login';
@@ -253,7 +256,10 @@ export const getShouldReAuth = (
         return false;
     }
     if (forkParameters?.promptType === 'offline-bypass' && authSession.offlineKey) {
-        return false;
+        /** `offline-bypass` is valid only if session was just persisted (<30seconds).
+         * This avoids triggering re-auth during a sign-up flow to pass. In any other
+         * scenario, we should avoid processing the by-pass and ask for password. */
+        return +serverTime() - authSession.persistedAt > BYPASS_SESSION_MIN_AGE;
     }
     if (forkParameters?.promptBypass === 'sso' && getIsGlobalSSOAccount(authSession.User)) {
         return false;

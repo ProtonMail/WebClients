@@ -11,6 +11,7 @@ import { serverTime } from '@proton/crypto';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DAY, MINUTE } from '@proton/shared/lib/constants';
 import {
@@ -220,17 +221,20 @@ export const DrawerProvider = ({
                         }
 
                         const user = await getUser();
+                        const localID = authentication.getLocalID();
+                        const persistedSession = getPersistedSession(localID);
                         postMessageToIframe(
                             {
                                 type: DRAWER_EVENTS.SESSION,
                                 payload: {
+                                    localID,
                                     UID: authentication.getUID(),
-                                    localID: authentication.getLocalID(),
                                     keyPassword: authentication.getPassword(),
                                     persistent: authentication.getPersistent(),
                                     trusted: authentication.getTrusted(),
                                     clientKey: authentication.getClientKey(),
                                     offlineKey: authentication.getOfflineKey(),
+                                    persistedAt: persistedSession?.persistedAt ?? Date.now(), // Backwards compatibility. Can be removed once Mail+Calendar are deployed
                                     User: user,
                                     tag: versionCookieAtLoad,
                                 },
