@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { Avatar, Button } from '@proton/atoms';
+import { Avatar, Button, UserAvatar } from '@proton/atoms';
 import { FileIcon, Icon, TableCell, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
@@ -191,11 +190,11 @@ export const SharedByCell = ({ item }: { item: SharedWithMeItem }) => {
 
     if (item.isBookmark) {
         return (
-            <TableCell className="flex flex-nowrap items-center m-0 w-1/5" data-testid="column-shared-by">
+            <TableCell className="flex flex-nowrap items-center gap-2 m-0 w-1/5" data-testid="column-shared-by">
                 <>
                     <Avatar
                         color="weak"
-                        className="mr-2 min-w-custom max-w-custom max-h-custom"
+                        className="min-w-custom max-w-custom max-h-custom"
                         style={{
                             '--min-w-custom': '1.75rem',
                             '--max-w-custom': '1.75rem',
@@ -213,20 +212,10 @@ export const SharedByCell = ({ item }: { item: SharedWithMeItem }) => {
     const contactEmail = contactEmails?.find((contactEmail) => contactEmail.Email === email);
     const displayName = email && contactEmails && contactEmail ? contactEmail.Name : email;
     return (
-        <TableCell className="flex flex-nowrap items-center m-0 w-1/5" data-testid="column-shared-by">
+        <TableCell className="flex flex-nowrap items-center gap-2 m-0 w-1/5" data-testid="column-shared-by">
             {displayName && (
                 <>
-                    <Avatar
-                        color="weak"
-                        className="mr-2 min-w-custom max-w-custom max-h-custom"
-                        style={{
-                            '--min-w-custom': '1.75rem',
-                            '--max-w-custom': '1.75rem',
-                            '--max-h-custom': '1.75rem',
-                        }}
-                    >
-                        {getInitials(displayName)}
-                    </Avatar>
+                    <UserAvatar name={displayName} size="small" />
                     <span className="text-ellipsis">{displayName}</span>
                 </>
             )}

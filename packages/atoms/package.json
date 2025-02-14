@@ -26,6 +26,7 @@
         "@proton/testing": "workspace:^",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "tinycolor2": "^1.6.0",
         "ttag": "^1.8.7"
     },
     "devDependencies": {
@@ -49,6 +50,7 @@
         "@types/node": "^22.13.1",
         "@types/react": "^18.3.18",
         "@types/react-dom": "^18.3.5",
+        "@types/tinycolor2": "^1.4.6",
         "babel-loader": "^9.2.1",
         "chalk": "^4.1.2",
         "commander": "^12.1.0",
