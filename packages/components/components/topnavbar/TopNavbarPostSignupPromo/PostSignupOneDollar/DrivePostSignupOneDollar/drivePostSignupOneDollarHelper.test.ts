@@ -24,6 +24,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     hasUploadedFile: true,
                 })
             ).toBeTruthy();
@@ -44,6 +45,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     hasUploadedFile: false,
                 })
             ).toBeFalsy();
@@ -64,6 +66,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -84,6 +87,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: subDays(today, 30).getTime() / 1000,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 60).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     hasUploadedFile: true,
                 })
             ).toBeTruthy();
@@ -104,6 +108,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: subDays(today, 31).getTime() / 1000,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 60).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -126,6 +131,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: 0,
@@ -150,6 +156,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 14).getTime() / 1000,
@@ -174,6 +181,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 30).getTime() / 1000,
@@ -198,6 +206,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: subDays(today.getTime(), 14).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 31).getTime() / 1000,
@@ -224,6 +233,28 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
                     driveOneDollarPostSignupFlag: false,
+                    lastSubscriptionEnd: 0,
+                    hasUploadedFile: true,
+                })
+            ).toBeFalsy();
+        });
+
+        it('should not be eligible, previous subscription', () => {
+            const nonFreeUser = {
+                isFree: false,
+                isDelinquent: false,
+                CreateTime: today.getTime() / 1000,
+                ProductUsedSpace: { Drive: 0 },
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user: nonFreeUser,
+                    protonConfig,
+                    offerStartDateTimestamp: 0,
+                    minimalAccountAgeTimestamp: today.getTime(),
+                    driveOneDollarPostSignupFlag: false,
+                    lastSubscriptionEnd: 999,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -244,6 +275,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -264,6 +296,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -284,6 +317,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     offerStartDateTimestamp: 0,
                     minimalAccountAgeTimestamp: today.getTime(),
                     driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
