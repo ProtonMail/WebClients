@@ -25,6 +25,7 @@ import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
+import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -48,7 +49,30 @@ import SupportDropdown from './SupportDropdown';
 
 export type ReAuthState = {
     session: AuthSession;
-    reAuthType: 'offline' | 'offline-bypass' | 'default';
+    reAuthType: ProduceForkParameters['promptType'];
+};
+
+export const getReAuthState = (
+    forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'> | undefined,
+    session: AuthSession
+): ReAuthState => {
+    let reAuthType = forkParameters?.promptType ?? 'default';
+
+    // Normalize the reauth type to 'default' (auth with IdP - instead of auth with backup password) for SSO accounts
+    // when the offline key exists and 'sso' bypass is requested
+    if (
+        forkParameters?.promptBypass === 'sso' &&
+        session.offlineKey &&
+        getIsGlobalSSOAccount(session.User) &&
+        reAuthType !== 'default'
+    ) {
+        reAuthType = 'default';
+    }
+
+    return {
+        session,
+        reAuthType,
+    };
 };
 
 interface SrpFormProps {

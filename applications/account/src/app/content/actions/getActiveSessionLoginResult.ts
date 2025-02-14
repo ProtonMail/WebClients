@@ -9,7 +9,7 @@ import { type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
-import type { ReAuthState } from '../../public/ReAuthContainer';
+import { getReAuthState } from '../../public/ReAuthContainer';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { getLoginResult } from './getLoginResult';
@@ -82,14 +82,10 @@ export const getActiveSessionLoginResult = async ({
 
         if (autoSignIn && forkParameters.forkType === undefined) {
             if (getShouldReAuth(forkParameters, sessionsResult.session)) {
-                const reAuthState: ReAuthState = {
-                    session: sessionsResult.session,
-                    reAuthType: forkParameters.promptType,
-                };
                 return {
                     type: 'reauth',
-                    payload: reAuthState,
                     location: { pathname: paths.reauth },
+                    payload: getReAuthState(forkParameters, sessionsResult.session),
                 };
             }
 
