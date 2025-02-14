@@ -308,7 +308,9 @@ export class PaymentMethods {
     }
 
     private isCashAvailable(): boolean {
-        return this.statusExtended.VendorStates.Cash && !isSignupFlow(this.flow) && !this.isBF2024Offer();
+        return (
+            this.statusExtended.VendorStates.Cash && !isSignupFlow(this.flow) && !this.isBF2024Offer() && !this.coupon
+        );
     }
 
     private isSEPADirectDebitAvailable(): boolean {
