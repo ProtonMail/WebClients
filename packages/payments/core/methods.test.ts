@@ -892,6 +892,28 @@ describe('Cash', () => {
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
     });
+
+    it('should not display cash if coupon is present', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: 'coupon',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefined,
+            enableSepa: true,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
+    });
 });
 
 describe('Chargebee Bitcoin', () => {
