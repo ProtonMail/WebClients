@@ -140,12 +140,12 @@ const CalendarMemberRow = ({
                         color="norm"
                         loading={isLoadingDelete}
                         onClick={handleDelete}
-                        className="ml-auto hidden lg:inline-block"
+                        className="ml-auto calendar-member-delete-button-icon"
                     >
                         <Icon name="trash" alt={deleteLabel} />
                     </Button>
                 </Tooltip>
-                <div className="lg:hidden">
+                <div className="calendar-member-delete-button-full">
                     <Button
                         shape="outline"
                         color="norm"
