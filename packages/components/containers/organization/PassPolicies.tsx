@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
@@ -25,43 +24,52 @@ import GenericError from '../error/GenericError';
 import SubSettingsSection from '../layout/SubSettingsSection';
 import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm';
 
+import './PassPolicies.scss';
+
 type GetPoliciesProps = {
     showVaultCreation: boolean;
     showItemSharing: boolean;
 };
-const getPolicies = ({
-    showVaultCreation = false,
-    showItemSharing = false,
-}: GetPoliciesProps): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
+type PolicyItem = {
+    setting: keyof OrganizationSettings;
+    label: string;
+    description?: string;
+    /** If true, then if the UI shows the toggle as enabled, it means it's disabled BE side (BitField.DISABLED) */
+    isBooleanInverted?: boolean;
+};
+
+const getPolicies = ({ showVaultCreation = false, showItemSharing = false }: GetPoliciesProps): PolicyItem[] => [
     {
         setting: 'ShareMode',
-        label: c('Label').t`Disable sharing outside the organization`,
-        tooltip: c('Info')
-            .t`If this option is turned on, organization members will only be able to share vaults or items within the organization`,
+        label: c('Label').t`Allow sharing outside the organization`,
+        description: c('Info')
+            .t`If disabled, organization members will only be able to share vaults or items within the organization.`,
+        isBooleanInverted: true,
     },
     ...(showItemSharing
         ? [
               {
                   setting: 'ItemShareMode',
-                  label: c('Label').t`Enable individual item sharing`,
-                  tooltip: c('Info')
-                      .t`If this option is turned on, organization members will be able to share individual items in addition to vaults.`,
+                  label: c('Label').t`Allow individual item sharing`,
+                  description: c('Info')
+                      .t`If enabled, organization members will be able to share individual items in addition to vaults.`,
               } as const,
           ]
         : []),
     {
         setting: 'ExportMode',
-        label: c('Label').t`Disable data export for organization members`,
-        tooltip: c('Info')
-            .t`By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data`,
+        label: c('Label').t`Allow data export for all users`,
+        description: c('Info').t`If disabled, only administrators will be able to export data.`,
+        isBooleanInverted: true,
     },
     ...(showVaultCreation
         ? [
               {
                   setting: 'VaultCreateMode',
-                  label: c('Label').t`Restrict vault creation to administrators only`,
-                  tooltip: c('Info')
-                      .t`If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items`,
+                  label: c('Label').t`Allow all users to create vaults`,
+                  description: c('Info')
+                      .t`If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.`,
+                  isBooleanInverted: true,
               } as const,
           ]
         : []),
@@ -93,9 +101,23 @@ const PassPolicies = () => {
         withLoading(fetchOrganizationSettings()).catch(handleError);
     }, []);
 
+    const isPolicyBooleanInverted = (setting: keyof OrganizationSettings) =>
+        policies.find((policy) => policy.setting === setting)?.isBooleanInverted;
+
     const handleToggle = async (checked: boolean, setting: keyof OrganizationSettings) => {
         touched.current = setting;
-        const value = checked ? BitField.ACTIVE : BitField.DISABLED;
+        const isBooleanInverted = isPolicyBooleanInverted(setting);
+
+        const value = (() => {
+            switch (checked) {
+                case true:
+                    return isBooleanInverted ? BitField.DISABLED : BitField.ACTIVE;
+                case false:
+                default:
+                    return isBooleanInverted ? BitField.ACTIVE : BitField.DISABLED;
+            }
+        })();
+
         withLoading(
             organization.settings.set(setting, value).then((orgSettings) => {
                 setOrganizationSettings(orgSettings);
@@ -132,17 +154,23 @@ const PassPolicies = () => {
                 {organizationSettings && (
                     <>
                         <div className="mb-10">
-                            {policies.map(({ setting, label, tooltip }) => (
+                            {policies.map(({ setting, label, description }) => (
                                 <SettingsLayout key={setting} className="pb-4">
-                                    <SettingsLayoutLeft>
+                                    <SettingsLayoutLeft className="pass-policy-label">
                                         <label htmlFor={`${setting}-toggle`}>
-                                            <span className="text-semibold mr-1">{label}</span>
-                                            {tooltip && <Info title={tooltip} />}
+                                            <div className="text-semibold">{label}</div>
+                                            {description && (
+                                                <div className="color-weak text-sm mr-2">{description}</div>
+                                            )}
                                         </label>
                                     </SettingsLayoutLeft>
                                     <SettingsLayoutRight isToggleContainer>
                                         <Toggle
-                                            checked={organizationSettings.Settings?.[setting] === BitField.ACTIVE}
+                                            checked={
+                                                isPolicyBooleanInverted(setting)
+                                                    ? organizationSettings.Settings?.[setting] === BitField.DISABLED
+                                                    : organizationSettings.Settings?.[setting] === BitField.ACTIVE
+                                            }
                                             id={`${setting}-toggle`}
                                             onChange={({ target }) => handleToggle(target.checked, setting)}
                                             disabled={loading || !organizationSettings.CanUpdate}
@@ -152,17 +180,13 @@ const PassPolicies = () => {
                                 </SettingsLayout>
                             ))}
                             <SettingsLayout className="pb-4">
-                                <SettingsLayoutLeft>
-                                    <label
-                                        className="text-semibold"
-                                        htmlFor="pass-lock-select"
-                                        id="label-pass-lock-select"
-                                    >
-                                        <span className="mr-1"> {c('Label').t`Lock app after inactivity`}</span>
-                                        <Info
-                                            title={c('Info')
-                                                .t`After being locked, organization members will need to unlock ${PASS_APP_NAME} with their password or PIN etc.`}
-                                        />
+                                <SettingsLayoutLeft className="pass-policy-label">
+                                    <label htmlFor="pass-lock-select" id="label-pass-lock-select">
+                                        <div className="text-semibold">{c('Label').t`Lock app after inactivity`}</div>
+                                        <div className="color-weak text-sm mr-2">
+                                            {c('Info')
+                                                .t`Organization members will need to unlock ${PASS_APP_NAME} with their password or PIN etc.`}
+                                        </div>
                                     </label>
                                 </SettingsLayoutLeft>
                                 <SettingsLayoutRight>
