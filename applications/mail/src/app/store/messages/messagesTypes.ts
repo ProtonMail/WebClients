@@ -20,7 +20,7 @@ export interface OutsideKey {
 export interface PublicPrivateKey {
     type: 'publicPrivate';
     decryptionKeys: PrivateKeyReference[];
-    encryptionKeys: [PrimaryAddressKeyForEncryption];
+    encryptionKey: PrimaryAddressKeyForEncryption;
     signingKeys: PrimaryAddressKeysForSigning;
 }
 

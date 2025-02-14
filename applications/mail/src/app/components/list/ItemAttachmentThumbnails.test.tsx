@@ -285,7 +285,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
                 const file = new File([new Blob([fileContent])], attachmentName, { type: attachmentType });
 
-                const attachmentPackets = await encryptAttachment(fileContent, file, false, keys.publicKeys, []);
+                const attachmentPackets = await encryptAttachment(fileContent, file, false, keys.publicKeys[0], []);
                 // Trigger a fail during decrypt (when necessary) to test some scenarios (e.g. decryption failed)
                 const attachmentKeyPackets = decryptShouldFail ? new Uint8Array() : attachmentPackets.keys;
                 const concatenatedPackets = mergeUint8Arrays(
