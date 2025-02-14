@@ -6,7 +6,7 @@ export const parseOpenAction = (searchParams: URLSearchParams): DocumentAction |
   const action = searchParams.get('action') as RedirectAction | undefined
   const parentLinkId = searchParams.get('parentLinkId')
   const volumeId = searchParams.get('volumeId')
-  const linkId = searchParams.get('linkId')
+  const linkId = searchParams.get('linkId') || undefined
   const token = searchParams.get('token')
 
   if (mode === 'copy-public') {
@@ -15,7 +15,8 @@ export const parseOpenAction = (searchParams: URLSearchParams): DocumentAction |
     }
   }
 
-  const hasValidPublicLink = token && linkId
+  const hasValidPublicLink = token
+  const hasLinkId = !!linkId
   const hasRequiredParametersToLoadOrCreateADocument = volumeId && mode && (linkId || parentLinkId)
   const hasValidRoute = hasValidPublicLink || hasRequiredParametersToLoadOrCreateADocument
 
@@ -23,7 +24,7 @@ export const parseOpenAction = (searchParams: URLSearchParams): DocumentAction |
     return null
   }
 
-  if (mode === 'open-url-reauth' && hasValidPublicLink) {
+  if (mode === 'open-url-reauth' && hasValidPublicLink && hasLinkId) {
     return {
       mode,
       token,
@@ -32,7 +33,7 @@ export const parseOpenAction = (searchParams: URLSearchParams): DocumentAction |
     }
   }
 
-  if (mode === 'open-url-download' && hasValidPublicLink) {
+  if (mode === 'open-url-download' && hasValidPublicLink && hasLinkId) {
     return {
       mode,
       token,
