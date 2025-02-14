@@ -94,6 +94,7 @@ export interface SESSION_MESSAGE {
         offlineKey: OfflineKey | undefined;
         persistent: boolean;
         trusted: boolean;
+        persistedAt: number;
         tag?: Environment;
     };
 }

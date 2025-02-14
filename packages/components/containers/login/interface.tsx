@@ -153,6 +153,7 @@ export interface AuthSession {
     trusted: boolean;
     clientKey: string;
     offlineKey: OfflineKey | undefined;
+    persistedAt: number;
 }
 
 export type AuthActionResponse =
