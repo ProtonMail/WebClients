@@ -16,6 +16,7 @@ interface Props {
     minimalAccountAgeTimestamp: number;
     mailOneDollarPostSignupFlag: boolean;
     nbrEmailsInAllMail: number;
+    lastSubscriptionEnd: number;
     driveOfferStartDateTimestamp?: PostSubscriptionOneDollarOfferState;
 }
 
@@ -28,6 +29,7 @@ export const getIsUserEligibleForOneDollar = ({
     minimalAccountAgeTimestamp,
     mailOneDollarPostSignupFlag,
     nbrEmailsInAllMail,
+    lastSubscriptionEnd,
     driveOfferStartDateTimestamp,
 }: Props) => {
     // Global offer flag
@@ -63,7 +65,8 @@ export const getIsUserEligibleForOneDollar = ({
 
     // We consider the user has the required mail if the offer already started
     const hasRequiredEmails = offerStartDateTimeStamp ? true : nbrEmailsInAllMail >= POST_SIGNUP_REQUIRED_EMAILS;
-    const basicEligibility = user.isFree && !user.isDelinquent && hasValidApp && hasRequiredEmails;
+    const basicEligibility =
+        user.isFree && !user.isDelinquent && hasValidApp && hasRequiredEmails && !lastSubscriptionEnd;
 
     return isAccountCreatedAfterThreshold && basicEligibility && isOfferStillValid && isAccountOldEnough;
 };
