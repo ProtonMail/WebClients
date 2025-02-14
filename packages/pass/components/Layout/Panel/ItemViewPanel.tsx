@@ -12,6 +12,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
@@ -24,7 +25,7 @@ import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.p
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
-import { type ItemType, ShareRole, SpotlightMessage } from '@proton/pass/types';
+import { BitField, type ItemType, ShareRole, SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -77,6 +78,9 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const plan = useSelector(selectPassPlan);
     const monitored = isMonitored(revision);
 
+    const org = useOrganization();
+    const orgItemSharingDisabled = org?.settings.ItemShareMode === BitField.DISABLED;
+
     const { shareRoleId, owner, targetMembers } = share;
     const itemShared = isItemShared(revision);
     /** Item is considered shared if either the revision
@@ -101,7 +105,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const canManage = isShareManageable(share);
     const canShare = canManage && type !== 'alias';
     const canLinkShare = isVault && canShare;
-    const canItemShare = itemSharingEnabled && canShare;
+    const canItemShare = itemSharingEnabled && canShare && !orgItemSharingDisabled;
     const canManageAccess = itemSharingEnabled && shared && !readOnly;
     const canLeave = !isVault && !owner;
     const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
