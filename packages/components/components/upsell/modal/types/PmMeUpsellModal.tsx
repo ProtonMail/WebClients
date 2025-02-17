@@ -22,7 +22,7 @@ const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
     const [user] = useUser();
     const activatePmUser = `${user.Name}@pm.me`;
 
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef, cycle: user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY });
+    const upsellConfig = useMailUpsellConfig({ upsellRef, cycle: user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY });
 
     return (
         <UpsellModal
