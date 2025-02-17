@@ -12,22 +12,24 @@ export type GetAvailableCurrenciesParamsHook = Omit<
     'enableNewBatchCurrencies'
 >;
 
+export const getIsNewBatchCurrenciesEnabled = (getFlag: ReturnType<typeof useGetFlag>) => {
+    return NEW_BATCH_CURRENCIES_FEATURE_FLAG ? getFlag(NEW_BATCH_CURRENCIES_FEATURE_FLAG) : true;
+};
+
 export const useCurrencies = () => {
     const getFlag = useGetFlag();
-
-    const flag = () => (NEW_BATCH_CURRENCIES_FEATURE_FLAG ? getFlag(NEW_BATCH_CURRENCIES_FEATURE_FLAG) : true);
 
     return {
         getPreferredCurrency: (params: GetPreferredCurrencyParamsHook) =>
             getPreferredCurrency({
                 ...params,
-                enableNewBatchCurrencies: flag(),
+                enableNewBatchCurrencies: getIsNewBatchCurrenciesEnabled(getFlag),
             }),
 
         getAvailableCurrencies: (params: GetAvailableCurrenciesParamsHook) =>
             getAvailableCurrencies({
                 ...params,
-                enableNewBatchCurrencies: flag(),
+                enableNewBatchCurrencies: getIsNewBatchCurrenciesEnabled(getFlag),
             }),
     };
 };
