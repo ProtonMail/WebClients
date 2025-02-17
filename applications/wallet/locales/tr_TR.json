@@ -3345,7 +3345,7 @@
         "Verilerin ele geçirilmesini izleme"
       ],
       "Dedicated servers optimized for streaming": [
-        "Yayın akışı için optimize edilmiş özel sunucular"
+        "Yayın akışı izlemek için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -3486,8 +3486,8 @@
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Tek oturum açma bütünleştirmesi (yakında)"
+      "SSO integration": [
+        "Tek oturum açma bütünleştirmesi"
       ],
       "Strict no-logs policy": [
         "Katı kayıt tutmama ilkesi"
@@ -3558,8 +3558,8 @@
         "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
       "Use on up to ${ n } device at once": [
-        "Aynı anda en fazla ${ n } cihazda kullanın",
-        "Aynı anda en fazla ${ n } cihazda kullanın"
+        "Aynı anda ${ n } aygıta kadar kullanın",
+        "Aynı anda ${ n } aygıta kadar kullanın"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -4781,6 +4781,9 @@
       "Go to settings and recovery keys": [
         "Ayarlarda kurtarma anahtarları bölümüne gidin"
       ],
+      "Help center": [
+        "Yardım merkezi"
+      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
@@ -5606,6 +5609,9 @@
       "Add a passphrase (optional)": [
         "Bir parola ifadesi ekleyin (isteğe bağlı)"
       ],
+      "Bitcoin via Email": [
+        "E-posta ile Bitcoin"
+      ],
       "Choose a name and default currency.": [
         "Bir ad ve varsayılan para birimi seçin."
       ],
@@ -5668,6 +5674,9 @@
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Lütfen cüzdanı silmeden önce Bitcoin birikiminizi başka bir cüzdana aktarın. Bu cüzdanı silmek, verilerini ${ BRAND_NAME } sunucularından kaldırır. Bu cüzdanı daha sonra tohumlama ifadesi ile kurtarabilirsiniz."
+      ],
+      "Primary account": [
+        "Birincil hesap"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
         "Tohumlama ifadesi (boşluk ile ayrılmış 12 ile 24 sözcük arasında)"
@@ -5757,6 +5766,11 @@
       ],
       "Wallets": [
         "Cüzdanlar"
+      ]
+    },
+    "Wallet sidebar": {
+      "Add account": [
+        "Hesap ekle"
       ]
     },
     "Wallet terms and conditions": {
@@ -5920,6 +5934,20 @@
         "Eşitleniyor. Lütfen bekleyin"
       ]
     },
+    "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "İlerleyerek ${ termsAndConditionsLink } metnini kabul etmiş olursunuz"
+      ],
+      "Upgrade to support financial freedom": [
+        "Finansal özgürlüğü desteklemek için tarifenizi yükseltin"
+      ],
+      "Upgrade your privacy": [
+        "Gizlilik düzeyinizi yükseltin"
+      ],
+      "You have reached your limit": [
+        "Sınırınıza ulaştınız"
+      ]
+    },
     "Wallet upgrade": {
       "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
         "Bir e-posta yalnızca bir cüzdan hesabı ile ilişkilendirilebilir. Bu cüzdan hesabını bir e-posta ile ilişkilendirmek için, lütfen e-posta adresini başka bir cüzdan hesabından kaldırın veya daha fazla e-posta adresi elde etmek için tarifenizi yükseltin."
@@ -5941,20 +5969,6 @@
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Geçerli tarifeniz tarafından desteklenen en fazla cüzdan sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
-      ]
-    },
-    "Wallet Upgrade": {
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "İlerleyerek ${ termsAndConditionsLink } metnini kabul etmiş olursunuz"
-      ],
-      "Upgrade to support financial freedom": [
-        "Finansal özgürlüğü desteklemek için tarifenizi yükseltin"
-      ],
-      "Upgrade your privacy": [
-        "Gizlilik düzeyinizi yükseltin"
-      ],
-      "You have reached your limit": [
-        "Sınırınıza ulaştınız"
       ]
     },
     "Wallet Welcome": {
