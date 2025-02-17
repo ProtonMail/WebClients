@@ -13,7 +13,7 @@ const upsellRef = getUpsellRef({
 });
 
 const SnoozeDurationSelection = (props: ModalStateProps) => {
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
+    const upsellConfig = useMailUpsellConfig({ upsellRef });
 
     return (
         <UpsellModal

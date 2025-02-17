@@ -20,7 +20,7 @@ const AutoDeleteUpsellModal = ({ modalProps, upsellComponent }: Props) => {
         feature: MAIL_UPSELL_PATHS.AUTO_DELETE,
     });
 
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
+    const upsellConfig = useMailUpsellConfig({ upsellRef });
 
     return (
         <UpsellModal

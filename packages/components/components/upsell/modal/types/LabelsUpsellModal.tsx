@@ -33,7 +33,7 @@ const LabelsUpsellModal = ({
         isSettings,
     });
 
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
+    const upsellConfig = useMailUpsellConfig({ upsellRef });
 
     return (
         <UpsellModal
