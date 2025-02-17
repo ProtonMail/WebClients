@@ -50,6 +50,11 @@ export interface PublicDriveCompat {
     isPasswordNeeded: boolean;
 
     /**
+     * Whether waiting to receive custom password from the drive window that opened the document.
+     */
+    isWaitingForPasswordFromDriveWindow: boolean;
+
+    /**
      * Submits the custom password.
      */
     submitPassword: (customPassword: string) => Promise<void>;
@@ -117,6 +122,7 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         token,
         linkIdParam,
         urlPassword,
+        isWaitingForPasswordFromDriveWindow,
         isPasswordNeeded,
         submitPassword,
     } = usePublicDocsToken();
@@ -167,6 +173,7 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
     return {
         isDocsEnabled,
         customPassword,
+        isWaitingForPasswordFromDriveWindow,
         isPasswordNeeded,
         submitPassword,
         token,
