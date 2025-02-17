@@ -21,7 +21,7 @@ const upsellRef = getUpsellRef({
 
 const ZoomUpsellModal = ({ modalProps }: Props) => {
     const isIframe = getIsIframe();
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
+    const upsellConfig = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
 
     return (
         <UpsellModal

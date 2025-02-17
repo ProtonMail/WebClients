@@ -173,7 +173,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
 
         const composer = useMailSelector((store) => selectComposer(store, composerID));
 
-        const { upsellConfig } = useMailUpsellConfig({ upsellRef });
+        const upsellConfig = useMailUpsellConfig({ upsellRef });
 
         return (
             <>

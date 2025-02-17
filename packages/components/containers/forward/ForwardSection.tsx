@@ -65,7 +65,7 @@ const ForwardSection = () => {
         }
     }, [hash, isIncomingTableAvailable, isOutgoingTableAvailable]);
 
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
+    const upsellConfig = useMailUpsellConfig({ upsellRef });
 
     return (
         <SettingsSectionWide className="overflow-hidden">
