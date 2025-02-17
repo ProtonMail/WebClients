@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,9 +19,10 @@ import TableRow from '@proton/components/components/table/TableRow';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { PolicyState, PolicyType } from '@proton/components/containers/vpn/sharedServers/constants';
+import { sortLocationsByLocalizedCountryName } from '@proton/components/containers/vpn/sharedServers/sortLocationsByLocalizedCountryName';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { getCountryOptions } from '@proton/payments';
 import { MINUTE } from '@proton/shared/lib/constants';
 
 import ApplyPolicyButton from './ApplyPolicyButton';
@@ -55,55 +56,7 @@ const SharedServersModal = ({ policy, ...rest }: Props) => {
     const [selectedCities, setSelectedCities] = useState<Record<string, string[]>>({});
     // State to control which countries are expanded
     const [expandedCountries, setExpandedCountries] = useState<Record<string, boolean>>({});
-
-    const { groupedLocations } = useMemo(() => {
-        const uniqueCountries = new Set();
-
-        const filteredLocations = locations.filter((location) => {
-            if (uniqueCountries.has(location.Country)) {
-                return false;
-            }
-
-            uniqueCountries.add(location.Country);
-            return true;
-        });
-
-        const locationsWithLocalizedNames = filteredLocations.map((location) => {
-            const localizedCountryName =
-                getLocalizedCountryByAbbr(location.Country, countryOptions) || location.Country;
-            return {
-                ...location,
-                localizedCountryName,
-            };
-        });
-
-        const sortedLocations = [...locationsWithLocalizedNames].sort((a, b) => {
-            return a.localizedCountryName.localeCompare(b.localizedCountryName);
-        });
-
-        // Group locations by country so that each entry contains its list of cities.
-        const groups: Record<string, { country: string; cities: string[] }> = {};
-        sortedLocations.forEach((loc) => {
-            if (!groups[loc.Country]) {
-                groups[loc.Country] = {
-                    country: loc.localizedCountryName,
-                    cities: [],
-                };
-            }
-            groups[loc.Country].cities.push(loc.City);
-        });
-
-        // Convert to an array and sort cities for each country
-        const groupedLocations = Object.entries(groups)
-            .map(([country, { country: localizedCountryName, cities }]) => ({
-                country,
-                localizedCountryName,
-                cities: cities.sort((a, b) => a.localeCompare(b)),
-            }))
-            .sort((a, b) => a.localizedCountryName.localeCompare(b.localizedCountryName));
-
-        return { sortedLocations, groupedLocations };
-    }, [locations, countryOptions]);
+    const { groupedLocations } = sortLocationsByLocalizedCountryName(locations, countryOptions);
 
     const handleBack = () => {
         if (step > STEP.NAME) {

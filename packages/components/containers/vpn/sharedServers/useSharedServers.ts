@@ -49,7 +49,7 @@ export const useSharedServers = (maxAge: number) => {
     };
 
     // Use the generic fetch-data hook
-    const { loading, result, refresh } = useFetchData<ApiResponse>({
+    const { loading, result } = useFetchData<ApiResponse>({
         fetcher,
         maxAge,
     });
@@ -61,7 +61,6 @@ export const useSharedServers = (maxAge: number) => {
         locations: result?.Locations || [],
         users: result?.Users || [],
         groups: result?.Groups || [],
-        refresh,
     };
 };
 

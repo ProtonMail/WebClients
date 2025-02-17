@@ -3,6 +3,7 @@ import React from 'react';
 import Radio from '@proton/components/components/input/Radio';
 import { illustrations, isValidLabel } from '@proton/components/containers/vpn/sharedServers/illustrations';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 type SharedServersTypeButtonProps = {
     onClick: () => void;
@@ -36,7 +37,7 @@ const SharedServersTypeButton: React.FC<SharedServersTypeButtonProps> = ({
             {/* Top Section: Radio and Text */}
             <div className="flex flex-row flex-nowrap items-start gap-2 px-4 py-4 w-full">
                 <span aria-hidden="true" className="shrink-0">
-                    <Radio id={label} checked={isSelected} name={label} tabIndex={-1} onChange={() => {}} />
+                    <Radio id={label} checked={isSelected} onChange={noop} name={label} tabIndex={-1} />
                 </span>
                 <div className="flex-1 pt-0.5">
                     <p className="mt-0 mb-1">
