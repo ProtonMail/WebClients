@@ -1,0 +1,8 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-policy-label {
+	@include media('>small') {
+		inline-size: em(400);
+		max-inline-size: em(400);
+	}
+}
