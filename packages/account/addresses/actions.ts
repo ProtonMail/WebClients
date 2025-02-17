@@ -82,7 +82,7 @@ export const createAddress = ({
         if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === emailAddress.toLowerCase()) {
             throw new Error(
                 c('Error')
-                    .t`${user.Name} is your username. To create ${emailAddress}, please go to Settings > Messages and composing > Short domain (pm.me)`
+                    .t`${user.Name} is your username. To create ${emailAddress}, please go to Settings > Identity and addresses > Short domain (pm.me)`
             );
         }
 
