@@ -121,6 +121,7 @@ const CountrySelect = ({
                                     src={getFlagSvg(getCleanCountryCode(option.countryCode))}
                                     width="30"
                                     height="20"
+                                    loading="lazy"
                                 />
                                 <span>{option.countryName}</span>
                             </span>
