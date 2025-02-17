@@ -3,7 +3,7 @@ export const queryLocationFilter = () => ({
     method: 'get',
 });
 
-interface SharedServerLocation {
+export interface SharedServerLocation {
     Country: string;
     City: string;
 }
