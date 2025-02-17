@@ -11,7 +11,7 @@ import downloadProvider from './useDownloadProvider';
 interface DownloadProviderState {
     downloads: Download[];
     hasDownloads: boolean;
-    download: (links: LinkDownload[], options?: { virusScan?: boolean }) => Promise<void>;
+    download: (links: LinkDownload[], options?: { virusScan?: boolean; zipName?: string }) => Promise<void>;
     pauseDownloads: (idOrFilter: UpdateFilter) => void;
     resumeDownloads: (idOrFilter: UpdateFilter) => void;
     cancelDownloads: (idOrFilter: UpdateFilter) => void;

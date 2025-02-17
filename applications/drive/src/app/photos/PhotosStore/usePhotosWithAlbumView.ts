@@ -369,7 +369,15 @@ export const usePhotosWithAlbumsView = () => {
                 }) satisfies LinkDownload
         );
 
-        await download(links);
+        // if on album page and all links are selected, download the zip as the album name
+        const album =
+            albumLinkId && links.length === albumPhotos.length
+                ? albums.find((album) => album.linkId === albumLinkId)
+                : undefined;
+
+        await download(links, {
+            zipName: album?.name,
+        });
     };
 
     const addAlbumPhoto = useCallback(
