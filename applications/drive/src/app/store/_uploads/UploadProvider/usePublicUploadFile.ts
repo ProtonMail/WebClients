@@ -17,7 +17,6 @@ import type {
     RequestUploadResult,
 } from '@proton/shared/lib/interfaces/drive/file';
 import { encryptName } from '@proton/shared/lib/keys/driveKeys';
-import useFlag from '@proton/unleash/useFlag';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
@@ -73,7 +72,6 @@ export default function usePublicUploadFile() {
     const { deleteLinks } = usePublicLinksActions();
     const { findHash, findAvailableName } = usePublicUploadHelper();
     const publicLinksListing = usePublicLinksListing();
-    const isWebPThumbnailEnabled = useFlag('DriveThumbnailWebP');
 
     const { getShareCreatorKeys } = useShare();
 
@@ -626,8 +624,7 @@ export default function usePublicUploadFile() {
                     integrityMetrics.nodeBlockVerificationError('shared_public', file.size, options);
                 },
             },
-            (message) => log(`worker: ${message}`),
-            isWebPThumbnailEnabled
+            (message) => log(`worker: ${message}`)
         );
     };
 
