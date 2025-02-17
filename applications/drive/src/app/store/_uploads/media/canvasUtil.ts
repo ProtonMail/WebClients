@@ -1,12 +1,11 @@
 import { HD_THUMBNAIL_MAX_SIZE, THUMBNAIL_MAX_SIZE, THUMBNAIL_QUALITIES } from '@proton/shared/lib/drive/constants';
 
-import { sendTelemetryFeatureSize } from '../../../utils/telemetry';
 import { ThumbnailType } from './interface';
 
 export async function canvasToThumbnail(
     canvas: HTMLCanvasElement,
     thumbnailType: ThumbnailType = ThumbnailType.PREVIEW,
-    mimeType: 'image/jpeg' | 'image/webp' = 'image/jpeg'
+    mimeType: 'image/webp' = 'image/webp'
 ): Promise<ArrayBuffer> {
     // We check clear text thumbnail size but the limit on API is for encrypted
     // text. To do the check on proper place would be too difficult for little
@@ -17,9 +16,6 @@ export async function canvasToThumbnail(
     for (const quality of THUMBNAIL_QUALITIES) {
         const data = await canvasToArrayBuffer(canvas, mimeType, quality);
         if (data.byteLength < maxSize) {
-            try {
-                sendTelemetryFeatureSize(data.byteLength, mimeType);
-            } catch {} // ignore
             return data;
         }
     }
