@@ -16,7 +16,6 @@ import {
     createSecurityRule,
     createTrialRule,
     createUserRenewalRule,
-    createValentine2025Rule,
     createWelcomeRule,
 } from '@proton/pass/lib/spotlight/rules';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
@@ -62,7 +61,6 @@ export const spotlight = createSpotlightService({
         createAliasDiscoveryMailboxRule(),
         createAliasDiscoveryDomainRule(),
         createAliasDiscoveryContactRule(),
-        createValentine2025Rule(),
     ],
 });
 

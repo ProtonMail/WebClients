@@ -205,9 +205,3 @@ export const createAliasDiscoveryContactRule = () =>
         message: SpotlightMessage.ALIAS_DISCOVERY_CONTACT,
         when: (previous) => !previous,
     });
-
-export const createValentine2025Rule = () =>
-    createSpotlightRule({
-        message: SpotlightMessage.VALENTINE_2025_PROMO,
-        when: (previous) => !previous,
-    });
