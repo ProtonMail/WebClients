@@ -151,7 +151,6 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
                             .t`The selected currency is not supported in your country or the requested amount is too low`,
                 });
                 setError(c('Bitcoin buy').t`No quote available for the requested amount`);
-                throw error;
             }
         }
     };
