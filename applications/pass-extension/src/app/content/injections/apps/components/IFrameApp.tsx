@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useCallback, useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
 
 import type { IFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppController';
 import { createIFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppController';
@@ -79,7 +80,10 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                         i18n.setLocale(message.payload.settings.locale).catch(noop);
                         return;
                     case IFramePortMessageType.IFRAME_HIDDEN:
-                        return setState({ visible: false });
+                        /** Flush state update to force auto-sizer to pick up
+                         * the visiblity change. Fixes firefox glitch where
+                         * visibility changes are batched. */
+                        return flushSync(() => setState({ visible: false }));
                     case IFramePortMessageType.IFRAME_OPEN:
                         return setState({ visible: true });
                     case IFramePortMessageType.IFRAME_THEME:
