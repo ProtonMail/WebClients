@@ -34,8 +34,7 @@ export function initUploadFileWorker(
         onError,
         notifyVerificationError,
     }: UploadCallbacks,
-    log: LogCallback,
-    isWebPThumbnailEnabled: boolean = false
+    log: LogCallback
 ): UploadFileControls {
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
@@ -48,7 +47,7 @@ export function initUploadFileWorker(
     const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const mediaInfoPromise = getMediaInfo(mimeTypePromise, file, isForPhotos, isWebPThumbnailEnabled);
+        const mediaInfoPromise = getMediaInfo(mimeTypePromise, file, isForPhotos);
 
         return new Promise<void>((resolve, reject) => {
             const worker = new Worker(
