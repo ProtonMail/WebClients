@@ -26,28 +26,10 @@ import {
 } from './verifyProofs';
 
 /**
- * Check that two SKLs are identical
- */
-export const checkSKLEquality = (skl1: FetchedSignedKeyList, skl2: FetchedSignedKeyList) =>
-    skl1.Data === skl2.Data && skl1.Signature === skl2.Signature;
-
-/**
- * Parse a key list into a list of key info
- */
-export const parseKeyList = async (keyList: KeyWithFlags[]): Promise<SignedKeyListItem[]> =>
-    Promise.all(
-        keyList.map(async ({ key, flags, primary }, index) => ({
-            Fingerprint: key.getFingerprint(),
-            SHA256Fingerprints: key.getSHA256Fingerprints(),
-            Primary: (primary ?? index === 0) ? 1 : 0,
-            Flags: flags,
-        }))
-    );
-
-/**
  * Check whether the metadata of a key matches what is stored in the Signed Key List
+ * @throws if any mismatch is detected
  */
-const compareKeyInfo = (email: string, keyInfo: SignedKeyListItem, sklKeyInfo: SignedKeyListItem) => {
+const compareKeyInfo = (email: string, keyInfo: SignedKeyListItem, sklKeyInfo: SignedKeyListItem): void => {
     // Check fingerprints
     if (keyInfo.Fingerprint !== sklKeyInfo.Fingerprint) {
         return throwKTError('Fingerprints differ', { email });
@@ -74,34 +56,6 @@ const compareKeyInfo = (email: string, keyInfo: SignedKeyListItem, sklKeyInfo: S
     }
 };
 
-/**
- * Check that a list of keys is correctly represented by a Signed Key List
- */
-export const verifyKeyList = async (
-    email: string,
-    keyListInfo: SignedKeyListItem[],
-    signedKeyListInfo: SignedKeyListItem[]
-) => {
-    // Check arrays validity
-    if (keyListInfo.length === 0) {
-        return throwKTError('No keys detected', { email });
-    }
-    if (keyListInfo.length !== signedKeyListInfo.length) {
-        return throwKTError('Key list and signed key list have different lengths', { email });
-    }
-
-    // Sorting both lists just to make sure key infos appear in the same order
-    keyListInfo.sort((key1, key2) => {
-        return key1.Fingerprint.localeCompare(key2.Fingerprint);
-    });
-    signedKeyListInfo.sort((key1, key2) => {
-        return key1.Fingerprint.localeCompare(key2.Fingerprint);
-    });
-
-    // Check keys
-    keyListInfo.forEach((key, i) => compareKeyInfo(email, key, signedKeyListInfo[i]));
-};
-
 interface KeyWithFlags {
     key: KeyReference;
     flags: number;
@@ -110,34 +64,91 @@ interface KeyWithFlags {
 
 /**
  * Check that the given keys mirror what's inside the given SKL Data.
+ * @throws if any mismatch is detected
  */
-export const checkKeysInSKL = async (email: string, apiKeys: KeyWithFlags[], sklData: string) => {
-    const parsedSKL = new ParsedSignedKeyList(sklData).getParsedSignedKeyList();
-    if (!parsedSKL) {
+export const checkKeysInSKL = (email: string, apiKeys: KeyWithFlags[], sklData: string): void => {
+    const signedKeyListInfo = new ParsedSignedKeyList(sklData).getParsedSignedKeyList();
+    if (!signedKeyListInfo) {
         return throwKTError('SignedKeyList data parsing failed', { sklData });
     }
 
-    const keyListInfo = await parseKeyList(apiKeys);
-    return verifyKeyList(email, keyListInfo, parsedSKL);
+    const untrustedKeyListInfo = apiKeys.map(({ key, flags, primary }) => ({
+        Fingerprint: key.getFingerprint(),
+        SHA256Fingerprints: key.getSHA256Fingerprints(),
+        Primary: primary ?? 0,
+        Flags: flags,
+    }));
+
+    // Check arrays validity
+    if (untrustedKeyListInfo.length === 0) {
+        return throwKTError('No keys detected', { email });
+    }
+    if (untrustedKeyListInfo.length !== signedKeyListInfo.length) {
+        return throwKTError('Key list and signed key list have different lengths', { email });
+    }
+
+    // Sorting both lists just to make sure key infos appear in the same order
+    untrustedKeyListInfo.sort((key1, key2) => {
+        return key1.Fingerprint.localeCompare(key2.Fingerprint);
+    });
+    signedKeyListInfo.sort((key1, key2) => {
+        return key1.Fingerprint.localeCompare(key2.Fingerprint);
+    });
+
+    // Check keys
+    untrustedKeyListInfo.forEach((key, i) => compareKeyInfo(email, key, signedKeyListInfo[i]));
 };
 
-export const verifySKLSignature = async (
-    verificationKeys: PublicKeyReference[],
-    signedKeyListData: string,
-    signedKeyListSignature: string,
-    verificationTime?: Date
-): Promise<Date | null> => {
-    const { verified, signatureTimestamp } = await CryptoProxy.verifyMessage({
-        armoredSignature: signedKeyListSignature,
-        verificationKeys,
-        textData: signedKeyListData,
-        signatureContext: KT_SKL_VERIFICATION_CONTEXT,
-        date: verificationTime,
-    });
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+/**
+ * Verify SKL signature using the primary keys among the provided verification keys.
+ * The SKL must be signed by all the primary keys for verification to succeed.
+ * @returns verified signature timestamp, or null if verification failed.
+ */
+export const verifySKLSignature = async ({
+    verificationKeys,
+    signedKeyListData,
+    signedKeyListSignature,
+    verificationTime,
+}: {
+    verificationKeys: PublicKeyReference[];
+    signedKeyListData: string;
+    signedKeyListSignature: string;
+    verificationTime?: Date;
+}): Promise<Date | null> => {
+    const parsedSKL = new ParsedSignedKeyList(signedKeyListData).getParsedSignedKeyList();
+    if (!parsedSKL) {
         return null;
     }
-    return signatureTimestamp;
+
+    // We need to ensure the SKL is signed by each primary key, both for correctness and for PQC resistance
+    // if a v6 PQC primary key is present.
+    const primaryItems = parsedSKL.filter((item) => item.Primary === 1);
+    const primaryVerificationKeys = verificationKeys.filter(
+        (key) =>
+            !!primaryItems.find(
+                ({ SHA256Fingerprints }) => key.getSHA256Fingerprints().join() === SHA256Fingerprints.join()
+            )
+    );
+
+    if (primaryItems.length !== primaryVerificationKeys.length) {
+        return null;
+    }
+
+    const verificationResults = await Promise.all(
+        primaryVerificationKeys.map((verificationKey) =>
+            CryptoProxy.verifyMessage({
+                armoredSignature: signedKeyListSignature,
+                verificationKeys: verificationKey,
+                textData: signedKeyListData,
+                signatureContext: KT_SKL_VERIFICATION_CONTEXT,
+                date: verificationTime,
+            })
+        )
+    );
+    if (verificationResults.some(({ verified }) => verified !== VERIFICATION_STATUS.SIGNED_AND_VALID)) {
+        return null;
+    }
+    return verificationResults[0].signatureTimestamp; // any timestamp works as they are expected to have the same value
 };
 
 /**
@@ -177,14 +188,15 @@ const verifyPublicKeys = async ({
             return throwKTError('Signed key list with revision 0', { email });
         }
 
-        // The following checks can only be executed if the SKL is non-obsolescent
+        // The following checks can only be executed if the SKL is non-obsolescent.
+        // We use a promise to make it convenient to handle `checkKeysInSKL` throwing.
         const verifySKL = async () => {
             if (signedKeyList?.Data) {
                 // Verify key list matches the signed key list
-                await checkKeysInSKL(
+                checkKeysInSKL(
                     email,
                     apiKeys.map(({ publicKey, flags, primary }) => ({ key: publicKey, flags, primary })),
-                    signedKeyList.Data!
+                    signedKeyList.Data
                 );
             }
         };
