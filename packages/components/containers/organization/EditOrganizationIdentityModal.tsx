@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { changeOrganizationSignature } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { getIsEligibleOrganizationIdentityAddress } from '@proton/account/organizationKey/actions';
-import { Button } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -40,6 +40,8 @@ const EditOrganizationIdentityModal = ({ signatureAddress: initialSignatureAddre
     const errorHandler = useErrorHandler();
     const { createNotification } = useNotifications();
 
+    const hasEligibleAddresses = eligibleAddresses.length > 0;
+
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
         event.stopPropagation();
@@ -71,19 +73,14 @@ const EditOrganizationIdentityModal = ({ signatureAddress: initialSignatureAddre
                     </div>
                 )}
                 {(() => {
-                    if (!eligibleAddresses.length) {
+                    if (!hasEligibleAddresses) {
                         const primaryAddress = addresses?.[0];
                         if (!initialSignatureAddress && primaryAddress && !getIsAddressConfirmed(primaryAddress)) {
-                            const verify = (
-                                <SettingsLink path="/account-password" key="verify">
-                                    {c('orgidentity').t`Verify`}
-                                </SettingsLink>
-                            );
                             const email = <strong key="email">({primaryAddress.Email})</strong>;
                             return (
                                 <div className="text-break">
                                     {c('orgidentity')
-                                        .jt`${verify} your email address ${email} to set organization identity.`}
+                                        .jt`Verify your email address ${email} to set organization identity.`}
                                 </div>
                             );
                         }
@@ -109,10 +106,19 @@ const EditOrganizationIdentityModal = ({ signatureAddress: initialSignatureAddre
                     );
                 })()}
             </ModalContent>
-            <ModalFooter>
-                <Button onClick={rest.onClose} disabled={submitting}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" type="submit" loading={submitting}>{c('Action').t`Save`}</Button>
-            </ModalFooter>
+            {hasEligibleAddresses ? (
+                <ModalFooter>
+                    <Button onClick={rest.onClose} disabled={submitting}>{c('Action').t`Cancel`}</Button>
+                    <Button color="norm" type="submit" loading={submitting}>{c('Action').t`Save`}</Button>
+                </ModalFooter>
+            ) : (
+                <ModalFooter>
+                    <div>{/* Empty div to align right */}</div>
+                    <ButtonLike color="norm" as={SettingsLink} onClick={rest.onClose} path="/account-password">
+                        {c('Action').t`Verify`}
+                    </ButtonLike>
+                </ModalFooter>
+            )}
         </Modal>
     );
 };
