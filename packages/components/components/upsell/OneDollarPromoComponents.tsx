@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
 import Price from '@proton/components/components/price/Price';
 
 interface PriceLineProps {
@@ -15,16 +14,12 @@ export const PriceLine = ({ planPrice, currency }: PriceLineProps) => (
 );
 
 interface PriceCouponProps {
-    loading: boolean;
-    amountDue?: number;
+    amountDue: number;
     currency?: string;
 }
 
-export const PriceCoupon = ({ loading, amountDue, currency }: PriceCouponProps) =>
-    !loading && amountDue ? (
-        <Price currency={currency} key="monthlyAmount">
-            {amountDue}
-        </Price>
-    ) : (
-        <CircleLoader size="small" />
-    );
+export const PriceCoupon = ({ amountDue, currency }: PriceCouponProps) => (
+    <Price currency={currency} key="monthlyAmount">
+        {amountDue}
+    </Price>
+);
