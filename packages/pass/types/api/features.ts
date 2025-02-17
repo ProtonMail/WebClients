@@ -11,7 +11,6 @@ export enum PassFeature {
     PassWebOfflineMode = 'PassWebOfflineMode',
     PassAdvancedAliasManagementV1 = 'PassAdvancedAliasManagementV1',
     PassItemSharingV1 = 'PassItemSharingV1',
-    PassValentinePromo2025 = 'PassValentinePromo2025',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);

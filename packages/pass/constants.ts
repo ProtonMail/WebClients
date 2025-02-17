@@ -113,7 +113,6 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebOfflineMode]: false,
     [PassFeature.PassInAppMessages]: false,
-    [PassFeature.PassValentinePromo2025]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
@@ -122,11 +121,3 @@ export const RUNTIME_RELOAD_TIMEOUT = 2_000; /* ms */
 export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 
 export const PASS_DEFAULT_THEME = PassThemeOption.PassDark;
-
-export const PASS_PLUS_VALENTINES_DAY_MONTHLY_PRICE = 249;
-export const PASS_PLUS_VALENTINES_DAY_MONTHLY_PRICE_WITHOUT_COUPON = 499;
-
-export const PROTON_UNLIMITED_VALENTINES_DAY_MONTHLY_PRICE = 649;
-export const PROTON_UNLIMITED_VALENTINES_DAY_MONTHLY_PRICE_WITHOUT_COUPON = 1299;
-
-export const PASS_VALENTINES_DAY_END_DATE = new Date('2025-02-17T12:00:00+01:00').getTime();
