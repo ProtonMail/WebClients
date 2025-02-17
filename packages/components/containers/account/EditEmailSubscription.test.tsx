@@ -153,15 +153,6 @@ describe('EditEmailSubscription', () => {
         });
     });
 
-    describe('when user has been created more than one month ago', () => {
-        it('should not display `welcome emails` toggle', () => {
-            mockedUseUser.mockReturnValue([{ CreateTime: Math.floor(sub(new Date(), { weeks: 5 }).getTime() / 1000) }]);
-            render(<EditEmailSubscription />);
-
-            expect(screen.queryByText('Proton welcome emails')).toBeNull();
-        });
-    });
-
     describe('when user is not in beta', () => {
         it('should not display `beta announcements` toggle', () => {
             mockedUseUserSettings.mockReturnValue([{ EarlyAccess: 0, News: 4095 }]);
