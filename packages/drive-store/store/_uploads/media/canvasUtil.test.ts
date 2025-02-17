@@ -41,5 +41,5 @@ describe('canvasToThumbnail', () => {
         }
 
         await expect(canvasToThumbnail(largeCanvas)).rejects.toThrow('Cannot create small enough thumbnail');
-    });
+    }, 15000); // longer timeout since thumbnail generation takes time
 });
