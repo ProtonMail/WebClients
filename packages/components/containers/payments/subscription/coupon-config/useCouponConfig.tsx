@@ -9,9 +9,8 @@ import {
     type CycleTitleReturnType,
     isCouponConfigRequiredProps,
 } from './interface';
-import { valentinesCouponConfig } from './valentines';
 
-const couponConfig: CouponConfig[] = [valentinesCouponConfig];
+const couponConfig: CouponConfig[] = [];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
