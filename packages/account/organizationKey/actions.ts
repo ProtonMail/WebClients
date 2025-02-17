@@ -31,17 +31,21 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import { MEMBER_ORG_KEY_STATE } from '@proton/shared/lib/interfaces';
 import {
+    type OrganizationKeyTokenData,
+    type OrganizationKeyTokenDataSigner,
     acceptInvitation,
     generateOrganizationKeySignature,
     generateOrganizationKeyToken,
     generateOrganizationKeys,
     generatePasswordlessOrganizationKey,
     generatePrivateMemberInvitation,
-    generatePublicMemberInvitation,
+    generatePublicMemberActivation,
+    getDecryptedOrganizationKeyTokenData,
     getDecryptedUserKeys,
     getHasMigratedAddressKeys,
     getIsPasswordless,
     getOrganizationKeyToken,
+    getOrganizationKeyTokenDataSigner,
     getPrimaryKey,
     getReEncryptedPublicMemberTokensPayloadLegacy,
     getReEncryptedPublicMemberTokensPayloadV2,
@@ -50,7 +54,8 @@ import {
     reencryptAddressKeyTokenUsingOrgKey,
     splitKeys,
 } from '@proton/shared/lib/keys';
-import { decryptKeyPacket } from '@proton/shared/lib/keys/keypacket';
+import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '@proton/shared/lib/keys/organizationKeyDto';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { addressKeysThunk } from '../addressKeys';
@@ -98,7 +103,7 @@ export const getOrganizationTokenThunk = (): ThunkAction<
 };
 
 export interface PublicMemberKeyPayload {
-    type: 0;
+    type: 'public';
     member: Member;
     email: string;
     address: Address | undefined;
@@ -106,11 +111,18 @@ export interface PublicMemberKeyPayload {
 }
 
 export interface PrivateMemberKeyPayload {
-    type: 1;
+    type: 'private';
     member: Member;
     email: string;
     address: Address;
     publicKey: PublicKeyReference;
+}
+
+export interface PromoteGlobalSSOPayload {
+    type: 'promote-global-sso';
+    address: Address | undefined;
+    email: string;
+    member: Member;
 }
 
 export type MemberKeyPayload = PrivateMemberKeyPayload | PublicMemberKeyPayload;
@@ -168,7 +180,7 @@ export const getMemberKeyPayload = async ({
             throw new Error('Unable to decrypt non-private user keys');
         }
         return {
-            type: 0,
+            type: 'public',
             member,
             address,
             email: address?.Email || member.Name,
@@ -178,7 +190,7 @@ export const getMemberKeyPayload = async ({
 
     if (mode.type === 'org-key') {
         return {
-            type: 1,
+            type: 'private',
             member,
             address: {} as any, // Unused
             email: 'unused',
@@ -201,7 +213,7 @@ export const getMemberKeyPayload = async ({
         throw new Error(getPrivateAdminError());
     }
     return {
-        type: 1,
+        type: 'private',
         member,
         address,
         email,
@@ -210,53 +222,39 @@ export const getMemberKeyPayload = async ({
 };
 
 const getReEncryptedAdminTokens = async ({
-    armoredMessage,
-    decryptionKeys,
-    address,
+    organizationKeyTokenData,
+    organizationKeyTokenDataSigner,
     memberKeyPayloads,
 }: {
-    armoredMessage: string;
-    decryptionKeys: PrivateKeyReference[];
-    address: { ID: string; privateKey: PrivateKeyReference };
+    organizationKeyTokenData: OrganizationKeyTokenData;
+    organizationKeyTokenDataSigner: OrganizationKeyTokenDataSigner;
     memberKeyPayloads: MemberKeyPayload[];
-}) => {
-    const { sessionKey, message } = await decryptKeyPacket({
-        armoredMessage,
-        decryptionKeys,
-    });
-    const data = {
-        sessionKey,
-        binaryData: message.data,
-    };
-    const signer = {
-        addressID: address.ID,
-        privateKey: address.privateKey,
-    };
-
+}): Promise<{
+    privateAdminInvitations: (OrganizationKeyInvitation & { MemberID: string })[];
+    publicAdminActivations: (OrganizationKeyActivation & { MemberID: string })[];
+}> => {
     const { privateAdminPromises, publicAdminPromises } = memberKeyPayloads.reduce<{
-        privateAdminPromises: ReturnType<typeof generatePrivateMemberInvitation>[];
-        publicAdminPromises: ReturnType<typeof generatePublicMemberInvitation>[];
+        privateAdminPromises: Promise<OrganizationKeyInvitation & { MemberID: string }>[];
+        publicAdminPromises: Promise<OrganizationKeyActivation & { MemberID: string }>[];
     }>(
         (acc, memberPayload) => {
-            if (memberPayload.type === 1) {
+            if (memberPayload.type === 'private') {
                 const { member, publicKey, address } = memberPayload;
                 acc.privateAdminPromises.push(
                     generatePrivateMemberInvitation({
-                        member,
                         publicKey,
                         addressID: address.ID,
-                        signer,
-                        data,
-                    })
+                        signer: organizationKeyTokenDataSigner,
+                        data: organizationKeyTokenData,
+                    }).then((result) => ({ ...result, MemberID: member.ID }))
                 );
             } else {
                 const { member, privateKey } = memberPayload;
                 acc.publicAdminPromises.push(
-                    generatePublicMemberInvitation({
-                        member,
+                    generatePublicMemberActivation({
                         privateKey,
-                        data,
-                    })
+                        data: organizationKeyTokenData,
+                    }).then((result) => ({ ...result, MemberID: member.ID }))
                 );
             }
 
@@ -264,12 +262,10 @@ const getReEncryptedAdminTokens = async ({
         },
         { privateAdminPromises: [], publicAdminPromises: [] }
     );
-
     const [privateAdminInvitations, publicAdminActivations] = await Promise.all([
         Promise.all(privateAdminPromises),
         Promise.all(publicAdminPromises),
     ]);
-
     return { privateAdminInvitations, publicAdminActivations };
 };
 
@@ -298,14 +294,32 @@ const getReEncryptedMemberTokens = async ({
 
 type ConfirmPromotionMemberAction = {
     type: 'confirm-promote';
-    payload: MemberKeyPayload;
+    payload: PromoteGlobalSSOPayload | MemberKeyPayload;
     prompt: boolean;
 };
 type ConfirmDemotionMemberAction = {
     type: 'confirm-demote';
-    payload: null;
+    payload: PromoteGlobalSSOPayload | null;
 };
 export type MemberPromptAction = ConfirmPromotionMemberAction | ConfirmDemotionMemberAction;
+
+const getPromoteGlobalSSOPayload = ({
+    member,
+    memberAddresses,
+}: {
+    member: Member;
+    memberAddresses: Address[];
+}): PromoteGlobalSSOPayload => {
+    const address: Address | undefined = memberAddresses.filter(
+        (address) => getIsAddressEnabled(address) && address.HasKeys
+    )[0];
+    return {
+        type: 'promote-global-sso',
+        address,
+        member,
+        email: address?.Email || '',
+    };
+};
 
 export const getMemberEditPayload = ({
     member,
@@ -328,13 +342,30 @@ export const getMemberEditPayload = ({
         const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
+            const payload =
+                member.SSO && !getIsMemberSetup(member)
+                    ? getPromoteGlobalSSOPayload({
+                          member,
+                          memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
+                      })
+                    : null;
             return {
                 type: 'confirm-demote',
-                payload: null,
+                payload,
             };
         }
 
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
+            const memberAddresses = await dispatch(getMemberAddresses({ member, retry: true }));
+
+            if (member.SSO && !getIsMemberSetup(member)) {
+                return {
+                    type: 'confirm-promote',
+                    payload: getPromoteGlobalSSOPayload({ member, memberAddresses }),
+                    prompt: true,
+                };
+            }
+
             const payload = await getMemberKeyPayload({
                 organizationKey,
                 mode: {
@@ -343,7 +374,7 @@ export const getMemberEditPayload = ({
                 },
                 api,
                 member,
-                memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
+                memberAddresses,
             });
 
             if (member.Private === MEMBER_PRIVATE.UNREADABLE) {
@@ -533,15 +564,22 @@ export const getKeyRotationPayload = ({
         };
     };
 };
-export const setAdminRoles = ({
+export const getAdminRolePayloads = ({
     memberKeyPayloads,
-    api,
-}: { memberKeyPayloads: MemberKeyPayload[] } & {
-    api: Api;
-}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+}: {
+    memberKeyPayloads: MemberKeyPayload[];
+}): ThunkAction<
+    ReturnType<typeof getReEncryptedAdminTokens>,
+    OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch) => {
-        const userKeys = await dispatch(userKeysThunk());
-        const organizationKey = await dispatch(organizationKeyThunk());
+        const [userKeys, organizationKey, addresses] = await Promise.all([
+            dispatch(userKeysThunk()),
+            dispatch(organizationKeyThunk()),
+            dispatch(addressesThunk()),
+        ]);
         if (!getIsPasswordless(organizationKey?.Key)) {
             throw new Error('Only used on passwordless organizations');
         }
@@ -552,7 +590,7 @@ export const setAdminRoles = ({
         if (!userKey) {
             throw new Error('Missing primary user key');
         }
-        const [primaryAddress] = await dispatch(addressesThunk());
+        const [primaryAddress] = addresses;
         if (!primaryAddress) {
             throw new Error('Missing primary address');
         }
@@ -560,13 +598,32 @@ export const setAdminRoles = ({
         if (!primaryAddressKey) {
             throw new Error('Missing primary address key');
         }
-
-        const { privateAdminInvitations, publicAdminActivations } = await getReEncryptedAdminTokens({
+        const organizationKeyTokenData = await getDecryptedOrganizationKeyTokenData({
             armoredMessage: organizationKey.Key.Token,
             decryptionKeys: userKeys.map(({ privateKey }) => privateKey),
-            address: { ID: primaryAddress.ID, privateKey: primaryAddressKey.privateKey },
+        });
+        const organizationKeyTokenDataSigner = getOrganizationKeyTokenDataSigner({
+            address: primaryAddress,
+            privateKey: primaryAddressKey.privateKey,
+        });
+        return getReEncryptedAdminTokens({
+            organizationKeyTokenData,
+            organizationKeyTokenDataSigner,
             memberKeyPayloads,
         });
+    };
+};
+
+export const setAdminRoles = ({
+    memberKeyPayloads,
+    api,
+}: { memberKeyPayloads: MemberKeyPayload[] } & {
+    api: Api;
+}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        const { publicAdminActivations, privateAdminInvitations } = await dispatch(
+            getAdminRolePayloads({ memberKeyPayloads })
+        );
 
         const privatePromise = Promise.all(
             privateAdminInvitations.map((invitation) => {
@@ -802,10 +859,17 @@ export const createPasswordlessOrganizationKeys = ({
             userKey,
             keyGenConfig,
         });
-        const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
+        const organizationKeyTokenData = await getDecryptedOrganizationKeyTokenData({
             armoredMessage: encryptedToken,
             decryptionKeys: [userKey],
-            address: { ID: primaryAddress.ID, privateKey: primaryAddressKey.privateKey },
+        });
+        const organizationKeyTokenDataSigner = getOrganizationKeyTokenDataSigner({
+            address: primaryAddress,
+            privateKey: primaryAddressKey.privateKey,
+        });
+        const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
+            organizationKeyTokenData,
+            organizationKeyTokenDataSigner,
             memberKeyPayloads,
         });
         const memberTokens = await getReEncryptedMemberTokens({
@@ -872,10 +936,17 @@ export const rotatePasswordlessOrganizationKeys = ({
             userKey,
             keyGenConfig,
         });
-        const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
+        const organizationKeyTokenData = await getDecryptedOrganizationKeyTokenData({
             armoredMessage: encryptedToken,
             decryptionKeys: [userKey],
-            address: { ID: primaryAddress.ID, privateKey: primaryAddressKey.privateKey },
+        });
+        const organizationKeyTokenDataSigner = getOrganizationKeyTokenDataSigner({
+            address: primaryAddress,
+            privateKey: primaryAddressKey.privateKey,
+        });
+        const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
+            organizationKeyTokenData,
+            organizationKeyTokenDataSigner,
             memberKeyPayloads,
         });
         const memberTokens = await getReEncryptedMemberTokens({
@@ -1075,11 +1146,18 @@ export const migrateOrganizationKeyPasswordless = (): ThunkAction<
                 })
             );
 
-            const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
+            const organizationKeyTokenData = await getDecryptedOrganizationKeyTokenData({
                 armoredMessage: encryptedToken,
                 decryptionKeys: [userKey],
-                // Signing the token signature with the organization private key
-                address: { ID: primaryAddress.ID, privateKey: organizationKey.privateKey },
+            });
+            const organizationKeyTokenDataSigner = getOrganizationKeyTokenDataSigner({
+                address: primaryAddress,
+                // Signing the token signature with the organization private key in the migration scenario
+                privateKey: organizationKey.privateKey,
+            });
+            const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
+                organizationKeyTokenData,
+                organizationKeyTokenDataSigner,
                 memberKeyPayloads,
             });
 

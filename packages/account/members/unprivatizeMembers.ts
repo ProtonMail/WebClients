@@ -9,26 +9,27 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { unprivatizeMemberKeysRoute } from '@proton/shared/lib/api/members';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type {
-    Api,
     EnhancedMember,
-    KTUserContext,
     Member,
-    MemberReadyForUnprivatization,
-    MemberReadyForUnprivatizationApproval,
+    MemberReadyForAutomaticUnprivatization,
+    MemberReadyForManualUnprivatization,
 } from '@proton/shared/lib/interfaces';
 import {
     UnprivatizationRevisionError,
     getIsMemberInAutomaticApproveState,
     getIsMemberInManualApproveState,
     getSentryError,
-    getUnprivatizeMemberPayload,
+    type getUnprivatizeMemberPayload,
     unprivatizeMemberHelper,
 } from '@proton/shared/lib/keys';
 
 import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
+import type { MemberState } from '../member';
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
+import { userKeysThunk } from '../userKeys';
+import { unprivatizeMember } from './actions';
 import { getMember } from './getMember';
 import {
     type MembersState,
@@ -41,14 +42,16 @@ import {
     upsertMember,
 } from './index';
 
+type RequiredState = KtState & MemberState & MembersState & OrganizationKeyState;
+
 export const selectUnprivatizationState = (state: MembersState) => state.members.unprivatization;
 
 type JoinedResult =
     | (UnprivatizationMemberApproval & {
-          member: MemberReadyForUnprivatizationApproval;
+          member: MemberReadyForManualUnprivatization;
       })
     | (UnprivatizationMemberFailure & {
-          member: MemberReadyForUnprivatization;
+          member: MemberReadyForAutomaticUnprivatization;
       })
     | (UnprivatizationMemberSuccess & {
           member: EnhancedMember;
@@ -120,8 +123,8 @@ export const selectJoinedUnprivatizationState = createSelector(
     (unprivatizationState, membersState) => {
         const result = getJoinedUnprivatizationMemberList(unprivatizationState, membersState);
         const filteredResult = result.reduce<{
-            failures: (UnprivatizationMemberFailure & { member: MemberReadyForUnprivatization })[];
-            approval: (UnprivatizationMemberApproval & { member: MemberReadyForUnprivatizationApproval })[];
+            failures: (UnprivatizationMemberFailure & { member: MemberReadyForAutomaticUnprivatization })[];
+            approval: (UnprivatizationMemberApproval & { member: MemberReadyForManualUnprivatization })[];
         }>(
             (acc, cur) => {
                 if (cur.type === 'error' && cur.revision) {
@@ -141,10 +144,10 @@ export const selectJoinedUnprivatizationState = createSelector(
     }
 );
 
-export const unprivatizeApprovalMembersHelper = ({
+export const unprivatizeMembersManualHelper = ({
     membersToUnprivatize,
 }: {
-    membersToUnprivatize: MemberReadyForUnprivatizationApproval[];
+    membersToUnprivatize: MemberReadyForManualUnprivatization[];
 }): ThunkAction<
     Promise<{
         membersToUpdate: Member[];
@@ -161,7 +164,8 @@ export const unprivatizeApprovalMembersHelper = ({
         const api = getSilentApi(extra.api);
         for (const member of membersToUnprivatize) {
             try {
-                const [organizationKey, memberAddresses] = await Promise.all([
+                const [userKeys, organizationKey, memberAddresses] = await Promise.all([
+                    dispatch(userKeysThunk()),
                     dispatch(organizationKeyThunk()), // Fetch org key again to ensure it's up-to-date.
                     dispatch(getMemberAddresses({ member, retry: true })),
                 ]);
@@ -172,7 +176,8 @@ export const unprivatizeApprovalMembersHelper = ({
                     },
                     memberAddresses,
                     verificationKeys: null,
-                    organizationKey: organizationKey.privateKey,
+                    organizationKey,
+                    userKeys,
                 });
                 await api(unprivatizeMemberKeysRoute(member.ID, payload));
                 const newMember = await getMember(api, member.ID);
@@ -186,10 +191,10 @@ export const unprivatizeApprovalMembersHelper = ({
     };
 };
 
-export const unprivatizeApprovalMembers = ({
+export const unprivatizeMembersManual = ({
     membersToUnprivatize,
 }: {
-    membersToUnprivatize: MemberReadyForUnprivatizationApproval[];
+    membersToUnprivatize: MemberReadyForManualUnprivatization[];
 }): ThunkAction<Promise<Member[]>, MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState) => {
         if (!membersToUnprivatize.length) {
@@ -208,7 +213,7 @@ export const unprivatizeApprovalMembers = ({
         }
 
         const { membersToUpdate, membersToError } = await dispatch(
-            unprivatizeApprovalMembersHelper({ membersToUnprivatize })
+            unprivatizeMembersManualHelper({ membersToUnprivatize })
         );
 
         membersToError.forEach(({ error }) => {
@@ -251,11 +256,11 @@ const getMembersToUnprivatize = ({
 }): {
     membersToApprove: Member[];
     membersToDelete: string[];
-    membersToUnprivatize: MemberReadyForUnprivatization[];
+    membersToUnprivatize: MemberReadyForAutomaticUnprivatization[];
 } => {
     const membersToDelete: string[] = [];
     const membersToApprove: Member[] = [];
-    const membersToUnprivatize: MemberReadyForUnprivatization[] = [];
+    const membersToUnprivatize: MemberReadyForAutomaticUnprivatization[] = [];
 
     members.forEach((member) => {
         const item = oldState.members[member.ID];
@@ -276,46 +281,18 @@ const getMembersToUnprivatize = ({
     return { membersToUnprivatize, membersToDelete, membersToApprove };
 };
 
-export const unprivatizeMember = ({
-    member,
-    ktUserContext,
-    options,
-    api,
-}: {
-    member: MemberReadyForUnprivatization;
-    ktUserContext: KTUserContext;
-    options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
-    api: Api;
-}): ThunkAction<Promise<void>, MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
-        const [organizationKey, memberAddresses] = await Promise.all([
-            dispatch(organizationKeyThunk()), // Fetch org key again to ensure it's up-to-date.
-            dispatch(getMemberAddresses({ member, retry: true })),
-        ]);
-        const payload = await getUnprivatizeMemberPayload({
-            api,
-            member,
-            memberAddresses,
-            organizationKey: organizationKey.privateKey,
-            ktUserContext,
-            options,
-        });
-        await api(unprivatizeMemberKeysRoute(member.ID, payload));
-    };
-};
-
-export const unprivatizeMembersBackgroundHelper = ({
+export const unprivatizeMembersAutomaticHelper = ({
     membersToUnprivatize,
     options,
 }: {
-    membersToUnprivatize: MemberReadyForUnprivatization[];
+    membersToUnprivatize: MemberReadyForAutomaticUnprivatization[];
     options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
 }): ThunkAction<
     Promise<{
         membersToUpdate: Member[];
         membersToError: { member: Member; error: any }[];
     }>,
-    KtState & MembersState & OrganizationKeyState,
+    RequiredState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -347,7 +324,7 @@ export const unprivatizeMembersBackgroundHelper = ({
     };
 };
 
-export const unprivatizeMembersBackground = ({
+export const unprivatizeMembersAutomatic = ({
     options,
     target,
 }: {
@@ -359,9 +336,9 @@ export const unprivatizeMembersBackground = ({
           }
         | {
               type: 'action';
-              members: MemberReadyForUnprivatization[];
+              members: MemberReadyForAutomaticUnprivatization[];
           };
-}): ThunkAction<Promise<void>, KtState & MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState) => {
         if (!target.members.length) {
             return;
@@ -403,7 +380,7 @@ export const unprivatizeMembersBackground = ({
         }
 
         const { membersToError, membersToUpdate } = await dispatch(
-            unprivatizeMembersBackgroundHelper({
+            unprivatizeMembersAutomaticHelper({
                 membersToUnprivatize,
                 options,
             })
