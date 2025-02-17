@@ -7,6 +7,7 @@ import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
@@ -99,6 +100,18 @@ function PublicShareLinkInitContainer() {
     const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
     const shouldRedirectToDocs = isDocsPublicSharingEnabled && link && link.isFile && isProtonDocument(link.mimeType);
 
+    const getDocsWindow = useCallback((redirect: boolean, customPassword: string) => {
+        if (redirect) {
+            return window;
+        }
+
+        if (customPassword) {
+            return handleDocsCustomPassword(customPassword).handle;
+        }
+
+        return getNewWindow().handle;
+    }, []);
+
     const openInDocs = useCallback(
         (linkId: string, { redirect, download }: { redirect?: boolean; download?: boolean } = {}) => {
             if (!isDocsPublicSharingEnabled || error) {
@@ -110,10 +123,10 @@ function PublicShareLinkInitContainer() {
                 token,
                 urlPassword,
                 linkId,
-                window: redirect ? window : getNewWindow().handle,
+                window: getDocsWindow(redirect || false, customPassword),
             });
         },
-        [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword]
+        [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword, getDocsWindow]
     );
 
     // This hook automatically redirects to Docs when opening a document.
