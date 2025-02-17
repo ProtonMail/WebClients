@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
@@ -12,20 +13,26 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { PolicyType } from '@proton/components/containers/vpn/sharedServers/constants';
+import { sortLocationsByLocalizedCountryName } from '@proton/components/containers/vpn/sharedServers/sortLocationsByLocalizedCountryName';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { getCountryOptions } from '@proton/payments';
+import { MINUTE, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-// import EmptyViewContainer from '../../../containers/app/EmptyViewContainer';
-import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import SharedServersModal from './SharedServersModal';
 import SharedServersTypeButton from './SharedServersTypeButton';
 import { useSharedServers } from './useSharedServers';
 
-const SharedServersSection = ({ maxAge = 10 * 60 * 1000 }) => {
-    const { loading, policies, refresh } = useSharedServers(maxAge);
-    const [policyType, setPolicyType] = useState(2); // Default to Custom
+const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
+    const { loading, locations, policies } = useSharedServers(maxAge);
+    const [policyType, setPolicyType] = useState<PolicyType>(PolicyType.None);
+    const [userSettings] = useUserSettings();
+    const countryOptions = getCountryOptions(userSettings);
     const [createModal, showCreateModal] = useModalTwoStatic(SharedServersModal);
-
+    const { sortedLocations, countriesCount } = sortLocationsByLocalizedCountryName(locations, countryOptions);
     const addPolicy = () => showCreateModal({});
 
     if (loading) {
@@ -51,11 +58,15 @@ const SharedServersSection = ({ maxAge = 10 * 60 * 1000 }) => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph>
-                {c('Info').t`Allow users to connect to secure shared servers based on defined policies.`}
-            </SettingsParagraph>
+            <div className="flex items-center gap-1 color-weak">
+                {getBoldFormattedText(
+                    c('Info')
+                        .t`Allow users to connect to secure shared servers from the **Countries** section of the ${VPN_APP_NAME} app.`
+                )}
+                <Href href={getKnowledgeBaseUrl('/shared-servers')} className="ml-1">{c('Link').t`Learn more`}</Href>
+            </div>
 
-            <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full mt-8">
+            <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full mt-4">
                 <SharedServersTypeButton
                     label={c('Info').t`On`}
                     onClick={() => setPolicyType(1)}
@@ -76,7 +87,33 @@ const SharedServersSection = ({ maxAge = 10 * 60 * 1000 }) => {
                 />
             </div>
 
-            {policyType === 2 && (
+            {policyType === PolicyType.All && (
+                <div className="mt-8 p-4 border rounded">
+                    <h2 className="text-lg text-semibold">
+                        {c('Info').ngettext(
+                            msgid`Shared server country (${countriesCount})`,
+                            `Shared server countries (${countriesCount})`,
+                            countriesCount
+                        )}
+                    </h2>
+                    <Table className="my-2" responsive="cards">
+                        <TableBody>
+                            {sortedLocations.map((location) => (
+                                <TableRow key={location.Country}>
+                                    <TableCell style={{ borderBottom: 'none' }}>
+                                        <CountryFlagAndName
+                                            countryCode={location.Country}
+                                            countryName={location.localizedCountryName}
+                                        />
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
+            )}
+
+            {policyType === PolicyType.Custom && (
                 <>
                     <div className="flex mt-8 w-full justify-between items-center">
                         <div className="flex-1 mr-4">
@@ -89,11 +126,13 @@ const SharedServersSection = ({ maxAge = 10 * 60 * 1000 }) => {
                                 )}
                             </p>
                         </div>
+
                         <Button size="medium" color="norm" shape="solid" onClick={addPolicy}>
                             <Icon name="plus" className="mr-2" />
                             {c('Action').t`Create new policy`}
                         </Button>
                     </div>
+
                     <Table className="mt-4" responsive="cards">
                         <TableHeader>
                             <TableRow>
@@ -124,9 +163,6 @@ const SharedServersSection = ({ maxAge = 10 * 60 * 1000 }) => {
                             ))}
                         </TableBody>
                     </Table>
-                    <div className="mt-4">
-                        <Button onClick={refresh}>{c('Action').t`Refresh data`}</Button>
-                    </div>
                 </>
             )}
             {createModal}
