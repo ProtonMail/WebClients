@@ -1,4 +1,3 @@
-import { isBefore, sub } from 'date-fns';
 import { c } from 'ttag';
 
 import {
@@ -87,7 +86,7 @@ export const getEmailSubscriptions = (
             id: 'onboarding',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.ONBOARDING,
             title: c('news').t`${BRAND_NAME} welcome emails`,
-            frequency: c('news').t`During your first month`,
+            frequency: c('news').t`During your first month of using a ${BRAND_NAME} product`,
         },
         {
             id: 'user_survey',
@@ -155,7 +154,6 @@ export const getEmailSubscriptionsMap = () => {
 
 export const filterNews = ({
     emailSubscription,
-    user,
     userSettings,
 }: {
     emailSubscription: EmailSubscription;
@@ -170,9 +168,6 @@ export const filterNews = ({
             // We don't want to display toggle for FEATURES news subscription as manual switch has been deprecated for this option.
             // INBOX_NEWS, DRIVE_NEWS & VPN_NEWS should be used instead
             return false;
-        case NEWSLETTER_SUBSCRIPTIONS_BITS.ONBOARDING:
-            // check if the user account was created more than 1 month ago
-            return Boolean(user && isBefore(sub(new Date(), { months: 1 }), user.CreateTime * 1000));
         case NEWSLETTER_SUBSCRIPTIONS_BITS.BETA:
             return Boolean(userSettings?.EarlyAccess);
         default:
