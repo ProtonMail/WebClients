@@ -13,7 +13,8 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 
-import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../../store';
+import type { OnFileUploadSuccessCallbackData, PhotoGridItem, PhotoLink } from '../../../store';
+import { isPhotoGroup } from '../../../store/_photos';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
 import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
@@ -169,6 +170,11 @@ interface ToolbarRightActionsGalleryProps {
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
 }
 
+interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGalleryProps {
+    requestDownload: (linkIds: string[]) => Promise<void>;
+    data: PhotoGridItem[];
+}
+
 const ToolbarRightActionsGallery = ({
     uploadDisabled,
     shareId,
@@ -185,7 +191,9 @@ const ToolbarRightActionsAlbumGallery = ({
     shareId,
     linkId,
     onFileUpload,
-}: ToolbarRightActionsGalleryProps) => {
+    requestDownload,
+    data,
+}: ToolbarRightActionsAlbumGalleryProps) => {
     return (
         <>
             {!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />}
@@ -193,7 +201,15 @@ const ToolbarRightActionsAlbumGallery = ({
                 shape="ghost"
                 icon={true}
                 onClick={() => {
-                    // console.log('TODO: Download');
+                    const linkIds: string[] = data
+                        .map((d) => {
+                            if (!isPhotoGroup(d)) {
+                                return d.linkId;
+                            }
+                            return '';
+                        })
+                        .filter(Boolean);
+                    void requestDownload(linkIds);
                 }}
             >
                 <Icon name="arrow-down-line" alt={'Download'} />
@@ -216,6 +232,7 @@ interface PhotosWithAlbumToolbarProps {
     shareId: string;
     linkId: string;
     selectedItems: PhotoLink[];
+    data: PhotoGridItem[];
     onPreview?: () => void;
     requestDownload: (linkIds: string[]) => Promise<void>;
     uploadDisabled: boolean;
@@ -229,6 +246,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     shareId,
     linkId,
     selectedItems,
+    data,
     onPreview,
     requestDownload,
     uploadDisabled,
@@ -248,11 +266,13 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                 )}
                 {tabSelection === 'albums' && <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />}
 
-                {tabSelection === 'albums-gallery' && (
+                {tabSelection === 'albums-gallery' && !hasSelection && (
                     <ToolbarRightActionsAlbumGallery
                         uploadDisabled={uploadDisabled}
                         shareId={shareId}
                         linkId={linkId}
+                        requestDownload={requestDownload}
+                        data={data}
                         onFileUpload={onFileUpload}
                     />
                 )}

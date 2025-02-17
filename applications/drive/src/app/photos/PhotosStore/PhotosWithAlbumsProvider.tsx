@@ -246,17 +246,30 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             );
 
             const addAlbumPhotosCall = async () => {
-                const { Responses } = await request<{
-                    Responses: any[];
+                const { Code, Responses } = await request<{
+                    Responses: {
+                        LinkID: string;
+                        Response: {
+                            Code: number;
+                            Error: string;
+                            Details: {
+                                NewLinkID: string;
+                            };
+                        };
+                    }[];
+                    Code: number;
                 }>(
                     queryAddAlbumPhotos(volumeId, albumLinkId, {
                         AlbumData: links,
                     }),
                     abortSignal
                 );
-                for (const response of Responses) {
-                    if (response.Code !== 1000) {
-                        throw new Error('Photo(s) could not be added to album');
+                if (Code !== 1001) {
+                    throw new Error('Photo(s) could not be added to album');
+                }
+                for (const { Response } of Responses) {
+                    if (Response.Code !== 1000) {
+                        throw new Error(`Photo(s) could not be added to album: ${Response.Error || 'unknown'}`);
                     }
                 }
                 void loadAlbumPhotos(abortSignal, albumLinkId);
