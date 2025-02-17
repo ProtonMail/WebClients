@@ -7773,7 +7773,7 @@ __metadata:
     eslint-config-airbnb-typescript: "npm:^18.0.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-import-resolver-alias: "npm:^1.1.2"
-    eslint-import-resolver-typescript: "npm:^3.8.0"
+    eslint-import-resolver-typescript: "npm:3.7.0"
     eslint-plugin-custom-rules: "workspace:^"
     eslint-plugin-es: "npm:^4.1.0"
     eslint-plugin-import: "npm:^2.31.0"
@@ -22250,17 +22250,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-typescript@npm:^3.8.0":
-  version: 3.8.0
-  resolution: "eslint-import-resolver-typescript@npm:3.8.0"
+"eslint-import-resolver-typescript@npm:3.7.0":
+  version: 3.7.0
+  resolution: "eslint-import-resolver-typescript@npm:3.7.0"
   dependencies:
     "@nolyfill/is-core-module": "npm:1.0.39"
     debug: "npm:^4.3.7"
     enhanced-resolve: "npm:^5.15.0"
-    get-tsconfig: "npm:^4.10.0"
+    fast-glob: "npm:^3.3.2"
+    get-tsconfig: "npm:^4.7.5"
     is-bun-module: "npm:^1.0.2"
+    is-glob: "npm:^4.0.3"
     stable-hash: "npm:^0.0.4"
-    tinyglobby: "npm:^0.2.10"
   peerDependencies:
     eslint: "*"
     eslint-plugin-import: "*"
@@ -22270,7 +22271,7 @@ __metadata:
       optional: true
     eslint-plugin-import-x:
       optional: true
-  checksum: 10c0/8183ebd0aac5f30766f7d19b04b6edd6d2a453ede60867de86319f59d1d8c2dcdd34f5713f992f14636944955337b8061b68bab74f7de7b519e071cc31251737
+  checksum: 10c0/b1dec542a31486b3b5730f71f08a8ee2ac4915dbc4aa1493fd15bc8fcadcb029772ab39a425824c235045b3a7e629290a339d4a7e7f3dd32b24e715106352d40
   languageName: node
   linkType: hard
 
@@ -24857,7 +24858,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-tsconfig@npm:^4.10.0, get-tsconfig@npm:^4.7.0, get-tsconfig@npm:^4.7.5":
+"get-tsconfig@npm:^4.7.0, get-tsconfig@npm:^4.7.5":
   version: 4.10.0
   resolution: "get-tsconfig@npm:4.10.0"
   dependencies:
@@ -42295,7 +42296,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinyglobby@npm:^0.2.10, tinyglobby@npm:^0.2.9":
+"tinyglobby@npm:^0.2.9":
   version: 0.2.10
   resolution: "tinyglobby@npm:0.2.10"
   dependencies:
