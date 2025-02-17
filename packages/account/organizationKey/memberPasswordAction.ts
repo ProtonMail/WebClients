@@ -19,7 +19,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import { addressesThunk } from '../addresses';
 import { type MembersState, getMemberAddresses, upsertMember } from '../members';
 import { getMember } from '../members/getMember';
-import { unprivatizeApprovalMembers } from '../members/unprivatizeMembers';
+import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
 import { type OrganizationState, organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
 
@@ -51,7 +51,7 @@ export const changeMemberPassword = ({
 
         // If the member needs to get unprivatized, let's do it first
         if (getIsMemberInManualApproveState(member)) {
-            const [updatedMember] = await dispatch(unprivatizeApprovalMembers({ membersToUnprivatize: [member] }));
+            const [updatedMember] = await dispatch(unprivatizeMembersManual({ membersToUnprivatize: [member] }));
             if (updatedMember) {
                 member = updatedMember;
             }

@@ -53,11 +53,19 @@ export const getPendingUnprivatizationRequest = ({
 
         const silentApi = getSilentApi(extra.api);
 
-        const [addresses, organization, unprivatizationData] = await Promise.all([
+        const [user, addresses, organization, unprivatizationData] = await Promise.all([
+            dispatch(userThunk()),
             dispatch(addressesThunk()),
             dispatch(organizationThunk()),
             silentApi<MemberUnprivatizationOutput>(queryMemberUnprivatizationInfo()),
         ]);
+
+        if (!user.Keys?.length) {
+            // If the user isn't setup, ignore this unprivatization request. The user can't act on it anyway.
+            // This can happen for VPN SSO users that get promoted to admin (gets converted to global SSO) before
+            // the user has setup a backup password.
+            return;
+        }
 
         const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData, addresses });
         await validateUnprivatizationData({

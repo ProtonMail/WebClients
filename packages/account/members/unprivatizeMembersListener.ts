@@ -6,7 +6,7 @@ import type { KtState } from '../kt';
 import { type MembersState, selectMembers } from '../members';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import type { UserKeysState } from '../userKeys';
-import { unprivatizeMembersBackground } from './unprivatizeMembers';
+import { unprivatizeMembersAutomatic } from './unprivatizeMembers';
 
 export const unprivatizeMembersListener = (
     startListening: SharedStartListening<KtState & OrganizationKeyState & MembersState & DomainsState & UserKeysState>
@@ -29,7 +29,7 @@ export const unprivatizeMembersListener = (
                 }
                 await listenerApi
                     .dispatch(
-                        unprivatizeMembersBackground({
+                        unprivatizeMembersAutomatic({
                             target: {
                                 type: 'background',
                                 members,
