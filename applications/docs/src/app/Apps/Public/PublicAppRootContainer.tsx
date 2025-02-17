@@ -28,7 +28,15 @@ const PublicAppRootContainer = () => {
 const RenderApplicationWhenReady = () => {
   const publicDriveCompat = usePublicDriveCompat()
 
-  const { isError, error, isReady, isPublicDocsEnabled, isPasswordNeeded, submitPassword } = publicDriveCompat
+  const {
+    isError,
+    error,
+    isReady,
+    isWaitingForPasswordFromDriveWindow,
+    isPublicDocsEnabled,
+    isPasswordNeeded,
+    submitPassword,
+  } = publicDriveCompat
 
   const hasRenderedContentRef = useRef(false)
 
@@ -74,7 +82,7 @@ const RenderApplicationWhenReady = () => {
     )
   }
 
-  if (isPasswordNeeded) {
+  if (isPasswordNeeded && !isWaitingForPasswordFromDriveWindow) {
     return <PasswordPage submitPassword={submitPassword} />
   }
 
