@@ -22,7 +22,6 @@ export enum ExperimentGroup {
 
 export enum Features {
     mountToFirstItemRendered = 'mountToFirstItemRendered',
-    thumbnailFormat = 'thumbnailFormat',
     globalBootstrapApp = 'globalBootstrapApp',
     globalBootstrapAppUrls = 'globalBootstrapAppUrls',
     globalBootstrapAppUserSettings = 'globalBootstrapAppUserSettings',
@@ -299,28 +298,4 @@ export const traceTelemetry = (action: Actions, duration: number = TEN_MINUTES) 
             localStorageWithExpiry.deleteData(`telemetry-trace-${action}`);
         },
     };
-};
-
-/**
- * Sends telemetry data regarding the sinze of the thumbnails we generate
- *
- * Experiment DriveThumbnailWebP
- *
- * @param {number} size - The size of the thumbnail in bytes (it will be marked as milliseconds in unleash)
- * @param {'image/jpeg' | 'image/webp'} mimeType - The image format used for the thumbnail.
- * @returns {void}
- */
-export const sendTelemetryFeatureSize = (size: number, mimeType: 'image/jpeg' | 'image/webp') => {
-    const persistedSession = getLastActivePersistedUserSession();
-
-    if (persistedSession?.UID) {
-        // API calls will now be Authenticated with x-pm-uid header
-        apiInstance.UID = persistedSession?.UID;
-    }
-    void sendTelemetryFeaturePerformance(
-        apiInstance,
-        Features.thumbnailFormat,
-        size,
-        mimeType === 'image/jpeg' ? ExperimentGroup.control : ExperimentGroup.treatment
-    );
 };
