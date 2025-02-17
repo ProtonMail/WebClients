@@ -26,7 +26,7 @@ export function scaleImageFile(
         mimeType: string;
         thumbnailTypes?: ThumbnailType[];
     },
-    thumbnailFormatExperimentMimeType: 'image/jpeg' | 'image/webp' = 'image/jpeg'
+    thumbnailFormatMimeType: 'image/webp' = 'image/webp'
 ): Promise<ReturnProps> {
     return new Promise((resolve, reject) => {
         const img = new Image();
@@ -36,9 +36,7 @@ export function scaleImageFile(
                 : thumbnailTypes;
 
             Promise.all(
-                thumbnailTypesToGenerate.map((thumbnailType) =>
-                    scaleImage(img, thumbnailType, thumbnailFormatExperimentMimeType)
-                )
+                thumbnailTypesToGenerate.map((thumbnailType) => scaleImage(img, thumbnailType, thumbnailFormatMimeType))
             )
                 .then((thumbnails) => {
                     resolve({ width: img.width, height: img.height, thumbnails });
@@ -57,7 +55,7 @@ export function scaleImageFile(
 async function scaleImage(
     img: HTMLImageElement,
     thumbnailType: ThumbnailType = ThumbnailType.PREVIEW,
-    mimeType: 'image/jpeg' | 'image/webp' = 'image/jpeg'
+    mimeType: 'image/webp' = 'image/webp'
 ): Promise<ThumbnailInfo> {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
