@@ -19,7 +19,6 @@ import type {
     RequestUploadResult,
 } from '@proton/shared/lib/interfaces/drive/file';
 import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
-import useFlag from '@proton/unleash/useFlag';
 
 import { TransferCancel, TransferSkipped } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
@@ -82,7 +81,6 @@ export default function useUploadFile() {
     const { findAvailableName, getLinkByName, findDuplicateContentHash, findHash } = useUploadHelper();
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
-    const isWebPThumbnailEnabled = useFlag('DriveThumbnailWebP');
 
     const request = <T>(args: object, abortSignal?: AbortSignal) => {
         return debouncedRequest<T>(
@@ -671,8 +669,7 @@ export default function useUploadFile() {
                         });
                 },
             },
-            (message) => log(`worker: ${message}`),
-            isWebPThumbnailEnabled
+            (message) => log(`worker: ${message}`)
         );
     };
 
