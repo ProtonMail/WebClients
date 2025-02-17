@@ -3486,8 +3486,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android et Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Intégration de l'authentification unique SSO (bientôt disponible)"
+      "SSO integration": [
+        "Authentification unique (SSO) intégrée"
       ],
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
@@ -4781,6 +4781,9 @@
       "Go to settings and recovery keys": [
         "Accéder aux paramètres et aux clés de récupération"
       ],
+      "Help center": [
+        "Aide & Support"
+      ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
       ],
@@ -5606,6 +5609,9 @@
       "Add a passphrase (optional)": [
         "Ajouter une phrase secrète (facultatif)"
       ],
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
+      ],
       "Choose a name and default currency.": [
         "Choisissiez un nom et une devise par défaut."
       ],
@@ -5668,6 +5674,9 @@
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Transférez vos bitcoins vers un autre portefeuille avant la suppression. La suppression de ce portefeuille retirera toutes les données qu'il contient des serveurs ${ BRAND_NAME }. Vous pouvez récupérer ce portefeuille par la suite à l'aide de la phrase de récupération."
+      ],
+      "Primary account": [
+        "Compte principal"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
         "Phrase de récupération (12 à 24 mots séparés par un espace)"
@@ -5757,6 +5766,11 @@
       ],
       "Wallets": [
         "Portefeuilles"
+      ]
+    },
+    "Wallet sidebar": {
+      "Add account": [
+        "Ajouter un compte"
       ]
     },
     "Wallet terms and conditions": {
@@ -5920,6 +5934,20 @@
         "La synchronisation est en cours. Veuillez patienter"
       ]
     },
+    "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "En continuant, vous acceptez nos ${ termsAndConditionsLink }."
+      ],
+      "Upgrade to support financial freedom": [
+        "Améliorez votre abonnement et apportez votre soutien à la liberté financière"
+      ],
+      "Upgrade your privacy": [
+        "Faites passer le respect de votre vie privée au niveau supérieur."
+      ],
+      "You have reached your limit": [
+        "Vous avez atteint la limite."
+      ]
+    },
     "Wallet upgrade": {
       "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
         "Un e-mail ne peut être associé qu'à un seul compte de portefeuille. Pour associer un e-mail à ce compte de portefeuille, veuillez retirer un e-mail d'un autre compte de portefeuille ou passer à un abonnement supérieur pour obtenir plus d'adresses e-mail."
@@ -5941,20 +5969,6 @@
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Vous avez atteint le nombre maximal de portefeuilles pris en charge par votre abonnement actuel. Veuillez passer à un abonnement supérieur pour en créer davantage. Votre soutien est crucial dans notre mission pour préserver la confidentialité et la liberté financière."
-      ]
-    },
-    "Wallet Upgrade": {
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "En continuant, vous acceptez nos ${ termsAndConditionsLink }."
-      ],
-      "Upgrade to support financial freedom": [
-        "Améliorez votre abonnement et apportez votre soutien à la liberté financière"
-      ],
-      "Upgrade your privacy": [
-        "Faites passer le respect de votre vie privée au niveau supérieur."
-      ],
-      "You have reached your limit": [
-        "Vous avez atteint la limite."
       ]
     },
     "Wallet Welcome": {
