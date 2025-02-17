@@ -230,6 +230,7 @@ export const PhotosWithAlbumsView: FC = () => {
                         <PhotosWithAlbumsToolbar
                             shareId={shareId}
                             linkId={linkId}
+                            data={photos}
                             selectedItems={selectedItems}
                             onPreview={handleToolbarPreview}
                             requestDownload={requestDownload}
