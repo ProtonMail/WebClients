@@ -273,6 +273,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             selectedItems={selectedItems}
                             onPreview={handleToolbarPreview}
                             requestDownload={requestDownload}
+                            data={albumPhotos}
                             uploadDisabled={isUploadDisabled}
                             tabSelection={'albums-gallery'}
                             createAlbumModal={createAlbumModal}

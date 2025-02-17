@@ -61,7 +61,10 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
      * same files are not currently already downloading, and it adds transfer
      * to the queue.
      */
-    const download = async (links: LinkDownload[], options?: { virusScan?: boolean }): Promise<void> => {
+    const download = async (
+        links: LinkDownload[],
+        options?: { virusScan?: boolean; zipName?: string }
+    ): Promise<void> => {
         await queue.add(links, options).catch((err: any) => {
             if ((err as Error).name === 'DownloadUserError') {
                 createNotification({
