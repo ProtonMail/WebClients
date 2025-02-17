@@ -33,11 +33,11 @@ export const auditSKL = async (
     }
     await verifyProofOfExistenceOrObsolescence(proof, email, epoch.TreeHash, signedKeyList);
     if (signedKeyList.Data && signedKeyList.Signature) {
-        let sklCreationTimestamp = await verifySKLSignature(
-            addressVerificationKeys,
-            signedKeyList.Data,
-            signedKeyList.Signature
-        );
+        let sklCreationTimestamp = await verifySKLSignature({
+            verificationKeys: addressVerificationKeys,
+            signedKeyListData: signedKeyList.Data,
+            signedKeyListSignature: signedKeyList.Signature,
+        });
         if (sklCreationTimestamp === null) {
             return { revision, status: SKLAuditStatus.ExistentUnverified, signedKeyList };
         } else {
