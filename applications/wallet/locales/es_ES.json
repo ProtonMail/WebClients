@@ -3486,8 +3486,8 @@
       "Split tunneling (Android and Windows)": [
         "Túnel dividido (Android y Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integración SSO (próximamente)"
+      "SSO integration": [
+        "Integración SSO"
       ],
       "Strict no-logs policy": [
         "Política estricta de cero registros"
@@ -4781,6 +4781,9 @@
       "Go to settings and recovery keys": [
         "Ir a los ajustes y a las claves de recuperación"
       ],
+      "Help center": [
+        "Centro de ayuda"
+      ],
       "Human verification": [
         "Verificación humana"
       ],
@@ -5606,6 +5609,9 @@
       "Add a passphrase (optional)": [
         "Añadir una frase de contraseña (opcional)"
       ],
+      "Bitcoin via Email": [
+        "Bitcoin vía correo electrónico"
+      ],
       "Choose a name and default currency.": [
         "Elige un nombre y una moneda predeterminada."
       ],
@@ -5668,6 +5674,9 @@
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Transfiere tus bitcoins a otra cartera antes de eliminarlos. Al eliminar esta cartera, se eliminarán todos sus datos de los servidores de ${ BRAND_NAME }. Puedes recuperar la cartera más tarde si tienes su frase de recuperación."
+      ],
+      "Primary account": [
+        "Cuenta principal"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
         "Frase de recuperación (de 12 hasta 24 palabras separadas por espacios)"
@@ -5757,6 +5766,11 @@
       ],
       "Wallets": [
         "Carteras"
+      ]
+    },
+    "Wallet sidebar": {
+      "Add account": [
+        "Añadir una cuenta"
       ]
     },
     "Wallet terms and conditions": {
@@ -5920,6 +5934,20 @@
         "Sincronización en curso. Espera un momento."
       ]
     },
+    "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Al continuar, aceptas nuestros ${ termsAndConditionsLink }"
+      ],
+      "Upgrade to support financial freedom": [
+        "Cambia de plan para apoyar la libertad financiera"
+      ],
+      "Upgrade your privacy": [
+        "Mejora tu privacidad"
+      ],
+      "You have reached your limit": [
+        "Has alcanzado el límite."
+      ]
+    },
     "Wallet upgrade": {
       "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
         "Un correo electrónico solo se puede vincular a una cuenta de cartera. Para vincular un correo electrónico a esta cuenta de cartera, elimina un correo electrónico de otra cuenta o actualiza tu plan para obtener más direcciones."
@@ -5941,20 +5969,6 @@
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Has alcanzado el número máximo de carteras que admite tu plan actual. Cambia de plan para crear más. Tu apoyo también será esencial en nuestra lucha por proteger la privacidad y la libertad financieras."
-      ]
-    },
-    "Wallet Upgrade": {
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Al continuar, aceptas nuestros ${ termsAndConditionsLink }"
-      ],
-      "Upgrade to support financial freedom": [
-        "Cambia de plan para apoyar la libertad financiera"
-      ],
-      "Upgrade your privacy": [
-        "Mejora tu privacidad"
-      ],
-      "You have reached your limit": [
-        "Has alcanzado el límite."
       ]
     },
     "Wallet Welcome": {
