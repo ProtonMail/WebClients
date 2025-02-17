@@ -3486,8 +3486,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integratie (binnenkort beschikbaar)"
+      "SSO integration": [
+        "SSO-integratie"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -4781,6 +4781,9 @@
       "Go to settings and recovery keys": [
         "Ga naar instellingen en herstel sleutels"
       ],
+      "Help center": [
+        "Helpcentrum"
+      ],
       "Human verification": [
         "Menselijke verificatie"
       ],
@@ -5606,6 +5609,9 @@
       "Add a passphrase (optional)": [
         "Voeg een wachtwoordzin toe (optioneel)"
       ],
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
+      ],
       "Choose a name and default currency.": [
         "Kies een naam en standaardvaluta."
       ],
@@ -5668,6 +5674,9 @@
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Verhuis uw bitcoins naar een andere portemonnee voordat u deze verwijdert. Het verwijderen van deze portemonnee zal al de bijbehorende gegevens van de servers van ${ BRAND_NAME } verwijderen. U kunt deze portemonnee later herstellen met de seedphrase."
+      ],
+      "Primary account": [
+        "Primair account"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
         "Herstelzin (12 tot 24 woorden, gescheiden door spatie)"
@@ -5757,6 +5766,11 @@
       ],
       "Wallets": [
         "Portemonnees"
+      ]
+    },
+    "Wallet sidebar": {
+      "Add account": [
+        "Account toevoegen"
       ]
     },
     "Wallet terms and conditions": {
@@ -5920,6 +5934,20 @@
         "Synchroniseren is bezig. Een moment geduld alstublieft"
       ]
     },
+    "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Door verder te gaan gaat u akkoord met onze ${ termsAndConditionsLink }"
+      ],
+      "Upgrade to support financial freedom": [
+        "Upgrade om financiële vrijheid te ondersteunen"
+      ],
+      "Upgrade your privacy": [
+        "Upgrade uw privacy"
+      ],
+      "You have reached your limit": [
+        "U heeft uw limiet bereikt"
+      ]
+    },
     "Wallet upgrade": {
       "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
         "Een e-mailadres kan alleen aan één portemonneeaccount worden gekoppeld. Om een e-mailadres aan dit portemonneeaccount te koppelen, verwijdert u een e-mailadres van een ander portemonneeaccount of upgrade uw abonnement om meer e-mailadressen te krijgen."
@@ -5941,20 +5969,6 @@
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "U heeft het maximale aantal portemonnees bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer portemonnees aan te maken. Uw steun is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
-      ]
-    },
-    "Wallet Upgrade": {
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Door verder te gaan gaat u akkoord met onze ${ termsAndConditionsLink }"
-      ],
-      "Upgrade to support financial freedom": [
-        "Upgrade om financiële vrijheid te ondersteunen"
-      ],
-      "Upgrade your privacy": [
-        "Upgrade uw privacy"
-      ],
-      "You have reached your limit": [
-        "U heeft uw limiet bereikt"
       ]
     },
     "Wallet Welcome": {
