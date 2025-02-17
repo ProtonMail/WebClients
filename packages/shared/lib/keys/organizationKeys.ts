@@ -5,7 +5,6 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
-import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -22,8 +21,10 @@ import type {
 } from '../interfaces';
 import { encryptAddressKeyToken, generateAddressKey, getAddressKeyToken } from './addressKeys';
 import { getPrimaryKey } from './getPrimaryKey';
+import { decryptKeyPacket, encryptAndSignKeyPacket } from './keypacket';
 import { splitKeys } from './keys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
+import type { OrganizationKeyActivation, OrganizationKeyInvitation } from './organizationKeyDto';
 
 export const ORGANIZATION_SIGNATURE_CONTEXT = {
     SHARE_ORGANIZATION_KEY_TOKEN: 'account.key-token.organization',
@@ -424,25 +425,57 @@ export const getVerifiedPublicKeys = async ({
     return addressKeys;
 };
 
+export interface OrganizationKeyTokenData {
+    sessionKey: SessionKey;
+    binaryData: Uint8Array<ArrayBufferLike>;
+}
+
+export const getDecryptedOrganizationKeyTokenData = async ({
+    armoredMessage,
+    decryptionKeys,
+}: {
+    armoredMessage: string;
+    decryptionKeys: PrivateKeyReference[];
+}): Promise<OrganizationKeyTokenData> => {
+    const { sessionKey, message } = await decryptKeyPacket({
+        armoredMessage,
+        decryptionKeys,
+    });
+    return {
+        sessionKey,
+        binaryData: message.data,
+    };
+};
+
+export interface OrganizationKeyTokenDataSigner {
+    addressID: string;
+    privateKey: PrivateKeyReference;
+}
+
+export const getOrganizationKeyTokenDataSigner = ({
+    address,
+    privateKey,
+}: {
+    address: Address;
+    privateKey: PrivateKeyReference;
+}): OrganizationKeyTokenDataSigner => {
+    return {
+        addressID: address.ID,
+        privateKey,
+    };
+};
+
 export const generatePrivateMemberInvitation = async ({
     signer,
     data,
-    member,
     publicKey,
     addressID,
 }: {
-    signer: {
-        privateKey: PrivateKeyReference;
-        addressID: string;
-    };
-    data: {
-        sessionKey: SessionKey;
-        binaryData: Uint8Array;
-    };
-    member: Member;
+    signer: OrganizationKeyTokenDataSigner;
+    data: OrganizationKeyTokenData;
     addressID: string;
     publicKey: PublicKeyReference;
-}) => {
+}): Promise<OrganizationKeyInvitation> => {
     const result = await encryptAndSignKeyPacket({
         sessionKey: data.sessionKey,
         binaryData: data.binaryData,
@@ -451,7 +484,6 @@ export const generatePrivateMemberInvitation = async ({
         signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
     });
     return {
-        MemberID: member.ID,
         TokenKeyPacket: result.keyPacket,
         Signature: result.signature,
         SignatureAddressID: signer.addressID,
@@ -459,18 +491,13 @@ export const generatePrivateMemberInvitation = async ({
     };
 };
 
-export const generatePublicMemberInvitation = async ({
-    member,
+export const generatePublicMemberActivation = async ({
     data,
     privateKey,
 }: {
-    member: Member;
     privateKey: PrivateKeyReference;
-    data: {
-        sessionKey: SessionKey;
-        binaryData: Uint8Array;
-    };
-}) => {
+    data: OrganizationKeyTokenData;
+}): Promise<OrganizationKeyActivation> => {
     const result = await encryptAndSignKeyPacket({
         sessionKey: data.sessionKey,
         binaryData: data.binaryData,
@@ -479,7 +506,6 @@ export const generatePublicMemberInvitation = async ({
         signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
     });
     return {
-        MemberID: member.ID,
         TokenKeyPacket: result.keyPacket,
         Signature: result.signature,
     };

@@ -7,17 +7,20 @@ import { fetchSignedKeyLists } from '@proton/key-transparency/lib/helpers/apiHel
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
 import { encryptMemberToken } from '@proton/shared/lib/keys/memberToken';
+import type { OrganizationKeyActivation } from '@proton/shared/lib/keys/organizationKeyDto';
 import noop from '@proton/utils/noop';
 
 import { setupKeys } from '../api/keys';
 import type {
     Address,
     Api,
+    CachedOrganizationKey,
+    DecryptedKey,
     KTUserContext,
     Member,
     MemberInvitationData,
-    MemberReadyForUnprivatization,
-    MemberReadyForUnprivatizationApproval,
+    MemberReadyForAutomaticUnprivatization,
+    MemberReadyForManualUnprivatization,
     MemberUnprivatization,
     MemberUnprivatizationAcceptState,
     MemberUnprivatizationAutomaticApproveState,
@@ -29,7 +32,13 @@ import type {
 } from '../interfaces';
 import { MemberUnprivatizationState } from '../interfaces';
 import { srpVerify } from '../srp';
-import { getVerifiedPublicKeys, validateOrganizationKeySignature } from './organizationKeys';
+import {
+    generatePublicMemberActivation,
+    getDecryptedOrganizationKeyTokenData,
+    getIsPasswordless,
+    getVerifiedPublicKeys,
+    validateOrganizationKeySignature,
+} from './organizationKeys';
 import type { ResetAddressKeysPayload } from './resetKeys';
 
 export const MEMBER_SIGNATURE_CONTEXT = {
@@ -49,10 +58,12 @@ export const getInvitationData = async ({
     address,
     api,
     expectRevisionChange,
+    admin,
 }: {
     address: string;
     api: Api;
     expectRevisionChange?: boolean;
+    admin?: boolean;
 }) => {
     let revision = 1;
     try {
@@ -63,6 +74,7 @@ export const getInvitationData = async ({
     return serializeInvitationData({
         Address: address,
         Revision: revision,
+        Admin: admin,
     });
 };
 
@@ -436,9 +448,10 @@ interface UnprivatizeMemberAddressKeyDto {
     OrgTokenKeyPacket: string;
 }
 
-export interface UnprivatizeMemberResult {
+export interface UnprivatizeMemberPayload {
     UserKeys: UnprivatizeMemberUserKeyDto[];
     AddressKeys: UnprivatizeMemberAddressKeyDto[];
+    OrganizationKeyActivation?: OrganizationKeyActivation;
 }
 
 export const getIsMemberUnprivatizationInAutomaticApproveState = (
@@ -480,41 +493,48 @@ export const getIsMemberUnprivatizationInManualAcceptState = (
     );
 };
 
-export const getIsMemberInAutomaticApproveState = (member: Member): member is MemberReadyForUnprivatization => {
+export const getIsMemberInAutomaticApproveState = (
+    member: Member
+): member is MemberReadyForAutomaticUnprivatization => {
     return getIsMemberUnprivatizationInAutomaticApproveState(member.Unprivatization);
 };
 
-export const getIsMemberInManualApproveState = (member: Member): member is MemberReadyForUnprivatizationApproval => {
+export const getIsMemberInManualApproveState = (member: Member): member is MemberReadyForManualUnprivatization => {
     return getIsMemberUnprivatizationInManualApproveState(member.Unprivatization);
 };
 
-export const getIsMemberInManualAcceptState = (member: Member): member is MemberReadyForUnprivatizationApproval => {
+export const getIsMemberInManualAcceptState = (member: Member): member is MemberReadyForManualUnprivatization => {
     return getIsMemberUnprivatizationInManualAcceptState(member.Unprivatization);
 };
 
 export const unprivatizeMemberHelper = async ({
+    admin,
     data: { ActivationToken, PrivateKeys },
     verificationKeys,
     organizationKey,
+    userKeys,
     memberAddresses,
 }: {
+    admin?: boolean;
     data: {
         ActivationToken: string;
         PrivateKeys: string[];
     };
     memberAddresses: Address[];
+    userKeys: DecryptedKey[];
     verificationKeys: PublicKeyReference[] | null;
-    organizationKey?: PrivateKeyReference;
-}) => {
-    if (!organizationKey) {
+    organizationKey?: CachedOrganizationKey;
+}): Promise<UnprivatizeMemberPayload> => {
+    if (!organizationKey?.privateKey) {
         throw new Error('Invalid requirements');
     }
+    const organizationPrivateKey = organizationKey.privateKey;
     const token = await getDecryptedOrganizationActivationToken({
         armoredMessage: ActivationToken,
-        decryptionKeys: [organizationKey],
+        decryptionKeys: [organizationPrivateKey],
         verificationKeys,
     });
-    const userPrivateKeys = await Promise.all(
+    const memberUserPrivateKeys = await Promise.all(
         PrivateKeys.map((privateKey) => {
             return CryptoProxy.importPrivateKey({
                 armoredKey: privateKey,
@@ -524,36 +544,36 @@ export const unprivatizeMemberHelper = async ({
     );
 
     const newMemberKeyToken = generateActivationToken();
-    const armoredUserPrivateKeys = await Promise.all(
-        userPrivateKeys.map((userPrivateKey) => {
+    const armoredMemberUserPrivateKeys = await Promise.all(
+        memberUserPrivateKeys.map((userPrivateKey) => {
             return CryptoProxy.exportPrivateKey({
                 privateKey: userPrivateKey,
                 passphrase: newMemberKeyToken,
             });
         })
     );
-    const organizationToken = await encryptMemberToken(newMemberKeyToken, organizationKey);
+    const organizationToken = await encryptMemberToken(newMemberKeyToken, organizationPrivateKey);
 
-    const UserKeys = armoredUserPrivateKeys.map(
+    const memberUserKeys = armoredMemberUserPrivateKeys.map(
         (armoredUserPrivateKey): UnprivatizeMemberUserKeyDto => ({
             OrgPrivateKey: armoredUserPrivateKey,
             OrgToken: organizationToken,
         })
     );
 
-    const AddressKeys = (
+    const memberAddressKeys = (
         await Promise.all(
-            memberAddresses.map(async (memberAddress) => {
-                const result = await Promise.all(
+            memberAddresses.map((memberAddress) => {
+                return Promise.all(
                     memberAddress.Keys.map(async (memberAddressKey): Promise<UnprivatizeMemberAddressKeyDto> => {
                         if (!memberAddressKey.Token) {
                             throw new Error('Missing token');
                         }
                         const result = await reencryptAddressKeyToken({
                             Token: memberAddressKey.Token,
-                            decryptionKeys: userPrivateKeys,
-                            encryptionKey: organizationKey,
-                            signingKey: organizationKey,
+                            decryptionKeys: memberUserPrivateKeys,
+                            encryptionKey: organizationPrivateKey,
+                            signingKey: organizationPrivateKey,
                         });
                         return {
                             AddressKeyID: memberAddressKey.ID,
@@ -562,14 +582,27 @@ export const unprivatizeMemberHelper = async ({
                         };
                     })
                 );
-                return result;
             })
         )
     ).flat();
 
+    let OrganizationKeyActivation: OrganizationKeyActivation | undefined;
+    if (admin && getIsPasswordless(organizationKey.Key)) {
+        const primaryMemberUserPrivateKey = memberUserPrivateKeys[0];
+        const data = await getDecryptedOrganizationKeyTokenData({
+            armoredMessage: organizationKey.Key.Token,
+            decryptionKeys: userKeys.map(({ privateKey }) => privateKey),
+        });
+        OrganizationKeyActivation = await generatePublicMemberActivation({
+            privateKey: primaryMemberUserPrivateKey,
+            data,
+        });
+    }
+
     return {
-        UserKeys,
-        AddressKeys,
+        UserKeys: memberUserKeys,
+        AddressKeys: memberAddressKeys,
+        OrganizationKeyActivation,
     };
 };
 
@@ -579,6 +612,7 @@ export const getUnprivatizeMemberPayload = async ({
     api,
     member,
     memberAddresses,
+    userKeys,
     organizationKey,
     ktUserContext,
     options = {
@@ -586,15 +620,16 @@ export const getUnprivatizeMemberPayload = async ({
     },
 }: {
     api: Api;
-    member: MemberReadyForUnprivatization;
+    member: MemberReadyForAutomaticUnprivatization;
     memberAddresses: Address[];
-    organizationKey?: PrivateKeyReference;
+    userKeys: DecryptedKey[];
+    organizationKey?: CachedOrganizationKey;
     ktUserContext: KTUserContext;
     options?: {
         ignoreRevisionCheck: boolean;
     };
-}): Promise<UnprivatizeMemberResult> => {
-    if (!organizationKey) {
+}): Promise<UnprivatizeMemberPayload> => {
+    if (!organizationKey?.privateKey) {
         throw new Error('Invalid requirements');
     }
     const unprivatizationData = member.Unprivatization;
@@ -602,7 +637,7 @@ export const getUnprivatizeMemberPayload = async ({
     await validateInvitationData({
         textData: InvitationData,
         armoredSignature: InvitationSignature,
-        verificationKeys: [organizationKey],
+        verificationKeys: [organizationKey.privateKey],
     });
     const data = parseInvitationData(InvitationData);
 
@@ -623,6 +658,7 @@ export const getUnprivatizeMemberPayload = async ({
     const verifiedPublicKeys = verifiedApiKeys.addressKeys.map(({ publicKey }) => publicKey);
 
     return unprivatizeMemberHelper({
+        admin: data.Admin,
         data: {
             ActivationToken,
             PrivateKeys,
@@ -630,5 +666,6 @@ export const getUnprivatizeMemberPayload = async ({
         memberAddresses,
         verificationKeys: verifiedPublicKeys,
         organizationKey,
+        userKeys,
     });
 };
