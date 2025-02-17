@@ -4,8 +4,8 @@ import { deleteMembers } from '@proton/account/members/actions';
 import { selectDisabledMembers } from '@proton/account/members/selectors';
 import {
     selectJoinedUnprivatizationState,
-    unprivatizeApprovalMembers,
-    unprivatizeMembersBackground,
+    unprivatizeMembersAutomatic,
+    unprivatizeMembersManual,
 } from '@proton/account/members/unprivatizeMembers';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button } from '@proton/atoms';
@@ -81,7 +81,7 @@ const useOrganizationUnprivatizationModals = () => {
                         size="small"
                         loading={joinedUnprivatizationState.loading.approval}
                         onClick={() => {
-                            dispatch(unprivatizeApprovalMembers({ membersToUnprivatize }));
+                            dispatch(unprivatizeMembersManual({ membersToUnprivatize }));
                         }}
                     >
                         {c('unprivatization').t`Confirm all`}
@@ -116,7 +116,7 @@ const useOrganizationUnprivatizationModals = () => {
                         loading={joinedUnprivatizationState.loading.automatic}
                         onClick={() => {
                             dispatch(
-                                unprivatizeMembersBackground({
+                                unprivatizeMembersAutomatic({
                                     target: {
                                         type: 'action',
                                         members: membersToUnprivatize,

@@ -1,5 +1,6 @@
 import type { Address, Api, Member, SignedKeyList } from '../interfaces';
-import type { UnprivatizeMemberResult } from '../keys/unprivatization';
+import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '../keys/organizationKeyDto';
+import type { UnprivatizeMemberPayload } from '../keys/unprivatization';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';
 
@@ -94,7 +95,7 @@ export const deleteMemberUnprivatizationInfo = () => ({
     url: `core/v4/members/me/unprivatize`,
 });
 
-export const unprivatizeMemberKeysRoute = (memberID: string, data: UnprivatizeMemberResult) => ({
+export const unprivatizeMemberKeysRoute = (memberID: string, data: UnprivatizeMemberPayload) => ({
     method: 'post',
     url: `core/v4/members/${memberID}/keys/unprivatize`,
     data,
@@ -130,7 +131,7 @@ export const updateRole = (memberID: string, Role: number) => ({
     data: { Role },
 });
 
-export const activatePasswordlessKey = (data: { TokenKeyPacket: string; Signature: string }) => ({
+export const activatePasswordlessKey = (data: OrganizationKeyActivation) => ({
     method: 'put',
     url: `core/v4/organizations/keys/activate`,
     data,
@@ -144,15 +145,10 @@ export const updateRolePasswordless = ({
     Role: number;
 } & (
     | {
-          OrganizationKeyActivation: { TokenKeyPacket: string; Signature: string };
+          OrganizationKeyActivation: OrganizationKeyActivation;
       }
     | {
-          OrganizationKeyInvitation: {
-              TokenKeyPacket: string;
-              Signature: string;
-              SignatureAddressID: string;
-              EncryptionAddressID: string;
-          };
+          OrganizationKeyInvitation: OrganizationKeyInvitation;
       }
 )) => ({
     method: 'put',

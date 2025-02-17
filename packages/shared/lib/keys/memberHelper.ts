@@ -1,4 +1,6 @@
-import { MEMBER_STATE, type Member, MemberUnprivatizationState } from '../interfaces';
+import { parseInvitationData } from '@proton/shared/lib/keys/unprivatization';
+
+import { MEMBER_STATE, type Member, type MemberInvitationData, MemberUnprivatizationState } from '../interfaces';
 
 export const getHasMemberUnprivatization = (
     member?: Member
@@ -6,7 +8,7 @@ export const getHasMemberUnprivatization = (
     return Boolean(member && member.Unprivatization);
 };
 
-export const getIsMemberSetup = (member?: Member): member is Member => {
+export const getIsMemberSetup = (member?: Member) => {
     return Boolean(member?.PublicKey);
 };
 
@@ -39,7 +41,13 @@ export enum MemberUnprivatizationMode {
 
 export const getMemberUnprivatizationMode = (member?: Member) => {
     if (getHasMemberUnprivatization(member)) {
+        let invitationData: MemberInvitationData | null = null;
+        try {
+            const InvitationData = member.Unprivatization.InvitationData;
+            invitationData = InvitationData ? parseInvitationData(InvitationData) : null;
+        } catch {}
         return {
+            makeAdmin: invitationData?.Admin === true,
             exists: true,
             pending:
                 member.Unprivatization.State === MemberUnprivatizationState.Pending ||
@@ -58,6 +66,7 @@ export const getMemberUnprivatizationMode = (member?: Member) => {
     }
 
     return {
+        makeAdmin: false,
         exists: false,
         mode: MemberUnprivatizationMode.None,
         pending: false,
