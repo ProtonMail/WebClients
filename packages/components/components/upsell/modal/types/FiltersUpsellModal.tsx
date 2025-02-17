@@ -25,7 +25,7 @@ const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = fals
         isSettings,
     });
 
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
+    const upsellConfig = useMailUpsellConfig({ upsellRef });
 
     return (
         <UpsellModal

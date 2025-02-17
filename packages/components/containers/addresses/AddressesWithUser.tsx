@@ -77,7 +77,7 @@ const AddressesUser = ({
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
 
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
+    const upsellConfig = useMailUpsellConfig({ upsellRef });
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 

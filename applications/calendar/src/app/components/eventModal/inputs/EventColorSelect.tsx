@@ -70,7 +70,7 @@ const EventColorSelect = ({ model, setModel }: Props) => {
     };
 
     const isIframe = getIsIframe();
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
+    const upsellConfig = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
 
     // Wrap the children in a div to show spotlight
     return (

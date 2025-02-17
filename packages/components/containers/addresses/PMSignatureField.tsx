@@ -57,7 +57,7 @@ const PMSignature = ({ id }: Props) => {
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
-    const { upsellConfig } = useMailUpsellConfig({ upsellRef });
+    const upsellConfig = useMailUpsellConfig({ upsellRef });
 
     return (
         <div className="flex flex-1 align-items-center">
