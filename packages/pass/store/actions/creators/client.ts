@@ -92,4 +92,4 @@ export const syncFailure = createAction('sync::failure', (error: unknown) =>
     )({ payload: {} })
 );
 
-export const offlineResume = requestActionsFactory<{ localID?: number }, void>('offline::resume')();
+export const offlineResume = requestActionsFactory<{ localID?: number }, void, void>('offline::resume')();

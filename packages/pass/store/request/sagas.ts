@@ -5,34 +5,37 @@ import { isActionWithSender, withSender } from '@proton/pass/store/actions/enhan
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import identity from '@proton/utils/identity';
 
-import type { RequestFlow, RequestIntent, RequestSuccess } from './flow';
+import type { RequestFailure, RequestFlow, RequestIntent, RequestSuccess } from './flow';
 
-type RequestFlowSaga<T extends RequestFlow<any, any, void>, P extends any[] = []> = {
-    actions: T;
+type RequestFlowSaga<T extends RequestFlow<any, any, any>, P extends any[] = []> = {
+    actions: RequestFailure<T> extends RequestIntent<T>
+        ? T
+        : `RequestFlowSaga constraint violation: Failure type must extend Intent type`;
     call: (
         payload: RequestIntent<T>,
         ...extraParams: P
     ) => RequestSuccess<T> | Promise<RequestSuccess<T>> | Generator<any, RequestSuccess<T>, any>;
     enhance?: <A extends Action>(resultAction: A, intent: ReturnType<T['intent']>) => A;
 };
+
 /** The generated saga does not directly affect the application state. Instead,
  * it embraces the event sourcing pattern of Redux to handle API requests
  * without altering the state. Request metadata holds the response data.*/
-const createParametrizedRequestSaga = <T extends RequestFlow<any, any, void>, P extends any[] = []>({
-    actions,
-    call,
-    enhance,
-}: RequestFlowSaga<T, P>) => {
+const createParametrizedRequestSaga = <T extends RequestFlow<any, any, any>, P extends any[] = []>(
+    flow: RequestFlowSaga<T, P>
+) => {
     return function* (...extraParams: P) {
-        function* worker(intent: ReturnType<typeof actions.intent>) {
+        const actions = flow.actions as T;
+        const { enhance, call } = flow;
+        function* worker(intent: ReturnType<T['intent']>) {
             const requestId = intent.meta.request.id;
             const payload = intent.payload as RequestIntent<T>;
             const enhancer = enhance ?? identity;
             try {
                 const data: RequestSuccess<T> = yield callEffect(call, payload, ...extraParams);
-                yield put(enhancer(actions.success(requestId, data), intent as ReturnType<T['intent']>));
+                yield put(enhancer(actions.success(requestId, data), intent));
             } catch (error: unknown) {
-                yield put(enhancer(actions.failure(requestId, error), intent as ReturnType<T['intent']>));
+                yield put(enhancer(actions.failure(requestId, error, intent), intent));
             }
         }
 
@@ -40,7 +43,7 @@ const createParametrizedRequestSaga = <T extends RequestFlow<any, any, void>, P 
     };
 };
 
-export const createRequestSaga = <T extends RequestFlow<any, any, void>>(
+export const createRequestSaga = <T extends RequestFlow<any, any, any>>(
     options: RequestFlowSaga<T, [RootSagaOptions]>
 ) =>
     createParametrizedRequestSaga<T, [RootSagaOptions]>({
