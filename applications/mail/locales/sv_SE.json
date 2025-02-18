@@ -1150,8 +1150,14 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Ställ in ${ MAIL_APP_NAME } som standardapplikation för e-post"
       ],
+      "Set as album cover": [
+        "Ställ in som albumomslag"
+      ],
       "Set as default": [
         "Ställ in som standard"
+      ],
+      "Set as default mail application": [
+        "Ställ in som standardapplikation för e-post"
       ],
       "Set encryption": [
         "Ställ in kryptering"
@@ -3993,8 +3999,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Meddelanden och skrivning > Kort domän (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
@@ -5883,6 +5889,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan också skydda ditt företag."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } är inte din standardapplikation för e-post."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } meddelande kunde inte flyttas.",
         "${ messagesNotAuthorizedToMove } meddelanden kunde inte flyttas."
@@ -6316,9 +6325,12 @@
         "Dedikerade servrar"
       ],
       "default email address": [
-        "förvalda e-postadress"
+        "standard e-postadress"
       ],
       "Default email application": [
+        "Standardapplikation för e-post"
+      ],
+      "Default mail application": [
         "Standardapplikation för e-post"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
@@ -6441,7 +6453,7 @@
         "inbäddade bilder"
       ],
       "Enabling auto-deletion…": [
-        "Aktiverar autoborttagning…"
+        "Aktiverar automatisk borttagning…"
       ],
       "Encrypt message": [
         "Kryptera meddelande"
@@ -7124,6 +7136,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post för denna webbläsare. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
       ],
       "Setting up ${ feature }…": [
         "Ställer in ${ feature }…"
@@ -9762,8 +9777,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
+      "SSO integration": [
+        "SSO-integration"
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
@@ -10815,6 +10830,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdagen, enligt villkoren i ditt avtal med din bank."
+      ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
       ]
@@ -12943,7 +12961,7 @@
         "Bilagor"
       ],
       "Auto-deletion is active": [
-        "Autoborttagning aktivt"
+        "Automatisk borttagning är aktivt"
       ],
       "Bad time for this email?": [
         "Olämplig tidpunkt för detta e-postmeddelande?"
@@ -13201,6 +13219,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Help center": [
+        "Hjälpcenter"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Dölj din e-post med ${ PASS_APP_NAME }"

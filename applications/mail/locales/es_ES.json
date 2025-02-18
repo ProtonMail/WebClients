@@ -1150,6 +1150,9 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Establecer ${ MAIL_APP_NAME } como aplicación de correo por defecto"
       ],
+      "Set as album cover": [
+        "Establecer como portada de álbum"
+      ],
       "Set as default": [
         "Establecer como por defecto"
       ],
@@ -3995,9 +3998,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Configuración > Mensajes y redacción > Dominio corto (pm.me)."
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
@@ -9774,8 +9774,8 @@
       "Split tunneling (Android and Windows)": [
         "Túnel dividido (Android y Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integración SSO (próximamente)"
+      "SSO integration": [
+        "Integración SSO"
       ],
       "Strict no-logs policy": [
         "Política estricta de cero registros"
@@ -13212,6 +13212,9 @@
       "Groups": [
         "Grupos"
       ],
+      "Help center": [
+        "Centro de ayuda"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Oculta tu email con ${ PASS_APP_NAME }"
       ],
@@ -14034,12 +14037,12 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Cada semana los ${ multipleDaysString } ${ interval }",
+        "Cada ${ interval } semana los ${ multipleDaysString }",
         "Cada ${ interval } semanas los ${ multipleDaysString }"
       ],
       "Every ${ interval } week on all days": [
-        "Cada semana todos los días ${ interval }",
-        "Cada ${ interval } semanas todos los días"
+        "Todos los días cada ${ interval } semana",
+        "Todos los días cada ${ interval } semanas"
       ],
       "Every ${ interval } week on Friday": [
         "Cada semana los viernes ${ interval }",

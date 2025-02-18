@@ -537,6 +537,9 @@
       "Get ${ planName } for ${ priceCoupon }": [
         "Wybierz plan ${ planName } za ${ priceCoupon }"
       ],
+      "Get ${ planOrAppName }": [
+        "Uzyskaj ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Skontaktuj się z nami"
       ],
@@ -605,6 +608,9 @@
       ],
       "Hide messages": [
         "Ukryj wiadomości"
+      ],
+      "Hide my email": [
+        "Ukryj mój adres e-mail"
       ],
       "Hide toolbar": [
         "Ukryj pasek narzędzi"
@@ -1152,8 +1158,14 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową"
       ],
+      "Set as album cover": [
+        "Ustaw jako okładkę albumu"
+      ],
       "Set as default": [
         "Ustaw jako domyślną"
+      ],
+      "Set as default mail application": [
+        "Ustaw jako domyślną aplikację pocztową"
       ],
       "Set encryption": [
         "Ustaw szyfrowanie"
@@ -4021,9 +4033,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
-      ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
@@ -4737,6 +4746,9 @@
       ],
       "Time zone": [
         "Strefa czasowa"
+      ],
+      "Time zone component ignored": [
+        "Element strefy czasowej ignorowany"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -5542,6 +5554,9 @@
       "Malformed start time": [
         "Czas rozpoczęcia posiada nieprawidłowy format"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Dozwolona jest tylko skala kalendarza gregoriańskiego"
+      ],
       "Recurring event has no occurrences": [
         "Wydarzenie cykliczne nie posiada powtórzeń"
       ],
@@ -6007,6 +6022,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } może chronić również Twój biznes."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } nie jest twoją domyślną aplikacją pocztową"
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } wiadomość nie mogła zostać przeniesiona.",
         "${ messagesNotAuthorizedToMove } wiadomości nie mogły zostać przeniesione.",
@@ -6055,6 +6073,9 @@
         "${ numOccurrences } znalezionych powtórzeń w zawartości wiadomości",
         "${ numOccurrences } znalezionych powtórzeń w zawartości wiadomości"
       ],
+      "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
+        "Aplikacja ${ PASS_APP_NAME } umożliwia przechowywanie haseł, notatek i innych poufnych informacji z szyfrowaniem typu end-to-end. Dostępna na ${ ios }, ${ android } i w twojej przeglądarce ${ browser }."
+      ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
       ],
@@ -6066,6 +6087,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu monitorowaniu podejrzanej aktywności."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } znaleziony folder",
@@ -6181,6 +6205,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Dostęp do ponad 6 500 szybkich serwerów na maksymalnie 10 urządzeniach, aby zapewnić bezpieczeństwo danych przeglądania. Dostępne na urządzeniach ${ ios }, ${ android }, ${ appleTV } i ${ desktop }."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
       ],
@@ -6190,6 +6217,9 @@
       "Activation in progress": [
         "Aktywacja jest w toku"
       ],
+      "Active": [
+        "Aktywne"
+      ],
       "Add image URL": [
         "Dodaj adres URL obrazu"
       ],
@@ -6198,6 +6228,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ten adres posiada włączoną weryfikację z zaufanymi kluczami. Zaufaj kluczom publicznym, aby wysyłać wiadomości na ten adres."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
       ],
       "Align left": [
         "Wyrównaj do lewej"
@@ -6490,6 +6523,9 @@
       "Default email application": [
         "Domyślna aplikacja pocztowa"
       ],
+      "Default mail application": [
+        "Domyślna aplikacja pocztowa"
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Czy wiesz, że na koncie ${ BRAND_NAME } masz szyfrowaną przestrzeń dyskową w chmurze? Przejdź do ${ DRIVE_APP_NAME } i wykorzystaj w pełni swoje miejsce. Usługa jest darmowa."
       ],
@@ -6601,6 +6637,9 @@
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Wiadomości e-mail przeniesione do Kosza i Spamu ponad 30 dni temu zostaną automatycznie wyczyszczone."
+      ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Wiadomości oznaczone etykietą ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w odpowiednim folderze."
       ],
@@ -6690,6 +6729,9 @@
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Aby uzyskać dodatkowe informacje i usunąć ograniczenia, zaloguj się pod adresem ${ mailLink }."
+      ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Aby uzyskać dostęp do poczty e-mail w dowolnym momencie i korzystać ze zoptymalizowanego rozwiązania mobilnego, pobierz naszą aplikację ${ androidAppLink } lub ${ iosAppLink }."
       ],
       "For messages newer than ${ oldestDate }": [
         "Dla wiadomości nowszych niż ${ oldestDate }"
@@ -6830,7 +6872,10 @@
         "Połączenie z Internetem zostało przywrócone."
       ],
       "Invite family members and get everything up and running.": [
-        "Zaproś użytkowników rodziny i rozpocznij."
+        "Zaproś członków rodziny i rozpocznij."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Zaproś swojego partnera, znajomego lub kogokolwiek, komu udostępniasz swój plan ${ protonDuoPlanName }."
       ],
       "JCB logo": [
         "Logo JCB"
@@ -7180,6 +7225,9 @@
       "Proofread text": [
         "Sprawdź tekst"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Chroń swoją pocztę e-mail przed wyciekiem na listy mailingowe lub spamem, korzystając z aliasów hide-my-email."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Publiczne udostępnianie dokumentów nie jest obsługiwane."
       ],
@@ -7306,6 +7354,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową dla tej przeglądarki. Aplikacja ${ MAIL_APP_NAME } będzie automatycznie otwierać linki wiadomości."
       ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Ustaw ${ MAIL_APP_NAME } jako swoją domyślną aplikację pocztową. ${ MAIL_APP_NAME } otworzy się automatycznie po kliknięciu linku do wiadomości e-mail."
+      ],
       "Setting up ${ feature }…": [
         "Konfigurowanie ${ feature }…"
       ],
@@ -7349,7 +7400,7 @@
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Używaj krótszej i bardziej chwytliwej nazwy swojego adresu e-mail."
+        "Używaj krótszej i bardziej chwytliwej wersji swojego adresu e-mail."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Funkcje przechowywania nie są obsługiwane w tej przeglądarce. Potrzebujemy tej obsługi, aby umożliwić wyszukiwanie zawartości wiadomości."
@@ -7380,6 +7431,9 @@
       ],
       "Switch to": [
         "Przełącz na konto"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i bezpiecznie je przechowuj. Wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -7500,6 +7554,9 @@
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Ta wiadomość została wygenerowana automatycznie, jako odpowiedź na poprzednią wiadomość."
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Ta wiadomość pochodzi z aliasu ${ PASS_APP_NAME }."
       ],
       "This message is from a mailing list.": [
         "Ta wiadomość pochodzi z listy mailingowej."
@@ -7887,6 +7944,9 @@
       ],
       "You do not have any messages here": [
         "Nie masz tutaj żadnych wiadomości"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Otrzymasz powiadomienie, jeśli Twoje hasło lub inne dane wyciekły z usługi zewnętrznej."
       ],
       "You have ${ unread } in your inbox.": [
         "Masz ${ unread } w swojej skrzynce odbiorczej."
@@ -9860,6 +9920,9 @@
       "Data breach monitoring": [
         "Monitoring wycieku danych"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedykowane serwery zoptymalizowane pod kątem streamingu"
+      ],
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
@@ -10025,8 +10088,8 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Logowanie SSO (wkrótce)"
+      "SSO integration": [
+        "Integracja z SSO"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
@@ -10102,6 +10165,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Używanie na maksymalnie ${ n } urządzeniu",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -10245,6 +10314,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Promocyjna cena ${ priceCoupon } jest ważna przez pierwszy miesiąc. Następnie zostanie ona automatycznie odnowiona po cenie ${ priceLine }. Możesz anulować w dowolnym momencie."
+      ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
@@ -11042,6 +11114,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potwierdzając tę płatność, użytkownik upoważnia ${ BRAND_NAME } i Stripe, naszego dostawcę usług płatniczych, do zlecenia bankowi odpowiedniego obciążenia jego konta. Użytkownik może otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z warunkami umowy z bankiem."
+      ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
       ]
@@ -13575,6 +13650,9 @@
       "Groups": [
         "Grupy"
       ],
+      "Help center": [
+        "Centrum pomocy"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Ukryj swój adres z ${ PASS_APP_NAME }"
       ],
@@ -14022,6 +14100,9 @@
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
       ],
+      "You can now create unlimited folders and labels": [
+        "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
       ],
@@ -14304,6 +14385,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 następujące po sobie kropki są niedozwolone"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Czy na pewno chcesz trwale usunąć kontakt?",
         "Czy na pewno chcesz trwale usunąć ${ count } kontakty?",
@@ -14318,6 +14402,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Czy na pewno chcesz trwale usunąć ten kontakt?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Nie może zawierać kropki na początku"
+      ],
+      "Cannot contain a dot at the end": [
+        "Nie może zawierać kropki na końcu"
       ],
       "Contacts could not be merged": [
         "Kontakty nie mogły zostać scalone"
@@ -14339,6 +14429,9 @@
       ],
       "Name is required": [
         "Nazwa jest wymagana"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Dozwolone są tylko małe znaki alfanumeryczne, kropki, myślniki i podkreślenia."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
