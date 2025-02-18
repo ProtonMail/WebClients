@@ -14,20 +14,27 @@ const meta: Meta<typeof UserAvatar> = {
     argTypes: {
         name: {
             control: 'text',
-            description: 'Name to display in the avatar',
+            description: 'Name to display in the avatar, empty will show random greek letter',
+            table: {
+                type: { summary: 'string' },
+                defaultValue: { summary: '' },
+            },
         },
         color: {
             control: 'object',
-            description: 'Custom color configuration',
-        },
-        useFirstLetterOfName: {
-            control: 'boolean',
-            description: 'Whether to show only the first letter or full name',
+            description: 'Custom color configuration using hue value (0-360) or HSL string',
+            table: {
+                type: { summary: '{ hue: number } | { hsl: string }' },
+            },
         },
         size: {
             control: 'radio',
             options: ['small', 'medium'],
             description: 'Size of the avatar',
+            table: {
+                type: { summary: 'small | medium' },
+                defaultValue: { summary: 'medium' },
+            },
         },
         className: {
             control: 'text',
@@ -86,6 +93,7 @@ export const AvatarGrid: Story = {
             <UserAvatar name="Bob" />
             <UserAvatar name="Charlie" />
             <UserAvatar name="David" />
+            <UserAvatar />
         </div>
     ),
 };
