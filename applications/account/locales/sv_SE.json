@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -550,6 +550,9 @@
       "Export": [
         "Exportera"
       ],
+      "Export as CSV": [
+        "Exportera som CSV"
+      ],
       "Export key": [
         "Exportera nyckel"
       ],
@@ -874,9 +877,6 @@
       "Refer a friend": [
         "Hänvisa en vän"
       ],
-      "Refresh data": [
-        "Uppdatera data"
-      ],
       "Refresh status": [
         "Uppdatera status"
       ],
@@ -1081,8 +1081,14 @@
       "Send reminder": [
         "Skicka påminnelse"
       ],
+      "Set as album cover": [
+        "Ställ in som albumomslag"
+      ],
       "Set as default": [
         "Ställ in som standard"
+      ],
+      "Set as default mail application": [
+        "Ställ in som standardapplikation för e-post"
       ],
       "Set catch-all": [
         "Ställ in \"Catch-all\""
@@ -3626,6 +3632,12 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } är inte din standardapplikation för e-post."
+      ],
+      "${ MAIL_APP_NAME } is your default mail application.": [
+        "${ MAIL_APP_NAME } är din standardapplikation för e-post."
+      ],
       "Also included": [
         "Även inkluderat"
       ],
@@ -4409,8 +4421,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Meddelanden och skrivning > Kort domän (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
@@ -6149,6 +6161,12 @@
       "Best deal": [
         "Bästa erbjudandet"
       ],
+      "Checkout": [
+        "Kassa"
+      ],
+      "Create your account": [
+        "Skapa ditt konto"
+      ],
       "Device": [
         "Enhet"
       ],
@@ -6961,11 +6979,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7022,9 +7040,6 @@
         "Berörd användare är på rad",
         "Berörda användare är på raderna"
       ],
-      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Efter att ha blivit låst måste organisationsmedlemmar låsa upp ${ PASS_APP_NAME } med sitt lösenord eller PIN-kod etc."
-      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ],
@@ -7069,9 +7084,6 @@
       ],
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
-      ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Tillåt användare att ansluta till säkra delade servrar baserat på definierade policyer."
       ],
       "Already allocated": [
         "Redan tilldelad"
@@ -7243,9 +7255,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Genom att skapa ett ${ PASS_APP_NAME }-konto med din e-post för SimpleLogin kan du hantera dina alias direkt från ${ PASS_APP_NAME }."
-      ],
-      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Som standard kan organisationsmedlemmar endast exportera valv där de är ägare. Om detta alternativ är påslaget kommer de inte att kunna exportera någon data"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
@@ -7419,7 +7428,10 @@
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
       ],
       "default email address": [
-        "förvalda e-postadress"
+        "standard e-postadress"
+      ],
+      "Default mail application": [
+        "Standardapplikation för e-post"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ta bort andra MX-poster eller se till att ${ MAIL_APP_NAME }s prioritet är det lägsta numret."
@@ -7574,7 +7586,7 @@
         "Aktiverad den ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
-        "Aktiverar autoborttagning…"
+        "Aktiverar automatisk borttagning…"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Att aktivera återställning med fras igen kommer generera en ny återställningsfras."
@@ -7761,12 +7773,6 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Om detta beror på en gammal lösenordsåterställning kan du stoppa meddelandet från att visas igen"
-      ],
-      "If this option is turned on, organization members will be able to share individual items in addition to vaults.": [
-        "Om detta alternativ är påslaget kommer organisationsmedlemmar att kunna dela individuella objekt utöver valv."
-      ],
-      "If this option is turned on, organization members will only be able to share vaults or items within the organization": [
-        "Om detta alternativ är påslaget kommer organisationsmedlemmar endast att kunna dela valv eller objekt inom organisationen"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
@@ -8223,6 +8229,12 @@
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
+      "Number of items the user has access to (includes owned items + shared items)": [
+        "Antal objekt användaren har åtkomst till (inklusive ägda objekt + delade objekt)"
+      ],
+      "Number of vaults the user has access to (includes owned vaults + shared vaults)": [
+        "Antal valv användaren har åtkomst till (inklusive ägda valv + delade valv)"
+      ],
       "Numbers": [
         "Siffror"
       ],
@@ -8266,6 +8278,9 @@
       ],
       "Or select a particular server:": [
         "Eller välj en specifik server:"
+      ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Organisationsmedlemmar kommer behöva låsa upp ${ PASS_APP_NAME } med deras lösenord eller PIN etc."
       ],
       "Organization size": [
         "Organisationens storlek"
@@ -8613,6 +8628,9 @@
       "Session timed out": [
         "Session timeout"
       ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
+      ],
       "Set recovery phrase": [
         "Ställ in återställningsfras"
       ],
@@ -8820,6 +8838,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Länken att rapportera att du inte har ställt in ett ${ BRAND_NAME }-konto har löpt ut. Kontakta vårt supportteam för att lösa detta problem."
+      ],
+      "The most recent data update, excluding breaches.": [
+        "Den senaste datauppdateringen, exklusive intrång."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
@@ -9045,6 +9066,9 @@
       ],
       "Total VPN connections": [
         "Totalt antal VPN-anslutningar"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Prova ${ productName } helt riskfritt - om du av någon anledning ångrar dig får du en fullständig återbetalning. Utan några frågor."
       ],
       "Two-factor authentication disabled": [
         "Tvåfaktorsautentisering inaktiverad"
@@ -9312,6 +9336,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "När den är inaktiverad förhindrar detta att bildfiler laddas på din enhet utan din vetskap."
+      ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "När det är aktiverat kommer vi kontrollera om ${ MAIL_APP_NAME } är din standardapplikation för e-post och avisera dig om det inte är det."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
@@ -10214,6 +10241,15 @@
       "Allow": [
         "Tillåt"
       ],
+      "Allow all users to create vaults": [
+        "Tillåt alla användare att skapa valv"
+      ],
+      "Allow data export for all users": [
+        "Tillåt dataexport för alla användare"
+      ],
+      "Allow individual item sharing": [
+        "Tillåt individuell objektdelning"
+      ],
       "Allow memorable passwords": [
         "Tillåt minnesvärda lösenord"
       ],
@@ -10234,6 +10270,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Tillåt återställning med en betrodd enhet"
+      ],
+      "Allow sharing outside the organization": [
+        "Tillåt delning utanför organisationen"
       ],
       "Allowed domain": [
         "Tillåten domän"
@@ -10523,12 +10562,6 @@
       "Disable animations": [
         "Inaktivera animeringar"
       ],
-      "Disable data export for organization members": [
-        "Inaktivera dataexport för organisationsmedlemmar"
-      ],
-      "Disable sharing outside the organization": [
-        "Inaktivera delning utanför organisationen"
-      ],
       "Disabled": [
         "Inaktiverad"
       ],
@@ -10579,9 +10612,6 @@
       ],
       "Emails (last month)": [
         "E-post (senaste månaden)"
-      ],
-      "Enable individual item sharing": [
-        "Aktivera individuell objektdelning"
       ],
       "End date": [
         "Slutdatum"
@@ -11002,9 +11032,6 @@
       ],
       "Require 2FA for everyone": [
         "Kräv 2FA för alla"
-      ],
-      "Restrict vault creation to administrators only": [
-        "Begränsa skapande av valv till endast administratörer"
       ],
       "Reveal password": [
         "Visa lösenord"
@@ -12592,11 +12619,14 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
+      "SSO integration": [
+        "SSO-integration"
       ],
       "Start protecting your organization": [
         "Börja skydda din organisation"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Börja skydda dig själv online med 2 enkla steg"
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
@@ -12728,17 +12758,6 @@
         "Teamhantering"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -12847,6 +12866,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13277,9 +13307,6 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Inaktivering av detta kommer att ta bort möjligheten att ta emot aviseringar i ${ BRAND_NAME }-applikationer"
-      ],
-      "During your first month": [
-        "Under din första månad"
       ],
       "Email subscriptions": [
         "E-postprenumerationer"
@@ -13899,9 +13926,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } din e-postadress ${ email } för att ställa in organisationens identitet."
-      ],
       "Current organization identity": [
         "Nuvarande organisationsidentitet"
       ],
@@ -13917,8 +13941,8 @@
       "Organization identity updated": [
         "Organisationsidentitet uppdaterad"
       ],
-      "Verify": [
-        "Verifiera"
+      "Verify your email address ${ email } to set organization identity.": [
+        "Verifiera din e-postadress ${ email } för att ställa in organisationens identitet."
       ]
     },
     "OS compatibility": {
@@ -14576,6 +14600,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdagen, enligt villkoren i ditt avtal med din bank."
+      ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
       ]
@@ -16375,6 +16402,9 @@
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
       ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "De måste logga in igen med din identitetsleverantör för att få åtkomst till ${ BRAND_NAME }-tjänster. För att denna användare ska kunna logga in, se till att de finns hos din identitetsleverantör."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Detta kommer att logga ut användaren från sina andra enheter och de måste skapa ett nytt reservlösenord."
       ],
@@ -16717,47 +16747,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -17046,6 +17035,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -17562,6 +17592,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } tangentbordsgenvägar"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor Report": [
+        "${ PASS_SHORT_APP_NAME } Monitor-rapport"
+      ],
       "(active)": [
         "(aktiv)"
       ],
@@ -17594,6 +17627,12 @@
       ],
       "Accessibility": [
         "Tillgänglighet"
+      ],
+      "Accessible items": [
+        "Åtkomliga objekt"
+      ],
+      "Accessible vaults": [
+        "Åtkomliga valv"
       ],
       "Account and password": [
         "Konto och lösenord"
@@ -17732,7 +17771,7 @@
         "Autentiseringssäkerhet"
       ],
       "Auto-deletion is active": [
-        "Autoborttagning aktivt"
+        "Automatisk borttagning är aktivt"
       ],
       "Auto-reply": [
         "Automatiskt svar"
@@ -17787,6 +17826,9 @@
       ],
       "Change second password": [
         "Ändra andra lösenord"
+      ],
+      "Check your default mail application": [
+        "Kontrollera din standardapplikation för e-post"
       ],
       "Choose an account": [
         "Välj ett konto"
@@ -18078,6 +18120,9 @@
       "Email": [
         "E-post"
       ],
+      "Email breaches": [
+        "E-postintrång"
+      ],
       "Email composer": [
         "E-postkompositör"
       ],
@@ -18116,6 +18161,9 @@
       ],
       "Every member of the organization can access": [
         "Alla medlemmar i organisationen kan komma åt"
+      ],
+      "Excluded items": [
+        "Exkluderade objekt"
       ],
       "Export": [
         "Exportera"
@@ -18223,6 +18271,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help center": [
+        "Hjälpcenter"
+      ],
       "History": [
         "Historik"
       ],
@@ -18275,6 +18326,9 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importera via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
+      "Inactive 2FA": [
+        "Inaktiv 2FA"
+      ],
       "Increase your privacy with more addresses": [
         "Öka din integritet med fler adresser"
       ],
@@ -18304,6 +18358,12 @@
       ],
       "Language and time": [
         "Språk och tid"
+      ],
+      "Last activity": [
+        "Senaste aktivitet"
+      ],
+      "Last updated": [
+        "Senast uppdaterad"
       ],
       "Layout": [
         "Layout"
@@ -18518,6 +18578,9 @@
       "Report a problem": [
         "Rapportera ett problem"
       ],
+      "Reports": [
+        "Rapporter"
+      ],
       "Request new code": [
         "Begär ny kod"
       ],
@@ -18535,6 +18598,9 @@
       ],
       "Restore administrator privileges": [
         "Återställ administratörsrättigheter"
+      ],
+      "Reused passwords": [
+        "Återanvända lösenord"
       ],
       "Revoke certificate": [
         "Återkalla certifikat"
@@ -18759,6 +18825,9 @@
       "Upload your organization’s logo": [
         "Ladda upp din organisationslogga"
       ],
+      "Usage Report": [
+        "Rapport om användning"
+      ],
       "User": [
         "Användare"
       ],
@@ -18803,6 +18872,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi skickar ett e-postmeddelande till din nya adress med instruktioner om hur du slutför ändringen."
+      ],
+      "Weak passwords": [
+        "Svaga lösenord"
       ],
       "What is an alias?": [
         "Vad är ett alias?"
@@ -19701,6 +19773,9 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ditt ${ a } och ${ b }-paket"
+      ],
+      "Your ${ selected } plan": [
+        "Ditt ${ selected }-paket"
       ],
       "Your plan includes:": [
         "Ditt paket inkluderar:"

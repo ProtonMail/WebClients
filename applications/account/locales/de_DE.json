@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -550,6 +550,9 @@
       "Export": [
         "Exportieren"
       ],
+      "Export as CSV": [
+        "Als CSV exportieren"
+      ],
       "Export key": [
         "Schlüssel exportieren"
       ],
@@ -874,9 +877,6 @@
       "Refer a friend": [
         "Wirb einen Freund"
       ],
-      "Refresh data": [
-        "Daten aktualisieren"
-      ],
       "Refresh status": [
         "Status aktualisieren"
       ],
@@ -1080,6 +1080,9 @@
       ],
       "Send reminder": [
         "Erinnerung senden"
+      ],
+      "Set as album cover": [
+        "Setze als Album-Titelbild"
       ],
       "Set as default": [
         "Als Standard festlegen"
@@ -4418,9 +4421,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
-      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -6155,6 +6155,12 @@
       "Best deal": [
         "Bestes Angebot"
       ],
+      "Checkout": [
+        "Kasse"
+      ],
+      "Create your account": [
+        "Erstelle dein Konto"
+      ],
       "Device": [
         "Gerät"
       ],
@@ -6967,11 +6973,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiviere mindestens eine Datenwiederherstellungsmethode, um sicherzustellen, dass du weiterhin auf den Inhalt deines ${ BRAND_NAME }-Kontos zugreifen kannst, wenn du dein Passwort verlierst."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Füge deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -7028,9 +7034,6 @@
         "Betroffener Benutzer ist in Zeile",
         "Betroffene Benutzer sind in Zeilen"
       ],
-      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Nach der Sperrung müssen die Mitglieder der Organisation ${ PASS_APP_NAME } mit ihrem Passwort oder ihrer PIN usw. entsperren."
-      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
       ],
@@ -7075,9 +7078,6 @@
       ],
       "Allow recovery by phone": [
         "Wiederherstellung per Telefon zulassen"
-      ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Erlaube Benutzern, sich auf der Grundlage festgelegter Richtlinien mit sicheren gemeinsamen Servern zu verbinden."
       ],
       "Already allocated": [
         "Bereits zugewiesen"
@@ -7249,9 +7249,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Wenn du ein ${ PASS_APP_NAME }-Konto mit deiner SimpleLogin-E-Mail-Adresse erstellst, kannst du deine Aliasse direkt von ${ PASS_APP_NAME } aus verwalten."
-      ],
-      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Standardmäßig können Organisationsmitglieder nur Tresore exportieren, deren Eigentümer sie sind. Wenn diese Option aktiviert ist, können sie keine Daten exportieren."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
@@ -7765,6 +7762,18 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wenn ein anderer Administrator dieses Passwort geändert hat, musst du ihn um das neue Organisationspasswort bitten."
       ],
+      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
+        "Wenn diese Option deaktiviert ist, muss ein Administrator den ersten Tresor für neue Organisationsmitglieder manuell erstellen (über die Freigabe), damit sie mit der Erstellung von Elementen beginnen können."
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "Wenn diese Option deaktiviert ist, können nur Administratoren Daten exportieren."
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "Wenn diese Option deaktiviert ist, können Organisationsmitglieder Tresore oder Einträge nur innerhalb der Organisation freigeben."
+      ],
+      "If enabled, organization members will be able to share individual items in addition to vaults.": [
+        "Wenn diese Option aktiviert ist, können Organisationsmitglieder in Ergänzung zu Tresoren auch einzelne Einträge teilen."
+      ],
       "If it’s not right for you, we’ll refund you.": [
         "Wenn es nicht das Richtige für dich ist, erstatten wir dir das Geld zurück."
       ],
@@ -7773,15 +7782,6 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Wenn dies auf eine alte Kennwortzurücksetzung zurückzuführen ist, kannst du verhindern, dass die Meldung erneut angezeigt wird."
-      ],
-      "If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items": [
-        "Wenn diese Option aktiviert ist, können Mitglieder der Organisation keine Tresore erstellen. Mitglieder benötigen einen Administrator, der manuell den ersten Tresor für sie erstellt (über die Freigabe), damit sie mit der Erstellung von Einträgen beginnen können."
-      ],
-      "If this option is turned on, organization members will be able to share individual items in addition to vaults.": [
-        "Wenn diese Option aktiviert ist, können Mitglieder der Organisation in Ergänzung zu Tresoren auch einzelne Einträge teilen."
-      ],
-      "If this option is turned on, organization members will only be able to share vaults or items within the organization": [
-        "Wenn diese Option aktiviert ist, können Mitglieder der Organisation Tresore oder Einträge nur innerhalb der Organisation freigeben."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
@@ -8238,6 +8238,12 @@
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
+      "Number of items the user has access to (includes owned items + shared items)": [
+        "Anzahl der Einträge, auf die der Benutzer Zugriff hat (umfasst eigene Einträge + gemeinsam genutzte Einträge)"
+      ],
+      "Number of vaults the user has access to (includes owned vaults + shared vaults)": [
+        "Anzahl der Tresore, auf die der Benutzer Zugriff hat (umfasst eigene Tresore + gemeinsam genutzte Tresore)"
+      ],
       "Numbers": [
         "Zahlen"
       ],
@@ -8281,6 +8287,9 @@
       ],
       "Or select a particular server:": [
         "Oder wähle einen bestimmten Server aus:"
+      ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Mitglieder der Organisation müssen ${ PASS_APP_NAME } mit ihrem Passwort oder ihrer PIN usw. entsperren."
       ],
       "Organization size": [
         "Organisationsgröße"
@@ -8838,6 +8847,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Der Link zur Meldung, dass du kein ${ BRAND_NAME }-Konto eingerichtet hast, ist abgelaufen. Bitte setze dich mit unserem Support-Team in Verbindung, um dieses Problem zu lösen."
+      ],
+      "The most recent data update, excluding breaches.": [
+        "Die jüngste Datenaktualisierung, mit Ausnahme von Datenschutzverletzungen."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Der Name wird für deine Benutzer sichtbar sein, solange sie angemeldet sind."
@@ -10238,6 +10250,15 @@
       "Allow": [
         "Zugelassen"
       ],
+      "Allow all users to create vaults": [
+        "Allen Benutzern das Anlegen von Tresoren erlauben"
+      ],
+      "Allow data export for all users": [
+        "Datenexport für alle Benutzer erlauben"
+      ],
+      "Allow individual item sharing": [
+        "Teilen einzelner Einträge erlauben"
+      ],
       "Allow memorable passwords": [
         "Einprägsame Passwörter zulassen"
       ],
@@ -10258,6 +10279,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Wiederherstellung mit einem vertrauenswürdigen Gerät zulassen"
+      ],
+      "Allow sharing outside the organization": [
+        "Teilen außerhalb der Organisation erlauben"
       ],
       "Allowed domain": [
         "Erlaubte Domain"
@@ -10547,12 +10571,6 @@
       "Disable animations": [
         "Animationen deaktivieren"
       ],
-      "Disable data export for organization members": [
-        "Datenexport für Organisationsmitglieder deaktivieren"
-      ],
-      "Disable sharing outside the organization": [
-        "Teilen außerhalb des Unternehmens deaktivieren"
-      ],
       "Disabled": [
         "Deaktiviert"
       ],
@@ -10603,9 +10621,6 @@
       ],
       "Emails (last month)": [
         "E-Mails (letzter Monat)"
-      ],
-      "Enable individual item sharing": [
-        "Freigabe einzelner Einträge aktivieren"
       ],
       "End date": [
         "Enddatum"
@@ -11026,9 +11041,6 @@
       ],
       "Require 2FA for everyone": [
         "2FA für jeden erfordern"
-      ],
-      "Restrict vault creation to administrators only": [
-        "Erstellung von Tresoren nur auf Administratoren beschränken"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -12491,6 +12503,9 @@
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Schweizer Hochgeschwindigkeits-VPN, das deine Privatsphäre schützt."
+      ],
       "High-speed VPN on ${ n } device": [
         "Hochgeschwindigkeits-VPN auf ${ n } Gerät",
         "Hochgeschwindigkeits-VPN auf ${ n } Geräten"
@@ -12610,11 +12625,14 @@
       "Split tunneling (Android and Windows)": [
         "Split-Tunneling (für Android und Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-Integration (demnächst verfügbar)"
+      "SSO integration": [
+        "SSO-Integration"
       ],
       "Start protecting your organization": [
         "Schütze deine Organisation"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Schütze dich online in 2 einfachen Schritten"
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
@@ -12694,8 +12712,8 @@
         "Bis zu 10 GBit/s"
       ],
       "Use on up to ${ n } device at once": [
-        "Bis zu ${ n } Gerät auf einmal",
-        "Bis zu ${ n } Geräte auf einmal"
+        "Gleichzeitige Verwendung auf bis zu ${ n } Gerät",
+        "Gleichzeitige Verwendung auf bis zu ${ n } Geräten"
       ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"
@@ -12744,17 +12762,6 @@
       ],
       "Team management": [
         "Teamverwaltung"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -12865,6 +12872,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13293,8 +13311,8 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Wenn du diese Option deaktivierst, kannst du keine Benachrichtigungen mehr in ${ BRAND_NAME }-Anwendungen empfangen"
       ],
-      "During your first month": [
-        "Während des ersten Monats"
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Während des ersten Monats der Nutzung eines ${ BRAND_NAME } Produkts"
       ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
@@ -13893,9 +13911,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } deine E-Mail-Adresse ${ email }, um die Organisationsidentität festzulegen."
-      ],
       "Current organization identity": [
         "Aktuelle Organisationsidentität"
       ],
@@ -13911,8 +13926,8 @@
       "Organization identity updated": [
         "Organisationsidentität aktualisiert"
       ],
-      "Verify": [
-        "Verifizieren"
+      "Verify your email address ${ email } to set organization identity.": [
+        "Bestätige deine E-Mail-Adresse ${ email }, um die Organisationsidentität festzulegen."
       ]
     },
     "OS compatibility": {
@@ -16714,47 +16729,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -17043,6 +17017,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -17556,6 +17571,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME }-Tastaturkürzel"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor Report": [
+        "${ PASS_SHORT_APP_NAME } Monitor-Bericht"
+      ],
       "(active)": [
         "(aktiv)"
       ],
@@ -17588,6 +17606,12 @@
       ],
       "Accessibility": [
         "Barrierefreiheit"
+      ],
+      "Accessible items": [
+        "Zugängliche Einträge"
+      ],
+      "Accessible vaults": [
+        "Zugängliche Tresore"
       ],
       "Account and password": [
         "Konto und Passwort"
@@ -18075,6 +18099,9 @@
       "Email": [
         "E-Mail-Adresse"
       ],
+      "Email breaches": [
+        "E-Mail-Datenlecks"
+      ],
       "Email composer": [
         "Fenster zum Verfassen von E-Mails"
       ],
@@ -18113,6 +18140,9 @@
       ],
       "Every member of the organization can access": [
         "Jedes Mitglied der Organisation kann darauf zugreifen"
+      ],
+      "Excluded items": [
+        "Ausgeschlossene Einträge"
       ],
       "Export": [
         "Exportieren"
@@ -18220,6 +18250,9 @@
       "Groups": [
         "Gruppen"
       ],
+      "Help center": [
+        "Hilfecenter"
+      ],
       "History": [
         "Verlauf"
       ],
@@ -18269,6 +18302,9 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importieren mit ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
+      "Inactive 2FA": [
+        "Inaktive 2FA"
+      ],
       "Increase your privacy with more addresses": [
         "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
       ],
@@ -18287,6 +18323,9 @@
       "IP": [
         "IP"
       ],
+      "Items owned": [
+        "Eigene Einträge"
+      ],
       "Keep your inbox organized": [
         "Behalte Ordnung in deinem Posteingang \n"
       ],
@@ -18298,6 +18337,12 @@
       ],
       "Language and time": [
         "Sprache und Zeit"
+      ],
+      "Last activity": [
+        "Letzte Aktivität"
+      ],
+      "Last updated": [
+        "Zuletzt aktualisiert"
       ],
       "Layout": [
         "Anordnung"
@@ -18509,6 +18554,9 @@
       "Report a problem": [
         "Ein Problem melden"
       ],
+      "Reports": [
+        "Berichte"
+      ],
       "Request new code": [
         "Neuen Code anfordern"
       ],
@@ -18526,6 +18574,9 @@
       ],
       "Restore administrator privileges": [
         "Administrationsprivilegien wiederherstellen"
+      ],
+      "Reused passwords": [
+        "Wiederverwendete Passwörter"
       ],
       "Revoke certificate": [
         "Zertifikat widerrufen"
@@ -18750,6 +18801,9 @@
       "Upload your organization’s logo": [
         "Organisationslogo aktualisieren"
       ],
+      "Usage Report": [
+        "Verwendungsbericht"
+      ],
       "User": [
         "Benutzer"
       ],
@@ -18761,6 +18815,12 @@
       ],
       "Users and addresses": [
         "Benutzer und E-Mail-Adressen"
+      ],
+      "Vault owned": [
+        "Eigener Tresor"
+      ],
+      "Vaults owned": [
+        "Eigene Tresore"
       ],
       "Verification": [
         "Verifizierung"
@@ -18794,6 +18854,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Wir senden eine E-Mail an deine neue Adresse mit Anweisungen zum Abschluss der Änderung."
+      ],
+      "Weak passwords": [
+        "Schwache Passwörter"
       ],
       "What is an alias?": [
         "Was ist ein Alias?"
@@ -19395,6 +19458,9 @@
       "This will revoke the administrator permission to manage this user's account.": [
         "Dadurch wird dem Administrator die Berechtigung entzogen, das Konto dieses Benutzers zu verwalten."
       ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Um Administratorrechte zu erhalten, müssen die Betreffenden bei der nächsten Anmeldung bei ${ BRAND_NAME } ein Backup-Passwort festlegen."
+      ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Um fortzufahren, musst du die Erlaubnis des Benutzers anfordern, um auf seine Daten zuzugreifen oder sein Passwort zurückzusetzen."
       ],
@@ -19567,11 +19633,6 @@
         "🎁 Dein Gratisgeschenk zum Teilen, im Wert von ${ price }: "
       ]
     },
-    "Valentine_2025: offer": {
-      "Valentine's deal": [
-        "Angebot zum Valentinstag"
-      ]
-    },
     "Valentine_2025: Offer": {
       "${ salePercentage }% off": [
         "${ salePercentage } % Rabatt"
@@ -19650,6 +19711,11 @@
       ],
       "Valentine's deal:": [
         "Angebot zum Valentinstag:"
+      ]
+    },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Angebot zum Valentinstag"
       ]
     },
     "Valentine_2025: Offers": {
@@ -19812,6 +19878,9 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Dein ${ a } und ${ b } Bundle"
+      ],
+      "Your ${ selected } plan": [
+        "Dein ${ selected }-Abonnement"
       ],
       "Your plan includes:": [
         "Dein Abonnement beinhaltet:"
