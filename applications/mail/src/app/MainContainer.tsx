@@ -15,7 +15,6 @@ import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
 import { FeatureCode, useFeatures } from '@proton/features';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
-import { APPS } from '@proton/shared/lib/constants';
 import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 import { useFlag } from '@proton/unleash';
 import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';
@@ -93,7 +92,7 @@ const MainContainer: FunctionComponent = () => {
     }, [featureSw, loadingSw]);
 
     return (
-        <KeyTransparencyManager appName={APPS.PROTONMAIL}>
+        <KeyTransparencyManager>
             <AssistantProvider>
                 <QuickSettingsRemindersProvider>
                     <DrawerThemeInjector />

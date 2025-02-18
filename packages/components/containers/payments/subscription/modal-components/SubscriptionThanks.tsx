@@ -17,7 +17,6 @@ import '@proton/components/components/upsell/modal/NewUpsellModal.scss';
 
 interface Props {
     onClose?: () => void;
-    loading?: boolean;
     showDownloads?: boolean;
 }
 

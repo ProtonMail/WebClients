@@ -161,7 +161,6 @@ const useTips = () => {
                     <ProtonTipCTA
                         actionType={TipActionType.GetProtonSubdomainAddress}
                         ctaText={c('Tip Action').t`Get my “@${PM_DOMAIN}“ address`}
-                        setIsTipDismissed={setIsTipDismissed}
                     />
                 ),
                 action: TipActionType.GetProtonSubdomainAddress,
@@ -209,13 +208,7 @@ const useTips = () => {
                 icon: 'trash-clock',
                 message: c('Info')
                     .t`Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.`,
-                cta: (
-                    <ProtonTipCTA
-                        actionType={TipActionType.ClearMailbox}
-                        ctaText={c('Tip Action').t`Activate`}
-                        setIsTipDismissed={setIsTipDismissed}
-                    />
-                ),
+                cta: <ProtonTipCTA actionType={TipActionType.ClearMailbox} ctaText={c('Tip Action').t`Activate`} />,
                 action: TipActionType.ClearMailbox,
             },
             {

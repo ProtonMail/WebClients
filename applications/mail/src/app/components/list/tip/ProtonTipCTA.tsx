@@ -12,7 +12,6 @@ interface Props {
     actionType: TipActionType;
     settingsUrl?: string;
     ctaText: string;
-    setIsTipDismissed?: (value: boolean) => void;
 }
 
 const ProtonTipCTA = ({ actionType, settingsUrl, ctaText }: Props) => {

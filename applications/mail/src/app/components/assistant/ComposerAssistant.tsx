@@ -1,4 +1,4 @@
-import type { MutableRefObject, RefObject } from 'react';
+import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import type { EditorMetadata } from '@proton/components';
@@ -44,9 +44,6 @@ interface Props {
     composerSelectedText: string;
     getContentBeforeBlockquote: (returnType?: ComposerReturnType) => string;
     setContentBeforeBlockquote: (content: string) => void;
-    composerContentRef: RefObject<HTMLElement>;
-    composerContainerRef: RefObject<HTMLElement>;
-    composerMetaRef: RefObject<HTMLElement>;
     onUseRefinedText: (value: string) => void;
     onUseGeneratedText: (value: string) => void;
     setInnerModal: (innerModal: ComposerInnerModalStates) => void;

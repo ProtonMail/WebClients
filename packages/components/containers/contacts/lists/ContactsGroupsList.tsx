@@ -15,7 +15,6 @@ interface Props {
     groups: ContactGroup[];
     groupsEmailsMap: SimpleMap<ContactEmail[]>;
     onCheckOne: (event: ChangeEvent, contactID: string) => void;
-    isLargeViewport: boolean;
     checkedIDs: string[];
     onClick: (contactID: string) => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;

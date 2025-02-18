@@ -30,7 +30,6 @@ interface FeatureListProps {
     className?: string;
     iconColor?: string;
     itemClassName?: string;
-    gapClassName?: string;
 }
 
 export const PlanCardFeatureList = ({

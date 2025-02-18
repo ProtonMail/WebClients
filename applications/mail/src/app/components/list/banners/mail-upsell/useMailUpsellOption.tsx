@@ -128,7 +128,6 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                     <MailUpsellOptionCTA
                         url={protonBusiness}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PROTECT_YOUR_BUSINESS}
-                        callToActionText={callToActionTexts.business}
                     />
                 ),
             },
@@ -219,7 +218,6 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                     <MailUpsellOptionCTA
                         url={securityAndPrivacy}
                         optionID={MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.PROTON_SENTINEL}
-                        callToActionText={callToActionTexts.learnMore}
                     />
                 ),
             },
