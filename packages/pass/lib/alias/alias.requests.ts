@@ -26,8 +26,9 @@ import type {
     CustomDomainOutput,
     EnableSLSyncRequest,
     ItemRevisionContentsResponse,
-    MailboxDefaultDTO,
+    MailboxDTO,
     MailboxDeleteDTO,
+    MailboxEditDTO,
     MaybeNull,
     RandomPrefixDTO,
     SlSyncStatusOutput,
@@ -232,28 +233,44 @@ export const resendVerifyMailboxApi = async (mailboxID: number) =>
         })
     ).Mailbox!;
 
-export const validateMailboxApi = async ({ mailboxID, code }: { mailboxID: number; code: string }) =>
-    (
+export const validateMailboxApi = async ({ mailboxID, code }: { mailboxID: number; code: string }) => {
+    return (
         await api({
             url: `pass/v1/user/alias/mailbox/${mailboxID}/verify`,
             method: 'post',
             data: { Code: code },
         })
     ).Mailbox!;
+};
 
-export const deleteMailboxApi = async ({ mailboxID, transferMailboxID }: MailboxDeleteDTO) =>
+export const deleteMailboxApi = async (dto: MailboxDeleteDTO) =>
     api({
-        url: `pass/v1/user/alias/mailbox/${mailboxID}`,
+        url: `pass/v1/user/alias/mailbox/${dto.mailboxID}`,
         method: 'delete',
-        data: { TransferMailboxID: transferMailboxID },
+        data: { TransferMailboxID: dto.transferMailboxID },
+    }).then(() => dto);
+
+export const editMailboxApi = async ({ mailboxID, email }: MailboxEditDTO) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox/${mailboxID}/email`,
+            method: 'put',
+            data: { Email: email },
+        })
+    ).Mailbox;
+
+export const cancelMailboxEditApi = async (mailboxID: number) =>
+    api({
+        url: `pass/v1/user/alias/mailbox/${mailboxID}/email`,
+        method: 'delete',
     }).then(() => mailboxID);
 
-export const setDefaultMailboxApi = async ({ defaultMailboxID }: MailboxDefaultDTO) =>
+export const setDefaultMailboxApi = async ({ mailboxID: DefaultMailboxID }: MailboxDTO) =>
     (
         await api({
             url: 'pass/v1/user/alias/settings/default_mailbox_id',
             method: 'put',
-            data: { DefaultMailboxID: defaultMailboxID },
+            data: { DefaultMailboxID },
         })
     ).Settings!;
 

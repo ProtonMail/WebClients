@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Badge, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 import type { CustomDomainOutput } from '@proton/pass/types';
 
 import { useAliasDomains } from './DomainsProvider';
@@ -17,28 +16,24 @@ const getDomainStatusLabel = ({ OwnershipVerified, MxVerified }: CustomDomainOut
 };
 
 export const CustomDomainsTable: FC = () => {
-    const { customDomains, setAction, defaultAliasDomain, loading } = useAliasDomains();
-
-    if (!loading && customDomains.length === 0) return null;
+    const { customDomains, setAction, defaultAliasDomain } = useAliasDomains();
 
     return (
-        <>
-            <Table responsive="cards" hasActions borderWeak>
-                <TableHeader>
-                    <TableRow>
-                        <TableHeaderCell className="w-1/2">{c('Title').t`Domain`}</TableHeaderCell>
-                        <TableHeaderCell>{c('Title').t`Aliases`}</TableHeaderCell>
-                        <TableHeaderCell className="w-1/5">
-                            <span className="ml-4">{c('Title').t`Status`}</span>
-                        </TableHeaderCell>
-                        <TableHeaderCell>{c('Title').t`Actions`}</TableHeaderCell>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {loading ? (
-                        <TableRowLoading rows={1} cells={4} />
-                    ) : (
-                        customDomains.map((domain) => {
+        customDomains.length > 0 && (
+            <>
+                <Table responsive="cards" hasActions borderWeak>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHeaderCell className="w-1/2">{c('Title').t`Domain`}</TableHeaderCell>
+                            <TableHeaderCell>{c('Title').t`Aliases`}</TableHeaderCell>
+                            <TableHeaderCell className="w-1/5">
+                                <span className="ml-4">{c('Title').t`Status`}</span>
+                            </TableHeaderCell>
+                            <TableHeaderCell>{c('Title').t`Actions`}</TableHeaderCell>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        {customDomains.map((domain) => {
                             return (
                                 <TableRow key={domain.ID}>
                                     <TableCell label={c('Title').t`Domain`}>{domain.Domain}</TableCell>
@@ -89,10 +84,10 @@ export const CustomDomainsTable: FC = () => {
                                     </TableCell>
                                 </TableRow>
                             );
-                        })
-                    )}
-                </TableBody>
-            </Table>
-        </>
+                        })}
+                    </TableBody>
+                </Table>
+            </>
+        )
     );
 };
