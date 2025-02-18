@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
-      "Refresh data": [
-        "Gegevens vernieuwen"
-      ],
       "Refresh status": [
         "Status vernieuwen"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "Herinnering versturen"
+      ],
+      "Set as album cover": [
+        "Instellen als omslag"
       ],
       "Set catch-all": [
         "Stel catch-all in"
@@ -2509,8 +2509,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
@@ -3412,6 +3412,12 @@
       "Best deal": [
         "Beste deal"
       ],
+      "Checkout": [
+        "Afrekenen"
+      ],
+      "Create your account": [
+        "Maak uw account"
+      ],
       "Device": [
         "Apparaat"
       ],
@@ -3754,9 +3760,6 @@
       "Allocated": [
         "Toegewezen"
       ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Sta gebruikers toe om verbinding te maken met beveiligde gedeelde servers op basis van gedefinieerd beleid."
-      ],
       "Already allocated": [
         "Reeds toegewezen"
       ],
@@ -3860,7 +3863,7 @@
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
-        "CNET editors keuze prijs met een beoordeling van 8,4 van de 10"
+        "CNET editors keuze met een beoordeling van 8,4 van de 10"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "SAML-authenticatie voor de organisatie configureren via een identiteitsprovider (IdP). Dit zal SAML voor de hele organisatie inschakelen."
@@ -4532,7 +4535,7 @@
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
-        "Pc Magazine editors keuze prijs met een beoordeling van 5 op 5 sterren"
+        "Pc Magazine editors keuze met een beoordeling van 5 op 5 sterren"
       ],
       "per month": [
         "maandelijks"
@@ -4758,6 +4761,10 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
+      ],
+      "Step ${ step }": [
+        "Stap ${ step }",
+        "Stap ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -6831,6 +6838,9 @@
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Snelle Zwitserse VPN die uw privacy beschermt"
+      ],
       "High-speed VPN on ${ n } device": [
         "High-speed VPN op ${ n } apparaat",
         "High-speed VPN op ${ n } apparaten"
@@ -6950,11 +6960,14 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integratie (binnenkort beschikbaar)"
+      "SSO integration": [
+        "SSO-integratie"
       ],
       "Start protecting your organization": [
         "Begin met het beschermen van uw organisatie"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Bescherm uzelf online in 2 eenvoudige stappen"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -7573,8 +7586,8 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Dit uitschakelen zal de mogelijkheid om meldingen in ${ BRAND_NAME } applicaties te ontvangen verwijderen"
       ],
-      "During your first month": [
-        "Gedurende uw eerste maand"
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Gedurende de eerste maand gebruik van een ${ BRAND_NAME } product"
       ],
       "Email subscriptions": [
         "Nieuwsbrieven"
@@ -7844,9 +7857,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } uw e-mailadres ${ email } om organisatidentiteit in te stellen."
-      ],
       "Current organization identity": [
         "Huidige organisatie-identiteit"
       ],
@@ -7861,9 +7871,6 @@
       ],
       "Organization identity updated": [
         "Identiteit van organisatie bijgewerkt"
-      ],
-      "Verify": [
-        "Verifiëren"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -8159,7 +8166,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw rekening naar behoren in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw factuur naar behoren in rekening te brengen. U kunt een restitutie ontvangen binnen 8 weken van de betaaldatum, onder de voorwaarden van uw overeenkomst met uw bank."
       ],
       "Street address, postal code, and city": [
         "Straatnaam, postcode en plaats"
@@ -9582,6 +9589,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -9870,47 +9918,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -10672,6 +10679,9 @@
       "Groups": [
         "Groepen"
       ],
+      "Help center": [
+        "Helpcentrum"
+      ],
       "How to choose a good logo": [
         "Hoe kiest u een goed logo"
       ],
@@ -11037,29 +11047,6 @@
         "Vandaag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
-      ],
-      "Group membership paused": [
-        "Groepslidmaatschap gepauzeerd"
-      ],
-      "Sending member invitation": [
-        "Uitnodiging aan het versturen"
-      ],
-      "User declined invitation": [
-        "Gebruiker weigerde uitnodiging"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Wachten tot gebruiker de uitnodiging accepteert"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het abonnement van de organisatie bewerken."
@@ -11144,6 +11131,29 @@
       ],
       "Your DKIM signing is working.": [
         "Ondertekenen met DKIM werkt."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
+      ],
+      "Group membership paused": [
+        "Groepslidmaatschap gepauzeerd"
+      ],
+      "Sending member invitation": [
+        "Uitnodiging aan het versturen"
+      ],
+      "User declined invitation": [
+        "Gebruiker weigerde uitnodiging"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Wachten tot gebruiker de uitnodiging accepteert"
       ]
     },
     "Tor out of date": {
@@ -11658,8 +11668,11 @@
       "Your ${ a } and ${ b } bundle": [
         "Uw ${ a } en ${ b } bundel"
       ],
+      "Your ${ selected } plan": [
+        "Uw ${ selected } abonnement"
+      ],
       "Your plan includes:": [
-        "Uw plan omvat:"
+        "Uw abonnement omvat:"
       ]
     },
     "vpn_2step: tooltip": {

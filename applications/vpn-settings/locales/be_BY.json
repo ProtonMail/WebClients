@@ -278,7 +278,7 @@
         "Рэдагаваць групу"
       ],
       "Edit invoice note": [
-        "Рэдагаваць рахунак-фактуру"
+        "Рэдагаваць нататку рахунка"
       ],
       "Edit name": [
         "Рэдагаваць назву"
@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Запрасіць сябра"
       ],
-      "Refresh data": [
-        "Абнавіць даныя"
-      ],
       "Refresh status": [
         "Абнавіць статус"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "Адправіць напамін"
+      ],
+      "Set as album cover": [
+        "Задаць у якасці вокладкі альбома"
       ],
       "Set catch-all": [
         "Задаць адрас для ўсёй пошты дамена"
@@ -1262,7 +1262,7 @@
         "Стварыць метку"
       ],
       "Discover and set up features": [
-        "Азнаёміцца і наладзіць функцыі"
+        "Пазнаёміцца і наладзіць функцыі"
       ],
       "Remind me later": [
         "Нагадаць мне пазней"
@@ -2338,8 +2338,11 @@
       ]
     },
     "Description": {
+      "Create policies to manage access to shared servers.": [
+        "Стварэнне палітык для кіравання доступам абагуленых сервераў."
+      ],
       "Everyone in your organization can connect to shared servers.": [
-        "Кожны ўдзельнік вашай арганізацыі зожа падключацца да абагуленых сервераў."
+        "Кожны ўдзельнік вашай арганізацыі зможа падключацца да абагуленых сервераў."
       ],
       "If disabled, only admins will have access.": [
         "Калі адключана, то толькі адміністратары будуць мець доступ."
@@ -2480,7 +2483,7 @@
         "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа уплыў на будучыя падрабязнасці рахунка."
+        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа ўплыў на будучыя падрабязнасці рахунка."
       ]
     },
     "Email spam notification": {
@@ -2526,8 +2529,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } ваша імя карыстальніка. Каб стварыць ${ emailAddress }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Уся прастора сховішча была размеркавана. Паменшыце сховішча, якое вы вылучылі іншым карыстальнікам."
@@ -2692,7 +2695,7 @@
         "Выберыце краіну"
       ],
       "Please select a state": [
-        "Калі ласка, выберыце рэгіён"
+        "Выберыце рэгіён"
       ],
       "Please set a recovery email first": [
         "Спачатку задайце электронную пошту для аднаўлення доступу"
@@ -3457,11 +3460,17 @@
       "Best deal": [
         "Лепшая прапанова"
       ],
+      "Checkout": [
+        "Аплата"
+      ],
+      "Create your account": [
+        "Стварэнне ўліковага запісу"
+      ],
       "Device": [
         "Прылада"
       ],
       "Enabled Countries": [
-        "Уключыаныя краіны"
+        "Уключаныя краіны"
       ],
       "Enter your email address": [
         "Увядзіце адрас сваёй электроннай пошты"
@@ -3596,7 +3605,7 @@
     },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
-        "${ amountUsers } карыстальнік з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў.",
+        "${ amountUsers } карыстальнік з ${ totalUsers } у цяперашні час мае доступ да абагуленых сервераў.",
         "${ amountUsers } карыстальнікі з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў.",
         "${ amountUsers } карыстальнікаў з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў.",
         "${ amountUsers } карыстальнікаў з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў."
@@ -3656,7 +3665,7 @@
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс пасродкам адмысловага маніторынга за падазронай актыўнасцю."
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага маніторынгу за падазронай актыўнасцю."
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Адбываецца наладжванне ${ provisioningCounter } сервера. Звычайна гэта займае каля ${ provisioningDuration }.",
@@ -3828,9 +3837,6 @@
       ],
       "Allocated": [
         "Вылучана"
-      ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Дазваляць карыстальнікам падключацца да бяспечна абагуленых сервераў на падставе вызначаных палітык."
       ],
       "Already allocated": [
         "Ужо вылучана"
@@ -4052,7 +4058,7 @@
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
       ],
       "Discover new features unlocked with ${ planTitle } and start using them right away!": [
-        "Пазнаёмцеся з новымі функцыямі, якія даступныя з тарыфным планам ${ planTitle } і пачніце іх выкарыстоўваць неадкладна!"
+        "Пазнаёмцеся з новымі функцыямі, якія даступны з тарыфным планам ${ planTitle } і пачніце іх неадкладна выкарыстоўваць!"
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
@@ -4559,7 +4565,7 @@
         "Выкл"
       ],
       "On": [
-        "Укл"
+        "Уключана"
       ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
@@ -4851,6 +4857,12 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
+      ],
+      "Step ${ step }": [
+        "Крок ${ step }",
+        "Крок ${ step }",
+        "Крок ${ step }",
+        "Крок ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Сховішча, вылучанае для іншых карыстальнікаў у гэтай арганізацыі"
@@ -5939,7 +5951,7 @@
         "Умераны NAT"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
-        "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
+        "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
       ],
       "Name": [
         "Назва"
@@ -6862,6 +6874,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Адна простая падпіска"
       ],
+      "Apps for": [
+        "Праграмы для"
+      ],
       "Auto-delete Spam and Trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
       ],
@@ -6929,7 +6944,7 @@
         "Вылучаныя серверы і IP"
       ],
       "Dedicated servers optimized for streaming": [
-        "Вылучаныя серверы аптымізаваны для трансляцый"
+        "Вылучаныя серверы аптымізаваныя для трансляцый"
       ],
       "Desktop app": [
         "Настольная праграма"
@@ -6981,6 +6996,9 @@
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Высакахуткасны швейцарскі VPN, які абараняе вашу прыватнасць."
       ],
       "High-speed VPN on ${ n } device": [
         "Высакахуткасны VPN на ${ n } прыладзе",
@@ -7105,11 +7123,14 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android і Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Інтэграцыя SSO (неўзабаве)"
+      "SSO integration": [
+        "Інтэграцыя SSO"
       ],
       "Start protecting your organization": [
         "Пачніце абараняць сваю арганізацыю"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Пачніце абараняць сябе ў інтэрнэце выканаўшы 2 простыя крокі"
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
@@ -7185,6 +7206,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
+      ],
+      "Up to 10 Gbps": [
+        "Да 10 Гбіт/с"
       ],
       "Use on up to ${ n } device at once": [
         "Выкарыстоўвайце на ${ n } прыладзе адначасова",
@@ -7469,7 +7493,7 @@
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Прымусова завяршайце сеансы карыстальніка пры падазрэнні, што яго ўліковыя даныя скампраметаваны"
+        "Прымусова завяршайце сеансы карыстальнікаў пры падазрэнні, што іх уліковыя даныя скампраметаваны"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
@@ -7740,9 +7764,6 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Адключэнне гэтага параметра правядзе да выдалення магчымасці атрымліваць апавяшчэнні ў праграмах ${ BRAND_NAME }"
-      ],
-      "During your first month": [
-        "На працягу першага месяца"
       ],
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
@@ -8018,9 +8039,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } свой адрас электроннай пошты ${ email }, каб задаць ідэнтычнасць арганізацыі."
-      ],
       "Current organization identity": [
         "Бягучая ідэнтычнасць арганізацыі"
       ],
@@ -8035,9 +8053,6 @@
       ],
       "Organization identity updated": [
         "Ідэнтычнасць арганізацыі абноўлена"
-      ],
-      "Verify": [
-        "Праверыць"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9524,7 +9539,10 @@
         "Адзіны ўваход выдалены"
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
-        "У карыстальніка ${ user } цяпер уліковы запіс з адзіным уваходам."
+        "У карыстальніка ${ user } цяпер уліковы запіс з адзіным уваходам. Яго папярэдні пароль цяпер з'яўляецца рэзервовым паролем."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Яму неабходна будзе зноў увайсці ў сістэму з дапамогай вашага пастаўшчыка пасведчанняў, каб атрымаць доступ да сэрвісаў ${ BRAND_NAME }. Пераканайцеся, што карыстальнік існуе ў вашым пастаўшчыку пасведчанняў для магчымасці яго ўваходу."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Гэта дзеянне прывядзе да выхаду карыстальніка з яго іншых прылад, і яму давядзецца стварыць новы рэзервовы пароль."
@@ -9845,6 +9863,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -10145,47 +10204,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -10866,7 +10884,7 @@
         "Рэдагаваць шлюз з назвай ${ currentName }"
       ],
       "Edit invoice note": [
-        "Рэдагаваць рахунак-фактуру"
+        "Рэдагаваць нататку рахунка"
       ],
       "Edit servers": [
         "Рэдагаваць серверы"
@@ -10954,6 +10972,9 @@
       ],
       "Groups": [
         "Групы"
+      ],
+      "Help center": [
+        "Цэнтр дапамогі"
       ],
       "How to choose a good logo": [
         "Як выбраць добры лагатып"
@@ -11322,29 +11343,6 @@
         "Сёння"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы і зашыфраваныя рэсурсы не будуць абагулены з гэтым карыстальнікам."
-      ],
-      "Group membership paused": [
-        "Знаходжанне ў групе прыпынена"
-      ],
-      "Sending member invitation": [
-        "Адпраўка запрашэння ўдзельніку"
-      ],
-      "User declined invitation": [
-        "Карыстальнік адхіліў запрашэнне"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Чаканне прыняцця запрашэння карыстальнікам"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратары могуць кіраваць уліковымі запісамі карыстальнікаў і даваць правы адміністратара іншым карыстальнікам. Толькі асноўны адміністратар можа рэдагаваць тарыфны план арганізацыі."
@@ -11429,6 +11427,29 @@
       ],
       "Your DKIM signing is working.": [
         "Ваш подпіс DKIM працуе."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы і зашыфраваныя рэсурсы не будуць абагулены з гэтым карыстальнікам."
+      ],
+      "Group membership paused": [
+        "Знаходжанне ў групе прыпынена"
+      ],
+      "Sending member invitation": [
+        "Адпраўка запрашэння ўдзельніку"
+      ],
+      "User declined invitation": [
+        "Карыстальнік адхіліў запрашэнне"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Чаканне прыняцця запрашэння карыстальнікам"
       ]
     },
     "Tor out of date": {
@@ -11841,6 +11862,12 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ваш камплект ${ a } і ${ b }"
+      ],
+      "Your ${ selected } plan": [
+        "Ваш тарыфны план ${ selected }"
+      ],
+      "Your plan includes:": [
+        "Ваш тарыфны план уключае:"
       ]
     },
     "vpn_2step: tooltip": {
@@ -11874,10 +11901,10 @@
         "Bitcoin праз электронную пошту"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Зашыфраваны і бяспечны ${ MAIL_APP_NAME } адрас электроннай пошты. Вы можаце лёгка адправіць Bitcoin каму заўгодна, маючы толькі іх ${ BRAND_NAME } імя."
+        "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin каму заўгодна, выкарыстоўваючы толькі імя карыстальніка ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Бяспечна абменьвайце Bitcoin праз электронную пошту замест складаных, 26-значных адрасаў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
+        "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных, 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
       ]
     },
     "wallet_signup_2024:app-switcher": {
