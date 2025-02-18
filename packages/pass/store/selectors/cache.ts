@@ -14,6 +14,7 @@ export const selectCachableState = (state: State) => {
     whiteListedState.invites = {};
     whiteListedState.user = partialMerge(whiteListedState.user, { devices: [] });
     whiteListedState.access = {};
+    whiteListedState.alias = { aliasDetails: {}, aliasOptions: null, mailboxes: null };
 
     /** Filter stale request metadata and optimisticIds */
     whiteListedState.items.byOptimisticId = {};
