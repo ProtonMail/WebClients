@@ -1124,7 +1124,7 @@
         "Стварыць метку"
       ],
       "Discover and set up features": [
-        "Азнаёміцца і наладзіць функцыі"
+        "Пазнаёміцца і наладзіць функцыі"
       ],
       "Remind me later": [
         "Нагадаць мне пазней"
@@ -2260,6 +2260,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
+        "Палепшыць да ${ BRAND_NAME } ${ planName }, каб уключыць публічнае абагульванне з доступам да рэдагавання. Працягвайце бяспечнае і бесперашкоднае супрацоўніцтва."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з падтрымкай ад экспертаў 24/7."
       ],
@@ -2473,8 +2476,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } ваша імя карыстальніка. Каб стварыць ${ emailAddress }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
       ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
@@ -2753,7 +2756,7 @@
         "Выберыце краіну"
       ],
       "Please select a state": [
-        "Калі ласка, выберыце рэгіён"
+        "Выберыце рэгіён"
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
@@ -3833,7 +3836,7 @@
         "${ contactsLength } кантактаў"
       ],
       "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Файлы ${ DOCS_APP_NAME } не могуць быць спампаваны наўпрост і яны не будуць ўключаны ў гэта спампоўванне. Вы можаце спампаваць іншыя файлы націснуўшы \"Працягнуць спампоўванне\"."
+        "Файлы ${ DOCS_APP_NAME } не могуць быць спампаваны наўпрост і яны не будуць уключаны ў гэта спампоўванне. Вы можаце спампаваць іншыя файлы націснуўшы \"Працягнуць спампоўванне\"."
       ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } дазваляе вам супрацоўнічаць у рэжыме рэальнага часу з дапамогай скразнога шыфравання для поўнай прыватнасці. Стварыце копію, каб пачаць рэдагаванне, або папрасіце ўладальніка забяспечыць вас правам рэдагавання дакумента."
@@ -3857,7 +3860,7 @@
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс пасродкам адмысловага маніторынга за падазронай актыўнасцю."
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага маніторынгу за падазронай актыўнасцю."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -4148,7 +4151,7 @@
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
       ],
       "Discover new features unlocked with ${ planTitle } and start using them right away!": [
-        "Пазнаёмцеся з новымі функцыямі, якія даступныя з тарыфным планам ${ planTitle } і пачніце іх выкарыстоўваць неадкладна!"
+        "Пазнаёмцеся з новымі функцыямі, якія даступны з тарыфным планам ${ planTitle } і пачніце іх неадкладна выкарыстоўваць!"
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
@@ -4745,10 +4748,10 @@
         "Пачатак"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічабавы подпіс часткова правераны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+        "Лічбавы подпіс часткова правераны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
       ],
       "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічабавы подпіс часткова правераны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+        "Лічбавы подпіс часткова правераны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
@@ -4781,10 +4784,10 @@
         "У гэтага дакумента занадта высокая актыўнасць. Некаторыя функцыі могуць быць часова недаступныя."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
-        "Магчыма, што ў вас недастаткова правоў для прагляду гэтага дакумента або ён проста не існуе. Паспрабуйце перазагрузіць старонку, каб паглядзець ці засталася праблема або звярніцеся да ўладальніка для атрымання доступу."
+        "Магчыма, што ў вас недастаткова правоў для прагляду гэтага дакумента або ён проста не існуе. Паспрабуйце перазагрузіць старонку, каб паглядзець ці засталася праблема або звярніцеся да ўладальніка, каб атрымаць доступ да файла."
       ],
       "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
-        "Гэты дакумент можа не існаваць або ў вас можа не быць неабходных правоў, каб прагледзець яго з выбраным уліковым запісам. Паспрабуйце іншы ўліковы запіс або звяжыцеся з уладальнікам для атрымання доступу."
+        "Гэты дакумент можа не існаваць або ў вас можа не быць неабходных правоў, каб прагледзець яго з выбраным уліковым запісам. Паспрабуйце іншы ўліковы запіс або звяжыцеся з уладальнікам, каб атрымаць доступ да файла."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
@@ -5244,7 +5247,7 @@
         "Маўр"
       ],
       "Anyone on the Internet with the link can edit": [
-        "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа рэдагаваць"
+        "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа рэдагаваць файл"
       ],
       "Anyone on the Internet with the link can view": [
         "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа праглядаць"
@@ -5825,16 +5828,16 @@
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папкі) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папка з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папкі з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папак з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папак з ${ itemsToImportCount }) і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } меткі) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метка з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } меткі з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6461,7 +6464,7 @@
         "Назіранне за ўцечкай даных"
       ],
       "Dedicated servers optimized for streaming": [
-        "Вылучаныя серверы аптымізаваны для трансляцый"
+        "Вылучаныя серверы аптымізаваныя для трансляцый"
       ],
       "Desktop app": [
         "Настольная праграма"
@@ -6628,8 +6631,8 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android і Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Інтэграцыя SSO (неўзабаве)"
+      "SSO integration": [
+        "Інтэграцыя SSO"
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
@@ -6949,7 +6952,7 @@
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Прымусова завяршайце сеансы карыстальніка пры падазрэнні, што яго ўліковыя даныя скампраметаваны"
+        "Прымусова завяршайце сеансы карыстальнікаў пры падазрэнні, што іх уліковыя даныя скампраметаваны"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
@@ -9085,7 +9088,7 @@
         "Выдаліць ${ item.name }?"
       ],
       "Delete ${ links.length } items?": [
-        "Выдаліць ${ links.length } элементаў?"
+        "Выдаліць ${ links.length } элементы(аў)?"
       ],
       "Delete ${ value }": [
         "Выдаліць ${ value }"
@@ -9185,6 +9188,9 @@
       ],
       "Groups": [
         "Групы"
+      ],
+      "Help center": [
+        "Цэнтр дапамогі"
       ],
       "High security for your account": [
         "Высокая бяспека для вашага ўліковага запісу"
@@ -9638,10 +9644,10 @@
         "Bitcoin праз электронную пошту"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Зашыфраваны і бяспечны ${ MAIL_APP_NAME } адрас электроннай пошты. Вы можаце лёгка адправіць Bitcoin каму заўгодна, маючы толькі іх ${ BRAND_NAME } імя."
+        "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin каму заўгодна, выкарыстоўваючы толькі імя карыстальніка ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Бяспечна абменьвайце Bitcoin праз электронную пошту замест складаных, 26-значных адрасаў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
+        "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных, 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -9680,10 +9686,10 @@
         "Вы сапраўды хочаце незваротна выдаліць гэты кантакт?"
       ],
       "Cannot contain a dot at the beginning": [
-        "Не можа змяшчаць кроку ў пачатку"
+        "Не можа змяшчаць кропку ў пачатку"
       ],
       "Cannot contain a dot at the end": [
-        "Не можа змяшчаць кроку ў канцы"
+        "Не можа змяшчаць кропку ў канцы"
       ],
       "Contacts could not be merged": [
         "Не атрымалася аб'яднаць кантакты"
