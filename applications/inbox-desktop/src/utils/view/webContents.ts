@@ -1,5 +1,6 @@
 import { WebContents, shell } from "electron";
 import {
+    getLocalID,
     isAccount,
     isAccountAuthorize,
     isAccountLogin,
@@ -24,6 +25,7 @@ import {
     showNetworkErrorPage,
     IGNORED_NET_ERROR_CODES,
     getCurrentViewID,
+    getViewURL,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, viewLogger } from "../log";
@@ -43,7 +45,7 @@ export function handleWebContents(contents: WebContents) {
         return getCurrentView()?.webContents === contents;
     };
 
-    contents.on("did-navigate", (_ev, url) => {
+    contents.on("did-navigate", async (_ev, url) => {
         logger().info("did-navigate", url);
 
         if (isHostAllowed(url)) {
@@ -74,6 +76,21 @@ export function handleWebContents(contents: WebContents) {
         // them is in the previous user home page after login.
         if (getCurrentViewID() === "account" && (isAccountSwitch(url) || isAccountLogin(url))) {
             resetHiddenViews({ toHomepage: false });
+        }
+
+        // If we switch accounts from settings, we need to ensure that all hidden views are
+        // reset to the home page using the corresponding local ID.
+        // We might need to do this syncronization when changing local ID in mail or calendar views
+        // too, but since it looks like the current flow works ok, we are not adding unneeded checks
+        // here.
+        if (getCurrentViewID() === "account") {
+            const accountLocalID = getLocalID(url);
+            const mailLocalId = getLocalID(await getViewURL("mail"));
+            const calendarLocalId = getLocalID(await getViewURL("calendar"));
+
+            if (accountLocalID !== mailLocalId || accountLocalID !== calendarLocalId) {
+                resetHiddenViews({ toHomepage: true });
+            }
         }
 
         if (isHome(url)) {
