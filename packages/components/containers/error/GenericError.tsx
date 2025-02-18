@@ -62,7 +62,7 @@ export const GenericErrorDisplay = ({ children, className, big, isNetworkError, 
     );
 };
 
-const GenericErrorWithReload = ({ children, className, big, isNetworkError }: Props) => {
+const GenericErrorWithReload = ({ children, className, big, isNetworkError }: Omit<Props, 'customImage' | 'title'>) => {
     const autoReloadEnabled = useFlag('AutoReloadPage');
 
     const reloadPageOnError = () => {
@@ -105,7 +105,7 @@ const GenericErrorWithReload = ({ children, className, big, isNetworkError }: Pr
     );
 };
 
-const GenericError = ({ children, className, big, isNetworkError }: Props) => {
+const GenericError = ({ children, className, big, isNetworkError }: Omit<Props, 'customImage' | 'title'>) => {
     const isFlagAvailable = useContext(FlagContext);
 
     // Display the generic error if Unleash is not initalized yet

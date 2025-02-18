@@ -16,7 +16,6 @@ const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 interface Props {
     labelID: string;
     isExtraTiny: boolean;
-    isNarrow: boolean;
     viewportIsNarrow?: boolean;
     selectedIDs: string[];
     onMove: (labelID: string, sourceAction: SOURCE_ACTION) => Promise<void>;

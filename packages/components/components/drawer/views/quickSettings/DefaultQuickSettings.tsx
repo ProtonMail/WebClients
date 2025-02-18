@@ -11,7 +11,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
+import { PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
 import ThemeCards from '../../../../containers/themes/ThemeCards';
 import { useTheme } from '../../../../containers/themes/ThemeProvider';
@@ -107,7 +107,6 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                     setTheme(themeType, ThemeModeSetting.Light);
                                     createNotification({ text: c('Success').t`Preference saved` });
                                 }}
-                                active={information.colorScheme === ColorScheme.Light}
                                 className="flex-none"
                             />
                             <ThemeSyncModeDropdown
@@ -118,7 +117,6 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                     setTheme(themeType, ThemeModeSetting.Dark);
                                     createNotification({ text: c('Success').t`Preference saved` });
                                 }}
-                                active={information.colorScheme === ColorScheme.Dark}
                                 className="flex-none"
                             />
                         </div>

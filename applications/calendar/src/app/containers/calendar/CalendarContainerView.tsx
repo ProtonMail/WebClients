@@ -459,7 +459,6 @@ const CalendarContainerView = ({
             date={noonDate}
             timezone={tzid}
             setTzid={setTzid}
-            telemetrySource="temporary_timezone"
             hideTimeZoneSelector={isSearching}
             dateCursorButtons={
                 !isSearching && (
@@ -631,7 +630,6 @@ const CalendarContainerView = ({
             sidebar={sidebar}
             header={header}
             containerRef={setContainerRef}
-            drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
             drawerApp={
                 isDrawerApp ? null : (
                     <DrawerApp

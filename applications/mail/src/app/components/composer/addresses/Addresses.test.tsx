@@ -1,7 +1,6 @@
 import type { MutableRefObject } from 'react';
 
-import { fireEvent, getAllByRole, screen } from '@testing-library/react';
-import { act, getByText } from '@testing-library/react';
+import { act, fireEvent, getAllByRole, getByText, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -114,7 +113,7 @@ const setup = async ({
     const nextMessage = mergeMessages(DEFAULT_PROPS.message, messageProp || {});
 
     const composerID = 'composer-test-id';
-    const result = await render(<Addresses {...DEFAULT_PROPS} message={nextMessage} composerID={composerID} />, {
+    const result = await render(<Addresses {...DEFAULT_PROPS} composerID={composerID} />, {
         onStore: (store) => {
             store.dispatch(
                 addComposerAction({
@@ -207,16 +206,13 @@ describe('Addresses', () => {
         });
 
         // Expect to have all three contacts
-        const expectedChange = { data: { ToList: [recipient1, recipient2, recipient3] } };
         expect(store.getState().composers.composers[composerID].recipients.ToList).toEqual([
             recipient1,
             recipient2,
             recipient3,
         ]);
 
-        const updatedMessage = mergeMessages(message, expectedChange);
-
-        await rerender(<Addresses {...DEFAULT_PROPS} message={updatedMessage} composerID={composerID} />);
+        await rerender(<Addresses {...DEFAULT_PROPS} composerID={composerID} />);
 
         const updatedAddresses = screen.getAllByTestId('composer-addresses-item');
         expect(updatedAddresses.length).toEqual(3);

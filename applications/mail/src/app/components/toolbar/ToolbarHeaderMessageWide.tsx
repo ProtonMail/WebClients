@@ -51,7 +51,7 @@ const ToolbarHeaderMessageWide = ({
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
-    const { localIsTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
+    const { localIsTiny } = getToolbarResponsiveSizes(breakpoint);
 
     return (
         <div>
@@ -73,7 +73,6 @@ const ToolbarHeaderMessageWide = ({
                     <MoveButtons
                         labelID={labelID}
                         isExtraTiny={breakpoint === 'extratiny'}
-                        isNarrow={localIsNarrow}
                         selectedIDs={selectedIDs}
                         onMove={onMove}
                         onDelete={onDelete}

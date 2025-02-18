@@ -19,7 +19,6 @@ interface Base {
     cycle: Cycle;
     isCurrentPlan?: boolean;
     recommended?: boolean;
-    canSelect?: boolean;
     actionLabel?: ReactNode;
     enableActionLabelSpacing?: boolean;
 }

@@ -312,7 +312,6 @@ const List = (
                                                         labelID={labelID}
                                                         loading={loading}
                                                         columnLayout={columnLayout}
-                                                        elementID={elementID}
                                                         element={element}
                                                         index={index}
                                                         breakpoints={breakpoints}

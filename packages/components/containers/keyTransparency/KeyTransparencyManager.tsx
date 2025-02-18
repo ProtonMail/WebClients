@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { serverTime } from '@proton/crypto';
 import { ktSentryReportError } from '@proton/key-transparency';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SECOND } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
@@ -17,7 +16,6 @@ import useRunSelfAudit from './useRunSelfAudit';
 
 interface Props {
     children: ReactNode;
-    appName: APP_NAMES;
 }
 
 const KeyTransparencyManager = ({ children }: Props) => {
