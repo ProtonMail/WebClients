@@ -1273,7 +1273,7 @@
         "Minggu ini"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
-        "Untuk mencari isi email Anda dengan aman, kami perlu untuk mengunduh salinan pesan Anda ke browser Anda. Proses unduhan kali pertama dapat memakan waktu sejenak."
+        "Untuk mencari isi email Anda dengan aman, kami perlu untuk mengunduh salinan pesan Anda ke browser Anda. Proses unduhan ini dapat memakan waktu sejenak untuk unduhan kali pertama."
       ],
       "Toggle Calendar app": [
         "Tampilkan/sembunyikan aplikasi Calendar"
@@ -3972,9 +3972,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
       ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
@@ -9593,8 +9590,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android dan Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integrasi SOO (segera hadir)"
+      "SSO integration": [
+        "Integrasi SSO"
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
@@ -9664,6 +9661,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gunakan pada hingga ${ n } perangkat secara bersamaan"
       ],
       "User credential management": [
         "Pengelolaan kredensial pengguna"
@@ -12931,6 +12931,9 @@
       ],
       "Groups": [
         "Grup"
+      ],
+      "Help center": [
+        "Pusat bantuan"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Sembunyikan email Anda dengan ${ PASS_APP_NAME }"
