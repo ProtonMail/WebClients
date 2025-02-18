@@ -5,6 +5,7 @@ import { DefaultProtocolActual, UNCHECKED_PROTOCOL } from "@proton/shared/lib/de
 import { getRegExe } from "./setup_mailto_windows";
 import { protocolLogger } from "../log";
 import { shell } from "electron";
+import os from "node:os";
 
 export const checkDefaultMailtoClientWindows = (): DefaultProtocolActual => {
     const regExe = getRegExe();
@@ -46,5 +47,15 @@ export const checkDefaultMailtoClientWindows = (): DefaultProtocolActual => {
 };
 
 export const setDefaultMailtoWindows = () => {
-    shell.openExternal("ms-settings:defaultapps?category=email");
+    // os.release() returns a string like "10.0.19042" or "10.0.22000" for Windows 11.
+    const releaseParts = os.release().split(".");
+    const buildNumber = parseInt(releaseParts[2], 10);
+
+    if (buildNumber >= 22000) {
+        // Likely Windows 11 – deep link to the app config
+        shell.openExternal("ms-settings:defaultapps?registeredAppUser=ProtonMail");
+    } else {
+        // Windows 10 – deep link using the email category
+        shell.openExternal("ms-settings:defaultapps?category=email");
+    }
 };
