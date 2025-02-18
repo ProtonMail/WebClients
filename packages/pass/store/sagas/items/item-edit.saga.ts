@@ -6,7 +6,12 @@ import { editItem } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { aliasDetailsSync, itemEdit } from '@proton/pass/store/actions';
 import type { AliasDetailsState, AliasState } from '@proton/pass/store/reducers';
-import { selectAliasDetails, selectAliasMailboxes, selectAliasOptions, selectItem } from '@proton/pass/store/selectors';
+import {
+    selectAliasDetails,
+    selectAliasOptions,
+    selectItem,
+    selectMailboxesForAlias,
+} from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
@@ -23,7 +28,7 @@ function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
     const item: Maybe<ItemRevision<'alias'>> = yield select(selectItem(shareId, itemId));
     if (!item || !item.aliasEmail) throw new Error('Invalid item');
 
-    const mailboxesForAlias: string[] = yield select(selectAliasMailboxes(item.aliasEmail));
+    const mailboxesForAlias: string[] = yield select(selectMailboxesForAlias(item.aliasEmail));
     const aliasOptions: AliasState['aliasOptions'] = yield select(selectAliasOptions);
     const aliasDetails: Maybe<AliasDetailsState> = yield select(selectAliasDetails(item.aliasEmail));
 
