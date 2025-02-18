@@ -135,7 +135,7 @@ const WrappedMainContainer = () => {
     useDrawerParent();
     return (
         <SubscriptionModalProvider app={APPS.PROTONCALENDAR}>
-            <KeyTransparencyManager appName={APPS.PROTONCALENDAR}>
+            <KeyTransparencyManager>
                 <QuickSettingsRemindersProvider>
                     <MainContainer />
                 </QuickSettingsRemindersProvider>

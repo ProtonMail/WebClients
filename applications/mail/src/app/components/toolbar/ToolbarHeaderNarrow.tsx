@@ -69,7 +69,6 @@ const ToolbarHeaderNarrow = ({
                     <MoveButtons
                         labelID={labelID}
                         isExtraTiny={localIsExtraTiny}
-                        isNarrow={localIsNarrow}
                         viewportIsNarrow={viewportBreakpoint.viewportWidth['<=small']}
                         selectedIDs={selectedIDs}
                         onMove={onMove}

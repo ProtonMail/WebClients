@@ -15,7 +15,6 @@ interface Props {
     anchorRef: RefObject<HTMLElement>;
     show: boolean;
     onDisplayed: () => void;
-    onClose: () => void;
     user?: UserModel;
 }
 

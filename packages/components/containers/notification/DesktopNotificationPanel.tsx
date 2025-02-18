@@ -17,10 +17,10 @@ const testDefaultNotification = () => {
     });
 };
 
-export interface Props {
+interface Props {
     onTest?: () => Promise<Notification | undefined>;
-    infoURL?: string;
 }
+
 const DesktopNotificationPanel = ({ onTest = testDefaultNotification }: Props) => {
     const [status, setStatus] = useState<Status>(getStatus());
 

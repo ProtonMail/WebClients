@@ -230,7 +230,6 @@ const ContactsWidgetGroupsContainer = ({
                         groups={filteredGroups}
                         groupsEmailsMap={groupsEmailsMap}
                         onCheckOne={handleCheckOne}
-                        isLargeViewport={false}
                         checkedIDs={checkedIDs}
                         onClick={handleDetails}
                         onCompose={onCompose}
