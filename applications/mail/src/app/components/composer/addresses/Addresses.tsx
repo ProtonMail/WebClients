@@ -11,12 +11,10 @@ import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import type { RecipientType } from '../../../models/address';
 import { selectComposer } from '../../../store/composers/composerSelectors';
 import { composerActions } from '../../../store/composers/composersSlice';
-import type { MessageState } from '../../../store/messages/messagesTypes';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 
 interface Props {
-    message: MessageState;
     messageSendInfo: MessageSendInfo;
     disabled: boolean;
     addressesBlurRef: MutableRefObject<() => void>;

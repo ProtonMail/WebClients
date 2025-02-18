@@ -4,7 +4,6 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { AccountSpotlightsProvider } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
-import { APPS } from '@proton/shared/lib/constants';
 
 import PartnerClaimContainer from '../containers/PartnerClaimContainer';
 import SetupAddressContainer from '../containers/SetupAddressContainer';
@@ -17,7 +16,7 @@ const SetupMainContainer: FunctionComponent = () => {
     return (
         <StandardPrivateApp>
             <AccountSpotlightsProvider>
-                <KeyTransparencyManager appName={APPS.PROTONACCOUNT}>
+                <KeyTransparencyManager>
                     <Switch>
                         <Route path={routes.setup}>
                             <SetupAddressContainer />

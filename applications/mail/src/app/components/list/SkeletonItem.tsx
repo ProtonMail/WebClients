@@ -10,7 +10,6 @@ import ItemRowLayout from './ItemRowLayout';
 
 interface Props {
     conversationMode: boolean;
-    elementID?: string;
     labelID: string;
     isCompactView: boolean;
     loading: boolean;

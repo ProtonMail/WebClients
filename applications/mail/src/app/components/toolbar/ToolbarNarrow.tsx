@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +11,6 @@ import ListSettings from '../list/ListSettings';
 interface Props extends ListSettingsProps {
     classname: string;
     labelID: string;
-    isSearch: boolean;
 }
 
 const BREAKPOINTS = {

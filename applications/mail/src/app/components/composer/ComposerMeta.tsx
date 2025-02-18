@@ -23,7 +23,6 @@ interface Props {
     messageSendInfo: MessageSendInfo;
     disabled: boolean;
     onChange: MessageChange;
-    onChangeContent: (content: string, refreshContent: boolean) => void;
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
     onEditExpiration: () => void;
@@ -38,7 +37,6 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
             messageSendInfo,
             disabled,
             onChange,
-            onChangeContent,
             addressesBlurRef,
             addressesFocusRef,
             onEditExpiration,
@@ -73,14 +71,12 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
                                 composerID={composerID}
                                 message={message}
                                 disabled={disabled}
-                                onChangeContent={onChangeContent}
                                 addressesBlurRef={addressesBlurRef}
                             />
                         </div>
                     </div>
                 </ComposerShortDomainSpotlight>
                 <ComposerAddresses
-                    message={message}
                     messageSendInfo={messageSendInfo}
                     disabled={disabled}
                     addressesBlurRef={addressesBlurRef}

@@ -1,5 +1,4 @@
 import type { RefObject } from 'react';
-import React from 'react';
 
 import { c } from 'ttag';
 
@@ -8,7 +7,6 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 interface Props {
     email?: string;
-    toggle: () => void;
     isOpen: boolean;
     close: () => void;
     anchorRef: RefObject<HTMLButtonElement>;

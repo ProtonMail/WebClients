@@ -2,7 +2,6 @@ import type { DragEvent, MouseEvent, ReactNode } from 'react';
 
 export interface Props {
     disabled?: boolean;
-    loading?: boolean;
     content?: ReactNode;
     toggled?: boolean;
     focussed?: boolean;

@@ -17,7 +17,7 @@ interface Props {
     title?: string;
 }
 
-const AddressesCCButton = ({ type, onClick, onFocus, disabled, classNames }: Props) => {
+const AddressesCCButton = ({ type, onClick, onFocus, disabled, classNames }: Omit<Props, 'title'>) => {
     const title = (() => {
         if (type === 'CCList') {
             return c('Action').t`Carbon Copy`;

@@ -17,13 +17,11 @@ interface Props {
     contactGroupsMap: SimpleMap<ContactGroup>;
     onCheckOne: (event: ChangeEvent, contactID: string) => void;
     user: UserModel;
-    isLargeViewport: boolean;
     onCheck: (contactIDs: string[], checked: boolean, replace: boolean) => void;
     checkedIDs: string[];
     onClick: (contactID: string) => void;
     activateDrag?: boolean;
     onGroupDetails: (contactGroupID: string) => void;
-    isDrawer?: boolean;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
 }
 

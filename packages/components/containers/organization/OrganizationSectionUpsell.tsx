@@ -7,12 +7,10 @@ import useConfig from '@proton/components/hooks/useConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type { Organization } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 interface Props {
     app: APP_NAMES;
-    organization?: Organization;
 }
 
 const OrganizationSectionUpsell = ({ app }: Props) => {

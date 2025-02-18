@@ -10,7 +10,6 @@ interface Props {
     searchButton?: ReactNode;
     searchField?: ReactNode;
     date?: Date;
-    telemetrySource?: string;
     timezone?: string;
     setTzid: (tzid: string) => void;
     hideTimeZoneSelector?: boolean;
