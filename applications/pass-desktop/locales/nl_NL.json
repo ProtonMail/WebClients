@@ -832,7 +832,7 @@
         "Verificatie is mislukt. Bevestig uw ${ BRAND_NAME }-wachtwoord om verder te gaan met de export"
       ],
       "Authentication failed. Confirm your backup password in order to proceed with the export": [
-        "Authenticatie mislukt. Bevestig uw backup wachtwoord om verder te gaan met de export"
+        "Authenticatie mislukt. Bevestig uw back-upwachtwoord om verder te gaan met de export"
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Authenticatie mislukt. Bevestig uw extra wachtwoord om verder te gaan met de export"
@@ -1385,7 +1385,7 @@
         "Toegang tot ${ PASS_APP_NAME } vereist altijd uw ${ BRAND_NAME }-wachtwoord."
       ],
       "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Toegang tot ${ PASS_APP_NAME } vereist altijd uw backup wachtwoord."
+        "Toegang tot ${ PASS_APP_NAME } vereist altijd uw back-upwachtwoord."
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
         "Toegang tot ${ PASS_APP_NAME } vereist altijd uw extra wachtwoord."
@@ -1655,7 +1655,7 @@
         "Verloopt over ${ remainingTime }"
       ],
       "Exporting your data...": [
-        "Uw gegevens importeren..."
+        "Uw gegevens exporteren..."
       ],
       "Extra password successfully created": [
         "Extra wachtwoord succesvol aangemaakt"
@@ -1670,10 +1670,10 @@
         "financiën"
       ],
       "Follow those steps to import your data with a generic CSV:": [
-        "Volg deze stappen om uw gegevens te importeren met behulp van een algemeen CSV-bestand:"
+        "Volg deze stappen om uw gegevens te importeren met een algemeen CSV-bestand:"
       ],
       "For security reasons, this action requires identity verification.": [
-        "Om veiligheidsredenen vereist deze actie identiteitsverificatie."
+        "Om veiligheidsredenen vereist deze handeling identiteitsverificatie."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Om veiligheidsredenen moet u de toegang tot deze gedeelde kluis bevestigen",
@@ -1936,7 +1936,7 @@
         "Controleer uw spam map of probeer de code opnieuw te versturen."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus te deactiveren"
+        "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus uit te schakelen"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus in te schakelen"
@@ -1945,28 +1945,28 @@
         "Bevestig uw ${ BRAND_NAME }-wachtwoord om uw ${ PASS_APP_NAME }-gegevens te exporteren"
       ],
       "Please confirm your backup password": [
-        "Bevestig uw backup wachtwoord"
+        "Bevestig uw back-upwachtwoord"
       ],
       "Please confirm your backup password in order to auto-lock with biometrics.": [
-        "Bevestig uw backup wachtwoord om automatisch te kunnen vergrendelen met biometrische gegevens"
+        "Bevestig uw back-upwachtwoord om met biometrische gegevens automatisch te kunnen vergrendelen."
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
-        "Bevestig uw backup wachtwoord om automatisch te vergrendelen met uw wachtwoord."
+        "Bevestig uw back-upwachtwoord om automatisch te vergrendelen met uw wachtwoord."
       ],
       "Please confirm your backup password in order to disable offline mode": [
-        "Bevestig alstublieft uw backup wachtwoord om offline modus uit te schakelen"
+        "Bevestig uw back-upwachtwoord om offline modus uit te schakelen"
       ],
       "Please confirm your backup password in order to enable offline mode": [
-        "Bevestig uw extra wachtwoord om de offline modus te activeren"
+        "Bevestig uw back-upwachtwoord om offline modus in te schakelen"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
-        "Bevestig uw backup wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
+        "Bevestig uw back-upwachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
       ],
       "Please confirm your backup password in order to unregister your current lock.": [
-        "Bevestig uw backup wachtwoord om uw huidige vergrendeling uit te zetten."
+        "Bevestig uw back-upwachtwoord om uw huidige vergrendeling uit te zetten."
       ],
       "Please confirm your backup password in order to update the auto-lock time.": [
-        "Bevestig uw backup wachtwoord om de auto-lock tijd bij te werken."
+        "Bevestig uw back-upwachtwoord om de auto-lock tijd bij te werken."
       ],
       "Please confirm your extra password": [
         "Bevestig uw extra wachtwoord"
@@ -1978,10 +1978,10 @@
         "Bevestig uw extra wachtwoord om automatisch te vergrendelen met uw extra wachtwoord."
       ],
       "Please confirm your extra password in order to disable offline mode": [
-        "Bevestig uw extra wachtwoord om de offline modus te deactiveren"
+        "Bevestig uw extra wachtwoord om offline modus uit te schakelen"
       ],
       "Please confirm your extra password in order to enable offline mode": [
-        "Bevestig uw extra wachtwoord om de offline modus te activeren"
+        "Bevestig uw extra wachtwoord om offline modus in te schakelen"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw extra wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
@@ -2358,7 +2358,7 @@
         "U hebt de maximaal toegestane lengte van ${ maxLength } tekens bereikt."
       ],
       "You may close this tab.": [
-        "U kunt dit tabblad sluiten."
+        "U kunt dit tabblad nu sluiten."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "U kunt uw domein instellingen aanpassen (catch-all e-mail aliassen, standaard weergavenaam voor aliassen enz...) na het verifiëren van uw domein."
@@ -3361,8 +3361,8 @@
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integratie (binnenkort beschikbaar)"
+      "SSO integration": [
+        "SSO-integratie"
       ]
     },
     "Notification": {
@@ -3512,11 +3512,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Uw informatie is in ten minste één datalek gevonden. Shakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Sluiten"
       ]
     },
     "sso": {
@@ -4473,6 +4468,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "U zult geen toegang meer hebben tot deze kluis. Om opnieuw deel te nemen, heeft u een nieuwe uitnodiging nodig."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Uw organisatie verbiedt het delen van individuele items"
       ],
       "Your session could not be authorized.": [
         "Uw sessie kon niet worden geautoriseerd."
