@@ -9,11 +9,12 @@ import { selectAliasItems } from './items';
 
 export const selectAliasState = ({ alias }: State) => alias;
 export const selectAliasOptions = ({ alias }: State) => alias.aliasOptions;
+export const selectAliasMailboxes = ({ alias }: State) => alias.mailboxes;
 
 export const selectAliasDetails = (aliasEmail: string) =>
     createSelector([selectAliasState], (alias): Maybe<AliasDetailsState> => alias.aliasDetails?.[aliasEmail]);
 
-export const selectAliasMailboxes = (aliasEmail: string) =>
+export const selectMailboxesForAlias = (aliasEmail: string) =>
     createSelector([selectAliasState], (alias): Maybe<AliasMailbox[]> => alias.aliasDetails?.[aliasEmail]?.mailboxes);
 
 export const selectAliasByAliasEmail = (aliasEmail: string) =>

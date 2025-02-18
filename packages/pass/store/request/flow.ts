@@ -16,6 +16,7 @@ type PayloadError<T = any> = { payload: T; error?: unknown };
 export type RequestFlow<I, S, F> = ReturnType<ReturnType<typeof requestActionsFactory<I, S, F>>>;
 export type RequestIntent<T extends RequestFlow<any, any, any>> = T extends RequestFlow<infer U, any, any> ? U : never;
 export type RequestSuccess<T extends RequestFlow<any, any, any>> = T extends RequestFlow<any, infer U, any> ? U : never;
+export type RequestFailure<T extends RequestFlow<any, any, any>> = T extends RequestFlow<any, any, infer U> ? U : never;
 
 type CreateRequestActionsOptions<
     IntentDTO,
@@ -62,7 +63,7 @@ type CreateRequestActionsOptions<
  * successful completion of a request, and handling of errors that
  * occur during the request process. */
 export const requestActionsFactory =
-    <IntentDTO, SuccessDTO, FailureDTO = void>(namespace: string) =>
+    <IntentDTO, SuccessDTO, FailureDTO = IntentDTO>(namespace: string) =>
     /** All generics include sensible defaults allowing partial `options`:
      * - Prepared types default to `Payload<DTO>` maintaining the payload structure
      * - Data flags default to false (no request tracking)

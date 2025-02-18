@@ -1,42 +1,42 @@
 import { type FC } from 'react';
 
-import { Form, FormikProvider, useFormik } from 'formik';
+import { Field, Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
-import { Field } from '@proton/pass/components/Form/Field/Field';
+import { Button, Panel, PanelHeader } from '@proton/atoms/index';
+import { Icon } from '@proton/components/index';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useRequest } from '@proton/pass/hooks/useRequest';
-import { type EmailFormValues, validateEmailForm } from '@proton/pass/lib/validation/email';
-import { createMailbox } from '@proton/pass/store/actions';
+import type { EmailFormValues } from '@proton/pass/lib/validation/email';
+import { validateEmailForm } from '@proton/pass/lib/validation/email';
+import { editMailbox } from '@proton/pass/store/actions';
 
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
-export const FORM_ID = 'custom-address-add';
+type Props = { mailboxID: number };
 
-export const AliasMailboxCreateModal: FC = () => {
+const FORM_ID = 'mailbox-change';
+
+export const AliasMailboxEditModal: FC<Props> = ({ mailboxID }) => {
     const { setAction, onMailboxCreated } = useAliasMailboxes();
     const onClose = () => setAction(null);
-    const create = useRequest(createMailbox, { onSuccess: onMailboxCreated });
+    const edit = useRequest(editMailbox, { onSuccess: onMailboxCreated });
 
     const form = useFormik<EmailFormValues>({
         initialValues: { email: '' },
         validateOnChange: true,
         validateOnMount: false,
         validate: validateEmailForm,
-        onSubmit: ({ email }) => create.dispatch(email),
+        onSubmit: ({ email }) => edit.dispatch({ mailboxID, email }),
     });
 
     return (
         <SidebarModal onClose={onClose} open>
             {(didEnter) => (
                 <Panel
-                    loading={create.loading}
+                    loading={edit.loading}
                     header={
                         <PanelHeader
                             actions={[
@@ -53,10 +53,10 @@ export const AliasMailboxCreateModal: FC = () => {
                                 </Button>,
                                 <Button
                                     color="norm"
-                                    disabled={create.loading || !form.isValid}
+                                    disabled={edit.loading || !form.isValid}
                                     form={FORM_ID}
                                     key="modal-submit-button"
-                                    loading={create.loading}
+                                    loading={edit.loading}
                                     pill
                                     type="submit"
                                 >
@@ -66,14 +66,14 @@ export const AliasMailboxCreateModal: FC = () => {
                         />
                     }
                 >
-                    <h2 className="text-xl text-bold mb-4">{c('Title').t`Add mailbox`}</h2>
+                    <h2 className="text-xl text-bold mb-4">{c('Title').t`Change mailbox email`}</h2>
                     <FormikProvider value={form}>
                         <Form id={FORM_ID} className="mb-4">
                             <FieldsetCluster>
                                 <Field
                                     name="email"
                                     component={TextField}
-                                    label={c('Label').t`Email`}
+                                    label={c('Label').t`New email`}
                                     placeholder={c('Placeholder').t`me@example.com`}
                                     autoFocus={didEnter}
                                     key={`mailbox-address-add-${didEnter}`}
