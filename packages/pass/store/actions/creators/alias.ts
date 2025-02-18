@@ -24,8 +24,10 @@ import type {
     CustomDomainSettingsOutput,
     CustomDomainValidationOutput,
     ItemRevision,
-    MailboxDefaultDTO,
+    MailboxDTO,
     MailboxDeleteDTO,
+    MailboxEditDTO,
+    MailboxVerifyDTO,
     MaybeNull,
     RandomPrefixDTO,
     SelectedItem,
@@ -153,10 +155,8 @@ export const createMailbox = requestActionsFactory<string, UserMailboxOutput>('a
     },
 });
 
-export const validateMailbox = requestActionsFactory<{ mailboxID: number; code: string }, UserMailboxOutput>(
-    'alias::mailbox::validate'
-)({
-    key: ({ mailboxID }) => String(mailboxID),
+export const validateMailbox = requestActionsFactory<MailboxVerifyDTO, UserMailboxOutput>('alias::mailbox::validate')({
+    key: ({ mailboxID }: MailboxDTO) => String(mailboxID),
     success: {
         prepare: (payload) =>
             withNotification({
@@ -193,7 +193,7 @@ export const resendVerifyMailbox = requestActionsFactory<number, UserMailboxOutp
     },
 });
 
-export const deleteMailbox = requestActionsFactory<MailboxDeleteDTO, number>('alias::mailbox::delete')({
+export const deleteMailbox = requestActionsFactory<MailboxDeleteDTO, MailboxDeleteDTO>('alias::mailbox::delete')({
     key: ({ mailboxID }) => mailboxID.toString(),
     success: {
         prepare: (payload) =>
@@ -212,10 +212,41 @@ export const deleteMailbox = requestActionsFactory<MailboxDeleteDTO, number>('al
     },
 });
 
-export const setDefaultMailbox = requestActionsFactory<MailboxDefaultDTO, UserAliasSettingsGetOutput>(
+export const editMailbox = requestActionsFactory<MailboxEditDTO, UserMailboxOutput>('alias::mailboxes::edit')({
+    key: ({ mailboxID }: MailboxDTO) => mailboxID.toString(),
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                text: c('Error').t`Failed to change mailbox`,
+                type: 'error',
+                error,
+            })({ payload }),
+    },
+});
+
+export const cancelMailboxEdit = requestActionsFactory<number, number>('alias::mailboxes::cancel-edit')({
+    key: intKey,
+    success: {
+        prepare: (data) =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Mailbox change successfully cancelled`,
+            })({ payload: data }),
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                text: c('Error').t`Failed to cancel mailbox change`,
+                type: 'error',
+                error,
+            })({ payload }),
+    },
+});
+
+export const setDefaultMailbox = requestActionsFactory<MailboxDTO, UserAliasSettingsGetOutput>(
     'alias::mailbox::set-default'
 )({
-    key: ({ defaultMailboxID }) => defaultMailboxID.toString(),
+    key: ({ mailboxID }) => mailboxID.toString(),
     success: {
         prepare: (data) =>
             withNotification({
