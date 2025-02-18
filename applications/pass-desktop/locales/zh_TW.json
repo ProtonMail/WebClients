@@ -1983,8 +1983,8 @@
       "Require 2FA for organization": [
         "要求組織雙重驗證"
       ],
-      "SSO integration (coming soon)": [
-        "單一登入整合 (即將到來)"
+      "SSO integration": [
+        "SSO 整合"
       ]
     },
     "Notification": {
@@ -2107,11 +2107,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "關閉"
       ]
     },
     "sso": {
@@ -2526,6 +2521,9 @@
       ],
       "No results": [
         "找不到任何結果"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "僅允許英文小寫字母、數字、點號、連字號和底線"
       ],
       "Passphrase is required": [
         "需要密碼片語"
