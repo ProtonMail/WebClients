@@ -101,7 +101,7 @@ export const newUserInvitePromoteFailure = createAction(
     )
 );
 
-export const inviteAccept = requestActionsFactory<InviteAcceptIntent, InviteAcceptSuccess>('invite::accept')({
+export const inviteAccept = requestActionsFactory<InviteAcceptIntent, InviteAcceptSuccess, void>('invite::accept')({
     key: prop('inviteToken'),
     failure: {
         prepare: (error, payload) =>
