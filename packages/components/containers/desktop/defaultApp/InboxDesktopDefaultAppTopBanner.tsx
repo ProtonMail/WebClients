@@ -23,9 +23,8 @@ export const InboxDesktopDefaultAppTopBanner = () => {
     return (
         <>
             <TopBanner className="bg-info" onClose={() => setShowBanner(false)}>
-                {c('Info').t`${MAIL_APP_NAME} is not your default mail application.`}{' '}
-                <InlineLinkButton onClick={triggerPrompt}>{c('Action')
-                    .t`Set as default mail application`}</InlineLinkButton>
+                {c('Info').t`Make ${MAIL_APP_NAME} your default email application.`}{' '}
+                <InlineLinkButton onClick={triggerPrompt}>{c('Action').t`Set as default`}</InlineLinkButton>
             </TopBanner>
 
             {Prompt}
