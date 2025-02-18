@@ -949,6 +949,9 @@
       "Failed to update monitoring settings": [
         "Fehler beim Aktualisieren der Überwachungseinstellungen."
       ],
+      "Failed to update random prefix generation setting.": [
+        "ehler beim Aktualisieren der Einstellung zur zufälligen Präfixgenerierung"
+      ],
       "Failed to verify domain": [
         "Fehler beim Verifizieren der Domain."
       ],
@@ -1387,6 +1390,9 @@
       "An item previously shared with you was removed": [
         "Ein zuvor mit dir geteilter Eintrag wurde entfernt."
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "\"Bist du sicher, dass du ${ emailJSX } aus deinen Postfächern entfernen möchtest?"
+      ],
       "Are you sure you want to remove the link?": [
         "Bist du sicher, dass du diesen Link entfernen möchtest?"
       ],
@@ -1703,6 +1709,10 @@
       "Item restored": [
         "Eintrag wiederhergestellt."
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Einträge teilen: ${ itemAccessCount } Benutzer",
+        "Einträge teilen: ${ itemAccessCount } Benutzer"
+      ],
       "Item successfully excluded from monitoring": [
         "Eintrag erfolgreich von der Überwachung ausgeschlossen."
       ],
@@ -1925,6 +1935,9 @@
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Bitte beachte, dass der Alias nach dem Löschen nicht wiederhergestellt werden kann. Der Alias ist bereits deaktiviert und kann keine E-Mails an dein Postfach weiterleiten"
       ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Bitte verwende die vollständige Domain, z. B. meine-domain.de oder meine-subdomain.meine-domain.de, wenn du eine Subdomain verwendest."
+      ],
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
       ],
@@ -2029,6 +2042,9 @@
       ],
       "Signing you in": [
         "Du wirst angemeldet"
+      ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Die SimpleLogin-Notiz wird zusammen mit der Alias-Adresse am selben Ort gespeichert und ist zwar durch eine Verschlüsselung im Ruhezustand geschützt, aber nicht E2E-verschlüsselt, d.h. jeder, der Zugang zur SimpleLogin-Datenbank hat, kann sie lesen."
       ],
       "Successfully exported all your items": [
         "Alle Einträge erfolgreich exportiert."
@@ -3239,6 +3255,9 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ pluralItemType } in ${ vaultName } suchen"
       ],
+      "Search ${ pluralItemType } in all items": [
+        "${ pluralItemType } in allen Elementen suchen"
+      ],
       "Search in ${ vaultName }": [
         "In ${ vaultName } suchen"
       ],
@@ -3365,6 +3384,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domain erfolgreich verifiziert. Über deine Domain können nun E-Mails empfangen und Aliasse erstellt werden."
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Die Einträge können nicht mehr als ${ share.targetMaxMembers } Benutzer beinhalten.",
+        "Die Einträge können nicht mehr als ${ share.targetMaxMembers } Benutzer beinhalten."
+      ],
       "Mailbox successfully deleted": [
         "Postfach erfolgreich gelöscht."
       ],
@@ -3373,6 +3396,12 @@
       ],
       "Mailboxes successfully updated": [
         "Postfächer erfolgreich aktualisiert."
+      ],
+      "Random prefix generation successfully disabled": [
+        "Die zufällige Präfixgenerierung wurde desaktiviert."
+      ],
+      "Random prefix generation successfully enabled": [
+        "Die zufällige Präfixgenerierung wurde aktiviert."
       ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
         "Tresore können nicht mehr als ${ targetMaxMembers } Benutzer beinhalten.",
@@ -3414,6 +3443,9 @@
       ],
       "Aliases": [
         "Aliasse"
+      ],
+      "Auto create/on the fly alias": [
+        "Alias automatisch im Moment erstellen"
       ],
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
@@ -3618,6 +3650,9 @@
       ],
       "Password": [
         "Passwort"
+      ],
+      "Pending access confirmation": [
+        "Ausstehende Zugriffsbestätigung"
       ],
       "Pending access to the shared data": [
         "Zugriff auf die geteilten Daten ist ausstehend"
@@ -3930,6 +3965,9 @@
       "No results": [
         "Keine Ergebnisse"
       ],
+      "No secure links matching": [
+        "Es stimmen keine sicheren Links überein."
+      ],
       "No shared items matching": [
         "Es gibt keinen geteilten Eintrag, der übereinstimmt."
       ],
@@ -3972,6 +4010,9 @@
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Dieser Alias „${ aliasEmail }“ wird derzeit im Login „${ relatedLoginName }“ verwendet."
       ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Dieses Element wird derzeit geteilt. Wenn du es löschst, wird der Zugang für alle anderen Benutzer gesperrt."
+      ],
       "This item is currently shared. Moving it to another vault will remove access for all other users.": [
         "Dieser Eintrag wird derzeit geteilt. Wenn du ihn in einen anderen Tresor verschiebst, verlieren alle anderen Benutzer den Zugriff."
       ],
@@ -3996,8 +4037,14 @@
       "Verification code is required": [
         "Verifizierungscode ist erforderlich"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Du hast das Benutzerlimit für den Zugriff auf diesen Eintrag erreicht."
+      ],
       "You have reached the limit of members who can access this vault.": [
-        "Du hast die Benutzerlimite für den Zugriff auf diesen Tresor erreicht."
+        "Du hast die Benutzerlimit für den Zugriff auf diesen Tresor erreicht."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Du hast das Limit an zulässigen Benutzern für diesen Eintrag. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Du hast das Limit an zulässigen Benutzern in diesem Tresor erreicht. ${ upgradeLink }"
@@ -4011,8 +4058,14 @@
       "You must select at least one mailbox": [
         "Du musst mindestens ein Postfach auswählen."
       ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Du wirst den Zugriff auf dieses Element und seine Details verlieren. Möchtest du fortfahren?"
+      ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du hast dann keinen Zugang mehr zu diesem Tresor. Um ihm wieder beizutreten, benötigst du eine neue Einladung."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Deine Organisation erlaubt keine Freigabe einzelner Elemente"
       ],
       "Your plan does not allow you to create more aliases": [
         "Dein Abonnement erlaubt es dir nicht, weitere Aliasse zu erstellen."

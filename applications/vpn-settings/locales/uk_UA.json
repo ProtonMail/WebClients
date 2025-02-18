@@ -460,9 +460,6 @@
       "Refer a friend": [
         "Запросити друга"
       ],
-      "Refresh data": [
-        "Оновити дані"
-      ],
       "Refresh status": [
         "Оновити стан"
       ],
@@ -2472,9 +2469,6 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } – ваше ім'я користувача. Щоб створити ${ emailAddress }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Увесь обсяг сховища розподілено. Зменште простір, наданий іншим користувачам."
@@ -4701,6 +4695,12 @@
       "Start sharing it with contacts and use it for online services.": [
         "Почніть ділитися ним з контактами та використовуйте його для онлайн-сервісів."
       ],
+      "Step ${ step }": [
+        "Крок ${ step }",
+        "Крок ${ step }",
+        "Крок ${ step }",
+        "Крок ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Обсяг сховища, розподілений між іншими користувачами в цій організації"
       ],
@@ -6876,9 +6876,6 @@
       "Split tunneling (Android and Windows)": [
         "Розділене тунелювання (Android і Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Інтеграція SSO (незабаром)"
-      ],
       "Start protecting your organization": [
         "Почніть захищати свою організацію"
       ],
@@ -7495,9 +7492,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Вимкнення цієї опції вилучить можливість отримувати сповіщення в додатках ${ BRAND_NAME }."
       ],
-      "During your first month": [
-        "Упродовж вашого першого місяця"
-      ],
       "Email subscriptions": [
         "Підписки електронної пошти"
       ],
@@ -7714,9 +7708,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } вашу адресу електронної пошти ${ email }, щоб встановити ідентифікатор організації."
-      ],
       "Current organization identity": [
         "Тотожність поточної організації"
       ],
@@ -7731,9 +7722,6 @@
       ],
       "Organization identity updated": [
         "Оновлена ідентичність організації"
-      ],
-      "Verify": [
-        "Перевірити"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9495,6 +9483,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
@@ -9795,47 +9824,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
@@ -10942,29 +10930,6 @@
         "Сьогодні"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи, і жодні зашифровані ресурси не будуть доступні цьому користувачеві."
-      ],
-      "Group membership paused": [
-        "Членство в групі призупинено"
-      ],
-      "Sending member invitation": [
-        "Надсилання запрошення учаснику"
-      ],
-      "User declined invitation": [
-        "Користувач відхилив запрошення"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Очікування на прийняття користувачем запрошення"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратори можуть керувати обліковими записами користувачів і надавати права адміністратора іншим користувачам. Тільки головний адміністратор може редагувати план організації."
@@ -11049,6 +11014,29 @@
       ],
       "Your DKIM signing is working.": [
         "Підписування DKIM працює."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи, і жодні зашифровані ресурси не будуть доступні цьому користувачеві."
+      ],
+      "Group membership paused": [
+        "Членство в групі призупинено"
+      ],
+      "Sending member invitation": [
+        "Надсилання запрошення учаснику"
+      ],
+      "User declined invitation": [
+        "Користувач відхилив запрошення"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Очікування на прийняття користувачем запрошення"
       ]
     },
     "Tor out of date": {

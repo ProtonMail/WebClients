@@ -78,6 +78,9 @@
       "Add phone number": [
         "Tambah nomor telepon"
       ],
+      "Add to album": [
+        "Tambah ke album"
+      ],
       "Add to group": [
         "Tambah ke grup"
       ],
@@ -224,6 +227,9 @@
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
+      ],
+      "Create album": [
+        "Buat album"
       ],
       "Create and copy alias": [
         "Buat dan salin alias"
@@ -542,6 +548,9 @@
       ],
       "New": [
         "Berkas/folder baru"
+      ],
+      "New album": [
+        "Album baru"
       ],
       "New document": [
         "Dokumen baru"
@@ -947,6 +956,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "Buat album"
+      ],
       "Upload": [
         "Unggah"
       ]
@@ -2403,11 +2415,6 @@
         "Faktur yang tertunggak"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2489,6 +2496,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2681,9 +2693,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
       ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
@@ -4932,6 +4941,9 @@
       "Ready to add some photos?": [
         "Siap menambahkan foto?"
       ],
+      "Recent": [
+        "Terkini"
+      ],
       "recommended browser": [
         "browser yang disarankan"
       ],
@@ -7172,8 +7184,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android dan Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integrasi SOO (segera hadir)"
+      "SSO integration": [
+        "Integrasi SSO"
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
@@ -7243,6 +7255,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gunakan pada hingga ${ n } perangkat secara bersamaan"
       ],
       "User credential management": [
         "Pengelolaan kredensial pengguna"
@@ -9753,14 +9768,29 @@
       "Bursts": [
         "Foto beruntun"
       ],
+      "Favorites": [
+        "Favorit"
+      ],
+      "Live Photos": [
+        "Foto Langsung"
+      ],
       "Panoramas": [
         "Panorama"
+      ],
+      "Portraits": [
+        "Potret"
       ],
       "RAW": [
         "RAW"
       ],
+      "Screenshots": [
+        "Tangkapan Layar"
+      ],
       "Selfies": [
         "Swafoto"
+      ],
+      "Videos": [
+        "Video"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -9830,6 +9860,12 @@
       ],
       "Addresses": [
         "Alamat"
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Albums": [
+        "Album"
       ],
       "All": [
         "Semua"
@@ -10082,6 +10118,9 @@
       ],
       "Groups": [
         "Grup"
+      ],
+      "Help center": [
+        "Pusat bantuan"
       ],
       "High security for your account": [
         "Keamanan yang tinggi bagi akun Anda"
@@ -10443,11 +10482,6 @@
         "Hari ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tambahkan berkas bersama ini ke ${ DRIVE_APP_NAME } anda untuk akses mudah nanti."
@@ -10529,6 +10563,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Kami telah mengirim undangan untuk mengakses berkas ini."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Validation": {

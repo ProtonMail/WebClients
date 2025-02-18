@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -4051,9 +4051,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Az Ön felhasználóneve ${ user.Name }. A ${ emailAddress } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
-      ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
@@ -6375,9 +6372,6 @@
         "Az érintett felhasználó a következő sorban van:",
         "Az érintett felhasználók a következő sorokban vannak:"
       ],
-      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Zárolás után a szervezet tagjainak fel kell oldania a ${ PASS_APP_NAME } alkalmazást a jelszavukkal, PIN-kóddal stb."
-      ],
       "Align left": [
         "Balra igazítás"
       ],
@@ -6566,9 +6560,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Erősítse szervezetének márkaidentitását, és hozzon létre egységesebb online élményt a felhasználók számára."
-      ],
-      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Alapértelmezésben a szervezet tagjai csak azokat a tárolókat tudják exportálni, ami a saját tulajdonukban van. Ennek bekapcsolásakor semmit sem tudnak exportálni"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
@@ -9408,12 +9399,6 @@
       "Disable animations": [
         "Animációk letiltása"
       ],
-      "Disable data export for organization members": [
-        "Adatok exportálásának letiltása a szervezet tagjai számára"
-      ],
-      "Disable sharing outside the organization": [
-        "A szervezeten kívüli megosztás letiltása"
-      ],
       "Disabled": [
         "Kikapcsolva"
       ],
@@ -11210,9 +11195,6 @@
       "Split tunneling (Android and Windows)": [
         "Csatorna szétválasztás (Android és Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO integráció (hamarosan elérhető)"
-      ],
       "Start protecting your organization": [
         "Kezdje meg a szervezet védelmét"
       ],
@@ -11316,17 +11298,6 @@
       ],
       "Team management": [
         "Csoport menedzsment"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -11434,6 +11405,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12251,9 +12233,6 @@
       ],
       "Organization identity updated": [
         "Szervezet azonosítója frissítve"
-      ],
-      "Verify": [
-        "Megerősítés"
       ]
     },
     "OS compatibility": {
@@ -14540,29 +14519,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -14737,6 +14693,29 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -15672,6 +15651,9 @@
       "Error": [
         "Hiba"
       ],
+      "Excluded items": [
+        "Kizárt elemek"
+      ],
       "Export": [
         "Exportálás"
       ],
@@ -15814,6 +15796,9 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importálás ${ PRODUCT_NAMES.EASY_SWITCH } segítségével"
+      ],
+      "Inactive 2FA": [
+        "Kétlépcsős hitelesítés kikapcsolva"
       ],
       "Increase your privacy with more addresses": [
         "Növelje adatai védelmét további e-mail címek használatával"
@@ -16039,6 +16024,9 @@
       ],
       "Restore administrator privileges": [
         "Adminisztrátori jogok visszaállítása"
+      ],
+      "Reused passwords": [
+        "Újrahasznált jelszavak"
       ],
       "Revoke certificate": [
         "Tanúsítvány visszavonása"
@@ -16268,6 +16256,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "E-mailt küldünk az új címére a megváltoztatás befejezéséhez szükséges útmutatóval."
+      ],
+      "Weak passwords": [
+        "Gyenge jelszavak"
       ],
       "What is an alias?": [
         "Mi az az e-mail álnév?"

@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -550,6 +550,9 @@
       "Export": [
         "Esporta"
       ],
+      "Export as CSV": [
+        "Esporta in formato CSV"
+      ],
       "Export key": [
         "Esporta la chiave"
       ],
@@ -874,9 +877,6 @@
       "Refer a friend": [
         "Invita un amico"
       ],
-      "Refresh data": [
-        "Aggiorna i dati"
-      ],
       "Refresh status": [
         "Aggiorna stato"
       ],
@@ -1080,6 +1080,9 @@
       ],
       "Send reminder": [
         "Invia promemoria"
+      ],
+      "Set as album cover": [
+        "Imposta come copertina dell'album"
       ],
       "Set as default": [
         "Imposta come predefinito"
@@ -4418,9 +4421,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
-      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -6155,6 +6155,12 @@
       "Best deal": [
         "Miglior offerta"
       ],
+      "Checkout": [
+        "Checkout"
+      ],
+      "Create your account": [
+        "Crea il tuo account"
+      ],
       "Device": [
         "Dispositivo"
       ],
@@ -6162,7 +6168,7 @@
         "Paesi abilitati"
       ],
       "Enter your email address": [
-        "Inserisci il tuo indirizzo email"
+        "Inserisci il tuo indirizzo e-mail"
       ],
       "Event": [
         "Evento"
@@ -6967,11 +6973,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Attiva almeno un metodo di recupero dei dati per essere sicuro di poter continuare ad accedere ai contenuti del tuo account ${ BRAND_NAME } se dovessi perdere la tua password."
       ],
-      "Active": [
-        "Attivo"
-      ],
       "active": [
         "attivo"
+      ],
+      "Active": [
+        "Attivo"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Aggiungi un indirizzo email @pm.me al tuo account. Questo dominio semplice e più breve significa \"${ MAIL_APP_NAME } me\" o \"Private Message me.\""
@@ -7028,9 +7034,6 @@
         "L'utente interessato è nella riga",
         "Gli utenti interessati sono nelle righe"
       ],
-      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Dopo essere stati bloccati, i membri dell'organizzazione dovranno sbloccare ${ PASS_APP_NAME } con la propria password o PIN, ecc."
-      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
       ],
@@ -7075,9 +7078,6 @@
       ],
       "Allow recovery by phone": [
         "Consenti il recupero via telefono"
-      ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Consenti agli utenti di connettersi a server condivisi sicuri in base a criteri definiti."
       ],
       "Already allocated": [
         "Già allocato"
@@ -7250,9 +7250,6 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Creando un account ${ PASS_APP_NAME } con la tua email SimpleLogin, potrai gestire i tuoi alias direttamente da ${ PASS_APP_NAME }."
       ],
-      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "Per impostazione predefinita, i membri dell'organizzazione possono esportare solo le casseforti di cui sono i proprietari. Se questa opzione è attivata, non potranno esportare alcun dato."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
       ],
@@ -7401,7 +7398,7 @@
         "Personalizzato mensile"
       ],
       "Custom policies": [
-        "Critedi personalizzati"
+        "Criteri personalizzati"
       ],
       "Custom weekly": [
         "Personalizzato settimanale"
@@ -7773,15 +7770,6 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Se ciò è dovuto a una vecchia reimpostazione della password, puoi interrompere la visualizzazione del messaggio di nuovo"
-      ],
-      "If this option is enabled, organization members cannot create vaults. New members will require an admin to manually create the first vault for them (via sharing) so they can start to create items": [
-        "Se questa opzione è abilitata, i membri dell'organizzazione non possono creare casseforti. I nuovi membri richiederanno a un amministratore di creare manualmente la prima cassaforte per loro (tramite condivisione) in modo che possano iniziare a creare elementi"
-      ],
-      "If this option is turned on, organization members will be able to share individual items in addition to vaults.": [
-        "Se questa opzione è attivata, i membri dell'organizzazione potranno condividere singoli elementi oltre alle casseforti."
-      ],
-      "If this option is turned on, organization members will only be able to share vaults or items within the organization": [
-        "Se questa opzione è attivata, i membri dell'organizzazione saranno in grado di condividere le casseforti o gli elementi solo all'interno dell'organizzazione"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
@@ -8237,6 +8225,12 @@
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
+      ],
+      "Number of items the user has access to (includes owned items + shared items)": [
+        "Numero di elementi a cui l'utente ha accesso (include elementi posseduti e condivisi)"
+      ],
+      "Number of vaults the user has access to (includes owned vaults + shared vaults)": [
+        "Numero di casseforti a cui l'utente ha accesso (include casseforti possedute e condivise)"
       ],
       "Numbers": [
         "Numeri"
@@ -8841,6 +8835,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Il link per segnalare che non hai configurato un account ${ BRAND_NAME } è scaduto. Mettiti in contatto con il nostro team di supporto per risolvere questo problema."
+      ],
+      "The most recent data update, excluding breaches.": [
+        "L'ultimo aggiornamento dei dati, escluse le violazioni."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
@@ -10550,12 +10547,6 @@
       "Disable animations": [
         "Disabilita le animazioni"
       ],
-      "Disable data export for organization members": [
-        "Disabilita l'esportazione dei dati per i membri dell'organizzazione"
-      ],
-      "Disable sharing outside the organization": [
-        "Disabilita la condivisione all'esterno dell'organizzazione"
-      ],
       "Disabled": [
         "Disabilitato"
       ],
@@ -10606,9 +10597,6 @@
       ],
       "Emails (last month)": [
         "Email (ultimo mese)"
-      ],
-      "Enable individual item sharing": [
-        "Abilita la condivisione di singoli elementi"
       ],
       "End date": [
         "Data di fine"
@@ -10869,7 +10857,7 @@
         "Nuova password"
       ],
       "New policy name": [
-        "Nuovo nome del criterio"
+        "Nuovo nome della policy"
       ],
       "New second password": [
         "Nuova seconda password"
@@ -11029,9 +11017,6 @@
       ],
       "Require 2FA for everyone": [
         "Richiedi 2FA per tutti"
-      ],
-      "Restrict vault creation to administrators only": [
-        "Limitare la creazione della cassaforte ai soli amministratori"
       ],
       "Reveal password": [
         "Mostra la password"
@@ -12497,6 +12482,9 @@
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "VPN Svizzera ad alta velocità che protegge la tua privacy"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN ad alta velocità su ${ n } dispositivo",
         "VPN ad alta velocità su ${ n } dispositivi"
@@ -12616,11 +12604,14 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android e Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integrazione SSO (in arrivo)"
+      "SSO integration": [
+        "Integrazione SSO"
       ],
       "Start protecting your organization": [
         "Inizia a proteggere la tua organizzazione"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Inizia a proteggerti online in 2 semplici passaggi"
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
@@ -12752,17 +12743,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ trialPlanName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -12871,6 +12851,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ trialPlanName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13301,9 +13292,6 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Disabilitando questa opzione verrà rimossa la possibilità di ricevere notifiche nelle applicazioni ${ BRAND_NAME }"
-      ],
-      "During your first month": [
-        "Durante il tuo primo mese"
       ],
       "Email subscriptions": [
         "Iscrizioni email"
@@ -13923,9 +13911,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } il tuo indirizzo email ${ email } per impostare l'identità dell'organizzazione."
-      ],
       "Current organization identity": [
         "Identità dell'organizzazione attuale"
       ],
@@ -13940,9 +13925,6 @@
       ],
       "Organization identity updated": [
         "Identità dell'organizzazione aggiornata"
-      ],
-      "Verify": [
-        "Verifica"
       ]
     },
     "OS compatibility": {
@@ -16744,47 +16726,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } con funzionalità premium"
@@ -17073,6 +17014,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
@@ -17586,6 +17568,9 @@
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Scorciatoie da tastiera di ${ MAIL_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor Report": [
+        "Segnalazione di monitoraggio di ${ PASS_SHORT_APP_NAME }"
+      ],
       "(active)": [
         "(attivo)"
       ],
@@ -17618,6 +17603,12 @@
       ],
       "Accessibility": [
         "Accessibilità"
+      ],
+      "Accessible items": [
+        "Elementi accessibili"
+      ],
+      "Accessible vaults": [
+        "Casseforti accessibili"
       ],
       "Account and password": [
         "Account e password"
@@ -18105,6 +18096,9 @@
       "Email": [
         "Email"
       ],
+      "Email breaches": [
+        "Violazioni delle e-mail"
+      ],
       "Email composer": [
         "Compositore email"
       ],
@@ -18143,6 +18137,9 @@
       ],
       "Every member of the organization can access": [
         "Ogni membro dell'organizzazione può accedere"
+      ],
+      "Excluded items": [
+        "Elementi esclusi"
       ],
       "Export": [
         "Esporta"
@@ -18250,6 +18247,9 @@
       "Groups": [
         "Gruppi"
       ],
+      "Help center": [
+        "Centro assistenza"
+      ],
       "History": [
         "Cronologia"
       ],
@@ -18299,6 +18299,9 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importa tramite ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
+      "Inactive 2FA": [
+        "2FA inattivi"
+      ],
       "Increase your privacy with more addresses": [
         "Aumenta la tua privacy con più indirizzi"
       ],
@@ -18317,6 +18320,9 @@
       "IP": [
         "IP"
       ],
+      "Items owned": [
+        "Elementi posseduti"
+      ],
       "Keep your inbox organized": [
         "Mantieni la tua posta in arrivo organizzata"
       ],
@@ -18328,6 +18334,12 @@
       ],
       "Language and time": [
         "Lingua e ora"
+      ],
+      "Last activity": [
+        "Ultima attività"
+      ],
+      "Last updated": [
+        "Ultimo aggiornamento"
       ],
       "Layout": [
         "Layout"
@@ -18539,6 +18551,9 @@
       "Report a problem": [
         "Segnala un problema"
       ],
+      "Reports": [
+        "Segnalazioni"
+      ],
       "Request new code": [
         "Richiedi nuovo codice"
       ],
@@ -18556,6 +18571,9 @@
       ],
       "Restore administrator privileges": [
         "Ripristina i privilegi di amministratore"
+      ],
+      "Reused passwords": [
+        "Password riutilizzate"
       ],
       "Revoke certificate": [
         "Revoca certificato"
@@ -18780,6 +18798,9 @@
       "Upload your organization’s logo": [
         "Carica il logo della tua organizzazione"
       ],
+      "Usage Report": [
+        "Rapporto di utilizzo"
+      ],
       "User": [
         "Utente"
       ],
@@ -18791,6 +18812,12 @@
       ],
       "Users and addresses": [
         "Utenti e indirizzi"
+      ],
+      "Vault owned": [
+        "Cassaforte posseduta"
+      ],
+      "Vaults owned": [
+        "Casseforti possedute"
       ],
       "Verification": [
         "Verifica"
@@ -18824,6 +18851,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Invieremo un'email al tuo nuovo indirizzo con le istruzioni su come completare il cambio."
+      ],
+      "Weak passwords": [
+        "Password deboli"
       ],
       "What is an alias?": [
         "Cos'è un alias?"
@@ -19597,11 +19627,6 @@
         "🎁 Il tuo regalo gratuito da condividere, del valore di ${ price }﻿: "
       ]
     },
-    "Valentine_2025: offer": {
-      "Valentine's deal": [
-        "Offerta di San Valentino"
-      ]
-    },
     "Valentine_2025: Offer": {
       "${ salePercentage }% off": [
         "${ salePercentage }% di sconto"
@@ -19680,6 +19705,11 @@
       ],
       "Valentine's deal:": [
         "Offerta di San Valentino:"
+      ]
+    },
+    "Valentine_2025: offer": {
+      "Valentine's deal": [
+        "Offerta di San Valentino"
       ]
     },
     "Valentine_2025: Offers": {
@@ -19843,6 +19873,9 @@
       "Your ${ a } and ${ b } bundle": [
         "Il tuo pacchetto ${ a } e ${ b }"
       ],
+      "Your ${ selected } plan": [
+        "Il tuo piano ${ selected }"
+      ],
       "Your plan includes:": [
         "Il tuo piano include:"
       ]
@@ -19862,8 +19895,8 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
-        "${ n }indirizzo email ${ BRAND_NAME }",
-        "${ n }indirizzi email ${ BRAND_NAME }"
+        "${ n } indirizzo email ${ BRAND_NAME }",
+        "${ n } indirizzi email ${ BRAND_NAME }"
       ],
       "${ n } account per wallet": [
         "${ n } account per portafoglio",

@@ -331,6 +331,9 @@
       "Get ${ planName } for ${ priceCoupon }": [
         "Wybierz plan ${ planName } za ${ priceCoupon }"
       ],
+      "Get ${ planOrAppName }": [
+        "Uzyskaj ${ planOrAppName }"
+      ],
       "Get a new encrypted email address": [
         "Uzyskaj nowy szyfrowany adres e-mail"
       ],
@@ -472,9 +475,6 @@
       "Refer a friend": [
         "Poleć znajomemu"
       ],
-      "Refresh data": [
-        "Odśwież dane"
-      ],
       "Refresh status": [
         "Odśwież status"
       ],
@@ -609,6 +609,9 @@
       ],
       "Send reminder": [
         "Wyślij przypomnienie"
+      ],
+      "Set as album cover": [
+        "Ustaw jako okładkę albumu"
       ],
       "Set catch-all": [
         "Ustaw adres catch-all"
@@ -2326,6 +2329,12 @@
       ]
     },
     "Description": {
+      "Create policies to manage access to shared servers.": [
+        "Tworzenie zasad zarządzania dostępem do serwerów współdzielonych"
+      ],
+      "Everyone in your organization can connect to shared servers.": [
+        "Każdy w organizacji może łączyć się z serwerami współdzielonymi."
+      ],
       "If disabled, only admins will have access.": [
         "Wyłączenie tej funkcji ograniczy jej dostępność do tylko administratorów."
       ],
@@ -2457,6 +2466,11 @@
         "Priorytetowe wsparcie"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Pola tekstowe są opcjonalne. Informacje podane w tym formularzu zmienią tylko wybraną fakturę, a nie dane przyszłej faktury."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "Adres ${ name } został dodany"
@@ -2500,9 +2514,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
       ],
@@ -2526,6 +2537,9 @@
       ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Edytowanie adresu rozliczeniowego jest obecnie niedostępne. Spróbuj ponownie później."
       ],
       "Email address is invalid": [
         "Adres e-mail jest nieprawidłowy"
@@ -3428,11 +3442,20 @@
       "Best deal": [
         "Najlepsza oferta"
       ],
+      "Checkout": [
+        "Płatność"
+      ],
+      "Create your account": [
+        "Utwórz konto"
+      ],
       "Device": [
         "Urządzenie"
       ],
       "Enabled Countries": [
         "Włączone kraje"
+      ],
+      "Enter your email address": [
+        "Podaj swój adres e-mail"
       ],
       "Event": [
         "Zdarzenie"
@@ -3469,6 +3492,9 @@
       ],
       "Select your deal": [
         "Wybierz ofertę"
+      ],
+      "Select your payment method": [
+        "Wybierz metodę płatności"
       ],
       "Select your pricing plan": [
         "Wybierz plan"
@@ -3613,6 +3639,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu monitorowaniu podejrzanej aktywności."
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Trwa konfiguracja ${ provisioningCounter } serwera. Zazwyczaj trwa to około ${ provisioningDuration }.",
@@ -3767,6 +3796,9 @@
         "Dotyczy użytkowników",
         "Dotyczy użytkowników"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
+      ],
       "All inactive members deleted": [
         "Usunięto wszystkich nieaktywnych użytkowników"
       ],
@@ -3820,6 +3852,9 @@
       ],
       "Ask your organization admin to setup Gateways.": [
         "Poproś administratora organizacji o skonfigurowanie bram."
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Przynajmniej ${ BETTER_PASSWORD_LENGTH } znaków"
       ],
       "Attention required": [
         "Wymagana uwaga"
@@ -3881,6 +3916,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Nagroda redaktorów CNET z oceną 8,4 na 10."
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji przy pomocy dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
       ],
@@ -3913,6 +3951,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopiuj sugerowane hasło do schowka"
+      ],
+      "countries enabled": [
+        "włączone kraje"
       ],
       "Country code": [
         "Kod kraju"
@@ -4072,6 +4113,9 @@
       ],
       "Emailing preference saved": [
         "Ustawienia list mailingowych zostały zapisane"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Wiadomości e-mail przeniesione do Kosza i Spamu ponad 30 dni temu zostaną automatycznie wyczyszczone."
       ],
       "Enable single sign-on to keep your organization safe": [
         "Włącz logowanie SSO, aby zapewnić swojej organizacji bezpieczeństwo"
@@ -4304,6 +4348,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Zmiana kraju serwera zajmie 10 dni, więc upewnij się, że wybór jest prawidłowy."
       ],
+      "It's better to have:": [
+        "Lepiej mieć:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Autouzupełnienie elementu w sejfie ${ vaultLink }"
       ],
@@ -4463,6 +4510,9 @@
       "No addresses exist": [
         "Brak adresów e-mail"
       ],
+      "No common passwords": [
+        "Bez powszechnie używanych haseł"
+      ],
       "No gateways": [
         "Brak bram"
       ],
@@ -4471,6 +4521,9 @@
       ],
       "No payment is required at this time.": [
         "Płatność nie jest wymagana."
+      ],
+      "No predictable sequences (1234, aaa)": [
+        "Bez przewidywalnych sekwencji (1234, aaa)"
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
@@ -4546,6 +4599,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Nagroda redaktorów PC Magazine z oceną 5 na 5 gwiazdek"
       ],
       "per month": [
         "miesięcznie"
@@ -4778,6 +4834,12 @@
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
       ],
+      "Step ${ step }": [
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Przestrzeń dyskowa przydzielona do innych użytkowników organizacji"
       ],
@@ -4816,6 +4878,9 @@
       ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Tech radar pro rekomenduje z oceną 4,2 na 5 gwiazdek"
       ],
       "Thank you": [
         "Dziękujemy"
@@ -4991,6 +5056,9 @@
       "Total VPN connections": [
         "Połączenia VPN"
       ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Wypróbuj ${ productName } całkowicie bez ryzyka -jeśli z jakiegokolwiek powodu zmienisz zdanie, otrzymasz pełny zwrot pieniędzy. Bez zadawania pytań."
+      ],
       "Two-factor authentication disabled": [
         "Uwierzytelnianie dwustopniowe zostało wyłączone"
       ],
@@ -5035,6 +5103,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Prześlij logo organizacji, aby zwiększyć rozpoznawalność marki."
+      ],
+      "Uppercase and lowercase letters": [
+        "Duże i małe litery"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Użyj metody odzyskiwania, aby wyłączyć uwierzytelnianie dwustopniowe."
@@ -5278,6 +5349,9 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Możesz użyć następujących danych logowania do połączenia się z serwerem ${ VPN_APP_NAME }, używając alternatywnych aplikacji VPN, takich jak: Tunnelblick na macOS czy OpenVPN na GNU/Linuksie."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Otrzymasz powiadomienie, jeśli Twoje hasło lub inne dane wyciekły z usługi zewnętrznej."
       ],
       "You have ${ availableCount } new server available.": [
         "Masz ${ availableCount } nowy dostępny serwer.",
@@ -5804,6 +5878,9 @@
       "Group name": [
         "Nazwa grupy"
       ],
+      "Groups": [
+        "Grupy"
+      ],
       "Hide password": [
         "Ukryj hasło"
       ],
@@ -5846,6 +5923,9 @@
       "Moderate NAT": [
         "Umiarkowany NAT"
       ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Musi mieć przynajmniej ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
       "Name": [
         "Nazwa"
       ],
@@ -5869,6 +5949,9 @@
       ],
       "New password": [
         "Nowe hasło"
+      ],
+      "New policy name": [
+        "Nowa nazwa reguły"
       ],
       "New second password": [
         "Nowe drugie hasło"
@@ -6053,6 +6136,9 @@
       "Username": [
         "Nazwa użytkownika"
       ],
+      "Users": [
+        "Użytkownicy"
+      ],
       "Value": [
         "Wartość"
       ],
@@ -6216,6 +6302,9 @@
       ],
       "Don't have access to your 2FA?": [
         "Nie masz dostępu do uwierzytelniania dwustopniowego?"
+      ],
+      "Forgot email?": [
+        "Zapomniałeś adresu e-mail?"
       ],
       "Forgot password?": [
         "Nie pamiętasz hasła?"
@@ -6752,6 +6841,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja"
       ],
+      "Apps for": [
+        "Aplikacje na"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatyczne usuwanie Spamu i Kosza"
       ],
@@ -6818,6 +6910,9 @@
       "Dedicated servers and IP": [
         "Dedykowane serwery i adresy IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedykowane serwery zoptymalizowane pod kątem streamingu"
+      ],
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
@@ -6868,6 +6963,9 @@
       ],
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Szybki szwajcarski VPN, który chroni prywatność użytkowników"
       ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
@@ -6992,11 +7090,14 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Logowanie SSO (wkrótce)"
+      "SSO integration": [
+        "Integracja z SSO"
       ],
       "Start protecting your organization": [
         "Chroń swoją organizację"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Ochrona online w 2 prostych krokach"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
@@ -7072,6 +7173,15 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
+      ],
+      "Up to 10 Gbps": [
+        "Do 10 Gb/s"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Używanie na maksymalnie ${ n } urządzeniu",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -7247,6 +7357,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Promocyjna cena ${ priceCoupon } jest ważna przez pierwszy miesiąc. Następnie zostanie ona automatycznie odnowiona po cenie ${ priceLine }. Możesz anulować w dowolnym momencie."
+      ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
@@ -7619,9 +7732,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Wyłączenie tej opcji spowoduje brak powiadomień w aplikacjach ${ BRAND_NAME }."
       ],
-      "During your first month": [
-        "W pierwszym miesiącu"
-      ],
       "Email subscriptions": [
         "Listy mailingowe"
       ],
@@ -7651,6 +7761,9 @@
       "Downloaded 2FA recovery codes": [
         "Pobrane kody odzyskiwania"
       ],
+      "Error creating policy": [
+        "Błąd podczas tworzenia polityki"
+      ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
       ],
@@ -7668,6 +7781,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
+      ],
+      "Policy created successfully": [
+        "Polityka została utworzona pomyślnie"
       ],
       "Reminder has been sent": [
         "Przypomnienie zostało wysłane"
@@ -7884,9 +8000,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } adres e-mail ${ email }, aby skonfigurować tożsamość organizacji."
-      ],
       "Current organization identity": [
         "Obecna tożsamość organizacji"
       ],
@@ -7901,9 +8014,6 @@
       ],
       "Organization identity updated": [
         "Tożsamość organizacji została zaktualizowana"
-      ],
-      "Verify": [
-        "Zweryfikuj"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -8072,6 +8182,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Zostajesz administratorem organizacji **${ organizationName }**. Uprawnienia otrzymujesz od"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Przed wygenerowaniem nowego klucza organizacji należy usunąć wszystkie grupy"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Musisz zmienić służbowych użytkowników na prywatnych przed wygenerowaniem nowego klucza organizacji"
       ],
@@ -8187,6 +8300,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potwierdzając tę płatność, użytkownik upoważnia ${ BRAND_NAME } i Stripe, naszego dostawcę usług płatniczych, do zlecenia bankowi odpowiedniego obciążenia jego konta. Użytkownik może otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z warunkami umowy z bankiem."
+      ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
       ]
@@ -9366,6 +9482,12 @@
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Użytkownik ${ user } jest teraz kontem jednokrotnego logowania. Jego poprzednie hasło stało się hasłem zapasowym."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Będą musieli zalogować się ponownie u swojego dostawcy tożsamości, aby uzyskać dostęp do usług ${ BRAND_NAME }. Aby ten użytkownik mógł się zalogować, upewnij się, że istnieje u swojego dostawcy tożsamości."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Spowoduje to wylogowanie użytkownika z innych urządzeń i konieczność utworzenia nowego hasła zapasowego."
       ],
@@ -9685,6 +9807,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -9985,47 +10148,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -10429,6 +10551,9 @@
       "Add address": [
         "Dodaj adres"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Dodaj kraj do ${ policyName }"
+      ],
       "Add credit/debit card": [
         "Dodaj kartę płatniczą"
       ],
@@ -10464,6 +10589,9 @@
       ],
       "Add users": [
         "Dodaj użytkowników"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Dodaj użytkownika do ${ policyName }"
       ],
       "Allocate storage": [
         "Przydziel przestrzeń dyskową"
@@ -10587,6 +10715,9 @@
       ],
       "Create multiple user accounts": [
         "Utwórz wiele kont użytkowników"
+      ],
+      "Create new policy": [
+        "Utwórz nową regułę"
       ],
       "Create organization key": [
         "Utwórz klucz organizacji"
@@ -10779,6 +10910,9 @@
       ],
       "Groups": [
         "Grupy"
+      ],
+      "Help center": [
+        "Centrum pomocy"
       ],
       "How to choose a good logo": [
         "Jak wybrać dobre logo"
@@ -11062,6 +11196,9 @@
       "WireGuard configuration": [
         "Konfiguracja WireGuard"
       ],
+      "You can now create unlimited folders and labels": [
+        "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
       ],
@@ -11142,29 +11279,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dzisiaj"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Zewnętrzny adres wyłącza szyfrowanie end-to-end wiadomości w grupie"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Zewnętrzny adres wyłącza szyfrowanie end-to-end wiadomości w grupie. Żadne szyfrowane zasoby nie będą udostępniane takiemu użytkownikowi."
-      ],
-      "Group membership paused": [
-        "Członkostwo w grupie zostało wstrzymane"
-      ],
-      "Sending member invitation": [
-        "Wysyłanie zaproszenia"
-      ],
-      "User declined invitation": [
-        "Zaproszenie zostało odrzucone"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Oczekiwanie na zaakceptowanie zaproszenia"
       ]
     },
     "Tooltip": {
@@ -11251,6 +11365,29 @@
       ],
       "Your DKIM signing is working.": [
         "Podpisywanie z użyciem DKIM działa prawidłowo."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Zewnętrzny adres wyłącza szyfrowanie end-to-end wiadomości w grupie"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Zewnętrzny adres wyłącza szyfrowanie end-to-end wiadomości w grupie. Żadne szyfrowane zasoby nie będą udostępniane takiemu użytkownikowi."
+      ],
+      "Group membership paused": [
+        "Członkostwo w grupie zostało wstrzymane"
+      ],
+      "Sending member invitation": [
+        "Wysyłanie zaproszenia"
+      ],
+      "User declined invitation": [
+        "Zaproszenie zostało odrzucone"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Oczekiwanie na zaakceptowanie zaproszenia"
       ]
     },
     "Tor out of date": {
@@ -11785,6 +11922,12 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Pakiet ${ a } i ${ b }"
+      ],
+      "Your ${ selected } plan": [
+        "Twój plan ${ selected }"
+      ],
+      "Your plan includes:": [
+        "Twój plan zawiera:"
       ]
     },
     "vpn_2step: tooltip": {

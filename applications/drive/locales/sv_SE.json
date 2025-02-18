@@ -762,6 +762,9 @@
       "Select country": [
         "Välj land"
       ],
+      "Set as album cover": [
+        "Ställ in som albumomslag"
+      ],
       "Set recovery phrase": [
         "Ställ in återställningsfras"
       ],
@@ -2433,11 +2436,6 @@
         "Försenad faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2519,6 +2517,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2712,8 +2715,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Meddelanden och skrivning > Kort domän (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
@@ -4431,7 +4434,7 @@
         "Dedikerade servrar"
       ],
       "default email address": [
-        "förvalda e-postadress"
+        "standard e-postadress"
       ],
       "Delete locked drive": [
         "Ta bort låst lagringsenhet",
@@ -4516,7 +4519,7 @@
         "Tom mapp"
       ],
       "Enabling auto-deletion…": [
-        "Aktiverar autoborttagning…"
+        "Aktiverar automatisk borttagning…"
       ],
       "Enabling drive search": [
         "Aktiverar sökning på lagringsenhet"
@@ -4922,6 +4925,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME skickar automatiskt meddelandet med det aktuella kompositörsläget."
+      ],
+      "Photo is set as album cover": [
+        "Foto är inställt som albumomslag"
       ],
       "Photos have been successfully recovered.": [
         "Foton har återställts."
@@ -7321,8 +7327,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
+      "SSO integration": [
+        "SSO-integration"
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
@@ -8542,6 +8548,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdagen, enligt villkoren i ditt avtal med din bank."
+      ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
       ]
@@ -10111,7 +10120,7 @@
         "Är du säker?"
       ],
       "Auto-deletion is active": [
-        "Autoborttagning aktivt"
+        "Automatisk borttagning är aktivt"
       ],
       "Billing cycle": [
         "Faktureringscykel"
@@ -10343,6 +10352,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Help center": [
+        "Hjälpcenter"
       ],
       "High security for your account": [
         "Hög säkerhet för ditt konto"
@@ -10705,11 +10717,6 @@
         "Idag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Lägg till denna delade fil på din ${ DRIVE_APP_NAME } för enkel åtkomst senare."
@@ -10791,6 +10798,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]
     },
     "Validation": {

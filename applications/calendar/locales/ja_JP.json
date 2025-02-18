@@ -315,7 +315,7 @@
         "添付ファイルとして転送"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "${ planName } で ${ priceCoupon }を入手"
+        "${ planName } を ${ priceCoupon }で入手"
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } を入手"
@@ -1219,6 +1219,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "閉じる"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
       ],
@@ -2720,7 +2723,7 @@
         "より優れた機能を持つ VPN を見つけた"
       ],
       "I have not managed to connect": [
-        "接続することができませんでした"
+        "接続することができなかった"
       ],
       "I only needed a VPN short-term": [
         "VPN が短期間のみ必要だった"
@@ -2729,7 +2732,7 @@
         "別の ${ BRAND_NAME } アカウントを使っている"
       ],
       "It doesn't do what I need": [
-        "必要としていることをしてくれない"
+        "必要な機能がない"
       ],
       "Missing feature(s)": [
         "機能が不足している"
@@ -2908,8 +2911,8 @@
       "${ list } has no contacts": [
         "次のグループには連絡先が追加されていません: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } はあなたのユーザー名です。 ${ emailAddress } を作成するには、[設定] > [メッセージと作成] > [短いドメイン (pm.me)] に移動してください。"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -5855,7 +5858,7 @@
         "開始日"
       ],
       "State": [
-        "状態"
+        "州"
       ],
       "Street address": [
         "番地"
@@ -6653,6 +6656,9 @@
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
       ],
+      "Dedicated servers optimized for streaming": [
+        "ストリーミングに最適化された専用サーバー"
+      ],
       "Desktop app": [
         "デスクトップアプリ"
       ],
@@ -6815,8 +6821,8 @@
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO 統合 (近日公開予定)"
+      "SSO integration": [
+        "SSO 統合"
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
@@ -6886,6 +6892,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
+      ],
+      "Use on up to ${ n } device at once": [
+        "一度に最大 ${ n } 台のデバイスで使用"
       ],
       "User credential management": [
         "ユーザー資格管理"
@@ -7202,7 +7211,7 @@
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
-        "誰にでも(${ PASS_APP_NAME }を使っていない人にも)個人のアイテムを安全に共有"
+        "誰にでも (${ PASS_APP_NAME }を使っていない人にも) 個人のアイテムを安全に共有"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "電話番号、住所、誕生日、個人的なメモなどの連絡先の詳細を安全に保存します。 ゼロアクセス暗号化により、${ BRAND_NAME } であってもアクセスできなくなります。"
@@ -7759,7 +7768,7 @@
         "支払い処理中"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "アドオンの数を減らすには、まずサブスクリプションを再アクティブ化してください。"
+        "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
       "Please select billing country": [
         "請求先の国を選択してください"
@@ -7820,7 +7829,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "無料"
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -7941,7 +7950,7 @@
         "理由を選択"
       ],
       "Select state": [
-        "状態の選択"
+        "州を選択"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME }をより良くするためには何が必要だと思うか共有してください。"
@@ -8165,7 +8174,7 @@
         "この許可はあと${ timeRemaining.inHours }時間で期限切れになります。"
       ],
       "This permission expires soon": [
-        "この許可はすぐに取り消されます"
+        "この権限はまもなく有効期限が切れます"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
@@ -8935,10 +8944,10 @@
         "追加のストレージとユーザー"
       ],
       "Folders, labels and filters": [
-        "フォルダ、ラベル、ファイル"
+        "フォルダー、ラベル、フィルター"
       ],
       "Folders, labels, and custom filters": [
-        "フォルダ、ラベル、そしてカスタムフィルター"
+        "フォルダー、ラベル、カスタムフィルター"
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
@@ -9644,6 +9653,9 @@
       "Groups": [
         "グループ"
       ],
+      "Help center": [
+        "ヘルプセンター"
+      ],
       "Hide time zones for event start and end times": [
         "予定の開始時間と終了時間のタイムゾーンを隠す"
       ],
@@ -10127,6 +10139,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 つの連続したドットは使用できません"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } 件の連絡先を完全に削除してよろしいですか？"
       ],
@@ -10138,6 +10153,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "この連絡先を完全に削除してよろしいですか？"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "最初にドットを含めることはできません"
+      ],
+      "Cannot contain a dot at the end": [
+        "最後にドットを含めることはできません"
       ],
       "Contacts could not be merged": [
         "連絡先を統合できませんでした"
@@ -10159,6 +10180,9 @@
       ],
       "Name is required": [
         "名前は必須です"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "英数字の小文字、ドット、ハイフン、アンダースコアのみが使用できます"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"

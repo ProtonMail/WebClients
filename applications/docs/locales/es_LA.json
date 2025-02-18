@@ -2452,8 +2452,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } es su usuario. Para crear ${ emailAddress }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a ajustes > identidad y dirección > dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -6460,8 +6460,8 @@
       "Split tunneling (Android and Windows)": [
         "Tunelización dividida (Android y Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integración SSO (próximamente)"
+      "SSO integration": [
+        "Integración SSO"
       ],
       "Strict no-logs policy": [
         "Política estricta de no registros"
@@ -8889,6 +8889,9 @@
       ],
       "Groups": [
         "Grupos"
+      ],
+      "Help center": [
+        "Centro de ayuda"
       ],
       "High security for your account": [
         "Alta seguridad para su cuenta"

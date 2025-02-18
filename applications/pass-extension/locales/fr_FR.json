@@ -2416,7 +2416,7 @@
         "Remplissage automatique A2F"
       ],
       "2FA secret key (TOTP)": [
-        "Clé secrète A2F (TOTP/mot de passe à usage unique basé sur le temps)"
+        "Clé secrète A2F (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Jeton A2F (TOTP/mot de passe à usage unique basé sur le temps)"
@@ -4117,6 +4117,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Vous n'aurez plus accès à ce coffre-fort. Pour le rejoindre à nouveau, il vous faudra une nouvelle invitation."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Votre organisation ne permet pas le partage d'éléments individuels."
       ],
       "Your plan does not allow you to create more aliases": [
         "Votre abonnement ne vous permet pas de créer plus d'alias."

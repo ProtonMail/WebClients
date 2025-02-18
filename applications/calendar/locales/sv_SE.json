@@ -2935,8 +2935,8 @@
         "${ list } har inga kontakter",
         "Några grupper har inga kontakter: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Meddelanden och skrivning > Kort domän (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
@@ -4630,7 +4630,7 @@
         "Dedikerade servrar"
       ],
       "default email address": [
-        "förvalda e-postadress"
+        "standard e-postadress"
       ],
       "Deleting event...": [
         "Tar bort händelse...",
@@ -4691,7 +4691,7 @@
         "E-postmeddelanden flyttade till papperskorgen och skräppost för mer än 30 dagar sedan kommer att rensas automatiskt."
       ],
       "Enabling auto-deletion…": [
-        "Aktiverar autoborttagning…"
+        "Aktiverar automatisk borttagning…"
       ],
       "Enter the code from your authenticator app": [
         "Ange koden från din autentiseringsapp"
@@ -6934,8 +6934,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
+      "SSO integration": [
+        "SSO-integration"
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
@@ -7993,6 +7993,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdagen, enligt villkoren i ditt avtal med din bank."
+      ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
       ]
@@ -9669,7 +9672,7 @@
         "Är du säker?"
       ],
       "Auto-deletion is active": [
-        "Autoborttagning aktivt"
+        "Automatisk borttagning är aktivt"
       ],
       "Billing cycle": [
         "Faktureringscykel"
@@ -9852,6 +9855,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Help center": [
+        "Hjälpcenter"
       ],
       "Hide time zones for event start and end times": [
         "Dölj tidszoner för händelsens start- och sluttider"

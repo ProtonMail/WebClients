@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -870,9 +870,6 @@
       ],
       "Refer a friend": [
         "推薦好友"
-      ],
-      "Refresh data": [
-        "重新整理資料"
       ],
       "Refresh status": [
         "重新整理狀態"
@@ -4257,9 +4254,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「撰寫郵件」>「短網域名稱 (pm.me)」裡面去設定。"
-      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -5896,6 +5890,9 @@
       "Best deal": [
         "至划算"
       ],
+      "Checkout": [
+        "結帳"
+      ],
       "Device": [
         "裝置"
       ],
@@ -6664,10 +6661,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "選擇至少一種帳號復原方法，以確保一旦忘記密碼時，您仍可存取 ${ BRAND_NAME } 帳號。"
       ],
-      "Active": [
+      "active": [
         "啟用"
       ],
-      "active": [
+      "Active": [
         "啟用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -6720,9 +6717,6 @@
       ],
       "Affected user is on row": [
         "受影響的使用者"
-      ],
-      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "若被鎖住，組織成員將需要密碼或個人識別號碼等來解鎖${ PASS_APP_NAME }。"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
@@ -6937,9 +6931,6 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "透過您的SimpleLogin電子郵件創建${ PASS_APP_NAME }帳號，您可直接從${ PASS_APP_NAME }管理您的別名。"
       ],
-      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "依據預設，組織成員僅能匯出他們為擁有的保管庫。若此設定開啟，他們將無法匯出資料。"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
       ],
@@ -7092,6 +7083,9 @@
       ],
       "default email address": [
         "預設電子信箱地址"
+      ],
+      "Default mail application": [
+        "預設郵件應用程式"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "刪除其他 MX 紀錄或確保 ${ MAIL_APP_NAME } 的優先順序是最低的數字。"
@@ -10091,12 +10085,6 @@
       "Disable animations": [
         "停用動畫"
       ],
-      "Disable data export for organization members": [
-        "停用組織成員匯出資料"
-      ],
-      "Disable sharing outside the organization": [
-        "停用向組織外共享"
-      ],
       "Disabled": [
         "停用"
       ],
@@ -11854,6 +11842,9 @@
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "針對影音串流優化的獨立伺服器"
+      ],
       "Desktop app": [
         "桌面應用程式"
       ],
@@ -12022,8 +12013,8 @@
       "Split tunneling (Android and Windows)": [
         "分隔通道(Android 與 Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "單一登入整合 (即將到來)"
+      "SSO integration": [
+        "SSO 整合"
       ],
       "Start protecting your organization": [
         "開始保護您的組織"
@@ -12100,6 +12091,9 @@
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
       ],
+      "Use on up to ${ n } device at once": [
+        "最多同一時間於 ${ n } 裝置"
+      ],
       "User credential management": [
         "使用者憑證管理"
       ],
@@ -12144,17 +12138,6 @@
       ],
       "Team management": [
         "團隊管理"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ trialPlanName }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -12261,6 +12244,17 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ trialPlanName }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -12301,6 +12295,14 @@
       ],
       "Your selected plan: ${ planName }": [
         "您選擇的方案：${ planName }"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceLine } 月的價格自動續約。您可以於任何時候取消訂閱。"
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
     "new_plans: Title": {
@@ -13167,9 +13169,6 @@
       ],
       "Organization identity updated": [
         "組織身分已更新"
-      ],
-      "Verify": [
-        "驗證"
       ]
     },
     "OS compatibility": {
@@ -15475,47 +15474,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -15774,6 +15732,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -16810,6 +16809,9 @@
       "Every member of the organization can access": [
         "團隊內的每個成員都能存取"
       ],
+      "Excluded items": [
+        "排除的物品"
+      ],
       "Export": [
         "匯出"
       ],
@@ -16962,6 +16964,9 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "使用${ PRODUCT_NAMES.EASY_SWITCH }匯入"
+      ],
+      "Inactive 2FA": [
+        "未啟用雙重驗證"
       ],
       "Increase your privacy with more addresses": [
         "使用更多位址增加您的隱私"
@@ -17220,6 +17225,9 @@
       ],
       "Restore administrator privileges": [
         "恢復系統管理員權限"
+      ],
+      "Reused passwords": [
+        "重複使用的密碼"
       ],
       "Revoke certificate": [
         "撤銷憑證"
@@ -17487,6 +17495,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "我們將向您的新位址寄送一封電子郵件，其中包含如何完成變更的說明。"
+      ],
+      "Weak passwords": [
+        "強度不足的密碼"
       ],
       "What is an alias?": [
         "甚麼是別名?"

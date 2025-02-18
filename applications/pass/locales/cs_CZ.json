@@ -3316,8 +3316,8 @@
       "Require 2FA for organization": [
         "Vyžaduje 2FA pro organizaci"
       ],
-      "SSO integration (coming soon)": [
-        "SSO integrace (již brzy)"
+      "SSO integration": [
+        "Integrace SSO"
       ]
     },
     "Notification": {
@@ -3467,11 +3467,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Zavřít"
       ]
     },
     "sso": {
@@ -4096,6 +4091,9 @@
       "${ BRAND_NAME } password is required": [
         "Je vyžadováno heslo ${ BRAND_NAME }"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 po sobě jdoucí tečky nejsou povoleny"
+      ],
       "A description of the problem is required": [
         "Je vyžadován popis problému"
       ],
@@ -4128,6 +4126,12 @@
       ],
       "At least one email address is required": [
         "Je vyžadována alespoň jedna e-mailová adresa"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Na začátku nesmí být tečka"
+      ],
+      "Cannot contain a dot at the end": [
+        "Na konci nesmí být tečka"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Pro tento alias nelze nyní načíst e-mailové schránky"
@@ -4246,6 +4250,9 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Po synchronizaci se smazáním aliasů v ${ PASS_SHORT_APP_NAME } smažou také aliasy v SimpleLogin."
       ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Povoleny jsou pouze alfanumerické malé znaky, tečky, pomlčky a podtržítka"
+      ],
       "Passphrase is required": [
         "Je vyžadováno heslo"
       ],
@@ -4347,6 +4354,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "K tomuto trezoru již nebudete mít přístup. Chcete-li do něj znovu vstoupit, budete potřebovat novou pozvánku."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Vaše organizace nepovoluje sdílení samostatných položek"
       ],
       "Your session could not be authorized.": [
         "Vaše relace nemohla být autorizována."

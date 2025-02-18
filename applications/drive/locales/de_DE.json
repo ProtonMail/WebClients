@@ -762,6 +762,9 @@
       "Select country": [
         "Land wählen"
       ],
+      "Set as album cover": [
+        "Setze als Album-Titelbild"
+      ],
       "Set recovery phrase": [
         "Wiederherstellungsphrase festlegen"
       ],
@@ -2433,11 +2436,6 @@
         "Überfällige Rechnung"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2519,6 +2517,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2711,9 +2714,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
       ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
@@ -4922,6 +4922,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus."
+      ],
+      "Photo is set as album cover": [
+        "Foto ist als Album-Titelbild gesetzt"
       ],
       "Photos have been successfully recovered.": [
         "Die Fotos wurden erfolgreich wiederhergestellt."
@@ -7318,8 +7321,8 @@
       "Split tunneling (Android and Windows)": [
         "Split-Tunneling (für Android und Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-Integration (demnächst verfügbar)"
+      "SSO integration": [
+        "SSO-Integration"
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
@@ -7393,8 +7396,8 @@
         "Bis zu ${ totalStorageSize } Speicherplatz"
       ],
       "Use on up to ${ n } device at once": [
-        "Bis zu ${ n } Gerät auf einmal",
-        "Bis zu ${ n } Geräte auf einmal"
+        "Gleichzeitige Verwendung auf bis zu ${ n } Gerät",
+        "Gleichzeitige Verwendung auf bis zu ${ n } Geräten"
       ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"
@@ -10333,6 +10336,9 @@
       "Groups": [
         "Gruppen"
       ],
+      "Help center": [
+        "Hilfecenter"
+      ],
       "High security for your account": [
         "Hochsicherheit für dein Konto"
       ],
@@ -10694,11 +10700,6 @@
         "Heute"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Füge diese gemeinsame Datei zu deinem ${ DRIVE_APP_NAME } hinzu, damit du später leicht darauf zugreifen kannst."
@@ -10780,6 +10781,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wir haben der Person eine Einladung zum Zugreifen auf den Eintrag gesendet."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Valentine_2025": {
