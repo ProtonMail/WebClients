@@ -3,8 +3,6 @@ import { c } from 'ttag';
 import Info from '@proton/components/components/link/Info';
 
 interface UserBreachInfoProps {
-    email?: string;
-    passwordLastChars?: string | null;
     inModal?: boolean;
     exposedData: {
         code: string;

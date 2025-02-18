@@ -22,7 +22,6 @@ interface Props {
     composerID: ComposerID;
     message: MessageState;
     disabled: boolean;
-    onChangeContent: (content: string, refreshContent: boolean) => void;
     addressesBlurRef: MutableRefObject<() => void>;
 }
 

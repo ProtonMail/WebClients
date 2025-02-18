@@ -9,7 +9,6 @@ import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 interface Props {
@@ -17,7 +16,6 @@ interface Props {
     defaultPhone?: string;
     defaultCountry?: string;
     isEmbedded?: boolean;
-    api: Api;
 }
 
 const PhoneMethodForm = ({ onSubmit, defaultPhone = '', defaultCountry, isEmbedded }: Props) => {

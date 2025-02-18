@@ -5,8 +5,12 @@ import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import type { Props } from './DesktopNotificationPanel';
 import DesktopNotificationPanel from './DesktopNotificationPanel';
+
+export interface Props {
+    onTest?: () => Promise<Notification | undefined>;
+    infoURL?: string;
+}
 
 const DesktopNotificationSection = ({ onTest, infoURL = getKnowledgeBaseUrl('/desktop-notifications') }: Props) => {
     return (

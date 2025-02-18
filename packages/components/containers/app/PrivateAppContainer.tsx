@@ -7,7 +7,6 @@ interface Props {
     children: ReactNode;
     top?: ReactNode;
     bottom?: ReactNode;
-    drawerSidebar?: ReactNode;
     drawerApp?: ReactNode;
 }
 

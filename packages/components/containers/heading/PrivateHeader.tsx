@@ -19,14 +19,12 @@ import Header from '../../components/header/Header';
 interface Props extends HeaderProps {
     settingsButton?: ReactNode;
     userDropdown?: ReactNode;
-    contactsButton?: ReactNode;
     feedbackButton?: ReactNode;
     floatingButton?: ReactNode;
     upsellButton?: ReactNode;
     hideMenuButton?: boolean;
     hideUpsellButton?: boolean;
     actionArea?: ReactNode;
-    title: string;
     expanded: boolean;
     onToggleExpand?: () => void;
     isSmallViewport?: boolean;

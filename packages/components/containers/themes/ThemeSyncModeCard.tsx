@@ -13,7 +13,6 @@ import type { ThemeSvgSize } from './ThemeSvg';
 interface Props {
     mode: 'light' | 'dark';
     size?: ThemeSvgSize;
-    minSize?: string;
     className?: string;
     listClassName?: string;
     themeIdentifier: ThemeTypes;

@@ -172,7 +172,6 @@ const CodeMethod = ({
                             defaultPhone ||
                             (verificationModel && verificationModel.method === 'sms' ? verificationModel.value : '')
                         }
-                        api={api}
                     />
                 </>
             )}
@@ -183,7 +182,6 @@ const CodeMethod = ({
                         <Href href={getKnowledgeBaseUrl('/human-verification')}>{c('Link').t`Learn more`}</Href>
                     </Text>
                     <EmailMethodForm
-                        api={api}
                         defaultEmail={
                             defaultEmail ||
                             (verificationModel && verificationModel.method === 'email' ? verificationModel.value : '')
