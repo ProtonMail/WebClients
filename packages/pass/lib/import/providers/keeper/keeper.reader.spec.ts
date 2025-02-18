@@ -58,7 +58,7 @@ describe('Import Keeper JSON', () => {
                     sectionName: 'Extra fields',
                     sectionFields: [
                         {
-                            fieldName: '$accountNumber:identityNumber:1',
+                            fieldName: 'accountNumber:identityNumber',
                             type: 'text',
                             data: {
                                 content: '123',
@@ -194,35 +194,35 @@ describe('Import Keeper JSON', () => {
                             data: {
                                 content: '5555555555',
                             },
-                            fieldName: '$phone::1 - number',
+                            fieldName: 'phone: - number',
                             type: 'text',
                         },
                         {
                             data: {
                                 content: 'Ext',
                             },
-                            fieldName: '$phone::1 - ext',
+                            fieldName: 'phone: - ext',
                             type: 'text',
                         },
                         {
                             data: {
                                 content: '5555555556',
                             },
-                            fieldName: '$phone::1 - number',
+                            fieldName: 'phone: - number',
                             type: 'text',
                         },
                         {
                             data: {
                                 content: 'Ext2',
                             },
-                            fieldName: '$phone::1 - ext',
+                            fieldName: 'phone: - ext',
                             type: 'text',
                         },
                         {
                             data: {
                                 content: 'custom field',
                             },
-                            fieldName: '$text::1',
+                            fieldName: 'Text',
                             type: 'text',
                         },
                     ],
@@ -337,91 +337,91 @@ describe('Import Keeper JSON', () => {
         expect(loginItemCustomFields.trashed).toEqual(false);
         expect(loginItemCustomFields.extraFields).toEqual([
             {
-                fieldName: '$text:Security Question & Answer:1',
+                fieldName: 'Security Question & Answer',
                 type: 'text',
                 data: {
                     content: 'this is custom field: security question? this is custom field: security answer',
                 },
             },
             {
-                fieldName: '$text:Website Address:1',
+                fieldName: 'Website Address',
                 type: 'text',
                 data: {
                     content: 'https://this-is-custom-field-url.example.com',
                 },
             },
             {
-                fieldName: '$text:Phone:1',
+                fieldName: 'Phone',
                 type: 'text',
                 data: {
                     content: 'Mobile US (+1) (555) 555-5555 Ex',
                 },
             },
             {
-                fieldName: '$multiline::1',
+                fieldName: 'multiline:',
                 type: 'text',
                 data: {
                     content: 'custom field with\nmultiple\nlines',
                 },
             },
             {
-                fieldName: '$name:custom Name fields:1 - first',
+                fieldName: 'custom Name fields - first',
                 type: 'text',
                 data: {
                     content: 'custom field--first name',
                 },
             },
             {
-                fieldName: '$name:custom Name fields:1 - middle',
+                fieldName: 'custom Name fields - middle',
                 type: 'text',
                 data: {
                     content: 'custom field--middle name',
                 },
             },
             {
-                fieldName: '$name:custom Name fields:1 - last',
+                fieldName: 'custom Name fields - last',
                 type: 'text',
                 data: {
                     content: 'custom field--last name',
                 },
             },
             {
-                fieldName: '$phone:custom Phone Number:1 - number',
+                fieldName: 'phone:custom Phone Number - number',
                 type: 'text',
                 data: {
                     content: '5555555555',
                 },
             },
             {
-                fieldName: '$phone:custom Phone Number:1 - ext',
+                fieldName: 'phone:custom Phone Number - ext',
                 type: 'text',
                 data: {
                     content: 'ext',
                 },
             },
             {
-                fieldName: '$phone:custom Phone Number:1 - type',
+                fieldName: 'phone:custom Phone Number - type',
                 type: 'text',
                 data: {
                     content: 'Mobile',
                 },
             },
             {
-                fieldName: '$phone:custom Phone Number:1 - region',
+                fieldName: 'phone:custom Phone Number - region',
                 type: 'text',
                 data: {
                     content: 'US',
                 },
             },
             {
-                fieldName: '$secret:custom Hidden Field:1',
+                fieldName: 'custom Hidden Field',
                 type: 'hidden',
                 data: {
                     content: 'hidden vlue',
                 },
             },
             {
-                fieldName: '$secret:second custom hidden field:1',
+                fieldName: 'second custom hidden field',
                 type: 'hidden',
                 data: {
                     content: 'hidden value',
@@ -467,14 +467,14 @@ describe('Import Keeper JSON', () => {
         expect(loginItemMultipleUrls.trashed).toEqual(false);
         expect(loginItemMultipleUrls.extraFields).toEqual([
             {
-                fieldName: '$text:Website Address:1',
+                fieldName: 'Website Address',
                 type: 'text',
                 data: {
                     content: 'https://second.example.com',
                 },
             },
             {
-                fieldName: '$text:Website Address with edited label:1',
+                fieldName: 'Website Address with edited label',
                 type: 'text',
                 data: {
                     content: 'https://edited-label.example.com',
