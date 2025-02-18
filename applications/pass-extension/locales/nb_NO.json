@@ -4015,7 +4015,7 @@
         "Når de er synkronisert, vil sletting av aliaser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Bare alfanumeriske små bokstaver, prikker, bindestreker og understrekingstegn er tillatt."
+        "Bare små alfanumeriske tegn, punktum og bindestreker (inkludert understrek) er tillatt."
       ],
       "Passphrase is required": [
         "Passfrase kreves"
@@ -4109,6 +4109,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke lenger ha tilgang til dette hvelvet. For å bli med i det igjen, trenger du en ny invitasjon."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Organisasjonen tillater ikke deling av enkeltelementer"
       ],
       "Your plan does not allow you to create more aliases": [
         "Planen din tillater ikke deg å opprette flere aliaser."
