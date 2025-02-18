@@ -3,8 +3,9 @@ import { useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components';
-import { useAliasMailboxes } from '@proton/pass/components/Settings/Aliases/Mailboxes/AliasMailboxesProvider';
 import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
+
+import { useAliasMailboxes } from './AliasMailboxesProvider';
 
 type Props = {
     values: number[];
@@ -13,11 +14,10 @@ type Props = {
 };
 
 export const DomainMailboxesSelector = ({ onChange, values, disabled }: Props) => {
-    const { getMailboxes, mailboxes, loading } = useAliasMailboxes();
-
-    useEffect(getMailboxes, []);
-
+    const { getAliasMailboxes, mailboxes, loading } = useAliasMailboxes();
     const options = useMemo(() => mailboxes.filter((mailbox) => !mailboxVerificationRequired(mailbox)), [mailboxes]);
+
+    useEffect(getAliasMailboxes, []);
 
     return (
         <SelectTwo<number[]>

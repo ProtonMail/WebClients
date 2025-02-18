@@ -20,23 +20,23 @@ type Props = { mailboxID: number };
 const FORM_ID = 'mailbox-change';
 
 export const AliasMailboxEditModal: FC<Props> = ({ mailboxID }) => {
-    const { onEdit, setAction } = useAliasMailboxes();
-    const create = useRequest(editMailbox, { onSuccess: onEdit });
+    const { setAction, onMailboxCreated } = useAliasMailboxes();
     const onClose = () => setAction(null);
+    const edit = useRequest(editMailbox, { onSuccess: onMailboxCreated });
 
     const form = useFormik<EmailFormValues>({
         initialValues: { email: '' },
         validateOnChange: true,
         validateOnMount: false,
         validate: validateEmailForm,
-        onSubmit: ({ email }) => create.dispatch({ mailboxID, email }),
+        onSubmit: ({ email }) => edit.dispatch({ mailboxID, email }),
     });
 
     return (
         <SidebarModal onClose={onClose} open>
             {(didEnter) => (
                 <Panel
-                    loading={create.loading}
+                    loading={edit.loading}
                     header={
                         <PanelHeader
                             actions={[
@@ -53,10 +53,10 @@ export const AliasMailboxEditModal: FC<Props> = ({ mailboxID }) => {
                                 </Button>,
                                 <Button
                                     color="norm"
-                                    disabled={create.loading || !form.isValid}
+                                    disabled={edit.loading || !form.isValid}
                                     form={FORM_ID}
                                     key="modal-submit-button"
-                                    loading={create.loading}
+                                    loading={edit.loading}
                                     pill
                                     type="submit"
                                 >

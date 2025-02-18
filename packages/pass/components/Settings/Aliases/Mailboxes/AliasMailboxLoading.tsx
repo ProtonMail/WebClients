@@ -1,16 +1,26 @@
 import type { ReactNode } from 'react';
-import { type FC } from 'react';
+import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { deleteMailbox, resendVerifyMailbox, setDefaultMailbox } from '@proton/pass/store/actions';
+import {
+    cancelMailboxEdit,
+    deleteMailbox,
+    editMailbox,
+    resendVerifyMailbox,
+    setDefaultMailbox,
+} from '@proton/pass/store/actions';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
 
 type Props = { mailboxID: number; children: (loading: boolean) => ReactNode };
 
 export const AliasMailboxLoading: FC<Props> = ({ mailboxID, children }) => {
-    const deleting = useSelector(selectRequestInFlight(deleteMailbox.requestID({ mailboxID })));
-    const defaulting = useSelector(selectRequestInFlight(setDefaultMailbox.requestID({ defaultMailboxID: mailboxID })));
-    const verifying = useSelector(selectRequestInFlight(resendVerifyMailbox.requestID(mailboxID)));
+    const mailboxDTO = useMemo(() => ({ mailboxID }), [mailboxID]);
 
-    return children(deleting || defaulting || verifying);
+    const deleting = useSelector(selectRequestInFlight(deleteMailbox.requestID(mailboxDTO)));
+    const defaulting = useSelector(selectRequestInFlight(setDefaultMailbox.requestID(mailboxDTO)));
+    const verifying = useSelector(selectRequestInFlight(resendVerifyMailbox.requestID(mailboxID)));
+    const editing = useSelector(selectRequestInFlight(editMailbox.requestID(mailboxDTO)));
+    const canceling = useSelector(selectRequestInFlight(cancelMailboxEdit.requestID(mailboxID)));
+
+    return children(deleting || defaulting || verifying || editing || canceling);
 };

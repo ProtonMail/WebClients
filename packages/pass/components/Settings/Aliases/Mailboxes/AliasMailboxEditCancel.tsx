@@ -11,22 +11,17 @@ import { useAliasMailboxes } from './AliasMailboxesProvider';
 type Props = { mailboxID: number };
 
 export const AliasMailboxEditCancel: FC<Props> = ({ mailboxID }) => {
-    const { onCancelEdit, setAction } = useAliasMailboxes();
+    const { setAction } = useAliasMailboxes();
     const onClose = () => setAction(null);
-
-    const cancelMailboxChange = useRequest(cancelMailboxEdit, {
-        onSuccess: (mailboxID) => {
-            onCancelEdit(mailboxID);
-            onClose();
-        },
-    });
+    const cancel = useRequest(cancelMailboxEdit, { onSuccess: onClose });
 
     return (
         <ConfirmationPrompt
-            onCancel={onClose}
-            onConfirm={() => cancelMailboxChange.dispatch(mailboxID)}
+            loading={cancel.loading}
             title={c('Title').t`Cancel changing your email?`}
             message={<div>{c('Info').t`This mailbox will use your previous email.`}</div>}
+            onCancel={onClose}
+            onConfirm={() => cancel.dispatch(mailboxID)}
         />
     );
 };
