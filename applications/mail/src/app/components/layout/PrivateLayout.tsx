@@ -3,7 +3,6 @@ import { Suspense, forwardRef, lazy, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { Breakpoints } from '@proton/components';
 import { DrawerApp, FeatureTour, PrivateAppContainer, SmartBanner, TopBanners } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -32,9 +31,7 @@ const LazyInboxDesktopFreeTrialTopBanner = lazy(
 
 interface Props {
     children: ReactNode;
-    breakpoints: Breakpoints;
     labelID: string;
-    elementID: string | undefined;
 }
 
 const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) => {

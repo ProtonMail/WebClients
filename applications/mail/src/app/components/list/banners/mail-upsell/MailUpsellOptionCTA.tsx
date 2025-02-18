@@ -20,7 +20,6 @@ import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 interface OptionProps {
     url: string;
     optionID: MAIL_UPSELL_BANNER_LINK_ID_REF_PATH;
-    callToActionText?: string;
 }
 
 const getUpsellLink = (optionID: MAIL_UPSELL_BANNER_LINK_ID_REF_PATH) => {

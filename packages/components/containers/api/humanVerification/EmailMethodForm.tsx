@@ -8,13 +8,11 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 interface Props {
     onSubmit: (email: string) => Promise<void>;
     defaultEmail?: string;
-    api: Api;
 }
 
 const EmailMethodForm = ({ onSubmit, defaultEmail = '' }: Props) => {

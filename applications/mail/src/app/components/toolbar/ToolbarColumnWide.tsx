@@ -89,7 +89,6 @@ const ToolbarColumnWide = ({
                     <MoveButtons
                         labelID={labelID}
                         isExtraTiny={localIsExtraTiny}
-                        isNarrow={localIsNarrow}
                         selectedIDs={selectedIDs}
                         onMove={onMove}
                         onDelete={onDelete}

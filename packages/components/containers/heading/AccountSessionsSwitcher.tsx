@@ -10,7 +10,6 @@ import clsx from '@proton/utils/clsx';
 interface Props {
     sessions: ActiveSessionLite[];
     onSignOut: () => void;
-    className?: string;
     sessionOptions?: {
         path?: string;
         target?: '_blank' | '_self';
