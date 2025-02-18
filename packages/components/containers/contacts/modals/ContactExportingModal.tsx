@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
@@ -29,6 +29,7 @@ export interface ContactExportingProps {
 type Props = ContactExportingProps & ModalProps;
 
 const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, inputContactsIds, ...rest }: Props) => {
+    const abortController = useRef<AbortController | undefined>();
     const api = useApi();
     const [contacts = [], loadingContacts] = useContacts();
     const contactsToDownload = useMemo(() => {
@@ -56,8 +57,11 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, inputCo
             return;
         }
 
-        const abortController = new AbortController();
+        abortController.current = new AbortController();
         const run = async () => {
+            if (!abortController.current) {
+                return;
+            }
             const userKeys = await getUserKeys();
             /* There are 2 cases to export contacts
              * 1- Export a selection of contacts
@@ -66,8 +70,9 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, inputCo
             if (inputContactsIds) {
                 exportContactsFromIds({
                     contactIDs: inputContactsIds,
+                    count: contacts.length,
                     userKeys,
-                    signal: abortController.signal,
+                    signal: abortController.current.signal,
                     api,
                     callbackSuccess: (contactExported) =>
                         addSuccess((contactsExported) => [...contactsExported, contactExported]),
@@ -83,7 +88,7 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, inputCo
                     labelID: LabelID,
                     count: countContacts,
                     userKeys,
-                    signal: abortController.signal,
+                    signal: abortController.current.signal,
                     api,
                     callbackSuccess: (contactExported) =>
                         addSuccess((contactsExported) => [...contactsExported, contactExported]),
@@ -99,12 +104,36 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, inputCo
         run();
 
         return () => {
-            abortController.abort();
+            abortController.current?.abort();
         };
     }, [loadingContacts]);
 
     const success = contactsNotExported.length !== countContacts;
     const loading = loadingContacts || contactsExported.length + contactsNotExported.length !== countContacts;
+
+    /*
+     * The way the export contacts logic is built is creating an "issue" when exporting a huge selection of contacts.
+     * If we export more than 300 contacts, we need to get all contacts from the API, and filter them on the fly.
+     * The problem is that when all selected contacts are downloaded, the user can save the vcard,
+     * while some requests are still being performed in the background.
+     *
+     * Let's take an example to explain the problem:
+     * The user selects the first 301 contacts out of 1000 contacts
+     * We are getting pages of 50 contacts from the api.
+     * When the user will have made 7 requests (for 350 contacts), he will be able to download the vcard.
+     * However, the download process of the rest of the pages will still be running, making useless requests.
+     * If the user is downloading the vCard or closing the modal the process will stop,
+     * but if the modal stays opened forever, all the pages will be downloaded
+     *
+     * To avoid this, when we detect that loading has ended (all selected contacts have been downloaded),
+     * we can stop the process
+     */
+    useEffect(() => {
+        if (!loading) {
+            abortController.current?.abort();
+        }
+    }, [loading]);
+
     const display =
         loading || success
             ? c('Progress bar description').ngettext(
