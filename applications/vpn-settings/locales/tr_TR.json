@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
-      "Refresh data": [
-        "Verileri yenile"
-      ],
       "Refresh status": [
         "Durumu yenile"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "Hatırlatıcı gönder"
+      ],
+      "Set as album cover": [
+        "Albüm kapağı olarak ayarla"
       ],
       "Set catch-all": [
         "Tümünü toplama adresi yap"
@@ -2319,10 +2319,10 @@
     },
     "Description": {
       "Create policies to manage access to shared servers.": [
-        "Paylaşımlı sunuculara erişimi yönetmek için ilkeler oluşturun."
+        "Paylaşılan sunuculara erişimi yönetmek için ilkeler oluşturun."
       ],
       "Everyone in your organization can connect to shared servers.": [
-        "Kuruluşunuzdaki herkes paylaşımlı sunuculara bağlantı kurabilir."
+        "Kuruluşunuzdaki herkes paylaşılan sunucularla bağlantı kurabilir."
       ],
       "If disabled, only admins will have access.": [
         "Kapatıldığında yalnızca yöneticiler erişebilir."
@@ -2509,8 +2509,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > İletiler ve ileti oluşturma > Kısa etki alanı (pm.me) bölümüne gidin"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } sizin kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa alan adı (pm.me) bölümüne gidin"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tüm depolama alanı dağıtıldı. Lütfen diğer kullanıcılara ayrılmış depolama alanlarını azaltın."
@@ -3412,11 +3412,17 @@
       "Best deal": [
         "En iyi teklif"
       ],
+      "Checkout": [
+        "Ödeme yapın"
+      ],
+      "Create your account": [
+        "Hesabınızı oluşturun"
+      ],
       "Device": [
         "Aygıt"
       ],
       "Enabled Countries": [
-        "Etkinleştirilmiş Ülkeler"
+        "Kullanıma alınmış ülkeler"
       ],
       "Enter your email address": [
         "E-posta adresinizi yazın"
@@ -3446,7 +3452,7 @@
         "Kuruluş anahtarı parmak izi"
       ],
       "Policy Name": [
-        "İlke Adı"
+        "İlke adı"
       ],
       "Protection": [
         "Koruma"
@@ -3754,8 +3760,8 @@
       "Allocated": [
         "Ayrılmış"
       ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Kullanıcıların tanımlanmış ilkelere göre güvenli paylaşımlı sunuculara bağlantı kurmasına izin verin."
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Kullanıcıların ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden güvenli paylaşımlı sunuculara bağlanmasına izin verin."
       ],
       "Already allocated": [
         "Zaten ayrılmış"
@@ -3860,7 +3866,7 @@
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
-        "10 üzerinden 8.4 puanlama ile CNET Editörlerin Seçimi Ödülü"
+        "CNET Editörün Seçimi ödülünü 10 üzerinden 8,4 puanla kazandı"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Kuruluşunuz için bir kimlik hizmeti sağlayıcı (IdP) kullanarak SAML kimlik doğrulamasını yapılandırın. Bu işlem, tüm kuruluş için SAML özelliğini kullanıma alır."
@@ -3896,7 +3902,7 @@
         "Önerilen parolayı panoya kopyala"
       ],
       "countries enabled": [
-        "ülkeler etkinleştirildi"
+        "ülke etkinleştirildi"
       ],
       "Country code": [
         "Ülke kodu"
@@ -4532,7 +4538,7 @@
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
-        "5 yıldız üzerinden 5 puanlama ile PC Magazine Editörlerin Seçimi Ödülü"
+        "PC Magazine Editörün Seçimi ödülünü 5 üzerinden 5 puanla kazandı"
       ],
       "per month": [
         "aylık"
@@ -4738,6 +4744,10 @@
       "Shared ${ vaultLink } updated": [
         "Paylaşılan ${ vaultLink } güncellendi"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Paylaşımlı sunucu ülkesi (${ countriesCount })",
+        "Paylaşımlı sunucu ülkesi (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Paylaşılmış kasa silindi"
       ],
@@ -4758,6 +4768,10 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
+      ],
+      "Step ${ step }": [
+        "${ step }. adım",
+        "${ step }. adım"
       ],
       "Storage allocated to other users in this organisation": [
         "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
@@ -4799,7 +4813,7 @@
         "Simgeler (#$&)"
       ],
       "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "5 yıldız üzerinden 4.2 puanlama ile Tech radar pro tavsiye ediyor"
+        "Tech radar pro tarafından 5 üzerinden 4,2 puanla önerildi"
       ],
       "Thank you": [
         "Teşekkürler"
@@ -4970,7 +4984,7 @@
         "Toplam VPN bağlantısı"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
-        "Risk olmadan ${ productName } deneyin - eğer herhangi bir sebeple fikrinizi değiştirirseniz, tam geri ödeme alırsınız. Hiçbir soru sorulmaz."
+        "${ productName } uygulamasını risk almadan deneyin. Herhangi bir nedenle fikrinizi değiştirirseniz tam geri ödeme alabilirsiniz. Herhangi bir soru sorulmaz."
       ],
       "Two-factor authentication disabled": [
         "İki adımlı doğrulama kapatıldı"
@@ -6709,7 +6723,7 @@
         "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik"
       ],
       "Apps for": [
-        "Uygulamalar"
+        "Şunlar için uygulamalar"
       ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
@@ -6778,7 +6792,7 @@
         "Size ayrılmış sunucular ve IP adresleri"
       ],
       "Dedicated servers optimized for streaming": [
-        "Yayın akışı için optimize edilmiş özel sunucular"
+        "Yayın akışı izlemek için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -6830,6 +6844,9 @@
       ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Gizliliğinizi koruyan yüksek hızlı İsviçre VPN hizmeti"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } aygıt için yüksek hızlı VPN",
@@ -6950,11 +6967,14 @@
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Tek oturum açma bütünleştirmesi (yakında)"
+      "SSO integration": [
+        "Tek oturum açma bütünleştirmesi"
       ],
       "Start protecting your organization": [
         "Kuruluşunuzu korumaya başlayın"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "2 kolay adımda kendiniz çevrim içi ortamda korumaya başlayın"
       ],
       "Strict no-logs policy": [
         "Katı kayıt tutmama ilkesi"
@@ -7028,11 +7048,11 @@
         "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
       "Up to 10 Gbps": [
-        "10 Gbps'a kadar"
+        "10 Gb/sn hıza kadar"
       ],
       "Use on up to ${ n } device at once": [
-        "Aynı anda en fazla ${ n } cihazda kullanın",
-        "Aynı anda en fazla ${ n } cihazda kullanın"
+        "Aynı anda ${ n } aygıta kadar kullanın",
+        "Aynı anda ${ n } aygıta kadar kullanın"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -7573,8 +7593,8 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Bu seçenek kapatıldığında, ${ BRAND_NAME } uygulamalarının bildirim alma yeteneği kaldırılır"
       ],
-      "During your first month": [
-        "Ilk ayınız boyunca"
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Bir ${ BRAND_NAME } ürünü kullandığınız ilk ay boyunca"
       ],
       "Email subscriptions": [
         "E-posta abonelikleri"
@@ -7606,7 +7626,7 @@
         "İki adımlı doğrulama kodları indirildi"
       ],
       "Error creating policy": [
-        "İlke oluşturulurken hata oluştu"
+        "İlke oluşturulurken sorun çıktı"
       ],
       "Invalid code": [
         "Kod geçersiz"
@@ -7627,7 +7647,7 @@
         "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
       ],
       "Policy created successfully": [
-        "İlke başarıyla oluşturuldu"
+        "İlke oluşturuldu"
       ],
       "Reminder has been sent": [
         "Hatırlatıcı gönderildi"
@@ -7844,9 +7864,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "Kuruluş kimliğini ayarlamak için ${ email } e-posta adresinizden ${ verify } işlemi yapın."
-      ],
       "Current organization identity": [
         "Geçerli kuruluş kimliği"
       ],
@@ -7862,8 +7879,8 @@
       "Organization identity updated": [
         "Kuruluş kimliği güncellendi"
       ],
-      "Verify": [
-        "Doğrula"
+      "Verify your email address ${ email } to set organization identity.": [
+        "Kuruluş kimliğini ayarlamak için ${ email } e-posta adresinizi doğrulayın."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9582,6 +9599,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -9870,47 +9928,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -10316,7 +10333,7 @@
         "Adres ekle"
       ],
       "Add countries to \"${ policyName }\"": [
-        "Ülkeleri \"${ policyName }\" ilkesine ekleyin"
+        "\"${ policyName }\" ilkesine ülkeler ekleyin"
       ],
       "Add credit/debit card": [
         "Kredi ya da banka kartı ekle"
@@ -10355,7 +10372,7 @@
         "Kullanıcılar ekle"
       ],
       "Add users to \"${ policyName }\"": [
-        "Kullanıcıları \"${ policyName }\" ilkesine ekleyin"
+        "\"${ policyName }\" ilkesine kullanıcılar ekleyin"
       ],
       "Allocate storage": [
         "Depolama alanını dağıt"
@@ -10671,6 +10688,9 @@
       ],
       "Groups": [
         "Gruplar"
+      ],
+      "Help center": [
+        "Yardım merkezi"
       ],
       "How to choose a good logo": [
         "İyi bir logo nasıl seçilir"
@@ -11037,29 +11057,6 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."
-      ],
-      "Group membership paused": [
-        "Grup üyeliği duraklatılmış"
-      ],
-      "Sending member invitation": [
-        "Üye daveti gönderiliyor"
-      ],
-      "User declined invitation": [
-        "Kullanıcı daveti reddetti"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Kullanıcının daveti kabul etmesi bekleniyor"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
@@ -11144,6 +11141,29 @@
       ],
       "Your DKIM signing is working.": [
         "DKIM imzanız çalışıyor."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."
+      ],
+      "Group membership paused": [
+        "Grup üyeliği duraklatılmış"
+      ],
+      "Sending member invitation": [
+        "Üye daveti gönderiliyor"
+      ],
+      "User declined invitation": [
+        "Kullanıcı daveti reddetti"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Kullanıcının daveti kabul etmesi bekleniyor"
       ]
     },
     "Tor out of date": {
@@ -11288,6 +11308,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Bu işlem yöneticinin bu kullanıcının hesabını yönetme iznini kaldıracak."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Yönetici haklarını kazanmak için bir sonraki ${ BRAND_NAME } oturum açışlarında bir yedek parola belirlemeleri gerekecektir."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "İlerlemek için, kullanıcının verilerine erişme izni isteğinde bulunmalı ya da parolasını sıfırlamalısınız."
@@ -11658,8 +11681,11 @@
       "Your ${ a } and ${ b } bundle": [
         "${ a } ve ${ b } paketiniz"
       ],
+      "Your ${ selected } plan": [
+        "${ selected } tarifeniz"
+      ],
       "Your plan includes:": [
-        "Planınıza dahil olanlar:"
+        "Tarifenizin özellikleri:"
       ]
     },
     "vpn_2step: tooltip": {

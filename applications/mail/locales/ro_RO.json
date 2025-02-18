@@ -1154,8 +1154,14 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Setare ${ MAIL_APP_NAME } ca aplicație implicită de e-mail"
       ],
+      "Set as album cover": [
+        "Setare ca și copertă de album"
+      ],
       "Set as default": [
         "Setare ca implicit"
+      ],
+      "Set as default mail application": [
+        "Setare ca aplicație de e-mail implicită"
       ],
       "Set encryption": [
         "Setare criptare"
@@ -1281,7 +1287,7 @@
         "În acest weekend"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
-        "Pentru a căuta în siguranță în mesaje, trebuie să se descarce o copie a acestora în navigator. Descărcarea inițială poate dura un ceva timp."
+        "Pentru a căuta în siguranță în mesaje, trebuie să se descarce o copie a acestora în navigator. Descărcarea inițială poate dura un timp."
       ],
       "Toggle Calendar app": [
         "Comutare la aplicație Calendar"
@@ -4013,8 +4019,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage } Puteți verifica situația și pe ${ statusPageLink }."
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Aveți numele de utilizator ${ user.Name }. Pentru a crea ${ emailAddress }, accesați Setări > Toate setările > Mesaje și compunere > Domeniu scurt (pm.me)."
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "Numele de utilizator este ${ user.Name }. Pentru a crea ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
       ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
@@ -4071,7 +4077,7 @@
         "Acest contact nu se poate exporta."
       ],
       "Checkout expired, please try again": [
-        "Finalizarea comenzii a expirat, mai reîncercați."
+        "Finalizarea comenzii a expirat. Reîncercați."
       ],
       "Choose a date in the future.": [
         "Alegeți o dată în viitor."
@@ -4125,7 +4131,7 @@
         "Deselectați cel puțin ${ calendarsToFixCount } de calendare sau"
       ],
       "Domain not available, try again later": [
-        "Domeniul nu este disponibil, reîncercați mai târziu."
+        "Domeniul nu este disponibil. Reîncercați mai târziu."
       ],
       "Draft could not be saved. Try again.": [
         "Ciorna nu a putut fi salvată. Mai încercați."
@@ -4334,7 +4340,7 @@
         "Alegeți un stat"
       ],
       "Please try again or refresh the page.": [
-        "Mai reîncercați sau reîmprospătați pagina."
+        "Mai încercați sau reîmprospătați pagina."
       ],
       "Please try generating the text again": [
         "Încercați să generați din nou textul."
@@ -4753,7 +4759,7 @@
         "Deschidere în navigator web"
       ],
       "Please refresh the page or try again later.": [
-        "Reîmprospătați pagina sau reîncercați mai târziu."
+        "Împrospătați pagina sau reîncercați mai târziu."
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
@@ -5954,6 +5960,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } vă poate proteja și afacerea."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } nu este aplicația de e-mail implicită."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Un mesaj nu a putut fi mutat.",
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } mesaje.",
@@ -6421,6 +6430,9 @@
       ],
       "Default email application": [
         "Aplicaţia de e-mail implicită"
+      ],
+      "Default mail application": [
+        "Aplicația de e-mail implicită"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Știați că aveți spațiu de stocare criptat în cloud inclus în contul ${ BRAND_NAME }? Mergeți la ${ DRIVE_APP_NAME } și profitați la maximum de spațiul oferit. Este gratis."
@@ -7237,6 +7249,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigaror. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigator. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
@@ -9755,6 +9770,9 @@
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Servere dedicate optimizate pentru transmisii în flux"
+      ],
       "Desktop app": [
         "Aplicația desktop"
       ],
@@ -9919,8 +9937,8 @@
       "Split tunneling (Android and Windows)": [
         "Trafic divizat (Android și Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integrare SSO (în curând)"
+      "SSO integration": [
+        "Integrare SSO"
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
@@ -9994,6 +10012,11 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Folosiți pe maxim ${ n } un dispozitiv",
+        "Folosiți pe maxim ${ n } dispozitive simultan",
+        "Folosiți pe maxim ${ n } de dispozitive simultan"
       ],
       "User credential management": [
         "Gestionare acreditări utilizatori"
@@ -13436,6 +13459,9 @@
       "Groups": [
         "Grupuri"
       ],
+      "Help center": [
+        "Centru de ajutor"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Ascundeți-vă e-mailul cu ${ PASS_APP_NAME }"
       ],
@@ -14157,6 +14183,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
+      "2 consecutive dots are not allowed": [
+        "Nu se acceptă două puncte simultan."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Sigur doriți să ștergeți definitiv un contact?",
         "Sigur doriți să ștergeți definitiv ${ count } contacte?",
@@ -14170,6 +14199,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Sigur doriți să ștergeți definitiv acest contact?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Nu se acceptă punct la început."
+      ],
+      "Cannot contain a dot at the end": [
+        "Nu se acceptă punct la sfârșit."
       ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
@@ -14191,6 +14226,9 @@
       ],
       "Name is required": [
         "Numele este obligatoriu."
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Sunt permise doar litere mici, cifre, puncte, cratime și caracter de subliniere."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."

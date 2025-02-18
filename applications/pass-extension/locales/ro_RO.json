@@ -753,7 +753,7 @@
         "Deținerea unui domeniu trebuie verificată mai întâi."
       ],
       "Alias could not be updated at the moment. Please try again later": [
-        "Aliasurile nu au putut fi actualizate momentan. Reîncercați mai târziu."
+        "Momentan aliasurile nu au putut fi actualizate. Reîncercați mai târziu."
       ],
       "Alias options could not be resolved": [
         "Opțiunile pentru alias nu au putu fi rezolvate."
@@ -763,6 +763,12 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentificare eșuată. Confirmați-vă parola ${ BRAND_NAME } pentru a continua exportarea."
+      ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Autentificare eșuată. Confirmați-vă parola de rezervă pentru a continua exportarea."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Autentificare eșuată. Confirmați-vă parola suplimentară pentru a continua exportarea."
       ],
       "Authentication failure: ${ message }": [
         "Eșuare autentificare: ${ message }"
@@ -829,7 +835,7 @@
         "Domeniul nu a putut fi verificat. Asigurați-vă că ați adăugat înregistrările DNS corecte."
       ],
       "Domain not available, try again later": [
-        "Domeniul nu este disponibil, reîncercați mai târziu."
+        "Domeniul nu este disponibil. Reîncercați mai târziu."
       ],
       "Editing item failed": [
         "Editarea articolelor a eșuat."
@@ -1158,7 +1164,7 @@
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "Reîmprospătați pagina sau reîncercați mai târziu."
+        "Împrospătați pagina sau reîncercați mai târziu."
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
@@ -3917,6 +3923,9 @@
       "${ BRAND_NAME } password is required": [
         "Este necesară parola ${ BRAND_NAME }"
       ],
+      "2 consecutive dots are not allowed": [
+        "Nu se acceptă două puncte simultan."
+      ],
       "A description of the problem is required": [
         "Este necesară o descriere a problemei."
       ],
@@ -3950,6 +3959,12 @@
       ],
       "At least one email address is required": [
         "Este necesară cel puțin o adresă de e-mail."
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Nu se acceptă punct la început."
+      ],
+      "Cannot contain a dot at the end": [
+        "Nu se acceptă punct la sfârșit."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nu se pot prelua mesajele pentru acest alias chiar acum."
@@ -4055,6 +4070,9 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "După sincronizare, aliasurile șterse din ${ PASS_SHORT_APP_NAME } vor fi șterse și din SimpleLogin."
       ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Sunt permise doar litere mici, cifre, puncte, cratime și caracter de subliniere."
+      ],
       "Passphrase is required": [
         "Este necesară o frază de acces."
       ],
@@ -4147,6 +4165,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Nu veți mai avea acces la acest seif. Pentru a vă realătura, veți avea nevoie de o nouă invitație."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Organizația nu vă permite partajarea individuală a articolelor"
       ],
       "Your plan does not allow you to create more aliases": [
         "Planul actual nu vă permite să creați mai multe aliasuri."

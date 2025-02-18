@@ -3222,8 +3222,8 @@
       "Require 2FA for organization": [
         "Richiedi 2FA per l'organizzazione"
       ],
-      "SSO integration (coming soon)": [
-        "Integrazione SSO (in arrivo)"
+      "SSO integration": [
+        "Integrazione SSO"
       ]
     },
     "Notification": {
@@ -3373,11 +3373,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Le tue informazioni sono state trovate in almeno una fuga di dati. Attiva ${ DARK_WEB_MONITORING_NAME } per visualizzare i dettagli e le azioni da seguire. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Chiudi"
       ]
     },
     "sso": {
@@ -4334,6 +4329,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Non avrai più accesso a questa cassaforte. Per unirti nuovamente avrai bisogno di un nuovo invito."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "La tua organizzazione non consente la condivisione di singoli elementi."
       ],
       "Your session could not be authorized.": [
         "Impossibile autorizzare la tua sessione."

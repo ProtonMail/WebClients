@@ -78,6 +78,9 @@
       "Add phone number": [
         "電話番号を追加"
       ],
+      "Add to album": [
+        "アルバムに追加"
+      ],
       "Add to group": [
         "グループに追加"
       ],
@@ -224,6 +227,9 @@
       ],
       "Create a new contact group": [
         "新規連絡先グループを作成"
+      ],
+      "Create album": [
+        "アルバムを作成"
       ],
       "Create and copy alias": [
         "エイリアスを作成してコピー"
@@ -379,7 +385,7 @@
         "添付ファイルとして転送"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "${ planName } で ${ priceCoupon }を入手"
+        "${ planName } を ${ priceCoupon }で入手"
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } を入手"
@@ -542,6 +548,9 @@
       ],
       "New": [
         "新規"
+      ],
+      "New album": [
+        "新しいアルバム"
       ],
       "New document": [
         "新規ドキュメント"
@@ -750,6 +759,9 @@
       "Select country": [
         "国を選択"
       ],
+      "Set as album cover": [
+        "アルバムカバーに設定"
+      ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
       ],
@@ -947,6 +959,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "アルバムを作成"
+      ],
       "Upload": [
         "アップロード"
       ]
@@ -1298,6 +1313,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "閉じる"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
       ],
@@ -1321,6 +1339,11 @@
       ],
       "Take a tour": [
         "ツアーを開始"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "${ photos.length } 枚の写真を追加"
       ]
     },
     "Cancellation reminder": {
@@ -2400,11 +2423,6 @@
         "未払いの請求"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2488,6 +2506,11 @@
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "また、CSVのフィールドを自動的にvCardのフィールドに変換しています。手動で変換が正しく行われているか確かめることもできます。"
@@ -2518,7 +2541,7 @@
         "より優れた機能を持つ VPN を見つけた"
       ],
       "I have not managed to connect": [
-        "接続することができませんでした"
+        "接続することができなかった"
       ],
       "I only needed a VPN short-term": [
         "VPN が短期間のみ必要だった"
@@ -2527,7 +2550,7 @@
         "別の ${ BRAND_NAME } アカウントを使っている"
       ],
       "It doesn't do what I need": [
-        "必要としていることをしてくれない"
+        "必要な機能がない"
       ],
       "Missing feature(s)": [
         "機能が不足している"
@@ -2679,8 +2702,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } はあなたのユーザー名です。 ${ emailAddress } を作成するには、[設定] > [メッセージと作成] > [短いドメイン (pm.me)] に移動してください。"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -4128,6 +4151,9 @@
       "All (${ totalFoldersCount } label)": [
         "すべて (${ totalFoldersCount } 件のラベル)"
       ],
+      "All albums": [
+        "すべてのアルバム"
+      ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
       ],
@@ -4737,6 +4763,9 @@
       "No": [
         "いいえ"
       ],
+      "No Albums": [
+        "アルバムがありません"
+      ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません"
       ],
@@ -4820,6 +4849,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME は、現在の新規作成時のモードを使用して自動的にメッセージを送信します。"
+      ],
+      "Photo is set as album cover": [
+        "写真はアルバムカバーとして設定されています"
       ],
       "Photos have been successfully recovered.": [
         "写真は正常に復元されました。"
@@ -4928,6 +4960,9 @@
       ],
       "Ready to add some photos?": [
         "写真を追加する準備はできましたか?"
+      ],
+      "Recent": [
+        "最近"
       ],
       "recommended browser": [
         "推奨ブラウザ"
@@ -5084,6 +5119,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "${ items } は改ざんされたか、アカウントに新しい鍵が設定された可能性があります。信頼できる場合のみ開いてください。"
+      ],
+      "The albums you create are shown here": [
+        "作成したアルバムがここに表示されます"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "デジタル署名が部分的に検証されました。 このファイルは、 ${ BRAND_NAME } アカウントを持たないユーザーによる公開共有リンクを使用してアップロードされました。そのため、本人確認はできません。"
@@ -5995,6 +6033,9 @@
       "Move to Inbox": [
         "受信トレイに移動"
       ],
+      "My Albums": [
+        "アルバム"
+      ],
       "Name": [
         "名前"
       ],
@@ -6137,7 +6178,7 @@
         "開始日"
       ],
       "State": [
-        "状態"
+        "州"
       ],
       "Stolen data": [
         "盗難されたデータ"
@@ -6950,6 +6991,9 @@
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
       ],
+      "Dedicated servers optimized for streaming": [
+        "ストリーミングに最適化された専用サーバー"
+      ],
       "Desktop app": [
         "デスクトップアプリ"
       ],
@@ -7112,8 +7156,8 @@
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO 統合 (近日公開予定)"
+      "SSO integration": [
+        "SSO 統合"
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
@@ -7183,6 +7227,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
+      ],
+      "Use on up to ${ n } device at once": [
+        "一度に最大 ${ n } 台のデバイスで使用"
       ],
       "User credential management": [
         "ユーザー資格管理"
@@ -7499,7 +7546,7 @@
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
-        "誰にでも(${ PASS_APP_NAME }を使っていない人にも)個人のアイテムを安全に共有"
+        "誰にでも (${ PASS_APP_NAME }を使っていない人にも) 個人のアイテムを安全に共有"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "電話番号、住所、誕生日、個人的なメモなどの連絡先の詳細を安全に保存します。 ゼロアクセス暗号化により、${ BRAND_NAME } であってもアクセスできなくなります。"
@@ -8225,7 +8272,7 @@
         "支払い処理中"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "アドオンの数を減らすには、まずサブスクリプションを再アクティブ化してください。"
+        "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
       "Please select billing country": [
         "請求先の国を選択してください"
@@ -8286,7 +8333,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "無料"
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8404,7 +8451,7 @@
         "理由を選択"
       ],
       "Select state": [
-        "状態の選択"
+        "州を選択"
       ],
       "Set date": [
         "日付を設定"
@@ -8618,7 +8665,7 @@
         "この許可はあと${ timeRemaining.inHours }時間で期限切れになります。"
       ],
       "This permission expires soon": [
-        "この許可はすぐに取り消されます"
+        "この権限はまもなく有効期限が切れます"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
@@ -9297,10 +9344,10 @@
         "追加のストレージとユーザー"
       ],
       "Folders, labels and filters": [
-        "フォルダ、ラベル、ファイル"
+        "フォルダー、ラベル、フィルター"
       ],
       "Folders, labels, and custom filters": [
-        "フォルダ、ラベル、そしてカスタムフィルター"
+        "フォルダー、ラベル、カスタムフィルター"
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
@@ -9786,6 +9833,12 @@
       "Addresses": [
         "メールアドレス"
       ],
+      "Album": [
+        "アルバム"
+      ],
+      "Albums": [
+        "アルバム"
+      ],
       "All": [
         "すべて"
       ],
@@ -10037,6 +10090,9 @@
       ],
       "Groups": [
         "グループ"
+      ],
+      "Help center": [
+        "ヘルプセンター"
       ],
       "High security for your account": [
         "アカウントの高度なセキュリティ"
@@ -10398,11 +10454,6 @@
         "今日"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "この共有ファイルを${ DRIVE_APP_NAME }に追加して、後で簡単にアクセスできるようにしましょう。"
@@ -10484,6 +10535,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {
@@ -10591,6 +10647,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 つの連続したドットは使用できません"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } 件の連絡先を完全に削除してよろしいですか？"
       ],
@@ -10602,6 +10661,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "この連絡先を完全に削除してよろしいですか？"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "最初にドットを含めることはできません"
+      ],
+      "Cannot contain a dot at the end": [
+        "最後にドットを含めることはできません"
       ],
       "Contacts could not be merged": [
         "連絡先を統合できませんでした"
@@ -10623,6 +10688,9 @@
       ],
       "Name is required": [
         "名前は必須です"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "英数字の小文字、ドット、ハイフン、アンダースコアのみが使用できます"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"

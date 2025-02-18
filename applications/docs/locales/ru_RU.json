@@ -165,6 +165,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Continue downloading": [
+        "Продолжить скачивание"
+      ],
       "Continue import": [
         "Продолжить импорт"
       ],
@@ -536,6 +539,9 @@
       ],
       "Restore this version": [
         "Восстановить эту версию"
+      ],
+      "Restore this version?": [
+        "Восстановить эту версию?"
       ],
       "Retry": [
         "Повторить"
@@ -2440,9 +2446,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
-      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -3913,6 +3916,9 @@
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
+      "Actions": [
+        "Действия"
+      ],
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
@@ -4308,6 +4314,9 @@
       ],
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
+      ],
+      "Invite": [
+        "Пригласить"
       ],
       "Invite link copied": [
         "Ссылка для приглашения скопирована."
@@ -5126,6 +5135,9 @@
       "Anderson": [
         "Андерсон"
       ],
+      "Anyone on the Internet with the link can edit": [
+        "Любой пользователь, имеющий ссылку, может редактировать"
+      ],
       "Anyone on the Internet with the link can view": [
         "Каждый, кто находится в Интернете и имеет ссылку, может посмотреть"
       ],
@@ -5275,6 +5287,9 @@
       ],
       "Emails (last month)": [
         "Письма (последний месяц)"
+      ],
+      "Enable email notifications": [
+        "Включить уведомления по электронной почте"
       ],
       "Encrypt emails": [
         "Шифровать письма"
@@ -6440,9 +6455,6 @@
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Интеграция с SSO (скоро появится)"
-      ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
       ],
@@ -6960,6 +6972,9 @@
       "\"${ name }\" failed to be created": [
         "Не удалось создать \"${ name }\""
       ],
+      "\"${ name }\" failed to be deleted": [
+        "Не удалось удалить \"${ name }\""
+      ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" не удалось окончательно удалить из корзины"
       ],
@@ -7154,6 +7169,9 @@
       ],
       "Share invitation declined": [
         "Приглашение поделиться отклонено"
+      ],
+      "The document failed to be created": [
+        "Не удалось создать документ"
       ],
       "The link to your item failed to be deleted": [
         "Не удалось удалить ссылку на ваш элемент"
@@ -8858,6 +8876,9 @@
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } группы контактов"
       ],
+      "Delete ${ item.name }?": [
+        "Удалить ${ item.name }?"
+      ],
       "Delete ${ value }": [
         "Удалить ${ value }"
       ],
@@ -8926,6 +8947,9 @@
       ],
       "Enable 2FA": [
         "Включить 2ФА"
+      ],
+      "End-to-end encrypted": [
+        "Со сквозным шифрованием"
       ],
       "Enter 2FA code": [
         "Введите код двухфакторной аутентификации"
@@ -9178,6 +9202,9 @@
       ],
       "Your document cannot be loaded": [
         "Не удается загрузить ваш документ"
+      ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "В вашем скачивании есть файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"

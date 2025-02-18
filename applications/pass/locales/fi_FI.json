@@ -3115,9 +3115,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
-      ],
-      "SSO integration (coming soon)": [
-        "SSO-integraatio (tulossa pian)"
       ]
     },
     "Notification": {
@@ -3264,11 +3261,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Sulje"
       ]
     },
     "sso": {

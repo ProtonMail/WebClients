@@ -1150,8 +1150,14 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Estableix ${ MAIL_APP_NAME } com a aplicació de correu electrònic predeterminada"
       ],
+      "Set as album cover": [
+        "Estableix com a portada de l'àlbum"
+      ],
       "Set as default": [
         "Estableix com a predeterminat"
+      ],
+      "Set as default mail application": [
+        "Estableix com a aplicació de correu electrònic per defecte"
       ],
       "Set encryption": [
         "Defineix el xifrat"
@@ -3993,8 +3999,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències> Missatges i redacció > Domini curt (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "El vostre nom d'usuari és ${ user.Name }. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
@@ -5883,6 +5889,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } pot protegir també la vostra empresa."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } no és la vostra aplicació de correu per defecte."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } missatge no s'ha pogut moure.",
         "${ messagesNotAuthorizedToMove } missatges no s'han pogut moure."
@@ -6319,6 +6328,9 @@
         "adreça de correu electrònic per defecte"
       ],
       "Default email application": [
+        "Aplicació de correu electrònic per defecte"
+      ],
+      "Default mail application": [
         "Aplicació de correu electrònic per defecte"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
@@ -7124,6 +7136,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic per defecte en aquest navegador. ${ MAIL_APP_NAME } s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic per defecte. ${ MAIL_APP_NAME } s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
       ],
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
@@ -9762,8 +9777,8 @@
       "Split tunneling (Android and Windows)": [
         "Tunelització dividida (Android i Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integració SSO (pròximament)"
+      "SSO integration": [
+        "Integració SSO"
       ],
       "Strict no-logs policy": [
         "Política estricta de no conservació de registres"
@@ -9837,8 +9852,8 @@
         "Fins a ${ totalStorageSize } d'emmagatzematge"
       ],
       "Use on up to ${ n } device at once": [
-        "Ús fins a ${ n } dispositiu al mateix temps",
-        "Ús fins a ${ n } dispositius al mateix temps"
+        "Ús en fins a ${ n } dispositiu al mateix temps",
+        "Ús en fins a ${ n } dispositius al mateix temps"
       ],
       "User credential management": [
         "Gestió de credencials d'usuari"
@@ -13200,6 +13215,9 @@
       "Groups": [
         "Grups"
       ],
+      "Help center": [
+        "Centre d'ajuda"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Amagueu el correu electrònic amb ${ PASS_APP_NAME }"
       ],
@@ -13924,10 +13942,10 @@
         "Estàs segur de que vols eliminar aquest contacte permanentment?"
       ],
       "Cannot contain a dot at the beginning": [
-        "No es pot començar per un punt."
+        "No pot començar per un punt."
       ],
       "Cannot contain a dot at the end": [
-        "No podeu acabar amb un punt."
+        "No pot acabar amb un punt."
       ],
       "Contacts could not be merged": [
         "Els contactes no s’han pogut combinar"
@@ -13951,7 +13969,7 @@
         "Es requereix un nom."
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Només es permeten els caràcters alfanumèrics en minúscules, els punts, els guions i els guions baixos."
+        "Només es permeten caràcters alfanumèrics en minúscula, punts, guions i guions baixos"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
