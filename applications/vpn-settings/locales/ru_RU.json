@@ -2491,9 +2491,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
       ],
@@ -4730,6 +4727,12 @@
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
       ],
+      "Step ${ step }": [
+        "Шаг ${ step }",
+        "Шага ${ step }",
+        "Шагов ${ step }",
+        "Шагов ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Хранилище, выделенное другим пользователям в этой организации"
       ],
@@ -6911,9 +6914,6 @@
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Интеграция с SSO (скоро появится)"
-      ],
       "Start protecting your organization": [
         "Начните защищать свою организацию"
       ],
@@ -7518,9 +7518,6 @@
       "Daily email notifications": [
         "Ежедневные уведомления по электронной почте"
       ],
-      "During your first month": [
-        "В течение перВого месяца"
-      ],
       "Email subscriptions": [
         "Подписки на рассылки"
       ],
@@ -7783,9 +7780,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } ваш адрес электронной почты ${ email } для установки личных данных организации."
-      ],
       "Current organization identity": [
         "Текущие личные данные организации"
       ],
@@ -7800,9 +7794,6 @@
       ],
       "Organization identity updated": [
         "Личные данные организации обновлены"
-      ],
-      "Verify": [
-        "Проверить"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9565,6 +9556,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -9859,47 +9891,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -11009,29 +11000,6 @@
         "Сегодня"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы, и этим пользователем не будут передаваться шифрованные ресурсы."
-      ],
-      "Group membership paused": [
-        "Членство в группе приостановлено"
-      ],
-      "Sending member invitation": [
-        "Отправка приглашения участника"
-      ],
-      "User declined invitation": [
-        "Пользователь отклонил приглашение"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Ожидание принятия приглашения пользователем"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Администраторы могут управлять аккаунтами пользователей и предоставлять права администратора другим пользователям. Только основной администратор может изменить тариф организации."
@@ -11113,6 +11081,29 @@
       ],
       "Your DKIM signing is working.": [
         "Ваше подписание DKIM работает."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы, и этим пользователем не будут передаваться шифрованные ресурсы."
+      ],
+      "Group membership paused": [
+        "Членство в группе приостановлено"
+      ],
+      "Sending member invitation": [
+        "Отправка приглашения участника"
+      ],
+      "User declined invitation": [
+        "Пользователь отклонил приглашение"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Ожидание принятия приглашения пользователем"
       ]
     },
     "Tor out of date": {

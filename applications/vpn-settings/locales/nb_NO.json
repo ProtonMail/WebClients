@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Verv en venn"
       ],
-      "Refresh data": [
-        "Oppdater data"
-      ],
       "Refresh status": [
         "Oppdater status"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "Send påminnelse"
+      ],
+      "Set as album cover": [
+        "Angi som albumomslag"
       ],
       "Set catch-all": [
         "Konfigurer catch-all"
@@ -2509,9 +2509,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "All lagringsplass er tildelt. Reduser lagringsplass tildelt andre brukere."
       ],
@@ -3412,6 +3409,12 @@
       "Best deal": [
         "Beste avtale"
       ],
+      "Checkout": [
+        "Kasse"
+      ],
+      "Create your account": [
+        "Opprett kontoen din"
+      ],
       "Device": [
         "Enhet"
       ],
@@ -3753,9 +3756,6 @@
       ],
       "Allocated": [
         "Tildelt"
-      ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Tillat brukere å koble til sikre delte tjenere basert på definerte retningslinjer."
       ],
       "Already allocated": [
         "Allerede allokert"
@@ -4761,6 +4761,10 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
+      ],
+      "Step ${ step }": [
+        "Trinn ${ step }",
+        "Trinn ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
@@ -6837,6 +6841,9 @@
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Høyhastighets Sveitsisk VPN som beskytter personvernet ditt"
+      ],
       "High-speed VPN on ${ n } device": [
         "Høyhastighets VPN på ${ n } enhet",
         "Høyhastighets VPN på ${ n } enheter"
@@ -6956,11 +6963,14 @@
       "Split tunneling (Android and Windows)": [
         "Delt tunnelering (Android og Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integrasjon (kommer snart)"
+      "SSO integration": [
+        "SSO-integrasjon"
       ],
       "Start protecting your organization": [
         "Begynn å beskytte organisasjonen"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Begynn å beskytte deg selv på nettet i 2 enkle trinn"
       ],
       "Strict no-logs policy": [
         "Streng politikk om ingen logger"
@@ -7579,9 +7589,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Deaktivering av dette vil fjerne muligheten til å motta varsler i ${ BRAND_NAME }-applikasjoner"
       ],
-      "During your first month": [
-        "I løpet av første måneden"
-      ],
       "Email subscriptions": [
         "E-post-abonnementer"
       ],
@@ -7871,9 +7878,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } e-postadressen din, ${ email }, for å angi organisasjonsidentitet."
-      ],
       "Current organization identity": [
         "Gjeldende organisasjonsidentitet"
       ],
@@ -7888,9 +7892,6 @@
       ],
       "Organization identity updated": [
         "Organisasjonsidentitet oppdatert"
-      ],
-      "Verify": [
-        "Verifiser"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9609,6 +9610,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -9897,47 +9939,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -10696,6 +10697,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help center": [
+        "Hjelpesenter"
+      ],
       "How to choose a good logo": [
         "Hvordan velge en god logo"
       ],
@@ -11061,29 +11065,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Ekstern adresse – deaktiverer ende-til-ende-kryptering av e-post for denne gruppen"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Ekstern adresse – deaktiverer ende-til-ende-e-postkryptering for denne gruppen, og ingen krypterte ressurser deles med denne brukeren."
-      ],
-      "Group membership paused": [
-        "Gruppemedlemskap satt på pause"
-      ],
-      "Sending member invitation": [
-        "Sender medlemsinvitasjon"
-      ],
-      "User declined invitation": [
-        "Brukeren avslo invitasjonen"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Venter på at brukeren godtar invitasjonen"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
@@ -11168,6 +11149,29 @@
       ],
       "Your DKIM signing is working.": [
         "Din DKIM-signering virker."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Ekstern adresse – deaktiverer ende-til-ende-kryptering av e-post for denne gruppen"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Ekstern adresse – deaktiverer ende-til-ende-e-postkryptering for denne gruppen, og ingen krypterte ressurser deles med denne brukeren."
+      ],
+      "Group membership paused": [
+        "Gruppemedlemskap satt på pause"
+      ],
+      "Sending member invitation": [
+        "Sender medlemsinvitasjon"
+      ],
+      "User declined invitation": [
+        "Brukeren avslo invitasjonen"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Venter på at brukeren godtar invitasjonen"
       ]
     },
     "Tor out of date": {
@@ -11558,6 +11562,9 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Din ${ a } og ${ b } pakke"
+      ],
+      "Your ${ selected } plan": [
+        "Din ${ selected }-plan"
       ],
       "Your plan includes:": [
         "Planen din inkluderer:"

@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Recomendar a un amigo"
       ],
-      "Refresh data": [
-        "Actualizar los datos"
-      ],
       "Refresh status": [
         "Actualizar estado"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "Enviar un recordatorio"
+      ],
+      "Set as album cover": [
+        "Establecer como portada de álbum"
       ],
       "Set catch-all": [
         "Configurar catch-all"
@@ -2509,9 +2509,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Configuración > Mensajes y redacción > Dominio corto (pm.me)."
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Se ha asignado todo el espacio de almacenamiento. Reduce el almacenamiento asignado a otros usuarios."
       ],
@@ -3412,6 +3409,12 @@
       "Best deal": [
         "Mejor oferta"
       ],
+      "Checkout": [
+        "Pago"
+      ],
+      "Create your account": [
+        "Crea tu cuenta"
+      ],
       "Device": [
         "Dispositivo"
       ],
@@ -3753,9 +3756,6 @@
       ],
       "Allocated": [
         "Asignado"
-      ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Permite a los usuarios conectarse a servidores compartidos y seguros basados en políticas definidas."
       ],
       "Already allocated": [
         "Ya asignado"
@@ -4758,6 +4758,10 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comienza a compartirla con tus contactos y úsala para servicios en línea."
+      ],
+      "Step ${ step }": [
+        "Paso ${ step }",
+        "Paso ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Almacenamiento asignado a otros usuarios de esta organización"
@@ -6831,6 +6835,9 @@
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "VPN suiza de gran velocidad que protege tu privacidad"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidad en ${ n } dispositivo",
         "VPN de alta velocidad en ${ n } dispositivos"
@@ -6950,11 +6957,14 @@
       "Split tunneling (Android and Windows)": [
         "Túnel dividido (Android y Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integración SSO (próximamente)"
+      "SSO integration": [
+        "Integración SSO"
       ],
       "Start protecting your organization": [
         "Comienza a proteger tu organización"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Comienza a protegerte cuando estés online en 2 sencillos pasos."
       ],
       "Strict no-logs policy": [
         "Política estricta de cero registros"
@@ -7573,9 +7583,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Desactivarlo impedirá que recibas notificaciones de las aplicaciones de ${ BRAND_NAME }"
       ],
-      "During your first month": [
-        "Durante el primer mes"
-      ],
       "Email subscriptions": [
         "Suscripciones de correo"
       ],
@@ -7844,9 +7851,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } tu dirección de correo electrónico ${ email } para establecer la identidad de la organización."
-      ],
       "Current organization identity": [
         "Identidad actual de la organización"
       ],
@@ -7861,9 +7865,6 @@
       ],
       "Organization identity updated": [
         "Se ha actualizado la identidad de la organización."
-      ],
-      "Verify": [
-        "Verificar"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9582,6 +9583,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, y ${ VPN_SHORT_APP_NAME } con características prémium"
@@ -9870,47 +9912,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -10672,6 +10673,9 @@
       "Groups": [
         "Grupos"
       ],
+      "Help center": [
+        "Centro de ayuda"
+      ],
       "How to choose a good logo": [
         "Cómo elegir un buen logo"
       ],
@@ -11037,29 +11041,6 @@
         "Hoy"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo."
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
-      ],
-      "Group membership paused": [
-        "Se ha pausado la membresía del grupo."
-      ],
-      "Sending member invitation": [
-        "Enviando una invitación al miembro"
-      ],
-      "User declined invitation": [
-        "El usuario ha rechazado la invitación."
-      ],
-      "Waiting for user to accept the invitation": [
-        "Se está esperando que el usuario acepte la invitación."
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
@@ -11144,6 +11125,29 @@
       ],
       "Your DKIM signing is working.": [
         "Tu firma DKIM está funcionando."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
+      ],
+      "Group membership paused": [
+        "Se ha pausado la membresía del grupo."
+      ],
+      "Sending member invitation": [
+        "Enviando una invitación al miembro"
+      ],
+      "User declined invitation": [
+        "El usuario ha rechazado la invitación."
+      ],
+      "Waiting for user to accept the invitation": [
+        "Se está esperando que el usuario acepte la invitación."
       ]
     },
     "Tor out of date": {
@@ -11657,6 +11661,9 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Tu paquete de ${ a } y ${ b }"
+      ],
+      "Your ${ selected } plan": [
+        "Tu plan ${ selected }"
       ],
       "Your plan includes:": [
         "Tu plan incluye:"

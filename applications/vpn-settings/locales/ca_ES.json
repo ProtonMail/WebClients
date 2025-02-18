@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Recomana a un amic"
       ],
-      "Refresh data": [
-        "Actualitza les dades"
-      ],
       "Refresh status": [
         "Refresca l'estat"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "Envia un recordatori"
+      ],
+      "Set as album cover": [
+        "Estableix com a portada de l'àlbum"
       ],
       "Set catch-all": [
         "Configura l'adreça d'arreplega"
@@ -2319,7 +2319,7 @@
     },
     "Description": {
       "Create policies to manage access to shared servers.": [
-        "Creeu polítiques per gestionar l'accés a servidors compartits."
+        "Creeu polítiques per a gestionar l'accés a servidors compartits."
       ],
       "Everyone in your organization can connect to shared servers.": [
         "Tothom a la vostra organització es pot connectar a servidors compartits."
@@ -2509,8 +2509,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències> Missatges i redacció > Domini curt (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "El vostre nom d'usuari és ${ user.Name }. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
@@ -3412,6 +3412,12 @@
       "Best deal": [
         "Millor oferta"
       ],
+      "Checkout": [
+        "Pagament"
+      ],
+      "Create your account": [
+        "Creeu el vostre compte"
+      ],
       "Device": [
         "Dispositiu"
       ],
@@ -3458,7 +3464,7 @@
         "Seleccioneu la vostra oferta"
       ],
       "Select your payment method": [
-        "Seleccioneu el vostre mètode de pagament"
+        "Seleccioneu el mètode de pagament"
       ],
       "Select your pricing plan": [
         "Seleccioneu el vostre pla de preus"
@@ -3753,9 +3759,6 @@
       ],
       "Allocated": [
         "Assignat"
-      ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Permeteu als usuaris connectar-se a servidors compartits segurs en funció de polítiques definides."
       ],
       "Already allocated": [
         "Ja assignat"
@@ -4758,6 +4761,10 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
+      ],
+      "Step ${ step }": [
+        "Pas ${ step }",
+        "Passes ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
@@ -6709,7 +6716,7 @@
         "Tots els serveis prèmium de ${ BRAND_NAME }. Una subscripció senzilla"
       ],
       "Apps for": [
-        "Aplicacions para"
+        "Aplicacions per a"
       ],
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
@@ -6831,6 +6838,9 @@
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "VPN suïssa d'alta velocitat que protegeix la vostra privacitat"
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN d'alta velocitat en ${ n } dispositiu",
         "VPN d'alta velocitat en ${ n } dispositius"
@@ -6950,11 +6960,14 @@
       "Split tunneling (Android and Windows)": [
         "Tunelització dividida (Android i Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integració SSO (pròximament)"
+      "SSO integration": [
+        "Integració SSO"
       ],
       "Start protecting your organization": [
         "Comenceu a protegir la vostra organització"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Comenceu a protegir-vos en línia en 2 passos senzills"
       ],
       "Strict no-logs policy": [
         "Política estricta de no conservació de registres"
@@ -7031,8 +7044,8 @@
         "Fins a 10 Gbps"
       ],
       "Use on up to ${ n } device at once": [
-        "Ús fins a ${ n } dispositiu al mateix temps",
-        "Ús fins a ${ n } dispositius al mateix temps"
+        "Ús en fins a ${ n } dispositiu al mateix temps",
+        "Ús en fins a ${ n } dispositius al mateix temps"
       ],
       "User credential management": [
         "Gestió de credencials d'usuari"
@@ -7573,8 +7586,8 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "En desactivar-ho, s'eliminarà la possibilitat de rebre notificacions a les aplicacions de ${ BRAND_NAME }."
       ],
-      "During your first month": [
-        "Durant el vostre primer mes"
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Durant el primer mes d'ús a ${ BRAND_NAME }"
       ],
       "Email subscriptions": [
         "Subscripcions per correu electrònic"
@@ -7844,9 +7857,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } la vostra adreça electrònica ${ email } per definir la identitat de l'organització."
-      ],
       "Current organization identity": [
         "Identitat de l'organització actual"
       ],
@@ -7862,8 +7872,8 @@
       "Organization identity updated": [
         "S'ha actualitzat la identitat de l'organització."
       ],
-      "Verify": [
-        "Verifica"
+      "Verify your email address ${ email } to set organization identity.": [
+        "Verifiqueu que la vostra adreça de correu ${ email } per a definir la identitat de l'organització."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9582,6 +9592,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -9870,47 +9921,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -10672,6 +10682,9 @@
       "Groups": [
         "Grups"
       ],
+      "Help center": [
+        "Centre d'ajuda"
+      ],
       "How to choose a good logo": [
         "Com triar un bon logo"
       ],
@@ -11037,29 +11050,6 @@
         "Avui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Adreça externa: desactiva el xifratge d'extrem a extrem de correu electrònic per a aquest grup."
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Adreça externa: desactiva el xifratge d'extrem a extrem de correu electrònic per a aquest grup i no es compartirà cap recurs xifrat amb aquest usuari."
-      ],
-      "Group membership paused": [
-        "S'ha pausat la subscripció del grup."
-      ],
-      "Sending member invitation": [
-        "S'està enviant la invitació al membre."
-      ],
-      "User declined invitation": [
-        "L'usuari ha rebutjat la invitació."
-      ],
-      "Waiting for user to accept the invitation": [
-        "S'està esperant que l'usuari accepti la invitació."
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."
@@ -11144,6 +11134,29 @@
       ],
       "Your DKIM signing is working.": [
         "La vostra signatura DKIM està funcionant."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Adreça externa: desactiva el xifratge d'extrem a extrem de correu electrònic per a aquest grup."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Adreça externa: desactiva el xifratge d'extrem a extrem de correu electrònic per a aquest grup i no es compartirà cap recurs xifrat amb aquest usuari."
+      ],
+      "Group membership paused": [
+        "S'ha pausat la subscripció del grup."
+      ],
+      "Sending member invitation": [
+        "S'està enviant la invitació al membre."
+      ],
+      "User declined invitation": [
+        "L'usuari ha rebutjat la invitació."
+      ],
+      "Waiting for user to accept the invitation": [
+        "S'està esperant que l'usuari accepti la invitació."
       ]
     },
     "Tor out of date": {
@@ -11288,6 +11301,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Això revocarà el permís de l'administrador per a gestionar el compte d'aquest usuari."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Per a aconseguir drets d'administrador, l'usuari ha de crear una còpia de seguretat de la contrasenya quan torni a iniciar la sessió a ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Per a continuar, haureu de sol·licitar el permís de l'usuari per a accedir a les seves dades o restablir la seva contrasenya."
@@ -11534,6 +11550,9 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "El vostre paquet ${ a } i ${ b }"
+      ],
+      "Your ${ selected } plan": [
+        "El vostre pla ${ selected }"
       ],
       "Your plan includes:": [
         "El pla inclou:"
