@@ -8,19 +8,19 @@ import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLo
 import { AliasMailboxTableRow } from './AliasMailboxTableRow';
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
+import './AliasMailboxesTable.scss';
+
 export const AliasMailboxesTable: FC = () => {
     const { mailboxes, loading } = useAliasMailboxes();
 
     return (
-        <Table responsive="cards" hasActions borderWeak>
+        <Table responsive="cards" hasActions borderWeak className="pass-mailboxes-table">
             <TableHeader>
                 <TableRow>
-                    <TableHeaderCell className="w-1/2">{c('Title').t`Mailbox`}</TableHeaderCell>
-                    <TableHeaderCell>{c('Title').t`Aliases`}</TableHeaderCell>
-                    <TableHeaderCell className="w-1/5">
-                        <span className="ml-4">{c('Title').t`Status`}</span>
-                    </TableHeaderCell>
-                    <TableHeaderCell>{c('Title').t`Actions`}</TableHeaderCell>
+                    <TableHeaderCell className="w-4/10">{c('Title').t`Mailbox`}</TableHeaderCell>
+                    <TableHeaderCell className="w-2/10">{c('Title').t`Aliases`}</TableHeaderCell>
+                    <TableHeaderCell className="w-3/10">{c('Title').t`Status`}</TableHeaderCell>
+                    <TableHeaderCell className="w-1/10">{c('Title').t`Actions`}</TableHeaderCell>
                 </TableRow>
             </TableHeader>
             <TableBody>
