@@ -2281,9 +2281,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Az Ön felhasználóneve ${ user.Name }. A ${ emailAddress } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
       ],
@@ -4105,6 +4102,10 @@
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "Az SPF tisztázza, hogy ki küldhet e-mailt az ön domain neve nevében. Adja hozzá a következő TXT rekordot a domain név beállításaihoz (azon a felületen található, ahol a saját domain nevet vásárolta)."
       ],
+      "Step ${ step }": [
+        "${ step }. lépés",
+        "${ step }. lépés"
+      ],
       "Storage allocated to other users in this organisation": [
         "A szervezet további felhasználói számára lefoglalt tárhely"
       ],
@@ -5921,9 +5922,6 @@
       "Split tunneling (Android and Windows)": [
         "Csatorna szétválasztás (Android és Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO integráció (hamarosan elérhető)"
-      ],
       "Start protecting your organization": [
         "Kezdje meg a szervezet védelmét"
       ],
@@ -6604,9 +6602,6 @@
       ],
       "Organization identity updated": [
         "Szervezet azonosítója frissítve"
-      ],
-      "Verify": [
-        "Megerősítés"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -7885,6 +7880,29 @@
         "${ totalPrice } áron"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -8059,29 +8077,6 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -9044,17 +9039,6 @@
         "Ma"
       ]
     },
-    "tooltip": {
-      "Group membership paused": [
-        "Csoport tagság felfüggesztve"
-      ],
-      "User declined invitation": [
-        "A felhasználó elutasította a meghívást"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Várakozás a meghívás elfogadására"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Az adminisztrátorok kezelhetik a felhasználói fiókokat, és adminisztrátori jogosultságokat adhatnak más felhasználóknak. Csak az elsődleges adminisztrátor szerkesztheti a szervezet előfizetését."
@@ -9112,6 +9096,17 @@
       ],
       "Your DKIM signing is working.": [
         "A DKIM aláírás megfelelően működik."
+      ]
+    },
+    "tooltip": {
+      "Group membership paused": [
+        "Csoport tagság felfüggesztve"
+      ],
+      "User declined invitation": [
+        "A felhasználó elutasította a meghívást"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Várakozás a meghívás elfogadására"
       ]
     },
     "Tor out of date": {

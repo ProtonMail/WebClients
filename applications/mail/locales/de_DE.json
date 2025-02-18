@@ -1150,6 +1150,9 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen"
       ],
+      "Set as album cover": [
+        "Setze als Album-Titelbild"
+      ],
       "Set as default": [
         "Als Standard festlegen"
       ],
@@ -3995,9 +3998,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
       ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
@@ -9771,8 +9771,8 @@
       "Split tunneling (Android and Windows)": [
         "Split-Tunneling (für Android und Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-Integration (demnächst verfügbar)"
+      "SSO integration": [
+        "SSO-Integration"
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
@@ -9846,8 +9846,8 @@
         "Bis zu ${ totalStorageSize } Speicherplatz"
       ],
       "Use on up to ${ n } device at once": [
-        "Bis zu ${ n } Gerät auf einmal",
-        "Bis zu ${ n } Geräte auf einmal"
+        "Gleichzeitige Verwendung auf bis zu ${ n } Gerät",
+        "Gleichzeitige Verwendung auf bis zu ${ n } Geräten"
       ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"
@@ -13202,6 +13202,9 @@
       ],
       "Groups": [
         "Gruppen"
+      ],
+      "Help center": [
+        "Hilfecenter"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Verstecke deine E-Mail-Adresse mit ${ PASS_APP_NAME }"

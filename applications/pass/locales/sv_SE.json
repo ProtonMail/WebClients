@@ -799,6 +799,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentisering misslyckades. Bekräfta ditt lösenord för ${ BRAND_NAME } för att fortsätta med exporten"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Autentisering misslyckades. Bekräfta ditt reservlösenord för att fortsätta med exporten"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Autentisering misslyckades. Bekräfta ditt extra lösenord för att fortsätta med exporten"
+      ],
       "Biometric authentication failed": [
         "Biometrisk autentisering misslyckades"
       ],
@@ -1348,6 +1354,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your backup password.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt reservlösenord."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt extra lösenord."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer kräva ditt fingeravtryck eller enhetens PIN-kod."
@@ -1906,6 +1915,12 @@
       "Please confirm your backup password": [
         "Bekräfta ditt reservlösenord"
       ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Bekräfta ditt reservlösenord för att låsa automatiskt med biometri."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Bekräfta ditt reservlösenord för att låsa automatiskt med ditt lösenord."
+      ],
       "Please confirm your backup password in order to disable offline mode": [
         "Bekräfta ditt reservlösenord för att inaktivera offlineläge"
       ],
@@ -1918,6 +1933,9 @@
       "Please confirm your backup password in order to unregister your current lock.": [
         "Bekräfta ditt reservlösenord för att avregistrera ditt nuvarande lås."
       ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Bekräfta ditt reservlösenord för att uppdatera tiden för automatisk låsning."
+      ],
       "Please confirm your extra password": [
         "Bekräfta ditt extralösenord"
       ],
@@ -1926,6 +1944,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Vänligen bekräfta ditt extralösenord för att autolåsa med ditt extralösenord."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Bekräfta ditt extra lösenord för att inaktivera offlineläge"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bekräfta ditt extra lösenord för att aktivera offlineläge"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt extralösenord för att exportera din ${ PASS_APP_NAME }-data"
@@ -2538,7 +2562,7 @@
         "Kontakt skapat för ${ time } sedan."
       ],
       "Contact details": [
-        "Kontaktuppgifter"
+        "Kontaktdetaljer"
       ],
       "Contacts": [
         "Kontakter"
@@ -3201,8 +3225,8 @@
       "Require 2FA for organization": [
         "Kräver 2FA för organisation"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
+      "SSO integration": [
+        "SSO-integration"
       ]
     },
     "Notification": {
@@ -3352,11 +3376,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Stäng"
       ]
     },
     "sso": {
@@ -4107,7 +4126,7 @@
         "Inga resultat"
       ],
       "No secure links matching": [
-        "Inga säkra länkar matchande"
+        "Inga säkra länkar matchar"
       ],
       "No shared items matching": [
         "Inga delade objekt matchade"
@@ -4222,6 +4241,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du kommer inte längre att ha åtkomst till detta valv. För att gå med igen behöver du en ny inbjudan."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Din organisation tillåter inte delning av enskilda objekt"
       ],
       "Your session could not be authorized.": [
         "Din session kunde inte auktoriseras."

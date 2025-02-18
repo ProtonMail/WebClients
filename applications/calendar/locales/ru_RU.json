@@ -2980,9 +2980,6 @@
         "В ${ list } нет контактов",
         "В некоторых группах нет контактов: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
-      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -7144,9 +7141,6 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
-      ],
-      "SSO integration (coming soon)": [
-        "Интеграция с SSO (скоро появится)"
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"

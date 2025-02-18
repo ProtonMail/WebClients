@@ -1150,6 +1150,9 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Stel ${ MAIL_APP_NAME } in als standaard e-mail applicatie"
       ],
+      "Set as album cover": [
+        "Instellen als omslag"
+      ],
       "Set as default": [
         "Als standaard instellen"
       ],
@@ -3999,8 +4002,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
@@ -9774,8 +9777,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integratie (binnenkort beschikbaar)"
+      "SSO integration": [
+        "SSO-integratie"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -10817,7 +10820,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw rekening naar behoren in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw factuur naar behoren in rekening te brengen. U kunt een restitutie ontvangen binnen 8 weken van de betaaldatum, onder de voorwaarden van uw overeenkomst met uw bank."
       ],
       "Street address, postal code, and city": [
         "Straatnaam, postcode en plaats"
@@ -13205,6 +13208,9 @@
       ],
       "Groups": [
         "Groepen"
+      ],
+      "Help center": [
+        "Helpcentrum"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Verberg uw e-mail met ${ PASS_APP_NAME }"

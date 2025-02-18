@@ -79,7 +79,7 @@
         "Legg til telefonnummer"
       ],
       "Add to album": [
-        "Legg til album"
+        "Legg til i album"
       ],
       "Add to group": [
         "Legg til gruppe"
@@ -761,6 +761,9 @@
       ],
       "Select country": [
         "Velg land"
+      ],
+      "Set as album cover": [
+        "Angi som albumomslag"
       ],
       "Set recovery phrase": [
         "Sett gjenopprettingsfrase"
@@ -2433,11 +2436,6 @@
         "Forfalt faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "bruk Easy Switch-importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
@@ -2519,6 +2517,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2711,9 +2714,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
@@ -4922,6 +4922,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sender automatisk meldingen ved hjelp av gjeldende skrivemodus."
+      ],
+      "Photo is set as album cover": [
+        "Bildet er angitt som albumomslag"
       ],
       "Photos have been successfully recovered.": [
         "Bildene er gjenopprettet."
@@ -7318,8 +7321,8 @@
       "Split tunneling (Android and Windows)": [
         "Delt tunnelering (Android og Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integrasjon (kommer snart)"
+      "SSO integration": [
+        "SSO-integrasjon"
       ],
       "Strict no-logs policy": [
         "Streng politikk om ingen logger"
@@ -10333,6 +10336,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help center": [
+        "Hjelpesenter"
+      ],
       "High security for your account": [
         "Høy sikkerhet for kontoen din"
       ],
@@ -10694,11 +10700,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Legg til denne delte filen i din ${ DRIVE_APP_NAME } for enkel tilgang senere."
@@ -10780,6 +10781,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitasjon til å få tilgang til elementet."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ]
     },
     "Validation": {
@@ -10943,7 +10949,7 @@
         "Navn kreves"
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Bare alfanumeriske små bokstaver, prikker, bindestreker og understrekingstegn er tillatt."
+        "Bare små alfanumeriske tegn, punktum og bindestreker (inkludert understrek) er tillatt."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."

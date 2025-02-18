@@ -743,6 +743,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი ${ BRAND_NAME }-ის, პაროლი, რომ გატანა გაგრძელდეს"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი მარქაფი პაროლი, რომ გატანა გაგრძელდეს"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "ავთენტიკაცია ჩავარდა. დაადასტურეთ თქვენი დამატებითი პაროლი, რომ გატანა გაგრძელდეს"
+      ],
       "Authentication failure: ${ message }": [
         "ავთენტიკაცია ჩავარდა: ${ message }"
       ],
@@ -1104,6 +1110,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "აღმოჩენილია შეცდომა ${ PASS_SHORT_APP_NAME }-ის გაშვებისას. თუ ეს პრობლემა გაგრძელდება, დაუკავშირდით ჩვენი მხარდაჭერის გუნდს."
+      ],
+      "Wrong backup password": [
+        "არასწორი მარქაფი პაროლი"
       ],
       "Wrong extra password": [
         "არასწორი დამატებითი პაროლი"
@@ -3828,6 +3837,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-ის პაროლი აუცილებელია"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 წერტილი ზედიზედ დაშებული არაა"
+      ],
       "A description of the problem is required": [
         "პრობლემის აღწერა აუცილებელია"
       ],
@@ -3859,6 +3871,12 @@
       ],
       "At least one email address is required": [
         "აუცილებელია, სულ ცოტა, ერთი ელფოსტის მისამართი"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "დასაწყისში წერტილი არ შეიძლება"
+      ],
+      "Cannot contain a dot at the end": [
+        "ბოლოში წერტილი არ შეიძლება"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "ამ ფსევდონიმისთვის ამჟამად საფოსტო ყუთების მიღება შეუძლებელია"
@@ -3963,6 +3981,9 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "როცა სინქრონიზაცია დასრულდება, ${ PASS_SHORT_APP_NAME }-ში ფსევდონიმების წაშლა მათ SimpleLogin-დანაც წაშლის."
       ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "დაშვებულია, მხოლოდ, დაბალი რეგისტრის მქონე ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
+      ],
       "Passphrase is required": [
         "საკვანძო ფრაზა აუცილებელია"
       ],
@@ -4055,6 +4076,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "საცავთან წვდომა აღარ გექნებათ. თავიდან მისაერთებლად, ახალი მოსაწვევი დაგჭირდებათ."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "თქვენი ორგანიზაცია არ გაძლევთ ინდივიდუალური ელემენტების გაზიარების უფლებას"
       ],
       "Your plan does not allow you to create more aliases": [
         "თქვენი სატარიფო გეგმა მეტი ფსევდონიმის შექმნის უფლებას არ გაძლევთ"

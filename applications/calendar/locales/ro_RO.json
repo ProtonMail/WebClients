@@ -2959,8 +2959,8 @@
         "Câteva grupuri nu au contacte: ${ list }",
         "Câteva grupuri nu au contacte: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Aveți numele de utilizator ${ user.Name }. Pentru a crea ${ emailAddress }, accesați Setări > Toate setările > Mesaje și compunere > Domeniu scurt (pm.me)."
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "Numele de utilizator este ${ user.Name }. Pentru a crea ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
       ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
@@ -3020,7 +3020,7 @@
         "Acest contact nu se poate exporta."
       ],
       "Checkout expired, please try again": [
-        "Finalizarea comenzii a expirat, mai reîncercați."
+        "Finalizarea comenzii a expirat. Reîncercați."
       ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
@@ -3060,7 +3060,7 @@
         "Deselectați cel puțin ${ calendarsToFixCount } de calendare sau"
       ],
       "Domain not available, try again later": [
-        "Domeniul nu este disponibil, reîncercați mai târziu."
+        "Domeniul nu este disponibil. Reîncercați mai târziu."
       ],
       "Email address disabled": [
         "Adresă de e-mail dezactivată"
@@ -3589,7 +3589,7 @@
         "Deschidere în navigator web"
       ],
       "Please refresh the page or try again later.": [
-        "Reîmprospătați pagina sau reîncercați mai târziu."
+        "Împrospătați pagina sau reîncercați mai târziu."
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
@@ -6874,6 +6874,9 @@
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Servere dedicate optimizate pentru transmisii în flux"
+      ],
       "Desktop app": [
         "Aplicația desktop"
       ],
@@ -7038,8 +7041,8 @@
       "Split tunneling (Android and Windows)": [
         "Trafic divizat (Android și Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integrare SSO (în curând)"
+      "SSO integration": [
+        "Integrare SSO"
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
@@ -7113,6 +7116,11 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Folosiți pe maxim ${ n } un dispozitiv",
+        "Folosiți pe maxim ${ n } dispozitive simultan",
+        "Folosiți pe maxim ${ n } de dispozitive simultan"
       ],
       "User credential management": [
         "Gestionare acreditări utilizatori"
@@ -10029,6 +10037,9 @@
       "Groups": [
         "Grupuri"
       ],
+      "Help center": [
+        "Centru de ajutor"
+      ],
       "Hide time zones for event start and end times": [
         "Ascundere fusuri orare pentru orele de început și de sfârșit"
       ],
@@ -10536,6 +10547,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
+      "2 consecutive dots are not allowed": [
+        "Nu se acceptă două puncte simultan."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Sigur doriți să ștergeți definitiv un contact?",
         "Sigur doriți să ștergeți definitiv ${ count } contacte?",
@@ -10549,6 +10563,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Sigur doriți să ștergeți definitiv acest contact?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Nu se acceptă punct la început."
+      ],
+      "Cannot contain a dot at the end": [
+        "Nu se acceptă punct la sfârșit."
       ],
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
@@ -10570,6 +10590,9 @@
       ],
       "Name is required": [
         "Numele este obligatoriu."
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Sunt permise doar litere mici, cifre, puncte, cratime și caracter de subliniere."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."

@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -834,9 +834,6 @@
       ],
       "Refer a friend": [
         "Запросити друга"
-      ],
-      "Refresh data": [
-        "Оновити дані"
       ],
       "Refresh status": [
         "Оновити стан"
@@ -4350,9 +4347,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } – ваше ім'я користувача. Щоб створити ${ emailAddress }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
-      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -7006,9 +7000,6 @@
         "Залучених користувачів перелічено в рядках",
         "Залучених користувачів перелічено в рядках"
       ],
-      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Після блокування, члени організації повинні будуть розблокувати ${ PASS_APP_NAME } за допомогою пароля або PIN-коду тощо."
-      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помічник на основі ШІ допоможе вам швидко та без зайвих зусиль створювати кращі листи."
       ],
@@ -7224,9 +7215,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Створивши обліковий запис ${ PASS_APP_NAME } за допомогою своєї електронної пошти SimpleLogin, ви зможете керувати своїми псевдонімами безпосередньо з ${ PASS_APP_NAME }."
-      ],
-      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
-        "По стандарту учасники організації можуть експортувати лише сховища, власниками яких вони є. Якщо цей параметр увімкнено, вони не зможуть експортувати жодних даних"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
@@ -10454,12 +10442,6 @@
       "Disable animations": [
         "Вимкнути анімацію"
       ],
-      "Disable data export for organization members": [
-        "Вимкнути експорт даних для учасників організації"
-      ],
-      "Disable sharing outside the organization": [
-        "Вимкнути спільний доступ за межами організації"
-      ],
       "Disabled": [
         "Вимкнено"
       ],
@@ -12510,9 +12492,6 @@
       "Split tunneling (Android and Windows)": [
         "Розділене тунелювання (Android і Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Інтеграція SSO (незабаром)"
-      ],
       "Start protecting your organization": [
         "Почніть захищати свою організацію"
       ],
@@ -12646,17 +12625,6 @@
         "Керування командою"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ trialPlanName } з преміальними функціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -12765,6 +12733,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ trialPlanName } з преміальними функціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13188,9 +13167,6 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Вимкнення цієї опції вилучить можливість отримувати сповіщення в додатках ${ BRAND_NAME }."
-      ],
-      "During your first month": [
-        "Упродовж вашого першого місяця"
       ],
       "Email subscriptions": [
         "Підписки електронної пошти"
@@ -13736,9 +13712,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } вашу адресу електронної пошти ${ email }, щоб встановити ідентифікатор організації."
-      ],
       "Current organization identity": [
         "Тотожність поточної організації"
       ],
@@ -13753,9 +13726,6 @@
       ],
       "Organization identity updated": [
         "Оновлена ідентичність організації"
-      ],
-      "Verify": [
-        "Перевірити"
       ]
     },
     "OS compatibility": {
@@ -16598,47 +16568,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
@@ -16939,6 +16868,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
@@ -17989,6 +17959,9 @@
       "Every member of the organization can access": [
         "Кожен учасник організації може отримати доступ до"
       ],
+      "Excluded items": [
+        "Виключені елементи"
+      ],
       "Export": [
         "Експорт"
       ],
@@ -18147,6 +18120,9 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Імпорт через ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Inactive 2FA": [
+        "Неактивна 2FA"
       ],
       "Increase your privacy with more addresses": [
         "Вдоскональте свою приватність за допомогою більшої кількості адрес"
@@ -18396,6 +18372,9 @@
       ],
       "Restore administrator privileges": [
         "Відновити права адміністратора"
+      ],
+      "Reused passwords": [
+        "Повторювальні паролі"
       ],
       "Revoke certificate": [
         "Відкликати сертифікат"
@@ -18654,6 +18633,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Ми надішлемо лист на вашу нову адресу з інструкцією для завершення зміни."
+      ],
+      "Weak passwords": [
+        "Слабкі паролі"
       ],
       "What is an alias?": [
         "Що таке псевдонім?"

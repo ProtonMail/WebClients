@@ -837,6 +837,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш пароль ${ BRAND_NAME }, каб працягнуць экспартаванне"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Збой аўтэнтыфікацыі. Пацвердзіце ваш рэзервовы пароль, каб працягнуць экспартаванне"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Збой аўтэнтыфікацыі. Пацвердзіце ваш дадатковы пароль, каб працягнуць экспартаванне"
+      ],
       "Biometric authentication failed": [
         "Збой аўтэнтыфікацыі біяметрыі"
       ],
@@ -1521,7 +1527,7 @@
         "Убудаваны аўтэнтыфікатар 2ФА"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
-        "Вы можаце стварыць такі псеўданім, як pryvitanne@moi-damen.com пры дадаванні свайго дамена."
+        "Вы можаце ствараць такія псеўданімы, як pryvitanne@moi-damen.com, калі дададзіце свой дамен."
       ],
       "Can be viewed": [
         "Могуць праглядаць"
@@ -1533,10 +1539,10 @@
         "Можа ствараць, рэдагаваць і выдаляць гэты элемент."
       ],
       "Can grant and revoke access to this item, and delete it.": [
-        "Можа даваць і адклікаць дазвол на доступ да гэтага элемента, а таксама выдаляць яго."
+        "Можа даваць і адклікаць доступ для гэтага элемента, а таксама выдаляць яго."
       ],
       "Can grant and revoke access to this item.": [
-        "Можа даваць і адклікаць дазвол на доступ да гэтага элемента."
+        "Можа даваць і адклікаць дазвол на доступ для гэтага элемента."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча, а таксама выдаляць яго."
@@ -1680,7 +1686,7 @@
         "Увядзіце свой PIN-код."
       ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
-        "Новы кантакт аўтаматычна ствараецца. Гэта адбываецца кожны раз, калі ваш псеўданім атрымлівае ліст ад каго-небудзь."
+        "Новы кантакт ствараецца аўтаматычна. Гэта адбываецца кожны раз, калі ваш псеўданім атрымлівае ліст ад каго-небудзь."
       ],
       "Expires in": [
         "Дзейнічае да"
@@ -2016,7 +2022,7 @@
         "Пацвердзіце свой рэзервовы пароль для скасавання рэгістрацыі бягучай блакіроўкі."
       ],
       "Please confirm your backup password in order to update the auto-lock time.": [
-        "Пацвердзіце свой рэзервовы пароль для абнаўлення часу аўтаблакіравання."
+        "Пацвердзіце свой рэзервовы пароль для абнаўлення часу аўтаблакіроўкі."
       ],
       "Please confirm your extra password": [
         "Пацвердзіце свой дадатковы пароль"
@@ -3449,8 +3455,8 @@
       "Require 2FA for organization": [
         "Патрабаванне 2ФА для арганізацыі"
       ],
-      "SSO integration (coming soon)": [
-        "Інтэграцыя SSO (неўзабаве)"
+      "SSO integration": [
+        "Інтэграцыя SSO"
       ]
     },
     "Notification": {
@@ -3600,11 +3606,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Закрыць"
       ]
     },
     "sso": {
@@ -4007,7 +4008,7 @@
         "Паўторна выкарыстаныя паролі адсутнічаюць"
       ],
       "No shared items": [
-        "Няма абагуленых элементаў"
+        "Абагуленыя элементы адсутнічаюць"
       ],
       "No shared secure links": [
         "Няма абагуленых бяспечных спасылак"
@@ -4266,10 +4267,10 @@
         "Патрабуецца прынамсі адзін адрас электроннай пошты"
       ],
       "Cannot contain a dot at the beginning": [
-        "Не можа змяшчаць кроку ў пачатку"
+        "Не можа змяшчаць кропку ў пачатку"
       ],
       "Cannot contain a dot at the end": [
-        "Не можа змяшчаць кроку ў канцы"
+        "Не можа змяшчаць кропку ў канцы"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"
@@ -4377,10 +4378,10 @@
         "Няма вынікаў"
       ],
       "No secure links matching": [
-        "Няма адпаведных бяспечных спасылак"
+        "Адпаведныя бяспечныя спасылкі адсутнічаюць"
       ],
       "No shared items matching": [
-        "Няма адпаведных абагуленых элементаў"
+        "Адпаведныя абагуленыя элементы адсутнічаюць"
       ],
       "Offline": [
         "Па-за сеткай"
@@ -4422,7 +4423,7 @@
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
       "Some items are currently shared. Deleting them will remove access for all other users.": [
-        "Некаторыя элементы ў цяпершані час абагулены. Іх выдаленне пазбавіць доступу ўсіх іншых карыстальнікаў."
+        "Некаторыя элементы ў цяперашні час абагулены. Іх выдаленне пазбавіць доступу ўсіх іншых карыстальнікаў."
       ],
       "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
         "Некаторыя элементы у цяперашні час абагулены. Іх перамяшчэнне ў іншае сховішча пазбавіць доступу ўсіх іншых карыстальнікаў."
@@ -4492,6 +4493,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "У вас больш не будзе доступу да гэтага сховішча. Каб паўторна далучыцца да яго, вам неабходна будзе атрымаць новае запрашэнне."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Вашай арганізацыі забаронена абагульваць індывідуальныя элементы"
       ],
       "Your session could not be authorized.": [
         "Не атрымалася аўтарызаваць ваш сеанс."

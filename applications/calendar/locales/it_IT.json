@@ -2935,9 +2935,6 @@
         "La lista ${ list } non ha contatti",
         "Alcuni gruppi non hanno contatti: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
-      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -6934,8 +6931,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android e Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integrazione SSO (in arrivo)"
+      "SSO integration": [
+        "Integrazione SSO"
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
@@ -9853,6 +9850,9 @@
       "Groups": [
         "Gruppi"
       ],
+      "Help center": [
+        "Centro assistenza"
+      ],
       "Hide time zones for event start and end times": [
         "Nascondi i fusi orari per gli orari di inizio e di fine dell'evento"
       ],
@@ -10430,8 +10430,8 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
-        "${ n }indirizzo email ${ BRAND_NAME }",
-        "${ n }indirizzi email ${ BRAND_NAME }"
+        "${ n } indirizzo email ${ BRAND_NAME }",
+        "${ n } indirizzi email ${ BRAND_NAME }"
       ],
       "${ n } account per wallet": [
         "${ n } account per portafoglio",

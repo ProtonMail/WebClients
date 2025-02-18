@@ -3361,8 +3361,8 @@
       "Require 2FA for organization": [
         "Απαιτείται 2FA για οργάνωση"
       ],
-      "SSO integration (coming soon)": [
-        "Ενσωμάτωση SSO (σύντομα διαθέσιμο)"
+      "SSO integration": [
+        "Ενσωμάτωση SSO"
       ]
     },
     "Notification": {
@@ -3512,11 +3512,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Κλείσιμο"
       ]
     },
     "sso": {
@@ -4382,6 +4377,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Δε θα έχετε πλέον πρόσβαση σε αυτή την κρύπτη. Για να συμμετάσχετε ξανά, θα χρειαστείτε μια νέα πρόσκληση."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Ο οργανισμός σας δεν επιτρέπει τον διαμοιρασμό μεμονωμένων στοιχείων"
       ],
       "Your session could not be authorized.": [
         "Δεν ήταν δυνατή η εξουσιοδότηση της συνεδρίας σας."

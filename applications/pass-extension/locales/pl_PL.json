@@ -29,6 +29,9 @@
       "Add domain": [
         "Dodaj domenę"
       ],
+      "Add forwarding mailbox": [
+        "Dodaj skrzynkę przekierowania"
+      ],
       "Add mailbox": [
         "Dodaj skrzynkę pocztową"
       ],
@@ -707,6 +710,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Uwierzytelnianie nie powiodło się. Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Uwierzytelnianie się nie powiodło. Potwierdź hasło zapasowe, aby kontynuować eksport."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Uwierzytelnianie się nie powiodło. Potwierdź dodatkowe hasło, aby kontynuować eksport."
+      ],
       "Authentication failure: ${ message }": [
         "Błąd uwierzytelniania: ${ message }"
       ],
@@ -1070,6 +1079,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Mamy problem z usługą ${ PASS_SHORT_APP_NAME }. Jeśli problem będzie się powtarzał, skontaktuj się z naszym wsparciem klienta."
       ],
+      "Wrong backup password": [
+        "Nieprawidłowe hasło zapasowe"
+      ],
       "Wrong extra password": [
         "Dodatkowe hasło jest nieprawidłowe"
       ],
@@ -1288,6 +1300,12 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Dostęp do ${ PASS_APP_NAME } będzie wymagał hasła ${ BRAND_NAME }."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Dostęp do ${ PASS_APP_NAME } będzie zawsze wymagał podania hasła zapasowego."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Dostęp do ${ PASS_APP_NAME } będzie zawsze wymagał podania dodatkowego hasła."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Dostęp do ${ PASS_APP_NAME } będzie wymagał odcisku palca lub kodu PIN."
@@ -1532,6 +1550,9 @@
       "Expires in ${ remainingTime }": [
         "Wygasa za ${ remainingTime }"
       ],
+      "Exporting your data...": [
+        "Eksportowanie danych..."
+      ],
       "Extra password successfully created": [
         "Dodatkowe hasło zostało utworzone"
       ],
@@ -1541,11 +1562,17 @@
       "Fill in the CSV with your data": [
         "Wypełnij plik CSV danymi"
       ],
+      "Follow those steps to import your data with a generic CSV:": [
+        "Wykonaj te kroki, aby zaimportować dane za pomocą standardowego pliku CSV:"
+      ],
       "For easy access to your passwords and more.": [
         "Dla łatwego dostępu do haseł i nie tylko."
       ],
       "For security reason, your access needs to be confirmed": [
         "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Ze względów bezpieczeństwa działanie to wymaga weryfikacji tożsamości."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfu",
@@ -1573,6 +1600,9 @@
       ],
       "Here's how it works:": [
         "Jak to działa:"
+      ],
+      "Identity confirmed": [
+        "Tożsamość potwierdzona"
       ],
       "Import in progress:": [
         "Importowanie jest w toku:"
@@ -1772,6 +1802,24 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
       ],
+      "Please confirm your backup password": [
+        "Potwierdź hasło zapasowe"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Potwierdź hasło zapasowe w celu automatycznego zablokowania za pomocą danych biometrycznych."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Potwierdź hasło zapasowe, aby automatycznie zablokować konto hasłem."
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Potwierdź hasło zapasowe, aby wyeksportować dane ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Potwierdź hasło zapasowe, aby wyłączyć bieżącą blokadę."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Potwierdź hasło zapasowe, aby zaktualizować czas automatycznej blokady."
+      ],
       "Please confirm your extra password": [
         "Potwierdź dodatkowe hasło"
       ],
@@ -1918,6 +1966,9 @@
       ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
+      ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Udostępniaj aliasy innym osobom, dodając ich skrzynkę odbiorczą jako skrzynkę przekierowania."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Udostępniaj dane logowania i bezpieczne notatki do 10 użytkownikom"
@@ -2146,6 +2197,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Osiągnięto maksymalną liczbę ${ maxLength } znaków."
+      ],
+      "You may close this tab.": [
+        "Możesz zamknąć tę kartę."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Konieczne będzie ponowne zalogowanie się na wszystkich urządzeniach."
@@ -3330,6 +3384,9 @@
       "Confirm extra password": [
         "Potwierdź dodatkowe hasło"
       ],
+      "Confirm identity": [
+        "Potwierdź tożsamość"
+      ],
       "Confirm PIN code": [
         "Potwierdź kod PIN"
       ],
@@ -3401,6 +3458,9 @@
       ],
       "Enter coupon code": [
         "Wpisz kod kuponu"
+      ],
+      "Enter your backup password": [
+        "Wpisz hasło zapasowe"
       ],
       "Enter your extra password": [
         "Wpisz dodatkowe hasło"
@@ -3690,6 +3750,9 @@
       "${ BRAND_NAME } password is required": [
         "Hasło ${ BRAND_NAME } jest wymagane"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 następujące po sobie kropki są niedozwolone"
+      ],
       "A description of the problem is required": [
         "Opis problemu jest wymagany"
       ],
@@ -3722,6 +3785,12 @@
       ],
       "At least one email address is required": [
         "Co najmniej jeden adres e-mail jest wymagany"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Nie może zawierać kropki na początku"
+      ],
+      "Cannot contain a dot at the end": [
+        "Nie może zawierać kropki na końcu"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nie można pobrać skrzynek pocztowych dla tego aliasu"
@@ -3822,6 +3891,9 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Usunięcie aliasów w ${ PASS_SHORT_APP_NAME } spowoduje również ich usunięcie w SimpleLogin."
       ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Dozwolone są tylko małe znaki alfanumeryczne, kropki, myślniki i podkreślenia."
+      ],
       "Passphrase is required": [
         "Hasło jest wymagane"
       ],
@@ -3893,6 +3965,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Nie masz dostępu do tego sejfu. Jeśli chcesz ponownie dołączyć do sejfu, potrzebujesz nowego zaproszenia."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Twoja organizacja nie zezwala na udostępnianie pojedynczych elementów"
       ],
       "Your plan does not allow you to create more aliases": [
         "Twój plan nie pozwala na utworzenie większej liczby aliasów"

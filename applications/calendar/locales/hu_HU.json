@@ -2722,9 +2722,6 @@
         "${ list } nem tartalmaz névjegyeket",
         "Néhány csoportban nincsenek névjegyek: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Az Ön felhasználóneve ${ user.Name }. A ${ emailAddress } e-mail cím létrehozásához válassza a Beállítások -> Üzenetek és szerkesztés -> Rövid domain (pm.me) menüpontot"
-      ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
@@ -6397,9 +6394,6 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Csatorna szétválasztás (Android és Windows)"
-      ],
-      "SSO integration (coming soon)": [
-        "SSO integráció (hamarosan elérhető)"
       ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"

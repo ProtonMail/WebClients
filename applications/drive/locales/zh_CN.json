@@ -78,6 +78,9 @@
       "Add phone number": [
         "添加电话号码"
       ],
+      "Add to album": [
+        "添加到相册"
+      ],
       "Add to group": [
         "添加至群组"
       ],
@@ -224,6 +227,9 @@
       ],
       "Create a new contact group": [
         "创建联系人群组"
+      ],
+      "Create album": [
+        "创建相册"
       ],
       "Create and copy alias": [
         "创建并复制别名"
@@ -543,6 +549,9 @@
       "New": [
         "新建"
       ],
+      "New album": [
+        "新建相册"
+      ],
       "New document": [
         "新建文档"
       ],
@@ -750,6 +759,9 @@
       "Select country": [
         "选择国家/地区"
       ],
+      "Set as album cover": [
+        "设置为专辑封面"
+      ],
       "Set recovery phrase": [
         "设置恢复密语"
       ],
@@ -947,6 +959,9 @@
       ]
     },
     "Actions": {
+      "Create album": [
+        "创建相册"
+      ],
       "Upload": [
         "上传"
       ]
@@ -1324,6 +1339,11 @@
       ],
       "Take a tour": [
         "开始导览"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "添加 ${ photos.length } 照片到"
       ]
     },
     "Cancellation reminder": {
@@ -2403,11 +2423,6 @@
         "逾期账单"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 导入助手"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } 对可疑活动进行全天候专门监控，包括上报安全专家，从而保护您的账户。"
@@ -2489,6 +2504,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2681,9 +2701,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "使用用户名 ${ user.Name }。前往设置 -> 消息和编辑 -> 短域名 (pm.me)，创建 ${ emailAddress }。"
       ],
       "A group with this name already exists": [
         "已存在同名群组"
@@ -4131,6 +4148,9 @@
       "All (${ totalFoldersCount } label)": [
         "全部（${ totalFoldersCount } 个标签）"
       ],
+      "All albums": [
+        "所有相册"
+      ],
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
       ],
@@ -4740,6 +4760,9 @@
       "No": [
         "否"
       ],
+      "No Albums": [
+        "没有相册"
+      ],
       "No contacts added yet": [
         "尚未添加联系人"
       ],
@@ -4823,6 +4846,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME 可使用编辑器中指定的格式发送邮件。"
+      ],
+      "Photo is set as album cover": [
+        "照片被设为相册封面"
       ],
       "Photos have been successfully recovered.": [
         "照片已成功恢复。"
@@ -4931,6 +4957,9 @@
       ],
       "Ready to add some photos?": [
         "准备好添加一些照片了吗？"
+      ],
+      "Recent": [
+        "最近使用"
       ],
       "recommended browser": [
         "推荐浏览器"
@@ -5087,6 +5116,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
+      ],
+      "The albums you create are shown here": [
+        "您创建的相册将在此显示"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "数字签名已部分验证。该文件是由一个没有 ${ BRAND_NAME } 账户的用户使用可公开访问的共享链接上传的，因此无法验证其身份。"
@@ -5997,6 +6029,9 @@
       ],
       "Move to Inbox": [
         "移至收件箱"
+      ],
+      "My Albums": [
+        "我的图库"
       ],
       "Name": [
         "姓名"
@@ -6953,6 +6988,9 @@
       "Data breach monitoring": [
         "数据泄露监控"
       ],
+      "Dedicated servers optimized for streaming": [
+        "专为流媒体优化的专用服务器"
+      ],
       "Desktop app": [
         "桌面应用"
       ],
@@ -7115,8 +7153,8 @@
       "Split tunneling (Android and Windows)": [
         "线路分离（支持 Android 与 Windows）"
       ],
-      "SSO integration (coming soon)": [
-        "集成单点登录（即将推出）"
+      "SSO integration": [
+        "SSO 集成"
       ],
       "Strict no-logs policy": [
         "严格的零日志原则"
@@ -7186,6 +7224,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "最高 ${ totalStorageSize } 存储空间"
+      ],
+      "Use on up to ${ n } device at once": [
+        "最多可同时在 ${ n } 台设备上使用"
       ],
       "User credential management": [
         "用户身份验证管理"
@@ -9789,6 +9830,12 @@
       "Addresses": [
         "地址"
       ],
+      "Album": [
+        "相册"
+      ],
+      "Albums": [
+        "相册"
+      ],
       "All": [
         "全部"
       ],
@@ -10040,6 +10087,9 @@
       ],
       "Groups": [
         "群组"
+      ],
+      "Help center": [
+        "帮助中心"
       ],
       "High security for your account": [
         "您的账户非常安全"
@@ -10401,11 +10451,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "将此共享文件添加到您的 ${ DRIVE_APP_NAME } 中，方便以后访问。"
@@ -10487,6 +10532,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "我们已向他们发送了访问该项目的邀请。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ]
     },
     "Validation": {
@@ -10594,6 +10644,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
       ],
+      "2 consecutive dots are not allowed": [
+        "不允许出现 2 个连续的点"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您确定要永久删除 ${ count } 联系人吗？"
       ],
@@ -10605,6 +10658,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "您确认要永久删除此邮件吗？"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "开头不能包含点"
+      ],
+      "Cannot contain a dot at the end": [
+        "末尾不能包含点"
       ],
       "Contacts could not be merged": [
         "无法合并联系人"
@@ -10626,6 +10685,9 @@
       ],
       "Name is required": [
         "名称为必填项"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "只允许使用字母数字小写字符、点、连字符和下划线"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
