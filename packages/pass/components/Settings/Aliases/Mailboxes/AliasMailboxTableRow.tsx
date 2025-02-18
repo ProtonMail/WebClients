@@ -26,7 +26,7 @@ export const AliasMailboxTableRow: FC<Props> = ({ canDelete, mailbox }) => {
     return (
         <AliasMailboxLoading mailboxID={mailboxID} key={mailboxID}>
             {(loading) => (
-                <TableRow className={clsx(loading && 'pointer-events-none')}>
+                <TableRow className={clsx(loading && 'pointer-events-none', 'relative')}>
                     <TableCell label={c('Title').t`Mailbox`}>
                         <div className="flex items-center gap-2 flex-nowrap">
                             <div>
@@ -44,24 +44,27 @@ export const AliasMailboxTableRow: FC<Props> = ({ canDelete, mailbox }) => {
                         </div>
                     </TableCell>
                     <TableCell label={c('Title').t`Aliases`}>{AliasCount}</TableCell>
-                    <TableCell>
-                        <div className="flex justify-start lg:justify-center">
-                            {IsDefault ? (
-                                <Badge type="primary" className="text-center">{c('Title').t`Default`}</Badge>
-                            ) : (
-                                verificationRequired && (
-                                    <Button
-                                        shape="ghost"
-                                        style={{ padding: 0 }}
-                                        onClick={() => setAction({ type: 'verify', mailboxID })}
-                                    >
-                                        <Badge type="light" className="m-0">{c('Info').t`Unverified`}</Badge>
-                                    </Button>
-                                )
+                    <TableCell className="pass-mailboxes-table--status">
+                        <div className="flex justify-start gap-1 flex-nowrap">
+                            {IsDefault && (
+                                <Badge type="primary" className="text-center shrink-0">
+                                    <span className="text-ellipsis">{c('Title').t`Default`}</span>
+                                </Badge>
+                            )}
+                            {verificationRequired && (
+                                <Button
+                                    shape="ghost"
+                                    className="pass-mailboxes-table--badge-btn"
+                                    onClick={() => setAction({ type: 'verify', mailboxID })}
+                                >
+                                    <Badge type="light" className="w-full">
+                                        <span className="text-ellipsis">{c('Info').t`Unverified`}</span>
+                                    </Badge>
+                                </Button>
                             )}
                         </div>
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="pass-mailboxes-table--actions">
                         <div className="flex justify-end">
                             <QuickActionsDropdown
                                 icon="three-dots-horizontal"
