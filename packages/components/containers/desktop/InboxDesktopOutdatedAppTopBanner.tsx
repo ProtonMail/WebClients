@@ -121,3 +121,5 @@ export const InboxDesktopOutdatedAppTopBanner = () => {
         </>
     );
 };
+
+export default InboxDesktopOutdatedAppTopBanner;

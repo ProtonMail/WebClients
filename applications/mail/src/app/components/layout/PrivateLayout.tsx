@@ -1,17 +1,10 @@
 import type { ReactNode, Ref } from 'react';
-import { forwardRef, useEffect } from 'react';
+import { Suspense, forwardRef, lazy, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useUser } from '@proton/account/user/hooks';
 import type { Breakpoints } from '@proton/components';
-import {
-    DrawerApp,
-    InboxDesktopFreeTrialTopBanner,
-    InboxDesktopOutdatedAppTopBanner,
-    PrivateAppContainer,
-    SmartBanner,
-    TopBanners,
-} from '@proton/components';
+import { DrawerApp, PrivateAppContainer, SmartBanner, TopBanners } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { Recipient } from '@proton/shared/lib/interfaces';
@@ -24,6 +17,18 @@ import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import MailQuickSettings from '../drawer/MailQuickSettings';
 import MailSidebar from '../sidebar/MailSidebar';
+
+const LazyInboxDesktopOutdatedAppTopBanner = lazy(
+    () => import('@proton/components/containers/desktop/InboxDesktopOutdatedAppTopBanner')
+);
+
+const LazyInboxDesktopDefaultAppTopBanner = lazy(
+    () => import('@proton/components/containers/desktop/defaultApp/InboxDesktopDefaultAppTopBanner')
+);
+
+const LazyInboxDesktopFreeTrialTopBanner = lazy(
+    () => import('@proton/components/containers/desktop/freeTrial/InboxDesktopFreeTrialTopBanner')
+);
 
 interface Props {
     children: ReactNode;
@@ -54,8 +59,13 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
 
     const top = (
         <>
-            {isElectronMail && <InboxDesktopOutdatedAppTopBanner />}
-            {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
+            {isElectronMail && (
+                <Suspense fallback="">
+                    <LazyInboxDesktopOutdatedAppTopBanner />
+                    <LazyInboxDesktopDefaultAppTopBanner />
+                    {!user.hasPaidMail && <LazyInboxDesktopFreeTrialTopBanner />}
+                </Suspense>
+            )}
             <TopBanners app={APPS.PROTONMAIL}>
                 <SmartBanner app={APPS.PROTONMAIL} />
             </TopBanners>

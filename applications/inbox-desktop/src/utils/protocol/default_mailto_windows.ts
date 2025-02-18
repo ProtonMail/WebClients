@@ -4,6 +4,7 @@ import { DefaultProtocolActual, UNCHECKED_PROTOCOL } from "@proton/shared/lib/de
 
 import { getRegExe } from "./setup_mailto_windows";
 import { protocolLogger } from "../log";
+import { shell } from "electron";
 
 export const checkDefaultMailtoClientWindows = (): DefaultProtocolActual => {
     const regExe = getRegExe();
@@ -45,6 +46,5 @@ export const checkDefaultMailtoClientWindows = (): DefaultProtocolActual => {
 };
 
 export const setDefaultMailtoWindows = () => {
-    // TODO(jcuth)
-    // Cannot set prgramatically! Send signal to GUI and ask user to do it manually.
+    shell.openExternal("ms-settings:defaultapps?category=email");
 };

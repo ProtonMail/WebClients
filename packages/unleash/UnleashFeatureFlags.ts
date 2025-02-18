@@ -32,6 +32,8 @@ enum CommonFeatureFlag {
     WalletAddressList = 'WalletAddressList',
     WalletMinFee = 'WalletMinFee',
     WalletAztecoWeb = 'WalletAztecoWeb',
+    InboxDesktopDefaultEmailSetupHelper = 'InboxDesktopDefaultEmailSetupHelper',
+    InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
 }
 
 enum AccountFlag {

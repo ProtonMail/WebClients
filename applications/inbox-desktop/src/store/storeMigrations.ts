@@ -8,6 +8,10 @@ import {
     ThemeSetting,
     ThemeTypes,
 } from "@proton/shared/lib/themes/themes";
+import { setShouldCheckDefaultMailtoApp } from "../utils/protocol/default";
+import { loadDefaultProtocol } from "../utils/protocol/store";
+import { mainLogger } from "../utils/log";
+import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
 
 const store = new Store();
 
@@ -89,10 +93,25 @@ const forceLightAndDarkThemes = () => {
     }
 };
 
+// We start asking to set app as default mail client from this point
+const checkDefaultMailClient = () => {
+    if (!DESKTOP_FEATURES.MailtoUpdate) {
+        return;
+    }
+
+    const defaultMailto = loadDefaultProtocol("mailto");
+
+    if (!defaultMailto.canUpdateDefault) {
+        mainLogger.info("Enable check default mail to app");
+        setShouldCheckDefaultMailtoApp(true);
+    }
+};
+
 export const performStoreMigrations = () => {
     deleteWindowStore(); // Introduced in v0.9.4
     deleteURLStore(); // Introduced in v1.0.0
     deleteTrialEndStore(); // Introduced in v1.0.0
     deleteSerializedThemeMode(); // Introduced in v1.2.4
     forceLightAndDarkThemes(); // Introduced in v1.6.0
+    checkDefaultMailClient(); // Introduced in v1.6.2
 };

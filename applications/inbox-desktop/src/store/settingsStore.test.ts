@@ -1,3 +1,4 @@
+import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import { MockedStore } from "../utils/tests/electronStoreMock";
 import { getSettings, updateSettings } from "./settingsStore";
 
@@ -19,9 +20,16 @@ describe("settingsStore", () => {
         });
 
         it("should not be called if settings didn't change", () => {
-            updateSettings({
-                spellChecker: true,
+            MockedStore.INSTANCE.get.mockReturnValue({
                 overrideError: false,
+                spellChecker: false,
+                releaseCategory: RELEASE_CATEGORIES.STABLE,
+                rolloutProportion: -1,
+            });
+
+            updateSettings({
+                overrideError: false,
+                spellChecker: false,
             });
 
             expect(MockedStore.INSTANCE.set).not.toHaveBeenCalled();

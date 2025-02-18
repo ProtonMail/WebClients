@@ -1,0 +1,108 @@
+import { useCallback, useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
+import Href from '@proton/atoms/Href/Href';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    addIPCHostUpdateListener,
+    getInboxDesktopInfo,
+    hasInboxDesktopFeature,
+    invokeInboxDesktopIPC,
+} from '@proton/shared/lib/desktop/ipcHelpers';
+import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import useFlag from '@proton/unleash/useFlag';
+
+interface DefaultAppPromptProps extends ModalProps {
+    setDefault: () => void;
+}
+
+function DefaultAppPrompt({ setDefault, onClose, ...props }: DefaultAppPromptProps) {
+    return (
+        <Prompt
+            title={c('Info').t`Default mail application`}
+            buttons={[
+                <Button color="norm" onClick={setDefault}>{c('Action').t`Set as default`}</Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...props}
+        >
+            <span>{c('Info')
+                .t`Set ${MAIL_APP_NAME} as your default mail application. ${MAIL_APP_NAME} will open automatically when you click an mail link.`}</span>
+            <Href
+                className="ml-2"
+                href={getKnowledgeBaseUrl('/set-default-email-handler')}
+                title="Default mail handler"
+            >
+                {c('Info').t`Learn more`}
+            </Href>
+        </Prompt>
+    );
+}
+
+export function useElectronDefaultApp() {
+    const defaultAppEnabled = useFlag('InboxDesktopDefaultEmailSetupHelper');
+    const defaultAppDisabled = useFlag('InboxDesktopDefaultEmailSetupHelperDisabled');
+
+    const enabled =
+        defaultAppEnabled &&
+        !defaultAppDisabled &&
+        (isWindows() || isMac()) &&
+        hasInboxDesktopFeature('MailtoTelemetry') &&
+        hasInboxDesktopFeature('MailtoUpdate');
+
+    const [isDefault, setIsDefault] = useState(false);
+    const [shouldCheck, setShouldCheck] = useState(false);
+    const [modalProps, setModalOpen] = useModalState();
+
+    const updateShouldCheck = useCallback(
+        async (nextShouldNext: boolean) => {
+            if (enabled) {
+                await invokeInboxDesktopIPC({ type: 'setShouldCheckDefaultMailto', payload: nextShouldNext });
+                const defaultMailTo = getInboxDesktopInfo('defaultMailto');
+                setShouldCheck(defaultMailTo.shouldBeDefault);
+            }
+        },
+        [enabled]
+    );
+
+    const updateIsDefault = useCallback(async () => {
+        if (enabled) {
+            await invokeInboxDesktopIPC({ type: 'setDefaultMailto' });
+            setShouldCheck(true);
+            setIsDefault(true);
+            setModalOpen(false);
+        }
+    }, [enabled]);
+
+    const triggerPrompt = useCallback(async () => {
+        if (enabled) {
+            setModalOpen(true);
+        }
+    }, [enabled]);
+
+    useEffect(() => {
+        if (enabled) {
+            const defaultMailTo = getInboxDesktopInfo('defaultMailto');
+            setIsDefault(defaultMailTo.isDefault);
+            setShouldCheck(defaultMailTo.shouldBeDefault);
+
+            const handler = addIPCHostUpdateListener('defaultMailtoChecked', (payload) => {
+                setIsDefault(payload.isDefault);
+                setShouldCheck(payload.shouldBeDefault);
+            });
+
+            return () => {
+                handler.removeListener();
+            };
+        }
+    }, [enabled]);
+
+    const Prompt = enabled ? <DefaultAppPrompt setDefault={updateIsDefault} {...modalProps} /> : null;
+    return { enabled, isDefault, shouldCheck, setShouldCheck: updateShouldCheck, triggerPrompt, Prompt } as const;
+}

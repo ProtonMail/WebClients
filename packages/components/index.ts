@@ -496,6 +496,8 @@ export { InboxDesktopFreeTrialTopBanner } from './containers/desktop/freeTrial/I
 export { InboxDesktopAppSwitcher } from './containers/desktop/InboxDesktopAppSwitcher';
 export { InboxDesktopOutdatedAppTopBanner } from './containers/desktop/InboxDesktopOutdatedAppTopBanner';
 export { InboxDesktopSettingsSection } from './containers/desktop/InboxDesktopSettingsSection';
+export { InboxDesktopDefaultAppTopBanner } from './containers/desktop/defaultApp/InboxDesktopDefaultAppTopBanner';
+export { useElectronDefaultApp } from './containers/desktop/defaultApp/useElectronDefaultApp';
 export { CommentEmailSection } from './containers/docs/settings/CommentEmailSection';
 export { default as CatchAllSection } from './containers/domains/CatchAllSection';
 export { default as DomainModal } from './containers/domains/DomainModal';

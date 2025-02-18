@@ -23,6 +23,7 @@ import {
     ToggleAssistantEnvironment,
     Tooltip,
     useApi,
+    useElectronDefaultApp,
     useEventManager,
     useKeyTransparencyContext,
     useModalState,
@@ -212,6 +213,13 @@ const MailQuickSettings = () => {
     const aiFlag = AIAssistantFlags === UNSET ? SERVER_ONLY : AIAssistantFlags;
 
     const showOnboardingModalTrigger = useCanReplayOnboarding();
+    const {
+        enabled: electronDefaultAppEnabled,
+        isDefault: isElectronDefaultApp,
+        shouldCheck: shouldCheckElectronDefaultApp,
+        triggerPrompt: triggerElectronDefaultAppPrompt,
+        Prompt: ElectronDefaultAppPrompt,
+    } = useElectronDefaultApp();
 
     return (
         <DrawerAppScrollContainer>
@@ -399,6 +407,15 @@ const MailQuickSettings = () => {
                     </QuickSettingsButton>
                 )}
 
+                {isElectronMail &&
+                    electronDefaultAppEnabled &&
+                    !isElectronDefaultApp &&
+                    shouldCheckElectronDefaultApp && (
+                        <QuickSettingsButton onClick={triggerElectronDefaultAppPrompt}>
+                            {c('Action').t`Set ${MAIL_APP_NAME} as default email application`}
+                        </QuickSettingsButton>
+                    )}
+
                 {!isElectronMail && (isFirefox() || isChromiumBased()) && (
                     <QuickSettingsButton
                         onClick={() => setDefaultHandlerModalOpen(true)}
@@ -428,6 +445,7 @@ const MailQuickSettings = () => {
                 </Tooltip>
             </QuickSettingsButtonSection>
 
+            {ElectronDefaultAppPrompt}
             <MailDefaultHandlerModal {...mailDefaultHandlerProps} />
             <ClearBrowserDataModal {...clearBrowserDataProps} />
             <MailShortcutsModal {...mailShortcutsProps} />

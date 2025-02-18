@@ -8,10 +8,11 @@ import {
 } from "@proton/shared/lib/desktop/DefaultProtocol";
 import Store from "electron-store";
 import { protocolLogger } from "../log";
+import { DESKTOP_FEATURES } from "../../ipc/ipcConstants";
 
 const DEFAULT_STORED_DEFAULT_PROTOCOL = {
     mailto: {
-        shouldBeDefault: false,
+        shouldBeDefault: DESKTOP_FEATURES.MailtoUpdate,
         wasDefaultInPast: false,
         lastReport: {
             wasDefault: false,
@@ -48,6 +49,7 @@ export function loadDefaultProtocol(protocol: PROTOCOLS): DefaultProtocol {
 export function storeDefaultProtocol(protocol: PROTOCOLS, data: DefaultProtocol) {
     const current = getDefaultProtocolsStored();
 
+    current[protocol].canUpdateDefault = data.canUpdateDefault;
     current[protocol].shouldBeDefault = data.shouldBeDefault;
     current[protocol].wasDefaultInPast = data.wasDefaultInPast;
     current[protocol].lastReport = data.lastReport;
