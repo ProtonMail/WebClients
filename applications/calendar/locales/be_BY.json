@@ -1265,7 +1265,7 @@
         "Стварыць метку"
       ],
       "Discover and set up features": [
-        "Азнаёміцца і наладзіць функцыі"
+        "Пазнаёміцца і наладзіць функцыі"
       ],
       "Remind me later": [
         "Нагадаць мне пазней"
@@ -2983,8 +2983,8 @@
         "У некаторых групах адсутнічаюць кантакты: ${ list }",
         "У некаторых групах адсутнічаюць кантакты: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } ваша імя карыстальніка. Каб стварыць ${ emailAddress }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
       ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
@@ -3299,7 +3299,7 @@
         "Выберыце краіну"
       ],
       "Please select a state": [
-        "Калі ласка, выберыце рэгіён"
+        "Выберыце рэгіён"
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
@@ -4490,7 +4490,7 @@
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс пасродкам адмысловага маніторынга за падазронай актыўнасцю."
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага маніторынгу за падазронай актыўнасцю."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -4787,7 +4787,7 @@
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
       ],
       "Discover new features unlocked with ${ planTitle } and start using them right away!": [
-        "Пазнаёмцеся з новымі функцыямі, якія даступныя з тарыфным планам ${ planTitle } і пачніце іх выкарыстоўваць неадкладна!"
+        "Пазнаёмцеся з новымі функцыямі, якія даступны з тарыфным планам ${ planTitle } і пачніце іх неадкладна выкарыстоўваць!"
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
@@ -6394,16 +6394,16 @@
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папкі) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папка з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папкі з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папак з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папак з ${ itemsToImportCount }) і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } меткі) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
-        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метка з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } меткі з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6984,7 +6984,7 @@
         "Назіранне за ўцечкай даных"
       ],
       "Dedicated servers optimized for streaming": [
-        "Вылучаныя серверы аптымізаваны для трансляцый"
+        "Вылучаныя серверы аптымізаваныя для трансляцый"
       ],
       "Desktop app": [
         "Настольная праграма"
@@ -7151,8 +7151,8 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android і Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Інтэграцыя SSO (неўзабаве)"
+      "SSO integration": [
+        "Інтэграцыя SSO"
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
@@ -7472,7 +7472,7 @@
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Прымусова завяршайце сеансы карыстальніка пры падазрэнні, што яго ўліковыя даныя скампраметаваны"
+        "Прымусова завяршайце сеансы карыстальнікаў пры падазрэнні, што іх уліковыя даныя скампраметаваны"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
@@ -10229,6 +10229,9 @@
       "Groups": [
         "Групы"
       ],
+      "Help center": [
+        "Цэнтр дапамогі"
+      ],
       "Hide time zones for event start and end times": [
         "Схаваць часавыя паясы пачатку і завяршэння падзеі"
       ],
@@ -10725,10 +10728,10 @@
         "Bitcoin праз электронную пошту"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Зашыфраваны і бяспечны ${ MAIL_APP_NAME } адрас электроннай пошты. Вы можаце лёгка адправіць Bitcoin каму заўгодна, маючы толькі іх ${ BRAND_NAME } імя."
+        "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin каму заўгодна, выкарыстоўваючы толькі імя карыстальніка ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Бяспечна абменьвайце Bitcoin праз электронную пошту замест складаных, 26-значных адрасаў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
+        "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных, 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -10767,10 +10770,10 @@
         "Вы сапраўды хочаце незваротна выдаліць гэты кантакт?"
       ],
       "Cannot contain a dot at the beginning": [
-        "Не можа змяшчаць кроку ў пачатку"
+        "Не можа змяшчаць кропку ў пачатку"
       ],
       "Cannot contain a dot at the end": [
-        "Не можа змяшчаць кроку ў канцы"
+        "Не можа змяшчаць кропку ў канцы"
       ],
       "Contacts could not be merged": [
         "Не атрымалася аб'яднаць кантакты"

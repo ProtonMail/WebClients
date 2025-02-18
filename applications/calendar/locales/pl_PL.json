@@ -326,6 +326,9 @@
       "Get ${ planName } for ${ priceCoupon }": [
         "Wybierz plan ${ planName } za ${ priceCoupon }"
       ],
+      "Get ${ planOrAppName }": [
+        "Uzyskaj ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Skontaktuj się z nami"
       ],
@@ -2974,9 +2977,6 @@
         "Niektóre grupy nie posiadają kontaktów: ${ list }",
         "Niektóre grupy nie posiadają kontaktów: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
-      ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
@@ -3583,6 +3583,9 @@
       "Time zone": [
         "Strefa czasowa"
       ],
+      "Time zone component ignored": [
+        "Element strefy czasowej ignorowany"
+      ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
       ],
@@ -4106,6 +4109,9 @@
       "Malformed start time": [
         "Czas rozpoczęcia posiada nieprawidłowy format"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Dozwolona jest tylko skala kalendarza gregoriańskiego"
+      ],
       "Recurring event has no occurrences": [
         "Wydarzenie cykliczne nie posiada powtórzeń"
       ],
@@ -4474,6 +4480,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu monitorowaniu podejrzanej aktywności."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } znaleziony folder",
         "${ providerFoldersNumLocalized } znalezione foldery",
@@ -4572,6 +4581,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ten adres posiada włączoną weryfikację z zaufanymi kluczami. Zaufaj kluczom publicznym, aby wysyłać wiadomości na ten adres."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Wszystkie (${ totalFoldersCount } folder)",
@@ -4809,6 +4821,9 @@
       ],
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Wiadomości e-mail przeniesione do Kosza i Spamu ponad 30 dni temu zostaną automatycznie wyczyszczone."
       ],
       "Enabling auto-deletion…": [
         "Włączanie automatycznego usuwania…"
@@ -5457,6 +5472,9 @@
       ],
       "You cannot undo this action.": [
         "Tej akcji nie można cofnąć."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Otrzymasz powiadomienie, jeśli Twoje hasło lub inne dane wyciekły z usługi zewnętrznej."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Masz wersję próbną subskrypcji ${ planTitle }. Jeśli chcesz kontynuować subskrypcję po zakończeniu wersji próbnej, dodaj metodę płatności."
@@ -6953,6 +6971,9 @@
       "Data breach monitoring": [
         "Monitoring wycieku danych"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedykowane serwery zoptymalizowane pod kątem streamingu"
+      ],
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
@@ -7118,8 +7139,8 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Logowanie SSO (wkrótce)"
+      "SSO integration": [
+        "Integracja z SSO"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
@@ -7195,6 +7216,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Używanie na maksymalnie ${ n } urządzeniu",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -7338,6 +7365,9 @@
       ]
     },
     "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Promocyjna cena ${ priceCoupon } jest ważna przez pierwszy miesiąc. Następnie zostanie ona automatycznie odnowiona po cenie ${ priceLine }. Możesz anulować w dowolnym momencie."
+      ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
       ]
@@ -8209,6 +8239,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potwierdzając tę płatność, użytkownik upoważnia ${ BRAND_NAME } i Stripe, naszego dostawcę usług płatniczych, do zlecenia bankowi odpowiedniego obciążenia jego konta. Użytkownik może otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z warunkami umowy z bankiem."
+      ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
       ]
@@ -10161,6 +10194,9 @@
       "Groups": [
         "Grupy"
       ],
+      "Help center": [
+        "Centrum pomocy"
+      ],
       "Hide time zones for event start and end times": [
         "Ukryj strefy czasowe dla czasu rozpoczęcia i zakończenia wydarzenia"
       ],
@@ -10412,6 +10448,9 @@
       ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"
       ],
       "You have invited participants with equivalent emails": [
         "Zaproszono tych samych uczestników"
@@ -10802,6 +10841,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 następujące po sobie kropki są niedozwolone"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Czy na pewno chcesz trwale usunąć kontakt?",
         "Czy na pewno chcesz trwale usunąć ${ count } kontakty?",
@@ -10816,6 +10858,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Czy na pewno chcesz trwale usunąć ten kontakt?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Nie może zawierać kropki na początku"
+      ],
+      "Cannot contain a dot at the end": [
+        "Nie może zawierać kropki na końcu"
       ],
       "Contacts could not be merged": [
         "Kontakty nie mogły zostać scalone"
@@ -10837,6 +10885,9 @@
       ],
       "Name is required": [
         "Nazwa jest wymagana"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Dozwolone są tylko małe znaki alfanumeryczne, kropki, myślniki i podkreślenia."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
