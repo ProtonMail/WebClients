@@ -37,8 +37,9 @@ export function checkDefaultMailto() {
         defaultMailto.isDefault = actualMailto.isDefault;
 
         if (actualMailto.isDefault) {
-            const shouldUpdateStore = !defaultMailto.wasDefaultInPast;
+            const shouldUpdateStore = !defaultMailto.wasDefaultInPast || !defaultMailto.shouldBeDefault;
             defaultMailto.wasDefaultInPast = true;
+            defaultMailto.shouldBeDefault = true;
             if (shouldUpdateStore) {
                 storeDefaultProtocol("mailto", defaultMailto);
             }
