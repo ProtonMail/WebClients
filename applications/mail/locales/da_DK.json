@@ -3684,6 +3684,10 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } ny besked",
+        "${ notificationsToShow.length } nye beskeder"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Fra: ${ sender } - ${ Subject }"
       ]
@@ -3907,9 +3911,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
@@ -5728,6 +5729,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan også beskytte dit firma."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } er ikke din standard e-mail-applikation."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } besked kunne ikke flyttes.",
         "${ messagesNotAuthorizedToMove } beskeder kunne ikke flyttes."
@@ -5869,6 +5873,9 @@
       ],
       "Activation in progress": [
         "Aktivering i gang"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add image URL": [
         "Tilføj billed-URL"
@@ -6108,6 +6115,10 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Opret en sikker sky til ${ value } medlem",
+        "Opret en sikker sky til ${ value } medlemmer"
+      ],
       "Create in": [
         "Opret i"
       ],
@@ -6149,6 +6160,9 @@
       ],
       "Default email application": [
         "Standardprogram til mails"
+      ],
+      "Default mail application": [
+        "Standard mail-applikation"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Vidste du, at du har krypteret skylagring som en del af din ${ BRAND_NAME }-konto? Gå over til ${ DRIVE_APP_NAME } og få mest muligt ud af din plads. Det er helt gratis."
@@ -6920,6 +6934,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Indstil ${ MAIL_APP_NAME } som din standard e-mailløsning for denne browser. ${ MAIL_APP_NAME } åbnes automatisk, når du klikker på et e-mail-link."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Indstil ${ MAIL_APP_NAME } som din standard e-mail-applikation. ${ MAIL_APP_NAME } åbnes automatisk, når du klikker på et e-mail-link."
       ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
@@ -9504,9 +9521,6 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
-      ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
       ],
@@ -9574,6 +9588,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Brug op til ${ n } enhed samtidig",
+        "Brug op til ${ n } enheder samtidig"
       ],
       "User credential management": [
         "Administration af brugerlegitimationsoplysninger"
@@ -13279,6 +13297,10 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du vil blive faktureret ${ renewPrice } hver 12. måned."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
         "Dit abonnement vil automatisk forny i ${ cycle } måneder."
@@ -13298,6 +13320,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadresse",
+        "${ n } ${ BRAND_NAME } e-mailadresser"
+      ],
       "${ n } account per wallet": [
         "${ n } konto pr. wallet",
         "${ n } konti pr. wallet"

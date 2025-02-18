@@ -1158,8 +1158,14 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Nastaviť ${ MAIL_APP_NAME } ako predvolenú emailovú aplikáciu"
       ],
+      "Set as album cover": [
+        "Nastaviť ako obal albumu"
+      ],
       "Set as default": [
         "Nastaviť ako predvolené"
+      ],
+      "Set as default mail application": [
+        "Nastaviť ako predvolenú poštovú aplikáciu"
       ],
       "Set encryption": [
         "Nastavenie šifrovania"
@@ -4033,9 +4039,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } je vaše používateľské meno. Ak chcete vytvoriť doménu ${ emailAddress }, prejdite do časti Nastavenia > Správy a písanie > Krátka doména (pm.me)"
-      ],
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
       ],
@@ -6025,6 +6028,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } môže chrániť aj vašu spoločnosť."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME } nie je vašou predvolenou poštovou aplikáciou."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } správu nebolo možné presunúť.",
         "${ messagesNotAuthorizedToMove } správy nebolo možné presunúť.",
@@ -6522,6 +6528,9 @@
       ],
       "Default email application": [
         "Predvolená emailová aplikácia"
+      ],
+      "Default mail application": [
+        "Predvolená poštová aplikácia"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Vedeli ste, že súčasťou vášho ${ BRAND_NAME } účtu je aj šifrované cloudové úložisko? Prejdite na ${ DRIVE_APP_NAME } a využite svoj priestor naplno. Je to zadarmo."
@@ -7350,6 +7359,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavte ${ MAIL_APP_NAME } ako predvolenú emailovú aplikáciu pre tento prehliadač. ${ MAIL_APP_NAME } sa otvorí automaticky po kliknutí na emailový odkaz."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Nastavte ${ MAIL_APP_NAME } ako predvolenú poštovú aplikáciu pre tento prehliadač. ${ MAIL_APP_NAME } sa otvorí automaticky po kliknutí na emailový odkaz."
       ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
@@ -10085,8 +10097,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android a Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO integrácia (už čoskoro)"
+      "SSO integration": [
+        "SSO integrácia"
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
@@ -13696,6 +13708,9 @@
       ],
       "Groups": [
         "Skupiny"
+      ],
+      "Help center": [
+        "Centrum pomoci"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Ukryte svoj email pomocou ${ PASS_APP_NAME }"

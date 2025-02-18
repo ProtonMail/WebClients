@@ -148,7 +148,7 @@
         "認証"
       ],
       "Auto-delete spam and trash": [
-        "迷惑メールとごみ箱を自動削除"
+        "迷惑メールとごみ箱のメールを自動削除"
       ],
       "Back": [
         "戻る"
@@ -526,7 +526,7 @@
         "${ BRAND_NAME } Duoを入手"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "${ planName } で ${ priceCoupon }を入手"
+        "${ planName } を ${ priceCoupon }で入手"
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } を入手"
@@ -1146,8 +1146,14 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "${ MAIL_APP_NAME } をデフォルトのメールアプリケーションとして設定する"
       ],
+      "Set as album cover": [
+        "アルバムカバーに設定"
+      ],
       "Set as default": [
         "既定にする"
+      ],
+      "Set as default mail application": [
+        "デフォルトのメールアプリとして設定"
       ],
       "Set encryption": [
         "暗号化を設定"
@@ -1915,6 +1921,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "閉じる"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
       ],
@@ -3770,7 +3779,7 @@
         "より優れた機能を持つ VPN を見つけた"
       ],
       "I have not managed to connect": [
-        "接続することができませんでした"
+        "接続することができなかった"
       ],
       "I only needed a VPN short-term": [
         "VPN が短期間のみ必要だった"
@@ -3779,7 +3788,7 @@
         "別の ${ BRAND_NAME } アカウントを使っている"
       ],
       "It doesn't do what I need": [
-        "必要としていることをしてくれない"
+        "必要な機能がない"
       ],
       "Missing feature(s)": [
         "機能が不足している"
@@ -3970,8 +3979,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } はあなたのユーザー名です。 ${ emailAddress } を作成するには、[設定] > [メッセージと作成] > [短いドメイン (pm.me)] に移動してください。"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -5130,7 +5139,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }、Privacy by default"
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "forwardmessage": {
@@ -5809,6 +5818,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } はあなたのビジネスも保護します。"
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "${ MAIL_APP_NAME }はデフォルトのメールアプリではありません。"
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 件のメッセージを移動できませんでした。"
       ],
@@ -6217,6 +6229,9 @@
       "Default email application": [
         "既定のメールアプリ"
       ],
+      "Default mail application": [
+        "デフォルトメールアプリ"
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "${ BRAND_NAME }アカウントに暗号化済みのクラウドストレージが含まれていることを知っていましたか？ ${ DRIVE_APP_NAME } へ移動して、ストレージスペースを最大限に活用しましょう。無料でご利用いただけます。"
       ],
@@ -6554,7 +6569,7 @@
         "${ PASS_APP_NAME } にログイン情報やクレジットカード情報を追加して、安全かつ便利に保管しましょう。${ BRAND_NAME } アカウントに無料で含まれています。"
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
-        "メールボックスを整理するために、 30 日以上経過したゴミ箱やスパムを自動的に削除します。"
+        "メールボックスを整理するために、 30 日以上経過した迷惑メールやゴミ箱のメールを自動的に削除します。"
       ],
       "Key fingerprint": [
         "鍵のフィンガープリント"
@@ -6884,7 +6899,7 @@
         "テキストを校正する"
       ],
       "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "ニュースレターや迷惑メールの配信リストから、ide-my-emailで自分のアドレスを守りましょう。"
+        "ニュースレターや迷惑メールの配信リストから、hide-my-emailで自分のアドレスを守りましょう。"
       ],
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
@@ -7008,6 +7023,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME } をこのブラウザの既定のメールアプリに設定すると、メールのリンクをクリックした際に自動で ${ MAIL_APP_NAME } が開かれます。"
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定しましょう。メールのリンクをクリックした時に、自動で${ MAIL_APP_NAME }が開きます。"
       ],
       "Setting up ${ feature }…": [
         "${ feature }を設定しています…"
@@ -7289,7 +7307,7 @@
         "制限を解除するには、有料プランにアップグレードしてください。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "このメーリングリストの購読を解除するには、ニュースレターの送信者によって定義された詳細とともに、${ boldFrom } からメールが送信されます。"
+        "このメーリングリストの購読を解除するには、ニュースレターの送信者によって定義された以下の詳細とともに、${ boldFrom } からメールが送信されます。"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "このニュースレターの配信を解除するには、送信元が指定している次のリンクを開くことになります。"
@@ -8487,7 +8505,7 @@
         "開始日"
       ],
       "State": [
-        "状態"
+        "州"
       ],
       "Statement": [
         "適用状態"
@@ -9428,6 +9446,9 @@
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
       ],
+      "Dedicated servers optimized for streaming": [
+        "ストリーミングに最適化された専用サーバー"
+      ],
       "Desktop app": [
         "デスクトップアプリ"
       ],
@@ -9590,8 +9611,8 @@
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO 統合 (近日公開予定)"
+      "SSO integration": [
+        "SSO 統合"
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
@@ -9661,6 +9682,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
+      ],
+      "Use on up to ${ n } device at once": [
+        "一度に最大 ${ n } 台のデバイスで使用"
       ],
       "User credential management": [
         "ユーザー資格管理"
@@ -9977,7 +10001,7 @@
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
-        "誰にでも(${ PASS_APP_NAME }を使っていない人にも)個人のアイテムを安全に共有"
+        "誰にでも (${ PASS_APP_NAME }を使っていない人にも) 個人のアイテムを安全に共有"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "電話番号、住所、誕生日、個人的なメモなどの連絡先の詳細を安全に保存します。 ゼロアクセス暗号化により、${ BRAND_NAME } であってもアクセスできなくなります。"
@@ -10553,7 +10577,7 @@
         "支払い処理中"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "アドオンの数を減らすには、まずサブスクリプションを再アクティブ化してください。"
+        "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
       "Please select billing country": [
         "請求先の国を選択してください"
@@ -10614,7 +10638,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "無料"
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -10750,7 +10774,7 @@
         "理由を選択"
       ],
       "Select state": [
-        "状態の選択"
+        "州を選択"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME }をより良くするためには何が必要だと思うか共有してください。"
@@ -11161,7 +11185,7 @@
         "この許可はあと${ timeRemaining.inHours }時間で期限切れになります。"
       ],
       "This permission expires soon": [
-        "この許可はすぐに取り消されます"
+        "この権限はまもなく有効期限が切れます"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
@@ -11941,10 +11965,10 @@
         "追加のストレージとユーザー"
       ],
       "Folders, labels and filters": [
-        "フォルダ、ラベル、ファイル"
+        "フォルダー、ラベル、フィルター"
       ],
       "Folders, labels, and custom filters": [
-        "フォルダ、ラベル、そしてカスタムフィルター"
+        "フォルダー、ラベル、カスタムフィルター"
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
@@ -12171,7 +12195,7 @@
         "${ elementsCount } 件の会話を未読にしました。"
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount }件のやりとりを${ folderName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
+        "${ elementsCount }件のメッセージを${ folderName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } 件の会話を ${ folderName } に移動しました。"
@@ -12929,6 +12953,9 @@
       "Groups": [
         "グループ"
       ],
+      "Help center": [
+        "ヘルプセンター"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }でメールを隠す"
       ],
@@ -13617,6 +13644,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 つの連続したドットは使用できません"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } 件の連絡先を完全に削除してよろしいですか？"
       ],
@@ -13628,6 +13658,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "この連絡先を完全に削除してよろしいですか？"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "最初にドットを含めることはできません"
+      ],
+      "Cannot contain a dot at the end": [
+        "最後にドットを含めることはできません"
       ],
       "Contacts could not be merged": [
         "連絡先を統合できませんでした"
@@ -13649,6 +13685,9 @@
       ],
       "Name is required": [
         "名前は必須です"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "英数字の小文字、ドット、ハイフン、アンダースコアのみが使用できます"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
