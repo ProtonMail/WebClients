@@ -11,7 +11,7 @@ export const DESKTOP_FEATURES = {
     MultiAccount: true,
     LatestVersionCheck: true,
     InstallSource: true,
-    MailtoTelemetry: true,
+    MailtoTelemetry: false,
     MailtoUpdate: true,
     ESUserChoice: true,
     FullTheme: true,
