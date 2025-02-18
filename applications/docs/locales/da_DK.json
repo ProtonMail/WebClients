@@ -621,6 +621,9 @@
       "Submit": [
         "Indsend"
       ],
+      "Switch accounts": [
+        "Skift konti"
+      ],
       "Switch or add account": [
         "Skift eller tilføj konto"
       ],
@@ -2185,6 +2188,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
       ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
+        "Opgrader til ${ BRAND_NAME } ${ planName } for at aktivere offentlig fildeling med redigeringsadgang. Fortsæt med at samarbejde problemfrit og sikkert."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Opgrader din konto for at aktivere ${ PROTON_SENTINEL_NAME }, vores banebrydende AI-dreven sikkerhedsløsning med ekspert døgn support."
       ],
@@ -2397,9 +2403,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
@@ -3884,6 +3887,10 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Opret en sikker sky til ${ value } medlem",
+        "Opret en sikker sky til ${ value } medlemmer"
+      ],
       "Create in": [
         "Opret i"
       ],
@@ -4550,6 +4557,12 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dette dokument har stor aktivitet. Nogle funktioner kan være kortvarigt utilgængelige."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "Dette dokument findes muligvis ikke, eller du har ikke tilladelse til at se det. Du kan prøve at genindlæse siden for at se, om problemet fortsætter, eller kontakte ejeren for at få adgang."
+      ],
+      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Dette dokument findes muligvis ikke, eller du har måske ikke de nødvendige tilladelser til at se det med din valgte konto. Prøv en anden konto, eller kontakt ejeren for at få adgang."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
@@ -6253,9 +6266,6 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
-      ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
       ],
@@ -6323,6 +6333,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Brug op til ${ n } enhed samtidig",
+        "Brug op til ${ n } enheder samtidig"
       ],
       "User credential management": [
         "Administration af brugerlegitimationsoplysninger"
@@ -8524,6 +8538,9 @@
       "Enable 2FA": [
         "Aktivér 2FA"
       ],
+      "End-to-end encrypted": [
+        "End-to-end krypteret"
+      ],
       "Enter 2FA code": [
         "Indtast 2FA-kode"
       ],
@@ -8701,6 +8718,9 @@
       ],
       "Share ${ name }": [
         "Del ${ name }"
+      ],
+      "Share files with full edit access": [
+        "Del filer med fuld redigeringsadgang"
       ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
@@ -8923,6 +8943,10 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du vil blive faktureret ${ renewPrice } hver 12. måned."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
         "Dit abonnement vil automatisk forny i ${ cycle } måneder."
@@ -8942,6 +8966,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadresse",
+        "${ n } ${ BRAND_NAME } e-mailadresser"
+      ],
       "${ n } account per wallet": [
         "${ n } konto pr. wallet",
         "${ n } konti pr. wallet"

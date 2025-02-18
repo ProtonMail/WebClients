@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Rujuk teman"
       ],
-      "Refresh data": [
-        "Segarkan data"
-      ],
       "Refresh status": [
         "Muat ulang status"
       ],
@@ -2493,9 +2490,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Seluruh ruang penyimpanan telah dialokasikan. Silakan kurangi ruang penyimpanan yang dialokasikan kepada pengguna lainnya."
       ],
@@ -3382,11 +3376,17 @@
       "Best deal": [
         "Penawaran terbaik"
       ],
+      "Checkout": [
+        "Pembayaran"
+      ],
       "Device": [
         "Perangkat"
       ],
       "Event": [
         "Peristiwa"
+      ],
+      "Groups": [
+        "Grup"
       ],
       "IP address": [
         "Alamat IP"
@@ -3795,6 +3795,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
+      ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Penghargaan pilihan editor CNET dengan rating 8.4 dari 10"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Atur autentikasi SAML untuk organisasi Anda melalui layanan penyedia identitas (IdP). Pengaturan ini akan mengaktifkan SAML untuk seluruh organisasi."
@@ -4453,6 +4456,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Penghargaan pilihan editor PC Magazine dengan rating 5 dari 5 bintang"
+      ],
       "per month": [
         "per bulan"
       ],
@@ -4675,6 +4681,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
       ],
+      "Step ${ step }": [
+        "Langkah ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
       ],
@@ -4713,6 +4722,9 @@
       ],
       "Symbols (#$&)": [
         "Simbol (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Direkomendasikan oleh TechRadar Pro dengan rating 4.2 dari 5 bintang"
       ],
       "Thank you": [
         "Terima kasih"
@@ -4878,6 +4890,9 @@
       ],
       "Total VPN connections": [
         "Total koneksi VPN"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Coba ${ productName } tanpa risiko apa pun - apabila karena satu dan lain hal Anda berubah pikiran, uang Anda akan dikembalikan sepenuhnya. Tanpa ada basa-basi."
       ],
       "Two-factor authentication disabled": [
         "Autentikasi dua faktor dinonaktifkan"
@@ -5673,6 +5688,9 @@
       "Group name": [
         "Nama grup"
       ],
+      "Groups": [
+        "Grup"
+      ],
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
@@ -5924,6 +5942,9 @@
       ],
       "Username": [
         "Nama pengguna"
+      ],
+      "Users": [
+        "Pengguna"
       ],
       "Value": [
         "Nilai"
@@ -6573,6 +6594,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Semua layanan ${ BRAND_NAME } premium. Satu langganan mudah"
       ],
+      "Apps for": [
+        "Aplikasi untuk"
+      ],
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
       ],
@@ -6807,8 +6831,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android dan Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integrasi SOO (segera hadir)"
+      "SSO integration": [
+        "Integrasi SSO"
       ],
       "Start protecting your organization": [
         "Mulai lindungi organisasi Anda"
@@ -6881,6 +6905,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gunakan pada hingga ${ n } perangkat secara bersamaan"
       ],
       "User credential management": [
         "Pengelolaan kredensial pengguna"
@@ -7416,9 +7443,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Menonaktifkan hal ini akan menghilangkan kemampuan untuk menerima notifikasi pada aplikasi ${ BRAND_NAME }"
       ],
-      "During your first month": [
-        "Pada bulan pertama Anda"
-      ],
       "Email subscriptions": [
         "Langganan email"
       ],
@@ -7678,9 +7702,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } alamat email Anda ${ email } untuk mengatur identitas organisasi."
-      ],
       "Current organization identity": [
         "Identitas organisasi saat ini"
       ],
@@ -7695,9 +7716,6 @@
       ],
       "Organization identity updated": [
         "Identitas organisasi diperbarui"
-      ],
-      "Verify": [
-        "Verifikasi"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9370,6 +9388,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -9652,47 +9711,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -10252,6 +10270,9 @@
       "Create multiple user accounts": [
         "Buat lebih dari satu akun pengguna"
       ],
+      "Create new policy": [
+        "Buat kebijakan baru"
+      ],
       "Create organization key": [
         "Buat kunci organisasi"
       ],
@@ -10440,6 +10461,9 @@
       ],
       "Groups": [
         "Grup"
+      ],
+      "Help center": [
+        "Pusat bantuan"
       ],
       "How to choose a good logo": [
         "Cara memilih logo yang baik"
@@ -10805,29 +10829,6 @@
         "Hari ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini, dan tidak ada sumber daya terenkripsi yang akan dibagikan dengan pengguna ini."
-      ],
-      "Group membership paused": [
-        "Keanggotaan grup dijeda"
-      ],
-      "Sending member invitation": [
-        "Mengirimkan undangan anggota"
-      ],
-      "User declined invitation": [
-        "Pengguna menolak undangan"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Menunggu pengguna untuk menerima undangan"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
@@ -10912,6 +10913,29 @@
       ],
       "Your DKIM signing is working.": [
         "Penandatanganan DKIM anda berfungsi."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini, dan tidak ada sumber daya terenkripsi yang akan dibagikan dengan pengguna ini."
+      ],
+      "Group membership paused": [
+        "Keanggotaan grup dijeda"
+      ],
+      "Sending member invitation": [
+        "Mengirimkan undangan anggota"
+      ],
+      "User declined invitation": [
+        "Pengguna menolak undangan"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Menunggu pengguna untuk menerima undangan"
       ]
     },
     "Tor out of date": {

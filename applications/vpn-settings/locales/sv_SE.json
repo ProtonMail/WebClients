@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Hänvisa en vän"
       ],
-      "Refresh data": [
-        "Uppdatera data"
-      ],
       "Refresh status": [
         "Uppdatera status"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "Skicka påminnelse"
+      ],
+      "Set as album cover": [
+        "Ställ in som albumomslag"
       ],
       "Set catch-all": [
         "Ställ in \"Catch-all\""
@@ -2509,8 +2509,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Meddelanden och skrivning > Kort domän (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Allt lagringsutrymme har allokerats. Minska lagringsutrymmet som tilldelas andra användare."
@@ -3412,6 +3412,12 @@
       "Best deal": [
         "Bästa erbjudandet"
       ],
+      "Checkout": [
+        "Kassa"
+      ],
+      "Create your account": [
+        "Skapa ditt konto"
+      ],
       "Device": [
         "Enhet"
       ],
@@ -3754,9 +3760,6 @@
       "Allocated": [
         "Tilldelad"
       ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Tillåt användare att ansluta till säkra delade servrar baserat på definierade policyer."
-      ],
       "Already allocated": [
         "Redan tilldelad"
       ],
@@ -3949,7 +3952,7 @@
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
       ],
       "default email address": [
-        "förvalda e-postadress"
+        "standard e-postadress"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ta bort andra MX-poster eller se till att ${ MAIL_APP_NAME }s prioritet är det lägsta numret."
@@ -4056,7 +4059,7 @@
         "Aktiverad den ${ formattedDateAndTime }"
       ],
       "Enabling auto-deletion…": [
-        "Aktiverar autoborttagning…"
+        "Aktiverar automatisk borttagning…"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "End-to-end-krypterad e-post är inaktiverat för denna grupp på grund av externa adresser."
@@ -4756,6 +4759,10 @@
       "Start sharing it with contacts and use it for online services.": [
         "Börja dela den med kontakter och använd den för onlinetjänster."
       ],
+      "Step ${ step }": [
+        "Steg ${ step }",
+        "Steg ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Lagringsutrymme tilldelad andra användare i denna organisation"
       ],
@@ -4965,6 +4972,9 @@
       ],
       "Total VPN connections": [
         "Totalt antal VPN-anslutningar"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Prova ${ productName } helt riskfritt - om du av någon anledning ångrar dig får du en fullständig återbetalning. Utan några frågor."
       ],
       "Two-factor authentication disabled": [
         "Tvåfaktorsautentisering inaktiverad"
@@ -6947,11 +6957,14 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
+      "SSO integration": [
+        "SSO-integration"
       ],
       "Start protecting your organization": [
         "Börja skydda din organisation"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Börja skydda dig själv online med 2 enkla steg"
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
@@ -7573,9 +7586,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Inaktivering av detta kommer att ta bort möjligheten att ta emot aviseringar i ${ BRAND_NAME }-applikationer"
       ],
-      "During your first month": [
-        "Under din första månad"
-      ],
       "Email subscriptions": [
         "E-postprenumerationer"
       ],
@@ -7865,9 +7875,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } din e-postadress ${ email } för att ställa in organisationens identitet."
-      ],
       "Current organization identity": [
         "Nuvarande organisationsidentitet"
       ],
@@ -7883,8 +7890,8 @@
       "Organization identity updated": [
         "Organisationsidentitet uppdaterad"
       ],
-      "Verify": [
-        "Verifiera"
+      "Verify your email address ${ email } to set organization identity.": [
+        "Verifiera din e-postadress ${ email } för att ställa in organisationens identitet."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -8185,6 +8192,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdagen, enligt villkoren i ditt avtal med din bank."
+      ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
       ]
@@ -9311,6 +9321,9 @@
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
       ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "De måste logga in igen med din identitetsleverantör för att få åtkomst till ${ BRAND_NAME }-tjänster. För att denna användare ska kunna logga in, se till att de finns hos din identitetsleverantör."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Detta kommer att logga ut användaren från sina andra enheter och de måste skapa ett nytt reservlösenord."
       ],
@@ -9598,6 +9611,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "För ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription reminder": {
@@ -9888,47 +9942,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -10403,7 +10416,7 @@
         "Autentiseringssäkerhet"
       ],
       "Auto-deletion is active": [
-        "Autoborttagning aktivt"
+        "Automatisk borttagning är aktivt"
       ],
       "Billing cycle": [
         "Faktureringscykel"
@@ -10689,6 +10702,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Help center": [
+        "Hjälpcenter"
       ],
       "How to choose a good logo": [
         "Hur man väljer en bra logga"
@@ -11055,29 +11071,6 @@
         "Idag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp och inga krypterade resurser kommer att delas med denna användare."
-      ],
-      "Group membership paused": [
-        "Gruppmedlemskap pausad"
-      ],
-      "Sending member invitation": [
-        "Skickar medlemsinbjudan"
-      ],
-      "User declined invitation": [
-        "Användare avböjde inbjudan"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Väntar på att användaren ska acceptera inbjudan"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratörer kan hantera användarkonton och ge administratörsrättigheter till andra användare. Endast den primära administratören kan redigera paketet för organisationen."
@@ -11162,6 +11155,29 @@
       ],
       "Your DKIM signing is working.": [
         "Din DKIM-signering fungerar."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp och inga krypterade resurser kommer att delas med denna användare."
+      ],
+      "Group membership paused": [
+        "Gruppmedlemskap pausad"
+      ],
+      "Sending member invitation": [
+        "Skickar medlemsinbjudan"
+      ],
+      "User declined invitation": [
+        "Användare avböjde inbjudan"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Väntar på att användaren ska acceptera inbjudan"
       ]
     },
     "Tor out of date": {
@@ -11552,6 +11568,9 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ditt ${ a } och ${ b }-paket"
+      ],
+      "Your ${ selected } plan": [
+        "Ditt ${ selected }-paket"
       ],
       "Your plan includes:": [
         "Ditt paket inkluderar:"

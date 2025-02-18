@@ -566,6 +566,9 @@
       "Remove this participant": [
         "Odstranitev tega udeleženca"
       ],
+      "Remove Zoom meeting": [
+        "Odstrani sestanek Zoom"
+      ],
       "Report a problem": [
         "Prijavite težavo"
       ],
@@ -1207,6 +1210,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zapri"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
@@ -2728,6 +2734,11 @@
         "Pomagajte nam izboljšati"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Odstrani popust"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Razširjena zgodovina različic"
@@ -2881,9 +2892,6 @@
         "Skupini nimata stikov: ${ list }",
         "Nekatere skupine nimajo stikov: ${ list }",
         "Nekatere skupine nimajo stikov: ${ list }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Sporočila in sestavljanje > Kratka domena (pm.me)"
       ],
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
@@ -4649,6 +4657,9 @@
       ],
       "Emails are automatically signed": [
         "Sporočila so samodejno podpisana"
+      ],
+      "Enabling auto-deletion…": [
+        "Omogočanje samodejnega brisanja …"
       ],
       "Enter the code from your authenticator app": [
         "Vnesite kodo iz aplikacije za preverjanje pristnosti"
@@ -6616,6 +6627,9 @@
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
       ],
+      "200 GB of storage": [
+        "200 GB prostora za shranjevanje"
+      ],
       "24/7 account management support": [
         "24/7 podpora za upravljanje računa"
       ],
@@ -6843,9 +6857,6 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Ločeno usmerjanje (Android in Windows)"
-      ],
-      "SSO integration (coming soon)": [
-        "Integracija SSO (kmalu na voljo)"
       ],
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"
@@ -9809,6 +9820,9 @@
       ],
       "Update recurring event": [
         "Posodobitev ponavljajočega se dogodka"
+      ],
+      "Upgrade complete!": [
+        "Nadgradnja opravljena!"
       ],
       "Verification failed": [
         "Preverjanje ni uspelo"

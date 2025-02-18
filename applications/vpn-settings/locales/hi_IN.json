@@ -2164,9 +2164,6 @@
       ]
     },
     "Error": {
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } यूजर नाम है। ${ emailAddress } बनाने के लिए, कृपया सेटिंग्स > संदेश और रचना > लघु डोमेन (pm.me) पर जाएं"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
       ],
@@ -3875,6 +3872,10 @@
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF स्पष्ट करता है कि आपके डोमेन के लिए किसे ईमेल भेजने की अनुमति है। सुनिश्चित करें कि आप निम्नलिखित TXT रेकॉर्ड को अपने DNS कंसोल में जोड़ें (जो प्लेटफ़ॉर्म पर स्थित है जहां आपने कस्टम डोमेन खरीदा है)।"
       ],
+      "Step ${ step }": [
+        "कदम ${ step }",
+        "कदम ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित संग्रहण"
       ],
@@ -5554,9 +5555,6 @@
       "Split tunneling (Android and Windows)": [
         "स्प्लिट टनलिंग (Android और Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO एकीकरण (शीघ्र ही आ रहा है)"
-      ],
       "Start protecting your organization": [
         "अपने संगठन की सुरक्षा करना शुरू करें"
       ],
@@ -5976,9 +5974,6 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "इसे अक्षम करने से ${ BRAND_NAME } एप्लीकेशनों में सूचनाएँ प्राप्त करने की क्षमता हटा दी जाएगी।"
-      ],
-      "During your first month": [
-        "आपके पहले महीने में"
       ],
       "Email subscriptions": [
         "ईमेल सदस्यताएँ"
@@ -7164,6 +7159,17 @@
         "आपकी योजना को एक iOS ऐप का उपयोग करके खरीदा गया था। इसलिए, अपनी योजना में बदलाव करने या अपने भुगतान विवरण को अपडेट करने के लिए, आपको Apple App Store पर जाना होगा।"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } दिन बाकी",
@@ -7225,17 +7231,6 @@
       ],
       "Watch the interview": [
         "इंटरव्यू देखें"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
       ]
     },
     "Subscription renewal state": {

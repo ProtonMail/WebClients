@@ -2887,9 +2887,6 @@
         "${ list } har ingen kontakter",
         "Nogle grupper har ingen kontakter: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
-      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -4490,6 +4487,10 @@
       ],
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Opret en sikker sky til ${ value } medlem",
+        "Opret en sikker sky til ${ value } medlemmer"
       ],
       "Create in": [
         "Opret i"
@@ -6790,9 +6791,6 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
-      ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
       ],
@@ -6860,6 +6858,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Brug op til ${ n } enhed samtidig",
+        "Brug op til ${ n } enheder samtidig"
       ],
       "User credential management": [
         "Administration af brugerlegitimationsoplysninger"
@@ -9978,6 +9980,10 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du vil blive faktureret ${ renewPrice } hver 12. måned."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
         "Dit abonnement vil automatisk forny i ${ cycle } måneder."
@@ -9997,6 +10003,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadresse",
+        "${ n } ${ BRAND_NAME } e-mailadresser"
+      ],
       "${ n } account per wallet": [
         "${ n } konto pr. wallet",
         "${ n } konti pr. wallet"

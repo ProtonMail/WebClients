@@ -436,7 +436,7 @@
         "Geavanceerde PGP-instellingen verbergen"
       ],
       "Hide download options": [
-        "Downloadopties verbergen"
+        "Verberg download opties"
       ],
       "Image could not be loaded with tracker protection.": [
         "Afbeelding kan niet worden geladen met trackerbeveiliging."
@@ -761,6 +761,9 @@
       ],
       "Select country": [
         "Selecteer land"
+      ],
+      "Set as album cover": [
+        "Instellen als omslag"
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
@@ -2433,11 +2436,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2519,6 +2517,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2712,8 +2715,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
@@ -4922,6 +4925,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME verzendt automatisch het bericht gebruikmakend van de huidige opstelmodus."
+      ],
+      "Photo is set as album cover": [
+        "Foto is ingesteld als albumhoes"
       ],
       "Photos have been successfully recovered.": [
         "Foto's zijn succesvol hersteld."
@@ -7261,8 +7267,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integratie (binnenkort beschikbaar)"
+      "SSO integration": [
+        "SSO-integratie"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -8472,7 +8478,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw rekening naar behoren in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw factuur naar behoren in rekening te brengen. U kunt een restitutie ontvangen binnen 8 weken van de betaaldatum, onder de voorwaarden van uw overeenkomst met uw bank."
       ],
       "Street address, postal code, and city": [
         "Straatnaam, postcode en plaats"
@@ -10276,6 +10282,9 @@
       "Groups": [
         "Groepen"
       ],
+      "Help center": [
+        "Helpcentrum"
+      ],
       "High security for your account": [
         "Hoge beveiliging voor uw account"
       ],
@@ -10637,11 +10646,6 @@
         "Vandaag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Voeg dit gedeelde bestand toe aan uw ${ DRIVE_APP_NAME } voor eenvoudige toegang op een later tijdstip."
@@ -10723,6 +10727,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "We hebben ze een uitnodiging gestuurd om het item te bekijken."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ]
     },
     "Valentine_2025": {

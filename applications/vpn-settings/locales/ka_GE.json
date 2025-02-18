@@ -478,9 +478,6 @@
       "Refer a friend": [
         "მიმართეთ მეგობარს"
       ],
-      "Refresh data": [
-        "მონაცემების განახლება"
-      ],
       "Refresh status": [
         "სტატუსის განახლება"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "შეხსენების გაგზავნა"
+      ],
+      "Set as album cover": [
+        "ალბომის ყდად დაყენება"
       ],
       "Set catch-all": [
         "დომენის ყველა ელფოსტის მიღება"
@@ -2311,6 +2311,12 @@
       ]
     },
     "Description": {
+      "Create policies to manage access to shared servers.": [
+        "შექმენით პოლიტიკები გაზიარებულ სერვერებზე წვდომების სამართავად."
+      ],
+      "Everyone in your organization can connect to shared servers.": [
+        "თქვენს ორგანიზაციაში გაზიარებულ სერვერებთან დაკავშირება ყველას შეუძლია."
+      ],
       "If disabled, only admins will have access.": [
         "თუ გამორთულია, წვდომა, მხოლოდ, ადმინებს ექნებათ."
       ],
@@ -2487,9 +2493,6 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ასევე შეგიძლიათ, შეამოწმოთ ჩვენი ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } არის თქვენი მომხმარებლის სახელი. ${ emailAddress }-ის შესაქმნელად გთხოვთ გადადით პარამეტრები > შეტყობინებები და შედგენა > მოკლე დომენი (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
@@ -3391,11 +3394,26 @@
       "Best deal": [
         "საუკეთესო შემოთავაზება"
       ],
+      "Checkout": [
+        "გადახდა"
+      ],
+      "Create your account": [
+        "შექმენით თქვენი ანგარიში"
+      ],
       "Device": [
         "მოწყობილობა"
       ],
+      "Enabled Countries": [
+        "ჩართული ქვეყნები"
+      ],
+      "Enter your email address": [
+        "შეიყვანეთ თქვენი ელფოსტის მისამართი"
+      ],
       "Event": [
         "მოვლენა"
+      ],
+      "Groups": [
+        "ჯგუფები"
       ],
       "IP address": [
         "IP მისამართი"
@@ -3415,6 +3433,9 @@
       "Organization key fingerprint": [
         "ორგანიზაციის გასაღების ანაბეჭდი"
       ],
+      "Policy Name": [
+        "პოლიტიკის სახელი"
+      ],
       "Protection": [
         "დაცვა"
       ],
@@ -3423,6 +3444,9 @@
       ],
       "Select your deal": [
         "აირჩიეთ ტარიფი"
+      ],
+      "Select your payment method": [
+        "აირჩიეთ თქვენი გადახდის მეთოდი"
       ],
       "Select your pricing plan": [
         "აირჩიეთ თქვენი ტარიფი"
@@ -3527,6 +3551,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
+      ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }% ფასდაკლება"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: სრული ზომის გამოსახულება"
@@ -3814,6 +3841,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "CNET-ის რედაქტორების არჩევნის ჯილდო 8.4 რეიტინგიტ 10-დან"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "მოირგეთ SAML ავთენტიკაცია თქვენი ორგანიზაციისთვის იდენტიფიკატორის მომწოდებლებისთვის (IdP). ეს ჩართავს SAML-ს მთელი ორგანიზაციისთვის."
       ],
@@ -3846,6 +3876,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "ნარჩევი პაროლის მიმოცვლის ბაფერში კოპირება"
+      ],
+      "countries enabled": [
+        "ჩართული ქვეყანა"
       ],
       "Country code": [
         "ქვეყნის კოდი"
@@ -3884,6 +3917,9 @@
       ],
       "Custom email domains": [
         "ელფოსტის თქვენი დომენები"
+      ],
+      "Custom policies": [
+        "მომხმარებლის პოლიტიკები"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
@@ -4477,6 +4513,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
       ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "PC Magazine-ის რედაქტორების არჩევნის ჯილდო 5 რეიტინგიტ 5-დან"
+      ],
       "per month": [
         "თვეში"
       ],
@@ -4702,6 +4741,10 @@
       "Start sharing it with contacts and use it for online services.": [
         "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
       ],
+      "Step ${ step }": [
+        "ნაბიჯი ${ step }",
+        "ნაბიჯი ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
       ],
@@ -4740,6 +4783,9 @@
       ],
       "Symbols (#$&)": [
         "სიმბოლოები (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Tech radar pro რეკომენდაციას გვიწევს 4.2 ქულით 5-დან"
       ],
       "Thank you": [
         "მადლობა"
@@ -5703,6 +5749,9 @@
       "Group name": [
         "ჯგუფის სახელი"
       ],
+      "Groups": [
+        "ჯგუფები"
+      ],
       "Hide password": [
         "პაროლის დამალვა"
       ],
@@ -5771,6 +5820,9 @@
       ],
       "New password": [
         "ახალი პაროლი"
+      ],
+      "New policy name": [
+        "ახალი პოლიტიკის სახელი"
       ],
       "New second password": [
         "ახალი მეორე პაროლი"
@@ -5955,6 +6007,9 @@
       ],
       "Username": [
         "მომხმარებლის სახელი"
+      ],
+      "Users": [
+        "მომხმარებლები"
       ],
       "Value": [
         "მნიშვნელობა"
@@ -6625,6 +6680,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "ყველა ფასიანი ${ BRAND_NAME }-ის სერვისი. ერთი იოლი გამოწერა"
       ],
+      "Apps for": [
+        "აპები"
+      ],
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
       ],
@@ -6691,6 +6749,9 @@
       "Dedicated servers and IP": [
         "გამოყოფილი სერვერები და IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "სტრიმინგზე ოპტიმიზებული გამოყოფილი სერვერები"
+      ],
       "Desktop app": [
         "კომპიუტერის აპი"
       ],
@@ -6741,6 +6802,9 @@
       ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "ჩქაროსნული შვეიცარიული VPN, რომელიც თქვენს კონფიდენციალობას იცავს"
       ],
       "High-speed VPN on ${ n } device": [
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე",
@@ -6861,11 +6925,14 @@
       "Split tunneling (Android and Windows)": [
         "დაყოფილი ტუნელირება (Android-ზე და Windows-ზე)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO ინტეგრაცია (მალე)"
+      "SSO integration": [
+        "SSO-ის ინტეგრაცია"
       ],
       "Start protecting your organization": [
         "დაიწყეთ თქვენი ორგანიზაციის დაცვა"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "დაიწყეთ თავის დაცვა ინტერნეტში 2 იოლი ნაბიჯით"
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
@@ -6937,6 +7004,13 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize }-მდე საცავი"
+      ],
+      "Up to 10 Gbps": [
+        "10 გბ/წმ-მდე"
+      ],
+      "Use on up to ${ n } device at once": [
+        "ერთდროულად ${ n }-მდე მოწყობილობა",
+        "ერთდროულად ${ n }-მდე მოწყობილობა"
       ],
       "User credential management": [
         "მომხმარებლების პაროლების მართვა"
@@ -7103,6 +7177,14 @@
       ],
       "terms and conditions": [
         "პირობები და წესები"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceLine } თვით. გაუქმება ყოველთვის შეგიძლიათ."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "განბლოკეთ ${ BRAND_NAME }-ის ყველა ფასიანი პროდუქტი და ფუნქცია სულ რაღაც ${ priceLine }-ად. გააუქმეთ როცა მოინდომებთ."
       ]
     },
     "new_plans: Title": {
@@ -7469,9 +7551,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "ამის გათიშვა მოაცილებ შესაძლებლობას, მიიღოთ გაფრთხილებები ${ BRAND_NAME }-ის აპლიკაციებში"
       ],
-      "During your first month": [
-        "თქვენი პირველი თვის განმავლობაში"
-      ],
       "Email subscriptions": [
         "ელფოსტის გამოწერები"
       ],
@@ -7501,6 +7580,9 @@
       "Downloaded 2FA recovery codes": [
         "2FA აღდგენის კოდების გადმოწერა"
       ],
+      "Error creating policy": [
+        "პოლიტიკის შექმნის შეცდომა"
+      ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
@@ -7518,6 +7600,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 მომხმარებელი და პაროლი თავიდან დაგენერირდა"
+      ],
+      "Policy created successfully": [
+        "პოლიტიკა წარმატებით შეიქმნა"
       ],
       "Reminder has been sent": [
         "შეხსენება გაგზავნილია"
@@ -7734,9 +7819,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } თქვენი ელფოსტის მისამართი ${ email }, რომ დააყენოთ ორგანიზაციის იდენტიფიკატორი."
-      ],
       "Current organization identity": [
         "მიმდინარე ორგანიზაციის იდენტიფიკატორი"
       ],
@@ -7751,9 +7833,6 @@
       ],
       "Organization identity updated": [
         "ორგანიზაციის იდენტიფიკატორი განახლდა"
-      ],
-      "Verify": [
-        "გადამოწმება"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9171,6 +9250,9 @@
       "Single sign-on removed": [
         "SSO წაიშალა"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "მომხმარებელი ${ user } ახლა Sso ანგარიშია. მათი წინა პაროლი, ახლა, მარქაფი პაროლია."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "ეს გაიყვანს მომხმარებელს ყველა თავისი მოწყობილობიდან და ისინი იძულებული იქნებიან, ახალი მარქაფი პაროლი შექმნან."
       ],
@@ -9455,6 +9537,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -9742,47 +9865,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -10187,6 +10269,9 @@
       "Add address": [
         "მისამართის დამატება"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "ქვეყნების დამატება \"${ policyName }\"-ში"
+      ],
       "Add credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათის დამატება"
       ],
@@ -10222,6 +10307,9 @@
       ],
       "Add users": [
         "მომხმარებლების დამატება"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "მომხმარებლების დამატება \"${ policyName }\"-ში"
       ],
       "Allocate storage": [
         "საცავის გამოყოფა"
@@ -10343,6 +10431,9 @@
       ],
       "Create multiple user accounts": [
         "მრავალი მომხმარებლის ანგარიშის შექმნა"
+      ],
+      "Create new policy": [
+        "ახალი პოლიტიკის შექმნა"
       ],
       "Create organization key": [
         "ორგანიზაციის გასაღებების შექმნა"
@@ -10534,6 +10625,9 @@
       ],
       "Groups": [
         "ჯგუფები"
+      ],
+      "Help center": [
+        "დახმარების ცენტრი"
       ],
       "How to choose a good logo": [
         "როგორ აირჩიოთ კარგი ლოგო"
@@ -10900,29 +10994,6 @@
         "დღეს"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "გარე მისამართი - გამორთავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის და ამ მომხამრებელთან დაშიფრული რესურსები გაზიარებული არ იქნება."
-      ],
-      "Group membership paused": [
-        "ჯგუფის წევრობა შეჩერდა"
-      ],
-      "Sending member invitation": [
-        "გაწევრების მოსაწვევის გაგზავნა"
-      ],
-      "User declined invitation": [
-        "მომხმარებელმა უარჰყო მოსაწვევი"
-      ],
-      "Waiting for user to accept the invitation": [
-        "მომხმარებლის დადასტურების მოლოდინი"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "ადმინებს შეუძლიათ მომხმარებლის ანგარიშებს მართვა და სხვა მომხმარებლებისთვის ადმინის პრივილეგიების მიცემა. ორგანიზაციის სატარიფო გეგმის ჩასწორება, მხოლოდ, ძირითად ადმინს შეუძლია."
@@ -11007,6 +11078,29 @@
       ],
       "Your DKIM signing is working.": [
         "თქვენი DKIM ხელმოწერა მუშაობს."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "გარე მისამართი - გამორთავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის და ამ მომხამრებელთან დაშიფრული რესურსები გაზიარებული არ იქნება."
+      ],
+      "Group membership paused": [
+        "ჯგუფის წევრობა შეჩერდა"
+      ],
+      "Sending member invitation": [
+        "გაწევრების მოსაწვევის გაგზავნა"
+      ],
+      "User declined invitation": [
+        "მომხმარებელმა უარჰყო მოსაწვევი"
+      ],
+      "Waiting for user to accept the invitation": [
+        "მომხმარებლის დადასტურების მოლოდინი"
       ]
     },
     "Tor out of date": {
@@ -11397,6 +11491,12 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "თქვენი ${ a } და ${ b } პაკეტი"
+      ],
+      "Your ${ selected } plan": [
+        "თქვენი ტარიფი ${ selected }"
+      ],
+      "Your plan includes:": [
+        "თქვენი ტარიფი შეიცავს:"
       ]
     },
     "vpn_2step: tooltip": {

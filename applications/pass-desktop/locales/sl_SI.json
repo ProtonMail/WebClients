@@ -2441,9 +2441,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Za organizacijo zahtevajte 2FA"
-      ],
-      "SSO integration (coming soon)": [
-        "Integracija SSO (kmalu na voljo)"
       ]
     },
     "Notification": {
@@ -2569,11 +2566,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Vaši osebni podatki so bili najdeni v vsaj enem primeru uhajanja podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Zapri"
       ]
     },
     "sso": {
