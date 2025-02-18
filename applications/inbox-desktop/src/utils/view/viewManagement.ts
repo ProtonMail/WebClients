@@ -442,7 +442,7 @@ async function renderLoadingPage(view: BrowserView, title: string): Promise<void
     updateViewBounds(view);
 }
 
-async function getViewURL(viewID: ViewID): Promise<string> {
+export async function getViewURL(viewID: ViewID): Promise<string> {
     await loadingViewMap[viewID];
     return browserViewMap[viewID]!.webContents.getURL();
 }
