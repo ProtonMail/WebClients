@@ -1,0 +1,36 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-mailboxes-table {
+	&--badge-btn {
+		padding: 0 !important;
+		border: 0 !important;
+		outline: 0 !important;
+		box-shadow: none !important;
+		background: transparent !important;
+	}
+
+	@container (max-width: 35rem) {
+		&--actions {
+			position: absolute;
+			inset-block-start: var(--space-3);
+			inset-inline-end: var(--space-3);
+		}
+
+		&--status {
+			order: -1 !important;
+			margin-block-end: em(10) !important;
+		}
+
+		tr {
+			display: flex !important;
+			flex-direction: column;
+			inline-size: 100%;
+		}
+
+		td[role='cell'] {
+			&:has(> div:empty) {
+				display: none;
+			}
+		}
+	}
+}
