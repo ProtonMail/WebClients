@@ -5,6 +5,11 @@ import type { DeobfuscatedItemExtraField, ItemContent } from '@proton/pass/types
 
 import type { KeeperCustomFieldValue, KeeperCustomFields, KeeperItem } from './keeper.types';
 
+const getCleanLabel = (label?: string) => {
+    const clean = label?.replace(/^(\$text:|\$name:|\$secret:|\$)|:1$/g, '');
+    return clean || c('Label').t`Text`;
+};
+
 const keeperCustomFieldToExtraField = (
     customField: [string, KeeperCustomFieldValue]
 ): DeobfuscatedItemExtraField | DeobfuscatedItemExtraField[] => {
@@ -18,14 +23,14 @@ const keeperCustomFieldToExtraField = (
     } else if (isObject) {
         return Object.entries(value).map(([nestedLabel, nestedValue]) => {
             return {
-                fieldName: `${label} - ${nestedLabel}`,
+                fieldName: `${getCleanLabel(label)} - ${nestedLabel}`,
                 type: nestedLabel.startsWith('$secret:') ? 'hidden' : 'text',
                 data: { content: nestedValue ?? '' },
             };
         });
     } else {
         return {
-            fieldName: label || (isHidden ? c('Label').t`Hidden` : c('Label').t`Text`),
+            fieldName: getCleanLabel(label),
             type: isHidden ? 'hidden' : 'text',
             data: { content: value ?? '' },
         };
