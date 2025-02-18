@@ -3316,8 +3316,8 @@
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
       ],
-      "SSO integration (coming soon)": [
-        "SSO integrácia (už čoskoro)"
+      "SSO integration": [
+        "SSO integrácia"
       ]
     },
     "Notification": {
@@ -3467,11 +3467,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Vaše informácie sa našli v najmenej jednom úniku údajov. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Zavrieť"
       ]
     },
     "sso": {
@@ -4359,6 +4354,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "K tomuto trezoru už nebudete mať prístup. Ak sa do neho chcete opäť pripojiť, budete potrebovať novú pozvánku."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Vaša organizácia neumožňuje zdieľanie jednotlivých položiek"
       ],
       "Your session could not be authorized.": [
         "Vašu reláciu sa nepodarilo autorizovať."

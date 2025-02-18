@@ -799,6 +799,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Godkendelse mislykkedes. Bekræft din ${ BRAND_NAME }-adgangskode for at fortsætte med eksporten."
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Godkendelse mislykkedes. Bekræft din sikkerhedskopi-adgangskode for at fortsætte med eksporten."
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Godkendelse mislykkedes. Bekræft din ekstra adgangskode for at fortsætte med eksporten."
+      ],
       "Biometric authentication failed": [
         "Biometrisk godkendelse mislykkedes"
       ],
@@ -1142,6 +1148,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Vi stødte på et problem under opstart af ${ PASS_SHORT_APP_NAME }. Hvis problemet fortsætter, kontakt venligst vores kundesupport for hjælp."
+      ],
+      "Wrong backup password": [
+        "Forkert adgangskode til sikkerhedskopi"
       ],
       "Wrong extra password": [
         "Forkert ekstra adgangskode"
@@ -3065,6 +3074,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dette element er tilgængeligt indtil ${ date } eller indtil visningsgrænsen er nået."
+      ],
       "Title": [
         "Titel"
       ],
@@ -3206,9 +3218,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Kræv 2FA for organisation"
-      ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
       ]
     },
     "Notification": {
@@ -3358,11 +3367,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Luk"
       ]
     },
     "sso": {
@@ -4036,6 +4040,9 @@
       "Failed to load breaches.": [
         "Kunne ikke indlæse databrud."
       ],
+      "Identity could not be confirmed": [
+        "Identitet kunne ikke bekræftes"
+      ],
       "Invalid alias prefix": [
         "Ugyldigt alias-præfiks"
       ],
@@ -4198,6 +4205,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke længere have adgang til denne boks. Hvis du vil være med igen, skal du have en ny invitation."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Din organisation tillader ikke deling af individuelle elementer"
       ],
       "Your session could not be authorized.": [
         "Din session kunne ikke autoriseres."

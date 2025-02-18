@@ -3222,8 +3222,8 @@
       "Require 2FA for organization": [
         "Krev 2FA for organisasjonen"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integrasjon (kommer snart)"
+      "SSO integration": [
+        "SSO-integrasjon"
       ]
     },
     "Notification": {
@@ -3373,11 +3373,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Informasjonen din ble funnet i minst én datalekkasje. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Lukk"
       ]
     },
     "sso": {
@@ -4140,7 +4135,7 @@
         "Når de er synkronisert, vil sletting av aliaser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Bare alfanumeriske små bokstaver, prikker, bindestreker og understrekingstegn er tillatt."
+        "Bare små alfanumeriske tegn, punktum og bindestreker (inkludert understrek) er tillatt."
       ],
       "Passphrase is required": [
         "Passfrase kreves"
@@ -4243,6 +4238,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke lenger ha tilgang til dette hvelvet. For å bli med i det igjen, trenger du en ny invitasjon."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Organisasjonen tillater ikke deling av enkeltelementer"
       ],
       "Your session could not be authorized.": [
         "Økten din kunne ikke autoriseres."
