@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren, createContext, useCallback, useContext, useEffect } from 'react';
+import { type FC, type PropsWithChildren, createContext, useCallback, useContext } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -6,37 +6,14 @@ import { c } from 'ttag';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { SSOReauthModal } from '@proton/pass/components/Lock/SSOReauthModal';
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import { useLoadAutofill } from '@proton/pass/hooks/useLoadAutofill';
 import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import { selectExtraPasswordEnabled, selectIsSSO } from '@proton/pass/store/selectors';
-import { WorkerMessageType } from '@proton/pass/types/worker/messages';
-import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
-import { APPS } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
 import type { PasswordModalState } from './PasswordModal';
 import { PasswordModal, type PasswordModalProps } from './PasswordModal';
-
-const loadContentScript =
-    BUILD_TARGET === 'web'
-        ? () => {
-              sendExtensionMessage(
-                  { type: WorkerMessageType.LOAD_CONTENT_SCRIPT_EXTERNAL },
-                  { app: APPS.PROTONPASSBROWSEREXTENSION, maxTimeout: 1_000 }
-              ).catch(noop);
-          }
-        : noop;
-
-const unloadContentScript =
-    BUILD_TARGET === 'web'
-        ? () => {
-              sendExtensionMessage(
-                  { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT_EXTERNAL },
-                  { app: APPS.PROTONPASSBROWSEREXTENSION, maxTimeout: 1_000 }
-              ).catch(noop);
-          }
-        : noop;
 
 type PasswordUnlockContextValue = UseAsyncModalHandle<string, PasswordModalProps>;
 const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async () => {});
@@ -92,15 +69,11 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
 
     const modal = useAsyncModalHandles<string, PasswordModalState>({ getInitialModalState });
     const { handler, abort, resolver, state, key } = modal;
-    const Component = isSSO && !hasOfflinePassword ? SSOReauthModal : PasswordModal;
+    const shouldReauth = isSSO && !hasOfflinePassword;
+    const Component = shouldReauth ? SSOReauthModal : PasswordModal;
 
-    /** Allow Pass browser extension to autofill the password modal. */
-    useEffect(() => {
-        if (state.open) loadContentScript();
-        else unloadContentScript();
-
-        return unloadContentScript;
-    }, [state.open]);
+    /** Allow Pass extension to autofill the password modal */
+    useLoadAutofill(state.open && !shouldReauth);
 
     return (
         <PasswordUnlockContext.Provider value={handler}>
