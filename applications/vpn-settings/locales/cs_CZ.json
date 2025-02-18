@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Doporučit přátelům"
       ],
-      "Refresh data": [
-        "Obnovit data"
-      ],
       "Refresh status": [
         "Obnovit stav"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "Poslat připomenutí"
+      ],
+      "Set as album cover": [
+        "Nastavit jako obálku alba"
       ],
       "Set catch-all": [
         "Nastavení doménového koše"
@@ -2338,6 +2338,12 @@
       ]
     },
     "Description": {
+      "Create policies to manage access to shared servers.": [
+        "Vytvořte zásady pro správu přístupu ke sdíleným serverům."
+      ],
+      "Everyone in your organization can connect to shared servers.": [
+        "Kdokoli ve vaší organizaci se může připojit ke sdíleným serverům."
+      ],
       "If disabled, only admins will have access.": [
         "Pokud je deaktivováno, budou mít přístup pouze správci."
       ],
@@ -2523,8 +2529,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } je vaše uživatelské jméno. Pro vytvoření ${ emailAddress } jděte prosím do Nastavení > Zprávy a psaní > Krátká doména (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } je vaše uživatelské jméno. Pro vytvoření ${ emailAddress } jděte prosím do Nastavení > Identita a adresy > Krátká doména (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
@@ -3454,6 +3460,12 @@
       "Best deal": [
         "Nejlepší nabídka"
       ],
+      "Checkout": [
+        "Zaplaťte"
+      ],
+      "Create your account": [
+        "Vytvořte si účet"
+      ],
       "Device": [
         "Zařízení"
       ],
@@ -3826,6 +3838,9 @@
       "Allocated": [
         "Přiděleno"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Již bylo přiděleno"
       ],
@@ -3928,6 +3943,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Cena redakce CNET s hodnocením 8,4 z 10 hvězd"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Nastavte pro svoji organizaci ověřování pomocí SAML prostřednictvím poskytovatele identity (IdP). Tím se SAML aktivuje pro vaši celou organizaci."
       ],
@@ -3960,6 +3978,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Zkopírujte navržené heslo do schránky"
+      ],
+      "countries enabled": [
+        "povolené země"
       ],
       "Country code": [
         "Kód země"
@@ -4609,6 +4630,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Cena redakce PC Magazine s hodnocením 5 z 5 hvězd"
+      ],
       "per month": [
         "měsíčně"
       ],
@@ -4819,6 +4843,12 @@
       "Shared ${ vaultLink } updated": [
         "Sdílený ${ vaultLink } aktualizován"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Země se sdíleným serverem (${ countriesCount })",
+        "Země se sdíleným serverem (${ countriesCount })",
+        "Země se sdíleným serverem (${ countriesCount })",
+        "Země se sdíleným serverem (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Sdílený trezor smazán"
       ],
@@ -4839,6 +4869,12 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
+      ],
+      "Step ${ step }": [
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložný prostor přidělený ostatním uživatelům v této organizaci"
@@ -4878,6 +4914,9 @@
       ],
       "Symbols (#$&)": [
         "Symboly (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "TechRadar Pro doporučuje s hodnocením 4,2 z 5 hvězd"
       ],
       "Thank you": [
         "Děkujeme"
@@ -5052,6 +5091,9 @@
       ],
       "Total VPN connections": [
         "Celkem VPN připojení"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Vyzkoušejte ${ productName } zcela bez rizika - pokud si to z jakéhokoli důvodu rozmyslíte, dostanete zpět plnou částku. Bez otázek."
       ],
       "Two-factor authentication disabled": [
         "Dvoufázové ověřování je vypnuto"
@@ -5951,6 +5993,9 @@
       ],
       "New password": [
         "Nové heslo"
+      ],
+      "New policy name": [
+        "Název nové zásady"
       ],
       "New second password": [
         "Nové druhé heslo"
@@ -6918,6 +6963,9 @@
       "Dedicated servers and IP": [
         "Dedikované servery a IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikované servery optimalizované pro streamování"
+      ],
       "Desktop app": [
         "Desktopová aplikace"
       ],
@@ -6968,6 +7016,9 @@
       ],
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Vysokorychlostní švýcarská VPN, která chrání vaše soukromí"
       ],
       "High-speed VPN on ${ n } device": [
         "Vysokorychlostní VPN na ${ n } zařízení",
@@ -7092,11 +7143,14 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO integrace (již brzy)"
+      "SSO integration": [
+        "Integrace SSO"
       ],
       "Start protecting your organization": [
         "Začněte chránit svou organizaci"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Začněte se chránit online ve 2 jednoduchých krocích"
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
@@ -7175,6 +7229,12 @@
       ],
       "Up to 10 Gbps": [
         "Až 10 Gb/s"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Používejte na ${ n } zařízení",
+        "Používejte až na ${ n } zařízeních najednou",
+        "Používejte až na ${ n } zařízeních najednou",
+        "Používejte až na ${ n } zařízeních najednou"
       ],
       "User credential management": [
         "Správa uživatelů"
@@ -7725,8 +7785,8 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Deaktivací této funkce se zruší možnost přijímat upozornění v aplikacích ${ BRAND_NAME }."
       ],
-      "During your first month": [
-        "Během prvního měsíce"
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Během prvního měsíce používání produktu ${ BRAND_NAME }"
       ],
       "Email subscriptions": [
         "E-mailové odběry"
@@ -8023,9 +8083,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } svou e-mailovou adresu ${ email } pro nastavení identity organizace."
-      ],
       "Current organization identity": [
         "Stávající identita organizace"
       ],
@@ -8041,8 +8098,8 @@
       "Organization identity updated": [
         "Identita organizace aktualizována"
       ],
-      "Verify": [
-        "Ověřte"
+      "Verify your email address ${ email } to set organization identity.": [
+        "Ověřte svou e-mailovou adresu ${ email } pro nastavení identity organizace."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9532,7 +9589,7 @@
         "Uživatel ${ user } má nyní účet s jednotným přihlášením. Jeho předchozí heslo se stalo záložním heslem."
       ],
       "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Pro přístup ke službám ${ BRAND_NAME } se budou muset znovu přihlásit u vašeho poskytovatele identit. Aby se tento uživatel mohl přihlásit, ujistěte se, že existuje ve vašem poskytovateli identit."
+        "Pro přístup ke službám ${ BRAND_NAME } se budou muset znovu přihlásit pomocí vašeho poskytovatele identit. Aby se tento uživatel mohl přihlásit, ujistěte se, že existuje ve vašem poskytovateli identit."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tím se uživatel odhlásí z ostatních zařízení a bude muset vytvořit nové záložní heslo."
@@ -9853,6 +9910,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -10153,47 +10251,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -10600,6 +10657,9 @@
       "Add address": [
         "Přidat adresu"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Přidání zemí do \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Přidat kreditní/debetní kartu"
       ],
@@ -10635,6 +10695,9 @@
       ],
       "Add users": [
         "Přidat uživatele"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Přidání uživatelů do \"${ policyName }\""
       ],
       "Allocate storage": [
         "Přiřadit úložiště"
@@ -10758,6 +10821,9 @@
       ],
       "Create multiple user accounts": [
         "Vytvořit více uživatelských účtů"
+      ],
+      "Create new policy": [
+        "Vytvořit novou zásadu"
       ],
       "Create organization key": [
         "Vytvořit klíč organizace"
@@ -10953,6 +11019,9 @@
       ],
       "Groups": [
         "Skupiny"
+      ],
+      "Help center": [
+        "Centrum podpory"
       ],
       "How to choose a good logo": [
         "Jak vybrat správné logo"
@@ -11321,29 +11390,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu a s tímto uživatelem nebudou sdíleny žádné šifrované zdroje"
-      ],
-      "Group membership paused": [
-        "Členství ve skupině pozastaveno"
-      ],
-      "Sending member invitation": [
-        "Odesílání členské pozvánky"
-      ],
-      "User declined invitation": [
-        "Uživatel odmítl pozvání"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Čekání na přijetí pozvánky uživatelem"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správci mohou spravovat uživatelské účty a udělovat práva správce ostatním uživatelům. Tarif organizace může upravovat pouze hlavní správce."
@@ -11428,6 +11474,29 @@
       ],
       "Your DKIM signing is working.": [
         "Váš DKIM podpis funguje."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu a s tímto uživatelem nebudou sdíleny žádné šifrované zdroje"
+      ],
+      "Group membership paused": [
+        "Členství ve skupině pozastaveno"
+      ],
+      "Sending member invitation": [
+        "Odesílání členské pozvánky"
+      ],
+      "User declined invitation": [
+        "Uživatel odmítl pozvání"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Čekání na přijetí pozvánky uživatelem"
       ]
     },
     "Tor out of date": {
@@ -11574,6 +11643,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Toto zruší správcovské oprávnění ke správě účtu tohoto uživatele."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Aby získali práva správce, budou muset při příštím přihlášení do ${ BRAND_NAME } nastavit záložní heslo."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Chcete-li pokračovat, musíte požádat uživatele o povolení přístupu k jejich datům nebo resetovat jejich heslo."
@@ -11840,6 +11912,9 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Váš balíček ${ a } a ${ b }"
+      ],
+      "Your ${ selected } plan": [
+        "Váš tarif ${ selected }"
       ],
       "Your plan includes:": [
         "Váš tarif zahrnuje:"

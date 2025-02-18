@@ -478,9 +478,6 @@
       "Refer a friend": [
         "Συστήστε ένα φίλο"
       ],
-      "Refresh data": [
-        "Ανανέωση δεδομένων"
-      ],
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "Αποστολή υπενθύμισης"
+      ],
+      "Set as album cover": [
+        "Ορισμός ως εξώφυλλο άλμπουμ"
       ],
       "Set catch-all": [
         "Ορίστε catch-all"
@@ -2509,8 +2509,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Μπορείτε επίσης να ελέγξετε την ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Μηνύματα και σύνθεση > Σύντομος τομέας (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Ταυτότητα και διευθύνσεις > Σύντομος τομέας (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Έχει κατανεμηθεί όλος ο αποθηκευτικός χώρος. Παρακαλούμε μειώστε την κατανομή του σε άλλους χρήστες."
@@ -3412,6 +3412,12 @@
       "Best deal": [
         "Η καλύτερη προσφορά"
       ],
+      "Checkout": [
+        "Ολοκλήρωση αγορών"
+      ],
+      "Create your account": [
+        "Δημιουργήστε τον λογαριασμό σας."
+      ],
       "Device": [
         "Συσκευή"
       ],
@@ -3753,9 +3759,6 @@
       ],
       "Allocated": [
         "Κατανεμημένος"
-      ],
-      "Allow users to connect to secure shared servers based on defined policies.": [
-        "Επιτρέψτε στους χρήστες να συνδέονται σε ασφαλείς κοινόχρηστους διακομιστές βάσει καθορισμένων πολιτικών."
       ],
       "Already allocated": [
         "Ήδη κατανεμημένος"
@@ -4758,6 +4761,10 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
+      ],
+      "Step ${ step }": [
+        "Βήμα ${ step }",
+        "Βήματα ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
@@ -6831,6 +6838,9 @@
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
       ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Ελβετικό VPN υψηλής ταχύτητας που προστατεύει την ιδιωτικότητά σας."
+      ],
       "High-speed VPN on ${ n } device": [
         "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
         "VPN υψηλής ταχύτητας σε ${ n } συσκευές"
@@ -6950,11 +6960,14 @@
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Ενσωμάτωση SSO (σύντομα διαθέσιμο)"
+      "SSO integration": [
+        "Ενσωμάτωση SSO"
       ],
       "Start protecting your organization": [
         "Ξεκινήστε να προστατεύετε τον οργανισμό σας"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Αρχίστε να προστατεύετε τον εαυτό σας online σε 2 εύκολα βήματα"
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
@@ -7573,9 +7586,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Η απενεργοποίηση αυτού θα καταργήσει τη δυνατότητα λήψης ειδοποιήσεων σε ${ BRAND_NAME } εφαρμογές"
       ],
-      "During your first month": [
-        "Κατά τη διάρκεια του πρώτου μήνα σας"
-      ],
       "Email subscriptions": [
         "Συνδρομές Email"
       ],
@@ -7844,9 +7854,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας ${ email } για να ορίσετε την ταυτότητα του οργανισμού."
-      ],
       "Current organization identity": [
         "Ταυτότητα τρέχον οργανισμού"
       ],
@@ -7862,8 +7869,8 @@
       "Organization identity updated": [
         "Η ταυτότητα του οργανισμού ενημερώθηκε"
       ],
-      "Verify": [
-        "Επαλήθευση"
+      "Verify your email address ${ email } to set organization identity.": [
+        "Επιβεβαιώστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας ${ email } για να ορίσετε την ταυτότητα του οργανισμού."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9582,6 +9589,47 @@
         "Για ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium χαρακτηριστικά"
@@ -9870,47 +9918,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερα premium χαρακτηριστικά"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -10669,6 +10676,9 @@
       "Groups": [
         "Ομάδες"
       ],
+      "Help center": [
+        "Κέντρο βοήθειας"
+      ],
       "How to choose a good logo": [
         "Πώς να επιλέξετε ένα καλό λογότυπο"
       ],
@@ -11034,29 +11044,6 @@
         "Σήμερα"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα και δε θα γίνει κοινή χρήση κρυπτογραφημένων πόρων με αυτόν τον χρήστη."
-      ],
-      "Group membership paused": [
-        "Η συμμετοχή στην ομάδα τέθηκε σε παύση"
-      ],
-      "Sending member invitation": [
-        "Αποστολή πρόσκλησης μέλους"
-      ],
-      "User declined invitation": [
-        "Ο χρήστης απέρριψε την πρόσκληση"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
@@ -11141,6 +11128,29 @@
       ],
       "Your DKIM signing is working.": [
         "Η υπογραφή σας DKIM λειτουργεί."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα και δε θα γίνει κοινή χρήση κρυπτογραφημένων πόρων με αυτόν τον χρήστη."
+      ],
+      "Group membership paused": [
+        "Η συμμετοχή στην ομάδα τέθηκε σε παύση"
+      ],
+      "Sending member invitation": [
+        "Αποστολή πρόσκλησης μέλους"
+      ],
+      "User declined invitation": [
+        "Ο χρήστης απέρριψε την πρόσκληση"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
       ]
     },
     "Tor out of date": {
@@ -11285,6 +11295,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Αυτό θα ανακαλέσει την άδεια διαχειριστή για τη διαχείριση του λογαριασμού αυτού του χρήστη."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Για να αποκτήσουν δικαιώματα διαχειριστή, θα πρέπει να ορίσουν έναν εφεδρικό κωδικό πρόσβασης την επόμενη φορά που θα συνδεθούν στο ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Για να συνεχίσετε, θα πρέπει να ζητήσετε την άδεια του χρήστη για πρόσβαση στα δεδομένα του ή επαναφορά του κωδικού πρόσβασής του."
@@ -11531,6 +11544,9 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Το ${ a } και ${ b } πακέτο σας"
+      ],
+      "Your ${ selected } plan": [
+        "Το ${ selected } πλάνο σας"
       ],
       "Your plan includes:": [
         "Το πλάνο σας περιλαμβάνει:"

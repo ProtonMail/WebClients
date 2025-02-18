@@ -475,9 +475,6 @@
       "Refer a friend": [
         "推薦好友"
       ],
-      "Refresh data": [
-        "重新整理資料"
-      ],
       "Refresh status": [
         "重新整理狀態"
       ],
@@ -2450,9 +2447,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「撰寫郵件」>「短網域名稱 (pm.me)」裡面去設定。"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
       ],
@@ -3311,6 +3305,9 @@
       ],
       "Best deal": [
         "至划算"
+      ],
+      "Checkout": [
+        "結帳"
       ],
       "Device": [
         "裝置"
@@ -4577,6 +4574,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "開始共享此內容和使用於線上服務。"
+      ],
+      "Step ${ step }": [
+        "步驟 ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "儲存空間已分配給這個組織中的其他使用者"
@@ -6475,6 +6475,9 @@
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "針對影音串流優化的獨立伺服器"
+      ],
       "Desktop app": [
         "桌面應用程式"
       ],
@@ -6643,8 +6646,8 @@
       "Split tunneling (Android and Windows)": [
         "分隔通道(Android 與 Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "單一登入整合 (即將到來)"
+      "SSO integration": [
+        "SSO 整合"
       ],
       "Start protecting your organization": [
         "開始保護您的組織"
@@ -6717,6 +6720,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
+      ],
+      "Use on up to ${ n } device at once": [
+        "最多同一時間於 ${ n } 裝置"
       ],
       "User credential management": [
         "使用者憑證管理"
@@ -6874,6 +6880,14 @@
       ],
       "terms and conditions": [
         "條款及細則"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceLine } 月的價格自動續約。您可以於任何時候取消訂閱。"
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "只要${ priceLine }解鎖全部的${ BRAND_NAME }頂級產品及功能。隨時取消。"
       ]
     },
     "new_plans: Title": {
@@ -7407,9 +7421,6 @@
       ],
       "Organization identity updated": [
         "組織身分已更新"
-      ],
-      "Verify": [
-        "驗證"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -8868,6 +8879,47 @@
         "${ totalPrice } 版"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -9126,47 +9178,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -10262,26 +10273,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "外部連結 - 關閉此群組的端對端電子郵件加密"
-      ],
-      "Group membership paused": [
-        "已暫停群組會員"
-      ],
-      "Sending member invitation": [
-        "正在傳送成員邀請函"
-      ],
-      "User declined invitation": [
-        "使用者拒絕邀請"
-      ],
-      "Waiting for user to accept the invitation": [
-        "正在等待使用者接受邀請"
-      ]
-    },
     "Tooltip": {
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "允許無痕添加會議連結至您的行事曆邀請函。"
@@ -10351,6 +10342,26 @@
       ],
       "Your DKIM signing is working.": [
         "您的 DKIM 簽章運作正常。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "外部連結 - 關閉此群組的端對端電子郵件加密"
+      ],
+      "Group membership paused": [
+        "已暫停群組會員"
+      ],
+      "Sending member invitation": [
+        "正在傳送成員邀請函"
+      ],
+      "User declined invitation": [
+        "使用者拒絕邀請"
+      ],
+      "Waiting for user to accept the invitation": [
+        "正在等待使用者接受邀請"
       ]
     },
     "Tor out of date": {

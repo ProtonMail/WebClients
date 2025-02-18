@@ -238,6 +238,9 @@
       "Edit": [
         "Redigér"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit billing cycle": [
         "Redigér betalingscyklus"
       ],
@@ -252,6 +255,9 @@
       ],
       "Edit group": [
         "Rediger gruppe"
+      ],
+      "Edit invoice note": [
+        "Rediger fakturanote"
       ],
       "Edit name": [
         "Rediger navn"
@@ -2361,6 +2367,14 @@
         "Prioriteret support"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun blive vist på fakturaer, der udstedes i fremtiden, og vil ikke påvirke eksisterende fakturaer."
+      ],
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun ændre den faktura, du har valgt, og ikke dine fremtidige fakturadetaljer."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } tilføjet"
@@ -2403,9 +2417,6 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
@@ -3690,6 +3701,10 @@
       "Country code": [
         "Landekode"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Opret en sikker sky til ${ value } medlem",
+        "Opret en sikker sky til ${ value } medlemmer"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
       ],
@@ -4476,6 +4491,10 @@
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
       ],
+      "Step ${ step }": [
+        "Trin ${ step }",
+        "Trin ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
       ],
@@ -5081,6 +5100,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kan tilføje en betalingsmetode for at få dit abonnement fornyet automatisk. Andre betalingsmetoder er også tilgængelige."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Indtast en note til fakturaerne. Disse oplysninger vil blive tilføjet til både personlige og organisatoriske fakturaer. De vises kun på fakturaer, der udstedes i fremtiden."
       ]
     },
     "Info subscription": {
@@ -6520,9 +6544,6 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
-      ],
       "Start protecting your organization": [
         "Begynd at beskytte din organisation"
       ],
@@ -6593,6 +6614,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Brug op til ${ n } enhed samtidig",
+        "Brug op til ${ n } enheder samtidig"
       ],
       "User credential management": [
         "Administration af brugerlegitimationsoplysninger"
@@ -7110,9 +7135,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Hvis du deaktiverer dette, fjerner du muligheden for at modtage notifikationer i ${ BRAND_NAME } applikationer"
       ],
-      "During your first month": [
-        "I løbet af din første måned"
-      ],
       "Email subscriptions": [
         "E-mailabonnementer"
       ],
@@ -7339,9 +7361,6 @@
       ],
       "Organization identity updated": [
         "Organisationens identitet opdateret"
-      ],
-      "Verify": [
-        "Bekræft"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -7634,6 +7653,9 @@
       "Choose display name": [
         "Vælg visningsnavn"
       ],
+      "Company name": [
+        "Firmanavn"
+      ],
       "Confirm": [
         "Bekræft"
       ],
@@ -7705,6 +7727,9 @@
       ],
       "Start date": [
         "Startdato"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ],
       "yourdomain.com": [
         "ditdomæne.com"
@@ -8833,6 +8858,47 @@
         "Til ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -9108,47 +9174,6 @@
         "Dit eget korte @pm.me e-mail-alias"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -9197,6 +9222,9 @@
       ],
       "Administrator privileges restored": [
         "Administratorrettigheder gendannet"
+      ],
+      "Billing details updated": [
+        "Faktureringsoplysninger opdateret"
       ],
       "Catch-all address updated": [
         "Catch-all-adresse opdateret"
@@ -9743,6 +9771,9 @@
       "Downloads": [
         "Downloads"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit credit/debit card": [
         "Redigér kredit/debetkort"
       ],
@@ -9757,6 +9788,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Redigér gateway ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Rediger fakturanote"
       ],
       "Edit servers": [
         "Redigér servere"
@@ -10184,23 +10218,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
-      ],
-      "Group membership paused": [
-        "Gruppemedlemskab sat på pause"
-      ],
-      "Sending member invitation": [
-        "Sender medlemsinvitation"
-      ],
-      "User declined invitation": [
-        "Bruger afviste invitation"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Venter på, at brugeren accepterer invitationen"
-      ]
-    },
     "Tooltip": {
       "An approximate location of the IP address": [
         "En omtrentlig placering af IP-adressen"
@@ -10270,6 +10287,23 @@
       ],
       "Your DKIM signing is working.": [
         "Din DKIM-signering fungerer."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ],
+      "Group membership paused": [
+        "Gruppemedlemskab sat på pause"
+      ],
+      "Sending member invitation": [
+        "Sender medlemsinvitation"
+      ],
+      "User declined invitation": [
+        "Bruger afviste invitation"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Venter på, at brugeren accepterer invitationen"
       ]
     },
     "Tor out of date": {
@@ -10541,6 +10575,10 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du vil blive faktureret ${ renewPrice } hver 12. måned."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
         "Dit abonnement vil automatisk forny i ${ cycle } måneder."
@@ -10619,6 +10657,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadresse",
+        "${ n } ${ BRAND_NAME } e-mailadresser"
+      ],
       "${ n } account per wallet": [
         "${ n } konto pr. wallet",
         "${ n } konti pr. wallet"
