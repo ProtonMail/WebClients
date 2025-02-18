@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -20,9 +20,9 @@ import { useAliasMailboxes } from './AliasMailboxesProvider';
 export const FORM_ID = 'custom-address-add';
 
 export const AliasMailboxCreateModal: FC = () => {
-    const { onCreate, setAction } = useAliasMailboxes();
-    const create = useRequest(createMailbox, { onSuccess: onCreate });
+    const { setAction, onMailboxCreated } = useAliasMailboxes();
     const onClose = () => setAction(null);
+    const create = useRequest(createMailbox, { onSuccess: onMailboxCreated });
 
     const form = useFormik<EmailFormValues>({
         initialValues: { email: '' },
