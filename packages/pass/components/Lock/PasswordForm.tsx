@@ -5,6 +5,7 @@ import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { Button } from '@proton/atoms';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
+import { useLoadAutofill } from '@proton/pass/hooks/useLoadAutofill';
 import { type PasswordCredentials } from '@proton/pass/lib/auth/password';
 
 type Props = {
@@ -25,6 +26,8 @@ export const PasswordForm: FC<Props> = ({ id, disabled, loading, submitLabel, on
         onSubmit,
     });
 
+    useLoadAutofill();
+
     return (
         <FormikProvider value={form}>
             <Form id={id}>
@@ -38,6 +41,8 @@ export const PasswordForm: FC<Props> = ({ id, disabled, loading, submitLabel, on
                         inputClassName="text-rg rounded-none"
                         disabled={disabled || loading}
                         autoFocus={!disabled}
+                        autoComplete="current-password"
+                        required
                         {...(disabled ? { error: undefined } : {})}
                     />
                 </div>
