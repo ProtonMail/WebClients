@@ -67,4 +67,57 @@ wSeOoh9ocbsA/joCCpHxxH061g/tjEhP76tWJX17ShZ9wT7KZ6aPejoM
             await getMatchingSigningKey({ armoredSignature: signatureFromPrimaryKey, keys: [key1, key2] })
         ).to.deep.equal(key2);
     });
+
+    it('getMatchingSigningKey - it prefers v6 keys when preferV6Key is set', async () => {
+        const v4KeyArmored = `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xVgEYYqcWBYJKwYBBAHaRw8BAQdAesbhqiOxbLV+P9Dt8LV+Q8hRBLbwsSf6
+emoCS30uQpEAAQDFgBruRj6Zqb0OULkaaNz+QK4+gvc006UtTgz2wdrP8xFv
+zRE8ZW1haWwyQHRlc3QuY29tPsKMBBAWCgAdBQJhipxYBAsJBwgDFQgKBBYA
+AgECGQECGwMCHgEAIQkQJCJW2HYCeYIWIQTdZGjv9WwTyL+azOUkIlbYdgJ5
+gm9nAQDY//xzc2hy6Efz8NqDJeLg1lh2sZkKcMXP3L+CJbhWJQEAuI6UDakE
++XVcDsBS+CIi3qg74r/80Ysb7tmRC06znwA=
+=I0d7
+-----END PGP PRIVATE KEY BLOCK-----`;
+
+        const v6KeyArmored = `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xUsGZ69lHRsAAAAgVKlx8eYAIOBVBVpxPNqsLnus1dGQ7jPHBrF2H24CTy4A
+574mWSzNUGD8wbHpEulvMiXlp65c31+/pGmTN0F9olTCrQYfGwoAAAA+BYJn
+r2UdAwsJBwUVCggODAQWAAIBApsDAh4BIqEGG/XMiDtnfzWcO7DzDGBjPqzI
+Wo3M5+R/Mc1MMXo6BhMAAAAACkMgAdsvZQOpYhY0HziOIYxdsJEdXayCBPZj
+AWj0ogZ9Y4lgiPZBloC2Fi8xT55ojSot+cbDHxZGGLdcPo+cyidAk9vgc2ds
+uJswWsaEaRyQVZ4NVEkXjLi4ennFLlH7RBkDzT1za2wtdGVzdEBoYXdraW5n
+LnByb3Rvbi5ibGFjayA8c2tsLXRlc3RAaGF3a2luZy5wcm90b24uYmxhY2s+
+wpsGExsKAAAALAWCZ69lHQIZASKhBhv1zIg7Z381nDuw8wxgYz6syFqNzOfk
+fzHNTDF6OgYTAAAAAHOdINNMw/Tct0I36gNQj+bt6xYMbrtF7eboTkYe98fY
+VCOY7JzmrBaMNnvKPjoERvLbFOSFRlruA2SLAOyl07WjbG9dVKqLWYv/f37L
+FFMDnEaL6C2tL7KSL5Ptz9MflW7kAMdLBmevZR0ZAAAAIPB/B5bC0WUsrIc1
+IequM/MqcH//zOngora2+qzMp0hyAMGGoBR4IMJZrfUbbNL/rF3ysTHVAKOp
+LyGKcuBsatCUwpsGGBsKAAAALAWCZ69lHQKbDCKhBhv1zIg7Z381nDuw8wxg
+Yz6syFqNzOfkfzHNTDF6OgYTAAAAABMtIOoLxS/VsxYF/D5UDAXKa7sIzkyb
+B8rlCKMa0LAwjScEdLOntdgoYTrLJknRI+Y5byS70CAWAGoFYHIDQGevwX6G
+4WSIscmKhb+4m9gNR8CkzBw5Dt6X0nC7mZbkbLkHBA==
+-----END PGP PRIVATE KEY BLOCK-----`;
+
+        const v4Key = await CryptoProxy.importPrivateKey({ armoredKey: v4KeyArmored, passphrase: null });
+        const v6Key = await CryptoProxy.importPrivateKey({ armoredKey: v6KeyArmored, passphrase: null });
+
+        const signatureFromBothKeys = await CryptoProxy.signMessage({
+            textData: 'a message',
+            signingKeys: [v4Key, v6Key],
+            detached: true,
+        });
+
+        expect(
+            await getMatchingSigningKey({ armoredSignature: signatureFromBothKeys, keys: [v4Key, v6Key] })
+        ).to.deep.equal(v4Key);
+        expect(
+            await getMatchingSigningKey({
+                armoredSignature: signatureFromBothKeys,
+                keys: [v4Key, v6Key],
+                preferV6Key: true,
+            })
+        ).to.deep.equal(v6Key);
+    });
 });

@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import { useGetUserSettings } from '@proton/account';
 import { useApi, useGetVerificationPreferences } from '@proton/components';
 import type { PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
 import { getMatchingSigningKey } from '@proton/crypto';
@@ -26,6 +27,7 @@ export const useVerifyMessage = (localID: string) => {
     const getVerificationPreferences = useGetVerificationPreferences();
     const getMessageKeys = useGetMessageKeys();
     const contactsMap = useContactsMap();
+    const getUserSettings = useGetUserSettings();
 
     const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
@@ -103,6 +105,7 @@ export const useVerifyMessage = (localID: string) => {
                         ? await getMatchingSigningKey({
                               binarySignature: verification.signature,
                               keys: allSenderPublicKeys,
+                              preferV6Key: (await getUserSettings()).Flags.SupportPgpV6Keys === 1,
                           })
                         : undefined;
             } catch (error: any) {
