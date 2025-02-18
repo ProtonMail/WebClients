@@ -800,10 +800,10 @@
         "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ${ BRAND_NAME } parolasını yazın"
       ],
       "Authentication failed. Confirm your backup password in order to proceed with the export": [
-        "Kimlik doğrulama başarısız oldu. Dışa aktarma işlemine devam etmek için yedekleme parolanızı onaylayın"
+        "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için yedek parolanızı yazın"
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
-        "Kimlik doğrulama başarısız oldu. Dışa aktarma işlemine devam etmek için ek parolanızı onaylayın"
+        "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ek parolanızı yazın"
       ],
       "Biometric authentication failed": [
         "Biyometrik doğrulama yapılamadı"
@@ -3222,8 +3222,8 @@
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
-      "SSO integration (coming soon)": [
-        "Tek oturum açma bütünleştirmesi (yakında)"
+      "SSO integration": [
+        "Tek oturum açma bütünleştirmesi"
       ]
     },
     "Notification": {
@@ -3373,11 +3373,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Bilgileriniz en az bir veri sızıntısı olayında görüldü. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Kapat"
       ]
     },
     "sso": {
@@ -4078,7 +4073,7 @@
         "${ BRAND_NAME } parolası gereklidir"
       ],
       "2 consecutive dots are not allowed": [
-        "2 ardışık noktaya izin verilmez"
+        "Arka arka 2 nokta yazılamaz"
       ],
       "A description of the problem is required": [
         "Sorunun açıklamasının yazılması zorunludur"
@@ -4110,10 +4105,10 @@
         "En az bir e-posta adresi gereklidir"
       ],
       "Cannot contain a dot at the beginning": [
-        "Başlangıçta nokta içermez"
+        "Başlangıçta nokta bulunamaz"
       ],
       "Cannot contain a dot at the end": [
-        "Sonda nokta içermez"
+        "Sonda nokta bulunamaz"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Bu takma adın e-posta kutuları şu anda alınamadı"
@@ -4231,7 +4226,7 @@
         "Eşitleme tamamlandıktan sonra, ${ PASS_SHORT_APP_NAME } içindeki takma adları silmek, bunların SimpleLogin üzerinden de silinmesine neden olur."
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Yalnızca alfanümerik küçük harf karakterlerine, noktalara, tirelere ve alt çizgilere izin verilir"
+        "Yalnızca küçük harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
       ],
       "Passphrase is required": [
         "Parola ifadesinin yazılması zorunludur"
@@ -4334,6 +4329,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Bu kasaya artık erişemeyeceksiniz. Yeniden katılabilmek için yeni bir davet almanız gerekecek."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Kuruluşunuz tekil ögelerin paylaşılmasına izin vermiyor"
       ],
       "Your session could not be authorized.": [
         "Oturumunuza yetki verilemedi."
