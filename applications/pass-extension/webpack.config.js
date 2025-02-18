@@ -100,7 +100,7 @@ module.exports = {
         /* Passkey handling not available in Safari */
         ...(BUILD_TARGET !== 'safari' ? { webauthn: './src/app/content/webauthn.ts' } : {}),
         /* FF account communication fallback */
-        ...(BUILD_TARGET === 'firefox' ? { account: disableBrowserTrap('./src/app/content/firefox/index.ts') } : {}),
+        ...(BUILD_TARGET === 'firefox' ? { external: disableBrowserTrap('./src/app/content/firefox/index.ts') } : {}),
         /* Safari fork fallback */
         ...(BUILD_TARGET === 'safari' ? { fork: disableBrowserTrap('./src/app/content/safari/index.ts') } : {}),
     },
