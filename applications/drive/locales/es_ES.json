@@ -78,6 +78,9 @@
       "Add phone number": [
         "Añadir número telefónico"
       ],
+      "Add to album": [
+        "Añadir al álbum"
+      ],
       "Add to group": [
         "Añadir al grupo"
       ],
@@ -549,6 +552,9 @@
       "New": [
         "Nuevo"
       ],
+      "New album": [
+        "Nuevo álbum"
+      ],
       "New document": [
         "Nuevo documento"
       ],
@@ -755,6 +761,9 @@
       ],
       "Select country": [
         "Seleccionar un país"
+      ],
+      "Set as album cover": [
+        "Establecer como portada de álbum"
       ],
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
@@ -1340,6 +1349,12 @@
       ],
       "Take a tour": [
         "Hacer el recorrido"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Añadir ${ photos.length } foto a",
+        "Añadir ${ photos.length } fotos a"
       ]
     },
     "Cancellation reminder": {
@@ -2421,11 +2436,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2507,6 +2517,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2699,9 +2714,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Configuración > Mensajes y redacción > Dominio corto (pm.me)."
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
@@ -4205,6 +4217,9 @@
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
+      "All albums": [
+        "Todos los álbumes"
+      ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
       ],
@@ -4908,6 +4923,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "El formato PGP/MIME automáticamente envía el mensaje usando el modo de composición actual."
       ],
+      "Photo is set as album cover": [
+        "Se ha establecido la foto como portada de álbum."
+      ],
       "Photos have been successfully recovered.": [
         "Las fotos han sido recuperadas."
       ],
@@ -5017,6 +5035,9 @@
       ],
       "Ready to add some photos?": [
         "¿Listo para añadir algunas imágenes?"
+      ],
+      "Recent": [
+        "Recientes"
       ],
       "recommended browser": [
         "navegador recomendado"
@@ -7306,8 +7327,8 @@
       "Split tunneling (Android and Windows)": [
         "Túnel dividido (Android y Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integración SSO (próximamente)"
+      "SSO integration": [
+        "Integración SSO"
       ],
       "Strict no-logs policy": [
         "Política estricta de cero registros"
@@ -10321,6 +10342,9 @@
       "Groups": [
         "Grupos"
       ],
+      "Help center": [
+        "Centro de ayuda"
+      ],
       "High security for your account": [
         "Alta seguridad para tu cuenta"
       ],
@@ -10682,11 +10706,6 @@
         "Hoy"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Añade este archivo compartido a tu ${ DRIVE_APP_NAME } para un acceso fácil después."
@@ -10768,6 +10787,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Valentine_2025": {

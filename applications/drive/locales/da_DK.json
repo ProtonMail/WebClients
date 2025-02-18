@@ -78,6 +78,9 @@
       "Add phone number": [
         "Tilføj telefonnummer"
       ],
+      "Add to album": [
+        "Tilføj til album"
+      ],
       "Add to group": [
         "Føj til gruppe"
       ],
@@ -225,6 +228,9 @@
       ],
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
+      ],
+      "Create album": [
+        "Opret album"
       ],
       "Create and copy alias": [
         "Opret og kopier et alias"
@@ -420,6 +426,9 @@
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
       ],
+      "Hide download options": [
+        "Skjul download-muligheder"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med sporingsbeskyttelse."
       ],
@@ -531,6 +540,9 @@
       "New": [
         "Ny"
       ],
+      "New album": [
+        "Nyt album"
+      ],
       "New document": [
         "Nyt dokument"
       ],
@@ -571,10 +583,10 @@
         "Pause alle"
       ],
       "Pause download": [
-        "Sæt download på pause"
+        "Pause download"
       ],
       "Pause upload": [
-        "Sæt upload på pause"
+        "Pause upload"
       ],
       "Pay": [
         "Betal"
@@ -762,6 +774,9 @@
       "Show advanced PGP settings": [
         "Vis avancerede PGP-indstillinger"
       ],
+      "Show more download options": [
+        "Vis flere download-muligheder"
+      ],
       "Show navigation bar": [
         "Vis navigationsbjælke"
       ],
@@ -867,6 +882,9 @@
       "Upload file": [
         "Upload fil"
       ],
+      "Upload files": [
+        "Upload filer"
+      ],
       "Upload folder": [
         "Upload mappe"
       ],
@@ -924,6 +942,14 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ]
+    },
+    "Actions": {
+      "Create album": [
+        "Opret album"
+      ],
+      "Upload": [
+        "Upload"
       ]
     },
     "Actions message": {
@@ -1275,6 +1301,12 @@
       ],
       "Continue your subscription": [
         "Fortsæt dit abonnement"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Tilføj ${ photos.length } foto til",
+        "Tilføj ${ photos.length } fotos til"
       ]
     },
     "Cancellation reminder": {
@@ -2353,11 +2385,6 @@
         "Forfalden faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2439,6 +2466,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2631,9 +2663,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
@@ -4090,6 +4119,9 @@
         "Alle (${ totalFoldersCount } etiket)",
         "Alle (${ totalFoldersCount } etiketter)"
       ],
+      "All albums": [
+        "Alle albummer"
+      ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
       ],
@@ -4257,6 +4289,10 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Opret en sikker sky til ${ value } medlem",
+        "Opret en sikker sky til ${ value } medlemmer"
+      ],
       "Create in": [
         "Opret i"
       ],
@@ -4350,6 +4386,9 @@
       ],
       "Drop files here": [
         "Slip filer her"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Slip filer her for at uploade, eller klik på upload-knappen"
       ],
       "Drop to import": [
         "Slip for at importere"
@@ -4480,6 +4519,9 @@
       ],
       "from the version history?": [
         "fra versionshistorikken"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Hent appen til at sikkerhedskopiere fotos fra din telefon, eller upload dem her."
       ],
       "Get the app to backup photos from your phone.": [
         "Hent appen for at sikkerhedskopiere fotos fra din telefon."
@@ -4696,6 +4738,9 @@
       "No": [
         "Nej"
       ],
+      "No Albums": [
+        "Ingen albummer"
+      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
       ],
@@ -4779,6 +4824,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sender automatisk beskeden ved hjælp af den aktuelle komponisttilstand."
+      ],
+      "Photo is set as album cover": [
+        "Fotoet er indstillet som albumcover"
       ],
       "Photos have been successfully recovered.": [
         "Fotos er blevet gendannet."
@@ -4889,6 +4937,9 @@
       ],
       "Ready to add some photos?": [
         "Klar til at tilføje nogle fotos?"
+      ],
+      "Recent": [
+        "Seneste"
       ],
       "recommended browser": [
         "anbefalet browser"
@@ -5043,6 +5094,9 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
+      "The albums you create are shown here": [
+        "De albummer, du opretter, vises her"
+      ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Den digitale signatur er delvist verificeret. Denne fil blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
       ],
@@ -5111,6 +5165,15 @@
       ],
       "This month": [
         "Denne måned"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Dette vil permanent slette filen, du har uploadet."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Dette vil permanent slette mappen, du har uploadet."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Dette vil permanent slette de valgte elementer, du har uploadet."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Dette vil fjerne den synkroniserede enhed ${ deviceName } fra ${ DRIVE_APP_NAME } og alle dens data fra ${ DRIVE_APP_NAME }. Mapper, du har tilføjet til Mine computere, stopper med at synkronisere."
@@ -5950,6 +6013,9 @@
       ],
       "Move to Inbox": [
         "Flyt til Indbakke"
+      ],
+      "My Albums": [
+        "Mit albummer"
       ],
       "Name": [
         "Navn"
@@ -7064,9 +7130,6 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integration (kommer snart)"
-      ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
       ],
@@ -7134,6 +7197,10 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Brug op til ${ n } enhed samtidig",
+        "Brug op til ${ n } enheder samtidig"
       ],
       "User credential management": [
         "Administration af brugerlegitimationsoplysninger"
@@ -7767,6 +7834,10 @@
       ],
       "Share invitation declined": [
         "Afvist invitation til at dele"
+      ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Beklager, vi kunne ikke slette mappen, fordi den ikke er tom.",
+        "Beklager, vi kunne ikke slette mapperne, fordi de ikke er tomme."
       ],
       "Stopping the sharing of this item has failed": [
         "Det lykkedes ikke at stoppe delingen af dette element"
@@ -9567,6 +9638,35 @@
         "vCard-felt"
       ]
     },
+    "Tag": {
+      "Bursts": [
+        "Serier"
+      ],
+      "Favorites": [
+        "Favoritter"
+      ],
+      "Live Photos": [
+        "Live fotos"
+      ],
+      "Panoramas": [
+        "Panoramaer"
+      ],
+      "Portraits": [
+        "Portrætter"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Skærmbilleder"
+      ],
+      "Selfies": [
+        "Selfies"
+      ],
+      "Videos": [
+        "Videoer"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }. time",
@@ -9642,6 +9742,12 @@
       ],
       "Addresses": [
         "Adresser"
+      ],
+      "Album": [
+        "Album"
+      ],
+      "Albums": [
+        "Albummer"
       ],
       "All": [
         "Alle"
@@ -10254,11 +10360,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tilføj denne delte fil på din ${ DRIVE_APP_NAME } til nem adgang senere."
@@ -10342,6 +10443,11 @@
         "Vi har sendt dem en invitation til at tilgå emnet."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Adgangskode skal indeholde mindst ${ MIN_PASSWORD_LENGTH } tegn",
@@ -10391,6 +10497,10 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Du vil blive faktureret ${ renewPrice } hver 12. måned."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
+        "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
         "Dit abonnement vil automatisk forny i ${ cycle } måneder."
@@ -10410,6 +10520,10 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadresse",
+        "${ n } ${ BRAND_NAME } e-mailadresser"
+      ],
       "${ n } account per wallet": [
         "${ n } konto pr. wallet",
         "${ n } konti pr. wallet"

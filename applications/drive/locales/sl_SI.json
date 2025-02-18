@@ -1275,6 +1275,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zapri"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
@@ -2362,11 +2365,6 @@
         "Zapadel račun"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
@@ -2421,6 +2419,11 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2478,6 +2481,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Pomagajte nam izboljšati"
+      ]
+    },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Odstrani popust"
       ]
     },
     "drive:action": {
@@ -2591,9 +2599,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lahko tudi preverite stanje na ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Sporočila in sestavljanje > Kratka domena (pm.me)"
       ],
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
@@ -4414,6 +4419,9 @@
       ],
       "Empty folder": [
         "Prazna mapa"
+      ],
+      "Enabling auto-deletion…": [
+        "Omogočanje samodejnega brisanja …"
       ],
       "Enabling drive search": [
         "Omogočanje iskanja po disku"
@@ -6824,6 +6832,9 @@
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
       ],
+      "200 GB of storage": [
+        "200 GB prostora za shranjevanje"
+      ],
       "24/7 account management support": [
         "24/7 podpora za upravljanje računa"
       ],
@@ -7051,9 +7062,6 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Ločeno usmerjanje (Android in Windows)"
-      ],
-      "SSO integration (coming soon)": [
-        "Integracija SSO (kmalu na voljo)"
       ],
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"
@@ -10045,6 +10053,9 @@
       "Untitled document ${ date }": [
         "Neimenovan dokument ${ date }"
       ],
+      "Upgrade complete!": [
+        "Nadgradnja opravljena!"
+      ],
       "Uploaded": [
         "Naloženo"
       ],
@@ -10115,11 +10126,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Danes"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
       ]
     },
     "Tooltip": {
@@ -10203,6 +10209,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali smo jim povabilo za dostop do predmeta."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
       ]
     },
     "Validation": {

@@ -78,6 +78,9 @@
       "Add phone number": [
         "Ajouter un numéro de téléphone"
       ],
+      "Add to album": [
+        "Ajouter à l'album"
+      ],
       "Add to group": [
         "Ajouter au groupe"
       ],
@@ -549,6 +552,9 @@
       "New": [
         "Nouveau"
       ],
+      "New album": [
+        "Nouvel album"
+      ],
       "New document": [
         "Nouveau document"
       ],
@@ -755,6 +761,9 @@
       ],
       "Select country": [
         "Sélectionnez un pays"
+      ],
+      "Set as album cover": [
+        "Définir en tant que couverture d'album"
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
@@ -1340,6 +1349,12 @@
       ],
       "Take a tour": [
         "Visite guidée"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Ajouter ${ photos.length } photo à",
+        "Ajouter ${ photos.length } photos à"
       ]
     },
     "Cancellation reminder": {
@@ -2421,11 +2436,6 @@
         "Facture impayée"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2507,6 +2517,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2699,9 +2714,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
       ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -4825,7 +4837,7 @@
         "Non"
       ],
       "No Albums": [
-        "Il n'y a pas album"
+        "Il n'y a pas d'album"
       ],
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
@@ -4910,6 +4922,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envoie automatiquement le message en utilisant le mode actuel de l'éditeur."
+      ],
+      "Photo is set as album cover": [
+        "La photo est définie en tant que couverture d'album."
       ],
       "Photos have been successfully recovered.": [
         "Les photos ont été récupérées."
@@ -5020,6 +5035,9 @@
       ],
       "Ready to add some photos?": [
         "Prêt à ajouter des photos ?"
+      ],
+      "Recent": [
+        "Récent"
       ],
       "recommended browser": [
         "navigateur recommandé"
@@ -7309,8 +7327,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android et Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Intégration de l'authentification unique SSO (bientôt disponible)"
+      "SSO integration": [
+        "Authentification unique (SSO) intégrée"
       ],
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
@@ -10324,6 +10342,9 @@
       "Groups": [
         "Groupes"
       ],
+      "Help center": [
+        "Aide & Support"
+      ],
       "High security for your account": [
         "Une sécurité renforcée pour votre compte"
       ],
@@ -10685,11 +10706,6 @@
         "Aujourd'hui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Ajoutez ce fichier partagé à votre ${ DRIVE_APP_NAME } pour y accéder facilement plus tard."
@@ -10771,6 +10787,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
     "Valentine_2025": {

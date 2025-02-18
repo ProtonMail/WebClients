@@ -768,6 +768,9 @@
       "Select country": [
         "Vyberte zemi"
       ],
+      "Set as album cover": [
+        "Nastavit jako obálku alba"
+      ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
@@ -1366,6 +1369,14 @@
       ],
       "Take a tour": [
         "Absolvovat prohlídku"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Přidat ${ photos.length } fotku do",
+        "Přidat ${ photos.length } fotky do",
+        "Přidat ${ photos.length } fotek do",
+        "Přidat ${ photos.length } fotek do"
       ]
     },
     "Cancellation reminder": {
@@ -2451,11 +2462,6 @@
         "Faktura po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2537,6 +2543,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2730,8 +2741,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } je vaše uživatelské jméno. Pro vytvoření ${ emailAddress } jděte prosím do Nastavení > Zprávy a psaní > Krátká doména (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } je vaše uživatelské jméno. Pro vytvoření ${ emailAddress } jděte prosím do Nastavení > Identita a adresy > Krátká doména (pm.me)"
       ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
@@ -5067,6 +5078,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticky odešle zprávu pomocí aktuálního režimu psaní zpráv."
       ],
+      "Photo is set as album cover": [
+        "Fotka je nastavena jako obálka alba"
+      ],
       "Photos have been successfully recovered.": [
         "Fotografie byly úspěšně obnoveny."
       ],
@@ -5341,7 +5355,7 @@
         "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
       "The albums you create are shown here": [
-        "Vámi vytvořená alba se zobrazí zde"
+        "Vámi vytvořená alba jsou zobrazena zde"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitální podpis byl částečně ověřen. Tento soubor byl nahrán pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
@@ -7307,6 +7321,9 @@
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikované servery optimalizované pro streamování"
+      ],
       "Desktop app": [
         "Desktopová aplikace"
       ],
@@ -7472,8 +7489,8 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO integrace (již brzy)"
+      "SSO integration": [
+        "Integrace SSO"
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
@@ -7549,6 +7566,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Používejte na ${ n } zařízení",
+        "Používejte až na ${ n } zařízeních najednou",
+        "Používejte až na ${ n } zařízeních najednou",
+        "Používejte až na ${ n } zařízeních najednou"
       ],
       "User credential management": [
         "Správa uživatelů"
@@ -10641,6 +10664,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "Help center": [
+        "Centrum podpory"
+      ],
       "High security for your account": [
         "Vysoké zabezpečení vašeho účtu"
       ],
@@ -11004,11 +11030,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Přidejte tento sdílený soubor na svůj ${ DRIVE_APP_NAME } pro pozdější snadný přístup."
@@ -11090,6 +11111,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "Validation": {
@@ -11233,6 +11259,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 po sobě jdoucí tečky nejsou povoleny"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Jste si jistí, že chcete trvale smazat ${ count } kontakt?",
         "Jste si jistí, že chcete trvale smazat ${ count } kontakty?",
@@ -11247,6 +11276,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Jste si jisti, že chcete trvale smazat tento kontakt?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Na začátku nesmí být tečka"
+      ],
+      "Cannot contain a dot at the end": [
+        "Na konci nesmí být tečka"
       ],
       "Contacts could not be merged": [
         "Kontakty nebylo možné sloučit"
@@ -11268,6 +11303,9 @@
       ],
       "Name is required": [
         "Název je povinný"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Povoleny jsou pouze alfanumerické malé znaky, tečky, pomlčky a podtržítka"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Berte prosím na vědomí, že výběrem této platební metody nemůže být váš účet navýšen okamžitě. Předplatné vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
