@@ -31,7 +31,7 @@
                 "https://*.proton.local/*",
                 "https://*.protontech.ch/*"
             ],
-            "js": ["account.js"],
+            "js": ["external.js"],
             "all_frames": false,
             "run_at": "document_end"
         },
