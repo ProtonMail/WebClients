@@ -649,7 +649,7 @@
         "Visualitza l'historial"
       ],
       "View item history": [
-        "Veure l'historial d'elements"
+        "Mostra l'historial d'elements"
       ],
       "View older history": [
         "Mostra l'historial més antic"
@@ -3361,8 +3361,8 @@
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
       ],
-      "SSO integration (coming soon)": [
-        "Integració SSO (pròximament)"
+      "SSO integration": [
+        "Integració SSO"
       ]
     },
     "Notification": {
@@ -3512,11 +3512,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Tanca"
       ]
     },
     "sso": {
@@ -4158,10 +4153,10 @@
         "Es requereix almenys una adreça de correu electrònic"
       ],
       "Cannot contain a dot at the beginning": [
-        "No es pot començar per un punt."
+        "No pot començar per un punt."
       ],
       "Cannot contain a dot at the end": [
-        "No podeu acabar amb un punt."
+        "No pot acabar amb un punt."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No es poden recuperar les bústies d'aquest àlies ara mateix"
@@ -4279,7 +4274,7 @@
         "Un cop sincronitzats, suprimir els àlies a ${ PASS_SHORT_APP_NAME } també els suprimirà a SimpleLogin."
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Només es permeten els caràcters alfanumèrics en minúscules, els punts, els guions i els guions baixos."
+        "Només es permeten caràcters alfanumèrics en minúscula, punts, guions i guions baixos"
       ],
       "Passphrase is required": [
         "La frase de contrasenya és obligatòria."
@@ -4382,6 +4377,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ja no tindreu accés a aquesta caixa forta. Per tornar-hi a entrar, necessitareu una nova invitació."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "La vostra organització no permet compartir elements individuals."
       ],
       "Your session could not be authorized.": [
         "No s'ha pogut autoritzar la sessió."
