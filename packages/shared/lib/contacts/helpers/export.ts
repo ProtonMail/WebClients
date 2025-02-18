@@ -14,6 +14,8 @@ import { API_SAFE_INTERVAL, QUERY_EXPORT_MAX_PAGESIZE } from '../constants';
 import { prepareVCardContact } from '../decrypt';
 import { serialize } from '../vcard';
 
+const MAX_SINGLE_CONTACTS_EXPORT = 300;
+
 export const getFileName = (contact: VCardContact) => {
     // cover up for the case no FN is present in the contact (we can find such vcards in the DB)
     const contactName = contact.fn?.[0]?.value || '';
@@ -73,6 +75,7 @@ export const exportContactsFromLabel = async ({
     api,
     callbackSuccess,
     callbackFailure,
+    contactIDs,
 }: {
     labelID: string | undefined;
     count: number;
@@ -81,6 +84,7 @@ export const exportContactsFromLabel = async ({
     api: Api;
     callbackSuccess: (contactContent: string) => void;
     callbackFailure: (contactID: string) => void;
+    contactIDs?: string[];
 }) => {
     const apiWithAbort = getApiWithAbort(api, signal);
     const apiCalls = Math.ceil(count / QUERY_EXPORT_MAX_PAGESIZE);
@@ -100,15 +104,19 @@ export const exportContactsFromLabel = async ({
                 return;
             }
             try {
-                const { vcard } = await exportContact(Cards, userKeys);
+                // If there is a selected ids list, return only the ones selected by the user
+                // If there is none, we can return all contacts.
+                if ((contactIDs && contactIDs.includes(ID)) || !contactIDs) {
+                    const { vcard } = await exportContact(Cards, userKeys);
 
-                // need to check again for signal.aborted because the abort
-                // may have taken place during await prepareContact
-                if (!signal.aborted) {
-                    callbackSuccess(vcard);
+                    // need to check again for signal.aborted because the abort
+                    // may have taken place during await prepareContact
+                    if (!signal.aborted) {
+                        callbackSuccess(vcard);
+                    }
+
+                    results.success.push(vcard);
                 }
-
-                results.success.push(vcard);
             } catch (error: any) {
                 // need to check again for signal.aborted because the abort
                 // may have taken place during await prepareContact
@@ -132,6 +140,7 @@ export const exportContactsFromLabel = async ({
  */
 export const exportContactsFromIds = async ({
     contactIDs,
+    count,
     userKeys,
     signal,
     api,
@@ -139,46 +148,67 @@ export const exportContactsFromIds = async ({
     callbackFailure,
 }: {
     contactIDs: string[];
+    count: number;
     userKeys: DecryptedKey[];
     signal: AbortSignal;
     api: Api;
     callbackSuccess: (contactContent: string) => void;
     callbackFailure: (contactID: string) => void;
 }) => {
-    const apiWithAbort = getApiWithAbort(api, signal);
-    const results = { success: [] as string[], failures: [] as string[] };
+    const isExportingAllContacts = contactIDs.length === count;
+    // In some cases we need to get all contacts at once:
+    // - If the user selected all contacts, we can export the full list
+    // - If exporting too many contacts (but not the full list),
+    //    we need to get them all and filter the ones selected by the user.
+    //    Otherwise, if we're doing too many requests when getting contacts one by one,
+    //    the user can encounter an error from the browser.
+    if (contactIDs.length > MAX_SINGLE_CONTACTS_EXPORT || isExportingAllContacts) {
+        return exportContactsFromLabel({
+            labelID: undefined,
+            count,
+            userKeys,
+            signal,
+            api,
+            callbackSuccess,
+            callbackFailure,
+            contactIDs,
+        });
+    } else {
+        const apiWithAbort = getApiWithAbort(api, signal);
+        const results = { success: [] as string[], failures: [] as string[] };
 
-    contactIDs.forEach(async (contactID) => {
-        const { Contact: contact } = await apiWithAbort<{ Contact: Contact }>(getContact(contactID));
+        contactIDs.forEach(async (contactID) => {
+            const { Contact: contact } = await apiWithAbort<{ Contact: Contact }>(getContact(contactID));
 
-        const { Cards, ID } = contact;
+            const { Cards, ID } = contact;
 
-        if (signal.aborted) {
-            return;
-        }
-        try {
-            const { vcard } = await exportContact(Cards, userKeys);
+            if (signal.aborted) {
+                return;
+            }
+            try {
+                const { vcard } = await exportContact(Cards, userKeys);
 
-            // need to check again for signal.aborted because the abort
-            // may have taken place during await prepareContact
-            if (!signal.aborted) {
-                callbackSuccess(vcard);
+                // need to check again for signal.aborted because the abort
+                // may have taken place during await prepareContact
+                if (!signal.aborted) {
+                    callbackSuccess(vcard);
+                }
+
+                results.success.push(vcard);
+            } catch (error: any) {
+                // need to check again for signal.aborted because the abort
+                // may have taken place during await prepareContact
+                if (!signal.aborted) {
+                    callbackFailure(ID);
+                }
+
+                results.failures.push(ID);
             }
 
-            results.success.push(vcard);
-        } catch (error: any) {
-            // need to check again for signal.aborted because the abort
-            // may have taken place during await prepareContact
-            if (!signal.aborted) {
-                callbackFailure(ID);
-            }
+            // avoid overloading API in the unlikely case exportBatch is too fast
+            await wait(API_SAFE_INTERVAL);
+        });
 
-            results.failures.push(ID);
-        }
-
-        // avoid overloading API in the unlikely case exportBatch is too fast
-        await wait(API_SAFE_INTERVAL);
-    });
-
-    return results;
+        return results;
+    }
 };
