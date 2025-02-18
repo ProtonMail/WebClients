@@ -758,6 +758,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "認証に失敗しました。エクスポートを続行するには、あなたの${ BRAND_NAME }パスワードを確認してください。"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "認証に失敗しました。エクスポートを続行するには、あなたのバックアップパスワードを確認してください"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "認証に失敗しました。エクスポートを続行するには、あなたの追加のパスワードを確認してください"
+      ],
       "Authentication failure: ${ message }": [
         "認証失敗: ${ message }"
       ],
@@ -1117,6 +1123,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "${ PASS_SHORT_APP_NAME }の開始中に問題が発生しました。この問題が続く場合は、解決のために私たちのカスタマーサポートにご連絡ください。"
+      ],
+      "Wrong backup password": [
+        "バックアップパスワードが正しくありません"
       ],
       "Wrong extra password": [
         "追加パスワードが間違っています"
@@ -3475,7 +3484,7 @@
         "PINコードの作成"
       ],
       "Created": [
-        "作成した"
+        "作成済み"
       ],
       "Current version": [
         "現在のバージョン"
@@ -3670,7 +3679,7 @@
         "セキュアリンクを削除しますか？"
       ],
       "Restore this version?": [
-        "このバージョンを復元?"
+        "このバージョンを復元しますか？"
       ],
       "Review and share": [
         "レビューして共有"
@@ -3808,6 +3817,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }のパスワードが必要です"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 つの連続したドットは使用できません"
+      ],
       "A description of the problem is required": [
         "問題の説明が必要"
       ],
@@ -3837,6 +3849,12 @@
       ],
       "At least one email address is required": [
         "少なくとも1つのメールアドレスが必要です"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "最初にドットを含めることはできません"
+      ],
+      "Cannot contain a dot at the end": [
+        "最後にドットを含めることはできません"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "現在、このエイリアスのメールボックスを取得できません。"
@@ -3940,6 +3958,9 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "同期が完了すると、${ PASS_SHORT_APP_NAME }から削除されたエイリアスは、SimpleLoginからも削除されます。"
       ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "英数字の小文字、ドット、ハイフン、アンダースコアのみが使用できます"
+      ],
       "Passphrase is required": [
         "パスフレーズが必要です"
       ],
@@ -4032,6 +4053,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "あなたはこのフォルダーへのアクセス権を持たなくなります。再度参加するには、新しい招待が必要です。"
+      ],
+      "Your organization does not allow sharing individual items": [
+        "あなたの組織では個々のアイテムを共有することを許可していません"
       ],
       "Your plan does not allow you to create more aliases": [
         "あなたのプランでは、それ以上のエイリアスを作成することはできません。"
