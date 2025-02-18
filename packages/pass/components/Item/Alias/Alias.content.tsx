@@ -20,7 +20,7 @@ import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import { selectAliasDetails, selectAliasMailboxes } from '@proton/pass/store/selectors';
+import { selectAliasDetails, selectMailboxesForAlias } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 
@@ -38,7 +38,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
 
     const aliasEmail = revision.aliasEmail!;
     const note = useDeobfuscatedValue(item.metadata.note);
-    const mailboxesForAlias = useSelector(selectAliasMailboxes(aliasEmail!));
+    const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
     const canToggleStatus = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
     const aliasManagementEnabled = useFeatureFlag(PassFeature.PassAdvancedAliasManagementV1);
 

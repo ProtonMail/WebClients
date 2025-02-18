@@ -7,6 +7,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
 import { useRequest } from '@proton/pass/hooks/useRequest';
+import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
 import { deleteMailbox } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -14,31 +15,30 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
-type Props = { mailboxID: number; aliasCount: number };
+type Props = { mailboxID: number };
 
-export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID, aliasCount = 0 }) => {
-    const { mailboxes, onDelete, setAction } = useAliasMailboxes();
+export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID }) => {
+    const { mailboxes, setAction, onMailboxRemoved } = useAliasMailboxes();
     const onClose = () => setAction(null);
+    const remove = useRequest(deleteMailbox, { onSuccess: pipe(onMailboxRemoved, onClose) });
 
     const { mailbox, remaining } = useMemo(
         () => ({
             mailbox: mailboxes.find((mailbox) => mailbox.MailboxID === mailboxID),
-            remaining: mailboxes.filter((mailbox) => mailbox.MailboxID !== mailboxID && mailbox.Verified),
+            remaining: mailboxes.filter(
+                (mailbox) => mailbox.MailboxID !== mailboxID && !mailboxVerificationRequired(mailbox)
+            ),
         }),
         [mailboxID, mailboxes]
     );
 
-    const hasAlias = aliasCount > 0;
-
+    const hasAlias = (mailbox?.AliasCount ?? 0) > 0;
     const defaultMailboxID = useMemo(() => (remaining.find(prop('IsDefault')) ?? remaining[0]).MailboxID, [remaining]);
     const [transferMailboxID, setTransferMailboxID] = useState<MaybeNull<number>>(
         mailbox?.Verified && hasAlias ? defaultMailboxID : null
     );
-    const transferAliases = transferMailboxID !== null;
-    const removeMailbox = useRequest(deleteMailbox, {
-        onSuccess: pipe(() => onDelete(mailboxID, transferAliases), onClose),
-    });
 
+    const transferAliases = transferMailboxID !== null;
     const emailJSX = <strong key="email-to-delete">{mailbox?.Email}</strong>;
 
     useEffect(() => {
@@ -55,9 +55,9 @@ export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID, aliasCount = 0 }
                 }
                 size="medium"
                 onClose={onClose}
-                onSubmit={() => removeMailbox.dispatch({ mailboxID, transferMailboxID })}
+                onSubmit={() => remove.dispatch({ mailboxID, transferMailboxID })}
                 closeAfterSubmit={false}
-                disabled={removeMailbox.loading}
+                disabled={remove.loading}
             >
                 {hasAlias ? (
                     <>
@@ -82,7 +82,7 @@ export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID, aliasCount = 0 }
                             >
                                 <Toggle
                                     checked={transferAliases}
-                                    disabled={removeMailbox.loading}
+                                    disabled={remove.loading}
                                     onChange={() => setTransferMailboxID(transferAliases ? null : defaultMailboxID)}
                                 />
                             </InlineFieldBox>
@@ -91,7 +91,7 @@ export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID, aliasCount = 0 }
                                 <SelectTwo
                                     value={transferMailboxID ?? defaultMailboxID}
                                     onChange={({ value }) => setTransferMailboxID(value)}
-                                    disabled={!transferAliases || removeMailbox.loading}
+                                    disabled={!transferAliases || remove.loading}
                                     size={{ width: DropdownSizeUnit.Dynamic }}
                                 >
                                     {remaining.map(({ MailboxID, Email }) => (
