@@ -762,6 +762,9 @@
       "Select country": [
         "Seleccionar país"
       ],
+      "Set as album cover": [
+        "Establecer como portada de álbum"
+      ],
       "Set recovery phrase": [
         "Establecer frase de recuperación"
       ],
@@ -2433,11 +2436,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2519,6 +2517,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2712,8 +2715,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } es su usuario. Para crear ${ emailAddress }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a ajustes > identidad y dirección > dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -4922,6 +4925,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automáticamente envía el mensaje usando el modo de editor actual."
+      ],
+      "Photo is set as album cover": [
+        "La foto se ha establecido como portada de álbum"
       ],
       "Photos have been successfully recovered.": [
         "Se han recuperado las fotos con éxito."
@@ -7324,8 +7330,8 @@
       "Split tunneling (Android and Windows)": [
         "Tunelización dividida (Android y Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integración SSO (próximamente)"
+      "SSO integration": [
+        "Integración SSO"
       ],
       "Strict no-logs policy": [
         "Política estricta de no registros"
@@ -10339,6 +10345,9 @@
       "Groups": [
         "Grupos"
       ],
+      "Help center": [
+        "Centro de ayuda"
+      ],
       "High security for your account": [
         "Alta seguridad para su cuenta"
       ],
@@ -10700,11 +10709,6 @@
         "Hoy"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Añada este archivo compartido a su ${ DRIVE_APP_NAME } para un acceso fácil después."
@@ -10786,6 +10790,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Valentine_2025": {
