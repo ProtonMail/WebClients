@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -3731,9 +3731,6 @@
       ]
     },
     "Error": {
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } यूजर नाम है। ${ emailAddress } बनाने के लिए, कृपया सेटिंग्स > संदेश और रचना > लघु डोमेन (pm.me) पर जाएं"
-      ],
       "A group with this name already exists": [
         "इस नाम का एक समूह पहले से मौजूद है"
       ],
@@ -10355,9 +10352,6 @@
       "Split tunneling (Android and Windows)": [
         "स्प्लिट टनलिंग (Android और Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO एकीकरण (शीघ्र ही आ रहा है)"
-      ],
       "Start protecting your organization": [
         "अपने संगठन की सुरक्षा करना शुरू करें"
       ],
@@ -10438,17 +10432,6 @@
       ],
       "Team management": [
         "टीम संभालना"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
       ]
     },
     "new_plans: info": {
@@ -10538,6 +10521,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "आप अपने अभी चल रहे प्लान पे छूट पा रहे हैं। अगर डाउनग्रेड करते हैं, तो आप छूट खो देंगे और अगर वापिस सदस्यता लेने की कोशिश करते है तो वो मौजूद नहीं होगा।"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
       ]
     },
     "new_plans: Label": {
@@ -10828,9 +10822,6 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "इसे अक्षम करने से ${ BRAND_NAME } एप्लीकेशनों में सूचनाएँ प्राप्त करने की क्षमता हटा दी जाएगी।"
-      ],
-      "During your first month": [
-        "आपके पहले महीने में"
       ],
       "Email subscriptions": [
         "ईमेल सदस्यताएँ"
@@ -12806,17 +12797,6 @@
         "आपकी योजना को एक iOS ऐप का उपयोग करके खरीदा गया था। इसलिए, अपनी योजना में बदलाव करने या अपने भुगतान विवरण को अपडेट करने के लिए, आपको Apple App Store पर जाना होगा।"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } दिन बाकी",
@@ -12878,6 +12858,17 @@
       ],
       "Watch the interview": [
         "इंटरव्यू देखें"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
       ]
     },
     "Subscription renewal state": {

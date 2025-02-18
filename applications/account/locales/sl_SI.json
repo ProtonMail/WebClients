@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -1914,6 +1914,9 @@
       "Add link to your email footer": [
         "Dodajte povezavo v podpis svojega e-poštnega sporočila."
       ],
+      "Close": [
+        "Zapri"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
@@ -3729,6 +3732,11 @@
         "Pomagajte nam izboljšati"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Odstrani popust"
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb za Debian / Ubuntu"
@@ -4198,9 +4206,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lahko tudi preverite stanje na ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Sporočila in sestavljanje > Kratka domena (pm.me)."
       ],
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
@@ -6650,11 +6655,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivirajte vsaj en način za obnovitev podatkov, da lahko v primeru izgube gesla še naprej dostopate do vsebine računa ${ BRAND_NAME }."
       ],
-      "Active": [
-        "Aktivno"
-      ],
       "active": [
         "aktivno"
+      ],
+      "Active": [
+        "Aktivno"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodajte e-poštni naslov @pm.me v svoj račun. Ta preprost, krajši domenski naslov pomeni \"Pošlji mi ${ MAIL_APP_NAME } ali zasebno sporočilo\"."
@@ -6790,6 +6795,9 @@
       ],
       "and": [
         "in"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Izbrisane bodo tudi vse podmape. E-poštna sporočila, shranjena v mapi ${ nameDeleted }, ne bodo izbrisana in jih boste našli v mapi Vsa pošta."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Vsakdo s to povezavo si lahko ogleda vse podrobnosti o dogodkih v tem koledarju, kot so naslov, lokacija ali udeleženci."
@@ -7186,6 +7194,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Omogočite TLS ali SSL za zunanjo storitev, če je podprt."
+      ],
+      "Enabling auto-deletion…": [
+        "Omogočanje samodejnega brisanja …"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Če omogočite obnovitev s frazo znova, bo ustvarjena nova obnovitvena fraza."
@@ -9751,9 +9762,6 @@
       "Disable animations": [
         "Onemogoči animacije"
       ],
-      "Disable sharing outside the organization": [
-        "Onemogočite skupno rabo izven organizacije"
-      ],
       "Disabled": [
         "Onemogočeno"
       ],
@@ -11424,6 +11432,9 @@
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
       ],
+      "200 GB of storage": [
+        "200 GB prostora za shranjevanje"
+      ],
       "24/7 account management support": [
         "24/7 podpora za upravljanje računa"
       ],
@@ -11676,9 +11687,6 @@
       "Split tunneling (Android and Windows)": [
         "Ločeno usmerjanje (Android in Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integracija SSO (kmalu na voljo)"
-      ],
       "Start protecting your organization": [
         "Začnite ščititi svojo organizacijo"
       ],
@@ -11800,17 +11808,6 @@
         "Upravljavci ekipe"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V nasprotnem primeru bo dostop do vašega računa omejen, sčasoma pa bo vaš račun onemogočen."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Če želite še naprej uporabljati ${ trialPlanName } s premijskimi funkcijami, izberite naročnino in možnost plačila."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Vaš preizkus se konča ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ki se konča z ${ last4 }"
@@ -11913,6 +11910,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Uživate v promocijski ceni na vašem trenutnem paketu. Če boste zmanjšali svoj paket, boste izgubili promocijsko ceno in ta ne bo na voljo, če se poskusite ponovno naročiti."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V nasprotnem primeru bo dostop do vašega računa omejen, sčasoma pa bo vaš račun onemogočen."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Če želite še naprej uporabljati ${ trialPlanName } s premijskimi funkcijami, izberite naročnino in možnost plačila."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Vaš preizkus se konča ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -12312,9 +12320,6 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Onemogočanje tega bo odstranilo funkcijo sprejemanja obvestil znotraj aplikacij ${ BRAND_NAME }."
-      ],
-      "During your first month": [
-        "Med vašim prvim mesecem"
       ],
       "Email subscriptions": [
         "E-poštne novice"
@@ -12875,9 +12880,6 @@
       ],
       "Organization identity": [
         "Identiteta organizacije"
-      ],
-      "Verify": [
-        "Preveri"
       ]
     },
     "OS compatibility": {
@@ -15196,47 +15198,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Še ${ dayDiff } dan",
@@ -15423,6 +15384,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {
@@ -16393,6 +16395,9 @@
       "Every member of the organization can access": [
         "Vsak član organizacije ima dostop"
       ],
+      "Excluded items": [
+        "Izključeni predmeti"
+      ],
       "Export": [
         "Izvoz"
       ],
@@ -16539,6 +16544,9 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Uvozi preko ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Inactive 2FA": [
+        "Neaktiven 2FA"
       ],
       "Increase your privacy with more addresses": [
         "Povečajte svojo zasebnost z več naslovi"
@@ -16771,6 +16779,9 @@
       "Restore administrator privileges": [
         "Obnovite skrbniške pravice"
       ],
+      "Reused passwords": [
+        "Ponovno uporabljena gesla"
+      ],
       "Revoke certificate": [
         "Preklic digitalnega potrdila"
       ],
@@ -16969,6 +16980,9 @@
       "Unlock your data": [
         "Odklenite svoje podatke"
       ],
+      "Upgrade complete!": [
+        "Nadgradnja opravljena!"
+      ],
       "Upgrade plan": [
         "Nadgradnja paketa"
       ],
@@ -17016,6 +17030,9 @@
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vaš novi naslov vam bomo poslali sporočilo z navodili o dokončanju sprememb."
+      ],
+      "Weak passwords": [
+        "Šibka gesla"
       ],
       "What is an alias?": [
         "Kaj je vzdevek?"
