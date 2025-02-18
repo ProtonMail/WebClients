@@ -15,21 +15,30 @@ export type ConfirmationPromptHandles = {
 type Props = ConfirmationPromptHandles & {
     confirmText?: string;
     danger?: boolean;
+    loading?: boolean;
     message: ReactNode;
     title: ReactNode;
 };
 
-export const ConfirmationPrompt: FC<Props> = ({ confirmText, danger, message, title, onCancel, onConfirm }) => {
+export const ConfirmationPrompt: FC<Props> = ({
+    confirmText,
+    danger,
+    loading,
+    message,
+    title,
+    onCancel,
+    onConfirm,
+}) => {
     return (
         <Prompt
             open
             className="pass-prompt"
             title={<span className="text-break">{title}</span>}
             buttons={[
-                <Button onClick={onConfirm} color={danger ? 'danger' : 'norm'} pill>
+                <Button onClick={onConfirm} color={danger ? 'danger' : 'norm'} pill loading={loading}>
                     {confirmText ?? c('Action').t`Confirm`}
                 </Button>,
-                <Button onClick={onCancel} shape="outline" color="norm" pill>
+                <Button onClick={onCancel} shape="outline" color="norm" pill disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>,
             ]}
