@@ -28,7 +28,7 @@ const RatingsSection = ({ className }: { className?: string }) => {
             <div>
                 <img
                     src={techradar}
-                    alt={c('Info').t`Tech radar pro recommended with a rating of 4.2 out of 5 stars`}
+                    alt={c('Info').t`TechRadar Pro recommended with a rating of 4.2 out of 5 stars`}
                     width="99"
                     height="85"
                 />
