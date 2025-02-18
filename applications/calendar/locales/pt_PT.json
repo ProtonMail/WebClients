@@ -2935,9 +2935,6 @@
         "${ list } não tem contactos",
         "Alguns grupos não têm contactos: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Mensagens e composição > Domínio curto (pm.me)."
-      ],
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
@@ -6931,8 +6928,8 @@
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integração SSO (em breve)"
+      "SSO integration": [
+        "Integração SSO"
       ],
       "Strict no-logs policy": [
         "Política rigorosa de não registo"
@@ -9844,6 +9841,9 @@
       ],
       "Groups": [
         "Grupos"
+      ],
+      "Help center": [
+        "Centro de ajuda"
       ],
       "Hide time zones for event start and end times": [
         "Ocultar fusos horários para horas inicial e final dos eventos"

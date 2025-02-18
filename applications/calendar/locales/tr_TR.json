@@ -2935,8 +2935,8 @@
         "${ list } içinde hiçbir kişi yok",
         "Bazı gruplarda hiçbir kişi yok: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > İletiler ve ileti oluşturma > Kısa etki alanı (pm.me) bölümüne gidin"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } sizin kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa alan adı (pm.me) bölümüne gidin"
       ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
@@ -6766,7 +6766,7 @@
         "Verilerin ele geçirilmesini izleme"
       ],
       "Dedicated servers optimized for streaming": [
-        "Yayın akışı için optimize edilmiş özel sunucular"
+        "Yayın akışı izlemek için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -6931,8 +6931,8 @@
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Tek oturum açma bütünleştirmesi (yakında)"
+      "SSO integration": [
+        "Tek oturum açma bütünleştirmesi"
       ],
       "Strict no-logs policy": [
         "Katı kayıt tutmama ilkesi"
@@ -7006,8 +7006,8 @@
         "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
       "Use on up to ${ n } device at once": [
-        "Aynı anda en fazla ${ n } cihazda kullanın",
-        "Aynı anda en fazla ${ n } cihazda kullanın"
+        "Aynı anda ${ n } aygıta kadar kullanın",
+        "Aynı anda ${ n } aygıta kadar kullanın"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -9845,6 +9845,9 @@
       "Groups": [
         "Gruplar"
       ],
+      "Help center": [
+        "Yardım merkezi"
+      ],
       "Hide time zones for event start and end times": [
         "Etkinlik başlangıç ve bitiş saatlerinin saat dilimlerini gizler"
       ],
@@ -10464,7 +10467,7 @@
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
       "2 consecutive dots are not allowed": [
-        "2 ardışık noktaya izin verilmez"
+        "Arka arka 2 nokta yazılamaz"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",
@@ -10480,10 +10483,10 @@
         "Bu kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
       ],
       "Cannot contain a dot at the beginning": [
-        "Başlangıçta nokta içermez"
+        "Başlangıçta nokta bulunamaz"
       ],
       "Cannot contain a dot at the end": [
-        "Sonda nokta içermez"
+        "Sonda nokta bulunamaz"
       ],
       "Contacts could not be merged": [
         "Kişiler birleştirilemedi"
@@ -10507,7 +10510,7 @@
         "Adın yazılması zorunludur"
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Yalnızca alfanümerik küçük harf karakterlerine, noktalara, tirelere ve alt çizgilere izin verilir"
+        "Yalnızca küçük harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."

@@ -2935,8 +2935,8 @@
         "Ο ${ list } δεν έχει επαφές",
         "Κάποιες ομάδες δεν έχουν επαφές: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Μηνύματα και σύνθεση > Σύντομος τομέας (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Ταυτότητα και διευθύνσεις > Σύντομος τομέας (pm.me)"
       ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
@@ -6931,8 +6931,8 @@
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Ενσωμάτωση SSO (σύντομα διαθέσιμο)"
+      "SSO integration": [
+        "Ενσωμάτωση SSO"
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
@@ -9844,6 +9844,9 @@
       ],
       "Groups": [
         "Ομάδες"
+      ],
+      "Help center": [
+        "Κέντρο βοήθειας"
       ],
       "Hide time zones for event start and end times": [
         "Απόκρυψη ζωνών ώρας για τις ώρες έναρξης και λήξης εκδήλωσης"
