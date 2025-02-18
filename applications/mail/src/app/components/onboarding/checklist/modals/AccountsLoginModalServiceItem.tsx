@@ -15,7 +15,11 @@ interface ServiceDetailsProps {
     onServiceDone: (serviceKey: string, hideItem: boolean) => void;
 }
 
-const ServiceItemAction = ({ service, onServiceDone, serviceMarkedAsDone }: ServiceDetailsProps) => {
+const ServiceItemAction = ({
+    service,
+    onServiceDone,
+    serviceMarkedAsDone,
+}: Omit<ServiceDetailsProps, 'isServiceDone'>) => {
     return (
         <div className="flex items-center gap-2 account-login--actions">
             <ButtonLike

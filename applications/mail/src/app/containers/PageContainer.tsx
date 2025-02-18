@@ -60,7 +60,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     }
 
     return (
-        <PrivateLayout ref={ref} labelID={labelID} elementID={elementID} breakpoints={breakpoints}>
+        <PrivateLayout ref={ref} labelID={labelID}>
             <MailStartupModals />
             <LabelActionsContextProvider>
                 <MailboxContainer

@@ -334,7 +334,6 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
                 show={shouldShowSpotlight}
                 anchorRef={anchorRef}
                 onDisplayed={onDisplayedSpotlight}
-                onClose={onCloseSpotlight}
                 user={user}
             >
                 <UserDropdownButton
@@ -437,9 +436,9 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
                     )}
 
                     {!isSentinelUser &&
-                        isSecurityCheckupAvailable &&
-                        (securityCheckup.actions.includes('phrase') ||
-                            securityCheckup.furtherActions.includes('phrase')) ? (
+                    isSecurityCheckupAvailable &&
+                    (securityCheckup.actions.includes('phrase') ||
+                        securityCheckup.furtherActions.includes('phrase')) ? (
                         <AppLink
                             toApp={APPS.PROTONACCOUNT}
                             to={`${SECURITY_CHECKUP_PATHS.ROOT}?${securityCheckupParams.toString()}`}

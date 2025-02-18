@@ -83,7 +83,6 @@ const Participant = ({
                     close={close}
                     email={email}
                     isOpen={isOpen}
-                    toggle={toggle}
                     isContact={isContact}
                     onCreateOrEditContact={onCreateOrEditContact}
                 />
