@@ -332,7 +332,7 @@
         "パスワードを生成"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "${ planName } で ${ priceCoupon }を入手"
+        "${ planName } を ${ priceCoupon }で入手"
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } を入手"
@@ -478,9 +478,6 @@
       "Refer a friend": [
         "友達を招待"
       ],
-      "Refresh data": [
-        "データを更新"
-      ],
       "Refresh status": [
         "状態を更新"
       ],
@@ -615,6 +612,9 @@
       ],
       "Send reminder": [
         "リマインダーを送信"
+      ],
+      "Set as album cover": [
+        "アルバムカバーに設定"
       ],
       "Set catch-all": [
         "Catch-All を設定"
@@ -1222,6 +1222,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "閉じる"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
       ],
@@ -2305,6 +2308,12 @@
       ]
     },
     "Description": {
+      "Create policies to manage access to shared servers.": [
+        "共有サーバーへのアクセスを管理するポリシーを作成します。"
+      ],
+      "Everyone in your organization can connect to shared servers.": [
+        "組織内の誰もが共有サーバーに接続することができます。"
+      ],
       "If disabled, only admins will have access.": [
         "もし無効にした場合、管理者のみがアクセスできます。"
       ],
@@ -2385,7 +2394,7 @@
         "より優れた機能を持つ VPN を見つけた"
       ],
       "I have not managed to connect": [
-        "接続することができませんでした"
+        "接続することができなかった"
       ],
       "I only needed a VPN short-term": [
         "VPN が短期間のみ必要だった"
@@ -2394,7 +2403,7 @@
         "別の ${ BRAND_NAME } アカウントを使っている"
       ],
       "It doesn't do what I need": [
-        "必要としていることをしてくれない"
+        "必要な機能がない"
       ],
       "Missing feature(s)": [
         "機能が不足している"
@@ -2490,8 +2499,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } はあなたのユーザー名です。 ${ emailAddress } を作成するには、[設定] > [メッセージと作成] > [短いドメイン (pm.me)] に移動してください。"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
@@ -3329,7 +3338,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }、Privacy by default"
+        "${ BRAND_NAME }. Privacy by default."
       ]
     },
     "Go to sign in": {
@@ -3379,11 +3388,26 @@
       "Best deal": [
         "最高の取引"
       ],
+      "Checkout": [
+        "購入手続き"
+      ],
+      "Create your account": [
+        "アカウントを作成"
+      ],
       "Device": [
         "デバイス"
       ],
+      "Enabled Countries": [
+        "有効な国"
+      ],
+      "Enter your email address": [
+        "メールアドレスを入力してください"
+      ],
       "Event": [
         "イベント"
+      ],
+      "Groups": [
+        "グループ"
       ],
       "IP address": [
         "IPアドレス"
@@ -3403,6 +3427,9 @@
       "Organization key fingerprint": [
         "組織用の鍵のフィンガープリント"
       ],
+      "Policy Name": [
+        "ポリシー名"
+      ],
       "Protection": [
         "保護"
       ],
@@ -3411,6 +3438,9 @@
       ],
       "Select your deal": [
         "取引を選択してください"
+      ],
+      "Select your payment method": [
+        "支払い方法を選択してください"
       ],
       "Select your pricing plan": [
         "料金プランを選択してください"
@@ -3513,6 +3543,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
+      ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }%割引"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: 元サイズの画像"
@@ -3790,6 +3823,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "CNET editors choice賞で 10 段階中 8.4 の評価"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "アイデンティティ プロバイダー (IdP) を通じて組織の SAML 認証を構成します。これにより、組織全体で SAML が有効になります。"
       ],
@@ -3822,6 +3858,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "提案されたパスワードをクリップボードにコピーする"
+      ],
+      "countries enabled": [
+        "か国が有効になりました"
       ],
       "Country code": [
         "国コード"
@@ -3858,6 +3897,9 @@
       ],
       "Custom email domains": [
         "独自メールドメイン"
+      ],
+      "Custom policies": [
+        "カスタムポリシー"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }アプリの外観をカスタマイズ"
@@ -4447,6 +4489,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
       ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "PC Magazine editors賞で星 5 つ中の星 5 の評価"
+      ],
       "per month": [
         "月あたり"
       ],
@@ -4669,6 +4714,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "連絡先との共有を始め、オンラインサービスのために使ってください。"
       ],
+      "Step ${ step }": [
+        "ステップ ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"
       ],
@@ -4707,6 +4755,9 @@
       ],
       "Symbols (#$&)": [
         "記号 (#$&)"
+      ],
+      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+        "Tech radar proのおすすめ 星 5 つ中の星 4.2"
       ],
       "Thank you": [
         "ありがとうございます"
@@ -4872,6 +4923,9 @@
       ],
       "Total VPN connections": [
         "総VPN接続数"
+      ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "${ productName } を完全にリスクなしでお試しください もし何らかの理由で気が変わった場合には、質問なしで全額返金を受け取ることができます。"
       ],
       "Two-factor authentication disabled": [
         "2 要素認証が無効になりました"
@@ -5667,6 +5721,9 @@
       "Group name": [
         "グループ名"
       ],
+      "Groups": [
+        "グループ"
+      ],
       "Hide password": [
         "パスワードを隠す"
       ],
@@ -5735,6 +5792,9 @@
       ],
       "New password": [
         "新しいパスワード"
+      ],
+      "New policy name": [
+        "新しいポリシー名"
       ],
       "New second password": [
         "新しいセカンドパスワード"
@@ -5878,7 +5938,7 @@
         "開始日"
       ],
       "State": [
-        "状態"
+        "州"
       ],
       "Street address": [
         "番地"
@@ -5918,6 +5978,9 @@
       ],
       "Username": [
         "ユーザー名"
+      ],
+      "Users": [
+        "ユーザー"
       ],
       "Value": [
         "値"
@@ -6570,6 +6633,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "すべてのプレミアム${ BRAND_NAME }サービス。一つの簡単なサブスクリプションで。"
       ],
+      "Apps for": [
+        "アプリ"
+      ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
       ],
@@ -6636,6 +6702,9 @@
       "Dedicated servers and IP": [
         "専用サーバーとIP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "ストリーミングに最適化された専用サーバー"
+      ],
       "Desktop app": [
         "デスクトップアプリ"
       ],
@@ -6686,6 +6755,9 @@
       ],
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "プライバシーを保護する高速スイス製VPN"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } 台のデバイスで高速 VPN"
@@ -6804,11 +6876,14 @@
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO 統合 (近日公開予定)"
+      "SSO integration": [
+        "SSO 統合"
       ],
       "Start protecting your organization": [
         "組織の保護を開始する"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "2 つの簡単なステップでオンラインで自分を保護"
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
@@ -6878,6 +6953,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
+      ],
+      "Up to 10 Gbps": [
+        "最大 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "一度に最大 ${ n } 台のデバイスで使用"
       ],
       "User credential management": [
         "ユーザー資格管理"
@@ -7234,7 +7315,7 @@
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
-        "誰にでも(${ PASS_APP_NAME }を使っていない人にも)個人のアイテムを安全に共有"
+        "誰にでも (${ PASS_APP_NAME }を使っていない人にも) 個人のアイテムを安全に共有"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "電話番号、住所、誕生日、個人的なメモなどの連絡先の詳細を安全に保存します。 ゼロアクセス暗号化により、${ BRAND_NAME } であってもアクセスできなくなります。"
@@ -7413,9 +7494,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "これを無効化すると${ BRAND_NAME }アプリケーションで通知を受け取る機能が削除されます"
       ],
-      "During your first month": [
-        "最初の1か月の間"
-      ],
       "Email subscriptions": [
         "メール購読"
       ],
@@ -7445,6 +7523,9 @@
       "Downloaded 2FA recovery codes": [
         "2要素認証回復コードをダウンロードしました"
       ],
+      "Error creating policy": [
+        "ポリシーの作成エラー"
+      ],
       "Invalid code": [
         "無効なコード"
       ],
@@ -7462,6 +7543,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認証情報を更新しました"
+      ],
+      "Policy created successfully": [
+        "ポリシーが正常に作成されました"
       ],
       "Reminder has been sent": [
         "リマインダーが送信されました"
@@ -7675,9 +7759,6 @@
       ]
     },
     "orgidentity": {
-      "${ verify } your email address ${ email } to set organization identity.": [
-        "組織のアイデンティティを設定するために、メールアドレス ${ email } を ${ verify } してください。"
-      ],
       "Current organization identity": [
         "現在の組織ID"
       ],
@@ -7693,8 +7774,8 @@
       "Organization identity updated": [
         "組織IDが更新されました"
       ],
-      "Verify": [
-        "検証"
+      "Verify your email address ${ email } to set organization identity.": [
+        "組織のアイデンティティを設定するには、メールアドレスの ${ email } を確認してください。"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -7912,7 +7993,7 @@
         "続けるためにはダッシュボードに支払い方法を追加してください。"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "アドオンの数を減らすには、まずサブスクリプションを再アクティブ化してください。"
+        "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
       "Please select billing country": [
         "請求先の国を選択してください"
@@ -7982,7 +8063,7 @@
     },
     "Payments.plan_name": {
       "Free": [
-        "無料"
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8105,7 +8186,7 @@
         "理由を選択"
       ],
       "Select state": [
-        "状態の選択"
+        "州を選択"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME }をより良くするためには何が必要だと思うか共有してください。"
@@ -8494,7 +8575,7 @@
         "この許可はあと${ timeRemaining.inHours }時間で期限切れになります。"
       ],
       "This permission expires soon": [
-        "この許可はすぐに取り消されます"
+        "この権限はまもなく有効期限が切れます"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
@@ -9087,6 +9168,12 @@
       "Single sign-on removed": [
         "シングルサインオンは削除されました"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "ユーザー ${ user } は現在シングルサインオンアカウントです。以前のパスワードはバックアップパスワードになりました。"
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "${ BRAND_NAME } サービスにアクセスするには、IDプロバイダーで再度ログインする必要があります。 このユーザーがサインインできるようにするには、ユーザーが ID プロバイダーに存在することを確認してください。"
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "これにより、ユーザーは他のデバイスからサインアウトされ、新しいバックアップパスワードを作成する必要があります。"
       ],
@@ -9361,6 +9448,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -9489,10 +9617,10 @@
         "追加のストレージとユーザー"
       ],
       "Folders, labels and filters": [
-        "フォルダ、ラベル、ファイル"
+        "フォルダー、ラベル、フィルター"
       ],
       "Folders, labels, and custom filters": [
-        "フォルダ、ラベル、そしてカスタムフィルター"
+        "フォルダー、ラベル、カスタムフィルター"
       ],
       "Got it": [
         "わかった"
@@ -9643,47 +9771,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -10087,6 +10174,9 @@
       "Add address": [
         "アドレスを追加"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "「${ policyName }」 に国を追加"
+      ],
       "Add credit/debit card": [
         "クレジット・デビットカードの追加"
       ],
@@ -10122,6 +10212,9 @@
       ],
       "Add users": [
         "ユーザー追加"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "「${ policyName }」 にユーザーを追加"
       ],
       "Allocate storage": [
         "ストレージを割り当てる"
@@ -10242,6 +10335,9 @@
       ],
       "Create multiple user accounts": [
         "アカウントを複数作成する"
+      ],
+      "Create new policy": [
+        "新しいポリシーを作成"
       ],
       "Create organization key": [
         "組織キーの作成"
@@ -10431,6 +10527,9 @@
       ],
       "Groups": [
         "グループ"
+      ],
+      "Help center": [
+        "ヘルプセンター"
       ],
       "How to choose a good logo": [
         "良いロゴの選び方"
@@ -10796,29 +10895,6 @@
         "今日"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
-      ],
-      "Group membership paused": [
-        "グループのメンバーシップは一時停止されました"
-      ],
-      "Sending member invitation": [
-        "メンバー招待を送信中"
-      ],
-      "User declined invitation": [
-        "ユーザーが招待を拒否しました"
-      ],
-      "Waiting for user to accept the invitation": [
-        "ユーザーが招待を受けるのを待っています"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
@@ -10903,6 +10979,29 @@
       ],
       "Your DKIM signing is working.": [
         "DKIM 署名が機能しています。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
+      ],
+      "Group membership paused": [
+        "グループのメンバーシップは一時停止されました"
+      ],
+      "Sending member invitation": [
+        "メンバー招待を送信中"
+      ],
+      "User declined invitation": [
+        "ユーザーが招待を拒否しました"
+      ],
+      "Waiting for user to accept the invitation": [
+        "ユーザーが招待を受けるのを待っています"
       ]
     },
     "Tor out of date": {
@@ -11046,6 +11145,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "このユーザーのアカウントの管理のための管理者権限を取り消しします。"
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "管理者権限を取得するには次回 ${ BRAND_NAME } にサインインするときに、バックアップパスワードを設定する必要があります。"
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "実行するには、データへアクセスするためにユーザーの許可を得るか、パスワードをリセットする必要があります。"
@@ -11282,6 +11384,12 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "${ a }と${ b }はバンドル"
+      ],
+      "Your ${ selected } plan": [
+        "${ selected } プラン"
+      ],
+      "Your plan includes:": [
+        "プランには次のものが含まれます。"
       ]
     },
     "vpn_2step: tooltip": {

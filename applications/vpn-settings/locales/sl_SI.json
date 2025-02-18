@@ -1177,6 +1177,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Zapri"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
@@ -2348,6 +2351,11 @@
         "Pomagajte nam izboljšati"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Odstrani popust"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Razširjena zgodovina različic"
@@ -2398,9 +2406,6 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lahko tudi preverite stanje na ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Sporočila in sestavljanje > Kratka domena (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Ves prostor na disku je že dodeljen. Zmanjšajte dodelitev prostora drugim uporabnikom."
@@ -3812,6 +3817,9 @@
       "Enable single sign-on to keep your organization safe": [
         "Omogočite enotno prijavo in poskrbite za višjo varnost organizacije"
       ],
+      "Enabling auto-deletion…": [
+        "Omogočanje samodejnega brisanja …"
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL končne točke, prejet od vašega ponudnika identitete (npr. https://idp.example.com/sso/saml)."
       ],
@@ -4339,6 +4347,12 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF pojasnjuje, komu je dovoljeno pošiljati e-pošto za vašo domeno. Prepričajte se, da ste dodali naslednji zapis TXT v konzolo DNS (ki se nahaja na platformi, kjer ste kupili domeno po meri)."
+      ],
+      "Step ${ step }": [
+        "${ step }. korak",
+        "${ step }. korak",
+        "${ step }. korak",
+        "${ step }. korak"
       ],
       "Storage allocated to other users in this organisation": [
         "Shramba, dodeljena drugim uporabnikom v tej organizaciji."
@@ -6076,6 +6090,9 @@
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
       ],
+      "200 GB of storage": [
+        "200 GB prostora za shranjevanje"
+      ],
       "24/7 account management support": [
         "24/7 podpora za upravljanje računa"
       ],
@@ -6324,9 +6341,6 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Ločeno usmerjanje (Android in Windows)"
-      ],
-      "SSO integration (coming soon)": [
-        "Integracija SSO (kmalu na voljo)"
       ],
       "Start protecting your organization": [
         "Začnite ščititi svojo organizacijo"
@@ -6908,9 +6922,6 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Onemogočanje tega bo odstranilo funkcijo sprejemanja obvestil znotraj aplikacij ${ BRAND_NAME }."
       ],
-      "During your first month": [
-        "Med vašim prvim mesecem"
-      ],
       "Email subscriptions": [
         "E-poštne novice"
       ],
@@ -7149,9 +7160,6 @@
       ],
       "Organization identity": [
         "Identiteta organizacije"
-      ],
-      "Verify": [
-        "Preveri"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -8608,6 +8616,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Še ${ dayDiff } dan",
@@ -8794,47 +8843,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {
@@ -9722,6 +9730,9 @@
       "Unlock your data": [
         "Odklenite svoje podatke"
       ],
+      "Upgrade complete!": [
+        "Nadgradnja opravljena!"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Nadgradite zaščito omrežja z namenskimi strežniki"
       ],
@@ -9831,11 +9842,6 @@
         "Danes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
-      ]
-    },
     "Tooltip": {
       "An approximate location of the IP address": [
         "Približna lokacija IP naslova"
@@ -9899,6 +9905,11 @@
       ],
       "Your DKIM signing is working.": [
         "Vaše podpisovanje DKIM deluje."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
       ]
     },
     "Tor out of date": {
