@@ -7,8 +7,7 @@ import { toBase64 } from './file';
  * Use to encode Image URI when loading images
  */
 export const encodeImageUri = (url: string) => {
-    // Only replace spaces for the moment
-    return url.trim().replaceAll(' ', '%20');
+    return encodeURI(url.trim());
 };
 
 /**
