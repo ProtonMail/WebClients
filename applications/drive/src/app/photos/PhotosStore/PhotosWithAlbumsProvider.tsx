@@ -159,7 +159,12 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         // We swapped album, so we remove previous ones from state
                         setAlbumPhotos(photosData);
                     } else {
-                        setAlbumPhotos((prevPhotos) => [...prevPhotos, ...photosData]);
+                        setAlbumPhotos((prevPhotos) => {
+                            const newPhotos = photosData.filter(
+                                (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
+                            );
+                            return [...prevPhotos, ...newPhotos];
+                        });
                     }
                     // Limit of 1000 photos per albums for now
                     if (More) {
