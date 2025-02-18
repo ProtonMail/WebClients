@@ -11,9 +11,10 @@ describe('encodeImageUri', () => {
 
     [
         { url: `${domain}/a space.png`, expected: `${domain}/a%20space.png` },
-        { url: `${domain}/a%20space.png`, expected: `${domain}/a%20space.png` },
-        { url: `${domain}/logo.png%22`, expected: `${domain}/logo.png%22` },
+        { url: `${domain}/a%20space.png`, expected: `${domain}/a%2520space.png` },
+        { url: `${domain}/logo.png%22`, expected: `${domain}/logo.png%2522` },
         { url: `${domain}/logo.png&quot`, expected: `${domain}/logo.png&quot` },
+        { url: `${domain}/{id}/logo.png`, expected: `${domain}/%7Bid%7D/logo.png` },
     ].forEach(({ url, expected }) => {
         it(`should encode image URI "${url}"`, () => {
             expect(encodeImageUri(url)).toEqual(expected);
