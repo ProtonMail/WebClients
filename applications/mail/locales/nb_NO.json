@@ -1150,6 +1150,9 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Angi ${ MAIL_APP_NAME } som standard e-postapplikasjon"
       ],
+      "Set as album cover": [
+        "Angi som albumomslag"
+      ],
       "Set as default": [
         "Angi som standard"
       ],
@@ -3995,9 +3998,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Meldinger og skriving > Kort domene (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
@@ -9771,8 +9771,8 @@
       "Split tunneling (Android and Windows)": [
         "Delt tunnelering (Android og Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integrasjon (kommer snart)"
+      "SSO integration": [
+        "SSO-integrasjon"
       ],
       "Strict no-logs policy": [
         "Streng politikk om ingen logger"
@@ -13203,6 +13203,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help center": [
+        "Hjelpesenter"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skjul e-posten din med ${ PASS_APP_NAME }"
       ],
@@ -13954,7 +13957,7 @@
         "Navn kreves"
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Bare alfanumeriske små bokstaver, prikker, bindestreker og understrekingstegn er tillatt."
+        "Bare små alfanumeriske tegn, punktum og bindestreker (inkludert understrek) er tillatt."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."

@@ -1150,8 +1150,14 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Definir ${ MAIL_APP_NAME } como aplicação de e-mail padrão"
       ],
+      "Set as album cover": [
+        "Definir como capa do álbum"
+      ],
       "Set as default": [
         "Predefinir"
+      ],
+      "Set as default mail application": [
+        "Definir como aplicação de e-mail predefinida"
       ],
       "Set encryption": [
         "Definir a encriptação"
@@ -3993,9 +3999,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Mensagens e composição > Domínio curto (pm.me)."
-      ],
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
@@ -5883,6 +5886,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } também pode proteger a sua empresa."
       ],
+      "${ MAIL_APP_NAME } is not your default mail application.": [
+        "O ${ MAIL_APP_NAME } não é a sua aplicação de e-mail predefinida."
+      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Não é possível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Não é possível mover ${ messagesNotAuthorizedToMove } mensagens."
@@ -6320,6 +6326,9 @@
       ],
       "Default email application": [
         "Aplicação de e-mail padrão"
+      ],
+      "Default mail application": [
+        "Aplicação de e-mail predefinida"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Sabia que tem armazenamento encriptado na nuvem incluído na sua conta ${ BRAND_NAME }? Aceda a ${ DRIVE_APP_NAME } e tire o máximo partido do seu espaço. É gratuito."
@@ -7124,6 +7133,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Defina ${ MAIL_APP_NAME } como aplicação de e-mail padrão para este navegador. ${ MAIL_APP_NAME } abrirá automaticamente quando clicar num ligação de e-mail."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+        "Defina o ${ MAIL_APP_NAME } como a sua aplicação de e-mail predefinida. O ${ MAIL_APP_NAME } será aberto automaticamente quando clicar numa ligação de e-mail."
       ],
       "Setting up ${ feature }…": [
         "A configurar ${ feature }…"
@@ -9759,8 +9771,8 @@
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integração SSO (em breve)"
+      "SSO integration": [
+        "Integração SSO"
       ],
       "Strict no-logs policy": [
         "Política rigorosa de não registo"
@@ -13190,6 +13202,9 @@
       ],
       "Groups": [
         "Grupos"
+      ],
+      "Help center": [
+        "Centro de ajuda"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Oculte o seu e-mail com ${ PASS_APP_NAME }"

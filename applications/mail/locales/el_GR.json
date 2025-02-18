@@ -1150,6 +1150,9 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Ορίστε ${ MAIL_APP_NAME } ως προεπιλεγμένη εφαρμογή email"
       ],
+      "Set as album cover": [
+        "Ορισμός ως εξώφυλλο άλμπουμ"
+      ],
       "Set as default": [
         "Ορισμός ως προεπιλογή"
       ],
@@ -3996,8 +3999,8 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Μπορείτε επίσης να ελέγξετε την ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Μηνύματα και σύνθεση > Σύντομος τομέας (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Ταυτότητα και διευθύνσεις > Σύντομος τομέας (pm.me)"
       ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
@@ -9771,8 +9774,8 @@
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Ενσωμάτωση SSO (σύντομα διαθέσιμο)"
+      "SSO integration": [
+        "Ενσωμάτωση SSO"
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
@@ -13202,6 +13205,9 @@
       ],
       "Groups": [
         "Ομάδες"
+      ],
+      "Help center": [
+        "Κέντρο βοήθειας"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Κρύψτε το email σας με το ${ PASS_APP_NAME }"
