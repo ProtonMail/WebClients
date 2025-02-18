@@ -421,7 +421,7 @@ const MailQuickSettings = () => {
                         onClick={() => setDefaultHandlerModalOpen(true)}
                         data-testid="mail-quick-settings:default-mail-app-button"
                     >
-                        {c('Action').t`Set ${MAIL_APP_NAME} as default email application`}
+                        {c('Action').t`Make ${MAIL_APP_NAME} your default email application`}
                     </QuickSettingsButton>
                 )}
 
