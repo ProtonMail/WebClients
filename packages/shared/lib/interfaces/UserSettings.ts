@@ -77,7 +77,7 @@ export const enum DRAWER_VISIBILITY {
 
 export interface Flags {
     Welcomed: number;
-    SupportPgpV6Keys: number;
+    SupportPgpV6Keys: 0 | 1;
 }
 
 export enum AI_ASSISTANT_ACCESS {
