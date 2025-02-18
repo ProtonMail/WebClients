@@ -78,6 +78,9 @@
       "Add phone number": [
         "휴대전화 번호 추가"
       ],
+      "Add to album": [
+        "앨범에 추가하기"
+      ],
       "Add to group": [
         "그룹에 추가"
       ],
@@ -546,6 +549,9 @@
       "New": [
         "신규"
       ],
+      "New album": [
+        "새로운 앨범"
+      ],
       "New document": [
         "새 문서"
       ],
@@ -752,6 +758,9 @@
       ],
       "Select country": [
         "국가 선택"
+      ],
+      "Set as album cover": [
+        "앨범 커버로 사용하기"
       ],
       "Set recovery phrase": [
         "복구 코드 설정"
@@ -1330,6 +1339,11 @@
       ],
       "Take a tour": [
         "둘러보기"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "다음으로 ${ photos.length }개 사진 추가:"
       ]
     },
     "Cancellation reminder": {
@@ -2409,11 +2423,6 @@
         "기한이 지난 청구서"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2464,7 +2473,7 @@
         "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 초과하지 않도록 하십시오. 파일이 더 크면, 더 작은 파일로 나누세요. ${ learnMoreLink }."
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ MAX_IMPORT_CONTACTS_STRING }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
@@ -2495,6 +2504,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2687,9 +2701,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }을(를) 생성하려면, 일반 > 메시지 및 작성 > 짧은 도메인 (pm.me)로 이동하세요."
       ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
@@ -4137,6 +4148,9 @@
       "All (${ totalFoldersCount } label)": [
         "총 (${ totalFoldersCount } 개 라벨)"
       ],
+      "All albums": [
+        "전체 앨범"
+      ],
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
       ],
@@ -4833,6 +4847,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME이 현재 작성 모드를 사용하여 자동으로 메시지를 보냅니다."
       ],
+      "Photo is set as album cover": [
+        "해당 사진이 앨범 커버로서 설정되었습니다."
+      ],
       "Photos have been successfully recovered.": [
         "사진이 성공적으로 복구되었습니다."
       ],
@@ -4940,6 +4957,9 @@
       ],
       "Ready to add some photos?": [
         "사진 좀 올려 볼까요?"
+      ],
+      "Recent": [
+        "최근"
       ],
       "recommended browser": [
         "권장하는 브라우저"
@@ -6968,6 +6988,9 @@
       "Data breach monitoring": [
         "데이터 유출 모니터링"
       ],
+      "Dedicated servers optimized for streaming": [
+        "스트리밍에 최적화된 전용 서버"
+      ],
       "Desktop app": [
         "데스크톱 앱"
       ],
@@ -7130,8 +7153,8 @@
       "Split tunneling (Android and Windows)": [
         "분할 터널링 (Android 및 Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO 통합 (출시 예정)"
+      "SSO integration": [
+        "SSO 통합"
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
@@ -7201,6 +7224,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "최대 ${ totalStorageSize } 스토리지"
+      ],
+      "Use on up to ${ n } device at once": [
+        "동시에 ${ n }개 기기에서 사용하세요"
       ],
       "User credential management": [
         "사용자 자격 증명 관리"
@@ -7403,7 +7429,7 @@
         "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "가족 구성원에게 할당할 수 있는 최대 ${ n }개의 이메일 주소/별명을 생성하세요. 이를 온라인 신원으로 사용하세요. 예를 들면, 쇼핑 계정에는 JohnShopper@${ domain }을 사용할 수 있습니다."
+        "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 홍쇼핑@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "별칭을 위한 커스텀 도메인, 추가 메일함, 별칭으로부터의 이메일 전송 기능 등"
@@ -8569,10 +8595,10 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+        "${ name }와(과) ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+        "${ name }와(과) 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
@@ -9482,7 +9508,7 @@
         "생산성을 업그레이드하세요"
       ],
       "We don't sell your data": [
-        "저희는 사용자의 데이터를 판매하지 않습니다"
+        "당사는 사용자의 데이터를 판매하지 않습니다"
       ],
       "Your privacy is our mission": [
         "당신의 프라이버시는 저희의 사명입니다"
@@ -9952,7 +9978,7 @@
         "${ links.length }개 항목을 삭제할까요?"
       ],
       "Delete ${ value }": [
-        "${ value }을(를) 삭제할까요"
+        "${ value }을(를) 삭제"
       ],
       "Delete permanently": [
         "영구적으로 삭제"
@@ -10061,6 +10087,9 @@
       ],
       "Groups": [
         "그룹"
+      ],
+      "Help center": [
+        "지원 센터"
       ],
       "High security for your account": [
         "내 계정을 위한 높은 수준의 보안"
@@ -10345,7 +10374,7 @@
         "업로드 완료"
       ],
       "Uploaded by": [
-        "가 업로드함"
+        "업로드한 사용자"
       ],
       "Uploading a large file or folder": [
         "큰 파일 또는 폴더 업로드 중"
@@ -10420,11 +10449,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "오늘"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Tooltip": {
@@ -10508,6 +10532,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Validation": {
@@ -10627,6 +10656,12 @@
       "Are you sure you want to permanently delete this contact?": [
         "이 연락처를 영구적으로 삭제하시겠습니까?"
       ],
+      "Cannot contain a dot at the beginning": [
+        "시작에 점(.)을 포함할 수 없습니다."
+      ],
+      "Cannot contain a dot at the end": [
+        "끝에 점(.)을 포함할 수 없습니다."
+      ],
       "Contacts could not be merged": [
         "연락처를 병합할 수 없습니다"
       ],
@@ -10647,6 +10682,9 @@
       ],
       "Name is required": [
         "이름은 필수입니다"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "영숫자 소문자, 점, 하이픈 및 밑줄만 허용됩니다."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."

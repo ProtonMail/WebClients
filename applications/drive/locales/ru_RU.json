@@ -78,6 +78,9 @@
       "Add phone number": [
         "Добавить номер телефона"
       ],
+      "Add to album": [
+        "Добавить в альбом"
+      ],
       "Add to group": [
         "Добавить в группу"
       ],
@@ -192,6 +195,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Continue downloading": [
+        "Продолжить скачивание"
+      ],
       "Continue import": [
         "Продолжить импорт"
       ],
@@ -224,6 +230,9 @@
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
+      ],
+      "Create album": [
+        "Создать альбом"
       ],
       "Create and copy alias": [
         "Создать и скопировать псевдоним"
@@ -320,6 +329,9 @@
       ],
       "Download logs": [
         "Скачать журналы"
+      ],
+      "Download without scanning": [
+        "Скачать без сканирования"
       ],
       "Drive Locked": [
         "Хранилище заблокировано"
@@ -426,6 +438,9 @@
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
       ],
+      "Hide download options": [
+        "Скрыть параметры загрузки"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Некоторые изображения не могут быть загружены при включённой защите от отслеживания."
       ],
@@ -467,6 +482,9 @@
       ],
       "Learn more": [
         "Подробнее"
+      ],
+      "Learn more.": [
+        "Подробнее."
       ],
       "Leave": [
         "Оставить"
@@ -536,6 +554,9 @@
       ],
       "New": [
         "Новая"
+      ],
+      "New album": [
+        "Новый альбом"
       ],
       "New document": [
         "Новый документ"
@@ -647,6 +668,9 @@
       ],
       "Replace file": [
         "Заменить файл"
+      ],
+      "Report": [
+        "Пожаловаться"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
@@ -873,6 +897,9 @@
       "Upload file": [
         "Загрузить файл"
       ],
+      "Upload files": [
+        "Загрузить файлы"
+      ],
       "Upload folder": [
         "Загрузить папку"
       ],
@@ -932,6 +959,14 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ]
+    },
+    "Actions": {
+      "Create album": [
+        "Создать альбом"
+      ],
+      "Upload": [
+        "Загрузить"
       ]
     },
     "Actions message": {
@@ -1322,6 +1357,14 @@
       ],
       "Take a tour": [
         "Ознакомительный тур"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Добавить ${ photos.length } фотографию в",
+        "Добавить ${ photos.length } фотографии в",
+        "Добавить ${ photos.length } фотографий в",
+        "Добавить ${ photos.length } фото в"
       ]
     },
     "Cancellation reminder": {
@@ -2407,11 +2450,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2487,6 +2525,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2679,9 +2722,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
-      ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
       ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
@@ -3527,6 +3567,14 @@
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ]
     },
+    "Feature": {
+      "Free 5 GB storage": [
+        "5 ГБ бесплатного хранилища"
+      ],
+      "Share privately and securely": [
+        "Делитесь приватно и безопасно"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
@@ -4274,6 +4322,9 @@
         "Все (${ totalFoldersCount } ярлыков)",
         "Всё (${ totalFoldersCount } ярлыков)"
       ],
+      "All albums": [
+        "Все альбомы"
+      ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
       ],
@@ -4576,6 +4627,9 @@
       ],
       "Enabling drive search": [
         "Включается поиск по хранилищу"
+      ],
+      "Encrypted": [
+        "Зашифровано"
       ],
       "Encrypted search is here": [
         "Зашифрованный поиск тут"
@@ -4892,6 +4946,9 @@
       "No": [
         "Нет"
       ],
+      "No Albums": [
+        "Нет альбомов"
+      ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
       ],
@@ -4975,6 +5032,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем."
+      ],
+      "Photo is set as album cover": [
+        "Фотография установлена обложкой альбома"
       ],
       "Photos have been successfully recovered.": [
         "Фотоснимки успешно восстановлены."
@@ -5089,6 +5149,9 @@
       ],
       "Ready to add some photos?": [
         "Готовы добавить фотографии?"
+      ],
+      "Recent": [
+        "Недавние"
       ],
       "recommended browser": [
         "рекомендуемый браузер"
@@ -5302,6 +5365,9 @@
       ],
       "This month": [
         "Этот месяц"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Это навсегда удалит загруженный вами файл"
       ],
       "This will replace the existing file with the folder": [
         "Это заменит существующий файл на папку"
@@ -5847,6 +5913,9 @@
       "Anderson": [
         "Андерсон"
       ],
+      "Anyone on the Internet with the link can edit": [
+        "Любой пользователь, имеющий ссылку, может редактировать"
+      ],
       "Anyone on the Internet with the link can view": [
         "Каждый, кто находится в Интернете и имеет ссылку, может посмотреть"
       ],
@@ -6153,6 +6222,9 @@
       "Move to Inbox": [
         "Переместить во Входящие"
       ],
+      "My Albums": [
+        "Мои Альбомы"
+      ],
       "Name": [
         "Имя"
       ],
@@ -6344,6 +6416,9 @@
       ],
       "Upload your first file": [
         "Загрузите свой первый файл"
+      ],
+      "Uploaded by": [
+        "Загружено с помощью"
       ],
       "VAT": [
         "НДС"
@@ -7322,9 +7397,6 @@
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Интеграция с SSO (скоро появится)"
-      ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
       ],
@@ -7842,6 +7914,9 @@
       "\"${ name }\" failed to be created": [
         "Не удалось создать \"${ name }\""
       ],
+      "\"${ name }\" failed to be deleted": [
+        "Не удалось удалить \"${ name }\""
+      ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" не удалось окончательно удалить из корзины"
       ],
@@ -8081,6 +8156,9 @@
       ],
       "Subfolder failed to be loaded": [
         "Не удалось загрузить подпапку"
+      ],
+      "The document failed to be created": [
+        "Не удалось создать документ"
       ],
       "The item was not added to your drive": [
         "Элемент не был добавлен в хранилище"
@@ -10059,6 +10137,17 @@
         "Поле vCard-файла"
       ]
     },
+    "Tag": {
+      "Favorites": [
+        "Избранное"
+      ],
+      "Screenshots": [
+        "Снимки экрана"
+      ],
+      "Videos": [
+        "Видео"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } ч",
@@ -10160,6 +10249,12 @@
       "Addresses": [
         "Адреса"
       ],
+      "Album": [
+        "Альбом"
+      ],
+      "Albums": [
+        "Альбомы"
+      ],
       "All": [
         "Все"
       ],
@@ -10216,6 +10311,9 @@
       ],
       "Change password": [
         "Изменить пароль"
+      ],
+      "Check for malicious files": [
+        "Проверять наличие вредоносных файлов"
       ],
       "Clearing data": [
         "Очистка данных"
@@ -10301,6 +10399,9 @@
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } группы контактов"
       ],
+      "Delete ${ item.name }?": [
+        "Удалить ${ item.name }?"
+      ],
       "Delete ${ value }": [
         "Удалить ${ value }"
       ],
@@ -10333,6 +10434,9 @@
       ],
       "Download unverified folder?": [
         "Скачать непроверенную папку?"
+      ],
+      "Drive": [
+        "Диск"
       ],
       "Drop to upload": [
         "Перетащите для выгрузки"
@@ -10481,6 +10585,9 @@
       "Need more aliases?": [
         "Нужно больше псевдонимов?"
       ],
+      "Need to share more files with edit access?": [
+        "Нужно предоставить доступ с правом редактирования к другим файлам?"
+      ],
       "Network error": [
         "Ошибка сети"
       ],
@@ -10579,6 +10686,9 @@
       ],
       "Restore your files": [
         "Восстановить файлы"
+      ],
+      "Save it for later in  ${ DRIVE_APP_NAME }": [
+        "Сохранить его в  ${ DRIVE_APP_NAME } для последующего использования?"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Сохранить позже в ${ DRIVE_APP_NAME }"
@@ -10748,6 +10858,9 @@
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
       ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "В вашем скачивании есть файл ${ DOCS_APP_NAME }"
+      ],
       "Your exposed information": [
         "Ваша раскрытая информация"
       ],
@@ -10764,11 +10877,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сегодня"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Tooltip": {
@@ -10849,6 +10957,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы отправили им приглашение получить доступ к этому элементу."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Valentine_2025": {
