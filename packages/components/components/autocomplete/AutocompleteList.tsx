@@ -16,7 +16,6 @@ interface Props<V> {
     isOpen: boolean;
     highlightedIndex: number;
     anchorRef: RefObject<HTMLElement>;
-    dataTestId?: string;
     /**
      * In case we want to filter the number of items in the list for accessibility purposes
      */

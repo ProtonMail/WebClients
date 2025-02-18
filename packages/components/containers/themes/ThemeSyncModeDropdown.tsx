@@ -15,12 +15,10 @@ import type { Theme } from './ThemeCards';
 
 interface Props {
     mode: 'light' | 'dark';
-    minSize?: string;
     className?: string;
     themeIdentifier: ThemeTypes;
     list: Theme[];
     onChange: (themeType: ThemeTypes) => void;
-    active: boolean;
 }
 
 const ThemeSyncModeDropdown = ({ mode, className, themeIdentifier, list, onChange }: Props) => {

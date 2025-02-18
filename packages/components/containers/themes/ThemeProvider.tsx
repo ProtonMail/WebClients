@@ -69,7 +69,6 @@ export const ThemeContext = createContext<ThemeContextInterface>({
 interface Props {
     appName: APP_NAMES;
     children: ReactNode;
-    initial?: ThemeTypes;
 }
 
 export const useTheme = () => {

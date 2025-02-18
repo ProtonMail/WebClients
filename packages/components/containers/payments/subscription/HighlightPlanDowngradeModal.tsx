@@ -165,14 +165,12 @@ const HighlightPlanDowngradeModal = ({
                 <div className="flex flex-row flex-nowrap flex-column md:flex-row gap-6">
                     <SubscriptionCancelPlan
                         name={currentPlanName}
-                        info={shortPlan?.description || ''}
                         features={shortPlanFeatures}
                         className="md:flex-1"
                         downgrade
                     />
                     <SubscriptionCancelPlan
                         name={downgradedPlanName}
-                        info={downgradedShortPlan?.description || ''}
                         features={downgradedShortPlanFeatures}
                         className="md:flex-1"
                     />

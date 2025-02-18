@@ -10,7 +10,6 @@ import './SubscriptionCancelPlan.scss';
 
 interface Props {
     name: string;
-    info: string;
     features: PlanCardFeatureDefinition[];
     downgrade?: boolean;
     className?: string;

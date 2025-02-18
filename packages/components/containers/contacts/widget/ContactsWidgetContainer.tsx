@@ -325,7 +325,6 @@ const ContactsWidgetContainer = ({
                         contactGroupsMap={contactGroupsMap}
                         user={user}
                         onCheckOne={handleCheckOne}
-                        isLargeViewport={false}
                         checkedIDs={checkedIDs}
                         onCheck={handleCheck}
                         onClick={onDetails}
