@@ -2911,9 +2911,6 @@
       "${ list } has no contacts": [
         "某些群组没有联系人：${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "使用用户名 ${ user.Name }。前往设置 -> 消息和编辑 -> 短域名 (pm.me)，创建 ${ emailAddress }。"
-      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -6656,6 +6653,9 @@
       "Data breach monitoring": [
         "数据泄露监控"
       ],
+      "Dedicated servers optimized for streaming": [
+        "专为流媒体优化的专用服务器"
+      ],
       "Desktop app": [
         "桌面应用"
       ],
@@ -6818,8 +6818,8 @@
       "Split tunneling (Android and Windows)": [
         "线路分离（支持 Android 与 Windows）"
       ],
-      "SSO integration (coming soon)": [
-        "集成单点登录（即将推出）"
+      "SSO integration": [
+        "SSO 集成"
       ],
       "Strict no-logs policy": [
         "严格的零日志原则"
@@ -6889,6 +6889,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "最高 ${ totalStorageSize } 存储空间"
+      ],
+      "Use on up to ${ n } device at once": [
+        "最多可同时在 ${ n } 台设备上使用"
       ],
       "User credential management": [
         "用户身份验证管理"
@@ -9647,6 +9650,9 @@
       "Groups": [
         "群组"
       ],
+      "Help center": [
+        "帮助中心"
+      ],
       "Hide time zones for event start and end times": [
         "隐藏事件开始和结束时间的时区"
       ],
@@ -10130,6 +10136,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
       ],
+      "2 consecutive dots are not allowed": [
+        "不允许出现 2 个连续的点"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您确定要永久删除 ${ count } 联系人吗？"
       ],
@@ -10141,6 +10150,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "您确认要永久删除此邮件吗？"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "开头不能包含点"
+      ],
+      "Cannot contain a dot at the end": [
+        "末尾不能包含点"
       ],
       "Contacts could not be merged": [
         "无法合并联系人"
@@ -10162,6 +10177,9 @@
       ],
       "Name is required": [
         "名称为必填项"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "只允许使用字母数字小写字符、点、连字符和下划线"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"

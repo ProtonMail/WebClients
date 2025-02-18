@@ -2529,7 +2529,7 @@
       ],
       "Every ${ interval } day": [
         "Cada ${ interval } día",
-        "Cada ${ interval } día"
+        "Cada ${ interval } días"
       ],
       "until ${ dateString }": [
         "hasta ${ dateString }"
@@ -2935,8 +2935,8 @@
         "${ list } no tiene contactos",
         "Algunos grupos no tienen contactos: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } es su usuario. Para crear ${ emailAddress }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a ajustes > identidad y dirección > dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -6934,8 +6934,8 @@
       "Split tunneling (Android and Windows)": [
         "Tunelización dividida (Android y Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "Integración SSO (próximamente)"
+      "SSO integration": [
+        "Integración SSO"
       ],
       "Strict no-logs policy": [
         "Política estricta de no registros"
@@ -9848,6 +9848,9 @@
       "Groups": [
         "Grupos"
       ],
+      "Help center": [
+        "Centro de ayuda"
+      ],
       "Hide time zones for event start and end times": [
         "Ocultar zonas horarias para las horas inicial y final del evento"
       ],
@@ -10574,12 +10577,12 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Cada semana los ${ multipleDaysString } ${ interval }",
-        "Cada semana los ${ multipleDaysString } ${ interval }"
+        "Cada ${ interval } semana los ${ multipleDaysString }",
+        "Cada ${ interval } semanas los ${ multipleDaysString }"
       ],
       "Every ${ interval } week on all days": [
-        "Cada semana todos los días ${ interval }",
-        "Cada semana todos los días ${ interval }"
+        "Cada ${ interval } semana todos los días",
+        "Cada ${ interval } semanas todos los días"
       ],
       "Every ${ interval } week on Friday": [
         "Cada semana los viernes ${ interval }",

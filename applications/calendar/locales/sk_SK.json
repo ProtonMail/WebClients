@@ -2983,9 +2983,6 @@
         "Niektoré skupiny neobsahujú žiadne kontakty: ${ list }",
         "Niektoré skupiny neobsahujú žiadne kontakty: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } je vaše používateľské meno. Ak chcete vytvoriť doménu ${ emailAddress }, prejdite do časti Nastavenia > Správy a písanie > Krátka doména (pm.me)"
-      ],
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
       ],
@@ -7151,8 +7148,8 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android a Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO integrácia (už čoskoro)"
+      "SSO integration": [
+        "SSO integrácia"
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
@@ -10228,6 +10225,9 @@
       ],
       "Groups": [
         "Skupiny"
+      ],
+      "Help center": [
+        "Centrum pomoci"
       ],
       "Hide time zones for event start and end times": [
         "Skryť časové pásma pre časy začiatku a konca udalosti"
