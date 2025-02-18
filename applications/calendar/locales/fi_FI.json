@@ -2929,9 +2929,6 @@
         "${ list } ei sisällä yhteystietoja",
         "Joissakin ryhmissä ei ole yhteystietoja: ${ list }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Viestit ja kirjoitus > Lyhytosoite (pm.me)"
-      ],
       "A group with this name already exists": [
         "Tämän niminen ryhmä on jo olemassa"
       ],
@@ -6907,9 +6904,6 @@
       "Split tunneling (Android and Windows)": [
         "Jaettu tunnelointi (Android ja Windows)"
       ],
-      "SSO integration (coming soon)": [
-        "SSO-integraatio (tulossa pian)"
-      ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
       ],
@@ -10226,6 +10220,10 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Silloin sinulta laskutetaan ${ renewPrice } vuoden välein."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Uusi tilauksesi uusitaan automaattisesti ${ cycle } kuukauden kuluttua.",
+        "Uusi tilauksesi uusitaan automaattisesti ${ cycle } kuukauden kuluttua."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Tilauksesi uudistuu automaattisesti ${ cycle } kuukauden kuluttua.",
