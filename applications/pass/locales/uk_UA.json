@@ -3117,9 +3117,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Вимагати двоетапну автентифікацію для організації"
-      ],
-      "SSO integration (coming soon)": [
-        "Інтеграція SSO (незабаром)"
       ]
     },
     "Notification": {
@@ -3260,11 +3257,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Закрити"
       ]
     },
     "sso": {
