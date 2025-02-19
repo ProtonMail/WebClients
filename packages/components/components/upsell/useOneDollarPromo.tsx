@@ -6,7 +6,6 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
-import { useLoading } from '@proton/hooks';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, getPlanByName, isMainCurrency } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
@@ -29,7 +28,7 @@ interface Props {
 const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
     const [user] = useUser();
     const [currency, loadingCurrency] = useAutomaticCurrency();
-    const [loading, withLoading] = useLoading(true);
+    const [loading, setLoading] = useState(true);
     const [amountDue, setAmountDue] = useState<number>();
 
     const { fetchPrice } = useRegionalPricing();
@@ -61,6 +60,7 @@ const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
         // The one-dollar promo is only used for paid Mail features, a users having access to
         // paid Mail cannot benefit from it. We don't want to fetch the price for those users.
         if (user.hasPaidMail || loadingCurrency) {
+            setLoading(false);
             return;
         }
 
@@ -68,11 +68,20 @@ const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
         // In those case, the default price is 100 cents
         if (isMainCurrency(currency)) {
             setAmountDue(user.isFree ? OFFER_DEFAULT_AMOUNT_DUE : planPricePerCycle);
+            setLoading(false);
             return;
         }
 
         if (currency && !amountDue) {
-            void withLoading(handleGetPlanAmount);
+            void handleGetPlanAmount()
+                .then(() => {
+                    setLoading(false);
+                })
+                .catch(() => {
+                    setLoading(false);
+                });
+        } else {
+            setLoading(false);
         }
     }, [planID, planPricePerCycle, user.hasPaidMail, currency, loadingCurrency]);
 
