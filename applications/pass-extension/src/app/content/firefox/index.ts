@@ -47,20 +47,6 @@ window.addEventListener('message', async (message) => {
                             token: message.data?.token,
                         })
                     );
-
-                case WorkerMessageType.LOAD_CONTENT_SCRIPT_EXTERNAL:
-                    return await sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.LOAD_CONTENT_SCRIPT_EXTERNAL,
-                        })
-                    );
-
-                case WorkerMessageType.UNLOAD_CONTENT_SCRIPT_EXTERNAL:
-                    return await sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT_EXTERNAL,
-                        })
-                    );
             }
         }
     } catch (e) {
