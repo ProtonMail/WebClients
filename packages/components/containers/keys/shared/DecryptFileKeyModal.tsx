@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -35,13 +36,21 @@ const DecryptFileKeyModal = ({ privateKeyInfo, onSuccess, onClose, ...rest }: Pr
 
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
+    const [
+        {
+            Flags: { SupportPgpV6Keys },
+        },
+    ] = useUserSettings();
 
     const handleSubmit = async () => {
         try {
             const decryptedPrivateKey = await CryptoProxy.importPrivateKey({
                 armoredKey,
                 passphrase: password,
-                checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE, // the BE will enforce this as well, but the returned error messages might be less user friendly
+                // the BE will enforce this as well, but the returned error messages might be less user friendly
+                checkCompatibility: SupportPgpV6Keys
+                    ? KeyCompatibilityLevel.V6_COMPATIBLE
+                    : KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
             });
             onSuccess(decryptedPrivateKey);
             onClose?.();
