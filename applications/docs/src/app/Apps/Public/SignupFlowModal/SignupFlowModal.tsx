@@ -24,16 +24,22 @@ import { emailValidator } from '@proton/shared/lib/helpers/formValidators'
 
 import { useDocsUrlPublicToken } from '@proton/drive-store'
 import { Actions, countActionWithTelemetry } from '@proton/drive-store/utils/telemetry'
-import { openNewTabToSignIn } from '../Utils/Redirection'
-import { openNewTabToSignUp } from '../Utils/Redirection'
+import { redirectToSignIn, redirectToSignUp } from '../Utils/Redirection'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
 
 export interface Props {
   urlPassword: string
   redirectAction: RedirectAction
+  openInNewTab?: boolean
 }
 
-export const SignupFlowModal = ({ urlPassword, onClose, redirectAction, ...modalProps }: Props & ModalStateProps) => {
+export const SignupFlowModal = ({
+  urlPassword,
+  onClose,
+  redirectAction,
+  openInNewTab = true,
+  ...modalProps
+}: Props & ModalStateProps) => {
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const api = useApi()
@@ -62,13 +68,20 @@ export const SignupFlowModal = ({ urlPassword, onClose, redirectAction, ...modal
       // Email is verified and available to use
       // We redirect to Docs signup
       if (Code === 1000) {
-        await openNewTabToSignUp({ action: redirectAction, token, email, linkId, urlPassword })
+        await redirectToSignUp({ action: redirectAction, token, email, linkId, urlPassword, openInNewTab })
       }
     } catch (err) {
       const { code, message } = getApiError(err)
       // Email is already in use or if user pass proton domain we redirect to SIGN_IN
       if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code || API_CUSTOM_ERROR_CODES.NOT_ALLOWED === code) {
-        await openNewTabToSignIn({ action: redirectAction, token, email, linkId, urlPassword })
+        await redirectToSignIn({
+          action: redirectAction,
+          token,
+          email,
+          linkId,
+          urlPassword,
+          openInNewTab,
+        })
         return
       }
       // Other errors we show the error message
