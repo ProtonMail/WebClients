@@ -13,8 +13,10 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 
+import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import type { OnFileUploadSuccessCallbackData, PhotoGridItem, PhotoLink } from '../../../store';
 import { isPhotoGroup } from '../../../store/_photos';
+import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
 import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
@@ -173,6 +175,7 @@ interface ToolbarRightActionsGalleryProps {
 interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGalleryProps {
     requestDownload: (linkIds: string[]) => Promise<void>;
     data: PhotoGridItem[];
+    album: DecryptedAlbum;
 }
 
 const ToolbarRightActionsGallery = ({
@@ -192,8 +195,11 @@ const ToolbarRightActionsAlbumGallery = ({
     linkId,
     onFileUpload,
     requestDownload,
+    album,
     data,
 }: ToolbarRightActionsAlbumGalleryProps) => {
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+
     return (
         <>
             {!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />}
@@ -218,12 +224,17 @@ const ToolbarRightActionsAlbumGallery = ({
                 shape="ghost"
                 icon={true}
                 onClick={() => {
-                    // console.log('TODO: Share Modal');
+                    if (album.rootShareId) {
+                        showLinkSharingModal({ shareId: album.rootShareId, linkId: album.linkId });
+                    } else {
+                        // TODO: Display error notification
+                    }
                 }}
             >
                 <Icon name="user-plus" alt={'Share'} />
             </Button>
             <AlbumGalleryDropdownButton />
+            {linkSharingModal}
         </>
     );
 };
@@ -240,6 +251,7 @@ interface PhotosWithAlbumToolbarProps {
     createAlbumModal: ModalStateReturnObj;
     addAlbumPhotosModal?: ModalStateReturnObj;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+    album?: DecryptedAlbum;
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
@@ -254,6 +266,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     createAlbumModal,
     addAlbumPhotosModal,
     onFileUpload,
+    album,
 }) => {
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
@@ -266,7 +279,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                 )}
                 {tabSelection === 'albums' && <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />}
 
-                {tabSelection === 'albums-gallery' && !hasSelection && (
+                {tabSelection === 'albums-gallery' && !hasSelection && album && (
                     <ToolbarRightActionsAlbumGallery
                         uploadDisabled={uploadDisabled}
                         shareId={shareId}
@@ -274,6 +287,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         requestDownload={requestDownload}
                         data={data}
                         onFileUpload={onFileUpload}
+                        album={album}
                     />
                 )}
 
