@@ -78,7 +78,11 @@ export {
 export { DisplayablePaymentError, SepaEmailNotProvidedError } from './core/errors';
 export {
     NEW_BATCH_CURRENCIES_FEATURE_FLAG,
+    captureWrongPlanIDs,
+    captureWrongPlanName,
     extendStatus,
+    fixPlanName,
+    fixPlanIDs,
     getAvailableCurrencies,
     getCurrencyRate,
     getFallbackCurrency,
@@ -169,6 +173,7 @@ export { PaymentProcessor } from './core/payment-processors/paymentProcessor';
 export { PaypalPaymentProcessor } from './core/payment-processors/paypalPayment';
 export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedChargebeePayment';
 export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
+export { isPlanEnabled } from './core/plan/helpers';
 export { extractIBAN, formatPaymentMethod, formatPaymentMethods } from './core/sepa';
 export {
     getScribeAddonNameByPlan,

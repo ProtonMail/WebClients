@@ -1,3 +1,5 @@
+import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     ChargebeeEnabled,
     type Plan,
@@ -17,6 +19,7 @@ import type {
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
     PlainPaymentMethodType,
+    PlanIDs,
 } from './interface';
 import { type FreeSubscription } from './interface';
 import { isPaymentMethodStatusExtended, isStringPLAN } from './type-guards';
@@ -304,4 +307,73 @@ export function getCurrencyRate(currency: Currency): number {
     }
 
     return 1;
+}
+
+export function captureWrongPlanName(
+    planName: string | undefined,
+    context: {
+        source: string;
+        [key: string]: any;
+    }
+) {
+    try {
+        if (planName === PLANS.VPN) {
+            captureMessage('Payments: wrong plan name', {
+                level: 'warning',
+                extra: { planName, ...context },
+            });
+        }
+    } catch {}
+}
+
+export function captureWrongPlanIDs(
+    planIDs: PlanIDs | undefined,
+    context: {
+        source: string;
+        [key: string]: any;
+    }
+) {
+    try {
+        if (!planIDs) {
+            return;
+        }
+
+        const planName = getPlanNameFromIDs(planIDs);
+        if (planName === PLANS.VPN) {
+            captureWrongPlanName(planName, { planIDs, ...context });
+        }
+    } catch {}
+}
+
+export function fixPlanName(planName: PLANS, source: string): PLANS;
+export function fixPlanName(planName: string, source: string): string;
+export function fixPlanName(planName: PLANS | undefined, source: string): PLANS | undefined;
+export function fixPlanName(planName: string | undefined, source: string): string | undefined;
+export function fixPlanName(planName: string | null, source: string): string | null;
+export function fixPlanName(planName: string | null | undefined, source: string): string | null | undefined {
+    if (planName === PLANS.VPN) {
+        captureWrongPlanName(planName, { source });
+        return PLANS.VPN2024;
+    }
+
+    return planName;
+}
+
+export function fixPlanIDs(planIDs: PlanIDs | undefined, source: string): PlanIDs | undefined {
+    try {
+        if (!planIDs || !planIDs[PLANS.VPN]) {
+            return;
+        }
+
+        const planIDsCopy: PlanIDs = { ...planIDs };
+
+        delete planIDsCopy[PLANS.VPN];
+        planIDsCopy[PLANS.VPN2024] = 1;
+
+        captureWrongPlanIDs(planIDsCopy, { source });
+
+        return planIDsCopy;
+    } catch {
+        return planIDs;
+    }
 }
