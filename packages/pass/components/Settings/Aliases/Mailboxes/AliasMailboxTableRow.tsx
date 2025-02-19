@@ -79,7 +79,7 @@ export const AliasMailboxTableRow: FC<Props> = ({ canDelete, mailbox }) => {
                             >
                                 {!IsDefault && (
                                     <DropdownMenuButton
-                                        disabled={verificationRequired || loading}
+                                        disabled={!Verified || loading}
                                         label={c('Action').t`Make default`}
                                         onClick={() => dispatch(setDefaultMailbox, { mailboxID })}
                                     />
