@@ -6,8 +6,8 @@ import {
     inviteRecommendationsIntent,
     inviteRecommendationsSuccess,
 } from '@proton/pass/store/actions';
+import { requestInvalidate } from '@proton/pass/store/request/actions';
 import type { InviteRecommendationsResponse } from '@proton/pass/types';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
 function* loadRecommendationsWorker({
     payload,
@@ -16,9 +16,8 @@ function* loadRecommendationsWorker({
     const ctrl = new AbortController();
 
     try {
-        yield wait(100);
-
         const result = (yield getInviteRecommendations(payload, ctrl.signal)) as InviteRecommendationsResponse;
+
         const { RecommendedEmails, GroupDisplayName, PlanRecommendedEmails, PlanRecommendedEmailsNextToken } = result;
 
         yield put(
@@ -34,7 +33,10 @@ function* loadRecommendationsWorker({
     } catch (error) {
         yield put(inviteRecommendationsFailure(request.id, error));
     } finally {
-        if (yield cancelled()) ctrl.abort();
+        if (yield cancelled()) {
+            ctrl.abort();
+            yield put(requestInvalidate(request.id));
+        }
     }
 }
 
