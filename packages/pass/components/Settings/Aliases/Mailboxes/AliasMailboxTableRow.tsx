@@ -45,7 +45,7 @@ export const AliasMailboxTableRow: FC<Props> = ({ canDelete, mailbox }) => {
                     </TableCell>
                     <TableCell label={c('Title').t`Aliases`}>{AliasCount}</TableCell>
                     <TableCell className="pass-mailboxes-table--status">
-                        <div className="flex justify-start gap-1 flex-nowrap">
+                        <div className="flex justify-start gap-1">
                             {IsDefault && (
                                 <Badge type="primary" className="text-center shrink-0">
                                     <span className="text-ellipsis">{c('Title').t`Default`}</span>
