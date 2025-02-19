@@ -32,6 +32,7 @@ export const PinCodeInput: FC<Props> = ({ autoFocus = true, className, disabled,
                 inputType="password"
                 disableChange={disabled || loading}
                 autoFocus={autoFocus}
+                data-protonpass-ignore={true}
             />
         </div>
     );

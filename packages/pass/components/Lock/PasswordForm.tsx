@@ -30,16 +30,17 @@ export const PasswordForm: FC<Props> = ({ id, disabled, loading, submitLabel, on
             <Form id={id}>
                 <div className="flex flex-nowrap items-end w-full" style={{ '--border-radius-xl': '2em' }}>
                     <Field
-                        component={PasswordField}
-                        name="password"
-                        dense
-                        rootClassName="flex-1"
-                        className="flex-1 rounded-xl overflow-hidden"
-                        inputClassName="text-rg rounded-none"
-                        disabled={disabled || loading}
-                        autoFocus={!disabled}
                         autoComplete="current-password"
+                        autofillable
+                        autoFocus={!disabled}
+                        className="flex-1 rounded-xl overflow-hidden"
+                        component={PasswordField}
+                        dense
+                        disabled={disabled || loading}
+                        inputClassName="text-rg rounded-none"
+                        name="password"
                         required
+                        rootClassName="flex-1"
                         {...(disabled ? { error: undefined } : {})}
                     />
                 </div>
