@@ -18,6 +18,7 @@ import {
     type PaymentMethodStatusExtended,
     type PaymentsApi,
     type RequestOptions,
+    captureWrongPlanIDs,
     extendStatus,
     isCheckWithAutomaticOptions,
     isPaymentMethodStatusExtended,
@@ -321,6 +322,8 @@ export const usePaymentsApi = (
             requestOptions: RequestOptions = {},
             options?: CheckWithAutomaticOptions
         ): Promise<SubscriptionCheckResponse> => {
+            captureWrongPlanIDs(data.Plans, { source: 'checkWithAutomaticVersion' });
+
             if (isLifetimePlanSelected(data.Plans)) {
                 return api(checkProduct(data));
             }

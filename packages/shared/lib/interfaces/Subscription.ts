@@ -32,6 +32,11 @@ export interface Offer {
     Pricing: Partial<Pricing>;
 }
 
+export enum PlanState {
+    Unavailable = 0,
+    Available = 1,
+}
+
 export interface Plan {
     ID: string;
     ParentMetaPlanID: string;
@@ -54,7 +59,7 @@ export interface Plan {
     Pricing: Pricing;
     DefaultPricing?: Pricing;
     PeriodEnd: CycleMapping<number>;
-    State: number;
+    State: PlanState;
     Offers: Offer[];
     Vendors?: any;
 }
