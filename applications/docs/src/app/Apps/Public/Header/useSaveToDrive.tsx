@@ -36,7 +36,7 @@ export function useSaveToDrive({
 
   const handleClick = useCallback(async () => {
     if (!user) {
-      showSignupFlowModal({ urlPassword, redirectAction: RedirectAction.Bookmark })
+      showSignupFlowModal({ urlPassword, redirectAction: RedirectAction.Bookmark, openInNewTab: false })
     } else if (isAlreadyBookmarked) {
       openNewTab(getAppHref('/shared-with-me', APPS.PROTONDRIVE))
     } else {
