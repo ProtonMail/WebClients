@@ -17,14 +17,12 @@ import { OrganizationProvider, useOrganization } from '@proton/pass/components/O
 import { Import } from '@proton/pass/components/Settings/Import';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { AccountPath } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import type { RequestForkData } from '@proton/pass/lib/auth/fork';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import { type Unpack } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Aliases } from './Views/Aliases';
@@ -40,9 +38,9 @@ type Props = { pathname: string };
 type Tab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>>;
 type SettingTab = Tab & { path: string; hidden?: boolean };
 
-const getSettingsTabs = (orgEnabled: boolean = false, aliasesEnabled: boolean): SettingTab[] => [
+const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
     { path: '/', title: c('Label').t`General`, content: <General /> },
-    ...(aliasesEnabled ? [{ path: '/aliases', title: c('Label').t`Aliases`, content: <Aliases /> }] : []),
+    { path: '/aliases', title: c('Label').t`Aliases`, content: <Aliases /> },
     { path: '/security', title: c('Label').t`Security`, content: <Security /> },
     { path: '/import', title: c('Label').t`Import`, content: <Import /> },
     { path: '/export', title: c('Label').t`Export`, content: <Export /> },
@@ -69,16 +67,12 @@ const pathnameToIndex = (pathname: string, availableTabs: SettingTab[]) => {
 export const SettingsTabs: FC<Props> = ({ pathname }) => {
     const { authorized, status } = useAppState();
     const organization = useOrganization();
-    const aliasesEnabled = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
     const requestFork = useRequestFork();
     const store = useStore<State>();
 
-    const tabs = useMemo(
-        () => getSettingsTabs(organization?.settings.enabled, aliasesEnabled),
-        [organization, aliasesEnabled]
-    );
+    const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled), [organization]);
 
     const history = useHistory();
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname, tabs));
