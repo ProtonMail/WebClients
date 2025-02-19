@@ -1,5 +1,5 @@
-import type { ReactNode, Ref } from 'react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { ReactNode, RefObject } from 'react';
+import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
@@ -15,6 +15,7 @@ import {
     DrawerAppHeaderCustomTitle,
     DrawerSidebar,
     DrawerVisibilityButton,
+    ErrorBoundary,
     FloatingButton,
     Icon,
     InboxDesktopFreeTrialTopBanner,
@@ -65,10 +66,11 @@ import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import { getMonthDateRange } from './eventStore/prefetching/getMonthDateRange';
-import getDateDiff from './getDateDiff';
 import { toUrlParams } from './getUrlHelper';
 import CalendarSearch from './search/CalendarSearch';
 import { useCalendarSearch } from './search/CalendarSearchProvider';
+
+const LazyCalendarShortcutsAndCommander = lazy(() => import(/* webpackChunkName: "CalendarShortcutsAndCommander" */ './CalendarShortcutsAndCommander'));
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -94,16 +96,16 @@ interface Props {
     onCreateEvent?: (attendees?: AttendeeModel[]) => void;
     onBackFromSearch: () => void;
     onClickToday: () => void;
+    onClickNextView: () => void;
+    onClickPreviousView: () => void;
     onChangeView: (view: VIEWS) => void;
     onChangeDate: (date: Date) => void;
     onChangeDateRange: (date: Date, range: number, resetRange?: boolean) => void;
     prefetchCalendarEvents: (range: [Date, Date]) => void;
-    containerRef: HTMLDivElement | null;
-    setContainerRef: Ref<HTMLDivElement>;
+    containerRef: RefObject<HTMLDivElement>;
     onSearch: () => void;
     addresses: Address[];
     calendarUserSettings: CalendarUserSettings;
-    startPTTMetric?: (transition_type: VIEWS, prevClicked?: boolean, nextClicked?: boolean) => void;
 }
 
 const CalendarContainerView = ({
@@ -127,6 +129,8 @@ const CalendarContainerView = ({
     onCreateEvent,
     onBackFromSearch,
     onClickToday,
+    onClickNextView,
+    onClickPreviousView,
     onChangeView,
     onChangeDate,
     onChangeDateRange,
@@ -135,14 +139,11 @@ const CalendarContainerView = ({
 
     children,
     containerRef,
-    setContainerRef,
     onSearch,
 
     addresses,
 
     calendarUserSettings,
-
-    startPTTMetric,
 }: Props) => {
     const [showIframeMiniCalendar, setShowIframeMiniCalendar] = useState<boolean>(false);
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -205,16 +206,6 @@ const CalendarContainerView = ({
         },
         [showIframeMiniCalendar]
     );
-
-    const handleClickNext = useCallback(() => {
-        startPTTMetric?.(view, false, true);
-        onChangeDate(getDateDiff(utcDate, range, view, 1));
-    }, [utcDate, range, view]);
-
-    const handleClickPrev = useCallback(() => {
-        startPTTMetric?.(view, true);
-        onChangeDate(getDateDiff(utcDate, range, view, -1));
-    }, [utcDate, range, view]);
 
     const ownNormalizedEmails = useMemo(() => {
         return addresses.map(({ Email }) => canonicalizeInternalEmail(Email));
@@ -467,8 +458,8 @@ const CalendarContainerView = ({
                         currentRange={currentRange}
                         now={localNowDate}
                         onToday={onClickToday}
-                        onNext={handleClickNext}
-                        onPrev={handleClickPrev}
+                        onNext={onClickNextView}
+                        onPrev={onClickPreviousView}
                     />
                 )
             }
@@ -629,7 +620,7 @@ const CalendarContainerView = ({
             bottom={bottom}
             sidebar={sidebar}
             header={header}
-            containerRef={setContainerRef}
+            containerRef={containerRef}
             drawerApp={
                 isDrawerApp ? null : (
                     <DrawerApp
@@ -639,6 +630,22 @@ const CalendarContainerView = ({
                 )
             }
         >
+            <ErrorBoundary>
+                <Suspense>
+                    <LazyCalendarShortcutsAndCommander
+                        isDrawerApp={isDrawerApp}
+                        onClickToday={onClickToday}
+                        onClickNextView={onClickNextView}
+                        onClickPreviousView={onClickPreviousView}
+                        onChangeView={onChangeView}
+                        handleClickSearch={handleClickSearch}
+                        onCreateEvent={onCreateEvent}
+                        isSearching={isSearching}
+                        handleBackFromSearch={handleBackFromSearch}
+                    />
+                </Suspense>
+            </ErrorBoundary>
+
             <div className="only-print p-4">
                 {tzid} <br />
                 {calendars

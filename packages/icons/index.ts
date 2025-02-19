@@ -95,10 +95,13 @@ export type IconName =
     | 'bug'
     | 'buildings'
     | 'calendar-cells'
+    | 'calendar-day'
     | 'calendar-checkmark'
     | 'calendar-grid'
+    | 'calendar-month'
     | 'calendar-row'
     | 'calendar-today'
+    | 'calendar-week'
     | 'camera'
     | 'candles-cake'
     | 'card-identity'
@@ -480,10 +483,13 @@ export { IcBroom } from './icons/IcBroom';
 export { IcBug } from './icons/IcBug';
 export { IcBuildings } from './icons/IcBuildings';
 export { IcCalendarCells } from './icons/IcCalendarCells';
+export { IcCalendarDay } from './icons/IcCalendarDay';
 export { IcCalendarCheckmark } from './icons/IcCalendarCheckmark';
 export { IcCalendarGrid } from './icons/IcCalendarGrid';
+export { IcCalendarMonth } from './icons/IcCalendarMonth';
 export { IcCalendarRow } from './icons/IcCalendarRow';
 export { IcCalendarToday } from './icons/IcCalendarToday';
+export { IcCalendarWeek } from './icons/IcCalendarWeek';
 export { IcCamera } from './icons/IcCamera';
 export { IcCandlesCake } from './icons/IcCandlesCake';
 export { IcCardIdentity } from './icons/IcCardIdentity';
@@ -582,6 +588,7 @@ export { IcHourglass } from './icons/IcHourglass';
 export { IcHouse } from './icons/IcHouse';
 export { IcHouseFilled } from './icons/IcHouseFilled';
 export { IcImage } from './icons/IcImage';
+export { IcImageStacked } from './icons/IcImageStacked';
 export { IcInbox } from './icons/IcInbox';
 export { IcInfoCircle } from './icons/IcInfoCircle';
 export { IcInfoCircleFilled } from './icons/IcInfoCircleFilled';
@@ -600,6 +607,7 @@ export { IcListArrowUp } from './icons/IcListArrowUp';
 export { IcListArrowDown } from './icons/IcListArrowDown';
 export { IcListBullets } from './icons/IcListBullets';
 export { IcListNumbers } from './icons/IcListNumbers';
+export { IcLive } from './icons/IcLive';
 export { IcLock } from './icons/IcLock';
 export { IcLockCheck } from './icons/IcLockCheck';
 export { IcLockCheckFilled } from './icons/IcLockCheckFilled';
@@ -675,6 +683,7 @@ export { IcPassWallet } from './icons/IcPassWallet';
 export { IcPassWork } from './icons/IcPassWork';
 export { IcPaintRoller } from './icons/IcPaintRoller';
 export { IcPalette } from './icons/IcPalette';
+export { IcPanorama } from './icons/IcPanorama';
 export { IcPaperClip } from './icons/IcPaperClip';
 export { IcPaperClipVertical } from './icons/IcPaperClipVertical';
 export { IcPaperPlane } from './icons/IcPaperPlane';
@@ -701,8 +710,10 @@ export { IcPrinter } from './icons/IcPrinter';
 export { IcQrCode } from './icons/IcQrCode';
 export { IcQuestionCircle } from './icons/IcQuestionCircle';
 export { IcQuestionCircleFilled } from './icons/IcQuestionCircleFilled';
+export { IcRaw } from './icons/IcRaw';
 export { IcRobot } from './icons/IcRobot';
 export { IcRocket } from './icons/IcRocket';
+export { IcScreenshot } from './icons/IcScreenshot';
 export { IcServers } from './icons/IcServers';
 export { IcShield } from './icons/IcShield';
 export { IcShield2 } from './icons/IcShield2';
