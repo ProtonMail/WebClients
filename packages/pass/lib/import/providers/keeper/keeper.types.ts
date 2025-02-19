@@ -21,6 +21,13 @@ export type KeeperCustomFields = Record<string, KeeperCustomFieldValue> & {
     };
 };
 
+export type KeeperPhoneField = {
+    number?: string;
+    ext?: string;
+    type?: string;
+    region?: string;
+};
+
 export type KeeperFolder = {
     folder?: string;
 };
