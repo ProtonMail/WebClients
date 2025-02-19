@@ -11,6 +11,7 @@ enum CommonFeatureFlag {
     CryptoDisableUndecryptableKeys = 'CryptoDisableUndecryptableKeys',
     InboxUpsellFlow = 'InboxUpsellFlow',
     CalendarBusyTimeSlots = 'CalendarBusyTimeSlots',
+    CalendarHotkeys = 'CalendarHotkeys',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
@@ -72,6 +73,7 @@ enum CalendarFeatureFlag {
     VideoConferenceWidget = 'VideoConferenceWidget',
     ZoomIntegration = 'ZoomIntegration',
     CalendarMetrics = 'CalendarMetrics',
+    CalendarCommander = 'CalendarCommander',
 }
 
 enum DriveFeatureFlag {

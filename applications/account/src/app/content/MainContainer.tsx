@@ -152,6 +152,7 @@ const MainContainer = () => {
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const canDisplayPassReports = useFlag('PassB2BReports');
@@ -203,6 +204,7 @@ const MainContainer = () => {
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
+        isCalendarHotkeysEnabled,
     });
 
     useEffect(() => {

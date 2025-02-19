@@ -12,6 +12,7 @@ interface Props {
     app: APP_NAMES;
     user: UserModel;
     isZoomIntegrationEnabled: boolean;
+    isCalendarHotkeysEnabled: boolean;
     organization?: Organization;
 }
 
@@ -19,7 +20,13 @@ interface Props {
  * Calendar config is coupled to CalendarSidebar.
  * Any additional section must also be added to CalendarSidebar.
  */
-export const getCalendarAppRoutes = ({ app, user, organization, isZoomIntegrationEnabled }: Props) => {
+export const getCalendarAppRoutes = ({
+    app,
+    user,
+    organization,
+    isZoomIntegrationEnabled,
+    isCalendarHotkeysEnabled,
+}: Props) => {
     const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
     const isVisionary = isOrganizationVisionary(organization);
@@ -67,6 +74,11 @@ export const getCalendarAppRoutes = ({ app, user, organization, isZoomIntegratio
                         text: c('Title').t`Integrations`,
                         id: CALENDAR_SETTINGS_SECTION_ID.INTEGRATIONS,
                         available: isZoomIntegrationEnabled && canDisableZoomIntegration,
+                    },
+                    {
+                        text: c('Title').t`Other preferences`,
+                        id: CALENDAR_SETTINGS_SECTION_ID.OTHER_PREFERENCES,
+                        available: isCalendarHotkeysEnabled,
                     },
                 ],
             },
