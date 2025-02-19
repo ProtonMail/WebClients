@@ -270,6 +270,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                         <PhotosWithAlbumsToolbar
                             shareId={shareId}
                             linkId={uploadLinkId}
+                            album={album}
                             selectedItems={selectedItems}
                             onPreview={handleToolbarPreview}
                             requestDownload={requestDownload}
