@@ -100,9 +100,9 @@ export const getAndVerifyApiKeys = async ({
     }>(config);
     const addressKeys = await importKeys(Address.Keys);
     // unverified keys include WKD ones, hence we check compatibility (NB: internal users with v6 keys won't have unverified keys);
-    // we can eventually accept WKD v6 keys, as long as pinning them is limited to users who have opted in v6 support.
+    // we can accept WKD v6 keys here since they the web-client can encrypt emails to them, and pinning such keys is only possible for users who have opted in v6 support.
     const unverifiedKeys = Unverified
-        ? await importKeys(Unverified.Keys, KeyCompatibilityLevel.BACKWARDS_COMPATIBLE)
+        ? await importKeys(Unverified.Keys, KeyCompatibilityLevel.V6_COMPATIBLE)
         : undefined;
     const catchAllKeys = CatchAll ? await importKeys(CatchAll.Keys) : undefined;
     const ktResult = await verifyOutboundPublicKeys({
