@@ -29,6 +29,7 @@ import {
     SelectedPlan,
     getPlansMap,
 } from '@proton/payments';
+import { fixPlanName } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPlanName, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -47,7 +48,7 @@ const getParameters = (
 ) => {
     const params = new URLSearchParams(search);
 
-    const planName = params.get('plan') || '';
+    const planName = fixPlanName(params.get('plan'), 'AutomaticSubscriptionModal') || '';
     const coupon = params.get('coupon') || undefined;
     const cycleParam = parseInt(params.get('cycle') as any, 10);
     const currencyParam = params.get('currency')?.toUpperCase();

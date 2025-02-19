@@ -31,6 +31,7 @@ import {
     PLANS,
     PLAN_TYPES,
     type PaymentMethodStatusExtended,
+    fixPlanName,
 } from '@proton/payments';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -155,7 +156,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
         parsedCurrency = 'USD';
     }
 
-    const maybePlanName = searchParams.get('plan') || '';
+    const maybePlanName = fixPlanName(searchParams.get('plan'), 'LiteApp') || '';
     const plan =
         maybeType === 'upgrade'
             ? getUpgradedPlan(subscription, app)
