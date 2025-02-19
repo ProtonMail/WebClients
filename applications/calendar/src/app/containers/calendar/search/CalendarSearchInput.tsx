@@ -105,6 +105,7 @@ const CalendarSearchInput = (
                 icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
                 className="mr-2"
                 onClick={handleBack}
+                title={c('Action').t`Back`}
             />
             <div className="flex flex-nowrap gap-2" ref={searchRef}>
                 <div

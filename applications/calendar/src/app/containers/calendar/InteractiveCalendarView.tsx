@@ -275,7 +275,7 @@ interface Props extends SharedViewProps {
     activeAddresses: Address[];
     createEventCalendar?: VisualCalendar;
     createEventCalendarBootstrap?: CalendarBootstrap;
-    containerRef: HTMLDivElement | null;
+    containerRef: RefObject<HTMLDivElement>;
     timeGridViewRef: RefObject<TimeGridRef>;
     interactiveRef: RefObject<InteractiveRef>;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
@@ -702,7 +702,7 @@ const InteractiveCalendarView = ({
 
     const handleMouseDown = (mouseDownAction: MouseDownAction) => {
         // Manually dispatch a mousedown event, since it has been blocked by our custom mouse handlers
-        containerRef?.dispatchEvent(new Event('mousedown'));
+        containerRef.current?.dispatchEvent(new Event('mousedown'));
 
         if (isEventDownAction(mouseDownAction)) {
             const { event, type } = mouseDownAction.payload;
@@ -1861,11 +1861,11 @@ const InteractiveCalendarView = ({
             }
             autoCloseRef?.current?.({ ask: true });
         };
-        containerRef.addEventListener('click', handler);
+        containerRef.current?.addEventListener('click', handler);
         document.addEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, resetInteractiveData);
 
         return () => {
-            containerRef.removeEventListener('click', handler);
+            containerRef.current?.removeEventListener('click', handler);
             document.removeEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, resetInteractiveData);
         };
     }, [containerRef]);

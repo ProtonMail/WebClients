@@ -18,6 +18,7 @@ const DummyCalendarContainerView = ({ drawerView, isSmallViewport }: Props) => {
     const now = new Date();
     const dateRange: [Date, Date] = [startOfWeek(now), endOfWeek(now)];
     const tzid = 'Europe/Zurich';
+    const containerRef = useRef<HTMLDivElement>(null); // Define dummy ref to avoid errors
 
     const calendarUserSettings = {
         WeekLength: 7,
@@ -42,13 +43,14 @@ const DummyCalendarContainerView = ({ drawerView, isSmallViewport }: Props) => {
             onCreateCalendarFromSidebar={noop}
             onBackFromSearch={noop}
             onClickToday={noop}
+            onClickNextView={noop}
+            onClickPreviousView={noop}
             onChangeView={noop}
             onChangeDate={noop}
             onChangeDateRange={noop}
             tzid={tzid}
             setTzid={noop}
-            containerRef={null}
-            setContainerRef={noop}
+            containerRef={containerRef}
             onSearch={noop}
             addresses={[]}
             calendars={[]}

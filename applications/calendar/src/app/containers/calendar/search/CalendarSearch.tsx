@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { type RefObject, useEffect, useRef, useState } from 'react';
 
 import { usePopperAnchor } from '@proton/components';
 import generateUID from '@proton/utils/generateUID';
@@ -12,7 +12,7 @@ import SearchOverlay from './SearchOverlay';
 import './SearchOverlay.scss';
 
 interface Props {
-    containerRef: HTMLDivElement | null;
+    containerRef: RefObject<HTMLDivElement>;
     onSearch: () => void;
     onBackFromSearch: () => void;
 }
@@ -67,15 +67,18 @@ const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => 
     }, [isOpen, isSearchEnabled]);
 
     useEffect(() => {
-        if (!containerRef) {
+        if (!containerRef.current) {
             return;
         }
-        containerRef.addEventListener('mousedown', handleCloseSearch, { passive: true });
-        containerRef.addEventListener('touchstart', handleCloseSearch, { passive: true });
+        containerRef.current.addEventListener('mousedown', handleCloseSearch, { passive: true });
+        containerRef.current.addEventListener('touchstart', handleCloseSearch, { passive: true });
 
         return () => {
-            containerRef.removeEventListener('mousedown', handleCloseSearch);
-            containerRef.removeEventListener('touchstart', handleCloseSearch);
+            if (!containerRef.current) {
+                return;
+            }
+            containerRef.current.removeEventListener('mousedown', handleCloseSearch);
+            containerRef.current.removeEventListener('touchstart', handleCloseSearch);
         };
     }, [containerRef, handleCloseSearch]);
 
