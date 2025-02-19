@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { AccountSwitcherList, AccountSwitcherTooltip } from 'proton-pass-web/app/Auth/AccountSwitcher';
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
-import { checkAuthSwitch, useAvailableSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
+import { useAvailableSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
@@ -65,8 +65,6 @@ export const Lobby: FC = () => {
                 onRegister={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
                 renderAccountSwitcher={() => {
-                    if (!checkAuthSwitch()) return null;
-
                     /** If the auth store has been cleared when reaching the lobby,
                      * show the full available sessions list. This can happen when
                      * logging out of a session with multiple active sessions */

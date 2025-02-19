@@ -3,7 +3,6 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
-import { checkAuthSwitch, enableAuthSwitch } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
@@ -173,12 +172,6 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         monitor: core.monitor,
                         dispatch: core.onB2BEvent,
                     }),
-
-                onFeatureFlags: (features) => {
-                    /** Account switch feature flag cannot be account specific - first
-                     * accounts which gets it enables it for all other sessions */
-                    if (!checkAuthSwitch() && features.PassAccountSwitchV1) enableAuthSwitch();
-                },
 
                 onSettingsUpdated: async (update) => {
                     void settings.sync(update, authStore.getLocalID());
