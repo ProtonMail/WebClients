@@ -89,7 +89,7 @@ export const useHotkeys = (
 ) => {
     const { keyEventType = 'keydown', sequenceResetTime = 1000, dependencies = [] } = options || {};
     const msSinceLastEvent = useRef(0);
-
+    const normalizedHotkeyTupleArray = hotkeyTupleArray.map(normalizeMetaControl);
     const sequence = useRef<Sequence>([]);
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -121,8 +121,6 @@ export const useHotkeys = (
         ].filter(isTruthy) as Hotkey;
 
         sequence.current.push(modifiedKey);
-
-        const normalizedHotkeyTupleArray = hotkeyTupleArray.map(normalizeMetaControl);
 
         for (let i = 0; i < normalizedHotkeyTupleArray.length; i++) {
             const hotKeyTuple = normalizedHotkeyTupleArray[i];

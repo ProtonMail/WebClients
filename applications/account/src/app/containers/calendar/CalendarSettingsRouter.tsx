@@ -13,6 +13,7 @@ import {
     CalendarImportSection,
     CalendarInvitationsSection,
     CalendarLayoutSection,
+    CalendarOtherPreferencesSection,
     CalendarSubpage,
     CalendarTimeSection,
     CalendarsSettingsSection,
@@ -115,6 +116,7 @@ const CalendarSettingsRouter = ({ user, subscription, calendarAppRoutes, redirec
                     <CalendarLayoutSection calendarUserSettings={calendarUserSettings} />
                     <CalendarInvitationsSection calendarUserSettings={calendarUserSettings} locales={locales} />
                     <VideoConferenceToggle withInfo />
+                    <CalendarOtherPreferencesSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, desktop)}>

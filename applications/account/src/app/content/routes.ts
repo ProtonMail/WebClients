@@ -45,6 +45,7 @@ interface Arguments {
     isScribeEnabled: boolean;
     isZoomIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
+    isCalendarHotkeysEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -72,6 +73,7 @@ export const getRoutes = ({
     isB2BAuthLogsEnabled,
     isScribeEnabled,
     isZoomIntegrationEnabled,
+    isCalendarHotkeysEnabled,
     isSharedServerFeatureEnabled,
 }: Arguments) => {
     return {
@@ -98,7 +100,7 @@ export const getRoutes = ({
             addresses,
             organization,
         }),
-        calendar: getCalendarAppRoutes({ app, user, organization, isZoomIntegrationEnabled }),
+        calendar: getCalendarAppRoutes({ app, user, organization, isZoomIntegrationEnabled, isCalendarHotkeysEnabled }),
         drive: getDriveAppRoutes({ app, isB2BDrive, canB2BHidePhotos }),
         docs: getDocsAppRoutes({ app }),
         pass: getPassAppRoutes({ app, user, organization, subscription, canDisplayB2BLogsPass, canDisplayPassReports }),

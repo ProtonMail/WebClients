@@ -1,0 +1,10 @@
+@import '~@proton/styles/scss/lib';
+
+.shortcut-modal {
+	// Special case otherwise shortcuts are not properly displayed
+	--size: #{rem(700)};
+
+	kbd {
+		word-spacing: rem(-3);
+	}
+}
