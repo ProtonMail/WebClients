@@ -11,10 +11,8 @@ import { useNavigate } from '@proton/pass/components/Navigation/NavigationAction
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { AccountPath } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
-import { PassFeature } from '@proton/pass/types/api/features';
 
 type MenuAction = {
     icon: IconName;
@@ -30,7 +28,6 @@ export const MenuActions: FC = () => {
     const enhance = useNotificationEnhancer();
     const authService = useAuthService();
     const orgEnabled = useOrganization()?.settings.enabled ?? false;
-    const aliasesEnabled = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
@@ -44,7 +41,7 @@ export const MenuActions: FC = () => {
     const settings = useMemo<MenuAction[]>(
         () => [
             { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel' },
-            ...(aliasesEnabled ? [{ key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' } as const] : []),
+            { key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' },
             { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-down-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-up-line' },
@@ -62,7 +59,7 @@ export const MenuActions: FC = () => {
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
             { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: onLogout },
         ],
-        [orgEnabled, aliasesEnabled]
+        [orgEnabled]
     );
 
     return (

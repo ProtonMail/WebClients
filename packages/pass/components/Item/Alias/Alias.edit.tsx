@@ -18,14 +18,12 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useAliasDetails } from '@proton/pass/hooks/useAliasDetails';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { formatDisplayNameWithEmail } from '@proton/pass/lib/items/item.utils';
 import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
 import { type MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
@@ -38,8 +36,6 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, ...uneditable } = item;
     const aliasEmail = revision.aliasEmail!;
-
-    const aliasManagementEnabled = useFeatureFlag(PassFeature.PassAdvancedAliasManagementV1);
 
     /** To ensure proper sequencing in handling alias options and details. we use an awaiter.
      * If alias options or details are cached, the execution order of 'onAliasOptionsLoaded'
@@ -209,7 +205,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                             />
                         </FieldsetCluster>
 
-                        {aliasManagementEnabled && aliasOwner && (
+                        {aliasOwner && (
                             <>
                                 {aliasDetails?.slNote && (
                                     <FieldsetCluster>

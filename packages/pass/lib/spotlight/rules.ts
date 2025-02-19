@@ -3,9 +3,7 @@ import type { Store } from 'redux';
 import { ITEM_COUNT_RATING_PROMPT } from '@proton/pass/constants';
 import {
     selectCreatedItemsCount,
-    selectFeatureFlag,
     selectHasPendingShareAccess,
-    selectInAppNotificationsEnabled,
     selectLockEnabled,
     selectPassPlan,
     selectUserData,
@@ -13,7 +11,6 @@ import {
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import { type Maybe, type MaybeNull, PlanType, SpotlightMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
@@ -116,33 +113,14 @@ export const createMonitorLearnMoreRule = () =>
         when: (previous) => !previous || !previous.extraData?.expanded,
     });
 
-export const createFamilyPlanPromo2024Rule = (store: Store<State>) =>
-    createSpotlightRule({
-        message: SpotlightMessage.FAMILY_PLAN_PROMO_2024,
-        when: (previous) => {
-            if (previous) return false;
-
-            const state = store.getState();
-            if (!selectInAppNotificationsEnabled(state)) return false;
-
-            const enabled = selectFeatureFlag(PassFeature.PassFamilyPlanPromo2024)(state);
-            const plan = selectUserPlan(state);
-            const cohortPass2023 = plan?.InternalName === 'pass2023';
-            const cohortPassFree = plan?.InternalName === 'free';
-
-            return enabled && (cohortPass2023 || cohortPassFree);
-        },
-    });
-
 export const createAliasSyncEnableRule = (store: Store<State>) =>
     createSpotlightRule({
         message: SpotlightMessage.ALIAS_SYNC_ENABLE,
         when: (previous) => {
             const state = store.getState();
-            const enabled = selectFeatureFlag(PassFeature.PassSimpleLoginAliasesSync)(state);
             const { pendingAliasToSync } = selectUserData(state);
 
-            return enabled && !previous && pendingAliasToSync > 0;
+            return !previous && pendingAliasToSync > 0;
         },
     });
 

@@ -15,14 +15,12 @@ import { SpotlightGradient } from '@proton/pass/components/Spotlight/SpotlightGr
 import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails, selectMailboxesForAlias } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 
 import { AliasStatusToggle } from './AliasStatusToggle';
 
@@ -39,8 +37,6 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const aliasEmail = revision.aliasEmail!;
     const note = useDeobfuscatedValue(item.metadata.note);
     const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
-    const canToggleStatus = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
-    const aliasManagementEnabled = useFeatureFlag(PassFeature.PassAdvancedAliasManagementV1);
 
     const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
         requestId: aliasDetailsRequest(aliasEmail),
@@ -68,7 +64,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const blockedText = c('Label').ngettext(msgid`${blockedCount} block`, `${blockedCount} blocks`, blockedCount);
 
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
-    const allowActions = canToggleStatus && !viewingHistory && canModify;
+    const allowActions = !viewingHistory && canModify;
     const aliasActions = allowActions ? <AliasStatusToggle disabled={optimistic} revision={revision} /> : undefined;
     const aliasDisabled = isDisabledAlias(revision);
 
@@ -118,7 +114,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 </FieldsetCluster>
             )}
 
-            {aliasManagementEnabled && slNote && (
+            {slNote && (
                 <FieldsetCluster mode="read" as="div">
                     <ValueControl
                         clickToCopy
@@ -130,7 +126,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 </FieldsetCluster>
             )}
 
-            {aliasManagementEnabled && displayName && (
+            {displayName && (
                 <>
                     <FieldsetCluster mode="read" as="div">
                         <ValueControl
@@ -145,7 +141,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 </>
             )}
 
-            {aliasManagementEnabled && canModify && !viewingHistory && (
+            {canModify && !viewingHistory && (
                 <>
                     <FieldsetCluster mode="read" as="div">
                         <AliasContacts shareId={shareId} itemId={itemId} />

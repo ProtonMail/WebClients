@@ -105,14 +105,10 @@ export const BIOMETRICS_KEY = 'offlineKey_biometrics';
  * fallback if the feature flag endpoint is unavailable.
  * FIXME: Remove feature flags that are permanently enabled */
 export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
-    [PassFeature.PassAccountSwitchV1]: false,
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
-    [PassFeature.PassFamilyPlanPromo2024]: false,
-    [PassFeature.PassKillSSO]: false,
-    [PassFeature.PassSimpleLoginAliasesSync]: false,
     [PassFeature.PassWebInternalAlpha]: false,
-    [PassFeature.PassWebOfflineMode]: false,
     [PassFeature.PassInAppMessages]: false,
+    [PassFeature.PassItemSharingV1]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
