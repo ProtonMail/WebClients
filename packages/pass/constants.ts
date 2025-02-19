@@ -109,6 +109,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassInAppMessages]: false,
     [PassFeature.PassItemSharingV1]: false,
+    [PassFeature.PassWebPrfUnlock]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
