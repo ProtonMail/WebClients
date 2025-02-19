@@ -99,8 +99,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
     const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
-
-    const accessCount = (share.shared ? targetMembers : 0) + (revision.shareCount ?? 0);
+    const accessCount = targetMembers + (revision.shareCount ?? 0);
 
     const canManage = isShareManageable(share);
     const canShare = canManage && type !== 'alias';
@@ -228,7 +227,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
                                     disabled={!online || optimistic || disabledSharing}
-                                    badge={itemSharingEnabled && accessCount > 0 ? accessCount : undefined}
+                                    badge={itemSharingEnabled && accessCount > 1 ? accessCount : undefined}
                                     signaled={isOwnerOrAdmin && signalItemSharing}
                                     dropdownSize={{
                                         height: DropdownSizeUnit.Dynamic,
