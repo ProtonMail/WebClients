@@ -30,6 +30,7 @@ export enum MX_STATE {
     MX_STATE_NO_US = 1, // 1 is set but does not have us
     MX_STATE_INC_US = 2, // 2 is includes our MX but priority no good
     MX_STATE_GOOD = 3, // 3 is includes our MX and we are highest and pri is legit, good!
+    MX_STATE_BACKUP = 4, // 4 is includes our backup MX as the highest prio, warn but good
 }
 
 export enum SPF_STATE {
