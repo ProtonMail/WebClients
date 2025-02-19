@@ -4,16 +4,12 @@ export function useDocsUrlPublicToken() {
     const searchParams = new URLSearchParams(window.location.search);
 
     const token = searchParams.get('token');
-    const linkId = searchParams.get('linkId');
+    const linkId = searchParams.get('linkId') || undefined;
 
     const urlPassword = getUrlPassword();
 
     if (!token) {
         throw new Error('No token found');
-    }
-
-    if (!linkId) {
-        throw new Error('No linkId found');
     }
 
     if (!urlPassword) {

@@ -4,7 +4,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser'
 import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
 import { PLANS } from '@proton/payments'
 import { Actions, countActionWithTelemetry, traceTelemetry } from '@proton/drive-store/utils/telemetry'
-import { getNewWindow } from '@proton/shared/lib/helpers/window'
+import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window'
 import { DOCS_SIGNIN, DOCS_SIGNUP } from '@proton/shared/lib/docs/urls'
 import {
   RedirectionReason,
@@ -13,19 +13,21 @@ import {
 import { saveUrlPasswordForRedirection } from '@proton/drive-store/utils/url/password'
 import type { RedirectAction } from '@proton/drive-store/store/_documents/useOpenDocument'
 
-const openNewTab = (url: string) => {
-  const w = getNewWindow()
-  w.handle.location.assign(url)
+function openUrl(url: string, openInNewTab: boolean) {
+  const tab = openInNewTab ? getNewWindow() : getCurrentTab()
+  tab.handle.location.assign(url)
 }
 
-export const redirectToAccountSwitcher = (token: string, linkId: string, urlPassword: string) => {
+export const redirectToAccountSwitcher = (token: string, linkId: string | undefined, urlPassword: string) => {
   const accountSwitchUrl = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT))
   accountSwitchUrl.searchParams.append('product', 'docs')
 
   const returnUrlSearchParams = new URLSearchParams()
   returnUrlSearchParams.append('mode', 'open-url-reauth')
   returnUrlSearchParams.append('token', token)
-  returnUrlSearchParams.append('linkId', linkId!)
+  if (linkId) {
+    returnUrlSearchParams.append('linkId', linkId)
+  }
 
   // We need to pass by the private app to set latest active session, then be redirected to public page.
   // This will be done in MainContainer.tsx on page loading
@@ -44,18 +46,20 @@ export const redirectToAccountSwitcher = (token: string, linkId: string, urlPass
   replaceUrl(urlWithReturnUrl)
 }
 
-export const openNewTabToSignUp = async ({
+export const redirectToSignUp = async ({
   action,
   token,
   email,
   linkId,
   urlPassword,
+  openInNewTab,
 }: {
-  action: RedirectAction
+  action: RedirectAction | undefined
   token: string
   email: string
-  linkId: string
+  linkId: string | undefined
   urlPassword: string
+  openInNewTab: boolean
 }) => {
   await Promise.all([
     countActionWithTelemetry(Actions.SignUpFlowModal),
@@ -64,9 +68,13 @@ export const openNewTabToSignUp = async ({
 
   const returnUrlSearchParams = new URLSearchParams()
   returnUrlSearchParams.append('mode', 'open-url-reauth')
-  returnUrlSearchParams.append('action', action)
+  if (action) {
+    returnUrlSearchParams.append('action', action)
+  }
   returnUrlSearchParams.append('token', token)
-  returnUrlSearchParams.append('linkId', linkId)
+  if (linkId) {
+    returnUrlSearchParams.append('linkId', linkId)
+  }
 
   const returnUrl = `/?`.concat(returnUrlSearchParams.toString())
   const urlWithReturnUrl = new URL(
@@ -83,29 +91,35 @@ export const openNewTabToSignUp = async ({
   // Save password before going to auth. This way we can load the hash param into the url when we come back from redirection
   saveUrlPasswordForRedirection(urlPassword)
 
-  openNewTab(urlWithReturnUrl.toString())
+  openUrl(urlWithReturnUrl.toString(), openInNewTab)
 }
 
-export const openNewTabToSignIn = async ({
+export const redirectToSignIn = async ({
   action,
   token,
   email,
   linkId,
   urlPassword,
+  openInNewTab,
 }: {
-  action: RedirectAction
+  action: RedirectAction | undefined
   token: string
   email: string
-  linkId: string
+  linkId: string | undefined
   urlPassword: string
+  openInNewTab: boolean
 }) => {
   countActionWithTelemetry(Actions.SignInFlowModal)
 
   const returnUrlSearchParams = new URLSearchParams()
   returnUrlSearchParams.append('mode', 'open-url-reauth')
-  returnUrlSearchParams.append('action', action)
+  if (action) {
+    returnUrlSearchParams.append('action', action)
+  }
   returnUrlSearchParams.append('token', token)
-  returnUrlSearchParams.append('linkId', linkId)
+  if (linkId) {
+    returnUrlSearchParams.append('linkId', linkId)
+  }
 
   const returnUrl = `/?`.concat(returnUrlSearchParams.toString())
   const urlWithReturnUrl = new URL(
@@ -121,5 +135,5 @@ export const openNewTabToSignIn = async ({
   // Save password before going to auth. This way we can load the hash param into the url when we come back from redirection
   saveUrlPasswordForRedirection(urlPassword)
 
-  openNewTab(urlWithReturnUrl.toString())
+  openUrl(urlWithReturnUrl.toString(), openInNewTab)
 }
