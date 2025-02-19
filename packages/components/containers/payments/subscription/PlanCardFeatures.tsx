@@ -107,9 +107,18 @@ export const PlanCardFeatureList = ({
                             <span className={clsx('flex shrink-0', iconSize < 5 ? 'mr-1' : 'mr-3')}>
                                 {iconToDisplay}
                             </span>
-                            <span className="flex-1 text-left flex items-center gap-2">
+                            <span className="flex-1 text-left text-wrap-balance">
                                 <span className="align-middle">
-                                    {feature.text}
+                                    <span>{feature.text}
+                                        {tooltip && feature.tooltip ? (
+                                            <Info
+                                                url={feature.iconUrl}
+                                                className="align-middle ml-1"
+                                                title={feature.tooltip}
+                                                colorPrimary={feature.included}
+                                            />
+                                        ) : null}
+                                    </span>
                                     {feature.subtext && (
                                         <>
                                             <br />
@@ -117,14 +126,6 @@ export const PlanCardFeatureList = ({
                                         </>
                                     )}
                                 </span>
-                                {tooltip && feature.tooltip ? (
-                                    <Info
-                                        url={feature.iconUrl}
-                                        className="align-middle"
-                                        title={feature.tooltip}
-                                        colorPrimary={feature.included}
-                                    />
-                                ) : null}
                             </span>
                         </div>
                     </li>
