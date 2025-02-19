@@ -19,7 +19,6 @@ import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
-import { useShareAccess } from '@proton/pass/hooks/invite/useShareAccess';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
@@ -82,7 +81,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const org = useOrganization();
     const orgItemSharingDisabled = org?.settings.ItemShareMode === BitField.DISABLED;
 
-    const { shareRoleId, owner } = share;
+    const { shareRoleId, owner, targetMembers } = share;
     const itemShared = isItemShared(revision);
     /** Item is considered shared if either the revision
      * or the share are flagged as being shared. */
@@ -100,7 +99,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
     const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
-    const access = useShareAccess(shareId, itemId);
+    const accessCount = targetMembers + (revision.shareCount ?? 0);
 
     const canManage = isShareManageable(share);
     const canShare = canManage && type !== 'alias';
@@ -228,7 +227,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
                                     disabled={!online || optimistic || disabledSharing}
-                                    badge={itemSharingEnabled && access.count > 1 ? access.count : undefined}
+                                    badge={itemSharingEnabled && accessCount > 1 ? accessCount : undefined}
                                     signaled={isOwnerOrAdmin && signalItemSharing}
                                     dropdownSize={{
                                         height: DropdownSizeUnit.Dynamic,
