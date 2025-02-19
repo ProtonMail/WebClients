@@ -14,7 +14,7 @@ const getIsValidValue = (value: string, type: TotpInputProps['type']) => {
     return /[0-9A-Za-z]/.test(value);
 };
 
-interface TotpInputProps {
+type TotpInputProps = {
     length: number;
     value: string;
     id?: string;
@@ -26,7 +26,7 @@ interface TotpInputProps {
     autoFocus?: boolean;
     autoComplete?: 'one-time-code';
     centerDivider?: boolean;
-}
+};
 
 const size = {
     padding: 12,
@@ -60,6 +60,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
         autoComplete,
         error,
         centerDivider = true,
+        ...rest
     }: TotpInputProps,
     focusRef
 ) => {
@@ -246,6 +247,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
                                     onValue(newValues.join(''));
                                 }
                             }}
+                            {...rest}
                         />
                     </Fragment>
                 );
