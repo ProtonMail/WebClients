@@ -79,7 +79,9 @@ const ContactPGPSettings = ({ model, setModel, mailSettings, supportV6Keys }: Pr
                 try {
                     const publicKey = await CryptoProxy.importPublicKey({
                         armoredKey,
-                        checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
+                        checkCompatibility: supportV6Keys
+                            ? KeyCompatibilityLevel.V6_COMPATIBLE
+                            : KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
                     });
 
                     const fingerprint = publicKey.getFingerprint();
