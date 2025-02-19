@@ -89,14 +89,12 @@ export function* hydrate(
         /** Activate offline mode by default for paid users who
          * haven't touched the `offlineEnabled` setting yet */
         if (BUILD_TARGET === 'web' || DESKTOP_BUILD) {
-            const supported = DESKTOP_BUILD || (userState.features.PassWebOfflineMode ?? false);
             const plan = getPassPlan(userState.plan);
-
             const validUserType = isPaidPlan(plan);
             const hasOfflinePassword = authStore.hasOfflinePassword();
             const untouched = settings.offlineEnabled === undefined;
 
-            const autoSetup = untouched && supported && validUserType && hasOfflinePassword;
+            const autoSetup = untouched && validUserType && hasOfflinePassword;
             settings.offlineEnabled = autoSetup || (validUserType && settings.offlineEnabled);
         }
 
