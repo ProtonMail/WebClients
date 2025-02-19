@@ -192,30 +192,16 @@ describe('Import Keeper JSON', () => {
                     sectionFields: [
                         {
                             data: {
-                                content: '5555555555',
+                                content: '5555555555 Ext',
                             },
-                            fieldName: 'phone: - number',
+                            fieldName: 'phone:',
                             type: 'text',
                         },
                         {
                             data: {
-                                content: 'Ext',
+                                content: '5555555556 Ext2',
                             },
-                            fieldName: 'phone: - ext',
-                            type: 'text',
-                        },
-                        {
-                            data: {
-                                content: '5555555556',
-                            },
-                            fieldName: 'phone: - number',
-                            type: 'text',
-                        },
-                        {
-                            data: {
-                                content: 'Ext2',
-                            },
-                            fieldName: 'phone: - ext',
+                            fieldName: 'phone:',
                             type: 'text',
                         },
                         {
@@ -386,31 +372,10 @@ describe('Import Keeper JSON', () => {
                 },
             },
             {
-                fieldName: 'phone:custom Phone Number - number',
+                fieldName: 'phone:custom Phone Number',
                 type: 'text',
                 data: {
-                    content: '5555555555',
-                },
-            },
-            {
-                fieldName: 'phone:custom Phone Number - ext',
-                type: 'text',
-                data: {
-                    content: 'ext',
-                },
-            },
-            {
-                fieldName: 'phone:custom Phone Number - type',
-                type: 'text',
-                data: {
-                    content: 'Mobile',
-                },
-            },
-            {
-                fieldName: 'phone:custom Phone Number - region',
-                type: 'text',
-                data: {
-                    content: 'US',
+                    content: 'Mobile US 5555555555 ext',
                 },
             },
             {
