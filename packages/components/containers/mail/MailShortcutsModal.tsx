@@ -13,6 +13,7 @@ import ShortcutsSectionView from '@proton/components/components/shortcuts/Shortc
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
+import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i18n';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import clsx from '@proton/utils/clsx';
 
@@ -21,7 +22,7 @@ import ShortcutsToggle from '../general/ShortcutsToggle';
 import './MailShortcutsModal.scss';
 
 const MailShortCutsModal = (props: ModalProps) => {
-    const title = c('Title').t`${MAIL_APP_NAME} keyboard shortcuts`;
+    const title = getKeyboardShortcutsWithAppName(MAIL_APP_NAME);
     const [{ Shortcuts } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const mailShortcuts = getShortcuts();
     const alwaysOnSections = mailShortcuts.filter((section) => section.alwaysActive);
