@@ -35,6 +35,8 @@ import {
     PAYMENT_METHOD_TYPES,
     PLANS,
     type PlanIDs,
+    captureWrongPlanIDs,
+    captureWrongPlanName,
     getBillingAddressStatus,
     getCheckoutModifiers,
     getPlansMap,
@@ -789,6 +791,11 @@ const SubscriptionContainer = ({
 
         return checkResult;
     };
+
+    useEffect(() => {
+        captureWrongPlanIDs(maybePlanIDs, { source: 'SubscriptionModal/PlanIDs' });
+        captureWrongPlanName(plan, { source: 'SubscriptionModal/PlanName' });
+    }, []);
 
     useEffect(() => {
         if (!model.initialCheckComplete) {
