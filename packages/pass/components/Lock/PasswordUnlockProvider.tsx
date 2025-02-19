@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { SSOReauthModal } from '@proton/pass/components/Lock/SSOReauthModal';
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { useLoadAutofill } from '@proton/pass/hooks/useLoadAutofill';
 import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
@@ -71,9 +70,6 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
     const { handler, abort, resolver, state, key } = modal;
     const shouldReauth = isSSO && !hasOfflinePassword;
     const Component = shouldReauth ? SSOReauthModal : PasswordModal;
-
-    /** Allow Pass extension to autofill the password modal */
-    useLoadAutofill(state.open && !shouldReauth);
 
     return (
         <PasswordUnlockContext.Provider value={handler}>
