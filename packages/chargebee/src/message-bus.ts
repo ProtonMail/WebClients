@@ -545,7 +545,10 @@ export class MessageBus {
         window.parent.postMessage(JSON.stringify(messageToSend), '*');
     }
 
-    private isPlainError(error: any): error is Error {
+    // regular Error type + some specific properties from Chargebee
+    private isPlainError(
+        error: any
+    ): error is Error & { code?: string; type?: string; detail?: string; displayMessage?: string } {
         return (
             !!error && !!error.message && !error.checkpoints && !error.chargebeeWrapperVersion && !Array.isArray(error)
         );
@@ -557,6 +560,10 @@ export class MessageBus {
                 message: error.message,
                 stack: error.stack,
                 name: error.name,
+                code: error.code,
+                type: error.type,
+                detail: error.detail,
+                displayMessage: error.displayMessage,
             };
         }
 
