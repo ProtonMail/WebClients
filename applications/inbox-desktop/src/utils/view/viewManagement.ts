@@ -49,6 +49,22 @@ const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
     account: undefined,
 };
 
+// If some view is showing url X, and we call loadURL with url Y, webContents.getURL()
+// will return X until Y has fully loaded (all network requests have finished, including resource loading).
+// This has historically introduced lots of race condition issues, because we have to either assume
+// that we are still on X url or wait until the load process of Y has fully finished. This information
+// is something we need during view changes, like the login process or navigating to settings view.
+//
+// Although viewURLMap can introduce inconsistencies, the only possible side effect might be some duplicated
+// loading, but at least we have a synchronous source of truth to check which URL is being shown in a view.
+// It is important to keep this updated in all loadURL and loadFile calls, and also monitor the did-navigate
+// and did-navigate-in-page events.
+const viewURLMap: Record<ViewID, string | undefined> = {
+    mail: undefined,
+    calendar: undefined,
+    account: undefined,
+};
+
 const viewTitleMap: Record<ViewID, string> = {
     mail: MAIL_APP_NAME,
     calendar: CALENDAR_APP_NAME,
@@ -235,7 +251,7 @@ async function updateLocalID(urlString: string) {
         return urlString;
     }
 
-    const currentURLString = await getViewURL(currentViewID);
+    const currentURLString = getViewURL(currentViewID);
     const currentLocalID = getLocalID(currentURLString);
 
     if (currentLocalID === null) {
@@ -279,12 +295,12 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     telemetry.showView(viewID);
 
     if (url && urlHasMailto(url)) {
-        viewLogger(viewID).debug(`showView loading mailto ${url} from`, await getViewURL(viewID));
+        viewLogger(viewID).debug(`showView loading mailto ${url} from`, getViewURL(viewID));
         await showLoadingPage(viewTitleMap[viewID]);
         await loadURL(viewID, url);
         mainWindow!.setBrowserView(view);
-    } else if (url && !isSameURL(url, await getViewURL(viewID))) {
-        viewLogger(viewID).debug("showView current url is different", await getViewURL(viewID));
+    } else if (url && !isSameURL(url, getViewURL(viewID))) {
+        viewLogger(viewID).debug("showView current url is different", getViewURL(viewID));
         viewLogger(viewID).info("showView loading", url);
         await showLoadingPage(viewTitleMap[viewID]);
         await loadURL(viewID, url);
@@ -302,7 +318,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
     }
 
     const view = browserViewMap[viewID]!;
-    const viewURL = await getViewURL(viewID);
+    const viewURL = getViewURL(viewID);
 
     const currentLocalID = getLocalID(viewURL);
     const targetLocalID = getLocalID(url);
@@ -317,6 +333,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
             viewLogger(viewID).info(
                 `loadURL asked to navigate to the same mailto ${url}, first navigating to ${defURL}`,
             );
+            viewURLMap[viewID] = defURL;
             await view.webContents.loadURL(defURL);
         }
     } else if (!isAccountSwitching && isSameURL(viewURL, url) && !force) {
@@ -366,6 +383,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         view.webContents.on("did-fail-load", handleLoadError);
 
         loadingTimeoutID = setTimeout(handleLoadTimeout, 30000);
+        viewURLMap[viewID] = url;
         view.webContents.loadURL(url);
     });
 
@@ -403,6 +421,7 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
         query.draggable = "";
     }
 
+    viewURLMap[viewID] = filePath;
     await view.webContents.loadFile(filePath, { query });
 }
 
@@ -438,13 +457,30 @@ async function renderLoadingPage(view: BrowserView, title: string): Promise<void
         query.draggable = "";
     }
 
+    const [viewID] =
+        (Object.entries(browserViewMap) as Array<[ViewID, BrowserView]>).find(([, _view]) => _view === view) || [];
+
+    if (viewID) {
+        viewURLMap[viewID] = filePath;
+    }
+
     await view.webContents.loadFile(filePath, { query });
     updateViewBounds(view);
 }
 
-export async function getViewURL(viewID: ViewID): Promise<string> {
-    await loadingViewMap[viewID];
-    return browserViewMap[viewID]!.webContents.getURL();
+export function getViewURL(viewID: ViewID) {
+    return viewURLMap[viewID] || "";
+}
+
+export function updateViewURL(webContents: WebContents, url: string) {
+    const [viewID] =
+        (Object.entries(browserViewMap) as Array<[ViewID, BrowserView]>).find(
+            ([, view]) => view.webContents === webContents,
+        ) || [];
+
+    if (viewID) {
+        viewURLMap[viewID] = url;
+    }
 }
 
 export async function reloadHiddenViews() {
@@ -452,7 +488,7 @@ export async function reloadHiddenViews() {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             viewLogger(viewID as ViewID).info("Reloading hidden view");
-            loadPromises.push(loadURL(viewID as ViewID, await getViewURL(viewID as ViewID), { force: true }));
+            loadPromises.push(loadURL(viewID as ViewID, getViewURL(viewID as ViewID), { force: true }));
         }
     }
     await Promise.all(loadPromises);

@@ -26,6 +26,7 @@ import {
     IGNORED_NET_ERROR_CODES,
     getCurrentViewID,
     getViewURL,
+    updateViewURL,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, viewLogger } from "../log";
@@ -47,6 +48,7 @@ export function handleWebContents(contents: WebContents) {
 
     contents.on("did-navigate", async (_ev, url) => {
         logger().info("did-navigate", url);
+        updateViewURL(contents, url);
 
         if (isHostAllowed(url)) {
             // We need to ensure that the zoom is consistent for all URLs.
@@ -85,8 +87,8 @@ export function handleWebContents(contents: WebContents) {
         // here.
         if (getCurrentViewID() === "account") {
             const accountLocalID = getLocalID(url);
-            const mailLocalId = getLocalID(await getViewURL("mail"));
-            const calendarLocalId = getLocalID(await getViewURL("calendar"));
+            const mailLocalId = getLocalID(getViewURL("mail"));
+            const calendarLocalId = getLocalID(getViewURL("calendar"));
 
             if (accountLocalID !== mailLocalId || accountLocalID !== calendarLocalId) {
                 resetHiddenViews({ toHomepage: true });
@@ -100,6 +102,7 @@ export function handleWebContents(contents: WebContents) {
 
     contents.on("did-navigate-in-page", (ev, url) => {
         logger().info("did-navigate-in-page", url);
+        updateViewURL(contents, url);
 
         if (!isCurrentContent()) {
             return;
