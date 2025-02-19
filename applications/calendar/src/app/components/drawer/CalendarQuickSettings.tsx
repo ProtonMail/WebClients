@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import {
+    CalendarShortcutsModal,
     DefaultQuickSettings,
     DrawerAllSettingsView,
     DrawerAppHeadline,
@@ -14,6 +15,7 @@ import {
     QuickSettingsButtonSection,
     QuickSettingsSectionRow,
     SecondaryTimezoneSelector,
+    ShortcutsToggle,
     ShowSecondaryTimezoneToggle,
     Toggle,
     ViewPreferenceSelector,
@@ -21,12 +23,14 @@ import {
     useApi,
     useConfirmActionModal,
     useEventManager,
+    useModalState,
     useNotifications,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import useFlag from '@proton/unleash/useFlag';
 
 import NukeSearchIndexButton from '../../containers/calendar/confirmationModals/NukeSearchIndexButton';
 
@@ -38,6 +42,8 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+    const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
+    const [calendarShortcutsProps, setCalendarShortcutsModalOpen, renderCalendarShortcutsModal] = useModalState();
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
@@ -152,11 +158,35 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
                     />
                 )}
             </DrawerAppSection>
+
+            {isCalendarHotkeysEnabled ? (
+                <DrawerAppSection>
+                    <QuickSettingsSectionRow
+                        label={c('Label').t`Keyboard shortcuts`}
+                        labelInfo={
+                            <Info
+                                title={c('Info').t`Open shortcut cheat sheet`}
+                                onClick={() => setCalendarShortcutsModalOpen(true)}
+                                data-testid="calendar-quick-settings:keyboard-shortcuts-info"
+                            />
+                        }
+                        labelProps={{ htmlFor: 'toggle-shortcuts' }}
+                        action={
+                            <ShortcutsToggle
+                                id="toggle-shortcuts"
+                                data-testid="calendar-quick-settings:keyboard-shortcuts-toggle"
+                            />
+                        }
+                    />
+                </DrawerAppSection>
+            ) : null}
+
             <DefaultQuickSettings />
             <QuickSettingsButtonSection>
                 <NukeSearchIndexButton showConfirmModal={showConfirmModal} onBackFromSearch={onBackFromSearch} />
             </QuickSettingsButtonSection>
             {confirmModal}
+            {renderCalendarShortcutsModal && <CalendarShortcutsModal {...calendarShortcutsProps} />}
         </DrawerAppScrollContainer>
     );
 };

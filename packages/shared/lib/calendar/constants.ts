@@ -396,6 +396,7 @@ export const CALENDAR_SETTINGS_SECTION_ID = {
     MOBILE_APP: 'mobile-app',
     DESKTOP_APP: 'desktop-app',
     INTEGRATIONS: 'integrations',
+    OTHER_PREFERENCES: 'other-preferences',
 };
 
 /** Visual limit of the attendees busy slots we display */

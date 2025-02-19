@@ -66,6 +66,7 @@ import ShareCalendarInvitationModal from './ShareCalendarInvitationModal';
 import { SUPPORTED_VIEWS_IN_APP, SUPPORTED_VIEWS_IN_DRAWER } from './constants';
 import type { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
+import getDateDiff from './getDateDiff';
 import getDateRange from './getDateRange';
 import getTitleDateString from './getTitleDateString';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
@@ -148,6 +149,7 @@ const CalendarContainer = ({
 }: Props) => {
     const history = useHistory();
     const location = useLocation();
+    const containerRef = useRef<HTMLDivElement>(null);
     const api = useApi();
     const { createNotification } = useNotifications();
     const [disableCreate, setDisableCreate] = useState(false);
@@ -490,11 +492,19 @@ const CalendarContainer = ({
         setSearchInput('');
     }, []);
 
+    const handleClickNext = useCallback(() => {
+        startPTTMetric?.(view, false, true);
+        handleChangeDate(getDateDiff(utcDate, range, view, 1));
+    }, [utcDate, range, view]);
+
+    const handleClickPrev = useCallback(() => {
+        startPTTMetric?.(view, true);
+        handleChangeDate(getDateDiff(utcDate, range, view, -1));
+    }, [utcDate, range, view]);
+
     const [createEventCalendarBootstrap] = useCalendarBootstrap(
         createEventCalendar ? createEventCalendar.ID : undefined
     );
-
-    const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null);
 
     const isLoading = loadingEvents;
     const isEventCreationDisabled =
@@ -536,14 +546,14 @@ const CalendarContainer = ({
             }
             onBackFromSearch={handleGoBackFromSearch}
             onClickToday={handleClickToday}
+            onClickNextView={handleClickNext}
+            onClickPreviousView={handleClickPrev}
             onChangeDate={handleChangeDate}
             onChangeDateRange={handleChangeDateRange}
             onChangeView={handleChangeView}
             containerRef={containerRef}
-            setContainerRef={setContainerRef}
             onSearch={handleSearch}
             addresses={addresses}
-            startPTTMetric={startPTTMetric}
         >
             {!!localTimezoneId && (
                 <AskUpdateTimezoneModal
@@ -562,7 +572,6 @@ const CalendarContainer = ({
                     invitation={shareCalendarInvitation}
                 />
             )}
-
             <InteractiveCalendarView
                 view={view}
                 isSmallViewport={isSmallViewport}
