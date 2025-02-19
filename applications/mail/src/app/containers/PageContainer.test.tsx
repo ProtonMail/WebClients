@@ -73,7 +73,7 @@ describe('PageContainer', () => {
 
             questionMark();
 
-            getByText(`${appName} Keyboard Shortcuts`);
+            getByText(`${appName} keyboard shortcuts`);
         });
 
         it('should focus element list on Tab', async () => {

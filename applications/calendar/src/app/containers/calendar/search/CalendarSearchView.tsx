@@ -1,5 +1,5 @@
 import type { MouseEvent, MutableRefObject } from 'react';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
@@ -16,6 +16,7 @@ import noSearchResultWarm from '@proton/styles/assets/img/placeholders/search-em
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
+import useCalendarSearchHotkeys from '../../../hooks/useCalendarSearchHotkeys';
 import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import getCalendarEventsCache from '../eventStore/cache/getCalendarEventsCache';
 import upsertCalendarApiEventWithoutBlob from '../eventStore/cache/upsertCalendarApiEventWithoutBlobs';
@@ -76,7 +77,7 @@ const CalendarSearchView = ({
     getOpenedMailEvents,
 }: Props) => {
     const theme = useTheme();
-
+    const documentRef = useRef<Document>(document);
     const [closestToDateRef, setClosestToDateRef] = useState<HTMLDivElement | null>(null);
 
     const { items, recurrenceIDsMap, loading } = useCalendarSearch();
@@ -223,6 +224,12 @@ const CalendarSearchView = ({
         const eventsGroupedByDay = groupItemsByDay(paginatedItems);
         return fillEmptyToday(eventsGroupedByDay, now);
     }, [paginatedItems]);
+
+    useCalendarSearchHotkeys({
+        elementRef: documentRef,
+        onNext: () => isNextEnabled && next(),
+        onPrevious: () => isPreviousEnabled && previous(),
+    });
 
     if (loading) {
         return (

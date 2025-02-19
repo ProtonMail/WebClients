@@ -145,7 +145,8 @@
 		overflow: auto;
 		border-radius: inherit;
 		background-color: var(--background-norm);
-		background-image: radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
+		background-image:
+			radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
 			radial-gradient(farthest-side at 50% 100%, var(--backdrop-norm), transparent);
 		background-position:
 			50% 0,
@@ -244,7 +245,10 @@
 
 				background-color: var(--selection-background-color);
 				color: var(--selection-text-color);
-				pointer-events: none;
+
+				&:not(.dropdown-item--is-selected-cliquable) {
+					pointer-events: none;
+				}
 			}
 
 			@supports not selector(:focus-visible) {
