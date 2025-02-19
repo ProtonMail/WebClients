@@ -2,32 +2,58 @@ import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { DeobfuscatedItemExtraField, ItemContent } from '@proton/pass/types';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
-import type { KeeperCustomFieldValue, KeeperCustomFields, KeeperItem } from './keeper.types';
+import type { KeeperCustomFieldValue, KeeperCustomFields, KeeperItem, KeeperPhoneField } from './keeper.types';
 
 const getCleanLabel = (label?: string) => {
     const clean = label?.replace(/^(\$text:|\$name:|\$secret:|\$)|:1$/g, '');
     return clean || c('Label').t`Text`;
 };
 
+/** Merge multiple Keeper phone number fields (number, region etc.) into a single extra field */
+const importPhoneFields = (label: string, value: KeeperPhoneField): DeobfuscatedItemExtraField => {
+    const { type, region, number, ext } = value;
+    const fields = [type, region, number, ext].filter((part) => !isEmptyString(part));
+    const content = fields.join(' ').trim();
+
+    return {
+        fieldName: getCleanLabel(label),
+        type: 'text',
+        data: { content },
+    };
+};
+
+function isKeeperPhoneField(
+    label: string,
+    value: KeeperCustomFieldValue
+): value is KeeperPhoneField | KeeperPhoneField[] {
+    return label.startsWith('$phone:');
+}
+
 const keeperCustomFieldToExtraField = (
     customField: [string, KeeperCustomFieldValue]
 ): DeobfuscatedItemExtraField | DeobfuscatedItemExtraField[] => {
     const [label, value] = customField;
     const isHidden = label.startsWith('$secret:');
+    const isPhone = isKeeperPhoneField(label, value);
     const isObject = typeof value === 'object';
     const isArray = Array.isArray(value);
 
     if (isArray) {
-        return value.flatMap((value) => keeperCustomFieldToExtraField([label, value]));
+        return isPhone
+            ? value.flatMap((value) => importPhoneFields(label, value))
+            : value.flatMap((value) => keeperCustomFieldToExtraField([label, value]));
     } else if (isObject) {
-        return Object.entries(value).map(([nestedLabel, nestedValue]) => {
-            return {
-                fieldName: `${getCleanLabel(label)} - ${nestedLabel}`,
-                type: nestedLabel.startsWith('$secret:') ? 'hidden' : 'text',
-                data: { content: nestedValue ?? '' },
-            };
-        });
+        return isPhone
+            ? importPhoneFields(label, value)
+            : Object.entries(value).map(([nestedLabel, nestedValue]) => {
+                  return {
+                      fieldName: `${getCleanLabel(label)} - ${nestedLabel}`,
+                      type: nestedLabel.startsWith('$secret:') ? 'hidden' : 'text',
+                      data: { content: nestedValue ?? '' },
+                  };
+              });
     } else {
         return {
             fieldName: getCleanLabel(label),
