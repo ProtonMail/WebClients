@@ -93,7 +93,6 @@ export enum WorkerMessageType {
     FORM_STATUS = 'FORM_STATUS',
     IMPORT_DECRYPT = 'IMPORT_DECRYPT',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
-    LOAD_CONTENT_SCRIPT_EXTERNAL = 'LOAD_CONTENT_SCRIPT_EXTERNAL',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
     LOG_EVENT = 'LOG_EVENT',
     LOG_REQUEST = 'LOG_REQUEST',
@@ -124,7 +123,6 @@ export enum WorkerMessageType {
     TABS_QUERY = 'TABS_QUERY',
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
-    UNLOAD_CONTENT_SCRIPT_EXTERNAL = 'UNLOAD_CONTENT_SCRIPT_EXTERNAL',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
     VAULTS_QUERY = 'VAULTS_QUERY',
     WEBSITE_RULES_REQUEST = 'WEBSITE_RULES_REQUEST',
@@ -166,7 +164,6 @@ export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STA
 export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormStatusPayload>;
 export type ImportDecryptMessage = WithPayload<WorkerMessageType.IMPORT_DECRYPT, ImportReaderPayload>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
-export type LoadContentScriptExternalMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT_EXTERNAL };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
@@ -196,7 +193,6 @@ export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, {
 export type TabsQueryMessage = WithPayload<WorkerMessageType.TABS_QUERY, { current?: boolean }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
-export type UnloadContentScriptExternalMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT_EXTERNAL };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
 export type VaultsQueryMessage = { type: WorkerMessageType.VAULTS_QUERY };
 export type WebsiteRulesMessage = { type: WorkerMessageType.WEBSITE_RULES_REQUEST };
@@ -238,7 +234,6 @@ export type WorkerMessage =
     | ImportDecryptMessage
     | WebsiteRulesMessage
     | LoadContentScriptMessage
-    | LoadContentScriptExternalMessage
     | LocaleUpdatedMessage
     | LogEventMessage
     | LogRequestMessage
@@ -269,7 +264,6 @@ export type WorkerMessage =
     | TabsQueryMessage
     | TelemetryEventMessage
     | UnloadContentScriptMessage
-    | UnloadContentScriptExternalMessage
     | UpdateAvailableMessage
     | VaultsQueryMessage
     | WorkerReloadMessage
