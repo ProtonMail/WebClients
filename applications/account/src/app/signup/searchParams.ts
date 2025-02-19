@@ -9,6 +9,7 @@ import {
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
     PLANS,
+    fixPlanName,
     getPlanByName,
     planToPlanIDs,
 } from '@proton/payments';
@@ -147,7 +148,7 @@ export const getSignupSearchParams = (
         currency,
         cycle: cycle || defaults?.cycle,
         minimumCycle,
-        preSelectedPlan: maybePreSelectedPlan || defaults?.plan,
+        preSelectedPlan: fixPlanName(maybePreSelectedPlan || defaults?.plan, 'GetSignupSearchParams'),
         product,
         users,
         noPromo: noPromo !== null && noPromo !== 'false' && noPromo !== '0',

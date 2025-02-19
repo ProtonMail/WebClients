@@ -1,4 +1,4 @@
-import { type ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, isFreeSubscription } from '@proton/payments';
+import { type ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, isFreeSubscription, isPlanEnabled } from '@proton/payments';
 import {
     getHas2024OfferCoupon,
     getIsB2BAudienceFromSubscription,
@@ -243,5 +243,9 @@ export const getEligibility = ({
         return { type: 'not-eligible' };
     }
 
-    return okResult();
+    if (isPlanEnabled(offer.plan)) {
+        return okResult();
+    }
+
+    return { type: 'not-eligible' };
 };

@@ -12,7 +12,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useDrivePostSignupOneDollarTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollarTelemetry';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
-import { COUPON_CODES } from '@proton/payments';
+import { COUPON_CODES, fixPlanIDs, fixPlanName } from '@proton/payments';
 import { TelemetryMailDrivePostSignupOneDollar } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -64,7 +64,15 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             return {
                 isOpened: modalState.open,
                 open: (subscriptionProps) => {
-                    subscriptionPropsRef.current = subscriptionProps;
+                    const fixedPlanName = fixPlanName(subscriptionProps.plan, 'OpenSubscriptionModal');
+                    const fixedPlanIDs = fixPlanIDs(subscriptionProps.planIDs, 'OpenSubscriptionModal');
+
+                    subscriptionPropsRef.current = {
+                        ...subscriptionProps,
+                        plan: fixedPlanName,
+                        planIDs: fixedPlanIDs,
+                    };
+
                     setModalState(true);
                 },
             };
