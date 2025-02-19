@@ -82,15 +82,21 @@ export const useVerifyMessage = (localID: string) => {
                 );
 
                 const messageData = getData();
+                const supportV6Keys = (await getUserSettings()).Flags.SupportPgpV6Keys === 1;
                 attachedPublicKeys = await extractKeysFromAttachments(
                     messageData.Attachments,
                     messageKeys,
                     getAttachment,
                     onUpdateAttachment,
                     api,
+                    supportV6Keys,
                     messageData.Flags
                 );
-                const autocryptKeys = await extractKeysFromAutocrypt(getData().ParsedHeaders, senderAddress);
+                const autocryptKeys = await extractKeysFromAutocrypt(
+                    getData().ParsedHeaders,
+                    senderAddress,
+                    supportV6Keys
+                );
 
                 const allSenderPublicKeys = [
                     ...verificationPreferences.apiKeys,
@@ -105,7 +111,7 @@ export const useVerifyMessage = (localID: string) => {
                         ? await getMatchingSigningKey({
                               binarySignature: verification.signature,
                               keys: allSenderPublicKeys,
-                              preferV6Key: (await getUserSettings()).Flags.SupportPgpV6Keys === 1,
+                              preferV6Key: supportV6Keys,
                           })
                         : undefined;
             } catch (error: any) {
