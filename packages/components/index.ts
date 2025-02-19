@@ -440,6 +440,7 @@ export { default as NotificationsInDrawer } from './containers/calendar/notifica
 export { default as CalendarExportSection } from './containers/calendar/settings/CalendarExportSection';
 export { default as CalendarImportSection } from './containers/calendar/settings/CalendarImportSection';
 export { default as CalendarInvitationsSection } from './containers/calendar/settings/CalendarInvitationsSection';
+export { default as CalendarOtherPreferencesSection } from './containers/calendar/settings/CalendarOtherPreferencesSection';
 export { default as CalendarLayoutSection } from './containers/calendar/settings/CalendarLayoutSection';
 export { default as CalendarsSettingsSection } from './containers/calendar/settings/CalendarsSettingsSection';
 export { default as CalendarSubpage } from './containers/calendar/settings/CalendarSubpage';
@@ -633,6 +634,7 @@ export { default as WipeLogsButton } from './containers/logs/WipeLogsButton';
 export { default as MailComposerModeModal } from './containers/mail/MailComposerModeModal';
 export { default as MailDensityModal } from './containers/mail/MailDensityModal';
 export { default as MailShortcutsModal } from './containers/mail/MailShortcutsModal';
+export { default as CalendarShortcutsModal } from './containers/calendar/shortcutsModal/CalendarShortcutsModal';
 export { default as MailViewLayoutModal } from './containers/mail/MailViewLayoutModal';
 export { default as MemberActions } from './containers/members/MemberActions';
 export { default as MemberAddresses } from './containers/members/MemberAddresses';

@@ -33,7 +33,7 @@ interface Props extends ModalProps {
 const Commander = ({ onClose, list, ...rest }: Props) => {
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
-    const cleanValue = normalize(value);
+    const cleanValue = useMemo(() => normalize(value), [value]);
     const [active, setActive] = useState(0);
     const filteredList = useMemo(() => {
         if (cleanValue.length) {
@@ -57,15 +57,15 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
         setActive(0);
     };
 
-    const handleKeyDown = ({ key }: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        const { key } = event;
+
         if (key === 'ArrowDown') {
             setActive((active) => (active + 1) % filteredList.length);
         }
+
         if (key === 'ArrowUp') {
             setActive((active) => (active - 1 + filteredList.length) % filteredList.length);
-        }
-        if (key === 'Escape') {
-            onClose();
         }
     };
 
@@ -92,7 +92,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
             <div className="flex flex-column flex-nowrap h-full">
                 <div className="border-bottom commander-search-wrapper py-1 shrink-0">
                     <label className="sr-only" htmlFor="commander-search-input">
-                        {c('Label').t`Type a command...`}
+                        {c('Placeholder').t`Filter quick actions`}
                     </label>
                     <InputFieldTwo
                         unstyled
@@ -102,9 +102,8 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                         autoComplete="off"
                         className="commander-search-input"
                         inputClassName="h3"
-                        type="search"
                         id="commander-search-input"
-                        placeholder={c('Placeholder').t`Type a command…`}
+                        placeholder={c('Placeholder').t`Filter quick actions`}
                         ref={inputRef}
                         value={value}
                         onChange={handleChange}
@@ -119,6 +118,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                 className="rounded-sm"
                                 title={c('Action').t`Clear`}
                                 onClick={handleClear}
+                                disabled={cleanValue.length === 0}
                             >
                                 {c('Action').t`Clear`}
                             </Button>
@@ -147,6 +147,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                                     onClose();
                                                 }}
                                                 isSelected={active === index}
+                                                makeSelectedCliquable
                                                 className="w-full flex items-center justify-space-between text-left p-3"
                                             >
                                                 <span className="flex items-center text-left text-pre">
