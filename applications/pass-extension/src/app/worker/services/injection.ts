@@ -112,14 +112,8 @@ export const createInjectionService = () => {
         })
     );
 
-    /* (UN)LOAD_CONTENT_SCRIPT_EXTERNAL is only sent from the Pass web app. It was created to do the same action as
-     * (UN)LOAD_CONTENT_SCRIPT without any unexpected side-effects for users don't have the latest extension version. */
     WorkerMessageBroker.registerMessage(WorkerMessageType.LOAD_CONTENT_SCRIPT, loadContentScript);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.LOAD_CONTENT_SCRIPT_EXTERNAL, loadContentScript);
-
     WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOAD_CONTENT_SCRIPT, unloadContentScript);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOAD_CONTENT_SCRIPT_EXTERNAL, unloadContentScript);
-
     WorkerMessageBroker.registerMessage(WorkerMessageType.SENTRY_CS_EVENT, ({ payload }) => {
         sentryCaptureMessage(payload.message, { extra: payload });
         return true;
