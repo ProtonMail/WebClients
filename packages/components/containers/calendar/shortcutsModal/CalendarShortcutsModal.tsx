@@ -15,6 +15,7 @@ import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/calendar';
+import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i18n';
 import clsx from '@proton/utils/clsx';
 
 import ShortcutsToggle from '../../general/ShortcutsToggle';
@@ -22,7 +23,7 @@ import ShortcutsToggle from '../../general/ShortcutsToggle';
 import './CalendarShortcutsModal.scss';
 
 const CalendarShortcutsModal = (props: ModalProps) => {
-    const title = c('Title').t`${CALENDAR_APP_NAME} keyboard shortcuts`;
+    const title = getKeyboardShortcutsWithAppName(CALENDAR_APP_NAME);
     const [{ Shortcuts } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const calendarShortcuts = getShortcuts();
     const { onClose } = props;
