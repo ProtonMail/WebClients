@@ -23,6 +23,7 @@ const MX_TYPES = {
     [MX_STATE.MX_STATE_NO_US]: 'error',
     [MX_STATE.MX_STATE_INC_US]: 'error',
     [MX_STATE.MX_STATE_GOOD]: 'success',
+    [MX_STATE.MX_STATE_BACKUP]: 'warning',
 } satisfies { [key in MX_STATE]: BadgeType };
 
 const SPF_TYPES = {
