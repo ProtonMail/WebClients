@@ -5,7 +5,6 @@ import { useDocsContext } from '../../../Containers/DocsContextProvider'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import { usePublicDocumentCopying } from '../Hooks/usePublicDocumentCopying'
 import { UserInfo } from './UserInfo'
-import { DOCS_SIGNUP_FREE } from '@proton/shared/lib/docs/urls'
 import { useDocsUrlBar } from '../../../Containers/useDocsUrlBar'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
 import { useApplication } from '../../../Containers/ApplicationProvider'
@@ -23,7 +22,6 @@ import {
   DropdownSizeUnit,
   DropdownMenu,
   DropdownMenuButton,
-  DropdownMenuLink,
   ButtonGroup,
   SimpleDropdown,
 } from '@proton/components'
@@ -32,6 +30,7 @@ import { useSignupFlowModal } from '../SignupFlowModal/SignupFlowModal'
 import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
 import { DocumentActiveUsers } from '../../../Components/DocumentActiveUsers'
 import { CommentsButton } from '../../../Components/DocsHeader/CommentsButton'
+import { redirectToSignUp } from '../Utils/Redirection'
 
 export const HeaderPublicOptions = ({
   editorController,
@@ -45,7 +44,7 @@ export const HeaderPublicOptions = ({
   const application = useApplication()
   const role = documentState.getProperty('userRole')
 
-  const { customPassword, token, urlPassword } = surePublicContext.compat
+  const { customPassword, token, linkId, urlPassword } = surePublicContext.compat
   const { addBookmark, isAlreadyBookmarked, isLoading } = useDocsBookmarks({ token, urlPassword, customPassword })
   const { createCopy } = usePublicDocumentCopying({
     context: surePublicContext,
@@ -108,11 +107,22 @@ export const HeaderPublicOptions = ({
   const { shouldShowTooltip: shouldShowMakeCopyTooltip } = useTooltipOnce(TooltipKey.PublicDocsMakeCopy)
   const handleMakeCopyClick = useCallback(() => {
     if (!user) {
-      showSignupFlowModal({ urlPassword, redirectAction: RedirectAction.MakeCopy })
+      showSignupFlowModal({ urlPassword, redirectAction: RedirectAction.MakeCopy, openInNewTab: true })
     } else {
       createCopy()
     }
   }, [createCopy, showSignupFlowModal, urlPassword, user])
+
+  const handleSignUpButtonClick = useCallback(() => {
+    void redirectToSignUp({
+      action: undefined,
+      token,
+      linkId,
+      email: '',
+      urlPassword,
+      openInNewTab: false,
+    })
+  }, [linkId, token, urlPassword])
 
   const {
     anchorRef: mobileMenuAnchorRef,
@@ -180,9 +190,7 @@ export const HeaderPublicOptions = ({
       {!user && (
         <ButtonLike
           className="flex head-max-849:![display:none]"
-          as="a"
-          href={DOCS_SIGNUP_FREE}
-          target="_blank"
+          onClick={handleSignUpButtonClick}
           color="norm"
           size="small"
           data-testid="public-view-sign-up-link"
@@ -229,10 +237,10 @@ export const HeaderPublicOptions = ({
             <span>{c('Action').t`Create a copy`}</span>
           </DropdownMenuButton>
           {!user && (
-            <DropdownMenuLink className="flex items-center gap-2 text-left" href={DOCS_SIGNUP_FREE} target="_blank">
+            <DropdownMenuButton className="flex items-center gap-2 text-left" onClick={handleSignUpButtonClick}>
               <Icon name="user" />
               <span>{c('Action').t`Sign up`}</span>
-            </DropdownMenuLink>
+            </DropdownMenuButton>
           )}
         </DropdownMenu>
       </Dropdown>
