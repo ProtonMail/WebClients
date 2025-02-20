@@ -14,8 +14,6 @@ const files = [
     'components/components/upsell/modal/UpsellModal.tsx',
     'components/components/upsell/modal/types/ComposerAssistantUpsellModal.helpers.ts',
     'components/components/upsell/modal/types/PmMeUpsellModal.tsx',
-    'components/components/upsell/useMailUpsellConfig.ts',
-    'components/components/upsell/useOneDollarPromo.tsx',
     'components/components/upsell/useUpsellConfig.ts',
     'components/containers/desktop/openExternalLink.ts',
     'components/containers/offers/components/passFamilyPlan/Layout.tsx',

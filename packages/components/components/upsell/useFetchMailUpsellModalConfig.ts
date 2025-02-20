@@ -19,7 +19,7 @@ import {
     getMailUpsellsFooterText,
     getMailUpsellsSubmitText,
     getUserCurrency,
-} from './useMailUpsellConfig.helpers';
+} from './upsellConfigHelpers';
 import { getUpsellConfig } from './useUpsellConfig';
 
 export interface MailUpsellConfig {

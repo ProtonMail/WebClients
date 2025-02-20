@@ -9,13 +9,12 @@ import {
     ColorPicker,
     Spotlight,
     UpsellModal,
-    useMailUpsellConfig,
     useModalState,
     useSpotlightOnFeature,
     useSpotlightShow,
 } from '@proton/components';
 import { FeatureCode } from '@proton/features';
-import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
@@ -70,7 +69,6 @@ const EventColorSelect = ({ model, setModel }: Props) => {
     };
 
     const isIframe = getIsIframe();
-    const upsellConfig = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
 
     // Wrap the children in a div to show spotlight
     return (
@@ -106,14 +104,14 @@ const EventColorSelect = ({ model, setModel }: Props) => {
             {renderUpsellModal && (
                 <UpsellModal
                     data-testid="color-per-event:upsell-modal"
-                    titleModal={c('Title').t`Add some color to your day`}
+                    title={c('Title').t`Add some color to your day`}
                     description={c('Description')
                         .t`Color-code events to make it easier to organize your day, track your time, and prioritize tasks.`}
                     modalProps={upsellModalProps}
                     sourceEvent="BUTTON_COLOR_PER_EVENT"
-                    application={APPS.PROTONCALENDAR}
                     illustration={paintImg}
-                    {...upsellConfig}
+                    upsellRef={upsellRef}
+                    preventInAppPayment={isIframe}
                 />
             )}
         </>
