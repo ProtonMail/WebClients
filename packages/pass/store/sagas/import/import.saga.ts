@@ -1,7 +1,7 @@
 import { call, put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { type ImportVault } from '@proton/pass/lib/import/types';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
@@ -75,7 +75,7 @@ function* importWorker(
             try {
                 const shareId: string = vaultData.shareId ?? (yield call(createVaultForImport, vaultData.name));
 
-                for (const batch of chunk(vaultData.items, MAX_BATCH_PER_REQUEST)) {
+                for (const batch of chunk(vaultData.items, MAX_MAX_BATCH_PER_REQUEST)) {
                     try {
                         const revisions: ItemRevisionContentsResponse[] = yield importItemsBatch({
                             shareId,
