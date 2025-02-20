@@ -94,7 +94,13 @@ export const ExtraPassword: FC = () => {
                 </span>
             </Checkbox>
 
-            <PasswordModal {...modal.state} onSubmit={modal.resolver} onClose={modal.abort} key={modal.key} />
+            <PasswordModal
+                {...modal.state}
+                autofillable={false}
+                key={modal.key}
+                onClose={modal.abort}
+                onSubmit={modal.resolver}
+            />
         </SettingsPanel>
     );
 };

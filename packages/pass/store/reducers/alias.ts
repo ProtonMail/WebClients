@@ -87,7 +87,8 @@ const reducer: Reducer<AliasState> = (state = getInitialState(), action) => {
 
     if (
         (deleteMailbox.success.match(action) ||
-            (validateMailbox.failure.match(action) && action.error.code === PassErrorCode.NOT_ALLOWED)) &&
+            (or(validateMailbox.failure.match, deleteMailbox.failure.match)(action) &&
+                action.error.code === PassErrorCode.NOT_ALLOWED)) &&
         state.mailboxes
     ) {
         return { ...state, mailboxes: objectDelete(state.mailboxes, action.payload.mailboxID) };
