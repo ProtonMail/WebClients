@@ -83,8 +83,14 @@
       "Cancel": [
         "İptal"
       ],
+      "Cancel email change": [
+        "E-posta değişikliğini iptal et"
+      ],
       "Change": [
         "Değiştir"
+      ],
+      "Change email": [
+        "E-postayı değiştir"
       ],
       "Check DNS": [
         "DNS kayıtlarını denetle"
@@ -859,6 +865,12 @@
       "Failed to block the contact": [
         "Kişi engellenemedi"
       ],
+      "Failed to cancel mailbox change": [
+        "Posta kutusu değişikliği iptal edilemedi"
+      ],
+      "Failed to change mailbox": [
+        "Posta kutusu değiştirilemedi"
+      ],
       "Failed to create domain": [
         "Etki alanı oluşturulamadı"
       ],
@@ -1356,9 +1368,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "SimpleLogin takma ad yönetimi özellikleri yakında geliyor!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Takma ad kullanımdan kaldırıldı. Artık ${ item.aliasEmail } adresine gönderilen e-postaları almayacaksınız"
@@ -2128,6 +2137,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Bu öge şu anda kimseyle paylaşılmıyor. Paylaşmak istediğiniz kişileri davet edin."
       ],
+      "This mailbox will use your previous email.": [
+        "Bu posta kutusu önceki e-postanızı kullanacaktır."
+      ],
       "This operation is irreversible.": [
         "Bu işlem geri alınamaz."
       ],
@@ -2462,9 +2474,6 @@
       ],
       "Alias address (disabled)": [
         "Takma adres (kullanımdan kaldırılmış)"
-      ],
-      "Alias management": [
-        "Takma ad yönetimi"
       ],
       "Aliases": [
         "Takma adlar"
@@ -2843,6 +2852,9 @@
       ],
       "New": [
         "Yeni"
+      ],
+      "New email": [
+        "Yeni e-posta"
       ],
       "New vault": [
         "Yeni kasa"
@@ -3436,6 +3448,9 @@
         "Ögelerde ${ share.targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
         "Ögelerde ${ share.targetMaxMembers } taneden fazla kullanıcı bulunamaz."
       ],
+      "Mailbox change successfully cancelled": [
+        "Posta kutusu değişikliği başarıyla iptal edildi"
+      ],
       "Mailbox successfully deleted": [
         "E-posta kutusu silindi"
       ],
@@ -3503,6 +3518,12 @@
       ],
       "Blocked addresses": [
         "Engellenmiş adresler"
+      ],
+      "Cancel changing your email?": [
+        "E-posta adresinizi değiştirmeyi iptal mi ediyorsunuz?"
+      ],
+      "Change mailbox email": [
+        "Posta kutusu e-postasını değiştirme"
       ],
       "Change your lock method": [
         "Kilitleme yönteminizi değiştirin"

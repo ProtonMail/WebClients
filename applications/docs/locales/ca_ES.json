@@ -2453,7 +2453,7 @@
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "El vostre nom d'usuari és ${ user.Name }. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"

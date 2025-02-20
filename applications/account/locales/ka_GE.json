@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -6946,10 +6946,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "გაააქტიურეთ ანგარიშის აღდგენის ერთი მეთოდი მაინც, რომ დარწმუნდეთ, რომ თქვენს ${ BRAND_NAME }-ის ანგარიშზე წვდომა პაროლის დაკარგვის შემთხვევაშიც კი გექნებათ."
       ],
-      "active": [
+      "Active": [
         "აქტიური"
       ],
-      "Active": [
+      "active": [
         "აქტიური"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -7400,7 +7400,7 @@
       "default email address": [
         "ნაგულისხმევი ელფოსტის მისამართი"
       ],
-      "Default mail application": [
+      "Default email application": [
         "ელ-ფოსტის ნაგულისხმევი აპლიკაცია"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7734,6 +7734,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "თუ პაროლს სხვა ადმინისტრატორი შეცვლის, ორგანიზაციის ახალი პაროლი მას უნდა სთხოვოთ."
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "თუ გათიშულია, მონაცემების გატანა, მხოლოდ, ადმინისტრატორებს შეეძლებათ."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "თუ არ მოგეწონებათ, თანხას დაგიბრუნებთ."
@@ -8622,6 +8625,10 @@
       "Shared ${ vaultLink } updated": [
         "გაზიარებული ${ vaultLink } განახლდა"
       ],
+      "Shared server country (${ countriesCount })": [
+        "უფასო სერვერის ქვეყანა (${ countriesCount })",
+        "უფასო სერვერის ქვეყანა (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "გაზიარებული საცავი წაიშალა"
       ],
@@ -8728,8 +8735,8 @@
       "Symbols (#$&)": [
         "სიმბოლოები (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Tech radar pro რეკომენდაციას გვიწევს 4.2 ქულით 5-დან"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "TechRadar Pro რეკომენდაციას გვიწევთ 4.2 ქულით 5-დან"
       ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
@@ -10188,6 +10195,15 @@
       "Allow": [
         "ავტორიზებული მისამართები"
       ],
+      "Allow all users to create vaults": [
+        "ყველა მომხმარებლისთვის საფულის შექმნის უფლების მინიჭება"
+      ],
+      "Allow data export for all users": [
+        "მონაცემების გატანის დაშვება ყველა მომხმარებლისთვის"
+      ],
+      "Allow individual item sharing": [
+        "ინდივიდუალური ელემენტების გაზიარების ჩართვა"
+      ],
       "Allow memorable passwords": [
         "დამახსოვრებადი პაროლების დაშვება"
       ],
@@ -10208,6 +10224,9 @@
       ],
       "Allow recovery using a trusted device": [
         "გაძლევთ აღდგენის საშუალებას სანდო მოწყობილობის გამოყენებით"
+      ],
+      "Allow sharing outside the organization": [
+        "ორგანიზაციის გარეთ გაზიარების დაშვება"
       ],
       "Allowed domain": [
         "დაშვებული დომენი"
@@ -12690,6 +12709,17 @@
         "ჯგუფის მართვა"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } დასრულდება ${ last4 }"
@@ -12798,17 +12828,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13236,6 +13255,9 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "ამის გათიშვა მოაცილებ შესაძლებლობას, მიიღოთ გაფრთხილებები ${ BRAND_NAME }-ის აპლიკაციებში"
+      ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "${ BRAND_NAME }-ის პროდუქტის გამოყენების პირველი თვის განმავლობაში"
       ],
       "Email subscriptions": [
         "ელფოსტის გამოწერები"
@@ -13848,6 +13870,9 @@
       ],
       "Organization identity updated": [
         "ორგანიზაციის იდენტიფიკატორი განახლდა"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "გადაამოწმეთ თქვენი ელფოსტის მისამართი ${ email }, რომ დააყენოთ ორგანიზაციის იდენტიფიკატორი."
       ]
     },
     "OS compatibility": {
@@ -16637,6 +16662,47 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -16922,47 +16988,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -17472,9 +17497,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME }-ის კლავიატურის მალსახმობები"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME }-ის მონიტორინგის ანგარიში"

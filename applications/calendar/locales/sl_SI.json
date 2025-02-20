@@ -804,6 +804,11 @@
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Išči sporočila"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Vsak s povezavo si lahko ogleda vaš koledar"
@@ -4892,6 +4897,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Enega ali več vaših zaupanja vrednih ključev je njihov lastnik označil kot \"ogroženo\". Priporočamo, da tem ključem \"ne zaupate\"."
       ],
+      "Open shortcut cheat sheet": [
+        "Odpri seznam bližnjic"
+      ],
       "Organization size": [
         "Velikost organizacije"
       ],
@@ -5377,6 +5385,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "Najden ${ filteredList.length } ukaz.",
+        "Najdena ${ filteredList.length } ukaza.",
+        "Najdeni ${ filteredList.length } ukazi.",
+        "Najdenih ${ filteredList.length } ukazov."
+      ],
       "Selected color:": [
         "Izberi barvo:"
       ]
@@ -5490,6 +5504,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Odpri to okno"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Osnovna dejanja"
       ]
     },
     "Knowledge base link label": {
@@ -5725,6 +5749,12 @@
       ],
       "Import to:": [
         "Uvozi v:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Bližnjica na tipkovnici: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Bližnjice na tipkovnici"
       ],
       "Label messages as": [
         "Dodaj sporočilom oznako"
@@ -9164,6 +9194,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Vabilo je poslano in udeleženci dodani na vse dogodke"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Nastavitve bližnjic na tipkovnici so posodobljene"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Zadnji spremenjeni vzdevki, shranjeni v vašem najstarejšem trezorju"

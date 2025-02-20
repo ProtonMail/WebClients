@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -3671,6 +3671,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
+      "Everyone in your organization can connect to shared servers.": [
+        "Все в вашей организации могут подключиться к общим серверам."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
@@ -3688,6 +3691,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Сделайте свой собственный нижний колонтитул электронной почты — демонстрируйте свой уникальный бренд, а не наш."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Никто из вашей организации не может подключиться к общим серверам."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
@@ -6154,6 +6160,9 @@
       "Best deal": [
         "Лучшее предложение"
       ],
+      "Checkout": [
+        "Оплатить"
+      ],
       "Device": [
         "Устройство"
       ],
@@ -6994,11 +7003,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
       ],
-      "active": [
-        "активный"
-      ],
       "Active": [
         "Активно"
+      ],
+      "active": [
+        "активный"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
@@ -7113,6 +7122,9 @@
       ],
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Разрешить пользователям подключаться к защищённым общим серверам **Стран** приложения ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Уже выделено"
@@ -7452,6 +7464,9 @@
       ],
       "default email address": [
         "адрес эл. почты по умолчанию"
+      ],
+      "Default email application": [
+        "Приложение электронной почты по умолчанию"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
@@ -8248,6 +8263,12 @@
       "of": [
         "из"
       ],
+      "Off": [
+        "Выкл."
+      ],
+      "On": [
+        "Вкл."
+      ],
       "Once you reset your password:": [
         "После изменения пароля:"
       ],
@@ -8658,6 +8679,12 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Коллективная ${ vaultLink } обновлена"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Страна с общим сервером (${ countriesCount })",
+        "Страны с общими серверами (${ countriesCount })",
+        "Стран с общими серверами (${ countriesCount })",
+        "Стран с общими серверами (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Общее хранилище удалено"
@@ -12739,6 +12766,17 @@
         "Управление командами"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ trialPlanName } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, заканчивающаяся на ${ last4 }"
@@ -12847,17 +12885,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ trialPlanName } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -16692,6 +16719,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -16986,47 +17054,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -17542,9 +17569,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Инструмент экспорта ${ MAIL_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } Быстрые клавиши"
       ],
       "(active)": [
         "(активна)"
@@ -18604,6 +18628,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Настройка выделенных серверов, улучшив тариф до Business"
+      ],
+      "Shared servers": [
+        "Общие серверы"
       ],
       "Short domain (@pm.me)": [
         "Короткий домен (@pm.me)"

@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "იტვირთება${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად"
+      ],
       "Make it friendly": [
         "გახადეთ მეგობრული"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "ნაგულისხმევად დაყენება"
-      ],
-      "Set as default mail application": [
-        "ნაგულიხმევ ელფოსტის აპლიკაციად დაყენება"
       ],
       "Set encryption": [
         "შიფრაციის დაყენება"
@@ -5879,9 +5879,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME }-ს თქვენი ბიზნესის დაცვაც შეუძლია."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია არაა."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } შეტყობინების გადატანა შეუძლებელია.",
         "${ messagesNotAuthorizedToMove } შეტყობინების გადატანა შეუძლებელია."
@@ -6311,9 +6308,6 @@
       "Default email application": [
         "ელ-ფოსტის ნაგულისხმევი აპლიკაცია"
       ],
-      "Default mail application": [
-        "ელ-ფოსტის ნაგულისხმევი აპლიკაცია"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "იცოდით, რომ გაქვთ დაშიფრული ღრუბლოვანი საცავი, რომელსაც თქვენი ${ BRAND_NAME }-ის ანგარიში შეიცავს? გადადით ${ DRIVE_APP_NAME }-ზე და გამოიყენეთ მონიჭებული სივრცე. ის უფასოა."
       ],
@@ -6715,6 +6709,9 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
       ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
@@ -8651,9 +8648,6 @@
       ],
       "Toolbar": [
         "ხელსაწყოების ზოლი"
-      ],
-      "Type a command...": [
-        "აკრიფეთ ბრძანება..."
       ],
       "Undisclosed Recipients": [
         "გაუმჟღავნებელი მიმღებები"
@@ -10946,9 +10940,6 @@
       "To": [
         "ვის"
       ],
-      "Type a command…": [
-        "აკრიფეთ ბრძანება…"
-      ],
       "Type text or keyword": [
         "შეიყვანეთ ტექსტი ან საკვანძო სიტყვა"
       ]
@@ -12819,9 +12810,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } ახლა აქტიურია"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME }-ის კლავიატურის მალსახმობები"
       ],
       "${ unreads } unread message": [
         "${ unreads } წაუკითხავი შეტყობინება",

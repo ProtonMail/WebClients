@@ -103,8 +103,14 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel email change": [
+        "Cancelar el cambio de correo electrónico"
+      ],
       "Change": [
         "Cambiar"
+      ],
+      "Change email": [
+        "Cambiar la dirección de correo"
       ],
       "Check DNS": [
         "Verificar el DNS"
@@ -894,6 +900,12 @@
       "Failed to block the contact": [
         "Error al bloquear el contacto"
       ],
+      "Failed to cancel mailbox change": [
+        "No se pudo cancelar el cambio del buzón."
+      ],
+      "Failed to change mailbox": [
+        "Error al cambiar el buzón"
+      ],
       "Failed to create domain": [
         "Error al crear el dominio"
       ],
@@ -1370,9 +1382,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar los datos, puede eliminar el archivo CSV que contiene sus contraseñas por seguridad."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "¡Las funciones de administración de alias de SimpleLogin llegarán pronto!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Se desactivó el alias. Ya no recibirá correos enviados a ${ item.aliasEmail }."
       ],
@@ -1428,7 +1437,7 @@
         "Los alias creados automáticamente son propiedad de los siguientes buzones de correo:"
       ],
       "Auto-lock successfully disabled.": [
-        "Bloqueo automático desactivado con éxito."
+        "Se desactivó el bloqueo automático."
       ],
       "automatically": [
         "automáticamente"
@@ -1757,13 +1766,13 @@
         "Elemento incluido en el monitoreo."
       ],
       "Item successfully moved": [
-        "Elemento movido con éxito"
+        "Se movió el elemento."
       ],
       "Item successfully pinned": [
-        "Elemento anclado con éxito"
+        "Se ancló el elemento."
       ],
       "Item successfully unpinned": [
-        "Elemento desanclado con éxito"
+        "Se desancló el elemento."
       ],
       "Latest breach on ${ formattedDate }": [
         "Última vulneración en ${ formattedDate }"
@@ -1895,7 +1904,7 @@
         "Eliminando permanentemente los elementos selecionados"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Código PIN registrado con éxito. Úselo para desbloquear ${ PASS_APP_NAME }"
+        "Se registró el código PIN. Úselo para desbloquear ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
         "Fijando elemento..."
@@ -2078,7 +2087,7 @@
         "Configurado por su organización"
       ],
       "Settings successfully updated": [
-        "Ajustes actualizados con éxito"
+        "Se actualizaron los ajustes."
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
         "Comparta aliases con otros añadiendo su bandeja de entrada como buzón de reenvío."
@@ -2102,7 +2111,7 @@
         "Simplemente use ${ emailBold } la próxima vez que necesite un alias: se creará ${ automaticallyBold } la primera vez que reciba un correo electrónico. Para tener un control más detallado, también puede definir ${ rulesHyperLink }."
       ],
       "Successfully exported all your items": [
-        "Todos sus elementos exportados con éxito."
+        "Se exportaron todos sus elementos."
       ],
       "Successfully left the item": [
         "Elemento abandonado"
@@ -2111,7 +2120,7 @@
         "Ha dejado la bóveda."
       ],
       "Successfully synced all vaults": [
-        "Todas las bóvedas sincronizadas con éxito"
+        "Se sincronizaron todas las bóvedas."
       ],
       "Suggested": [
         "Sugerido"
@@ -2161,6 +2170,9 @@
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Este elemento no está compartido con nadie en este momento. Invite a otras personas a compartirlo con otros."
+      ],
+      "This mailbox will use your previous email.": [
+        "Este buzón usará el correo electrónico anterior."
       ],
       "This operation is irreversible.": [
         "Esta operación es irreversible."
@@ -2247,13 +2259,13 @@
         "nombre de usuario"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "Bóveda \"${ payload.content.name }\" eliminada con éxito"
+        "Se eliminó la bóveda «${ payload.content.name }»."
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "Bóveda \"${ payload.share.content.name }\" creada con éxito"
+        "Se creó la bóveda «${ payload.share.content.name }»."
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "Bóveda \"${ payload.share.content.name }\" actualizada con éxito"
+        "Se actualizó la bóveda «${ payload.share.content.name }»."
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Se eliminó la bóveda «${ share.content.name }»."
@@ -2491,9 +2503,6 @@
       ],
       "Alias address (disabled)": [
         "Dirección del alias (desactivada)"
-      ],
-      "Alias management": [
-        "Administración de los alias"
       ],
       "Aliases": [
         "Alias"
@@ -2863,6 +2872,9 @@
       ],
       "New": [
         "Nuevo"
+      ],
+      "New email": [
+        "Correo nuevo"
       ],
       "New vault": [
         "Bóveda nueva"
@@ -3480,6 +3492,9 @@
         "Los elementos no pueden contener más de ${ share.targetMaxMembers } usuario.",
         "Los elementos no pueden contener más de ${ share.targetMaxMembers } usuarios."
       ],
+      "Mailbox change successfully cancelled": [
+        "Se canceló el cambio el buzón."
+      ],
       "Mailbox successfully deleted": [
         "Se eliminó el buzón."
       ],
@@ -3559,6 +3574,12 @@
       ],
       "Breaches detected for": [
         "Vulneraciones detectadas para"
+      ],
+      "Cancel changing your email?": [
+        "¿Cancelar el cambio de correo electrónico?"
+      ],
+      "Change mailbox email": [
+        "Cambiar el correo electrónico del buzón"
       ],
       "Change your lock method": [
         "Cambiar el método de bloqueo"

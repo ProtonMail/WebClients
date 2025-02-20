@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "Γίνεται φόρτωση${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Κάντε το ${ MAIL_APP_NAME } την προεπιλεγμένη εφαρμογή ηλεκτρονικού ταχυδρομείου σας"
+      ],
       "Make it friendly": [
         "Κάντε το φιλικό"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "Ορισμός ως προεπιλογή"
-      ],
-      "Set as default mail application": [
-        "Ορίστε ως προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
       "Set encryption": [
         "Ορισμός κρυπτογράφησης"
@@ -4310,10 +4310,10 @@
         "Παρακαλούμε επιλέξτε μια χώρα"
       ],
       "Please select a state": [
-        "Παρακαλώ διαλέξτε πολιτεία"
+        "Παρακαλούμε διαλέξτε πολιτεία"
       ],
       "Please try again or refresh the page.": [
-        "Παρακαλώ δοκιμάστε ξανά ή ανανεώστε τη σελίδα."
+        "Παρακαλούμε δοκιμάστε ξανά ή ανανεώστε τη σελίδα."
       ],
       "Please try generating the text again": [
         "Παρακαλούμε δοκιμάστε να δημιουργήσετε ξανά το κείμενο"
@@ -5889,9 +5889,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να προστατέψει την επιχείρησή σας."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "Η ${ MAIL_APP_NAME } δεν είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } μήνυμα δεν μπόρεσε να μετακινηθεί.",
         "${ messagesNotAuthorizedToMove } μηνύματα δεν μπόρεσαν να μετακινηθούν."
@@ -6330,9 +6327,6 @@
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
-      "Default mail application": [
-        "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Γνωρίζατε ότι έχετε κρυπτογραφήσει τον χώρο αποθήκευσης στο cloud που περιλαμβάνεται στον ${ BRAND_NAME } λογαριασμό σας; Μεταβείτε στο ${ DRIVE_APP_NAME } και αξιοποιήστε στο έπακρο τον χώρο σας. Είναι δωρεάν."
       ],
@@ -6735,6 +6729,9 @@
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Κάντε το ${ MAIL_APP_NAME } την προεπιλεγμένη εφαρμογή ηλεκτρονικού ταχυδρομείου σας."
+      ],
       "Manage your folders": [
         "Διαχειριστείτε τους φακέλους σας"
       ],
@@ -6960,7 +6957,7 @@
         "Παρακαλούμε μοιραστείτε με μας ποιο είναι το πρόβλημα"
       ],
       "Please share what you expected": [
-        "Παρακαλώ μοιραστείτε αυτό που περιμένατε"
+        "Παρακαλούμε μοιραστείτε αυτό που περιμένατε"
       ],
       "Please try again in a few moments": [
         "Παρακαλούμε δοκιμάστε ξανά σε λίγο"
@@ -7137,8 +7134,8 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ορίστε το ${ MAIL_APP_NAME } ως προεπιλεγμένη εφαρμογή αλληλογραφίας σε αυτόν τον περιηγητή. Το κλικ σε σύνδεσμο αλληλογραφίας θα ανοίγει αυτόματα το ${ MAIL_APP_NAME }."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Ορίστε τη ${ MAIL_APP_NAME } ως προεπιλεγμένη εφαρμογή αλληλογραφίας. Το ${ MAIL_APP_NAME } θα ανοίξει αυτόματα όταν κάνετε κλικ σε έναν σύνδεσμο αλληλογραφίας."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Ορίστε τη ${ MAIL_APP_NAME } ως προεπιλεγμένη εφαρμογή ηλεκτρονικού ταχυδρομείου. Η ${ MAIL_APP_NAME } θα ανοίξει αυτόματα όταν κάνετε κλικ σε έναν σύνδεσμο αλληλογραφίας."
       ],
       "Setting up ${ feature }…": [
         "Ρύθμιση ${ feature }…"
@@ -8682,9 +8679,6 @@
       ],
       "Toolbar": [
         "Γραμμή εργαλειών"
-      ],
-      "Type a command...": [
-        "Πληκτρολογήστε μια εντολή..."
       ],
       "Undisclosed Recipients": [
         "Άγνωστοι παραλήπτες"
@@ -10807,7 +10801,7 @@
         "Δεν είμαστε σε θέση να επαληθεύσουμε τον τρόπο πληρωμής σας. Παρακαλούμε επιλέξτε διαφορετικό τρόπο πληρωμής ή προσπαθήστε ξανά."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Η κάρτα σας απορρίφθηκε. Παρακαλώ δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+        "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
       ]
     },
     "Payments.plan_name": {
@@ -10878,6 +10872,9 @@
       "Filter labels": [
         "Φιλτράρισμα ετικετών"
       ],
+      "Filter quick actions": [
+        "Φιλτράρισμα γρήγορων ενεργειών"
+      ],
       "First name": [
         "Όνομα"
       ],
@@ -10921,7 +10918,7 @@
         "Παρακαλούμε εισάγετε πρώτα τον σύνδεσμο"
       ],
       "Please share what you expected": [
-        "Παρακαλώ μοιραστείτε αυτό που περιμένατε"
+        "Παρακαλούμε μοιραστείτε αυτό που περιμένατε"
       ],
       "Search date, name, email address, or subject line": [
         "Αναζητήστε με ημερομηνία, όνομα, διεύθυνση ηλεκτρονικού ταχυδρομείου ή γραμμή θέματος"
@@ -10985,9 +10982,6 @@
       ],
       "To": [
         "Προς"
-      ],
-      "Type a command…": [
-        "Πληκτρολογήστε μια εντολή…"
       ],
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
@@ -12856,15 +12850,15 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } συντομεύσεις πληκτρολογίου"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } διεύθυνση email",
         "${ emailsCount } διευθύνσεις email"
       ],
       "${ feature } is now active": [
         "Το ${ feature } είναι πλέον ενεργό"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Συντομεύσεις Πληκτρολογίου ${ MAIL_APP_NAME }"
       ],
       "${ unreads } unread message": [
         "${ unreads } μη διαβασμένο μήνυμα",

@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -4421,6 +4421,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
       ],
@@ -6976,11 +6979,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activa como mínimo un método de recuperación de datos para asegurarte de que puedes continuar accediendo a los contenidos de tu cuenta ${ BRAND_NAME } si pierdes tu contraseña."
       ],
-      "active": [
-        "activa"
-      ],
       "Active": [
         "Activo"
+      ],
+      "active": [
+        "activa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añade una dirección de correo electrónico @pm.me a tu cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME } me\" o \"Mensaje privado\"."
@@ -7081,6 +7084,9 @@
       ],
       "Allow recovery by phone": [
         "Permitir recuperación por teléfono"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permite que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Ya asignado"
@@ -7430,7 +7436,7 @@
       "default email address": [
         "dirección de correo electrónico por defecto"
       ],
-      "Default mail application": [
+      "Default email application": [
         "Aplicación de correo electrónico por defecto"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7765,8 +7771,23 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si otro administrador ha cambiado esta contraseña, necesitarás pedir la nueva contraseña de la organización."
       ],
+      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
+        "Si está desactivado, los nuevos miembros de la organización van a requerir de un administrador que cree manualmente la primera caja fuerte para ellos (usando compartir), para que puedan empezar a crear elementos."
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "Si está desactivado, solo los administradores podrán exportar datos."
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "Si está desactivado, los miembros de la organización solo podrán compartir cajas fuertes o elementos dentro de la organización."
+      ],
+      "If enabled, organization members will be able to share individual items in addition to vaults.": [
+        "Si está activado, los miembros de la organización podrán compartir cada elemento además de cajas fuertes."
+      ],
       "If it’s not right for you, we’ll refund you.": [
         "Si no es lo que necesitas, te devolveremos el dinero."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Si los atajos de teclado están activados, podrás usar las siguientes teclas para acciones rápidas o saltar a diferentes vistas.El atajo ${ metaKey } +K está siempre activado."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Si la zona horaria del sistema no coincide con la preferencia de zona horaria actual, se te pedirá que la actualices (como máximo una vez al día)."
@@ -8279,6 +8300,9 @@
       "Or select a particular server:": [
         "O selecciona un servidor en particular:"
       ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Los miembros de la organización necesitarán desbloquear ${ PASS_APP_NAME } con su contraseña o código PIN, etc."
+      ],
       "Organization size": [
         "Tamaño de la organización"
       ],
@@ -8625,7 +8649,7 @@
       "Session timed out": [
         "El tiempo de la sesión ha expirado."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Configura ${ MAIL_APP_NAME } como tu aplicación de correo electrónico por defecto. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
       "Set recovery phrase": [
@@ -8654,6 +8678,10 @@
       ],
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } compartido actualizado"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "País con servidor compartido (${ countriesCount })",
+        "Países con servidor compartido (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Se ha eliminado la caja fuerte compartida."
@@ -8764,7 +8792,7 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincroniza y gestiona archivos con la aplicación ${ DRIVE_APP_NAME }. Crea y comparte documentos en ${ DOCS_APP_NAME } y guárdalos de forma segura. Todo en ${ ios }, ${ android } y ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomendado por TechRadar Pro con una calificación de 4,2 sobre 5 estrellas"
       ],
       "Temporarily unavailable. Please check back later.": [
@@ -9929,6 +9957,12 @@
       "Close draft": [
         "Cerrar borrador"
       ],
+      "Create new event": [
+        "Crear un evento"
+      ],
+      "Day view": [
+        "Vista diaria"
+      ],
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
@@ -9995,6 +10029,9 @@
       "Minimize / maximize composer": [
         "Minimizar / maximizar el editor"
       ],
+      "Month view": [
+        "Vista mensual"
+      ],
       "Move down": [
         "Mover hacia abajo"
       ],
@@ -10025,6 +10062,9 @@
       "New message": [
         "Nuevo mensaje"
       ],
+      "Next period": [
+        "Siguiente periodo"
+      ],
       "Open command panel": [
         "Abrir el panel de comandos"
       ],
@@ -10034,8 +10074,14 @@
       "Open previous message": [
         "Abrir mensaje anterior"
       ],
+      "Open quick actions menu": [
+        "Abrir el menú de acciones rápidas"
+      ],
       "Open this modal": [
         "Abrir esta ventana"
+      ],
+      "Previous period": [
+        "Periodo anterior"
       ],
       "Reply": [
         "Responder"
@@ -10048,6 +10094,9 @@
       ],
       "Search": [
         "Buscar"
+      ],
+      "Search events": [
+        "Buscar eventos"
       ],
       "Select / unselect": [
         "Seleccionar/anular selección"
@@ -10069,6 +10118,12 @@
       ],
       "Star": [
         "Destacar"
+      ],
+      "Today": [
+        "Hoy"
+      ],
+      "Week view": [
+        "Vista semanal"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10092,6 +10147,9 @@
       ],
       "Message shortcuts": [
         "Atajos de mensajes"
+      ],
+      "View options": [
+        "Ver las opciones"
       ]
     },
     "Keys actions": {
@@ -10238,6 +10296,15 @@
       "Allow": [
         "Direcciones permitidas"
       ],
+      "Allow all users to create vaults": [
+        "Permitir a todos los usuarios crear cajas fuertes"
+      ],
+      "Allow data export for all users": [
+        "Permitir la exportación de datos para todos los usuarios"
+      ],
+      "Allow individual item sharing": [
+        "Permitir compartir elementos individuales"
+      ],
       "Allow memorable passwords": [
         "Permitir las contraseñas memorables"
       ],
@@ -10258,6 +10325,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Permitir recuperación con un dispositivo de confianza"
+      ],
+      "Allow sharing outside the organization": [
+        "Permitir compartir fuera de la organización"
       ],
       "Allowed domain": [
         "Dominio permitido"
@@ -12740,6 +12810,17 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ trialPlanName } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -12848,17 +12929,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ trialPlanName } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -13286,6 +13356,9 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Desactivarlo impedirá que recibas notificaciones de las aplicaciones de ${ BRAND_NAME }"
+      ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Durante el primer mes de uso de un producto de ${ BRAND_NAME }"
       ],
       "Email subscriptions": [
         "Suscripciones de correo"
@@ -13898,6 +13971,9 @@
       ],
       "Organization identity updated": [
         "Se ha actualizado la identidad de la organización."
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Verifica tu dirección de correo electrónico ${ email } para establecer la identidad de la organización."
       ]
     },
     "OS compatibility": {
@@ -16702,6 +16778,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, y ${ VPN_SHORT_APP_NAME } con características prémium"
@@ -16990,47 +17107,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {
@@ -17529,6 +17605,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ appName } keyboard shortcuts": [
+        "Atajos de teclado de ${ appName }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17540,9 +17619,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Herramienta de exportación de ${ MAIL_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Atajos de teclado de ${ MAIL_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Informe de ${ PASS_SHORT_APP_NAME } Monitor"
@@ -19430,6 +19506,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Esto revocará el permiso de administrador para gestionar la cuenta de este usuario."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Para obtener los derechos de administrador, tienen que establecer una contraseña de respaldo la próxima vez que inicien sesión en ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Para continuar, necesitarás solicitar el permiso del usuario para acceder a sus datos o restablecer su contraseña."

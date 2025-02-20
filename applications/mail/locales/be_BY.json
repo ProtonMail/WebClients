@@ -187,7 +187,7 @@
         "Копія"
       ],
       "Change email": [
-        "Змяніць электронную пошту"
+        "Змяніць эл. пошту"
       ],
       "Change page": [
         "Змяніць старонку"
@@ -732,6 +732,9 @@
       "Loading${ ellipsis }": [
         "Загрузка${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты"
+      ],
       "Make it friendly": [
         "Зрабіць прыязным"
       ],
@@ -1163,9 +1166,6 @@
       ],
       "Set as default": [
         "Зрабіць прадвызначанай"
-      ],
-      "Set as default mail application": [
-        "Задаць у якасці прадвызначанай паштовай праграмы"
       ],
       "Set encryption": [
         "Задаць шыфраванне"
@@ -5325,7 +5325,7 @@
         "даныя ўваходу ўліковага запісу"
       ],
       "Auto-forward Gmail": [
-        "Аўтаперасылка Gmail"
+        "Аўтаперасылка з Gmail"
       ],
       "auto-forwarding": [
         "аўтаперасылку"
@@ -6031,9 +6031,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } таксама можа абараніць ваш бізнес."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } не з'яўляецца вашай прадвызначанай паштовай праграмай."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленне.",
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленні.",
@@ -6532,9 +6529,6 @@
       "Default email application": [
         "Прадвызначаная праграма электроннай пошты"
       ],
-      "Default mail application": [
-        "Прадвызначаная паштовая праграма"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Ці ведаеце вы, што ў вас ёсць зашыфраванае воблачнае сховішча, якое ўключае ваш уліковы запіс ${ BRAND_NAME }? Пераходзьце ў ${ DRIVE_APP_NAME } і па максімуму выкарыстоўвайце сваю прастору. Гэта абсалютна бясплатна."
       ],
@@ -6955,6 +6949,9 @@
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты."
+      ],
       "Manage your folders": [
         "Кіруйце сваімі папкамі"
       ],
@@ -7363,8 +7360,8 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Задаць ${ MAIL_APP_NAME } у якасці стандартнай праграмы электроннай пошты для браўзера. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку электроннай пошты."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Задаць ${ MAIL_APP_NAME } у якасці стандартнай паштовай праграмы. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку пошты."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Задаць ${ MAIL_APP_NAME } у якасці прадвызначанай паштовай праграмы. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку электроннай пошты."
       ],
       "Setting up ${ feature }…": [
         "Наладжванне ${ feature }..."
@@ -8956,9 +8953,6 @@
       ],
       "Toolbar": [
         "Панэль інструментаў"
-      ],
-      "Type a command...": [
-        "Увядзіце каманду..."
       ],
       "Undisclosed Recipients": [
         "Схаваныя атрымальнікі"
@@ -11226,6 +11220,9 @@
       "Filter labels": [
         "Фільтр метак"
       ],
+      "Filter quick actions": [
+        "Фільтр хуткіх дзеянняў"
+      ],
       "First name": [
         "Імя"
       ],
@@ -11333,9 +11330,6 @@
       ],
       "To": [
         "Каму"
-      ],
-      "Type a command…": [
-        "Увядзіце каманду…"
       ],
       "Type text or keyword": [
         "Увядзіце тэкст або ключавое слова"
@@ -13346,6 +13340,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Спалучэнні клавіш ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адрас электроннай пошты",
         "${ emailsCount } адрасы электроннай пошты",
@@ -13354,9 +13351,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } у актыўным стане"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Спалучэнні клавіш ${ MAIL_APP_NAME }"
       ],
       "${ unreads } unread message": [
         "${ unreads } непрачытанае паведамленне",

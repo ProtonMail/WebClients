@@ -97,6 +97,9 @@
       "Change": [
         "Изменить"
       ],
+      "Change email": [
+        "Изменить e-mail"
+      ],
       "Check DNS": [
         "Проверить DNS-"
       ],
@@ -1325,9 +1328,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Функции управления псевдонимами от SimpleLogin скоро появятся!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Псевдоним успешно отключен. Вы больше не будете получать письма, отправленные на ${ item.aliasEmail }"
       ],
@@ -1510,9 +1510,6 @@
       ],
       "Emptying trash...": [
         "Очистка корзины..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Включите ${ PASS_SHORT_APP_NAME } бета"
       ],
       "Enable auto-locking to secure your data": [
         "Включите автоматическую блокировку для защиты ваших данных"
@@ -2045,9 +2042,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Чтобы перенести данные из другого менеджера паролей, перейдите в менеджер паролей, экспортируйте свои данные, а затем загрузите их в ${ PASS_APP_NAME }. После того как данные будут импортированы, удалите экспортированный файл."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
-      ],
       "Unable to copy to clipboard": [
         "Не могу скопировать в буфер обмена"
       ],
@@ -2350,9 +2344,6 @@
       "Alias address (disabled)": [
         "Адрес псевдонима (отключен)"
       ],
-      "Alias management": [
-        "Управление псевдонимами"
-      ],
       "Aliases": [
         "Псевдонимы"
       ],
@@ -2376,9 +2367,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "${ PASS_APP_NAME } не только хранит имена пользователя, но и защищает личные данные с помощью встроенной функции почтовых псевдонимов. Каждый раз, когда вы регистрируете аккаунт в Интернете, ${ PASS_APP_NAME } может автоматически создать псевдоним для защиты настоящего адреса электронной почты. "
-      ],
-      "Beta Access": [
-        "Бета доступ"
       ],
       "Biometrics": [
         "Биометрия"
@@ -2733,6 +2721,9 @@
       ],
       "Never": [
         "Никогда"
+      ],
+      "New email": [
+        "Новое письмо"
       ],
       "New vault": [
         "Новое хранилище"

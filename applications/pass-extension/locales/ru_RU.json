@@ -77,6 +77,9 @@
       "Change": [
         "Изменить"
       ],
+      "Change email": [
+        "Изменить e-mail"
+      ],
       "Check DNS": [
         "Проверить DNS-"
       ],
@@ -1280,9 +1283,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Функции управления псевдонимами от SimpleLogin скоро появятся!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Псевдоним успешно отключен. Вы больше не будете получать письма, отправленные на ${ item.aliasEmail }"
       ],
@@ -2293,9 +2293,6 @@
       "Alias address (disabled)": [
         "Адрес псевдонима (отключен)"
       ],
-      "Alias management": [
-        "Управление псевдонимами"
-      ],
       "Aliases": [
         "Псевдонимы"
       ],
@@ -2661,6 +2658,9 @@
       ],
       "Need help?": [
         "Нужна помощь?"
+      ],
+      "New email": [
+        "Новое письмо"
       ],
       "New vault": [
         "Новое хранилище"

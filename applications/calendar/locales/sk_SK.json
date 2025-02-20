@@ -819,6 +819,11 @@
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Vyhľadať správy"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Ktokoľvek s odkazom môže zobraziť váš kalendár"
@@ -5068,6 +5073,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
       ],
+      "Open shortcut cheat sheet": [
+        "Otvoriť zoznam skratiek"
+      ],
       "or discover other features:": [
         "alebo objavte ďalšie funkcie:"
       ],
@@ -5607,6 +5615,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "Nájdený príkaz ${ filteredList.length }.",
+        "Nájdené príkazy ${ filteredList.length }.",
+        "Nájdených príkazov ${ filteredList.length }.",
+        "Nájdených príkazov ${ filteredList.length }."
+      ],
       "Selected color:": [
         "Vybraná farba:"
       ]
@@ -5720,6 +5734,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Otvoriť tento spôsob"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Základné činnosti"
       ]
     },
     "Knowledge base link label": {
@@ -5958,6 +5982,12 @@
       ],
       "Import to:": [
         "Importovať do:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klávesová skratka: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Klávesové skratky"
       ],
       "Label messages as": [
         "Označiť správy ako"
@@ -9776,6 +9806,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Pozvánka bola odoslaná a účastníci boli pridaní do všetkých udalostí"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Nastavenie klávesových skratiek upravené"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Naposledy zmenené aliasy uložené v najstaršom trezore"
