@@ -8,7 +8,7 @@ const chalk = require('chalk');
 
 const program = new Command();
 
-const { getConfigData, getApi, getConfigFile } = require('../lib/config');
+const { getConfigData, getApi, getConfigFile, getConfigHead } = require('../lib/config');
 
 const getPort = (basePort) => {
     portfinder.basePort = basePort;
@@ -23,10 +23,19 @@ const writeConfig = async (configFile) => {
     await fs.writeFile(configPath, configFile);
 };
 
+const writeConfigHead = async (configFile) => {
+    const configPath = path.resolve('./src/config.ejs');
+    console.log(`writing file ${configPath}`);
+
+    await fs.mkdir(path.dirname(configPath), { recursive: true });
+    await fs.writeFile(configPath, configFile);
+};
+
 const addGlobalOptions = (program) => {
     return program
         .option('--appMode <appMode>', '')
         .option('--analyze', '')
+        .option('--optimizeAssets', '')
         .option('--featureFlags <featureFlags>', '')
         .option('--api <api>', '', (api) => getApi(api), getApi(''))
         .option('--sso <sso>', '')
@@ -66,6 +75,7 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         webpackOnCaffeine: Boolean(options.webpackOnCaffeine),
         handleSupportAndErrors: Boolean(options.handleSupportAndErrors),
         analyze: options.analyze,
+        optimizeAssets: options.optimizeAssets,
         ...buildData,
     };
     const extraWebpackArgs = env.args.join(' ');
@@ -97,9 +107,14 @@ addGlobalOptions(program.command('build').description('create an optimized produ
         console.log(chalk.magenta('Creating a production build...\n'));
 
         const configData = getConfigData(options);
-        await writeConfig(getConfigFile(configData));
-
         const webpackArgs = getWebpackArgs(options, env, configData);
+
+        if (options.optimizeAssets) {
+            await writeConfigHead(getConfigHead(configData));
+        } else {
+            await writeConfig(getConfigFile(configData));
+        }
+
         const outputPath = path.resolve('./dist');
         await commandWithLog(`rm -rf ${outputPath}`);
         await commandWithLog(
@@ -137,7 +152,11 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
         console.log(chalk.magenta('Starting development server...\n'));
 
         const configData = getConfigData(options);
-        await writeConfig(getConfigFile(configData));
+        if (options.optimizeAssets) {
+            await writeConfigHead(getConfigHead(configData));
+        } else {
+            await writeConfig(getConfigFile(configData));
+        }
 
         const port = await getPort(options.port || 8080);
 
@@ -153,7 +172,12 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
 addGlobalOptions(program.command('config').description('write config'))
     .option('--version <version>', 'override the default (based on the tag) version number')
     .action(async (options) => {
-        await writeConfig(getConfigFile(getConfigData(options)));
+        const configData = getConfigData(options);
+        if (options.optimizeAssets) {
+            await writeConfigHead(getConfigHead(configData));
+        } else {
+            await writeConfig(getConfigFile(configData));
+        }
     });
 
 program.parse(process.argv);
