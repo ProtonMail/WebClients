@@ -120,8 +120,10 @@ export const AddAlbumPhotosModal = ({
                                 <li>
                                     {c('Info').t`Recent`}
                                     <ul className="unstyled">
-                                        <AlbumSquare album={latestAlbum} onClick={handleSelectAlbum} />
-                                        <AlbumSquare album={secondLatestAlbum} onClick={handleSelectAlbum} />
+                                        {latestAlbum && <AlbumSquare album={latestAlbum} onClick={handleSelectAlbum} />}
+                                        {secondLatestAlbum && (
+                                            <AlbumSquare album={secondLatestAlbum} onClick={handleSelectAlbum} />
+                                        )}
                                     </ul>
                                 </li>
                                 {!!restAlbums.length && (
