@@ -116,6 +116,9 @@ export interface SRPHandshakeInfo {
     SRPSession: string;
     Version: AuthVersion;
     Flags: number;
+
+    // Hack to directly redirect to doc onload
+    IsDoc: boolean;
 }
 
 export interface ThumbnailURLInfo {
