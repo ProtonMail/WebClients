@@ -5,12 +5,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import useOfferConfig from '../../containers/offers/hooks/useOfferConfig';
 import TopNavbarOffer from './TopNavbarOffer';
-import { MailSubscriptionReminder } from './TopNavbarPostSignupPromo/MailSubscriptionReminder/MailSubscriptionReminder';
-import { useMailSubscriptionReminder } from './TopNavbarPostSignupPromo/MailSubscriptionReminder/useMailSubscriptionReminder';
-import { DrivePostSignupOneDollar } from './TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/DrivePostSignupOneDollar';
-import { useDrivePostSignupOneDollar } from './TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollar';
-import { MailPostSignupOneDollar } from './TopNavbarPostSignupPromo/PostSignupOneDollar/MailPostSignupOneDollar/MailPostSignupOneDollar';
-import { useMailPostSignupOneDollar } from './TopNavbarPostSignupPromo/PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar';
+import { usePostSignupOffers } from './TopNavbarPostSignupPromo/usePostSignupOffers';
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
 
 interface Props {
@@ -20,14 +15,7 @@ interface Props {
 
 const TopNavbarUpsellInner = ({ offerProps, app }: Props) => {
     const [offerConfig, loadingOffer] = useOfferConfig();
-    const { isEligible: isEligibleMailPostSignupOneDollar, loading: loadingMailPostSignup } =
-        useMailPostSignupOneDollar();
-
-    const { isEligible: isEligibleMailSubscriptionReminder, loading: loadingSubscriptionReminder } =
-        useMailSubscriptionReminder();
-
-    const { isEligible: isEligibleDrivePostSignupOneDollar, loading: loadingDrivePostSignup } =
-        useDrivePostSignupOneDollar();
+    const { loading: loadingPostSignup, eligibleOffer: eligiblePostSignupOffer } = usePostSignupOffers({ app });
 
     if (loadingOffer) {
         return null;
@@ -45,16 +33,8 @@ const TopNavbarUpsellInner = ({ offerProps, app }: Props) => {
         );
     }
 
-    if (isEligibleMailPostSignupOneDollar && !loadingMailPostSignup) {
-        return <MailPostSignupOneDollar />;
-    }
-
-    if (isEligibleMailSubscriptionReminder && !loadingSubscriptionReminder) {
-        return <MailSubscriptionReminder app={app} />;
-    }
-
-    if (isEligibleDrivePostSignupOneDollar && !loadingDrivePostSignup) {
-        return <DrivePostSignupOneDollar />;
+    if (eligiblePostSignupOffer && !loadingPostSignup) {
+        return eligiblePostSignupOffer;
     }
 
     return <TopNavbarUpgradeButton app={app} />;

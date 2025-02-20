@@ -9,11 +9,13 @@ import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
+import { type OfferHookReturnValue } from '../../common/interface';
+import { isRootFolder } from '../../common/topNavbarPromoHelpers';
 import type { PostSubscriptionOneDollarOfferState } from '../interface';
 import { shouldOpenPostSignupOffer } from '../postSignupOffersHelpers';
 import { getIsUserEligibleForOneDollar } from './mailPostSignupOneDollarHelper';
 
-export const useMailPostSignupOneDollar = () => {
+export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
     const protonConfig = useConfig();
     const [user, userLoading] = useUser();
 
@@ -22,9 +24,9 @@ export const useMailPostSignupOneDollar = () => {
     // The offer should not be opened if the user has selected a conversation / message.
     // Only when in the root of a folder, regardless of the folder
     const { pathname } = useLocation();
-    const isInFolder = pathname.slice(1, pathname.length).split('/').length === 1;
+    const isNotInFolder = isRootFolder(pathname);
 
-    const [messageCount, loadingMessageCount] = useMessageCounts();
+    const [messageCount] = useMessageCounts();
     const totalMessage = messageCount?.find((label) => label.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL)?.Total || 0;
 
     // One flag to control the feature, and another to manage the progressive rollout of existing users
@@ -53,13 +55,13 @@ export const useMailPostSignupOneDollar = () => {
             lastSubscriptionEnd: subscriptionEnd,
             driveOfferStartDateTimestamp: driveOfferState?.Value,
         }),
-        loading:
+        isLoading: !!(
             userLoading ||
             mailOfferStateLoading ||
-            postSignupThresholdLoading ||
             driveOfferStateLoading ||
-            loadingMessageCount ||
-            loadingSubscriptionEnd,
-        openSpotlight: isInFolder && shouldOpenPostSignupOffer(mailOfferState?.Value) && !isDomBusy,
+            loadingSubscriptionEnd ||
+            postSignupThresholdLoading
+        ),
+        openSpotlight: isNotInFolder && shouldOpenPostSignupOffer(mailOfferState?.Value) && !isDomBusy,
     };
 };
