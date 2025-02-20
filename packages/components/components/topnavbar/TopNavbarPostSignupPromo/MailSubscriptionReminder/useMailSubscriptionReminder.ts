@@ -3,9 +3,10 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import { type PostSubscriptionOneDollarOfferState } from '../PostSignupOneDollar/interface';
+import { type OfferHookReturnValue } from '../common/interface';
 import { getIsUserEligibleForSubscriptionReminder } from './mailSubscriptionReminderHelper';
 
-export const useMailSubscriptionReminder = () => {
+export const useMailSubscriptionReminder = (): OfferHookReturnValue => {
     const protonConfig = useConfig();
     const [user, userLoading] = useUser();
 
@@ -23,6 +24,7 @@ export const useMailSubscriptionReminder = () => {
             mailOfferState: mailOfferState?.Value,
             lastReminderTimestamp: lastReminderDate?.Value,
         }),
-        loading: userLoading || lastReminderDateLoading || postSignupDateLoading,
+        isLoading: !!(userLoading || lastReminderDateLoading || postSignupDateLoading),
+        openSpotlight: false,
     };
 };

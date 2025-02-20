@@ -210,6 +210,7 @@ export type IconName =
     | 'language'
     | 'life-ring'
     | 'lightbulb'
+    | 'light-lightbulb'
     | 'lines-long-to-small'
     | 'lines-vertical'
     | 'link'
@@ -598,6 +599,7 @@ export { IcKeySkeleton } from './icons/IcKeySkeleton';
 export { IcLanguage } from './icons/IcLanguage';
 export { IcLifeRing } from './icons/IcLifeRing';
 export { IcLightbulb } from './icons/IcLightbulb';
+export { IcLightLightbulb } from './icons/IcLightLightbulb';
 export { IcLinesLongToSmall } from './icons/IcLinesLongToSmall';
 export { IcLinesVertical } from './icons/IcLinesVertical';
 export { IcLink } from './icons/IcLink';

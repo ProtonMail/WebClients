@@ -9,8 +9,9 @@ import {
     type CycleTitleReturnType,
     isCouponConfigRequiredProps,
 } from './interface';
+import { monthlyNudgeConfig } from './monthlyNudge';
 
-const couponConfig: CouponConfig[] = [];
+const couponConfig: CouponConfig[] = [monthlyNudgeConfig];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
