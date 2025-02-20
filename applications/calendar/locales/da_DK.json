@@ -796,6 +796,11 @@
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Søg i beskeder"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Alle, der har linket, kan se din kalender"
@@ -2887,6 +2892,9 @@
         "${ list } har ingen kontakter",
         "Nogle grupper har ingen kontakter: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Identitet og adresser > Kort domæne (pm.me)"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -3474,6 +3482,9 @@
       ],
       "Time zone": [
         "Tidszone"
+      ],
+      "Time zone component ignored": [
+        "Tidszonekomponent ignoreret"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -4819,6 +4830,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
+      "Open shortcut cheat sheet": [
+        "Åbn snydeark med genveje"
+      ],
       "or discover other features:": [
         "eller opdag andre funktioner:"
       ],
@@ -5345,6 +5359,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } kommando fundet.",
+        "${ filteredList.length } kommandoer funder."
+      ],
       "Selected color:": [
         "Valgte farve:"
       ]
@@ -5449,6 +5467,16 @@
       ],
       "Trusted": [
         "Betroet"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Åbn dette hjælpevindue"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Grundlæggende handlinger"
       ]
     },
     "Knowledge base link label": {
@@ -5685,6 +5713,12 @@
       ],
       "Import to:": [
         "Importer til:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastaturgenvej: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturgenveje"
       ],
       "Label messages as": [
         "Giv beskeder etiketten"
@@ -9132,6 +9166,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Invitation sendt og deltagere tilføjet til alle begivenheder"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Indstillinger for tastaturgenveje opdateret"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Sidst ændrede aliasser gemt i din ældste boks"

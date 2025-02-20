@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "Laden${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
+      ],
       "Make it friendly": [
         "Hou het vriendelijk"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "Als standaard instellen"
-      ],
-      "Set as default mail application": [
-        "Stel in als standaard e-mail applicatie"
       ],
       "Set encryption": [
         "Versleuteling instellen"
@@ -5892,9 +5892,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan uw bedrijf ook beschermen."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } is niet uw standaard e-mail applicatie."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
         "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
@@ -6333,9 +6330,6 @@
       "Default email application": [
         "Standaard e-mailapplicatie"
       ],
-      "Default mail application": [
-        "Standaard e-mailapplicatie"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Wist u dat versleutelde cloudopslag is inbegrepen bij uw ${ BRAND_NAME } account? Ga naar ${ DRIVE_APP_NAME } en haal het meeste uit uw ruimte. Het is gratis."
       ],
@@ -6737,6 +6731,9 @@
       ],
       "Low Priority": [
         "Lage Prioriteit"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -7140,8 +7137,8 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie voor deze browser. ${ MAIL_APP_NAME } wordt automatisch geopend wanneer u op een e-mailkoppeling klikt."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Stel ${ MAIL_APP_NAME } in als uw standaard e-mail applicatie. ${ MAIL_APP_NAME } wordt automatisch geopend wanneer u op een e-mailkoppeling klikt."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie. ${ MAIL_APP_NAME } opent automatisch wanneer u op een e-maillink klikt."
       ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
@@ -8685,9 +8682,6 @@
       ],
       "Toolbar": [
         "Werkbalk"
-      ],
-      "Type a command...": [
-        "Typ een opdracht..."
       ],
       "Undisclosed Recipients": [
         "Niet-openbaar gemaakte ontvangers"
@@ -10881,6 +10875,9 @@
       "Filter labels": [
         "Filter op labels"
       ],
+      "Filter quick actions": [
+        "Snelle acties filteren"
+      ],
       "First name": [
         "Voornaam"
       ],
@@ -10988,9 +10985,6 @@
       ],
       "To": [
         "Naar"
-      ],
-      "Type a command…": [
-        "Typ een opdracht..."
       ],
       "Type text or keyword": [
         "Voer tekst of trefwoord in"
@@ -12859,15 +12853,15 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } sneltoetsen"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
       ],
       "${ feature } is now active": [
         "${ feature } is nu actief"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } Sneltoetsen"
       ],
       "${ unreads } unread message": [
         "${ unreads } ongelezen bericht",

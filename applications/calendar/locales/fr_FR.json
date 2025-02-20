@@ -811,6 +811,11 @@
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Rechercher des messages"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Toute personne ayant le lien peut voir votre calendrier."
@@ -1579,6 +1584,32 @@
       ],
       "strawberry": [
         "fraise"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Vue de la journée"
+      ],
+      "Month view": [
+        "Vue mensuelle"
+      ],
+      "New event": [
+        "Nouvel événement"
+      ],
+      "Next period": [
+        "Période suivante"
+      ],
+      "Previous period": [
+        "Période précédente"
+      ],
+      "Search events": [
+        "Recherche d'événements"
+      ],
+      "Today": [
+        "Aujourd'hui"
+      ],
+      "Week view": [
+        "Vue de la semaine"
       ]
     },
     "Confirm modal title": {
@@ -2934,6 +2965,9 @@
       "${ list } has no contacts": [
         "${ list } n'a aucun contact",
         "Certains groupes n'ont aucun contact : ${ list }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, dirigez-vous vers Paramètres > Identités et adresses > Domaine court (pm.me)."
       ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -4739,6 +4773,9 @@
       "High Priority": [
         "Priorité élevée"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Si les raccourcis clavier sont activés, vous pouvez utiliser les touches suivantes pour des actions rapides ou pour accéder à différentes vues. Le raccourci ${ metaKey } + K est toujours activé."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
@@ -4919,6 +4956,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
+      ],
+      "Open shortcut cheat sheet": [
+        "Ouvrir l'aide-mémoire des raccourcis"
       ],
       "or discover other features:": [
         "ou découvrez de nouvelles fonctionnalités :"
@@ -5449,6 +5489,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } commande trouvée.",
+        "${ filteredList.length } commandes trouvées."
+      ],
       "Selected color:": [
         "Couleur sélectionnée :"
       ]
@@ -5559,6 +5603,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Créer un nouvel événement"
+      ],
+      "Day view": [
+        "Vue de la journée"
+      ],
+      "Month view": [
+        "Vue mensuelle"
+      ],
+      "Next period": [
+        "Période suivante"
+      ],
+      "Open quick actions menu": [
+        "Ouvrir le menu des actions rapides"
+      ],
+      "Open this modal": [
+        "Ouvrir cette fenêtre"
+      ],
+      "Previous period": [
+        "Période précédente"
+      ],
+      "Search events": [
+        "Recherche d'événements"
+      ],
+      "Today": [
+        "Aujourd’hui"
+      ],
+      "Week view": [
+        "Vue de la semaine"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Actions basiques"
+      ],
+      "View options": [
+        "Afficher les options"
       ]
     },
     "Knowledge base link label": {
@@ -5795,6 +5879,12 @@
       ],
       "Import to:": [
         "Importer dans :"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Raccourci clavier : ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Raccourcis clavier"
       ],
       "Label messages as": [
         "Labelliser les messages"
@@ -8044,6 +8134,9 @@
       "Filter groups": [
         "Filtrez les groupes."
       ],
+      "Filter quick actions": [
+        "Filtrer les actions rapides"
+      ],
       "First name": [
         "Prénom"
       ],
@@ -9416,6 +9509,9 @@
       "Invitation sent and participants added to all events": [
         "L'invitation a été envoyée et les participants ont été ajoutés à tous les événements."
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Les préférences des raccourcis clavier ont été mises à jour."
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Derniers alias modifiés stockés dans votre coffre-fort le plus ancien"
       ],
@@ -9598,6 +9694,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Raccourcis clavier ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adresse e-mail",
         "${ emailsCount } adresses e-mail"
@@ -10483,10 +10582,10 @@
         "Voulez-vous vraiment supprimer définitivement ce contact ?"
       ],
       "Cannot contain a dot at the beginning": [
-        "Cette entrée ne peut pas commencer par un point."
+        "L'entrée ne peut pas commencer par un point."
       ],
       "Cannot contain a dot at the end": [
-        "L'entrée ne peut se terminer par un point."
+        "L'entrée ne peut pas terminer par un point."
       ],
       "Contacts could not be merged": [
         "Les contacts n'ont pas pu être fusionnés."

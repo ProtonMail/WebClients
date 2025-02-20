@@ -3773,7 +3773,7 @@
         "актыўна"
       ],
       "add a recovery method": [
-        "дадайце спосаб аднаўлення"
+        "дададзены спосаб аднаўлення"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Дадайце яшчэ адзін слой абароны ў ваш уліковы запіс. Вам неабходна будзе пацвярджаць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
@@ -3837,6 +3837,9 @@
       ],
       "Allocated": [
         "Вылучана"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Ужо вылучана"
@@ -4562,7 +4565,7 @@
         "з"
       ],
       "Off": [
-        "Выкл"
+        "Выключана"
       ],
       "On": [
         "Уключана"
@@ -4837,6 +4840,12 @@
       "Shared ${ vaultLink } updated": [
         "Абагульванне ${ vaultLink } абноўлена"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Абагуленых сервераў краін: ${ countriesCount }",
+        "Абагуленых сервераў краін: ${ countriesCount }",
+        "Абагуленых сервераў краін: ${ countriesCount }",
+        "Абагуленых сервераў краін: ${ countriesCount }"
+      ],
       "Shared vault deleted": [
         "Абагуленае сховішча выдалена"
       ],
@@ -4903,7 +4912,7 @@
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Рэкамендацыя TechRadar Pro з рэйтынгам 4,2 з 5 зорак"
       ],
       "Thank you": [
@@ -7765,6 +7774,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Адключэнне гэтага параметра правядзе да выдалення магчымасці атрымліваць апавяшчэнні ў праграмах ${ BRAND_NAME }"
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "На працягу першага месяца выкарыстання прадукту ${ BRAND_NAME }"
+      ],
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
       ],
@@ -8053,6 +8065,9 @@
       ],
       "Organization identity updated": [
         "Ідэнтычнасць арганізацыі абноўлена"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Праверце свой адрас электроннай пошты ${ email }, каб задаць ідэнтычнасць арганізацыі."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9863,47 +9878,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -10204,6 +10178,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -11596,6 +11611,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Гэта дзеянне адклікае правы адміністратара для кіравання гэтым уліковым запісам карыстальніка."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Ім трэба будзе задаць рэзервовы пароль пры наступным уваходзе ў ${ BRAND_NAME }, каб атрымаць правы адміністратара."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Для працягу, вам неабходна запытаць правы ў карыстальніка на доступ да яго даных або скінуць яго пароль."

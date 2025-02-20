@@ -103,8 +103,14 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel email change": [
+        "Avbryt ändring av e-post"
+      ],
       "Change": [
         "Ändra"
+      ],
+      "Change email": [
+        "Ändra e-post"
       ],
       "Check DNS": [
         "Kontrollera DNS"
@@ -926,6 +932,12 @@
       "Failed to block the contact": [
         "Misslyckades att blockera kontakten"
       ],
+      "Failed to cancel mailbox change": [
+        "Misslyckades att avbryta ändring av brevlåda"
+      ],
+      "Failed to change mailbox": [
+        "Misslyckades att ändra brevlåda"
+      ],
       "Failed to create domain": [
         "Misslyckades att skapa domän"
       ],
@@ -1402,9 +1414,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Funktioner för hantering av alias från SimpleLogin kommer snart!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias ​​inaktiverat. Du kommer inte längre att få e-post skickat till ${ item.aliasEmail }"
       ],
@@ -1608,9 +1617,6 @@
       ],
       "Emptying trash...": [
         "Tömmer papperskorg..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Aktivera ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Aktivera automatisk låsning för att säkra din data"
@@ -2197,6 +2203,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Detta objekt delas för närvarande inte med någon. Bjud in människor att dela det med andra."
       ],
+      "This mailbox will use your previous email.": [
+        "Denna brevlåda kommer använda din tidigare e-post."
+      ],
       "This operation is irreversible.": [
         "Åtgärden går ej att ångra."
       ],
@@ -2232,9 +2241,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "För att granska dina importerade data, klicka på ${ PASS_APP_NAME }-ikonen i din webbläsares verktygsfält."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
@@ -2533,9 +2539,6 @@
       "Alias address (disabled)": [
         "Alias-adress (inaktiverad)"
       ],
-      "Alias management": [
-        "Aliashantering"
-      ],
       "Aliases": [
         "Alias"
       ],
@@ -2562,9 +2565,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Förutom att lagra dina inloggningar skyddar ${ PASS_APP_NAME } din identitet med en integrerad funktion för e-postalias. När du registrerar dig för ett nytt konto online kan ${ PASS_APP_NAME } automatiskt skapa ett alias för att hålla din faktiska e-postadress skyddad. "
-      ],
-      "Beta Access": [
-        "Betaåtkomst"
       ],
       "Biometrics": [
         "Biometri"
@@ -2955,6 +2955,9 @@
       ],
       "New": [
         "Nytt"
+      ],
+      "New email": [
+        "Ny e-post"
       ],
       "New vault": [
         "Nytt valv"
@@ -3701,6 +3704,12 @@
       ],
       "Breaches detected for": [
         "Intrång upptäckta för"
+      ],
+      "Cancel changing your email?": [
+        "Avbryt ändring av din e-post?"
+      ],
+      "Change mailbox email": [
+        "Ändra e-post för brevlåda"
       ],
       "Change your lock method": [
         "Byt din låsmetod"

@@ -2509,6 +2509,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "All lagringsplass er tildelt. Reduser lagringsplass tildelt andre brukere."
       ],
@@ -3757,6 +3760,9 @@
       "Allocated": [
         "Tildelt"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
+      ],
       "Already allocated": [
         "Allerede allokert"
       ],
@@ -4741,6 +4747,10 @@
       "Shared ${ vaultLink } updated": [
         "Delt ${ vaultLink } oppdatert"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Land for delt tjener (${ countriesCount })",
+        "Land for delte tjenere (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Delt hvelv slettet"
       ],
@@ -4805,7 +4815,7 @@
       "Symbols (#$&)": [
         "Symboler (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Anbefales av TechRadar Pro med en vurdering på 4.2 av 5 stjerner"
       ],
       "Thank you": [
@@ -7589,6 +7599,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Deaktivering av dette vil fjerne muligheten til å motta varsler i ${ BRAND_NAME }-applikasjoner"
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "I løpet av den første måneden du bruker et ${ BRAND_NAME }-produkt"
+      ],
       "Email subscriptions": [
         "E-post-abonnementer"
       ],
@@ -7892,6 +7905,9 @@
       ],
       "Organization identity updated": [
         "Organisasjonsidentitet oppdatert"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Bekreft e-postadressen din, ${ email }, for å angi organisasjonsidentitet."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9610,47 +9626,6 @@
         "For ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -9939,6 +9914,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -11316,6 +11332,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Dette vil tilbakekalle administratortillatelsen til å administrere denne brukerens konto."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "For å få administratorrettigheter må de angi et reservepassord neste gang de logger på ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "For å fortsette må du be om brukerens tillatelse til å få tilgang til dataene deres eller tilbakestille passordet."

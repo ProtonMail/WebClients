@@ -106,6 +106,9 @@
       "Change": [
         "Ubah"
       ],
+      "Change email": [
+        "Ubah email"
+      ],
       "Check DNS": [
         "Periksa DNS"
       ],
@@ -828,6 +831,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentikasi gagal. Konfirmasi kata sandi ${ BRAND_NAME } Anda untuk melanjutkan ekspor"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Autentikasi gagal. Konfirmasi kata sandi cadangan Anda untuk melanjutkan ekspor"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Autentikasi gagal. Konfirmasi kata sandi tambahan Anda untuk melanjutkan ekspor"
+      ],
       "Biometric authentication failed": [
         "Autentikasi biometrik gagal"
       ],
@@ -1376,9 +1385,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Fitur pengelolaan alias dari SimpleLogin akan segera hadir!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias berhasil dinonaktifkan. Anda tidak akan lagi menerima email yang dikirim ke ${ item.aliasEmail }."
       ],
@@ -1582,9 +1588,6 @@
       ],
       "Emptying trash...": [
         "Mengosongkan sampah..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Aktifkan ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Aktifkan pengucian otomatis untuk mengamankan data Anda"
@@ -2162,6 +2165,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Item ini tidak sedang dibagikan dengan siapa pun. Undang pengguna lain ke item ini untuk saling berbagi item bersama."
       ],
+      "This mailbox will use your previous email.": [
+        "Kotak surat ini akan menggunakan alamat email sebelumnya."
+      ],
       "This operation is irreversible.": [
         "Tindakan ini tidak dapat diurungkan."
       ],
@@ -2197,9 +2203,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Untuk meninjau data Anda yang telah diimpor, klik ikon ${ PASS_APP_NAME } pada bilah toolbar browser Anda."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
@@ -2482,9 +2485,6 @@
       "Alias address (disabled)": [
         "Alamat alias (dinonaktifkan)"
       ],
-      "Alias management": [
-        "Pengelolaan alias"
-      ],
       "Aliases": [
         "Alias"
       ],
@@ -2511,9 +2511,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Di samping menyimpan entri masuk Anda, ${ PASS_APP_NAME } juga melindungi identitas Anda dengan fitur alias email yang terintegrasi. Pada saat Anda mendaftar akun online baru, ${ PASS_APP_NAME } dapat menghasilkan alias secara otomatis untuk melindungi alamat email asli Anda. "
-      ],
-      "Beta Access": [
-        "Akses Beta"
       ],
       "Biometrics": [
         "Biometrik"
@@ -2901,6 +2898,9 @@
       ],
       "New": [
         "Baru"
+      ],
+      "New email": [
+        "Email baru"
       ],
       "New vault": [
         "Brankas baru"
@@ -4059,6 +4059,9 @@
       "${ BRAND_NAME } password is required": [
         "Kata sandi ${ BRAND_NAME } diperlukan"
       ],
+      "2 consecutive dots are not allowed": [
+        "Alias tidak dapat mengandung 2 titik secara berurutan"
+      ],
       "A description of the problem is required": [
         "Penjelasan masalah diperlukan"
       ],
@@ -4085,6 +4088,12 @@
       ],
       "At least one email address is required": [
         "Setidaknya satu alamat surel dibutuhkan"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Alias tidak dapat dimulai dengan titik"
+      ],
+      "Cannot contain a dot at the end": [
+        "Alias tidak dapat diakhiri dengan titik"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
@@ -4200,6 +4209,9 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Setelah data tersinkron, menghapus alias di ${ PASS_SHORT_APP_NAME } akan turut menghapus alias yang sama pada SimpleLogin."
       ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
+      ],
       "Passphrase is required": [
         "Frasa sandi dibutuhkan"
       ],
@@ -4301,6 +4313,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Anda tidak akan lagi memiliki akses ke brankas ini. Untuk dapat kembali bergabung dengan brankas ini, Anda akan memerlukan undangan baru."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Organisasi Anda tidak mengizinkan pembagian item secara satu per satu"
       ],
       "Your session could not be authorized.": [
         "Sesi Anda tidak dapat diautorisasi."

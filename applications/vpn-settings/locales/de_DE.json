@@ -2509,6 +2509,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduziere den anderen Benutzern zugewiesenen Speicherplatz."
       ],
@@ -3757,6 +3760,9 @@
       "Allocated": [
         "Zugewiesen"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Erlaube Benutzern, sich mit sicheren gemeinsamen Servern aus dem Abschnitt **Länder** der ${ VPN_APP_NAME }-App zu verbinden."
+      ],
       "Already allocated": [
         "Bereits zugewiesen"
       ],
@@ -4738,6 +4744,10 @@
       "Shared ${ vaultLink } updated": [
         "Geteilten ${ vaultLink } aktualisiert."
       ],
+      "Shared server country (${ countriesCount })": [
+        "Geteilter Serverstandort (${ countriesCount })",
+        "Geteilte Serverstandorte (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Geteilter Tresor gelöscht"
       ],
@@ -4802,8 +4812,8 @@
       "Symbols (#$&)": [
         "Symbole (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Tech Radar Pro empfohlen mit einer Bewertung von 4,2 von 5 Sternen"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "Empfohlen von TechRadar Pro mit einer Bewertung von 4,2 von 5 Sternen"
       ],
       "Thank you": [
         "Vielen Dank"
@@ -5145,7 +5155,7 @@
         "Willkommen"
       ],
       "We’ll send a reset code to ${ boldValue }.": [
-        "Wir werden einen Rücksetzcode an ${ boldValue } senden."
+        "Wir senden einen Reset-Code an ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Du erhältst dann einen Rücksetzungscode an die E-Mail-Adresse, die du für die Wiederherstellung deines Kontos angegeben hast."
@@ -7584,7 +7594,7 @@
         "Wenn du diese Option deaktivierst, kannst du keine Benachrichtigungen mehr in ${ BRAND_NAME }-Anwendungen empfangen"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
-        "Während des ersten Monats der Nutzung eines ${ BRAND_NAME } Produkts"
+        "Während des ersten Monats, in dem das Produkt ${ BRAND_NAME } verwendet wird"
       ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
@@ -9589,47 +9599,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -9918,6 +9887,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {

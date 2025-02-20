@@ -811,6 +811,11 @@
         "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Pesquisar mensagens"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Qualquer pessoa com acesso à ligação pode ver o seu calendário."
@@ -2935,6 +2940,9 @@
         "${ list } não tem contactos",
         "Alguns grupos não têm contactos: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Identidade e endereços > Domínio curto (pm.me)."
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
@@ -4920,6 +4928,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que \"desconfie\" dessas chaves."
       ],
+      "Open shortcut cheat sheet": [
+        "Abrir a folha de atalhos"
+      ],
       "or discover other features:": [
         "ou descubra outras funcionalidades:"
       ],
@@ -5449,6 +5460,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } comando encontrado.",
+        "${ filteredList.length } comandos encontrados."
+      ],
       "Selected color:": [
         "Cor selecionada:"
       ]
@@ -5556,6 +5571,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Abrir esta janela"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Acções básicas"
       ]
     },
     "Knowledge base link label": {
@@ -5792,6 +5817,12 @@
       ],
       "Import to:": [
         "Importar para:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atalhos de teclado: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Atalhos de teclado"
       ],
       "Label messages as": [
         "Etiquetar mensagens como"
@@ -9412,6 +9443,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Convite enviado e participantes adicionados a todos os eventos"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferências de atalhos de teclado actualizadas"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Os últimos aliases modificados armazenados no seu cofre mais antigo"

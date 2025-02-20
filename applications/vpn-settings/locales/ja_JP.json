@@ -3721,6 +3721,9 @@
       "Allocated": [
         "割り当て"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "ユーザーが${ VPN_APP_NAME }アプリの**国**セクションから安全な共有サーバーに接続することを許可します。"
+      ],
       "Already allocated": [
         "割り当て済み"
       ],
@@ -4693,6 +4696,9 @@
       "Shared ${ vaultLink } updated": [
         "共有 ${ vaultLink } が更新されました"
       ],
+      "Shared server country (${ countriesCount })": [
+        "共有サーバーの国 (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "共有保管庫が削除されました"
       ],
@@ -4756,8 +4762,8 @@
       "Symbols (#$&)": [
         "記号 (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Tech radar proのおすすめ 星 5 つ中の星 4.2"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "TechRadar Pro は星 5 つのうち 4.2 点もらっています"
       ],
       "Thank you": [
         "ありがとうございます"
@@ -7494,6 +7500,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "これを無効化すると${ BRAND_NAME }アプリケーションで通知を受け取る機能が削除されます"
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "${ BRAND_NAME } 製品を使用している最初の1ヶ月間に"
+      ],
       "Email subscriptions": [
         "メール購読"
       ],
@@ -9448,47 +9457,6 @@
         "${ totalPrice } の場合"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -9771,6 +9739,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {

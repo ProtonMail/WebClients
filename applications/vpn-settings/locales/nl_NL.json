@@ -3760,6 +3760,9 @@
       "Allocated": [
         "Toegewezen"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Sta gebruikers toe om verbinding te maken met beveiligde gedeelde servers van de **Landen** sectie van de ${ VPN_APP_NAME }-app."
+      ],
       "Already allocated": [
         "Reeds toegewezen"
       ],
@@ -4741,6 +4744,10 @@
       "Shared ${ vaultLink } updated": [
         "Gedeelde ${ vaultLink } bijgewerkt"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Land met gedeelde server (${ countriesCount })",
+        "Landen met gedeelde server (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Gedeelde kluis verwijderd"
       ],
@@ -4805,8 +4812,8 @@
       "Symbols (#$&)": [
         "Symbolen (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Aanbevolen door Tech radar pro met een beoordeling van 4,2 op 5 sterren"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "Aanbevolen door TechRadar Pro met een beoordeling van 4,2 van de 5 sterren."
       ],
       "Thank you": [
         "Bedankt"
@@ -7871,6 +7878,9 @@
       ],
       "Organization identity updated": [
         "Identiteit van organisatie bijgewerkt"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Verifieer uw e-mailadres ${ email } om de identiteit van uw organisatie in te stellen."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9589,47 +9599,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -9918,6 +9887,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -11298,6 +11308,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Hierdoor wordt de beheerder de toestemming ontnomen om de account van deze gebruiker te beheren."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Om beheerdersrechten te verkrijgen, moeten ze de volgende keer dat ze zich aanmelden bij ${ BRAND_NAME } een back-up wachtwoord instellen."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Om verder te gaan, moet u toestemming vragen aan de gebruiker om toegang te krijgen tot hun gegevens of hun wachtwoord te resetten."

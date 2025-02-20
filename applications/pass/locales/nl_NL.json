@@ -103,8 +103,14 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Cancel email change": [
+        "Annuleer e-mail wijziging"
+      ],
       "Change": [
         "Wijzigen"
+      ],
+      "Change email": [
+        "E-mailadres wijzigen"
       ],
       "Check DNS": [
         "Controleer DNS"
@@ -894,6 +900,12 @@
       "Failed to block the contact": [
         "Contact blokkeren mislukt"
       ],
+      "Failed to cancel mailbox change": [
+        "Annuleren van wijziging mailbox mislukt"
+      ],
+      "Failed to change mailbox": [
+        "Wijzigen mailbox mislukt"
+      ],
       "Failed to create domain": [
         "Maken van domein is mislukt"
       ],
@@ -1369,9 +1381,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Na het importeren van uw gegevens kunt u het CSV-bestand verwijderen dat uw wachtwoorden voor beveiliging bevat."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Alias beheer functies van SimpleLogin komen binnenkort!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias met succes uitgeschakeld. U ontvangt niet langer e-mails verzonden naar ${ item.aliasEmail }"
@@ -2162,6 +2171,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dit item wordt momenteel niet met iemand gedeeld. Nodig mensen uit om het met anderen te delen."
       ],
+      "This mailbox will use your previous email.": [
+        "Deze mailbox zal uw vorige e-mail gebruiken."
+      ],
       "This operation is irreversible.": [
         "Deze actie is onomkeerbaar."
       ],
@@ -2491,9 +2503,6 @@
       ],
       "Alias address (disabled)": [
         "Aliasadres (uitgeschakeld)"
-      ],
-      "Alias management": [
-        "Aliasbeheer"
       ],
       "Aliases": [
         "Aliassen"
@@ -2863,6 +2872,9 @@
       ],
       "New": [
         "Nieuw"
+      ],
+      "New email": [
+        "Nieuwe e-mail"
       ],
       "New vault": [
         "Nieuwe kluis"
@@ -3480,6 +3492,9 @@
         "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruiker bevatten.",
         "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruikers bevatten."
       ],
+      "Mailbox change successfully cancelled": [
+        "Mailbox wijziging succesvol geannuleerd"
+      ],
       "Mailbox successfully deleted": [
         "Mailbox verwijderd"
       ],
@@ -3559,6 +3574,12 @@
       ],
       "Breaches detected for": [
         "Inbreuken gedetecteerd voor"
+      ],
+      "Cancel changing your email?": [
+        "Wijzigen e-mail annuleren?"
+      ],
+      "Change mailbox email": [
+        "Wijzig mailbox e-mail"
       ],
       "Change your lock method": [
         "Wijzig uw vergrendelingsmethode"

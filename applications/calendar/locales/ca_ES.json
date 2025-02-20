@@ -811,6 +811,11 @@
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Cerqueu missatges"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Qualsevol que tingui l'enllaç pot veure el vostre calendari."
@@ -1579,6 +1584,32 @@
       ],
       "strawberry": [
         "maduixa"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Vista diària"
+      ],
+      "Month view": [
+        "Vista mensual"
+      ],
+      "New event": [
+        "Nou esdeveniment"
+      ],
+      "Next period": [
+        "Següent periode"
+      ],
+      "Previous period": [
+        "Periode anterior"
+      ],
+      "Search events": [
+        "Cerca esdeveniments"
+      ],
+      "Today": [
+        "Avui"
+      ],
+      "Week view": [
+        "Vista setmanal"
       ]
     },
     "Confirm modal title": {
@@ -2936,7 +2967,7 @@
         "Alguns grups no tenen contactes: ${ list }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "El vostre nom d'usuari és ${ user.Name }. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
@@ -4923,6 +4954,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
+      "Open shortcut cheat sheet": [
+        "Obre el resum de dreceres"
+      ],
       "or discover other features:": [
         "o descobriu altres característiques:"
       ],
@@ -5452,6 +5486,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "S'ha trobat ${ filteredList.length } comanda.",
+        "S'han trobat ${ filteredList.length } comandes."
+      ],
       "Selected color:": [
         "Color seleccionat:"
       ]
@@ -5562,6 +5600,40 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Crea un nou esdeveniment"
+      ],
+      "Day view": [
+        "Vista diària"
+      ],
+      "Month view": [
+        "Vista mensual"
+      ],
+      "Next period": [
+        "Següent periode"
+      ],
+      "Open this modal": [
+        "Obre aquesta finestra"
+      ],
+      "Previous period": [
+        "Periode anterior"
+      ],
+      "Search events": [
+        "Cerca esdeveniments"
+      ],
+      "Today": [
+        "Avui"
+      ],
+      "Week view": [
+        "Vista setmanal"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Accions bàsiques"
       ]
     },
     "Knowledge base link label": {
@@ -5798,6 +5870,12 @@
       ],
       "Import to:": [
         "Importar a:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Drecera de teclat: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Dreceres de teclat"
       ],
       "Label messages as": [
         "Etiquetar els missatges com"
@@ -9418,6 +9496,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Invitació enviada i participants afegits a tots els esdeveniments"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferències de les dreceres de teclat actualitzades"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Últims àlies modificats emmagatzemats a la vostra caixa forta més antiga"

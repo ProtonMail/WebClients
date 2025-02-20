@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -7038,11 +7038,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activați cel puțin o metodă de recuperare a datelor pentru a vă asigura că puteți accesa conținutul din contul ${ BRAND_NAME } dacă vă pierdeți parola."
       ],
-      "active": [
-        "activă"
-      ],
       "Active": [
         "Activ"
+      ],
+      "active": [
+        "activă"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
@@ -7505,8 +7505,8 @@
       "default email address": [
         "adresa de e-mail implicită"
       ],
-      "Default mail application": [
-        "Aplicația de e-mail implicită"
+      "Default email application": [
+        "Aplicaţia de e-mail implicită"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ștergeți orice alte înregistrări MX sau asigurați-vă că prioritatea pentru ${ MAIL_APP_NAME } are cel mai mic număr."
@@ -7856,6 +7856,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Dacă nu vi se potrivește, vă vom rambursa."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Dacă sunt activate combinațiile de taste, puteți utiliza următoarele taste pentru acțiuni rapide sau pentru a trece la diferite vizualizări. ${ metaKey } + K este întotdeauna activată."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Dacă fusul orar al sistemului nu se potrivește cu cel din preferințe, vi se va solicita să-l actualizați (maxim o dată pe zi)."
@@ -8728,8 +8731,8 @@
       "Session timed out": [
         "Sesiunea a expirat"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigator. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
@@ -8873,8 +8876,8 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronizați și gestionați mesajele cu aplicația ${ DRIVE_APP_NAME }. Creați și partajați documente în ${ DOCS_APP_NAME } și stocați-le în siguranță. Disponibile pe ${ ios }, ${ android } și ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Tech radar pro l-a recomandat cu o evaluare de 4,2 din 5 stele"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "TechRadar Pro l-a recomandat cu o evaluare de 4,2 din 5 stele"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
@@ -10053,6 +10056,12 @@
       "Close draft": [
         "Închidere ciornă"
       ],
+      "Create new event": [
+        "Creare eveniment"
+      ],
+      "Day view": [
+        "Afișare zi"
+      ],
       "Delete permanently": [
         "Ștergere permanentă"
       ],
@@ -10119,6 +10128,9 @@
       "Minimize / maximize composer": [
         "Micșorare/mărire panou editare"
       ],
+      "Month view": [
+        "Afișare lună"
+      ],
       "Move down": [
         "Mutare în jos"
       ],
@@ -10149,6 +10161,9 @@
       "New message": [
         "Mesaj nou"
       ],
+      "Next period": [
+        "Perioada următoare"
+      ],
       "Open command panel": [
         "Deschidere panou de comandă"
       ],
@@ -10158,8 +10173,14 @@
       "Open previous message": [
         "Deschidere mesaj anterior"
       ],
+      "Open quick actions menu": [
+        "Deschidere meniu acțiuni rapide"
+      ],
       "Open this modal": [
         "Deschidere ca fereastră"
+      ],
+      "Previous period": [
+        "Perioada anterioară"
       ],
       "Reply": [
         "Răspuns"
@@ -10172,6 +10193,9 @@
       ],
       "Search": [
         "Căutare"
+      ],
+      "Search events": [
+        "Căutare evenimente"
       ],
       "Select / unselect": [
         "Selectare/deselectare"
@@ -10193,6 +10217,12 @@
       ],
       "Star": [
         "Marcare cu stea"
+      ],
+      "Today": [
+        "Astăzi"
+      ],
+      "Week view": [
+        "Afișare săptămână"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10216,6 +10246,9 @@
       ],
       "Message shortcuts": [
         "Combinații de taste mesaje"
+      ],
+      "View options": [
+        "Opțiuni de afișare"
       ]
     },
     "Keys actions": {
@@ -12920,6 +12953,17 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -13028,17 +13072,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -16963,6 +16996,47 @@
         "Pentru ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -17257,47 +17331,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -17802,6 +17835,9 @@
       "${ appName } Free": [
         "${ appName } gratuit"
       ],
+      "${ appName } keyboard shortcuts": [
+        "Combinații de taste ${ appName }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17813,9 +17849,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Instrumentul de exportare ${ MAIL_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Combinații de taste ${ MAIL_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Raport monitorizare ${ PASS_SHORT_APP_NAME }"

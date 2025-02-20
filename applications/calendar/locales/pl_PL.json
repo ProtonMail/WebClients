@@ -819,6 +819,11 @@
         "Darmowa wersja próbna aplikacji desktopowej zakończy się ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Szukaj wiadomości"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Każdy, kto ma link, może zobaczyć kalendarz"
@@ -1603,6 +1608,32 @@
       ],
       "strawberry": [
         "truskawkowy"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Widok dnia"
+      ],
+      "Month view": [
+        "Widok miesiąca"
+      ],
+      "New event": [
+        "Nowe wydarzenie"
+      ],
+      "Next period": [
+        "Następny okres"
+      ],
+      "Previous period": [
+        "Poprzedni okres"
+      ],
+      "Search events": [
+        "Szukaj wydarzeń"
+      ],
+      "Today": [
+        "Dzisiaj"
+      ],
+      "Week view": [
+        "Widok tygodnia"
       ]
     },
     "Confirm modal title": {
@@ -5062,6 +5093,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
       ],
+      "Open shortcut cheat sheet": [
+        "Otwórz listę skrótów"
+      ],
       "or discover other features:": [
         "lub poznaj inne funkcje:"
       ],
@@ -5601,6 +5635,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "Znaleziono ${ filteredList.length } polecenie.",
+        "Znaleziono ${ filteredList.length } polecenia.",
+        "Znaleziono ${ filteredList.length } poleceń.",
+        "Znaleziono ${ filteredList.length } poleceń."
+      ],
       "Selected color:": [
         "Wybrany kolor:"
       ]
@@ -5714,6 +5754,43 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Utwórz nowe wydarzenie"
+      ],
+      "Day view": [
+        "Widok dnia"
+      ],
+      "Month view": [
+        "Widok miesiąca"
+      ],
+      "Next period": [
+        "Następny okres"
+      ],
+      "Open quick actions menu": [
+        "Otwórz szybkie akcje"
+      ],
+      "Open this modal": [
+        "Otwórz okno"
+      ],
+      "Previous period": [
+        "Poprzedni okres"
+      ],
+      "Search events": [
+        "Szukaj wydarzeń"
+      ],
+      "Today": [
+        "Dzisiaj"
+      ],
+      "Week view": [
+        "Widok tygodnia"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Podstawowe akcje"
       ]
     },
     "Knowledge base link label": {
@@ -5952,6 +6029,12 @@
       ],
       "Import to:": [
         "Importuj do:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Skrót klawiszowy: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Skróty klawiszowe"
       ],
       "Label messages as": [
         "Oznacz wiadomości etykietą"
@@ -7140,7 +7223,7 @@
         "Split Tunneling (Android i Windows)"
       ],
       "SSO integration": [
-        "Integracja z SSO"
+        "Logowanie SSO"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
@@ -9744,6 +9827,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Zaproszenie zostało wysłane. Uczestnicy zostali dodani do wszystkich wydarzeń"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Ustawienia skrótów klawiszowych zostały zaktualizowane"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Ostatnio zmodyfikowane aliasy są przechowywane w najstarszym sejfie"

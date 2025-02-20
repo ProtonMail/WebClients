@@ -103,8 +103,14 @@
       "Cancel": [
         "გაუქმება"
       ],
+      "Cancel email change": [
+        "ელფოსტის ცვლილების გაუქმება"
+      ],
       "Change": [
         "შეცვლა"
+      ],
+      "Change email": [
+        "ელფოსტის შეცვლა"
       ],
       "Check DNS": [
         "DNS-ის შემოწმება"
@@ -908,6 +914,12 @@
       "Failed to block the contact": [
         "კონტაქტის დაბლოკვა ჩავარდა"
       ],
+      "Failed to cancel mailbox change": [
+        "ელფოსტის ცვლილების გაუქმება ჩავარდა"
+      ],
+      "Failed to change mailbox": [
+        "საფოსტო ყუთიშ შეცვლა ჩავარდა"
+      ],
       "Failed to create domain": [
         "დომენის შექმნა ჩავარდა"
       ],
@@ -1384,9 +1396,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "ფსევდონიმების მართვის ფუნქციები SimpleLogin-სგან სულ მალე!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "ფსევდონიმი წარმატებით გაითიშა. ახლა ელფოსტებს, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან, ვეღარ მიიღებთ"
       ],
@@ -1587,9 +1596,6 @@
       ],
       "Emptying trash...": [
         "ნაგვის ყუთის დაცარიელება..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "${ PASS_SHORT_APP_NAME }-ის ბეტას ჩართვა"
       ],
       "Enable auto-locking to secure your data": [
         "ჩართეთ ავტოდაბლოკვა თქვენი მონაცემების დასაცავად"
@@ -2167,6 +2173,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "ეს ელემენტი, ამჟამად, გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
       ],
+      "This mailbox will use your previous email.": [
+        "ეს საფოსტო ყუთი თქვენს წინა ელფოსტას გამოიყენებს."
+      ],
       "This operation is irreversible.": [
         "ეს ოპერაცია შეუქცევადია."
       ],
@@ -2199,9 +2208,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ ${ PASS_APP_NAME }-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
@@ -2497,9 +2503,6 @@
       "Alias address (disabled)": [
         "ფსევდონიმის მისამართი (გათიშულია)"
       ],
-      "Alias management": [
-        "ფსევდონიმების მართვა"
-      ],
       "Aliases": [
         "ფსევდონიმები"
       ],
@@ -2523,9 +2526,6 @@
       ],
       "Backup password": [
         "მარქაფი პაროლი"
-      ],
-      "Beta Access": [
-        "წვდომა ბეტა ვერსიებზე"
       ],
       "Biometrics": [
         "ბიომეტრია"
@@ -2910,6 +2910,9 @@
       ],
       "New": [
         "ახალი"
+      ],
+      "New email": [
+        "ახალი ელფოსტა"
       ],
       "New vault": [
         "ახალი საცავი"
@@ -3568,6 +3571,9 @@
         "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
         "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
       ],
+      "Mailbox change successfully cancelled": [
+        "საფოსტო ყუთის წაშლა წარმატებით გაუქმდა"
+      ],
       "Mailbox successfully deleted": [
         "საფოსტო ყუთი წარმატებით წაიშალა"
       ],
@@ -3647,6 +3653,12 @@
       ],
       "Breaches detected for": [
         "აღმოჩენილია გაჟონვები ვისთვის"
+      ],
+      "Cancel changing your email?": [
+        "გავაუქმო თქვენი ელფოსტის ცვლილება?"
+      ],
+      "Change mailbox email": [
+        "საფოსტო ყუთის ელფოსტის შეცვლა"
       ],
       "Change your lock method": [
         "თქვენი დაბლოკვის მეთოდის შეცვლა"

@@ -86,6 +86,9 @@
       "Change": [
         "Zmeniť"
       ],
+      "Change email": [
+        "Zmeniť email"
+      ],
       "Check DNS": [
         "Skontrolovať DNS"
       ],
@@ -1397,9 +1400,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Funkcie správy aliasov od SimpleLogin prídu čoskoro!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias bol úspešne vypnutý. Už nebudete dostávať emaily odoslané na adresu ${ item.aliasEmail }"
       ],
@@ -2551,9 +2551,6 @@
       "Alias address (disabled)": [
         "Aliasová adresa (vypnutá)"
       ],
-      "Alias management": [
-        "Správa aliasov"
-      ],
       "Aliases": [
         "Aliasy"
       ],
@@ -2931,6 +2928,9 @@
       ],
       "New": [
         "Nová"
+      ],
+      "New email": [
+        "Nový email"
       ],
       "New vault": [
         "Nový trezor"

@@ -103,8 +103,14 @@
       "Cancel": [
         "Zrušit"
       ],
+      "Cancel email change": [
+        "Zrušit změnu e-mailu"
+      ],
       "Change": [
         "Změnit"
+      ],
+      "Change email": [
+        "Změnit e-mail"
       ],
       "Check DNS": [
         "Zkontrolovat DNS"
@@ -904,6 +910,12 @@
       "Failed to block the contact": [
         "Blokování kontaktu selhalo"
       ],
+      "Failed to cancel mailbox change": [
+        "Zrušení změny e-mailové schránky selhalo"
+      ],
+      "Failed to change mailbox": [
+        "Změna e-mailové schránky selhala"
+      ],
       "Failed to create domain": [
         "Vytvoření domény selhalo"
       ],
@@ -1409,9 +1421,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspěšném importu vašich dat můžete z bezpečnostních důvodů smazat CSV soubor obsahující vaše hesla."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Funkce správy aliasů od SimpleLogin budou brzy dostupné!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias byl úspěšně deaktivován. E-maily odeslané na adresu ${ item.aliasEmail } již nebudete dostávat."
@@ -2220,6 +2229,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Tato položka není v současné době s nikým sdílena. Pozvěte ostatní, se kterými ji chcete sdílet."
       ],
+      "This mailbox will use your previous email.": [
+        "Tato e-mailová schránka bude používat váš předchozí e-mail."
+      ],
       "This operation is irreversible.": [
         "Tato operace je nevratná."
       ],
@@ -2581,9 +2593,6 @@
       ],
       "Alias address (disabled)": [
         "Adresa aliasu (deaktivována)"
-      ],
-      "Alias management": [
-        "Správa aliasů"
       ],
       "Aliases": [
         "Aliasy"
@@ -2953,6 +2962,9 @@
       ],
       "New": [
         "Nové"
+      ],
+      "New email": [
+        "Nový e-mail"
       ],
       "New vault": [
         "Nový trezor"
@@ -3576,6 +3588,9 @@
         "Položky nemohou obsahovat více než ${ share.targetMaxMembers } uživatelů.",
         "Položky nemohou obsahovat více než ${ share.targetMaxMembers } uživatelů."
       ],
+      "Mailbox change successfully cancelled": [
+        "Změna e-mailové schránky úspěšně zrušena"
+      ],
       "Mailbox successfully deleted": [
         "E-mailová schránka úspěšně smazána"
       ],
@@ -3657,6 +3672,12 @@
       ],
       "Breaches detected for": [
         "Zjištěny úniky informací pro"
+      ],
+      "Cancel changing your email?": [
+        "Zrušit změnu vašeho e-mailu?"
+      ],
+      "Change mailbox email": [
+        "Změna e-mailu schránky"
       ],
       "Change your lock method": [
         "Změna způsobu zamykání"

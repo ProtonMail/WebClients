@@ -811,6 +811,11 @@
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Pesquisar mensagens"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Qualquer pessoa com este link pode visualizar sua pasta"
@@ -4923,6 +4928,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves de confiança foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
+      "Open shortcut cheat sheet": [
+        "Abrir o mapa de atalhos"
+      ],
       "or discover other features:": [
         "ou descubra outros recursos:"
       ],
@@ -5452,6 +5460,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } comando encontrado.",
+        "${ filteredList.length } comandos encontrados."
+      ],
       "Selected color:": [
         "Cor selecionada:"
       ]
@@ -5562,6 +5574,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Abrir esta janela"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Ações básicas"
       ]
     },
     "Knowledge base link label": {
@@ -5798,6 +5820,12 @@
       ],
       "Import to:": [
         "Importar para:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atalho de teclado: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Atalhos do teclado"
       ],
       "Label messages as": [
         "Marcar mensagens como"
@@ -9429,6 +9457,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Convite enviado e participantes adicionados a todos os eventos"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferências de atalhos de teclado atualizadas"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Últimos pseudônimos modificados armazenados em seu cofre mais antigo"

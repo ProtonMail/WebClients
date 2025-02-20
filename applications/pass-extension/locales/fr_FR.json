@@ -83,8 +83,14 @@
       "Cancel": [
         "Annuler"
       ],
+      "Cancel email change": [
+        "Annuler le changement d'e-mail"
+      ],
       "Change": [
         "Modifier"
+      ],
+      "Change email": [
+        "Modifier l'e-mail"
       ],
       "Check DNS": [
         "Vérifier le DNS"
@@ -859,6 +865,12 @@
       "Failed to block the contact": [
         "Le blocage du contact n'a pas abouti."
       ],
+      "Failed to cancel mailbox change": [
+        "L'annulation du changement de messagerie a échoué."
+      ],
+      "Failed to change mailbox": [
+        "Le changement de messagerie a échoué."
+      ],
       "Failed to create domain": [
         "La création du domaine n'a pas abouti."
       ],
@@ -1356,9 +1368,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Après avoir importé vos données, vous pouvez supprimer le fichier CSV contenant vos mots de passe pour des raisons de sécurité."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Les fonctions de gestion des alias de SimpleLogin arrivent bientôt !"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "L'alias a été désactivé. Vous ne recevrez plus les messages envoyés à ${ item.aliasEmail }"
@@ -2128,6 +2137,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Cet élément n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
       ],
+      "This mailbox will use your previous email.": [
+        "Cette messagerie utilisera votre adresse e-mail précédente."
+      ],
       "This operation is irreversible.": [
         "Cette opération est irréversible."
       ],
@@ -2462,9 +2474,6 @@
       ],
       "Alias address (disabled)": [
         "Adresse de l'alias (désactivée)"
-      ],
-      "Alias management": [
-        "Gestion des alias"
       ],
       "Aliases": [
         "Alias"
@@ -2843,6 +2852,9 @@
       ],
       "New": [
         "Nouveau"
+      ],
+      "New email": [
+        "Nouvelle adresse e-mail"
       ],
       "New vault": [
         "Nouveau coffre-fort"
@@ -3436,6 +3448,9 @@
         "Les éléments ne peuvent pas compter plus de ${ share.targetMaxMembers } utilisateur.",
         "Les éléments ne peuvent pas compter plus de ${ share.targetMaxMembers } utilisateurs."
       ],
+      "Mailbox change successfully cancelled": [
+        "Le changement de messagerie a été annulé avec succès."
+      ],
       "Mailbox successfully deleted": [
         "La messagerie a été supprimée."
       ],
@@ -3503,6 +3518,12 @@
       ],
       "Blocked addresses": [
         "Adresses bloquées"
+      ],
+      "Cancel changing your email?": [
+        "Annuler le changement d'e-mail en cours ?"
+      ],
+      "Change mailbox email": [
+        "Modifier l'e-mail de la messagerie"
       ],
       "Change your lock method": [
         "Modifier votre méthode de verrouillage"
@@ -3914,10 +3935,10 @@
         "Au moins une adresse e-mail est nécessaire."
       ],
       "Cannot contain a dot at the beginning": [
-        "Cette entrée ne peut pas commencer par un point."
+        "L'entrée ne peut pas commencer par un point."
       ],
       "Cannot contain a dot at the end": [
-        "L'entrée ne peut se terminer par un point."
+        "L'entrée ne peut pas terminer par un point."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Il n'est pas possible de récupérer les boites aux lettres de cet alias pour l'instant."
