@@ -1,20 +1,23 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { usePlans } from '@proton/account/plans/hooks';
-import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
+import Loader from '@proton/components/components/loader/Loader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Price from '@proton/components/components/price/Price';
 import useApi from '@proton/components/hooks/useApi';
-import { CYCLE, type Currency, PLANS, PLAN_NAMES, getPlanByName } from '@proton/payments';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { PLAN_NAMES } from '@proton/payments';
+import { getAppFromPathname } from '@proton/shared/lib/apps/slugHelper';
+import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
+import {
+    SentryMailInitiatives,
+    captureInitiativeMessage,
+    traceInitiativeError,
+} from '@proton/shared/lib/helpers/sentry';
 import {
     type SourceEventUpsell,
     UPSELL_MODALS_TYPE,
@@ -22,62 +25,89 @@ import {
 } from '@proton/shared/lib/helpers/upsell';
 import clsx from '@proton/utils/clsx';
 
+import useFetchMailUpsellModalConfig, { type MailUpsellConfig } from '../useFetchMailUpsellModalConfig';
+
 import './UpsellModal.scss';
 
 export interface UpsellModalProps {
-    ['data-testid']?: string;
-    modalProps: ModalStateProps;
-    titleModal: ReactNode;
-    /**
-     * The description is a text put before the CTA, can be used alongside
-     * the `customDescription` props
-     */
-    description?: ReactNode;
-    /**
-     * Custom description are put below the CTA to ensure the CTA is alaways above the fold
-     * can be used alongisde the `description` props
-     */
-    customDescription?: ReactNode;
-    upgradePath?: string;
+    title: ReactNode;
+    /** Image displayed above the title */
     illustration: string;
-    onClose?: () => void;
-    onUpgrade?: () => void;
-    size?: ModalSize;
-    submitText?: ReactNode;
+    modalProps: ModalStateProps;
     sourceEvent: SourceEventUpsell;
-    upsellModalType?: UPSELL_MODALS_TYPE;
-    application?: APP_NAMES;
-    /**
-     * Overrides `submitText`, `position` and `handleUpgrade` as it is a ReactNode
-     * replacing submit button
-     */
-    submitButton?: ReactNode;
-    footerText?: ReactNode;
+    upsellRef?: string;
+    /** Text displayed before the CTA */
+    description?: ReactNode;
+    /** Text displayed below the description */
+    customDescription?: ReactNode;
+    /** On CTA click, redirect to account page instead of opening payment modal */
+    preventInAppPayment?: boolean;
+    // TODO remove as it can be handled by overriding the modal props
+    onClose?: () => void;
+    /** Called when payment upgrade is completed */
+    onUpgrade?: () => void;
+    ['data-testid']?: string;
 }
+
+const UpgradeButton = ({
+    path,
+    onClick,
+    submitText,
+}: {
+    onClick: () => void;
+    path?: string;
+    submitText?: ReactNode;
+}) => {
+    if (path) {
+        return (
+            <ButtonLike
+                as={SettingsLink}
+                color="norm"
+                fullWidth
+                onClick={onClick}
+                path={path}
+                shape="solid"
+                size="medium"
+            >
+                {submitText}
+            </ButtonLike>
+        );
+    }
+
+    return (
+        <Button color="norm" fullWidth size="medium" shape="solid" onClick={onClick}>
+            {submitText}
+        </Button>
+    );
+};
 
 const UpsellModal = ({
     'data-testid': dataTestid,
     modalProps,
-    titleModal,
+    title,
     description,
     customDescription,
-    upgradePath,
     illustration,
     onClose,
-    onUpgrade,
-    size,
-    submitText,
-    submitButton,
-    footerText,
     sourceEvent,
-    upsellModalType = UPSELL_MODALS_TYPE.NEW,
-    application = APPS.PROTONMAIL,
+    upsellRef,
+    preventInAppPayment,
+    onUpgrade,
 }: UpsellModalProps) => {
     const api = useApi();
-    const [user] = useUser();
+    const [config, setConfig] = useState<MailUpsellConfig | null>(null);
+    const fetchUpsellConfig = useFetchMailUpsellModalConfig();
 
     const handleUpgrade = () => {
-        sendRequestUpsellModalReport({ api, application, sourceEvent, upsellModalType });
+        const application = getAppFromPathname(window.location.pathname);
+        if (application) {
+            sendRequestUpsellModalReport({ api, application, sourceEvent, upsellModalType: UPSELL_MODALS_TYPE.NEW });
+        } else {
+            captureInitiativeMessage(SentryMailInitiatives.UPSELL_MODALS, 'Application not found');
+        }
+
+        // TODO check if config.onUpgrade is needed here
+        config?.onUpgrade?.();
         onUpgrade?.();
         modalProps.onClose();
     };
@@ -87,62 +117,54 @@ const UpsellModal = ({
         modalProps.onClose();
     };
 
-    const currency: Currency = user?.Currency || 'USD';
+    const submitText = (() => {
+        if (!config) {
+            return null;
+        }
 
-    const [plansResult] = usePlans();
+        const planName = PLAN_NAMES[config.planID];
+        return config.submitText || c('new_plans: Action').t`Upgrade to ${planName}`;
+    })();
 
-    const planName = user.isPaid ? PLAN_NAMES[PLANS.BUNDLE] : PLAN_NAMES[PLANS.MAIL];
-    const planID = user.isPaid ? PLANS.BUNDLE : PLANS.MAIL;
-    const plan = getPlanByName(plansResult?.plans ?? [], planID, currency);
-    const cycle = user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY;
-    const planPricePerMonth = (plan?.Pricing?.[cycle] || 0) / cycle;
-
-    const pricing = (
-        <Price
-            key="monthly-price"
-            currency={currency}
-            suffix={c('specialoffer: Offers').t`/month`}
-            isDisplayedInSentence
-        >
-            {planPricePerMonth}
-        </Price>
-    );
-
-    const upgradeButton = submitButton || (
-        <ButtonLike
-            as={upgradePath ? SettingsLink : undefined}
-            path={upgradePath || ''}
-            onClick={handleUpgrade}
-            size="medium"
-            color="norm"
-            shape="solid"
-            fullWidth
-        >
-            {submitText || c('new_plans: Action').t`Upgrade to ${planName}`}
-        </ButtonLike>
-    );
-
-    const footerTextModal = footerText || c('new_plans: Action').jt`Starting from ${pricing}`;
+    useEffect(() => {
+        const fetchTimeout = 3000;
+        promiseWithTimeout({
+            promise: fetchUpsellConfig({
+                upsellRef,
+                preventInApp: preventInAppPayment,
+                onSubscribed: handleUpgrade,
+            }),
+            timeoutMs: fetchTimeout,
+            errorMessage: `Upsell config fetch took more than limit of ${fetchTimeout}ms`,
+        })
+            .then((config) => {
+                setConfig(config);
+            })
+            .catch((e) => {
+                traceInitiativeError(SentryMailInitiatives.UPSELL_MODALS, e);
+                // TODO set a generic config with generic text containing no price
+            });
+    }, []);
 
     return (
-        <ModalTwo
-            className="modal-two--twocolors"
-            data-testid={dataTestid}
-            {...modalProps}
-            onClose={handleClose}
-            size={size}
-        >
+        <ModalTwo className="modal-two--twocolors" data-testid={dataTestid} {...modalProps} onClose={handleClose}>
             <ModalTwoHeader />
             <div className="modal-two-illustration-container relative text-center">
                 <img src={illustration} alt="" />
             </div>
             <div className="modal-two-content-container overflow-auto">
                 <ModalTwoContent className="my-8 text-center">
-                    <h1 className="text-lg text-bold">{titleModal}</h1>
+                    <h1 className="text-lg text-bold">{title}</h1>
                     {description && <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>}
-                    <div className={clsx(customDescription ? 'mb-4' : '')}>{upgradeButton}</div>
+                    <div className={clsx(customDescription ? 'mb-4' : '')}>
+                        {config ? (
+                            <UpgradeButton onClick={handleUpgrade} path={config.upgradePath} submitText={submitText} />
+                        ) : (
+                            <Loader size="medium" />
+                        )}
+                    </div>
                     {customDescription && <div className="mt-2 mb-6">{customDescription}</div>}
-                    <p className={'mt-2 text-sm color-weak'}>{footerTextModal}</p>
+                    {config?.footerText ? <p className={'mt-2 text-sm color-weak'}>{config.footerText}</p> : null}
                 </ModalTwoContent>
             </div>
         </ModalTwo>

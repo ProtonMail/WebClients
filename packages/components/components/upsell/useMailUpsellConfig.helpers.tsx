@@ -9,14 +9,16 @@ import {
     PLANS,
     PLAN_NAMES,
     type PaymentMethodStatusExtended,
+    type Plan,
+    type Subscription,
     getPlanByName,
     getPreferredCurrency,
     isMainCurrency,
 } from '@proton/payments';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_UPSELL_PATHS, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import type useGetFlag from '@proton/unleash/useGetFlag';
 
 import { PriceCoupon, PriceLine } from './OneDollarPromoComponents';
@@ -54,14 +56,14 @@ const getUpsellPrice = async ({
     planID,
     currency,
     cycle,
-    couponCode,
+    coupon,
     defaultPrice,
 }: {
     fetchPrice: ReturnType<typeof useRegionalPricing>['fetchPrice'];
     planID: PLANS;
     currency: Currency;
     cycle: CYCLE;
-    couponCode: string | undefined;
+    coupon: string | undefined;
     defaultPrice: number;
 }) => {
     if (isMainCurrency(currency)) {
@@ -73,7 +75,7 @@ const getUpsellPrice = async ({
             Plans: getPlanIDsForPlan(planID),
             Currency: currency,
             Cycle: cycle,
-            CouponCode: couponCode,
+            CouponCode: coupon,
         },
         defaultPrice,
         currency,
@@ -82,19 +84,36 @@ const getUpsellPrice = async ({
     return price;
 };
 
-interface EligibleUpsellConfigOptions {
+interface MailUpsellConfigParams {
     user: UserModel;
     currency: Currency;
     plans: Plan[];
     fetchPrice: ReturnType<typeof useRegionalPricing>['fetchPrice'];
+    upsellRef?: string;
 }
-export const getMailUpsellConfig: (options: EligibleUpsellConfigOptions) => Promise<{
+
+interface MailUpsellConfig {
     planID: PLANS;
     cycle: CYCLE;
-    couponCode?: string;
-    price: number;
-}> = async ({ currency, plans, user, fetchPrice }) => {
-    if (user.isFree) {
+    coupon?: string;
+    monthlyPrice: number;
+}
+
+/**
+ * @throws if no prices found
+ */
+export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<MailUpsellConfig> = async ({
+    currency,
+    plans,
+    user,
+    fetchPrice,
+    upsellRef,
+}) => {
+    const isSentinelUpsell = [SHARED_UPSELL_PATHS.SENTINEL, MAIL_UPSELL_PATHS.PROTON_SENTINEL].some((path) =>
+        upsellRef?.includes(path)
+    );
+
+    if (user.isFree && !isSentinelUpsell) {
         const planID = PLANS.MAIL;
         const cycle = CYCLE.MONTHLY;
 
@@ -102,25 +121,25 @@ export const getMailUpsellConfig: (options: EligibleUpsellConfigOptions) => Prom
         const coupon = COUPON_CODES.TRYMAILPLUS0724;
 
         const price = await getUpsellPrice({
-            fetchPrice,
-            planID,
+            coupon: coupon,
             currency,
             cycle,
-            couponCode: coupon,
             defaultPrice: ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE,
+            fetchPrice,
+            planID,
         });
 
         return {
-            planID,
+            coupon,
             cycle,
-            couponCode: coupon,
-            price,
+            planID,
+            monthlyPrice: price,
         };
     } else {
         const planID = PLANS.BUNDLE;
         const cycle = CYCLE.YEARLY;
         const planName = getPlanByName(plans, getPlanIDsForPlan(planID), currency);
-        let price = getPricePerCycle(planName, cycle) ?? 0;
+        let price = getPricePerCycle(planName, cycle);
 
         /**
          * If user has mail plus and is on main currency, we don't need to fetch the price
@@ -130,44 +149,66 @@ export const getMailUpsellConfig: (options: EligibleUpsellConfigOptions) => Prom
          */
         if (!user.hasPaidMail) {
             price = await getUpsellPrice({
-                fetchPrice,
-                planID,
+                coupon: undefined,
                 currency,
                 cycle,
-                couponCode: undefined,
-                defaultPrice: price,
+                defaultPrice: price || 0,
+                fetchPrice,
+                planID,
             });
         }
 
+        if (!price) {
+            throw new Error('Price not found');
+        }
+
         return {
-            planID,
+            coupon: undefined,
             cycle,
-            couponCode: undefined,
-            price,
+            planID,
+            monthlyPrice: price / 12,
         };
     }
 };
 
-export const getMailUpsellsSubmitText = (planID: PLANS, price: number, currency: Currency) => {
+export const getMailUpsellsSubmitText = (
+    planID: PLANS,
+    price: number,
+    currency: Currency,
+    coupon: string | undefined
+) => {
     const planName = PLAN_NAMES[planID];
     const priceCoupon = <PriceCoupon key={`price-coupon-${planName}`} currency={currency} amountDue={price} />;
 
-    if (planID === PLANS.MAIL) {
+    if (coupon) {
         return c('Action').jt`Get ${planName} for ${priceCoupon}`;
     }
 
     return getPlanOrAppNameText(planName);
 };
 
-export const getMailUpsellsFooterText = (planID: PLANS, price: number, currency: Currency) => {
+export const getMailUpsellsFooterText = (
+    planID: PLANS,
+    price: number,
+    currency: Currency,
+    coupon: string | undefined
+) => {
     const priceCoupon = <PriceCoupon key={`price-coupon-${planID}`} currency={currency} amountDue={price} />;
     const priceLine = <PriceLine key={`price-line-${planID}`} currency={currency} planPrice={price} />;
 
-    if (planID === PLANS.MAIL) {
+    if (coupon) {
         return c('new_plans: Subtext')
             .jt`The discounted price of ${priceCoupon} is valid for the first month. Then it will automatically be renewed at ${priceLine}. You can cancel at any time.`;
     }
 
-    return c('new_plans: Subtext')
-        .jt`Unlock all ${BRAND_NAME} premium products and features for just ${priceLine}. Cancel anytime.`;
+    if (planID === PLANS.BUNDLE) {
+        return c('new_plans: Subtext')
+            .jt`Unlock all ${BRAND_NAME} premium products and features for just ${priceLine}. Cancel anytime.`;
+    }
+
+    if (price) {
+        return c('new_plans: Subtext').jt`Starting from ${priceLine}`;
+    }
+
+    return null;
 };

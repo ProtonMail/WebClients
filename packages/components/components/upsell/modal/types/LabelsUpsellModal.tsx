@@ -6,7 +6,6 @@ import { APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/consta
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import labelsImg from '@proton/styles/assets/img/illustrations/new-upsells-img/labels.svg';
 
-import { useMailUpsellConfig } from '../../useMailUpsellConfig';
 import UpsellModal from '../UpsellModal';
 
 interface Props {
@@ -33,16 +32,14 @@ const LabelsUpsellModal = ({
         isSettings,
     });
 
-    const upsellConfig = useMailUpsellConfig({ upsellRef });
-
     return (
         <UpsellModal
-            titleModal={c('Title').t`Need more labels or folders?`}
+            title={c('Title').t`Need more labels or folders?`}
             description={c('Description').t`Create as many labels or folders as you need to keep your inbox tidy.`}
             modalProps={modalProps}
             illustration={labelsImg}
             sourceEvent="BUTTON_MORE_LABELS_FOLDERS"
-            {...upsellConfig}
+            upsellRef={upsellRef}
             onClose={onCloseCustomAction}
         />
     );
