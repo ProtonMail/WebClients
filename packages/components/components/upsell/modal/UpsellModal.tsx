@@ -1,7 +1,5 @@
 import { type ReactNode, useEffect, useState } from 'react';
 
-import { c } from 'ttag';
-
 import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
@@ -10,7 +8,6 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
-import { PLAN_NAMES } from '@proton/payments';
 import { getAppFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 import {
@@ -23,7 +20,6 @@ import {
     UPSELL_MODALS_TYPE,
     sendRequestUpsellModalReport,
 } from '@proton/shared/lib/helpers/upsell';
-import clsx from '@proton/utils/clsx';
 
 import useFetchMailUpsellModalConfig, { type MailUpsellConfig } from '../useFetchMailUpsellModalConfig';
 
@@ -40,7 +36,6 @@ export interface UpsellModalProps {
     customDescription?: ReactNode;
     /** On CTA click, redirect to account page instead of opening payment modal */
     preventInAppPayment?: boolean;
-    // TODO remove as it can be handled by overriding the modal props
     onClose?: () => void;
     /** Called when user subscription is completed */
     onSubscribed?: () => void;
@@ -113,17 +108,8 @@ const UpsellModal = ({
         modalProps.onClose();
     };
 
-    const submitText = (() => {
-        if (!config) {
-            return null;
-        }
-
-        const planName = PLAN_NAMES[config.planID];
-        return config.submitText || c('new_plans: Action').t`Upgrade to ${planName}`;
-    })();
-
     useEffect(() => {
-        const fetchTimeout = 3000;
+        const fetchTimeout = 5000;
         promiseWithTimeout({
             promise: fetchUpsellConfig({
                 upsellRef,
@@ -138,7 +124,6 @@ const UpsellModal = ({
             })
             .catch((e) => {
                 traceInitiativeError(SentryMailInitiatives.UPSELL_MODALS, e);
-                // TODO set a generic config with generic text containing no price
             });
     }, []);
 
@@ -159,15 +144,17 @@ const UpsellModal = ({
                 <div className="m-8 text-center">
                     <h1 className="text-lg text-bold">{title}</h1>
                     {description && <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>}
-                    <div className={clsx(customDescription ? 'mb-4' : '')}>
-                        {config ? (
-                            <UpgradeButton onClick={handleUpgrade} path={config.upgradePath} submitText={submitText} />
-                        ) : (
-                            <Loader size="medium" />
-                        )}
-                    </div>
-                    {customDescription && <div className="mt-2 mb-6">{customDescription}</div>}
-                    {config?.footerText ? <p className="mt-2 mb-0 text-sm color-weak">{config.footerText}</p> : null}
+                    {config ? (
+                        <UpgradeButton
+                            onClick={handleUpgrade}
+                            path={config.upgradePath}
+                            submitText={config.submitText}
+                        />
+                    ) : (
+                        <Loader size="medium" />
+                    )}
+                    {customDescription && <div className="my-6">{customDescription}</div>}
+                    {config?.footerText ? <p className="mt-2 m-0 text-sm color-weak">{config.footerText}</p> : null}
                 </div>
             </ModalTwoContent>
         </ModalTwo>
