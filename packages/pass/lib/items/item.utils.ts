@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
@@ -145,14 +145,15 @@ export const matchDraftsForShare = (drafts: Draft[], shareId: string, itemIds?: 
         return false;
     });
 
-/** Batches a list of items by shareId : each individual share batch
- * is in turn batched according to `MAX_BATCH_ITEMS_PER_REQUEST` */
+/** Batches a list of items by shareId : each individual share
+ * batch is in turn batched according to the provided `batchSize` */
 export const batchByShareId = <T extends UniqueItem, R>(
     items: T[],
-    mapTo: (item: T) => R
+    mapTo: (item: T) => R,
+    batchSize: number = MAX_MAX_BATCH_PER_REQUEST
 ): { shareId: string; items: R[] }[] =>
     groupByKey(items, 'shareId').flatMap((shareTrashedItems) => {
-        const batches = chunk(shareTrashedItems, MAX_BATCH_PER_REQUEST);
+        const batches = chunk(shareTrashedItems, batchSize);
         return batches.map((batch) => ({
             shareId: batch[0].shareId,
             items: batch.map(mapTo),

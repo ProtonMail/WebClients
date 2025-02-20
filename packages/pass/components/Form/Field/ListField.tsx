@@ -212,6 +212,7 @@ export const ListField = <
                                         placeholder={values.length === 0 ? placeholder : ''}
                                         ref={ref}
                                         unstyled
+                                        data-protonpass-ignore={true}
                                     />
                                 </div>
                             </div>

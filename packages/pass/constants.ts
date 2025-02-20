@@ -7,8 +7,8 @@ import { PassFeature } from './types/api/features';
  * than the minimum state version specified by these constants */
 export const MIN_CACHE_VERSION = '1.10.0';
 
-export const MAX_BATCH_PER_REQUEST = 100;
-export const MAX_BATCH_ADDRESS_REQUEST = 10;
+export const MAX_MAX_BATCH_PER_REQUEST = 100;
+export const MIN_MAX_BATCH_PER_REQUEST = 10;
 
 export const DEFAULT_LOCK_TTL = 600; /* 10 minutes */
 
