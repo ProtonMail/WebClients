@@ -6,7 +6,7 @@ import { ButtonGroup, Icon, type IconName } from '@proton/components/index';
 import { AlbumTag, PhotoTag, type Tag } from '../../../store';
 
 export interface TagsProps<T extends Tag> {
-    selectedTag: T[];
+    selectedTags: T[];
     tags: T[];
     onTagSelect: (tag: T[]) => void;
 }
@@ -104,14 +104,14 @@ const getTagLabelWithIcon = (
     throw new Error(`Unhandled tag type: ${tag}`);
 };
 
-function Tags<T extends Tag>({ selectedTag, tags, onTagSelect }: TagsProps<T>) {
+function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) {
     return (
         <ButtonGroup>
             {tags.map((tag) => {
                 const { iconName, label } = getTagLabelWithIcon(tag);
                 return (
                     <Button
-                        selected={selectedTag.includes(tag)}
+                        selected={selectedTags.includes(tag)}
                         key={tag}
                         className="flex items-center"
                         onClick={() => onTagSelect([tag])}
@@ -125,7 +125,7 @@ function Tags<T extends Tag>({ selectedTag, tags, onTagSelect }: TagsProps<T>) {
     );
 }
 
-export const PhotosTags = ({ selectedTag, tags, onTagSelect }: PhotosTagsProps) => {
+export const PhotosTags = ({ selectedTags, tags, onTagSelect }: PhotosTagsProps) => {
     // Live and Motion are combined
     const includeBothMotions = tags.includes(PhotoTag.LivePhotos) && tags.includes(PhotoTag.MotionPhotos);
     const filteredTags = includeBothMotions ? tags.filter((tag) => tag !== PhotoTag.MotionPhotos) : tags;
@@ -139,9 +139,9 @@ export const PhotosTags = ({ selectedTag, tags, onTagSelect }: PhotosTagsProps) 
         }
     };
 
-    return <Tags<PhotoTag> selectedTag={selectedTag} tags={filteredTags} onTagSelect={handleTagSelect} />;
+    return <Tags<PhotoTag> selectedTags={selectedTags} tags={filteredTags} onTagSelect={handleTagSelect} />;
 };
 
-export const AlbumsTags = ({ selectedTag, tags, onTagSelect }: AlbumsTagsProps) => {
-    return <Tags<AlbumTag> selectedTag={selectedTag} tags={tags} onTagSelect={onTagSelect} />;
+export const AlbumsTags = ({ selectedTags, tags, onTagSelect }: AlbumsTagsProps) => {
+    return <Tags<AlbumTag> selectedTags={selectedTags} tags={tags} onTagSelect={onTagSelect} />;
 };

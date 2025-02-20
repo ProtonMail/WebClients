@@ -107,7 +107,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
             if (itemShouldRender(y, scrollPosition)) {
                 items.push(
                     <AlbumsCard
-                        key={`album-${item.linkId}`}
+                        key={`album-${item.linkId}=${item.shareId}`}
                         album={item}
                         onRender={onItemRender}
                         onRenderLoadedLink={onItemRenderLoadedLink}
