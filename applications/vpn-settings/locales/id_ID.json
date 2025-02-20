@@ -613,6 +613,9 @@
       "Send reminder": [
         "Kirim pengingat"
       ],
+      "Set as album cover": [
+        "Pasang sebagai sampul album"
+      ],
       "Set catch-all": [
         "Tentukan alamat catch-all"
       ],
@@ -2305,6 +2308,12 @@
       ]
     },
     "Description": {
+      "Create policies to manage access to shared servers.": [
+        "Buat kebjakan untuk mengelola akses ke server yang terbagi."
+      ],
+      "Everyone in your organization can connect to shared servers.": [
+        "Siapa pun dalam organisasi Anda akan dapat menghubungkan diri mereka ke server yang terbagi."
+      ],
       "If disabled, only admins will have access.": [
         "Apabila dinonaktifkan, hanya admin yang akan memiliki akses."
       ],
@@ -2489,6 +2498,9 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Identitas dan alamat > Domain pendek (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Seluruh ruang penyimpanan telah dialokasikan. Silakan kurangi ruang penyimpanan yang dialokasikan kepada pengguna lainnya."
@@ -3379,8 +3391,17 @@
       "Checkout": [
         "Pembayaran"
       ],
+      "Create your account": [
+        "Buat akun Anda"
+      ],
       "Device": [
         "Perangkat"
+      ],
+      "Enabled Countries": [
+        "Negara yang Diaktifkan"
+      ],
+      "Enter your email address": [
+        "Masukkan alamat email Anda"
       ],
       "Event": [
         "Peristiwa"
@@ -3414,6 +3435,9 @@
       ],
       "Select your deal": [
         "Pilih penawaran Anda"
+      ],
+      "Select your payment method": [
+        "Pilih metode pembayaran Anda"
       ],
       "Select your pricing plan": [
         "Pilih struktur pembayaran paket Anda"
@@ -3694,6 +3718,9 @@
       "Allocated": [
         "Dialokasikan"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Memungkinkan pengguna untuk terhubung ke server terbagi yang aman dari kolom **Negara** di aplikasi ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Telah dialokasikan"
       ],
@@ -3832,6 +3859,9 @@
       "Copy the suggested password to clipboard": [
         "Salin kata sandi yang disarankan ke papan klip"
       ],
+      "countries enabled": [
+        "negara yang diaktifkan"
+      ],
       "Country code": [
         "Kode negara"
       ],
@@ -3867,6 +3897,9 @@
       ],
       "Custom email domains": [
         "Domain email khusus"
+      ],
+      "Custom policies": [
+        "Kebijakan khusus"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
@@ -4660,6 +4693,9 @@
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } terbagi telah diperbarui"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Negara server terbagi (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Brankas terbagi dihapus"
       ],
@@ -4723,7 +4759,7 @@
       "Symbols (#$&)": [
         "Simbol (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Direkomendasikan oleh TechRadar Pro dengan rating 4.2 dari 5 bintang"
       ],
       "Thank you": [
@@ -5760,6 +5796,9 @@
       "New password": [
         "Kata sandi baru"
       ],
+      "New policy name": [
+        "Nama kebijakan baru"
+      ],
       "New second password": [
         "Kata sandi kedua baru"
       ],
@@ -6663,6 +6702,9 @@
       "Dedicated servers and IP": [
         "Server dan alamat IP khusus"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Server khusus yang dioptimalkan untuk streaming"
+      ],
       "Desktop app": [
         "Aplikasi desktop"
       ],
@@ -6713,6 +6755,9 @@
       ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "VPN Swiss berkecepatan tinggi yang melindungi privasi Anda"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN berkecepatan tinggi pada ${ n } perangkat"
@@ -6837,6 +6882,9 @@
       "Start protecting your organization": [
         "Mulai lindungi organisasi Anda"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Mulai lindungi diri Anda secara online dalam 2 langkah mudah"
+      ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
       ],
@@ -6905,6 +6953,9 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
+      ],
+      "Up to 10 Gbps": [
+        "HIngga 10 Gbps"
       ],
       "Use on up to ${ n } device at once": [
         "Gunakan pada hingga ${ n } perangkat secara bersamaan"
@@ -7443,6 +7494,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Menonaktifkan hal ini akan menghilangkan kemampuan untuk menerima notifikasi pada aplikasi ${ BRAND_NAME }"
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Selama bulan pertama Anda mengunakan produk ${ BRAND_NAME }"
+      ],
       "Email subscriptions": [
         "Langganan email"
       ],
@@ -7489,6 +7543,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
+      ],
+      "Policy created successfully": [
+        "Kebijakan berhasil dibuat"
       ],
       "Reminder has been sent": [
         "Pengingat telah dikirim"
@@ -7716,6 +7773,9 @@
       ],
       "Organization identity updated": [
         "Identitas organisasi diperbarui"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Verifikasi alamat email ${ email } milik Anda untuk mengatur identitas organisasi."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9388,47 +9448,6 @@
         "Untuk ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -9711,6 +9730,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -10114,6 +10174,9 @@
       "Add address": [
         "Tambah alamat"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Tambah negara ke \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Tambah kartu kredit/debit"
       ],
@@ -10149,6 +10212,9 @@
       ],
       "Add users": [
         "Tambah pengguna"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Tambah pengguna ke \"${ policyName }\""
       ],
       "Allocate storage": [
         "Alokasikan ruang penyimpanan"
@@ -11315,6 +11381,12 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Bundel ${ a } dan ${ b } Anda"
+      ],
+      "Your ${ selected } plan": [
+        "Paket ${ selected } Anda"
+      ],
+      "Your plan includes:": [
+        "Paket Anda meliputi:"
       ]
     },
     "vpn_2step: tooltip": {
