@@ -819,6 +819,11 @@
         "Бесплатная пробная версия вашего приложения заканчивается на ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Поиск сообщений"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Любой, имеющий ссылку, может просматривать ваш календарь"
@@ -5065,6 +5070,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
+      "Open shortcut cheat sheet": [
+        "Открыть шпаргалку сочетаний клавиш"
+      ],
       "or discover other features:": [
         "или откройте для себя другие возможности:"
       ],
@@ -5604,6 +5612,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } команда найдена.",
+        "${ filteredList.length } команды найдены.",
+        "${ filteredList.length } команд найдено.",
+        "${ filteredList.length } команд найдено."
+      ],
       "Selected color:": [
         "Выбранный цвет"
       ]
@@ -5717,6 +5731,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Открыть это модальное окно"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Основные действия"
       ]
     },
     "Knowledge base link label": {
@@ -5955,6 +5979,12 @@
       ],
       "Import to:": [
         "Импортировать в:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Комбинация клавиш: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Сочетания клавиш"
       ],
       "Label messages as": [
         "Отметить сообщения как"
@@ -9747,6 +9777,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Приглашение отправлено и участники добавлены во все события"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Настройки сочетаний клавиш обновлены"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Последние измененные псевдонимы хранятся в вашем самом старом хранилище"

@@ -811,6 +811,11 @@
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Søk i meldinger"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Alle med koblingen kan se kalenderen din"
@@ -1579,6 +1584,32 @@
       ],
       "strawberry": [
         "jordbær"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Dagsvisning"
+      ],
+      "Month view": [
+        "Månedsvisning"
+      ],
+      "New event": [
+        "Ny hendelse"
+      ],
+      "Next period": [
+        "Neste periode"
+      ],
+      "Previous period": [
+        "Forrige periode"
+      ],
+      "Search events": [
+        "Søk etter hendelser"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Week view": [
+        "Ukesvisning"
       ]
     },
     "Confirm modal title": {
@@ -2934,6 +2965,9 @@
       "${ list } has no contacts": [
         "${ list } har ingen kontakter",
         "Noen av gruppene har ingen kontakter: ${ list }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
@@ -4739,6 +4773,9 @@
       "High Priority": [
         "Høy prioritet"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Hvis tastatursnarveier er aktivert, kan du bruke følgende taster for hurtighandlinger eller for å hoppe til forskjellige visninger. ${ metaKey } + K er alltid aktivert."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
@@ -4919,6 +4956,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
+      ],
+      "Open shortcut cheat sheet": [
+        "Åpne jukseark for snarveier"
       ],
       "or discover other features:": [
         "eller oppdag andre funksjoner:"
@@ -5449,6 +5489,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } kommando funnet.",
+        "${ filteredList.length } kommandoer funnet."
+      ],
       "Selected color:": [
         "Valgt farge:"
       ]
@@ -5556,6 +5600,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Opprett ny hendelse"
+      ],
+      "Day view": [
+        "Dagsvisning"
+      ],
+      "Month view": [
+        "Månedsvisning"
+      ],
+      "Next period": [
+        "Neste periode"
+      ],
+      "Open quick actions menu": [
+        "Åpne meny for hurtighandlinger"
+      ],
+      "Open this modal": [
+        "Åpne dette hjelpevinduet"
+      ],
+      "Previous period": [
+        "Forrige periode"
+      ],
+      "Search events": [
+        "Søk etter hendelser"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Week view": [
+        "Ukesvisning"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Basic-handlinger"
+      ],
+      "View options": [
+        "Vis alternativer"
       ]
     },
     "Knowledge base link label": {
@@ -5792,6 +5876,12 @@
       ],
       "Import to:": [
         "Importer til:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastatursnarvei: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Tastatursnarveier"
       ],
       "Label messages as": [
         "Merk meldinger som"
@@ -8041,6 +8131,9 @@
       "Filter groups": [
         "Filtrer grupper"
       ],
+      "Filter quick actions": [
+        "Filtrer hurtighandlinger"
+      ],
       "First name": [
         "Fornavn"
       ],
@@ -9413,6 +9506,9 @@
       "Invitation sent and participants added to all events": [
         "Invitasjon sendt og deltakere lagt til alle hendelser"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Innstillinger for hurtigtaster oppdatert"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Sist endrede aliaser lagret i ditt eldste hvelv"
       ],
@@ -9595,6 +9691,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName }-tastatursnarveier"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadresse",
         "${ emailsCount } e-postadresser"

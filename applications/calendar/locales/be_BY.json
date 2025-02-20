@@ -819,6 +819,11 @@
         "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Пошук паведамленняў"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Любы чалавек са спасылкай зможа праглядаць ваш каляндар"
@@ -1609,6 +1614,32 @@
       ],
       "strawberry": [
         "клубнічны"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Прагляд дня"
+      ],
+      "Month view": [
+        "Прагляд месяца"
+      ],
+      "New event": [
+        "Новая падзея"
+      ],
+      "Next period": [
+        "Наступны перыяд"
+      ],
+      "Previous period": [
+        "Папярэдні перыяд"
+      ],
+      "Search events": [
+        "Пошук падзей"
+      ],
+      "Today": [
+        "Сёння"
+      ],
+      "Week view": [
+        "Прагляд тыдня"
       ]
     },
     "Confirm modal title": {
@@ -4888,6 +4919,9 @@
       "High Priority": [
         "Высокі прыярытэт"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Вы можаце выкарыстоўваць наступныя клавішы для хуткіх дзеянняў або пераходу ў іншыя прагляды, калі спалучэнні клавіш уключаны. Спалучэнне ${ metaKey } + K уключана заўсёды."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
       ],
@@ -5070,6 +5104,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
+      ],
+      "Open shortcut cheat sheet": [
+        "Адкрыць спіс спалучэнняў клавіш"
       ],
       "or discover other features:": [
         "або пазнаёмцеся з іншымі функцыямі:"
@@ -5610,6 +5647,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } каманда знойдзена.",
+        "${ filteredList.length } каманды знойдзены.",
+        "${ filteredList.length } каманд знойдзены.",
+        "${ filteredList.length } каманд знойдзены."
+      ],
       "Selected color:": [
         "Выбраны колер:"
       ]
@@ -5723,6 +5766,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Стварыць новую падзею"
+      ],
+      "Day view": [
+        "Выгляд \"Дзень\""
+      ],
+      "Month view": [
+        "Выгляд \"Месяц\""
+      ],
+      "Next period": [
+        "Наступны перыяд"
+      ],
+      "Open quick actions menu": [
+        "Адкрыць меню хуткіх дзеянняў"
+      ],
+      "Open this modal": [
+        "Адкрыць гэта акно"
+      ],
+      "Previous period": [
+        "Папярэдні перыяд"
+      ],
+      "Search events": [
+        "Пошук падзей"
+      ],
+      "Today": [
+        "Сёння"
+      ],
+      "Week view": [
+        "Выгляд \"Тыдзень\""
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Асноўныя дзеянні"
+      ],
+      "View options": [
+        "Параметры прагляду"
       ]
     },
     "Knowledge base link label": {
@@ -5961,6 +6044,12 @@
       ],
       "Import to:": [
         "Імпартаваць у:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Спалучэнні клавіш: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Спалучэнні клавіш"
       ],
       "Label messages as": [
         "Пазначыць паведамленні як"
@@ -8336,6 +8425,9 @@
       "Filter groups": [
         "Фільтр груп"
       ],
+      "Filter quick actions": [
+        "Фільтр хуткіх дзеянняў"
+      ],
       "First name": [
         "Імя"
       ],
@@ -9780,6 +9872,9 @@
       "Invitation sent and participants added to all events": [
         "Запрашэнне адпраўлена і ўдзельнікі дададзены да ўсіх падзей"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Параметры спалучэнняў клавіш абноўлены"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Апошнія змененыя псеўданімы захоўваюцца ў вашым самым старым сховішчы"
       ],
@@ -9974,6 +10069,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Спалучэнні клавіш ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адрас электроннай пошты",
         "${ emailsCount } адрасы электроннай пошты",

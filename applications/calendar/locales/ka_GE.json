@@ -811,6 +811,11 @@
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "შეტყობინებების ძებნა"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "ბმულის მქონე ნებისმიერს შეეძლება, ნახოს თქვენი კალენდარი"
@@ -4910,6 +4915,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
       ],
+      "Open shortcut cheat sheet": [
+        "მალსახმობების ჩამონათვლის გახსნა"
+      ],
       "or discover other features:": [
         "ან აღმოაჩინეთ სხვა ფუნქციები:"
       ],
@@ -5436,6 +5444,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "აღმოჩენილია ${ filteredList.length } ბრძანება.",
+        "აღმოჩენილია ${ filteredList.length } ბრძანება."
+      ],
       "Selected color:": [
         "არჩეული ფერი:"
       ]
@@ -5543,6 +5555,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "ფანჯრის გახსნა"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "ძირითადი მოქმედებები"
       ]
     },
     "Knowledge base link label": {
@@ -5779,6 +5801,12 @@
       ],
       "Import to:": [
         "შემოტანა:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "კლავიატურის მალსახმობი: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "კლავიატურის მალსახმობები"
       ],
       "Label messages as": [
         "შეტყობინებების მონიშვნა, როგორც"
@@ -9390,6 +9418,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "მოსაწვევი გაგზავნილია და მონაწილეებს დაემატა ყველა მოვლენა"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "კლავიატურის მალსახმობების პარამეტრები განახლებულია"
       ],
       "Last modified aliases stored in your oldest vault": [
         "ბოლოს შეცვლილი ფსევდონიმები თქვენს უძველეს საცავშია შენახული"
