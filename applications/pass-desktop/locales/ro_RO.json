@@ -103,8 +103,14 @@
       "Cancel": [
         "Anulare"
       ],
+      "Cancel email change": [
+        "Anulare modificare e-mail"
+      ],
       "Change": [
         "Schimbare"
+      ],
+      "Change email": [
+        "Modificare e-mail"
       ],
       "Check DNS": [
         "Verificare DNS"
@@ -931,6 +937,12 @@
       "Failed to block the contact": [
         "Contactul nu s-a putut bloca."
       ],
+      "Failed to cancel mailbox change": [
+        "Eșuare anulare modificare adresă de e-mail."
+      ],
+      "Failed to change mailbox": [
+        "Eșuare modificare adresă de e-mail."
+      ],
       "Failed to create domain": [
         "Crearea domeniului a eșuat."
       ],
@@ -1422,9 +1434,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Funcțiile pentru gestionare aliasuri din SimpleLogin vor sosi în curând!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Aliasul a fost dezactivat. Nu veți mai primi mesaje trimise către ${ item.aliasEmail }."
       ],
@@ -1628,9 +1637,6 @@
       ],
       "Emptying trash...": [
         "Se golește gunoiul..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Activare ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Activați autoblocarea pentru a securiza datele."
@@ -2226,6 +2232,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Acest articol nu este în prezent partajat cu nimeni. Invitați persoane pentru a-l partaja."
       ],
+      "This mailbox will use your previous email.": [
+        "Acest cont va folosi adresa anterioară de e-mail."
+      ],
       "This operation is irreversible.": [
         "Această operație nu este reversibilă."
       ],
@@ -2261,9 +2270,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Pentru a revizui datele importate, faceți clic pe pictograma ${ PASS_APP_NAME } din bara de utilitare a navigatorului."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
@@ -2578,9 +2584,6 @@
       "Alias address (disabled)": [
         "Adresă alias (dezactivată)"
       ],
-      "Alias management": [
-        "Gestionare aliasuri"
-      ],
       "Aliases": [
         "Aliasuri"
       ],
@@ -2607,9 +2610,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Pe lângă stocarea autentificărilor, ${ PASS_APP_NAME } vă protejează identitatea cu o funcție integrată de alias pentru e-mail.\n\nOri de câte ori vă înscrieți pentru un nou cont online, ${ PASS_APP_NAME } poate crea automat un alias pentru a vă păstra adresa de e-mail reală protejată."
-      ],
-      "Beta Access": [
-        "Acces la Beta"
       ],
       "Biometrics": [
         "Date biometrice"
@@ -2997,6 +2997,9 @@
       ],
       "New": [
         "Nou"
+      ],
+      "New email": [
+        "E-mail nou"
       ],
       "New vault": [
         "Seif nou"
@@ -3667,6 +3670,9 @@
         "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } utilizatori.",
         "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } de utilizatori."
       ],
+      "Mailbox change successfully cancelled": [
+        "Modificarea adresei de e-mail s-a anulat."
+      ],
       "Mailbox successfully deleted": [
         "Contul de e-mail a fost șters."
       ],
@@ -3747,6 +3753,12 @@
       ],
       "Breaches detected for": [
         "Divulgări detectate pentru"
+      ],
+      "Cancel changing your email?": [
+        "Anulați modificarea adresei de e-mail?"
+      ],
+      "Change mailbox email": [
+        "Modificare adresă de e-mail cont"
       ],
       "Change your lock method": [
         "Modificați metoda de blocare"
