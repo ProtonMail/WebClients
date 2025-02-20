@@ -33,7 +33,14 @@ export const AliasMailboxDeleteModal: FC<Props> = ({ mailboxID }) => {
     );
 
     const hasAlias = (mailbox?.AliasCount ?? 0) > 0;
-    const defaultMailboxID = useMemo(() => (remaining.find(prop('IsDefault')) ?? remaining[0]).MailboxID, [remaining]);
+
+    /** Remaining mailboxes might be empty if the default
+     * one is pending a mailbox edit verification */
+    const defaultMailboxID = useMemo(
+        () => (remaining.find(prop('IsDefault')) ?? remaining[0])?.MailboxID ?? null,
+        [remaining]
+    );
+
     const [transferMailboxID, setTransferMailboxID] = useState<MaybeNull<number>>(
         mailbox?.Verified && hasAlias ? defaultMailboxID : null
     );

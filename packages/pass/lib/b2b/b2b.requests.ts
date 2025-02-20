@@ -1,4 +1,4 @@
-import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import type { MaybeNull } from '@proton/pass/types';
 import { type ItemMarkAsReadRequest } from '@proton/pass/types';
@@ -12,7 +12,7 @@ import { isB2BEvent } from './b2b.utils';
 const sendItemReadEvents = async (events: B2BEvent<B2BEventName.ItemRead>[]) =>
     Promise.all(
         groupByKey(events, 'shareId').map((events) => {
-            const batches = chunk(events, MAX_BATCH_PER_REQUEST);
+            const batches = chunk(events, MAX_MAX_BATCH_PER_REQUEST);
 
             return Promise.all(
                 batches.map((batch) => {
