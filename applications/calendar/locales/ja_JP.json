@@ -807,6 +807,11 @@
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "メッセージを検索"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "このリンクを知っている人は、カレンダー表示することができます"
@@ -4053,7 +4058,7 @@
         "このファイルには予定の招待が含まれています:"
       ],
       "This file contains an invitation response:": [
-        "このファイルには招待の回答が含まれています："
+        "このファイルには招待への回答が含まれています："
       ],
       "This file contains some data that we cannot import:": [
         "このファイルにはインポートできないデータが含まれています:"
@@ -4849,6 +4854,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
+      "Open shortcut cheat sheet": [
+        "ショートカットのチートシートを開く"
+      ],
       "or discover other features:": [
         "または他の機能を発見することもできます:"
       ],
@@ -5373,6 +5381,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length }個のコマンドが見つかりました。"
+      ],
       "Selected color:": [
         "選択した色:"
       ]
@@ -5477,6 +5488,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "モーダルを開く"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "基本操作"
       ]
     },
     "Knowledge base link label": {
@@ -5712,6 +5733,12 @@
       ],
       "Import to:": [
         "インポート先："
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "キーボードショートカット: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "キーボードショートカット"
       ],
       "Label messages as": [
         "メッセージにつけるラベル"
@@ -6133,7 +6160,7 @@
         "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } のすべてのメッセージをインポートし、ラベル付けします"
+        "${ itemsToImportCount } つのフォルダのうち ${ selectedItemsToImportCount } つからすべてのメッセージをインポートし、ラベルを付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
@@ -9233,6 +9260,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "招待が送信され、参加者がすべての予定に追加されました"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "キーボードショートカットの設定が更新されました"
       ],
       "Last modified aliases stored in your oldest vault": [
         "最も古い保管庫に保存されている、最後に変更されたエイリアス"

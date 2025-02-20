@@ -811,6 +811,11 @@
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Doorzoek berichten"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Iedereen met de link kan uw agenda inzien"
@@ -1579,6 +1584,32 @@
       ],
       "strawberry": [
         "aardbei"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Dagweergave"
+      ],
+      "Month view": [
+        "Maandweergave"
+      ],
+      "New event": [
+        "Nieuw event"
+      ],
+      "Next period": [
+        "Volgende periode"
+      ],
+      "Previous period": [
+        "Vorige periode"
+      ],
+      "Search events": [
+        "Zoek events"
+      ],
+      "Today": [
+        "Vandaag"
+      ],
+      "Week view": [
+        "Weekweergave"
       ]
     },
     "Confirm modal title": {
@@ -4742,6 +4773,9 @@
       "High Priority": [
         "Hoge Prioriteit"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Als sneltoetsen ingeschakeld zijn, kunt u de volgende toetsen gebruiken voor snelle acties of naar verschillende weergaven springen. ${ metaKey } + K is altijd ingeschakeld."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
@@ -4922,6 +4956,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
+      ],
+      "Open shortcut cheat sheet": [
+        "Open de shortcut voor cheat sheet"
       ],
       "or discover other features:": [
         "of andere functies ontdekken:"
@@ -5452,6 +5489,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } opdracht gevonden.",
+        "${ filteredList.length } opdrachten gevonden."
+      ],
       "Selected color:": [
         "Geselecteerde kleur:"
       ]
@@ -5559,6 +5600,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Nieuw event aanmaken"
+      ],
+      "Day view": [
+        "Dagweergave"
+      ],
+      "Month view": [
+        "Maandweergave"
+      ],
+      "Next period": [
+        "Volgende periode"
+      ],
+      "Open quick actions menu": [
+        "Open snelle acties menu"
+      ],
+      "Open this modal": [
+        "Open dit hulpvenster"
+      ],
+      "Previous period": [
+        "Vorige periode"
+      ],
+      "Search events": [
+        "Zoek events"
+      ],
+      "Today": [
+        "Vandaag"
+      ],
+      "Week view": [
+        "Weekweergave"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Basisacties"
+      ],
+      "View options": [
+        "Weergaveopties"
       ]
     },
     "Knowledge base link label": {
@@ -5795,6 +5876,12 @@
       ],
       "Import to:": [
         "Importeren naar:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Toetsenbordsneltoets: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Toetsenbord snelkoppelingen"
       ],
       "Label messages as": [
         "Berichten labelen als"
@@ -8044,6 +8131,9 @@
       "Filter groups": [
         "Filter groepen"
       ],
+      "Filter quick actions": [
+        "Snelle acties filteren"
+      ],
       "First name": [
         "Voornaam"
       ],
@@ -9416,6 +9506,9 @@
       "Invitation sent and participants added to all events": [
         "Uitnodiging verstuurd en deelnemers toegevoegd aan alle afspraken"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Sneltoetsvoorkeuren bijgewerkt"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Laatst gewijzigde aliassen opgeslagen in uw oudste kluis"
       ],
@@ -9598,6 +9691,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } sneltoetsen"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
