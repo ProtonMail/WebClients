@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';
+import { useOpenDocument } from '../_documents';
 import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './usePublicSession';
 
 /**
@@ -18,9 +18,10 @@ import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './us
  */
 export default function usePublicAuth(token: string, urlPassword: string) {
     const { createNotification } = useNotifications();
+    const { openDocumentWindow } = useOpenDocument();
 
     const { hasSession, initHandshake, initSession } = usePublicSession();
-    const [isLoading, withLoading] = useLoading(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<[unknown, string]>([, '']);
 
     const [isPasswordNeeded, setIsPasswordNeeded] = useState(false);
@@ -66,30 +67,43 @@ export default function usePublicAuth(token: string, urlPassword: string) {
         if (hasSession) {
             return;
         }
-
-        void withLoading(
-            initHandshake(token)
-                .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
-                    if (isLegacySharedUrl) {
-                        setIsLegacy(true);
-                    }
-                    if (hasCustomPassword) {
-                        setIsPasswordNeeded(true);
-                        return;
-                    }
-                    return initSession(token, urlPassword, handshakeInfo).catch((error) => {
+        setIsLoading(true);
+        initHandshake(token)
+            .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
+                if (handshakeInfo.IsDoc) {
+                    openDocumentWindow({
+                        mode: 'open-url',
+                        token,
+                        urlPassword,
+                        window,
+                    });
+                    return;
+                }
+                if (isLegacySharedUrl) {
+                    setIsLegacy(true);
+                }
+                if (hasCustomPassword) {
+                    setIsPasswordNeeded(true);
+                    setIsLoading(false);
+                    return;
+                }
+                return initSession(token, urlPassword, handshakeInfo)
+                    .catch((error) => {
                         const apiError = getApiError(error);
                         if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMS) {
                             setIsPasswordNeeded(true);
                             return;
                         }
                         throw error;
+                    })
+                    .finally(() => {
+                        setIsLoading(false);
                     });
-                })
-                .catch((error) => {
-                    handleInitialLoadError(error);
-                })
-        );
+            })
+            .catch((error) => {
+                handleInitialLoadError(error);
+                setIsLoading(false);
+            });
     }, [hasSession]);
 
     const submitPassword = async (customPassword: string) => {
