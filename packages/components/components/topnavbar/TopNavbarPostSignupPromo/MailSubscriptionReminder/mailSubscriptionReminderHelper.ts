@@ -32,7 +32,7 @@ export const getIsUserEligibleForSubscriptionReminder = ({
     const today = new Date();
 
     const daysSinceOneDollarOffer = mailOfferState?.offerStartDate
-        ? differenceInDays(today, fromUnixTime(mailOfferState.offerStartDate))
+        ? differenceInDays(today, fromUnixTime(mailOfferState?.offerStartDate))
         : 0;
 
     const lastReminderDate = lastReminderTimestamp ? fromUnixTime(lastReminderTimestamp) : today;

@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import {
     type TelemetryEvents,
-    TelemetryMailDrivePostSignupOneDollar,
+    TelemetryMailDrivePostSignupOneDollarEvents,
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
@@ -32,31 +32,31 @@ export const useMailPostSignupOneDollarTelemetry = () => {
     };
 
     const sendReportAutomaticModalOpen = (daysSinceOffer: number) => {
-        sendReport(TelemetryMailDrivePostSignupOneDollar.automaticModalOpen, {
+        sendReport(TelemetryMailDrivePostSignupOneDollarEvents.automaticModalOpen, {
             daysSinceOffer: getOfferAgeTelemetryCategory(daysSinceOffer),
         });
     };
 
     const sendReportClickUpsellButton = (daysSinceOffer: number) => {
-        sendReport(TelemetryMailDrivePostSignupOneDollar.clickUpsellButton, {
+        sendReport(TelemetryMailDrivePostSignupOneDollarEvents.clickUpsellButton, {
             daysSinceOffer: getOfferAgeTelemetryCategory(daysSinceOffer),
         });
     };
 
     const sendReportClickTopNavbar = (daysSinceOffer: number) => {
-        sendReport(TelemetryMailDrivePostSignupOneDollar.clickTopNavbar, {
+        sendReport(TelemetryMailDrivePostSignupOneDollarEvents.clickTopNavbar, {
             daysSinceOffer: getOfferAgeTelemetryCategory(daysSinceOffer),
         });
     };
 
     const sendReportCloseOffer = (daysSinceOffer: number) => {
-        sendReport(TelemetryMailDrivePostSignupOneDollar.closeOffer, {
+        sendReport(TelemetryMailDrivePostSignupOneDollarEvents.closeOffer, {
             daysSinceOffer: getOfferAgeTelemetryCategory(daysSinceOffer),
         });
     };
 
     const sendReportUserSubscribed = (daysSinceOffer: number) => {
-        sendReport(TelemetryMailDrivePostSignupOneDollar.userSubscribed, {
+        sendReport(TelemetryMailDrivePostSignupOneDollarEvents.userSubscribed, {
             daysSinceOffer: getOfferAgeTelemetryCategory(daysSinceOffer),
         });
     };

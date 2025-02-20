@@ -3,7 +3,8 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import { CYCLE } from '@proton/payments';
 import type { ADDON_NAMES, PLANS } from '@proton/payments';
 
-interface Props extends Pick<OpenCallbackProps, 'step' | 'cycle' | 'coupon' | 'upsellRef'> {
+interface Props
+    extends Pick<OpenCallbackProps, 'step' | 'cycle' | 'coupon' | 'upsellRef' | 'maximumCycle' | 'minimumCycle'> {
     plan?: PLANS | ADDON_NAMES;
 }
 
@@ -12,7 +13,8 @@ const getUpsellSubscriptionModalConfig = (options: Props): OpenCallbackProps => 
         coupon: options.coupon,
         cycle: options.cycle || CYCLE.YEARLY,
         disablePlanSelection: options.step === SUBSCRIPTION_STEPS.CHECKOUT,
-        maximumCycle: CYCLE.YEARLY,
+        maximumCycle: options.maximumCycle || CYCLE.YEARLY,
+        minimumCycle: options.minimumCycle,
         metrics: {
             source: 'upsells',
         },
