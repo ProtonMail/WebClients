@@ -1146,6 +1146,9 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Tetapkan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan"
       ],
+      "Set as album cover": [
+        "Pasang sebagai sampul album"
+      ],
       "Set as default": [
         "Atur sebagai bawaan"
       ],
@@ -3972,6 +3975,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Identitas dan alamat > Domain pendek (pm.me)"
       ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
@@ -8528,9 +8534,6 @@
       "Toolbar": [
         "Bilah Alat"
       ],
-      "Type a command...": [
-        "Masukkan perintah..."
-      ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
       ],
@@ -9427,6 +9430,9 @@
       ],
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
+      ],
+      "Dedicated servers optimized for streaming": [
+        "Server khusus yang dioptimalkan untuk streaming"
       ],
       "Desktop app": [
         "Aplikasi desktop"
@@ -10790,9 +10796,6 @@
       ],
       "To": [
         "Kepada"
-      ],
-      "Type a command…": [
-        "Masukkan perintah…"
       ],
       "Type text or keyword": [
         "Ketik teks atau kata kunci"
@@ -12596,9 +12599,6 @@
       "${ feature } is now active": [
         "${ feature } kini telah aktif"
       ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Pintasan Keyboard ${ MAIL_APP_NAME }"
-      ],
       "${ unreads } unread message": [
         "${ unreads } pesan yang belum dibaca"
       ],
@@ -13628,6 +13628,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
+      "2 consecutive dots are not allowed": [
+        "Alias tidak dapat mengandung 2 titik secara berurutan"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Apakah Anda yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
@@ -13639,6 +13642,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Apakah Anda yakin ingin menghapus kontak ini secara permanen?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Alias tidak dapat dimulai dengan titik"
+      ],
+      "Cannot contain a dot at the end": [
+        "Alias tidak dapat diakhiri dengan titik"
       ],
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
@@ -13660,6 +13669,9 @@
       ],
       "Name is required": [
         "Nama dibutuhkan"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."

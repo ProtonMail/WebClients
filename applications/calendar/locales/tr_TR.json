@@ -811,6 +811,11 @@
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "İleti arama"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Bağlantıya sahip olan herkes takviminize erişebilir"
@@ -1579,6 +1584,32 @@
       ],
       "strawberry": [
         "çilek"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Gün görünümü"
+      ],
+      "Month view": [
+        "Ay görünümü"
+      ],
+      "New event": [
+        "Yeni etkinlik"
+      ],
+      "Next period": [
+        "Sonraki dönem"
+      ],
+      "Previous period": [
+        "Önceki dönem"
+      ],
+      "Search events": [
+        "Etkinlikleri ara"
+      ],
+      "Today": [
+        "Bugün"
+      ],
+      "Week view": [
+        "Hafta görünümü"
       ]
     },
     "Confirm modal title": {
@@ -2936,7 +2967,7 @@
         "Bazı gruplarda hiçbir kişi yok: ${ list }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } sizin kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa alan adı (pm.me) bölümüne gidin"
+        "${ user.Name } kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
@@ -4742,6 +4773,9 @@
       "High Priority": [
         "Yüksek öncelik"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Klavye kısayolları etkinleştirilmişse hızlı eylemler için veya farklı görünümlere atlamak için aşağıdaki tuşları kullanabilirsiniz. ${ metaKey } + K her zaman etkindir."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
@@ -4922,6 +4956,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
+      ],
+      "Open shortcut cheat sheet": [
+        "Kısayol rehberini aç"
       ],
       "or discover other features:": [
         "veya diğer özellikleri keşfedin:"
@@ -5452,6 +5489,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } komut bulundu.",
+        "${ filteredList.length } komut bulundu."
+      ],
       "Selected color:": [
         "Seçilmiş renk:"
       ]
@@ -5559,6 +5600,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Yeni etkinlik oluştur"
+      ],
+      "Day view": [
+        "Gün görünümü"
+      ],
+      "Month view": [
+        "Ay görünümü"
+      ],
+      "Next period": [
+        "Sonraki dönem"
+      ],
+      "Open quick actions menu": [
+        "Hızlı eylemler menüsünü açın"
+      ],
+      "Open this modal": [
+        "Bu pencereyi aç"
+      ],
+      "Previous period": [
+        "Önceki dönem"
+      ],
+      "Search events": [
+        "Etkinlikleri ara"
+      ],
+      "Today": [
+        "Bugün"
+      ],
+      "Week view": [
+        "Hafta görünümü"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Temel işlemler"
+      ],
+      "View options": [
+        "Seçenekleri görüntüle"
       ]
     },
     "Knowledge base link label": {
@@ -5795,6 +5876,12 @@
       ],
       "Import to:": [
         "Şunun içine aktar:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klavye kısayolu: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Klavye kısayolları"
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
@@ -8044,6 +8131,9 @@
       "Filter groups": [
         "Grupları süz"
       ],
+      "Filter quick actions": [
+        "Hızlı eylemleri filtrele"
+      ],
       "First name": [
         "Ad"
       ],
@@ -9416,6 +9506,9 @@
       "Invitation sent and participants added to all events": [
         "Davet gönderildi ve katılımcılar tüm etkinliklere eklendi"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Klavye kısayol ayarları güncellendi"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "En eski kasanızda bulunan son değiştirilmiş takma adlar"
       ],
@@ -9598,6 +9691,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } klavye kısayolları"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-posta adresi",
         "${ emailsCount } e-posta adresi"

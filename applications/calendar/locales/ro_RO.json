@@ -815,6 +815,11 @@
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Căutare mesaje"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Oricine are legătura vă poate vedea calendarul"
@@ -1594,6 +1599,32 @@
       ],
       "strawberry": [
         "căpșună"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Afișare zi"
+      ],
+      "Month view": [
+        "Afișare lună"
+      ],
+      "New event": [
+        "Eveniment nou"
+      ],
+      "Next period": [
+        "Perioada următoare"
+      ],
+      "Previous period": [
+        "Perioada anterioară"
+      ],
+      "Search events": [
+        "Căutare evenimente"
+      ],
+      "Today": [
+        "Astăzi"
+      ],
+      "Week view": [
+        "Afișare săptămână"
       ]
     },
     "Confirm modal title": {
@@ -4815,6 +4846,9 @@
       "High Priority": [
         "Prioritate înaltă"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Dacă sunt activate combinațiile de taste, puteți utiliza următoarele taste pentru acțiuni rapide sau pentru a trece la diferite vizualizări. ${ metaKey } + K este întotdeauna activată."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
@@ -4996,6 +5030,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
+      ],
+      "Open shortcut cheat sheet": [
+        "Deschidere listă combinații de taste"
       ],
       "or discover other features:": [
         "sau descoperiți alte funcții:"
@@ -5531,6 +5568,11 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "S-a ${ filteredList.length } comandă.",
+        "S-au găsit ${ filteredList.length } comenzi.",
+        "S-au găsit ${ filteredList.length } de comenzi."
+      ],
       "Selected color:": [
         "Culoare selectată:"
       ]
@@ -5641,6 +5683,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Creare eveniment"
+      ],
+      "Day view": [
+        "Afișare zi"
+      ],
+      "Month view": [
+        "Afișare lună"
+      ],
+      "Next period": [
+        "Perioada următoare"
+      ],
+      "Open quick actions menu": [
+        "Deschidere meniu acțiuni rapide"
+      ],
+      "Open this modal": [
+        "Deschidere ca fereastră"
+      ],
+      "Previous period": [
+        "Perioada anterioară"
+      ],
+      "Search events": [
+        "Căutare evenimente"
+      ],
+      "Today": [
+        "Astăzi"
+      ],
+      "Week view": [
+        "Afișare săptămână"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Acțiuni de bază"
+      ],
+      "View options": [
+        "Opțiuni de afișare"
       ]
     },
     "Knowledge base link label": {
@@ -5878,6 +5960,12 @@
       ],
       "Import to:": [
         "Importare în:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Combinații taste: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Combinații de taste"
       ],
       "Label messages as": [
         "Etichetare mesaje cu"
@@ -8190,6 +8278,9 @@
       "Filter groups": [
         "Filtrare grupuri"
       ],
+      "Filter quick actions": [
+        "Filtrare acțiuni rapide"
+      ],
       "First name": [
         "Prenume"
       ],
@@ -9598,6 +9689,9 @@
       "Invitation sent and participants added to all events": [
         "Invitația a fost trimisă și participanții adăugați la toate evenimentele."
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferințele combinațiilor de taste au fost actualizate"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Ultimele aliasuri modificate stocate în cel mai vechi seif"
       ],
@@ -9786,6 +9880,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Combinații de taste ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adresă de e-mail",
         "${ emailsCount } adrese de e-mail",

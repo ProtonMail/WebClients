@@ -103,8 +103,14 @@
       "Cancel": [
         "Скасаваць"
       ],
+      "Cancel email change": [
+        "Скасаваць змяненні электроннай пошты"
+      ],
       "Change": [
         "Змяніць"
+      ],
+      "Change email": [
+        "Змяніць эл. пошту"
       ],
       "Check DNS": [
         "Праверыць DNS"
@@ -936,6 +942,12 @@
       "Failed to block the contact": [
         "Не ўдалося заблакіраваць кантакт"
       ],
+      "Failed to cancel mailbox change": [
+        "Не ўдалося скасаваць змяненні паштовай скрыні"
+      ],
+      "Failed to change mailbox": [
+        "Не ўдалося змяніць паштовую скрыню"
+      ],
       "Failed to create domain": [
         "Не ўдалося стварыць дамен"
       ],
@@ -1442,9 +1454,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "У мэтах бяспекі вы можаце выдаліць файл CSV, які змяшчае вашы паролі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Неўзабаве з'явіцца функцыя кіравання псеўданімамі з SimpleLogin!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Псеўданім паспяхова адключаны. Вы больш не будзеце атрымліваць лісты адпраўленыя на ${ item.aliasEmail }"
       ],
@@ -1648,9 +1657,6 @@
       ],
       "Emptying trash...": [
         "Ачышчэнне сметніцы..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Уключыць бэта-версію ${ PASS_SHORT_APP_NAME }"
       ],
       "Enable auto-locking to secure your data": [
         "Уключыць аўтаматычную блакіроўку для бяспекі вашых даных"
@@ -2253,7 +2259,10 @@
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
-        "Элемент у цяперашні час ні з кім не абагулены. Запрасіце карыстальнікаў, каб абагуліць яго з іншымі."
+        "Элемент у цяперашні час ні з кім не абагулены. Запрасіце ўдзельнікаў, каб абагуліць яго з іншымі."
+      ],
+      "This mailbox will use your previous email.": [
+        "Гэта паштовая скрыня будзе выкарыстоўваць вашу папярэднюю электронную пошту."
       ],
       "This operation is irreversible.": [
         "Гэта аперацыя з'яўляецца незваротнай."
@@ -2290,9 +2299,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Для прагляду імпартаваных даных, націсніце на значок ${ PASS_APP_NAME } у панэлі інструментаў свайго браўзера."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
@@ -2623,9 +2629,6 @@
       "Alias address (disabled)": [
         "Адрас псеўданіма (адключана)"
       ],
-      "Alias management": [
-        "Кіраванне псеўданімамі"
-      ],
       "Aliases": [
         "Псеўданімы"
       ],
@@ -2652,9 +2655,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "${ PASS_APP_NAME } абараняе вашу ідэнтычнасць з дапамогай убудаванай функцыі псеўданіма электроннай пошты, а не толькі захоўвае вашы запісы ўваходу. Кожны раз, калі вы рэгіструеце новы ўліковы запіс у інтэрнэце, ${ PASS_APP_NAME } можа аўтаматычна ствараць псеўданім для захавання вашага сапраўднага адраса электроннай пошты ў абароненым стане. "
-      ],
-      "Beta Access": [
-        "Бэта-доступ"
       ],
       "Biometrics": [
         "Біяметрыя"
@@ -3042,6 +3042,9 @@
       ],
       "New": [
         "Новая"
+      ],
+      "New email": [
+        "Новы ліст"
       ],
       "New vault": [
         "Новае сховішча"
@@ -3715,6 +3718,9 @@
         "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікаў.",
         "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікаў."
       ],
+      "Mailbox change successfully cancelled": [
+        "Змяненні паштовай скрыні паспяхова скасаваны"
+      ],
       "Mailbox successfully deleted": [
         "Паштовая скрыня паспяхова выдалена"
       ],
@@ -3796,6 +3802,12 @@
       ],
       "Breaches detected for": [
         "Выяўлены парушэнні для"
+      ],
+      "Cancel changing your email?": [
+        "Скасаваць змяненні вашай электроннай пошты?"
+      ],
+      "Change mailbox email": [
+        "Змяніць электронную пошту скрыні"
       ],
       "Change your lock method": [
         "Змяніць спосаб блакіроўкі"
@@ -4444,7 +4456,7 @@
         "Гэты элемент у цяперашні час абагулены. Яго выдаленне пазбавіць доступу ўсіх іншых карыстальнікаў."
       ],
       "This item is currently shared. Moving it to another vault will remove access for all other users.": [
-        "Гэты элемент у цяпершані час абагулены. Яго перамяшчэнне пазбавіць доступу ўсіх іншых карыстальнікаў."
+        "Гэты элемент у цяперашні час абагулены. Яго перамяшчэнне пазбавіць доступу ўсіх іншых карыстальнікаў."
       ],
       "Title is required": [
         "Патрабуецца загаловак"

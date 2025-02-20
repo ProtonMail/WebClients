@@ -83,8 +83,14 @@
       "Cancel": [
         "Annulla"
       ],
+      "Cancel email change": [
+        "Annulla la modifica dell'email"
+      ],
       "Change": [
         "Modifica"
+      ],
+      "Change email": [
+        "Modifica email"
       ],
       "Check DNS": [
         "Controlla il DNS"
@@ -859,6 +865,12 @@
       "Failed to block the contact": [
         "Impossibile bloccare il contatto"
       ],
+      "Failed to cancel mailbox change": [
+        "Impossibile annullare la modifica della casella email"
+      ],
+      "Failed to change mailbox": [
+        "Impossibile cambiare la casella mail"
+      ],
       "Failed to create domain": [
         "Creazione del dominio fallita"
       ],
@@ -1356,9 +1368,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Dopo aver importato i tuoi dati, puoi eliminare questo file CSV contenente le tue password per questioni di sicurezza."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Le funzionalità di gestione degli alias di SimpleLogin saranno presto disponibili!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias ​​disabilitato con successo. Non riceverai più email inviate a ${ item.aliasEmail }"
@@ -2128,6 +2137,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Questo elemento non è attualmente condiviso con nessuno. Per condividerlo con qualcuno, invita delle persone."
       ],
+      "This mailbox will use your previous email.": [
+        "Questa casella email utilizzerà il tuo indirizzo email precedente."
+      ],
       "This operation is irreversible.": [
         "Questa operazione è irreversibile."
       ],
@@ -2462,9 +2474,6 @@
       ],
       "Alias address (disabled)": [
         "Indirizzo alias (disabilitato)"
-      ],
-      "Alias management": [
-        "Gestione degli alias"
       ],
       "Aliases": [
         "Alias"
@@ -2843,6 +2852,9 @@
       ],
       "New": [
         "Nuovo"
+      ],
+      "New email": [
+        "Nuova email"
       ],
       "New vault": [
         "Nuova cassaforte"
@@ -3436,6 +3448,9 @@
         "Gli elementi non possono contenere più di ${ share.targetMaxMembers } utente.",
         "Gli elementi non possono contenere più di ${ share.targetMaxMembers } utenti."
       ],
+      "Mailbox change successfully cancelled": [
+        "Modifica della casella di posta annullata"
+      ],
       "Mailbox successfully deleted": [
         "Casella email eliminata correttamente"
       ],
@@ -3503,6 +3518,12 @@
       ],
       "Blocked addresses": [
         "Indirizzi bloccati"
+      ],
+      "Cancel changing your email?": [
+        "Vuoi annullare la modifica della tua email?"
+      ],
+      "Change mailbox email": [
+        "Cambia l'email della casella email"
       ],
       "Change your lock method": [
         "Cambia il metodo di blocco"

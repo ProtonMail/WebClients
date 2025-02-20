@@ -1368,7 +1368,7 @@
     "Calendar settings sidebar": {
       "Add ${ photos.length } photo to": [
         "Dodaj ${ photos.length } zdjęcie do",
-        "Dodaj ${ photos.length } zdjęć do",
+        "Dodaj ${ photos.length } zdjęcia do",
         "Dodaj ${ photos.length } zdjęć do",
         "Dodaj ${ photos.length } zdjęć do"
       ]
@@ -2456,6 +2456,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2537,11 +2542,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5181,7 +5181,7 @@
         "Gotowy, aby dodać zdjęcia?"
       ],
       "Recent": [
-        "Najnowsze"
+        "Ostatnie"
       ],
       "recommended browser": [
         "zalecanej przeglądarki"
@@ -7523,7 +7523,7 @@
         "Split Tunneling (Android i Windows)"
       ],
       "SSO integration": [
-        "Integracja z SSO"
+        "Logowanie SSO"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
@@ -11037,6 +11037,11 @@
         "Dzisiaj"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Dodaj udostępniony plik do ${ DRIVE_APP_NAME }, aby mieć do niego łatwy dostęp."
@@ -11118,11 +11123,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wysłaliśmy zaproszenie do elementu."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Valentine_2025": {

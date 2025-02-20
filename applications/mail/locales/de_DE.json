@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "Wird geladen ${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen"
+      ],
       "Make it friendly": [
         "Freundlicher machen"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "Als Standard festlegen"
-      ],
-      "Set as default mail application": [
-        "Als Standard-E-Mail-Anwendung festlegen"
       ],
       "Set encryption": [
         "Verschlüsselung festlegen"
@@ -3999,6 +3999,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -5886,9 +5889,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kann auch dein Unternehmen schützen."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } ist nicht deine Standard-E-Mail-Anwendung."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } Nachricht konnte nicht verschoben werden.",
         "${ messagesNotAuthorizedToMove } Nachrichten konnten nicht verschoben werden."
@@ -6327,9 +6327,6 @@
       "Default email application": [
         "Standard E-Mail-Anwendung"
       ],
-      "Default mail application": [
-        "Standard-E-Mail-Anwendung"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Wusstest du, dass dein ${ BRAND_NAME }-Konto einen verschlüsselten Cloud-Speicher enthält? Gehe rüber zu ${ DRIVE_APP_NAME } und nutze deinen Speicherplatz optimal. Es ist kostenlos."
       ],
@@ -6731,6 +6728,9 @@
       ],
       "Low Priority": [
         "Niedrige Priorität"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen."
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -7134,7 +7134,7 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Lege ${ MAIL_APP_NAME } als deine Standard-E-Mail-Anwendung für diesen Browser fest. ${ MAIL_APP_NAME } wird automatisch geöffnet, wenn du auf einen E-Mail-Link klickst."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Lege ${ MAIL_APP_NAME } als deine Standard-E-Mail-Anwendung fest. ${ MAIL_APP_NAME } wird automatisch geöffnet, wenn du auf einen E-Mail-Link klickst."
       ],
       "Setting up ${ feature }…": [
@@ -7159,7 +7159,7 @@
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
-        "Pause Nachrichten und lies sie später, damit sie jederzeit oben in deinem Posteingang angezeigt werden."
+        "Pausiere Nachrichten und lies sie später, damit sie jederzeit oben in deinem Posteingang angezeigt werden."
       ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
         "Aufgeschoben bis zum ${ dateString } um ${ formattedTime }"
@@ -8679,9 +8679,6 @@
       ],
       "Toolbar": [
         "Symbolleiste"
-      ],
-      "Type a command...": [
-        "Befehl eingeben..."
       ],
       "Undisclosed Recipients": [
         "Verborgene Empfänger"
@@ -10875,6 +10872,9 @@
       "Filter labels": [
         "Kategorien filtern"
       ],
+      "Filter quick actions": [
+        "Schnellaktionen filtern"
+      ],
       "First name": [
         "Vorname"
       ],
@@ -10982,9 +10982,6 @@
       ],
       "To": [
         "An"
-      ],
-      "Type a command…": [
-        "Befehl eingeben…"
       ],
       "Type text or keyword": [
         "Text oder Schlüsselwort eingeben"
@@ -12853,15 +12850,15 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName }-Tastaturkürzel"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } E-Mail-Adresse",
         "${ emailsCount } E-Mail-Adressen"
       ],
       "${ feature } is now active": [
         "${ feature } ist jetzt aktiv."
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME }-Tastaturkürzel"
       ],
       "${ unreads } unread message": [
         "${ unreads } ungelesene Nachricht",

@@ -83,8 +83,14 @@
       "Cancel": [
         "გაუქმება"
       ],
+      "Cancel email change": [
+        "ელფოსტის ცვლილების გაუქმება"
+      ],
       "Change": [
         "შეცვლა"
+      ],
+      "Change email": [
+        "ელფოსტის შეცვლა"
       ],
       "Check DNS": [
         "DNS-ის შემოწმება"
@@ -841,6 +847,12 @@
       "Failed to block the contact": [
         "კონტაქტის დაბლოკვა ჩავარდა"
       ],
+      "Failed to cancel mailbox change": [
+        "ელფოსტის ცვლილების გაუქმება ჩავარდა"
+      ],
+      "Failed to change mailbox": [
+        "საფოსტო ყუთიშ შეცვლა ჩავარდა"
+      ],
       "Failed to create domain": [
         "დომენის შექმნა ჩავარდა"
       ],
@@ -1338,9 +1350,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "ფსევდონიმების მართვის ფუნქციები SimpleLogin-სგან სულ მალე!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "ფსევდონიმი წარმატებით გაითიშა. ახლა ელფოსტებს, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან, ვეღარ მიიღებთ"
@@ -2098,6 +2107,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "ეს ელემენტი, ამჟამად, გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
       ],
+      "This mailbox will use your previous email.": [
+        "ეს საფოსტო ყუთი თქვენს წინა ელფოსტას გამოიყენებს."
+      ],
       "This operation is irreversible.": [
         "ეს ოპერაცია შეუქცევადია."
       ],
@@ -2429,9 +2441,6 @@
       ],
       "Alias address (disabled)": [
         "ფსევდონიმის მისამართი (გათიშულია)"
-      ],
-      "Alias management": [
-        "ფსევდონიმების მართვა"
       ],
       "Aliases": [
         "ფსევდონიმები"
@@ -2810,6 +2819,9 @@
       ],
       "New": [
         "ახალი"
+      ],
+      "New email": [
+        "ახალი ელფოსტა"
       ],
       "New vault": [
         "ახალი საცავი"
@@ -3403,6 +3415,9 @@
         "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
         "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
       ],
+      "Mailbox change successfully cancelled": [
+        "საფოსტო ყუთის წაშლა წარმატებით გაუქმდა"
+      ],
       "Mailbox successfully deleted": [
         "საფოსტო ყუთი წარმატებით წაიშალა"
       ],
@@ -3470,6 +3485,12 @@
       ],
       "Blocked addresses": [
         "დაბლოკილი მისამართები"
+      ],
+      "Cancel changing your email?": [
+        "გავაუქმო თქვენი ელფოსტის ცვლილება?"
+      ],
+      "Change mailbox email": [
+        "საფოსტო ყუთის ელფოსტის შეცვლა"
       ],
       "Change your lock method": [
         "თქვენი დაბლოკვის მეთოდის შეცვლა"

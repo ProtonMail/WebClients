@@ -810,6 +810,11 @@
         "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Пошук повідомлень"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Будь-хто може переглянути ваш календар за посиланням"
@@ -5005,6 +5010,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Власник одного або кількох ваших довірених ключів позначив їх \"скомпрометованими\". Ми радимо вам \"скасувати довіру\" для цих ключів."
       ],
+      "Open shortcut cheat sheet": [
+        "Відкрити довідку з комбінацій клавіш"
+      ],
       "Organization size": [
         "Розмір організації"
       ],
@@ -5526,6 +5534,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "Знайдено ${ filteredList.length } команду.",
+        "Знайдено ${ filteredList.length } команди.",
+        "Знайдено ${ filteredList.length } команд.",
+        "Знайдено ${ filteredList.length } команд."
+      ],
       "Selected color:": [
         "Вибраний колір:"
       ]
@@ -5636,6 +5650,16 @@
       ],
       "Trusted": [
         "Надійний"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Відкрити це вікно"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Основні дії"
       ]
     },
     "Knowledge base link label": {
@@ -5874,6 +5898,12 @@
       ],
       "Import to:": [
         "Імпортувати до:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Комбінація клавіш: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Комбінації клавіш"
       ],
       "Label messages as": [
         "Позначити повідомлення"
@@ -9574,6 +9604,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Запрошення надіслано та додано учасників до всіх подій"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Налаштування комбінацій клавіш оновлено"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Останні змінені псевдоніми зберігаються у вашому найстарішому сховищі"

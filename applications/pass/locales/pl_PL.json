@@ -106,6 +106,9 @@
       "Change": [
         "Zmień"
       ],
+      "Change email": [
+        "Zmień adres"
+      ],
       "Check DNS": [
         "Sprawdź rekordy DNS"
       ],
@@ -1329,9 +1332,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Funkcja zarządzania aliasami SimpleLogin będzie dostępna wkrótce!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias został wyłączony. Nie będziesz otrzymywać wiadomości wysłanych na adres ${ item.aliasEmail }"
       ],
@@ -1603,7 +1603,7 @@
         "Jak działa monitoring?"
       ],
       "Identity confirmed": [
-        "Tożsamość potwierdzona"
+        "Tożsamość została potwierdzona"
       ],
       "Import in progress:": [
         "Importowanie jest w toku:"
@@ -2405,9 +2405,6 @@
       "Alias address (disabled)": [
         "Alias (wyłączony)"
       ],
-      "Alias management": [
-        "Zarządzanie aliasami"
-      ],
       "Aliases": [
         "Aliasy"
       ],
@@ -2774,6 +2771,9 @@
       "New": [
         "Nowość"
       ],
+      "New email": [
+        "Nowy adres"
+      ],
       "New vault": [
         "Nowy sejf"
       ],
@@ -3125,7 +3125,7 @@
         "Wymagaj uwierzytelniania dwustopniowego w organizacji"
       ],
       "SSO integration": [
-        "Integracja z SSO"
+        "Logowanie SSO"
       ]
     },
     "Notification": {
@@ -4038,7 +4038,7 @@
         "Nie udało się załadować wycieków."
       ],
       "Identity could not be confirmed": [
-        "Nie można potwierdzić tożsamości"
+        "Tożsamość nie może zostać potwierdzona"
       ],
       "Invalid alias prefix": [
         "Przedrostek aliasu jest nieprawidłowy"

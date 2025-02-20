@@ -2509,6 +2509,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Identidade e endereços > Domínio curto (pm.me)."
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Foi alocado todo o espaço de armazenamento. Reduza o armazenamento alocado a outros membros."
       ],
@@ -3757,6 +3760,9 @@
       "Allocated": [
         "Alocado"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permita que os utilizadores se conectem para proteger os servidores partilhados na secção **Países** da aplicação do ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Já foi alocado"
       ],
@@ -4741,6 +4747,10 @@
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } partilhado atualizado"
       ],
+      "Shared server country (${ countriesCount })": [
+        "País com servidor partilhado (${ countriesCount })",
+        "Países com servidor partilhado (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Cofre partilhado apagado"
       ],
@@ -4805,7 +4815,7 @@
       "Symbols (#$&)": [
         "Símbolos (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomendado por Tech Radar Pro com classificação de 4,2 de 5"
       ],
       "Thank you": [
@@ -7586,6 +7596,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Desativar esta opção removerá a capacidade de receber notificações nas aplicações da ${ BRAND_NAME }."
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Durante o seu primeiro mês de utilização de um produto da ${ BRAND_NAME }"
+      ],
       "Email subscriptions": [
         "Subscrições de e-mail"
       ],
@@ -7877,6 +7890,9 @@
       ],
       "Organization identity updated": [
         "A identidade da organização foi atualizada."
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Verifique o seu endereço de e-mail ${ email } para definir a identidade da organização."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9595,47 +9611,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -9924,6 +9899,47 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -11301,6 +11317,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Isto irá revogar a permissão de administrador para gerir a conta deste utilizador."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Para obter direitos de administrador, eles terão que definir uma palavra-passe de backup na próxima vez que iniciarem sessão na ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Para continuar, precisará solicitar permissão do utilizador para aceder aos seus dados ou redefinir a sua palavra-passe."

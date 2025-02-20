@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -4421,6 +4421,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Identidade e endereços > Domínio curto (pm.me)."
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
@@ -6973,11 +6976,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ativar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
       ],
-      "active": [
-        "ativa"
-      ],
       "Active": [
         "Ativo"
+      ],
+      "active": [
+        "ativa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -7078,6 +7081,9 @@
       ],
       "Allow recovery by phone": [
         "Permitir recuperação por telefone"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permita que os utilizadores se conectem para proteger os servidores partilhados na secção **Países** da aplicação do ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Já foi alocado"
@@ -7427,8 +7433,8 @@
       "default email address": [
         "endereço de e-mail padrão"
       ],
-      "Default mail application": [
-        "Aplicação de e-mail predefinida"
+      "Default email application": [
+        "Aplicação de e-mail padrão"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
@@ -7761,6 +7767,18 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se outro administrador alterou esta palavra-passe, terá de lhe solicitar a nova palavra-passe da organização."
+      ],
+      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
+        "Se esta opção estiver desativada, os novos membros da organização precisarão que um administrador crie manualmente o primeiro cofre para eles (via a partilha), para que comecem a criar itens."
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "Se esta opção estiver desativada, somente administradores conseguirão exportar dados."
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "Se esta opção estiver desativada, os membros da organização só poderão partilhar cofres ou itens na organização."
+      ],
+      "If enabled, organization members will be able to share individual items in addition to vaults.": [
+        "Se esta opção estiver ativada, os membros da organização poderão partilhar cada item, para além dos cofres."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Se não for do seu agrado, devolvemos-lhe o seu dinheiro."
@@ -8276,6 +8294,9 @@
       "Or select a particular server:": [
         "Ou selecione um servidor particular:"
       ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Os membros da organização terão de desbloquear o ${ PASS_APP_NAME } com a sua palavra-passe ou código PIN, etc."
+      ],
       "Organization size": [
         "Tamanho da organização"
       ],
@@ -8625,7 +8646,7 @@
       "Session timed out": [
         "A sessão expirou."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Defina o ${ MAIL_APP_NAME } como a sua aplicação de e-mail predefinida. O ${ MAIL_APP_NAME } será aberto automaticamente quando clicar numa ligação de e-mail."
       ],
       "Set recovery phrase": [
@@ -8654,6 +8675,10 @@
       ],
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } partilhado atualizado"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "País com servidor partilhado (${ countriesCount })",
+        "Países com servidor partilhado (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Cofre partilhado apagado"
@@ -8764,7 +8789,7 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronize e gire ficheiros com a aplicação ${ DRIVE_APP_NAME } . Crie e partilhe documentos no ${ DOCS_APP_NAME }e armazene-os de forma segura. Tudo em ${ ios }, ${ android } e ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomendado por Tech Radar Pro com classificação de 4,2 de 5"
       ],
       "Temporarily unavailable. Please check back later.": [
@@ -10238,6 +10263,15 @@
       "Allow": [
         "Endereços permitidos"
       ],
+      "Allow all users to create vaults": [
+        "Permitir que todos os utilizadores criem cofres"
+      ],
+      "Allow data export for all users": [
+        "Permitir a exportação de dados para todos os utilizadores"
+      ],
+      "Allow individual item sharing": [
+        "Permitir a partilha de cada item"
+      ],
       "Allow memorable passwords": [
         "Permitir as palavras-passe memoráveis"
       ],
@@ -10258,6 +10292,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Permitir a recuperação com um dispositivo fiável"
+      ],
+      "Allow sharing outside the organization": [
+        "Permitir a partilha fora da organização"
       ],
       "Allowed domain": [
         "Domínio permitido"
@@ -12740,6 +12777,17 @@
         "Gestão de equipa"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -12848,17 +12896,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -13286,6 +13323,9 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Desativar esta opção removerá a capacidade de receber notificações nas aplicações da ${ BRAND_NAME }."
+      ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Durante o seu primeiro mês de utilização de um produto da ${ BRAND_NAME }"
       ],
       "Email subscriptions": [
         "Subscrições de e-mail"
@@ -13907,6 +13947,9 @@
       ],
       "Organization identity updated": [
         "A identidade da organização foi atualizada."
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Verifique o seu endereço de e-mail ${ email } para definir a identidade da organização."
       ]
     },
     "OS compatibility": {
@@ -16708,6 +16751,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -16996,47 +17080,6 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -17543,9 +17586,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Ferramenta de exportação ${ MAIL_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } Atalhos de teclado"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Relatório de monitorização do ${ PASS_SHORT_APP_NAME }"
@@ -19433,6 +19473,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Isto irá revogar a permissão de administrador para gerir a conta deste utilizador."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Para obter direitos de administrador, eles terão que definir uma palavra-passe de backup na próxima vez que iniciarem sessão na ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Para continuar, precisará solicitar permissão do utilizador para aceder aos seus dados ou redefinir a sua palavra-passe."

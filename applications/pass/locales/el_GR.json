@@ -103,8 +103,14 @@
       "Cancel": [
         "Ακύρωση"
       ],
+      "Cancel email change": [
+        "Ακύρωση αλλαγής email"
+      ],
       "Change": [
         "Αλλαγή"
+      ],
+      "Change email": [
+        "Αλλαγή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
       "Check DNS": [
         "Έλεγχος DNS"
@@ -894,6 +900,12 @@
       "Failed to block the contact": [
         "Αποτυχία αποκλεισμού της επαφής"
       ],
+      "Failed to cancel mailbox change": [
+        "Αποτυχία ακύρωσης αλλαγής γραμματοκιβωτίου"
+      ],
+      "Failed to change mailbox": [
+        "Αποτυχία αλλαγής γραμματοκιβωτίου"
+      ],
       "Failed to create domain": [
         "Αποτυχία δημιουργίας τομέα"
       ],
@@ -1369,9 +1381,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Οι δυνατότητες διαχείρισης ψευδωνύμων από το SimpleLogin έρχονται σύντομα!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Το ψευδώνυμο απενεργοποιήθηκε με επιτυχία. Δε θα λαμβάνετε πλέον μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ item.aliasEmail }"
@@ -2162,6 +2171,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτό το στοιχείο δεν είναι προς το παρόν κοινόχρηστο με κανέναν. Προσκαλέστε άτομα να το μοιράστε με άλλους."
       ],
+      "This mailbox will use your previous email.": [
+        "Αυτό το γραμματοκιβώτιο θα χρησιμοποιήσει το προηγούμενο email σας."
+      ],
       "This operation is irreversible.": [
         "Αυτή η λειτουργία είναι μην αναστρέψιμη."
       ],
@@ -2353,7 +2365,7 @@
         "Είστε προσκεκλημένοι σε μια κρύπτη."
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "Ο λογαριασμός σας έχει περιοριστεί επειδή ο οργανισμός σας έχει επιβάλλει έλεγχο ταυτότητας δύο παραγόντων. Παρακαλώ ενεργοποιήστε τον έλεγχο ταυτότητας δύο παραγόντων στις δικές σας Ρυθμίσεις Λογαριασμού ή επικοινωνήστε με τον διαχειριστή σας."
+        "Ο λογαριασμός σας έχει περιοριστεί επειδή ο οργανισμός σας έχει επιβάλλει έλεγχο ταυτότητας δύο παραγόντων. Παρακαλούμε ενεργοποιήστε τον έλεγχο ταυτότητας δύο παραγόντων στις δικές σας Ρυθμίσεις Λογαριασμού ή επικοινωνήστε με τον διαχειριστή σας."
       ],
       "your domain": [
         "ο τομέας σας"
@@ -2491,9 +2503,6 @@
       ],
       "Alias address (disabled)": [
         "Διεύθυνση ψευδωνύμου (απενεργοποιημένη)"
-      ],
-      "Alias management": [
-        "Διαχείρισης ψευδωνύμων"
       ],
       "Aliases": [
         "Ψευδώνυμα"
@@ -2863,6 +2872,9 @@
       ],
       "New": [
         "Νέο"
+      ],
+      "New email": [
+        "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "New vault": [
         "Νέα κρύπτη"
@@ -3480,6 +3492,9 @@
         "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστη.",
         "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστες."
       ],
+      "Mailbox change successfully cancelled": [
+        "Η αλλαγή γραμματοκιβωτίου ακυρώθηκε με επιτυχία"
+      ],
       "Mailbox successfully deleted": [
         "Το γραμματοκιβώτιο διαγράφηκε με επιτυχία"
       ],
@@ -3559,6 +3574,12 @@
       ],
       "Breaches detected for": [
         "Εντοπίστηκαν παραβιάσεις για"
+      ],
+      "Cancel changing your email?": [
+        "Ακύρωση αλλαγής του email σας;"
+      ],
+      "Change mailbox email": [
+        "Αλλαγή email γραμματοκιβωτίου"
       ],
       "Change your lock method": [
         "Αλλάξτε τον τρόπο κλειδώματος"

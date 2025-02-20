@@ -103,8 +103,14 @@
       "Cancel": [
         "Annulla"
       ],
+      "Cancel email change": [
+        "Annulla la modifica dell'email"
+      ],
       "Change": [
         "Modifica"
+      ],
+      "Change email": [
+        "Modifica email"
       ],
       "Check DNS": [
         "Controlla il DNS"
@@ -926,6 +932,12 @@
       "Failed to block the contact": [
         "Impossibile bloccare il contatto"
       ],
+      "Failed to cancel mailbox change": [
+        "Impossibile annullare la modifica della casella email"
+      ],
+      "Failed to change mailbox": [
+        "Impossibile cambiare la casella mail"
+      ],
       "Failed to create domain": [
         "Creazione del dominio fallita"
       ],
@@ -1402,9 +1414,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Dopo aver importato i tuoi dati, puoi eliminare questo file CSV contenente le tue password per questioni di sicurezza."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Le funzionalità di gestione degli alias di SimpleLogin saranno presto disponibili!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias ​​disabilitato con successo. Non riceverai più email inviate a ${ item.aliasEmail }"
       ],
@@ -1608,9 +1617,6 @@
       ],
       "Emptying trash...": [
         "Svuotamento del cestino in corso"
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Abilita la versione beta di ${ PASS_SHORT_APP_NAME }"
       ],
       "Enable auto-locking to secure your data": [
         "Abilita il blocco automatico per proteggere i tuoi dati"
@@ -2197,6 +2203,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Questo elemento non è attualmente condiviso con nessuno. Per condividerlo con qualcuno, invita delle persone."
       ],
+      "This mailbox will use your previous email.": [
+        "Questa casella email utilizzerà il tuo indirizzo email precedente."
+      ],
       "This operation is irreversible.": [
         "Questa operazione è irreversibile."
       ],
@@ -2232,9 +2241,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per controllare i tuoi dati importati, clicca sull'icona di ${ PASS_APP_NAME } nella barra degli strumenti del tuo browser."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
       ],
       "Unable to copy to clipboard": [
         "Impossibile copiare negli appunti"
@@ -2533,9 +2539,6 @@
       "Alias address (disabled)": [
         "Indirizzo alias (disabilitato)"
       ],
-      "Alias management": [
-        "Gestione degli alias"
-      ],
       "Aliases": [
         "Alias"
       ],
@@ -2562,9 +2565,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Oltre a memorizzare i tuoi dati di accesso, ${ PASS_APP_NAME } protegge la tua identità con una funzione di alias email integrata. Ogni volta che crei un nuovo account online, ${ PASS_APP_NAME } può creare automaticamente un alias per mantenere protetto il tuo indirizzo email effettivo. "
-      ],
-      "Beta Access": [
-        "Accesso beta"
       ],
       "Biometrics": [
         "Biometria"
@@ -2952,6 +2952,9 @@
       ],
       "New": [
         "Nuovo"
+      ],
+      "New email": [
+        "Nuova email"
       ],
       "New vault": [
         "Nuova cassaforte"
@@ -3619,6 +3622,9 @@
         "Gli elementi non possono contenere più di ${ share.targetMaxMembers } utente.",
         "Gli elementi non possono contenere più di ${ share.targetMaxMembers } utenti."
       ],
+      "Mailbox change successfully cancelled": [
+        "Modifica della casella di posta annullata"
+      ],
       "Mailbox successfully deleted": [
         "Casella email eliminata correttamente"
       ],
@@ -3698,6 +3704,12 @@
       ],
       "Breaches detected for": [
         "Violazioni di dati rilevate per"
+      ],
+      "Cancel changing your email?": [
+        "Vuoi annullare la modifica della tua email?"
+      ],
+      "Change mailbox email": [
+        "Cambia l'email della casella email"
       ],
       "Change your lock method": [
         "Cambia il metodo di blocco"

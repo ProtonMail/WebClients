@@ -106,6 +106,9 @@
       "Change": [
         "Zmień"
       ],
+      "Change email": [
+        "Zmień adres"
+      ],
       "Check DNS": [
         "Sprawdź rekordy DNS"
       ],
@@ -1361,9 +1364,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Funkcja zarządzania aliasami SimpleLogin będzie dostępna wkrótce!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias został wyłączony. Nie będziesz otrzymywać wiadomości wysłanych na adres ${ item.aliasEmail }"
       ],
@@ -1538,9 +1538,6 @@
       "Emptying trash...": [
         "Opróżnianie Kosza..."
       ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Włącz ${ PASS_SHORT_APP_NAME } w wersji beta"
-      ],
       "Enable auto-locking to secure your data": [
         "Włącz automatyczną blokadę, aby chronić dane"
       ],
@@ -1635,7 +1632,7 @@
         "Jak działa monitoring?"
       ],
       "Identity confirmed": [
-        "Tożsamość potwierdzona"
+        "Tożsamość została potwierdzona"
       ],
       "Import in progress:": [
         "Importowanie jest w toku:"
@@ -2129,9 +2126,6 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Kliknij ikonę ${ PASS_APP_NAME } na pasku narzędzi przeglądarki, aby przejrzeć zaimportowane dane."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
-      ],
       "Unable to copy to clipboard": [
         "Nie można skopiować do schowka"
       ],
@@ -2446,9 +2440,6 @@
       "Alias address (disabled)": [
         "Alias (wyłączony)"
       ],
-      "Alias management": [
-        "Zarządzanie aliasami"
-      ],
       "Aliases": [
         "Aliasy"
       ],
@@ -2475,9 +2466,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Poza przechowywaniem loginów ${ PASS_APP_NAME } chroni Twoją tożsamość dzięki zintegrowanej funkcji aliasów e-mail. Za każdym razem, gdy rejestrujesz nowe konto online, ${ PASS_APP_NAME } może automatycznie utworzyć alias, aby chronić Twój rzeczywisty adres e-mail."
-      ],
-      "Beta Access": [
-        "Dostęp beta"
       ],
       "Biometrics": [
         "Biometria"
@@ -2862,6 +2850,9 @@
       ],
       "New": [
         "Nowość"
+      ],
+      "New email": [
+        "Nowy adres"
       ],
       "New vault": [
         "Nowy sejf"
@@ -3264,7 +3255,7 @@
         "Wymagaj uwierzytelniania dwustopniowego w organizacji"
       ],
       "SSO integration": [
-        "Integracja z SSO"
+        "Logowanie SSO"
       ]
     },
     "Notification": {
@@ -4177,7 +4168,7 @@
         "Nie udało się załadować wycieków."
       ],
       "Identity could not be confirmed": [
-        "Nie można potwierdzić tożsamości"
+        "Tożsamość nie może zostać potwierdzona"
       ],
       "Invalid alias prefix": [
         "Przedrostek aliasu jest nieprawidłowy"
