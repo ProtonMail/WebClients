@@ -17,6 +17,7 @@ export enum TelemetryMeasurementGroups {
     keyTransparency = 'any.web.key_transparency',
     subscriptionModal = 'any.web.subscription_modal',
     mailOnboarding = 'mail.web.onboarding',
+    paidUsersNudge = 'any.web.paid_users_nudge',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
     mailSnooze = 'mail.web.snooze',
@@ -70,14 +71,6 @@ export enum TelemetryMailTrial2024UpsellModal {
     noThanks = 'no_thanks',
     closeModal = 'close_modal',
     upsell = 'upsell',
-}
-
-export enum TelemetryMailDrivePostSignupOneDollar {
-    automaticModalOpen = 'automatic_modal_open',
-    clickUpsellButton = 'click_upsell_button',
-    clickTopNavbar = 'click_top_navbar',
-    closeOffer = 'close_offer',
-    userSubscribed = 'user_subscribed',
 }
 
 export enum TelemetryMailPagingControlsEvents {
@@ -282,6 +275,23 @@ export enum TelemetryEncryptedSearchEvents {
     switch_search_type = 'switch_search_type',
 }
 
+// Offers telemetry events
+export enum TelemetryMailDrivePostSignupOneDollarEvents {
+    automaticModalOpen = 'automatic_modal_open',
+    clickUpsellButton = 'click_upsell_button',
+    clickTopNavbar = 'click_top_navbar',
+    closeOffer = 'close_offer',
+    userSubscribed = 'user_subscribed',
+}
+
+export enum TelemetryPaidUsersNudge {
+    clickUpsellButton = 'click_upsell_button',
+    clickTopNavbar = 'click_top_navbar',
+    closeOffer = 'close_offer',
+    userSubscribed = 'user_subscribed',
+    clickHideOffer = 'click_hide_offer',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -296,7 +306,6 @@ export type TelemetryEvents =
     | TelemetryMailSelectAllEvents
     | TelemetryMailComposerAssistantEvents
     | TelemetryMailOnboardingEvents
-    | TelemetryMailDrivePostSignupOneDollar
     | TelemetryMailPagingControlsEvents
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
@@ -314,7 +323,9 @@ export type TelemetryEvents =
     | TelemetryDocsEvents
     | TelemetryCalendarVideoConferencing
     | TelemetryEncryptedSearchEvents
-    | TelemetryPostSubscriptionTourEvents;
+    | TelemetryPostSubscriptionTourEvents
+    | TelemetryMailDrivePostSignupOneDollarEvents
+    | TelemetryPaidUsersNudge;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
