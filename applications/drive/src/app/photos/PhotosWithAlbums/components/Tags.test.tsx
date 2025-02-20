@@ -6,7 +6,7 @@ import { PhotosTags, type PhotosTagsProps } from './Tags';
 
 describe('PhotosTags', () => {
     const defaultProps: PhotosTagsProps = {
-        selectedTag: [PhotoTag.All],
+        selectedTags: [PhotoTag.All],
         tags: [PhotoTag.All, PhotoTag.Favorites, PhotoTag.Screenshots, PhotoTag.Videos],
         onTagSelect: jest.fn(),
     };
@@ -60,7 +60,7 @@ describe('PhotosTags', () => {
     it('shows selected state correctly', () => {
         const props = {
             ...defaultProps,
-            selectedTag: [PhotoTag.Favorites],
+            selectedTags: [PhotoTag.Favorites],
         };
 
         render(<PhotosTags {...props} />);
