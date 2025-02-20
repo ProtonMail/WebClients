@@ -4,14 +4,7 @@ import { addDays, addSeconds, format, fromUnixTime, getUnixTime, isEqual, nextMo
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    DropdownMenu,
-    DropdownMenuButton,
-    SimpleDropdown,
-    UpsellModal,
-    useMailUpsellConfig,
-    useModalState,
-} from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown, UpsellModal, useModalState } from '@proton/components';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -173,8 +166,6 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
 
         const composer = useMailSelector((store) => selectComposer(store, composerID));
 
-        const upsellConfig = useMailUpsellConfig({ upsellRef });
-
         return (
             <>
                 <SimpleDropdown
@@ -202,13 +193,13 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                 {renderUpsellModal && (
                     <UpsellModal
                         data-testid="composer:schedule-send:upsell-modal"
-                        titleModal={c('Title').t`Schedule now, send later`}
+                        title={c('Title').t`Schedule now, send later`}
                         description={c('Description')
                             .t`Don’t want to send your email right now? Schedule it for exactly the right time.`}
                         modalProps={upsellModalProps}
                         illustration={scheduleSendImg}
                         sourceEvent="BUTTON_SCHEDULE_SEND"
-                        {...upsellConfig}
+                        upsellRef={upsellRef}
                     />
                 )}
             </>

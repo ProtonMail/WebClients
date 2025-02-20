@@ -1,7 +1,6 @@
 import './typings/css.d';
 import './typings/index.d';
 
-export { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
 export * from './components/addressesAutocomplete/helper';
