@@ -76,6 +76,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                             inputClassName="color-norm p-0 rounded-none"
                                             placeholder="https://"
                                             onKeyDown={onKeyEnter}
+                                            data-protonpass-ignore={true}
                                         />
                                         <Button
                                             icon
@@ -106,6 +107,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                 onBlur={() => values.url && !errors.url && handleAdd(values.url)}
                                 onKeyDown={onKeyEnter}
                                 ref={inputRef}
+                                data-protonpass-ignore={true}
                             />
 
                             <hr className="mt-3 mb-1" />

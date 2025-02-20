@@ -126,6 +126,7 @@ export const IncrementableInput: FC<Props> = ({
                 onKeyDown={onKeyDown}
                 unstyled
                 dense
+                data-protonpass-ignore={true}
             />
             <Button
                 className="bg-weak z-1"
