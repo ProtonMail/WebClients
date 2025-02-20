@@ -811,6 +811,11 @@
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Buscar mensajes"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Cualquiera con el enlace puede ver el calendario"
@@ -1579,6 +1584,32 @@
       ],
       "strawberry": [
         "fresa"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Vista diaria"
+      ],
+      "Month view": [
+        "Vista mensual"
+      ],
+      "New event": [
+        "Nuevo evento"
+      ],
+      "Next period": [
+        "Siguiente periodo"
+      ],
+      "Previous period": [
+        "Periodo anterior"
+      ],
+      "Search events": [
+        "Buscar eventos"
+      ],
+      "Today": [
+        "Hoy"
+      ],
+      "Week view": [
+        "Vista semanal"
       ]
     },
     "Confirm modal title": {
@@ -2936,7 +2967,7 @@
         "Algunos grupos no tienen contactos: ${ list }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a ajustes > identidad y dirección > dominio corto (pm.me)"
+        "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -3777,7 +3808,7 @@
         "Recibió una invitación para unirse a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
-        "Se ha unido al grupo familiar con éxito"
+        "Se ha unido al grupo familiar."
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Tiene facturas sin pagar. Por favor, páguelas antes de unirse a un plan familiar."
@@ -4742,6 +4773,9 @@
       "High Priority": [
         "Prioridad alta"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Si los atajos de teclado están activados, podrá usar las siguientes teclas para acciones rápidas o saltar a diferentes vistas. El atajo ${ metaKey } +K está siempre activado."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
       ],
@@ -4922,6 +4956,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de las claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
+      ],
+      "Open shortcut cheat sheet": [
+        "Abrir lista de trucos de atajos"
       ],
       "or discover other features:": [
         "o descubra otras funciones:"
@@ -5452,6 +5489,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } comando encontrado.",
+        "${ filteredList.length } comandos encontrados."
+      ],
       "Selected color:": [
         "Color seleccionado:"
       ]
@@ -5562,6 +5603,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Crear nuevo evento"
+      ],
+      "Day view": [
+        "Vista diaria"
+      ],
+      "Month view": [
+        "Vista mensual"
+      ],
+      "Next period": [
+        "Siguiente periodo"
+      ],
+      "Open quick actions menu": [
+        "Abrir menú de acciones rápidas"
+      ],
+      "Open this modal": [
+        "Abrir esta ventana"
+      ],
+      "Previous period": [
+        "Periodo anterior"
+      ],
+      "Search events": [
+        "Buscar eventos"
+      ],
+      "Today": [
+        "Hoy"
+      ],
+      "Week view": [
+        "Vista semanal"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Acciones básicas"
+      ],
+      "View options": [
+        "Ver opciones"
       ]
     },
     "Knowledge base link label": {
@@ -5798,6 +5879,12 @@
       ],
       "Import to:": [
         "Importar a:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atajo de teclado: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Atajos de teclado"
       ],
       "Label messages as": [
         "Etiquetar mensajes como"
@@ -8047,6 +8134,9 @@
       "Filter groups": [
         "Filtrar grupos"
       ],
+      "Filter quick actions": [
+        "Filtrar acciones rápidas"
+      ],
       "First name": [
         "Nombre"
       ],
@@ -9419,6 +9509,9 @@
       "Invitation sent and participants added to all events": [
         "Invitación enviada y participantes añadidos a todos los eventos"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferencias de atajos de teclado actualizadas"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Los últimos alias modificados están guardados en su bóveda más antigua"
       ],
@@ -9601,6 +9694,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Atajos de teclado ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } dirección de correo",
         "${ emailsCount } direcciones de correo"

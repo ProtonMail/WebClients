@@ -103,8 +103,14 @@
       "Cancel": [
         "キャンセル"
       ],
+      "Cancel email change": [
+        "アドレスの変更を取り消す"
+      ],
       "Change": [
         "変更"
+      ],
+      "Change email": [
+        "メールアドレスを変更"
       ],
       "Check DNS": [
         "DNSを確認"
@@ -889,6 +895,12 @@
       "Failed to block the contact": [
         "連絡先のブロックに失敗しました"
       ],
+      "Failed to cancel mailbox change": [
+        "メールボックスの変更をキャンセルできませんでした"
+      ],
+      "Failed to change mailbox": [
+        "メールボックスを変更できませんでした"
+      ],
       "Failed to create domain": [
         "ドメインの作成に失敗しました"
       ],
@@ -1349,9 +1361,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "SimpleLoginのエイリアス管理機能は近日公開されます！"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "エイリアスを無効にしました。 ${ item.aliasEmail }に送信されたメールは受信できなくなります"
@@ -2133,6 +2142,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "このアイテムは現在誰とも共有されていません。他の人と共有するために人々を招待してください。"
       ],
+      "This mailbox will use your previous email.": [
+        "このメールボックスはあなたの以前のメールアドレスを使用します。"
+      ],
       "This operation is irreversible.": [
         "この操作は元に戻せません。"
       ],
@@ -2446,9 +2458,6 @@
       ],
       "Alias address (disabled)": [
         "エイリアスアドレス(無効)"
-      ],
-      "Alias management": [
-        "エイリアスの管理"
       ],
       "Aliases": [
         "エイリアス"
@@ -2818,6 +2827,9 @@
       ],
       "New": [
         "新しい"
+      ],
+      "New email": [
+        "新しいメール"
       ],
       "New vault": [
         "新しい保管庫"
@@ -3432,6 +3444,9 @@
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
         "アイテムには ${ share.targetMaxMembers } 人以上のユーザーを含めることはできません。"
       ],
+      "Mailbox change successfully cancelled": [
+        "メールボックスの変更をキャンセルしました"
+      ],
       "Mailbox successfully deleted": [
         "メールボックスは正常に削除されました"
       ],
@@ -3510,6 +3525,12 @@
       ],
       "Breaches detected for": [
         "検出された侵害"
+      ],
+      "Cancel changing your email?": [
+        "メールアドレスの変更をキャンセルしますか？"
+      ],
+      "Change mailbox email": [
+        "メールボックスのメールアドレスを変更"
       ],
       "Change your lock method": [
         "ロック方法を変更"

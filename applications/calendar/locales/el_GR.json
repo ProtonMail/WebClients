@@ -811,6 +811,11 @@
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Αναζήτηση μηνυμάτων"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στο ημερολόγιό σας"
@@ -1579,6 +1584,32 @@
       ],
       "strawberry": [
         "φράουλα"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Προβολή ημέρας"
+      ],
+      "Month view": [
+        "Προβολή μήνα"
+      ],
+      "New event": [
+        "Νέα εκδήλωση"
+      ],
+      "Next period": [
+        "Επόμενη περιόδος"
+      ],
+      "Previous period": [
+        "Προηγούμενη περιόδος"
+      ],
+      "Search events": [
+        "Αναζήτηση εκδηλώσεων"
+      ],
+      "Today": [
+        "Σήμερα"
+      ],
+      "Week view": [
+        "Προβολή εβδομάδας"
       ]
     },
     "Confirm modal title": {
@@ -3239,7 +3270,7 @@
         "Παρακαλούμε επιλέξτε μια χώρα"
       ],
       "Please select a state": [
-        "Παρακαλώ διαλέξτε πολιτεία"
+        "Παρακαλούμε διαλέξτε πολιτεία"
       ],
       "Port is required": [
         "Απαιτείται θύρα"
@@ -4742,6 +4773,9 @@
       "High Priority": [
         "Υψηλή προτεραιότητα"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Εάν είναι ενεργοποιημένες οι συντομεύσεις πληκτρολογίου, μπορείτε να χρησιμοποιήσετε τα ακόλουθα πλήκτρα για γρήγορες ενέργειες ή για να μεταβείτε σε διαφορετικές προβολές. Το ${ metaKey } + K είναι πάντα ενεργοποιημένο."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
@@ -4922,6 +4956,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
+      ],
+      "Open shortcut cheat sheet": [
+        "Άνοιγμα λίστας συντομεύσεων"
       ],
       "or discover other features:": [
         "ή ανακαλύψτε άλλα χαρακτηριστικά:"
@@ -5452,6 +5489,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "Βρέθηκε ${ filteredList.length } εντολή.",
+        "Βρέθηκαν ${ filteredList.length } εντολές."
+      ],
       "Selected color:": [
         "Επιλεγμένο χρώμα:"
       ]
@@ -5559,6 +5600,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Δημιουργία νέας εκδήλωσης"
+      ],
+      "Day view": [
+        "Προβολή ημέρας"
+      ],
+      "Month view": [
+        "Προβολή μήνα"
+      ],
+      "Next period": [
+        "Επόμενη περιόδος"
+      ],
+      "Open quick actions menu": [
+        "Άνοιγμα μενού γρήγορων ενεργειών"
+      ],
+      "Open this modal": [
+        "Άνοιγμα αυτού του modal"
+      ],
+      "Previous period": [
+        "Προηγούμενη περιόδος"
+      ],
+      "Search events": [
+        "Αναζήτηση εκδηλώσεων"
+      ],
+      "Today": [
+        "Σήμερα"
+      ],
+      "Week view": [
+        "Προβολή εβδομάδας"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Βασικές ενέργειες"
+      ],
+      "View options": [
+        "Επιλογές προβολής"
       ]
     },
     "Knowledge base link label": {
@@ -5795,6 +5876,12 @@
       ],
       "Import to:": [
         "Εισαγωγή σε:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Συντόμευση πληκτρολογίου: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Συντομεύσεις πληκτρολογίου"
       ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
@@ -7970,7 +8057,7 @@
         "Δεν είμαστε σε θέση να επαληθεύσουμε τον τρόπο πληρωμής σας. Παρακαλούμε επιλέξτε διαφορετικό τρόπο πληρωμής ή προσπαθήστε ξανά."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Η κάρτα σας απορρίφθηκε. Παρακαλώ δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+        "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
       ]
     },
     "Payments.plan_name": {
@@ -8043,6 +8130,9 @@
       ],
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
+      ],
+      "Filter quick actions": [
+        "Φιλτράρισμα γρήγορων ενεργειών"
       ],
       "First name": [
         "Όνομα"
@@ -9416,6 +9506,9 @@
       "Invitation sent and participants added to all events": [
         "Η πρόσκληση στάλθηκε και οι συμμετέχοντες προστέθηκαν σε όλες τις εκδηλώσεις"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Πιο πρόσφατα τροποποιημένα ψευδώνυμα της παλαιότερης κρύπτης σας"
       ],
@@ -9598,6 +9691,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } συντομεύσεις πληκτρολογίου"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } διεύθυνση email",
         "${ emailsCount } διευθύνσεις email"

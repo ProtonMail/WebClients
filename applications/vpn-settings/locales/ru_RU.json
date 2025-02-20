@@ -2317,11 +2317,17 @@
       ]
     },
     "Description": {
+      "Everyone in your organization can connect to shared servers.": [
+        "Все в вашей организации могут подключиться к общим серверам."
+      ],
       "If disabled, only admins will have access.": [
         "Если отключено, доступ будет иметь только администраторы."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Разделите разные части своей жизни и упорядочьте свой почтовый ящик с помощью дополнительных адресов."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Никто из вашей организации не может подключиться к общим серверам."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
@@ -3401,6 +3407,9 @@
       "Best deal": [
         "Лучшее предложение"
       ],
+      "Checkout": [
+        "Оплатить"
+      ],
       "Device": [
         "Устройство"
       ],
@@ -3748,6 +3757,9 @@
       ],
       "Allocated": [
         "Выделено"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Разрешить пользователям подключаться к защищённым общим серверам **Стран** приложения ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Уже выделено"
@@ -4442,6 +4454,12 @@
       "of": [
         "из"
       ],
+      "Off": [
+        "Выкл."
+      ],
+      "On": [
+        "Вкл."
+      ],
       "Once you reset your password:": [
         "После изменения пароля:"
       ],
@@ -4705,6 +4723,12 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Коллективная ${ vaultLink } обновлена"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Страна с общим сервером (${ countriesCount })",
+        "Страны с общими серверами (${ countriesCount })",
+        "Стран с общими серверами (${ countriesCount })",
+        "Стран с общими серверами (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Общее хранилище удалено"
@@ -9556,47 +9580,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -9891,6 +9874,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -10812,6 +10836,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Настройка выделенных серверов, улучшив тариф до Business"
+      ],
+      "Shared servers": [
+        "Общие серверы"
       ],
       "Sign in": [
         "Войти"

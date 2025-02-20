@@ -88,6 +88,9 @@
       "Change": [
         "Spremeni"
       ],
+      "Change email": [
+        "Spremeni naslov"
+      ],
       "Choose a file or drag it here": [
         "Izberite datoteko ali jo povlecite sem"
       ],
@@ -1200,9 +1203,6 @@
       "Emptying trash...": [
         "Praznim smetnjak ..."
       ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Omogoči ${ PASS_SHORT_APP_NAME } beta"
-      ],
       "Enter verification code. Digit ${ digit }.": [
         "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
@@ -1590,9 +1590,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Preizkusite nove zmožnosti, posodobitve in izdelke ${ BRAND_NAME }, preden postanejo dostopni širši javnosti. Aplikacija se bo znova naložila."
-      ],
       "Unable to copy to clipboard": [
         "Kopiranje v odložišče ni mogoče"
       ],
@@ -1825,9 +1822,6 @@
       ],
       "Backup password": [
         "Varnostna kopija gesla"
-      ],
-      "Beta Access": [
-        "Dostop beta"
       ],
       "Birthdate": [
         "Rojstni datum"
@@ -2143,6 +2137,9 @@
       ],
       "New": [
         "Novo"
+      ],
+      "New email": [
+        "Nova e-pošta"
       ],
       "New vault": [
         "Nov trezor"

@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "Cargando${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Establecer ${ MAIL_APP_NAME } como aplicación de correo por defecto"
+      ],
       "Make it friendly": [
         "Más amigable"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "Establecer como por defecto"
-      ],
-      "Set as default mail application": [
-        "Establecer como aplicación de correo por defecto"
       ],
       "Set encryption": [
         "Establecer cifrado"
@@ -3999,6 +3999,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
       ],
@@ -5886,9 +5889,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } también puede proteger tu negocio."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } no es tu aplicación de correo por defecto."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "No se ha podido mover ${ messagesNotAuthorizedToMove } mensaje.",
         "No se han podido mover ${ messagesNotAuthorizedToMove } mensajes."
@@ -6327,9 +6327,6 @@
       "Default email application": [
         "Aplicación de correo electrónico por defecto"
       ],
-      "Default mail application": [
-        "Aplicación de correo electrónico por defecto"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "¿Sabías que tienes un almacenamiento cifrado en la nube incluido con tu cuenta de ${ BRAND_NAME }? Ve a ${ DRIVE_APP_NAME } y aprovecha al máximo tu espacio. Es gratuito."
       ],
@@ -6731,6 +6728,9 @@
       ],
       "Low Priority": [
         "Prioridad baja"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establece ${ MAIL_APP_NAME } como aplicación de correo por defecto."
       ],
       "Manage your folders": [
         "Administra tus carpetas"
@@ -7134,7 +7134,7 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Configura ${ MAIL_APP_NAME } como tu aplicación de correo electrónico por defecto para este navegador. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Configura ${ MAIL_APP_NAME } como tu aplicación de correo electrónico por defecto. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
       "Setting up ${ feature }…": [
@@ -8682,9 +8682,6 @@
       ],
       "Toolbar": [
         "Barra de herramientas"
-      ],
-      "Type a command...": [
-        "Escribe un comando..."
       ],
       "Undisclosed Recipients": [
         "Destinatarios ocultos"
@@ -10884,6 +10881,9 @@
       "Filter labels": [
         "Filtrar etiquetas"
       ],
+      "Filter quick actions": [
+        "Filtrar las acciones rápidas"
+      ],
       "First name": [
         "Nombre"
       ],
@@ -10991,9 +10991,6 @@
       ],
       "To": [
         "Para"
-      ],
-      "Type a command…": [
-        "Escribe un comando…"
       ],
       "Type text or keyword": [
         "Escribe el texto o palabra clave."
@@ -12862,15 +12859,15 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Atajos de teclado de ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } dirección de correo electrónico",
         "${ emailsCount } direcciones de correo electrónico"
       ],
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Atajos de teclado de ${ MAIL_APP_NAME }"
       ],
       "${ unreads } unread message": [
         "${ unreads } mensaje sin leer",

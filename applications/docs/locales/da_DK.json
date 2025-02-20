@@ -2404,6 +2404,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Identitet og adresser > Kort domæne (pm.me)"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -2966,6 +2969,9 @@
       ],
       "Time zone": [
         "Tidszone"
+      ],
+      "Time zone component ignored": [
+        "Tidszonekomponent ignoreret"
       ],
       "To-do entry": [
         "Gøremålindlæg"

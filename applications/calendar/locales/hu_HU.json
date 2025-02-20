@@ -769,6 +769,11 @@
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Üzenetek keresése"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "A hivatkozás birtokában bárki megtekintheti az ön naptárát"
@@ -4559,6 +4564,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Egy vagy több megbízható kulcsát a tulajdonosa \"kompromittáltként\" jelölt meg. Javasoljuk, hogy távolítsa el a kulcsok megbízhatóságát."
       ],
+      "Open shortcut cheat sheet": [
+        "Gyorsbillentyű tippek megnyitása"
+      ],
       "Organization size": [
         "Szervezet mérete"
       ],
@@ -5045,6 +5053,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } parancs található.",
+        "${ filteredList.length } parancs található."
+      ],
       "Selected color:": [
         "A kiválasztott szín:"
       ]
@@ -5149,6 +5161,16 @@
       ],
       "Trusted": [
         "Megbízható"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Ablak megnyitása"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Alapműveletek"
       ]
     },
     "Knowledge base link label": {
@@ -5379,6 +5401,12 @@
       ],
       "Import to:": [
         "Importálás ide:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Gyorsbillentyű: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Gyorsbillentyűk"
       ],
       "Label messages as": [
         "Üzenetek megjelölése címkével"
@@ -8301,6 +8329,9 @@
       "Email address copied to clipboard": [
         "E-mail cím a vágólapra másolva"
       ],
+      "Event content search enabled": [
+        "Eseménytartalom keresés engedélyezve"
+      ],
       "Event created": [
         "Esemény létrehozva"
       ],
@@ -8342,6 +8373,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Meghívó elküldve és résztvevők hozzáadva az összes eseményhez"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Gyorsbillentyű beállítások frissítve"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Az utoljára módosított e-mail álnevek a legrégebbi tárolóban találhatók."

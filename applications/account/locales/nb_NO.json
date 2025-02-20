@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -4421,6 +4421,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
       ],
@@ -6973,11 +6976,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiver minst én datagjenopprettingsmetode for å sikre at du fortsatt har tilgang til innholdet i ${ BRAND_NAME }-kontoen hvis du mister passordet."
       ],
-      "active": [
-        "aktiv"
-      ],
       "Active": [
         "Aktiv"
+      ],
+      "active": [
+        "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Legg til en @pm.me e-postadresse til kontoen din. Dette enkle, kortere domene står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding.\""
@@ -7078,6 +7081,9 @@
       ],
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
       ],
       "Already allocated": [
         "Allerede allokert"
@@ -7427,8 +7433,8 @@
       "default email address": [
         "standard e-postadresse"
       ],
-      "Default mail application": [
-        "Standard e-postapplikasjon"
+      "Default email application": [
+        "Standardprogram for e-post"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
@@ -7762,8 +7768,23 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dersom en administrator endret dette passordet, må du be om det nye organisasjonspassordet."
       ],
+      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
+        "Hvis deaktivert, vil nye organisasjonsmedlemmer kreve at en administrator manuelt oppretter det første hvelvet for dem (via deling) slik at de kan begynne å opprette elementer."
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "Hvis deaktivert, vil bare administratorer kunne eksportere data."
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "Hvis deaktivert, kan organisasjonsmedlemmer bare dele hvelv eller elementer innen organisasjonen."
+      ],
+      "If enabled, organization members will be able to share individual items in addition to vaults.": [
+        "Hvis aktivert, kan organisasjonsmedlemmer dele enkeltelementer i tillegg til hvelv."
+      ],
       "If it’s not right for you, we’ll refund you.": [
         "Hvis det ikke passer for deg, refunderer vi deg."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Hvis tastatursnarveier er aktivert, kan du bruke følgende taster for hurtighandlinger eller for å hoppe til forskjellige visninger. ${ metaKey } + K er alltid aktivert."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Hvis systemets tidssone ikke samsvarer med gjeldende tidssoneinnstilling, blir du bedt om å oppdatere den (på det meste en gang per dag)."
@@ -8276,6 +8297,9 @@
       "Or select a particular server:": [
         "Eller velg en spesiell tjener:"
       ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Organisasjonsmedlemmer må låse opp ${ PASS_APP_NAME } med passord eller PIN-kode osv."
+      ],
       "Organization size": [
         "Organisasjonsstørrelse"
       ],
@@ -8625,7 +8649,7 @@
       "Session timed out": [
         "Økten ble tidsavbrutt"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Angi ${ MAIL_APP_NAME } som din standard e-postapplikasjon. ${ MAIL_APP_NAME } vil åpne automatisk når du klikker en e-postkobling."
       ],
       "Set recovery phrase": [
@@ -8654,6 +8678,10 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Delt ${ vaultLink } oppdatert"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Land for delt tjener (${ countriesCount })",
+        "Land for delte tjenere (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Delt hvelv slettet"
@@ -8764,7 +8792,7 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opprett og del dokumenter i ${ DOCS_APP_NAME } og oppbevar dem sikkert. Alt på ${ ios }, ${ android } og ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Anbefales av TechRadar Pro med en vurdering på 4.2 av 5 stjerner"
       ],
       "Temporarily unavailable. Please check back later.": [
@@ -9929,6 +9957,12 @@
       "Close draft": [
         "Lukk utkast"
       ],
+      "Create new event": [
+        "Opprett ny hendelse"
+      ],
+      "Day view": [
+        "Dagsvisning"
+      ],
       "Delete permanently": [
         "Slett permanent"
       ],
@@ -9995,6 +10029,9 @@
       "Minimize / maximize composer": [
         "Minimer / maksimer skrivevindu"
       ],
+      "Month view": [
+        "Månedsvisning"
+      ],
       "Move down": [
         "Flytt ned"
       ],
@@ -10025,6 +10062,9 @@
       "New message": [
         "Ny melding"
       ],
+      "Next period": [
+        "Neste periode"
+      ],
       "Open command panel": [
         "Åpne kommandopanelet"
       ],
@@ -10034,8 +10074,14 @@
       "Open previous message": [
         "Åpne forrige melding"
       ],
+      "Open quick actions menu": [
+        "Åpne meny for hurtighandlinger"
+      ],
       "Open this modal": [
         "Åpne dette hjelpevinduet"
+      ],
+      "Previous period": [
+        "Forrige periode"
       ],
       "Reply": [
         "Svar"
@@ -10048,6 +10094,9 @@
       ],
       "Search": [
         "Søk"
+      ],
+      "Search events": [
+        "Søk etter hendelser"
       ],
       "Select / unselect": [
         "Velg / fjern merking"
@@ -10069,6 +10118,12 @@
       ],
       "Star": [
         "Stjernemerk"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Week view": [
+        "Ukesvisning"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10092,6 +10147,9 @@
       ],
       "Message shortcuts": [
         "Meldingssnarveier"
+      ],
+      "View options": [
+        "Vis alternativer"
       ]
     },
     "Keys actions": {
@@ -10238,6 +10296,15 @@
       "Allow": [
         "Tillat"
       ],
+      "Allow all users to create vaults": [
+        "Tillat alle brukere å opprette hvelv"
+      ],
+      "Allow data export for all users": [
+        "Tillat dataeksport for alle brukere"
+      ],
+      "Allow individual item sharing": [
+        "Tillat individuell elementdeling"
+      ],
       "Allow memorable passwords": [
         "Tillat minneverdige passord"
       ],
@@ -10258,6 +10325,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Tillat gjenoppretting via en klarert enhet"
+      ],
+      "Allow sharing outside the organization": [
+        "Tillat deling utenfor organisasjonen"
       ],
       "Allowed domain": [
         "Tillatt domene"
@@ -12743,6 +12813,17 @@
         "Teamledelse"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "For å fortsette å bruke ${ trialPlanName } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter på ${ last4 }"
@@ -12851,17 +12932,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "For å fortsette å bruke ${ trialPlanName } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13289,6 +13359,9 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Deaktivering av dette vil fjerne muligheten til å motta varsler i ${ BRAND_NAME }-applikasjoner"
+      ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "I løpet av den første måneden du bruker et ${ BRAND_NAME }-produkt"
       ],
       "Email subscriptions": [
         "E-post-abonnementer"
@@ -13922,6 +13995,9 @@
       ],
       "Organization identity updated": [
         "Organisasjonsidentitet oppdatert"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Bekreft e-postadressen din, ${ email }, for å angi organisasjonsidentitet."
       ]
     },
     "OS compatibility": {
@@ -16723,6 +16799,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -17011,47 +17128,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -17547,6 +17623,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName }-tastatursnarveier"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17558,9 +17637,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME }-tastatursnarveier"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
@@ -19448,6 +19524,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Dette vil tilbakekalle administratortillatelsen til å administrere denne brukerens konto."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "For å få administratorrettigheter må de angi et reservepassord neste gang de logger på ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "For å fortsette må du be om brukerens tillatelse til å få tilgang til dataene deres eller tilbakestille passordet."

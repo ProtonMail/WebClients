@@ -589,6 +589,11 @@
         "Da, prisustvovati ću"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Pretraži poruke"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } ili ${ importContact }."
@@ -3489,6 +3494,16 @@
         "Pouzdan"
       ]
     },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Otvori ovaj modal"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Osnovne radnje"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } korisničko ime"
@@ -3653,6 +3668,12 @@
       ],
       "Import to email address": [
         "Uvoz na adresu e-pošte"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tipkovni prečac: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Tipkovni prečaci"
       ],
       "Label messages as": [
         "Označi poruku kao"
@@ -5202,6 +5223,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Pozivnica je poslana i sudionici su dodani svim događajima"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Postavke tipkovnih prečaca su ažurirane"
       ],
       "Participants notified and all events updated": [
         "Sudionici su obaviješteni i svi događaji su ažurirani"

@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -3729,7 +3729,7 @@
         "Lås upp obegränsade mappar, etiketter och fler premiumfunktioner när du uppgraderar."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
-        "Uppgradera för att få ${ activatePmUser } för en kortare och lättihågkomlig e-postadress utöver din nuvarande."
+        "Uppgradera för att få ${ activatePmUser } för en kortare e-postadress som är lätt att komma ihåg utöver din nuvarande."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsätta bjuda in vänner, men du kommer inte kunna tjäna fler krediter"
@@ -4461,7 +4461,7 @@
         "Autentiseringsfel."
       ],
       "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
-        "Autosvarsmeddelandet överskrider den tillåtna längden. Korta ner det inom gränsen."
+        "Automatiskt svar överskrider tillåten längd. Förkorta det så att det passar inom gränsen."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatiska svar är en betald funktion. Uppgradera till ett betalt konto för att använda denna funktion."
@@ -6979,11 +6979,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
-      "active": [
-        "aktiv"
-      ],
       "Active": [
         "Aktiv"
+      ],
+      "active": [
+        "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7430,7 +7430,7 @@
       "default email address": [
         "standard e-postadress"
       ],
-      "Default mail application": [
+      "Default email application": [
         "Standardapplikation för e-post"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7764,6 +7764,15 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Om en annan administratör har ändrat detta lösenord måste du be dem om det nya organisationslösenordet."
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "Om det är inaktiverat kommer endast administratörer att kunna exportera data."
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "Om det är inaktiverat kommer organisationsmedlemmar endast att kunna dela valv eller objekt inom organisationen."
+      ],
+      "If enabled, organization members will be able to share individual items in addition to vaults.": [
+        "Om det är aktiverat kommer organisationsmedlemmar att kunna dela individuella objekt utöver valv."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Om det inte passar dig så återbetalar vi dig."
@@ -8628,7 +8637,7 @@
       "Session timed out": [
         "Session timeout"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
       ],
       "Set recovery phrase": [
@@ -8767,7 +8776,7 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronisera och hantera filer med ${ DRIVE_APP_NAME }-appen. Skapa och dela dokument i ${ DOCS_APP_NAME } och lagra dem säkert. Allt på ${ ios }, ${ android } och ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro rekommenderar med ett betyg på 4,2 av 5 stjärnor"
       ],
       "Temporarily unavailable. Please check back later.": [
@@ -9932,6 +9941,12 @@
       "Close draft": [
         "Stäng utkast"
       ],
+      "Create new event": [
+        "Skapa ny händelse"
+      ],
+      "Day view": [
+        "Dagsvy"
+      ],
       "Delete permanently": [
         "Ta bort permanent"
       ],
@@ -9998,6 +10013,9 @@
       "Minimize / maximize composer": [
         "Minimera / maximera kompositör"
       ],
+      "Month view": [
+        "Månadsvy"
+      ],
       "Move down": [
         "Flytta ner"
       ],
@@ -10028,6 +10046,9 @@
       "New message": [
         "Nytt meddelande"
       ],
+      "Next period": [
+        "Nästa period"
+      ],
       "Open command panel": [
         "Öppna kommandopanel"
       ],
@@ -10037,8 +10058,14 @@
       "Open previous message": [
         "Öppna föregående meddelande"
       ],
+      "Open quick actions menu": [
+        "Öppna meny för snabbåtgärder"
+      ],
       "Open this modal": [
         "Öppna detta fönster"
+      ],
+      "Previous period": [
+        "Föregående period"
       ],
       "Reply": [
         "Svara"
@@ -10051,6 +10078,9 @@
       ],
       "Search": [
         "Sök"
+      ],
+      "Search events": [
+        "Sök händelser"
       ],
       "Select / unselect": [
         "Markera/avmarkera"
@@ -10072,6 +10102,12 @@
       ],
       "Star": [
         "Stjärnmärk"
+      ],
+      "Today": [
+        "Idag"
+      ],
+      "Week view": [
+        "Veckovy"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10095,6 +10131,9 @@
       ],
       "Message shortcuts": [
         "Meddelandegenvägar"
+      ],
+      "View options": [
+        "Visa alternativ"
       ]
     },
     "Keys actions": {
@@ -12758,6 +12797,17 @@
         "Teamhantering"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -12866,17 +12916,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -16747,6 +16786,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -17035,47 +17115,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -17588,9 +17627,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Exportverktyg för ${ MAIL_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } tangentbordsgenvägar"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
@@ -19478,6 +19514,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Detta kommer återkalla administratörsbehörigheten att hantera denna användares konto."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "För att få administratörsrättigheter måste de ställa in ett reservlösenord nästa gång de loggar in på ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "För att fortsätta måste du begära användarens tillåtelse att komma åt deras data eller återställa deras lösenord."

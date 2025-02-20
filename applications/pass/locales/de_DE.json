@@ -103,8 +103,14 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Cancel email change": [
+        "E-Mail-Änderung abbrechen"
+      ],
       "Change": [
         "Ändern"
+      ],
+      "Change email": [
+        "E-Mail-Adresse ändern"
       ],
       "Check DNS": [
         "DNS überprüfen"
@@ -674,6 +680,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } ist mit einem kostenpflichtigen Abonnement verfügbar. Upgrade für sofortigen Zugriff."
+      ],
       "${ total } other login uses the same password": [
         "${ total } anderer Login verwendet das gleiche Passwort",
         "${ total } andere Logins verwenden das gleiche Passwort"
@@ -890,6 +899,12 @@
       ],
       "Failed to block the contact": [
         "Fehler beim Blockieren des Kontakts."
+      ],
+      "Failed to cancel mailbox change": [
+        "Postfachänderung konnte nicht abgebrochen werden"
+      ],
+      "Failed to change mailbox": [
+        "Postfach konnte nicht geändert werden"
       ],
       "Failed to create domain": [
         "Fehler beim Erstellen der Domain."
@@ -1337,6 +1352,9 @@
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 Tage, um Premium-Funktionen kostenlos zu testen. Nur während deiner ersten Woche bei ${ BRAND_NAME }."
       ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Für jede E-Mail-Adresse, die E-Mails an ${ aliasEmail } sendet oder von dieser Adresse empfängt, wird ein Kontakt erstellt."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Eine neue Version von ${ PASS_APP_NAME } ist verfügbar. Aktualisiere sie, um die neuesten Funktionen und Fehlerbehebungen zu genießen."
       ],
@@ -1364,9 +1382,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Die Alias-Verwaltungsfunktionen von SimpleLogin kommen bald!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Der Alias wurde erfolgreich deaktiviert. Du wirst keine E-Mails mehr erhalten, die an ${ item.aliasEmail } gesendet werden."
       ],
@@ -1384,6 +1399,9 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasse mit eigenen Domains werden nicht überwacht. Bitte füge diese als eigene E-Mail-Adresse hinzu, um sie zu überwachen."
+      ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Alle Aliase, die die Mailbox ${ emailJSX } verwenden, werden ebenfalls gelöscht."
       ],
       "All breaches for this address were resolved": [
         "Alle Datenlecks für diese Adresse wurden behoben."
@@ -1414,6 +1432,9 @@
       ],
       "Are you sure you want to remove the link?": [
         "Bist du sicher, dass du diesen Link entfernen möchtest?"
+      ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Automatisch erstellte Aliase sind automatisch im Besitz der folgenden Mailbox(en):"
       ],
       "Auto-lock successfully disabled.": [
         "Automatische Sperre erfolgreich deaktiviert."
@@ -1505,6 +1526,9 @@
       "Decrypting your data": [
         "Deine Daten werden entschlüsselt"
       ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Standard-Anzeigename für Aliase, die mit ${ domainDisplay } erstellt wurden, sofern er nicht durch den Anzeigenamen des Alias überschrieben wird."
+      ],
       "Deleted items will be moved here first": [
         "Gelöschte Einträge werden zuerst hierhin verschoben."
       ],
@@ -1555,6 +1579,12 @@
       ],
       "Email headers illustration": [
         "Illustration von E-Mail-Headern"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Wenn du eine E-Mail an diese Adresse schickst, sieht es so aus, als ob sie zum Beispiel von ${ exampleEmail } gesendet wird."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "E-Mails, die an deine Aliase gesendet werden, werden an deine Postfächer weitergeleitet. Ein Alias kann an mehrere Postfächer weitergeleitet werden: nützlich, um ein Alias für dich und deine Freunde freizugeben."
       ],
       "Emptying trash...": [
         "Papierkorb wird geleert..."
@@ -1669,6 +1699,9 @@
       ],
       "Imported on ${ date }": [
         "Importiert am ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "In ${ PASS_SHORT_APP_NAME } wird eine Eintragsnotiz mit einem individuellen Schlüssel verschlüsselt. Nur Benutzer, die Zugriff auf den Eintrag haben, können die Notiz einsehen. Nicht einmal ${ BRAND_NAME } oder SimpleLogin können sie sehen."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Um ${ PASS_APP_NAME } optimal nutzen zu können, erteile bitte die notwendigen Erweiterungsrechte."
@@ -2074,8 +2107,14 @@
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
         "Die SimpleLogin-Notiz wird zusammen mit der Alias-Adresse am selben Ort gespeichert und ist zwar durch eine Verschlüsselung im Ruhezustand geschützt, aber nicht E2E-verschlüsselt, d.h. jeder, der Zugang zur SimpleLogin-Datenbank hat, kann sie lesen."
       ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Wenn du das nächste Mal einen Alias brauchst, verwende einfach ${ emailBold }: Er wird ${ automaticallyBold } erstellt, wenn er das erste Mal eine E-Mail erhält. Für eine noch feinere Steuerung kannst du auch ${ rulesHyperLink } definieren."
+      ],
       "Successfully exported all your items": [
         "Alle Einträge erfolgreich exportiert."
+      ],
+      "Successfully left the item": [
+        "Eintrag erfolgreich verlassen"
       ],
       "Successfully left the vault": [
         "Tresor erfolgreich verlassen"
@@ -2129,8 +2168,17 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
       ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Dieser Eintrag ist bisher für niemanden freigegeben. Lade Personen ein, ihn mit anderen zu teilen."
+      ],
+      "This mailbox will use your previous email.": [
+        "Dieses Postfach wird deine vorherige E-Mail verwenden."
+      ],
       "This operation is irreversible.": [
         "Diese Aktion kann nicht rückgängig gemacht werden."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Dieser Vorgang ist nicht umkehrbar. Alle Aliase, die die Domäne ${ domainTextBold } verwenden, werden gelöscht. Bitte beachte, dass einmal gelöschte Aliase nicht wiederhergestellt werden können."
       ],
       "This option is currently not available on your device.": [
         "Diese Option ist zurzeit auf deinem Gerät nicht verfügbar."
@@ -2150,6 +2198,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dadurch wird das Gerät **${ name }**, das versuchte, sich am **${ date }** bei deinem ${ BRAND_NAME }-Konto anzumelden, abgelehnt."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Um weiterhin E-Mails zu empfangen, übertrage diese Aliase auf ein anderes E-Mail-Postfach:"
+      ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Um deine persönliche E-Mail-Adresse zu verbergen, kannst du einen Alias-Kontakt erstellen, der deine Adresse verschleiert."
       ],
@@ -2167,6 +2218,9 @@
       ],
       "Unconfigured": [
         "Nicht konfiguriert"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Unbegrenzte hide-my-email Aliase und erweiterte Alias-Verwaltung"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "${ PASS_SHORT_APP_NAME } mit Biometrie entsperren"
@@ -2301,6 +2355,9 @@
       "You will no longer be notified of data breaches for this email address.": [
         "Du wirst nicht länger über Datenlecks im Zusammenhang mit dieser E-Mail-Adresse benachrichtigt."
       ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Du wirst keinen Zugriff mehr auf Freigaben, 2FA, Kreditkarten und andere erweiterte Funktionen in ${ PASS_APP_NAME } haben."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du verwendest diese PIN, um ${ PASS_APP_NAME } zu entsperren, sobald es sich nach einer gewissen Zeit der Inaktivität automatisch sperrt."
       ],
@@ -2426,6 +2483,9 @@
       "Account": [
         "Konto"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Füge bei der Erstellung eines neuen Alias einen zufälligen Präfix für diese Domäne hinzu."
+      ],
       "Add section": [
         "Abschnitt hinzufügen"
       ],
@@ -2443,9 +2503,6 @@
       ],
       "Alias address (disabled)": [
         "Alias-Adresse (deaktiviert)"
-      ],
-      "Alias management": [
-        "Aliasverwaltung"
       ],
       "Aliases": [
         "Aliasse"
@@ -2815,6 +2872,9 @@
       ],
       "New": [
         "Neu"
+      ],
+      "New email": [
+        "Neue E-Mail-Adresse"
       ],
       "New vault": [
         "Neuer Tresor"
@@ -3432,6 +3492,9 @@
         "Die Einträge können nicht mehr als ${ share.targetMaxMembers } Benutzer beinhalten.",
         "Die Einträge können nicht mehr als ${ share.targetMaxMembers } Benutzer beinhalten."
       ],
+      "Mailbox change successfully cancelled": [
+        "Postfachänderung erfolgreich abgebrochen"
+      ],
       "Mailbox successfully deleted": [
         "Postfach erfolgreich gelöscht."
       ],
@@ -3511,6 +3574,12 @@
       ],
       "Breaches detected for": [
         "Datenlecks entdeckt für"
+      ],
+      "Cancel changing your email?": [
+        "Änderung deiner E-Mail abbrechen?"
+      ],
+      "Change mailbox email": [
+        "Postfachadresse ändern"
       ],
       "Change your lock method": [
         "Ändere deine Sperrmethode"
@@ -4209,6 +4278,12 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
+      ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Einige Einträge sind derzeit geteilt. Werden sie entfernt, verlieren alle anderen Benutzer den Zugriff darauf."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Einige Einträge sind derzeit geteilt. Werden sie in einen anderen Tresor verschoben, verlieren alle anderen Benutzer den Zugriff darauf."
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Beim Starten von ${ PASS_APP_NAME } ist ein Fehler aufgetreten. Bitte versuche, die Erweiterung zu aktualisieren oder neu zu laden."

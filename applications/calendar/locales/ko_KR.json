@@ -807,6 +807,11 @@
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "메시지 검색"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "링크를 가지고 있는 모든 사람이 캘린더를 볼 수 있습니다"
@@ -2911,6 +2916,9 @@
       "${ list } has no contacts": [
         "그룹에 연락처가 없습니다: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }를 생성하려면, 설정 > 신원 및 주소 > 짧은 도메인 (pm.me)로 이동하세요."
+      ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
@@ -4846,6 +4854,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
+      "Open shortcut cheat sheet": [
+        "단축키 목록 보기"
+      ],
       "or discover other features:": [
         "혹은 다른 기능 살펴보기:"
       ],
@@ -5370,6 +5381,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length }개의 명령을 찾았습니다."
+      ],
       "Selected color:": [
         "선택한 색상:"
       ]
@@ -5474,6 +5488,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "이 모달 열기"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "간단한 단축키"
       ]
     },
     "Knowledge base link label": {
@@ -5709,6 +5733,12 @@
       ],
       "Import to:": [
         "가져오기:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "키보드 단축키: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "키보드 단축키"
       ],
       "Label messages as": [
         "메시지에 다음으로 라벨 지정"
@@ -9231,6 +9261,9 @@
       "Invitation sent and participants added to all events": [
         "초대 전송됨 및 참가자들이 모든 이벤트에 추가됨"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "키보드 단축키 설정 업데이트 됨"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "마지막으로 편집한 별칭이 가장 오래된 금고에 보관되었습니다"
       ],
@@ -10135,6 +10168,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+      ],
+      "2 consecutive dots are not allowed": [
+        "마침표 2개가 연속해서 올 수 없습니다"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"

@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "Yükleniyor${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "${ MAIL_APP_NAME } 'i varsayılan e-posta uygulamanız yapın"
+      ],
       "Make it friendly": [
         "Samimileştir"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "Varsayılan olarak ayarla"
-      ],
-      "Set as default mail application": [
-        "Varsayılan e-posta uygulaması olarak ayarla"
       ],
       "Set encryption": [
         "Şifreleme ayarla"
@@ -4003,7 +4003,7 @@
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } sizin kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa alan adı (pm.me) bölümüne gidin"
+        "${ user.Name } kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
@@ -5892,9 +5892,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME }, kuruluşunuzu da koruyabilir."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız değil."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } ileti taşınamadı.",
         "${ messagesNotAuthorizedToMove } ileti taşınamadı."
@@ -6333,9 +6330,6 @@
       "Default email application": [
         "Varsayılan e-posta uygulaması"
       ],
-      "Default mail application": [
-        "Varsayılan e-posta uygulaması"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "${ BRAND_NAME } hesabınızla birlikte bir şifrelenmiş bulut depolama alanınızın olduğunu biliyor muydunuz? ${ DRIVE_APP_NAME } uygulamasına gidin ve depolama alanınızdan en iyi şekilde yararlanın. Ücretsizdir."
       ],
@@ -6737,6 +6731,9 @@
       ],
       "Low Priority": [
         "Düşük Öncelik"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME } 'i varsayılan e-posta uygulamanız yapın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -7140,8 +7137,8 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Bu tarayıcı için varsayılan e-posta uygulamasını ${ MAIL_APP_NAME } yapabilirsiniz. Bir e-posta bağlantısına tıkladığınızda otomatik olarak ${ MAIL_APP_NAME } açılır."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız olarak ayarlayın. Bir e-posta bağlantısına tıkladığınızda ${ MAIL_APP_NAME } otomatik olarak açılır."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Varsayılan e-posta uygulamanız olarak ${ MAIL_APP_NAME } ayarlayın. Bir e-posta bağlantısına tıkladığınızda ${ MAIL_APP_NAME } otomatik olarak açılacaktır."
       ],
       "Setting up ${ feature }…": [
         "${ feature } ayarlanıyor…"
@@ -8685,9 +8682,6 @@
       ],
       "Toolbar": [
         "Araç çubuğu"
-      ],
-      "Type a command...": [
-        "Bir komut yazın..."
       ],
       "Undisclosed Recipients": [
         "Gizli alıcılar"
@@ -10881,6 +10875,9 @@
       "Filter labels": [
         "Etiketleri süz"
       ],
+      "Filter quick actions": [
+        "Hızlı eylemleri filtrele"
+      ],
       "First name": [
         "Ad"
       ],
@@ -10988,9 +10985,6 @@
       ],
       "To": [
         "Kime"
-      ],
-      "Type a command…": [
-        "Bir komut yazın…"
       ],
       "Type text or keyword": [
         "Metin ya da anahtar sözcük yazın"
@@ -12859,15 +12853,15 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } klavye kısayolları"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-posta adresi",
         "${ emailsCount } e-posta adresi"
       ],
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } klavye kısayolları"
       ],
       "${ unreads } unread message": [
         "${ unreads } okunmamış ileti",

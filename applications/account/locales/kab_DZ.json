@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -5093,6 +5093,9 @@
       "Dedicated servers": [
         "Iqeddacen yettwagen"
       ],
+      "Default email application": [
+        "Asnas amezwer n imayl"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Kkes ikalasen nniḍen MX neq ḍmen d akken amḍan n tezwart n ${ MAIL_APP_NAME } d tameẓyant."
       ],
@@ -8127,20 +8130,20 @@
         "Asefrek n terbaɛt"
       ]
     },
-    "new_plans: info": {
-      "Most popular": [
-        "Ittwassen aṭas"
-      ],
-      "Popular": [
-        "Mucaɛ"
-      ]
-    },
     "new_plans: Info": {
       "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
         "I ukemmel n useqdec n ${ trialPlanName }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
+      ]
+    },
+    "new_plans: info": {
+      "Most popular": [
+        "Ittwassen aṭas"
+      ],
+      "Popular": [
+        "Mucaɛ"
       ]
     },
     "new_plans: Label": {
@@ -9558,6 +9561,14 @@
         "Imultaɣen"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -9589,14 +9600,6 @@
       ],
       "Version history": [
         "Azray n lqem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -9966,9 +9969,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Inegzumen n unasiw ${ MAIL_APP_NAME }"
-      ],
       "(active)": [
         "(urmid)"
       ],

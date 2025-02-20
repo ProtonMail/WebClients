@@ -86,6 +86,9 @@
       "Change": [
         "Ubah"
       ],
+      "Change email": [
+        "Ubah email"
+      ],
       "Check DNS": [
         "Periksa DNS"
       ],
@@ -758,6 +761,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Autentikasi gagal. Konfirmasi kata sandi ${ BRAND_NAME } Anda untuk melanjutkan ekspor"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Autentikasi gagal. Konfirmasi kata sandi cadangan Anda untuk melanjutkan ekspor"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Autentikasi gagal. Konfirmasi kata sandi tambahan Anda untuk melanjutkan ekspor"
+      ],
       "Authentication failure: ${ message }": [
         "Autentikasi gagal: ${ message }"
       ],
@@ -1330,9 +1339,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Fitur pengelolaan alias dari SimpleLogin akan segera hadir!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias berhasil dinonaktifkan. Anda tidak akan lagi menerima email yang dikirim ke ${ item.aliasEmail }."
@@ -2093,6 +2099,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Item ini tidak sedang dibagikan dengan siapa pun. Undang pengguna lain ke item ini untuk saling berbagi item bersama."
       ],
+      "This mailbox will use your previous email.": [
+        "Kotak surat ini akan menggunakan alamat email sebelumnya."
+      ],
       "This operation is irreversible.": [
         "Tindakan ini tidak dapat diurungkan."
       ],
@@ -2412,9 +2421,6 @@
       ],
       "Alias address (disabled)": [
         "Alamat alias (dinonaktifkan)"
-      ],
-      "Alias management": [
-        "Pengelolaan alias"
       ],
       "Aliases": [
         "Alias"
@@ -2793,6 +2799,9 @@
       ],
       "New": [
         "Baru"
+      ],
+      "New email": [
+        "Email baru"
       ],
       "New vault": [
         "Brankas baru"
@@ -3811,6 +3820,9 @@
       "${ BRAND_NAME } password is required": [
         "Kata sandi ${ BRAND_NAME } diperlukan"
       ],
+      "2 consecutive dots are not allowed": [
+        "Alias tidak dapat mengandung 2 titik secara berurutan"
+      ],
       "A description of the problem is required": [
         "Penjelasan masalah diperlukan"
       ],
@@ -3840,6 +3852,12 @@
       ],
       "At least one email address is required": [
         "Setidaknya satu alamat surel dibutuhkan"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Alias tidak dapat dimulai dengan titik"
+      ],
+      "Cannot contain a dot at the end": [
+        "Alias tidak dapat diakhiri dengan titik"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
@@ -3943,6 +3961,9 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Setelah data tersinkron, menghapus alias di ${ PASS_SHORT_APP_NAME } akan turut menghapus alias yang sama pada SimpleLogin."
       ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
+      ],
       "Passphrase is required": [
         "Frasa sandi dibutuhkan"
       ],
@@ -4035,6 +4056,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Anda tidak akan lagi memiliki akses ke brankas ini. Untuk dapat kembali bergabung dengan brankas ini, Anda akan memerlukan undangan baru."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Organisasi Anda tidak mengizinkan pembagian item secara satu per satu"
       ],
       "Your plan does not allow you to create more aliases": [
         "Paket Anda tidak mengizinkan Anda untuk membuat lebih banyak alias"

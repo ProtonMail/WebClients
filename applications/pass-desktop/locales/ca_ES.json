@@ -103,8 +103,14 @@
       "Cancel": [
         "Cancel·la"
       ],
+      "Cancel email change": [
+        "Cancel·la el canvi de correu electrònic"
+      ],
       "Change": [
         "Canvia"
+      ],
+      "Change email": [
+        "Canvia el correu electrònic"
       ],
       "Check DNS": [
         "Verifica el DNS"
@@ -926,6 +932,12 @@
       "Failed to block the contact": [
         "No s'ha pogut bloquejar el contacte."
       ],
+      "Failed to cancel mailbox change": [
+        "No s'ha pogut cancel·lar el canvi de bústia."
+      ],
+      "Failed to change mailbox": [
+        "No s'ha pogut canviar la bústia de correu."
+      ],
       "Failed to create domain": [
         "No s'ha pogut crear el domini."
       ],
@@ -1402,9 +1414,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Les funcions de gestió d'àlies de SimpleLogin arribaran aviat!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "L'àlies s'ha desactivat. Ja no rebreu correus electrònics enviats a ${ item.aliasEmail }"
       ],
@@ -1448,7 +1457,7 @@
         "S'han restaurat tots els elements de la paperera."
       ],
       "An item previously shared with you was removed": [
-        "S'ha esborrat un element compartit que heu rebut anteriorment."
+        "S'ha esborrat un element compartit amb vós anteriorment."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Esteu segur que voleu eliminar ${ emailJSX } de les vostres bústies de correu?"
@@ -1608,9 +1617,6 @@
       ],
       "Emptying trash...": [
         "Buidant la paperera..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Habiliti ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Activeu el bloqueig automàtic per protegir les vostres dades"
@@ -2197,6 +2203,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Aquest element no està compartit actualment amb ningú. Inviteu persones a compartir-la amb altres."
       ],
+      "This mailbox will use your previous email.": [
+        "Aquesta bústia de correu utilitzarà el vostre correu-e anterior."
+      ],
       "This operation is irreversible.": [
         "Aquesta operació és irreversible."
       ],
@@ -2232,9 +2241,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per revisar les dades importades, feu clic a la icona del ${ PASS_APP_NAME } de la barra d'eines del navegador."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
@@ -2533,9 +2539,6 @@
       "Alias address (disabled)": [
         "Adreça de l'àlies (desactivada)"
       ],
-      "Alias management": [
-        "Gestió dels àlies"
-      ],
       "Aliases": [
         "Àlies"
       ],
@@ -2562,9 +2565,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "A més de conservar les vostres credencials, ${ PASS_APP_NAME } protegeix la vostra identitat amb la seva funcionalitat d'àlies de correu electrònic integrada. Cada vegada que us registreu per obtenir un compte en línia nou, ${ PASS_APP_NAME } pot crear automàticament un àlies per protegir la vostra adreça electrònica real. "
-      ],
-      "Beta Access": [
-        "Accés beta"
       ],
       "Biometrics": [
         "Dades biomètriques"
@@ -2952,6 +2952,9 @@
       ],
       "New": [
         "Nou"
+      ],
+      "New email": [
+        "Nou correu electrònic"
       ],
       "New vault": [
         "Nova caixa forta"
@@ -3619,6 +3622,9 @@
         "Els elements no poden contenir més d'${ share.targetMaxMembers } usuari.",
         "Els elements no poden contenir més d'${ share.targetMaxMembers } usuaris."
       ],
+      "Mailbox change successfully cancelled": [
+        "S'ha cancel·lat el canvi de bústia."
+      ],
       "Mailbox successfully deleted": [
         "S'ha eliminat la bústia de correu."
       ],
@@ -3698,6 +3704,12 @@
       ],
       "Breaches detected for": [
         "Infraccions detectades per"
+      ],
+      "Cancel changing your email?": [
+        "Voleu cancel·lar el canvi de correu electrònic?"
+      ],
+      "Change mailbox email": [
+        "Canvia el correu electrònic de la bústia"
       ],
       "Change your lock method": [
         "Canvia el mètode de bloqueig"

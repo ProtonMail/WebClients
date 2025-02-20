@@ -807,6 +807,11 @@
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "搜索邮件"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "任何获得此链接的人都能访问您的日历"
@@ -2911,6 +2916,9 @@
       "${ list } has no contacts": [
         "某些群组没有联系人：${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -4846,6 +4854,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
+      "Open shortcut cheat sheet": [
+        "打开快捷键列表"
+      ],
       "or discover other features:": [
         "或发现其他功能："
       ],
@@ -5370,6 +5381,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "找到 ${ filteredList.length } 条命令。"
+      ],
       "Selected color:": [
         "所选颜色"
       ]
@@ -5474,6 +5488,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "打开此面板"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "基本操作"
       ]
     },
     "Knowledge base link label": {
@@ -5709,6 +5733,12 @@
       ],
       "Import to:": [
         "导入到："
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "快捷键：${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "开启快捷键"
       ],
       "Label messages as": [
         "给导入的邮件加标签"
@@ -9230,6 +9260,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "邀请已发送，活动参与者已被加入所有日程中"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "快捷键设置已更改"
       ],
       "Last modified aliases stored in your oldest vault": [
         "最后修改的别名存储在您最早的库中"

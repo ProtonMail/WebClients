@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "Laddar${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Gör ${ MAIL_APP_NAME } till din standardapplikation för e-post"
+      ],
       "Make it friendly": [
         "Gör det vänligt"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "Ställ in som standard"
-      ],
-      "Set as default mail application": [
-        "Ställ in som standardapplikation för e-post"
       ],
       "Set encryption": [
         "Ställ in kryptering"
@@ -3718,7 +3718,7 @@
         "Lås upp obegränsade mappar, etiketter och fler premiumfunktioner när du uppgraderar."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
-        "Uppgradera för att få ${ activatePmUser } för en kortare och lättihågkomlig e-postadress utöver din nuvarande."
+        "Uppgradera för att få ${ activatePmUser } för en kortare e-postadress som är lätt att komma ihåg utöver din nuvarande."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Uppgradera ditt konto för att aktivera ${ PROTON_SENTINEL_NAME }, vår banbrytande AI-drivna säkerhetslösning med dedikerad expertsupport dygnet runt."
@@ -5889,9 +5889,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan också skydda ditt företag."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } är inte din standardapplikation för e-post."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } meddelande kunde inte flyttas.",
         "${ messagesNotAuthorizedToMove } meddelanden kunde inte flyttas."
@@ -6330,9 +6327,6 @@
       "Default email application": [
         "Standardapplikation för e-post"
       ],
-      "Default mail application": [
-        "Standardapplikation för e-post"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Visste du att du har krypterad molnlagring inkluderat med ditt ${ BRAND_NAME }-konto? Gå till ${ DRIVE_APP_NAME } och få ut det mesta av ditt utrymme. Det är gratis."
       ],
@@ -6735,6 +6729,9 @@
       "Low Priority": [
         "Låg prioritet"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gör ${ MAIL_APP_NAME } till din standardapplikation för e-post."
+      ],
       "Manage your folders": [
         "Hantera dina mappar"
       ],
@@ -6763,7 +6760,7 @@
         "Meddelandeåtgärder pågår. Detta kan ta ett tag."
       ],
       "Message download status:": [
-        "Meddelandenedladdningsstatus:"
+        "Nedladdningsstatus för meddelande:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Meddelandets förfallodatum fungerar bara när e-post skickas till andra ${ MAIL_APP_NAME }-användare. För att skicka e-postmeddelanden med förfallodag till användare utan ${ BRAND_NAME }, vänligen avbryt och lägg istället till lösenordsskydd till din e-post."
@@ -7137,7 +7134,7 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post för denna webbläsare. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
       ],
       "Setting up ${ feature }…": [
@@ -8685,9 +8682,6 @@
       ],
       "Toolbar": [
         "Verktygsfält"
-      ],
-      "Type a command...": [
-        "Skriv ett kommando..."
       ],
       "Undisclosed Recipients": [
         "Hemliga mottagare"
@@ -10892,6 +10886,9 @@
       "Filter labels": [
         "Filtrera etiketter"
       ],
+      "Filter quick actions": [
+        "Filtrera snabbåtgärder"
+      ],
       "First name": [
         "Förnamn"
       ],
@@ -10999,9 +10996,6 @@
       ],
       "To": [
         "Till"
-      ],
-      "Type a command…": [
-        "Skriv ett kommando…"
       ],
       "Type text or keyword": [
         "Skriv text eller nyckelord"
@@ -12876,9 +12870,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } är nu aktivt"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } tangentbordsgenvägar"
       ],
       "${ unreads } unread message": [
         "${ unreads } oläst meddelande",

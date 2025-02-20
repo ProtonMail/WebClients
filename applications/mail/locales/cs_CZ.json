@@ -732,6 +732,9 @@
       "Loading${ ellipsis }": [
         "Načítání${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci"
+      ],
       "Make it friendly": [
         "Přátelská forma"
       ],
@@ -1163,9 +1166,6 @@
       ],
       "Set as default": [
         "Nastavit jako výchozí"
-      ],
-      "Set as default mail application": [
-        "Nastavit jako výchozí e-mailovou aplikaci"
       ],
       "Set encryption": [
         "Nastavení šifrování"
@@ -6031,9 +6031,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } může chránit i vaši firmu."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } není vaše výchozí e-mailová aplikace."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } zpráva nemohla být přesunuta.",
         "${ messagesNotAuthorizedToMove } zprávy nemohly být přesunuty.",
@@ -6532,9 +6529,6 @@
       "Default email application": [
         "Výchozí e-mailová aplikace"
       ],
-      "Default mail application": [
-        "Výchozí e-mailová aplikace"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Věděli jste, že součástí vašeho účtu ${ BRAND_NAME } je šifrované cloudové úložiště? účtu? Přejděte na ${ DRIVE_APP_NAME } a využijte svůj prostor naplno. Je to zdarma."
       ],
@@ -6955,6 +6949,9 @@
       "Low Priority": [
         "Nízká priorita"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci."
+      ],
       "Manage your folders": [
         "Spravovat složky"
       ],
@@ -7363,8 +7360,8 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavit ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci pro tento prohlížeč. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Nastavit ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
       ],
       "Setting up ${ feature }…": [
         "Nastavování ${ feature }…"
@@ -8956,9 +8953,6 @@
       ],
       "Toolbar": [
         "Panel nástrojů"
-      ],
-      "Type a command...": [
-        "Zadejte příkaz…"
       ],
       "Undisclosed Recipients": [
         "Nezveřejnění příjemci"
@@ -11226,6 +11220,9 @@
       "Filter labels": [
         "Filtrovat štítky"
       ],
+      "Filter quick actions": [
+        "Filtrování rychlých akcí"
+      ],
       "First name": [
         "Křestní jméno"
       ],
@@ -11333,9 +11330,6 @@
       ],
       "To": [
         "Komu"
-      ],
-      "Type a command…": [
-        "Zadejte příkaz…"
       ],
       "Type text or keyword": [
         "Zadejte text nebo klíčové slovo"
@@ -13346,6 +13340,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } klávesové zkratky"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailová adresa",
         "${ emailsCount } e-mailové adresy",
@@ -13354,9 +13351,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } je nyní aktivní"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } klávesové zkratky"
       ],
       "${ unreads } unread message": [
         "${ unreads } nepřečtená zpráva",
