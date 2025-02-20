@@ -141,8 +141,27 @@ const getConfigFile = ({ buildData, appData }) => {
     `;
 };
 
+const getConfigHead = ({ buildData, appData }) => {
+    return JSON.stringify({
+        CLIENT_TYPE: ENV_CONFIG.app.clientType || 1,
+        CLIENT_SECRET: ENV_CONFIG.app.clientSecret || '',
+        APP_VERSION: buildData.version,
+        COMMIT: buildData.commit,
+        BRANCH: buildData.branch,
+        DATE_VERSION: buildData.date,
+        APP_NAME: appData.appName,
+        API_URL: !appData.apiProxy && appData.api ? appData.api : '/api',
+        SSO_URL: appData.sso || '',
+        LOCALES: LOCALES,
+        VERSION_PATH: `${appData.publicPath}assets/version.json`,
+        SENTRY_DSN: appData.sentryDsn,
+        SENTRY_DESKTOP_DSN: appData.sentryDesktopDsn ?? '',
+    });
+};
+
 module.exports = {
     getConfigData,
     getConfigFile,
+    getConfigHead,
     getApi,
 };
