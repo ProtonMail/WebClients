@@ -103,8 +103,14 @@
       "Cancel": [
         "취소"
       ],
+      "Cancel email change": [
+        "이메일 변경 취소"
+      ],
       "Change": [
         "변경"
+      ],
+      "Change email": [
+        "이메일 변경"
       ],
       "Check DNS": [
         "DNS 확인"
@@ -889,6 +895,12 @@
       "Failed to block the contact": [
         "연락처 차단에 실패했습니다"
       ],
+      "Failed to cancel mailbox change": [
+        "메일함 변경 취소 실패"
+      ],
+      "Failed to change mailbox": [
+        "메일함 변경 실패"
+      ],
       "Failed to create domain": [
         "도메인 생성에 오류가 발생했습니다"
       ],
@@ -1349,9 +1361,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "SimpleLogin의 별칭 관리 기능이 곧 찾아옵니다!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "별칭이 성공적으로 비활성화되었습니다. 더 이상 ${ item.aliasEmail }(으)로 이메일을 전송할 수 없게 됩니다."
@@ -2447,9 +2456,6 @@
       "Alias address (disabled)": [
         "별칭 주소 (비활성화됨)"
       ],
-      "Alias management": [
-        "별칭 관리"
-      ],
       "Aliases": [
         "별칭"
       ],
@@ -2818,6 +2824,9 @@
       ],
       "New": [
         "신규"
+      ],
+      "New email": [
+        "새로운 이메일"
       ],
       "New vault": [
         "새 금고"
@@ -3432,6 +3441,9 @@
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
         "항목에 ${ share.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
       ],
+      "Mailbox change successfully cancelled": [
+        "메일함 변경이 성공적으로 취소되었습니다"
+      ],
       "Mailbox successfully deleted": [
         "메일함을 성공적으로 삭제했습니다."
       ],
@@ -3510,6 +3522,12 @@
       ],
       "Breaches detected for": [
         "침해 사례가 다음에서 감지됨:"
+      ],
+      "Cancel changing your email?": [
+        "이메일 변경을 취소할까요?"
+      ],
+      "Change mailbox email": [
+        "메일함 이메일 변경"
       ],
       "Change your lock method": [
         "잠금 방식을 변경하세요"
@@ -3925,6 +3943,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } 비밀번호가 필요합니다"
+      ],
+      "2 consecutive dots are not allowed": [
+        "마침표 2개가 연속해서 올 수 없습니다"
       ],
       "A description of the problem is required": [
         "문제의 셜명이 필요합니다."
