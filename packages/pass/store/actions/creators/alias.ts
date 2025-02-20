@@ -208,7 +208,7 @@ export const deleteMailbox = requestActionsFactory<MailboxDeleteDTO, MailboxDele
                 text: c('Error').t`Failed to delete the mailbox`,
                 type: 'error',
                 error,
-            })({ payload }),
+            })({ payload, error: getApiError(error) }),
     },
 });
 
