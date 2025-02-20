@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "Chargement${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut"
+      ],
       "Make it friendly": [
         "Plus amical"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "Définir par défaut"
-      ],
-      "Set as default mail application": [
-        "Définir comme application de messagerie par défaut"
       ],
       "Set encryption": [
         "Définir le chiffrement"
@@ -2494,25 +2494,25 @@
         "Créer un nouveau label"
       ],
       "Go to Archive": [
-        "Aller dans le dossier Archives"
+        "Déplacer vers le dossier Archives"
       ],
       "Go to Drafts": [
-        "Aller dans le dossier Brouillons"
+        "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Aller dans le dossier Boite de réception"
+        "Déplacer vers le dossier Boite de réception"
       ],
       "Go to Sent": [
-        "Aller dans le dossier Envoyés"
+        "Déplacer vers le dossier Envoyés"
       ],
       "Go to Spam": [
-        "Aller dans le dossier Indésirable/spam"
+        "Déplacer vers le dossier Indésirable/spam"
       ],
       "Go to Starred": [
-        "Aller dans le dossier Favoris"
+        "Déplacer vers le dossier Favoris"
       ],
       "Go to Trash": [
-        "Aller dans le dossier Corbeille"
+        "Déplacer vers le dossier Corbeille"
       ],
       "New message": [
         "Nouveau message"
@@ -3998,6 +3998,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, dirigez-vous vers Paramètres > Identités et adresses > Domaine court (pm.me)."
       ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -5886,9 +5889,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } peut également protéger votre entreprise."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } n'est pas votre application de messagerie par défaut."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } message n’a pas pu être déplacé.",
         "${ messagesNotAuthorizedToMove } messages n’ont pas pu être déplacés."
@@ -6327,9 +6327,6 @@
       "Default email application": [
         "Application de messagerie par défaut"
       ],
-      "Default mail application": [
-        "Application de messagerie par défaut"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Saviez-vous que votre compte ${ BRAND_NAME } vous permet de disposer d'un espace de stockage chiffré ? Rendez-vous sur ${ DRIVE_APP_NAME } et profitez au maximum de votre espace. C'est gratuit."
       ],
@@ -6731,6 +6728,9 @@
       ],
       "Low Priority": [
         "Priorité basse"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Définissez ${ MAIL_APP_NAME } comme application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -7134,7 +7134,7 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Définissez ${ MAIL_APP_NAME } comme application de messagerie par défaut pour ce navigateur. ${ MAIL_APP_NAME } s'ouvrira automatiquement quand vous cliquerez sur un lien d'e-mail."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Définissez ${ MAIL_APP_NAME } comme votre application de messagerie par défaut. ${ MAIL_APP_NAME } s’ouvrira automatiquement lorsque vous cliquerez sur un lien de messagerie."
       ],
       "Setting up ${ feature }…": [
@@ -8004,28 +8004,28 @@
         "Transférer"
       ],
       "Go to All Mail": [
-        "Aller dans le dossier Tous les messages"
+        "Déplacer vers le dossier Tous les messages"
       ],
       "Go to Archive": [
-        "Aller dans le dossier Archives"
+        "Déplacer vers le dossier Archives"
       ],
       "Go to Drafts": [
-        "Aller dans le dossier Brouillons"
+        "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Aller dans le dossier Boite de réception"
+        "Déplacer vers le dossier Boite de réception"
       ],
       "Go to Sent": [
-        "Aller dans le dossier Envoyés"
+        "Déplacer vers le dossier Envoyés"
       ],
       "Go to Spam": [
-        "Aller dans le dossier Indésirable/spam"
+        "Déplacer vers le dossier Indésirable/spam"
       ],
       "Go to Starred": [
-        "Aller dans le dossier Favoris"
+        "Déplacer vers le dossier Favoris"
       ],
       "Go to Trash": [
-        "Aller dans le dossier Corbeille"
+        "Déplacer vers le dossier Corbeille"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8682,9 +8682,6 @@
       ],
       "Toolbar": [
         "Barre d'outils"
-      ],
-      "Type a command...": [
-        "Saisissez une commande…"
       ],
       "Undisclosed Recipients": [
         "Destinataires non divulgués"
@@ -10884,6 +10881,9 @@
       "Filter labels": [
         "Filtrez les labels."
       ],
+      "Filter quick actions": [
+        "Filtrer les actions rapides"
+      ],
       "First name": [
         "Prénom"
       ],
@@ -10991,9 +10991,6 @@
       ],
       "To": [
         "Pour"
-      ],
-      "Type a command…": [
-        "Saisissez une commande…"
       ],
       "Type text or keyword": [
         "Tapez le texte ou le mot clé."
@@ -12862,15 +12859,15 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Raccourcis clavier ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adresse e-mail",
         "${ emailsCount } adresses e-mail"
       ],
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Raccourcis clavier ${ MAIL_APP_NAME }"
       ],
       "${ unreads } unread message": [
         "${ unreads } message non lu",
@@ -13939,10 +13936,10 @@
         "Voulez-vous vraiment supprimer définitivement ce contact ?"
       ],
       "Cannot contain a dot at the beginning": [
-        "Cette entrée ne peut pas commencer par un point."
+        "L'entrée ne peut pas commencer par un point."
       ],
       "Cannot contain a dot at the end": [
-        "L'entrée ne peut se terminer par un point."
+        "L'entrée ne peut pas terminer par un point."
       ],
       "Contacts could not be merged": [
         "Les contacts n'ont pas pu être fusionnés."
