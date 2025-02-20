@@ -8,8 +8,10 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
-import type { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import useGetFlag from '@proton/unleash/useGetFlag';
 
 import {
@@ -41,7 +43,6 @@ type FetchUpsellConfig = (props: Props) => Promise<MailUpsellConfig>;
 
 /**
  * This hook is used to fetch the upsell config for the UpsellModal.
- * @throws if no price is found
  * @returns A function used to fetch the upsell config.
  */
 const useFetchMailUpsellModalConfig = () => {
@@ -59,43 +60,77 @@ const useFetchMailUpsellModalConfig = () => {
             dispatch(plansThunk()),
             dispatch(paymentStatusThunk()),
         ]);
-        const plans = plansModel?.plans ?? [];
+        try {
+            const plans = plansModel?.plans ?? [];
+            const currency = await getUserCurrency(user, plans, status, subscription, getFlag);
 
-        const currency = await getUserCurrency(user, plans, status, subscription, getFlag);
+            const { cycle, coupon, monthlyPrice, planID } = await getMailUpsellConfig({
+                user,
+                currency,
+                plans,
+                fetchPrice,
+                upsellRef,
+            });
 
-        const { cycle, coupon, monthlyPrice, planID } = await getMailUpsellConfig({
-            user,
-            currency,
-            plans,
-            fetchPrice,
-            upsellRef,
-        });
+            // Get upsell `path` and `onUpgrade` functions to display payment modal with appropriate props´´
+            const { upgradePath, onUpgrade } = getUpsellConfig({
+                appName: APP_NAME,
+                coupon,
+                cycle,
+                getFlag,
+                onSubscribed,
+                openSubscriptionModal,
+                plan: planID,
+                preventInApp,
+                step,
+                subscription,
+                upsellRef,
+                user,
+            });
 
-        // Get upsell `path` and `onUpgrade` functions to display payment modal with appropriate props´´
-        const { upgradePath, onUpgrade } = getUpsellConfig({
-            appName: APP_NAME,
-            coupon,
-            cycle,
-            getFlag,
-            onSubscribed,
-            openSubscriptionModal,
-            plan: planID,
-            preventInApp,
-            step,
-            subscription,
-            upsellRef,
-            user,
-        });
+            return {
+                coupon,
+                cycle,
+                footerText: getMailUpsellsFooterText(planID, monthlyPrice, currency, coupon),
+                onUpgrade,
+                planID,
+                submitText: getMailUpsellsSubmitText(planID, monthlyPrice, currency, coupon),
+                upgradePath,
+            };
+        } catch (error) {
+            // Report error to Sentry
+            traceInitiativeError(SentryMailInitiatives.UPSELL_MODALS, error);
 
-        return {
-            coupon,
-            cycle,
-            footerText: getMailUpsellsFooterText(planID, monthlyPrice, currency, coupon),
-            onUpgrade,
-            planID,
-            submitText: getMailUpsellsSubmitText(planID, monthlyPrice, currency, coupon),
-            upgradePath,
-        };
+            // Default to unlimited plan
+            // and use no pricing or currencies mentions in the upsell texts
+            const defaultCycle = CYCLE.YEARLY;
+            const defaultPlanID = PLANS.BUNDLE;
+
+            const { upgradePath, onUpgrade } = getUpsellConfig({
+                appName: APP_NAME,
+                cycle: defaultCycle,
+                getFlag,
+                onSubscribed,
+                openSubscriptionModal,
+                plan: defaultPlanID,
+                preventInApp,
+                step,
+                subscription,
+                upsellRef,
+                user,
+            });
+
+            const defaultConfig: MailUpsellConfig = {
+                cycle: CYCLE.YEARLY,
+                planID: PLANS.BUNDLE,
+                submitText: getPlanOrAppNameText(PLAN_NAMES[PLANS.BUNDLE]),
+                footerText: '',
+                upgradePath,
+                onUpgrade,
+            };
+
+            return defaultConfig;
+        }
     };
 
     return fetchUpsellConfig;
