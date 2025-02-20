@@ -13,6 +13,7 @@ import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMet
 import { AlbumTag, useThumbnailsDownload } from '../../store';
 import { useCreateAlbum } from '../PhotosActions/Albums';
 import { CreateAlbumModal } from '../PhotosModals/CreateAlbumModal';
+import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { AlbumsGrid } from './AlbumsGrid';
 import { EmptyAlbums } from './EmptyAlbums';
@@ -20,6 +21,22 @@ import { PhotosClearSelectionButton } from './components/PhotosClearSelectionBut
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
+
+// TODO: Move in separate file once it's completed
+const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[] => {
+    if (tag === AlbumTag.Shared) {
+        return albums.filter((album) => album.isShared);
+    }
+    if (tag === AlbumTag.MyAlbums) {
+        // TODO: Reverse of Shared With Me (everything else)
+        return albums;
+    }
+    if (tag === AlbumTag.SharedWithMe) {
+        // TODO: Shared With Me (comes from Api Call)
+        return albums;
+    }
+    return albums;
+};
 
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
@@ -45,7 +62,7 @@ export const AlbumsView: FC = () => {
     const thumbnails = useThumbnailsDownload();
     const { navigateToPhotos, navigateToAlbum, navigateToAlbums } = useNavigate();
     // TODO: Move tag selection to specific hook
-    const [selectedTag, setSelectedTag] = useState<AlbumsTagsProps['selectedTag']>([AlbumTag.All]);
+    const [selectedTags, setSelectedTags] = useState<AlbumsTagsProps['selectedTags']>([AlbumTag.All]);
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -80,6 +97,7 @@ export const AlbumsView: FC = () => {
     );
 
     const isAlbumsEmpty = albums.length === 0;
+    const filteredAlbums = filterAlbums(albums, selectedTags[0]);
 
     if (!shareId || !linkId || isPhotosLoading) {
         return <Loader />;
@@ -138,9 +156,9 @@ export const AlbumsView: FC = () => {
 
             {!isAlbumsEmpty && (
                 <AlbumsTags
-                    selectedTag={selectedTag}
+                    selectedTags={selectedTags}
                     tags={[AlbumTag.All, AlbumTag.MyAlbums, AlbumTag.Shared, AlbumTag.SharedWithMe]}
-                    onTagSelect={setSelectedTag}
+                    onTagSelect={setSelectedTags}
                 />
             )}
 
@@ -150,7 +168,7 @@ export const AlbumsView: FC = () => {
                 </>
             ) : (
                 <AlbumsGrid
-                    data={albums}
+                    data={filteredAlbums}
                     onItemRender={handleItemRender}
                     onItemRenderLoadedLink={handleItemRenderLoadedLink}
                     isLoading={false} // TODO: Get Albums loading status
