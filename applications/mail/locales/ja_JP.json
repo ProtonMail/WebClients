@@ -1152,9 +1152,6 @@
       "Set as default": [
         "既定にする"
       ],
-      "Set as default mail application": [
-        "デフォルトのメールアプリとして設定"
-      ],
       "Set encryption": [
         "暗号化を設定"
       ],
@@ -5506,7 +5503,7 @@
         "このファイルには予定の招待が含まれています:"
       ],
       "This file contains an invitation response:": [
-        "このファイルには招待の回答が含まれています："
+        "このファイルには招待への回答が含まれています："
       ],
       "This file contains some data that we cannot import:": [
         "このファイルにはインポートできないデータが含まれています:"
@@ -5817,9 +5814,6 @@
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } はあなたのビジネスも保護します。"
-      ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME }はデフォルトのメールアプリではありません。"
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 件のメッセージを移動できませんでした。"
@@ -6228,9 +6222,6 @@
       ],
       "Default email application": [
         "既定のメールアプリ"
-      ],
-      "Default mail application": [
-        "デフォルトメールアプリ"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "${ BRAND_NAME }アカウントに暗号化済みのクラウドストレージが含まれていることを知っていましたか？ ${ DRIVE_APP_NAME } へ移動して、ストレージスペースを最大限に活用しましょう。無料でご利用いただけます。"
@@ -7024,7 +7015,7 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME } をこのブラウザの既定のメールアプリに設定すると、メールのリンクをクリックした際に自動で ${ MAIL_APP_NAME } が開かれます。"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定しましょう。メールのリンクをクリックした時に、自動で${ MAIL_APP_NAME }が開きます。"
       ],
       "Setting up ${ feature }…": [
@@ -8546,9 +8537,6 @@
       "Toolbar": [
         "ツールバー"
       ],
-      "Type a command...": [
-        "コマンドを入力..."
-      ],
       "Undisclosed Recipients": [
         "非公開の宛先"
       ],
@@ -8928,7 +8916,7 @@
         "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } のすべてのメッセージをインポートし、ラベル付けします"
+        "${ itemsToImportCount } つのフォルダのうち ${ selectedItemsToImportCount } つからすべてのメッセージをインポートし、ラベルを付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
@@ -10812,9 +10800,6 @@
       "To": [
         "宛先"
       ],
-      "Type a command…": [
-        "コマンドを入力…"
-      ],
       "Type text or keyword": [
         "テキストまたはキーワードを入力"
       ]
@@ -12616,9 +12601,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } は現在アクティブです"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } のキーボードショートカット"
       ],
       "${ unreads } unread message": [
         "${ unreads } 件の未読メッセージ"

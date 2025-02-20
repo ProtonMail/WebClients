@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "Laster${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon"
+      ],
       "Make it friendly": [
         "Gjør det vennlig"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "Angi som standard"
-      ],
-      "Set as default mail application": [
-        "Angi som standard e-postapplikasjon"
       ],
       "Set encryption": [
         "Angi kryptering"
@@ -3999,6 +3999,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
       ],
@@ -5886,9 +5889,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan også beskytte virksomheten din."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } er ikke din standard e-postapplikasjon."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } melding kunne ikke flyttes.",
         "${ messagesNotAuthorizedToMove } meldinger kunne ikke flyttes."
@@ -6327,9 +6327,6 @@
       "Default email application": [
         "Standardprogram for e-post"
       ],
-      "Default mail application": [
-        "Standard e-postapplikasjon"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Visste du at du har kryptert skylagring inkludert i ${ BRAND_NAME }-kontoen din? Gå over til ${ DRIVE_APP_NAME } og få mest mulig ut av plassen din. Det er gratis."
       ],
@@ -6731,6 +6728,9 @@
       ],
       "Low Priority": [
         "Lav prioritet"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -7134,7 +7134,7 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Angi ${ MAIL_APP_NAME } som din standard e-postapplikasjon for denne nettleseren. ${ MAIL_APP_NAME } vil åpne automatisk når du klikker en e-postkobling."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Angi ${ MAIL_APP_NAME } som din standard e-postapplikasjon. ${ MAIL_APP_NAME } vil åpne automatisk når du klikker en e-postkobling."
       ],
       "Setting up ${ feature }…": [
@@ -8679,9 +8679,6 @@
       ],
       "Toolbar": [
         "Verktøylinje"
-      ],
-      "Type a command...": [
-        "Skriv en kommando..."
       ],
       "Undisclosed Recipients": [
         "Ikke avslørte mottakere"
@@ -10875,6 +10872,9 @@
       "Filter labels": [
         "Filtrer etiketter"
       ],
+      "Filter quick actions": [
+        "Filtrer hurtighandlinger"
+      ],
       "First name": [
         "Fornavn"
       ],
@@ -10982,9 +10982,6 @@
       ],
       "To": [
         "Til"
-      ],
-      "Type a command…": [
-        "Skriv en kommando…"
       ],
       "Type text or keyword": [
         "Skriv inn tekst eller nøkkelord"
@@ -12853,15 +12850,15 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName }-tastatursnarveier"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadresse",
         "${ emailsCount } e-postadresser"
       ],
       "${ feature } is now active": [
         "${ feature } er nå aktiv"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME }-tastatursnarveier"
       ],
       "${ unreads } unread message": [
         "${ unreads } ulest melding",

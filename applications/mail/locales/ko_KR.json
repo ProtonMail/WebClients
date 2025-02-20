@@ -720,6 +720,9 @@
       "Loading${ ellipsis }": [
         "${ ellipsis } 불러오는 중"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정"
+      ],
       "Make it friendly": [
         "친근하게 만들기"
       ],
@@ -1151,9 +1154,6 @@
       ],
       "Set as default": [
         "기본으로 설정"
-      ],
-      "Set as default mail application": [
-        "기본 매일 애플리케이션으로 설정"
       ],
       "Set encryption": [
         "암호화 설정"
@@ -3979,6 +3979,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }를 생성하려면, 설정 > 신원 및 주소 > 짧은 도메인 (pm.me)로 이동하세요."
+      ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
@@ -5815,9 +5818,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME }이 회원님의 비즈니스를 잘 보호해줍니다."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME }이 기본 메일 애플리케이션으로 설정되어 있지 않습니다."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 메시지가 이동되지 않을 수 있습니다."
       ],
@@ -6226,9 +6226,6 @@
       "Default email application": [
         "기본 이메일 애플리케이션"
       ],
-      "Default mail application": [
-        "기본 메일 애플리케이션"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "${ BRAND_NAME } 계정에 포함된 암호화된 클라우드 스토리지가 있다는 것을 알고 계셨나요? 무료로 ${ DRIVE_APP_NAME }에서 공간을 최대로 활용해 보세요."
       ],
@@ -6621,6 +6618,9 @@
       ],
       "Low Priority": [
         "중요도 낮음"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }을 기본 메일 어플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -7021,8 +7021,8 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME }을 이 브라우저의 기본 이메일 애플리케이션으로 지정하세요. ${ MAIL_APP_NAME }이 이메일 링크를 클릭할때 자동으로 열어줍니다."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "${ MAIL_APP_NAME }을 기본 메일 애플리케이션으로 설정하세요. ${ MAIL_APP_NAME }이 메일 링크를 클릭할 때 자동으로 열어줍니다."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요. 이메일 링크를 클릭하면 ${ MAIL_APP_NAME }이 자동으로 열립니다."
       ],
       "Setting up ${ feature }…": [
         "${ feature } 설정 중…"
@@ -8542,9 +8542,6 @@
       ],
       "Toolbar": [
         "툴바"
-      ],
-      "Type a command...": [
-        "명령 입력..."
       ],
       "Undisclosed Recipients": [
         "받는 사람 비공개"
@@ -10809,9 +10806,6 @@
       "To": [
         "받는 사람:"
       ],
-      "Type a command…": [
-        "명령 입력..."
-      ],
       "Type text or keyword": [
         "텍스트 및 키워드 입력"
       ]
@@ -12614,9 +12608,6 @@
       "${ feature } is now active": [
         "${ feature }이(가) 이제 활성 상태입니다"
       ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } 키보드 단축키"
-      ],
       "${ unreads } unread message": [
         "읽지 않은 메시지 ${ unreads }개"
       ],
@@ -13645,6 +13636,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
+      ],
+      "2 consecutive dots are not allowed": [
+        "마침표 2개가 연속해서 올 수 없습니다"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"

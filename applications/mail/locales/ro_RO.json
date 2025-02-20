@@ -728,6 +728,9 @@
       "Loading${ ellipsis }": [
         "Se încarcă${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail"
+      ],
       "Make it friendly": [
         "Fă-l prietenos"
       ],
@@ -1159,9 +1162,6 @@
       ],
       "Set as default": [
         "Setare ca implicit"
-      ],
-      "Set as default mail application": [
-        "Setare ca aplicație de e-mail implicită"
       ],
       "Set encryption": [
         "Setare criptare"
@@ -5960,9 +5960,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } vă poate proteja și afacerea."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } nu este aplicația de e-mail implicită."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Un mesaj nu a putut fi mutat.",
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } mesaje.",
@@ -6431,9 +6428,6 @@
       "Default email application": [
         "Aplicaţia de e-mail implicită"
       ],
-      "Default mail application": [
-        "Aplicația de e-mail implicită"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Știați că aveți spațiu de stocare criptat în cloud inclus în contul ${ BRAND_NAME }? Mergeți la ${ DRIVE_APP_NAME } și profitați la maximum de spațiul oferit. Este gratis."
       ],
@@ -6845,6 +6839,9 @@
       "Low Priority": [
         "Prioritate scăzută"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
+      ],
       "Manage your folders": [
         "Gestionare foldere"
       ],
@@ -7250,8 +7247,8 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigaror. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigator. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
@@ -8819,9 +8816,6 @@
       ],
       "Toolbar": [
         "Bară de unelte"
-      ],
-      "Type a command...": [
-        "Scrieți o comandă..."
       ],
       "Undisclosed Recipients": [
         "Destinatari nedivulgați"
@@ -11052,6 +11046,9 @@
       "Filter labels": [
         "Filtrare etichete"
       ],
+      "Filter quick actions": [
+        "Filtrare acțiuni rapide"
+      ],
       "First name": [
         "Prenume"
       ],
@@ -11159,9 +11156,6 @@
       ],
       "To": [
         "Către"
-      ],
-      "Type a command…": [
-        "Scrieți o comandă..."
       ],
       "Type text or keyword": [
         "Scrieți un text sau cuvânt cheie"
@@ -13101,6 +13095,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Combinații de taste ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adresă de e-mail",
         "${ emailsCount } adrese de e-mail",
@@ -13108,9 +13105,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } este acum activă"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Combinații de taste ${ MAIL_APP_NAME }"
       ],
       "${ unreads } unread message": [
         "Un mesaj necitit.",
