@@ -6,14 +6,12 @@ import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { RecursivePartial } from '@proton/pass/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -39,7 +37,6 @@ type SettingsSection = {
 const getSettings =
     (settings: ProxiedSettings) =>
     (dispatch: Dispatch): SettingsSection[] => {
-        const { onTelemetry } = usePassCore();
         const onSettingsUpdate = (update: RecursivePartial<ProxiedSettings>) =>
             dispatch(settingsEditIntent('behaviors', update));
 
@@ -153,11 +150,6 @@ const getSettings =
                         checked: Boolean(settings.showUsernameField),
                         onChange: (showUsernameField) => {
                             onSettingsUpdate({ showUsernameField });
-                            onTelemetry(
-                                TelemetryEventName.PassSettingsDisplayUsername,
-                                { checked: showUsernameField },
-                                {}
-                            );
                         },
                     },
                 ],
