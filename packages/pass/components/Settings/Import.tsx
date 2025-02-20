@@ -1,5 +1,5 @@
 import { type FC, useCallback, useRef, useState } from 'react';
-import { Provider as ReduxProvider, useStore } from 'react-redux';
+import { Provider as ReduxProvider, useSelector, useStore } from 'react-redux';
 
 import { Form, FormikProvider } from 'formik';
 import { c, msgid } from 'ttag';
@@ -10,6 +10,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ImportForm } from '@proton/pass/components/Import/ImportForm';
 import { ImportProgress } from '@proton/pass/components/Import/ImportProgress';
 import { ImportVaultsPickerModal } from '@proton/pass/components/Import/ImportVaultsPickerModal';
+import { ContactAdminWarning } from '@proton/pass/components/Item/List/Placeholder/ContactAdminWarning';
 import {
     type UseImportFormBeforeSubmit,
     type UseImportFormBeforeSubmitValue,
@@ -19,6 +20,7 @@ import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
 import { itemsImportRequest } from '@proton/pass/store/actions/requests';
+import { selectHasWritableVault } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -64,9 +66,13 @@ export const Import: FC = () => {
         },
     });
 
+    const canImport = useSelector(selectHasWritableVault);
+
     const showResultDetails = (result?.ignored.length ?? 0) > 0 || (result?.warnings?.length ?? 0) > 0;
     const totalImportedItems = result?.total ?? 0;
     const totalItems = totalImportedItems + (result?.ignored.length ?? 0);
+
+    if (!canImport) return <ContactAdminWarning />;
 
     return (
         <>
