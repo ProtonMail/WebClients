@@ -29,7 +29,7 @@ import { createVerifier } from './verifier';
 
 declare const self: Worker;
 
-const uploadWorker = new UploadWorker(self, { generateKeys, start, createdBlocks, pause, resume });
+export const uploadWorker = new UploadWorker(self, { generateKeys, start, createdBlocks, pause, resume });
 
 const pauser = new Pauser();
 const buffer = new UploadWorkerBuffer();

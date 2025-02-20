@@ -3,6 +3,7 @@ import { CryptoProxy, serverTime, updateServerTime } from '@proton/crypto';
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
+import type { ConfigData } from '../../config';
 import { convertSafeError } from '../../utils/errorHandling/EnrichedError';
 import { RefreshError, getRefreshError } from '../../utils/errorHandling/RefreshError';
 import { HEARTBEAT_INTERVAL, HEARTBEAT_WAIT_TIME, WORKER_INIT_WAIT_TIME } from './constants';
@@ -58,12 +59,24 @@ type CloseMessage = {
     command: 'close';
 };
 
+type ConfigMessage = {
+    command: 'config';
+    data: ConfigData;
+};
+
 /**
  * WorkerControllerEvent contains all possible events which can come from
  * the main thread to the upload web worker.
  */
 type WorkerControllerEvent = {
-    data: GenerateKeysMessage | StartMessage | CreatedBlocksMessage | PauseMessage | ResumeMessage | CloseMessage;
+    data:
+        | GenerateKeysMessage
+        | StartMessage
+        | CreatedBlocksMessage
+        | PauseMessage
+        | ResumeMessage
+        | CloseMessage
+        | ConfigMessage;
 };
 
 /**
@@ -201,6 +214,8 @@ export class UploadWorker {
 
     heartbeatInterval?: NodeJS.Timeout;
 
+    config?: ConfigData;
+
     constructor(worker: Worker, { generateKeys, start, createdBlocks, pause, resume }: WorkerHandlers) {
         // Before the worker termination, we want to release securely crypto
         // proxy. That might need a bit of time, and we allow up to few seconds
@@ -226,6 +241,9 @@ export class UploadWorker {
 
         worker.addEventListener('message', ({ data }: WorkerControllerEvent) => {
             switch (data.command) {
+                case 'config':
+                    this.config = data.data;
+                    break;
                 case 'generate_keys':
                     (async (data) => {
                         let module;
