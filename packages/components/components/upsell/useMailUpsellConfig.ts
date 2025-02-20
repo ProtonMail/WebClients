@@ -71,8 +71,8 @@ export const useMailUpsellConfig = ({ upsellRef, preventInApp = false, onSubscri
             // - cycle: Monthly or Yearly
             const {
                 cycle,
-                couponCode: coupon,
-                price,
+                coupon: coupon,
+                monthlyPrice: price,
                 planID,
             } = await getMailUpsellConfig({
                 user,
