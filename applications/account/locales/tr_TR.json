@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "activate": [
-        "kullanıma al"
-      ],
       "Activate": [
         "Kullanıma al"
+      ],
+      "activate": [
+        "kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -4422,7 +4422,7 @@
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } sizin kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa alan adı (pm.me) bölümüne gidin"
+        "${ user.Name } kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
@@ -6976,11 +6976,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
-      "active": [
-        "etkin"
-      ],
       "Active": [
         "Etkin"
+      ],
+      "active": [
+        "etkin"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -7083,7 +7083,7 @@
         "Telefon ile hesap kurtarılabilsin"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Kullanıcıların ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden güvenli paylaşımlı sunuculara bağlanmasına izin verin."
+        "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
       ],
       "Already allocated": [
         "Zaten ayrılmış"
@@ -7433,7 +7433,7 @@
       "default email address": [
         "varsayılan e-posta adresi"
       ],
-      "Default mail application": [
+      "Default email application": [
         "Varsayılan e-posta uygulaması"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7769,19 +7769,22 @@
         "Bu parolayı başka bir yönetici değiştirdiyse, ondan yeni kuruluş parolasını istemeniz gerekecek."
       ],
       "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Devre dışı bırakılırsa yeni organizasyon üyelerinin öğe oluşturmaya başlayabilmeleri için bir yöneticinin onlar için ilk kasayı manuel olarak (paylaşım yoluyla) oluşturması gerekecek."
+        "Bu seçenek kapatılırsa, yeni kuruluş üyelerinin öge oluşturmaya başlayabilmeleri için bir yöneticinin onlar için ilk kasayı el ile (paylaşarak) oluşturması gerekir."
       ],
       "If disabled, only administrators will be able to export data.": [
-        "Devre dışı bırakılırsa yalnızca yöneticiler verileri dışa aktarabilir."
+        "Bu seçenek kapatılırsa, yalnızca yöneticiler verileri dışa aktarabilir."
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
-        "Devre dışı bırakılırsa kuruluş üyeleri yalnızca kuruluş içindeki kasaları veya öğeleri paylaşabilir."
+        "Bu seçenek kapalıysa, kuruluş üyeleri kasaları veya ögeleri yalnızca kuruluş içinde paylaşabilir."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
-        "Etkinleştirilirse kuruluş üyeleri kasalara ek olarak bireysel öğeleri de paylaşabilecektir."
+        "Bu seçenek açıksa, kuruluş üyeleri kasalara ek olarak tekil ögeleri de paylaşabilir."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Gereksinimlerinizi karşılamazsa ücretinizi geri öderiz."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Klavye kısayolları etkinleştirilmişse hızlı eylemler için veya farklı görünümlere atlamak için aşağıdaki tuşları kullanabilirsiniz. ${ metaKey } + K her zaman etkindir."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Sistem saat dilimi geçerli saat dilimi ayarıyla aynı değilse, güncellemeniz istenir (günde en fazla bir kez)."
@@ -8295,7 +8298,7 @@
         "Ya da belirli bir sunucuyu seçin:"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Organizasyon üyelerinin ${ PASS_APP_NAME } kilidini kendi şifreleri veya PIN vb. ile açmaları gerekecek."
+        "Kuruluş üyelerinin ${ PASS_APP_NAME } kilidini kendi parolaları veya PIN kodları vb. ile açmaları gerekir."
       ],
       "Organization size": [
         "Kuruluş boyutu"
@@ -8643,8 +8646,8 @@
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız olarak ayarlayın. Bir e-posta bağlantısına tıkladığınızda ${ MAIL_APP_NAME } otomatik olarak açılır."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Varsayılan e-posta uygulamanız olarak ${ MAIL_APP_NAME } ayarlayın. Bir e-posta bağlantısına tıkladığınızda ${ MAIL_APP_NAME } otomatik olarak açılacaktır."
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
@@ -8674,8 +8677,8 @@
         "Paylaşılan ${ vaultLink } güncellendi"
       ],
       "Shared server country (${ countriesCount })": [
-        "Paylaşımlı sunucu ülkesi (${ countriesCount })",
-        "Paylaşımlı sunucu ülkesi (${ countriesCount })"
+        "Paylaşılan sunucu ülkesi (${ countriesCount })",
+        "Paylaşılan sunucu ülkeleri (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Paylaşılmış kasa silindi"
@@ -8786,8 +8789,8 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Dosyalarınızı ${ DRIVE_APP_NAME } uygulamasıyla eşitleyin ve yönetin. ${ DOCS_APP_NAME } ile belgeler oluşturun, paylaşın ve güvenle saklayın. Tüm bunları ${ ios }, ${ android } ve ${ desktop } üzerinde yapın."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Tech radar pro tarafından 5 üzerinden 4,2 puanla önerildi"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "TechRadar Pro 5 yıldız üzerinden 4,2 puanla tavsiye etti"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -9951,6 +9954,12 @@
       "Close draft": [
         "Taslağı kapat"
       ],
+      "Create new event": [
+        "Yeni etkinlik oluştur"
+      ],
+      "Day view": [
+        "Gün görünümü"
+      ],
       "Delete permanently": [
         "Kalıcı olarak sil"
       ],
@@ -10017,6 +10026,9 @@
       "Minimize / maximize composer": [
         "Oluşturucuyu küçült / büyüt"
       ],
+      "Month view": [
+        "Ay görünümü"
+      ],
       "Move down": [
         "Aşağı git"
       ],
@@ -10047,6 +10059,9 @@
       "New message": [
         "Yeni ileti"
       ],
+      "Next period": [
+        "Sonraki dönem"
+      ],
       "Open command panel": [
         "Komut panosunu aç"
       ],
@@ -10056,8 +10071,14 @@
       "Open previous message": [
         "Önceki iletiyi aç"
       ],
+      "Open quick actions menu": [
+        "Hızlı eylemler menüsünü açın"
+      ],
       "Open this modal": [
         "Bu pencereyi aç"
+      ],
+      "Previous period": [
+        "Önceki dönem"
       ],
       "Reply": [
         "Yanıtla"
@@ -10070,6 +10091,9 @@
       ],
       "Search": [
         "Arama"
+      ],
+      "Search events": [
+        "Etkinlikleri ara"
       ],
       "Select / unselect": [
         "Seç / bırak"
@@ -10091,6 +10115,12 @@
       ],
       "Star": [
         "Yıldız koy/kaldır"
+      ],
+      "Today": [
+        "Bugün"
+      ],
+      "Week view": [
+        "Hafta görünümü"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10114,6 +10144,9 @@
       ],
       "Message shortcuts": [
         "İleti kısayolları"
+      ],
+      "View options": [
+        "Seçenekleri görüntüle"
       ]
     },
     "Keys actions": {
@@ -10261,13 +10294,13 @@
         "İzin verilen"
       ],
       "Allow all users to create vaults": [
-        "Tüm kullanıcıların kasa oluşturmasına izin ver"
+        "Tüm kullanıcılar kasalar oluşturabilsin"
       ],
       "Allow data export for all users": [
-        "Tüm kullanıcılar için veri dışa aktarımına izin ver"
+        "Tüm kullanıcılar verileri dışa aktarabilsin"
       ],
       "Allow individual item sharing": [
-        "Bireysel öğe paylaşımına izin ver"
+        "Tekil ögeler paylaşılabilsin"
       ],
       "Allow memorable passwords": [
         "Anımsanabilir parolalar kullanılabilsin"
@@ -10291,7 +10324,7 @@
         "Kurtarma için güvenilir bir aygıt kullanın"
       ],
       "Allow sharing outside the organization": [
-        "Kuruluş dışı paylaşıma izin ver"
+        "Kuruluş dışına paylaşım yapılabilsin"
       ],
       "Allowed domain": [
         "İzin verilen etki alanı"
@@ -12774,6 +12807,17 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -12882,17 +12926,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -16739,6 +16772,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -17027,47 +17101,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -17566,6 +17599,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ appName } keyboard shortcuts": [
+        "${ appName } klavye kısayolları"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17577,9 +17613,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } klavye kısayolları"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } izleme raporu"
@@ -19469,7 +19502,7 @@
         "Bu işlem yöneticinin bu kullanıcının hesabını yönetme iznini kaldıracak."
       ],
       "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
-        "Yönetici haklarını kazanmak için bir sonraki ${ BRAND_NAME } oturum açışlarında bir yedek parola belirlemeleri gerekecektir."
+        "Yönetici yetkilerini kullanabilmeleri için ${ BRAND_NAME } ile bir sonraki oturum açmalarında bir yedek parola belirlemeleri gerekecek."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "İlerlemek için, kullanıcının verilerine erişme izni isteğinde bulunmalı ya da parolasını sıfırlamalısınız."

@@ -70,11 +70,11 @@
       "Accept": [
         "接受"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -4406,6 +4406,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -6911,11 +6914,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "active": [
-        "启用"
-      ],
       "Active": [
         "已启用"
+      ],
+      "active": [
+        "启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7009,6 +7012,9 @@
       ],
       "Allow recovery by phone": [
         "允许通过手机恢复"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "允许用户从 ${ VPN_APP_NAME } 应用程序的**国家**部分连接到安全的共享服务器。"
       ],
       "Already allocated": [
         "已分配"
@@ -7355,8 +7361,8 @@
       "default email address": [
         "首选邮件地址"
       ],
-      "Default mail application": [
-        "默认邮件应用"
+      "Default email application": [
+        "设为默认邮件应用"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "删除其他 MX 记录，或者确保 ${ MAIL_APP_NAME } 的优先级数字最小。"
@@ -7687,6 +7693,18 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "若其他管理员更改了此密码，您需要向其询问新的机构密码。"
+      ],
+      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
+        "如果禁用，新组织成员将需要管理员为他们手动创建第一个保险库（通过共享），这样他们就可以开始创建项目了。"
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "如果禁用，则只有管理员才能导出数据。"
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "如果禁用，组织成员将只能共享组织内的保险库或项目。"
+      ],
+      "If enabled, organization members will be able to share individual items in addition to vaults.": [
+        "如果启用，组织成员除了可以共享保险库外，还可以共享单个项目。"
       ],
       "If it’s not right for you, we’ll refund you.": [
         "若不满意可要求退款。"
@@ -8198,6 +8216,9 @@
       "Or select a particular server:": [
         "或指定服务器："
       ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "组织成员需要用密码或 PIN 码等解锁 ${ PASS_APP_NAME }。"
+      ],
       "Organization size": [
         "组织的规模"
       ],
@@ -8540,8 +8561,8 @@
       "Session timed out": [
         "会话超时"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "将 ${ MAIL_APP_NAME } 设置为默认邮件应用程序，点击邮件链接时会自动打开 ${ MAIL_APP_NAME }。"
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "将 ${ MAIL_APP_NAME } 设置为默认电子邮件应用程序，点击电子邮件链接时，${ MAIL_APP_NAME } 将自动打开。"
       ],
       "Set recovery phrase": [
         "设置恢复密语"
@@ -8569,6 +8590,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "共享的 ${ vaultLink } 已更新"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "共享服务器所在的国家（${ countriesCount }）"
       ],
       "Shared vault deleted": [
         "共享密码库已删除"
@@ -8678,7 +8702,7 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用 ${ DRIVE_APP_NAME } 应用程序同步和管理文件。在 ${ DOCS_APP_NAME } 中创建和共享文档，并安全存储。一切尽在 ${ ios }、${ android } 和 ${ desktop }。"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro 推荐，评分 4.2 星 ( 满分 5 星 )"
       ],
       "Temporarily unavailable. Please check back later.": [
@@ -10133,6 +10157,15 @@
       "Allow": [
         "白名单"
       ],
+      "Allow all users to create vaults": [
+        "允许所有用户创建保险库"
+      ],
+      "Allow data export for all users": [
+        "允许所有用户导出数据"
+      ],
+      "Allow individual item sharing": [
+        "允许共享单个项目"
+      ],
       "Allow memorable passwords": [
         "允许使用易记密码"
       ],
@@ -10153,6 +10186,9 @@
       ],
       "Allow recovery using a trusted device": [
         "允许通过可信设备恢复"
+      ],
+      "Allow sharing outside the organization": [
+        "允许组织外部共享"
       ],
       "Allowed domain": [
         "允许的域"
@@ -12598,6 +12634,17 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ trialPlanName } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的体验期将于 ${ formattedPeriodEndDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -12706,17 +12753,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ trialPlanName } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的体验期将于 ${ formattedPeriodEndDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -13142,6 +13178,9 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "关闭后将无法在 ${ BRAND_NAME } 应用内收取通知信息"
+      ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "在您使用 ${ BRAND_NAME } 产品的第一个月里"
       ],
       "Email subscriptions": [
         "邮件订阅"
@@ -13746,6 +13785,9 @@
       ],
       "Organization identity updated": [
         "组织身份已更新"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "验证您的电子邮件地址 ${ email } 以设置组织身份。"
       ]
     },
     "OS compatibility": {
@@ -16500,6 +16542,47 @@
         "总计${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动转发 ${ strongText } 电子邮件"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "短电子邮箱地址 @pm.me"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -16782,47 +16865,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 电子邮件别名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动转发 ${ strongText } 电子邮件"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "短电子邮箱地址 @pm.me"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -17323,9 +17365,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } 快捷键"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } 监控报告"
@@ -19206,6 +19245,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "这将撤销管理员管理该用户账户的权限。"
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "要获取管理员权限，他们必须在下次登录 ${ BRAND_NAME } 时设置备份密码。"
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "要继续操作，您需要请求用户允许访问其数据或重置其密码。"
