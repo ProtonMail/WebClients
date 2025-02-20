@@ -725,6 +725,11 @@
         "हां, हम भाग लेंगे"
       ]
     },
+    "action": {
+      "Search messages": [
+        "संदेश खोजें"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "जिसके पास लिंक है, वह आपका कैलेंडर देख सकता है"
@@ -4250,6 +4255,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "एक या उससे ज़्यादा आपके भरोसेमंद चाबियां मालिक ने \"समझौता हुआ\" मार्क की। हमारी सलाह है की आप इनसे भरोसेमंद का मार्क हटा दें।"
       ],
+      "Open shortcut cheat sheet": [
+        "शॉर्टकट चीट शीट खोलें"
+      ],
       "Organization size": [
         "संगठन का साइज़"
       ],
@@ -4697,6 +4705,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } कमांड मिला।",
+        "${ filteredList.length } कमांड मिले।"
+      ],
       "Selected color:": [
         "रंग चुनें:"
       ]
@@ -4801,6 +4813,16 @@
       ],
       "Trusted": [
         "विश्वस्त"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "इस मोडल को खोलें"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "बुनियादी क्रियाएं"
       ]
     },
     "Knowledge base link label": {
@@ -5022,6 +5044,12 @@
       ],
       "Import to:": [
         "इधर आयात करें:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "कीबोर्ड शॉर्टकट: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "कीबोर्ड शॉर्टकट्स"
       ],
       "Label messages as": [
         "संदेशों को लेबल करें"
@@ -7538,6 +7566,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "न्योता भेजा गया और प्रतिभागी सारे इवेंट के लिए जोड़े गए"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "कीबोर्ड शॉर्टकट प्राथमिकताएं अपडेट की गईं"
       ],
       "Last modified aliases stored in your oldest vault": [
         "आपके सबसे पुराने तिजोरी में स्टोर किया अंतिम संशोधित प्रकारांतर"

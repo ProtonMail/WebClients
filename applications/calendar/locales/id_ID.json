@@ -807,6 +807,11 @@
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Cari pesan"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Siapa pun yang memiliki tautan ini akan dapat melihat kalender Anda"
@@ -2911,6 +2916,9 @@
       "${ list } has no contacts": [
         "Sebagian grup tidak memiliki kontak: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Identitas dan alamat > Domain pendek (pm.me)"
+      ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
@@ -4846,6 +4854,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
+      "Open shortcut cheat sheet": [
+        "Buka lembar contekan pintasan"
+      ],
       "or discover other features:": [
         "atau telusuri berbagai fitur lainnya:"
       ],
@@ -5370,6 +5381,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } perintah ditemukan."
+      ],
       "Selected color:": [
         "Warna terpilih:"
       ]
@@ -5474,6 +5488,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Buka jendela ini"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Tindakan dasar"
       ]
     },
     "Knowledge base link label": {
@@ -5709,6 +5733,12 @@
       ],
       "Import to:": [
         "Impor ke:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Pintasan keyboard: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Pintasan keyboard"
       ],
       "Label messages as": [
         "Labeli pesan sebagai"
@@ -6652,6 +6682,9 @@
       ],
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
+      ],
+      "Dedicated servers optimized for streaming": [
+        "Server khusus yang dioptimalkan untuk streaming"
       ],
       "Desktop app": [
         "Aplikasi desktop"
@@ -9228,6 +9261,9 @@
       "Invitation sent and participants added to all events": [
         "Undangan terkirim dan peserta berhasil ditambahkan ke semua acara"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Preferensi pintasan keyboard diperbarui"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Alias yang terakhir digunakan tersimpan dalam brankas terlawas Anda"
       ],
@@ -10133,6 +10169,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
+      "2 consecutive dots are not allowed": [
+        "Alias tidak dapat mengandung 2 titik secara berurutan"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Apakah Anda yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
@@ -10144,6 +10183,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Apakah Anda yakin ingin menghapus kontak ini secara permanen?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Alias tidak dapat dimulai dengan titik"
+      ],
+      "Cannot contain a dot at the end": [
+        "Alias tidak dapat diakhiri dengan titik"
       ],
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
@@ -10165,6 +10210,9 @@
       ],
       "Name is required": [
         "Nama dibutuhkan"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
