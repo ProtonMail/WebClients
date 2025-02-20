@@ -103,6 +103,9 @@
       "Change": [
         "Muuta"
       ],
+      "Change email": [
+        "Vaihda sähköpostiosoitteesi"
+      ],
       "Check DNS": [
         "Tarkista DNS"
       ],
@@ -1331,9 +1334,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "SimpleLogin-aliasten hallintaominaisuudet ovat tulossa pian!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias on poistettu käytöstä. Et enää vastaanota osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
       ],
@@ -2389,9 +2389,6 @@
       "Alias address (disabled)": [
         "Aliasosoite (ei käytössä)"
       ],
-      "Alias management": [
-        "Aliashallinta"
-      ],
       "Aliases": [
         "Aliakset"
       ],
@@ -2760,6 +2757,9 @@
       ],
       "New": [
         "Uusi"
+      ],
+      "New email": [
+        "Uusi sähköpostiosoite"
       ],
       "New vault": [
         "Uusi holvi"
