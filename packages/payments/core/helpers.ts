@@ -362,7 +362,7 @@ export function fixPlanName(planName: string | null | undefined, source: string)
 export function fixPlanIDs(planIDs: PlanIDs | undefined, source: string): PlanIDs | undefined {
     try {
         if (!planIDs || !planIDs[PLANS.VPN]) {
-            return;
+            return planIDs;
         }
 
         const planIDsCopy: PlanIDs = { ...planIDs };
