@@ -2134,8 +2134,14 @@
       ]
     },
     "Description": {
+      "Everyone in your organization can connect to shared servers.": [
+        "A szervezetben mindenki csatlakozhat a megosztott szerverhez."
+      ],
       "If disabled, only admins will have access.": [
         "Ha le van tiltva, csak az adminisztrátorok férhetnek hozzá."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "A szervezeten belül senki sem csatlakozhat a megosztott szerverhez."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
@@ -3053,6 +3059,9 @@
       "Best deal": [
         "Legjobb üzlet"
       ],
+      "Checkout": [
+        "Pénztár"
+      ],
       "Device": [
         "Eszköz"
       ],
@@ -3326,6 +3335,9 @@
       ],
       "Allocated": [
         "Lefoglalva"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Lehetővé teszi a felhasználók számára, hogy a ${ VPN_APP_NAME } alkalmazás **országok** bármely részéből biztonságos megosztott szerverekhez csatlakozzanak."
       ],
       "Already allocated": [
         "Már lefoglalva"
@@ -3875,6 +3887,12 @@
       "of": [
         "/"
       ],
+      "Off": [
+        "Ki"
+      ],
+      "On": [
+        "Be"
+      ],
       "Once you reset your password:": [
         "Ha visszaállítja a jelszavát:"
       ],
@@ -4086,6 +4104,10 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Megosztott ${ vaultLink } frissítve"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Megosztott szerver országa (${ countriesCount })",
+        "Megosztott szerver országok (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Megosztott tároló törölve"
@@ -7880,29 +7902,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -8077,6 +8076,29 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -8871,6 +8893,9 @@
       ],
       "Settings": [
         "Beállítások"
+      ],
+      "Shared servers": [
+        "Megosztott szerverek"
       ],
       "Sign in": [
         "Bejelentkezés"

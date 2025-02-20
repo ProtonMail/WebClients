@@ -2675,7 +2675,7 @@
         "Παρακαλούμε επιλέξτε μια χώρα"
       ],
       "Please select a state": [
-        "Παρακαλώ διαλέξτε πολιτεία"
+        "Παρακαλούμε διαλέξτε πολιτεία"
       ],
       "Please set a recovery email first": [
         "Παρακαλούμε ορίστε πρώτα μια διεύθυνση ανάκτησης"
@@ -3760,6 +3760,9 @@
       "Allocated": [
         "Κατανεμημένος"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Επιτρέψτε στους χρήστες να συνδέονται σε διασφαλισμένους κοινόχρηστους διακομιστές από την ενότητα **Χώρες** της εφαρμογής ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Ήδη κατανεμημένος"
       ],
@@ -4741,6 +4744,10 @@
       "Shared ${ vaultLink } updated": [
         "Η κοινόχρηστη ${ vaultLink } ενημερώθηκε"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Χώρα κοινόχρηστου διακομιστή (${ countriesCount })",
+        "Χώρες κοινόχρηστου διακομιστή (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Διαγράφηκε η κοινοποιημένη κρύπτη"
       ],
@@ -4805,8 +4812,8 @@
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Το Tech radar pro το συνιστά με βαθμολογία 4,2 στα 5 αστέρια"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "Το TechRadar Pro το συνιστά με βαθμολογία 4,2 στα 5 αστέρια"
       ],
       "Thank you": [
         "Ευχαριστούμε"
@@ -7586,6 +7593,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Η απενεργοποίηση αυτού θα καταργήσει τη δυνατότητα λήψης ειδοποιήσεων σε ${ BRAND_NAME } εφαρμογές"
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Κατά τη διάρκεια του πρώτου μήνα χρήσης ενός προϊόντος ${ BRAND_NAME }"
+      ],
       "Email subscriptions": [
         "Συνδρομές Email"
       ],
@@ -8156,7 +8166,7 @@
         "Δεν είμαστε σε θέση να επαληθεύσουμε τον τρόπο πληρωμής σας. Παρακαλούμε επιλέξτε διαφορετικό τρόπο πληρωμής ή προσπαθήστε ξανά."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Η κάρτα σας απορρίφθηκε. Παρακαλώ δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+        "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
       ]
     },
     "Payments.plan_name": {
@@ -9589,47 +9599,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερα premium χαρακτηριστικά"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium χαρακτηριστικά"
@@ -9918,6 +9887,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {

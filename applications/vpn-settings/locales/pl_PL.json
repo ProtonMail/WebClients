@@ -3455,7 +3455,7 @@
         "Włączone kraje"
       ],
       "Enter your email address": [
-        "Podaj swój adres e-mail"
+        "Wpisz adres e-mail"
       ],
       "Event": [
         "Zdarzenie"
@@ -3917,7 +3917,7 @@
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
-        "Nagroda redaktorów CNET z oceną 8,4 na 10."
+        "Nagroda redaktorów CNET z oceną 8,4 na 10"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji przy pomocy dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
@@ -4511,7 +4511,7 @@
         "Brak adresów e-mail"
       ],
       "No common passwords": [
-        "Bez powszechnie używanych haseł"
+        "Brak popularnych haseł"
       ],
       "No gateways": [
         "Brak bram"
@@ -4523,7 +4523,7 @@
         "Płatność nie jest wymagana."
       ],
       "No predictable sequences (1234, aaa)": [
-        "Bez przewidywalnych sekwencji (1234, aaa)"
+        "Brak przewidywalnych sekwencji (1234, aaa)"
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
@@ -4813,6 +4813,12 @@
       "Shared ${ vaultLink } updated": [
         "Zaktualizowanie udostępniania sejfu ${ vaultLink }"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Kraj serwera współdzielonego (${ countriesCount })",
+        "Kraje serwerów współdzielonych (${ countriesCount })",
+        "Kraje serwerów współdzielonych (${ countriesCount })",
+        "Kraje serwerów współdzielonych (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Usunięcie udostępnionego sejfu"
       ],
@@ -4878,9 +4884,6 @@
       ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
-      ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Tech radar pro rekomenduje z oceną 4,2 na 5 gwiazdek"
       ],
       "Thank you": [
         "Dziękujemy"
@@ -5951,7 +5954,7 @@
         "Nowe hasło"
       ],
       "New policy name": [
-        "Nowa nazwa reguły"
+        "Nowa nazwa zasady"
       ],
       "New second password": [
         "Nowe drugie hasło"
@@ -7091,7 +7094,7 @@
         "Split Tunneling (Android i Windows)"
       ],
       "SSO integration": [
-        "Integracja z SSO"
+        "Logowanie SSO"
       ],
       "Start protecting your organization": [
         "Chroń swoją organizację"
@@ -7762,7 +7765,7 @@
         "Pobrane kody odzyskiwania"
       ],
       "Error creating policy": [
-        "Błąd podczas tworzenia polityki"
+        "Wystąpił błąd podczas tworzenia zasady"
       ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
@@ -7783,7 +7786,7 @@
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
       ],
       "Policy created successfully": [
-        "Polityka została utworzona pomyślnie"
+        "Zasada została utworzona"
       ],
       "Reminder has been sent": [
         "Przypomnienie zostało wysłane"
@@ -9807,47 +9810,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -10148,6 +10110,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -10552,7 +10555,7 @@
         "Dodaj adres"
       ],
       "Add countries to \"${ policyName }\"": [
-        "Dodaj kraj do ${ policyName }"
+        "Dodaj kraje do zasady \"${ policyName }\""
       ],
       "Add credit/debit card": [
         "Dodaj kartę płatniczą"
@@ -10591,7 +10594,7 @@
         "Dodaj użytkowników"
       ],
       "Add users to \"${ policyName }\"": [
-        "Dodaj użytkownika do ${ policyName }"
+        "Dodaj użytkowników do zasady \"${ policyName }\""
       ],
       "Allocate storage": [
         "Przydziel przestrzeń dyskową"
@@ -10717,7 +10720,7 @@
         "Utwórz wiele kont użytkowników"
       ],
       "Create new policy": [
-        "Utwórz nową regułę"
+        "Utwórz nową zasadę"
       ],
       "Create organization key": [
         "Utwórz klucz organizacji"
@@ -11924,7 +11927,7 @@
         "Pakiet ${ a } i ${ b }"
       ],
       "Your ${ selected } plan": [
-        "Twój plan ${ selected }"
+        "Plan ${ selected }"
       ],
       "Your plan includes:": [
         "Twój plan zawiera:"
