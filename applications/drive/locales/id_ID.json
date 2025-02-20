@@ -759,6 +759,9 @@
       "Select country": [
         "Pilih negara"
       ],
+      "Set as album cover": [
+        "Pasang sebagai sampul album"
+      ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
@@ -1336,6 +1339,11 @@
       ],
       "Take a tour": [
         "Ikuti tur kami"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Add ${ photos.length } photo to": [
+        "Tambah ${ photos.length } foto ke"
       ]
     },
     "Cancellation reminder": {
@@ -2415,6 +2423,11 @@
         "Faktur yang tertunggak"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2496,11 +2509,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2693,6 +2701,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } merupakan nama pengguna Anda. Untuk membuat ${ emailAddress }, silakan tuju Pengaturan > Identitas dan alamat > Domain pendek (pm.me)"
       ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
@@ -4140,6 +4151,9 @@
       "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
       ],
+      "All albums": [
+        "Seluruh album"
+      ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
       ],
@@ -4749,6 +4763,9 @@
       "No": [
         "Tidak"
       ],
+      "No Albums": [
+        "Tidak ada album"
+      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
@@ -4832,6 +4849,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "Enkripsi PGP/MIME akan secara otomatis mengirim pesan dengan mode komposer yang saat ini digunakan."
+      ],
+      "Photo is set as album cover": [
+        "Foto dipasang sebagai sampul album"
       ],
       "Photos have been successfully recovered.": [
         "Foto telah berhasi dipulihkan."
@@ -5099,6 +5119,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
+      ],
+      "The albums you create are shown here": [
+        "Album yang Anda buat akan muncul di sini"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Tanda tangan digital ini telah diverifikasi secara parsial. Berkas ini diunggah melalui tautan berbagi publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
@@ -6009,6 +6032,9 @@
       ],
       "Move to Inbox": [
         "Pindahkan ke Kotak masuk"
+      ],
+      "My Albums": [
+        "Album Saya"
       ],
       "Name": [
         "Nama"
@@ -7021,6 +7047,9 @@
       ],
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
+      ],
+      "Dedicated servers optimized for streaming": [
+        "Server khusus yang dioptimalkan untuk streaming"
       ],
       "Desktop app": [
         "Aplikasi desktop"
@@ -10482,6 +10511,11 @@
         "Hari ini"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tambahkan berkas bersama ini ke ${ DRIVE_APP_NAME } anda untuk akses mudah nanti."
@@ -10563,11 +10597,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Kami telah mengirim undangan untuk mengakses berkas ini."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Validation": {
@@ -10675,6 +10704,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
+      "2 consecutive dots are not allowed": [
+        "Alias tidak dapat mengandung 2 titik secara berurutan"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Apakah Anda yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
@@ -10686,6 +10718,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Apakah Anda yakin ingin menghapus kontak ini secara permanen?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Alias tidak dapat dimulai dengan titik"
+      ],
+      "Cannot contain a dot at the end": [
+        "Alias tidak dapat diakhiri dengan titik"
       ],
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
@@ -10707,6 +10745,9 @@
       ],
       "Name is required": [
         "Nama dibutuhkan"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
