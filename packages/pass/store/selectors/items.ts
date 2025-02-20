@@ -126,7 +126,7 @@ export const selectItemsByShareId = (shareId?: string) =>
 export const selectNonOptimisticItem =
     <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
     (state: State) =>
-        selectItemsState(state)?.[shareId]?.[itemId] as Maybe<ItemRevision<T>>;
+        selectNonOptimisticItems(state)?.[shareId]?.[itemId] as Maybe<ItemRevision<T>>;
 
 export const selectItem = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
     createSelector([selectItems, selectOptimisticIds], (items, byOptimisticId): Maybe<ItemRevision<T>> => {
