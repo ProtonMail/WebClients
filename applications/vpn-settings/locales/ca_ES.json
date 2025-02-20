@@ -2510,7 +2510,7 @@
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "El vostre nom d'usuari és ${ user.Name }. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
@@ -3760,6 +3760,9 @@
       "Allocated": [
         "Assignat"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permeteu als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Ja assignat"
       ],
@@ -4741,6 +4744,10 @@
       "Shared ${ vaultLink } updated": [
         "S'ha actualitzat l'enllaç compartit ${ vaultLink }."
       ],
+      "Shared server country (${ countriesCount })": [
+        "País amb servidor compartit (${ countriesCount })",
+        "Països amb servidor compartit (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "S'ha eliminat la caixa forta compartida"
       ],
@@ -4805,7 +4812,7 @@
       "Symbols (#$&)": [
         "Símbols (#$&)"
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomanat per TechRadar Pro amb una puntuació de 4,2 sobre 5 estrelles"
       ],
       "Thank you": [
@@ -7587,7 +7594,7 @@
         "En desactivar-ho, s'eliminarà la possibilitat de rebre notificacions a les aplicacions de ${ BRAND_NAME }."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
-        "Durant el primer mes d'ús a ${ BRAND_NAME }"
+        "Durant el primer mes d'ús d'un producte de ${ BRAND_NAME }"
       ],
       "Email subscriptions": [
         "Subscripcions per correu electrònic"
@@ -7873,7 +7880,7 @@
         "S'ha actualitzat la identitat de l'organització."
       ],
       "Verify your email address ${ email } to set organization identity.": [
-        "Verifiqueu que la vostra adreça de correu ${ email } per a definir la identitat de l'organització."
+        "Verifiqueu la vostra adreça de correu electrònic ${ email } per a definir la identitat de l'organització."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -9592,47 +9599,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -9921,6 +9887,47 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -11303,7 +11310,7 @@
         "Això revocarà el permís de l'administrador per a gestionar el compte d'aquest usuari."
       ],
       "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
-        "Per a aconseguir drets d'administrador, l'usuari ha de crear una còpia de seguretat de la contrasenya quan torni a iniciar la sessió a ${ BRAND_NAME }."
+        "Per a obtenir drets d'administrador, l'usuari haurà d'establir una contrasenya de recuperació la pròxima vegada que iniciï la sessió a ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Per a continuar, haureu de sol·licitar el permís de l'usuari per a accedir a les seves dades o restablir la seva contrasenya."
