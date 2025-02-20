@@ -6,7 +6,6 @@ import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import zoomUpsellSvg from '@proton/styles/assets/img/illustrations/upsell-zoom-header.svg';
 
-import { useMailUpsellConfig } from '../../useMailUpsellConfig';
 import UpsellModal from '../UpsellModal';
 
 interface Props {
@@ -21,17 +20,17 @@ const upsellRef = getUpsellRef({
 
 const ZoomUpsellModal = ({ modalProps }: Props) => {
     const isIframe = getIsIframe();
-    const upsellConfig = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
 
     return (
         <UpsellModal
-            titleModal={c('Title').t`Schedule meetings in one click`}
+            title={c('Title').t`Schedule meetings in one click`}
             description={c('Description')
                 .t`Create a Zoom meeting and add joining details to your event with one click.`}
             modalProps={modalProps}
             illustration={zoomUpsellSvg}
             sourceEvent="BUTTON_ZOOM"
-            {...upsellConfig}
+            upsellRef={upsellRef}
+            preventInAppPayment={isIframe}
         />
     );
 };

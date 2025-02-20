@@ -14,7 +14,6 @@ import OrderableTableRow from '@proton/components/components/orderableTable/Orde
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import useApi from '@proton/components/hooks/useApi';
@@ -76,8 +75,6 @@ const AddressesUser = ({
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
-
-    const upsellConfig = useMailUpsellConfig({ upsellRef });
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
@@ -246,13 +243,13 @@ const AddressesUser = ({
 
             {renderUpsellModal && (
                 <UpsellModal
-                    titleModal={c('Title').t`An address for each role`}
+                    title={c('Title').t`An address for each role`}
                     description={c('Description')
                         .t`Keep different parts of your life separate and your inbox organized with additional addresses.`}
                     modalProps={upsellModalProps}
                     illustration={addressesImg}
                     sourceEvent="BUTTON_MORE_ADDRESSES"
-                    {...upsellConfig}
+                    upsellRef={upsellRef}
                 />
             )}
         </>
