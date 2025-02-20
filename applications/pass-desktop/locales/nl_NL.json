@@ -103,8 +103,14 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Cancel email change": [
+        "Annuleer e-mail wijziging"
+      ],
       "Change": [
         "Wijzigen"
+      ],
+      "Change email": [
+        "E-mailadres wijzigen"
       ],
       "Check DNS": [
         "Controleer DNS"
@@ -926,6 +932,12 @@
       "Failed to block the contact": [
         "Contact blokkeren mislukt"
       ],
+      "Failed to cancel mailbox change": [
+        "Annuleren van wijziging mailbox mislukt"
+      ],
+      "Failed to change mailbox": [
+        "Wijzigen mailbox mislukt"
+      ],
       "Failed to create domain": [
         "Maken van domein is mislukt"
       ],
@@ -1402,9 +1414,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Na het importeren van uw gegevens kunt u het CSV-bestand verwijderen dat uw wachtwoorden voor beveiliging bevat."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Alias beheer functies van SimpleLogin komen binnenkort!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias met succes uitgeschakeld. U ontvangt niet langer e-mails verzonden naar ${ item.aliasEmail }"
       ],
@@ -1608,9 +1617,6 @@
       ],
       "Emptying trash...": [
         "Prullenbak leegmaken..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "${ PASS_SHORT_APP_NAME } bèta Inschakelen"
       ],
       "Enable auto-locking to secure your data": [
         "Schakel auto-vergrendeling in om uw gegevens te beveiligen"
@@ -2197,6 +2203,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dit item wordt momenteel niet met iemand gedeeld. Nodig mensen uit om het met anderen te delen."
       ],
+      "This mailbox will use your previous email.": [
+        "Deze mailbox zal uw vorige e-mail gebruiken."
+      ],
       "This operation is irreversible.": [
         "Deze actie is onomkeerbaar."
       ],
@@ -2232,9 +2241,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Klik op het ${ PASS_APP_NAME }-pictogram in de werkbalk om uw geïmporteerde gegevens te bekijken."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
       "Unable to copy to clipboard": [
         "Kan niet kopiëren naar Klembord"
@@ -2533,9 +2539,6 @@
       "Alias address (disabled)": [
         "Aliasadres (uitgeschakeld)"
       ],
-      "Alias management": [
-        "Aliasbeheer"
-      ],
       "Aliases": [
         "Aliassen"
       ],
@@ -2562,9 +2565,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Naast het opslaan van uw logins beschermt ${ PASS_APP_NAME } uw identiteit met een geïntegreerde email alias-functie. Wanneer u zich registreert voor een nieuw online account, kan ${ PASS_APP_NAME } automatisch een alias maken om uw werkelijke e-mailadres te beschermen. "
-      ],
-      "Beta Access": [
-        "Bèta toegang"
       ],
       "Biometrics": [
         "Biometrie"
@@ -2952,6 +2952,9 @@
       ],
       "New": [
         "Nieuw"
+      ],
+      "New email": [
+        "Nieuwe e-mail"
       ],
       "New vault": [
         "Nieuwe kluis"
@@ -3619,6 +3622,9 @@
         "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruiker bevatten.",
         "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruikers bevatten."
       ],
+      "Mailbox change successfully cancelled": [
+        "Mailbox wijziging succesvol geannuleerd"
+      ],
       "Mailbox successfully deleted": [
         "Mailbox verwijderd"
       ],
@@ -3698,6 +3704,12 @@
       ],
       "Breaches detected for": [
         "Inbreuken gedetecteerd voor"
+      ],
+      "Cancel changing your email?": [
+        "Wijzigen e-mail annuleren?"
+      ],
+      "Change mailbox email": [
+        "Wijzig mailbox e-mail"
       ],
       "Change your lock method": [
         "Wijzig uw vergrendelingsmethode"

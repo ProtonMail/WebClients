@@ -103,8 +103,14 @@
       "Cancel": [
         "Ακύρωση"
       ],
+      "Cancel email change": [
+        "Ακύρωση αλλαγής email"
+      ],
       "Change": [
         "Αλλαγή"
+      ],
+      "Change email": [
+        "Αλλαγή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
       "Check DNS": [
         "Έλεγχος DNS"
@@ -926,6 +932,12 @@
       "Failed to block the contact": [
         "Αποτυχία αποκλεισμού της επαφής"
       ],
+      "Failed to cancel mailbox change": [
+        "Αποτυχία ακύρωσης αλλαγής γραμματοκιβωτίου"
+      ],
+      "Failed to change mailbox": [
+        "Αποτυχία αλλαγής γραμματοκιβωτίου"
+      ],
       "Failed to create domain": [
         "Αποτυχία δημιουργίας τομέα"
       ],
@@ -1402,9 +1414,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Οι δυνατότητες διαχείρισης ψευδωνύμων από το SimpleLogin έρχονται σύντομα!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Το ψευδώνυμο απενεργοποιήθηκε με επιτυχία. Δε θα λαμβάνετε πλέον μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ item.aliasEmail }"
       ],
@@ -1608,9 +1617,6 @@
       ],
       "Emptying trash...": [
         "Άδειασμα διαγραμμένων..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Ενεργοποίηση ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Ενεργοποιήστε το αυτόματο κλείδωμα για να ασφαλίσετε τα δεδομένα σας"
@@ -2197,6 +2203,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτό το στοιχείο δεν είναι προς το παρόν κοινόχρηστο με κανέναν. Προσκαλέστε άτομα να το μοιράστε με άλλους."
       ],
+      "This mailbox will use your previous email.": [
+        "Αυτό το γραμματοκιβώτιο θα χρησιμοποιήσει το προηγούμενο email σας."
+      ],
       "This operation is irreversible.": [
         "Αυτή η λειτουργία είναι μην αναστρέψιμη."
       ],
@@ -2232,9 +2241,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Για να ελέγξετε τα εισαγόμενα δεδομένα σας, κάντε κλικ στο εικονίδιο ${ PASS_APP_NAME } στη γραμμή εργαλείων του προγράμματος περιήγησής σας."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
@@ -2388,7 +2394,7 @@
         "Είστε προσκεκλημένοι σε μια κρύπτη."
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "Ο λογαριασμός σας έχει περιοριστεί επειδή ο οργανισμός σας έχει επιβάλλει έλεγχο ταυτότητας δύο παραγόντων. Παρακαλώ ενεργοποιήστε τον έλεγχο ταυτότητας δύο παραγόντων στις δικές σας Ρυθμίσεις Λογαριασμού ή επικοινωνήστε με τον διαχειριστή σας."
+        "Ο λογαριασμός σας έχει περιοριστεί επειδή ο οργανισμός σας έχει επιβάλλει έλεγχο ταυτότητας δύο παραγόντων. Παρακαλούμε ενεργοποιήστε τον έλεγχο ταυτότητας δύο παραγόντων στις δικές σας Ρυθμίσεις Λογαριασμού ή επικοινωνήστε με τον διαχειριστή σας."
       ],
       "your domain": [
         "ο τομέας σας"
@@ -2533,9 +2539,6 @@
       "Alias address (disabled)": [
         "Διεύθυνση ψευδωνύμου (απενεργοποιημένη)"
       ],
-      "Alias management": [
-        "Διαχείρισης ψευδωνύμων"
-      ],
       "Aliases": [
         "Ψευδώνυμα"
       ],
@@ -2562,9 +2565,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Εκτός από την αποθήκευση των συνδέσεών σας, το ${ PASS_APP_NAME } προστατεύει την ταυτότητά σας με μια ενσωματωμένη λειτουργία ψευδωνύμου διεύθυνσης ηλεκτρονικού ταχυδρομείου. Κάθε φορά που εγγράφεστε για έναν νέο ηλεκτρονικό λογαριασμό, το ${ PASS_APP_NAME } μπορεί να δημιουργήσει αυτόματα ένα ψευδώνυμο για να διατηρήσει την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου σας προστατευμένη. "
-      ],
-      "Beta Access": [
-        "Πρόσβαση Beta"
       ],
       "Biometrics": [
         "Βιομετρικά"
@@ -2952,6 +2952,9 @@
       ],
       "New": [
         "Νέο"
+      ],
+      "New email": [
+        "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "New vault": [
         "Νέα κρύπτη"
@@ -3619,6 +3622,9 @@
         "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστη.",
         "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστες."
       ],
+      "Mailbox change successfully cancelled": [
+        "Η αλλαγή γραμματοκιβωτίου ακυρώθηκε με επιτυχία"
+      ],
       "Mailbox successfully deleted": [
         "Το γραμματοκιβώτιο διαγράφηκε με επιτυχία"
       ],
@@ -3698,6 +3704,12 @@
       ],
       "Breaches detected for": [
         "Εντοπίστηκαν παραβιάσεις για"
+      ],
+      "Cancel changing your email?": [
+        "Ακύρωση αλλαγής του email σας;"
+      ],
+      "Change mailbox email": [
+        "Αλλαγή email γραμματοκιβωτίου"
       ],
       "Change your lock method": [
         "Αλλάξτε τον τρόπο κλειδώματος"

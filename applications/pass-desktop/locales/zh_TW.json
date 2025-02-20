@@ -64,6 +64,9 @@
       "Change": [
         "變更"
       ],
+      "Change email": [
+        "更換電子郵件"
+      ],
       "Choose a file or drag it here": [
         "選擇檔案或拖曳到此處"
       ],
@@ -1260,9 +1263,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "此將拒絕嘗試於**${ date }**登入至${ BRAND_NAME }帳號的裝置**${ name }**。"
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
-      ],
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
       ],
@@ -1423,9 +1423,6 @@
       ],
       "Backup password": [
         "備份密碼"
-      ],
-      "Beta Access": [
-        "測試版體驗"
       ],
       "Birthdate": [
         "日期"
@@ -1708,6 +1705,9 @@
       ],
       "Never": [
         "永不"
+      ],
+      "New email": [
+        "新電子郵件"
       ],
       "New vault": [
         "新的保管庫"

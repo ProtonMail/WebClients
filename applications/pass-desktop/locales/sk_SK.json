@@ -106,6 +106,9 @@
       "Change": [
         "Zmeniť"
       ],
+      "Change email": [
+        "Zmeniť email"
+      ],
       "Check DNS": [
         "Skontrolovať DNS"
       ],
@@ -1442,9 +1445,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Funkcie správy aliasov od SimpleLogin prídu čoskoro!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias bol úspešne vypnutý. Už nebudete dostávať emaily odoslané na adresu ${ item.aliasEmail }"
       ],
@@ -1648,9 +1648,6 @@
       ],
       "Emptying trash...": [
         "Vyprázdňovanie koša..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Zapnúť ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Povoľte automatické uzamykanie na zabezpečenie údajov"
@@ -2291,9 +2288,6 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Ak chcete skontrolovať importované údaje, kliknite na ikonu ${ PASS_APP_NAME } v nástrojovom paneli prehliadača."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
-      ],
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
       ],
@@ -2623,9 +2617,6 @@
       "Alias address (disabled)": [
         "Aliasová adresa (vypnutá)"
       ],
-      "Alias management": [
-        "Správa aliasov"
-      ],
       "Aliases": [
         "Aliasy"
       ],
@@ -2652,9 +2643,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Okrem ukladania prihlasovacích údajov ${ PASS_APP_NAME } chráni vašu identitu integrovanou funkciou emailového aliasu. Vždy, keď sa zaregistrujete na nové online konto, ${ PASS_APP_NAME } môže automaticky vytvoriť alias, aby bola vaša skutočná emailová adresa chránená. "
-      ],
-      "Beta Access": [
-        "Beta prístup"
       ],
       "Biometrics": [
         "Biometria"
@@ -3042,6 +3030,9 @@
       ],
       "New": [
         "Nová"
+      ],
+      "New email": [
+        "Nový email"
       ],
       "New vault": [
         "Nový trezor"
