@@ -60,7 +60,7 @@ export const PhotosWithAlbumsView: FC = () => {
     const thumbnails = useThumbnailsDownload();
     const { navigateToAlbum, navigateToAlbums, navigateToPhotos } = useNavigate();
     // TODO: Move tag selection to specific hook
-    const [selectedTag, setSelectedTag] = useState<PhotosTagsProps['selectedTag']>([PhotoTag.All]);
+    const [selectedTags, setSelectedTags] = useState<PhotosTagsProps['selectedTags']>([PhotoTag.All]);
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -244,7 +244,7 @@ export const PhotosWithAlbumsView: FC = () => {
 
                 {!isPhotosEmpty && (
                     <PhotosTags
-                        selectedTag={selectedTag}
+                        selectedTags={selectedTags}
                         tags={[
                             PhotoTag.All,
                             PhotoTag.Favorites,
@@ -258,7 +258,7 @@ export const PhotosWithAlbumsView: FC = () => {
                             PhotoTag.Panoramas,
                             PhotoTag.Raw,
                         ]}
-                        onTagSelect={setSelectedTag}
+                        onTagSelect={setSelectedTags}
                     />
                 )}
 

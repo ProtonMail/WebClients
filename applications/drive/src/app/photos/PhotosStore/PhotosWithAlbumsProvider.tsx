@@ -124,7 +124,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             );
             if (Code === 1000 && !!Photos.length) {
                 const photosData = Photos.map(photoPayloadToPhotos);
-                setPhotos((prevPhotos) => [...prevPhotos, ...photosData]);
+
+                setPhotos((prevPhotos) => {
+                    const newPhotos = photosData.filter(
+                        (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
+                    );
+                    return [...prevPhotos, ...newPhotos];
+                });
+
                 void photoCall(photosData[photosData.length - 1].linkId);
             } else {
                 setIsPhotosLoading(false);
