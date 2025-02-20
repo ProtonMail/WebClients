@@ -83,8 +83,14 @@
       "Cancel": [
         "Annullér"
       ],
+      "Cancel email change": [
+        "Annuller ændring af e-mail"
+      ],
       "Change": [
         "Skift"
+      ],
+      "Change email": [
+        "Skift e-mail"
       ],
       "Check DNS": [
         "Kontrollér DNS"
@@ -859,6 +865,12 @@
       "Failed to block the contact": [
         "Kunne ikke blokere kontakten"
       ],
+      "Failed to cancel mailbox change": [
+        "Kunne ikke annullere ændring af postkasse"
+      ],
+      "Failed to change mailbox": [
+        "Kunne ikke ændre postkasse"
+      ],
       "Failed to create domain": [
         "Kunne ikke oprette domæne"
       ],
@@ -1356,9 +1368,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
-      ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Alias-administrationsfunktioner fra SimpleLogin kommer snart!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias er blevet deaktiveret. Du vil ikke længere modtage mails sendt til ${ item.aliasEmail }"
@@ -2128,6 +2137,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dette element deles i øjeblikket ikke med nogen. Inviter folk for at dele det med andre."
       ],
+      "This mailbox will use your previous email.": [
+        "Denne postkasse bruger din tidligere e-mail."
+      ],
       "This operation is irreversible.": [
         "Denne handling er irreversibel."
       ],
@@ -2459,9 +2471,6 @@
       ],
       "Alias address (disabled)": [
         "Alias-adresse (deaktiveret)"
-      ],
-      "Alias management": [
-        "Alias-administration"
       ],
       "Aliases": [
         "Aliasser"
@@ -2840,6 +2849,9 @@
       ],
       "New": [
         "Ny"
+      ],
+      "New email": [
+        "Ny e-mailadresse"
       ],
       "New vault": [
         "Ny boks"
@@ -3421,6 +3433,9 @@
         "Elementer kan ikke indeholder mere end ${ share.targetMaxMembers } bruger.",
         "Elementer kan ikke indeholder mere end ${ share.targetMaxMembers } brugere."
       ],
+      "Mailbox change successfully cancelled": [
+        "Ændring af postkasse annulleret"
+      ],
       "Mailbox successfully deleted": [
         "Postkasse slettet"
       ],
@@ -3488,6 +3503,12 @@
       ],
       "Blocked addresses": [
         "Blokerede adresser"
+      ],
+      "Cancel changing your email?": [
+        "Annuller ændring af din e-mail?"
+      ],
+      "Change mailbox email": [
+        "Ændr postkassens e-mail"
       ],
       "Change your lock method": [
         "Skift din låsemetode"
