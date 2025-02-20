@@ -11,7 +11,6 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import Tabs from '@proton/components/components/tabs/Tabs';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
@@ -64,8 +63,6 @@ const ForwardSection = () => {
             location.hash = '';
         }
     }, [hash, isIncomingTableAvailable, isOutgoingTableAvailable]);
-
-    const upsellConfig = useMailUpsellConfig({ upsellRef });
 
     return (
         <SettingsSectionWide className="overflow-hidden">
@@ -124,13 +121,13 @@ const ForwardSection = () => {
             {forwardModal}
             {renderUpsellModal && (
                 <UpsellModal
-                    titleModal={c('Title').t`Ready, set, forward`}
+                    title={c('Title').t`Ready, set, forward`}
                     description={c('Description')
                         .t`Set up auto-forwarding to redirect incoming emails to another email address.`}
                     modalProps={upsellModalProps}
                     illustration={forwardImg}
                     sourceEvent="BUTTON_FORWARD_EMAILS"
-                    {...upsellConfig}
+                    upsellRef={upsellRef}
                 />
             )}
         </SettingsSectionWide>

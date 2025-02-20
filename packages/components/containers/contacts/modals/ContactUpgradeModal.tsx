@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import useConfig from '@proton/components/hooks/useConfig';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -18,17 +17,15 @@ const ContactUpgradeModal = (modalProps: ModalStateProps) => {
             component: UPSELL_COMPONENT.MODAL,
         }) || '';
 
-    const upsellConfig = useMailUpsellConfig({ upsellRef });
-
     return (
         <UpsellModal
-            titleModal={c('Title').t`One email, many recipients`}
+            title={c('Title').t`One email, many recipients`}
             description={c('Description')
                 .t`With contact groups, you can send emails to everyone in the group with one click.`}
             modalProps={modalProps}
             illustration={contactGroupsImg}
             sourceEvent="BUTTON_CONTACT_GROUPS"
-            {...upsellConfig}
+            upsellRef={upsellRef}
         />
     );
 };
