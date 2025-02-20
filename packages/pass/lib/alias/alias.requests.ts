@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -184,7 +184,7 @@ export const createAliasesFromPending = async ({
     );
 
     const aliases = await Promise.all(
-        chunk(encryptedItems, MAX_BATCH_PER_REQUEST).map(
+        chunk(encryptedItems, MAX_MAX_BATCH_PER_REQUEST).map(
             async (Items) =>
                 (
                     await api({
