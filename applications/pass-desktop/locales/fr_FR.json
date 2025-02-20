@@ -103,8 +103,14 @@
       "Cancel": [
         "Annuler"
       ],
+      "Cancel email change": [
+        "Annuler le changement d'e-mail"
+      ],
       "Change": [
         "Modifier"
+      ],
+      "Change email": [
+        "Modifier l'e-mail"
       ],
       "Check DNS": [
         "Vérifier le DNS"
@@ -926,6 +932,12 @@
       "Failed to block the contact": [
         "Le blocage du contact n'a pas abouti."
       ],
+      "Failed to cancel mailbox change": [
+        "L'annulation du changement de messagerie a échoué."
+      ],
+      "Failed to change mailbox": [
+        "Le changement de messagerie a échoué."
+      ],
       "Failed to create domain": [
         "La création du domaine n'a pas abouti."
       ],
@@ -1402,9 +1414,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Après avoir importé vos données, vous pouvez supprimer le fichier CSV contenant vos mots de passe pour des raisons de sécurité."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Les fonctions de gestion des alias de SimpleLogin arrivent bientôt !"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "L'alias a été désactivé. Vous ne recevrez plus les messages envoyés à ${ item.aliasEmail }"
       ],
@@ -1608,9 +1617,6 @@
       ],
       "Emptying trash...": [
         "Suppression des éléments de la corbeille en cours"
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Activez la version bêta de ${ PASS_SHORT_APP_NAME }."
       ],
       "Enable auto-locking to secure your data": [
         "Activez le verrouillage automatique pour sécuriser vos données."
@@ -2197,6 +2203,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Cet élément n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
       ],
+      "This mailbox will use your previous email.": [
+        "Cette messagerie utilisera votre adresse e-mail précédente."
+      ],
       "This operation is irreversible.": [
         "Cette opération est irréversible."
       ],
@@ -2232,9 +2241,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Pour consulter les données importées, cliquez sur l'icône ${ PASS_APP_NAME } dans la barre d'outils de votre navigateur."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
       "Unable to copy to clipboard": [
         "Impossible de copier dans le presse-papiers"
@@ -2533,9 +2539,6 @@
       "Alias address (disabled)": [
         "Adresse de l'alias (désactivée)"
       ],
-      "Alias management": [
-        "Gestion des alias"
-      ],
       "Aliases": [
         "Alias"
       ],
@@ -2562,9 +2565,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "En plus de conserver vos identifiants, ${ PASS_APP_NAME } protège votre identité avec sa fonctionnalité intégrée d'alias d'adresse e-mail. Chaque fois que vous vous inscrivez à un nouveau compte en ligne, ${ PASS_APP_NAME } peut créer automatiquement un alias pour protéger votre véritable adresse e-mail. "
-      ],
-      "Beta Access": [
-        "Accès à la version bêta"
       ],
       "Biometrics": [
         "Données biométriques"
@@ -2952,6 +2952,9 @@
       ],
       "New": [
         "Nouveau"
+      ],
+      "New email": [
+        "Nouvelle adresse e-mail"
       ],
       "New vault": [
         "Nouveau coffre-fort"
@@ -3619,6 +3622,9 @@
         "Les éléments ne peuvent pas compter plus de ${ share.targetMaxMembers } utilisateur.",
         "Les éléments ne peuvent pas compter plus de ${ share.targetMaxMembers } utilisateurs."
       ],
+      "Mailbox change successfully cancelled": [
+        "Le changement de messagerie a été annulé avec succès."
+      ],
       "Mailbox successfully deleted": [
         "La messagerie a été supprimée."
       ],
@@ -3698,6 +3704,12 @@
       ],
       "Breaches detected for": [
         "Des fuites de données ont été détectées pour"
+      ],
+      "Cancel changing your email?": [
+        "Annuler le changement d'e-mail en cours ?"
+      ],
+      "Change mailbox email": [
+        "Modifier l'e-mail de la messagerie"
       ],
       "Change your lock method": [
         "Modifier votre méthode de verrouillage"
@@ -4244,10 +4256,10 @@
         "Au moins une adresse e-mail est nécessaire."
       ],
       "Cannot contain a dot at the beginning": [
-        "Cette entrée ne peut pas commencer par un point."
+        "L'entrée ne peut pas commencer par un point."
       ],
       "Cannot contain a dot at the end": [
-        "L'entrée ne peut se terminer par un point."
+        "L'entrée ne peut pas terminer par un point."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Il n'est pas possible de récupérer les boites aux lettres de cet alias pour l'instant."

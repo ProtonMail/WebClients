@@ -103,8 +103,14 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel email change": [
+        "Cancelar el cambio de correo electrónico"
+      ],
       "Change": [
         "Cambio"
+      ],
+      "Change email": [
+        "Cambiar la dirección de correo"
       ],
       "Check DNS": [
         "Verificar el DNS"
@@ -926,6 +932,12 @@
       "Failed to block the contact": [
         "Error al bloquear el contacto"
       ],
+      "Failed to cancel mailbox change": [
+        "No se ha podido cancelar el cambio del buzón."
+      ],
+      "Failed to change mailbox": [
+        "Error al cambiar el buzón"
+      ],
       "Failed to create domain": [
         "Error al crear el dominio"
       ],
@@ -1402,9 +1414,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar tus datos, puedes eliminar el archivo CSV que contiene tus contraseñas por seguridad."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "¡Las funciones de administración de alias de SimpleLogin llegarán pronto!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Se ha desactivado el alias. Ya no recibirás correos enviados a ${ item.aliasEmail }."
       ],
@@ -1608,9 +1617,6 @@
       ],
       "Emptying trash...": [
         "Vaciando la papelera..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Activa la versión beta de ${ PASS_SHORT_APP_NAME }."
       ],
       "Enable auto-locking to secure your data": [
         "Activa el bloqueo automático para asegurar tus datos"
@@ -2110,7 +2116,7 @@
         "Configurado por tu organización"
       ],
       "Settings successfully updated": [
-        "Se ha actualizado la configuración"
+        "Se han actualizado los ajustes."
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
         "Comparte aliases con otros añadiendo su bandeja de entrada como buzón de reenvío."
@@ -2197,6 +2203,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Este elemento ya no se comparte con nadie. Invita a personas para compartirlo con otros."
       ],
+      "This mailbox will use your previous email.": [
+        "Este buzón usará el correo electrónico anterior."
+      ],
       "This operation is irreversible.": [
         "Esta operación es irreversible."
       ],
@@ -2232,9 +2241,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Para verificar los datos importados, haz clic en el ícono de ${ PASS_APP_NAME } en la barra de herramientas del navegador."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
       "Unable to copy to clipboard": [
         "No se pudo copiar al portapapeles."
@@ -2533,9 +2539,6 @@
       "Alias address (disabled)": [
         "Dirección del alias (desactivada)"
       ],
-      "Alias management": [
-        "Administración de los alias"
-      ],
       "Aliases": [
         "Alias"
       ],
@@ -2562,9 +2565,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Además de almacenar tus inicios de sesión, ${ PASS_APP_NAME } protege tu identidad con una función de alias de correo electrónico integrada. Cada vez que te registres para obtener una cuenta nueva en línea, ${ PASS_APP_NAME } puede crear automáticamente un alias para mantener protegida tu dirección de correo real. "
-      ],
-      "Beta Access": [
-        "Acceso beta"
       ],
       "Biometrics": [
         "Datos biométricos"
@@ -2952,6 +2952,9 @@
       ],
       "New": [
         "Nuevo"
+      ],
+      "New email": [
+        "Nuevo correo electrónico"
       ],
       "New vault": [
         "Nueva caja fuerte"
@@ -3619,6 +3622,9 @@
         "Los elementos no pueden contener más de ${ share.targetMaxMembers } usuario.",
         "Los elementos no pueden contener más de ${ share.targetMaxMembers } usuarios."
       ],
+      "Mailbox change successfully cancelled": [
+        "Se ha cancelado el cambio el buzón."
+      ],
       "Mailbox successfully deleted": [
         "Se ha eliminado el buzón."
       ],
@@ -3698,6 +3704,12 @@
       ],
       "Breaches detected for": [
         "Se han detectado vulneraciones para"
+      ],
+      "Cancel changing your email?": [
+        "¿Cancelar el cambio de correo electrónico?"
+      ],
+      "Change mailbox email": [
+        "Cambiar el correo electrónico del buzón"
       ],
       "Change your lock method": [
         "Cambiar el método de bloqueo"
