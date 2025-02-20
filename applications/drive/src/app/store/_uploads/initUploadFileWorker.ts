@@ -1,4 +1,5 @@
 import { TransferCancel } from '../../components/TransferManager/transfer';
+import { getConfigData } from '../../config';
 import { sendErrorReport } from '../../utils/errorHandling';
 import type {
     FileKeys,
@@ -62,6 +63,8 @@ export function initUploadFileWorker(
                 /* webpackPreload: true */
                 new URL('./worker/worker.ts', import.meta.url)
             );
+
+            worker.postMessage({ command: 'config', data: getConfigData() });
 
             workerApi = new UploadWorkerController(worker, log, {
                 keysGenerated: (keys: FileKeys) => {
