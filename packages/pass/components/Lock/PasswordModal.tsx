@@ -21,6 +21,7 @@ import type { Maybe } from '@proton/pass/types';
 import type { OnReauthFn } from './PasswordUnlockProvider';
 
 export type PasswordModalState = {
+    autofillable?: boolean;
     label?: string;
     message?: string;
     placeholder?: string;
@@ -39,6 +40,7 @@ export type PasswordModalProps = AsyncModalState<PasswordModalState> & {
 };
 
 export const PasswordModal: FC<PasswordModalProps> = ({
+    autofillable = true,
     label,
     loading,
     message,
@@ -90,6 +92,7 @@ export const PasswordModal: FC<PasswordModalProps> = ({
                     placeholder={placeholder ?? c('Placeholder').t`Password`}
                     required
                     value={password}
+                    {...(!autofillable ? { 'data-protonpass-ignore': true } : {})}
                 />
 
                 {warning && <div className="mt-4 mb-4 text-sm color-danger">{warning}</div>}
