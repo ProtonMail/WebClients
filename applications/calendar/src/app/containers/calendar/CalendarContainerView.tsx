@@ -70,7 +70,9 @@ import { toUrlParams } from './getUrlHelper';
 import CalendarSearch from './search/CalendarSearch';
 import { useCalendarSearch } from './search/CalendarSearchProvider';
 
-const LazyCalendarShortcutsAndCommander = lazy(() => import(/* webpackChunkName: "CalendarShortcutsAndCommander" */ './CalendarShortcutsAndCommander'));
+const LazyCalendarShortcutsAndCommander = lazy(
+    () => import(/* webpackChunkName: "CalendarShortcutsAndCommander" */ './CalendarShortcutsAndCommander')
+);
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -634,14 +636,14 @@ const CalendarContainerView = ({
                 <Suspense>
                     <LazyCalendarShortcutsAndCommander
                         isDrawerApp={isDrawerApp}
+                        isSearching={isSearching}
                         onClickToday={onClickToday}
                         onClickNextView={onClickNextView}
                         onClickPreviousView={onClickPreviousView}
                         onChangeView={onChangeView}
-                        handleClickSearch={handleClickSearch}
+                        onClickSearch={handleClickSearch}
                         onCreateEvent={onCreateEvent}
-                        isSearching={isSearching}
-                        handleBackFromSearch={handleBackFromSearch}
+                        onBackFromSearch={handleBackFromSearch}
                     />
                 </Suspense>
             </ErrorBoundary>
