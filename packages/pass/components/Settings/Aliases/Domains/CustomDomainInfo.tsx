@@ -140,6 +140,7 @@ export const DomainDetailsInfo = ({ domainID }: Props) => {
                         onValue={setDisplayName}
                         onKeyUp={(e: KeyboardEvent) => e.key === 'Enter' && handleSubmitDisplayName()}
                         placeholder={c('Placeholder').t`Alias Display Name`}
+                        data-protonpass-ignore={true}
                         dense
                     />
                 </div>

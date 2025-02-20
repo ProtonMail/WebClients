@@ -7,7 +7,7 @@ import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { hasUserIdentifier, matchesLoginPassword, matchesLoginURL } from '@proton/pass/lib/items/item.predicates';
 import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { itemCreate, itemEdit } from '@proton/pass/store/actions';
-import { selectAutosaveCandidate, selectItem, selectWritableShares } from '@proton/pass/store/selectors';
+import { selectAutosaveCandidate, selectNonOptimisticItem, selectWritableShares } from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -132,7 +132,10 @@ export const createAutoSaveService = () => {
             if (payload.type === AutosaveMode.UPDATE) {
                 const { shareId, itemId } = payload;
 
-                const currentItem = selectItem<'login'>(shareId, itemId)(state);
+                /** Do not unwrap optimistic state during autosave service
+                 * updates. We increment revision numbers optimistically but
+                 * don't track failed actions in this service (unlike in UI).*/
+                const currentItem = selectNonOptimisticItem<'login'>(shareId, itemId)(state);
                 if (!currentItem) throw new Error(c('Error').t`Item does not exist`);
 
                 const item = itemBuilder('login', currentItem.data);
