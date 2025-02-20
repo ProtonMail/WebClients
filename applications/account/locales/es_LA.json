@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -4422,7 +4422,7 @@
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a ajustes > identidad y dirección > dominio corto (pm.me)"
+        "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -5485,7 +5485,7 @@
         "Ha alcanzado el límite de ${ n } invitaciones aceptadas en 6 meses. Se podrá hacer clic en el botón cuando pueda invitar a otros usuarios."
       ],
       "You have successfully joined the family group": [
-        "Se ha unido al grupo familiar con éxito"
+        "Se ha unido al grupo familiar."
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Tiene facturas sin pagar. Por favor, páguelas antes de unirse a un plan familiar."
@@ -6979,11 +6979,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Active al menos un método de recuperación de datos para asegurarse de tener acceso a los contenidos de la cuenta de ${ BRAND_NAME } si pierde la contraseña."
       ],
-      "active": [
-        "activa"
-      ],
       "Active": [
         "Activo"
+      ],
+      "active": [
+        "activa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añada una dirección de correo @pm.me a la cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME }\" o \"Mensaje privado\" en inglés."
@@ -7302,10 +7302,10 @@
         "Premio Editors' Choice de CNET con una calificación de 8.4 de 10 estrellas"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
-        "Configure la autenticación SAML para la organización con un proveedor de identidad (IdP). Esto habilitará SAML para toda la organización."
+        "Configure la autenticación SAML para la organización con un proveedor de identidad (IdP). Esto activará SAML para toda la organización."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
-        "Configure la autenticación SAML para la organización con un proveedor de identidad como Okta, Microsoft Azure o Google Identity Platform. Esto habilitará SAML para toda la organización."
+        "Configure la autenticación SAML para la organización con un proveedor de identidad como Okta, Microsoft Azure o Google Identity Platform. Esto activará SAML para toda la organización."
       ],
       "Connection data will be available in around 1 hour.": [
         "Los datos de conexión estarán disponible en aproximadamente 1 hora."
@@ -7436,7 +7436,7 @@
       "default email address": [
         "dirección de correo por defecto"
       ],
-      "Default mail application": [
+      "Default email application": [
         "Aplicación de correo por defecto"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7772,7 +7772,7 @@
         "Si otro administrador cambió esta contraseña, necesita pedir la contraseña nueva de la organización."
       ],
       "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Si se desactiva, los nuevos miembros de la organización necesitarán un administrador para crear manualmente la primera bóveda para ellos (mediante compartición) para que puedan empezar a crear elementos."
+        "Si se desactiva, los miembros nuevos de la organización necesitarán un administrador para crear manualmente la primera bóveda para ellos (mediante intercambio) para que puedan empezar a crear elementos."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Si se desactiva, solo los administradores podrán exportar los datos."
@@ -7785,6 +7785,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Si no es el adecuado para usted, le reembolsaremos."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Si los atajos de teclado están activados, podrá usar las siguientes teclas para acciones rápidas o saltar a diferentes vistas. El atajo ${ metaKey } +K está siempre activado."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Si la zona horaria del sistema no coincide con la preferencia actual de zona horaria, se le pedirá que la actualice (como máximo una vez al día)."
@@ -8646,7 +8649,7 @@
       "Session timed out": [
         "Sesión agotada"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Configure ${ MAIL_APP_NAME } como su aplicación de correo por defecto. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
       "Set recovery phrase": [
@@ -8677,8 +8680,8 @@
         "${ vaultLink } compartido actualizado"
       ],
       "Shared server country (${ countriesCount })": [
-        "País con servidores compartidos (${ countriesCount })",
-        "Países con servidores gratuitos (${ countriesCount })"
+        "País con servidor compartido (${ countriesCount })",
+        "Países con servidor compartido (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Bóveda compartida eliminada"
@@ -8789,8 +8792,8 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronice y gestione archivos con la aplicación ${ DRIVE_APP_NAME }. Cree y comparta documentos en ${ DOCS_APP_NAME } y guárdelos de forma segura. Todo en ${ ios }, ${ android } y ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Recomendado por TechRadar Pro con una calificación de 4.2 de 5 estrellas"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "Recomendado por TechRadar Pro con una calificación de 4,2 sobre 5 estrellas"
       ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalmente. Compruebe más tarde."
@@ -9363,10 +9366,10 @@
         "Cuando esta opción esté activada, comprobaremos si ${ MAIL_APP_NAME } es su aplicación de correo por defecto y le notificaremos si no lo es."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
-        "Al habilitar SAML para ${ appName } en el proveedor de identidad, es posible que se le solicite que use la URL de devolución de llamada (ACS) y el ID del emisor. Simplemente copie y pegue los datos a continuación en los campos del proveedor de identidad."
+        "Al activar SAML para ${ appName } en el proveedor de identidad, es posible que se le solicite que use la URL de devolución de llamada (ACS) y el ID del emisor. Simplemente copie y pegue los datos a continuación en los campos del proveedor de identidad."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Cuando las notificaciones están habilitadas, le enviaremos una alerta a la dirección de correo de recuperación si tiene mensajes nuevos en la cuenta de ${ MAIL_APP_NAME }."
+        "Cuando las notificaciones están activadas, le enviaremos una alerta a la dirección de correo de recuperación si tiene mensajes nuevos en la cuenta de ${ MAIL_APP_NAME }."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Cuando se suscriben a un plan, usted obtendrá créditos para usar en la suscripción."
@@ -9954,6 +9957,12 @@
       "Close draft": [
         "Cerrar borrador"
       ],
+      "Create new event": [
+        "Crear nuevo evento"
+      ],
+      "Day view": [
+        "Vista diaria"
+      ],
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
@@ -10020,6 +10029,9 @@
       "Minimize / maximize composer": [
         "Minimizar/maximizar el editor"
       ],
+      "Month view": [
+        "Vista mensual"
+      ],
       "Move down": [
         "Bajar"
       ],
@@ -10050,6 +10062,9 @@
       "New message": [
         "Mensaje nuevo"
       ],
+      "Next period": [
+        "Siguiente periodo"
+      ],
       "Open command panel": [
         "Abrir el panel de comandos"
       ],
@@ -10059,8 +10074,14 @@
       "Open previous message": [
         "Abrir mensaje anterior"
       ],
+      "Open quick actions menu": [
+        "Abrir menú de acciones rápidas"
+      ],
       "Open this modal": [
         "Abrir esta ventana"
+      ],
+      "Previous period": [
+        "Periodo anterior"
       ],
       "Reply": [
         "Responder"
@@ -10073,6 +10094,9 @@
       ],
       "Search": [
         "Buscar"
+      ],
+      "Search events": [
+        "Buscar eventos"
       ],
       "Select / unselect": [
         "Seleccionar/deseleccionar"
@@ -10094,6 +10118,12 @@
       ],
       "Star": [
         "Destacar"
+      ],
+      "Today": [
+        "Hoy"
+      ],
+      "Week view": [
+        "Vista semanal"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10117,6 +10147,9 @@
       ],
       "Message shortcuts": [
         "Atajos de mensajes"
+      ],
+      "View options": [
+        "Ver opciones"
       ]
     },
     "Keys actions": {
@@ -10270,7 +10303,7 @@
         "Permitir exportación de datos a todos los uruarios"
       ],
       "Allow individual item sharing": [
-        "Permitir la compartición para cada elemento"
+        "Permitir el intercambio para cada elemento"
       ],
       "Allow memorable passwords": [
         "Permitir las contraseñas memorables"
@@ -12777,6 +12810,17 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a la cuenta será limitado y la cuenta eventualmente desactivada."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ trialPlanName } con funciones premium, elija la suscripción y opciones de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La prueba termina el ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -12885,17 +12929,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a la cuenta será limitado y la cuenta eventualmente desactivada."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ trialPlanName } con funciones premium, elija la suscripción y opciones de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La prueba termina el ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -14437,7 +14470,7 @@
         "Necesita activar la clave de la organización para crear cuentas no privadas y acceder a las mismas."
       ],
       "To enable administrator rights on your account, activate the organization key.": [
-        "Active la clave de la organización para habilitar los derechos de administración en la cuenta."
+        "Active la clave de la organización para activar los derechos de administración en la cuenta."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
         "Use un método de recuperación de datos o restablezca la clave de seguridad de la organización para restaurar los privilegios de administrador."
@@ -16742,6 +16775,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoye nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
@@ -17030,47 +17104,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Su alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoye nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejore su productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos sus datos."
-      ],
-      "Your privacy is our mission": [
-        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription renewal state": {
@@ -17569,6 +17602,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ appName } keyboard shortcuts": [
+        "Atajos de teclado ${ appName }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17580,9 +17616,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Herramienta de exportación de ${ MAIL_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Atajos de teclado de ${ MAIL_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Informe de ${ PASS_SHORT_APP_NAME } Monitor"

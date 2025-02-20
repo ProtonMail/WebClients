@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -7100,11 +7100,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
-      "active": [
-        "aktivní"
-      ],
       "Active": [
         "Aktivní"
+      ],
+      "active": [
+        "aktivní"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
@@ -7577,7 +7577,7 @@
       "default email address": [
         "výchozí e-mailová adresa"
       ],
-      "Default mail application": [
+      "Default email application": [
         "Výchozí e-mailová aplikace"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7930,6 +7930,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Pokud vám nebude vyhovovat, vrátíme vám peníze."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Pokud jsou povoleny klávesové zkratky, můžete pro rychlé akce nebo pro přechod do různých zobrazení použít následující klávesy. Zkratka ${ metaKey } + K je vždy povolena."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Pokud časové pásmo nastavené v systému neodpovídá aktuálnímu nastavení časového pásma, budete vyzváni k aktualizaci (maximálně jednou denně)."
@@ -8810,8 +8813,8 @@
       "Session timed out": [
         "Relace vypršela"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Nastavit ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
       ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
@@ -8957,7 +8960,7 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizujte a spravujte soubory pomocí aplikace ${ DRIVE_APP_NAME }. Vytvářejte a sdílejte dokumenty v ${ DOCS_APP_NAME } a bezpečně je uchovávejte. To vše na ${ ios }, ${ android } a ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro doporučuje s hodnocením 4,2 z 5 hvězd"
       ],
       "Temporarily unavailable. Please check back later.": [
@@ -10152,6 +10155,12 @@
       "Close draft": [
         "Zavřít koncept"
       ],
+      "Create new event": [
+        "Vytvořit novou událost"
+      ],
+      "Day view": [
+        "Denní přehled"
+      ],
       "Delete permanently": [
         "Trvale smazat"
       ],
@@ -10218,6 +10227,9 @@
       "Minimize / maximize composer": [
         "Minimalizovat / maximalizovat editor"
       ],
+      "Month view": [
+        "Měsíční přehled"
+      ],
       "Move down": [
         "Přesunout dolů"
       ],
@@ -10248,6 +10260,9 @@
       "New message": [
         "Nová zpráva"
       ],
+      "Next period": [
+        "Další období"
+      ],
       "Open command panel": [
         "Otevřít příkazový panel"
       ],
@@ -10257,8 +10272,14 @@
       "Open previous message": [
         "Otevřít předchozí zprávu"
       ],
+      "Open quick actions menu": [
+        "Otevřít nabídku rychlých akcí"
+      ],
       "Open this modal": [
         "Otevřít tuto nápovědu"
+      ],
+      "Previous period": [
+        "Předchozí období"
       ],
       "Reply": [
         "Odpovědět"
@@ -10271,6 +10292,9 @@
       ],
       "Search": [
         "Vyhledat"
+      ],
+      "Search events": [
+        "Hledat události"
       ],
       "Select / unselect": [
         "Vybrat/zrušit výběr"
@@ -10292,6 +10316,12 @@
       ],
       "Star": [
         "Hvězdička"
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Week view": [
+        "Týdenní přehled"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10315,6 +10345,9 @@
       ],
       "Message shortcuts": [
         "Zkratky zpráv"
+      ],
+      "View options": [
+        "Zobrazit možnosti"
       ]
     },
     "Keys actions": {
@@ -13060,6 +13093,17 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Zkušební verze končí ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -13168,17 +13212,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Zkušební verze končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -17160,6 +17193,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -17460,47 +17534,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -18011,6 +18044,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ appName } keyboard shortcuts": [
+        "${ appName } klávesové zkratky"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -18022,9 +18058,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } klávesové zkratky"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor hlášení"
