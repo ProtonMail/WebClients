@@ -8207,7 +8207,7 @@ __metadata:
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/mutex-browser": "npm:^1.0.5"
     "@protontech/tidy-url": "npm:^1.18.3"
-    "@protontech/timezone-support": "npm:^2.0.0"
+    "@protontech/timezone-support": "npm:^2.1.0"
     "@scure/base": "npm:^1.2.4"
     "@sentry/browser": "npm:^7.120.3"
     "@types/dompurify": "npm:^3.2.0"
@@ -8460,14 +8460,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/timezone-support@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@protontech/timezone-support@npm:2.0.0"
+"@protontech/timezone-support@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@protontech/timezone-support@npm:2.1.0"
   dependencies:
     commander: "npm:2.20.0"
   bin:
     create-timezone-data: bin/create-timezone-data
-  checksum: 10c0/d4d89b8db2a386ee8ef310208026ec54018d2fdaa59a7c0c0206eb2c5c702dd1267a6b5e2a80af79a47f540d9c64b333f43ff88e7bef396a1bfbcafbfbf3c1d6
+  checksum: 10c0/22c7697749c6df614d45e0067ebdc10b69a12ea6885d8c7035b98a7764c90ef72fccf150b587fa901878e3a9ef8894377f4654592ab647166965ffdff98307ee
   languageName: node
   linkType: hard
 
