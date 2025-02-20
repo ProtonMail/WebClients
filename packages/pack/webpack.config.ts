@@ -50,10 +50,9 @@ const getConfig = (env: any): Configuration => {
         overlayRuntimeErrors: env.overlayRuntimeErrors || false,
         logical: env.logical || false,
         analyze: env.analyze || false,
+        optimizeAssets: env.optimizeAssets || false,
         handleSupportAndErrors: env.handleSupportAndErrors || false,
     };
-
-    const version = options.buildData.version;
 
     return {
         target: `browserslist:${options.browserslist}`,
@@ -78,14 +77,12 @@ const getConfig = (env: any): Configuration => {
         experiments: { asyncWebAssembly: true },
         entry: getEntries(options.handleSupportAndErrors),
         output: {
-            filename: isProduction
-                ? `${assetsFolder}/[name].[contenthash:8].js?v=${version}`
-                : `${assetsFolder}/[name].js?v=${version}`,
+            filename: isProduction ? `${assetsFolder}/[name].[contenthash:8].js` : `${assetsFolder}/[name].js`,
             publicPath: options.publicPath,
             chunkFilename: (pathData) => {
                 const result = isProduction
-                    ? `${assetsFolder}/[name].[contenthash:8].chunk.js?v=${version}`
-                    : `${assetsFolder}/[name].chunk.js?v=${version}`;
+                    ? `${assetsFolder}/[name].[contenthash:8].chunk.js`
+                    : `${assetsFolder}/[name].chunk.js`;
                 const chunkName = pathData?.chunk?.name;
                 if (chunkName && (chunkName.startsWith('date-fns/') || chunkName.startsWith('locales/'))) {
                     // @ts-ignore
@@ -93,8 +90,10 @@ const getConfig = (env: any): Configuration => {
                     return result.replace('[name]', strippedChunkName);
                 }
                 // Drive need static URL for transpiled SW
+                // Must not be versioned
+                // https://web.dev/learn/pwa/service-workers/#update
                 if (chunkName && chunkName.startsWith('downloadSW')) {
-                    return `[name].js?v=${version}`;
+                    return `[name].js`;
                 }
                 return result;
             },
@@ -105,9 +104,9 @@ const getConfig = (env: any): Configuration => {
                 const name = base.slice(0, base.length - ext.length);
                 if (name.includes('.var')) {
                     const replacedNamed = name.replace('.var', '-var');
-                    return `${assetsFolder}/${replacedNamed}.[hash][ext]?v=${version}`;
+                    return `${assetsFolder}/${replacedNamed}.[hash][ext]`;
                 }
-                return `${assetsFolder}/[name].[hash][ext]?v=${version}`;
+                return `${assetsFolder}/[name].[hash][ext]`;
             },
             crossOriginLoading: 'anonymous',
         },
@@ -117,9 +116,7 @@ const getConfig = (env: any): Configuration => {
         },
         plugins: getPlugins({
             ...options,
-            cssName: isProduction
-                ? `${assetsFolder}/[name].[contenthash:8].css?v=${version}`
-                : `${assetsFolder}/[name].css?v=${version}`,
+            cssName: isProduction ? `${assetsFolder}/[name].[contenthash:8].css` : `${assetsFolder}/[name].css`,
         }),
         optimization: getOptimizations(options),
         devServer: {
