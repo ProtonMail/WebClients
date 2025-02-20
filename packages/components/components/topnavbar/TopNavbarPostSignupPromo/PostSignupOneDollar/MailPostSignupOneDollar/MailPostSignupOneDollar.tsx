@@ -1,11 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
@@ -15,8 +12,8 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import clsx from '@proton/utils/clsx';
 
+import { SpotlightWithPromo } from '../../common/SpotlightWithPromo';
 import { usePostSignupOneDollarPromotionPrice } from '../components/usePostSignupOneDollarPromotionPrice';
 import { EXTENDED_REMINDER_DAY, LAST_REMINDER_DAY, type PostSubscriptionOneDollarOfferState } from '../interface';
 import { isStateTheSame, updatePostSignupOpenOfferState } from '../postSignupOffersHelpers';
@@ -35,8 +32,6 @@ const getUpsellFeature = (daysSinceOffer: number) => {
 };
 
 export const MailPostSignupOneDollar = () => {
-    const buttonRef = useRef(null);
-
     const { viewportWidth } = useActiveBreakpoint();
     const { openSpotlight } = useMailPostSignupOneDollar();
 
@@ -133,18 +128,23 @@ export const MailPostSignupOneDollar = () => {
         }
     };
 
-    const isLastReminderDay = daysSinceOffer >= LAST_REMINDER_DAY;
-
     return (
-        <Spotlight
-            anchorRef={buttonRef}
-            borderRadius="xl"
-            innerClassName={clsx(isLastReminderDay ? undefined : 'p-0')}
-            show={show || spotlightState}
-            onClose={() => {
-                handleClose();
-                sendReportCloseOffer(daysSinceOffer);
+        <SpotlightWithPromo
+            borderRadius={daysSinceOffer >= LAST_REMINDER_DAY ? 'md' : 'xl'}
+            onPromoClick={() => {
+                if (daysSinceOffer >= LAST_REMINDER_DAY) {
+                    handleUpsellClick();
+                } else {
+                    sendReportClickTopNavbar(daysSinceOffer);
+                    setSpotlightState(true);
+                }
             }}
+            promoIconName={upgradeIcon}
+            promoChildren={upgradeText}
+            promoColor="full-gradient"
+            innerClassName={daysSinceOffer >= LAST_REMINDER_DAY ? undefined : 'p-0'}
+            show={show || spotlightState}
+            onClose={handleClose}
             content={
                 <MailPostSignupDollarContent
                     pricingTitle={pricingTitle}
@@ -156,27 +156,6 @@ export const MailPostSignupOneDollar = () => {
                     daysSinceOffer={daysSinceOffer}
                 />
             }
-        >
-            <div ref={buttonRef}>
-                <PromotionButton
-                    as={ButtonLike}
-                    className="flex items-center gap-2"
-                    onClick={() => {
-                        if (isLastReminderDay) {
-                            handleUpsellClick();
-                        } else {
-                            sendReportClickTopNavbar(daysSinceOffer);
-                            setSpotlightState(true);
-                        }
-                    }}
-                    iconName={upgradeIcon}
-                    size="medium"
-                    fullGradient
-                    responsive
-                >
-                    {upgradeText}
-                </PromotionButton>
-            </div>
-        </Spotlight>
+        />
     );
 };
