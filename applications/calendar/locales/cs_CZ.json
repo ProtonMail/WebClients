@@ -819,6 +819,11 @@
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Prohledat zprávy"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Kdokoli s odkazem může zobrazit váš kalendář"
@@ -1609,6 +1614,32 @@
       ],
       "strawberry": [
         "jahoda"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Denní přehled"
+      ],
+      "Month view": [
+        "Měsíční přehled"
+      ],
+      "New event": [
+        "Nová událost"
+      ],
+      "Next period": [
+        "Další období"
+      ],
+      "Previous period": [
+        "Předchozí období"
+      ],
+      "Search events": [
+        "Hledat události"
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Week view": [
+        "Týdenní přehled"
       ]
     },
     "Confirm modal title": {
@@ -4888,6 +4919,9 @@
       "High Priority": [
         "Vysoká priorita"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Pokud jsou povoleny klávesové zkratky, můžete pro rychlé akce nebo pro přechod do různých zobrazení použít následující klávesy. Zkratka ${ metaKey } + K je vždy povolena."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
@@ -5070,6 +5104,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
+      ],
+      "Open shortcut cheat sheet": [
+        "Otevření nápovědy pro klávesové zkratky"
       ],
       "or discover other features:": [
         "nebo objevte další funkce:"
@@ -5610,6 +5647,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } příkaz nalezen.",
+        "${ filteredList.length } příkazy nalezeny.",
+        "${ filteredList.length } příkazů nalezeno.",
+        "${ filteredList.length } příkazů nalezeno."
+      ],
       "Selected color:": [
         "Vybraná barva:"
       ]
@@ -5723,6 +5766,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Vytvořit novou událost"
+      ],
+      "Day view": [
+        "Denní přehled"
+      ],
+      "Month view": [
+        "Měsíční přehled"
+      ],
+      "Next period": [
+        "Další období"
+      ],
+      "Open quick actions menu": [
+        "Otevřít nabídku rychlých akcí"
+      ],
+      "Open this modal": [
+        "Otevřít tuto nápovědu"
+      ],
+      "Previous period": [
+        "Předchozí období"
+      ],
+      "Search events": [
+        "Hledat události"
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Week view": [
+        "Týdenní přehled"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Základní akce"
+      ],
+      "View options": [
+        "Zobrazit možnosti"
       ]
     },
     "Knowledge base link label": {
@@ -5961,6 +6044,12 @@
       ],
       "Import to:": [
         "Importovat do:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klávesová zkratka: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Klávesové zkratky"
       ],
       "Label messages as": [
         "Označit zprávy jako"
@@ -8339,6 +8428,9 @@
       "Filter groups": [
         "Filtrovat skupiny"
       ],
+      "Filter quick actions": [
+        "Filtrování rychlých akcí"
+      ],
       "First name": [
         "Křestní jméno"
       ],
@@ -9783,6 +9875,9 @@
       "Invitation sent and participants added to all events": [
         "Pozvánka odeslána a účástníci přidání ke všem událostem"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Nastavení klávesových zkratek upraveno"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Naposledy upravené aliasy uložené ve vašem nejstarším trezoru"
       ],
@@ -9977,6 +10072,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } klávesové zkratky"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailová adresa",
         "${ emailsCount } e-mailové adresy",

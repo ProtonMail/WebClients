@@ -811,6 +811,11 @@
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Etsi viestejä"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Linkin välityksellä kuka tahansa voi tarkastella kalenteriasi"
@@ -4905,6 +4910,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
       ],
+      "Open shortcut cheat sheet": [
+        "Avaa pikanäppäinlista"
+      ],
       "Organization size": [
         "Organisaation koko"
       ],
@@ -5428,6 +5436,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } komento löytyi.",
+        "${ filteredList.length } komentoa löytyi."
+      ],
       "Selected color:": [
         "Valittu väri:"
       ]
@@ -5535,6 +5547,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "Avaa tämä ruutu"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Perustoiminnot"
       ]
     },
     "Knowledge base link label": {
@@ -5771,6 +5793,12 @@
       ],
       "Import to:": [
         "Tuo kohteeseen:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Pikanäppäin: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Pikanäppäimet"
       ],
       "Label messages as": [
         "Merkitse viestit tunnisteella"
@@ -9364,6 +9392,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Kutsu lähetettiin ja osallistujat lisättiin ketjun kaikkiin tapahtumiin"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Pkanäppäinasetukset päivitettiin"
       ],
       "Last modified aliases stored in your oldest vault": [
         "Viimeksi muokatut vanhimmassa holvissasi olevat aliakset"

@@ -804,6 +804,11 @@
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
       ]
     },
+    "action": {
+      "Search messages": [
+        "搜尋訊息"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "任何有連結的人均可檢視您的行事曆"
@@ -4834,6 +4839,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
+      "Open shortcut cheat sheet": [
+        "開啟快捷鍵備忘單"
+      ],
       "or discover other features:": [
         "或探索其他功能:"
       ],
@@ -5358,6 +5366,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "找到 ${ filteredList.length } 個指令。"
+      ],
       "Selected color:": [
         "已選取的色彩:"
       ]
@@ -5462,6 +5473,16 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Open this modal": [
+        "打開這個視窗"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "基本動作"
       ]
     },
     "Knowledge base link label": {
@@ -5697,6 +5718,12 @@
       ],
       "Import to:": [
         "匯入到："
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "鍵盤快速鍵: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "鍵盤快捷鍵"
       ],
       "Label messages as": [
         "將郵件加上標籤"
@@ -9168,6 +9195,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "邀請已送出，並且已加入參與者到全部事件"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "鍵盤快捷鍵喜好設定已更新"
       ],
       "Last modified aliases stored in your oldest vault": [
         "最後修改的別名已儲存到您最舊的保險庫"

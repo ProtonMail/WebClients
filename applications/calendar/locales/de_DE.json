@@ -811,6 +811,11 @@
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
+    "action": {
+      "Search messages": [
+        "Nachrichten durchsuchen"
+      ]
+    },
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "Jeder, der den Link hat, kann diesen Kalender einsehen"
@@ -1579,6 +1584,32 @@
       ],
       "strawberry": [
         "Erdbeere"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Tagesansicht"
+      ],
+      "Month view": [
+        "Monatsansicht"
+      ],
+      "New event": [
+        "Neuer Termin"
+      ],
+      "Next period": [
+        "Nächster Zeitraum"
+      ],
+      "Previous period": [
+        "Vorheriger Zeitraum"
+      ],
+      "Search events": [
+        "Termine suchen"
+      ],
+      "Today": [
+        "Heute"
+      ],
+      "Week view": [
+        "Wochenansicht"
       ]
     },
     "Confirm modal title": {
@@ -2934,6 +2965,9 @@
       "${ list } has no contacts": [
         "${ list } enthält keine Kontakte",
         "Einige Gruppen enthalten keine Kontakte: ${ list }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
       ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
@@ -4739,6 +4773,9 @@
       "High Priority": [
         "Hohe Priorität"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Wenn Tastaturkürzel aktiviert sind, kannst du die folgenden Tasten für Schnellaktionen oder zum Springen zu verschiedenen Ansichten verwenden. ${ metaKey } + K ist immer aktiviert."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
       ],
@@ -4919,6 +4956,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
+      ],
+      "Open shortcut cheat sheet": [
+        "Spickzettel für Tastaturkürzel öffnen"
       ],
       "or discover other features:": [
         "oder entdecke andere Funktionen:"
@@ -5449,6 +5489,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } Befehl gefunden.",
+        "${ filteredList.length } Befehle gefunden."
+      ],
       "Selected color:": [
         "Ausgewählte Farbe:"
       ]
@@ -5556,6 +5600,46 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Create new event": [
+        "Neuer Termin erstellen"
+      ],
+      "Day view": [
+        "Tagesansicht"
+      ],
+      "Month view": [
+        "Monatsansicht"
+      ],
+      "Next period": [
+        "Nächster Zeitraum"
+      ],
+      "Open quick actions menu": [
+        "Menü für Schnellaktionen öffnen"
+      ],
+      "Open this modal": [
+        "Diesen Dialog öffnen"
+      ],
+      "Previous period": [
+        "Vorheriger Zeitraum"
+      ],
+      "Search events": [
+        "Termine suchen"
+      ],
+      "Today": [
+        "Heute"
+      ],
+      "Week view": [
+        "Wochenansicht"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Basic actions": [
+        "Standardaktionen"
+      ],
+      "View options": [
+        "Optionen anzeigen"
       ]
     },
     "Knowledge base link label": {
@@ -5792,6 +5876,12 @@
       ],
       "Import to:": [
         "Importieren nach:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastaturkürzel: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturkürzel"
       ],
       "Label messages as": [
         "Nachrichten kategorisieren als"
@@ -8041,6 +8131,9 @@
       "Filter groups": [
         "Gruppen filtern"
       ],
+      "Filter quick actions": [
+        "Schnellaktionen filtern"
+      ],
       "First name": [
         "Vorname"
       ],
@@ -9413,6 +9506,9 @@
       "Invitation sent and participants added to all events": [
         "Einladung gesendet und Teilnehmer zu allen Terminen hinzugefügt"
       ],
+      "Keyboard shortcuts preferences updated": [
+        "Tastaturkürzel-Einstellungen aktualisiert"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Zuletzt geänderte Aliasse, die in deinem ältesten Tresor gespeichert sind"
       ],
@@ -9595,6 +9691,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName }-Tastaturkürzel"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } E-Mail-Adresse",
         "${ emailsCount } E-Mail-Adressen"
