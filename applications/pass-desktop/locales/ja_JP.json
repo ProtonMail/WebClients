@@ -103,8 +103,14 @@
       "Cancel": [
         "キャンセル"
       ],
+      "Cancel email change": [
+        "アドレスの変更を取り消す"
+      ],
       "Change": [
         "変更"
+      ],
+      "Change email": [
+        "メールアドレスを変更"
       ],
       "Check DNS": [
         "DNSを確認"
@@ -921,6 +927,12 @@
       "Failed to block the contact": [
         "連絡先のブロックに失敗しました"
       ],
+      "Failed to cancel mailbox change": [
+        "メールボックスの変更をキャンセルできませんでした"
+      ],
+      "Failed to change mailbox": [
+        "メールボックスを変更できませんでした"
+      ],
       "Failed to create domain": [
         "ドメインの作成に失敗しました"
       ],
@@ -1382,9 +1394,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "SimpleLoginのエイリアス管理機能は近日公開されます！"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "エイリアスを無効にしました。 ${ item.aliasEmail }に送信されたメールは受信できなくなります"
       ],
@@ -1588,9 +1597,6 @@
       ],
       "Emptying trash...": [
         "ごみ箱を空にしています..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "${ PASS_SHORT_APP_NAME } ベータ版を有効にする"
       ],
       "Enable auto-locking to secure your data": [
         "自動ロックを有効にしてデータを保護します"
@@ -2168,6 +2174,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "このアイテムは現在誰とも共有されていません。他の人と共有するために人々を招待してください。"
       ],
+      "This mailbox will use your previous email.": [
+        "このメールボックスはあなたの以前のメールアドレスを使用します。"
+      ],
       "This operation is irreversible.": [
         "この操作は元に戻せません。"
       ],
@@ -2203,9 +2212,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "インポートしたデータを確認するには、ブラウザのツールバーにある ${ PASS_APP_NAME }アイコンをクリックしてください。"
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
       "Unable to copy to clipboard": [
         "クリップボードにコピーできませんでした"
@@ -2488,9 +2494,6 @@
       "Alias address (disabled)": [
         "エイリアスアドレス(無効)"
       ],
-      "Alias management": [
-        "エイリアスの管理"
-      ],
       "Aliases": [
         "エイリアス"
       ],
@@ -2517,9 +2520,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "ログイン情報を保存するだけでなく、${ PASS_APP_NAME } は統合されたメールエイリアス機能であなたの身元を保護します。新しいオンラインアカウントにサインアップするたびに、${ PASS_APP_NAME } は実際のメールアドレスを保護するために自動的にエイリアスを作成できます。 "
-      ],
-      "Beta Access": [
-        "ベータ版アクセス"
       ],
       "Biometrics": [
         "生体認証"
@@ -2907,6 +2907,9 @@
       ],
       "New": [
         "新しい"
+      ],
+      "New email": [
+        "新しいメール"
       ],
       "New vault": [
         "新しい保管庫"
@@ -3571,6 +3574,9 @@
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
         "アイテムには ${ share.targetMaxMembers } 人以上のユーザーを含めることはできません。"
       ],
+      "Mailbox change successfully cancelled": [
+        "メールボックスの変更をキャンセルしました"
+      ],
       "Mailbox successfully deleted": [
         "メールボックスは正常に削除されました"
       ],
@@ -3649,6 +3655,12 @@
       ],
       "Breaches detected for": [
         "検出された侵害"
+      ],
+      "Cancel changing your email?": [
+        "メールアドレスの変更をキャンセルしますか？"
+      ],
+      "Change mailbox email": [
+        "メールボックスのメールアドレスを変更"
       ],
       "Change your lock method": [
         "ロック方法を変更"

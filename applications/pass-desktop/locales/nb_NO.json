@@ -103,8 +103,14 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel email change": [
+        "Avbryt endring av e-post"
+      ],
       "Change": [
         "Endre"
+      ],
+      "Change email": [
+        "Endre e-post"
       ],
       "Check DNS": [
         "Sjekk DNS"
@@ -926,6 +932,12 @@
       "Failed to block the contact": [
         "Kunne ikke blokkere kontakten"
       ],
+      "Failed to cancel mailbox change": [
+        "Kan ikke avbryte endring av postboks"
+      ],
+      "Failed to change mailbox": [
+        "Kan ikke endre postboks"
+      ],
       "Failed to create domain": [
         "Kunne ikke opprette domenet"
       ],
@@ -1402,9 +1414,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
       ],
-      "Alias management features from SimpleLogin are coming soon!": [
-        "Aliasadministrasjonsfunksjoner fra SimpleLogin kommer snart!"
-      ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias er deaktivert. Du vil ikke lenger motta e-poster sendt til ${ item.aliasEmail }"
       ],
@@ -1608,9 +1617,6 @@
       ],
       "Emptying trash...": [
         "Tømmer papirkurven..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Aktiver ${ PASS_SHORT_APP_NAME }-testversjon"
       ],
       "Enable auto-locking to secure your data": [
         "Aktiver automatisk låsing for å sikre dataene dine"
@@ -2197,6 +2203,9 @@
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dette elementet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
       ],
+      "This mailbox will use your previous email.": [
+        "Denne postboksen vil bruke din forrige e-post."
+      ],
       "This operation is irreversible.": [
         "Denne operasjonen er irreversibel."
       ],
@@ -2232,9 +2241,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "For å se gjennom de importerte dataene dine, klikk på ${ PASS_APP_NAME }-ikonet i nettleserens verktøylinje."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
       ],
       "Unable to copy to clipboard": [
         "Ikke i stand til å kopiere til utklippstavlen"
@@ -2533,9 +2539,6 @@
       "Alias address (disabled)": [
         "Aliasadresse (deaktivert)"
       ],
-      "Alias management": [
-        "Aliasadministrasjon"
-      ],
       "Aliases": [
         "Aliaser"
       ],
@@ -2562,9 +2565,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "I tillegg til å lagre påloggingene dine, beskytter ${ PASS_APP_NAME } identiteten din med en integrert e-postaliasfunksjon. Hver gang du registrerer deg for en ny nettkonto, kan ${ PASS_APP_NAME } automatisk opprette et alias for å holde din faktiske e-postadresse beskyttet. "
-      ],
-      "Beta Access": [
-        "Beta-tilgang"
       ],
       "Biometrics": [
         "Biometri"
@@ -2952,6 +2952,9 @@
       ],
       "New": [
         "Ny"
+      ],
+      "New email": [
+        "Ny e-post"
       ],
       "New vault": [
         "Nytt hvelv"
@@ -3619,6 +3622,9 @@
         "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } bruker.",
         "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } brukere."
       ],
+      "Mailbox change successfully cancelled": [
+        "Postboksendringen ble avbrutt"
+      ],
       "Mailbox successfully deleted": [
         "Postboks ble slettet"
       ],
@@ -3698,6 +3704,12 @@
       ],
       "Breaches detected for": [
         "Brudd oppdaget for"
+      ],
+      "Cancel changing your email?": [
+        "Vil du avbryte endringen av e-post?"
+      ],
+      "Change mailbox email": [
+        "Endre e-post for postboks"
       ],
       "Change your lock method": [
         "Endre låsemetoden din"
