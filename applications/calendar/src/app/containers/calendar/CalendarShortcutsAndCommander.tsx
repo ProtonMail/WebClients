@@ -11,34 +11,34 @@ import {
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
 import useFlag from '@proton/unleash/useFlag';
+import isTruthy from '@proton/utils/isTruthy';
 
 import useCalendarHotkeys from '../../hooks/useCalendarHotkeys';
-import type CalendarContainerView from './CalendarContainerView';
 
 const { DAY, WEEK, MONTH } = VIEWS;
 
-interface Props
-    extends Pick<
-        React.ComponentProps<typeof CalendarContainerView>,
-        'onClickToday' | 'onClickNextView' | 'onClickPreviousView' | 'onChangeView'
-    > {
-    isDrawerApp: boolean;
-    handleClickSearch: () => void;
+interface Props {
+    onClickToday: () => void;
+    onClickNextView: () => void;
+    onClickPreviousView: () => void;
+    onChangeView: (view: VIEWS) => void;
+    onClickSearch: () => void;
     onCreateEvent?: (attendees?: AttendeeModel[]) => void;
     isSearching: boolean;
-    handleBackFromSearch: () => void;
+    onBackFromSearch: () => void;
+    isDrawerApp: boolean;
 }
 
 const CalendarShortcutsAndCommander = ({
     isDrawerApp,
+    isSearching,
     onClickToday,
     onClickNextView,
     onClickPreviousView,
     onChangeView,
-    handleClickSearch,
+    onClickSearch,
     onCreateEvent,
-    isSearching,
-    handleBackFromSearch,
+    onBackFromSearch,
 }: Props) => {
     const documentRef = useRef<Document>(document);
     const isCommanderAvailable = useFlag('CalendarCommander');
@@ -63,13 +63,13 @@ const CalendarShortcutsAndCommander = ({
             if (isSearching) {
                 return;
             }
-            onClickNextView();
+            onClickNextView?.();
         },
         goToPreviousView: () => {
             if (isSearching) {
                 return;
             }
-            onClickPreviousView();
+            onClickPreviousView?.();
         },
         showDayView: () => {
             onChangeView(DAY);
@@ -81,11 +81,11 @@ const CalendarShortcutsAndCommander = ({
             onChangeView(MONTH);
         },
         focusSearchBar: () => {
-            handleClickSearch();
+            onClickSearch();
         },
         backFromSearch: () => {
             if (isSearching) {
-                handleBackFromSearch();
+                onBackFromSearch();
             }
         },
         openShortcutModal: () => {
@@ -94,81 +94,90 @@ const CalendarShortcutsAndCommander = ({
     });
 
     const commanderList = useMemo<CommanderItemInterface[]>(
-        () => [
-            {
-                icon: 'plus-circle',
-                label: c('Commander action').t`New event`,
-                value: 'create-event',
-                action: () => {
-                    onCreateEvent?.();
+        () =>
+            [
+                onCreateEvent && {
+                    icon: 'plus-circle',
+                    label: c('Commander action').t`New event`,
+                    value: 'create-event',
+                    action: () => {
+                        onCreateEvent();
+                    },
+                    shortcuts: isCalendarHotkeysEnabled ? ['N'] : undefined,
                 },
-                shortcuts: isCalendarHotkeysEnabled ? ['N'] : undefined,
-            },
-            {
-                icon: 'calendar-today',
-                label: c('Commander action').t`Today`,
-                value: 'move-to-today',
-                action: () => {
-                    onClickToday();
+                isSearching
+                    ? null
+                    : {
+                          icon: 'calendar-today',
+                          label: c('Commander action').t`Today`,
+                          value: 'move-to-today',
+                          action: () => {
+                              onClickToday();
+                          },
+                          shortcuts: isCalendarHotkeysEnabled ? ['T'] : undefined,
+                      },
+                {
+                    icon: 'calendar-day',
+                    label: c('Commander action').t`Day view`,
+                    value: 'show-day-view',
+                    action: () => {
+                        onChangeView(DAY);
+                    },
+                    shortcuts: isCalendarHotkeysEnabled ? ['1'] : undefined,
                 },
-                shortcuts: isCalendarHotkeysEnabled ? ['T'] : undefined,
-            },
-            {
-                icon: 'calendar-day',
-                label: c('Commander action').t`Day view`,
-                value: 'show-day-view',
-                action: () => {
-                    onChangeView(DAY);
+                {
+                    icon: 'calendar-week',
+                    label: c('Commander action').t`Week view`,
+                    value: 'show-week-view',
+                    action: () => {
+                        onChangeView(WEEK);
+                    },
+                    shortcuts: isCalendarHotkeysEnabled ? ['2'] : undefined,
                 },
-                shortcuts: isCalendarHotkeysEnabled ? ['1'] : undefined,
-            },
-            {
-                icon: 'calendar-week',
-                label: c('Commander action').t`Week view`,
-                value: 'show-week-view',
-                action: () => {
-                    onChangeView(WEEK);
+                {
+                    icon: 'calendar-month',
+                    label: c('Commander action').t`Month view`,
+                    value: 'show-month-view',
+                    action: () => {
+                        onChangeView(MONTH);
+                    },
+                    shortcuts: isCalendarHotkeysEnabled ? ['3'] : undefined,
                 },
-                shortcuts: isCalendarHotkeysEnabled ? ['2'] : undefined,
-            },
-            {
-                icon: 'calendar-month',
-                label: c('Commander action').t`Month view`,
-                value: 'show-month-view',
-                action: () => {
-                    onChangeView(MONTH);
-                },
-                shortcuts: isCalendarHotkeysEnabled ? ['3'] : undefined,
-            },
-            {
-                icon: 'arrow-right',
-                label: c('Commander action').t`Next period`,
-                value: 'go-to-next-view',
-                action: () => {
-                    onClickNextView();
-                },
-                shortcuts: isCalendarHotkeysEnabled ? ['→'] : undefined,
-            },
-            {
-                icon: 'arrow-left',
-                label: c('Commander action').t`Previous period`,
-                value: 'go-to-previous-view',
-                action: () => {
-                    onClickPreviousView();
-                },
-                shortcuts: isCalendarHotkeysEnabled ? ['←'] : undefined,
-            },
-            {
-                icon: 'magnifier',
-                label: c('Commander action').t`Search events`,
-                value: 'focus-search-bar',
-                action: () => {
-                    handleClickSearch();
-                },
-                shortcuts: isCalendarHotkeysEnabled ? ['/'] : undefined,
-            },
-        ],
-        [onClickNextView, onClickPreviousView, onClickToday, onChangeView]
+                isSearching
+                    ? null
+                    : {
+                          icon: 'arrow-right',
+                          label: c('Commander action').t`Next period`,
+                          value: 'go-to-next-view',
+                          action: () => {
+                              onClickNextView();
+                          },
+                          shortcuts: isCalendarHotkeysEnabled ? ['→'] : undefined,
+                      },
+                isSearching
+                    ? null
+                    : {
+                          icon: 'arrow-left',
+                          label: c('Commander action').t`Previous period`,
+                          value: 'go-to-previous-view',
+                          action: () => {
+                              onClickPreviousView();
+                          },
+                          shortcuts: isCalendarHotkeysEnabled ? ['←'] : undefined,
+                      },
+                isSearching
+                    ? null
+                    : {
+                          icon: 'magnifier',
+                          label: c('Commander action').t`Search events`,
+                          value: 'focus-search-bar',
+                          action: () => {
+                              onClickSearch();
+                          },
+                          shortcuts: isCalendarHotkeysEnabled ? ['/'] : undefined,
+                      },
+            ].filter(isTruthy) as CommanderItemInterface[],
+        [onClickNextView, onClickPreviousView, onClickToday, onChangeView, isSearching]
     );
 
     return (
