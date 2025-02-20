@@ -110,7 +110,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
 
     const [signal, setSignalItemSharing] = useState(false);
-    const signalItemSharing = itemSharingEnabled && signal && !itemShared && canShare;
+    const signalItemSharing = signal && !itemShared && canItemShare;
     const disabledSharing = !(canItemShare || canLinkShare || canManageAccess);
     const showSharing = (owner || shared) && !readOnly;
 
