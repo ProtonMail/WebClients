@@ -7,7 +7,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
 import { PLAN_NAMES } from '@proton/payments';
@@ -27,8 +27,6 @@ import clsx from '@proton/utils/clsx';
 
 import useFetchMailUpsellModalConfig, { type MailUpsellConfig } from '../useFetchMailUpsellModalConfig';
 
-import './UpsellModal.scss';
-
 export interface UpsellModalProps {
     title: ReactNode;
     /** Image displayed above the title */
@@ -44,8 +42,8 @@ export interface UpsellModalProps {
     preventInAppPayment?: boolean;
     // TODO remove as it can be handled by overriding the modal props
     onClose?: () => void;
-    /** Called when payment upgrade is completed */
-    onUpgrade?: () => void;
+    /** Called when user subscription is completed */
+    onSubscribed?: () => void;
     ['data-testid']?: string;
 }
 
@@ -92,7 +90,7 @@ const UpsellModal = ({
     sourceEvent,
     upsellRef,
     preventInAppPayment,
-    onUpgrade,
+    onSubscribed,
 }: UpsellModalProps) => {
     const api = useApi();
     const [config, setConfig] = useState<MailUpsellConfig | null>(null);
@@ -106,9 +104,7 @@ const UpsellModal = ({
             captureInitiativeMessage(SentryMailInitiatives.UPSELL_MODALS, 'Application not found');
         }
 
-        // TODO check if config.onUpgrade is needed here
         config?.onUpgrade?.();
-        onUpgrade?.();
         modalProps.onClose();
     };
 
@@ -132,7 +128,7 @@ const UpsellModal = ({
             promise: fetchUpsellConfig({
                 upsellRef,
                 preventInApp: preventInAppPayment,
-                onSubscribed: handleUpgrade,
+                onSubscribed,
             }),
             timeoutMs: fetchTimeout,
             errorMessage: `Upsell config fetch took more than limit of ${fetchTimeout}ms`,
@@ -147,13 +143,20 @@ const UpsellModal = ({
     }, []);
 
     return (
-        <ModalTwo className="modal-two--twocolors" data-testid={dataTestid} {...modalProps} onClose={handleClose}>
-            <ModalTwoHeader />
-            <div className="modal-two-illustration-container relative text-center">
-                <img src={illustration} alt="" />
-            </div>
-            <div className="modal-two-content-container overflow-auto">
-                <ModalTwoContent className="my-8 text-center">
+        <ModalTwo {...modalProps} size="xsmall" data-testid={dataTestid} onClose={handleClose}>
+            <ModalTwoContent unstyled>
+                <div
+                    className="relative flex justify-center items-center fade-in-up h-custom custom-bg"
+                    style={{ '--h-custom': '11rem', '--custom-bg': 'var(--optional-background-lowered)' }}
+                >
+                    <ModalHeaderCloseButton
+                        buttonProps={{
+                            className: 'absolute right-0 top-0 mt-3 mr-3',
+                        }}
+                    />
+                    <img src={illustration} alt="" />
+                </div>
+                <div className="m-8 text-center">
                     <h1 className="text-lg text-bold">{title}</h1>
                     {description && <p className="mt-2 mb-6 text-wrap-balance color-weak">{description}</p>}
                     <div className={clsx(customDescription ? 'mb-4' : '')}>
@@ -164,9 +167,9 @@ const UpsellModal = ({
                         )}
                     </div>
                     {customDescription && <div className="mt-2 mb-6">{customDescription}</div>}
-                    {config?.footerText ? <p className={'mt-2 text-sm color-weak'}>{config.footerText}</p> : null}
-                </ModalTwoContent>
-            </div>
+                    {config?.footerText ? <p className="mt-2 mb-0 text-sm color-weak">{config.footerText}</p> : null}
+                </div>
+            </ModalTwoContent>
         </ModalTwo>
     );
 };
