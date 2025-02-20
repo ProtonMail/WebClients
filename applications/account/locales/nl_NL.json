@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -6976,11 +6976,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
       ],
-      "active": [
-        "actief"
-      ],
       "Active": [
         "Actief"
+      ],
+      "active": [
+        "actief"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
@@ -7081,6 +7081,9 @@
       ],
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Sta gebruikers toe om verbinding te maken met beveiligde gedeelde servers van de **Landen** sectie van de ${ VPN_APP_NAME }-app."
       ],
       "Already allocated": [
         "Reeds toegewezen"
@@ -7430,7 +7433,7 @@
       "default email address": [
         "standaard e-mailadres"
       ],
-      "Default mail application": [
+      "Default email application": [
         "Standaard e-mailapplicatie"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7765,8 +7768,23 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Wanneer een andere beheerder dit wachtwoord heeft aangepast, dan moet u hem naar het nieuwe organisatiewachtwoord vragen."
       ],
+      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
+        "Als deze optie is uitgeschakeld, zullen nieuwe leden een beheerder nodig hebben om manueel de eerste kluis aan te maken voor hen (via sharing) zodat ze items kunnen aanmaken."
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "Als deze optie uitgeschakeld is, kunnen alleen beheerders gegevens exporteren."
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "Als deze optie is uitgeschakeld, kunnen organisatieleden alleen kluizen delen binnen de organisatie."
+      ],
+      "If enabled, organization members will be able to share individual items in addition to vaults.": [
+        "Als deze optie is ingeschakeld, kunnen leden van de organisatie individuele items delen bovenop de kluizen."
+      ],
       "If it’s not right for you, we’ll refund you.": [
         "Als u het niet goed genoeg vindt, dan betalen we u terug."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Als sneltoetsen ingeschakeld zijn, kunt u de volgende toetsen gebruiken voor snelle acties of naar verschillende weergaven springen. ${ metaKey } + K is altijd ingeschakeld."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Als de tijdzone niet overeenkomt met de huidige tijdzone, dan zal u worden gevraagd om deze bij te werken (maximaal één keer per dag)."
@@ -8279,6 +8297,9 @@
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
       ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Organisatieleden moeten ${ PASS_APP_NAME } ontgrendelen met hun wachtwoord of pincode etc."
+      ],
       "Organization size": [
         "Grootte van de organisatie"
       ],
@@ -8625,8 +8646,8 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Stel ${ MAIL_APP_NAME } in als uw standaard e-mail applicatie. ${ MAIL_APP_NAME } wordt automatisch geopend wanneer u op een e-mailkoppeling klikt."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie. ${ MAIL_APP_NAME } opent automatisch wanneer u op een e-maillink klikt."
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
@@ -8654,6 +8675,10 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Gedeelde ${ vaultLink } bijgewerkt"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Land met gedeelde server (${ countriesCount })",
+        "Landen met gedeelde server (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Gedeelde kluis verwijderd"
@@ -8764,8 +8789,8 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchroniseer en beheer bestanden met de ${ DRIVE_APP_NAME } app. Maak en deel documenten in ${ DOCS_APP_NAME } en sla ze veilig op. Alles op ${ ios }, ${ android } en ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Aanbevolen door Tech radar pro met een beoordeling van 4,2 op 5 sterren"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "Aanbevolen door TechRadar Pro met een beoordeling van 4,2 van de 5 sterren."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
@@ -9929,6 +9954,12 @@
       "Close draft": [
         "Concept sluiten"
       ],
+      "Create new event": [
+        "Nieuw event aanmaken"
+      ],
+      "Day view": [
+        "Dagweergave"
+      ],
       "Delete permanently": [
         "Permanent verwijderen"
       ],
@@ -9995,6 +10026,9 @@
       "Minimize / maximize composer": [
         "Minimaliseren / maximaliseren van opstelvenster"
       ],
+      "Month view": [
+        "Maandweergave"
+      ],
       "Move down": [
         "Beweeg omlaag"
       ],
@@ -10025,6 +10059,9 @@
       "New message": [
         "Nieuw bericht"
       ],
+      "Next period": [
+        "Volgende periode"
+      ],
       "Open command panel": [
         "Bedieningspaneel openen"
       ],
@@ -10034,8 +10071,14 @@
       "Open previous message": [
         "Open vorig bericht"
       ],
+      "Open quick actions menu": [
+        "Open snelle acties menu"
+      ],
       "Open this modal": [
         "Open dit hulpvenster"
+      ],
+      "Previous period": [
+        "Vorige periode"
       ],
       "Reply": [
         "Beantwoorden"
@@ -10048,6 +10091,9 @@
       ],
       "Search": [
         "Zoek"
+      ],
+      "Search events": [
+        "Zoek events"
       ],
       "Select / unselect": [
         "Selecteren / deselecteren"
@@ -10069,6 +10115,12 @@
       ],
       "Star": [
         "Ster"
+      ],
+      "Today": [
+        "Vandaag"
+      ],
+      "Week view": [
+        "Weekweergave"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10092,6 +10144,9 @@
       ],
       "Message shortcuts": [
         "Berichtsneltoetsen"
+      ],
+      "View options": [
+        "Weergaveopties"
       ]
     },
     "Keys actions": {
@@ -10241,6 +10296,12 @@
       "Allow all users to create vaults": [
         "Alle gebruikers toestaan kluizen te maken"
       ],
+      "Allow data export for all users": [
+        "Gegevensexport voor alle gebruikers toestaan"
+      ],
+      "Allow individual item sharing": [
+        "Individuele items delen toestaan"
+      ],
       "Allow memorable passwords": [
         "Makkelijk te onthouden wachtwoorden toestaan"
       ],
@@ -10261,6 +10322,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Herstel toestaan met een vertrouwd apparaat"
+      ],
+      "Allow sharing outside the organization": [
+        "Delen toestaan buiten de organisatie"
       ],
       "Allowed domain": [
         "Domein toegestaan"
@@ -12743,6 +12807,17 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -12851,17 +12926,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13904,6 +13968,9 @@
       ],
       "Organization identity updated": [
         "Identiteit van organisatie bijgewerkt"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Verifieer uw e-mailadres ${ email } om de identiteit van uw organisatie in te stellen."
       ]
     },
     "OS compatibility": {
@@ -16705,6 +16772,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -16993,47 +17101,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -17532,6 +17599,9 @@
       "${ appName } Free": [
         "${ appName } Gratis"
       ],
+      "${ appName } keyboard shortcuts": [
+        "${ appName } sneltoetsen"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17543,9 +17613,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } Sneltoetsen"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Rapport"
@@ -19433,6 +19500,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Hierdoor wordt de beheerder de toestemming ontnomen om de account van deze gebruiker te beheren."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Om beheerdersrechten te verkrijgen, moeten ze de volgende keer dat ze zich aanmelden bij ${ BRAND_NAME } een back-up wachtwoord instellen."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Om verder te gaan, moet u toestemming vragen aan de gebruiker om toegang te krijgen tot hun gegevens of hun wachtwoord te resetten."

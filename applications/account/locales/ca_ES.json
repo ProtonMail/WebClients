@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activa"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -4422,7 +4422,7 @@
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "El vostre nom d'usuari és ${ user.Name }. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
+        "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
@@ -6976,11 +6976,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeu almenys un mètode de recuperació de dades per assegurar-vos que podeu continuar accedint al contingut del vostre compte ${ BRAND_NAME } si perdeu la contrasenya."
       ],
-      "active": [
-        "activa"
-      ],
       "Active": [
         "Actiu"
+      ],
+      "active": [
+        "activa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
@@ -7081,6 +7081,9 @@
       ],
       "Allow recovery by phone": [
         "Permet recuperació per telèfon"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permeteu als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Ja assignat"
@@ -7430,7 +7433,7 @@
       "default email address": [
         "adreça de correu electrònic per defecte"
       ],
-      "Default mail application": [
+      "Default email application": [
         "Aplicació de correu electrònic per defecte"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7766,7 +7769,7 @@
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
       ],
       "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "En deshabilitar-ho, els membres nous de l'organització necessitaran que un administrador els hi creï manualment la primera caixa forta (mitjançant compartició) perquè puguin afegir-ne elements."
+        "En deshabilitar-ho, els membres nous de l'organització necessitaran que un administrador els creï manualment la primera caixa forta (mitjançant compartició) perquè puguin afegir-hi elements."
       ],
       "If disabled, only administrators will be able to export data.": [
         "En deshabilitar-ho, només els administradors podran exportar dades."
@@ -8292,7 +8295,7 @@
         "O seleccioneu un servidor concret:"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Els membres de l'organització necessitaran ${ PASS_APP_NAME } per a desblocar amb el seu usuari i contrasenya, PIN, etc."
+        "Els membres de l'organització necessitaran desbloquejar ${ PASS_APP_NAME } amb la seva contrasenya, PIN, etc."
       ],
       "Organization size": [
         "Mida de l'organització"
@@ -8640,7 +8643,7 @@
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic per defecte. ${ MAIL_APP_NAME } s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
       ],
       "Set recovery phrase": [
@@ -8669,6 +8672,10 @@
       ],
       "Shared ${ vaultLink } updated": [
         "S'ha actualitzat l'enllaç compartit ${ vaultLink }."
+      ],
+      "Shared server country (${ countriesCount })": [
+        "País amb servidor compartit (${ countriesCount })",
+        "Països amb servidor compartit (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "S'ha eliminat la caixa forta compartida"
@@ -8779,7 +8786,7 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creeu i compartiu documents a ${ DOCS_APP_NAME } i deseu-los de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Recomanat per TechRadar Pro amb una puntuació de 4,2 sobre 5 estrelles"
       ],
       "Temporarily unavailable. Please check back later.": [
@@ -8852,7 +8859,7 @@
         "L'enllaç per a notificar que no heu configurat un compte ${ BRAND_NAME } ha caducat. Contacteu amb el nostre equip de suport per a resoldre aquest problema."
       ],
       "The most recent data update, excluding breaches.": [
-        "L'actualització de dades més recent, sense incloure les infraccions."
+        "L'actualització de dades més recent, sense incloure les bretxes."
       ],
       "The name will be visible to your users while they are signed in.": [
         "El nom serà visible per als vostres usuaris quan estiguin connectats."
@@ -9944,6 +9951,12 @@
       "Close draft": [
         "Tanca l'esborrany"
       ],
+      "Create new event": [
+        "Crea un nou esdeveniment"
+      ],
+      "Day view": [
+        "Vista diària"
+      ],
       "Delete permanently": [
         "Elimina de manera permanent"
       ],
@@ -10010,6 +10023,9 @@
       "Minimize / maximize composer": [
         "Minimitza / maximitza l'editor"
       ],
+      "Month view": [
+        "Vista mensual"
+      ],
       "Move down": [
         "Mou cap avall"
       ],
@@ -10040,6 +10056,9 @@
       "New message": [
         "Nou missatge"
       ],
+      "Next period": [
+        "Següent periode"
+      ],
       "Open command panel": [
         "Obre el panell d'ordres"
       ],
@@ -10052,6 +10071,9 @@
       "Open this modal": [
         "Obre aquesta finestra"
       ],
+      "Previous period": [
+        "Periode anterior"
+      ],
       "Reply": [
         "Respon"
       ],
@@ -10063,6 +10085,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Search events": [
+        "Cerca esdeveniments"
       ],
       "Select / unselect": [
         "Selecciona / Anul·la selecció"
@@ -10084,6 +10109,12 @@
       ],
       "Star": [
         "Destacat"
+      ],
+      "Today": [
+        "Avui"
+      ],
+      "Week view": [
+        "Vista setmanal"
       ]
     },
     "Keyboard shortcut section name": {
@@ -12767,6 +12798,17 @@
         "Gestió d'equips"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba amb ${ last4 }."
@@ -12875,17 +12917,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -13315,7 +13346,7 @@
         "En desactivar-ho, s'eliminarà la possibilitat de rebre notificacions a les aplicacions de ${ BRAND_NAME }."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
-        "Durant el primer mes d'ús a ${ BRAND_NAME }"
+        "Durant el primer mes d'ús d'un producte de ${ BRAND_NAME }"
       ],
       "Email subscriptions": [
         "Subscripcions per correu electrònic"
@@ -13930,7 +13961,7 @@
         "S'ha actualitzat la identitat de l'organització."
       ],
       "Verify your email address ${ email } to set organization identity.": [
-        "Verifiqueu que la vostra adreça de correu ${ email } per a definir la identitat de l'organització."
+        "Verifiqueu la vostra adreça de correu electrònic ${ email } per a definir la identitat de l'organització."
       ]
     },
     "OS compatibility": {
@@ -16735,6 +16766,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -17023,47 +17095,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -17573,9 +17604,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Eina d'exportació de ${ MAIL_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Dreceres de teclat de ${ MAIL_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Informe de supervisió de ${ PASS_SHORT_APP_NAME }"
@@ -18106,7 +18134,7 @@
         "Correu electrònic"
       ],
       "Email breaches": [
-        "Infraccions de correu electrònic"
+        "Violacions del correu electrònic"
       ],
       "Email composer": [
         "Editor de correu electrònic"
@@ -19465,7 +19493,7 @@
         "Això revocarà el permís de l'administrador per a gestionar el compte d'aquest usuari."
       ],
       "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
-        "Per a aconseguir drets d'administrador, l'usuari ha de crear una còpia de seguretat de la contrasenya quan torni a iniciar la sessió a ${ BRAND_NAME }."
+        "Per a obtenir drets d'administrador, l'usuari haurà d'establir una contrasenya de recuperació la pròxima vegada que iniciï la sessió a ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Per a continuar, haureu de sol·licitar el permís de l'usuari per a accedir a les seves dades o restablir la seva contrasenya."
