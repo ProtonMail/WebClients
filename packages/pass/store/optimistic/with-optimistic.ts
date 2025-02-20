@@ -55,7 +55,6 @@ const withOptimistic = <T extends object>(
         const action = options?.sanitizeAction?.(optimisticAction) ?? optimisticAction;
 
         const inner = unwrapOptimisticState(outer);
-        const nextInner = reducer(inner, action);
 
         const { optimistic } = outer;
 
@@ -71,7 +70,6 @@ const withOptimistic = <T extends object>(
                     switch (key as keyof OptimisticMatchers) {
                         case 'initiate': {
                             const nextOptimistic = initiateReducer(inner, reducer, action, optimistic, id);
-
                             return {
                                 ...nextOptimistic.history
                                     .map(getActionFromHistoryItem)
@@ -82,13 +80,9 @@ const withOptimistic = <T extends object>(
 
                         case 'commit': {
                             return {
-                                ...nextInner,
+                                ...reducer(inner, action),
                                 optimistic: withHistoryAction(
-                                    {
-                                        id,
-                                        action,
-                                        type: HistoryFlag.OPTIMISTIC_EFFECT,
-                                    },
+                                    { id, action, type: HistoryFlag.OPTIMISTIC_EFFECT },
                                     commitReducer(reducer, optimistic, id)
                                 ),
                             };
@@ -96,13 +90,9 @@ const withOptimistic = <T extends object>(
 
                         case 'fail': {
                             return {
-                                ...nextInner,
+                                ...reducer(inner, action),
                                 optimistic: withHistoryAction(
-                                    {
-                                        id,
-                                        action,
-                                        type: HistoryFlag.OPTIMISTIC_EFFECT,
-                                    },
+                                    { id, action, type: HistoryFlag.OPTIMISTIC_EFFECT },
                                     failReducer(optimistic, id)
                                 ),
                             };
@@ -114,11 +104,7 @@ const withOptimistic = <T extends object>(
                             return {
                                 ...reducer(revertedInner, action),
                                 optimistic: withHistoryAction(
-                                    {
-                                        id,
-                                        action,
-                                        type: HistoryFlag.OPTIMISTIC_EFFECT,
-                                    },
+                                    { id, action, type: HistoryFlag.OPTIMISTIC_EFFECT },
                                     nextOptimistic
                                 ),
                             };
@@ -128,9 +114,8 @@ const withOptimistic = <T extends object>(
             }
         }
 
-        if (inner === nextInner) {
-            return outer;
-        }
+        const nextInner = reducer(inner, action);
+        if (inner === nextInner) return outer;
 
         return {
             ...nextInner,
