@@ -720,6 +720,9 @@
       "Loading${ ellipsis }": [
         "正在加载${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "将 ${ MAIL_APP_NAME } 设为您的默认电子邮件应用程序"
+      ],
       "Make it friendly": [
         "使它变得友好"
       ],
@@ -1151,9 +1154,6 @@
       ],
       "Set as default": [
         "设为默认"
-      ],
-      "Set as default mail application": [
-        "设置为默认邮件应用"
       ],
       "Set encryption": [
         "设置加密"
@@ -3979,6 +3979,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -5815,9 +5818,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } 不是您的默认邮件应用程序。"
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封邮件无法移动。"
       ],
@@ -6226,9 +6226,6 @@
       "Default email application": [
         "设为默认邮件应用"
       ],
-      "Default mail application": [
-        "默认邮件应用"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "你知道你的 ${ BRAND_NAME } 账户中包含加密云存储吗？前往 ${ DRIVE_APP_NAME } 充分利用你的空间。这是免费的。"
       ],
@@ -6621,6 +6618,9 @@
       ],
       "Low Priority": [
         "较低优先顺序"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "将 ${ MAIL_APP_NAME } 设为默认邮件应用。"
       ],
       "Manage your folders": [
         "管理您的文件夹"
@@ -7021,8 +7021,8 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "将 ${ MAIL_APP_NAME } 设为此浏览器的默认邮件应用后，点击 mailto: 邮箱链接可自动跳转至 ${ MAIL_APP_NAME }。"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "将 ${ MAIL_APP_NAME } 设置为默认邮件应用程序，点击邮件链接时会自动打开 ${ MAIL_APP_NAME }。"
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "将 ${ MAIL_APP_NAME } 设置为默认电子邮件应用程序，点击电子邮件链接时，${ MAIL_APP_NAME } 将自动打开。"
       ],
       "Setting up ${ feature }…": [
         "正在设置 ${ feature }…"
@@ -8542,9 +8542,6 @@
       ],
       "Toolbar": [
         "工具栏"
-      ],
-      "Type a command...": [
-        "输入命令..."
       ],
       "Undisclosed Recipients": [
         "非公开收件人"
@@ -10809,9 +10806,6 @@
       "To": [
         "到"
       ],
-      "Type a command…": [
-        "输入命令…"
-      ],
       "Type text or keyword": [
         "输入文本或关键词"
       ]
@@ -12613,9 +12607,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } 已激活"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } 快捷键"
       ],
       "${ unreads } unread message": [
         "${ unreads } 封未读邮件"

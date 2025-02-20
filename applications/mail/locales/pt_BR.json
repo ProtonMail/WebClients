@@ -724,6 +724,9 @@
       "Loading${ ellipsis }": [
         "Carregando${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão"
+      ],
       "Make it friendly": [
         "Mais amigável"
       ],
@@ -1155,9 +1158,6 @@
       ],
       "Set as default": [
         "Definir como padrão"
-      ],
-      "Set as default mail application": [
-        "Definir como aplicativo de e-mail padrão"
       ],
       "Set encryption": [
         "Definir criptografia"
@@ -5889,9 +5889,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } tambem pode proteger seus negócios."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } não é seu aplicativo padrão de e-mail."
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagem.",
         "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagens."
@@ -6330,9 +6327,6 @@
       "Default email application": [
         "Aplicativo de e-mail padrão"
       ],
-      "Default mail application": [
-        "Aplicativo de e-mail padrão"
-      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Você sabia que tem armazenamento em nuvem criptografado incluído na sua conta ${ BRAND_NAME }? Vá até ${ DRIVE_APP_NAME } e aproveite ao máximo seu espaço. É gratuito."
       ],
@@ -6734,6 +6728,9 @@
       ],
       "Low Priority": [
         "Baixa prioridade"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
       ],
       "Manage your folders": [
         "Gerenciar suas pastas"
@@ -7137,7 +7134,7 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Define o ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão para este navegador. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Define o ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
       ],
       "Setting up ${ feature }…": [
@@ -8685,9 +8682,6 @@
       ],
       "Toolbar": [
         "Barra de ferramentas"
-      ],
-      "Type a command...": [
-        "Digite um comando..."
       ],
       "Undisclosed Recipients": [
         "Destinatários ocultos"
@@ -11006,9 +11000,6 @@
       "To": [
         "Para"
       ],
-      "Type a command…": [
-        "Digite um comando..."
-      ],
       "Type text or keyword": [
         "Digite o texto ou a palavra-chave"
       ]
@@ -12882,9 +12873,6 @@
       ],
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Atalhos do teclado do ${ MAIL_APP_NAME }"
       ],
       "${ unreads } unread message": [
         "${ unreads } mensagem não lida",
