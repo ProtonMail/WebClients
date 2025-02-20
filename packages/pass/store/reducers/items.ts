@@ -188,7 +188,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         }
 
         if (itemEdit.intent.match(action)) {
-            const { shareId, itemId, ...item } = action.payload;
+            const { shareId, itemId, lastRevision, ...item } = action.payload;
             const { revision } = state[shareId][itemId];
 
             /* FIXME: see `itemCreationIntent.match`
