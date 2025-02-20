@@ -70,11 +70,11 @@
       "Accept": [
         "Прыняць"
       ],
-      "activate": [
-        "актываваць"
-      ],
       "Activate": [
         "Актываваць"
+      ],
+      "activate": [
+        "актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -1328,7 +1328,7 @@
         "Паглядзець налады аднаўлення"
       ],
       "Void": [
-        "Анулявана"
+        "Ануляваць"
       ],
       "Void all recovery files": [
         "Ануляваць усе файлы аднаўлення"
@@ -6076,7 +6076,7 @@
         "даныя ўваходу ўліковага запісу"
       ],
       "Auto-forward Gmail": [
-        "Аўтаперасылка Gmail"
+        "Аўтаперасылка з Gmail"
       ],
       "auto-forwarding": [
         "аўтаперасылку"
@@ -7100,11 +7100,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Актывуйце прынамсі адзін спосаб аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
-      "active": [
-        "актыўна"
-      ],
       "Active": [
         "Актыўна"
+      ],
+      "active": [
+        "актыўна"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
@@ -7113,7 +7113,7 @@
         "Дадаць адрас электроннай пошты для аднаўлення доступу"
       ],
       "add a recovery method": [
-        "дадайце спосаб аднаўлення"
+        "дададзены спосаб аднаўлення"
       ],
       "Add a recovery phone number": [
         "Дадаць нумар тэлефона для аднаўлення"
@@ -7219,6 +7219,9 @@
       ],
       "Allow recovery by phone": [
         "Дазволіць аднаўленне доступу па нумары тэлефона"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Ужо вылучана"
@@ -7574,8 +7577,8 @@
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
       ],
-      "Default mail application": [
-        "Прадвызначаная паштовая праграма"
+      "Default email application": [
+        "Прадвызначаная праграма электроннай пошты"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Выдаліце ​​ўсе іншыя запісы MX або пераканайцеся, што ${ MAIL_APP_NAME } мае самае нізкае значэнне ў полі прыярытэту."
@@ -7913,8 +7916,23 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
       ],
+      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
+        "Новым удзельнікам спатрэбіцца, каб адміністратар уручную стварыў для іх першае сховішча (праз абагульванне) і толькі пасля гэтага яны змогуць пачаць ствараць элементы"
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "Толькі адміністратары будуць здольныя экспартаваць даныя, калі гэты параметр будзе адключаны."
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "Удзельнікі арганізацыі змогуць абагульваць сховішчы або элементы толькі ў межах арганізацыі, калі гэты параметр будзе адключаны."
+      ],
+      "If enabled, organization members will be able to share individual items in addition to vaults.": [
+        "Удзельнікі арганізацыя акрамя сховішчаў будуць здольныя абагульваць індывідуальныя элементы, калі гэты параметр будзе ўключаны"
+      ],
       "If it’s not right for you, we’ll refund you.": [
         "Калі ён вам не падыходзіць, то мы вернем ваш плацеж."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Вы можаце выкарыстоўваць наступныя клавішы для хуткіх дзеянняў або пераходу ў іншыя прагляды, калі спалучэнні клавіш уключаны. Спалучэнне ${ metaKey } + K уключана заўсёды."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Калі часавы пояс сістэмы не супадае з параметрамі бягучага часавага пояса, вам будзе прапанавана абнавіць яго (не часцей за адзін раз у дзень)."
@@ -8394,7 +8412,7 @@
         "з"
       ],
       "Off": [
-        "Выкл"
+        "Выключана"
       ],
       "On": [
         "Уключана"
@@ -8434,6 +8452,9 @@
       ],
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
+      ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Удзельнікам арганізацыі неабходна разблакіраваць ${ PASS_APP_NAME } з дапамогай свайго пароля або PIN-кода і г.д."
       ],
       "Organization size": [
         "Памер арганізацыі"
@@ -8789,8 +8810,8 @@
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Задаць ${ MAIL_APP_NAME } у якасці стандартнай паштовай праграмы. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку пошты."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Задаць ${ MAIL_APP_NAME } у якасці прадвызначанай паштовай праграмы. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку электроннай пошты."
       ],
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
@@ -8818,6 +8839,12 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Абагульванне ${ vaultLink } абноўлена"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Абагуленых сервераў краін: ${ countriesCount }",
+        "Абагуленых сервераў краін: ${ countriesCount }",
+        "Абагуленых сервераў краін: ${ countriesCount }",
+        "Абагуленых сервераў краін: ${ countriesCount }"
       ],
       "Shared vault deleted": [
         "Абагуленае сховішча выдалена"
@@ -8930,7 +8957,7 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Сінхранізуйце і кіруйце файламі з дапамогай праграмы ${ DRIVE_APP_NAME }. Стварайце і абагульвайце дакументы ў ${ DOCS_APP_NAME }, а потым бяспечна захоўвайце іх. Праграмы даступны для ${ ios }, ${ android } і ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "Рэкамендацыя TechRadar Pro з рэйтынгам 4,2 з 5 зорак"
       ],
       "Temporarily unavailable. Please check back later.": [
@@ -9507,7 +9534,7 @@
         "Калі адключана, то гэта не дазволіць загружаць відарысы на вашу прыладу без вашай згоды.\t"
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Калі ўключана, то будзе адбывацца праверка, ці з'яўляецца ${ MAIL_APP_NAME } вашай прадвызначанай паштовай праграмай і калі гэта не так, то вы атрымаеце апавяшчэнне аб гэтым."
+        "Пры ўключанай функцыі будзе адбывацца праверка, ці з'яўляецца ${ MAIL_APP_NAME } вашай прадвызначанай паштовай праграмай і калі гэта не так, то вы атрымаеце апавяшчэнне аб гэтым."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
@@ -10120,6 +10147,12 @@
       "Close draft": [
         "Закрыць чарнавік"
       ],
+      "Create new event": [
+        "Стварыць новую падзею"
+      ],
+      "Day view": [
+        "Выгляд \"Дзень\""
+      ],
       "Delete permanently": [
         "Выдаліць незваротна"
       ],
@@ -10186,6 +10219,9 @@
       "Minimize / maximize composer": [
         "Згарнуць / разгарнуць рэдактар"
       ],
+      "Month view": [
+        "Выгляд \"Месяц\""
+      ],
       "Move down": [
         "Перамясціць уніз"
       ],
@@ -10216,6 +10252,9 @@
       "New message": [
         "Новае паведамленне"
       ],
+      "Next period": [
+        "Наступны перыяд"
+      ],
       "Open command panel": [
         "Адкрыць камандную панэль"
       ],
@@ -10225,8 +10264,14 @@
       "Open previous message": [
         "Адкрыць папярэдняе паведамленне"
       ],
+      "Open quick actions menu": [
+        "Адкрыць меню хуткіх дзеянняў"
+      ],
       "Open this modal": [
         "Адкрыць гэта акно"
+      ],
+      "Previous period": [
+        "Папярэдні перыяд"
       ],
       "Reply": [
         "Адказаць"
@@ -10239,6 +10284,9 @@
       ],
       "Search": [
         "Пошук"
+      ],
+      "Search events": [
+        "Пошук падзей"
       ],
       "Select / unselect": [
         "Выбраць / скасаваць выбар"
@@ -10260,6 +10308,12 @@
       ],
       "Star": [
         "Зорачка"
+      ],
+      "Today": [
+        "Сёння"
+      ],
+      "Week view": [
+        "Выгляд \"Тыдзень\""
       ]
     },
     "Keyboard shortcut section name": {
@@ -10283,6 +10337,9 @@
       ],
       "Message shortcuts": [
         "Спалучэнні клавіш для паведамлення"
+      ],
+      "View options": [
+        "Параметры прагляду"
       ]
     },
     "Keys actions": {
@@ -10437,6 +10494,15 @@
       "Allow": [
         "Дазволіць"
       ],
+      "Allow all users to create vaults": [
+        "Дазволіць усім карыстальніка ствараць сховішчы"
+      ],
+      "Allow data export for all users": [
+        "Дазволіць экспартаванне даных для ўсіх карыстальнікаў"
+      ],
+      "Allow individual item sharing": [
+        "Дазволіць індывідуальнае абагульванне элемента"
+      ],
       "Allow memorable passwords": [
         "Дазваляць запамінальныя паролі"
       ],
@@ -10457,6 +10523,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Дазволіць аднаўленне з дапамогай даверанай прылады"
+      ],
+      "Allow sharing outside the organization": [
+        "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
       "Allowed domain": [
         "Дазволены дамен"
@@ -13013,6 +13082,17 @@
         "Кіраванне камандамі"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -13121,17 +13201,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ trialPlanName } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13563,6 +13632,9 @@
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Адключэнне гэтага параметра правядзе да выдалення магчымасці атрымліваць апавяшчэнні ў праграмах ${ BRAND_NAME }"
+      ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "На працягу першага месяца выкарыстання прадукту ${ BRAND_NAME }"
       ],
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
@@ -14191,6 +14263,9 @@
       ],
       "Organization identity updated": [
         "Ідэнтычнасць арганізацыі абноўлена"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Праверце свой адрас электроннай пошты ${ email }, каб задаць ідэнтычнасць арганізацыі."
       ]
     },
     "OS compatibility": {
@@ -17086,6 +17161,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -17386,47 +17502,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -17937,6 +18012,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ appName } keyboard shortcuts": [
+        "Спалучэнні клавіш ${ appName }"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17948,9 +18026,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Спалучэнні клавіш ${ MAIL_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Report"
@@ -19852,6 +19927,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Гэта дзеянне адклікае правы адміністратара для кіравання гэтым уліковым запісам карыстальніка."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Ім трэба будзе задаць рэзервовы пароль пры наступным уваходзе ў ${ BRAND_NAME }, каб атрымаць правы адміністратара."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Для працягу, вам неабходна запытаць правы ў карыстальніка на доступ да яго даных або скінуць яго пароль."

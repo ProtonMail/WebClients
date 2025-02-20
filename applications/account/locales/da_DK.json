@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -4255,6 +4255,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Identitet og adresser > Kort domæne (pm.me)"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -4912,6 +4915,9 @@
       ],
       "Time zone": [
         "Tidszone"
+      ],
+      "Time zone component ignored": [
+        "Tidszonekomponent ignoreret"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -6502,6 +6508,9 @@
         "${ numberOfNonPrivateKeys } uploadet fil er ikke en gyldig privat nøgle. Kontroller den og prøv igen.",
         "${ numberOfNonPrivateKeys } uploadede filer er ikke gyldige private nøgler. Kontroller dem og prøv igen."
       ],
+      "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
+        "Med ${ PASS_APP_NAME } kan du gemme adgangskoder, noter og andre følsomme oplysninger med end-to-end-kryptering. Tilgængelig på ${ ios }, ${ android } og i din ${ browser }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
@@ -6663,11 +6672,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivér mindst én datagendannelsesmetode for at sikre dig, at du fortsat kan få adgang til indholdet af din ${ BRAND_NAME }-konto, hvis du mister din adgangskode."
       ],
-      "active": [
-        "aktiv"
-      ],
       "Active": [
         "Aktiv"
+      ],
+      "active": [
+        "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me e-mailadresse til din konto. Dette simple, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7078,8 +7087,8 @@
       "default email address": [
         "standard e-mailadresse"
       ],
-      "Default mail application": [
-        "Standard mail-applikation"
+      "Default email application": [
+        "Standardprogram til mails"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
@@ -7151,6 +7160,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
+      ],
+      "Download on the App Store": [
+        "Download i App Store"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Download vores CSV-skabelon, udfyld brugeroplysningerne, og upload derefter din færdige CSV-fil for at oprette konti til disse brugere."
@@ -7314,6 +7326,9 @@
       "For a 10-year version history, please contact our sales team.": [
         "Kontakt vores salgsteam for at få en 10-årig versionshistorik."
       ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ androidAppLink } eller ${ iosAppLink }."
+      ],
       "for choosing ${ product }": [
         "for at vælge ${ product }"
       ],
@@ -7346,6 +7361,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få adgang ved at oprette en ${ BRAND_NAME } konto og acceptere invitationen."
+      ],
+      "Get it on Google Play": [
+        "Hent den på Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
@@ -7531,6 +7549,9 @@
       "Invite deleted": [
         "Invitation slettet"
       ],
+      "Invite family members and get everything up and running.": [
+        "Inviter familiemedlemmer, og få det hele op at køre."
+      ],
       "Invite for new user deleted": [
         "Invitation til ny bruger slettet"
       ],
@@ -7546,6 +7567,9 @@
       "Invite successfully sent": [
         "Invitation sendt",
         "Invitationer sendt"
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Inviter din partner, en ven, eller hvem du nu deler dit ${ protonDuoPlanName }-abonnement med."
       ],
       "It appears some of your data is encrypted and locked.": [
         "Det ser ud til, at nogle af dine data er krypteret og låst."
@@ -8034,6 +8058,9 @@
       "purchase additional storage": [
         "tilkøbe mere lagerplads"
       ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
+      ],
       "read our two-factor authentication guide first": [
         "læser vores to-faktor-godkendelsesguide først"
       ],
@@ -8151,6 +8178,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Send e-mails for at opfordre dine medlemmer til at beskytte deres konti med 2FA."
       ],
+      "Send messages at just the right now": [
+        "Send beskeder på det helt rigtige tidspunkt"
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
       ],
@@ -8166,8 +8196,8 @@
       "Session timed out": [
         "Session er udløbet"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Indstil ${ MAIL_APP_NAME } som din standard e-mail-applikation. ${ MAIL_APP_NAME } åbnes automatisk, når du klikker på et e-mail-link."
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Indstil ${ MAIL_APP_NAME } som din standard e-mail-applikation. ${ MAIL_APP_NAME } vil åbne automatisk, når du klikker på et e-mail-link."
       ],
       "Set recovery phrase": [
         "Indstil gendannelsessætning"
@@ -8219,6 +8249,9 @@
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at bruge denne funktion, skal du starte med at generere et nyt token."
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Udsæt beskeder til senere, så de ligger øverst i din indbakke, når du ønsker"
       ],
       "Some keys successfully reactivated": [
         "Nogle nøgler er genaktiveret med succes"
@@ -8286,6 +8319,9 @@
       ],
       "Switch to": [
         "Skift til"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opret og del dokumenter i ${ DOCS_APP_NAME } og opbevar dem sikkert. Alt sammen på ${ ios }, ${ android } og ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
@@ -8917,6 +8953,9 @@
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruger mere lagerplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
+      ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Du kan tilføje dit eget brugerdefinerede domæne til ${ MAIL_APP_NAME }"
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan også flette importerede kalendere med eksisterende ${ BRAND_NAME }-kalendere."
@@ -9777,6 +9816,9 @@
       ],
       "Auto-unsubscribe": [
         "Auto-afmelding"
+      ],
+      "Automatically save contacts": [
+        "Gem automatisk kontakter"
       ],
       "Awarded": [
         "Belønnet"
@@ -12055,6 +12097,17 @@
         "Brugeradministration"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ trialPlanName } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -12160,17 +12213,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ trialPlanName } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -14512,6 +14554,11 @@
         "skal oprettes"
       ]
     },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Giver dig mulighed for at tilføje en Zoom-videokonference til enhver af dine kalenderbegivenheder"
+      ]
+    },
     "session_recovery:available:action": {
       "Cancel password reset": [
         "Annuller nulstilling af adgangskode"
@@ -15628,6 +15675,47 @@
         "Til ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -15901,47 +15989,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -16419,9 +16466,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } Tastaturgenveje"
       ],
       "(active)": [
         "(aktiv)"

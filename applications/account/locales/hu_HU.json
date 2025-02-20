@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -3409,6 +3409,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
+      "Everyone in your organization can connect to shared servers.": [
+        "A szervezetben mindenki csatlakozhat a megosztott szerverhez."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Kapjon értesítést ha az ön jelszava vagy más információja benne volt egy harmadik féltől származó adatszivárgásban."
       ],
@@ -3420,6 +3423,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "A szervezeten belül senki sem csatlakozhat a megosztott szerverhez."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
@@ -5623,6 +5629,9 @@
       "Best deal": [
         "Legjobb üzlet"
       ],
+      "Checkout": [
+        "Pénztár"
+      ],
       "Device": [
         "Eszköz"
       ],
@@ -6408,6 +6417,9 @@
       "Allow recovery by phone": [
         "Helyreállítás engedélyezése telefonszámmal"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Lehetővé teszi a felhasználók számára, hogy a ${ VPN_APP_NAME } alkalmazás **országok** bármely részéből biztonságos megosztott szerverekhez csatlakozzanak."
+      ],
       "Already allocated": [
         "Már lefoglalva"
       ],
@@ -6685,6 +6697,9 @@
       ],
       "Dedicated servers": [
         "Dedikált szerverek"
+      ],
+      "Default email application": [
+        "Alapértelmezett e-mail alkalmazás"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
@@ -7355,6 +7370,12 @@
       "of": [
         "/"
       ],
+      "Off": [
+        "Ki"
+      ],
+      "On": [
+        "Be"
+      ],
       "Once you reset your password:": [
         "Ha visszaállítja a jelszavát:"
       ],
@@ -7699,6 +7720,10 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Megosztott ${ vaultLink } frissítve"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Megosztott szerver országa (${ countriesCount })",
+        "Megosztott szerver országok (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Megosztott tároló törölve"
@@ -11300,6 +11325,17 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -11405,17 +11441,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -14519,6 +14544,29 @@
         "${ totalPrice } áron"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -14693,29 +14741,6 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -15173,9 +15198,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } gyorsbillentyűk"
       ],
       "(active)": [
         "(aktív)"
@@ -16099,6 +16121,9 @@
       ],
       "Settings": [
         "Beállítások"
+      ],
+      "Shared servers": [
+        "Megosztott szerverek"
       ],
       "Short domain (@pm.me)": [
         "Rövid domain (@pm.me)"

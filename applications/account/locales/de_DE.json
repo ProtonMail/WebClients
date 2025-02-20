@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -4421,6 +4421,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -6973,11 +6976,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiviere mindestens eine Datenwiederherstellungsmethode, um sicherzustellen, dass du weiterhin auf den Inhalt deines ${ BRAND_NAME }-Kontos zugreifen kannst, wenn du dein Passwort verlierst."
       ],
-      "active": [
-        "aktiv"
-      ],
       "Active": [
         "Aktiv"
+      ],
+      "active": [
+        "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Füge deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -7078,6 +7081,9 @@
       ],
       "Allow recovery by phone": [
         "Wiederherstellung per Telefon zulassen"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Erlaube Benutzern, sich mit sicheren gemeinsamen Servern aus dem Abschnitt **Länder** der ${ VPN_APP_NAME }-App zu verbinden."
       ],
       "Already allocated": [
         "Bereits zugewiesen"
@@ -7427,8 +7433,8 @@
       "default email address": [
         "standard E-Mail-Adresse"
       ],
-      "Default mail application": [
-        "Standard-E-Mail-Anwendung"
+      "Default email application": [
+        "Standard E-Mail-Anwendung"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
@@ -7776,6 +7782,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Wenn es nicht das Richtige für dich ist, erstatten wir dir das Geld zurück."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Wenn Tastaturkürzel aktiviert sind, kannst du die folgenden Tasten für Schnellaktionen oder zum Springen zu verschiedenen Ansichten verwenden. ${ metaKey } + K ist immer aktiviert."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Wenn die Zeitzone des Systems nicht mit der aktuellen Zeitzoneneinstellung übereinstimmt, wirst du aufgefordert, diese zu aktualisieren (höchstens einmal täglich)."
@@ -8637,7 +8646,7 @@
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Lege ${ MAIL_APP_NAME } als deine Standard-E-Mail-Anwendung fest. ${ MAIL_APP_NAME } wird automatisch geöffnet, wenn du auf einen E-Mail-Link klickst."
       ],
       "Set recovery phrase": [
@@ -8666,6 +8675,10 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Geteilten ${ vaultLink } aktualisiert."
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Geteilter Serverstandort (${ countriesCount })",
+        "Geteilte Serverstandorte (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Geteilter Tresor gelöscht"
@@ -8698,7 +8711,7 @@
         "Die SMTP-Übermittlung ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um diese Funktion zu nutzen, erzeuge zunächst ein neues Token."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
-        "Pause Nachrichten und lies sie später, damit sie jederzeit oben in deinem Posteingang angezeigt werden."
+        "Pausiere Nachrichten und lies sie später, damit sie jederzeit oben in deinem Posteingang angezeigt werden."
       ],
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
@@ -8776,8 +8789,8 @@
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronisiere und verwalte Dateien mit der ${ DRIVE_APP_NAME } App. Erstelle und teile Dokumente in ${ DOCS_APP_NAME }, und speichere sie sicher. Alles auf ${ ios }, ${ android } und ${ desktop }."
       ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Tech Radar Pro empfohlen mit einer Bewertung von 4,2 von 5 Sternen"
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "Empfohlen von TechRadar Pro mit einer Bewertung von 4,2 von 5 Sternen"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
@@ -9335,7 +9348,7 @@
         "Willkommen"
       ],
       "We’ll send a reset code to ${ boldValue }.": [
-        "Wir werden einen Rücksetzcode an ${ boldValue } senden."
+        "Wir senden einen Reset-Code an ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Du erhältst dann einen Rücksetzungscode an die E-Mail-Adresse, die du für die Wiederherstellung deines Kontos angegeben hast."
@@ -9941,6 +9954,12 @@
       "Close draft": [
         "Entwurf schließen"
       ],
+      "Create new event": [
+        "Neuer Termin erstellen"
+      ],
+      "Day view": [
+        "Tagesansicht"
+      ],
       "Delete permanently": [
         "Dauerhaft löschen"
       ],
@@ -10007,6 +10026,9 @@
       "Minimize / maximize composer": [
         "Verfassen-Fenster minimieren/maximieren"
       ],
+      "Month view": [
+        "Monatsansicht"
+      ],
       "Move down": [
         "Abwärts"
       ],
@@ -10037,6 +10059,9 @@
       "New message": [
         "Neue Nachricht"
       ],
+      "Next period": [
+        "Nächster Zeitraum"
+      ],
       "Open command panel": [
         "Befehlspanel öffnen"
       ],
@@ -10046,8 +10071,14 @@
       "Open previous message": [
         "Vorherige Nachricht öffnen"
       ],
+      "Open quick actions menu": [
+        "Menü für Schnellaktionen öffnen"
+      ],
       "Open this modal": [
         "Diesen Dialog öffnen"
+      ],
+      "Previous period": [
+        "Vorheriger Zeitraum"
       ],
       "Reply": [
         "Antworten"
@@ -10060,6 +10091,9 @@
       ],
       "Search": [
         "Suchen"
+      ],
+      "Search events": [
+        "Termine suchen"
       ],
       "Select / unselect": [
         "Aus-/abwählen"
@@ -10081,6 +10115,12 @@
       ],
       "Star": [
         "Markieren"
+      ],
+      "Today": [
+        "Heute"
+      ],
+      "Week view": [
+        "Wochenansicht"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10104,6 +10144,9 @@
       ],
       "Message shortcuts": [
         "Nachrichten-Tastaturkürzel"
+      ],
+      "View options": [
+        "Optionen anzeigen"
       ]
     },
     "Keys actions": {
@@ -12764,6 +12807,17 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -12872,17 +12926,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13312,7 +13355,7 @@
         "Wenn du diese Option deaktivierst, kannst du keine Benachrichtigungen mehr in ${ BRAND_NAME }-Anwendungen empfangen"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
-        "Während des ersten Monats der Nutzung eines ${ BRAND_NAME } Produkts"
+        "Während des ersten Monats, in dem das Produkt ${ BRAND_NAME } verwendet wird"
       ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
@@ -16729,6 +16772,47 @@
         "Für ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -17017,47 +17101,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -17556,6 +17599,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ appName } keyboard shortcuts": [
+        "${ appName }-Tastaturkürzel"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17567,9 +17613,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
-      ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME }-Tastaturkürzel"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-Bericht"

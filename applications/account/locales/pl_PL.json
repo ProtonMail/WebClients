@@ -70,11 +70,11 @@
       "Accept": [
         "Akceptuj"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -6225,7 +6225,7 @@
         "Włączone kraje"
       ],
       "Enter your email address": [
-        "Podaj swój adres e-mail"
+        "Wpisz adres e-mail"
       ],
       "Event": [
         "Zdarzenie"
@@ -7076,11 +7076,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktywuj co najmniej jedną metodę odzyskiwania danych, aby uniknąć utraty dostępu do konta ${ BRAND_NAME }."
       ],
-      "active": [
-        "aktywna"
-      ],
       "Active": [
         "Aktywne"
+      ],
+      "active": [
+        "aktywna"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"${ MAIL_APP_NAME } me\" lub \"Private Message me.\""
@@ -7407,7 +7407,7 @@
         "Zamknij te okno, aby wyjść."
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
-        "Nagroda redaktorów CNET z oceną 8,4 na 10."
+        "Nagroda redaktorów CNET z oceną 8,4 na 10"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji przy pomocy dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
@@ -7550,7 +7550,7 @@
       "default email address": [
         "domyślny adres e-mail"
       ],
-      "Default mail application": [
+      "Default email application": [
         "Domyślna aplikacja pocztowa"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -8313,7 +8313,7 @@
         "Brak adresów e-mail"
       ],
       "No common passwords": [
-        "Bez powszechnie używanych haseł"
+        "Brak popularnych haseł"
       ],
       "No credit card required": [
         "Karta płatnicza nie jest wymagana"
@@ -8343,7 +8343,7 @@
         "Płatność nie jest wymagana."
       ],
       "No predictable sequences (1234, aaa)": [
-        "Bez przewidywalnych sekwencji (1234, aaa)"
+        "Brak przewidywalnych sekwencji (1234, aaa)"
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
@@ -8765,9 +8765,6 @@
       "Session timed out": [
         "Upłynął limit czasu sesji"
       ],
-      "Set ${ MAIL_APP_NAME } as your default mail application. ${ MAIL_APP_NAME } will open automatically when you click an mail link.": [
-        "Ustaw ${ MAIL_APP_NAME } jako swoją domyślną aplikację pocztową. ${ MAIL_APP_NAME } otworzy się automatycznie po kliknięciu linku do wiadomości e-mail."
-      ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
       ],
@@ -8794,6 +8791,12 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Zaktualizowanie udostępniania sejfu ${ vaultLink }"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Kraj serwera współdzielonego (${ countriesCount })",
+        "Kraje serwerów współdzielonych (${ countriesCount })",
+        "Kraje serwerów współdzielonych (${ countriesCount })",
+        "Kraje serwerów współdzielonych (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Usunięcie udostępnionego sejfu"
@@ -8902,9 +8905,6 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i bezpiecznie je przechowuj. Wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
-      ],
-      "Tech radar pro recommended with a rating of 4.2 out of 5 stars": [
-        "Tech radar pro rekomenduje z oceną 4,2 na 5 gwiazdek"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -10090,6 +10090,12 @@
       "Close draft": [
         "Zamknij szkic"
       ],
+      "Create new event": [
+        "Utwórz nowe wydarzenie"
+      ],
+      "Day view": [
+        "Widok dnia"
+      ],
       "Delete permanently": [
         "Usuń trwale"
       ],
@@ -10156,6 +10162,9 @@
       "Minimize / maximize composer": [
         "Minimalizuj / maksymalizuj edytor"
       ],
+      "Month view": [
+        "Widok miesiąca"
+      ],
       "Move down": [
         "W dół"
       ],
@@ -10186,6 +10195,9 @@
       "New message": [
         "Nowa wiadomość"
       ],
+      "Next period": [
+        "Następny okres"
+      ],
       "Open command panel": [
         "Otwórz panel poleceń"
       ],
@@ -10195,8 +10207,14 @@
       "Open previous message": [
         "Otwórz poprzednią wiadomość"
       ],
+      "Open quick actions menu": [
+        "Otwórz szybkie akcje"
+      ],
       "Open this modal": [
         "Otwórz okno"
+      ],
+      "Previous period": [
+        "Poprzedni okres"
       ],
       "Reply": [
         "Odpowiedz"
@@ -10209,6 +10227,9 @@
       ],
       "Search": [
         "Szukaj"
+      ],
+      "Search events": [
+        "Szukaj wydarzeń"
       ],
       "Select / unselect": [
         "Zaznacz / odznacz"
@@ -10230,6 +10251,12 @@
       ],
       "Star": [
         "Oznacz gwiazdką"
+      ],
+      "Today": [
+        "Dzisiaj"
+      ],
+      "Week view": [
+        "Widok tygodnia"
       ]
     },
     "Keyboard shortcut section name": {
@@ -11026,7 +11053,7 @@
         "Nowe hasło"
       ],
       "New policy name": [
-        "Nowa nazwa reguły"
+        "Nowa nazwa zasady"
       ],
       "New second password": [
         "Nowe drugie hasło"
@@ -11704,7 +11731,7 @@
         "Polityka prywatności"
       ],
       "privacy policy": [
-        "polityka prywatności"
+        "politykę prywatności"
       ],
       "Reactivate now": [
         "Reaktywuj"
@@ -12827,7 +12854,7 @@
         "Split Tunneling (Android i Windows)"
       ],
       "SSO integration": [
-        "Integracja z SSO"
+        "Logowanie SSO"
       ],
       "Start protecting your organization": [
         "Chroń swoją organizację"
@@ -12977,6 +13004,17 @@
         "Zarządzanie zespołem"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -13085,17 +13123,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13567,7 +13594,7 @@
         "Powiadomienia zostały włączone"
       ],
       "Error creating policy": [
-        "Błąd podczas tworzenia polityki"
+        "Wystąpił błąd podczas tworzenia zasady"
       ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
@@ -13594,7 +13621,7 @@
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
       ],
       "Policy created successfully": [
-        "Polityka została utworzona pomyślnie"
+        "Zasada została utworzona"
       ],
       "Reminder has been sent": [
         "Przypomnienie zostało wysłane"
@@ -14318,7 +14345,7 @@
         "Odblokuj plan **${ unlockPlanTitle }** i wszystkie usługi ${ BRAND_NAME } premium, przechodząc do planu **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
-        "Kontynuując, wyrażasz zgodę na nasze ${ termsAndConditionsLink } i ${ privacyPolicyLink }."
+        "Kontynuując, akceptujesz ${ termsAndConditionsLink } i ${ privacyPolicyLink }."
       ],
       "Creating your account": [
         "Tworzenie konta"
@@ -17024,6 +17051,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -17324,47 +17392,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -17884,9 +17911,6 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
-      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "Skróty klawiszowe ${ MAIL_APP_NAME }"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Raport monitorowania"
       ],
@@ -17924,7 +17948,7 @@
         "Dostępność"
       ],
       "Accessible items": [
-        "Dostępne przedmioty"
+        "Dostępne elementy"
       ],
       "Accessible vaults": [
         "Dostępne sejfy"
@@ -17975,7 +17999,7 @@
         "Dodaj nazwę grupy kontaktów"
       ],
       "Add countries to \"${ policyName }\"": [
-        "Dodaj kraj do ${ policyName }"
+        "Dodaj kraje do zasady \"${ policyName }\""
       ],
       "Add credit/debit card": [
         "Dodaj kartę płatniczą"
@@ -18020,7 +18044,7 @@
         "Dodaj użytkowników"
       ],
       "Add users to \"${ policyName }\"": [
-        "Dodaj użytkownika do ${ policyName }"
+        "Dodaj użytkowników do zasady \"${ policyName }\""
       ],
       "Address": [
         "Adres"
@@ -18122,7 +18146,7 @@
         "Zmień drugie hasło"
       ],
       "Check your default mail application": [
-        "Sprawdź swoją domyślną aplikację pocztową"
+        "Sprawdź domyślną aplikację pocztową"
       ],
       "Choose an account": [
         "Wybierz konto"
@@ -18200,7 +18224,7 @@
         "Utwórz wiele kont użytkowników"
       ],
       "Create new policy": [
-        "Utwórz nową regułę"
+        "Utwórz nową zasadę"
       ],
       "Create organization key": [
         "Utwórz klucz organizacji"
@@ -18413,7 +18437,7 @@
         "E-mail"
       ],
       "Email breaches": [
-        "Naruszenia bezpieczeństwa poczty e-mail"
+        "Wycieki adresów e-mail"
       ],
       "Email composer": [
         "Edytor wiadomości"
@@ -18641,7 +18665,7 @@
         "Adres IP"
       ],
       "Items owned": [
-        "Posiadane przedmioty"
+        "Posiadane elementy"
       ],
       "Keep your inbox organized": [
         "Zachowaj porządek w skrzynce odbiorczej"
@@ -18659,7 +18683,7 @@
         "Ostatnia aktywność"
       ],
       "Last updated": [
-        "Ostatnia aktualizacja"
+        "Zmodyfikowano"
       ],
       "Layout": [
         "Widok"
@@ -20216,7 +20240,7 @@
         "Pakiet ${ a } i ${ b }"
       ],
       "Your ${ selected } plan": [
-        "Twój plan ${ selected }"
+        "Plan ${ selected }"
       ],
       "Your plan includes:": [
         "Twój plan zawiera:"
