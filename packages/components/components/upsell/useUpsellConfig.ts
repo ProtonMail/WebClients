@@ -22,6 +22,8 @@ interface Props {
     step?: SUBSCRIPTION_STEPS;
     coupon?: string;
     cycle?: CYCLE;
+    maximumCycle?: CYCLE;
+    minimumCycle?: CYCLE;
     plan?: PLANS | ADDON_NAMES;
     onSubscribed?: () => void;
     submitText?: ReactNode;
@@ -43,6 +45,8 @@ const useUpsellConfig = ({
     step,
     coupon,
     cycle,
+    maximumCycle,
+    minimumCycle,
     plan,
     submitText,
     footerText,
@@ -63,6 +67,8 @@ const useUpsellConfig = ({
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig({
             coupon,
             cycle,
+            maximumCycle,
+            minimumCycle,
             step,
             upsellRef,
             plan,
