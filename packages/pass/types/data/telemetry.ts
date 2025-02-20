@@ -35,7 +35,6 @@ export enum TelemetryEventName {
     PassNotificationChangeStatus = 'pass_notification.change_notification_status',
     PassNotificationCTAClick = 'pass_notification.notification_cta_click',
     PassNotificationDisplay = 'pass_notifications.display_notification',
-    PassSettingsDisplayUsername = 'pass_settings.display_username',
     SearchClick = 'search.click',
     SearchTriggered = 'search.triggered',
     TwoFAAutofill = '2fa.autofill',
@@ -52,7 +51,14 @@ export enum TelemetryItemType {
     identity = 'identity',
 }
 
-export type BaseTelemetryEvent<T extends TelemetryEventName, V = {}, D = {}> = {
+/** Telemetry payloads support only ints and strings */
+type TelemetryPayload = Record<string, number | string>;
+
+export type BaseTelemetryEvent<
+    T extends TelemetryEventName,
+    V extends TelemetryPayload = {},
+    D extends TelemetryPayload = {},
+> = {
     MeasurementGroup: `pass.${TelemetryPlatform}.user_actions`;
     Event: T;
     Values: V;
@@ -65,8 +71,7 @@ type ItemDimensions = { type: TelemetryItemType };
 type NotificationDimensions = { notificationKey: InAppNotification['NotificationKey'] };
 type NotificationChangeDimensions = NotificationDimensions & { notificationStatus: TelemetryInAppNotificationStatus };
 type AutofillDimensions = { location: 'source' | 'app' };
-type SettingValues = { checked: boolean };
-type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: boolean };
+type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: number };
 
 type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutofillDisplay, {}, AutofillDimensions>
@@ -99,7 +104,6 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.PassNotificationChangeStatus, {}, NotificationChangeDimensions>
     | BaseTelemetryEvent<TelemetryEventName.PassNotificationCTAClick, {}, NotificationDimensions>
     | BaseTelemetryEvent<TelemetryEventName.PassNotificationDisplay, {}, NotificationDimensions>
-    | BaseTelemetryEvent<TelemetryEventName.PassSettingsDisplayUsername, SettingValues>
     | BaseTelemetryEvent<TelemetryEventName.SearchClick>
     | BaseTelemetryEvent<TelemetryEventName.SearchTriggered>
     | BaseTelemetryEvent<TelemetryEventName.TwoFAAutofill>
