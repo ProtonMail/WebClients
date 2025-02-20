@@ -281,7 +281,7 @@ const BreachAlertsSecurityCenter = () => {
                     modalProps={dwmUpsellModal.modalProps}
                     upsellComponent={UPSELL_COMPONENT.TOGGLE}
                     upsellApp={APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}
-                    onUpgrade={() => enableBreachAlerts()}
+                    onSubscribed={enableBreachAlerts}
                 />
             )}
         </>

@@ -424,7 +424,7 @@ const CredentialLeakSection = () => {
                     modalProps={dwmUpsellModal.modalProps}
                     upsellApp={APP_UPSELL_REF_PATH.ACCOUNT_UPSELL_REF_PATH}
                     upsellComponent={UPSELL_COMPONENT.TOGGLE}
-                    onUpgrade={() => handleEnableBreachAlertToggle(true)}
+                    onSubscribed={() => handleEnableBreachAlertToggle(true)}
                 />
             )}
         </>
