@@ -13,7 +13,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useDrivePostSignupOneDollarTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollarTelemetry';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
 import { COUPON_CODES, fixPlanIDs, fixPlanName } from '@proton/payments';
-import { TelemetryMailDrivePostSignupOneDollar } from '@proton/shared/lib/api/telemetry';
+import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { getHas2024OfferCoupon, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
@@ -115,7 +115,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
         const sendTelemetry = () => {
             if (rest?.coupon === COUPON_CODES.TRYDRIVEPLUS2024) {
                 sendReportDrivePostSignup({
-                    event: TelemetryMailDrivePostSignupOneDollar.userSubscribed,
+                    event: TelemetryMailDrivePostSignupOneDollarEvents.userSubscribed,
                     dimensions: {},
                 });
             }

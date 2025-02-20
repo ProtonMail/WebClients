@@ -3,7 +3,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import {
-    type TelemetryMailDrivePostSignupOneDollar,
+    type TelemetryMailDrivePostSignupOneDollarEvents,
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
@@ -39,22 +39,22 @@ export const useDrivePostSignupOneDollarTelemetry = () => {
 
 type TelemetryOptions =
     | {
-          event: TelemetryMailDrivePostSignupOneDollar.automaticModalOpen;
+          event: TelemetryMailDrivePostSignupOneDollarEvents.automaticModalOpen;
           dimensions: { daysSinceOffer: number };
       }
     | {
-          event: TelemetryMailDrivePostSignupOneDollar.clickUpsellButton;
+          event: TelemetryMailDrivePostSignupOneDollarEvents.clickUpsellButton;
           dimensions: { daysSinceOffer: number };
       }
     | {
-          event: TelemetryMailDrivePostSignupOneDollar.clickTopNavbar;
+          event: TelemetryMailDrivePostSignupOneDollarEvents.clickTopNavbar;
           dimensions: { daysSinceOffer: number };
       }
     | {
-          event: TelemetryMailDrivePostSignupOneDollar.closeOffer;
+          event: TelemetryMailDrivePostSignupOneDollarEvents.closeOffer;
           dimensions: { daysSinceOffer: number };
       }
     | {
-          event: TelemetryMailDrivePostSignupOneDollar.userSubscribed;
+          event: TelemetryMailDrivePostSignupOneDollarEvents.userSubscribed;
           dimensions: {};
       };

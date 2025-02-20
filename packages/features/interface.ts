@@ -66,6 +66,9 @@ export enum FeatureCode {
     DrivePostSignupOneDollarState = 'DrivePostSignupOneDollarState',
     DrivePostSignupOneDollarAccountAge = 'DrivePostSignupOneDollarAccountAge',
 
+    // Flags needed by the monthly subscribers nudge
+    MailPaidUserNudgeTimestamp = 'MailPaidUserNudgeTimestamp',
+
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
     OfferMailTrial2023 = 'OfferMailTrial2023',
