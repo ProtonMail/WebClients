@@ -2423,6 +2423,11 @@
         "未払いの請求"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2504,11 +2509,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3754,7 +3754,7 @@
         "このファイルには予定の招待が含まれています:"
       ],
       "This file contains an invitation response:": [
-        "このファイルには招待の回答が含まれています："
+        "このファイルには招待への回答が含まれています："
       ],
       "This file contains some data that we cannot import:": [
         "このファイルにはインポートできないデータが含まれています:"
@@ -6464,7 +6464,7 @@
         "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } のすべてのメッセージをインポートし、ラベル付けします"
+        "${ itemsToImportCount } つのフォルダのうち ${ selectedItemsToImportCount } つからすべてのメッセージをインポートし、ラベルを付けします"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
@@ -10454,6 +10454,11 @@
         "今日"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "この共有ファイルを${ DRIVE_APP_NAME }に追加して、後で簡単にアクセスできるようにしましょう。"
@@ -10535,11 +10540,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {

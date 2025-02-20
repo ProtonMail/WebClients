@@ -2436,6 +2436,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2517,11 +2522,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2716,7 +2716,7 @@
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a ajustes > identidad y dirección > dominio corto (pm.me)"
+        "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -3492,7 +3492,7 @@
         "Recibió una invitación para unirse a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
-        "Se ha unido al grupo familiar con éxito"
+        "Se ha unido al grupo familiar."
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Tiene facturas sin pagar. Por favor, páguelas antes de unirse a un plan familiar."
@@ -4930,7 +4930,7 @@
         "La foto se ha establecido como portada de álbum"
       ],
       "Photos have been successfully recovered.": [
-        "Se han recuperado las fotos con éxito."
+        "Se recuperaron las fotos."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Pregunte al propietario que le invite directamente al documento."
@@ -8081,7 +8081,7 @@
         "El elemento no se añadió a su drive"
       ],
       "The item was successfully added to your drive": [
-        "El elemento se añadió a su drive con éxito"
+        "Se añadió el elemento a su drive."
       ],
       "The link to your item failed to be deleted": [
         "Error al eliminar el enlace al elemento"
@@ -10709,6 +10709,11 @@
         "Hoy"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Añada este archivo compartido a su ${ DRIVE_APP_NAME } para un acceso fácil después."
@@ -10790,11 +10795,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Valentine_2025": {
