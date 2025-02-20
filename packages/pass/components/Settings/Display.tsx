@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import {
@@ -12,13 +11,11 @@ import {
     selectRequestInFlight,
     selectShowUsernameField,
 } from '@proton/pass/store/selectors';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
 
 export const Display: FC = () => {
-    const { onTelemetry } = usePassCore();
     const dispatch = useDispatch();
     const canLoadDomainImages = useSelector(selectCanLoadDomainImages);
     const showUsernameField = useSelector(selectShowUsernameField);
@@ -45,10 +42,13 @@ export const Display: FC = () => {
                 checked={showUsernameField}
                 disabled={loading}
                 loading={loading}
-                onChange={() => {
-                    dispatch(settingsEditIntent('behaviors', { showUsernameField: !showUsernameField }));
-                    onTelemetry(TelemetryEventName.PassSettingsDisplayUsername, { checked: !showUsernameField }, {});
-                }}
+                onChange={() =>
+                    dispatch(
+                        settingsEditIntent('behaviors', {
+                            showUsernameField: !showUsernameField,
+                        })
+                    )
+                }
             >
                 <span>
                     {c('Label').t`Always show username field`}

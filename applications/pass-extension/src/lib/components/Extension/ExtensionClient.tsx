@@ -60,7 +60,7 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
                     {},
                     {
                         extensionBrowser: BUILD_TARGET,
-                        extensionReloadRequired: Boolean(state.criticalRuntimeError),
+                        extensionReloadRequired: state.criticalRuntimeError ? 1 : 0,
                     }
                 );
             }
