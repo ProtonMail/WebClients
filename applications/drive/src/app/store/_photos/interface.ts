@@ -26,11 +26,12 @@ export enum PhotoTag {
     Raw = 9,
 }
 
+// These are not coming from the BE but can't be equal to the PhotoTag
 export enum AlbumTag {
-    All = 0,
-    MyAlbums = 1,
-    Shared = 2,
-    SharedWithMe = 3,
+    All = 10,
+    MyAlbums = 11,
+    Shared = 12,
+    SharedWithMe = 13,
 }
 
 export type Tag = PhotoTag | AlbumTag;
