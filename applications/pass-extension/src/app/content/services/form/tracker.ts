@@ -134,6 +134,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
      * (eg. re-rendering in SPAs). We validate the form credentials against
      * partial form data in order to support multi-step form staging. */
     const sync = asyncQueue(async (options: FormTrackerSyncOptions): Promise<MaybeNull<AutosaveFormEntry>> => {
+        if (!form.canAutosave) return null;
+
         const data = options.data ?? getFormData();
         const valid = validateFormCredentials(data, { type: form.formType, partial: options.partial });
         if (options.reset) reset();
