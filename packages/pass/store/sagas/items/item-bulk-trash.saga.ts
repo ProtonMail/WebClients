@@ -33,7 +33,7 @@ function* itemBulkTrashWorker(
 
     while (true) {
         const action: BulkTrashChannel = yield take(progressChannel);
-        onItemsUpdated?.();
+        onItemsUpdated?.({ report: action.type === 'done' });
 
         if (action.type === 'progress') yield put(itemBulkTrashProgress(meta.request.id, action.progress, action.data));
         if (action.type === 'done') yield put(itemBulkTrashSuccess(meta.request.id, {}));

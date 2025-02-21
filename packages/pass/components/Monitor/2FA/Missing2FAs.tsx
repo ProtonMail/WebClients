@@ -3,6 +3,7 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
@@ -40,7 +41,15 @@ export const Missing2FAs: FC = () => {
         selectItem(item, { scope: 'monitor/2fa' });
     }, []);
 
-    return items.length > 0 ? (
+    if (items.length === 0) {
+        return (
+            <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
+                <strong>{missing2FAs.loading ? <CircleLoader size="small" /> : c('Title').t`No inactive 2FAs`}</strong>
+            </div>
+        );
+    }
+
+    return (
         <VirtualList
             ref={listRef}
             rowCount={items.length}
@@ -62,9 +71,5 @@ export const Missing2FAs: FC = () => {
                 );
             }}
         />
-    ) : (
-        <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
-            <strong>{c('Title').t`No inactive 2FAs`}</strong>
-        </div>
     );
 };

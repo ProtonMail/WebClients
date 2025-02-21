@@ -13,7 +13,7 @@ function* emptyTrashWorker({ onItemsUpdated }: RootSagaOptions, { meta }: Return
 
     while (true) {
         const action: BulkDeleteChannel = yield take(progressChannel);
-        onItemsUpdated?.();
+        onItemsUpdated?.({ report: action.type === 'done' });
 
         if (action.type === 'progress') yield put(emptyTrashProgress(requestId, action.progress, action.data));
         if (action.type === 'done') yield put(emptyTrashSuccess(requestId));
