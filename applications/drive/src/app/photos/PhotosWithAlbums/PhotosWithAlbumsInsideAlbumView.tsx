@@ -147,11 +147,11 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         [createNotification, addAlbumPhoto]
     );
 
-    const onSelectCover = useCallback(async () => {
-        if (previewItem) {
-            const abortSignal = new AbortController().signal;
+    const onSelectCover = useCallback(
+        async (linkId: string) => {
             try {
-                await setPhotoAsCover(abortSignal, previewItem.linkId);
+                const abortSignal = new AbortController().signal;
+                await setPhotoAsCover(abortSignal, linkId);
                 createNotification({ text: c('Info').t`Photo is set as album cover` });
             } catch (e) {
                 if (e instanceof Error) {
@@ -159,8 +159,28 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 }
                 sendErrorReport(e);
             }
+        },
+        [createNotification, setPhotoAsCover]
+    );
+
+    const onSelectCoverPreview = useCallback(async () => {
+        if (!previewItem) {
+            sendErrorReport(new Error('Unable to set photo as cover'));
+            createNotification({ text: c('Error').t`Unable to set photo as cover`, type: 'error' });
+            return;
         }
-    }, [createNotification, setPhotoAsCover, previewItem]);
+        await onSelectCover(previewItem.linkId);
+    }, [createNotification, onSelectCover, previewItem]);
+
+    const onSelectCoverToolbar = useCallback(async () => {
+        const selectedItem = selectedItems[0];
+        if (!selectedItem) {
+            sendErrorReport(new Error('Unable to set photo as cover'));
+            createNotification({ text: c('Error').t`Unable to set photo as cover`, type: 'error' });
+            return;
+        }
+        await onSelectCover(selectedItem.linkId);
+    }, [createNotification, onSelectCover, selectedItems]);
 
     const isAlbumPhotosEmpty = albumPhotos.length === 0;
     const album = albumLinkId ? albums.find((album) => album.linkId === albumLinkId) : undefined;
@@ -214,7 +234,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             linkId: previewItem.linkId,
                         })
                     }
-                    onSelectCover={onSelectCover}
+                    onSelectCover={onSelectCoverPreview}
                     navigationControls={
                         <NavigationControl
                             current={previewIndex + 1}
@@ -279,6 +299,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             tabSelection={'albums-gallery'}
                             createAlbumModal={createAlbumModal}
                             onFileUpload={onPhotoUploadedToAlbum}
+                            onSelectCover={onSelectCoverToolbar}
                         />
                     }
                 />
