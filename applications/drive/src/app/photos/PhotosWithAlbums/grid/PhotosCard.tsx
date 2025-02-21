@@ -94,21 +94,23 @@ export const PhotosCard: FC<Props> = ({
     const showCheckbox = hasSelection;
 
     return (
+        /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <ButtonLike
             as="div"
             ref={ref}
             style={style}
             className={clsx(
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
-                'relative photos-card p-0 border-none rounded-none',
-                isThumbnailLoading && 'photos-card--loading',
-                !showCheckbox && 'photos-card--hide-checkbox',
-                selected && 'photos-card--selected'
+                'relative photo-card p-0 border-none rounded',
+                isThumbnailLoading && 'photo-card--loading',
+                !showCheckbox && 'photo-card--hide-checkbox',
+                selected && 'photo-card--selected'
             )}
             data-testid="photos-card"
             onClick={onClick}
             onKeyDown={onKeyDown}
             tabIndex={0}
+            role="button"
             aria-busy={!isLoaded}
         >
             <Checkbox
@@ -140,7 +142,7 @@ export const PhotosCard: FC<Props> = ({
                             data-testid="photo-card-thumbnail"
                             src={thumbUrl}
                             alt={getAltText(photo)}
-                            className="w-full h-full photos-card-thumbnail"
+                            className="w-full h-full photos-card-thumbnail rounded"
                         />
                     ) : (
                         <div className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
