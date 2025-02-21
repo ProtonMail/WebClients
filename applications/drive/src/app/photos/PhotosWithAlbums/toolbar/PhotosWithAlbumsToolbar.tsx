@@ -20,6 +20,7 @@ import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider'
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
 import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
+import { PhotosMakeCoverButton } from './PhotosMakeCoverButton';
 import { PhotosPreviewButton } from './PhotosPreviewButton';
 import PhotosShareLinkButton from './PhotosShareLinkButton';
 import PhotosTrashButton from './PhotosTrashButton';
@@ -251,6 +252,7 @@ interface PhotosWithAlbumToolbarProps {
     createAlbumModal: ModalStateReturnObj;
     addAlbumPhotosModal?: ModalStateReturnObj;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+    onSelectCover?: () => Promise<void>;
     album?: DecryptedAlbum;
 }
 
@@ -266,6 +268,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     createAlbumModal,
     addAlbumPhotosModal,
     onFileUpload,
+    onSelectCover,
     album,
 }) => {
     const hasSelection = selectedItems.length > 0;
@@ -291,7 +294,6 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                     />
                 )}
 
-                {/* Some photos are selected */}
                 {hasSelection && (
                     <>
                         {!uploadDisabled && <Vr />}
@@ -300,6 +302,13 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             <PhotosAddAlbumPhotosButton onClick={() => addAlbumPhotosModal.openModal(true)} />
                         )}
                         <PhotosDownloadButton requestDownload={requestDownload} selectedLinks={selectedItems} />
+                        {/* Only show set cover button if photo selected is not already the cover */}
+                        {!hasMultipleSelected &&
+                            onSelectCover &&
+                            album &&
+                            album.cover?.linkId !== selectedItems[0].linkId && (
+                                <PhotosMakeCoverButton onSelectCover={onSelectCover} />
+                            )}
                         {!hasMultipleSelected && <PhotosShareLinkButton selectedLinks={selectedItems} />}
                         <Vr />
                         <PhotosDetailsButton selectedLinks={selectedItems} />
