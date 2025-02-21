@@ -10,6 +10,7 @@ export type DetectedForm = { formType: FormType; form: HTMLElement; fields: Dete
 export type DetectedField = { fieldType: FieldType; field: HTMLInputElement };
 export interface FormHandle {
     busy: boolean;
+    canAutosave: boolean;
     detached: boolean;
     element: HTMLElement;
     fields: Map<HTMLInputElement, FieldHandle>;

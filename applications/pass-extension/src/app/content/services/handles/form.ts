@@ -3,6 +3,7 @@ import { resolveIdentitySections } from 'proton-pass-extension/app/content/servi
 import { createFormTracker } from 'proton-pass-extension/app/content/services/form/tracker';
 import type { DetectedField, DetectedForm, FieldHandle, FormHandle } from 'proton-pass-extension/app/content/types';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
+import { canAutosave } from 'proton-pass-extension/app/content/utils/autosave';
 import { hasProcessableFields } from 'proton-pass-extension/app/content/utils/nodes';
 
 import { FieldType, type FormType, buttonSelector, isVisibleForm, removeClassifierFlags } from '@proton/pass/fathom';
@@ -27,6 +28,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
     const formHandle: FormHandle = {
         id: uniqueId(),
+        canAutosave: canAutosave(options.form),
         element: form,
         formType: formType,
         fields: new Map(
@@ -83,6 +85,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             let hasIdentityFields: boolean = false;
 
             formHandle.formType = formType;
+            formHandle.canAutosave = canAutosave(options.form);
 
             /* Detach fields that are no longer present */
             formHandle.getFields().forEach((field) => {
