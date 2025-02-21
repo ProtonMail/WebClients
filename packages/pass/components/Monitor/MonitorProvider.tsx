@@ -5,8 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/index';
-import { useInsecurePasswords } from '@proton/pass/hooks/monitor/useInsecurePasswords';
-import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
+import { useInsecurePasswords, useMissing2FAs } from '@proton/pass/hooks/monitor/useAsyncMonitorState';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
@@ -48,7 +47,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const [action, setAction] = useState<MaybeNull<MonitorAction>>(null);
     const onClose = () => setAction(null);
 
-    const breaches = useRequest(getBreaches, {
+    const loadBreaches = useRequest(getBreaches, {
         loading: true,
         initial: true,
         onFailure: () => {
@@ -59,23 +58,40 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
         },
     });
 
-    useEffect(() => breaches.dispatch(), []);
+    const handles = useMemo<Pick<MonitorContextValue, 'addAddress' | 'verifyAddress' | 'sync' | 'deleteAddress'>>(
+        () => ({
+            addAddress: () => setAction({ type: 'add' }),
+            verifyAddress: (data, sentAt) => setAction({ type: 'verify', data: { ...data, sentAt } }),
+            deleteAddress: (addressID) => dispatch(deleteCustomAddress.intent(addressID)),
+            sync: loadBreaches.revalidate,
+        }),
+        [loadBreaches.revalidate]
+    );
+
+    const breaches = useMemo<MonitorContextValue['breaches']>(
+        () => ({
+            data: { alias, proton, custom },
+            loading: loadBreaches.loading,
+            count,
+        }),
+        [alias, proton, custom, count, loadBreaches.loading]
+    );
 
     const context = useMemo<MonitorContextValue>(
         () => ({
             didLoad,
-            breaches: { data: { alias, proton, custom }, loading: breaches.loading, count },
+            breaches,
             insecure,
             missing2FAs,
             duplicates: { data: duplicates, count: duplicates.length },
             excluded: { data: excluded, count: excluded.length },
-            addAddress: () => setAction({ type: 'add' }),
-            verifyAddress: (data, sentAt) => setAction({ type: 'verify', data: { ...data, sentAt } }),
-            deleteAddress: (addressId) => dispatch(deleteCustomAddress.intent(addressId)),
-            sync: breaches.revalidate,
+            ...handles,
         }),
-        [breaches, insecure, duplicates, missing2FAs, excluded, alias, proton, custom, didLoad]
+        [breaches, insecure, duplicates, missing2FAs, excluded, didLoad]
     );
+
+    useEffect(() => loadBreaches.dispatch(), []);
+
     return (
         <MonitorContext.Provider value={context}>
             {children}

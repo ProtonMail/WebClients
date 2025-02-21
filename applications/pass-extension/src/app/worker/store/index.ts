@@ -97,7 +97,6 @@ const options: RootSagaOptions = {
             ctx.service.telemetry?.start().catch(noop);
             ctx.service.b2bEvents?.start().catch(noop);
             ctx.service.i18n.setLocale(selectLocale(state)).catch(noop);
-            ctx.service.autofill.sync();
             WorkerMessageBroker.buffer.flush();
 
             const lockMode = authStore.getLockMode();
@@ -124,12 +123,12 @@ const options: RootSagaOptions = {
             })
         ),
 
-    onItemsUpdated: withContext(async (ctx) => {
+    onItemsUpdated: withContext((ctx, options) => {
         /* Update the extension's badge count on every item state change */
         ctx.service.autofill.sync();
 
-        if (ctx.service.b2bEvents) {
-            await createMonitorReport({
+        if (ctx.service.b2bEvents && (options?.report ?? true)) {
+            void createMonitorReport({
                 state: store.getState(),
                 monitor: ctx.service.monitor,
                 dispatch: ctx.service.b2bEvents.push,
