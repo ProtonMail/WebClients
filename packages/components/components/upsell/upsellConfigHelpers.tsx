@@ -21,7 +21,7 @@ import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type useGetFlag from '@proton/unleash/useGetFlag';
 
-import { PriceCoupon, PriceLine } from './OneDollarPromoComponents';
+import Price from '../price/Price';
 
 const ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE = 100;
 
@@ -112,63 +112,61 @@ export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<M
     const isSentinelUpsell = [SHARED_UPSELL_PATHS.SENTINEL, MAIL_UPSELL_PATHS.PROTON_SENTINEL].some((path) =>
         upsellRef?.includes(path)
     );
+    const isComposerAssistantUpsell = upsellRef?.includes(MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER);
 
-    if (user.isFree && !isSentinelUpsell) {
-        const planID = PLANS.MAIL;
-        const cycle = CYCLE.MONTHLY;
+    let planID = PLANS.BUNDLE;
+    let cycle = CYCLE.YEARLY;
+    let coupon = undefined;
+    let canFetchPrice = true;
+
+    const planName = getPlanByName(plans, getPlanIDsForPlan(planID), currency);
+    let price = getPricePerCycle(planName, cycle) || 0;
+
+    if (isComposerAssistantUpsell) {
+        planID = PLANS.DUO;
+        cycle = CYCLE.YEARLY;
+    } else if (user.isFree && !isSentinelUpsell) {
+        planID = PLANS.MAIL;
+        cycle = CYCLE.MONTHLY;
 
         // Free users got 1$ promo displayed
-        const coupon = COUPON_CODES.TRYMAILPLUS0724;
+        coupon = COUPON_CODES.TRYMAILPLUS0724;
+        price = ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE;
+    } else {
+        // TODO confirm this part now that components are better isolated.
 
-        const price = await getUpsellPrice({
-            coupon: coupon,
+        /**
+         * If user has mail plus we don't need to fetch the price
+         * as it's something we get throught the plans Object.
+         * Otherwise, we fetch the price from the API.
+         */
+        canFetchPrice = !user.hasPaidMail;
+    }
+
+    if (canFetchPrice) {
+        const fetchedPrice = await getUpsellPrice({
+            coupon,
             currency,
             cycle,
-            defaultPrice: ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE,
+            defaultPrice: price,
             fetchPrice,
             planID,
         });
-
-        return {
-            coupon,
-            cycle,
-            planID,
-            monthlyPrice: price,
-        };
-    } else {
-        const planID = PLANS.BUNDLE;
-        const cycle = CYCLE.YEARLY;
-        const planName = getPlanByName(plans, getPlanIDsForPlan(planID), currency);
-        let price = getPricePerCycle(planName, cycle);
-
-        /**
-         * If user has mail plus and is on main currency, we don't need to fetch the price
-         * as it's something we get throught the plans Object.
-         *
-         * Otherwise, we fetch the price from the API.
-         */
-        if (!user.hasPaidMail) {
-            price = await getUpsellPrice({
-                coupon: undefined,
-                currency,
-                cycle,
-                defaultPrice: price || 0,
-                fetchPrice,
-                planID,
-            });
-        }
-
-        if (!price) {
-            throw new Error('Price not found');
-        }
-
-        return {
-            coupon: undefined,
-            cycle,
-            planID,
-            monthlyPrice: price / 12,
-        };
+        price = fetchedPrice;
     }
+
+    if (!price) {
+        throw new Error('Price not found');
+    }
+
+    const monthlyPrice = cycle === CYCLE.MONTHLY ? price : price / 12;
+
+    return {
+        coupon,
+        cycle,
+        planID,
+        monthlyPrice,
+    };
 };
 
 export const getMailUpsellsSubmitText = (
@@ -178,7 +176,11 @@ export const getMailUpsellsSubmitText = (
     coupon: string | undefined
 ) => {
     const planName = PLAN_NAMES[planID];
-    const priceCoupon = <PriceCoupon key={`price-coupon-${planName}`} currency={currency} amountDue={price} />;
+    const priceCoupon = (
+        <Price currency={currency} key={`${planID}-monthly-amount`}>
+            {price}
+        </Price>
+    );
 
     if (coupon) {
         return c('Action').jt`Get ${planName} for ${priceCoupon}`;
@@ -193,10 +195,24 @@ export const getMailUpsellsFooterText = (
     currency: Currency,
     coupon: string | undefined
 ) => {
-    const priceCoupon = <PriceCoupon key={`price-coupon-${planID}`} currency={currency} amountDue={price} />;
-    const priceLine = <PriceLine key={`price-line-${planID}`} currency={currency} planPrice={price} />;
+    const priceLine = (
+        <Price
+            key={`monthly-price-${planID}`}
+            currency={currency}
+            suffix={c('specialoffer: Offers').t`/month`}
+            isDisplayedInSentence
+        >
+            {price}
+        </Price>
+    );
 
     if (coupon) {
+        const priceCoupon = (
+            <Price currency={currency} key={`${planID}-monthly-amount`}>
+                {price}
+            </Price>
+        );
+
         return c('new_plans: Subtext')
             .jt`The discounted price of ${priceCoupon} is valid for the first month. Then it will automatically be renewed at ${priceLine}. You can cancel at any time.`;
     }
