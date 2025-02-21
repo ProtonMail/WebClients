@@ -97,7 +97,6 @@ const options: RootSagaOptions = {
             ctx.service.telemetry?.start().catch(noop);
             ctx.service.b2bEvents?.start().catch(noop);
             ctx.service.i18n.setLocale(selectLocale(state)).catch(noop);
-            ctx.service.autofill.sync();
             WorkerMessageBroker.buffer.flush();
 
             const lockMode = authStore.getLockMode();
