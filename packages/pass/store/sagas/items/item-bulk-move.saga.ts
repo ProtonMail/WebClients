@@ -41,7 +41,7 @@ function* itemBulkMoveWorker(
 
     while (true) {
         const action: BulkMoveItemsChannel = yield take(channel);
-        onItemsUpdated?.();
+        onItemsUpdated?.({ report: action.type === 'done' });
 
         if (action.type === 'progress') yield put(itemBulkMoveProgress(requestId, action.progress, action.data));
         if (action.type === 'done') yield put(itemBulkMoveSuccess(requestId, {}));
