@@ -3,6 +3,12 @@ import { createContext, useContext } from 'react';
 import type { AddressType, CustomAddressID, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import type { MaybeNull, UniqueItem } from '@proton/pass/types';
 
+export type AsyncMonitorState = {
+    data: UniqueItem[];
+    count: number;
+    loading: boolean;
+};
+
 export interface MonitorContextValue {
     didLoad: boolean;
     breaches: {
@@ -14,9 +20,9 @@ export interface MonitorContextValue {
         count: number;
         loading: boolean;
     };
-    insecure: { data: UniqueItem[]; count: number };
+    insecure: AsyncMonitorState;
     duplicates: { data: UniqueItem[][]; count: number };
-    missing2FAs: { data: UniqueItem[]; count: number };
+    missing2FAs: AsyncMonitorState;
     excluded: { data: UniqueItem[]; count: number };
     addAddress: () => void;
     verifyAddress: (address: MonitorAddress<AddressType.CUSTOM>, sentAt?: number) => void;
