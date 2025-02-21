@@ -37,7 +37,7 @@ export const appsWithInApp = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACC
 export const getUpsellConfig = ({
     appName,
     coupon,
-    cycle,
+    cycle = CYCLE.YEARLY,
     maximumCycle,
     minimumCycle,
     getFlag,
@@ -45,7 +45,7 @@ export const getUpsellConfig = ({
     openSubscriptionModal,
     plan,
     preventInApp = false,
-    step,
+    step = SUBSCRIPTION_STEPS.CHECKOUT,
     subscription,
     upsellRef,
     user,
@@ -65,16 +65,14 @@ export const getUpsellConfig = ({
     if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef && !preventInApp) {
         const subscriptionCallBackProps: OpenCallbackProps = {
             coupon,
-            cycle: cycle || CYCLE.YEARLY,
+            cycle,
+            disablePlanSelection: step === SUBSCRIPTION_STEPS.CHECKOUT,
             maximumCycle,
             minimumCycle,
-            disablePlanSelection: step === SUBSCRIPTION_STEPS.CHECKOUT,
-            metrics: {
-                source: 'upsells',
-            },
+            metrics: { source: 'upsells' },
             mode: 'upsell-modal', // hide the Free plan
-            step: step || SUBSCRIPTION_STEPS.CHECKOUT,
-            upsellRef: upsellRef,
+            step,
+            upsellRef,
         };
 
         if (plan) {
