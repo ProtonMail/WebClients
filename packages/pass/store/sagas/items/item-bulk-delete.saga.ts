@@ -37,7 +37,7 @@ function* itemBulkDeleteWorker(
 
     while (true) {
         const action: BulkDeleteChannel = yield take(progressChannel);
-        onItemsUpdated?.();
+        onItemsUpdated?.({ report: action.type === 'done' });
 
         if (action.type === 'progress') yield put(itemBulkDeleteProgress(requestId, action.progress, action.data));
         if (action.type === 'done') yield put(itemBulkDeleteSuccess(requestId, {}));

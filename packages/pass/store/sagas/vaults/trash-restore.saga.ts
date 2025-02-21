@@ -18,7 +18,7 @@ function* restoreTrash({ onItemsUpdated }: RootSagaOptions, { meta }: ReturnType
 
     while (true) {
         const action: BulkRestoreChannel = yield take(progressChannel);
-        onItemsUpdated?.();
+        onItemsUpdated?.({ report: action.type === 'done' });
 
         if (action.type === 'progress') yield put(restoreTrashProgress(requestId, action.progress, action.data));
         if (action.type === 'done') yield put(restoreTrashSuccess(requestId));
