@@ -3,6 +3,7 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
@@ -40,7 +41,17 @@ export const WeakPasswords: FC = () => {
         selectItem(item, { scope: 'monitor/weak' });
     }, []);
 
-    return items.length > 0 ? (
+    if (items.length === 0) {
+        return (
+            <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
+                <strong>
+                    {insecure.loading ? <CircleLoader size="small" /> : c('Title').t`No insecure passwords`}
+                </strong>
+            </div>
+        );
+    }
+
+    return (
         <VirtualList
             ref={listRef}
             rowCount={items.length}
@@ -62,9 +73,5 @@ export const WeakPasswords: FC = () => {
                 );
             }}
         />
-    ) : (
-        <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
-            <strong>{c('Title').t`No insecure passwords`}</strong>
-        </div>
     );
 };
