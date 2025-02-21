@@ -192,7 +192,7 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: Pro
             case APPS.PROTONDRIVE:
                 return PLANS.DRIVE;
             case APPS.PROTONVPN_SETTINGS:
-                return PLANS.VPN;
+                return PLANS.VPN2024;
             case APPS.PROTONWALLET:
                 return PLANS.WALLET;
             default:
