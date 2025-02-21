@@ -1,5 +1,7 @@
 import React, { type ChangeEvent, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/index';
 import {
     InputFieldTwo,
@@ -43,7 +45,7 @@ export const CreateAlbumModal = ({
         <>
             {render && (
                 <ModalTwo {...modalProps} as="form" onSubmit={onSubmit}>
-                    <ModalTwoHeader title="Create new album" />
+                    <ModalTwoHeader title={c('Header').t`Create new album`} />
                     <ModalTwoContent>
                         <InputFieldTwo
                             autoFocus
@@ -51,11 +53,8 @@ export const CreateAlbumModal = ({
                                 setAlbumName(target.value);
                             }}
                             value={albumName}
-                            //label="What this input field is about"
-                            //hint="Any hint on filling this input field"
-                            //assistiveText="Assistive text explaining how to fill this input field…"
-                            placeholder="Name your album"
-                            // title="Help displayed on hovering this input field, and read by screen readers too."
+                            label={c('Action').t`Album name`}
+                            placeholder={c('Action').t`Name your album`}
                             error={validator([validateLinkNameField(albumName) || ''])}
                         />
                     </ModalTwoContent>

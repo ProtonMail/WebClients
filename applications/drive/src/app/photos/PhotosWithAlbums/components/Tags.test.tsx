@@ -66,7 +66,7 @@ describe('PhotosTags', () => {
         render(<PhotosTags {...props} />);
 
         const favoritesButton = screen.getByRole('button', { name: 'Favorites' });
-        expect(favoritesButton).toHaveClass('is-selected');
+        expect(favoritesButton).toHaveClass('is-active');
     });
 
     it('handles Live Photos selection correctly', async () => {
