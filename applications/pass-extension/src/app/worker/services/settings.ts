@@ -4,8 +4,8 @@ import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { createSettingsService as createCoreSettingsService } from '@proton/pass/lib/settings/service';
 import { updatePauseListItem } from '@proton/pass/store/actions';
-import { type ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectProxiedSettings } from '@proton/pass/store/selectors';
+import { type ProxiedSettings, getFinalProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { selectHasWritableVault, selectProxiedSettings } from '@proton/pass/store/selectors';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -25,10 +25,12 @@ export const createSettingsService = () => {
             logger.info('[Worker::Settings] synced settings');
             await service.storage.local.setItem('settings', JSON.stringify(settings));
 
+            const canCreateItems = selectHasWritableVault(service.store.getState());
+
             WorkerMessageBroker.ports.broadcast(
                 backgroundMessage({
                     type: WorkerMessageType.SETTINGS_UPDATE,
-                    payload: settings,
+                    payload: getFinalProxiedSettings(settings, { canCreateItems }),
                 })
             );
         }),
