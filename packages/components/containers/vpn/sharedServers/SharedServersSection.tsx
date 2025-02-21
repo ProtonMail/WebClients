@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -14,6 +14,7 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
+import DeleteModal from '@proton/components/containers/vpn/sharedServers/PolicyModal/DeleteModal';
 import { PolicyType } from '@proton/components/containers/vpn/sharedServers/constants';
 import { sortLocationsByLocalizedCountryName } from '@proton/components/containers/vpn/sharedServers/sortLocationsByLocalizedCountryName';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -22,37 +23,28 @@ import { MINUTE, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import SettingsSectionWide from '../../account/SettingsSectionWide';
-import SharedServersModal from './SharedServersModal';
+import Modal from './PolicyModal/Modal';
 import SharedServersTypeButton from './SharedServersTypeButton';
 import { useSharedServers } from './useSharedServers';
 
 const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
-    const { loading, locations, policies } = useSharedServers(maxAge);
+    const { loading, locations, policies, refresh } = useSharedServers(maxAge);
     const [policyType, setPolicyType] = useState<PolicyType>(PolicyType.None);
+    const customPolicies = useMemo(() => policies.filter((policy) => policy.Type === PolicyType.Custom), [policies]);
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
-    const [createModal, showCreateModal] = useModalTwoStatic(SharedServersModal);
+    const [createModal, showCreateModal] = useModalTwoStatic(Modal);
+    const [deleteModal, showDeleteModal] = useModalTwoStatic(DeleteModal);
     const { sortedLocations, countriesCount } = sortLocationsByLocalizedCountryName(locations, countryOptions);
-    const addPolicy = () => showCreateModal({});
+
+    const addPolicy = useCallback(() => {
+        showCreateModal({ onSuccess: refresh });
+    }, [showCreateModal, refresh]);
 
     if (loading) {
         return <Loader />;
     }
 
-    // Remove all and none policies, to avoid showing them on custom policies
-    const customPolicies = policies.filter((policy) => {
-        return policy.Type === PolicyType.Custom;
-    });
-
-    // TODO: enable this later
-    // if (!policies?.length) {
-    //     return (
-    //         <EmptyViewContainer>
-    //             <h3>{c('Info').t`No Shared Server Policies Found`}</h3>
-    //             <p>{c('Info').t`No policies have been created yet.`}</p>
-    //         </EmptyViewContainer>
-    //     );
-    // }
     const amountUsers = 55; // TODO
     const totalUsers = 55; // TODO
 
@@ -63,27 +55,31 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                     c('Info')
                         .t`Allow users to connect to secure shared servers from the **Countries** section of the ${VPN_APP_NAME} app.`
                 )}
-                <Href href={getKnowledgeBaseUrl('/shared-servers')} className="ml-1">{c('Link').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/shared-servers')} className="ml-1">
+                    {c('Link').t`Learn more`}
+                </Href>
             </div>
 
             <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full mt-4">
                 <SharedServersTypeButton
                     label={c('Info').t`On`}
-                    onClick={() => setPolicyType(1)}
-                    isSelected={policyType === 1}
-                    description={c('Description').t`Everyone in your organization can connect to shared servers.`}
+                    onClick={() => setPolicyType(PolicyType.All)}
+                    isSelected={policyType === PolicyType.All}
+                    description={c('Description')
+                        .t`Everyone in your organization can connect to shared servers in all countries.`}
                 />
                 <SharedServersTypeButton
                     label={c('Info').t`Off`}
-                    onClick={() => setPolicyType(0)}
-                    isSelected={policyType === 0}
+                    onClick={() => setPolicyType(PolicyType.None)}
+                    isSelected={policyType === PolicyType.None}
                     description={c('Description').t`No one in your organization can connect to shared servers.`}
                 />
                 <SharedServersTypeButton
                     label={c('Info').t`Custom`}
-                    onClick={() => setPolicyType(2)}
-                    isSelected={policyType === 2}
-                    description={c('Description').t`Create policies to manage access to shared servers.`}
+                    onClick={() => setPolicyType(PolicyType.Custom)}
+                    isSelected={policyType === PolicyType.Custom}
+                    description={c('Description')
+                        .t`Create policies to decide who can connect to shared servers in each country.`}
                 />
             </div>
 
@@ -154,9 +150,18 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                         <Button
                                             size="small"
                                             color="norm"
-                                            onClick={() => showCreateModal({ policy: customPolicy })}
+                                            onClick={() => showCreateModal({ policy: customPolicy, isEditing: true })}
                                         >
                                             {c('Action').t`Edit`}
+                                        </Button>
+                                        <Button
+                                            size="small"
+                                            color="norm"
+                                            onClick={() =>
+                                                showDeleteModal({ onSuccess: refresh, policy: customPolicy })
+                                            }
+                                        >
+                                            {c('Action').t`Delete`}
                                         </Button>
                                     </TableCell>
                                 </TableRow>
@@ -165,7 +170,9 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                     </Table>
                 </>
             )}
+
             {createModal}
+            {deleteModal}
         </SettingsSectionWide>
     );
 };
