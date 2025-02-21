@@ -38,7 +38,15 @@ export const ButtonCard: FC<ButtonCardProps> = ({ actions, disabled, title, subt
         >
             <CardContent
                 className="p-1"
-                icon={typeof icon === 'function' ? icon : icon && (() => <CardIcon icon={icon} />)}
+                icon={
+                    icon
+                        ? () => (
+                              <div className="w-custom shrink-0" style={{ '--w-custom': '1.5em' }}>
+                                  {typeof icon === 'function' ? icon() : <CardIcon icon={icon} />}
+                              </div>
+                          )
+                        : undefined
+                }
                 title={title}
                 titleClassname="text-semibold"
                 subtitle={subtitle}

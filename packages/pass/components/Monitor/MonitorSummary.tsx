@@ -1,9 +1,10 @@
+/* eslint-disable no-nested-ternary */
 import { type FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
+import { CircleLoader, Scroll } from '@proton/atoms';
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { ButtonCard } from '@proton/pass/components/Layout/Card/ButtonCard';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
@@ -39,6 +40,9 @@ export const MonitorSummary: FC = () => {
     const onUpsell = () => setUpsellModalOpen(true);
 
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayHome, {}, {})([]);
+
+    const insecureReady = !(insecure.loading && insecure.count === 0);
+    const twofasReady = !(missing2FAs.loading && missing2FAs.count === 0);
 
     return (
         <div className="w-full h-full">
@@ -78,14 +82,21 @@ export const MonitorSummary: FC = () => {
                             <h3 className="text-lg text-semibold">{c('Title').t`Password Health`}</h3>
                             <div className="pass-monitor-grid gap-4">
                                 <ButtonCard
-                                    actions={<PillBadge label={insecure.count} />}
-                                    disabled={insecure.count === 0}
-                                    icon={duplicates.count > 0 ? 'exclamation-filled' : 'checkmark'}
+                                    actions={insecureReady && <PillBadge label={insecure.count} />}
+                                    disabled={insecure.loading || insecure.count === 0}
                                     onClick={() => navigate(getLocalPath('monitor/weak'))}
                                     subtitle={c('Description').t`Change your passwords`}
                                     title={c('Title').t`Weak passwords`}
-                                    type={insecure.count > 0 ? 'warning' : 'success'}
+                                    type={insecure.count > 0 ? 'warning' : insecure.loading ? 'primary' : 'success'}
+                                    icon={
+                                        insecureReady
+                                            ? insecure.count > 0
+                                                ? 'exclamation-filled'
+                                                : 'checkmark'
+                                            : () => <CircleLoader size="small" />
+                                    }
                                 />
+
                                 <ButtonCard
                                     actions={<PillBadge label={duplicates.count} />}
                                     disabled={duplicates.count === 0}
@@ -95,13 +106,15 @@ export const MonitorSummary: FC = () => {
                                     title={c('Title').t`Reused passwords`}
                                     type={duplicates.count > 0 ? 'warning' : 'success'}
                                 />
+
                                 <ButtonCard
-                                    actions={<PillBadge label={missing2FAs.count} />}
-                                    disabled={missing2FAs.count === 0}
+                                    actions={twofasReady && <PillBadge label={missing2FAs.count} />}
+                                    disabled={missing2FAs.loading && missing2FAs.count === 0}
                                     onClick={() => navigate(`${getLocalPath('monitor/2fa')}`)}
                                     subtitle={c('Description').t`Set up 2FA for more security`}
                                     title={c('Title').t`Inactive 2FA`}
                                 />
+
                                 <ButtonCard
                                     actions={<PillBadge label={excluded.count} />}
                                     disabled={excluded.count === 0}

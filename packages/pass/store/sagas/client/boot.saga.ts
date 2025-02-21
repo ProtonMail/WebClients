@@ -92,6 +92,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
 
         options.setAppStatus(online ? AppStatus.READY : AppStatus.OFFLINE);
         options.onBoot?.({ ok: true, fromCache, version, offline, reauth });
+        options.onItemsUpdated?.({ report: true });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
