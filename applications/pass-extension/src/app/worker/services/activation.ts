@@ -13,7 +13,14 @@ import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import { bootIntent, clientInit } from '@proton/pass/store/actions';
-import { selectFeatureFlags, selectFilters, selectItem, selectTabState } from '@proton/pass/store/selectors';
+import { getFinalProxiedSettings } from '@proton/pass/store/reducers/settings';
+import {
+    selectFeatureFlags,
+    selectFilters,
+    selectHasWritableVault,
+    selectItem,
+    selectTabState,
+} from '@proton/pass/store/selectors';
 import type { ClientInitMessage, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
@@ -221,10 +228,12 @@ export const createActivationService = () => {
                 });
             }
 
+            const canCreateItems = selectHasWritableVault(ctx.service.store.getState());
+
             return {
                 state: ctx.getState(),
                 features: selectFeatureFlags(ctx.service.store.getState()) ?? {},
-                settings: await ctx.service.settings.resolve(),
+                settings: getFinalProxiedSettings(await ctx.service.settings.resolve(), { canCreateItems }),
             };
         }
     );
