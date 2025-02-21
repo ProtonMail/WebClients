@@ -21,6 +21,7 @@ function* moveAllItemsWorker(
 
     while (true) {
         const action: BulkMoveItemsChannel = yield take(channel);
+        onItemsUpdated?.({ report: action.type === 'done' });
 
         if (action.type === 'progress') {
             yield put(
@@ -29,7 +30,6 @@ function* moveAllItemsWorker(
                     targetShareId,
                 })
             );
-            onItemsUpdated?.();
         }
 
         if (action.type === 'done') yield put(vaultMoveAllItemsSuccess(meta.request.id, { content }));

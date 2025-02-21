@@ -1,4 +1,8 @@
+@import '~@proton/styles/scss/lib';
+
 .pass-card-icon {
 	color: var(--text-invert);
 	background-color: var(--pass-card-color, var(--pass-card-color));
+	block-size: em(25);
+	inline-size: em(25);
 }

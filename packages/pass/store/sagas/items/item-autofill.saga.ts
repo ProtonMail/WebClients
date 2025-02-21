@@ -13,7 +13,7 @@ function* itemAutofilledWorker(
 ) {
     try {
         logger.info(`[Item::Autofill] used item ${logId(itemId)} on share ${logId(shareId)}`);
-        onItemsUpdated?.(); /* will re-order items for autofill suggestions */
+        onItemsUpdated?.({ report: false }); /* will re-order items for autofill suggestions */
 
         const encryptedItem: ItemRevisionContentsResponse = yield updateItemLastUseTime(shareId, itemId);
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
