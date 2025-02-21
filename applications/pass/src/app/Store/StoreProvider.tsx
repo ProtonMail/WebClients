@@ -166,13 +166,15 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     createNotification(enhance(notification));
                 },
 
-                onItemsUpdated: () =>
-                    createMonitorReport({
-                        state: store.getState(),
-                        monitor: core.monitor,
-                        dispatch: core.onB2BEvent,
-                    }),
-
+                onItemsUpdated: (options) => {
+                    if (options?.report ?? true) {
+                        void createMonitorReport({
+                            state: store.getState(),
+                            monitor: core.monitor,
+                            dispatch: core.onB2BEvent,
+                        });
+                    }
+                },
                 onSettingsUpdated: async (update) => {
                     void settings.sync(update, authStore.getLocalID());
                     if (DESKTOP_BUILD) {
