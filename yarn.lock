@@ -29660,6 +29660,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lexical@patch:lexical@npm%3A0.24.0#~/.yarn/patches/lexical-npm-0.24.0-b4bcd9de3e.patch":
+  version: 0.24.0
+  resolution: "lexical@patch:lexical@npm%3A0.24.0#~/.yarn/patches/lexical-npm-0.24.0-b4bcd9de3e.patch::version=0.24.0&hash=3c4e5d"
+  checksum: 10c0/18edde163147da3890ea985653b2a4d4de01ee899b426617fc3cea8bdcd69b44eea3cd622b4886a4354a37912cc6eae8b8e0b63efc2455388580a341afa85211
+  languageName: node
+  linkType: hard
+
 "lib0@npm:^0.2.85, lib0@npm:^0.2.98":
   version: 0.2.98
   resolution: "lib0@npm:0.2.98"
@@ -35778,7 +35785,7 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.4.19"
     jest: "npm:^29.7.0"
     jest-junit: "npm:^16.0.0"
-    lexical: "npm:0.24.0"
+    lexical: "patch:lexical@npm%3A0.24.0#~/.yarn/patches/lexical-npm-0.24.0-b4bcd9de3e.patch"
     postcss: "npm:^8.5.2"
     prettier: "npm:^3.5.1"
     prettier-plugin-tailwindcss: "npm:^0.6.11"
