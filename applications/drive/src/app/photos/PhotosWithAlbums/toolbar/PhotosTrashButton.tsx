@@ -17,11 +17,13 @@ const PhotosTrashButton = ({ selectedLinks }: Props) => {
     return (
         <ToolbarButton
             disabled={isLoading}
-            title={c('Action').t`Move to trash`}
-            icon={<Icon name="trash" alt={c('Action').t`Move to trash`} />}
+            title={c('Action').t`Delete`}
             onClick={() => withLoading(trashLinks(new AbortController().signal, selectedLinks))}
             data-testid="toolbar-trash"
-        />
+            className="inline-flex flex-nowrap flex-row items-center"
+        >
+            <Icon name="trash" className="mr-2" /> {c('Action').t`Delete`}
+        </ToolbarButton>
     );
 };
 
