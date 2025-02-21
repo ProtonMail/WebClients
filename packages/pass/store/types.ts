@@ -80,7 +80,7 @@ export interface RootSagaOptions {
     onFeatureFlags?: (features: FeatureFlagState) => void;
 
     /** Called whenever some changes were committed to the items state */
-    onItemsUpdated?: () => void;
+    onItemsUpdated?: (options?: { report: boolean }) => void;
 
     /** Callback triggered when settings have been updated: leverage
      * this to persist the settings to storage if needed. */

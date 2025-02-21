@@ -124,12 +124,12 @@ const options: RootSagaOptions = {
             })
         ),
 
-    onItemsUpdated: withContext(async (ctx) => {
+    onItemsUpdated: withContext((ctx, options) => {
         /* Update the extension's badge count on every item state change */
         ctx.service.autofill.sync();
 
-        if (ctx.service.b2bEvents) {
-            await createMonitorReport({
+        if (ctx.service.b2bEvents && (options?.report ?? true)) {
+            void createMonitorReport({
                 state: store.getState(),
                 monitor: ctx.service.monitor,
                 dispatch: ctx.service.b2bEvents.push,
