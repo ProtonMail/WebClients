@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import { ButtonGroup, Icon, type IconName } from '@proton/components/index';
+import { Icon, type IconName } from '@proton/components/index';
+import clsx from '@proton/utils/clsx';
 
 import { AlbumTag, PhotoTag, type Tag } from '../../../store';
 
@@ -106,22 +107,27 @@ const getTagLabelWithIcon = (
 
 function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) {
     return (
-        <ButtonGroup>
+        <div className="flex flex-nowrap items-center py-2 gap-1 mx-2">
             {tags.map((tag) => {
                 const { iconName, label } = getTagLabelWithIcon(tag);
+                const selected = selectedTags.includes(tag);
                 return (
                     <Button
-                        selected={selectedTags.includes(tag)}
+                        shape="ghost"
+                        aria-pressed={selected}
                         key={tag}
-                        className="flex items-center"
+                        className={clsx(
+                            'inline-flex gap-2 items-center flex-nowrap text-semibold',
+                            selected && 'is-active'
+                        )}
                         onClick={() => onTagSelect([tag])}
                     >
-                        <Icon className="mr-1" name={iconName} />
+                        <Icon className="shrink-0" name={iconName} />
                         <span>{label}</span>
                     </Button>
                 );
             })}
-        </ButtonGroup>
+        </div>
     );
 }
 

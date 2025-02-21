@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
 @keyframes photos-card-loading {
 	/**
 	 * Animating `opacity` is intended, as animating background-color
@@ -15,7 +17,7 @@
 	}
 }
 
-.photos-card {
+.photo-card {
 	user-select: none;
 	background-color: var(--background-weak);
 
@@ -48,21 +50,10 @@
 	}
 
 	&--selected {
-		border: 1px var(--interaction-norm) solid;
+		border: 0;
 
-		&:hover {
-			border: 1px var(--interaction-norm) solid;
-		}
-
-		&::after {
-			inline-size: 100%;
-			block-size: 100%;
-			position: absolute;
-			inset-block-start: 0;
-			content: '';
-			display: block;
-			opacity: 0.3;
-			background-color: var(--interaction-norm);
+		.photos-card-thumbnail {
+			transform: scaleX(0.85) scaleY(0.89); // small trick to get same space around
 		}
 	}
 }
@@ -70,6 +61,7 @@
 .photos-card-thumbnail {
 	pointer-events: none;
 	object-fit: cover;
+	transition: transform 0.15s linear;
 
 	&--empty {
 		background-color: var(--background-weak);
@@ -84,6 +76,10 @@
 
 .photos-card-share-icon {
 	background-color: rgb(112 109 107 / 0.8);
-	inline-size: 20px;
-	block-size: 20px;
+	inline-size: rem(20);
+	block-size: rem(20);
+}
+
+.album-card {
+	border: 3px solid var(--background-norm);
 }

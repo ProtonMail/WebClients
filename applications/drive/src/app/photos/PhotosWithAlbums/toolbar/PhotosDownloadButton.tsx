@@ -2,7 +2,6 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
@@ -25,11 +24,13 @@ export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks
 
     return (
         <ToolbarButton
-            title={c('Action').t`Download`}
+            title={c('Action').t`Download photos`}
             disabled={loading}
-            icon={loading ? <CircleLoader /> : <Icon name="arrow-down-line" alt={c('Action').t`Download`} />}
             onClick={onClick}
             data-testid="toolbar-download"
-        />
+            className="inline-flex flex-nowrap flex-row items-center"
+        >
+            <Icon name="arrow-down-line" className="mr-2" /> {c('Action').t`Download photos`}
+        </ToolbarButton>
     );
 };
