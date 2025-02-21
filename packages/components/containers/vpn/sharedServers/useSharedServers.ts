@@ -16,7 +16,7 @@ export interface VpnLocationFilterPolicy {
     Users: SharedServerUser[];
 }
 
-interface SharedServerLocation {
+export interface SharedServerLocation {
     Country: string;
     City: string;
 }
@@ -49,7 +49,7 @@ export const useSharedServers = (maxAge: number) => {
     };
 
     // Use the generic fetch-data hook
-    const { loading, result } = useFetchData<ApiResponse>({
+    const { loading, result, refresh } = useFetchData<ApiResponse>({
         fetcher,
         maxAge,
     });
@@ -61,6 +61,7 @@ export const useSharedServers = (maxAge: number) => {
         locations: result?.Locations || [],
         users: result?.Users || [],
         groups: result?.Groups || [],
+        refresh,
     };
 };
 

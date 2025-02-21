@@ -207,7 +207,7 @@ export const getOrganizationAppRoutes = ({
             sharedServers: <SectionConfig>{
                 text: c('Title').t`Shared servers`,
                 to: '/shared-servers',
-                icon: 'servers',
+                icon: 'earth',
                 available:
                     isSharedServerFeatureEnabled &&
                     (hasVpnB2BPlan || hasBundlePro2024(subscription) || hasBundlePro(subscription)),

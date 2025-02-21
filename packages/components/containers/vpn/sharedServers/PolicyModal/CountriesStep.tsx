@@ -1,0 +1,133 @@
+import React, { useMemo, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { Input } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
+import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
+import clsx from '@proton/utils/clsx';
+
+interface CountriesGroup {
+    country: string;
+    localizedCountryName: string;
+    cities: string[];
+}
+
+interface SharedServersCountriesStepProps {
+    isEditing: boolean;
+    policyName: string;
+    groupedLocations: CountriesGroup[];
+    expandedCountries: Record<string, boolean>;
+    selectedCities: Record<string, string[]>;
+    onToggleCountry: (countryCode: string) => void;
+    onSelectCountry: (countryCode: string, cities: string[]) => void;
+    onSelectCity: (countryCode: string, city: string) => void;
+}
+
+const CountriesStep = ({
+    isEditing,
+    policyName,
+    groupedLocations,
+    expandedCountries,
+    selectedCities,
+    onToggleCountry,
+    onSelectCountry,
+    onSelectCity,
+}: SharedServersCountriesStepProps) => {
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const filteredGroups = useMemo(() => {
+        if (!searchQuery) {
+            return groupedLocations;
+        }
+
+        return groupedLocations.filter(({ localizedCountryName }) =>
+            localizedCountryName.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    }, [groupedLocations, searchQuery]);
+
+    return (
+        <div>
+            {isEditing && <span className="text-sm">{policyName}</span>}
+
+            <div className="my-4 w-full">
+                <Input
+                    placeholder={c('Action').t`Search`}
+                    prefix={<Icon name="magnifier" />}
+                    className="pl-0"
+                    value={searchQuery}
+                    onChange={({ target }) => setSearchQuery(target.value)}
+                />
+            </div>
+
+            <Table responsive="stacked" hasActions className="unstyled my-0">
+                <TableBody>
+                    {filteredGroups.map(({ country, localizedCountryName, cities }) => {
+                        const selectedCount = selectedCities[country]?.length ?? 0;
+                        const allCitiesSelected = selectedCount === cities.length;
+                        const isExpanded = expandedCountries[country];
+
+                        return (
+                            <React.Fragment key={country}>
+                                <TableRow onClick={() => onToggleCountry(country)} className="cursor-pointer">
+                                    <TableCell>
+                                        <div
+                                            className={clsx(
+                                                'flex items-center gap-4',
+                                                !allCitiesSelected && 'opacity-50'
+                                            )}
+                                        >
+                                            <Checkbox
+                                                id={`country-${country}`}
+                                                checked={allCitiesSelected}
+                                                onChange={() => onSelectCountry(country, cities)}
+                                                aria-label={c('Action').t`Select country ${country}`}
+                                            />
+                                            <CountryFlagAndName
+                                                countryCode={country}
+                                                countryName={localizedCountryName}
+                                            />
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
+
+                                {isExpanded &&
+                                    cities.map((city) => {
+                                        const isChecked = selectedCities[country]?.includes(city) || false;
+                                        return (
+                                            <TableRow key={`${country}-${city}`}>
+                                                <TableCell>
+                                                    <div
+                                                        className={clsx(
+                                                            'flex items-center gap-4 ml-8',
+                                                            !isChecked && 'opacity-50'
+                                                        )}
+                                                    >
+                                                        <Checkbox
+                                                            id={`city-${country}-${city}`}
+                                                            checked={isChecked}
+                                                            onChange={() => onSelectCity(country, city)}
+                                                            aria-label={c('Action').t`Select city ${city}`}
+                                                        />
+                                                        <Icon name="map-pin" />
+                                                        <span className="whitespace-nowrap">{city}</span>
+                                                    </div>
+                                                </TableCell>
+                                            </TableRow>
+                                        );
+                                    })}
+                            </React.Fragment>
+                        );
+                    })}
+                </TableBody>
+            </Table>
+        </div>
+    );
+};
+
+export default CountriesStep;
