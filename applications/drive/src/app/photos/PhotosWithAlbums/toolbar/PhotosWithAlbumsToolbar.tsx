@@ -1,6 +1,8 @@
 import { type FC } from 'react';
 
-import { Button, Vr } from '@proton/atoms';
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms';
 import {
     ButtonGroup,
     Dropdown,
@@ -18,7 +20,6 @@ import type { OnFileUploadSuccessCallbackData, PhotoGridItem, PhotoLink } from '
 import { isPhotoGroup } from '../../../store/_photos';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
-import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosMakeCoverButton } from './PhotosMakeCoverButton';
 import { PhotosPreviewButton } from './PhotosPreviewButton';
@@ -43,26 +44,32 @@ const AlbumGalleryDropdownButton = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     return (
         <>
-            <DropdownButton shape="ghost" ref={anchorRef} isOpen={isOpen} onClick={toggle} icon={true}>
-                <Icon name="three-dots-vertical" alt={'More'} />
+            <DropdownButton
+                shape="ghost"
+                ref={anchorRef}
+                isOpen={isOpen}
+                onClick={toggle}
+                className="inline-flex flex-nowrap flex-row items-center"
+            >
+                <Icon name="three-dots-vertical" className="mr-2" /> {c('Action').t`More`}
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
-                    <DropdownMenuButton className="text-left">
-                        <Icon name="window-image" alt={'Set album cover'} />
-                        {'Set album cover'}
+                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                        <Icon className="mr-2" name="window-image" />
+                        {c('Action').t`Set album cover`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left">
-                        <Icon name="pencil" alt={'Edit album'} />
-                        {'Edit album'}
+                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                        <Icon className="mr-2" name="pencil" />
+                        {c('Action').t`Edit album`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left">
-                        <Icon name="info-circle" alt={'Details'} />
-                        {'Details'}
+                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                        <Icon className="mr-2" name="info-circle" />
+                        {c('Action').t`Details`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left">
-                        <Icon name="trash" alt={'Delete album'} />
-                        {'Delete album'}
+                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                        <Icon className="mr-2" name="trash" />
+                        {c('Action').t`Delete album`}
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
@@ -120,27 +127,29 @@ export const ToolbarLeftActionsGallery = ({
 interface ToolbarLeftActionsAlbumsGalleryProps {
     isLoading: boolean;
     onAlbumsClick: () => void;
-    name: string;
+    name?: string;
 }
 
 export const ToolbarLeftActionsAlbumsGallery = ({
     isLoading,
     onAlbumsClick,
-    name,
+    //name, // not sure if we should keep it?
 }: ToolbarLeftActionsAlbumsGalleryProps) => {
     const getButtonStyles = () => ({
         loading: isLoading,
         selected: false,
     });
 
+    // alignment to fix
     return (
-        <>
-            <Button color="weak" {...getButtonStyles()} onClick={onAlbumsClick}>
-                Albums
-            </Button>
-            <Icon name="chevron-right" />
-            <span>{name}</span>
-        </>
+        <Button
+            shape="ghost"
+            className="inline-flex flex-nowrap flex-row text-semibold items-center"
+            {...getButtonStyles()}
+            onClick={onAlbumsClick}
+        >
+            <Icon name="arrow-left" className="mr-2" /> Go back
+        </Button>
     );
 };
 
@@ -152,16 +161,16 @@ const ToolbarRightActionsAlbums = ({ createAlbumModal }: ToolbarRightActionsAlbu
     const { openModal } = createAlbumModal;
     return (
         <>
-            <ButtonGroup shape="ghost">
-                <Button
-                    icon={true}
-                    onClick={() => {
-                        openModal(true);
-                    }}
-                >
-                    <Icon name="plus" alt={'Create album'} />
-                </Button>
-            </ButtonGroup>
+            <Button
+                onClick={() => {
+                    openModal(true);
+                }}
+                color="weak"
+                shape="ghost"
+                className="inline-flex flex-nowrap flex-row items-center"
+            >
+                <Icon name="plus" className="mr-2" /> {c('Action').t`New album`}
+            </Button>
         </>
     );
 };
@@ -250,7 +259,6 @@ interface PhotosWithAlbumToolbarProps {
     uploadDisabled: boolean;
     tabSelection: 'albums' | 'gallery' | 'albums-gallery';
     createAlbumModal: ModalStateReturnObj;
-    addAlbumPhotosModal?: ModalStateReturnObj;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onSelectCover?: () => Promise<void>;
     album?: DecryptedAlbum;
@@ -266,7 +274,6 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     uploadDisabled,
     tabSelection,
     createAlbumModal,
-    addAlbumPhotosModal,
     onFileUpload,
     onSelectCover,
     album,
@@ -275,8 +282,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     const hasMultipleSelected = selectedItems.length > 1;
 
     return (
-        <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
-            <div className="gap-2 flex">
+        <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
+            <div className="gap-2 flex items-center">
                 {tabSelection === 'gallery' && (
                     <ToolbarRightActionsGallery uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
                 )}
@@ -296,11 +303,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
 
                 {hasSelection && (
                     <>
-                        {!uploadDisabled && <Vr />}
                         {!hasMultipleSelected && <PhotosPreviewButton onClick={() => onPreview?.()} />}
-                        {addAlbumPhotosModal && (
-                            <PhotosAddAlbumPhotosButton onClick={() => addAlbumPhotosModal.openModal(true)} />
-                        )}
                         <PhotosDownloadButton requestDownload={requestDownload} selectedLinks={selectedItems} />
                         {/* Only show set cover button if photo selected is not already the cover */}
                         {!hasMultipleSelected &&
@@ -310,9 +313,15 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                 <PhotosMakeCoverButton onSelectCover={onSelectCover} />
                             )}
                         {!hasMultipleSelected && <PhotosShareLinkButton selectedLinks={selectedItems} />}
+                        {/* kept in case
                         <Vr />
                         <PhotosDetailsButton selectedLinks={selectedItems} />
-                        <Vr />
+                        <Vr />*/}
+                        <PhotosAddAlbumPhotosButton
+                            onClick={() => {
+                                // console.log('TODO');
+                            }}
+                        />
                         <PhotosTrashButton selectedLinks={selectedItems} />
                     </>
                 )}

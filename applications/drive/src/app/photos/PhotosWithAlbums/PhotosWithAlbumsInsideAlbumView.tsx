@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     Loader,
     NavigationControl,
@@ -16,6 +17,7 @@ import {
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
+import clsx from '@proton/utils/clsx';
 
 import PortalPreview from '../../components/PortalPreview';
 import { useDetailsModal } from '../../components/modals/DetailsModal';
@@ -257,20 +259,24 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 className="flex flex-column flex-nowrap flex-1"
             >
                 <ToolbarRow
+                    className={clsx('m-2 rounded', selectedCount > 0 && 'bg-weak')}
+                    withBorder={false}
+                    withPadding={false}
                     titleArea={
                         <>
                             {selectedCount > 0 && (
-                                <span className="flex items-center text-strong pl-1">
+                                <span className="flex items-center pl-1">
                                     <div className="flex gap-2" data-testid="photos-selected-count">
-                                        <PhotosClearSelectionButton onClick={clearSelection} />
-                                        {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
-                                        <span aria-live="polite" aria-atomic="true">
-                                            {c('Info').ngettext(
-                                                msgid`${selectedCount} selected`,
-                                                `${selectedCount} selected`,
-                                                selectedCount
-                                            )}
-                                        </span>
+                                        <PhotosClearSelectionButton onClick={clearSelection}>
+                                            {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
+                                            <span aria-live="polite" aria-atomic="true">
+                                                {c('Info').ngettext(
+                                                    msgid`${selectedCount} selected`,
+                                                    `${selectedCount} selected`,
+                                                    selectedCount
+                                                )}
+                                            </span>
+                                        </PhotosClearSelectionButton>
                                     </div>
                                 </span>
                             )}
@@ -305,9 +311,43 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 />
 
                 {isAlbumPhotosEmpty ? (
-                    <>
-                        <span>Empty Albums View</span>
-                    </>
+                    <div className="flex flex-column flex-nowrap mx-2 w-full h-full">
+                        <div className="flex shrink-0 flex-row flex-nowrap mt-11 items-center">
+                            <div
+                                className="bg-weak border rounded mr-4 w-1/3 flex h-custom"
+                                style={{
+                                    '--h-custom': '14rem', // to remove when img is there, unless placeholder needs it?
+                                }}
+                            >
+                                <span className="m-auto">Img placeholder</span>
+                            </div>
+                            <div className="flex flex-column flex-nowrap mx-auto shrink-0 flex-1">
+                                <h1 className="text-bold h2">{album.name}</h1>
+                                <span className="color-weak">TODO: details to add</span>
+                            </div>
+                        </div>
+
+                        <div className="flex-1 flex">
+                            <div
+                                className="bg-weak border rounded p-4 flex my-auto min-h-custom w-full relative max-w-custom mx-auto"
+                                style={{
+                                    '--min-h-custom': '15rem',
+                                    '--max-w-custom': '30rem',
+                                }}
+                            >
+                                <div className="m-auto text-center">
+                                    <p className="mt-0">{c('Info').t`Album is empty`}</p>
+                                    <Button
+                                        color="norm"
+                                        className="expand-click-area"
+                                        title={c('Action').t`Add photos`}
+                                    >
+                                        {c('Action').t`Add photos`}
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 ) : (
                     <PhotosGrid
                         data={albumPhotos}
