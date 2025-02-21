@@ -25,7 +25,7 @@ export const BreachSummaryCard: FC<Props> = ({ className, onClick }) => {
             if (!didLoad && loading) {
                 return {
                     disabled: true,
-                    icon: () => <CircleLoader size="small" className="mx-1" />,
+                    icon: () => <CircleLoader size="small" />,
                     subtitle: c('Title').t`Loading breaches...`,
                     type: 'primary',
                 };
@@ -45,7 +45,7 @@ export const BreachSummaryCard: FC<Props> = ({ className, onClick }) => {
             }
 
             return {
-                icon: loading ? () => <CircleLoader size="small" className="mx-1" /> : 'checkmark',
+                icon: loading ? () => <CircleLoader size="small" /> : 'checkmark',
                 subtitle: c('Info').t`No breaches detected`,
                 type: 'success',
                 onClick,
