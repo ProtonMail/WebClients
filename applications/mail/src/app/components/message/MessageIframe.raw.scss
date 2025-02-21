@@ -121,13 +121,10 @@ a:not([href]) {
 	pointer-events: none;
 }
 
-/**
- * Avoid overflow management on #proton-root.
- * Better to handle it in body because risk of wrong height calculation
- */
 #proton-root {
 	box-sizing: content-box;
 	max-inline-size: none;
+	overflow: auto;
 }
 
 .proton-dark-style {
