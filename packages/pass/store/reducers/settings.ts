@@ -55,6 +55,18 @@ export type ExcludedProxiedSettingsKeys = Unpack<typeof EXCLUDED_SETTINGS_KEYS>;
  * sequence  (ie: if the user has been logged out) */
 export type ProxiedSettings = Omit<SettingsState, ExcludedProxiedSettingsKeys>;
 
+type ProxiedSettingsOptions = {
+    canCreateItems: boolean;
+};
+
+export const getFinalProxiedSettings = (
+    settings: ProxiedSettings,
+    { canCreateItems }: ProxiedSettingsOptions
+): ProxiedSettings =>
+    canCreateItems
+        ? settings
+        : partialMerge(settings, { autosave: { prompt: false, passwordSuggest: false }, passkeys: { create: false } });
+
 export const getInitialSettings = (): ProxiedSettings => ({
     autofill: { identity: true, twofa: true },
     autosave: { prompt: true, passwordSuggest: true },
