@@ -104,8 +104,15 @@ const MainContainer = () => {
         );
     }
 
-    if (!isDone && !isElectronMail) {
-        return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} drawerView={drawerView} />;
+    if (!isDone) {
+        if (!isElectronMail && !drawerView) {
+            return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} />;
+        } else {
+            // If calendar is opened from the desktop app or the drawer, set the welcome flags so that
+            // the user won't see the modal when using the web version later on.
+            // Note, if we update the onboarding flow in calendar one day, this condition might need a rework.
+            setWelcomeFlagsDone();
+        }
     }
 
     if (!ignoreUnlock && calendarsToAct.info.unlockAny) {
