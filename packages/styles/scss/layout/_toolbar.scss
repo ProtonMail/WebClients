@@ -26,6 +26,10 @@
 		block-size: 100%;
 	}
 
+	&--no-bg {
+		background-color: transparent;
+	}
+
 	&-button {
 		@extend .interactive;
 

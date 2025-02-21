@@ -47,7 +47,7 @@ export const DriveEmptyView = forwardRef<HTMLDivElement, Props>(
                 <div className={clsx(!!children && 'mb-8')}>
                     <h3 className="text-bold">{title}</h3>
                     {filterSubtitles(subtitle).map((text) => (
-                        <p key={text} className={'color-weak m-0 mt-2'}>
+                        <p key={text} className="color-weak m-0 mt-2">
                             {text}
                         </p>
                     ))}

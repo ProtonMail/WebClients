@@ -194,20 +194,23 @@ export const PhotosWithAlbumsView: FC = () => {
                 className="flex flex-column flex-nowrap flex-1"
             >
                 <ToolbarRow
+                    withBorder={false}
+                    withPadding={false}
                     titleArea={
                         <>
                             {selectedCount > 0 && (
                                 <span className="flex items-center text-strong pl-1">
                                     <div className="flex gap-2" data-testid="photos-selected-count">
-                                        <PhotosClearSelectionButton onClick={clearSelection} />
-                                        {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
-                                        <span aria-live="polite" aria-atomic="true">
-                                            {c('Info').ngettext(
-                                                msgid`${selectedCount} selected`,
-                                                `${selectedCount} selected`,
-                                                selectedCount
-                                            )}
-                                        </span>
+                                        <PhotosClearSelectionButton onClick={clearSelection}>
+                                            {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
+                                            <span aria-live="polite" aria-atomic="true">
+                                                {c('Info').ngettext(
+                                                    msgid`${selectedCount} selected`,
+                                                    `${selectedCount} selected`,
+                                                    selectedCount
+                                                )}
+                                            </span>
+                                        </PhotosClearSelectionButton>
                                     </div>
                                 </span>
                             )}
@@ -237,7 +240,6 @@ export const PhotosWithAlbumsView: FC = () => {
                             uploadDisabled={isUploadDisabled}
                             tabSelection={'gallery'}
                             createAlbumModal={createAlbumModal}
-                            addAlbumPhotosModal={addAlbumPhotosModal}
                         />
                     }
                 />

@@ -44,14 +44,15 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
 
         // Inner scroll container dimensions
         const containerWidth = containerRect.width - 2 * emRatio;
+
         const containerHeight = containerRect.height;
 
         // Item base dimensions (should be scaled)
-        const width = 10 * emRatio;
-        const height = 13.75 * emRatio;
+        const width = 16.875 * emRatio;
+        const height = 11.75 * emRatio;
 
         // Gap between items (never scaled)
-        const gap = 0.25 * emRatio;
+        const gap = 0.5 * emRatio;
 
         // Height of group (never scaled)
         const groupHeight = 2.75 * emRatio;
@@ -66,6 +67,8 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
         const itemHeight = height * scaling;
         const itemWidth = width * scaling;
 
+        const additionalSpace = 3.6 * emRatio;
+
         // Helper to know if an item is within the viewport
         const scrollMargin = (itemHeight + gap) * 2;
         const itemShouldRender = (y: number, scrollPosition: number) =>
@@ -77,6 +80,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
             gap,
             groupHeight,
             itemsPerLine,
+            additionalSpace,
             itemShouldRender,
         };
     }, [containerRect, emRatio]);
@@ -86,7 +90,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
             return [];
         }
 
-        const { gap, itemHeight, itemWidth, itemsPerLine, itemShouldRender } = dimensions;
+        const { gap, itemHeight, itemWidth, itemsPerLine, itemShouldRender, additionalSpace } = dimensions;
 
         const items: ReactNode[] = [];
 
@@ -101,7 +105,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
 
         data.forEach((item, i) => {
             const x = currentX * (itemWidth + gap);
-            const y = currentY;
+            const y = currentY + additionalSpace;
             lastY = y;
 
             if (itemShouldRender(y, scrollPosition)) {
@@ -128,20 +132,20 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
 
             currentX++;
             if (currentX >= itemsPerLine) {
-                currentY += itemHeight + gap;
+                currentY += itemHeight + gap + additionalSpace;
                 currentX = 0;
             }
         });
 
         const innerStyle = {
-            height: `${lastY + itemHeight}px`,
+            height: `${lastY + itemHeight + additionalSpace}px`,
         };
 
         return [items, innerStyle];
     }, [data, dimensions, scrollPosition, isLoading]);
 
     return (
-        <div className="p-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
+        <div className="px-2 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
