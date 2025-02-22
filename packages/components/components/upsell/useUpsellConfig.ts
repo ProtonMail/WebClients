@@ -9,7 +9,7 @@ import {
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE } from '@proton/payments';
-import type { ADDON_NAMES, PLANS } from '@proton/payments';
+import type { PlanIDs } from '@proton/payments';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
@@ -24,7 +24,7 @@ interface Props {
     cycle?: CYCLE;
     maximumCycle?: CYCLE;
     minimumCycle?: CYCLE;
-    plan?: PLANS | ADDON_NAMES;
+    planIDs?: PlanIDs;
     onSubscribed?: () => void;
     /**
      * Can be used to prevent the modal from being opened in the drawer
@@ -36,6 +36,7 @@ export const appsWithInApp = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACC
 
 export const getUpsellConfig = ({
     appName,
+    configOverride,
     coupon,
     cycle = CYCLE.YEARLY,
     maximumCycle,
@@ -43,7 +44,7 @@ export const getUpsellConfig = ({
     getFlag,
     onSubscribed,
     openSubscriptionModal,
-    plan,
+    planIDs,
     preventInApp = false,
     step = SUBSCRIPTION_STEPS.CHECKOUT,
     subscription,
@@ -55,6 +56,8 @@ export const getUpsellConfig = ({
     openSubscriptionModal: OpenSubscriptionModalCallback;
     subscription: Subscription | undefined;
     user: UserModel;
+    /** Override final config before opening subscription modal */
+    configOverride?: (config: OpenCallbackProps) => void;
 }): { upgradePath: string; onUpgrade?: () => void } => {
     const hasSubscriptionModal = openSubscriptionModal !== noop;
     const inboxUpsellFlowEnabled = getFlag('InboxUpsellFlow');
@@ -75,9 +78,11 @@ export const getUpsellConfig = ({
             upsellRef,
         };
 
-        if (plan) {
-            subscriptionCallBackProps.planIDs = { [plan]: 1 };
+        if (planIDs) {
+            subscriptionCallBackProps.planIDs = planIDs;
         }
+
+        configOverride?.(subscriptionCallBackProps);
 
         // The subscription modal will open in inbox app
         return {
@@ -108,7 +113,7 @@ const useUpsellConfig = ({
     cycle,
     maximumCycle,
     minimumCycle,
-    plan,
+    planIDs,
     onSubscribed,
     preventInApp = false,
 }: Props): { upgradePath: string; onUpgrade?: () => void } => {
@@ -128,7 +133,7 @@ const useUpsellConfig = ({
         step,
         coupon,
         cycle,
-        plan,
+        planIDs,
         onSubscribed,
         preventInApp,
         maximumCycle,
