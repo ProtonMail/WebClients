@@ -248,7 +248,6 @@ const AddressesUser = ({
                         .t`Keep different parts of your life separate and your inbox organized with additional addresses.`}
                     modalProps={upsellModalProps}
                     illustration={addressesImg}
-                    sourceEvent="BUTTON_MORE_ADDRESSES"
                     upsellRef={upsellRef}
                 />
             )}

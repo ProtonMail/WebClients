@@ -96,7 +96,6 @@ const PMSignature = ({ id }: Props) => {
                         .t`Make your email footer your own — showcase your unique brand, not ours.`}
                     modalProps={upsellModalProps}
                     illustration={signatureImg}
-                    sourceEvent="BUTTON_MAIL_FOOTER"
                     upsellRef={upsellRef}
                 />
             )}

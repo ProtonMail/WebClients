@@ -198,7 +198,6 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                             .t`Don’t want to send your email right now? Schedule it for exactly the right time.`}
                         modalProps={upsellModalProps}
                         illustration={scheduleSendImg}
-                        sourceEvent="BUTTON_SCHEDULE_SEND"
                         upsellRef={upsellRef}
                     />
                 )}

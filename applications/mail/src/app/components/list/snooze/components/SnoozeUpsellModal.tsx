@@ -21,7 +21,6 @@ const SnoozeDurationSelection = (props: ModalStateProps) => {
                 .t`With custom snooze, you can hide emails and set them to reappear at a better time.`}
             modalProps={props}
             illustration={snoozeImg}
-            sourceEvent="BUTTON_SNOOZE"
             upsellRef={upsellRef}
         />
     );

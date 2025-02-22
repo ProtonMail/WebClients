@@ -46,7 +46,6 @@ const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onSubscribed }
         }
         modalProps={modalProps}
         illustration={illustration}
-        sourceEvent="BUTTON_DWM"
         upsellRef={getUpsellRef({
             app: upsellApp,
             component: upsellComponent,

@@ -24,7 +24,6 @@ const ProtonSentinelUpsellModal = ({ modalProps, upsellComponent }: Props) => (
             .t`${PROTON_SENTINEL_NAME} protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.`}
         modalProps={modalProps}
         illustration={shieldImg}
-        sourceEvent="BUTTON_SENTINEL"
         upsellRef={getUpsellRef({
             app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
             component: upsellComponent || UPSELL_COMPONENT.MODAL,

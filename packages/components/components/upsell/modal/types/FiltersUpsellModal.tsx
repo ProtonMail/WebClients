@@ -31,7 +31,6 @@ const FiltersUpsellModal = ({ modalProps, onCloseCustomAction, isSettings = fals
             modalProps={modalProps}
             illustration={filterImg}
             onClose={onCloseCustomAction}
-            sourceEvent="BUTTON_CUSTOM_FILTERS"
             upsellRef={upsellRef}
         />
     );
