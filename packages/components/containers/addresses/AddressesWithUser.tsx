@@ -13,7 +13,7 @@ import OrderableTableHeader from '@proton/components/components/orderableTable/O
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import useApi from '@proton/components/hooks/useApi';

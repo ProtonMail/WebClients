@@ -10,7 +10,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Tabs from '@proton/components/components/tabs/Tabs';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';

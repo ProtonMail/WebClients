@@ -12,7 +12,7 @@ import {
     useNotifications,
     useShortDomainAddress,
 } from '@proton/components';
-import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modal/types/IncreasePrivacyUpsellModal';
+import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modals/IncreasePrivacyUpsellModal';
 import { useFolders, useLabels } from '@proton/mail';
 import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store';

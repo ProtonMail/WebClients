@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import PmMeUpsellModal from '@proton/components/components/upsell/modal/types/PmMeUpsellModal';
+import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
