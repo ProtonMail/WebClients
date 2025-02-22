@@ -43,7 +43,6 @@ const ComposerAssistantB2CUpsellModal = ({ modalProps }: Props) => {
                 </>
             }
             modalProps={modalProps}
-            sourceEvent="BUTTON_SCRIBE"
             upsellRef={upsellRef}
         />
     );

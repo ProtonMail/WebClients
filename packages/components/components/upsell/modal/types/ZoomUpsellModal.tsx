@@ -28,7 +28,6 @@ const ZoomUpsellModal = ({ modalProps }: Props) => {
                 .t`Create a Zoom meeting and add joining details to your event with one click.`}
             modalProps={modalProps}
             illustration={zoomUpsellSvg}
-            sourceEvent="BUTTON_ZOOM"
             upsellRef={upsellRef}
             preventInAppPayment={isIframe}
         />

@@ -46,7 +46,6 @@ const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
             }
             modalProps={modalProps}
             illustration={pmMeImg}
-            sourceEvent="BUTTON_SHORT_DOMAIN"
             upsellRef={upsellRef}
         />
     );

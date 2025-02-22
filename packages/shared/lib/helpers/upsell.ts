@@ -1,63 +1,7 @@
 import { type COUPON_CODES, type CYCLE, PLANS, type Subscription, getPlan } from '@proton/payments';
 import type { APP_NAMES, UPSELL_COMPONENT, UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { APPS, APP_UPSELL_REF_PATH } from '@proton/shared/lib/constants';
-import type { Api, Audience, UserModel } from '@proton/shared/lib/interfaces';
-
-import { TelemetryMeasurementGroups, TelemetryUpsellModalsEvents } from '../api/telemetry';
-import { sendTelemetryReport } from './metrics';
-
-export const enum UPSELL_MODALS {
-    CLICK = 'CLICK',
-}
-
-export const enum UPSELL_MODALS_TYPE {
-    OLD = 'OLD-MODALS',
-    NEW = 'NEW-MODALS',
-}
-
-export type SourceEventUpsell =
-    | 'BUTTON_SCHEDULE_SEND'
-    | 'BUTTON_CONTACT_GROUPS'
-    | 'BUTTON_SHORT_DOMAIN'
-    | 'BUTTON_AUTO_DELETE'
-    | 'BUTTON_MORE_LABELS_FOLDERS'
-    | 'BUTTON_MORE_ADDRESSES'
-    | 'BUTTON_CUSTOM_FILTERS'
-    | 'BUTTON_MAIL_FOOTER'
-    | 'BUTTON_SNOOZE'
-    | 'BUTTON_FORWARD_EMAILS'
-    | 'BUTTON_PASS_ALIASES'
-    | 'BUTTON_COLOR_PER_EVENT'
-    | 'BUTTON_SENTINEL'
-    | 'BUTTON_SCRIBE'
-    | 'BUTTON_ZOOM'
-    | 'STATE_ACCOUNT_LOCKED'
-    | 'BUTTON_DWM'
-    | 'BUTTON_PUBLIC_SHARING_EDITOR';
-
-export const sendRequestUpsellModalReport = ({
-    api,
-    action = UPSELL_MODALS.CLICK,
-    application,
-    sourceEvent,
-    upsellModalType,
-    delay = false,
-}: {
-    api: Api;
-    action?: UPSELL_MODALS;
-    application: APP_NAMES;
-    sourceEvent: SourceEventUpsell;
-    upsellModalType: UPSELL_MODALS_TYPE;
-    delay?: boolean;
-}) => {
-    void sendTelemetryReport({
-        api,
-        measurementGroup: TelemetryMeasurementGroups.upsellModals,
-        event: TelemetryUpsellModalsEvents.clickUpsellModals,
-        dimensions: { action, application, sourceEvent, upsellModalType },
-        delay,
-    });
-};
+import type { Audience, UserModel } from '@proton/shared/lib/interfaces';
 
 /**
  * Add an upsell ref param to a URL

@@ -46,7 +46,6 @@ const IncreasePrivacyUpsellModal = ({ modalProps, upsellComponent }: Props) => {
             }
             modalProps={modalProps}
             upsellRef={upsellRef}
-            sourceEvent="BUTTON_MORE_ADDRESSES"
         />
     );
 };

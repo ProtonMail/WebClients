@@ -18,7 +18,6 @@ const AutoDeleteUpsellModal = ({ modalProps, upsellComponent }: Props) => (
         description={c('Description').t`Automatically clear out emails moved to Trash and Spam more than 30 days ago.`}
         modalProps={modalProps}
         illustration={autoDeleteImg}
-        sourceEvent="BUTTON_AUTO_DELETE"
         upsellRef={getUpsellRef({
             app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
             component: upsellComponent ?? UPSELL_COMPONENT.MODAL,

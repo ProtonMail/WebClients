@@ -38,7 +38,6 @@ const LabelsUpsellModal = ({
             description={c('Description').t`Create as many labels or folders as you need to keep your inbox tidy.`}
             modalProps={modalProps}
             illustration={labelsImg}
-            sourceEvent="BUTTON_MORE_LABELS_FOLDERS"
             upsellRef={upsellRef}
             onClose={onCloseCustomAction}
         />

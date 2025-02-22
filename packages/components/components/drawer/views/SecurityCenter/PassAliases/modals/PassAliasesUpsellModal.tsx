@@ -26,7 +26,6 @@ const PassAliasesUpsellModal = ({ modalProps, upsellComponent }: Props) => {
                 .t`You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${BRAND_NAME} Unlimited.`}
             modalProps={modalProps}
             illustration={identityImg}
-            sourceEvent="BUTTON_PASS_ALIASES"
             upsellRef={upsellRef}
         />
     );

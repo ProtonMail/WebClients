@@ -42,7 +42,6 @@ const ComposerAssistantB2BUpsellModal = ({ modalProps, isOrgUser }: Props) => {
             }
             illustration={illustration}
             modalProps={modalProps}
-            sourceEvent="BUTTON_SCRIBE"
             upsellRef={upsellRef}
         />
     );
