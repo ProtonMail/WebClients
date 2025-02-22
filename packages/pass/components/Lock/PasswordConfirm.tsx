@@ -16,6 +16,7 @@ export const PasswordConfirm: FC<Props> = ({ mode, onSuccess }) => {
 
     return (
         <PasswordForm
+            autosavable
             id="password-confirm"
             loading={confirm.loading}
             submitLabel={c('Action').t`Continue`}
