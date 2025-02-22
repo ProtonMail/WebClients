@@ -9,11 +9,11 @@ import {
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE } from '@proton/payments';
-import type { PlanIDs } from '@proton/payments';
+import type { PlanIDs, Subscription } from '@proton/payments';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
-import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { useGetFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 

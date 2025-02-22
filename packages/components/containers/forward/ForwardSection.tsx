@@ -126,7 +126,6 @@ const ForwardSection = () => {
                         .t`Set up auto-forwarding to redirect incoming emails to another email address.`}
                     modalProps={upsellModalProps}
                     illustration={forwardImg}
-                    sourceEvent="BUTTON_FORWARD_EMAILS"
                     upsellRef={upsellRef}
                 />
             )}

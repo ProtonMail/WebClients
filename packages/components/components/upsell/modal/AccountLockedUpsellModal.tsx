@@ -14,13 +14,11 @@ import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useApi from '@proton/components/hooks/useApi';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
-import type { Currency } from '@proton/payments';
-import { CYCLE, PLANS, type Plan, getPlansMap, getPriceStartsFrom } from '@proton/payments';
-import { getCanSubscriptionAccessDuoPlan } from '@proton/payments';
-import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { UPSELL_MODALS_TYPE, getUpsellRef, sendRequestUpsellModalReport } from '@proton/shared/lib/helpers/upsell';
+import type { Currency, Plan } from '@proton/payments';
+import { CYCLE, PLANS, getCanSubscriptionAccessDuoPlan, getPlansMap } from '@proton/payments';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import isTruthy from '@proton/utils/isTruthy';
 
 import AccountLockedUpsellForm from './AccountLockedUpsellForm';
@@ -92,7 +90,6 @@ interface AccountLockedUpsellModalProps extends ModalProps {
 }
 
 const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsellModalProps) => {
-    const api = useApi();
     const [selectedPlan, setSelectedPlan] = useState<Plan | undefined>();
     const [plansResult, planResultLoading] = usePlans();
     const [user] = useUser();
@@ -107,7 +104,8 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
     });
     const upsellConfig = useUpsellConfig({
         upsellRef,
-        plan: selectedPlan ? selectedPlan.Name : undefined,
+        // TODO: fix
+        planIDs: selectedPlan ? { [selectedPlan.Name]: 1 } : undefined,
         step: SUBSCRIPTION_STEPS.CHECKOUT,
         onSubscribed: () => {
             onSubscribed();
@@ -116,12 +114,6 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
     });
 
     const handleUpgrade = () => {
-        sendRequestUpsellModalReport({
-            api,
-            application: APPS.PROTONMAIL,
-            sourceEvent: 'STATE_ACCOUNT_LOCKED',
-            upsellModalType: UPSELL_MODALS_TYPE.OLD,
-        });
         upsellConfig.onUpgrade?.();
     };
 

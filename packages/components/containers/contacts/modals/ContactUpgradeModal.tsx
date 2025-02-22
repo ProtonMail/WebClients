@@ -24,7 +24,6 @@ const ContactUpgradeModal = (modalProps: ModalStateProps) => {
                 .t`With contact groups, you can send emails to everyone in the group with one click.`}
             modalProps={modalProps}
             illustration={contactGroupsImg}
-            sourceEvent="BUTTON_CONTACT_GROUPS"
             upsellRef={upsellRef}
         />
     );
