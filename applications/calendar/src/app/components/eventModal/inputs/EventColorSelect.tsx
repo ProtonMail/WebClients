@@ -108,7 +108,6 @@ const EventColorSelect = ({ model, setModel }: Props) => {
                     description={c('Description')
                         .t`Color-code events to make it easier to organize your day, track your time, and prioritize tasks.`}
                     modalProps={upsellModalProps}
-                    sourceEvent="BUTTON_COLOR_PER_EVENT"
                     illustration={paintImg}
                     upsellRef={upsellRef}
                     preventInAppPayment={isIframe}

@@ -7,19 +7,8 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import useApi from '@proton/components/hooks/useApi';
-import { getAppFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
-import {
-    SentryMailInitiatives,
-    captureInitiativeMessage,
-    traceInitiativeError,
-} from '@proton/shared/lib/helpers/sentry';
-import {
-    type SourceEventUpsell,
-    UPSELL_MODALS_TYPE,
-    sendRequestUpsellModalReport,
-} from '@proton/shared/lib/helpers/upsell';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import useFetchMailUpsellModalConfig, { type MailUpsellConfig } from '../useFetchMailUpsellModalConfig';
 
@@ -28,8 +17,6 @@ export interface UpsellModalProps {
     /** Image displayed above the title */
     illustration: string;
     modalProps: ModalStateProps;
-    /** From where upsell modal is opened */
-    sourceEvent: SourceEventUpsell;
     upsellRef?: string;
     /** Text displayed before the CTA */
     description?: ReactNode;
@@ -89,24 +76,14 @@ const UpsellModal = ({
     customDescription,
     illustration,
     onClose,
-    sourceEvent,
     upsellRef,
     preventInAppPayment,
     onSubscribed,
 }: UpsellModalProps) => {
-    const api = useApi();
     const [config, setConfig] = useState<MailUpsellConfig | null>(null);
     const fetchUpsellConfig = useFetchMailUpsellModalConfig();
 
     const handleUpgrade = () => {
-        const application = getAppFromPathname(window.location.pathname);
-        if (application) {
-            // TODO: Remove this telemetry
-            sendRequestUpsellModalReport({ api, application, sourceEvent, upsellModalType: UPSELL_MODALS_TYPE.NEW });
-        } else {
-            captureInitiativeMessage(SentryMailInitiatives.UPSELL_MODALS, 'Application not found');
-        }
-
         config?.onUpgrade?.();
         modalProps.onClose();
     };
