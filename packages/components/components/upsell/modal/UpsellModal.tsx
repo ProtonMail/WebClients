@@ -28,6 +28,7 @@ export interface UpsellModalProps {
     /** Image displayed above the title */
     illustration: string;
     modalProps: ModalStateProps;
+    /** From where upsell modal is opened */
     sourceEvent: SourceEventUpsell;
     upsellRef?: string;
     /** Text displayed before the CTA */
@@ -46,11 +47,17 @@ const UpgradeButton = ({
     path,
     onClick,
     submitText,
+    closeModal,
 }: {
+    closeModal: () => void;
     onClick: () => void;
     path?: string;
-    submitText?: ReactNode;
+    submitText?: ReactNode | ((closeModal: () => void) => ReactNode);
 }) => {
+    if (typeof submitText === 'function') {
+        return submitText(closeModal);
+    }
+
     if (path) {
         return (
             <ButtonLike
@@ -94,6 +101,7 @@ const UpsellModal = ({
     const handleUpgrade = () => {
         const application = getAppFromPathname(window.location.pathname);
         if (application) {
+            // TODO: Remove this telemetry
             sendRequestUpsellModalReport({ api, application, sourceEvent, upsellModalType: UPSELL_MODALS_TYPE.NEW });
         } else {
             captureInitiativeMessage(SentryMailInitiatives.UPSELL_MODALS, 'Application not found');
@@ -110,6 +118,7 @@ const UpsellModal = ({
 
     useEffect(() => {
         const fetchTimeout = 5000;
+        // TODO: Cancel timeout if component unmounts
         promiseWithTimeout({
             promise: fetchUpsellConfig({
                 upsellRef,
@@ -131,7 +140,7 @@ const UpsellModal = ({
         <ModalTwo {...modalProps} size="xsmall" data-testid={dataTestid} onClose={handleClose}>
             <ModalTwoContent unstyled>
                 <div
-                    className="relative flex justify-center items-center fade-in-up h-custom custom-bg"
+                    className="relative flex justify-center items-center h-custom custom-bg"
                     style={{ '--h-custom': '11rem', '--custom-bg': 'var(--optional-background-lowered)' }}
                 >
                     <ModalHeaderCloseButton
@@ -149,9 +158,10 @@ const UpsellModal = ({
                             onClick={handleUpgrade}
                             path={config.upgradePath}
                             submitText={config.submitText}
+                            closeModal={handleClose}
                         />
                     ) : (
-                        <Loader size="medium" />
+                        <Loader size="medium" className="color-primary" />
                     )}
                     {customDescription && <div className="my-6">{customDescription}</div>}
                     {config?.footerText ? <p className="mt-2 m-0 text-sm color-weak">{config.footerText}</p> : null}
