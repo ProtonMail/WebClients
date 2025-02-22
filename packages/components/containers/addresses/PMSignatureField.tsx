@@ -4,7 +4,7 @@ import { useUserSettings } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';

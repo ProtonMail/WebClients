@@ -9,7 +9,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import DWMUpsellModal from '@proton/components/components/upsell/modal/types/DWMUpsellModal';
+import DWMUpsellModal from '@proton/components/components/upsell/modals/DWMUpsellModal';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';

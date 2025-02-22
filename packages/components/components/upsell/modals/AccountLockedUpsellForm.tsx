@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms/index';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
-import type { UpsellFeatureName } from '@proton/components/components/upsell/modal/constants';
+import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
+import type { UpsellFeatureName } from '@proton/components/components/upsell/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { type Plan } from '@proton/payments';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

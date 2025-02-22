@@ -10,7 +10,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import useFetchMailUpsellModalConfig, { type MailUpsellConfig } from '../useFetchMailUpsellModalConfig';
+import useFetchMailUpsellModalConfig, { type MailUpsellConfig } from './useFetchMailUpsellModalConfig';
 
 export interface UpsellModalProps {
     title: ReactNode;

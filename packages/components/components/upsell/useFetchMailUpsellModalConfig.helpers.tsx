@@ -34,11 +34,11 @@ import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/he
 import type useGetFlag from '@proton/unleash/useGetFlag';
 
 import Price from '../price/Price';
-import { getIsB2CUserAbleToRunScribe } from './modal/types/ComposerAssistantUpsellModal.helpers';
+import { getIsB2CUserAbleToRunScribe } from './modals/ComposerAssistantUpsellModal.helpers';
 
 const ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE = 100;
 
-export const getMailUpsellsSubmitText = ({
+const getMailUpsellsSubmitText = ({
     planIDs,
     monthlyPrice,
     currency,
@@ -69,7 +69,7 @@ export const getMailUpsellsSubmitText = ({
     return getPlanOrAppNameText(planName);
 };
 
-export const getMailUpsellsFooterText = ({
+const getMailUpsellsFooterText = ({
     planIDs,
     monthlyPrice,
     currency,
