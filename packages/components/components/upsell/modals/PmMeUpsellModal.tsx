@@ -1,31 +1,30 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal';
+import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import type { Optional } from '@proton/shared/lib/interfaces';
 import pmMeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
-
-import UpsellFeatureList from '../UpsellFeatureList';
 
 interface Props {
     modalProps: ModalStateProps;
-    upsellComponent?: UPSELL_COMPONENT;
+    upsellRefOptions: Optional<Parameters<typeof getUpsellRef>[0], 'feature'>;
 }
 
-const IncreasePrivacyUpsellModal = ({ modalProps, upsellComponent }: Props) => {
-    const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
-        feature: MAIL_UPSELL_PATHS.UNLIMITED_ADDRESSES,
-    });
+const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
+    const upsellRef = getUpsellRef({ feature: MAIL_UPSELL_PATHS.SHORT_ADDRESS, ...upsellRefOptions });
+    const [user] = useUser();
+    const activatePmUser = `${user.Name}@pm.me`;
 
     return (
         <UpsellModal
-            illustration={pmMeImg}
-            title={c('Title').t`Increase your privacy with more addresses`}
+            title={c('Title').t`Same inbox, shorter email address`}
+            // translator: full sentence is Upgrade to get <address@pm.me> for a shorter, easy-to-remember email address in addition to your current one.
             description={c('Description')
-                .t`Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.`}
+                .t`Upgrade to get ${activatePmUser} for a shorter, easy-to-remember email address in addition to your current one.`}
             customDescription={
                 <>
                     <p className="text-left my-0 mb-2">
@@ -39,15 +38,17 @@ const IncreasePrivacyUpsellModal = ({ modalProps, upsellComponent }: Props) => {
                                 'more-email-addresses',
                                 'unlimited-folders-and-labels',
                                 'custom-email-domains',
+                                'more-premium-features',
                             ]}
                         />
                     </div>
                 </>
             }
             modalProps={modalProps}
+            illustration={pmMeImg}
             upsellRef={upsellRef}
         />
     );
 };
 
-export default IncreasePrivacyUpsellModal;
+export default PmMeUpsellModal;

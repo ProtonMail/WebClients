@@ -8,7 +8,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button, Href } from '@proton/atoms';
 import Badge from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
-import { getIsB2CUserAbleToRunScribe } from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal.helpers';
+import { getIsB2CUserAbleToRunScribe } from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal.helpers';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
