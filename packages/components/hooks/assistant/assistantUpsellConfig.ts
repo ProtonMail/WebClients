@@ -1,7 +1,6 @@
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import type { SelectedPlan } from '@proton/payments';
-import { CYCLE, type PlanIDs, getScribeAddonNameByPlan, isScribeAddon, removeAddon } from '@proton/payments';
+import { CYCLE, type PlanIDs, getScribeAddonNameByPlan } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({
@@ -10,7 +9,7 @@ const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({
     maximumCycle: currentCycle === CYCLE.MONTHLY ? CYCLE.YEARLY : currentCycle,
 });
 
-export const getAssistantUpsellConfig = (
+export const getAssistantUpsellConfigPlanAndCycle = (
     user: UserModel,
     isOrgAdmin: boolean,
     selectedPlan: SelectedPlan
@@ -59,27 +58,4 @@ export const getAssistantUpsellConfig = (
     }
 
     return undefined;
-};
-
-// TODO: Remove as it's unused
-export const getAssistantDowngradeConfig = (
-    upsellRef: string,
-    selectedPlan: SelectedPlan
-): OpenCallbackProps | undefined => {
-    return {
-        mode: 'upsell-modal',
-        /**
-         * Removes only Scribe addons and keep all others
-         */
-        planIDs: removeAddon(selectedPlan.planIDs, isScribeAddon),
-        step: SUBSCRIPTION_STEPS.CHECKOUT,
-        disablePlanSelection: true,
-        cycle: selectedPlan.cycle,
-        maximumCycle: selectedPlan.cycle,
-        minimumCycle: selectedPlan.cycle,
-        upsellRef,
-        metrics: {
-            source: 'upsells',
-        },
-    };
 };

@@ -9,7 +9,7 @@ import {
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE } from '@proton/payments';
-import type { PlanIDs, Subscription } from '@proton/payments';
+import type { Plan, PlanIDs, Subscription } from '@proton/payments';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
@@ -24,7 +24,7 @@ interface Props {
     cycle?: CYCLE;
     maximumCycle?: CYCLE;
     minimumCycle?: CYCLE;
-    planIDs?: PlanIDs;
+    plan?: Plan['Name'];
     onSubscribed?: () => void;
     /**
      * Can be used to prevent the modal from being opened in the drawer
@@ -50,8 +50,9 @@ export const getUpsellConfig = ({
     subscription,
     upsellRef,
     user,
-}: Props & {
+}: Omit<Props, 'plan'> & {
     appName: APP_NAMES;
+    planIDs?: PlanIDs;
     getFlag: ReturnType<typeof useGetFlag>;
     openSubscriptionModal: OpenSubscriptionModalCallback;
     subscription: Subscription | undefined;
@@ -113,7 +114,7 @@ const useUpsellConfig = ({
     cycle,
     maximumCycle,
     minimumCycle,
-    planIDs,
+    plan,
     onSubscribed,
     preventInApp = false,
 }: Props): { upgradePath: string; onUpgrade?: () => void } => {
@@ -133,7 +134,7 @@ const useUpsellConfig = ({
         step,
         coupon,
         cycle,
-        planIDs,
+        planIDs: plan ? { [plan]: 1 } : undefined,
         onSubscribed,
         preventInApp,
         maximumCycle,

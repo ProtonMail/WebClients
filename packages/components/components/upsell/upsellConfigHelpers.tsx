@@ -6,7 +6,7 @@ import { memberThunk } from '@proton/account/member';
 import { organizationThunk } from '@proton/account/organization';
 import { Button } from '@proton/atoms/index';
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { getAssistantUpsellConfig } from '@proton/components/hooks/assistant/assistantUpsellConfig';
+import { getAssistantUpsellConfigPlanAndCycle } from '@proton/components/hooks/assistant/assistantUpsellConfig';
 import { getIsNewBatchCurrenciesEnabled } from '@proton/components/payments/client-extensions';
 import {
     COUPON_CODES,
@@ -202,7 +202,7 @@ export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<M
             const latestSubscription = subscription?.UpcomingSubscription ?? subscription;
             const isOrgAdmin = user.isAdmin;
             const selectedPlan = SelectedPlan.createFromSubscription(latestSubscription, plans);
-            const assistantUpsellConfig = getAssistantUpsellConfig(user, isOrgAdmin, selectedPlan);
+            const assistantUpsellConfig = getAssistantUpsellConfigPlanAndCycle(user, isOrgAdmin, selectedPlan);
 
             if (assistantUpsellConfig?.planIDs && assistantUpsellConfig?.cycle) {
                 planIDs = assistantUpsellConfig.planIDs;
