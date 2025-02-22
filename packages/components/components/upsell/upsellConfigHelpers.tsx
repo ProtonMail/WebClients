@@ -1,6 +1,12 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
-import type { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
+import { memberThunk } from '@proton/account/member';
+import { organizationThunk } from '@proton/account/organization';
+import { Button } from '@proton/atoms/index';
+import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { getAssistantUpsellConfig } from '@proton/components/hooks/assistant/assistantUpsellConfig';
 import { getIsNewBatchCurrenciesEnabled } from '@proton/components/payments/client-extensions';
 import {
     COUPON_CODES,
@@ -9,28 +15,104 @@ import {
     PLANS,
     PLAN_NAMES,
     type PaymentMethodStatusExtended,
+    type PaymentsApi,
     type Plan,
+    type PlanIDs,
+    SelectedPlan,
     type Subscription,
     getPlanByName,
     getPreferredCurrency,
     isMainCurrency,
 } from '@proton/payments';
+import type { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, MAIL_UPSELL_PATHS, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 import type useGetFlag from '@proton/unleash/useGetFlag';
 
 import Price from '../price/Price';
+import { getIsB2CUserAbleToRunScribe } from './modal/types/ComposerAssistantUpsellModal.helpers';
 
 const ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE = 100;
 
-/**
- * Format a plan in a way that the API can understand
- * @param plan - The plan to format.
- * @returns An object with the plan IDs.
- */
-export const getPlanIDsForPlan = (plan: PLANS) => ({ [plan]: 1 });
+export const getMailUpsellsSubmitText = ({
+    planIDs,
+    monthlyPrice,
+    currency,
+    coupon,
+}: {
+    planIDs: PlanIDs;
+    monthlyPrice: number;
+    currency: Currency;
+    coupon: string | undefined;
+}) => {
+    const planID = getPlanNameFromIDs(planIDs);
+
+    if (planID === undefined) {
+        return c('Action').t`Upgrade`;
+    }
+
+    const planName = PLAN_NAMES[planID];
+    const priceCoupon = (
+        <Price currency={currency} key="monthlyAmount">
+            {monthlyPrice}
+        </Price>
+    );
+
+    if (coupon) {
+        return c('Action').jt`Get ${planName} for ${priceCoupon}`;
+    }
+
+    return getPlanOrAppNameText(planName);
+};
+
+export const getMailUpsellsFooterText = ({
+    planIDs,
+    monthlyPrice,
+    currency,
+    coupon,
+}: {
+    planIDs: PlanIDs;
+    monthlyPrice: number;
+    currency: Currency;
+    coupon: string | undefined;
+}) => {
+    const priceLine = (
+        <Price
+            key="monthly-price"
+            currency={currency}
+            suffix={c('specialoffer: Offers').t`/month`}
+            isDisplayedInSentence
+        >
+            {monthlyPrice}
+        </Price>
+    );
+
+    if (coupon) {
+        const priceCoupon = (
+            <Price currency={currency} key="monthly-amount">
+                {monthlyPrice}
+            </Price>
+        );
+
+        return c('new_plans: Subtext')
+            .jt`The discounted price of ${priceCoupon} is valid for the first month. Then it will automatically be renewed at ${priceLine}. You can cancel at any time.`;
+    }
+
+    if (Object.keys(planIDs).includes(PLANS.BUNDLE)) {
+        return c('new_plans: Subtext')
+            .jt`Unlock all ${BRAND_NAME} premium products and features for just ${priceLine}. Cancel anytime.`;
+    }
+
+    if (monthlyPrice) {
+        return c('new_plans: Subtext').jt`Starting from ${priceLine}`;
+    }
+
+    return null;
+};
 
 export const getUserCurrency = async (
     user: UserModel,
@@ -52,51 +134,46 @@ export const getUserCurrency = async (
 };
 
 const getUpsellPrice = async ({
-    fetchPrice,
-    planID,
+    planIDs,
     currency,
     cycle,
     coupon,
-    defaultPrice,
+    paymentsApi,
 }: {
-    fetchPrice: ReturnType<typeof useRegionalPricing>['fetchPrice'];
-    planID: PLANS;
+    paymentsApi: PaymentsApi;
+    planIDs: PlanIDs;
     currency: Currency;
     cycle: CYCLE;
     coupon: string | undefined;
-    defaultPrice: number;
 }) => {
-    if (isMainCurrency(currency)) {
-        return defaultPrice;
-    }
-
-    const price = await fetchPrice({
-        data: {
-            Plans: getPlanIDsForPlan(planID),
-            Currency: currency,
-            Cycle: cycle,
-            CouponCode: coupon,
-        },
-        defaultPrice,
-        currency,
+    // TODO pass signal to cancel requeset and maybe silence ?
+    const result = await paymentsApi.checkWithAutomaticVersion({
+        Plans: planIDs,
+        Currency: currency,
+        Cycle: cycle,
+        CouponCode: coupon,
     });
 
-    return price;
+    return result.AmountDue;
 };
 
 interface MailUpsellConfigParams {
     user: UserModel;
     currency: Currency;
+    dispatch: ReturnType<typeof useDispatch>;
     plans: Plan[];
-    fetchPrice: ReturnType<typeof useRegionalPricing>['fetchPrice'];
+    subscription: Subscription;
     upsellRef?: string;
+    paymentsApi: PaymentsApi;
 }
 
 interface MailUpsellConfig {
-    planID: PLANS;
+    planIDs: PlanIDs;
     cycle: CYCLE;
     coupon?: string;
-    monthlyPrice: number;
+    configOverride?: (config: OpenCallbackProps) => void;
+    footerText: ReactNode;
+    submitText: ReactNode | ((closeModal: () => void) => ReactNode);
 }
 
 /**
@@ -104,55 +181,107 @@ interface MailUpsellConfig {
  */
 export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<MailUpsellConfig> = async ({
     currency,
+    dispatch,
     plans,
+    subscription,
     user,
-    fetchPrice,
     upsellRef,
+    paymentsApi,
 }) => {
     const isSentinelUpsell = [SHARED_UPSELL_PATHS.SENTINEL, MAIL_UPSELL_PATHS.PROTON_SENTINEL].some((path) =>
         upsellRef?.includes(path)
     );
     const isComposerAssistantUpsell = upsellRef?.includes(MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER);
 
-    let planID = PLANS.BUNDLE;
-    let cycle = CYCLE.YEARLY;
+    let planIDs: PlanIDs | undefined = { [PLANS.BUNDLE]: 1 };
+    let cycle: CYCLE | undefined = CYCLE.YEARLY;
     let coupon = undefined;
-    let canFetchPrice = true;
-
-    const planName = getPlanByName(plans, getPlanIDsForPlan(planID), currency);
-    let price = getPricePerCycle(planName, cycle) || 0;
+    let configOverride: MailUpsellConfig['configOverride'] = undefined;
+    let price = getPricePerCycle(getPlanByName(plans, planIDs, currency), cycle) || 0;
+    let footerText: MailUpsellConfig['footerText'] | undefined;
+    let submitText: MailUpsellConfig['submitText'] | undefined;
 
     if (isComposerAssistantUpsell) {
-        planID = PLANS.DUO;
-        cycle = CYCLE.YEARLY;
-    } else if (user.isFree && !isSentinelUpsell) {
-        planID = PLANS.MAIL;
-        cycle = CYCLE.MONTHLY;
+        const [organization, member] = await Promise.all([dispatch(organizationThunk()), dispatch(memberThunk())]);
+        const isB2CUser = getIsB2CUserAbleToRunScribe(subscription, organization, member);
+        const isOrgUser = isOrganization(organization) && !isSuperAdmin(member ? [member] : []);
 
+        submitText = c('Action').t`Get the writing assistant`;
+
+        if (isB2CUser) {
+            planIDs = { [PLANS.DUO]: 1 };
+            cycle = CYCLE.YEARLY;
+            price = getPricePerCycle(getPlanByName(plans, planIDs, currency), cycle) || 0;
+            if (!isMainCurrency(currency)) {
+                price = await getUpsellPrice({
+                    coupon,
+                    currency,
+                    cycle,
+                    paymentsApi,
+                    planIDs,
+                });
+            }
+        } else {
+            // For b2b we don't display the price in the footer
+            const latestSubscription = subscription?.UpcomingSubscription ?? subscription;
+            const isOrgAdmin = user.isAdmin;
+            const selectedPlan = SelectedPlan.createFromSubscription(latestSubscription, plans);
+            const assistantUpsellConfig = getAssistantUpsellConfig(user, isOrgAdmin, selectedPlan);
+
+            if (assistantUpsellConfig?.planIDs && assistantUpsellConfig?.cycle) {
+                planIDs = assistantUpsellConfig.planIDs;
+                cycle = assistantUpsellConfig.cycle;
+                configOverride = (config) => {
+                    config.minimumCycle = assistantUpsellConfig.minimumCycle;
+                    config.maximumCycle = assistantUpsellConfig.maximumCycle;
+                };
+            }
+
+            // Ensure we display no footer for B2B users
+            footerText = null;
+
+            if (isOrgUser) {
+                submitText = (closeModal: () => void) => (
+                    <Button
+                        size="large"
+                        color="norm"
+                        shape="solid"
+                        fullWidth
+                        onClick={() => {
+                            closeModal();
+                        }}
+                    >
+                        {c('Action').t`Close`}
+                    </Button>
+                );
+            }
+        }
+    } else if (user.isFree && !isSentinelUpsell) {
+        planIDs = { [PLANS.MAIL]: 1 };
+        cycle = CYCLE.MONTHLY;
         // Free users got 1$ promo displayed
         coupon = COUPON_CODES.TRYMAILPLUS0724;
-        price = ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE;
+        if (isMainCurrency(currency)) {
+            price = ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE;
+        } else {
+            price = await getUpsellPrice({
+                coupon,
+                currency,
+                cycle,
+                paymentsApi,
+                planIDs,
+            });
+        }
     } else {
-        // TODO confirm this part now that components are better isolated.
-
-        /**
-         * If user has mail plus we don't need to fetch the price
-         * as it's something we get throught the plans Object.
-         * Otherwise, we fetch the price from the API.
-         */
-        canFetchPrice = !user.hasPaidMail;
-    }
-
-    if (canFetchPrice) {
-        const fetchedPrice = await getUpsellPrice({
-            coupon,
-            currency,
-            cycle,
-            defaultPrice: price,
-            fetchPrice,
-            planID,
-        });
-        price = fetchedPrice;
+        if (!isMainCurrency(currency) && !user.hasPaidMail) {
+            price = await getUpsellPrice({
+                coupon,
+                currency,
+                cycle,
+                paymentsApi,
+                planIDs,
+            });
+        }
     }
 
     if (!price) {
@@ -160,71 +289,17 @@ export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<M
     }
 
     const monthlyPrice = cycle === CYCLE.MONTHLY ? price : price / 12;
+    footerText =
+        footerText === undefined ? getMailUpsellsFooterText({ planIDs, monthlyPrice, currency, coupon }) : footerText;
+    submitText =
+        submitText === undefined ? getMailUpsellsSubmitText({ planIDs, monthlyPrice, currency, coupon }) : submitText;
 
     return {
         coupon,
         cycle,
-        planID,
-        monthlyPrice,
+        planIDs,
+        configOverride,
+        footerText,
+        submitText,
     };
-};
-
-export const getMailUpsellsSubmitText = (
-    planID: PLANS,
-    price: number,
-    currency: Currency,
-    coupon: string | undefined
-) => {
-    const planName = PLAN_NAMES[planID];
-    const priceCoupon = (
-        <Price currency={currency} key={`${planID}-monthly-amount`}>
-            {price}
-        </Price>
-    );
-
-    if (coupon) {
-        return c('Action').jt`Get ${planName} for ${priceCoupon}`;
-    }
-
-    return getPlanOrAppNameText(planName);
-};
-
-export const getMailUpsellsFooterText = (
-    planID: PLANS,
-    price: number,
-    currency: Currency,
-    coupon: string | undefined
-) => {
-    const priceLine = (
-        <Price
-            key={`monthly-price-${planID}`}
-            currency={currency}
-            suffix={c('specialoffer: Offers').t`/month`}
-            isDisplayedInSentence
-        >
-            {price}
-        </Price>
-    );
-
-    if (coupon) {
-        const priceCoupon = (
-            <Price currency={currency} key={`${planID}-monthly-amount`}>
-                {price}
-            </Price>
-        );
-
-        return c('new_plans: Subtext')
-            .jt`The discounted price of ${priceCoupon} is valid for the first month. Then it will automatically be renewed at ${priceLine}. You can cancel at any time.`;
-    }
-
-    if (planID === PLANS.BUNDLE) {
-        return c('new_plans: Subtext')
-            .jt`Unlock all ${BRAND_NAME} premium products and features for just ${priceLine}. Cancel anytime.`;
-    }
-
-    if (price) {
-        return c('new_plans: Subtext').jt`Starting from ${priceLine}`;
-    }
-
-    return null;
 };
