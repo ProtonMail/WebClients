@@ -14,7 +14,7 @@ import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import useGetFlag from '@proton/unleash/useGetFlag';
 
-import { getMailUpsellConfig, getUserCurrency } from './upsellConfigHelpers';
+import { getMailUpsellConfig } from './upsellConfigHelpers';
 import { getUpsellConfig } from './useUpsellConfig';
 
 export interface MailUpsellConfig {
@@ -58,16 +58,15 @@ const useFetchMailUpsellModalConfig = () => {
 
         try {
             const plans = plansModel?.plans ?? [];
-            const currency = await getUserCurrency(user, plans, status, subscription, getFlag);
-
             const { cycle, coupon, planIDs, configOverride, footerText, submitText } = await getMailUpsellConfig({
-                user,
-                currency,
-                plans,
-                upsellRef,
-                subscription,
                 dispatch,
+                getFlag,
                 paymentsApi,
+                plans,
+                status,
+                subscription,
+                upsellRef,
+                user,
             });
 
             // Get upsell `path` and `onUpgrade` functions to display payment modal with appropriate props´´

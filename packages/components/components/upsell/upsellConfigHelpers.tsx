@@ -114,13 +114,41 @@ export const getMailUpsellsFooterText = ({
     return null;
 };
 
-export const getUserCurrency = async (
-    user: UserModel,
-    plans: Plan[],
-    status: PaymentMethodStatusExtended,
-    subscription: Subscription,
-    getFlag: ReturnType<typeof useGetFlag>
-): Promise<Currency> => {
+interface MailUpsellConfigParams {
+    dispatch: ReturnType<typeof useDispatch>;
+    paymentsApi: PaymentsApi;
+    status: PaymentMethodStatusExtended;
+    getFlag: ReturnType<typeof useGetFlag>;
+    plans: Plan[];
+    subscription: Subscription;
+    user: UserModel;
+    upsellRef?: string;
+}
+
+interface MailUpsellConfig {
+    cycle: CYCLE;
+    currency: Currency;
+    footerText: ReactNode;
+    planIDs: PlanIDs;
+    submitText: ReactNode | ((closeModal: () => void) => ReactNode);
+    configOverride?: (config: OpenCallbackProps) => void;
+    coupon?: string;
+}
+
+/**
+ * @throws if no prices found
+ */
+export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<MailUpsellConfig> = async ({
+    dispatch,
+    getFlag,
+    paymentsApi,
+    plans,
+    status,
+    subscription,
+    upsellRef,
+    user,
+}) => {
+    // Get currency
     const isNewBatchCurrenciesEnabled = getIsNewBatchCurrenciesEnabled(getFlag);
     const currency = getPreferredCurrency({
         user,
@@ -130,69 +158,7 @@ export const getUserCurrency = async (
         enableNewBatchCurrencies: isNewBatchCurrenciesEnabled,
     });
 
-    return currency;
-};
-
-const getUpsellPrice = async ({
-    planIDs,
-    currency,
-    cycle,
-    coupon,
-    paymentsApi,
-}: {
-    paymentsApi: PaymentsApi;
-    planIDs: PlanIDs;
-    currency: Currency;
-    cycle: CYCLE;
-    coupon: string | undefined;
-}) => {
-    // TODO pass signal to cancel requeset and maybe silence ?
-    const result = await paymentsApi.checkWithAutomaticVersion({
-        Plans: planIDs,
-        Currency: currency,
-        Cycle: cycle,
-        CouponCode: coupon,
-    });
-
-    return result.AmountDue;
-};
-
-interface MailUpsellConfigParams {
-    user: UserModel;
-    currency: Currency;
-    dispatch: ReturnType<typeof useDispatch>;
-    plans: Plan[];
-    subscription: Subscription;
-    upsellRef?: string;
-    paymentsApi: PaymentsApi;
-}
-
-interface MailUpsellConfig {
-    planIDs: PlanIDs;
-    cycle: CYCLE;
-    coupon?: string;
-    configOverride?: (config: OpenCallbackProps) => void;
-    footerText: ReactNode;
-    submitText: ReactNode | ((closeModal: () => void) => ReactNode);
-}
-
-/**
- * @throws if no prices found
- */
-export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<MailUpsellConfig> = async ({
-    currency,
-    dispatch,
-    plans,
-    subscription,
-    user,
-    upsellRef,
-    paymentsApi,
-}) => {
-    const isSentinelUpsell = [SHARED_UPSELL_PATHS.SENTINEL, MAIL_UPSELL_PATHS.PROTON_SENTINEL].some((path) =>
-        upsellRef?.includes(path)
-    );
-    const isComposerAssistantUpsell = upsellRef?.includes(MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER);
-
+    // Set default values
     let planIDs: PlanIDs | undefined = { [PLANS.BUNDLE]: 1 };
     let cycle: CYCLE | undefined = CYCLE.YEARLY;
     let coupon = undefined;
@@ -200,6 +166,15 @@ export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<M
     let price = getPricePerCycle(getPlanByName(plans, planIDs, currency), cycle) || 0;
     let footerText: MailUpsellConfig['footerText'] | undefined;
     let submitText: MailUpsellConfig['submitText'] | undefined;
+
+    //
+    // Start config logic
+    //
+
+    const isSentinelUpsell = [SHARED_UPSELL_PATHS.SENTINEL, MAIL_UPSELL_PATHS.PROTON_SENTINEL].some((path) =>
+        upsellRef?.includes(path)
+    );
+    const isComposerAssistantUpsell = upsellRef?.includes(MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER);
 
     if (isComposerAssistantUpsell) {
         const [organization, member] = await Promise.all([dispatch(organizationThunk()), dispatch(memberThunk())]);
@@ -213,13 +188,14 @@ export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<M
             cycle = CYCLE.YEARLY;
             price = getPricePerCycle(getPlanByName(plans, planIDs, currency), cycle) || 0;
             if (!isMainCurrency(currency)) {
-                price = await getUpsellPrice({
-                    coupon,
-                    currency,
-                    cycle,
-                    paymentsApi,
-                    planIDs,
+                const result = await paymentsApi.checkWithAutomaticVersion({
+                    Plans: planIDs,
+                    Currency: currency,
+                    Cycle: cycle,
+                    CouponCode: coupon,
                 });
+
+                price = result.AmountDue;
             }
         } else {
             // For b2b we don't display the price in the footer
@@ -264,23 +240,23 @@ export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<M
         if (isMainCurrency(currency)) {
             price = ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE;
         } else {
-            price = await getUpsellPrice({
-                coupon,
-                currency,
-                cycle,
-                paymentsApi,
-                planIDs,
+            const result = await paymentsApi.checkWithAutomaticVersion({
+                Plans: planIDs,
+                Currency: currency,
+                Cycle: cycle,
+                CouponCode: coupon,
             });
+            price = result.AmountDue;
         }
     } else {
         if (!isMainCurrency(currency) && !user.hasPaidMail) {
-            price = await getUpsellPrice({
-                coupon,
-                currency,
-                cycle,
-                paymentsApi,
-                planIDs,
+            const result = await paymentsApi.checkWithAutomaticVersion({
+                Plans: planIDs,
+                Currency: currency,
+                Cycle: cycle,
+                CouponCode: coupon,
             });
+            price = result.AmountDue;
         }
     }
 
@@ -295,11 +271,12 @@ export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<M
         submitText === undefined ? getMailUpsellsSubmitText({ planIDs, monthlyPrice, currency, coupon }) : submitText;
 
     return {
-        coupon,
-        cycle,
-        planIDs,
         configOverride,
+        coupon,
+        currency,
+        cycle,
         footerText,
+        planIDs,
         submitText,
     };
 };
