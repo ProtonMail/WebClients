@@ -14,7 +14,7 @@ import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import useGetFlag from '@proton/unleash/useGetFlag';
 
-import { getMailUpsellConfig } from './upsellConfigHelpers';
+import { getMailUpsellConfig } from './useFetchMailUpsellModalConfig.helpers';
 import { getUpsellConfig } from './useUpsellConfig';
 
 export interface MailUpsellConfig {

@@ -4,7 +4,7 @@ import type { ApiListenerCallback, ApiVerificationEvent, ApiWithListener } from 
 import remove from '@proton/utils/remove';
 import replace from '@proton/utils/replace';
 
-import AccountLockedUpsellModal from '../../components/upsell/modal/AccountLockedUpsellModal';
+import AccountLockedUpsellModal from '../../components/upsell/modals/AccountLockedUpsellModal';
 import type { ApiModalPayload } from './ApiModals.interface';
 
 const ApiModalsHVUpsell = ({ api }: { api: ApiWithListener }) => {
