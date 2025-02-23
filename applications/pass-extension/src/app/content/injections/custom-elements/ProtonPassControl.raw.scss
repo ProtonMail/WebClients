@@ -9,6 +9,7 @@ $base-font-size: 14 !default;
 
 	pointer-events: none;
 	position: absolute !important;
+	isolation: unset !important;
 
 	/* force reset element */
 	margin: 0 !important;
