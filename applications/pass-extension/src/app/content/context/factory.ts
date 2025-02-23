@@ -4,6 +4,7 @@ import { createDetectorService } from 'proton-pass-extension/app/content/service
 import { createFormManager } from 'proton-pass-extension/app/content/services/form/manager';
 import { createIFrameService } from 'proton-pass-extension/app/content/services/iframes/service';
 import { createWebAuthNService } from 'proton-pass-extension/app/content/services/webauthn';
+import { IGNORED_TAGS } from 'proton-pass-extension/app/content/utils/nodes';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
 import { hasCriteria } from '@proton/pass/lib/settings/criteria';
@@ -31,6 +32,11 @@ export const createContentScriptContext = (options: {
         status: AppStatus.IDLE,
         UID: undefined,
     };
+
+    /** Add the custom elements to the ignored nodes to ignore
+     * any mutation/transition events inside the form manager */
+    IGNORED_TAGS.add(options.elements.control.toUpperCase());
+    IGNORED_TAGS.add(options.elements.root.toUpperCase());
 
     const settings: ProxiedSettings = getInitialSettings();
     const featureFlags: FeatureFlagState = {};
