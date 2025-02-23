@@ -15,6 +15,7 @@ import {
     pixelParser,
 } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
+import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { repaint } from '@proton/pass/utils/dom/repaint';
 
 type InjectionElements = {
@@ -55,7 +56,7 @@ const getOverlayShift = (options: {
 
         for (const el of overlays) {
             if (el === input || el === inputBox) break; /* Stop at target elements */
-            if (!(el instanceof HTMLElement)) continue; /* Skip non-HTMLElements */
+            if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
             if (!form.contains(el)) continue; /* Skip elements outside form */
             if (el.matches('svg *')) continue; /* Skip SVG subtrees */
