@@ -7,7 +7,6 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import useFetchMailUpsellModalConfig, { type MailUpsellConfig } from './useFetchMailUpsellModalConfig';
@@ -95,22 +94,44 @@ const UpsellModal = ({
 
     useEffect(() => {
         const fetchTimeout = 5000;
-        // TODO: Cancel timeout if component unmounts
-        promiseWithTimeout({
-            promise: fetchUpsellConfig({
+        const controller = new AbortController();
+        const fetchUpsellConfigWithTimeout = async () => {
+            // Start timeout
+            const timeoutId = window.setTimeout(() => {
+                controller.abort(`Upsell config fetch took more than limit of ${fetchTimeout}ms`);
+            }, fetchTimeout);
+
+            controller.signal.addEventListener(
+                'abort',
+                () => {
+                    window.clearTimeout(timeoutId);
+                    throw new Error(controller.signal.reason);
+                },
+                { once: true }
+            );
+
+            const config = await fetchUpsellConfig({
                 upsellRef,
                 preventInApp: preventInAppPayment,
                 onSubscribed,
-            }),
-            timeoutMs: fetchTimeout,
-            errorMessage: `Upsell config fetch took more than limit of ${fetchTimeout}ms`,
-        })
+            });
+
+            window.clearTimeout(timeoutId);
+
+            return config;
+        };
+
+        fetchUpsellConfigWithTimeout()
             .then((config) => {
                 setConfig(config);
             })
             .catch((e) => {
                 traceInitiativeError(SentryMailInitiatives.UPSELL_MODALS, e);
             });
+
+        return () => {
+            controller.abort('Upsell Modal unmounted before config was fetched');
+        };
     }, []);
 
     return (
