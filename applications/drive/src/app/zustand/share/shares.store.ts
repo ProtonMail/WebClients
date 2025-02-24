@@ -31,7 +31,7 @@ export const useSharesStore = create<SharesState>()(
         getLockedShares: () => {
             const { shares } = get();
             return Object.values(shares)
-                .filter((share) => share.isLocked && share.isDefault && !share.isVolumeSoftDeleted)
+                .filter((share) => share.isLocked && share.isDefault && !share.isVolumeSoftDeleted && !share.forASV)
                 .map((defaultShare) => ({
                     defaultShare,
                     devices: Object.values(shares).filter(
