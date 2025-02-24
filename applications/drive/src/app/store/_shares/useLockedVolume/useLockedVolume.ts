@@ -153,13 +153,21 @@ export function useLockedVolumeInner({
     );
 
     const prepareVolumesForRestore = useCallback(
-        async (abortSignal: AbortSignal): Promise<LockedVolumeForRestore[]> => {
-            const addressPrivateKeys = getPossibleAddressPrivateKeys(addressesKeys);
+        async (
+            abortSignal: AbortSignal,
+            autoRestore?: {
+                preloadedLockedShares: LockedShares;
+                preloadedAddressesKeys: AddressesKeysResult;
+            }
+        ): Promise<LockedVolumeForRestore[]> => {
+            const addressPrivateKeys = getPossibleAddressPrivateKeys(
+                autoRestore?.preloadedAddressesKeys || addressesKeys
+            );
             if (!addressPrivateKeys?.length) {
                 return lockedVolumesForRestore;
             }
 
-            const lockedShares = await getLoadedLockedShares(abortSignal);
+            const lockedShares = autoRestore?.preloadedLockedShares || (await getLoadedLockedShares(abortSignal));
             const lockedUnpreparedShares = await getLockedUnpreparedShares(lockedShares);
             if (!lockedUnpreparedShares.length) {
                 return lockedVolumesForRestore;
@@ -171,7 +179,10 @@ export function useLockedVolumeInner({
             }
 
             const volumes = [...lockedVolumesForRestore, ...newPreparedVolumes];
-            setLockedVolumesForRestore(volumes);
+            // We don't want to show those locked volumes in UI if they are for auto-restore
+            if (!autoRestore) {
+                setLockedVolumesForRestore(volumes);
+            }
             return volumes;
         },
         [
@@ -194,7 +205,9 @@ export function useLockedVolumeInner({
         lockedShareLinkPassphraseRaw: string,
         lockedDevices: LockedDeviceForRestore[],
         lockedPhotos: LockedPhotosForRestore[],
-        addressKeyID: string
+        addressKeyID: string,
+        // For auto-restore
+        forASV: boolean = false
     ) => {
         if (!hashKey) {
             throw new Error('Missing hash key on folder link');
@@ -205,8 +218,9 @@ export function useLockedVolumeInner({
             ' '
         );
         // translator: The date is in locale of user's preference. It's used for folder name and translating the beginning of the string is enough.
-        const restoreFolderName = c('Info').t`Restored files ${formattedDate}`;
-
+        const restoreFolderName = forASV
+            ? c('Info').t`Automated Recovery ${formattedDate}`
+            : c('Info').t`Restored files ${formattedDate}`;
         const [
             Hash,
             { NodePassphrase, NodePassphraseSignature },
@@ -280,11 +294,14 @@ export function useLockedVolumeInner({
         );
     };
 
-    const restoreVolumes = async (abortSignal: AbortSignal) => {
+    const restoreVolumes = async (
+        abortSignal: AbortSignal,
+        autoRestore?: { preloadedLockedShares: LockedShares; preloadedAddressesKeys: AddressesKeysResult }
+    ) => {
         const defaultShare = await getDefaultShare(abortSignal);
-        const lockedVolumesForRestore = await prepareVolumesForRestore(abortSignal);
+        const lockedVolumesForRestore = await prepareVolumesForRestore(abortSignal, autoRestore);
         if (!defaultShare || !lockedVolumesForRestore.length) {
-            return;
+            return false;
         }
 
         const [privateKey, hashKey, { privateKey: addressKey, address, addressKeyID }] = await Promise.all([
@@ -307,7 +324,8 @@ export function useLockedVolumeInner({
                 lockedVolume.defaultShare.linkDecryptedPassphrase,
                 lockedVolume.devices,
                 lockedVolume.photos,
-                addressKeyID
+                addressKeyID,
+                !!autoRestore
             );
             removeShares([
                 lockedVolume.defaultShare.shareId,
@@ -317,7 +335,11 @@ export function useLockedVolumeInner({
         });
         await preventLeave(Promise.all(restorePromiseList));
 
-        setLockedVolumesForRestore([]);
+        if (!autoRestore) {
+            setLockedVolumesForRestore([]);
+        }
+
+        return true;
     };
 
     const deleteLockedVolumes = async () => {

@@ -121,6 +121,8 @@ export function useLinksActions({
             throw new Error('Cannot move corrupted file');
         }
 
+        const isPhotosShare = newShare.type === ShareType.photos;
+
         const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
             await Promise.all([
                 getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
@@ -138,7 +140,7 @@ export function useLinksActions({
                     )
                 ),
                 // ContentHash is only needed for Photos section and during recovery of photos
-                link.digests?.sha1 && newShare.type === ShareType.photos
+                link.digests?.sha1 && isPhotosShare
                     ? generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
                           Promise.reject(
                               new EnrichedError('Failed to generate content hash during move', {
@@ -210,7 +212,8 @@ export function useLinksActions({
             Hash,
             ParentLinkID: newParentLinkId,
             NewShareID: newShareId === shareId ? undefined : newShareId,
-            ContentHash,
+            // In case of missing xattr attributes we prefer to use the current content hash than breaking move/recovery
+            ContentHash: isPhotosShare ? ContentHash || link.activeRevision?.photo?.contentHash : undefined,
             NameSignatureEmail: address.Email,
             NodePassphrase,
         };
