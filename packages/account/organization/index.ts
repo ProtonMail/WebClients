@@ -144,11 +144,12 @@ const modelThunk = (options?: {
             }
 
             try {
-                const defaultSettings = {
+                const defaultSettings: OrganizationSettings = {
                     ShowName: false,
                     LogoID: null,
                     ShowScribeWritingAssistant: true,
                     VideoConferencingEnabled: false,
+                    AllowedProducts: ['All'],
                 };
 
                 const [Organization, OrganizationSettings] = await Promise.all([
@@ -161,11 +162,9 @@ const modelThunk = (options?: {
                         ? defaultSettings
                         : extraArgument
                               .api<OrganizationSettings>(getOrganizationSettings())
-                              .then(({ ShowName, LogoID, ShowScribeWritingAssistant, VideoConferencingEnabled }) => ({
-                                  ShowName,
-                                  LogoID,
-                                  ShowScribeWritingAssistant,
-                                  VideoConferencingEnabled,
+                              .then((value) => ({
+                                  ...defaultSettings,
+                                  ...value,
                               }))
                               .catch(() => {
                                   return defaultSettings;
