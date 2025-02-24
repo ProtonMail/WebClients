@@ -12,7 +12,15 @@ import {
     isWritableVault,
 } from '@proton/pass/lib/vaults/vault.predicates';
 import { sortVaults } from '@proton/pass/lib/vaults/vault.utils';
-import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
+import {
+    itemsBulkDeleteRequest,
+    itemsBulkMoveRequest,
+    itemsBulkRestoreRequest,
+    itemsBulkTrashRequest,
+    shareLockRequest,
+} from '@proton/pass/store/actions/requests';
+import { selectRequestInFlight, selectRequestInFlightData } from '@proton/pass/store/request/selectors';
+import type { BulkSelectionDTO, Maybe, MaybeNull, ShareId, ShareType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { not } from '@proton/pass/utils/fp/predicates';
@@ -98,3 +106,20 @@ export const selectMostRecentVaultShareID = createSelector(
 export const selectVaultsWithNewUserInvites = createSelector([selectOwnWritableVaults], (vaults) =>
     vaults.filter(hasNewUserInvitesReady)
 );
+
+export const isShareLocked =
+    (shareId: ShareId) =>
+    (state: State): boolean => {
+        const shareLocked = selectRequestInFlight(shareLockRequest(shareId))(state);
+        if (shareLocked) return true;
+
+        return [
+            itemsBulkMoveRequest(),
+            itemsBulkTrashRequest(),
+            itemsBulkRestoreRequest(),
+            itemsBulkDeleteRequest(),
+        ].some((req) => {
+            const dto = selectRequestInFlightData<BulkSelectionDTO>(req)(state);
+            return dto && shareId in dto;
+        });
+    };
