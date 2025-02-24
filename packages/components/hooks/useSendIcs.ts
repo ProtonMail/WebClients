@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 
-import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import { sendMessageDirect } from '@proton/shared/lib/api/messages';
@@ -13,7 +12,6 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SEND_MESSAGE_DIRECT_ACTION } from '@proton/shared/lib/interfaces/message';
 import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
@@ -22,6 +20,7 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
+import { useGetAddressKeysByUsage } from './useGetAddressKeysByUsage';
 import useGetEncryptionPreferences from './useGetEncryptionPreferences';
 
 export interface SendIcsParams {
@@ -39,7 +38,7 @@ export interface SendIcsParams {
 
 const useSendIcs = () => {
     const api = useApi();
-    const getAddressKeys = useGetAddressKeys();
+    const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const getMailSettings = useGetMailSettings();
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
@@ -62,16 +61,16 @@ const useSendIcs = () => {
             if (!addressID) {
                 throw new Error('Missing addressID');
             }
-            const { publicKeys: allPublicKeys, privateKeys: allPrivateKeys } = splitKeys(
-                await getAddressKeys(addressID)
-            );
-            const [publicKeys, privateKeys] = [allPublicKeys.slice(0, 1), allPrivateKeys.slice(0, 1)];
+            const { encryptionKey, signingKeys } = await getAddressKeysByUsage({
+                AddressID: addressID,
+                withV6Support: true,
+            });
             const { AutoSaveContacts, Sign } = await getMailSettings();
 
             const inviteAttachment = new File([new Blob([ics])], 'invite.ics', {
                 type: `text/calendar; method=${method}`,
             });
-            const packets = await encryptAttachment(ics, inviteAttachment, false, publicKeys[0], privateKeys);
+            const packets = await encryptAttachment(ics, inviteAttachment, false, encryptionKey, signingKeys);
             const concatenatedPackets = mergeUint8Arrays(
                 [packets.data, packets.keys, packets.signature].filter(isTruthy)
             );
@@ -128,8 +127,8 @@ const useSendIcs = () => {
                 attachmentData,
                 attachments: [attachment],
                 emails,
-                publicKeys,
-                privateKeys,
+                publicKeys: [encryptionKey],
+                privateKeys: signingKeys,
             });
             const payload: any = {
                 Message: directMessage,
@@ -145,7 +144,7 @@ const useSendIcs = () => {
             }
             await api({ ...sendMessageDirect(payload), silence: true });
         },
-        [api, getMailSettings, getAddressKeys, getEncryptionPreferences]
+        [api, getMailSettings, getAddressKeysByUsage, getEncryptionPreferences]
     );
     return send;
 };
