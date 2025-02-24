@@ -1,8 +1,8 @@
 import { NOTIFICATION_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
+import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
@@ -13,15 +13,15 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
 import noop from '@proton/utils/noop';
 
-type NotificationOptions = { root: ProtonPassRoot; onDestroy: () => void };
+type NotificationOptions = { popover: PopoverController; onDestroy: () => void };
 
-export const createNotification = ({ root, onDestroy }: NotificationOptions): InjectedNotification => {
+export const createNotification = ({ popover, onDestroy }: NotificationOptions): InjectedNotification => {
     const iframe = createIFrameApp<NotificationAction>({
         animation: 'slidein',
         backdropClose: false,
         classNames: ['fixed'],
         id: 'notification',
-        root,
+        popover,
         src: NOTIFICATION_IFRAME_SRC,
         onError: onDestroy,
         onClose: withContext((ctx, { action }, options) => {
