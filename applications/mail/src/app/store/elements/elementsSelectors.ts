@@ -4,6 +4,7 @@ import type { ESStatus } from '@proton/encrypted-search';
 import { ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
@@ -206,7 +207,9 @@ export const shouldResetElementsState = createSelector(
         return (
             currentParams.search.keyword !== params.search.keyword || // Reset the cache since we do not support client search (filtering)
             (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search)) ||
-            !pageIsConsecutive
+            !pageIsConsecutive ||
+            // Reset the cache when sort changes to ensure correct ordering
+            !isDeepEqual(currentParams.sort, params.sort)
         );
     }
 );
