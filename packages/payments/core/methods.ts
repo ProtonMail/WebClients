@@ -1,5 +1,3 @@
-import { isSEPACountry } from 'ibantools';
-
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { getHas2024OfferCoupon, getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, BillingPlatform, ChargebeeUserExists, Subscription, User } from '@proton/shared/lib/interfaces';
@@ -53,6 +51,47 @@ export interface PaymentMethodsParameters {
     planIDs?: PlanIDs;
     subscription?: Subscription | FreeSubscription;
 }
+
+const sepaCountries = new Set([
+    // EU Member States
+    'AT',
+    'BE',
+    'BG',
+    'HR',
+    'CY',
+    'CZ',
+    'DK',
+    'EE',
+    'FI',
+    'FR',
+    'DE',
+    'GR',
+    'HU',
+    'IE',
+    'IT',
+    'LV',
+    'LT',
+    'LU',
+    'MT',
+    'NL',
+    'PL',
+    'PT',
+    'RO',
+    'SK',
+    'SI',
+    'ES',
+    'SE',
+    // Additional SEPA Members
+    'IS',
+    'LI',
+    'NO',
+    'CH',
+    'GB',
+    'AD',
+    'MC',
+    'SM',
+    'VA',
+]);
 
 export class PaymentMethods {
     public get amount(): number {
@@ -323,7 +362,7 @@ export class PaymentMethods {
         const flowSupportsDirectDebit = directDebitEnabledFlows.includes(this.flow);
 
         const billingCountrySupportsSEPA = this.billingAddress?.CountryCode
-            ? isSEPACountry(this.billingAddress.CountryCode)
+            ? sepaCountries.has(this.billingAddress.CountryCode)
             : false;
 
         const cbUser = this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
