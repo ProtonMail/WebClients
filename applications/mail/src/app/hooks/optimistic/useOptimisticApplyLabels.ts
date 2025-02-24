@@ -166,6 +166,19 @@ export const useOptimisticApplyLabels = () => {
                                 unread: conversation.NumUnread ? conversation.NumUnread : 0,
                             });
                         }
+
+                        // Remove from starred when moving to trash or spam
+                        if (hasLabel(element, MAILBOX_LABEL_IDS.STARRED)) {
+                            changes[MAILBOX_LABEL_IDS.STARRED] = false;
+                        }
+                    }
+
+                    // Also handle spam folder the same way
+                    if (Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.SPAM)) {
+                        // Remove from starred when moving to trash or spam
+                        if (hasLabel(element, MAILBOX_LABEL_IDS.STARRED)) {
+                            changes[MAILBOX_LABEL_IDS.STARRED] = false;
+                        }
                     }
 
                     currentFolderIDs.forEach((folderID) => {
