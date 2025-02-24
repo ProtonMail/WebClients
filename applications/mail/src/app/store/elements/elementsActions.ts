@@ -40,6 +40,8 @@ export const setPageSize = createAction<number>('elements/setPageSize');
 
 export const setParams = createAction<ElementsStateParams>('elements/setParams');
 
+export const resetByPassFilter = createAction('elements/resetByPassFilter');
+
 export const retry = createAction<{
     queryParameters: unknown;
     error: Error | undefined;

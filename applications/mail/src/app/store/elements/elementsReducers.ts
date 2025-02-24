@@ -51,6 +51,10 @@ export const setPageSize = (state: Draft<ElementsState>, action: PayloadAction<M
     state.pageSize = action.payload;
 };
 
+export const resetByPassFilter = (state: Draft<ElementsState>) => {
+    state.bypassFilter = [];
+};
+
 export const retry = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ queryParameters: unknown; error: Error | undefined }>
