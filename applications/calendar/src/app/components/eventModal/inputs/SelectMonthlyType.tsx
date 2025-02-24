@@ -1,64 +1,31 @@
-import { useMemo } from 'react';
-
-import { Option, SelectTwo } from '@proton/components';
-import { MONTHLY_TYPE } from '@proton/shared/lib/calendar/constants';
-import { getOnDayString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
-import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/recurrence/rrule';
-import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { RadioGroup } from '@proton/components';
+import { type MONTHLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import capitalize from '@proton/utils/capitalize';
 
-// Filter out strings since TS creates an inverse mapping
-const MONTHLY_TYPE_VALUES = Object.values(MONTHLY_TYPE).filter((type): type is number => typeof type === 'number');
+import useMonthlyOptions from './useMonthlyOptions';
 
 interface Props {
-    id?: string;
     value: MONTHLY_TYPE;
     date: Date;
-    className?: string;
-    title?: string;
     onChange: (value: MONTHLY_TYPE) => void;
 }
 
-const SelectMonthlyType = ({ id, value, date, className, title, onChange }: Props) => {
-    const options = useMemo(() => {
-        const startFakeUtcDate = toUTCDate(fromLocalDate(date));
-
-        const allOptions = MONTHLY_TYPE_VALUES.map((type) => {
-            const onDayString = getOnDayString(startFakeUtcDate, type);
-            return { text: capitalize(onDayString) || '', value: type };
-        });
-
-        const isLastDay = getNegativeSetpos(startFakeUtcDate) === -1;
-        const isFifthDay = getPositiveSetpos(startFakeUtcDate) === 5;
-
-        return allOptions.filter(({ value }) => {
-            if (value === MONTHLY_TYPE.ON_NTH_DAY && isFifthDay) {
-                // we don't offer "on the fifth day" possibility
-                return false;
-            }
-            if (value === MONTHLY_TYPE.ON_MINUS_NTH_DAY && !isLastDay) {
-                // only display "last day" option when we are in the last day of the month
-                return false;
-            }
-            return true;
-        });
-    }, [date]);
+const SelectMonthlyType = ({ value, date, onChange }: Props) => {
+    const options = useMonthlyOptions(date);
 
     return (
-        <SelectTwo
-            className={className}
-            title={title}
-            id={id}
-            value={value}
-            onChange={({ value }) => {
-                const newValue = +value as MONTHLY_TYPE;
-                onChange?.(newValue);
-            }}
-        >
-            {options.map(({ text, value }) => (
-                <Option key={value} value={value} title={text} />
-            ))}
-        </SelectTwo>
+        <div className="flex flex-column gap-4">
+            <RadioGroup
+                name="selected-shape"
+                className="mb-0"
+                onChange={(value) => {
+                    const newValue = +value as MONTHLY_TYPE;
+                    onChange?.(newValue);
+                }}
+                value={value}
+                options={options.map((option) => ({ value: option.value, label: capitalize(option.text) }))}
+            />
+        </div>
     );
 };
 

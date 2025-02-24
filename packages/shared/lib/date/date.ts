@@ -12,6 +12,7 @@ import {
 } from 'date-fns';
 
 import { DAY } from '../constants';
+import type { WeekStartsOn } from '../date-fns-utc/interface';
 
 interface FormatOptions {
     locale?: Locale;
@@ -122,4 +123,17 @@ export const getDifferenceInDays = (earlierDate: Date, laterDate: Date) => {
 
 export const isValidDate = (date: Date) => {
     return date instanceof Date && !Number.isNaN(date.getTime());
+};
+
+export const getShortenDayFormat = (date: Date) => {
+    return format(date, 'do');
+};
+
+export const getWeekday = (weekStartsOn: WeekStartsOn, offset: number = 0): number => {
+    return (weekStartsOn + offset) % 7;
+};
+
+export const isWeekday = (date: Date, weekStartsOn: WeekStartsOn) => {
+    const weekDays = Array.from({ length: 5 }, (_, i) => getWeekday(weekStartsOn, i));
+    return weekDays.includes(date.getDay());
 };
