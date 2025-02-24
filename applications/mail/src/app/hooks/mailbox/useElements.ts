@@ -199,11 +199,11 @@ export const useElements: UseElements = ({
         dispatch(setPageSize(MAIL_PAGE_SIZE.FIFTY));
     }, []);
 
-    // If filter is being updated, we can reset bypass filter value from the state, otherwise it could create
+    // If sort or filter is being updated, we can reset bypass filter value from the state, otherwise it could create
     // false placeholders when switching filters.
     useEffect(() => {
         dispatch(resetByPassFilter());
-    }, [filter]);
+    }, [sort, filter]);
 
     // Main effect watching all inputs and responsible to trigger actions on the state
     useEffect(() => {
