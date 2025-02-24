@@ -27,7 +27,10 @@ import {
     optimisticMarkAsConversationMessages,
 } from '../../store/conversations/conversationsActions';
 import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../store/elements/elementsActions';
-import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../store/messages/optimistic/messagesOptimisticActions';
+import {
+    optimisticMarkAs as optimisticMarkAsAction,
+    optimisticMarkAs as optimisticMarkAsMessageAction,
+} from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
@@ -206,6 +209,12 @@ export const useOptimisticMarkAs = () => {
                         if (isRollback) {
                             updatedElementsChangeRollback.push(inputChanges[index]);
                         }
+
+                        // Update messages from the conversation (if loaded)
+                        const conversationFromState = getConversation(conversation.ID);
+                        conversationFromState?.Messages?.forEach((message) => {
+                            dispatch(optimisticMarkAsAction({ ID: message.ID, changes }));
+                        });
 
                         // Update counters
                         conversationCounters = updateCountersForMarkAs(
