@@ -266,6 +266,7 @@ interface Props extends SharedViewProps {
     isEventCreationDisabled: boolean;
     weekStartsOn: WeekStartsOn;
     inviteLocale?: string;
+    onBackFromSearch: () => void;
     onChangeDate: (date: Date) => void;
     onChangeDateAndRevertView: (date: Date) => void;
     onInteraction: (active: boolean) => void;
@@ -310,6 +311,7 @@ const InteractiveCalendarView = ({
     onChangeDateAndRevertView,
     onClickToday,
     onInteraction,
+    onBackFromSearch,
 
     calendars,
     addresses,
@@ -2116,6 +2118,7 @@ const InteractiveCalendarView = ({
                     timeGridViewRef={timeGridViewRef}
                     isScrollDisabled={isScrollDisabled}
                     isDrawerApp={isDrawerApp}
+                    onBackFromSearch={onBackFromSearch}
                 />
             </Dropzone>
             <Popover
