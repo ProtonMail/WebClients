@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -11,7 +12,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import type { ArmoredKeyWithInfo, OnKeyImportCallback } from '@proton/shared/lib/keys';
 import getRandomString from '@proton/utils/getRandomString';
 
@@ -49,6 +50,11 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const selectRef = useRef<HTMLInputElement>(null);
+    const [
+        {
+            Flags: { SupportPgpV6Keys },
+        },
+    ] = useUserSettings();
 
     const [step, setStep] = useState<STEPS>(STEPS.WARNING);
     const [state, setState] = useState<ImportKey[]>([]);
@@ -91,7 +97,10 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
             CryptoProxy.importPrivateKey({
                 armoredKey: first.armoredKey,
                 passphrase: null,
-                checkCompatibility: true, // the BE will enforce this as well, but the returned error messages might be less user friendly
+                // the BE will enforce this as well, but the returned error messages might be less user friendly
+                checkCompatibility: SupportPgpV6Keys
+                    ? KeyCompatibilityLevel.V6_COMPATIBLE
+                    : KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
             })
                 .then(handleAddKey)
                 .catch((e: Error) => {
