@@ -69,7 +69,6 @@ const {
     SNOOZED,
 } = MAILBOX_LABEL_IDS;
 
-const STANDARD_FOLDERS = getStandardFolders();
 const getMarginByFolderLvl = (lvl: number) => {
     switch (lvl) {
         case 1:
@@ -98,6 +97,13 @@ function folderReducer(acc: ItemCustomFolder[], folder: FolderWithSubFolders, le
     return acc;
 }
 
+const buildFolderOption = (folderMap: ReturnType<typeof getStandardFolders>, folderID: MAILBOX_LABEL_IDS) => ({
+    value: folderID,
+    text: folderMap[folderID].name,
+    url: folderMap[folderID].to,
+    icon: folderMap[folderID].icon,
+});
+
 export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const mailSettings = useMailModel('MailSettings');
     const [labels = []] = useLabels();
@@ -108,78 +114,20 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const DRAFT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
     const SENT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT;
     const { AlmostAllMail } = mailSettings;
+    const folderMap = getStandardFolders();
     const defaultFolders: ItemDefaultFolder[] = [
-        AlmostAllMail
-            ? {
-                  value: ALMOST_ALL_MAIL,
-                  text: STANDARD_FOLDERS[ALMOST_ALL_MAIL].name,
-                  url: STANDARD_FOLDERS[ALMOST_ALL_MAIL].to,
-                  icon: STANDARD_FOLDERS[ALMOST_ALL_MAIL].icon,
-              }
-            : {
-                  value: ALL_MAIL,
-                  text: STANDARD_FOLDERS[ALL_MAIL].name,
-                  url: STANDARD_FOLDERS[ALL_MAIL].to,
-                  icon: STANDARD_FOLDERS[ALL_MAIL].icon,
-              },
-        {
-            value: INBOX,
-            text: STANDARD_FOLDERS[INBOX].name,
-            url: STANDARD_FOLDERS[INBOX].to,
-            icon: STANDARD_FOLDERS[INBOX].icon,
-        },
-        {
-            value: SNOOZED,
-            text: STANDARD_FOLDERS[SNOOZED].name,
-            url: STANDARD_FOLDERS[SNOOZED].to,
-            icon: STANDARD_FOLDERS[SNOOZED].icon,
-        },
-        {
-            value: DRAFT_TYPE,
-            text: DRAFT_TYPE === ALL_DRAFTS ? STANDARD_FOLDERS[ALL_DRAFTS].name : STANDARD_FOLDERS[DRAFTS].name,
-            url: STANDARD_FOLDERS[DRAFT_TYPE].to,
-            icon: STANDARD_FOLDERS[DRAFT_TYPE].icon,
-        },
+        buildFolderOption(folderMap, AlmostAllMail ? ALMOST_ALL_MAIL : ALL_MAIL),
+        buildFolderOption(folderMap, INBOX),
+        buildFolderOption(folderMap, SNOOZED),
+        buildFolderOption(folderMap, DRAFT_TYPE),
         ...(canScheduleSend
-            ? [
-                  {
-                      value: SCHEDULED,
-                      text: STANDARD_FOLDERS[SCHEDULED].name,
-                      url: STANDARD_FOLDERS[SCHEDULED].to,
-                      icon: STANDARD_FOLDERS[SCHEDULED].icon,
-                  },
-              ]
+            ? [buildFolderOption(folderMap, SCHEDULED)]
             : []),
-        {
-            value: SENT_TYPE,
-            text: SENT_TYPE === ALL_SENT ? STANDARD_FOLDERS[ALL_SENT].name : STANDARD_FOLDERS[SENT].name,
-            url: STANDARD_FOLDERS[SENT_TYPE].to,
-            icon: STANDARD_FOLDERS[SENT_TYPE].icon,
-        },
-        {
-            value: STARRED,
-            text: STANDARD_FOLDERS[STARRED].name,
-            url: STANDARD_FOLDERS[STARRED].to,
-            icon: STANDARD_FOLDERS[STARRED].icon,
-        },
-        {
-            value: ARCHIVE,
-            text: STANDARD_FOLDERS[ARCHIVE].name,
-            url: STANDARD_FOLDERS[ARCHIVE].to,
-            icon: STANDARD_FOLDERS[ARCHIVE].icon,
-        },
-        {
-            value: SPAM,
-            text: STANDARD_FOLDERS[SPAM].name,
-            url: STANDARD_FOLDERS[SPAM].to,
-            icon: STANDARD_FOLDERS[SPAM].icon,
-        },
-        {
-            value: TRASH,
-            text: STANDARD_FOLDERS[TRASH].name,
-            url: STANDARD_FOLDERS[TRASH].to,
-            icon: STANDARD_FOLDERS[TRASH].icon,
-        },
+        buildFolderOption(folderMap, SENT_TYPE),
+        buildFolderOption(folderMap, STARRED),
+        buildFolderOption(folderMap, ARCHIVE),
+        buildFolderOption(folderMap, SPAM),
+        buildFolderOption(folderMap, TRASH),
     ];
 
     const customFolders: ItemCustomFolder[] = treeview.reduce(
