@@ -56,13 +56,13 @@ const getMailUpsellsSubmitText = ({
     }
 
     const planName = PLAN_NAMES[planID];
-    const priceCoupon = (
-        <Price currency={currency} key="monthlyAmount">
-            {monthlyPrice}
-        </Price>
-    );
 
     if (coupon) {
+        const priceCoupon = (
+            <Price currency={currency} key="monthlyAmount">
+                {monthlyPrice}
+            </Price>
+        );
         return c('Action').jt`Get ${planName} for ${priceCoupon}`;
     }
 
