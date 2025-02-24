@@ -1,4 +1,5 @@
 import { type PLANS } from '@proton/payments';
+import type { Product } from '@proton/shared/lib/ProductEnum';
 import type { ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 
 export interface Organization {
@@ -57,11 +58,18 @@ export interface OrganizationIdentityOutput {
     FingerprintSignatureAddress: string | null;
 }
 
+export type OrganizationSettingsAllowedProduct =
+    | Extract<Product, 'Mail' | 'VPN' | 'Pass' | 'Calendar' | 'Drive' | 'Wallet'>
+    | 'All';
+
+export type OrganizationSettingsAllowedProducts = OrganizationSettingsAllowedProduct[];
+
 export interface OrganizationSettings {
     ShowName: boolean;
     LogoID: string | null;
     ShowScribeWritingAssistant: boolean;
     VideoConferencingEnabled: boolean;
+    AllowedProducts: OrganizationSettingsAllowedProducts;
 }
 
 export interface OrganizationWithSettings extends Organization {
