@@ -1,3 +1,4 @@
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import Logo from '@proton/components/components/logo/Logo';
 import ProductLink from '@proton/components/containers/app/ProductLink';
@@ -13,10 +14,12 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const { viewportWidth } = useActiveBreakpoint();
+    const [organization] = useOrganization();
+
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
 
     if (viewportWidth['<=small']) {
-        const availableApps = getAvailableApps({ user, context: 'dropdown', isLumoAvailable });
+        const availableApps = getAvailableApps({ user, context: 'dropdown', organization, isLumoAvailable });
         if (availableApps.length <= 1) {
             return null;
         }

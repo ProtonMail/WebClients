@@ -1,5 +1,6 @@
 import type { enums } from '@proton/crypto';
 
+import { Product } from './ProductEnum';
 import { sizeUnits } from './helpers/size';
 import type { KeyGenConfig, KeyGenConfigV6 } from './interfaces';
 
@@ -81,6 +82,7 @@ interface AppConfiguration {
     linuxClientID?: string;
     icon: string;
     settingsSlug: string;
+    product: Product;
 }
 
 export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
@@ -92,6 +94,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-account',
         icon: 'brand-proton',
         settingsSlug: 'account',
+        product: Product.Account,
     },
     [APPS.PROTONACCOUNTLITE]: {
         publicPath: '',
@@ -104,6 +107,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         linuxClientID: 'linux-mail',
         icon: 'brand-proton',
         settingsSlug: 'account',
+        product: Product.Account,
     },
     [APPS.PROTONVPNBROWSEREXTENSION]: {
         publicPath: '',
@@ -113,6 +117,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'browser-vpn',
         icon: 'brand-proton-vpn',
         settingsSlug: '',
+        product: Product.VPN,
     },
     [APPS.PROTONMAIL]: {
         publicPath: '',
@@ -125,6 +130,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         linuxClientID: 'linux-mail',
         icon: 'brand-proton-mail',
         settingsSlug: 'mail',
+        product: Product.Mail,
     },
     [APPS.PROTONCONTACTS]: {
         publicPath: '/contacts',
@@ -134,6 +140,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-contacts',
         icon: 'brand-proton',
         settingsSlug: 'contacts',
+        product: Product.Mail,
     },
     [APPS.PROTONDRIVE]: {
         publicPath: '/drive',
@@ -143,6 +150,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-drive',
         icon: 'brand-proton-drive',
         settingsSlug: 'drive',
+        product: Product.Drive,
     },
     [APPS.PROTONCALENDAR]: {
         publicPath: '/calendar',
@@ -155,6 +163,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         linuxClientID: 'linux-mail',
         icon: 'brand-proton-calendar',
         settingsSlug: 'calendar',
+        product: Product.Calendar,
     },
     [APPS.PROTONPASS]: {
         publicPath: '/pass',
@@ -167,6 +176,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         linuxClientID: 'linux-pass',
         icon: 'brand-proton-pass',
         settingsSlug: 'pass',
+        product: Product.Pass,
     },
     [APPS.PROTONEXTENSION]: {
         publicPath: '',
@@ -176,6 +186,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'browser-pass',
         icon: '',
         settingsSlug: '',
+        product: Product.Pass,
     },
     [APPS.PROTONPASSBROWSEREXTENSION]: {
         publicPath: '',
@@ -185,6 +196,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'browser-pass',
         icon: '',
         settingsSlug: '',
+        product: Product.Pass,
     },
     [APPS.PROTONVPN_SETTINGS]: {
         publicPath: '',
@@ -194,6 +206,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-vpn-settings',
         icon: 'brand-proton-vpn',
         settingsSlug: 'vpn',
+        product: Product.VPN,
     },
     [APPS.PROTONADMIN]: {
         publicPath: '',
@@ -203,6 +216,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-admin',
         icon: 'brand-proton',
         settingsSlug: '',
+        product: Product.Admin,
     },
     [APPS.PROTONVERIFICATION]: {
         publicPath: '',
@@ -212,6 +226,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-verify',
         icon: 'brand-proton',
         settingsSlug: '',
+        product: Product.Admin,
     },
     [APPS.PROTONWALLET]: {
         publicPath: '',
@@ -221,6 +236,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-wallet',
         icon: 'brand-proton',
         settingsSlug: 'wallet',
+        product: Product.Wallet,
     },
     [APPS.PROTONDOCS]: {
         publicPath: '',
@@ -230,6 +246,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-docs',
         icon: 'brand-proton', // TODO: brand icon for Docs
         settingsSlug: 'docs',
+        product: Product.Docs,
     },
     [APPS.PROTONDOCSEDITOR]: {
         publicPath: '',
@@ -239,6 +256,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-docs-editor',
         icon: 'brand-proton', // TODO: brand icon for Docs
         settingsSlug: 'docs-editor',
+        product: Product.Docs,
     },
     [APPS.PROTONLUMO]: {
         publicPath: '',
@@ -248,6 +266,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         clientID: 'web-lumo',
         icon: 'brand-proton',
         settingsSlug: 'lumo',
+        product: Product.Lumo,
     },
 };
 

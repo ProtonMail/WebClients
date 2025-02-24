@@ -14,7 +14,7 @@ import Logo from '@proton/components/components/logo/Logo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
 import ExploreAppsList, { getExploreApps } from '../signup/ExploreAppsList';
@@ -25,7 +25,7 @@ import Main from './Main';
 import PublicUserItem from './PublicUserItem';
 
 export type AppSwitcherState = {
-    session: OnLoginCallbackArguments & { Organization: Organization | undefined };
+    session: OnLoginCallbackArguments & { Organization: OrganizationWithSettings | undefined };
     error?: {
         type: 'unsupported-app';
         app: APP_NAMES;
@@ -52,7 +52,7 @@ const Disabled = ({ children }: { children: ReactElement }) => {
     );
 };
 
-const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organization?: Organization }) => {
+const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organization?: OrganizationWithSettings }) => {
     const appName = getAppName(app);
     const organizationName = organization?.Name || '';
     return (
@@ -125,6 +125,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                         apps={getExploreApps({
                             subscribed,
                             user: User,
+                            organization: Organization,
                             isLumoAvailable,
                         })}
                         onExplore={async (app) => {
