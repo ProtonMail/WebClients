@@ -198,7 +198,8 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
 export function shareMetaToShareWithKey(share: ShareMeta): ShareWithKey {
     return {
         ...shareMetaShortToShare(share),
-        addressId: share.AddressID,
+        addressId: share.AddressID || share.Memberships[0].AddressID,
+        forASV: share.ForASV,
         key: share.Key,
         passphrase: share.Passphrase,
         passphraseSignature: share.PassphraseSignature,
