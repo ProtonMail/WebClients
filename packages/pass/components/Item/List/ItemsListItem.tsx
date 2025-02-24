@@ -62,13 +62,15 @@ export const ItemsListItem = memo(
         const shared = Boolean(item.shareCount);
         const isVault = share && isVaultShare(share);
 
+        const canDrag = draggable && !loading && !failed;
+
         return (
             <div className={clsx(bulk && 'px-1 py-0.5')}>
                 <ButtonLike
                     as="a"
                     href="#"
                     id={id}
-                    draggable={draggable}
+                    draggable={canDrag}
                     className={clsx([
                         'pass-item-list--item interactive-pseudo w-full',
                         bulk && 'pass-item-list--item-bulk',
@@ -83,7 +85,7 @@ export const ItemsListItem = memo(
                         e.preventDefault();
                         onSelect(item, e.ctrlKey || e.metaKey);
                     }}
-                    onDragStart={(evt: DragEvent) => draggable && onDragStart?.(evt, { ID: id })}
+                    onDragStart={(evt: DragEvent) => canDrag && onDragStart?.(evt, { ID: id })}
                     onDragEnd={onDragEnd}
                 >
                     <div className={clsx('flex-nowrap flex w-full items-center', bulk ? 'px-2 py-1.5' : 'px-3 py-2')}>
