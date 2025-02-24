@@ -259,6 +259,7 @@ interface PhotosWithAlbumToolbarProps {
     uploadDisabled: boolean;
     tabSelection: 'albums' | 'gallery' | 'albums-gallery';
     createAlbumModal: ModalStateReturnObj;
+    addAlbumPhotosModal?: ModalStateReturnObj;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onSelectCover?: () => Promise<void>;
     album?: DecryptedAlbum;
@@ -274,6 +275,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     uploadDisabled,
     tabSelection,
     createAlbumModal,
+    addAlbumPhotosModal,
     onFileUpload,
     onSelectCover,
     album,
@@ -317,11 +319,9 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         <Vr />
                         <PhotosDetailsButton selectedLinks={selectedItems} />
                         <Vr />*/}
-                        <PhotosAddAlbumPhotosButton
-                            onClick={() => {
-                                // console.log('TODO');
-                            }}
-                        />
+                        {addAlbumPhotosModal && (
+                            <PhotosAddAlbumPhotosButton onClick={() => addAlbumPhotosModal.openModal(true)} />
+                        )}
                         <PhotosTrashButton selectedLinks={selectedItems} />
                     </>
                 )}
