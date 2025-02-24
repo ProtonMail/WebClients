@@ -1,8 +1,15 @@
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import noop from '@proton/utils/noop';
 
 export const POPOVER_SUPPORTED = 'popover' in HTMLElement.prototype;
-export const showPopover = POPOVER_SUPPORTED ? safeCall((target: HTMLElement) => target.showPopover()) : noop;
-export const hidePopover = POPOVER_SUPPORTED ? safeCall((target: HTMLElement) => target.hidePopover()) : noop;
-export const isPopoverChild = (target: HTMLElement) => target.matches('dialog[open] *, :popover-open *');
-export const getPopoverModal = () => document.querySelector<HTMLElement>(':modal');
+
+export const showPopover = safeCall((target: HTMLElement) => target.showPopover());
+export const hidePopover = safeCall((target: HTMLElement) => target.hidePopover());
+
+/** Finds the closest ancestor element that creates a modal context and captures focus */
+export const getClosestModal = (target: HTMLElement) => target.closest<HTMLElement>(':modal');
+
+/** Returns the topmost modal element that's currently active in the document */
+export const getActiveModal = () => {
+    const modals = document.querySelectorAll<HTMLElement>(':modal');
+    return modals.length > 0 ? modals[modals.length - 1] : null;
+};
