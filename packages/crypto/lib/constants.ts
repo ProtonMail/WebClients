@@ -8,3 +8,18 @@ export const S2kTypeForConfig: { [key: string]: PartialConfig['s2kType'] } = {
 };
 
 export { ARGON2_PARAMS, VERIFICATION_STATUS };
+
+/**
+ * Compatibility levels to enforce when importing OpenPGP keys
+ */
+export enum KeyCompatibilityLevel {
+    /** No compatibility checks */
+    NONE = 1, // start from 1 to avoid potential oversights due to 0 being falsy
+    /** Key must be compatible with all Proton clients */
+    BACKWARDS_COMPATIBLE,
+    /**
+     * Key must be compatible with newer Proton clients that implement v6 key support,
+     * but may be incompatible with older clients.
+     */
+    V6_COMPATIBLE,
+}

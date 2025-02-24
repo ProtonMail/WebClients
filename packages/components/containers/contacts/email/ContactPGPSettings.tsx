@@ -10,7 +10,7 @@ import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -77,7 +77,12 @@ const ContactPGPSettings = ({ model, setModel, mailSettings, supportV6Keys }: Pr
                 }
 
                 try {
-                    const publicKey = await CryptoProxy.importPublicKey({ armoredKey, checkCompatibility: true });
+                    const publicKey = await CryptoProxy.importPublicKey({
+                        armoredKey,
+                        checkCompatibility: supportV6Keys
+                            ? KeyCompatibilityLevel.V6_COMPATIBLE
+                            : KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
+                    });
 
                     const fingerprint = publicKey.getFingerprint();
                     const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
