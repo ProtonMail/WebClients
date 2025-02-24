@@ -35,15 +35,15 @@ import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/trans
 import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import type { State } from '@proton/pass/store/types';
-import {
-    type BulkSelectionDTO,
-    type ItemRevision,
-    type ItemRevisionWithOptimistic,
-    type ItemType,
-    type Maybe,
-    type MaybeNull,
-    type SecureLink,
-    type SelectedItem,
+import type {
+    BulkSelectionDTO,
+    ItemRevision,
+    ItemRevisionWithOptimistic,
+    ItemType,
+    Maybe,
+    MaybeNull,
+    SecureLink,
+    SelectedItem,
 } from '@proton/pass/types';
 import { deduplicate } from '@proton/pass/utils/array/duplicate';
 import { first } from '@proton/pass/utils/array/first';
