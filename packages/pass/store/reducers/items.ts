@@ -279,9 +279,17 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 
         if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match)(action)) {
             const { shareId, batch, targetShareId, movedItems } = action.payload;
+
+            /** Sanity check if the vault was deleted during an on-going process :
+             * make sure source share and destination share both exist before merge */
             return fullMerge(
-                { ...state, [shareId]: objectFilter(state[shareId], notIn(batch.map(prop('itemId')))) },
-                { [targetShareId]: toMap(movedItems, 'itemId') }
+                {
+                    ...state,
+                    ...(shareId in state
+                        ? { [shareId]: objectFilter(state[shareId], notIn(batch.map(prop('itemId')))) }
+                        : {}),
+                },
+                targetShareId in state ? { [targetShareId]: toMap(movedItems, 'itemId') } : {}
             );
         }
 
