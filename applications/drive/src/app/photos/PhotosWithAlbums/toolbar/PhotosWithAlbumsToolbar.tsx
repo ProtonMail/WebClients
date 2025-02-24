@@ -148,7 +148,7 @@ export const ToolbarLeftActionsAlbumsGallery = ({
             {...getButtonStyles()}
             onClick={onAlbumsClick}
         >
-            <Icon name="arrow-left" className="mr-2" /> Go back
+            <Icon name="arrow-left" className="mr-2" /> {c('Action').t`Go back`}
         </Button>
     );
 };
