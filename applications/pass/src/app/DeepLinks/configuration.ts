@@ -11,13 +11,13 @@ type DeeplinkConfig = {
 };
 
 export const DEEPLINK_CONFIG: DeeplinkConfig = {
-    address_breach: ({ get }) => `/monitor/dark-web/proton/${get('AddressID')}`,
-    alias_breach: ({ get }) => `/monitor/dark-web/alias/${get('ShareID')}:${get('ItemID')}`,
+    address_breach: (params) => `/monitor/dark-web/proton/${params.get('AddressID')}`,
+    alias_breach: (params) => `/monitor/dark-web/alias/${params.get('ShareID')}:${params.get('ItemID')}`,
     alias_management: () => `/settings#aliases`,
-    custom_email_breach: ({ get }) => `/monitor/dark-web/custom/${get('CustomEmailID')}`,
-    share_members: ({ get }) => `/share/${get('ShareID')}`,
+    custom_email_breach: (params) => `/monitor/dark-web/custom/${params.get('CustomEmailID')}`,
+    share_members: (params) => `/share/${params.get('ShareID')}`,
     upgrade: () => '' /* should never be called */,
-    view_item: ({ get }) => `/share/${get('ShareID')}/item/${get('ItemID')}`,
+    view_item: (params) => `/share/${params.get('ShareID')}/item/${params.get('ItemID')}`,
 };
 
 export const fallback = () => '/';
