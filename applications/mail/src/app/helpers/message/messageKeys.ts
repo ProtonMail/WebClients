@@ -1,5 +1,5 @@
 import type { WorkerDecryptionResult } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -20,6 +20,7 @@ export const extractKeysFromAttachments = async (
     getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
     onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api,
+    supportV6Keys: boolean,
     messageFlags?: number
 ) => {
     const keyAttachments =
@@ -40,7 +41,9 @@ export const extractKeysFromAttachments = async (
                     );
                     const key = await CryptoProxy.importPublicKey({
                         armoredKey: arrayToBinaryString(data),
-                        checkCompatibility: true,
+                        checkCompatibility: supportV6Keys
+                            ? KeyCompatibilityLevel.V6_COMPATIBLE
+                            : KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
                     });
                     return key;
                 } catch (e: any) {
@@ -59,7 +62,8 @@ export const extractKeysFromAttachments = async (
  */
 export const extractKeysFromAutocrypt = async (
     parsedHeaders: { [key: string]: string | string[] | undefined } | undefined,
-    senderAddress: string
+    senderAddress: string,
+    supportV6Keys: boolean
 ) => {
     if (!parsedHeaders?.Autocrypt) {
         return [];
@@ -77,7 +81,9 @@ export const extractKeysFromAutocrypt = async (
                     }
                     const key = await CryptoProxy.importPublicKey({
                         binaryKey: result.keydata,
-                        checkCompatibility: true,
+                        checkCompatibility: supportV6Keys
+                            ? KeyCompatibilityLevel.V6_COMPATIBLE
+                            : KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
                     });
                     return key;
                 } catch (e: any) {

@@ -802,7 +802,7 @@ END:VCARD`;
         expect(signedCardContent.includes('ITEM1.X-PM-SIGN:true')).toBe(true);
     });
 
-    describe('contact key status label', () => {
+    describe('contact key status label and key pinning option', () => {
         const vcard = `BEGIN:VCARD
 VERSION:4.0
 FN;PREF=1:J. Doe
@@ -872,7 +872,7 @@ END:VCARD`;
             expect(screen.queryByTestId('koo-origin-label')).toBeNull();
         });
 
-        it('internal contact with v6 address keys: should display primary label for v6 primary key only', async () => {
+        it('internal contact with v6 address keys: should display primary label for v6 primary key only, and allow pinning it based on user settings', async () => {
             const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
             addApiMock('core/v4/keys/all', () => ({
@@ -935,8 +935,7 @@ END:VCARD`;
             await renderAndTest(true);
         });
 
-        it('should display WKD label for WKD keys', async () => {
-            mockUserSettings({ SupportPgpV6Keys: 0 });
+        it('should display WKD label for WKD keys, and allow pinning a v6 WKD key based on user settings', async () => {
             const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
             addApiMock('core/v4/keys/all', () => ({
@@ -946,7 +945,7 @@ END:VCARD`;
                 Unverified: {
                     Keys: [
                         {
-                            PublicKey: 'externally fetched mocked armored key',
+                            PublicKey: 'externally fetched mocked armored v6 key',
                             Flags: KEY_FLAG.FLAG_NOT_COMPROMISED | KEY_FLAG.FLAG_NOT_OBSOLETE,
                             Source: API_KEY_SOURCE.WKD,
                         },
@@ -955,32 +954,46 @@ END:VCARD`;
                 ProtonMX: false, // external account
             }));
 
-            renderWithProviders(
-                <ContactEmailSettingsModal
-                    open={true}
-                    {...props}
-                    vCardContact={vCardContact}
-                    emailProperty={vCardContact.email[0]}
-                />
-            );
+            const renderAndTest = async (withV6Support: boolean) => {
+                mockUserSettings({ SupportPgpV6Keys: withV6Support ? 1 : 0 });
 
-            const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+                const { unmount } = renderWithProviders(
+                    <ContactEmailSettingsModal
+                        open={true}
+                        {...props}
+                        vCardContact={vCardContact}
+                        emailProperty={vCardContact.email[0]}
+                    />
+                );
 
-            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-            fireEvent.click(showMoreButton);
+                const showMoreButton = screen.getByRole('button', { name: 'Expand' });
 
-            await waitFor(() => {
-                const primaryLabel = screen.getByTestId('primary-key-label');
-                expect(primaryLabel).toBeVisible();
-                const wkdOriginLabel = screen.getByTestId('wkd-origin-label');
-                return expect(wkdOriginLabel).toBeVisible();
-            });
+                await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+                fireEvent.click(showMoreButton);
 
-            expect(screen.queryByTestId('koo-origin-label')).toBeNull();
+                await waitFor(() => {
+                    const primaryLabel = screen.getByTestId('primary-key-label');
+                    expect(primaryLabel).toBeVisible();
+                    const wkdOriginLabel = screen.getByTestId('wkd-origin-label');
+                    return expect(wkdOriginLabel).toBeVisible();
+                });
+
+                expect(screen.queryByTestId('koo-origin-label')).toBeNull();
+
+                if (withV6Support) {
+                    // cannot trust a v6 key unless user settings declare support for it
+                    expect(screen.getByTitle('Open actions dropdown')).toBeVisible();
+                } else {
+                    expect(screen.queryByTitle('Open actions dropdown')).toBeNull();
+                }
+                unmount();
+            };
+
+            await renderAndTest(false);
+            await renderAndTest(true);
         });
 
-        it('should display KOO label for KOO keys', async () => {
-            mockUserSettings({ SupportPgpV6Keys: 0 });
+        it('should display KOO label for KOO keys, and allow pinning a v6 KOO key based on user settings', async () => {
             const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
             addApiMock('core/v4/keys/all', () => ({
@@ -990,7 +1003,7 @@ END:VCARD`;
                 Unverified: {
                     Keys: [
                         {
-                            PublicKey: 'externally fetched mocked armored key',
+                            PublicKey: 'externally fetched mocked armored v6 key',
                             Flags: KEY_FLAG.FLAG_NOT_COMPROMISED | KEY_FLAG.FLAG_NOT_OBSOLETE,
                             Source: API_KEY_SOURCE.KOO,
                         },
@@ -999,27 +1012,41 @@ END:VCARD`;
                 ProtonMX: false, // external account
             }));
 
-            renderWithProviders(
-                <ContactEmailSettingsModal
-                    open={true}
-                    {...props}
-                    vCardContact={vCardContact}
-                    emailProperty={vCardContact.email[0]}
-                />
-            );
+            const renderAndTest = async (withV6Support: boolean) => {
+                mockUserSettings({ SupportPgpV6Keys: withV6Support ? 1 : 0 });
+                const { unmount } = renderWithProviders(
+                    <ContactEmailSettingsModal
+                        open={true}
+                        {...props}
+                        vCardContact={vCardContact}
+                        emailProperty={vCardContact.email[0]}
+                    />
+                );
 
-            const showMoreButton = screen.getByRole('button', { name: 'Expand' });
-            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-            fireEvent.click(showMoreButton);
+                const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+                await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+                fireEvent.click(showMoreButton);
 
-            await waitFor(() => {
-                const primaryLabel = screen.getByTestId('primary-key-label');
-                expect(primaryLabel).toBeVisible();
-                const kooOriginLabel = screen.getByTestId('koo-origin-label');
-                return expect(kooOriginLabel).toBeVisible();
-            });
+                await waitFor(() => {
+                    const primaryLabel = screen.getByTestId('primary-key-label');
+                    expect(primaryLabel).toBeVisible();
+                    const kooOriginLabel = screen.getByTestId('koo-origin-label');
+                    return expect(kooOriginLabel).toBeVisible();
+                });
 
-            expect(screen.queryByTestId('wkd-origin-label')).toBeNull();
+                expect(screen.queryByTestId('wkd-origin-label')).toBeNull();
+
+                if (withV6Support) {
+                    // cannot trust a v6 key unless user settings declare support for it
+                    expect(screen.getByTitle('Open actions dropdown')).toBeVisible();
+                } else {
+                    expect(screen.queryByTitle('Open actions dropdown')).toBeNull();
+                }
+                unmount();
+            };
+
+            await renderAndTest(false);
+            await renderAndTest(true);
         });
     });
 });
