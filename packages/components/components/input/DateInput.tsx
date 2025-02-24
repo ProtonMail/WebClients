@@ -35,6 +35,11 @@ interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     weekStartsOn?: 0 | 2 | 1 | 6 | 5 | 4 | 3;
     value?: Date;
     placeholder?: string;
+    /**
+     * Adds "E.g., " prefix to the placeholder
+     * @default true
+     */
+    prefixPlaceholder?: boolean;
     defaultDate?: Date;
     min?: Date;
     max?: Date;
@@ -49,6 +54,7 @@ const DateInput = ({
     value,
     defaultDate,
     placeholder,
+    prefixPlaceholder = true,
     autoFocus,
     onChange,
     onFocus,
@@ -203,7 +209,12 @@ const DateInput = ({
                 value={showTemporary ? temporaryInput : currentInput}
                 onChange={handleInputChange}
                 placeholder={
-                    placeholder !== undefined ? placeholder : `${c('Placeholder').t`E.g., `}${placeholderInLocale}`
+                    // eslint-disable-next-line no-nested-ternary
+                    placeholder !== undefined
+                        ? placeholder
+                        : prefixPlaceholder
+                          ? `${c('Placeholder').t`E.g., `}${placeholderInLocale}`
+                          : placeholderInLocale
                 }
                 autoFocus={autoFocus}
                 {...rest}

@@ -5,6 +5,7 @@ import unique from '@proton/utils/unique';
 
 import { format } from '../../date-fns-utc';
 import type { WeekStartsOn } from '../../date-fns-utc/interface';
+import { getShortenDayFormat } from '../../date/date';
 import { toUTCDate } from '../../date/timezone';
 import type {
     VcalDateOrDateTimeProperty,
@@ -30,8 +31,8 @@ interface GetTimezonedFrequencyStringOptions {
 // we need to expand all possible cases so there will be quite a bit of duplicated code
 
 export const getOnDayString = (date: Date, monthlyType: MONTHLY_TYPE) => {
-    const dayOfMonth = date.getUTCDate();
     const day = date.getUTCDay();
+    const shortenedDay = getShortenDayFormat(date);
 
     if (monthlyType === MONTHLY_TYPE.ON_NTH_DAY) {
         const setPos = getPositiveSetpos(date);
@@ -151,7 +152,7 @@ export const getOnDayString = (date: Date, monthlyType: MONTHLY_TYPE) => {
             return c('Monthly recurring event, repeats on').t`on the last Saturday`;
         }
     }
-    return c('Monthly recurring event, repeats on').t`on day ${dayOfMonth}`;
+    return c('Monthly recurring event, repeats on').t`on the ${shortenedDay}`;
 };
 
 const getTimesString = (count: number) => {

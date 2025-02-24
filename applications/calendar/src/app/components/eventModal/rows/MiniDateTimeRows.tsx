@@ -96,8 +96,8 @@ export const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStar
                 </div>
             </div>
 
-            <div className="eventpopover-fullday-recurrency mt-2 flex *:min-size-auto w-full flex-column">
-                <span className="flex-0 mr-2">
+            <div className="eventpopover-fullday-recurrency mt-2 flex gap-4 *:min-size-auto w-full flex-column items-center">
+                <span className="flex-0 text-nowrap">
                     <AllDayCheckbox
                         title={
                             model.isAllDay
@@ -110,7 +110,7 @@ export const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStar
                         }
                     />
                 </span>
-                <span className="mt-1 eventpopover-recurrency">{children}</span>
+                <span className="mt-1 eventpopover-recurrency overflow-hidden">{children}</span>
             </div>
         </IconRow>
     );
