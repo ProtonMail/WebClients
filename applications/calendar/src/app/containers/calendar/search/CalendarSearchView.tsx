@@ -64,6 +64,7 @@ interface Props {
     setTargetEventRef: (targetEvent: HTMLElement) => void;
     setInteractiveData: (state: InteractiveState) => void;
     getOpenedMailEvents: () => OpenedMailEvent[];
+    onBackFromSearch: () => void;
 }
 
 const CalendarSearchView = ({
@@ -75,6 +76,7 @@ const CalendarSearchView = ({
     setTargetEventRef,
     setInteractiveData,
     getOpenedMailEvents,
+    onBackFromSearch,
 }: Props) => {
     const theme = useTheme();
     const documentRef = useRef<Document>(document);
@@ -229,6 +231,7 @@ const CalendarSearchView = ({
         elementRef: documentRef,
         onNext: () => isNextEnabled && next(),
         onPrevious: () => isPreviousEnabled && previous(),
+        onBackFromSearch,
     });
 
     if (loading) {
