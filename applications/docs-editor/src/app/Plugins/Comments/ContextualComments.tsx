@@ -109,6 +109,12 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
 
   const [isViewportLarge, setIsViewportLarge] = useState(() => window.innerWidth >= ViewportWidthThreshold)
 
+  const shouldShowCommentInputBox = commentInputSelection !== undefined
+
+  // we only want to position the input box as part of contextual comments if viewport is large enough
+  const shouldShowCommentInputBoxAsContextual = shouldShowCommentInputBox && isViewportLarge
+  const shouldShowCommentInputBoxAsSticky = shouldShowCommentInputBox && !isViewportLarge
+
   const getThreadPositions = useCallback(() => {
     editor.read(() => {
       const getFirstAssociatedMarkNodeForThread = (thread: CommentThreadInterface) => {
@@ -142,7 +148,7 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
         node: getFirstAssociatedMarkNodeForThread(thread),
       }))
 
-      if (commentInputSelection !== undefined) {
+      if (shouldShowCommentInputBoxAsContextual) {
         items.push({
           selection: commentInputSelection,
           node: commentInputSelection.anchor.getNode(),
@@ -205,7 +211,15 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
 
       setItems(activeThreadItems)
     })
-  }, [activeThreads, cancelAddComment, commentInputSelection, editor, isViewportLarge, markNodeMap])
+  }, [
+    activeThreads,
+    cancelAddComment,
+    commentInputSelection,
+    editor,
+    isViewportLarge,
+    markNodeMap,
+    shouldShowCommentInputBoxAsContextual,
+  ])
 
   const debouncedGetThreadPositions = useMemo(() => debounce(getThreadPositions, 50), [getThreadPositions])
 
@@ -248,18 +262,25 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
   }, [container, debouncedDispatchRecalculateEvent])
 
   return (
-    <Positioner
-      ref={setContainer}
-      activeItemID={commentInputSelection !== undefined ? CommentInputID : activeThread?.localID}
-      items={items}
-      className="pointer-events-none relative *:pointer-events-auto print:hidden"
-      style={{
-        gridRow: 1,
-        gridColumn: 1,
-        justifySelf: 'end',
-        width: isViewportLarge ? 'var(--comments-width)' : 'max-content',
-      }}
-      scrollContainer={editor.getRootElement()?.parentElement}
-    />
+    <>
+      <Positioner
+        ref={setContainer}
+        activeItemID={shouldShowCommentInputBox ? CommentInputID : activeThread?.localID}
+        items={items}
+        className="pointer-events-none relative *:pointer-events-auto print:hidden"
+        style={{
+          gridRow: 1,
+          gridColumn: 1,
+          justifySelf: 'end',
+          width: isViewportLarge ? 'var(--comments-width)' : 'max-content',
+        }}
+        scrollContainer={editor.getRootElement()?.parentElement}
+      />
+      {shouldShowCommentInputBoxAsSticky && (
+        <div className="fixed bottom-2 left-0 w-full px-2">
+          <CommentInputBox editor={editor} cancelAddComment={cancelAddComment} />
+        </div>
+      )}
+    </>
   )
 }
