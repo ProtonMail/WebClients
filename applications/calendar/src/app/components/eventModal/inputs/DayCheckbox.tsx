@@ -14,8 +14,8 @@ const DayCheckbox = ({ id, dayAbbreviation, dayLong, disabled = false, ...rest }
         <Tooltip title={dayLong}>
             <div className={clsx(disabled && 'cursor-default')}>
                 <InputButton
-                    labelProps={{ className: clsx('mt-2', disabled && 'pointer-events-none') }}
-                    ButtonLikeProps={{ className: 'px-0' }}
+                    labelProps={{ className: clsx(disabled && 'pointer-events-none') }}
+                    ButtonLikeProps={{ className: clsx('px-0 border-none', !rest.checked && 'bg-weak') }}
                     {...rest}
                 >
                     <span aria-hidden="true">{dayAbbreviation}</span>

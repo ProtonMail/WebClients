@@ -55,16 +55,22 @@ const RepeatEveryRow = ({
     };
 
     return (
-        <div className={clsx('flex flex-column', displayStacked ? '*:min-size-auto gap-4' : 'md:flex-row')}>
+        <div className={clsx('flex flex-column *:min-size-auto gap-3')}>
             <div className="md:flex-1">
-                <label
-                    className={clsx(displayStacked && 'text-semibold')}
-                    htmlFor="event-custom-frequency-number"
-                    id="label-event-custom-frequency"
-                >{c('Label').t`Repeat every`}</label>
-                <div className="flex flex-column md:flex-row my-2">
-                    <div className="flex flex-nowrap md:flex-1">
-                        <span className="w-custom" style={{ '--w-custom': '6em' }}>
+                <div className="flex flex-column md:flex-row">
+                    <div
+                        className={clsx(
+                            'flex flex-nowrap md:flex-1',
+                            displayStacked ? 'flex-column items-start gap-2' : 'items-center'
+                        )}
+                    >
+                        <label
+                            className="color-weak w-custom mr-2"
+                            style={{ '--w-custom': '4.25rem' }}
+                            htmlFor="event-custom-frequency-number"
+                            id="label-event-custom-frequency"
+                        >{c('Label').t`Every`}</label>
+                        <span className="w-custom" style={{ '--w-custom': '3.5rem' }}>
                             <IntegerInput
                                 id="event-custom-frequency-number"
                                 data-testid="event-modal/custom-frequency/interval:input"
@@ -82,7 +88,7 @@ const RepeatEveryRow = ({
                                 aria-describedby="label-event-custom-frequency event-custom-frequency-select"
                             />
                         </span>
-                        <span className="flex-1 ml-2">
+                        <span className={clsx('w-custom', !displayStacked && 'ml-2')} style={{ '--w-custom': '8rem' }}>
                             <SelectTwo
                                 id="event-custom-frequency-select"
                                 data-testid="event-modal/custom-frequency/interval:frequency"
@@ -97,19 +103,15 @@ const RepeatEveryRow = ({
                             </SelectTwo>
                         </span>
                     </div>
-                    {isMonthly && (
-                        <div className="md:flex-1 ml-0 mt-2 md:ml-2 md:mt-0">
-                            <SelectMonthlyType
-                                id="event-custom-monthly-select"
-                                value={frequencyModel.monthly.type}
-                                date={start.date}
-                                onChange={(type) => onChange({ ...frequencyModel, monthly: { type } })}
-                                title={c('Title').t`Select a day in the month`}
-                            />
-                        </div>
-                    )}
                 </div>
             </div>
+            {isMonthly && (
+                <SelectMonthlyType
+                    value={frequencyModel.monthly.type}
+                    date={start.date}
+                    onChange={(type) => onChange({ ...frequencyModel, monthly: { type } })}
+                />
+            )}
             {isWeekly && (
                 <RepeatOnRow
                     frequencyModel={frequencyModel}
