@@ -29,6 +29,7 @@ export const vaultMoveAllItemsRequest = withKey(`vault::move::all::items`);
 export const vaultTransferOwnerRequest = withKey(`vault::transfer:owner`);
 export const trashEmptyRequest = () => `trash::empty`;
 export const trashRestoreRequest = () => `trash::restore`;
+export const shareLockRequest = withKey(`share::lock`);
 
 export const lockCreateRequest = () => `auth::lock::create`;
 
