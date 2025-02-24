@@ -1,5 +1,7 @@
 import { isReceived, isScheduled, isSnoozed } from '@proton/shared/lib/mail/messages';
 
+import ExtraPassNudge from 'proton-mail/components/message/extras/ExtraPassNudge';
+
 import { getMessageHasData } from '../../../helpers/message/messages';
 import useMailModel from '../../../hooks/useMailModel';
 import type { MessageState } from '../../../store/messages/messagesTypes';
@@ -78,6 +80,7 @@ const HeaderExtra = ({
             {isScheduledMessage && canScheduleSend ? <ExtraScheduledMessage message={message} /> : null}
             {isSnoozeMessage ? <ExtraSnoozedMessage message={message} /> : null}
             <ExtraExpiration message={message} />
+            <ExtraPassNudge messageSubject={message.data.Subject} />
 
             <span className="inline-flex flex-row w-full md:w-auto empty:hidden">
                 <ExtraReadReceipt message={message.data} />
