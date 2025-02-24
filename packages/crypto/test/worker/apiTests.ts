@@ -14,7 +14,7 @@ import {
 } from 'pmcrypto/lib/openpgp';
 
 import type { CryptoApiInterface, PrivateKeyReferenceV4, PrivateKeyReferenceV6, SessionKey } from '../../lib';
-import { ARGON2_PARAMS, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
+import { ARGON2_PARAMS, KeyCompatibilityLevel, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
 import {
     arrayToHexString,
     binaryStringToArray,
@@ -1536,14 +1536,23 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
             // import should work without compatibility checks
             const importedKeyRef = await CryptoApiImplementation.importPublicKey({
                 armoredKey: v4KeyNewCurve25519Format,
-                checkCompatibility: false,
+                // checkCompatibility: KeyCompatibilityLevel.NONE, (expected default)
             });
             expect(importedKeyRef.isPrivate()).to.be.false;
 
             await expect(
                 CryptoApiImplementation.importPublicKey({
                     armoredKey: v4KeyNewCurve25519Format,
-                    checkCompatibility: true,
+                    checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
+                })
+            ).to.be.rejectedWith(expectedError);
+
+            // support for RFC9580 algos is not yet enabled for v4 keys,
+            // since not all our clients are compatible
+            await expect(
+                CryptoApiImplementation.importPublicKey({
+                    armoredKey: v4KeyNewCurve25519Format,
+                    checkCompatibility: KeyCompatibilityLevel.V6_COMPATIBLE,
                 })
             ).to.be.rejectedWith(expectedError);
         });
@@ -1551,7 +1560,6 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
         it('compatibility - rejects importing a v6 public key', async () => {
             const importedKeyRef = await CryptoApiImplementation.importPublicKey({
                 armoredKey: v6KeyCurve25519,
-                checkCompatibility: false,
             });
             expect(importedKeyRef.isPrivate()).to.be.false;
             expect(importedKeyRef.getVersion()).to.equal(6);
@@ -1559,13 +1567,16 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
             await expect(
                 CryptoApiImplementation.importPublicKey({
                     armoredKey: v6KeyCurve25519,
-                    checkCompatibility: true,
+                    checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
                 })
             ).to.be.rejectedWith(/Version 6 keys are currently not supported./);
 
             await expect(
-                CryptoApiImplementation.importPublicKey({ armoredKey: v6KeyCurve25519, checkCompatibility: true })
-            ).to.be.rejectedWith(/Version 6 keys are currently not supported./);
+                CryptoApiImplementation.importPublicKey({
+                    armoredKey: v6KeyCurve25519,
+                    checkCompatibility: KeyCompatibilityLevel.V6_COMPATIBLE,
+                })
+            ).to.not.be.rejected;
         });
 
         it('allows importing a private key as long as it can be decrypted', async () => {
