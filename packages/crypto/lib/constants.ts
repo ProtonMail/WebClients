@@ -18,7 +18,7 @@ export enum KeyCompatibilityLevel {
     /** Key must be compatible with all Proton clients */
     BACKWARDS_COMPATIBLE,
     /**
-     * Key is compatible with newer Proton clients that implement v6 key support,
+     * Key must be compatible with newer Proton clients that implement v6 key support,
      * but may be incompatible with older clients.
      */
     V6_COMPATIBLE,
