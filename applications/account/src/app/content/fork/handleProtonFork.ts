@@ -1,5 +1,4 @@
-import type { AuthSession } from '@proton/components/containers/login/interface';
-import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
@@ -17,11 +16,19 @@ import {
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
+
+import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
+import { getOrganization } from '../../public/organization';
+import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
+import type { LoginResult } from '../actions/interface';
+import type { Paths } from '../helper';
 
 type ProtonForkResult =
     | { type: 'invalid' }
-    | { type: 'produce'; payload: { fork: ProtonForkData; session: AuthSession } }
+    | { type: 'login'; payload: LoginResult }
     | { type: 'switch'; payload: { fork: ProtonForkData; activeSessionsResult: GetActiveSessionsResult } };
 
 const handleActiveSessions = async (
@@ -34,14 +41,7 @@ const handleActiveSessions = async (
     } as const;
 };
 
-const handleProduceFork = async (session: AuthSession, forkParameters: ProduceForkParametersFull) => {
-    return {
-        type: 'produce',
-        payload: { fork: { type: SSOType.Proton, payload: { forkParameters } }, session },
-    } as const;
-};
-
-export const handleProtonFork = async ({ api }: { api: Api }): Promise<ProtonForkResult> => {
+export const handleProtonFork = async ({ api, paths }: { api: Api; paths: Paths }): Promise<ProtonForkResult> => {
     const searchParams = new URLSearchParams(window.location.search);
     const forkParameters = getProduceForkParameters(searchParams);
     if (!getRequiredForkParameters(forkParameters)) {
@@ -67,7 +67,43 @@ export const handleProtonFork = async ({ api }: { api: Api }): Promise<ProtonFor
             return await handleActiveSessions(activeSessionsResult, forkParameters);
         }
 
-        return await handleProduceFork(session, forkParameters);
+        try {
+            const loginResult = await getProduceForkLoginResult({
+                api,
+                session,
+                data: { type: SSOType.Proton, payload: { forkParameters } },
+                paths,
+            });
+
+            return { type: 'login', payload: loginResult };
+        } catch (e: any) {
+            const { code, message } = getApiError(e);
+            if (
+                [API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID, API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED].some(
+                    (errorCode) => errorCode === code
+                )
+            ) {
+                const organization = await getOrganization({ session, api }).catch(noop);
+                const appSwitcherState: AppSwitcherState = {
+                    session: { ...session, Organization: organization },
+                    error: {
+                        type: 'unsupported-app',
+                        app: forkParameters.app,
+                        message,
+                    },
+                };
+
+                return {
+                    type: 'login',
+                    payload: {
+                        type: 'app-switcher',
+                        location: { pathname: paths.appSwitcher },
+                        payload: appSwitcherState,
+                    },
+                };
+            }
+            throw e;
+        }
     } catch (e: any) {
         if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
             const activeSessionsResult = await getActiveSessions({
