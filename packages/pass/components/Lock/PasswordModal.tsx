@@ -71,6 +71,7 @@ export const PasswordModal: FC<PasswordModalProps> = ({
             onSubmit={() => !error && onSubmit?.(password)}
             open={open}
             size="small"
+            data-protonpass-autosave-ignore="true"
         >
             <ModalTwoHeader title={title} closeButtonProps={{ pill: true, disabled: loading }} />
             <ModalTwoContent>
