@@ -29,14 +29,17 @@ export const InAppNotifications: FC = WithFeatureFlag(() => {
 
     useEffect(() => {
         const checkNotificationDisplay = async () => {
-            if (notification?.content.displayType === InAppNotificationDisplayType.MODAL) {
+            if (notification) {
+                // wait in case Pass onboarding modal takes time to open
                 await wait(1_500);
-                setShowNotification(!isModalOpen());
-            } else setShowNotification(true);
+                if (notification.content.displayType === InAppNotificationDisplayType.MODAL) {
+                    setShowNotification(!isModalOpen());
+                } else setShowNotification(true);
+            }
         };
 
         void checkNotificationDisplay();
-    }, []);
+    }, [notification]);
 
     if (!notification || !showNotification) return null;
 
