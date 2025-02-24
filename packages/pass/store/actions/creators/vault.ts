@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
+    shareLockRequest,
     vaultCreateRequest,
     vaultDeleteRequest,
     vaultEditRequest,
@@ -16,7 +17,7 @@ import {
     withRequestProgress,
     withRequestSuccess,
 } from '@proton/pass/store/request/enhancers';
-import type { BatchItemRevisions, ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
+import type { BatchItemRevisions, ItemRevision, Share, ShareContent, ShareId, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -191,4 +192,18 @@ export const vaultTransferOwnershipFailure = createAction(
             error,
         })({ payload: {} })
     )
+);
+
+export const lockShare = createAction('share::actions::lock', (shareId: ShareId) =>
+    withRequest({
+        status: 'start',
+        id: shareLockRequest(shareId),
+    })({ payload: null })
+);
+
+export const unlockShare = createAction('share::actions::lock', (shareId: ShareId) =>
+    withRequest({
+        status: 'success',
+        id: shareLockRequest(shareId),
+    })({ payload: null })
 );
