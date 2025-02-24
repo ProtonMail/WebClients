@@ -1,8 +1,8 @@
 import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
+import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import type {
     DropdownActions,
     DropdownRequest,
@@ -24,9 +24,10 @@ import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
 type DropdownFieldRef = { current: MaybeNull<FieldHandle> };
-type DropdownOptions = { root: ProtonPassRoot; onDestroy: () => void };
 
-export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDropdown => {
+type DropdownOptions = { popover: PopoverController; onDestroy: () => void };
+
+export const createDropdown = ({ popover, onDestroy }: DropdownOptions): InjectedDropdown => {
     const fieldRef: DropdownFieldRef = { current: null };
     const listeners = createListenerStore();
 
@@ -34,7 +35,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
         animation: 'fadein',
         backdropClose: true,
         id: 'dropdown',
-        root,
+        popover,
         src: DROPDOWN_IFRAME_SRC,
         onError: onDestroy,
         onClose: (_, options) => {
@@ -42,14 +43,13 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             else if (fieldRef.current?.element !== document.activeElement) fieldRef.current?.detachIcon();
         },
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
-        position: (iframeRoot: HTMLElement) => {
+        position: (root: HTMLElement) => {
             const field = fieldRef.current;
             if (!field) return { top: 0, left: 0 };
 
             const { boxElement, element } = field;
             const boxed = boxElement !== element;
-
-            const bodyTop = iframeRoot.getBoundingClientRect().top;
+            const bodyTop = root.getBoundingClientRect().top;
 
             const { value: height, offset: offsetBox } = getComputedHeight(createStyleCompute(boxElement), {
                 node: boxElement,
