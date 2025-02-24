@@ -240,6 +240,7 @@ export const PhotosWithAlbumsView: FC = () => {
                             uploadDisabled={isUploadDisabled}
                             tabSelection={'gallery'}
                             createAlbumModal={createAlbumModal}
+                            addAlbumPhotosModal={addAlbumPhotosModal}
                         />
                     }
                 />
