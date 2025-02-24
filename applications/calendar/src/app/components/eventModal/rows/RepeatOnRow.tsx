@@ -40,10 +40,13 @@ const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange, displaySta
     };
 
     return (
-        <div className={clsx('mb-2 ml-0', !displayStacked && 'md:ml-2')}>
-            <label className={clsx(displayStacked && 'text-semibold')} id="label-event-weekly-repeat">{c('Label')
-                .t`Repeat on`}</label>
-            <div className="flex gap-2">
+        <div className={clsx('flex', displayStacked ? 'flex-column gap-2' : 'items-center')}>
+            <label
+                className="color-weak w-custom"
+                style={{ '--w-custom': '4.25rem' }}
+                id="label-event-weekly-repeat"
+            >{c('Label').t`On`}</label>
+            <div className="flex gap-0.5 items-center">
                 {DAYS.map((dayIndex) => {
                     const day = (dayIndex + weekStartsOn) % 7;
                     const dayLong = weekdaysLong[day];

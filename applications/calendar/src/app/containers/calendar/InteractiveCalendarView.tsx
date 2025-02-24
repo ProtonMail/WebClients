@@ -116,7 +116,7 @@ import { findUpwards } from '../../components/calendar/mouseHelpers/domHelpers';
 import { sortEvents, sortWithTemporaryEvent } from '../../components/calendar/sortLayout';
 import CreateEventModal from '../../components/eventModal/CreateEventModal';
 import CreateEventPopover from '../../components/eventModal/CreateEventPopover';
-import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
+import { getHasDoneChanges, getHasEditedDateTime } from '../../components/eventModal/eventForm/getHasEdited';
 import { modelToDateProperty } from '../../components/eventModal/eventForm/modelToProperties';
 import {
     getExistingEvent,
@@ -460,6 +460,8 @@ const InteractiveCalendarView = ({
     const isDuplicatingEvent = !!modalsMap.createEventModal.props?.isDuplicating;
     const isInTemporaryBlocking =
         tmpData && tmpDataOriginal && getHasDoneChanges(tmpData, tmpDataOriginal, isEditingEvent);
+    const hasChangedStartDate =
+        tmpData && tmpDataOriginal && getHasEditedDateTime(tmpData.start, tmpDataOriginal.start);
     // If opening the event from mail in the drawer (when preventPopover is true), do not disable scroll
     const isScrollDisabled = !!interactiveData && !temporaryEvent && !targetEventData?.preventPopover;
     const prodId = getProdId(config);
@@ -836,7 +838,9 @@ const InteractiveCalendarView = ({
             }
 
             let newTemporaryModel =
-                temporaryEvent && isInTemporaryBlocking ? temporaryEvent.tmpData : getCreateModel(isFromAllDay);
+                temporaryEvent && (isInTemporaryBlocking || hasChangedStartDate)
+                    ? temporaryEvent.tmpData
+                    : getCreateModel(isFromAllDay);
 
             const isAllowed = !!newTemporaryModel;
 
