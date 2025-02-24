@@ -43,7 +43,7 @@ const PhotosShareLinkButton = ({ selectedLinks }: Props) => {
                 data-testid={hasSharedLink ? 'toolbar-manage-link' : 'toolbar-share-link'}
                 className="inline-flex flex-nowrap flex-row items-center"
             >
-                <Icon name={iconName} className="mr-2" />{' '}
+                <Icon name={iconName} className="mr-2" />
                 {hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Share`}
             </ToolbarButton>
             {linkSharingModal}
