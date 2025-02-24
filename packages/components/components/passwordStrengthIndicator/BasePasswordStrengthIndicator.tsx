@@ -92,26 +92,14 @@ function getPenaltyDescription(penalty: ConsolidatedPasswordPenalties): string {
             return c('Info').t`Symbols (#$&)`;
         case 'Short':
             return c('Info').t`At least ${BETTER_PASSWORD_LENGTH} characters`;
-        case 'ProgressiveOrConsecutive':
-            return c('Info').t`No predictable sequences (1234, aaa)`;
-        case 'ContainsCommonPasswordOrShortWordList':
-            return c('Info').t`No common passwords`;
         default:
             return '';
     }
 }
 
 const isLongEnough = (password: string) => password.length >= BETTER_PASSWORD_LENGTH;
-const tooShortToJudge = (password: string) => password.length <= 3;
 
-const allPenalties: ConsolidatedPasswordPenalties[] = [
-    'Short',
-    'NoLowercaseOrUppercase',
-    'NoNumbers',
-    'NoSymbols',
-    'ProgressiveOrConsecutive',
-    'ContainsCommonPasswordOrShortWordList',
-];
+const allPenalties: ConsolidatedPasswordPenalties[] = ['Short', 'NoLowercaseOrUppercase', 'NoNumbers', 'NoSymbols'];
 
 const copyPasswordPenalties: ConsolidatedPasswordPenalties[] = ['Short', 'NoNumbers', 'NoSymbols'];
 
@@ -129,8 +117,6 @@ const consolidatePenalties = (
         result.add('Short');
     }
 
-    const isTooShortToJudge = tooShortToJudge(password);
-
     copyPasswordPenalties.forEach((value) => {
         if (penalties.has(value as any)) {
             result.add(value);
@@ -139,14 +125,6 @@ const consolidatePenalties = (
 
     if (penalties.has('NoLowercase') || penalties.has('NoUppercase')) {
         result.add('NoLowercaseOrUppercase');
-    }
-
-    if (isTooShortToJudge || penalties.has('Consecutive') || penalties.has('Progressive')) {
-        result.add('ProgressiveOrConsecutive');
-    }
-
-    if (isTooShortToJudge || penalties.has('ContainsCommonPassword') || penalties.has('ShortWordList')) {
-        result.add('ContainsCommonPasswordOrShortWordList');
     }
 
     return result;
