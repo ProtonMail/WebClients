@@ -31,7 +31,8 @@ import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../store';
 import { isDecryptedLink, useThumbnailsDownload } from '../../store';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
-import { PhotosGrid } from './PhotosGrid';
+import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
+import { AlbumCoverHeader } from './components/AlbumCoverHeader';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsAlbumsGallery } from './toolbar/PhotosWithAlbumsToolbar';
@@ -83,6 +84,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const createAlbumModal = useModalStateObject();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
     const isShiftPressed = useShiftKey();
@@ -312,20 +314,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
 
                 {isAlbumPhotosEmpty ? (
                     <div className="flex flex-column flex-nowrap mx-2 w-full h-full">
-                        <div className="flex shrink-0 flex-row flex-nowrap mt-11 items-center">
-                            <div
-                                className="bg-weak border rounded mr-4 w-1/3 flex h-custom"
-                                style={{
-                                    '--h-custom': '14rem', // to remove when img is there, unless placeholder needs it?
-                                }}
-                            >
-                                <span className="m-auto">Img placeholder</span>
-                            </div>
-                            <div className="flex flex-column flex-nowrap mx-auto shrink-0 flex-1">
-                                <h1 className="text-bold h2">{album.name}</h1>
-                                <span className="color-weak">TODO: details to add</span>
-                            </div>
-                        </div>
+                        <AlbumCoverHeader album={album} />
 
                         <div className="flex-1 flex">
                             <div
@@ -349,19 +338,25 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                         </div>
                     </div>
                 ) : (
-                    <PhotosGrid
-                        data={albumPhotos}
-                        onItemRender={handleItemRender}
-                        onItemRenderLoadedLink={handleItemRenderLoadedLink}
-                        isLoading={isAlbumsLoading}
-                        onItemClick={setPreviewLinkId}
-                        hasSelection={selectedCount > 0}
-                        onSelectChange={(i, isSelected) =>
-                            handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
-                        }
-                        isGroupSelected={isGroupSelected}
-                        isItemSelected={isItemSelected}
-                    />
+                    <div
+                        ref={containerRef}
+                        className="flex flex-column flex-nowrap mx-2 w-full h-full overflow-auto outline-none--at-all mb-2"
+                    >
+                        <AlbumCoverHeader album={album} />
+                        <PhotosInsideAlbumsGrid
+                            data={albumPhotos}
+                            onItemRender={handleItemRender}
+                            onItemRenderLoadedLink={handleItemRenderLoadedLink}
+                            isLoading={isAlbumsLoading}
+                            onItemClick={setPreviewLinkId}
+                            hasSelection={selectedCount > 0}
+                            onSelectChange={(i, isSelected) =>
+                                handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
+                            }
+                            isGroupSelected={isGroupSelected}
+                            isItemSelected={isItemSelected}
+                        />
+                    </div>
                 )}
             </UploadDragDrop>
         </>
