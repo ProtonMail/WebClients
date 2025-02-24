@@ -197,8 +197,8 @@ const EventPopover = ({
     const showDeleteButton = !isSearchView && getCanDeleteEvent({ isOwnedCalendar, isCalendarWritable, isInvitation });
     const showDuplicateButton = !!canDuplicateEvent;
     const showViewEventButton = isSearchView || isDrawerApp;
-
     const mergedStyle = isSmallViewport ? undefined : style;
+
     const frequencyString = useMemo(() => {
         if (!veventComponent) {
             return;
