@@ -31,6 +31,7 @@ interface Props extends SharedViewProps {
     formatTime: (date: Date) => string;
     formatDate: (date: Date) => string;
     isDrawerApp?: boolean;
+    onBackFromSearch: () => void;
 }
 const CalendarView = ({
     calendars,
@@ -65,6 +66,7 @@ const CalendarView = ({
     onClickDate,
     onChangeDate,
     onClickToday,
+    onBackFromSearch,
     timeGridViewRef,
     isScrollDisabled,
 
@@ -142,6 +144,7 @@ const CalendarView = ({
                 setTargetEventRef={setTargetEventRef}
                 setInteractiveData={setInteractiveData}
                 getOpenedMailEvents={getOpenedMailEvents}
+                onBackFromSearch={onBackFromSearch}
             />
         );
     }

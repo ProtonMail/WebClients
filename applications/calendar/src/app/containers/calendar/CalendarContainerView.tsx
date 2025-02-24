@@ -632,21 +632,21 @@ const CalendarContainerView = ({
                 )
             }
         >
-            <ErrorBoundary>
-                <Suspense>
-                    <LazyCalendarShortcutsAndCommander
-                        isDrawerApp={isDrawerApp}
-                        isSearching={isSearching}
-                        onClickToday={onClickToday}
-                        onClickNextView={onClickNextView}
-                        onClickPreviousView={onClickPreviousView}
-                        onChangeView={onChangeView}
-                        onClickSearch={handleClickSearch}
-                        onCreateEvent={onCreateEvent}
-                        onBackFromSearch={handleBackFromSearch}
-                    />
-                </Suspense>
-            </ErrorBoundary>
+            {view === VIEWS.SEARCH ? null : (
+                <ErrorBoundary>
+                    <Suspense>
+                        <LazyCalendarShortcutsAndCommander
+                            isDrawerApp={isDrawerApp}
+                            onClickToday={onClickToday}
+                            onClickNextView={onClickNextView}
+                            onClickPreviousView={onClickPreviousView}
+                            onChangeView={onChangeView}
+                            onClickSearch={handleClickSearch}
+                            onCreateEvent={onCreateEvent}
+                        />
+                    </Suspense>
+                </ErrorBoundary>
+            )}
 
             <div className="only-print p-4">
                 {tzid} <br />
