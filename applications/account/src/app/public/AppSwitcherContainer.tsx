@@ -1,3 +1,5 @@
+import { type ReactElement } from 'react';
+
 import { c } from 'ttag';
 
 import {
@@ -8,6 +10,10 @@ import {
     type OnLoginCallbackArguments,
     SimpleDropdown,
 } from '@proton/components';
+import Logo from '@proton/components/components/logo/Logo';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
@@ -20,6 +26,49 @@ import PublicUserItem from './PublicUserItem';
 
 export type AppSwitcherState = {
     session: OnLoginCallbackArguments & { Organization: Organization | undefined };
+    error?: {
+        type: 'unsupported-app';
+        app: APP_NAMES;
+        message: string;
+    };
+};
+
+const Disabled = ({ children }: { children: ReactElement }) => {
+    return (
+        <div className="relative">
+            <div
+                style={{
+                    filter: 'grayscale(100%)',
+                    opacity: 0.5,
+                }}
+            >
+                {children}
+            </div>
+            <Icon
+                className="absolute color-danger top-0 right-0 bg-norm rounded-xl border border-transparent"
+                name="cross-circle-filled"
+            />
+        </div>
+    );
+};
+
+const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organization?: Organization }) => {
+    const appName = getAppName(app);
+    const organizationName = organization?.Name || '';
+    return (
+        <div className="flex flex-row items-center gap-2 px-3 py-2 border rounded border-weak mb-6 mt-6">
+            <div className="shrink-0">
+                <Disabled>
+                    <Logo appName={app} size={15} variant="glyph-only" />
+                </Disabled>
+            </div>
+            <div className="flex-1">
+                {getBoldFormattedText(
+                    c('Info').t`**${appName}** is not supported in your organization **${organizationName}**.`
+                )}
+            </div>
+        </div>
+    );
 };
 
 interface Props {
@@ -30,6 +79,7 @@ interface Props {
 
 const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const session = state.session;
+    const error = state.error;
     const { User, Organization } = session;
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
@@ -60,7 +110,15 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
             }
         >
             <Main>
-                <Header title={c('Action').t`Welcome`} subTitle={c('Info').t`Choose an app to get started`} />
+                <Header
+                    title={c('Action').t`Welcome`}
+                    belowTitle={
+                        error?.type === 'unsupported-app' && (
+                            <UnsupportedAppError organization={Organization} app={error.app} />
+                        )
+                    }
+                    subTitle={c('Info').t`Select a service to continue`}
+                />
                 <Content>
                     <ExploreAppsList
                         subscription={{ subscribed, plan: Organization?.PlanName }}
