@@ -1,7 +1,7 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { isIFrameMessage } from 'proton-pass-extension/app/content/injections/iframe/utils';
+import type { PopoverController } from 'proton-pass-extension/app/content/services/iframes/popover';
 import type {
     IFrameApp,
     IFrameCloseOptions,
@@ -27,7 +27,6 @@ import { WorkerMessageType } from '@proton/pass/types';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
-import { hidePopover, showPopover } from '@proton/pass/utils/dom/popover';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -39,8 +38,8 @@ type CreateIFrameAppOptions<A> = {
     backdropClose: boolean;
     classNames?: string[];
     id: IFrameEndpoint;
+    popover: PopoverController;
     src: string;
-    root: ProtonPassRoot;
     backdropExclude?: () => HTMLElement[];
     onError?: (error: unknown) => void;
     onOpen?: (state: IFrameState<A>) => void;
@@ -54,8 +53,8 @@ export const createIFrameApp = <A>({
     backdropClose,
     classNames = [],
     id,
+    popover,
     src,
-    root,
     backdropExclude,
     onError,
     onOpen,
@@ -87,7 +86,7 @@ export const createIFrameApp = <A>({
         type: 'iframe',
         classNames,
         attributes: { src, popover: '' },
-        parent: root,
+        parent: popover.root,
         shadow: true,
     });
 
@@ -162,7 +161,7 @@ export const createIFrameApp = <A>({
 
     const updatePosition = () => {
         cancelAnimationFrame(state.positionReq);
-        state.positionReq = requestAnimationFrame(() => setIframePosition(position(root)));
+        state.positionReq = requestAnimationFrame(() => setIframePosition(position(popover.root)));
     };
 
     const close = (options: IFrameCloseOptions = {}) => {
@@ -170,7 +169,7 @@ export const createIFrameApp = <A>({
         activeListeners.removeAll();
 
         if (state.visible) {
-            hidePopover(root);
+            popover.close();
             const target = (options?.event?.target ?? null) as MaybeNull<HTMLElement>;
 
             if (!target || !backdropExclude?.().includes(target)) {
@@ -188,7 +187,7 @@ export const createIFrameApp = <A>({
 
     const open = (action: A, scrollRef?: HTMLElement) => {
         if (!state.visible) {
-            showPopover(root);
+            popover.open();
             state.action = action;
             state.visible = true;
 
@@ -235,7 +234,7 @@ export const createIFrameApp = <A>({
         listeners.removeAll();
         activeListeners.removeAll();
         state.port?.onMessage.removeListener(onMessageHandler);
-        safeCall(() => root.removeChild(iframe))();
+        safeCall(() => popover.root.removeChild(iframe))();
         state.port = null;
     };
 
