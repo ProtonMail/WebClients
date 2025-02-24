@@ -128,6 +128,11 @@
 
 	// special fix for popover line with fullday checkbox + recurrency (DE) ------------------
 	&-fullday-recurrency {
+		body.is-drawer-app & {
+			align-items: start;
+			gap: em(8, 16);
+		}
+
 		@include media('>=#{em(350, 16)}') {
 			flex-flow: row nowrap;
 
