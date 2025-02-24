@@ -125,6 +125,8 @@ enum MailFeatureFlag {
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
     SelfTroubleshoot = 'SelfTroubleshoot',
+    PasswordNudge = 'PasswordNudge',
+    PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     ComposerAssistant = 'ComposerAssistant',
     ComposerAssistantFormatting = 'ComposerAssistantFormatting',
     WalletRightSidebarLink = 'WalletRightSidebarLink',

@@ -33,6 +33,10 @@
 		grid-column: unset;
 		padding-inline-start: var(--space-1);
 
+		&--no-padding {
+			padding-inline-start: 0;
+		}
+
 		> * {
 			inline-size: auto;
 		}

@@ -58,6 +58,7 @@ export enum FeatureCode {
     MailServiceWorker = 'MailServiceWorker',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
+    PassNudgeDontShowAgain = 'PassNudgeDontShowAgain',
 
     // Flags needed by the one-dollar post-signup promo
     SubscriptionLastReminderDate = 'SubscriptionLastReminderDate',

@@ -30,6 +30,7 @@ export enum TelemetryMeasurementGroups {
     mailActions = 'mail.web.clicks_mail_actions',
     mailPostSignupOneDollar = 'mail.web.post_signup_one_dollar',
     mailPagingControls = 'mail.web.paging_controls',
+    passNudge = 'mail.web.pass_nudge',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     paymentsFlow = 'payments.flow',
@@ -292,6 +293,12 @@ export enum TelemetryPaidUsersNudge {
     clickHideOffer = 'click_hide_offer',
 }
 
+export enum TelemetryPassNudgeEvents {
+    banner_display = 'banner_display',
+    banner_interaction = 'banner_interaction',
+    pass_cta_click = 'pass_cta_click',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -325,7 +332,8 @@ export type TelemetryEvents =
     | TelemetryEncryptedSearchEvents
     | TelemetryPostSubscriptionTourEvents
     | TelemetryMailDrivePostSignupOneDollarEvents
-    | TelemetryPaidUsersNudge;
+    | TelemetryPaidUsersNudge
+    | TelemetryPassNudgeEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
