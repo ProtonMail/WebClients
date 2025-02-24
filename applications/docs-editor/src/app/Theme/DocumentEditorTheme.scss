@@ -200,7 +200,6 @@ $line-height: 1.2; // Consistent line-height
 	inset-block: 0;
 	inset-inline-end: calc(-0.5 * var(--width));
 	inline-size: var(--width);
-	z-index: 10;
 	pointer-events: auto;
 
 	&.show {
