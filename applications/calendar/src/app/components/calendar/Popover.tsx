@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
 import ReactDOM from 'react-dom';
 
+import { useActiveBreakpoint } from '@proton/components/index';
+
 import type { Rect } from '../../hooks/observeRect';
 import { useRect } from '../../hooks/useRect';
 
@@ -19,6 +21,10 @@ interface Props {
 }
 const Popover = ({ targetEl, containerEl, children, isOpen, once = false, when }: Props) => {
     const [popoverEl, setPopoverEl] = useState<HTMLElement | null>(null);
+    const { viewportWidth } = useActiveBreakpoint();
+
+    const isSmallViewport = viewportWidth['<=small'];
+    const MIN_VIEWPORT_MARGIN = isSmallViewport ? 0 : 100;
 
     const containerRect = useRect(containerEl, isOpen);
     const targetRect = useRect(
@@ -48,7 +54,35 @@ const Popover = ({ targetEl, containerEl, children, isOpen, once = false, when }
         };
 
         const alignTargetStyle = ({ left: targetLeft, top: targetTop, width: targetWidth }: Rect) => {
-            const diffOverflowY = targetTop + popoverHeight - containerHeight;
+            /* What was happening:
+                +------------------+  ← Container top (0)
+                |                  |
+                |    ↕ targetTop   |
+                |                  |
+                |    +--------+    |
+                |    |popover |    |
+                |    |height  |    |
+                |    |        |    |
+                +----+--------+----+  ← Container bottom (containerHeight)
+                     |        |
+                     +--------+
+                        ↕ diffOverflowY (the part that sticks out)
+
+                What will happen now:
+                +------------------+  ← Container top (0)
+                |                  |
+                |    ↕ targetTop   |
+                |                  |
+                |    +--------+    |
+                |    |popover |    |
+                |    |height  |    |
+                |    |        |    |
+                |    +--------+    |
+                |       ↕          |  ← MIN_VIEWPORT_MARGIN (50px)
+                +------------------+  ← Container bottom
+             */
+            // Calculate overflow including the desired margin
+            const diffOverflowY = targetTop + popoverHeight + MIN_VIEWPORT_MARGIN - containerHeight;
 
             const top = diffOverflowY >= 0 ? targetTop - diffOverflowY : Math.max(targetTop, 0);
 
