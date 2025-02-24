@@ -100,6 +100,7 @@ enum DriveFeatureFlag {
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
     // One-dollar offer
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',
+    DriveWebRecoveryASV = 'DriveWebRecoveryASV',
 }
 
 enum DocsFeatureFlag {
