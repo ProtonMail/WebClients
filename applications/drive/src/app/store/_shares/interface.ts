@@ -39,6 +39,8 @@ export interface Share {
     type: ShareType;
     state: ShareState;
     createTime: number;
+    // Will tell us if the locked share is for auto-restore process
+    forASV?: boolean;
 }
 
 export interface ShareWithKey extends Share {
