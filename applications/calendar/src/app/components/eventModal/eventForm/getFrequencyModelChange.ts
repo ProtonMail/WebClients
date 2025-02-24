@@ -15,7 +15,14 @@ const getFrequencyModelChange = (
     const oldStartDay = oldStart.date.getDay();
     const newStartDay = newStart.date.getDay();
     const oldDays = frequencyModel.weekly && frequencyModel.weekly.days;
-    const newDays = oldDays ? replace(oldDays, oldStartDay, newStartDay).sort() : [];
+    let newDays = oldDays;
+    if (oldDays.length === 1) {
+        newDays = replace(oldDays, oldStartDay, newStartDay);
+    } else if (oldDays.includes(newStartDay)) {
+        newDays = oldDays;
+    } else {
+        newDays = replace(oldDays, oldStartDay, newStartDay).sort();
+    }
 
     /**
      * Notice that after replacement we may end up with repeated days in the newDays array.

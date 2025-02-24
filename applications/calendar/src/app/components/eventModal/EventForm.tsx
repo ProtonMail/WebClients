@@ -34,7 +34,6 @@ import clsx from '@proton/utils/clsx';
 import { getCanChangeCalendarOfEvent } from '../../helpers/event';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
 import CustomFrequencyModal from './inputs/CustomFrequencyModal';
-import CustomFrequencySelector from './inputs/CustomFrequencySelector';
 import EventColorSelect from './inputs/EventColorSelect';
 import FrequencyInput from './inputs/FrequencyInput';
 import { DateTimeRow } from './rows/DateTimeRow';
@@ -97,7 +96,6 @@ const EventForm = ({
 
     const isSingleEdit = !!model.rest?.['recurrence-id'];
 
-    const isCustomFrequencySet = model.frequencyModel.type === FREQUENCY.CUSTOM;
     const canChangeCalendar = getCanChangeCalendarOfEvent({
         isCreateEvent,
         isOwnedCalendar,
@@ -114,33 +112,27 @@ const EventForm = ({
     const customModal = useModalStateObject();
     const previousFrequencyRef = useRef<FrequencyModel>();
 
-    const dateRow = isMinimal ? (
-        <MiniDateTimeRows
-            model={model}
-            setModel={setModel}
-            endError={errors.end}
-            displayWeekNumbers={displayWeekNumbers}
-            weekStartsOn={weekStartsOn}
-        >
-            <div className="color-weak hover:color-norm">
+    const frequencyDropdown = (
+        <>
+            <div>
                 <FrequencyInput
-                    className="w-full relative inline-flex flex-nowrap gap-1 text-left sm:text-right items-center rounded"
+                    className="w-full relative flex flex-nowrap gap-1 text-left items-center rounded"
                     id={FREQUENCY_INPUT_ID}
-                    frequencyInputType="dropdown"
                     data-testid="event-modal/frequency:select"
-                    value={model.frequencyModel.type}
-                    onChange={(type) => {
-                        if (type === FREQUENCY.CUSTOM) {
+                    start={model.start}
+                    weekStartsOn={weekStartsOn}
+                    frequencyModel={model.frequencyModel}
+                    onChange={(frequencyModel) => {
+                        if (frequencyModel.type === FREQUENCY.CUSTOM) {
                             customModal.openModal(true);
                             previousFrequencyRef.current = model.frequencyModel;
                         }
                         setModel({
                             ...model,
-                            frequencyModel: { ...model.frequencyModel, type },
+                            frequencyModel: frequencyModel,
                             hasTouchedRrule: true,
                         });
                     }}
-                    title={c('Title').t`Select event frequency`}
                 />
             </div>
 
@@ -161,6 +153,7 @@ const EventForm = ({
                     displayWeekNumbers={displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     errors={errors}
+                    view={view}
                     isSubmitted={isSubmitted}
                     onChange={(frequencyModel) => {
                         setModel({ ...model, frequencyModel, hasTouchedRrule: true });
@@ -168,6 +161,18 @@ const EventForm = ({
                     }}
                 />
             )}
+        </>
+    );
+
+    const dateRow = isMinimal ? (
+        <MiniDateTimeRows
+            model={model}
+            setModel={setModel}
+            endError={errors.end}
+            displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
+        >
+            {frequencyDropdown}
         </MiniDateTimeRows>
     ) : (
         <DateTimeRow
@@ -177,37 +182,9 @@ const EventForm = ({
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}
             tzid={tzid!}
-        />
-    );
-
-    const frequencyRow = (
-        <IconRow icon="arrows-rotate" title={c('Label').t`Frequency`} id={FREQUENCY_INPUT_ID}>
-            <FrequencyInput
-                className={clsx([isCustomFrequencySet && 'mb-2', 'w-full'])}
-                id={FREQUENCY_INPUT_ID}
-                data-testid="event-modal/frequency:select"
-                value={model.frequencyModel.type}
-                onChange={(type) =>
-                    setModel({
-                        ...model,
-                        frequencyModel: { ...model.frequencyModel, type },
-                        hasTouchedRrule: true,
-                    })
-                }
-                title={c('Title').t`Select event frequency`}
-            />
-            {isCustomFrequencySet && (
-                <CustomFrequencySelector
-                    frequencyModel={model.frequencyModel}
-                    start={model.start}
-                    displayWeekNumbers={displayWeekNumbers}
-                    weekStartsOn={weekStartsOn}
-                    errors={errors}
-                    isSubmitted={isSubmitted}
-                    onChange={(frequencyModel) => setModel({ ...model, frequencyModel, hasTouchedRrule: true })}
-                />
-            )}
-        </IconRow>
+        >
+            {canEditSharedEventData && !isMinimal && frequencyDropdown}
+        </DateTimeRow>
     );
 
     // temporary code; remove when proper design available
@@ -349,7 +326,6 @@ const EventForm = ({
         <div className="mt-2" {...props} ref={eventFormContentRef}>
             <RowTitle canEditSharedEventData={canEditSharedEventData} model={model} setModel={setModel} />
             {canEditSharedEventData && dateRow}
-            {canEditSharedEventData && !isMinimal && frequencyRow}
             {model.calendars.length > 0 && calendarRow}
             <RowParticipants
                 canEditSharedEventData={canEditSharedEventData}

@@ -218,12 +218,12 @@ describe('getTimezonedFrequencyString should produce the expected string for mon
     const getMonthlyRrule = (rrule = {}) => getRrule({ ...rrule, freq: FREQUENCY.MONTHLY });
 
     it('should get a standard monthly recurring event', () => {
-        expect(getTimezonedFrequencyString(getMonthlyRrule(), dummyStart, options)).toEqual('Monthly on day 20');
+        expect(getTimezonedFrequencyString(getMonthlyRrule(), dummyStart, options)).toEqual('Monthly on the 20th');
     });
 
     it('should get a standard monthly recurring event, on a different timezone', () => {
         expect(getTimezonedFrequencyString(getMonthlyRrule(), dummyStart, otherTzOptions)).toEqual(
-            'Monthly on day 20 (Europe/Athens)'
+            'Monthly on the 20th (Europe/Athens)'
         );
     });
 
@@ -231,7 +231,7 @@ describe('getTimezonedFrequencyString should produce the expected string for mon
         const rrule = getMonthlyRrule({
             interval: 2,
         });
-        expect(getTimezonedFrequencyString(rrule, dummyStart, options)).toEqual('Every 2 months on day 20');
+        expect(getTimezonedFrequencyString(rrule, dummyStart, options)).toEqual('Every 2 months on the 20th');
     });
 
     it('should get a custom monthly recurring event happening every 2 months, on the third Monday', () => {
