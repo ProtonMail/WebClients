@@ -26,6 +26,7 @@ import {
     pollTaskRunning,
     removeExpired,
     reset,
+    resetByPassFilter,
     retry,
     setPageSize,
     setParams,
@@ -53,6 +54,7 @@ import {
     optimisticUpdates,
     pollTaskRunningFulfilled,
     removeExpired as removeExpiredReducer,
+    resetByPassFilter as resetByPassFilterReducer,
     reset as resetReducer,
     retry as retryReducer,
     selectAllFulfilled,
@@ -115,6 +117,7 @@ const elementsSlice = createSlice({
         builder.addCase(reset, resetReducer);
         builder.addCase(updatePage, updatePageReducer);
         builder.addCase(setPageSize, setPageSizeReducer);
+        builder.addCase(resetByPassFilter, resetByPassFilterReducer);
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
         builder.addCase(retry, retryReducer);
