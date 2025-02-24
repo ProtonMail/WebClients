@@ -1,12 +1,7 @@
 import { useCallback } from 'react';
 
-import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import {
-    getActiveAddressKeys,
-    getPrimaryActiveAddressKeyForEncryption,
-    getPrimaryAddressKeysForSigning,
-} from '@proton/shared/lib/keys';
 
 import type { PublicPrivateKey } from '../../store/messages/messagesTypes';
 
@@ -14,18 +9,14 @@ export type GetMessageKeys = (message: Pick<Message, 'AddressID'>) => Promise<Pu
 export type UseGetMessageKeys = () => GetMessageKeys;
 
 export const useGetMessageKeys: UseGetMessageKeys = () => {
-    const getAddressKeys = useGetAddressKeys();
+    const getAddressKeysByUsage = useGetAddressKeysByUsage();
 
     return useCallback(
         async ({ AddressID }: Pick<Message, 'AddressID'>) => {
-            const decryptedKeys = await getAddressKeys(AddressID);
-            const activeKeysByVersion = await getActiveAddressKeys(null, decryptedKeys);
-            const signingKeys = getPrimaryAddressKeysForSigning(activeKeysByVersion, true);
-            const encryptionKey = getPrimaryActiveAddressKeyForEncryption(activeKeysByVersion, true).privateKey;
-            // on decryption, key version order does not matter
-            const decryptionKeys = [...activeKeysByVersion.v6, ...activeKeysByVersion.v4].map(
-                (activeKey) => activeKey.privateKey
-            );
+            const { encryptionKey, signingKeys, decryptionKeys } = await getAddressKeysByUsage({
+                AddressID,
+                withV6Support: true,
+            });
 
             // verificationKeys are meant to be retrieved through useGetVerificationPreferences
             return {
@@ -35,6 +26,6 @@ export const useGetMessageKeys: UseGetMessageKeys = () => {
                 type: 'publicPrivate',
             };
         },
-        [getAddressKeys]
+        [getAddressKeysByUsage]
     );
 };
