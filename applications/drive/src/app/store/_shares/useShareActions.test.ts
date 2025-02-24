@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { when } from 'jest-when';
+import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import { queryMigrateLegacyShares } from '@proton/shared/lib/api/drive/share';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
@@ -7,6 +7,7 @@ import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { useDebouncedRequest } from '../_api';
+import { useLink } from '../_links';
 import useLinksState from '../_links/useLinksState';
 import useShare from './useShare';
 import useShareActions from './useShareActions';
@@ -33,11 +34,17 @@ jest.mocked(useShare).mockReturnValue({
     getShareSessionKey: mockedGetShareSessionKey,
 });
 
-jest.mock('../_links', () => ({
-    useLink: jest.fn(() => ({
-        getLinkPrivateKey: jest.fn().mockResolvedValue('privateKey'),
-    })),
+jest.mock('../_links');
+const mockedGetLink = jest.fn().mockImplementation(() => ({
+    parentLinkId: 'parentLinkId',
+    encryptedName: 'encryptedName',
+    corruptedLink: false,
 }));
+const mockedGetPrivateKey = jest.fn().mockResolvedValue('privateKey');
+jest.mocked(useLink).mockReturnValue({
+    getLink: mockedGetLink,
+    getLinkPrivateKey: mockedGetPrivateKey,
+} as any);
 
 jest.mock('@proton/shared/lib/api/drive/share');
 const mockedQueryLegacyShares = jest.mocked(queryMigrateLegacyShares);
@@ -48,10 +55,12 @@ const mockedGetEncryptedSessionKey = jest.mocked(getEncryptedSessionKey);
 const mockedRemoveLinkForMigration = jest.fn();
 jest.mock('../_links/useLinksState');
 
-//@ts-ignore
-jest.mocked(useLinksState).mockImplementation(() => ({
-    removeLinkForMigration: mockedRemoveLinkForMigration,
-}));
+jest.mocked(useLinksState).mockImplementation(
+    () =>
+        ({
+            removeLinkForMigration: mockedRemoveLinkForMigration,
+        }) as any
+);
 
 describe('useShareActions', () => {
     let originalConsoleWarn: Console['warn'];
@@ -67,114 +76,118 @@ describe('useShareActions', () => {
     afterAll(() => {
         // Restore the original console.warn
         console.warn = originalConsoleWarn;
+        verifyAllWhenMocksCalled();
     });
     afterEach(() => {
         jest.clearAllMocks();
     });
-    it('migrateShares', async () => {
-        const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
-        mockedDebounceRequest.mockResolvedValueOnce({ ShareIDs: ['shareId'] });
-        mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
-        const { result } = renderHook(() => useShareActions());
-        await result.current.migrateShares();
-        expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
-            PassphraseNodeKeyPackets: [
-                { ShareID: 'shareId', PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket) },
-            ],
+    describe('migrateShares', () => {
+        it('should run migrateShares normally', async () => {
+            const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
+            mockedDebounceRequest.mockResolvedValueOnce({ ShareIDs: ['shareId'] });
+            mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
+            const { result } = renderHook(() => useShareActions());
+            await result.current.migrateShares();
+            expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
+                PassphraseNodeKeyPackets: [
+                    { ShareID: 'shareId', PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket) },
+                ],
+            });
+            expect(mockedRemoveLinkForMigration).toHaveBeenCalledWith('shareId', 'rootLinkId');
         });
-        expect(mockedRemoveLinkForMigration).toHaveBeenCalledWith('shareId', 'rootLinkId');
-    });
-    it('migrateShares with 120 shares', async () => {
-        const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
-        const shareIds = [];
-        for (let i = 1; i <= 120; i++) {
-            shareIds.push('string' + i);
-        }
-        mockedDebounceRequest.mockResolvedValueOnce({ ShareIDs: shareIds });
-        mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
-        const { result } = renderHook(() => useShareActions());
-        await result.current.migrateShares();
 
-        expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
-            PassphraseNodeKeyPackets: shareIds.slice(0, 50).map((shareId) => ({
-                ShareID: shareId,
-                PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
-            })),
+        it('migrateShares with 120 shares', async () => {
+            const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
+            const shareIds = [];
+            for (let i = 1; i <= 120; i++) {
+                shareIds.push('string' + i);
+            }
+            mockedDebounceRequest.mockResolvedValueOnce({ ShareIDs: shareIds });
+            mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
+            const { result } = renderHook(() => useShareActions());
+            await result.current.migrateShares();
+
+            expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
+                PassphraseNodeKeyPackets: shareIds.slice(0, 50).map((shareId) => ({
+                    ShareID: shareId,
+                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                })),
+            });
+            expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
+                PassphraseNodeKeyPackets: shareIds.slice(50, 100).map((shareId) => ({
+                    ShareID: shareId,
+                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                })),
+            });
+            expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
+                PassphraseNodeKeyPackets: shareIds.slice(100, 120).map((shareId) => ({
+                    ShareID: shareId,
+                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                })),
+            });
+            expect(mockedRemoveLinkForMigration.mock.calls).toEqual(shareIds.map((shareId) => [shareId, 'rootLinkId']));
         });
-        expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
-            PassphraseNodeKeyPackets: shareIds.slice(50, 100).map((shareId) => ({
-                ShareID: shareId,
-                PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
-            })),
+
+        it('stop migration when server respond 404 for unmigrated endpoint', async () => {
+            const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
+            const shareIds = [];
+            for (let i = 1; i <= 120; i++) {
+                shareIds.push('string' + i);
+            }
+            mockedDebounceRequest.mockRejectedValueOnce({ data: { Code: HTTP_STATUS_CODE.NOT_FOUND } });
+            mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
+            const { result } = renderHook(() => useShareActions());
+            await result.current.migrateShares();
+
+            expect(mockedQueryLegacyShares).not.toHaveBeenCalled();
         });
-        expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
-            PassphraseNodeKeyPackets: shareIds.slice(100, 120).map((shareId) => ({
-                ShareID: shareId,
-                PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
-            })),
+
+        it('stop migration when server respond 404 for migrate post endpoint', async () => {
+            const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
+            const shareIds = [];
+            for (let i = 1; i <= 120; i++) {
+                shareIds.push('string' + i);
+            }
+            mockedDebounceRequest.mockResolvedValueOnce({ ShareIDs: shareIds });
+            mockedDebounceRequest.mockRejectedValueOnce({ data: { Code: HTTP_STATUS_CODE.NOT_FOUND } });
+            mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
+            const { result } = renderHook(() => useShareActions());
+            await result.current.migrateShares();
+
+            expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
+                PassphraseNodeKeyPackets: shareIds.slice(0, 50).map((shareId) => ({
+                    ShareID: shareId,
+                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                })),
+            });
+            expect(mockedQueryLegacyShares).not.toHaveBeenCalledWith({
+                PassphraseNodeKeyPackets: shareIds.slice(50, 100).map((shareId) => ({
+                    ShareID: shareId,
+                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                })),
+            });
         });
-        expect(mockedRemoveLinkForMigration.mock.calls).toEqual(shareIds.map((shareId) => [shareId, 'rootLinkId']));
-    });
 
-    it('stop migration when server respond 404 for unmigrated endpoint', async () => {
-        const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
-        const shareIds = [];
-        for (let i = 1; i <= 120; i++) {
-            shareIds.push('string' + i);
-        }
-        mockedDebounceRequest.mockRejectedValueOnce({ data: { Code: HTTP_STATUS_CODE.NOT_FOUND } });
-        mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
-        const { result } = renderHook(() => useShareActions());
-        await result.current.migrateShares();
+        it('should send non-decryptable shares to api', async () => {
+            const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
+            const shareIds = [];
+            for (let i = 1; i <= 120; i++) {
+                shareIds.push('string' + i);
+            }
+            mockedDebounceRequest.mockResolvedValueOnce({ ShareIDs: ['shareId', 'corrupted'] });
+            when(mockedGetShareSessionKey)
+                .calledWith(expect.any(AbortSignal), 'corrupted')
+                .mockRejectedValue(undefined);
+            mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
+            const { result } = renderHook(() => useShareActions());
+            await result.current.migrateShares();
 
-        expect(mockedQueryLegacyShares).not.toHaveBeenCalled();
-    });
-
-    it('stop migration when server respond 404 for migrate post endpoint', async () => {
-        const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
-        const shareIds = [];
-        for (let i = 1; i <= 120; i++) {
-            shareIds.push('string' + i);
-        }
-        mockedDebounceRequest.mockResolvedValueOnce({ ShareIDs: shareIds });
-        mockedDebounceRequest.mockRejectedValueOnce({ data: { Code: HTTP_STATUS_CODE.NOT_FOUND } });
-        mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
-        const { result } = renderHook(() => useShareActions());
-        await result.current.migrateShares();
-
-        expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
-            PassphraseNodeKeyPackets: shareIds.slice(0, 50).map((shareId) => ({
-                ShareID: shareId,
-                PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
-            })),
-        });
-        expect(mockedQueryLegacyShares).not.toHaveBeenCalledWith({
-            PassphraseNodeKeyPackets: shareIds.slice(50, 100).map((shareId) => ({
-                ShareID: shareId,
-                PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
-            })),
-        });
-    });
-
-    it('should send non-decryptable shares to api', async () => {
-        const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
-        const shareIds = [];
-        for (let i = 1; i <= 120; i++) {
-            shareIds.push('string' + i);
-        }
-        mockedDebounceRequest.mockResolvedValueOnce({ ShareIDs: ['shareId', 'corrupted'] });
-        when(mockedGetShareSessionKey)
-            .calledWith(new AbortController().signal, 'corrupted')
-            .mockRejectedValue(undefined);
-        mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
-        const { result } = renderHook(() => useShareActions());
-        await result.current.migrateShares();
-
-        expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
-            PassphraseNodeKeyPackets: [
-                { ShareID: 'shareId', PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket) },
-            ],
-            UnreadableShareIDs: ['corrupted'],
+            expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
+                PassphraseNodeKeyPackets: [
+                    { ShareID: 'shareId', PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket) },
+                ],
+                UnreadableShareIDs: ['corrupted'],
+            });
         });
     });
 });

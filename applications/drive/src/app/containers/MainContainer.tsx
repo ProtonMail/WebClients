@@ -16,6 +16,7 @@ import useFlag from '@proton/unleash/useFlag';
 
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
+import { useAutoRestoreModal } from '../components/modals/AutoRestoreModal';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
@@ -30,6 +31,7 @@ import {
     useSearchControl,
     useUserSettings,
 } from '../store';
+import { useSanitization } from '../store/_sanitization/useSanitization';
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
 import { VolumeType } from '../store/_volumes';
@@ -72,6 +74,7 @@ const FloatingElements = () => {
 const InitContainer = () => {
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
+    const { autoRestore } = useSanitization();
     const [loading, withLoading] = useLoading(true);
     const [error, setError] = useState<Error>();
     const [defaultShareRoot, setDefaultShareRoot] =
@@ -84,6 +87,8 @@ const InitContainer = () => {
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     const { photosEnabled, photosWithAlbumsEnabled } = useUserSettings();
+    const [autoRestoreModal, showAutoRestoreModal] = useAutoRestoreModal();
+    const driveWebASVEnabled = useFlag('DriveWebRecoveryASV');
     useActivePing();
     useReactRouterNavigationLog();
     useEffect(() => {
@@ -118,6 +123,10 @@ const InitContainer = () => {
                 await getDefaultPhotosShare();
 
                 void migrateShares();
+
+                if (driveWebASVEnabled) {
+                    void autoRestore(showAutoRestoreModal);
+                }
             } catch (err) {
                 setError(err as unknown as Error);
                 cleanupUrl();
@@ -184,6 +193,7 @@ const InitContainer = () => {
                     <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
                 </Switch>
             </DriveWindow>
+            {autoRestoreModal}
         </ActiveShareProvider>
     );
 };
