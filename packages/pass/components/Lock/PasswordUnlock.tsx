@@ -54,8 +54,9 @@ export const PasswordUnlock: FC<Props> = ({ extraPassword, offlineEnabled }) => 
     return (
         <PasswordForm
             key={key}
-            id="offline-unlock"
+            autosavable
             disabled={disabled}
+            id="offline-unlock"
             loading={passwordUnlock.loading}
             submitLabel={!online && offlineEnabled ? c('Action').t`Continue offline` : c('Action').t`Continue`}
             onSubmit={onSubmit}

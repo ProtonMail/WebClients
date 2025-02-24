@@ -8,15 +8,24 @@ import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField
 import { type PasswordCredentials } from '@proton/pass/lib/auth/password';
 
 type Props = {
-    id: string;
+    autosavable?: boolean;
     disabled?: boolean;
+    id: string;
     loading?: boolean;
     submitLabel?: string;
     onSubmit: (values: PasswordCredentials) => void;
     onValidate?: (values: PasswordCredentials) => FormikErrors<PasswordCredentials>;
 };
 
-export const PasswordForm: FC<Props> = ({ id, disabled, loading, submitLabel, onSubmit, onValidate }) => {
+export const PasswordForm: FC<Props> = ({
+    autosavable = false,
+    disabled,
+    id,
+    loading,
+    submitLabel,
+    onSubmit,
+    onValidate,
+}) => {
     const form = useFormik({
         initialValues: { password: '' },
         validateOnMount: true,
@@ -27,7 +36,7 @@ export const PasswordForm: FC<Props> = ({ id, disabled, loading, submitLabel, on
 
     return (
         <FormikProvider value={form}>
-            <Form id={id}>
+            <Form id={id} {...(autosavable ? {} : { 'data-protonpass-autosave-ignore': true })}>
                 <div className="flex flex-nowrap items-end w-full" style={{ '--border-radius-xl': '2em' }}>
                     <Field
                         autoComplete="current-password"

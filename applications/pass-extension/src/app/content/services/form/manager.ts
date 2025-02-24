@@ -3,8 +3,10 @@ import { createFormHandles } from 'proton-pass-extension/app/content/services/ha
 import type { FormHandle } from 'proton-pass-extension/app/content/types';
 import {
     hasProcessableFields,
-    hasProcessableForms,
+    hasProcessableNodes,
     isAddedNodeOfInterest,
+    isNodeOfInterest,
+    isParentOfInterest,
     isRemovedNodeOfInterest,
 } from 'proton-pass-extension/app/content/utils/nodes';
 
@@ -18,9 +20,10 @@ import {
     removeProcessedFlag,
 } from '@proton/pass/fathom';
 import { type MaybeNull } from '@proton/pass/types';
+import { isInputElement } from '@proton/pass/utils/dom/predicates';
+import { debounceBuffer } from '@proton/pass/utils/fp/control';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
-import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 import throttle from '@proton/utils/throttle';
 
@@ -179,7 +182,7 @@ export const createFormManager = (options: FormManagerOptions) => {
         void runDetection(options.reason);
     };
 
-    /* if a new field was added to a currently ignored form :
+    /* If a new field was added to a currently ignored form :
      * reset all detection flags: the classification result
      * may change (ie: dynamic form recycling) */
     const onNewField = (target?: HTMLElement) => {
@@ -187,7 +190,7 @@ export const createFormManager = (options: FormManagerOptions) => {
         if (ignored) removeClassifierFlags(ignored, { preserveIgnored: false });
     };
 
-    /* if a field was deleted from a currently detected form :
+    /* If a field was deleted from a currently detected form :
      * reset all detection flags: the classification result
      * may change (ie: dynamic form recycling) */
     const onDeletedField = (target?: HTMLElement) => {
@@ -195,30 +198,20 @@ export const createFormManager = (options: FormManagerOptions) => {
         if (detected) removeClassifierFlags(detected, { preserveIgnored: false });
     };
 
-    /**
-     * Form Detection Trigger via DOM Mutation :
-     *
-     * This mutation observer handler is set up to track changes on the DOM,
-     * specifically looking for mutations related to form or field elements.
-     * It employs a combination of heuristics to determine whether the observed
-     * mutations contain changes that warrant running the detection algorithm.
-     *
-     * The observer is configured to listen for mutations in the subtree of
-     * the document body, including changes to the 'style' and 'aria-hidden'
-     * attributes (this handles the case for certain modals being pre-rendered
-     * in the DOM not being currently tracked)
-     * The callback analyzes the mutations and checks for the following :
-     * · New input fields, forms, or elements with unprocessed fields
-     * · Deleted input fields or forms being removed from the DOM
-     * · Attribute changes in elements with unprocessed fields
-     *
-     * If any of the mutations indicate relevant changes, the detection algorithm
-     * is triggered. Note: The heuristic checks may need further fine-tuning to
-     * ensure all relevant mutations are captured.*/
+    /** DOM Mutation Observer for Form Detection:
+     * Tracks mutations in `document.body` subtree to identify form changes
+     * using heuristics. Observer configured to detect:
+     * - New/deleted fields or forms (including unprocessed ones)
+     * - Attribute changes on nodes of interest
+     * - Dynamic input type changes that may affect detectors
+     * - Auto-adjusts config to prevent mutation loops */
     const onMutation = (mutations: MutationRecord[]) => {
         const triggerFormChange = mutations.some((mutation) => {
             if (mutation.type === 'childList') {
                 state.staleMutationsCount = 0;
+
+                /** Skip irrelevant mutation targets early */
+                if (!isParentOfInterest(mutation.target)) return false;
 
                 const deletedFields = Array.from(mutation.removedNodes).some(isRemovedNodeOfInterest);
                 const addedFields = Array.from(mutation.addedNodes).some(isAddedNodeOfInterest);
@@ -230,11 +223,13 @@ export const createFormManager = (options: FormManagerOptions) => {
             }
 
             if (mutation.type === 'attributes') {
-                const { oldValue, attributeName } = mutation;
-                const target = mutation.target as HTMLElement;
+                /** Skip irrelevant nodes early */
+                if (!isNodeOfInterest(mutation.target)) return false;
+
+                const { oldValue, attributeName, target } = mutation;
                 const current = attributeName ? target?.getAttribute(attributeName) : null;
 
-                if (target instanceof HTMLInputElement) {
+                if (isInputElement(mutation.target)) {
                     /** Handle changes to attributes of input elements that weren't initially tracked.
                      * For example: a form might be initially filtered out because it had no tracked
                      * fields, but a change to an input's 'type' attribute could make it trackable.
@@ -243,8 +238,6 @@ export const createFormManager = (options: FormManagerOptions) => {
                     if (fieldChange) removeProcessedFlag(target);
                     return fieldChange;
                 }
-
-                if (target.childElementCount === 0) return false;
 
                 if (oldValue !== null && oldValue === current) state.staleMutationsCount++;
                 else state.staleMutationsCount = 0;
@@ -269,29 +262,40 @@ export const createFormManager = (options: FormManagerOptions) => {
         if (triggerFormChange) void detect({ reason: 'DomMutation' });
     };
 
-    /**
-     * Form Detection Trigger via Transition Events
-     *
-     * We want to avoid swarming detection requests on every `transitionend`
-     * event as we are listening for them on the `document.body` and will
-     * catch all bubbling events. The function is debounced to ensure it runs
-     * only when necessary, and only if there are unprocessed forms in the DOM.
-     * · Remove stale seen fields in case the transition would have affected the
-     *   underlying field features
-     * · The detection is executed only if there are unprocessed forms
-     * · The purpose is to catch appearing forms that may have been previously
-     *   filtered out by the ML algorithm when it was first triggered */
-    const onTransitionEnd = debounce(
-        ({ target }: Event) =>
+    /** Detect forms after DOM transitions:
+     * Debounced listener on `document.body` triggers detection filter
+     * when transitions complete. Helps identify forms that may have
+     * been filtered out by initial ML pass. Only processes if unhandles
+     * nodes exist, with optimized batching (full scan if batch >= 10) */
+    const onTransitionEnd = debounceBuffer<Event, HTMLElement>(
+        (targets) => {
+            /** Avoid blocking render */
             requestAnimationFrame(() => {
-                if (target instanceof HTMLElement) {
-                    if (hasProcessableForms(target) || hasProcessableFields(target)) {
-                        void detect({ reason: 'TransitionEnd' });
+                const trigger = ((): boolean => {
+                    /** For large batches: check the full document as we
+                     * may be dealing with a complex page transition */
+                    if (targets.length >= 15 && hasProcessableNodes(document.body)) return true;
+
+                    /** Else check each transition target for processable
+                     * nodes. Early exits on first match. */
+                    for (const target of targets) {
+                        try {
+                            /** Exit early if body scan found nothing */
+                            if (hasProcessableNodes(target)) return true;
+                            else if (target === document.body) return false;
+                        } catch {}
                     }
-                }
-            }),
+
+                    return false;
+                })();
+
+                if (trigger) void detect({ reason: 'TransitionEnd' });
+            });
+        },
+        /** Filter targets to relevant elements before subtree check */
+        ({ target }: Event) => (target && isParentOfInterest(target) ? target : false),
         250,
-        { leading: true }
+        { leading: true, flushThreshold: 15 }
     );
 
     const observe = () => {
