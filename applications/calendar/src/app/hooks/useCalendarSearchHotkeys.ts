@@ -10,9 +10,10 @@ interface Props {
     elementRef: RefObject<HTMLDivElement | Document>;
     onNext: () => void;
     onPrevious: () => void;
+    onBackFromSearch: () => void;
 }
 
-const useCalendarSearchHotkeys = ({ elementRef, onNext, onPrevious }: Props) => {
+const useCalendarSearchHotkeys = ({ elementRef, onNext, onPrevious, onBackFromSearch }: Props) => {
     const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const [mailSettings] = useMailSettings();
     const { Shortcuts } = mailSettings || {};
@@ -34,6 +35,15 @@ const useCalendarSearchHotkeys = ({ elementRef, onNext, onPrevious }: Props) => 
                     if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e)) {
                         e.preventDefault();
                         onPrevious();
+                    }
+                },
+            ],
+            [
+                [KeyboardKey.Escape],
+                (e) => {
+                    if (isCalendarHotkeysEnabled && !isBusy(e)) {
+                        e.preventDefault();
+                        onBackFromSearch();
                     }
                 },
             ],

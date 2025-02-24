@@ -17,7 +17,6 @@ interface Props {
     showWeekView: () => void;
     showMonthView: () => void;
     focusSearchBar: () => void;
-    backFromSearch: () => void;
     openShortcutModal: () => void;
     isDrawerApp: boolean;
 }
@@ -32,7 +31,6 @@ const useCalendarHotkeys = ({
     showWeekView,
     showMonthView,
     focusSearchBar,
-    backFromSearch,
     openShortcutModal,
     elementRef,
     isDrawerApp,
@@ -120,15 +118,6 @@ const useCalendarHotkeys = ({
                     if (isCalendarHotkeysEnabled && Shortcuts && !isBusy(e) && !isDrawerApp) {
                         e.preventDefault();
                         focusSearchBar();
-                    }
-                },
-            ],
-            [
-                [KeyboardKey.Escape],
-                (e) => {
-                    if (!isBusy(e) && !isDrawerApp) {
-                        e.preventDefault();
-                        backFromSearch();
                     }
                 },
             ],

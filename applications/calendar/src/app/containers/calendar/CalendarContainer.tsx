@@ -605,6 +605,7 @@ const CalendarContainer = ({
                 eventTargetAction={eventTargetAction}
                 setEventTargetAction={setEventTargetAction}
                 getOpenedMailEvents={getOpenedMailEvents}
+                onBackFromSearch={handleGoBackFromSearch}
             />
         </CalendarContainerView>
     );
