@@ -8,12 +8,13 @@ interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
     center?: boolean;
     right?: ReactNode;
     title?: ReactNode;
+    belowTitle?: ReactNode;
     subTitle?: ReactNode;
     onBack?: () => void;
     headingLevel?: number;
 }
 
-const Header = ({ center, className, right, title, subTitle, onBack, headingLevel, ...rest }: Props) => {
+const Header = ({ center, className, right, title, belowTitle, subTitle, onBack, headingLevel, ...rest }: Props) => {
     return (
         <div
             className={clsx('sign-layout-header', title ? 'mb-6' : undefined, center && 'text-center', className)}
@@ -32,6 +33,7 @@ const Header = ({ center, className, right, title, subTitle, onBack, headingLeve
                     {right}
                 </div>
             ) : null}
+            {belowTitle}
             {subTitle ? <div className="mt-2 color-weak">{subTitle}</div> : null}
         </div>
     );
