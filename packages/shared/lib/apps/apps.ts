@@ -1,7 +1,6 @@
-import type { APP_NAMES } from '../constants';
-import { APPS } from '../constants';
+import { APPS, APPS_CONFIGURATION, type APP_NAMES, USER_ROLES } from '../constants';
 import { isElectronApp } from '../helpers/desktop';
-import type { User } from '../interfaces';
+import type { OrganizationSettingsAllowedProduct, OrganizationWithSettings, User } from '../interfaces';
 import { getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
 
 type AppContext = 'dropdown' | 'app';
@@ -21,7 +20,7 @@ export const getSSOVPNOnlyAccountApps = (): APP_NAMES[] => {
     return [APPS.PROTONVPN_SETTINGS];
 };
 
-export const getAvailableApps = (options: { user?: User; context: AppContext; isLumoAvailable: boolean }) => {
+export const getAvailableAppsByUserType = (options: { user?: User; context: AppContext; isLumoAvailable: boolean }) => {
     if (getIsSSOVPNOnlyAccount(options.user)) {
         return getSSOVPNOnlyAccountApps();
     }
@@ -46,4 +45,43 @@ export const getAvailableApps = (options: { user?: User; context: AppContext; is
     }
 
     return apps;
+};
+
+const getOrganizationAllowedProducts = (options: {
+    user?: User;
+    organization?: OrganizationWithSettings;
+}): Set<OrganizationSettingsAllowedProduct> => {
+    // Admins can always access all
+    if (!options.user || !options.organization || (options.user && options.user.Role === USER_ROLES.ADMIN_ROLE)) {
+        return new Set(['All']);
+    }
+    // If allowed products does not exist it falls back to all
+    return new Set(options.organization.Settings?.AllowedProducts || ['All']);
+};
+
+const getAvailableAppsByOrganization = (options: {
+    apps: APP_NAMES[];
+    user?: User;
+    organization?: OrganizationWithSettings;
+}) => {
+    const organizationAllowedProducts = getOrganizationAllowedProducts({
+        user: options.user,
+        organization: options.organization,
+    });
+    if (organizationAllowedProducts.has('All')) {
+        return options.apps;
+    }
+    return options.apps.filter((app) => {
+        const product = APPS_CONFIGURATION[app].product;
+        return organizationAllowedProducts.has(product as OrganizationSettingsAllowedProduct);
+    });
+};
+
+export const getAvailableApps = (
+    options: Parameters<typeof getAvailableAppsByUserType>[0] & {
+        organization?: OrganizationWithSettings;
+    }
+) => {
+    const apps = getAvailableAppsByUserType(options);
+    return getAvailableAppsByOrganization({ apps, user: options.user, organization: options.organization });
 };
