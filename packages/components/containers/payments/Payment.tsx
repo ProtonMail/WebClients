@@ -362,10 +362,6 @@ export const PaymentsNoApi = ({
                     {children}
                 </div>
             </div>
-            {type === 'subscription' && method && method === PAYMENT_METHOD_TYPES.CASH ? (
-                <Alert className="mb-4" type="warning">{c('Warning')
-                    .t`Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.`}</Alert>
-            ) : null}
         </>
     );
 };
