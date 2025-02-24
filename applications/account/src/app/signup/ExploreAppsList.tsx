@@ -12,7 +12,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { OrganizationWithSettings, User } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -26,13 +26,15 @@ interface App {
 export const getExploreApps = ({
     subscribed,
     user,
+    organization,
     isLumoAvailable,
 }: {
     subscribed?: User['Subscribed'];
     user: User | undefined;
+    organization: OrganizationWithSettings | undefined;
     isLumoAvailable: boolean;
 }) => {
-    const availableApps = getAvailableApps({ user, context: 'dropdown', isLumoAvailable });
+    const availableApps = getAvailableApps({ user, organization, context: 'dropdown', isLumoAvailable });
     return [
         {
             name: APPS.PROTONMAIL,

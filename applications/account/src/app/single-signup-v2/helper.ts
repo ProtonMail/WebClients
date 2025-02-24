@@ -20,7 +20,6 @@ import {
     type PlanIDs,
     isStringPLAN,
 } from '@proton/payments';
-import { getOrganization } from '@proton/shared/lib/api/organization';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -56,6 +55,7 @@ import type {
     User,
 } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
+import { getOrganization } from '@proton/shared/lib/organization/api';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import {
     canPay as getCanPay,
@@ -512,11 +512,7 @@ export const getUserInfo = async ({
                   ({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription
               )
             : (FREE_SUBSCRIPTION as unknown as Subscription),
-        state.subscribed
-            ? api<{
-                  Organization: Organization;
-              }>(getOrganization()).then(({ Organization }) => Organization)
-            : undefined,
+        state.subscribed ? getOrganization({ api }) : undefined,
     ]);
 
     const currentPlan = (() => {
