@@ -27,6 +27,11 @@ const RadioGroup = <T extends string | number>({
     ariaDescribedBy,
     disableChange,
 }: RadioGroupProps<T>) => {
+    // If we dont have marginBottom or vertical margin in className, let's add default one
+    const defaultMarginBottom = ['mb', 'my'].every((marginMatch) => !className?.includes(marginMatch)) ? 'mb-2' : '';
+    // If we dont have marginRight or horizontal margin in className, let's add default one
+    const defaultMarginRight = ['mr', 'mx'].every((marginMatch) => !className?.includes(marginMatch)) ? 'mr-8' : '';
+
     return (
         <>
             {options.map((option, i) => (
@@ -42,7 +47,7 @@ const RadioGroup = <T extends string | number>({
                     }}
                     checked={value === option.value}
                     name={name}
-                    className={clsx('inline-flex *:self-center mr-8 mb-2', className)}
+                    className={clsx('inline-flex *:self-center', defaultMarginRight, defaultMarginBottom, className)}
                     disabled={option.disabled}
                     aria-describedby={ariaDescribedBy}
                 >
