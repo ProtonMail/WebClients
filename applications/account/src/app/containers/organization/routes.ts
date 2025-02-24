@@ -108,6 +108,8 @@ export const getOrganizationAppRoutes = ({
         user.hasPaidMail &&
         videoConferenceValidApplications.has(app);
 
+    const canShowAccessControl = hasSubUsers || hasOrganization || hasOrganizationKey;
+
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
         : c('Settings section title').t`Organization`;
@@ -298,6 +300,17 @@ export const getOrganizationAppRoutes = ({
                     (planSupportsSSO(organization?.PlanName) || upsellPlanSSO(organization?.PlanName)) &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
+            },
+            accessControl: <SectionConfig>{
+                text: c('Title').t`Access control`,
+                to: '/access-control',
+                icon: 'sliders',
+                available: canShowAccessControl,
+                subsections: [
+                    {
+                        id: 'application-access',
+                    },
+                ],
             },
             videoConf: <SectionConfig>{
                 text: c('Title').t`Video conferencing`,
