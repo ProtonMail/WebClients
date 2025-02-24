@@ -292,6 +292,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 if (clientSessionLocked(status)) await service.storage.session.setItems(authStore.getSession());
                 return getAccountForkResponsePayload(AccountForkResponse.SUCCESS);
             } catch (error: unknown) {
+                if (!(error instanceof Error)) throw error;
                 throw getAccountForkResponsePayload(AccountForkResponse.ERROR, error);
             }
         }
