@@ -13,11 +13,7 @@ import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
-import {
-    createPasswordlessOrganizationKeys,
-    getOrganization,
-    updateOrganizationName,
-} from '@proton/shared/lib/api/organization';
+import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { setPaymentMethodV4, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
@@ -38,13 +34,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { localeCode } from '@proton/shared/lib/i18n';
-import type {
-    Api,
-    HumanVerificationMethodType,
-    KeyTransparencyActivation,
-    Organization,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
     generatePasswordlessOrganizationKey,
@@ -53,6 +43,7 @@ import {
 } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
+import { getOrganization } from '@proton/shared/lib/organization/api';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import clamp from '@proton/utils/clamp';
@@ -280,8 +271,7 @@ export const handleSetupOrg = async ({
     if (hasPaidVpn(user)) {
         await api(updateVPN(selfMemberID, VPN_CONNECTIONS)).catch(noop);
     }
-    const result = await api<{ Organization: Organization }>(getOrganization()).catch(noop);
-    const organization = result?.Organization;
+    const organization = await getOrganization({ api }).catch(noop);
     if (organization && !getIsPassB2BPlan(organization.PlanName) && !getIsVpnB2BPlan(organization.PlanName)) {
         const storageRange = getStorageRange(selfMember, organization);
         const initialStorage = getInitialStorage(organization, storageRange);
