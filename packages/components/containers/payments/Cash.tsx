@@ -1,23 +1,24 @@
 import { c } from 'ttag';
 
-import useConfig from '@proton/components/hooks/useConfig';
-import { APPS } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import envelopSvg from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 
 import Bordered from '../../components/container/Bordered';
 
 const Cash = () => {
-    const { APP_NAME } = useConfig();
-    const email = (
-        <b key="email-contact">
-            {APP_NAME === APPS.PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'contact@proton.me'}
-        </b>
+    const howToSendCashArticleUrl = (
+        <a
+            href={getStaticURL('/support/payment-options#cash')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-bold"
+        >{c('Info for cash payment method').t`How to send a cash payment?`}</a>
     );
 
     return (
-        <Bordered className="bg-weak rounded">
+        <Bordered className="rounded">
             <div className="mb-4">{c('Info for cash payment method')
-                .jt`Please contact us at ${email} for instructions on how to pay us with cash.`}</div>
+                .jt`Please find the instructions in the article: ${howToSendCashArticleUrl}`}</div>
             <div className="text-center">
                 <img src={envelopSvg} alt="" />
             </div>
