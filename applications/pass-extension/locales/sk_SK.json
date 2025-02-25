@@ -83,6 +83,9 @@
       "Cancel": [
         "Zrušiť"
       ],
+      "Cancel email change": [
+        "Zrušiť zmenu emailu"
+      ],
       "Change": [
         "Zmeniť"
       ],
@@ -871,6 +874,12 @@
       ],
       "Failed to block the contact": [
         "Zablokovanie kontaktu zlyhalo"
+      ],
+      "Failed to cancel mailbox change": [
+        "Nepodarilo sa zrušiť zmenu poštovej schránky"
+      ],
+      "Failed to change mailbox": [
+        "Nepodarilo sa zmeniť poštovú schránku"
       ],
       "Failed to create domain": [
         "Vytvorenie domény zlyhalo"
@@ -2185,6 +2194,9 @@
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Táto položka zatiaľ nie je s nikým zdieľaná. Pozvite ľudí, s ktorými ju chcete zdieľať."
+      ],
+      "This mailbox will use your previous email.": [
+        "Táto schránka bude používať váš predchádzajúci email."
       ],
       "This operation is irreversible.": [
         "Táto operácia je nezvratná."
@@ -3530,6 +3542,9 @@
         "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov.",
         "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov."
       ],
+      "Mailbox change successfully cancelled": [
+        "Zmena poštovej schránky úspešne zrušená"
+      ],
       "Mailbox successfully deleted": [
         "Poštová schránka bola úspešne vymazaná"
       ],
@@ -3599,6 +3614,12 @@
       ],
       "Blocked addresses": [
         "Zablokované adresy"
+      ],
+      "Cancel changing your email?": [
+        "Zrušiť zmenu vášho emailu?"
+      ],
+      "Change mailbox email": [
+        "Zmeniť email poštovej schránky"
       ],
       "Change your lock method": [
         "Zmeňte spôsob uzamykania"
