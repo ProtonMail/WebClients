@@ -35,6 +35,7 @@ interface Props extends ModalStateProps {
     organization?: Organization;
     member: Member | null | undefined;
     allowAIAssistantConfiguration: boolean;
+    allowAIAssistantUpdate: boolean;
     aiSeatsRemaining: boolean;
     lumoSeatsRemaining: boolean;
     allowStorageConfiguration?: boolean;
@@ -45,6 +46,7 @@ const UserInviteOrEditModal = ({
     member,
     allowStorageConfiguration,
     allowAIAssistantConfiguration,
+    allowAIAssistantUpdate,
     aiSeatsRemaining,
     lumoSeatsRemaining,
     ...modalState
@@ -96,12 +98,9 @@ const UserInviteOrEditModal = ({
     };
 
     const sendInvitation = async () => {
-        const res = await api(inviteMember(model.address, model.storage));
-
-        // Users could have the Writing Assistant enabled when created and we need to update the member when this is the case
-        if (allowAIAssistantConfiguration) {
-            await api(updateAI(res.Member.ID, model.numAI ? 1 : 0));
-        }
+        const res = await api(
+            inviteMember(model.address, model.storage, allowAIAssistantUpdate && model.numAI ? 1 : 0)
+        );
 
         if (lumoAddonAvailable && lumoHasChanged) {
             await api(updateLumo(res.Member.ID, model.lumo ? 1 : 0));
@@ -114,7 +113,7 @@ const UserInviteOrEditModal = ({
         let updated = false;
         await api(editMemberInvitation(member!.ID, model.storage));
 
-        if (allowAIAssistantConfiguration) {
+        if (allowAIAssistantUpdate) {
             await api(updateAI(member!.ID, model.numAI ? 1 : 0));
         }
 
