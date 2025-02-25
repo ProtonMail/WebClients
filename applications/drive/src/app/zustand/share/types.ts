@@ -44,6 +44,7 @@ export interface SharesState {
     }[];
     getDefaultShareId: () => string | undefined;
     getDefaultPhotosShareId: () => string | undefined;
+    getDefaultShareEmail: () => string | undefined;
     getRestoredPhotosShares: () => (Share | ShareWithKey)[];
     setLockedVolumesForRestore: (volumes: LockedVolumeForRestore[]) => void;
 }
