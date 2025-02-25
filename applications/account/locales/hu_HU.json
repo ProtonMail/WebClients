@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -949,11 +949,11 @@
       "Select country": [
         "Válassza ki az országot"
       ],
-      "select file": [
-        "fájl kiválasztása"
-      ],
       "Select file": [
         "Fájl kiválasztása"
+      ],
+      "select file": [
+        "fájl kiválasztása"
       ],
       "Select files": [
         "Fájlok kiválasztása"
@@ -3408,9 +3408,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
-      ],
-      "Everyone in your organization can connect to shared servers.": [
-        "A szervezetben mindenki csatlakozhat a megosztott szerverhez."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Kapjon értesítést ha az ön jelszava vagy más információja benne volt egy harmadik féltől származó adatszivárgásban."
@@ -8650,11 +8647,6 @@
         "Bekapcsolásakor az almappák a szülő mappa színét öröklik."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kérjük, vegye fel velünk a kapcsolatot a ${ email } címen, hogy segíthessünk a készpénzes fizetésben."
-      ]
-    },
     "Info for domain modal": {
       "Add a new user to your organization and create an address for it.": [
         "Vegyen fel egy új felhasználót a szervezethez és készítsen neki címet."
@@ -10676,9 +10668,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. napon"
-      ],
       "on the first Friday": [
         "első péntek"
       ],
@@ -14544,29 +14533,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -14741,6 +14707,29 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -17134,9 +17123,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Kérjük, ellenőrizze, hogy a bővítmény megfelelően van-e telepítve és engedélyezve"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Ha ezt a fizetési módot választja, akkor a csomagját nem tudjuk azonnal frissíteni. A frissítést akkor végezzük, amint a befizetés megérkezik."
       ],
       "Please update the extension to its latest version": [
         "Kérjük, frissítse a bővítményt a legújabb verzióra"

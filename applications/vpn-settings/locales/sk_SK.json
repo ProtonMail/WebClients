@@ -211,6 +211,9 @@
       "Delete member": [
         "Vymazať člena"
       ],
+      "Delete policy": [
+        "Vymazať pravidlo"
+      ],
       "Delete user": [
         "Vymazať používateľa"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Vyberte fakturačný cyklus ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Vyberte mesto ${ city }"
+      ],
       "Select country": [
         "Vyberte krajinu"
+      ],
+      "Select country ${ country }": [
+        "Vyberte krajinu ${ country }"
       ],
       "select file": [
         "vybrať súbor"
@@ -2338,11 +2347,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Vytvorte pravidlá na správu prístupu k zdieľaným serverom."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Vytvorte pravidlá na určenie toho, kto sa môže pripojiť k zdieľaným serverom v jednotlivých krajinách."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Každý vo vašej organizácie sa môže pripojiť k zdieľaným serverom."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Každý člen vašej organizácie sa môže pripojiť k zdieľaným serverom vo všetkých krajinách."
       ],
       "If disabled, only admins will have access.": [
         "Ak je zakázané, prístup budú mať len administrátori."
@@ -2529,6 +2538,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Všetok úložný priestor bol pridelený. Zmenšite prosím úložný priestor pridelený iným používateľom."
       ],
@@ -2570,6 +2582,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
+      ],
+      "Error creating policy.": [
+        "Chyba pri vytváraní pravidla."
+      ],
+      "Error deleting policy.": [
+        "Chyba pri mazaní pravidla."
+      ],
+      "Error updating policy.": [
+        "Chyba pri aktualizácii pravidla."
       ],
       "Failed to process the logo": [
         "Spracovanie loga zlyhalo"
@@ -3835,6 +3856,9 @@
       "Allocated": [
         "Pridelené"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Umožniť používateľom pripojiť sa k zabezpečeným zdieľaným serverom v položke **Krajiny** v aplikácii ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Už pridelené"
       ],
@@ -4531,9 +4555,6 @@
       "No addresses exist": [
         "Neexistujú žiadne adresy"
       ],
-      "No common passwords": [
-        "Žiadne bežné heslá"
-      ],
       "No gateways": [
         "Žiadne brány"
       ],
@@ -4542,9 +4563,6 @@
       ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Žiadne predvídateľné sekvencie (1234, aaa)"
       ],
       "No results found": [
         "Nenájdené žiadne výsledky"
@@ -4834,6 +4852,12 @@
       "Shared ${ vaultLink } updated": [
         "Zdieľaný ${ vaultLink } aktualizovaný"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Krajina so zdieľanými servermi (${ countriesCount })",
+        "Krajiny so zdieľanými servermi (${ countriesCount })",
+        "Krajiny so zdieľanými servermi (${ countriesCount })",
+        "Krajiny so zdieľanými servermi (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Zdieľaný trezor bol vymazaný"
       ],
@@ -4900,6 +4924,9 @@
       "Symbols (#$&)": [
         "Znaky (#$&)"
       ],
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "TechRadar Pro odporúča s hodnotením 4,2 z 5 hviezdičiek"
+      ],
       "Thank you": [
         "Ďakujeme"
       ],
@@ -4965,6 +4992,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "V závislosti na vašom zariadení to môže trvať niekoľko sekúnd alebo minút"
+      ],
+      "This cannot be undone.": [
+        "Táto akcia sa nedá vrátiť."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
@@ -5509,11 +5539,6 @@
         "Vybraná farba:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Prosím kontaktujte nás na ${ email } pre viac informácií, ako uhradiť platobnú transakciu v hotovosti."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Pridajte novú adresu pre existujúcich používateľov vašej organizácie."
@@ -5702,6 +5727,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Apply policy to": [
+        "Uplatniť pravidlá na"
       ],
       "Assertion Consumer Service URL": [
         "URL adresa zákazníckej služby"
@@ -5976,9 +6004,6 @@
       "New password": [
         "Nové heslo"
       ],
-      "New policy name": [
-        "Názov nového pravidla"
-      ],
       "New second password": [
         "Nové druhé heslo"
       ],
@@ -6050,6 +6075,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Prosím zdieľajte akúkoľvek spätnú väzbu, aby ste nám pomohli zlepšiť sa."
+      ],
+      "Policy name": [
+        "Názov pravidla"
       ],
       "Postal code": [
         "PSČ"
@@ -7764,6 +7792,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Deaktiváciou tejto funkcie odstránite možnosť prijímať notifikácie v aplikáciách ${ BRAND_NAME }"
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Počas prvého mesiaca používania produktu ${ BRAND_NAME }"
+      ],
       "Email subscriptions": [
         "Zasielanie pravidelných emailov"
       ],
@@ -7793,9 +7824,6 @@
       "Downloaded 2FA recovery codes": [
         "Stiahnuté obnovovacie kódy 2FA"
       ],
-      "Error creating policy": [
-        "Chyba pri vytváraní pravidla"
-      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -7813,9 +7841,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 poverenia boli obnovené"
-      ],
-      "Policy created successfully": [
-        "Pravidlo bolo úspešne vytvorené"
       ],
       "Reminder has been sent": [
         "Pripomienka bola odoslaná"
@@ -7845,6 +7870,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } ponuka končí dnes!"
       ],
+      "Don’t show this offer again": [
+        "Nabudúce to už nezobrazovať"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získajte Drive Plus len za ${ pricingTitle }"
       ],
@@ -7857,14 +7885,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Posledná šanca ušetriť 80% za prvý mesiac s ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Posledný deň na ušetrenie"
+      ],
       "Limited-time offer": [
         "Časovo obmedzená ponuka"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 mesiacov"
       ],
       "Maybe later": [
         "Možno neskôr"
       ],
+      "Save": [
+        "Ušetrite"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ušetrite ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ušetrite 80 % v prvom mesiaci."
+      ],
+      "Save big when you pay annually": [
+        "Pri ročnej platbe ušetríte viac"
+      ],
+      "This offer won't be shown again.": [
+        "Táto ponuka sa už nezobrazí."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Keď prejdete z mesačného na ročné predplatné."
+      ],
+      "You currently pay": [
+        "V súčasnosti platíte"
       ]
     },
     "Offer feature": {
@@ -8052,6 +8104,9 @@
       ],
       "Organization identity updated": [
         "Identita organizácie aktualizovaná"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Overte svoju emailovú adresu ${ email } pre nastavenie identity organizácie."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -10349,6 +10404,15 @@
       "Phone number updated": [
         "Telefónne číslo aktualizované"
       ],
+      "Policy created successfully!": [
+        "Pravidlo bolo úspšene vytvorené!"
+      ],
+      "Policy deleted": [
+        "Pravidlo vymazané"
+      ],
+      "Policy updated successfully!": [
+        "Pravidlo bolo úspšene aktualizované!"
+      ],
       "Preference saved": [
         "Nastavenie uložené"
       ],
@@ -10810,6 +10874,9 @@
       "Delete": [
         "Vymazať"
       ],
+      "Delete ${ policyName }?": [
+        "Vymazať ${ policyName }?"
+      ],
       "Delete account": [
         "Zmazať účet"
       ],
@@ -10867,6 +10934,9 @@
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
       ],
+      "Edit countries": [
+        "Upraviť krajiny"
+      ],
       "Edit credit/debit card": [
         "Upraviť platobnú kartu"
       ],
@@ -10884,6 +10954,9 @@
       ],
       "Edit invoice note": [
         "Upraviť poznámku k faktúre"
+      ],
+      "Edit name": [
+        "Upraviť názov"
       ],
       "Edit servers": [
         "Upraviť servery"
@@ -11388,6 +11461,9 @@
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Členovia, ktorí nepoužívajú 2FA dostanú email s výzvou, aby 2FA čo najskôr povolili "
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Pravidlá zdieľaných serverov možno použiť na jednotlivých používateľov alebo skupiny"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO"
       ],
@@ -11595,6 +11671,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Týmto zrušíte oprávnenie správcu spravovať tento používateľský účet."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Na získanie správcovských oprávnení budú musieť pri ďalšom prihlásení do systému ${ BRAND_NAME } nastaviť záložné heslo."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Ak chcete pokračovať, musíte používateľov požiadať o povolenie na prístup k ich dátam alebo resetovať ich heslo."
@@ -11934,9 +12013,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Vymazaním tohto telefónneho čísla už nebudete môcť obnovit svoj účet."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Upozorňujeme, že pri výbere tohto spôsobu platby nie je možné váš účet okamžite navýšiť. Váš účet aktualizujeme po zúčtovaní platby."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."

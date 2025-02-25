@@ -1378,6 +1378,9 @@
       "Use ${ label } theme": [
         "Usa il tema ${ label }"
       ],
+      "Use ${ PASS_APP_NAME }": [
+        "Utilizza ${ PASS_APP_NAME }"
+      ],
       "Use a different card": [
         "Usa una carta differente"
       ],
@@ -5797,6 +5800,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "Il gestore password di ${ BRAND_NAME } ti consente di creare, memorizzare e compilare automaticamente le password, così non dovrai mai reimpostarle."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nuovo calendario",
         "${ calendarsToBeCreatedCount } nuovi calendari"
@@ -6327,6 +6333,9 @@
       "Default email application": [
         "Applicazione email predefinita"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Il rilevamento avviene sul tuo dispositivo, quindi nessun dato proveniente dalle tue email viene inviato ai nostri server."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Lo sapevi che hai uno spazio di archiviazione cloud crittografato incluso nel tuo account ${ BRAND_NAME }? Vai su ${ DRIVE_APP_NAME } e sfrutta al meglio il tuo spazio. È gratis."
       ],
@@ -6800,6 +6809,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Mensile ${ onDayString }"
+      ],
+      "More infos": [
+        "Maggiori informazioni"
       ],
       "More refine actions": [
         "Ulteriori azioni di perfezionamento"
@@ -7392,6 +7404,9 @@
       "This sender's public key has not been trusted yet.": [
         "La chiave pubblica di questo mittente non è ancora stata considerata attendibile."
       ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Questo viene mostrato perché la riga dell'oggetto dell'email contiene parole chiave per la reimpostazione della password."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
@@ -7898,8 +7913,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Per favore contattaci a ${ email } per le istruzioni su come pagare in contanti."
+      "How to send a cash payment?": [
+        "Come inviare un pagamento in contanti?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Puoi trovare le istruzioni nell'articolo: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8361,6 +8379,9 @@
       ],
       "Don't show this again": [
         "Non mostrare più"
+      ],
+      "Don't show this suggestion": [
+        "Non mostrare questo suggerimento"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "Es. Amazon, eBay, Zalando"
@@ -9218,8 +9239,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "al giorno ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "il ${ shortenedDay }"
       ],
       "on the first Friday": [
         "il primo Venerdì"
@@ -10358,6 +10379,9 @@
       "${ pricingTitle } offer expires today!": [
         "L'offerta ${ pricingTitle } scade oggi!"
       ],
+      "Don’t show this offer again": [
+        "Non mostrare più questa offerta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Ottieni Drive Plus per solo ${ pricingTitle }"
       ],
@@ -10370,14 +10394,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Ultima chance per avere l´80% di sconto sul tuo primo mese di ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Ultimo giorno per risparmiare"
+      ],
       "Limited-time offer": [
         "Offerta a tempo limitato"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus per 12 mesi"
       ],
       "Maybe later": [
         "Forse più tardi"
       ],
+      "Save": [
+        "Salva"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Risparmia il ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Salva l'80% nel tuo primo mese."
+      ],
+      "Save big when you pay annually": [
+        "Risparmia di più pagando annualmente"
+      ],
+      "This offer won't be shown again.": [
+        "Questa offerta non verrà più mostrata."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quando si passa da un abbonamento mensile a uno annuale."
+      ],
+      "You currently pay": [
+        "Attualmente paghi"
       ]
     },
     "Offer feature": {
@@ -13392,6 +13440,9 @@
       "Notes": [
         "Note"
       ],
+      "On-device suggestions": [
+        "Suggerimenti sul dispositivo"
+      ],
       "One email, many recipients": [
         "Una email, più destinatari"
       ],
@@ -13963,9 +14014,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Sono consentiti solo caratteri alfanumerici minuscoli, punti, trattini e caratteri di sottolineatura"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà completato."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."

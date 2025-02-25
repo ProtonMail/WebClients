@@ -211,6 +211,9 @@
       "Delete member": [
         "Выдаліць удзельніка"
       ],
+      "Delete policy": [
+        "Выдаліць палітыку"
+      ],
       "Delete user": [
         "Выдаліць карыстальніка"
       ],
@@ -434,7 +437,7 @@
         "Наступная старонка"
       ],
       "OK": [
-        "Добра"
+        "OK"
       ],
       "Open": [
         "Адкрыць"
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Выбраць перыяд аплаты ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Выбраць горад ${ city }"
+      ],
       "Select country": [
         "Выберыце краіну"
+      ],
+      "Select country ${ country }": [
+        "Выбраць краіну ${ country }"
       ],
       "select file": [
         "выбраць файл"
@@ -2338,11 +2347,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Стварэнне палітык для кіравання доступам абагуленых сервераў."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Стварыце палітыку, каб вырашаць, хто можа падключацца да абагуленых сервераў у кожнай краіне."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Кожны ўдзельнік вашай арганізацыі зможа падключацца да абагуленых сервераў."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Кожны ўдзельнік вашай арганізацыі можа падключацца да абагуленых сервераў ва ўсіх краінах."
       ],
       "If disabled, only admins will have access.": [
         "Калі адключана, то толькі адміністратары будуць мець доступ."
@@ -2573,6 +2582,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
+      ],
+      "Error creating policy.": [
+        "Памылка стварэння палітыкі."
+      ],
+      "Error deleting policy.": [
+        "Памылка выдалення палітыкі."
+      ],
+      "Error updating policy.": [
+        "Памылка абнаўлення палітыкі."
       ],
       "Failed to process the logo": [
         "Не ўдалося апрацаваць лагатып"
@@ -4537,9 +4555,6 @@
       "No addresses exist": [
         "Няма адрасоў"
       ],
-      "No common passwords": [
-        "Агульныя паролі адсутнічаюць"
-      ],
       "No gateways": [
         "Без шлюзоў"
       ],
@@ -4548,9 +4563,6 @@
       ],
       "No payment is required at this time.": [
         "Зараз аплата не патрабуецца."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Непрадказальная паслядоўнасць (1234, aaa)"
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -4980,6 +4992,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Гэта можа заняць ад некалькіх секунд да некалькіх хвілін у залежнасці ад вашай прылады"
+      ],
+      "This cannot be undone.": [
+        "Гэта немагчыма адрабіць."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Гэта можа заняць некаторы час. Не закрывайце старонку і не адключайцеся ад інтэрнэту."
@@ -5525,8 +5540,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Напішыце нам на электронную пошту ${ email } для атрымання інструкцый па аплаце наяўнымі."
+      "How to send a cash payment?": [
+        "Як адправіць плацеж наяўнымі грашыма?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Інструкцыі можна знайсці ў артыкуле: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5543,6 +5561,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можаце дадаць спосаб аплаты, каб ваша падпіска падаўжалася аўтаматычна. Таксама даступны іншыя спосабы аплаты."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Увядзіце нататку для рахункаў. Гэтыя падрабязнасці будуць дададзены ў асабістыя і арганізацыйныя рахункі. Яны з'явяцца толькі ў выстаўленых рахунках у будучым."
       ]
     },
     "Info subscription": {
@@ -5712,6 +5735,9 @@
       ],
       "Anderson": [
         "Маўр"
+      ],
+      "Apply policy to": [
+        "Ужыць палітыку да"
       ],
       "Assertion Consumer Service URL": [
         "URL-адрас службы сцверджання кліентаў (ACS)"
@@ -5986,9 +6012,6 @@
       "New password": [
         "Новы пароль"
       ],
-      "New policy name": [
-        "Назва новай палітыкі"
-      ],
       "New second password": [
         "Новы другі пароль"
       ],
@@ -6060,6 +6083,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Падзяліцеся з намі якім-небудзь водгукам, каб дапамагчы палепшыць наш сэрвіс."
+      ],
+      "Policy name": [
+        "Назва палітыкі"
       ],
       "Postal code": [
         "Паштовы індэкс"
@@ -7806,9 +7832,6 @@
       "Downloaded 2FA recovery codes": [
         "Спампаваныя коды аднаўлення 2ФА"
       ],
-      "Error creating policy": [
-        "Памылка стварэння палітыкі"
-      ],
       "Invalid code": [
         "Памылковы код"
       ],
@@ -7826,9 +7849,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваныя"
-      ],
-      "Policy created successfully": [
-        "Палітыка паспяхова створана"
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
@@ -7858,6 +7878,9 @@
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
       ],
+      "Don’t show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Атрымайце Drive Plus усяго за ${ pricingTitle }"
       ],
@@ -7870,14 +7893,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Апошні дзень, калі можна сэканоміць"
+      ],
       "Limited-time offer": [
         "Часовая прапанова"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus за 12 месяцаў"
       ],
       "Maybe later": [
         "Магчыма пазней"
       ],
+      "Save": [
+        "Эканомія"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Эканомія ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Зэканомце 80% у першы месяц."
+      ],
+      "Save big when you pay annually": [
+        "Эканомце больш пры гадавой аплаце"
+      ],
+      "This offer won't be shown again.": [
+        "Гэта прапанова больш не будзе паказвацца."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Пры пераходзе з памесячнай на гадавую падпіску."
+      ],
+      "You currently pay": [
+        "У цяперашні час аплачана"
       ]
     },
     "Offer feature": {
@@ -10365,6 +10412,15 @@
       "Phone number updated": [
         "Нумар тэлефона абноўлены"
       ],
+      "Policy created successfully!": [
+        "Палітыка паспяхова створана!"
+      ],
+      "Policy deleted": [
+        "Выдаліць палітыку"
+      ],
+      "Policy updated successfully!": [
+        "Палітыка паспяхова абноўлена!"
+      ],
       "Preference saved": [
         "Параметр захаваны"
       ],
@@ -10569,7 +10625,7 @@
         "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
       "${ feature } is now active": [
-        "${ feature } у актыўным стане"
+        "${ feature } цяпер у актыўным стане"
       ],
       "${ VPN_APP_NAME } clients": [
         "Кліенты ${ VPN_APP_NAME }"
@@ -10826,6 +10882,9 @@
       "Delete": [
         "Выдаліць"
       ],
+      "Delete ${ policyName }?": [
+        "Выдаліць ${ policyName }?"
+      ],
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
@@ -10883,6 +10942,9 @@
       "Edit billing address": [
         "Рэдагаваць адрас аплаты"
       ],
+      "Edit countries": [
+        "Рэдагаваць краіны"
+      ],
       "Edit credit/debit card": [
         "Рэдагаваць даныя банкаўскай карткі"
       ],
@@ -10900,6 +10962,9 @@
       ],
       "Edit invoice note": [
         "Рэдагаваць нататку рахунка"
+      ],
+      "Edit name": [
+        "Рэдагаваць назву"
       ],
       "Edit servers": [
         "Рэдагаваць серверы"
@@ -11403,6 +11468,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Удзельнікі, якія не выкарыстоўваць 2ФА, атрымаюць ліст з просьбай як мага хутчэй уключыць двухфактарную аўтэнтыфікацыю."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Абагуленыя палітыкі сервера могуць быць ужыты да індывідуальных карыстальнікаў або груп"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO"
@@ -11953,9 +12021,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Выдаліўшы гэты нумар тэлефона, вы больш не зможаце аднавіць свой уліковы запіс."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."

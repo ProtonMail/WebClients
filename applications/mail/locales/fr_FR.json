@@ -6801,6 +6801,9 @@
       "Monthly ${ onDayString }": [
         "Chaque mois, ${ onDayString }"
       ],
+      "More infos": [
+        "Plus d'informations"
+      ],
       "More refine actions": [
         "Actions plus optimisées"
       ],
@@ -7898,8 +7901,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Veuillez nous contacter via ${ email } pour recevoir des instructions concernant la procédure de règlement en espèces."
+      "How to send a cash payment?": [
+        "Comment envoyer un paiement en espèces ?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Veuillez trouver les instructions dans cet article : ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -9218,8 +9224,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "le ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "le ${ shortenedDay }"
       ],
       "on the first Friday": [
         "chaque premier vendredi"
@@ -10353,6 +10359,9 @@
       "${ pricingTitle } offer expires today!": [
         "L'offre ${ pricingTitle } expire aujourd'hui !"
       ],
+      "Don’t show this offer again": [
+        "Ne plus montrer cette offre"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Profitez de Drive Plus pour seulement ${ pricingTitle }"
       ],
@@ -10365,14 +10374,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Dernière chance pour profiter de 80 % de réduction sur le premier mois pour ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Dernier jour pour réaliser des économies"
+      ],
       "Limited-time offer": [
         "Offre à durée limitée"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus pour 12 mois"
       ],
       "Maybe later": [
         "Peut-être plus tard"
       ],
+      "Save": [
+        "Économisez"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Économisez ${ prices.savedPercentage } %"
+      ],
       "Save 80% on your first month.": [
         "Économisez 80 % sur votre premier mois"
+      ],
+      "Save big when you pay annually": [
+        "Économisez un maximum en optant pour le paiement annuel !"
+      ],
+      "This offer won't be shown again.": [
+        "Cette offre ne sera plus affichée."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Lorsque vous passez d'un abonnement mensuel à un abonnement annuel."
+      ],
+      "You currently pay": [
+        "Vous payez actuellement"
       ]
     },
     "Offer feature": {
@@ -13964,9 +13997,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Seuls les caractères alphanumériques en minuscule, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Notez qu'en choisissant ce moyen de paiement, votre compte ne pourra pas être mis à niveau immédiatement. Nous mettrons votre compte à niveau dès que le paiement aura été effectué."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."

@@ -2528,18 +2528,18 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Etter..."
+      "Don't end": [
+        "Endeløs"
       ],
-      "Never": [
-        "Aldri"
+      "End after": [
+        "Slutter etter"
       ],
-      "On date…": [
-        "På datoen…"
+      "End on": [
+        "Fullfør på"
       ],
-      "time": [
-        "gang",
-        "ganger"
+      "event": [
+        "hendelse",
+        "hendelser"
       ]
     },
     "Cycle": {
@@ -3998,11 +3998,11 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Custom recurrence": [
-        "Tilpasset gjentakelse"
-      ],
       "Name": [
         "Navn"
+      ],
+      "Repeat event": [
+        "Gjenta hendelse"
       ],
       "Search": [
         "Søk"
@@ -5503,8 +5503,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt oss på ${ email } for instruksjoner om hvordan du betaler med kontanter."
+      "How to send a cash payment?": [
+        "Hvordan sende en kontant betaling?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Finn instruksjonene i artikkelen: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5820,9 +5823,6 @@
       "Encrypt emails": [
         "Krypter e-poster"
       ],
-      "Ends": [
-        "Slutter"
-      ],
       "Event duration": [
         "Hendelsesvarighet"
       ],
@@ -5831,6 +5831,9 @@
       ],
       "Event title": [
         "Hendelsestittel"
+      ],
+      "Every": [
+        "Hver"
       ],
       "Expiration (${ patternExpiration })": [
         "Utløpstid (${ patternExpiration })"
@@ -5849,9 +5852,6 @@
       ],
       "Forwards to": [
         "Videresendes til"
-      ],
-      "Frequency": [
-        "Frekvens"
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
@@ -5937,6 +5937,9 @@
       "Notifications": [
         "Varsler"
       ],
+      "On": [
+        "På"
+      ],
       "Operating system": [
         "Operativsystem"
       ],
@@ -5994,12 +5997,6 @@
       ],
       "Region": [
         "Region"
-      ],
-      "Repeat every": [
-        "Gjenta hver"
-      ],
-      "Repeat on": [
-        "Gjenta på"
       ],
       "Reveal password": [
         "Avslør passord"
@@ -6468,8 +6465,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dag ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "på ${ shortenedDay }"
       ],
       "on the first Friday": [
         "på den første fredagen"
@@ -7721,6 +7718,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-tilbud utløper i dag!"
       ],
+      "Don’t show this offer again": [
+        "Ikke vis dette tilbudet igjen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaff deg Drive Plus for kun ${ pricingTitle }"
       ],
@@ -7733,14 +7733,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Siste dag for å spare"
+      ],
       "Limited-time offer": [
         "Tidsbegrenset tilbud"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus for 12 måneder"
       ],
       "Maybe later": [
         "Kanskje senere"
       ],
+      "Save": [
+        "Spar"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spar ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Spar 80% på den første måneden."
+      ],
+      "Save big when you pay annually": [
+        "Spar mye når du betaler årlig"
+      ],
+      "This offer won't be shown again.": [
+        "Dette tilbudet vises ikke igjen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Når du bytter fra et månedlig til et årlig abonnement."
+      ],
+      "You currently pay": [
+        "Du betaler for øyeblikket"
       ]
     },
     "Offer feature": {
@@ -7824,6 +7848,9 @@
       "Custom": [
         "Tilpasset"
       ],
+      "Custom...": [
+        "Tilpasset..."
+      ],
       "Day": [
         "Dag",
         "Dager"
@@ -7834,11 +7861,14 @@
       "Every day": [
         "Hver dag"
       ],
-      "Every month": [
-        "Hver måned"
+      "Every month ${ description }": [
+        "Hver måned ${ description }"
       ],
-      "Every week": [
-        "Hver uke"
+      "Every week ${ everyWeekDescription }": [
+        "Hver uke på ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Hver ukedag ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Hvert år"
@@ -9412,7 +9442,7 @@
         "Kalender lagt til. Det kan ta noen minutter å synkronisere."
       ],
       "Calendar created": [
-        "Kalender oprettet"
+        "Kalender opprettet"
       ],
       "Calendar information updated": [
         "Kalenderinformasjon oppdatert"
@@ -9872,6 +9902,9 @@
       "Details": [
         "Detaljer"
       ],
+      "Does not repeat": [
+        "Gjentas ikke"
+      ],
       "Downgrade account": [
         "Nedgrader kontoen"
       ],
@@ -9922,6 +9955,21 @@
       ],
       "Event is happening on defined time slot": [
         "Hendelsen foregår på definert tidsluke"
+      ],
+      "Every day": [
+        "Hver dag"
+      ],
+      "Every month ${ option.text }": [
+        "Hver måned ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Hver uke på ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Hver ukedag ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Hvert år"
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
@@ -10074,9 +10122,6 @@
       "Security center": [
         "Sikkerhetssenter"
       ],
-      "Select a day in the month": [
-        "Velg en dag i måneden"
-      ],
       "Select a plan": [
         "Velg en plan"
       ],
@@ -10091,9 +10136,6 @@
       ],
       "Select event end time": [
         "Velg sluttid for hendelsen"
-      ],
-      "Select event frequency": [
-        "Velg en frekvens for hendelsen"
       ],
       "Select event frequency interval": [
         "Velg et intervall for frekvensen til denne hendelsen"
@@ -10118,9 +10160,6 @@
       ],
       "Select the way to send this notification": [
         "Velg hvordan du vil sende dette varselet"
-      ],
-      "Select when this event will stop happening": [
-        "Velg når denne hendelsen skal avsluttes"
       ],
       "Select when you want this notification to be sent": [
         "Velg når du vil at dette varselet skal sendes"
@@ -10484,9 +10523,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Bare små alfanumeriske tegn, punktum og bindestreker (inkludert understrek) er tillatt."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."

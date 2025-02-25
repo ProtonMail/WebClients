@@ -1588,10 +1588,10 @@
     },
     "Commander action": {
       "Day view": [
-        "Gün görünümü"
+        "Günlük görünüm"
       ],
       "Month view": [
-        "Ay görünümü"
+        "Aylık görünüm"
       ],
       "New event": [
         "Yeni etkinlik"
@@ -1603,13 +1603,13 @@
         "Önceki dönem"
       ],
       "Search events": [
-        "Etkinlikleri ara"
+        "Etkinlik ara"
       ],
       "Today": [
         "Bugün"
       ],
       "Week view": [
-        "Hafta görünümü"
+        "Haftalık görünüm"
       ]
     },
     "Confirm modal title": {
@@ -2528,18 +2528,18 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Şu kadar sonra…"
+      "Don't end": [
+        "Bitmesin"
       ],
-      "Never": [
-        "Asla"
+      "End after": [
+        "Sonrasında bitir"
       ],
-      "On date…": [
-        "Şu tarihte…"
+      "End on": [
+        "Sonlandır"
       ],
-      "time": [
-        "kez",
-        "kez"
+      "event": [
+        "etkinlik",
+        "etkinlik"
       ]
     },
     "Cycle": {
@@ -3998,11 +3998,11 @@
       "Contacts": [
         "Kişiler"
       ],
-      "Custom recurrence": [
-        "Özel yineleme"
-      ],
       "Name": [
         "Ad"
+      ],
+      "Repeat event": [
+        "Etkinliği tekrarla"
       ],
       "Search": [
         "Ara"
@@ -4774,7 +4774,7 @@
         "Yüksek öncelik"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
-        "Klavye kısayolları etkinleştirilmişse hızlı eylemler için veya farklı görünümlere atlamak için aşağıdaki tuşları kullanabilirsiniz. ${ metaKey } + K her zaman etkindir."
+        "Klavye kısayolları etkinleştirilmişse, hızlı işlemler yapmak veya farklı görünümlere geçmek için aşağıdaki tuşları kullanabilirsiniz. ${ metaKey } + K her zaman kullanılabilir."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -5503,8 +5503,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı ile ilgili bilgi almak için bizimle ${ email } adresinden görüşün."
+      "How to send a cash payment?": [
+        "Nakit ödeme nasıl gönderilir?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5607,16 +5610,16 @@
         "Yeni etkinlik oluştur"
       ],
       "Day view": [
-        "Gün görünümü"
+        "Günlük görünüm"
       ],
       "Month view": [
-        "Ay görünümü"
+        "Aylık görünüm"
       ],
       "Next period": [
         "Sonraki dönem"
       ],
       "Open quick actions menu": [
-        "Hızlı eylemler menüsünü açın"
+        "Hızlı işlemler menüsünü aç"
       ],
       "Open this modal": [
         "Bu pencereyi aç"
@@ -5625,13 +5628,13 @@
         "Önceki dönem"
       ],
       "Search events": [
-        "Etkinlikleri ara"
+        "Etkinlik ara"
       ],
       "Today": [
         "Bugün"
       ],
       "Week view": [
-        "Hafta görünümü"
+        "Haftalık görünüm"
       ]
     },
     "Keyboard shortcut section name": {
@@ -5820,9 +5823,6 @@
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
-      "Ends": [
-        "Bitiş"
-      ],
       "Event duration": [
         "Etkinlik süresi"
       ],
@@ -5831,6 +5831,9 @@
       ],
       "Event title": [
         "Etkinlik başlığı"
+      ],
+      "Every": [
+        "Her"
       ],
       "Expiration (${ patternExpiration })": [
         "Geçerlilik süresi (${ patternExpiration })"
@@ -5849,9 +5852,6 @@
       ],
       "Forwards to": [
         "Şuraya iletiyor"
-      ],
-      "Frequency": [
-        "Sıklık"
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
@@ -5937,6 +5937,9 @@
       "Notifications": [
         "Bildirimler"
       ],
+      "On": [
+        "Üzerinde"
+      ],
       "Operating system": [
         "İşletim sistemi"
       ],
@@ -5994,12 +5997,6 @@
       ],
       "Region": [
         "Bölge"
-      ],
-      "Repeat every": [
-        "Yinelenme sıklığı"
-      ],
-      "Repeat on": [
-        "Yinelenme zamanı"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -6468,8 +6465,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. günde"
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay } gününde"
       ],
       "on the first Friday": [
         "ilk Cuma günü"
@@ -7721,6 +7718,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don’t show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
       ],
@@ -7733,14 +7733,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "${ plan } Plus aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
       ],
+      "Last day to save": [
+        "İndirim kazanmak için son gün"
+      ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Mail Plus for 12 months": [
+        "12 aylık Mail Plus"
       ],
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Save": [
+        "İndirim"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "%${ prices.savedPercentage } indirim"
+      ],
       "Save 80% on your first month.": [
         "İlk ayınızda % 80 indirim kazanın."
+      ],
+      "Save big when you pay annually": [
+        "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "This offer won't be shown again.": [
+        "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
+      ],
+      "You currently pay": [
+        "Şu anda ödediğiniz"
       ]
     },
     "Offer feature": {
@@ -7824,6 +7848,9 @@
       "Custom": [
         "Özel"
       ],
+      "Custom...": [
+        "Özel..."
+      ],
       "Day": [
         "Gün",
         "Gün"
@@ -7834,11 +7861,14 @@
       "Every day": [
         "Her gün"
       ],
-      "Every month": [
-        "Her ay"
+      "Every month ${ description }": [
+        "Her ay ${ description }"
       ],
-      "Every week": [
-        "Her hafta"
+      "Every week ${ everyWeekDescription }": [
+        "Her hafta ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Hafta içi her gün ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Her yıl"
@@ -8132,7 +8162,7 @@
         "Grupları süz"
       ],
       "Filter quick actions": [
-        "Hızlı eylemleri filtrele"
+        "Hızlı işlemleri süz"
       ],
       "First name": [
         "Ad"
@@ -9872,6 +9902,9 @@
       "Details": [
         "Ayrıntılar"
       ],
+      "Does not repeat": [
+        "Tekrarlamaz"
+      ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
       ],
@@ -9922,6 +9955,21 @@
       ],
       "Event is happening on defined time slot": [
         "Etkinlik belirlenmiş zaman aralığında gerçekleşecekse işaretleyin"
+      ],
+      "Every day": [
+        "Her gün"
+      ],
+      "Every month ${ option.text }": [
+        "Her ay ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Her hafta ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Hafta içi her gün ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Her yıl"
       ],
       "Exporting contacts": [
         "Kişileri dışa aktarma"
@@ -10074,9 +10122,6 @@
       "Security center": [
         "Güvenlik merkezi"
       ],
-      "Select a day in the month": [
-        "Ayın bir gününü seçin"
-      ],
       "Select a plan": [
         "Bir tarife seçin"
       ],
@@ -10091,9 +10136,6 @@
       ],
       "Select event end time": [
         "Etkinlik bitiş saatini seçin"
-      ],
-      "Select event frequency": [
-        "Etkinlik sıklığını seçin"
       ],
       "Select event frequency interval": [
         "Etkinliğin yinelenme aralığını seçin"
@@ -10118,9 +10160,6 @@
       ],
       "Select the way to send this notification": [
         "Bu bildirimin iletilme yöntemini seçin"
-      ],
-      "Select when this event will stop happening": [
-        "Bu etkinlik yinelemesinin ne zaman durdurulacağını seçin"
       ],
       "Select when you want this notification to be sent": [
         "Bu bildirimin gönderilmesini istediğiniz zamanı seçin"
@@ -10607,9 +10646,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Yalnızca küçük harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

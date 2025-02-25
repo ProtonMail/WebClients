@@ -1616,6 +1616,32 @@
         "jahoda"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "Denný prehľad"
+      ],
+      "Month view": [
+        "Mesačný prehľad"
+      ],
+      "New event": [
+        "Nová udalosť"
+      ],
+      "Next period": [
+        "Ďalšie obdobie"
+      ],
+      "Previous period": [
+        "Predchádzajúce obdobie"
+      ],
+      "Search events": [
+        "Vyhľadať v udalostiach"
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Week view": [
+        "Týždenný prehľad"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Ukončiť prispôsobenie importu?"
@@ -2531,23 +2557,6 @@
         "Podľa vášho časového pásma"
       ]
     },
-    "Custom frequency option": {
-      "After…": [
-        "Po…"
-      ],
-      "Never": [
-        "Nikdy"
-      ],
-      "On date…": [
-        "V deň…"
-      ],
-      "time": [
-        "jedenkrát",
-        "krát",
-        "krát",
-        "krát"
-      ]
-    },
     "Cycle": {
       "/month": [
         "/mesiac"
@@ -2987,6 +2996,9 @@
         "Niektoré skupiny neobsahujú žiadne kontakty: ${ list }",
         "Niektoré skupiny neobsahujú žiadne kontakty: ${ list }",
         "Niektoré skupiny neobsahujú žiadne kontakty: ${ list }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
       ],
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
@@ -4051,9 +4063,6 @@
       "Contacts": [
         "Kontakty"
       ],
-      "Custom recurrence": [
-        "Vlastné opakovanie"
-      ],
       "Name": [
         "Meno"
       ],
@@ -4890,6 +4899,9 @@
       "High Priority": [
         "Vysoká priorita"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Ak sú povolené klávesové skratky, môžete na rýchle akcie alebo na prechod do rôznych zobrazení použiť nasledujúce klávesy. ${ metaKey } + K je vždy povolená."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
       ],
@@ -5630,11 +5642,6 @@
         "Môžete aktualizovať vyhľadávaciu frázu alebo zatvoriť vyhľadávanie a vrátiť sa do zobrazenia kalendára"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Prosím kontaktujte nás na ${ email } pre viac informácií, ako uhradiť platobnú transakciu v hotovosti."
-      ]
-    },
     "Info message": {
       "No results found": [
         "Nenašli sa žiadne výsledky"
@@ -5737,13 +5744,43 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "Vytvoriť novú udalosť"
+      ],
+      "Day view": [
+        "Denný prehľad"
+      ],
+      "Month view": [
+        "Mesačný prehľad"
+      ],
+      "Next period": [
+        "Ďalšie obdobie"
+      ],
+      "Open quick actions menu": [
+        "Otvoriť ponuku rýchlych akcií"
+      ],
       "Open this modal": [
         "Otvoriť tento spôsob"
+      ],
+      "Previous period": [
+        "Predchádzajúce obdobie"
+      ],
+      "Search events": [
+        "Vyhľadať udalosti"
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Week view": [
+        "Týždenný prehľad"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Základné činnosti"
+      ],
+      "View options": [
+        "Možnosti zobrazenia"
       ]
     },
     "Knowledge base link label": {
@@ -5926,9 +5963,6 @@
       "Encrypt emails": [
         "Šifrovať emaily"
       ],
-      "Ends": [
-        "Končí"
-      ],
       "Event duration": [
         "Trvanie udalosti"
       ],
@@ -5955,9 +5989,6 @@
       ],
       "Forwards to": [
         "Preposielať na"
-      ],
-      "Frequency": [
-        "Frekvencia"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -6102,12 +6133,6 @@
       ],
       "Region": [
         "Kraj"
-      ],
-      "Repeat every": [
-        "Opakovať každý"
-      ],
-      "Repeat on": [
-        "Opakovať v"
       ],
       "Reveal password": [
         "Odkryť heslo"
@@ -6592,9 +6617,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "v ${ dayOfMonth }. deň"
-      ],
       "on the first Friday": [
         "v prvý piatok"
       ],
@@ -7939,6 +7961,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } ponuka končí dnes!"
       ],
+      "Don’t show this offer again": [
+        "Nabudúce to už nezobrazovať"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získajte Drive Plus len za ${ pricingTitle }"
       ],
@@ -7951,14 +7976,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Posledná šanca ušetriť 80% za prvý mesiac s ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Posledný deň na ušetrenie"
+      ],
       "Limited-time offer": [
         "Časovo obmedzená ponuka"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 mesiacov"
       ],
       "Maybe later": [
         "Možno neskôr"
       ],
+      "Save": [
+        "Ušetrite"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ušetrite ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ušetrite 80 % v prvom mesiaci."
+      ],
+      "Save big when you pay annually": [
+        "Pri ročnej platbe ušetríte viac"
+      ],
+      "This offer won't be shown again.": [
+        "Táto ponuka sa už nezobrazí."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Keď prejdete z mesačného na ročné predplatné."
+      ],
+      "You currently pay": [
+        "V súčasnosti platíte"
       ]
     },
     "Offer feature": {
@@ -8053,12 +8102,6 @@
       ],
       "Every day": [
         "Každý deň"
-      ],
-      "Every month": [
-        "Každý mesiac"
-      ],
-      "Every week": [
-        "Každý týždeň"
       ],
       "Every year": [
         "Každý rok"
@@ -8362,6 +8405,9 @@
       ],
       "Filter groups": [
         "Filtrovať skupiny"
+      ],
+      "Filter quick actions": [
+        "Filtrovať rýchle akcie"
       ],
       "First name": [
         "Meno"
@@ -10004,6 +10050,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } klávesové skratky"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } emailová adresa",
         "${ emailsCount } emailové adresy",
@@ -10394,9 +10443,6 @@
       "Security center": [
         "Centrum zabezpečenia"
       ],
-      "Select a day in the month": [
-        "Vybrať deň v mesiaci"
-      ],
       "Select a plan": [
         "Vyberte plán"
       ],
@@ -10411,9 +10457,6 @@
       ],
       "Select event end time": [
         "Vyberte čas ukončenia udalosti"
-      ],
-      "Select event frequency": [
-        "Zvoľte frekvenciu udalosti"
       ],
       "Select event frequency interval": [
         "Zvoľte interval frekvencie udalosti"
@@ -10438,9 +10481,6 @@
       ],
       "Select the way to send this notification": [
         "Vyberte spôsob odoslania tejto notifikácie"
-      ],
-      "Select when this event will stop happening": [
-        "Vyberte, kedy sa táto udalosť prestane vyskytovať"
       ],
       "Select when you want this notification to be sent": [
         "Vyberte, kedy chcete, aby bola táto notifikácia odoslaná"
@@ -10828,9 +10868,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Povolené sú len alfanumerické malé písmená, bodky, pomlčky a podčiarkovníky"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Upozorňujeme, že pri výbere tohto spôsobu platby nie je možné váš účet okamžite navýšiť. Váš účet aktualizujeme po zúčtovaní platby."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."

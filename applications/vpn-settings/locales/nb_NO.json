@@ -211,6 +211,9 @@
       "Delete member": [
         "Slett medlem"
       ],
+      "Delete policy": [
+        "Slett retningslinje"
+      ],
       "Delete user": [
         "Slett bruker"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Velg faktureringssyklus på ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Velg by ${ city }"
+      ],
       "Select country": [
         "Velg land"
+      ],
+      "Select country ${ country }": [
+        "Velg land ${ country }"
       ],
       "select file": [
         "velg fil"
@@ -2318,11 +2327,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Opprett retningslinjer for å administrere tilgang til delte tjenere."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Alle i organisasjonen kan koble til delte tjenere."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Alle i organisasjonen kan koble til delte tjenere i alle land."
       ],
       "If disabled, only admins will have access.": [
         "Hvis deaktivert, vil bare administratorer ha tilgang."
@@ -2553,6 +2562,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
+      ],
+      "Error creating policy.": [
+        "Feil ved å opprette retningslinje."
+      ],
+      "Error deleting policy.": [
+        "Feil ved å slette retningslinje."
+      ],
+      "Error updating policy.": [
+        "Feil ved å oppdatere retningslinje."
       ],
       "Failed to process the logo": [
         "Kunne ikke behandle logoen"
@@ -4451,9 +4469,6 @@
       "No addresses exist": [
         "Ingen adresser eksisterer"
       ],
-      "No common passwords": [
-        "Ingen vanlige passord"
-      ],
       "No gateways": [
         "Ingen porttjenere"
       ],
@@ -4462,9 +4477,6 @@
       ],
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Ingen forutsigbare sekvenser (1234, aaa)"
       ],
       "No results found": [
         "Ingen resultater funnet"
@@ -4877,6 +4889,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Dette kan ta få sekunder eller få minutter avhengig av enheten din."
+      ],
+      "This cannot be undone.": [
+        "Dette kan ikke angres."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dette kan ta litt tid. Ikke lukk siden eller koble fra internett."
@@ -5406,8 +5421,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt oss på ${ email } for instruksjoner om hvordan du betaler med kontanter."
+      "How to send a cash payment?": [
+        "Hvordan sende en kontant betaling?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Finn instruksjonene i artikkelen: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5592,6 +5610,9 @@
       ],
       "Anderson": [
         "Andersen"
+      ],
+      "Apply policy to": [
+        "Anvend retningslinjen på"
       ],
       "Assertion Consumer Service URL": [
         "URL-adresse for påstand om forbrukertjeneste"
@@ -5866,9 +5887,6 @@
       "New password": [
         "Nytt passord"
       ],
-      "New policy name": [
-        "Nytt retningslinjenavn"
-      ],
       "New second password": [
         "Nytt andre passord"
       ],
@@ -5940,6 +5958,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Gjerne del eventuelle tilbakemeldinger for å hjelpe oss med å bli bedre."
+      ],
+      "Policy name": [
+        "Navn på retningslinje"
       ],
       "Postal code": [
         "Postnummer"
@@ -7631,9 +7652,6 @@
       "Downloaded 2FA recovery codes": [
         "Nedlastede 2FA-gjenopprettingskoder"
       ],
-      "Error creating policy": [
-        "Feil ved å opprette retningslinje"
-      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -7651,9 +7669,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-påloggingsinformasjon generert på nytt"
-      ],
-      "Policy created successfully": [
-        "Retningslinje vellykket opprettet"
       ],
       "Reminder has been sent": [
         "Påminnelse er sendt"
@@ -7683,6 +7698,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-tilbud utløper i dag!"
       ],
+      "Don’t show this offer again": [
+        "Ikke vis dette tilbudet igjen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaff deg Drive Plus for kun ${ pricingTitle }"
       ],
@@ -7695,14 +7713,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Siste dag for å spare"
+      ],
       "Limited-time offer": [
         "Tidsbegrenset tilbud"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus for 12 måneder"
       ],
       "Maybe later": [
         "Kanskje senere"
       ],
+      "Save": [
+        "Spar"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spar ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Spar 80% på den første måneden."
+      ],
+      "Save big when you pay annually": [
+        "Spar mye når du betaler årlig"
+      ],
+      "This offer won't be shown again.": [
+        "Dette tilbudet vises ikke igjen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Når du bytter fra et månedlig til et årlig abonnement."
+      ],
+      "You currently pay": [
+        "Du betaler for øyeblikket"
       ]
     },
     "Offer feature": {
@@ -10101,6 +10143,15 @@
       "Phone number updated": [
         "Telefonnummer oppdatert"
       ],
+      "Policy created successfully!": [
+        "Retningslinje vellykket opprettet!"
+      ],
+      "Policy deleted": [
+        "Retningslinje slettet"
+      ],
+      "Policy updated successfully!": [
+        "Retningslinje vellykket oppdatert!"
+      ],
       "Preference saved": [
         "Preferanse lagret"
       ],
@@ -10555,6 +10606,9 @@
       "Delete": [
         "Slett"
       ],
+      "Delete ${ policyName }?": [
+        "Slette ${ policyName }?"
+      ],
       "Delete account": [
         "Slett konto"
       ],
@@ -10610,6 +10664,9 @@
       "Edit billing address": [
         "Rediger faktureringsadresse"
       ],
+      "Edit countries": [
+        "Rediger land"
+      ],
       "Edit credit/debit card": [
         "Rediger kreditt-/debetkort"
       ],
@@ -10627,6 +10684,9 @@
       ],
       "Edit invoice note": [
         "Rediger fakturanota"
+      ],
+      "Edit name": [
+        "Rediger navn"
       ],
       "Edit servers": [
         "Rediger tjenere"
@@ -11126,6 +11186,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmer som ikke bruker 2FA vil få en e-post som ber dem om å aktivere den så snart som mulig."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Retningslinjer for delte tjenere kan brukes på enkeltbrukere eller grupper"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO"
@@ -11671,9 +11734,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved å slette dette telefonnummeret vil du ikke lenger kunne gjenopprette kontoen din."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."

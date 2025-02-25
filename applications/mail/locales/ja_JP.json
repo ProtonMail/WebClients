@@ -720,6 +720,9 @@
       "Loading${ ellipsis }": [
         "読み込み中${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "${ MAIL_APP_NAME } をデフォルトのメールアプリケーションとして設定する"
+      ],
       "Make it friendly": [
         "フレンドリーにする"
       ],
@@ -6616,6 +6619,9 @@
       "Low Priority": [
         "優先度：低"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME } をデフォルトのメールアプリケーションとして設定する。"
+      ],
       "Manage your folders": [
         "フォルダーを管理"
       ],
@@ -7757,11 +7763,6 @@
       ],
       "Selected color:": [
         "選択した色:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "現金での支払い方法については、${ email } 宛までお問い合わせください。"
       ]
     },
     "Info on errors": {
@@ -9064,8 +9065,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } 日に"
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay } に"
       ],
       "on the first Friday": [
         "第1金曜日"
@@ -10173,6 +10174,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
+      "Don’t show this offer again": [
+        "今後このオファーを表示しない"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "たった${ pricingTitle }でDrive Plusを入手"
       ],
@@ -10185,14 +10189,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "最初の月の${ plan } Plusが 80 %割引になる最後のチャンス。"
       ],
+      "Last day to save": [
+        "節約できる最後の日"
+      ],
       "Limited-time offer": [
         "期間限定オファー"
+      ],
+      "Mail Plus for 12 months": [
+        "12 か月分のMail Plus"
       ],
       "Maybe later": [
         "またあとで"
       ],
+      "Save": [
+        "節約"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "${ prices.savedPercentage }%を節約"
+      ],
       "Save 80% on your first month.": [
         "最初の月は 80 %割引。"
+      ],
+      "Save big when you pay annually": [
+        "年払いで大幅に節約"
+      ],
+      "This offer won't be shown again.": [
+        "このオファーは二度と表示されません。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "月額プランから年間プランに切り替える場合。"
+      ],
+      "You currently pay": [
+        "現在の支払い方法"
       ]
     },
     "Offer feature": {
@@ -10691,6 +10719,9 @@
       ],
       "Filter labels": [
         "ラベルをフィルタ"
+      ],
+      "Filter quick actions": [
+        "クイックアクションのフィルター"
       ],
       "First name": [
         "名"
@@ -12596,6 +12627,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } キーボードショートカット"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } 件のメールアドレス"
       ],
@@ -13670,9 +13704,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "英数字の小文字、ドット、ハイフン、アンダースコアのみが使用できます"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"

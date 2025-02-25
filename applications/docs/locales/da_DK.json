@@ -297,6 +297,9 @@
       "Forward as attachment": [
         "Videresend som vedhæftning"
       ],
+      "Get ${ planOrAppName }": [
+        "Få ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Kontakt os"
       ],
@@ -395,6 +398,9 @@
       ],
       "Microsoft Word (.docx)": [
         "Microsoft Word (.docx)"
+      ],
+      "More actions": [
+        "Flere handlinger"
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
@@ -1061,6 +1067,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Luk"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -1069,6 +1078,18 @@
       ],
       "Continue your subscription": [
         "Fortsæt dit abonnement"
+      ],
+      "Create label": [
+        "Opret etiket"
+      ],
+      "Discover and set up features": [
+        "Udforsk og konfigurer funktioner"
+      ],
+      "Remind me later": [
+        "Påmind mig senere"
+      ],
+      "Set up other features": [
+        "Konfigurer andre funktioner"
       ]
     },
     "Cancellation upsell": {
@@ -2136,6 +2157,11 @@
         "Forfalden faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2214,11 +2240,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3334,6 +3355,12 @@
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalendertidszone understøttes ikke"
+      ],
+      "Edited event not supported": [
+        "Redigeret begivenhed understøttes ikke"
+      ],
       "End time out of bounds": [
         "Sluttid uden for grænserne"
       ],
@@ -3348,6 +3375,18 @@
       ],
       "Malformed start time": [
         "Misdannet starttid"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Kun den gregorianske kalenderskala er tilladt"
+      ],
+      "Recurring event has no occurrences": [
+        "Tilbagevendende begivenhed har ingen forekomster"
+      ],
+      "Recurring rule not supported": [
+        "Tilbagevendende regel understøttes ikke"
+      ],
+      "Start time out of bounds": [
+        "Starttid uden for grænserne"
       ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
@@ -4453,6 +4492,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalinger er ikke tilgængelige i øjeblikket. Prøv venligst igen senere."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
@@ -4912,11 +4954,6 @@
     "info": {
       "Selected color:": [
         "Valgte farve:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt os venligst på ${ email } for instruktioner om, hvordan du betaler os med kontanter."
       ]
     },
     "Info on errors": {
@@ -8031,6 +8068,25 @@
         "Til ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagerplads pr. bruger"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } tilpasset e-maildomæne",
+        "${ planNumberOfDomains } tilpassede e-maildomæner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadresse",
+        "${ planNumberOfEmails } e-mailadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mapper, etiketter og brugerdefinerede filtre"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagerplads"
@@ -8070,25 +8126,6 @@
       ],
       "Your privacy is our mission": [
         "Dit privatliv er vores mission"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagerplads pr. bruger"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } tilpasset e-maildomæne",
-        "${ planNumberOfDomains } tilpassede e-maildomæner"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadresse",
-        "${ planNumberOfEmails } e-mailadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mapper, etiketter og brugerdefinerede filtre"
       ]
     },
     "Subscription renewal state": {
@@ -9047,9 +9084,6 @@
       ],
       "Name is required": [
         "Navn er påkrævet"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."

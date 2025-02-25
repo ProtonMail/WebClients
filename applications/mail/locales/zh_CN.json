@@ -4403,7 +4403,7 @@
         "文件夹名称过长，请重新填写。"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
-        "无法提取${ emailAddress } 的密钥属性"
+        "无法提取 ${ emailAddress } 的密钥属性"
       ],
       "The label name is invalid. Please choose a different name.": [
         "标签名称无效，请更改。"
@@ -5846,7 +5846,7 @@
         "${ PASS_APP_NAME } 允许您通过端到端加密来存储密码、笔记和其他敏感信息。可在 ${ ios }、${ android } 和您的 ${ browser } 上使用。"
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "${ PASS_APP_NAME } 提供了一种简单的方法，让您在不信任的第三方网站上创建登录，而您无需暴露自己的真实电子邮件地址。"
+        "${ PASS_APP_NAME } 提供了一种简单的方法，让您在不信任的第三方网站上创建登录，而您无需暴露自己的真实邮箱地址。"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
@@ -6008,7 +6008,7 @@
         "任何预定或未激活的消息都将被取消。"
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "任何子文件夹也将被删除。不过，储存在 ${ nameDeleted } 文件夹中的电子邮件不会被删除，且可以在 “所有邮件” 文件夹中找到。"
+        "任何子文件夹也将被删除。不过，储存在 ${ nameDeleted } 文件夹中的邮件不会被删除，且可以在“所有邮件”文件夹中找到。"
       ],
       "Applying actions to conversations": [
         "正在对所有会话执行操作"
@@ -6221,7 +6221,7 @@
         "专用服务器"
       ],
       "default email address": [
-        "首选邮件地址"
+        "首选邮箱地址"
       ],
       "Default email application": [
         "设为默认邮件应用"
@@ -6230,7 +6230,7 @@
         "你知道你的 ${ BRAND_NAME } 账户中包含加密云存储吗？前往 ${ DRIVE_APP_NAME } 充分利用你的空间。这是免费的。"
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
-        "您知道吗？我们为您保留了一个更短的电子邮件地址。它是您的用户名加上\"@${ PM_DOMAIN }\"。"
+        "您知道吗？我们为您保留了一个更短的邮箱地址。它是您的用户名加上\"@${ PM_DOMAIN }\"。"
       ],
       "Discover new features unlocked and start using them right away!": [
         "发现解锁的新功能，并立即开始使用！"
@@ -6320,7 +6320,7 @@
         "邮箱地址"
       ],
       "Email copied to clipboard": [
-        "电子邮件已复制到剪贴板"
+        "邮箱地址已复制到剪贴板"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
@@ -6680,7 +6680,7 @@
         "已归入垃圾邮件或废件箱超过 30 天的邮件将被直接删除。"
       ],
       "Messages to all your email addresses will go to your inbox.": [
-        "发送到您所有电子邮件地址的信息将全部转至您的收件箱。"
+        "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
       "MM/YY": [
         "月/年"
@@ -7067,7 +7067,7 @@
         "开始与联系人分享，并将其用于在线服务。"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "开始使用更简短、更朗朗上口的电子邮件地址。"
+        "开始使用更简短且更朗朗上口的邮箱地址。"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "此浏览器不支持储存功能，我们需要此支持才能进行信息内容检索。"
@@ -7337,7 +7337,7 @@
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "关闭仅按日期、姓名、电子邮件地址或主题行搜索。要禁用搜索信息内容 ( 并删除为启用此功能而下载的信息 )，请转到设置。"
+        "关闭仅按日期、姓名、邮箱地址或主题行搜索。要禁用搜索信息内容 (并删除为启用此功能而下载的信息)，请转到设置。"
       ],
       "Turn on to search the content of your messages": [
         "开启以搜索您的邮件全文"
@@ -7418,7 +7418,7 @@
         "网址：${ unsubscribeMethods.HttpClient }"
       ],
       "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
-        "使用不同的电子邮件地址来满足不同的用途，这样你就可以轻松地将工作、个人或其他领域的电子邮件分开。"
+        "使用不同的邮箱地址来满足不同的用途，这样你就可以轻松地将工作、个人或其他领域的电子邮件分开。"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用键盘快捷键让邮件操作更加迅捷。"
@@ -7466,7 +7466,7 @@
         "我们未能处理您的支付。"
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
-        "我们有专门为您这样需要多个电子邮件地址的用户所设计的计划。"
+        "我们有专门为您这样需要多个邮箱地址的用户所设计的计划。"
       ],
       "We need to authenticate your payment method with your bank.": [
         "我们需要向您的发卡银行核实支付方式是否有效。"
@@ -7514,7 +7514,7 @@
         "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
-        "订阅新闻通讯时，使用别名而不是你的真实电子邮件地址。这样可以保护你的身份，而且你可以随时禁用该别名。"
+        "订阅新闻通讯时，使用别名而不是您的真实邮箱地址。这样可以保护你的身份，而且你可以随时禁用该别名。"
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "当您在旅行或使用公共WiFi时，请连接到${ VPN_APP_NAME }，以防止他人跟踪您的在线活动或窃取您的数据。这是免费的。"
@@ -7763,11 +7763,6 @@
       ],
       "Selected color:": [
         "所选颜色"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "请联系 ${ email } 了解如何使用现金支付。"
       ]
     },
     "Info on errors": {
@@ -9070,9 +9065,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "按日 ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "第一个星期五"
       ],
@@ -10179,6 +10171,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don’t show this offer again": [
+        "不再显示此优惠"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "仅需 ${ pricingTitle } 即可获得 Drive Plus"
       ],
@@ -10191,14 +10186,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "首月购买 ${ plan } Plus 八折优惠的最后机会。"
       ],
+      "Last day to save": [
+        "保存的最后日期"
+      ],
       "Limited-time offer": [
         "限时特惠"
+      ],
+      "Mail Plus for 12 months": [
+        "12 个月的 Mail Plus"
       ],
       "Maybe later": [
         "以后再说"
       ],
+      "Save": [
+        "节省"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "节省 ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "第一个月可节省 80% 的费用。"
+      ],
+      "Save big when you pay annually": [
+        "按年付费可节省大量费用"
+      ],
+      "This offer won't be shown again.": [
+        "此优惠不再显示。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "当您从每月订阅切换到年度订阅时。"
+      ],
+      "You currently pay": [
+        "您目前支付"
       ]
     },
     "Offer feature": {
@@ -10336,7 +10355,7 @@
         "开始使用 ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "开始使用更简短、更朗朗上口的电子邮件地址。"
+        "开始使用更简短且更朗朗上口的邮箱地址。"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "要开始使用，请选择一个显示名称。当您发送电子邮件、邀请他人参加活动或共享文件时，人们看到的就是这个名称。"
@@ -10698,6 +10717,9 @@
       "Filter labels": [
         "搜索标签"
       ],
+      "Filter quick actions": [
+        "过滤快捷操作"
+      ],
       "First name": [
         "名"
       ],
@@ -11010,7 +11032,7 @@
         "用于 Amazon 购物等等"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink }提供。"
+        "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -12602,6 +12624,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } 快捷键"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } 个邮箱地址"
       ],
@@ -12951,7 +12976,7 @@
         "您的账户非常安全"
       ],
       "How to update your email address": [
-        "如何更新您的电子邮箱地址"
+        "如何更新您的邮箱地址"
       ],
       "Human verification": [
         "身份验证"
@@ -13209,7 +13234,7 @@
         "请求新验证码"
       ],
       "Same inbox, shorter email address": [
-        "同一个收件箱，但使用更短的电子邮箱地址"
+        "同一个收件箱，但使用更短的邮箱地址"
       ],
       "Save time with email filters": [
         "将琐事交给筛选规则"
@@ -13578,7 +13603,7 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } 电子邮箱地址"
+        "${ n } 个 ${ BRAND_NAME } 邮箱地址"
       ],
       "${ n } account per wallet": [
         "每个钱包${ n }个 账户"
@@ -13681,9 +13706,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "只允许使用字母数字小写字符、点、连字符和下划线"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"

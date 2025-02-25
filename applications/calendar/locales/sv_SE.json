@@ -2528,18 +2528,18 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Efter…"
+      "Don't end": [
+        "Avsluta inte"
       ],
-      "Never": [
-        "Aldrig"
+      "End after": [
+        "Slutar efter"
       ],
-      "On date…": [
-        "På datum…"
+      "End on": [
+        "Slutar den"
       ],
-      "time": [
-        "gång",
-        "gånger"
+      "event": [
+        "händelse",
+        "händelser"
       ]
     },
     "Cycle": {
@@ -3998,11 +3998,11 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Custom recurrence": [
-        "Anpassad upprepning"
-      ],
       "Name": [
         "Namn"
+      ],
+      "Repeat event": [
+        "Upprepa händelse"
       ],
       "Search": [
         "Sök"
@@ -5500,8 +5500,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakta oss på ${ email } för instruktioner om hur du betalar oss med kontanter."
+      "How to send a cash payment?": [
+        "Hur skickar man en kontant betalning?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Hitta instruktionen i artikeln: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5820,9 +5823,6 @@
       "Encrypt emails": [
         "Kryptera e-post"
       ],
-      "Ends": [
-        "Slutar"
-      ],
       "Event duration": [
         "Händelsens varaktighet"
       ],
@@ -5831,6 +5831,9 @@
       ],
       "Event title": [
         "Händelsens rubrik"
+      ],
+      "Every": [
+        "Varje"
       ],
       "Expiration (${ patternExpiration })": [
         "Löper ut (${ patternExpiration })"
@@ -5849,9 +5852,6 @@
       ],
       "Forwards to": [
         "Vidarebefordras till"
-      ],
-      "Frequency": [
-        "Frekvens"
       ],
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
@@ -5937,6 +5937,9 @@
       "Notifications": [
         "Aviseringar"
       ],
+      "On": [
+        "På"
+      ],
       "Operating system": [
         "Operativsystem"
       ],
@@ -5994,12 +5997,6 @@
       ],
       "Region": [
         "Region"
-      ],
-      "Repeat every": [
-        "Upprepa varje"
-      ],
-      "Repeat on": [
-        "Upprepa på"
       ],
       "Reveal password": [
         "Visa lösenord"
@@ -6468,8 +6465,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dagen ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "på ${ shortenedDay }"
       ],
       "on the first Friday": [
         "den första fredagen"
@@ -7726,6 +7723,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don’t show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaffa Drive Plus för endast ${ pricingTitle }"
       ],
@@ -7738,14 +7738,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Sista dagen att spara"
+      ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus för 12 månader"
       ],
       "Maybe later": [
         "Kanske senare"
       ],
+      "Save": [
+        "Spara"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spara ${ prices.savedPercentage } %"
+      ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
+      ],
+      "Save big when you pay annually": [
+        "Spara stort när du betalar årligen"
+      ],
+      "This offer won't be shown again.": [
+        "Detta erbjudande kommer inte att visas igen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "När du byter från en månads till årlig prenumeration."
+      ],
+      "You currently pay": [
+        "Du betalar för närvarande"
       ]
     },
     "Offer feature": {
@@ -7829,6 +7853,9 @@
       "Custom": [
         "Anpassad"
       ],
+      "Custom...": [
+        "Anpassad …"
+      ],
       "Day": [
         "Dag",
         "Dagar"
@@ -7839,11 +7866,14 @@
       "Every day": [
         "Varje dag"
       ],
-      "Every month": [
-        "Varje månad"
+      "Every month ${ description }": [
+        "Varje månad ${ description }"
       ],
-      "Every week": [
-        "Varje vecka"
+      "Every week ${ everyWeekDescription }": [
+        "Varje vecka ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Varje veckodag ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Varje år"
@@ -9469,6 +9499,9 @@
       "Email address copied to clipboard": [
         "E-postadress kopierad till urklipp"
       ],
+      "Event content search enabled": [
+        "Sökfunktion för innehåll i evenemang är aktiverad"
+      ],
       "Event created": [
         "Händelse skapad"
       ],
@@ -9699,6 +9732,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } tangentbordsgenvägar"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadress",
         "${ emailsCount } e-postadresser"
@@ -9877,6 +9913,9 @@
       "Details": [
         "Detaljer"
       ],
+      "Does not repeat": [
+        "Upprepas inte"
+      ],
       "Downgrade account": [
         "Nedgradera konto"
       ],
@@ -9927,6 +9966,21 @@
       ],
       "Event is happening on defined time slot": [
         "Händelse sker på definierad tidslucka"
+      ],
+      "Every day": [
+        "Varje dag"
+      ],
+      "Every month ${ option.text }": [
+        "Varje månad ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Varje vecka på ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Varje veckodag ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Varje år"
       ],
       "Exporting contacts": [
         "Exporterar kontakter"
@@ -10079,9 +10133,6 @@
       "Security center": [
         "Säkerhetscenter"
       ],
-      "Select a day in the month": [
-        "Välj en dag i månaden"
-      ],
       "Select a plan": [
         "Välj ett paket"
       ],
@@ -10096,9 +10147,6 @@
       ],
       "Select event end time": [
         "Välj sluttid för händelse"
-      ],
-      "Select event frequency": [
-        "Välj händelsefrekvens"
       ],
       "Select event frequency interval": [
         "Välj intervall för återkommande händelse"
@@ -10123,9 +10171,6 @@
       ],
       "Select the way to send this notification": [
         "Välj hur du vill skicka denna avisering"
-      ],
-      "Select when this event will stop happening": [
-        "Välj när denna händelse ska sluta hända"
       ],
       "Select when you want this notification to be sent": [
         "Välj när du vill att denna avisering ska skickas"
@@ -10485,9 +10530,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Endast alfanumeriska gemener, punkter, bindestreck och understreck är tillåtna"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observera att genom att välja denna betalningsmetod kan ditt konto inte uppgraderas omedelbart. Vi kommer att uppdatera ditt konto när betalningen har gått igenom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."

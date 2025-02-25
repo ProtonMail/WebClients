@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "Activate": [
-        "Aktivoi"
-      ],
       "activate": [
         "aktivoi"
+      ],
+      "Activate": [
+        "Aktivoi"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -1025,7 +1025,7 @@
         "Katso miten"
       ],
       "See plan features": [
-        "Katso tilauksen ominaisuudet"
+        "Näytä tilauksen ominaisuudet"
       ],
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
@@ -1042,11 +1042,11 @@
       "Select country": [
         "Valitse maa"
       ],
-      "select file": [
-        "valitse tiedosto"
-      ],
       "Select file": [
         "Valitse tiedosto"
+      ],
+      "select file": [
+        "valitse tiedosto"
       ],
       "Select files": [
         "Valitse tiedostot"
@@ -1586,7 +1586,7 @@
         "Virheellinen ICS-tiedosto"
       ],
       "Invalid method": [
-        "Virheellinen tapa"
+        "Virheellinen menetelmä"
       ],
       "Unsupported calendar component": [
         "Kalenterikomponenttia ei tueta"
@@ -3957,25 +3957,25 @@
         "${ eventTitle } peruttiin."
       ],
       "All events in this series were updated.": [
-        "Kaikki tämän sarjan tapahtumat päivitettiin."
+        "Ketjun kaikki tapahtumakerrat päivitettiin."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Kaikki sarjan tapahtumat päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+        "Ketjun kaikkia tapahtumakertoja muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
-        "Tämä tapahtuma peruttiin."
+        "Tämä tapahtumakerta peruttiin."
       ],
       "This event occurrence was updated.": [
-        "Tämä tapahtuma päivitettiin."
+        "Tämä tapahtumakerta päivitettiin."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+        "Tätä tapahtumakertaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
-        "Tapahtumaa muokattiin."
+        "Tapahtuma päivitettiin."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+        "Tapahtumaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Sinut on kutsuttu tapahtumaan ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -3989,7 +3989,7 @@
         "AIKA:\n${ formattedStart } (koko päivä)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "AIKA:\n${ formattedStart } - ${ formattedEnd }"
+        "AIKA:\n${ formattedStart } – ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -4044,7 +4044,7 @@
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Perutaan ${ formattedStart } ajoitettu tapahtuma"
+        "${ formattedStart } ajoitetun tapahtuman peruutus"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
         "${ formattedStart } alkavan tapahtuman peruutus"
@@ -4866,7 +4866,7 @@
         "Tiedoston lähetys ei onnistu"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Odottamaton virhe, emme voi tuoda yhteystietoja"
+        "Odottamaton virhe, yhteystietojen tuonti ei onnistu"
       ],
       "Unknown error": [
         "Tuntematon virhe"
@@ -5203,13 +5203,13 @@
         "Tapahtumaa ei voitu lisätä kalenteriisi. Vastausta ei lähetetty"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Tapahtumaa ei voitu päivittää kalenteriisi. Vastausta ei lähetetty"
+        "Tapahtumaa ei voitu päivittää kalenteriisi. Vastausta ei lähetetty."
       ],
       "Unsupported invitation": [
         "Kutsua ei tueta"
       ],
       "Unsupported response": [
-        "Ei tuettu vastaustyyppi"
+        "Vastausta ei tueta"
       ],
       "We could not cancel the event in your calendar": [
         "Tapahtumaa ei voitu perua kalenteristasi"
@@ -6255,7 +6255,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Lisää tämä tietue verkkotunnuksesi DNS-palveluun."
+        "Lisää tämä tietue verkkotunnuksesi DNS-palvelun hallintapaneelista."
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Löydettiin ${ itemsCount } ehdotus, käytä siirtymiseen näppäimistöä.",
@@ -6317,7 +6317,7 @@
         "Toistuva tapahtuma ei sisällä tapahtumakertoja"
       ],
       "Recurring rule not supported": [
-        "Toistuvaa sääntöä ei tueta"
+        "Toistuvuussääntöä ei tueta"
       ],
       "Start time out of bounds": [
         "Aloitusaika on alueen ulkopuolella"
@@ -6736,16 +6736,16 @@
         "${ numberOfNonPrivateKeys } ladattua tiedostoa eivät ole kelvollisia yksityisiä avaimia. Tarkista ja yritä uudelleen."
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
-        "${ PASS_APP_NAME } antaa sinun tallentaa salasanoja, muistiinpanoja ja muita arkaluonteisia tietoja päästä päähän -salauksella. Saatavilla ${ ios }lle, ${ android }ille ja ${ browser }lle."
+        "${ PASS_APP_NAME }illa tallennat salasanat, muistiinpanot ja muita arkaluonteisia tietoja päästä päähän -salattuna. Saatavilla alustoille: ${ ios }, ${ android } ja ${ browser }."
       ],
       "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
         "${ PASS_APP_NAME } on helppokäyttöisyyttä ja tuottavuutta painottaean suunniteltu uuden sukupolven salasanahallinta. Se on SimpleLoginin ja ${ BRAND_NAME }in yhdessä kehittämä avoimen lähdekoodin projekti."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uusimishinta ja -päivä pysyvät ennallaan."
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uudistushinta ja -päivä pysyvät ennallaan."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -6961,7 +6961,7 @@
         "Käyttäjät, joita tämä koskee, ovat riveillä"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
       ],
       "Align left": [
         "Tasaa vasemmalle"
@@ -7117,7 +7117,7 @@
         "Automaattivastaus on aina käytössä valittuina viikonpäivinä ja tuntivälillä."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Tyhjennä yli 30 päivää sitten roskakoriin ja -postiin siirretyt sähköpostit automaattisesti."
+        "Tyhjennä yli 30 päivää sitten roskakoriin ja -postiin siirretyt viestit automaattisesti."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Saatavilla macOS, Windows ja Linux -alustoille."
@@ -7470,7 +7470,7 @@
         "Sähköpostitilausten asetukset tallennettiin"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt sähköpostit poistetaan automaattisesti."
+        "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt viestit poistetaan automaattisesti."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Tunnisteella ${ nameDeleted } merkittyjä sähköposteja ei poisteta, ja ne löytyvät edelleen vastaavasta kansiosta."
@@ -7629,10 +7629,10 @@
         "Saat pääsyn luomalla ${ BRAND_NAME } -tilin ja hyväksymällä kutsun."
       ],
       "Get it on Google Play": [
-        "Hanki se Google Playstä"
+        "Hanki Google Playstä"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
-        "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut kolmannen osapuolen palvelusta."
+        "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut. ${ learnMoreLinkNoBreach }"
@@ -7798,7 +7798,7 @@
         "Asenna palvelinkohtainen määritystiedosto yhdistääksesi tiettyyn palvelimeen valitsemassasi maassa."
       ],
       "Internet connection lost": [
-        "Internet-yhteys katkesi"
+        "Internet-yhteyttä ei ole"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ei yhteyttä. Tarkista laitteesi yhteydet."
@@ -8080,9 +8080,6 @@
       "No addresses exist": [
         "Osoitteita ei ole"
       ],
-      "No common passwords": [
-        "Ei yleisiä salasanoja"
-      ],
       "No credit card required": [
         "Maksukorttia ei vaadita"
       ],
@@ -8109,9 +8106,6 @@
       ],
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Ei arvattavia sarjoja (1234, aaa)"
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
@@ -8300,7 +8294,7 @@
         "Yritä uudelleen, käytä eri maksutapaa tai ota yhteyttä PayPalin asiakaspalveluun."
       ],
       "Please use another browser or download the file.": [
-        "Käytä toista selainta tai lataa tiedosto."
+        "Käytä eri selainta tai lataa tiedosto."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Vahvista maksu juuri avatussa, uudessa välilehdessä."
@@ -8486,13 +8480,13 @@
         "Lähetä sähköpostiviestejä, joilla kehotat jäseniäsi suojaamaan heidän tilinsä 2FA:lla."
       ],
       "Send messages at just the right now": [
-        "Lähetä viestejä juuri oikealla hetkellä"
+        "Lähetä viestejä oikea-aikaisesti"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Lähetetty turvallisella <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> -sähköpostilla."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA-maksut eivät ole käytettävissä tällä hetkellä. Yritä myöhemmin uudelleen."
+        "SEPA-maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
       ],
       "Server is currently down": [
         "Palvelinta ei tällä hetkellä tavoiteta"
@@ -8604,7 +8598,7 @@
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
+        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -8727,7 +8721,7 @@
         "Tili on jäädytetty mahdollisen käyttöehtorikkeen vuoksi."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Selain ei tue PDF-tiedostojen esikatselua. Lataa tiedosto."
+        "Tämä selain ei tue PDF-tiedostojen esikatselua. Lataa tiedosto."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Tämä saattaa laitteesta riippuen kestää muutamasta sekunnista muutamaan minuuttiin"
@@ -8739,7 +8733,7 @@
         "Ominaisuus viivästyttää sähköpostiesi lähetystä mahdollistaen lähetyksen kumoamiseen valitun ajan sisällä."
       ],
       "This file is too large to preview": [
-        "Tämä tiedosto on liian suuri esikatseltavaksi"
+        "Tiedosto on liian suuri esikatseltavaksi"
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Kutsulinkki on vanhentunut. Pyydä käyttöoikeutta olemalla yhteydessä ylläpitoosi."
@@ -8766,7 +8760,7 @@
         "Tämä on ennen salasanan uudelleenasetusta käyttämäsi salasana."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojen ja maksukorttien tietojen kaltaisia tietoja. Älä jatka oman turvallisuutesi vuoksi."
+        "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojesi ja maksukorttiesi tietojen kaltaisia tietoja."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
@@ -8970,7 +8964,7 @@
         "Tilauksen lopetuslinkki on vanhentunut."
       ],
       "Unsupported file": [
-        "Tiedostoa ei tueta"
+        "Tiedostomuotoa ei tueta"
       ],
       "Unverified": [
         "Vahvistamaton"
@@ -9159,7 +9153,7 @@
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
       ],
       "We'll email you once import is complete.": [
-        "Lähetämme sinulle sähköpostia, kun tuonti on valmis."
+        "Ilmoitamme tuonnin valmistumisesta sähköpostitse."
       ],
       "We'll get back to you shortly.": [
         "Palaamme asiaan pian."
@@ -9301,7 +9295,7 @@
         "Voit tarkastaa tilan ${ importProgressLink }."
       ],
       "You can close the tab or browser in the meantime.": [
-        "Voit sulkea välilehden tai selaimen sillä välin."
+        "Voit sillä välin sulkea välilehden tai selaimen."
       ],
       "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
         "Voit määrittää ${ PASS_APP_NAME } -käytännöt organisaation jäsenille."
@@ -9459,7 +9453,7 @@
         "Sinun ${ BRAND_NAME } -salasanasi"
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa. Tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
+        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa, ja tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } - ja ${ MAIL_APP_NAME } -tilisi on yhdistetty. Poistaaksesi ne molemmat, kirjaudu osoitteessa ${ loginLink } ja poista tilisi sieltä."
@@ -9511,7 +9505,7 @@
         "Seuraava laskutuspäivä on ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Seuraava laskutuspäiväsi on ${ renewalTime }. Ota yhteyttä asiakastukeen, jos tarvitset välitöntä muutosta tilaukseen."
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Jos haluat muuttaa tilausta heti, ota yhteyttä asiakaspalveluun."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
@@ -9535,10 +9529,10 @@
         "Palautuslauseesi on sarja 12 satunnaisesti luotua sanaa tietyssä järjestyksessä."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti ${ cycle } kuukauden välein."
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tukipyyntösi on suljettu. Kiitos, että otit yhteyttä ${ BRAND_NAME } -tukeen."
@@ -9564,11 +9558,6 @@
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Tämän ollessa käytössä, alikansiot perivät yläkansioidensa värin."
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Pyydä ohjeet käteismaksua varten sähköpostitse osoitteesta ${ email }."
       ]
     },
     "Info for domain modal": {
@@ -9869,7 +9858,7 @@
         "Uusi viesti"
       ],
       "Open command panel": [
-        "Avaa komentopaneeli"
+        "Avaa ohjauspaneeli"
       ],
       "Open next message": [
         "Avaa seuraava viesti"
@@ -11795,9 +11784,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. päivä"
-      ],
       "on the first Friday": [
         "ensimmäinen perjantai"
       ],
@@ -16470,47 +16456,6 @@
         "Hintaan ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
@@ -16799,6 +16744,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -19579,9 +19565,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Tarkista, että laajennus on asennettu oikein ja otettu käyttöön"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Huomioithan, että valitsemalla tämän maksutavan tiliäsi ei voida päivittää välittömästi. Päivitämme tilisi, kun maksu on käsitelty."
       ],
       "Please update the extension to its latest version": [
         "Päivitä laajennus uusimpaan versioon"
