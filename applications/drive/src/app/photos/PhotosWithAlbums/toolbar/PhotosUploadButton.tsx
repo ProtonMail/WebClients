@@ -29,10 +29,12 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({ shareId, linkI
             />
             <ToolbarButton
                 onClick={handleClick}
-                icon={<Icon name="file-arrow-in-up" alt={c('Action').t`Upload photos`} />}
                 data-testid="toolbar-photos-upload"
                 title={c('Action').t`Upload photos`}
-            />
+                className="inline-flex flex-nowrap flex-row items-center"
+            >
+                <Icon name="plus" className="mr-2" /> {c('Action').t`Upload photos`}
+            </ToolbarButton>
         </>
     );
 };
