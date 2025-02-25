@@ -9,17 +9,22 @@ export interface PopoverController {
     close: () => void;
 }
 
-export const createPopoverController = (service: IFrameService): PopoverController => ({
-    root: service.root,
-    open: () => POPOVER_SUPPORTED && showPopover(service.root),
-    close: () => {
-        if (POPOVER_SUPPORTED) {
-            const { dropdown, notification, root } = service;
-            /** Prevents closing the root popover when both dropdown and
-             * notification are active. Since both apps share the same
-             * popover container, closing one should not affect the other */
-            if (dropdown?.getState().visible && notification?.getState().visible) return;
-            else hidePopover(root);
-        }
-    },
-});
+export const createPopoverController = (service: IFrameService): PopoverController => {
+    /** Bind the controller to the current root element */
+    const root = service.root;
+
+    return {
+        root,
+        open: () => POPOVER_SUPPORTED && showPopover(root),
+        close: () => {
+            if (POPOVER_SUPPORTED) {
+                const { dropdown, notification } = service;
+                /** Prevents closing the root popover when both dropdown and
+                 * notification are active. Since both apps share the same
+                 * popover container, closing one should not affect the other */
+                if (dropdown?.getState().visible && notification?.getState().visible) return;
+                else hidePopover(root);
+            }
+        },
+    };
+};

@@ -16,11 +16,11 @@ import {
     importSymmetricKey,
 } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
+import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
-import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import noop from '@proton/utils/noop';
 
 export const generateBiometricsKey = async (localID: number, offlineKD: string): Promise<string> => {
@@ -151,9 +151,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
             await api.reset();
 
             try {
-                await loadCryptoWorker().catch(() => {
-                    throw new PassCryptoError('Could not load worker');
-                });
+                await loadCoreCryptoWorker();
 
                 const offlineConfig = authStore.getOfflineConfig();
                 const offlineVerifier = authStore.getOfflineVerifier();

@@ -6,11 +6,11 @@ import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
 import { getOfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
+import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
-import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import noop from '@proton/utils/noop';
 
 /** Password locking involves the offline configuration. As such,
@@ -120,9 +120,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
             await api.reset();
 
             try {
-                await loadCryptoWorker().catch(() => {
-                    throw new PassCryptoError('Could not load worker');
-                });
+                await loadCoreCryptoWorker();
 
                 const offlineConfig = authStore.getOfflineConfig();
                 const offlineVerifier = authStore.getOfflineVerifier();
