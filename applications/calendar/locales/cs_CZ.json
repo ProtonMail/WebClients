@@ -2558,20 +2558,20 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Po…"
+      "Don't end": [
+        "Neukončovat"
       ],
-      "Never": [
-        "Nikdy"
+      "End after": [
+        "Ukončit po"
       ],
-      "On date…": [
-        "V den…"
+      "End on": [
+        "Ukončit v"
       ],
-      "time": [
-        "krát",
-        "krát",
-        "krát",
-        "krát"
+      "event": [
+        "událost",
+        "události",
+        "událostí",
+        "událostí"
       ]
     },
     "Cycle": {
@@ -4080,11 +4080,11 @@
       "Contacts": [
         "Kontakty"
       ],
-      "Custom recurrence": [
-        "Vlastní opakování"
-      ],
       "Name": [
         "Jméno"
+      ],
+      "Repeat event": [
+        "Opakovat událost"
       ],
       "Search": [
         "Hledat"
@@ -5663,8 +5663,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Prosíme kontaktujte nás na ${ email } pro více informací, jak zaplatit v hotovosti."
+      "How to send a cash payment?": [
+        "Jak poslat platbu v hotovosti?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Pokyny naleznete v článku: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5988,9 +5991,6 @@
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
-      "Ends": [
-        "Končí"
-      ],
       "Event duration": [
         "Doba trvání události"
       ],
@@ -5999,6 +5999,9 @@
       ],
       "Event title": [
         "Název události"
+      ],
+      "Every": [
+        "Každý"
       ],
       "Expiration (${ patternExpiration })": [
         "Vypršení (${ patternExpiration })"
@@ -6017,9 +6020,6 @@
       ],
       "Forwards to": [
         "Přeposílá na"
-      ],
-      "Frequency": [
-        "Frekvence"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -6105,6 +6105,9 @@
       "Notifications": [
         "Upozornění"
       ],
+      "On": [
+        "Zap."
+      ],
       "Operating system": [
         "Operační systém"
       ],
@@ -6164,12 +6167,6 @@
       ],
       "Region": [
         "Kraj"
-      ],
-      "Repeat every": [
-        "Opakovat každý"
-      ],
-      "Repeat on": [
-        "Opakovat v"
       ],
       "Reveal password": [
         "Zobrazit heslo"
@@ -6654,8 +6651,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "den ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }"
       ],
       "on the first Friday": [
         "první pátek"
@@ -8001,6 +7998,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
+      "Don’t show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získejte Drive Plus za pouhých ${ pricingTitle }"
       ],
@@ -8013,14 +8013,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Poslední šance získat 80% slevu na první měsíc ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Poslední den, kdy můžete ušetřit"
+      ],
       "Limited-time offer": [
         "Časově omezená nabídka"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 měsíců"
       ],
       "Maybe later": [
         "Možná později"
       ],
+      "Save": [
+        "Ušetřete"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ušetřete ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ušetřete 80% za první měsíc."
+      ],
+      "Save big when you pay annually": [
+        "Při roční platbě můžete výrazně ušetřit"
+      ],
+      "This offer won't be shown again.": [
+        "Tato nabídka se již nezobrazí."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Při přechodu z měsíčního na roční předplatné."
+      ],
+      "You currently pay": [
+        "V současnosti platíte"
       ]
     },
     "Offer feature": {
@@ -8104,6 +8128,9 @@
       "Custom": [
         "Vlastní"
       ],
+      "Custom...": [
+        "Vlastní..."
+      ],
       "Day": [
         "Den",
         "Dny",
@@ -8116,11 +8143,14 @@
       "Every day": [
         "Každý den"
       ],
-      "Every month": [
-        "Každý měsíc"
+      "Every month ${ description }": [
+        "Každý měsíc ${ description }"
       ],
-      "Every week": [
-        "Každý týden"
+      "Every week ${ everyWeekDescription }": [
+        "Každý týden ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Každý den v týdnu ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Každý rok"
@@ -10261,6 +10291,9 @@
       "Details": [
         "Podrobnosti"
       ],
+      "Does not repeat": [
+        "Neopakovat"
+      ],
       "Downgrade account": [
         "Snížit úroveň účtu"
       ],
@@ -10311,6 +10344,21 @@
       ],
       "Event is happening on defined time slot": [
         "Událost se koná v určeném čase"
+      ],
+      "Every day": [
+        "Každý den"
+      ],
+      "Every month ${ option.text }": [
+        "Každý měsíc ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Každý týden v(e) ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Každý den v týdnu ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Každý rok"
       ],
       "Exporting contacts": [
         "Exportování kontaktů"
@@ -10465,9 +10513,6 @@
       "Security center": [
         "Bezpečnostní centrum"
       ],
-      "Select a day in the month": [
-        "Vyberte den v měsíci"
-      ],
       "Select a plan": [
         "Vyberte tarif"
       ],
@@ -10482,9 +10527,6 @@
       ],
       "Select event end time": [
         "Vyberte čas konce události"
-      ],
-      "Select event frequency": [
-        "Zvolte frekvenci události"
       ],
       "Select event frequency interval": [
         "Zvolte interval frekvence události"
@@ -10509,9 +10551,6 @@
       ],
       "Select the way to send this notification": [
         "Vyberte způsob, jak odeslat toto oznámení"
-      ],
-      "Select when this event will stop happening": [
-        "Vyberte, kdy se tato událost přestane vyskytovat"
       ],
       "Select when you want this notification to be sent": [
         "Vyberte, kdy chcete, aby bylo toto oznámení odesláno"
@@ -10899,9 +10938,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Povoleny jsou pouze alfanumerické malé znaky, tečky, pomlčky a podtržítka"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Berte prosím na vědomí, že výběrem této platební metody nemůže být váš účet navýšen okamžitě. Předplatné vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."

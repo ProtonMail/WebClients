@@ -2542,22 +2542,6 @@
         "Pe baza fusului orar"
       ]
     },
-    "Custom frequency option": {
-      "After…": [
-        "După…"
-      ],
-      "Never": [
-        "Niciodată"
-      ],
-      "On date…": [
-        "La data…"
-      ],
-      "time": [
-        "dată",
-        "ori",
-        "de ori"
-      ]
-    },
     "Cycle": {
       "/month": [
         "/lună"
@@ -4038,9 +4022,6 @@
     "Header": {
       "Contacts": [
         "Contacte"
-      ],
-      "Custom recurrence": [
-        "Repetare personalizată"
       ],
       "Name": [
         "Nume"
@@ -5582,11 +5563,6 @@
         "Puteți modifica textul căutat sau să închideți căutarea și să reveniți la afișarea calendarului."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Pentru plata cu numerar contactați-ne la ${ email } pentru instrucțiuni."
-      ]
-    },
     "Info message": {
       "No results found": [
         "Nu s-au găsit rezultate."
@@ -5904,9 +5880,6 @@
       "Encrypt emails": [
         "Criptare mesaje"
       ],
-      "Ends": [
-        "Sfârșit"
-      ],
       "Event duration": [
         "Durată eveniment"
       ],
@@ -5933,9 +5906,6 @@
       ],
       "Forwards to": [
         "Redirecționare către"
-      ],
-      "Frequency": [
-        "Frecvența"
       ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
@@ -6079,12 +6049,6 @@
       ],
       "Region": [
         "Județ"
-      ],
-      "Repeat every": [
-        "Repetare la fiecare"
-      ],
-      "Repeat on": [
-        "Repetare"
       ],
       "Reveal password": [
         "Afișare parolă"
@@ -6561,9 +6525,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "în ziua ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "în prima vineri"
       ],
@@ -7861,6 +7822,9 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta cu ${ pricingTitle } expiră astăzi!"
       ],
+      "Don’t show this offer again": [
+        "Nu mai arăta această ofertă"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Luați Drive Plus cu doar ${ pricingTitle }"
       ],
@@ -7873,14 +7837,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Ultima șansă pentru a obține 80% reducere în prima lună pentru ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Ultima zi de economisire"
+      ],
       "Limited-time offer": [
         "Ofertă limitată"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus pentru 12 luni"
       ],
       "Maybe later": [
         "Poate mai târziu"
       ],
+      "Save": [
+        "Economisiți"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Economisiți ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Economisiți 80% în prima lună."
+      ],
+      "Save big when you pay annually": [
+        "Economisiți mult dacă plătiți anual"
+      ],
+      "This offer won't be shown again.": [
+        "Această ofertă nu va mai fi afișată."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Când comutați de la un abonament lunar la unul anual."
+      ],
+      "You currently pay": [
+        "Acum plătiți"
       ]
     },
     "Offer feature": {
@@ -7974,12 +7962,6 @@
       ],
       "Every day": [
         "Zilnic"
-      ],
-      "Every month": [
-        "Lunar"
-      ],
-      "Every week": [
-        "Săptămânal"
       ],
       "Every year": [
         "Anual"
@@ -10268,9 +10250,6 @@
       "Security center": [
         "Centru de securitate"
       ],
-      "Select a day in the month": [
-        "Selectați o zi din lună"
-      ],
       "Select a plan": [
         "Selectare plan"
       ],
@@ -10285,9 +10264,6 @@
       ],
       "Select event end time": [
         "Selectați ora de sfârșit a evenimentului"
-      ],
-      "Select event frequency": [
-        "Selectare frecvență eveniment"
       ],
       "Select event frequency interval": [
         "Selectați intervalul de repetare a evenimentului"
@@ -10312,9 +10288,6 @@
       ],
       "Select the way to send this notification": [
         "Selectați modul de trimitere a acestei notificări"
-      ],
-      "Select when this event will stop happening": [
-        "Selectați când acest eveniment se va opri"
       ],
       "Select when you want this notification to be sent": [
         "Selectați când doriți să fie trimisă această notificare"
@@ -10690,9 +10663,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Sunt permise doar litere mici, cifre, puncte, cratime și caracter de subliniere."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."

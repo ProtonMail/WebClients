@@ -1571,6 +1571,32 @@
         "stroberi"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "Tampilan hari"
+      ],
+      "Month view": [
+        "Tampilan bulan"
+      ],
+      "New event": [
+        "Acara baru"
+      ],
+      "Next period": [
+        "Periode berikutnya"
+      ],
+      "Previous period": [
+        "Periode sebelumnya"
+      ],
+      "Search events": [
+        "Cari acara"
+      ],
+      "Today": [
+        "Hari ini"
+      ],
+      "Week view": [
+        "Tampilan minggu"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Keluar dari jendela pengaturan impor?"
@@ -2484,20 +2510,6 @@
     "Country select label": {
       "Based on your time zone": [
         "Berdasarkan zona waktu Anda"
-      ]
-    },
-    "Custom frequency option": {
-      "After…": [
-        "Setelah…"
-      ],
-      "Never": [
-        "Tidak pernah"
-      ],
-      "On date…": [
-        "Pada tanggal…"
-      ],
-      "time": [
-        "kali"
       ]
     },
     "Cycle": {
@@ -3931,9 +3943,6 @@
       "Contacts": [
         "Kontak"
       ],
-      "Custom recurrence": [
-        "Rentang pengulangan khusus"
-      ],
       "Name": [
         "Nama"
       ],
@@ -4674,6 +4683,9 @@
       "High Priority": [
         "Prioritas Tinggi"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Jika pintasan keyboard diaktifkan, Anda dapat menggunakan tombol-tombol berikut untuk tindakan cepat atau menuju tampilan berbeda. ${ metaKey } + K selalu diaktifkan."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
@@ -5393,11 +5405,6 @@
         "Anda dapat memperbarui kueri pencarian Anda atau menutup panel pencarian untuk kembali ke tampilan kalender"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Silakan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
-      ]
-    },
     "Info message": {
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -5491,13 +5498,43 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "Buat acara baru"
+      ],
+      "Day view": [
+        "Tampilan hari"
+      ],
+      "Month view": [
+        "Tampilan bulan"
+      ],
+      "Next period": [
+        "Periode berikutnya"
+      ],
+      "Open quick actions menu": [
+        "Buka menu tindakan cepat"
+      ],
       "Open this modal": [
         "Buka jendela ini"
+      ],
+      "Previous period": [
+        "Periode sebelumnya"
+      ],
+      "Search events": [
+        "Cari acara"
+      ],
+      "Today": [
+        "Hari ini"
+      ],
+      "Week view": [
+        "Tampilan minggu"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Tindakan dasar"
+      ],
+      "View options": [
+        "Lihat opsi"
       ]
     },
     "Knowledge base link label": {
@@ -5677,9 +5714,6 @@
       "Encrypt emails": [
         "Enkripsi email"
       ],
-      "Ends": [
-        "Akhir"
-      ],
       "Event duration": [
         "Durasi acara"
       ],
@@ -5706,9 +5740,6 @@
       ],
       "Forwards to": [
         "Teruskan ke"
-      ],
-      "Frequency": [
-        "Frekuensi"
       ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
@@ -5850,12 +5881,6 @@
       ],
       "Region": [
         "Provinsi"
-      ],
-      "Repeat every": [
-        "Ulangi setiap"
-      ],
-      "Repeat on": [
-        "Ulangi"
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
@@ -6316,9 +6341,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "pada hari ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "pada hari Jumat pertama"
       ],
@@ -7522,6 +7544,9 @@
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
+      "Don’t show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
       ],
@@ -7534,14 +7559,35 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Plus Anda."
       ],
+      "Last day to save": [
+        "Hari terakhir untuk menghemat"
+      ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus selama 12 bulan"
       ],
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Save": [
+        "Simpan"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Hemat ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Hemat 80% pada bulan pertama Anda."
+      ],
+      "Save big when you pay annually": [
+        "Hemat besar-besaran pada saat Anda membayar secara tahunan"
+      ],
+      "This offer won't be shown again.": [
+        "Penawaran ini tidak akan lagi ditampilkan."
+      ],
+      "You currently pay": [
+        "Anda saat ini membayar"
       ]
     },
     "Offer feature": {
@@ -7633,12 +7679,6 @@
       ],
       "Every day": [
         "Setiap hari"
-      ],
-      "Every month": [
-        "Setiap bulan"
-      ],
-      "Every week": [
-        "Setiap pekan"
       ],
       "Every year": [
         "Setiap tahun"
@@ -7924,6 +7964,9 @@
       ],
       "Filter groups": [
         "Filter grup"
+      ],
+      "Filter quick actions": [
+        "Filter tindakan cepat"
       ],
       "First name": [
         "Nama depan"
@@ -9440,6 +9483,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Pintasan keyboard ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } alamat email"
       ],
@@ -9815,9 +9861,6 @@
       "Security center": [
         "Pusat keamanan"
       ],
-      "Select a day in the month": [
-        "Pilih hari dalam bulan"
-      ],
       "Select a plan": [
         "Pilih paket"
       ],
@@ -9832,9 +9875,6 @@
       ],
       "Select event end time": [
         "Pilih waktu akhir acara"
-      ],
-      "Select event frequency": [
-        "Pilih frekuensi acara"
       ],
       "Select event frequency interval": [
         "Pilih interval frekuensi acara"
@@ -9859,9 +9899,6 @@
       ],
       "Select the way to send this notification": [
         "Pilih cara untuk mengirim notifikasi ini"
-      ],
-      "Select when this event will stop happening": [
-        "Pilih waktu saat acara ini berakhir"
       ],
       "Select when you want this notification to be sent": [
         "Pilih saat Anda ingin notifikasi ini dikirim"
@@ -10213,9 +10250,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
