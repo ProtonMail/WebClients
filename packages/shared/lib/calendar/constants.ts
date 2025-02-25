@@ -132,6 +132,17 @@ export enum ATTENDEE_STATUS_API {
     ACCEPTED = 3,
 }
 
+export enum ATTENDEE_COMMENT_TYPE {
+    CLEAR = 0,
+    ENCRYPTED = 1,
+}
+
+/** Whether there are more attendees to display */
+export enum ATTENDEE_MORE_ATTENDEES {
+    NO = 0,
+    YES = 1,
+}
+
 export const MAX_ICAL_SEQUENCE = 2 ** 31;
 
 export const MAX_CHARS_API = {
