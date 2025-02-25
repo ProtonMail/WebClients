@@ -1,14 +1,10 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { toPublicKeyReference } from '@proton/crypto';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
-import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
-
-import type { ShareWithKey } from '../_shares';
 
 // Special case for drive to allow users with just an external address
 export const getActiveAddresses = (addresses: Address[]): Address[] => {
@@ -119,18 +115,4 @@ export const getOwnAddressKeysWithEmailAsync = async (
 ) => {
     const { addressKeys } = await getOwnAddressAndKeysWithEmail(email, getAddresses, getAddressKeys);
     return addressKeys ? splitKeys(addressKeys) : undefined;
-};
-
-export const decryptSharePassphraseAsync = async (
-    meta: ShareWithKey,
-    privateKeys: PrivateKeyReference[],
-    getVerificationKey: (email: string) => Promise<PublicKeyReference[]>
-) => {
-    const publicKeys = await getVerificationKey(meta.creator);
-    return decryptPassphrase({
-        armoredPassphrase: meta.passphrase,
-        armoredSignature: meta.passphraseSignature,
-        privateKeys,
-        publicKeys,
-    });
 };
