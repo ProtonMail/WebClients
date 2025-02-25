@@ -201,7 +201,6 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                                 subscriptionModalClassName,
                                 isPlanSelection && 'subscription-modal--fixed-height subscription-modal--large-width',
                                 isCheckout && 'subscription-modal--fixed-height subscription-modal--medium-width',
-                                isUpgradeOrThanks && 'modal-two--twocolors',
                             ])}
                             rootClassName={rootClassName}
                             data-testid="plansModal"
@@ -210,10 +209,10 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                             disableCloseOnEscape={disableCloseOnEscape}
                             fullscreen={fullscreen}
                             as="form"
-                            size={isUpgradeOrThanks ? undefined : 'large'}
+                            size={isUpgradeOrThanks ? 'xsmall' : 'large'}
                             onSubmit={onSubmit}
                         >
-                            <ModalTwoHeader title={title} hasClose={hasClose} />
+                            {!isUpgradeOrThanks && <ModalTwoHeader title={title} hasClose={hasClose} />}
                             {isUpgradeOrThanks ? content : <ModalTwoContent>{content}</ModalTwoContent>}
                             {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
                         </ModalTwo>
