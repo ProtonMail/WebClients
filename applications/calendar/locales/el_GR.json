@@ -2528,18 +2528,18 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Μετά…"
+      "Don't end": [
+        "Χωρίς τέλος"
       ],
-      "Never": [
-        "Ποτέ"
+      "End after": [
+        "Τέλος μετά"
       ],
-      "On date…": [
-        "Την ημερομηνία…"
+      "End on": [
+        "Τέλος στις"
       ],
-      "time": [
-        "φορά",
-        "φορές"
+      "event": [
+        "εκδήλωση",
+        "εκδηλώσεις"
       ]
     },
     "Cycle": {
@@ -3998,11 +3998,11 @@
       "Contacts": [
         "Επαφές"
       ],
-      "Custom recurrence": [
-        "Προσαρμοσμένη περιοδικότητα"
-      ],
       "Name": [
         "Όνομα"
+      ],
+      "Repeat event": [
+        "Επαναλαμβανόμενη εκδήλωση"
       ],
       "Search": [
         "Αναζήτηση"
@@ -4013,8 +4013,8 @@
     },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Βρέθηκε ${ itemsCount } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
-        "Βρέθηκαν ${ itemsCount } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+        "Βρέθηκε ${ itemsCount } υπόδειξη, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ itemsCount } υποδείξεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
@@ -5503,8 +5503,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Παρακαλώ επικοινωνήστε μαζί μας στο ${ email } για οδηγίες πληρωμής με μετρητά."
+      "How to send a cash payment?": [
+        "Πώς να στείλετε μια πληρωμή σε μετρητά;"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Παρακαλούμε βρείτε τις οδηγίες στο άρθρο: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5820,9 +5823,6 @@
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
       ],
-      "Ends": [
-        "Τελειώνει"
-      ],
       "Event duration": [
         "Διάρκεια εκδήλωσης"
       ],
@@ -5831,6 +5831,9 @@
       ],
       "Event title": [
         "Τίτλος εκδήλωσης"
+      ],
+      "Every": [
+        "Κάθε"
       ],
       "Expiration (${ patternExpiration })": [
         "Λήξη (${ patternExpiration })"
@@ -5849,9 +5852,6 @@
       ],
       "Forwards to": [
         "Προώθηση σε"
-      ],
-      "Frequency": [
-        "Συχνότητα"
       ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
@@ -5937,6 +5937,9 @@
       "Notifications": [
         "Ειδοποιήσεις"
       ],
+      "On": [
+        "Ενεργό"
+      ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
       ],
@@ -5994,12 +5997,6 @@
       ],
       "Region": [
         "Περιοχή"
-      ],
-      "Repeat every": [
-        "Επανάληψη κάθε"
-      ],
-      "Repeat on": [
-        "Επανάληψη στις"
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
@@ -6468,8 +6465,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "την ${ dayOfMonth }η ημέρα"
+      "on the ${ shortenedDay }": [
+        "στις ${ shortenedDay }"
       ],
       "on the first Friday": [
         "κάθε πρώτη Παρασκευή"
@@ -7721,6 +7718,9 @@
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
+      "Don’t show this offer again": [
+        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Αποκτήστε το Drive Plus για μόνο ${ pricingTitle }"
       ],
@@ -7733,14 +7733,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Τελευταία ημέρα αποθήκευσης"
+      ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus για 12 μήνες"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
+      "Save": [
+        "Εξοικονομήστε"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Εξοικονομίστε ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Εξοικονομήστε 80% τον πρώτο μήνα σας."
+      ],
+      "Save big when you pay annually": [
+        "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
+      ],
+      "This offer won't be shown again.": [
+        "Αυτή η προσφορά δε θα εμφανιστεί ξανά."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Όταν αλλάζετε από μηνιαία σε ετήσια συνδρομή."
+      ],
+      "You currently pay": [
+        "Αυτή τη στιγμή πληρώνετε"
       ]
     },
     "Offer feature": {
@@ -7824,6 +7848,9 @@
       "Custom": [
         "Προσαρμοσμένο"
       ],
+      "Custom...": [
+        "Προσαρμοσμένο..."
+      ],
       "Day": [
         "Ημέρα",
         "Ημέρες"
@@ -7834,11 +7861,14 @@
       "Every day": [
         "Κάθε μέρα"
       ],
-      "Every month": [
-        "Κάθε μήνα"
+      "Every month ${ description }": [
+        "Κάθε μήνα ${ description }"
       ],
-      "Every week": [
-        "Κάθε εβδομάδα"
+      "Every week ${ everyWeekDescription }": [
+        "Κάθε εβδομάδα ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Κάθε εργάσιμη μέρα ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Κάθε χρόνο"
@@ -9872,6 +9902,9 @@
       "Details": [
         "Λεπτομέρειες"
       ],
+      "Does not repeat": [
+        "Δεν επαναλαμβάνεται"
+      ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
       ],
@@ -9922,6 +9955,21 @@
       ],
       "Event is happening on defined time slot": [
         "Η εκδήλωση λαμβάνει μέρος σε καθορισμένο χρονικό διάστημα"
+      ],
+      "Every day": [
+        "Κάθε μέρα"
+      ],
+      "Every month ${ option.text }": [
+        "Κάθε μήνα ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Κάθε εβδομάδα στις ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Κάθε εργάσιμη μέρα ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Κάθε χρόνο"
       ],
       "Exporting contacts": [
         "Γίνεται εξαγωγή επαφών"
@@ -10074,9 +10122,6 @@
       "Security center": [
         "Κέντρο ασφαλείας"
       ],
-      "Select a day in the month": [
-        "Επιλέξτε μια ημέρα στο μήνα"
-      ],
       "Select a plan": [
         "Επιλέξτε ένα πλάνο"
       ],
@@ -10091,9 +10136,6 @@
       ],
       "Select event end time": [
         "Επιλέξτε την ώρα λήξης της εκδήλωσης"
-      ],
-      "Select event frequency": [
-        "Επιλέξτε τη συχνότητα της εκδήλωσης"
       ],
       "Select event frequency interval": [
         "Επιλέξτε τη συχνότητα της εκδήλωσης"
@@ -10118,9 +10160,6 @@
       ],
       "Select the way to send this notification": [
         "Επιλέξτε πώς θα σταλεί αυτή η ειδοποίηση"
-      ],
-      "Select when this event will stop happening": [
-        "Επιλέξτε πότε θα σταματήσει να λαμβάνει χώρα αυτή η εκδήλωση"
       ],
       "Select when you want this notification to be sent": [
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
@@ -10484,9 +10523,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί πεζοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."

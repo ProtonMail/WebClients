@@ -2169,6 +2169,11 @@
         "Faktur yang tertunggak"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2247,11 +2252,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4942,11 +4942,6 @@
         "Warna terpilih:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Silakan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "Klik untuk rincian"
@@ -7091,6 +7086,9 @@
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
+      "Don’t show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
       ],
@@ -7103,14 +7101,35 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Plus Anda."
       ],
+      "Last day to save": [
+        "Hari terakhir untuk menghemat"
+      ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus selama 12 bulan"
       ],
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Save": [
+        "Simpan"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Hemat ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Hemat 80% pada bulan pertama Anda."
+      ],
+      "Save big when you pay annually": [
+        "Hemat besar-besaran pada saat Anda membayar secara tahunan"
+      ],
+      "This offer won't be shown again.": [
+        "Penawaran ini tidak akan lagi ditampilkan."
+      ],
+      "You currently pay": [
+        "Anda saat ini membayar"
       ]
     },
     "Offer feature": {
@@ -8199,6 +8218,23 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } alamat email khusus"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } alamat email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Folder, label, dan filter khusus"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "Ruang penyimpanan 15 GB"
@@ -8238,23 +8274,6 @@
       ],
       "Your privacy is our mission": [
         "Privasi Anda adalah misi kami"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Ruang penyimpanan ${ planMaxSpace } per pengguna"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } alamat email khusus"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } alamat email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Folder, label, dan filter khusus"
       ]
     },
     "Subscription renewal state": {
@@ -9213,9 +9232,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."

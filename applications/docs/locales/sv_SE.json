@@ -2181,6 +2181,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2259,11 +2264,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5007,8 +5007,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakta oss på ${ email } för instruktioner om hur du betalar oss med kontanter."
+      "How to send a cash payment?": [
+        "Hur skickar man en kontant betalning?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Hitta instruktionen i artikeln: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -7209,6 +7212,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don’t show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaffa Drive Plus för endast ${ pricingTitle }"
       ],
@@ -7221,14 +7227,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Sista dagen att spara"
+      ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus för 12 månader"
       ],
       "Maybe later": [
         "Kanske senare"
       ],
+      "Save": [
+        "Spara"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spara ${ prices.savedPercentage } %"
+      ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
+      ],
+      "Save big when you pay annually": [
+        "Spara stort när du betalar årligen"
+      ],
+      "This offer won't be shown again.": [
+        "Detta erbjudande kommer inte att visas igen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "När du byter från en månads till årlig prenumeration."
+      ],
+      "You currently pay": [
+        "Du betalar för närvarande"
       ]
     },
     "Offer feature": {
@@ -8352,6 +8382,25 @@
         "För ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } lagringsutrymme per användare"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } anpassad e-postdomän",
+        "${ planNumberOfDomains } anpassade e-postdomäner"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadress",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "Folders, labels, and custom filters": [
+        "Mappar, etiketter och anpassade filter"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -8391,25 +8440,6 @@
       ],
       "Your privacy is our mission": [
         "Din integritet är vårt uppdrag"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } lagringsutrymme per användare"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } anpassad e-postdomän",
-        "${ planNumberOfDomains } anpassade e-postdomäner"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-postadress",
-        "${ planNumberOfEmails } e-postadresser"
-      ],
-      "Folders, labels, and custom filters": [
-        "Mappar, etiketter och anpassade filter"
       ]
     },
     "Subscription renewal state": {
@@ -9391,9 +9421,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Endast alfanumeriska gemener, punkter, bindestreck och understreck är tillåtna"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observera att genom att välja denna betalningsmetod kan ditt konto inte uppgraderas omedelbart. Vi kommer att uppdatera ditt konto när betalningen har gått igenom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."

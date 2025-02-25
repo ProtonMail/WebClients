@@ -28,6 +28,9 @@
       "Accept": [
         "Принять"
       ],
+      "Accept and view the item": [
+        "Принять и просмотреть элемент"
+      ],
       "Add": [
         "Добавить"
       ],
@@ -42,6 +45,9 @@
       ],
       "Add domain": [
         "Добавить домен"
+      ],
+      "Add forwarding mailbox": [
+        "Добавить пересылающий почтовый ящик"
       ],
       "Add mailbox": [
         "Добавить почтовый ящик"
@@ -66,6 +72,9 @@
       ],
       "Advanced options": [
         "Расширенные настройки"
+      ],
+      "Apply lifetime coupon code": [
+        "Применить пожизненный код купона"
       ],
       "Authenticate": [
         "Аутентифицировать"
@@ -93,6 +102,9 @@
       ],
       "Cancel": [
         "Отменить"
+      ],
+      "Cancel email change": [
+        "Отменить изменение электронной почты"
       ],
       "Change": [
         "Изменить"
@@ -138,6 +150,9 @@
       ],
       "Copy and close": [
         "Скопировать и закрыть"
+      ],
+      "Copy forwarding address": [
+        "Копировать адрес пересылки"
       ],
       "Copy link": [
         "Копировать ссылку"
@@ -298,8 +313,14 @@
       "Install extension": [
         "Установить расширение"
       ],
+      "Invite more...": [
+        "Пригласить ещё..."
+      ],
       "Invite others": [
         "Пригласить других"
+      ],
+      "Join our Reddit": [
+        "Присоединяйтесь к нам на Reddit"
       ],
       "Join shared vault": [
         "Присоединиться к общему хранилищу"
@@ -616,6 +637,12 @@
       "View older history": [
         "Просмотреть более раннюю историю"
       ],
+      "With other ${ BRAND_NAME } users": [
+        "С другими пользователями ${ BRAND_NAME }"
+      ],
+      "Write us on X/Twitter": [
+        "Напишите нам в X/Twitter"
+      ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
       ]
@@ -681,6 +708,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Если вы используете поддомен, например subdomain.domain.com, вам нужно использовать ${ domainKeyExampleSubdomain } в качестве домена. То есть, если вашим доменом является mail.domain.com, в качестве домена следует ввести ${ domainKeyExampleMail }."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Если вы используете Cloudflare, убедитесь, что не выбрали опцию Proxy."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Обеспечьте защищенность и конфиденциальность своей информации с помощью этих руководств и советов."
       ],
@@ -692,6 +722,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Некоторые регистраторы DNS могут потребовать полный путь к записи, в этом случае используйте ${ domain } в качестве значения домена."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Некоторые регистраторы доменов (Namecheap, Cloudflare и др.) также могут использовать @ для корневого домена."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } - это метод проверки подлинности электронной почты, предназначенный для обнаружения подделки адреса отправителя во время доставки письма. Настройка SPF настоятельно рекомендуется для снижения вероятности попадания ваших писем в папку «Спам» получателя."
@@ -710,6 +743,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Эта служба предлагает двухфакторную аутентификацию. Включите ее, чтобы обеспечить дополнительную безопасность аккаунта."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Чтобы проверить право собственности на домен, добавьте следующую запись TXT. Некоторые регистраторы доменов (Namecheap, Cloudflare и т. д.) могут использовать @ для корневого домена."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Разблокируйте расширенные функции безопасности и подробные журналы для защиты вашего присутствия в Интернете."
@@ -768,6 +804,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Не могу подтвердить приглашение в данный момент."
+      ],
+      "Could not leave item.": [
+        "Не удалось покинуть элемент"
       ],
       "Could not leave vault.": [
         "Не удалось покинуть хранилище."
@@ -840,6 +879,12 @@
       ],
       "Failed to block the contact": [
         "Не удалось заблокировать контакт"
+      ],
+      "Failed to cancel mailbox change": [
+        "Не удалось отменить изменение почтового ящика"
+      ],
+      "Failed to change mailbox": [
+        "Не удалось изменить почтовый ящик"
       ],
       "Failed to create domain": [
         "Не удалось создать домен"
@@ -1093,6 +1138,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Мы столкнулись с проблемой при запуске ${ PASS_SHORT_APP_NAME }. Если проблема сохранится, обратитесь за помощью в нашу службу поддержки клиентов."
       ],
+      "Wrong backup password": [
+        "Неверный пароль резервной копии"
+      ],
       "Wrong extra password": [
         "Неверный дополнительный пароль"
       ],
@@ -1230,6 +1278,9 @@
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } просмотров"
       ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } хочет поделиться с вами элементом."
+      ],
       "${ memberCount } member": [
         "${ memberCount } член",
         "${ memberCount } члена",
@@ -1257,6 +1308,12 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } потребует ваш пароль ${ BRAND_NAME } чтобы получить доступ к офлайновым данным"
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } приглашение успешно отправлено",
+        "${ payload.count } приглашения успешно отправлены",
+        "${ payload.count } приглашения успешно отправлены",
+        "${ payload.count } приглашения успешно отправлены"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } успешно отключен"
       ],
@@ -1283,6 +1340,12 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступа к ${ PASS_APP_NAME } всегда потребуется ваш пароль ${ BRAND_NAME }."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "Для доступа к ${ PASS_APP_NAME } всегда потребуется пароль резервной копии ."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "Для доступа к ${ PASS_APP_NAME } всегда потребуется дополнительный пароль ."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступа к ${ PASS_APP_NAME } потребуется ваш отпечаток пальца или PIN-код устройства."
@@ -1377,8 +1440,23 @@
       "Built in 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
       ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Добавляя свой домен, вы можете создавать псевдонимы, такие как hi@my-domain.com."
+      ],
       "Can be viewed": [
         "Можно просмотреть"
+      ],
+      "Can create, edit, and delete items in this vault.": [
+        "Можно создавать, редактировать и удалять элементы в этом хранилище."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Можно создавать, редактировать и удалять этот элемент."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Можно предоставить и отменить доступ к этому элементу, а также удалить его."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Можно предоставить и отменить доступ к этому элементу."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Может представлять и отзывать доступ к этому хранилищу, и удалять его."
@@ -1388,6 +1466,9 @@
       ],
       "Can view items in this vault.": [
         "Может просматривать элементы в этом хранилище."
+      ],
+      "Can view this item.": [
+        "Можно просматривать этот элемент."
       ],
       "Change your password": [
         "Измените пароль"
@@ -1403,6 +1484,9 @@
       ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
+      ],
+      "Coupon successfully applied!": [
+        "Купон успешно применен!"
       ],
       "Create contact illustration": [
         "Создайте иллюстрацию контакта"
@@ -1518,11 +1602,17 @@
       "Enter your PIN code": [
         "Введите свой PIN-код"
       ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Каждый раз, когда ваш псевдоним получает письмо от кого-то, новый контакт создается автоматически."
+      ],
       "Expires in": [
         "Истекает через"
       ],
       "Expires in ${ remainingTime }": [
         "Истекает через ${ remainingTime }"
+      ],
+      "Exporting your data...": [
+        "Экспорт ваших данных..."
       ],
       "Extra password successfully created": [
         "Дополнительный пароль успешно создан"
@@ -1536,8 +1626,17 @@
       "finance": [
         "финансы"
       ],
+      "Follow those steps to import your data with a generic CSV:": [
+        "Выполните эти шаги, чтобы импортировать данные с помощью стандартного CSV:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "По соображениям безопасности это действие требует проверки личных данных"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "По причинам безопасности, ваш доступ должен быть подтверждён"
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Адрес пересылки скопирован в буфер обмена. Отправьте письмо на этот адрес, и ${ Email } получит его."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недели.",
@@ -1559,6 +1658,9 @@
       ],
       "How does monitoring work?": [
         "Как работает мониторинг?"
+      ],
+      "Identity confirmed": [
+        "Личные данные подтверждены"
       ],
       "Import in progress:": [
         "Выполняется импорт:"
@@ -1632,6 +1734,12 @@
       "Item restored": [
         "Элемент восстановлен"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Совместное использование элемента ${ itemAccessCount } пользователем",
+        "Совместное использование элемента ${ itemAccessCount } пользователями",
+        "Совместное использование элемента ${ itemAccessCount } пользователями",
+        "Совместное использование элемента ${ itemAccessCount } пользователями"
+      ],
       "Item successfully excluded from monitoring": [
         "Элемент успешно удален из мониторинга"
       ],
@@ -1652,6 +1760,9 @@
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Узнайте, как ${ staySaferOnlineLink }"
+      ],
+      "Leaving item...": [
+        "Покидание элемента..."
       ],
       "Leaving vault...": [
         "Покидаю хранилище..."
@@ -1697,6 +1808,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -1779,11 +1896,38 @@
       "Please check your spam folder or try resending the code.": [
         "Проверьте папку Спам или попробуйте повторно отправить код."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Подтвердите ваш пароль ${ BRAND_NAME } чтобы включить офлайновый режим"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Подтвердите ваш пароль ${ BRAND_NAME } чтобы включить офлайновый режим"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password": [
+        "Подтвердите пароль резервной копии"
+      ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Подтвердите пароль резервной копии для автоматической блокировки с помощью биометрических данных."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Подтвердите ваш пароль резервной копии для автоматической блокировки вашим паролем."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Подтвердите пароль резервной копии, чтобы отключить автономный режим"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Подтвердите пароль резервной копии, чтобы включить автономный режим"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Пожалуйста, подтвердите пароль резервной копии для экспорта данных ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Подтвердите пароль резервной копии, чтобы отменить текущую блокировку."
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Подтвердите пароль резервной копии, чтобы обновить время автоматической блокировки."
       ],
       "Please confirm your extra password": [
         "Подтвердите дополнительный пароль"
@@ -1793,6 +1937,12 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Подтвердите свой дополнительный пароль, чтобы автоматическая блокировка осуществлялась с помощью вашего дополнительного пароля."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Подтвердите дополнительный пароль, чтобы отключить автономный режим"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Подтвердите дополнительный пароль, чтобы включить автономный режим"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите свой дополнительный пароль, чтобы экспортировать данные ${ PASS_APP_NAME }."
@@ -1914,6 +2064,12 @@
       "Settings successfully updated": [
         "Настройки успешно обновлены"
       ],
+      "Share aliases with others by adding their inbox as a forwarding mailbox.": [
+        "Поделитесь псевдонимами с другими людьми, добавив их почтовый ящик в качестве пересылающего."
+      ],
+      "Shared item invitation": [
+        "Приглашение для общего предмета"
+      ],
       "Sign in to your account": [
         "Войдите в свой аккаунт"
       ],
@@ -1929,6 +2085,9 @@
       "Successfully exported all your items": [
         "Все ваши элементы успешно экспортированы"
       ],
+      "Successfully left the item": [
+        "Элемент успешно покинут"
+      ],
       "Successfully left the vault": [
         "Хранилище успешно покинуто"
       ],
@@ -1943,6 +2102,9 @@
       ],
       "Syncing your vaults…": [
         "Синхронизация ваших хранилищ..."
+      ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Коснитесь значка ${ gearIcon }, чтобы настроить псевдоним так, как вы хотите."
       ],
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
@@ -1979,6 +2141,12 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Экспорт не будет зашифрован, и кто угодно, кто получит доступ к вашему экспортированному файлу, сможет увидеть ваши пароли. Для безопасности, пожалуйста, удалите его после использования."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "В настоящее время этот элемент ни с кем совместно не используется. Предложите людям поделиться им с другими."
+      ],
+      "This mailbox will use your previous email.": [
+        "Этот почтовый ящик будет использовать ваш предыдущий адрес электронной почты."
       ],
       "This operation is irreversible.": [
         "Эта операция необратима."
@@ -2067,6 +2235,12 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Хранилище \"${ share.content.name }\" было удалено"
       ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Совместное использование хранилища ${ vaultMembersCount } пользователем",
+        "Совместное использование хранилища ${ vaultMembersCount } пользователями",
+        "Совместное использование хранилища ${ vaultMembersCount } пользователями",
+        "Совместное использование хранилища ${ vaultMembersCount } пользователями"
+      ],
       "Verification code sent.": [
         "Код подтверждения отправлен"
       ],
@@ -2123,6 +2297,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Вы достигли максимально разрешенной длины в ${ maxLength } символов."
+      ],
+      "You may close this tab.": [
+        "Вы можете закрыть эту вкладку."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "После проверки домена вы сможете настроить параметры домена (универсальные почтовые псевдонимы, отображаемое имя по умолчанию для псевдонимов и т. д.)."
@@ -2315,6 +2492,9 @@
       "All": [
         "Все"
       ],
+      "All items": [
+        "Все элементы"
+      ],
       "Alphabetical": [
         "По алфавиту"
       ],
@@ -2492,6 +2672,9 @@
       "Facebook account": [
         "Аккаунт Facebook"
       ],
+      "Feedback": [
+        "Обратная связь"
+      ],
       "Field name": [
         "Название поля"
       ],
@@ -2503,6 +2686,9 @@
       ],
       "Floor, apartment, building": [
         "Этаж, квартира, здание"
+      ],
+      "For a one-off sharing": [
+        "Для разового обмена"
       ],
       "Forwards to": [
         "Переслать"
@@ -2666,6 +2852,9 @@
       "Need help?": [
         "Нужна помощь?"
       ],
+      "New": [
+        "Новое"
+      ],
       "New email": [
         "Новое письмо"
       ],
@@ -2795,6 +2984,9 @@
       "Security code": [
         "Код безопасности"
       ],
+      "See member and permission overview": [
+        "Просмотреть обзор участника и прав доступа"
+      ],
       "Select a domain": [
         "Выбрать домен"
       ],
@@ -2816,8 +3008,17 @@
       "Share": [
         "Поделиться"
       ],
+      "Shared": [
+        "В общем доступе"
+      ],
+      "Shared by me": [
+        "Я поделился"
+      ],
       "Shared link": [
         "Общая ссылка"
+      ],
+      "Shared with me": [
+        "В общем доступе со мной"
       ],
       "Show website favicons": [
         "Показать значки сайтов"
@@ -2870,6 +3071,9 @@
       "Theme": [
         "Тема"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Этот элемент доступен до ${ date } или пока не будет достигнут лимит просмотров."
+      ],
       "Title": [
         "Заголовок"
       ],
@@ -2920,6 +3124,9 @@
       ],
       "Used in": [
         "Используется в"
+      ],
+      "Useful for permanent sharing": [
+        "Полезно для постоянного обмена"
       ],
       "Username": [
         "Имя пользователя"
@@ -3006,6 +3213,9 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Требуется двухфакторная идентификация для организации"
+      ],
+      "SSO integration": [
+        "Интеграция с SSO"
       ]
     },
     "Notification": {
@@ -3061,6 +3271,9 @@
       "Alias Display Name": [
         "Введите отображаемое имя"
       ],
+      "Coupon": [
+        "Купон"
+      ],
       "Email address": [
         "Адрес электронной почты"
       ],
@@ -3112,8 +3325,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Искать ${ pluralItemType } в ${ vaultName }"
       ],
+      "Search ${ pluralItemType } in all items": [
+        "Искать ${ pluralItemType } во всех элементах"
+      ],
       "Search in ${ vaultName }": [
         "Поиск в ${ vaultName }"
+      ],
+      "Search in all items": [
+        "Искать среди всех элементов"
       ],
       "Search in Trash": [
         "Искать в корзине"
@@ -3249,6 +3468,15 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Домен успешно проверен. Ваш домен может начать получать электронные письма и создавать псевдонимы"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователя.",
+        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователей",
+        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователей",
+        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователей"
+      ],
+      "Mailbox change successfully cancelled": [
+        "Изменение почтового ящика успешно отменено"
+      ],
       "Mailbox successfully deleted": [
         "Почтовый ящик успешно удален"
       ],
@@ -3263,6 +3491,12 @@
       ],
       "Random prefix generation successfully enabled": [
         "Генерация случайных префиксов успешно включена"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "У хранилищ не может быть больше ${ targetMaxMembers } пользователя",
+        "У хранилищ не может быть больше ${ targetMaxMembers } пользователей",
+        "У хранилищ не может быть больше ${ targetMaxMembers } пользователей",
+        "У хранилищ не может быть больше ${ targetMaxMembers } пользователей"
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Письмо с подтверждением отправлено. Проверьте свой почтовый ящик, чтобы подтвердить его подлинность."
@@ -3325,8 +3559,17 @@
       "Breaches detected for": [
         "Обнаружены утечки для"
       ],
+      "Cancel changing your email?": [
+        "Отменить изменение электронной почты?"
+      ],
+      "Change mailbox email": [
+        "Изменить электронную почту почтового ящика"
+      ],
       "Confirm extra password": [
         "Подтвердить дополнительный пароль"
+      ],
+      "Confirm identity": [
+        "Подтвердить личные данные"
       ],
       "Confirm PIN code": [
         "Подтвердите ПИН-код"
@@ -3382,6 +3625,9 @@
       "Details": [
         "Информация"
       ],
+      "Did you know?": [
+        "Вы знали?"
+      ],
       "Discard changes?": [
         "Сбросить изменения?"
       ],
@@ -3399,6 +3645,12 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Наслаждаетесь ${ PASS_APP_NAME }?"
+      ],
+      "Enter coupon code": [
+        "Введите код с купона"
+      ],
+      "Enter your backup password": [
+        "Введите пароль резервной копии"
       ],
       "Enter your extra password": [
         "Введите дополнительный пароль"
@@ -3439,11 +3691,17 @@
       "Install extension": [
         "Установить расширение"
       ],
+      "Item": [
+        "Элемент"
+      ],
       "Last autofill": [
         "Последнее автозаполнение"
       ],
       "Last modified": [
         "Дата последнего изменения"
+      ],
+      "Leave this item?": [
+        "Покинуть этот элемент?"
       ],
       "Leave vault?": [
         "Покинуть хранилище?"
@@ -3492,6 +3750,9 @@
       ],
       "No reused passwords": [
         "Нет повторно использованных паролей"
+      ],
+      "No shared items": [
+        "Нет общих элементов"
       ],
       "No shared secure links": [
         "Нет общих защищенных ссылок"
@@ -3579,6 +3840,12 @@
       ],
       "Share with": [
         "Поделиться с"
+      ],
+      "Shared item invitation": [
+        "Приглашение на общий элемент"
+      ],
+      "Shared via": [
+        "Совместное использование через"
       ],
       "SPF (Optional)": [
         "SPF (необязательно)"
@@ -3773,8 +4040,14 @@
       "${ BRAND_NAME } password is required": [
         "Необходим пароль ${ BRAND_NAME }"
       ],
+      "2 consecutive dots are not allowed": [
+        "2 точки подряд не допускаются"
+      ],
       "A description of the problem is required": [
         "Требуется описание проблемы"
+      ],
+      "Addresses already invited.": [
+        "Адреса уже приглашены."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Все ваши объекты, попавшие в корзину, будут удалены безвозвратно. Отменить это действие невозможно."
@@ -3784,6 +4057,12 @@
       ],
       "At least one email address is required": [
         "Требуется хотя бы один адрес электронной почты"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Не может содержать точку в начале"
+      ],
+      "Cannot contain a dot at the end": [
+        "Не может содержать точку в конце"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Не удалось получить почтовые ящики для этого псевдонима в данный момент"
@@ -3796,6 +4075,12 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Не удалось отправить приглашения на следующие адреса:"
+      ],
+      "Coupon cannot be empty": [
+        "Купон не может быть пустым"
+      ],
+      "Coupon could not be applied.": [
+        "Купон не могут быть применен."
       ],
       "Delete alias": [
         "Удалить псевдоним"
@@ -3829,6 +4114,9 @@
       ],
       "Failed to load breaches.": [
         "Не удалось загрузить утечки."
+      ],
+      "Identity could not be confirmed": [
+        "Личные данные не могут быть подтверждены"
       ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
@@ -3881,8 +4169,17 @@
       "No results": [
         "Нет результатов"
       ],
+      "No secure links matching": [
+        "Нет совпадающих защищенных ссылок"
+      ],
+      "No shared items matching": [
+        "Нет совпадающих элементов в общем доступе"
+      ],
       "Offline": [
         "Офлайн"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Допускаются только алфавитно-цифровые строчные символы, точки, дефисы и символы подчеркивания"
       ],
       "Passphrase is required": [
         "Требуется кодовая фраза"
@@ -3914,6 +4211,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Некоторые элементы в настоящее время совместно используются. При их удалении доступ к ним будет закрыт для всех остальных пользователей."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Некоторые элементы в настоящее время совместно используются. Если переместить их в другое хранилище, доступ к ним будет закрыт для всех остальных пользователей."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Что-то пошло не так при запуске ${ PASS_APP_NAME }. Пожалуйста, попробуйте обновить или перезагрузить расширение"
       ],
@@ -3925,6 +4228,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Этот адрес электронной почты больше не будет отслеживаться на предмет утечек."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "В настоящее время этот элемент совместно используется. При его удалении доступ к нему будет закрыт для всех остальных пользователей."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "В настоящее время этот элемент совместно используется. Если переместить его в другое хранилище, доступ к нему будет закрыт для всех остальных пользователей."
       ],
       "Title is required": [
         "Название обязательно"
@@ -3947,8 +4256,14 @@
       "Verification code is required": [
         "Требуется код подтверждения"
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Вы достигли предела количества пользователей, которые могут получить доступ к этому элементу."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Вы достигли предела количества пользователей, которые могут получить доступ к этому хранилищу."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Вы достигли предела количества пользователей для этого элемента. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Вы достигли предела количества пользователей в этом хранилище. ${ upgradeLink }"
@@ -3962,8 +4277,14 @@
       "You must select at least one mailbox": [
         "Вы должны выбрать хотя бы один почтовый ящик"
       ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Вы потеряете доступ к этому элементу и информации о нем. Вы хотите продолжить?"
+      ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "У вас больше не будет доступа к этому хранилищу. Чтобы присоединиться снова, вам понадобится новое приглашение."
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Ваша организация не разрешает совместное использование отдельных элементов"
       ],
       "Your session could not be authorized.": [
         "Ваш сеанс не может быть авторизован."

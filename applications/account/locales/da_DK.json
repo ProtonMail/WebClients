@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -562,6 +562,9 @@
       "Generate token": [
         "Generér token"
       ],
+      "Get ${ planOrAppName }": [
+        "Få ${ planOrAppName }"
+      ],
       "Get a new encrypted email address": [
         "Få en ny krypteret e-mailadresse"
       ],
@@ -985,11 +988,11 @@
       "Select country": [
         "Vælg land"
       ],
-      "select file": [
-        "vælg fil"
-      ],
       "Select file": [
         "Vælg fil"
+      ],
+      "select file": [
+        "vælg fil"
       ],
       "Select files": [
         "Vælg filer"
@@ -1912,6 +1915,9 @@
       "Add link to your email footer": [
         "Tilføj link til bunden af din e-mail"
       ],
+      "Close": [
+        "Luk"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -1924,14 +1930,29 @@
       "Copy": [
         "Kopiér"
       ],
+      "Create label": [
+        "Opret etiket"
+      ],
+      "Discover and set up features": [
+        "Udforsk og konfigurer funktioner"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
       "Invite": [
         "Inviter"
       ],
       "Next": [
         "Næste"
       ],
+      "Remind me later": [
+        "Påmind mig senere"
+      ],
       "Send": [
         "Send"
+      ],
+      "Set up other features": [
+        "Konfigurer andre funktioner"
       ],
       "Tweet": [
         "Tweet"
@@ -6093,6 +6114,12 @@
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalendertidszone understøttes ikke"
+      ],
+      "Edited event not supported": [
+        "Redigeret begivenhed understøttes ikke"
+      ],
       "End time out of bounds": [
         "Sluttid uden for grænserne"
       ],
@@ -6107,6 +6134,18 @@
       ],
       "Malformed start time": [
         "Misdannet starttid"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Kun den gregorianske kalenderskala er tilladt"
+      ],
+      "Recurring event has no occurrences": [
+        "Tilbagevendende begivenhed har ingen forekomster"
+      ],
+      "Recurring rule not supported": [
+        "Tilbagevendende regel understøttes ikke"
+      ],
+      "Start time out of bounds": [
+        "Starttid uden for grænserne"
       ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
@@ -6654,6 +6693,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
       ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Få adgang til 6.500+ højhastighedsservere på op til 10 enheder for at holde dine browserdata sikre. Tilgængelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
+      ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Tilgå dine adgangskoder og beskyt din online identitet problemfrit på tværs af dine enheder. Download og installer de relevante ${ PASS_APP_NAME } apps og udvidelser."
       ],
@@ -6672,11 +6714,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivér mindst én datagendannelsesmetode for at sikre dig, at du fortsat kan få adgang til indholdet af din ${ BRAND_NAME }-konto, hvis du mister din adgangskode."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me e-mailadresse til din konto. Dette simple, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7400,6 +7442,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Hvis det ikke er det rigtige for dig, refunderer vi beløbet."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Hvis tastaturgenveje er aktiveret, kan du bruge følgende taster til hurtige handlinger eller til at springe til forskellige visninger. ${ metaKey } + K er altid aktiveret."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Hvis systemets tidszone ikke matcher den aktuelle tidszonepræference, vil du blive bedt om at opdatere den (højst én gang om dagen)."
@@ -8184,6 +8229,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalinger er ikke tilgængelige i øjeblikket. Prøv venligst igen senere."
+      ],
       "Server is currently down": [
         "Serveren er i øjeblikket nede"
       ],
@@ -8264,6 +8312,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Begynd at bruge den kortere, mere catchy version af din e-mailadresse."
       ],
       "Stay tuned for future promotions.": [
         "Hold øje med fremtidige kampagner."
@@ -9216,11 +9267,6 @@
         "Når aktiveret, arver undermapper farven på den overordnede mappe."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt os venligst på ${ email } for instruktioner om, hvordan du betaler os med kontanter."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Tilføj en ny adresse til de eksisterende brugere i din organisation."
@@ -9427,6 +9473,12 @@
       "Close draft": [
         "Luk kladde"
       ],
+      "Create new event": [
+        "Opret ny begivenhed"
+      ],
+      "Day view": [
+        "Dagsvisning"
+      ],
       "Delete permanently": [
         "Slet permanent"
       ],
@@ -9493,6 +9545,9 @@
       "Minimize / maximize composer": [
         "Minimer / maksimer skrivevinduet"
       ],
+      "Month view": [
+        "Månedsvisning"
+      ],
       "Move down": [
         "Flyt ned"
       ],
@@ -9523,6 +9578,9 @@
       "New message": [
         "Ny besked"
       ],
+      "Next period": [
+        "Næste periode"
+      ],
       "Open command panel": [
         "Åbn kommandopanel"
       ],
@@ -9532,8 +9590,14 @@
       "Open previous message": [
         "Åbn forrige besked"
       ],
+      "Open quick actions menu": [
+        "Åbn menu for hurtige handlinger"
+      ],
       "Open this modal": [
         "Åbn dette hjælpevindue"
+      ],
+      "Previous period": [
+        "Forrige periode"
       ],
       "Reply": [
         "Svar"
@@ -9546,6 +9610,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Search events": [
+        "Søg begivenheder"
       ],
       "Select / unselect": [
         "Vælg / fravælg"
@@ -9567,6 +9634,12 @@
       ],
       "Star": [
         "Stjernemarkér"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Week view": [
+        "Ugevisning"
       ]
     },
     "Keyboard shortcut section name": {
@@ -9590,6 +9663,9 @@
       ],
       "Message shortcuts": [
         "Beskedgenveje"
+      ],
+      "View options": [
+        "Vis indstillinger"
       ]
     },
     "Keys actions": {
@@ -11363,9 +11439,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dag ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "på den første fredag"
       ],
@@ -15675,47 +15748,6 @@
         "Til ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -15989,6 +16021,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -18569,9 +18642,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Tjek venligst, om udvidelsen er korrekt installeret og aktiveret"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
       "Please update the extension to its latest version": [
         "Opdater venligst udvidelsen til den nyeste version"

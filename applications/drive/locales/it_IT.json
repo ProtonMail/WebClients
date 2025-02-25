@@ -78,11 +78,17 @@
       "Add phone number": [
         "Aggiungi numero di telefono"
       ],
+      "Add photos": [
+        "Aggiungi foto"
+      ],
       "Add to album": [
         "Aggiungi all'album"
       ],
       "Add to group": [
         "Aggiungi ad un gruppo"
+      ],
+      "Album name": [
+        "Nome album"
       ],
       "Apply": [
         "Applica"
@@ -273,6 +279,9 @@
         "Elimina ${ selectedCount } gruppo di contatti",
         "Elimina ${ selectedCount } gruppi di contatti"
       ],
+      "Delete album": [
+        "Elimina album"
+      ],
       "Delete contact": [
         "Elimina contatto"
       ],
@@ -324,6 +333,9 @@
       "Download logs": [
         "Scarica i log"
       ],
+      "Download photos": [
+        "Scarica foto"
+      ],
       "Download without scanning": [
         "Scarica senza scansione"
       ],
@@ -335,6 +347,9 @@
       ],
       "Edit": [
         "Modifica"
+      ],
+      "Edit album": [
+        "Modifica album"
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -531,6 +546,9 @@
       "Minimize transfers": [
         "Minimizza i trasferimenti"
       ],
+      "More": [
+        "Altro"
+      ],
       "More actions": [
         "Altre azioni"
       ],
@@ -548,6 +566,9 @@
       ],
       "Move to trash": [
         "Sposta nel cestino"
+      ],
+      "Name your album": [
+        "Dai un nome al tuo album"
       ],
       "New": [
         "Nuovo"
@@ -762,8 +783,14 @@
       "Select country": [
         "Seleziona il paese"
       ],
+      "Set album cover": [
+        "Imposta come copertina dell'album"
+      ],
       "Set as album cover": [
         "Imposta come copertina dell'album"
+      ],
+      "Set as cover": [
+        "Imposta come copertina"
       ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
@@ -963,9 +990,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Crea un album"
-      ],
       "Upload": [
         "Carica"
       ]
@@ -2436,11 +2460,6 @@
         "Fattura scaduta"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "usa l'assistente di importazione Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con un monitoraggio dedicato 24 ore su 24, 7 giorni su 7, delle attività sospette, incluso l'inoltro agli specialisti della sicurezza."
@@ -2522,6 +2541,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3124,6 +3148,9 @@
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
       ],
+      "Unable to set photo as cover": [
+        "Non è stato possibile impostare la foto come copertina"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Errore imprevisto. Non possiamo importare i contatti."
       ],
@@ -3665,6 +3692,9 @@
       "Contacts": [
         "Contatti"
       ],
+      "Create new album": [
+        "Crea nuovo album"
+      ],
       "Security Center": [
         "Centro sicurezza"
       ]
@@ -4024,6 +4054,10 @@
         "${ addressCount } indirizzo email",
         "${ addressCount } indirizzi email"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } elemento",
+        "${ album.photoCount } elementi"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
@@ -4212,6 +4246,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
       ],
+      "Album is empty": [
+        "L'album è vuoto"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Tutti (${ totalFoldersCount } cartella)",
         "Tutte (${ totalFoldersCount } cartelle)"
@@ -4289,6 +4326,9 @@
       ],
       "Attention required": [
         "Attenzione"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Recupero automatico ${ formattedDate }"
       ],
       "Available": [
         "Disponibile"
@@ -4878,6 +4918,9 @@
       "of": [
         "di"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Una volta completato questo processo, troverai una copia dei tuoi dati ripristinati in una nuova cartella denominata \"Ripristino automatico (data odierna)\". Questa copia dei tuoi dati non verrà conteggiata nella tua quota di archiviazione."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una delle tue unità crittografate è bloccata. Ciò è probabilmente dovuto a una recente reimpostazione della password."
       ],
@@ -4901,6 +4944,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "I nostri avvisi danno priorità alla sicurezza. Se non riconosci nessuna delle informazioni violate, puoi tranquillamente ignorare questa segnalazione."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "I nostri sistemi hanno rilevato che il tuo precedente ripristino non è stato completato con successo e alcuni file potrebbero non essere stati ripristinati completamente. Abbiamo riavviato automaticamente il processo di ripristino per garantire che tutto sia stato ripristinato completamente."
       ],
       "Owner": [
         "Proprietario"
@@ -5138,6 +5184,9 @@
       "Share via link settings": [
         "Impostazioni per la condivisione via link"
       ],
+      "Shared": [
+        "Condiviso"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Condiviso da ${ rootLink.signatureEmail }"
       ],
@@ -5198,7 +5247,7 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "L'account potrebbe avere una nuova chiave o quanto segue potrebbe essere stato manomesso: ${ items }. Aprilo solo se ti fidi."
       ],
-      "The albums you create are shown here": [
+      "The albums you create are shown here.": [
         "Gli album che crei vengono mostrati qui."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
@@ -5387,6 +5436,9 @@
       "Unsupported file": [
         "File non supportato"
       ],
+      "Untitled": [
+        "Senza titolo"
+      ],
       "Updating drive search...": [
         "Aggiornamento della ricerca di unità in corso..."
       ],
@@ -5461,6 +5513,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Abbiamo bisogno di verificare il tuo pagamento con la tua banca."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Ci scusiamo per l'inconveniente che questo può averti causato."
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilizziamo 3-D Secure per proteggere i tuoi pagamenti"
@@ -5695,8 +5750,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Per favore contattaci a ${ email } per le istruzioni su come pagare in contanti."
+      "How to send a cash payment?": [
+        "Come inviare un pagamento in contanti?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Puoi trovare le istruzioni nell'articolo: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8130,6 +8188,9 @@
       "${ pricingTitle } offer expires today!": [
         "L'offerta ${ pricingTitle } scade oggi!"
       ],
+      "Don’t show this offer again": [
+        "Non mostrare più questa offerta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Ottieni Drive Plus per solo ${ pricingTitle }"
       ],
@@ -8142,14 +8203,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Ultima chance per avere l´80% di sconto sul tuo primo mese di ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Ultimo giorno per risparmiare"
+      ],
       "Limited-time offer": [
         "Offerta a tempo limitato"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus per 12 mesi"
       ],
       "Maybe later": [
         "Forse più tardi"
       ],
+      "Save": [
+        "Salva"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Risparmia il ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Salva l'80% nel tuo primo mese."
+      ],
+      "Save big when you pay annually": [
+        "Risparmia di più pagando annualmente"
+      ],
+      "This offer won't be shown again.": [
+        "Questa offerta non verrà più mostrata."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quando si passa da un abbonamento mensile a uno annuale."
+      ],
+      "You currently pay": [
+        "Attualmente paghi"
       ]
     },
     "Offer feature": {
@@ -10107,6 +10192,9 @@
       "Auto-deletion is active": [
         "L'eliminazione automatica é attiva."
       ],
+      "Automatic Recovery in Progress": [
+        "Ripristino automatico in corso"
+      ],
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
@@ -10702,11 +10790,6 @@
         "Oggi"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Aggiungi questo file condiviso al tuo ${ DRIVE_APP_NAME } per accedervi facilmente in seguito."
@@ -10788,6 +10871,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Abbiamo spedito un invito per accedere all'elemento."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
       ]
     },
     "Valentine_2025": {
@@ -11075,9 +11163,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Sono consentiti solo caratteri alfanumerici minuscoli, punti, trattini e caratteri di sottolineatura"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà completato."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."

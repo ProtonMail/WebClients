@@ -78,11 +78,17 @@
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
+      "Add photos": [
+        "Προσθήκη φωτογραφιών"
+      ],
       "Add to album": [
         "Προσθήκη στο άλμπουμ"
       ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
+      ],
+      "Album name": [
+        "Όνομα άλμπουμ"
       ],
       "Apply": [
         "Εφαρμογή"
@@ -273,6 +279,9 @@
         "Διαγραφή ${ selectedCount } ομάδα επαφών",
         "Διαγραφή ${ selectedCount } ομάδες επαφών"
       ],
+      "Delete album": [
+        "Διαγραφή άλμπουμ"
+      ],
       "Delete contact": [
         "Διαγραφή επαφής"
       ],
@@ -324,6 +333,9 @@
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
       ],
+      "Download photos": [
+        "Λήψη φωτογραφιών"
+      ],
       "Download without scanning": [
         "Λήψη χωρίς σάρωση"
       ],
@@ -335,6 +347,9 @@
       ],
       "Edit": [
         "Επεξεργασία"
+      ],
+      "Edit album": [
+        "Επεξεργασία άλμπουμ"
       ],
       "Edit email address": [
         "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
@@ -531,6 +546,9 @@
       "Minimize transfers": [
         "Ελαχιστοποίηση μεταφορών"
       ],
+      "More": [
+        "Περισσότερα"
+      ],
       "More actions": [
         "Περισσότερες ενέργειες"
       ],
@@ -548,6 +566,9 @@
       ],
       "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
+      ],
+      "Name your album": [
+        "Ονομάστε το άλμπουμ σας"
       ],
       "New": [
         "Νέο"
@@ -762,8 +783,14 @@
       "Select country": [
         "Επιλογή χώρας"
       ],
+      "Set album cover": [
+        "Ορισμός εξώφυλλου άλμπουμ"
+      ],
       "Set as album cover": [
         "Ορισμός ως εξώφυλλο άλμπουμ"
+      ],
+      "Set as cover": [
+        "Ορίστε ως εξώφυλλο"
       ],
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
@@ -963,9 +990,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Δημιουργία άλμπουμ"
-      ],
       "Upload": [
         "Ανέβασμα"
       ]
@@ -2436,11 +2460,6 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
@@ -2524,6 +2543,11 @@
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Επίσης, έχουμε αντιστοιχίσει αυτόματα τα πεδία CSV με πεδία vCard. Μπορείτε να ελέγξετε και να αλλάξετε αυτήν την αντιστοίχιση με μη αυτόματο τρόπο."
@@ -2534,10 +2558,10 @@
     },
     "Docs Info": {
       "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "Η συνεργασία μόλις έγινε ευκολότερη. Τώρα μπορείτε να προτείνετε αλλαγές χωρίς να τροποποιείτε το έγγραφο."
+        "Η συνεργασία μόλις έγινε ευκολότερη. Τώρα ο καθένας μπορεί να υποδείξει αλλαγές χωρίς να αλλάξει το έγγραφο."
       ],
       "Suggestion mode is here": [
-        "Η λειτουργία προτάσεων είναι εδώ"
+        "Η λειτουργία υποδείξεων είναι εδώ"
       ]
     },
     "Downgrade account reason": {
@@ -3124,6 +3148,9 @@
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
       ],
+      "Unable to set photo as cover": [
+        "Δεν είναι δυνατός ο ορισμός αυτής της φωτογραφίας ως εξωφύλλου"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
       ],
@@ -3665,14 +3692,17 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Create new album": [
+        "Δημιουργία νέου άλμπουμ"
+      ],
       "Security Center": [
         "Κέντρο Ασφαλείας"
       ]
     },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Βρέθηκε ${ itemsCount } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
-        "Βρέθηκαν ${ itemsCount } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+        "Βρέθηκε ${ itemsCount } υπόδειξη, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ itemsCount } υποδείξεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
@@ -4024,6 +4054,10 @@
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } στοιχείο",
+        "${ album.photoCount } στοιχεία"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
@@ -4212,6 +4246,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
       ],
+      "Album is empty": [
+        "Το άλμπουμ είναι άδειο"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Όλοι (${ totalFoldersCount } φάκελος)",
         "Όλοι (${ totalFoldersCount } φάκελοι)"
@@ -4289,6 +4326,9 @@
       ],
       "Attention required": [
         "Απαιτείται προσοχή"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Αυτοματοποιημένη Ανάκτηση ${ formattedDate }"
       ],
       "Available": [
         "Διαθέσιμο"
@@ -4878,6 +4918,9 @@
       "of": [
         "από"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Μόλις ολοκληρωθεί αυτή η διαδικασία, θα βρείτε ένα αντίγραφο των δεδομένων που επαναφέρατε σε έναν νέο φάκελο που ονομάζεται \"Αυτοματοποιημένη ανάκτηση (σημερινή ημερομηνία)\". Αυτό το αντίγραφο των δεδομένων σας δε θα υπολογίζεται στο όριο αποθηκευτικού χώρου."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Ένας από τους κρυπτογραφημένους δίσκους σας είναι κλειδωμένος, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
       ],
@@ -4901,6 +4944,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Τα συστήματά μας εντόπισαν ότι η προηγούμενη ανάκτησή σας δεν ολοκληρώθηκε με επιτυχία και ορισμένα αρχεία ενδέχεται να μην έχουν αποκατασταθεί πλήρως. Επανεκκινήσαμε αυτόματα τη διαδικασία ανάκτησης για να διασφαλίσουμε ότι όλα τα αρχεία έχουν αποκατασταθεί πλήρως."
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -5138,6 +5184,9 @@
       "Share via link settings": [
         "Κοινοποίηση μέσω ρυθμίσεων συνδέσμου"
       ],
+      "Shared": [
+        "Κοινόχρηστα"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Κοινοποιήθηκε από τον/την ${ rootLink.signatureEmail }"
       ],
@@ -5198,8 +5247,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Ο λογαριασμός μπορεί να έχει ένα νέο κλειδί ή μπορεί τα εξής να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
       ],
-      "The albums you create are shown here": [
-        "Τα άλμπουμ που δημιουργείτε εμφανίζονται εδώ"
+      "The albums you create are shown here.": [
+        "Τα άλμπουμ που δημιουργείτε εμφανίζονται εδώ."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Η ψηφιακή υπογραφή έχει επαληθευτεί εν μέρει. Αυτό το αρχείο μεταφορτώθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
@@ -5387,6 +5436,9 @@
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
+      "Untitled": [
+        "Χωρίς τίτλο"
+      ],
       "Updating drive search...": [
         "Ενημέρωση τοπικής αναζήτησης..."
       ],
@@ -5461,6 +5513,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Πρέπει να επαληθεύσουμε την πληρωμή σας με την τράπεζά σας."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Ζητούμε ειλικρινά συγγνώμη για την αναστάτωση που μπορεί να σας προκάλεσε."
       ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
@@ -5695,8 +5750,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Παρακαλώ επικοινωνήστε μαζί μας στο ${ email } για οδηγίες πληρωμής με μετρητά."
+      "How to send a cash payment?": [
+        "Πώς να στείλετε μια πληρωμή σε μετρητά;"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Παρακαλούμε βρείτε τις οδηγίες στο άρθρο: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8074,6 +8132,9 @@
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
+      "Don’t show this offer again": [
+        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Αποκτήστε το Drive Plus για μόνο ${ pricingTitle }"
       ],
@@ -8086,14 +8147,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Τελευταία ημέρα αποθήκευσης"
+      ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus για 12 μήνες"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
+      "Save": [
+        "Εξοικονομήστε"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Εξοικονομίστε ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Εξοικονομήστε 80% τον πρώτο μήνα σας."
+      ],
+      "Save big when you pay annually": [
+        "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
+      ],
+      "This offer won't be shown again.": [
+        "Αυτή η προσφορά δε θα εμφανιστεί ξανά."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Όταν αλλάζετε από μηνιαία σε ετήσια συνδρομή."
+      ],
+      "You currently pay": [
+        "Αυτή τη στιγμή πληρώνετε"
       ]
     },
     "Offer feature": {
@@ -10051,6 +10136,9 @@
       "Auto-deletion is active": [
         "Η αυτόματη διαγραφή είναι ενεργή"
       ],
+      "Automatic Recovery in Progress": [
+        "Αυτόματη Ανάκτηση σε Εξέλιξη"
+      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -10646,11 +10734,6 @@
         "Σήμερα"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Προσθέστε αυτό το κοινόχρηστο αρχείο στο ${ DRIVE_APP_NAME } για εύκολη πρόσβαση αργότερα."
@@ -10732,6 +10815,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
     "Validation": {
@@ -10896,9 +10984,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί πεζοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."

@@ -78,11 +78,17 @@
       "Add phone number": [
         "휴대전화 번호 추가"
       ],
+      "Add photos": [
+        "사진 추가"
+      ],
       "Add to album": [
         "앨범에 추가하기"
       ],
       "Add to group": [
         "그룹에 추가"
+      ],
+      "Album name": [
+        "앨범 이름"
       ],
       "Apply": [
         "적용"
@@ -270,6 +276,9 @@
       "Delete ${ selectedCount } contact group": [
         "${ selectedCount } 개의 그룹 삭제"
       ],
+      "Delete album": [
+        "앨범 삭제"
+      ],
       "Delete contact": [
         "연락처 삭제"
       ],
@@ -321,6 +330,9 @@
       "Download logs": [
         "다운로드 로그"
       ],
+      "Download photos": [
+        "사진 다운로드"
+      ],
       "Download without scanning": [
         "스캔 없이 다운로드"
       ],
@@ -332,6 +344,9 @@
       ],
       "Edit": [
         "편집"
+      ],
+      "Edit album": [
+        "앨범 편집"
       ],
       "Edit email address": [
         "이메일 주소 추가"
@@ -528,6 +543,9 @@
       "Minimize transfers": [
         "최소 이동"
       ],
+      "More": [
+        "더보기"
+      ],
       "More actions": [
         "더 많은 액션"
       ],
@@ -545,6 +563,9 @@
       ],
       "Move to trash": [
         "휴지통으로 이동"
+      ],
+      "Name your album": [
+        "앨범 이름 지정"
       ],
       "New": [
         "신규"
@@ -759,8 +780,14 @@
       "Select country": [
         "국가 선택"
       ],
+      "Set album cover": [
+        "앨범 커버로 사용하기"
+      ],
       "Set as album cover": [
         "앨범 커버로 사용하기"
+      ],
+      "Set as cover": [
+        "커버로 설정"
       ],
       "Set recovery phrase": [
         "복구 코드 설정"
@@ -959,9 +986,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "앨범 생성"
-      ],
       "Upload": [
         "업로드"
       ]
@@ -2423,11 +2447,6 @@
         "기한이 지난 청구서"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2509,6 +2528,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3104,6 +3128,9 @@
       "Try using only letters, numerals, and _.-": [
         "문자, 숫자 및 _.- 만 사용하십시오"
       ],
+      "Unable to set photo as cover": [
+        "해당 사진을 커버로 설정할 수 없음"
+      ],
       "Unexpected error, we can't import the contacts": [
         "예상치 못한 오류가 발생하여, 연락처를 가져올 수 없습니다."
       ],
@@ -3636,6 +3663,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Create new album": [
+        "새로운 앨범 생성"
+      ],
       "Security Center": [
         "보안 센터"
       ]
@@ -3983,6 +4013,9 @@
       "${ addressCount } email address": [
         "이메일 주소 ${ addressCount }개"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount }개 항목"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
@@ -4145,6 +4178,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
       ],
+      "Album is empty": [
+        "앨범이 비어있어요"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "총 (${ totalFoldersCount } 개 폴더)"
       ],
@@ -4219,6 +4255,9 @@
       ],
       "Attention required": [
         "주의 필요"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "자동 복구 ${ formattedDate }"
       ],
       "Available": [
         "사용 가능"
@@ -4802,6 +4841,9 @@
       "of": [
         "/"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "이 처리가 완료되면 \"자동 복구(오늘 날짜)\"라는 이름의 새 폴더에서 복원된 데이터의 복사본을 찾을 수 있습니다. 이 데이터 사본은 클라우드 스토리지 용량에 포함되지 않습니다."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "암호화된 드라이브 중 하나가 잠겼습니다. 이는 최근의 비밀번호 재설정 때문일 가능성이 높습니다."
       ],
@@ -4825,6 +4867,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "시스템이 이전 복구가 성공적으로 완료되지 않았으며 일부 파일이 완전히 복원되지 않았을 수 있음을 감지했습니다. 모든 항목이 완전히 복원되도록 복구 프로세스가 자동으로 다시 시작되었습니다."
       ],
       "Owner": [
         "소유자"
@@ -5060,6 +5105,9 @@
       "Share via link settings": [
         "링크로 공유 설정"
       ],
+      "Shared": [
+        "공유됨"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "${ rootLink.signatureEmail }님이 공유함"
       ],
@@ -5120,7 +5168,7 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "이 계정이 새 키를 가지고 있거나, 다음이 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
       ],
-      "The albums you create are shown here": [
+      "The albums you create are shown here.": [
         "생성한 앨범이 여기에 나타납니다."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
@@ -5309,6 +5357,9 @@
       "Unsupported file": [
         "지원되지 않는 파일"
       ],
+      "Untitled": [
+        "무제"
+      ],
       "Updating drive search...": [
         "드라이브 검색을 업데이트하는 중..."
       ],
@@ -5383,6 +5434,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "이로 인해 불편을 드려 진심으로 사과드립니다."
       ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
@@ -5610,11 +5664,6 @@
     "info": {
       "Selected color:": [
         "선택한 색상:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "현금으로 결제하는 방법을 알고 싶으시면 ${ email }으로 연락해 주세요."
       ]
     },
     "Info on errors": {
@@ -7937,6 +7986,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
+      "Don’t show this offer again": [
+        "이 제안을 다시 보지 않기"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "단 ${ pricingTitle }(으)로 Drive Plus 구매"
       ],
@@ -7949,14 +8001,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "${ plan } Plus의 첫 달 80% 할인 받을 마지막 기회입니다."
       ],
+      "Last day to save": [
+        "매월에서 매년 구독으로 변경하여"
+      ],
       "Limited-time offer": [
         "기간 한정 할인"
+      ],
+      "Mail Plus for 12 months": [
+        "12개월 Mail Plus"
       ],
       "Maybe later": [
         "나중에"
       ],
+      "Save": [
+        "절약되는 가격:"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "${ prices.savedPercentage }% 절약"
+      ],
       "Save 80% on your first month.": [
         "첫 달에 80% 할인 받기"
+      ],
+      "Save big when you pay annually": [
+        "매년 결제로 더 크게 절약하세요"
+      ],
+      "This offer won't be shown again.": [
+        "이 제안은 다시 표시되지 않습니다."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "절약할 수 있는 마지막 날."
+      ],
+      "You currently pay": [
+        "현재 결제:"
       ]
     },
     "Offer feature": {
@@ -9540,7 +9616,7 @@
         "시스템이 더 이상 이 결제 수단으로 자동 결제할 수 없습니다, 다만 고객님의 구독이 청구 주기가 끝날 때까지 갱신될 것입니다. 구독을 다운그레이드하거나 변경하려면, 청구 기간이 끝나기 전에 수동으로 해야합니다. 또한, 수동 결제를 하는 것을 잊어버리고 모든 결제 수단에 자동 결제가 비활성화된 경우, 고객님의 계정이 자동 다운그레이드되어 많은 기능이 손실될 수 있습니다."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독이 여전히 마지막 결제일에 갱신됩니다. 만일 플랜을 다운그레이드 또는 변경하시려면, 결제일이 끝나기 직전 수행해야 합니다. 만약 무료 플랜 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
+        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독은 여전히 마지막 결제일에 갱신됩니다. 만약 플랜을 다운그레이드 또는 변경하시려면, 결제일이 다가오기 직전에 수행해야 합니다. 만약 무료 플랜의 제공 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 시스템이 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기 때문에 플랜이 자동으로 다운그레이드되지 않습니다. 자동 결제를 비활성화 하실 때, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
       ]
     },
     "Subscription saving": {
@@ -9862,6 +9938,9 @@
       ],
       "Auto-deletion is active": [
         "자동 삭제가 이제 활성 상태입니다."
+      ],
+      "Automatic Recovery in Progress": [
+        "자동 복구 진행 중"
       ],
       "Billing cycle": [
         "결제 주기"
@@ -10454,11 +10533,6 @@
         "오늘"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "추후 간편하게 접근할 수 있도록 내 ${ DRIVE_APP_NAME }에 공유된 파일을 추가하세요."
@@ -10540,6 +10614,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Validation": {
@@ -10691,9 +10770,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "영숫자 소문자, 점, 하이픈 및 밑줄만 허용됩니다."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."
