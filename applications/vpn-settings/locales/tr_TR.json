@@ -211,6 +211,9 @@
       "Delete member": [
         "Üyeyi sil"
       ],
+      "Delete policy": [
+        "İlkeyi sil"
+      ],
       "Delete user": [
         "Kullanıcıyı sil"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Fatura dönemini seçin ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "${ city } ilini seç"
+      ],
       "Select country": [
         "Ülke seçin"
+      ],
+      "Select country ${ country }": [
+        "${ country } ülkesini seç"
       ],
       "select file": [
         "dosya seçin"
@@ -2318,11 +2327,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Paylaşılan sunuculara erişimi yönetmek için ilkeler oluşturun."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Her ülkedeki paylaşılan sunuculara kimlerin bağlanabileceğini belirlemek için ilkeler oluşturun."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Kuruluşunuzdaki herkes paylaşılan sunucularla bağlantı kurabilir."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Kuruluşunuzdaki herkes tüm ülkelerdeki paylaşılan sunuculara bağlanabilir."
       ],
       "If disabled, only admins will have access.": [
         "Kapatıldığında yalnızca yöneticiler erişebilir."
@@ -2553,6 +2562,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
+      ],
+      "Error creating policy.": [
+        "İlke oluşturulurken sorun çıktı."
+      ],
+      "Error deleting policy.": [
+        "İlke silinirken sorun çıktı."
+      ],
+      "Error updating policy.": [
+        "İlke güncellenirken sorun çıktı."
       ],
       "Failed to process the logo": [
         "Logo işlenemedi"
@@ -4451,9 +4469,6 @@
       "No addresses exist": [
         "Herhangi bir adres yok"
       ],
-      "No common passwords": [
-        "Yaygın parolalar kullanılmamalıdır"
-      ],
       "No gateways": [
         "Henüz bir ağ geçidi yok"
       ],
@@ -4462,9 +4477,6 @@
       ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Öngörülebilecek diziler kullanılmamalıdır (1234, aaa)"
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -4813,7 +4825,7 @@
         "Simgeler (#$&)"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
-        "TechRadar Pro 5 yıldız üzerinden 4,2 puanla tavsiye etti"
+        "Tech Radar Pro tarafından 5 üzerinden 4,2 puanla önerildi"
       ],
       "Thank you": [
         "Teşekkürler"
@@ -4874,6 +4886,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
+      ],
+      "This cannot be undone.": [
+        "Bu işlem geri alınamaz."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Bu işlemin tamamlanması biraz zaman alabilir. Bu sırada lütfen bu sayfayı kapatmayın veya internet bağlantınızı kesmeyin."
@@ -5403,8 +5418,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı ile ilgili bilgi almak için bizimle ${ email } adresinden görüşün."
+      "How to send a cash payment?": [
+        "Nakit ödeme nasıl gönderilir?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5589,6 +5607,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Apply policy to": [
+        "İlkeyi şunlara uygula"
       ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service adresi"
@@ -5863,9 +5884,6 @@
       "New password": [
         "Yeni parola"
       ],
-      "New policy name": [
-        "Yeni ilke adı"
-      ],
       "New second password": [
         "Yeni ikinci parola"
       ],
@@ -5937,6 +5955,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Hizmetlerimizi geliştirebilmemiz için bizi bilgilendirin."
+      ],
+      "Policy name": [
+        "İlke adı"
       ],
       "Postal code": [
         "Posta kodu"
@@ -7625,9 +7646,6 @@
       "Downloaded 2FA recovery codes": [
         "İki adımlı doğrulama kodları indirildi"
       ],
-      "Error creating policy": [
-        "İlke oluşturulurken sorun çıktı"
-      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -7645,9 +7663,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
-      ],
-      "Policy created successfully": [
-        "İlke oluşturuldu"
       ],
       "Reminder has been sent": [
         "Hatırlatıcı gönderildi"
@@ -7677,6 +7692,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don’t show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
       ],
@@ -7689,14 +7707,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "${ plan } Plus aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
       ],
+      "Last day to save": [
+        "İndirim kazanmak için son gün"
+      ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Mail Plus for 12 months": [
+        "12 aylık Mail Plus"
       ],
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Save": [
+        "İndirim"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "%${ prices.savedPercentage } indirim"
+      ],
       "Save 80% on your first month.": [
         "İlk ayınızda % 80 indirim kazanın."
+      ],
+      "Save big when you pay annually": [
+        "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "This offer won't be shown again.": [
+        "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
+      ],
+      "You currently pay": [
+        "Şu anda ödediğiniz"
       ]
     },
     "Offer feature": {
@@ -10074,6 +10116,15 @@
       "Phone number updated": [
         "Telefon numarası güncellendi"
       ],
+      "Policy created successfully!": [
+        "İlke oluşturuldu!"
+      ],
+      "Policy deleted": [
+        "İlke silindi"
+      ],
+      "Policy updated successfully!": [
+        "İlke güncellendi!"
+      ],
       "Preference saved": [
         "Ayar kaydedildi"
       ],
@@ -10531,6 +10582,9 @@
       "Delete": [
         "Sil"
       ],
+      "Delete ${ policyName }?": [
+        "${ policyName } silinsin mi?"
+      ],
       "Delete account": [
         "Hesabı sil"
       ],
@@ -10586,6 +10640,9 @@
       "Edit billing address": [
         "Fatura adresini düzenle"
       ],
+      "Edit countries": [
+        "Ülkeleri düzenle"
+      ],
       "Edit credit/debit card": [
         "Kredi ya da banka kartını düzenle"
       ],
@@ -10603,6 +10660,9 @@
       ],
       "Edit invoice note": [
         "Fatura notunu düzenle"
+      ],
+      "Edit name": [
+        "Adı düzenle"
       ],
       "Edit servers": [
         "Sunucuları düzenle"
@@ -11102,6 +11162,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "İki adımlı doğrulama kullanmayan üyelere bu özelliği en kısa sürede açmalarını isteyen bir e-posta gönderilecek."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Paylaşılan sunucu ilkeleri bireysel kullanıcılara veya gruplara uygulanabilir"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin"
@@ -11747,9 +11810,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

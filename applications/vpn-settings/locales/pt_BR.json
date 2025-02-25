@@ -211,6 +211,9 @@
       "Delete member": [
         "Excluir membro"
       ],
+      "Delete policy": [
+        "Excluir a política"
+      ],
       "Delete user": [
         "Excluir usuário"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Selecionar ciclo de faturamento ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Seleciona a cidade ${ city }"
+      ],
       "Select country": [
         "Selecionar país"
+      ],
+      "Select country ${ country }": [
+        "Selecione o país ${ country }"
       ],
       "select file": [
         "selecionar arquivo"
@@ -2318,12 +2327,6 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Crie políticas para gerenciar o acesso a servidores compartilhados."
-      ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Todos os membros da sua organização podem conectar-se a servidores compartilhados."
-      ],
       "If disabled, only admins will have access.": [
         "Se desativado, apenas os administradores poderão acessar."
       ],
@@ -2553,6 +2556,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
+      ],
+      "Error creating policy.": [
+        "Erro ao criar a política."
+      ],
+      "Error deleting policy.": [
+        "Erro ao excluir a política."
+      ],
+      "Error updating policy.": [
+        "Erro ao atualizar a política."
       ],
       "Failed to process the logo": [
         "Falha no processamento do logotipo"
@@ -4451,9 +4463,6 @@
       "No addresses exist": [
         "Não existem endereços"
       ],
-      "No common passwords": [
-        "Nenhuma senha comum"
-      ],
       "No gateways": [
         "Sem gateways"
       ],
@@ -4462,9 +4471,6 @@
       ],
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Nenhuma sequência previsível (1234, aaa)"
       ],
       "No results found": [
         "Nenhum resultado encontrado"
@@ -4877,6 +4883,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
+      ],
+      "This cannot be undone.": [
+        "Não é possível anular esta ação."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Isso pode levar algum tempo. Não feche esta página ou desconecte-se da internet."
@@ -5405,11 +5414,6 @@
         "Cor selecionada:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Entre em contato conosco pelo ${ email } para obter instruções de como efetuar o pagamento em dinheiro."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Adicione um endereço para os usuários existentes da sua organização."
@@ -5592,6 +5596,9 @@
       ],
       "Anderson": [
         "Braga"
+      ],
+      "Apply policy to": [
+        "Aplica a política a"
       ],
       "Assertion Consumer Service URL": [
         "URL de asserção do serviço do consumidor (ACS)"
@@ -5866,9 +5873,6 @@
       "New password": [
         "Nova senha"
       ],
-      "New policy name": [
-        "Novo nome da política"
-      ],
       "New second password": [
         "Nova segunda senha"
       ],
@@ -5940,6 +5944,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Compartilhe qualquer feedback para nos ajudar a melhorar."
+      ],
+      "Policy name": [
+        "Nome da política"
       ],
       "Postal code": [
         "Código postal"
@@ -7634,9 +7641,6 @@
       "Downloaded 2FA recovery codes": [
         "Baixar código de recuperação de A2F"
       ],
-      "Error creating policy": [
-        "Erro ao criar a política"
-      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -7654,9 +7658,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciais OpenVPN / IKEv2 regeneradas"
-      ],
-      "Policy created successfully": [
-        "A política foi criada."
       ],
       "Reminder has been sent": [
         "O lembrete foi enviado"
@@ -7686,6 +7687,9 @@
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
+      "Don’t show this offer again": [
+        "Não mostrar mais esta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtenha o Drive Plus por apenas ${ pricingTitle }"
       ],
@@ -7698,14 +7702,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Último dia para eocnomizar"
+      ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Save": [
+        "Economize"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Economize ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Economize 80% no seu primeiro mês"
+      ],
+      "Save big when you pay annually": [
+        "Aproveite descontos incríveis ao pagar anualmente!"
+      ],
+      "This offer won't be shown again.": [
+        "Esta oferta não será exibida novamente."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quando você muda de uma assinatura mensal para anual."
+      ],
+      "You currently pay": [
+        "Você paga atualmente"
       ]
     },
     "Offer feature": {
@@ -10098,6 +10126,15 @@
       "Phone number updated": [
         "Número de telefone atualizado"
       ],
+      "Policy created successfully!": [
+        "A política foi criada."
+      ],
+      "Policy deleted": [
+        "A política foi eliminada."
+      ],
+      "Policy updated successfully!": [
+        "A política foi atualizada."
+      ],
       "Preference saved": [
         "Preferência salva"
       ],
@@ -10555,6 +10592,9 @@
       "Delete": [
         "Excluir"
       ],
+      "Delete ${ policyName }?": [
+        "Excluir ${ policyName }?"
+      ],
       "Delete account": [
         "Excluir conta"
       ],
@@ -10610,6 +10650,9 @@
       "Edit billing address": [
         "Editar o endereço de cobrança"
       ],
+      "Edit countries": [
+        "Editar os países"
+      ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
       ],
@@ -10627,6 +10670,9 @@
       ],
       "Edit invoice note": [
         "Editar a nota de fatura"
+      ],
+      "Edit name": [
+        "Editar o nome"
       ],
       "Edit servers": [
         "Editar servidores"
@@ -11776,9 +11822,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ao excluir este número de telefone, você não poderá mais recuperar sua conta."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
