@@ -41,15 +41,14 @@ export interface Attendee {
     Token: string;
     Status: ATTENDEE_STATUS_API;
     UpdateTime: Nullable<number>;
+    Comment: Nullable<{
+        Message: string;
+        Type: ATTENDEE_COMMENT_TYPE;
+    }>;
 }
 
 export interface AttendeesInfo {
-    Attendees: (Attendee & {
-        Comment: {
-            Message: string;
-            Type: ATTENDEE_COMMENT_TYPE;
-        };
-    })[];
+    Attendees: Attendee[];
     MoreAttendees: ATTENDEE_MORE_ATTENDEES;
 }
 
