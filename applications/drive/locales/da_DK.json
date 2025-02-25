@@ -78,11 +78,17 @@
       "Add phone number": [
         "Tilføj telefonnummer"
       ],
+      "Add photos": [
+        "Tilføj fotos"
+      ],
       "Add to album": [
         "Tilføj til album"
       ],
       "Add to group": [
         "Føj til gruppe"
+      ],
+      "Album name": [
+        "Albumnavn"
       ],
       "Apply": [
         "Anvend"
@@ -273,6 +279,9 @@
         "Slet ${ selectedCount } kontaktgruppe",
         "Slet ${ selectedCount } kontaktgrupper"
       ],
+      "Delete album": [
+        "Slet album"
+      ],
       "Delete contact": [
         "Slet kontakt"
       ],
@@ -324,6 +333,9 @@
       "Download logs": [
         "Download-logfiler"
       ],
+      "Download photos": [
+        "Download fotos"
+      ],
       "Download without scanning": [
         "Download uden scanning"
       ],
@@ -335,6 +347,9 @@
       ],
       "Edit": [
         "Redigér"
+      ],
+      "Edit album": [
+        "Rediger album"
       ],
       "Edit email address": [
         "Rediger e-mailadresse"
@@ -383,6 +398,9 @@
       ],
       "Forward as attachment": [
         "Videresend som vedhæftning"
+      ],
+      "Get ${ planOrAppName }": [
+        "Få ${ planOrAppName }"
       ],
       "Get in touch": [
         "Kontakt os"
@@ -522,6 +540,12 @@
       "Minimize transfers": [
         "Minimér overførsler"
       ],
+      "More": [
+        "Mere"
+      ],
+      "More actions": [
+        "Flere handlinger"
+      ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
@@ -536,6 +560,9 @@
       ],
       "Move to trash": [
         "Flyt til papirkurv"
+      ],
+      "Name your album": [
+        "Navngiv dit album"
       ],
       "New": [
         "Ny"
@@ -750,6 +777,12 @@
       "Select country": [
         "Vælg land"
       ],
+      "Set album cover": [
+        "Indstil albumcover"
+      ],
+      "Set as cover": [
+        "Brug som cover"
+      ],
       "Set recovery phrase": [
         "Indstil gendannelsessætning"
       ],
@@ -945,9 +978,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Opret album"
-      ],
       "Upload": [
         "Upload"
       ]
@@ -1293,6 +1323,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Luk"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -1301,6 +1334,18 @@
       ],
       "Continue your subscription": [
         "Fortsæt dit abonnement"
+      ],
+      "Create label": [
+        "Opret etiket"
+      ],
+      "Discover and set up features": [
+        "Udforsk og konfigurer funktioner"
+      ],
+      "Remind me later": [
+        "Påmind mig senere"
+      ],
+      "Set up other features": [
+        "Konfigurer andre funktioner"
       ]
     },
     "Calendar settings sidebar": {
@@ -2385,11 +2430,6 @@
         "Forfalden faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2471,6 +2511,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3073,6 +3118,9 @@
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
       ],
+      "Unable to set photo as cover": [
+        "Kan ikke indstille foto som cover"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
       ],
@@ -3609,6 +3657,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Create new album": [
+        "Opret nyt album"
+      ],
       "Security Center": [
         "Sikkerhedscenter"
       ]
@@ -3634,6 +3685,12 @@
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalendertidszone understøttes ikke"
+      ],
+      "Edited event not supported": [
+        "Redigeret begivenhed understøttes ikke"
+      ],
       "End time out of bounds": [
         "Sluttid uden for grænserne"
       ],
@@ -3648,6 +3705,18 @@
       ],
       "Malformed start time": [
         "Misdannet starttid"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Kun den gregorianske kalenderskala er tilladt"
+      ],
+      "Recurring event has no occurrences": [
+        "Tilbagevendende begivenhed har ingen forekomster"
+      ],
+      "Recurring rule not supported": [
+        "Tilbagevendende regel understøttes ikke"
+      ],
+      "Start time out of bounds": [
+        "Starttid uden for grænserne"
       ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
@@ -3929,6 +3998,10 @@
         "${ addressCount } e-mailadresse",
         "${ addressCount } e-mailadresser"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } element",
+        "${ album.photoCount } elementer"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
@@ -4116,6 +4189,9 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
+      ],
+      "Album is empty": [
+        "Album er tomt"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } mappe)",
@@ -5019,6 +5095,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalinger er ikke tilgængelige i øjeblikket. Prøv venligst igen senere."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
@@ -5039,6 +5118,9 @@
       ],
       "Share via link settings": [
         "Del via link-indstillinger"
+      ],
+      "Shared": [
+        "Delt"
       ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Delt af ${ rootLink.signatureEmail }"
@@ -5100,8 +5182,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
-      "The albums you create are shown here": [
-        "De albummer, du opretter, vises her"
+      "The albums you create are shown here.": [
+        "De albummer, du opretter, vises her."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Den digitale signatur er delvist verificeret. Denne fil blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
@@ -5288,6 +5370,9 @@
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
+      ],
+      "Untitled": [
+        "Uden titel"
       ],
       "Updating drive search...": [
         "Opdaterer drevsøgning..."
@@ -5594,11 +5679,6 @@
     "info": {
       "Selected color:": [
         "Valgte farve:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt os venligst på ${ email } for instruktioner om, hvordan du betaler os med kontanter."
       ]
     },
     "Info on errors": {
@@ -10366,11 +10446,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tilføj denne delte fil på din ${ DRIVE_APP_NAME } til nem adgang senere."
@@ -10452,6 +10527,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
     },
     "Validation": {
@@ -10601,9 +10681,6 @@
       ],
       "Name is required": [
         "Navn er påkrævet"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."

@@ -78,11 +78,17 @@
       "Add phone number": [
         "電話番号を追加"
       ],
+      "Add photos": [
+        "写真を追加"
+      ],
       "Add to album": [
         "アルバムに追加"
       ],
       "Add to group": [
         "グループに追加"
+      ],
+      "Album name": [
+        "アルバム名"
       ],
       "Apply": [
         "適用"
@@ -270,6 +276,9 @@
       "Delete ${ selectedCount } contact group": [
         "${ selectedCount } 件の連絡先グループを削除"
       ],
+      "Delete album": [
+        "アルバムを削除"
+      ],
       "Delete contact": [
         "連絡先を削除"
       ],
@@ -321,6 +330,9 @@
       "Download logs": [
         "ログをダウンロードする"
       ],
+      "Download photos": [
+        "写真をダウンロード"
+      ],
       "Download without scanning": [
         "スキャンせずにダウンロード"
       ],
@@ -332,6 +344,9 @@
       ],
       "Edit": [
         "編集"
+      ],
+      "Edit album": [
+        "アルバムを編集"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -528,6 +543,9 @@
       "Minimize transfers": [
         "転送一覧を最小化"
       ],
+      "More": [
+        "その他"
+      ],
       "More actions": [
         "その他の操作"
       ],
@@ -545,6 +563,9 @@
       ],
       "Move to trash": [
         "ごみ箱に移動"
+      ],
+      "Name your album": [
+        "アルバムの名前"
       ],
       "New": [
         "新規"
@@ -759,8 +780,14 @@
       "Select country": [
         "国を選択"
       ],
+      "Set album cover": [
+        "アルバムカバーを設定する"
+      ],
       "Set as album cover": [
         "アルバムカバーに設定"
+      ],
+      "Set as cover": [
+        "カバーとしてセット"
       ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
@@ -959,9 +986,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "アルバムを作成"
-      ],
       "Upload": [
         "アップロード"
       ]
@@ -2423,11 +2447,6 @@
         "未払いの請求"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2509,6 +2528,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3104,6 +3128,9 @@
       "Try using only letters, numerals, and _.-": [
         "文字、数字、_.- のみを使用してみてください。"
       ],
+      "Unable to set photo as cover": [
+        "写真をカバーとして設定できません"
+      ],
       "Unexpected error, we can't import the contacts": [
         "予期しないエラーにより、連絡先をインポートできません"
       ],
@@ -3636,6 +3663,9 @@
       "Contacts": [
         "連絡先"
       ],
+      "Create new album": [
+        "新しいアルバムを作る"
+      ],
       "Security Center": [
         "セキュリティセンター"
       ]
@@ -3983,6 +4013,9 @@
       "${ addressCount } email address": [
         "${ addressCount } 件のメールアドレス"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } 個のアイテム"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
@@ -4144,6 +4177,9 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
+      ],
+      "Album is empty": [
+        "アルバムは空です"
       ],
       "All (${ totalFoldersCount } folder)": [
         "すべて (${ totalFoldersCount } フォルダー)"
@@ -5060,6 +5096,9 @@
       "Share via link settings": [
         "リンク設定経由で共有"
       ],
+      "Shared": [
+        "共有"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "${ rootLink.signatureEmail }が共有しました"
       ],
@@ -5120,8 +5159,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "${ items } は改ざんされたか、アカウントに新しい鍵が設定された可能性があります。信頼できる場合のみ開いてください。"
       ],
-      "The albums you create are shown here": [
-        "作成したアルバムがここに表示されます"
+      "The albums you create are shown here.": [
+        "作成したアルバムがここに表示されます。"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "デジタル署名が部分的に検証されました。 このファイルは、 ${ BRAND_NAME } アカウントを持たないユーザーによる公開共有リンクを使用してアップロードされました。そのため、本人確認はできません。"
@@ -5308,6 +5347,9 @@
       ],
       "Unsupported file": [
         "非対応のファイル"
+      ],
+      "Untitled": [
+        "タイトルなし"
       ],
       "Updating drive search...": [
         "ドライブ内検索の更新中..."
@@ -5610,11 +5652,6 @@
     "info": {
       "Selected color:": [
         "選択した色:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "現金での支払い方法については、${ email } 宛までお問い合わせください。"
       ]
     },
     "Info on errors": {
@@ -7937,6 +7974,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
+      "Don’t show this offer again": [
+        "今後このオファーを表示しない"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "たった${ pricingTitle }でDrive Plusを入手"
       ],
@@ -7949,14 +7989,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "最初の月の${ plan } Plusが 80 %割引になる最後のチャンス。"
       ],
+      "Last day to save": [
+        "節約できる最後の日"
+      ],
       "Limited-time offer": [
         "期間限定オファー"
+      ],
+      "Mail Plus for 12 months": [
+        "12 か月分のMail Plus"
       ],
       "Maybe later": [
         "またあとで"
       ],
+      "Save": [
+        "節約"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "${ prices.savedPercentage }%を節約"
+      ],
       "Save 80% on your first month.": [
         "最初の月は 80 %割引。"
+      ],
+      "Save big when you pay annually": [
+        "年払いで大幅に節約"
+      ],
+      "This offer won't be shown again.": [
+        "このオファーは二度と表示されません。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "月額プランから年間プランに切り替える場合。"
+      ],
+      "You currently pay": [
+        "現在の支払い方法"
       ]
     },
     "Offer feature": {
@@ -10454,11 +10518,6 @@
         "今日"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "この共有ファイルを${ DRIVE_APP_NAME }に追加して、後で簡単にアクセスできるようにしましょう。"
@@ -10540,6 +10599,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {
@@ -10691,9 +10755,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "英数字の小文字、ドット、ハイフン、アンダースコアのみが使用できます"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"

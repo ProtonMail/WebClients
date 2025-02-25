@@ -78,11 +78,17 @@
       "Add phone number": [
         "Afegeix número de telèfon"
       ],
+      "Add photos": [
+        "Afegeix fotos"
+      ],
       "Add to album": [
         "Afegeix a l'àlbum"
       ],
       "Add to group": [
         "Afegeix al grup"
+      ],
+      "Album name": [
+        "Nom de l'àlbum"
       ],
       "Apply": [
         "Aplica"
@@ -273,6 +279,9 @@
         "Eliminar ${ selectedCount } grup de contactes",
         "Eliminar ${ selectedCount } grups de contactes"
       ],
+      "Delete album": [
+        "Elimina l'àlbum"
+      ],
       "Delete contact": [
         "Elimina el contacte"
       ],
@@ -324,6 +333,9 @@
       "Download logs": [
         "Descarrega els registres"
       ],
+      "Download photos": [
+        "Descarrega les fotos"
+      ],
       "Download without scanning": [
         "Descarrega sense escanejar"
       ],
@@ -335,6 +347,9 @@
       ],
       "Edit": [
         "Edita"
+      ],
+      "Edit album": [
+        "Edita l'àlbum"
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -531,6 +546,9 @@
       "Minimize transfers": [
         "Minimitzar les transferències"
       ],
+      "More": [
+        "Més"
+      ],
       "More actions": [
         "Més accions"
       ],
@@ -548,6 +566,9 @@
       ],
       "Move to trash": [
         "Mou a la paperera"
+      ],
+      "Name your album": [
+        "Poseu-li un nom a l'àlbum"
       ],
       "New": [
         "Nou"
@@ -762,8 +783,14 @@
       "Select country": [
         "Seleccioneu el país"
       ],
+      "Set album cover": [
+        "Estableix la portada de l'àlbum"
+      ],
       "Set as album cover": [
         "Estableix com a portada de l'àlbum"
+      ],
+      "Set as cover": [
+        "Estableix com a portada"
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
@@ -963,9 +990,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Crea un àlbum"
-      ],
       "Upload": [
         "Carrega"
       ]
@@ -2436,11 +2460,6 @@
         "Factura vençuda"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2522,6 +2541,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3124,6 +3148,9 @@
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
       ],
+      "Unable to set photo as cover": [
+        "No es pot establir la foto com a portada."
+      ],
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
       ],
@@ -3665,6 +3692,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Create new album": [
+        "Crea un àlbum"
+      ],
       "Security Center": [
         "Centre de seguretat"
       ]
@@ -4024,6 +4054,10 @@
         "${ addressCount } adreça de correu electrònic",
         "${ addressCount } adreces de correu electrònic"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } element",
+        "${ album.photoCount } elements"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -4212,6 +4246,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ],
+      "Album is empty": [
+        "L'àlbum és buit"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Tot (${ totalFoldersCount } carpeta)",
         "Tot (${ totalFoldersCount } carpetes)"
@@ -4289,6 +4326,9 @@
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Recuperació automàtica ${ formattedDate }"
       ],
       "Available": [
         "Disponible"
@@ -4878,6 +4918,9 @@
       "of": [
         "de"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Un cop finalitzat aquest procés, trobareu una còpia de les vostres dades restaurades en una nova carpeta anomenada «Recuperació automàtica (data d'avui)». Aquesta còpia de les vostres dades no comptarà amb la vostra quota d'emmagatzematge."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una de les vostres unitats xifrades està bloquejada. El més probable és que sigui a causa d'un restabliment recent de la contrasenya."
       ],
@@ -4901,6 +4944,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Els nostres sistemes han detectat que la vostra recuperació anterior no s'ha completat correctament i és possible que alguns fitxers no s'hagin restaurat completament. Hem reiniciat automàticament el procés de recuperació per assegurar-nos que tot es restauri completament."
       ],
       "Owner": [
         "Propietari"
@@ -5138,6 +5184,9 @@
       "Share via link settings": [
         "Preferències de compartició mitjançant un enllaç"
       ],
+      "Shared": [
+        "Compartit"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Compartit per ${ rootLink.signatureEmail }"
       ],
@@ -5198,7 +5247,7 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "És possible que el compte tingui una clau nova o que el següent hagi estat manipulat: ${ items }. Obriu-ho només si hi confieu."
       ],
-      "The albums you create are shown here": [
+      "The albums you create are shown here.": [
         "Els àlbums que creeu es mostren aquí."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
@@ -5387,6 +5436,9 @@
       "Unsupported file": [
         "Fitxer no compatible"
       ],
+      "Untitled": [
+        "Sense títol"
+      ],
       "Updating drive search...": [
         "S'està actualitzant la cerca…"
       ],
@@ -5461,6 +5513,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Hem d'autenticar el vostre pagament amb el banc."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Us demanem disculpes per les molèsties que això us hagi pogut ocasionar."
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
@@ -5695,8 +5750,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contacteu amb nosaltres en ${ email } per a rebre instruccions de com fer un pagament en efectiu."
+      "How to send a cash payment?": [
+        "Com enviar un pagament en efectiu?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Trobeu les instruccions a l'article: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8137,6 +8195,9 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don’t show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obteniu Drive Plus per només ${ pricingTitle }"
       ],
@@ -8149,14 +8210,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Últim dia per estalviar"
+      ],
       "Limited-time offer": [
         "Oferta per temps limitat"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus durant 12 mesos"
       ],
       "Maybe later": [
         "Potser després"
       ],
+      "Save": [
+        "Estalvieu"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Estalvieu el ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Estalvieu un 80% en el vostre primer mes."
+      ],
+      "Save big when you pay annually": [
+        "Estalvieu de debò pagant anualment!"
+      ],
+      "This offer won't be shown again.": [
+        "Aquesta oferta no es tornarà a mostrar."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quan canvieu d'una subscripció mensual a una anual."
+      ],
+      "You currently pay": [
+        "Actualment pagueu"
       ]
     },
     "Offer feature": {
@@ -10114,6 +10199,9 @@
       "Auto-deletion is active": [
         "La supressió automàtica està activada."
       ],
+      "Automatic Recovery in Progress": [
+        "Recuperació automàtica en curs"
+      ],
       "Billing cycle": [
         "Cicle de facturació"
       ],
@@ -10709,11 +10797,6 @@
         "Avui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Afegiu aquest fitxer compartit al vostre ${ DRIVE_APP_NAME } per accedir-hi fàcilment més endavant."
@@ -10795,6 +10878,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
     "Validation": {
@@ -10959,9 +11047,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Només es permeten caràcters alfanumèrics en minúscula, punts, guions i guions baixos"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."

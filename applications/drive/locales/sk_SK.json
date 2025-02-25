@@ -78,11 +78,17 @@
       "Add phone number": [
         "Pridať telefónne číslo"
       ],
+      "Add photos": [
+        "Pridať fotografie"
+      ],
       "Add to album": [
         "Pridať do albumu"
       ],
       "Add to group": [
         "Pridať do skupiny"
+      ],
+      "Album name": [
+        "Názov albumu"
       ],
       "Apply": [
         "Použiť"
@@ -279,6 +285,9 @@
         "Zmazať ${ selectedCount } skupinu kontaktov",
         "Zmazať ${ selectedCount } skupinu kontaktov"
       ],
+      "Delete album": [
+        "Vymazať album"
+      ],
       "Delete contact": [
         "Zmazať kontakt"
       ],
@@ -330,6 +339,9 @@
       "Download logs": [
         "Záznamy sťahovania"
       ],
+      "Download photos": [
+        "Stiahnuť fotografie"
+      ],
       "Download without scanning": [
         "Stiahnuť bez skenovania"
       ],
@@ -341,6 +353,9 @@
       ],
       "Edit": [
         "Upraviť"
+      ],
+      "Edit album": [
+        "Upraviť album"
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -537,6 +552,9 @@
       "Minimize transfers": [
         "Minimalizovať prenosy"
       ],
+      "More": [
+        "Viac"
+      ],
       "More actions": [
         "Ďalšie akcie"
       ],
@@ -554,6 +572,9 @@
       ],
       "Move to trash": [
         "Presunúť do koša"
+      ],
+      "Name your album": [
+        "Pomenujte svoj album"
       ],
       "New": [
         "Nový"
@@ -768,8 +789,14 @@
       "Select country": [
         "Vyberte krajinu"
       ],
+      "Set album cover": [
+        "Nastaviť obal albumu"
+      ],
       "Set as album cover": [
         "Nastaviť ako obal albumu"
+      ],
+      "Set as cover": [
+        "Nastaviť ako titulnú fotku"
       ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
@@ -971,9 +998,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Vytvoriť album"
-      ],
       "Upload": [
         "Nahrať"
       ]
@@ -2462,11 +2486,6 @@
         "Faktúra po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2548,6 +2567,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2740,6 +2764,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
       ],
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
@@ -3160,6 +3187,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Skúste používať iba písmená, číslice a _.-"
+      ],
+      "Unable to set photo as cover": [
+        "Nie je možné nastaviť fotografiu ako obálku"
       ],
       "Unexpected error, we can't import the contacts": [
         "Neočakávaná chyba, nemôžeme importovať kontakty"
@@ -3720,6 +3750,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Create new album": [
+        "Vytvoriť nový album"
+      ],
       "Security Center": [
         "Centrum zabezpečenia"
       ]
@@ -4103,6 +4136,12 @@
         "${ addressCount } emailových adries",
         "${ addressCount } emailových adries"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } položka",
+        "${ album.photoCount } položky",
+        "${ album.photoCount } položiek",
+        "${ album.photoCount } položiek"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -4342,6 +4381,9 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
+      ],
+      "Album is empty": [
+        "Album je prázdny"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Všetky (${ totalFoldersCount } zložka)",
@@ -5291,6 +5333,9 @@
       "Share via link settings": [
         "Zdieľať cez nastavenia odkazu"
       ],
+      "Shared": [
+        "Zdieľaný"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Zdieľané vlastníkom ${ rootLink.signatureEmail }"
       ],
@@ -5351,8 +5396,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet môže mať nový kľúč alebo mohlo dôjsť k manipulácii s nasledujúcimi údajmi: ${ items }. Otvorte len v prípade, že tomu dôverujete."
       ],
-      "The albums you create are shown here": [
-        "Albumy, ktoré vytvoríte budú zobrazené na tomto mieste"
+      "The albums you create are shown here.": [
+        "Albumy, ktoré vytvoríte budú zobrazené na tomto mieste."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitálny podpis bol čiastočne overený. Tento súbor bol nahraný pomocou verejne prístupného zdieľacieho odkazu používateľom bez ${ BRAND_NAME } účtu, takže jeho identitu nemožno overiť."
@@ -5539,6 +5584,9 @@
       ],
       "Unsupported file": [
         "Nepodporovaný súbor"
+      ],
+      "Untitled": [
+        "Bez názvu"
       ],
       "Updating drive search...": [
         "Aktualizácia vyhľadávania na disku..."
@@ -5853,11 +5901,6 @@
     "info": {
       "Selected color:": [
         "Vybraná farba:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Prosím kontaktujte nás na ${ email } pre viac informácií, ako uhradiť platobnú transakciu v hotovosti."
       ]
     },
     "Info on errors": {
@@ -8345,6 +8388,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } ponuka končí dnes!"
       ],
+      "Don’t show this offer again": [
+        "Nabudúce to už nezobrazovať"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získajte Drive Plus len za ${ pricingTitle }"
       ],
@@ -8357,14 +8403,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Posledná šanca ušetriť 80% za prvý mesiac s ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Posledný deň na ušetrenie"
+      ],
       "Limited-time offer": [
         "Časovo obmedzená ponuka"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 mesiacov"
       ],
       "Maybe later": [
         "Možno neskôr"
       ],
+      "Save": [
+        "Ušetrite"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ušetrite ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ušetrite 80 % v prvom mesiaci."
+      ],
+      "Save big when you pay annually": [
+        "Pri ročnej platbe ušetríte viac"
+      ],
+      "This offer won't be shown again.": [
+        "Táto ponuka sa už nezobrazí."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Keď prejdete z mesačného na ročné predplatné."
+      ],
+      "You currently pay": [
+        "V súčasnosti platíte"
       ]
     },
     "Offer feature": {
@@ -11027,11 +11097,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tento zdieľaný súbor pridajte do svojho ${ DRIVE_APP_NAME } pre neskorší jednoduchý prístup."
@@ -11113,6 +11178,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Validation": {
@@ -11303,9 +11373,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Povolené sú len alfanumerické malé písmená, bodky, pomlčky a podčiarkovníky"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Upozorňujeme, že pri výbere tohto spôsobu platby nie je možné váš účet okamžite navýšiť. Váš účet aktualizujeme po zúčtovaní platby."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."
