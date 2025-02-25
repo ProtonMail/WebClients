@@ -1473,6 +1473,7 @@ const InteractiveCalendarView = ({
             startEALMetric('edit');
         }
         let hasClosedModalOrPopover = false;
+        let hasThrown = false;
         let hasStartChanged;
         // uid is not defined when we create a new event
         const UID = temporaryEvent.tmpData.uid || TMP_UID;
@@ -1645,6 +1646,7 @@ const InteractiveCalendarView = ({
                 handleCreateNotification(successNotification);
             }
         } catch (e: any) {
+            hasThrown = true;
             if (notificationId) {
                 removeNotification(notificationId);
             }
@@ -1682,7 +1684,7 @@ const InteractiveCalendarView = ({
                 dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: false }));
             }
 
-            if (!hasClosedModalOrPopover) {
+            if (!hasClosedModalOrPopover && !hasThrown) {
                 closeProcessingModal(uniqueId, isModal ? 'modal' : 'popover');
             }
         }
