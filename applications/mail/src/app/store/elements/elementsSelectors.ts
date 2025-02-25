@@ -207,6 +207,11 @@ export const shouldResetElementsState = createSelector(
         return (
             currentParams.search.keyword !== params.search.keyword || // Reset the cache since we do not support client search (filtering)
             (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search)) ||
+            // if it is ES Search, check for labelID changes
+            (currentParams.esEnabled &&
+                isSearch(currentParams.search) &&
+                currentParams.search.keyword === params.search.keyword &&
+                currentParams.labelID !== params.labelID) ||
             !pageIsConsecutive ||
             // Reset the cache when sort changes to ensure correct ordering
             !isDeepEqual(currentParams.sort, params.sort)
