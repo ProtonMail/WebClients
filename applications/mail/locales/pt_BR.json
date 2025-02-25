@@ -7897,11 +7897,6 @@
         "Cor selecionada:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Entre em contato conosco pelo ${ email } para obter instruções de como efetuar o pagamento em dinheiro."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "Clique para ver detalhes"
@@ -9218,9 +9213,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "no dia ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "na primeira Sexta-feira"
       ],
@@ -10358,6 +10350,9 @@
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
+      "Don’t show this offer again": [
+        "Não mostrar mais esta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtenha o Drive Plus por apenas ${ pricingTitle }"
       ],
@@ -10370,14 +10365,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Último dia para eocnomizar"
+      ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Save": [
+        "Economize"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Economize ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Economize 80% no seu primeiro mês"
+      ],
+      "Save big when you pay annually": [
+        "Aproveite descontos incríveis ao pagar anualmente!"
+      ],
+      "This offer won't be shown again.": [
+        "Esta oferta não será exibida novamente."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quando você muda de uma assinatura mensal para anual."
+      ],
+      "You currently pay": [
+        "Você paga atualmente"
       ]
     },
     "Offer feature": {
@@ -10891,6 +10910,9 @@
       ],
       "Filter labels": [
         "Filtrar marcadores"
+      ],
+      "Filter quick actions": [
+        "Filtrar as ações rápidas"
       ],
       "First name": [
         "Primeiro nome"
@@ -12867,6 +12889,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Atalhos do teclado do ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
@@ -13969,9 +13994,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."

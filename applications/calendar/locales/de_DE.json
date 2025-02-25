@@ -2528,18 +2528,18 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Nach…"
+      "Don't end": [
+        "Hört nicht auf"
       ],
-      "Never": [
-        "Niemals"
+      "End after": [
+        "Endet nach"
       ],
-      "On date…": [
-        "Am Zeitpunkt …"
+      "End on": [
+        "Endet am"
       ],
-      "time": [
-        "mal",
-        "mal"
+      "event": [
+        "Termin",
+        "Termine"
       ]
     },
     "Cycle": {
@@ -3998,11 +3998,11 @@
       "Contacts": [
         "Kontakte"
       ],
-      "Custom recurrence": [
-        "Benutzerdefinierte Wiederholung"
-      ],
       "Name": [
         "Name"
+      ],
+      "Repeat event": [
+        "Termin wiederholen"
       ],
       "Search": [
         "Suchen"
@@ -4661,7 +4661,7 @@
         "Dezidierte Server"
       ],
       "default email address": [
-        "standard E-Mail-Adresse"
+        "Standard-E-Mail-Adresse"
       ],
       "Deleting event...": [
         "Termin wird gelöscht...",
@@ -5503,8 +5503,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Bitte kontaktiere uns unter ${ email } für Anweisungen, wie du unsere Rechnung mit Bargeld begleichen kannst."
+      "How to send a cash payment?": [
+        "Wie sendet man eine Bargeldzahlung?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Die Anleitung dazu findest du im Artikel: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5820,9 +5823,6 @@
       "Encrypt emails": [
         "E-Mails verschlüsseln"
       ],
-      "Ends": [
-        "Endet"
-      ],
       "Event duration": [
         "Termindauer"
       ],
@@ -5831,6 +5831,9 @@
       ],
       "Event title": [
         "Titel des Termins"
+      ],
+      "Every": [
+        "Jede"
       ],
       "Expiration (${ patternExpiration })": [
         "Ablaufdatum (${ patternExpiration })"
@@ -5849,9 +5852,6 @@
       ],
       "Forwards to": [
         "Leitet weiter an"
-      ],
-      "Frequency": [
-        "Häufigkeit"
       ],
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
@@ -5937,6 +5937,9 @@
       "Notifications": [
         "Benachrichtigungen"
       ],
+      "On": [
+        "Ein"
+      ],
       "Operating system": [
         "Betriebssystem"
       ],
@@ -5994,12 +5997,6 @@
       ],
       "Region": [
         "Region"
-      ],
-      "Repeat every": [
-        "Wiederholen alle"
-      ],
-      "Repeat on": [
-        "Wiederholen am"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -6468,8 +6465,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "am ${ dayOfMonth }. Tag"
+      "on the ${ shortenedDay }": [
+        "am ${ shortenedDay }"
       ],
       "on the first Friday": [
         "am ersten Freitag"
@@ -7721,6 +7718,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } Angebot läuft heute ab!"
       ],
+      "Don’t show this offer again": [
+        "Dieses Angebot nicht mehr zeigen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hol dir Drive Plus für nur ${ pricingTitle }"
       ],
@@ -7733,14 +7733,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Letzte Chance auf 80% Rabatt auf den ersten Monat von ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Letzter Tag zum Sparen"
+      ],
       "Limited-time offer": [
         "Zeitlich begrenztes Angebot"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus für 12 Monate"
       ],
       "Maybe later": [
         "Vielleicht später"
       ],
+      "Save": [
+        "Sparen"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spare ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Spare 80% im ersten Monat."
+      ],
+      "Save big when you pay annually": [
+        "Spare kräftig, wenn du jährlich bezahlst"
+      ],
+      "This offer won't be shown again.": [
+        "Dieses Angebot wird nicht wieder angezeigt."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Beim Wechsel von einem Monats- zu einem Jahresabonnement."
+      ],
+      "You currently pay": [
+        "Du bezahlst derzeit"
       ]
     },
     "Offer feature": {
@@ -7824,6 +7848,9 @@
       "Custom": [
         "Benutzerdefiniert"
       ],
+      "Custom...": [
+        "Benutzerdefiniert..."
+      ],
       "Day": [
         "Tag",
         "Tage"
@@ -7834,11 +7861,14 @@
       "Every day": [
         "Täglich"
       ],
-      "Every month": [
-        "Monatlich"
+      "Every month ${ description }": [
+        "Monatlich ${ description }"
       ],
-      "Every week": [
-        "Wöchentlich"
+      "Every week ${ everyWeekDescription }": [
+        "Wöchentlich ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Werktags ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Jährlich"
@@ -9872,6 +9902,9 @@
       "Details": [
         "Details"
       ],
+      "Does not repeat": [
+        "Keine Wiederholung"
+      ],
       "Downgrade account": [
         "Konto downgraden"
       ],
@@ -9922,6 +9955,21 @@
       ],
       "Event is happening on defined time slot": [
         "Termin findet in einem definierten Zeitfenster statt"
+      ],
+      "Every day": [
+        "Täglich"
+      ],
+      "Every month ${ option.text }": [
+        "Monatlich ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Wöchentlich am ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Werktags ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Jährlich"
       ],
       "Exporting contacts": [
         "Kontakte werden exportiert"
@@ -10074,9 +10122,6 @@
       "Security center": [
         "Sicherheitszentrum"
       ],
-      "Select a day in the month": [
-        "Einen Tag im Monat auswählen"
-      ],
       "Select a plan": [
         "Abonnement auswählen"
       ],
@@ -10091,9 +10136,6 @@
       ],
       "Select event end time": [
         "Endzeit des Termins auswählen"
-      ],
-      "Select event frequency": [
-        "Terminhäufigkeit auswählen"
       ],
       "Select event frequency interval": [
         "Wiederholungshäufigkeit des Termins wählen"
@@ -10118,9 +10160,6 @@
       ],
       "Select the way to send this notification": [
         "Auswählen, wie diese Benachrichtigung gesendet werden soll"
-      ],
-      "Select when this event will stop happening": [
-        "Auswählen, wann dieser Termin endet"
       ],
       "Select when you want this notification to be sent": [
         "Auswählen, wann diese Benachrichtigung gesendet werden soll"
@@ -10607,9 +10646,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Nur alphanumerische Kleinbuchstaben, Punkte, Bindestriche und Unterstriche sind erlaubt"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bitte beachte, dass ein Upgrade deines Kontos durch die Wahl dieser Zahlungsmethode nicht sofort durchgeführt werden kann. Wir werden dein Konto umstellen, sobald die Zahlung bei uns eingegangen ist."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."

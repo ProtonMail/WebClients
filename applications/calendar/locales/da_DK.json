@@ -314,6 +314,9 @@
       "Forward as attachment": [
         "Videresend som vedhæftning"
       ],
+      "Get ${ planOrAppName }": [
+        "Få ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Kontakt os"
       ],
@@ -445,6 +448,9 @@
       ],
       "Merge contacts": [
         "Flet kontakter"
+      ],
+      "More actions": [
+        "Flere handlinger"
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
@@ -1207,6 +1213,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Luk"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -1215,6 +1224,18 @@
       ],
       "Continue your subscription": [
         "Fortsæt dit abonnement"
+      ],
+      "Create label": [
+        "Opret etiket"
+      ],
+      "Discover and set up features": [
+        "Udforsk og konfigurer funktioner"
+      ],
+      "Remind me later": [
+        "Påmind mig senere"
+      ],
+      "Set up other features": [
+        "Konfigurer andre funktioner"
       ]
     },
     "Calendar access select label": {
@@ -1539,6 +1560,32 @@
       ],
       "strawberry": [
         "jordbær"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Dagsvisning"
+      ],
+      "Month view": [
+        "Månedsvisning"
+      ],
+      "New event": [
+        "Ny begivenhed"
+      ],
+      "Next period": [
+        "Næste periode"
+      ],
+      "Previous period": [
+        "Forrige periode"
+      ],
+      "Search events": [
+        "Søg begivenheder"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Week view": [
+        "Ugevisning"
       ]
     },
     "Confirm modal title": {
@@ -2454,18 +2501,18 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Efter…"
+      "Don't end": [
+        "Slutter ikke"
       ],
-      "Never": [
-        "Aldrig"
+      "End after": [
+        "Slutter efter"
       ],
-      "On date…": [
-        "På dato…"
+      "End on": [
+        "Slutter"
       ],
-      "time": [
-        "gang",
-        "gange"
+      "event": [
+        "begivenhed",
+        "begivenheder"
       ]
     },
     "Cycle": {
@@ -3913,11 +3960,11 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Custom recurrence": [
-        "Tilpas gentagelse"
-      ],
       "Name": [
         "Navn"
+      ],
+      "Repeat event": [
+        "Gentag begivenhed"
       ],
       "Search": [
         "Søg"
@@ -3947,6 +3994,12 @@
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalendertidszone understøttes ikke"
+      ],
+      "Edited event not supported": [
+        "Redigeret begivenhed understøttes ikke"
+      ],
       "End time out of bounds": [
         "Sluttid uden for grænserne"
       ],
@@ -3961,6 +4014,18 @@
       ],
       "Malformed start time": [
         "Misdannet starttid"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Kun den gregorianske kalenderskala er tilladt"
+      ],
+      "Recurring event has no occurrences": [
+        "Tilbagevendende begivenhed har ingen forekomster"
+      ],
+      "Recurring rule not supported": [
+        "Tilbagevendende regel understøttes ikke"
+      ],
+      "Start time out of bounds": [
+        "Starttid uden for grænserne"
       ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
@@ -4649,6 +4714,9 @@
       "High Priority": [
         "Høj prioritet"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Hvis tastaturgenveje er aktiveret, kan du bruge følgende taster til hurtige handlinger eller til at springe til forskellige visninger. ${ metaKey } + K er altid aktiveret."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
       ],
@@ -4943,6 +5011,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalinger er ikke tilgængelige i øjeblikket. Prøv venligst igen senere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -5372,11 +5443,6 @@
         "Du kan enten opdatere din søgeforespørgsel, eller lukke søgningen for at gå tilbage til kalendervisninger"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt os venligst på ${ email } for instruktioner om, hvordan du betaler os med kontanter."
-      ]
-    },
     "Info message": {
       "No results found": [
         "Ingen resultater fundet"
@@ -5470,13 +5536,43 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "Opret ny begivenhed"
+      ],
+      "Day view": [
+        "Dagsvisning"
+      ],
+      "Month view": [
+        "Månedsvisning"
+      ],
+      "Next period": [
+        "Næste periode"
+      ],
+      "Open quick actions menu": [
+        "Åbn menu for hurtige handlinger"
+      ],
       "Open this modal": [
         "Åbn dette hjælpevindue"
+      ],
+      "Previous period": [
+        "Forrige periode"
+      ],
+      "Search events": [
+        "Søg begivenheder"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Week view": [
+        "Ugevisning"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Grundlæggende handlinger"
+      ],
+      "View options": [
+        "Vis indstillinger"
       ]
     },
     "Knowledge base link label": {
@@ -5657,9 +5753,6 @@
       "Encrypt emails": [
         "Kryptér e-mails"
       ],
-      "Ends": [
-        "Slutter"
-      ],
       "Event duration": [
         "Begivenhedsvarighed"
       ],
@@ -5668,6 +5761,9 @@
       ],
       "Event title": [
         "Begivenhedstitel"
+      ],
+      "Every": [
+        "Hver"
       ],
       "Expiration (${ patternExpiration })": [
         "Udløb (${ patternExpiration })"
@@ -5686,9 +5782,6 @@
       ],
       "Forwards to": [
         "Videresender til"
-      ],
-      "Frequency": [
-        "Frekvens"
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
@@ -5831,12 +5924,6 @@
       ],
       "Region": [
         "Område"
-      ],
-      "Repeat every": [
-        "Gentag hver"
-      ],
-      "Repeat on": [
-        "Gentag på"
       ],
       "Reveal password": [
         "Vis adgangskode"
@@ -6299,9 +6386,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dag ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "på den første fredag"
       ],
@@ -7552,6 +7636,9 @@
       "Custom": [
         "Tilpas"
       ],
+      "Custom...": [
+        "Brugerdefineret..."
+      ],
       "Day": [
         "Dag",
         "Dage"
@@ -7562,11 +7649,14 @@
       "Every day": [
         "Hver dag"
       ],
-      "Every month": [
-        "Hver måned"
+      "Every month ${ description }": [
+        "Hver måned ${ description }"
       ],
-      "Every week": [
-        "Hver uge"
+      "Every week ${ everyWeekDescription }": [
+        "Hver uge ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Hver hverdag ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Hvert år"
@@ -9524,6 +9614,9 @@
       "Details": [
         "Detaljer"
       ],
+      "Does not repeat": [
+        "Gentages ikke"
+      ],
       "Downgrade account": [
         "Nedgradér konto"
       ],
@@ -9574,6 +9667,21 @@
       ],
       "Event is happening on defined time slot": [
         "Begivenheden finder sted indenfor defineret tidsramme"
+      ],
+      "Every day": [
+        "Hver dag"
+      ],
+      "Every month ${ option.text }": [
+        "Hver måned ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Hver uge ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Hver hverdag ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Hvert år"
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
@@ -9723,9 +9831,6 @@
       "Security center": [
         "Sikkerhedscenter"
       ],
-      "Select a day in the month": [
-        "Vælg en dag i måneden"
-      ],
       "Select a plan": [
         "Vælg et abonnement"
       ],
@@ -9740,9 +9845,6 @@
       ],
       "Select event end time": [
         "Vælg sluttidspunkt for begivenhed"
-      ],
-      "Select event frequency": [
-        "Vælg hyppighed for begivenhed"
       ],
       "Select event frequency interval": [
         "Vælg frekvensinterval for begivenhed"
@@ -9767,9 +9869,6 @@
       ],
       "Select the way to send this notification": [
         "Vælg måden at sende denne notifikation på"
-      ],
-      "Select when this event will stop happening": [
-        "Vælg hvornår denne begivenhed ophører med at forekomme"
       ],
       "Select when you want this notification to be sent": [
         "Vælg når du ønsker, at denne notifikation skal sendes"
@@ -10115,9 +10214,6 @@
       ],
       "Name is required": [
         "Navn er påkrævet"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."

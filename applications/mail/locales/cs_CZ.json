@@ -8162,8 +8162,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Prosíme kontaktujte nás na ${ email } pro více informací, jak zaplatit v hotovosti."
+      "How to send a cash payment?": [
+        "Jak poslat platbu v hotovosti?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Pokyny naleznete v článku: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -9505,8 +9508,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "den ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }"
       ],
       "on the first Friday": [
         "první pátek"
@@ -10692,6 +10695,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
+      "Don’t show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získejte Drive Plus za pouhých ${ pricingTitle }"
       ],
@@ -10704,14 +10710,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Poslední šance získat 80% slevu na první měsíc ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Poslední den, kdy můžete ušetřit"
+      ],
       "Limited-time offer": [
         "Časově omezená nabídka"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 měsíců"
       ],
       "Maybe later": [
         "Možná později"
       ],
+      "Save": [
+        "Ušetřete"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ušetřete ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ušetřete 80% za první měsíc."
+      ],
+      "Save big when you pay annually": [
+        "Při roční platbě můžete výrazně ušetřit"
+      ],
+      "This offer won't be shown again.": [
+        "Tato nabídka se již nezobrazí."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Při přechodu z měsíčního na roční předplatné."
+      ],
+      "You currently pay": [
+        "V současnosti platíte"
       ]
     },
     "Offer feature": {
@@ -14491,9 +14521,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Povoleny jsou pouze alfanumerické malé znaky, tečky, pomlčky a podtržítka"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Berte prosím na vědomí, že výběrem této platební metody nemůže být váš účet navýšen okamžitě. Předplatné vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."

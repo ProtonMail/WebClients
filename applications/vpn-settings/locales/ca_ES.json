@@ -211,6 +211,9 @@
       "Delete member": [
         "Elimina el membre"
       ],
+      "Delete policy": [
+        "Elimina la política"
+      ],
       "Delete user": [
         "Elimina un usuari"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Selecciona el cicle de facturació ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Seleccioneu la ciutat ${ city }"
+      ],
       "Select country": [
         "Seleccioneu el país"
+      ],
+      "Select country ${ country }": [
+        "Seleccioneu el país ${ country }"
       ],
       "select file": [
         "selecciona un fitxer"
@@ -2318,11 +2327,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Creeu polítiques per a gestionar l'accés a servidors compartits."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Creeu polítiques per a decidir qui es pot connectar als servidors compartits de cada país."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Tothom a la vostra organització es pot connectar a servidors compartits."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Tothom a la vostra organització es pot connectar a servidors compartits de tots els països."
       ],
       "If disabled, only admins will have access.": [
         "Si està desactivat, només els administradors hi tenen accés."
@@ -2553,6 +2562,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
+      ],
+      "Error creating policy.": [
+        "S'ha produït un error en crear la política."
+      ],
+      "Error deleting policy.": [
+        "S'ha produït un error en eliminar la política."
+      ],
+      "Error updating policy.": [
+        "S'ha produït un error en actualitzar la política."
       ],
       "Failed to process the logo": [
         "No s'ha pogut processar el logo"
@@ -4451,9 +4469,6 @@
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
       ],
-      "No common passwords": [
-        "Cap contrasenya comuna"
-      ],
       "No gateways": [
         "Sense passarel·les"
       ],
@@ -4462,9 +4477,6 @@
       ],
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Cap seqüència predictible (1234, aaa)"
       ],
       "No results found": [
         "No s'ha trobat cap resultat."
@@ -4874,6 +4886,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Això pot trigar uns segons o minuts depenent del vostre dispositiu"
+      ],
+      "This cannot be undone.": [
+        "Aquesta operació no es pot desfer."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Això pot trigar força temps. No tanqueu aquesta pàgina ni us desconnecteu d'internet."
@@ -5403,8 +5418,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contacteu amb nosaltres en ${ email } per a rebre instruccions de com fer un pagament en efectiu."
+      "How to send a cash payment?": [
+        "Com enviar un pagament en efectiu?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Trobeu les instruccions a l'article: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5589,6 +5607,9 @@
       ],
       "Anderson": [
         "Pujol"
+      ],
+      "Apply policy to": [
+        "Apliqueu la política a"
       ],
       "Assertion Consumer Service URL": [
         "URL d'Assertion Consumer Service"
@@ -5863,9 +5884,6 @@
       "New password": [
         "Contrasenya nova"
       ],
-      "New policy name": [
-        "Nou nom de la política"
-      ],
       "New second password": [
         "Nova segona contrasenya"
       ],
@@ -5937,6 +5955,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Compartiu qualsevol comentari per a ajudar-nos a millorar."
+      ],
+      "Policy name": [
+        "Nom de la política"
       ],
       "Postal code": [
         "Codi postal"
@@ -7625,9 +7646,6 @@
       "Downloaded 2FA recovery codes": [
         "Codis de recuperació 2FA descarregats"
       ],
-      "Error creating policy": [
-        "S'ha produït un error en crear la política."
-      ],
       "Invalid code": [
         "El codi no és vàlid."
       ],
@@ -7645,9 +7663,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credencials OpenVPN / IKEv2 regenerades"
-      ],
-      "Policy created successfully": [
-        "S'ha creat la política."
       ],
       "Reminder has been sent": [
         "S'ha enviat un recordatori"
@@ -7677,6 +7692,9 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don’t show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obteniu Drive Plus per només ${ pricingTitle }"
       ],
@@ -7689,14 +7707,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Últim dia per estalviar"
+      ],
       "Limited-time offer": [
         "Oferta per temps limitat"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus durant 12 mesos"
       ],
       "Maybe later": [
         "Potser després"
       ],
+      "Save": [
+        "Estalvieu"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Estalvieu el ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Estalvieu un 80% en el vostre primer mes."
+      ],
+      "Save big when you pay annually": [
+        "Estalvieu de debò pagant anualment!"
+      ],
+      "This offer won't be shown again.": [
+        "Aquesta oferta no es tornarà a mostrar."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quan canvieu d'una subscripció mensual a una anual."
+      ],
+      "You currently pay": [
+        "Actualment pagueu"
       ]
     },
     "Offer feature": {
@@ -10074,6 +10116,15 @@
       "Phone number updated": [
         "Número de telèfon s'ha actualitzat"
       ],
+      "Policy created successfully!": [
+        "S'ha creat la política."
+      ],
+      "Policy deleted": [
+        "S'ha eliminat la política."
+      ],
+      "Policy updated successfully!": [
+        "S'ha actualitzat la política."
+      ],
       "Preference saved": [
         "S'ha desat la preferència."
       ],
@@ -10531,6 +10582,9 @@
       "Delete": [
         "Elimina"
       ],
+      "Delete ${ policyName }?": [
+        "Voleu suprimir ${ policyName }?"
+      ],
       "Delete account": [
         "Elimina el compte"
       ],
@@ -10586,6 +10640,9 @@
       "Edit billing address": [
         "Edita l'adreça de la factura"
       ],
+      "Edit countries": [
+        "Edita els països"
+      ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
       ],
@@ -10603,6 +10660,9 @@
       ],
       "Edit invoice note": [
         "Edita la nota de la factura"
+      ],
+      "Edit name": [
+        "Edita el nom"
       ],
       "Edit servers": [
         "Edita els servidors"
@@ -11102,6 +11162,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Els membres que no utilitzen l'A2F rebran un correu electrònic sol·licitant-los que ho habiliten al més aviat possible."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Les polítiques de servidor compartit es poden aplicar a cada usuari o a grups."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Especifiqueu el domini que es pot autenticar amb SSO basat en SAML"
@@ -11624,9 +11687,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Si suprimiu aquest número de telèfon, ja no podreu recuperar el vostre compte."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."

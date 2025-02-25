@@ -2329,12 +2329,6 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Tworzenie zasad zarządzania dostępem do serwerów współdzielonych"
-      ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Każdy w organizacji może łączyć się z serwerami współdzielonymi."
-      ],
       "If disabled, only admins will have access.": [
         "Wyłączenie tej funkcji ograniczy jej dostępność do tylko administratorów."
       ],
@@ -2513,6 +2507,9 @@
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } to nazwa użytkownika. Aby utworzyć ${ emailAddress }, przejdź do Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)."
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
@@ -3814,6 +3811,9 @@
       "Allocated": [
         "Przydzielona"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Umożliwienie użytkownikom łączenia się z bezpiecznymi serwerami współdzielonymi z sekcji **Kraje** aplikacji ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Już przydzielona"
       ],
@@ -4510,9 +4510,6 @@
       "No addresses exist": [
         "Brak adresów e-mail"
       ],
-      "No common passwords": [
-        "Brak popularnych haseł"
-      ],
       "No gateways": [
         "Brak bram"
       ],
@@ -4521,9 +4518,6 @@
       ],
       "No payment is required at this time.": [
         "Płatność nie jest wymagana."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Brak przewidywalnych sekwencji (1234, aaa)"
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
@@ -4884,6 +4878,9 @@
       ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
+      ],
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "Rekomendowana przez TechRadar Pro z oceną 4,2 na 5 gwiazdek"
       ],
       "Thank you": [
         "Dziękujemy"
@@ -5491,11 +5488,6 @@
         "Wybrany kolor:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Dodaj nowy adres do istniejących użytkowników organizacji."
@@ -5952,9 +5944,6 @@
       ],
       "New password": [
         "Nowe hasło"
-      ],
-      "New policy name": [
-        "Nowa nazwa zasady"
       ],
       "New second password": [
         "Nowe drugie hasło"
@@ -7735,6 +7724,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Wyłączenie tej opcji spowoduje brak powiadomień w aplikacjach ${ BRAND_NAME }."
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Podczas pierwszego miesiąca korzystania z produktu ${ BRAND_NAME }"
+      ],
       "Email subscriptions": [
         "Listy mailingowe"
       ],
@@ -7764,9 +7756,6 @@
       "Downloaded 2FA recovery codes": [
         "Pobrane kody odzyskiwania"
       ],
-      "Error creating policy": [
-        "Wystąpił błąd podczas tworzenia zasady"
-      ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
       ],
@@ -7784,9 +7773,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
-      ],
-      "Policy created successfully": [
-        "Zasada została utworzona"
       ],
       "Reminder has been sent": [
         "Przypomnienie zostało wysłane"
@@ -8017,6 +8003,9 @@
       ],
       "Organization identity updated": [
         "Tożsamość organizacji została zaktualizowana"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Zweryfikuj swój adres e-mail ${ email }, aby ustawić tożsamość organizacji."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -11535,6 +11524,9 @@
       "This will revoke the administrator permission to manage this user's account.": [
         "Spowoduje to unieważnienie dostępu administratora do zarządzania kontem użytkownika."
       ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Aby uzyskać uprawnienia administratora, będą musieli ustawić hasło zapasowe przy następnym logowaniu do ${ BRAND_NAME }."
+      ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Aby kontynuować, musisz poprosić użytkownika o dostęp do jego danych lub zresetowania hasła."
       ]
@@ -11998,9 +11990,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Usuwając ten numer telefonu, stracisz możliwość odzyskiwania swojego konta."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."

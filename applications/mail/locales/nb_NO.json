@@ -7898,8 +7898,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt oss på ${ email } for instruksjoner om hvordan du betaler med kontanter."
+      "How to send a cash payment?": [
+        "Hvordan sende en kontant betaling?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Finn instruksjonene i artikkelen: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -9215,8 +9218,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dag ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "på ${ shortenedDay }"
       ],
       "on the first Friday": [
         "på den første fredagen"
@@ -10350,6 +10353,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-tilbud utløper i dag!"
       ],
+      "Don’t show this offer again": [
+        "Ikke vis dette tilbudet igjen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaff deg Drive Plus for kun ${ pricingTitle }"
       ],
@@ -10362,14 +10368,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Siste dag for å spare"
+      ],
       "Limited-time offer": [
         "Tidsbegrenset tilbud"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus for 12 måneder"
       ],
       "Maybe later": [
         "Kanskje senere"
       ],
+      "Save": [
+        "Spar"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spar ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Spar 80% på den første måneden."
+      ],
+      "Save big when you pay annually": [
+        "Spar mye når du betaler årlig"
+      ],
+      "This offer won't be shown again.": [
+        "Dette tilbudet vises ikke igjen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Når du bytter fra et månedlig til et årlig abonnement."
+      ],
+      "You currently pay": [
+        "Du betaler for øyeblikket"
       ]
     },
     "Offer feature": {
@@ -13955,9 +13985,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Bare små alfanumeriske tegn, punktum og bindestreker (inkludert understrek) er tillatt."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."

@@ -211,6 +211,9 @@
       "Delete member": [
         "メンバーを削除"
       ],
+      "Delete policy": [
+        "ポリシーを削除"
+      ],
       "Delete user": [
         "ユーザー削除"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "支払間隔を選択${ billingText }"
       ],
+      "Select city ${ city }": [
+        "都市を選択 ${ city }"
+      ],
       "Select country": [
         "国を選択"
+      ],
+      "Select country ${ country }": [
+        "国を選択 ${ country }"
       ],
       "select file": [
         "ファイルを選択"
@@ -2308,11 +2317,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "共有サーバーへのアクセスを管理するポリシーを作成します。"
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "各国の共有サーバーに誰が接続できるかを決定するポリシーを作成します。"
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "組織内の誰もが共有サーバーに接続することができます。"
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "組織内の誰もが、すべての国の共有サーバーに接続できます。"
       ],
       "If disabled, only admins will have access.": [
         "もし無効にした場合、管理者のみがアクセスできます。"
@@ -2543,6 +2552,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin APIへの接続中にエラーが発生しました。"
+      ],
+      "Error creating policy.": [
+        "ポリシーの作成にエラーが発生しました。"
+      ],
+      "Error deleting policy.": [
+        "ポリシーの削除中にエラーが発生しました。"
+      ],
+      "Error updating policy.": [
+        "ポリシーの更新中にエラーが発生しました。"
       ],
       "Failed to process the logo": [
         "ロゴの処理に失敗しました"
@@ -4408,9 +4426,6 @@
       "No addresses exist": [
         "アドレスが存在しません"
       ],
-      "No common passwords": [
-        "一般的なパスワード以外"
-      ],
       "No gateways": [
         "ゲートウェイなし"
       ],
@@ -4419,9 +4434,6 @@
       ],
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "予測可能な配列以外 (1234, aaa)"
       ],
       "No results found": [
         "該当する項目がありません"
@@ -4821,6 +4833,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "この処理には機器により、数秒から数分を要します。"
+      ],
+      "This cannot be undone.": [
+        "これを元に戻すことはできません。"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "時間がかかる場合があります。このページを閉じたり、インターネットから切断したりしないでください。"
@@ -5341,11 +5356,6 @@
         "選択した色:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "現金での支払い方法については、${ email } 宛までお問い合わせください。"
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "組織の既存ユーザーの新しいアドレスを追加します。"
@@ -5525,6 +5535,9 @@
       ],
       "Anderson": [
         "アンダーソン"
+      ],
+      "Apply policy to": [
+        "ポリシーを適用"
       ],
       "Assertion Consumer Service URL": [
         "アサーション コンシューマ サービス URL"
@@ -5799,9 +5812,6 @@
       "New password": [
         "新しいパスワード"
       ],
-      "New policy name": [
-        "新しいポリシー名"
-      ],
       "New second password": [
         "新しいセカンドパスワード"
       ],
@@ -5873,6 +5883,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "ご意見、ご感想がありましたら、ぜひお聞かせください。"
+      ],
+      "Policy name": [
+        "ポリシー名"
       ],
       "Postal code": [
         "郵便番号"
@@ -7532,9 +7545,6 @@
       "Downloaded 2FA recovery codes": [
         "2要素認証回復コードをダウンロードしました"
       ],
-      "Error creating policy": [
-        "ポリシーの作成エラー"
-      ],
       "Invalid code": [
         "無効なコード"
       ],
@@ -7552,9 +7562,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認証情報を更新しました"
-      ],
-      "Policy created successfully": [
-        "ポリシーが正常に作成されました"
       ],
       "Reminder has been sent": [
         "リマインダーが送信されました"
@@ -7584,6 +7591,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
+      "Don’t show this offer again": [
+        "今後このオファーを表示しない"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "たった${ pricingTitle }でDrive Plusを入手"
       ],
@@ -7596,14 +7606,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "最初の月の${ plan } Plusが 80 %割引になる最後のチャンス。"
       ],
+      "Last day to save": [
+        "節約できる最後の日"
+      ],
       "Limited-time offer": [
         "期間限定オファー"
+      ],
+      "Mail Plus for 12 months": [
+        "12 か月分のMail Plus"
       ],
       "Maybe later": [
         "またあとで"
       ],
+      "Save": [
+        "節約"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "${ prices.savedPercentage }%を節約"
+      ],
       "Save 80% on your first month.": [
         "最初の月は 80 %割引。"
+      ],
+      "Save big when you pay annually": [
+        "年払いで大幅に節約"
+      ],
+      "This offer won't be shown again.": [
+        "このオファーは二度と表示されません。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "月額プランから年間プランに切り替える場合。"
+      ],
+      "You currently pay": [
+        "現在の支払い方法"
       ]
     },
     "Offer feature": {
@@ -9926,6 +9960,15 @@
       "Phone number updated": [
         "電話番号が更新されました"
       ],
+      "Policy created successfully!": [
+        "ポリシーが正常に作成されました!"
+      ],
+      "Policy deleted": [
+        "ポリシーが削除されました"
+      ],
+      "Policy updated successfully!": [
+        "ポリシーは正常に更新されました！"
+      ],
       "Preference saved": [
         "設定が保存されました"
       ],
@@ -10381,6 +10424,9 @@
       "Delete": [
         "削除"
       ],
+      "Delete ${ policyName }?": [
+        "${ policyName }を削除しますか?"
+      ],
       "Delete account": [
         "アカウントの削除"
       ],
@@ -10435,6 +10481,9 @@
       "Edit billing address": [
         "請求先住所を編集"
       ],
+      "Edit countries": [
+        "国を編集"
+      ],
       "Edit credit/debit card": [
         "クレジット・デビットカードの編集"
       ],
@@ -10452,6 +10501,9 @@
       ],
       "Edit invoice note": [
         "請求書メモを編集"
+      ],
+      "Edit name": [
+        "名前を編集"
       ],
       "Edit servers": [
         "サーバー編集"
@@ -10949,6 +11001,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "2FA を使用していないメンバーには、できるだけ早く有効にするよう求めるメールが届きます。"
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "共有サーバーポリシーは、個々のユーザーまたはグループに適用できます"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "SAML SSO での認証を許可するドメインを指定する。"
@@ -11457,9 +11512,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "この電話番号を削除すると、今後あなたのアカウントを回復することができなくなります。"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"

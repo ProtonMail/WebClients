@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "სამუდამოდ წაშლა"
+      ],
+      "Delete policy": [
+        "პოლიტიკის წაშლა"
       ],
       "Delete record": [
         "ჩანაწერის წაშლა"
@@ -1042,13 +1045,19 @@
       "Select calendar view": [
         "აირჩიეთ კალენდრის ხედი"
       ],
+      "Select city ${ city }": [
+        "ქალაქის არჩევა: ${ city }"
+      ],
       "Select country": [
         "აირჩიეთ ქვეყანა"
       ],
-      "select file": [
-        "აირჩიეთ ფაილი"
+      "Select country ${ country }": [
+        "${ country } ქვეყნის არჩევა"
       ],
       "Select file": [
+        "აირჩიეთ ფაილი"
+      ],
+      "select file": [
         "აირჩიეთ ფაილი"
       ],
       "Select files": [
@@ -3655,8 +3664,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "შექმენით იმდენი ჭდე და საქაღალდე, რამდენიც საჭიროა და იქონიეთ თქვენი საფოსტო ყუთი სუფთად."
       ],
-      "Create policies to manage access to shared servers.": [
-        "შექმენით პოლიტიკები გაზიარებულ სერვერებზე წვდომების სამართავად."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "შექმენით პოლიტიკები, რომ გადაწყვიტოთ, ვის შეუძლია გაზიარებულ სერვერებთან დაკავშირება და რომელ ქვეყანაში."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "ამ ფუნქციებთან წვდომისთვის ჩართეთ ${ PROTON_SENTINEL_NAME }"
@@ -3670,8 +3679,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "თქვენს ორგანიზაციაში გაზიარებულ სერვერებთან დაკავშირება ყველას შეუძლია."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "თქვენს ორგანიზაციაში ყველას შეუძლია გაზიარებულ სერვერებთან დაკავშირება, ყველა ქვეყანაში."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
@@ -4522,8 +4531,17 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin-ის API-თან მიერთების შეცდომა."
       ],
+      "Error creating policy.": [
+        "პოლიტიკის შექმნის შეცდომა."
+      ],
+      "Error deleting policy.": [
+        "პოლიტიკის წაშლის შეცდომა."
+      ],
       "Error in one of the conditions": [
         "შეცდომა ერთ-ერთ პირობაში"
+      ],
+      "Error updating policy.": [
+        "პოლიტიკის განახლების შეცდომა."
       ],
       "Expired": [
         "ვადაგასულია"
@@ -6946,10 +6964,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "გაააქტიურეთ ანგარიშის აღდგენის ერთი მეთოდი მაინც, რომ დარწმუნდეთ, რომ თქვენს ${ BRAND_NAME }-ის ანგარიშზე წვდომა პაროლის დაკარგვის შემთხვევაშიც კი გექნებათ."
       ],
-      "Active": [
+      "active": [
         "აქტიური"
       ],
-      "active": [
+      "Active": [
         "აქტიური"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -8157,9 +8175,6 @@
       "No addresses exist": [
         "მისამართები ნაპოვნი არაა"
       ],
-      "No common passwords": [
-        "საერთო პაროლების გარეშე"
-      ],
       "No credit card required": [
         "საკრედიტო ბარათი საჭირო არაა"
       ],
@@ -8186,9 +8201,6 @@
       ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "გამოცნობადი მიმდევრობების გარეშე (1234, aaa)"
       ],
       "No results found": [
         "შედეგების გარეშე"
@@ -8839,6 +8851,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "თქვენი მოწყობილობის წარმადობიდან გამომდინარე, რამდენიმე წამიდან რამდენიმე წუთამდე შეიძლება დასჭირდეს"
+      ],
+      "This cannot be undone.": [
+        "ეს ქმედება შეუქცევადია."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "ამას საკმაო დროს შეიძლება, დასჭირდეს. ნუ დახურავთ ამ გვერდს და ნუ გათიშავთ ინტერნეტს."
@@ -9680,11 +9695,6 @@
         "თუ ჩართულია, ქვესაქაღალდეები მშობელი საქაღალდის ფერს მემკვიდრეობით მიიღებენ."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "ნაღდი ფულით გადახდის შემთხვევაში მეტი დეტალების მისაღებად დაგვიკავშირდით ${ email }."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "დაამატეთ თქვენი ორგანიზაციის არსებულ მომხმარებელს ახალი მისამართი."
@@ -9886,6 +9896,12 @@
       "Close draft": [
         "მონახაზის დახურვა"
       ],
+      "Create new event": [
+        "ახალი მოვლენის შექმნა"
+      ],
+      "Day view": [
+        "დღის ხედი"
+      ],
       "Delete permanently": [
         "სამუდამოდ წაშლა"
       ],
@@ -9952,6 +9968,9 @@
       "Minimize / maximize composer": [
         "რედაქტორის მთელ ეკრანზე გადიდება / ჩაკეცვა"
       ],
+      "Month view": [
+        "თვის ხედი"
+      ],
       "Move down": [
         "დაბლა ჩატანა"
       ],
@@ -9982,6 +10001,9 @@
       "New message": [
         "ახალი შეტყობინება"
       ],
+      "Next period": [
+        "შემდეგი პერიოდი"
+      ],
       "Open command panel": [
         "ბრძანების პანელის გახსნა"
       ],
@@ -9991,8 +10013,14 @@
       "Open previous message": [
         "წინა შეტყობინების გახსნა"
       ],
+      "Open quick actions menu": [
+        "სწრაფი ქმედებების მენიუს გახსნა"
+      ],
       "Open this modal": [
         "ფანჯრის გახსნა"
+      ],
+      "Previous period": [
+        "წინა პერიოდი"
       ],
       "Reply": [
         "პასუხი"
@@ -10005,6 +10033,9 @@
       ],
       "Search": [
         "ძებნა"
+      ],
+      "Search events": [
+        "მოვლენების ძებნა"
       ],
       "Select / unselect": [
         "მონიშვნა / მონიშვნის მოხსნა"
@@ -10026,6 +10057,12 @@
       ],
       "Star": [
         "ვარსკვლავი"
+      ],
+      "Today": [
+        "დღეს"
+      ],
+      "Week view": [
+        "კვირის ხედი"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10049,6 +10086,9 @@
       ],
       "Message shortcuts": [
         "შეტყობინების მალსახმობები"
+      ],
+      "View options": [
+        "პარამეტრების ნახვა"
       ]
     },
     "Keys actions": {
@@ -10263,6 +10303,9 @@
       ],
       "Apply filter to existing emails": [
         "ფილტრის არსებულ ელფოსტებზე გადატარება"
+      ],
+      "Apply policy to": [
+        "პოლიტიკის გადატარება"
       ],
       "Assertion Consumer Service URL": [
         "ACS სამსახურის ბმული"
@@ -10825,9 +10868,6 @@
       "New password": [
         "ახალი პაროლი"
       ],
-      "New policy name": [
-        "ახალი პოლიტიკის სახელი"
-      ],
       "New second password": [
         "ახალი მეორე პაროლი"
       ],
@@ -10926,6 +10966,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "გაგვიზიარეთ თქვენი აზრი."
+      ],
+      "Policy name": [
+        "პოლიტიკის სახელი"
       ],
       "Port": [
         "პორტი"
@@ -11933,9 +11976,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }-ე დღე"
-      ],
       "on the first Friday": [
         "პირველ პარასკევს"
       ],
@@ -13297,9 +13337,6 @@
       "Email notifications have been enabled": [
         "ელფოსტის გაფრთხილებები ჩართულია"
       ],
-      "Error creating policy": [
-        "პოლიტიკის შექმნის შეცდომა"
-      ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
@@ -13323,9 +13360,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 მომხმარებელი და პაროლი თავიდან დაგენერირდა"
-      ],
-      "Policy created successfully": [
-        "პოლიტიკა წარმატებით შეიქმნა"
       ],
       "Reminder has been sent": [
         "შეხსენება გაგზავნილია"
@@ -13449,6 +13483,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
+      "Don’t show this offer again": [
+        "აღარ მაჩვენო ეს შემოთავაზება"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "მიიღეთ Drive Plus ფასით ${ pricingTitle }"
       ],
@@ -13461,14 +13498,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan } Plus-დან."
       ],
+      "Last day to save": [
+        "ბოლო დღე შესანახად"
+      ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus 12 თვით"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "დაზოგეთ ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "დაზოეთ 80% პირველ თვეს."
+      ],
+      "Save big when you pay annually": [
+        "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
+      ],
+      "This offer won't be shown again.": [
+        "ამ შემოთავაზებას აღარ გაჩვენებთ."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "როცა თვიურიდან წლიურ გამოწერაზე გადახვალთ."
+      ],
+      "You currently pay": [
+        "ამჟამად იხდით"
       ]
     },
     "Offer feature": {
@@ -16662,47 +16723,6 @@
         "${ totalPrice }-თვის"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -16990,6 +17010,47 @@
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
@@ -17178,6 +17239,15 @@
       ],
       "Phone number updated": [
         "ტელეფონის ნომერი განახლდა"
+      ],
+      "Policy created successfully!": [
+        "პოლიტიკა წარმატებით შეიქმნა!"
+      ],
+      "Policy deleted": [
+        "პოლიტიკა წაიშალა"
+      ],
+      "Policy updated successfully!": [
+        "პოლიტიკის განახლება წარმატებულია!"
       ],
       "Port copied to clipboard": [
         "პორტი ბუფერში დაკოპირდა"
@@ -17485,6 +17555,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ appName } keyboard shortcuts": [
+        "${ appName }-ის კლავიატურის მალსახმობები"
       ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
@@ -17884,6 +17957,9 @@
       "Decrypt key": [
         "გასაღების გაშიფრვა"
       ],
+      "Delete ${ policyName }?": [
+        "წავშალო ${ policyName }?"
+      ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"
       ],
@@ -17981,6 +18057,9 @@
       "Edit billing address": [
         "გადახდის მისამართის ჩასწორება"
       ],
+      "Edit countries": [
+        "ქვეყნების ჩასწორება"
+      ],
       "Edit credit/debit card": [
         "საკრედიტო/სადებეტო ბარათის ჩასწორება"
       ],
@@ -18001,6 +18080,9 @@
       ],
       "Edit invoice note": [
         "ინვოისის შენიშვნის ჩასწორება"
+      ],
+      "Edit name": [
+        "სახელის ჩასწორება"
       ],
       "Edit profile": [
         "პროფილის შეცვლა"
@@ -19058,6 +19140,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "დააყენებს თქვენს მიერ გაგზავნილ ქვედა კოლონტიტულს: ${ signature } ბმული თქვენს რეფერალურ ბმულზე მიუთითებს. კოლონტიტული ხელმოწერის ქვემოთ გამოჩნდება. ხელმოწერის მორგება პარამეტრებიდან შეგიძლიათ."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "გაზიარებული სერვერის პოლიტიკები, მხოლოდ, ინდივიდუალურ მომხმარებლებს, ან ჯგუფებს შეგიძლიათ, გაუზიაროთ"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "შეტყობინებების სიაში თითოეული გამომზავნის გამოსახულების ჩვენება. თუ სურათი ხელმისაწვდომი არაა, გამომგზავნის ინიციალებს გაჩვენებთ."
       ],
@@ -19831,9 +19916,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "შეამოწმეთ, არის თუ არა გაფართოება სწორად დაყენებული დ ჩართული"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "გაითვალისწინეთ, რომ გადახდის ამ მეთოდის არჩევით თქვენი ანგარიშის სატარიფო გეგმის მომენტალური შეცვლა შეუძლებელია. ტარიფი, მხოლოდ, გადახდის დასრულების შემდეგ შეიცვლება."
       ],
       "Please update the extension to its latest version": [
         "განაახლეთ ეს გაფართოება უახლეს ვერსიამდე"

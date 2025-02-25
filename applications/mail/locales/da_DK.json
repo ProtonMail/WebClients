@@ -513,6 +513,9 @@
       "Get ${ BRAND_NAME } Duo": [
         "Få ${ BRAND_NAME } Duo"
       ],
+      "Get ${ planOrAppName }": [
+        "Få ${ planOrAppName }"
+      ],
       "Get in touch": [
         "Kontakt os"
       ],
@@ -753,6 +756,9 @@
       ],
       "More": [
         "Mere"
+      ],
+      "More actions": [
+        "Flere handlinger"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Flere detaljer om ${ ariaLabelTitle }"
@@ -1872,6 +1878,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Luk"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -1881,8 +1890,23 @@
       "Continue your subscription": [
         "Fortsæt dit abonnement"
       ],
+      "Create label": [
+        "Opret etiket"
+      ],
+      "Discover and set up features": [
+        "Udforsk og konfigurer funktioner"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
       "Next": [
         "Næste"
+      ],
+      "Remind me later": [
+        "Påmind mig senere"
+      ],
+      "Set up other features": [
+        "Konfigurer andre funktioner"
       ]
     },
     "Calendar attachment tooltip": {
@@ -5331,6 +5355,12 @@
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalendertidszone understøttes ikke"
+      ],
+      "Edited event not supported": [
+        "Redigeret begivenhed understøttes ikke"
+      ],
       "End time out of bounds": [
         "Sluttid uden for grænserne"
       ],
@@ -5345,6 +5375,18 @@
       ],
       "Malformed start time": [
         "Misdannet starttid"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Kun den gregorianske kalenderskala er tilladt"
+      ],
+      "Recurring event has no occurrences": [
+        "Tilbagevendende begivenhed har ingen forekomster"
+      ],
+      "Recurring rule not supported": [
+        "Tilbagevendende regel understøttes ikke"
+      ],
+      "Start time out of bounds": [
+        "Starttid uden for grænserne"
       ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
@@ -5871,6 +5913,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
       ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Få adgang til 6.500+ højhastighedsservere på op til 10 enheder for at holde dine browserdata sikre. Tilgængelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
       ],
@@ -6128,6 +6173,9 @@
       "Create in": [
         "Opret i"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Det er ikke tilladt at oprette flere gratis konti i henhold til vores ${ termsLink }."
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit for den ubrugte del af dit tidligere abonnement"
       ],
@@ -6355,6 +6403,9 @@
       ],
       "Folder": [
         "Mapppe"
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "For yderligere information og for at fjerne begrænsninger, log ind på ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ androidAppLink } eller ${ iosAppLink }."
@@ -6956,6 +7007,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalinger er ikke tilgængelige i øjeblikket. Prøv venligst igen senere."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
@@ -7009,6 +7063,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Begynd at bruge den kortere, mere catchy version af din e-mailadresse."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsfunktioner understøttes ikke i denne browser, vi har brug for denne understøttelse for at kunne søge efter beskedindhold."
@@ -7725,11 +7782,6 @@
         "Valgte farve:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt os venligst på ${ email } for instruktioner om, hvordan du betaler os med kontanter."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "Klik for detaljer"
@@ -8430,6 +8482,9 @@
       "Remember my choice": [
         "Husk mit valg"
       ],
+      "Remove metadata": [
+        "Fjern metadata"
+      ],
       "Reveal password": [
         "Vis adgangskode"
       ],
@@ -9031,9 +9086,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dag ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "på den første fredag"
       ],
@@ -13449,9 +13501,6 @@
       ],
       "Name is required": [
         "Navn er påkrævet"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."

@@ -1376,6 +1376,26 @@
         "स्ट्रॉबेरी"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "दिन दृश्य"
+      ],
+      "Month view": [
+        "महीना दृश्य"
+      ],
+      "New event": [
+        "नया कार्यक्रम"
+      ],
+      "Search events": [
+        "कार्यक्रम खोजें"
+      ],
+      "Today": [
+        "आज"
+      ],
+      "Week view": [
+        "सप्ताह दृश्य"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "आयात अनुकूलन छोड़ें?"
@@ -2256,21 +2276,6 @@
         "आपके समय क्षेत्र के हिसाब से"
       ]
     },
-    "Custom frequency option": {
-      "After…": [
-        "… के बाद"
-      ],
-      "Never": [
-        "कभी नहीं"
-      ],
-      "On date…": [
-        "इस तारीख को…"
-      ],
-      "time": [
-        "बार",
-        "बार"
-      ]
-    },
     "Cycle": {
       "/month": [
         "/माह"
@@ -2367,6 +2372,9 @@
       ],
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "अपने दिन को व्यवस्थित करें, समय ट्रैक करें, कार्य प्राथमिकता दें। अनुकूलित कार्यक्रम रंग के साथ अपने कैलेंडर को रंग दें।"
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "एक क्लिक के साथ ज़ूम मीटिंग बनाएं और अपने कार्यक्रम में जॉइनिंग विवरण जोड़ें।"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "संपर्कों को डिक्रिप्ट किया जा रहा है… इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप निर्यात किए गए अपने सभी संपर्कों के साथ फ़ाइल डाउनलोड करने में सक्षम होंगे।"
@@ -3434,9 +3442,6 @@
       "Contacts": [
         "संपर्क"
       ],
-      "Custom recurrence": [
-        "अनुकूलित आवृत्ति"
-      ],
       "Name": [
         "नाम"
       ],
@@ -4083,6 +4088,9 @@
       "High Priority": [
         "उच्च प्राथमिकता"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "यदि कीबोर्ड शॉर्टकट सक्षम हैं, तो आप त्वरित कार्यों के लिए या अलग-अलग दृश्यों पर जाने के लिए निम्नलिखित कुंजियों का उपयोग कर सकते हैं। ${ metaKey } + K हमेशा सक्षम रहता है।"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "यदि आपको अपना खाता बनाने में परेशानी हो रही है, तो कृपया एक निमंत्रण का अनुरोध करें और हम एक व्यावसायिक दिन के भीतर जवाब देंगे।"
       ],
@@ -4718,11 +4726,6 @@
         "आप या तो अपने खोज क्वेरी को अपडेट कर सकते हैं या खोज को बंद करके कैलेंडर दृश्य में वापस जा सकते हैं"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "कृपया हमें नकद के साथ भुगतान करने के निर्देशों के लिए ${ email } पर संपर्क करें।"
-      ]
-    },
     "Info message": {
       "No results found": [
         "कोई नतीजा नहीं मिला"
@@ -4816,13 +4819,37 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "नया कार्यक्रम बनाएँ"
+      ],
+      "Day view": [
+        "दिन दृश्य"
+      ],
+      "Month view": [
+        "महीना दृश्य"
+      ],
+      "Open quick actions menu": [
+        "त्वरित कार्य मेन्यू खोलें"
+      ],
       "Open this modal": [
         "इस मोडल को खोलें"
+      ],
+      "Search events": [
+        "कार्यक्रम खोजें"
+      ],
+      "Today": [
+        "आज"
+      ],
+      "Week view": [
+        "सप्ताह दृश्य"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "बुनियादी क्रियाएं"
+      ],
+      "View options": [
+        "विकल्प देखें"
       ]
     },
     "Knowledge base link label": {
@@ -4991,9 +5018,6 @@
       "Encrypt emails": [
         "ईमेल एन्क्रिप्ट करें"
       ],
-      "Ends": [
-        "समाप्त"
-      ],
       "Event duration": [
         "इवेंट समय"
       ],
@@ -5020,9 +5044,6 @@
       ],
       "Forwards to": [
         "इधर फॉरवर्ड होगा"
-      ],
-      "Frequency": [
-        "आवृत्ति"
       ],
       "From: ${ fromEmail }": [
         "से: ${ fromEmail }"
@@ -5162,12 +5183,6 @@
       ],
       "Region": [
         "क्षेत्र"
-      ],
-      "Repeat every": [
-        "दोहराएं हर"
-      ],
-      "Repeat on": [
-        "दोहराना चालू"
       ],
       "Reveal password": [
         "पासवर्ड प्रकट"
@@ -5565,9 +5580,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "दिन ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "पहले शुक्रवार को"
       ],
@@ -6529,12 +6541,6 @@
       "Every day": [
         "हर दिन"
       ],
-      "Every month": [
-        "हर महीने"
-      ],
-      "Every week": [
-        "हर हफ्ते"
-      ],
       "Every year": [
         "हर साल"
       ],
@@ -7243,6 +7249,12 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "${ BRAND_NAME } पे दोस्तो को बुलाएं"
+      ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "आसानी से वीडियो मीटिंग लिंक बनाएं और अपने कार्यक्रम में जोड़ें।"
+      ],
+      "Video conferencing is here!": [
+        "वीडियो कॉन्फ्रेंसिंग अब उपलब्ध है!"
       ]
     },
     "sso": {
@@ -8078,9 +8090,6 @@
       "Security center": [
         "सुरक्षा केंद्र"
       ],
-      "Select a day in the month": [
-        "महीने में एक दिन चुनें"
-      ],
       "Select a plan": [
         "एक योजना चुनें"
       ],
@@ -8095,9 +8104,6 @@
       ],
       "Select event end time": [
         "इवेंट खत्म होने की तारीख चुनें"
-      ],
-      "Select event frequency": [
-        "इवेंट कितने बार होगा चुने"
       ],
       "Select event frequency interval": [
         "इवेंट फ्रिक्वेंसी की अवधि चुनें"
@@ -8122,9 +8128,6 @@
       ],
       "Select the way to send this notification": [
         "इस सूचना को भेजने का तरीका चुनें"
-      ],
-      "Select when this event will stop happening": [
-        "चुनें कि यह कार्यक्रम कब समाप्त होगा"
       ],
       "Select when you want this notification to be sent": [
         "चुनें कि आप यह सूचना कब भेजना चाहते हैं"
@@ -8414,9 +8417,6 @@
       ],
       "Missing alias suffix": [
         "नकली नाम का सफिक्स खाली"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "कृपया ध्यान दें कि इस भुगतान विधि को चुनकर, आपके खाते को तुरंत अपग्रेड नहीं किया जा सकता है। भुगतान क्लियर होते ही हम आपके खाते को अपडेट कर देंगे।"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "रिपोर्ट एंड-टू-एंड एन्क्रिप्टेड नहीं हैं, कृपया कोई संवेदनशील जानकारी न भेजें।"
@@ -8714,6 +8714,11 @@
       ],
       "Yearly, ${ untilString }": [
         "वार्षिक, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "ज़ूम मीटिंग जोड़ें"
       ]
     }
   }

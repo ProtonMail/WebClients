@@ -895,7 +895,7 @@
         "Не захавана"
       ],
       "OK": [
-        "Добра"
+        "OK"
       ],
       "Open": [
         "Адкрыць"
@@ -1036,7 +1036,7 @@
         "Паведаміць аб праблеме"
       ],
       "Report an issue": [
-        "Паведаміць пра праблему"
+        "Паведаміць аб праблеме"
       ],
       "Report phishing": [
         "Паведаміць пра фішынг"
@@ -1385,6 +1385,9 @@
       ],
       "Use ${ label } theme": [
         "Выкарыстоўваць тэму ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "Скарыстацца ${ PASS_APP_NAME }"
       ],
       "Use a different card": [
         "Скарыстацца іншай карткай"
@@ -5899,6 +5902,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "Менеджар пароляў ${ BRAND_NAME } дазваляе ствараць, захоўваць і аўтазапаўняць паролі і таму, вам ніколі не давядзецца скідаць іх."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новы каляндар",
         "${ calendarsToBeCreatedCount } новыя календары",
@@ -6529,6 +6535,9 @@
       "Default email application": [
         "Прадвызначаная праграма электроннай пошты"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Выяўленне адбываецца на вашай прыладзе і таму, ніякія даныя з вашых лістоў не адпраўляюцца на нашы серверы."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Ці ведаеце вы, што ў вас ёсць зашыфраванае воблачнае сховішча, якое ўключае ваш уліковы запіс ${ BRAND_NAME }? Пераходзьце ў ${ DRIVE_APP_NAME } і па максімуму выкарыстоўвайце сваю прастору. Гэта абсалютна бясплатна."
       ],
@@ -6572,7 +6581,7 @@
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
       "Download on the App Store": [
-        "Спампваваць у App Store"
+        "Спампававаць у App Store"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
@@ -7020,6 +7029,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Штомесяц ${ onDayString }"
+      ],
+      "More infos": [
+        "Падрабязней"
       ],
       "More refine actions": [
         "Больш удасканаленыя дзеянні"
@@ -7624,6 +7636,9 @@
       "This sender's public key has not been trusted yet.": [
         "Публічны ключ адпраўніка яшчэ не быў давераным."
       ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Гэта было паказана вам, бо тэма вашага ліста змяшчае ключавыя словы для скіду пароля."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
@@ -8162,8 +8177,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Напішыце нам на электронную пошту ${ email } для атрымання інструкцый па аплаце наяўнымі."
+      "How to send a cash payment?": [
+        "Як адправіць плацеж наяўнымі грашыма?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Інструкцыі можна знайсці ў артыкуле: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8632,6 +8650,9 @@
       ],
       "Don't show this again": [
         "Больш не паказваць"
+      ],
+      "Don't show this suggestion": [
+        "Не паказваць гэту прапанову"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "напрыклад, Amazon, eBay, Etsy"
@@ -9505,8 +9526,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "у ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "у ${ shortenedDay }"
       ],
       "on the first Friday": [
         "у першую пятніцу месяца"
@@ -10692,6 +10713,9 @@
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
       ],
+      "Don’t show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Атрымайце Drive Plus усяго за ${ pricingTitle }"
       ],
@@ -10704,14 +10728,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Апошні дзень, калі можна сэканоміць"
+      ],
       "Limited-time offer": [
         "Часовая прапанова"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus за 12 месяцаў"
       ],
       "Maybe later": [
         "Магчыма пазней"
       ],
+      "Save": [
+        "Эканомія"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Эканомія ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Зэканомце 80% у першы месяц."
+      ],
+      "Save big when you pay annually": [
+        "Эканомце больш пры гадавой аплаце"
+      ],
+      "This offer won't be shown again.": [
+        "Гэта прапанова больш не будзе паказвацца."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Пры пераходзе з памесячнай на гадавую падпіску."
+      ],
+      "You currently pay": [
+        "У цяперашні час аплачана"
       ]
     },
     "Offer feature": {
@@ -13350,7 +13398,7 @@
         "${ emailsCount } адрасоў электроннай пошты"
       ],
       "${ feature } is now active": [
-        "${ feature } у актыўным стане"
+        "${ feature } цяпер у актыўным стане"
       ],
       "${ unreads } unread message": [
         "${ unreads } непрачытанае паведамленне",
@@ -13891,6 +13939,9 @@
       ],
       "Notes": [
         "Нататкі"
+      ],
+      "On-device suggestions": [
+        "Прапановы на прыладзе"
       ],
       "One email, many recipients": [
         "Адна электронная пошта, шмат атрымальнікаў"
@@ -14491,9 +14542,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Дазволены толькі літарна-лічбавыя сімвалы ў ніжнім рэгістры, кропкі, злучкі і сімвалы падкрэслівання."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."

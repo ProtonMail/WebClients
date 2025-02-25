@@ -70,11 +70,11 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "永久删除"
+      ],
+      "Delete policy": [
+        "删除策略"
       ],
       "Delete record": [
         "删除记录"
@@ -938,7 +941,7 @@
         "重发验证码"
       ],
       "Requires a verified recovery email address": [
-        "需要一个经过验证的恢复邮箱地址"
+        "需要一个经过验证的密保邮箱地址"
       ],
       "Resend code": [
         "重新发送验证码"
@@ -1042,13 +1045,19 @@
       "Select calendar view": [
         "选择日历视图"
       ],
+      "Select city ${ city }": [
+        "选择城市 ${ city }"
+      ],
       "Select country": [
         "选择国家/地区"
       ],
-      "select file": [
-        "选择文件"
+      "Select country ${ country }": [
+        "选择国家 ${ country }"
       ],
       "Select file": [
+        "选择文件"
+      ],
+      "select file": [
         "选择文件"
       ],
       "Select files": [
@@ -3647,8 +3656,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "根据需要创建标签或文件夹，以保持收件箱整洁。"
       ],
-      "Create policies to manage access to shared servers.": [
-        "创建管理共享服务器访问权限的策略。"
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "创建策略，决定谁可以连接到每个国家的共享服务器。"
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "开启 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
@@ -3662,8 +3671,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "组织中的每个人都可以连接到共享服务器。"
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "组织内的任何人都可以连接到所有国家的共享服务器。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "若您的密码或其他数据从第三方服务泄露，您将收到通知。"
@@ -4523,8 +4532,17 @@
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
       ],
+      "Error creating policy.": [
+        "创建策略时出错。"
+      ],
+      "Error deleting policy.": [
+        "删除策略时出错。"
+      ],
       "Error in one of the conditions": [
         "条件存在错误"
+      ],
+      "Error updating policy.": [
+        "创建策略时出错。"
       ],
       "Expired": [
         "已失效"
@@ -5157,7 +5175,7 @@
         "联系人 ${ BRAND_NAME }"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "请${ signIn }后重新发送验证邮件。"
+        "请 ${ signIn } 后重新发送验证邮件。"
       ],
       "sign in": [
         "登录"
@@ -6914,11 +6932,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "Active": [
-        "已启用"
-      ],
       "active": [
         "启用"
+      ],
+      "Active": [
+        "已启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7008,10 +7026,10 @@
         "分配量"
       ],
       "Allow recovery by email": [
-        "允许通过电子邮件恢复"
+        "允许通过密保邮箱恢复"
       ],
       "Allow recovery by phone": [
-        "允许通过手机恢复"
+        "允许通过密保手机恢复"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "允许用户从 ${ VPN_APP_NAME } 应用程序的**国家**部分连接到安全的共享服务器。"
@@ -7044,7 +7062,7 @@
         "并"
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "任何子文件夹也将被删除。不过，储存在 ${ nameDeleted } 文件夹中的电子邮件不会被删除，且可以在 “所有邮件” 文件夹中找到。"
+        "任何子文件夹也将被删除。不过，储存在 ${ nameDeleted } 文件夹中的邮件不会被删除，且可以在“所有邮件”文件夹中找到。"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "只要持有此链接就能查看所有日程的详细信息，包括标题、地点、参与者等。"
@@ -7359,7 +7377,7 @@
         "具有专用 IP 地址的专用服务器可以添加到专用网关，以实现微调的访问控制。"
       ],
       "default email address": [
-        "首选邮件地址"
+        "首选邮箱地址"
       ],
       "Default email application": [
         "设为默认邮件应用"
@@ -7374,10 +7392,10 @@
         "删除 ${ deletedServerCount } 台网关服务器"
       ],
       "Disable recovery by email address": [
-        "禁用通过电子邮件地址恢复"
+        "禁用通过密保邮箱恢复"
       ],
       "Disable recovery by phone number": [
-        "禁用通过电话号码恢复"
+        "禁用通过密保手机恢复"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "已在${ formattedDateAndTime }禁用"
@@ -7708,6 +7726,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "若不满意可要求退款。"
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "如果启用了键盘快捷键，可以使用以下按键进行快速操作或跳转到不同视图。${ metaKey } + K 始终处于启用状态。"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "若系统时区与当前配置时区不一致，则询问是否更改（每天最多一次）。"
@@ -8070,7 +8091,7 @@
         "“已发送”和“草稿”文件夹中的邮件始终显示在相应文件夹中，无论移动与否。"
       ],
       "Messages to all your email addresses will go to your inbox.": [
-        "发送到您所有电子邮件地址的信息将全部转至您的收件箱。"
+        "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
       "MM/YY": [
         "月/年"
@@ -8123,9 +8144,6 @@
       "No addresses exist": [
         "没有地址"
       ],
-      "No common passwords": [
-        "没有常用密码"
-      ],
       "No credit card required": [
         "无需信用卡"
       ],
@@ -8152,9 +8170,6 @@
       ],
       "No payment is required at this time.": [
         "目前不需要支付。"
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "不要可预测的序列 (1234，aaa)"
       ],
       "No results found": [
         "未找到结果"
@@ -8640,7 +8655,7 @@
         "开始与联系人分享，并将其用于在线服务。"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "开始使用更简短、更朗朗上口的电子邮件地址。"
+        "开始使用更简短且更朗朗上口的邮箱地址。"
       ],
       "Stay tuned for future promotions.": [
         "敬请关注后续其他促销活动。"
@@ -8803,6 +8818,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "这可能需要几秒钟或几分钟, 具体取决于您的设备。"
+      ],
+      "This cannot be undone.": [
+        "此操作不可撤销。"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "这可能需要一些时间。请不要关闭此页面或断开与互联网的连接。"
@@ -9093,7 +9111,7 @@
         "使用密码管理器生成并安全存储密码，以确保密码的强度和登录的便捷性。"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
-        "使用恢复方法来禁用双因素身份的验证方法。"
+        "使用恢复方法来禁用双因素身份验证方法。"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "使用最优服务器（由系统负荷与当前位置得出）：${ formattedBestServerName }"
@@ -9643,11 +9661,6 @@
         "令下层文件夹的颜色与上层文件夹一致"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "请联系 ${ email } 了解如何使用现金支付。"
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "为组织的现有用户添加新地址。"
@@ -9852,6 +9865,12 @@
       "Close draft": [
         "关闭草稿"
       ],
+      "Create new event": [
+        "创建新事件"
+      ],
+      "Day view": [
+        "日视图"
+      ],
       "Delete permanently": [
         "永久删除"
       ],
@@ -9918,6 +9937,9 @@
       "Minimize / maximize composer": [
         "最小化/最大化编辑窗"
       ],
+      "Month view": [
+        "月视图"
+      ],
       "Move down": [
         "下移"
       ],
@@ -9948,6 +9970,9 @@
       "New message": [
         "撰写邮件"
       ],
+      "Next period": [
+        "下个周期"
+      ],
       "Open command panel": [
         "打开命令面板"
       ],
@@ -9957,8 +9982,14 @@
       "Open previous message": [
         "打开上一封邮件"
       ],
+      "Open quick actions menu": [
+        "打开快捷操作菜单"
+      ],
       "Open this modal": [
         "打开此面板"
+      ],
+      "Previous period": [
+        "上个周期"
       ],
       "Reply": [
         "回复"
@@ -9971,6 +10002,9 @@
       ],
       "Search": [
         "搜索"
+      ],
+      "Search events": [
+        "搜索事件"
       ],
       "Select / unselect": [
         "选择 / 取消选择"
@@ -9992,6 +10026,12 @@
       ],
       "Star": [
         "星标"
+      ],
+      "Today": [
+        "今天"
+      ],
+      "Week view": [
+        "周视图"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10015,6 +10055,9 @@
       ],
       "Message shortcuts": [
         "邮件快捷键"
+      ],
+      "View options": [
+        "查看选项"
       ]
     },
     "Keys actions": {
@@ -10176,10 +10219,10 @@
         "允许随机密码"
       ],
       "Allow recovery by email": [
-        "允许通过电子邮件恢复"
+        "允许通过密保邮箱恢复"
       ],
       "Allow recovery by phone": [
-        "允许通过手机恢复"
+        "允许通过密保手机恢复"
       ],
       "Allow recovery by recovery phrase": [
         "允许通过恢复密语来恢复"
@@ -10225,6 +10268,9 @@
       ],
       "Apply filter to existing emails": [
         "对现有邮件执行此规则"
+      ],
+      "Apply policy to": [
+        "应用策略到"
       ],
       "Assertion Consumer Service URL": [
         "断言消费者服务 URL"
@@ -10787,9 +10833,6 @@
       "New password": [
         "新密码"
       ],
-      "New policy name": [
-        "新策略的名称"
-      ],
       "New second password": [
         "新副密码"
       ],
@@ -10888,6 +10931,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "请分享任何反馈意见，以帮助我们改进工作。"
+      ],
+      "Policy name": [
+        "策略名称"
       ],
       "Port": [
         "端口"
@@ -11883,9 +11929,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "按日 ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "第一个星期五"
       ],
@@ -13220,9 +13263,6 @@
       "Email notifications have been enabled": [
         "电子邮件通知已启用"
       ],
-      "Error creating policy": [
-        "创建策略时出错"
-      ],
       "Invalid code": [
         "无效的验证码"
       ],
@@ -13246,9 +13286,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "重新生成了 OpenVPN / IKEv2 的账号密码"
-      ],
-      "Policy created successfully": [
-        "已成功创建策略"
       ],
       "Reminder has been sent": [
         "提醒已发送"
@@ -13367,6 +13404,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don’t show this offer again": [
+        "不再显示此优惠"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "仅需 ${ pricingTitle } 即可获得 Drive Plus"
       ],
@@ -13379,14 +13419,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "首月购买 ${ plan } Plus 八折优惠的最后机会。"
       ],
+      "Last day to save": [
+        "保存的最后日期"
+      ],
       "Limited-time offer": [
         "限时特惠"
+      ],
+      "Mail Plus for 12 months": [
+        "12 个月的 Mail Plus"
       ],
       "Maybe later": [
         "以后再说"
       ],
+      "Save": [
+        "节省"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "节省 ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "第一个月可节省 80% 的费用。"
+      ],
+      "Save big when you pay annually": [
+        "按年付费可节省大量费用"
+      ],
+      "This offer won't be shown again.": [
+        "此优惠不再显示。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "当您从每月订阅切换到年度订阅时。"
+      ],
+      "You currently pay": [
+        "您目前支付"
       ]
     },
     "Offer feature": {
@@ -14526,7 +14590,7 @@
         "结束日期"
       ],
       "example@domain.com": [
-        "邮箱名@域名.com"
+        "example@domain.com"
       ],
       "Feedback": [
         "意见反馈"
@@ -14703,7 +14767,7 @@
         "立即验证"
       ],
       "Verify now this recovery email address: ${ email.Value }": [
-        "立即验证此恢复电子邮件地址：${ email.Value }"
+        "立即验证此密保邮箱地址：${ email.Value }"
       ],
       "Verify recovery email?": [
         "验证密保邮箱？"
@@ -14746,10 +14810,10 @@
         "立即验证"
       ],
       "Verify recovery phone?": [
-        "验证恢复电话？"
+        "验证密保手机？"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
-        "立即验证此辅助电话号码：${ phone.Value }"
+        "立即验证此密保手机号码：${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "完成邮箱地址验证可以提升账户安全性，多一种账户恢复选项。"
@@ -14820,7 +14884,7 @@
     },
     "Safety review": {
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        "如果忘记密码，可通过**恢复手机**恢复密码，并重新访问您的账户。"
+        "如果忘记密码，可通过**密保手机**恢复密码，并重新访问您的账户。"
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "重置密码时，${ BRAND_NAME } 将使用此地址通过电子邮件发送重置密码。"
@@ -14832,13 +14896,13 @@
         "${ enableDeviceRecovery } 以确保您的数据可以恢复。"
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
-        "如果忘记密码，可通过**恢复电子邮箱**恢复密码，并重新访问您的账户。"
+        "如果忘记密码，可通过**密保邮箱**恢复密码，并重新访问您的账户。"
       ],
       "Account safety review": [
         "账户安全审查"
       ],
       "Add a recovery email": [
-        "添加恢复电子邮件"
+        "添加密保邮箱"
       ],
       "Add a recovery email address": [
         "添加密保邮箱"
@@ -14877,10 +14941,10 @@
         "启用基于设备的恢复"
       ],
       "Enable recovery by email": [
-        "启用电子邮箱恢复"
+        "启用密保邮箱恢复"
       ],
       "Enable recovery by phone": [
-        "启用电话号码恢复"
+        "启用密保手机恢复"
       ],
       "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
         "我明白使用此恢复套件无法恢复当前锁定的数据"
@@ -14937,10 +15001,10 @@
         "生成恢复套件时出错"
       ],
       "There was an error verifying your recovery email": [
-        "验证您的恢复电子邮件时出错"
+        "验证您的密保邮箱时出错"
       ],
       "There was an error verifying your recovery phone": [
-        "验证您的恢复手机时出错"
+        "验证您的密保手机时出错"
       ],
       "to automatically recover your data when you log into a trusted device": [
         "在登录受信任设备时自动恢复数据"
@@ -14967,19 +15031,19 @@
         "验证"
       ],
       "Verify your recovery email address": [
-        "验证您的恢复电子邮箱"
+        "验证您的密保邮箱地址"
       ],
       "Verify your recovery phone number": [
-        "验证您的恢复电话号码"
+        "验证您的密保手机号码"
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "我们在生成您的恢复套件时遇到了错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "我们在验证您的恢复电子邮件时遇到错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
+        "我们在验证您的密保邮箱时遇到错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
       ],
       "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "我们在验证您的恢复手机时遇到了错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
+        "我们在验证您的密保手机时遇到了错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
       ],
       "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
         "启用基于设备的恢复后，${ BRAND_NAME } 会将加密备份的密钥链作为文件存储在浏览器的网络存储中。"
@@ -14997,10 +15061,10 @@
         "重置密码时，您可以使用本恢复套件中的恢复短语来完全恢复您的账户，因此请确保将其妥善保存。"
       ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
-        "如果忘记密码，您可以使用恢复电子邮件重新访问您的账户。"
+        "如果忘记密码，您可以使用密保邮箱重新访问您的账户。"
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
-        "如果忘记密码，可以使用恢复手机重新访问账户。"
+        "如果忘记密码，可以使用密保手机重新访问账户。"
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "您以前下载过恢复套件，下载新的恢复套件将**停用旧的恢复套件**。"
@@ -15027,22 +15091,22 @@
         "您的账户很安全。"
       ],
       "Your recovery email": [
-        "您的恢复邮箱"
+        "您的密保邮箱"
       ],
       "Your recovery email address is:": [
-        "您的恢复电子邮件地址为："
+        "您的密保邮箱地址为："
       ],
       "Your recovery email and phone can **only recover access to your account**.": [
-        "您的恢复电子邮箱和电话只能**恢复对您账户的访问**。"
+        "您的密保邮箱和手机只能**恢复对您账户的访问**。"
       ],
       "Your recovery email can **only recover access to your account**.": [
-        "您的恢复电子邮箱**只能恢复对您账户的访问**。"
+        "您的密保邮箱 **只能恢复对您账户的访问**。"
       ],
       "Your recovery email has been enabled": [
-        "您的恢复电子邮件已启用"
+        "您的密保邮箱已启用"
       ],
       "Your recovery email is set": [
-        "您的恢复电子邮件已设置"
+        "您的密保邮箱已设置"
       ],
       "Your Recovery Kit": [
         "您的恢复密钥"
@@ -15054,19 +15118,19 @@
         "您的恢复方法"
       ],
       "Your recovery phone": [
-        "您的恢复手机号"
+        "您的密保手机"
       ],
       "Your recovery phone can **only recover access to your account**.": [
-        "您的恢复手机只能 **恢复对您账户的访问** 。"
+        "您的密保手机 **只能恢复对您账户的访问** 。"
       ],
       "Your recovery phone has been enabled": [
-        "您的恢复手机已启用"
+        "您的密保手机已启用"
       ],
       "Your recovery phone is set": [
-        "您的恢复手机已设置"
+        "您的密保手机已设置"
       ],
       "Your recovery phone number is:": [
-        "您的恢复电话号码是："
+        "您的密保手机号码是："
       ]
     },
     "saml: Action": {
@@ -16542,47 +16606,6 @@
         "总计${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动转发 ${ strongText } 电子邮件"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "短电子邮箱地址 @pm.me"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -16867,6 +16890,47 @@
         "您自己的短 @pm.me 电子邮件别名"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动转发 ${ strongText } 电子邮件"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "短电子邮箱地址 @pm.me"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "确定要这样做吗?"
@@ -17056,6 +17120,15 @@
       "Phone number updated": [
         "电话号码已更改"
       ],
+      "Policy created successfully!": [
+        "策略创建成功！"
+      ],
+      "Policy deleted": [
+        "已删除策略"
+      ],
+      "Policy updated successfully!": [
+        "策略更新成功！"
+      ],
       "Port copied to clipboard": [
         "端口号已复制"
       ],
@@ -17123,10 +17196,10 @@
         "您已退订成功"
       ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
-        "如果您输入的是有效的恢复电子邮件地址，您将在一分钟内通过电子邮件收到您的用户名。"
+        "如果您输入的是有效的密保邮箱地址，您将在一分钟内通过该邮箱收到您的用户名。"
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
-        "如果您输入了有效的恢复电话号码，您将在一分钟内通过短信收到您的用户名。"
+        "如果您输入了有效的密保手机号码，您将在一分钟内通过短信收到您的用户名。"
       ]
     },
     "Success message": {
@@ -17354,6 +17427,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } 快捷键"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17750,6 +17826,9 @@
       "Decrypt key": [
         "解密密钥"
       ],
+      "Delete ${ policyName }?": [
+        "删除 ${ policyName }？"
+      ],
       "Delete ${ value }": [
         "删除 ${ value }"
       ],
@@ -17846,6 +17925,9 @@
       "Edit billing address": [
         "编辑账单地址"
       ],
+      "Edit countries": [
+        "编辑国家"
+      ],
       "Edit credit/debit card": [
         "编辑信用卡/借记卡"
       ],
@@ -17866,6 +17948,9 @@
       ],
       "Edit invoice note": [
         "编辑发票备注"
+      ],
+      "Edit name": [
+        "编辑名称"
       ],
       "Edit profile": [
         "修改个人资料"
@@ -18372,7 +18457,7 @@
         "吊销证书"
       ],
       "Same inbox, shorter email address": [
-        "同一个收件箱，但使用更短的电子邮箱地址"
+        "同一个收件箱，但使用更短的邮箱地址"
       ],
       "SAML authentication": [
         "SAML 授权"
@@ -18919,6 +19004,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "在您发出的邮件中通过来源标识分享您的邀请链接，如：${ signature }这段标识文字将置于您的落款下方。您可以随时在设置中修改落款。"
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "共享服务器策略可应用于单个用户或组"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "在邮件列表中显示发件人的头像，无头像则显示发件人名称首字母。"
@@ -19547,7 +19635,7 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } 电子邮箱地址"
+        "${ n } 个 ${ BRAND_NAME } 邮箱地址"
       ],
       "${ n } account per wallet": [
         "每个钱包${ n }个 账户"
@@ -19678,9 +19766,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "请检查扩展是否正确安装并启用"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
       "Please update the extension to its latest version": [
         "请更新扩展至最新版本"

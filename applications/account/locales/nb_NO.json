@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "Slett permanent"
+      ],
+      "Delete policy": [
+        "Slett retningslinje"
       ],
       "Delete record": [
         "Slett post"
@@ -1042,14 +1045,20 @@
       "Select calendar view": [
         "Velg kalendervisning"
       ],
+      "Select city ${ city }": [
+        "Velg by ${ city }"
+      ],
       "Select country": [
         "Velg land"
       ],
-      "select file": [
-        "velg fil"
+      "Select country ${ country }": [
+        "Velg land ${ country }"
       ],
       "Select file": [
         "Velg fil"
+      ],
+      "select file": [
+        "velg fil"
       ],
       "Select files": [
         "Velg filer"
@@ -3662,8 +3671,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Opprett så mange etiketter eller mapper du trenger for å holde innboksen ryddig."
       ],
-      "Create policies to manage access to shared servers.": [
-        "Opprett retningslinjer for å administrere tilgang til delte tjenere."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
@@ -3677,8 +3686,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Alle i organisasjonen kan koble til delte tjenere."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Alle i organisasjonen kan koble til delte tjenere i alle land."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
@@ -4540,8 +4549,17 @@
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
       ],
+      "Error creating policy.": [
+        "Feil ved å opprette retningslinje."
+      ],
+      "Error deleting policy.": [
+        "Feil ved å slette retningslinje."
+      ],
       "Error in one of the conditions": [
         "Feil i en av betingelsene"
+      ],
+      "Error updating policy.": [
+        "Feil ved å oppdatere retningslinje."
       ],
       "Expired": [
         "Utløpt"
@@ -6976,11 +6994,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiver minst én datagjenopprettingsmetode for å sikre at du fortsatt har tilgang til innholdet i ${ BRAND_NAME }-kontoen hvis du mister passordet."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Legg til en @pm.me e-postadresse til kontoen din. Dette enkle, kortere domene står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding.\""
@@ -8202,9 +8220,6 @@
       "No addresses exist": [
         "Ingen adresser eksisterer"
       ],
-      "No common passwords": [
-        "Ingen vanlige passord"
-      ],
       "No credit card required": [
         "Ingen kredittkort kreves"
       ],
@@ -8231,9 +8246,6 @@
       ],
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Ingen forutsigbare sekvenser (1234, aaa)"
       ],
       "No results found": [
         "Ingen resultater funnet"
@@ -8896,6 +8908,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Dette kan ta få sekunder eller få minutter avhengig av enheten din."
+      ],
+      "This cannot be undone.": [
+        "Dette kan ikke angres."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dette kan ta litt tid. Ikke lukk siden eller koble fra internett."
@@ -9747,8 +9762,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt oss på ${ email } for instruksjoner om hvordan du betaler med kontanter."
+      "How to send a cash payment?": [
+        "Hvordan sende en kontant betaling?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Finn instruksjonene i artikkelen: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -10365,6 +10383,9 @@
       "Apply filter to existing emails": [
         "Anvend filter på eksisterende e-postmeldinger"
       ],
+      "Apply policy to": [
+        "Anvend retningslinjen på"
+      ],
       "Assertion Consumer Service URL": [
         "URL-adresse for påstand om forbrukertjeneste"
       ],
@@ -10926,9 +10947,6 @@
       "New password": [
         "Nytt passord"
       ],
-      "New policy name": [
-        "Nytt retningslinjenavn"
-      ],
       "New second password": [
         "Nytt andre passord"
       ],
@@ -11027,6 +11045,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Gjerne del eventuelle tilbakemeldinger for å hjelpe oss med å bli bedre."
+      ],
+      "Policy name": [
+        "Navn på retningslinje"
       ],
       "Port": [
         "Port"
@@ -12037,8 +12058,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dag ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "på ${ shortenedDay }"
       ],
       "on the first Friday": [
         "på den første fredagen"
@@ -13401,9 +13422,6 @@
       "Email notifications have been enabled": [
         "E-postvarsler er aktivert"
       ],
-      "Error creating policy": [
-        "Feil ved å opprette retningslinje"
-      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -13427,9 +13445,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-påloggingsinformasjon generert på nytt"
-      ],
-      "Policy created successfully": [
-        "Retningslinje vellykket opprettet"
       ],
       "Reminder has been sent": [
         "Påminnelse er sendt"
@@ -13553,6 +13568,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-tilbud utløper i dag!"
       ],
+      "Don’t show this offer again": [
+        "Ikke vis dette tilbudet igjen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaff deg Drive Plus for kun ${ pricingTitle }"
       ],
@@ -13565,14 +13583,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Siste dag for å spare"
+      ],
       "Limited-time offer": [
         "Tidsbegrenset tilbud"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus for 12 måneder"
       ],
       "Maybe later": [
         "Kanskje senere"
       ],
+      "Save": [
+        "Spar"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spar ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Spar 80% på den første måneden."
+      ],
+      "Save big when you pay annually": [
+        "Spar mye når du betaler årlig"
+      ],
+      "This offer won't be shown again.": [
+        "Dette tilbudet vises ikke igjen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Når du bytter fra et månedlig til et årlig abonnement."
+      ],
+      "You currently pay": [
+        "Du betaler for øyeblikket"
       ]
     },
     "Offer feature": {
@@ -16799,47 +16841,6 @@
         "For ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -17130,6 +17131,47 @@
         "Ditt eget korte @pm.me e-postalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -17203,7 +17245,7 @@
         "Kalender lagt til. Det kan ta noen minutter å synkronisere."
       ],
       "Calendar created": [
-        "Kalender oprettet"
+        "Kalender opprettet"
       ],
       "Calendar information updated": [
         "Kalenderinformasjon oppdatert"
@@ -17318,6 +17360,15 @@
       ],
       "Phone number updated": [
         "Telefonnummer oppdatert"
+      ],
+      "Policy created successfully!": [
+        "Retningslinje vellykket opprettet!"
+      ],
+      "Policy deleted": [
+        "Retningslinje slettet"
+      ],
+      "Policy updated successfully!": [
+        "Retningslinje vellykket oppdatert!"
       ],
       "Port copied to clipboard": [
         "Port kopiert til utklippstavlen"
@@ -18024,6 +18075,9 @@
       "Decrypt key": [
         "Dekrypter nøkkel"
       ],
+      "Delete ${ policyName }?": [
+        "Slette ${ policyName }?"
+      ],
       "Delete ${ value }": [
         "Slett ${ value }"
       ],
@@ -18121,6 +18175,9 @@
       "Edit billing address": [
         "Rediger faktureringsadresse"
       ],
+      "Edit countries": [
+        "Rediger land"
+      ],
       "Edit credit/debit card": [
         "Rediger kreditt-/debetkort"
       ],
@@ -18141,6 +18198,9 @@
       ],
       "Edit invoice note": [
         "Rediger fakturanota"
+      ],
+      "Edit name": [
+        "Rediger navn"
       ],
       "Edit profile": [
         "Rediger profil"
@@ -19198,6 +19258,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Angir den følgende bunnteksten i e-poster du sender ut: ${ signature } Koblingen peker til din vervekobling. Bunnteksten vises under signaturen din. Du kan tilpasse signaturen din når som helst i innstillinger."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Retningslinjer for delte tjenere kan brukes på enkeltbrukere eller grupper"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Vis bildet av hver avsender i meldingslisten. Avsenderens initialer vises hvis et bilde ikke er tilgjengelig."
       ],
@@ -19997,9 +20060,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Kontroller at utvidelsen er riktig installert og aktivert"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Please update the extension to its latest version": [
         "Oppdater utvidelsen til siste versjon"

@@ -211,6 +211,9 @@
       "Delete member": [
         "Smazat člena"
       ],
+      "Delete policy": [
+        "Smazat zásadu"
+      ],
       "Delete user": [
         "Smazat uživatele"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Vyberte fakturační cyklus ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Vybrat město ${ city }"
+      ],
       "Select country": [
         "Vyberte zemi"
+      ],
+      "Select country ${ country }": [
+        "Vybrat zemi ${ country }"
       ],
       "select file": [
         "vybrat soubor"
@@ -2338,11 +2347,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Vytvořte zásady pro správu přístupu ke sdíleným serverům."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Vytvořte zásady, které určují, kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Kdokoli ve vaší organizaci se může připojit ke sdíleným serverům."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Každý člen vaší organizace se může připojit ke sdíleným serverům ve všech zemích."
       ],
       "If disabled, only admins will have access.": [
         "Pokud je deaktivováno, budou mít přístup pouze správci."
@@ -2573,6 +2582,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
+      ],
+      "Error creating policy.": [
+        "Chyba vytváření zásady."
+      ],
+      "Error deleting policy.": [
+        "Chyba smazání zásady."
+      ],
+      "Error updating policy.": [
+        "Chyba aktualizace zásady."
       ],
       "Failed to process the logo": [
         "Logo se nepodařilo zpracovat"
@@ -4537,9 +4555,6 @@
       "No addresses exist": [
         "Neexistují žádné adresy"
       ],
-      "No common passwords": [
-        "Žádná společná hesla"
-      ],
       "No gateways": [
         "Žádné brány"
       ],
@@ -4548,9 +4563,6 @@
       ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Žádné předvídatelné sekvence (1234, aaa)"
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
@@ -4983,6 +4995,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "V závislosti na Vašem zařízení to může trvat několik sekund nebo minut"
+      ],
+      "This cannot be undone.": [
+        "Toto nelze vzít zpět"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Toto může nějakou dobu trvat. Nezavírejte prosím tuto stránku ani se neodpojujte od internetu."
@@ -5528,8 +5543,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Prosíme kontaktujte nás na ${ email } pro více informací, jak zaplatit v hotovosti."
+      "How to send a cash payment?": [
+        "Jak poslat platbu v hotovosti?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Pokyny naleznete v článku: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5720,6 +5738,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Apply policy to": [
+        "Použít zásadu pro"
       ],
       "Assertion Consumer Service URL": [
         "URL adresa služby Assertion Consumer Service"
@@ -5994,9 +6015,6 @@
       "New password": [
         "Nové heslo"
       ],
-      "New policy name": [
-        "Název nové zásady"
-      ],
       "New second password": [
         "Nové druhé heslo"
       ],
@@ -6068,6 +6086,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Podělte se s námi o jakoukoli zpětnou vazbu, která nám pomůže se zlepšit."
+      ],
+      "Policy name": [
+        "Název zásady"
       ],
       "Postal code": [
         "PSČ"
@@ -7817,9 +7838,6 @@
       "Downloaded 2FA recovery codes": [
         "Stažené obnovovací kódy 2FA"
       ],
-      "Error creating policy": [
-        "Chyba při vytváření zásady"
-      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -7837,9 +7855,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
-      ],
-      "Policy created successfully": [
-        "Zásada úspěšně vytvořena"
       ],
       "Reminder has been sent": [
         "Připomenutí bylo odesláno"
@@ -7869,6 +7884,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
+      "Don’t show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získejte Drive Plus za pouhých ${ pricingTitle }"
       ],
@@ -7881,14 +7899,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Poslední šance získat 80% slevu na první měsíc ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Poslední den, kdy můžete ušetřit"
+      ],
       "Limited-time offer": [
         "Časově omezená nabídka"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 měsíců"
       ],
       "Maybe later": [
         "Možná později"
       ],
+      "Save": [
+        "Ušetřete"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ušetřete ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ušetřete 80% za první měsíc."
+      ],
+      "Save big when you pay annually": [
+        "Při roční platbě můžete výrazně ušetřit"
+      ],
+      "This offer won't be shown again.": [
+        "Tato nabídka se již nezobrazí."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Při přechodu z měsíčního na roční předplatné."
+      ],
+      "You currently pay": [
+        "V současnosti platíte"
       ]
     },
     "Offer feature": {
@@ -10397,6 +10439,15 @@
       "Phone number updated": [
         "Telefonní číslo bylo aktualizováno"
       ],
+      "Policy created successfully!": [
+        "Zásada úspěšně vytvořena!"
+      ],
+      "Policy deleted": [
+        "Zásada smazána"
+      ],
+      "Policy updated successfully!": [
+        "Zásada úspěšně aktualizována!"
+      ],
       "Preference saved": [
         "Nastavení uloženo"
       ],
@@ -10858,6 +10909,9 @@
       "Delete": [
         "Smazat"
       ],
+      "Delete ${ policyName }?": [
+        "Smazat ${ policyName }?"
+      ],
       "Delete account": [
         "Smazat účet"
       ],
@@ -10915,6 +10969,9 @@
       "Edit billing address": [
         "Úprava fakturační adresy"
       ],
+      "Edit countries": [
+        "Upravit země"
+      ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
       ],
@@ -10932,6 +10989,9 @@
       ],
       "Edit invoice note": [
         "Úprava poznámky faktury"
+      ],
+      "Edit name": [
+        "Upravit název"
       ],
       "Edit servers": [
         "Upravit servery"
@@ -11435,6 +11495,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Členové, kteří 2FA nepoužívají, obdrží e-mail s výzvou, aby 2FA co nejdříve povolili."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Zásady sdílených serverů lze použít pro samostatné uživatele nebo skupiny"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Určete doménu, která se smí ověřovat pomocí SAML SSO"
@@ -12008,9 +12071,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Po vymazáním tohoto telefonního čísla, již nebudete moci obnovit svůj účet."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Berte prosím na vědomí, že výběrem této platební metody nemůže být váš účet navýšen okamžitě. Předplatné vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."

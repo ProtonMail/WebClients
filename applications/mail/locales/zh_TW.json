@@ -1909,6 +1909,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "關閉"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
       ],
@@ -7741,11 +7744,6 @@
         "已選取的色彩:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "請寄送電郵到 ${ email } 聯絡我們，以獲得如何將現金支付給我們的相關指引。"
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "點擊以查看詳細資料"
@@ -9046,9 +9044,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } 日"
-      ],
       "on the first Friday": [
         "第一個週五"
       ],
@@ -10140,6 +10135,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
+      "Don’t show this offer again": [
+        "不再顯示此優惠"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "使用只要${ pricingTitle }取得Drive Plus"
       ],
@@ -10152,14 +10150,35 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "最後獲得${ plan }進階首月80%折價"
       ],
+      "Last day to save": [
+        "最後優惠日"
+      ],
       "Limited-time offer": [
         "限時優惠"
+      ],
+      "Mail Plus for 12 months": [
+        "12個月的Mail Plus"
       ],
       "Maybe later": [
         "稍後再說"
       ],
+      "Save": [
+        "儲存"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "省下${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "首月省下80%"
+      ],
+      "This offer won't be shown again.": [
+        "此優惠將不再顯示。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "當您從每月切換至每年訂月。"
+      ],
+      "You currently pay": [
+        "您目前付款"
       ]
     },
     "Offer feature": {
@@ -10655,6 +10674,9 @@
       ],
       "Filter labels": [
         "篩選標籤"
+      ],
+      "Filter quick actions": [
+        "過濾快速動作"
       ],
       "First name": [
         "名字"
@@ -12531,6 +12553,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName }鍵盤快捷鍵"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
       ],
@@ -12869,6 +12894,9 @@
       ],
       "Groups": [
         "群組"
+      ],
+      "Help center": [
+        "說明中心"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "使用${ PASS_APP_NAME }隱藏您的電子郵件"
@@ -13560,6 +13588,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
       ],
+      "2 consecutive dots are not allowed": [
+        "不允許連續2點"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您確定要永久刪除 ${ count } 位聯絡人嗎？"
       ],
@@ -13571,6 +13602,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "您確定要永久刪除此聯絡人嗎？"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "無法於開頭使用點"
+      ],
+      "Cannot contain a dot at the end": [
+        "無法於最後使用點"
       ],
       "Contacts could not be merged": [
         "無法合併聯絡人"
@@ -13592,9 +13629,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "僅允許英文小寫字母、數字、點號、連字號和底線"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "請注意：選取此繳款方式時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"

@@ -2498,23 +2498,6 @@
         "На основі вашого часового поясу"
       ]
     },
-    "Custom frequency option": {
-      "After…": [
-        "Після…"
-      ],
-      "Never": [
-        "Ніколи"
-      ],
-      "On date…": [
-        "Дата…"
-      ],
-      "time": [
-        "раз",
-        "рази",
-        "разів",
-        "разів"
-      ]
-    },
     "Cycle": {
       "/month": [
         "/місяць"
@@ -4011,9 +3994,6 @@
     "Header": {
       "Contacts": [
         "Контакти"
-      ],
-      "Custom recurrence": [
-        "Власне повторення"
       ],
       "Name": [
         "Назва"
@@ -5549,11 +5529,6 @@
         "Ви можете оновити пошуковий запит або закрити пошук та повернутися до перегляду календаря."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Будь ласка, зв'яжіться з нами через ${ email } для отримання інструкцій про те, як сплатити готівкою."
-      ]
-    },
     "Info message": {
       "No results found": [
         "Результатів не знайдено"
@@ -5842,9 +5817,6 @@
       "Encrypt emails": [
         "Шифрувати листи"
       ],
-      "Ends": [
-        "Завершується"
-      ],
       "Event duration": [
         "Тривалість події"
       ],
@@ -5871,9 +5843,6 @@
       ],
       "Forwards to": [
         "Пересилається на"
-      ],
-      "Frequency": [
-        "Частота"
       ],
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
@@ -6018,12 +5987,6 @@
       ],
       "Region": [
         "Область"
-      ],
-      "Repeat every": [
-        "Повторювати кожні"
-      ],
-      "Repeat on": [
-        "Повторити"
       ],
       "Reveal password": [
         "Показати пароль"
@@ -6502,9 +6465,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } дня"
-      ],
       "on the first Friday": [
         "першої п'ятниці"
       ],
@@ -7873,12 +7833,6 @@
       ],
       "Every day": [
         "Щодня"
-      ],
-      "Every month": [
-        "Щомісяця"
-      ],
-      "Every week": [
-        "Щотижня"
       ],
       "Every year": [
         "Щороку"
@@ -10183,9 +10137,6 @@
       "Security center": [
         "Центр безпеки"
       ],
-      "Select a day in the month": [
-        "Виберіть день місяця"
-      ],
       "Select a plan": [
         "Оберіть тарифний план"
       ],
@@ -10200,9 +10151,6 @@
       ],
       "Select event end time": [
         "Виберіть час завершення події"
-      ],
-      "Select event frequency": [
-        "Виберіть інтервал повторення події"
       ],
       "Select event frequency interval": [
         "Виберіть інтервал повторення події"
@@ -10227,9 +10175,6 @@
       ],
       "Select the way to send this notification": [
         "Виберіть спосіб надсилання цього сповіщення"
-      ],
-      "Select when this event will stop happening": [
-        "Виберіть, коли ця подія завершиться"
       ],
       "Select when you want this notification to be sent": [
         "Виберіть якщо ви хочете, щоб це сповіщення було надіслано"
@@ -10587,9 +10532,6 @@
       ],
       "Name is required": [
         "Назва обовʼязкова"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Зверніть увагу, що вибравши цей спосіб оплати, ваш обліковий запис не можна оновити негайно. Ми оновимо ваш обліковий запис одразу після підтвердження платежу."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
