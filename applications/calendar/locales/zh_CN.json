@@ -1571,6 +1571,32 @@
         "紫红色"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "日视图"
+      ],
+      "Month view": [
+        "月视图"
+      ],
+      "New event": [
+        "新事件"
+      ],
+      "Next period": [
+        "下个周期"
+      ],
+      "Previous period": [
+        "上个周期"
+      ],
+      "Search events": [
+        "搜索事件"
+      ],
+      "Today": [
+        "今天"
+      ],
+      "Week view": [
+        "周视图"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "退出导入定制？"
@@ -2484,20 +2510,6 @@
     "Country select label": {
       "Based on your time zone": [
         "根据您的时区"
-      ]
-    },
-    "Custom frequency option": {
-      "After…": [
-        "之后…"
-      ],
-      "Never": [
-        "从不"
-      ],
-      "On date…": [
-        "日期…"
-      ],
-      "time": [
-        "次"
       ]
     },
     "Cycle": {
@@ -3931,9 +3943,6 @@
       "Contacts": [
         "通讯录"
       ],
-      "Custom recurrence": [
-        "自定义重复"
-      ],
       "Name": [
         "名称"
       ],
@@ -4564,7 +4573,7 @@
         "专用服务器"
       ],
       "default email address": [
-        "首选邮件地址"
+        "首选邮箱地址"
       ],
       "Deleting event...": [
         "正在删除事件..."
@@ -4673,6 +4682,9 @@
       ],
       "High Priority": [
         "首要优先顺序"
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "如果启用了键盘快捷键，可以使用以下按键进行快速操作或跳转到不同视图。${ metaKey } + K 始终处于启用状态。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -4801,7 +4813,7 @@
         "已合并"
       ],
       "Messages to all your email addresses will go to your inbox.": [
-        "发送到您所有电子邮件地址的信息将全部转至您的收件箱。"
+        "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
       "MM/YY": [
         "月/年"
@@ -5393,11 +5405,6 @@
         "您可以更新搜索查询或关闭搜索，返回日历视图"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "请联系 ${ email } 了解如何使用现金支付。"
-      ]
-    },
     "Info message": {
       "No results found": [
         "未找到结果"
@@ -5491,13 +5498,43 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "创建新事件"
+      ],
+      "Day view": [
+        "日视图"
+      ],
+      "Month view": [
+        "月视图"
+      ],
+      "Next period": [
+        "下个周期"
+      ],
+      "Open quick actions menu": [
+        "打开快捷操作菜单"
+      ],
       "Open this modal": [
         "打开此面板"
+      ],
+      "Previous period": [
+        "上个周期"
+      ],
+      "Search events": [
+        "搜索事件"
+      ],
+      "Today": [
+        "今天"
+      ],
+      "Week view": [
+        "周视图"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "基本操作"
+      ],
+      "View options": [
+        "查看选项"
       ]
     },
     "Knowledge base link label": {
@@ -5677,9 +5714,6 @@
       "Encrypt emails": [
         "加密电子邮件"
       ],
-      "Ends": [
-        "结束"
-      ],
       "Event duration": [
         "事件持续时间"
       ],
@@ -5706,9 +5740,6 @@
       ],
       "Forwards to": [
         "转发至"
-      ],
-      "Frequency": [
-        "重复频率"
       ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
@@ -5850,12 +5881,6 @@
       ],
       "Region": [
         "区域"
-      ],
-      "Repeat every": [
-        "重复间隔"
-      ],
-      "Repeat on": [
-        "重复于"
       ],
       "Reveal password": [
         "显示密码"
@@ -6316,9 +6341,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "按日 ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "第一个星期五"
       ],
@@ -7522,6 +7544,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don’t show this offer again": [
+        "不再显示此优惠"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "仅需 ${ pricingTitle } 即可获得 Drive Plus"
       ],
@@ -7534,14 +7559,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "首月购买 ${ plan } Plus 八折优惠的最后机会。"
       ],
+      "Last day to save": [
+        "保存的最后日期"
+      ],
       "Limited-time offer": [
         "限时特惠"
+      ],
+      "Mail Plus for 12 months": [
+        "12 个月的 Mail Plus"
       ],
       "Maybe later": [
         "以后再说"
       ],
+      "Save": [
+        "节省"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "节省 ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "第一个月可节省 80% 的费用。"
+      ],
+      "Save big when you pay annually": [
+        "按年付费可节省大量费用"
+      ],
+      "This offer won't be shown again.": [
+        "此优惠不再显示。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "当您从每月订阅切换到年度订阅时。"
+      ],
+      "You currently pay": [
+        "您目前支付"
       ]
     },
     "Offer feature": {
@@ -7633,12 +7682,6 @@
       ],
       "Every day": [
         "每天"
-      ],
-      "Every month": [
-        "每月"
-      ],
-      "Every week": [
-        "每周"
       ],
       "Every year": [
         "每年"
@@ -7925,6 +7968,9 @@
       "Filter groups": [
         "查找群组"
       ],
+      "Filter quick actions": [
+        "过滤快捷操作"
+      ],
       "First name": [
         "名"
       ],
@@ -8116,7 +8162,7 @@
         "用于 Amazon 购物等等"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink }提供。"
+        "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -9440,6 +9486,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } 快捷键"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } 个邮箱地址"
       ],
@@ -9815,9 +9864,6 @@
       "Security center": [
         "安全中心"
       ],
-      "Select a day in the month": [
-        "选择一个月中的某一天"
-      ],
       "Select a plan": [
         "选择账户等级"
       ],
@@ -9832,9 +9878,6 @@
       ],
       "Select event end time": [
         "选择日程结束时间"
-      ],
-      "Select event frequency": [
-        "选择事件频率"
       ],
       "Select event frequency interval": [
         "选择日程的频率间隔"
@@ -9859,9 +9902,6 @@
       ],
       "Select the way to send this notification": [
         "选择发送该通知的方式"
-      ],
-      "Select when this event will stop happening": [
-        "选择日程停止该事件"
       ],
       "Select when you want this notification to be sent": [
         "选择您希望发送该通知的时间"
@@ -10131,7 +10171,7 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } 电子邮箱地址"
+        "${ n } 个 ${ BRAND_NAME } 邮箱地址"
       ],
       "${ n } account per wallet": [
         "每个钱包${ n }个 账户"
@@ -10213,9 +10253,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "只允许使用字母数字小写字符、点、连字符和下划线"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"

@@ -2528,18 +2528,18 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Na..."
+      "Don't end": [
+        "Niet eindigen"
       ],
-      "Never": [
-        "Nooit"
+      "End after": [
+        "Eindigt na"
       ],
-      "On date…": [
-        "Op datum…"
+      "End on": [
+        "Eindigt op"
       ],
-      "time": [
-        "keer",
-        "keer"
+      "event": [
+        "gebeurtenis",
+        "gebeurtenissen"
       ]
     },
     "Cycle": {
@@ -3998,11 +3998,11 @@
       "Contacts": [
         "Contacten"
       ],
-      "Custom recurrence": [
-        "Aangepaste frequentie"
-      ],
       "Name": [
         "Naam"
+      ],
+      "Repeat event": [
+        "Gebeurtenis herhalen"
       ],
       "Search": [
         "Zoeken"
@@ -5503,8 +5503,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Neem contact met ons op via ${ email } voor instructies hoe u ons met contant geld kunt betalen."
+      "How to send a cash payment?": [
+        "Hoe een contante betaling versturen?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Instructies kan u vinden in het artikel: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5820,9 +5823,6 @@
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
-      "Ends": [
-        "Eindigt"
-      ],
       "Event duration": [
         "Duur van de afspraak"
       ],
@@ -5831,6 +5831,9 @@
       ],
       "Event title": [
         "Afspraak titel"
+      ],
+      "Every": [
+        "Elke"
       ],
       "Expiration (${ patternExpiration })": [
         "Verloopdatum (${ patternExpiration })"
@@ -5849,9 +5852,6 @@
       ],
       "Forwards to": [
         "Stuurt door na"
-      ],
-      "Frequency": [
-        "Frequentie"
       ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
@@ -5937,6 +5937,9 @@
       "Notifications": [
         "Meldingen"
       ],
+      "On": [
+        "Op"
+      ],
       "Operating system": [
         "Besturingssysteem"
       ],
@@ -5994,12 +5997,6 @@
       ],
       "Region": [
         "Regio/Provincie"
-      ],
-      "Repeat every": [
-        "Herhaal elke"
-      ],
-      "Repeat on": [
-        "Herhalen op"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -6468,8 +6465,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "op dag ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "op ${ shortenedDay }"
       ],
       "on the first Friday": [
         "op de eerste vrijdag"
@@ -7721,6 +7718,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
+      "Don’t show this offer again": [
+        "Toon deze aanbieding niet opnieuw"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Krijg Drive Plus voor slechts ${ pricingTitle }"
       ],
@@ -7733,14 +7733,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Laatste dag om op te besparen"
+      ],
       "Limited-time offer": [
         "Tijdelijke aanbieding"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus voor 12 maanden"
       ],
       "Maybe later": [
         "Misschien later"
       ],
+      "Save": [
+        "Opslaan"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Bespaar ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Bespaar 80% op uw eerste maand."
+      ],
+      "Save big when you pay annually": [
+        "Bespaar veel wanneer u jaarlijks betaalt"
+      ],
+      "This offer won't be shown again.": [
+        "Deze aanbieding wordt niet meer getoond."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Wanneer u overschakelt van een maandelijks naar jaarabonnement."
+      ],
+      "You currently pay": [
+        "U betaalt momenteel"
       ]
     },
     "Offer feature": {
@@ -7824,6 +7848,9 @@
       "Custom": [
         "Aangepast"
       ],
+      "Custom...": [
+        "Aangepast..."
+      ],
       "Day": [
         "Dag",
         "Dagen"
@@ -7834,11 +7861,14 @@
       "Every day": [
         "Elke dag"
       ],
-      "Every month": [
-        "Maandelijks"
+      "Every month ${ description }": [
+        "Elke maand ${ description }"
       ],
-      "Every week": [
-        "Wekelijks"
+      "Every week ${ everyWeekDescription }": [
+        "Elke week op ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Elke weekdag ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Jaarlijks"
@@ -9872,6 +9902,9 @@
       "Details": [
         "Details"
       ],
+      "Does not repeat": [
+        "Wordt niet herhaald"
+      ],
       "Downgrade account": [
         "Account downgraden"
       ],
@@ -9922,6 +9955,21 @@
       ],
       "Event is happening on defined time slot": [
         "De afspraak gebeurt op een gedefinieerde tijdsperiode"
+      ],
+      "Every day": [
+        "Elke dag"
+      ],
+      "Every month ${ option.text }": [
+        "Elke maand ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Elke week op ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Elke weekdag ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Jaarlijks"
       ],
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
@@ -10074,9 +10122,6 @@
       "Security center": [
         "Beveiligingscentrum"
       ],
-      "Select a day in the month": [
-        "Selecteer een dag in de maand"
-      ],
       "Select a plan": [
         "Selecteer een abonnement"
       ],
@@ -10091,9 +10136,6 @@
       ],
       "Select event end time": [
         "Selecteer eindtijd van afspraak"
-      ],
-      "Select event frequency": [
-        "Selecteer event frequentie"
       ],
       "Select event frequency interval": [
         "Frequentie interval afspraak selecteren"
@@ -10118,9 +10160,6 @@
       ],
       "Select the way to send this notification": [
         "Selecteer de manier om deze melding te verzenden"
-      ],
-      "Select when this event will stop happening": [
-        "Selecteer wanneer deze afspraak stopt"
       ],
       "Select when you want this notification to be sent": [
         "Selecteer wanneer u wilt dat deze melding wordt verzonden"
@@ -10607,9 +10646,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Alleen alfanumerieke kleine letters, punten, koppeltekens en underscores zijn toegestaan"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."

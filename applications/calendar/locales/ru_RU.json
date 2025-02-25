@@ -1613,6 +1613,32 @@
         "клубничный"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "Вид по дням"
+      ],
+      "Month view": [
+        "Вид по месяцам"
+      ],
+      "New event": [
+        "Новое событие"
+      ],
+      "Next period": [
+        "Следующий период"
+      ],
+      "Previous period": [
+        "Предыдущий период"
+      ],
+      "Search events": [
+        "Поиск событий"
+      ],
+      "Today": [
+        "Cегодня"
+      ],
+      "Week view": [
+        "Вид по неделям"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Прекратить настройку импорта?"
@@ -2529,20 +2555,20 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "После…"
+      "Don't end": [
+        "Не завершать"
       ],
-      "Never": [
-        "Никогда"
+      "End after": [
+        "Закончить после"
       ],
-      "On date…": [
-        "По датам…"
+      "End on": [
+        "Закончить"
       ],
-      "time": [
-        "раз",
-        "раза",
-        "раз",
-        "раз"
+      "event": [
+        "событие",
+        "события",
+        "событий",
+        "событий"
       ]
     },
     "Cycle": {
@@ -2984,6 +3010,9 @@
         "В ${ list } нет контактов",
         "В ${ list } нет контактов",
         "В некоторых группах нет контактов: ${ list }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } - это ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Идентификация и адреса > Короткий домен (pm.me)"
       ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
@@ -4048,11 +4077,11 @@
       "Contacts": [
         "Контакты"
       ],
-      "Custom recurrence": [
-        "Настраиваемое повторение"
-      ],
       "Name": [
         "Название"
+      ],
+      "Repeat event": [
+        "Повторить событие"
       ],
       "Search": [
         "Поиск"
@@ -4887,6 +4916,9 @@
       "High Priority": [
         "Высокий приоритет"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Если включены сочетания клавиш, вы можете использовать следующие кнопки для быстрых действий или перехода к различным видам. ${ metaKey } + K включена всегда."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
@@ -5628,8 +5660,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Пожалуйста, свяжитесь с нами по ${ email } для получения инструкций по оплате наличными."
+      "How to send a cash payment?": [
+        "Как отправить оплату наличными?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Найдите инструкции в статье: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5734,13 +5769,43 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "Создать новое событие"
+      ],
+      "Day view": [
+        "Вид по дням"
+      ],
+      "Month view": [
+        "Вид по месяцам"
+      ],
+      "Next period": [
+        "Следующий период"
+      ],
+      "Open quick actions menu": [
+        "Открыть меню быстрых действий"
+      ],
       "Open this modal": [
         "Открыть это модальное окно"
+      ],
+      "Previous period": [
+        "Предыдущий период"
+      ],
+      "Search events": [
+        "Поиск событий"
+      ],
+      "Today": [
+        "Cегодня"
+      ],
+      "Week view": [
+        "Вид по неделям"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Основные действия"
+      ],
+      "View options": [
+        "Просмотр настроек"
       ]
     },
     "Knowledge base link label": {
@@ -5923,9 +5988,6 @@
       "Encrypt emails": [
         "Шифровать письма"
       ],
-      "Ends": [
-        "Заканчивается"
-      ],
       "Event duration": [
         "Длительность события"
       ],
@@ -5934,6 +5996,9 @@
       ],
       "Event title": [
         "Название события"
+      ],
+      "Every": [
+        "Каждый"
       ],
       "Expiration (${ patternExpiration })": [
         "Срок действия (${ patternExpiration })"
@@ -5952,9 +6017,6 @@
       ],
       "Forwards to": [
         "Переслать"
-      ],
-      "Frequency": [
-        "Частота"
       ],
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
@@ -6040,6 +6102,9 @@
       "Notifications": [
         "Уведомления"
       ],
+      "On": [
+        "В"
+      ],
       "Operating system": [
         "Операционная система"
       ],
@@ -6099,12 +6164,6 @@
       ],
       "Region": [
         "Регион"
-      ],
-      "Repeat every": [
-        "Повторяется каждый"
-      ],
-      "Repeat on": [
-        "Повторяется по"
       ],
       "Reveal password": [
         "Показать пароль"
@@ -6589,8 +6648,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } числа"
+      "on the ${ shortenedDay }": [
+        "в ${ shortenedDay }"
       ],
       "on the first Friday": [
         "в первую пятницу"
@@ -7007,6 +7066,9 @@
       "Data breach monitoring": [
         "Отслеживание утечек данных"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Выделенные серверы, оптимизированные для трансляций"
+      ],
       "Desktop app": [
         "Приложение для настольного компьютера"
       ],
@@ -7172,6 +7234,9 @@
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
       ],
+      "SSO integration": [
+        "Интеграция с SSO"
+      ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
       ],
@@ -7180,6 +7245,9 @@
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
+      ],
+      "Tor over VPN": [
+        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -7243,6 +7311,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Используйте одновременно до ${ n } устройства",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств"
       ],
       "User credential management": [
         "Управление учетными данными пользователя"
@@ -7383,6 +7457,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Цена со скидкой ${ priceCoupon } действительна в течение первого месяца. Затем она будет автоматически продлена по цене ${ priceLine }. Вы можете отменить это в любое время."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
     "new_plans: title": {
@@ -7913,6 +7995,9 @@
       "${ pricingTitle } offer expires today!": [
         "Предложение ${ pricingTitle } истекает сегодня!"
       ],
+      "Don’t show this offer again": [
+        "Больше не показывать это предложение"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Попробуйте Drive Plus всего за ${ pricingTitle }"
       ],
@@ -7925,14 +8010,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Последний шанс получить скидку 80% на первый месяц подписки ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Последний день, чтобы сэкономить"
+      ],
       "Limited-time offer": [
         "Ограниченное предложение"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus за 12 месяцев"
       ],
       "Maybe later": [
         "Может быть позже"
       ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Сэкономьте ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Сэкономьте 80% в первый месяц."
+      ],
+      "Save big when you pay annually": [
+        "Экономьте больше, когда платите ежегодно"
+      ],
+      "This offer won't be shown again.": [
+        "Это предложение больше не будет показано."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "При переключении с ежемесячной на годовую подписку."
+      ],
+      "You currently pay": [
+        "Вы оплачиваете сейчас"
       ]
     },
     "Offer feature": {
@@ -8016,6 +8125,9 @@
       "Custom": [
         "Пользовательский"
       ],
+      "Custom...": [
+        "Пользовательский..."
+      ],
       "Day": [
         "День",
         "Дня",
@@ -8028,11 +8140,14 @@
       "Every day": [
         "Каждый день"
       ],
-      "Every month": [
-        "Каждый месяц"
+      "Every month ${ description }": [
+        "Ежемесячно ${ description }"
       ],
-      "Every week": [
-        "Каждую неделю"
+      "Every week ${ everyWeekDescription }": [
+        "Каждую неделю ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Каждый будний день ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Каждый год"
@@ -8272,6 +8387,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Подтверждая этот платеж, вы уполномочиваете ${ BRAND_NAME } и Stripe, нашего поставщика платежных услуг, дать указание вашему банку списать средства с вашего счета. Вы можете получить деньги обратно в течение 8 недель с момента списания, в соответствии с условиями вашего договора с банком."
+      ],
       "Street address, postal code, and city": [
         "Адрес улицы, почтовый индекс и город"
       ]
@@ -8333,6 +8451,9 @@
       ],
       "Filter groups": [
         "Фильтровать группы"
+      ],
+      "Filter quick actions": [
+        "Фильтр быстрых действий"
       ],
       "First name": [
         "Имя"
@@ -9975,6 +10096,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } быстрых клавиш"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адрес электронной почты",
         "${ emailsCount } адреса электронной почты",
@@ -10161,6 +10285,9 @@
       "Details": [
         "Информация"
       ],
+      "Does not repeat": [
+        "Не повторяется"
+      ],
       "Downgrade account": [
         "Перейти на более дешевую версию аккаунта"
       ],
@@ -10212,6 +10339,21 @@
       "Event is happening on defined time slot": [
         "Событие происходит в определенное время"
       ],
+      "Every day": [
+        "Каждый день"
+      ],
+      "Every month ${ option.text }": [
+        "Ежемесячно ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Каждую неделю в ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Каждый будний день ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Каждый год"
+      ],
       "Exporting contacts": [
         "Экспортирование контактов"
       ],
@@ -10229,6 +10371,9 @@
       ],
       "Groups": [
         "Группы"
+      ],
+      "Help center": [
+        "Справочный центр"
       ],
       "Hide time zones for event start and end times": [
         "Не показывать часовые пояса начала и окончания события"
@@ -10362,9 +10507,6 @@
       "Security center": [
         "Центр безопасности"
       ],
-      "Select a day in the month": [
-        "Выберите день месяца"
-      ],
       "Select a plan": [
         "Выбор тарифа"
       ],
@@ -10379,9 +10521,6 @@
       ],
       "Select event end time": [
         "Выберите время окончания события"
-      ],
-      "Select event frequency": [
-        "Выберите частоту события"
       ],
       "Select event frequency interval": [
         "Выберите интервал частоты события"
@@ -10406,9 +10545,6 @@
       ],
       "Select the way to send this notification": [
         "Выберите способ отправки этого уведомления"
-      ],
-      "Select when this event will stop happening": [
-        "Выберите, когда это событие прекратится"
       ],
       "Select when you want this notification to be sent": [
         "Выберите, когда вы хотите отправить это уведомление"
@@ -10796,6 +10932,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
+      ],
       "Your scheduled plan starts on ${ renewalTime }.": [
         "Ваш запланированный тариф начинается с ${ renewalTime }."
       ],
@@ -10820,6 +10962,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "адрес электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } счёт на один кошелёк",
         "${ n } счёта на один кошелёк",
@@ -10862,6 +11010,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 точки подряд не допускаются"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы уверены, что хотите навсегда удалить ${ count } контакт?",
         "Вы уверены, что хотите навсегда удалить ${ count } контакта?",
@@ -10876,6 +11027,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Вы уверены, что хотите навсегда удалить этот контакт?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Не может содержать точку в начале"
+      ],
+      "Cannot contain a dot at the end": [
+        "Не может содержать точку в конце"
       ],
       "Contacts could not be merged": [
         "Контакты не могут быть объединены"
@@ -10898,8 +11055,8 @@
       "Name is required": [
         "Требуется имя"
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Обратите внимание, что при выборе этого способа оплаты тип вашего аккаунта не может быть изменен сразу. Мы обновим ваш аккаунт, как только будет произведена оплата."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Допускаются только алфавитно-цифровые строчные символы, точки, дефисы и символы подчеркивания"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
