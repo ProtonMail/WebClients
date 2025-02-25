@@ -581,7 +581,7 @@
         "Katso miten"
       ],
       "See plan features": [
-        "Katso tilauksen ominaisuudet"
+        "Näytä tilauksen ominaisuudet"
       ],
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
@@ -3473,7 +3473,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Lisää tämä tietue verkkotunnuksesi DNS-palveluun."
+        "Lisää tämä tietue verkkotunnuksesi DNS-palvelun hallintapaneelista."
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Löydettiin ${ itemsCount } ehdotus, käytä siirtymiseen näppäimistöä.",
@@ -3542,10 +3542,10 @@
         "${ number } palvelinta"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uusimishinta ja -päivä pysyvät ennallaan."
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uudistushinta ja -päivä pysyvät ennallaan."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -3684,7 +3684,7 @@
         "Käyttäjät, joita tämä koskee, ovat riveillä"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
       ],
       "All inactive members deleted": [
         "Kaikki inaktiiviset jäsenet on poistettu"
@@ -3976,7 +3976,7 @@
         "Sähköpostitilausten asetukset tallennettiin"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt sähköpostit poistetaan automaattisesti."
+        "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt viestit poistetaan automaattisesti."
       ],
       "Enable single sign-on to keep your organization safe": [
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
@@ -4183,7 +4183,7 @@
         "Asenna palvelinkohtainen määritystiedosto yhdistääksesi tiettyyn palvelimeen valitsemassasi maassa."
       ],
       "Internet connection lost": [
-        "Internet-yhteys katkesi"
+        "Internet-yhteyttä ei ole"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ei yhteyttä. Tarkista laitteesi yhteydet."
@@ -4371,9 +4371,6 @@
       "No addresses exist": [
         "Osoitteita ei ole"
       ],
-      "No common passwords": [
-        "Ei yleisiä salasanoja"
-      ],
       "No gateways": [
         "Yhdyskäytäviä ei ole"
       ],
@@ -4382,9 +4379,6 @@
       ],
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Ei arvattavia sarjoja (1234, aaa)"
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
@@ -4509,7 +4503,7 @@
         "Yritä uudelleen, käytä eri maksutapaa tai ota yhteyttä PayPalin asiakaspalveluun."
       ],
       "Please use another browser or download the file.": [
-        "Käytä toista selainta tai lataa tiedosto."
+        "Käytä eri selainta tai lataa tiedosto."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Vahvista maksu juuri avatussa, uudessa välilehdessä."
@@ -4629,7 +4623,7 @@
         "Lähetä sähköpostiviestejä, joilla kehotat jäseniäsi suojaamaan heidän tilinsä 2FA:lla."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA-maksut eivät ole käytettävissä tällä hetkellä. Yritä myöhemmin uudelleen."
+        "SEPA-maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
       ],
       "Server is currently down": [
         "Palvelinta ei tällä hetkellä tavoiteta"
@@ -4699,7 +4693,7 @@
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
+        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -4777,7 +4771,7 @@
         "Tili on jäädytetty mahdollisen käyttöehtorikkeen vuoksi."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Selain ei tue PDF-tiedostojen esikatselua. Lataa tiedosto."
+        "Tämä selain ei tue PDF-tiedostojen esikatselua. Lataa tiedosto."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Tämä saattaa laitteesta riippuen kestää muutamasta sekunnista muutamaan minuuttiin"
@@ -4786,7 +4780,7 @@
         "Tämä saattaa kestää jonkin aikaa. Älä sulje tätä sivua tai katkaise Internet-yhteyttäsi."
       ],
       "This file is too large to preview": [
-        "Tämä tiedosto on liian suuri esikatseltavaksi"
+        "Tiedosto on liian suuri esikatseltavaksi"
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
@@ -4918,7 +4912,7 @@
         "Tallentamattomia muutoksia"
       ],
       "Unsupported file": [
-        "Tiedostoa ei tueta"
+        "Tiedostomuotoa ei tueta"
       ],
       "Unverified": [
         "Vahvistamaton"
@@ -5238,7 +5232,7 @@
         "Sinun ${ BRAND_NAME } -salasanasi"
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa. Tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
+        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa, ja tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } - ja ${ MAIL_APP_NAME } -tilisi on yhdistetty. Poistaaksesi ne molemmat, kirjaudu osoitteessa ${ loginLink } ja poista tilisi sieltä."
@@ -5268,7 +5262,7 @@
         "Seuraava laskutuspäivä on ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Seuraava laskutuspäiväsi on ${ renewalTime }. Ota yhteyttä asiakastukeen, jos tarvitset välitöntä muutosta tilaukseen."
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Jos haluat muuttaa tilausta heti, ota yhteyttä asiakaspalveluun."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
@@ -5283,10 +5277,10 @@
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti ${ cycle } kuukauden välein."
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
@@ -5298,11 +5292,6 @@
     "info": {
       "Selected color:": [
         "Valittu väri:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Pyydä ohjeet käteismaksua varten sähköpostitse osoitteesta ${ email }."
       ]
     },
     "Info for domain modal": {
@@ -11421,9 +11410,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Jos poistat tämän puhelinnumeron, et voi enää palauttaa tiliäsi."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Huomioithan, että valitsemalla tämän maksutavan tiliäsi ei voida päivittää välittömästi. Päivitämme tilisi, kun maksu on käsitelty."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."

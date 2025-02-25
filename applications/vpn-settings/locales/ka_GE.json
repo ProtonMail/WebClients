@@ -211,6 +211,9 @@
       "Delete member": [
         "წევრის წაშლა"
       ],
+      "Delete policy": [
+        "პოლიტიკის წაშლა"
+      ],
       "Delete user": [
         "მომხმარებლის წაშლა"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "აირჩიეთ გადახდის ციკლი ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "ქალაქის არჩევა: ${ city }"
+      ],
       "Select country": [
         "აირჩიეთ ქვეყანა"
+      ],
+      "Select country ${ country }": [
+        "${ country } ქვეყნის არჩევა"
       ],
       "select file": [
         "აირჩიეთ ფაილი"
@@ -2311,11 +2320,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "შექმენით პოლიტიკები გაზიარებულ სერვერებზე წვდომების სამართავად."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "შექმენით პოლიტიკები, რომ გადაწყვიტოთ, ვის შეუძლია გაზიარებულ სერვერებთან დაკავშირება და რომელ ქვეყანაში."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "თქვენს ორგანიზაციაში გაზიარებულ სერვერებთან დაკავშირება ყველას შეუძლია."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "თქვენს ორგანიზაციაში ყველას შეუძლია გაზიარებულ სერვერებთან დაკავშირება, ყველა ქვეყანაში."
       ],
       "If disabled, only admins will have access.": [
         "თუ გამორთულია, წვდომა, მხოლოდ, ადმინებს ექნებათ."
@@ -2535,6 +2544,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin-ის API-თან მიერთების შეცდომა."
+      ],
+      "Error creating policy.": [
+        "პოლიტიკის შექმნის შეცდომა."
+      ],
+      "Error deleting policy.": [
+        "პოლიტიკის წაშლის შეცდომა."
+      ],
+      "Error updating policy.": [
+        "პოლიტიკის განახლების შეცდომა."
       ],
       "Failed to process the logo": [
         "ლოგოს დამუშავება ჩავარდა"
@@ -4427,9 +4445,6 @@
       "No addresses exist": [
         "მისამართები ნაპოვნი არაა"
       ],
-      "No common passwords": [
-        "საერთო პაროლების გარეშე"
-      ],
       "No gateways": [
         "რაუტერების გარეშე"
       ],
@@ -4438,9 +4453,6 @@
       ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "გამოცნობადი მიმდევრობების გარეშე (1234, aaa)"
       ],
       "No results found": [
         "შედეგების გარეშე"
@@ -4850,6 +4862,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "თქვენი მოწყობილობის წარმადობიდან გამომდინარე, რამდენიმე წამიდან რამდენიმე წუთამდე შეიძლება დასჭირდეს"
+      ],
+      "This cannot be undone.": [
+        "ეს ქმედება შეუქცევადია."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "ამას საკმაო დროს შეიძლება, დასჭირდეს. ნუ დახურავთ ამ გვერდს და ნუ გათიშავთ ინტერნეტს."
@@ -5369,11 +5384,6 @@
         "არჩეული ფერი:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "ნაღდი ფულით გადახდის შემთხვევაში მეტი დეტალების მისაღებად დაგვიკავშირდით ${ email }."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "დაამატეთ თქვენი ორგანიზაციის არსებულ მომხმარებელს ახალი მისამართი."
@@ -5551,6 +5561,9 @@
       ],
       "Anderson": [
         "ანდერსონი"
+      ],
+      "Apply policy to": [
+        "პოლიტიკის გადატარება"
       ],
       "Assertion Consumer Service URL": [
         "ACS სამსახურის ბმული"
@@ -5825,9 +5838,6 @@
       "New password": [
         "ახალი პაროლი"
       ],
-      "New policy name": [
-        "ახალი პოლიტიკის სახელი"
-      ],
       "New second password": [
         "ახალი მეორე პაროლი"
       ],
@@ -5899,6 +5909,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "გაგვიზიარეთ თქვენი აზრი."
+      ],
+      "Policy name": [
+        "პოლიტიკის სახელი"
       ],
       "Postal code": [
         "საფოსტო კოდი"
@@ -7587,9 +7600,6 @@
       "Downloaded 2FA recovery codes": [
         "2FA აღდგენის კოდების გადმოწერა"
       ],
-      "Error creating policy": [
-        "პოლიტიკის შექმნის შეცდომა"
-      ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
@@ -7607,9 +7617,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 მომხმარებელი და პაროლი თავიდან დაგენერირდა"
-      ],
-      "Policy created successfully": [
-        "პოლიტიკა წარმატებით შეიქმნა"
       ],
       "Reminder has been sent": [
         "შეხსენება გაგზავნილია"
@@ -7639,6 +7646,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
+      "Don’t show this offer again": [
+        "აღარ მაჩვენო ეს შემოთავაზება"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "მიიღეთ Drive Plus ფასით ${ pricingTitle }"
       ],
@@ -7651,14 +7661,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan } Plus-დან."
       ],
+      "Last day to save": [
+        "ბოლო დღე შესანახად"
+      ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus 12 თვით"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "დაზოგეთ ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "დაზოეთ 80% პირველ თვეს."
+      ],
+      "Save big when you pay annually": [
+        "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
+      ],
+      "This offer won't be shown again.": [
+        "ამ შემოთავაზებას აღარ გაჩვენებთ."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "როცა თვიურიდან წლიურ გამოწერაზე გადახვალთ."
+      ],
+      "You currently pay": [
+        "ამჟამად იხდით"
       ]
     },
     "Offer feature": {
@@ -10021,6 +10055,15 @@
       "Phone number updated": [
         "ტელეფონის ნომერი განახლდა"
       ],
+      "Policy created successfully!": [
+        "პოლიტიკა წარმატებით შეიქმნა!"
+      ],
+      "Policy deleted": [
+        "პოლიტიკა წაიშალა"
+      ],
+      "Policy updated successfully!": [
+        "პოლიტიკის განახლება წარმატებულია!"
+      ],
       "Preference saved": [
         "პარამეტრები შენახულია"
       ],
@@ -10478,6 +10521,9 @@
       "Delete": [
         "წაშლა"
       ],
+      "Delete ${ policyName }?": [
+        "წავშალო ${ policyName }?"
+      ],
       "Delete account": [
         "ანგარიშის წაშლა"
       ],
@@ -10533,6 +10579,9 @@
       "Edit billing address": [
         "გადახდის მისამართის ჩასწორება"
       ],
+      "Edit countries": [
+        "ქვეყნების ჩასწორება"
+      ],
       "Edit credit/debit card": [
         "საკრედიტო/სადებეტო ბარათის ჩასწორება"
       ],
@@ -10550,6 +10599,9 @@
       ],
       "Edit invoice note": [
         "ინვოისის შენიშვნის ჩასწორება"
+      ],
+      "Edit name": [
+        "სახელის ჩასწორება"
       ],
       "Edit servers": [
         "სერვერების ჩასწორება"
@@ -11049,6 +11101,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "წევრები, რომლებც 2FA-ს არ იყენებენ, მიიღებენ ელფოსტას, რომელიც მისი გამოყენების, რაც შეიძლება, მალე ჩართვას მოსთხოვს."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "გაზიარებული სერვერის პოლიტიკები, მხოლოდ, ინდივიდუალურ მომხმარებლებს, ან ჯგუფებს შეგიძლიათ, გაუზიაროთ"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს"
@@ -11568,9 +11623,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "ამ ტელეფონის ნომრის წაშლის შემთხვევაში თქვენს ანგარიშს ვეღარ აღადგენთ."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "გაითვალისწინეთ, რომ გადახდის ამ მეთოდის არჩევით თქვენი ანგარიშის სატარიფო გეგმის მომენტალური შეცვლა შეუძლებელია. ტარიფი, მხოლოდ, გადახდის დასრულების შემდეგ შეიცვლება."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
