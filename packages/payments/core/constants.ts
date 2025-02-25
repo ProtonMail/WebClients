@@ -366,6 +366,7 @@ export const FREE_SUBSCRIPTION = {
 export enum CYCLE {
     MONTHLY = 1,
     THREE = 3,
+    SIX = 6,
     YEARLY = 12,
     FIFTEEN = 15,
     EIGHTEEN = 18,
