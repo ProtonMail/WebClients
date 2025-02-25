@@ -62,6 +62,7 @@
 	pointer-events: none;
 	object-fit: cover;
 	transition: transform 0.15s linear;
+	border-radius: calc(var(--border-radius-md) - (3 * var(--1px)));
 
 	&--empty {
 		background-color: var(--background-weak);
