@@ -206,12 +206,13 @@ export const authMember = (memberID: string, data: { Unlock?: boolean } = {}) =>
     data,
 });
 
-export const inviteMember = (email: string, maxSpace: number) => ({
+export const inviteMember = (email: string, maxSpace: number, maxAI?: number) => ({
     url: `core/v4/members/invitations`,
     method: 'post',
     data: {
         Email: email,
         MaxSpace: maxSpace,
+        MaxAI: maxAI,
     },
 });
 
