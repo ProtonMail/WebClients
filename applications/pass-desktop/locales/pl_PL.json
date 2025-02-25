@@ -103,6 +103,9 @@
       "Cancel": [
         "Anuluj"
       ],
+      "Cancel email change": [
+        "Anulowanie zmiany adresu e-mail"
+      ],
       "Change": [
         "Zmień"
       ],
@@ -875,6 +878,12 @@
       ],
       "Failed to block the contact": [
         "Nie udało się zablokować kontaktu"
+      ],
+      "Failed to cancel mailbox change": [
+        "Nie udało się anulować zmiany skrzynki pocztowej"
+      ],
+      "Failed to change mailbox": [
+        "Zmiana skrzynki pocztowej się nie powiodła"
       ],
       "Failed to create domain": [
         "Nie udało się utworzyć domeny"
@@ -2095,6 +2104,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
+      ],
+      "This mailbox will use your previous email.": [
+        "Ta skrzynka pocztowa będzie korzystać z twojego poprzedniego adresu e-mail."
       ],
       "This operation is irreversible.": [
         "Ta operacja jest nieodwracalna."
@@ -3496,6 +3508,9 @@
       "Domain successfully deleted": [
         "Domena została usunięta"
       ],
+      "Mailbox change successfully cancelled": [
+        "Zmiana skrzynki pocztowej została pomyślnie anulowana"
+      ],
       "Mailbox successfully deleted": [
         "Skrzynka pocztowa została usunięta"
       ],
@@ -3565,6 +3580,12 @@
       ],
       "Breaches detected for": [
         "Wykryto wycieki dla"
+      ],
+      "Cancel changing your email?": [
+        "Anulować zmianę adresu e-mail?"
+      ],
+      "Change mailbox email": [
+        "Zmiana adresu e-mail skrzynki pocztowej"
       ],
       "Confirm extra password": [
         "Potwierdź dodatkowe hasło"
