@@ -34,8 +34,7 @@ export const createKeysCache = (rootKey: PrivateKeyReference): KeyCache => {
                 armoredPassphrase: linkMeta.NodePassphrase!,
                 armoredSignature: linkMeta.NodePassphraseSignature!,
                 privateKeys: [parentPrivateKey],
-                publicKeys: [],
-                validateSignature: false,
+                publicKeysCallbackList: [],
             });
 
             const linkPrivateKey = await CryptoProxy.importPrivateKey({
