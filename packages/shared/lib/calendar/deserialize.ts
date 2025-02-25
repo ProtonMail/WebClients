@@ -223,6 +223,7 @@ interface ReadCalendarEventArguments {
         | 'CalendarEvents'
         | 'AttendeesEvents'
         | 'Attendees'
+        | 'AttendeesInfo'
         | 'Notifications'
         | 'FullDay'
         | 'CalendarID'
@@ -243,6 +244,7 @@ export const readCalendarEvent = async ({
         CalendarEvents = [],
         AttendeesEvents = [],
         Attendees = [],
+        AttendeesInfo = [],
         Notifications,
         FullDay,
         CalendarID: calendarID,
@@ -306,6 +308,11 @@ export const readCalendarEvent = async ({
 
     if (Color) {
         vevent.color = { value: Color };
+    }
+
+    if (AttendeesInfo.length) {
+        // TODO handle decription there ?
+        // decryptAndVerifyAttendeesInfo...
     }
 
     const selfAddressData = getSelfAddressData({
