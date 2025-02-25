@@ -76,7 +76,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
         };
 
         return (
-            <div className="anime-fade-in h-full flex flex-column gap-y-3">
+            <div className="anime-fade-in h-full flex flex-nowrap flex-column gap-y-3 *:shrink-0">
                 {heading}
                 <h2 className="text-xl text-bold">{c('Title').t`Share with`}</h2>
 
