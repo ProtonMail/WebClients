@@ -1586,6 +1586,32 @@
         "morango"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "Vista do dia"
+      ],
+      "Month view": [
+        "Vista do mês"
+      ],
+      "New event": [
+        "Novo evento"
+      ],
+      "Next period": [
+        "Próximo período"
+      ],
+      "Previous period": [
+        "Período anterior"
+      ],
+      "Search events": [
+        "Procurar eventos"
+      ],
+      "Today": [
+        "Hoje"
+      ],
+      "Week view": [
+        "Vista da semana"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Abandonar a configuração de importação?"
@@ -2502,18 +2528,18 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Após…"
+      "Don't end": [
+        "Não termina"
       ],
-      "Never": [
-        "Nunca"
+      "End after": [
+        "Termina após"
       ],
-      "On date…": [
-        "Na data…"
+      "End on": [
+        "Termina na"
       ],
-      "time": [
-        "vez",
-        "vezes"
+      "event": [
+        "evento",
+        "eventos"
       ]
     },
     "Cycle": {
@@ -3972,11 +3998,11 @@
       "Contacts": [
         "Contactos"
       ],
-      "Custom recurrence": [
-        "Recorrência personalizada"
-      ],
       "Name": [
         "Nome"
+      ],
+      "Repeat event": [
+        "Repetir o evento"
       ],
       "Search": [
         "Pesquisar"
@@ -4747,6 +4773,9 @@
       "High Priority": [
         "Prioridade alta"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Se os atalhos de teclado estiverem ativados, pode utilizar as seguintes teclas para ações rápidas ou para saltar para diferentes visualizações. O atalho ${ metaKey } + K está sempre ativado."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
@@ -5474,8 +5503,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contacte-nos em ${ email } para obter instruções sobre como pagar em dinheiro."
+      "How to send a cash payment?": [
+        "Como enviar um pagamento em dinheiro?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Encontre as instruções no artigo: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5574,13 +5606,43 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "Criar um evento"
+      ],
+      "Day view": [
+        "Vista do dia"
+      ],
+      "Month view": [
+        "Vista do mês"
+      ],
+      "Next period": [
+        "Próximo período"
+      ],
+      "Open quick actions menu": [
+        "Abrir o menu de ações rápidas"
+      ],
       "Open this modal": [
         "Abrir esta janela"
+      ],
+      "Previous period": [
+        "Período anterior"
+      ],
+      "Search events": [
+        "Procurar eventos"
+      ],
+      "Today": [
+        "Hoje"
+      ],
+      "Week view": [
+        "Vista da semana"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Acções básicas"
+      ],
+      "View options": [
+        "Ver as opções"
       ]
     },
     "Knowledge base link label": {
@@ -5761,9 +5823,6 @@
       "Encrypt emails": [
         "Encriptar os e-mails"
       ],
-      "Ends": [
-        "Termina"
-      ],
       "Event duration": [
         "Duração do evento"
       ],
@@ -5772,6 +5831,9 @@
       ],
       "Event title": [
         "Título do evento"
+      ],
+      "Every": [
+        "A cada"
       ],
       "Expiration (${ patternExpiration })": [
         "Expiração (${ patternExpiration })"
@@ -5790,9 +5852,6 @@
       ],
       "Forwards to": [
         "Encaminha para"
-      ],
-      "Frequency": [
-        "Frequência"
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
@@ -5878,6 +5937,9 @@
       "Notifications": [
         "Notificações"
       ],
+      "On": [
+        "Ativado"
+      ],
       "Operating system": [
         "Sistema operativo"
       ],
@@ -5935,12 +5997,6 @@
       ],
       "Region": [
         "Região"
-      ],
-      "Repeat every": [
-        "Repetir a cada"
-      ],
-      "Repeat on": [
-        "Repetir a"
       ],
       "Reveal password": [
         "Mostrar a palavra-passe"
@@ -6409,8 +6465,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "no dia ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "na ${ shortenedDay }"
       ],
       "on the first Friday": [
         "na primeira Sexta-feira"
@@ -7662,6 +7718,9 @@
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
+      "Don’t show this offer again": [
+        "Não mostrar esta oferta novamente"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtenha o Drive Plus por apenas ${ pricingTitle }"
       ],
@@ -7674,14 +7733,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidade para obter 80% de desconto no seu primeiro mês do ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Último dia para poupar"
+      ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Save": [
+        "Poupe"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Poupe ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Poupe 80% no seu primeiro mês."
+      ],
+      "Save big when you pay annually": [
+        "Poupe em grande ao pagar anualmente!"
+      ],
+      "This offer won't be shown again.": [
+        "Esta oferta não será mostrada novamente."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quando mudar de uma subscrição mensal para uma anual."
+      ],
+      "You currently pay": [
+        "Atualmente paga"
       ]
     },
     "Offer feature": {
@@ -7765,6 +7848,9 @@
       "Custom": [
         "Personalizado"
       ],
+      "Custom...": [
+        "Personalizar..."
+      ],
       "Day": [
         "Dia",
         "Dias"
@@ -7775,11 +7861,14 @@
       "Every day": [
         "Todos os dias"
       ],
-      "Every month": [
-        "Todos os meses"
+      "Every month ${ description }": [
+        "Cada mês ${ description }"
       ],
-      "Every week": [
-        "Todas as semanas"
+      "Every week ${ everyWeekDescription }": [
+        "Cada semana ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Cada dia da semana ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Todos os anos"
@@ -8071,6 +8160,9 @@
       ],
       "Filter groups": [
         "Filtrar grupos"
+      ],
+      "Filter quick actions": [
+        "Filtrar as ações rápidas"
       ],
       "First name": [
         "Primeiro nome"
@@ -9629,6 +9721,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Atalhos de teclado do ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
@@ -9807,6 +9902,9 @@
       "Details": [
         "Detalhes"
       ],
+      "Does not repeat": [
+        "Não se repete"
+      ],
       "Downgrade account": [
         "Optar por um plano inferior"
       ],
@@ -9857,6 +9955,21 @@
       ],
       "Event is happening on defined time slot": [
         "O evento acontece num intervalo de tempo definido"
+      ],
+      "Every day": [
+        "Cada dia"
+      ],
+      "Every month ${ option.text }": [
+        "Cada mês ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Cada semana na ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Cada dia da semana ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Cada ano"
       ],
       "Exporting contacts": [
         "A exportar contactos"
@@ -10009,9 +10122,6 @@
       "Security center": [
         "Centro de segurança"
       ],
-      "Select a day in the month": [
-        "Selecione um dia no mês"
-      ],
       "Select a plan": [
         "Selecione um plano"
       ],
@@ -10026,9 +10136,6 @@
       ],
       "Select event end time": [
         "Selecione a hora final do evento"
-      ],
-      "Select event frequency": [
-        "Seleccionar frequência do evento"
       ],
       "Select event frequency interval": [
         "Selecione o intervalo de frequência do evento"
@@ -10053,9 +10160,6 @@
       ],
       "Select the way to send this notification": [
         "Selecione a forma de enviar esta notificação"
-      ],
-      "Select when this event will stop happening": [
-        "Selecione quando é que este evento para de acontecer"
       ],
       "Select when you want this notification to be sent": [
         "Selecione quando é que a notificação deve ser enviada"
@@ -10419,9 +10523,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Note que ao escolher este método de pagamento, a sua conta não poderá ser atualizada imediatamente. Faremos a atualização assim que o pagamento for aprovado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta a ponta. Não envie nenhuma informação sensível."

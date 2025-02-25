@@ -2551,23 +2551,6 @@
         "Na podstawie strefy czasowej"
       ]
     },
-    "Custom frequency option": {
-      "After…": [
-        "Po…"
-      ],
-      "Never": [
-        "Nigdy"
-      ],
-      "On date…": [
-        "W dniu…"
-      ],
-      "time": [
-        "raz",
-        "razy",
-        "razy",
-        "razy"
-      ]
-    },
     "Cycle": {
       "/month": [
         "/ miesiąc"
@@ -3007,6 +2990,9 @@
         "Niektóre grupy nie posiadają kontaktów: ${ list }",
         "Niektóre grupy nie posiadają kontaktów: ${ list }",
         "Niektóre grupy nie posiadają kontaktów: ${ list }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } to nazwa użytkownika. Aby utworzyć ${ emailAddress }, przejdź do Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)."
       ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
@@ -4070,9 +4056,6 @@
     "Header": {
       "Contacts": [
         "Kontakty"
-      ],
-      "Custom recurrence": [
-        "Niestandardowe powtórzenie"
       ],
       "Name": [
         "Nazwa"
@@ -5650,11 +5633,6 @@
         "Możesz zaktualizować zapytanie lub zamknąć wyszukiwanie i wrócić do kalendarza"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
-      ]
-    },
     "Info message": {
       "No results found": [
         "Nie znaleziono żadnych wyników"
@@ -5973,9 +5951,6 @@
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
       ],
-      "Ends": [
-        "Data zakończenia"
-      ],
       "Event duration": [
         "Czas trwania wydarzenia"
       ],
@@ -6002,9 +5977,6 @@
       ],
       "Forwards to": [
         "Przekaż do"
-      ],
-      "Frequency": [
-        "Częstotliwość"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -6149,12 +6121,6 @@
       ],
       "Region": [
         "Województwo"
-      ],
-      "Repeat every": [
-        "Powtarzaj co"
-      ],
-      "Repeat on": [
-        "Powtarzaj w"
       ],
       "Reveal password": [
         "Pokaż hasło"
@@ -6636,9 +6602,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. dnia miesiąca"
-      ],
       "on the first Friday": [
         "w pierwszy piątek"
       ],
@@ -8091,12 +8054,6 @@
       ],
       "Every day": [
         "Codziennie"
-      ],
-      "Every month": [
-        "Co miesiąc"
-      ],
-      "Every week": [
-        "Co tydzień"
       ],
       "Every year": [
         "Co rok"
@@ -10415,9 +10372,6 @@
       "Security center": [
         "Centrum zabezpieczeń"
       ],
-      "Select a day in the month": [
-        "Wybierz dzień miesiąca"
-      ],
       "Select a plan": [
         "Wybierz plan"
       ],
@@ -10432,9 +10386,6 @@
       ],
       "Select event end time": [
         "Wybierz czas zakończenia wydarzenia"
-      ],
-      "Select event frequency": [
-        "Wybierz częstotliwość wydarzenia"
       ],
       "Select event frequency interval": [
         "Wybierz przedział czasowy częstotliwości wydarzenia"
@@ -10459,9 +10410,6 @@
       ],
       "Select the way to send this notification": [
         "Wymierz metodę otrzymania powiadomienia"
-      ],
-      "Select when this event will stop happening": [
-        "Wybierz, kiedy to wydarzenie się zakończy"
       ],
       "Select when you want this notification to be sent": [
         "Wybierz, kiedy to powiadomienie ma zostać wysłane"
@@ -10974,9 +10922,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Dozwolone są tylko małe znaki alfanumeryczne, kropki, myślniki i podkreślenia."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."

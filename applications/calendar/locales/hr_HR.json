@@ -1934,19 +1934,6 @@
         "Ålandski otoci"
       ]
     },
-    "Custom frequency option": {
-      "Never": [
-        "Nikad"
-      ],
-      "On date…": [
-        "Dana…"
-      ],
-      "time": [
-        "put",
-        "puta",
-        "puta"
-      ]
-    },
     "Cycle": {
       "/month": [
         "/mjesec"
@@ -3442,11 +3429,6 @@
         "Vremenska zona vašeg sustava promijenjena je u ${ timezone }. Želite li ažurirati svoje postavke vremenske zone?"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Obratite nam se na ${ email } kako biste dobili upute za plaćanje gotovinom."
-      ]
-    },
     "Info message": {
       "No results found": [
         "Nema rezultata"
@@ -3630,9 +3612,6 @@
       "Encrypt emails": [
         "Šifriraj e-poštu"
       ],
-      "Ends": [
-        "Završava"
-      ],
       "Event duration": [
         "Trajanje događaja"
       ],
@@ -3650,9 +3629,6 @@
       ],
       "Folder location": [
         "Lokacija mape"
-      ],
-      "Frequency": [
-        "Frekvencija"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -3778,12 +3754,6 @@
       ],
       "Region": [
         "Regija"
-      ],
-      "Repeat every": [
-        "Ponovi svaki"
-      ],
-      "Repeat on": [
-        "Ponovi na"
       ],
       "Reveal password": [
         "Prikaži lozinku"
@@ -4061,9 +4031,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "na dan ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "na prvi petak"
       ],
@@ -4582,12 +4549,6 @@
       ],
       "Every day": [
         "Svaki dan"
-      ],
-      "Every month": [
-        "Svaki mjesec"
-      ],
-      "Every week": [
-        "Svaki tjedan"
       ],
       "Every year": [
         "Svake godine"
@@ -5637,9 +5598,6 @@
       "Save changes": [
         "Spremi promjene"
       ],
-      "Select a day in the month": [
-        "Odaberite dan u mjesecu"
-      ],
       "Select a plan": [
         "Odaberite plan"
       ],
@@ -5654,9 +5612,6 @@
       ],
       "Select event end time": [
         "Odaberite vrijeme završetka događaja"
-      ],
-      "Select event frequency": [
-        "Odaberite učestalost događaja"
       ],
       "Select event frequency interval": [
         "Odaberite interval učestalosti događaja"
@@ -5681,9 +5636,6 @@
       ],
       "Select the way to send this notification": [
         "Odaberite način slanja ove obavijesti"
-      ],
-      "Select when this event will stop happening": [
-        "Odaberite kada će ovaj događaj prestati"
       ],
       "Select when you want this notification to be sent": [
         "Odaberite kada želite da se ova obavijest pošalje"
@@ -5871,9 +5823,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ako ste zaboravili lozinku, nemoguće je ponovno aktivirati vaš ključ. Možemo vam pomoći da odbacite natpis upozorenja, ali tijekom postupka trajno ćete izgubiti pristup svim podacima šifriranim tim ključem."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Imajte na umu da odabirom ovog načina plaćanja vaš račun se ne može odmah nadograditi. Ažurirati ćemo vaš račun nakon plaćanja."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
