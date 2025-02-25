@@ -15,7 +15,7 @@ import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { waitUntil } from '../../../utils/async';
 import { logError } from '../../../utils/errorHandling';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
-import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
+import { untilStreamEnd } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { MAX_DOWNLOADING_BLOCKS, MAX_RETRIES_BEFORE_FAIL, TIME_TO_RESET_RETRIES } from '../constants';
 import type { DownloadCallbacks, DownloadStreamControls, LogCallback } from '../interface';
@@ -69,6 +69,17 @@ export default function initDownloadBlocks(
     log: LogCallback,
     downloadBlockCallback = downloadBlock
 ) {
+    class ObserverStream extends TransformStream<Uint8Array, Uint8Array> {
+        constructor(fn?: (chunk: Uint8Array) => void) {
+            super({
+                transform(chunk, controller) {
+                    fn?.(chunk);
+                    controller.enqueue(chunk);
+                },
+            });
+        }
+    }
+
     const fileStream = new ObserverStream();
     const fsWriter = fileStream.writable.getWriter();
 
