@@ -274,6 +274,7 @@ export const calendarEventBuilder = build<CalendarEvent>('Event', {
                 UpdateTime: null,
             },
         ],
+        AttendeesInfo: [],
     },
     traits: {
         canceled: {

@@ -1,6 +1,8 @@
 import type { CalendarNotificationSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type {
+    ATTENDEE_COMMENT_TYPE,
+    ATTENDEE_MORE_ATTENDEES,
     ATTENDEE_STATUS_API,
     CALENDAR_CARD_TYPE,
     DAILY_TYPE,
@@ -41,6 +43,16 @@ export interface Attendee {
     UpdateTime: Nullable<number>;
 }
 
+export interface AttendeesInfo {
+    Attendees: (Attendee & {
+        Comment: {
+            Message: string;
+            Type: ATTENDEE_COMMENT_TYPE;
+        };
+    })[];
+    MoreAttendees: ATTENDEE_MORE_ATTENDEES;
+}
+
 export interface CalendarEventBlobData {
     CalendarKeyPacket: Nullable<string>;
     CalendarEvents: CalendarEventData[];
@@ -51,6 +63,7 @@ export interface CalendarEventBlobData {
     Notifications?: Nullable<CalendarNotificationSettings[]>;
     AttendeesEvents: CalendarEventData[];
     Attendees: Attendee[];
+    AttendeesInfo: AttendeesInfo[];
 }
 
 export type CalendarEventBlobDataWithNotifications = Required<CalendarEventBlobData>;
