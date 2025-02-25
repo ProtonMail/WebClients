@@ -40,6 +40,7 @@ const dummyBlobData: CalendarEventBlobData = {
     Notifications: null,
     AttendeesEvents: [],
     Attendees: [dummyAttendee],
+    AttendeesInfo: [],
 };
 const dummyEventData: CalendarEvent = {
     ...dummySharedData,
