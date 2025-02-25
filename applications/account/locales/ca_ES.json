@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "Elimina de manera permanent"
+      ],
+      "Delete policy": [
+        "Elimina la política"
       ],
       "Delete record": [
         "Suprimeix el registre"
@@ -1042,14 +1045,20 @@
       "Select calendar view": [
         "Tria la vista de calendari"
       ],
+      "Select city ${ city }": [
+        "Seleccioneu la ciutat ${ city }"
+      ],
       "Select country": [
         "Seleccioneu el país"
       ],
-      "select file": [
-        "selecciona un fitxer"
+      "Select country ${ country }": [
+        "Seleccioneu el país ${ country }"
       ],
       "Select file": [
         "Selecciona un fitxer"
+      ],
+      "select file": [
+        "selecciona un fitxer"
       ],
       "Select files": [
         "Selecciona els fitxers"
@@ -3662,8 +3671,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Creeu tantes etiquetes o carpetes com necessiteu per mantenir ordenada la safata d'entrada."
       ],
-      "Create policies to manage access to shared servers.": [
-        "Creeu polítiques per a gestionar l'accés a servidors compartits."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Creeu polítiques per a decidir qui es pot connectar als servidors compartits de cada país."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activa ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
@@ -3677,8 +3686,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Tothom a la vostra organització es pot connectar a servidors compartits."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Tothom a la vostra organització es pot connectar a servidors compartits de tots els països."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
@@ -4540,8 +4549,17 @@
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
       ],
+      "Error creating policy.": [
+        "S'ha produït un error en crear la política."
+      ],
+      "Error deleting policy.": [
+        "S'ha produït un error en eliminar la política."
+      ],
       "Error in one of the conditions": [
         "Errada en una de les condicions"
+      ],
+      "Error updating policy.": [
+        "S'ha produït un error en actualitzar la política."
       ],
       "Expired": [
         "Caducat"
@@ -6976,11 +6994,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeu almenys un mètode de recuperació de dades per assegurar-vos que podeu continuar accedint al contingut del vostre compte ${ BRAND_NAME } si perdeu la contrasenya."
       ],
-      "Active": [
-        "Actiu"
-      ],
       "active": [
         "activa"
+      ],
+      "Active": [
+        "Actiu"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
@@ -7783,6 +7801,9 @@
       "If it’s not right for you, we’ll refund you.": [
         "Si no us convé, us reemborsarem."
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Si les tecles de drecera estan activades, podeu utilitzar les tecles següents per a accions ràpides o per anar a diferents vistes. La tecla de drecera ${ metaKey } + K sempre està activada."
+      ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Si el fus horari del sistema no coincideix amb la configuració del fus horari actual, us demanarem que l’actualitzeu (com a màxim una vegada al dia)."
       ],
@@ -8199,9 +8220,6 @@
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
       ],
-      "No common passwords": [
-        "Cap contrasenya comuna"
-      ],
       "No credit card required": [
         "No es requereix targeta de crèdit"
       ],
@@ -8228,9 +8246,6 @@
       ],
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Cap seqüència predictible (1234, aaa)"
       ],
       "No results found": [
         "No s'ha trobat cap resultat."
@@ -8890,6 +8905,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Això pot trigar uns segons o minuts depenent del vostre dispositiu"
+      ],
+      "This cannot be undone.": [
+        "Aquesta operació no es pot desfer."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Això pot trigar força temps. No tanqueu aquesta pàgina ni us desconnecteu d'internet."
@@ -9741,8 +9759,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contacteu amb nosaltres en ${ email } per a rebre instruccions de com fer un pagament en efectiu."
+      "How to send a cash payment?": [
+        "Com enviar un pagament en efectiu?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Trobeu les instruccions a l'article: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -9952,7 +9973,7 @@
         "Tanca l'esborrany"
       ],
       "Create new event": [
-        "Crea un nou esdeveniment"
+        "Crea un esdeveniment"
       ],
       "Day view": [
         "Vista diària"
@@ -10057,7 +10078,7 @@
         "Nou missatge"
       ],
       "Next period": [
-        "Següent periode"
+        "Període següent"
       ],
       "Open command panel": [
         "Obre el panell d'ordres"
@@ -10068,11 +10089,14 @@
       "Open previous message": [
         "Obre el missatge anterior"
       ],
+      "Open quick actions menu": [
+        "Obre el menú d'accions ràpides"
+      ],
       "Open this modal": [
         "Obre aquesta finestra"
       ],
       "Previous period": [
-        "Periode anterior"
+        "Període anterior"
       ],
       "Reply": [
         "Respon"
@@ -10138,6 +10162,9 @@
       ],
       "Message shortcuts": [
         "Dreceres de missatge"
+      ],
+      "View options": [
+        "Mostra les opcions"
       ]
     },
     "Keys actions": {
@@ -10352,6 +10379,9 @@
       ],
       "Apply filter to existing emails": [
         "Aplica el filtre als correus existents"
+      ],
+      "Apply policy to": [
+        "Apliqueu la política a"
       ],
       "Assertion Consumer Service URL": [
         "URL d'Assertion Consumer Service"
@@ -10914,9 +10944,6 @@
       "New password": [
         "Contrasenya nova"
       ],
-      "New policy name": [
-        "Nou nom de la política"
-      ],
       "New second password": [
         "Nova segona contrasenya"
       ],
@@ -11015,6 +11042,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Compartiu qualsevol comentari per a ajudar-nos a millorar."
+      ],
+      "Policy name": [
+        "Nom de la política"
       ],
       "Port": [
         "Port"
@@ -12022,8 +12052,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "el dia ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "el ${ shortenedDay }"
       ],
       "on the first Friday": [
         "en el primer Divendres"
@@ -13386,9 +13416,6 @@
       "Email notifications have been enabled": [
         "S'han activat les notificacions per correu electrònic."
       ],
-      "Error creating policy": [
-        "S'ha produït un error en crear la política."
-      ],
       "Invalid code": [
         "El codi no és vàlid."
       ],
@@ -13412,9 +13439,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credencials OpenVPN / IKEv2 regenerades"
-      ],
-      "Policy created successfully": [
-        "S'ha creat la política."
       ],
       "Reminder has been sent": [
         "S'ha enviat un recordatori"
@@ -13538,6 +13562,9 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don’t show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obteniu Drive Plus per només ${ pricingTitle }"
       ],
@@ -13550,14 +13577,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Últim dia per estalviar"
+      ],
       "Limited-time offer": [
         "Oferta per temps limitat"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus durant 12 mesos"
       ],
       "Maybe later": [
         "Potser després"
       ],
+      "Save": [
+        "Estalvieu"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Estalvieu el ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Estalvieu un 80% en el vostre primer mes."
+      ],
+      "Save big when you pay annually": [
+        "Estalvieu de debò pagant anualment!"
+      ],
+      "This offer won't be shown again.": [
+        "Aquesta oferta no es tornarà a mostrar."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quan canvieu d'una subscripció mensual a una anual."
+      ],
+      "You currently pay": [
+        "Actualment pagueu"
       ]
     },
     "Offer feature": {
@@ -16766,47 +16817,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -17097,6 +17107,47 @@
         "El vostre propi àlies de correu electrònic curt @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "N'esteu segur?"
@@ -17285,6 +17336,15 @@
       ],
       "Phone number updated": [
         "Número de telèfon s'ha actualitzat"
+      ],
+      "Policy created successfully!": [
+        "S'ha creat la política."
+      ],
+      "Policy deleted": [
+        "S'ha eliminat la política."
+      ],
+      "Policy updated successfully!": [
+        "S'ha actualitzat la política."
       ],
       "Port copied to clipboard": [
         "S'ha copiat el port al porta-retalls."
@@ -17592,6 +17652,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ appName } keyboard shortcuts": [
+        "Dreceres de teclat de ${ appName }"
       ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
@@ -17991,6 +18054,9 @@
       "Decrypt key": [
         "Desxifra la clau"
       ],
+      "Delete ${ policyName }?": [
+        "Voleu suprimir ${ policyName }?"
+      ],
       "Delete ${ value }": [
         "Elimina ${ value }"
       ],
@@ -18088,6 +18154,9 @@
       "Edit billing address": [
         "Edita l'adreça de la factura"
       ],
+      "Edit countries": [
+        "Edita els països"
+      ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
       ],
@@ -18108,6 +18177,9 @@
       ],
       "Edit invoice note": [
         "Edita la nota de la factura"
+      ],
+      "Edit name": [
+        "Edita el nom"
       ],
       "Edit profile": [
         "Edita el perfil"
@@ -19165,6 +19237,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "S'estableix el peu de pàgina següent als correus que envieu: ${ signature } L'enllaç apunta al vostre enllaç de recomanació. El peu de pàgina apareixerà sota la vostra signatura. Podeu personalitzar la signatura en qualsevol moment a les preferències."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Les polítiques de servidor compartit es poden aplicar a cada usuari o a grups."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Mostra la imatge de cada remitent a la llista de missatges. Es mostraran les inicials del remitent si no hi ha una fotografia disponible."
       ],
@@ -19941,9 +20016,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Comproveu que l'extensió estigui instal·lada i activada."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
       ],
       "Please update the extension to its latest version": [
         "Actualitzeu l'extensió a la seva darrera versió"

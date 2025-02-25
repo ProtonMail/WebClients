@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "Dauerhaft löschen"
+      ],
+      "Delete policy": [
+        "Richtlinie löschen"
       ],
       "Delete record": [
         "Eintrag löschen"
@@ -1042,13 +1045,19 @@
       "Select calendar view": [
         "Kalenderansicht wählen"
       ],
+      "Select city ${ city }": [
+        "Ort ${ city } auswählen"
+      ],
       "Select country": [
         "Land wählen"
       ],
-      "select file": [
-        "Datei auswählen"
+      "Select country ${ country }": [
+        "Land ${ country } auswählen"
       ],
       "Select file": [
+        "Datei auswählen"
+      ],
+      "select file": [
         "Datei auswählen"
       ],
       "Select files": [
@@ -3662,8 +3671,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Lege so viele Etiketten oder Ordner an, wie du brauchst, um deinen Posteingang in übersichtlich zu halten."
       ],
-      "Create policies to manage access to shared servers.": [
-        "Erstelle Richtlinien zur Verwaltung des Zugriffs auf gemeinsam genutzte Server."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Erstelle Richtlinien, um zu entscheiden, wer sich mit gemeinsamen Servern in jedem Land verbinden darf."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiviere ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
@@ -3677,8 +3686,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Jeder in deiner Organisation kann sich mit gemeinsamen Servern verbinden."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Jeder in Ihrem Unternehmen kann sich mit gemeinsamen Servern in allen Ländern verbinden."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden."
@@ -3932,7 +3941,7 @@
         "Fortschrittlicher Schutz, der über die Branchenstandards hinausgeht"
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
-        "Werde eine von 50.000+ Organisationen die bereits von ${ BRAND_NAME }s Sicherheitsangebot profitieren"
+        "Werde eine von 50.000+ Organisationen, die bereits von ${ BRAND_NAME }s Sicherheit profitieren"
       ],
       "Protect sensitive business information and collaborate securely": [
         "Schütze sensible Geschäftsinformationen und sichere die Zusammenarbeit"
@@ -4540,8 +4549,17 @@
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
       ],
+      "Error creating policy.": [
+        "Fehler beim Erstellen einer Richtlinie."
+      ],
+      "Error deleting policy.": [
+        "Fehler beim Löschen der Richtlinie."
+      ],
       "Error in one of the conditions": [
         "Fehler in einer der Bedingungen"
+      ],
+      "Error updating policy.": [
+        "Fehler beim Aktualisieren der Richtlinie."
       ],
       "Expired": [
         "Abgelaufen"
@@ -6976,11 +6994,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiviere mindestens eine Datenwiederherstellungsmethode, um sicherzustellen, dass du weiterhin auf den Inhalt deines ${ BRAND_NAME }-Kontos zugreifen kannst, wenn du dein Passwort verlierst."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Füge deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -7431,7 +7449,7 @@
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
       "default email address": [
-        "standard E-Mail-Adresse"
+        "Standard-E-Mail-Adresse"
       ],
       "Default email application": [
         "Standard E-Mail-Anwendung"
@@ -8202,9 +8220,6 @@
       "No addresses exist": [
         "Keine Adressen vorhanden"
       ],
-      "No common passwords": [
-        "Keine gängigen Passwörter"
-      ],
       "No credit card required": [
         "Keine Kreditkarte erforderlich"
       ],
@@ -8231,9 +8246,6 @@
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Keine vorhersehbaren Sequenzen (1234, aaa)"
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -8893,6 +8905,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Dies kann je nach Gerät ein paar Sekunden oder einige Minuten dauern."
+      ],
+      "This cannot be undone.": [
+        "Diese Aktion kann nicht rückgängig gemacht werden."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne die Verbindung zum Internet nicht."
@@ -9744,8 +9759,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Bitte kontaktiere uns unter ${ email } für Anweisungen, wie du unsere Rechnung mit Bargeld begleichen kannst."
+      "How to send a cash payment?": [
+        "Wie sendet man eine Bargeldzahlung?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Die Anleitung dazu findest du im Artikel: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -10362,6 +10380,9 @@
       "Apply filter to existing emails": [
         "Filter auf vorhandene E-Mails anwenden"
       ],
+      "Apply policy to": [
+        "Richtlinie anwenden auf"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
       ],
@@ -10923,9 +10944,6 @@
       "New password": [
         "Neues Passwort"
       ],
-      "New policy name": [
-        "Neuer Name der Richtlinie"
-      ],
       "New second password": [
         "Neues zusätzliches Passwort"
       ],
@@ -11024,6 +11042,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Bitte teile uns dein Feedback mit, damit wir uns verbessern können."
+      ],
+      "Policy name": [
+        "Name der Richtlinien"
       ],
       "Port": [
         "Port"
@@ -12031,8 +12052,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "am ${ dayOfMonth }. Tag"
+      "on the ${ shortenedDay }": [
+        "am ${ shortenedDay }"
       ],
       "on the first Friday": [
         "am ersten Freitag"
@@ -13395,9 +13416,6 @@
       "Email notifications have been enabled": [
         "E-Mail-Benachrichtigungen wurden aktiviert"
       ],
-      "Error creating policy": [
-        "Fehler beim Erstellen einer Richtlinie"
-      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
@@ -13421,9 +13439,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
-      ],
-      "Policy created successfully": [
-        "Richtlinie erfolgreich erstellt"
       ],
       "Reminder has been sent": [
         "Eine Erinnerung wurde versandt"
@@ -13547,6 +13562,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } Angebot läuft heute ab!"
       ],
+      "Don’t show this offer again": [
+        "Dieses Angebot nicht mehr zeigen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hol dir Drive Plus für nur ${ pricingTitle }"
       ],
@@ -13559,14 +13577,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Letzte Chance auf 80% Rabatt auf den ersten Monat von ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Letzter Tag zum Sparen"
+      ],
       "Limited-time offer": [
         "Zeitlich begrenztes Angebot"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus für 12 Monate"
       ],
       "Maybe later": [
         "Vielleicht später"
       ],
+      "Save": [
+        "Sparen"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spare ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Spare 80% im ersten Monat."
+      ],
+      "Save big when you pay annually": [
+        "Spare kräftig, wenn du jährlich bezahlst"
+      ],
+      "This offer won't be shown again.": [
+        "Dieses Angebot wird nicht wieder angezeigt."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Beim Wechsel von einem Monats- zu einem Jahresabonnement."
+      ],
+      "You currently pay": [
+        "Du bezahlst derzeit"
       ]
     },
     "Offer feature": {
@@ -16772,47 +16814,6 @@
         "Für ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -17103,6 +17104,47 @@
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Bist du sicher?"
@@ -17291,6 +17333,15 @@
       ],
       "Phone number updated": [
         "Telefonnummer aktualisiert"
+      ],
+      "Policy created successfully!": [
+        "Richtlinie erfolgreich erstellt."
+      ],
+      "Policy deleted": [
+        "Richtlinie gelöscht"
+      ],
+      "Policy updated successfully!": [
+        "Richtlinie erfolgreich aktualisiert."
       ],
       "Port copied to clipboard": [
         "Port in Zwischenablage kopiert"
@@ -18000,6 +18051,9 @@
       "Decrypt key": [
         "Schlüssel entschlüsseln"
       ],
+      "Delete ${ policyName }?": [
+        "${ policyName } löschen?"
+      ],
       "Delete ${ value }": [
         "${ value } löschen"
       ],
@@ -18097,6 +18151,9 @@
       "Edit billing address": [
         "Rechnungsadresse bearbeiten"
       ],
+      "Edit countries": [
+        "Länder bearbeiten"
+      ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
       ],
@@ -18117,6 +18174,9 @@
       ],
       "Edit invoice note": [
         "Rechnungsnotiz bearbeiten"
+      ],
+      "Edit name": [
+        "Name bearbeiten"
       ],
       "Edit profile": [
         "Profil bearbeiten"
@@ -19174,6 +19234,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Setzt die folgende Fußzeile in die von dir gesendeten E-Mails: ${ signature } Der Link verweist auf deinen Empfehlungslink. Die Fußzeile wird unter deiner Signatur erscheinen. Du kannst deine Signatur jederzeit in den Einstellungen personalisieren."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Gemeinsame Serverrichtlinien können auf einzelne Benutzer oder Gruppen angewendet werden"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Zeigt das Bild eines jeden Absenders in der Nachrichtenliste an. Wenn kein Foto vorhanden ist, werden die Initialen des Absenders angezeigt."
       ],
@@ -20073,9 +20136,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Bitte überprüfe, ob die Erweiterung richtig installiert und aktiviert ist"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bitte beachte, dass ein Upgrade deines Kontos durch die Wahl dieser Zahlungsmethode nicht sofort durchgeführt werden kann. Wir werden dein Konto umstellen, sobald die Zahlung bei uns eingegangen ist."
       ],
       "Please update the extension to its latest version": [
         "Bitte update die Erweiterung auf die aktuelle Version"

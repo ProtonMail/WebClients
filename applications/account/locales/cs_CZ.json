@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "Trvale smazat"
+      ],
+      "Delete policy": [
+        "Smazat zásadu"
       ],
       "Delete record": [
         "Smazat záznam"
@@ -1042,14 +1045,20 @@
       "Select calendar view": [
         "Vybrat zobrazení kalendáře"
       ],
+      "Select city ${ city }": [
+        "Vybrat město ${ city }"
+      ],
       "Select country": [
         "Vyberte zemi"
       ],
-      "select file": [
-        "vybrat soubor"
+      "Select country ${ country }": [
+        "Vybrat zemi ${ country }"
       ],
       "Select file": [
         "Vybrat soubor"
+      ],
+      "select file": [
+        "vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -3692,8 +3701,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Vytvořte si tolik štítků nebo složek, kolik potřebujete, abyste měli ve schránce pořádek."
       ],
-      "Create policies to manage access to shared servers.": [
-        "Vytvořte zásady pro správu přístupu ke sdíleným serverům."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Vytvořte zásady, které určují, kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Pro přístup k těmto funkcím povolte ${ PROTON_SENTINEL_NAME }"
@@ -3707,8 +3716,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Kdokoli ve vaší organizaci se může připojit ke sdíleným serverům."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Každý člen vaší organizace se může připojit ke sdíleným serverům ve všech zemích."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
@@ -4574,8 +4583,17 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
+      "Error creating policy.": [
+        "Chyba vytváření zásady."
+      ],
+      "Error deleting policy.": [
+        "Chyba smazání zásady."
+      ],
       "Error in one of the conditions": [
         "Chyba v jedné z podmínek"
+      ],
+      "Error updating policy.": [
+        "Chyba aktualizace zásady."
       ],
       "Expired": [
         "Platnost vypršela"
@@ -7100,11 +7118,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
-      "Active": [
-        "Aktivní"
-      ],
       "active": [
         "aktivní"
+      ],
+      "Active": [
+        "Aktivní"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
@@ -8354,9 +8372,6 @@
       "No addresses exist": [
         "Neexistují žádné adresy"
       ],
-      "No common passwords": [
-        "Žádná společná hesla"
-      ],
       "No credit card required": [
         "Platební karta není vyžadována"
       ],
@@ -8383,9 +8398,6 @@
       ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Žádné předvídatelné sekvence (1234, aaa)"
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
@@ -9070,6 +9082,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "V závislosti na Vašem zařízení to může trvat několik sekund nebo minut"
+      ],
+      "This cannot be undone.": [
+        "Toto nelze vzít zpět"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Toto může nějakou dobu trvat. Nezavírejte prosím tuto stránku ani se neodpojujte od internetu."
@@ -9941,8 +9956,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Prosíme kontaktujte nás na ${ email } pro více informací, jak zaplatit v hotovosti."
+      "How to send a cash payment?": [
+        "Jak poslat platbu v hotovosti?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Pokyny naleznete v článku: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -10509,7 +10527,7 @@
         "Povolit export dat pro všechny uživatele"
       ],
       "Allow individual item sharing": [
-        "Umožnit sdílení samostatných položek"
+        "Povolit sdílení samostatných položek"
       ],
       "Allow memorable passwords": [
         "Povolení zapamatovatelných hesel"
@@ -10533,7 +10551,7 @@
         "Povolení obnovení pomocí důvěryhodného zařízení"
       ],
       "Allow sharing outside the organization": [
-        "Umožnit sdílení mimo organizaci"
+        "Povolit sdílení mimo organizaci"
       ],
       "Allowed domain": [
         "Povolená doména"
@@ -10570,6 +10588,9 @@
       ],
       "Apply filter to existing emails": [
         "Použít filtr na existující e-maily"
+      ],
+      "Apply policy to": [
+        "Použít zásadu pro"
       ],
       "Assertion Consumer Service URL": [
         "URL adresa služby Assertion Consumer Service"
@@ -11132,9 +11153,6 @@
       "New password": [
         "Nové heslo"
       ],
-      "New policy name": [
-        "Název nové zásady"
-      ],
       "New second password": [
         "Nové druhé heslo"
       ],
@@ -11233,6 +11251,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Podělte se s námi o jakoukoli zpětnou vazbu, která nám pomůže se zlepšit."
+      ],
+      "Policy name": [
+        "Název zásady"
       ],
       "Port": [
         "Port"
@@ -12267,8 +12288,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "den ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }"
       ],
       "on the first Friday": [
         "první pátek"
@@ -13685,9 +13706,6 @@
       "Email notifications have been enabled": [
         "E-mailová oznámení byla povolena"
       ],
-      "Error creating policy": [
-        "Chyba při vytváření zásady"
-      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -13711,9 +13729,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
-      ],
-      "Policy created successfully": [
-        "Zásada úspěšně vytvořena"
       ],
       "Reminder has been sent": [
         "Připomenutí bylo odesláno"
@@ -13847,6 +13862,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
+      "Don’t show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získejte Drive Plus za pouhých ${ pricingTitle }"
       ],
@@ -13859,14 +13877,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Poslední šance získat 80% slevu na první měsíc ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Poslední den, kdy můžete ušetřit"
+      ],
       "Limited-time offer": [
         "Časově omezená nabídka"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 měsíců"
       ],
       "Maybe later": [
         "Možná později"
       ],
+      "Save": [
+        "Ušetřete"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ušetřete ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ušetřete 80% za první měsíc."
+      ],
+      "Save big when you pay annually": [
+        "Při roční platbě můžete výrazně ušetřit"
+      ],
+      "This offer won't be shown again.": [
+        "Tato nabídka se již nezobrazí."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Při přechodu z měsíčního na roční předplatné."
+      ],
+      "You currently pay": [
+        "V současnosti platíte"
       ]
     },
     "Offer feature": {
@@ -17193,47 +17235,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -17536,6 +17537,47 @@
         "Váš vlastní krátký e-mailový alias @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Jste si jistý?"
@@ -17724,6 +17766,15 @@
       ],
       "Phone number updated": [
         "Telefonní číslo bylo aktualizováno"
+      ],
+      "Policy created successfully!": [
+        "Zásada úspěšně vytvořena!"
+      ],
+      "Policy deleted": [
+        "Zásada smazána"
+      ],
+      "Policy updated successfully!": [
+        "Zásada úspěšně aktualizována!"
       ],
       "Port copied to clipboard": [
         "Port zkopírován do schránky"
@@ -18449,6 +18500,9 @@
       "Decrypt key": [
         "Dešifrovat klíč"
       ],
+      "Delete ${ policyName }?": [
+        "Smazat ${ policyName }?"
+      ],
       "Delete ${ value }": [
         "Smazat ${ value }"
       ],
@@ -18548,6 +18602,9 @@
       "Edit billing address": [
         "Úprava fakturační adresy"
       ],
+      "Edit countries": [
+        "Upravit země"
+      ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
       ],
@@ -18568,6 +18625,9 @@
       ],
       "Edit invoice note": [
         "Úprava poznámky faktury"
+      ],
+      "Edit name": [
+        "Upravit název"
       ],
       "Edit profile": [
         "Upravit profil"
@@ -19631,6 +19691,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "V odesílaných e-mailech nastaví následující zápatí: ${ signature } Odkaz odkazuje na váš doporučující odkaz. Zápatí se zobrazí pod vaším podpisem. Podpis si můžete kdykoli přizpůsobit v nastavení."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Zásady sdílených serverů lze použít pro samostatné uživatele nebo skupiny"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Zobrazení obrázku každého odesílatele v seznamu zpráv. Pokud není k dispozici fotka, zobrazí se iniciály odesílatele."
       ],
@@ -20460,9 +20523,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Zkontrolujte prosím, že je rozšíření správně nainstalováno a povoleno"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Berte prosím na vědomí, že výběrem této platební metody nemůže být váš účet navýšen okamžitě. Předplatné vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
       ],
       "Please update the extension to its latest version": [
         "Prosím, aktualizujte rozšíření na jeho nejnovější verzi"

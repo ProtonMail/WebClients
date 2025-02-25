@@ -70,11 +70,11 @@
       "Accept": [
         "Akceptuj"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "activate": [
         "aktywować"
+      ],
+      "Activate": [
+        "Aktywuj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -1042,11 +1042,11 @@
       "Select country": [
         "Wybierz kraj"
       ],
-      "select file": [
-        "wybierz plik"
-      ],
       "Select file": [
         "Wybierz plik"
+      ],
+      "select file": [
+        "wybierz plik"
       ],
       "Select files": [
         "Wybierz pliki"
@@ -3683,9 +3683,6 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Utwórz tyle etykiet lub folderów, ile potrzebujesz, aby utrzymać porządek w skrzynce odbiorczej."
       ],
-      "Create policies to manage access to shared servers.": [
-        "Tworzenie zasad zarządzania dostępem do serwerów współdzielonych"
-      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Włącz ${ PROTON_SENTINEL_NAME }, aby uzyskać dostęp do tych funkcji"
       ],
@@ -3697,9 +3694,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
-      ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Każdy w organizacji może łączyć się z serwerami współdzielonymi."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
@@ -4435,6 +4429,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } to nazwa użytkownika. Aby utworzyć ${ emailAddress }, przejdź do Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)."
       ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
@@ -7076,11 +7073,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktywuj co najmniej jedną metodę odzyskiwania danych, aby uniknąć utraty dostępu do konta ${ BRAND_NAME }."
       ],
-      "Active": [
-        "Aktywne"
-      ],
       "active": [
         "aktywna"
+      ],
+      "Active": [
+        "Aktywne"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"${ MAIL_APP_NAME } me\" lub \"Private Message me.\""
@@ -7195,6 +7192,9 @@
       ],
       "Allow recovery by phone": [
         "Zezwalaj na odzyskiwanie przez telefon"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Umożliwienie użytkownikom łączenia się z bezpiecznymi serwerami współdzielonymi z sekcji **Kraje** aplikacji ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Już przydzielona"
@@ -7889,6 +7889,18 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jeśli inny administrator zmienił to hasło, poproś go, aby przekazał Ci nowe hasło organizacji."
       ],
+      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
+        "Jeśli opcja ta zostanie wyłączona, nowi członkowie organizacji będą wymagać od administratora ręcznego utworzenia dla nich pierwszego sejfu (za pośrednictwem udostępniania), aby mogli zacząć tworzyć elementy."
+      ],
+      "If disabled, only administrators will be able to export data.": [
+        "Jeśli opcja ta zostanie wyłączona, tylko administratorzy będą mogli eksportować dane."
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "Jeśli opcja ta zostanie wyłączona, członkowie organizacji będą mogli udostępniać sejfy lub elementy tylko w obrębie organizacji."
+      ],
+      "If enabled, organization members will be able to share individual items in addition to vaults.": [
+        "Jeśli opcja ta zostanie włączona, członkowie organizacji będą mogli udostępniać pojedyncze elementy oprócz sejfów."
+      ],
       "If it’s not right for you, we’ll refund you.": [
         "Zwrócimy pieniądze, jeśli nie spodoba Ci się usługa."
       ],
@@ -8043,7 +8055,7 @@
         "Usunięcie zaproszenia"
       ],
       "Invite family members and get everything up and running.": [
-        "Zaproś członków rodziny i rozpocznij."
+        "Zaproś użytkowników rodziny i rozpocznij."
       ],
       "Invite for new user deleted": [
         "Usunięcie zaproszenia dla nowego użytkownika"
@@ -8312,9 +8324,6 @@
       "No addresses exist": [
         "Brak adresów e-mail"
       ],
-      "No common passwords": [
-        "Brak popularnych haseł"
-      ],
       "No credit card required": [
         "Karta płatnicza nie jest wymagana"
       ],
@@ -8341,9 +8350,6 @@
       ],
       "No payment is required at this time.": [
         "Płatność nie jest wymagana."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Brak przewidywalnych sekwencji (1234, aaa)"
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
@@ -8410,6 +8416,9 @@
       ],
       "Or select a particular server:": [
         "Lub wybierz serwer:"
+      ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Członkowie organizacji będą musieli odblokować ${ PASS_APP_NAME } za pomocą hasła lub kodu PIN itp."
       ],
       "Organization size": [
         "Rozmiar ogranizacji"
@@ -8765,6 +8774,9 @@
       "Session timed out": [
         "Upłynął limit czasu sesji"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację e-mail. Aplikacja ${ MAIL_APP_NAME } otworzy się automatycznie po kliknięciu łącza do wiadomości e-mail."
+      ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
       ],
@@ -8905,6 +8917,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i bezpiecznie je przechowuj. Wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
+      ],
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "Rekomendowana przez TechRadar Pro z oceną 4,2 na 5 gwiazdek"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -9880,11 +9895,6 @@
         "Jeśli włączysz tę opcję, kolor folderu nadrzędnego zostanie zastosowany do podfolderów."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Dodaj nowy adres do istniejących użytkowników organizacji."
@@ -10434,6 +10444,15 @@
       "Allow": [
         "Dozwolone"
       ],
+      "Allow all users to create vaults": [
+        "Zezwalaj wszystkim użytkownikom na tworzenie sejfów"
+      ],
+      "Allow data export for all users": [
+        "Zezwalaj na eksport danych dla wszystkich użytkowników"
+      ],
+      "Allow individual item sharing": [
+        "Zezwalaj na udostępnianie pojedynczych elementów"
+      ],
       "Allow memorable passwords": [
         "Zezwalaj na hasła wyrazowe"
       ],
@@ -10454,6 +10473,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Zezwalaj na odzyskiwanie za pomocą zaufanego urządzenia"
+      ],
+      "Allow sharing outside the organization": [
+        "Zezwalaj na udostępnianie poza organizacją"
       ],
       "Allowed domain": [
         "Dozwolona domena"
@@ -11051,9 +11073,6 @@
       ],
       "New password": [
         "Nowe hasło"
-      ],
-      "New policy name": [
-        "Nowa nazwa zasady"
       ],
       "New second password": [
         "Nowe drugie hasło"
@@ -12178,9 +12197,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. dnia miesiąca"
-      ],
       "on the first Friday": [
         "w pierwszy piątek"
       ],
@@ -13555,6 +13571,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Wyłączenie tej opcji spowoduje brak powiadomień w aplikacjach ${ BRAND_NAME }."
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Podczas pierwszego miesiąca korzystania z produktu ${ BRAND_NAME }"
+      ],
       "Email subscriptions": [
         "Listy mailingowe"
       ],
@@ -13593,9 +13612,6 @@
       "Email notifications have been enabled": [
         "Powiadomienia zostały włączone"
       ],
-      "Error creating policy": [
-        "Wystąpił błąd podczas tworzenia zasady"
-      ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
       ],
@@ -13619,9 +13635,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
-      ],
-      "Policy created successfully": [
-        "Zasada została utworzona"
       ],
       "Reminder has been sent": [
         "Przypomnienie zostało wysłane"
@@ -14176,6 +14189,9 @@
       ],
       "Organization identity updated": [
         "Tożsamość organizacji została zaktualizowana"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Zweryfikuj swój adres e-mail ${ email }, aby ustawić tożsamość organizacji."
       ]
     },
     "OS compatibility": {
@@ -17051,47 +17067,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -17392,6 +17367,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -19797,6 +19813,9 @@
       "This will revoke the administrator permission to manage this user's account.": [
         "Spowoduje to unieważnienie dostępu administratora do zarządzania kontem użytkownika."
       ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Aby uzyskać uprawnienia administratora, będą musieli ustawić hasło zapasowe przy następnym logowaniu do ${ BRAND_NAME }."
+      ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Aby kontynuować, musisz poprosić użytkownika o dostęp do jego danych lub zresetowania hasła."
       ],
@@ -20396,9 +20415,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Sprawdź, czy rozszerzenie jest poprawnie zainstalowane i włączone"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
       ],
       "Please update the extension to its latest version": [
         "Zaktualizuj rozszerzenie do najnowszej wersji"

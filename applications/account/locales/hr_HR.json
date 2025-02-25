@@ -16,11 +16,11 @@
       "Accept": [
         "Prihvati"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -661,11 +661,11 @@
       "Select country": [
         "Odaberi državu"
       ],
-      "select file": [
-        "odaberi datoteku"
-      ],
       "Select file": [
         "Odaberi datoteku"
+      ],
+      "select file": [
+        "odaberi datoteku"
       ],
       "Select files": [
         "Odabir datoteka"
@@ -4650,11 +4650,6 @@
         "Kada je omogućeno, podmape će naslijediti boju od roditeljskih mapa."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Obratite nam se na ${ email } kako biste dobili upute za plaćanje gotovinom."
-      ]
-    },
     "Info for domain modal": {
       "Add a new user to your organization and create an address for it.": [
         "Dodajte novog korisnika u svoju organizaciju i stvorite adresu za njega."
@@ -6017,9 +6012,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "na dan ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "na prvi petak"
       ],
@@ -7515,17 +7507,6 @@
         "Razumijem"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
-      ]
-    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -7550,6 +7531,17 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -8922,9 +8914,6 @@
       ],
       "Please add at least one recipient.": [
         "Molim unesite barem jednog primatelja."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Imajte na umu da odabirom ovog načina plaćanja vaš račun se ne može odmah nadograditi. Ažurirati ćemo vaš račun nakon plaćanja."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."

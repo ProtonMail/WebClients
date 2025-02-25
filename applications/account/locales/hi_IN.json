@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -913,11 +913,11 @@
       "Select country": [
         "देश चुनें"
       ],
-      "select file": [
-        "फ़ाइल चुनें"
-      ],
       "Select file": [
         "फाइल चुनें"
+      ],
+      "select file": [
+        "फ़ाइल चुनें"
       ],
       "Select files": [
         "फ़ाइल चुनें"
@@ -3257,6 +3257,9 @@
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "बधाई हो! आपने ${ plusPlanName } के सीमा के ${ rewardsLimit } मुफ्त महीने पाएं हैं।"
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "एक क्लिक के साथ ज़ूम मीटिंग बनाएं और अपने कार्यक्रम में जॉइनिंग विवरण जोड़ें।"
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "इन सुविधाओं तक पहुँचने के लिए ${ PROTON_SENTINEL_NAME } को सक्षम करें"
@@ -6460,6 +6463,9 @@
       "If it’s not right for you, we’ll refund you.": [
         "अगर ये आपके लिए सही नहीं, तो हम आपको पूरे पैसे वापस कर देंगे।"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "यदि कीबोर्ड शॉर्टकट सक्षम हैं, तो आप त्वरित कार्यों के लिए या अलग-अलग दृश्यों पर जाने के लिए निम्नलिखित कुंजियों का उपयोग कर सकते हैं। ${ metaKey } + K हमेशा सक्षम रहता है।"
+      ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "अगर आपका सिस्टम समय क्षेत्र आपके मनपसंद समय क्षेत्र से मेल नहीं खाता, तो आपको वो अपडेट करने के लिए बोला जाएगा (ज़्यादा-से-ज़्यादा दिन में एक बार)।"
       ],
@@ -7965,11 +7971,6 @@
         "सक्षम होने पर, उप-फ़ोल्डर मूल फ़ोल्डर का रंग इनहेरिट करते हैं।"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "कृपया हमें नकद के साथ भुगतान करने के निर्देशों के लिए ${ email } पर संपर्क करें।"
-      ]
-    },
     "Info for domain modal": {
       "Add a new user to your organization and create an address for it.": [
         "अपने संगठन में एक नया उपयोगकर्ता जोड़ें और इसके लिए एक पता बनाएँ।"
@@ -8149,6 +8150,12 @@
       "Close draft": [
         "ड्राफ्ट बंद करें"
       ],
+      "Create new event": [
+        "नया कार्यक्रम बनाएँ"
+      ],
+      "Day view": [
+        "दिन दृश्य"
+      ],
       "Delete permanently": [
         "स्थायी रूप से डिलीट करें"
       ],
@@ -8212,6 +8219,9 @@
       "Minimize / maximize composer": [
         "कंपोज़र को छोटा / अधिकतम करें"
       ],
+      "Month view": [
+        "महीना दृश्य"
+      ],
       "Move down": [
         "नीचे जाएं"
       ],
@@ -8248,6 +8258,9 @@
       "Open previous message": [
         "पिछला संदेश खोलें"
       ],
+      "Open quick actions menu": [
+        "त्वरित कार्य मेन्यू खोलें"
+      ],
       "Open this modal": [
         "इस मोडल को खोलें"
       ],
@@ -8262,6 +8275,9 @@
       ],
       "Search": [
         "खोजें"
+      ],
+      "Search events": [
+        "कार्यक्रम खोजें"
       ],
       "Select / unselect": [
         "चुनें / अचयनित करें"
@@ -8283,6 +8299,12 @@
       ],
       "Star": [
         "तारा लगाएं"
+      ],
+      "Today": [
+        "आज"
+      ],
+      "Week view": [
+        "सप्ताह दृश्य"
       ]
     },
     "Keyboard shortcut section name": {
@@ -8306,6 +8328,9 @@
       ],
       "Message shortcuts": [
         "संदेश शॉर्टकट"
+      ],
+      "View options": [
+        "विकल्प देखें"
       ]
     },
     "Keys actions": {
@@ -9864,9 +9889,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "दिन ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "पहले शुक्रवार को"
       ],
@@ -12800,17 +12822,6 @@
         "आपकी योजना को एक iOS ऐप का उपयोग करके खरीदा गया था। इसलिए, अपनी योजना में बदलाव करने या अपने भुगतान विवरण को अपडेट करने के लिए, आपको Apple App Store पर जाना होगा।"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } दिन बाकी",
@@ -12872,6 +12883,17 @@
       ],
       "Watch the interview": [
         "इंटरव्यू देखें"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
       ]
     },
     "Subscription renewal state": {
@@ -15008,9 +15030,6 @@
       ],
       "Please add at least one recipient.": [
         "कृपया कम-से-कम एक प्राप्तकर्ता डालें।"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "कृपया ध्यान दें कि इस भुगतान विधि को चुनकर, आपके खाते को तुरंत अपग्रेड नहीं किया जा सकता है। भुगतान क्लियर होते ही हम आपके खाते को अपडेट कर देंगे।"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "रिपोर्ट एंड-टू-एंड एन्क्रिप्टेड नहीं हैं, कृपया कोई संवेदनशील जानकारी न भेजें।"

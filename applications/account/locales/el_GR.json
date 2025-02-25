@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "Οριστική διαγραφή"
+      ],
+      "Delete policy": [
+        "Διαγραφή πολιτικής"
       ],
       "Delete record": [
         "Διαγραφή εγγραφής"
@@ -1042,14 +1045,20 @@
       "Select calendar view": [
         "Επιλέξτε προβολή ημερολογίου"
       ],
+      "Select city ${ city }": [
+        "Επιλογή πόλης ${ city }"
+      ],
       "Select country": [
         "Επιλογή χώρας"
       ],
-      "select file": [
-        "επιλέξτε αρχείο"
+      "Select country ${ country }": [
+        "Επιλογή χώρας ${ country }"
       ],
       "Select file": [
         "Επιλέξτε αρχείο"
+      ],
+      "select file": [
+        "επιλέξτε αρχείο"
       ],
       "Select files": [
         "Επιλέξτε αρχεία"
@@ -3662,8 +3671,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Δημιουργήστε όσες ετικέτες ή φακέλους χρειάζεστε για να διατηρήσετε τα εισερχόμενά σας τακτοποιημένα."
       ],
-      "Create policies to manage access to shared servers.": [
-        "Δημιουργήστε πολιτικές για τη διαχείριση της πρόσβασης σε κοινόχρηστους διακομιστές."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ενεργοποιήστε το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
@@ -3677,8 +3686,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Όλοι στον οργανισμό σας μπορούν να συνδεθούν σε κοινόχρηστους διακομιστές."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Οποιοσδήποτε στον οργανισμό σας μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές σε οποιαδήποτε χώρα."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
@@ -4540,8 +4549,17 @@
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
       ],
+      "Error creating policy.": [
+        "Σφάλμα κατά τη δημιουργία πολιτικής."
+      ],
+      "Error deleting policy.": [
+        "Σφάλμα κατά τη διαγραφή πολιτικής."
+      ],
       "Error in one of the conditions": [
         "Σφάλμα σε μια από τις συνθήκες"
+      ],
+      "Error updating policy.": [
+        "Σφάλμα κατά την ενημέρωση πολιτικής."
       ],
       "Expired": [
         "Ληγμένο"
@@ -6323,8 +6341,8 @@
         "Προσθέστε αυτήν την εγγραφή στον τομέα σας στον πίνακα ελέγχου του μητρώου καταχώρησης ονομάτων τομέα"
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Βρέθηκε ${ itemsCount } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
-        "Βρέθηκαν ${ itemsCount } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+        "Βρέθηκε ${ itemsCount } υπόδειξη, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ itemsCount } υποδείξεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
@@ -6976,11 +6994,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ενεργοποιήστε τουλάχιστον μία μέθοδο ανάκτησης δεδομένων για να βεβαιωθείτε ότι μπορείτε να συνεχίσετε να έχετε πρόσβαση στα περιεχόμενα του λογαριασμού σας ${ BRAND_NAME } εάν χάσετε τον κωδικό πρόσβασής σας."
       ],
-      "Active": [
-        "Ενεργό"
-      ],
       "active": [
         "ενεργό"
+      ],
+      "Active": [
+        "Ενεργό"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Προσθέστε μια @pm.me διεύθυνση ηλεκτρονικού ταχυδρομείου στον λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"${ MAIL_APP_NAME } me\" ή \"Private Message me.\" (Στείλε μου Προσωπικό Μήνυμα)"
@@ -8202,9 +8220,6 @@
       "No addresses exist": [
         "Δεν υπάρχουν διευθύνσεις"
       ],
-      "No common passwords": [
-        "Όχι κοινούς κωδικούς πρόσβασης"
-      ],
       "No credit card required": [
         "Δεν απαιτείται πιστωτική κάρτα"
       ],
@@ -8231,9 +8246,6 @@
       ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Μη προβλέψιμες ακολουθίες (1234, aaa)"
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
@@ -8893,6 +8905,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Αυτό μπορεί να πάρει μερικά δευτερόλεπτα ή μερικά λεπτά, αναλόγως της συσκευής σας"
+      ],
+      "This cannot be undone.": [
+        "Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Αυτό μπορεί να διαρκέσει αρκετό χρόνο. Μην κλείνετε αυτή τη σελίδα και μην αποσυνδέεστε από το διαδίκτυο."
@@ -9744,8 +9759,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Παρακαλώ επικοινωνήστε μαζί μας στο ${ email } για οδηγίες πληρωμής με μετρητά."
+      "How to send a cash payment?": [
+        "Πώς να στείλετε μια πληρωμή σε μετρητά;"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Παρακαλούμε βρείτε τις οδηγίες στο άρθρο: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -10362,6 +10380,9 @@
       "Apply filter to existing emails": [
         "Εφαρμογή φίλτρου στα υπάρχοντα μηνύματα"
       ],
+      "Apply policy to": [
+        "Εφαρμογή πολιτικής σε"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
       ],
@@ -10923,9 +10944,6 @@
       "New password": [
         "Νέος κωδικός"
       ],
-      "New policy name": [
-        "Νέο όνομα πολιτικής"
-      ],
       "New second password": [
         "Νέος δεύτερος κωδικός πρόσβασης"
       ],
@@ -11024,6 +11042,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Μοιραστείτε τυχόν σχόλια για να μας βοηθήσετε να βελτιωθούμε."
+      ],
+      "Policy name": [
+        "Oνομασία πολιτικής"
       ],
       "Port": [
         "Θύρα"
@@ -12031,8 +12052,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "την ${ dayOfMonth }η ημέρα"
+      "on the ${ shortenedDay }": [
+        "στις ${ shortenedDay }"
       ],
       "on the first Friday": [
         "κάθε πρώτη Παρασκευή"
@@ -13395,9 +13416,6 @@
       "Email notifications have been enabled": [
         "Οι ειδοποιήσεις μέσω ηλεκτρονικού ταχυδρομείου έχουν ενεργοποιηθεί"
       ],
-      "Error creating policy": [
-        "Σφάλμα κατά τη δημιουργία πολιτικής"
-      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -13421,9 +13439,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
-      ],
-      "Policy created successfully": [
-        "Η πολιτική δημιουργήθηκε επιτυχώς"
       ],
       "Reminder has been sent": [
         "Η υπενθύμιση έχει σταλεί"
@@ -13547,6 +13562,9 @@
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
+      "Don’t show this offer again": [
+        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Αποκτήστε το Drive Plus για μόνο ${ pricingTitle }"
       ],
@@ -13559,14 +13577,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Τελευταία ημέρα αποθήκευσης"
+      ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus για 12 μήνες"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
+      "Save": [
+        "Εξοικονομήστε"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Εξοικονομίστε ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Εξοικονομήστε 80% τον πρώτο μήνα σας."
+      ],
+      "Save big when you pay annually": [
+        "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
+      ],
+      "This offer won't be shown again.": [
+        "Αυτή η προσφορά δε θα εμφανιστεί ξανά."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Όταν αλλάζετε από μηνιαία σε ετήσια συνδρομή."
+      ],
+      "You currently pay": [
+        "Αυτή τη στιγμή πληρώνετε"
       ]
     },
     "Offer feature": {
@@ -16772,47 +16814,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερα premium χαρακτηριστικά"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium χαρακτηριστικά"
@@ -17103,6 +17104,47 @@
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Είστε σίγουρος/η;"
@@ -17291,6 +17333,15 @@
       ],
       "Phone number updated": [
         "Ο αριθμός τηλεφώνου ενημερώθηκε"
+      ],
+      "Policy created successfully!": [
+        "Η πολιτική δημιουργήθηκε επιτυχώς!"
+      ],
+      "Policy deleted": [
+        "Η πολιτική διαγράφηκε"
+      ],
+      "Policy updated successfully!": [
+        "Η πολιτική ενημερώθηκε επιτυχώς!"
       ],
       "Port copied to clipboard": [
         "Η θύρα αντιγράφηκε στο πρόχειρο"
@@ -17997,6 +18048,9 @@
       "Decrypt key": [
         "Αποκρυπτογράφηση κλειδιού"
       ],
+      "Delete ${ policyName }?": [
+        "Διαγραφή ${ policyName };"
+      ],
       "Delete ${ value }": [
         "Διαγραφή ${ value }"
       ],
@@ -18094,6 +18148,9 @@
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
       ],
+      "Edit countries": [
+        "Επεξεργασία χωρών"
+      ],
       "Edit credit/debit card": [
         "Επεξεργασία πιστωτικής/χρεωστικής κάρτας"
       ],
@@ -18114,6 +18171,9 @@
       ],
       "Edit invoice note": [
         "Επεξεργασία στοιχείων τιμολογίου"
+      ],
+      "Edit name": [
+        "Επεξεργασία ονόματος"
       ],
       "Edit profile": [
         "Επεξεργασία προφίλ"
@@ -19171,6 +19231,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Ορίζει το παρακάτω υποσέλιδο στα μηνύματα που στέλνετε: ${ signature } Ο σύνδεσμος δείχνει στον σύνδεσμο παραπομπής σας. Το υποσέλιδο θα φαίνεται κάτω από την υπογραφή σας. Μπορείτε να εξατομικεύσετε την υπογραφή σας στις ρυθμίσεις."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Οι κοινόχρηστες πολιτικές διακομιστή μπορούν να εφαρμοστούν σε μεμονωμένους χρήστες ή ομάδες"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Εμφανίστε την εικόνα κάθε αποστολέα στη λίστα μηνυμάτων. Τα αρχικά του αποστολέα θα εμφανίζονται εάν μια φωτογραφία δεν είναι διαθέσιμη."
       ],
@@ -19947,9 +20010,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Παρακαλούμε ελέγξτε ότι η προέκταση έχει εγκατασταθεί και ενεργοποιηθεί σωστά"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
       ],
       "Please update the extension to its latest version": [
         "Παρακαλούμε ενημερώστε την προέκταση στην πιο πρόσφατη έκδοσή της"
