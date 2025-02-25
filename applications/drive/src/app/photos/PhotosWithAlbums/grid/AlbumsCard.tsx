@@ -51,7 +51,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
 
     const isThumbnailLoading =
         !isDecrypted || (album.hasThumbnail && !imageReady) || (album.cover?.hasThumbnail && !imageReady);
-    const isLoaded = !isThumbnailLoading && isDecrypted && isCoverDecrypted;
+    const isLoaded = !isThumbnailLoading && isDecrypted;
 
     useEffect(() => {
         if (thumbUrl) {
@@ -84,7 +84,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
             style={style}
             className={clsx(
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
-                'relative photos-card album-card p-0 border-none rounded shadow-lifted overflow-hidden',
+                'relative photos-card album-card p-0 border-none rounded shadow-lifted',
                 isThumbnailLoading && 'photos-card--loading'
             )}
             data-testid="albums-card"
