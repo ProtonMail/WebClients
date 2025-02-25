@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -994,11 +994,11 @@
       "Select country": [
         "Izberite državo"
       ],
-      "select file": [
-        "izberite datoteko"
-      ],
       "Select file": [
         "Izberite datoteko"
+      ],
+      "select file": [
+        "izberite datoteko"
       ],
       "Select files": [
         "Izberi datoteke"
@@ -1729,7 +1729,7 @@
         "Opozorila o kakovosti gesla"
       ],
       "Private photo backup": [
-        "Osebna varnostna kopija fotografij"
+        "Zasebna varnostna kopija fotografij"
       ],
       "Protect 10 devices at a time": [
         "Zaščitite 10 naprav hkrati"
@@ -1738,7 +1738,7 @@
         "Varna shramba in skupna raba datotek"
       ],
       "Secure vault and link sharing": [
-        "Varna in zanesljiva skupna raba"
+        "Varna skupna raba trezorjev in povezav"
       ],
       "Unlimited folders, labels and filters": [
         "Neomejeno število map, oznak in filtrov"
@@ -1766,7 +1766,7 @@
         "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje več kot 8.500 strežnikov v več kot 110 državah, 10 naprav, pretočne storitve z visoko hitrostjo, onemogočanje oglasov in zaščito pred zlonamerno programsko opremo, VPN Accelerator in še več."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Dostopajte do vsebin na pretočnih storitvah, kot so Netflix, Disney+, Prime Video in še več, od kjerkoli."
+        "Dostopajte do vsebin na pretočnih storitvah, kot so Netflix, Disney+, Prime Video in druge, od kjerkoli."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
@@ -6655,11 +6655,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivirajte vsaj en način za obnovitev podatkov, da lahko v primeru izgube gesla še naprej dostopate do vsebine računa ${ BRAND_NAME }."
       ],
-      "Active": [
-        "Aktivno"
-      ],
       "active": [
         "aktivno"
+      ],
+      "Active": [
+        "Aktivno"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodajte e-poštni naslov @pm.me v svoj račun. Ta preprost, krajši domenski naslov pomeni \"Pošlji mi ${ MAIL_APP_NAME } ali zasebno sporočilo\"."
@@ -8952,11 +8952,6 @@
         "Ko je omogočeno, podmape prevzamejo barvo nadrejene mape."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Za pomoč pri plačilu z gotovino nas kontaktirajte na naslov ${ email }."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Dodajte nov naslov za obstoječe uporabnike vaše organizacije."
@@ -11075,9 +11070,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. dan"
-      ],
       "on the first Friday": [
         "prvi petek"
       ],
@@ -15201,47 +15193,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Še ${ dayDiff } dan",
@@ -15428,6 +15379,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {
@@ -17847,9 +17839,6 @@
       ],
       "Please add at least one recipient.": [
         "Dodajte vsaj enega prejemnika."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Upoštevajte, da z izbiro tega načina plačila vašega računa ni mogoče takoj nadgraditi. Vaš račun bo posodobljen po potrditvi plačila."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."

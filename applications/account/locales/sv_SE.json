@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "Ta bort permanent"
+      ],
+      "Delete policy": [
+        "Ta bort policy"
       ],
       "Delete record": [
         "Ta bort post"
@@ -1042,14 +1045,20 @@
       "Select calendar view": [
         "Välj kalendervy"
       ],
+      "Select city ${ city }": [
+        "Välj stad ${ city }"
+      ],
       "Select country": [
         "Välj land"
       ],
-      "select file": [
-        "välj fil"
+      "Select country ${ country }": [
+        "Välj land ${ country }"
       ],
       "Select file": [
         "Välj fil"
+      ],
+      "select file": [
+        "välj fil"
       ],
       "Select files": [
         "Välj filer"
@@ -1142,7 +1151,7 @@
         "Logga ut från alla konton"
       ],
       "sign up for free": [
-        "registrera dig gratis"
+        "Registrera dig gratis"
       ],
       "Signing in": [
         "Loggar in"
@@ -3662,8 +3671,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Skapa så många etiketter eller mappar du behöver för att hålla din inkorg prydlig."
       ],
-      "Create policies to manage access to shared servers.": [
-        "Skapa policyer för att hantera åtkomst till delade servrar."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktivera ${ PROTON_SENTINEL_NAME } för att komma åt dessa funktioner"
@@ -3677,8 +3686,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Alla i din organisation kan ansluta till delade servrar."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Alla i din organisation kan ansluta till delade servrar i alla länder."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckts från en tredjepartstjänst."
@@ -4540,8 +4549,17 @@
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
       ],
+      "Error creating policy.": [
+        "Fel vid skapande av policy."
+      ],
+      "Error deleting policy.": [
+        "Fel vid borttagning av policy."
+      ],
       "Error in one of the conditions": [
         "Fel i ett av villkoren"
+      ],
+      "Error updating policy.": [
+        "Fel vid uppdatering av policy."
       ],
       "Expired": [
         "Löpt ut"
@@ -6979,11 +6997,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
-      "Active": [
-        "Aktiv"
-      ],
       "active": [
         "aktiv"
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -8193,9 +8211,6 @@
       "No addresses exist": [
         "Inga adresser finns"
       ],
-      "No common passwords": [
-        "Inga vanliga lösenord"
-      ],
       "No credit card required": [
         "Inget kreditkort krävs"
       ],
@@ -8222,9 +8237,6 @@
       ],
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Inga förutsägbara sekvenser (1234, aaa)"
       ],
       "No results found": [
         "Inga resultat hittades"
@@ -8880,6 +8892,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Detta kan ta några sekunder eller minuter beroende på din enhet"
+      ],
+      "This cannot be undone.": [
+        "Detta kan inte ångras."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Detta kan ta lite tid. Stäng inte denna sida eller koppla från Internet."
@@ -9731,8 +9746,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakta oss på ${ email } för instruktioner om hur du betalar oss med kontanter."
+      "How to send a cash payment?": [
+        "Hur skickar man en kontant betalning?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Hitta instruktionen i artikeln: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -10349,6 +10367,9 @@
       "Apply filter to existing emails": [
         "Tillämpa filter till all befintlig e-post"
       ],
+      "Apply policy to": [
+        "Tillämpa policy till"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service-URL"
       ],
@@ -10910,9 +10931,6 @@
       "New password": [
         "Nytt lösenord"
       ],
-      "New policy name": [
-        "Nytt policynamn"
-      ],
       "New second password": [
         "Nytt andra lösenord"
       ],
@@ -11011,6 +11029,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Dela gärna feedback för att hjälpa oss att förbättra."
+      ],
+      "Policy name": [
+        "Policynamn"
       ],
       "Port": [
         "Port"
@@ -12021,8 +12042,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dagen ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "på ${ shortenedDay }"
       ],
       "on the first Friday": [
         "den första fredagen"
@@ -13347,6 +13368,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Inaktivering av detta kommer att ta bort möjligheten att ta emot aviseringar i ${ BRAND_NAME }-applikationer"
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Under din första månad med användning av en ${ BRAND_NAME }-produkt"
+      ],
       "Email subscriptions": [
         "E-postprenumerationer"
       ],
@@ -13385,9 +13409,6 @@
       "Email notifications have been enabled": [
         "E-postaviseringar har aktiverats"
       ],
-      "Error creating policy": [
-        "Fel vid skapande av policy"
-      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -13411,9 +13432,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN-/IKEv2-inloggningsuppgifter återskapat"
-      ],
-      "Policy created successfully": [
-        "Policynamn skapat"
       ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
@@ -13537,6 +13555,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don’t show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaffa Drive Plus för endast ${ pricingTitle }"
       ],
@@ -13549,14 +13570,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Sista dagen att spara"
+      ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus för 12 månader"
       ],
       "Maybe later": [
         "Kanske senare"
       ],
+      "Save": [
+        "Spara"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spara ${ prices.savedPercentage } %"
+      ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
+      ],
+      "Save big when you pay annually": [
+        "Spara stort när du betalar årligen"
+      ],
+      "This offer won't be shown again.": [
+        "Detta erbjudande kommer inte att visas igen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "När du byter från en månads till årlig prenumeration."
+      ],
+      "You currently pay": [
+        "Du betalar för närvarande"
       ]
     },
     "Offer feature": {
@@ -16786,47 +16831,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -17117,6 +17121,47 @@
         "Ditt egna korta @pm.me e-postalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Är du säker?"
@@ -17305,6 +17350,15 @@
       ],
       "Phone number updated": [
         "Telefonnummer uppdaterat"
+      ],
+      "Policy created successfully!": [
+        "Policy skapad!"
+      ],
+      "Policy deleted": [
+        "Policy borttagen"
+      ],
+      "Policy updated successfully!": [
+        "Policy uppdaterad!"
       ],
       "Port copied to clipboard": [
         "Port kopierad till urklipp"
@@ -17612,6 +17666,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ appName } keyboard shortcuts": [
+        "${ appName } tangentbordsgenvägar"
       ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
@@ -18014,6 +18071,9 @@
       "Decrypt key": [
         "Avkryptera nyckel"
       ],
+      "Delete ${ policyName }?": [
+        "Ta bort ${ policyName }?"
+      ],
       "Delete ${ value }": [
         "Ta bort ${ value }"
       ],
@@ -18111,6 +18171,9 @@
       "Edit billing address": [
         "Redigera faktureringsadress"
       ],
+      "Edit countries": [
+        "Redigera länder"
+      ],
       "Edit credit/debit card": [
         "Redigera kredit-/betalkort"
       ],
@@ -18131,6 +18194,9 @@
       ],
       "Edit invoice note": [
         "Redigera fakturaanteckning"
+      ],
+      "Edit name": [
+        "Redigera namn"
       ],
       "Edit profile": [
         "Redigera profil"
@@ -18382,6 +18448,9 @@
       ],
       "IP": [
         "IP"
+      ],
+      "Items owned": [
+        "Objekt ägda"
       ],
       "Keep your inbox organized": [
         "Håll din inkorg organiserad"
@@ -18876,6 +18945,12 @@
       "Users and addresses": [
         "Användare och adresser"
       ],
+      "Vault owned": [
+        "Valv ägt"
+      ],
+      "Vaults owned": [
+        "Valv ägda"
+      ],
       "Verification": [
         "Verifikation"
       ],
@@ -19187,6 +19262,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Ställer in följande sidfot för e-posten du skickar: ${ signature } Länken pekar på din hänvisningslänk. Sidfoten kommer att visas under din signatur. Du kan personifiera din signatur när som helst i inställningarna."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Delade serverpolicyer kan tillämpas på enskilda användare eller grupper"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte finns tillgängligt."
@@ -19980,9 +20058,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Kontrollera att utökningen är korrekt installerat och aktiverat"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observera att genom att välja denna betalningsmetod kan ditt konto inte uppgraderas omedelbart. Vi kommer att uppdatera ditt konto när betalningen har gått igenom."
       ],
       "Please update the extension to its latest version": [
         "Uppdatera utökningen till den senaste versionen"
