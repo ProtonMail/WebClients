@@ -604,7 +604,7 @@
         "Mostrar configuración PGP avanzada"
       ],
       "Show options": [
-        "Mostrar opciones"
+        "Mostrar las opciones"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -2184,6 +2184,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2262,11 +2267,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5010,8 +5010,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contáctanos a ${ email } para obtener instrucciones sobre cómo pagarnos en efectivo."
+      "How to send a cash payment?": [
+        "¿Cómo enviar un pago en efectivo?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Encuentra las instrucciones en el artículo: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -7207,6 +7210,9 @@
       "${ pricingTitle } offer expires today!": [
         "¡La oferta de ${ pricingTitle } vence hoy!"
       ],
+      "Don’t show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtén Drive Plus por solo ${ pricingTitle }"
       ],
@@ -7219,14 +7225,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidad para obtener un 80 % de descuento en tu primer mes de ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Último día para ahorrar"
+      ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Quizás más tarde"
       ],
+      "Save": [
+        "Ahorra"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ahorra un ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ahorra un 80 % en tu primer mes."
+      ],
+      "Save big when you pay annually": [
+        "¡Ahorra a lo grande pagando anualmente!"
+      ],
+      "This offer won't be shown again.": [
+        "Esta oferta no se volverá a mostrar."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Cuando cambias de una suscripción mensual a una anual."
+      ],
+      "You currently pay": [
+        "Actualmente pagas"
       ]
     },
     "Offer feature": {
@@ -8344,6 +8374,25 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo electrónico personalizado",
+        "${ planNumberOfDomains } dominios de correo electrónico personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo electrónico",
+        "${ planNumberOfEmails } direcciones de correo electrónico"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetas, etiquetas y filtros personalizados"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -8383,25 +8432,6 @@
       ],
       "Your privacy is our mission": [
         "Tu privacidad es nuestra misión."
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de almacenamiento por usuario"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio de correo electrónico personalizado",
-        "${ planNumberOfDomains } dominios de correo electrónico personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } dirección de correo electrónico",
-        "${ planNumberOfEmails } direcciones de correo electrónico"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetas, etiquetas y filtros personalizados"
       ]
     },
     "Subscription renewal state": {
@@ -9510,9 +9540,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos en minúscula, puntos, guiones y guiones bajos."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."

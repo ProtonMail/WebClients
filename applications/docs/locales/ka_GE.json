@@ -2174,6 +2174,11 @@
         "ინვოისი გადაცილებულია"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2252,11 +2257,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4975,11 +4975,6 @@
         "არჩეული ფერი:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "ნაღდი ფულით გადახდის შემთხვევაში მეტი დეტალების მისაღებად დაგვიკავშირდით ${ email }."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "დეტალებისთვის დააწკაპუნეთ აქ"
@@ -7113,6 +7108,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
+      "Don’t show this offer again": [
+        "აღარ მაჩვენო ეს შემოთავაზება"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "მიიღეთ Drive Plus ფასით ${ pricingTitle }"
       ],
@@ -7125,14 +7123,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan } Plus-დან."
       ],
+      "Last day to save": [
+        "ბოლო დღე შესანახად"
+      ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus 12 თვით"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "დაზოგეთ ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "დაზოეთ 80% პირველ თვეს."
+      ],
+      "Save big when you pay annually": [
+        "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
+      ],
+      "This offer won't be shown again.": [
+        "ამ შემოთავაზებას აღარ გაჩვენებთ."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "როცა თვიურიდან წლიურ გამოწერაზე გადახვალთ."
+      ],
+      "You currently pay": [
+        "ამჟამად იხდით"
       ]
     },
     "Offer feature": {
@@ -8244,6 +8266,25 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace }/მომხმარებელი"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ელფოსტის მისამართი",
+        "${ planNumberOfEmails } ელფოსტის მისამართი"
+      ],
+      "Folders, labels, and custom filters": [
+        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
@@ -8283,25 +8324,6 @@
       ],
       "Your privacy is our mission": [
         "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace }/მომხმარებელი"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } ელფოსტის მისამართი",
-        "${ planNumberOfEmails } ელფოსტის მისამართი"
-      ],
-      "Folders, labels, and custom filters": [
-        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
       ]
     },
     "Subscription renewal state": {
@@ -9287,9 +9309,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "დაშვებულია, მხოლოდ, დაბალი რეგისტრის მქონე ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "გაითვალისწინეთ, რომ გადახდის ამ მეთოდის არჩევით თქვენი ანგარიშის სატარიფო გეგმის მომენტალური შეცვლა შეუძლებელია. ტარიფი, მხოლოდ, გადახდის დასრულების შემდეგ შეიცვლება."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."

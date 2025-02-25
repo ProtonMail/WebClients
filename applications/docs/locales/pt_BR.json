@@ -2184,6 +2184,11 @@
         "Fatura vencida"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
@@ -2262,11 +2267,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5009,11 +5009,6 @@
         "Cor selecionada:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Entre em contato conosco pelo ${ email } para obter instruções de como efetuar o pagamento em dinheiro."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "Clique para ver detalhes"
@@ -7212,6 +7207,9 @@
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
+      "Don’t show this offer again": [
+        "Não mostrar mais esta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtenha o Drive Plus por apenas ${ pricingTitle }"
       ],
@@ -7224,14 +7222,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Último dia para eocnomizar"
+      ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Save": [
+        "Economize"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Economize ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Economize 80% no seu primeiro mês"
+      ],
+      "Save big when you pay annually": [
+        "Aproveite descontos incríveis ao pagar anualmente!"
+      ],
+      "This offer won't be shown again.": [
+        "Esta oferta não será exibida novamente."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quando você muda de uma assinatura mensal para anual."
+      ],
+      "You currently pay": [
+        "Você paga atualmente"
       ]
     },
     "Offer feature": {
@@ -8355,6 +8377,25 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por usuário"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domínio de e-mail personalizado",
+        "${ planNumberOfDomains } domínios de e-mail personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } endereço de e-mail",
+        "${ planNumberOfEmails } endereços de e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Pastas, marcadores e filtros personalizados"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "Armazenamento de 15 GB"
@@ -8394,25 +8435,6 @@
       ],
       "Your privacy is our mission": [
         "Sua privacidade é a nossa missão"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de armazenamento por usuário"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domínio de e-mail personalizado",
-        "${ planNumberOfDomains } domínios de e-mail personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } endereço de e-mail",
-        "${ planNumberOfEmails } endereços de e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Pastas, marcadores e filtros personalizados"
       ]
     },
     "Subscription renewal state": {
@@ -9521,9 +9543,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
