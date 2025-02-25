@@ -78,8 +78,6 @@ export const PublicSharing = ({
                     const planName = PLAN_NAMES[user.isFree ? PLANS.DRIVE : PLANS.BUNDLE];
                     return showDriveUpsellModal({
                         size: 'large',
-                        'data-testid': 'public-sharing',
-                        sourceEvent: 'BUTTON_PUBLIC_SHARING_EDITOR',
                         titleModal: c('Title').t`Need to share more files with edit access?`,
                         // translator: We can have two different plan upgrade: "Upgrade to Proton Drive Plus" or "Upgrade to Proton Drive Unlimited"
                         description: c('Description')
