@@ -78,11 +78,17 @@
       "Add phone number": [
         "Tambah nomor telepon"
       ],
+      "Add photos": [
+        "Tambah foto"
+      ],
       "Add to album": [
         "Tambah ke album"
       ],
       "Add to group": [
         "Tambah ke grup"
+      ],
+      "Album name": [
+        "Nama album"
       ],
       "Apply": [
         "Terapkan"
@@ -270,6 +276,9 @@
       "Delete ${ selectedCount } contact group": [
         "Hapus ${ selectedCount } grup kontak"
       ],
+      "Delete album": [
+        "Hapus album"
+      ],
       "Delete contact": [
         "Hapus kontak"
       ],
@@ -321,6 +330,9 @@
       "Download logs": [
         "Unduh log"
       ],
+      "Download photos": [
+        "Unduh foto"
+      ],
       "Download without scanning": [
         "Unduh tanpa memindai"
       ],
@@ -332,6 +344,9 @@
       ],
       "Edit": [
         "Sunting"
+      ],
+      "Edit album": [
+        "Sunting album"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -528,6 +543,9 @@
       "Minimize transfers": [
         "Sembunyikan jendela transfer"
       ],
+      "More": [
+        "Lainnya"
+      ],
       "More actions": [
         "Tindakan lainnya"
       ],
@@ -545,6 +563,9 @@
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
+      ],
+      "Name your album": [
+        "Beri nama album Anda"
       ],
       "New": [
         "Berkas/folder baru"
@@ -759,8 +780,14 @@
       "Select country": [
         "Pilih negara"
       ],
+      "Set album cover": [
+        "Pasang sampul album"
+      ],
       "Set as album cover": [
         "Pasang sebagai sampul album"
+      ],
+      "Set as cover": [
+        "Pasang sebagai sampul"
       ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
@@ -959,9 +986,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Buat album"
-      ],
       "Upload": [
         "Unggah"
       ]
@@ -2423,11 +2447,6 @@
         "Faktur yang tertunggak"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2509,6 +2528,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3104,6 +3128,9 @@
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
       ],
+      "Unable to set photo as cover": [
+        "Foto tidak dapat dipasang sebagai sampul"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Terdapat kesalahan yang tidak diduga. Kami tidak dapat mengimpor kontak"
       ],
@@ -3636,6 +3663,9 @@
       "Contacts": [
         "Kontak"
       ],
+      "Create new album": [
+        "Buat album baru"
+      ],
       "Security Center": [
         "Pusat Keamanan"
       ]
@@ -3983,6 +4013,9 @@
       "${ addressCount } email address": [
         "${ addressCount } alamat email"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } item"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
@@ -4144,6 +4177,9 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asisten berteknologi AI yang membantu Anda merancang email yang lebih baik secara cepat dan mudah."
+      ],
+      "Album is empty": [
+        "Album ini kosong"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Semua (${ totalFoldersCount } folder)"
@@ -5060,6 +5096,9 @@
       "Share via link settings": [
         "Bagikan melalui pengaturan tautan"
       ],
+      "Shared": [
+        "Dibagikan"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Dibagikan oleh ${ rootLink.signatureEmail }"
       ],
@@ -5120,8 +5159,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
       ],
-      "The albums you create are shown here": [
-        "Album yang Anda buat akan muncul di sini"
+      "The albums you create are shown here.": [
+        "Album yang Anda buat akan muncul di sini."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Tanda tangan digital ini telah diverifikasi secara parsial. Berkas ini diunggah melalui tautan berbagi publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
@@ -5308,6 +5347,9 @@
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
+      ],
+      "Untitled": [
+        "Tanpa judul"
       ],
       "Updating drive search...": [
         "Memperbarui pencarian drive..."
@@ -5610,11 +5652,6 @@
     "info": {
       "Selected color:": [
         "Warna terpilih:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Silakan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
       ]
     },
     "Info on errors": {
@@ -7994,6 +8031,9 @@
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
+      "Don’t show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
       ],
@@ -8006,14 +8046,35 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Plus Anda."
       ],
+      "Last day to save": [
+        "Hari terakhir untuk menghemat"
+      ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus selama 12 bulan"
       ],
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Save": [
+        "Simpan"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Hemat ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Hemat 80% pada bulan pertama Anda."
+      ],
+      "Save big when you pay annually": [
+        "Hemat besar-besaran pada saat Anda membayar secara tahunan"
+      ],
+      "This offer won't be shown again.": [
+        "Penawaran ini tidak akan lagi ditampilkan."
+      ],
+      "You currently pay": [
+        "Anda saat ini membayar"
       ]
     },
     "Offer feature": {
@@ -10511,11 +10572,6 @@
         "Hari ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tambahkan berkas bersama ini ke ${ DRIVE_APP_NAME } anda untuk akses mudah nanti."
@@ -10597,6 +10653,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Kami telah mengirim undangan untuk mengakses berkas ini."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Validation": {
@@ -10748,9 +10809,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."

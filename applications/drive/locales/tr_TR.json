@@ -78,11 +78,17 @@
       "Add phone number": [
         "Telefon numarası ekle"
       ],
+      "Add photos": [
+        "Fotoğraf ekle"
+      ],
       "Add to album": [
         "Albüme ekle"
       ],
       "Add to group": [
         "Gruba ekle"
+      ],
+      "Album name": [
+        "Albüm adı"
       ],
       "Apply": [
         "Uygula"
@@ -273,6 +279,9 @@
         "${ selectedCount } kişi grubunu sil",
         "${ selectedCount } kişi grubunu sil"
       ],
+      "Delete album": [
+        "Albümü sil"
+      ],
       "Delete contact": [
         "Kişiyi sil"
       ],
@@ -324,6 +333,9 @@
       "Download logs": [
         "Günlüğü indir"
       ],
+      "Download photos": [
+        "Fotoğrafları indir"
+      ],
       "Download without scanning": [
         "Taramadan indir"
       ],
@@ -335,6 +347,9 @@
       ],
       "Edit": [
         "Düzenle"
+      ],
+      "Edit album": [
+        "Albümü düzenle"
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -531,6 +546,9 @@
       "Minimize transfers": [
         "Aktarımları küçült"
       ],
+      "More": [
+        "Diğer"
+      ],
       "More actions": [
         "Diğer işlemler"
       ],
@@ -548,6 +566,9 @@
       ],
       "Move to trash": [
         "Çöpe at"
+      ],
+      "Name your album": [
+        "Albümünüzü adlandırın"
       ],
       "New": [
         "Yeni"
@@ -762,8 +783,14 @@
       "Select country": [
         "Ülke seçin"
       ],
+      "Set album cover": [
+        "Albüm kapağı ayarla"
+      ],
       "Set as album cover": [
         "Albüm kapağı olarak ayarla"
+      ],
+      "Set as cover": [
+        "Kapak olarak ayarla"
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
@@ -963,9 +990,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Albüm oluştur"
-      ],
       "Upload": [
         "Yükle"
       ]
@@ -2436,11 +2460,6 @@
         "Süresi geçmiş fatura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2522,6 +2541,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3124,6 +3148,9 @@
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
+      "Unable to set photo as cover": [
+        "Fotoğraf kapak olarak ayarlanamadı"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Beklenmeyen bir sorun çıktı. Kişileri içe aktaramadık"
       ],
@@ -3665,6 +3692,9 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Create new album": [
+        "Yeni albüm oluştur"
+      ],
       "Security Center": [
         "Güvenlik merkezi"
       ]
@@ -4024,6 +4054,10 @@
         "${ addressCount } e-posta adresi",
         "${ addressCount } e-posta adresi"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } öge",
+        "${ album.photoCount } öge"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -4212,6 +4246,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ],
+      "Album is empty": [
+        "Albüm boş"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Tümü (${ totalFoldersCount } klasör)",
         "Tümü (${ totalFoldersCount } klasör)"
@@ -4289,6 +4326,9 @@
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Otomatik Kurtarma ${ formattedDate }"
       ],
       "Available": [
         "Kullanılabilir"
@@ -4878,6 +4918,9 @@
       "of": [
         "/"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Bu işlem tamamlandığında geri yüklenen verilerinizin bir kopyasını “Otomatik Kurtarma (bugünün tarihi)” adlı yeni bir klasörde bulacaksınız. Verilerinizin bu kopyaları depolama alanı kotanızdan sayılmayacaktır."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Şifrelenmiş sürücülerinizden biri kilitli. Bu durum genellikle bir parola sıfırlama işleminde kaynaklanır."
       ],
@@ -4901,6 +4944,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Uyarılarımız güvenliğe öncelik verir. Ele geçirilen bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Sistemlerimiz önceki kurtarma işleminizin başarıyla tamamlanmadığını tespit etti ve bazı dosyalar tam olarak geri yüklenmemiş olabilir. Her şeyin tam olarak geri yüklendiğinden emin olmak için kurtarma işlemini otomatik olarak yeniden başlattık."
       ],
       "Owner": [
         "Sahibi"
@@ -5138,6 +5184,9 @@
       "Share via link settings": [
         "Bağlantı ayarları ile paylaş"
       ],
+      "Shared": [
+        "Paylaşılmış"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "${ rootLink.signatureEmail } tarafından paylaşıldı"
       ],
@@ -5198,8 +5247,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
-      "The albums you create are shown here": [
-        "Oluşturduğunuz albümler burada görüntülenir"
+      "The albums you create are shown here.": [
+        "Oluşturduğunuz albümler burada görüntülenir."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Sayısal imza kısmen doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kullanıcının kimliği doğrulanamıyor."
@@ -5387,6 +5436,9 @@
       "Unsupported file": [
         "Dosya desteklenmiyor"
       ],
+      "Untitled": [
+        "Adlandırılmamış"
+      ],
       "Updating drive search...": [
         "Drive araması güncelleniyor..."
       ],
@@ -5461,6 +5513,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Ödemenizi bankanızla doğrulamamız gerekiyor."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Bu durumun size vermiş olabileceği rahatsızlıktan dolayı içtenlikle özür dileriz."
       ],
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
@@ -5695,8 +5750,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı ile ilgili bilgi almak için bizimle ${ email } adresinden görüşün."
+      "How to send a cash payment?": [
+        "Nakit ödeme nasıl gönderilir?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8074,6 +8132,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don’t show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
       ],
@@ -8086,14 +8147,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "${ plan } Plus aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
       ],
+      "Last day to save": [
+        "İndirim kazanmak için son gün"
+      ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Mail Plus for 12 months": [
+        "12 aylık Mail Plus"
       ],
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Save": [
+        "İndirim"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "%${ prices.savedPercentage } indirim"
+      ],
       "Save 80% on your first month.": [
         "İlk ayınızda % 80 indirim kazanın."
+      ],
+      "Save big when you pay annually": [
+        "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "This offer won't be shown again.": [
+        "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
+      ],
+      "You currently pay": [
+        "Şu anda ödediğiniz"
       ]
     },
     "Offer feature": {
@@ -10051,6 +10136,9 @@
       "Auto-deletion is active": [
         "Otomatik silme özelliği açık"
       ],
+      "Automatic Recovery in Progress": [
+        "Otomatik Kurtarma İşlemi Devam Ediyor"
+      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -10646,11 +10734,6 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Bu paylaşılan dosyayı daha sonra kolayca erişebilmek için ${ DRIVE_APP_NAME } depolama alanınıza ekleyin"
@@ -10701,7 +10784,7 @@
         "Görsel yükle"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
-        "E-postaya eklendiğinde, ileti ve dosya adı sıfır erişimli şifreleme ile kaydedilir"
+        "E-postaya eklendiğinde, ileti ve dosya adı sıfır erişim şifrelemesi ile kaydedilir"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
@@ -10732,6 +10815,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Valentine_2025": {
@@ -11019,9 +11107,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Yalnızca küçük harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

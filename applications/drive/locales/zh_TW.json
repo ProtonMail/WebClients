@@ -525,6 +525,9 @@
       "Minimize transfers": [
         "傳輸最小化"
       ],
+      "More": [
+        "更多"
+      ],
       "More actions": [
         "更多選項"
       ],
@@ -1301,6 +1304,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "關閉"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
       ],
@@ -2408,11 +2414,6 @@
         "逾期帳單"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }24/7保護您的帳號包含躲避安全專家的可疑活動。"
@@ -2494,6 +2495,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3964,6 +3970,9 @@
       ],
       "${ addressCount } email address": [
         "${ addressCount } 個電郵位址"
+      ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount }項目"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -5574,11 +5583,6 @@
     "info": {
       "Selected color:": [
         "已選取的色彩:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "請寄送電郵到 ${ email } 聯絡我們，以獲得如何將現金支付給我們的相關指引。"
       ]
     },
     "Info on errors": {
@@ -7807,6 +7811,9 @@
       "Share invitation declined": [
         "共享邀請被婉拒"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "抱歉，我們因為其非空白無法刪除此資料夾。"
+      ],
       "Subfolder failed to be loaded": [
         "子資料夾載入失敗"
       ],
@@ -7871,6 +7878,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
+      "Don’t show this offer again": [
+        "不再顯示此優惠"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "使用只要${ pricingTitle }取得Drive Plus"
       ],
@@ -7883,14 +7893,35 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "最後獲得${ plan }進階首月80%折價"
       ],
+      "Last day to save": [
+        "最後優惠日"
+      ],
       "Limited-time offer": [
         "限時優惠"
+      ],
+      "Mail Plus for 12 months": [
+        "12個月的Mail Plus"
       ],
       "Maybe later": [
         "稍後再說"
       ],
+      "Save": [
+        "儲存"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "省下${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "首月省下80%"
+      ],
+      "This offer won't be shown again.": [
+        "此優惠將不再顯示。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "當您從每月切換至每年訂月。"
+      ],
+      "You currently pay": [
+        "您目前付款"
       ]
     },
     "Offer feature": {
@@ -9975,6 +10006,9 @@
       "Groups": [
         "群組"
       ],
+      "Help center": [
+        "說明中心"
+      ],
       "High security for your account": [
         "高安全性帳號"
       ],
@@ -10335,11 +10369,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "添加此共享檔案至您的${ DRIVE_APP_NAME }以方便未來存取"
@@ -10418,6 +10447,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "您已寄送他們存取項目的邀請。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ]
     },
     "Validation": {
@@ -10522,6 +10556,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
       ],
+      "2 consecutive dots are not allowed": [
+        "不允許連續2點"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您確定要永久刪除 ${ count } 位聯絡人嗎？"
       ],
@@ -10533,6 +10570,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "您確定要永久刪除此聯絡人嗎？"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "無法於開頭使用點"
+      ],
+      "Cannot contain a dot at the end": [
+        "無法於最後使用點"
       ],
       "Contacts could not be merged": [
         "無法合併聯絡人"
@@ -10554,9 +10597,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "僅允許英文小寫字母、數字、點號、連字號和底線"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "請注意：選取此繳款方式時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"

@@ -78,11 +78,17 @@
       "Add phone number": [
         "Telefoonnummer toevoegen"
       ],
+      "Add photos": [
+        "Foto's toevoegen"
+      ],
       "Add to album": [
         "Voeg toe aan album"
       ],
       "Add to group": [
         "Aan groep toevoegen"
+      ],
+      "Album name": [
+        "Albumnaam"
       ],
       "Apply": [
         "Toepassen"
@@ -273,6 +279,9 @@
         "${ selectedCount } contactgroep verwijderen",
         "${ selectedCount } contactgroepen verwijderen"
       ],
+      "Delete album": [
+        "Album verwijderen"
+      ],
       "Delete contact": [
         "Contactpersoon verwijderen"
       ],
@@ -324,6 +333,9 @@
       "Download logs": [
         "Logboeken downloaden"
       ],
+      "Download photos": [
+        "Foto's uploaden"
+      ],
       "Download without scanning": [
         "Downloaden zonder scannen"
       ],
@@ -335,6 +347,9 @@
       ],
       "Edit": [
         "Bewerken"
+      ],
+      "Edit album": [
+        "Album bewerken"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -531,6 +546,9 @@
       "Minimize transfers": [
         "Minimaliseer overdrachten"
       ],
+      "More": [
+        "Meer"
+      ],
       "More actions": [
         "Meer acties"
       ],
@@ -548,6 +566,9 @@
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
+      ],
+      "Name your album": [
+        "Geef uw album een naam"
       ],
       "New": [
         "Nieuw"
@@ -762,7 +783,13 @@
       "Select country": [
         "Selecteer land"
       ],
+      "Set album cover": [
+        "Album cover instellen"
+      ],
       "Set as album cover": [
+        "Instellen als omslag"
+      ],
+      "Set as cover": [
         "Instellen als omslag"
       ],
       "Set recovery phrase": [
@@ -963,9 +990,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Creëer album"
-      ],
       "Upload": [
         "Opladen"
       ]
@@ -2436,11 +2460,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2522,6 +2541,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3124,6 +3148,9 @@
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
       ],
+      "Unable to set photo as cover": [
+        "Kan foto niet als cover instellen"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Onverwachte fout, we kunnen de contacten niet importeren"
       ],
@@ -3665,6 +3692,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Create new album": [
+        "Nieuw album maken"
+      ],
       "Security Center": [
         "Beveiligingscentrum"
       ]
@@ -4024,6 +4054,10 @@
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } item",
+        "${ album.photoCount } items"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
@@ -4212,6 +4246,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
       ],
+      "Album is empty": [
+        "Album is leeg"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alles (${ totalFoldersCount } map)",
         "Alle (${ totalFoldersCount } mappen)"
@@ -4289,6 +4326,9 @@
       ],
       "Attention required": [
         "Aandacht vereist"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Automatisch herstel ${ formattedDate }"
       ],
       "Available": [
         "Beschikbaar"
@@ -4878,6 +4918,9 @@
       "of": [
         "van"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Zodra dit proces is voltooid, vindt u een kopie van uw herstelde gegevens in een nieuwe map genaamd \"Automated Recovery (huidige datum)\". Deze kopie van uw gegevens telt niet mee met uw opslagquota."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Eén van uw versleutelde drives is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoordwijziging."
       ],
@@ -4901,6 +4944,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Onze systemen hebben gedetecteerd dat uw vorige herstel niet succesvol is voltooid, en sommige bestanden zijn mogelijk niet volledig hersteld. We hebben het herstelproces automatisch opnieuw gestart om ervoor te zorgen dat alles volledig hersteld wordt."
       ],
       "Owner": [
         "Eigenaar"
@@ -5138,6 +5184,9 @@
       "Share via link settings": [
         "Deel via linkinstellingen"
       ],
+      "Shared": [
+        "Gedeeld"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Gedeeld door ${ rootLink.signatureEmail }"
       ],
@@ -5198,8 +5247,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
-      "The albums you create are shown here": [
-        "De albums die u maakt worden hier weergegeven"
+      "The albums you create are shown here.": [
+        "De albums die u maakt worden hier weergegeven."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "De digitale handtekening is gedeeltelijk geverifieerd. Dit bestand is geüpload met behulp van een openbaar toegankelijke share link door een gebruiker zonder een ${ BRAND_NAME }-account, zodat hun identiteit niet kan worden geverifieerd."
@@ -5387,6 +5436,9 @@
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
+      "Untitled": [
+        "Naamloos"
+      ],
       "Updating drive search...": [
         "Drive doorzoeken bijwerken..."
       ],
@@ -5461,6 +5513,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "We moeten uw betaling authenticeren met uw bank."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Wij verontschuldigen ons voor dit ongemak."
       ],
       "We use 3-D Secure to protect your payments": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen"
@@ -5695,8 +5750,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Neem contact met ons op via ${ email } voor instructies hoe u ons met contant geld kunt betalen."
+      "How to send a cash payment?": [
+        "Hoe een contante betaling versturen?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Instructies kan u vinden in het artikel: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8074,6 +8132,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
+      "Don’t show this offer again": [
+        "Toon deze aanbieding niet opnieuw"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Krijg Drive Plus voor slechts ${ pricingTitle }"
       ],
@@ -8086,14 +8147,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Laatste dag om op te besparen"
+      ],
       "Limited-time offer": [
         "Tijdelijke aanbieding"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus voor 12 maanden"
       ],
       "Maybe later": [
         "Misschien later"
       ],
+      "Save": [
+        "Opslaan"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Bespaar ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Bespaar 80% op uw eerste maand."
+      ],
+      "Save big when you pay annually": [
+        "Bespaar veel wanneer u jaarlijks betaalt"
+      ],
+      "This offer won't be shown again.": [
+        "Deze aanbieding wordt niet meer getoond."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Wanneer u overschakelt van een maandelijks naar jaarabonnement."
+      ],
+      "You currently pay": [
+        "U betaalt momenteel"
       ]
     },
     "Offer feature": {
@@ -10051,6 +10136,9 @@
       "Auto-deletion is active": [
         "Automatisch verwijderen is actief"
       ],
+      "Automatic Recovery in Progress": [
+        "Automatisch herstellen bezig"
+      ],
       "Billing cycle": [
         "Factuurperiode"
       ],
@@ -10646,11 +10734,6 @@
         "Vandaag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Voeg dit gedeelde bestand toe aan uw ${ DRIVE_APP_NAME } voor eenvoudige toegang op een later tijdstip."
@@ -10732,6 +10815,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "We hebben ze een uitnodiging gestuurd om het item te bekijken."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ]
     },
     "Valentine_2025": {
@@ -11019,9 +11107,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Alleen alfanumerieke kleine letters, punten, koppeltekens en underscores zijn toegestaan"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
