@@ -1,6 +1,4 @@
-import { c } from 'ttag';
-
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 
 export const getDecryptedSessionKey = async ({
@@ -22,33 +20,63 @@ export const getDecryptedSessionKey = async ({
     return sessionKey;
 };
 
+interface DecryptionResult {
+    decryptedPassphrase: string;
+    sessionKey: SessionKey;
+    verified: VERIFICATION_STATUS;
+}
+
+type CommonKeys<T, U> = {
+    [K in keyof T & keyof U]: T[K] extends U[K] ? (U[K] extends T[K] ? K : never) : never;
+}[keyof T & keyof U];
+
+type CommonProperties<T, U> = {
+    [K in CommonKeys<T, U>]: T[K];
+};
+
+export type VerificationKeysCallback = () => Promise<CommonProperties<PublicKeyReference, PrivateKeyReference>[]>;
+
 export const decryptPassphrase = async ({
     armoredPassphrase,
     armoredSignature,
     privateKeys,
-    publicKeys,
-    validateSignature = true,
+    publicKeysCallbackList,
 }: {
     armoredPassphrase: string;
     armoredSignature?: string;
     privateKeys: PrivateKeyReference[];
-    publicKeys: PublicKeyReference[];
-    validateSignature?: boolean;
-}) => {
+    publicKeysCallbackList: VerificationKeysCallback[];
+}): Promise<DecryptionResult> => {
     const sessionKey = await getDecryptedSessionKey({ data: armoredPassphrase, privateKeys });
 
-    const { data: decryptedPassphrase, verified } = await CryptoProxy.decryptMessage({
-        armoredMessage: armoredPassphrase,
-        armoredSignature,
-        sessionKeys: sessionKey,
-        verificationKeys: publicKeys,
-    });
+    let decryptionResult!: DecryptionResult;
 
-    if (validateSignature && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-        const error = new Error(c('Error').t`Signature verification failed`);
-        error.name = 'SignatureError';
-        throw error;
+    if (publicKeysCallbackList.length === 0) {
+        const { data, verified } = await CryptoProxy.decryptMessage({
+            armoredMessage: armoredPassphrase,
+            armoredSignature,
+            sessionKeys: sessionKey,
+            verificationKeys: [],
+        });
+        decryptionResult = { decryptedPassphrase: data, sessionKey, verified };
     }
 
-    return { decryptedPassphrase, sessionKey, verified };
+    for (const verificationKeysCallback of publicKeysCallbackList) {
+        const verificationKeys = await verificationKeysCallback();
+
+        const { data, verified } = await CryptoProxy.decryptMessage({
+            armoredMessage: armoredPassphrase,
+            armoredSignature,
+            sessionKeys: sessionKey,
+            verificationKeys,
+        });
+
+        decryptionResult = { decryptedPassphrase: data, sessionKey, verified };
+        if (verified === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            // if the signature is valid, we return the decryption result directly, no need to fallback
+            break;
+        }
+    }
+
+    return decryptionResult;
 };

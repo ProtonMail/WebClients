@@ -79,7 +79,7 @@ export function useDefaultShare() {
             const { address } = await getOwnAddressAndPrimaryKeys(share.addressId);
             return address.Email;
         },
-        [getDefaultShare]
+        [getDefaultShare, getOwnAddressAndPrimaryKeys]
     );
 
     const getDefaultPhotosShare = useCallback(
