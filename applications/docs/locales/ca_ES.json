@@ -2184,6 +2184,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2262,11 +2267,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5010,8 +5010,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contacteu amb nosaltres en ${ email } per a rebre instruccions de com fer un pagament en efectiu."
+      "How to send a cash payment?": [
+        "Com enviar un pagament en efectiu?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Trobeu les instruccions a l'article: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -7207,6 +7210,9 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don’t show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obteniu Drive Plus per només ${ pricingTitle }"
       ],
@@ -7219,14 +7225,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Últim dia per estalviar"
+      ],
       "Limited-time offer": [
         "Oferta per temps limitat"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus durant 12 mesos"
       ],
       "Maybe later": [
         "Potser després"
       ],
+      "Save": [
+        "Estalvieu"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Estalvieu el ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Estalvieu un 80% en el vostre primer mes."
+      ],
+      "Save big when you pay annually": [
+        "Estalvieu de debò pagant anualment!"
+      ],
+      "This offer won't be shown again.": [
+        "Aquesta oferta no es tornarà a mostrar."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quan canvieu d'una subscripció mensual a una anual."
+      ],
+      "You currently pay": [
+        "Actualment pagueu"
       ]
     },
     "Offer feature": {
@@ -8344,6 +8374,25 @@
         "Per ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'emmagatzematge per usuari"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -8383,25 +8432,6 @@
       ],
       "Your privacy is our mission": [
         "La vostra privacitat és la nostra missió"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'emmagatzematge per usuari"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
-        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adreça de correu electrònic",
-        "${ planNumberOfEmails } adreces de correu electrònic"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetes, etiquetes i filtres personalitzats"
       ]
     },
     "Subscription renewal state": {
@@ -9387,9 +9417,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Només es permeten caràcters alfanumèrics en minúscula, punts, guions i guions baixos"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."

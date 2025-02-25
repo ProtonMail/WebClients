@@ -905,7 +905,7 @@
         "Opozorila o kakovosti gesla"
       ],
       "Private photo backup": [
-        "Osebna varnostna kopija fotografij"
+        "Zasebna varnostna kopija fotografij"
       ],
       "Protect 10 devices at a time": [
         "Zaščitite 10 naprav hkrati"
@@ -914,7 +914,7 @@
         "Varna shramba in skupna raba datotek"
       ],
       "Secure vault and link sharing": [
-        "Varna in zanesljiva skupna raba"
+        "Varna skupna raba trezorjev in povezav"
       ],
       "Unlimited folders, labels and filters": [
         "Neomejeno število map, oznak in filtrov"
@@ -942,7 +942,7 @@
         "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje več kot 8.500 strežnikov v več kot 110 državah, 10 naprav, pretočne storitve z visoko hitrostjo, onemogočanje oglasov in zaščito pred zlonamerno programsko opremo, VPN Accelerator in še več."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Dostopajte do vsebin na pretočnih storitvah, kot so Netflix, Disney+, Prime Video in še več, od kjerkoli."
+        "Dostopajte do vsebin na pretočnih storitvah, kot so Netflix, Disney+, Prime Video in druge, od kjerkoli."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
@@ -2145,6 +2145,11 @@
         "Zapadel račun"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
@@ -2199,11 +2204,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4851,11 +4851,6 @@
     "info": {
       "Selected color:": [
         "Izberi barvo:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Za pomoč pri plačilu z gotovino nas kontaktirajte na naslov ${ email }."
       ]
     },
     "Info on errors": {
@@ -7992,6 +7987,26 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } shrambe na uporabnika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } e-poštna domena po meri",
+        "${ planNumberOfDomains } e-poštni domeni po meri",
+        "${ planNumberOfDomains } e-poštne domene po meri",
+        "${ planNumberOfDomains } e-poštnih domen po meri"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-poštni naslov",
+        "${ planNumberOfEmails } e-poštna naslova",
+        "${ planNumberOfEmails } e-poštni naslovi",
+        "${ planNumberOfEmails } e-poštnih naslovov"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
@@ -8031,26 +8046,6 @@
       ],
       "Your privacy is our mission": [
         "Vaša zasebnost je naše poslanstvo"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } shrambe na uporabnika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } e-poštna domena po meri",
-        "${ planNumberOfDomains } e-poštni domeni po meri",
-        "${ planNumberOfDomains } e-poštne domene po meri",
-        "${ planNumberOfDomains } e-poštnih domen po meri"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-poštni naslov",
-        "${ planNumberOfEmails } e-poštna naslova",
-        "${ planNumberOfEmails } e-poštni naslovi",
-        "${ planNumberOfEmails } e-poštnih naslovov"
       ]
     },
     "Subscription renewal state": {
@@ -9010,9 +9005,6 @@
       ],
       "Name is required": [
         "Zahtevano je ime"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Upoštevajte, da z izbiro tega načina plačila vašega računa ni mogoče takoj nadgraditi. Vaš račun bo posodobljen po potrditvi plačila."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."

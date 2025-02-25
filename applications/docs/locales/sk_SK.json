@@ -2205,6 +2205,11 @@
         "Faktúra po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2283,11 +2288,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2472,6 +2472,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
       ],
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
@@ -5131,11 +5134,6 @@
         "Vybraná farba:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Prosím kontaktujte nás na ${ email } pre viac informácií, ako uhradiť platobnú transakciu v hotovosti."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "Kliknite pre podrobnosti"
@@ -7361,6 +7359,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } ponuka končí dnes!"
       ],
+      "Don’t show this offer again": [
+        "Nabudúce to už nezobrazovať"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získajte Drive Plus len za ${ pricingTitle }"
       ],
@@ -7373,14 +7374,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Posledná šanca ušetriť 80% za prvý mesiac s ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Posledný deň na ušetrenie"
+      ],
       "Limited-time offer": [
         "Časovo obmedzená ponuka"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 mesiacov"
       ],
       "Maybe later": [
         "Možno neskôr"
       ],
+      "Save": [
+        "Ušetrite"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ušetrite ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ušetrite 80 % v prvom mesiaci."
+      ],
+      "Save big when you pay annually": [
+        "Pri ročnej platbe ušetríte viac"
+      ],
+      "This offer won't be shown again.": [
+        "Táto ponuka sa už nezobrazí."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Keď prejdete z mesačného na ročné predplatné."
+      ],
+      "You currently pay": [
+        "V súčasnosti platíte"
       ]
     },
     "Offer feature": {
@@ -8556,6 +8581,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložisko na používateľa"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
+      ],
+      "Folders, labels, and custom filters": [
+        "Priečinky, štítky a vlastné filtre"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložného priestoru"
@@ -8595,29 +8643,6 @@
       ],
       "Your privacy is our mission": [
         "Vaše súkromie je naším poslaním"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložisko na používateľa"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastná emailová doména",
-        "${ planNumberOfDomains } vlastné emailové domény",
-        "${ planNumberOfDomains } vlastných emailových domén",
-        "${ planNumberOfDomains } vlastných emailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } emailová adresa",
-        "${ planNumberOfEmails } emailové adresy",
-        "${ planNumberOfEmails } emailových adries",
-        "${ planNumberOfEmails } emailových adries"
-      ],
-      "Folders, labels, and custom filters": [
-        "Priečinky, štítky a vlastné filtre"
       ]
     },
     "Subscription renewal state": {
@@ -9657,9 +9682,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Povolené sú len alfanumerické malé písmená, bodky, pomlčky a podčiarkovníky"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Upozorňujeme, že pri výbere tohto spôsobu platby nie je možné váš účet okamžite navýšiť. Váš účet aktualizujeme po zúčtovaní platby."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."
