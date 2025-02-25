@@ -172,6 +172,7 @@ const PopoverEventContent = ({
     );
     const groupedAttendees = attendeesWithoutOrganizer
         .map((attendee) => {
+            // TODO: handle display logic here
             const attendeeEmail = attendee.email;
             const selfEmail = model.selfAddress?.Email;
             const displayContact = displayNameEmailMap[canonicalizeEmailByGuess(attendeeEmail)];

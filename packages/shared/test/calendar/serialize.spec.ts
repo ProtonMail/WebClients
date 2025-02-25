@@ -123,6 +123,8 @@ const transformToExternal = (
             CalendarEvents: withAuthor(data.CalendarEventContent, 'me'),
             AttendeesEvents: withAuthor(data.AttendeesEventContent, 'me'),
             Attendees: withFullAttendee(data.Attendees),
+            // TODO: Should we add attendees info here?
+            AttendeesInfo: [],
             Notifications: data.Notifications,
             FullDay: +isAllDay,
             CalendarID: 'calendarID',
