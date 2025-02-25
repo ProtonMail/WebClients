@@ -84,7 +84,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
             style={style}
             className={clsx(
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
-                'relative photos-card album-card p-0 border-none rounded shadow-lifted',
+                'relative photos-card album-card p-0 border-none rounded shadow-lifted overflow-hidden',
                 isThumbnailLoading && 'photos-card--loading'
             )}
             data-testid="albums-card"
@@ -102,7 +102,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
                                 data-testid="album-card-thumbnail"
                                 src={thumbUrl}
                                 alt={getAltText(album)}
-                                className="w-full h-full photos-card-thumbnail rounded"
+                                className="w-full h-full photos-card-thumbnail"
                             />
                         ) : (
                             <div className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
