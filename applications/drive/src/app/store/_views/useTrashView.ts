@@ -20,12 +20,12 @@ const DEFAULT_SORT = {
  */
 export default function useTrashView() {
     const abortSignal = useAbortSignal();
-    const { getDefaultShare } = useDefaultShare();
+    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const [isLoading, withLoading] = useLoading(true);
-    const volumeId = useRef<string>();
+    const volumeIds = useRef<string[]>();
 
     const linksListing = useLinksListing();
-    const { links: trashedLinks, isDecrypting } = linksListing.getCachedTrashed(abortSignal, volumeId.current);
+    const { links: trashedLinks, isDecrypting } = linksListing.getCachedTrashed(abortSignal, volumeIds.current);
     const cachedTrashedLinks = useMemoArrayNoMatterTheOrder(trashedLinks);
 
     const { layout } = useUserSettings();
@@ -33,8 +33,16 @@ export default function useTrashView() {
 
     const loadTrashListing = async (signal: AbortSignal) => {
         const defaultShare = await getDefaultShare(signal);
-        volumeId.current = defaultShare.volumeId;
-        await linksListing.loadTrashedLinks(signal, defaultShare.volumeId);
+        const photosShare = await getDefaultPhotosShare(signal);
+        // New photos share is on different volume, but as we need to support both for now we need this condition
+        const haveDifferentVolumeId = photosShare && defaultShare.volumeId !== photosShare.volumeId;
+        volumeIds.current = haveDifferentVolumeId
+            ? [defaultShare.volumeId, photosShare.volumeId]
+            : [defaultShare.volumeId];
+        await Promise.all([
+            linksListing.loadTrashedLinks(signal, defaultShare.volumeId),
+            haveDifferentVolumeId ? linksListing.loadTrashedLinks(signal, photosShare.volumeId) : undefined,
+        ]);
     };
 
     useEffect(() => {
