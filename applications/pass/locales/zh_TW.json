@@ -2362,11 +2362,20 @@
       ]
     },
     "Warning": {
+      "2 consecutive dots are not allowed": [
+        "不允許連續2點"
+      ],
       "A description of the problem is required": [
         "需要解釋錯誤"
       ],
       "At least one email address is required": [
         "最少需要一個電子郵件位址"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "無法於開頭使用點"
+      ],
+      "Cannot contain a dot at the end": [
+        "無法於最後使用點"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "目前無法提取此別名的信箱"
