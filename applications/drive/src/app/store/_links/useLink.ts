@@ -15,7 +15,12 @@ import type {
 } from '@proton/shared/lib/interfaces/drive/file';
 import type { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
-import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import type {
+    VerificationKeysCallback} from '@proton/shared/lib/keys/drivePassphrase';
+import {
+    decryptPassphrase,
+    getDecryptedSessionKey,
+} from '@proton/shared/lib/keys/drivePassphrase';
 
 import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -312,7 +317,10 @@ export function useLinkInner(
 
             try {
                 // Fallback to parent NodeKey in case if we don't have addressPublicKey (Anonymous upload)
-                const publicKeys = encryptedLink.signatureEmail ? addressPublicKey : [parentPrivateKey];
+                const publicKeysCallbackList: VerificationKeysCallback[] = [
+                    async () => (encryptedLink.signatureEmail ? addressPublicKey : [parentPrivateKey]),
+                ];
+
                 const {
                     decryptedPassphrase,
                     sessionKey: passphraseSessionKey,
@@ -321,8 +329,7 @@ export function useLinkInner(
                     armoredPassphrase: encryptedLink.nodePassphrase,
                     armoredSignature: encryptedLink.nodePassphraseSignature,
                     privateKeys: [parentPrivateKey],
-                    publicKeys,
-                    validateSignature: false,
+                    publicKeysCallbackList,
                 });
 
                 handleSignatureCheck(shareId, encryptedLink, 'passphrase', verified);
