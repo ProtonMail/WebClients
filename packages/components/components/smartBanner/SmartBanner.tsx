@@ -1,8 +1,12 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { useUser } from '@proton/account/user/hooks';
+import { Button, ButtonLike } from '@proton/atoms';
 import Logo from '@proton/components/components/logo/Logo';
+import useLocalState from '@proton/components/hooks/useLocalState';
 
+import Icon from '../icon/Icon';
+import Tooltip from '../tooltip/Tooltip';
 import type { SmartBannerApp } from './types';
 import { useSmartBanner } from './useSmartBanner';
 import { useSmartBannerTelemetry } from './useSmartBannerTelemetry';
@@ -20,8 +24,20 @@ const SmartBanner = ({
 }: SmartBannerProps) => {
     const bannerHref = useSmartBanner(app);
     const handleLinkClick = useSmartBannerTelemetry(app);
+    const [user] = useUser();
+
+    const [hideSmartBanner, setHideSmartBanner] = useLocalState(false, `${user.ID}-${app}-smart-banner`);
+
+    const onClickHideSmartBanner = () => {
+        setHideSmartBanner(!hideSmartBanner);
+    };
+
+    const showDismissButton = !user.isFree; // only for Paid users
 
     if (!bannerHref) {
+        return null;
+    }
+    if (hideSmartBanner) {
         return null;
     }
 
@@ -53,6 +69,14 @@ const SmartBanner = ({
             >
                 {c('Action').t`Download`}
             </ButtonLike>
+
+            {showDismissButton && !hideSmartBanner && (
+                <Tooltip title={c('Action').t`Dismiss`} data-testid="dismiss-smart-banner">
+                    <Button icon className="ml-2" onClick={onClickHideSmartBanner}>
+                        <Icon name="cross" alt={c('Action').t`Dismiss`} />
+                    </Button>
+                </Tooltip>
+            )}
         </div>
     );
 };
