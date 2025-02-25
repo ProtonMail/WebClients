@@ -15,6 +15,8 @@ import { type DecryptedLink, type PhotoLink, isDecryptedLink } from '../../store
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { CreateAlbumModal } from './CreateAlbumModal';
 
+import './AlbumPhotoSelection.scss';
+
 const getAltText = ({ mimeType, name }: DecryptedLink) =>
     `${c('Label').t`Album`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
 
@@ -27,9 +29,14 @@ const AlbumSquare = ({ album, onClick }: { album: DecryptedAlbum; onClick: (link
     return (
         <li key={album.linkId}>
             <Button
-                className="w-full flex items-center justify-start gap-2 pl-0"
+                className="relative w-full flex items-center justify-start gap-2 pl-0 album-photo-selection"
                 onClick={() => onClick(album.linkId)}
                 shape="ghost"
+                aria-label={c('Action').ngettext(
+                    msgid`Add to “${album.name}” (${album.photoCount} photo)`,
+                    `Add to “${album.name}” (${album.photoCount} photos)`,
+                    album.photoCount
+                )}
             >
                 {thumbUrl ? (
                     <img
@@ -54,7 +61,7 @@ const AlbumSquare = ({ album, onClick }: { album: DecryptedAlbum; onClick: (link
                     </div>
                 )}
                 <span className="grow-2 text-left">{album.name}</span>
-                <span>{album.photoCount}</span>
+                <span className="color-weak text-tabular-nums">{album.photoCount}</span>
             </Button>
         </li>
     );
@@ -89,7 +96,7 @@ export const AddAlbumPhotosModal = ({
             {render && (
                 <ModalTwo {...modalProps} as="form" size="small">
                     <ModalTwoHeader
-                        title={c('Calendar settings sidebar').ngettext(
+                        title={c('Heading').ngettext(
                             msgid`Add ${photos.length} photo to`,
                             `Add ${photos.length} photos to`,
                             photos.length
@@ -97,12 +104,17 @@ export const AddAlbumPhotosModal = ({
                     />
                     <ModalTwoContent className="max-h-custom" style={{ '--max-h-custom': '21.25rem' }}>
                         <Button
-                            className="w-full flex items-center gap-2 pl-0"
+                            className="relative w-full flex items-center gap-2 pl-0 album-photo-selection"
                             onClick={() => {
                                 createAlbumModal.openModal(true);
                                 openModal(false);
                             }}
                             shape="ghost"
+                            aria-label={c('Action').ngettext(
+                                msgid`Add ${photos.length} photo to a new album`,
+                                `Add ${photos.length} photos to a new album`,
+                                photos.length
+                            )}
                         >
                             <span
                                 className="block w-custom h-custom rounded overflow-hidden bg-strong flex items-center justify-center"
@@ -116,27 +128,25 @@ export const AddAlbumPhotosModal = ({
                             {c('Action').t`New album`}
                         </Button>
                         {!!sortedAlbums.length && (
-                            <ul className="unstyled">
-                                <li>
-                                    {c('Info').t`Recent`}
-                                    <ul className="unstyled">
-                                        {latestAlbum && <AlbumSquare album={latestAlbum} onClick={handleSelectAlbum} />}
-                                        {secondLatestAlbum && (
-                                            <AlbumSquare album={secondLatestAlbum} onClick={handleSelectAlbum} />
-                                        )}
-                                    </ul>
-                                </li>
+                            <>
+                                <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`Recent`}</h2>
+                                <ul className="unstyled mt-0">
+                                    {latestAlbum && <AlbumSquare album={latestAlbum} onClick={handleSelectAlbum} />}
+                                    {secondLatestAlbum && (
+                                        <AlbumSquare album={secondLatestAlbum} onClick={handleSelectAlbum} />
+                                    )}
+                                </ul>
                                 {!!restAlbums.length && (
-                                    <li>
-                                        {c('Info').t`All albums`}
-                                        <ul className="unstyled">
+                                    <>
+                                        <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`All albums`}</h2>
+                                        <ul className="unstyled mt-0">
                                             {restAlbums.map((album) => (
                                                 <AlbumSquare album={album} onClick={handleSelectAlbum} />
                                             ))}
                                         </ul>
-                                    </li>
+                                    </>
                                 )}
-                            </ul>
+                            </>
                         )}
                     </ModalTwoContent>
                 </ModalTwo>
