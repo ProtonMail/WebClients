@@ -4,6 +4,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import { isCalendarMobileAppUser, isMailMobileAppUser } from '@proton/shared/lib/helpers/usedClientsFlags';
+import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import SmartBanner from './SmartBanner';
 
@@ -87,18 +88,31 @@ const storeLinks = {
 describe('@proton/components/components/SmartBanner', () => {
     beforeEach(() => {
         jest.resetAllMocks();
+        mockUseUser();
     });
 
     test.each([
-        { app: APPS.PROTONCALENDAR, isAndroid: false, isIos: false, renderOrNot: 'not render' },
-        { app: APPS.PROTONCALENDAR, isAndroid: true, isIos: false, renderOrNot: 'correctly render' },
-        { app: APPS.PROTONCALENDAR, isAndroid: false, isIos: true, renderOrNot: 'correctly render' },
-        { app: APPS.PROTONMAIL, isAndroid: false, isIos: false, renderOrNot: 'not render' },
-        { app: APPS.PROTONMAIL, isAndroid: true, isIos: false, renderOrNot: 'correctly render' },
-        { app: APPS.PROTONMAIL, isAndroid: false, isIos: true, renderOrNot: 'correctly render' },
+        { app: APPS.PROTONCALENDAR, isAndroid: false, isIos: false, renderOrNot: 'not render', plan: 'paid' },
+        { app: APPS.PROTONCALENDAR, isAndroid: true, isIos: false, renderOrNot: 'correctly render', plan: 'paid' },
+        { app: APPS.PROTONCALENDAR, isAndroid: false, isIos: true, renderOrNot: 'correctly render', plan: 'paid' },
+        { app: APPS.PROTONMAIL, isAndroid: false, isIos: false, renderOrNot: 'not render', plan: 'paid' },
+        { app: APPS.PROTONMAIL, isAndroid: true, isIos: false, renderOrNot: 'correctly render', plan: 'paid' },
+        { app: APPS.PROTONMAIL, isAndroid: false, isIos: true, renderOrNot: 'correctly render', plan: 'paid' },
+        { app: APPS.PROTONCALENDAR, isAndroid: false, isIos: false, renderOrNot: 'not render', plan: 'free' },
+        { app: APPS.PROTONCALENDAR, isAndroid: true, isIos: false, renderOrNot: 'correctly render', plan: 'free' },
+        { app: APPS.PROTONCALENDAR, isAndroid: false, isIos: true, renderOrNot: 'correctly render', plan: 'free' },
+        { app: APPS.PROTONMAIL, isAndroid: false, isIos: false, renderOrNot: 'not render', plan: 'free' },
+        { app: APPS.PROTONMAIL, isAndroid: true, isIos: false, renderOrNot: 'correctly render', plan: 'free' },
+        { app: APPS.PROTONMAIL, isAndroid: false, isIos: true, renderOrNot: 'correctly render', plan: 'free' },
     ])(
-        'given app is $app, isAndroid is $isAndroid, and isIos is $isIos, should $renderOrNot SmartBanner',
-        ({ app, isAndroid, isIos }) => {
+        'given app is $app, isAndroid is $isAndroid, and isIos is $isIos, should $renderOrNot SmartBanner when user is $plan',
+        ({ app, isAndroid, isIos, plan }) => {
+            mockUseUser([
+                {
+                    isFree: plan === 'free',
+                    isPaid: plan === 'paid',
+                },
+            ]);
             setMockHelpers({ ...defaultHelperResponses, isAndroid, isIos });
             setMockUsedClientsFlags(defaultUsedClientsFlagsResponses);
             setMockUserSettings(app);
@@ -111,6 +125,13 @@ describe('@proton/components/components/SmartBanner', () => {
                 const linkToStore = screen.getByRole('link', linkRoleOptions);
                 expect(linkToStore).toBeInTheDocument();
                 expect(linkToStore).toHaveProperty('href', storeLinks[app][isAndroid ? 'playStore' : 'appStore']);
+
+                const dismissButton = screen.queryByTestId('dismiss-smart-banner');
+                if (plan === 'free') {
+                    expect(dismissButton).toBe(null);
+                } else {
+                    expect(dismissButton).toBeDefined();
+                }
             } else {
                 expect(screen.queryByRole('link', linkRoleOptions)).not.toBeInTheDocument();
             }
