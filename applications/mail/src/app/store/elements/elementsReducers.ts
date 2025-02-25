@@ -228,6 +228,7 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
         total,
         elements: toMap(action.payload.elements, 'ID'),
         retry: { payload: undefined, count: MAX_ELEMENT_LIST_LOAD_RETRIES, error: undefined },
+        params,
     });
     state.pages[contextFilter] = state.pages[contextFilter]
         ? unique([...state.pages[contextFilter], ...pages]).sort()
