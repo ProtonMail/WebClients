@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "Actual Size": [
+        "Исходный размер"
+      ],
       "Check spelling while typing": [
         "Проверять правописание при наборе текста"
       ],
@@ -28,6 +31,12 @@
       ],
       "Uninstall Proton Mail": [
         "Удалить Proton Mail"
+      ],
+      "Zoom In": [
+        "Увеличить масштаб"
+      ],
+      "Zoom Out": [
+        "Уменьшить масштаб"
       ]
     },
     "Conext menu": {
@@ -52,6 +61,30 @@
     "Context Menu": {
       "Copy": [
         "Копировать"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Из-за ошибки приложение будет закрыто. Попробуйте запустить его снова, и если проблема не будет устранена, свяжитесь с нами. Информацию об ошибке можно найти в журнале приложения."
+      ],
+      "Unexpected error": [
+        "Непредвиденная ошибка"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "Не удалось установить соединение"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Проверьте подключение к Интернету или настройки сети. Если проблема не будет устранена, обратитесь в службу поддержки."
+      ],
+      "Try again": [
+        "Попробовать снова"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "Загрузка ${ title }"
       ]
     },
     "Menu": {
