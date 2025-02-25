@@ -211,6 +211,9 @@
       "Delete member": [
         "Eliminar miembro"
       ],
+      "Delete policy": [
+        "Eliminar la política"
+      ],
       "Delete user": [
         "Eliminar usuario"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Seleccione el ciclo de facturación de ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Seleccione la ciudad ${ city }"
+      ],
       "Select country": [
         "Seleccionar país"
+      ],
+      "Select country ${ country }": [
+        "Seleccione el país ${ country }"
       ],
       "select file": [
         "seleccionar archivo"
@@ -2318,11 +2327,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Cree políticas para administrar el acceso a servidores compartidos."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Cree políticas para decidir quién puede conectarse a servidores compartidos en cada país."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Todos los miembros de su organización pueden conectarse a servidores compartidos."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Todos los miembros de su organización pueden conectarse a servidores compartidos en todos los países."
       ],
       "If disabled, only admins will have access.": [
         "En caso de desactivación, solo los administradores tendrán acceso."
@@ -2553,6 +2562,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
+      ],
+      "Error creating policy.": [
+        "Error al crear la política."
+      ],
+      "Error deleting policy.": [
+        "Error al eliminar la política."
+      ],
+      "Error updating policy.": [
+        "Error al actualizar la política."
       ],
       "Failed to process the logo": [
         "Error al procesar el logo"
@@ -4451,9 +4469,6 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
-      "No common passwords": [
-        "Ninguna contraseña común"
-      ],
       "No gateways": [
         "Sin puertas de enlace"
       ],
@@ -4462,9 +4477,6 @@
       ],
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "No secuencias predecibles (1234, aaa)"
       ],
       "No results found": [
         "No se encontraron resultados"
@@ -4874,6 +4886,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Esto puede tardar unos segundos o minutos dependiendo del dispositivo"
+      ],
+      "This cannot be undone.": [
+        "No se puede deshacer esta operación."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Esto podría tomar un tiempo. No cierre esta página o se desconecte de internet."
@@ -5403,8 +5418,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contáctenos en ${ email } para obtener instrucciones sobre cómo pagarnos en efectivo."
+      "How to send a cash payment?": [
+        "¿Cómo enviar un pago en efectivo?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Encuentre las instrucciones en el artículo: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5589,6 +5607,9 @@
       ],
       "Anderson": [
         "García"
+      ],
+      "Apply policy to": [
+        "Aplicar la política a"
       ],
       "Assertion Consumer Service URL": [
         "URL de ACS (Assertion Consumer Service)"
@@ -5863,9 +5884,6 @@
       "New password": [
         "Contraseña nueva"
       ],
-      "New policy name": [
-        "Nuevo nombre de la política"
-      ],
       "New second password": [
         "Nueva segunda contraseña"
       ],
@@ -5937,6 +5955,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Compártanos cualquier comentario para ayudarnos a mejorar."
+      ],
+      "Policy name": [
+        "Nombre de la política"
       ],
       "Postal code": [
         "Código postal"
@@ -7625,9 +7646,6 @@
       "Downloaded 2FA recovery codes": [
         "Códigos de recuperación 2FA descargados"
       ],
-      "Error creating policy": [
-        "Error al crear la política"
-      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -7645,9 +7663,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciales OpenVPN/IKEv2 regeneradas"
-      ],
-      "Policy created successfully": [
-        "Se creó la política."
       ],
       "Reminder has been sent": [
         "El recordatorio ha sido enviado"
@@ -7677,6 +7692,9 @@
       "${ pricingTitle } offer expires today!": [
         "¡La oferta de ${ pricingTitle } vence hoy!"
       ],
+      "Don’t show this offer again": [
+        "No mostrar esta oferta de nuevo"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtenga Drive Plus por solo ${ pricingTitle }"
       ],
@@ -7689,14 +7707,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidad para obtener un 80 % de descuento en su primer mes de ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Último día para ahorrar"
+      ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Quizás más tarde"
       ],
+      "Save": [
+        "Ahorre"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ahorre ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ahorre un 80 % en su primer mes."
+      ],
+      "Save big when you pay annually": [
+        "Ahorre mucho más al pagar anualmente"
+      ],
+      "This offer won't be shown again.": [
+        "Esta oferta no se mostrará nuevamente."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Al cambiarse de una suscripción mensual a una anual"
+      ],
+      "You currently pay": [
+        "Actualmente paga"
       ]
     },
     "Offer feature": {
@@ -10074,6 +10116,15 @@
       "Phone number updated": [
         "Número de teléfono actualizado"
       ],
+      "Policy created successfully!": [
+        "Se creó la política."
+      ],
+      "Policy deleted": [
+        "Se eliminó la política."
+      ],
+      "Policy updated successfully!": [
+        "Se actualizó la política."
+      ],
       "Preference saved": [
         "Preferencia guardada"
       ],
@@ -10531,6 +10582,9 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete ${ policyName }?": [
+        "¿Eliminar ${ policyName }?"
+      ],
       "Delete account": [
         "Eliminar cuenta"
       ],
@@ -10586,6 +10640,9 @@
       "Edit billing address": [
         "Editar la dirección de la factura"
       ],
+      "Edit countries": [
+        "Editar los países"
+      ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"
       ],
@@ -10603,6 +10660,9 @@
       ],
       "Edit invoice note": [
         "Editar la nota de la factura"
+      ],
+      "Edit name": [
+        "Editar el nombre"
       ],
       "Edit servers": [
         "Editar servidores"
@@ -11102,6 +11162,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Los miembros que no usan 2FA recibirán un correo electrónico pidiéndoles que la activen tan pronto como sea posible."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Las políticas de servidor compartido se pueden aplicar a cada usuario o a grupos."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Especifique el dominio que puede autenticarse con SAML SSO"
@@ -11747,9 +11810,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Al eliminar este número de teléfono, ya no podrá recuperar la cuenta."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Tome en cuenta que al elegir este método de pago la cuenta no será mejorada inmediatamente. Actualizaremos la cuenta una vez que el pago se haya completado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."

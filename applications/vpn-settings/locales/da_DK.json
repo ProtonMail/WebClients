@@ -310,6 +310,9 @@
       "Generate password": [
         "Generér adgangskode"
       ],
+      "Get ${ planOrAppName }": [
+        "Få ${ planOrAppName }"
+      ],
       "Get a new encrypted email address": [
         "Få en ny krypteret e-mailadresse"
       ],
@@ -1175,6 +1178,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Luk"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -1183,6 +1189,18 @@
       ],
       "Continue your subscription": [
         "Fortsæt dit abonnement"
+      ],
+      "Create label": [
+        "Opret etiket"
+      ],
+      "Discover and set up features": [
+        "Udforsk og konfigurer funktioner"
+      ],
+      "Remind me later": [
+        "Påmind mig senere"
+      ],
+      "Set up other features": [
+        "Konfigurer andre funktioner"
       ]
     },
     "Cancellation upsell": {
@@ -4446,6 +4464,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Send e-mails for at opfordre dine medlemmer til at beskytte deres konti med 2FA."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalinger er ikke tilgængelige i øjeblikket. Prøv venligst igen senere."
+      ],
       "Server is currently down": [
         "Serveren er i øjeblikket nede"
       ],
@@ -5082,11 +5103,6 @@
     "info": {
       "Selected color:": [
         "Valgte farve:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakt os venligst på ${ email } for instruktioner om, hvordan du betaler os med kontanter."
       ]
     },
     "Info for domain modal": {
@@ -10713,9 +10729,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved at slette dette telefonnummer vil du ikke længere være i stand til at gendanne din konto."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."

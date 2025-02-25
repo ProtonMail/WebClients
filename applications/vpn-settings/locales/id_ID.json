@@ -211,6 +211,9 @@
       "Delete member": [
         "Hapus anggota"
       ],
+      "Delete policy": [
+        "Hapus kebijakan"
+      ],
       "Delete user": [
         "Hapus pengguna"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Pilih siklus pembayaran ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Pilih kota ${ city }"
+      ],
       "Select country": [
         "Pilih negara"
+      ],
+      "Select country ${ country }": [
+        "Pilih negara ${ country }"
       ],
       "select file": [
         "pilih berkas"
@@ -2308,11 +2317,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Buat kebjakan untuk mengelola akses ke server yang terbagi."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Buat kebijakan untuk menentukan siapa yang dapat menghubungkan ke server terbagi dalam setiap negara."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Siapa pun dalam organisasi Anda akan dapat menghubungkan diri mereka ke server yang terbagi."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Semua orang dalam organisasi Anda dapat menghubungkan ke server terbagi dalam semua negara."
       ],
       "If disabled, only admins will have access.": [
         "Apabila dinonaktifkan, hanya admin yang akan memiliki akses."
@@ -2543,6 +2552,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
+      ],
+      "Error creating policy.": [
+        "Terjadi kesalahan membuat kebijakan."
+      ],
+      "Error deleting policy.": [
+        "Terjadi kesalahan menghapus kebijakan."
+      ],
+      "Error updating policy.": [
+        "Terjadi kesalahan memperbarui kebijakan."
       ],
       "Failed to process the logo": [
         "Logo gagal diproses"
@@ -3426,6 +3444,9 @@
       ],
       "Organization key fingerprint": [
         "Sidik jari kunci organisasi"
+      ],
+      "Policy Name": [
+        "Nama Kebijakan"
       ],
       "Protection": [
         "Perlindungan"
@@ -4405,9 +4426,6 @@
       "No addresses exist": [
         "Tidak ada alamat"
       ],
-      "No common passwords": [
-        "Tanpa kata sandi yang umum"
-      ],
       "No gateways": [
         "Tidak ada gateway"
       ],
@@ -4416,9 +4434,6 @@
       ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Tanpa urutan angka/huruf yang mudah ditebak (1234, aaa)"
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -4818,6 +4833,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
+      ],
+      "This cannot be undone.": [
+        "Tindakan ini tidak dapat diurungkan."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Proses ini dapat memakan waktu sejenak. Mohon untuk tidak menutup halaman ini atau memutuskan koneksi internet Anda."
@@ -5338,11 +5356,6 @@
         "Warna terpilih:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Silakan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Tambahkan alamat baru untuk pengguna yang telah terdaftar pada organisasi Anda."
@@ -5522,6 +5535,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Apply policy to": [
+        "Terapkan kebijakan ke"
       ],
       "Assertion Consumer Service URL": [
         "URL Assertion Consumer Service"
@@ -5796,9 +5812,6 @@
       "New password": [
         "Kata sandi baru"
       ],
-      "New policy name": [
-        "Nama kebijakan baru"
-      ],
       "New second password": [
         "Kata sandi kedua baru"
       ],
@@ -5870,6 +5883,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Silakan bagikan masukan apa pun untuk membantu kami berkembang."
+      ],
+      "Policy name": [
+        "Nama kebijakan"
       ],
       "Postal code": [
         "Kode pos"
@@ -7544,9 +7560,6 @@
       "OpenVPN / IKEv2 credentials regenerated": [
         "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
       ],
-      "Policy created successfully": [
-        "Kebijakan berhasil dibuat"
-      ],
       "Reminder has been sent": [
         "Pengingat telah dikirim"
       ],
@@ -7575,6 +7588,9 @@
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
+      "Don’t show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
       ],
@@ -7587,14 +7603,35 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Plus Anda."
       ],
+      "Last day to save": [
+        "Hari terakhir untuk menghemat"
+      ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus selama 12 bulan"
       ],
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Save": [
+        "Simpan"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Hemat ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Hemat 80% pada bulan pertama Anda."
+      ],
+      "Save big when you pay annually": [
+        "Hemat besar-besaran pada saat Anda membayar secara tahunan"
+      ],
+      "This offer won't be shown again.": [
+        "Penawaran ini tidak akan lagi ditampilkan."
+      ],
+      "You currently pay": [
+        "Anda saat ini membayar"
       ]
     },
     "Offer feature": {
@@ -9917,6 +9954,15 @@
       "Phone number updated": [
         "Nomor telepon telah diperbarui"
       ],
+      "Policy created successfully!": [
+        "Kebijakan berhasil dibuat!"
+      ],
+      "Policy deleted": [
+        "Kebijakan dihapus"
+      ],
+      "Policy updated successfully!": [
+        "Kebijakan berhasil diperbarui!"
+      ],
       "Preference saved": [
         "Preferensi disimpan"
       ],
@@ -10372,6 +10418,9 @@
       "Delete": [
         "Hapus"
       ],
+      "Delete ${ policyName }?": [
+        "Hapus ${ policyName }?"
+      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -10426,6 +10475,9 @@
       "Edit billing address": [
         "Sunting alamat penagihan"
       ],
+      "Edit countries": [
+        "Sunting negara"
+      ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"
       ],
@@ -10443,6 +10495,9 @@
       ],
       "Edit invoice note": [
         "Sunting catatan faktur"
+      ],
+      "Edit name": [
+        "Sunting nama"
       ],
       "Edit servers": [
         "Sunting server"
@@ -10941,6 +10996,9 @@
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Anggota organisasi yang tidak menggunakan 2FA akan menerima email yang meminta mereka untuk mengaktifkan 2FA sesegera mungkin."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Kebijakan server terbagi dapat diterapkan ke pengguna atau grup individu"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML"
       ],
@@ -11145,6 +11203,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tindakan ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Untuk memperoleh hak administrator, mereka akan perlu untuk mengatur ulang kata sandi cadangan pada saat mereka masuk ke ${ BRAND_NAME } ke depannya."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Untuk melanjutkan, Anda harus meminta perizinan pengguna untuk mengakses datanya atau mengatur ulang kata sandinya."
@@ -11445,9 +11506,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Dengan menghapus nomor telepon ini, Anda tidak akan lagi dapat memulihkan akun Anda."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."

@@ -211,6 +211,9 @@
       "Delete member": [
         "Ștergere membru"
       ],
+      "Delete policy": [
+        "Șterge regulă"
+      ],
       "Delete user": [
         "Ștergere utilizator"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Selectare ciclu de facturare la ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Selectare orașul ${ city }"
+      ],
       "Select country": [
         "Selectare țară"
+      ],
+      "Select country ${ country }": [
+        "Selectare țara ${ country }"
       ],
       "select file": [
         "selectați fișierul"
@@ -2328,11 +2337,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Creați reguli pentru a gestiona accesul la serverele partajate."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Creați reguli pentru a decide cine se poate conecta la serverele partajate din fiecare țară."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Oricine din organizație se poate conecta la serverele partajate."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Oricine din organizație se poate conecta la serverele partajate din toate țările."
       ],
       "If disabled, only admins will have access.": [
         "Dacă e dezactivată, doar administratorii vor avea acces."
@@ -2563,6 +2572,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
+      ],
+      "Error creating policy.": [
+        "Eroare creare regulă."
+      ],
+      "Error deleting policy.": [
+        "Eroare la ștergerea regulei."
+      ],
+      "Error updating policy.": [
+        "Eroare la actualizarea regulei."
       ],
       "Failed to process the logo": [
         "Procesarea fișierului pentru logo a eșuat."
@@ -4494,9 +4512,6 @@
       "No addresses exist": [
         "Nu există adrese"
       ],
-      "No common passwords": [
-        "Fără parole comune"
-      ],
       "No gateways": [
         "Nu există porți de acces"
       ],
@@ -4505,9 +4520,6 @@
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Fără secvențe predictibile (1234, aaa)"
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
@@ -4930,6 +4942,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Acesta poate dura câteva secunde sau câteva minute, în funcție de dispozitivul folosit"
+      ],
+      "This cannot be undone.": [
+        "Această acțiune nu poate fi anulată."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Asta ar putea dura ceva timp. Nu închideți această pagină și nu vă deconectați de la internet."
@@ -5466,11 +5481,6 @@
         "Culoare selectată:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Pentru plata cu numerar contactați-ne la ${ email } pentru instrucțiuni."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Adăugare adresă nouă pentru utilizatorii existenți din organizație."
@@ -5656,6 +5666,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Apply policy to": [
+        "Aplicare regulă la"
       ],
       "Assertion Consumer Service URL": [
         "URL ACS (Assertion Consumer Service)"
@@ -5930,9 +5943,6 @@
       "New password": [
         "Parola nouă"
       ],
-      "New policy name": [
-        "Nume regulă nouă"
-      ],
       "New second password": [
         "Parola secundară nouă"
       ],
@@ -6004,6 +6014,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Vă rugăm să ne spuneți orice pentru a ne ajuta la îmbunătățirea serviciilor."
+      ],
+      "Policy name": [
+        "Nume regulă"
       ],
       "Postal code": [
         "Cod poștal"
@@ -7724,9 +7737,6 @@
       "Downloaded 2FA recovery codes": [
         "Codurile de recuperare A2F s-au descărcat."
       ],
-      "Error creating policy": [
-        "Eroare creare regulă."
-      ],
       "Invalid code": [
         "Cod nevalid"
       ],
@@ -7744,9 +7754,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credențiale OpenVPN/IKE2 regenerate"
-      ],
-      "Policy created successfully": [
-        "Regula a fost creată."
       ],
       "Reminder has been sent": [
         "Notificările au fost trimise"
@@ -7776,6 +7783,9 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta cu ${ pricingTitle } expiră astăzi!"
       ],
+      "Don’t show this offer again": [
+        "Nu mai arăta această ofertă"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Luați Drive Plus cu doar ${ pricingTitle }"
       ],
@@ -7788,14 +7798,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Ultima șansă pentru a obține 80% reducere în prima lună pentru ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Ultima zi de economisire"
+      ],
       "Limited-time offer": [
         "Ofertă limitată"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus pentru 12 luni"
       ],
       "Maybe later": [
         "Poate mai târziu"
       ],
+      "Save": [
+        "Economisiți"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Economisiți ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Economisiți 80% în prima lună."
+      ],
+      "Save big when you pay annually": [
+        "Economisiți mult dacă plătiți anual"
+      ],
+      "This offer won't be shown again.": [
+        "Această ofertă nu va mai fi afișată."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Când comutați de la un abonament lunar la unul anual."
+      ],
+      "You currently pay": [
+        "Acum plătiți"
       ]
     },
     "Offer feature": {
@@ -10249,6 +10283,15 @@
       "Phone number updated": [
         "Număr de telefon actualizat"
       ],
+      "Policy created successfully!": [
+        "Regula a fost creată!"
+      ],
+      "Policy deleted": [
+        "Regula a fost ștearsă."
+      ],
+      "Policy updated successfully!": [
+        "Regula a fost actualizată!"
+      ],
       "Preference saved": [
         "Preferințe salvate"
       ],
@@ -10708,6 +10751,9 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete ${ policyName }?": [
+        "Ștergeți ${ policyName }?"
+      ],
       "Delete account": [
         "Ștergere cont"
       ],
@@ -10764,6 +10810,9 @@
       "Edit billing address": [
         "Editare adresă de facturare"
       ],
+      "Edit countries": [
+        "Editare țări"
+      ],
       "Edit credit/debit card": [
         "Editare card de credit/debit"
       ],
@@ -10781,6 +10830,9 @@
       ],
       "Edit invoice note": [
         "Editare observații factură"
+      ],
+      "Edit name": [
+        "Editare nume"
       ],
       "Edit servers": [
         "Editare servere"
@@ -11282,6 +11334,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Membrii care nu folosesc A2F vor primi un mesaj pe e-mail solicitându-le să o activeze cât mai curând."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Regulile partajate ale serverului pot fi aplicate la utilizatori sau grupuri."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO"
@@ -11841,9 +11896,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ștergând acest număr de telefon, nu veți mai putea să vă recuperați contul."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
