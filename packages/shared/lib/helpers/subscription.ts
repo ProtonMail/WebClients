@@ -613,6 +613,7 @@ export const hasThirty = (subscription?: Subscription) => {
 export interface PricingForCycles {
     [CYCLE.MONTHLY]: number;
     [CYCLE.THREE]: number;
+    [CYCLE.SIX]: number;
     [CYCLE.YEARLY]: number;
     [CYCLE.EIGHTEEN]: number;
     [CYCLE.TWO_YEARS]: number;
