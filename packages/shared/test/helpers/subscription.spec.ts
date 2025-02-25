@@ -251,6 +251,7 @@ describe('cycles', () => {
         expect(allCycles).toEqual([
             CYCLE.MONTHLY,
             CYCLE.THREE,
+            CYCLE.SIX,
             CYCLE.YEARLY,
             CYCLE.FIFTEEN,
             CYCLE.EIGHTEEN,
@@ -264,7 +265,7 @@ describe('cycles', () => {
     });
 
     it('should have custom cycles', () => {
-        expect(customCycles).toEqual([CYCLE.THREE, CYCLE.FIFTEEN, CYCLE.EIGHTEEN, CYCLE.THIRTY]);
+        expect(customCycles).toEqual([CYCLE.THREE, CYCLE.SIX, CYCLE.FIFTEEN, CYCLE.EIGHTEEN, CYCLE.THIRTY]);
     });
 
     it('should return normal cycle from custom cycle - undefined', () => {
