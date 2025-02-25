@@ -1949,10 +1949,10 @@
         "Bekräfta ditt extralösenord"
       ],
       "Please confirm your extra password in order to auto-lock with biometrics.": [
-        "Vänligen bekräfta ditt extralösenord för att autolåsa med biometri."
+        "Bekräfta ditt extra lösenord för att låsa automatiskt med biometri."
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
-        "Vänligen bekräfta ditt extralösenord för att autolåsa med ditt extralösenord."
+        "Bekräfta ditt extra lösenord för att låsa automatiskt med ditt extra lösenord."
       ],
       "Please confirm your extra password in order to disable offline mode": [
         "Bekräfta ditt extra lösenord för att inaktivera offlineläge"
@@ -3494,6 +3494,9 @@
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
         "Objekt kan inte innehålla fler än ${ share.targetMaxMembers } användare.",
         "Objekten kan inte innehålla fler än ${ share.targetMaxMembers } användare."
+      ],
+      "Mailbox change successfully cancelled": [
+        "Ändring av brevlåda avbröts"
       ],
       "Mailbox successfully deleted": [
         "Brevlåda borttagen"
