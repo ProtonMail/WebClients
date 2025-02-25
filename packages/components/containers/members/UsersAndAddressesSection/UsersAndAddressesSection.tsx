@@ -143,7 +143,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const allowStorageConfiguration = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan;
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
+    // Allow to display a toggle in the UI
     const allowAIAssistantConfiguration = accessToAssistant.enabled && isB2bPlanSupportingScribe(organization, user);
+    // Allow to update seats (this should be done automatically for visionary, family and duo plans)
+    const allowAIAssistantUpdate = accessToAssistant.enabled;
 
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
@@ -503,6 +506,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         aiSeatsRemaining={aiSeatsRemaining}
                         lumoSeatsRemaining={lumoSeatsRemaining}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
+                        allowAIAssistantUpdate={allowAIAssistantUpdate}
                         allowStorageConfiguration={allowStorageConfiguration}
                         {...userInviteOrEditModalProps}
                     />
