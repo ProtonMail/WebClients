@@ -211,6 +211,9 @@
       "Delete member": [
         "Verwijder lid"
       ],
+      "Delete policy": [
+        "Policy verwijderen"
+      ],
       "Delete user": [
         "Gebruiker verwijderen"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Selecteer factureringscyclus ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Selecteer stad ${ city }"
+      ],
       "Select country": [
         "Selecteer land"
+      ],
+      "Select country ${ country }": [
+        "Selecteer land ${ country }"
       ],
       "select file": [
         "selecteer bestand"
@@ -2318,11 +2327,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Creëer policy's om toegang tot gedeelde servers te beheren."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Maak policies aan om te bepalen wie in elk land kan verbinden met de gedeelde servers."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Iedereen in uw organisatie kan verbinding maken met gedeelde servers."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Iedereen in uw organisatie kan verbinding maken met gedeelde servers in alle landen."
       ],
       "If disabled, only admins will have access.": [
         "Indien uitgeschakeld, hebben alleen beheerders toegang."
@@ -2553,6 +2562,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
+      ],
+      "Error creating policy.": [
+        "Fout bij aanmaken policy."
+      ],
+      "Error deleting policy.": [
+        "Fout bij verwijderen policy."
+      ],
+      "Error updating policy.": [
+        "Fout bij bijwerken policy."
       ],
       "Failed to process the logo": [
         "Het logo kon niet worden verwerkt"
@@ -4451,9 +4469,6 @@
       "No addresses exist": [
         "Adressen bestaan niet"
       ],
-      "No common passwords": [
-        "Geen bekende wachtwoorden"
-      ],
       "No gateways": [
         "Geen gateways"
       ],
@@ -4462,9 +4477,6 @@
       ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Geen voorspelbare reeksen (1234, aaa)"
       ],
       "No results found": [
         "Geen resultaten gevonden"
@@ -4874,6 +4886,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
+      ],
+      "This cannot be undone.": [
+        "Deze operatie kan niet ongedaan worden gemaakt."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dit kan wat tijd in beslag nemen. Sluit deze pagina niet af en verbreek de verbinding met het internet niet."
@@ -5403,8 +5418,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Neem contact met ons op via ${ email } voor instructies hoe u ons met contant geld kunt betalen."
+      "How to send a cash payment?": [
+        "Hoe een contante betaling versturen?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Instructies kan u vinden in het artikel: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5589,6 +5607,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Apply policy to": [
+        "Policy toepassen op"
       ],
       "Assertion Consumer Service URL": [
         "URL van Assertion Consumer Service"
@@ -5863,9 +5884,6 @@
       "New password": [
         "Nieuw wachtwoord"
       ],
-      "New policy name": [
-        "Nieuwe naam policy"
-      ],
       "New second password": [
         "Nieuw tweede wachtwoord"
       ],
@@ -5937,6 +5955,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Deel uw feedback en help ons te verbeteren."
+      ],
+      "Policy name": [
+        "Policy naam"
       ],
       "Postal code": [
         "Postcode"
@@ -7625,9 +7646,6 @@
       "Downloaded 2FA recovery codes": [
         "Herstelcodes van 2FA gedownload"
       ],
-      "Error creating policy": [
-        "Fout bij aanmaken policy"
-      ],
       "Invalid code": [
         "Ongeldige code"
       ],
@@ -7645,9 +7663,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
-      ],
-      "Policy created successfully": [
-        "Policy succesvol aangemaakt"
       ],
       "Reminder has been sent": [
         "Herinnering is verstuurd"
@@ -7677,6 +7692,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
+      "Don’t show this offer again": [
+        "Toon deze aanbieding niet opnieuw"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Krijg Drive Plus voor slechts ${ pricingTitle }"
       ],
@@ -7689,14 +7707,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Laatste dag om op te besparen"
+      ],
       "Limited-time offer": [
         "Tijdelijke aanbieding"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus voor 12 maanden"
       ],
       "Maybe later": [
         "Misschien later"
       ],
+      "Save": [
+        "Opslaan"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Bespaar ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Bespaar 80% op uw eerste maand."
+      ],
+      "Save big when you pay annually": [
+        "Bespaar veel wanneer u jaarlijks betaalt"
+      ],
+      "This offer won't be shown again.": [
+        "Deze aanbieding wordt niet meer getoond."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Wanneer u overschakelt van een maandelijks naar jaarabonnement."
+      ],
+      "You currently pay": [
+        "U betaalt momenteel"
       ]
     },
     "Offer feature": {
@@ -10074,6 +10116,15 @@
       "Phone number updated": [
         "Telefoonnummer bijgewerkt"
       ],
+      "Policy created successfully!": [
+        "Policy succesvol aangemaakt!"
+      ],
+      "Policy deleted": [
+        "Policy verwijderd"
+      ],
+      "Policy updated successfully!": [
+        "Policy succesvol bijgewerkt!"
+      ],
       "Preference saved": [
         "Voorkeur opgeslagen"
       ],
@@ -10531,6 +10582,9 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Delete ${ policyName }?": [
+        "${ policyName } verwijderen?"
+      ],
       "Delete account": [
         "Account verwijderen"
       ],
@@ -10586,6 +10640,9 @@
       "Edit billing address": [
         "Factuuradres bewerken"
       ],
+      "Edit countries": [
+        "Landen wijzigen"
+      ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
       ],
@@ -10603,6 +10660,9 @@
       ],
       "Edit invoice note": [
         "Factuurnota bewerken"
+      ],
+      "Edit name": [
+        "Naam wijzigen"
       ],
       "Edit servers": [
         "Servers bewerken"
@@ -11102,6 +11162,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Leden die geen 2FA gebruiken zullen een e-mail ontvangen met de vraag om het zo snel mogelijk in te schakelen."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Beleid voor gedeelde servers kan worden toegepast op individuele gebruikers of groepen"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO"
@@ -11747,9 +11810,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Door dit telefoonnummer te verwijderen, kunt u uw account niet meer herstellen."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
