@@ -159,13 +159,13 @@ export const getMailUpsellConfig: (options: MailUpsellConfigParams) => Promise<M
     });
 
     // Set default values
-    let planIDs: PlanIDs | undefined = { [PLANS.BUNDLE]: 1 };
-    let cycle: CYCLE | undefined = CYCLE.YEARLY;
+    let planIDs: PlanIDs = { [PLANS.BUNDLE]: 1 };
+    let cycle: CYCLE = CYCLE.YEARLY;
     let coupon = undefined;
     let configOverride: MailUpsellConfig['configOverride'] = undefined;
     let price = getPricePerCycle(getPlanByName(plans, planIDs, currency), cycle) || 0;
-    let footerText: MailUpsellConfig['footerText'] | undefined;
-    let submitText: MailUpsellConfig['submitText'] | undefined;
+    let footerText: MailUpsellConfig['footerText'];
+    let submitText: MailUpsellConfig['submitText'];
 
     //
     // Start config logic
