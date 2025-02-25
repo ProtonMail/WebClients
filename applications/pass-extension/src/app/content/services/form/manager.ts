@@ -295,7 +295,7 @@ export const createFormManager = (options: FormManagerOptions) => {
         /** Filter targets to relevant elements before subtree check */
         ({ target }: Event) => (target && isParentOfInterest(target) ? target : false),
         250,
-        { leading: true, flushThreshold: 15 }
+        { leading: true }
     );
 
     const observe = () => {
