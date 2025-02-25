@@ -732,6 +732,9 @@
       "Loading${ ellipsis }": [
         "Ładowanie${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Ustawienie ${ MAIL_APP_NAME } jako domyślnej aplikacji do obsługi poczty e-mail"
+      ],
       "Make it friendly": [
         "Zmień na tekst przyjazny"
       ],
@@ -4030,6 +4033,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } to nazwa użytkownika. Aby utworzyć ${ emailAddress }, przejdź do Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)."
+      ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
@@ -6863,7 +6869,7 @@
         "Połączenie z Internetem zostało przywrócone."
       ],
       "Invite family members and get everything up and running.": [
-        "Zaproś członków rodziny i rozpocznij."
+        "Zaproś użytkowników rodziny i rozpocznij."
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Zaproś swojego partnera, znajomego lub kogokolwiek, komu udostępniasz swój plan ${ protonDuoPlanName }."
@@ -6936,6 +6942,9 @@
       ],
       "Low Priority": [
         "Niski priorytet"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację e-mail."
       ],
       "Manage your folders": [
         "Zarządzaj folderami"
@@ -7344,6 +7353,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową dla tej przeglądarki. Aplikacja ${ MAIL_APP_NAME } będzie automatycznie otwierać linki wiadomości."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację e-mail. Aplikacja ${ MAIL_APP_NAME } otworzy się automatycznie po kliknięciu łącza do wiadomości e-mail."
       ],
       "Setting up ${ feature }…": [
         "Konfigurowanie ${ feature }…"
@@ -8141,11 +8153,6 @@
       ],
       "Selected color:": [
         "Wybrany kolor:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
       ]
     },
     "Info on errors": {
@@ -9484,9 +9491,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. dnia miesiąca"
-      ],
       "on the first Friday": [
         "w pierwszy piątek"
       ],
@@ -10813,7 +10817,7 @@
         "Zacznij korzystać z ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "Używaj krótszej i bardziej chwytliwej nazwy swojego adresu e-mail."
+        "Używaj krótszej i bardziej chwytliwej wersji swojego adresu e-mail."
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Witaj w ${ MAIL_APP_NAME }"
@@ -14411,9 +14415,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Dozwolone są tylko małe znaki alfanumeryczne, kropki, myślniki i podkreślenia."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."

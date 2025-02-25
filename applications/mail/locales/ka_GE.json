@@ -7866,11 +7866,6 @@
         "არჩეული ფერი:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "ნაღდი ფულით გადახდის შემთხვევაში მეტი დეტალების მისაღებად დაგვიკავშირდით ${ email }."
-      ]
-    },
     "Info on errors": {
       "Click for details": [
         "დეტალებისთვის დააწკაპუნეთ აქ"
@@ -9184,9 +9179,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }-ე დღე"
-      ],
       "on the first Friday": [
         "პირველ პარასკევს"
       ],
@@ -10319,6 +10311,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
+      "Don’t show this offer again": [
+        "აღარ მაჩვენო ეს შემოთავაზება"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "მიიღეთ Drive Plus ფასით ${ pricingTitle }"
       ],
@@ -10331,14 +10326,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan } Plus-დან."
       ],
+      "Last day to save": [
+        "ბოლო დღე შესანახად"
+      ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus 12 თვით"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "დაზოგეთ ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "დაზოეთ 80% პირველ თვეს."
+      ],
+      "Save big when you pay annually": [
+        "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
+      ],
+      "This offer won't be shown again.": [
+        "ამ შემოთავაზებას აღარ გაჩვენებთ."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "როცა თვიურიდან წლიურ გამოწერაზე გადახვალთ."
+      ],
+      "You currently pay": [
+        "ამჟამად იხდით"
       ]
     },
     "Offer feature": {
@@ -10831,6 +10850,9 @@
       ],
       "Filter labels": [
         "ჭდეების ფილტრი"
+      ],
+      "Filter quick actions": [
+        "სწრაფი ქმედებების გაფილტვრა"
       ],
       "First name": [
         "სახელი"
@@ -12804,6 +12826,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName }-ის კლავიატურის მალსახმობები"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } ელფოსტის მისამართი",
         "${ emailsCount } ელფოსტის მისამართი"
@@ -13906,9 +13931,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "დაშვებულია, მხოლოდ, დაბალი რეგისტრის მქონე ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "გაითვალისწინეთ, რომ გადახდის ამ მეთოდის არჩევით თქვენი ანგარიშის სატარიფო გეგმის მომენტალური შეცვლა შეუძლებელია. ტარიფი, მხოლოდ, გადახდის დასრულების შემდეგ შეიცვლება."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
