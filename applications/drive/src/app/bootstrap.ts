@@ -28,7 +28,7 @@ import { getMetricsUserPlan } from './store/_user/getMetricsUserPlan';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { clearOPFS } from './utils/opfs';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
-import { loadStreamsPolyfill } from './utils/webSteamsPolyfill';
+import { loadStreamsPolyfill } from './utils/webStreamsPolyfill';
 import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
