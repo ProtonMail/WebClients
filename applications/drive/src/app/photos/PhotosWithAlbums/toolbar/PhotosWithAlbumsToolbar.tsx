@@ -2,9 +2,8 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, InlineLinkButton } from '@proton/atoms';
 import {
-    ButtonGroup,
     Dropdown,
     DropdownButton,
     DropdownMenu,
@@ -14,6 +13,7 @@ import {
     Toolbar,
     usePopperAnchor,
 } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import type { OnFileUploadSuccessCallbackData, PhotoGridItem, PhotoLink } from '../../../store';
@@ -86,12 +86,12 @@ export const ToolbarLeftActionsGallery = ({
     const tabs: TabOption[] = [
         {
             id: 'gallery',
-            label: 'Gallery',
+            label: c('Link').t`Photos`,
             onClick: onGalleryClick,
         },
         {
             id: 'albums',
-            label: 'Albums',
+            label: c('Link').t`Albums`,
             onClick: onAlbumsClick,
         },
     ];
@@ -100,27 +100,22 @@ export const ToolbarLeftActionsGallery = ({
         tab.onClick();
     };
 
-    const getButtonStyles = (tabId: TabOption['id']) => ({
-        style:
-            selection === tabId
-                ? {
-                      backgroundColor: 'transparent',
-                      color: 'var(--interaction-weak-contrast)',
-                  }
-                : {},
-        className: selection === tabId ? 'text-bold' : '',
-        loading: selection === tabId && isLoading,
-        selected: selection === tabId,
-    });
-
     return (
-        <ButtonGroup shape="ghost" color="weak">
+        <nav className="ml-2 flex flex-row flex-nowrap gap-4">
             {tabs.map((tab) => (
-                <Button key={tab.id} color="weak" {...getButtonStyles(tab.id)} onClick={() => handleClick(tab)}>
+                <InlineLinkButton
+                    disabled={isLoading}
+                    aria-pressed={tab.id === selection}
+                    className={clsx(
+                        'h3 inline-flex text-bold',
+                        tab.id === selection ? 'text-no-decoration color-weak hover:color-norm' : 'color-inherit'
+                    )}
+                    onClick={() => handleClick(tab)}
+                >
                     {tab.label}
-                </Button>
+                </InlineLinkButton>
             ))}
-        </ButtonGroup>
+        </nav>
     );
 };
 
