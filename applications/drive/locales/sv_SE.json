@@ -78,11 +78,17 @@
       "Add phone number": [
         "Lägg till telefonnummer"
       ],
+      "Add photos": [
+        "Lägg till foton"
+      ],
       "Add to album": [
         "Lägg till i album"
       ],
       "Add to group": [
         "Lägg till i grupp"
+      ],
+      "Album name": [
+        "Albumnamn"
       ],
       "Apply": [
         "Tillämpa"
@@ -273,6 +279,9 @@
         "Ta bort ${ selectedCount } kontaktgrupp",
         "Ta bort ${ selectedCount } kontaktgrupper"
       ],
+      "Delete album": [
+        "Ta bort album"
+      ],
       "Delete contact": [
         "Ta bort kontakt"
       ],
@@ -324,6 +333,9 @@
       "Download logs": [
         "Ladda ner loggar"
       ],
+      "Download photos": [
+        "Ladda ner foton"
+      ],
       "Download without scanning": [
         "Ladda ner utan skanning"
       ],
@@ -335,6 +347,9 @@
       ],
       "Edit": [
         "Redigera"
+      ],
+      "Edit album": [
+        "Redigera album"
       ],
       "Edit email address": [
         "Redigera e-postadress"
@@ -531,6 +546,9 @@
       "Minimize transfers": [
         "Minimera överföringar"
       ],
+      "More": [
+        "Mer"
+      ],
       "More actions": [
         "Fler åtgärder"
       ],
@@ -548,6 +566,9 @@
       ],
       "Move to trash": [
         "Flytta till papperskorg"
+      ],
+      "Name your album": [
+        "Namnge ditt album"
       ],
       "New": [
         "Ny"
@@ -762,8 +783,14 @@
       "Select country": [
         "Välj land"
       ],
+      "Set album cover": [
+        "Ställ in albumomslag"
+      ],
       "Set as album cover": [
         "Ställ in som albumomslag"
+      ],
+      "Set as cover": [
+        "Ställ in som omslag"
       ],
       "Set recovery phrase": [
         "Ställ in återställningsfras"
@@ -963,9 +990,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Skapa album"
-      ],
       "Upload": [
         "Ladda upp"
       ]
@@ -2436,11 +2460,6 @@
         "Försenad faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2522,6 +2541,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3124,6 +3148,9 @@
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
       ],
+      "Unable to set photo as cover": [
+        "Kan inte ställa in foto som omslag"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Oväntat fel, vi kan inte importera kontakterna"
       ],
@@ -3665,6 +3692,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Create new album": [
+        "Skapa nytt album"
+      ],
       "Security Center": [
         "Säkerhetscenter"
       ]
@@ -4024,6 +4054,10 @@
         "${ addressCount } e-postadress",
         "${ addressCount } e-postadresser"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } objekt",
+        "${ album.photoCount } objekt"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
@@ -4212,6 +4246,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ],
+      "Album is empty": [
+        "Album är tomt"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alla (${ totalFoldersCount } mapp)",
         "Alla (${ totalFoldersCount } mappar)"
@@ -4289,6 +4326,9 @@
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Automatiserad återställning ${ formattedDate }"
       ],
       "Available": [
         "Tillgänglig"
@@ -4878,6 +4918,9 @@
       "of": [
         "av"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "När den här processen är klar hittar du en kopia av dina återställda data i en ny mapp som heter ”Automatiserad återställning (dagens datum)”. Denna kopia av dina data kommer inte att räknas av från din lagringskvot."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "En av dina krypterade diskar är låst. Det mest sannolika är att det beror på att lösenordet nyligen återställts."
       ],
@@ -4901,6 +4944,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Våra system upptäckte att din tidigare återställning inte slutfördes, och vissa filer kanske inte har återställts helt och hållet. Vi har automatiskt startat om återställningsprocessen för att säkerställa att allt är helt återställt."
       ],
       "Owner": [
         "Ägare"
@@ -5138,6 +5184,9 @@
       "Share via link settings": [
         "Inställningar för delning via länk"
       ],
+      "Shared": [
+        "Delat"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Delad av ${ rootLink.signatureEmail }"
       ],
@@ -5198,8 +5247,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontot kanske har en ny nyckel eller så har något av följande mixtrats med: ${ items }. Öppna endast om du litar på den."
       ],
-      "The albums you create are shown here": [
-        "De album du skapar visas här"
+      "The albums you create are shown here.": [
+        "De album du skapar visas här."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Den digitala signaturen har delvis verifierats. Denna fil laddades upp med en offentlig åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
@@ -5387,6 +5436,9 @@
       "Unsupported file": [
         "Fil stöds inte"
       ],
+      "Untitled": [
+        "Ingen rubrik"
+      ],
       "Updating drive search...": [
         "Uppdaterar Drive-sök…"
       ],
@@ -5461,6 +5513,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Vi måste autentisera din betalning med din bank."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Vi ber så mycket om ursäkt för det besvär detta kan ha orsakat dig."
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
@@ -5695,8 +5750,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakta oss på ${ email } för instruktioner om hur du betalar oss med kontanter."
+      "How to send a cash payment?": [
+        "Hur skickar man en kontant betalning?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Hitta instruktionen i artikeln: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8139,6 +8197,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don’t show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaffa Drive Plus för endast ${ pricingTitle }"
       ],
@@ -8151,14 +8212,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Sista dagen att spara"
+      ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus för 12 månader"
       ],
       "Maybe later": [
         "Kanske senare"
       ],
+      "Save": [
+        "Spara"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spara ${ prices.savedPercentage } %"
+      ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
+      ],
+      "Save big when you pay annually": [
+        "Spara stort när du betalar årligen"
+      ],
+      "This offer won't be shown again.": [
+        "Detta erbjudande kommer inte att visas igen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "När du byter från en månads till årlig prenumeration."
+      ],
+      "You currently pay": [
+        "Du betalar för närvarande"
       ]
     },
     "Offer feature": {
@@ -10122,6 +10207,9 @@
       "Auto-deletion is active": [
         "Automatisk borttagning är aktivt"
       ],
+      "Automatic Recovery in Progress": [
+        "Automatisk återställning pågår"
+      ],
       "Billing cycle": [
         "Faktureringscykel"
       ],
@@ -10717,11 +10805,6 @@
         "Idag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Lägg till denna delade fil på din ${ DRIVE_APP_NAME } för enkel åtkomst senare."
@@ -10803,6 +10886,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]
     },
     "Validation": {
@@ -10963,9 +11051,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Endast alfanumeriska gemener, punkter, bindestreck och understreck är tillåtna"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observera att genom att välja denna betalningsmetod kan ditt konto inte uppgraderas omedelbart. Vi kommer att uppdatera ditt konto när betalningen har gått igenom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."

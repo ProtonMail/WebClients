@@ -78,11 +78,17 @@
       "Add phone number": [
         "Přidat telefonní číslo"
       ],
+      "Add photos": [
+        "Přidat fotky"
+      ],
       "Add to album": [
         "Přidat do alba"
       ],
       "Add to group": [
         "Přidat do skupiny"
+      ],
+      "Album name": [
+        "Název alba"
       ],
       "Apply": [
         "Použít"
@@ -279,6 +285,9 @@
         "Smazat ${ selectedCount } skupin kontaktů",
         "Smazat ${ selectedCount } skupin kontaktů"
       ],
+      "Delete album": [
+        "Smazat album"
+      ],
       "Delete contact": [
         "Smazat kontakt"
       ],
@@ -330,6 +339,9 @@
       "Download logs": [
         "Stáhnout logy"
       ],
+      "Download photos": [
+        "Stáhnout fotky"
+      ],
       "Download without scanning": [
         "Stáhnout bez skenování"
       ],
@@ -341,6 +353,9 @@
       ],
       "Edit": [
         "Upravit"
+      ],
+      "Edit album": [
+        "Upravit album"
       ],
       "Edit email address": [
         "Upravit e-mailovou adresu"
@@ -537,6 +552,9 @@
       "Minimize transfers": [
         "Minimalizovat přenosy"
       ],
+      "More": [
+        "Více"
+      ],
       "More actions": [
         "Další akce"
       ],
@@ -554,6 +572,9 @@
       ],
       "Move to trash": [
         "Přesunout do koše"
+      ],
+      "Name your album": [
+        "Pojmenujte své album"
       ],
       "New": [
         "Nový"
@@ -768,8 +789,14 @@
       "Select country": [
         "Vyberte zemi"
       ],
+      "Set album cover": [
+        "Nastavit obálku alba"
+      ],
       "Set as album cover": [
         "Nastavit jako obálku alba"
+      ],
+      "Set as cover": [
+        "Nastavit jako obálku"
       ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
@@ -971,9 +998,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Vytvořit album"
-      ],
       "Upload": [
         "Nahrát"
       ]
@@ -2462,11 +2486,6 @@
         "Faktura po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2548,6 +2567,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3164,6 +3188,9 @@
       "Try using only letters, numerals, and _.-": [
         "Zkuste používat pouze písmena, číslice a _.-"
       ],
+      "Unable to set photo as cover": [
+        "Nelze nastavit fotku jako obálku"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Neočekávaná chyba, kontakty nelze importovat"
       ],
@@ -3723,6 +3750,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Create new album": [
+        "Vytvořit nové album"
+      ],
       "Security Center": [
         "Bezpečnostní centrum"
       ]
@@ -4106,6 +4136,12 @@
         "${ addressCount } e-mailových adres",
         "${ addressCount } e-mailových adres"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } položka",
+        "${ album.photoCount } položky",
+        "${ album.photoCount } položek",
+        "${ album.photoCount } položek"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -4346,6 +4382,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
       ],
+      "Album is empty": [
+        "Album je prázdné"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
         "Všechny (${ totalFoldersCount } složky)",
@@ -4429,6 +4468,9 @@
       ],
       "Attention required": [
         "Vyžadována pozornost"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Automatizované obnovení ${ formattedDate }"
       ],
       "Available": [
         "K dispozici"
@@ -5030,6 +5072,9 @@
       "of": [
         "z"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Po dokončení tohoto procesu najdete kopii obnovených dat v nové složce s názvem \"Automatizované obnovení (dnešní datum)\". Tato kopie dat se nezapočítává do vašeho limitu úložiště."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Jeden z vašich šifrovaných disků je uzamčen. Je to pravděpodobně způsobeno nedávným resetem hesla."
       ],
@@ -5053,6 +5098,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Prioritou našich upozornění je bezpečnost. Pokud nepoznáváte žádné z uniklých informací, můžete tuto zprávu bez obav ignorovat."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Naše systémy zjistily, že vaše předchozí obnovení nebylo úspěšně dokončeno a některé soubory nemusely být zcela obnoveny. Automaticky jsme restartovali proces obnovení, abychom se ujistili, že je vše plně obnoveno."
       ],
       "Owner": [
         "Vlastník"
@@ -5294,6 +5342,9 @@
       "Share via link settings": [
         "Sdílet nastavení pomocí odkazu"
       ],
+      "Shared": [
+        "Sdílené"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Sdílel/a ${ rootLink.signatureEmail }"
       ],
@@ -5354,8 +5405,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
-      "The albums you create are shown here": [
-        "Vámi vytvořená alba jsou zobrazena zde"
+      "The albums you create are shown here.": [
+        "Vámi vytvořená alba jsou zobrazena zde."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitální podpis byl částečně ověřen. Tento soubor byl nahrán pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
@@ -5543,6 +5594,9 @@
       "Unsupported file": [
         "Nepodporovaný soubor"
       ],
+      "Untitled": [
+        "Bez názvu"
+      ],
       "Updating drive search...": [
         "Aktulizace vyhledání na disku..."
       ],
@@ -5617,6 +5671,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Potřebujeme ověřit vaši platbu u vaší banky."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Upřímně se omlouváme za nepříjemnosti, které vám to mohlo způsobit."
       ],
       "We use 3-D Secure to protect your payments": [
         "K zabezpečení vašich plateb používáme 3-D Secure"
@@ -5859,8 +5916,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Prosíme kontaktujte nás na ${ email } pro více informací, jak zaplatit v hotovosti."
+      "How to send a cash payment?": [
+        "Jak poslat platbu v hotovosti?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Pokyny naleznete v článku: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8348,6 +8408,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
+      "Don’t show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získejte Drive Plus za pouhých ${ pricingTitle }"
       ],
@@ -8360,14 +8423,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Poslední šance získat 80% slevu na první měsíc ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Poslední den, kdy můžete ušetřit"
+      ],
       "Limited-time offer": [
         "Časově omezená nabídka"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 měsíců"
       ],
       "Maybe later": [
         "Možná později"
       ],
+      "Save": [
+        "Ušetřete"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Ušetřete ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Ušetřete 80% za první měsíc."
+      ],
+      "Save big when you pay annually": [
+        "Při roční platbě můžete výrazně ušetřit"
+      ],
+      "This offer won't be shown again.": [
+        "Tato nabídka se již nezobrazí."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Při přechodu z měsíčního na roční předplatné."
+      ],
+      "You currently pay": [
+        "V současnosti platíte"
       ]
     },
     "Offer feature": {
@@ -10427,6 +10514,9 @@
       "Auto-deletion is active": [
         "Automatické mazání je aktivní"
       ],
+      "Automatic Recovery in Progress": [
+        "Probíhá automatické obnovení"
+      ],
       "Billing cycle": [
         "Fakturační cyklus"
       ],
@@ -11030,11 +11120,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Přidejte tento sdílený soubor na svůj ${ DRIVE_APP_NAME } pro pozdější snadný přístup."
@@ -11116,6 +11201,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "Validation": {
@@ -11306,9 +11396,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Povoleny jsou pouze alfanumerické malé znaky, tečky, pomlčky a podtržítka"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Berte prosím na vědomí, že výběrem této platební metody nemůže být váš účet navýšen okamžitě. Předplatné vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."

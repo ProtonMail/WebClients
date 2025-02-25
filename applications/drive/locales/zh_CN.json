@@ -78,11 +78,17 @@
       "Add phone number": [
         "添加电话号码"
       ],
+      "Add photos": [
+        "添加照片"
+      ],
       "Add to album": [
         "添加到相册"
       ],
       "Add to group": [
         "添加至群组"
+      ],
+      "Album name": [
+        "相册名称"
       ],
       "Apply": [
         "应用"
@@ -270,6 +276,9 @@
       "Delete ${ selectedCount } contact group": [
         "删除 ${ selectedCount } 个联系人组"
       ],
+      "Delete album": [
+        "删除相册 "
+      ],
       "Delete contact": [
         "删除联系人"
       ],
@@ -321,6 +330,9 @@
       "Download logs": [
         "下载日志"
       ],
+      "Download photos": [
+        "下载照片"
+      ],
       "Download without scanning": [
         "下载时不扫描"
       ],
@@ -332,6 +344,9 @@
       ],
       "Edit": [
         "更改"
+      ],
+      "Edit album": [
+        "编辑相册"
       ],
       "Edit email address": [
         "更改邮箱地址"
@@ -528,6 +543,9 @@
       "Minimize transfers": [
         "最小化传输窗口"
       ],
+      "More": [
+        "更多"
+      ],
       "More actions": [
         "更多操作"
       ],
@@ -545,6 +563,9 @@
       ],
       "Move to trash": [
         "移至废件箱"
+      ],
+      "Name your album": [
+        "命名您的相册"
       ],
       "New": [
         "新建"
@@ -759,8 +780,14 @@
       "Select country": [
         "选择国家/地区"
       ],
+      "Set album cover": [
+        "设置专辑封面"
+      ],
       "Set as album cover": [
         "设置为专辑封面"
+      ],
+      "Set as cover": [
+        "设为封面"
       ],
       "Set recovery phrase": [
         "设置恢复密语"
@@ -959,9 +986,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "创建相册"
-      ],
       "Upload": [
         "上传"
       ]
@@ -2423,11 +2447,6 @@
         "逾期账单"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 导入助手"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } 对可疑活动进行全天候专门监控，包括上报安全专家，从而保护您的账户。"
@@ -2509,6 +2528,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3104,6 +3128,9 @@
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
+      "Unable to set photo as cover": [
+        "无法将照片设为封面"
+      ],
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
       ],
@@ -3636,6 +3663,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Create new album": [
+        "创建新相册"
+      ],
       "Security Center": [
         "安全中心"
       ]
@@ -3983,6 +4013,9 @@
       "${ addressCount } email address": [
         "${ addressCount } 个邮箱地址"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } 个项目"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
       ],
@@ -4144,6 +4177,9 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "由 AI 驱动的助手，帮助您快速、轻松地制作出更好的电子邮件。"
+      ],
+      "Album is empty": [
+        "相册为空"
       ],
       "All (${ totalFoldersCount } folder)": [
         "全部（${ totalFoldersCount } 个文件夹）"
@@ -4362,7 +4398,7 @@
         "专用服务器"
       ],
       "default email address": [
-        "首选邮件地址"
+        "首选邮箱地址"
       ],
       "Delete locked drive": [
         "删除锁定的网盘"
@@ -4734,7 +4770,7 @@
         "已合并"
       ],
       "Messages to all your email addresses will go to your inbox.": [
-        "发送到您所有电子邮件地址的信息将全部转至您的收件箱。"
+        "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
       "MM/YY": [
         "月/年"
@@ -5060,6 +5096,9 @@
       "Share via link settings": [
         "通过链接设置共享"
       ],
+      "Shared": [
+        "已分享"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "由 ${ rootLink.signatureEmail } 共享"
       ],
@@ -5120,8 +5159,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
       ],
-      "The albums you create are shown here": [
-        "您创建的相册将在此显示"
+      "The albums you create are shown here.": [
+        "您创建的相册将在此显示."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "数字签名已部分验证。该文件是由一个没有 ${ BRAND_NAME } 账户的用户使用可公开访问的共享链接上传的，因此无法验证其身份。"
@@ -5308,6 +5347,9 @@
       ],
       "Unsupported file": [
         "不支持文件"
+      ],
+      "Untitled": [
+        "未命名"
       ],
       "Updating drive search...": [
         "正在更新网盘搜索..."
@@ -5610,11 +5652,6 @@
     "info": {
       "Selected color:": [
         "所选颜色"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "请联系 ${ email } 了解如何使用现金支付。"
       ]
     },
     "Info on errors": {
@@ -7937,6 +7974,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don’t show this offer again": [
+        "不再显示此优惠"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "仅需 ${ pricingTitle } 即可获得 Drive Plus"
       ],
@@ -7949,14 +7989,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "首月购买 ${ plan } Plus 八折优惠的最后机会。"
       ],
+      "Last day to save": [
+        "保存的最后日期"
+      ],
       "Limited-time offer": [
         "限时特惠"
+      ],
+      "Mail Plus for 12 months": [
+        "12 个月的 Mail Plus"
       ],
       "Maybe later": [
         "以后再说"
       ],
+      "Save": [
+        "节省"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "节省 ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "第一个月可节省 80% 的费用。"
+      ],
+      "Save big when you pay annually": [
+        "按年付费可节省大量费用"
+      ],
+      "This offer won't be shown again.": [
+        "此优惠不再显示。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "当您从每月订阅切换到年度订阅时。"
+      ],
+      "You currently pay": [
+        "您目前支付"
       ]
     },
     "Offer feature": {
@@ -8583,7 +8647,7 @@
         "用于 Amazon 购物等等"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink }提供。"
+        "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -10454,11 +10518,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "将此共享文件添加到您的 ${ DRIVE_APP_NAME } 中，方便以后访问。"
@@ -10542,6 +10601,11 @@
         "我们已向他们发送了访问该项目的邀请。"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
@@ -10609,7 +10673,7 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } 电子邮箱地址"
+        "${ n } 个 ${ BRAND_NAME } 邮箱地址"
       ],
       "${ n } account per wallet": [
         "每个钱包${ n }个 账户"
@@ -10691,9 +10755,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "只允许使用字母数字小写字符、点、连字符和下划线"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
