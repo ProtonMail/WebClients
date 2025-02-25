@@ -1378,6 +1378,9 @@
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
       ],
+      "Use ${ PASS_APP_NAME }": [
+        "Använd ${ PASS_APP_NAME }"
+      ],
       "Use a different card": [
         "Använd ett annat kort"
       ],
@@ -6327,6 +6330,9 @@
       "Default email application": [
         "Standardapplikation för e-post"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Detektering sker på din enhet, så ingen data från din e-post skickas till våra servrar."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Visste du att du har krypterad molnlagring inkluderat med ditt ${ BRAND_NAME }-konto? Gå till ${ DRIVE_APP_NAME } och få ut det mesta av ditt utrymme. Det är gratis."
       ],
@@ -6800,6 +6806,9 @@
       ],
       "Monthly ${ onDayString }": [
         "En gång i månaden ${ onDayString }"
+      ],
+      "More infos": [
+        "Mer information"
       ],
       "More refine actions": [
         "Fler finjusterande åtgärder"
@@ -7898,8 +7907,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakta oss på ${ email } för instruktioner om hur du betalar oss med kontanter."
+      "How to send a cash payment?": [
+        "Hur skickar man en kontant betalning?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Hitta instruktionen i artikeln: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8361,6 +8373,9 @@
       ],
       "Don't show this again": [
         "Visa inte detta igen"
+      ],
+      "Don't show this suggestion": [
+        "Visa inte detta förslag"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "t.ex. Amazon, eBay, Etsy"
@@ -9218,8 +9233,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dagen ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "på ${ shortenedDay }"
       ],
       "on the first Friday": [
         "den första fredagen"
@@ -10358,6 +10373,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don’t show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaffa Drive Plus för endast ${ pricingTitle }"
       ],
@@ -10370,14 +10388,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Sista dagen att spara"
+      ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus för 12 månader"
       ],
       "Maybe later": [
         "Kanske senare"
       ],
+      "Save": [
+        "Spara"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spara ${ prices.savedPercentage } %"
+      ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
+      ],
+      "Save big when you pay annually": [
+        "Spara stort när du betalar årligen"
+      ],
+      "This offer won't be shown again.": [
+        "Detta erbjudande kommer inte att visas igen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "När du byter från en månads till årlig prenumeration."
+      ],
+      "You currently pay": [
+        "Du betalar för närvarande"
       ]
     },
     "Offer feature": {
@@ -12864,6 +12906,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } tangentbordsgenvägar"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadress",
         "${ emailsCount } e-postadresser"
@@ -13962,9 +14007,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Endast alfanumeriska gemener, punkter, bindestreck och understreck är tillåtna"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observera att genom att välja denna betalningsmetod kan ditt konto inte uppgraderas omedelbart. Vi kommer att uppdatera ditt konto när betalningen har gått igenom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
