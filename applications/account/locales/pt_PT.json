@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "Eliminar permanentemente"
+      ],
+      "Delete policy": [
+        "Eliminar a política"
       ],
       "Delete record": [
         "Eliminar registo"
@@ -1042,14 +1045,20 @@
       "Select calendar view": [
         "Selecionar vista de calendário"
       ],
+      "Select city ${ city }": [
+        "Seleciona a cidade ${ city }"
+      ],
       "Select country": [
         "Selecionar país"
       ],
-      "select file": [
-        "selecionar ficheiro"
+      "Select country ${ country }": [
+        "Selecione o país ${ country }"
       ],
       "Select file": [
         "Selecionar um ficheiro"
+      ],
+      "select file": [
+        "selecionar ficheiro"
       ],
       "Select files": [
         "Selecionar ficheiros"
@@ -3662,8 +3671,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Crie quantas etiquetas ou pastas precisar para manter a sua caixa de entrada organizada."
       ],
-      "Create policies to manage access to shared servers.": [
-        "Crie políticas para gerir o acesso a servidores partilhados."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Crie políticas para decidir quem pode conectar-se a servidores partilhados em cada país."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para aceder a estas funcionalidades"
@@ -3677,8 +3686,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Todos os membros da sua organização podem conectar-se a servidores partilhados."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Todos os membros da sua organização podem conectar-se a servidores partilhados em todos os países."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado se a sua palavra-passe ou outros dados tiverem sido divulgados por um serviço de terceiros."
@@ -4540,8 +4549,17 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao ligar à API do Bitcoin."
       ],
+      "Error creating policy.": [
+        "Erro ao criar a política."
+      ],
+      "Error deleting policy.": [
+        "Erro ao eliminar a política."
+      ],
       "Error in one of the conditions": [
         "Erro numa das condições"
+      ],
+      "Error updating policy.": [
+        "Erro ao atualizar a política"
       ],
       "Expired": [
         "Expirado"
@@ -6976,11 +6994,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ativar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
       ],
-      "Active": [
-        "Ativo"
-      ],
       "active": [
         "ativa"
+      ],
+      "Active": [
+        "Ativo"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -7783,6 +7801,9 @@
       "If it’s not right for you, we’ll refund you.": [
         "Se não for do seu agrado, devolvemos-lhe o seu dinheiro."
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Se os atalhos de teclado estiverem ativados, pode utilizar as seguintes teclas para ações rápidas ou para saltar para diferentes visualizações. O atalho ${ metaKey } + K está sempre ativado."
+      ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Se o fuso horário do sistema não coincidir com a definição atual de fuso horário, ser-lhe-á pedido que o atualize (no máximo uma vez por dia)."
       ],
@@ -8199,9 +8220,6 @@
       "No addresses exist": [
         "Não existem endereços"
       ],
-      "No common passwords": [
-        "Nenhuma palavra-passe comum"
-      ],
       "No credit card required": [
         "Não é necessário um cartão de crédito"
       ],
@@ -8228,9 +8246,6 @@
       ],
       "No payment is required at this time.": [
         "Nenhum pagamento é necessário neste momento."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Nenhuma sequência previsível (1234, aaa)"
       ],
       "No results found": [
         "Nenhum resultado"
@@ -8893,6 +8908,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
+      ],
+      "This cannot be undone.": [
+        "Não é possivel anular esta ação."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Isto pode demorar algum tempo. Não feche esta página nem se desligue da internet."
@@ -9744,8 +9762,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contacte-nos em ${ email } para obter instruções sobre como pagar em dinheiro."
+      "How to send a cash payment?": [
+        "Como enviar um pagamento em dinheiro?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Encontre as instruções no artigo: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -9954,6 +9975,12 @@
       "Close draft": [
         "Fechar rascunho"
       ],
+      "Create new event": [
+        "Criar um evento"
+      ],
+      "Day view": [
+        "Vista do dia"
+      ],
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
@@ -10020,6 +10047,9 @@
       "Minimize / maximize composer": [
         "Minimizar/Maximizar compositor"
       ],
+      "Month view": [
+        "Vista do mês"
+      ],
       "Move down": [
         "Mover abaixo"
       ],
@@ -10050,6 +10080,9 @@
       "New message": [
         "Nova mensagem"
       ],
+      "Next period": [
+        "Próximo período"
+      ],
       "Open command panel": [
         "Abrir o painel de comandos"
       ],
@@ -10059,8 +10092,14 @@
       "Open previous message": [
         "Abrir mensagem anterior"
       ],
+      "Open quick actions menu": [
+        "Abrir o menu de ações rápidas"
+      ],
       "Open this modal": [
         "Abrir esta janela"
+      ],
+      "Previous period": [
+        "Período anterior"
       ],
       "Reply": [
         "Responder"
@@ -10073,6 +10112,9 @@
       ],
       "Search": [
         "Pesquisar"
+      ],
+      "Search events": [
+        "Procurar eventos"
       ],
       "Select / unselect": [
         "Seleccionar/Remover selecção"
@@ -10094,6 +10136,12 @@
       ],
       "Star": [
         "Estrela"
+      ],
+      "Today": [
+        "Hoje"
+      ],
+      "Week view": [
+        "Vista da semana"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10117,6 +10165,9 @@
       ],
       "Message shortcuts": [
         "Atalhos de mensagem"
+      ],
+      "View options": [
+        "Ver as opções"
       ]
     },
     "Keys actions": {
@@ -10331,6 +10382,9 @@
       ],
       "Apply filter to existing emails": [
         "Aplicar filtro a e-mails existentes"
+      ],
+      "Apply policy to": [
+        "Aplica a política a"
       ],
       "Assertion Consumer Service URL": [
         "URL de Assertion Consumer Service (ACS)"
@@ -10893,9 +10947,6 @@
       "New password": [
         "Nova palavra-passe"
       ],
-      "New policy name": [
-        "Novo nome da política"
-      ],
       "New second password": [
         "Nova segunda palavra-passe"
       ],
@@ -10994,6 +11045,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Partilhe qualquer comentário para nos ajudar a melhorar."
+      ],
+      "Policy name": [
+        "Nome da política"
       ],
       "Port": [
         "Porta"
@@ -12001,8 +12055,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "no dia ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "na ${ shortenedDay }"
       ],
       "on the first Friday": [
         "na primeira Sexta-feira"
@@ -13365,9 +13419,6 @@
       "Email notifications have been enabled": [
         "As notificações por e-mail foram ativadas."
       ],
-      "Error creating policy": [
-        "Erro ao criar a política"
-      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -13391,9 +13442,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciais OpenVPN/IKEv2 regeneradas"
-      ],
-      "Policy created successfully": [
-        "A política foi criada."
       ],
       "Reminder has been sent": [
         "O lembrete foi enviado."
@@ -13517,6 +13565,9 @@
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
+      "Don’t show this offer again": [
+        "Não mostrar esta oferta novamente"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtenha o Drive Plus por apenas ${ pricingTitle }"
       ],
@@ -13529,14 +13580,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidade para obter 80% de desconto no seu primeiro mês do ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Último dia para poupar"
+      ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Save": [
+        "Poupe"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Poupe ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Poupe 80% no seu primeiro mês."
+      ],
+      "Save big when you pay annually": [
+        "Poupe em grande ao pagar anualmente!"
+      ],
+      "This offer won't be shown again.": [
+        "Esta oferta não será mostrada novamente."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quando mudar de uma subscrição mensal para uma anual."
+      ],
+      "You currently pay": [
+        "Atualmente paga"
       ]
     },
     "Offer feature": {
@@ -16751,47 +16826,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -17082,6 +17116,47 @@
         "O seu próprio alias de e-mail curto @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Tem a certeza?"
@@ -17270,6 +17345,15 @@
       ],
       "Phone number updated": [
         "Número de telefone atualizado"
+      ],
+      "Policy created successfully!": [
+        "A política foi criada."
+      ],
+      "Policy deleted": [
+        "A política foi eliminada."
+      ],
+      "Policy updated successfully!": [
+        "A política foi atualizada."
       ],
       "Port copied to clipboard": [
         "A porta foi copiada para a área de transferência."
@@ -17577,6 +17661,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ appName } keyboard shortcuts": [
+        "Atalhos de teclado do ${ appName }"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
@@ -17973,6 +18060,9 @@
       "Decrypt key": [
         "Desencriptar chave"
       ],
+      "Delete ${ policyName }?": [
+        "Eliminar ${ policyName }?"
+      ],
       "Delete ${ value }": [
         "Eliminar ${ value }"
       ],
@@ -18070,6 +18160,9 @@
       "Edit billing address": [
         "Editar o endereço da fatura"
       ],
+      "Edit countries": [
+        "Editar os países"
+      ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
       ],
@@ -18090,6 +18183,9 @@
       ],
       "Edit invoice note": [
         "Editar a nota de fatura"
+      ],
+      "Edit name": [
+        "Editar o nome"
       ],
       "Edit profile": [
         "Editar o perfil"
@@ -19147,6 +19243,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Define o seguinte rodapé nas mensagens de e-mail que envia: ${ signature }. A ligação aponta para a sua ligação de referência. O rodapé aparecerá por baixo da sua assinatura. Pode personalizar a sua assinatura a qualquer momento nas definições."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "As políticas de servidor partilhadas podem ser aplicadas a cada utilizador ou a grupos."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Mostrar a imagem de cada remetente na lista de mensagens. As iniciais do remetente serão mostradas se uma fotografia não estiver disponível."
       ],
@@ -19925,9 +20024,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Verifique se a extensão está corretamente instalada e ativada."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Note que ao escolher este método de pagamento, a sua conta não poderá ser atualizada imediatamente. Faremos a atualização assim que o pagamento for aprovado."
       ],
       "Please update the extension to its latest version": [
         "Atualize a extensão para a versão mais recente."

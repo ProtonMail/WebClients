@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "Hapus secara permanen"
+      ],
+      "Delete policy": [
+        "Hapus kebijakan"
       ],
       "Delete record": [
         "Hapus rekaman"
@@ -1042,14 +1045,20 @@
       "Select calendar view": [
         "Pilih tampilan kalender"
       ],
+      "Select city ${ city }": [
+        "Pilih kota ${ city }"
+      ],
       "Select country": [
         "Pilih negara"
       ],
-      "select file": [
-        "pilih berkas"
+      "Select country ${ country }": [
+        "Pilih negara ${ country }"
       ],
       "Select file": [
         "Pilih berkas"
+      ],
+      "select file": [
+        "pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -3647,8 +3656,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Buat label atau folder sebanyak yang Anda butuh demi menjaga kotak masuk Anda tetap rapi."
       ],
-      "Create policies to manage access to shared servers.": [
-        "Buat kebjakan untuk mengelola akses ke server yang terbagi."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Buat kebijakan untuk menentukan siapa yang dapat menghubungkan ke server terbagi dalam setiap negara."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
@@ -3662,8 +3671,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Siapa pun dalam organisasi Anda akan dapat menghubungkan diri mereka ke server yang terbagi."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Semua orang dalam organisasi Anda dapat menghubungkan ke server terbagi dalam semua negara."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dapatkan pemberitahuan apabila kata sandi atau data lain Anda terbocorkan dari layanan pihak ketiga."
@@ -4523,8 +4532,17 @@
       "Error connecting to the Bitcoin API.": [
         "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
       ],
+      "Error creating policy.": [
+        "Terjadi kesalahan membuat kebijakan."
+      ],
+      "Error deleting policy.": [
+        "Terjadi kesalahan menghapus kebijakan."
+      ],
       "Error in one of the conditions": [
         "Kesalahan pada salah satu kondisi"
+      ],
+      "Error updating policy.": [
+        "Terjadi kesalahan memperbarui kebijakan."
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -6173,6 +6191,9 @@
       "Permissions": [
         "Perizinan"
       ],
+      "Policy Name": [
+        "Nama Kebijakan"
+      ],
       "Protection": [
         "Perlindungan"
       ],
@@ -6911,11 +6932,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
       ],
-      "Active": [
-        "Aktif"
-      ],
       "active": [
         "aktif"
+      ],
+      "Active": [
+        "Aktif"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
@@ -7706,6 +7727,9 @@
       "If it’s not right for you, we’ll refund you.": [
         "Apabila paket ini tidak sesuai untuk Anda, kami akan mengembalikan uang Anda."
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Jika pintasan keyboard diaktifkan, Anda dapat menggunakan tombol-tombol berikut untuk tindakan cepat atau menuju tampilan berbeda. ${ metaKey } + K selalu diaktifkan."
+      ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Apabila zona waktu sistem tidak sesuai dengan preferensi zona waktu saat ini, Anda akan diminta untuk memperbaruinya (paling banyak sekali per hari)."
       ],
@@ -8120,9 +8144,6 @@
       "No addresses exist": [
         "Tidak ada alamat"
       ],
-      "No common passwords": [
-        "Tanpa kata sandi yang umum"
-      ],
       "No credit card required": [
         "Tanpa perlu kartu kredit"
       ],
@@ -8149,9 +8170,6 @@
       ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Tanpa urutan angka/huruf yang mudah ditebak (1234, aaa)"
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -8558,6 +8576,9 @@
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Tetapkan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan Anda. Ke depannya, ${ MAIL_APP_NAME } akan terbuka secara otomatis pada saat Anda mengeklik tautan email."
+      ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
@@ -8797,6 +8818,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
+      ],
+      "This cannot be undone.": [
+        "Tindakan ini tidak dapat diurungkan."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Proses ini dapat memakan waktu sejenak. Mohon untuk tidak menutup halaman ini atau memutuskan koneksi internet Anda."
@@ -9637,11 +9661,6 @@
         "Pada saat diaktifkan, warna sub-folder akan mengikuti warna folder induk."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Silakan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Tambahkan alamat baru untuk pengguna yang telah terdaftar pada organisasi Anda."
@@ -9846,6 +9865,12 @@
       "Close draft": [
         "Tutup draf"
       ],
+      "Create new event": [
+        "Buat acara baru"
+      ],
+      "Day view": [
+        "Tampilan hari"
+      ],
       "Delete permanently": [
         "Hapus permanen"
       ],
@@ -9912,6 +9937,9 @@
       "Minimize / maximize composer": [
         "Minimalkan / maksimalkan komposer"
       ],
+      "Month view": [
+        "Tampilan bulan"
+      ],
       "Move down": [
         "Turunkan"
       ],
@@ -9942,6 +9970,9 @@
       "New message": [
         "Pesan baru"
       ],
+      "Next period": [
+        "Periode berikutnya"
+      ],
       "Open command panel": [
         "Buka panel perintah"
       ],
@@ -9951,8 +9982,14 @@
       "Open previous message": [
         "Buka pesan sebelumnya"
       ],
+      "Open quick actions menu": [
+        "Buka menu tindakan cepat"
+      ],
       "Open this modal": [
         "Buka jendela ini"
+      ],
+      "Previous period": [
+        "Periode sebelumnya"
       ],
       "Reply": [
         "Balas"
@@ -9965,6 +10002,9 @@
       ],
       "Search": [
         "Cari"
+      ],
+      "Search events": [
+        "Cari acara"
       ],
       "Select / unselect": [
         "Pilih / batal pilih"
@@ -9986,6 +10026,12 @@
       ],
       "Star": [
         "Bintang"
+      ],
+      "Today": [
+        "Hari ini"
+      ],
+      "Week view": [
+        "Tampilan minggu"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10009,6 +10055,9 @@
       ],
       "Message shortcuts": [
         "Pintasan pesan"
+      ],
+      "View options": [
+        "Lihat opsi"
       ]
     },
     "Keys actions": {
@@ -10151,6 +10200,12 @@
       "Allow": [
         "Alamat yang diizinkan"
       ],
+      "Allow all users to create vaults": [
+        "Izinkan seluruh pengguna untuk membuat brankas"
+      ],
+      "Allow data export for all users": [
+        "Izinkan ekspor data bagi seluruh pengguna"
+      ],
       "Allow individual item sharing": [
         "Izinkan pembagian item secara satu per satu"
       ],
@@ -10213,6 +10268,9 @@
       ],
       "Apply filter to existing emails": [
         "Terapkan filter untuk email yang sudah ada"
+      ],
+      "Apply policy to": [
+        "Terapkan kebijakan ke"
       ],
       "Assertion Consumer Service URL": [
         "URL Assertion Consumer Service"
@@ -10775,9 +10833,6 @@
       "New password": [
         "Kata sandi baru"
       ],
-      "New policy name": [
-        "Nama kebijakan baru"
-      ],
       "New second password": [
         "Kata sandi kedua baru"
       ],
@@ -10876,6 +10931,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Silakan bagikan masukan apa pun untuk membantu kami berkembang."
+      ],
+      "Policy name": [
+        "Nama kebijakan"
       ],
       "Port": [
         "Port"
@@ -11868,9 +11926,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "pada hari ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "pada hari Jumat pertama"
       ],
@@ -13229,9 +13284,6 @@
       "OpenVPN / IKEv2 credentials regenerated": [
         "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
       ],
-      "Policy created successfully": [
-        "Kebijakan berhasil dibuat"
-      ],
       "Reminder has been sent": [
         "Pengingat telah dikirim"
       ],
@@ -13349,6 +13401,9 @@
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
+      "Don’t show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
       ],
@@ -13361,14 +13416,35 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Plus Anda."
       ],
+      "Last day to save": [
+        "Hari terakhir untuk menghemat"
+      ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus selama 12 bulan"
       ],
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Save": [
+        "Simpan"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Hemat ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Hemat 80% pada bulan pertama Anda."
+      ],
+      "Save big when you pay annually": [
+        "Hemat besar-besaran pada saat Anda membayar secara tahunan"
+      ],
+      "This offer won't be shown again.": [
+        "Penawaran ini tidak akan lagi ditampilkan."
+      ],
+      "You currently pay": [
+        "Anda saat ini membayar"
       ]
     },
     "Offer feature": {
@@ -16524,47 +16600,6 @@
         "Untuk ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -16849,6 +16884,47 @@
         "Alias email pendek @pm.me milik Anda"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Apakah Anda yakin?"
@@ -17037,6 +17113,15 @@
       ],
       "Phone number updated": [
         "Nomor telepon telah diperbarui"
+      ],
+      "Policy created successfully!": [
+        "Kebijakan berhasil dibuat!"
+      ],
+      "Policy deleted": [
+        "Kebijakan dihapus"
+      ],
+      "Policy updated successfully!": [
+        "Kebijakan berhasil diperbarui!"
       ],
       "Port copied to clipboard": [
         "Port disalin ke papan klip"
@@ -17338,6 +17423,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ appName } keyboard shortcuts": [
+        "Pintasan keyboard ${ appName }"
       ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
@@ -17735,6 +17823,9 @@
       "Decrypt key": [
         "Dekripsi kunci"
       ],
+      "Delete ${ policyName }?": [
+        "Hapus ${ policyName }?"
+      ],
       "Delete ${ value }": [
         "Hapus ${ value }"
       ],
@@ -17831,6 +17922,9 @@
       "Edit billing address": [
         "Sunting alamat penagihan"
       ],
+      "Edit countries": [
+        "Sunting negara"
+      ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"
       ],
@@ -17851,6 +17945,9 @@
       ],
       "Edit invoice note": [
         "Sunting catatan faktur"
+      ],
+      "Edit name": [
+        "Sunting nama"
       ],
       "Edit profile": [
         "Sunting profil"
@@ -18112,6 +18209,9 @@
       ],
       "Language and time": [
         "Bahasa dan waktu"
+      ],
+      "Last activity": [
+        "Aktivitas terakhir"
       ],
       "Last updated": [
         "Terakhir diperbarui"
@@ -18902,6 +19002,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Mengatur footer berikut dalam email yang Anda kirim: ${ signature } Tautan tersebut mengarah ke tautan rujukan Anda. Footer akan muncul di bawah tanda tangan Anda. Anda dapat mempersonalisasi tanda tangan Anda kapan saja di pengaturan."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Kebijakan server terbagi dapat diterapkan ke pengguna atau grup individu"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Menampilkan gambar tampilan masing-masing pengirim pada daftar pesan. Apabila pengirim tidak memiliki gambar tampilan, inisial mereka akan ditampilkan sebagai gantinya."
       ],
@@ -19227,6 +19330,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tindakan ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Untuk memperoleh hak administrator, mereka akan perlu untuk mengatur ulang kata sandi cadangan pada saat mereka masuk ke ${ BRAND_NAME } ke depannya."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Untuk melanjutkan, Anda harus meminta perizinan pengguna untuk mengakses datanya atau mengatur ulang kata sandinya."
@@ -19660,9 +19766,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah aktif"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Please update the extension to its latest version": [
         "Silakan perbarui ekstensi ke versi terkini"

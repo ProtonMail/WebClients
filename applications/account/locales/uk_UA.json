@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -1003,11 +1003,11 @@
       "Select country": [
         "Виберіть країну"
       ],
-      "select file": [
-        "виберіть файл"
-      ],
       "Select file": [
         "Вибрати файл"
+      ],
+      "select file": [
+        "виберіть файл"
       ],
       "Select files": [
         "Вибрати файли"
@@ -9609,11 +9609,6 @@
         "Якщо увімкнено, підтеки успадковують колір теки вищого рівня."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Будь ласка, зв'яжіться з нами через ${ email } для отримання інструкцій про те, як сплатити готівкою."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Додайте нову адресу для наявних користувачів вашої організації."
@@ -11844,9 +11839,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } дня"
-      ],
       "on the first Friday": [
         "першої п'ятниці"
       ],
@@ -16571,47 +16563,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
@@ -16912,6 +16863,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
@@ -19680,9 +19672,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Перевірте, чи правильно встановлено та увімкнено розширення"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Зверніть увагу, що вибравши цей спосіб оплати, ваш обліковий запис не можна оновити негайно. Ми оновимо ваш обліковий запис одразу після підтвердження платежу."
       ],
       "Please update the extension to its latest version": [
         "Оновіть розширення до останньої версії"
