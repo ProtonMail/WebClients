@@ -110,7 +110,16 @@
 	}
 
 	&-hourLine {
-		block-size: $calendar-hour-height;
+		block-size: $calendar-hour-height-minimum;
+
+		// we need to check support of lvh, added also max support in case
+		@supports (
+			block-size: (
+				max(1rem, 100lvh),
+			)
+		) {
+			block-size: $calendar-hour-height;
+		}
 
 		&::after {
 			inline-size: 100%;
@@ -131,8 +140,7 @@
 
 	&-nowHourLine {
 		z-index: 8; // Need to be higher than .calendar-eventcell.isSelected's z-index
-		inset-inline-start: 0;
-		inset-inline-end: -$calendar-gridcell-margin;
+		inset-inline: 0 -$calendar-gridcell-margin;
 		border-block-end: 2px solid var(--primary);
 		box-shadow: var(--shadow-norm);
 		pointer-events: none;
@@ -150,7 +158,15 @@
 	}
 
 	&-timeBlock {
-		block-size: $calendar-hour-height;
+		block-size: $calendar-hour-height-minimum;
+
+		@supports (
+			block-size: (
+				max(1rem, 100lvh),
+			)
+		) {
+			block-size: $calendar-hour-height;
+		}
 	}
 
 	&-timeText {
