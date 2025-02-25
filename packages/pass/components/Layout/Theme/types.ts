@@ -1,5 +1,4 @@
 import type { DesktopTheme, ItemMap } from '@proton/pass/types';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 export enum SubTheme {
     LIME = 'ui-lime',
@@ -18,9 +17,13 @@ export const itemTypeToSubThemeClassName: ItemMap<SubTheme> = {
     identity: SubTheme.PURPLE,
 };
 
+/** Avoid importing `ThemeTypes` as it is not
+ * side-effect free: it will import all css files */
 export enum PassThemeOption {
-    PassDark = ThemeTypes.PassDark,
-    PassLight = ThemeTypes.PassLight,
+    /** ThemeTypes.PassDark = 8 */
+    PassDark = 8,
+    /** ThemeTypes.PassDark = 12 */
+    PassLight = 12,
     OS = 'OS',
 }
 
