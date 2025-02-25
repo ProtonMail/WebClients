@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import useConfig from '@proton/components/hooks/useConfig';
 import { PLANS, type PlanIDs } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
@@ -52,36 +53,40 @@ const SubscriptionThanks = ({ onClose, planIDs }: Props) => {
 
     return (
         <>
-            <div className="modal-two-illustration-container relative text-center fade-in-up">
-                <img src={isVPNApp ? vpnThanksSvg : mailThanksSvg} alt="" height="128" />
-            </div>
-            <div className="modal-two-content-container fade-in-up">
-                <ModalContent>
-                    <div>
-                        <div className="mt-8 mb-6">
-                            <div
-                                className={clsx('flex min-h-custom', description ? 'items-center' : 'items-start')}
-                                style={{ '--min-h-custom': '13rem' }}
+            <ModalContent unstyled>
+                <div
+                    className="relative flex justify-center items-center fade-in-up h-custom custom-bg"
+                    style={{ '--h-custom': '12rem', '--custom-bg': 'var(--optional-background-lowered)' }}
+                >
+                    <ModalHeaderCloseButton
+                        buttonProps={{
+                            className: 'absolute right-0 top-0 mt-3 mr-3',
+                        }}
+                    />
+                    <img src={isVPNApp ? vpnThanksSvg : mailThanksSvg} alt="" height="128" />
+                </div>
+                <div className="p-8">
+                    <div
+                        className={clsx('flex min-h-custom', description ? 'items-center' : 'items-start')}
+                        style={{ '--min-h-custom': '13rem' }}
+                    >
+                        <div>
+                            <h1
+                                className={clsx('text-bold text-center', description ? 'text-lg' : 'text-2xl')}
+                                data-testid="successfull-update"
                             >
-                                <div>
-                                    <h1
-                                        className={clsx('text-bold text-center', description ? 'text-lg' : 'text-2xl')}
-                                        data-testid="successfull-update"
-                                    >
-                                        {c('Info').t`Account successfully updated`}
-                                    </h1>
-                                    {description}
-                                </div>
-                            </div>
-                            <div className="mt-6">
-                                <Button color="norm" fullWidth onClick={onClose}>
-                                    {c('Button').t`Close`}
-                                </Button>
-                            </div>
+                                {c('Info').t`Account successfully updated`}
+                            </h1>
+                            {description}
                         </div>
                     </div>
-                </ModalContent>
-            </div>
+                    <div className="mt-6">
+                        <Button color="norm" fullWidth onClick={onClose}>
+                            {c('Button').t`Close`}
+                        </Button>
+                    </div>
+                </div>
+            </ModalContent>
         </>
     );
 };
