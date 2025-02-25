@@ -78,11 +78,17 @@
       "Add phone number": [
         "Adicionar número de telefone"
       ],
+      "Add photos": [
+        "Adicionar fotos"
+      ],
       "Add to album": [
         "Adicionar ao álbum"
       ],
       "Add to group": [
         "Adicionar ao grupo"
+      ],
+      "Album name": [
+        "Nome do álbum"
       ],
       "Apply": [
         "Aplicar"
@@ -273,6 +279,9 @@
         "Excluir ${ selectedCount } grupo de contatos",
         "Excluir ${ selectedCount } grupos de contatos"
       ],
+      "Delete album": [
+        "Excluir o álbum"
+      ],
       "Delete contact": [
         "Excluir contato"
       ],
@@ -324,6 +333,9 @@
       "Download logs": [
         "Registros de downloads"
       ],
+      "Download photos": [
+        "Baixar as fotos"
+      ],
       "Download without scanning": [
         "Baixar sem verificar"
       ],
@@ -335,6 +347,9 @@
       ],
       "Edit": [
         "Editar"
+      ],
+      "Edit album": [
+        "Editar o álbum"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -531,6 +546,9 @@
       "Minimize transfers": [
         "Minimizar transferências"
       ],
+      "More": [
+        "Mais"
+      ],
       "More actions": [
         "Mais ações"
       ],
@@ -548,6 +566,9 @@
       ],
       "Move to trash": [
         "Mover para a lixeira"
+      ],
+      "Name your album": [
+        "Dê um nome ao seu álbum"
       ],
       "New": [
         "Novo"
@@ -762,8 +783,14 @@
       "Select country": [
         "Selecionar país"
       ],
+      "Set album cover": [
+        "Definir a capa do álbum"
+      ],
       "Set as album cover": [
         "Definir como capa do álbum"
+      ],
+      "Set as cover": [
+        "Definir como capa"
       ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
@@ -963,9 +990,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Criar álbum"
-      ],
       "Upload": [
         "Enviar"
       ]
@@ -2436,11 +2460,6 @@
         "Fatura vencida"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
@@ -2522,6 +2541,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3124,6 +3148,9 @@
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
       ],
+      "Unable to set photo as cover": [
+        "Não é possível definir a foto como capa."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
       ],
@@ -3665,6 +3692,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Create new album": [
+        "Criar um álbum"
+      ],
       "Security Center": [
         "Central de segurança"
       ]
@@ -4024,6 +4054,10 @@
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } item",
+        "${ album.photoCount } itens"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -4211,6 +4245,9 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
+      ],
+      "Album is empty": [
+        "O álbum está vazio."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
@@ -5138,6 +5175,9 @@
       "Share via link settings": [
         "Compartilhar por meio de configurações de link"
       ],
+      "Shared": [
+        "Compartilhado"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Compartilhado por ${ rootLink.signatureEmail }"
       ],
@@ -5198,7 +5238,7 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A conta pode ter uma chave nova, ou os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
       ],
-      "The albums you create are shown here": [
+      "The albums you create are shown here.": [
         "Os álbuns que você criará serão exibidos aqui."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
@@ -5386,6 +5426,9 @@
       ],
       "Unsupported file": [
         "Arquivo não suportado"
+      ],
+      "Untitled": [
+        "Sem título"
       ],
       "Updating drive search...": [
         "Atualizando pesquisa de drive..."
@@ -5692,11 +5735,6 @@
     "info": {
       "Selected color:": [
         "Cor selecionada:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Entre em contato conosco pelo ${ email } para obter instruções de como efetuar o pagamento em dinheiro."
       ]
     },
     "Info on errors": {
@@ -8136,6 +8174,9 @@
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
+      "Don’t show this offer again": [
+        "Não mostrar mais esta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obtenha o Drive Plus por apenas ${ pricingTitle }"
       ],
@@ -8148,14 +8189,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Último dia para eocnomizar"
+      ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Save": [
+        "Economize"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Economize ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Economize 80% no seu primeiro mês"
+      ],
+      "Save big when you pay annually": [
+        "Aproveite descontos incríveis ao pagar anualmente!"
+      ],
+      "This offer won't be shown again.": [
+        "Esta oferta não será exibida novamente."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quando você muda de uma assinatura mensal para anual."
+      ],
+      "You currently pay": [
+        "Você paga atualmente"
       ]
     },
     "Offer feature": {
@@ -10714,11 +10779,6 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adicione este arquivo compartilhado ao seu ${ DRIVE_APP_NAME } para fácil acesso mais tarde."
@@ -10800,6 +10860,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviamos um convite para acessar o item."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Valentine_2025": {
@@ -11087,9 +11152,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
