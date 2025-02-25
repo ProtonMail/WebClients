@@ -1,5 +1,5 @@
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
 import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
@@ -25,6 +25,7 @@ export default function useShare() {
     const sharesState = useSharesStore((state) => ({
         getShare: state.getShare,
         setShares: state.setShares,
+        getDefaultShareEmail: state.getDefaultShareEmail,
     }));
 
     const fetchShare = async (abortSignal: AbortSignal, shareId: string): Promise<ShareWithKey> => {
@@ -94,10 +95,23 @@ export default function useShare() {
             }).then((messageInfo) => messageInfo.encryptionKeyIDs.length > 1);
             const decryptWithLinkPrivateKey = !!linkPrivateKey && !fallback && haveMultipleEncryptionKey;
             try {
-                return await driveCrypto.decryptSharePassphrase(
+                const email = await sharesState.getDefaultShareEmail();
+                const result = await driveCrypto.decryptSharePassphrase(
                     share,
                     decryptWithLinkPrivateKey ? [linkPrivateKey] : undefined
                 );
+
+                if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    const options = {
+                        plan: userPlan,
+                        createTime: share.createTime,
+                        addressMatchingDefaultShare: share.creator === email,
+                    };
+                    const shareType = getIsPublicContext() ? 'shared_public' : getShareTypeString(share);
+                    integrityMetrics.signatureVerificationError(share.rootLinkId, shareType, 'SignatureEmail', options);
+                }
+
+                return result;
             } catch (e) {
                 if (decryptWithLinkPrivateKey) {
                     sendErrorReport(
@@ -128,6 +142,7 @@ export default function useShare() {
         };
 
         const { decryptedPassphrase, sessionKey } = await decryptSharePassphrase();
+
         const privateKey = await CryptoProxy.importPrivateKey({
             armoredKey: share.key,
             passphrase: decryptedPassphrase,

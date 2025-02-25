@@ -7,13 +7,15 @@ import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useAuthentication, useNotifications } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
+import type { VerificationKeysCallback } from '@proton/shared/lib/keys/drivePassphrase';
+import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
 import type { ShareWithKey } from '../_shares';
 import { useGetPublicKeysForEmail } from '../_user';
 import {
-    decryptSharePassphraseAsync,
     getOwnAddressAndPrimaryKeysAsync,
     getOwnAddressKeysAsync,
     getOwnAddressKeysWithEmailAsync,
@@ -60,8 +62,8 @@ function useDriveCrypto() {
         [getAddresses, getAddressKeys]
     );
 
-    const getVerificationKey = useCallback(
-        async (email?: string) => {
+    const getVerificationKeysCallbackList = useCallback(
+        async (email?: string): Promise<VerificationKeysCallback[]> => {
             // If UID is empty, it means user is not logged in.
             // We don't support checking signatures for public session yet
             // so lets simply return no keys instead of firing exceptions.
@@ -69,22 +71,79 @@ function useDriveCrypto() {
                 return [];
             }
 
-            // We first try to fetch logged-in user keys and fallback to external publicKeys if case we found none
-            // This behavior is intended for sharing as we try to get verification key from other users
-            const result = await getOwnAddressKeysWithEmailAsync(email, getAddresses, getAddressKeys);
-            if (result?.publicKeys) {
-                return result.publicKeys;
-            }
-            return getPublicKeysForEmail(email).then((publicKeys) => {
+            const addresses = await getAddresses();
+            const enabledAddresses = addresses.filter(({ Status }) => Status === ADDRESS_STATUS.STATUS_ENABLED);
+            const otherAddresses = addresses.filter(({ Status }) => Status !== ADDRESS_STATUS.STATUS_ENABLED);
+
+            // This logic is based of /documentation/specifications/crypto/signatures-concepts/
+            // These 3 cases are callbacks in purpose so we don't execute them for no reason and avoid the overhead
+
+            // (1) Most of the cases the current user logged-in address keys would be the correct ones
+            const getOwnEnabledKeys: VerificationKeysCallback = async () => {
+                const result = await getOwnAddressKeysWithEmailAsync(
+                    email,
+                    async () => {
+                        return enabledAddresses;
+                    },
+                    getAddressKeys
+                );
+
+                if (result?.publicKeys) {
+                    return result.publicKeys;
+                }
+                return [];
+            };
+
+            // (2) In the case of sharing, we must fetch the creator address public keys
+            const getPublicKeys: VerificationKeysCallback = async () => {
+                const publicKeys = await getPublicKeysForEmail(email);
                 if (!publicKeys) {
                     return [];
                 }
                 return Promise.all(
                     publicKeys.map((publicKey) => CryptoProxy.importPublicKey({ armoredKey: publicKey }))
                 );
-            });
+            };
+
+            // (3) The last case and the least occuring one is, if none of the validation worked for the 2 previous case
+            // We also attempt using the disabled address keys
+            // This can be in the scenario someone disabled an address, we still want the validation to work
+            const getOwnAllKeys: VerificationKeysCallback = async () => {
+                const result = await getOwnAddressKeysWithEmailAsync(
+                    email,
+                    async () => {
+                        return otherAddresses;
+                    },
+                    getAddressKeys
+                );
+
+                if (result?.publicKeys) {
+                    return result.publicKeys;
+                }
+                return [];
+            };
+
+            const callbacks = [getOwnEnabledKeys, getPublicKeys];
+            if (otherAddresses.length > 0) {
+                callbacks.push(getOwnAllKeys);
+            }
+            return callbacks;
         },
-        [UID, getAddresses, getAddressKeys]
+        [UID, getAddresses, getAddressKeys, getPublicKeysForEmail]
+    );
+
+    const getVerificationKey = useCallback(
+        async (email?: string) => {
+            const publicKeysCallbackList = await getVerificationKeysCallbackList(email);
+            for (const publicKeysCallback of publicKeysCallbackList) {
+                const publicKeys = await publicKeysCallback();
+                if (publicKeys && publicKeys.length) {
+                    return publicKeys;
+                }
+            }
+            return [];
+        },
+        [getVerificationKeysCallbackList]
     );
 
     const sign = useCallback(
@@ -95,6 +154,17 @@ function useDriveCrypto() {
         },
         [getPrimaryAddressKey]
     );
+
+    const decryptSharePassphraseAsync = async (meta: ShareWithKey, privateKeys: PrivateKeyReference[]) => {
+        const publicKeysCallbackList = await getVerificationKeysCallbackList(meta.creator);
+        const passphrase = await decryptPassphrase({
+            armoredPassphrase: meta.passphrase,
+            armoredSignature: meta.passphraseSignature,
+            privateKeys,
+            publicKeysCallbackList,
+        });
+        return passphrase;
+    };
 
     /**
      * Decrypts share passphrase. By default decrypts with the same user's keys who encrypted.
@@ -113,7 +183,7 @@ function useDriveCrypto() {
 
             privateKeys = keys.privateKeys;
         }
-        return decryptSharePassphraseAsync(meta, privateKeys, getVerificationKey);
+        return decryptSharePassphraseAsync(meta, privateKeys);
     };
 
     return {
@@ -121,6 +191,7 @@ function useDriveCrypto() {
         getOwnAddressAndPrimaryKeys,
         getPrivateAddressKeys,
         getVerificationKey,
+        getVerificationKeysCallbackList,
         getPrimaryAddress,
         sign,
         decryptSharePassphrase,
