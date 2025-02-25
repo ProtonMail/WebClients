@@ -87,7 +87,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
 
             <div
                 className="flex-1 min-h-custom overflow-hidden rounded-lg"
-                style={{ '--min-h-custom': `${rowHeight * Math.min(displayedEmails.length, 2)}px` }}
+                style={{ '--min-h-custom': `${rowHeight * 2}px` }}
             >
                 {displayedEmails.length === 0 && !loading ? (
                     <em className="color-weak anime-fade-in"> {c('Warning').t`No results`}</em>
