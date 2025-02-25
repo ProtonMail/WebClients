@@ -33,7 +33,7 @@ import { extraThunkArguments } from './redux-store/thunk';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { logPerformanceMarker } from './utils/performance';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
-import { loadStreamsPolyfill } from './utils/webSteamsPolyfill';
+import { loadStreamsPolyfill } from './utils/webStreamsPolyfill';
 import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 const bootstrapApp = async () => {
