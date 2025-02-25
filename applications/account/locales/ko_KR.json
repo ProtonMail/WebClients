@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -399,6 +399,9 @@
       ],
       "Delete permanently": [
         "영구적으로 삭제"
+      ],
+      "Delete policy": [
+        "정책 삭제"
       ],
       "Delete record": [
         "기록 삭제"
@@ -1042,13 +1045,19 @@
       "Select calendar view": [
         "캘린더 보기 선택"
       ],
+      "Select city ${ city }": [
+        "선택된 도시 ${ city }"
+      ],
       "Select country": [
         "국가 선택"
       ],
-      "select file": [
-        "파일 선택"
+      "Select country ${ country }": [
+        "선택된 국가 ${ country }"
       ],
       "Select file": [
+        "파일 선택"
+      ],
+      "select file": [
         "파일 선택"
       ],
       "Select files": [
@@ -3647,8 +3656,8 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "받은 편지함을 깔끔하게 유지하기 위해 원하는 만큼 라벨이나 폴더를 만드세요."
       ],
-      "Create policies to manage access to shared servers.": [
-        "공유된 서버에 접근을 관리할 수 있도록 정책을 생성하세요."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "각 국가에서 공유된 서버에 연결할 수 있는 구성원을 결정할 수 있도록 정책을 추가하세요."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
@@ -3662,8 +3671,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "조직 내의 모든 구성원이 공유된 서버에 연결할 수 있습니다."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "조직의 모든 구성원이 모든 국가의 공유 서버에 연결할 수 있습니다."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
@@ -4523,8 +4532,17 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
       ],
+      "Error creating policy.": [
+        "정책 생성 중 오류."
+      ],
+      "Error deleting policy.": [
+        "정책 삭제 중 오류."
+      ],
       "Error in one of the conditions": [
         "하나의 조건 오류"
+      ],
+      "Error updating policy.": [
+        "정책 업데이트 중 오류."
       ],
       "Expired": [
         "만료됨"
@@ -6189,7 +6207,7 @@
         "결제 수단을 선택하세요"
       ],
       "Select your pricing plan": [
-        "요금제를 선택하세요"
+        "플랜을 선택하세요"
       ],
       "Server": [
         "서버"
@@ -6914,11 +6932,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "비밀번호를 분실한 경우 ${ BRAND_NAME } 계정의 콘텐츠에 계속 액세스할 수 있도록 적어도 하나의 데이터 복구 방법을 활성화하세요."
       ],
-      "Active": [
-        "활성"
-      ],
       "active": [
         "활성화"
+      ],
+      "Active": [
+        "활성"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "계정에 @pm.me 이메일 주소를 추가해 보세요. 더 간단하고 짧은 이 도메인은 \"${ MAIL_APP_NAME } me\" 또는 \"Private Message me\"를 의미합니다."
@@ -7709,6 +7727,9 @@
       "If it’s not right for you, we’ll refund you.": [
         "만약 회원님과 맞지 않는다면, 언제든지 환불하실 수 있어요."
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "키보드 단축키가 활성화되면, , 다음 키를 사용하여 빠른 작업을 수행하거나 다른 보기로 이동할 수 있습니다. ${ metaKey } + K는 항상 활성화되어 있습니다."
+      ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "시스템 표준 시간대가 현재 표준 시간대 기본 설정과 일치하지 않는 경우 업데이트가 필요하다는 내용의 메시지가 표시됩니다 (최대 하루에 한 번 표시됩니다.)."
       ],
@@ -8123,9 +8144,6 @@
       "No addresses exist": [
         "주소 없음"
       ],
-      "No common passwords": [
-        "보편적인 비밀번호 없음"
-      ],
       "No credit card required": [
         "신용 카드 필요 없음"
       ],
@@ -8152,9 +8170,6 @@
       ],
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "추측 가능한 구성 없음 (1234, aaa)"
       ],
       "No results found": [
         "결과를 찾을 수 없음"
@@ -8286,7 +8301,7 @@
         "매월"
       ],
       "per month, billed at ${ price }": [
-        "월간, ${ price }으로 청구됨"
+        "월간, ${ price }(으)로 청구됨"
       ],
       "per month, billed every 12 months": [
         "월 기준, 12개월마다 납부됨"
@@ -8806,6 +8821,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "기기에 따라 몇 초 또는 몇 분이 걸릴 수 있습니다"
+      ],
+      "This cannot be undone.": [
+        "이 작업은 취소할 수 없습니다."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "이 작업은 몇 분이 소요될 수 있습니다. 이 페이지를 닫거나 인터넷 연결을 끊지 마세요."
@@ -9646,11 +9664,6 @@
         "활성화되면, 하위 폴더는 상위 폴더의 색상과 일치됩니다."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "현금으로 결제하는 방법을 알고 싶으시면 ${ email }으로 연락해 주세요."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "조직의 존재하는 모든 사용자를 위해 새 주소를 추가하세요."
@@ -9855,6 +9868,12 @@
       "Close draft": [
         "임시 보관함 닫기"
       ],
+      "Create new event": [
+        "새 이벤트 만들기"
+      ],
+      "Day view": [
+        "일간 보기"
+      ],
       "Delete permanently": [
         "영구적으로 삭제"
       ],
@@ -9921,6 +9940,9 @@
       "Minimize / maximize composer": [
         "작성기 최소화 / 최대화"
       ],
+      "Month view": [
+        "월간 보기"
+      ],
       "Move down": [
         "아래로 이동"
       ],
@@ -9951,6 +9973,9 @@
       "New message": [
         "새 메시지"
       ],
+      "Next period": [
+        "다음 생리"
+      ],
       "Open command panel": [
         "제어판 열기"
       ],
@@ -9960,8 +9985,14 @@
       "Open previous message": [
         "이전 메시지 열기"
       ],
+      "Open quick actions menu": [
+        "빠른 동작 매뉴 열기"
+      ],
       "Open this modal": [
         "이 모달 열기"
+      ],
+      "Previous period": [
+        "이전 기간"
       ],
       "Reply": [
         "답장"
@@ -9974,6 +10005,9 @@
       ],
       "Search": [
         "검색"
+      ],
+      "Search events": [
+        "이벤트 검색"
       ],
       "Select / unselect": [
         "선택 / 해제"
@@ -9995,6 +10029,12 @@
       ],
       "Star": [
         "별표"
+      ],
+      "Today": [
+        "오늘"
+      ],
+      "Week view": [
+        "주간 보기"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10018,6 +10058,9 @@
       ],
       "Message shortcuts": [
         "단축키 메시지"
+      ],
+      "View options": [
+        "옵션 보기"
       ]
     },
     "Keys actions": {
@@ -10228,6 +10271,9 @@
       ],
       "Apply filter to existing emails": [
         "병합할 이메일 필터 적용"
+      ],
+      "Apply policy to": [
+        "다음 항목에 정책 적용:"
       ],
       "Assertion Consumer Service URL": [
         "문제 알림 소비자 서비스 (ACS, 약칭;Assertion Consumer Service) URL"
@@ -10790,9 +10836,6 @@
       "New password": [
         "새 비밀번호"
       ],
-      "New policy name": [
-        "새로운 정책 이름"
-      ],
       "New second password": [
         "새로운 2차 비밀번호"
       ],
@@ -10891,6 +10934,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "기능을 향상시키기 위해 피드백을 공유해 주세요."
+      ],
+      "Policy name": [
+        "정책 이름"
       ],
       "Port": [
         "포트"
@@ -11889,8 +11935,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } 일마다"
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }에"
       ],
       "on the first Friday": [
         "첫 번째 금요일에"
@@ -13223,9 +13269,6 @@
       "Email notifications have been enabled": [
         "이메일 알림이 활성화되었습니다."
       ],
-      "Error creating policy": [
-        "정책 생성 중 오류"
-      ],
       "Invalid code": [
         "잘못된 코드입니다."
       ],
@@ -13249,9 +13292,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 자격 증명 재생성됨"
-      ],
-      "Policy created successfully": [
-        "정책이 성공적으로 생성되었습니다."
       ],
       "Reminder has been sent": [
         "알리미가 전송되었습니다."
@@ -13370,6 +13410,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
+      "Don’t show this offer again": [
+        "이 제안을 다시 보지 않기"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "단 ${ pricingTitle }(으)로 Drive Plus 구매"
       ],
@@ -13382,14 +13425,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "${ plan } Plus의 첫 달 80% 할인 받을 마지막 기회입니다."
       ],
+      "Last day to save": [
+        "매월에서 매년 구독으로 변경하여"
+      ],
       "Limited-time offer": [
         "기간 한정 할인"
+      ],
+      "Mail Plus for 12 months": [
+        "12개월 Mail Plus"
       ],
       "Maybe later": [
         "나중에"
       ],
+      "Save": [
+        "절약되는 가격:"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "${ prices.savedPercentage }% 절약"
+      ],
       "Save 80% on your first month.": [
         "첫 달에 80% 할인 받기"
+      ],
+      "Save big when you pay annually": [
+        "매년 결제로 더 크게 절약하세요"
+      ],
+      "This offer won't be shown again.": [
+        "이 제안은 다시 표시되지 않습니다."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "절약할 수 있는 마지막 날."
+      ],
+      "You currently pay": [
+        "현재 결제:"
       ]
     },
     "Offer feature": {
@@ -16563,47 +16630,6 @@
         "${ totalPrice }용"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -16888,6 +16914,47 @@
         "사용자의 @pm.me 이메일 별칭"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "확실한가요?"
@@ -16911,7 +16978,7 @@
         "시스템이 더 이상 이 결제 수단으로 자동 결제할 수 없습니다, 다만 고객님의 구독이 청구 주기가 끝날 때까지 갱신될 것입니다. 구독을 다운그레이드하거나 변경하려면, 청구 기간이 끝나기 전에 수동으로 해야합니다. 또한, 수동 결제를 하는 것을 잊어버리고 모든 결제 수단에 자동 결제가 비활성화된 경우, 고객님의 계정이 자동 다운그레이드되어 많은 기능이 손실될 수 있습니다."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독이 여전히 마지막 결제일에 갱신됩니다. 만일 플랜을 다운그레이드 또는 변경하시려면, 결제일이 끝나기 직전 수행해야 합니다. 만약 무료 플랜 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
+        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독은 여전히 마지막 결제일에 갱신됩니다. 만약 플랜을 다운그레이드 또는 변경하시려면, 결제일이 다가오기 직전에 수행해야 합니다. 만약 무료 플랜의 제공 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 시스템이 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기 때문에 플랜이 자동으로 다운그레이드되지 않습니다. 자동 결제를 비활성화 하실 때, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
       ]
     },
     "Subscription saving": {
@@ -17076,6 +17143,15 @@
       ],
       "Phone number updated": [
         "전화번호가 업데이트됨"
+      ],
+      "Policy created successfully!": [
+        "정책이 성공적으로 생성되었습니다!"
+      ],
+      "Policy deleted": [
+        "정책 삭제됨"
+      ],
+      "Policy updated successfully!": [
+        "정책이 성공적으로 업데이트되었습니다!"
       ],
       "Port copied to clipboard": [
         "포트가 클립보드에 복사되었습니다"
@@ -17375,6 +17451,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } 키보드 단축키"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -17771,6 +17850,9 @@
       "Decrypt key": [
         "키 해독"
       ],
+      "Delete ${ policyName }?": [
+        "${ policyName }을(를) 삭제할까요?"
+      ],
       "Delete ${ value }": [
         "${ value }을(를) 삭제"
       ],
@@ -17867,6 +17949,9 @@
       "Edit billing address": [
         "청구 주소 수정"
       ],
+      "Edit countries": [
+        "국가 편집"
+      ],
       "Edit credit/debit card": [
         "신용/체크카드 편집"
       ],
@@ -17887,6 +17972,9 @@
       ],
       "Edit invoice note": [
         "청구서 메모 수정"
+      ],
+      "Edit name": [
+        "이름 편집"
       ],
       "Edit profile": [
         "프로필 편집"
@@ -18941,6 +19029,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "보내는 이메일에 다음 바닥 글을 설정합니다: ${ signature } 해당 링크는 회원님의 추천 링크로 연결됩니다. 바닥 글은 서명 아래에 표시됩니다. 언제든지 설정에서 서명을 개인화할 수 있습니다."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "공유 서버 정책은 개별 사용자 또는 그룹에 적용될 수 있습니다."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "메시지 목록에서 각 보낸 이의 프로필 사진를 확인하십시오. 사진을 사용할 수 없는 경우 보낸 이의 이니셜이 표시됩니다."
       ],
@@ -19725,9 +19816,6 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "확장 프로그램이 제대로 설치되었고 활성화 되었는지 확인해주세요."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."
       ],
       "Please update the extension to its latest version": [
         "확장 프로그램을 최신 버전으로 업데이트해 주세요."
