@@ -66,9 +66,20 @@ export const useSharesStore = create<SharesState>()(
             );
         },
 
+        getDefaultShareEmail: () => {
+            const { shares } = get();
+            const share = findDefaultShare(Object.values(shares));
+            return share ? share.creator : undefined;
+        },
+
         setLockedVolumesForRestore: (volumes) => set({ lockedVolumesForRestore: volumes }),
     }))
 );
+
+function findDefaultShare(shares: (Share | ShareWithKey)[]) {
+    const share = shares.find((share) => share.isDefault && !share.isLocked && !share.isVolumeSoftDeleted);
+    return share;
+}
 
 export function findDefaultShareId(shares: (Share | ShareWithKey)[]) {
     const share = shares.find((share) => share.isDefault && !share.isLocked && !share.isVolumeSoftDeleted);
