@@ -7,6 +7,8 @@ import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { getOfflineComponents, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
+import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
+import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -18,13 +20,17 @@ import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
-import { getApiError, getApiErrorMessage, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import {
+    getApiError,
+    getApiErrorMessage,
+    getIsConnectionIssue,
+    getIsOfflineError,
+} from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { generateClientKey } from '@proton/shared/lib/authentication/clientKey';
 import type { ForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import noop from '@proton/utils/noop';
 
 import type { PullForkCall, RequestForkData } from './fork';
@@ -559,7 +565,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
          * config, we compare the `offlineKD` with the derived argon2 hash */
         confirmPassword: async (password: string, mode?: PasswordVerification): Promise<boolean> => {
             try {
-                await loadCryptoWorker();
+                await loadCoreCryptoWorker();
 
                 switch (mode ?? getPasswordVerification(authStore)) {
                     case PasswordVerification.LOCAL: {
@@ -599,6 +605,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 }
             } catch (error) {
                 logger.warn(`[AuthService] failed password confirmation (${getErrorMessage(error)})`);
+
+                /** Throw the underlying error in case of connectivity
+                 * issues to avoid showing the wrong error message */
+                if (error instanceof PassCryptoError) throw error;
+                if (getIsConnectionIssue(error)) throw error;
+
                 return false;
             }
         },
