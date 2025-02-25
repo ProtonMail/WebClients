@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -815,11 +815,11 @@
       "Select country": [
         "Fren tamurt"
       ],
-      "select file": [
-        "fren afaylu"
-      ],
       "Select file": [
         "Fren afaylu"
+      ],
+      "select file": [
+        "fren afaylu"
       ],
       "Select files": [
         "Fren ifuyla"
@@ -6073,11 +6073,6 @@
         "Mi yermed, ikaramen isnawanen ttawin ini n ukaram agejdan."
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Ttxil-k·m nermes-aɣ-d ɣer ${ email } i yiwellihen ɣef wamek ara txellseḍ ɣef tkkelt."
-      ]
-    },
     "Info for domain modal": {
       "Add a new user to your organization and create an address for it.": [
         "Rnu aseqdac amaynut ɣer tuddsa-inek m yerna snulfu-yas-d tansa."
@@ -7704,9 +7699,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "deg wass ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "deg sem amezwaru"
       ],
@@ -9561,14 +9553,6 @@
         "Imultaɣen"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -9600,6 +9584,14 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -11363,9 +11355,6 @@
       ],
       "Please add at least one recipient.": [
         "Ma ulac aɣilif, rnu xarsum yiwen n unermis."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Ttxil-k·m ẓer belli s ufran n tarrayt-a n uxelleṣ, amiḍan-ik·im ur nezmir ara ad t-nleqqem din din. Ad nleqqem amiḍan-ik·im akken ara yettwag uxelleṣ."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."

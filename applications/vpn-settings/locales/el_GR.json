@@ -211,6 +211,9 @@
       "Delete member": [
         "Διαγραφή μέλους"
       ],
+      "Delete policy": [
+        "Διαγραφή πολιτικής"
+      ],
       "Delete user": [
         "Διαγραφή χρήστη"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Επιλέξτε κύκλο χρέωσης ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Επιλογή πόλης ${ city }"
+      ],
       "Select country": [
         "Επιλογή χώρας"
+      ],
+      "Select country ${ country }": [
+        "Επιλογή χώρας ${ country }"
       ],
       "select file": [
         "επιλέξτε αρχείο"
@@ -2318,11 +2327,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Δημιουργήστε πολιτικές για τη διαχείριση της πρόσβασης σε κοινόχρηστους διακομιστές."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Όλοι στον οργανισμό σας μπορούν να συνδεθούν σε κοινόχρηστους διακομιστές."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Οποιοσδήποτε στον οργανισμό σας μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές σε οποιαδήποτε χώρα."
       ],
       "If disabled, only admins will have access.": [
         "Εάν είναι απενεργοποιημένο, μόνο οι διαχειριστές θα έχουν πρόσβαση."
@@ -2553,6 +2562,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
+      ],
+      "Error creating policy.": [
+        "Σφάλμα κατά τη δημιουργία πολιτικής."
+      ],
+      "Error deleting policy.": [
+        "Σφάλμα κατά τη διαγραφή πολιτικής."
+      ],
+      "Error updating policy.": [
+        "Σφάλμα κατά την ενημέρωση πολιτικής."
       ],
       "Failed to process the logo": [
         "Αποτυχία επεξεργασίας του λογότυπου"
@@ -3529,8 +3547,8 @@
         "Προσθέστε αυτήν την εγγραφή στον τομέα σας στον πίνακα ελέγχου του μητρώου καταχώρησης ονομάτων τομέα"
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Βρέθηκε ${ itemsCount } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
-        "Βρέθηκαν ${ itemsCount } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+        "Βρέθηκε ${ itemsCount } υπόδειξη, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ itemsCount } υποδείξεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
@@ -4451,9 +4469,6 @@
       "No addresses exist": [
         "Δεν υπάρχουν διευθύνσεις"
       ],
-      "No common passwords": [
-        "Όχι κοινούς κωδικούς πρόσβασης"
-      ],
       "No gateways": [
         "Δεν υπάρχουν πύλες"
       ],
@@ -4462,9 +4477,6 @@
       ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Μη προβλέψιμες ακολουθίες (1234, aaa)"
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
@@ -4874,6 +4886,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Αυτό μπορεί να πάρει μερικά δευτερόλεπτα ή μερικά λεπτά, αναλόγως της συσκευής σας"
+      ],
+      "This cannot be undone.": [
+        "Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Αυτό μπορεί να διαρκέσει αρκετό χρόνο. Μην κλείνετε αυτή τη σελίδα και μην αποσυνδέεστε από το διαδίκτυο."
@@ -5403,8 +5418,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Παρακαλώ επικοινωνήστε μαζί μας στο ${ email } για οδηγίες πληρωμής με μετρητά."
+      "How to send a cash payment?": [
+        "Πώς να στείλετε μια πληρωμή σε μετρητά;"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Παρακαλούμε βρείτε τις οδηγίες στο άρθρο: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5589,6 +5607,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Apply policy to": [
+        "Εφαρμογή πολιτικής σε"
       ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
@@ -5863,9 +5884,6 @@
       "New password": [
         "Νέος κωδικός"
       ],
-      "New policy name": [
-        "Νέο όνομα πολιτικής"
-      ],
       "New second password": [
         "Νέος δεύτερος κωδικός πρόσβασης"
       ],
@@ -5937,6 +5955,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Μοιραστείτε τυχόν σχόλια για να μας βοηθήσετε να βελτιωθούμε."
+      ],
+      "Policy name": [
+        "Oνομασία πολιτικής"
       ],
       "Postal code": [
         "Ταχυδρομικός κώδικας"
@@ -7625,9 +7646,6 @@
       "Downloaded 2FA recovery codes": [
         "Λήψη κωδικών ανάκτησης 2FA"
       ],
-      "Error creating policy": [
-        "Σφάλμα κατά τη δημιουργία πολιτικής"
-      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -7645,9 +7663,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
-      ],
-      "Policy created successfully": [
-        "Η πολιτική δημιουργήθηκε επιτυχώς"
       ],
       "Reminder has been sent": [
         "Η υπενθύμιση έχει σταλεί"
@@ -7677,6 +7692,9 @@
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
+      "Don’t show this offer again": [
+        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Αποκτήστε το Drive Plus για μόνο ${ pricingTitle }"
       ],
@@ -7689,14 +7707,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Τελευταία ημέρα αποθήκευσης"
+      ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus για 12 μήνες"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
+      "Save": [
+        "Εξοικονομήστε"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Εξοικονομίστε ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Εξοικονομήστε 80% τον πρώτο μήνα σας."
+      ],
+      "Save big when you pay annually": [
+        "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
+      ],
+      "This offer won't be shown again.": [
+        "Αυτή η προσφορά δε θα εμφανιστεί ξανά."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Όταν αλλάζετε από μηνιαία σε ετήσια συνδρομή."
+      ],
+      "You currently pay": [
+        "Αυτή τη στιγμή πληρώνετε"
       ]
     },
     "Offer feature": {
@@ -10074,6 +10116,15 @@
       "Phone number updated": [
         "Ο αριθμός τηλεφώνου ενημερώθηκε"
       ],
+      "Policy created successfully!": [
+        "Η πολιτική δημιουργήθηκε επιτυχώς!"
+      ],
+      "Policy deleted": [
+        "Η πολιτική διαγράφηκε"
+      ],
+      "Policy updated successfully!": [
+        "Η πολιτική ενημερώθηκε επιτυχώς!"
+      ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
       ],
@@ -10528,6 +10579,9 @@
       "Delete": [
         "Διαγραφή"
       ],
+      "Delete ${ policyName }?": [
+        "Διαγραφή ${ policyName };"
+      ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
@@ -10583,6 +10637,9 @@
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
       ],
+      "Edit countries": [
+        "Επεξεργασία χωρών"
+      ],
       "Edit credit/debit card": [
         "Επεξεργασία πιστωτικής/χρεωστικής κάρτας"
       ],
@@ -10600,6 +10657,9 @@
       ],
       "Edit invoice note": [
         "Επεξεργασία στοιχείων τιμολογίου"
+      ],
+      "Edit name": [
+        "Επεξεργασία ονόματος"
       ],
       "Edit servers": [
         "Επεξεργασία διακομιστών"
@@ -11099,6 +11159,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα email που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Οι κοινόχρηστες πολιτικές διακομιστή μπορούν να εφαρμοστούν σε μεμονωμένους χρήστες ή ομάδες"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Καθορίστε τον τομέα στον οποίο επιτρέπεται ο έλεγχος ταυτότητας με SAML SSO"
@@ -11621,9 +11684,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Διαγράφοντας αυτό το νούμερο τηλεφώνου, δεν θα είστε πλέον σε θέση να ανακτήσετε το λογαριασμό σας."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."

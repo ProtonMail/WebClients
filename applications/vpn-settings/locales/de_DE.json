@@ -211,6 +211,9 @@
       "Delete member": [
         "Mitglied entfernen"
       ],
+      "Delete policy": [
+        "Richtlinie löschen"
+      ],
       "Delete user": [
         "Benutzer löschen"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Abrechnungszyklus auswählen: ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Ort ${ city } auswählen"
+      ],
       "Select country": [
         "Land wählen"
+      ],
+      "Select country ${ country }": [
+        "Land ${ country } auswählen"
       ],
       "select file": [
         "Datei auswählen"
@@ -2318,11 +2327,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Erstelle Richtlinien zur Verwaltung des Zugriffs auf gemeinsam genutzte Server."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Erstelle Richtlinien, um zu entscheiden, wer sich mit gemeinsamen Servern in jedem Land verbinden darf."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Jeder in deiner Organisation kann sich mit gemeinsamen Servern verbinden."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Jeder in Ihrem Unternehmen kann sich mit gemeinsamen Servern in allen Ländern verbinden."
       ],
       "If disabled, only admins will have access.": [
         "Wenn diese Funktion deaktiviert ist, haben nur Administratoren Zugriff."
@@ -2553,6 +2562,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
+      ],
+      "Error creating policy.": [
+        "Fehler beim Erstellen einer Richtlinie."
+      ],
+      "Error deleting policy.": [
+        "Fehler beim Löschen der Richtlinie."
+      ],
+      "Error updating policy.": [
+        "Fehler beim Aktualisieren der Richtlinie."
       ],
       "Failed to process the logo": [
         "Fehler beim Verarbeiten des Logos"
@@ -3958,7 +3976,7 @@
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
       "default email address": [
-        "standard E-Mail-Adresse"
+        "Standard-E-Mail-Adresse"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
@@ -4451,9 +4469,6 @@
       "No addresses exist": [
         "Keine Adressen vorhanden"
       ],
-      "No common passwords": [
-        "Keine gängigen Passwörter"
-      ],
       "No gateways": [
         "Keine Gateways"
       ],
@@ -4462,9 +4477,6 @@
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Keine vorhersehbaren Sequenzen (1234, aaa)"
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -4874,6 +4886,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Dies kann je nach Gerät ein paar Sekunden oder einige Minuten dauern."
+      ],
+      "This cannot be undone.": [
+        "Diese Aktion kann nicht rückgängig gemacht werden."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne die Verbindung zum Internet nicht."
@@ -5403,8 +5418,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Bitte kontaktiere uns unter ${ email } für Anweisungen, wie du unsere Rechnung mit Bargeld begleichen kannst."
+      "How to send a cash payment?": [
+        "Wie sendet man eine Bargeldzahlung?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Die Anleitung dazu findest du im Artikel: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5589,6 +5607,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Apply policy to": [
+        "Richtlinie anwenden auf"
       ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
@@ -5863,9 +5884,6 @@
       "New password": [
         "Neues Passwort"
       ],
-      "New policy name": [
-        "Neuer Name der Richtlinie"
-      ],
       "New second password": [
         "Neues zusätzliches Passwort"
       ],
@@ -5937,6 +5955,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Bitte teile uns dein Feedback mit, damit wir uns verbessern können."
+      ],
+      "Policy name": [
+        "Name der Richtlinien"
       ],
       "Postal code": [
         "Postleitzahl"
@@ -7625,9 +7646,6 @@
       "Downloaded 2FA recovery codes": [
         "2FA-Wiederherstellungscodes heruntergeladen."
       ],
-      "Error creating policy": [
-        "Fehler beim Erstellen einer Richtlinie"
-      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
@@ -7645,9 +7663,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
-      ],
-      "Policy created successfully": [
-        "Richtlinie erfolgreich erstellt"
       ],
       "Reminder has been sent": [
         "Eine Erinnerung wurde versandt"
@@ -7677,6 +7692,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } Angebot läuft heute ab!"
       ],
+      "Don’t show this offer again": [
+        "Dieses Angebot nicht mehr zeigen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hol dir Drive Plus für nur ${ pricingTitle }"
       ],
@@ -7689,14 +7707,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Letzte Chance auf 80% Rabatt auf den ersten Monat von ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Letzter Tag zum Sparen"
+      ],
       "Limited-time offer": [
         "Zeitlich begrenztes Angebot"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus für 12 Monate"
       ],
       "Maybe later": [
         "Vielleicht später"
       ],
+      "Save": [
+        "Sparen"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spare ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Spare 80% im ersten Monat."
+      ],
+      "Save big when you pay annually": [
+        "Spare kräftig, wenn du jährlich bezahlst"
+      ],
+      "This offer won't be shown again.": [
+        "Dieses Angebot wird nicht wieder angezeigt."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Beim Wechsel von einem Monats- zu einem Jahresabonnement."
+      ],
+      "You currently pay": [
+        "Du bezahlst derzeit"
       ]
     },
     "Offer feature": {
@@ -10074,6 +10116,15 @@
       "Phone number updated": [
         "Telefonnummer aktualisiert"
       ],
+      "Policy created successfully!": [
+        "Richtlinie erfolgreich erstellt."
+      ],
+      "Policy deleted": [
+        "Richtlinie gelöscht"
+      ],
+      "Policy updated successfully!": [
+        "Richtlinie erfolgreich aktualisiert."
+      ],
       "Preference saved": [
         "Einstellung gespeichert"
       ],
@@ -10531,6 +10582,9 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete ${ policyName }?": [
+        "${ policyName } löschen?"
+      ],
       "Delete account": [
         "Konto löschen"
       ],
@@ -10586,6 +10640,9 @@
       "Edit billing address": [
         "Rechnungsadresse bearbeiten"
       ],
+      "Edit countries": [
+        "Länder bearbeiten"
+      ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
       ],
@@ -10603,6 +10660,9 @@
       ],
       "Edit invoice note": [
         "Rechnungsnotiz bearbeiten"
+      ],
+      "Edit name": [
+        "Name bearbeiten"
       ],
       "Edit servers": [
         "Server bearbeiten"
@@ -11102,6 +11162,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail mit der Aufforderung, sie so bald wie möglich zu aktivieren."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Gemeinsame Serverrichtlinien können auf einzelne Benutzer oder Gruppen angewendet werden"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
@@ -11747,9 +11810,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Wenn du diese Telefonnummer löschst, kannst du dein Konto nicht mehr wiederherstellen."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bitte beachte, dass ein Upgrade deines Kontos durch die Wahl dieser Zahlungsmethode nicht sofort durchgeführt werden kann. Wir werden dein Konto umstellen, sobald die Zahlung bei uns eingegangen ist."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."

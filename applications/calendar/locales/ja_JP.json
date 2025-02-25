@@ -1571,6 +1571,32 @@
         "ストロベリー"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "日表示"
+      ],
+      "Month view": [
+        "月表示"
+      ],
+      "New event": [
+        "新しい予定"
+      ],
+      "Next period": [
+        "次の期間"
+      ],
+      "Previous period": [
+        "前の期間"
+      ],
+      "Search events": [
+        "予定を検索"
+      ],
+      "Today": [
+        "今日"
+      ],
+      "Week view": [
+        "週表示"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "インポートのカスタマイズを終了しますか?"
@@ -2487,17 +2513,17 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "後"
+      "Don't end": [
+        "終了しない"
       ],
-      "Never": [
-        "今後しない"
+      "End after": [
+        "終了までの回数:"
       ],
-      "On date…": [
-        "指定の日付まで"
+      "End on": [
+        "終了"
       ],
-      "time": [
-        "回"
+      "event": [
+        "予定"
       ]
     },
     "Cycle": {
@@ -3931,11 +3957,11 @@
       "Contacts": [
         "連絡先"
       ],
-      "Custom recurrence": [
-        "繰り返しのカスタム"
-      ],
       "Name": [
         "名前"
+      ],
+      "Repeat event": [
+        "繰り返し予定"
       ],
       "Search": [
         "検索"
@@ -4674,6 +4700,9 @@
       "High Priority": [
         "優先度：高"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "キーボードショートカットが有効になっている場合は、次のキーを使用してクイックアクションを実行したり、別のビューにジャンプすることができます。 ${ metaKey } + K は常に有効です。"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
       ],
@@ -5393,11 +5422,6 @@
         "検索クエリを更新するか、検索を閉じてカレンダービューに戻ることができます。"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "現金での支払い方法については、${ email } 宛までお問い合わせください。"
-      ]
-    },
     "Info message": {
       "No results found": [
         "該当する項目がありません"
@@ -5491,13 +5515,43 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "新しい予定の作成"
+      ],
+      "Day view": [
+        "日表示"
+      ],
+      "Month view": [
+        "月表示"
+      ],
+      "Next period": [
+        "次の期間"
+      ],
+      "Open quick actions menu": [
+        "クイックアクションメニューを開く"
+      ],
       "Open this modal": [
         "モーダルを開く"
+      ],
+      "Previous period": [
+        "前の期間"
+      ],
+      "Search events": [
+        "予定を検索"
+      ],
+      "Today": [
+        "今日"
+      ],
+      "Week view": [
+        "週表示"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "基本操作"
+      ],
+      "View options": [
+        "表示オプション"
       ]
     },
     "Knowledge base link label": {
@@ -5677,9 +5731,6 @@
       "Encrypt emails": [
         "メールを暗号化"
       ],
-      "Ends": [
-        "終了日"
-      ],
       "Event duration": [
         "予定の期間"
       ],
@@ -5688,6 +5739,9 @@
       ],
       "Event title": [
         "予定のタイトル"
+      ],
+      "Every": [
+        "毎"
       ],
       "Expiration (${ patternExpiration })": [
         "有効期限 (${ patternExpiration })"
@@ -5706,9 +5760,6 @@
       ],
       "Forwards to": [
         "転送先"
-      ],
-      "Frequency": [
-        "頻度"
       ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
@@ -5794,6 +5845,9 @@
       "Notifications": [
         "通知"
       ],
+      "On": [
+        "に"
+      ],
       "Operating system": [
         "OS"
       ],
@@ -5850,12 +5904,6 @@
       ],
       "Region": [
         "都道府県"
-      ],
-      "Repeat every": [
-        "繰り返し間隔"
-      ],
-      "Repeat on": [
-        "繰り返し"
       ],
       "Reveal password": [
         "パスワードを表示する"
@@ -6316,8 +6364,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } 日に"
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay } に"
       ],
       "on the first Friday": [
         "第1金曜日"
@@ -7522,6 +7570,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
+      "Don’t show this offer again": [
+        "今後このオファーを表示しない"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "たった${ pricingTitle }でDrive Plusを入手"
       ],
@@ -7534,14 +7585,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "最初の月の${ plan } Plusが 80 %割引になる最後のチャンス。"
       ],
+      "Last day to save": [
+        "節約できる最後の日"
+      ],
       "Limited-time offer": [
         "期間限定オファー"
+      ],
+      "Mail Plus for 12 months": [
+        "12 か月分のMail Plus"
       ],
       "Maybe later": [
         "またあとで"
       ],
+      "Save": [
+        "節約"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "${ prices.savedPercentage }%を節約"
+      ],
       "Save 80% on your first month.": [
         "最初の月は 80 %割引。"
+      ],
+      "Save big when you pay annually": [
+        "年払いで大幅に節約"
+      ],
+      "This offer won't be shown again.": [
+        "このオファーは二度と表示されません。"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "月額プランから年間プランに切り替える場合。"
+      ],
+      "You currently pay": [
+        "現在の支払い方法"
       ]
     },
     "Offer feature": {
@@ -7625,6 +7700,9 @@
       "Custom": [
         "カスタム"
       ],
+      "Custom...": [
+        "カスタム..."
+      ],
       "Day": [
         "日"
       ],
@@ -7634,11 +7712,14 @@
       "Every day": [
         "毎日"
       ],
-      "Every month": [
-        "毎月"
+      "Every month ${ description }": [
+        "毎月 ${ description }"
       ],
-      "Every week": [
-        "毎週"
+      "Every week ${ everyWeekDescription }": [
+        "毎週 ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "毎週平日 ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "毎年"
@@ -7924,6 +8005,9 @@
       ],
       "Filter groups": [
         "グループをフィルター"
+      ],
+      "Filter quick actions": [
+        "クイックアクションのフィルター"
       ],
       "First name": [
         "名"
@@ -9440,6 +9524,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } キーボードショートカット"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } 件のメールアドレス"
       ],
@@ -9614,6 +9701,9 @@
       "Details": [
         "詳細"
       ],
+      "Does not repeat": [
+        "繰り返さない"
+      ],
       "Downgrade account": [
         "アカウントのダウングレード"
       ],
@@ -9664,6 +9754,21 @@
       ],
       "Event is happening on defined time slot": [
         "予定は指定された時間から開始します"
+      ],
+      "Every day": [
+        "毎日"
+      ],
+      "Every month ${ option.text }": [
+        "毎月 ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "毎週 ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "毎週平日 ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "毎年"
       ],
       "Exporting contacts": [
         "連絡先のエクスポート中"
@@ -9815,9 +9920,6 @@
       "Security center": [
         "セキュリティセンター"
       ],
-      "Select a day in the month": [
-        "日付を選択"
-      ],
       "Select a plan": [
         "プランを選択"
       ],
@@ -9832,9 +9934,6 @@
       ],
       "Select event end time": [
         "予定の終了時間を選択"
-      ],
-      "Select event frequency": [
-        "この予定の繰り返し条件を選択してください"
       ],
       "Select event frequency interval": [
         "予定の繰り返し間隔を選択"
@@ -9859,9 +9958,6 @@
       ],
       "Select the way to send this notification": [
         "通知を送信する方法を選択"
-      ],
-      "Select when this event will stop happening": [
-        "このイベントが停止するタイミングを選択してください"
       ],
       "Select when you want this notification to be sent": [
         "通知を送信する時間を選択"
@@ -10213,9 +10309,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "英数字の小文字、ドット、ハイフン、アンダースコアのみが使用できます"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"

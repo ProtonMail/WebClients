@@ -609,7 +609,7 @@
         "Katso miten"
       ],
       "See plan features": [
-        "Katso tilauksen ominaisuudet"
+        "Näytä tilauksen ominaisuudet"
       ],
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
@@ -949,7 +949,7 @@
         "Virheellinen ICS-tiedosto"
       ],
       "Invalid method": [
-        "Virheellinen tapa"
+        "Virheellinen menetelmä"
       ],
       "Unsupported calendar component": [
         "Kalenterikomponenttia ei tueta"
@@ -2495,21 +2495,6 @@
         "Aikavyöhykkeesi perusteella"
       ]
     },
-    "Custom frequency option": {
-      "After…": [
-        "Kun on kulunut…"
-      ],
-      "Never": [
-        "Ei koskaan"
-      ],
-      "On date…": [
-        "Päivänä…"
-      ],
-      "time": [
-        "kerran",
-        "kertaa"
-      ]
-    },
     "Cycle": {
       "/month": [
         "/kuukausi"
@@ -2835,25 +2820,25 @@
         "${ eventTitle } peruttiin."
       ],
       "All events in this series were updated.": [
-        "Kaikki tämän sarjan tapahtumat päivitettiin."
+        "Ketjun kaikki tapahtumakerrat päivitettiin."
       ],
       "All events in this series were updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Kaikki sarjan tapahtumat päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+        "Ketjun kaikkia tapahtumakertoja muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
       ],
       "This event occurrence was canceled.": [
-        "Tämä tapahtuma peruttiin."
+        "Tämä tapahtumakerta peruttiin."
       ],
       "This event occurrence was updated.": [
-        "Tämä tapahtuma päivitettiin."
+        "Tämä tapahtumakerta päivitettiin."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+        "Tätä tapahtumakertaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
-        "Tapahtumaa muokattiin."
+        "Tapahtuma päivitettiin."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
+        "Tapahtumaa muokattiin. Muutokset:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Sinut on kutsuttu tapahtumaan ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -2867,7 +2852,7 @@
         "AIKA:\n${ formattedStart } (koko päivä)"
       ],
       "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "AIKA:\n${ formattedStart } - ${ formattedEnd }"
+        "AIKA:\n${ formattedStart } – ${ formattedEnd }"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -2893,7 +2878,7 @@
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Perutaan ${ formattedStart } ajoitettu tapahtuma"
+        "${ formattedStart } ajoitetun tapahtuman peruutus"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
         "${ formattedStart } alkavan tapahtuman peruutus"
@@ -3019,7 +3004,7 @@
         "Muuttunutta holvia ei voitu avata"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Salauksen purkuvirhe: Tapahtuman salatun sisällön purku epäonnistui."
+        "Salauksen purun virhe: tapahtuman salatun sisällön purku epäonnistui."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Poista ainakin ${ calendarsToFixCount } kalenterivalinta",
@@ -3362,7 +3347,7 @@
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Odottamaton virhe, emme voi tuoda yhteystietoja"
+        "Odottamaton virhe, yhteystietojen tuonti ei onnistu"
       ],
       "Unknown error": [
         "Tuntematon virhe"
@@ -3635,13 +3620,13 @@
         "Tapahtumaa ei voitu lisätä kalenteriisi. Vastausta ei lähetetty"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Tapahtumaa ei voitu päivittää kalenteriisi. Vastausta ei lähetetty"
+        "Tapahtumaa ei voitu päivittää kalenteriisi. Vastausta ei lähetetty."
       ],
       "Unsupported invitation": [
         "Kutsua ei tueta"
       ],
       "Unsupported response": [
-        "Ei tuettu vastaustyyppi"
+        "Vastausta ei tueta"
       ],
       "We could not cancel the event in your calendar": [
         "Tapahtumaa ei voitu perua kalenteristasi"
@@ -3963,9 +3948,6 @@
       "Contacts": [
         "Yhteystiedot"
       ],
-      "Custom recurrence": [
-        "Mukautettu toistuvuus"
-      ],
       "Name": [
         "Nimi"
       ],
@@ -4037,7 +4019,7 @@
         "Toistuva tapahtuma ei sisällä tapahtumakertoja"
       ],
       "Recurring rule not supported": [
-        "Toistuvaa sääntöä ei tueta"
+        "Toistuvuussääntöä ei tueta"
       ],
       "Start time out of bounds": [
         "Aloitusaika on alueen ulkopuolella"
@@ -4363,10 +4345,10 @@
         "${ groupCounts } ryhmää löytyi"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uusimishinta ja -päivä pysyvät ennallaan."
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uudistushinta ja -päivä pysyvät ennallaan."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -4453,7 +4435,7 @@
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Kaikki (${ totalFoldersCount } kansio)",
@@ -4675,7 +4657,7 @@
         "Viestit allekirjoitetaan automaattisesti"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt sähköpostit poistetaan automaattisesti."
+        "Roskakoriin ja roskapostiin yli 30 päivää sitten siirretyt viestit poistetaan automaattisesti."
       ],
       "Enabling auto-deletion…": [
         "Otetaan automaattista poistoa käyttöön…"
@@ -4782,7 +4764,7 @@
         "Peritty yläkansiosta"
       ],
       "Internet connection lost": [
-        "Internet-yhteys katkesi"
+        "Internet-yhteyttä ei ole"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ei yhteyttä. Tarkista laitteesi yhteydet."
@@ -5022,7 +5004,7 @@
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "SEPA-maksut eivät ole käytettävissä tällä hetkellä. Yritä myöhemmin uudelleen."
+        "SEPA-maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
@@ -5052,7 +5034,7 @@
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
+        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -5121,7 +5103,7 @@
         "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojen ja maksukorttien tietojen kaltaisia tietoja. Älä jatka oman turvallisuutesi vuoksi."
+        "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojesi ja maksukorttiesi tietojen kaltaisia tietoja."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
@@ -5205,7 +5187,7 @@
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
       ],
       "We'll email you once import is complete.": [
-        "Lähetämme sinulle sähköpostia, kun tuonti on valmis."
+        "Ilmoitamme tuonnin valmistumisesta sähköpostitse."
       ],
       "We'll notify you when the import is done.": [
         "Ilmoitamme sinulle kun tuonti on valmis."
@@ -5289,7 +5271,7 @@
         "Voit tarkastaa tilan ${ importProgressLink }."
       ],
       "You can close the tab or browser in the meantime.": [
-        "Voit sulkea välilehden tai selaimen sillä välin."
+        "Voit sillä välin sulkea välilehden tai selaimen."
       ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
@@ -5372,7 +5354,7 @@
         "${ BRAND_NAME }-tilisi on jäädytetty, eikä postilaatikkosi enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa. Tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
+        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa, ja tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
@@ -5417,7 +5399,7 @@
         "Seuraava laskutuspäivä on ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Seuraava laskutuspäiväsi on ${ renewalTime }. Ota yhteyttä asiakastukeen, jos tarvitset välitöntä muutosta tilaukseen."
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Jos haluat muuttaa tilausta heti, ota yhteyttä asiakaspalveluun."
       ],
       "Your password was leaked:": [
         "Salasanasi paljastui:"
@@ -5426,10 +5408,10 @@
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti ${ cycle } kuukauden välein."
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Järjestelmäsi aikavyöhykkeeksi näyttää vaihtuneen ${ timezone }. Haluatko päivittää aikavyöhykeasetuksesi?"
@@ -5447,11 +5429,6 @@
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "Voit joko muokata hakuasi tai palata kalenterinäkymiin sulkemalla sen"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Pyydä ohjeet käteismaksua varten sähköpostitse osoitteesta ${ email }."
       ]
     },
     "Info message": {
@@ -5737,9 +5714,6 @@
       "Encrypt emails": [
         "Salaa viestit"
       ],
-      "Ends": [
-        "Päättyy"
-      ],
       "Event duration": [
         "Tapahtuman kesto"
       ],
@@ -5766,9 +5740,6 @@
       ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
-      ],
-      "Frequency": [
-        "Tiheys"
       ],
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
@@ -5911,12 +5882,6 @@
       ],
       "Region": [
         "Alue"
-      ],
-      "Repeat every": [
-        "Toista joka"
-      ],
-      "Repeat on": [
-        "Toista päivinä"
       ],
       "Reveal password": [
         "Näytä salasana"
@@ -6385,9 +6350,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. päivä"
-      ],
       "on the first Friday": [
         "ensimmäinen perjantai"
       ],
@@ -7729,12 +7691,6 @@
       ],
       "Every day": [
         "Joka päivä"
-      ],
-      "Every month": [
-        "Joka kuukausi"
-      ],
-      "Every week": [
-        "Joka viikko"
       ],
       "Every year": [
         "Joka vuosi"
@@ -9955,9 +9911,6 @@
       "Security center": [
         "Suojauskeskus"
       ],
-      "Select a day in the month": [
-        "Valitse kuukauden päivä"
-      ],
       "Select a plan": [
         "Valitse tilaus"
       ],
@@ -9972,9 +9925,6 @@
       ],
       "Select event end time": [
         "Valitse tapahtuman päätösaika"
-      ],
-      "Select event frequency": [
-        "Valitse tapahtuman toistuvuus"
       ],
       "Select event frequency interval": [
         "Valitse tapahtuman toistuvuus"
@@ -9999,9 +9949,6 @@
       ],
       "Select the way to send this notification": [
         "Valitse ilmoituksen lähetystapa"
-      ],
-      "Select when this event will stop happening": [
-        "Valitse milloin tapahtuman järjestäminen päättyy"
       ],
       "Select when you want this notification to be sent": [
         "Valitse ilmoituksen lähetyspäivä"
@@ -10350,9 +10297,6 @@
       ],
       "Name is required": [
         "Nimi vaaditaan"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Huomioithan, että valitsemalla tämän maksutavan tiliäsi ei voida päivittää välittömästi. Päivitämme tilisi, kun maksu on käsitelty."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."

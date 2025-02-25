@@ -1579,6 +1579,32 @@
         "მარწყვისფერი"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "დღის ხედი"
+      ],
+      "Month view": [
+        "თვის ხედი"
+      ],
+      "New event": [
+        "ახალი მოვლენა"
+      ],
+      "Next period": [
+        "შემდეგი პერიოდი"
+      ],
+      "Previous period": [
+        "წინა პერიოდი"
+      ],
+      "Search events": [
+        "მოვლენების ძებნა"
+      ],
+      "Today": [
+        "დღეს"
+      ],
+      "Week view": [
+        "კვირის ხედი"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "დავამთავროთ შემოტანის მორგება?"
@@ -2492,21 +2518,6 @@
     "Country select label": {
       "Based on your time zone": [
         "თქვენი დროის სარტყელზე დაყრდნობით"
-      ]
-    },
-    "Custom frequency option": {
-      "After…": [
-        "შემდეგ…"
-      ],
-      "Never": [
-        "არასოდეს"
-      ],
-      "On date…": [
-        "თარიღის მიხედვით…"
-      ],
-      "time": [
-        "დრო",
-        "დრო"
       ]
     },
     "Cycle": {
@@ -3961,9 +3972,6 @@
     "Header": {
       "Contacts": [
         "კონტაქტები"
-      ],
-      "Custom recurrence": [
-        "სიხშირის მითითება"
       ],
       "Name": [
         "სახელი"
@@ -5457,11 +5465,6 @@
         "შეგიძლიათ, განაახლოთ ძებნის პირობა ან დახუროთ ძებნა და უკან, კალენდრის ხედზე დაბრუნდეთ"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "ნაღდი ფულით გადახდის შემთხვევაში მეტი დეტალების მისაღებად დაგვიკავშირდით ${ email }."
-      ]
-    },
     "Info message": {
       "No results found": [
         "შედეგების გარეშე"
@@ -5558,13 +5561,43 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "ახალი მოვლენის შექმნა"
+      ],
+      "Day view": [
+        "დღის ხედი"
+      ],
+      "Month view": [
+        "თვის ხედი"
+      ],
+      "Next period": [
+        "შემდეგი პერიოდი"
+      ],
+      "Open quick actions menu": [
+        "სწრაფი ქმედებების მენიუს გახსნა"
+      ],
       "Open this modal": [
         "ფანჯრის გახსნა"
+      ],
+      "Previous period": [
+        "წინა პერიოდი"
+      ],
+      "Search events": [
+        "მოვლენების ძებნა"
+      ],
+      "Today": [
+        "დღეს"
+      ],
+      "Week view": [
+        "კვირის ხედი"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "ძირითადი მოქმედებები"
+      ],
+      "View options": [
+        "პარამეტრების ნახვა"
       ]
     },
     "Knowledge base link label": {
@@ -5745,9 +5778,6 @@
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
-      "Ends": [
-        "მთავრდება"
-      ],
       "Event duration": [
         "მოვლენის ხანგრძლივობა"
       ],
@@ -5774,9 +5804,6 @@
       ],
       "Forwards to": [
         "გადაგზავნა"
-      ],
-      "Frequency": [
-        "სიხშირე"
       ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
@@ -5919,12 +5946,6 @@
       ],
       "Region": [
         "რაიონი"
-      ],
-      "Repeat every": [
-        "გამეორება ყოველ"
-      ],
-      "Repeat on": [
-        "გამეორება"
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
@@ -6393,9 +6414,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }-ე დღე"
-      ],
       "on the first Friday": [
         "პირველ პარასკევს"
       ],
@@ -7646,6 +7664,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-ის შემოთავაზების ვადა დღეს იწურება!"
       ],
+      "Don’t show this offer again": [
+        "აღარ მაჩვენო ეს შემოთავაზება"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "მიიღეთ Drive Plus ფასით ${ pricingTitle }"
       ],
@@ -7658,14 +7679,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan } Plus-დან."
       ],
+      "Last day to save": [
+        "ბოლო დღე შესანახად"
+      ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus 12 თვით"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "დაზოგეთ ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "დაზოეთ 80% პირველ თვეს."
+      ],
+      "Save big when you pay annually": [
+        "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
+      ],
+      "This offer won't be shown again.": [
+        "ამ შემოთავაზებას აღარ გაჩვენებთ."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "როცა თვიურიდან წლიურ გამოწერაზე გადახვალთ."
+      ],
+      "You currently pay": [
+        "ამჟამად იხდით"
       ]
     },
     "Offer feature": {
@@ -7758,12 +7803,6 @@
       ],
       "Every day": [
         "ყოველდღე"
-      ],
-      "Every month": [
-        "ყოველ თვე"
-      ],
-      "Every week": [
-        "ყოველკვირა"
       ],
       "Every year": [
         "ყოველ წელს"
@@ -8049,6 +8088,9 @@
       ],
       "Filter groups": [
         "ჯგუფების გაფილტრვა"
+      ],
+      "Filter quick actions": [
+        "სწრაფი ქმედებების გაფილტვრა"
       ],
       "First name": [
         "სახელი"
@@ -9604,6 +9646,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName }-ის კლავიატურის მალსახმობები"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } ელფოსტის მისამართი",
         "${ emailsCount } ელფოსტის მისამართი"
@@ -9984,9 +10029,6 @@
       "Security center": [
         "უსაფრთხოების ცენტრი"
       ],
-      "Select a day in the month": [
-        "აირჩიეთ თვის დღე"
-      ],
       "Select a plan": [
         "აირჩეთ გეგმა"
       ],
@@ -10001,9 +10043,6 @@
       ],
       "Select event end time": [
         "აირჩიეთ მოვლენის დასრულების დრო"
-      ],
-      "Select event frequency": [
-        "აირჩიეთ მოვლენის სიხშირე"
       ],
       "Select event frequency interval": [
         "აირჩიეთ მოვლენის სიხშირის ინტერვალი"
@@ -10028,9 +10067,6 @@
       ],
       "Select the way to send this notification": [
         "არჩიეთ გაფრთხილების დაგზავნის გზა"
-      ],
-      "Select when this event will stop happening": [
-        "აირჩიეთ, ეს მოვლენა როდის აღარ მოხდება"
       ],
       "Select when you want this notification to be sent": [
         "აირჩიეთ, როცა გნებავთ ამ გაფრთხილების გაგზავნა"
@@ -10394,9 +10430,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "დაშვებულია, მხოლოდ, დაბალი რეგისტრის მქონე ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "გაითვალისწინეთ, რომ გადახდის ამ მეთოდის არჩევით თქვენი ანგარიშის სატარიფო გეგმის მომენტალური შეცვლა შეუძლებელია. ტარიფი, მხოლოდ, გადახდის დასრულების შემდეგ შეიცვლება."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."

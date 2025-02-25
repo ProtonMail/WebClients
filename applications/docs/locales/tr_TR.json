@@ -2181,6 +2181,11 @@
         "Süresi geçmiş fatura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2259,11 +2264,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5007,8 +5007,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı ile ilgili bilgi almak için bizimle ${ email } adresinden görüşün."
+      "How to send a cash payment?": [
+        "Nakit ödeme nasıl gönderilir?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -7144,6 +7147,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don’t show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
       ],
@@ -7156,14 +7162,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "${ plan } Plus aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
       ],
+      "Last day to save": [
+        "İndirim kazanmak için son gün"
+      ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Mail Plus for 12 months": [
+        "12 aylık Mail Plus"
       ],
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Save": [
+        "İndirim"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "%${ prices.savedPercentage } indirim"
+      ],
       "Save 80% on your first month.": [
         "İlk ayınızda % 80 indirim kazanın."
+      ],
+      "Save big when you pay annually": [
+        "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "This offer won't be shown again.": [
+        "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
+      ],
+      "You currently pay": [
+        "Şu anda ödediğiniz"
       ]
     },
     "Offer feature": {
@@ -8281,6 +8311,25 @@
         "${ totalPrice } için"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -8320,25 +8369,6 @@
       ],
       "Your privacy is our mission": [
         "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "Folders, labels, and custom filters": [
-        "Klasörler, etiketler ve özel süzgeçler"
       ]
     },
     "Subscription renewal state": {
@@ -9127,7 +9157,7 @@
         "Görsel yükle"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
-        "E-postaya eklendiğinde, ileti ve dosya adı sıfır erişimli şifreleme ile kaydedilir"
+        "E-postaya eklendiğinde, ileti ve dosya adı sıfır erişim şifrelemesi ile kaydedilir"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
@@ -9447,9 +9477,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Yalnızca küçük harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

@@ -1594,13 +1594,13 @@
         "Vista mensual"
       ],
       "New event": [
-        "Nou esdeveniment"
+        "Esdeveniment nou"
       ],
       "Next period": [
-        "Següent periode"
+        "Període següent"
       ],
       "Previous period": [
-        "Periode anterior"
+        "Període anterior"
       ],
       "Search events": [
         "Cerca esdeveniments"
@@ -2528,18 +2528,18 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Després…"
+      "Don't end": [
+        "No s'acaba"
       ],
-      "Never": [
-        "Mai"
+      "End after": [
+        "Acaba després de"
       ],
-      "On date…": [
-        "En data…"
+      "End on": [
+        "Acaba el"
       ],
-      "time": [
-        "vegada",
-        "vegades"
+      "event": [
+        "esdeveniment",
+        "esdeveniments"
       ]
     },
     "Cycle": {
@@ -3998,11 +3998,11 @@
       "Contacts": [
         "Contactes"
       ],
-      "Custom recurrence": [
-        "Recurrència personalitzada"
-      ],
       "Name": [
         "Nom"
+      ],
+      "Repeat event": [
+        "Repeteix l'esdeveniment"
       ],
       "Search": [
         "Cerca"
@@ -4773,6 +4773,9 @@
       "High Priority": [
         "Alta prioritat"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Si les tecles de drecera estan activades, podeu utilitzar les tecles següents per a accions ràpides o per anar a diferents vistes. La tecla de drecera ${ metaKey } + K sempre està activada."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
@@ -5500,8 +5503,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contacteu amb nosaltres en ${ email } per a rebre instruccions de com fer un pagament en efectiu."
+      "How to send a cash payment?": [
+        "Com enviar un pagament en efectiu?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Trobeu les instruccions a l'article: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5604,7 +5610,7 @@
     },
     "Keyboard shortcut name": {
       "Create new event": [
-        "Crea un nou esdeveniment"
+        "Crea un esdeveniment"
       ],
       "Day view": [
         "Vista diària"
@@ -5613,13 +5619,16 @@
         "Vista mensual"
       ],
       "Next period": [
-        "Següent periode"
+        "Període següent"
+      ],
+      "Open quick actions menu": [
+        "Obre el menú d'accions ràpides"
       ],
       "Open this modal": [
         "Obre aquesta finestra"
       ],
       "Previous period": [
-        "Periode anterior"
+        "Període anterior"
       ],
       "Search events": [
         "Cerca esdeveniments"
@@ -5634,6 +5643,9 @@
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Accions bàsiques"
+      ],
+      "View options": [
+        "Mostra les opcions"
       ]
     },
     "Knowledge base link label": {
@@ -5814,9 +5826,6 @@
       "Encrypt emails": [
         "Xifrar correus electrònics"
       ],
-      "Ends": [
-        "Finalitza"
-      ],
       "Event duration": [
         "Duració de l'esdeveniment"
       ],
@@ -5825,6 +5834,9 @@
       ],
       "Event title": [
         "Títol de l'esdeveniment"
+      ],
+      "Every": [
+        "Cada"
       ],
       "Expiration (${ patternExpiration })": [
         "Caducitat (${ patternExpiration })"
@@ -5843,9 +5855,6 @@
       ],
       "Forwards to": [
         "Reenvia a"
-      ],
-      "Frequency": [
-        "Freqüència"
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
@@ -5931,6 +5940,9 @@
       "Notifications": [
         "Notificacions"
       ],
+      "On": [
+        "Activat"
+      ],
       "Operating system": [
         "Sistema operatiu"
       ],
@@ -5988,12 +6000,6 @@
       ],
       "Region": [
         "Regió"
-      ],
-      "Repeat every": [
-        "Repeteix cada"
-      ],
-      "Repeat on": [
-        "Repeteix en"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -6462,8 +6468,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "el dia ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "el ${ shortenedDay }"
       ],
       "on the first Friday": [
         "en el primer Divendres"
@@ -7715,6 +7721,9 @@
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
+      "Don’t show this offer again": [
+        "No tornis a mostrar aquesta oferta"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Obteniu Drive Plus per només ${ pricingTitle }"
       ],
@@ -7727,14 +7736,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Últim dia per estalviar"
+      ],
       "Limited-time offer": [
         "Oferta per temps limitat"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus durant 12 mesos"
       ],
       "Maybe later": [
         "Potser després"
       ],
+      "Save": [
+        "Estalvieu"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Estalvieu el ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Estalvieu un 80% en el vostre primer mes."
+      ],
+      "Save big when you pay annually": [
+        "Estalvieu de debò pagant anualment!"
+      ],
+      "This offer won't be shown again.": [
+        "Aquesta oferta no es tornarà a mostrar."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Quan canvieu d'una subscripció mensual a una anual."
+      ],
+      "You currently pay": [
+        "Actualment pagueu"
       ]
     },
     "Offer feature": {
@@ -7818,6 +7851,9 @@
       "Custom": [
         "Personalitzat"
       ],
+      "Custom...": [
+        "Personalitza..."
+      ],
       "Day": [
         "Dia",
         "Dies"
@@ -7828,11 +7864,14 @@
       "Every day": [
         "Cada dia"
       ],
-      "Every month": [
-        "Cada mes"
+      "Every month ${ description }": [
+        "Cada mes ${ description }"
       ],
-      "Every week": [
-        "Cada setmana"
+      "Every week ${ everyWeekDescription }": [
+        "Cada setmana ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Cada dia de la setmana ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Cada any"
@@ -8124,6 +8163,9 @@
       ],
       "Filter groups": [
         "Filtra grups"
+      ],
+      "Filter quick actions": [
+        "Filtra les accions ràpides"
       ],
       "First name": [
         "Nom"
@@ -9682,6 +9724,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Dreceres de teclat de ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adreça de correu electrònic",
         "${ emailsCount } adreces de correu electrònic"
@@ -9860,6 +9905,9 @@
       "Details": [
         "Detalls"
       ],
+      "Does not repeat": [
+        "No es repeteix"
+      ],
       "Downgrade account": [
         "Passa a un pla inferior"
       ],
@@ -9910,6 +9958,21 @@
       ],
       "Event is happening on defined time slot": [
         "L'esdeveniment té lloc en un interval de temps definit"
+      ],
+      "Every day": [
+        "Cada dia"
+      ],
+      "Every month ${ option.text }": [
+        "Cada mes ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Cada setmana el ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Cada dia de la setmana ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Cada any"
       ],
       "Exporting contacts": [
         "Exportant contactes"
@@ -10062,9 +10125,6 @@
       "Security center": [
         "Centre de seguretat"
       ],
-      "Select a day in the month": [
-        "Seleccioneu un dia del mes."
-      ],
       "Select a plan": [
         "Seleccioneu un pla"
       ],
@@ -10079,9 +10139,6 @@
       ],
       "Select event end time": [
         "Seleccioneu l'hora de finalització de l'esdeveniment."
-      ],
-      "Select event frequency": [
-        "Seleccioneu la freqüència de l'esdeveniment."
       ],
       "Select event frequency interval": [
         "Seleccioneu l'interval de freqüència de l'esdeveniment"
@@ -10106,9 +10163,6 @@
       ],
       "Select the way to send this notification": [
         "Seleccioneu la manera d’enviar aquesta notificació"
-      ],
-      "Select when this event will stop happening": [
-        "Seleccioneu quan deixarà de succeir aquest esdeveniment."
       ],
       "Select when you want this notification to be sent": [
         "Selecciona quan vols que s'enviï aquesta notificació"
@@ -10472,9 +10526,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Només es permeten caràcters alfanumèrics en minúscula, punts, guions i guions baixos"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."

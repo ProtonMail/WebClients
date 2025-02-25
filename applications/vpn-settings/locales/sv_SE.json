@@ -211,6 +211,9 @@
       "Delete member": [
         "Ta bort medlem"
       ],
+      "Delete policy": [
+        "Ta bort policy"
+      ],
       "Delete user": [
         "Ta bort användare"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "Välj faktureringsperiod ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Välj stad ${ city }"
+      ],
       "Select country": [
         "Välj land"
+      ],
+      "Select country ${ country }": [
+        "Välj land ${ country }"
       ],
       "select file": [
         "välj fil"
@@ -656,7 +665,7 @@
         "Logga ut från alla konton"
       ],
       "sign up for free": [
-        "registrera dig gratis"
+        "Registrera dig gratis"
       ],
       "Signing in": [
         "Loggar in"
@@ -2318,11 +2327,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "Skapa policyer för att hantera åtkomst till delade servrar."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "Alla i din organisation kan ansluta till delade servrar."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Alla i din organisation kan ansluta till delade servrar i alla länder."
       ],
       "If disabled, only admins will have access.": [
         "Om det är inaktiverat har endast administratörer åtkomst."
@@ -2553,6 +2562,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
+      ],
+      "Error creating policy.": [
+        "Fel vid skapande av policy."
+      ],
+      "Error deleting policy.": [
+        "Fel vid borttagning av policy."
+      ],
+      "Error updating policy.": [
+        "Fel vid uppdatering av policy."
       ],
       "Failed to process the logo": [
         "Misslyckades att bearbeta loggan"
@@ -4445,9 +4463,6 @@
       "No addresses exist": [
         "Inga adresser finns"
       ],
-      "No common passwords": [
-        "Inga vanliga lösenord"
-      ],
       "No gateways": [
         "Inga gateways"
       ],
@@ -4456,9 +4471,6 @@
       ],
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "Inga förutsägbara sekvenser (1234, aaa)"
       ],
       "No results found": [
         "Inga resultat hittades"
@@ -4864,6 +4876,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Detta kan ta några sekunder eller minuter beroende på din enhet"
+      ],
+      "This cannot be undone.": [
+        "Detta kan inte ångras."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Detta kan ta lite tid. Stäng inte denna sida eller koppla från Internet."
@@ -5393,8 +5408,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Kontakta oss på ${ email } för instruktioner om hur du betalar oss med kontanter."
+      "How to send a cash payment?": [
+        "Hur skickar man en kontant betalning?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Hitta instruktionen i artikeln: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5579,6 +5597,9 @@
       ],
       "Anderson": [
         "Anderson"
+      ],
+      "Apply policy to": [
+        "Tillämpa policy till"
       ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service-URL"
@@ -5853,9 +5874,6 @@
       "New password": [
         "Nytt lösenord"
       ],
-      "New policy name": [
-        "Nytt policynamn"
-      ],
       "New second password": [
         "Nytt andra lösenord"
       ],
@@ -5927,6 +5945,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "Dela gärna feedback för att hjälpa oss att förbättra."
+      ],
+      "Policy name": [
+        "Policynamn"
       ],
       "Postal code": [
         "Postnummer"
@@ -7586,6 +7607,9 @@
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
         "Inaktivering av detta kommer att ta bort möjligheten att ta emot aviseringar i ${ BRAND_NAME }-applikationer"
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "Under din första månad med användning av en ${ BRAND_NAME }-produkt"
+      ],
       "Email subscriptions": [
         "E-postprenumerationer"
       ],
@@ -7615,9 +7639,6 @@
       "Downloaded 2FA recovery codes": [
         "Laddade ner 2FA-återställningskoder"
       ],
-      "Error creating policy": [
-        "Fel vid skapande av policy"
-      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -7635,9 +7656,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN-/IKEv2-inloggningsuppgifter återskapat"
-      ],
-      "Policy created successfully": [
-        "Policynamn skapat"
       ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
@@ -7667,6 +7685,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
+      "Don’t show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Skaffa Drive Plus för endast ${ pricingTitle }"
       ],
@@ -7679,14 +7700,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Sista dagen att spara"
+      ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus för 12 månader"
       ],
       "Maybe later": [
         "Kanske senare"
       ],
+      "Save": [
+        "Spara"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Spara ${ prices.savedPercentage } %"
+      ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
+      ],
+      "Save big when you pay annually": [
+        "Spara stort när du betalar årligen"
+      ],
+      "This offer won't be shown again.": [
+        "Detta erbjudande kommer inte att visas igen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "När du byter från en månads till årlig prenumeration."
+      ],
+      "You currently pay": [
+        "Du betalar för närvarande"
       ]
     },
     "Offer feature": {
@@ -10088,6 +10133,15 @@
       "Phone number updated": [
         "Telefonnummer uppdaterat"
       ],
+      "Policy created successfully!": [
+        "Policy skapad!"
+      ],
+      "Policy deleted": [
+        "Policy borttagen"
+      ],
+      "Policy updated successfully!": [
+        "Policy uppdaterad!"
+      ],
       "Preference saved": [
         "Preferens sparad"
       ],
@@ -10545,6 +10599,9 @@
       "Delete": [
         "Ta bort"
       ],
+      "Delete ${ policyName }?": [
+        "Ta bort ${ policyName }?"
+      ],
       "Delete account": [
         "Ta bort konto"
       ],
@@ -10600,6 +10657,9 @@
       "Edit billing address": [
         "Redigera faktureringsadress"
       ],
+      "Edit countries": [
+        "Redigera länder"
+      ],
       "Edit credit/debit card": [
         "Redigera kredit-/betalkort"
       ],
@@ -10617,6 +10677,9 @@
       ],
       "Edit invoice note": [
         "Redigera fakturaanteckning"
+      ],
+      "Edit name": [
+        "Redigera namn"
       ],
       "Edit servers": [
         "Redigera servrar"
@@ -11116,6 +11179,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmar som inte använder 2FA kommer få ett e-postmeddelande som ber dem att aktivera det så fort som möjligt."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Delade serverpolicyer kan tillämpas på enskilda användare eller grupper"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Specificera domänen som tillåts autentisera med SAML SSO"
@@ -11657,9 +11723,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Genom att ta bort detta telefonnummer kommer du inte längre att kunna återställa ditt konto."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Observera att genom att välja denna betalningsmetod kan ditt konto inte uppgraderas omedelbart. Vi kommer att uppdatera ditt konto när betalningen har gått igenom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."

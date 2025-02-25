@@ -78,11 +78,17 @@
       "Add phone number": [
         "Дадаць нумар тэлефона"
       ],
+      "Add photos": [
+        "Дадаць фатаграфіі"
+      ],
       "Add to album": [
         "Дадаць у альбом"
       ],
       "Add to group": [
         "Дадаць у групу"
+      ],
+      "Album name": [
+        "Назва альбома"
       ],
       "Apply": [
         "Ужыць"
@@ -279,6 +285,9 @@
         "Выдаліць ${ selectedCount } груп кантактаў",
         "Выдаліць ${ selectedCount } групы кантактаў"
       ],
+      "Delete album": [
+        "Выдаліць альбом"
+      ],
       "Delete contact": [
         "Выдаліць кантакт"
       ],
@@ -330,6 +339,9 @@
       "Download logs": [
         "Спампаваць журнал"
       ],
+      "Download photos": [
+        "Спампаваць фатаграфіі"
+      ],
       "Download without scanning": [
         "Спампаваць без сканавання"
       ],
@@ -341,6 +353,9 @@
       ],
       "Edit": [
         "Рэдагаваць"
+      ],
+      "Edit album": [
+        "Рэдагаваць альбом"
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
@@ -537,6 +552,9 @@
       "Minimize transfers": [
         "Згарнуць перадачы"
       ],
+      "More": [
+        "Больш"
+      ],
       "More actions": [
         "Больш дзеянняў"
       ],
@@ -554,6 +572,9 @@
       ],
       "Move to trash": [
         "Перамясціць у сметніцу"
+      ],
+      "Name your album": [
+        "Назва вашага альбома"
       ],
       "New": [
         "Новая"
@@ -583,7 +604,7 @@
         "Не зараз"
       ],
       "OK": [
-        "Добра"
+        "OK"
       ],
       "Open": [
         "Адкрыць"
@@ -679,7 +700,7 @@
         "Паведаміць аб праблеме"
       ],
       "Report an issue": [
-        "Паведаміць пра праблему"
+        "Паведаміць аб праблеме"
       ],
       "Request a call": [
         "Запытаць званок"
@@ -768,8 +789,14 @@
       "Select country": [
         "Выберыце краіну"
       ],
+      "Set album cover": [
+        "Задаць вокладку альбома"
+      ],
       "Set as album cover": [
         "Задаць у якасці вокладкі альбома"
+      ],
+      "Set as cover": [
+        "Задаць у якасці вокладкі"
       ],
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
@@ -971,9 +998,6 @@
       ]
     },
     "Actions": {
-      "Create album": [
-        "Стварыць альбом"
-      ],
       "Upload": [
         "Запампаваць"
       ]
@@ -2462,11 +2486,6 @@
         "Пратэрмінаваны рахунак"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -2548,6 +2567,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3164,6 +3188,9 @@
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
+      "Unable to set photo as cover": [
+        "Немагчыма задаць фатаграфію ў якасці вокладкі"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
       ],
@@ -3723,6 +3750,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Create new album": [
+        "Стварыць новы альбом"
+      ],
       "Security Center": [
         "Цэнтр бяспекі"
       ]
@@ -4106,6 +4136,12 @@
         "${ addressCount } адрасоў электроннай пошты",
         "${ addressCount } адрасы электроннай пошты"
       ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } элемент",
+        "${ album.photoCount } элементы",
+        "${ album.photoCount } элементаў",
+        "${ album.photoCount } элементаў"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
@@ -4346,6 +4382,9 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
       ],
+      "Album is empty": [
+        "Альбом пусты"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Уся (${ totalFoldersCount } папка)",
         "Усе (${ totalFoldersCount } папкі)",
@@ -4429,6 +4468,9 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Аўтаматычнае аднаўленне ${ formattedDate }"
       ],
       "Available": [
         "Даступна"
@@ -5030,6 +5072,9 @@
       "of": [
         "з"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Вы знойдзеце копію вашых адноўленых даных у новай папцы з назвай \"Аўтаматычна адноўленае (сённяшняя дата)\". Гэта копія даных не будзе ўлічвацца ў квоце вашага сховішча."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Адзін з вашых зашыфраваных дыскаў заблакіраваны. Верагодна па прычыне таго, што нядаўна было скіданне пароля."
       ],
@@ -5053,6 +5098,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Наша сістэма выявіла, што ў мінулы раз аднаўленне завяршылася збоем і магчыма, што некаторыя файлы не былі цалкам адноўленыя. Працэс аднаўлення быў аўтаматычна перазапушчаны, каб пераканацца ў поўным аднаўленні ўсіх файлаў."
       ],
       "Owner": [
         "Уладальнік"
@@ -5294,6 +5342,9 @@
       "Share via link settings": [
         "Налады для абагулення праз спасылку"
       ],
+      "Shared": [
+        "Абагулена"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Абагулена ${ rootLink.signatureEmail }"
       ],
@@ -5354,8 +5405,8 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
-      "The albums you create are shown here": [
-        "Створаныя вамі альбомы будуць паказаны тут"
+      "The albums you create are shown here.": [
+        "Створаныя вамі альбомы будуць паказаны тут."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Лічбавы подпіс часткова правераны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
@@ -5543,6 +5594,9 @@
       "Unsupported file": [
         "Файл не падтрымліваецца"
       ],
+      "Untitled": [
+        "Без назвы"
+      ],
       "Updating drive search...": [
         "Абнаўленне пошуку на дыску..."
       ],
@@ -5617,6 +5671,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Прыносім шчырыя прабачэнні за магчымыя нязручнасці, якія маглі ўзнікнуць у вас."
       ],
       "We use 3-D Secure to protect your payments": [
         "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
@@ -5859,8 +5916,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Напішыце нам на электронную пошту ${ email } для атрымання інструкцый па аплаце наяўнымі."
+      "How to send a cash payment?": [
+        "Як адправіць плацеж наяўнымі грашыма?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Інструкцыі можна знайсці ў артыкуле: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8399,6 +8459,9 @@
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
       ],
+      "Don’t show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Атрымайце Drive Plus усяго за ${ pricingTitle }"
       ],
@@ -8411,14 +8474,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Апошні дзень, калі можна сэканоміць"
+      ],
       "Limited-time offer": [
         "Часовая прапанова"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus за 12 месяцаў"
       ],
       "Maybe later": [
         "Магчыма пазней"
       ],
+      "Save": [
+        "Эканомія"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Эканомія ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Зэканомце 80% у першы месяц."
+      ],
+      "Save big when you pay annually": [
+        "Эканомце больш пры гадавой аплаце"
+      ],
+      "This offer won't be shown again.": [
+        "Гэта прапанова больш не будзе паказвацца."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Пры пераходзе з памесячнай на гадавую падпіску."
+      ],
+      "You currently pay": [
+        "У цяперашні час аплачана"
       ]
     },
     "Offer feature": {
@@ -10395,7 +10482,7 @@
         "${ emailsCount } адрасоў электроннай пошты"
       ],
       "${ feature } is now active": [
-        "${ feature } у актыўным стане"
+        "${ feature } цяпер у актыўным стане"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
         "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванне",
@@ -10477,6 +10564,9 @@
       ],
       "Auto-deletion is active": [
         "Аўтавыдаленне ў актыўным стане"
+      ],
+      "Automatic Recovery in Progress": [
+        "Адбываецца аўтаматычнае аднаўленне"
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -11081,11 +11171,6 @@
         "Сёння"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Дадаць гэты абагулены файл у свой ${ DRIVE_APP_NAME } для лёгкага доступу да яго ў будучыні."
@@ -11167,6 +11252,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы адправілі ім запрашэнне на доступ да элемента."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
     },
     "Validation": {
@@ -11357,9 +11447,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Дазволены толькі літарна-лічбавыя сімвалы ў ніжнім рэгістры, кропкі, злучкі і сімвалы падкрэслівання."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."

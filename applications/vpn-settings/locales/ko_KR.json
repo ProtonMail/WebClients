@@ -211,6 +211,9 @@
       "Delete member": [
         "멤버 삭제"
       ],
+      "Delete policy": [
+        "정책 삭제"
+      ],
       "Delete user": [
         "사용자 삭제"
       ],
@@ -589,8 +592,14 @@
       "Select billing cycle ${ billingText }": [
         "${ billingText } 결제 주기 선택"
       ],
+      "Select city ${ city }": [
+        "선택된 도시 ${ city }"
+      ],
       "Select country": [
         "국가 선택"
+      ],
+      "Select country ${ country }": [
+        "선택된 국가 ${ country }"
       ],
       "select file": [
         "파일 선택"
@@ -2308,11 +2317,11 @@
       ]
     },
     "Description": {
-      "Create policies to manage access to shared servers.": [
-        "공유된 서버에 접근을 관리할 수 있도록 정책을 생성하세요."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "각 국가에서 공유된 서버에 연결할 수 있는 구성원을 결정할 수 있도록 정책을 추가하세요."
       ],
-      "Everyone in your organization can connect to shared servers.": [
-        "조직 내의 모든 구성원이 공유된 서버에 연결할 수 있습니다."
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "조직의 모든 구성원이 모든 국가의 공유 서버에 연결할 수 있습니다."
       ],
       "If disabled, only admins will have access.": [
         "비활성화시 관리자만 접근 가능합니다."
@@ -2543,6 +2552,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
+      ],
+      "Error creating policy.": [
+        "정책 생성 중 오류."
+      ],
+      "Error deleting policy.": [
+        "정책 삭제 중 오류."
+      ],
+      "Error updating policy.": [
+        "정책 업데이트 중 오류."
       ],
       "Failed to process the logo": [
         "로고를 처리하지 못했습니다"
@@ -3443,7 +3461,7 @@
         "결제 수단을 선택하세요"
       ],
       "Select your pricing plan": [
-        "요금제를 선택하세요"
+        "플랜을 선택하세요"
       ],
       "Server": [
         "서버"
@@ -4408,9 +4426,6 @@
       "No addresses exist": [
         "주소 없음"
       ],
-      "No common passwords": [
-        "보편적인 비밀번호 없음"
-      ],
       "No gateways": [
         "게이트웨이 없음"
       ],
@@ -4419,9 +4434,6 @@
       ],
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
-      ],
-      "No predictable sequences (1234, aaa)": [
-        "추측 가능한 구성 없음 (1234, aaa)"
       ],
       "No results found": [
         "결과를 찾을 수 없음"
@@ -4502,7 +4514,7 @@
         "매월"
       ],
       "per month, billed at ${ price }": [
-        "월간, ${ price }으로 청구됨"
+        "월간, ${ price }(으)로 청구됨"
       ],
       "per month, billed every 12 months": [
         "월 기준, 12개월마다 납부됨"
@@ -4824,6 +4836,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "기기에 따라 몇 초 또는 몇 분이 걸릴 수 있습니다"
+      ],
+      "This cannot be undone.": [
+        "이 작업은 취소할 수 없습니다."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "이 작업은 몇 분이 소요될 수 있습니다. 이 페이지를 닫거나 인터넷 연결을 끊지 마세요."
@@ -5344,11 +5359,6 @@
         "선택한 색상:"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "현금으로 결제하는 방법을 알고 싶으시면 ${ email }으로 연락해 주세요."
-      ]
-    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "조직의 존재하는 모든 사용자를 위해 새 주소를 추가하세요."
@@ -5528,6 +5538,9 @@
       ],
       "Anderson": [
         "길동"
+      ],
+      "Apply policy to": [
+        "다음 항목에 정책 적용:"
       ],
       "Assertion Consumer Service URL": [
         "문제 알림 소비자 서비스 (ACS, 약칭;Assertion Consumer Service) URL"
@@ -5802,9 +5815,6 @@
       "New password": [
         "새 비밀번호"
       ],
-      "New policy name": [
-        "새로운 정책 이름"
-      ],
       "New second password": [
         "새로운 2차 비밀번호"
       ],
@@ -5876,6 +5886,9 @@
       ],
       "Please share any feedback to help us improve.": [
         "기능을 향상시키기 위해 피드백을 공유해 주세요."
+      ],
+      "Policy name": [
+        "정책 이름"
       ],
       "Postal code": [
         "우편번호"
@@ -7535,9 +7548,6 @@
       "Downloaded 2FA recovery codes": [
         "다운로드한 2FA 복구 코드"
       ],
-      "Error creating policy": [
-        "정책 생성 중 오류"
-      ],
       "Invalid code": [
         "잘못된 코드입니다."
       ],
@@ -7555,9 +7565,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 자격 증명 재생성됨"
-      ],
-      "Policy created successfully": [
-        "정책이 성공적으로 생성되었습니다."
       ],
       "Reminder has been sent": [
         "알리미가 전송되었습니다."
@@ -7587,6 +7594,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
+      "Don’t show this offer again": [
+        "이 제안을 다시 보지 않기"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "단 ${ pricingTitle }(으)로 Drive Plus 구매"
       ],
@@ -7599,14 +7609,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "${ plan } Plus의 첫 달 80% 할인 받을 마지막 기회입니다."
       ],
+      "Last day to save": [
+        "매월에서 매년 구독으로 변경하여"
+      ],
       "Limited-time offer": [
         "기간 한정 할인"
+      ],
+      "Mail Plus for 12 months": [
+        "12개월 Mail Plus"
       ],
       "Maybe later": [
         "나중에"
       ],
+      "Save": [
+        "절약되는 가격:"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "${ prices.savedPercentage }% 절약"
+      ],
       "Save 80% on your first month.": [
         "첫 달에 80% 할인 받기"
+      ],
+      "Save big when you pay annually": [
+        "매년 결제로 더 크게 절약하세요"
+      ],
+      "This offer won't be shown again.": [
+        "이 제안은 다시 표시되지 않습니다."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "절약할 수 있는 마지막 날."
+      ],
+      "You currently pay": [
+        "현재 결제:"
       ]
     },
     "Offer feature": {
@@ -9829,7 +9863,7 @@
         "시스템이 더 이상 이 결제 수단으로 자동 결제할 수 없습니다, 다만 고객님의 구독이 청구 주기가 끝날 때까지 갱신될 것입니다. 구독을 다운그레이드하거나 변경하려면, 청구 기간이 끝나기 전에 수동으로 해야합니다. 또한, 수동 결제를 하는 것을 잊어버리고 모든 결제 수단에 자동 결제가 비활성화된 경우, 고객님의 계정이 자동 다운그레이드되어 많은 기능이 손실될 수 있습니다."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독이 여전히 마지막 결제일에 갱신됩니다. 만일 플랜을 다운그레이드 또는 변경하시려면, 결제일이 끝나기 직전 수행해야 합니다. 만약 무료 플랜 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
+        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독은 여전히 마지막 결제일에 갱신됩니다. 만약 플랜을 다운그레이드 또는 변경하시려면, 결제일이 다가오기 직전에 수행해야 합니다. 만약 무료 플랜의 제공 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 시스템이 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기 때문에 플랜이 자동으로 다운그레이드되지 않습니다. 자동 결제를 비활성화 하실 때, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
       ]
     },
     "Subscription saving": {
@@ -9949,6 +9983,15 @@
       ],
       "Phone number updated": [
         "전화번호가 업데이트됨"
+      ],
+      "Policy created successfully!": [
+        "정책이 성공적으로 생성되었습니다!"
+      ],
+      "Policy deleted": [
+        "정책 삭제됨"
+      ],
+      "Policy updated successfully!": [
+        "정책이 성공적으로 업데이트되었습니다!"
       ],
       "Preference saved": [
         "설정이 저장되었습니다."
@@ -10402,6 +10445,9 @@
       "Delete": [
         "삭제"
       ],
+      "Delete ${ policyName }?": [
+        "${ policyName }을(를) 삭제할까요?"
+      ],
       "Delete account": [
         "계정 삭제"
       ],
@@ -10456,6 +10502,9 @@
       "Edit billing address": [
         "청구 주소 수정"
       ],
+      "Edit countries": [
+        "국가 편집"
+      ],
       "Edit credit/debit card": [
         "신용/체크카드 편집"
       ],
@@ -10473,6 +10522,9 @@
       ],
       "Edit invoice note": [
         "청구서 메모 수정"
+      ],
+      "Edit name": [
+        "이름 편집"
       ],
       "Edit servers": [
         "서버 편집"
@@ -10970,6 +11022,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "2단계 인증을 사용하지 않는 회원들은 가능한 한 빨리 활성화하라는 메일을 받게 됩니다."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "공유 서버 정책은 개별 사용자 또는 그룹에 적용될 수 있습니다."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "SAML SSO로 인증할 수 있는 도메인을 지정하십시오"
@@ -11501,9 +11556,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "이 전화번호를 삭제하면 더 이상 계정을 복구할 수 없습니다."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."

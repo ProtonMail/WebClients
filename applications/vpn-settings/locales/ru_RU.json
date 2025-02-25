@@ -163,6 +163,9 @@
       "Copy key to the clipboard": [
         "Копирование ключа в буфер обмена"
       ],
+      "Copy password": [
+        "Скопировать пароль"
+      ],
       "Copy version number to clipboard": [
         "Скопировать номер версии в буфер обмена"
       ],
@@ -174,6 +177,9 @@
       ],
       "Create Gateway": [
         "Создать Шлюз"
+      ],
+      "Create new password": [
+        "Создать новый пароль"
       ],
       "Create users": [
         "Создать пользователей"
@@ -201,6 +207,9 @@
       ],
       "Delete member": [
         "Удалить участника"
+      ],
+      "Delete policy": [
+        "Удалить политику"
       ],
       "Delete user": [
         "Удалить пользователя"
@@ -574,8 +583,14 @@
       "Select billing cycle ${ billingText }": [
         "Выбрать платежный цикл ${ billingText }"
       ],
+      "Select city ${ city }": [
+        "Выбрать город ${ city }"
+      ],
       "Select country": [
         "Выберите страну"
+      ],
+      "Select country ${ country }": [
+        "Выбрать страну ${ country }"
       ],
       "select file": [
         "выбрать файл"
@@ -597,6 +612,9 @@
       ],
       "Send reminder": [
         "Отправить напоминание"
+      ],
+      "Set as album cover": [
+        "Сделать обложкой альбома"
       ],
       "Set catch-all": [
         "Установить прием всей почты домена"
@@ -2317,8 +2335,11 @@
       ]
     },
     "Description": {
-      "Everyone in your organization can connect to shared servers.": [
-        "Все в вашей организации могут подключиться к общим серверам."
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Создайте политику для принятия решения о том, кто может подключаться к общим серверам в каждой стране."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Все в вашей организации могут подключиться к общим серверам во всех странах"
       ],
       "If disabled, only admins will have access.": [
         "Если отключено, доступ будет иметь только администраторы."
@@ -2454,6 +2475,11 @@
         "Приоритетная поддержка"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, изменит только выбранный вами счет-фактуру, но не ваши будущие данные о счете-фактуре."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } добавлено"
@@ -2497,6 +2523,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } - это ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Идентификация и адреса > Короткий домен (pm.me)"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
       ],
@@ -2521,6 +2550,9 @@
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
+      ],
       "Email address is invalid": [
         "Недопустимый адрес электронной почты"
       ],
@@ -2535,6 +2567,15 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
+      ],
+      "Error creating policy.": [
+        "Ошибка создания политики."
+      ],
+      "Error deleting policy.": [
+        "Ошибка при удалении политики."
+      ],
+      "Error updating policy.": [
+        "Ошибка изменения политики."
       ],
       "Failed to process the logo": [
         "Не удалось обработать логотип"
@@ -3410,11 +3451,23 @@
       "Checkout": [
         "Оплатить"
       ],
+      "Create your account": [
+        "Создать аккаунт"
+      ],
       "Device": [
         "Устройство"
       ],
+      "Enabled Countries": [
+        "Включенные страны"
+      ],
+      "Enter your email address": [
+        "Введите адрес вашей электронной почты"
+      ],
       "Event": [
         "Событие"
+      ],
+      "Groups": [
+        "Группы"
       ],
       "IP address": [
         "IP-адрес"
@@ -3434,6 +3487,9 @@
       "Organization key fingerprint": [
         "Отпечаток ключа организации"
       ],
+      "Policy Name": [
+        "Название политики"
+      ],
       "Protection": [
         "Защита"
       ],
@@ -3442,6 +3498,9 @@
       ],
       "Select your deal": [
         "Выберете свое предложение"
+      ],
+      "Select your payment method": [
+        "Выберите способ оплаты"
       ],
       "Select your pricing plan": [
         "Выберите себе ценовой план"
@@ -3544,6 +3603,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
+      ],
+      "${ discountPercent }% discount": [
+        "Скидка ${ discountPercent }%"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: изображение в полном размере"
@@ -3800,6 +3862,9 @@
       "Ask your organization admin to setup Gateways.": [
         "Попросите администратора вашей организации настроить Шлюзы."
       ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "По крайней мере ${ BETTER_PASSWORD_LENGTH } символов"
+      ],
       "Attention required": [
         "Требуется внимание"
       ],
@@ -3860,6 +3925,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "Награда «Выбор редакции CNET» с оценкой 8,4 из 10"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Настройте аутентификацию SAML для своей организации через провайдера идентификации (IdP). Это позволит включить SAML для всей организации."
       ],
@@ -3889,6 +3957,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Скопировать предложенный пароль в буфер обмена"
+      ],
+      "countries enabled": [
+        "включенные страны"
       ],
       "Country code": [
         "Код страны"
@@ -3931,6 +4002,9 @@
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
+      ],
+      "Custom policies": [
+        "Пользовательские политики"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Настройте внешний вид ${ BRAND_NAME } приложений."
@@ -4277,6 +4351,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Изменение страны сервера займет 10 дней, поэтому убедитесь, что ваш выбор правильный."
       ],
+      "It's better to have:": [
+        "Лучше иметь:"
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Элемент автоматически заполнен в ${ vaultLink }"
       ],
@@ -4451,6 +4528,9 @@
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
+      "Numbers": [
+        "Цифры"
+      ],
       "of": [
         "из"
       ],
@@ -4516,6 +4596,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "Награда «Выбор редакции» журнала PC Magazine с оценкой 5 из 5 звезд"
       ],
       "per month": [
         "в месяц"
@@ -4793,6 +4876,12 @@
       "Switch to": [
         "Переключиться на"
       ],
+      "Symbols (#$&)": [
+        "Символы (#$&)"
+      ],
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "TechRadar Pro порекомендовал оценить на 4.2 из 5 звезд"
+      ],
       "Thank you": [
         "Спасибо"
       ],
@@ -4858,6 +4947,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
+      ],
+      "This cannot be undone.": [
+        "Это не может быть отменено."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Это может занять некоторое время. Не закрывайте эту страницу и не отключайтесь от Интернета."
@@ -4967,6 +5059,9 @@
       "Total VPN connections": [
         "Всего подключений к VPN"
       ],
+      "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
+        "Попробуйте ${ productName } совершенно без риска - если по какой-то причине вы передумаете, вам вернут деньги. Никаких вопросов."
+      ],
       "Two-factor authentication disabled": [
         "Двухфакторная аутентификация отключена"
       ],
@@ -5011,6 +5106,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Загрузите логотип вашей организации, чтобы повысить узнаваемость вашего бренда и создать индивидуальный интерфейс для ваших пользователей."
+      ],
+      "Uppercase and lowercase letters": [
+        "Заглавные и строчные буквы"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Воспользуйтесь одним из способов восстановления, чтобы отключить двухфакторную аутентификацию."
@@ -5321,6 +5419,9 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Вы не сможете переназначить эти серверы в другую страну в течение 10 дней."
       ],
+      "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
+        "Ваша ${ boldDiscountPercent } для ${ boldPlanTitle } была использована."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
       ],
@@ -5394,8 +5495,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Пожалуйста, свяжитесь с нами по ${ email } для получения инструкций по оплате наличными."
+      "How to send a cash payment?": [
+        "Как отправить оплату наличными?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Найдите инструкции в статье: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -5579,6 +5683,9 @@
       "Anderson": [
         "Андерсон"
       ],
+      "Apply policy to": [
+        "Применить политику к"
+      ],
       "Assertion Consumer Service URL": [
         "URL службы подтверждения потребителя"
       ],
@@ -5741,6 +5848,9 @@
       "Enter the code displayed on your TV": [
         "Введите код, отображаемый на вашем ТВ"
       ],
+      "Enter your password": [
+        "Введите пароль"
+      ],
       "Entity ID": [
         "Идентификатор сущности"
       ],
@@ -5776,6 +5886,9 @@
       ],
       "Group name": [
         "Название группы"
+      ],
+      "Groups": [
+        "Группы"
       ],
       "Hide password": [
         "Скрыть пароль"
@@ -5918,6 +6031,9 @@
       "Please share any feedback to help us improve.": [
         "Оставляйте любые отзывы, чтобы помочь нам совершенствоваться."
       ],
+      "Policy name": [
+        "Название политики"
+      ],
       "Postal code": [
         "Почтовый индекс"
       ],
@@ -5996,6 +6112,9 @@
       "Strong": [
         "Надежный"
       ],
+      "Strong password": [
+        "Надежный пароль"
+      ],
       "Subscription options": [
         "Параметры подписки"
       ],
@@ -6026,6 +6145,9 @@
       "Username": [
         "Имя пользователя"
       ],
+      "Users": [
+        "Пользователи"
+      ],
       "Value": [
         "Значение"
       ],
@@ -6041,11 +6163,17 @@
       "Vulnerable": [
         "Уязвимый"
       ],
+      "Vulnerable password": [
+        "Уязвимый пароль"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать нашу службу."
       ],
       "Weak": [
         "Слабый"
+      ],
+      "Weak password": [
+        "Слабый пароль"
       ],
       "What happened?": [
         "Что случилось?"
@@ -6177,6 +6305,9 @@
       ],
       "Don't have access to your 2FA?": [
         "У вас нет доступа к двухфакторной аутентификации?"
+      ],
+      "Forgot email?": [
+        "Забыли электронную почту?"
       ],
       "Forgot password?": [
         "Забыли пароль?"
@@ -6698,6 +6829,9 @@
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Все платные сервисы ${ BRAND_NAME }. В одной легкой подписке"
       ],
+      "Apps for": [
+        "Приложения для"
+      ],
       "Auto-delete Spam and Trash": [
         "Автоудаление спама и сообщений в корзине"
       ],
@@ -6764,6 +6898,9 @@
       "Dedicated servers and IP": [
         "Выделенные серверы и адреса IP"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Выделенные серверы, оптимизированные для трансляций"
+      ],
       "Desktop app": [
         "Приложение для настольного компьютера"
       ],
@@ -6814,6 +6951,9 @@
       ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Высокоскоростная Швейцарская VPN, защищающая вашу конфиденциальность"
       ],
       "High-speed VPN on ${ n } device": [
         "Высокоскоростная VPN на ${ n } устройстве",
@@ -6938,8 +7078,14 @@
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
       ],
+      "SSO integration": [
+        "Интеграция с SSO"
+      ],
       "Start protecting your organization": [
         "Начните защищать свою организацию"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Начните защищать себя в Интернете в два простых шага"
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
@@ -6949,6 +7095,9 @@
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
+      ],
+      "Tor over VPN": [
+        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -7012,6 +7161,15 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
+      ],
+      "Up to 10 Gbps": [
+        "До 10 Гбит/с"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Используйте одновременно до ${ n } устройства",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств"
       ],
       "User credential management": [
         "Управление учетными данными пользователя"
@@ -7184,6 +7342,14 @@
       ],
       "terms and conditions": [
         "условия"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Цена со скидкой ${ priceCoupon } действительна в течение первого месяца. Затем она будет автоматически продлена по цене ${ priceLine }. Вы можете отменить это в любое время."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
     "new_plans: Title": {
@@ -7542,6 +7708,9 @@
       "Daily email notifications": [
         "Ежедневные уведомления по электронной почте"
       ],
+      "During your first month of using a ${ BRAND_NAME } product": [
+        "В течение первого месяца использования продукта ${ BRAND_NAME }"
+      ],
       "Email subscriptions": [
         "Подписки на рассылки"
       ],
@@ -7611,6 +7780,9 @@
       "${ pricingTitle } offer expires today!": [
         "Предложение ${ pricingTitle } истекает сегодня!"
       ],
+      "Don’t show this offer again": [
+        "Больше не показывать это предложение"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Попробуйте Drive Plus всего за ${ pricingTitle }"
       ],
@@ -7623,14 +7795,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Последний шанс получить скидку 80% на первый месяц подписки ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Последний день, чтобы сэкономить"
+      ],
       "Limited-time offer": [
         "Ограниченное предложение"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus за 12 месяцев"
       ],
       "Maybe later": [
         "Может быть позже"
       ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Сэкономьте ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Сэкономьте 80% в первый месяц."
+      ],
+      "Save big when you pay annually": [
+        "Экономьте больше, когда платите ежегодно"
+      ],
+      "This offer won't be shown again.": [
+        "Это предложение больше не будет показано."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "При переключении с ежемесячной на годовую подписку."
+      ],
+      "You currently pay": [
+        "Вы оплачиваете сейчас"
       ]
     },
     "Offer feature": {
@@ -7818,6 +8014,9 @@
       ],
       "Organization identity updated": [
         "Личные данные организации обновлены"
+      ],
+      "Verify your email address ${ email } to set organization identity.": [
+        "Подтвердите ваш адрес электронной почты ${ email } для установки личных данных организации."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -7986,6 +8185,9 @@
       "You have been made administrator of the organization **${ organizationName }** by": [
         "Вас назначили администратором организации **${ organizationName }**"
       ],
+      "You must delete all groups before generating a new organization key": [
+        "Вы должны удалить все группы перед созданием нового ключа организации"
+      ],
       "You must privatize all users before generating a new organization key": [
         "Вы должны приватизировать всех пользователей перед генерированием нового ключа организации"
       ],
@@ -8115,6 +8317,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Подтверждая этот платеж, вы уполномочиваете ${ BRAND_NAME } и Stripe, нашего поставщика платежных услуг, дать указание вашему банку списать средства с вашего счета. Вы можете получить деньги обратно в течение 8 недель с момента списания, в соответствии с условиями вашего договора с банком."
+      ],
       "Street address, postal code, and city": [
         "Адрес улицы, почтовый индекс и город"
       ]
@@ -9264,6 +9469,12 @@
       "Single sign-on removed": [
         "SSO удалён"
       ],
+      "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
+        "Пользователь ${ user } теперь является акаунтом единого входа. Его предыдущий пароль стал резервным паролем."
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Чтобы получить доступ к службам ${ BRAND_NAME }, им придется снова войти в систему с помощью вашего поставщика личных данных. Чтобы этот пользователь мог войти в систему, убедитесь, что он существует у вашего поставщика личных данных."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Это отключит пользователя от других устройств, и ему придется создать новый пароль резервной копии."
       ],
@@ -9287,6 +9498,9 @@
       ],
       "User details:": [
         "Информация о пользователе:"
+      ],
+      "Welcome": [
+        "Добро пожаловать"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вы должны будете создать новых пользователей вручную, чтобы добавить их в вашу организацию."
@@ -10058,6 +10272,15 @@
       "Phone number updated": [
         "Номер телефона обновлён"
       ],
+      "Policy created successfully!": [
+        "Политика успешно создана!"
+      ],
+      "Policy deleted": [
+        "Политика удалена"
+      ],
+      "Policy updated successfully!": [
+        "Политика успешно обновлена!"
+      ],
       "Preference saved": [
         "Настройки сохранены"
       ],
@@ -10315,6 +10538,9 @@
       "Add address": [
         "Добавить адрес"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "Добавить страны к \"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "Добавить кредитную/дебетовую карту"
       ],
@@ -10350,6 +10576,9 @@
       ],
       "Add users": [
         "Добавить пользователей"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "Добавить пользователей к \"${ policyName }\""
       ],
       "Allocate storage": [
         "Выделение объёма в хранилище"
@@ -10474,6 +10703,9 @@
       "Create multiple user accounts": [
         "Создать несколько пользовательских аккаунтов"
       ],
+      "Create new policy": [
+        "Создать новую политику"
+      ],
       "Create organization key": [
         "Создать ключ организации"
       ],
@@ -10506,6 +10738,9 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Delete ${ policyName }?": [
+        "Удалить ${ policyName }?"
       ],
       "Delete account": [
         "Удалить аккаунт"
@@ -10561,6 +10796,9 @@
       "Downloads": [
         "Загрузки"
       ],
+      "Edit countries": [
+        "Изменить страны"
+      ],
       "Edit credit/debit card": [
         "Изменить кредитную/дебетовую карту"
       ],
@@ -10575,6 +10813,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Изменить Шлюз ${ currentName }"
+      ],
+      "Edit name": [
+        "Изменить имя"
       ],
       "Edit servers": [
         "Изменить серверы"
@@ -10662,6 +10903,9 @@
       ],
       "Groups": [
         "Группы"
+      ],
+      "Help center": [
+        "Справочный центр"
       ],
       "How to choose a good logo": [
         "Как выбрать хороший логотип"
@@ -11070,6 +11314,9 @@
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Члены, не использующие 2ФА, получат письмо с просьбой включить её незамедлительно."
       ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Общие политики серверов могут применяться к отдельным пользователям или группам"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Укажите домен, которому разрешена аутентификация с помощью SAML SSO"
       ],
@@ -11242,6 +11489,9 @@
       "Keep request": [
         "Сохранить запрос"
       ],
+      "Member activation incomplete": [
+        "Активация участника не завершена"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Как только пользователь даст согласие, вы сможете помочь ему восстановить доступ к аккаунту или управлять его данными."
       ],
@@ -11274,6 +11524,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Это отменит разрешение администратора на управление аккаунтом этого пользователя."
+      ],
+      "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
+        "Чтобы получить права администратора, им нужно будет установить пароль резервной копии при следующем входе в систему ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Чтобы продолжить, вам нужно будет запросить у пользователя разрешение на доступ к его данным или сброс пароля."
@@ -11580,6 +11833,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
+      ],
       "Your scheduled plan starts on ${ renewalTime }.": [
         "Ваш запланированный тариф начинается с ${ renewalTime }."
       ],
@@ -11659,6 +11918,12 @@
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ваш комплект ${ a } и ${ b }"
+      ],
+      "Your ${ selected } plan": [
+        "Ваш ${ selected } тариф"
+      ],
+      "Your plan includes:": [
+        "Ваш тариф включает:"
       ]
     },
     "vpn_2step: tooltip": {
@@ -11667,6 +11932,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "адрес электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } счёт на один кошелёк",
         "${ n } счёта на один кошелёк",
@@ -11720,9 +11991,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Удалив этот номер телефона, вы больше не сможете восстановить свою учётную запись."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Обратите внимание, что при выборе этого способа оплаты тип вашего аккаунта не может быть изменен сразу. Мы обновим ваш аккаунт, как только будет произведена оплата."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."

@@ -1571,6 +1571,32 @@
         "스트로베리"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "일간 보기"
+      ],
+      "Month view": [
+        "월간 보기"
+      ],
+      "New event": [
+        "새로운 이벤트"
+      ],
+      "Next period": [
+        "다음 기간"
+      ],
+      "Previous period": [
+        "이전 기간"
+      ],
+      "Search events": [
+        "이벤트 검색"
+      ],
+      "Today": [
+        "오늘"
+      ],
+      "Week view": [
+        "주간 보기"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "불러오기 사용자 지정을 종료하시겠어요?"
@@ -2487,17 +2513,17 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "나중에…"
+      "Don't end": [
+        "종료하지 않기"
       ],
-      "Never": [
-        "안 함"
+      "End after": [
+        "다음 날짜 이후 종료:"
       ],
-      "On date…": [
-        "해당 일에..."
+      "End on": [
+        "다음 날짜에 종료:"
       ],
-      "time": [
-        "시간"
+      "event": [
+        "이벤트"
       ]
     },
     "Cycle": {
@@ -3931,11 +3957,11 @@
       "Contacts": [
         "연락처"
       ],
-      "Custom recurrence": [
-        "커스텀 반복"
-      ],
       "Name": [
         "이름"
+      ],
+      "Repeat event": [
+        "일정 반복"
       ],
       "Search": [
         "검색"
@@ -4674,6 +4700,9 @@
       "High Priority": [
         "중요도 높음"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "키보드 단축키가 활성화되면, , 다음 키를 사용하여 빠른 작업을 수행하거나 다른 보기로 이동할 수 있습니다. ${ metaKey } + K는 항상 활성화되어 있습니다."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
@@ -5393,11 +5422,6 @@
         "검색 쿼리를 갱신하거나 캘린더 보기로 돌아가기 위해서 검색을 닫을 수 있습니다"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "현금으로 결제하는 방법을 알고 싶으시면 ${ email }으로 연락해 주세요."
-      ]
-    },
     "Info message": {
       "No results found": [
         "결과를 찾을 수 없음"
@@ -5491,13 +5515,43 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "새 이벤트 만들기"
+      ],
+      "Day view": [
+        "일간 보기"
+      ],
+      "Month view": [
+        "월간 보기"
+      ],
+      "Next period": [
+        "다음 생리"
+      ],
+      "Open quick actions menu": [
+        "빠른 동작 매뉴 열기"
+      ],
       "Open this modal": [
         "이 모달 열기"
+      ],
+      "Previous period": [
+        "이전 기간"
+      ],
+      "Search events": [
+        "이벤트 검색"
+      ],
+      "Today": [
+        "오늘"
+      ],
+      "Week view": [
+        "주간 보기"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "간단한 단축키"
+      ],
+      "View options": [
+        "옵션 보기"
       ]
     },
     "Knowledge base link label": {
@@ -5677,9 +5731,6 @@
       "Encrypt emails": [
         "이메일 암호화"
       ],
-      "Ends": [
-        "종료"
-      ],
       "Event duration": [
         "이벤트 기간"
       ],
@@ -5706,9 +5757,6 @@
       ],
       "Forwards to": [
         "다음으로 전달:"
-      ],
-      "Frequency": [
-        "빈도"
       ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
@@ -5850,12 +5898,6 @@
       ],
       "Region": [
         "시/도"
-      ],
-      "Repeat every": [
-        "매일 반복"
-      ],
-      "Repeat on": [
-        "반복"
       ],
       "Reveal password": [
         "비밀번호 표시"
@@ -6316,8 +6358,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } 일마다"
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }에"
       ],
       "on the first Friday": [
         "첫 번째 금요일에"
@@ -7522,6 +7564,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
+      "Don’t show this offer again": [
+        "이 제안을 다시 보지 않기"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "단 ${ pricingTitle }(으)로 Drive Plus 구매"
       ],
@@ -7534,14 +7579,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "${ plan } Plus의 첫 달 80% 할인 받을 마지막 기회입니다."
       ],
+      "Last day to save": [
+        "매월에서 매년 구독으로 변경하여"
+      ],
       "Limited-time offer": [
         "기간 한정 할인"
+      ],
+      "Mail Plus for 12 months": [
+        "12개월 Mail Plus"
       ],
       "Maybe later": [
         "나중에"
       ],
+      "Save": [
+        "절약되는 가격:"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "${ prices.savedPercentage }% 절약"
+      ],
       "Save 80% on your first month.": [
         "첫 달에 80% 할인 받기"
+      ],
+      "Save big when you pay annually": [
+        "매년 결제로 더 크게 절약하세요"
+      ],
+      "This offer won't be shown again.": [
+        "이 제안은 다시 표시되지 않습니다."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "절약할 수 있는 마지막 날."
+      ],
+      "You currently pay": [
+        "현재 결제:"
       ]
     },
     "Offer feature": {
@@ -7625,6 +7694,9 @@
       "Custom": [
         "커스텀"
       ],
+      "Custom...": [
+        "사용자 정의..."
+      ],
       "Day": [
         "일"
       ],
@@ -7634,11 +7706,14 @@
       "Every day": [
         "매일"
       ],
-      "Every month": [
-        "매월"
+      "Every month ${ description }": [
+        "매달 ${ description }"
       ],
-      "Every week": [
-        "매주"
+      "Every week ${ everyWeekDescription }": [
+        "매주 ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "매주 ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "매년"
@@ -7924,6 +7999,9 @@
       ],
       "Filter groups": [
         "필터 그룹"
+      ],
+      "Filter quick actions": [
+        "빠른 동작 필터링"
       ],
       "First name": [
         "이름"
@@ -9126,7 +9204,7 @@
         "시스템이 더 이상 이 결제 수단으로 자동 결제할 수 없습니다, 다만 고객님의 구독이 청구 주기가 끝날 때까지 갱신될 것입니다. 구독을 다운그레이드하거나 변경하려면, 청구 기간이 끝나기 전에 수동으로 해야합니다. 또한, 수동 결제를 하는 것을 잊어버리고 모든 결제 수단에 자동 결제가 비활성화된 경우, 고객님의 계정이 자동 다운그레이드되어 많은 기능이 손실될 수 있습니다."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독이 여전히 마지막 결제일에 갱신됩니다. 만일 플랜을 다운그레이드 또는 변경하시려면, 결제일이 끝나기 직전 수행해야 합니다. 만약 무료 플랜 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기에 자동으로 다운그레이드할 수 없습니다. 자동 결제 수단을 비활성화 하시려면, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
+        "당사 시스템이 더 이상 이 결제 수단을 사용하여 자동 갱신할 수 없으나, 구독은 여전히 마지막 결제일에 갱신됩니다. 만약 플랜을 다운그레이드 또는 변경하시려면, 결제일이 다가오기 직전에 수행해야 합니다. 만약 무료 플랜의 제공 저장 공간을 초과하여 사용하시거나 다른 유료 계정을 사용시 시스템이 파일, 이메일 및 기타 데이터를 자동으로 삭제할 수 없기 때문에 플랜이 자동으로 다운그레이드되지 않습니다. 자동 결제를 비활성화 하실 때, 계정 정지를 방지하기 위해 마감일 전에 다음 구독 청구서를 지불하는 것을 잊지 말아주세요."
       ]
     },
     "Subscription saving": {
@@ -9440,6 +9518,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } 키보드 단축키"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount }개 이메일 주소"
       ],
@@ -9614,6 +9695,9 @@
       "Details": [
         "세부 사항"
       ],
+      "Does not repeat": [
+        "반복하지 않음"
+      ],
       "Downgrade account": [
         "계정 다운그레이드"
       ],
@@ -9664,6 +9748,21 @@
       ],
       "Event is happening on defined time slot": [
         "이벤트가 정해진 시간대에 일어나는 중입니다"
+      ],
+      "Every day": [
+        "매일"
+      ],
+      "Every month ${ option.text }": [
+        "매달 ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "매주 ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "매주 ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "매년"
       ],
       "Exporting contacts": [
         "연락처 내보내기"
@@ -9815,9 +9914,6 @@
       "Security center": [
         "보안 센터"
       ],
-      "Select a day in the month": [
-        "이 달의 일자 선택"
-      ],
       "Select a plan": [
         "플랜 선택"
       ],
@@ -9832,9 +9928,6 @@
       ],
       "Select event end time": [
         "이벤트 종료 시간 선택"
-      ],
-      "Select event frequency": [
-        "이벤트 빈도 선택"
       ],
       "Select event frequency interval": [
         "유효 이벤트 빈도 선택"
@@ -9859,9 +9952,6 @@
       ],
       "Select the way to send this notification": [
         "알림을 보낼 방법 선택"
-      ],
-      "Select when this event will stop happening": [
-        "이 이벤트가 언제 중단될지 선택하세요"
       ],
       "Select when you want this notification to be sent": [
         "언제 이 알림이 전송될지 선택하세요"
@@ -10213,9 +10303,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "영숫자 소문자, 점, 하이픈 및 밑줄만 허용됩니다."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."

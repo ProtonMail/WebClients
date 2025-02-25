@@ -504,7 +504,7 @@
         "Не зараз"
       ],
       "OK": [
-        "Добра"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
@@ -2558,20 +2558,20 @@
       ]
     },
     "Custom frequency option": {
-      "After…": [
-        "Па…"
+      "Don't end": [
+        "Не завяршаць"
       ],
-      "Never": [
-        "Ніколі"
+      "End after": [
+        "Завершыцца пасля"
       ],
-      "On date…": [
-        "На дату…"
+      "End on": [
+        "Завершыцца ў"
       ],
-      "time": [
-        "раз",
-        "разы",
-        "разоў",
-        "разы"
+      "event": [
+        "падзея",
+        "падзеі",
+        "падзей",
+        "падзей"
       ]
     },
     "Cycle": {
@@ -4080,11 +4080,11 @@
       "Contacts": [
         "Кантакты"
       ],
-      "Custom recurrence": [
-        "Карыстальніцкае паўтарэнне"
-      ],
       "Name": [
         "Назва"
+      ],
+      "Repeat event": [
+        "Паўтараць падзею"
       ],
       "Search": [
         "Пошук"
@@ -5663,8 +5663,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Напішыце нам на электронную пошту ${ email } для атрымання інструкцый па аплаце наяўнымі."
+      "How to send a cash payment?": [
+        "Як адправіць плацеж наяўнымі грашыма?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Інструкцыі можна знайсці ў артыкуле: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5988,9 +5991,6 @@
       "Encrypt emails": [
         "Шыфраваць лісты"
       ],
-      "Ends": [
-        "Завяршаецца"
-      ],
       "Event duration": [
         "Працягласць падзеі"
       ],
@@ -5999,6 +5999,9 @@
       ],
       "Event title": [
         "Загаловак падзеі"
+      ],
+      "Every": [
+        "Кожныя"
       ],
       "Expiration (${ patternExpiration })": [
         "Тэрмін дзеяння (${ patternExpiration })"
@@ -6017,9 +6020,6 @@
       ],
       "Forwards to": [
         "Перасылаць на"
-      ],
-      "Frequency": [
-        "Перыядычнасць"
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
@@ -6105,6 +6105,9 @@
       "Notifications": [
         "Апавяшчэнні"
       ],
+      "On": [
+        "У"
+      ],
       "Operating system": [
         "Аперацыйная сістэма"
       ],
@@ -6164,12 +6167,6 @@
       ],
       "Region": [
         "Вобласць"
-      ],
-      "Repeat every": [
-        "Паўтараць кожны"
-      ],
-      "Repeat on": [
-        "Паўтараць у"
       ],
       "Reveal password": [
         "Паказаць пароль"
@@ -6654,8 +6651,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "у ${ dayOfMonth }"
+      "on the ${ shortenedDay }": [
+        "у ${ shortenedDay }"
       ],
       "on the first Friday": [
         "у першую пятніцу месяца"
@@ -8001,6 +7998,9 @@
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
       ],
+      "Don’t show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Атрымайце Drive Plus усяго за ${ pricingTitle }"
       ],
@@ -8013,14 +8013,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Апошні дзень, калі можна сэканоміць"
+      ],
       "Limited-time offer": [
         "Часовая прапанова"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus за 12 месяцаў"
       ],
       "Maybe later": [
         "Магчыма пазней"
       ],
+      "Save": [
+        "Эканомія"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Эканомія ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Зэканомце 80% у першы месяц."
+      ],
+      "Save big when you pay annually": [
+        "Эканомце больш пры гадавой аплаце"
+      ],
+      "This offer won't be shown again.": [
+        "Гэта прапанова больш не будзе паказвацца."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Пры пераходзе з памесячнай на гадавую падпіску."
+      ],
+      "You currently pay": [
+        "У цяперашні час аплачана"
       ]
     },
     "Offer feature": {
@@ -8104,6 +8128,9 @@
       "Custom": [
         "Карыстальніцкі"
       ],
+      "Custom...": [
+        "Карыстальніцкае..."
+      ],
       "Day": [
         "Дзень",
         "Дні",
@@ -8116,11 +8143,14 @@
       "Every day": [
         "Кожны дзень"
       ],
-      "Every month": [
-        "Кожны месяц"
+      "Every month ${ description }": [
+        "Кожны месяц ${ description }"
       ],
-      "Every week": [
-        "Кожны тыдзень"
+      "Every week ${ everyWeekDescription }": [
+        "Кожны тыдзень ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Кожны дзень тыдня ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Кожны год"
@@ -10079,7 +10109,7 @@
         "${ emailsCount } адрасоў электроннай пошты"
       ],
       "${ feature } is now active": [
-        "${ feature } у актыўным стане"
+        "${ feature } цяпер у актыўным стане"
       ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
@@ -10258,6 +10288,9 @@
       "Details": [
         "Падрабязнасці"
       ],
+      "Does not repeat": [
+        "Не паўтараецца"
+      ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
       ],
@@ -10308,6 +10341,21 @@
       ],
       "Event is happening on defined time slot": [
         "Падзея адбываецца ў вызначаны час"
+      ],
+      "Every day": [
+        "Кожны дзень"
+      ],
+      "Every month ${ option.text }": [
+        "Кожны месяц ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Кожны тыдзень у ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Кожны дзень тыдня ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Кожны год"
       ],
       "Exporting contacts": [
         "Экспартаванне кантактаў"
@@ -10462,9 +10510,6 @@
       "Security center": [
         "Цэнтр бяспекі"
       ],
-      "Select a day in the month": [
-        "Выберыце дзень месяца"
-      ],
       "Select a plan": [
         "Выбар тарыфнага плана"
       ],
@@ -10479,9 +10524,6 @@
       ],
       "Select event end time": [
         "Выбар часу завяршэння падзеі"
-      ],
-      "Select event frequency": [
-        "Выбар частаты падзеі"
       ],
       "Select event frequency interval": [
         "Выбар інтэрвалу частаты падзеі"
@@ -10506,9 +10548,6 @@
       ],
       "Select the way to send this notification": [
         "Выберыце спосаб адпраўкі гэтага апавяшчэння"
-      ],
-      "Select when this event will stop happening": [
-        "Выберыце, калі гэта падзея перастане адбывацца"
       ],
       "Select when you want this notification to be sent": [
         "Выберыце, калі гэта апавяшчэнне павінна быць адпраўлена"
@@ -10896,9 +10935,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Дазволены толькі літарна-лічбавыя сімвалы ў ніжнім рэгістры, кропкі, злучкі і сімвалы падкрэслівання."
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
