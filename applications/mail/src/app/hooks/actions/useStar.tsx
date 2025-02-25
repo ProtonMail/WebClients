@@ -47,7 +47,14 @@ export const useStar = () => {
                 // Stop the event manager to prevent race conditions
                 stop();
                 dispatch(backendActionStarted());
-                rollback = optimisticApplyLabels({ elements, inputChanges: { [MAILBOX_LABEL_IDS.STARRED]: value } });
+                rollback = optimisticApplyLabels({
+                    elements,
+                    inputChanges: { [MAILBOX_LABEL_IDS.STARRED]: value },
+                    // When un-staring an item from star folder, the item should move out from the folder.
+                    // To update Total optimistically correctly, we need to specify this
+                    isMove: labelID === MAILBOX_LABEL_IDS.STARRED && !value,
+                    currentLabelID: labelID,
+                });
                 await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
             } catch (error: any) {
                 rollback();
