@@ -8,6 +8,7 @@ import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
 import { APP_NAME, APP_VERSION } from '../../../config';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
+import { loadCreateReadableStreamWrapper } from '../../../utils/webStreamsPolyfill';
 import { MAX_TOO_MANY_REQUESTS_WAIT } from '../constants';
 
 export default async function downloadBlock(
@@ -84,5 +85,5 @@ export default async function downloadBlock(
         );
     }
 
-    return response.body;
+    return loadCreateReadableStreamWrapper(response.body);
 }
