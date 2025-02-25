@@ -732,6 +732,9 @@
       "Loading${ ellipsis }": [
         "Загрузка${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Установите ${ MAIL_APP_NAME } в качестве приложения по умолчанию для электронной почты"
+      ],
       "Make it friendly": [
         "Сделать его дружественным"
       ],
@@ -1158,6 +1161,9 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Установите ${ MAIL_APP_NAME } в качестве приложения по умолчанию для электронной почты"
       ],
+      "Set as album cover": [
+        "Сделать обложкой альбома"
+      ],
       "Set as default": [
         "Установить по умолчанию"
       ],
@@ -1379,6 +1385,9 @@
       ],
       "Use ${ label } theme": [
         "Использовать тему ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "Используйте ${ PASS_APP_NAME }"
       ],
       "Use a different card": [
         "Использовать другую карту"
@@ -4030,6 +4039,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } - это ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Идентификация и адреса > Короткий домен (pm.me)"
+      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -5887,6 +5899,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "Менеджер паролей ${ BRAND_NAME } позволяет создавать, хранить и автоматически заполнять пароли, поэтому вам никогда не придется их сбрасывать."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новый календарь",
         "${ calendarsToBeCreatedCount } новых календаря",
@@ -6517,6 +6532,9 @@
       "Default email application": [
         "Приложение электронной почты по умолчанию"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Обнаружение происходит на вашем устройстве, поэтому никакие данные из ваших писем не отправляются на наши серверы."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Знаете ли вы, что вместе с вашим аккаунтом ${ BRAND_NAME } у вас также есть зашифрованное место в облаке? Перейдите в ${ DRIVE_APP_NAME } и используйте своё место по максимуму. Это бесплатно."
       ],
@@ -6937,6 +6955,9 @@
       "Low Priority": [
         "Низкий приоритет"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Установите ${ MAIL_APP_NAME } в качестве приложения по умолчанию для электронной почты."
+      ],
       "Manage your folders": [
         "Управляйте своими папками"
       ],
@@ -7005,6 +7026,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
+      ],
+      "More infos": [
+        "Подробнее"
       ],
       "More refine actions": [
         "Более точные действия"
@@ -7345,6 +7369,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Установите ${ MAIL_APP_NAME } в качестве почтового приложения по умолчанию для этого браузера. Приложение ${ MAIL_APP_NAME } будет открываться автоматически при нажатии на ссылку электронной почты."
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Установите ${ MAIL_APP_NAME } в качестве почтового приложения по умолчанию. Приложение ${ MAIL_APP_NAME } будет открываться автоматически при нажатии на ссылку электронной почты."
+      ],
       "Setting up ${ feature }…": [
         "Установка ${ feature }…"
       ],
@@ -7605,6 +7632,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Публичный ключ отправителя пока не отмечен как доверенный."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Это было показано вам, потому что в теме вашего письма содержатся ключевые слова для сброса пароля."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
@@ -8144,8 +8174,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Пожалуйста, свяжитесь с нами по ${ email } для получения инструкций по оплате наличными."
+      "How to send a cash payment?": [
+        "Как отправить оплату наличными?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Найдите инструкции в статье: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8614,6 +8647,9 @@
       ],
       "Don't show this again": [
         "Больше не показывать"
+      ],
+      "Don't show this suggestion": [
+        "Не показывайте это предложение"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "например, Amazon, eBay, Etsy"
@@ -9487,8 +9523,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth } числа"
+      "on the ${ shortenedDay }": [
+        "в ${ shortenedDay }"
       ],
       "on the first Friday": [
         "в первую пятницу"
@@ -9908,6 +9944,9 @@
       "Data breach monitoring": [
         "Отслеживание утечек данных"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Выделенные серверы, оптимизированные для трансляций"
+      ],
       "Desktop app": [
         "Приложение для настольного компьютера"
       ],
@@ -10073,6 +10112,9 @@
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
       ],
+      "SSO integration": [
+        "Интеграция с SSO"
+      ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
       ],
@@ -10081,6 +10123,9 @@
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
+      ],
+      "Tor over VPN": [
+        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -10144,6 +10189,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Используйте одновременно до ${ n } устройства",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств"
       ],
       "User credential management": [
         "Управление учетными данными пользователя"
@@ -10284,6 +10335,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
+        "Цена со скидкой ${ priceCoupon } действительна в течение первого месяца. Затем она будет автоматически продлена по цене ${ priceLine }. Вы можете отменить это в любое время."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Разблокируйте все премиум продукты и возможности ${ BRAND_NAME } всего за ${ priceLine }. Отменить можно в любое время."
       ]
     },
     "new_plans: title": {
@@ -10651,6 +10710,9 @@
       "${ pricingTitle } offer expires today!": [
         "Предложение ${ pricingTitle } истекает сегодня!"
       ],
+      "Don’t show this offer again": [
+        "Больше не показывать это предложение"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Попробуйте Drive Plus всего за ${ pricingTitle }"
       ],
@@ -10663,14 +10725,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Последний шанс получить скидку 80% на первый месяц подписки ${ plan } Plus."
       ],
+      "Last day to save": [
+        "Последний день, чтобы сэкономить"
+      ],
       "Limited-time offer": [
         "Ограниченное предложение"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus за 12 месяцев"
       ],
       "Maybe later": [
         "Может быть позже"
       ],
+      "Save": [
+        "Сохранить"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Сэкономьте ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Сэкономьте 80% в первый месяц."
+      ],
+      "Save big when you pay annually": [
+        "Экономьте больше, когда платите ежегодно"
+      ],
+      "This offer won't be shown again.": [
+        "Это предложение больше не будет показано."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "При переключении с ежемесячной на годовую подписку."
+      ],
+      "You currently pay": [
+        "Вы оплачиваете сейчас"
       ]
     },
     "Offer feature": {
@@ -11117,6 +11203,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Подтверждая этот платеж, вы уполномочиваете ${ BRAND_NAME } и Stripe, нашего поставщика платежных услуг, дать указание вашему банку списать средства с вашего счета. Вы можете получить деньги обратно в течение 8 недель с момента списания, в соответствии с условиями вашего договора с банком."
+      ],
       "Street address, postal code, and city": [
         "Адрес улицы, почтовый индекс и город"
       ]
@@ -11175,6 +11264,9 @@
       ],
       "Filter labels": [
         "Фильтр по ярлыкам"
+      ],
+      "Filter quick actions": [
+        "Фильтр быстрых действий"
       ],
       "First name": [
         "Имя"
@@ -13293,6 +13385,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } быстрых клавиш"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адрес электронной почты",
         "${ emailsCount } адреса электронной почты",
@@ -13656,6 +13751,9 @@
       "Groups": [
         "Группы"
       ],
+      "Help center": [
+        "Справочный центр"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Скройте адрес электронной почты с помощью ${ PASS_APP_NAME }"
       ],
@@ -13838,6 +13936,9 @@
       ],
       "Notes": [
         "Заметки"
+      ],
+      "On-device suggestions": [
+        "Предложения для устройств"
       ],
       "One email, many recipients": [
         "Одно письмо эл. почты, много получателей"
@@ -14292,6 +14393,12 @@
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
       ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
+      ],
       "Your scheduled plan starts on ${ renewalTime }.": [
         "Ваш запланированный тариф начинается с ${ renewalTime }."
       ],
@@ -14316,6 +14423,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "адрес электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } счёт на один кошелёк",
         "${ n } счёта на один кошелёк",
@@ -14379,6 +14492,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
       ],
+      "2 consecutive dots are not allowed": [
+        "2 точки подряд не допускаются"
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы уверены, что хотите навсегда удалить ${ count } контакт?",
         "Вы уверены, что хотите навсегда удалить ${ count } контакта?",
@@ -14393,6 +14509,12 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Вы уверены, что хотите навсегда удалить этот контакт?"
+      ],
+      "Cannot contain a dot at the beginning": [
+        "Не может содержать точку в начале"
+      ],
+      "Cannot contain a dot at the end": [
+        "Не может содержать точку в конце"
       ],
       "Contacts could not be merged": [
         "Контакты не могут быть объединены"
@@ -14415,8 +14537,8 @@
       "Name is required": [
         "Требуется имя"
       ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Обратите внимание, что при выборе этого способа оплаты тип вашего аккаунта не может быть изменен сразу. Мы обновим ваш аккаунт, как только будет произведена оплата."
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Допускаются только алфавитно-цифровые строчные символы, точки, дефисы и символы подчеркивания"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."

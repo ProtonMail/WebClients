@@ -725,7 +725,7 @@
         "Yükleniyor${ ellipsis }"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
-        "${ MAIL_APP_NAME } 'i varsayılan e-posta uygulamanız yapın"
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun"
       ],
       "Make it friendly": [
         "Samimileştir"
@@ -1380,6 +1380,9 @@
       ],
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasını kullan"
       ],
       "Use a different card": [
         "Başka bir kart kullanın"
@@ -5800,6 +5803,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "${ BRAND_NAME }'in parola yöneticisi parolaları oluşturmanıza, saklamanıza ve otomatik olarak doldurmanıza olanak tanır. Böylece onları asla sıfırlamak zorunda kalmazsınız."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
@@ -6330,6 +6336,9 @@
       "Default email application": [
         "Varsayılan e-posta uygulaması"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Algılama cihazınızda gerçekleşir. Bu nedenle e-postalarınızdan sunucularımıza hiçbir veri gönderilmez."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "${ BRAND_NAME } hesabınızla birlikte bir şifrelenmiş bulut depolama alanınızın olduğunu biliyor muydunuz? ${ DRIVE_APP_NAME } uygulamasına gidin ve depolama alanınızdan en iyi şekilde yararlanın. Ücretsizdir."
       ],
@@ -6733,7 +6742,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } 'i varsayılan e-posta uygulamanız yapın."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -6803,6 +6812,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
+      ],
+      "More infos": [
+        "Daha fazla bilgi"
       ],
       "More refine actions": [
         "Diğer düzeltme işlemleri"
@@ -7138,7 +7150,7 @@
         "Bu tarayıcı için varsayılan e-posta uygulamasını ${ MAIL_APP_NAME } yapabilirsiniz. Bir e-posta bağlantısına tıkladığınızda otomatik olarak ${ MAIL_APP_NAME } açılır."
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Varsayılan e-posta uygulamanız olarak ${ MAIL_APP_NAME } ayarlayın. Bir e-posta bağlantısına tıkladığınızda ${ MAIL_APP_NAME } otomatik olarak açılacaktır."
+        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız olarak ayarlayın. Bir e-posta bağlantısına tıkladığınızda ${ MAIL_APP_NAME } otomatik olarak açılır."
       ],
       "Setting up ${ feature }…": [
         "${ feature } ayarlanıyor…"
@@ -7394,6 +7406,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Henüz bu göndericinin herkese açık anahtarına güvenilmemiş."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "E-posta konu satırınız parola sıfırlama anahtar kelimeleri içerdiği için bu size gösterildi."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
@@ -7901,8 +7916,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı ile ilgili bilgi almak için bizimle ${ email } adresinden görüşün."
+      "How to send a cash payment?": [
+        "Nakit ödeme nasıl gönderilir?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8361,6 +8379,9 @@
       ],
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
+      ],
+      "Don't show this suggestion": [
+        "Bu öneriyi gösterme"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "örneğin, Amazon, eBay, Etsy"
@@ -9218,8 +9239,8 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. günde"
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay } gününde"
       ],
       "on the first Friday": [
         "ilk Cuma günü"
@@ -10353,6 +10374,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don’t show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
       ],
@@ -10365,14 +10389,38 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "${ plan } Plus aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
       ],
+      "Last day to save": [
+        "İndirim kazanmak için son gün"
+      ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Mail Plus for 12 months": [
+        "12 aylık Mail Plus"
       ],
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Save": [
+        "İndirim"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "%${ prices.savedPercentage } indirim"
+      ],
       "Save 80% on your first month.": [
         "İlk ayınızda % 80 indirim kazanın."
+      ],
+      "Save big when you pay annually": [
+        "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "This offer won't be shown again.": [
+        "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
+      ],
+      "You currently pay": [
+        "Şu anda ödediğiniz"
       ]
     },
     "Offer feature": {
@@ -10876,7 +10924,7 @@
         "Etiketleri süz"
       ],
       "Filter quick actions": [
-        "Hızlı eylemleri filtrele"
+        "Hızlı işlemleri süz"
       ],
       "First name": [
         "Ad"
@@ -13387,6 +13435,9 @@
       "Notes": [
         "Notlar"
       ],
+      "On-device suggestions": [
+        "Cihaz içi öneriler"
+      ],
       "One email, many recipients": [
         "Bir e-posta adresi, çok sayıda alıcı"
       ],
@@ -13958,9 +14009,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Yalnızca küçük harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

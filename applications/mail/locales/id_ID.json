@@ -720,6 +720,9 @@
       "Loading${ ellipsis }": [
         "Memuat${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Tetapkan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan Anda"
+      ],
       "Make it friendly": [
         "Buat agar lebih bersahabat"
       ],
@@ -6616,6 +6619,9 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Tetapkan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan Anda."
+      ],
       "Manage your folders": [
         "Kelola folder Anda"
       ],
@@ -7014,6 +7020,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Tentukan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan untuk browser ini. ${ MAIL_APP_NAME } akan terbuka secara otomatis ketika Anda mengeklik tautan email."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Tetapkan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan Anda. Ke depannya, ${ MAIL_APP_NAME } akan terbuka secara otomatis pada saat Anda mengeklik tautan email."
       ],
       "Setting up ${ feature }…": [
         "Mempersiapkan ${ feature }…"
@@ -7754,11 +7763,6 @@
       ],
       "Selected color:": [
         "Warna terpilih:"
-      ]
-    },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Silakan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
       ]
     },
     "Info on errors": {
@@ -9061,9 +9065,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "pada hari ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "pada hari Jumat pertama"
       ],
@@ -10170,6 +10171,9 @@
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
+      "Don’t show this offer again": [
+        "Jangan tampilkan penawaran ini lagi"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
       ],
@@ -10182,14 +10186,35 @@
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Plus Anda."
       ],
+      "Last day to save": [
+        "Hari terakhir untuk menghemat"
+      ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus selama 12 bulan"
       ],
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Save": [
+        "Simpan"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Hemat ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Hemat 80% pada bulan pertama Anda."
+      ],
+      "Save big when you pay annually": [
+        "Hemat besar-besaran pada saat Anda membayar secara tahunan"
+      ],
+      "This offer won't be shown again.": [
+        "Penawaran ini tidak akan lagi ditampilkan."
+      ],
+      "You currently pay": [
+        "Anda saat ini membayar"
       ]
     },
     "Offer feature": {
@@ -10688,6 +10713,9 @@
       ],
       "Filter labels": [
         "Filter label"
+      ],
+      "Filter quick actions": [
+        "Filter tindakan cepat"
       ],
       "First name": [
         "Nama depan"
@@ -12593,6 +12621,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "Pintasan keyboard ${ appName }"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } alamat email"
       ],
@@ -13672,9 +13703,6 @@
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
-      ],
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
