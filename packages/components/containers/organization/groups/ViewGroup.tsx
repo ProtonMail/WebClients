@@ -17,13 +17,7 @@ interface Props {
 }
 
 const ViewGroup = ({
-    groupsManagement: {
-        setUiState,
-        selectedGroup,
-        groupMembers,
-        loadingGroupMembers,
-        form: { resetForm },
-    },
+    groupsManagement: { actions, selectedGroup, groupMembers, loadingGroupMembers, addressToMemberMap },
     groupsManagement,
     groupData,
     canOnlyDelete,
@@ -51,16 +45,7 @@ const ViewGroup = ({
                                 className="flex items-center"
                                 key="button-edit"
                                 onClick={() => {
-                                    setUiState('edit');
-                                    resetForm({
-                                        values: {
-                                            name: groupData.Name,
-                                            description: groupData.Description,
-                                            address: groupData.Address.Email,
-                                            permissions: groupData.Permissions,
-                                            members: '',
-                                        },
-                                    });
+                                    actions.onEditGroup(groupData);
                                 }}
                             >
                                 <Icon className="shrink-0 mr-2" name="pencil" />
@@ -101,6 +86,7 @@ const ViewGroup = ({
                 )}
                 <GroupMemberList
                     groupMembers={groupMembers}
+                    addressToMemberMap={addressToMemberMap}
                     loading={loadingGroupMembers}
                     group={selectedGroup}
                     canOnlyDelete={canOnlyDelete}
