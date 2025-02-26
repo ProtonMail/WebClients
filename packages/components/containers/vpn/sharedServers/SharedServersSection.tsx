@@ -151,6 +151,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                                             size="small"
                                             color="norm"
                                             onClick={() => showCreateModal({ policy: customPolicy, isEditing: true })}
+                                            className="mr-2"
                                         >
                                             {c('Action').t`Edit`}
                                         </Button>
