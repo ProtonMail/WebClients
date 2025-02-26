@@ -16,6 +16,7 @@ const setThemeMock = (theme: Partial<ThemeSetting>) => {
         theme,
         spellChecker: false,
         overrideError: false,
+        appCacheEnabled: true,
     });
 };
 
