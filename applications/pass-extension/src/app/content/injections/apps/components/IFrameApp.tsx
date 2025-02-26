@@ -85,7 +85,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                          * visibility changes are batched. */
                         return flushSync(() => setState({ visible: false }));
                     case IFramePortMessageType.IFRAME_OPEN:
-                        return setState({ visible: true });
+                        return flushSync(() => setState({ visible: true }));
                     case IFramePortMessageType.IFRAME_THEME:
                         return theme.setState(message.payload);
                     case WorkerMessageType.SETTINGS_UPDATE:
