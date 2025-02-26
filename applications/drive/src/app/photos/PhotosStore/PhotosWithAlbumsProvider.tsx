@@ -7,6 +7,7 @@ import {
     queryAlbums,
     queryDeletePhotosShare,
     queryPhotos,
+    queryRemoveAlbumPhotos,
     queryUpdateAlbum,
 } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
@@ -55,6 +56,7 @@ export const PhotosWithAlbumsContext = createContext<{
     loadAlbums: (abortSignal: AbortSignal) => void;
     removePhotosFromCache: (linkIds: string[]) => void;
     deletePhotosShare: () => Promise<void>;
+    removeAlbumPhotos: (abortSignal: AbortSignal, albumId: string, linkIds: string[]) => Promise<void>;
 } | null>(null);
 
 export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children }) => {
@@ -327,6 +329,17 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         await request(queryDeletePhotosShare(volumeId, shareId));
     }, [request, volumeId, shareId]);
 
+    const removeAlbumPhotos = useCallback(
+        async (abortSignal: AbortSignal, albumId: string, linkIds: string[]) => {
+            if (!volumeId) {
+                return;
+            }
+            await request(queryRemoveAlbumPhotos(volumeId, albumId, { LinkIDs: linkIds }), abortSignal);
+            setAlbumPhotos((prevPhotos) => prevPhotos.filter((photo) => !linkIds.includes(photo.linkId)));
+        },
+        [request, volumeId]
+    );
+
     return (
         <PhotosWithAlbumsContext.Provider
             value={{
@@ -347,6 +360,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 loadPhotos,
                 removePhotosFromCache,
                 deletePhotosShare,
+                removeAlbumPhotos,
             }}
         >
             {children}
