@@ -24,7 +24,6 @@ const PhotosDetailsButton = ({ selectedLinks }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Details`}
-                icon={<Icon name="info-circle" alt={c('Action').t`Details`} />}
                 onClick={() => {
                     if (selectedLinks.length === 1) {
                         void showDetailsModal({
@@ -36,7 +35,10 @@ const PhotosDetailsButton = ({ selectedLinks }: Props) => {
                     }
                 }}
                 data-testid="toolbar-details"
-            />
+            >
+                <Icon name="info-circle" className="mr-2" />
+                {c('Action').t`Details`}
+            </ToolbarButton>
             {detailsModal}
             {filesDetailsModal}
         </>
