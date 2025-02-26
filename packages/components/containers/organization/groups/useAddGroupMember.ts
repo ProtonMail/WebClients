@@ -19,6 +19,7 @@ import type {
     DecryptedAddressKey,
     DecryptedKey,
     EnhancedMember,
+    GetAllPublicKeysResponse,
     KeyPair,
     ProxyInstances,
 } from '@proton/shared/lib/interfaces';
@@ -148,7 +149,7 @@ const useAddGroupMember = () => {
             throw new Error('Member addresses are undefined');
         }
 
-        const forwardeeAddress = memberAddresses.find(({ Email }) => Email === memberEmail) as Address | undefined; // can cast to Address as addressState is full
+        const forwardeeAddress = memberAddresses.find(({ Email }) => Email === memberEmail);
 
         const [forwarderKey, forwardeeKeysConfig, forwardeeAddressKeysResult] = await Promise.all([
             getGroupAddressKey(groupAddress, organizationPrivateKey).catch(noop),
@@ -156,7 +157,7 @@ const useAddGroupMember = () => {
             // note: we might be able to remove the getter below, by changing getMemberPublicKeys
             // to also return keys for internal type external; or using a different function,
             // but there is no time for that
-            silentApi(
+            silentApi<GetAllPublicKeysResponse>(
                 getAllPublicKeys({
                     Email: memberEmail,
                     InternalOnly: 1,
@@ -165,7 +166,7 @@ const useAddGroupMember = () => {
         ]);
         let forwardeeAddressKeys;
         if (forwardeeAddressKeysResult !== undefined) {
-            forwardeeAddressKeys = (forwardeeAddressKeysResult as any)?.Address?.Keys;
+            forwardeeAddressKeys = forwardeeAddressKeysResult.Address.Keys;
         }
 
         if (forwarderKey === undefined) {

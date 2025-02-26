@@ -13,7 +13,7 @@ import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import GroupForm from './GroupForm';
 import GroupList from './GroupList';
-import useGroupsManagement, { INITIAL_FORM_VALUES } from './useGroupsManagement';
+import useGroupsManagement from './useGroupsManagement';
 
 import './OrganizationGroupsManagementSection.scss';
 
@@ -27,21 +27,12 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     if (!groupsManagement) {
         return <Loader />;
     }
-    const { groups } = groupsManagement;
-    const { form, setUiState, domainData, setSelectedGroup } = groupsManagement;
-    const { customDomains } = domainData;
-    const { resetForm, values: formValues } = form;
+    const {
+        groups,
+        domainData: { customDomains },
+        actions,
+    } = groupsManagement;
     const hasAtLeastOneVerifiedCustomDomain = customDomains?.some(getIsDomainActive);
-
-    const newGroupData = {
-        ID: 'new',
-        Name: formValues.name || c('Empty group name').t`Unnamed`,
-        Description: formValues.description,
-        Address: {
-            Email: formValues.address || '',
-        },
-        MemberCount: undefined,
-    };
 
     const linkToDomainPage = (
         <SettingsLink key="link-to-domain-page" path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>
@@ -77,11 +68,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                 className="group-button flex flex-row flex-nowrap items-center px-3"
                 disabled={!hasAtLeastOneVerifiedCustomDomain || canOnlyDelete}
                 onClick={() => {
-                    setUiState('new');
-                    resetForm({
-                        values: INITIAL_FORM_VALUES,
-                    });
-                    setSelectedGroup(newGroupData);
+                    actions.onCreateGroup();
                 }}
             >
                 <Icon className="shrink-0 mr-2" name="plus" />
