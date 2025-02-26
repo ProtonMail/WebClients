@@ -98,7 +98,7 @@ export const createAutofillService = () => {
     };
 
     const autofillPassword = withContext<(form: FormHandle, password: string) => void>((ctx, form, password) => {
-        const url = ctx?.getExtensionContext().url;
+        const url = ctx?.getExtensionContext()?.url;
         if (!url) return;
 
         form.getFieldsFor(FieldType.PASSWORD_NEW).forEach((field) => field.autofill(password));

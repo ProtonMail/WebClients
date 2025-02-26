@@ -83,7 +83,7 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
             if (!ctx) return;
 
             const { authorized } = ctx.getState();
-            const { url } = ctx.getExtensionContext();
+            const url = ctx.getExtensionContext()?.url;
             const domain = url ? resolveDomain(url) : null;
 
             if (!domain) return;
