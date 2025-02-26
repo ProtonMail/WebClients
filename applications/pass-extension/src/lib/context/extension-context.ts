@@ -38,6 +38,7 @@ export const ExtensionContext = contextHandlerFactory<ExtensionContextType>('ext
 
 export const setupExtensionContext = async (options: ExtensionContextOptions): Promise<ExtensionContextType> => {
     const message = resolveMessageFactory(options.endpoint);
+    const logCtx = `Context::Extension::${options.endpoint}`;
 
     try {
         const { tabId, url } = await sendMessage.on(
@@ -54,11 +55,11 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
         const name = generatePortName(options.endpoint, tabId);
         const port = browser.runtime.connect(browser.runtime.id, { name });
 
-        logger.info('[Context::Extension] tabId resolved & port opened');
+        logger.info(`[${logCtx}] tabId resolved & port opened`);
 
         const onPortDisconnect = async () => {
             const { recycle } = options.onDisconnect();
-            logger.info(`[Context::Extension] port disconnected [reconnect=${recycle}]`);
+            logger.info(`[${logCtx}] port disconnected [reconnect=${recycle}]`);
 
             if (recycle) {
                 try {
@@ -72,7 +73,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
                     const ctx = await setupExtensionContext(options);
                     return options.onRecycle?.(ctx);
                 } catch {
-                    logger.info(`[Context::Extension] Recycling context failed`);
+                    logger.info(`[${logCtx}] Recycling context failed`);
                 }
             }
         };
@@ -83,7 +84,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
 
         return ExtensionContext.set({ endpoint: options.endpoint, port, tabId, url, destroy });
     } catch (error) {
-        logger.info('[Context::Extension]', error);
+        logger.info(`[${logCtx}] fatal error`, error);
 
         ExtensionContext.clear();
         options.onError?.(error);
