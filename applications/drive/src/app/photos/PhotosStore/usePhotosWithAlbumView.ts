@@ -61,6 +61,7 @@ export const usePhotosWithAlbumsView = () => {
         loadAlbumPhotos,
         removePhotosFromCache,
         addPhotoAsCover,
+        removeAlbumPhotos,
     } = usePhotosWithAlbums();
     const { addToQueue } = useLinksQueue({ loadThumbnails: true });
     const { download } = useDownloadProvider();
@@ -425,5 +426,6 @@ export const usePhotosWithAlbumsView = () => {
         addAlbumPhoto,
         addAlbumPhotos,
         setPhotoAsCover,
+        removeAlbumPhotos,
     };
 };

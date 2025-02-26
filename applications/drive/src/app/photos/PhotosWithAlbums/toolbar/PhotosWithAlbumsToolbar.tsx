@@ -20,9 +20,11 @@ import type { OnFileUploadSuccessCallbackData, PhotoGridItem, PhotoLink } from '
 import { isPhotoGroup } from '../../../store/_photos';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
+import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosMakeCoverButton } from './PhotosMakeCoverButton';
 import { PhotosPreviewButton } from './PhotosPreviewButton';
+import { PhotosRemoveAlbumPhotosButton } from './PhotosRemoveAlbumPhotosButton';
 import PhotosShareLinkButton from './PhotosShareLinkButton';
 import PhotosTrashButton from './PhotosTrashButton';
 import { PhotosUploadButton } from './PhotosUploadButton';
@@ -255,6 +257,7 @@ interface PhotosWithAlbumToolbarProps {
     tabSelection: 'albums' | 'gallery' | 'albums-gallery';
     createAlbumModal: ModalStateReturnObj;
     addAlbumPhotosModal?: ModalStateReturnObj;
+    removeAlbumPhotos?: () => Promise<void>;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onSelectCover?: () => Promise<void>;
     album?: DecryptedAlbum;
@@ -271,6 +274,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     tabSelection,
     createAlbumModal,
     addAlbumPhotosModal,
+    removeAlbumPhotos,
     onFileUpload,
     onSelectCover,
     album,
@@ -310,14 +314,15 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                 <PhotosMakeCoverButton onSelectCover={onSelectCover} />
                             )}
                         {!hasMultipleSelected && <PhotosShareLinkButton selectedLinks={selectedItems} />}
-                        {/* kept in case
-                        <Vr />
-                        <PhotosDetailsButton selectedLinks={selectedItems} />
-                        <Vr />*/}
+                        {!hasMultipleSelected && <PhotosDetailsButton selectedLinks={selectedItems} />}
                         {addAlbumPhotosModal && (
                             <PhotosAddAlbumPhotosButton onClick={() => addAlbumPhotosModal.openModal(true)} />
                         )}
-                        <PhotosTrashButton selectedLinks={selectedItems} />
+                        {/* <Vr />
+                        <PhotosDetailsButton selectedLinks={selectedItems} />
+                        <Vr />*/}
+                        {album && removeAlbumPhotos && <PhotosRemoveAlbumPhotosButton onClick={removeAlbumPhotos} />}
+                        {!album && <PhotosTrashButton selectedLinks={selectedItems} />}
                     </>
                 )}
             </div>
