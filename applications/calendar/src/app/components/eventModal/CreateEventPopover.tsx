@@ -45,6 +45,8 @@ interface Props {
     view: VIEWS;
 }
 
+const MAX_OFFSCREEN_OFFSET = 20;
+
 const CreateEventPopover = ({
     model,
     setModel,
@@ -140,11 +142,22 @@ const CreateEventPopover = ({
             return;
         }
 
-        // When there's an existing offset and added content e.g. a participant group
-        // causes the popover to go off screen, we adjust the offset to stick to the top
-        if (formRect.top < 0 && offset.y && !isDragging) {
-            // Debouncing lets us have a slightly better flicker
-            debounce(() => setOffset((prevState) => ({ ...prevState, y: prevState.y - formRect.top })), 50)();
+        // Only adjust if the form is significantly off-screen (more than 20px)
+        // and not being actively dragged
+        if (formRect.top < -MAX_OFFSCREEN_OFFSET && offset.y && !isDragging) {
+            const viewportHeight = window.innerHeight;
+
+            // Calculate the maximum allowed upward offset to keep the form partially visible
+            const maxUpwardOffset = -(viewportHeight - 100); // Keep at least 100px visible
+
+            // Calculate new offset while ensuring form stays partially visible
+            const proposedOffset = offset.y - formRect.top;
+            const boundedOffset = Math.max(maxUpwardOffset, Math.min(0, proposedOffset));
+
+            // Only update if the change is significant
+            if (Math.abs(boundedOffset - offset.y) > MAX_OFFSCREEN_OFFSET) {
+                debounce(() => setOffset((prevState) => ({ ...prevState, y: boundedOffset })), 50)();
+            }
         }
     }, [formRect?.top]);
 
