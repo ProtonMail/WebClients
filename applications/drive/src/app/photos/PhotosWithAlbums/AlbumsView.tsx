@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import React, { useCallback, useState } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Loader, useAppTitle, useModalStateObject } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -17,9 +17,7 @@ import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { AlbumsGrid } from './AlbumsGrid';
 import { EmptyAlbums } from './EmptyAlbums';
-import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
-import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
 // TODO: Move in separate file once it's completed
@@ -40,19 +38,9 @@ const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[]
 
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
-    const {
-        volumeId,
-        shareId,
-        linkId,
-        photos,
-        albums,
-        isPhotosLoading,
-        loadPhotoLink,
-        photoLinkIdToIndexMap,
-        requestDownload,
-    } = usePhotosWithAlbumsView();
+    const { volumeId, shareId, linkId, albums, isPhotosLoading, loadPhotoLink, requestDownload } =
+        usePhotosWithAlbumsView();
 
-    const { selectedItems, clearSelection } = usePhotosSelection(photos, photoLinkIdToIndexMap);
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const createAlbumModal = useModalStateObject();
     // TODO: [linkSharingModal, showLinkSharingModal] enable link sharing modal for albums
@@ -77,8 +65,6 @@ export const AlbumsView: FC = () => {
             thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
         }
     };
-
-    const selectedCount = selectedItems.length;
 
     const onCreateAlbum = useCallback(
         async (name: string) => {
@@ -112,35 +98,12 @@ export const AlbumsView: FC = () => {
                 withPadding={false}
                 titleArea={
                     <>
-                        {selectedCount > 0 && (
-                            <span className="flex items-center text-strong pl-1">
-                                <div className="flex gap-2" data-testid="photos-selected-count">
-                                    <PhotosClearSelectionButton onClick={clearSelection}>
-                                        {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
-                                        <span aria-live="polite" aria-atomic="true">
-                                            {c('Info').ngettext(
-                                                msgid`${selectedCount} selected`,
-                                                `${selectedCount} selected`,
-                                                selectedCount
-                                            )}
-                                        </span>
-                                    </PhotosClearSelectionButton>
-                                </div>
-                            </span>
-                        )}
-
-                        {selectedCount === 0 && (
-                            <ToolbarLeftActionsGallery
-                                onGalleryClick={() => {
-                                    navigateToPhotos();
-                                }}
-                                onAlbumsClick={() => {
-                                    navigateToAlbums();
-                                }}
-                                isLoading={isPhotosLoading}
-                                selection={'albums'}
-                            />
-                        )}
+                        <ToolbarLeftActionsGallery
+                            onGalleryClick={navigateToPhotos}
+                            onAlbumsClick={navigateToAlbums}
+                            isLoading={isPhotosLoading}
+                            selection={'albums'}
+                        />
                     </>
                 }
                 toolbar={
@@ -148,7 +111,7 @@ export const AlbumsView: FC = () => {
                         shareId={shareId}
                         linkId={linkId}
                         data={albums}
-                        selectedItems={selectedItems}
+                        selectedItems={[]}
                         requestDownload={requestDownload}
                         uploadDisabled={true}
                         tabSelection={'albums'}
