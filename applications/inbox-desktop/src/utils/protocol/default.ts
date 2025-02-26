@@ -12,6 +12,7 @@ export function checkDefaultProtocols() {
     checkDefaultMailto();
 }
 
+let defaultBannerDismissed = false;
 let defaultMailto: DefaultProtocol = {
     isDefault: false,
     wasChecked: false,
@@ -97,5 +98,13 @@ export function setDefaultMailtoApp() {
     defaultMailto.shouldBeDefault = true;
     storeDefaultProtocol("mailto", defaultMailto);
 }
+
+export const getDefaultMailtoBannerDismissed = () => {
+    return defaultBannerDismissed;
+};
+
+export const setDefaultMailtoBannerDismissed = (dismissed: boolean) => {
+    defaultBannerDismissed = dismissed;
+};
 
 export const getDefaultMailto = () => defaultMailto;
