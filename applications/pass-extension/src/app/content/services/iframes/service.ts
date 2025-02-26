@@ -36,10 +36,14 @@ export interface IFrameService {
     attachDropdown: (anchor: HTMLElement) => MaybeNull<InjectedDropdown>;
     attachNotification: () => MaybeNull<InjectedNotification>;
     destroy: () => void;
-    ensureInteractive: (anchor?: HTMLElement) => void;
+    ensureInteractive: (anchor: MaybeNull<HTMLElement>, killswitch: boolean) => void;
     init: (rootAnchor?: HTMLElement) => ProtonPassRoot;
     setTheme: (theme?: PassThemeOption) => void;
 }
+
+const shouldUsePopover = withContext<() => boolean>((ctx) => {
+    return POPOVER_SUPPORTED && !(ctx?.getFeatureFlags().PassContentScriptPopoverKillSwitch ?? false);
+});
 
 export const createIFrameService = (elements: PassElementsConfig) => {
     const listeners = createListenerStore();
@@ -88,14 +92,16 @@ export const createIFrameService = (elements: PassElementsConfig) => {
          * into the appropriate DOM subtree. When given an anchor, finds the modal
          * containing that element. Without an anchor, targets the topmost active modal.
          * Falls back to `document.body` when no modal context exists.  */
-        ensureInteractive: (anchor?) => {
-            if (POPOVER_SUPPORTED && state.root) {
-                const { root } = state;
-                const parent = (anchor ? getClosestModal(anchor) : getActiveModal()) ?? document.body;
-                if (root && root.parentElement !== parent) {
+        ensureInteractive: (anchor, usePopover) => {
+            if (usePopover) {
+                const activeRoot = state.root;
+                const nextParent = (anchor ? getClosestModal(anchor) : getActiveModal()) ?? document.body;
+                const parent = activeRoot?.parentElement;
+
+                if (parent !== nextParent) {
                     service.destroy();
-                    root.parentElement?.removeChild(root);
-                    service.init(parent);
+                    if (activeRoot) parent?.removeChild(activeRoot);
+                    service.init(nextParent);
                 }
             }
         },
@@ -139,12 +145,13 @@ export const createIFrameService = (elements: PassElementsConfig) => {
         attachDropdown: withContext((ctx, anchor) => {
             if (!ctx) return null;
 
-            service.ensureInteractive(anchor);
+            const usePopover = shouldUsePopover();
+            service.ensureInteractive(anchor, usePopover);
 
             if (state.apps.dropdown === null) {
                 logger.info(`[ContentScript::${ctx.scriptId}] attaching dropdown iframe`);
                 state.apps.dropdown = createDropdown({
-                    popover: createPopoverController(service),
+                    popover: createPopoverController(service, usePopover),
                     onDestroy: () => (state.apps.dropdown = null),
                 });
 
@@ -157,12 +164,14 @@ export const createIFrameService = (elements: PassElementsConfig) => {
         attachNotification: withContext((ctx) => {
             if (!ctx) return null;
 
-            service.ensureInteractive();
+            const usePopover = shouldUsePopover();
+            service.ensureInteractive(null, usePopover);
 
             if (state.apps.notification === null) {
                 logger.info(`[ContentScript::${ctx.scriptId}] attaching notification iframe`);
+
                 state.apps.notification = createNotification({
-                    popover: createPopoverController(service),
+                    popover: createPopoverController(service, usePopover),
                     onDestroy: () => (state.apps.notification = null),
                 });
 
