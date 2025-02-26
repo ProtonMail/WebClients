@@ -1,4 +1,5 @@
-import { differenceInDays, differenceInHours, fromUnixTime } from 'date-fns';
+import { addDays, differenceInDays, differenceInHours, fromUnixTime } from 'date-fns';
+import startOfDay from 'date-fns/startOfDay';
 
 import { HIDE_OFFER, OfferDuration, ReminderDates, ReminderMaxHours } from '../components/interface';
 
@@ -28,4 +29,17 @@ export const roundToUpper = (number: number): number => {
     const numberOfDigits = number.toString().length;
     const roundingFactor = Math.pow(10, numberOfDigits - 2);
     return Math.ceil(number / roundingFactor) * roundingFactor;
+};
+
+export const getWindowEndDate = (subscriptionAge: number) => {
+    const currentWindow = Object.values(ReminderDates).find((value) => {
+        return subscriptionAge >= value && subscriptionAge <= value + OfferDuration;
+    });
+
+    if (!currentWindow) {
+        return null;
+    }
+
+    const daysRemainingInWindow = currentWindow + OfferDuration - subscriptionAge;
+    return startOfDay(addDays(Date.now(), daysRemainingInWindow));
 };
