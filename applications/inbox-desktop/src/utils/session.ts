@@ -5,7 +5,7 @@ import { ALLOWED_PERMISSIONS } from "../constants";
 import { mainLogger } from "./log";
 import { getMailView } from "./view/viewManagement";
 
-export const appSession = () => session.fromPartition("persist:app", { cache: false });
+export const appSession = () => session.fromPartition("persist:app", { cache: true });
 export const updateSession = () => session.fromPartition("persist:update", { cache: false });
 
 export const setRequestPermission = () => {
