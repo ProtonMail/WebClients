@@ -98,21 +98,18 @@ export const ToolbarLeftActionsGallery = ({
         },
     ];
 
-    const handleClick = (tab: TabOption) => {
-        tab.onClick();
-    };
-
     return (
         <nav className="ml-2 flex flex-row flex-nowrap gap-4">
             {tabs.map((tab) => (
                 <InlineLinkButton
+                    key={tab.id}
                     disabled={isLoading}
                     aria-pressed={tab.id === selection}
                     className={clsx(
                         'h3 inline-flex text-bold',
-                        tab.id === selection ? 'text-no-decoration color-weak hover:color-norm' : 'color-inherit'
+                        tab.id === selection ? 'color-inherit' : 'text-no-decoration color-weak hover:color-norm'
                     )}
-                    onClick={() => handleClick(tab)}
+                    onClick={() => tab.onClick()}
                 >
                     {tab.label}
                 </InlineLinkButton>
