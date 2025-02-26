@@ -33,6 +33,7 @@ interface Props {
     isScribeEnabled?: boolean;
     isZoomIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
+    isAccessControlEnabled: boolean;
 }
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
@@ -49,6 +50,7 @@ export const getOrganizationAppRoutes = ({
     isScribeEnabled,
     isZoomIntegrationEnabled,
     isSharedServerFeatureEnabled,
+    isAccessControlEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -108,7 +110,7 @@ export const getOrganizationAppRoutes = ({
         user.hasPaidMail &&
         videoConferenceValidApplications.has(app);
 
-    const canShowAccessControl = hasSubUsers || hasOrganization || hasOrganizationKey;
+    const canShowAccessControl = isAccessControlEnabled && (hasSubUsers || hasOrganization || hasOrganizationKey);
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`

@@ -83,6 +83,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const { User, Organization } = session;
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
+    const isAccessControlEnabled = useFlag('AccessControl');
 
     const subscribed = User.Subscribed;
 
@@ -127,6 +128,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                             user: User,
                             organization: Organization,
                             isLumoAvailable,
+                            isAccessControlEnabled,
                         })}
                         onExplore={async (app) => {
                             await onLogin({
