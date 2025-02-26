@@ -86,3 +86,15 @@ export const queryCreateAlbum = (volumeId: string, data: any) => ({
     url: `drive/photos/volumes/${volumeId}/albums`,
     data,
 });
+
+export const queryRemoveAlbumPhotos = (
+    volumeId: string,
+    albumLinkId: string,
+    data: {
+        LinkIDs: string[];
+    }
+) => ({
+    method: 'POST',
+    url: `drive/photos/volumes/${volumeId}/albums/${albumLinkId}/remove-multiple`,
+    data,
+});
