@@ -28,7 +28,7 @@ import SharedServersTypeButton from './SharedServersTypeButton';
 import { useSharedServers } from './useSharedServers';
 
 const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
-    const { loading, locations, policies, refresh } = useSharedServers(maxAge);
+    const { loading, locations, policies, refresh, users, countUsersNotInAnyPolicy } = useSharedServers(maxAge);
     const [policyType, setPolicyType] = useState<PolicyType>(PolicyType.None);
     const customPolicies = useMemo(() => policies.filter((policy) => policy.Type === PolicyType.Custom), [policies]);
     const [userSettings] = useUserSettings();
@@ -45,8 +45,8 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
         return <Loader />;
     }
 
-    const amountUsers = 55; // TODO
-    const totalUsers = 55; // TODO
+    const amountUsers = users.length - countUsersNotInAnyPolicy;
+    const totalUsers = users.length;
 
     return (
         <SettingsSectionWide>
