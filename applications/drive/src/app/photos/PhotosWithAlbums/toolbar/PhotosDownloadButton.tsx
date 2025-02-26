@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
@@ -24,14 +24,14 @@ export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks
 
     return (
         <ToolbarButton
-            title={c('Action').t`Download photos`}
+            title={c('Action').ngettext(msgid`Download photo`, `Download photos`, selectedLinks.length)}
             disabled={loading}
             onClick={onClick}
-            data-testid="toolbar-download"
+            data-testid="toolbar-download-selection"
             className="inline-flex flex-nowrap flex-row items-center"
         >
             <Icon name="arrow-down-line" className="mr-2" />
-            {c('Action').t`Download photos`}
+            {c('Action').ngettext(msgid`Download photo`, `Download photos`, selectedLinks.length)}
         </ToolbarButton>
     );
 };
