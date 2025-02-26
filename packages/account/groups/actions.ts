@@ -58,15 +58,15 @@ const saveGroup =
                 Flags: groupPayload.flags,
             } as const;
 
-            let group;
+            let group: Group;
 
             if (editMode) {
                 if (groupPayload.id === undefined) {
                     throw new Error('Missing group ID');
                 }
-                group = (await api(editGroupCall(groupPayload.id, groupData))).Group;
+                group = (await api<{ Group: Group }>(editGroupCall(groupPayload.id, groupData))).Group;
             } else {
-                group = (await api(createGroupCall(groupData))).Group;
+                group = (await api<{ Group: Group }>(createGroupCall(groupData))).Group;
             }
 
             const cachedOrganizationKey = await dispatch(organizationKeyThunk());

@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button, Input, Scroll } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { Group } from '@proton/shared/lib/interfaces';
-import { GroupPermissions } from '@proton/shared/lib/interfaces';
 
 import GroupItem from './GroupItem';
 import type { GroupsManagementReturn } from './types';
@@ -28,11 +27,9 @@ const getSortedGroups = (input: string, groups: Group[]) => {
 };
 
 const GroupList = ({
-    groupsManagement: { uiState, form, setUiState, setSelectedGroup, groups, selectedGroup, domainData, onDeleteGroup },
+    groupsManagement: { uiState, groups, selectedGroup, actions, getSerializedGroup },
     canOnlyDelete,
 }: Props) => {
-    const { selectedDomain } = domainData;
-    const { resetForm, values: formValues } = form;
     const [input, setInput] = useState<string>('');
 
     const sideBarPlaceholder = (
@@ -46,17 +43,8 @@ const GroupList = ({
         </div>
     );
 
-    const newGroupData = {
-        ID: 'new',
-        Name: formValues.name === '' ? c('Empty group name').t`Unnamed` : formValues.name,
-        Description: formValues.description,
-        Address: {
-            Email: formValues.address !== '' ? `${formValues.address}@${selectedDomain}` : '',
-        },
-        MemberCount: undefined,
-    };
-
     const sortedGroups = getSortedGroups(input.toLowerCase(), groups);
+    const serializedGroup = getSerializedGroup();
 
     return (
         <>
@@ -78,29 +66,24 @@ const GroupList = ({
             {uiState !== 'new' && groups.length === 0 && sideBarPlaceholder}
             <Scroll className="mr-4">
                 {uiState === 'new' && (
-                    <GroupItem key="new" active groupData={newGroupData} isNew={true} canOnlyDelete={canOnlyDelete} />
-                )}
-                {sortedGroups.map((groupData) => (
                     <GroupItem
-                        key={groupData.ID}
-                        groupData={groupData}
-                        active={groupData.ID === selectedGroup?.ID}
+                        key="new"
+                        active
+                        serializedGroup={serializedGroup}
+                        isNew={true}
+                        canOnlyDelete={canOnlyDelete}
+                    />
+                )}
+                {sortedGroups.map((group) => (
+                    <GroupItem
+                        key={group.ID}
+                        group={group}
+                        active={group.ID === selectedGroup?.ID}
+                        serializedGroup={serializedGroup?.payload.id === group.ID ? serializedGroup : undefined}
                         onClick={() => {
-                            if (groupData) {
-                                setSelectedGroup(groupData);
-                            }
-                            setUiState('view');
-                            resetForm({
-                                values: {
-                                    name: groupData.Name,
-                                    description: groupData.Description,
-                                    address: groupData.Address.Email,
-                                    permissions: groupData.Permissions ?? GroupPermissions.NobodyCanSend,
-                                    members: '',
-                                },
-                            });
+                            actions.onViewGroup(group);
                         }}
-                        onDeleteGroup={onDeleteGroup}
+                        onDeleteGroup={actions.onDeleteGroup}
                         canOnlyDelete={canOnlyDelete}
                     />
                 ))}

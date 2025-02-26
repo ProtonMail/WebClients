@@ -27,7 +27,7 @@ export interface Group {
     ID: string;
     Name: string;
     Description: string;
-    Address: Address | { Email: string; ID?: string };
+    Address: Address;
     CreateTime?: number;
     Permissions?: GroupPermissions;
     Flags?: GroupFlags;

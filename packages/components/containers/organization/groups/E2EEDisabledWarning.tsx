@@ -4,7 +4,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Address, Group, GroupMember } from '@proton/shared/lib/interfaces';
+import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
 
 import type { NewGroupMember } from './EditGroup';
@@ -19,11 +19,11 @@ const E2EEDisabledWarning = ({
 }: {
     groupMembers: GroupMember[];
     loadingGroupMembers: boolean;
-    group: Group;
+    group?: Group;
     groupsManagement: GroupsManagementReturn;
     newGroupMembers?: NewGroupMember[];
 }) => {
-    const groupAddressID = group.Address.ID;
+    const groupAddressID = group?.Address.ID;
     const groupAddress = groupsManagement.groups.find(({ Address: { ID } }) => ID === groupAddressID)?.Address;
 
     if (loadingGroupMembers) {
@@ -37,8 +37,8 @@ const E2EEDisabledWarning = ({
     );
 
     if (groupAddress !== undefined) {
-        const [groupAddressKey] = (groupAddress as Address).Keys;
-        isE2EEEnabled = !hasBit(groupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
+        const primaryGroupAddressKey = groupAddress.Keys[0];
+        isE2EEEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
     } else {
         // group doesn't exist, so we're creating a new one
         isE2EEEnabled = !newGroupMembersHasExternal;

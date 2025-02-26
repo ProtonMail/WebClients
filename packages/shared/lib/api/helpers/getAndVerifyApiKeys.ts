@@ -2,10 +2,11 @@ import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import { verifyOutboundPublicKeys } from '@proton/key-transparency/lib/helpers/verifyOutboundPublicKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { API_KEY_SOURCE } from '../../constants';
 import type {
     Api,
+    ApiAddressKey,
     FetchedSignedKeyList,
+    GetAllPublicKeysResponse,
     KTUserContext,
     KeyTransparencyVerificationResult,
     ProcessedApiKey,
@@ -25,13 +26,6 @@ export interface ApiKeysWithKTStatus {
     hasValidProtonMX?: boolean;
     Code?: number;
     Warnings?: string[];
-}
-
-interface ApiAddressKey {
-    PublicKey: string;
-    Flags: number;
-    Source: API_KEY_SOURCE;
-    Primary: 1 | 0;
 }
 
 const importKeys = async (
@@ -81,23 +75,7 @@ export const getAndVerifyApiKeys = async ({
     if (noCache) {
         config.cache = 'no-cache';
     }
-    const { Address, CatchAll, Unverified, ProtonMX, ...rest } = await api<{
-        Address: {
-            Keys: ApiAddressKey[];
-            SignedKeyList: FetchedSignedKeyList | null;
-        };
-        CatchAll:
-            | {
-                  Keys: ApiAddressKey[];
-                  SignedKeyList: FetchedSignedKeyList | null;
-              }
-            | undefined;
-        Unverified: {
-            Keys: ApiAddressKey[];
-        };
-        ProtonMX: boolean;
-        Warnings: string[];
-    }>(config);
+    const { Address, CatchAll, Unverified, ProtonMX, ...rest } = await api<GetAllPublicKeysResponse>(config);
     const addressKeys = await importKeys(Address.Keys);
     // unverified keys include WKD ones, hence we check compatibility (NB: internal users with v6 keys won't have unverified keys);
     // we can accept WKD v6 keys here since they the web-client can encrypt emails to them, and pinning such keys is only possible for users who have opted in v6 support.
