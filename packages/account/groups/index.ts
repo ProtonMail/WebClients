@@ -95,10 +95,6 @@ const slice = createSlice({
 
             const groupAddress = group.Address;
 
-            if (!('Keys' in groupAddress)) {
-                return;
-            }
-
             const groupAddressKeys = groupAddress.Keys;
             const flags = groupAddressKeys[0].Flags;
             const bit = KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT;

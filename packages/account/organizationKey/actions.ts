@@ -672,9 +672,10 @@ const getReEncryptedGroupAddressKeyTokens = async ({
 }): Promise<GroupAddressKeyToken[]> => {
     return Promise.all(
         groups.map(async ({ Address: address }) => {
-            const {
-                Keys: [primaryAddressKey],
-            } = address as Address;
+            const primaryAddressKey = address.Keys[0];
+            if (!primaryAddressKey) {
+                return null;
+            }
             const { encryptedToken: Token, signature: OrgSignature } = await reencryptAddressKeyTokenUsingOrgKey(
                 primaryAddressKey,
                 oldOrganizationKey,
@@ -686,7 +687,7 @@ const getReEncryptedGroupAddressKeyTokens = async ({
                 OrgSignature,
             };
         })
-    );
+    ).then((groupAddressKeyTokens) => groupAddressKeyTokens.filter(isTruthy));
 };
 
 const updateGroups = ({
@@ -699,8 +700,11 @@ const updateGroups = ({
     dispatch: ThunkDispatch<RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction>;
 }) => {
     for (const group of groups) {
-        const address = group.Address as Address;
-        const [primaryAddressKey] = address.Keys;
+        const address = group.Address;
+        const primaryAddressKey = address.Keys[0];
+        if (!primaryAddressKey) {
+            continue;
+        }
         const groupAddressKeyToken = GroupAddressKeyTokens.find(({ ID }) => ID === primaryAddressKey.ID);
         if (!groupAddressKeyToken) {
             continue;

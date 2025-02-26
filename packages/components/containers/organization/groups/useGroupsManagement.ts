@@ -19,23 +19,15 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { deleteGroup } from '@proton/shared/lib/api/groups';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Address, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 
-import type { GroupsManagementReturn } from './types';
+import type { GroupFormData, GroupsManagementReturn } from './types';
 import usePmMeDomain from './usePmMeDomain';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
 
-type FormValues = {
-    name: string;
-    description: string;
-    address: string;
-    permissions: number;
-    members: string;
-};
-
-export const INITIAL_FORM_VALUES = {
+const INITIAL_FORM_VALUES: GroupFormData = {
     name: '',
     description: '',
     address: '',
@@ -55,6 +47,18 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const addGroupMember = useAddGroupMember();
     const pmMeDomain = usePmMeDomain();
+
+    const addressToMemberMap = useMemo(() => {
+        const value: { [id: string]: EnhancedMember | undefined } = {};
+        for (const member of members ?? []) {
+            if (member.Addresses) {
+                for (const address of member.Addresses) {
+                    value[address.ID] = member;
+                }
+            }
+        }
+        return value;
+    }, [members]);
 
     const getSuggestedAddressDomainName = () => {
         if (!organization) {
@@ -109,7 +113,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         validateOnChange: true,
         validateOnMount: false,
         validate: ({ name, address }) => {
-            const errors: FormikErrors<FormValues> = {};
+            const errors: FormikErrors<GroupFormData> = {};
             const nameError = requiredValidator(name);
             const addressError = emailValidator(`${address}@${selectedDomain}`);
             if (requiredValidator(name)) {
@@ -127,6 +131,27 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     if (!organization || loadingGroups || !groups || !members || !pmMeDomain || !selectedDomain) {
         return undefined;
     }
+
+    const getSerializedGroup: GroupsManagementReturn['getSerializedGroup'] = () => {
+        const allowedTypes = uiState === 'new' || uiState === 'edit';
+        if (!allowedTypes) {
+            return;
+        }
+        const email =
+            uiState === 'new' && formValues.address ? `${formValues.address}@${selectedDomain}` : formValues.address;
+        return {
+            type: uiState,
+            payload: {
+                id: selectedGroup?.ID,
+                name: formValues.name,
+                email,
+                domain: selectedDomain,
+                description: formValues.description,
+                permissions: formValues.permissions,
+                flags: GroupFlags.None,
+            },
+        };
+    };
 
     const onDeleteGroup = async () => {
         if (!selectedGroup) {
@@ -146,16 +171,17 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     };
 
     const handleSaveGroup = async (newEmails: string[]) => {
-        if (!selectedGroup) {
-            return;
+        const serializedGroup = getSerializedGroup();
+        if (!serializedGroup) {
+            throw new Error('Unexpected save group state');
         }
 
-        const isNewGroup = uiState === 'new';
-        const formEmailAndDomain = `${formValues.address}@${selectedDomain}`;
+        const { type, payload } = serializedGroup;
+        const isNewGroup = type === 'new';
 
         if (isNewGroup) {
             // Check address availablity if address changed - not supported when in edit mode yet
-            if (selectedGroup?.Address.Email !== formEmailAndDomain) {
+            if (selectedGroup?.Address.Email !== payload.email) {
                 await api(
                     checkMemberAddressAvailability({
                         Local: formValues.address,
@@ -171,15 +197,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         const Group = await dispatch(
             apiEndpoint({
                 api: api,
-                group: {
-                    id: selectedGroup.ID,
-                    name: formValues.name,
-                    email: isNewGroup ? formEmailAndDomain : formValues.address,
-                    domain: selectedDomain,
-                    description: formValues.description,
-                    permissions: formValues.permissions,
-                    flags: GroupFlags.None,
-                },
+                group: payload,
                 keyTransparencyVerify,
             })
         );
@@ -191,7 +209,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         }
 
         const addMembersPromises = newEmails.map((email) =>
-            addGroupMember({ ID: Group.ID, Address: Group.Address as Address }, email).catch((error) => {
+            addGroupMember({ ID: Group.ID, Address: Group.Address }, email).catch((error) => {
                 console.error(`Failed to add recipient ${email}:`, error);
             })
         );
@@ -207,6 +225,48 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         setSelectedGroup(Group);
     };
 
+    const handleEditGroup = (group: Group) => {
+        setUiState('edit');
+        resetForm({
+            values: {
+                name: group.Name,
+                description: group.Description,
+                address: group.Address.Email,
+                permissions: group.Permissions ?? GroupPermissions.EveryoneCanSend,
+                members: '',
+            },
+        });
+    };
+
+    const handleViewGroup = (group: Group) => {
+        setSelectedGroup(group);
+        setUiState('view');
+        resetForm({
+            values: {
+                name: group.Name,
+                description: group.Description,
+                address: group.Address.Email,
+                permissions: group.Permissions ?? GroupPermissions.NobodyCanSend,
+                members: '',
+            },
+        });
+    };
+
+    const handleCreateGroup = () => {
+        setUiState('new');
+        resetForm({
+            values: INITIAL_FORM_VALUES,
+        });
+        setSelectedGroup(undefined);
+    };
+
+    const handleDiscardChanges = () => {
+        setUiState(groups.length === 0 ? 'empty' : 'view');
+        resetForm({
+            values: INITIAL_FORM_VALUES,
+        });
+    };
+
     const domainData = { loadingCustomDomains, selectedDomain, customDomains, setSelectedDomain };
 
     return {
@@ -215,15 +275,21 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         selectedGroup,
         uiState,
         form,
-        onDeleteGroup,
-        handleSaveGroup,
-        setSelectedGroup,
-        setUiState,
         groupMembers: transformedGroupMembers,
+        addressToMemberMap,
         loadingGroupMembers,
         domainData,
         suggestedAddressDomainName,
         suggestedAddressDomainPart,
+        getSerializedGroup,
+        actions: {
+            onDiscardChanges: handleDiscardChanges,
+            onDeleteGroup,
+            onEditGroup: handleEditGroup,
+            onViewGroup: handleViewGroup,
+            onSaveGroup: handleSaveGroup,
+            onCreateGroup: handleCreateGroup,
+        },
     };
 };
 

@@ -1,13 +1,16 @@
+import { useMemo } from 'react';
+
 import { c, msgid } from 'ttag';
 
-import { useMembers } from '@proton/account/members/hooks';
 import { Scroll } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 
 import { GroupMemberItem } from './GroupMemberItem';
+import type { GroupsManagementReturn } from './types';
 
 interface Props {
+    addressToMemberMap: GroupsManagementReturn['addressToMemberMap'];
     groupMembers: GroupMember[];
     loading: boolean;
     group: Group | undefined; // needs to be removed once GroupMemberItem doesn't need it
@@ -16,17 +19,19 @@ interface Props {
 }
 
 const compareMemberNames = (a: GroupMember, b: GroupMember) => a.Email.localeCompare(b.Email);
-const getSortedMembers = (members: GroupMember[]) => {
+const getSortedGroupMembers = (members: GroupMember[]) => {
     return [...members].sort(compareMemberNames);
 };
 
-const GroupMemberList = ({ groupMembers, loading, group, edit = false, canOnlyDelete }: Props) => {
-    const [members] = useMembers();
+const GroupMemberList = ({ addressToMemberMap, groupMembers, loading, group, edit = false, canOnlyDelete }: Props) => {
+    const sortedGroupMembers = useMemo(() => getSortedGroupMembers(groupMembers), [groupMembers]);
 
-    const sortedMembers = getSortedMembers(groupMembers);
-
-    if (loading || group === undefined) {
+    if (loading) {
         return <Loader />;
+    }
+
+    if (!group) {
+        return null;
     }
 
     const memberCount = groupMembers.length;
@@ -44,10 +49,9 @@ const GroupMemberList = ({ groupMembers, loading, group, edit = false, canOnlyDe
             )}
             <Scroll>
                 <div className="flex flex-column gap-3">
-                    {sortedMembers.map((memberData: GroupMember) => {
-                        const memberName = members?.find(({ Addresses }) =>
-                            Addresses?.some(({ ID }) => ID === (memberData?.AddressID ?? memberData?.AddressId))
-                        )?.Name;
+                    {sortedGroupMembers.map((memberData: GroupMember) => {
+                        const member = addressToMemberMap[memberData?.AddressID ?? memberData?.AddressId ?? ''];
+                        const memberName = member?.Name ?? '';
                         return (
                             <GroupMemberItem
                                 groupMember={memberData}
