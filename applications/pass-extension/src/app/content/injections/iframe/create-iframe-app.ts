@@ -165,23 +165,19 @@ export const createIFrameApp = <A>({
     };
 
     const close = (options: IFrameCloseOptions = {}) => {
-        cancelAnimationFrame(state.positionReq);
-        activeListeners.removeAll();
-
         if (state.visible) {
+            cancelAnimationFrame(state.positionReq);
+            activeListeners.removeAll();
+
             popover.close();
-            const target = (options?.event?.target ?? null) as MaybeNull<HTMLElement>;
+            /* ⚠️ call before resetting state */
+            onClose?.(state, options);
 
-            if (!target || !backdropExclude?.().includes(target)) {
-                listeners.removeAll();
-                onClose?.(state, options); /* ⚠️ call before resetting state */
+            iframe.classList.remove('visible');
+            state.visible = false;
+            state.action = null;
 
-                iframe.classList.remove('visible');
-                state.visible = false;
-                state.action = null;
-
-                void sendPortMessage({ type: IFramePortMessageType.IFRAME_HIDDEN });
-            }
+            void sendPortMessage({ type: IFramePortMessageType.IFRAME_HIDDEN });
         }
     };
 
@@ -196,7 +192,13 @@ export const createIFrameApp = <A>({
             activeListeners.addListener(scrollRef, 'scroll', updatePosition);
 
             if (backdropClose) {
-                const onMouseDown = (event: Event) => close({ event, discard: true, refocus: false });
+                const onMouseDown = (event: Event) => {
+                    const target = event.target as MaybeNull<HTMLElement>;
+                    if (!target || !backdropExclude?.().includes(target)) {
+                        close({ discard: true, refocus: false });
+                    }
+                };
+
                 activeListeners.addListener(window, 'mousedown', onMouseDown);
             }
 
